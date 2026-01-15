@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 78,
+    "complexity_score": 63,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 18,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "callind_preserve",
       "param_count_too_few",
       "special_crt_function",
       "unresolved_funcptr"
@@ -143,22 +142,6 @@
       "match": "code *",
       "text": "code *pcVar1;",
       "type": "unresolved_funcptr"
-    },
-    {
-      "add_esp_value": 12,
-      "call_target_type": "register",
-      "call_target_value": "EAX",
-      "callind_address": "00601221",
-      "callind_assembly": "CALL EAX",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -12,
-      "expected_esp_offset": 0,
-      "fix_address": "00601223",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 0,
-      "return_address": "00601223",
-      "text": "CALLIND at 00601221, ADD ESP at 00601223 (no EBP frame)",
-      "type": "callind_preserve"
     },
     {
       "call_site_count": 2,

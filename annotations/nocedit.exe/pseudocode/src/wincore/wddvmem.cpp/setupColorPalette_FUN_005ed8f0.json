@@ -1,16 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 88,
+    "complexity_score": 48,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 27,
     "pseudocode_lines": 48,
-    "suspect_count": 3,
-    "suspect_types": [
-      "callind_preserve",
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 152
   },
   "cross_references": [
@@ -312,50 +309,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "add_esp_value": 8,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 66500864,
-      "callind_address": "005ed9ea",
-      "callind_assembly": "CALL dword ptr [0x03f6b900]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -12,
-      "fix_address": "005ed9f0",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "005ed9f0",
-      "text": "CALLIND at 005ed9ea, ADD ESP at 005ed9f0 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "call_address": "005ed990",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 12,
-      "return_address": "005ed995",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005ed990 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "005ed9ca",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 12,
-      "return_address": "005ed9cf",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005ed9ca (no EBP frame)",
-      "type": "variadic_preserve"
-    }
-  ]
+  "suspects": []
 }

@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 104,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 54,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "callind_preserve",
       "special_crt_function"
     ],
     "total_lines": 169
@@ -115,63 +114,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 40,
-        "reg": "EAX"
-      },
-      "callind_address": "0060d806",
-      "callind_assembly": "CALL dword ptr [EAX + 0x28]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -16,
-      "expected_esp_offset": -12,
-      "fix_address": "0060d809",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "0060d809",
-      "text": "CALLIND at 0060d806, ADD ESP at 0060d809 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "0060d82d",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -12,
-      "fix_address": "0060d830",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "0060d830",
-      "text": "CALLIND at 0060d82d, ADD ESP at 0060d830 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 32,
-        "reg": "EAX"
-      },
-      "callind_address": "0060d83b",
-      "callind_assembly": "CALL dword ptr [EAX + 0x20]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -16,
-      "expected_esp_offset": -12,
-      "fix_address": "0060d83e",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "0060d83e",
-      "text": "CALLIND at 0060d83b, ADD ESP at 0060d83e (no EBP frame)",
-      "type": "callind_preserve"
-    },
     {
       "address": "0060d7ae",
       "crt_type": "runtime support",

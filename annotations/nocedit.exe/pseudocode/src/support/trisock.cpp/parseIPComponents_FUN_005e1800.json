@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 108,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 18,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
-      "param_count_too_few",
-      "variadic_preserve"
+      "param_count_too_few"
     ],
     "total_lines": 65
   },
@@ -158,33 +156,6 @@
       "param_delta": 1,
       "text": "Function declares 2 params but call sites push 3 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "005e1822",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "prologue_offset": 20,
-      "return_address": "005e1827",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 005e1822 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "005e1852",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005e1857",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "005e1857",
-      "target_address": "0x5e1870",
-      "text": "Direct CALL at 005e1852, ADD ESP at 005e1857 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "005e1804",

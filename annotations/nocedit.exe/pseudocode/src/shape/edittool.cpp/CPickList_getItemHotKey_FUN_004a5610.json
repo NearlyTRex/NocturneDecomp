@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 124,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 14,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_param",
-      "variadic_preserve"
+      "stack_param"
     ],
     "total_lines": 51
   },
@@ -162,20 +161,6 @@
       "match": "in_stack_00000008",
       "text": "return *(uint *)(in_stack_00000004[0x68] + in_stack_00000008 * 4);",
       "type": "stack_param"
-    },
-    {
-      "call_address": "004a563e",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 16,
-      "return_address": "004a5643",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a563e (no EBP frame)",
-      "type": "variadic_preserve"
     }
   ]
 }

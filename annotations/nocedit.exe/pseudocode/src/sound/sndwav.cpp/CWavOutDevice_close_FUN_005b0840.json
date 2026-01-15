@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 149,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "pseudocode_lines": 34,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
-      "callind_preserve",
-      "pointer_cast",
-      "variadic_preserve"
+      "pointer_cast"
     ],
     "total_lines": 108
   },
@@ -241,39 +239,6 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_WaveOutHeaders + iVar1) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "005b0850",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -16,
-      "fix_address": "005b0853",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "005b0853",
-      "text": "CALLIND at 005b0850, ADD ESP at 005b0853 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "call_address": "005b08c8",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "prologue_offset": 24,
-      "return_address": "005b08cd",
-      "target_address": "0x5adba0",
-      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b08c8 (no EBP frame)",
-      "type": "variadic_preserve"
     }
   ],
   "vtable_info": {

@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 118,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 5,
     "pseudocode_lines": 33,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg",
-      "variadic_preserve"
+      "unaffected_reg"
     ],
     "total_lines": 102
   },
@@ -162,73 +160,6 @@
       "match": "unaff_EBX",
       "text": "(g_CEditorToolsPtr,\"LOD generation complete!\",unaff_EBX);",
       "type": "unaffected_reg"
-    },
-    {
-      "call_address": "00589b53",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
-      "prologue_offset": 36,
-      "return_address": "00589b58",
-      "target_address": "0x49e870",
-      "target_function": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 at 00589b53 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "00589ba1",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "prologue_offset": 36,
-      "return_address": "00589ba6",
-      "target_address": "0x49e6a0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 00589ba1 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00589b25",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00589b2a",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "00589b2a",
-      "target_address": "0x5a8e90",
-      "text": "Direct CALL at 00589b25, ADD ESP at 00589b2a (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00589b3f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00589b44",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "00589b44",
-      "target_address": "0x49e940",
-      "text": "Direct CALL at 00589b3f, ADD ESP at 00589b44 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00589b84",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00589b89",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "00589b89",
-      "target_address": "0x4a0dd0",
-      "text": "Direct CALL at 00589b84, ADD ESP at 00589b89 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

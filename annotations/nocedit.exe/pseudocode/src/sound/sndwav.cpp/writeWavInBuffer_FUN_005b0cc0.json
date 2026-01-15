@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 48,
+    "complexity_score": 23,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 10,
     "pseudocode_lines": 23,
-    "suspect_count": 2,
-    "suspect_types": [
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 96
   },
   "cross_references": [
@@ -195,34 +193,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "005b0d4c",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "prologue_offset": 12,
-      "return_address": "005b0d51",
-      "target_address": "0x5adba0",
-      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b0d4c (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "005b0d5f",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "prologue_offset": 12,
-      "return_address": "005b0d64",
-      "target_address": "0x5adba0",
-      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b0d5f (no EBP frame)",
-      "type": "variadic_preserve"
-    }
-  ]
+  "suspects": []
 }

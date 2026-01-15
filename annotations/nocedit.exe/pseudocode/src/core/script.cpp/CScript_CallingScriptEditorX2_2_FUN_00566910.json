@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 71,
+    "complexity_score": 46,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 21,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 83
@@ -166,32 +165,6 @@
       "match": "in_stack_00000004",
       "text": "iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(in_stack_00000004 + 0x38))",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00566959",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0056695e",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0056695e",
-      "target_address": "0x566a90",
-      "text": "Direct CALL at 00566959, ADD ESP at 0056695e (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0056696f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00566974",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "00566974",
-      "target_address": "0x566b30",
-      "text": "Direct CALL at 0056696f, ADD ESP at 00566974 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

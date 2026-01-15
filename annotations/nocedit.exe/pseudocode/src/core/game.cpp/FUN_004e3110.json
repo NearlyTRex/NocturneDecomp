@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 55,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 11,
     "pseudocode_lines": 15,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unaffected_reg",
-      "variadic_preserve"
+      "unaffected_reg"
     ],
     "total_lines": 53
   },
@@ -177,20 +176,6 @@
       "match": "unaff_EBX",
       "text": "1000) / (double)g_CGamePtr->delta_time_float,unaff_EBX);",
       "type": "unaffected_reg"
-    },
-    {
-      "call_address": "004e3174",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
-      "prologue_offset": 12,
-      "return_address": "004e3179",
-      "target_address": "0x441890",
-      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004e3174 (no EBP frame)",
-      "type": "variadic_preserve"
     }
   ]
 }

@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 191,
+    "complexity_score": 176,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 56,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
@@ -240,19 +239,6 @@
       "match": "in_stack_ffffff34",
       "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff30,in_stack_ffffff34);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 96,
-      "call_address": "004045f6",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004045fb",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 112,
-      "return_address": "004045fb",
-      "target_address": "0x407d70",
-      "text": "Direct CALL at 004045f6, ADD ESP at 004045fb (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "004045b0",

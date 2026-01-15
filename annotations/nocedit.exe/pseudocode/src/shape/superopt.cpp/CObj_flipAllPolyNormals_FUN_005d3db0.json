@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 30,
+    "complexity_score": 15,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 15,
-    "suspect_count": 1,
-    "suspect_types": [
-      "callind_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [],
@@ -75,27 +73,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 72,
-        "reg": "EAX"
-      },
-      "callind_address": "005d3dc8",
-      "callind_assembly": "CALL dword ptr [EAX + 0x48]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -16,
-      "expected_esp_offset": -12,
-      "fix_address": "005d3dcb",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "005d3dcb",
-      "text": "CALLIND at 005d3dc8, ADD ESP at 005d3dcb (no EBP frame)",
-      "type": "callind_preserve"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

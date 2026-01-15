@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 123,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 63,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "callind_preserve",
       "param_count_too_few",
-      "pointer_cast",
-      "variadic_preserve"
+      "pointer_cast"
     ],
     "total_lines": 189
   },
@@ -204,25 +202,6 @@
       "type": "pointer_cast"
     },
     {
-      "add_esp_value": 12,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 20,
-        "reg": "ESP"
-      },
-      "callind_address": "0054af25",
-      "callind_assembly": "CALL dword ptr [ESP + 0x14]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -40,
-      "expected_esp_offset": -28,
-      "fix_address": "0054af29",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "0054af29",
-      "text": "CALLIND at 0054af25, ADD ESP at 0054af29 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
       "call_site_count": 1,
       "declared_params": 4,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -232,20 +211,6 @@
       "param_delta": 3,
       "text": "Function declares 4 params but call sites push 7 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "0054af96",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 28,
-      "return_address": "0054af9b",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0054af96 (no EBP frame)",
-      "type": "variadic_preserve"
     }
   ]
 }

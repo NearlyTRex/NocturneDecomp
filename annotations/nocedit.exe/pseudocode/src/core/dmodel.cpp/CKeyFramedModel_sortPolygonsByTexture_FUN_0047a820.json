@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 150,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 35,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "warning_unreachable"
     ],
@@ -274,45 +273,6 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0047a965) */",
       "type": "warning_unreachable"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0047a82f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0047a834",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 124,
-      "return_address": "0047a834",
-      "target_address": "0x47bf40",
-      "text": "Direct CALL at 0047a82f, ADD ESP at 0047a834 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "0047a918",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0047a91d",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 124,
-      "return_address": "0047a91d",
-      "target_address": "0x600bc2",
-      "text": "Direct CALL at 0047a918, ADD ESP at 0047a91d (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0047a9eb",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0047a9f0",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 124,
-      "return_address": "0047a9f0",
-      "target_address": "0x47bf40",
-      "text": "Direct CALL at 0047a9eb, ADD ESP at 0047a9f0 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "0047a913",

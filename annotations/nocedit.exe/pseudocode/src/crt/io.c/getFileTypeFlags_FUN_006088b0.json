@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 49,
+    "complexity_score": 34,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 19,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
       "special_crt_function"
     ],
     "total_lines": 59
@@ -140,19 +139,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 4,
-      "call_address": "006088e7",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "006088ec",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "006088ec",
-      "target_address": "0x60c270",
-      "text": "Direct CALL at 006088e7, ADD ESP at 006088ec (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "006088b0",
       "crt_type": "runtime support",

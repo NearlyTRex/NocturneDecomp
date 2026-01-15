@@ -1,16 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 50,
+    "complexity_score": 10,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 10,
-    "suspect_count": 3,
-    "suspect_types": [
-      "call_esp_preserve",
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [
@@ -119,46 +116,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "004bd8f5",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 36,
-      "return_address": "004bd8fa",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004bd8f5 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004bd909",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004bd90e",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "004bd90e",
-      "target_address": "0x569410",
-      "text": "Direct CALL at 004bd909, ADD ESP at 004bd90e (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004bd91f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004bd924",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "004bd924",
-      "target_address": "0x584e70",
-      "text": "Direct CALL at 004bd91f, ADD ESP at 004bd924 (no EBP frame)",
-      "type": "call_esp_preserve"
-    }
-  ]
+  "suspects": []
 }

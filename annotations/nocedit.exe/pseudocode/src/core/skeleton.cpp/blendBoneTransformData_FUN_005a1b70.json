@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 229,
+    "complexity_score": 194,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 74,
-    "suspect_count": 13,
+    "suspect_count": 10,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
@@ -285,45 +284,6 @@
       "match": "&stack0xffffffb4",
       "text": "((int)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +",
       "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005a1c3a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005a1c3f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 84,
-      "return_address": "005a1c3f",
-      "target_address": "0x5a0820",
-      "text": "Direct CALL at 005a1c3a, ADD ESP at 005a1c3f (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005a1c76",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005a1c7f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 84,
-      "return_address": "005a1c7b",
-      "target_address": "0x5f77e0",
-      "text": "Direct CALL at 005a1c76, ADD ESP at 005a1c7f (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005a1cca",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005a1ccf",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 84,
-      "return_address": "005a1ccf",
-      "target_address": "0x5a1950",
-      "text": "Direct CALL at 005a1cca, ADD ESP at 005a1ccf (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "005a1beb",

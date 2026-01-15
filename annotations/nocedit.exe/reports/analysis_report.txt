@@ -5,32 +5,29 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 7154
-Functions with zero suspects: 1198 (16.7%)
-Functions with suspects: 5956 (83.3%)
+Functions with zero suspects: 2720 (38.0%)
+Functions with suspects: 4434 (62.0%)
 
-Total suspect patterns: 77373
-Average suspects per function: 10.82
+Total suspect patterns: 55739
+Average suspects per function: 7.79
 
-Virtual files: 258 total, 1 at 100%, 1 at 90%+
+Virtual files: 258 total, 5 at 100%, 6 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3058, Average: 47.5
 
-Average complexity score: 165.4
+Average complexity score: 131.3
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   stack_param               31465
-  call_esp_preserve         17776
   lea_esp_stack_addr        6858
   pointer_cast              5319
-  variadic_preserve         2780
   concat_artifact           1748
   unaffected_reg            1586
   stack_ref                 1534
   unknown_field             1532
   extra_output              1433
-  callind_preserve          1078
   suspect_float             686
   param_count_too_few       631
   special_crt_function      626
@@ -106,40 +103,40 @@ EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)
   005ab6d0: sound_sndmain.cpp_getMixBufferCount_FUN_005ab6d0 (4 lines)
   005abea0: sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0 (4 lines)
   005adde0: sound_sndmain.cpp_doNothing_FUN_005adde0 (4 lines)
-  ... and 1148 more
+  ... and 2670 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   00592690: core_skeledit.cpp_FUN_00592690 (score: 7146, suspects: 511, lines: 2001)
   005bb960: core_stranger.cpp_CStranger_FUN_005bb960 (score: 6698, suspects: 535, lines: 1318)
   004e6600: core_ghoul.cpp_CGhoul_FUN_004e6600 (score: 4840, suspects: 376, lines: 1055)
-  0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 4450, suspects: 361, lines: 780)
-  0058c190: core_skeledit.cpp_FUN_0058c190 (score: 4284, suspects: 353, lines: 714)
   004f4bd0: core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 (score: 4215, suspects: 343, lines: 775)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 4092, suspects: 257, lines: 1472)
-  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 4046, suspects: 306, lines: 941)
   0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3953, suspects: 87, lines: 3058)
   004d2ea0: core_gabriela.cpp_FUN_004d2ea0 (score: 3813, suspects: 300, lines: 788)
-  00565130: core_script.cpp_CScript_Unk20_FUN_00565130 (score: 3789, suspects: 326, lines: 474)
   00484410: core_dracbrid.cpp_FUN_00484410 (score: 3755, suspects: 287, lines: 855)
   00562920: core_script.cpp_FUN_00562920 (score: 3306, suspects: 247, lines: 801)
-  00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 3287, suspects: 255, lines: 707)
+  0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 3305, suspects: 248, lines: 780)
   004aacc0: core_event.cpp_CEventList_FUN_004aacc0 (score: 3287, suspects: 115, lines: 2112)
-  004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 3284, suspects: 210, lines: 1144)
   005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 3269, suspects: 288, lines: 374)
   00525840: core_mobster.cpp_FUN_00525840 (score: 3165, suspects: 249, lines: 640)
+  0058c190: core_skeledit.cpp_FUN_0058c190 (score: 3134, suspects: 239, lines: 714)
   004ae140: core_event.cpp_CEventList_FUN_004ae140 (score: 3132, suspects: 156, lines: 1562)
-  005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 3068, suspects: 213, lines: 903)
-  004e1cb0: core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (score: 3065, suspects: 262, lines: 420)
   005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 3064, suspects: 179, lines: 1229)
+  00565130: core_script.cpp_CScript_Unk20_FUN_00565130 (score: 2944, suspects: 243, lines: 474)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2693, suspects: 174, lines: 938)
-  004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 2612, suspects: 189, lines: 667)
+  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 2691, suspects: 172, lines: 941)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 2506, suspects: 42, lines: 2041)
   004f9c30: core_imp.cpp_FUN_004f9c30 (score: 2503, suspects: 195, lines: 528)
   005390f0: core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (score: 2495, suspects: 144, lines: 1005)
-  005716b0: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (score: 2484, suspects: 210, lines: 349)
   005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 2460, suspects: 211, lines: 335)
   00568030: core_sentinel.cpp_FUN_00568030 (score: 2421, suspects: 191, lines: 486)
+  004e4a00: core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 (score: 2324, suspects: 185, lines: 439)
+  00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 2247, suspects: 152, lines: 707)
+  004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 2119, suspects: 95, lines: 1144)
+  0041bf90: core_boneguy.cpp_FUN_0041bf90 (score: 2115, suspects: 161, lines: 475)
+  005716b0: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (score: 2029, suspects: 166, lines: 349)
+  005a2800: core_smiley.cpp_FUN_005a2800 (score: 1997, suspects: 158, lines: 397)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
@@ -156,19 +153,6 @@ FUNCTIONS BY SUSPECT TYPE
     004896c0: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
     00489790: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
     ... and 2310 more
-
-  call_esp_preserve (4062 functions):
-    0054c4d0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
-    0054c660: cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteOrReload_FUN_0054c660
-    0054bcd0: cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
-    0054c3d0: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
-    0054c500: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
-    0054c6a0: cockpit_pkbmpset.cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_0054c6a0
-    0054bf40: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
-    0054c620: cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620
-    0054c72e: cockpit_pkbmpset.cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e
-    0054c6f0: cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0
-    ... and 4052 more
 
   lea_esp_stack_addr (965 functions):
     0054c3d0: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
@@ -195,19 +179,6 @@ FUNCTIONS BY SUSPECT TYPE
     0054b0e0: cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     ... and 1029 more
-
-  variadic_preserve (943 functions):
-    0054c3d0: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
-    0054bf40: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
-    0054bdb0: cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
-    0054be70: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
-    0054c1e0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    00487010: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
-    00487220: cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
-    00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
-    004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
-    00487e20: cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20
-    ... and 933 more
 
   concat_artifact (236 functions):
     00431410: cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
@@ -273,19 +244,6 @@ FUNCTIONS BY SUSPECT TYPE
     00603b00: crt_memory.c_OptimizedMemFill_FUN_00603b00
     00600b94: crt_math.c_asin_FUN_00600b94
     ... and 249 more
-
-  callind_preserve (583 functions):
-    0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
-    0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
-    0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
-    00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
-    00432a10: cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
-    00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-    00431d00: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
-    00432b60: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
-    004326a0: cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
-    ... and 573 more
 
   suspect_float (146 functions):
     00605178: crt_stdio.c_scanf_float_FUN_00605178

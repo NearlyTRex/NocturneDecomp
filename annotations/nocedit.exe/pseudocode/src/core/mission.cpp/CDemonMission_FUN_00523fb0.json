@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 148,
+    "complexity_score": 98,
     "cross_reference_count": 8,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 23,
-    "suspect_count": 10,
+    "suspect_count": 6,
     "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve",
       "param_count_too_few",
       "stack_param",
       "unresolved_funcptr"
@@ -300,25 +298,6 @@
       "type": "unresolved_funcptr"
     },
     {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 72,
-        "reg": "EDX"
-      },
-      "callind_address": "00524016",
-      "callind_assembly": "CALL dword ptr [EDX + 0x48]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -12,
-      "expected_esp_offset": -8,
-      "fix_address": "00524019",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00524019",
-      "text": "CALLIND at 00524016, ADD ESP at 00524019 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
       "call_site_count": 9,
       "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -328,45 +307,6 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00523fd8",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00523fdd",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00523fdd",
-      "target_address": "0x569410",
-      "text": "Direct CALL at 00523fd8, ADD ESP at 00523fdd (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00523fe1",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00523fec",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00523fe6",
-      "target_address": "0x523e60",
-      "text": "Direct CALL at 00523fe1, ADD ESP at 00523fec (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0052401f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00524024",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00524024",
-      "target_address": "0x523cf0",
-      "text": "Direct CALL at 0052401f, ADD ESP at 00524024 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

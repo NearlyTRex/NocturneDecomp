@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 91,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 24,
     "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "special_crt_function",
       "warning_overlapping_globals"
     ],
@@ -233,19 +232,6 @@
       "match": "WARNING: Globals starting with",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0060a49f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0060a4a4",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060a4a4",
-      "target_address": "0x60cbd0",
-      "text": "Direct CALL at 0060a49f, ADD ESP at 0060a4a4 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "0060a3b4",

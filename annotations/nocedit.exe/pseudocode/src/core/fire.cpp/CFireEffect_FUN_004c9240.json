@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 103,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 13,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "callind_preserve",
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
@@ -179,22 +178,6 @@
       "match": "(CShell *)((int)",
       "text": "g_CFireEffectShellsEnd = (CShell *)((int)&(g_CFireEffectShellsEnd->base).position.x + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 12,
-      "call_target_type": "reg_deref",
-      "call_target_value": "EDX",
-      "callind_address": "004c9265",
-      "callind_assembly": "CALL dword ptr [EDX]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -24,
-      "expected_esp_offset": -12,
-      "fix_address": "004c926e",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "004c9267",
-      "text": "CALLIND at 004c9265, ADD ESP at 004c926e (no EBP frame)",
-      "type": "callind_preserve"
     },
     {
       "call_site_count": 4,

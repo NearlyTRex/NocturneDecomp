@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 67,
+    "complexity_score": 27,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve",
       "special_crt_function"
     ],
     "total_lines": 45
@@ -121,48 +119,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 8,
-      "call_target_type": "register",
-      "call_target_value": "EBX",
-      "callind_address": "0060d057",
-      "callind_assembly": "CALL EBX",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -12,
-      "expected_esp_offset": -4,
-      "fix_address": "0060d059",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "0060d059",
-      "text": "CALLIND at 0060d057, ADD ESP at 0060d059 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0060d02b",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0060d030",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "0060d030",
-      "target_address": "0x60ceb4",
-      "text": "Direct CALL at 0060d02b, ADD ESP at 0060d030 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0060d048",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0060d04d",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "0060d04d",
-      "target_address": "0x60ce60",
-      "text": "Direct CALL at 0060d048, ADD ESP at 0060d04d (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "0060d028",
       "crt_type": "runtime support",

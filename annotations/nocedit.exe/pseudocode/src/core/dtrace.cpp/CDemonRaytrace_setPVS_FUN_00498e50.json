@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 85,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "pseudocode_lines": 55,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "lea_esp_stack_addr",
-      "variadic_preserve"
+      "lea_esp_stack_addr"
     ],
     "total_lines": 169
   },
@@ -223,20 +222,6 @@
     ]
   },
   "suspects": [
-    {
-      "call_address": "00498f94",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 32,
-      "return_address": "00498f99",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00498f94 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
     {
       "address": "00498f32",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

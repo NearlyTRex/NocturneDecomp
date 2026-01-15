@@ -68,8 +68,8 @@ def process_json_file(json_path, suspect_types, apply=False, verbose=True):
             for i in to_remove:
                 s = suspects[i]
                 label = "[resolved] " if array_name == 'resolved_suspects' else ""
-                # Use line if available, otherwise call_address, otherwise ?
-                loc = s.get('line') or s.get('call_address') or '?'
+                # Use line if available, otherwise address fields, otherwise ?
+                loc = s.get('line') or s.get('call_address') or s.get('callind_address') or s.get('address') or '?'
                 print("  - %s%s (%s)" % (label, s.get('type'), loc))
 
         total_removed += len(to_remove)

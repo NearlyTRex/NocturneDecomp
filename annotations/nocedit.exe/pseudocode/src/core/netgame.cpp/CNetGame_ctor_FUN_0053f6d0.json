@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 154,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 29,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
-      "call_esp_preserve",
       "extra_output",
       "pointer_cast"
     ],
@@ -205,19 +204,6 @@
       "match": "extraout_EAX",
       "text": "return (CNetGame *)(extraout_EAX + -0x170);",
       "type": "extra_output"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0053f6e1",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0053f6e6",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "0053f6e6",
-      "target_address": "0x5fe667",
-      "text": "Direct CALL at 0053f6e1, ADD ESP at 0053f6e6 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

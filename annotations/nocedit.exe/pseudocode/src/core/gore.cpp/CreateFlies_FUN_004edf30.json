@@ -1,18 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 280,
+    "complexity_score": 205,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 45,
-    "suspect_count": 21,
+    "suspect_count": 15,
     "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve",
       "param_count_too_few",
-      "stack_param",
-      "variadic_preserve"
+      "stack_param"
     ],
     "total_lines": 132
   },
@@ -271,22 +268,6 @@
       "type": "stack_param"
     },
     {
-      "add_esp_value": 4,
-      "call_target_type": "reg_deref",
-      "call_target_value": "EAX",
-      "callind_address": "004edfe9",
-      "callind_assembly": "CALL dword ptr [EAX]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -16,
-      "expected_esp_offset": -12,
-      "fix_address": "004edfeb",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004edfeb",
-      "text": "CALLIND at 004edfe9, ADD ESP at 004edfeb (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -296,72 +277,6 @@
       "param_delta": 11,
       "text": "Function declares 0 params but call sites push 11 (11 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "004edf7b",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 28,
-      "return_address": "004edf80",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004edf7b (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004edf4a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004edf4f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004edf4f",
-      "target_address": "0x50f1b0",
-      "text": "Direct CALL at 004edf4a, ADD ESP at 004edf4f (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004edff6",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004edffb",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004edffb",
-      "target_address": "0x524700",
-      "text": "Direct CALL at 004edff6, ADD ESP at 004edffb (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004ee006",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004ee00b",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004ee00b",
-      "target_address": "0x523b70",
-      "text": "Direct CALL at 004ee006, ADD ESP at 004ee00b (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004ee015",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004ee01a",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004ee01a",
-      "target_address": "0x4cbd60",
-      "text": "Direct CALL at 004ee015, ADD ESP at 004ee01a (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

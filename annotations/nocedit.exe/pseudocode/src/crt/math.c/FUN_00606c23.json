@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 98,
+    "complexity_score": 83,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_preserve",
       "concat_artifact",
       "special_crt_function",
       "stack_param",
@@ -108,19 +107,6 @@
       "match": "CONCAT64",
       "text": "return CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_0000001c);",
       "type": "concat_artifact"
-    },
-    {
-      "add_esp_value": 44,
-      "call_address": "00606c34",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00606c3f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 0,
-      "return_address": "00606c39",
-      "target_address": "0x606960",
-      "text": "Direct CALL at 00606c34, ADD ESP at 00606c3f (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "00606c23",

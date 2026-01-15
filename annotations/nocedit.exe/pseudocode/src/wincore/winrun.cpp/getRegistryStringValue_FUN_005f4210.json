@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 86,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "pseudocode_lines": 21,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "callind_preserve",
       "lea_esp_stack_addr",
       "stack_param"
     ],
@@ -135,22 +134,6 @@
       "match": "in_stack_00000004",
       "text": "LVar1 = (*PTR_RegOpenKeyExA_00611474)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 12,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6362220,
-      "callind_address": "005f4277",
-      "callind_assembly": "CALL dword ptr CS:[0x61146c]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -28,
-      "expected_esp_offset": -16,
-      "fix_address": "005f4281",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "005f427e",
-      "text": "CALLIND at 005f4277, ADD ESP at 005f4281 (no EBP frame)",
-      "type": "callind_preserve"
     },
     {
       "address": "005f4247",

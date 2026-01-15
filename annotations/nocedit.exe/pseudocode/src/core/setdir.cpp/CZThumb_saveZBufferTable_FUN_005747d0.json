@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 60,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 8,
     "pseudocode_lines": 20,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "variadic_preserve"
+      "pointer_cast"
     ],
     "total_lines": 56
   },
@@ -156,20 +155,6 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2);",
       "type": "pointer_cast"
-    },
-    {
-      "call_address": "0057481e",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 12,
-      "return_address": "00574823",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0057481e (no EBP frame)",
-      "type": "variadic_preserve"
     }
   ]
 }

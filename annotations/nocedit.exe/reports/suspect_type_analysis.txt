@@ -4,31 +4,28 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    31465 ( 40.7%)
-  call_esp_preserve              17776 ( 23.0%)
-  lea_esp_stack_addr              6858 (  8.9%)
-  pointer_cast                    5319 (  6.9%)
-  variadic_preserve               2780 (  3.6%)
-  concat_artifact                 1748 (  2.3%)
-  unaffected_reg                  1586 (  2.0%)
-  stack_ref                       1534 (  2.0%)
-  unknown_field                   1532 (  2.0%)
-  extra_output                    1433 (  1.9%)
-  callind_preserve                1078 (  1.4%)
-  suspect_float                    686 (  0.9%)
-  param_count_too_few              631 (  0.8%)
-  special_crt_function             626 (  0.8%)
-  unresolved_funcptr               460 (  0.6%)
-  negative_offset                  411 (  0.5%)
-  format_string_mismatch           321 (  0.4%)
-  sub_artifact                     282 (  0.4%)
-  warning_overlapping_globals      218 (  0.3%)
-  register_param                   200 (  0.3%)
-  undefined_type                   111 (  0.1%)
-  param_count_too_many              89 (  0.1%)
-  warning_unreachable               89 (  0.1%)
-  variadic_preserve_ebp             38 (  0.0%)
-  sborrow_artifact                  28 (  0.0%)
+  stack_param                    31465 ( 56.5%)
+  lea_esp_stack_addr              6858 ( 12.3%)
+  pointer_cast                    5319 (  9.5%)
+  concat_artifact                 1748 (  3.1%)
+  unaffected_reg                  1586 (  2.8%)
+  stack_ref                       1534 (  2.8%)
+  unknown_field                   1532 (  2.7%)
+  extra_output                    1433 (  2.6%)
+  suspect_float                    686 (  1.2%)
+  param_count_too_few              631 (  1.1%)
+  special_crt_function             626 (  1.1%)
+  unresolved_funcptr               460 (  0.8%)
+  negative_offset                  411 (  0.7%)
+  format_string_mismatch           321 (  0.6%)
+  sub_artifact                     282 (  0.5%)
+  warning_overlapping_globals      218 (  0.4%)
+  register_param                   200 (  0.4%)
+  undefined_type                   111 (  0.2%)
+  param_count_too_many              89 (  0.2%)
+  warning_unreachable               89 (  0.2%)
+  variadic_preserve_ebp             38 (  0.1%)
+  sborrow_artifact                  28 (  0.1%)
   special_math_intrinsic            23 (  0.0%)
   callind_preserve_lost             19 (  0.0%)
   warning_jumptable                 10 (  0.0%)
@@ -89,33 +86,6 @@ Example functions:
     char *in_stack_ffffeff4;...
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     undefined3 in_stack_00000019;...
-
-====================================================================================================
-TYPE: call_esp_preserve (17776 occurrences)
-====================================================================================================
-
-Unique patterns:
-  17776x  CALL...ADD ESP
-
-Example functions:
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
-    Direct CALL at 0054c4d6, ADD ESP at 0054c4db (no EBP frame)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteOrReload_FUN_0054c660
-    Direct CALL at 0054c67e, ADD ESP at 0054c688 (no EBP frame)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
-    Direct CALL at 0054bcf7, ADD ESP at 0054bcfc (no EBP frame)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
-    Direct CALL at 0054c3ea, ADD ESP at 0054c3ef (no EBP frame)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
-    Direct CALL at 0054c52c, ADD ESP at 0054c536 (no EBP frame)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_0054c6a0
-    Direct CALL at 0054c6c6, ADD ESP at 0054c6ce (no EBP frame)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
-    Direct CALL at 0054bf59, ADD ESP at 0054bf5e (no EBP frame)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620
-    Direct CALL at 0054c63e, ADD ESP at 0054c648 (no EBP frame)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e
-    Direct CALL at 0054c760, ADD ESP at 0054c76a (no EBP frame)...
 
 ====================================================================================================
 TYPE: lea_esp_stack_addr (6858 occurrences)
@@ -181,62 +151,6 @@ Example functions:
     puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);...
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar7) <...
-
-====================================================================================================
-TYPE: variadic_preserve (2780 occurrences)
-====================================================================================================
-
-Unique patterns:
-  1018x  CALL core_main.c_displayErrorAndQuit_FUN_00506f10
-   535x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
-   470x  CALL crt_stdio.c_sprintf_FUN_005fdbd0
-   336x  CALL crt_stdio.c_fscanf_FUN_005fe7c0
-   153x  CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-    62x  CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
-    43x  CALL engine_console.cpp_CConsole_printf_FUN_00441890
-    38x  CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-    26x  CALL crt_stdio.c_sscanf_FUN_0060013c
-    19x  CALL shape_superopt.cpp_logToFile_FUN_005c7910
-    14x  CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-    12x  CALL shape_memdbg.cpp_traceMemory_FUN_0050f150
-    11x  CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-     7x  CALL shape_memdbg.cpp_traceFile_FUN_0050f180
-     6x  CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-     4x  CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
-     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-
-Example functions:
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0054c430 (no EBP f...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0054bfee (no EBP f...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0054be2f (no EBP f...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0054bee4 (no EBP f...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0054c246 (no EBP f...
-  cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004872...
-  cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004873...
-  cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004883...
-  cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004875...
-  cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004880...
-  cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00488f...
-  cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00488c...
-  cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004882...
-  cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30
-    Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned...
 
 ====================================================================================================
 TYPE: concat_artifact (1748 occurrences)
@@ -473,43 +387,6 @@ Example functions:
     uint extraout_EAX;...
   crt_stdlib.c_qsort_FUN_005fdf38
     void *extraout_EAX;...
-
-====================================================================================================
-TYPE: callind_preserve (1078 occurrences)
-====================================================================================================
-
-Unique patterns:
-  1078x  CALLIND...ADD ESP
-
-Example functions:
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
-    CALLIND at 0054ac56, ADD ESP at 0054ac5a (no EBP frame)...
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
-    CALLIND at 0054af25, ADD ESP at 0054af29 (no EBP frame)...
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    CALLIND at 0054aaea, ADD ESP at 0054aaee (no EBP frame)...
-  cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
-    CALLIND at 004325ac, ADD ESP at 004325b0 (no EBP frame)...
-  cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
-    CALLIND at 00432409, ADD ESP at 0043240d (no EBP frame)...
-  cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
-    CALLIND at 00432a8e, ADD ESP at 00432a92 (no EBP frame)...
-  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-    CALLIND at 00432088, ADD ESP at 0043208c (no EBP frame)...
-  cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
-    CALLIND at 00431e3b, ADD ESP at 00431e3f (no EBP frame)...
-  cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
-    CALLIND at 00432c3a, ADD ESP at 00432c3c (no EBP frame)...
-  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
-    CALLIND at 00432750, ADD ESP at 00432752 (no EBP frame)...
-  cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
-    CALLIND at 00432239, ADD ESP at 0043223d (no EBP frame)...
-  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
-    CALLIND at 0043297a, ADD ESP at 0043297c (no EBP frame)...
-  cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
-    CALLIND at 004328af, ADD ESP at 004328b3 (no EBP frame)...
-  crt_io.c_tell_FUN_00606720
-    CALLIND at 0060674e, ADD ESP at 00606754 (no EBP frame)...
 
 ====================================================================================================
 TYPE: suspect_float (686 occurrences)

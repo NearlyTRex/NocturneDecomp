@@ -1,16 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 48,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 31
   },
   "cross_references": [],
@@ -90,53 +87,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 36,
-        "reg": "EAX"
-      },
-      "callind_address": "00412423",
-      "callind_assembly": "CALL dword ptr [EAX + 0x24]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -12,
-      "expected_esp_offset": -4,
-      "fix_address": "00412426",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "00412426",
-      "text": "CALLIND at 00412423, ADD ESP at 00412426 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "0041240f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00412414",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "00412414",
-      "target_address": "0x42b9e0",
-      "text": "Direct CALL at 0041240f, ADD ESP at 00412414 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0041242f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00412434",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "00412434",
-      "target_address": "0x4a9f10",
-      "text": "Direct CALL at 0041242f, ADD ESP at 00412434 (no EBP frame)",
-      "type": "call_esp_preserve"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

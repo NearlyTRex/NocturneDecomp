@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 58,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 41
@@ -98,19 +97,6 @@
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 0x158));",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004f768a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004f7695",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 0,
-      "return_address": "004f768f",
-      "target_address": "0x52dab0",
-      "text": "Direct CALL at 004f768a, ADD ESP at 004f7695 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

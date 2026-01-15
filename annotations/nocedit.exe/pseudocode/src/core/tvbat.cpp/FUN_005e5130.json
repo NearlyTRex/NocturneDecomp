@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 129,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 19,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 61
@@ -149,45 +148,6 @@
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0xc078) = 1;",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005e5157",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005e515c",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "005e515c",
-      "target_address": "0x4a9f10",
-      "text": "Direct CALL at 005e5157, ADD ESP at 005e515c (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "005e517c",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005e5181",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "005e5181",
-      "target_address": "0x4edbb0",
-      "text": "Direct CALL at 005e517c, ADD ESP at 005e5181 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005e5194",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005e5199",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "005e5199",
-      "target_address": "0x4a9f10",
-      "text": "Direct CALL at 005e5194, ADD ESP at 005e5199 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

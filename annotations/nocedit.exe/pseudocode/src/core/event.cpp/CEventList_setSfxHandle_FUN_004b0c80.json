@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 208,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 48,
-    "suspect_count": 14,
+    "suspect_count": 9,
     "suspect_types": [
-      "call_esp_preserve",
       "format_string_mismatch",
-      "stack_param",
-      "variadic_preserve"
+      "stack_param"
     ],
     "total_lines": 141
   },
@@ -196,34 +194,6 @@
       "type": "stack_param"
     },
     {
-      "call_address": "004b0cc9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 28,
-      "return_address": "004b0cce",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b0cc9 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "004b0d54",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 28,
-      "return_address": "004b0d59",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b0d54 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
       "actual_args": 0,
       "description": "Format \"CEventList::setSfxHandle - sfx handle name %s is t...\" has 2 specifiers but 0 arguments after it",
       "expected_args": 2,
@@ -233,45 +203,6 @@
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CEventList::setSfxHandle - sfx handle name %s is too l",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004b0c8d",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004b0c92",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004b0c92",
-      "target_address": "0x4b0db0",
-      "text": "Direct CALL at 004b0c8d, ADD ESP at 004b0c92 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004b0c97",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004b0c9c",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004b0c9c",
-      "target_address": "0x4b0d60",
-      "text": "Direct CALL at 004b0c97, ADD ESP at 004b0c9c (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004b0d2a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004b0d2f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004b0d2f",
-      "target_address": "0x4b0db0",
-      "text": "Direct CALL at 004b0d2a, ADD ESP at 004b0d2f (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

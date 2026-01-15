@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 74,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 14,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "stack_param",
       "unknown_field"
@@ -115,19 +114,6 @@
       "match": "._0_2_",
       "text": "local_10.sa_data._0_2_ = crt_wsock32_c_htons((ushort)socket_handle);",
       "type": "unknown_field"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "005e1bb3",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005e1bc2",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "005e1bb8",
-      "target_address": "0x610f22",
-      "text": "Direct CALL at 005e1bb3, ADD ESP at 005e1bc2 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "005e1ba1",

@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 106,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 21,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param",
-      "variadic_preserve"
+      "stack_param"
     ],
     "total_lines": 58
   },
@@ -155,33 +153,6 @@
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008 << 6,\"..\\\\engine\\\\palette.cpp\",0x2b);",
       "type": "stack_param"
-    },
-    {
-      "call_address": "00544f63",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 20,
-      "return_address": "00544f68",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00544f63 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00544f2e",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00544f33",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00544f33",
-      "target_address": "0x50f1f0",
-      "text": "Direct CALL at 00544f2e, ADD ESP at 00544f33 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

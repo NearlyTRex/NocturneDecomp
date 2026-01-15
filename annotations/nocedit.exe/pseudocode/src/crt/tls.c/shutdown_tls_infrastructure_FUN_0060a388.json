@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 67,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
       "extra_output",
       "special_crt_function"
     ],
@@ -89,19 +88,6 @@
       "match": "extraout_EAX",
       "text": "BVar1 = extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0060a38a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0060a38f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 4,
-      "return_address": "0060a38f",
-      "target_address": "0x60a334",
-      "text": "Direct CALL at 0060a38a, ADD ESP at 0060a38f (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "0060a388",

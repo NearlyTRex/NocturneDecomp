@@ -1,16 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 55,
+    "complexity_score": 15,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 15,
-    "suspect_count": 3,
-    "suspect_types": [
-      "call_esp_preserve",
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 49
   },
   "cross_references": [
@@ -123,46 +120,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "00471a33",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 24,
-      "return_address": "00471a38",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00471a33 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004719e6",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004719f8",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "004719eb",
-      "target_address": "0x471a40",
-      "text": "Direct CALL at 004719e6, ADD ESP at 004719f8 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00471a03",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00471a08",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "00471a08",
-      "target_address": "0x50f250",
-      "text": "Direct CALL at 00471a03, ADD ESP at 00471a08 (no EBP frame)",
-      "type": "call_esp_preserve"
-    }
-  ]
+  "suspects": []
 }

@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 131,
+    "complexity_score": 106,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 91,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
       "warning_overlapping_globals"
     ],
     "total_lines": 164
@@ -154,32 +153,6 @@
       "match": "WARNING: Globals starting with",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00525208",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0052520d",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "0052520d",
-      "target_address": "0x4a9500",
-      "text": "Direct CALL at 00525208, ADD ESP at 0052520d (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00525224",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0052522f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "00525229",
-      "target_address": "0x5a0840",
-      "text": "Direct CALL at 00525224, ADD ESP at 0052522f (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

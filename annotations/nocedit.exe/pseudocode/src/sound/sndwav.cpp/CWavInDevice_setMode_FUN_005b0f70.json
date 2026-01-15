@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 401,
+    "complexity_score": 371,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 30,
     "pseudocode_lines": 121,
-    "suspect_count": 24,
+    "suspect_count": 22,
     "suspect_types": [
-      "callind_preserve",
       "callind_preserve_lost",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
       "unknown_field",
-      "unresolved_funcptr",
-      "variadic_preserve"
+      "unresolved_funcptr"
     ],
     "total_lines": 405
   },
@@ -470,22 +468,6 @@
       "add_esp_value": 4,
       "call_target_type": "reg_deref",
       "call_target_value": "EAX",
-      "callind_address": "005b0f8e",
-      "callind_assembly": "CALL dword ptr [EAX]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -92,
-      "expected_esp_offset": -88,
-      "fix_address": "005b0f90",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 88,
-      "return_address": "005b0f90",
-      "text": "CALLIND at 005b0f8e, ADD ESP at 005b0f90 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_deref",
-      "call_target_value": "EAX",
       "callind_address": "005b1179",
       "callind_assembly": "CALL dword ptr [EAX]",
       "description": "CALLIND with lost ESP tracking (branching code)",
@@ -495,20 +477,6 @@
       "return_address": "005b117b",
       "text": "CALLIND at 005b1179, ADD ESP at 005b117b (no EBP frame)",
       "type": "callind_preserve_lost"
-    },
-    {
-      "call_address": "005b11c5",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "prologue_offset": 88,
-      "return_address": "005b11ca",
-      "target_address": "0x5adba0",
-      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b11c5 (no EBP frame)",
-      "type": "variadic_preserve"
     },
     {
       "address": "005b0fa7",

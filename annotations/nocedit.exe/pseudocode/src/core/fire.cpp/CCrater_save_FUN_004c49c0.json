@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 117,
+    "complexity_score": 42,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "pseudocode_lines": 42,
-    "suspect_count": 7,
-    "suspect_types": [
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 160
   },
   "cross_references": [
@@ -169,104 +167,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "004c49ec",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 24,
-      "return_address": "004c49f1",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004c49ec (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "004c4a1a",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 24,
-      "return_address": "004c4a1f",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004c4a1a (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "004c4a46",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 24,
-      "return_address": "004c4a4b",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004c4a46 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "004c4a73",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 24,
-      "return_address": "004c4a78",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004c4a73 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "004c4a9c",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 24,
-      "return_address": "004c4aa1",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004c4a9c (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "004c4ac5",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 24,
-      "return_address": "004c4aca",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004c4ac5 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "004c4aee",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 24,
-      "return_address": "004c4af3",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004c4aee (no EBP frame)",
-      "type": "variadic_preserve"
-    }
-  ]
+  "suspects": []
 }

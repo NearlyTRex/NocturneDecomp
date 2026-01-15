@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 53,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 8,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "callind_preserve",
       "lea_esp_stack_addr",
       "special_crt_function"
     ],
@@ -148,22 +147,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 8,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6362428,
-      "callind_address": "00609cd2",
-      "callind_assembly": "CALL dword ptr CS:[0x61153c]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -12,
-      "expected_esp_offset": -4,
-      "fix_address": "00609cd9",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "00609cd9",
-      "text": "CALLIND at 00609cd2, ADD ESP at 00609cd9 (no EBP frame)",
-      "type": "callind_preserve"
-    },
     {
       "address": "00609ccd",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

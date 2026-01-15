@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 84,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 14,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
       "format_string_mismatch",
-      "unaffected_reg",
-      "variadic_preserve"
+      "unaffected_reg"
     ],
     "total_lines": 41
   },
@@ -121,20 +119,6 @@
       "type": "unaffected_reg"
     },
     {
-      "call_address": "0054f2d6",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "prologue_offset": 24,
-      "return_address": "0054f2db",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0054f2d6 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
       "actual_args": 2,
       "description": "Format \"data\\\\%s\\n\" has 1 specifiers but 2 arguments after it",
       "expected_args": 1,
@@ -144,19 +128,6 @@
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"data\\\\%s\\n\",param_5 + 0x2f0,unaff_EBX);",
       "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0054f2b1",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0054f2bc",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "0054f2b6",
-      "target_address": "0x47edd0",
-      "text": "Direct CALL at 0054f2b1, ADD ESP at 0054f2bc (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

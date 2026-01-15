@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 95,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 30,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "param_count_too_few",
       "special_crt_function"
     ],
@@ -131,45 +130,6 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0060e525",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0060e52a",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060e52a",
-      "target_address": "0x601cd0",
-      "text": "Direct CALL at 0060e525, ADD ESP at 0060e52a (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0060e547",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0060e54c",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060e54c",
-      "target_address": "0x601bb0",
-      "text": "Direct CALL at 0060e547, ADD ESP at 0060e54c (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0060e55a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0060e55f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060e55f",
-      "target_address": "0x601df0",
-      "text": "Direct CALL at 0060e55a, ADD ESP at 0060e55f (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "0060e4f0",

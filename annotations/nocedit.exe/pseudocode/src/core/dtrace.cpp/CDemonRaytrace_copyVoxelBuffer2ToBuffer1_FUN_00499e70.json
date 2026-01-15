@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 109,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 49,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 137
@@ -148,19 +147,6 @@
       "match": "(SVoxelGrid *)((int)",
       "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "00499ea9",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00499eae",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "00499eae",
-      "target_address": "0x4952b0",
-      "text": "Direct CALL at 00499ea9, ADD ESP at 00499eae (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

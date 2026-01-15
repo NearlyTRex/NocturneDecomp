@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 161,
+    "complexity_score": 126,
     "cross_reference_count": 36,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 41,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "stack_param",
       "stack_ref"
@@ -368,45 +367,6 @@
       "match": "&stack0xffffff90",
       "text": "(out_position,input_vector,(CMatrix3x4f *)&stack0xffffff90);",
       "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0059fa60",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0059fa65",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 112,
-      "return_address": "0059fa65",
-      "target_address": "0x5a0820",
-      "text": "Direct CALL at 0059fa60, ADD ESP at 0059fa65 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0059fac6",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0059facb",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 112,
-      "return_address": "0059facb",
-      "target_address": "0x59f820",
-      "text": "Direct CALL at 0059fac6, ADD ESP at 0059facb (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0059fae2",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0059fae7",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 112,
-      "return_address": "0059fae7",
-      "target_address": "0x5f4dc0",
-      "text": "Direct CALL at 0059fae2, ADD ESP at 0059fae7 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "0059fac2",

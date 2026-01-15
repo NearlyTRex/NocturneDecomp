@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 101,
+    "complexity_score": 71,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
-      "callind_preserve",
       "param_count_too_few",
       "unaffected_reg",
-      "unresolved_funcptr",
-      "variadic_preserve"
+      "unresolved_funcptr"
     ],
     "total_lines": 51
   },
@@ -165,25 +163,6 @@
       "type": "unresolved_funcptr"
     },
     {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 36,
-        "reg": "EAX"
-      },
-      "callind_address": "004116eb",
-      "callind_assembly": "CALL dword ptr [EAX + 0x24]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -12,
-      "expected_esp_offset": -4,
-      "fix_address": "004116ee",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "004116ee",
-      "text": "CALLIND at 004116eb, ADD ESP at 004116ee (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -193,20 +172,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "004116b5",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "unknown",
-      "esp_certainty_at_call": "known",
-      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
-      "prologue_offset": 12,
-      "return_address": "004116ba",
-      "target_address": "0x441890",
-      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004116b5 (no EBP frame)",
-      "type": "variadic_preserve"
     }
   ]
 }

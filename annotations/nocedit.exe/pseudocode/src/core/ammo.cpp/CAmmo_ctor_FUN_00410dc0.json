@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 113,
+    "complexity_score": 78,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 28,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
       "negative_offset",
       "pointer_cast"
     ],
@@ -175,45 +174,6 @@
       "match": "this_ptr_00[-1].",
       "text": "return (CAmmo *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00410dc8",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00410dcd",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "00410dcd",
-      "target_address": "0x4088b0",
-      "text": "Direct CALL at 00410dc8, ADD ESP at 00410dcd (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00410dd6",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00410ddb",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "00410ddb",
-      "target_address": "0x478ce0",
-      "text": "Direct CALL at 00410dd6, ADD ESP at 00410ddb (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00410dfa",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00410dff",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "00410dff",
-      "target_address": "0x478dd0",
-      "text": "Direct CALL at 00410dfa, ADD ESP at 00410dff (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

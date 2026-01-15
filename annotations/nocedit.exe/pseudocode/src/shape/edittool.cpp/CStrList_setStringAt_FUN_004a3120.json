@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 71,
+    "complexity_score": 46,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 46,
-    "suspect_count": 2,
-    "suspect_types": [
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 136
   },
   "cross_references": [
@@ -178,34 +176,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "004a3154",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 20,
-      "return_address": "004a3159",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a3154 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "004a31e4",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 20,
-      "return_address": "004a31e9",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a31e4 (no EBP frame)",
-      "type": "variadic_preserve"
-    }
-  ]
+  "suspects": []
 }

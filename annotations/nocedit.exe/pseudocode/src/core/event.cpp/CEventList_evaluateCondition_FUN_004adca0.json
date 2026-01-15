@@ -1,16 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 63,
+    "complexity_score": 23,
     "cross_reference_count": 48,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 23,
-    "suspect_count": 3,
-    "suspect_types": [
-      "call_esp_preserve",
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 67
   },
   "cross_references": [
@@ -418,46 +415,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "004adcef",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
-      "prologue_offset": 20,
-      "return_address": "004adcf4",
-      "target_address": "0x441890",
-      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004adcef (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004adcb8",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004adcbd",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "004adcbd",
-      "target_address": "0x5fe7f0",
-      "text": "Direct CALL at 004adcb8, ADD ESP at 004adcbd (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004adcd2",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004adcd7",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "004adcd7",
-      "target_address": "0x4add80",
-      "text": "Direct CALL at 004adcd2, ADD ESP at 004adcd7 (no EBP frame)",
-      "type": "call_esp_preserve"
-    }
-  ]
+  "suspects": []
 }

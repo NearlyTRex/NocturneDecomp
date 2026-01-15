@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 133,
+    "complexity_score": 118,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 53,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "negative_offset",
       "pointer_cast"
@@ -157,19 +156,6 @@
       "match": "(char *)((int)",
       "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_id + 3);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005b159a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005b159f",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 56,
-      "return_address": "005b159f",
-      "target_address": "0x5441f0",
-      "text": "Direct CALL at 005b159a, ADD ESP at 005b159f (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "005b156f",

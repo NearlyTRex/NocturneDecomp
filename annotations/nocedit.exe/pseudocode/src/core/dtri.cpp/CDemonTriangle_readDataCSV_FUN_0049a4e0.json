@@ -1,16 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 40,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 10,
-    "suspect_count": 2,
-    "suspect_types": [
-      "call_esp_preserve",
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 42
   },
   "cross_references": [],
@@ -96,33 +93,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "0049a510",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
-      "prologue_offset": 44,
-      "return_address": "0049a515",
-      "target_address": "0x5fe7c0",
-      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 0049a510 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0049a519",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0049a51e",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 44,
-      "return_address": "0049a51e",
-      "target_address": "0x49a640",
-      "text": "Direct CALL at 0049a519, ADD ESP at 0049a51e (no EBP frame)",
-      "type": "call_esp_preserve"
-    }
-  ]
+  "suspects": []
 }

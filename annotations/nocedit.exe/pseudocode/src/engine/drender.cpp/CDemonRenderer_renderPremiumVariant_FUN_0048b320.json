@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 99,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
     "pseudocode_lines": 39,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 125
@@ -167,19 +166,6 @@
       "match": "(ushort *)((int)",
       "text": "g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(polygon_info->base).type + 2);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0048b3a1",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0048b3a6",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0048b3a6",
-      "target_address": "0x48a740",
-      "text": "Direct CALL at 0048b3a1, ADD ESP at 0048b3a6 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

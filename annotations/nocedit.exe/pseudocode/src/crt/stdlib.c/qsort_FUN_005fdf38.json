@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 533,
-    "complexity_score": 800,
+    "complexity_score": 720,
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 290,
-    "suspect_count": 46,
+    "suspect_count": 39,
     "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve",
       "concat_artifact",
       "extra_output",
       "lea_esp_stack_addr",
@@ -577,115 +575,6 @@
       "match": "(void *)((int)",
       "text": "local_4c = (void *)((int)local_4c + local_40);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 312,
-        "reg": "ESP"
-      },
-      "callind_address": "005fe099",
-      "callind_assembly": "CALL dword ptr [ESP + 0x138]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -372,
-      "expected_esp_offset": -364,
-      "fix_address": "005fe0a0",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 364,
-      "return_address": "005fe0a0",
-      "text": "CALLIND at 005fe099, ADD ESP at 005fe0a0 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 312,
-        "reg": "ESP"
-      },
-      "callind_address": "005fe2bd",
-      "callind_assembly": "CALL dword ptr [ESP + 0x138]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -372,
-      "expected_esp_offset": -364,
-      "fix_address": "005fe2c4",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 364,
-      "return_address": "005fe2c4",
-      "text": "CALLIND at 005fe2bd, ADD ESP at 005fe2c4 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 312,
-        "reg": "ESP"
-      },
-      "callind_address": "005fe35b",
-      "callind_assembly": "CALL dword ptr [ESP + 0x138]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -372,
-      "expected_esp_offset": -364,
-      "fix_address": "005fe362",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 364,
-      "return_address": "005fe362",
-      "text": "CALLIND at 005fe35b, ADD ESP at 005fe362 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "005fe1a5",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005fe1aa",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 364,
-      "return_address": "005fe1aa",
-      "target_address": "0x5fdea0",
-      "text": "Direct CALL at 005fe1a5, ADD ESP at 005fe1aa (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "005fe1c4",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005fe1c9",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 364,
-      "return_address": "005fe1c9",
-      "target_address": "0x5fdea0",
-      "text": "Direct CALL at 005fe1c4, ADD ESP at 005fe1c9 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "005fe1e6",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005fe1eb",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 364,
-      "return_address": "005fe1eb",
-      "target_address": "0x5fdea0",
-      "text": "Direct CALL at 005fe1e6, ADD ESP at 005fe1eb (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "005fe202",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005fe207",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 364,
-      "return_address": "005fe207",
-      "target_address": "0x5fdea0",
-      "text": "Direct CALL at 005fe202, ADD ESP at 005fe207 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "005fe243",

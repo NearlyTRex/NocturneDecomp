@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 363,
+    "complexity_score": 328,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 48,
-    "suspect_count": 30,
+    "suspect_count": 27,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "stack_param"
     ],
@@ -276,45 +275,6 @@
       "match": "in_stack_00000004",
       "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x104));",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043e1f8",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0043e1fd",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 92,
-      "return_address": "0043e1fd",
-      "target_address": "0x471d30",
-      "text": "Direct CALL at 0043e1f8, ADD ESP at 0043e1fd (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0043e230",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0043e235",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 92,
-      "return_address": "0043e235",
-      "target_address": "0x472030",
-      "text": "Direct CALL at 0043e230, ADD ESP at 0043e235 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0043e25f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0043e264",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 92,
-      "return_address": "0043e264",
-      "target_address": "0x472030",
-      "text": "Direct CALL at 0043e25f, ADD ESP at 0043e264 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "0043e1ee",

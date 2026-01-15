@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 381,
+    "complexity_score": 346,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 41,
-    "suspect_count": 32,
+    "suspect_count": 29,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
       "stack_param"
@@ -383,45 +382,6 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004f6064",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004f606c",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 32,
-      "return_address": "004f6069",
-      "target_address": "0x5e7830",
-      "text": "Direct CALL at 004f6064, ADD ESP at 004f606c (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004f60d5",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004f60df",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 32,
-      "return_address": "004f60da",
-      "target_address": "0x52db00",
-      "text": "Direct CALL at 004f60d5, ADD ESP at 004f60df (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004f6103",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004f6108",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 32,
-      "return_address": "004f6108",
-      "target_address": "0x52db00",
-      "text": "Direct CALL at 004f6103, ADD ESP at 004f6108 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "004f605b",

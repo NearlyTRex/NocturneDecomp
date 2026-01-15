@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 41,
+    "complexity_score": 26,
     "cross_reference_count": 14,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "variadic_preserve"
+      "param_count_too_few"
     ],
     "total_lines": 33
   },
@@ -292,20 +291,6 @@
       "param_delta": 4,
       "text": "Function declares 1 params but call sites push 5 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "0059a844",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 0,
-      "return_address": "0059a849",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0059a844 (no EBP frame)",
-      "type": "variadic_preserve"
     }
   ]
 }

@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 72,
+    "complexity_score": 32,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 17,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve",
       "special_crt_function"
     ],
     "total_lines": 61
@@ -180,51 +178,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 4,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6835944,
-      "callind_address": "0060674e",
-      "callind_assembly": "CALL dword ptr [0x00684ee8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -12,
-      "expected_esp_offset": -8,
-      "fix_address": "00606754",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00606754",
-      "text": "CALLIND at 0060674e, ADD ESP at 00606754 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6835948,
-      "callind_address": "00606768",
-      "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -12,
-      "expected_esp_offset": -8,
-      "fix_address": "0060676e",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "0060676e",
-      "text": "CALLIND at 00606768, ADD ESP at 0060676e (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00606734",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0060673e",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00606739",
-      "target_address": "0x602790",
-      "text": "Direct CALL at 00606734, ADD ESP at 0060673e (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "00606720",
       "crt_type": "runtime support",

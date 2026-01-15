@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 96,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
     "pseudocode_lines": 31,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "extra_output",
-      "variadic_preserve"
+      "extra_output"
     ],
     "total_lines": 93
   },
@@ -184,46 +182,6 @@
       "match": "extraout_EAX",
       "text": "return extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "call_address": "00451226",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 12,
-      "return_address": "0045122b",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00451226 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004511d8",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004511e3",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "004511dd",
-      "target_address": "0x453270",
-      "text": "Direct CALL at 004511d8, ADD ESP at 004511e3 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00451233",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00451238",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 12,
-      "return_address": "00451238",
-      "target_address": "0x5b7250",
-      "text": "Direct CALL at 00451233, ADD ESP at 00451238 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

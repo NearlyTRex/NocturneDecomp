@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 99,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 34,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast"
     ],
@@ -141,19 +140,6 @@
       "match": "(SMRGLHeaderExtended *)((int)",
       "text": "return (SMRGLHeaderExtended *)((int)anim_texture + anim_texture->frame_count * 0x20 + 0x1c);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0040512d",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00405135",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 40,
-      "return_address": "00405132",
-      "target_address": "0x5dd800",
-      "text": "Direct CALL at 0040512d, ADD ESP at 00405135 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "0040510a",

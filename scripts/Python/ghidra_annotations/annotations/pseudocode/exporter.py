@@ -75,6 +75,9 @@ from ghidra_annotations.annotations.pseudocode.decompiler_fixes import (
     preload_per_function_decompiler_fixes, load_decompiler_fixes_for_function
 )
 
+# Suspect types to omit from output (no longer useful after BADSPACEBASE fix)
+OMIT_SUSPECT_TYPES = {'call_esp_preserve', 'callind_preserve', 'variadic_preserve'}
+
 
 class PhaseTimer:
     """Simple timer for profiling export phases."""
@@ -325,6 +328,10 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     # Identify special functions (entry point, CRT, math intrinsics)
     special_suspects = identify_special_functions(partial_json_data, func_addr)
     suspects.extend(special_suspects)
+
+    # Filter out suspect types that are no longer useful
+    suspects = [s for s in suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
+    resolved_suspects = [s for s in resolved_suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
 
     # Calculate complexity metrics (Python-only)
     complexity = calculate_complexity_metrics(

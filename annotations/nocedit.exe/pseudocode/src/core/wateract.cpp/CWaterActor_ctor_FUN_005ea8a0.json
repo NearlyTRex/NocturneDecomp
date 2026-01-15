@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 325,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 55,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
-      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 133
@@ -339,19 +338,6 @@
       "match": "(CWaterActor *)((int)",
       "text": "return (CWaterActor *)((int)pvVar3 + -0x29c);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005ea8a7",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005ea8ac",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "005ea8ac",
-      "target_address": "0x4088b0",
-      "text": "Direct CALL at 005ea8a7, ADD ESP at 005ea8ac (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

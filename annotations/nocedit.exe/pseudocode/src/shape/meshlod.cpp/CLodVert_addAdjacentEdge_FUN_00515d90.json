@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 39,
+    "complexity_score": 14,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "variadic_preserve"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 48
   },
   "cross_references": [
@@ -142,34 +140,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "00515dc5",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "prologue_offset": 24,
-      "return_address": "00515dca",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 00515dc5 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "00515de8",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 24,
-      "return_address": "00515ded",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00515de8 (no EBP frame)",
-      "type": "variadic_preserve"
-    }
-  ]
+  "suspects": []
 }

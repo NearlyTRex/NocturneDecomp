@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 116,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 41,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "variadic_preserve"
+      "lea_esp_stack_addr"
     ],
     "total_lines": 105
   },
@@ -165,46 +163,6 @@
     ]
   },
   "suspects": [
-    {
-      "call_address": "004b1ef5",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 268,
-      "return_address": "004b1efa",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b1ef5 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004b1e88",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004b1e8d",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 268,
-      "return_address": "004b1e8d",
-      "target_address": "0x481f80",
-      "text": "Direct CALL at 004b1e88, ADD ESP at 004b1e8d (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "004b1ea2",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004b1ea7",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 268,
-      "return_address": "004b1ea7",
-      "target_address": "0x481f50",
-      "text": "Direct CALL at 004b1ea2, ADD ESP at 004b1ea7 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "004b1e7b",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

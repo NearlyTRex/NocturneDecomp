@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 75,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 35,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 91
@@ -144,19 +143,6 @@
       "match": "(int *)((int)",
       "text": "piVar5 = (int *)((int)allocation_indices->granules + local_14);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0052f8b7",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0052f8bc",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "0052f8bc",
-      "target_address": "0x52ef40",
-      "text": "Direct CALL at 0052f8b7, ADD ESP at 0052f8bc (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

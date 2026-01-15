@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 11,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 34
@@ -119,19 +118,6 @@
       "match": "in_stack_00000004",
       "text": "iVar1 = shape_cramtex_cpp_runInteractiveAtlasGeneration_FUN_00446160(in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00446127",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0044612c",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 8,
-      "return_address": "0044612c",
-      "target_address": "0x446160",
-      "text": "Direct CALL at 00446127, ADD ESP at 0044612c (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

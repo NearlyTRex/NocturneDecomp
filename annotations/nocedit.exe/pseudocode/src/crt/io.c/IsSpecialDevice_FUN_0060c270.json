@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 90,
+    "complexity_score": 35,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 20,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "callind_preserve",
       "special_crt_function"
     ],
     "total_lines": 63
@@ -132,86 +131,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 4,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6835944,
-      "callind_address": "0060c276",
-      "callind_assembly": "CALL dword ptr [0x00684ee8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -8,
-      "expected_esp_offset": -4,
-      "fix_address": "0060c282",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060c27c",
-      "text": "CALLIND at 0060c276, ADD ESP at 0060c282 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6836868,
-      "callind_address": "0060c28a",
-      "callind_assembly": "CALL dword ptr [0x00685284]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -8,
-      "expected_esp_offset": -4,
-      "fix_address": "0060c290",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060c290",
-      "text": "CALLIND at 0060c28a, ADD ESP at 0060c290 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6835948,
-      "callind_address": "0060c298",
-      "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -8,
-      "expected_esp_offset": -4,
-      "fix_address": "0060c2a3",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060c29e",
-      "text": "CALLIND at 0060c298, ADD ESP at 0060c2a3 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6835948,
-      "callind_address": "0060c2be",
-      "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -4,
-      "expected_esp_offset": 0,
-      "fix_address": "0060c2c9",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060c2c4",
-      "text": "CALLIND at 0060c2be, ADD ESP at 0060c2c9 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6835948,
-      "callind_address": "0060c2cf",
-      "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -4,
-      "expected_esp_offset": 0,
-      "fix_address": "0060c2d5",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "0060c2d5",
-      "text": "CALLIND at 0060c2cf, ADD ESP at 0060c2d5 (no EBP frame)",
-      "type": "callind_preserve"
-    },
     {
       "address": "0060c270",
       "crt_type": "runtime support",

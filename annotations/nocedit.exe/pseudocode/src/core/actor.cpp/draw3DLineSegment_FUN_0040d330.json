@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 233,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 68,
-    "suspect_count": 14,
+    "suspect_count": 11,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
@@ -333,45 +332,6 @@
       "match": "in_stack_ffffff50",
       "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff4c,in_stack_ffffff50);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0040d3ec",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0040d3f5",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 84,
-      "return_address": "0040d3f1",
-      "target_address": "0x5b575c",
-      "text": "Direct CALL at 0040d3ec, ADD ESP at 0040d3f5 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0040d42f",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0040d434",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 84,
-      "return_address": "0040d434",
-      "target_address": "0x5b575c",
-      "text": "Direct CALL at 0040d42f, ADD ESP at 0040d434 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 96,
-      "call_address": "0040d45b",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0040d460",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 84,
-      "return_address": "0040d460",
-      "target_address": "0x407d70",
-      "text": "Direct CALL at 0040d45b, ADD ESP at 0040d460 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "0040d38e",

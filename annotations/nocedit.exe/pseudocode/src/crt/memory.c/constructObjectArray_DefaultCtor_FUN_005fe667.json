@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 65,
+    "complexity_score": 50,
     "cross_reference_count": 85,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 20,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "callind_preserve",
       "pointer_cast",
       "special_crt_function"
     ],
@@ -625,22 +624,6 @@
       "match": "(void *)((int)",
       "text": "param0 = (void *)((int)param0 + iVar2);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "register",
-      "call_target_value": "ESI",
-      "callind_address": "005fe69f",
-      "callind_assembly": "CALL ESI",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -32,
-      "expected_esp_offset": -28,
-      "fix_address": "005fe6a1",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "005fe6a1",
-      "text": "CALLIND at 005fe69f, ADD ESP at 005fe6a1 (no EBP frame)",
-      "type": "callind_preserve"
     },
     {
       "address": "005fe667",

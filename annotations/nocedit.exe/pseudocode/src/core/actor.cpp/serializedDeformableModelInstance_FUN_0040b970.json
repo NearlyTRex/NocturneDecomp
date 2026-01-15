@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 87,
+    "complexity_score": 52,
     "cross_reference_count": 27,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr"
     ],
     "total_lines": 81
@@ -295,45 +294,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "add_esp_value": 8,
-      "call_address": "0040b995",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0040b99a",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 208,
-      "return_address": "0040b99a",
-      "target_address": "0x40b5c0",
-      "text": "Direct CALL at 0040b995, ADD ESP at 0040b99a (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0040b9a1",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0040b9a6",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 208,
-      "return_address": "0040b9a6",
-      "target_address": "0x5a0840",
-      "text": "Direct CALL at 0040b9a1, ADD ESP at 0040b9a6 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0040b9da",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0040b9df",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 208,
-      "return_address": "0040b9df",
-      "target_address": "0x40b5c0",
-      "text": "Direct CALL at 0040b9da, ADD ESP at 0040b9df (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "0040b990",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

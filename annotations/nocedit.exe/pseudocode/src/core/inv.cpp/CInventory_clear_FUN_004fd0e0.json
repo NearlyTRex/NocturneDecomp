@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 202,
+    "complexity_score": 172,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 32,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve",
       "param_count_too_few",
       "stack_param",
       "unaffected_reg",
@@ -234,25 +232,6 @@
       "type": "stack_param"
     },
     {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 228,
-        "reg": "EDX"
-      },
-      "callind_address": "004fd16b",
-      "callind_assembly": "CALL dword ptr [EDX + 0xe4]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -16,
-      "expected_esp_offset": -8,
-      "fix_address": "004fd171",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004fd171",
-      "text": "CALLIND at 004fd16b, ADD ESP at 004fd171 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
       "call_site_count": 3,
       "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -262,19 +241,6 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004fd103",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004fd10b",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 28,
-      "return_address": "004fd108",
-      "target_address": "0x4fea70",
-      "text": "Direct CALL at 004fd103, ADD ESP at 004fd10b (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

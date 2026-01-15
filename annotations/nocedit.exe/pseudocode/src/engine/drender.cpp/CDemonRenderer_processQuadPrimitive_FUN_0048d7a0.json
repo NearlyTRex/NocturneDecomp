@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 99,
+    "complexity_score": 64,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 39,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr"
     ],
     "total_lines": 132
@@ -174,45 +173,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 4,
-      "call_address": "0048d7b9",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0048d7be",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "0048d7be",
-      "target_address": "0x403950",
-      "text": "Direct CALL at 0048d7b9, ADD ESP at 0048d7be (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0048d834",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0048d83c",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "0048d839",
-      "target_address": "0x48d8a0",
-      "text": "Direct CALL at 0048d834, ADD ESP at 0048d83c (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0048d88d",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0048d892",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "0048d892",
-      "target_address": "0x48d8a0",
-      "text": "Direct CALL at 0048d88d, ADD ESP at 0048d892 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "0048d82e",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

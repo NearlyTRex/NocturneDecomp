@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 87,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve",
       "lea_esp_stack_addr"
     ],
     "total_lines": 59
@@ -136,51 +134,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 24,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 16,
-        "reg": "EAX"
-      },
-      "callind_address": "0043ec01",
-      "callind_assembly": "CALL dword ptr [EAX + 0x10]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -172,
-      "expected_esp_offset": -148,
-      "fix_address": "0043ec04",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 148,
-      "return_address": "0043ec04",
-      "text": "CALLIND at 0043ec01, ADD ESP at 0043ec04 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "0043ebc3",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0043ebc8",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 148,
-      "return_address": "0043ebc8",
-      "target_address": "0x5ff524",
-      "text": "Direct CALL at 0043ebc3, ADD ESP at 0043ebc8 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043ec10",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "0043ec15",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 148,
-      "return_address": "0043ec15",
-      "target_address": "0x5ff5ca",
-      "text": "Direct CALL at 0043ec10, ADD ESP at 0043ec15 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "0043ebbe",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

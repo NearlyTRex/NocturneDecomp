@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 74,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
     "pseudocode_lines": 24,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 72
@@ -142,45 +141,6 @@
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + 0x18) == 0) {",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005aa387",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005aa38c",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "005aa38c",
-      "target_address": "0x5fe7f0",
-      "text": "Direct CALL at 005aa387, ADD ESP at 005aa38c (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005aa394",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005aa399",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "005aa399",
-      "target_address": "0x5a62c0",
-      "text": "Direct CALL at 005aa394, ADD ESP at 005aa399 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005aa3b4",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005aa3b9",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
-      "return_address": "005aa3b9",
-      "target_address": "0x5aa2f0",
-      "text": "Direct CALL at 005aa3b4, ADD ESP at 005aa3b9 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

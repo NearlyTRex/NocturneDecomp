@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 447,
+    "complexity_score": 412,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 57,
-    "suspect_count": 36,
+    "suspect_count": 33,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
       "pointer_cast",
@@ -366,45 +365,6 @@
       "param_delta": 4,
       "text": "Function declares 1 params but call sites push 5 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0058011a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00580123",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 64,
-      "return_address": "0058011f",
-      "target_address": "0x44d2a0",
-      "text": "Direct CALL at 0058011a, ADD ESP at 00580123 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00580145",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0058014e",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 64,
-      "return_address": "0058014a",
-      "target_address": "0x44d370",
-      "text": "Direct CALL at 00580145, ADD ESP at 0058014e (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00580180",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00580185",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 64,
-      "return_address": "00580185",
-      "target_address": "0x5801b0",
-      "text": "Direct CALL at 00580180, ADD ESP at 00580185 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "00580112",

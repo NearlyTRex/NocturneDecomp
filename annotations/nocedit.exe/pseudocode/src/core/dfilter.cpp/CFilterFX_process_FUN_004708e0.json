@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 130,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 35,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_esp_preserve",
       "extra_output",
       "pointer_cast"
     ],
@@ -215,19 +214,6 @@
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004708f5",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004708fa",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "004708fa",
-      "target_address": "0x4701a0",
-      "text": "Direct CALL at 004708f5, ADD ESP at 004708fa (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

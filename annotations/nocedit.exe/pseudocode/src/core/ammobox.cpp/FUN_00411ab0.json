@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 65,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 25,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 60
@@ -110,19 +109,6 @@
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,g_CAmmoBoxClassInfo.name_hash);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00411abc",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00411ac7",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 8,
-      "return_address": "00411ac1",
-      "target_address": "0x40c790",
-      "text": "Direct CALL at 00411abc, ADD ESP at 00411ac7 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ]
 }

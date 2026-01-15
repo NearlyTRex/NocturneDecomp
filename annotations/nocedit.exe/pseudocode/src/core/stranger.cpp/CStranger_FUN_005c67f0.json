@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 71,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 16,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "callind_preserve",
       "stack_param"
     ],
     "total_lines": 49
@@ -103,38 +101,6 @@
       "match": "in_stack_00000008",
       "text": "if ((this_ptr->base_hero).base_character.carry_hands[in_stack_00000008].carry_actor ==",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 344,
-        "reg": "EAX"
-      },
-      "callind_address": "005c6839",
-      "callind_assembly": "CALL dword ptr [EAX + 0x158]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -16,
-      "expected_esp_offset": -8,
-      "fix_address": "005c683f",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "005c683f",
-      "text": "CALLIND at 005c6839, ADD ESP at 005c683f (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005c681b",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "005c6820",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "005c6820",
-      "target_address": "0x42cfe0",
-      "text": "Direct CALL at 005c681b, ADD ESP at 005c6820 (no EBP frame)",
-      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

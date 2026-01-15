@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 32,
     "function_call_count": 1,
     "global_count": 7,
     "pseudocode_lines": 22,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "variadic_preserve"
+      "pointer_cast"
     ],
     "total_lines": 62
   },
@@ -323,20 +322,6 @@
       "match": "(CSfxOptions *)((int)",
       "text": "pCVar3 = (CSfxOptions *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "call_address": "005a8c97",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 8,
-      "return_address": "005a8c9c",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a8c97 (no EBP frame)",
-      "type": "variadic_preserve"
     }
   ]
 }

@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 114,
+    "complexity_score": 44,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 19,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "variadic_preserve"
+      "lea_esp_stack_addr"
     ],
     "total_lines": 89
   },
@@ -139,88 +137,6 @@
     ]
   },
   "suspects": [
-    {
-      "call_address": "00453e88",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
-      "prologue_offset": 264,
-      "return_address": "00453e8d",
-      "target_address": "0x5fe7c0",
-      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00453e88 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "00453eb5",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
-      "prologue_offset": 264,
-      "return_address": "00453eba",
-      "target_address": "0x5fe7c0",
-      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00453eb5 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "00453ecb",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
-      "prologue_offset": 264,
-      "return_address": "00453ed0",
-      "target_address": "0x5fe7c0",
-      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00453ecb (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "call_address": "00453ef7",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
-      "prologue_offset": 264,
-      "return_address": "00453efc",
-      "target_address": "0x5fe7c0",
-      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00453ef7 (no EBP frame)",
-      "type": "variadic_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00453e71",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00453e76",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 264,
-      "return_address": "00453e76",
-      "target_address": "0x5fefd0",
-      "text": "Direct CALL at 00453e71, ADD ESP at 00453e76 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00453e9b",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00453ea0",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 264,
-      "return_address": "00453ea0",
-      "target_address": "0x5fefd0",
-      "text": "Direct CALL at 00453e9b, ADD ESP at 00453ea0 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "00453e6c",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 75,
+    "complexity_score": 50,
     "cross_reference_count": 8,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 10,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
       "register_param",
       "special_crt_function"
     ],
@@ -148,32 +147,6 @@
       "match": "in_DS",
       "text": "iVar1 = crt_debug_c_TriggerDebuggerBreak_FUN_0060b500(error_message,in_DS);",
       "type": "register_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0060666e",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00606673",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00606673",
-      "target_address": "0x60b500",
-      "text": "Direct CALL at 0060666e, ADD ESP at 00606673 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00606684",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00606689",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
-      "return_address": "00606689",
-      "target_address": "0x606620",
-      "text": "Direct CALL at 00606684, ADD ESP at 00606689 (no EBP frame)",
-      "type": "call_esp_preserve"
     },
     {
       "address": "00606660",

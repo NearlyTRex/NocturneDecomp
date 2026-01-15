@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 96,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 26,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr"
     ],
     "total_lines": 93
@@ -110,45 +109,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 20,
-      "call_address": "00551849",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00551850",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 528,
-      "return_address": "0055184e",
-      "target_address": "0x481f20",
-      "text": "Direct CALL at 00551849, ADD ESP at 00551850 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0055186b",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00551870",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 528,
-      "return_address": "00551870",
-      "target_address": "0x481f20",
-      "text": "Direct CALL at 0055186b, ADD ESP at 00551870 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0055187e",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "00551883",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 528,
-      "return_address": "00551883",
-      "target_address": "0x5fe7f0",
-      "text": "Direct CALL at 0055187e, ADD ESP at 00551883 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "00551833",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

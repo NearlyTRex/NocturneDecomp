@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 68,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 18,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
       "lea_esp_stack_addr"
     ],
     "total_lines": 58
@@ -119,45 +118,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 20,
-      "call_address": "004b41e6",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "computed",
-      "fix_address": "004b41eb",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 264,
-      "return_address": "004b41eb",
-      "target_address": "0x4b3f50",
-      "text": "Direct CALL at 004b41e6, ADD ESP at 004b41eb (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004b41fe",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004b4203",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 264,
-      "return_address": "004b4203",
-      "target_address": "0x4b35a0",
-      "text": "Direct CALL at 004b41fe, ADD ESP at 004b4203 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004b420e",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004b4213",
-      "match": "CALL...ADD ESP",
-      "prologue_offset": 264,
-      "return_address": "004b4213",
-      "target_address": "0x4b3220",
-      "text": "Direct CALL at 004b420e, ADD ESP at 004b4213 (no EBP frame)",
-      "type": "call_esp_preserve"
-    },
     {
       "address": "004b41d8",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",
