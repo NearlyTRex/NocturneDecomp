@@ -87,6 +87,23 @@ def normalize_string_name(string_name, max_length = 32):
         string_name = "s_" + string_name
     return string_name[:max_length]
 
+def sanitize_c_identifier(name):
+    if not name:
+        return "unnamed"
+    # Replace any character that's not alphanumeric or underscore with underscore
+    sanitized = re.sub(r'[^a-zA-Z0-9_]', '_', name)
+    # Collapse multiple underscores
+    sanitized = re.sub(r'_+', '_', sanitized)
+    # Strip leading/trailing underscores
+    sanitized = sanitized.strip('_')
+    # If empty after sanitization, use a placeholder
+    if not sanitized:
+        return "unnamed"
+    # If starts with digit, prepend underscore
+    if sanitized[0].isdigit():
+        sanitized = "_" + sanitized
+    return sanitized
+
 def read_ascii_string(memory, string_addr, max_len = 256):
     try:
         chars = bytearray()
@@ -156,6 +173,7 @@ def create_or_replace_string(currentProgram, string_addr):
         string_type = TerminatedStringDataType()
         string_name = normalize_string_name(string_value, max_length = 24)
         string_label = "s_%s_%s" % (string_name, string_addr.toString().replace("0x", ""))
+        string_label = sanitize_c_identifier(string_label)
         string_namespace = get_or_create_namespace(currentProgram, "Global")
 
         # Create new string
