@@ -733,7 +733,7 @@ LAB_0040fdd3:
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_25a4);
       do {
         pcVar8 = "disabled";
-        if ((*(uint *)this_ptr->data_ptr & *(uint *)((int)&DAT_0066e30c + iVar22)) != 0) {
+        if ((*(uint *)this_ptr->data_ptr & *(uint *)((int)&0x00000001 + iVar22)) != 0) {
           pcVar8 = "enable";
         }
         crt_stdio_c_sprintf_FUN_005fdbd0
@@ -745,7 +745,7 @@ LAB_0040fdd3:
       iVar15 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                          (&local_25a4,local_2a0,iVar15,0);
       if (iVar15 < 0) break;
-      *(uint *)this_ptr->data_ptr = *(uint *)this_ptr->data_ptr ^ (&DAT_0066e30c)[iVar15 * 2];
+      *(uint *)this_ptr->data_ptr = *(uint *)this_ptr->data_ptr ^ (&0x00000001)[iVar15 * 2];
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 (&local_25a4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                  (uint)in_stack_ffffc820,in_stack_ffffc824);

@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 140,
+    "complexity_score": 312,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
-    "pseudocode_lines": 115,
-    "suspect_count": 2,
+    "pseudocode_lines": 117,
+    "suspect_count": 18,
     "suspect_types": [
-      "stack_param"
+      "call_esp_anchor",
+      "stack_param",
+      "variadic_anchor"
     ],
-    "total_lines": 401
+    "total_lines": 403
   },
   "cross_references": [
     {
@@ -203,56 +205,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "0046833f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "0046835f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "00468390": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "004683b2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "0046840c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "00468425": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "00468488": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "004684bc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "00468517": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "00468542": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "0046855c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "00468577": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "0046858e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "004685ab": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "004685b9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ],
-    "004685cd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.057017543859649,
     "instruction_count": 228,
@@ -294,7 +246,114 @@
     },
     "pcode_op_count": 1153
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 624,
+    "local_size": 624,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_26c",
+        "offset": -620,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_264",
+        "offset": -612,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_25c",
+        "offset": -604,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_258",
+        "offset": -600,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24c",
+        "offset": -588,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6b",
+        "offset": -107,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffd94",
+      "text": "ulonglong in_stack_fffffd94;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_fffffd94",
+      "text": "for (local_18 = 0; pcVar5 = (char *)in_stack_fffffd94, local_18 < local_264.header.child_count",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 12,
       "call_address": "00468407",
@@ -508,115 +567,6 @@
       "target_address": "0x4681a0",
       "text": "Direct CALL at 004685c8, ADD ESP at 004685cd with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 624,
-    "local_size": 624,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_26c",
-        "offset": -620,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_264",
-        "offset": -612,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_25c",
-        "offset": -604,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_258",
-        "offset": -600,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24c",
-        "offset": -588,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_10c",
-        "offset": -268,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6b",
-        "offset": -107,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffffd94",
-      "text": "ulonglong in_stack_fffffd94;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_fffffd94",
-      "text": "for (local_18 = 0; pcVar5 = (char *)in_stack_fffffd94, local_18 < local_264.header.child_count",
-      "type": "stack_param"
     }
   ]
 }

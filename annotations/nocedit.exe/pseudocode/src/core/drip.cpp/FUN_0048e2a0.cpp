@@ -40,7 +40,7 @@ void core_drip_cpp_FUN_0048e2a0(void)
     ray_start = in_stack_00000004[2].orient_matrix.m + 1;
     local_48[0].x = ray_start->x;
     local_48[0].z = in_stack_00000004[2].orient_matrix.m[1].z;
-    local_48[0].y = in_stack_00000004[2].orient_matrix.m[1].y + -5000f;
+    local_48[0].y = in_stack_00000004[2].orient_matrix.m[1].y + -5000.0f;
     core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00495aa0
               (&g_CDemonRaytraceInstance,(CVector3f *)local_54,ray_start,local_48);
     in_stack_00000004[2].orient_matrix.m[0].x = 1.4013e-45;
@@ -80,9 +80,9 @@ void core_drip_cpp_FUN_0048e2a0(void)
           fVar8 = (float10)fcos((float10)fVar3);
           fVar9 = (float10)fsin((float10)fVar4);
           fVar10 = (float10)fsin((float10)fVar3);
-          fStack_28 = (float)(fVar10 * (float10)20f);
-          fStack_2c = (float)(fVar7 * (float10)20f * (float10)(float)fVar8);
-          fStack_24 = (float)(fVar9 * (float10)20f * (float10)(float)fVar8);
+          fStack_28 = (float)(fVar10 * (float10)20.0f);
+          fStack_2c = (float)(fVar7 * (float10)20.0f * (float10)(float)fVar8);
+          fStack_24 = (float)(fVar9 * (float10)20.0f * (float10)(float)fVar8);
           core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                     ((CKeyFramedModelInstance *)&DAT_02c9b170);
           iVar5 = iVar5 + 1;

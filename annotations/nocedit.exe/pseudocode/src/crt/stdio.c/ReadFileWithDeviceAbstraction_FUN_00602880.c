@@ -32,9 +32,9 @@ crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880
         return iVar1;
       }
     }
-    BVar2 = (*PTR_ReadFile_00611604)
-                      (g_IOControlBlock->standard_handles[file_handle_index],in_stack_00000010,
-                       in_stack_00000014,(LPDWORD)&stack0xfffffff4,(LPOVERLAPPED)0x0);
+    BVar2 = (*g_ReadFileFunc)(g_IOControlBlock->standard_handles[file_handle_index],
+                              in_stack_00000010,in_stack_00000014,(LPDWORD)&stack0xfffffff4,
+                              (LPOVERLAPPED)0x0);
     if (BVar2 == 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
       DVar3 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();

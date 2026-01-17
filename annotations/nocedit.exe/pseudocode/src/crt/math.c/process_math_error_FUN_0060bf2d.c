@@ -50,7 +50,7 @@ crt_math_c_process_math_error_FUN_0060bf2d(int errorFlags,double *value1,double 
   if ((errorFlags & 0x1000U) == 0) {
     if ((errorFlags & 0x2000U) == 0) {
       if ((errorFlags & 0x4000U) == 0) {
-        local_3c.resultValue = inf;
+        local_3c.resultValue = INFINITY;
         if ((errorFlags & 0x8000U) == 0) {
           local_3c.resultValue = *value2;
         }
@@ -64,7 +64,7 @@ crt_math_c_process_math_error_FUN_0060bf2d(int errorFlags,double *value1,double 
     }
   }
   else {
-    local_3c.resultValue = -inf;
+    local_3c.resultValue = -INFINITY;
   }
   local_3c.errorType = unaff_EBX;
   dVar1 = crt_math_c_report_math_error_FUN_0060e2e5(&local_3c);

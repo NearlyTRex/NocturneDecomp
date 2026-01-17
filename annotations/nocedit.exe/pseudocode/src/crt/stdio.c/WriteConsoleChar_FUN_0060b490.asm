@@ -12,7 +12,7 @@
 ;   crt_stdio.c_SetupConsoleInputMode_FUN_006059b0 at 006059c9
 ;
 ; Referenced Globals:
-;   WriteConsoleA* PTR_WriteConsoleA_00611674 = 002122f0
+;   WriteConsoleA* g_WriteConsoleAFunc = 002122f0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr = 00000000
@@ -58,7 +58,7 @@ section .text
     LEA EDX,[ESP + 0x10]                ; 0060b4d7
     PUSH EDX                            ; 0060b4db
     PUSH EAX                            ; 0060b4dc
-    CALL dword ptr CS:[0x611674]        ; 0060b4dd | PTR_WriteConsoleA_00611674
+    CALL dword ptr CS:[0x611674]        ; 0060b4dd | g_WriteConsoleAFunc
     PUSH 0x1                            ; 0060b4e4
     CALL dword ptr [0x00684eec]         ; 0060b4e6 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 0060b4ec

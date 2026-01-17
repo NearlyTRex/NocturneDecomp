@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 159,
+    "complexity_score": 339,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 4,
     "pseudocode_lines": 114,
-    "suspect_count": 4,
+    "suspect_count": 21,
     "suspect_types": [
-      "pointer_cast"
+      "call_esp_anchor",
+      "pointer_cast",
+      "stack_align_anchor"
     ],
     "total_lines": 370
   },
@@ -122,59 +124,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00574ba9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574bb5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574bda": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574c0d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574c2f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574c9c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574cd8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574d35": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574d41": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574d52": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574d6f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574d99": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574dbe": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574dcf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574ddb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574e01": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ],
-    "00574e0d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.685446009389671,
     "instruction_count": 213,
@@ -214,7 +163,159 @@
     },
     "pcode_op_count": 998
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZThumb *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "bounding_box_vertices",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "primitives",
+        "offset": 16,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "apply_scaling",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00574ba9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)",
+      "text": "uVar3 = *(uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(byte *)((int)",
+      "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(int *)((int)",
+      "text": "if (0 < *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(uint *)((int)",
+      "text": "puVar2 = (uint *)((int)aiStack_4c + iVar8);",
+      "type": "pointer_cast"
+    },
     {
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x3c",
@@ -432,160 +533,6 @@
       "target_address": "0x574ef0",
       "text": "Direct CALL at 00574e08, ADD ESP at 00574e0d with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 104,
-    "local_size": 84,
-    "param_offset": 4,
-    "param_size": 20,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CZThumb *"
-      },
-      {
-        "is_param": true,
-        "name": "actor",
-        "offset": 8,
-        "size": 4,
-        "type": "CDemonActor *"
-      },
-      {
-        "is_param": true,
-        "name": "bounding_box_vertices",
-        "offset": 12,
-        "size": 4,
-        "type": "CVector3i *"
-      },
-      {
-        "is_param": true,
-        "name": "primitives",
-        "offset": 16,
-        "size": 4,
-        "type": "SMRGLHeaderPrimitive *"
-      },
-      {
-        "is_param": true,
-        "name": "apply_scaling",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "00574ba9",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(uint *)((int)",
-      "text": "uVar3 = *(uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(byte *)((int)",
-      "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(int *)((int)",
-      "text": "if (0 < *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
-      "match": "(uint *)((int)",
-      "text": "puVar2 = (uint *)((int)aiStack_48 + iVar8);",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -130,7 +130,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
                     (this_ptr->base_enemy).base_character.base_actor.location.position.y,
             fVar6 = *(float *)(iVar9 + 0x28) -
                     (this_ptr->base_enemy).base_character.base_actor.location.position.z,
-            SQRT(fVar6 * fVar6 + fVar11 * fVar11 + fVar5 * fVar5) < 15f)) &&
+            SQRT(fVar6 * fVar6 + fVar11 * fVar11 + fVar5 * fVar5) < 15.0f)) &&
            (*(int *)(this_ptr->field1_0xbeb4 + 0x2480) == 0)) {
           uVar3 = *(uint *)(this_ptr->field1_0xbeb4 + 0x2478);
           this_ptr->field1_0xbeb4[0x2480] = '\x01';
@@ -217,7 +217,7 @@ LAB_005c6fd0:
             ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
   if ((*(int *)(this_ptr->field1_0xbeb4 + 0x2480) != 0) &&
      (fVar5 = *(float *)(this_ptr->field1_0xbeb4 + 0x2484) + in_stack_00000008,
-     *(float *)(this_ptr->field1_0xbeb4 + 0x2484) = fVar5, 4f < fVar5)) {
+     *(float *)(this_ptr->field1_0xbeb4 + 0x2484) = fVar5, 4.0f < fVar5)) {
     this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                             (0xbef0,"..\\core\\succubus.cpp",0x16c);
     this_ptr_01 = (CHotDemon *)0x0;

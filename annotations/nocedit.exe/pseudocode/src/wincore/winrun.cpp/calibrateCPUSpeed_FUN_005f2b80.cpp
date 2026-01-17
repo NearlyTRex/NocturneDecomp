@@ -17,19 +17,20 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80(void)
   int local_18;
   int local_14;
   
-  BVar1 = (*QueryPerformanceFrequency)(&g_PerformanceFrequency);
+  BVar1 = (*g_QueryPerformanceFrequencyFunc)(&g_PerformanceFrequency);
   if (BVar1 == 1) {
     g_TimerCalibration =
          (double)g_PerformanceFrequency._0_4_ +
          (double)g_PerformanceFrequency.s.HighPart * 4294967296;
-    (*QueryPerformanceCounter)(&g_PerformanceCounter);
+    (*g_QueryPerformanceCounterFunc)(&g_PerformanceCounter);
   }
   else {
     g_UseMultimediaTimer = 1;
-    MVar4 = (*timeBeginPeriod)(1);
+    MVar4 = (*g_timeBeginPeriodFunc)(1);
     if (MVar4 != 0) {
-      iVar2 = (*MessageBoxA)(g_MainWindowHandle,"Unable to set timer",
-                             g_ApplicationTimerTitle,0x31);
+      iVar2 = (*g_MessageBoxAFunc)
+                        (g_MainWindowHandle,"Unable to set timer",g_ApplicationTimerTitle,
+                         0x31);
       if (iVar2 == 2) {
         g_InputDisabled = 1;
       }

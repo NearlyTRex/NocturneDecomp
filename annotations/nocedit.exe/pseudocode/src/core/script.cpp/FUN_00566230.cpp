@@ -22,7 +22,7 @@ void core_script_cpp_FUN_00566230(void)
   int in_stack_00000008;
   
   bVar7 = 0;
-  pcVar5 = &DAT_00643f94;
+  pcVar5 = &0;
   if (-1 < in_stack_00000008) {
     iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
                       ((CBitFont *)(in_stack_00000004 + 0x38));

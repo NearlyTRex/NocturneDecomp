@@ -37,7 +37,7 @@ void core_script_cpp_FUN_005645d0(void)
     iVar1 = (DAT_0310fd48 - DAT_0310fcd8) * DAT_03114208 + DAT_031141e4;
     x1 = DAT_03114204 * (DAT_0310fd44 - DAT_0310fd0c) + DAT_031141e0;
     y = iVar1 + DAT_03114208 + -1;
-    if (DAT_0068105c == 0) {
+    if (0x00000001 == 0) {
       engine_2d_c_drawHLine_FUN_00402ee0(x1,y,DAT_03114204 + x1 + -1);
     }
     else {

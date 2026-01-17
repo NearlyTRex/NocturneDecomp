@@ -19,6 +19,6 @@ void __cdecl crt_exit_c_ExitProcess_FUN_00602700(int exit_code)
   else if (g_SpecialExitHandler != (code *)0x0) {
     (*g_SpecialExitHandler)();
   }
-  (*PTR_ExitProcess_00611534)(unaff_retaddr);
+  (*g_ExitProcessFunc)(unaff_retaddr);
   return;
 }

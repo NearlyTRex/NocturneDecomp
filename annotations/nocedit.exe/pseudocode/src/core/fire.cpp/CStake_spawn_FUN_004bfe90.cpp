@@ -39,7 +39,7 @@ core_fire_cpp_CStake_spawn_FUN_004bfe90
   local_38.z = 10.0;
   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_b4,&local_44,&local_38);
   local_14 = (launch_direction->z * local_44.z +
-             launch_direction->x * local_44.x + launch_direction->y * local_44.y) * 2f;
+             launch_direction->x * local_44.x + launch_direction->y * local_44.y) * 2.0f;
   local_68 = launch_direction->x * local_14;
   local_64 = launch_direction->y * local_14;
   local_60 = launch_direction->z * local_14;

@@ -1,18 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 159,
+    "complexity_score": 363,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
-    "pseudocode_lines": 94,
-    "suspect_count": 5,
+    "pseudocode_lines": 93,
+    "suspect_count": 24,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "pointer_cast",
       "stack_param",
+      "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 319
+    "total_lines": 318
   },
   "cross_references": [
     {
@@ -238,62 +241,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "0052061e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "0052062f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "00520638": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "00520663": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "0052066f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "0052069c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "005206fc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "0052070d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "0052072c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "0052079a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "005207b4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "005207c4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "005207db": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "005207f0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "0052080e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "00520820": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "00520834": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ],
-    "0052083d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.371727748691099,
     "instruction_count": 191,
@@ -333,7 +280,177 @@
     },
     "pcode_op_count": 835
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 252,
+    "local_size": 248,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_ffffff14",
+      "text": "CMatrix3x4f *in_stack_ffffff14;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._12_4_",
+      "text": "local_4c._12_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_ffffff14",
+      "text": "[DAT_02f33378].m,in_stack_ffffff14);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 58,
+      "match": "&stack0xffffff0c",
+      "text": "pfVar2 = (float *)&stack0xffffff0c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(CDemonActor *)((int)",
+      "text": "&(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field12_0xe0).z,0.0,-1);",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "0052062c",
@@ -565,171 +682,6 @@
       "target_address": "0x52dab0",
       "text": "Direct CALL at 00520838, ADD ESP at 0052083d with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 252,
-    "local_size": 248,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_f4",
-        "offset": -244,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_c4",
-        "offset": -196,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_94",
-        "offset": -148,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CMimic *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_fffffe8e",
-      "text": "CMatrix3x4f *in_stack_fffffe8e;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._12_4_",
-      "text": "local_4c._12_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_fffffe8e",
-      "text": "[DAT_02f33378].m,in_stack_fffffe8e);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(CDemonActor *)((int)",
-      "text": "&(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field12_0xe0).z,0.0,-1);",
-      "type": "pointer_cast"
     }
   ]
 }

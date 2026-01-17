@@ -25,9 +25,9 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
   float local_18;
   
   vertex_ptr = g_CDemonRendererPtr->vertex_buffer_ptr;
-  local_64.x = (int)ROUND((this_ptr->position).x * 256f);
-  local_64.y = (int)ROUND((this_ptr->position).y * 256f);
-  local_64.z = (int)ROUND((this_ptr->position).z * 256f);
+  local_64.x = (int)ROUND((this_ptr->position).x * 256.0f);
+  local_64.y = (int)ROUND((this_ptr->position).y * 256.0f);
+  local_64.z = (int)ROUND((this_ptr->position).z * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr->projected_vertex,&local_64);
   iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(g_CDemonRendererPtr,vertex_ptr);
   if (iVar2 != 0) {
@@ -47,9 +47,9 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     local_18 = this_ptr->drag_factor;
     local_54 = 0;
     local_64.z = (int)-local_18;
-    local_2c.x = (int)ROUND((float)local_64.z * 256f);
-    local_2c.y = (int)ROUND((float)local_64.z * 256f);
-    local_2c.z = (int)ROUND(256f * 0.0);
+    local_2c.x = (int)ROUND((float)local_64.z * 256.0f);
+    local_2c.y = (int)ROUND((float)local_64.z * 256.0f);
+    local_2c.z = (int)ROUND(256.0f * 0.0);
     local_58 = (float)local_64.z;
     local_20 = (float)local_64.z;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -63,17 +63,17 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     local_54 = 0;
     local_64.z = (int)local_18;
     local_58 = local_18;
-    local_38.x = (int)ROUND(local_18 * 256f);
-    local_38.y = (int)ROUND(local_18 * 256f);
-    local_38.z = (int)ROUND(256f * 0.0);
+    local_38.x = (int)ROUND(local_18 * 256.0f);
+    local_38.y = (int)ROUND(local_18 * 256.0f);
+    local_38.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_38);
     local_64.z = (int)local_20;
     local_58 = local_18;
     local_54 = 0;
-    local_50.x = (int)ROUND(local_20 * 256f);
-    local_50.y = (int)ROUND(local_18 * 256f);
-    local_50.z = (int)ROUND(256f * 0.0);
+    local_50.x = (int)ROUND(local_20 * 256.0f);
+    local_50.y = (int)ROUND(local_18 * 256.0f);
+    local_50.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_50);
     g_RenderVertexBuffer[0].u = 7.34684e-40;
@@ -84,9 +84,9 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     g_RenderVertexBuffer[2].v = 7.34684e-40;
     g_RenderVertexBuffer[3].u = 7.34684e-40;
     g_RenderVertexBuffer[3].v = 7.34684e-40;
-    local_44.x = (int)ROUND((this_ptr->position).x * 256f);
-    local_44.y = (int)ROUND((this_ptr->position).y * 256f);
-    local_44.z = (int)ROUND((this_ptr->position).z * 256f);
+    local_44.x = (int)ROUND((this_ptr->position).x * 256.0f);
+    local_44.y = (int)ROUND((this_ptr->position).y * 256.0f);
+    local_44.z = (int)ROUND((this_ptr->position).z * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
               (g_CDemonSetPtr,&local_44,&g_BillboardCameraUp,0,4);
     (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();

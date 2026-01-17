@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_startSoundThread_FUN_005abc00 at 005abc6c
 ;
 ; Referenced Globals:
-;   SetThreadPriority* SetThreadPriority = 002121f6
+;   SetThreadPriority* g_SetThreadPriorityFunc = 002121f6
 ;
 ; Called Functions:
 ;   SetThreadPriority
@@ -33,7 +33,7 @@ section .text
         ;   Label: LAB_005f40b2
     MOV EDX,dword ptr [ESP + 0x8]       ; 005f40b3
     PUSH EDX                            ; 005f40b7
-    CALL dword ptr CS:[0x61163c]        ; 005f40b8 | SetThreadPriority
+    CALL dword ptr CS:[0x61163c]        ; 005f40b8 | g_SetThreadPriorityFunc
     RET                                 ; 005f40bf
     XOR EAX,EAX                         ; 005f40c0
         ;   Label: LAB_005f40c0

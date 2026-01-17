@@ -89,7 +89,7 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
     local_e4 = position->y;
     local_e0.x = position->z;
   }
-  local_e4 = local_e4 + 2f;
+  local_e4 = local_e4 + 2.0f;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   this_ptr->field11_0x14d148 = -1;
   this_ptr->field12_0x14d14c = -1;
@@ -109,7 +109,7 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
       CStack_110.max.y = (float)local_f8._4_4_;
       local_f8._0_4_ = local_f8._12_4_;
     }
-    CStack_110.max.z = CStack_110.max.z + -10f;
+    CStack_110.max.z = CStack_110.max.z + -10.0f;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_180 + 0x28));
     auStack_180._40_4_ = 0.0;
     CStack_24.z = 0.0;

@@ -19,8 +19,8 @@
 ;   engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0 at 005f242a
 ;
 ; Referenced Globals:
-;   SetTextColor* SetTextColor = 00211800
-;   TextOutA* TextOutA = 00211810
+;   SetTextColor* g_SetTextColorFunc = 00211800
+;   TextOutA* g_TextOutAFunc = 00211810
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
@@ -152,27 +152,27 @@ section .text
     PUSH EDX                            ; 005f2555
     MOV ECX,dword ptr [EBX + 0x4]       ; 005f2556
     PUSH ECX                            ; 005f2559
-    CALL dword ptr CS:[0x6113f8]        ; 005f255a | SetTextColor
+    CALL dword ptr CS:[0x6113f8]        ; 005f255a | g_SetTextColorFunc
     PUSH ESI                            ; 005f2561
     PUSH EBP                            ; 005f2562
     PUSH 0x1                            ; 005f2563
     PUSH 0x1                            ; 005f2565
     MOV ESI,dword ptr [EBX + 0x4]       ; 005f2567
     PUSH ESI                            ; 005f256a
-    CALL dword ptr CS:[0x6113fc]        ; 005f256b | TextOutA
+    CALL dword ptr CS:[0x6113fc]        ; 005f256b | g_TextOutAFunc
     MOV EAX,dword ptr [ESP]             ; 005f2572
         ;   Label: LAB_005f2572
     PUSH EAX                            ; 005f2575
     MOV EDX,dword ptr [EBX + 0x4]       ; 005f2576
     PUSH EDX                            ; 005f2579
-    CALL dword ptr CS:[0x6113f8]        ; 005f257a | SetTextColor
+    CALL dword ptr CS:[0x6113f8]        ; 005f257a | g_SetTextColorFunc
     PUSH EDI                            ; 005f2581
     PUSH EBP                            ; 005f2582
     PUSH 0x0                            ; 005f2583
     PUSH 0x0                            ; 005f2585
     MOV ECX,dword ptr [EBX + 0x4]       ; 005f2587
     PUSH ECX                            ; 005f258a
-    CALL dword ptr CS:[0x6113fc]        ; 005f258b | TextOutA
+    CALL dword ptr CS:[0x6113fc]        ; 005f258b | g_TextOutAFunc
     MOV ESI,dword ptr [ESP + 0x44]      ; 005f2592
         ;   Label: LAB_005f2592
     MOV EAX,dword ptr [EBX + 0x120]     ; 005f2596

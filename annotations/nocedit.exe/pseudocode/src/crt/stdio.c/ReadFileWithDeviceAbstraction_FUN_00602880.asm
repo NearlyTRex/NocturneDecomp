@@ -13,7 +13,7 @@
 ;   crt_stdio.c_fread_FUN_005fd990 at 005fdaa9
 ;
 ; Referenced Globals:
-;   ReadFile* PTR_ReadFile_00611604 = 002120f2
+;   ReadFile* g_ReadFileFunc = 002120f2
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14
@@ -95,7 +95,7 @@ section .text
     PUSH EBP                            ; 0060290d
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 0060290e
     PUSH ESI                            ; 00602911
-    CALL dword ptr CS:[0x611604]        ; 00602912 | PTR_ReadFile_00611604
+    CALL dword ptr CS:[0x611604]        ; 00602912 | g_ReadFileFunc
     TEST EAX,EAX                        ; 00602919
     JNZ 0x00602934                      ; 0060291b
         ;   XREF to: 00602934 (CONDITIONAL_JUMP)  ; LAB_00602934

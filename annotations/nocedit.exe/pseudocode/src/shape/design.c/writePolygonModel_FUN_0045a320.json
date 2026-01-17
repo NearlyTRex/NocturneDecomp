@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 130,
+    "complexity_score": 253,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
-    "pseudocode_lines": 80,
-    "suspect_count": 4,
+    "pseudocode_lines": 78,
+    "suspect_count": 16,
     "suspect_types": [
-      "concat_artifact",
-      "format_string_mismatch"
+      "call_esp_anchor",
+      "format_string_mismatch",
+      "variadic_anchor"
     ],
-    "total_lines": 327
+    "total_lines": 325
   },
   "cross_references": [],
   "function": {
@@ -250,44 +251,6 @@
     "declared_params": 3,
     "estimated_params": 3
   },
-  "pcode_overrides": {
-    "0045a340": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a3fe": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a43f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a487": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a49b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a4c0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a50c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a53b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a587": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a5b4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a5e1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0045a5f8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.825242718446602,
     "instruction_count": 206,
@@ -324,7 +287,79 @@
     },
     "pcode_op_count": 1200
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "polygon_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "output_file",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "scale_factor",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
     {
       "add_esp_value": 12,
       "call_address": "0045a3f9",
@@ -486,6 +521,50 @@
       "type": "variadic_anchor"
     },
     {
+      "actual_args": 0,
+      "description": "Format \"\\tCOLOR\\t%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "\\tCOLOR\\t%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 36,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"\\tCOLOR\\t%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": ",%d",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 45,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"\\tTEXTURE\\t'%s'\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "\\tTEXTURE\\t'%s'\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 64,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"\\tTEXTURE\\t'%s'\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": ",%d",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 72,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
       "add_esp_value": 4,
       "call_address": "0045a33b",
       "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
@@ -510,120 +589,6 @@
       "target_address": "0x5fef20",
       "text": "Direct CALL at 0045a4bb, ADD ESP at 0045a4c0 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 60,
-    "local_size": 48,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "polygon_index",
-        "offset": 4,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "output_file",
-        "offset": 8,
-        "size": 4,
-        "type": "FILE *"
-      },
-      {
-        "is_param": true,
-        "name": "scale_factor",
-        "offset": 12,
-        "size": 4,
-        "type": "float"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 23,
-      "match": "CONCAT44",
-      "text": "uVar10 = CONCAT44 /* combine 2-byte values */(uVar8,0x45a376);",
-      "type": "concat_artifact"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": ",%d",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 47,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"\\tTEXTURE\\t'%s'\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "\\tTEXTURE\\t'%s'\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 66,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"\\tTEXTURE\\t'%s'\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": ",%d",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 74,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

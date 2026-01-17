@@ -19,10 +19,10 @@ shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
   int iVar6;
   double dVar7;
   CLodFace *face;
-  double dStack_34;
-  uint uStack_30;
-  CLodMesh *local_18;
-  int iStack_14;
+  double local_38;
+  uint uStack_34;
+  CLodMesh *local_1c;
+  int local_18;
   
   piVar4 = this_ptr->spatial_grid_ptr->cell_start_indices[grid_x][grid_y] + grid_z;
   iVar6 = *piVar4;
@@ -37,23 +37,23 @@ shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
          (g_LodGenerationStamp != pCVar3[iVar2].visited_stamp)) {
         pCVar3[iVar2].visited_stamp = g_LodGenerationStamp;
         iVar5 = 0;
-        iStack_14 = 0;
+        local_18 = 0;
         if (0 < g_SamplePointCount) {
-          local_18 = (CLodMesh *)g_SamplePointArray;
+          local_1c = (CLodMesh *)g_SamplePointArray;
           do {
             dVar7 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-                              (local_18,(SLodSamplePoint *)(this_ptr->tri_data + iVar2),face);
+                              (local_1c,(SLodSamplePoint *)(this_ptr->tri_data + iVar2),face);
             if (dVar7 < *(double *)((int)g_SampleDistances + iVar5)) {
               face = SUB84 /* extract 2-byte value */(dVar7,0);
               *(CLodFace **)((int)g_SampleDistances + iVar5) = face;
-              uStack_30 = (uint)((ulonglong)dVar7 >> 0x20);
-              *(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_30;
+              uStack_34 = (uint)((ulonglong)dVar7 >> 0x20);
+              *(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_34;
             }
             iVar5 = iVar5 + 8;
-            local_18 = (CLodMesh *)&local_18->tri_data;
-            iStack_14 = iStack_14 + 1;
-            dStack_34 = dVar7;
-          } while (iStack_14 < g_SamplePointCount);
+            local_1c = (CLodMesh *)&local_1c->tri_data;
+            local_18 = local_18 + 1;
+            local_38 = dVar7;
+          } while (local_18 < g_SamplePointCount);
         }
       }
     } while (iVar6 < iVar1 << 2);

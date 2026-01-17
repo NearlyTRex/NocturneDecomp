@@ -12,7 +12,7 @@
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f45d
 ;
 ; Referenced Globals:
-;   ExitProcess* PTR_ExitProcess_00611534 = 00211d12
+;   ExitProcess* g_ExitProcessFunc = 00211d12
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   void* PTR_crt_exit.c_ExitHookStub_FUN_0060b530_00685478 = 0060b530
 ;
@@ -50,5 +50,5 @@ section .text
         ;   Label: LAB_0061021f
     PUSH EBX                            ; 00610225
     CALL dword ptr CS:[0x611534]        ; 00610226
-        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; PTR_ExitProcess_00611534
+        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; g_ExitProcessFunc
 

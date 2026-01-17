@@ -1,17 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 459,
+    "complexity_score": 743,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 24,
-    "pseudocode_lines": 239,
-    "suspect_count": 21,
+    "pseudocode_lines": 243,
+    "suspect_count": 47,
     "suspect_types": [
+      "call_esp_anchor",
       "param_count_too_few",
-      "stack_param"
+      "stack_align_anchor",
+      "stack_param",
+      "stack_ref",
+      "variadic_anchor"
     ],
-    "total_lines": 663
+    "total_lines": 667
   },
   "cross_references": [
     {
@@ -289,65 +293,6 @@
     "declared_params": 0,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "004e3b9c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3bcf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3be2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3c09": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3c2f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3c40": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3c62": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3ca2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3cc1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3cdf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3dab": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3e2f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3e94": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3f06": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3f4c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3f72": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3f88": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e3fc1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ],
-    "004e4003": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffac0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.0573065902578795,
     "instruction_count": 349,
@@ -392,7 +337,331 @@
     },
     "pcode_op_count": 1765
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 1364,
+    "local_size": 1364,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_550",
+        "offset": -1360,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54c",
+        "offset": -1356,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_54b",
+        "offset": -1355,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14c",
+        "offset": -332,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14b",
+        "offset": -331,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004e3b9c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "CGame *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_fffffab0",
+      "text": "CGame *in_stack_fffffab0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004->field87_0x258 == 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_00000004,in_stack_fffffab0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_fffffab0",
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_00000004,in_stack_fffffab0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "for (fVar14 = 5.0; 0.0 < fVar14; fVar14 = fVar14 - in_stack_00000004->delta_time_float) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "core_game_cpp_CGame_rollCredits_FUN_004e4010(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->player_pos_y =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->player_rotation + in_stack_00000004->player_pos_y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->player_rotation + in_stack_00000004->player_pos_y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->game_state_flags =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->game_state_flags + (int)in_stack_00000004->player_pos_x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->game_state_flags + (int)in_stack_00000004->player_pos_x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000004",
+      "text": "fVar12 = (float10)in_stack_00000004->player_pos_y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->player_pos_y = (float)fVar12;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->player_pos_y = (float)fVar12;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_00000004",
+      "text": "fVar14 = in_stack_00000004->player_pos_y - (float)local_24;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 81,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->player_pos_y = fVar14;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 87,
+      "match": "&stack0xfffffaa4",
+      "text": "pcVar3 = &stack0xfffffaa4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 100,
+      "match": "&stack0xfffffaa4",
+      "text": "pcVar3 = &stack0xfffffaa4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 139,
+      "match": "&stack0xfffffaa4",
+      "text": "pcVar4 = &stack0xfffffaa4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 160,
+      "match": "&stack0xfffffaa4",
+      "text": "pcVar3 = &stack0xfffffaa4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 181,
+      "match": "&stack0xfffffaa4",
+      "text": "pcVar3 = &stack0xfffffaa4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 200,
+      "match": "in_stack_00000004",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_15c,\"%d\\n\\n\",in_stack_00000004->game_state_flags);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 203,
+      "match": "&stack0xfffffaa4",
+      "text": "pcVar4 = &stack0xfffffaa4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 226,
+      "match": "&stack0xfffffaa4",
+      "text": "(local_2c,&stack0xfffffaa4,&DAT_02d7d6f0,0x14,0x100,0xc0);",
+      "type": "stack_ref"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    },
     {
       "add_esp_value": 24,
       "call_address": "004e3e28",
@@ -642,283 +911,6 @@
       "target_address": "0x410540",
       "text": "Direct CALL at 004e3ffe, ADD ESP at 004e4003 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 1364,
-    "local_size": 1364,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_550",
-        "offset": -1360,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54c",
-        "offset": -1356,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_54b",
-        "offset": -1355,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14c",
-        "offset": -332,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14b",
-        "offset": -331,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004e3b9c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "CGame *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_fffffab0",
-      "text": "CGame *in_stack_fffffab0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004->field87_0x258 == 2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_00000004,in_stack_fffffab0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_fffffab0",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_00000004,in_stack_fffffab0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "for (fVar14 = 5.0; 0.0 < fVar14; fVar14 = fVar14 - in_stack_00000004->delta_time_float) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "core_game_cpp_CGame_rollCredits_FUN_004e4010(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->player_pos_y =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->player_rotation + in_stack_00000004->player_pos_y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->player_rotation + in_stack_00000004->player_pos_y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->game_state_flags =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->game_state_flags + (int)in_stack_00000004->player_pos_x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->game_state_flags + (int)in_stack_00000004->player_pos_x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000004",
-      "text": "fVar12 = (float10)in_stack_00000004->player_pos_y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->player_pos_y = (float)fVar12;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 72,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->player_pos_y = (float)fVar12;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000004",
-      "text": "fVar14 = in_stack_00000004->player_pos_y - (float)local_24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004->player_pos_y = fVar14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 196,
-      "match": "in_stack_00000004",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_14c,\"%d\\n\\n\",in_stack_00000004->game_state_flags);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

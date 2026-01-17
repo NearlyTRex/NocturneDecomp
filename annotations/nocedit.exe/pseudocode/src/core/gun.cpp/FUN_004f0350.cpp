@@ -19,25 +19,23 @@ uint core_gun_cpp_FUN_004f0350(void)
   CDemonActor *pCVar5;
   int extraout_EAX;
   CDemonActor *in_stack_00000004;
-  SCollisionInfo *collision_info;
   double dVar6;
-  SDamageInfo SStack_144;
+  CBoundingBox3D *pCVar7;
+  float in_stack_fffffec4;
+  CVector3f CStack_12c;
+  CVector3f CStack_11c;
+  int iStack_110;
+  CDemonActor *pCStack_10c;
   CMatrix3x3f CStack_108;
   CVector3f CStack_e0;
-  CVector3f CStack_d4;
-  float fStack_c8;
-  float fStack_c4;
-  float fStack_c0;
+  CVector3f aCStack_d4 [2];
   CVector3f CStack_bc;
   CVector3f CStack_b0;
-  CVector3f CStack_a4;
-  float fStack_98;
-  float fStack_94;
-  float fStack_90;
+  CVector3f aCStack_a4 [2];
   CVector3f CStack_8c;
   CVector3f CStack_80;
-  CVector3f CStack_74;
-  CVector3f aCStack_68 [2];
+  CVector3f aCStack_74 [2];
+  CVector3f CStack_5c;
   float fStack_50;
   float fStack_4c;
   float fStack_48;
@@ -49,7 +47,7 @@ uint core_gun_cpp_FUN_004f0350(void)
   CDemonActor *pCStack_28;
   CDemonActor *pCStack_24;
   int iStack_20;
-  float fStack_1c;
+  int iStack_1c;
   CGlass *pCStack_18;
   float fStack_14;
   
@@ -61,10 +59,10 @@ uint core_gun_cpp_FUN_004f0350(void)
               (g_CSoundPtr,in_stack_00000004,"45-dry-!.wav",&CStack_bc);
     return 0;
   }
-  CStack_a4.z = in_stack_00000004[2].orient.heading;
-  CStack_a4.x = 0.0;
-  CStack_a4.y = 0.0;
-  core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(in_stack_00000004,&CStack_38,&CStack_a4);
+  aCStack_a4[0].z = in_stack_00000004[2].orient.heading;
+  aCStack_a4[0].x = 0.0;
+  aCStack_a4[0].y = 0.0;
+  core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(in_stack_00000004,&CStack_38,aCStack_a4);
   CStack_b0.x = CStack_bc.x + CStack_38.x;
   CStack_b0.y = CStack_bc.y + CStack_38.y;
   CStack_b0.z = CStack_bc.z + CStack_38.z;
@@ -90,9 +88,8 @@ uint core_gun_cpp_FUN_004f0350(void)
     if ((dVar6 < 0.0) || (1.0 < dVar6)) break;
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
-    collision_info = SUB84 /* extract 2-byte value */(dVar6,0);
     if ((pCVar3 != (CDemonActor *)0x0) &&
-       (iVar2 = (*pCVar3->vtable[1].hasCollision)(pCVar3,collision_info), 0 < iVar2)) {
+       (iVar2 = (*pCVar3->vtable[1].hasCollision)(pCVar3,SUB84 /* extract 2-byte value */(dVar6,0)), 0 < iVar2)) {
       pCVar3 = (CDemonActor *)0x0;
     }
     pCStack_18 = (CGlass *)
@@ -121,10 +118,10 @@ uint core_gun_cpp_FUN_004f0350(void)
         }
         else {
           core_trigger_cpp_FUN_005e0aa0();
+          pCVar7 = SUB84 /* extract 2-byte value */(dVar6,0);
           iVar2 = core_trigger_cpp_FUN_005e0ac0();
           if (iVar2 != 0) {
-            (*in_stack_00000004->vtable[1].getBoundingBox)
-                      (in_stack_00000004,(CBoundingBox3D *)collision_info);
+            (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,pCVar7);
             core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
           }
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCStack_28);
@@ -140,8 +137,9 @@ uint core_gun_cpp_FUN_004f0350(void)
     else {
       iVar2 = (*pCVar3->vtable[1].renderOpaque)(pCVar3);
       this_ptr = g_CDemonSetPtr;
+      pCVar7 = (CBoundingBox3D *)((ulonglong)dVar6 >> 0x20);
       if (iVar2 != 0) {
-        if (iStack_20 == 0) {
+        if (iStack_1c == 0) {
           *(int *)(in_stack_00000004[4].actor_name + 8) =
                *(int *)(in_stack_00000004[4].actor_name + 8) + 1;
           core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(this_ptr);
@@ -149,43 +147,40 @@ uint core_gun_cpp_FUN_004f0350(void)
         }
         break;
       }
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_144);
-      SStack_144.field0_0x0 = g_CDemonSetPtr->field11_0x14d148;
-      SStack_144.damage_amount =
-           (float)(*in_stack_00000004->vtable[1].getBoundingBox)
-                            (in_stack_00000004,(CBoundingBox3D *)collision_info);
-      SStack_144.damage_flags = 0x3ecccccd;
-      fStack_c8 = (g_CDemonSetPtr->collision_result_vec2).x -
-                  (g_CDemonSetPtr->collision_result_vec1).x;
-      fStack_c4 = (g_CDemonSetPtr->collision_result_vec2).y -
-                  (g_CDemonSetPtr->collision_result_vec1).y;
-      fStack_c0 = (g_CDemonSetPtr->collision_result_vec2).z -
-                  (g_CDemonSetPtr->collision_result_vec1).z;
-      fStack_1c = (float)10 /
-                  SQRT(fStack_c0 * fStack_c0 + fStack_c8 * fStack_c8 + fStack_c4 * fStack_c4);
-      fStack_98 = fStack_c8 * fStack_1c;
-      fStack_94 = fStack_c4 * fStack_1c;
-      fStack_90 = fStack_c0 * fStack_1c;
-      if (&SStack_144.impact_point != (CVector3f *)&fStack_98) {
-        SStack_144.impact_point.x = fStack_98;
-        SStack_144.impact_point.y = fStack_94;
-        SStack_144.impact_point.z = fStack_90;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec0);
+      (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,pCVar7);
+      CStack_bc.x = (g_CDemonSetPtr->collision_result_vec2).x -
+                    (g_CDemonSetPtr->collision_result_vec1).x;
+      CStack_bc.y = (g_CDemonSetPtr->collision_result_vec2).y -
+                    (g_CDemonSetPtr->collision_result_vec1).y;
+      CStack_bc.z = (g_CDemonSetPtr->collision_result_vec2).z -
+                    (g_CDemonSetPtr->collision_result_vec1).z;
+      CStack_8c.z = (float)10 /
+                    SQRT(CStack_bc.z * CStack_bc.z +
+                         CStack_bc.x * CStack_bc.x + CStack_bc.y * CStack_bc.y);
+      CStack_8c.x = CStack_bc.x * CStack_8c.z;
+      CStack_8c.y = CStack_bc.y * CStack_8c.z;
+      CStack_8c.z = CStack_bc.z * CStack_8c.z;
+      if (&CStack_12c != &CStack_8c) {
+        CStack_12c.x = CStack_8c.x;
+        CStack_12c.y = CStack_8c.y;
+        CStack_12c.z = CStack_8c.z;
       }
       pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (pCVar3,aCStack_68,&g_CDemonSetPtr->collision_impact_position);
-      if (&SStack_144.impact_direction != pCVar1) {
-        SStack_144.impact_direction.x = pCVar1->x;
-        SStack_144.impact_direction.y = pCVar1->y;
-        SStack_144.impact_direction.z = pCVar1->z;
+                         (pCVar3,&CStack_5c,&g_CDemonSetPtr->collision_impact_position);
+      if (&CStack_11c != pCVar1) {
+        CStack_11c.x = pCVar1->x;
+        CStack_11c.y = pCVar1->y;
+        CStack_11c.z = pCVar1->z;
       }
-      SStack_144.ammo_type = *(int *)(in_stack_00000004[4].actor_name + 0xc);
-      SStack_144.weapon_damage_modifier = 0.15;
-      SStack_144.attacker = in_stack_00000004;
-      SStack_144.damage_type = 0x65;
-      SStack_144.wielder = (*in_stack_00000004->vtable->getCarrier)(in_stack_00000004);
-      (*pCVar3->vtable[1].playAmbientSoundWithVolume)
-                (pCVar3,(char *)&SStack_144,(float)collision_info);
+      iStack_110 = *(int *)(in_stack_00000004[4].actor_name + 0xc);
+      pCStack_10c = (CDemonActor *)0x3e19999a;
+      CStack_108.m[0].y = (float)in_stack_00000004;
+      CStack_108.m[0].x = 1.41531e-43;
+      CStack_108.m[1].x = (float)(*in_stack_00000004->vtable->getCarrier)(in_stack_00000004);
+      (*pCVar3->vtable[1].playAmbientSoundWithVolume)(pCVar3,&stack0xfffffecc,in_stack_fffffec4);
       if (in_stack_00000004[2].orient.bank == 0.0) break;
+      in_stack_fffffec4 = 7.258652e-39;
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
     }
@@ -202,16 +197,16 @@ uint core_gun_cpp_FUN_004f0350(void)
   CStack_8c.x = 3.0;
   CStack_8c.y = 3.0;
   CStack_8c.z = -4.0;
-  CStack_d4.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.3926991,0.3926991);
-  fStack_14 = CStack_d4.x;
-  CStack_d4.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.3926991,0.3926991);
-  CStack_d4.z = 0.0;
-  fStack_14 = CStack_d4.y;
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_108,&CStack_d4);
+  aCStack_d4[0].x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.3926991,0.3926991);
+  fStack_14 = aCStack_d4[0].x;
+  aCStack_d4[0].y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.3926991,0.3926991);
+  aCStack_d4[0].z = 0.0;
+  fStack_14 = aCStack_d4[0].y;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_108,aCStack_d4);
   pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                      (&CStack_108,&CStack_80,&CStack_8c);
   pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                     (in_stack_00000004,&CStack_74,pCVar1);
+                     (in_stack_00000004,aCStack_74,pCVar1);
   if (&CStack_8c != pCVar1) {
     CStack_8c.x = pCVar1->x;
     CStack_8c.y = pCVar1->y;

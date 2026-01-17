@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 130,
+    "complexity_score": 230,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 6,
     "pseudocode_lines": 105,
-    "suspect_count": 2,
+    "suspect_count": 11,
     "suspect_types": [
-      "pointer_cast"
+      "call_esp_anchor",
+      "pointer_cast",
+      "variadic_anchor"
     ],
     "total_lines": 332
   },
@@ -124,35 +126,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004b7d82": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ],
-    "004b7dbf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ],
-    "004b7dce": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ],
-    "004b7deb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ],
-    "004b7e30": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ],
-    "004b7e6a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ],
-    "004b7e7a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ],
-    "004b7e95": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ],
-    "004b7ee3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffefc,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.64,
     "instruction_count": 175,
@@ -185,7 +158,93 @@
     },
     "pcode_op_count": 812
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 308,
+    "local_size": 280,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "source_file",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "dest_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "name_or_offset",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file_size",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "file_offset",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "checksum",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "timestamp",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 12,
       "call_address": "004b7e90",
@@ -305,94 +364,6 @@
       "target_address": "0x5fe840",
       "text": "Direct CALL at 004b7ede, ADD ESP at 004b7ee3 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 308,
-    "local_size": 280,
-    "param_offset": 4,
-    "param_size": 28,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_114",
-        "offset": -276,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "source_file",
-        "offset": 4,
-        "size": 4,
-        "type": "FILE *"
-      },
-      {
-        "is_param": true,
-        "name": "dest_filename",
-        "offset": 8,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "name_or_offset",
-        "offset": 12,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "file_size",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "file_offset",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "checksum",
-        "offset": 24,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "timestamp",
-        "offset": 28,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;",
-      "type": "pointer_cast"
     }
   ]
 }

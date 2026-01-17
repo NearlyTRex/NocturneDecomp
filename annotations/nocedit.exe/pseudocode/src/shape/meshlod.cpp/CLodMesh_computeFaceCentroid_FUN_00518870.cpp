@@ -35,7 +35,7 @@ shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870
   fVar6 = pCVar10[iVar7].position.z;
   out_centroid->x =
        (pCVar10[iVar8].position.x + pCVar10[iVar9].position.x + pCVar10[iVar7].position.x) /
-       3f;
+       3.0f;
   fVar11 = 0.3333333f;
   out_centroid->y = (fVar1 + fVar2 + fVar5) * 0.3333333f;
   out_centroid->z = fVar11 * (fVar3 + fVar4 + fVar6);

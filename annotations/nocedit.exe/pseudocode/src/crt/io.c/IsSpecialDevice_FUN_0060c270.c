@@ -20,7 +20,7 @@ int __cdecl crt_io_c_IsSpecialDevice_FUN_0060c270(int handle_index)
       return 1;
     }
   }
-  DVar2 = (*PTR_GetFileType_0061159c)(g_IOControlBlock->standard_handles[handle_index]);
+  DVar2 = (*g_GetFileTypeFunc)(g_IOControlBlock->standard_handles[handle_index]);
   if (DVar2 == 2) {
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(handle_index);
     return 1;

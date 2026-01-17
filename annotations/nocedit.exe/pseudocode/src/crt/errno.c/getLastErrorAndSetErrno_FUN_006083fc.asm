@@ -18,7 +18,7 @@
 ;   ... and 12 more
 ;
 ; Referenced Globals:
-;   GetLastError* GetLastError = 00211f22
+;   GetLastError* g_GetLastErrorFunc = 00211f22
 ;
 ; Called Functions:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390
@@ -28,7 +28,7 @@
 
 section .text
 
-    CALL dword ptr CS:[0x6115a4]        ; 006083fc | GetLastError
+    CALL dword ptr CS:[0x6115a4]        ; 006083fc | g_GetLastErrorFunc
         ;   Label: crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
     PUSH EAX                            ; 00608403
     CALL crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 ; 00608404

@@ -18,19 +18,19 @@ shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0
   CLodVert *pCVar5;
   CLodEdge *pCVar6;
   int iVar7;
-  CLodVert *local_18;
-  int iStack_14;
+  CLodVert *local_1c;
+  int local_18;
   
   pCVar5 = this_ptr->vertex_data;
   out_normal->x = 0.0;
   out_normal->y = 0.0;
   pCVar5 = pCVar5 + vertex_index;
   out_normal->z = 0.0;
-  iStack_14 = 0;
-  local_18 = pCVar5;
+  local_18 = 0;
+  local_1c = pCVar5;
   if (0 < pCVar5->adjacent_edge_count) {
     do {
-      pCVar1 = this_ptr->edges_ptr + local_18->adjacent_edge_indices[0];
+      pCVar1 = this_ptr->edges_ptr + local_1c->adjacent_edge_indices[0];
       iVar7 = 0;
       pCVar6 = pCVar1;
       if (0 < pCVar1->adjacent_tri_count) {
@@ -44,9 +44,9 @@ shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0
           pCVar6 = (CLodEdge *)&pCVar6->vertex_idx_2;
         } while (iVar7 < pCVar1->adjacent_tri_count);
       }
-      iStack_14 = iStack_14 + 1;
-      local_18 = (CLodVert *)&(local_18->position).y;
-    } while (iStack_14 < pCVar5->adjacent_edge_count);
+      local_18 = local_18 + 1;
+      local_1c = (CLodVert *)&(local_1c->position).y;
+    } while (local_18 < pCVar5->adjacent_edge_count);
   }
   fVar4 = SQRT(out_normal->z * out_normal->z +
                out_normal->x * out_normal->x + out_normal->y * out_normal->y);

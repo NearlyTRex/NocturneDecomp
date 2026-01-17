@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 146,
+    "complexity_score": 181,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 81,
-    "suspect_count": 5,
+    "suspect_count": 8,
     "suspect_types": [
+      "call_esp_anchor",
       "concat_artifact",
       "stack_param",
       "sub_artifact"
@@ -132,17 +133,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "00461fdd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "00461fe9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "00462022": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 8.794871794871796,
     "instruction_count": 117,
@@ -183,47 +173,6 @@
     },
     "pcode_op_count": 1029
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 4,
-      "call_address": "00461fd8",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00461fdd",
-      "frame_offset": 140,
-      "match": "CALL...ADD ESP",
-      "return_address": "00461fdd",
-      "target_address": "0x461e60",
-      "text": "Direct CALL at 00461fd8, ADD ESP at 00461fdd with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00461fe4",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00461fe9",
-      "frame_offset": 140,
-      "match": "CALL...ADD ESP",
-      "return_address": "00461fe9",
-      "target_address": "0x461e60",
-      "text": "Direct CALL at 00461fe4, ADD ESP at 00461fe9 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0046200b",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00462022",
-      "frame_offset": 140,
-      "match": "CALL...ADD ESP",
-      "return_address": "00462010",
-      "target_address": "0x461c50",
-      "text": "Direct CALL at 0046200b, ADD ESP at 00462022 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 172,
     "local_size": 168,
@@ -422,6 +371,45 @@
       "match": "SUB84",
       "text": "in_stack_ffffff64 = SUB84 /* extract 2-byte value */(dVar5,0);",
       "type": "sub_artifact"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00461fd8",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00461fdd",
+      "frame_offset": 140,
+      "match": "CALL...ADD ESP",
+      "return_address": "00461fdd",
+      "target_address": "0x461e60",
+      "text": "Direct CALL at 00461fd8, ADD ESP at 00461fdd with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00461fe4",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00461fe9",
+      "frame_offset": 140,
+      "match": "CALL...ADD ESP",
+      "return_address": "00461fe9",
+      "target_address": "0x461e60",
+      "text": "Direct CALL at 00461fe4, ADD ESP at 00461fe9 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0046200b",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00462022",
+      "frame_offset": 140,
+      "match": "CALL...ADD ESP",
+      "return_address": "00462010",
+      "target_address": "0x461c50",
+      "text": "Direct CALL at 0046200b, ADD ESP at 00462022 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

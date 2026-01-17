@@ -13,6 +13,7 @@ core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel *this
   char cVar1;
   SMRGLPrimitiveQuad *pSVar2;
   bool bVar3;
+  FILE *file;
   int iVar4;
   int iVar5;
   FILE *pFVar6;
@@ -33,13 +34,11 @@ core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel *this
   char *pcVar12;
   float10 fVar13;
   double dVar14;
-  FILE *pFVar15;
-  uint in_stack_fffff302;
-  uint in_stack_fffff306;
-  uint in_stack_fffff30a;
-  uint in_stack_fffff30e;
-  uint in_stack_fffff312;
-  CPickList local_c84;
+  uint in_stack_fffff37c;
+  uint in_stack_fffff380;
+  char **in_stack_fffff384;
+  CStrList_vtable *in_stack_fffff388;
+  uint in_stack_fffff38c;
   uchar auStack_8dc [300];
   char local_7b0 [260];
   char local_6ac [260];
@@ -170,21 +169,21 @@ LAB_00479441:
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Importing textures",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_c84);
+    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff37c);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_c84.base_strlist,"Don't copy textures.");
+              ((CStrList *)&stack0xfffff37c,"Don't copy textures.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_c84.base_strlist,"Copy textures from another directory to art directory.");
+              ((CStrList *)&stack0xfffff37c,"Copy textures from another directory to art directory.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              (&local_c84.base_strlist,"Copy textures from path specified in .S3D file to art directory.");
+              ((CStrList *)&stack0xfffff37c,"Copy textures from path specified in .S3D file to art directory.");
     local_28 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                         (&local_c84,"What do you want to do about the textures?",-1,0);
+                         ((CPickList *)&stack0xfffff37c,"What do you want to do about the textures?",-1,0);
     if (local_28 < 0) {
 LAB_00479719:
       core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,
-                 in_stack_fffff30e,in_stack_fffff312);
+                ((CPickList *)&stack0xfffff37c,0,in_stack_fffff37c,in_stack_fffff380,
+                 (uint)in_stack_fffff384,(uint)in_stack_fffff388,in_stack_fffff38c);
       return;
     }
     if (local_28 == 1) {
@@ -205,8 +204,8 @@ LAB_00479719:
       pcVar12 = crt_stdio_c_fgets_FUN_005fefd0(local_6ac,0x104,local_20);
       if (pcVar12 == (char *)0x0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,
-                   in_stack_fffff30e,in_stack_fffff312);
+                  ((CPickList *)&stack0xfffff37c,0,in_stack_fffff37c,in_stack_fffff380,
+                   (uint)in_stack_fffff384,(uint)in_stack_fffff388,in_stack_fffff38c);
         goto LAB_00479417;
       }
       pcVar12 = local_6ac;
@@ -298,8 +297,8 @@ LAB_004797c3:
                          &local_74,local_7c,local_64,local_70,local_78,local_60,local_6c);
       if (iVar4 != 10) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,
-                   in_stack_fffff30e,in_stack_fffff312);
+                  ((CPickList *)&stack0xfffff37c,0,in_stack_fffff37c,in_stack_fffff380,
+                   (uint)in_stack_fffff384,(uint)in_stack_fffff388,in_stack_fffff38c);
         goto LAB_00479417;
       }
       if (local_44 < 0) {
@@ -320,7 +319,7 @@ LAB_004797c3:
         dVar14 = crt_math_c_round_FUN_005fe6b0((double)((float10)(&local_68)[iVar4] * fVar13));
         local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
         ppSVar8[iVar4 * 3 + 7] = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
-        in_stack_fffff302 = 0x479af8;
+        in_stack_fffff37c = 0x479af8;
         dVar14 = crt_math_c_round_FUN_005fe6b0
                            ((double)(fVar13 * (float10)(&local_74)[extraout_ECX]));
         local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
@@ -355,14 +354,15 @@ LAB_004797c3:
       dVar14 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_3c * fVar13));
       local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
       *(SMRGLPrimitiveQuad **)(extraout_EAX_00 + extraout_EDX_01 + 4) = local_1c;
+      in_stack_fffff37c = 0x479c06;
       dVar14 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_38 * fVar13));
       local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
       iVar9 = iVar9 + 1;
       *(SMRGLPrimitiveQuad **)(extraout_EDX_02 + extraout_EAX_01 + 8) = local_1c;
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,in_stack_fffff30e,
-               in_stack_fffff312);
+              ((CPickList *)&stack0xfffff37c,0,in_stack_fffff37c,in_stack_fffff380,
+               (uint)in_stack_fffff384,(uint)in_stack_fffff388,in_stack_fffff38c);
   } while( true );
 LAB_00479b74:
   if (iVar9 < 1) goto LAB_00479c53;
@@ -390,8 +390,8 @@ LAB_00479c73:
       core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
       this_ptr->transparent_pixel_flag = 0;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,
-                 in_stack_fffff30e,in_stack_fffff312);
+                ((CPickList *)&stack0xfffff37c,0,in_stack_fffff37c,in_stack_fffff380,
+                 (uint)in_stack_fffff384,(uint)in_stack_fffff388,in_stack_fffff38c);
       return;
     }
     iVar9 = crt_string_c_stricmp_FUN_005fe7f0(local_a0,"matProp");
@@ -413,22 +413,21 @@ LAB_00479c73:
     pFVar6 = local_20;
     iVar9 = 3;
     do {
-      pFVar15 = pFVar6;
       iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar6);
       if (iVar4 < 0) break;
     } while ((iVar4 != 10) || (iVar9 = iVar9 + -1, 0 < iVar9));
     for (iVar9 = 0; pFVar6 = local_20, iVar9 < this_ptr->texture_count; iVar9 = iVar9 + 1) {
       local_2c = 0.0;
-      crt_stdio_c_fscanf_FUN_005fe7c0(local_20,"%f, %*f, %*f\n",&local_2c,pFVar15);
+      crt_stdio_c_fscanf_FUN_005fe7c0(local_20,"%f, %*f, %*f\n",&local_2c);
       iVar4 = 1;
       do {
         iVar5 = crt_stdio_c_fgetc_FUN_005fe840(pFVar6);
-        pFVar15 = local_20;
+        file = local_20;
         if (iVar5 < 0) break;
       } while ((iVar5 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
       iVar4 = 1;
       do {
-        iVar5 = crt_stdio_c_fgetc_FUN_005fe840(pFVar15);
+        iVar5 = crt_stdio_c_fgetc_FUN_005fe840(file);
         if (iVar5 < 0) break;
       } while ((iVar5 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
       local_2c = (local_2c + (float)-0.25) * (float)1.3333333333333299;
@@ -438,8 +437,8 @@ LAB_00479c73:
       if (1.0 < local_2c) {
         local_2c = 1.0;
       }
-      pFVar15 = (FILE *)0x479dbb;
-      dVar14 = crt_math_c_round_FUN_005fe6b0((double)(local_2c * 255f));
+      in_stack_fffff37c = 0x479dbb;
+      dVar14 = crt_math_c_round_FUN_005fe6b0((double)(local_2c * 255.0f));
       local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
       auStack_8dc[iVar9] = (uchar)local_1c;
     }

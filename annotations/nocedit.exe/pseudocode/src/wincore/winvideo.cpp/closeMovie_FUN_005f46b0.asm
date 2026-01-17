@@ -12,9 +12,9 @@
 ;   wincore_winvideo.cpp_playMovie_FUN_005f4a00 at 005f4a91
 ;
 ; Referenced Globals:
-;   mciSendStringA* mciSendStringA = 00211850
-;   InvalidateRect* InvalidateRect = 00211b0c
-;   UpdateWindow* UpdateWindow = 00211c28
+;   mciSendStringA* g_mciSendStringAFunc = 00211850
+;   InvalidateRect* g_InvalidateRectFunc = 00211b0c
+;   UpdateWindow* g_UpdateWindowFunc = 00211c28
 ;   TerminatedCString s_close_mov_006581ee
 ;   DWORD g_MovieHandle
 ;   int g_MoviePlaying
@@ -39,7 +39,7 @@ section .text
     PUSH 0x0                            ; 005f46bd
     PUSH 0x0                            ; 005f46bf
     PUSH 0x6581ee                       ; 005f46c1 | = "close mov"
-    CALL dword ptr CS:[0x611410]        ; 005f46c6 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f46c6 | g_mciSendStringAFunc
     PUSH 0x1                            ; 005f46cd
     XOR ECX,ECX                         ; 005f46cf
     PUSH ECX                            ; 005f46d1
@@ -47,9 +47,9 @@ section .text
     PUSH ESI                            ; 005f46d6
     MOV dword ptr [0x03f99500],ECX      ; 005f46d7 | g_MovieHandle
     MOV dword ptr [0x03f99504],ECX      ; 005f46dd | g_MoviePlaying
-    CALL dword ptr CS:[0x6114b4]        ; 005f46e3 | InvalidateRect
+    CALL dword ptr CS:[0x6114b4]        ; 005f46e3 | g_InvalidateRectFunc
     PUSH ESI                            ; 005f46ea
-    CALL dword ptr CS:[0x6114fc]        ; 005f46eb | UpdateWindow
+    CALL dword ptr CS:[0x6114fc]        ; 005f46eb | g_UpdateWindowFunc
     POP ESI                             ; 005f46f2
     RET                                 ; 005f46f3
 

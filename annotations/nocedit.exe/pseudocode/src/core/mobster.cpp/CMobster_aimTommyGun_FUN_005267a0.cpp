@@ -19,21 +19,21 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
   byte bVar5;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
-  float afStackY_1858 [1519];
+  float afStackY_185c [1519];
   float fVar6;
   code *blend_callback;
   CQuaternion4f *angle_radians;
-  float local_80;
-  CQuaternion4f CStack_7c;
-  float fStack_6c;
-  float afStack_68 [7];
-  CVector3f CStack_4c;
-  CVector3f CStack_40;
-  CVector3f local_34;
-  CVector3f local_28;
+  float local_84;
+  CQuaternion4f local_80;
+  float local_70;
+  float afStack_6c [7];
+  CVector3f local_50;
+  CVector3f local_44;
+  CVector3f local_38;
+  CVector3f local_2c;
+  CQuaternion4f *local_20;
   CQuaternion4f *local_1c;
-  CQuaternion4f *local_18;
-  CDeformableModelInstance *pCStack_14;
+  CDeformableModelInstance *local_18;
   
   bVar5 = 0;
   if (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0) {
@@ -65,29 +65,28 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
         angle_radians = (CQuaternion4f *)0x3fc90fdb;
       }
       pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&CStack_4c,&g_ZeroVector,
+                         (&local_50,&g_ZeroVector,
                           (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_02f37ed0 * 4].z);
       pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                         (in_stack_00000004,&CStack_40,pCVar3);
+                         (in_stack_00000004,&local_44,pCVar3);
       iVar1 = *(int *)(in_stack_00000004[0x8d].create_event + 0x4c);
-      local_34.x = *(float *)(iVar1 + 0x20) - pCVar3->x;
-      local_34.y = *(float *)(iVar1 + 0x24) - pCVar3->y;
-      local_34.z = *(float *)(iVar1 + 0x28) - pCVar3->z;
+      local_38.x = *(float *)(iVar1 + 0x20) - pCVar3->x;
+      local_38.y = *(float *)(iVar1 + 0x24) - pCVar3->y;
+      local_38.z = *(float *)(iVar1 + 0x28) - pCVar3->z;
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (*(CDemonActor **)(in_stack_00000004[0x8d].create_event + 0x4c),
                           g_CHeroClassInfo.name_hash);
-      fVar6 = 3f;
+      fVar6 = 3.0f;
       if (pCVar2 != (CDemonActor *)0x0) {
-        fVar6 = 4f;
+        fVar6 = 4.0f;
       }
-      local_34.y = local_34.y + fVar6;
-      core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_28,&local_34);
-      pCStack_14 = (CDeformableModelInstance *)
-                   core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                             (local_28.y - (in_stack_00000004->orient).bank);
-      local_80 = SQRT(local_34.z * local_34.z + local_34.x * local_34.x + local_34.y * local_34.y);
-      if (((float)angle_radians <= ABS((float)pCStack_14)) || (local_80 <= (float)2))
-      {
+      local_38.y = local_38.y + fVar6;
+      core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_2c,&local_38);
+      local_18 = (CDeformableModelInstance *)
+                 core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                           (local_2c.y - (in_stack_00000004->orient).bank);
+      local_84 = SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y);
+      if (((float)angle_radians <= ABS((float)local_18)) || (local_84 <= (float)2)) {
         in_stack_00000008 =
              *(float *)(in_stack_00000004[0x8e].create_event + 0x44) - in_stack_00000008;
         *(float *)(in_stack_00000004[0x8e].create_event + 0x44) = in_stack_00000008;
@@ -109,20 +108,20 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
           in_stack_00000004[0x8e].create_event[0x47] = '?';
         }
       }
-      local_18 = (CQuaternion4f *)-(float)angle_radians;
-      if (local_28.x < (float)local_18) {
-        local_28.x = (float)local_18;
-      }
-      if ((float)angle_radians < local_28.x) {
-        local_28.x = (float)angle_radians;
-      }
       local_1c = (CQuaternion4f *)-(float)angle_radians;
-      local_28.y = (float)pCStack_14;
-      if ((float)pCStack_14 < (float)local_1c) {
-        local_28.y = (float)local_1c;
+      if (local_2c.x < (float)local_1c) {
+        local_2c.x = (float)local_1c;
       }
-      if ((float)angle_radians < local_28.y) {
-        local_28.y = (float)angle_radians;
+      if ((float)angle_radians < local_2c.x) {
+        local_2c.x = (float)angle_radians;
+      }
+      local_20 = (CQuaternion4f *)-(float)angle_radians;
+      local_2c.y = (float)local_18;
+      if ((float)local_18 < (float)local_20) {
+        local_2c.y = (float)local_20;
+      }
+      if ((float)angle_radians < local_2c.y) {
+        local_2c.y = (float)angle_radians;
       }
       if (in_stack_00000004[0x1b].field7_0x6c == 0) {
         fVar6 = *(float *)(in_stack_00000004[0x8e].create_event + 0x44);
@@ -136,30 +135,30 @@ void core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(void)
                 ((CDeformableModelInstance *)(in_stack_00000004 + 1),iVar1,6.0,fVar6,DAT_02f37ef0,
                  core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
-                ((CQuaternion4f *)local_28.x,(float)angle_radians);
-      CStack_7c.w = afStack_68[3];
-      pfVar4 = (float *)((int)&CStack_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-      *(float *)((int)&CStack_7c + (uint)bVar5 * -8 + 4) = afStack_68[(uint)bVar5 * -2 + 4];
-      *pfVar4 = afStack_68[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 5];
+                ((CQuaternion4f *)local_2c.x,(float)angle_radians);
+      local_80.w = afStack_6c[3];
+      pfVar4 = (float *)((int)&local_80 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+      *(float *)((int)&local_80 + (uint)bVar5 * -8 + 4) = afStack_6c[(uint)bVar5 * -2 + 4];
+      *pfVar4 = afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 5];
       pfVar4[(uint)bVar5 * -2 + 1] =
-           (afStack_68 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 5)[(uint)bVar5 * -2 + 1];
-      pCStack_14 = (CDeformableModelInstance *)(in_stack_00000004 + 1);
+           (afStack_6c + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 5)[(uint)bVar5 * -2 + 1];
+      local_18 = (CDeformableModelInstance *)(in_stack_00000004 + 1);
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-                (pCStack_14,&CStack_7c,*(float *)(in_stack_00000004[0x8e].create_event + 0x44),
+                (local_18,&local_80,*(float *)(in_stack_00000004[0x8e].create_event + 0x44),
                  DAT_02f37ef0,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
-                ((CQuaternion4f *)local_28.y,(float)angle_radians);
+                ((CQuaternion4f *)local_2c.y,(float)angle_radians);
       blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-      CStack_7c.w = fStack_6c;
-      pfVar4 = (float *)((int)&CStack_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-      *(float *)((int)&CStack_7c + (uint)bVar5 * -8 + 4) = afStack_68[(uint)bVar5 * -2];
+      local_80.w = local_70;
+      pfVar4 = (float *)((int)&local_80 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+      *(float *)((int)&local_80 + (uint)bVar5 * -8 + 4) = afStack_6c[(uint)bVar5 * -2];
       iVar1 = DAT_02f37ef0;
-      *pfVar4 = afStack_68[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      *pfVar4 = afStack_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
       pfVar4[(uint)bVar5 * -2 + 1] =
-           (afStack_68 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1];
+           (afStack_6c + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-                (pCStack_14,&CStack_7c,*(float *)(in_stack_00000004[0x8e].create_event + 0x44),iVar1
-                 ,blend_callback);
+                (local_18,&local_80,*(float *)(in_stack_00000004[0x8e].create_event + 0x44),iVar1,
+                 blend_callback);
       return;
     }
     in_stack_00000004[0x8e].create_event[0x44] = '\0';

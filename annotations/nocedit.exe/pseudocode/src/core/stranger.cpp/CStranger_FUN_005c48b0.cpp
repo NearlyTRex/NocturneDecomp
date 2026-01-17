@@ -24,8 +24,8 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
   CDemonActor *pCVar7;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  int desired_state_index;
   float in_stack_ffffffec;
+  int desired_state_index;
   
   if (g_CGamePtr->field53_0x1d0 != 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
@@ -80,7 +80,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
           else {
             iVar3 = 1;
             fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
-            desired_state_index = (fVar6 <= 50f) + 0x25;
+            desired_state_index = (fVar6 <= 50.0f) + 0x25;
           }
         }
         else {

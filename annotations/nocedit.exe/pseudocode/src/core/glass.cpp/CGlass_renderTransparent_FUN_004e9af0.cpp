@@ -35,9 +35,9 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
     pcVar3 = input_vertices;
     if (0 < this_ptr->broken_vertex_count) {
       do {
-        *(int *)pcVar3 = (int)ROUND(pCVar4->x * 256f);
-        *(int *)(pcVar3 + 4) = (int)ROUND(pCVar4->y * 256f);
-        *(int *)(pcVar3 + 8) = (int)ROUND(pCVar4->z * 256f);
+        *(int *)pcVar3 = (int)ROUND(pCVar4->x * 256.0f);
+        *(int *)(pcVar3 + 4) = (int)ROUND(pCVar4->y * 256.0f);
+        *(int *)(pcVar3 + 8) = (int)ROUND(pCVar4->z * 256.0f);
         iVar6 = iVar6 + 1;
         pCVar4 = pCVar4 + 1;
         pcVar3 = pcVar3 + 0xc;

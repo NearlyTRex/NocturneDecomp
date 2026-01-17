@@ -12,8 +12,8 @@
 ;   crt_io.c_convertFileInfo_FUN_00602264 at 006022a1
 ;
 ; Referenced Globals:
-;   FileTimeToLocalFileTime* PTR_FileTimeToLocalFileTime_00611540 = 00211d46
-;   FileTimeToSystemTime* PTR_FileTimeToSystemTime_00611544 = 00211d60
+;   FileTimeToLocalFileTime* g_FileTimeToLocalFileTimeFunc = 00211d46
+;   FileTimeToSystemTime* g_FileTimeToSystemTimeFunc = 00211d60
 ;
 ; Called Functions:
 ;   crt_time.c_mktime_FUN_00600f80
@@ -40,7 +40,7 @@ section .text
         ;   Label: LAB_00609dbd
     PUSH EAX                            ; 00609dc1
     PUSH EDX                            ; 00609dc2
-    CALL dword ptr CS:[0x611540]        ; 00609dc3 | PTR_FileTimeToLocalFileTime_00611540
+    CALL dword ptr CS:[0x611540]        ; 00609dc3 | g_FileTimeToLocalFileTimeFunc
     TEST EAX,EAX                        ; 00609dca
     JNZ 0x00609dd8                      ; 00609dcc
         ;   XREF to: 00609dd8 (CONDITIONAL_JUMP)  ; LAB_00609dd8
@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 00609ddc
     LEA EAX,[ESP + 0x38]                ; 00609ddd
     PUSH EAX                            ; 00609de1
-    CALL dword ptr CS:[0x611544]        ; 00609de2 | PTR_FileTimeToSystemTime_00611544
+    CALL dword ptr CS:[0x611544]        ; 00609de2 | g_FileTimeToSystemTimeFunc
     TEST EAX,EAX                        ; 00609de9
     JNZ 0x00609df7                      ; 00609deb
         ;   XREF to: 00609df7 (CONDITIONAL_JUMP)  ; LAB_00609df7

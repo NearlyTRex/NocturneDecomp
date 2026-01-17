@@ -13,11 +13,11 @@
 ; Referenced Globals:
 ;   double g_Atan2SqrtTwoOverTwo = 0.707000000000000
 ;   double g_Atan2NegativeSqrtTwoOverTwo = -0.707000000000000
-;   double g_Atan2NegativeOne = -1
-;   double g_Atan2Pi = 3.14159265359000
-;   double g_Atan2NegativePi = -3.14159265359000
-;   float g_Atan2TwoPi = 6.283185
-;   float g_Atan2NegativeTwoPi = -6.283185
+;   double g_Atan2NegativeOne_006582fd = -1
+;   double g_Atan2Pi_00658305 = 3.14159265359000
+;   double g_Atan2NegativePi_0065830d = -3.14159265359000
+;   float g_Atan2TwoPi_00658315 = 6.283185
+;   float g_Atan2NegativeTwoPi_00658319 = -6.283185
 ;
 ; Called Functions:
 ;   crt_math.c_acos_FUN_00600162
@@ -56,21 +56,21 @@ section .text
     JBE 0x005f5608                      ; 005f55fa
         ;   XREF to: 005f5608 (CONDITIONAL_JUMP)  ; LAB_005f5608
     FLD float ptr [ESP]                 ; 005f55fc
-    FSUBR double ptr [0x00658305]       ; 005f55ff | g_Atan2Pi
+    FSUBR double ptr [0x00658305]       ; 005f55ff | g_Atan2Pi_00658305
     FSTP float ptr [ESP]                ; 005f5605
     FLD float ptr [ESP]                 ; 005f5608
         ;   Label: LAB_005f5608
-    FCOMP double ptr [0x0065830d]       ; 005f560b | g_Atan2NegativePi
+    FCOMP double ptr [0x0065830d]       ; 005f560b | g_Atan2NegativePi_0065830d
     FNSTSW AX                           ; 005f5611
     SAHF                                ; 005f5613
     JNC 0x005f5622                      ; 005f5614
         ;   XREF to: 005f5622 (CONDITIONAL_JUMP)  ; LAB_005f5622
     FLD float ptr [ESP]                 ; 005f5616
-    FADD float ptr [0x00658315]         ; 005f5619 | g_Atan2TwoPi
+    FADD float ptr [0x00658315]         ; 005f5619 | g_Atan2TwoPi_00658315
     FSTP float ptr [ESP]                ; 005f561f
     FLD float ptr [ESP]                 ; 005f5622
         ;   Label: LAB_005f5622
-    FCOMP double ptr [0x00658305]       ; 005f5625 | g_Atan2Pi
+    FCOMP double ptr [0x00658305]       ; 005f5625 | g_Atan2Pi_00658305
     FNSTSW AX                           ; 005f562b
     SAHF                                ; 005f562d
     JA 0x005f567b                       ; 005f562e
@@ -81,7 +81,7 @@ section .text
     RET                                 ; 005f5636
     FLD double ptr [EBP + 0x10]         ; 005f5637
         ;   Label: LAB_005f5637
-    FCOMP double ptr [0x006582fd]       ; 005f563a | g_Atan2NegativeOne
+    FCOMP double ptr [0x006582fd]       ; 005f563a | g_Atan2NegativeOne_006582fd
     FNSTSW AX                           ; 005f5640
     SAHF                                ; 005f5642
     JA 0x005f565d                       ; 005f5643
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 005f564c (UNCONDITIONAL_JUMP)  ; LAB_005f564c
     FLD float ptr [ESP]                 ; 005f567b
         ;   Label: LAB_005f567b
-    FADD float ptr [0x00658319]         ; 005f567e | g_Atan2NegativeTwoPi
+    FADD float ptr [0x00658319]         ; 005f567e | g_Atan2NegativeTwoPi_00658319
     FSTP float ptr [ESP]                ; 005f5684
     MOV EAX,dword ptr [ESP]             ; 005f5687
     MOV ESP,EBP                         ; 005f568a

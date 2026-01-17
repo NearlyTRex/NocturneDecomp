@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 317,
+    "complexity_score": 637,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 66,
     "pseudocode_lines": 292,
-    "suspect_count": 2,
+    "suspect_count": 33,
     "suspect_types": [
-      "pointer_cast"
+      "call_esp_anchor",
+      "pointer_cast",
+      "variadic_anchor"
     ],
     "total_lines": 1097
   },
@@ -529,101 +531,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00458ae0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458b3b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458b83": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458b93": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458bf1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458c01": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458c65": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458c80": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458ceb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458d1b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458d2e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458d9f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458e01": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458e1b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458e4b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458e5e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458ecf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458f0e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458f23": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458f32": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458f4f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458f5e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458f7b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00458fbc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "004590be": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "004591ca": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00459202": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00459244": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "004592fb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "00459323": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "0045933f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.258320126782884,
     "instruction_count": 631,
@@ -664,7 +571,121 @@
     },
     "pcode_op_count": 3318
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 376,
+    "local_size": 372,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_170",
+        "offset": -368,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_73",
+        "offset": -115,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 229,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)pSVar8 + 1) = cVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 230,
+      "match": "(SModelPartName *)((int)",
+      "text": "pSVar8 = (SModelPartName *)((int)pSVar8 + 2);",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 12,
       "call_address": "00458ce6",
@@ -1097,122 +1118,6 @@
       "target_address": "0x50f9b0",
       "text": "Direct CALL at 0045933a, ADD ESP at 0045933f with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 376,
-    "local_size": 372,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_170",
-        "offset": -368,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_11c",
-        "offset": -284,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_cc",
-        "offset": -204,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_73",
-        "offset": -115,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "filename",
-        "offset": 4,
-        "size": 4,
-        "type": "char *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 229,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)pSVar8 + 1) = cVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 230,
-      "match": "(SModelPartName *)((int)",
-      "text": "pSVar8 = (SModelPartName *)((int)pSVar8 + 2);",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -136,7 +136,7 @@ LAB_004b39fc:
     piVar5 = (int *)crt_errno_c_errno_FUN_00601450();
     if (*piVar5 != 6) break;
     iVar3 = iVar3 + 1;
-    (*Sleep)(500);
+    (*g_SleepFunc)(500);
   } while (iVar3 < 10);
   stream_ptr = (FILE *)0x0;
 LAB_004b3ac6:

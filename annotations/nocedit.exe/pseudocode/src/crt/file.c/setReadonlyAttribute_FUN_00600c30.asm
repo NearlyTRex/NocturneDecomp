@@ -13,7 +13,7 @@
 ;   engine_dosio.c_setFileAttributes_FUN_004819f0 at 00481a09
 ;
 ; Referenced Globals:
-;   SetFileAttributesA* SetFileAttributesA = 002121a0
+;   SetFileAttributesA* g_SetFileAttributesAFunc = 002121a0
 ;
 ; Called Functions:
 ;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
@@ -49,7 +49,7 @@ section .text
         ;   Label: LAB_00600c57
     MOV EBX,dword ptr [ESP + 0xc]       ; 00600c58
     PUSH EBX                            ; 00600c5c
-    CALL dword ptr CS:[0x611628]        ; 00600c5d | SetFileAttributesA
+    CALL dword ptr CS:[0x611628]        ; 00600c5d | g_SetFileAttributesAFunc
     TEST EAX,EAX                        ; 00600c64
     JNZ 0x00600c6f                      ; 00600c66
         ;   XREF to: 00600c6f (CONDITIONAL_JUMP)  ; LAB_00600c6f

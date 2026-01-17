@@ -13,53 +13,52 @@ void core_stairs_cpp_FUN_005ba900(void)
 {
   float fVar1;
   float fVar2;
-  float fVar3;
-  float fVar4;
-  int iVar5;
+  int iVar3;
+  float unaff_retaddr;
   CDemonActor *in_stack_00000004;
-  float local_14;
+  float in_stack_00000008;
+  float in_stack_00000010;
+  float in_stack_00000018;
+  float in_stack_00000020;
+  float in_stack_00000028;
+  float in_stack_0000002c;
+  float in_stack_00000030;
   
-  fVar3 = *(float *)(in_stack_00000004[1].actor_name + 4);
-  fVar4 = *(float *)in_stack_00000004[1].actor_name;
-  iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if (iVar5 == 0) {
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
   }
   else {
-    local_14 = g_CGamePtr->delta_time_float * (float)0.5;
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
-    if (iVar5 != 0) {
-      local_14 = local_14 * (float)0.10000000000000001;
-    }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
-    if (iVar5 != 0) {
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    if (iVar3 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 8) =
-           *(float *)(in_stack_00000004[1].actor_name + 8) - local_14;
+           *(float *)(in_stack_00000004[1].actor_name + 8) - unaff_retaddr;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
-    if (iVar5 != 0) {
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    if (iVar3 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 8) =
-           *(float *)(in_stack_00000004[1].actor_name + 8) + local_14;
+           *(float *)(in_stack_00000004[1].actor_name + 8) + in_stack_00000008;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
-    if (iVar5 != 0) {
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    if (iVar3 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
-           *(float *)in_stack_00000004[1].actor_name - local_14;
+           *(float *)in_stack_00000004[1].actor_name - in_stack_00000010;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
-    if (iVar5 != 0) {
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    if (iVar3 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
-           *(float *)in_stack_00000004[1].actor_name + local_14;
+           *(float *)in_stack_00000004[1].actor_name + in_stack_00000018;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
-    if (iVar5 != 0) {
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    if (iVar3 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
-           *(float *)(in_stack_00000004[1].actor_name + 4) - local_14;
+           *(float *)(in_stack_00000004[1].actor_name + 4) - in_stack_00000020;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
-    if (iVar5 != 0) {
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    if (iVar3 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
-           *(float *)(in_stack_00000004[1].actor_name + 4) + local_14;
+           *(float *)(in_stack_00000004[1].actor_name + 4) + in_stack_00000028;
     }
   }
   if (*(float *)(in_stack_00000004[1].actor_name + 8) < (float)0.20000000000000001) {
@@ -119,9 +118,9 @@ void core_stairs_cpp_FUN_005ba900(void)
   fVar1 = *(float *)in_stack_00000004[1].actor_name;
   fVar2 = (in_stack_00000004->location).position.y;
   (in_stack_00000004->location).position.z =
-       (fVar3 - *(float *)(in_stack_00000004[1].actor_name + 4)) +
+       (in_stack_0000002c - *(float *)(in_stack_00000004[1].actor_name + 4)) +
        (in_stack_00000004->location).position.z;
-  (in_stack_00000004->location).position.y = (fVar4 - fVar1) + fVar2;
+  (in_stack_00000004->location).position.y = (in_stack_00000030 - fVar1) + fVar2;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
   core_stairs_cpp_FUN_005ba700();
   return;

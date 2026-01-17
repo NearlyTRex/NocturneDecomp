@@ -25,7 +25,7 @@
 ;   TerminatedCString s_ERROR_Bad_texture_name_0061c980
 ;   TerminatedCString s_shape_design_c_0061c999
 ;   TerminatedCString s_Face_map_on_Z_axis_Y_N_0061c9ab
-;   double g_TextureScalingFactor = 254
+;   double g_TextureScalingFactor_0061c9c6 = 254
 ;   TerminatedCString s_s_0061c9ce
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
@@ -242,7 +242,7 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x74],0x14 ; 0046754b
     FLD float ptr [EAX + 0x162640c]     ; 0046754f | g_LoadedVertices
     FSUB float ptr [EBP + -0x64]        ; 00467555
-    FMUL double ptr [0x0061c9c6]        ; 00467558 | g_TextureScalingFactor
+    FMUL double ptr [0x0061c9c6]        ; 00467558 | g_TextureScalingFactor_0061c9c6
     FLD float ptr [EBP + -0x6c]         ; 0046755e
     FSUB float ptr [EBP + -0x64]        ; 00467561
     FDIVP                               ; 00467564
@@ -256,7 +256,7 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x74],0x14 ; 0046757f
     FLD float ptr [EAX + 0x1626410]     ; 00467583 | DAT_01626410
     FSUB float ptr [EBP + -0x68]        ; 00467589
-    FMUL double ptr [0x0061c9c6]        ; 0046758c | g_TextureScalingFactor
+    FMUL double ptr [0x0061c9c6]        ; 0046758c | g_TextureScalingFactor_0061c9c6
     FLD float ptr [EBP + -0x70]         ; 00467592
     FSUB float ptr [EBP + -0x68]        ; 00467595
     FDIVP                               ; 00467598

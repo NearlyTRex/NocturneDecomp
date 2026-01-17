@@ -12,7 +12,7 @@ int __watcallStack crt_stdio_c_rename_FUN_006015d0(char *old_filename,char *new_
   BOOL BVar1;
   DWORD DVar2;
   
-  BVar1 = (*PTR_MoveFileA_006115f0)(old_filename,new_filename);
+  BVar1 = (*g_MoveFileAFunc)(old_filename,new_filename);
   if (BVar1 == 0) {
     DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
     return DVar2;

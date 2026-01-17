@@ -7,8 +7,8 @@
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   waveOutReset* waveOutReset = 0021196a
-;   waveOutUnprepareHeader* waveOutUnprepareHeader = 0021197a
+;   waveOutReset* g_waveOutResetFunc = 0021196a
+;   waveOutUnprepareHeader* g_waveOutUnprepareHeaderFunc = 0021197a
 ;   TerminatedCString s_waveOutReset_failed_0065238f
 ;   HWAVEOUT g_WaveOutHandle
 ;   LPWAVEHDR[8] g_WaveOutHeaders
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 005b09e0
     MOV EAX,[0x03f6ad34]                ; 005b09e1 | g_WaveOutHandle
     PUSH EAX                            ; 005b09e6
-    CALL dword ptr CS:[0x611454]        ; 005b09e7 | waveOutUnprepareHeader
+    CALL dword ptr CS:[0x611454]        ; 005b09e7 | g_waveOutUnprepareHeaderFunc
     ADD EBX,0x4                         ; 005b09ee
         ;   Label: LAB_005b09ee
     CMP EBX,0x20                        ; 005b09f1
@@ -62,7 +62,7 @@ section .text
     RET                                 ; 005b0a04
     PUSH EDX                            ; 005b0a05
         ;   Label: LAB_005b0a05
-    CALL dword ptr CS:[0x611450]        ; 005b0a06 | waveOutReset
+    CALL dword ptr CS:[0x611450]        ; 005b0a06 | g_waveOutResetFunc
     TEST EAX,EAX                        ; 005b0a0d
     JZ 0x005b09d2                       ; 005b0a0f
         ;   XREF to: 005b09d2 (CONDITIONAL_JUMP)  ; LAB_005b09d2

@@ -26,47 +26,47 @@ void core_flies_cpp_FUN_004cbf00(void)
   char *extraout_EBX;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
-  CVector3f local_40;
-  CVector3f local_34;
-  byte auStack_28 [20];
-  int iStack_14;
+  CVector3f local_44;
+  CVector3f local_38;
+  byte local_2c [20];
+  int local_18;
   
   if (in_stack_00000004[0x1f].create_prob != 0.0) {
     iVar9 = in_stack_00000004[0x1f].runtime_state;
     if (iVar9 != 0) {
-      local_34.x = *(float *)(iVar9 + 0x20) - (in_stack_00000004->location).position.x;
-      local_34.y = *(float *)(iVar9 + 0x24) - (in_stack_00000004->location).position.y;
-      local_34.z = *(float *)(iVar9 + 0x28) - (in_stack_00000004->location).position.z;
-      if (0.0 < SQRT(local_34.z * local_34.z + local_34.x * local_34.x + local_34.y * local_34.y)) {
+      local_38.x = *(float *)(iVar9 + 0x20) - (in_stack_00000004->location).position.x;
+      local_38.y = *(float *)(iVar9 + 0x24) - (in_stack_00000004->location).position.y;
+      local_38.z = *(float *)(iVar9 + 0x28) - (in_stack_00000004->location).position.z;
+      if (0.0 < SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y)) {
         pCVar4 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                           (in_stack_00000004,(CVector3f *)auStack_28,&local_34);
-        local_40.x = pCVar4->x * 0.5f;
-        local_40.y = pCVar4->y * 0.5f;
-        local_40.z = 0.5f * pCVar4->z;
-        if (&local_34 != &local_40) {
-          local_34.x = local_40.x;
-          local_34.y = local_40.y;
-          local_34.z = local_40.z;
+                           (in_stack_00000004,(CVector3f *)local_2c,&local_38);
+        local_44.x = pCVar4->x * 0.5f;
+        local_44.y = pCVar4->y * 0.5f;
+        local_44.z = 0.5f * pCVar4->z;
+        if (&local_38 != &local_44) {
+          local_38.x = local_44.x;
+          local_38.y = local_44.y;
+          local_38.z = local_44.z;
         }
         iVar9 = 0;
         if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {
           pCVar4 = (CVector3f *)(in_stack_00000004[1].actor_name + 0x14);
           piVar5 = &in_stack_00000004[1].location.area_id;
           do {
-            pCVar4->x = pCVar4->x - local_34.x;
-            pCVar4->y = pCVar4->y - local_34.y;
+            pCVar4->x = pCVar4->x - local_38.x;
+            pCVar4->y = pCVar4->y - local_38.y;
             fVar1 = pCVar4[1].x;
-            pCVar4->z = pCVar4->z - local_34.z;
-            pCVar4[1].x = fVar1 - local_34.x;
-            *(float *)((int)(pCVar4 + 1) + 4) = *(float *)((int)(pCVar4 + 1) + 4) - local_34.y;
-            *(float *)((int)(pCVar4 + 1) + 8) = *(float *)((int)(pCVar4 + 1) + 8) - local_34.z;
-            *piVar5 = (int)((float)*piVar5 - local_34.x);
-            piVar5[1] = (int)((float)piVar5[1] - local_34.y);
-            piVar5[2] = (int)((float)piVar5[2] - local_34.z);
-            piVar5[3] = (int)((float)piVar5[3] - local_34.x);
-            piVar5[4] = (int)((float)piVar5[4] - local_34.y);
+            pCVar4->z = pCVar4->z - local_38.z;
+            pCVar4[1].x = fVar1 - local_38.x;
+            *(float *)((int)(pCVar4 + 1) + 4) = *(float *)((int)(pCVar4 + 1) + 4) - local_38.y;
+            *(float *)((int)(pCVar4 + 1) + 8) = *(float *)((int)(pCVar4 + 1) + 8) - local_38.z;
+            *piVar5 = (int)((float)*piVar5 - local_38.x);
+            piVar5[1] = (int)((float)piVar5[1] - local_38.y);
+            piVar5[2] = (int)((float)piVar5[2] - local_38.z);
+            piVar5[3] = (int)((float)piVar5[3] - local_38.x);
+            piVar5[4] = (int)((float)piVar5[4] - local_38.y);
             iVar9 = iVar9 + 1;
-            piVar5[5] = (int)((float)piVar5[5] - local_34.z);
+            piVar5[5] = (int)((float)piVar5[5] - local_38.z);
             pCVar4 = (CVector3f *)((int)(pCVar4 + 4) + 4);
             piVar5 = piVar5 + 0xd;
           } while (iVar9 < *(int *)(in_stack_00000004[1].actor_name + 0xc));
@@ -95,7 +95,7 @@ void core_flies_cpp_FUN_004cbf00(void)
       }
     }
     fVar1 = (float)2;
-    iStack_14 = 0;
+    local_18 = 0;
     if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {
       pfVar8 = (float *)(in_stack_00000004[1].actor_name + 0x10);
       do {
@@ -104,8 +104,8 @@ void core_flies_cpp_FUN_004cbf00(void)
         input_value = (double)fVar3;
         pfVar7 = pfVar8;
         if (1.0 <= input_value) {
-          auStack_28._8_8_ = crt_math_c_floor_FUN_005feb90(input_value);
-          *(float *)extraout_EBX = *(float *)extraout_EBX - (float)(double)auStack_28._8_8_;
+          local_2c._8_8_ = crt_math_c_floor_FUN_005feb90(input_value);
+          *(float *)extraout_EBX = *(float *)extraout_EBX - (float)(double)local_2c._8_8_;
           if ((CLocation *)(extraout_EBX + 4) != (CLocation *)(extraout_EBX + 0x10)) {
             *(float *)(extraout_EBX + 4) = (((CLocation *)(extraout_EBX + 0x10))->position).x;
             *(float *)(extraout_EBX + 8) = *(float *)(extraout_EBX + 0x14);
@@ -130,8 +130,8 @@ void core_flies_cpp_FUN_004cbf00(void)
           }
         }
         pfVar8 = (float *)((int)pfVar7 + 0x34);
-        iStack_14 = iStack_14 + 1;
-      } while (iStack_14 < *(int *)(in_stack_00000004[1].actor_name + 0xc));
+        local_18 = local_18 + 1;
+      } while (local_18 < *(int *)(in_stack_00000004[1].actor_name + 0xc));
     }
   }
   return;

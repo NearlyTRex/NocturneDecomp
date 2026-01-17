@@ -11,8 +11,8 @@
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc2d4
 ;
 ; Referenced Globals:
-;   FindClose* PTR_FindClose_00611548 = 00211d78
-;   FindFirstFileA* PTR_FindFirstFileA_0061154c = 00211d84
+;   FindClose* g_FindCloseFunc = 00211d78
+;   FindFirstFileA* g_FindFirstFileAFunc = 00211d84
 ;
 ; Called Functions:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390
@@ -31,7 +31,7 @@ section .text
     PUSH EAX                            ; 006021f9
     MOV EDX,dword ptr [ESP + 0x14c]     ; 006021fa
     PUSH EDX                            ; 00602201
-    CALL dword ptr CS:[0x61154c]        ; 00602202 | PTR_FindFirstFileA_0061154c
+    CALL dword ptr CS:[0x61154c]        ; 00602202 | g_FindFirstFileAFunc
     MOV EBX,EAX                         ; 00602209
     CMP EAX,-0x1                        ; 0060220b
     JNZ 0x00602217                      ; 0060220e
@@ -52,7 +52,7 @@ section .text
     JNZ 0x00602242                      ; 00602227
         ;   XREF to: 00602242 (CONDITIONAL_JUMP)  ; LAB_00602242
     PUSH EBX                            ; 00602229
-    CALL dword ptr CS:[0x611548]        ; 0060222a | PTR_FindClose_00611548
+    CALL dword ptr CS:[0x611548]        ; 0060222a | g_FindCloseFunc
     PUSH 0x2                            ; 00602231
     CALL crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 ; 00602233
         ;   XREF to: 00608390 (UNCONDITIONAL_CALL)  ; int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)

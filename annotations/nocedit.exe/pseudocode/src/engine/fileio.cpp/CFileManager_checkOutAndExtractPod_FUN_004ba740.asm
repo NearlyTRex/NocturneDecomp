@@ -26,7 +26,7 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
-;   Sleep* Sleep = 00212228
+;   Sleep* g_SleepFunc = 00212228
 ;   TerminatedCString s_engine_fileio_cpp_0062604b
 ;   TerminatedCString s_engine_fileio_cpp_00626060
 ;   TerminatedCString s_versionControlDirectory__00626075
@@ -443,7 +443,7 @@ section .text
         ;   XREF to: 004bab32 (CONDITIONAL_JUMP)  ; LAB_004bab32
     PUSH 0x1f4                          ; 004bab1c
     INC ESI                             ; 004bab21
-    CALL dword ptr CS:[0x611644]        ; 004bab22 | Sleep
+    CALL dword ptr CS:[0x611644]        ; 004bab22 | g_SleepFunc
     CMP ESI,0xa                         ; 004bab29
     JL 0x004ba9d3                       ; 004bab2c
         ;   XREF to: 004ba9d3 (CONDITIONAL_JUMP)  ; LAB_004ba9d3

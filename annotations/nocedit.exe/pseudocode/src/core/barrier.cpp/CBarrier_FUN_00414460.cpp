@@ -10,45 +10,47 @@ void __cdecl core_barrier_cpp_CBarrier_FUN_00414460(CBarrier *this_ptr)
 
 {
   int iVar1;
-  float fStack_18;
+  float in_stack_00000008;
+  float in_stack_00000010;
+  float in_stack_00000018;
+  float in_stack_00000020;
+  float in_stack_00000028;
+  float in_stack_00000030;
   
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
     return;
   }
-  fStack_18 = g_CGamePtr->delta_time_float * (float)5;
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-  if (iVar1 != 0) {
-    fStack_18 = fStack_18 * (float)5;
-  }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
-  if (iVar1 != 0) {
-    fStack_18 = fStack_18 * (float)0.20000000000000001;
-  }
+  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
   if (iVar1 != 0) {
-    *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 - fStack_18;
+    *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 - in_stack_00000008;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
   if (iVar1 != 0) {
-    *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 + fStack_18;
+    *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 + in_stack_00000010;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
   if (iVar1 != 0) {
-    *(float *)(this_ptr->field1_0x158 + 4) = *(float *)(this_ptr->field1_0x158 + 4) - fStack_18;
+    *(float *)(this_ptr->field1_0x158 + 4) =
+         *(float *)(this_ptr->field1_0x158 + 4) - in_stack_00000018;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
   if (iVar1 != 0) {
-    *(float *)(this_ptr->field1_0x158 + 4) = *(float *)(this_ptr->field1_0x158 + 4) + fStack_18;
+    *(float *)(this_ptr->field1_0x158 + 4) =
+         *(float *)(this_ptr->field1_0x158 + 4) + in_stack_00000020;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
   if (iVar1 != 0) {
-    *(float *)(this_ptr->field1_0x158 + 8) = *(float *)(this_ptr->field1_0x158 + 8) - fStack_18;
+    *(float *)(this_ptr->field1_0x158 + 8) =
+         *(float *)(this_ptr->field1_0x158 + 8) - in_stack_00000028;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
   if (iVar1 != 0) {
-    *(float *)(this_ptr->field1_0x158 + 8) = *(float *)(this_ptr->field1_0x158 + 8) + fStack_18;
+    *(float *)(this_ptr->field1_0x158 + 8) =
+         *(float *)(this_ptr->field1_0x158 + 8) + in_stack_00000030;
   }
   if (*(int *)this_ptr->field1_0x158 < 0x3f000000) {
     this_ptr->field1_0x158[0] = '\0';

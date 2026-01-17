@@ -24,75 +24,79 @@ core_xform_cpp_slerpQuaternion_FUN_005f77e0
   float10 fVar8;
   float10 fVar9;
   float10 extraout_ST1;
-  float afStack_182c [1517];
+  float afStack_1830 [1517];
+  uint uStack_7c;
   uint local_78;
   uint uStack_74;
   uint local_70;
-  uint uStack_6c;
+  float fStack_64;
   float local_60;
   float local_5c;
   float local_58;
   float local_54;
-  float local_50;
-  float afStack_4c [3];
-  CQuaternion4f local_40 [2];
-  double dStack_14;
+  float local_50 [3];
+  CQuaternion4f aCStack_44 [2];
+  double local_18;
   
   bVar7 = 0;
   dVar1 = (double)(float)quat2_ptr;
   if (dVar1 <= 0.0) {
-    pfVar6 = afStack_4c;
+    pfVar6 = local_50;
     quat1_ptr = result_out;
   }
   else if (1.0 <= dVar1) {
-    pfVar6 = afStack_4c;
+    pfVar6 = local_50;
   }
   else {
-    local_58 = quat1_ptr->w;
-    local_54 = quat1_ptr->x;
-    local_5c = quat1_ptr->y;
-    local_50 = quat1_ptr->z;
+    local_5c = quat1_ptr->w;
+    local_58 = quat1_ptr->x;
+    local_60 = quat1_ptr->y;
+    local_54 = quat1_ptr->z;
     dVar2 = (double)(result_out->w * quat1_ptr->w +
                     result_out->z * quat1_ptr->z +
                     result_out->y * quat1_ptr->y + result_out->x * quat1_ptr->x);
-    afStack_182c[0x5ec] = SUB84 /* extract 2-byte value */(dVar2,0);
-    local_78 = (uint)((ulonglong)dVar2 >> 0x20);
+    afStack_1830[0x5ec] = SUB84 /* extract 2-byte value */(dVar2,0);
+    uStack_7c = (uint)((ulonglong)dVar2 >> 0x20);
     if (dVar2 < 0.0) {
-      local_58 = -local_58;
-      local_54 = -local_54;
-      local_50 = -quat1_ptr->z;
       local_5c = -local_5c;
-      local_78 = local_78 ^ 0x80000000;
+      local_58 = -local_58;
+      local_54 = -quat1_ptr->z;
+      local_60 = -local_60;
+      uStack_7c = uStack_7c ^ 0x80000000;
     }
-    if ((double)CONCAT44 /* combine 2-byte values */(local_78,afStack_182c[0x5ec]) <= 0.99999000000000005) {
-      fVar8 = (float10)(double)CONCAT44 /* combine 2-byte values */(local_78,afStack_182c[0x5ec]);
+    if ((double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]) <= 0.99999000000000005) {
+      fVar8 = (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]);
       fVar8 = crt_math_c_atan2_FUN_006013b1(SQRT((float10)1 - fVar8 * fVar8),fVar8);
       fVar9 = (float10)fsin(((float10)1 - (float10)(float)quat2_ptr) * fVar8);
       fVar8 = (float10)fsin((float10)(float)quat2_ptr * fVar8);
       dVar2 = (double)(fVar9 * ((float10)1 / extraout_ST1));
-      local_70 = SUB84 /* extract 2-byte value */(dVar2,0);
-      uStack_6c = (uint)((ulonglong)dVar2 >> 0x20);
+      uStack_74 = SUB84 /* extract 2-byte value */(dVar2,0);
+      local_70 = (uint)((ulonglong)dVar2 >> 0x20);
       dVar2 = (double)(fVar8 * ((float10)1 / extraout_ST1));
-      local_78 = SUB84 /* extract 2-byte value */(dVar2,0);
-      uStack_74 = (uint)((ulonglong)dVar2 >> 0x20);
-      dStack_14 = (double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74);
+      uStack_7c = SUB84 /* extract 2-byte value */(dVar2,0);
+      local_78 = (uint)((ulonglong)dVar2 >> 0x20);
+      local_18 = (double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78);
       unaff_ESI = extraout_ECX;
       result_out = extraout_EDX;
     }
     else {
-      dStack_14 = (double)(float)quat2_ptr;
-      uStack_6c = SUB84 /* extract 2-byte value */(1.0 - dStack_14,0);
+      local_18 = (double)(float)quat2_ptr;
+      local_70 = SUB84 /* extract 2-byte value */(1.0 - local_18,0);
     }
-    local_70 = (uint)((ulonglong)dStack_14 >> 0x20);
-    uStack_74 = SUB84 /* extract 2-byte value */(dStack_14,0);
-    fVar3 = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_6c,local_70);
-    local_60 = (float)((ulonglong)dVar1 >> 0x20);
-    pfVar6 = &local_50;
-    quat1_ptr = local_40;
-    local_40[0].y = local_60 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78) + result_out->y * fVar3;
-    local_40[0].z = local_54 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78) + result_out->z * fVar3;
-    local_40[0].w = local_5c * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78) + result_out->w * fVar3;
-    local_40[0].x = local_58 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78) + result_out->x * fVar3;
+    uStack_74 = (uint)((ulonglong)local_18 >> 0x20);
+    local_78 = SUB84 /* extract 2-byte value */(local_18,0);
+    fVar3 = (float)(double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74);
+    fStack_64 = (float)((ulonglong)dVar1 >> 0x20);
+    pfVar6 = &local_54;
+    quat1_ptr = aCStack_44;
+    aCStack_44[0].y =
+         fStack_64 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->y * fVar3;
+    aCStack_44[0].z = local_58 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->z * fVar3
+    ;
+    aCStack_44[0].w = local_60 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->w * fVar3
+    ;
+    aCStack_44[0].x = local_5c * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->x * fVar3
+    ;
   }
   pfVar5 = pfVar6 + (uint)bVar7 * -2 + 1;
   pfVar4 = (float *)((int)quat1_ptr + (uint)bVar7 * -8 + 4);
@@ -102,11 +106,11 @@ core_xform_cpp_slerpQuaternion_FUN_005f77e0
   pfVar5[(uint)bVar7 * -2 + 1] = *pfVar6;
   (pfVar5 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] = pfVar6[(uint)bVar7 * -2 + 1];
   pfVar6 = (float *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);
-  unaff_ESI->w = local_50;
+  unaff_ESI->w = local_54;
   pfVar4 = pfVar6 + (uint)bVar7 * -2 + 1;
-  *pfVar6 = afStack_4c[(uint)bVar7 * -2];
-  *pfVar4 = afStack_4c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  *pfVar6 = local_50[(uint)bVar7 * -2];
+  *pfVar4 = local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
   pfVar4[(uint)bVar7 * -2 + 1] =
-       (afStack_4c + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
+       (local_50 + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
   return unaff_ESI;
 }

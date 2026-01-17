@@ -13,7 +13,7 @@
 ;   crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0 at 0060e5f2
 ;
 ; Referenced Globals:
-;   CharUpperBuffA* PTR_CharUpperBuffA_0061148c = 00211a56
+;   CharUpperBuffA* g_CharUpperBuffAFunc = 00211a56
 ;   uint g_CodePage = 0x1
 ;   int g_MultibyteLocaleActive
 ;   char[256] g_LeadByteTable
@@ -71,7 +71,7 @@ section .text
         ;   Label: LAB_0060f35c
     LEA EAX,[ESP + 0x4]                 ; 0060f35e
     PUSH EAX                            ; 0060f362
-    CALL dword ptr CS:[0x61148c]        ; 0060f363 | PTR_CharUpperBuffA_0061148c
+    CALL dword ptr CS:[0x61148c]        ; 0060f363 | g_CharUpperBuffAFunc
     MOV EAX,ESP                         ; 0060f36a
     PUSH EAX                            ; 0060f36c
     CALL crt_string.c_mbtowc_peek_FUN_006059e0 ; 0060f36d

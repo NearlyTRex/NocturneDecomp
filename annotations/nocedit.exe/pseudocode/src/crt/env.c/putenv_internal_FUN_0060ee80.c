@@ -73,7 +73,7 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
       }
       local_18[uVar3] = '\0';
     }
-    BVar4 = (*PTR_SetEnvironmentVariableA_0061161c)(lpName,local_18);
+    BVar4 = (*g_SetEnvironmentVariableAFunc)(lpName,local_18);
     crt_memory_c_free_FUN_00601cd0(lpName);
     crt_memory_c_free_FUN_00601cd0(local_18);
     if (BVar4 == 0) {

@@ -21,14 +21,14 @@ void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void)
   }
   iVar4 = 0;
   do {
-    0.0 = 0.0;
+    0 = 0;
     pdVar5 = g_ScreenBufferArray[iVar4];
     uVar2 = (uint)(g_WindowWidth * g_BitsPerPixel) >> 3;
     do {
-      *pdVar5 = 0.0;
-      pdVar5[1] = 0.0;
-      pdVar5[2] = 0.0;
-      pdVar5[3] = 0.0;
+      *pdVar5 = 0;
+      pdVar5[1] = 0;
+      pdVar5[2] = 0;
+      pdVar5[3] = 0;
       pdVar5 = pdVar5 + 4;
       uVar3 = uVar2 - 0x20;
       bVar1 = 0x1f < (int)uVar2;

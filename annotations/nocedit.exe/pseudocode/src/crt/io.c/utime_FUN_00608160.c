@@ -21,15 +21,14 @@ int __cdecl crt_io_c_utime_FUN_00608160(char *filename,utimbuf *timestamps)
   utimbuf uStack_1c;
   _FILETIME _Stack_14;
   
-  hFile = (*PTR_CreateFileA_00611510)
-                    (filename,0xc0000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
+  hFile = (*g_CreateFileAFunc)(filename,0xc0000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
     DVar1 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
   }
   else {
-    BVar2 = (*PTR_GetFileTime_00611598)(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
+    BVar2 = (*g_GetFileTimeFunc)(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
     if (BVar2 == 0) {
-      (*CloseHandle)(hFile);
+      (*g_CloseHandleFunc)(hFile);
       DVar1 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
       return DVar1;
     }
@@ -53,17 +52,17 @@ int __cdecl crt_io_c_utime_FUN_00608160(char *filename,utimbuf *timestamps)
     SStack_44.wHour = SStack_54.wHour;
     SStack_44.wMinute = SStack_54.wMinute;
     SStack_44.wSecond = SStack_54.wSecond;
-    (*PTR_SystemTimeToFileTime_00611648)(&SStack_54,&_Stack_2c);
-    (*PTR_LocalFileTimeToFileTime_006115ec)(&_Stack_2c,&_Stack_34);
-    (*PTR_SystemTimeToFileTime_00611648)(&SStack_44,&_Stack_2c);
-    (*PTR_LocalFileTimeToFileTime_006115ec)(&_Stack_2c,&_Stack_14);
-    BVar2 = (*PTR_SetFileTime_00611630)(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
+    (*g_SystemTimeToFileTimeFunc)(&SStack_54,&_Stack_2c);
+    (*g_LocalFileTimeToFileTimeFunc)(&_Stack_2c,&_Stack_34);
+    (*g_SystemTimeToFileTimeFunc)(&SStack_44,&_Stack_2c);
+    (*g_LocalFileTimeToFileTimeFunc)(&_Stack_2c,&_Stack_14);
+    BVar2 = (*g_SetFileTimeFunc)(hFile,&_Stack_24,&_Stack_14,&_Stack_34);
     if (BVar2 == 0) {
-      (*CloseHandle)(hFile);
+      (*g_CloseHandleFunc)(hFile);
       DVar1 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
       return DVar1;
     }
-    (*CloseHandle)(hFile);
+    (*g_CloseHandleFunc)(hFile);
     DVar1 = 0;
   }
   return DVar1;

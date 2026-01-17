@@ -1,16 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 88,
+    "complexity_score": 287,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 6,
-    "pseudocode_lines": 63,
-    "suspect_count": 2,
+    "pseudocode_lines": 62,
+    "suspect_count": 20,
     "suspect_types": [
-      "format_string_mismatch"
+      "call_esp_anchor",
+      "callind_anchor",
+      "format_string_mismatch",
+      "stack_ref",
+      "variadic_anchor"
     ],
-    "total_lines": 245
+    "total_lines": 244
   },
   "cross_references": [
     {
@@ -156,47 +160,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "0052e732": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e758": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e7a4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e7dc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e7f9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e817": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e829": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e83b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e84f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e867": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e879": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e88d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ],
-    "0052e8a4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.2,
     "instruction_count": 155,
@@ -233,7 +196,142 @@
     },
     "pcode_op_count": 806
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 180,
+    "local_size": 172,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a7",
+        "offset": -167,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 41,
+      "match": "&stack0xffffff58",
+      "text": "pcVar7 = &stack0xffffff58;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xffffff58",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,\"%s -> %s\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 57,
+      "match": "&stack0xffffff58",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0x16);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 59,
+      "match": "&stack0xffffff58",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,\"%s : %5.2f\",pSVar4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xffffff58",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0xb);",
+      "type": "stack_ref"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "0052e74c",
@@ -276,6 +374,28 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0052e874 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s -> %s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s -> %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 55,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,\"%s -> %s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%s : %5.2f\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s : %5.2f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 59,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,\"%s : %5.2f\",pSVar4);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,
@@ -406,130 +526,6 @@
       "target_address": "0x52dcf0",
       "text": "Direct CALL at 0052e89f, ADD ESP at 0052e8a4 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 180,
-    "local_size": 172,
-    "param_offset": 4,
-    "param_size": 8,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_a8",
-        "offset": -168,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a7",
-        "offset": -167,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CMotionController *"
-      },
-      {
-        "is_param": true,
-        "name": "actor",
-        "offset": 8,
-        "size": 4,
-        "type": "CDemonActor *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "actual_args": 0,
-      "description": "Format \"%s -> %s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s -> %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 56,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,\"%s -> %s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s : %5.2f\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s : %5.2f",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 60,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,\"%s : %5.2f\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

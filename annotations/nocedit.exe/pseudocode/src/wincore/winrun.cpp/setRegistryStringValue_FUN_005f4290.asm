@@ -15,9 +15,9 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 005081e2
 ;
 ; Referenced Globals:
-;   RegCloseKey* RegCloseKey = 002119dc
-;   RegCreateKeyExA* RegCreateKeyExA = 002119ea
-;   RegSetValueExA* RegSetValueExA = 00211a20
+;   RegCloseKey* g_RegCloseKeyFunc = 002119dc
+;   RegCreateKeyExA* g_RegCreateKeyExAFunc = 002119ea
+;   RegSetValueExA* g_RegSetValueExAFunc = 00211a20
 ;   TerminatedCString s_suck_006581a2
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x2c]      ; 005f42b2
     PUSH EDX                            ; 005f42b6
     PUSH 0x80000002                     ; 005f42b7
-    CALL dword ptr CS:[0x611470]        ; 005f42bc | RegCreateKeyExA
+    CALL dword ptr CS:[0x611470]        ; 005f42bc | g_RegCreateKeyExAFunc
     TEST EAX,EAX                        ; 005f42c3
     JZ 0x005f42cc                       ; 005f42c5
         ;   XREF to: 005f42cc (CONDITIONAL_JUMP)  ; LAB_005f42cc
@@ -71,10 +71,10 @@ section .text
     PUSH ECX                            ; 005f42e5
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005f42e6
     PUSH EBX                            ; 005f42ea
-    CALL dword ptr CS:[0x61147c]        ; 005f42eb | RegSetValueExA
+    CALL dword ptr CS:[0x61147c]        ; 005f42eb | g_RegSetValueExAFunc
     MOV ESI,dword ptr [ESP + 0x8]       ; 005f42f2
     PUSH ESI                            ; 005f42f6
-    CALL dword ptr CS:[0x61146c]        ; 005f42f7 | RegCloseKey
+    CALL dword ptr CS:[0x61146c]        ; 005f42f7 | g_RegCloseKeyFunc
     POP ESI                             ; 005f42fe
     POP EDI                             ; 005f42ff
     ADD ESP,0x8                         ; 005f4300

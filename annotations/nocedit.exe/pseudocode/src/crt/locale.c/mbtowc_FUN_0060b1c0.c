@@ -33,7 +33,7 @@ crt_locale_c_mbtowc_FUN_0060b1c0(wchar_t *wide_char,char *mb_string,SIZE_T max_b
         if (max_bytes < uVar2) {
           cbMultiByte = max_bytes;
         }
-        iVar1 = (*PTR_MultiByteToWideChar_006115f4)(g_CodePage,8,mb_string,cbMultiByte,local_14,1);
+        iVar1 = (*g_MultiByteToWideCharFunc)(g_CodePage,8,mb_string,cbMultiByte,local_14,1);
         if (iVar1 != 0) {
           if (wide_char != (wchar_t *)0x0) {
             *wide_char = local_14[0];

@@ -69,13 +69,13 @@
   "globals": [
     {
       "addr": "00611618",
-      "name": "SetEndOfFile",
+      "name": "g_SetEndOfFileFunc",
       "type": "SetEndOfFile*",
       "value": "00212150"
     },
     {
       "addr": "0061162c",
-      "name": "SetFilePointer",
+      "name": "g_SetFilePointerFunc",
       "type": "SetFilePointer*",
       "value": "002121b6"
     },
@@ -196,14 +196,14 @@
       "description": "Unaffected register variable",
       "line": 21,
       "match": "unaff_EBP",
-      "text": "DVar2 = (*SetFilePointer)(unaff_EBP,new_size,(PLONG)0x0,0);",
+      "text": "DVar2 = (*g_SetFilePointerFunc)(unaff_EBP,new_size,(PLONG)0x0,0);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 27,
       "match": "unaff_EBP",
-      "text": "BVar3 = (*SetEndOfFile)(unaff_EBP);",
+      "text": "BVar3 = (*g_SetEndOfFileFunc)(unaff_EBP);",
       "type": "unaffected_reg"
     },
     {

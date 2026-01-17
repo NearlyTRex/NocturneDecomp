@@ -86,7 +86,7 @@ engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *he
   fVar20 = ((float10)1 +
            fVar17 * (float10)-2.5f + fVar18 * (float10)1.5f) *
            (float10)65536;
-  fVar16 = (fVar18 * (float10)-1.5f + fVar17 * (float10)2f +
+  fVar16 = (fVar18 * (float10)-1.5f + fVar17 * (float10)2.0f +
            (float10)(float)(fVar16 * (float10)0.5f)) * (float10)65536;
   piVar12 = (int *)((&header[0x17].base.count)[iVar11] + 0x14);
   piVar13 = (int *)((&header[0x17].base.count)[local_1c] + 0x14);

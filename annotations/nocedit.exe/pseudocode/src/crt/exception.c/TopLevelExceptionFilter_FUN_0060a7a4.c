@@ -132,8 +132,7 @@ LAB_0060a968:
     cVar1 = *pcVar9;
     pcVar9 = pcVar9 + (uint)bVar8 * -2 + 1;
   } while (cVar1 != '\0');
-  (*PTR_WriteFile_00611678)
-            (g_IOControlBlock->standard_handles[2],local_114,~uVar7 - 1,&local_14,(LPOVERLAPPED)0x0)
-  ;
+  (*g_WriteFileFunc)(g_IOControlBlock->standard_handles[2],local_114,~uVar7 - 1,&local_14,
+                     (LPOVERLAPPED)0x0);
   return 1;
 }

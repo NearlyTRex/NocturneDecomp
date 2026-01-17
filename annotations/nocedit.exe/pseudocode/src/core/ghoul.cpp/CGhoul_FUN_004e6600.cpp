@@ -43,8 +43,8 @@ void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   int force_immediate;
-  SCollisionInfo *in_stack_fffffc0e;
-  char local_378 [100];
+  SCollisionInfo *in_stack_fffffc88;
+  SCollisionInfo *in_stack_fffffc94;
   SDamageInfo local_314;
   SDamageInfo local_2d8;
   SDamageInfo local_29c;
@@ -158,7 +158,7 @@ switchD_004e6f9a_caseD_e:
                                 0x108))(), iVar10 == 0)) &&
          (iVar10 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
                                0xfc))(), iVar10 != 0)) {
-        local_174.z = DAT_0065ed18;
+        local_174.z = 0x40200000;
         local_174.x = 0.0;
         local_174.y = 0.0;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -417,7 +417,7 @@ switchD_004e6f9a_caseD_e:
           cVar20 = cVar20 + '\x01';
         }
         iVar12 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
-                   hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffc0e);
+                   hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffc88);
         pCVar9 = g_CGamePtr;
         if (iVar12 == 0) {
           (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
@@ -445,7 +445,7 @@ switchD_004e6f9a_caseD_e:
             iVar12 = in_stack_00000004[1].base_character.base_actor.field6_0x68;
             if (iVar12 == 0) {
               local_fc = 0;
-              local_f4 = DAT_0065ed18;
+              local_f4 = 0x40200000;
               local_f8 = 0;
               (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))
                         ();
@@ -467,19 +467,19 @@ switchD_004e6f9a_caseD_e:
                 local_38 = 0.0;
                 if ((in_stack_00000004->base_character).model.part_visibility_flags
                     [(int)in_stack_00000004[1].base_character.base_actor.orient.heading] != 0) {
-                  local_24 = (1.0 - ABS(local_48 - DAT_0065ed1c) / DAT_0065ed1c) *
+                  local_24 = (1.0 - ABS(local_48 - 0x4059999A) / 0x4059999A) *
                              (float)0.29999999999999999;
                 }
                 if ((in_stack_00000004->base_character).model.part_visibility_flags
                     [(int)in_stack_00000004[1].base_character.base_actor.orient.pitch] != 0) {
-                  local_40 = (1.0 - ABS(local_48 - DAT_0065ed20) / DAT_0065ed20) *
+                  local_40 = (1.0 - ABS(local_48 - 0x40200000) / 0x40200000) *
                              (float)0.40000000000000002;
                 }
                 local_44 = local_48;
                 iVar12 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) +
                                               0x154) + 0xfc))();
                 if (iVar12 != 0) {
-                  local_38 = (1.0 - ABS(local_48 - DAT_0065ed18) / DAT_0065ed18) *
+                  local_38 = (1.0 - ABS(local_48 - 0x40200000) / 0x40200000) *
                              (float)0.29999999999999999;
                 }
                 local_3c = local_24 + local_40;
@@ -558,10 +558,10 @@ switchD_004e6f9a_caseD_e:
           else {
 LAB_004e7a33:
             if (*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18) != 0) {
-              local_2c = DAT_0065ed24;
+              local_2c = 0x40000000;
               if (*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18) == 0xe)
               {
-                local_2c = DAT_0065ed28;
+                local_2c = 0x40B00000;
               }
               local_dc = local_2c;
               local_e4 = 0;
@@ -578,7 +578,7 @@ LAB_004e7a33:
               if (((0 < iVar12) &&
                   (iVar12 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
                               hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
-                                            in_stack_fffffc0e), iVar12 == 2)) &&
+                                            in_stack_fffffc94), iVar12 == 2)) &&
                  (core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                             (&(in_stack_00000004->base_character).model.motion_controller,
                              *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name +
@@ -616,7 +616,7 @@ LAB_004e7576:
                                  (&pCVar1->motion_controller);
             local_9c = (double)local_50;
             local_14 = local_50;
-            if ((local_50 <= (float)2) && (local_20 = DAT_0065ed1c, 1.0 <= local_9c))
+            if ((local_50 <= (float)2) && (local_20 = 0x4059999A, 1.0 <= local_9c))
             {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2d8);
               local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
@@ -779,7 +779,7 @@ LAB_004e7243:
           *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14) = iVar12;
           if (iVar12 < 1) {
             local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,30.0);
-            dVar23 = crt_math_c_round_FUN_005fe6b0((double)(-local_14 * 65536f));
+            dVar23 = crt_math_c_round_FUN_005fe6b0((double)(-local_14 * 65536.0f));
             *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14) =
                  (int)ROUND(dVar23);
           }
@@ -796,7 +796,7 @@ LAB_004e7d9a:
         iVar12 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
                              0x108))();
         if (iVar12 == 0) {
-          local_20 = DAT_0065ed18;
+          local_20 = 0x40200000;
         }
         else {
           pCVar13 = (CEnemy *)
@@ -822,7 +822,7 @@ LAB_004e7d9a:
         local_a4 = (double)local_4c;
         local_14 = local_4c;
         if (local_4c <= (float)2) {
-          local_20 = DAT_0065ed20;
+          local_20 = 0x40200000;
           if (1.0 <= local_a4) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_314);
             local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
@@ -1005,9 +1005,9 @@ LAB_004e6754:
     ;
     if (extraout_EAX == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_378,"ghoul-walk-?.wav *%f",(double)in_stack_00000004->speed);
+                (&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)in_stack_00000004->speed);
       uVar16 = (*((in_stack_00000004->base_character).base_actor.vtable)->playAmbientSound)
-                         ((CDemonActor *)in_stack_00000004,local_378);
+                         ((CDemonActor *)in_stack_00000004,&stack0xfffffc88);
       *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8) = uVar16;
     }
   }

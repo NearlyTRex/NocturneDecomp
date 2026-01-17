@@ -31,9 +31,9 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90(CDemonAc
   if (0 < iVar4) {
     do {
       uVar5 = (uint)g_ColorCubeLookup[0x7c00];
-      CStack_1c.x = (int)ROUND(*pfVar9 * 256f);
-      CStack_1c.y = (int)ROUND(pfVar9[1] * 256f);
-      CStack_1c.z = (int)ROUND(pfVar9[2] * 256f);
+      CStack_1c.x = (int)ROUND(*pfVar9 * 256.0f);
+      CStack_1c.y = (int)ROUND(pfVar9[1] * 256.0f);
+      CStack_1c.z = (int)ROUND(pfVar9[2] * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&CStack_1c);
       pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;

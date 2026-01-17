@@ -14,10 +14,10 @@
 ;   wincore_winvideo.cpp_playMovie_FUN_005f4a00 at 005f4d0f
 ;
 ; Referenced Globals:
-;   DispatchMessageA* PTR_DispatchMessageA_0061149c = 00211a9e
-;   PeekMessageA* PTR_PeekMessageA_006114d0 = 00211b70
-;   TranslateMessage* PTR_TranslateMessage_006114f8 = 00211c14
-;   Sleep* Sleep = 00212228
+;   DispatchMessageA* g_DispatchMessageAFunc = 00211a9e
+;   PeekMessageA* g_PeekMessageAFunc = 00211b70
+;   TranslateMessage* g_TranslateMessageFunc = 00211c14
+;   Sleep* g_SleepFunc = 00212228
 ;   int g_WindowActive = -0x1
 ;   int g_ForceMessagePump = 0x1
 ;   char[256] g_KeyboardState
@@ -63,16 +63,16 @@ section .text
     PUSH EBX                            ; 005f360c
     LEA EAX,[ESP + 0x10]                ; 005f360d
     PUSH EAX                            ; 005f3611
-    CALL dword ptr CS:[0x6114d0]        ; 005f3612 | PTR_PeekMessageA_006114d0
+    CALL dword ptr CS:[0x6114d0]        ; 005f3612 | g_PeekMessageAFunc
     TEST EAX,EAX                        ; 005f3619
     JZ 0x005f363b                       ; 005f361b
         ;   XREF to: 005f363b (CONDITIONAL_JUMP)  ; LAB_005f363b
     MOV EAX,ESP                         ; 005f361d
     PUSH EAX                            ; 005f361f
-    CALL dword ptr CS:[0x6114f8]        ; 005f3620 | PTR_TranslateMessage_006114f8
+    CALL dword ptr CS:[0x6114f8]        ; 005f3620 | g_TranslateMessageFunc
     MOV EAX,ESP                         ; 005f3627
     PUSH EAX                            ; 005f3629
-    CALL dword ptr CS:[0x61149c]        ; 005f362a | PTR_DispatchMessageA_0061149c
+    CALL dword ptr CS:[0x61149c]        ; 005f362a | g_DispatchMessageAFunc
     JMP 0x005f3608                      ; 005f3631
         ;   XREF to: 005f3608 (UNCONDITIONAL_JUMP)  ; LAB_005f3608
     MOV byte ptr [EAX + 0x2d03e98],BL   ; 005f3633 | g_KeyboardState | CHAR_ARRAY_02d03e99
@@ -95,7 +95,7 @@ section .text
     JNZ 0x005f3608                      ; 005f365d
         ;   XREF to: 005f3608 (CONDITIONAL_JUMP)  ; LAB_005f3608
     PUSH 0x14                           ; 005f365f
-    CALL dword ptr CS:[0x611644]        ; 005f3661 | Sleep
+    CALL dword ptr CS:[0x611644]        ; 005f3661 | g_SleepFunc
     JMP 0x005f3608                      ; 005f3668
         ;   XREF to: 005f3608 (UNCONDITIONAL_JUMP)  ; LAB_005f3608
     ADD ESP,0x1c                        ; 005f366a

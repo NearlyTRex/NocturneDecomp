@@ -9,6 +9,6 @@
 void wincore_winrun_cpp_endPeriod_FUN_005f2db0(void)
 
 {
-  (*PTR_timeEndPeriod_00611418)(1);
+  (*g_timeEndPeriodFunc)(1);
   return;
 }

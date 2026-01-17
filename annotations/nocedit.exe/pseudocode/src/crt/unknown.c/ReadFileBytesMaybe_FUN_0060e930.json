@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 364,
+    "complexity_score": 362,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 102,
     "suspect_count": 23,
     "suspect_types": [
       "callind_preserve_lost",
@@ -15,7 +15,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 342
+    "total_lines": 340
   },
   "cross_references": [
     {
@@ -77,13 +77,13 @@
   "globals": [
     {
       "addr": "006115a4",
-      "name": "GetLastError",
+      "name": "g_GetLastErrorFunc",
       "type": "GetLastError*",
       "value": "00211f22"
     },
     {
       "addr": "00611604",
-      "name": "PTR_ReadFile_00611604",
+      "name": "g_ReadFileFunc",
       "type": "ReadFile*",
       "value": "002120f2"
     },
@@ -232,107 +232,107 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 42,
       "match": "&stack0xfffffff4",
-      "text": "(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 43,
+      "line": 42,
       "match": "unaff_ESI",
-      "text": "(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 54,
       "match": "unaff_EDI",
       "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 54,
       "match": "unaff_EBX",
       "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 56,
       "match": "unaff_EDI",
       "text": "if (unaff_EDI == 0) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 60,
       "match": "unaff_EDI",
       "text": "if (unaff_EDI != 0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 64,
+      "line": 63,
       "match": "unaff_EDI",
       "text": "crt_stdio_c_lseek_FUN_00606690(param_10,(uVar7 - unaff_EDI) + 1,1);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 75,
+      "line": 74,
       "match": "unaff_EDI",
       "text": "} while (uVar7 < unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 77,
+      "line": 76,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI - iVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 77,
+      "line": 76,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI - iVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 79,
+      "line": 78,
       "match": "unaff_EBX",
       "text": "if (((unaff_EBX & 0x2000) != 0) || (unaff_ESI == 0)) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 79,
+      "line": 78,
       "match": "unaff_ESI",
       "text": "if (((unaff_EBX & 0x2000) != 0) || (unaff_ESI == 0)) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 83,
+      "line": 82,
       "match": "unaff_EDI",
       "text": "uVar2 = unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 85,
+      "line": 84,
       "match": "unaff_EDI",
       "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_5), uVar2 = unaff_EDI, iVar3 == 0)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 87,
+      "line": 85,
       "match": "&stack0xfffffff4",
-      "text": "(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,(LPOVERLAPPED)0x0",
+      "text": "BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_ref"
     },
     {

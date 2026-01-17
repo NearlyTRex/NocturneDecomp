@@ -14,7 +14,7 @@ crt_io_c_findNextFileWrapper_FUN_00602300(HANDLE find_handle,LPWIN32_FIND_DATAA 
   int iVar2;
   _WIN32_FIND_DATAA _Stack_144;
   
-  BVar1 = (*PTR_FindNextFileA_00611550)(find_handle,&_Stack_144);
+  BVar1 = (*g_FindNextFileAFunc)(find_handle,&_Stack_144);
   if (BVar1 == 0) {
     crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
     iVar2 = -1;

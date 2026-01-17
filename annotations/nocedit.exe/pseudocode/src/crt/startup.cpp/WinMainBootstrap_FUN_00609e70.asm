@@ -10,7 +10,7 @@
 ;   entry at 0060239a
 ;
 ; Referenced Globals:
-;   GetModuleHandleA* GetModuleHandleA = 00211f6e
+;   GetModuleHandleA* g_GetModuleHandleAFunc = 00211f6e
 ;   DWORD g_WinMainCmdShow = 0x0
 ;   DWORD g_StackAllocSize = 0x0
 ;   void* g_CrtStackBuffer = 00000000
@@ -89,7 +89,7 @@ section .text
     PUSH EBX                            ; 00609f00
     PUSH 0x0                            ; 00609f01
     PUSH 0x0                            ; 00609f03
-    CALL dword ptr CS:[0x6115b4]        ; 00609f05 | GetModuleHandleA
+    CALL dword ptr CS:[0x6115b4]        ; 00609f05 | g_GetModuleHandleAFunc
     PUSH EAX                            ; 00609f0c
     CALL wincore_winrun.cpp_winMain_FUN_005f3680 ; 00609f0d
         ;   XREF to: 005f3680 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_winMain_FUN_005f3680(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow1, ...)

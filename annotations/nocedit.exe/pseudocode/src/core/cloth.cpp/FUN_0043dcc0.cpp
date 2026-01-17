@@ -33,7 +33,7 @@ void core_cloth_cpp_FUN_0043dcc0(void)
   ;
   fVar4 = 0.005f;
   fVar3 = 0.9f;
-  fVar2 = 32f;
+  fVar2 = 32.0f;
   fVar1 = 0.125f;
   in_stack_00000004->padding_0x0[0x3ce88] = '\0';
   fVar5 = 0.5f;

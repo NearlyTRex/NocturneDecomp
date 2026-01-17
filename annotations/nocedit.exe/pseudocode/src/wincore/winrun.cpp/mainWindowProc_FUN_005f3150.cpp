@@ -117,7 +117,7 @@ wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wPa
   if (message < 0x20) {
     if (1 < message) {
       if (message < 3) {
-        (*PTR_PostQuitMessage_006114d4)(0);
+        (*g_PostQuitMessageFunc)(0);
         g_InputDisabled = 1;
       }
       else if (0xe < message) {
@@ -128,15 +128,15 @@ wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wPa
           g_PreviousActiveState = g_WindowActive;
           g_WindowActive = wParam;
           if (iVar4 != wParam) {
-            hThread = (*GetCurrentProcess)();
+            hThread = (*g_GetCurrentProcessFunc)();
             iVar4 = g_WindowActive;
             if (g_WindowActive == 0) {
               wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005edc50();
-              (*SetThreadPriority)(hThread,-0xf);
+              (*g_SetThreadPriorityFunc)(hThread,-0xf);
               g_ApplicationActive = iVar4;
             }
             else {
-              (*SetThreadPriority)(hThread,1);
+              (*g_SetThreadPriorityFunc)(hThread,1);
               wincore_wddvmem_cpp_videoRestore_FUN_005edc80();
               if (g_PreviousActiveState != -1) {
                 engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -150,7 +150,7 @@ wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wPa
     goto LAB_005f31de;
   }
   if (message < 0x21) {
-    (*PTR_SetCursor_006114e4)((HCURSOR)0x0);
+    (*g_SetCursorFunc)((HCURSOR)0x0);
     return 1;
   }
   if (message < 0x102) {
@@ -178,6 +178,6 @@ LAB_005f32d1:
   }
   g_MessageFlags[(lParam >> 0x10 & g_InputKeyMask) + 1] = 1;
 LAB_005f31de:
-  LVar2 = (*PTR_DefWindowProcA_00611498)(hWnd,message,wParam,lParam);
+  LVar2 = (*g_DefWindowProcAFunc)(hWnd,message,wParam,lParam);
   return LVar2;
 }

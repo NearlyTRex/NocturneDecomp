@@ -20,7 +20,7 @@
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00597e01
 ;
 ; Referenced Globals:
-;   double g_BoundingBoxFixedPointScaleFactor = 0.00390625
+;   double g_BoundingBoxFixedPointScaleFactor2 = 0.00390625
 ;
 ; *****************************************************************************
 
@@ -81,7 +81,7 @@ section .text
         ;   Label: LAB_00420f05
     MOV dword ptr [ESP + 0x10],EAX      ; 00420f08
     MOV dword ptr [ESP + 0x14],ESI      ; 00420f0c
-    FLD double ptr [0x006165f7]         ; 00420f10 | g_BoundingBoxFixedPointScaleFactor
+    FLD double ptr [0x006165f7]         ; 00420f10 | g_BoundingBoxFixedPointScaleFactor2
     FILD dword ptr [ESP + 0x10]         ; 00420f16
     FMUL ST1                            ; 00420f1a
     FILD dword ptr [ESP + 0x14]         ; 00420f1c

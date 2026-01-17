@@ -46,13 +46,13 @@ float * core_msnedit_cpp_FUN_00535c60(void)
   *in_stack_00000004 = (float)local_38.x * _DAT_00661c30;
   in_stack_00000004[1] = (float)local_38.y * _DAT_00661c30;
   in_stack_00000004[2] = (float)local_38.z * _DAT_00661c30;
-  if (10000f <
+  if (10000.0f <
       SQRT(in_stack_00000004[2] * in_stack_00000004[2] +
            *in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])) {
     fVar1 = *in_stack_00000004 - (float)g_CDemonCameraInstance.base.position.x;
     fVar2 = in_stack_00000004[1] - (float)g_CDemonCameraInstance.base.position.y;
     fVar3 = in_stack_00000004[2] - (float)g_CDemonCameraInstance.base.position.z;
-    fVar4 = 10000f / SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
+    fVar4 = 10000.0f / SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
     fVar2 = (float)g_CDemonCameraInstance.base.position.y + fVar2 * fVar4;
     fVar3 = (float)g_CDemonCameraInstance.base.position.z + fVar3 * fVar4;
     if (in_stack_00000004 != local_2c) {

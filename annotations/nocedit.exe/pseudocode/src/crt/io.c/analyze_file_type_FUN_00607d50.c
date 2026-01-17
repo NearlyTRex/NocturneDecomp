@@ -29,21 +29,21 @@ uint __watcallStack crt_io_c_analyze_file_type_FUN_00607d50(uint open_flags,char
     if (iVar2 == 0) {
       pcVar5 = "conin$";
     }
-    hFile = (*PTR_CreateFileA_00611510)(pcVar5,0,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
+    hFile = (*g_CreateFileAFunc)(pcVar5,0,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
     if (hFile == (HANDLE)0xffffffff) {
-      if ((0x7fff < g_WindowsPlatformVersion) || (DVar3 = (*GetLastError)(), DVar3 == 5)) {
+      if ((0x7fff < g_WindowsPlatformVersion) || (DVar3 = (*g_GetLastErrorFunc)(), DVar3 == 5)) {
         uVar4 = 0x2000;
       }
     }
     else {
-      DVar3 = (*PTR_GetFileType_0061159c)(hFile);
+      DVar3 = (*g_GetFileTypeFunc)(hFile);
       if (DVar3 == 2) {
         uVar4 = 0x2000;
       }
       else if (DVar3 == 3) {
         uVar4 = 0x1000;
       }
-      (*CloseHandle)(hFile);
+      (*g_CloseHandleFunc)(hFile);
     }
   }
   if ((open_flags & 0x10) == 0) {

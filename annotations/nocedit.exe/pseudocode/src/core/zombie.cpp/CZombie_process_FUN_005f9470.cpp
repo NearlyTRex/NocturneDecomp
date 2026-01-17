@@ -41,11 +41,11 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr)
   float10 fVar25;
   double dVar26;
   float in_stack_00000008;
-  SCollisionInfo *in_stack_fffffbda;
-  SDamageInfo local_3ac;
+  char *in_stack_fffffc54;
+  SCollisionInfo *in_stack_fffffc58;
   SDamageInfo local_370;
-  char local_334 [56];
-  CBoundingBox3D local_2fc;
+  char local_334 [32];
+  byte local_314 [48];
   CBoundingBox3D local_2e4;
   CBoundingBox3D local_2cc;
   CBoundingBox3D local_2b4;
@@ -118,7 +118,11 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr)
   float local_d4;
   float local_d0;
   float local_cc;
-  byte local_c8 [36];
+  CVector3f local_c8;
+  float local_bc;
+  float local_b8;
+  float local_b4;
+  CVector3f local_b0;
   CVector3f local_a4;
   double local_98;
   double local_88;
@@ -129,7 +133,7 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr)
   CVector3f *local_68;
   float local_5c;
   CDemonActor *local_58;
-  CVector3f *local_54;
+  SCollisionInfo *local_54;
   float local_50;
   float local_4c;
   int local_48;
@@ -144,8 +148,8 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr)
   CLocation *local_24;
   CDeformableModelInstance *local_20;
   float local_1c;
-  CVector3f *local_18;
-  CVector3f *local_14;
+  SCollisionInfo *local_18;
+  SCollisionInfo *local_14;
   
   iVar7 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if (iVar7 == 0) {
@@ -205,10 +209,10 @@ LAB_005f9541:
       }
       if (uVar9 < 6) {
         if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) != 0) {
-          local_74 = DAT_006659c8;
+          local_74 = 0x3FA66666;
           local_290.x = 0.0;
           local_290.y = 0.0;
-          local_290.z = DAT_006659c8;
+          local_290.z = 0x3FA66666;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_26c,&local_290);
           iVar7 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
@@ -272,14 +276,12 @@ LAB_005f9541:
             goto LAB_005f9504;
           }
         }
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_3ac);
-        local_3ac.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
-        local_3ac.attacker = (CDemonActor *)this_ptr;
-        local_3ac.wielder = (CDemonActor *)this_ptr;
-        local_14 = (CVector3f *)local_3ac.damage_amount;
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffc54);
+        in_stack_fffffc58 = (SCollisionInfo *)core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+        local_14 = in_stack_fffffc58;
         (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0x11c))
                   ();
-        local_98 = (double)local_3ac.damage_amount;
+        local_98 = (double)(float)in_stack_fffffc58;
         if (0.0 < local_98) {
           dVar26 = crt_math_c_round_FUN_005fe6b0(local_98 * _DAT_006587cd * _DAT_006587d5);
           local_80 = (int)ROUND(dVar26);
@@ -314,6 +316,7 @@ LAB_005f9541:
         local_144 = 0x41880000;
         (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].renderTargetPoints)
                   ((CDemonActor *)this_ptr);
+        in_stack_fffffc54 = "zom-h0?.wav";
         (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                   ((CDemonActor *)this_ptr,"zom-h0?.wav");
       }
@@ -341,10 +344,10 @@ LAB_005f9541:
           local_21c = (pCVar14->min).z + (pCVar14->max).z;
           local_ec.y = local_220 * _DAT_006587c5;
           local_ec.z = local_21c * _DAT_006587c5;
-          in_stack_fffffbda = (SCollisionInfo *)local_c8;
           pCVar11 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                               ((this_ptr->base_enemy).base_character.carry_hands[iVar7].carry_actor,
-                               (CVector3f *)in_stack_fffffbda,&local_ec);
+                               &local_c8,&local_ec);
+          in_stack_fffffc58 = (SCollisionInfo *)local_314;
           pfVar15 = (float *)(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4
                                                            ) + 0x154) + 0x14))();
           local_1dc = *pfVar15 + pfVar15[3];
@@ -354,8 +357,8 @@ LAB_005f9541:
           local_f8.y = local_1d8 * _DAT_006587c5;
           local_f8.z = local_1d4 * _DAT_006587c5;
           pCVar16 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                              (*(CDemonActor **)((this_ptr->base_enemy).field6_0xbe38 + 4),
-                               (CVector3f *)(local_c8 + 0x18),&local_f8);
+                              (*(CDemonActor **)((this_ptr->base_enemy).field6_0xbe38 + 4),&local_b0
+                               ,&local_f8);
           local_1e8.x = pCVar16->x - pCVar11->x;
           local_1e8.y = pCVar16->y - pCVar11->y;
           local_1e8.z = pCVar16->z - pCVar11->z;
@@ -380,6 +383,7 @@ LAB_005f9541:
         local_238 = local_238 * _DAT_006587c9 + _DAT_00658805;
         (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].renderTargetPoints)
                   ((CDemonActor *)this_ptr);
+        in_stack_fffffc54 = "zom-h0?.wav";
         (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                   ((CDemonActor *)this_ptr,"zom-h0?.wav");
       }
@@ -453,7 +457,7 @@ LAB_005f9541:
     local_370.attacker = (CDemonActor *)this_ptr;
     local_370.wielder = (CDemonActor *)this_ptr;
     (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].playAmbientSoundWithVolume)
-              ((CDemonActor *)this_ptr,(char *)&local_370,(float)in_stack_fffffbda);
+              ((CDemonActor *)this_ptr,(char *)&local_370,(float)in_stack_fffffc54);
     this_ptr->field4_0xbf48[0x50] = '\0';
     this_ptr->field4_0xbf48[0x51] = '\0';
     this_ptr->field4_0xbf48[0x52] = -0x80;
@@ -492,7 +496,7 @@ LAB_005f9541:
                   ((CDemonActor *)this_ptr);
         if ((*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) && (local_38 != 0)) {
           iVar7 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
-                    hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffbda);
+                    hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffc58);
           if (iVar7 == 0) goto LAB_005fa18b;
           g_CGamePtr->field73_0x220 = 1;
           *(CHero **)((this_ptr->base_enemy).field6_0xbe38 + 4) = g_HeroActors[g_LocalHeroIndex];
@@ -521,7 +525,7 @@ LAB_005f9541:
                   ((CDemonActor *)this_ptr);
         if (((*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) && (local_38 != 0)) &&
            (iVar13 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
-                       hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffbda
+                       hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffc58
                                     ), iVar13 != 0)) {
           g_CGamePtr->field73_0x220 = 1;
           *(CHero **)((this_ptr->base_enemy).field6_0xbe38 + 4) = g_HeroActors[g_LocalHeroIndex];
@@ -564,7 +568,7 @@ LAB_005fa85e:
                (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
           iVar7 = core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530();
           if (iVar7 == 0) {
-            local_50 = DAT_006659c8;
+            local_50 = 0x3FA66666;
             local_40 = core_zombie_cpp_CZombie_FUN_005fbd00();
             if (((-1 < local_40) &&
                 (pCVar19 = (this_ptr->base_enemy).base_character.carry_hands[local_40].carry_actor,
@@ -573,11 +577,11 @@ LAB_005fa85e:
               local_44 = 1.0;
               if (pCVar19 != (CDemonActor *)0x0) {
                 pCVar14 = (*pCVar19->vtable->getBoundingBox)(pCVar19,&local_2cc);
-                local_14 = &pCVar14->max;
+                local_14 = (SCollisionInfo *)&pCVar14->max;
                 core_actor_cpp_CVector_ctor_FUN_00410340(&local_194);
-                local_194.x = local_14->x - (pCVar14->min).x;
-                local_194.y = local_14->y - (pCVar14->min).y;
-                local_194.z = local_14->z - (pCVar14->min).z;
+                local_194.x = (float)local_14->ray_type - (pCVar14->min).x;
+                local_194.y = local_14->field1_0x4 - (pCVar14->min).y;
+                local_194.z = local_14->field2_0x8 - (pCVar14->min).z;
                 local_44 = local_194.z * (float)_DAT_00658785 + 1.0;
               }
               local_50 = local_44;
@@ -691,7 +695,8 @@ LAB_005fac96:
             pCVar19 = (this_ptr->base_enemy).base_character.carry_hands[iVar7].carry_actor;
             local_3c = 1.0;
             if (pCVar19 != (CDemonActor *)0x0) {
-              pCVar14 = (*pCVar19->vtable->getBoundingBox)(pCVar19,&local_2fc);
+              pCVar14 = (*pCVar19->vtable->getBoundingBox)
+                                  (pCVar19,(CBoundingBox3D *)(local_314 + 0x18));
               local_68 = &local_1f4;
               core_actor_cpp_CVector_ctor_FUN_00410340(local_68);
               local_1f4.x = (pCVar14->max).x - (pCVar14->min).x;
@@ -700,7 +705,7 @@ LAB_005fac96:
               local_3c = local_68->z * (float)_DAT_00658785 + local_3c;
             }
             local_34 = local_3c;
-            local_54 = (CVector3f *)
+            local_54 = (SCollisionInfo *)
                        core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                                  (&(this_ptr->base_enemy).base_character.model.motion_controller);
             local_88 = (double)(float)local_54;
@@ -719,7 +724,7 @@ LAB_005fac96:
                   (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154)
                               + 0x108))();
         if (pCVar12 == (CZombie *)0x0) {
-          local_34 = DAT_006659c8;
+          local_34 = 0x3FA66666;
           local_4c = 3.0;
         }
         else if (pCVar12 != this_ptr) goto LAB_005fac96;
@@ -801,7 +806,8 @@ LAB_005fac96:
       }
       else if ((uVar9 < 0x19) || (uVar9 < 0x1a)) {
         iVar7 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision
-                )((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffbda);
+                )((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(SCollisionInfo *)in_stack_fffffc54)
+        ;
         if ((iVar7 == 0) &&
            ((*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
                       ((CDemonActor *)this_ptr),
@@ -846,13 +852,13 @@ LAB_005fa279:
             iVar7 = 0;
             do {
               local_78 = (float)iVar7 * (float)_DAT_006587dd * (float)_DAT_006587d5;
-              local_14 = (CVector3f *)iVar7;
+              local_14 = (SCollisionInfo *)iVar7;
               core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
               core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                         (g_CDemonSetPtr,(CDemonActor *)this_ptr);
               fVar24 = (float10)fcos((float10)local_78);
               fVar25 = (float10)fsin((float10)local_78);
-              local_18 = (CVector3f *)
+              local_18 = (SCollisionInfo *)
                          core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
                                    (g_CDemonSetPtr,
                                     (this_ptr->base_enemy).base_character.base_actor.location.
@@ -1001,12 +1007,12 @@ LAB_005fa14f:
                                 (DAT_00823c50,g_CDoorClassInfo.name_hash), local_58 = pCVar19,
            pCVar19 != (CDemonActor *)0x0)) {
           pCVar14 = (*pCVar19->vtable->getBoundingBox)(pCVar19,&local_2b4);
-          local_c8._12_4_ = (pCVar14->min).x + (pCVar14->max).x;
-          local_c8._16_4_ = (pCVar14->min).y + (pCVar14->max).y;
-          local_164.x = (float)local_c8._12_4_ * _DAT_006587c5;
-          local_164.y = (float)local_c8._16_4_ * _DAT_006587c5;
-          local_c8._20_4_ = (pCVar14->min).z + (pCVar14->max).z;
-          local_164.z = (float)local_c8._20_4_ * _DAT_006587c5;
+          local_bc = (pCVar14->min).x + (pCVar14->max).x;
+          local_b8 = (pCVar14->min).y + (pCVar14->max).y;
+          local_164.x = local_bc * _DAT_006587c5;
+          local_164.y = local_b8 * _DAT_006587c5;
+          local_b4 = (pCVar14->min).z + (pCVar14->max).z;
+          local_164.z = local_b4 * _DAT_006587c5;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar19,&local_17c,&local_164);
           pCVar11 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                               ((CDemonActor *)this_ptr,&local_140,&local_17c);

@@ -23,13 +23,13 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
   do {
     local_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *
                             (float)0.00390625 * this_ptr->radius *
-                            256f);
+                            256.0f);
     local_1c.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *
                             (float)0.00390625 * this_ptr->radius *
-                            256f);
+                            256.0f);
     local_1c.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *
                             (float)0.00390625 * this_ptr->radius *
-                            256f);
+                            256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +

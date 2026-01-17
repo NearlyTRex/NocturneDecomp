@@ -1,21 +1,24 @@
 {
   "complexity": {
     "assembly_lines": 1759,
-    "complexity_score": 1038,
+    "complexity_score": 2208,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 101,
-    "pseudocode_lines": 688,
-    "suspect_count": 32,
+    "pseudocode_lines": 693,
+    "suspect_count": 147,
     "suspect_types": [
+      "call_esp_anchor",
       "concat_artifact",
       "pointer_cast",
+      "stack_align_anchor",
       "stack_param",
       "stack_ref",
       "sub_artifact",
-      "undefined_type"
+      "undefined_type",
+      "variadic_anchor"
     ],
-    "total_lines": 2447
+    "total_lines": 2452
   },
   "cross_references": [
     {
@@ -910,365 +913,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "0057e7cc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057e7da": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057e852": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057e893": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057e908": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057e91b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057e930": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ea17": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ea25": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ea37": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ea49": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ea6f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057eab7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ead2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057eb29": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057eb40": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057eb5f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057eb86": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057eba9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ebd2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ebe3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ebf1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ec15": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ec38": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ec61": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ec72": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ec81": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ecc4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ed02": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ed2a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ed75": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057edb7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057edc4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057edfe": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ee21": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ee4a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057eec8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057eed8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ef01": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ef4f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057ef76": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f1ef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f205": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f259": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f27b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f2a4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f2bf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f2dc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f30c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f322": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f340": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f356": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f373": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f384": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f3a4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f3e0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f403": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f418": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f42c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f463": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f47a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f4ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f4e5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f4f5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f51c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f533": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f564": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f59c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f5c6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f5f3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f615": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f643": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f665": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f682": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f6b2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f6cf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f6f4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f711": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f730": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f73e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f765": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f783": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f79b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f8ad": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f8c7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f8e4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f900": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f913": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f91d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f945": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f958": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f975": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f98f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f9b3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f9cf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f9e2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057f9ec": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fa07": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fa1a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fa33": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fa5b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057faa0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fb16": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fb3c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fb56": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fb74": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fb80": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fb8a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fba5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fbb8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fbd5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fbfb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fc15": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fc33": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fc3f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fc49": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fc64": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fc77": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ],
-    "0057fc9d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffb888,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.608965517241379,
     "instruction_count": 1450,
@@ -1318,7 +962,677 @@
     },
     "pcode_op_count": 6683
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 18328,
+    "local_size": 18324,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4790",
+        "offset": -18320,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_478c",
+        "offset": -18316,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4788",
+        "offset": -18312,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2ef0",
+        "offset": -12016,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1658",
+        "offset": -5720,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_12b0",
+        "offset": -4784,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_f08",
+        "offset": -3848,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b60",
+        "offset": -2912,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a60",
+        "offset": -2656,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a5c",
+        "offset": -2652,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a58",
+        "offset": -2648,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a54",
+        "offset": -2644,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a50",
+        "offset": -2640,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4c",
+        "offset": -2636,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9bc",
+        "offset": -2492,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_8bc",
+        "offset": -2236,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7bc",
+        "offset": -1980,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7bb",
+        "offset": -1979,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6bc",
+        "offset": -1724,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5bc",
+        "offset": -1468,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4bd",
+        "offset": -1213,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4bc",
+        "offset": -1212,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4bb",
+        "offset": -1211,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3bc",
+        "offset": -956,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2bc",
+        "offset": -700,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1bc",
+        "offset": -444,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0057e7cc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved type",
+      "line": 11,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_ffffb878",
+      "text": "uint in_stack_ffffb878;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_ffffb87c",
+      "text": "uint in_stack_ffffb87c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_ffffb880",
+      "text": "uint in_stack_ffffb880;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_ffffb884",
+      "text": "uint in_stack_ffffb884;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_ffffb888",
+      "text": "uint in_stack_ffffb888;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_ffffb878",
+      "text": "(&local_f08,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_ffffb87c",
+      "text": "(&local_f08,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_ffffb880",
+      "text": "(&local_f08,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 197,
+      "match": "in_stack_ffffb884",
+      "text": "in_stack_ffffb884,in_stack_ffffb888);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 197,
+      "match": "in_stack_ffffb888",
+      "text": "in_stack_ffffb884,in_stack_ffffb888);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 217,
+      "match": "in_stack_ffffb878",
+      "text": "(&local_1658,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 217,
+      "match": "in_stack_ffffb87c",
+      "text": "(&local_1658,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 217,
+      "match": "in_stack_ffffb880",
+      "text": "(&local_1658,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 218,
+      "match": "in_stack_ffffb884",
+      "text": "in_stack_ffffb884,in_stack_ffffb888);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 218,
+      "match": "in_stack_ffffb888",
+      "text": "in_stack_ffffb884,in_stack_ffffb888);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 253,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar4) != 0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 362,
+      "match": "(C3DSCamera *)((int)",
+      "text": "pCVar11 = (C3DSCamera *)((int)pCVar11 + (uint)bVar20 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 363,
+      "match": "(C3DSCamera *)((int)",
+      "text": "pCVar19 = (C3DSCamera *)((int)pCVar19 + (uint)bVar20 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 439,
+      "match": "in_stack_ffffb878",
+      "text": "(&local_12b0,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 439,
+      "match": "in_stack_ffffb87c",
+      "text": "(&local_12b0,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 439,
+      "match": "in_stack_ffffb880",
+      "text": "(&local_12b0,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 440,
+      "match": "in_stack_ffffb884",
+      "text": "in_stack_ffffb884,in_stack_ffffb888);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 440,
+      "match": "in_stack_ffffb888",
+      "text": "in_stack_ffffb884,in_stack_ffffb888);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 446,
+      "match": "SUB41",
+      "text": "SUB41 /* extract 2-byte value */(local_9bc,0));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 533,
+      "match": "SUB41",
+      "text": "SUB41 /* extract 2-byte value */(local_2bc,0));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 558,
+      "match": "&stack0xffffb878",
+      "text": "core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)&stack0xffffb878);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 559,
+      "match": "&stack0xffffb878",
+      "text": "core_setutil_cpp_C3DSLight_importS3D_FUN_00587710((C3DSLight *)&stack0xffffb878,pFVar5);",
+      "type": "stack_ref"
+    },
     {
       "add_esp_value": 12,
       "call_address": "0057e88e",
@@ -2934,706 +3248,6 @@
       "target_address": "0x50f9b0",
       "text": "Direct CALL at 0057fc72, ADD ESP at 0057fc77 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 18328,
-    "local_size": 18324,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_4790",
-        "offset": -18320,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_478c",
-        "offset": -18316,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4788",
-        "offset": -18312,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2ef0",
-        "offset": -12016,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1658",
-        "offset": -5720,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_12b0",
-        "offset": -4784,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_f08",
-        "offset": -3848,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_b60",
-        "offset": -2912,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a60",
-        "offset": -2656,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a5c",
-        "offset": -2652,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a58",
-        "offset": -2648,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a54",
-        "offset": -2644,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a50",
-        "offset": -2640,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a4c",
-        "offset": -2636,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_9bc",
-        "offset": -2492,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_8bc",
-        "offset": -2236,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7bc",
-        "offset": -1980,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7bb",
-        "offset": -1979,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6bc",
-        "offset": -1724,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_5bc",
-        "offset": -1468,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4bd",
-        "offset": -1213,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4bc",
-        "offset": -1212,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4bb",
-        "offset": -1211,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3bc",
-        "offset": -956,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2bc",
-        "offset": -700,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1bc",
-        "offset": -444,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_ac",
-        "offset": -172,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_9c",
-        "offset": -156,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_98",
-        "offset": -152,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_94",
-        "offset": -148,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_90",
-        "offset": -144,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_8c",
-        "offset": -140,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_80",
-        "offset": -128,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDemonSet *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "0057e7cc",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved type",
-      "line": 11,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_ffffb878",
-      "text": "FILE *in_stack_ffffb878;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_ffffb87c",
-      "text": "uint in_stack_ffffb87c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffb880",
-      "text": "uint in_stack_ffffb880;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_ffffb884",
-      "text": "uint in_stack_ffffb884;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffb888",
-      "text": "uint in_stack_ffffb888;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 195,
-      "match": "in_stack_ffffb878",
-      "text": "(&local_f08,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 195,
-      "match": "in_stack_ffffb87c",
-      "text": "(&local_f08,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 195,
-      "match": "in_stack_ffffb880",
-      "text": "(&local_f08,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 196,
-      "match": "in_stack_ffffb884",
-      "text": "in_stack_ffffb884,in_stack_ffffb888);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 196,
-      "match": "in_stack_ffffb888",
-      "text": "in_stack_ffffb884,in_stack_ffffb888);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_ffffb878",
-      "text": "(&local_1658,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_ffffb87c",
-      "text": "(&local_1658,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_ffffb880",
-      "text": "(&local_1658,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_ffffb884",
-      "text": "in_stack_ffffb884,in_stack_ffffb888);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_ffffb888",
-      "text": "in_stack_ffffb884,in_stack_ffffb888);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 252,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar4) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 361,
-      "match": "(C3DSCamera *)((int)",
-      "text": "pCVar11 = (C3DSCamera *)((int)pCVar11 + (uint)bVar20 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 362,
-      "match": "(C3DSCamera *)((int)",
-      "text": "pCVar19 = (C3DSCamera *)((int)pCVar19 + (uint)bVar20 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 438,
-      "match": "in_stack_ffffb878",
-      "text": "(&local_12b0,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 438,
-      "match": "in_stack_ffffb87c",
-      "text": "(&local_12b0,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 438,
-      "match": "in_stack_ffffb880",
-      "text": "(&local_12b0,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 439,
-      "match": "in_stack_ffffb884",
-      "text": "in_stack_ffffb884,in_stack_ffffb888);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 439,
-      "match": "in_stack_ffffb888",
-      "text": "in_stack_ffffb884,in_stack_ffffb888);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 445,
-      "match": "SUB41",
-      "text": "SUB41 /* extract 2-byte value */(local_9bc,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 532,
-      "match": "SUB41",
-      "text": "SUB41 /* extract 2-byte value */(local_2bc,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 557,
-      "match": "&stack0xffffb878",
-      "text": "core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)&stack0xffffb878);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 558,
-      "match": "&stack0xffffb878",
-      "text": "core_setutil_cpp_C3DSLight_importS3D_FUN_00587710((C3DSLight *)&stack0xffffb878,pFVar5);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 593,
-      "match": "in_stack_ffffb878",
-      "text": "crt_stdio_c_fputc_FUN_006007a0(iVar16,in_stack_ffffb878);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 608,
-      "match": "in_stack_ffffb878",
-      "text": "crt_stdio_c_fputc_FUN_006007a0(iVar14,in_stack_ffffb878);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 650,
-      "match": "in_stack_ffffb878",
-      "text": "crt_stdio_c_fputc_FUN_006007a0(iVar14,in_stack_ffffb878);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 664,
-      "match": "in_stack_ffffb878",
-      "text": "crt_stdio_c_fputc_FUN_006007a0(iVar14,in_stack_ffffb878);",
-      "type": "stack_param"
     }
   ]
 }

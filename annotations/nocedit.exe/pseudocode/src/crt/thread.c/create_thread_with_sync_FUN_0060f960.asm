@@ -13,12 +13,12 @@
 ; undefined4       Stack[-0x28]:4  local_28
 ;
 ; Referenced Globals:
-;   CloseHandle* CloseHandle = 00211c38
-;   CreateEventA* PTR_CreateEventA_0061150c = 00211c5a
-;   CreateThread* CreateThread = 00211c9a
-;   GetCurrentThreadId* PTR_GetCurrentThreadId_00611584 = 00211e84
-;   GetCurrentThread* PTR_GetCurrentThread_00611588 = 00211e9a
-;   WaitForSingleObject* WaitForSingleObject = 002122c4
+;   CloseHandle* g_CloseHandleFunc = 00211c38
+;   CreateEventA* g_CreateEventAFunc = 00211c5a
+;   CreateThread* g_CreateThreadFunc = 00211c9a
+;   GetCurrentThreadId* g_GetCurrentThreadIdFunc = 00211e84
+;   GetCurrentThread* g_GetCurrentThreadFunc = 00211e9a
+;   WaitForSingleObject* g_WaitForSingleObjectFunc = 002122c4
 ;   TerminatedCString s_bgnthd_00659784
 ;   undefined4 DAT_00659788
 ;   undefined4 DAT_0065978c
@@ -67,7 +67,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x58]      ; 0060f99c
     MOV EDI,ESP                         ; 0060f9a0
     MOV dword ptr [ESP + 0x24],EAX      ; 0060f9a2
-    CALL dword ptr CS:[0x611588]        ; 0060f9a6 | PTR_GetCurrentThread_00611588
+    CALL dword ptr CS:[0x611588]        ; 0060f9a6 | g_GetCurrentThreadFunc
     PUSH 0x10                           ; 0060f9ad
     MOV dword ptr [ESP + 0x2c],EAX      ; 0060f9af
     MOV AX,DS                           ; 0060f9b3
@@ -80,7 +80,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0060f9c7 | = "__bgnthd"
     MOVSD ES:EDI,ESI                    ; 0060f9c8 | DAT_00659788
     MOVSB ES:EDI,ESI                    ; 0060f9c9 | DAT_0065978c
-    CALL dword ptr CS:[0x611584]        ; 0060f9ca | PTR_GetCurrentThreadId_00611584
+    CALL dword ptr CS:[0x611584]        ; 0060f9ca | g_GetCurrentThreadIdFunc
     PUSH EAX                            ; 0060f9d1
     CALL crt_stdio.c_IntegerToString_FUN_00607d18 ; 0060f9d2
         ;   XREF to: 00607d18 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_IntegerToString_FUN_00607d18(int value, char * buffer, int base)
@@ -90,7 +90,7 @@ section .text
     PUSH 0x0                            ; 0060f9dd
     PUSH 0x0                            ; 0060f9df
     PUSH 0x0                            ; 0060f9e1
-    CALL dword ptr CS:[0x61150c]        ; 0060f9e3 | PTR_CreateEventA_0061150c
+    CALL dword ptr CS:[0x61150c]        ; 0060f9e3 | g_CreateEventAFunc
     MOV dword ptr [ESP + 0x2c],EAX      ; 0060f9ea
     LEA EAX,[ESP + 0x34]                ; 0060f9ee
     PUSH EAX                            ; 0060f9f2
@@ -100,7 +100,7 @@ section .text
     PUSH 0x60f8c0                       ; 0060f9fa
     PUSH EBX                            ; 0060f9ff
     PUSH 0x0                            ; 0060fa00
-    CALL dword ptr CS:[0x61151c]        ; 0060fa02 | CreateThread
+    CALL dword ptr CS:[0x61151c]        ; 0060fa02 | g_CreateThreadFunc
     MOV EBX,EAX                         ; 0060fa09
     MOV ESI,EAX                         ; 0060fa0b
     TEST EAX,EAX                        ; 0060fa0d
@@ -113,7 +113,7 @@ section .text
         ;   Label: LAB_0060fa1b
     MOV EDI,dword ptr [ESP + 0x30]      ; 0060fa1d
     PUSH EDI                            ; 0060fa21
-    CALL dword ptr CS:[0x61166c]        ; 0060fa22 | WaitForSingleObject
+    CALL dword ptr CS:[0x61166c]        ; 0060fa22 | g_WaitForSingleObjectFunc
     MOV EBP,dword ptr [ESP + 0x30]      ; 0060fa29
     TEST EBP,EBP                        ; 0060fa2d
     JZ 0x0060fa36                       ; 0060fa2f
@@ -123,11 +123,11 @@ section .text
         ;   XREF to: 0060fa3e (UNCONDITIONAL_JUMP)  ; LAB_0060fa3e
     PUSH EBX                            ; 0060fa36
         ;   Label: LAB_0060fa36
-    CALL dword ptr CS:[0x611504]        ; 0060fa37 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 0060fa37 | g_CloseHandleFunc
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0060fa3e
         ;   Label: LAB_0060fa3e
     PUSH EDX                            ; 0060fa42
-    CALL dword ptr CS:[0x611504]        ; 0060fa43 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 0060fa43 | g_CloseHandleFunc
     MOV EAX,ESI                         ; 0060fa4a
     ADD ESP,0x38                        ; 0060fa4c
         ;   Label: LAB_0060fa4c

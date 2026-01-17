@@ -1,19 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 358,
+    "complexity_score": 587,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
-    "pseudocode_lines": 228,
-    "suspect_count": 11,
+    "pseudocode_lines": 222,
+    "suspect_count": 33,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "extra_output",
       "pointer_cast",
+      "stack_align_anchor",
       "suspect_float",
       "warning_overlapping_globals"
     ],
-    "total_lines": 667
+    "total_lines": 661
   },
   "cross_references": [],
   "function": {
@@ -186,68 +189,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "005e00dc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e00ff": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e010f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e0121": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e012c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e0140": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e018f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e01d4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e0260": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e029f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e02f6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e03cf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e0438": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e047e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e04e0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e0512": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e0543": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e056e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e057a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ],
-    "005e0613": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.824933687002653,
     "instruction_count": 377,
@@ -290,7 +231,138 @@
     },
     "pcode_op_count": 1819
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 172,
+    "local_size": 168,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005e00dc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 102,
+      "match": "5.60519e-44",
+      "text": "fStack_cc = 5.60519e-44;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 111,
+      "match": "extraout_ECX",
+      "text": "*(float *)(extraout_ECX + 0x20) = fStack_20;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 115,
+      "match": "1.1754944e-38",
+      "text": "this_ptr_01->vertex_buffer_ptr->u = 1.1754944e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 116,
+      "match": "1.1754944e-38",
+      "text": "this_ptr_01->vertex_buffer_ptr->v = 1.1754944e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 151,
+      "match": "(int *)((int)",
+      "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(int *)((int)",
+      "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 173,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 209,
+      "match": "1.4013e-45",
+      "text": "local_a4.min.x = 1.4013e-45;",
+      "type": "suspect_float"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "005e011e",
@@ -543,125 +615,6 @@
       "target_address": "0x40dec0",
       "text": "Direct CALL at 005e060e, ADD ESP at 005e0613 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 172,
-    "local_size": 168,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_a4",
-        "offset": -164,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CTrigger *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005e00dc",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 114,
-      "match": "extraout_ECX",
-      "text": "*(int *)(extraout_ECX + 0x20) = iStack_28;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 118,
-      "match": "1.1754944e-38",
-      "text": "this_ptr_01->vertex_buffer_ptr->u = 1.1754944e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 119,
-      "match": "1.1754944e-38",
-      "text": "this_ptr_01->vertex_buffer_ptr->v = 1.1754944e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 132,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 133,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 156,
-      "match": "(int *)((int)",
-      "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(int *)((int)",
-      "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 178,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

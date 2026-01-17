@@ -29,6 +29,6 @@ LPCRITICAL_SECTION __cdecl crt_sync_c_allocate_critical_section_FUN_00609f24(voi
     g_DynamicCriticalSectionArray[g_DynamicCriticalSectionCounter] = lpCriticalSection;
     g_DynamicCriticalSectionCounter = g_DynamicCriticalSectionCounter + 1;
   }
-  (*PTR_InitializeCriticalSection_006115e0)(lpCriticalSection);
+  (*g_InitializeCriticalSectionFunc)(lpCriticalSection);
   return lpCriticalSection;
 }

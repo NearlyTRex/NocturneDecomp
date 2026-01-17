@@ -10,7 +10,7 @@
 ;   crt_stdio.c_fflushInternal_FUN_006039d0 at 00603ad1
 ;
 ; Referenced Globals:
-;   FlushFileBuffers* PTR_FlushFileBuffers_00611554 = 00211da6
+;   FlushFileBuffers* g_FlushFileBuffersFunc = 00211da6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14
@@ -53,7 +53,7 @@ section .text
     ADD ESP,0x4                         ; 0060af32
     MOV EAX,dword ptr [EAX + EBX*0x4]   ; 0060af35
     PUSH EAX                            ; 0060af38
-    CALL dword ptr CS:[0x611554]        ; 0060af39 | PTR_FlushFileBuffers_00611554
+    CALL dword ptr CS:[0x611554]        ; 0060af39 | g_FlushFileBuffersFunc
     TEST EAX,EAX                        ; 0060af40
     JNZ 0x0060af4e                      ; 0060af42
         ;   XREF to: 0060af4e (CONDITIONAL_JUMP)  ; LAB_0060af4e

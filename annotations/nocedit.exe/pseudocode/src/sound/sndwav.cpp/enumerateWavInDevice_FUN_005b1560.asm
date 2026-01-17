@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720 at 005ab757
 ;
 ; Referenced Globals:
-;   waveInGetDevCapsA* waveInGetDevCapsA = 002118b2
+;   waveInGetDevCapsA* g_waveInGetDevCapsAFunc = 002118b2
 ;   TerminatedCString s_WavIn_006524e6
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005b156f
     PUSH EAX                            ; 005b1573
     PUSH ESI                            ; 005b1574
-    CALL dword ptr CS:[0x611428]        ; 005b1575 | waveInGetDevCapsA
+    CALL dword ptr CS:[0x611428]        ; 005b1575 | g_waveInGetDevCapsAFunc
     TEST EAX,EAX                        ; 005b157c
     JZ 0x005b1588                       ; 005b157e
         ;   XREF to: 005b1588 (CONDITIONAL_JUMP)  ; LAB_005b1588

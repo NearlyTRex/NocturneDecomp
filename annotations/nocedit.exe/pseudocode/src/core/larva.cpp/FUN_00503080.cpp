@@ -36,7 +36,6 @@ void core_larva_cpp_FUN_00503080(void)
   unkbyte10 extraout_ST3;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  char local_1f0 [200];
   CVector3f local_128;
   CVector3f local_11c;
   uint local_110;
@@ -110,7 +109,7 @@ void core_larva_cpp_FUN_00503080(void)
         local_e8 = local_d0;
         local_e4 = local_cc;
       }
-      local_e8 = local_e8 + 2f;
+      local_e8 = local_e8 + 2.0f;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
       local_ec = local_14 + local_ec;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
@@ -125,7 +124,7 @@ void core_larva_cpp_FUN_00503080(void)
       fVar14 = (float10)fcos(fVar14);
       local_60 = (double)fVar3;
       local_24 = fVar3 * (float)32 * fVar3;
-      fVar15 = fVar12 * (float10)2f * fVar12 *
+      fVar15 = fVar12 * (float10)2.0f * fVar12 *
                (extraout_ST1 * (float10)fVar3 - (float10)local_e8);
       local_ac = (float)-extraout_ST2;
       local_20 = (float)fVar15;
@@ -204,7 +203,7 @@ void core_larva_cpp_FUN_00503080(void)
     else if (local_28 < 2) {
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)in_stack_00000004);
-      uVar11 = DAT_0066071c;
+      uVar11 = 0x41A00000;
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
         if (extraout_EAX_00 == 0) {
@@ -213,7 +212,7 @@ void core_larva_cpp_FUN_00503080(void)
         }
       }
       else {
-        local_38 = DAT_0066071c;
+        local_38 = 0x41A00000;
         (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
         (in_stack_00000004->base_character).model.accumulated_root_motion.y =
              (in_stack_00000004->base_character).model.accumulated_root_motion.z;
@@ -321,11 +320,11 @@ LAB_00503184:
       local_68 = (double)fVar14;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.99,1.01);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_1f0,"slime.wav @%f *%f",
+                (&stack0xfffffe10,"slime.wav @%f *%f",
                  (double)(in_stack_00000004->base_character).size_scale,
                  (double)(local_14 * (float)local_68));
       uVar11 = (*((in_stack_00000004->base_character).base_actor.vtable)->playAmbientSound)
-                         ((CDemonActor *)in_stack_00000004,local_1f0);
+                         ((CDemonActor *)in_stack_00000004,&stack0xfffffe10);
       *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) = uVar11;
     }
   }

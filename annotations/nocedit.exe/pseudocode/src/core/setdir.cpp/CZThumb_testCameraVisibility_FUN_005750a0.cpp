@@ -26,7 +26,7 @@ float __cdecl core_setdir_cpp_CZThumb_testCameraVisibility_FUN_005750a0(CZThumb 
      fVar2 = (in_stack_00000014->position).y - (float)this_ptr->zbuffer_data,
      fVar1 = (in_stack_00000014->position).z - (float)this_ptr[1].width,
      fVar1 * fVar1 + fVar2 * fVar2 + fVar4 * fVar4 <=
-     200f * 200f)) {
+     200.0f * 200.0f)) {
     iVar3 = core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_00585970
                       (in_stack_00000014,(CVector3f *)&this_ptr->projection_scale,in_stack_00000018)
     ;

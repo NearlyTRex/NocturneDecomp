@@ -12,20 +12,23 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
 
 {
   float fVar1;
+  int x1;
   int iVar2;
   int iVar3;
-  int iVar4;
   int y;
   int y2;
-  int iVar5;
-  int x1;
+  int iVar4;
+  uint extraout_EDX;
+  int x1_00;
   int x2;
+  double dVar5;
   double dVar6;
   double dVar7;
-  ulonglong local_40;
+  uint uVar8;
+  uint uVar9;
+  float local_38;
   float local_34;
-  int local_24;
-  int local_1c;
+  int local_2c;
   
   if (g_WindowStackCount < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -42,61 +45,67 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
     }
     local_34 = progress_min / progress_max;
   }
-  dVar6 = crt_math_c_round_FUN_005fe6b0
-                    ((double)(local_34 * (float)100 + (float)0.5));
-  iVar4 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-  if (((int)ROUND(dVar6) != g_WindowStack[g_WindowStackCount + -1].progress_percentage) ||
-     (0x47ffff < iVar4 - g_WindowStack[g_WindowStackCount + -1].progress_timestamp)) {
+  uVar9 = 0x4a059a;
+  dVar5 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(local_34 * (float)100 +
+                             (float)0.5));
+  iVar3 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+  if (((int)ROUND(dVar5) != g_WindowStack[g_WindowStackCount + -1].progress_percentage) ||
+     (0x47ffff < iVar3 - g_WindowStack[g_WindowStackCount + -1].progress_timestamp)) {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
               (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipTop,g_WindowStatusTextColor,-1,
-               "%d%% complete",local_1c);
+               "%d%% complete",(int)ROUND(dVar5),uVar9);
     iVar2 = g_ClipRight;
-    iVar5 = g_ClipLeft;
+    x1 = g_ClipLeft;
     y = g_FontCharacterWidth * 2 + g_ClipTop;
     y2 = g_FontCharacterWidth * 4 + g_ClipTop + -1;
     x2 = g_ClipRight + -1;
-    x1 = g_ClipLeft + 1;
+    x1_00 = g_ClipLeft + 1;
     engine_2d_c_fillRectWithBorder_FUN_00403200
-              (x1,y + 1,x2,y2,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
-    iVar3 = g_ActiveRenderColor;
+              (x1_00,y + 1,x2,y2,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
+    iVar4 = g_ActiveRenderColor;
     g_ActiveRenderColor = g_ProgressBarTextColor;
-    engine_2d_c_drawHLine_FUN_00402ee0(iVar5,y,x2);
-    engine_2d_c_drawVLine_FUN_00402ff0(iVar5,y,y2);
-    g_ActiveRenderColor = iVar3;
-    dVar6 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((float)((x2 - x1) + 1) * local_34 + (float)0.5));
-    iVar5 = (int)ROUND(dVar6) + x1;
-    if (x1 < iVar5) {
-      if (x2 <= iVar5) {
-        iVar5 = iVar2 + -2;
+    engine_2d_c_drawHLine_FUN_00402ee0(x1,y,x2);
+    engine_2d_c_drawVLine_FUN_00402ff0(x1,y,y2);
+    g_ActiveRenderColor = iVar4;
+    dVar5 = crt_math_c_round_FUN_005fe6b0
+                      ((double)((float)((x2 - x1_00) + 1) * local_38 +
+                               (float)0.5));
+    iVar4 = (int)ROUND(dVar5) + x1_00;
+    if (x1_00 < iVar4) {
+      if (x2 <= iVar4) {
+        iVar4 = iVar2 + -2;
       }
-      engine_2d_c_fillRectColor_FUN_00403170(x1,y + 1,iVar5,local_24,g_ProgressBarFillColor);
+      engine_2d_c_fillRectColor_FUN_00403170(x1_00,y + 1,iVar4,iVar3,g_ProgressBarFillColor);
     }
-    if (0 < local_1c) {
-      fVar1 = (float)(local_24 - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *
+    if (0 < y2) {
+      fVar1 = (float)(local_2c - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *
               (float)8.4771050347222196e-07;
+      dVar5 = (double)fVar1;
       if ((float)5 < fVar1) {
-        local_40 = (double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)(double)fVar1 >> 0x20),0x4a077d);
-        dVar7 = crt_math_c_round_FUN_005fe6b0
+        uVar9 = 0x4a077d;
+        dVar6 = crt_math_c_round_FUN_005fe6b0
                           ((double)(((progress_max - progress_min) * fVar1) / progress_min +
                                    (float)0.5));
-        local_1c = (int)ROUND(dVar7);
-        if (0 < local_1c) {
-          dVar7 = crt_math_c_round_FUN_005fe6b0(local_40 + 0.5);
+        if (0 < (int)ROUND(dVar6)) {
+          uVar8 = 0x4a07b4;
+          dVar7 = crt_math_c_round_FUN_005fe6b0
+                            ((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar5,0),uVar9) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
                     (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipBottom - g_FontCharacterWidth,
                      g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
-                     (int)ROUND(dVar7) / 0x3c,iVar4,local_1c / 0x3c,(int)ROUND(dVar6));
+                     (int)ROUND(dVar7) / 0x3c,(int)ROUND(dVar7) % 0x3c,(int)ROUND(dVar6) / 0x3c,
+                     extraout_EDX,uVar8,uVar9,SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
         }
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar4 = g_WindowStackCount + -1;
-    g_WindowStack[iVar4].progress_percentage = local_1c;
-    g_WindowStack[iVar4].progress_timestamp = local_24;
+    iVar3 = g_WindowStackCount + -1;
+    g_WindowStack[iVar3].progress_percentage = local_2c;
+    g_WindowStack[iVar3].progress_timestamp = x1;
   }
   return;
 }

@@ -132,7 +132,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
         local_6c = 0;
         local_48.z = g_SoundListenerPrev.z;
         local_64 = 0;
-        local_48.y = g_SoundListenerPrev.y + 20f;
+        local_48.y = g_SoundListenerPrev.y + 20.0f;
         iVar4 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
                           (g_CDemonSetPtr,&local_54,&local_48);
         if (iVar4 == 0) {

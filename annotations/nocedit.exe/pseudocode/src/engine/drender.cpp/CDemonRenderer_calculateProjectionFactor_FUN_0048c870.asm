@@ -12,8 +12,8 @@
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 at 00570a5a
 ;
 ; Referenced Globals:
-;   double g_ProjectionDivisor = 18
-;   double g_ProjectionMultiplier = 65536
+;   double g_ProjectionDivisorFactor = 18
+;   double g_ProjectionMultiplierFactor = 65536
 ;   int g_ProjectionScale = 0x10000
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     SUB ESP,0x4                         ; 0048c870
         ;   Label: engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870
     FILD dword ptr [0x006793c0]         ; 0048c873 | g_ProjectionScale
-    FDIVR double ptr [0x00622075]       ; 0048c879 | g_ProjectionDivisor
-    FMUL double ptr [0x0062207d]        ; 0048c87f | g_ProjectionMultiplier
+    FDIVR double ptr [0x00622075]       ; 0048c879 | g_ProjectionDivisorFactor
+    FMUL double ptr [0x0062207d]        ; 0048c87f | g_ProjectionMultiplierFactor
     FSTP float ptr [ESP]                ; 0048c885
     MOV EAX,dword ptr [ESP]             ; 0048c888
     ADD ESP,0x4                         ; 0048c88b

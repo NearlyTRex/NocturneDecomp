@@ -30,29 +30,29 @@ wincore_winrun_cpp_winMain_FUN_005f3680
   _MEMORYSTATUS memStatus;
   
   bVar10 = 0;
-  existingWindow = (*FindWindowA)(g_ApplicationTitle,(LPCSTR)0x0);
+  existingWindow = (*g_FindWindowAFunc)(g_ApplicationTitle,(LPCSTR)0x0);
   stackProbe = &windowClass;
   if (existingWindow != (HWND)0x0) {
-    activePopup = (*GetLastActivePopup)(existingWindow);
+    activePopup = (*g_GetLastActivePopupFunc)(existingWindow);
     if (activePopup != (HWND)0x0) {
       existingWindow = activePopup;
     }
-    (*BringWindowToTop)(existingWindow);
-    BVar3 = (*IsIconic)(existingWindow);
+    (*g_BringWindowToTopFunc)(existingWindow);
+    BVar3 = (*g_IsIconicFunc)(existingWindow);
     if (BVar3 != 0) {
-      (*ShowWindow)(existingWindow,9);
+      (*g_ShowWindowFunc)(existingWindow,9);
     }
-    (*SetForegroundWindow)(existingWindow);
+    (*g_SetForegroundWindowFunc)(existingWindow);
     return 0;
   }
   do {
     iVar6 = *(int *)stackProbe;
     stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);
   } while (iVar6 < (int)stackProbe);
-  seed = (*timeGetTime)();
+  seed = (*g_timeGetTimeFunc)();
   crt_stdlib_c_srand_FUN_005feb80(seed);
   pbVar8 = &g_CommandLineBuffer;
-  pbVar4 = (byte *)(*GetCommandLineA)();
+  pbVar4 = (byte *)(*g_GetCommandLineAFunc)();
   do {
     bVar2 = *pbVar4;
     *pbVar8 = bVar2;
@@ -85,8 +85,8 @@ wincore_winrun_cpp_winMain_FUN_005f3680
       iVar6 = iVar6 + 4;
     } while (*pbVar4 != 0);
   }
-  (*GetCurrentDirectoryA)(0x100,g_CurrentDirectory);
-  (*GetModuleFileNameA)(hInstance,g_ModuleFileName,0x100);
+  (*g_GetCurrentDirectoryAFunc)(0x100,g_CurrentDirectory);
+  (*g_GetModuleFileNameAFunc)(hInstance,g_ModuleFileName,0x100);
   uVar7 = 0xffffffff;
   pcVar9 = g_ModuleFileName;
   do {
@@ -102,31 +102,32 @@ wincore_winrun_cpp_winMain_FUN_005f3680
   } while (g_ModuleFileName[uVar7] != '\\');
   g_ModuleFileName[uVar7] = '\0';
 LAB_005f37d1:
-  (*SetCurrentDirectoryA)(g_ModuleFileName);
+  (*g_SetCurrentDirectoryAFunc)(g_ModuleFileName);
   windowClass.lpfnWndProc = wincore_winrun_cpp_mainWindowProc_FUN_005f3150;
   windowClass.cbClsExtra = 0;
   windowClass.cbWndExtra = 0;
   windowClass.hInstance = hInstance;
   windowClass.style = 3;
-  windowClass.hIcon = (*LoadIconA)(hInstance,(LPCSTR)0x65);
-  windowClass.hCursor = (*LoadCursorA)((HINSTANCE)0x0,(LPCSTR)0x7f00);
-  windowClass.hbrBackground = (*GetStockObject)(4);
+  windowClass.hIcon = (*g_LoadIconAFunc)(hInstance,(LPCSTR)0x65);
+  windowClass.hCursor = (*g_LoadCursorAFunc)((HINSTANCE)0x0,(LPCSTR)0x7f00);
+  windowClass.hbrBackground = (*g_GetStockObjectFunc)(4);
   windowClass.lpszClassName = g_ApplicationTitle;
   windowClass.lpszMenuName = (LPCSTR)0x0;
-  (*RegisterClassA)(&windowClass);
+  (*g_RegisterClassAFunc)(&windowClass);
   g_MainWindowHandle =
-       (*CreateWindowExA)(0x40000,g_ApplicationTitle,g_ApplicationTimerTitle,0x80000000,0,0,0,0,
-                          (HWND)0x0,(HMENU)0x0,hInstance,(LPVOID)0x0);
+       (*g_CreateWindowExAFunc)
+                 (0x40000,g_ApplicationTitle,g_ApplicationTimerTitle,0x80000000,0,0,0,0,(HWND)0x0,
+                  (HMENU)0x0,hInstance,(LPVOID)0x0);
   if (g_MainWindowHandle == (HWND)0x0) {
     return 0;
   }
-  (*ShowWindow)(g_MainWindowHandle,nCmdShow1);
-  (*UpdateWindow)(g_MainWindowHandle);
-  currentProcess = (*GetCurrentProcess)();
-  (*SetThreadPriority)(currentProcess,1);
+  (*g_ShowWindowFunc)(g_MainWindowHandle,nCmdShow1);
+  (*g_UpdateWindowFunc)(g_MainWindowHandle);
+  currentProcess = (*g_GetCurrentProcessFunc)();
+  (*g_SetThreadPriorityFunc)(currentProcess,1);
   crt_memory_c_memset_FUN_005fde40(&memStatus,0,0x20);
   memStatus.dwLength = 0x20;
-  (*GlobalMemoryStatus)(&memStatus);
+  (*g_GlobalMemoryStatusFunc)(&memStatus);
   g_TotalPhysicalMemory = memStatus.dwTotalPhys;
   g_MessageFlags[0] = memStatus.dwAvailPageFile;
   core_main_c_initializeGameSystems_FUN_00507a60();

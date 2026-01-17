@@ -14,30 +14,35 @@ core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150
 {
   float fVar1;
   float fVar2;
-  int iVar3;
+  float fVar3;
   float fVar4;
-  SCollisionInfo local_6c;
-  CVector3f CStack_38;
-  CVector3f CStack_2c;
-  CVector3f CStack_20;
+  int iVar5;
+  float fVar6;
+  byte auStack_70 [12];
+  SCollisionInfo SStack_64;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
+  float fStack_18;
+  float fStack_14;
   
-  core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_6c);
-  local_6c.ray_type = 0;
-  iVar3 = (*this_ptr->vtable->hasCollision)(this_ptr,&local_6c);
-  if (iVar3 == 2) {
-    CStack_20.x = line_end->x - line_start->x;
-    CStack_20.y = line_end->y - line_start->y;
-    CStack_20.z = line_end->z - line_start->z;
-    fVar4 = core_actor_cpp_rayCylinderIntersect_FUN_00408340
-                      (&local_6c,line_start,&CStack_20,&CStack_2c);
-    if ((0.0 <= fVar4) && (fVar4 <= 1.0)) {
+  core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_70 + 4));
+  auStack_70._4_4_ = 0;
+  iVar5 = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)(auStack_70 + 4));
+  if (iVar5 == 2) {
+    fStack_18 = line_end->x - line_start->x;
+    fStack_14 = line_end->y - line_start->y;
+    fVar1 = line_end->z;
+    fVar2 = line_start->z;
+    fVar6 = core_actor_cpp_rayCylinderIntersect_FUN_00408340
+                      (&SStack_64,line_start,(CVector3f *)&fStack_18,&CStack_24);
+    if ((0.0 <= fVar6) && (fVar6 <= 1.0)) {
       if (out_intersection_point != (CVector3f *)0x0) {
-        fVar1 = line_start->y;
-        fVar2 = line_start->z;
-        if (out_intersection_point != &CStack_38) {
-          out_intersection_point->x = line_start->x + CStack_20.x * fVar4;
-          out_intersection_point->y = fVar1 + CStack_20.y * fVar4;
-          out_intersection_point->z = fVar2 + CStack_20.z * fVar4;
+        fVar3 = line_start->y;
+        fVar4 = line_start->z;
+        if (out_intersection_point != &CStack_30) {
+          out_intersection_point->x = line_start->x + fStack_18 * fVar6;
+          out_intersection_point->y = fVar3 + fStack_14 * fVar6;
+          out_intersection_point->z = fVar4 + (fVar1 - fVar2) * fVar6;
         }
       }
       return 1;

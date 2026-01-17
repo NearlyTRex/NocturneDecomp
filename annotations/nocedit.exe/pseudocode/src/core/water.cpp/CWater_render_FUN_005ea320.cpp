@@ -28,14 +28,14 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
   
   if (ABS(this_ptr->water_level_y) != 0.0) {
     g_WaterAnimationTimer = g_WaterAnimationTimer + g_GlobalDeltaTimeInt;
-    if (DAT_006844f4 < g_WaterAnimationTimer) {
-      g_WaterAnimationTimer = g_WaterAnimationTimer - DAT_006844f4;
+    if (0x00002000 < g_WaterAnimationTimer) {
+      g_WaterAnimationTimer = g_WaterAnimationTimer - 0x00002000;
       g_WaterCurrentFrame = g_WaterCurrentFrame + 1;
       if (0xf < g_WaterCurrentFrame) {
         g_WaterCurrentFrame = 0;
       }
     }
-    _DAT_03f8f62c = (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)DAT_006844f4);
+    _DAT_03f8f62c = (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)0x00002000);
     if (_DAT_03f8f62c < 0x10000) {
       if (_DAT_03f8f62c < 0) {
         _DAT_03f8f62c = 0;
@@ -75,9 +75,9 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
           local_6c.y = (float)(fVar3 * (float10)0.25);
           local_14 = iVar1;
         }
-        local_60.x = (int)ROUND(256f * 0.0);
-        local_60.y = (int)ROUND(local_6c.y * 256f);
-        local_60.z = (int)ROUND(256f * 0.0);
+        local_60.x = (int)ROUND(256.0f * 0.0);
+        local_60.y = (int)ROUND(local_6c.y * 256.0f);
+        local_60.z = (int)ROUND(256.0f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_60);
         core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
@@ -89,9 +89,9 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
                                 (float10)g_WaterAnimationPhase);
           local_6c.y = (float)(fVar3 * (float10)0.25);
         }
-        local_54.x = (int)ROUND(local_6c.x * 256f);
-        local_54.y = (int)ROUND(local_6c.y * 256f);
-        local_54.z = (int)ROUND(local_6c.z * 256f);
+        local_54.x = (int)ROUND(local_6c.x * 256.0f);
+        local_54.y = (int)ROUND(local_6c.y * 256.0f);
+        local_54.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_54);
         core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
@@ -104,9 +104,9 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
                                 (float10)g_WaterAnimationPhase);
           local_6c.y = (float)(fVar3 * (float10)0.25);
         }
-        local_48.x = (int)ROUND(local_6c.x * 256f);
-        local_48.y = (int)ROUND(local_6c.y * 256f);
-        local_48.z = (int)ROUND(local_6c.z * 256f);
+        local_48.x = (int)ROUND(local_6c.x * 256.0f);
+        local_48.y = (int)ROUND(local_6c.y * 256.0f);
+        local_48.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_48);
         core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
@@ -118,9 +118,9 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
           local_6c.y = (float)(fVar3 * (float10)0.25);
           local_14 = iVar1;
         }
-        local_3c.x = (int)ROUND(256f * 0.0);
-        local_3c.y = (int)ROUND(local_6c.y * 256f);
-        local_3c.z = (int)ROUND(local_6c.z * 256f);
+        local_3c.x = (int)ROUND(256.0f * 0.0);
+        local_3c.y = (int)ROUND(local_6c.y * 256.0f);
+        local_3c.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_3c);
         core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);

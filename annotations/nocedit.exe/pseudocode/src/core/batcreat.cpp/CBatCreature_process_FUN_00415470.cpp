@@ -26,7 +26,6 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   int extraout_EAX_00;
   uint uVar11;
   float in_stack_00000008;
-  SDamageInfo local_13c;
   CVector3f local_100;
   CVector3f local_f4;
   CVector3f local_e8;
@@ -110,7 +109,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
                    (this_ptr->base_enemy).base_character.base_actor.location.position.z;
       local_28 = SQRT(local_f4.z * local_f4.z + local_f4.x * local_f4.x + local_f4.y * local_f4.y);
       local_1c = local_28;
-      if (local_28 < DAT_0065a5ac) {
+      if (local_28 < 0x40600000) {
         core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_b8,&local_f4);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (local_b8.y -
@@ -187,7 +186,7 @@ LAB_004158fb:
     case 1:
       (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)this_ptr);
-      fVar3 = DAT_0065a5ac;
+      fVar3 = 0x40600000;
       if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
         if (extraout_EAX_00 == 0) {
@@ -200,7 +199,7 @@ LAB_004158fb:
         }
       }
       else {
-        local_24 = DAT_0065a5ac;
+        local_24 = 0x40600000;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
              (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
@@ -295,11 +294,8 @@ LAB_004158fb:
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_13c);
-      local_13c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      local_13c.attacker = (CDemonActor *)this_ptr;
-      local_13c.wielder = (CDemonActor *)this_ptr;
-      local_14 = local_13c.damage_amount;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec4);
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_ac,&g_ZeroVector,
                            (CMatrix3x4f *)

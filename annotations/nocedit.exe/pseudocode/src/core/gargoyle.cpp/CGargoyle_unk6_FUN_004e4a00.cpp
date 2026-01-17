@@ -26,7 +26,6 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   int extraout_EAX_00;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  SDamageInfo local_104;
   CVector3f local_c8;
   CVector3f local_bc;
   float local_b0;
@@ -133,7 +132,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
           local_1c = SQRT(local_a4.z * local_a4.z +
                           local_a4.x * local_a4.x + local_a4.y * local_a4.y);
           local_18 = local_1c;
-          if (local_1c < DAT_0065ea2c) {
+          if (local_1c < 0x40400000) {
             core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_68,&local_a4);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_68.y -
@@ -199,7 +198,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
           }
           else {
             (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
-            local_78 = DAT_0065ea2c;
+            local_78 = 0x40400000;
             (in_stack_00000004->base_character).model.accumulated_root_motion.y =
                  (in_stack_00000004->base_character).model.accumulated_root_motion.z;
             pCVar8->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
@@ -273,11 +272,8 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_104);
-      local_104.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
-      local_104.attacker = (CDemonActor *)in_stack_00000004;
-      local_104.wielder = (CDemonActor *)in_stack_00000004;
-      local_14 = local_104.damage_amount;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffefc);
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_8c,&g_ZeroVector,
                           (CMatrix3x4f *)

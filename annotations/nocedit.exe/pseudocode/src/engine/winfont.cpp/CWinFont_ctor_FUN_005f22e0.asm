@@ -13,7 +13,7 @@
 ;   core_dfont.cpp_initFonts_FUN_004709a0 at 00470ee4
 ;
 ; Referenced Globals:
-;   CreateFontA* CreateFontA = 00211776
+;   CreateFontA* g_CreateFontAFunc = 00211776
 ;   CFont_vtable g_CWinFontVTable
 ;
 ; Called Functions:
@@ -59,7 +59,7 @@ section .text
     PUSH 0x0                            ; 005f2366
     NEG EAX                             ; 005f2368
     PUSH EAX                            ; 005f236a
-    CALL dword ptr CS:[0x6113d4]        ; 005f236b | CreateFontA
+    CALL dword ptr CS:[0x6113d4]        ; 005f236b | g_CreateFontAFunc
     MOV dword ptr [EBX + 0xc],EAX       ; 005f2372
     MOV EAX,dword ptr [ESP + 0x14]      ; 005f2375
     MOV dword ptr [EBX + 0x134],EAX     ; 005f2379

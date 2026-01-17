@@ -1,14 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 193,
+    "complexity_score": 468,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 47,
     "pseudocode_lines": 178,
-    "suspect_count": 1,
+    "suspect_count": 27,
     "suspect_types": [
-      "format_string_mismatch"
+      "call_esp_anchor",
+      "format_string_mismatch",
+      "stack_align_anchor",
+      "variadic_anchor"
     ],
     "total_lines": 571
   },
@@ -409,86 +412,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "005b277c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b27bc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b27d0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b285a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2886": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b289a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b28a4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b28b8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b28d4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b28e5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2903": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2952": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b29db": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2a5a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2a74": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2a81": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2aac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2ab9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2ae6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2b28": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2b55": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2b82": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2b8f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2bb0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2bce": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ],
-    "005b2c53": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffef0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.9525316455696204,
     "instruction_count": 316,
@@ -536,7 +459,187 @@
     },
     "pcode_op_count": 1565
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 300,
+    "local_size": 300,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_128",
+        "offset": -296,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_118",
+        "offset": -280,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_117",
+        "offset": -279,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005b277c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
     {
       "add_esp_value": 12,
       "call_address": "005b2b23",
@@ -568,6 +671,17 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005b2bab (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"rail?%s.wav\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "rail?%s.wav",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 143,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_118,\"rail?%s.wav\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     },
     {
       "align_instruction": "AND ESP,0xfffffff8",
@@ -877,199 +991,6 @@
       "target_address": "0x40cc10",
       "text": "Direct CALL at 005b2c3b, ADD ESP at 005b2c53 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 300,
-    "local_size": 300,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_128",
-        "offset": -296,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_120",
-        "offset": -288,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_11c",
-        "offset": -284,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_118",
-        "offset": -280,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_117",
-        "offset": -279,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_b4",
-        "offset": -180,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005b277c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "actual_args": 0,
-      "description": "Format \"rail?%s.wav\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "rail?%s.wav",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 143,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_118,\"rail?%s.wav\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

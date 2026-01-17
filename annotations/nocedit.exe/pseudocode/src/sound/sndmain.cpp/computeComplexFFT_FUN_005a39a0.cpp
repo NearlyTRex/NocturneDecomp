@@ -35,11 +35,11 @@ sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0
   float10 fVar22;
   float10 fVar23;
   float10 fVar24;
+  int local_24;
   int local_20;
   int local_1c;
-  int local_18;
   
-  for (local_1c = 1; 1 << ((byte)local_1c & 0x1f) < size; local_1c = local_1c + 1) {
+  for (local_20 = 1; 1 << ((byte)local_20 & 0x1f) < size; local_20 = local_20 + 1) {
   }
   uVar16 = 0;
   if (0 < size) {
@@ -47,12 +47,12 @@ sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0
       iVar10 = 0;
       uVar8 = 0;
       uVar12 = uVar16;
-      if (0 < local_1c) {
+      if (0 < local_20) {
         do {
           iVar10 = iVar10 + 1;
           uVar8 = uVar8 * 2 | uVar12 & 1;
           uVar12 = (int)uVar12 >> 1;
-        } while (iVar10 < local_1c);
+        } while (iVar10 < local_20);
       }
       output_real[uVar8] = *input_real;
       fVar14 = 0.0;
@@ -64,10 +64,10 @@ sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0
       input_real = input_real + 1;
     } while ((int)uVar16 < size);
   }
-  local_20 = 2;
+  local_24 = 2;
   if (1 < size) {
     do {
-      iVar10 = local_20 / 2;
+      iVar10 = local_24 / 2;
       fVar18 = (float10)3.1415926535000001 / (float10)iVar10;
       fVar3 = (float10)fcos(fVar18);
       fVar19 = (float10)fsin(fVar18);
@@ -75,16 +75,16 @@ sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0
       fVar18 = fVar18 * fVar20;
       fVar21 = (float10)fsin(fVar18);
       fVar18 = (float10)fcos(fVar18);
-      local_18 = 0;
+      local_1c = 0;
       if (0 < size) {
         do {
           iVar17 = 0;
           if (0 < iVar10) {
             fVar22 = (float10)(double)((float10)(double)fVar3 * fVar20);
-            pfVar9 = output_real + local_18;
-            pfVar11 = output_imag + iVar10 + local_18;
-            pfVar13 = output_imag + local_18;
-            pfVar15 = output_real + iVar10 + local_18;
+            pfVar9 = output_real + local_1c;
+            pfVar11 = output_imag + iVar10 + local_1c;
+            pfVar13 = output_imag + local_1c;
+            pfVar15 = output_real + iVar10 + local_1c;
             dVar1 = (double)fVar3;
             dVar5 = (double)fVar18;
             dVar2 = (double)fVar19;
@@ -111,11 +111,11 @@ sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0
               dVar7 = dVar6;
             } while (iVar17 < iVar10);
           }
-          local_18 = local_18 + local_20;
-        } while (local_18 < size);
+          local_1c = local_1c + local_24;
+        } while (local_1c < size);
       }
-      local_20 = local_20 * 2;
-    } while (local_20 <= size);
+      local_24 = local_24 * 2;
+    } while (local_24 <= size);
   }
   return;
 }

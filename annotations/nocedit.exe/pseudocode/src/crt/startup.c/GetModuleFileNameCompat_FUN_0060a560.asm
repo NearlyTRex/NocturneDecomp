@@ -12,10 +12,10 @@
 ;   crt_startup.c_initialize_runtime_FUN_0060245c at 00602540
 ;
 ; Referenced Globals:
-;   GetModuleFileNameA* GetModuleFileNameA = 00211f42
-;   GetModuleFileNameW* PTR_GetModuleFileNameW_006115b0 = 00211f58
-;   GetVersion* PTR_GetVersion_006115c8 = 00211fca
-;   MultiByteToWideChar* PTR_MultiByteToWideChar_006115f4 = 00212092
+;   GetModuleFileNameA* g_GetModuleFileNameAFunc = 00211f42
+;   GetModuleFileNameW* g_GetModuleFileNameWFunc = 00211f58
+;   GetVersion* g_GetVersionFunc = 00211fca
+;   MultiByteToWideChar* g_MultiByteToWideCharFunc = 00212092
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_00601cd0
@@ -34,7 +34,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 0060a564
     MOV ESI,dword ptr [ESP + 0x18]      ; 0060a568
     MOV EBP,dword ptr [ESP + 0x1c]      ; 0060a56c
-    CALL dword ptr CS:[0x6115c8]        ; 0060a570 | PTR_GetVersion_006115c8
+    CALL dword ptr CS:[0x6115c8]        ; 0060a570 | g_GetVersionFunc
     SHR EAX,0x10                        ; 0060a577
     AND EAX,0xffff                      ; 0060a57a
     CMP AX,0x8000                       ; 0060a57f
@@ -43,7 +43,7 @@ section .text
     PUSH EBP                            ; 0060a585
     PUSH ESI                            ; 0060a586
     PUSH EDI                            ; 0060a587
-    CALL dword ptr CS:[0x6115b0]        ; 0060a588 | PTR_GetModuleFileNameW_006115b0
+    CALL dword ptr CS:[0x6115b0]        ; 0060a588 | g_GetModuleFileNameWFunc
     POP EBP                             ; 0060a58f
     POP EDI                             ; 0060a590
     POP ESI                             ; 0060a591
@@ -61,7 +61,7 @@ section .text
     PUSH 0x208                          ; 0060a5a7
     PUSH EAX                            ; 0060a5ac
     PUSH EDI                            ; 0060a5ad
-    CALL dword ptr CS:[0x6115ac]        ; 0060a5ae | GetModuleFileNameA
+    CALL dword ptr CS:[0x6115ac]        ; 0060a5ae | g_GetModuleFileNameAFunc
     TEST EAX,EAX                        ; 0060a5b5
     JNZ 0x0060a5c9                      ; 0060a5b7
         ;   XREF to: 0060a5c9 (CONDITIONAL_JUMP)  ; LAB_0060a5c9
@@ -82,7 +82,7 @@ section .text
     PUSH EBX                            ; 0060a5cd
     PUSH 0x1                            ; 0060a5ce
     PUSH 0x1                            ; 0060a5d0
-    CALL dword ptr CS:[0x6115f4]        ; 0060a5d2 | PTR_MultiByteToWideChar_006115f4
+    CALL dword ptr CS:[0x6115f4]        ; 0060a5d2 | g_MultiByteToWideCharFunc
     PUSH EBX                            ; 0060a5d9
     MOV EDI,EAX                         ; 0060a5da
     CALL crt_memory.c_free_FUN_00601cd0 ; 0060a5dc

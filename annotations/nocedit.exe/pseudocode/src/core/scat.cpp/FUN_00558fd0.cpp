@@ -17,7 +17,6 @@ void core_scat_cpp_FUN_00558fd0(void)
   CVector3f *pCVar4;
   byte bVar5;
   int in_stack_00000004;
-  CMatrix3x4f *in_stack_fffffe22;
   CMatrix3x4f *in_stack_fffffea0;
   CMatrix3x4f local_130;
   float local_100 [12];
@@ -52,7 +51,7 @@ void core_scat_cpp_FUN_00558fd0(void)
               ((CMatrix3x4f *)&stack0xfffffea0,(CVector3f *)(in_stack_00000004 + 0x20),
                (CVector3f *)(in_stack_00000004 + 0x30));
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-              (&local_70,(CMatrix3x4f *)&stack0xfffffea0,in_stack_fffffe22);
+              (&local_70,(CMatrix3x4f *)&stack0xfffffea0,in_stack_fffffea0);
     pfVar2 = local_100;
     pCVar4 = local_a0;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

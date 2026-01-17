@@ -22,7 +22,7 @@ crt_locale_c_toupper_multibyte_FUN_0060f300(char *mb_char,char *output_buffer)
     wVar1 = crt_locale_c_fullwidth_toupper_FUN_0060ffb0((wchar_t)mb_char);
   }
   else {
-    (*PTR_CharUpperBuffA_0061148c)((LPSTR)local_c,1);
+    (*g_CharUpperBuffAFunc)((LPSTR)local_c,1);
     wVar1 = crt_string_c_mbtowc_peek_FUN_006059e0((char *)local_c);
   }
   return wVar1;

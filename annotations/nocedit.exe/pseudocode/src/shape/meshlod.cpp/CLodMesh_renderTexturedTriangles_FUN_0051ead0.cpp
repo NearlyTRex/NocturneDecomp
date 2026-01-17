@@ -60,10 +60,10 @@ shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
           if ((-1 < (int)atlas_texture_index) && (enable_texture_lookup != 0)) {
             shape_design_c_fixupCramUV_FUN_0046e090((int)atlas_texture_index,&local_30,local_2c);
           }
-          fVar8 = (float10)local_2c[0] * (float10)65535f;
+          fVar8 = (float10)local_2c[0] * (float10)65535.0f;
           pfVar5 = pfVar5 + 2;
           dVar9 = crt_math_c_round_FUN_005fe6b0
-                            ((double)((float10)local_30 * (float10)65535f));
+                            ((double)((float10)local_30 * (float10)65535.0f));
           fVar7 = (float10)dVar9;
           dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
           local_30 = (float)(int)ROUND(dVar9);

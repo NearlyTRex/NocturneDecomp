@@ -8,7 +8,7 @@
 ;   crt_startup.cpp_WinMainBootstrap_FUN_00609e70 at 00609eb1
 ;
 ; Referenced Globals:
-;   GetModuleHandleA* GetModuleHandleA = 00211f6e
+;   GetModuleHandleA* g_GetModuleHandleAFunc = 00211f6e
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f24 = 00602458
 ;   undefined4 DAT_00684ff4
@@ -29,7 +29,7 @@ section .text
     PUSH EBX                            ; 006026a8
         ;   Label: crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
     PUSH 0x0                            ; 006026a9
-    CALL dword ptr CS:[0x6115b4]        ; 006026ab | GetModuleHandleA
+    CALL dword ptr CS:[0x6115b4]        ; 006026ab | g_GetModuleHandleAFunc
     PUSH EAX                            ; 006026b2
     MOV EDX,dword ptr [ESP + 0x10]      ; 006026b3
     PUSH EDX                            ; 006026b7

@@ -18,9 +18,9 @@ core_dcamera_cpp_transformAndStoreVertex_FUN_00452110(int vertex_index,float x,f
   local_10 = x;
   local_c = y;
   local_8 = z;
-  local_1c.x = (int)ROUND(x * 256f);
-  local_1c.y = (int)ROUND(y * 256f);
-  local_1c.z = (int)ROUND(z * 256f);
+  local_1c.x = (int)ROUND(x * 256.0f);
+  local_1c.y = (int)ROUND(y * 256.0f);
+  local_1c.z = (int)ROUND(z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[vertex_index].projected_vertex,&local_1c);
   return;

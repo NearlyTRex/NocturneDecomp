@@ -19,7 +19,7 @@ void core_hiram_cpp_FUN_004f4550(void)
   CGlass *this_ptr_00;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  uint in_stack_ffffffec;
+  uint class_name_hash;
   
   iVar1 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar1 == 0) {
@@ -33,9 +33,10 @@ void core_hiram_cpp_FUN_004f4550(void)
     if (iVar1 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(in_stack_00000004->model).motion_controller,1,1);
+      class_name_hash = g_CGlassClassInfo.name_hash;
       actor_ptr = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
-      this_ptr_00 = (CGlass *)
-                    core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,in_stack_ffffffec);
+      this_ptr_00 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash)
+      ;
       if (this_ptr_00 != (CGlass *)0x0) {
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
                   (this_ptr_00,&(this_ptr_00->base).location.position);

@@ -16,7 +16,7 @@
 ;   crt_unknown.c_FUN_0060fac0 at 0060fae3
 ;
 ; Referenced Globals:
-;   MultiByteToWideChar* PTR_MultiByteToWideChar_006115f4 = 00212092
+;   MultiByteToWideChar* g_MultiByteToWideCharFunc = 00212092
 ;   uint g_CodePage = 0x1
 ;   int g_MultibyteLocaleActive
 ;   char[256] g_LeadByteTable
@@ -97,7 +97,7 @@ section .text
     PUSH 0x8                            ; 0060b239
     MOV EBX,dword ptr [0x00685570]      ; 0060b23b | g_CodePage
     PUSH EBX                            ; 0060b241
-    CALL dword ptr CS:[0x6115f4]        ; 0060b242 | PTR_MultiByteToWideChar_006115f4
+    CALL dword ptr CS:[0x6115f4]        ; 0060b242 | g_MultiByteToWideCharFunc
     TEST EAX,EAX                        ; 0060b249
     JZ 0x0060b260                       ; 0060b24b
         ;   XREF to: 0060b260 (CONDITIONAL_JUMP)  ; LAB_0060b260

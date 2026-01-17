@@ -4,61 +4,65 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    31465 ( 56.5%)
-  lea_esp_stack_addr              6858 ( 12.3%)
-  pointer_cast                    5319 (  9.5%)
-  concat_artifact                 1748 (  3.1%)
-  unaffected_reg                  1586 (  2.8%)
-  stack_ref                       1534 (  2.8%)
-  unknown_field                   1532 (  2.7%)
-  extra_output                    1433 (  2.6%)
-  suspect_float                    686 (  1.2%)
-  param_count_too_few              631 (  1.1%)
-  special_crt_function             626 (  1.1%)
-  unresolved_funcptr               460 (  0.8%)
-  negative_offset                  411 (  0.7%)
-  format_string_mismatch           321 (  0.6%)
-  sub_artifact                     282 (  0.5%)
-  warning_overlapping_globals      218 (  0.4%)
-  register_param                   200 (  0.4%)
+  stack_param                    31464 ( 45.8%)
+  call_esp_anchor                 9239 ( 13.5%)
+  lea_esp_stack_addr              6858 ( 10.0%)
+  pointer_cast                    5363 (  7.8%)
+  unknown_field                   1857 (  2.7%)
+  concat_artifact                 1801 (  2.6%)
+  stack_ref                       1699 (  2.5%)
+  unaffected_reg                  1684 (  2.5%)
+  extra_output                    1440 (  2.1%)
+  variadic_anchor                 1331 (  1.9%)
+  callind_anchor                  1056 (  1.5%)
+  suspect_float                    733 (  1.1%)
+  param_count_too_few              631 (  0.9%)
+  special_crt_function             626 (  0.9%)
+  stack_align_anchor               529 (  0.8%)
+  unresolved_funcptr               467 (  0.7%)
+  negative_offset                  413 (  0.6%)
+  format_string_mismatch           360 (  0.5%)
+  sub_artifact                     261 (  0.4%)
+  warning_overlapping_globals      218 (  0.3%)
+  register_param                   200 (  0.3%)
   undefined_type                   111 (  0.2%)
-  param_count_too_many              89 (  0.2%)
-  warning_unreachable               89 (  0.2%)
+  warning_unreachable               99 (  0.1%)
+  param_count_too_many              89 (  0.1%)
   variadic_preserve_ebp             38 (  0.1%)
-  sborrow_artifact                  28 (  0.1%)
+  sborrow_artifact                  28 (  0.0%)
   special_math_intrinsic            23 (  0.0%)
   callind_preserve_lost             19 (  0.0%)
   warning_jumptable                 10 (  0.0%)
   warning_indirect_jump             10 (  0.0%)
   undefined_ptr_cast                 6 (  0.0%)
   warning_noreturn                   4 (  0.0%)
-  special_entry_point                1 (  0.0%)
   badspacebase                       1 (  0.0%)
+  special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (31465 occurrences)
+TYPE: stack_param (31464 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  17391x  in_stack_00000004
-  7040x  in_stack_00000008
-  1809x  in_stack_0000000c
-   723x  in_stack_00000010
-   338x  in_stack_00000014
-   179x  in_stack_00000018
-   144x  in_stack_0000001c
-    73x  in_stack_fffeeb8e
-    59x  in_stack_fffeeb92
-    59x  in_stack_fffeeb96
-    59x  in_stack_fffeeb9a
-    59x  in_stack_fffeeb9e
-    55x  in_stack_00000020
-    53x  in_stack_ffffff68
-    39x  in_stack_ffffc8a8
-    35x  in_stack_ffffffe0
-    31x  in_stack_fffffc54
-    31x  in_stack_fffffc58
+  17265x  in_stack_00000004
+  7002x  in_stack_00000008
+  1826x  in_stack_0000000c
+   742x  in_stack_00000010
+   342x  in_stack_00000014
+   191x  in_stack_00000018
+   146x  in_stack_0000001c
+    74x  in_stack_fffeec08
+    65x  in_stack_00000020
+    59x  in_stack_fffeec0c
+    59x  in_stack_fffeec10
+    59x  in_stack_fffeec14
+    58x  in_stack_fffeec18
+    40x  in_stack_fffffc54
+    39x  in_stack_ffffffe0
+    38x  in_stack_fffffc58
     31x  in_stack_000000b0
+    29x  in_stack_ffffff6c
+    29x  in_stack_ffffc8a8
     28x  in_stack_0000003c
 
 Example functions:
@@ -88,6 +92,23 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
+TYPE: call_esp_anchor (9239 occurrences)
+====================================================================================================
+
+Unique patterns:
+  9239x  CALL...ADD ESP
+
+Example functions:
+  cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
+    Direct CALL at 00433a83, ADD ESP at 00433a88 with uncertain ESP...
+  cockpit_ckptutil.c_drawLineAA_FUN_00433c90
+    Direct CALL at 00433d10, ADD ESP at 00433d15 with uncertain ESP...
+  crt_io.c_write_FUN_006084ec
+    Direct CALL at 00608522, ADD ESP at 00608529 with uncertain ESP...
+  crt_process.c_spawnvp_FUN_0060f39c
+    Direct CALL at 0060f3fd, ADD ESP at 0060f404 with uncertain ESP...
+
+====================================================================================================
 TYPE: lea_esp_stack_addr (6858 occurrences)
 ====================================================================================================
 
@@ -115,34 +136,32 @@ Example functions:
     LEA takes address of ESP-relative stack location at 00489bb8...
 
 ====================================================================================================
-TYPE: pointer_cast (5319 occurrences)
+TYPE: pointer_cast (5363 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1801x  (uint *)((int)
-  1226x  (int *)((int)
-   539x  (float *)((int)
+  1805x  (uint *)((int)
+  1230x  (int *)((int)
+   554x  (float *)((int)
    277x  (SRenderVertex *)((int)
-   220x  (double *)((int)
-   215x  (void *)((int)
-   196x  (byte *)((int)
-   141x  (char *)((int)
-    94x  (CMatrix3x4f *)((int)
+   218x  (double *)((int)
+   212x  (void *)((int)
+   200x  (byte *)((int)
+   140x  (char *)((int)
+   100x  (CMatrix3x4f *)((int)
     83x  (ushort *)((int)
-    59x  (CVector3f *)((int)
-    49x  (short *)((int)
+    63x  (CVector3f *)((int)
+    55x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
     21x  (SMRGLHeaderExtended *)((int)
     14x  (HGLOBAL *)((int)
     12x  (CVector3i *)((int)
     12x  (CMatrix3x3f *)((int)
+    11x  (CQuaternion4f *)((int)
     10x  (SVoxelGrid *)((int)
-    10x  (CQuaternion4f *)((int)
      9x  (FileEmbeddedData *)((int)
 
 Example functions:
-  entry
-    *(uint *)((int)aiStack_1c + iVar5 + 4) = 0;...
   cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);...
   cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
@@ -151,16 +170,62 @@ Example functions:
     puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);...
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar7) <...
+  cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0
+    piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: concat_artifact (1748 occurrences)
+TYPE: unknown_field (1857 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   563x  CONCAT44
-   151x  CONCAT11
-   111x  CONCAT22
-   106x  CONCAT31
+   712x  ._0_4_
+   669x  ._4_4_
+   130x  ._8_4_
+    52x  ._12_4_
+    45x  ._16_4_
+    34x  ._0_1_
+    32x  ._20_4_
+    24x  ._2_2_
+    21x  ._24_4_
+    20x  ._3_1_
+    16x  ._0_2_
+    16x  ._1_1_
+    16x  ._2_1_
+    13x  ._28_4_
+     7x  ._4_8_
+     7x  ._32_4_
+     6x  ._44_4_
+     5x  ._8_8_
+     5x  ._48_4_
+     5x  ._36_4_
+
+Example functions:
+  crt_fpemu.c_staticInit_FUN_0060be80
+    g_UseSoftwareMath._0_1_ = (byte)g_UseSoftwareMath | 1;...
+  crt_process.c_build_file_info_env_FUN_0060ffd0
+    *(uint *)local_18 = "C_FILE_INFO="._0_4_;...
+  crt_stdlib.c_i64toa_FUN_0060ad40
+    } while (local_20._4_4_ != 0);...
+  crt_stdlib.c_qsort_FUN_005fdf38
+    puStack_18 = (uint *)CONCAT22 /* combine 2-byte values */(puStack_18._2_2_,in_GS...
+  crt_math.c_process_math_error_FUN_0060bf2d
+    local_3c.inputValue1._0_4_ = *(uint *)value1;...
+  crt_math.c_ldexp_FUN_00600002
+    if (x._4_4_ < -16000) {...
+  crt_math.c_math_domain_error_FUN_00606832
+    if (y._4_1_ < 2) {...
+  crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98
+    if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
+
+====================================================================================================
+TYPE: concat_artifact (1801 occurrences)
+====================================================================================================
+
+Unique patterns:
+   619x  CONCAT44
+   150x  CONCAT11
+   110x  CONCAT22
+   105x  CONCAT31
     96x  CONCAT12
     82x  CONCAT14
     68x  CONCAT21
@@ -183,8 +248,6 @@ Example functions:
     CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)index...
   crt_process.c_spawnvp_FUN_0060f39c
     if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0) goto LAB_0...
-  crt_stdlib.c_system_FUN_00602130
-    result = (int *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_fffff...
   crt_stdlib.c_i64toa_FUN_0060ad40
     local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte...
   crt_stdlib.c_qsort_FUN_005fdf38
@@ -207,14 +270,70 @@ Example functions:
     fVar1 = (float10)CONCAT28 /* combine 2-byte values */(in_stack_0000000c,CONCAT44...
 
 ====================================================================================================
-TYPE: unaffected_reg (1586 occurrences)
+TYPE: stack_ref (1699 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   676x  unaff_ESI
-   444x  unaff_EBX
-   284x  unaff_EDI
-   182x  unaff_EBP
+    50x  &stack0xfffff914
+    36x  &stack0xffffffe8
+    32x  &stack0xfffffc4c
+    30x  &stack0xffffffe0
+    28x  &stack0xfffffc54
+    27x  &stack0xffffff24
+    26x  &stack0xfffffff0
+    26x  &stack0x00000034
+    25x  &stack0xffffffec
+    25x  &stack0xffffffd4
+    25x  &stack0xffffffd8
+    22x  &stack0x00000000
+    21x  &stack0xffffffdc
+    20x  &stack0xffffff98
+    19x  &stack0xfffffa18
+    18x  &stack0xfffffff4
+    18x  &stack0xffffedf8
+    17x  &stack0xffffffe4
+    17x  &stack0xfffffed0
+    16x  &stack0xffffffc4
+
+Example functions:
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff8c,filename_format,extension);...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
+    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+    local_8 = &stack0x0000000c;...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+    local_14 = &stack0x0000001c;...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
+    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)y,(va_list_t *)&local...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
+    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffefec,(char *)height,(va_list_t *)&...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
+    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
+    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+    local_10 = &stack0x00000014;...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
+    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+    local_14 = &stack0x00000018;...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0
+    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)height,(va_list_t *)&...
+  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+    } while (pbVar4 != &stack0xfffffff4);...
+  crt_io.c_write_FUN_006084ec
+    puVar6 = &stack0xfffffff0;...
+
+====================================================================================================
+TYPE: unaffected_reg (1684 occurrences)
+====================================================================================================
+
+Unique patterns:
+   721x  unaff_ESI
+   447x  unaff_EBX
+   302x  unaff_EDI
+   214x  unaff_EBP
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
@@ -247,118 +366,16 @@ Example functions:
     int unaff_EBP;...
 
 ====================================================================================================
-TYPE: stack_ref (1534 occurrences)
+TYPE: extra_output (1440 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    50x  &stack0xfffff914
-    38x  &stack0xffffffec
-    37x  &stack0xffffffe8
-    32x  &stack0xffffffe0
-    32x  &stack0xfffffc4c
-    27x  &stack0xffffff24
-    26x  &stack0x00000034
-    26x  &stack0xfffffc54
-    22x  &stack0xffffffdc
-    22x  &stack0xffffffd4
-    22x  &stack0x00000000
-    21x  &stack0xffffffd8
-    20x  &stack0xffffffe4
-    19x  &stack0xffffff98
-    18x  &stack0xfffffff4
-    18x  &stack0xffffedf8
-    18x  &stack0xfffffa1c
-    16x  &stack0xfffffbb8
-    16x  &stack0xffffe138
-    15x  &stack0xfffffff0
-
-Example functions:
-  entry
-    *(DWORD *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff8c,filename_format,extension);...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    local_8 = &stack0x0000000c;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    local_14 = &stack0x0000001c;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
-    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)y,(va_list_t *)&local...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
-    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffefec,(char *)height,(va_list_t *)&...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    local_10 = &stack0x00000014;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    local_14 = &stack0x00000018;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0
-    crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)height,(va_list_t *)&...
-  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
-    } while (pbVar4 != &stack0xfffffff4);...
-  crt_io.c_write_FUN_006084ec
-    puVar7 = &stack0xffffffec;...
-
-====================================================================================================
-TYPE: unknown_field (1532 occurrences)
-====================================================================================================
-
-Unique patterns:
-   589x  ._0_4_
-   522x  ._4_4_
-    89x  ._8_4_
-    60x  ._12_4_
-    44x  ._16_4_
-    35x  ._20_4_
-    28x  ._0_1_
-    25x  ._2_2_
-    22x  ._24_4_
-    20x  ._3_1_
-    16x  ._0_2_
-    16x  ._1_1_
-    16x  ._2_1_
-    10x  ._28_4_
-     8x  ._4_8_
-     7x  ._32_4_
-     6x  ._36_4_
-     4x  ._40_4_
-     3x  ._20_8_
-     3x  ._44_4_
-
-Example functions:
-  crt_fpemu.c_staticInit_FUN_0060be80
-    g_UseSoftwareMath._0_1_ = (byte)g_UseSoftwareMath | 1;...
-  crt_process.c_build_file_info_env_FUN_0060ffd0
-    *(uint *)local_18 = "C_FILE_INFO="._0_4_;...
-  crt_startup.cpp_WinMainBootstrap_FUN_00609e70
-    (hInstance,hPrevInstance,lpCmdLine,iVar1,runtimeInitParams._0_4_);...
-  crt_stdlib.c_i64toa_FUN_0060ad40
-    } while (local_20._4_4_ != 0);...
-  crt_stdlib.c_qsort_FUN_005fdf38
-    puStack_18 = (uint *)CONCAT22 /* combine 2-byte values */(puStack_18._2_2_,in_GS...
-  crt_math.c_process_math_error_FUN_0060bf2d
-    local_3c.inputValue1._0_4_ = *(uint *)value1;...
-  crt_math.c_ldexp_FUN_00600002
-    if (x._4_4_ < -16000) {...
-  crt_math.c_math_domain_error_FUN_00606832
-    if (y._4_1_ < 2) {...
-
-====================================================================================================
-TYPE: extra_output (1433 occurrences)
-====================================================================================================
-
-Unique patterns:
-   407x  extraout_EAX
-   216x  extraout_EDX
+   410x  extraout_EAX
+   218x  extraout_EDX
    127x  extraout_EAX_00
-   107x  extraout_ECX
+   108x  extraout_ECX
     87x  extraout_EBX
-    78x  extraout_ECX_00
+    79x  extraout_ECX_00
     54x  extraout_EAX_01
     50x  extraout_EDX_00
     28x  extraout_ST1
@@ -385,22 +402,97 @@ Example functions:
     int extraout_EAX;...
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
     uint extraout_EAX;...
+  crt_process.c_spawnvp_FUN_0060f39c
+    char *extraout_EAX;...
   crt_stdlib.c_qsort_FUN_005fdf38
     void *extraout_EAX;...
 
 ====================================================================================================
-TYPE: suspect_float (686 occurrences)
+TYPE: variadic_anchor (1331 occurrences)
+====================================================================================================
+
+Unique patterns:
+   460x  CALL crt_stdio.c_sprintf_FUN_005fdbd0
+   226x  CALL core_main.c_displayErrorAndQuit_FUN_00506f10
+   158x  CALL crt_stdio.c_sscanf_FUN_0060013c
+   156x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
+   135x  CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
+    91x  CALL engine_console.cpp_CConsole_printf_FUN_00441890
+    42x  CALL crt_stdio.c_fscanf_FUN_005fe7c0
+    13x  CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
+    12x  CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
+    12x  CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+     9x  CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+     9x  CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
+     3x  CALL shape_superopt.cpp_logToFile_FUN_005c7910
+     2x  CALL engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20
+     2x  CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+     1x  CALL crt_process.c_execvp_FUN_00610790
+
+Example functions:
+  crt_process.c_spawnvp_FUN_0060f39c
+    Call to variadic function crt_process.c_execvp_FUN_00610790 at 0060f804 (EBP fra...
+  engine_colquant.c_FUN_004406c0
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004407f3 (EBP fram...
+  engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850
+    Call to variadic function engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20 at 00...
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
+    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00501f...
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740...
+
+====================================================================================================
+TYPE: callind_anchor (1056 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1056x  CALLIND...ADD ESP
+
+Example functions:
+  crt_io.c_write_FUN_006084ec
+    CALLIND at 00608564, ADD ESP at 0060856a...
+  crt_process.c_spawnvp_FUN_0060f39c
+    CALLIND at 0060f58f, ADD ESP at 0060f595...
+  crt_fstream.cpp_filebuf_overflow_FUN_0060d881
+    CALLIND at 0060d8cf, ADD ESP at 0060d8d2...
+  crt_math.c_report_math_error_FUN_0060e2e5
+    CALLIND at 0060e2f1, ADD ESP at 0060e2f7...
+  crt_thread.c_threadStartupWrapper_FUN_0060f8c0
+    CALLIND at 0060f946, ADD ESP at 0060f949...
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    CALLIND at 004bb540, ADD ESP at 004bb543...
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    CALLIND at 004b4cdf, ADD ESP at 004b4ce2...
+  sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
+    CALLIND at 005ad549, ADD ESP at 005ad54b...
+  sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
+    CALLIND at 005a8110, ADD ESP at 005a811f...
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
+    CALLIND at 005a7378, ADD ESP at 005a737b...
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    CALLIND at 00540437, ADD ESP at 0054043a...
+  core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900
+    CALLIND at 0053faee, ADD ESP at 0053faf1...
+  core_netgame.cpp_FUN_00541390
+    CALLIND at 00541a97, ADD ESP at 00541a9a...
+  core_dog.cpp_CZombieDog_process_FUN_0047f140
+    CALLIND at 0047f295, ADD ESP at 0047f29b...
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    CALLIND at 004157ce, ADD ESP at 004157da...
+
+====================================================================================================
+TYPE: suspect_float (733 occurrences)
 ====================================================================================================
 
 Unique patterns:
    131x  9.18341e-41
    108x  7.34684e-40
    104x  2.2775203e-38
-    74x  1.4013e-45
-    33x  2.8026e-45
+    79x  1.4013e-45
+    36x  2.8026e-45
     19x  4.2039e-45
+    14x  5.60519e-45
     12x  1.14794e-41
-    12x  5.60519e-45
      9x  1.83671e-40
      8x  9.18355e-41
      8x  2.86846e-42
@@ -412,7 +504,7 @@ Unique patterns:
      6x  2.3509887e-38
      6x  1.12104e-44
      5x  8.40779e-45
-     5x  9.80909e-45
+     4x  3.67342e-40
 
 Example functions:
   crt_stdio.c_scanf_float_FUN_00605178
@@ -427,8 +519,8 @@ Example functions:
     fVar3 = 9.18355e-41;...
   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
     fVar3 = 3.67342e-40;...
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
-    local_64 = 1.4013e-45;...
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    local_1c = 1.4013e-45;...
 
 ====================================================================================================
 TYPE: param_count_too_few (631 occurrences)
@@ -588,11 +680,80 @@ Example functions:
     CRT function (runtime support) at 00609afc...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (460 occurrences)
+TYPE: stack_align_anchor (529 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   460x  code *
+   529x  AND ESP
+
+Example functions:
+  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
+    Stack alignment at 00433f59 (SUB ESP, 0x2c before)...
+  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
+    Stack alignment at 004342f9 (SUB ESP, 0x2c before)...
+  cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
+    Stack alignment at 004339c9 (SUB ESP, 0x3c before)...
+  cockpit_ckptutil.c_drawLineAA_FUN_00433c90
+    Stack alignment at 00433c99 (SUB ESP, 0x30 before)...
+  engine_matrix.c_initializeTrigTables_FUN_0050c530
+    Stack alignment at 0050c536 (SUB ESP, 0xc before)...
+  engine_matrix.c_projectToScreen_FUN_0050e5b0
+    Stack alignment at 0050e5b9 (SUB ESP, 0x3c before)...
+  engine_matrix.c_invertTransformMatrix_FUN_0050c640
+    Stack alignment at 0050c646 (SUB ESP, 0x54 before)...
+  engine_colquant.c_FUN_00441260
+    Stack alignment at 00441269 (SUB ESP, 0x7c before)...
+  engine_colquant.c_FUN_00441790
+    Stack alignment at 00441796 (SUB ESP, 0x10 before)...
+  engine_colquant.c_FUN_004406c0
+    Stack alignment at 004406cc (SUB ESP, 0x14c before)...
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
+    Stack alignment at 00501f39 (SUB ESP, 0x30 before)...
+  engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
+    Stack alignment at 0048c808 (SUB ESP, 0x10 before)...
+  engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
+    Stack alignment at 0048c209 (SUB ESP, 0xc before)...
+  engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+    Stack alignment at 0048c788 (SUB ESP, 0x10 before)...
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    Stack alignment at 004baf0c (SUB ESP, 0x25ec before)...
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    Stack alignment at 004b422c (SUB ESP, 0x13b8 before)...
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
+    Stack alignment at 005af75c (SUB ESP, 0xcac before)...
+  sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
+    Stack alignment at 005ae34c (SUB ESP, 0x328 before)...
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
+    Stack alignment at 005afd6c (SUB ESP, 0x1a8 before)...
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    Stack alignment at 00534d4c (SUB ESP, 0x60c0 before)...
+  sound_mp3.cpp_requantizeSamples_FUN_005301b0
+    Stack alignment at 005301b9 (SUB ESP, 0x20 before)...
+  sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50
+    Stack alignment at 00531d59 (SUB ESP, 0x68 before)...
+  sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400
+    Stack alignment at 00530409 (SUB ESP, 0x24 before)...
+  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
+    Stack alignment at 005334b9 (SUB ESP, 0x38 before)...
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
+    Stack alignment at 005325ec (SUB ESP, 0x206c before)...
+  sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210
+    Stack alignment at 00534219 (SUB ESP, 0x28 before)...
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
+    Stack alignment at 005ac40c (SUB ESP, 0xb4 before)...
+  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+    Stack alignment at 005a8589 (SUB ESP, 0x8 before)...
+  sound_sndmain.cpp_getChannelLevels_FUN_005ac990
+    Stack alignment at 005ac999 (SUB ESP, 0xc before)...
+  sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
+    Stack alignment at 005ad3bc (SUB ESP, 0x160 before)...
+
+====================================================================================================
+TYPE: unresolved_funcptr (467 occurrences)
+====================================================================================================
+
+Unique patterns:
+   467x  code *
 
 Example functions:
   crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200
@@ -629,7 +790,7 @@ Example functions:
     code *pcVar1;...
 
 ====================================================================================================
-TYPE: negative_offset (411 occurrences)
+TYPE: negative_offset (413 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -641,8 +802,8 @@ Unique patterns:
     16x  pCVar3[-5].
     14x  pCVar3[-2].
     13x  pCVar5[-1].
+    12x  this_ptr[-1].
     12x  pCVar2[-2].
-    10x  this_ptr[-1].
      8x  pCVar1[-2].
      8x  pCVar2[-3].
      7x  piVar4[-2].
@@ -691,7 +852,7 @@ Example functions:
     ((istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,unaff_...
 
 ====================================================================================================
-TYPE: format_string_mismatch (321 occurrences)
+TYPE: format_string_mismatch (360 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -739,20 +900,20 @@ Example functions:
     Format string expects 1 args but got 2...
   core_dcamera.cpp_saveCameraFog_FUN_00453f10
     Format string expects 3 args but got 0...
+  core_dracbrid.cpp_FUN_00484410
+    Format string expects 1 args but got 0...
   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
     Format string expects 1 args but got 0...
   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0
     Format string expects 1 args but got 0...
-  core_cloth.cpp_ParseClothFile_FUN_00439260
-    Format string expects 1 args but got 0...
 
 ====================================================================================================
-TYPE: sub_artifact (282 occurrences)
+TYPE: sub_artifact (261 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   223x  SUB84
-    44x  SUB41
+   203x  SUB84
+    43x  SUB41
      9x  SUB82
      3x  SUB104
      1x  SUB86
@@ -779,7 +940,7 @@ Example functions:
   crt_math.c_pow_FUN_005ffd76
     uVar7 = SUB86 /* extract 2-byte value */((double)exp,0);...
   crt_unknown.c_FUN_00603dc8
-    local_4c = SUB104 /* extract 3-byte value */(fVar9,0);...
+    local_4c = SUB104 /* extract 3-byte value */(fVar12,0);...
   crt_unknown.c_FUN_00603bc9
     *in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);...
   crt_unknown.c_FUN_0060dcf6
@@ -787,11 +948,15 @@ Example functions:
   engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
     local_38 = SUB84 /* extract 2-byte value */(dVar4,0);...
   engine_colquant.c_FUN_00441260
-    uStack_6c = SUB84 /* extract 2-byte value */(dVar13,0);...
+    local_70 = SUB84 /* extract 2-byte value */(dVar1,0);...
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     SUB41 /* extract 2-byte value */(local_290,0));...
+  sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400
+    local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);...
   sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
     local_48 = SUB84 /* extract 2-byte value */(dVar5,0);...
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
+    local_8c = SUB84 /* extract 2-byte value */(dVar28,0);...
   sound_sndmain.cpp_startSoundThread_FUN_005abc00
     g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);...
   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
@@ -990,6 +1155,63 @@ Example functions:
     undefined3 extraout_var;...
 
 ====================================================================================================
+TYPE: warning_unreachable (99 occurrences)
+====================================================================================================
+
+Unique patterns:
+    99x  WARNING: Removing unreachable block
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
+    /* WARNING: Removing unreachable block (ram,0x004871be) */...
+  cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
+    /* WARNING: Removing unreachable block (ram,0x00487331) */...
+  cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
+    /* WARNING: Removing unreachable block (ram,0x00431c6d) */...
+  crt_stdlib.c_qsort_FUN_005fdf38
+    /* WARNING: Removing unreachable block (ram,0x005fe232) */...
+  crt_math.c_udivmod64_FUN_0060d3ed
+    /* WARNING: Removing unreachable block (ram,0x0060d441) */...
+  crt_unknown.c_FUN_00600a64
+    /* WARNING: Removing unreachable block (ram,0x00600ac1) */...
+  crt_exception.c_ExceptionHandler_FUN_0060a9d8
+    /* WARNING: Removing unreachable block (ram,0x0060aa79) */...
+  crt_stdio.c_fseek_FUN_005ffacc
+    /* WARNING: Removing unreachable block (ram,0x005ffb98) */...
+  engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
+    /* WARNING: Removing unreachable block (ram,0x005dd2de) */...
+  engine_font.cpp_setShadowColor_FUN_004ce0f0
+    /* WARNING: Removing unreachable block (ram,0x004ce1d7) */...
+  engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0
+    /* WARNING: Removing unreachable block (ram,0x004d0425) */...
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+    /* WARNING: Removing unreachable block (ram,0x0043711f) */...
+  engine_clipper.c_clipPolygonNearPlane_FUN_00436420
+    /* WARNING: Removing unreachable block (ram,0x004365c2) */...
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    /* WARNING: Removing unreachable block (ram,0x004bbc51) */...
+  engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
+    /* WARNING: Removing unreachable block (ram,0x004b29c8) */...
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    /* WARNING: Removing unreachable block (ram,0x004b4aea) */...
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
+    /* WARNING: Removing unreachable block (ram,0x005ac957) */...
+  sound_sndmain.cpp_computeFFT_FUN_005a3c90
+    /* WARNING: Removing unreachable block (ram,0x005a3fc6) */...
+  core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0
+    /* WARNING: Removing unreachable block (ram,0x0054104d) */...
+  core_drip.cpp_FUN_0048e830
+    /* WARNING: Removing unreachable block (ram,0x0048e859) */...
+  core_inv.cpp_CInventory_clear_FUN_004fd0e0
+    /* WARNING: Removing unreachable block (ram,0x004fd155) */...
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    /* WARNING: Removing unreachable block (ram,0x005faea9) */...
+  core_icepick.cpp_FUN_004f80b0
+    /* WARNING: Removing unreachable block (ram,0x004f86be) */...
+  core_script.cpp_FUN_005644e0
+    /* WARNING: Removing unreachable block (ram,0x00564514) */...
+
+====================================================================================================
 TYPE: param_count_too_many (89 occurrences)
 ====================================================================================================
 
@@ -1078,63 +1300,6 @@ Example functions:
     Function declares 7 params but call sites push 6 (1 extra)...
 
 ====================================================================================================
-TYPE: warning_unreachable (89 occurrences)
-====================================================================================================
-
-Unique patterns:
-    89x  WARNING: Removing unreachable block
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
-    /* WARNING: Removing unreachable block (ram,0x004871be) */...
-  cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
-    /* WARNING: Removing unreachable block (ram,0x00487331) */...
-  cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
-    /* WARNING: Removing unreachable block (ram,0x00431c6d) */...
-  crt_stdlib.c_qsort_FUN_005fdf38
-    /* WARNING: Removing unreachable block (ram,0x005fe232) */...
-  crt_math.c_udivmod64_FUN_0060d3ed
-    /* WARNING: Removing unreachable block (ram,0x0060d441) */...
-  crt_unknown.c_FUN_00600a64
-    /* WARNING: Removing unreachable block (ram,0x00600ac1) */...
-  crt_exception.c_ExceptionHandler_FUN_0060a9d8
-    /* WARNING: Removing unreachable block (ram,0x0060aa79) */...
-  crt_stdio.c_fseek_FUN_005ffacc
-    /* WARNING: Removing unreachable block (ram,0x005ffb98) */...
-  engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-    /* WARNING: Removing unreachable block (ram,0x005dd2de) */...
-  engine_font.cpp_setShadowColor_FUN_004ce0f0
-    /* WARNING: Removing unreachable block (ram,0x004ce1d7) */...
-  engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0
-    /* WARNING: Removing unreachable block (ram,0x004d0425) */...
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-    /* WARNING: Removing unreachable block (ram,0x0043711f) */...
-  engine_clipper.c_clipPolygonNearPlane_FUN_00436420
-    /* WARNING: Removing unreachable block (ram,0x004365c2) */...
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    /* WARNING: Removing unreachable block (ram,0x004bbc51) */...
-  engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
-    /* WARNING: Removing unreachable block (ram,0x004b29c8) */...
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    /* WARNING: Removing unreachable block (ram,0x004b4aea) */...
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
-    /* WARNING: Removing unreachable block (ram,0x005ac957) */...
-  sound_sndmain.cpp_computeFFT_FUN_005a3c90
-    /* WARNING: Removing unreachable block (ram,0x005a3fc6) */...
-  core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0
-    /* WARNING: Removing unreachable block (ram,0x0054104d) */...
-  core_drip.cpp_FUN_0048e830
-    /* WARNING: Removing unreachable block (ram,0x0048e859) */...
-  core_inv.cpp_CInventory_clear_FUN_004fd0e0
-    /* WARNING: Removing unreachable block (ram,0x004fd155) */...
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-    /* WARNING: Removing unreachable block (ram,0x005faea9) */...
-  core_icepick.cpp_FUN_004f80b0
-    /* WARNING: Removing unreachable block (ram,0x004f86be) */...
-  core_script.cpp_FUN_005644e0
-    /* WARNING: Removing unreachable block (ram,0x00564514) */...
-
-====================================================================================================
 TYPE: variadic_preserve_ebp (38 occurrences)
 ====================================================================================================
 
@@ -1209,7 +1374,7 @@ Unique patterns:
 
 Example functions:
   crt_fpemu.c_staticInit_FUN_0060be80
-    cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\x03');...
+    cVar3 = SBORROW /* signed borrow */1(0,'\x03');...
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     bVar11 = SBORROW /* signed borrow */4(size,local_2c);...
   engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
@@ -1229,15 +1394,15 @@ Example functions:
   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
     while (SBORROW /* signed borrow */4(local_28,iVar5) != iVar3 < 0) {...
   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
-    bVar8 = SBORROW /* signed borrow */4(local_18,local_28);...
+    bVar8 = SBORROW /* signed borrow */4(local_20,local_30);...
   core_script.cpp_FUN_005675a0
     bVar6 = SBORROW /* signed borrow */4(iVar2,iVar4);...
   core_skeledit.cpp_FUN_00592690
-    while (bVar23 || SBORROW /* signed borrow */4((int)fVar15,(int)local_94) != iVar...
+    while (bVar22 || SBORROW /* signed borrow */4((int)fVar15,(int)local_94) != iVar...
   core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
     if (SBORROW /* signed borrow */4(iVar7,(int)local_20) != (int)local_20 * -2 < 0)...
   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-    bVar7 = SBORROW /* signed borrow */4(local_8c,iVar2);...
+    bVar8 = SBORROW /* signed borrow */4(local_ac,iVar3);...
 
 ====================================================================================================
 TYPE: special_math_intrinsic (23 occurrences)
@@ -1421,17 +1586,6 @@ Example functions:
     /* WARNING: Subroutine does not return */...
 
 ====================================================================================================
-TYPE: special_entry_point (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  entry
-
-Example functions:
-  entry
-    Program entry point at 0060239a...
-
-====================================================================================================
 TYPE: badspacebase (1 occurrences)
 ====================================================================================================
 
@@ -1441,3 +1595,14 @@ Unique patterns:
 Example functions:
   crt_stdio.c_ConvertFormatSpec_FUN_00603238
     (in_ESP, BADSPACEBASE) causing decompiler uncertainty....
+
+====================================================================================================
+TYPE: special_entry_point (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  entry
+
+Example functions:
+  entry
+    Program entry point at 0060239a...

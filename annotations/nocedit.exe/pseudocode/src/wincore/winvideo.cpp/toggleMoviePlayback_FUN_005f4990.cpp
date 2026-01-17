@@ -20,7 +20,7 @@ wincore_winvideo_cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window,int pla
   }
   else if (bVar1) {
     if (g_FullscreenMovie == 0) {
-      (*mciSendStringA)("play mov window notify",(LPSTR)0x0,0,notify_window);
+      (*g_mciSendStringAFunc)("play mov window notify",(LPSTR)0x0,0,notify_window);
       return;
     }
     lpstrCommand = "play mov fullscreen notify";
@@ -29,6 +29,6 @@ wincore_winvideo_cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window,int pla
   notify_window = (HWND)0x0;
   lpstrCommand = "pause mov";
 LAB_005f49ca:
-  (*mciSendStringA)(lpstrCommand,(LPSTR)0x0,0,notify_window);
+  (*g_mciSendStringAFunc)(lpstrCommand,(LPSTR)0x0,0,notify_window);
   return;
 }

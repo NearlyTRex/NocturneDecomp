@@ -18,8 +18,8 @@
 ;   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 at 005ad5ac
 ;
 ; Referenced Globals:
-;   Sleep* Sleep = 00212228
-;   double g_SecondsToMillisecondsMultiplier = 1000
+;   Sleep* g_SleepFunc = 00212228
+;   double g_SecondsToMillisecondsSleepMultiplier = 1000
 ;
 ; Called Functions:
 ;   crt_math.c_ceil_FUN_006001b2
@@ -39,12 +39,12 @@ section .text
     JC 0x005f40fb                       ; 005f40ec
         ;   XREF to: 005f40fb (CONDITIONAL_JUMP)  ; LAB_005f40fb
     PUSH 0x0                            ; 005f40ee
-    CALL dword ptr CS:[0x611644]        ; 005f40f0 | Sleep
+    CALL dword ptr CS:[0x611644]        ; 005f40f0 | g_SleepFunc
     ADD ESP,0x8                         ; 005f40f7
     RET                                 ; 005f40fa
     FLD double ptr [ESP + 0xc]          ; 005f40fb
         ;   Label: LAB_005f40fb
-    FMUL double ptr [0x00658184]        ; 005f40ff | g_SecondsToMillisecondsMultiplier
+    FMUL double ptr [0x00658184]        ; 005f40ff | g_SecondsToMillisecondsSleepMultiplier
     SUB ESP,0x8                         ; 005f4105
     FSTP double ptr [ESP]               ; 005f4108
     CALL crt_math.c_ceil_FUN_006001b2   ; 005f410b
@@ -58,7 +58,7 @@ section .text
     FISTP qword ptr [ESP]               ; 005f4124
     MOV EAX,dword ptr [ESP]             ; 005f4127
     PUSH EAX                            ; 005f412a
-    CALL dword ptr CS:[0x611644]        ; 005f412b | Sleep
+    CALL dword ptr CS:[0x611644]        ; 005f412b | g_SleepFunc
     ADD ESP,0x8                         ; 005f4132
     RET                                 ; 005f4135
 

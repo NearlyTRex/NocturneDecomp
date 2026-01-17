@@ -16,7 +16,7 @@
 ;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 at 004a3b63
 ;
 ; Referenced Globals:
-;   FindClose* PTR_FindClose_00611548 = 00211d78
+;   FindClose* g_FindCloseFunc = 00211d78
 ;
 ; Called Functions:
 ;   engine_dosio.c_CFileFinder_reset_FUN_00481db0
@@ -41,7 +41,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x110]     ; 00481d89
         ;   Label: LAB_00481d89
     PUSH ECX                            ; 00481d8f
-    CALL dword ptr CS:[0x611548]        ; 00481d90 | PTR_FindClose_00611548
+    CALL dword ptr CS:[0x611548]        ; 00481d90 | g_FindCloseFunc
     MOV dword ptr [EBX + 0x10c],0x0     ; 00481d97
     PUSH EBX                            ; 00481da1
     CALL engine_dosio.c_CFileFinder_reset_FUN_00481db0 ; 00481da2

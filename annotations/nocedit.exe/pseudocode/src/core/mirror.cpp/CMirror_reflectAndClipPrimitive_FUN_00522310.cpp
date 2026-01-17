@@ -63,9 +63,9 @@ core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
       do {
         piVar2 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
                                transformed_x + iVar5);
-        *piVar2 = (int)ROUND(pCVar4->x * 256f);
-        piVar2[1] = (int)ROUND(pCVar4->y * 256f);
-        piVar2[2] = (int)ROUND(pCVar4->z * 256f);
+        *piVar2 = (int)ROUND(pCVar4->x * 256.0f);
+        piVar2[1] = (int)ROUND(pCVar4->y * 256.0f);
+        piVar2[2] = (int)ROUND(pCVar4->z * 256.0f);
         *(uint *)
          ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x + iVar5) =
              0xffffffff;

@@ -33,7 +33,7 @@ uint core_smiley_cpp_FUN_005a3160(void)
                   (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_03f48fa8 * 4].z);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (in_stack_00000004,&CStack_18,input_local_point);
-  CStack_18.y = CStack_18.y + -4f;
+  CStack_18.y = CStack_18.y + -4.0f;
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();
   return 1;
 }

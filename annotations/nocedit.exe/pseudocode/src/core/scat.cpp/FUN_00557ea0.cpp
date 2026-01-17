@@ -28,7 +28,7 @@ void core_scat_cpp_FUN_00557ea0(void)
   if (g_CGamePtr->allow_damage_flag == 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  *(uint *)in_stack_00000004[1].base_actor.actor_name = DAT_00662458;
+  *(uint *)in_stack_00000004[1].base_actor.actor_name = 0x3F000000;
   fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;

@@ -17,5 +17,5 @@ float core_procedur_cpp_FUN_00554620(void)
   if (in_stack_00000008 <= (float)128) {
     return in_stack_00000008;
   }
-  return in_stack_00000008 + -128f;
+  return in_stack_00000008 + -128.0f;
 }

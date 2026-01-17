@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 240,
+    "complexity_score": 255,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 90,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "concat_artifact",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_align_anchor"
     ],
     "total_lines": 215
   },
@@ -35,11 +36,6 @@
     "confidence": "unknown",
     "declared_params": 4,
     "estimated_params": 4
-  },
-  "pcode_overrides": {
-    "005d2acc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff54,4)"
-    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.241379310344827,
@@ -72,18 +68,6 @@
     },
     "pcode_op_count": 608
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
-      "fix_address": "005d2acc",
-      "frame_offset": 172,
-      "match": "AND ESP",
-      "sub_esp_offset": 172,
-      "text": "Stack alignment at 005d2acc (SUB ESP, 0xac before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 212,
     "local_size": 196,
@@ -326,14 +310,14 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(uint *)((int)",
-      "text": "local_58 = *(uint *)((int)&scale->x + 4);",
+      "text": "uStack_5c = *(uint *)((int)&scale->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(uint *)((int)",
-      "text": "local_50 = *(uint *)((int)&scale->y + 4);",
+      "text": "uStack_54 = *(uint *)((int)&scale->y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -361,21 +345,21 @@
       "description": "Decompiler double/longlong composition artifact",
       "line": 61,
       "match": "CONCAT44",
-      "text": "dStack_8c = dStack_a4 * (double)CONCAT44 /* combine 2-byte values */(local_58,uStack_5c);",
+      "text": "local_90 = local_a8 * (double)CONCAT44 /* combine 2-byte values */(uStack_5c,local_60);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 62,
       "match": "CONCAT44",
-      "text": "dStack_84 = dStack_9c * (double)CONCAT44 /* combine 2-byte values */(local_50,uStack_54);",
+      "text": "local_88 = local_a0 * (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 63,
       "match": "CONCAT44",
-      "text": "dStack_7c = dStack_94 * (double)CONCAT44 /* combine 2-byte values */(uVar1,uStack_4c);",
+      "text": "local_80 = local_98 * (double)CONCAT44 /* combine 2-byte values */(uVar1,local_50);",
       "type": "concat_artifact"
     },
     {
@@ -403,22 +387,32 @@
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar3->position).x + 4) = local_44[1];",
+      "text": "*(uint *)((int)&(pCVar3->position).x + 4) = local_48[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar3->position).y + 4) = local_44[3];",
+      "text": "*(uint *)((int)&(pCVar3->position).y + 4) = local_48[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar3->position).z + 4) = local_30;",
+      "text": "*(uint *)((int)&(pCVar3->position).z + 4) = local_34;",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
+      "fix_address": "005d2acc",
+      "frame_offset": 172,
+      "match": "AND ESP",
+      "sub_esp_offset": 172,
+      "text": "Stack alignment at 005d2acc (SUB ESP, 0xac before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

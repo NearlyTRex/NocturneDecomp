@@ -29,9 +29,10 @@ void __cdecl crt_thread_c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo *i
     crt_memory_c_memset_FUN_005fde40
               (*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),
                *(ulong *)(&stack0xffffffd4 + iVar1));
+    *(int *)(&stack0xffffffd4 + iVar1) = (int)&local_28 + iVar1;
     *(DWORD *)(&stack0x000000c8 + iVar1) = g_RuntimeBufferSize;
-    aiStackY_34[1] = 0x60f913;
-    BVar2 = crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8((void *)((int)&local_28 + iVar1));
+    *(uint *)((int)aiStackY_34 + iVar1 + 4) = 0x60f913;
+    BVar2 = crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8(*(void **)(&stack0xffffffd4 + iVar1));
     if (BVar2 == 0) {
       return;
     }
@@ -39,7 +40,7 @@ void __cdecl crt_thread_c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo *i
   pTVar3 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
   info->tls_ptr = &pTVar3->thread_handle;
   aiStackY_34[1] = 0x60f933;
-  (*PTR_SetEvent_00611624)(info->start_event);
+  (*g_SetEventFunc)(info->start_event);
   aiStackY_34[1] = 0x60f93c;
   crt_exception_c_installExceptionHandler_FUN_0060aba8(&local_28);
   (*PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24)();

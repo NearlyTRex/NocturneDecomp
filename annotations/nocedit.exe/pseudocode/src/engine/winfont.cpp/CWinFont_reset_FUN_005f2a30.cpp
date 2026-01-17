@@ -10,9 +10,9 @@ void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(CWinFont *this_ptr)
 
 {
   if (this_ptr->deviceContextHandle != (HDC)0x0) {
-    (*SelectObject)(this_ptr->deviceContextHandle,this_ptr->objectHandle);
+    (*g_SelectObjectFunc)(this_ptr->deviceContextHandle,this_ptr->objectHandle);
     this_ptr->objectHandle = (HGDIOBJ)0x0;
-    (*DeleteDC)(this_ptr->deviceContextHandle);
+    (*g_DeleteDCFunc)(this_ptr->deviceContextHandle);
     this_ptr->deviceContextHandle = (HDC)0x0;
     this_ptr->dibHandle = (HBITMAP)0x0;
     this_ptr->ppvBits = (void **)0x0;

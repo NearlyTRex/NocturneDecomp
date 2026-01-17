@@ -25,13 +25,13 @@ int __cdecl crt_io_c_ftruncate_FUN_00600cf0(int file_handle,long new_size)
     if (0x7fff < g_WindowsPlatformVersion) {
       unaff_EDI = crt_stdio_c_lseek_FUN_00606690(file_handle,0,2);
     }
-    DVar2 = (*SetFilePointer)(unaff_EBP,new_size,(PLONG)0x0,0);
+    DVar2 = (*g_SetFilePointerFunc)(unaff_EBP,new_size,(PLONG)0x0,0);
     if (DVar2 == 0xffffffff) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle);
       DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
       return DVar2;
     }
-    BVar3 = (*SetEndOfFile)(unaff_EBP);
+    BVar3 = (*g_SetEndOfFileFunc)(unaff_EBP);
     if (BVar3 == 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle);
       DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();

@@ -35,7 +35,7 @@ int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
   iVar2 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
   if (iVar2 == 0) {
     iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);
-    iVar4 = *(int *)((int)&inf + iVar5 * 2 + 6);
+    iVar4 = *(int *)((int)&INFINITY + iVar5 * 2 + 6);
   }
   else {
     iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);
@@ -68,7 +68,7 @@ LAB_00607b55:
     local_14 = ((dst_rule *)piVar7)->rule_type;
     if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {
       iVar4 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
-      if ((iVar4 != 0) && (DAT_00665f3a >> 0x10 < local_14)) {
+      if ((iVar4 != 0) && (0x003B001F >> 0x10 < local_14)) {
         local_14 = local_14 + 1;
       }
       local_14 = local_14 + -1;
@@ -115,7 +115,7 @@ LAB_00607c63:
     iVar5 = pdVar9->rule_type;
     if (pdVar9[1].seconds == 1) {
       iVar2 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
-      if ((iVar2 != 0) && (DAT_00665f3a >> 0x10 < iVar5)) {
+      if ((iVar2 != 0) && (0x003B001F >> 0x10 < iVar5)) {
         iVar5 = iVar5 + 1;
       }
       iVar5 = iVar5 + -1;

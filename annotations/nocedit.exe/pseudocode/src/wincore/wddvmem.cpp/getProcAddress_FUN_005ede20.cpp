@@ -11,6 +11,6 @@ FARPROC __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_005ede20(HMODULE hModule,
 {
   FARPROC pFVar1;
   
-  pFVar1 = (*GetProcAddress)(hModule,lpProcName);
+  pFVar1 = (*g_GetProcAddressFunc)(hModule,lpProcName);
   return pFVar1;
 }

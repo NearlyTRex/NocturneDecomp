@@ -22,13 +22,13 @@ void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
   
   for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
     dVar4 = crt_math_c_round_FUN_005fe6b0
-                      ((double)(g_LoadedVertices[local_1c].vertex.x * 256f));
+                      ((double)(g_LoadedVertices[local_1c].vertex.x * 256.0f));
     local_28.x = (int)ROUND(dVar4);
     dVar4 = crt_math_c_round_FUN_005fe6b0
-                      ((double)(g_LoadedVertices[local_1c].vertex.y * 256f));
+                      ((double)(g_LoadedVertices[local_1c].vertex.y * 256.0f));
     local_28.y = (int)ROUND(dVar4);
     dVar4 = crt_math_c_round_FUN_005fe6b0
-                      ((double)(g_LoadedVertices[local_1c].vertex.z * 256f));
+                      ((double)(g_LoadedVertices[local_1c].vertex.z * 256.0f));
     local_28.z = (int)ROUND(dVar4);
     engine_matrix_c_transformToCache_FUN_0050cd70(local_1c,&local_28);
   }

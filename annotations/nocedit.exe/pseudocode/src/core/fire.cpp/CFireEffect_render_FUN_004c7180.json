@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 201,
+    "complexity_score": 376,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 86,
     "pseudocode_lines": 156,
-    "suspect_count": 4,
+    "suspect_count": 21,
     "suspect_types": [
+      "call_esp_anchor",
       "pointer_cast"
     ],
     "total_lines": 503
@@ -718,59 +719,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "004c71ec": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c723c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c7258": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c726d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c728c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c72ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c72c1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c72e2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c730a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c732f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c7398": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c73b6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c73d4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c73ef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c740a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c7425": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004c7490": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.796934865900383,
     "instruction_count": 261,
@@ -808,7 +756,68 @@
     },
     "pcode_op_count": 1513
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c7186",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CStake *)((int)",
+      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(CBulletHole *)((int)",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 4,
       "call_address": "004c71e7",
@@ -1029,69 +1038,6 @@
       "target_address": "0x4c0140",
       "text": "Direct CALL at 004c748b, ADD ESP at 004c7490 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 8,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CFireEffect *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004c7186",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(CStake *)((int)",
-      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(CBulletHole *)((int)",
-      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 240,
+    "complexity_score": 239,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 49,
     "suspect_count": 16,
     "suspect_types": [
       "callind_preserve_lost",
@@ -15,7 +15,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 174
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -78,13 +78,13 @@
   "globals": [
     {
       "addr": "0061162c",
-      "name": "SetFilePointer",
+      "name": "g_SetFilePointerFunc",
       "type": "SetFilePointer*",
       "value": "002121b6"
     },
     {
       "addr": "00611678",
-      "name": "PTR_WriteFile_00611678",
+      "name": "g_WriteFileFunc",
       "type": "WriteFile*",
       "value": "00212300"
     },
@@ -222,28 +222,28 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 39,
       "match": "in_stack_00000010",
-      "text": "(hFile,in_stack_00000010,bytes_to_write,(LPDWORD)&stack0xfffffff4,",
+      "text": "BVar4 = (*g_WriteFileFunc)(hFile,in_stack_00000010,bytes_to_write,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 40,
+      "line": 39,
       "match": "&stack0xfffffff4",
-      "text": "(hFile,in_stack_00000010,bytes_to_write,(LPDWORD)&stack0xfffffff4,",
+      "text": "BVar4 = (*g_WriteFileFunc)(hFile,in_stack_00000010,bytes_to_write,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 47,
+      "line": 46,
       "match": "unaff_EDI",
       "text": "if (bytes_to_write != unaff_EDI) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 52,
+      "line": 51,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

@@ -15,16 +15,16 @@ int __cdecl crt_heap_c_AllocateNewHeapBlock_FUN_00609668(uint size)
   HeapBlock *pHVar2;
   int iVar3;
   
-  if (DAT_006854f0 == 0) {
+  if (0x00000001 == 0) {
     return 0;
   }
-  if (DAT_00684fd0 == -2) {
+  if (0 == -2) {
     return 0;
   }
   new_block = crt_heap_c_CalculateHeapBlockSize_FUN_0060972c(&size);
   iVar3 = 0;
   if (new_block != 0) {
-    new_block_00 = (*PTR_VirtualAlloc_00611660)((LPVOID)0x0,size,0x1000,0x40);
+    new_block_00 = (*g_VirtualAllocFunc)((LPVOID)0x0,size,0x1000,0x40);
     iVar3 = 0;
     if (new_block_00 != (HeapBlock *)0x0) {
       uVar1 = size - 4;

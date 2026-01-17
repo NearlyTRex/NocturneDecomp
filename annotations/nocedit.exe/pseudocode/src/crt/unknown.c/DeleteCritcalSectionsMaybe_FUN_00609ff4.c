@@ -19,7 +19,7 @@ void crt_unknown_c_DeleteCritcalSectionsMaybe_FUN_00609ff4(void)
   if (0 < (int)g_DynamicCriticalSectionCounter) {
     iVar2 = 0;
     do {
-      (*PTR_DeleteCriticalSection_00611520)
+      (*g_DeleteCriticalSectionFunc)
                 (*(LPCRITICAL_SECTION *)(iVar2 + (int)g_DynamicCriticalSectionArray));
       puVar1 = (uint *)(iVar2 + (int)g_DynamicCriticalSectionArray);
       iVar2 = iVar2 + 4;

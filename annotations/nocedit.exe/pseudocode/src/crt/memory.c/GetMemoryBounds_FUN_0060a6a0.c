@@ -13,7 +13,7 @@ void __cdecl crt_memory_c_GetMemoryBounds_FUN_0060a6a0(ThreadData *pStackBound,u
   _MEMORY_BASIC_INFORMATION local_28;
   byte local_c [4];
   
-  (*PTR_VirtualQuery_00611668)(local_c,&local_28,0x1c);
+  (*g_VirtualQueryFunc)(local_c,&local_28,0x1c);
   if (g_WindowsPlatformVersion < SYSTEM_WINDOWS_NT_4_0) {
     uVar1 = (int)local_28.AllocationBase + 0x3000;
   }

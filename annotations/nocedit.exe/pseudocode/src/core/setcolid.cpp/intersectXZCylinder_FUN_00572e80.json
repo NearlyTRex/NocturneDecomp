@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 102,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 67,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "stack_align_anchor"
     ],
     "total_lines": 279
   },
@@ -41,11 +42,6 @@
     "confidence": "unknown",
     "declared_params": 4,
     "estimated_params": 4
-  },
-  "pcode_overrides": {
-    "00572e8a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff40,4)"
-    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.90625,
@@ -87,18 +83,6 @@
     },
     "pcode_op_count": 1518
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc0",
-      "fix_address": "00572e8a",
-      "frame_offset": 192,
-      "match": "AND ESP",
-      "sub_esp_offset": 192,
-      "text": "Stack alignment at 00572e8a (SUB ESP, 0xc0 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 220,
     "local_size": 204,
@@ -307,6 +291,16 @@
       "match": "(float *)((int)",
       "text": "fVar2 = *(float *)((int)bounds_struct + 0x1c) + cylinder->radius;",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc0",
+      "fix_address": "00572e8a",
+      "frame_offset": 192,
+      "match": "AND ESP",
+      "sub_esp_offset": 192,
+      "text": "Stack alignment at 00572e8a (SUB ESP, 0xc0 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

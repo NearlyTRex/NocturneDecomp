@@ -27,11 +27,11 @@
 ;   undefined4 DAT_006144d4
 ;   string s_FALSE_006144d6
 ;   undefined4 s_ALSE_006144d7
-;   string s_(none)_006144dc
+;   TerminatedCString s_none_006144dc
 ;   undefined4 DAT_006144dd
 ;   undefined4 DAT_006144de
 ;   undefined4 s_ne)_006144df
-;   string s_(none)_006144e3
+;   TerminatedCString s_none_006144e3
 ;   ... and 29 more
 ;
 ; Called Functions:

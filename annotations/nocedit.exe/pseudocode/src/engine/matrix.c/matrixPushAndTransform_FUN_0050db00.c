@@ -53,9 +53,9 @@ engine_matrix_c_matrixPushAndTransform_FUN_0050db00(int rotation_x,int rotation_
   g_MatrixStack_M22[iVar2] = g_TransformMatrix.m[2].z;
   crt_math_c_atan2_FUN_006013b1((float10)rotation_x,(float10)rotation_z);
   fVar16 = crt_math_c_atan2_FUN_006013b1((float10)rotation_x,x);
-  fVar17 = extraout_ST1 * (float10)0.31830988619288902 * (float10)65536f;
+  fVar17 = extraout_ST1 * (float10)0.31830988619288902 * (float10)32768;
   crt_math_c_round_FUN_005fe6b0
-            ((double)(-fVar16 * (float10)0.31830988619288902 * (float10)65536f));
+            ((double)(-fVar16 * (float10)0.31830988619288902 * (float10)32768));
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
   iVar2 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(angle);
   iVar3 = engine_matrix_c_interpolatedCos_FUN_0050c600(0xdc06);

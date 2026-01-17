@@ -34,7 +34,7 @@ uint core_sentinel_cpp_FUN_00568b70(void)
   local_1c.y = (pCVar2->y + pCVar1->y) * 0.5f;
   local_1c.z = (pCVar2->z + pCVar1->z) * 0.5f + -0.5f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_28,&local_1c);
-  local_28.y = local_28.y + -4f;
+  local_28.y = local_28.y + -4.0f;
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();
   return 1;
 }

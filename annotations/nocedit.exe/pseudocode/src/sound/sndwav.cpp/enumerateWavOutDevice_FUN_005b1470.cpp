@@ -20,7 +20,7 @@ sound_sndwav_cpp_enumerateWavOutDevice_FUN_005b1470(UINT device_id,SSoundDeviceI
   tagWAVEOUTCAPSA local_3c;
   
   bVar7 = 0;
-  MVar2 = (*waveOutGetDevCapsA)(device_id,&local_3c,0x34);
+  MVar2 = (*g_waveOutGetDevCapsAFunc)(device_id,&local_3c,0x34);
   if (MVar2 != 0) {
     return 0;
   }

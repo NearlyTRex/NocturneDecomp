@@ -22,7 +22,7 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   SetFilePointer* SetFilePointer = 002121b6
+;   SetFilePointer* g_SetFilePointerFunc = 002121b6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14
@@ -90,7 +90,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 006066f1
     PUSH EDI                            ; 006066f5
     PUSH EAX                            ; 006066f6
-    CALL dword ptr CS:[0x61162c]        ; 006066f7 | SetFilePointer
+    CALL dword ptr CS:[0x61162c]        ; 006066f7 | g_SetFilePointerFunc
     PUSH EBX                            ; 006066fe
     MOV ESI,EAX                         ; 006066ff
     CALL dword ptr [0x00684eec]         ; 00606701 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec

@@ -29,7 +29,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
     this_ptr->cached_ammo_count = this_ptr->selected_weapon->ammo_count;
   }
   if ((g_CGamePtr->auto_save_blocked == 0) && (g_CGamePtr->block_auto_save == 0)) {
-    local_20 = 1.0 / 120f;
+    local_20 = 1.0 / 120.0f;
     iVar4 = 0;
     pCVar5 = this_ptr;
     if (0 < this_ptr->item_count) {
@@ -52,7 +52,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
   }
   else {
     iVar4 = 0;
-    local_1c = DAT_00660480;
+    local_1c = 0x41F00000;
     pCVar5 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {

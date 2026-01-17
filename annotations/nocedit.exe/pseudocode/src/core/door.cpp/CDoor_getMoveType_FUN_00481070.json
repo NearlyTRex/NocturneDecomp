@@ -1,15 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 105,
+    "complexity_score": 200,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 65,
-    "suspect_count": 3,
+    "suspect_count": 11,
     "suspect_types": [
+      "call_esp_anchor",
       "param_count_too_few",
-      "stack_param"
+      "stack_align_anchor",
+      "stack_param",
+      "variadic_anchor"
     ],
     "total_lines": 256
   },
@@ -128,32 +131,6 @@
     "declared_params": 1,
     "estimated_params": 2
   },
-  "pcode_overrides": {
-    "00481078": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ],
-    "00481090": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ],
-    "0048109d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ],
-    "004810cb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ],
-    "004810df": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ],
-    "00481106": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ],
-    "0048111b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ],
-    "004811f2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.2,
     "instruction_count": 150,
@@ -192,7 +169,79 @@
     },
     "pcode_op_count": 780
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00481078",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "(&this_ptr->base_actor,&local_18,(CVector3f *)(in_stack_00000008 + 0x20));",
+      "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    },
     {
       "add_esp_value": 4,
       "call_address": "004811ed",
@@ -296,80 +345,6 @@
       "target_address": "0x4d7f20",
       "text": "Direct CALL at 00481116, ADD ESP at 0048111b with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 32,
-    "local_size": 28,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDoor *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "00481078",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "(&this_ptr->base_actor,&local_18,(CVector3f *)(in_stack_00000008 + 0x20));",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -50,7 +50,7 @@ core_fire_cpp_CGlassParticle_init_FUN_004c1c00
   local_70 = triangle_vertices->vertices[0].y + triangle_vertices->vertices[1].y;
   local_6c = triangle_vertices->vertices[0].z + triangle_vertices->vertices[1].z;
   local_44 = local_74 + triangle_vertices->vertices[2].x;
-  local_80.x = local_44 / 3f;
+  local_80.x = local_44 / 3.0f;
   local_40 = local_70 + triangle_vertices->vertices[2].y;
   local_3c = local_6c + triangle_vertices->vertices[2].z;
   local_80.y = local_40 * 0.3333333f;

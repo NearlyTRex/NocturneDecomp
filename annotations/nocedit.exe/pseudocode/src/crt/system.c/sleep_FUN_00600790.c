@@ -9,6 +9,6 @@
 void __cdecl crt_system_c_sleep_FUN_00600790(DWORD milliseconds)
 
 {
-  (*Sleep)(milliseconds);
+  (*g_SleepFunc)(milliseconds);
   return;
 }

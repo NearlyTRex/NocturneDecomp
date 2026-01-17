@@ -24,8 +24,8 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e3440(CTurret *this_ptr)
   in_stack_00000008->yaw_min = 6.2831855;
   in_stack_00000008->yaw_max = -6.2831855;
   in_stack_00000008->reference_data = iVar2;
-  fVar3 = DAT_00664b6c;
-  in_stack_00000008->pitch_min = DAT_00664b70 - (this_ptr->base_weapon).base_actor.orient.pitch;
+  fVar3 = 0xBF060A92;
+  in_stack_00000008->pitch_min = 0x3F9C61AA - (this_ptr->base_weapon).base_actor.orient.pitch;
   fVar1 = (this_ptr->base_weapon).base_actor.orient.pitch;
   in_stack_00000008->distance_min = -4.0;
   in_stack_00000008->pitch_max = fVar3 - fVar1;

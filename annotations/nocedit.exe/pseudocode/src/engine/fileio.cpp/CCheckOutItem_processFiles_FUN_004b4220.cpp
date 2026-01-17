@@ -305,7 +305,7 @@ engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
           piVar5 = (int *)crt_errno_c_errno_FUN_00601450();
           if (*piVar5 != 6) break;
           iVar7 = iVar7 + 1;
-          (*Sleep)(500);
+          (*g_SleepFunc)(500);
         } while (iVar7 < 10);
         pFVar3 = (FILE *)0x0;
 LAB_004b4ad9:
@@ -406,7 +406,7 @@ LAB_004b4980:
               piVar5 = (int *)crt_errno_c_errno_FUN_00601450();
               if (*piVar5 != 6) break;
               iVar7 = iVar7 + 1;
-              (*Sleep)(500);
+              (*g_SleepFunc)(500);
             } while (iVar7 < 10);
             pFVar3 = (FILE *)0x0;
 LAB_004b4d50:

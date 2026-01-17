@@ -66,7 +66,7 @@ LAB_0053fe74:
             goto LAB_0053fe74;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,local_24 * 1000f,3000.0);
+                    (g_CEditorToolsPtr,local_24 * 1000.0f,3000.0);
           while( true ) {
             local_30 = (float)(int)(g_CurrentGameTime - uVar4) * (float)1.52587890625e-05;
             if (local_30 < 0.0) {
@@ -137,7 +137,7 @@ LAB_00540097:
             goto LAB_00540097;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,local_2c * 1000f,5000.0);
+                    (g_CEditorToolsPtr,local_2c * 1000.0f,5000.0);
           while( true ) {
             local_28 = (float)(int)(g_CurrentGameTime - uVar4) * (float)1.52587890625e-05;
             if (local_28 < 0.0) {

@@ -51,7 +51,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
     }
     *(float *)(this_ptr->field0_0x0 + 0x1c) =
          fVar5 * _DAT_0065dcc8 + *(float *)(this_ptr->field0_0x0 + 0x1c);
-    fVar5 = -20f;
+    fVar5 = -20.0f;
     if (0x419fffff < *(int *)(this_ptr->field0_0x0 + 0x1c)) {
       do {
         *(float *)(this_ptr->field0_0x0 + 0x1c) = *(float *)(this_ptr->field0_0x0 + 0x1c) + fVar5;

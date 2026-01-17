@@ -24,7 +24,6 @@ void core_bride_cpp_FUN_00423a30(void)
   float fVar8;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  SDamageInfo local_1f4;
   SDamageInfo local_1b8;
   SDamageInfo local_17c;
   SDamageInfo local_140;
@@ -135,7 +134,7 @@ void core_bride_cpp_FUN_00423a30(void)
         }
         else {
           local_104 = 0;
-          local_fc = DAT_0065b40c;
+          local_fc = 0x40200000;
           local_100 = 0;
           (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))();
           iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
@@ -186,7 +185,7 @@ void core_bride_cpp_FUN_00423a30(void)
           local_4c = (double)local_20;
           local_14 = local_20;
           if (local_20 <= (float)3) {
-            local_18 = DAT_0065b40c;
+            local_18 = 0x40200000;
             if ((local_4c < 1.0) || (2 < local_4c)) {
               local_44 = (double)local_20;
               if (((float)3 <= local_20) &&
@@ -211,11 +210,8 @@ void core_bride_cpp_FUN_00423a30(void)
             else if ((in_stack_00000004->base_character).model.part_visibility_flags
                      [*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14)] !=
                      0) {
-              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1f4);
-              local_1f4.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-              local_1f4.attacker = (CDemonActor *)in_stack_00000004;
-              local_1f4.wielder = (CDemonActor *)in_stack_00000004;
-              local_14 = local_1f4.damage_amount;
+              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe0c);
+              local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
               pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                  (&local_e0,(CVector3f *)&DAT_00822c94,
                                   (in_stack_00000004->base_character).model.bone_transform.
@@ -248,7 +244,7 @@ void core_bride_cpp_FUN_00423a30(void)
           local_54 = (double)local_1c;
           local_14 = local_1c;
           if (local_1c <= (float)8) {
-            local_18 = DAT_0065b40c;
+            local_18 = 0x40200000;
             if (((1.0 <= local_54) && (local_54 <= 2)) ||
                ((local_2c = (double)local_1c, (float)5 <= local_1c &&
                 (local_2c <= 6)))) {

@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 539,
-    "complexity_score": 388,
+    "complexity_score": 400,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 213,
-    "suspect_count": 16,
+    "pseudocode_lines": 210,
+    "suspect_count": 17,
     "suspect_types": [
       "concat_artifact",
       "pointer_cast",
+      "stack_align_anchor",
       "unknown_field"
     ],
-    "total_lines": 752
+    "total_lines": 749
   },
   "cross_references": [
     {
@@ -53,11 +54,6 @@
     "confidence": "medium",
     "declared_params": 1,
     "estimated_params": 1
-  },
-  "pcode_overrides": {
-    "005cd7dc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd24,4)"
-    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.397683397683398,
@@ -121,18 +117,6 @@
     ],
     "vtable_offset": 68
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2dc",
-      "fix_address": "005cd7dc",
-      "frame_offset": 732,
-      "match": "AND ESP",
-      "sub_esp_offset": 732,
-      "text": "Stack alignment at 005cd7dc (SUB ESP, 0x2dc before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 760,
     "local_size": 756,
@@ -715,101 +699,111 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(double *)((int)",
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 106,
       "match": "(double *)((int)",
-      "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(double *)((int)",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 120,
+      "line": 118,
       "match": "._4_4_",
-      "text": "local_2e8 = uStack_2d4._4_4_;",
+      "text": "uStack_2ec = local_2d8._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 133,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 134,
       "match": "(double *)((int)",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 147,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 148,
       "match": "(double *)((int)",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 161,
+      "line": 158,
       "match": "CONCAT44",
-      "text": "if (uStack_2e4 < (double)CONCAT44 /* combine 2-byte values */(local_2e8,uStack_2ec)) {",
+      "text": "if (local_2e8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 160,
       "match": "._4_4_",
-      "text": "local_2e8 = uStack_2e4._4_4_;",
+      "text": "uStack_2ec = local_2e8._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 175,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 179,
+      "line": 176,
       "match": "(double *)((int)",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 192,
+      "line": 189,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 190,
       "match": "(double *)((int)",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 203,
+      "line": 200,
       "match": "CONCAT44",
-      "text": "if (dStack_2a4 < (double)CONCAT44 /* combine 2-byte values */(local_2e8,uStack_2ec)) {",
+      "text": "if (local_2a8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {",
       "type": "concat_artifact"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2dc",
+      "fix_address": "005cd7dc",
+      "frame_offset": 732,
+      "match": "AND ESP",
+      "sub_esp_offset": 732,
+      "text": "Stack alignment at 005cd7dc (SUB ESP, 0x2dc before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

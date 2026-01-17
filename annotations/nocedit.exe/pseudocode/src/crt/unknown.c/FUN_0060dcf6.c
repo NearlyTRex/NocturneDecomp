@@ -45,7 +45,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
     }
     param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;
   }
-  if (DAT_00684acd == '\0') {
+  if (0 == '\0') {
     uVar4 = (int)param_2 >> 0x14 & 0x7ff;
     uVar7 = (int)param_4 >> 0x14 & 0x800007ff;
     param_2 = param_2 & 0xfffff;

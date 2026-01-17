@@ -1,16 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 51,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 82
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -50,13 +50,13 @@
   "globals": [
     {
       "addr": "00611450",
-      "name": "waveOutReset",
+      "name": "g_waveOutResetFunc",
       "type": "waveOutReset*",
       "value": "0021196a"
     },
     {
       "addr": "00611454",
-      "name": "waveOutUnprepareHeader",
+      "name": "g_waveOutUnprepareHeaderFunc",
       "type": "waveOutUnprepareHeader*",
       "value": "0021197a"
     },
@@ -145,9 +145,9 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(LPWAVEHDR *)((int)",
-      "text": "(*waveOutUnprepareHeader)(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2),0x20);",
+      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2),0x20);",
       "type": "pointer_cast"
     }
   ],

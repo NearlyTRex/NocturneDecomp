@@ -77,11 +77,11 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
               local_20 = local_20 + 1) {
             uVar2 = g_ModelPolygonData[local_1c].vertex_indices[local_20];
             g_ModelPolygonData[local_1c].uv_u[local_20] =
-                 ((g_LoadedVertices[uVar2].vertex.x - local_74) * (float)5.9604644775390599e-08) /
-                 (local_7c - local_74) + 1.0;
+                 ((g_LoadedVertices[uVar2].vertex.x - local_74) *
+                 (float)254) / (local_7c - local_74) + 1.0;
             g_ModelPolygonData[local_1c].uv_v[local_20] =
-                 ((g_LoadedVertices[uVar2].vertex.y - local_78) * (float)5.9604644775390599e-08) /
-                 (local_80 - local_78) + 1.0;
+                 ((g_LoadedVertices[uVar2].vertex.y - local_78) *
+                 (float)254) / (local_80 - local_78) + 1.0;
           }
         }
       }

@@ -17,14 +17,14 @@
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f74f
 ;
 ; Referenced Globals:
-;   CloseHandle* CloseHandle = 00211c38
-;   CreateProcessA* PTR_CreateProcessA_00611518 = 00211c88
-;   DuplicateHandle* PTR_DuplicateHandle_0061152c = 00211ce8
-;   GetCurrentProcess* GetCurrentProcess = 00211e5a
-;   GetExitCodeProcess* PTR_GetExitCodeProcess_00611590 = 00211ec6
-;   GetLastError* GetLastError = 00211f22
-;   Sleep* Sleep = 00212228
-;   WaitForSingleObject* WaitForSingleObject = 002122c4
+;   CloseHandle* g_CloseHandleFunc = 00211c38
+;   CreateProcessA* g_CreateProcessAFunc = 00211c88
+;   DuplicateHandle* g_DuplicateHandleFunc = 00211ce8
+;   GetCurrentProcess* g_GetCurrentProcessFunc = 00211e5a
+;   GetExitCodeProcess* g_GetExitCodeProcessFunc = 00211ec6
+;   GetLastError* g_GetLastErrorFunc = 00211f22
+;   Sleep* g_SleepFunc = 00212228
+;   WaitForSingleObject* g_WaitForSingleObjectFunc = 002122c4
 ;   BYTE g_WindowsMinorVersion = \x00
 ;   WORD g_WindowsPlatformVersion = 0x0
 ;
@@ -85,11 +85,11 @@ section .text
     MOV EDX,0x1                         ; 006105fb
     PUSH 0x0                            ; 00610600
     MOV word ptr [ESP + 0x58],DX        ; 00610602
-    CALL dword ptr CS:[0x611518]        ; 00610607 | PTR_CreateProcessA_00611518
+    CALL dword ptr CS:[0x611518]        ; 00610607 | g_CreateProcessAFunc
     TEST EAX,EAX                        ; 0061060e
     JNZ 0x00610641                      ; 00610610
         ;   XREF to: 00610641 (CONDITIONAL_JUMP)  ; LAB_00610641
-    CALL dword ptr CS:[0x6115a4]        ; 00610612 | GetLastError
+    CALL dword ptr CS:[0x6115a4]        ; 00610612 | g_GetLastErrorFunc
     MOV EDX,EAX                         ; 00610619
     CMP EAX,0x5                         ; 0061061b
     JZ 0x0061062e                       ; 0061061e
@@ -122,7 +122,7 @@ section .text
         ;   XREF to: 006106ad (CONDITIONAL_JUMP)  ; LAB_006106ad
     PUSH 0x3e8                          ; 00610661
     MOV EDI,0x103                       ; 00610666
-    CALL dword ptr CS:[0x611644]        ; 0061066b | Sleep
+    CALL dword ptr CS:[0x611644]        ; 0061066b | g_SleepFunc
     MOV dword ptr [ESP + 0x54],EDI      ; 00610672
     JMP 0x00610682                      ; 00610676
         ;   XREF to: 00610682 (UNCONDITIONAL_JUMP)  ; LAB_00610682
@@ -132,12 +132,12 @@ section .text
         ;   XREF to: 006106db (CONDITIONAL_JUMP)  ; LAB_006106db
     PUSH 0x64                           ; 00610682
         ;   Label: LAB_00610682
-    CALL dword ptr CS:[0x611644]        ; 00610684 | Sleep
+    CALL dword ptr CS:[0x611644]        ; 00610684 | g_SleepFunc
     LEA EAX,[ESP + 0x54]                ; 0061068b
     PUSH EAX                            ; 0061068f
     MOV EBP,dword ptr [ESP + 0x48]      ; 00610690
     PUSH EBP                            ; 00610694
-    CALL dword ptr CS:[0x611590]        ; 00610695 | PTR_GetExitCodeProcess_00611590
+    CALL dword ptr CS:[0x611590]        ; 00610695 | g_GetExitCodeProcessFunc
     TEST EAX,EAX                        ; 0061069c
     JNZ 0x00610678                      ; 0061069e
         ;   XREF to: 00610678 (CONDITIONAL_JUMP)  ; LAB_00610678
@@ -153,7 +153,7 @@ section .text
         ;   Label: LAB_006106ad
     MOV ECX,dword ptr [ESP + 0x48]      ; 006106af
     PUSH ECX                            ; 006106b3
-    CALL dword ptr CS:[0x61166c]        ; 006106b4 | WaitForSingleObject
+    CALL dword ptr CS:[0x61166c]        ; 006106b4 | g_WaitForSingleObjectFunc
     TEST EAX,EAX                        ; 006106bb
     JNZ 0x006106d2                      ; 006106bd
         ;   XREF to: 006106d2 (CONDITIONAL_JUMP)  ; LAB_006106d2
@@ -161,7 +161,7 @@ section .text
     PUSH EAX                            ; 006106c3
     MOV ESI,dword ptr [ESP + 0x48]      ; 006106c4
     PUSH ESI                            ; 006106c8
-    CALL dword ptr CS:[0x611590]        ; 006106c9 | PTR_GetExitCodeProcess_00611590
+    CALL dword ptr CS:[0x611590]        ; 006106c9 | g_GetExitCodeProcessFunc
     JMP 0x006106db                      ; 006106d0
         ;   XREF to: 006106db (UNCONDITIONAL_JUMP)  ; LAB_006106db
     CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006106d2
@@ -171,7 +171,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x44]      ; 006106db
         ;   Label: LAB_006106db
     PUSH EDX                            ; 006106df
-    CALL dword ptr CS:[0x611504]        ; 006106e0 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 006106e0 | g_CloseHandleFunc
     JMP 0x0061073b                      ; 006106e7
         ;   XREF to: 0061073b (UNCONDITIONAL_JUMP)  ; LAB_0061073b
     CMP EBP,0x3                         ; 006106e9
@@ -180,7 +180,7 @@ section .text
         ;   XREF to: 00610700 (CONDITIONAL_JUMP)  ; LAB_00610700
     MOV EBX,dword ptr [ESP + 0x44]      ; 006106ee
     PUSH EBX                            ; 006106f2
-    CALL dword ptr CS:[0x611504]        ; 006106f3 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 006106f3 | g_CloseHandleFunc
     MOV EAX,dword ptr [ESP + 0x4c]      ; 006106fa
     JMP 0x00610737                      ; 006106fe
         ;   XREF to: 00610737 (UNCONDITIONAL_JUMP)  ; LAB_00610737
@@ -190,13 +190,13 @@ section .text
     PUSH 0x0                            ; 00610704
     LEA EAX,[ESP + 0x64]                ; 00610706
     PUSH EAX                            ; 0061070a
-    CALL dword ptr CS:[0x61157c]        ; 0061070b | GetCurrentProcess
+    CALL dword ptr CS:[0x61157c]        ; 0061070b | g_GetCurrentProcessFunc
     PUSH EAX                            ; 00610712
     MOV EDX,dword ptr [ESP + 0x58]      ; 00610713
     PUSH EDX                            ; 00610717
-    CALL dword ptr CS:[0x61157c]        ; 00610718 | GetCurrentProcess
+    CALL dword ptr CS:[0x61157c]        ; 00610718 | g_GetCurrentProcessFunc
     PUSH EAX                            ; 0061071f
-    CALL dword ptr CS:[0x61152c]        ; 00610720 | PTR_DuplicateHandle_0061152c
+    CALL dword ptr CS:[0x61152c]        ; 00610720 | g_DuplicateHandleFunc
     TEST EAX,EAX                        ; 00610727
     JNZ 0x00610733                      ; 00610729
         ;   XREF to: 00610733 (CONDITIONAL_JUMP)  ; LAB_00610733
@@ -209,7 +209,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x48]      ; 0061073b
         ;   Label: LAB_0061073b
     PUSH EBX                            ; 0061073f
-    CALL dword ptr CS:[0x611504]        ; 00610740 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 00610740 | g_CloseHandleFunc
     MOV EAX,dword ptr [ESP + 0x54]      ; 00610747
     ADD ESP,0x5c                        ; 0061074b
         ;   Label: LAB_0061074b

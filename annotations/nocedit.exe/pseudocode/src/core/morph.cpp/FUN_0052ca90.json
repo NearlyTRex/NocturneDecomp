@@ -1,17 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 106,
+    "complexity_score": 232,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
-    "pseudocode_lines": 46,
-    "suspect_count": 5,
+    "pseudocode_lines": 27,
+    "suspect_count": 18,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "param_count_too_few",
+      "stack_align_anchor",
       "stack_param"
     ],
-    "total_lines": 196
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -197,47 +200,6 @@
     "declared_params": 0,
     "estimated_params": 4
   },
-  "pcode_overrides": {
-    "0052ca99": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cab3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cac2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cb04": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cb18": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cb2c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cb39": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cb4d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cb5e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cb6e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cb9a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cbb9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "0052cbd7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.252032520325203,
     "instruction_count": 123,
@@ -278,7 +240,68 @@
     },
     "pcode_op_count": 646
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0052ca99",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CMorphModel *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffffe8",
+      "text": "CGame *in_stack_ffffffe8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffffe8",
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffffe8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "core_morph_cpp_CMorphModel_FUN_0052bae0(in_stack_00000004);",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "0052cb6b",
@@ -322,6 +345,17 @@
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0052cbd5, ADD ESP at 0052cbd7",
       "type": "callind_anchor"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
     },
     {
       "align_instruction": "AND ESP,0xfffffff8",
@@ -436,80 +470,6 @@
       "target_address": "0x5b9670",
       "text": "Direct CALL at 0052cb59, ADD ESP at 0052cb5e with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 24,
-    "local_size": 24,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "0052ca99",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "CMorphModel *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffffe8",
-      "text": "CGame *in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_ffffffe8",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffffe8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "core_morph_cpp_CMorphModel_FUN_0052bae0(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

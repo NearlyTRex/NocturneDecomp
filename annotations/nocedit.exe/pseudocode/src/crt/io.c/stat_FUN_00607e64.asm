@@ -28,8 +28,8 @@
 ;   crt_io.c_stat_thunk_00600c18 at 00600c18
 ;
 ; Referenced Globals:
-;   FindClose* PTR_FindClose_00611548 = 00211d78
-;   FindFirstFileA* PTR_FindFirstFileA_0061154c = 00211d84
+;   FindClose* g_FindCloseFunc = 00211d78
+;   FindFirstFileA* g_FindFirstFileAFunc = 00211d84
 ;   TerminatedCString s_anon_0065906c
 ;   char[256] g_CharacterClassificationTable
 ;
@@ -179,7 +179,7 @@ section .text
         ;   Label: LAB_00607f89
     PUSH EAX                            ; 00607f8b
     PUSH ESI                            ; 00607f8c
-    CALL dword ptr CS:[0x61154c]        ; 00607f8d | PTR_FindFirstFileA_0061154c
+    CALL dword ptr CS:[0x61154c]        ; 00607f8d | g_FindFirstFileAFunc
     CMP EAX,-0x1                        ; 00607f94
     JNZ 0x00607fa9                      ; 00607f97
         ;   XREF to: 00607fa9 (CONDITIONAL_JUMP)  ; LAB_00607fa9
@@ -193,7 +193,7 @@ section .text
     RET                                 ; 00607fa8
     PUSH EAX                            ; 00607fa9
         ;   Label: LAB_00607fa9
-    CALL dword ptr CS:[0x611548]        ; 00607faa | PTR_FindClose_00611548
+    CALL dword ptr CS:[0x611548]        ; 00607faa | g_FindCloseFunc
     PUSH ESI                            ; 00607fb1
         ;   Label: LAB_00607fb1
     CALL crt_string.c_mbtowc_next_FUN_00605a70 ; 00607fb2

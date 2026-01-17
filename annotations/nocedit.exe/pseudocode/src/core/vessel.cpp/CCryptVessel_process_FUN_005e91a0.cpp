@@ -50,7 +50,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
     *(float *)(this_ptr->field14_0x3c0 + 0x42c) = fVar4;
     if ((float)16 <= fVar4) {
       *(float *)(this_ptr->field14_0x3c0 + 0x42c) =
-           *(float *)(this_ptr->field14_0x3c0 + 0x42c) + -16f;
+           *(float *)(this_ptr->field14_0x3c0 + 0x42c) + -16.0f;
     }
   }
   if (this_ptr->field3_0x2d4 == 0) {

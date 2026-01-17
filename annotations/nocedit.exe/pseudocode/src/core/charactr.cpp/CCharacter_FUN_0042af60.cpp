@@ -21,7 +21,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xc000);
   if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
     dVar4 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((float)INT_00823a90 + g_CGamePtr->delta_time_float * 8388608f)
+                      ((double)((float)INT_00823a90 + g_CGamePtr->delta_time_float * 8388608.0f)
                       );
     INT_00823a90 = (int)ROUND(dVar4);
   }

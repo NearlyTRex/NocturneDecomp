@@ -20,9 +20,9 @@ void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_w
   if (g_MoviePlaying == 0) {
     return;
   }
-  (*GetClientRect)(parent_window,&local_24);
-  (*mciSendStringA)("where mov source",(LPSTR)&bStack_a4,0x80,(HWND)0x0);
-  (*SetRectEmpty)(&tStack_14);
+  (*g_GetClientRectFunc)(parent_window,&local_24);
+  (*g_mciSendStringAFunc)("where mov source",(LPSTR)&bStack_a4,0x80,(HWND)0x0);
+  (*g_SetRectEmptyFunc)(&tStack_14);
   pbVar3 = &bStack_a4;
   while (bStack_a4 == 0x20) {
     pbVar1 = pbVar3 + 1;
@@ -49,7 +49,8 @@ void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_w
     tStack_14.right = tStack_14.right * 2;
     tStack_14.bottom = tStack_14.bottom * 2;
   }
-  (*MoveWindow)(g_MovieWindowHandle,local_24.right / 2 - tStack_14.right / 2,
-                local_24.bottom / 2 - tStack_14.bottom / 2,tStack_14.right,tStack_14.bottom,1);
+  (*g_MoveWindowFunc)(g_MovieWindowHandle,local_24.right / 2 - tStack_14.right / 2,
+                      local_24.bottom / 2 - tStack_14.bottom / 2,tStack_14.right,tStack_14.bottom,1)
+  ;
   return;
 }

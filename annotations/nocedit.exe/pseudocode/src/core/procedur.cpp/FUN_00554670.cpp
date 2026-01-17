@@ -30,7 +30,7 @@ void core_procedur_cpp_FUN_00554670(void)
   int iStack_24;
   byte local_18;
   
-  local_40 = in_stack_00000010 + -32f;
+  local_40 = in_stack_00000010 + -32.0f;
   if (local_40 < 0.0) {
     local_40 = 0.0;
   }

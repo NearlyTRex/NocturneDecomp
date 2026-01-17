@@ -162,6 +162,6 @@ LAB_004e43c1:
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
     if (iVar2 != 0) goto LAB_004e43c1;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_00000008);
-    local_14 = local_14 - in_stack_00000008->delta_time_float * 32f;
+    local_14 = local_14 - in_stack_00000008->delta_time_float * 32.0f;
   } while( true );
 }

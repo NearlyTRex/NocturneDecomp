@@ -87,8 +87,8 @@
 ;   core_set.cpp_CDemonSet_FUN_0056d4a0 at 0056d664
 ;
 ; Referenced Globals:
-;   double g_CameraFixedPointScale = 256
-;   float g_CameraFixedPointScale = 256
+;   double g_CameraFixedPointScale_0061a332 = 256
+;   float g_CameraFixedPointScale_0065c63c = 256
 ;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_RelativeX
@@ -131,7 +131,7 @@ section .text
         ;   XREF to: 0048c630 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620()
     FLD float ptr [EBX + 0x4]           ; 004521b2
     FSUB float ptr [EBP]                ; 004521b5
-    FLD double ptr [0x0061a332]         ; 004521b8 | g_CameraFixedPointScale
+    FLD double ptr [0x0061a332]         ; 004521b8 | g_CameraFixedPointScale_0061a332
     FXCH                                ; 004521be
     FMUL ST1                            ; 004521c0
     FLD float ptr [EBX + 0xc]           ; 004521c2
@@ -200,13 +200,13 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004522c4
     MOV EDX,dword ptr [0x006703ec]      ; 004522c8 | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 004522ce
-    FMUL float ptr [0x0065c63c]         ; 004522d0 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004522d0 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 004522d6
     FLD float ptr [EAX + 0x4]           ; 004522d8
-    FMUL float ptr [0x0065c63c]         ; 004522db | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004522db | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 004522e1
     FLD float ptr [EAX + 0x8]           ; 004522e4
-    FMUL float ptr [0x0065c63c]         ; 004522e7 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004522e7 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 004522ed
     LEA EAX,[ESP + 0x48]                ; 004522f0
     PUSH EAX                            ; 004522f4
@@ -232,13 +232,13 @@ section .text
     LEA EBX,[ESP + 0x60]                ; 00452349
     LEA EAX,[ESP + 0x54]                ; 0045234d
     FLD float ptr [EAX]                 ; 00452351
-    FMUL float ptr [0x0065c63c]         ; 00452353 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452353 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 00452359
     FLD float ptr [EAX + 0x4]           ; 0045235b
-    FMUL float ptr [0x0065c63c]         ; 0045235e | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0045235e | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 00452364
     FLD float ptr [EAX + 0x8]           ; 00452367
-    FMUL float ptr [0x0065c63c]         ; 0045236a | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0045236a | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 00452370
     LEA EAX,[ESP + 0x60]                ; 00452373
     PUSH EAX                            ; 00452377
@@ -264,13 +264,13 @@ section .text
     LEA EAX,[ESP + 0xa8]                ; 004523d3
     MOV EDX,dword ptr [0x006703ec]      ; 004523da | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 004523e0
-    FMUL float ptr [0x0065c63c]         ; 004523e2 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004523e2 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 004523e8
     FLD float ptr [EAX + 0x4]           ; 004523ea
-    FMUL float ptr [0x0065c63c]         ; 004523ed | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004523ed | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 004523f3
     FLD float ptr [EAX + 0x8]           ; 004523f6
-    FMUL float ptr [0x0065c63c]         ; 004523f9 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004523f9 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 004523ff
     LEA EAX,[ESP + 0x3c]                ; 00452402
     PUSH EAX                            ; 00452406
@@ -296,13 +296,13 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00452459
     MOV EDX,dword ptr [0x006703ec]      ; 0045245d | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 00452463
-    FMUL float ptr [0x0065c63c]         ; 00452465 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452465 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 0045246b
     FLD float ptr [EAX + 0x4]           ; 0045246d
-    FMUL float ptr [0x0065c63c]         ; 00452470 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452470 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 00452476
     FLD float ptr [EAX + 0x8]           ; 00452479
-    FMUL float ptr [0x0065c63c]         ; 0045247c | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0045247c | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 00452482
     LEA EAX,[ESP + 0x24]                ; 00452485
     PUSH EAX                            ; 00452489
@@ -328,13 +328,13 @@ section .text
     LEA EAX,[ESP + 0x90]                ; 004524e3
     MOV EDX,dword ptr [0x006703ec]      ; 004524ea | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 004524f0
-    FMUL float ptr [0x0065c63c]         ; 004524f2 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004524f2 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 004524f8
     FLD float ptr [EAX + 0x4]           ; 004524fa
-    FMUL float ptr [0x0065c63c]         ; 004524fd | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004524fd | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 00452503
     FLD float ptr [EAX + 0x8]           ; 00452506
-    FMUL float ptr [0x0065c63c]         ; 00452509 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452509 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 0045250f
     MOV EAX,ESP                         ; 00452512
     PUSH EAX                            ; 00452514
@@ -360,13 +360,13 @@ section .text
     LEA EAX,[ESP + 0x9c]                ; 00452573
     MOV EDX,dword ptr [0x006703ec]      ; 0045257a | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 00452580
-    FMUL float ptr [0x0065c63c]         ; 00452582 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452582 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 00452588
     FLD float ptr [EAX + 0x4]           ; 0045258a
-    FMUL float ptr [0x0065c63c]         ; 0045258d | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0045258d | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 00452593
     FLD float ptr [EAX + 0x8]           ; 00452596
-    FMUL float ptr [0x0065c63c]         ; 00452599 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452599 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 0045259f
     LEA EAX,[ESP + 0x84]                ; 004525a2
     PUSH EAX                            ; 004525a9
@@ -392,13 +392,13 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 004525ff
     MOV EDX,dword ptr [0x006703ec]      ; 00452603 | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 00452609
-    FMUL float ptr [0x0065c63c]         ; 0045260b | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0045260b | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 00452611
     FLD float ptr [EAX + 0x4]           ; 00452613
-    FMUL float ptr [0x0065c63c]         ; 00452616 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452616 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 0045261c
     FLD float ptr [EAX + 0x8]           ; 0045261f
-    FMUL float ptr [0x0065c63c]         ; 00452622 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452622 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 00452628
     LEA EAX,[ESP + 0xb4]                ; 0045262b
     PUSH EAX                            ; 00452632
@@ -424,13 +424,13 @@ section .text
     LEA EAX,[ESP + 0x6c]                ; 00452685
     MOV EDX,dword ptr [0x006703ec]      ; 00452689 | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 0045268f
-    FMUL float ptr [0x0065c63c]         ; 00452691 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452691 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 00452697
     FLD float ptr [EAX + 0x4]           ; 00452699
-    FMUL float ptr [0x0065c63c]         ; 0045269c | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0045269c | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 004526a2
     FLD float ptr [EAX + 0x8]           ; 004526a5
-    FMUL float ptr [0x0065c63c]         ; 004526a8 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 004526a8 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 004526ae
     LEA EAX,[ESP + 0x78]                ; 004526b1
     PUSH EAX                            ; 004526b5

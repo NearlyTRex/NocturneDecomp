@@ -13,9 +13,9 @@ shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools *this_ptr,
   va_list_t local_8;
   
   local_8 = &stack0x0000000c;
-  crt_stdio_c_vsprintf_FUN_005fdba8(g_DialogMessageBuffer,format,&local_8);
+  crt_stdio_c_vsprintf_FUN_005fdba8(g_DialogMessageBuffer_02cef130,format,&local_8);
   local_8 = (va_list_t)0x0;
   shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130
-            ("Warning",g_DialogMessageBuffer,(int)g_DialogParentWindow);
+            ("Warning",g_DialogMessageBuffer_02cef130,(int)g_DialogParentWindow);
   return;
 }

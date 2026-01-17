@@ -16,7 +16,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *t
   float fVar5;
   
   fVar3 = g_CGamePtr->delta_time_float;
-  this_ptr->age = fVar3 * 30f + this_ptr->age;
+  this_ptr->age = fVar3 * 30.0f + this_ptr->age;
   if (0x421fffff < (int)this_ptr->age) {
     this_ptr->active = 0;
     return;

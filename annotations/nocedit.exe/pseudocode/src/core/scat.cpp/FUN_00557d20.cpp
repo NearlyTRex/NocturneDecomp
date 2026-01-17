@@ -16,18 +16,18 @@ void core_scat_cpp_FUN_00557d20(void)
   CDemonActor *this_ptr;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  float volume;
+  float in_stack_ffffffb0;
   
   do {
-    volume = 7.850947e-39;
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
                       (&(in_stack_00000004->model).motion_controller);
     if (iVar1 == 100) {
       this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                            (in_stack_00000004->grabbed_by,g_CEnemyClassInfo.name_hash);
       if (this_ptr != (CDemonActor *)0x0) {
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffb4);
-        (*this_ptr->vtable[1].playAmbientSoundWithVolume)(this_ptr,&stack0xffffffb4,volume);
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffb0);
+        (*this_ptr->vtable[1].playAmbientSoundWithVolume)
+                  (this_ptr,&stack0xffffffb0,in_stack_ffffffb0);
       }
     }
     else {

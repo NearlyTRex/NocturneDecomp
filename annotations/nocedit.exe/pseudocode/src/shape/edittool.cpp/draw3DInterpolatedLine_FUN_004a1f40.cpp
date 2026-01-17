@@ -24,17 +24,17 @@ shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CV
   float local_10;
   
   bVar4 = 0;
-  local_24.x = (int)ROUND(start_point->x * 256f);
-  local_24.y = (int)ROUND(start_point->y * 256f);
-  local_24.z = (int)ROUND(start_point->z * 256f);
+  local_24.x = (int)ROUND(start_point->x * 256.0f);
+  local_24.y = (int)ROUND(start_point->y * 256.0f);
+  local_24.z = (int)ROUND(start_point->z * 256.0f);
   uStack_48 = 0x4a1f82;
   engine_matrix_c_transformToCache_FUN_0050cd70(0,&local_24);
   local_18 = start_point->x * 0.8f + end_point->x * 0.2f;
   local_14 = start_point->y * 0.8f + end_point->y * 0.2f;
   local_10 = 0.8f * start_point->z + 0.2f * end_point->z;
-  local_24.x = (int)ROUND(local_18 * 256f);
-  local_24.y = (int)ROUND(local_14 * 256f);
-  local_24.z = (int)ROUND(local_10 * 256f);
+  local_24.x = (int)ROUND(local_18 * 256.0f);
+  local_24.y = (int)ROUND(local_14 * 256.0f);
+  local_24.z = (int)ROUND(local_10 * 256.0f);
   uStack_48 = 0x4a201b;
   engine_matrix_c_transformToCache_FUN_0050cd70(1,&local_24);
   pSVar2 = g_RenderVertexBuffer + 1;

@@ -1,20 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 406,
+    "complexity_score": 458,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 8,
-    "pseudocode_lines": 171,
-    "suspect_count": 21,
+    "pseudocode_lines": 168,
+    "suspect_count": 26,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "pointer_cast",
       "special_crt_function",
-      "stack_param",
       "stack_ref",
       "warning_noreturn"
     ],
-    "total_lines": 607
+    "total_lines": 604
   },
   "cross_references": [
     {
@@ -99,13 +100,13 @@
   "globals": [
     {
       "addr": "0061162c",
-      "name": "SetFilePointer",
+      "name": "g_SetFilePointerFunc",
       "type": "SetFilePointer*",
       "value": "002121b6"
     },
     {
       "addr": "00611678",
-      "name": "PTR_WriteFile_00611678",
+      "name": "g_WriteFileFunc",
       "type": "WriteFile*",
       "value": "00212300"
     },
@@ -146,26 +147,6 @@
       "value": "00000000"
     }
   ],
-  "pcode_overrides": {
-    "00608529": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0060853f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "00608559": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0060856a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "0060858f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ],
-    "00608656": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.248587570621469,
     "instruction_count": 354,
@@ -196,80 +177,6 @@
     },
     "pcode_op_count": 1504
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 4,
-      "callind_address": "00608564",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0060856a",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 20,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00608564, ADD ESP at 0060856a",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "00608589",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0060858f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 20,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00608589, ADD ESP at 0060858f",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "0060864d",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00608656",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 20,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0060864d, ADD ESP at 00608656",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00608522",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00608529",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "00608527",
-      "target_address": "0x6088b0",
-      "text": "Direct CALL at 00608522, ADD ESP at 00608529 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00608535",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0060853f",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "0060853a",
-      "target_address": "0x602790",
-      "text": "Direct CALL at 00608535, ADD ESP at 0060853f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0060854f",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00608559",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "00608554",
-      "target_address": "0x602790",
-      "text": "Direct CALL at 0060854f, ADD ESP at 00608559 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 40,
@@ -362,13 +269,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffffdc",
-      "text": "SIZE_T in_stack_ffffffdc;",
-      "type": "stack_param"
-    },
-    {
       "description": "Subroutine marked as non-returning",
       "line": 45,
       "match": "WARNING: Subroutine does not return",
@@ -376,130 +276,202 @@
       "type": "warning_noreturn"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_ffffffdc",
-      "text": "crt_stack_c_stack_overflow_handler_FUN_005ffa22(in_stack_ffffffdc);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 52,
-      "match": "&stack0xffffffec",
-      "text": "puVar7 = &stack0xffffffec;",
+      "match": "&stack0xfffffff0",
+      "text": "puVar6 = &stack0xfffffff0;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(char *)((int)",
-      "text": "if (*(char *)((int)buffer + (int)puVar8) == '\\n') {",
+      "text": "if (*(char *)((int)buffer + (int)puVar9) == '\\n') {",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 58,
-      "match": "&stack0xffffffec",
-      "text": "(&stack0xffffffec)[(int)puVar6] = 0xd;",
+      "match": "&stack0xfffffff0",
+      "text": "(&stack0xfffffff0)[(int)puVar8] = 0xd;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 63,
-      "match": "&stack0xffffffec",
-      "text": "puVar6 = &stack0xffffffec;",
+      "match": "&stack0xffffffdc",
+      "text": "puVar8 = &stack0xffffffdc;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0xfffffff0",
+      "text": "puVar9 = &stack0xfffffff0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 66,
-      "match": "&stack0xffffffec",
-      "text": "((HANDLE)0x0,&stack0xffffffec,(DWORD)puVar5,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0xffffffdc",
-      "text": "(LPDWORD)&stack0xffffffdc,(LPOVERLAPPED)0x0);",
+      "match": "&stack0xfffffff0",
+      "text": "BVar5 = (*g_WriteFileFunc)(puVar8,&stack0xfffffff0,(DWORD)puVar7,(LPDWORD)puVar8,",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 77,
-      "match": "&stack0xffffffec",
-      "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xffffffec,(int)puVar5);",
+      "match": "&stack0xfffffff0",
+      "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xfffffff0,(int)puVar7);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 88,
-      "match": "&stack0xffffffec",
-      "text": "puVar6[(int)&stack0xffffffec] = *(byte *)((int)buffer + (int)puVar8);",
+      "line": 87,
+      "match": "&stack0xfffffff0",
+      "text": "puVar8[(int)&stack0xfffffff0] = *(byte *)((int)buffer + (int)puVar9);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(byte *)((int)",
-      "text": "puVar6[(int)&stack0xffffffec] = *(byte *)((int)buffer + (int)puVar8);",
+      "text": "puVar8[(int)&stack0xfffffff0] = *(byte *)((int)buffer + (int)puVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 94,
-      "match": "&stack0xffffffec",
-      "text": "puVar6 = &stack0xffffffec;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 97,
-      "match": "&stack0xffffffec",
-      "text": "((HANDLE)0x0,&stack0xffffffec,(DWORD)puVar5,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 98,
+      "line": 93,
       "match": "&stack0xffffffdc",
-      "text": "(LPDWORD)&stack0xffffffdc,(LPOVERLAPPED)0x0);",
+      "text": "puVar8 = &stack0xffffffdc;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
-      "match": "&stack0xffffffec",
-      "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xffffffec,(int)puVar5);",
+      "line": 94,
+      "match": "&stack0xfffffff0",
+      "text": "puVar9 = &stack0xfffffff0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 124,
-      "match": "&stack0xffffffec",
-      "text": "((HANDLE)0x0,&stack0xffffffec,(DWORD)puVar6,(LPDWORD)&stack0xffffffe0,",
+      "line": 96,
+      "match": "&stack0xfffffff0",
+      "text": "BVar5 = (*g_WriteFileFunc)(puVar8,&stack0xfffffff0,(DWORD)puVar7,(LPDWORD)puVar8,",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 124,
+      "line": 107,
+      "match": "&stack0xfffffff0",
+      "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xfffffff0,(int)puVar7);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 122,
       "match": "&stack0xffffffe0",
-      "text": "((HANDLE)0x0,&stack0xffffffec,(DWORD)puVar6,(LPDWORD)&stack0xffffffe0,",
+      "text": "puVar8 = &stack0xffffffe0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 123,
+      "match": "&stack0xfffffff0",
+      "text": "BVar5 = (*g_WriteFileFunc)(puVar8,&stack0xfffffff0,(DWORD)puVar7,(LPDWORD)puVar8,",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 134,
-      "match": "&stack0xffffffec",
-      "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xffffffec,(int)puVar6);",
+      "match": "&stack0xfffffff0",
+      "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xfffffff0,(int)puVar8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 149,
+      "line": 147,
       "match": "&stack0xffffffe4",
-      "text": "lpNumberOfBytesWritten = (LPDWORD)&stack0xffffffe4;",
+      "text": "BVar5 = (*g_WriteFileFunc)(&stack0xffffffe4,buffer,count,(LPDWORD)&stack0xffffffe4,",
       "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 147,
+      "match": "&stack0xffffffe4",
+      "text": "BVar5 = (*g_WriteFileFunc)(&stack0xffffffe4,buffer,count,(LPDWORD)&stack0xffffffe4,",
+      "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00608564",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0060856a",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 20,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00608564, ADD ESP at 0060856a",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00608589",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0060858f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 20,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00608589, ADD ESP at 0060858f",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060864d",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00608656",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 20,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060864d, ADD ESP at 00608656",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00608522",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00608529",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "00608527",
+      "target_address": "0x6088b0",
+      "text": "Direct CALL at 00608522, ADD ESP at 00608529 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00608535",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060853f",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060853a",
+      "target_address": "0x602790",
+      "text": "Direct CALL at 00608535, ADD ESP at 0060853f with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060854f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00608559",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "00608554",
+      "target_address": "0x602790",
+      "text": "Direct CALL at 0060854f, ADD ESP at 00608559 with uncertain ESP",
+      "type": "call_esp_anchor"
     },
     {
       "address": "006084ec",

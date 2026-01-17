@@ -47,7 +47,7 @@ double crt_math_c_dmul_FUN_0060e0b9(double a,double b)
     }
     uVar10 = uVar10 & 0x7fffffff | (uint)CARRY4(uVar10,uVar10) << 0x1f;
   }
-  if (DAT_00684acd != '\0') {
+  if (0 != '\0') {
     dVar21 = (double)CONCAT44 /* combine 2-byte values */(uVar13,uVar15) * (double)CONCAT44 /* combine 2-byte values */(uVar10,uVar14);
     if ((int)((ulonglong)dVar21 >> 0x20) == -0x80000000) {
       dVar21 = 0.0;

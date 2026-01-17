@@ -13,7 +13,7 @@
 ;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f9fa
 ;
 ; Referenced Globals:
-;   SetEvent* PTR_SetEvent_00611624 = 00212194
+;   SetEvent* g_SetEventFunc = 00212194
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f24 = 00602458
 ;   DWORD g_RuntimeBufferSize = 0xf4
@@ -77,7 +77,7 @@ section .text
     MOV dword ptr [ESI + 0x10],EAX      ; 0060f925
     MOV EAX,dword ptr [ESI + 0xc]       ; 0060f928
     PUSH EAX                            ; 0060f92b
-    CALL dword ptr CS:[0x611624]        ; 0060f92c | PTR_SetEvent_00611624
+    CALL dword ptr CS:[0x611624]        ; 0060f92c | g_SetEventFunc
     LEA EAX,[EBP + -0xc]                ; 0060f933
     PUSH EAX                            ; 0060f936
     CALL crt_exception.c_installExceptionHandler_FUN_0060aba8 ; 0060f937

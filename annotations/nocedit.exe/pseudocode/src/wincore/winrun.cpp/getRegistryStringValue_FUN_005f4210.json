@@ -30,19 +30,19 @@
   "globals": [
     {
       "addr": "0061146c",
-      "name": "RegCloseKey",
+      "name": "g_RegCloseKeyFunc",
       "type": "RegCloseKey*",
       "value": "002119dc"
     },
     {
       "addr": "00611474",
-      "name": "PTR_RegOpenKeyExA_00611474",
+      "name": "g_RegOpenKeyExAFunc",
       "type": "RegOpenKeyExA*",
       "value": "002119fc"
     },
     {
       "addr": "00611478",
-      "name": "PTR_RegQueryValueExA_00611478",
+      "name": "g_RegQueryValueExAFunc",
       "type": "RegQueryValueExA*",
       "value": "00211a0c"
     },
@@ -132,7 +132,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "LVar1 = (*PTR_RegOpenKeyExA_00611474)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);",
+      "text": "LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);",
       "type": "stack_param"
     },
     {

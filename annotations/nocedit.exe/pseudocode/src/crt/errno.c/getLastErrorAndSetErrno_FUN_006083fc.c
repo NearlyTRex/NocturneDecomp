@@ -11,7 +11,7 @@ DWORD __cdecl crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc(void)
 {
   DWORD DVar1;
   
-  DVar1 = (*GetLastError)();
+  DVar1 = (*g_GetLastErrorFunc)();
   DVar1 = crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(DVar1);
   return DVar1;
 }

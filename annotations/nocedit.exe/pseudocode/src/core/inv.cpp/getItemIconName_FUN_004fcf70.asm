@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Add_to_dict_s_00630389
-;   char[256] g_ErrorMessageBuffer2
+;   char[256] g_ErrorMessageBuffer_02db8b70
 ;   int g_ItemDefinitionCount
 ;   SInventoryItemInfo[100] g_ItemDefinitionArray
 ;   undefined4 DAT_02dbacc8
@@ -63,10 +63,10 @@ section .text
     PUSH EDI                            ; 004fcfb4
         ;   Label: LAB_004fcfb4
     PUSH 0x630389                       ; 004fcfb5 | = "Add to dict: %s"
-    PUSH 0x2db8b70                      ; 004fcfba | g_ErrorMessageBuffer2
+    PUSH 0x2db8b70                      ; 004fcfba | g_ErrorMessageBuffer_02db8b70
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fcfbf
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-    MOV EAX,0x2db8b70                   ; 004fcfc4 | g_ErrorMessageBuffer2
+    MOV EAX,0x2db8b70                   ; 004fcfc4 | g_ErrorMessageBuffer_02db8b70
     ADD ESP,0xc                         ; 004fcfc9
     POP EBP                             ; 004fcfcc
     POP EDI                             ; 004fcfcd

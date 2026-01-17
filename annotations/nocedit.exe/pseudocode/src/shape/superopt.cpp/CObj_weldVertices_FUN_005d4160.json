@@ -1,17 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 328,
+    "complexity_score": 420,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 128,
-    "suspect_count": 19,
+    "pseudocode_lines": 130,
+    "suspect_count": 26,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
+      "concat_artifact",
       "pointer_cast",
-      "sub_artifact"
+      "stack_align_anchor",
+      "variadic_anchor"
     ],
-    "total_lines": 438
+    "total_lines": 440
   },
   "cross_references": [
     {
@@ -76,26 +80,6 @@
     "declared_params": 3,
     "estimated_params": 5
   },
-  "pcode_overrides": {
-    "005d416c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
-    ],
-    "005d4191": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
-    ],
-    "005d423c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
-    ],
-    "005d425c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
-    ],
-    "005d4282": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
-    ],
-    "005d44c3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.294117647058823,
     "instruction_count": 255,
@@ -159,7 +143,208 @@
     ],
     "vtable_offset": 200
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 284,
+    "local_size": 268,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
+      },
+      {
+        "is_param": true,
+        "name": "weld_tolerance",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "remove_degenerate",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005d416c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(double *)((int)",
+      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(byte *)((int)",
+      "text": "if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 55,
+      "match": "CONCAT44",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_fc,iStack_100);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(double *)((int)",
+      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(double *)((int)",
+      "text": "pdVar8 = (double *)((int)pdVar8 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(double *)((int)",
+      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(double *)((int)",
+      "text": "pdVar8 = (double *)((int)pdVar8 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(double *)((int)",
+      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(byte *)((int)",
+      "text": "if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)",
+      "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc) = uVar10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)",
+      "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -8) = uVar10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(uint *)((int)",
+      "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -4) = uVar10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 116,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_fc,iStack_100))) goto LAB_005d43a8;",
+      "type": "concat_artifact"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "005d418b",
@@ -233,202 +418,6 @@
       "target_address": "0x50f1d0",
       "text": "Direct CALL at 005d4257, ADD ESP at 005d425c with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 284,
-    "local_size": 268,
-    "param_offset": 4,
-    "param_size": 16,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_108",
-        "offset": -264,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_104",
-        "offset": -260,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CObj *"
-      },
-      {
-        "is_param": true,
-        "name": "weld_tolerance",
-        "offset": 8,
-        "size": 8,
-        "type": "double"
-      },
-      {
-        "is_param": true,
-        "name": "remove_degenerate",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005d416c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 50,
-      "match": "SUB84",
-      "text": "local_104 = SUB84 /* extract 2-byte value */(weld_tolerance,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(double *)((int)",
-      "text": "pdVar3 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(byte *)((int)",
-      "text": "if ((*(byte *)((int)pdVar3 + 0x35) & 0x80) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(double *)((int)",
-      "text": "pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(double *)((int)",
-      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(double *)((int)",
-      "text": "pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(double *)((int)",
-      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(double *)((int)",
-      "text": "pdVar3 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(byte *)((int)",
-      "text": "if ((*(byte *)((int)pdVar3 + 0x35) & 0x80) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(uint *)((int)",
-      "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -0xc)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar2 + -0xc) = uStack_14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)",
-      "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar2 + -8) = uStack_14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(uint *)((int)",
-      "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -4)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar2 + -4) = uStack_14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

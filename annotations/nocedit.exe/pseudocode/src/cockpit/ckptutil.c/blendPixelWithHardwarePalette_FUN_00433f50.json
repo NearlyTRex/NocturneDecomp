@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 208,
+    "complexity_score": 224,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
-    "pseudocode_lines": 88,
-    "suspect_count": 11,
+    "pseudocode_lines": 89,
+    "suspect_count": 12,
     "suspect_types": [
       "extra_output",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_align_anchor"
     ],
-    "total_lines": 365
+    "total_lines": 366
   },
   "cross_references": [
     {
@@ -127,11 +128,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00433f59": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 8.862204724409448,
     "instruction_count": 254,
@@ -171,18 +167,6 @@
     },
     "pcode_op_count": 2251
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
-      "fix_address": "00433f59",
-      "frame_offset": 44,
-      "match": "AND ESP",
-      "sub_esp_offset": 44,
-      "text": "Stack alignment at 00433f59 (SUB ESP, 0x2c before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 84,
     "local_size": 68,
@@ -347,7 +331,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 71,
       "match": "extraout_CL_00",
-      "text": "local_38 << ((byte)g_GreenBitPosition & 0x1f) | local_30 << (extraout_CL_00 & 0x1f) |",
+      "text": "local_3c << ((byte)g_GreenBitPosition & 0x1f) | local_34 << (extraout_CL_00 & 0x1f) |",
       "type": "extra_output"
     },
     {
@@ -368,8 +352,18 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 87,
       "match": "extraout_CL",
-      "text": "| (ushort)((local_38 >> (extraout_CL & 0x1f)) << ((byte)g_RedBitPosition & 0x1f)) |",
+      "text": ") | (ushort)((local_3c >> (extraout_CL & 0x1f)) << ((byte)g_RedBitPosition & 0x1f))",
       "type": "extra_output"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
+      "fix_address": "00433f59",
+      "frame_offset": 44,
+      "match": "AND ESP",
+      "sub_esp_offset": 44,
+      "text": "Stack alignment at 00433f59 (SUB ESP, 0x2c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

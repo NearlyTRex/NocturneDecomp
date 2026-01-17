@@ -18,14 +18,14 @@ wincore_winrun_cpp_getRegistryStringValue_FUN_005f4210
   DWORD DStack_8;
   
   *value_name = '\0';
-  LVar1 = (*PTR_RegOpenKeyExA_00611474)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);
+  LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);
   if (LVar1 != 0) {
     return;
   }
   pcStack_c = output_buffer;
   DStack_8 = 1;
-  (*PTR_RegQueryValueExA_00611478)
+  (*g_RegQueryValueExAFunc)
             (pHStack_10,key_path,(LPDWORD)0x0,&DStack_8,(LPBYTE)value_name,(LPDWORD)&pcStack_c);
-  (*RegCloseKey)(pHStack_10);
+  (*g_RegCloseKeyFunc)(pHStack_10);
   return;
 }

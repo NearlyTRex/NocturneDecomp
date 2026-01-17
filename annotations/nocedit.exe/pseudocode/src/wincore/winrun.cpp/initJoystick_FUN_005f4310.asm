@@ -8,9 +8,9 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507bd5
 ;
 ; Referenced Globals:
-;   joyGetDevCapsA* joyGetDevCapsA = 0021181c
-;   GetModuleHandleA* GetModuleHandleA = 00211f6e
-;   GetProcAddress* GetProcAddress = 00211f8e
+;   joyGetDevCapsA* g_joyGetDevCapsAFunc = 0021181c
+;   GetModuleHandleA* g_GetModuleHandleAFunc = 00211f6e
+;   GetProcAddress* g_GetProcAddressFunc = 00211f8e
 ;   TerminatedCString s_winmm_dll_006581c7
 ;   TerminatedCString s_joyGetPosEx_006581d1
 ;   int g_JoystickNumButtons = 0x4
@@ -26,21 +26,21 @@ section .text
     SUB ESP,0x194                       ; 005f4310
         ;   Label: wincore_winrun.cpp_initJoystick_FUN_005f4310
     PUSH 0x6581c7                       ; 005f4316 | = "winmm.dll"
-    CALL dword ptr CS:[0x6115b4]        ; 005f431b | GetModuleHandleA
+    CALL dword ptr CS:[0x6115b4]        ; 005f431b | g_GetModuleHandleAFunc
     MOV [0x03f994f8],EAX                ; 005f4322 | g_WinmmDll
     TEST EAX,EAX                        ; 005f4327
     JZ 0x005f433d                       ; 005f4329
         ;   XREF to: 005f433d (CONDITIONAL_JUMP)  ; LAB_005f433d
     PUSH 0x6581d1                       ; 005f432b | = "joyGetPosEx"
     PUSH EAX                            ; 005f4330
-    CALL dword ptr CS:[0x6115bc]        ; 005f4331 | GetProcAddress
+    CALL dword ptr CS:[0x6115bc]        ; 005f4331 | g_GetProcAddressFunc
     MOV [0x03f994f4],EAX                ; 005f4338 | g_joyGetPosEx
     PUSH 0x194                          ; 005f433d
         ;   Label: LAB_005f433d
     LEA EAX,[ESP + 0x4]                 ; 005f4342
     PUSH EAX                            ; 005f4346
     PUSH 0x0                            ; 005f4347
-    CALL dword ptr CS:[0x611404]        ; 005f4349 | joyGetDevCapsA
+    CALL dword ptr CS:[0x611404]        ; 005f4349 | g_joyGetDevCapsAFunc
     TEST EAX,EAX                        ; 005f4350
     JNZ 0x005f4381                      ; 005f4352
         ;   XREF to: 005f4381 (CONDITIONAL_JUMP)  ; LAB_005f4381

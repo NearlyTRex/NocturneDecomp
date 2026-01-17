@@ -64,7 +64,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,40.0);
   core_actor_cpp_getRandomFloat_FUN_0040cc10(106.0,256.0);
   core_boneguy_cpp_FUN_0041ba10();
-  fVar8 = (float10)256f;
+  fVar8 = (float10)256.0f;
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_20 * fVar8));
   *(int *)((int)dest + -0xbe34) = (int)ROUND(dVar9);
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_20 * fVar8));

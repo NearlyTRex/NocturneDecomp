@@ -10,9 +10,9 @@
 ; uint *           Stack[0x14]:4   buffer_size
 ;
 ; Referenced Globals:
-;   RegCloseKey* RegCloseKey = 002119dc
-;   RegOpenKeyExA* PTR_RegOpenKeyExA_00611474 = 002119fc
-;   RegQueryValueExA* PTR_RegQueryValueExA_00611478 = 00211a0c
+;   RegCloseKey* g_RegCloseKeyFunc = 002119dc
+;   RegOpenKeyExA* g_RegOpenKeyExAFunc = 002119fc
+;   RegQueryValueExA* g_RegQueryValueExAFunc = 00211a0c
 ;   undefined4 DAT_80000002
 ;
 ; *****************************************************************************
@@ -31,7 +31,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 005f4222
     PUSH EDX                            ; 005f4226
     PUSH 0x80000002                     ; 005f4227 | DAT_80000002
-    CALL dword ptr CS:[0x611474]        ; 005f422c | PTR_RegOpenKeyExA_00611474
+    CALL dword ptr CS:[0x611474]        ; 005f422c | g_RegOpenKeyExAFunc
     TEST EAX,EAX                        ; 005f4233
     JZ 0x005f423c                       ; 005f4235
         ;   XREF to: 005f423c (CONDITIONAL_JUMP)  ; LAB_005f423c
@@ -57,10 +57,10 @@ section .text
     MOV ECX,0x1                         ; 005f4261
     PUSH EDI                            ; 005f4266
     MOV dword ptr [ESP + 0x2c],ECX      ; 005f4267
-    CALL dword ptr CS:[0x611478]        ; 005f426b | PTR_RegQueryValueExA_00611478
+    CALL dword ptr CS:[0x611478]        ; 005f426b | g_RegQueryValueExAFunc
     MOV EBP,dword ptr [ESP + 0xc]       ; 005f4272
     PUSH EBP                            ; 005f4276
-    CALL dword ptr CS:[0x61146c]        ; 005f4277 | RegCloseKey
+    CALL dword ptr CS:[0x61146c]        ; 005f4277 | g_RegCloseKeyFunc
     POP EBX                             ; 005f427e
     POP ESI                             ; 005f427f
     POP EDI                             ; 005f4280

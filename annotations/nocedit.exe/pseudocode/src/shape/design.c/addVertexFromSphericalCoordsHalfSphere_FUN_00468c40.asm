@@ -17,9 +17,9 @@
 ;   shape_design.c_generateShell_FUN_00468f20 at 00469104
 ;
 ; Referenced Globals:
-;   double g_DegreesToRadiansFactor = 0.00555555555555555
-;   double g_Pi = 3.14159265350000
-;   double g_LatitudeOffset = 90
+;   double g_DegreesToRadiansVertexFactor2 = 0.00555555555555555
+;   double g_Pi_0061ce6e = 3.14159265350000
+;   double g_LatitudeOffset_2 = 90
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
 ;   undefined4 DAT_01626410
@@ -39,28 +39,28 @@ section .text
     MOV EBP,ESP                         ; 00468c44
     SUB ESP,0x10                        ; 00468c46
     FLD float ptr [EBP + 0x18]          ; 00468c4c
-    FMUL double ptr [0x0061ce66]        ; 00468c4f | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061ce6e]        ; 00468c55 | g_Pi
+    FMUL double ptr [0x0061ce66]        ; 00468c4f | g_DegreesToRadiansVertexFactor2
+    FMUL double ptr [0x0061ce6e]        ; 00468c55 | g_Pi_0061ce6e
     FSIN                                ; 00468c5b
     FLD float ptr [EBP + 0x1c]          ; 00468c5d
     FMULP                               ; 00468c60
     FSTP float ptr [EBP + -0x4]         ; 00468c62
     FLD float ptr [EBP + 0x18]          ; 00468c65
-    FMUL double ptr [0x0061ce66]        ; 00468c68 | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061ce6e]        ; 00468c6e | g_Pi
+    FMUL double ptr [0x0061ce66]        ; 00468c68 | g_DegreesToRadiansVertexFactor2
+    FMUL double ptr [0x0061ce6e]        ; 00468c6e | g_Pi_0061ce6e
     FCOS                                ; 00468c74
     FSTP float ptr [EBP + -0x10]        ; 00468c76
     FLD float ptr [EBP + 0x14]          ; 00468c79
-    FMUL double ptr [0x0061ce66]        ; 00468c7c | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061ce6e]        ; 00468c82 | g_Pi
+    FMUL double ptr [0x0061ce66]        ; 00468c7c | g_DegreesToRadiansVertexFactor2
+    FMUL double ptr [0x0061ce6e]        ; 00468c82 | g_Pi_0061ce6e
     FCOS                                ; 00468c88
     FLD float ptr [EBP + -0x10]         ; 00468c8a
     FMUL float ptr [EBP + 0x1c]         ; 00468c8d
     FMULP                               ; 00468c90
     FSTP float ptr [EBP + -0x8]         ; 00468c92
     FLD float ptr [EBP + 0x14]          ; 00468c95
-    FMUL double ptr [0x0061ce66]        ; 00468c98 | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061ce6e]        ; 00468c9e | g_Pi
+    FMUL double ptr [0x0061ce66]        ; 00468c98 | g_DegreesToRadiansVertexFactor2
+    FMUL double ptr [0x0061ce6e]        ; 00468c9e | g_Pi_0061ce6e
     FSIN                                ; 00468ca4
     FLD float ptr [EBP + -0x10]         ; 00468ca6
     FMUL float ptr [EBP + 0x1c]         ; 00468ca9
@@ -76,12 +76,12 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 00468cd8
     MOV dword ptr [EDX + 0x1626414],EAX ; 00468cdb | g_LoadedVertices[0].vertex.z
     FLD float ptr [EBP + 0x14]          ; 00468ce1
-    FMUL double ptr [0x0061ce66]        ; 00468ce4 | g_DegreesToRadiansFactor
+    FMUL double ptr [0x0061ce66]        ; 00468ce4 | g_DegreesToRadiansVertexFactor2
     IMUL EAX,dword ptr [0x01626408],0x14 ; 00468cea | g_VertexCount
     FSTP float ptr [EAX + 0x1626418]    ; 00468cf1 | DAT_01626418
     FLD float ptr [EBP + 0x18]          ; 00468cf7
-    FADD double ptr [0x0061ce76]        ; 00468cfa | g_LatitudeOffset
-    FMUL double ptr [0x0061ce66]        ; 00468d00 | g_DegreesToRadiansFactor
+    FADD double ptr [0x0061ce76]        ; 00468cfa | g_LatitudeOffset_2
+    FMUL double ptr [0x0061ce66]        ; 00468d00 | g_DegreesToRadiansVertexFactor2
     IMUL EAX,dword ptr [0x01626408],0x14 ; 00468d06 | g_VertexCount
     FSTP float ptr [EAX + 0x162641c]    ; 00468d0d | DAT_0162641c
     INC dword ptr [0x01626408]          ; 00468d13 | g_VertexCount

@@ -16,7 +16,7 @@
 ;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e4de
 ;
 ; Referenced Globals:
-;   SetEnvironmentVariableA* PTR_SetEnvironmentVariableA_0061161c = 00212160
+;   SetEnvironmentVariableA* g_SetEnvironmentVariableAFunc = 00212160
 ;   int g_EnvironInitialized
 ;
 ; Called Functions:
@@ -155,7 +155,7 @@ section .text
     PUSH EAX                            ; 0060ef77
     MOV EDX,dword ptr [ESP + 0xc]       ; 0060ef78
     PUSH EDX                            ; 0060ef7c
-    CALL dword ptr CS:[0x61161c]        ; 0060ef7d | PTR_SetEnvironmentVariableA_0061161c
+    CALL dword ptr CS:[0x61161c]        ; 0060ef7d | g_SetEnvironmentVariableAFunc
     MOV ECX,dword ptr [ESP + 0x8]       ; 0060ef84
     PUSH ECX                            ; 0060ef88
     MOV EBX,EAX                         ; 0060ef89

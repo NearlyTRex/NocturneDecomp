@@ -29,7 +29,7 @@ shape_design_c_addVertexFromSphericalCoords_FUN_004686e0
   g_LoadedVertices[g_VertexCount].vertex.y = (float)((float10)radius * fVar1);
   g_LoadedVertices[g_VertexCount].vertex.z =
        (float)((float10)(float)fVar2 * (float10)radius * fVar4);
-  g_LoadedVertices[g_VertexCount].u = latitude_degrees * (float)256;
+  g_LoadedVertices[g_VertexCount].u = latitude_degrees * (float)0.0027777777777777801;
   g_LoadedVertices[g_VertexCount].v =
        (longitude_degrees + (float)90) * (float)0.0055555555555555497;
   g_VertexCount = g_VertexCount + 1;

@@ -23,7 +23,7 @@ int crt_unknown_c_FUN_00607858(void)
     iVar1 = crt_time_c_is_leap_year_FUN_00607820(in_stack_00000008 + 0x76c);
     if (iVar1 == 0) {
       iVar1 = *(int *)(&g_DaysInMonth_Normal + *(int *)(in_stack_00000004 + 0x10));
-      iVar2 = *(int *)((int)&inf + *(int *)(in_stack_00000004 + 0x10) * 2 + 6);
+      iVar2 = *(int *)((int)&INFINITY + *(int *)(in_stack_00000004 + 0x10) * 2 + 6);
     }
     else {
       iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(in_stack_00000004 + 0x10));

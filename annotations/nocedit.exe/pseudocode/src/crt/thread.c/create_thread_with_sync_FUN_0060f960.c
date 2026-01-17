@@ -41,7 +41,7 @@ crt_thread_c_create_thread_with_sync_FUN_0060f960
   }
   local_2c = thread_param;
   local_28 = sync_param;
-  pvStack_24 = (*PTR_GetCurrentThread_00611588)();
+  pvStack_24 = (*g_GetCurrentThreadFunc)();
   base = 0x10;
   buffer = acStack_44;
   puStack_1c = (uint *)0x0;
@@ -52,24 +52,24 @@ crt_thread_c_create_thread_with_sync_FUN_0060f960
   (&uStack_48)[(uint)bVar2 * -2] = *(uint *)("__bgnthd" + (uint)bVar2 * -8 + 4);
   acStack_44[(uint)bVar2 * -8 + (uint)bVar2 * -8] =
        "__bgnthd"[(uint)bVar2 * -8 + (uint)bVar2 * -8 + 8];
-  value = (*PTR_GetCurrentThreadId_00611584)();
+  value = (*g_GetCurrentThreadIdFunc)();
   crt_stdio_c_IntegerToString_FUN_00607d18(value,buffer,base);
-  pvStack_20 = (*PTR_CreateEventA_0061150c)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);
-  hObject = (*CreateThread)((LPSECURITY_ATTRIBUTES)0x0,
-                            (stack_size_hint + 0xfff >> 8 & 0xfffff0) << 8,
-                            crt_thread_c_threadStartupWrapper_FUN_0060f8c0,&local_2c,0,&DStack_18);
+  pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);
+  hObject = (*g_CreateThreadFunc)
+                      ((LPSECURITY_ATTRIBUTES)0x0,(stack_size_hint + 0xfff >> 8 & 0xfffff0) << 8,
+                       crt_thread_c_threadStartupWrapper_FUN_0060f8c0,&local_2c,0,&DStack_18);
   if (hObject == (HANDLE)0x0) {
     DStack_18 = 0xffffffff;
   }
   else {
-    (*WaitForSingleObject)(pvStack_20,0xffffffff);
+    (*g_WaitForSingleObjectFunc)(pvStack_20,0xffffffff);
     if (puStack_1c == (uint *)0x0) {
-      (*CloseHandle)(hObject);
+      (*g_CloseHandleFunc)(hObject);
     }
     else {
       *puStack_1c = hObject;
     }
   }
-  (*CloseHandle)(pvStack_20);
+  (*g_CloseHandleFunc)(pvStack_20);
   return hObject;
 }

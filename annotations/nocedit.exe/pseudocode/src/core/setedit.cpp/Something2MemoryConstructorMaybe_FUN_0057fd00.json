@@ -1,18 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 302,
+    "complexity_score": 420,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
-    "pseudocode_lines": 117,
-    "suspect_count": 17,
+    "pseudocode_lines": 115,
+    "suspect_count": 28,
     "suspect_types": [
+      "call_esp_anchor",
       "param_count_too_few",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "variadic_anchor"
     ],
-    "total_lines": 317
+    "total_lines": 315
   },
   "cross_references": [
     {
@@ -233,41 +235,6 @@
     "declared_params": 0,
     "estimated_params": 6
   },
-  "pcode_overrides": {
-    "0057fd1e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fd3b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fd5a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fdb0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fdfc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fe20": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fe9a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057feb7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fed1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fee6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ],
-    "0057fef2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.607361963190184,
     "instruction_count": 163,
@@ -302,7 +269,216 @@
     },
     "pcode_op_count": 751
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "int *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "void *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_ffffffb0",
+      "text": "CVector3i *in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000008",
+      "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000008,0,g_WindowWidth * g_WindowHeight);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(CVector3i *)((int)",
+      "text": "local_18 = (CVector3i *)((int)&local_18->x + 1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_ffffffb0",
+      "text": "(&g_CDemonCameraInstance,local_18,local_1c,(int)in_stack_ffffffb0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_ffffffb0",
+      "text": "(&g_CDemonCameraInstance,&local_44,in_stack_ffffffb0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_ffffffb0",
+      "text": "*piVar4 = (int)in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *in_stack_00000004) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_00000004",
+      "text": "local_28 = (CBoundingBox3D *)(in_stack_00000004 + 0x60);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00000004",
+      "text": "local_24 = (CVector3i *)(in_stack_00000004 + 0x44);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000004",
+      "text": "local_20 = (CVector3f *)(in_stack_00000004 + 0x41);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_0000000c",
+      "text": "if (local_14 != in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_00000008",
+      "text": "pcVar3 = (char *)(g_WindowWidth * iVar1 + iVar5 + (int)in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_00000004",
+      "text": "} while (local_14 < *in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:6",
+      "param_delta": 6,
+      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "type": "param_count_too_few"
+    },
     {
       "add_esp_value": 4,
       "call_address": "0057fdab",
@@ -448,217 +624,6 @@
       "target_address": "0x4204f0",
       "text": "Direct CALL at 0057feed, ADD ESP at 0057fef2 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 84,
-    "local_size": 84,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "void *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffffb0",
-      "text": "CVector3i *in_stack_ffffffb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000008",
-      "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000008,0,g_WindowWidth * g_WindowHeight);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_ffffffb0",
-      "text": "(&g_CDemonCameraInstance,local_18,local_1c,(int)in_stack_ffffffb0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_ffffffb0",
-      "text": "(&g_CDemonCameraInstance,&local_44,in_stack_ffffffb0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_ffffffb0",
-      "text": "*piVar4 = (int)in_stack_ffffffb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(CVector3i *)((int)",
-      "text": "local_18 = (CVector3i *)((int)&local_18->x + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_00000004",
-      "text": "local_28 = (CBoundingBox3D *)(in_stack_00000004 + 0x60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00000004",
-      "text": "local_24 = (CVector3i *)(in_stack_00000004 + 0x44);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000004",
-      "text": "local_20 = (CVector3f *)(in_stack_00000004 + 0x41);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_0000000c",
-      "text": "if (local_14 != in_stack_0000000c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 98,
-      "match": "in_stack_00000008",
-      "text": "pcVar3 = (char *)(g_WindowWidth * iVar1 + iVar5 + (int)in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 114,
-      "match": "in_stack_00000004",
-      "text": "} while (local_14 < *in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

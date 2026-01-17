@@ -23,7 +23,7 @@ core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedMode
     do {
       this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);
       ppCVar1 = model_ptr->vertex_list + (int)local_28.max.y * model_ptr->vertex_count * 3;
-      local_28.min.z = (float)65536f;
+      local_28.min.z = (float)0.00390625;
       local_28.min.x = (float)(int)*ppCVar1 * local_28.min.z;
       local_28.min.y = (float)(int)ppCVar1[1] * local_28.min.z;
       local_28.min.z = (float)(int)ppCVar1[2] * local_28.min.z;
@@ -40,9 +40,9 @@ core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedMode
       iVar2 = 1;
       if (1 < model_ptr->vertex_count) {
         do {
-          local_28.min.x = (float)(int)ppCVar1[3] * (float)65536f;
-          local_28.min.y = (float)(int)ppCVar1[4] * (float)65536f;
-          local_28.min.z = (float)(int)ppCVar1[5] * (float)65536f;
+          local_28.min.x = (float)(int)ppCVar1[3] * (float)0.00390625;
+          local_28.min.y = (float)(int)ppCVar1[4] * (float)0.00390625;
+          local_28.min.z = (float)(int)ppCVar1[5] * (float)0.00390625;
           ppCVar1 = ppCVar1 + 3;
           iVar2 = iVar2 + 1;
           core_box_cpp_CBoundingBox3D_expand_FUN_00420240(this_ptr_00,&local_28.min);

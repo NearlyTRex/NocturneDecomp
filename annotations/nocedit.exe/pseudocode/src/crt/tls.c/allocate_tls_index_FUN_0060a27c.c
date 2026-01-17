@@ -10,10 +10,10 @@ BOOL __cdecl crt_tls_c_allocate_tls_index_FUN_0060a27c(void)
 
 {
   if (g_TLSIndex == 0xffffffff) {
-    g_TLSIndex = (*PTR_TlsAlloc_0061164c)();
+    g_TLSIndex = (*g_TlsAllocFunc)();
     if ((0x7fff < g_WindowsPlatformVersion) && (g_WindowsMinorVersion < 4)) {
       while ((g_TLSIndex != 0xffffffff && (g_TLSIndex < 3))) {
-        g_TLSIndex = (*PTR_TlsAlloc_0061164c)();
+        g_TLSIndex = (*g_TlsAllocFunc)();
       }
     }
   }

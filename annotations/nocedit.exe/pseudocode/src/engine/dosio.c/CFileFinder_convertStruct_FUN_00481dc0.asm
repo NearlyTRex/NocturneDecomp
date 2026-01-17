@@ -14,8 +14,8 @@
 ;   engine_dosio.c_CFileFinder_openSearch_FUN_00481c70 at 00481cbf
 ;
 ; Referenced Globals:
-;   FileTimeToLocalFileTime* PTR_FileTimeToLocalFileTime_00611540 = 00211d46
-;   FileTimeToSystemTime* PTR_FileTimeToSystemTime_00611544 = 00211d60
+;   FileTimeToLocalFileTime* g_FileTimeToLocalFileTimeFunc = 00211d46
+;   FileTimeToSystemTime* g_FileTimeToSystemTimeFunc = 00211d60
 ;   TerminatedCString s_engine_dosio_c_00621617
 ;   TerminatedCString s_CFileFinder_convertStruc_00621629
 ;   char* g_CurrentFilename
@@ -96,7 +96,7 @@ section .text
     ADD ESI,0x14                        ; 00481e63
     PUSH ESI                            ; 00481e66
     MOV dword ptr [EBX + 0x108],0x0     ; 00481e67
-    CALL dword ptr CS:[0x611540]        ; 00481e71 | PTR_FileTimeToLocalFileTime_00611540
+    CALL dword ptr CS:[0x611540]        ; 00481e71 | g_FileTimeToLocalFileTimeFunc
     TEST EAX,EAX                        ; 00481e78
     JNZ 0x00481e9b                      ; 00481e7a
         ;   XREF to: 00481e9b (CONDITIONAL_JUMP)  ; LAB_00481e9b
@@ -122,7 +122,7 @@ section .text
     PUSH EAX                            ; 00481e9f
     LEA EAX,[ESP + 0x38]                ; 00481ea0
     PUSH EAX                            ; 00481ea4
-    CALL dword ptr CS:[0x611544]        ; 00481ea5 | PTR_FileTimeToSystemTime_00611544
+    CALL dword ptr CS:[0x611544]        ; 00481ea5 | g_FileTimeToSystemTimeFunc
     TEST EAX,EAX                        ; 00481eac
     JZ 0x00481e7c                       ; 00481eae
         ;   XREF to: 00481e7c (CONDITIONAL_JUMP)  ; LAB_00481e7c

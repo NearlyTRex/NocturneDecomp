@@ -23,9 +23,9 @@ float core_fire_cpp_FUN_004c24d0(void)
   local_28 = 0;
   local_24 = 0;
   local_20 = in_stack_00000004;
-  local_34.x = (int)ROUND(256f * 0.0);
-  local_34.y = (int)ROUND(256f * 0.0);
-  local_34.z = (int)ROUND(in_stack_00000004 * 256f);
+  local_34.x = (int)ROUND(256.0f * 0.0);
+  local_34.y = (int)ROUND(256.0f * 0.0);
+  local_34.z = (int)ROUND(in_stack_00000004 * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_34);
   fVar2 = (float)1.52587890625e-05;

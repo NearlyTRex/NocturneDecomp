@@ -15,7 +15,8 @@ void core_boxactor_cpp_FUN_00422d60(void)
   int iVar3;
   CDemonFilter *this_ptr_00;
   int in_stack_00000004;
-  char acStack_cc [40];
+  char acStack_d0 [40];
+  float local_a8;
   float fStack_a4;
   float fStack_a0;
   float fStack_9c;
@@ -23,13 +24,13 @@ void core_boxactor_cpp_FUN_00422d60(void)
   float fStack_94;
   float local_90;
   float fStack_8c;
-  float fStack_88;
+  float fStack_84;
   float fStack_80;
   float fStack_7c;
-  float fStack_78;
+  float fStack_6c;
   float fStack_68;
   float fStack_64;
-  float fStack_60;
+  float fStack_54;
   float fStack_50;
   float fStack_4c;
   float fStack_48;
@@ -38,12 +39,11 @@ void core_boxactor_cpp_FUN_00422d60(void)
   float fStack_3c;
   float fStack_38;
   float fStack_34;
-  float fStack_30;
-  int iStack_14;
+  int local_18;
   
   uVar1 = *(uint *)(in_stack_00000004 + 0x66c);
   if (uVar1 != 0) {
-    iStack_14 = in_stack_00000004 + 0x670;
+    local_18 = in_stack_00000004 + 0x670;
     this_ptr = (CKeyFramedModelInstance *)(in_stack_00000004 + 0x158);
     if (uVar1 < 2) {
       core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -51,14 +51,14 @@ void core_boxactor_cpp_FUN_00422d60(void)
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr);
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
       fVar2 = 0.5f;
-      *(float *)(in_stack_00000004 + 0x361c) = (fStack_8c + fStack_80) * 0.5f;
-      *(float *)(in_stack_00000004 + 0x3620) = (fStack_88 + fStack_7c) * fVar2;
-      *(float *)(in_stack_00000004 + 0x3624) = fStack_78 + (float)0.10000000000000001;
+      *(float *)(in_stack_00000004 + 0x361c) = (local_90 + fStack_84) * 0.5f;
+      *(float *)(in_stack_00000004 + 0x3620) = (fStack_8c + fStack_80) * fVar2;
+      *(float *)(in_stack_00000004 + 0x3624) = fStack_7c + (float)0.10000000000000001;
       *(uint *)(in_stack_00000004 + 0x3630) = 0;
       *(uint *)(in_stack_00000004 + 0x362c) = *(uint *)(in_stack_00000004 + 0x3630);
       *(uint *)(in_stack_00000004 + 0x3628) = *(uint *)(in_stack_00000004 + 0x362c);
       *(uint *)(in_stack_00000004 + 0x2324) = 0;
-      *(uint *)(iStack_14 + 0x38) = 0x42600000;
+      *(uint *)(local_18 + 0x38) = 0x42600000;
       *(uint *)(in_stack_00000004 + 0x7b0) = 0x42000000;
       *(uint *)(in_stack_00000004 + 0x314) = 3;
       return;
@@ -68,28 +68,28 @@ void core_boxactor_cpp_FUN_00422d60(void)
                 (this_ptr,"lantern.kfm");
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr);
       (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
-      fStack_48 = 0.5f;
+      fStack_4c = 0.5f;
+      fStack_48 = local_a8 + fStack_9c;
+      fStack_3c = fStack_48 * 0.5f;
       fStack_44 = fStack_a4 + fStack_98;
-      fStack_38 = fStack_44 * 0.5f;
       fStack_40 = fStack_a0 + fStack_94;
-      fStack_3c = fStack_9c + local_90;
+      fStack_38 = fStack_44 * 0.5f;
       fStack_34 = fStack_40 * 0.5f;
-      fStack_30 = fStack_3c * 0.5f;
-      *(float *)(in_stack_00000004 + 0x361c) = fStack_38;
+      *(float *)(in_stack_00000004 + 0x361c) = fStack_3c;
+      fStack_6c = local_a8 + fStack_9c;
+      fStack_54 = fStack_6c * fStack_4c;
       fStack_68 = fStack_a4 + fStack_98;
-      fStack_50 = fStack_68 * fStack_48;
       fStack_64 = fStack_a0 + fStack_94;
-      fStack_60 = fStack_9c + local_90;
-      fStack_4c = fStack_64 * fStack_48;
-      fStack_48 = fStack_60 * fStack_48;
-      *(float *)(in_stack_00000004 + 0x3620) = fStack_4c;
-      *(float *)(in_stack_00000004 + 0x3624) = local_90;
+      fStack_50 = fStack_68 * fStack_4c;
+      fStack_4c = fStack_64 * fStack_4c;
+      *(float *)(in_stack_00000004 + 0x3620) = fStack_50;
+      *(float *)(in_stack_00000004 + 0x3624) = fStack_94;
       *(uint *)(in_stack_00000004 + 0x3630) = 0;
       *(uint *)(in_stack_00000004 + 0x362c) = *(uint *)(in_stack_00000004 + 0x3630);
       *(uint *)(in_stack_00000004 + 0x3628) = *(uint *)(in_stack_00000004 + 0x362c);
       *(uint *)(in_stack_00000004 + 0x3628) = 0x3e860a92;
       *(uint *)(in_stack_00000004 + 0x2324) = 0;
-      *(uint *)(iStack_14 + 0x38) = 0x42600000;
+      *(uint *)(local_18 + 0x38) = 0x42600000;
       *(uint *)(in_stack_00000004 + 0x7b0) = 0x42000000;
       iVar3 = DAT_008229ac;
       *(uint *)(in_stack_00000004 + 0x314) = 3;
@@ -97,9 +97,9 @@ void core_boxactor_cpp_FUN_00422d60(void)
         this_ptr_00 = CDemonFilter_ARRAY_008229ec;
         iVar3 = 0;
         do {
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_cc,"lantern%d.raw",iVar3);
+          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_d0,"lantern%d.raw",iVar3);
           iVar3 = iVar3 + 1;
-          core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(this_ptr_00,acStack_cc);
+          core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(this_ptr_00,acStack_d0);
           this_ptr_00 = this_ptr_00 + 1;
         } while (iVar3 < 8);
         DAT_008229ac = 1;

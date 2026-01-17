@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 102,
+    "complexity_score": 217,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 102,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 11,
+    "suspect_types": [
+      "call_esp_anchor"
+    ],
     "total_lines": 395
   },
   "cross_references": [
@@ -115,41 +117,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004a5c22": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5c53": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5cb7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5cef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5d29": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5d52": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5d7e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5de8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5e24": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5e4c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004a5e7c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.9695652173913043,
     "instruction_count": 230,
@@ -176,7 +143,51 @@
     },
     "pcode_op_count": 913
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdScrollBar *"
+      }
+    ]
+  },
+  "suspects": [
     {
       "add_esp_value": 4,
       "call_address": "004a5c1d",
@@ -320,50 +331,5 @@
       "text": "Direct CALL at 004a5e77, ADD ESP at 004a5e7c with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ],
-  "stack_frame": {
-    "frame_size": 40,
-    "local_size": 36,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CEdScrollBar *"
-      }
-    ]
-  },
-  "suspects": []
+  ]
 }

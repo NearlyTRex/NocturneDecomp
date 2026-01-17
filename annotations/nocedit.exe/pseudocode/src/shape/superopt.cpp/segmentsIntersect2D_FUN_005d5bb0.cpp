@@ -15,9 +15,9 @@ shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
   double dVar2;
   double dVar3;
   double dVar4;
-  double dStack_44;
-  double dStack_3c;
-  double dStack_34;
+  double local_48;
+  double local_40;
+  double local_38;
   
   if (((((((point_c->x <= point_a->x) || (point_c->x <= point_b->x)) || (point_d->x <= point_a->x))
         || (point_d->x <= point_b->x)) &&
@@ -29,27 +29,27 @@ shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
       (point_b->y <= point_d->y)))) {
     dVar1 = (point_b->x - point_a->x) * (point_d->y - point_c->y) -
             (point_d->x - point_c->x) * (point_b->y - point_a->y);
-    dStack_34 = dVar1;
+    local_38 = dVar1;
     if (dVar1 < 0.0) {
-      dStack_34 = -dVar1;
+      local_38 = -dVar1;
     }
-    if (1e-10 <= dStack_34) {
+    if (1e-10 <= local_38) {
       dVar2 = point_a->y - point_c->y;
       dVar4 = point_a->x - point_c->x;
       dVar3 = ((point_d->x - point_c->x) * dVar2 - (point_d->y - point_c->y) * dVar4) *
               (1.0 / dVar1);
       dVar1 = ((point_b->x - point_a->x) * dVar2 - (point_b->y - point_a->y) * dVar4) *
               (1.0 / dVar1);
-      dStack_3c = dVar3;
+      local_40 = dVar3;
       if (dVar3 < 0.0) {
-        dStack_3c = -dVar3;
+        local_40 = -dVar3;
       }
-      if (1e-10 <= dStack_3c) {
-        dStack_44 = dVar1;
+      if (1e-10 <= local_40) {
+        local_48 = dVar1;
         if (dVar1 < 0.0) {
-          dStack_44 = -dVar1;
+          local_48 = -dVar1;
         }
-        if (((1e-10 <= dStack_44) && (0.0 <= dVar3)) &&
+        if (((1e-10 <= local_48) && (0.0 <= dVar3)) &&
            ((0.0 <= dVar1 && ((dVar3 <= 0.99999999989999999 && (dVar1 <= 0.99999999989999999)))))) {
           return 1;
         }

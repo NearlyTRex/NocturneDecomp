@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 154,
+    "complexity_score": 155,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 70,
     "suspect_count": 7,
     "suspect_types": [
       "callind_preserve_lost",
       "lea_esp_stack_addr",
       "pointer_cast"
     ],
-    "total_lines": 222
+    "total_lines": 223
   },
   "cross_references": [],
   "function": {
@@ -62,19 +62,19 @@
   "globals": [
     {
       "addr": "00611448",
-      "name": "waveOutOpen",
+      "name": "g_waveOutOpenFunc",
       "type": "waveOutOpen*",
       "value": "00211944"
     },
     {
       "addr": "006115cc",
-      "name": "GlobalAlloc",
+      "name": "g_GlobalAllocFunc",
       "type": "GlobalAlloc*",
       "value": "00211fd8"
     },
     {
       "addr": "006115d4",
-      "name": "GlobalLock",
+      "name": "g_GlobalLockFunc",
       "type": "GlobalLock*",
       "value": "00211ff4"
     },
@@ -247,35 +247,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 43,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 46,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 49,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 52,
       "match": "(HGLOBAL *)((int)",
-      "text": "pvVar4 = (*GlobalLock)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
+      "text": "pvVar4 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 53,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
       "type": "pointer_cast"

@@ -85,7 +85,7 @@ LAB_005a5242:
     sfx_sample->ref_count = 0;
     iVar6 = (sfx_sample->sample_info).sample_rate;
     sfx_sample->buffer_id = 0;
-    fVar2 = (float)iVar6 * 2f;
+    fVar2 = (float)iVar6 * 2.0f;
     sfx_sample->stream_read_position = 0;
     sfx_sample->stream_write_position = 0;
     pCVar8 = (CSfxSample *)0x5a53d2;
@@ -118,7 +118,7 @@ LAB_005a5242:
     sfx_sample->ref_count = 0;
     iVar6 = (sfx_sample->sample_info).sample_rate;
     sfx_sample->buffer_id = 0;
-    fVar2 = (float)iVar6 * 2f;
+    fVar2 = (float)iVar6 * 2.0f;
     sfx_sample->stream_read_position = 0;
     sfx_sample->stream_write_position = 0;
     pCVar8 = (CSfxSample *)0x5a54e9;

@@ -39,7 +39,7 @@
 ;   TerminatedCString s_d_complete_0062333b
 ;   TerminatedCString s_d_02d_elapsed_approximat_00623349
 ;   double g_PercentageMultiplier = 100
-;   double g_RoundingOffset = 0.5
+;   double g_RoundingOffset_00623386 = 0.5
 ;   double g_TimeScalingFactor = 8.47710503472222E-7
 ;   double g_TimeDisplayThreshold = 5
 ;   CBitFont* g_EditorFont
@@ -113,7 +113,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 004a0585
         ;   Label: LAB_004a0585
     FMUL double ptr [0x0062337e]        ; 004a0589 | g_PercentageMultiplier
-    FADD double ptr [0x00623386]        ; 004a058f | g_RoundingOffset
+    FADD double ptr [0x00623386]        ; 004a058f | g_RoundingOffset_00623386
     CALL crt_math.c_round_FUN_005fe6b0  ; 004a0595
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x24]        ; 004a059a
@@ -222,7 +222,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 004a06cf
     FILD dword ptr [ESP + 0x2c]         ; 004a06d3
     FMUL float ptr [ESP + 0xc]          ; 004a06d7
-    FADD double ptr [0x00623386]        ; 004a06db | g_RoundingOffset
+    FADD double ptr [0x00623386]        ; 004a06db | g_RoundingOffset_00623386
     CALL crt_math.c_round_FUN_005fe6b0  ; 004a06e1
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x2c]        ; 004a06e6
@@ -276,7 +276,7 @@ section .text
     FSUB ST0,ST1                        ; 004a076a
     FMUL float ptr [ESP + 0x8]          ; 004a076c
     FDIVRP                              ; 004a0770
-    FADD double ptr [0x00623386]        ; 004a0772 | g_RoundingOffset
+    FADD double ptr [0x00623386]        ; 004a0772 | g_RoundingOffset_00623386
     CALL crt_math.c_round_FUN_005fe6b0  ; 004a0778
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x28]        ; 004a077d
@@ -295,7 +295,7 @@ section .text
     SAR EDX,0x1f                        ; 004a07a1
     IDIV EBX                            ; 004a07a4
     FLD double ptr [ESP]                ; 004a07a6
-    FADD double ptr [0x00623386]        ; 004a07a9 | g_RoundingOffset
+    FADD double ptr [0x00623386]        ; 004a07a9 | g_RoundingOffset_00623386
     CALL crt_math.c_round_FUN_005fe6b0  ; 004a07af
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 004a07b4

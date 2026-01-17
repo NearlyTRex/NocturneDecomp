@@ -14,14 +14,14 @@ crt_io_c_findFirstFileWrapper_FUN_006021f0(char *filespec,LPWIN32_FIND_DATAA fin
   int iVar1;
   _WIN32_FIND_DATAA _Stack_144;
   
-  hFindFile = (*PTR_FindFirstFileA_0061154c)(filespec,&_Stack_144);
+  hFindFile = (*g_FindFirstFileAFunc)(filespec,&_Stack_144);
   if (hFindFile == (HANDLE)0xffffffff) {
     crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
   }
   else {
     iVar1 = crt_io_c_findNextWithAttributes_FUN_00609d5c(hFindFile,0x37,&_Stack_144);
     if (iVar1 == 0) {
-      (*PTR_FindClose_00611548)(hFindFile);
+      (*g_FindCloseFunc)(hFindFile);
       crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(2);
       hFindFile = (HANDLE)0xffffffff;
     }

@@ -10,25 +10,21 @@ void __cdecl core_bat_cpp_CBat_FUN_00414f00(CBat *this_ptr)
 
 {
   int iVar1;
-  float fStack_c;
+  float in_stack_00000008;
+  CBat *pCStack0000000c;
+  float in_stack_00000010;
   
-  fStack_c = 1.0;
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-  if (iVar1 != 0) {
-    fStack_c = 4.0;
-  }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
-  if (iVar1 != 0) {
-    fStack_c = fStack_c * (float)0.25;
-  }
+  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
   iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
   if (iVar1 != 0) {
-    this_ptr->param = this_ptr->param + fStack_c;
+    this_ptr->param = this_ptr->param + in_stack_00000008;
   }
   iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
   if (iVar1 != 0) {
-    this_ptr->param = this_ptr->param - fStack_c;
+    this_ptr->param = this_ptr->param - in_stack_00000010;
   }
+  pCStack0000000c = this_ptr;
   core_bat_cpp_FUN_00414ce0();
   return;
 }

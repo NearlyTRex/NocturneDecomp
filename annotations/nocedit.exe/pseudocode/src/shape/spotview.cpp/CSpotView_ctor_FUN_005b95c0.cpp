@@ -16,8 +16,8 @@ CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(CSpotView *th
   
   fVar4 = FLOAT_03f6ba20;
   fVar3 = FLOAT_03f6ba1c;
-  fVar2 = 1f;
-  fVar1 = 12f;
+  fVar2 = 1.0f;
+  fVar1 = 12.0f;
   this_ptr->field0_0x0[0x20] = '\0';
   this_ptr->field0_0x0[0x21] = '\0';
   this_ptr->field0_0x0[0x22] = '\0';

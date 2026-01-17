@@ -44,9 +44,9 @@ core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950
   local_54.z = pos->x;
   local_44 = pos->z;
   local_64.x = pos->x;
-  local_48 = pos->y + 2f;
+  local_48 = pos->y + 2.0f;
   local_64.z = pos->z;
-  local_64.y = pos->y + -10f;
+  local_64.y = pos->y + -10.0f;
   fVar3 = 1.0 / (this_ptr->cell_size).y;
   fVar4 = (float10)local_54.z - (float10)(this_ptr->bbox_min).x;
   local_38 = (float)fVar4;

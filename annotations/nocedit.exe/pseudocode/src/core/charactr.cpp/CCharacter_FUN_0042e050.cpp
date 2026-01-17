@@ -85,7 +85,7 @@ LAB_0042e0ee:
          (fVar6 = (local_1c->position).x - *(float *)(target_string + 0x20),
          fVar1 = (local_1c->position).y - *(float *)(target_string + 0x24),
          fVar7 = (local_1c->position).z - *(float *)(target_string + 0x28),
-         20f <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
+         20.0f <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
         iVar4 = iVar5 + 4;
         local_28 = local_28 + 1;
         *(char **)((int)local_1f80 + iVar5) = target_string;

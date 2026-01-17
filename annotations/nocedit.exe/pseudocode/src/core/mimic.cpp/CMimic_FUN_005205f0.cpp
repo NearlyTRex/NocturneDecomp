@@ -15,8 +15,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
   float *pfVar2;
   CVector3f *pCVar3;
   byte bVar4;
-  CMatrix3x4f *in_stack_fffffe8e;
-  float local_f4 [12];
+  CMatrix3x4f *in_stack_ffffff14;
   CMatrix3x4f local_c4;
   CVector3f local_94 [4];
   CBoundingBox3D local_64;
@@ -62,8 +61,8 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
                     (&local_c4,
                      (CMatrix3x4f *)
                      (this_ptr->field0_0x0).base_character.model.bone_transform.bone_world_matrices
-                     [DAT_02f33378].m,in_stack_fffffe8e);
-          pfVar2 = local_f4;
+                     [DAT_02f33378].m,in_stack_ffffff14);
+          pfVar2 = (float *)&stack0xffffff0c;
           pCVar3 = local_94;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
             pCVar3->x = *pfVar2;

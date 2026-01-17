@@ -57,7 +57,7 @@ core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,
   crt_stdio_c_fread_FUN_005fd990(&this_ptr->bbox_min,0xc,1,file_handle);
   crt_stdio_c_fread_FUN_005fd990(&this_ptr->bbox_max,0xc,1,file_handle);
   crt_stdio_c_fread_FUN_005fd990(&this_ptr->cell_size,0xc,1,file_handle);
-  local_38 = (this_ptr->cell_size).x / 8f;
+  local_38 = (this_ptr->cell_size).x / 8.0f;
   local_34 = (this_ptr->cell_size).y * 0.125f;
   local_30 = 0.125f * (this_ptr->cell_size).z;
   if (&this_ptr->adjusted_size != (CVector3f *)&local_38) {

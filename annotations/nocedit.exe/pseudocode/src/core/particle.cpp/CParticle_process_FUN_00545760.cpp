@@ -30,7 +30,7 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
   float local_78;
   CVector3i local_74;
   CParticle local_68;
-  float fStack_30;
+  uint uStack_30;
   CVector3f local_2c;
   float local_20;
   float local_1c;
@@ -60,8 +60,8 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
     local_74.x = local_68.collision_result;
     *(uint *)((int)&local_74 + (uint)bVar5 * -8 + 4) =
          *(uint *)((int)&local_68 + (uint)bVar5 * -8 + 0x34);
-    *(float *)((int)&local_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-         (&fStack_30)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
+    *(uint *)((int)&local_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         (&uStack_30)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
     iVar4 = core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970(this_ptr_00,voxel_coords);
     this_ptr->collision_flag = iVar4;
     if ((iVar4 != 0) || (this_ptr->collision_result != 0)) {
@@ -69,6 +69,7 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
       local_a8 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                            (&g_CDemonRaytraceInstance,pCVar1,&this_ptr->position,&local_2c,
                             (int *)0x0);
+      local_14 = local_a8;
       if ((0.0 <= local_a8) && (local_a8 < 1.0)) {
         local_68.lifetime_remaining = (this_ptr->position).x - pCVar1->x;
         local_68.gravity_acceleration = (this_ptr->position).y - (this_ptr->previous_position).y;
@@ -87,21 +88,20 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
           (this_ptr->position).y = local_68.position.y;
           (this_ptr->position).z = local_68.position.z;
         }
-        local_14 = local_a8;
         iVar4 = (*this_ptr->vtable->onCollision)(this_ptr,&local_2c);
         if (iVar4 == 0) {
           pCVar1 = &this_ptr->velocity;
-          fVar2 = (local_2c.z * (this_ptr->velocity).z +
-                  local_2c.x * pCVar1->x + local_2c.y * (this_ptr->velocity).y) * 2f;
-          if (pCVar1 != &local_68.velocity) {
-            pCVar1->x = local_2c.x * fVar2 - pCVar1->x;
-            (this_ptr->velocity).y = local_2c.y * fVar2 - (this_ptr->velocity).y;
-            (this_ptr->velocity).z = local_2c.z * fVar2 - (this_ptr->velocity).z;
+          fVar2 = (local_1c * (this_ptr->velocity).z +
+                  local_2c.z * pCVar1->x + local_20 * (this_ptr->velocity).y) * 2.0f;
+          if (pCVar1 != (CVector3f *)&local_68.velocity.z) {
+            pCVar1->x = local_2c.z * fVar2 - pCVar1->x;
+            (this_ptr->velocity).y = local_20 * fVar2 - (this_ptr->velocity).y;
+            (this_ptr->velocity).z = local_1c * fVar2 - (this_ptr->velocity).z;
           }
           pCVar1 = &this_ptr->velocity;
           fVar2 = (this_ptr->velocity).y * -0.7f;
           fVar3 = -0.7f * (this_ptr->velocity).z;
-          if (pCVar1 != &local_68.previous_position) {
+          if (pCVar1 != (CVector3f *)&local_68.previous_position.z) {
             pCVar1->x = pCVar1->x * -0.7f;
             (this_ptr->velocity).y = fVar2;
             (this_ptr->velocity).z = fVar3;
@@ -112,9 +112,9 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
         }
       }
     }
-    local_1c = this_ptr->lifetime_remaining - local_1c;
-    this_ptr->lifetime_remaining = local_1c;
-    if (local_1c < 0.0) {
+    local_14 = this_ptr->lifetime_remaining - local_14;
+    this_ptr->lifetime_remaining = local_14;
+    if (local_14 < 0.0) {
       this_ptr->lifetime_remaining = 0.0;
       return;
     }

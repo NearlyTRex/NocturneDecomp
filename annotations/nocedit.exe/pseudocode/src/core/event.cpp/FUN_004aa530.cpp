@@ -35,7 +35,7 @@ uint core_event_cpp_FUN_004aa530(void)
     return 0xffffffff;
   }
   *in_stack_00000008 = *in_stack_00000008 + local_14;
-  if (iVar1 != DAT_0065d95c) {
+  if (iVar1 != 0x0FFFFFFF) {
     if (in_stack_0000000c != (uint *)(iVar1 + 0x20)) {
       *in_stack_0000000c = *(uint *)(iVar1 + 0x20);
       in_stack_0000000c[1] = *(uint *)(iVar1 + 0x24);

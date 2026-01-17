@@ -8,9 +8,9 @@
 ;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 at 0060a4b5
 ;
 ; Referenced Globals:
-;   GetLastError* GetLastError = 00211f22
-;   SetLastError* PTR_SetLastError_00611634 = 002121d6
-;   TlsGetValue* PTR_TlsGetValue_00611654 = 0021225e
+;   GetLastError* g_GetLastErrorFunc = 00211f22
+;   SetLastError* g_SetLastErrorFunc = 002121d6
+;   TlsGetValue* g_TlsGetValueFunc = 0021225e
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
 ; Called Functions:
@@ -27,11 +27,11 @@ section .text
     PUSH EBX                            ; 0060a1fc
         ;   Label: crt_tls.c_get_thread_local_data_FUN_0060a1fc
     PUSH ESI                            ; 0060a1fd
-    CALL dword ptr CS:[0x6115a4]        ; 0060a1fe | GetLastError
+    CALL dword ptr CS:[0x6115a4]        ; 0060a1fe | g_GetLastErrorFunc
     MOV EDX,dword ptr [0x00684ee0]      ; 0060a205 | g_TLSIndex
     PUSH EDX                            ; 0060a20b
     MOV ESI,EAX                         ; 0060a20c
-    CALL dword ptr CS:[0x611654]        ; 0060a20e | PTR_TlsGetValue_00611654
+    CALL dword ptr CS:[0x611654]        ; 0060a20e | g_TlsGetValueFunc
     MOV EBX,EAX                         ; 0060a215
     TEST EAX,EAX                        ; 0060a217
     JNZ 0x0060a222                      ; 0060a219
@@ -50,7 +50,7 @@ section .text
         ;   Label: LAB_0060a22d
     PUSH ESI                            ; 0060a22f
         ;   Label: LAB_0060a22f
-    CALL dword ptr CS:[0x611634]        ; 0060a230 | PTR_SetLastError_00611634
+    CALL dword ptr CS:[0x611634]        ; 0060a230 | g_SetLastErrorFunc
     MOV EAX,EBX                         ; 0060a237
     POP ESI                             ; 0060a239
     POP EBX                             ; 0060a23a

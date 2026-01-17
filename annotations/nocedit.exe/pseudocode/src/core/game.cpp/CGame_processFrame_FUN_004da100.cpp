@@ -15,26 +15,24 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   double dVar2;
   char cVar3;
   CHero *pCVar4;
-  float *pfVar5;
-  double dVar6;
-  double dVar7;
-  double dVar8;
   CNetGame *this_ptr_00;
-  int iVar9;
-  uint uVar10;
-  int iVar11;
-  char *pcVar12;
-  CLocation *pCVar13;
-  COrientation *pCVar14;
-  uint *puVar15;
-  int iVar16;
-  int iVar17;
-  int *piVar18;
-  byte bVar19;
-  int aiStackY_107c [614];
+  int iVar5;
+  uint uVar6;
+  int iVar7;
+  char *pcVar8;
+  CLocation *pCVar9;
+  COrientation *pCVar10;
+  uint *puVar11;
+  int iVar12;
+  int iVar13;
+  char *pcVar14;
+  byte bVar15;
+  int aiStackY_107c [651];
   CVector3i *output_ptr;
-  SCollisionInfo *in_stack_fffff956;
-  CSfxSample local_62c;
+  CVector3i *in_stack_fffff9e4;
+  SCollisionInfo *collision_info;
+  ulonglong uVar16;
+  char local_4dc [256];
   char local_3dc [256];
   char local_2dc [256];
   char local_1dc [200];
@@ -42,7 +40,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   byte local_b0 [16];
   float local_a0;
   float local_9c;
-  float local_94;
+  int local_94;
   int aiStack_90 [5];
   CVector3f local_7c;
   CVector3i local_70;
@@ -66,7 +64,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int local_18;
   int local_14;
   
-  bVar19 = 0;
+  bVar15 = 0;
   local_40 = 0;
   if (this_ptr->profile_mode != 0) {
     local_44 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -93,40 +91,39 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     else {
       core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_b0);
       pCVar4 = g_HeroActors[g_LocalHeroIndex];
-      pCVar13 = &(pCVar4->base_character).base_actor.location;
-      if ((CLocation *)local_b0 != pCVar13) {
-        local_b0._0_4_ = (pCVar13->position).x;
+      pCVar9 = &(pCVar4->base_character).base_actor.location;
+      if ((CLocation *)local_b0 != pCVar9) {
+        local_b0._0_4_ = (pCVar9->position).x;
         local_b0._4_4_ = (pCVar4->base_character).base_actor.location.position.y;
         local_b0._8_4_ = (pCVar4->base_character).base_actor.location.position.z;
       }
       pCVar4 = g_HeroActors[g_LocalHeroIndex];
-      pCVar14 = &(pCVar4->base_character).base_actor.orient;
-      if ((COrientation *)(local_b0 + 0xc) != pCVar14) {
-        local_b0._12_4_ = pCVar14->pitch;
+      pCVar10 = &(pCVar4->base_character).base_actor.orient;
+      if ((COrientation *)(local_b0 + 0xc) != pCVar10) {
+        local_b0._12_4_ = pCVar10->pitch;
         local_a0 = (pCVar4->base_character).base_actor.orient.bank;
         local_9c = (pCVar4->base_character).base_actor.orient.heading;
       }
-      in_stack_fffff956 = (SCollisionInfo *)local_b0;
-      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)in_stack_fffff956);
+      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_b0);
       (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
         setPositionAndOrientation)
                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(CVector3f *)local_b0,
                  (CVector3f *)(local_b0 + 0xc));
       if (((byte)g_MouseButtonFlags & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_fffff956);
+                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_fffff9e4);
         output_ptr = &local_70;
         local_70.x = aiStack_90[2];
-        *(int *)((int)&local_70 + ((uint)bVar19 * -2 + -1) * 4 + 8) =
-             aiStack_90[(uint)bVar19 * -2 + 3];
-        *(int *)((int)&local_70 + ((uint)bVar19 * -2 + (uint)bVar19 * -2) * 4 + 8) =
-             aiStack_90[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 4];
+        *(int *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) =
+             aiStack_90[(uint)bVar15 * -2 + 3];
+        *(int *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =
+             aiStack_90[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,output_ptr,(CVector3i *)in_stack_fffff956);
-        local_70.x = (int)local_94;
-        *(int *)((int)&local_70 + ((uint)bVar19 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar19 * -2];
-        *(int *)((int)&local_70 + ((uint)bVar19 * -2 + (uint)bVar19 * -2) * 4 + 8) =
-             aiStack_90[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1];
+                  (&g_CDemonCameraInstance,output_ptr,in_stack_fffff9e4);
+        local_70.x = local_94;
+        *(int *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar15 * -2];
+        *(int *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =
+             aiStack_90[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
         local_7c.x = (float)local_70.x * 0.00390625f;
         local_7c.y = (float)local_70.y * 0.00390625f;
         local_7c.z = (float)local_70.z * 0.00390625f;
@@ -146,11 +143,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     if (this_ptr->profile_mode != 0) {
       local_14 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
       local_14 = local_14 - local_44;
-      dVar1 = ((double)local_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-              (double)g_CGamePtr->delta_time_float;
-      engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"screen paint : %3.2f ms\n",SUB84 /* extract 2-byte value */(dVar1,0),
-                 (int)((ulonglong)dVar1 >> 0x20));
+      engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"screen paint : %3.2f ms\n")
+      ;
     }
     if (this_ptr->field67_0x208 == 0) {
       wincore_windll_cpp_lockFrame_FUN_005b7210();
@@ -158,10 +152,10 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         core_set_cpp_CDemonSet_FUN_0056c990(g_CDemonSetPtr);
       }
       if (((this_ptr->velocity_debug_enabled != 0) ||
-          (pcVar12 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar12 != (char *)0x0))
-         && (iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e), iVar9 != 0)) {
+          (pcVar14 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar14 != (char *)0x0))
+         && (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e), iVar5 != 0)) {
         DAT_02d82568 = DAT_02d82568 + 1;
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d82570,"demon%d.pcx",DAT_02d82568);
+        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d82570,"demon%d.pcx");
         engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);
       }
       core_inv_cpp_CInventory_renderAllItems_FUN_00500690
@@ -169,75 +163,81 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (this_ptr->screen_clear_enabled != 0) {
         core_set_cpp_CDemonSet_FUN_0056d190(g_CDemonSetPtr);
       }
+      uVar16._4_4_ = this_ptr;
+      uVar16._0_4_ = (CKeys *)0x4da4e8;
       core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(this_ptr);
       if (g_CheatFlags != 0) {
-        iVar9 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-        if ((iVar9 != 0) &&
-           (iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f), iVar9 != 0)) {
-          iVar9 = g_DebugRecording;
-          if (g_DebugRecording == 0) {
-            g_DebugRecording = 1;
-            _DAT_02d831bc = iVar9;
-          }
-          else {
-            g_DebugRecording = 0;
+        uVar16._4_4_ = (CGame *)0x1d;
+        uVar16._0_4_ = g_CKeysPtr;
+        iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+        if (iVar5 != 0) {
+          uVar16._4_4_ = (CGame *)0x4da515;
+          iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
+          if (iVar5 != 0) {
+            iVar5 = g_DebugRecording;
+            if (g_DebugRecording == 0) {
+              g_DebugRecording = 1;
+              _DAT_02d831bc = iVar5;
+            }
+            else {
+              g_DebugRecording = 0;
+            }
           }
         }
         if ((_g_DebugRecordingParams < 1) || (_DAT_02d831bc < _g_DebugRecordingParams)) {
           if (g_DebugRecording != 0) {
-            crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"noc%05d.raw",_DAT_02d831bc);
-            crt_stdio_c_sprintf_FUN_005fdbd0
-                      (local_1dc,"Movie recording active: movie\\%s",local_114);
+            crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"noc%05d.raw");
+            crt_stdio_c_sprintf_FUN_005fdbd0(local_1dc,"Movie recording active: movie\\%s");
             local_34 = engine_dosio_c_getFile_FUN_00481a50("movie",local_114,"wb")
             ;
             if (local_34 != (FILE *)0x0) {
               local_38 = 0;
-              if (0 < DAT_0067b668) {
+              if (0 < 0x00000040) {
                 do {
                   local_30 = 0;
-                  if (0 < DAT_0067b664) {
+                  if (0 < 0x00000040) {
                     local_3c = local_38 + 1;
                     do {
-                      local_28 = (local_30 * g_WindowWidth) / DAT_0067b664;
-                      local_20 = ((local_30 + 1) * g_WindowWidth) / DAT_0067b664;
-                      iVar9 = (local_38 * g_WindowHeight) / DAT_0067b668;
-                      iVar11 = (local_3c * g_WindowHeight) / DAT_0067b668;
-                      iVar16 = 0;
+                      local_28 = (local_30 * g_WindowWidth) / 0x00000040;
+                      local_20 = ((local_30 + 1) * g_WindowWidth) / 0x00000040;
+                      iVar5 = (local_38 * g_WindowHeight) / 0x00000040;
+                      iVar7 = (local_3c * g_WindowHeight) / 0x00000040;
+                      iVar12 = 0;
                       local_18 = 0;
                       local_1c = 0;
-                      iVar17 = 0;
-                      if (iVar9 < iVar11) {
-                        local_24 = iVar9 << 2;
-                        local_2c = iVar11 << 2;
+                      iVar13 = 0;
+                      if (iVar5 < iVar7) {
+                        local_24 = iVar5 << 2;
+                        local_2c = iVar7 << 2;
                         do {
                           if (local_28 < local_20) {
-                            puVar15 = (uint *)(local_28 * 4 +
+                            puVar11 = (uint *)(local_28 * 4 +
                                               *(int *)((int)g_ScreenBufferArray + local_24));
-                            iVar9 = local_28;
+                            iVar5 = local_28;
                             do {
-                              uVar10 = *puVar15;
-                              iVar16 = iVar16 + (uVar10 >> 0x10 & 0xff);
-                              puVar15 = puVar15 + 1;
-                              iVar17 = iVar17 + (uVar10 >> 8 & 0xff);
-                              iVar9 = iVar9 + 1;
-                              local_1c = local_1c + (uVar10 & 0xff);
+                              uVar6 = *puVar11;
+                              iVar12 = iVar12 + (uVar6 >> 0x10 & 0xff);
+                              puVar11 = puVar11 + 1;
+                              iVar13 = iVar13 + (uVar6 >> 8 & 0xff);
+                              iVar5 = iVar5 + 1;
+                              local_1c = local_1c + (uVar6 & 0xff);
                               local_18 = local_18 + 1;
-                            } while (iVar9 < local_20);
+                            } while (iVar5 < local_20);
                           }
                           local_24 = local_24 + 4;
                         } while (local_24 < local_2c);
                       }
-                      iVar17 = iVar17 / local_18;
+                      iVar13 = iVar13 / local_18;
                       local_1c = local_1c / local_18;
-                      crt_stdio_c_fputc_FUN_006007a0(iVar16 / local_18,local_34);
-                      crt_stdio_c_fputc_FUN_006007a0(iVar17,local_34);
-                      iVar9 = local_30 + 1;
+                      crt_stdio_c_fputc_FUN_006007a0(iVar12 / local_18,local_34);
+                      crt_stdio_c_fputc_FUN_006007a0(iVar13,local_34);
+                      iVar5 = local_30 + 1;
                       crt_stdio_c_fputc_FUN_006007a0(local_1c,local_34);
-                      local_30 = iVar9;
-                    } while (iVar9 < DAT_0067b664);
+                      local_30 = iVar5;
+                    } while (iVar5 < 0x00000040);
                   }
                   local_38 = local_38 + 1;
-                } while (local_38 < DAT_0067b668);
+                } while (local_38 < 0x00000040);
               }
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_34,"..\\core\\game.cpp",0x110);
               engine_2d_c_drawText_FUN_00401fd0(local_1dc,0,0);
@@ -257,47 +257,29 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         DAT_02d7c2e8 = 0;
       }
       else {
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_3dc,"Camera: \"%s\" Group %d",0x3275924,
-                   g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].field8_0x14c);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"Camera: \"%s\" Group %d");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x16);
         DAT_02d7c2e8 = DAT_02d7c2e8 + 1;
         _DAT_02d7c2e0 = _DAT_02d7c2e0 + (double)this_ptr->delta_time_float;
-        dVar1 = 1.0 / (double)this_ptr->delta_time_float;
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_3dc,"FR: %f, AVG: %f, PC: %d",SUB84 /* extract 2-byte value */(dVar1,0),
-                   (int)((ulonglong)dVar1 >> 0x20),SUB84 /* extract 2-byte value */((double)DAT_02d7c2e8 / _DAT_02d7c2e0,0),
-                   (int)((ulonglong)((double)DAT_02d7c2e8 / _DAT_02d7c2e0) >> 0x20),
-                   g_RenderedTriangleCount);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"FR: %f, AVG: %f, PC: %d");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0xb);
         pCVar4 = g_HeroActors[g_LocalHeroIndex];
-        dVar8 = (double)(pCVar4->base_character).base_actor.orient.bank * 0.31830988619288902 *
-                180;
-        dVar7 = (double)(pCVar4->base_character).base_actor.orient.heading * 0.31830988619288902 *
-                180;
-        dVar6 = 180 *
-                (double)(pCVar4->base_character).base_actor.orient.pitch * 0.31830988619288902;
         dVar1 = (double)(pCVar4->base_character).base_actor.location.position.z;
         dVar2 = (double)(pCVar4->base_character).base_actor.location.position.y;
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
                    (double)(pCVar4->base_character).base_actor.location.position.x,SUB84 /* extract 2-byte value */(dVar2,0),
                    (int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
-                   SUB84 /* extract 2-byte value */(dVar6,0),(int)((ulonglong)dVar6 >> 0x20),SUB84 /* extract 2-byte value */(dVar7,0),
-                   (int)((ulonglong)dVar7 >> 0x20),SUB84 /* extract 2-byte value */(dVar8,0),(int)((ulonglong)dVar8 >> 0x20));
+                   SUB84 /* extract 2-byte value */(180 *
+                         (double)(pCVar4->base_character).base_actor.orient.pitch * 0.31830988619288902,
+                         0));
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_3dc,"Slew : %s, Virtual Director : %s",
-                   (&PTR_s_Off_0067b658)[this_ptr->is_paused],
-                   (&PTR_s_Off_0067b658)[this_ptr->is_game_active]);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"Slew : %s, Virtual Director : %s");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0xb);
-        pfVar5 = (float *)this_ptr->field102_0x9bc;
-        if (pfVar5 != (float *)0x0) {
+        if ((float *)this_ptr->field102_0x9bc != (float *)0x0) {
           crt_stdio_c_sprintf_FUN_005fdbd0
-                    (local_3dc,"Fudge: %g,%g,%g",SUB84 /* extract 2-byte value */((double)*pfVar5,0),
-                     (int)((ulonglong)(double)*pfVar5 >> 0x20),SUB84 /* extract 2-byte value */((double)pfVar5[1],0),
-                     (int)((ulonglong)(double)pfVar5[1] >> 0x20),SUB84 /* extract 2-byte value */((double)pfVar5[2],0),
-                     (int)((ulonglong)(double)pfVar5[2] >> 0x20));
+                    (local_3dc,"Fudge: %g,%g,%g",
+                     SUB84 /* extract 2-byte value */((double)*(float *)this_ptr->field102_0x9bc,0));
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
@@ -317,20 +299,23 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x100);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x80);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x40);
-          iVar9 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",iVar9);
+          iVar5 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
+          crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",iVar5);
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0x2c);
         }
       }
+      collision_info = (SCollisionInfo *)uVar16;
       if (_DAT_02d831c0 != 0) {
-        uVar10 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005a9ef0();
-        iVar9 = 0x37;
-        for (; uVar10 != 0; uVar10 = sound_sndmain_cpp_getNextActiveSfx_FUN_005a9f30(uVar10)) {
-          sound_sndmain_cpp_CSfxSample_init_FUN_005a8480(&local_62c);
-          iVar11 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uVar10,&local_62c);
-          if (iVar11 != 0) {
-            engine_2d_c_drawTextXY_FUN_00402130(0,iVar9,(char *)&local_62c);
-            iVar9 = iVar9 + 0xb;
+        uVar6 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005a9ef0();
+        iVar5 = 0x37;
+        for (; collision_info = (SCollisionInfo *)uVar16, uVar6 != 0;
+            uVar6 = sound_sndmain_cpp_getNextActiveSfx_FUN_005a9f30(uVar6)) {
+          sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffff9d4);
+          iVar7 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
+                            (uVar6,(CSfxSample *)&stack0xfffff9d4);
+          if (iVar7 != 0) {
+            engine_2d_c_drawTextXY_FUN_00402130(0,iVar5,&stack0xfffff9d4);
+            iVar5 = iVar5 + 0xb;
           }
         }
       }
@@ -345,24 +330,24 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                   (g_CEditorToolsPtr,local_2dc);
         engine_2d_c_drawText_FUN_00401fd0(local_2dc,0,g_WindowHeight + -0x42);
       }
-      iVar9 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffff956);
-      if (iVar9 == 2) {
-        pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
-                            ("You're dead.  Game over.");
-        piVar18 = &local_62c.taken;
+      iVar5 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
+                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],collision_info);
+      if (iVar5 == 2) {
+        pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                           ("You're dead.  Game over.");
+        pcVar14 = local_4dc;
         do {
-          cVar3 = *pcVar12;
-          *(char *)piVar18 = cVar3;
+          cVar3 = *pcVar8;
+          *pcVar14 = cVar3;
           if (cVar3 == '\0') break;
-          cVar3 = pcVar12[1];
-          pcVar12 = pcVar12 + 2;
-          *(char *)((int)piVar18 + 1) = cVar3;
-          piVar18 = (int *)((int)piVar18 + 2);
+          cVar3 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
+          pcVar14[1] = cVar3;
+          pcVar14 = pcVar14 + 2;
         } while (cVar3 != '\0');
         engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
                   (g_MediumFont,0,g_WindowWidth,g_WindowHeight + g_MediumFont->max_char_width * -2,
-                   (uint)g_ColorCubeLookup[0x7c00],0,(char *)&local_62c.taken);
+                   (uint)g_ColorCubeLookup[0x7c00],0,local_4dc);
       }
       if (this_ptr->show_customizable_keys != 0) {
         core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(this_ptr);

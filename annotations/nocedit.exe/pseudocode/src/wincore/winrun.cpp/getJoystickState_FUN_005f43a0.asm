@@ -12,7 +12,7 @@
 ;   core_game.cpp_CGame_resetKeyState_FUN_004dbe60 at 004dbe7e
 ;
 ; Referenced Globals:
-;   joyGetPos* joyGetPos = 0021182e
+;   joyGetPos* g_joyGetPosFunc = 0021182e
 ;   DWORD g_JoyXPos
 ;   DWORD g_JoyYPos
 ;   DWORD g_JoyRPos
@@ -136,7 +136,7 @@ section .text
         ;   Label: LAB_005f44be
     PUSH EAX                            ; 005f44c2
     PUSH ECX                            ; 005f44c3
-    CALL dword ptr CS:[0x611408]        ; 005f44c4 | joyGetPos
+    CALL dword ptr CS:[0x611408]        ; 005f44c4 | g_joyGetPosFunc
     MOV EAX,dword ptr [ESP + 0x40]      ; 005f44cb
     MOV [0x02d05208],EAX                ; 005f44cf | g_JoyButtons
     MOV EAX,dword ptr [ESP + 0x34]      ; 005f44d4

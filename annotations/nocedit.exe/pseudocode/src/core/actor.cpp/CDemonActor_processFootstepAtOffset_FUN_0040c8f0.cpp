@@ -24,7 +24,7 @@ core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0
   local_28 = g_CDemonCameraInstance.base.position.x;
   local_24 = g_CDemonCameraInstance.base.position.y;
   local_20 = g_CDemonCameraInstance.base.position.z;
-  if (10000f <
+  if (10000.0f <
       (local_34.z - (float)g_CDemonCameraInstance.base.position.z) *
       (local_34.z - (float)g_CDemonCameraInstance.base.position.z) +
       (local_34.y - (float)g_CDemonCameraInstance.base.position.y) *

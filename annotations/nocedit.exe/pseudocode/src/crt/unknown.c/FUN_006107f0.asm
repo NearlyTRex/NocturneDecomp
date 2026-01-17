@@ -8,8 +8,8 @@
 ;   crt_unknown.c_FUN_0060fb40 at 0060fc24
 ;
 ; Referenced Globals:
-;   SetEnvironmentVariableA* PTR_SetEnvironmentVariableA_0061161c = 00212160
-;   SetEnvironmentVariableW* PTR_SetEnvironmentVariableW_00611620 = 0021217a
+;   SetEnvironmentVariableA* g_SetEnvironmentVariableAFunc = 00212160
+;   SetEnvironmentVariableW* g_SetEnvironmentVariableWFunc = 0021217a
 ;   WORD g_WindowsPlatformVersion = 0x0
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     PUSH EDX                            ; 00610803
     MOV EBX,dword ptr [ESP + 0x18]      ; 00610804
     PUSH EBX                            ; 00610808
-    CALL dword ptr CS:[0x611620]        ; 00610809 | PTR_SetEnvironmentVariableW_00611620
+    CALL dword ptr CS:[0x611620]        ; 00610809 | g_SetEnvironmentVariableWFunc
     POP EBP                             ; 00610810
     POP EDI                             ; 00610811
     POP ESI                             ; 00610812
@@ -141,7 +141,7 @@ section .text
     PUSH EBX                            ; 006108ca
         ;   Label: LAB_006108ca
     PUSH EBP                            ; 006108cb
-    CALL dword ptr CS:[0x61161c]        ; 006108cc | PTR_SetEnvironmentVariableA_0061161c
+    CALL dword ptr CS:[0x61161c]        ; 006108cc | g_SetEnvironmentVariableAFunc
     PUSH EBP                            ; 006108d3
     MOV ESI,EAX                         ; 006108d4
     CALL crt_memory.c_free_FUN_00601cd0 ; 006108d6

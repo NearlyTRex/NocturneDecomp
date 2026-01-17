@@ -70,37 +70,37 @@
   "globals": [
     {
       "addr": "00611534",
-      "name": "PTR_ExitProcess_00611534",
+      "name": "g_ExitProcessFunc",
       "type": "ExitProcess*",
       "value": "00211d12"
     },
     {
       "addr": "00611568",
-      "name": "GetCommandLineA",
+      "name": "g_GetCommandLineAFunc",
       "type": "GetCommandLineA*",
       "value": "00211df8"
     },
     {
       "addr": "0061156c",
-      "name": "PTR_GetCommandLineW_0061156c",
+      "name": "g_GetCommandLineWFunc",
       "type": "GetCommandLineW*",
       "value": "00211e0a"
     },
     {
       "addr": "0061158c",
-      "name": "PTR_GetEnvironmentStrings_0061158c",
+      "name": "g_GetEnvironmentStringsFunc",
       "type": "GetEnvironmentStrings*",
       "value": "00211eae"
     },
     {
       "addr": "006115ac",
-      "name": "GetModuleFileNameA",
+      "name": "g_GetModuleFileNameAFunc",
       "type": "GetModuleFileNameA*",
       "value": "00211f42"
     },
     {
       "addr": "006115c8",
-      "name": "PTR_GetVersion_006115c8",
+      "name": "g_GetVersionFunc",
       "type": "GetVersion*",
       "value": "00211fca"
     },
@@ -402,7 +402,7 @@
       "description": "Unresolved stack parameter",
       "line": 93,
       "match": "in_stack_0000000c",
-      "text": "(*GetModuleFileNameA)(in_stack_0000000c,g_DllFileNameBuffer_A,0x104);",
+      "text": "(*g_GetModuleFileNameAFunc)(in_stack_0000000c,g_DllFileNameBuffer_A,0x104);",
       "type": "stack_param"
     },
     {

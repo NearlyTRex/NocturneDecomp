@@ -20,8 +20,9 @@ wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290
   DWORD local_8;
   
   bVar5 = 0;
-  LVar2 = (*RegCreateKeyExA)((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,
-                             (LPSECURITY_ATTRIBUTES)0x0,&local_c,&local_8);
+  LVar2 = (*g_RegCreateKeyExAFunc)
+                    ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,
+                     (LPSECURITY_ATTRIBUTES)0x0,&local_c,&local_8);
   if (LVar2 != 0) {
     return;
   }
@@ -33,7 +34,7 @@ wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290
     cVar1 = *pcVar4;
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
-  (*RegSetValueExA)(local_c,value_name,0,1,(BYTE *)value_data,~uVar3);
-  (*RegCloseKey)(local_c);
+  (*g_RegSetValueExAFunc)(local_c,value_name,0,1,(BYTE *)value_data,~uVar3);
+  (*g_RegCloseKeyFunc)(local_c);
   return;
 }

@@ -12,7 +12,7 @@
 ;   crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0 at 00608eef
 ;
 ; Referenced Globals:
-;   GetFileType* PTR_GetFileType_0061159c = 00211f00
+;   GetFileType* g_GetFileTypeFunc = 00211f00
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   SIOControlBlock* g_IOControlBlock = 00000000
@@ -52,7 +52,7 @@ section .text
         ;   Label: LAB_0060c2a8
     MOV EAX,dword ptr [EAX + EBX*0x4]   ; 0060c2ad
     PUSH EAX                            ; 0060c2b0
-    CALL dword ptr CS:[0x61159c]        ; 0060c2b1 | PTR_GetFileType_0061159c
+    CALL dword ptr CS:[0x61159c]        ; 0060c2b1 | g_GetFileTypeFunc
     CMP EAX,0x2                         ; 0060c2b8
     JNZ 0x0060c2ce                      ; 0060c2bb
         ;   XREF to: 0060c2ce (CONDITIONAL_JUMP)  ; LAB_0060c2ce

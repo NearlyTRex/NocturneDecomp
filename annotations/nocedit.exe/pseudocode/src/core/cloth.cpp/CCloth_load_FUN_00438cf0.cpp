@@ -70,7 +70,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
     fVar4 = 0.5f;
     fVar3 = 0.005f;
     fVar2 = 0.9f;
-    fVar1 = 32f;
+    fVar1 = 32.0f;
     *(float *)(this_ptr->padding_0x0 + 0x3ce58) = 0.125f;
     uVar7 = _DAT_0065bb70;
     *(float *)(this_ptr->padding_0x0 + 0x3ce5c) = fVar1;

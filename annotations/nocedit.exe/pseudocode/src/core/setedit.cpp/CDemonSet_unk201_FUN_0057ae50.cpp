@@ -8,54 +8,61 @@
 
 /* Signature: byte core_setedit.cpp_CDemonSet_unk201(uint pSet, uint param_2) */
 
-uint core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
+uint
+core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50
+          (uint param_1,uint param_2,int unaff_EBX,uint param_4,CDemonSet *param_5
+          ,int param_6,uint param_7,uint param_8)
 
 {
   char cVar1;
   void *pvVar2;
   int iVar3;
+  int unaff_EBP;
+  int unaff_ESI;
   char *pcVar4;
+  int unaff_EDI;
   char *pcVar5;
   double dVar6;
-  CDemonSet *in_stack_00000004;
-  int in_stack_00000008;
+  int unaff_retaddr;
   CDemonLight *this_ptr;
   CDemonLight *intensity;
-  CGame *in_stack_fffffe78;
-  char acStack_184 [256];
-  char acStack_84 [100];
+  CGame *in_stack_fffffe7c;
+  char acStack_80 [16];
+  char acStack_70 [24];
+  char acStack_58 [16];
+  char acStack_48 [40];
   uint local_20;
   uint local_1c;
-  int local_18;
-  int local_14;
+  uint local_18;
+  uint local_14;
   
-  local_20 = *(uint *)(in_stack_00000008 + 0x11e0);
+  local_20 = *(uint *)(param_6 + 0x11e0);
   local_18 = 1;
   local_14 = 0;
   local_1c = 0;
-  *(uint *)(in_stack_00000008 + 0x11e0) = 0;
+  *(uint *)(param_6 + 0x11e0) = 0;
   core_dlight_cpp_CDemonLight_init_FUN_004727c0(&g_CDemonLightInstance);
   g_CDemonLightInstance.base.max_distance = 255.0;
-  core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,0);
+  core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(param_5,0);
   pvVar2 = PTR_DAT_00681ab8;
-  in_stack_00000004->actor_list_ptr = (void *)0x0;
+  param_5->actor_list_ptr = (void *)0x0;
   core_slew_cpp_CSlew_init_FUN_005a2060(pvVar2);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffe78);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffe7c);
   pvVar2 = PTR_DAT_00681ab8;
-  if (PTR_DAT_00681ab8 != (uint *)(in_stack_00000008 + 0x104)) {
-    *(uint *)PTR_DAT_00681ab8 = *(uint *)(in_stack_00000008 + 0x104);
-    *(uint *)((int)pvVar2 + 4) = *(uint *)(in_stack_00000008 + 0x108);
-    *(uint *)((int)pvVar2 + 8) = *(uint *)(in_stack_00000008 + 0x10c);
+  if (PTR_DAT_00681ab8 != (uint *)(param_6 + 0x104)) {
+    *(uint *)PTR_DAT_00681ab8 = *(uint *)(param_6 + 0x104);
+    *(uint *)((int)pvVar2 + 4) = *(uint *)(param_6 + 0x108);
+    *(uint *)((int)pvVar2 + 8) = *(uint *)(param_6 + 0x10c);
   }
   pvVar2 = PTR_DAT_00681ab8;
-  if ((uint *)((int)PTR_DAT_00681ab8 + 0xc) != (uint *)(in_stack_00000008 + 0x110)) {
-    *(uint *)((int)PTR_DAT_00681ab8 + 0xc) = *(uint *)(in_stack_00000008 + 0x110);
-    *(uint *)((int)pvVar2 + 0x10) = *(uint *)(in_stack_00000008 + 0x114);
-    *(uint *)((int)pvVar2 + 0x14) = *(uint *)(in_stack_00000008 + 0x118);
+  if ((uint *)((int)PTR_DAT_00681ab8 + 0xc) != (uint *)(param_6 + 0x110)) {
+    *(uint *)((int)PTR_DAT_00681ab8 + 0xc) = *(uint *)(param_6 + 0x110);
+    *(uint *)((int)pvVar2 + 0x10) = *(uint *)(param_6 + 0x114);
+    *(uint *)((int)pvVar2 + 0x14) = *(uint *)(param_6 + 0x118);
   }
-  pcVar5 = acStack_84;
-  pcVar4 = (char *)(in_stack_00000008 + 4);
-  *(uint *)((int)PTR_DAT_00681ab8 + 0x18) = *(uint *)(in_stack_00000008 + 0x11c);
+  pcVar5 = acStack_80;
+  pcVar4 = (char *)(param_6 + 4);
+  *(uint *)((int)PTR_DAT_00681ab8 + 0x18) = *(uint *)(param_6 + 0x11c);
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -74,7 +81,7 @@ LAB_0057af67:
   }
   (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
   core_slew_cpp_CSlew_processInput_FUN_005a20b0(PTR_DAT_00681ab8);
-  if (local_18 != 0) {
+  if (unaff_EBP != 0) {
     if (PTR_DAT_00681ab8 != &g_CDemonLightInstance.base.base.position) {
       g_CDemonLightInstance.base.base.position.x = *(int *)PTR_DAT_00681ab8;
       g_CDemonLightInstance.base.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);
@@ -87,47 +94,47 @@ LAB_0057af67:
     intensity = &g_CDemonLightInstance;
     this_ptr = (CDemonLight *)0x57b009;
     dVar6 = crt_math_c_round_FUN_005fe6b0
-                      ((double)(*(float *)(in_stack_00000008 + 0x120) * (float)65536));
+                      ((double)(*(float *)(param_6 + 0x120) * (float)65536));
     g_CDemonLightInstance.transform_scale_factor = (int)ROUND(dVar6);
     core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(this_ptr,(float)intensity);
     g_CDemonLightInstance.base.max_distance = 255.0;
     g_CDemonLightInstance.light_enabled_flag = 1;
-    core_set_cpp_CDemonSet_FUN_0056c1a0(in_stack_00000004);
+    core_set_cpp_CDemonSet_FUN_0056c1a0(param_5);
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
     if (iVar3 != 0) {
-      local_14 = local_14 + 1;
-      if (in_stack_00000004->camera_count <= local_14) {
-        local_14 = 0;
+      unaff_ESI = unaff_ESI + 1;
+      if (param_5->camera_count <= unaff_ESI) {
+        unaff_ESI = 0;
       }
-      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,local_14);
+      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(param_5,unaff_ESI);
     }
   }
-  if ((local_18 == 0) || (0xf0 < g_WindowHeight)) {
+  if ((unaff_EDI == 0) || (0xf0 < g_WindowHeight)) {
     core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
               (&g_CDemonLightInstance,0x180,0,0x100);
   }
-  iVar3 = core_setedit_cpp_CDemonSet_FUN_00577af0(in_stack_00000004);
+  iVar3 = core_setedit_cpp_CDemonSet_FUN_00577af0(param_5);
   if (iVar3 != -1) {
-    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,iVar3);
+    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(param_5,iVar3);
   }
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);
-  if ((iVar3 != 0) && (local_18 = 1 - local_18, local_18 != 0)) {
-    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,local_14);
+  if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {
+    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(param_5,unaff_retaddr);
   }
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
-  engine_2d_c_drawText_FUN_00401fd0(acStack_84,0,0xb);
+  engine_2d_c_drawText_FUN_00401fd0(acStack_70,0,0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_184,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
-  engine_2d_c_drawText_FUN_00401fd0(acStack_184,0,g_WindowHeight + -0xb);
+            (&stack0xfffffe90,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
+  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_184,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8,
-             (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
+            (&stack0xfffffe90,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8
+             ,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
              (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
              180 * (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));
-  engine_2d_c_drawText_FUN_00401fd0(acStack_184,0,0x16);
+  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0x16);
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
@@ -152,25 +159,25 @@ LAB_0057af67:
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
   if (iVar3 != 0) {
     shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-              (g_CEditorToolsPtr,"Edit light name",acStack_84,100,1);
+              (g_CEditorToolsPtr,"Edit light name",acStack_48,100,1);
   }
   goto LAB_0057af67;
 LAB_0057b341:
-  if ((uint *)(in_stack_00000008 + 0x104) != PTR_DAT_00681ab8) {
-    *(uint *)(in_stack_00000008 + 0x104) = *(uint *)PTR_DAT_00681ab8;
-    *(uint *)(in_stack_00000008 + 0x108) = *(uint *)((int)pvVar2 + 4);
-    *(uint *)(in_stack_00000008 + 0x10c) = *(uint *)((int)pvVar2 + 8);
+  if ((uint *)(param_6 + 0x104) != PTR_DAT_00681ab8) {
+    *(uint *)(param_6 + 0x104) = *(uint *)PTR_DAT_00681ab8;
+    *(uint *)(param_6 + 0x108) = *(uint *)((int)pvVar2 + 4);
+    *(uint *)(param_6 + 0x10c) = *(uint *)((int)pvVar2 + 8);
   }
   pvVar2 = PTR_DAT_00681ab8;
-  if ((uint *)(in_stack_00000008 + 0x110) != (uint *)((int)PTR_DAT_00681ab8 + 0xc)) {
-    *(uint *)(in_stack_00000008 + 0x110) = *(uint *)((int)PTR_DAT_00681ab8 + 0xc);
-    *(uint *)(in_stack_00000008 + 0x114) = *(uint *)((int)pvVar2 + 0x10);
-    *(uint *)(in_stack_00000008 + 0x118) = *(uint *)((int)pvVar2 + 0x14);
+  if ((uint *)(param_6 + 0x110) != (uint *)((int)PTR_DAT_00681ab8 + 0xc)) {
+    *(uint *)(param_6 + 0x110) = *(uint *)((int)PTR_DAT_00681ab8 + 0xc);
+    *(uint *)(param_6 + 0x114) = *(uint *)((int)pvVar2 + 0x10);
+    *(uint *)(param_6 + 0x118) = *(uint *)((int)pvVar2 + 0x14);
   }
-  pcVar5 = acStack_84;
-  local_1c = 1;
-  pcVar4 = (char *)(in_stack_00000008 + 4);
-  *(uint *)(in_stack_00000008 + 0x11c) = *(uint *)((int)PTR_DAT_00681ab8 + 0x18);
+  pcVar5 = acStack_58;
+  param_8 = 1;
+  pcVar4 = (char *)(param_6 + 4);
+  *(uint *)(param_6 + 0x11c) = *(uint *)((int)PTR_DAT_00681ab8 + 0x18);
   do {
     cVar1 = *pcVar5;
     *pcVar4 = cVar1;
@@ -184,6 +191,6 @@ LAB_0057b3c9:
   core_slew_cpp_CSlew_free_FUN_005a20a0();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_CDemonLightInstance.light_enabled_flag = 0;
-  *(uint *)(in_stack_00000008 + 0x11e0) = local_20;
-  return local_1c;
+  *(uint *)(param_6 + 0x11e0) = param_7;
+  return param_8;
 }

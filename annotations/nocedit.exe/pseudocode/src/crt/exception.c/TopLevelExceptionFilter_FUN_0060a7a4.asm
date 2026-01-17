@@ -13,7 +13,7 @@
 ;   crt_exception.c_installExceptionHandler_FUN_0060aba8 at 0060abe6
 ;
 ; Referenced Globals:
-;   WriteFile* PTR_WriteFile_00611678 = 00212300
+;   WriteFile* g_WriteFileFunc = 00212300
 ;   TerminatedCString s_The_instruction_at_0x000_0065912c
 ;   TerminatedCString s_The_instruction_at_0x000_00659180
 ;   TerminatedCString s_The_instruction_at_0x000_006591d4
@@ -266,7 +266,7 @@ section .text
     MOV EAX,[0x0068526c]                ; 0060a999 | g_IOControlBlock
     MOV EDX,dword ptr [EAX + 0x8]       ; 0060a99e
     PUSH EDX                            ; 0060a9a1
-    CALL dword ptr CS:[0x611678]        ; 0060a9a2 | PTR_WriteFile_00611678
+    CALL dword ptr CS:[0x611678]        ; 0060a9a2 | g_WriteFileFunc
     MOV EAX,0x1                         ; 0060a9a9
     ADD ESP,0x104                       ; 0060a9ae
         ;   Label: LAB_0060a9ae

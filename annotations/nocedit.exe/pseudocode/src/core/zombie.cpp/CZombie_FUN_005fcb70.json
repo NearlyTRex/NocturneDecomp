@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 77,
+    "complexity_score": 162,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "pseudocode_lines": 32,
-    "suspect_count": 4,
+    "suspect_count": 12,
     "suspect_types": [
+      "call_esp_anchor",
       "stack_param"
     ],
     "total_lines": 118
@@ -99,32 +100,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "005fcb7e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "005fcb98": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "005fcbae": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "005fcbc0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "005fcbd2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "005fcbe4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "005fcbf6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "005fcc06": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.119402985074627,
     "instruction_count": 67,
@@ -152,7 +127,43 @@
     },
     "pcode_op_count": 276
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "CEnemy *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "core_enemy_cpp_CEnemy_FUN_004aa250(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = &(in_stack_00000004->base_character).model;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "((in_stack_00000004->base_character).model.model_name,\"jeff.dfm\");",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 4,
       "call_address": "005fcb79",
@@ -256,44 +267,6 @@
       "target_address": "0x40cc70",
       "text": "Direct CALL at 005fcc01, ADD ESP at 005fcc06 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "CEnemy *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "core_enemy_cpp_CEnemy_FUN_004aa250(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = &(in_stack_00000004->base_character).model;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "((in_stack_00000004->base_character).model.model_name,\"jeff.dfm\");",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

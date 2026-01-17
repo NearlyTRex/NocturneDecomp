@@ -30,7 +30,7 @@ void crt_unknown_c_SetStdHandleToSomething_FUN_00608a1c(void)
     if (in_stack_00000008 != 2) goto LAB_00608a6a;
     nStdHandle = 0xfffffff4;
   }
-  (*PTR_SetStdHandle_00611638)(nStdHandle,in_stack_00000004);
+  (*g_SetStdHandleFunc)(nStdHandle,in_stack_00000004);
 LAB_00608a6a:
   if ((int)in_stack_00000008 < g_CurrentHandleCount) {
     g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;

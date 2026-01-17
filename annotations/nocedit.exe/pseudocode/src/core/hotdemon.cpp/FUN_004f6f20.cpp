@@ -27,7 +27,6 @@ void core_hotdemon_cpp_FUN_004f6f20(void)
   uint uVar10;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  SDamageInfo local_10c;
   CVector3f local_d0;
   CVector3f local_c4;
   CVector3f local_b8;
@@ -128,7 +127,7 @@ LAB_004f7178:
                    (in_stack_00000004->base_character).base_actor.location.position.z;
       local_28 = SQRT(local_c4.z * local_c4.z + local_c4.x * local_c4.x + local_c4.y * local_c4.y);
       local_24 = local_28;
-      if (local_28 < DAT_0065fccc) {
+      if (local_28 < 0x40000000) {
         core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_40,&local_c4);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (local_40.y -
@@ -181,10 +180,10 @@ LAB_004f7178:
   case 0xf:
     (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
               ((CDemonActor *)in_stack_00000004);
-    fVar3 = DAT_0065fccc;
+    fVar3 = 0x40000000;
     pCVar1 = &(in_stack_00000004->base_character).model;
     if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
-      local_1c = DAT_0065fccc;
+      local_1c = 0x40000000;
       (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
       (in_stack_00000004->base_character).model.accumulated_root_motion.y =
            (in_stack_00000004->base_character).model.accumulated_root_motion.z;
@@ -288,11 +287,8 @@ LAB_004f73d5:
     break;
   case 2:
   case 8:
-    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_10c);
-    local_10c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-    local_10c.attacker = (CDemonActor *)in_stack_00000004;
-    local_10c.wielder = (CDemonActor *)in_stack_00000004;
-    local_14 = local_10c.damage_amount;
+    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffef4);
+    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
     pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_4c,&g_ZeroVector,
                         (CMatrix3x4f *)

@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 22,
+    "complexity_score": 37,
     "cross_reference_count": 36,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 22,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_align_anchor"
+    ],
     "total_lines": 90
   },
   "cross_references": [
@@ -296,11 +298,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "0040cc78": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.925925925925926,
     "instruction_count": 54,
@@ -331,18 +328,6 @@
     },
     "pcode_op_count": 266
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
-      "fix_address": "0040cc78",
-      "frame_offset": 20,
-      "match": "AND ESP",
-      "sub_esp_offset": 20,
-      "text": "Stack alignment at 0040cc78 (SUB ESP, 0x14 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 36,
@@ -411,5 +396,16 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
+      "fix_address": "0040cc78",
+      "frame_offset": 20,
+      "match": "AND ESP",
+      "sub_esp_offset": 20,
+      "text": "Stack alignment at 0040cc78 (SUB ESP, 0x14 before)",
+      "type": "stack_align_anchor"
+    }
+  ]
 }

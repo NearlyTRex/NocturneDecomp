@@ -56,7 +56,7 @@ uint core_bugs_cpp_FUN_00426420(void)
     local_14 = (float)core_bugs_cpp_FUN_00425b70();
     in_stack_00000008[3] = (int)local_14;
     if (in_stack_00000010 == (float *)0x0) {
-      local_40 = _DAT_0065b5c8 * 12f * (float)0.5;
+      local_40 = _DAT_0065b5c8 * 12.0f * (float)0.5;
       local_18 = _DAT_0065b5c8 * 1.6018581507970269e-314._0_4_ * (float)0.5;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_18,local_40);
       in_stack_00000008[8] = (int)local_14;

@@ -77,7 +77,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
           fVar3 = *(float *)(iVar8 + 0x24) - (local_28->position).y;
           fVar4 = *(float *)(iVar8 + 0x28) - (local_28->position).z;
           if ((ABS(fVar3) <= fVar1) &&
-             (fVar3 = fVar3 * 3f,
+             (fVar3 = fVar3 * 3.0f,
              fStack_30 = fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3, fStack_30 <= local_38)) {
             *(int *)((int)&DAT_02cf2bf4 + local_20) = iVar8;
             *(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;
@@ -151,7 +151,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
     }
   }
   else {
-    if (iVar5 == DAT_0065d7c8) {
+    if (iVar5 == 0xFFFFFFFF) {
       this_ptr->field6_0xbe38[4] = '\0';
       this_ptr->field6_0xbe38[5] = '\0';
       this_ptr->field6_0xbe38[6] = '\0';

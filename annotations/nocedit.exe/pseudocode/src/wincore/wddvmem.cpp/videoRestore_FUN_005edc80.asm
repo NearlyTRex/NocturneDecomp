@@ -9,7 +9,7 @@
 ;   wincore_winrun.cpp_mainWindowProc_FUN_005f3150 at 005f325c
 ;
 ; Referenced Globals:
-;   SetFocus* PTR_SetFocus_006114e8 = 00211bd4
+;   SetFocus* g_SetFocusFunc = 00211bd4
 ;   TerminatedCString s_wincore_wddvmem_cpp_00657a60
 ;   TerminatedCString s_videoRestore_Unable_to_s_00657a77
 ;   int g_WindowWidth = 0x140
@@ -126,7 +126,7 @@ section .text
     MOV EBX,dword ptr [0x03f98468]      ; 005edd61 | g_MainWindowHandle
         ;   Label: LAB_005edd61
     PUSH EBX                            ; 005edd67
-    CALL dword ptr CS:[0x6114e8]        ; 005edd68 | PTR_SetFocus_006114e8
+    CALL dword ptr CS:[0x6114e8]        ; 005edd68 | g_SetFocusFunc
     POP EBP                             ; 005edd6f
         ;   Label: LAB_005edd6f
     POP ESI                             ; 005edd70

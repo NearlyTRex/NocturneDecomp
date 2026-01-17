@@ -18,7 +18,7 @@ void crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(void *pParam)
   int in_stack_00000008;
   uint *pHeapBound;
   
-  (*GetModuleHandleA)((LPCSTR)0x0);
+  (*g_GetModuleHandleAFunc)((LPCSTR)0x0);
   crt_startup_c_initialize_runtime_FUN_0060245c(unaff_retaddr,in_stack_00000004,in_stack_00000008);
   pHeapBound = (uint *)&DAT_00684ff4;
   pStackBound = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();

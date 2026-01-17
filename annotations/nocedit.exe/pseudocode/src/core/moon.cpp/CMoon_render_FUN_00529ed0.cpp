@@ -87,8 +87,9 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
           dVar7 = (local_38 + -0.5) * 8192;
         }
         else {
-          dVar7 = (double)8192f - (double)local_18 * (double)16384f;
+          dVar7 = (double)8192.0f - (double)local_18 * (double)16384.0f;
         }
+        local_5c.x = 7.588293e-39;
         dVar7 = crt_math_c_round_FUN_005fe6b0(dVar7);
         local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
         *(CKeyFramedModelInstance **)(extraout_EDX + 0x15ae80) = local_14;

@@ -18,7 +18,7 @@
 ;   sound_sndmain.cpp_lockSound_FUN_005abd30 at 005abd75
 ;
 ; Referenced Globals:
-;   WaitForSingleObject* WaitForSingleObject = 002122c4
+;   WaitForSingleObject* g_WaitForSingleObjectFunc = 002122c4
 ;
 ; Called Functions:
 ;   WaitForSingleObject
@@ -36,7 +36,7 @@ section .text
     PUSH -0x1                           ; 005f3ff9
         ;   Label: LAB_005f3ff9
     PUSH EAX                            ; 005f3ffb
-    CALL dword ptr CS:[0x61166c]        ; 005f3ffc | WaitForSingleObject
+    CALL dword ptr CS:[0x61166c]        ; 005f3ffc | g_WaitForSingleObjectFunc
     TEST EAX,EAX                        ; 005f4003
     SETZ AL                             ; 005f4005
     AND EAX,0xff                        ; 005f4008

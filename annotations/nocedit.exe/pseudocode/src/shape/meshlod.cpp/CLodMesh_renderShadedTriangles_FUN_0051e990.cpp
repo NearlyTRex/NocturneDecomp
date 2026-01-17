@@ -44,7 +44,7 @@ shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
         local_3c = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3);
         local_30 = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3 + 4);
         if (use_palette_coloring == 0) {
-          fVar4 = (float10)127f;
+          fVar4 = (float10)127.0f;
           fVar5 = (float10)*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) * fVar4 +
                   fVar4;
           fVar6 = (float10)*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) * fVar4 +

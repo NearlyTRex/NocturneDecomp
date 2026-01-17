@@ -17,9 +17,9 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
   int local_14;
   int local_10;
   
-  CStack_28.x = (float)(int)ROUND(label_offset->w * 256f);
-  CStack_28.y = (float)(int)ROUND(label_offset->x * 256f);
-  CStack_28.z = (float)(int)ROUND(label_offset->y * 256f);
+  CStack_28.x = (float)(int)ROUND(label_offset->w * 256.0f);
+  CStack_28.y = (float)(int)ROUND(label_offset->x * 256.0f);
+  CStack_28.z = (float)(int)ROUND(label_offset->y * 256.0f);
   engine_3d_c_processCameraRelativePoint_FUN_004037e0(&CStack_28);
   local_18 = (int)ROUND(*(float *)param5 * 10430.38f);
   local_14 = (int)ROUND(*(float *)((int)param5 + 8) * 10430.38f);

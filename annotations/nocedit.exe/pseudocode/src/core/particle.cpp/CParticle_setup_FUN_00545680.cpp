@@ -41,7 +41,7 @@ core_particle_cpp_CParticle_setup_FUN_00545680
   fVar4 = (float10)fcos((float10)fVar1);
   fVar5 = (float10)fsin((float10)fVar2);
   fVar6 = (float10)fsin((float10)fVar1);
-  fVar7 = (float10)10f;
+  fVar7 = (float10)10.0f;
   (this_ptr->velocity).y = (float)(fVar6 * fVar7);
   (this_ptr->velocity).x = (float)(fVar3 * fVar7 * fVar4);
   (this_ptr->velocity).z = (float)(fVar5 * fVar7 * fVar4);

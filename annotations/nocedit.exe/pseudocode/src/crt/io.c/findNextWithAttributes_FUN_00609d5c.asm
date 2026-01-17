@@ -13,7 +13,7 @@
 ;   crt_io.c_findNextFileWrapper_FUN_00602300 at 00602336
 ;
 ; Referenced Globals:
-;   FindNextFileA* PTR_FindNextFileA_00611550 = 00211d96
+;   FindNextFileA* g_FindNextFileAFunc = 00211d96
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     PUSH EBX                            ; 00609d83
         ;   Label: LAB_00609d83
     PUSH EDI                            ; 00609d84
-    CALL dword ptr CS:[0x611550]        ; 00609d85 | PTR_FindNextFileA_00611550
+    CALL dword ptr CS:[0x611550]        ; 00609d85 | g_FindNextFileAFunc
     TEST EAX,EAX                        ; 00609d8c
     JNZ 0x00609d6b                      ; 00609d8e
         ;   XREF to: 00609d6b (CONDITIONAL_JUMP)  ; LAB_00609d6b

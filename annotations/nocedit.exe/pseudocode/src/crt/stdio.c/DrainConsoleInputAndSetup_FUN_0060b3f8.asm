@@ -8,8 +8,8 @@
 ;   crt_stdio.c_SetupConsoleInputMode_FUN_006059b0 at 006059b8
 ;
 ; Referenced Globals:
-;   GetConsoleMode* PTR_GetConsoleMode_00611574 = 00211e30
-;   SetConsoleMode* PTR_SetConsoleMode_00611610 = 00212126
+;   GetConsoleMode* g_GetConsoleModeFunc = 00211e30
+;   SetConsoleMode* g_SetConsoleModeFunc = 00212126
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   int g_ConsoleInitializationFlag = 0x0
@@ -62,10 +62,10 @@ section .text
     MOV EAX,ESP                         ; 0060b442
     PUSH EAX                            ; 0060b444
     PUSH EBX                            ; 0060b445
-    CALL dword ptr CS:[0x611574]        ; 0060b446 | PTR_GetConsoleMode_00611574
+    CALL dword ptr CS:[0x611574]        ; 0060b446 | g_GetConsoleModeFunc
     PUSH 0x0                            ; 0060b44d
     PUSH EBX                            ; 0060b44f
-    CALL dword ptr CS:[0x611610]        ; 0060b450 | PTR_SetConsoleMode_00611610
+    CALL dword ptr CS:[0x611610]        ; 0060b450 | g_SetConsoleModeFunc
     PUSH EBX                            ; 0060b457
     CALL crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0060b2e0 ; 0060b458
         ;   XREF to: 0060b2e0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0060b2e0(HANDLE hConsoleInput)
@@ -74,7 +74,7 @@ section .text
     PUSH ECX                            ; 0060b463
     PUSH EBX                            ; 0060b464
     MOV ESI,EAX                         ; 0060b465
-    CALL dword ptr CS:[0x611610]        ; 0060b467 | PTR_SetConsoleMode_00611610
+    CALL dword ptr CS:[0x611610]        ; 0060b467 | g_SetConsoleModeFunc
     PUSH 0x0                            ; 0060b46e
     CALL dword ptr [0x00684eec]         ; 0060b470 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 0060b476

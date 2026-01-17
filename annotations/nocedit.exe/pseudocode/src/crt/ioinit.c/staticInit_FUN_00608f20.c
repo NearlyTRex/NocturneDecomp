@@ -14,9 +14,9 @@ void __cdecl crt_ioinit_c_staticInit_FUN_00608f20(void)
   streambuf *psVar3;
   FILE **ppFVar4;
   
-  DAT_00684d05 = DAT_00684d05 & 0xf8 | 4;
+  0 = 0 & 0xf8 | 4;
   ppFVar4 = &g_StaticFilePoolStart;
-  iVar1 = DAT_00684cd0;
+  iVar1 = 0x00000001;
   while (iVar1 != 0) {
     psVar3 = crt_heap_c_InternalHeapAlloc_FUN_00601bc0(0x1d);
     if ((psVar3 == (streambuf *)0x0) &&

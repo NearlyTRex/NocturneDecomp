@@ -28,6 +28,6 @@ void __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread,in
   else {
     nPriority = 0;
   }
-  (*SetThreadPriority)(hThread,nPriority);
+  (*g_SetThreadPriorityFunc)(hThread,nPriority);
   return;
 }

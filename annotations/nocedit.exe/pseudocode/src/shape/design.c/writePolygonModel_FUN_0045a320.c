@@ -18,37 +18,35 @@ shape_design_c_writePolygonModel_FUN_0045a320
   double dVar5;
   double dVar6;
   double dVar7;
-  uint uVar8;
+  double dVar8;
   uint uVar9;
-  ulonglong uVar10;
+  uint uVar10;
+  uint uVar11;
   int local_14;
   
   shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + polygon_index);
-  uVar8 = 0x45a35b;
   dVar5 = crt_math_c_round_FUN_005fe6b0
-                    ((double)(g_ModelPolygonData[polygon_index].normal.x * 65535f));
-  uVar10 = CONCAT44 /* combine 2-byte values */(uVar8,0x45a376);
+                    ((double)(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
+  uVar11 = 0x45a376;
   dVar6 = crt_math_c_round_FUN_005fe6b0
-                    ((double)(g_ModelPolygonData[polygon_index].normal.y * 65535f));
-  uVar9 = 0x45a391;
+                    ((double)(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));
+  uVar10 = 0x45a391;
   dVar7 = crt_math_c_round_FUN_005fe6b0
-                    ((double)(g_ModelPolygonData[polygon_index].normal.z * 65535f));
-  uVar8 = 0x45a3b7;
-  crt_math_c_round_FUN_005fe6b0
-            ((double)(scale_factor *
-                     g_ModelPolygonData[polygon_index].plane_distance * (float)65535 *
-                     (float)256));
+                    ((double)(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));
+  uVar9 = 0x45a3b7;
+  dVar8 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(scale_factor *
+                             g_ModelPolygonData[polygon_index].plane_distance *
+                             (float)65535 * (float)256));
   if (g_ModelPolygonData[polygon_index].polygon_type == 1) {
     if (g_EditorColorIndex != g_ModelPolygonData[polygon_index].material_id) {
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (output_file,"\tCOLOR\t%d\n",g_ModelPolygonData[polygon_index].material_id,uVar8,
-                 uVar9,uVar10);
+      crt_stdio_c_fprintf_FUN_005fe6d0(output_file,"\tCOLOR\t%d\n");
       g_EditorColorIndex = g_ModelPolygonData[polygon_index].material_id;
     }
     crt_stdio_c_fprintf_FUN_005fe6d0
               (output_file,"\tFACET%d\t%d,%d,%d,%d",
                g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),
-               (int)ROUND(dVar6),(int)ROUND(dVar7));
+               (int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);
     for (local_14 = 0; local_14 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_14 = local_14 + 1) {
       crt_stdio_c_fprintf_FUN_005fe6d0(output_file,",%d");
@@ -75,7 +73,7 @@ shape_design_c_writePolygonModel_FUN_0045a320
     crt_stdio_c_fprintf_FUN_005fe6d0
               (output_file,"\tFACET%dTMAP\t%d,%d,%d,%d",
                g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),
-               (int)ROUND(dVar6),(int)ROUND(dVar7));
+               (int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);
     for (local_14 = 0; local_14 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_14 = local_14 + 1) {
       crt_stdio_c_fprintf_FUN_005fe6d0(output_file,",%d");

@@ -1,14 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 224,
-    "complexity_score": 415,
+    "complexity_score": 560,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 10,
     "pseudocode_lines": 125,
-    "suspect_count": 27,
+    "suspect_count": 40,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "pointer_cast",
+      "stack_align_anchor",
       "stack_param",
       "stack_ref",
       "warning_overlapping_globals"
@@ -135,47 +138,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "00502629": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "00502635": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "0050264d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "00502656": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "00502680": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "0050274b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "0050278a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "005027b6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "0050281e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "0050284a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "00502877": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "0050288f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ],
-    "005028af": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.527918781725888,
     "instruction_count": 197,
@@ -219,7 +181,272 @@
     },
     "pcode_op_count": 1089
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 120,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 7,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00502629",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "0050279c",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005027ab",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00502830",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0050283f",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0050285c",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0050286b",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffff28",
+      "text": "SRenderVertex *in_stack_ffffff28;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffff2c",
+      "text": "SRenderVertex *in_stack_ffffff2c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)(auStack_78 + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[2].location.position.z + (float)0.001 <= fStack_70) break;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0xffffff28",
+      "text": "piVar5 = (int *)&stack0xffffff28;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_ffffff28",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,in_stack_ffffff2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_ffffff2c",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,in_stack_ffffff2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 80,
+      "match": "&stack0xffffff28",
+      "text": "piVar5 = (int *)&stack0xffffff28;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_ffffff28",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,in_stack_ffffff2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_ffffff2c",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,in_stack_ffffff2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_00000004",
+      "text": "fStack_3c = -in_stack_00000004[2].location.position.y * (float)0.5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_00000004",
+      "text": "fStack_24 = (float)0.5 * in_stack_00000004[2].location.position.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 112,
+      "match": "&stack0xffffff28",
+      "text": "piVar5 = (int *)&stack0xffffff28;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 118,
+      "match": "in_stack_ffffff28",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,in_stack_ffffff2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 118,
+      "match": "in_stack_ffffff2c",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,in_stack_ffffff2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 125,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),0.0,-1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 127,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "0050264a",
@@ -383,273 +610,6 @@
       "target_address": "0x478d20",
       "text": "Direct CALL at 005028aa, ADD ESP at 005028af with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 120,
-    "local_size": 120,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 1,
-        "type": "undefined1"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 7,
-    "pattern_types": [
-      "alt_frame_pointer",
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "00502629",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      },
-      {
-        "address": "0050279c",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
-        "address": "005027ab",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
-        "address": "00502830",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
-        "address": "0050283f",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
-        "address": "0050285c",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
-        "address": "0050286b",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_ffffff20",
-      "text": "SRenderVertex *in_stack_ffffff20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffff24",
-      "text": "SRenderVertex *in_stack_ffffff24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_74);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_74);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[2].location.position.z + (float)0.001 <= fStack_78) break;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffff20",
-      "text": "piVar4 = (int *)&stack0xffffff20;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_ffffff20",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff20,in_stack_ffffff24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_ffffff24",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff20,in_stack_ffffff24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xffffff20",
-      "text": "piVar4 = (int *)&stack0xffffff20;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_ffffff20",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff20,in_stack_ffffff24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_ffffff24",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff20,in_stack_ffffff24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000004",
-      "text": "fStack_44 = -in_stack_00000004[2].location.position.y * (float)0.5;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_00000004",
-      "text": "fStack_2c = (float)0.5 * in_stack_00000004[2].location.position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 108,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xffffff20",
-      "text": "piVar4 = (int *)&stack0xffffff20;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffff20",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff20,in_stack_ffffff24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffff24",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff20,in_stack_ffffff24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),0.0,-1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

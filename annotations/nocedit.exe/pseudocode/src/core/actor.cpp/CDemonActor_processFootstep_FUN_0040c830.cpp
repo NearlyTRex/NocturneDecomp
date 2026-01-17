@@ -20,7 +20,7 @@ core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,fl
   fVar1 = (position->position).x - (float)g_CDemonCameraInstance.base.position.x;
   fVar3 = (this_ptr->location).position.y - (float)g_CDemonCameraInstance.base.position.y;
   fVar2 = (this_ptr->location).position.z - (float)g_CDemonCameraInstance.base.position.z;
-  if (10000f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
+  if (10000.0f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
     return 0;
   }
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr);

@@ -1,13 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 60,
+    "complexity_score": 145,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "pseudocode_lines": 60,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 7,
+    "suspect_types": [
+      "call_esp_anchor",
+      "stack_align_anchor",
+      "variadic_anchor"
+    ],
     "total_lines": 198
   },
   "cross_references": [],
@@ -132,29 +136,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "005ae34c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffcd8,4)"
-    ],
-    "005ae3d3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffcd8,4)"
-    ],
-    "005ae413": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffcd8,4)"
-    ],
-    "005ae42b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffcd8,4)"
-    ],
-    "005ae438": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffcd8,4)"
-    ],
-    "005ae46f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffcd8,4)"
-    ],
-    "005ae48a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffcd8,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.04424778761062,
     "instruction_count": 113,
@@ -196,7 +177,47 @@
     },
     "pcode_op_count": 570
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 832,
+    "local_size": 828,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_338",
+        "offset": -824,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005ae34c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
     {
       "add_esp_value": 16,
       "call_address": "005ae426",
@@ -295,47 +316,6 @@
       "type": "call_esp_anchor"
     }
   ],
-  "stack_frame": {
-    "frame_size": 832,
-    "local_size": 828,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_338",
-        "offset": -824,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDirectSoundDevice *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005ae34c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [],
   "vtable_info": {
     "entries": [
       {

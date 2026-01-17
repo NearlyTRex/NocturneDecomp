@@ -87,7 +87,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
     pCVar6 = local_14 + piVar2[1];
     pCVar8 = local_14 + *piVar2;
     local_44 = (pCVar8->position).x + (pCVar6->position).x;
-    local_50 = local_44 / 2f;
+    local_50 = local_44 / 2.0f;
     local_40 = (pCVar8->position).y + (pCVar6->position).y;
     local_3c = (pCVar8->position).z + (pCVar6->position).z;
     local_4c = local_40 * 0.5f;

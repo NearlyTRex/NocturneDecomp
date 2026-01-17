@@ -50,36 +50,37 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float10 fVar29;
   double dVar30;
   int *in_stack_00000004;
+  float in_stack_ffff5e08;
   float in_stack_ffff5e0c;
-  float in_stack_ffff5e10;
-  uint in_stack_ffff5e14;
+  uint in_stack_ffff5e10;
   float fVar31;
+  uint in_stack_ffff5e14;
   uint in_stack_ffff5e18;
-  uint in_stack_ffff5e1c;
-  ushort auStack_22c0 [1018];
-  uint auStack_1acc [953];
-  CPickList CStack_be8;
-  char acStack_840 [260];
-  char acStack_73c [256];
-  char acStack_63c [256];
-  char acStack_53c [200];
-  byte auStack_474 [120];
-  uint auStack_3fc [30];
-  char acStack_384 [100];
-  CBoundingBox3D local_320;
-  byte local_308 [16];
-  float local_2f8;
-  streambuf *local_2f4;
-  uint uStack_2f0;
-  byte auStack_2ec [4];
+  ushort auStack_22c4 [1018];
+  uint auStack_1ad0 [953];
+  CPickList local_bec;
+  char local_844 [260];
+  char local_740 [256];
+  char local_640 [256];
+  char local_540 [200];
+  byte local_478 [120];
+  uint local_400 [30];
+  char local_388 [100];
+  CBoundingBox3D local_324;
+  byte local_30c [16];
+  float local_2fc;
+  streambuf *local_2f8;
+  uint local_2f4;
+  byte auStack_2f0 [4];
+  uint uStack_2ec;
   uint local_2e8;
-  uint uStack_2e4;
-  ushort local_2e0 [2];
-  uint uStack_2dc;
-  byte auStack_2d8 [4];
+  ushort auStack_2e4 [2];
+  uint local_2e0;
+  byte auStack_2dc [4];
+  uint uStack_2d8;
   uint local_2d4;
-  uint uStack_2d0;
-  ushort local_2cc [2];
+  ushort auStack_2d0 [2];
+  float local_2cc;
   float local_2c8;
   float local_2c4;
   float local_2c0;
@@ -91,19 +92,19 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float local_2a8;
   float local_2a4;
   float local_2a0;
-  float local_29c;
-  char *local_298;
-  float local_294;
-  streambuf *local_290;
-  char *local_28c;
-  float local_288;
-  streambuf *local_284;
+  char *local_29c;
+  float local_298;
+  streambuf *local_294;
+  char *local_290;
+  float local_28c;
+  streambuf *local_288;
+  float local_284;
   float local_280;
   float local_27c;
-  float local_278;
-  uint local_274;
+  uint local_278;
+  byte local_274 [4];
   byte local_270 [4];
-  byte local_26c [4];
+  float local_26c;
   float local_268;
   float local_264;
   float local_260;
@@ -112,10 +113,10 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float local_254;
   float local_250;
   float local_24c;
-  float local_248;
-  char *local_244;
-  float local_240;
-  streambuf *local_23c;
+  char *local_248;
+  float local_244;
+  streambuf *local_240;
+  float local_23c;
   float local_238;
   float local_234;
   float local_230;
@@ -130,12 +131,12 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float local_20c;
   float local_208;
   float local_204;
-  float local_200;
-  byte local_1fc [4];
-  byte local_1f8 [8];
-  char *local_1f0;
-  float local_1ec;
-  streambuf *local_1e8;
+  byte local_200 [4];
+  byte local_1fc [8];
+  char *local_1f4;
+  float local_1f0;
+  streambuf *local_1ec;
+  float local_1e8;
   float local_1e4;
   float local_1e0;
   float local_1dc;
@@ -144,101 +145,101 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float local_1d0;
   float local_1cc;
   float local_1c8;
-  float local_1c4;
-  char *local_1c0;
-  float local_1bc;
-  streambuf *local_1b8;
+  char *local_1c4;
+  float local_1c0;
+  streambuf *local_1bc;
+  float local_1b8;
   float local_1b4;
   float local_1b0;
-  float local_1ac;
-  char *local_1a8;
-  float local_1a4;
-  streambuf *local_1a0;
+  char *local_1ac;
+  float local_1a8;
+  streambuf *local_1a4;
+  float local_1a0;
   float local_19c;
   float local_198;
   float local_194;
-  float local_190;
+  byte local_190 [4];
   byte local_18c [4];
-  byte local_188 [4];
-  FILE *local_184;
-  void *local_180;
-  FILE *local_17c;
+  FILE *local_188;
+  void *local_184;
+  FILE *local_180;
+  float *local_17c;
   float *local_178;
-  float *local_174;
-  void *local_170;
-  uint *local_16c;
-  float local_168;
-  char *local_164;
-  byte local_160 [4];
-  int local_15c;
-  void *local_158;
+  void *local_174;
+  uint *local_170;
+  float local_16c;
+  char *local_168;
+  byte local_164 [4];
+  int local_160;
+  void *local_15c;
+  int local_158;
   int local_154;
-  int local_150;
+  uint *local_150;
   uint *local_14c;
-  uint *local_148;
-  int *local_144;
-  int local_140;
-  int *local_13c;
-  uint local_138 [2];
-  void *local_130;
-  uint local_12c;
+  int *local_148;
+  int local_144;
+  int *local_140;
+  uint local_13c [2];
+  void *local_134;
+  uint local_130;
+  int local_12c;
   int local_128;
   int local_124;
   int local_120;
   int local_11c;
   int local_118;
-  int local_114;
-  void *local_110;
-  float local_10c;
-  int local_108;
-  float *local_104;
-  float fStack_100;
+  void *local_114;
+  float local_110;
+  int local_10c;
+  float *local_108;
+  float local_104;
+  float *local_fc;
   float *local_f8;
-  float *local_f4;
-  int local_f0;
-  int *local_ec;
-  FILE *local_e8;
+  int local_f4;
+  int *local_f0;
+  FILE *local_ec;
+  int local_e8;
   int local_e4;
   int local_e0;
-  int local_dc;
-  byte local_d8 [4];
-  int *local_d4;
+  byte local_dc [4];
+  int *local_d8;
+  int local_d4;
   int local_d0;
   int local_cc;
-  int local_c8;
-  short *local_c4;
-  int local_c0;
+  short *local_c8;
+  int local_c4;
+  short *local_c0;
   short *local_bc;
-  short *local_b8;
-  int local_b4;
-  void *local_b0;
-  ushort *local_ac;
-  int local_a8;
+  int local_b8;
+  void *local_b4;
+  ushort *local_b0;
+  int local_ac;
+  int *local_a8;
   int *local_a4;
-  int *local_a0;
-  float local_9c;
-  int local_98;
-  float local_94;
-  byte *local_90;
-  uint *local_8c;
-  streambuf **local_88;
+  float local_a0;
+  int local_9c;
+  float local_98;
+  byte *local_94;
+  uint *local_90;
+  streambuf **local_8c;
+  void *local_88;
   void *local_84;
-  void *local_80;
-  int local_7c;
-  void *local_78;
-  float *local_74;
+  int local_80;
+  void *local_7c;
+  float *local_78;
+  int local_74;
   int local_70;
-  int local_6c;
-  short *local_68;
-  int *local_64;
+  short *local_6c;
+  int *local_68;
+  int local_64;
   int local_60;
-  int local_5c;
-  int *local_58;
+  int *local_5c;
+  int local_58;
   int local_54;
-  int local_50;
+  void *local_50;
   void *local_4c;
-  void *local_48;
-  int *local_44;
+  int *local_48;
+  int local_44;
   int local_40;
   int local_3c;
   int local_38;
@@ -248,9 +249,8 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   int local_28;
   int local_24;
   int local_20;
-  int local_1c;
-  float local_18;
-  int iStack_14;
+  float local_1c;
+  int local_18;
   
   bVar28 = 0;
   crt_stack_c_stack_probe_FUN_005ff9f3(0xa228);
@@ -261,39 +261,39 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Opening %s");
-  local_184 = (FILE *)0x0;
-  local_180 = (void *)0x0;
-  local_17c = (FILE *)0x0;
+  local_188 = (FILE *)0x0;
+  local_184 = (void *)0x0;
+  local_180 = (FILE *)0x0;
+  local_17c = (float *)0x0;
   local_178 = (float *)0x0;
-  local_174 = (float *)0x0;
-  local_170 = (void *)0x0;
-  local_16c = (uint *)0x0;
-  local_ec = (int *)0x0;
-  local_e8 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+  local_174 = (void *)0x0;
+  local_170 = (uint *)0x0;
+  local_f0 = (int *)0x0;
+  local_ec = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (this_ptr->texture_sets[0].textures[4].texture_variants[1].texture_name,
                         (char *)0x0,"rt","..\\core\\skeledit.cpp",0xbde);
-  if (local_e8 == (FILE *)0x0) {
+  if (local_ec == (FILE *)0x0) {
     pcVar15 = "Can't open %s";
   }
   else {
-    local_17c = shape_memdbg_cpp_openFile_FUN_0050f7a0
+    local_180 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           ("parts.log",(char *)0x0,"wt",
                            "..\\core\\skeledit.cpp",0xbee);
-    if (local_17c == (FILE *)0x0) {
+    if (local_180 == (FILE *)0x0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
       g_CurrentLineNumber = 0xbef;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create log file!");
     }
-    crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Matching skeleton parts for %s\n");
-    pFVar5 = local_e8;
+    crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Matching skeleton parts for %s\n");
+    pFVar5 = local_ec;
     iVar14 = 1;
     do {
       iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
-      file = local_e8;
+      file = local_ec;
       if (iVar4 < 0) break;
     } while ((iVar4 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_e8,"%d\n");
-    if ((local_e4 < 0x65) || (0x67 < local_e4)) {
+    crt_stdio_c_fscanf_FUN_005fe7c0(local_ec,"%d\n");
+    if ((local_e8 < 0x65) || (0x67 < local_e8)) {
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (&DAT_03670650,"%s has incorrect S3D version %d",
                  this_ptr->texture_sets[0].textures[4].texture_variants[1].texture_name);
@@ -305,16 +305,16 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
       if (iVar4 < 0) break;
     } while ((iVar4 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
     iVar14 = crt_stdio_c_fscanf_FUN_005fe7c0
-                       (local_e8,"%d,%d,%d,%d,%d,%d,%d\n",&local_e0,&local_168,&local_164,&local_dc,
-                        local_160,local_d8);
+                       (local_ec,"%d,%d,%d,%d,%d,%d,%d\n",&local_e4,&local_16c,&local_168,&local_e0,
+                        local_164,local_dc);
     this_ptr_00 = g_CEditorToolsPtr;
     if (iVar14 == 7) {
-      if (local_dc < 0x1f) {
-        in_stack_00000004[0x1c50] = local_dc;
+      if (local_e0 < 0x1f) {
+        in_stack_00000004[0x1c50] = local_e0;
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (this_ptr_00,"Reading part list from %s");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Reading part list from %s\n");
-        pFVar5 = local_e8;
+        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Reading part list from %s\n");
+        pFVar5 = local_ec;
         iVar14 = 1;
         do {
           iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
@@ -322,54 +322,54 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         } while ((iVar4 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
         iVar14 = 0;
         if (0 < in_stack_00000004[0x1c50]) {
-          local_144 = in_stack_00000004 + 0x1c51;
-          local_90 = auStack_474;
-          local_8c = auStack_3fc;
+          local_148 = in_stack_00000004 + 0x1c51;
+          local_94 = local_478;
+          local_90 = local_400;
           piVar27 = in_stack_00000004 + 0x1c59;
           do {
-            local_13c = local_144 + iVar14 * 0x18;
-            local_140 = iVar14 * 4;
+            local_140 = local_148 + iVar14 * 0x18;
+            local_144 = iVar14 * 4;
             iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0
-                              (local_e8,"%d,%d,%*d,%d,\"%[^\"]\"\n",local_90,local_8c,piVar27);
+                              (local_ec,"%d,%d,%*d,%d,\"%[^\"]\"\n",local_94,local_90,piVar27);
             if (iVar4 != 4) goto LAB_00590a70;
             in_stack_00000004[iVar14 * 0x18 + 0x1c63] = 0;
             piVar27 = piVar27 + 0x18;
             crt_stdio_c_fprintf_FUN_005fe6d0
-                      (local_17c,"\t%2d: %s, verts=%d, tris=%d\n",iVar14,local_13c,
-                       *(uint *)((int)auStack_3fc + local_140));
+                      (local_180,"\t%2d: %s, verts=%d, tris=%d\n",iVar14,local_140,
+                       *(uint *)((int)local_400 + local_144));
             iVar14 = iVar14 + 1;
-            local_90 = local_90 + 4;
-            local_8c = local_8c + 1;
+            local_94 = local_94 + 4;
+            local_90 = local_90 + 1;
           } while (iVar14 < in_stack_00000004[0x1c50]);
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading texture list from %s");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Reading texture list from %s\n");
-        pFVar5 = local_e8;
+        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Reading texture list from %s\n");
+        pFVar5 = local_ec;
         iVar14 = 1;
         do {
           iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
           if (iVar4 < 0) break;
         } while ((iVar4 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
-        if (0x96 < local_e0) {
+        if (0x96 < local_e4) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc24;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures in parts .S3D!");
         }
         iVar14 = 0;
-        if (0 < local_e0) {
-          pcVar15 = &stack0xffff5e18;
+        if (0 < local_e4) {
+          pcVar15 = &stack0xffff5e14;
           do {
-            iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0(local_e8,"%[^\n]\n");
+            iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0(local_ec,"%[^\n]\n");
             if (iVar4 != 1) goto LAB_00590a70;
             crt_string_c_splitpath_FUN_005ff178
-                      (acStack_840,(char *)0x0,(char *)0x0,pcVar15,(char *)0x0);
+                      (local_844,(char *)0x0,(char *)0x0,pcVar15,(char *)0x0);
             iVar14 = iVar14 + 1;
             pcVar15 = pcVar15 + 0x100;
-          } while (iVar14 < local_e0);
+          } while (iVar14 < local_e4);
         }
         pcVar15 = "gore";
-        pcVar23 = acStack_384;
+        pcVar23 = local_388;
         for (iVar14 = 0x19; iVar14 != 0; iVar14 = iVar14 + -1) {
           *(uint *)pcVar23 = *(uint *)pcVar15;
           pcVar15 = pcVar15 + ((uint)bVar28 * -2 + 1) * 4;
@@ -377,17 +377,17 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         }
         if (*(int *)this_ptr->texture_sets[0].textures[8].texture_variants[0].texture_name == 0) {
           shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                    (g_CEditorToolsPtr,"Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",acStack_384,100,1);
+                    (g_CEditorToolsPtr,"Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",local_388,100,1);
         }
-        local_15c = -1;
-        if (acStack_384[0] != '\0') {
+        local_160 = -1;
+        if (local_388[0] != '\0') {
           iVar14 = 0;
           if (0 < in_stack_00000004[0x2f]) {
             piVar27 = in_stack_00000004 + 0x32;
             do {
               crt_string_c_splitpath_FUN_005ff178
-                        ((char *)piVar27,(char *)0x0,(char *)0x0,acStack_63c,(char *)0x0);
-              iVar4 = crt_string_c_stricmp_FUN_005fe7f0(acStack_384,acStack_63c);
+                        ((char *)piVar27,(char *)0x0,(char *)0x0,local_640,(char *)0x0);
+              iVar4 = crt_string_c_stricmp_FUN_005fe7f0(local_388,local_640);
               if (iVar4 == 0) break;
               iVar14 = iVar14 + 1;
               piVar27 = piVar27 + 0x12;
@@ -403,467 +403,467 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
                        "%s.raw");
             in_stack_00000004[0x2f] = in_stack_00000004[0x2f] + 1;
           }
-          local_15c = iVar14;
-          crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Automap capped faces is active\n");
+          local_160 = iVar14;
+          crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Automap capped faces is active\n");
         }
-        local_180 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                              ((int)local_168 * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
-        if (local_180 == (void *)0x0) {
+        local_184 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                              ((int)local_16c * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
+        if (local_184 == (void *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc4f;
           core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading faces from %s");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Reading faces from %s\n");
-        pFVar5 = local_e8;
+        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Reading faces from %s\n");
+        pFVar5 = local_ec;
         iVar14 = 1;
         do {
           iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
           if (iVar4 < 0) break;
         } while ((iVar4 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
         iVar14 = 0;
-        pvVar9 = local_180;
-        if (0 < (int)local_168) {
+        pvVar9 = local_184;
+        if (0 < (int)local_16c) {
           do {
             iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0
-                              (local_e8,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",local_138,&local_274,
-                               &local_190,local_1fc,local_270,local_18c,local_1f8,local_26c,
-                               local_188);
+                              (local_ec,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",local_13c,&local_278,
+                               &local_194,local_200,local_274,local_190,local_1fc,local_270,
+                               local_18c);
             if (iVar4 != 10) goto LAB_00590a70;
             *(uint *)((int)pvVar9 + 4) = 3;
             iVar4 = 0;
-            *(uint *)((int)pvVar9 + 0x14) = local_138[0];
+            *(uint *)((int)pvVar9 + 0x14) = local_13c[0];
             fVar29 = (float10)_DAT_0064bfd2;
             pvVar11 = pvVar9;
             do {
-              *(uint *)((int)pvVar11 + 0x18) = *(uint *)((int)&local_274 + iVar4);
+              *(uint *)((int)pvVar11 + 0x18) = *(uint *)((int)&local_278 + iVar4);
               dVar30 = crt_math_c_round_FUN_005fe6b0
-                                 ((double)((float10)*(float *)((int)&local_190 + iVar4) * fVar29));
-              local_18 = (float)(int)ROUND(dVar30);
+                                 ((double)((float10)*(float *)((int)&local_194 + iVar4) * fVar29));
+              local_1c = (float)(int)ROUND(dVar30);
               *(int *)(extraout_ECX + 0x1c) = (int)ROUND(dVar30);
-              in_stack_ffff5e0c = 8.173442e-39;
+              in_stack_ffff5e08 = 8.173442e-39;
               dVar30 = crt_math_c_round_FUN_005fe6b0
-                                 ((double)((float10)*(float *)(local_1fc + extraout_EDX + -4) *
+                                 ((double)((float10)*(float *)(local_200 + extraout_EDX + -4) *
                                           fVar29));
-              local_1c = (int)ROUND(dVar30);
+              local_20 = (int)ROUND(dVar30);
               iVar4 = extraout_EDX_00 + 4;
               *(int *)((int)extraout_ECX_00 + 0x14) = (int)ROUND(dVar30);
               pvVar11 = extraout_ECX_00;
             } while (iVar4 != 0xc);
-            crt_stdio_c_fprintf_FUN_005fe6d0(local_184,"\t%4d: %4d %4d %4d\n");
+            crt_stdio_c_fprintf_FUN_005fe6d0(local_188,"\t%4d: %4d %4d %4d\n");
             iVar14 = iVar14 + 1;
             pvVar9 = (void *)((int)pvVar9 + 0x3c);
-          } while (iVar14 < (int)local_168);
+          } while (iVar14 < (int)local_174);
         }
         pFVar5 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                           ((int)local_164 * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
-        local_184 = pFVar5;
+                           ((int)local_168 * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
+        local_188 = pFVar5;
         if (pFVar5 != (FILE *)0x0) {
-          local_184 = (FILE *)&pFVar5->_cnt;
-          pFVar5->_ptr = local_164;
+          local_188 = (FILE *)&pFVar5->_cnt;
+          pFVar5->_ptr = local_168;
         }
-        if (local_184 == (FILE *)0x0) {
+        if (local_188 == (FILE *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc7d;
           core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading vertices from %s");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Reading vertices from %s\n");
-        pFVar5 = local_e8;
+        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Reading vertices from %s\n");
+        pFVar5 = local_ec;
         iVar14 = 1;
         do {
           iVar4 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
           if (iVar4 < 0) break;
         } while ((iVar4 != 10) || (iVar14 = iVar14 + -1, 0 < iVar14));
         iVar14 = 0;
-        if (0 < (int)local_164) {
-          local_88 = &local_184->_link;
+        if (0 < (int)local_168) {
+          local_8c = &local_188->_link;
           do {
-            ppcVar18 = &local_184->_ptr + iVar14 * 3;
-            iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0(local_e8,"%f,%f,%f\n");
+            ppcVar18 = &local_188->_ptr + iVar14 * 3;
+            iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0(local_ec,"%f,%f,%f\n");
             if (iVar4 != 3) goto LAB_00590a70;
             crt_stdio_c_fprintf_FUN_005fe6d0
-                      (local_17c,"\t%4d: %7.3f %7.3f %7.3f\n",iVar14,(double)(float)*ppcVar18,
+                      (local_180,"\t%4d: %7.3f %7.3f %7.3f\n",iVar14,(double)(float)*ppcVar18,
                        (double)(float)ppcVar18[1],(double)(float)ppcVar18[2]);
             iVar14 = iVar14 + 1;
-            local_88 = local_88 + 3;
-          } while (iVar14 < (int)local_164);
+            local_8c = local_8c + 3;
+          } while (iVar14 < (int)local_168);
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_e8,"..\\core\\skeledit.cpp",0xc8c);
-        local_e8 = (FILE *)0x0;
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Removing duplicate faces\n");
-        local_24 = 0;
-        if (0 < (int)local_168) {
-          local_80 = local_180;
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xc8c);
+        local_ec = (FILE *)0x0;
+        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Removing duplicate faces\n");
+        local_28 = 0;
+        if (0 < (int)local_16c) {
+          local_84 = local_184;
           do {
+            local_130 = 0;
             local_12c = 0;
-            local_128 = 0;
-            local_130 = local_80;
-            if (0 < local_24) {
-              local_84 = local_180;
+            local_134 = local_84;
+            if (0 < local_28) {
+              local_88 = local_184;
               do {
-                if ((*(int *)((int)local_84 + 4) == 3) &&
-                   (*(int *)((int)local_84 + 0x14) == *(int *)((int)local_80 + 0x14))) {
-                  local_124 = 0;
+                if ((*(int *)((int)local_88 + 4) == 3) &&
+                   (*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {
+                  local_128 = 0;
                   do {
                     iVar4 = 0;
-                    iVar14 = local_124;
-                    pvVar9 = local_80;
+                    iVar14 = local_128;
+                    pvVar9 = local_84;
                     do {
-                      ppcVar18 = &local_184->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
-                      local_298 = *ppcVar18;
-                      local_294 = (float)ppcVar18[1];
-                      iStack_14 = 3;
-                      local_290 = (streambuf *)ppcVar18[2];
-                      ppcVar18 = &local_184->_ptr +
-                                 *(int *)((iVar14 % 3) * 0xc + 0x18 + (int)local_84) * 3;
-                      local_1f0 = *ppcVar18;
-                      local_1ec = (float)ppcVar18[1];
-                      local_220 = (float)local_298 - (float)local_1f0;
-                      local_1e8 = (streambuf *)ppcVar18[2];
-                      local_21c = local_294 - local_1ec;
-                      local_218 = (float)local_290 - (float)local_1e8;
-                      if ((((float)_DAT_0064bfda < ABS(local_220)) ||
-                          ((float)_DAT_0064bfda < ABS(local_21c))) ||
-                         ((float)_DAT_0064bfda < ABS(local_218))) break;
+                      ppcVar18 = &local_188->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
+                      local_29c = *ppcVar18;
+                      local_298 = (float)ppcVar18[1];
+                      local_18 = 3;
+                      local_294 = (streambuf *)ppcVar18[2];
+                      ppcVar18 = &local_188->_ptr +
+                                 *(int *)((iVar14 % 3) * 0xc + 0x18 + (int)local_88) * 3;
+                      local_1f4 = *ppcVar18;
+                      local_1f0 = (float)ppcVar18[1];
+                      local_224 = (float)local_29c - (float)local_1f4;
+                      local_1ec = (streambuf *)ppcVar18[2];
+                      local_220 = local_298 - local_1f0;
+                      local_21c = (float)local_294 - (float)local_1ec;
+                      if ((((float)_DAT_0064bfda < ABS(local_224)) ||
+                          ((float)_DAT_0064bfda < ABS(local_220))) ||
+                         ((float)_DAT_0064bfda < ABS(local_21c))) break;
                       pvVar9 = (void *)((int)pvVar9 + 0xc);
                       iVar4 = iVar4 + 1;
                       iVar14 = iVar14 + 1;
                     } while (iVar4 < 3);
                     if (iVar4 == 3) {
                       crt_stdio_c_fprintf_FUN_005fe6d0
-                                (local_17c,"Removing face %d, it is dup with face %d\n",local_24);
-                      *(uint *)((int)local_130 + 4) = 0;
+                                (local_180,"Removing face %d, it is dup with face %d\n",local_28);
+                      *(uint *)((int)local_134 + 4) = 0;
                       goto LAB_005902c8;
                     }
-                    local_124 = local_124 + 1;
-                  } while (local_124 < 3);
+                    local_128 = local_128 + 1;
+                  } while (local_128 < 3);
                 }
-                local_128 = local_128 + 1;
-                local_84 = (void *)((int)local_84 + 0x3c);
-              } while (local_128 < local_24);
+                local_12c = local_12c + 1;
+                local_88 = (void *)((int)local_88 + 0x3c);
+              } while (local_12c < local_28);
             }
 LAB_005902c8:
-            local_24 = local_24 + 1;
-            local_80 = (void *)((int)local_80 + 0x3c);
-          } while (local_24 < (int)local_168);
+            local_28 = local_28 + 1;
+            local_84 = (void *)((int)local_84 + 0x3c);
+          } while (local_28 < (int)local_16c);
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Biasing %s");
-        if ((FILE *)local_308 != local_184) {
-          local_308._0_4_ = local_184->_ptr;
-          local_308._4_4_ = local_184->_cnt;
-          local_308._8_4_ = local_184->_link;
+        if ((FILE *)local_30c != local_188) {
+          local_30c._0_4_ = local_188->_ptr;
+          local_30c._4_4_ = local_188->_cnt;
+          local_30c._8_4_ = local_188->_link;
         }
-        if ((FILE *)(local_308 + 0xc) != local_184) {
-          local_308._12_4_ = local_184->_ptr;
-          local_2f8 = (float)local_184->_cnt;
-          local_2f4 = local_184->_link;
+        if ((FILE *)(local_30c + 0xc) != local_188) {
+          local_30c._12_4_ = local_188->_ptr;
+          local_2fc = (float)local_188->_cnt;
+          local_2f8 = local_188->_link;
         }
         iVar14 = 1;
-        pFVar5 = local_184;
-        if (1 < (int)local_164) {
+        pFVar5 = local_188;
+        if (1 < (int)local_168) {
           do {
             core_box_cpp_CBoundingBox3D_expand_FUN_00420240
-                      ((CBoundingBox3D *)local_308,(CVector3f *)&pFVar5->_flag);
+                      ((CBoundingBox3D *)local_30c,(CVector3f *)&pFVar5->_flag);
             iVar14 = iVar14 + 1;
             pFVar5 = (FILE *)&pFVar5->_flag;
-          } while (iVar14 < (int)local_164);
+          } while (iVar14 < (int)local_168);
         }
         iVar14 = in_stack_00000004[0x10];
         pCVar1 = (CBoundingBox3D *)(iVar14 + 0x10);
-        if (&local_320 != pCVar1) {
-          local_320.min.x = (pCVar1->min).x;
-          local_320.min.y = *(float *)(iVar14 + 0x14);
-          local_320.min.z = *(float *)(iVar14 + 0x18);
+        if (&local_324 != pCVar1) {
+          local_324.min.x = (pCVar1->min).x;
+          local_324.min.y = *(float *)(iVar14 + 0x14);
+          local_324.min.z = *(float *)(iVar14 + 0x18);
         }
-        if ((CBoundingBox3D *)&local_320.max != pCVar1) {
-          local_320.max.x = (pCVar1->min).x;
-          local_320.max.y = *(float *)(iVar14 + 0x14);
-          local_320.max.z = *(float *)(iVar14 + 0x18);
+        if ((CBoundingBox3D *)&local_324.max != pCVar1) {
+          local_324.max.x = (pCVar1->min).x;
+          local_324.max.y = *(float *)(iVar14 + 0x14);
+          local_324.max.z = *(float *)(iVar14 + 0x18);
         }
         iVar14 = 1;
         if (1 < in_stack_00000004[0xb]) {
           iVar4 = 0x34;
           do {
             core_box_cpp_CBoundingBox3D_expand_FUN_00420240
-                      (&local_320,(CVector3f *)(in_stack_00000004[0x10] + iVar4 + 0x10));
+                      (&local_324,(CVector3f *)(in_stack_00000004[0x10] + iVar4 + 0x10));
             iVar14 = iVar14 + 1;
             iVar4 = iVar4 + 0x34;
           } while (iVar14 < in_stack_00000004[0xb]);
         }
-        local_268 = local_320.max.x - local_320.min.x;
-        local_2a4 = (float)local_308._12_4_ - (float)local_308._0_4_;
+        local_26c = local_324.max.x - local_324.min.x;
+        local_2a8 = (float)local_30c._12_4_ - (float)local_30c._0_4_;
+        local_1dc = local_26c / local_2a8;
+        local_268 = local_324.max.y - local_324.min.y;
+        local_2a4 = local_2fc - (float)local_30c._4_4_;
         local_1d8 = local_268 / local_2a4;
-        local_264 = local_320.max.y - local_320.min.y;
-        local_2a0 = local_2f8 - (float)local_308._4_4_;
+        local_264 = local_324.max.z - local_324.min.z;
+        local_2a0 = (float)local_2f8 - (float)local_30c._8_4_;
         local_1d4 = local_264 / local_2a0;
-        local_260 = local_320.max.z - local_320.min.z;
-        local_29c = (float)local_2f4 - (float)local_308._8_4_;
-        local_1d0 = local_260 / local_29c;
         iVar14 = 0;
-        pFVar5 = local_184;
-        if (0 < (int)local_164) {
+        pFVar5 = local_188;
+        if (0 < (int)local_168) {
           do {
-            pFVar5->_ptr = (char *)(((float)pFVar5->_ptr - (float)local_308._0_4_) * local_1d8 +
-                                   local_320.min.x);
-            pFVar5->_cnt = (int)(((float)pFVar5->_cnt - (float)local_308._4_4_) * local_1d4 +
-                                local_320.min.y);
+            pFVar5->_ptr = (char *)(((float)pFVar5->_ptr - (float)local_30c._0_4_) * local_1dc +
+                                   local_324.min.x);
+            pFVar5->_cnt = (int)(((float)pFVar5->_cnt - (float)local_30c._4_4_) * local_1d8 +
+                                local_324.min.y);
             iVar14 = iVar14 + 1;
             pFVar5->_link =
                  (streambuf *)
-                 (((float)pFVar5->_link - (float)local_308._8_4_) * local_1d0 + local_320.min.z);
+                 (((float)pFVar5->_link - (float)local_30c._8_4_) * local_1d4 + local_324.min.z);
             pFVar5 = (FILE *)&pFVar5->_flag;
-          } while (iVar14 < (int)local_164);
+          } while (iVar14 < (int)local_168);
         }
+        local_284 = local_2a8;
         local_280 = local_2a4;
         local_27c = local_2a0;
-        local_278 = local_29c;
+        local_230 = local_26c;
         local_22c = local_268;
         local_228 = local_264;
-        local_224 = local_260;
+        local_1e8 = local_2a8;
         local_1e4 = local_2a4;
         local_1e0 = local_2a0;
-        local_1dc = local_29c;
+        local_1b8 = local_26c;
         local_1b4 = local_268;
         local_1b0 = local_264;
-        local_1ac = local_260;
         crt_stdio_c_fprintf_FUN_005fe6d0
-                  (local_17c,"Scale = %7.3f %7.3f %7.3f\n",(double)local_1d8,(double)local_1d4,
-                   (double)local_1d0);
+                  (local_180,"Scale = %7.3f %7.3f %7.3f\n",(double)local_1dc,(double)local_1d8,
+                   (double)local_1d4);
         pfVar6 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                           ((int)local_168 * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
-        local_178 = pfVar6;
+                           ((int)local_16c * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
+        local_17c = pfVar6;
         if (pfVar6 != (float *)0x0) {
-          local_178 = pfVar6 + 1;
-          *pfVar6 = local_168;
+          local_17c = pfVar6 + 1;
+          *pfVar6 = local_16c;
         }
         fVar31 = (float)in_stack_00000004[0x15];
         pfVar6 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                            ((int)fVar31 * 0xc + 4,"..\\core\\skeledit.cpp",0xd10);
-        local_174 = pfVar6;
+        local_178 = pfVar6;
         if (pfVar6 != (float *)0x0) {
-          local_174 = pfVar6 + 1;
+          local_178 = pfVar6 + 1;
           *pfVar6 = fVar31;
         }
-        if ((local_178 == (float *)0x0) || (local_174 == (float *)0x0)) {
+        if ((local_17c == (float *)0x0) || (local_178 == (float *)0x0)) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xd11;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
         }
         iVar14 = 0;
-        pvVar9 = local_180;
-        pfVar6 = local_178;
-        if (0 < (int)local_168) {
+        pvVar9 = local_184;
+        pfVar6 = local_17c;
+        if (0 < (int)local_16c) {
           do {
             if (*(int *)((int)pvVar9 + 4) == 3) {
-              ppcVar20 = &local_184->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
-              ppcVar18 = &local_184->_ptr + *(int *)((int)pvVar9 + 0x24) * 3;
-              local_2b0 = (float)*ppcVar18 - (float)*ppcVar20;
-              local_2ac = (float)ppcVar18[1] - (float)ppcVar20[1];
-              local_2a8 = (float)ppcVar18[2] - (float)ppcVar20[2];
-              ppcVar20 = &local_184->_ptr + *(int *)((int)pvVar9 + 0x30) * 3;
-              local_250 = (float)*ppcVar20 - (float)*ppcVar18;
-              local_24c = (float)ppcVar20[1] - (float)ppcVar18[1];
-              local_248 = (float)ppcVar20[2] - (float)ppcVar18[2];
-              local_198 = local_2a8 * local_250 - local_2b0 * local_248;
-              local_19c = local_2ac * local_248 - local_2a8 * local_24c;
-              local_194 = local_2b0 * local_24c - local_2ac * local_250;
-              in_stack_ffff5e10 =
-                   SQRT(local_194 * local_194 + local_19c * local_19c + local_198 * local_198);
-              if (in_stack_ffff5e10 <= 0.0) {
-                local_198 = 0.0;
+              ppcVar20 = &local_188->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
+              ppcVar18 = &local_188->_ptr + *(int *)((int)pvVar9 + 0x24) * 3;
+              local_2b4 = (float)*ppcVar18 - (float)*ppcVar20;
+              local_2b0 = (float)ppcVar18[1] - (float)ppcVar20[1];
+              local_2ac = (float)ppcVar18[2] - (float)ppcVar20[2];
+              ppcVar20 = &local_188->_ptr + *(int *)((int)pvVar9 + 0x30) * 3;
+              local_254 = (float)*ppcVar20 - (float)*ppcVar18;
+              local_250 = (float)ppcVar20[1] - (float)ppcVar18[1];
+              local_24c = (float)ppcVar20[2] - (float)ppcVar18[2];
+              local_19c = local_2ac * local_254 - local_2b4 * local_24c;
+              local_1a0 = local_2b0 * local_24c - local_2ac * local_250;
+              local_198 = local_2b4 * local_250 - local_2b0 * local_254;
+              in_stack_ffff5e0c =
+                   SQRT(local_198 * local_198 + local_1a0 * local_1a0 + local_19c * local_19c);
+              if (in_stack_ffff5e0c <= 0.0) {
                 local_19c = 0.0;
-                local_194 = 0.0;
+                local_1a0 = 0.0;
+                local_198 = 0.0;
               }
               else {
-                fVar31 = 1.0 / in_stack_ffff5e10;
+                fVar31 = 1.0 / in_stack_ffff5e0c;
+                local_1a0 = local_1a0 * fVar31;
                 local_19c = local_19c * fVar31;
                 local_198 = local_198 * fVar31;
-                local_194 = local_194 * fVar31;
               }
-              if (pfVar6 != &local_19c) {
-                *pfVar6 = local_19c;
-                pfVar6[1] = local_198;
-                pfVar6[2] = local_194;
+              if (pfVar6 != &local_1a0) {
+                *pfVar6 = local_1a0;
+                pfVar6[1] = local_19c;
+                pfVar6[2] = local_198;
               }
             }
             iVar14 = iVar14 + 1;
             pvVar9 = (void *)((int)pvVar9 + 0x3c);
             pfVar6 = pfVar6 + 3;
-          } while (iVar14 < (int)local_168);
+          } while (iVar14 < (int)local_16c);
         }
         iVar14 = 0;
         if (0 < in_stack_00000004[0x15]) {
-          local_7c = 0;
-          pfVar6 = local_174;
+          local_80 = 0;
+          pfVar6 = local_178;
           do {
-            puVar16 = (ushort *)(in_stack_00000004[0x1f] + local_7c);
+            puVar16 = (ushort *)(in_stack_00000004[0x1f] + local_80);
             iVar7 = (uint)puVar16[1] * 0x34;
             iVar19 = (uint)*puVar16 * 0x34;
             iVar4 = in_stack_00000004[0x10];
             iVar17 = (uint)puVar16[2] * 0x34;
-            local_2c8 = *(float *)(iVar4 + 0x10 + iVar7) - *(float *)(iVar4 + 0x10 + iVar19);
-            local_2c4 = *(float *)(iVar4 + 0x14 + iVar7) - *(float *)(iVar4 + 0x14 + iVar19);
-            local_2c0 = *(float *)(iVar4 + 0x18 + iVar7) - *(float *)(iVar4 + 0x18 + iVar19);
-            local_25c = *(float *)(iVar4 + 0x10 + iVar17) - *(float *)(iVar4 + 0x10 + iVar7);
-            local_258 = *(float *)(iVar4 + 0x14 + iVar17) - *(float *)(iVar4 + 0x14 + iVar7);
-            local_254 = *(float *)(iVar4 + 0x18 + iVar17) - *(float *)(iVar4 + 0x18 + iVar7);
-            local_234 = local_2c0 * local_25c - local_2c8 * local_254;
-            local_238 = local_2c4 * local_254 - local_2c0 * local_258;
-            local_230 = local_2c8 * local_258 - local_2c4 * local_25c;
-            in_stack_ffff5e0c =
-                 SQRT(local_230 * local_230 + local_238 * local_238 + local_234 * local_234);
-            if (in_stack_ffff5e0c <= 0.0) {
-              local_234 = 0.0;
+            local_2cc = *(float *)(iVar4 + 0x10 + iVar7) - *(float *)(iVar4 + 0x10 + iVar19);
+            local_2c8 = *(float *)(iVar4 + 0x14 + iVar7) - *(float *)(iVar4 + 0x14 + iVar19);
+            local_2c4 = *(float *)(iVar4 + 0x18 + iVar7) - *(float *)(iVar4 + 0x18 + iVar19);
+            local_260 = *(float *)(iVar4 + 0x10 + iVar17) - *(float *)(iVar4 + 0x10 + iVar7);
+            local_25c = *(float *)(iVar4 + 0x14 + iVar17) - *(float *)(iVar4 + 0x14 + iVar7);
+            local_258 = *(float *)(iVar4 + 0x18 + iVar17) - *(float *)(iVar4 + 0x18 + iVar7);
+            local_238 = local_2c4 * local_260 - local_2cc * local_258;
+            local_23c = local_2c8 * local_258 - local_2c4 * local_25c;
+            local_234 = local_2cc * local_25c - local_2c8 * local_260;
+            in_stack_ffff5e08 =
+                 SQRT(local_234 * local_234 + local_23c * local_23c + local_238 * local_238);
+            if (in_stack_ffff5e08 <= 0.0) {
               local_238 = 0.0;
-              local_230 = 0.0;
+              local_23c = 0.0;
+              local_234 = 0.0;
             }
             else {
-              fVar31 = 1.0 / in_stack_ffff5e0c;
+              fVar31 = 1.0 / in_stack_ffff5e08;
+              local_23c = local_23c * fVar31;
               local_238 = local_238 * fVar31;
               local_234 = local_234 * fVar31;
-              local_230 = local_230 * fVar31;
             }
-            if (pfVar6 != &local_238) {
-              *pfVar6 = local_238;
-              pfVar6[1] = local_234;
-              pfVar6[2] = local_230;
+            if (pfVar6 != &local_23c) {
+              *pfVar6 = local_23c;
+              pfVar6[1] = local_238;
+              pfVar6[2] = local_234;
             }
             pfVar6 = pfVar6 + 3;
             iVar14 = iVar14 + 1;
-            local_7c = local_7c + 0x12;
+            local_80 = local_80 + 0x12;
           } while (iVar14 < in_stack_00000004[0x15]);
         }
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                   (g_CEditorToolsPtr,"Matching faces");
-        crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Matching faces in %s\n");
-        if (in_stack_00000004[0x15] <= (int)local_168) {
-          local_170 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+        crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Matching faces in %s\n");
+        if (in_stack_00000004[0x15] <= (int)local_16c) {
+          local_174 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                 (in_stack_00000004[0x15] * 4,"..\\core\\skeledit.cpp",0xd42);
-          if (local_170 == (void *)0x0) {
+          if (local_174 == (void *)0x0) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
             g_CurrentLineNumber = 0xd43;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
-          local_158 = local_180;
+          local_15c = local_184;
           iVar14 = 0;
           if (0 < in_stack_00000004[0x1c50]) {
             iVar4 = 0;
             do {
-              pvVar9 = local_158;
+              pvVar9 = local_15c;
               for (iVar7 = 0; iVar7 < *(int *)((int)in_stack_00000004 + iVar4 + 0x7164);
                   iVar7 = iVar7 + 1) {
                 *(uint *)((int)pvVar9 + 0xc) = 0xffffffff;
                 *(int *)((int)pvVar9 + 8) = iVar14;
                 pvVar9 = (void *)((int)pvVar9 + 0x3c);
               }
-              local_158 = (void *)((int)local_158 +
+              local_15c = (void *)((int)local_15c +
                                   *(int *)((int)in_stack_00000004 + iVar4 + 0x7164) * 0x3c);
               iVar4 = iVar4 + 0x60;
               iVar14 = iVar14 + 1;
             } while (iVar14 < in_stack_00000004[0x1c50]);
           }
-          local_28 = 0;
+          local_2c = 0;
           if (0 < in_stack_00000004[0x15]) {
             do {
-              iStack_14 = local_28;
+              local_18 = local_2c;
               shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                        (g_CEditorToolsPtr,(float)local_28,(float)in_stack_00000004[0x15]);
-              local_120 = local_28;
-              while (-1 < local_120) {
-                local_11c = in_stack_00000004[0x1f] + local_120 * 0x12;
-                pfVar6 = (float *)(local_120 * 4 + (int)local_170);
+                        (g_CEditorToolsPtr,(float)local_2c,(float)in_stack_00000004[0x15]);
+              local_124 = local_2c;
+              while (-1 < local_124) {
+                local_120 = in_stack_00000004[0x1f] + local_124 * 0x12;
+                pfVar6 = (float *)(local_124 * 4 + (int)local_174);
                 *pfVar6 = 1e+30;
-                local_118 = -1;
-                local_114 = 0;
-                if (0 < (int)local_168) {
-                  local_78 = local_180;
-                  local_104 = local_174 + local_120 * 3;
-                  local_74 = local_178;
+                local_11c = -1;
+                local_118 = 0;
+                if (0 < (int)local_16c) {
+                  local_7c = local_184;
+                  local_108 = local_178 + local_124 * 3;
+                  local_78 = local_17c;
                   do {
-                    local_110 = local_78;
-                    if (*(int *)((int)local_78 + 4) == 3) {
-                      local_10c = (float)_DAT_0064bfea -
-                                  (local_104[2] * local_74[2] +
-                                  *local_104 * *local_74 + local_104[1] * local_74[1]);
-                      local_108 = 0;
+                    local_114 = local_7c;
+                    if (*(int *)((int)local_7c + 4) == 3) {
+                      local_110 = (float)_DAT_0064bfea -
+                                  (local_108[2] * local_78[2] +
+                                  *local_108 * *local_78 + local_108[1] * local_78[1]);
+                      local_10c = 0;
                       do {
                         iVar4 = 0;
-                        fStack_100 = 0.0;
-                        iVar14 = local_108;
-                        pvVar9 = local_78;
+                        local_104 = 0.0;
+                        iVar14 = local_10c;
+                        pvVar9 = local_7c;
                         do {
-                          ppcVar18 = &local_184->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
-                          local_28c = *ppcVar18;
-                          local_288 = (float)ppcVar18[1];
-                          local_284 = (streambuf *)ppcVar18[2];
+                          ppcVar18 = &local_188->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
+                          local_290 = *ppcVar18;
+                          local_28c = (float)ppcVar18[1];
+                          local_288 = (streambuf *)ppcVar18[2];
                           iVar7 = in_stack_00000004[0x10] +
-                                  (uint)*(ushort *)((iVar14 % 3) * 2 + local_11c) * 0x34;
-                          local_1cc = *(float *)(iVar7 + 0x10);
-                          local_1c8 = *(float *)(iVar7 + 0x14);
-                          local_208 = local_1cc - (float)local_28c;
-                          local_1c4 = *(float *)(iVar7 + 0x18);
-                          local_204 = local_1c8 - local_288;
-                          local_200 = local_1c4 - (float)local_284;
-                          if ((((float)_DAT_0064bfe2 < ABS(local_208)) ||
-                              ((float)_DAT_0064bfe2 < ABS(local_204))) ||
-                             ((float)_DAT_0064bfe2 < ABS(local_200))) break;
-                          fVar31 = local_200 * local_200 +
-                                   local_208 * local_208 + local_204 * local_204;
+                                  (uint)*(ushort *)((iVar14 % 3) * 2 + local_120) * 0x34;
+                          local_1d0 = *(float *)(iVar7 + 0x10);
+                          local_1cc = *(float *)(iVar7 + 0x14);
+                          local_20c = local_1d0 - (float)local_290;
+                          local_1c8 = *(float *)(iVar7 + 0x18);
+                          local_208 = local_1cc - local_28c;
+                          local_204 = local_1c8 - (float)local_288;
+                          if ((((float)_DAT_0064bfe2 < ABS(local_20c)) ||
+                              ((float)_DAT_0064bfe2 < ABS(local_208))) ||
+                             ((float)_DAT_0064bfe2 < ABS(local_204))) break;
+                          fVar31 = local_204 * local_204 +
+                                   local_20c * local_20c + local_208 * local_208;
                           iVar14 = iVar14 + 1;
                           pvVar9 = (void *)((int)pvVar9 + 0xc);
-                          fStack_100 = fVar31 * fVar31 * fVar31 + fStack_100;
+                          local_104 = fVar31 * fVar31 * fVar31 + local_104;
                           iVar4 = iVar4 + 1;
                         } while (iVar4 < 3);
                         if (((2 < iVar4) &&
-                            (fStack_100 = fStack_100 * local_10c, fStack_100 <= *pfVar6)) &&
-                           ((*(int *)((int)local_78 + 0xc) < 0 ||
-                            (fStack_100 <
-                             *(float *)(*(int *)((int)local_78 + 0xc) * 4 + (int)local_170))))) {
-                          local_118 = local_114;
-                          *pfVar6 = fStack_100;
+                            (local_104 = local_104 * local_110, local_104 <= *pfVar6)) &&
+                           ((*(int *)((int)local_7c + 0xc) < 0 ||
+                            (local_104 <
+                             *(float *)(*(int *)((int)local_7c + 0xc) * 4 + (int)local_174))))) {
+                          local_11c = local_118;
+                          *pfVar6 = local_104;
                         }
-                        local_108 = local_108 + 1;
-                      } while (local_108 < 3);
+                        local_10c = local_10c + 1;
+                      } while (local_10c < 3);
                     }
-                    local_74 = local_74 + 3;
-                    local_114 = local_114 + 1;
-                    local_78 = (void *)((int)local_78 + 0x3c);
+                    local_78 = local_78 + 3;
+                    local_118 = local_118 + 1;
+                    local_7c = (void *)((int)local_7c + 0x3c);
+                    local_fc = pfVar6;
                     local_f8 = pfVar6;
-                    local_f4 = pfVar6;
-                  } while (local_114 < (int)local_168);
+                  } while (local_118 < (int)local_16c);
                 }
-                if (local_118 == -1) break;
-                iVar14 = *(int *)((int)local_180 + local_118 * 0x3c + 0xc);
-                *(int *)((int)local_180 + local_118 * 0x3c + 0xc) = local_120;
-                local_120 = iVar14;
+                if (local_11c == -1) break;
+                iVar14 = *(int *)((int)local_184 + local_11c * 0x3c + 0xc);
+                *(int *)((int)local_184 + local_11c * 0x3c + 0xc) = local_124;
+                local_124 = iVar14;
               }
-              local_28 = local_28 + 1;
-            } while (local_28 < in_stack_00000004[0x15]);
+              local_2c = local_2c + 1;
+            } while (local_2c < in_stack_00000004[0x15]);
           }
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd1;
-          if (local_178 != (float *)0x0) {
-            crt_memory_c_free_FUN_005fe659(local_178 + -1);
+          if (local_17c != (float *)0x0) {
+            crt_memory_c_free_FUN_005fe659(local_17c + -1);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd2;
-          local_178 = (float *)0x0;
-          if (local_174 != (float *)0x0) {
-            crt_memory_c_free_FUN_005fe659(local_174 + -1);
+          local_17c = (float *)0x0;
+          if (local_178 != (float *)0x0) {
+            crt_memory_c_free_FUN_005fe659(local_178 + -1);
           }
-          local_174 = (float *)0x0;
+          local_178 = (float *)0x0;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd3;
-          crt_memory_c_free_FUN_005fe659(local_170);
+          crt_memory_c_free_FUN_005fe659(local_174);
           iVar14 = 0;
-          local_170 = (void *)0x0;
-          local_154 = 0;
+          local_174 = (void *)0x0;
+          local_158 = 0;
           piVar27 = in_stack_00000004;
           if (0 < in_stack_00000004[0x1c50]) {
             do {
@@ -875,17 +875,17 @@ LAB_005902c8:
           }
           puVar8 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                              (in_stack_00000004[0x15] << 2,"..\\core\\skeledit.cpp",0xe56);
-          local_16c = puVar8;
-          local_ec = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+          local_170 = puVar8;
+          local_f0 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                (in_stack_00000004[0x15] << 2,"..\\core\\skeledit.cpp",0xe57);
-          if ((puVar8 == (uint *)0x0) || (local_ec == (int *)0x0)) {
+          if ((puVar8 == (uint *)0x0) || (local_f0 == (int *)0x0)) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
             g_CurrentLineNumber = 0xe58;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
           iVar14 = 0;
-          piVar27 = local_ec;
-          puVar8 = local_16c;
+          piVar27 = local_f0;
+          puVar8 = local_170;
           if (0 < in_stack_00000004[0x15]) {
             do {
               *piVar27 = 999999;
@@ -896,64 +896,64 @@ LAB_005902c8:
             } while (iVar14 < in_stack_00000004[0x15]);
           }
           iVar14 = 0;
-          local_150 = 0;
-          pvVar9 = local_180;
-          if (0 < (int)local_168) {
+          local_154 = 0;
+          pvVar9 = local_184;
+          if (0 < (int)local_16c) {
             do {
               if (*(int *)((int)pvVar9 + 4) == 3) {
                 iVar4 = *(int *)((int)pvVar9 + 8);
                 iVar7 = *(int *)((int)pvVar9 + 0xc);
                 if (iVar7 < 0) {
-                  local_154 = local_154 + 1;
+                  local_158 = local_158 + 1;
                   in_stack_00000004[iVar4 * 0x18 + 0x1c5e] =
                        in_stack_00000004[iVar4 * 0x18 + 0x1c5e] + 1;
                 }
                 else {
-                  local_f0 = iVar7 * 4;
-                  if (-1 < (int)local_16c[iVar7]) {
+                  local_f4 = iVar7 * 4;
+                  if (-1 < (int)local_170[iVar7]) {
                     pcVar15 = "Unable to generate one-to-one polygon matching from %s";
                     goto LAB_0058f8da;
                   }
-                  local_ec[iVar7] = iVar4;
-                  local_16c[iVar7] = iVar14;
-                  local_150 = local_150 + 1;
+                  local_f0[iVar7] = iVar4;
+                  local_170[iVar7] = iVar14;
+                  local_154 = local_154 + 1;
                   in_stack_00000004[iVar4 * 0x18 + 0x1c59] =
                        in_stack_00000004[iVar4 * 0x18 + 0x1c59] + 1;
                 }
               }
               iVar14 = iVar14 + 1;
               pvVar9 = (void *)((int)pvVar9 + 0x3c);
-            } while (iVar14 < (int)local_168);
+            } while (iVar14 < (int)local_16c);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xe86;
-          crt_memory_c_free_FUN_005fe659(local_16c);
-          local_2c = in_stack_00000004[0x15] + -1;
-          local_16c = (uint *)0x0;
-          piVar27 = local_ec;
-          while (local_ec = piVar27, -1 < local_2c) {
+          crt_memory_c_free_FUN_005fe659(local_170);
+          local_30 = in_stack_00000004[0x15] + -1;
+          local_170 = (uint *)0x0;
+          piVar27 = local_f0;
+          while (local_f0 = piVar27, -1 < local_30) {
             iVar14 = 0;
-            if (0 < local_2c) {
-              local_70 = 0;
-              local_6c = 0x12;
+            if (0 < local_30) {
+              local_74 = 0;
+              local_70 = 0x12;
               do {
                 if (piVar27[1] < *piVar27) {
-                  iStack_14 = iVar14 * 4 + 4;
-                  puVar21 = (uint *)(iStack_14 + in_stack_00000004[0x24]);
+                  local_18 = iVar14 * 4 + 4;
+                  puVar21 = (uint *)(local_18 + in_stack_00000004[0x24]);
                   puVar8 = (uint *)(iVar14 * 4 + in_stack_00000004[0x24]);
                   uVar3 = *puVar8;
                   *puVar8 = *puVar21;
                   *puVar21 = uVar3;
-                  puVar21 = (uint *)(local_6c + in_stack_00000004[0x1f]);
-                  puVar8 = (uint *)(in_stack_00000004[0x1f] + local_70);
-                  uStack_2dc = *puVar8;
-                  *(ushort *)(auStack_2d8 + (uint)bVar28 * -8) =
+                  puVar21 = (uint *)(local_70 + in_stack_00000004[0x1f]);
+                  puVar8 = (uint *)(in_stack_00000004[0x1f] + local_74);
+                  local_2e0 = *puVar8;
+                  *(ushort *)(auStack_2dc + (uint)bVar28 * -8) =
                        *(ushort *)(puVar8 + (uint)bVar28 * -2 + 1);
-                  stack0xfffffd2a = *(uint *)((int)puVar8 + 6);
-                  *(ushort *)((int)&local_2d4 + (uint)bVar28 * -8 + 2) =
+                  stack0xfffffd26 = *(uint *)((int)puVar8 + 6);
+                  *(ushort *)((int)&uStack_2d8 + (uint)bVar28 * -8 + 2) =
                        *(ushort *)((int)puVar8 + (uint)bVar28 * -8 + 10);
-                  uStack_2d0 = puVar8[3];
-                  local_2cc[(uint)bVar28 * -4] = *(ushort *)(puVar8 + (uint)bVar28 * -2 + 4);
+                  local_2d4 = puVar8[3];
+                  auStack_2d0[(uint)bVar28 * -4] = *(ushort *)(puVar8 + (uint)bVar28 * -2 + 4);
                   puVar24 = puVar8 + (uint)bVar28 * -2 + 1;
                   puVar26 = puVar21 + (uint)bVar28 * -2 + 1;
                   *puVar8 = *puVar21;
@@ -965,52 +965,52 @@ LAB_005902c8:
                   *(ushort *)(puVar25 + (uint)bVar28 * -2 + 1 + (uint)bVar28 * -2 + 1) =
                        *(ushort *)(puVar8 + (uint)bVar28 * -2 + 1 + (uint)bVar28 * -2 + 1);
                   puVar26 = puVar21 + (uint)bVar28 * -2 + 1;
-                  *puVar21 = uStack_2dc;
+                  *puVar21 = local_2e0;
                   puVar21 = puVar26 + (uint)bVar28 * -2 + 1;
-                  puVar8 = &local_2d4 + (uint)bVar28 * -2 + (uint)bVar28 * -2;
-                  *puVar26 = *(uint *)(auStack_2d8 + (uint)bVar28 * -8);
+                  puVar8 = &uStack_2d8 + (uint)bVar28 * -2 + (uint)bVar28 * -2;
+                  *puVar26 = *(uint *)(auStack_2dc + (uint)bVar28 * -8);
                   *puVar21 = *puVar8;
                   puVar21[(uint)bVar28 * -2 + 1] = puVar8[(uint)bVar28 * -2 + 1];
                   *(ushort *)(puVar21 + (uint)bVar28 * -2 + 1 + (uint)bVar28 * -2 + 1) =
                        *(ushort *)(puVar8 + (uint)bVar28 * -2 + 1 + (uint)bVar28 * -2 + 1);
                   iVar4 = *piVar27;
-                  *piVar27 = *(int *)((int)local_ec + iStack_14);
-                  *(int *)((int)local_ec + iStack_14) = iVar4;
+                  *piVar27 = *(int *)((int)local_f0 + local_18);
+                  *(int *)((int)local_f0 + local_18) = iVar4;
                 }
                 iVar14 = iVar14 + 1;
                 piVar27 = piVar27 + 1;
+                local_74 = local_74 + 0x12;
                 local_70 = local_70 + 0x12;
-                local_6c = local_6c + 0x12;
-              } while (iVar14 < local_2c);
+              } while (iVar14 < local_30);
             }
-            local_2c = local_2c + -1;
-            piVar27 = local_ec;
+            local_30 = local_30 + -1;
+            piVar27 = local_f0;
           }
           iVar14 = 2;
-          if (local_150 != in_stack_00000004[0x15]) {
-            local_d4 = in_stack_00000004 + 0x1c51;
+          if (local_154 != in_stack_00000004[0x15]) {
+            local_d8 = in_stack_00000004 + 0x1c51;
             do {
-              crt_stdio_c_sprintf_FUN_005fdbd0(acStack_53c,"There are %d triangles I couldn't match.");
+              crt_stdio_c_sprintf_FUN_005fdbd0(local_540,"There are %d triangles I couldn't match.");
               if (*(int *)this_ptr->texture_sets[0].textures[8].texture_variants[0].texture_name ==
                   0) {
-                shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_be8);
+                shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_bec);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          (&CStack_be8.base_strlist,"Get rid of them them, I never want to see them again");
+                          (&local_bec.base_strlist,"Get rid of them them, I never want to see them again");
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          (&CStack_be8.base_strlist,"They are special to me, put them in a seperate part called \"MySpecialTriangles\"");
+                          (&local_bec.base_strlist,"They are special to me, put them in a seperate part called \"MySpecialTriangles\"");
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          (&CStack_be8.base_strlist,"Try best guess");
+                          (&local_bec.base_strlist,"Try best guess");
                 do {
                   iVar14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                     (&CStack_be8,acStack_53c,iVar14,0);
+                                     (&local_bec,local_540,iVar14,0);
                 } while (iVar14 < 0);
                 shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                          (&CStack_be8,0,(uint)in_stack_ffff5e0c,(uint)in_stack_ffff5e10,
-                           in_stack_ffff5e14,in_stack_ffff5e18,in_stack_ffff5e1c);
+                          (&local_bec,0,(uint)in_stack_ffff5e08,(uint)in_stack_ffff5e0c,
+                           in_stack_ffff5e10,in_stack_ffff5e14,in_stack_ffff5e18);
               }
-              iVar4 = local_150;
+              iVar4 = local_154;
               if (iVar14 == 0) {
-                in_stack_00000004[0x15] = local_150;
+                in_stack_00000004[0x15] = local_154;
               }
               else if (iVar14 == 1) {
                 if (0x1d < in_stack_00000004[0x1c50]) {
@@ -1019,7 +1019,7 @@ LAB_005902c8:
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Too many parts");
                 }
                 pcVar15 = "MySpecialTriangles";
-                piVar27 = local_d4 + in_stack_00000004[0x1c50] * 0x18;
+                piVar27 = local_d8 + in_stack_00000004[0x1c50] * 0x18;
                 do {
                   cVar2 = *pcVar15;
                   *(char *)piVar27 = cVar2;
@@ -1030,44 +1030,44 @@ LAB_005902c8:
                   piVar27 = (int *)((int)piVar27 + 2);
                 } while (cVar2 != '\0');
                 in_stack_00000004[in_stack_00000004[0x1c50] * 0x18 + 0x1c59] =
-                     in_stack_00000004[0x15] - local_150;
+                     in_stack_00000004[0x15] - local_154;
                 in_stack_00000004[in_stack_00000004[0x1c50] * 0x18 + 0x1c5e] = 0;
                 in_stack_00000004[in_stack_00000004[0x1c50] * 0x18 + 0x1c63] = 0;
-                local_150 = in_stack_00000004[0x15];
+                local_154 = in_stack_00000004[0x15];
                 in_stack_00000004[0x1c50] = in_stack_00000004[0x1c50] + 1;
               }
               else if (iVar14 == 2) {
-                local_d0 = 1;
-                local_cc = local_150;
-                local_c8 = 0;
+                local_d4 = 1;
+                local_d0 = local_154;
+                local_cc = 0;
                 if (0 < in_stack_00000004[0x15]) {
-                  local_40 = local_150 * 0x12;
-                  local_3c = local_150 * 4;
+                  local_44 = local_154 * 0x12;
+                  local_40 = local_154 * 4;
                   do {
-                    if (local_d0 == 0) break;
-                    local_d0 = 0;
-                    local_30 = iVar4;
+                    if (local_d4 == 0) break;
+                    local_d4 = 0;
+                    local_34 = iVar4;
                     if (iVar4 < in_stack_00000004[0x15]) {
-                      local_58 = local_ec + iVar4;
-                      local_5c = local_40;
+                      local_5c = local_f0 + iVar4;
+                      local_60 = local_44;
                       do {
-                        if (0xf423e < *local_58) {
-                          local_c4 = (short *)(local_5c + in_stack_00000004[0x1f]);
-                          local_c0 = 0;
+                        if (0xf423e < *local_5c) {
+                          local_c8 = (short *)(local_60 + in_stack_00000004[0x1f]);
+                          local_c4 = 0;
                           if (0 < in_stack_00000004[0x15]) {
-                            local_60 = 0;
-                            local_64 = local_ec;
+                            local_64 = 0;
+                            local_68 = local_f0;
                             do {
-                              if (*local_64 < 999999) {
-                                local_bc = (short *)(local_60 + in_stack_00000004[0x1f]);
+                              if (*local_68 < 999999) {
+                                local_c0 = (short *)(local_64 + in_stack_00000004[0x1f]);
                                 iVar14 = 0;
-                                local_68 = local_c4 + 3;
-                                psVar10 = local_c4;
+                                local_6c = local_c8 + 3;
+                                psVar10 = local_c8;
                                 do {
-                                  local_b8 = psVar10;
+                                  local_bc = psVar10;
                                   iVar7 = 0;
-                                  psVar13 = local_bc;
-                                  if (*psVar10 != *local_bc) {
+                                  psVar13 = local_c0;
+                                  if (*psVar10 != *local_c0) {
                                     do {
                                       iVar7 = iVar7 + 1;
                                       psVar13 = psVar13 + 1;
@@ -1077,58 +1077,58 @@ LAB_005902c8:
                                   iVar14 = iVar14 + 1;
 LAB_00591f48:
                                   psVar10 = psVar10 + 1;
-                                } while (psVar10 != local_c4 + 3);
+                                } while (psVar10 != local_c8 + 3);
                                 if (1 < iVar14) {
-                                  iVar14 = local_ec[local_c0];
+                                  iVar14 = local_f0[local_c4];
                                   in_stack_00000004[iVar14 * 0x18 + 0x1c59] =
                                        in_stack_00000004[iVar14 * 0x18 + 0x1c59] + 1;
-                                  local_150 = local_150 + 1;
-                                  *local_58 = local_ec[local_c0];
+                                  local_154 = local_154 + 1;
+                                  *local_5c = local_f0[local_c4];
                                   break;
                                 }
                               }
-                              local_c0 = local_c0 + 1;
-                              local_60 = local_60 + 0x12;
-                              local_64 = local_64 + 1;
-                            } while (local_c0 < in_stack_00000004[0x15]);
+                              local_c4 = local_c4 + 1;
+                              local_64 = local_64 + 0x12;
+                              local_68 = local_68 + 1;
+                            } while (local_c4 < in_stack_00000004[0x15]);
                           }
-                          if (0xf423e < *local_58) {
-                            local_d0 = 1;
+                          if (0xf423e < *local_5c) {
+                            local_d4 = 1;
                           }
                         }
-                        local_30 = local_30 + 1;
-                        local_58 = local_58 + 1;
-                        local_5c = local_5c + 0x12;
-                      } while (local_30 < in_stack_00000004[0x15]);
+                        local_34 = local_34 + 1;
+                        local_5c = local_5c + 1;
+                        local_60 = local_60 + 0x12;
+                      } while (local_34 < in_stack_00000004[0x15]);
                     }
-                    local_c8 = local_c8 + 1;
-                  } while (local_c8 < in_stack_00000004[0x15]);
+                    local_cc = local_cc + 1;
+                  } while (local_cc < in_stack_00000004[0x15]);
                 }
-                local_34 = in_stack_00000004[0x15] + -1;
-                piVar27 = local_ec;
-                while (local_ec = piVar27, -1 < local_34) {
+                local_38 = in_stack_00000004[0x15] + -1;
+                piVar27 = local_f0;
+                while (local_f0 = piVar27, -1 < local_38) {
                   iVar14 = 0;
-                  if (0 < local_34) {
-                    local_54 = 0;
-                    local_50 = 0x12;
+                  if (0 < local_38) {
+                    local_58 = 0;
+                    local_54 = 0x12;
                     do {
                       if (piVar27[1] < *piVar27) {
-                        iStack_14 = iVar14 * 4 + 4;
-                        puVar21 = (uint *)(iStack_14 + in_stack_00000004[0x24]);
+                        local_18 = iVar14 * 4 + 4;
+                        puVar21 = (uint *)(local_18 + in_stack_00000004[0x24]);
                         puVar8 = (uint *)(in_stack_00000004[0x24] + iVar14 * 4);
                         uVar3 = *puVar8;
                         *puVar8 = *puVar21;
                         *puVar21 = uVar3;
-                        puVar21 = (uint *)(local_50 + in_stack_00000004[0x1f]);
-                        puVar8 = (uint *)(in_stack_00000004[0x1f] + local_54);
-                        uStack_2f0 = *puVar8;
-                        *(ushort *)(auStack_2ec + (uint)bVar28 * -8) =
+                        puVar21 = (uint *)(local_54 + in_stack_00000004[0x1f]);
+                        puVar8 = (uint *)(in_stack_00000004[0x1f] + local_58);
+                        local_2f4 = *puVar8;
+                        *(ushort *)(auStack_2f0 + (uint)bVar28 * -8) =
                              *(ushort *)(puVar8 + (uint)bVar28 * -2 + 1);
-                        stack0xfffffd16 = *(uint *)((int)puVar8 + 6);
-                        *(ushort *)((int)&local_2e8 + (uint)bVar28 * -8 + 2) =
+                        stack0xfffffd12 = *(uint *)((int)puVar8 + 6);
+                        *(ushort *)((int)&uStack_2ec + (uint)bVar28 * -8 + 2) =
                              *(ushort *)((int)puVar8 + (uint)bVar28 * -8 + 10);
-                        uStack_2e4 = puVar8[3];
-                        local_2e0[(uint)bVar28 * -4] =
+                        local_2e8 = puVar8[3];
+                        auStack_2e4[(uint)bVar28 * -4] =
                              *(ushort *)(puVar8 + (uint)bVar28 * -2 + 4);
                         puVar24 = puVar8 + (uint)bVar28 * -2 + 1;
                         puVar26 = puVar21 + (uint)bVar28 * -2 + 1;
@@ -1142,54 +1142,54 @@ LAB_00591f48:
                              *(ushort *)(puVar8 + (uint)bVar28 * -2 + 1 + (uint)bVar28 * -2 + 1)
                         ;
                         puVar26 = puVar21 + (uint)bVar28 * -2 + 1;
-                        *puVar21 = uStack_2f0;
+                        *puVar21 = local_2f4;
                         puVar21 = puVar26 + (uint)bVar28 * -2 + 1;
-                        puVar8 = &local_2e8 + (uint)bVar28 * -2 + (uint)bVar28 * -2;
-                        *puVar26 = *(uint *)(auStack_2ec + (uint)bVar28 * -8);
+                        puVar8 = &uStack_2ec + (uint)bVar28 * -2 + (uint)bVar28 * -2;
+                        *puVar26 = *(uint *)(auStack_2f0 + (uint)bVar28 * -8);
                         *puVar21 = *puVar8;
                         puVar21[(uint)bVar28 * -2 + 1] = puVar8[(uint)bVar28 * -2 + 1];
                         *(ushort *)(puVar21 + (uint)bVar28 * -2 + 1 + (uint)bVar28 * -2 + 1) =
                              *(ushort *)(puVar8 + (uint)bVar28 * -2 + 1 + (uint)bVar28 * -2 + 1)
                         ;
                         iVar4 = *piVar27;
-                        *piVar27 = *(int *)((int)local_ec + iStack_14);
-                        *(int *)((int)local_ec + iStack_14) = iVar4;
+                        *piVar27 = *(int *)((int)local_f0 + local_18);
+                        *(int *)((int)local_f0 + local_18) = iVar4;
                       }
                       iVar14 = iVar14 + 1;
                       piVar27 = piVar27 + 1;
+                      local_58 = local_58 + 0x12;
                       local_54 = local_54 + 0x12;
-                      local_50 = local_50 + 0x12;
-                    } while (iVar14 < local_34);
+                    } while (iVar14 < local_38);
                   }
-                  local_34 = local_34 + -1;
-                  piVar27 = local_ec;
+                  local_38 = local_38 + -1;
+                  piVar27 = local_f0;
                 }
                 iVar14 = 1;
               }
-            } while (local_150 != in_stack_00000004[0x15]);
+            } while (local_154 != in_stack_00000004[0x15]);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xf0c;
-          crt_memory_c_free_FUN_005fe659(local_ec);
-          local_ec = (int *)0x0;
+          crt_memory_c_free_FUN_005fe659(local_f0);
+          local_f0 = (int *)0x0;
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Finding capped faces in %s");
           puVar8 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                             ((in_stack_00000004[0x15] + local_154) * 0x12,
+                             ((in_stack_00000004[0x15] + local_158) * 0x12,
                               "..\\core\\skeledit.cpp",0xf1a);
-          local_14c = puVar8;
-          local_148 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                ((in_stack_00000004[0x15] + local_154) * 4,
+          local_150 = puVar8;
+          local_14c = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                                ((in_stack_00000004[0x15] + local_158) * 4,
                                  "..\\core\\skeledit.cpp",0xf1b);
-          if ((puVar8 == (uint *)0x0) || (local_148 == (uint *)0x0)) {
+          if ((puVar8 == (uint *)0x0) || (local_14c == (uint *)0x0)) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
             g_CurrentLineNumber = 0xf1c;
             core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
           }
-          puVar8 = local_14c;
+          puVar8 = local_150;
           iVar14 = in_stack_00000004[0x15];
           puVar21 = (uint *)in_stack_00000004[0x1f];
-          puVar26 = local_14c;
+          puVar26 = local_150;
           for (uVar12 = (uint)(iVar14 * 0x12) >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
             *puVar26 = *puVar21;
             puVar21 = puVar21 + (uint)bVar28 * -2 + 1;
@@ -1205,7 +1205,7 @@ LAB_00591f48:
           crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0x1f]);
           in_stack_00000004[0x1f] = (int)puVar8;
           puVar8 = (uint *)in_stack_00000004[0x24];
-          puVar21 = local_148;
+          puVar21 = local_14c;
           for (uVar12 = in_stack_00000004[0x15] & 0x3fffffff; uVar12 != 0; uVar12 = uVar12 - 1) {
             *puVar21 = *puVar8;
             puVar8 = puVar8 + (uint)bVar28 * -2 + 1;
@@ -1221,12 +1221,12 @@ LAB_00591f48:
           crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0x24]);
           g_CurrentDebugLine = 0xf28;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-          in_stack_00000004[0x24] = (int)local_148;
+          in_stack_00000004[0x24] = (int)local_14c;
           crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0x29]);
           in_stack_00000004[0x29] = 0;
-          if (0 < local_154) {
+          if (0 < local_158) {
             pvVar9 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                               (local_154 * 4,"..\\core\\skeledit.cpp",0xf2b);
+                               (local_158 * 4,"..\\core\\skeledit.cpp",0xf2b);
             in_stack_00000004[0x29] = (int)pvVar9;
             if (pvVar9 == (void *)0x0) {
               g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -1234,35 +1234,34 @@ LAB_00591f48:
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
             }
           }
-          local_38 = 0;
+          local_3c = 0;
           in_stack_00000004[0x1a] = 0;
           if (0 < in_stack_00000004[0x1c50]) {
-            local_a4 = in_stack_00000004 + 0x30;
-            local_44 = in_stack_00000004;
-            local_a0 = local_a4;
+            local_a8 = in_stack_00000004 + 0x30;
+            local_48 = in_stack_00000004;
+            local_a4 = local_a8;
             do {
-              if ((0 < local_44[0x1c5e]) && (local_b4 = 0, 0 < (int)local_168)) {
-                local_48 = local_180;
+              if ((0 < local_48[0x1c5e]) && (local_b8 = 0, 0 < (int)local_16c)) {
+                local_4c = local_184;
                 do {
-                  local_b0 = local_48;
-                  if (((*(int *)((int)local_48 + 4) == 3) &&
-                      (local_38 == *(int *)((int)local_48 + 8))) &&
-                     (*(int *)((int)local_48 + 0xc) < 0)) {
-                    local_ac = (ushort *)
+                  local_b4 = local_4c;
+                  if (((*(int *)((int)local_4c + 4) == 3) &&
+                      (local_3c == *(int *)((int)local_4c + 8))) &&
+                     (*(int *)((int)local_4c + 0xc) < 0)) {
+                    local_b0 = (ushort *)
                                (in_stack_00000004[0x1f] +
                                (in_stack_00000004[0x15] + in_stack_00000004[0x1a]) * 0x12);
-                    if (local_15c < 0) {
-                      iVar14 = *(int *)((int)local_48 + 0x14);
+                    if (local_160 < 0) {
+                      iVar14 = *(int *)((int)local_4c + 0x14);
                       if (iVar14 < 0) goto LAB_00591835;
                       iVar4 = 0;
                       if (0 < in_stack_00000004[0x2f]) {
-                        piVar27 = local_a4 + 2;
+                        piVar27 = local_a8 + 2;
                         do {
                           crt_string_c_splitpath_FUN_005ff178
-                                    ((char *)piVar27,(char *)0x0,(char *)0x0,acStack_73c,(char *)0x0
-                                    );
+                                    ((char *)piVar27,(char *)0x0,(char *)0x0,local_740,(char *)0x0);
                           iVar7 = crt_string_c_stricmp_FUN_005fe7f0
-                                            (&stack0xffff5e18 + iVar14 * 0x100,acStack_73c);
+                                            (&stack0xffff5e14 + iVar14 * 0x100,local_740);
                           if (iVar7 == 0) break;
                           iVar4 = iVar4 + 1;
                           piVar27 = piVar27 + 0x12;
@@ -1276,7 +1275,7 @@ LAB_00591f48:
                                     ("Too many model textures!");
                         }
                         crt_stdio_c_sprintf_FUN_005fdbd0
-                                  ((char *)(local_a0 + in_stack_00000004[0x2f] * 0x12 + 2),
+                                  ((char *)(local_a4 + in_stack_00000004[0x2f] * 0x12 + 2),
                                    "%s.raw");
                         in_stack_00000004[0x2f] = in_stack_00000004[0x2f] + 1;
                       }
@@ -1285,30 +1284,30 @@ LAB_00591f48:
                     }
                     else {
                       *(int *)((in_stack_00000004[0x15] + in_stack_00000004[0x1a]) * 4 +
-                              in_stack_00000004[0x24]) = local_15c;
+                              in_stack_00000004[0x24]) = local_160;
                     }
-                    local_1c = 0;
-                    puVar22 = local_ac;
-                    pvVar9 = local_b0;
+                    local_20 = 0;
+                    puVar22 = local_b0;
+                    pvVar9 = local_b4;
                     do {
-                      ppcVar18 = &local_184->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
-                      local_1c0 = *ppcVar18;
-                      local_1bc = (float)ppcVar18[1];
-                      local_1b8 = (streambuf *)ppcVar18[2];
+                      ppcVar18 = &local_188->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
+                      local_1c4 = *ppcVar18;
+                      local_1c0 = (float)ppcVar18[1];
+                      local_1bc = (streambuf *)ppcVar18[2];
                       fVar31 = 1e+20;
                       iVar14 = 0;
                       if (0 < in_stack_00000004[0xb]) {
                         iVar4 = 0;
                         do {
                           iVar7 = in_stack_00000004[0x10];
-                          local_214 = *(float *)(iVar4 + 0x10 + iVar7) - (float)local_1c0;
-                          local_210 = *(float *)(iVar4 + 0x14 + iVar7) - local_1bc;
-                          local_20c = *(float *)(iVar4 + 0x18 + iVar7) - (float)local_1b8;
-                          local_9c = local_20c * local_20c +
-                                     local_214 * local_214 + local_210 * local_210;
-                          if (local_9c < fVar31) {
+                          local_218 = *(float *)(iVar4 + 0x10 + iVar7) - (float)local_1c4;
+                          local_214 = *(float *)(iVar4 + 0x14 + iVar7) - local_1c0;
+                          local_210 = *(float *)(iVar4 + 0x18 + iVar7) - (float)local_1bc;
+                          local_a0 = local_210 * local_210 +
+                                     local_218 * local_218 + local_214 * local_214;
+                          if (local_a0 < fVar31) {
                             *puVar22 = (short)iVar14;
-                            fVar31 = local_9c;
+                            fVar31 = local_a0;
                           }
                           iVar14 = iVar14 + 1;
                           iVar4 = iVar4 + 0x34;
@@ -1335,72 +1334,72 @@ LAB_00591f48:
                       }
                       pvVar9 = (void *)((int)pvVar9 + 0xc);
                       puVar22[6] = (short)iVar4;
-                      local_1c = local_1c + 1;
+                      local_20 = local_20 + 1;
                       puVar22[3] = (short)iVar14;
                       puVar22 = puVar22 + 1;
-                    } while (local_1c < 3);
-                    local_a8 = -1;
-                    local_20 = 0;
-                    local_18 = 1e+20;
-                    if (0 < (int)local_168) {
-                      local_4c = local_180;
+                    } while (local_20 < 3);
+                    local_ac = -1;
+                    local_24 = 0;
+                    local_1c = 1e+20;
+                    if (0 < (int)local_16c) {
+                      local_50 = local_184;
                       do {
-                        if (((*(int *)((int)local_4c + 4) == 3) &&
-                            (local_38 != *(int *)((int)local_4c + 8))) &&
-                           (*(int *)((int)local_4c + 0xc) < 0)) {
-                          local_98 = 0;
+                        if (((*(int *)((int)local_50 + 4) == 3) &&
+                            (local_3c != *(int *)((int)local_50 + 8))) &&
+                           (*(int *)((int)local_50 + 0xc) < 0)) {
+                          local_9c = 0;
                           do {
-                            iVar14 = local_98 + 6;
-                            local_94 = 0.0;
-                            pvVar9 = local_b0;
+                            iVar14 = local_9c + 6;
+                            local_98 = 0.0;
+                            pvVar9 = local_b4;
                             do {
-                              ppcVar18 = &local_184->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
-                              local_244 = *ppcVar18;
-                              local_240 = (float)ppcVar18[1];
-                              iStack_14 = 3;
-                              local_23c = (streambuf *)ppcVar18[2];
-                              ppcVar18 = &local_184->_ptr +
-                                         *(int *)((int)local_4c + (iVar14 % 3) * 0xc + 0x18) * 3;
-                              local_1a8 = *ppcVar18;
-                              local_1a4 = (float)ppcVar18[1];
-                              local_2bc = (float)local_244 - (float)local_1a8;
-                              local_2b8 = local_240 - local_1a4;
-                              local_1a0 = (streambuf *)ppcVar18[2];
-                              local_2b4 = (float)local_23c - (float)local_1a0;
+                              ppcVar18 = &local_188->_ptr + *(int *)((int)pvVar9 + 0x18) * 3;
+                              local_248 = *ppcVar18;
+                              local_244 = (float)ppcVar18[1];
+                              local_18 = 3;
+                              local_240 = (streambuf *)ppcVar18[2];
+                              ppcVar18 = &local_188->_ptr +
+                                         *(int *)((int)local_50 + (iVar14 % 3) * 0xc + 0x18) * 3;
+                              local_1ac = *ppcVar18;
+                              local_1a8 = (float)ppcVar18[1];
+                              local_2c0 = (float)local_248 - (float)local_1ac;
+                              local_2bc = local_244 - local_1a8;
+                              local_1a4 = (streambuf *)ppcVar18[2];
+                              local_2b8 = (float)local_240 - (float)local_1a4;
                               pvVar9 = (void *)((int)pvVar9 + 0xc);
                               iVar14 = iVar14 + -1;
-                              local_94 = local_2b4 * local_2b4 +
-                                         local_2bc * local_2bc + local_2b8 * local_2b8 + local_94;
-                            } while (pvVar9 != (void *)((int)local_b0 + 0x24));
-                            if (local_94 < local_18) {
-                              local_a8 = *(int *)((int)local_4c + 8);
-                              local_18 = local_94;
+                              local_98 = local_2b8 * local_2b8 +
+                                         local_2c0 * local_2c0 + local_2bc * local_2bc + local_98;
+                            } while (pvVar9 != (void *)((int)local_b4 + 0x24));
+                            if (local_98 < local_1c) {
+                              local_ac = *(int *)((int)local_50 + 8);
+                              local_1c = local_98;
                             }
-                            local_98 = local_98 + 1;
-                          } while (local_98 < 3);
+                            local_9c = local_9c + 1;
+                          } while (local_9c < 3);
                         }
-                        local_20 = local_20 + 1;
-                        local_4c = (void *)((int)local_4c + 0x3c);
-                      } while (local_20 < (int)local_168);
+                        local_24 = local_24 + 1;
+                        local_50 = (void *)((int)local_50 + 0x3c);
+                      } while (local_24 < (int)local_16c);
                     }
-                    if (local_a8 < 0) {
+                    if (local_ac < 0) {
                       crt_stdio_c_sprintf_FUN_005fdbd0
                                 (&DAT_03670650,"Can't find opposing part for capped face!");
                       goto LAB_0058f8e7;
                     }
-                    *(int *)(in_stack_00000004[0x1a] * 4 + in_stack_00000004[0x29]) = local_a8;
+                    *(int *)(in_stack_00000004[0x1a] * 4 + in_stack_00000004[0x29]) = local_ac;
                     in_stack_00000004[0x1a] = in_stack_00000004[0x1a] + 1;
                   }
 LAB_00591835:
-                  local_b4 = local_b4 + 1;
-                  local_48 = (void *)((int)local_48 + 0x3c);
-                } while (local_b4 < (int)local_168);
+                  local_b8 = local_b8 + 1;
+                  local_4c = (void *)((int)local_4c + 0x3c);
+                } while (local_b8 < (int)local_16c);
               }
-              local_38 = local_38 + 1;
-              local_44 = local_44 + 0x18;
-            } while (local_38 < in_stack_00000004[0x1c50]);
+              local_3c = local_3c + 1;
+              local_48 = local_48 + 0x18;
+            } while (local_3c < in_stack_00000004[0x1c50]);
           }
-          if (local_154 != in_stack_00000004[0x1a]) {
+          if (local_158 != in_stack_00000004[0x1a]) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
             g_CurrentLineNumber = 0xfbe;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze after adding capped triangles.");
@@ -1418,15 +1417,15 @@ LAB_00591835:
           }
           g_CurrentDebugLine = 0xff5;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-          if (local_184 != (FILE *)0x0) {
-            crt_memory_c_free_FUN_005fe659(&local_184[-1]._ungotten);
+          if (local_188 != (FILE *)0x0) {
+            crt_memory_c_free_FUN_005fe659(&local_188[-1]._ungotten);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xff6;
-          crt_memory_c_free_FUN_005fe659(local_180);
-          pFVar5 = local_17c;
-          if (local_17c != (FILE *)0x0) {
-            crt_stdio_c_fprintf_FUN_005fe6d0(local_17c,"Determined parts using %s OK!\n");
+          crt_memory_c_free_FUN_005fe659(local_184);
+          pFVar5 = local_180;
+          if (local_180 != (FILE *)0x0) {
+            crt_stdio_c_fprintf_FUN_005fe6d0(local_180,"Determined parts using %s OK!\n");
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\skeledit.cpp",0xffc);
           }
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -1446,38 +1445,38 @@ LAB_00590a70:
 LAB_0058f8da:
   crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,pcVar15);
 LAB_0058f8e7:
-  if (local_e8 != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_e8,"..\\core\\skeledit.cpp",0xbe2);
+  if (local_ec != (FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xbe2);
   }
-  if (local_17c != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_17c,"..\\core\\skeledit.cpp",0xbe3);
+  if (local_180 != (FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_180,"..\\core\\skeledit.cpp",0xbe3);
   }
   g_CurrentDebugLine = 0xbe4;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-  if (local_184 != (FILE *)0x0) {
-    crt_memory_c_free_FUN_005fe659(&local_184[-1]._ungotten);
+  if (local_188 != (FILE *)0x0) {
+    crt_memory_c_free_FUN_005fe659(&local_188[-1]._ungotten);
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe5;
-  crt_memory_c_free_FUN_005fe659(local_180);
+  crt_memory_c_free_FUN_005fe659(local_184);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe6;
-  if (local_178 != (float *)0x0) {
-    crt_memory_c_free_FUN_005fe659(local_178 + -1);
+  if (local_17c != (float *)0x0) {
+    crt_memory_c_free_FUN_005fe659(local_17c + -1);
   }
   g_CurrentDebugLine = 0xbe7;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-  if (local_174 != (float *)0x0) {
-    crt_memory_c_free_FUN_005fe659(local_174 + -1);
+  if (local_178 != (float *)0x0) {
+    crt_memory_c_free_FUN_005fe659(local_178 + -1);
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe8;
-  crt_memory_c_free_FUN_005fe659(local_170);
+  crt_memory_c_free_FUN_005fe659(local_174);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe9;
-  crt_memory_c_free_FUN_005fe659(local_16c);
+  crt_memory_c_free_FUN_005fe659(local_170);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbea;
-  crt_memory_c_free_FUN_005fe659(local_ec);
+  crt_memory_c_free_FUN_005fe659(local_f0);
   return 0;
 }

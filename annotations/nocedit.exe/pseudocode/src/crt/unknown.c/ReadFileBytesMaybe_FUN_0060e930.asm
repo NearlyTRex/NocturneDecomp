@@ -11,8 +11,8 @@
 ;   crt_fstream.cpp_filebuf_underflow_FUN_0060da87 at 0060db7a
 ;
 ; Referenced Globals:
-;   GetLastError* GetLastError = 00211f22
-;   ReadFile* PTR_ReadFile_00611604 = 002120f2
+;   GetLastError* g_GetLastErrorFunc = 00211f22
+;   ReadFile* g_ReadFileFunc = 002120f2
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14
@@ -131,7 +131,7 @@ section .text
     PUSH EBP                            ; 0060ea04
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0060ea05
     PUSH EBX                            ; 0060ea09
-    CALL dword ptr CS:[0x611604]        ; 0060ea0a | PTR_ReadFile_00611604
+    CALL dword ptr CS:[0x611604]        ; 0060ea0a | g_ReadFileFunc
     MOV ESI,dword ptr [ESP]             ; 0060ea11
     TEST EAX,EAX                        ; 0060ea14
     JNZ 0x0060eb21                      ; 0060ea16
@@ -140,7 +140,7 @@ section .text
     PUSH ECX                            ; 0060ea20
     CALL dword ptr [0x00684eec]         ; 0060ea21 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 0060ea27
-    CALL dword ptr CS:[0x6115a4]        ; 0060ea2a | GetLastError
+    CALL dword ptr CS:[0x6115a4]        ; 0060ea2a | g_GetLastErrorFunc
     CMP EAX,0x6d                        ; 0060ea31
     JZ 0x0060eb2f                       ; 0060ea34
         ;   XREF to: 0060eb2f (CONDITIONAL_JUMP)  ; LAB_0060eb2f
@@ -185,7 +185,7 @@ section .text
     PUSH EBP                            ; 0060ea89
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0060ea8a
     PUSH EBX                            ; 0060ea8e
-    CALL dword ptr CS:[0x611604]        ; 0060ea8f | PTR_ReadFile_00611604
+    CALL dword ptr CS:[0x611604]        ; 0060ea8f | g_ReadFileFunc
     TEST EAX,EAX                        ; 0060ea96
     JNZ 0x0060eab9                      ; 0060ea98
         ;   XREF to: 0060eab9 (CONDITIONAL_JUMP)  ; LAB_0060eab9
@@ -193,7 +193,7 @@ section .text
     PUSH ECX                            ; 0060ea9e
     CALL dword ptr [0x00684eec]         ; 0060ea9f | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 0060eaa5
-    CALL dword ptr CS:[0x6115a4]        ; 0060eaa8 | GetLastError
+    CALL dword ptr CS:[0x6115a4]        ; 0060eaa8 | g_GetLastErrorFunc
     CMP EAX,0x6d                        ; 0060eaaf
     JNZ 0x0060ea3a                      ; 0060eab2
         ;   XREF to: 0060ea3a (CONDITIONAL_JUMP)  ; LAB_0060ea3a

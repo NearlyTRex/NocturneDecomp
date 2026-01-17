@@ -14,6 +14,6 @@ int __cdecl wincore_winrun_cpp_waitForMutex_FUN_005f3ff0(HANDLE mutex_handle)
   if (mutex_handle == (HANDLE)0x0) {
     return 0;
   }
-  DVar1 = (*WaitForSingleObject)(mutex_handle,0xffffffff);
+  DVar1 = (*g_WaitForSingleObjectFunc)(mutex_handle,0xffffffff);
   return (uint)(DVar1 == 0);
 }

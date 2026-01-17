@@ -23,6 +23,6 @@ void __cdecl crt_exception_c_installExceptionHandler_FUN_0060aba8(ExceptionFrame
   pTVar2->seh_frame->Handler = crt_exception_c_ExceptionHandler_FUN_0060a9d8;
   pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
   *in_FS_OFFSET = pTVar2->seh_frame;
-  (*PTR_SetUnhandledExceptionFilter_00611640)(crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4);
+  (*g_SetUnhandledExceptionFilterFunc)(crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4);
   return;
 }

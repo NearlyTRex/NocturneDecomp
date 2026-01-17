@@ -33,9 +33,9 @@ void __cdecl core_actor_cpp_CDemonActor_FUN_0040dec0(CDemonActor *this_ptr)
   do {
     core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
               ((CBoundingBox3D *)(local_4c + 8),&CStack_2c,corner_index);
-    CStack_20.x = (int)ROUND(CStack_2c.x * 256f);
-    CStack_20.y = (int)ROUND(CStack_2c.y * 256f);
-    CStack_20.z = (int)ROUND(CStack_2c.z * 256f);
+    CStack_20.x = (int)ROUND(CStack_2c.x * 256.0f);
+    CStack_20.y = (int)ROUND(CStack_2c.y * 256.0f);
+    CStack_20.z = (int)ROUND(CStack_2c.z * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +

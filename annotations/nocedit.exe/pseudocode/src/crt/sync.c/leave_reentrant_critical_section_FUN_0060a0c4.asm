@@ -17,7 +17,7 @@
 ;   crt_tls.c_leave_critical_section_by_index_FUN_0060a128 at 0060a138
 ;
 ; Referenced Globals:
-;   LeaveCriticalSection* PTR_LeaveCriticalSection_006115e4 = 00212044
+;   LeaveCriticalSection* g_LeaveCriticalSectionFunc = 00212044
 ;
 ; Called Functions:
 ;   LeaveCriticalSection
@@ -42,7 +42,7 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 0060a0db
     PUSH ESI                            ; 0060a0dd
     MOV dword ptr [EAX + 0x8],EBX       ; 0060a0de
-    CALL dword ptr CS:[0x6115e4]        ; 0060a0e1 | PTR_LeaveCriticalSection_006115e4
+    CALL dword ptr CS:[0x6115e4]        ; 0060a0e1 | g_LeaveCriticalSectionFunc
     POP ESI                             ; 0060a0e8
         ;   Label: LAB_0060a0e8
     POP EBX                             ; 0060a0e9

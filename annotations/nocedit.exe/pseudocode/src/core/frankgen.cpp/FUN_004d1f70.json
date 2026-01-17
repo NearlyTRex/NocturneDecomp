@@ -1,16 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 246,
+    "complexity_score": 341,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "pseudocode_lines": 51,
-    "suspect_count": 18,
+    "suspect_count": 26,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "extra_output",
+      "stack_align_anchor",
       "stack_param",
-      "unknown_field"
+      "stack_ref"
     ],
     "total_lines": 197
   },
@@ -140,35 +143,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "004d1f79": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ],
-    "004d1fa1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ],
-    "004d1faa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ],
-    "004d1fbc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ],
-    "004d1fc5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ],
-    "004d1fd4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ],
-    "004d1ffc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ],
-    "004d2030": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ],
-    "004d2039": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.078260869565217,
     "instruction_count": 115,
@@ -208,7 +182,159 @@
     },
     "pcode_op_count": 584
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004d1f79",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EBX",
+      "text": "CDemonActor *extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar2 + 0x15c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffcc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xffffffcc",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffcc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].location.position.z,-1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[2].create_event[0x5c] != '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = *(int *)(in_stack_00000004[1].actor_name + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "input_value = (double)((*(float *)(in_stack_00000004[1].actor_name + 4) + -2000.0f) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = extraout_EBX;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 45,
+      "match": "extraout_EBX",
+      "text": "in_stack_00000004 = extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar5,-1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "004d1fb9",
@@ -320,167 +446,6 @@
       "target_address": "0x408b40",
       "text": "Direct CALL at 004d2034, ADD ESP at 004d2039 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 56,
-    "local_size": 56,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 1,
-        "type": "undefined1"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004d1f79",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EBX",
-      "text": "CDemonActor *extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar2 + 0x15c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)auStack_30);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].location.position.z,-1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[2].create_event[0x5c] != '\\0') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = *(int *)(in_stack_00000004[1].actor_name + 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "text": "input_value = (double)((*(float *)(in_stack_00000004[1].actor_name + 4) + -2000f) *",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._20_8_",
-      "text": "auStack_30._20_8_ = crt_math_c_floor_FUN_005feb90(input_value);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 39,
-      "match": "._20_8_",
-      "text": "(float10)(double)auStack_30._20_8_ * (float10)200;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = extraout_EBX;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
-      "match": "extraout_EBX",
-      "text": "in_stack_00000004 = extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar4,-1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

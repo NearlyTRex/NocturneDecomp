@@ -1,13 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 49,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 9,
     "pseudocode_lines": 49,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 13,
+    "suspect_types": [
+      "call_esp_anchor",
+      "variadic_anchor"
+    ],
     "total_lines": 207
   },
   "cross_references": [
@@ -149,47 +152,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004681c6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "004681e8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "004681fa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "00468209": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "00468241": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "0046825c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "00468279": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "0046829f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "004682ca": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "004682e0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "004682f7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "00468303": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ],
-    "00468314": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.229007633587786,
     "instruction_count": 131,
@@ -224,7 +186,79 @@
     },
     "pcode_op_count": 685
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 132,
+    "local_size": 128,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "keyframe_model",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLKeyframeModel *"
+      }
+    ]
+  },
+  "suspects": [
     {
       "add_esp_value": 4,
       "call_address": "004682c5",
@@ -397,78 +431,5 @@
       "text": "Direct CALL at 0046830f, ADD ESP at 00468314 with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ],
-  "stack_frame": {
-    "frame_size": 132,
-    "local_size": 128,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "keyframe_model",
-        "offset": 4,
-        "size": 4,
-        "type": "SMRGLKeyframeModel *"
-      }
-    ]
-  },
-  "suspects": []
+  ]
 }

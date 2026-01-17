@@ -59,7 +59,7 @@
   "globals": [
     {
       "addr": "00611504",
-      "name": "CloseHandle",
+      "name": "g_CloseHandleFunc",
       "type": "CloseHandle*",
       "value": "00211c38"
     },
@@ -159,7 +159,7 @@
       "description": "Unaffected register variable",
       "line": 18,
       "match": "unaff_ESI",
-      "text": "BVar2 = (*CloseHandle)(unaff_ESI);",
+      "text": "BVar2 = (*g_CloseHandleFunc)(unaff_ESI);",
       "type": "unaffected_reg"
     },
     {

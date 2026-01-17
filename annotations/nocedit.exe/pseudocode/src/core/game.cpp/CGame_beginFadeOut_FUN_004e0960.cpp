@@ -39,9 +39,9 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
     CStack_3c.z = fStack_10 * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)g_CScriptPtr->focusActor,&CStack_48,&CStack_3c);
-    CStack_54.x = (int)ROUND(CStack_48.x * 256f);
-    CStack_54.y = (int)ROUND(CStack_48.y * 256f);
-    CStack_54.z = (int)ROUND(CStack_48.z * 256f);
+    CStack_54.x = (int)ROUND(CStack_48.x * 256.0f);
+    CStack_54.y = (int)ROUND(CStack_48.y * 256.0f);
+    CStack_54.z = (int)ROUND(CStack_48.z * 256.0f);
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
               (&g_CDemonCameraInstance,&CStack_54,in_stack_ffffff94);
     iStack_30 = aiStack_2c[2];

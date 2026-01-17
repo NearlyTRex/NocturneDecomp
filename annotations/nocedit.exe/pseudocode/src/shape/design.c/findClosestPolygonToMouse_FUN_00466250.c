@@ -36,13 +36,13 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
   else {
     for (local_4c = 0; local_4c < g_VertexCount; local_4c = local_4c + 1) {
       dVar2 = crt_math_c_round_FUN_005fe6b0
-                        ((double)(g_LoadedVertices[local_4c].vertex.x * 256f));
+                        ((double)(g_LoadedVertices[local_4c].vertex.x * 256.0f));
       local_104.x = (int)ROUND(dVar2);
       dVar2 = crt_math_c_round_FUN_005fe6b0
-                        ((double)(g_LoadedVertices[local_4c].vertex.y * 256f));
+                        ((double)(g_LoadedVertices[local_4c].vertex.y * 256.0f));
       local_104.y = (int)ROUND(dVar2);
       dVar2 = crt_math_c_round_FUN_005fe6b0
-                        ((double)(g_LoadedVertices[local_4c].vertex.z * 256f));
+                        ((double)(g_LoadedVertices[local_4c].vertex.z * 256.0f));
       local_104.z = (int)ROUND(dVar2);
       engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,&local_104);
     }
@@ -92,20 +92,20 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
       local_40 = g_MouseY - g_PolygonScreenCache[local_4c].center_y;
       local_18 = local_44 * local_44 + local_40 * local_40;
       dVar2 = crt_math_c_round_FUN_005fe6b0
-                        ((double)(g_ModelPolygonData[local_4c].normal.x * 65535f)
+                        ((double)(g_ModelPolygonData[local_4c].normal.x * 65535.0f)
                         );
       local_f0[0].A = (int)ROUND(dVar2);
       dVar2 = crt_math_c_round_FUN_005fe6b0
-                        ((double)(g_ModelPolygonData[local_38].normal.y * 65535f)
+                        ((double)(g_ModelPolygonData[local_38].normal.y * 65535.0f)
                         );
       local_f0[0].B = (int)ROUND(dVar2);
       dVar2 = crt_math_c_round_FUN_005fe6b0
-                        ((double)(g_ModelPolygonData[local_38].normal.z * 65535f)
+                        ((double)(g_ModelPolygonData[local_38].normal.z * 65535.0f)
                         );
       local_f0[0].C = (int)ROUND(dVar2);
       dVar2 = crt_math_c_round_FUN_005fe6b0
                         ((double)(g_ModelPolygonData[local_38].plane_distance *
-                                  65535f * 256f));
+                                  65535.0f * 256.0f));
       local_f0[0].D = (int)ROUND(dVar2);
       if ((local_18 < local_14) &&
          (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(local_f0), iVar1 != 0)) {

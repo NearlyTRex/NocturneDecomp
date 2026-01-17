@@ -20,8 +20,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
   int *piVar5;
   int iVar6;
   CDeformableModel *in_stack_00000004;
-  uint in_stack_fffffc4e;
-  char local_340 [512];
+  uint in_stack_fffffcc0;
   int aiStack_140 [30];
   CStrList local_c8;
   CStrList local_b8;
@@ -152,10 +151,10 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
                       (in_stack_00000004,&local_a8,(int)output_filename,local_1c,
                        (CMatrix3x4f *)lod_level);
             crt_stdio_c_sprintf_FUN_005fdbd0
-                      (local_340,"%g,%g,%g",SUB84 /* extract 2-byte value */((double)local_a8.x,0),
+                      (&stack0xfffffcc0,"%g,%g,%g",SUB84 /* extract 2-byte value */((double)local_a8.x,0),
                        (int)((ulonglong)(double)local_a8.x >> 0x20),(double)local_a8.y,
                        (double)local_a8.z);
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_b8,local_340);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_b8,&stack0xfffffcc0);
           }
           local_1c = local_1c + 1;
           piVar5 = piVar5 + 1;
@@ -169,7 +168,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
         puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_50) + local_2c);
         local_14 = (uint)puVar2[3];
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
+                  (&stack0xfffffcc0,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
                    *(uint *)
                     (*(int *)((int)in_stack_00000004->index_data_ptr + local_50) + local_28),
                    dest[*puVar2],(double)local_14 * 0.00390625,
@@ -177,7 +176,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
                    (double)puVar2[4] * 0.00390625,SUB84 /* extract 2-byte value */((double)puVar2[7] * 0.00390625,0),
                    (int)((ulonglong)((double)puVar2[7] * 0.00390625) >> 0x20),dest[puVar2[2]],
                    (double)puVar2[5] * 0.00390625,(double)puVar2[8] * 0.00390625);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,local_340);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,&stack0xfffffcc0);
         local_28 = local_28 + 4;
         local_2c = local_2c + 0x12;
         local_3c = local_3c + 1;
@@ -196,7 +195,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
           puVar2 = (ushort *)(*(int *)((int)in_stack_00000004->tri_data_ptr + local_54) + local_38);
           local_14 = (uint)puVar2[3];
           crt_stdio_c_sprintf_FUN_005fdbd0
-                    (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
+                    (&stack0xfffffcc0,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
                      *(uint *)
                       (*(int *)((int)in_stack_00000004->index_data_ptr + local_54) + local_6c),
                      dest[*puVar2],(double)local_14 * 0.00390625,
@@ -205,7 +204,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
                      SUB84 /* extract 2-byte value */((double)puVar2[7] * 0.00390625,0),
                      (int)((ulonglong)((double)puVar2[7] * 0.00390625) >> 0x20),dest[puVar2[2]]
                      ,(double)puVar2[5] * 0.00390625,(double)puVar2[8] * 0.00390625);
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,local_340);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,&stack0xfffffcc0);
           local_38 = local_38 + 0x12;
           local_40 = local_40 + 1;
         }
@@ -283,7 +282,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
   crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(local_70,"// cameraList: \"name\", x,y,z, p,b,h, fov(rad)\n");
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_70,"..\\core\\skeledit.cpp",0x15ea);
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_c8,0,in_stack_fffffc4e);
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_b8,0,in_stack_fffffc4e);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_c8,0,in_stack_fffffcc0);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_b8,0,in_stack_fffffcc0);
   return;
 }

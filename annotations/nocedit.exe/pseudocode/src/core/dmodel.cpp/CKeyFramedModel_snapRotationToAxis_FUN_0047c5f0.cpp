@@ -14,101 +14,106 @@ core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   float fVar1;
   float fVar2;
   float fVar3;
+  float fVar4;
   uint extraout_EAX;
-  int iVar4;
+  float fVar5;
   int extraout_EAX_00;
-  int iVar5;
+  int iVar6;
   int extraout_EBX;
   int extraout_EBX_00;
   int extraout_EBX_01;
-  int *piVar6;
   int *piVar7;
-  byte bVar8;
-  float10 fVar9;
+  int *piVar8;
+  byte bVar9;
   float10 fVar10;
   float10 fVar11;
   float10 fVar12;
   float10 fVar13;
   float10 fVar14;
+  float10 fVar15;
   double value;
-  double dVar15;
-  int aiStackY_1078 [1016];
-  uint uVar17;
-  ulonglong uVar16;
-  float fVar18;
-  ulonglong uVar19;
-  uint local_7c;
-  int iStack_78;
-  float local_2c;
-  float local_18;
-  float fStack_14;
+  double dVar16;
+  double dVar17;
+  int aiStackY_107c [1012];
+  uint uVar19;
+  ulonglong uVar18;
+  int iVar20;
+  float fVar21;
+  float local_7c;
+  float local_48;
+  float local_44;
+  float local_34;
   
-  bVar8 = 0;
+  bVar9 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Realign object",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  fVar9 = (float10)0.31830988619288902;
-  fVar10 = (float10)32768;
-  fVar11 = (float10)rotation_angles->z * fVar9 * fVar10;
-  fVar14 = (float10)rotation_angles->y * fVar9 * fVar10;
-  uVar19 = 0x47c649;
-  crt_math_c_round_FUN_005fe6b0((double)((float10)rotation_angles->x * fVar9 * fVar10));
-  uVar17 = 0x47c65d;
-  crt_math_c_round_FUN_005fe6b0((double)fVar11);
-  uVar16 = CONCAT44 /* combine 2-byte values */(uVar17,0x47c678);
-  dVar15 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
-  local_7c = (int)ROUND(dVar15) + 0x2000U & 0xc000;
-  fVar9 = (float10)3.0517578125e-05;
-  fVar10 = (float10)3.1415926535000001;
-  fVar11 = (float10)iStack_78 * fVar9 * fVar10;
-  fVar14 = (float10)fsin(fVar11);
-  fVar11 = (float10)fcos(fVar11);
-  fVar12 = (float10)(extraout_EAX & 0xc000) * fVar9 * fVar10;
-  fVar13 = (float10)fsin(fVar12);
+  fVar10 = (float10)0.31830988619288902;
+  fVar11 = (float10)32768;
+  fVar12 = (float10)rotation_angles->z * fVar10 * fVar11;
+  fVar15 = (float10)rotation_angles->y * fVar10 * fVar11;
+  value = 2.32399438402403e-317;
+  crt_math_c_round_FUN_005fe6b0((double)((float10)rotation_angles->x * fVar10 * fVar11));
+  uVar19 = 0x47c65d;
+  crt_math_c_round_FUN_005fe6b0((double)fVar12);
+  uVar18 = CONCAT44 /* combine 2-byte values */(uVar19,0x47c678);
+  dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
+  fVar5 = (float)((int)ROUND(dVar16) + 0x2000U & 0xc000);
+  fVar10 = (float10)3.0517578125e-05;
+  fVar11 = (float10)3.1415926535000001;
+  fVar12 = (float10)(int)local_7c * fVar10 * fVar11;
+  fVar15 = (float10)fsin(fVar12);
   fVar12 = (float10)fcos(fVar12);
-  fVar10 = (float10)local_7c * fVar9 * fVar10;
-  fVar9 = (float10)fsin(fVar10);
-  fVar10 = (float10)fcos(fVar10);
-  fVar1 = (float)fVar14;
-  fVar2 = (float)fVar9;
-  fVar3 = (float)((float10)(float)fVar10 * (float10)(float)fVar12 +
-                 fVar9 * (float10)fVar1 * (float10)(float)fVar13);
-  iVar5 = 0;
-  local_2c = 0.0;
+  fVar13 = (float10)(extraout_EAX & 0xc000) * fVar10 * fVar11;
+  fVar14 = (float10)fsin(fVar13);
+  fVar13 = (float10)fcos(fVar13);
+  fVar11 = (float10)(int)fVar5 * fVar10 * fVar11;
+  fVar10 = (float10)fsin(fVar11);
+  fVar11 = (float10)fcos(fVar11);
+  fVar1 = (float)fVar12;
+  fVar2 = (float)fVar14;
+  fVar3 = (float)fVar13;
+  fVar4 = (float)fVar10;
+  local_44 = fVar4 * fVar1;
+  fVar12 = fVar11 * (float10)(float)fVar15;
+  local_34 = (float)((float10)(float)fVar11 * (float10)fVar3 +
+                    fVar10 * (float10)(float)fVar15 * (float10)fVar2);
+  iVar6 = 0;
+  local_48 = (float)(fVar12 * (float10)fVar2 + -(float10)fVar4 * (float10)fVar3);
   while( true ) {
-    fVar18 = (float)uVar19;
-    iVar4 = this_ptr->vertex_count * this_ptr->frame_count;
-    if (iVar4 - (int)local_2c == 0 || iVar4 < (int)local_2c) break;
-    piVar6 = (int *)((int)this_ptr->vertex_list + iVar5);
-    piVar7 = piVar6 + (uint)bVar8 * -2 + 1;
-    iVar5 = *piVar6;
-    iVar4 = (int)((ulonglong)uVar16 >> 0x20);
-    *(int *)(&stack0xffffff74 + (uint)bVar8 * -8) = *piVar7;
-    *(int *)(&stack0xffffff78 + (uint)bVar8 * -8 + (uint)bVar8 * -8) = piVar7[(uint)bVar8 * -2 + 1];
-    dVar15 = crt_math_c_floor_FUN_005feb90
-                       ((double)((float)(int)fVar18 *
-                                 (float)(fVar10 * (float10)fVar1 * (float10)(float)fVar13 +
-                                        -(float10)fVar2 * (float10)(float)fVar12) +
-                                 (float)iVar5 * fVar3 +
-                                 (float)iVar4 * (float)(fVar13 * (float10)(float)fVar11) +
-                                (float)0.5));
-    fVar14 = (float10)local_18 * (float10)local_2c + (float10)fVar2 * (float10)fStack_14;
-    fVar9 = (float10)fVar1 * (float10)(fVar2 * (float)fVar11);
-    dVar15 = crt_math_c_round_FUN_005fe6b0(dVar15);
-    *(int *)((int)this_ptr->vertex_list + extraout_EBX) = (int)ROUND(dVar15);
-    dVar15 = crt_math_c_floor_FUN_005feb90((double)(fVar14 + fVar9 + (float10)0.5));
-    fVar14 = (float10)local_18 * (float10)-fVar1 + (float10)fVar2 * (float10)fVar18;
-    fVar9 = (float10)fVar1 * (float10)fVar3;
-    uVar19 = 0x47c8d2;
-    dVar15 = crt_math_c_round_FUN_005fe6b0(dVar15);
-    *(int *)(extraout_EAX_00 + extraout_EBX_00 + 4) = (int)ROUND(dVar15);
-    dVar15 = (double)(fVar14 + fVar9 + (float10)0.5);
-    value = crt_math_c_floor_FUN_005feb90(dVar15);
-    iVar5 = extraout_EBX_01 + 0xc;
-    uVar16 = CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar15 >> 0x20),0x47c90a);
-    dVar15 = crt_math_c_round_FUN_005fe6b0(value);
-    local_2c = (float)((int)local_2c + 1);
-    *(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar15);
+    fVar21 = SUB84 /* extract 2-byte value */(value,0);
+    if (this_ptr->vertex_count * this_ptr->frame_count < 1) break;
+    piVar7 = (int *)((int)this_ptr->vertex_list + iVar6);
+    piVar8 = piVar7 + (uint)bVar9 * -2 + 1;
+    iVar6 = *piVar7;
+    iVar20 = (int)((ulonglong)uVar18 >> 0x20);
+    *(int *)(&stack0xffffff70 + (uint)bVar9 * -8) = *piVar8;
+    *(int *)(&stack0xffffff74 + (uint)bVar9 * -8 + (uint)bVar9 * -8) = piVar8[(uint)bVar9 * -2 + 1];
+    value = crt_math_c_floor_FUN_005feb90
+                      ((double)((float)(int)fVar21 * local_48 +
+                                (float)iVar6 * local_34 +
+                                (float)iVar20 * (float)(fVar14 * (float10)fVar1) +
+                               (float)0.5));
+    fVar15 = (float10)fVar21 * (float10)((float)fVar11 * fVar1) +
+             (float10)(int)fVar21 * (float10)iVar6;
+    fVar10 = (float10)(float)(extraout_EAX & 0xc000) * (float10)fVar3;
+    dVar16 = crt_math_c_round_FUN_005fe6b0(value);
+    local_34 = (float)(int)ROUND(dVar16);
+    *(float *)((int)this_ptr->vertex_list + extraout_EBX) = local_34;
+    dVar16 = crt_math_c_floor_FUN_005feb90((double)(fVar15 + fVar10 + (float10)0.5));
+    fVar15 = (float10)local_34 * (float10)(fVar2 * fVar4 + (float)fVar12 * fVar3) +
+             (float10)local_7c * (float10)local_44;
+    fVar10 = (float10)fVar5 * (float10)(float)(fVar14 * (float10)fVar1);
+    dVar17 = crt_math_c_round_FUN_005fe6b0(dVar16);
+    uVar19 = (uint)((ulonglong)dVar16 >> 0x20);
+    *(int *)(extraout_EAX_00 + extraout_EBX_00 + 4) = (int)ROUND(dVar17);
+    dVar16 = crt_math_c_floor_FUN_005feb90((double)(fVar15 + fVar10 + (float10)0.5));
+    iVar6 = extraout_EBX_01 + 0xc;
+    uVar18 = CONCAT44 /* combine 2-byte values */(uVar19,0x47c90a);
+    dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
+    local_44 = (float)(int)ROUND(dVar16);
+    local_48 = (float)((int)local_48 + 1);
+    *(float *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = local_44;
   }
   return;
 }

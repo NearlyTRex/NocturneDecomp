@@ -10,7 +10,7 @@
 ; undefined1       Stack[-0xc]:1  local_c
 ;
 ; Referenced Globals:
-;   GetTextExtentPoint32A* GetTextExtentPoint32A = 002117b2
+;   GetTextExtentPoint32A* g_GetTextExtentPoint32A = 002117b2
 ;
 ; Called Functions:
 ;   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860
@@ -53,7 +53,7 @@ section .text
     PUSH EBX                            ; 005f2ad9
     MOV ECX,dword ptr [EAX + 0x4]       ; 005f2ada
     PUSH ECX                            ; 005f2add
-    CALL dword ptr CS:[0x6113e4]        ; 005f2ade | GetTextExtentPoint32A
+    CALL dword ptr CS:[0x6113e4]        ; 005f2ade | g_GetTextExtentPoint32A
     TEST EAX,EAX                        ; 005f2ae5
     JNZ 0x005f2aed                      ; 005f2ae7
         ;   XREF to: 005f2aed (CONDITIONAL_JUMP)  ; LAB_005f2aed

@@ -47,7 +47,7 @@ void core_mobster_cpp_FUN_005279f0(void)
     } while (iVar6 < 3);
     if (0.0 < *(float *)(in_stack_00000004 + 0xbed4)) {
       *(float *)(in_stack_00000004 + 0xbed4) =
-           *(float *)(in_stack_00000004 + 0xbed4) + 5f;
+           *(float *)(in_stack_00000004 + 0xbed4) + 5.0f;
       iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(in_stack_00000004 + 0xbf5c));
       if (iVar5 == 0) {
         iVar6 = 0;

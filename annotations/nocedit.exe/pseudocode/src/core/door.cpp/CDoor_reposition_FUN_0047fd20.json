@@ -1,14 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 137,
+    "complexity_score": 253,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 137,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 418
+    "pseudocode_lines": 143,
+    "suspect_count": 9,
+    "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
+      "stack_align_anchor",
+      "variadic_anchor"
+    ],
+    "total_lines": 424
   },
   "cross_references": [
     {
@@ -137,35 +142,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "0047fd2c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ],
-    "0047fd47": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ],
-    "0047fda9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ],
-    "0047fe02": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ],
-    "0047fee5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ],
-    "0047ff67": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ],
-    "0047fff9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ],
-    "0048002a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ],
-    "00480062": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.327800829875518,
     "instruction_count": 241,
@@ -210,7 +186,47 @@
     },
     "pcode_op_count": 1284
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 208,
+    "local_size": 204,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0047fd2c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
     {
       "add_esp_value": 8,
       "callind_address": "0047fd3e",
@@ -326,46 +342,5 @@
       "text": "Direct CALL at 0048004f, ADD ESP at 00480062 with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ],
-  "stack_frame": {
-    "frame_size": 208,
-    "local_size": 204,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDoor *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "0047fd2c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": []
+  ]
 }

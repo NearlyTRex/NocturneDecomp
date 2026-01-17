@@ -15,7 +15,7 @@
 ;   crt_thread.c_InitializeThreadContext_FUN_0060ccf0 at 0060cd03
 ;
 ; Referenced Globals:
-;   VirtualQuery* PTR_VirtualQuery_00611668 = 002122b4
+;   VirtualQuery* g_VirtualQueryFunc = 002122b4
 ;   BYTE g_WindowsMinorVersion = \x00
 ;   WORD g_WindowsPlatformVersion = 0x0
 ;
@@ -36,7 +36,7 @@ section .text
     PUSH EAX                            ; 0060a6af
     LEA EAX,[ESP + 0x24]                ; 0060a6b0
     PUSH EAX                            ; 0060a6b4
-    CALL dword ptr CS:[0x611668]        ; 0060a6b5 | PTR_VirtualQuery_00611668
+    CALL dword ptr CS:[0x611668]        ; 0060a6b5 | g_VirtualQueryFunc
     MOV EDX,dword ptr [ESP]             ; 0060a6bc
     ADD EDX,dword ptr [ESP + 0xc]       ; 0060a6bf
     MOV CX,word ptr [0x00685019]        ; 0060a6c3 | g_WindowsPlatformVersion

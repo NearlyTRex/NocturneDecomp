@@ -10,8 +10,8 @@
 ;   sound_sndwav.cpp_getWavOutDevice_FUN_005b1510 at 005b1518
 ;
 ; Referenced Globals:
-;   waveOutClose* waveOutClose = 0021191e
-;   GlobalFree* GlobalFree = 00211fe6
+;   waveOutClose* g_waveOutCloseFunc = 0021191e
+;   GlobalFree* g_GlobalFreeFunc = 00211fe6
 ;   TerminatedCString s_waveOutClose_failed_00652370
 ;   HWAVEOUT g_WaveOutHandle
 ;   HGLOBAL[8] g_WaveOutHeaderHandles
@@ -55,7 +55,7 @@ section .text
     JZ 0x005b0876                       ; 005b0866
         ;   XREF to: 005b0876 (CONDITIONAL_JUMP)  ; LAB_005b0876
     PUSH EDX                            ; 005b0868
-    CALL dword ptr CS:[0x6115d0]        ; 005b0869 | GlobalFree
+    CALL dword ptr CS:[0x6115d0]        ; 005b0869 | g_GlobalFreeFunc
     MOV dword ptr [EBX + 0x3f6ad78],EDI ; 005b0870 | g_WaveOutBufferHandles
     MOV EBP,dword ptr [EBX + 0x3f6ad38] ; 005b0876 | g_WaveOutHeaderHandles | DAT_03f6ad3c
         ;   Label: LAB_005b0876
@@ -64,7 +64,7 @@ section .text
     JZ 0x005b0894                       ; 005b0884
         ;   XREF to: 005b0894 (CONDITIONAL_JUMP)  ; LAB_005b0894
     PUSH EBP                            ; 005b0886
-    CALL dword ptr CS:[0x6115d0]        ; 005b0887 | GlobalFree
+    CALL dword ptr CS:[0x6115d0]        ; 005b0887 | g_GlobalFreeFunc
     MOV dword ptr [EBX + 0x3f6ad38],EDI ; 005b088e | g_WaveOutHeaderHandles
     ADD EBX,0x4                         ; 005b0894
         ;   Label: LAB_005b0894
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 005b085a (UNCONDITIONAL_JUMP)  ; LAB_005b085a
     PUSH EDX                            ; 005b08b7
         ;   Label: LAB_005b08b7
-    CALL dword ptr CS:[0x611440]        ; 005b08b8 | waveOutClose
+    CALL dword ptr CS:[0x611440]        ; 005b08b8 | g_waveOutCloseFunc
     TEST EAX,EAX                        ; 005b08bf
     JZ 0x005b08d2                       ; 005b08c1
         ;   XREF to: 005b08d2 (CONDITIONAL_JUMP)  ; LAB_005b08d2

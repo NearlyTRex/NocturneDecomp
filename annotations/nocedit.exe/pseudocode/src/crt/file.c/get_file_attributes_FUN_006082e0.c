@@ -38,7 +38,7 @@ LAB_0060830b:
     pcVar2 = (char *)0x0;
 LAB_0060832b:
     if (pcVar2 == (char *)0x0) {
-      pvVar1 = (*PTR_FindFirstFileA_0061154c)(filename,&_Stack_148);
+      pvVar1 = (*g_FindFirstFileAFunc)(filename,&_Stack_148);
       if (pvVar1 == (HANDLE)0xffffffff) {
         return 0xffffffff;
       }

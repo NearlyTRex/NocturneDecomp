@@ -1,13 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 274,
-    "complexity_score": 96,
+    "complexity_score": 176,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 23,
     "pseudocode_lines": 96,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 7,
+    "suspect_types": [
+      "call_esp_anchor",
+      "variadic_anchor"
+    ],
     "total_lines": 370
   },
   "cross_references": [
@@ -122,7 +125,7 @@
     },
     {
       "addr": "0061c9c6",
-      "name": "g_TextureScalingFactor",
+      "name": "g_TextureScalingFactor_0061c9c6",
       "type": "double",
       "value": "254"
     },
@@ -240,29 +243,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "00467376": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
-    ],
-    "004673a4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
-    ],
-    "004673c4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
-    ],
-    "004673ef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
-    ],
-    "00467406": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
-    ],
-    "00467429": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
-    ],
-    "0046769a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.287037037037037,
     "instruction_count": 216,
@@ -307,7 +287,86 @@
     },
     "pcode_op_count": 1358
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 136,
+    "local_size": 136,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
     {
       "add_esp_value": 12,
       "call_address": "00467695",
@@ -402,85 +461,5 @@
       "text": "Direct CALL at 00467424, ADD ESP at 00467429 with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ],
-  "stack_frame": {
-    "frame_size": 136,
-    "local_size": 136,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_80",
-        "offset": -128,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "suspects": []
+  ]
 }

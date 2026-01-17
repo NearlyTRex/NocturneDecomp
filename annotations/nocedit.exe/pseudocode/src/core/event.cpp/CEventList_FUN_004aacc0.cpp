@@ -33,10 +33,10 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   uint *puVar19;
   byte bVar20;
   CEvent *in_stack_00000008;
-  CVector3f *in_stack_ffffe946;
-  int in_stack_ffffe94a;
-  float in_stack_ffffe94e;
-  char local_163c [255];
+  float in_stack_ffffe9c4;
+  CVector3f *in_stack_ffffe9cc;
+  int in_stack_ffffe9d0;
+  float in_stack_ffffe9d4;
   char local_153d [200];
   char local_1475 [200];
   char local_13ad [200];
@@ -291,7 +291,7 @@ LAB_004aad41:
           if (pCVar7 == (CDemonActor *)0x0) {
             return (CDemonActor *)0x0;
           }
-          if (pCVar7 == DAT_0065d95c) {
+          if (pCVar7 == 0x0FFFFFFF) {
             local_f0 = 0;
           }
           else if ((CLocation *)&local_128 != &pCVar7->location) {
@@ -350,7 +350,7 @@ LAB_004aad41:
             }
             local_f0 = 0;
           }
-          if ((pCVar7 != DAT_0065d95c) && (local_f0 != 0)) {
+          if ((pCVar7 != 0x0FFFFFFF) && (local_f0 != 0)) {
             pCVar7->was_created = 2;
             pCVar9 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar7,uVar12);
             if (pCVar9 != (CDemonActor *)0x0) {
@@ -380,7 +380,7 @@ LAB_004aad41:
             }
             local_d0 = -1;
             crt_stdio_c_sscanf_FUN_0060013c
-                      ((char *)local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4);
+                      ((char *)local_ec,"( %[^ ,], %d, %d )%n",&stack0xffffe9c4,&local_d8,&local_d4);
             if (local_d0 < 0) {
               pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
               return pCVar7;
@@ -389,7 +389,7 @@ LAB_004aad41:
             while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
               local_ec = local_ec + 1;
             }
-            iVar5 = engine_dosio_c_getFileSize_FUN_00481880("art",local_163c);
+            iVar5 = engine_dosio_c_getFileSize_FUN_00481880("art",&stack0xffffe9c4);
             if (iVar5 < 0) {
               pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
               return pCVar7;
@@ -633,8 +633,8 @@ LAB_004aaf38:
                           if (pCVar7 == (CDemonActor *)0x0) {
                             return (CDemonActor *)0x0;
                           }
-                          if (pCVar7 == DAT_0065d95c) {
-                            local_f0 = (uint)pCVar7 ^ (uint)DAT_0065d95c;
+                          if (pCVar7 == 0x0FFFFFFF) {
+                            local_f0 = (uint)pCVar7 ^ (uint)0x0FFFFFFF;
                           }
                           iVar5 = core_event_cpp_DifferentWaysToDie2_FUN_004aa960();
                           if (iVar5 == 0) {
@@ -789,7 +789,7 @@ LAB_004aaf38:
                               if (pCVar7 == (CDemonActor *)0x0) {
                                 return (CDemonActor *)0x0;
                               }
-                              if (pCVar7 == DAT_0065d95c) {
+                              if (pCVar7 == 0x0FFFFFFF) {
                                 local_f0 = 0;
                               }
                               iVar5 = core_event_cpp_DifferentWaysToDie_FUN_004aa7d0();
@@ -994,7 +994,7 @@ LAB_004aaf38:
                                                   (local_13ad + 1,local_13ad + 2,SVar14);
                                         SVar14 = SVar14 - 1;
                                       }
-                                      puVar17 = &DAT_006793d8;
+                                      puVar17 = &0;
                                       pcVar8 = local_b15 + 1;
                                       for (iVar5 = 0x32; iVar5 != 0; iVar5 = iVar5 + -1) {
                                         *(uint *)pcVar8 = *puVar17;
@@ -1398,7 +1398,7 @@ LAB_004aaf38:
                                                 if (pCVar7 == (CDemonActor *)0x0) {
                                                   return (CDemonActor *)0x0;
                                                 }
-                                                if ((pCVar7 == DAT_0065d95c) || (local_f0 == 0)) {
+                                                if ((pCVar7 == 0x0FFFFFFF) || (local_f0 == 0)) {
                                                   iVar5 = core_event_cpp_CEventList_FUN_004add00
                                                                     (this_ptr);
                                                   if (iVar5 != 0) {
@@ -1501,7 +1501,7 @@ LAB_004aaf38:
                                                   if (pCVar7 == (CDemonActor *)0x0) {
                                                     return (CDemonActor *)0x0;
                                                   }
-                                                  if (pCVar7 != DAT_0065d95c) {
+                                                  if (pCVar7 != 0x0FFFFFFF) {
                                                     pCVar10 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             ((CMotionController *)(pCVar7 + 1));
@@ -1792,7 +1792,7 @@ LAB_004aaf38:
                                                   if (pCVar7 == (CDemonActor *)0x0) {
                                                     return (CDemonActor *)0x0;
                                                   }
-                                                  if (pCVar7 != DAT_0065d95c) {
+                                                  if (pCVar7 != 0x0FFFFFFF) {
                                                     pCVar9 = pCVar7 + 1;
                                                     pCVar10 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
@@ -1812,13 +1812,13 @@ LAB_004aaf38:
                                                                                                         
                                                   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
                                                             ((CMotionController *)pCVar9,iVar5,0.0);
+                                                  iVar5 = 1;
                                                   pSVar11 = 
                                                   core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                                             ((CMotionController *)pCVar9);
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                                                             ((CMotionController *)pCVar9,
-                                                             pSVar11->state_index,
-                                                             (int)in_stack_ffffe946);
+                                                             pSVar11->state_index,iVar5);
                                                   }
                                                   }
                                                   }
@@ -1837,7 +1837,7 @@ LAB_004aaf38:
                                                         pCVar16 = pCVar16 + 1;
                                                       }
                                                       local_1c = -1;
-                                                      puVar17 = &DAT_006794a0;
+                                                      puVar17 = &0;
                                                       puVar19 = local_344;
                                                       for (iVar5 = 0x19; iVar5 != 0;
                                                           iVar5 = iVar5 + -1) {
@@ -1989,7 +1989,7 @@ LAB_004aaf38:
                                                     if (pCVar7 == (CDemonActor *)0x0) {
                                                       return (CDemonActor *)0x0;
                                                     }
-                                                    if (pCVar7 == DAT_0065d95c) {
+                                                    if (pCVar7 == 0x0FFFFFFF) {
                                                       local_f0 = 0;
                                                     }
                                                     local_18 = -1;
@@ -2030,7 +2030,7 @@ LAB_004aaf38:
                                                       if (pCVar9 == (CDemonActor *)0x0) {
                                                         return (CDemonActor *)0x0;
                                                       }
-                                                      if (pCVar9 == DAT_0065d95c) {
+                                                      if (pCVar9 == 0x0FFFFFFF) {
                                                         local_f0 = 0;
                                                       }
                                                       else {
@@ -2073,10 +2073,10 @@ LAB_004aaf38:
                                                   ;
                                                   if (pCVar9 != (CDemonActor *)0x0) {
                                                     (*pCVar9->vtable[1].processFootstep)
-                                                              (pCVar9,(float)in_stack_ffffe946);
+                                                              (pCVar9,in_stack_ffffe9c4);
                                                     (*pCVar9->vtable[1].handleFootstep)
-                                                              (pCVar9,in_stack_ffffe946,
-                                                               in_stack_ffffe94a,in_stack_ffffe94e);
+                                                              (pCVar9,in_stack_ffffe9cc,
+                                                               in_stack_ffffe9d0,in_stack_ffffe9d4);
                                                   }
                                                   (*pCVar7->vtable->setPositionAndOrientation)
                                                             (pCVar7,&local_11c,&local_134);

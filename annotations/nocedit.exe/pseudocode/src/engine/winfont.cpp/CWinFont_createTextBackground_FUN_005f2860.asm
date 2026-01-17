@@ -14,14 +14,14 @@
 ;   engine_winfont.cpp_CWinFont_getStringWidth_FUN_005f2aa0 at 005f2ab1
 ;
 ; Referenced Globals:
-;   CreateBrushIndirect* CreateBrushIndirect = 00211736
-;   CreateCompatibleDC* CreateCompatibleDC = 0021174c
-;   CreateDIBSection* CreateDIBSection = 00211762
-;   DeleteObject* DeleteObject = 00211790
-;   Rectangle* Rectangle = 002117ca
-;   SelectObject* SelectObject = 002117d6
-;   SetBkColor* SetBkColor = 002117e6
-;   SetBkMode* SetBkMode = 002117f4
+;   CreateBrushIndirect* g_CreateBrushIndirectFunc = 00211736
+;   CreateCompatibleDC* g_CreateCompatibleDCFunc = 0021174c
+;   CreateDIBSection* g_CreateDIBSectionFunc = 00211762
+;   DeleteObject* g_DeleteObjectFunc = 00211790
+;   Rectangle* g_RectangleFunc = 002117ca
+;   SelectObject* g_SelectObjectFunc = 002117d6
+;   SetBkColor* g_SetBkColorFunc = 002117e6
+;   SetBkMode* g_SetBkModeFunc = 002117f4
 ;   int g_WindowWidth = 0x140
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 g_ColorMagenta
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 005f2a30 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_reset_FUN_005f2a30(CWinFont * this_ptr)
     ADD ESP,0x4                         ; 005f28dd
     PUSH 0x0                            ; 005f28e0
-    CALL dword ptr CS:[0x6113cc]        ; 005f28e2 | CreateCompatibleDC
+    CALL dword ptr CS:[0x6113cc]        ; 005f28e2 | g_CreateCompatibleDCFunc
     PUSH 0x2c                           ; 005f28e9
     PUSH 0x0                            ; 005f28eb
     MOV dword ptr [EBX + 0x4],EAX       ; 005f28ed
@@ -138,7 +138,7 @@ section .text
     PUSH EAX                            ; 005f2953
     MOV EBP,dword ptr [EBX + 0x4]       ; 005f2954
     PUSH EBP                            ; 005f2957
-    CALL dword ptr CS:[0x6113d0]        ; 005f2958 | CreateDIBSection
+    CALL dword ptr CS:[0x6113d0]        ; 005f2958 | g_CreateDIBSectionFunc
     MOV dword ptr [EBX + 0x8],EAX       ; 005f295f
     TEST EAX,EAX                        ; 005f2962
     JZ 0x005f28c0                       ; 005f2964
@@ -146,15 +146,15 @@ section .text
     PUSH EAX                            ; 005f296a
     MOV ECX,dword ptr [EBX + 0x4]       ; 005f296b
     PUSH ECX                            ; 005f296e
-    CALL dword ptr CS:[0x6113ec]        ; 005f296f | SelectObject
+    CALL dword ptr CS:[0x6113ec]        ; 005f296f | g_SelectObjectFunc
     PUSH 0x2                            ; 005f2976
     MOV EBP,dword ptr [EBX + 0x4]       ; 005f2978
     PUSH EBP                            ; 005f297b
-    CALL dword ptr CS:[0x6113f4]        ; 005f297c | SetBkMode
+    CALL dword ptr CS:[0x6113f4]        ; 005f297c | g_SetBkModeFunc
     PUSH 0xff00ff                       ; 005f2983 | g_ColorMagenta
     MOV EAX,dword ptr [EBX + 0x4]       ; 005f2988
     PUSH EAX                            ; 005f298b
-    CALL dword ptr CS:[0x6113f0]        ; 005f298c | SetBkColor
+    CALL dword ptr CS:[0x6113f0]        ; 005f298c | g_SetBkColorFunc
     MOV ECX,0xff00ff                    ; 005f2993
     XOR EDX,EDX                         ; 005f2998
     LEA EAX,[ESP + 0x2c]                ; 005f299a
@@ -162,12 +162,12 @@ section .text
     PUSH EAX                            ; 005f29a2
     MOV dword ptr [ESP + 0x34],ECX      ; 005f29a3 | g_ColorMagenta
     MOV dword ptr [ESP + 0x38],EDX      ; 005f29a7
-    CALL dword ptr CS:[0x6113c8]        ; 005f29ab | CreateBrushIndirect
+    CALL dword ptr CS:[0x6113c8]        ; 005f29ab | g_CreateBrushIndirectFunc
     PUSH EAX                            ; 005f29b2
     MOV EBP,EAX                         ; 005f29b3
     MOV EAX,dword ptr [EBX + 0x4]       ; 005f29b5
     PUSH EAX                            ; 005f29b8
-    CALL dword ptr CS:[0x6113ec]        ; 005f29b9 | SelectObject
+    CALL dword ptr CS:[0x6113ec]        ; 005f29b9 | g_SelectObjectFunc
     PUSH 0x0                            ; 005f29c0
     MOV EDX,dword ptr [EBX + 0x120]     ; 005f29c2
     MOV EAX,dword ptr [EBX + 0x124]     ; 005f29c8
@@ -177,14 +177,14 @@ section .text
     PUSH 0x0                            ; 005f29d2
     MOV ECX,dword ptr [EBX + 0x4]       ; 005f29d4
     PUSH ECX                            ; 005f29d7
-    CALL dword ptr CS:[0x6113e8]        ; 005f29d8 | Rectangle
+    CALL dword ptr CS:[0x6113e8]        ; 005f29d8 | g_RectangleFunc
     PUSH EBP                            ; 005f29df
-    CALL dword ptr CS:[0x6113dc]        ; 005f29e0 | DeleteObject
+    CALL dword ptr CS:[0x6113dc]        ; 005f29e0 | g_DeleteObjectFunc
     MOV EBP,dword ptr [EBX + 0xc]       ; 005f29e7
     PUSH EBP                            ; 005f29ea
     MOV EAX,dword ptr [EBX + 0x4]       ; 005f29eb
     PUSH EAX                            ; 005f29ee
-    CALL dword ptr CS:[0x6113ec]        ; 005f29ef | SelectObject
+    CALL dword ptr CS:[0x6113ec]        ; 005f29ef | g_SelectObjectFunc
     MOV dword ptr [EBX + 0x10],EAX      ; 005f29f6
     MOV dword ptr [EBX + 0x120],EDI     ; 005f29f9
     MOV dword ptr [EBX + 0x124],ESI     ; 005f29ff

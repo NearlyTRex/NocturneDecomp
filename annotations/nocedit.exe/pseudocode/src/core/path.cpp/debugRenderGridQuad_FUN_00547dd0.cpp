@@ -34,12 +34,12 @@ core_path_cpp_debugRenderGridQuad_FUN_00547dd0
   
   fVar4 = (float10)256;
   fVar5 = (float10)g_CDemonRaytraceInstance.bbox_min.y * fVar4;
-  fVar6 = (float10)grid_y * (float10)(g_CDemonRaytraceInstance.adjusted_size.y * 256f);
-  fVar7 = (float10)grid_z * (float10)(g_CDemonRaytraceInstance.adjusted_size.z * 256f);
+  fVar6 = (float10)grid_y * (float10)(g_CDemonRaytraceInstance.adjusted_size.y * 256.0f);
+  fVar7 = (float10)grid_z * (float10)(g_CDemonRaytraceInstance.adjusted_size.z * 256.0f);
   fStack_38 = 7.759508e-39;
   dVar9 = crt_math_c_round_FUN_005fe6b0
                     ((double)((float)grid_x *
-                             g_CDemonRaytraceInstance.adjusted_size.x * 256f));
+                             g_CDemonRaytraceInstance.adjusted_size.x * 256.0f));
   fVar8 = (float10)dVar9;
   iStack_3c = 0x547e61;
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar7);

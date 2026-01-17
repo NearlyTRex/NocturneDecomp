@@ -10,14 +10,14 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10 at 0050702c
 ;
 ; Referenced Globals:
-;   MessageBoxA* MessageBoxA = 00211b44
-;   ExitProcess* PTR_ExitProcess_00611534 = 00211d12
+;   MessageBoxA* g_MessageBoxAFunc = 00211b44
+;   ExitProcess* g_ExitProcessFunc = 00211d12
 ;   TerminatedCString s_s_File_s_Line_d_00657f84
 ;   TerminatedCString s_Nocturne_Editor_006581a7
 ;   char* g_ApplicationTitle = 006581a7
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   char[512] g_ErrorMessageBuffer
+;   char[512] g_ErrorMessageBuffer_03f96c30
 ;   HWND g_MainWindowHandle
 ;
 ; Called Functions:
@@ -39,17 +39,17 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 005f3931
     PUSH EBX                            ; 005f3935
     PUSH 0x657f84                       ; 005f3936 | = "%s\n\nFile: %s\nLine: %d"
-    PUSH 0x3f96c30                      ; 005f393b | g_ErrorMessageBuffer
+    PUSH 0x3f96c30                      ; 005f393b | g_ErrorMessageBuffer_03f96c30
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005f3940
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 005f3945
     PUSH 0x30                           ; 005f3948
     MOV ESI,dword ptr [0x0068499c]      ; 005f394a | g_ApplicationTitle
     PUSH ESI                            ; 005f3950 | = "Nocturne Editor"
-    PUSH 0x3f96c30                      ; 005f3951 | g_ErrorMessageBuffer
+    PUSH 0x3f96c30                      ; 005f3951 | g_ErrorMessageBuffer_03f96c30
     MOV EDI,dword ptr [0x03f98468]      ; 005f3956 | g_MainWindowHandle
     PUSH EDI                            ; 005f395c
-    CALL dword ptr CS:[0x6114c4]        ; 005f395d | MessageBoxA
+    CALL dword ptr CS:[0x6114c4]        ; 005f395d | g_MessageBoxAFunc
     PUSH 0x1                            ; 005f3964
-    CALL dword ptr CS:[0x611534]        ; 005f3966 | PTR_ExitProcess_00611534
+    CALL dword ptr CS:[0x611534]        ; 005f3966 | g_ExitProcessFunc
 

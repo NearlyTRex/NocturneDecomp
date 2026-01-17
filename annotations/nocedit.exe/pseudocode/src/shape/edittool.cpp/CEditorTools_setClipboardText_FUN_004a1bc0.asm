@@ -17,13 +17,13 @@
 ;   shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270 at 004a332e
 ;
 ; Referenced Globals:
-;   CloseClipboard* CloseClipboard = 00211a68
-;   OpenClipboard* OpenClipboard = 00211b60
-;   SetClipboardData* SetClipboardData = 00211ba4
-;   GlobalAlloc* GlobalAlloc = 00211fd8
-;   GlobalFree* GlobalFree = 00211fe6
-;   GlobalLock* GlobalLock = 00211ff4
-;   GlobalUnlock* GlobalUnlock = 00212018
+;   CloseClipboard* g_CloseClipboardFunc = 00211a68
+;   OpenClipboard* g_OpenClipboardFunc = 00211b60
+;   SetClipboardData* g_SetClipboardDataFunc = 00211ba4
+;   GlobalAlloc* g_GlobalAllocFunc = 00211fd8
+;   GlobalFree* g_GlobalFreeFunc = 00211fe6
+;   GlobalLock* g_GlobalLockFunc = 00211ff4
+;   GlobalUnlock* g_GlobalUnlockFunc = 00212018
 ;   char s_EmptyChar_00623594 = \x00
 ;   TerminatedCString s_shape_edittool_cpp_00623595
 ;   char* g_ClipboardBackupText
@@ -63,19 +63,19 @@ section .text
     MOV ESI,dword ptr [0x03f98468]      ; 004a1be1 | g_MainWindowHandle
     PUSH ESI                            ; 004a1be7
     LEA EBX,[ECX + 0x1]                 ; 004a1be8
-    CALL dword ptr CS:[0x6114cc]        ; 004a1beb | OpenClipboard
+    CALL dword ptr CS:[0x6114cc]        ; 004a1beb | g_OpenClipboardFunc
     TEST EAX,EAX                        ; 004a1bf2
     JZ 0x004a1c46                       ; 004a1bf4
         ;   XREF to: 004a1c46 (CONDITIONAL_JUMP)  ; LAB_004a1c46
     PUSH EBX                            ; 004a1bf6
     PUSH 0x2002                         ; 004a1bf7
-    CALL dword ptr CS:[0x6115cc]        ; 004a1bfc | GlobalAlloc
+    CALL dword ptr CS:[0x6115cc]        ; 004a1bfc | g_GlobalAllocFunc
     MOV EBP,EAX                         ; 004a1c03
     TEST EAX,EAX                        ; 004a1c05
     JZ 0x004a1c3f                       ; 004a1c07
         ;   XREF to: 004a1c3f (CONDITIONAL_JUMP)  ; LAB_004a1c3f
     PUSH EAX                            ; 004a1c09
-    CALL dword ptr CS:[0x6115d4]        ; 004a1c0a | GlobalLock
+    CALL dword ptr CS:[0x6115d4]        ; 004a1c0a | g_GlobalLockFunc
     TEST EAX,EAX                        ; 004a1c11
     JZ 0x004a1c6e                       ; 004a1c13
         ;   XREF to: 004a1c6e (CONDITIONAL_JUMP)  ; LAB_004a1c6e
@@ -91,11 +91,11 @@ section .text
     MOVSB.REP ES:EDI,ESI                ; 004a1c2a
     POP EDI                             ; 004a1c2c
     PUSH EBP                            ; 004a1c2d
-    CALL dword ptr CS:[0x6115dc]        ; 004a1c2e | GlobalUnlock
+    CALL dword ptr CS:[0x6115dc]        ; 004a1c2e | g_GlobalUnlockFunc
     PUSH EBP                            ; 004a1c35
     PUSH 0x1                            ; 004a1c36
-    CALL dword ptr CS:[0x6114dc]        ; 004a1c38 | SetClipboardData
-    CALL dword ptr CS:[0x611490]        ; 004a1c3f | CloseClipboard
+    CALL dword ptr CS:[0x6114dc]        ; 004a1c38 | g_SetClipboardDataFunc
+    CALL dword ptr CS:[0x611490]        ; 004a1c3f | g_CloseClipboardFunc
         ;   Label: LAB_004a1c3f
     PUSH 0x99f                          ; 004a1c46
         ;   Label: LAB_004a1c46
@@ -117,7 +117,7 @@ section .text
     RET                                 ; 004a1c6d
     PUSH EBP                            ; 004a1c6e
         ;   Label: LAB_004a1c6e
-    CALL dword ptr CS:[0x6115d0]        ; 004a1c6f | GlobalFree
+    CALL dword ptr CS:[0x6115d0]        ; 004a1c6f | g_GlobalFreeFunc
     JMP 0x004a1c3f                      ; 004a1c76
         ;   XREF to: 004a1c3f (UNCONDITIONAL_JUMP)  ; LAB_004a1c3f
     MOV ESI,dword ptr [ESP + 0x18]      ; 004a1c78

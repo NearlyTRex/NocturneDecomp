@@ -18,7 +18,7 @@
 ;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 at 004a3b43
 ;
 ; Referenced Globals:
-;   FindNextFileA* PTR_FindNextFileA_00611550 = 00211d96
+;   FindNextFileA* g_FindNextFileAFunc = 00211d96
 ;   TerminatedCString s_engine_dosio_c_006215de
 ;   TerminatedCString s_CFileFinder_open_search__006215f0
 ;   char* g_CurrentFilename
@@ -57,7 +57,7 @@ section .text
     PUSH EAX                            ; 00481d2f
     MOV EDI,dword ptr [EBX + 0x110]     ; 00481d30
     PUSH EDI                            ; 00481d36
-    CALL dword ptr CS:[0x611550]        ; 00481d37 | PTR_FindNextFileA_00611550
+    CALL dword ptr CS:[0x611550]        ; 00481d37 | g_FindNextFileAFunc
     TEST EAX,EAX                        ; 00481d3e
     JZ 0x00481d5c                       ; 00481d40
         ;   XREF to: 00481d5c (CONDITIONAL_JUMP)  ; LAB_00481d5c

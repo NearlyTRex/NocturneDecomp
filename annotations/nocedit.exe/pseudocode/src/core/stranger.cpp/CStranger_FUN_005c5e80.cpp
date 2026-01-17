@@ -22,7 +22,7 @@ uint core_stranger_cpp_CStranger_FUN_005c5e80(void)
       (*(int *)(*(int *)(in_stack_00000004 + 0x1fc2c) + 0x2e0) != 3)))) {
     return 0;
   }
-  uVar1 = DAT_00663744;
+  uVar1 = 0x41200000;
   *(uint *)(in_stack_00000004 + 0x1fc38) = 3;
   *(uint *)(in_stack_00000004 + 0x1fbe4) = uVar1;
   return 1;

@@ -12,8 +12,8 @@
 ;   engine_fileio.cpp_establishUserIdentity_FUN_004b1c00 at 004b1c20
 ;
 ; Referenced Globals:
-;   GetUserNameA* GetUserNameA = 002119a4
-;   GetComputerNameA* GetComputerNameA = 00211e1c
+;   GetUserNameA* g_GetUserNameAFunc = 002119a4
+;   GetComputerNameA* g_GetComputerNameAFunc = 00211e1c
 ;   TerminatedCString s_COMPUTERNAME_0065818c
 ;   TerminatedCString s_USERNAME_00658199
 ;
@@ -45,13 +45,13 @@ section .text
     LEA EDI,[EBX + EDX*0x1]             ; 005f4162
     PUSH EDI                            ; 005f4165
     MOV dword ptr [ESP + 0x8],EDX       ; 005f4166
-    CALL dword ptr CS:[0x611570]        ; 005f416a | GetComputerNameA
+    CALL dword ptr CS:[0x611570]        ; 005f416a | g_GetComputerNameAFunc
     MOV EAX,ESP                         ; 005f4171
     PUSH EAX                            ; 005f4173
     MOV ECX,0x100                       ; 005f4174
     PUSH EBX                            ; 005f4179
     MOV dword ptr [ESP + 0x8],ECX       ; 005f417a
-    CALL dword ptr CS:[0x611460]        ; 005f417e | GetUserNameA
+    CALL dword ptr CS:[0x611460]        ; 005f417e | g_GetUserNameAFunc
     CMP byte ptr [EBX + 0x100],0x0      ; 005f4185
     JZ 0x005f419a                       ; 005f418c
         ;   XREF to: 005f419a (CONDITIONAL_JUMP)  ; LAB_005f419a

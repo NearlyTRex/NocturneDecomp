@@ -17,21 +17,21 @@
 ;   crt_startup.cpp_WinMainBootstrap_FUN_00609e70 at 00609f0d
 ;
 ; Referenced Globals:
-;   GetStockObject* GetStockObject = 002117a0
-;   timeGetTime* timeGetTime = 00211884
-;   BringWindowToTop* BringWindowToTop = 00211a42
-;   CreateWindowExA* CreateWindowExA = 00211a7a
-;   FindWindowA* FindWindowA = 00211ab2
-;   GetLastActivePopup* GetLastActivePopup = 00211af6
-;   IsIconic* IsIconic = 00211b1e
-;   LoadCursorA* LoadCursorA = 00211b2a
-;   LoadIconA* LoadIconA = 00211b38
-;   RegisterClassA* RegisterClassA = 00211b92
-;   SetForegroundWindow* SetForegroundWindow = 00211be0
-;   ShowWindow* ShowWindow = 00211c06
-;   UpdateWindow* UpdateWindow = 00211c28
-;   GetCommandLineA* GetCommandLineA = 00211df8
-;   GetCurrentDirectoryA* GetCurrentDirectoryA = 00211e42
+;   GetStockObject* g_GetStockObjectFunc = 002117a0
+;   timeGetTime* g_timeGetTimeFunc = 00211884
+;   BringWindowToTop* g_BringWindowToTopFunc = 00211a42
+;   CreateWindowExA* g_CreateWindowExAFunc = 00211a7a
+;   FindWindowA* g_FindWindowAFunc = 00211ab2
+;   GetLastActivePopup* g_GetLastActivePopupFunc = 00211af6
+;   IsIconic* g_IsIconicFunc = 00211b1e
+;   LoadCursorA* g_LoadCursorAFunc = 00211b2a
+;   LoadIconA* g_LoadIconAFunc = 00211b38
+;   RegisterClassA* g_RegisterClassAFunc = 00211b92
+;   SetForegroundWindow* g_SetForegroundWindowFunc = 00211be0
+;   ShowWindow* g_ShowWindowFunc = 00211c06
+;   UpdateWindow* g_UpdateWindowFunc = 00211c28
+;   GetCommandLineA* g_GetCommandLineAFunc = 00211df8
+;   GetCurrentDirectoryA* g_GetCurrentDirectoryAFunc = 00211e42
 ;   ... and 24 more
 ;
 ; Called Functions:
@@ -66,31 +66,31 @@ section .text
     PUSH 0x0                            ; 005f368b
     MOV EDX,dword ptr [0x0068499c]      ; 005f368d | = "Nocturne Editor" | g_ApplicationTitle
     PUSH EDX                            ; 005f3693 | = "Nocturne Editor"
-    CALL dword ptr CS:[0x6114a0]        ; 005f3694 | FindWindowA
+    CALL dword ptr CS:[0x6114a0]        ; 005f3694 | g_FindWindowAFunc
     MOV EDI,EAX                         ; 005f369b
     TEST EAX,EAX                        ; 005f369d
     JZ 0x005f36e1                       ; 005f369f
         ;   XREF to: 005f36e1 (CONDITIONAL_JUMP)  ; LAB_005f36e1
     PUSH EAX                            ; 005f36a1
-    CALL dword ptr CS:[0x6114b0]        ; 005f36a2 | GetLastActivePopup
+    CALL dword ptr CS:[0x6114b0]        ; 005f36a2 | g_GetLastActivePopupFunc
     TEST EAX,EAX                        ; 005f36a9
     JZ 0x005f36af                       ; 005f36ab
         ;   XREF to: 005f36af (CONDITIONAL_JUMP)  ; LAB_005f36af
     MOV EDI,EAX                         ; 005f36ad
     PUSH EDI                            ; 005f36af
         ;   Label: LAB_005f36af
-    CALL dword ptr CS:[0x611488]        ; 005f36b0 | BringWindowToTop
+    CALL dword ptr CS:[0x611488]        ; 005f36b0 | g_BringWindowToTopFunc
     PUSH EDI                            ; 005f36b7
-    CALL dword ptr CS:[0x6114b8]        ; 005f36b8 | IsIconic
+    CALL dword ptr CS:[0x6114b8]        ; 005f36b8 | g_IsIconicFunc
     TEST EAX,EAX                        ; 005f36bf
     JZ 0x005f36cd                       ; 005f36c1
         ;   XREF to: 005f36cd (CONDITIONAL_JUMP)  ; LAB_005f36cd
     PUSH 0x9                            ; 005f36c3
     PUSH EDI                            ; 005f36c5
-    CALL dword ptr CS:[0x6114f4]        ; 005f36c6 | ShowWindow
+    CALL dword ptr CS:[0x6114f4]        ; 005f36c6 | g_ShowWindowFunc
     PUSH EDI                            ; 005f36cd
         ;   Label: LAB_005f36cd
-    CALL dword ptr CS:[0x6114ec]        ; 005f36ce | SetForegroundWindow
+    CALL dword ptr CS:[0x6114ec]        ; 005f36ce | g_SetForegroundWindowFunc
     XOR EAX,EAX                         ; 005f36d5
     ADD ESP,0x48                        ; 005f36d7
     POP EBP                             ; 005f36da
@@ -108,13 +108,13 @@ section .text
     CMP EBX,EAX                         ; 005f36f2
     JG 0x005f36ea                       ; 005f36f4
         ;   XREF to: 005f36ea (CONDITIONAL_JUMP)  ; LAB_005f36ea
-    CALL dword ptr CS:[0x61141c]        ; 005f36f6 | timeGetTime
+    CALL dword ptr CS:[0x61141c]        ; 005f36f6 | g_timeGetTimeFunc
     PUSH EAX                            ; 005f36fd
     CALL crt_stdlib.c_srand_FUN_005feb80 ; 005f36fe
         ;   XREF to: 005feb80 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_srand_FUN_005feb80(uint seed)
     ADD ESP,0x4                         ; 005f3703
     MOV EDI,0x3f98ff0                   ; 005f3706 | g_CommandLineBuffer
-    CALL dword ptr CS:[0x611568]        ; 005f370b | GetCommandLineA
+    CALL dword ptr CS:[0x611568]        ; 005f370b | g_GetCommandLineAFunc
     MOV ESI,EAX                         ; 005f3712
     PUSH EDI                            ; 005f3714 | g_CommandLineBuffer
     MOV AL,byte ptr [ESI]               ; 005f3715
@@ -175,12 +175,12 @@ section .text
     PUSH 0x3f98ef0                      ; 005f3784 | g_CurrentDirectory
         ;   Label: LAB_005f3784
     PUSH 0x100                          ; 005f3789
-    CALL dword ptr CS:[0x611578]        ; 005f378e | GetCurrentDirectoryA
+    CALL dword ptr CS:[0x611578]        ; 005f378e | g_GetCurrentDirectoryAFunc
     PUSH 0x100                          ; 005f3795
     PUSH 0x3f98df0                      ; 005f379a | g_ModuleFileName
     PUSH EBP                            ; 005f379f
     MOV EDI,0x3f98df0                   ; 005f37a0 | g_ModuleFileName
-    CALL dword ptr CS:[0x6115ac]        ; 005f37a5 | GetModuleFileNameA
+    CALL dword ptr CS:[0x6115ac]        ; 005f37a5 | g_GetModuleFileNameAFunc
     SUB ECX,ECX                         ; 005f37ac
     DEC ECX                             ; 005f37ae
     XOR EAX,EAX                         ; 005f37af
@@ -200,7 +200,7 @@ section .text
     PUSH 0x3f98df0                      ; 005f37d1 | g_ModuleFileName
         ;   Label: LAB_005f37d1
     MOV EBX,0x5f3150                    ; 005f37d6
-    CALL dword ptr CS:[0x611614]        ; 005f37db | SetCurrentDirectoryA
+    CALL dword ptr CS:[0x611614]        ; 005f37db | g_SetCurrentDirectoryAFunc
     XOR ESI,ESI                         ; 005f37e2
     MOV ECX,0x3                         ; 005f37e4
     PUSH 0x65                           ; 005f37e9
@@ -210,21 +210,21 @@ section .text
     PUSH EBP                            ; 005f37f7
     MOV dword ptr [ESP + 0x18],EBP      ; 005f37f8
     MOV dword ptr [ESP + 0x8],ECX       ; 005f37fc
-    CALL dword ptr CS:[0x6114c0]        ; 005f3800 | Rsrc_GroupIcon_65_0 | LoadIconA
+    CALL dword ptr CS:[0x6114c0]        ; 005f3800 | Rsrc_GroupIcon_65_0 | g_LoadIconAFunc
     PUSH 0x7f00                         ; 005f3807
     PUSH ESI                            ; 005f380c
     MOV dword ptr [ESP + 0x1c],EAX      ; 005f380d
-    CALL dword ptr CS:[0x6114bc]        ; 005f3811 | LoadCursorA
+    CALL dword ptr CS:[0x6114bc]        ; 005f3811 | g_LoadCursorAFunc
     PUSH 0x4                            ; 005f3818
     MOV dword ptr [ESP + 0x1c],EAX      ; 005f381a
-    CALL dword ptr CS:[0x6113e0]        ; 005f381e | GetStockObject
+    CALL dword ptr CS:[0x6113e0]        ; 005f381e | g_GetStockObjectFunc
     MOV dword ptr [ESP + 0x1c],EAX      ; 005f3825
     MOV EAX,[0x0068499c]                ; 005f3829 | g_ApplicationTitle
     MOV dword ptr [ESP + 0x24],EAX      ; 005f382e | = "Nocturne Editor"
     MOV EAX,ESP                         ; 005f3832
     PUSH EAX                            ; 005f3834
     MOV dword ptr [ESP + 0x24],ESI      ; 005f3835
-    CALL dword ptr CS:[0x6114d8]        ; 005f3839 | RegisterClassA
+    CALL dword ptr CS:[0x6114d8]        ; 005f3839 | g_RegisterClassAFunc
     PUSH ESI                            ; 005f3840
     PUSH EBP                            ; 005f3841
     PUSH ESI                            ; 005f3842
@@ -239,7 +239,7 @@ section .text
     MOV ECX,dword ptr [0x0068499c]      ; 005f3854 | = "Nocturne Editor" | g_ApplicationTitle
     PUSH ECX                            ; 005f385a | = "Nocturne Editor"
     PUSH 0x40000                        ; 005f385b
-    CALL dword ptr CS:[0x611494]        ; 005f3860 | CreateWindowExA
+    CALL dword ptr CS:[0x611494]        ; 005f3860 | g_CreateWindowExAFunc
     MOV [0x03f98468],EAX                ; 005f3867 | g_MainWindowHandle
     TEST EAX,EAX                        ; 005f386c
     JNZ 0x005f3888                      ; 005f386e
@@ -261,14 +261,14 @@ section .text
         ;   Label: LAB_005f3888
     PUSH EBX                            ; 005f388c
     PUSH EAX                            ; 005f388d
-    CALL dword ptr CS:[0x6114f4]        ; 005f388e | ShowWindow
+    CALL dword ptr CS:[0x6114f4]        ; 005f388e | g_ShowWindowFunc
     MOV ESI,dword ptr [0x03f98468]      ; 005f3895 | g_MainWindowHandle
     PUSH ESI                            ; 005f389b
-    CALL dword ptr CS:[0x6114fc]        ; 005f389c | UpdateWindow
-    CALL dword ptr CS:[0x61157c]        ; 005f38a3 | GetCurrentProcess
+    CALL dword ptr CS:[0x6114fc]        ; 005f389c | g_UpdateWindowFunc
+    CALL dword ptr CS:[0x61157c]        ; 005f38a3 | g_GetCurrentProcessFunc
     PUSH 0x1                            ; 005f38aa
     PUSH EAX                            ; 005f38ac
-    CALL dword ptr CS:[0x61163c]        ; 005f38ad | SetThreadPriority
+    CALL dword ptr CS:[0x61163c]        ; 005f38ad | g_SetThreadPriorityFunc
     PUSH 0x20                           ; 005f38b4
     PUSH 0x0                            ; 005f38b6
     LEA EAX,[ESP + 0x30]                ; 005f38b8
@@ -280,7 +280,7 @@ section .text
     MOV EDI,0x20                        ; 005f38c9
     PUSH EAX                            ; 005f38ce
     MOV dword ptr [ESP + 0x2c],EDI      ; 005f38cf
-    CALL dword ptr CS:[0x6115d8]        ; 005f38d3 | GlobalMemoryStatus
+    CALL dword ptr CS:[0x6115d8]        ; 005f38d3 | g_GlobalMemoryStatusFunc
     MOV EAX,dword ptr [ESP + 0x30]      ; 005f38da
     PUSH 0x3f990f4                      ; 005f38de | g_ArgVector
     MOV EBP,dword ptr [0x03f990f0]      ; 005f38e3 | g_ArgCount

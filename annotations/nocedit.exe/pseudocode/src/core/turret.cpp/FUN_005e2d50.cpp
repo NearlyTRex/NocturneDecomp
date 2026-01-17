@@ -66,12 +66,12 @@ void core_turret_cpp_FUN_005e2d50(void)
   CStack_90.x = 999.0;
   CStack_90.y = 999.0;
   CStack_90.z = 999.0;
-  auStack_d8._12_4_ = (float)auStack_d8._12_4_ + -15f;
-  fStack_c8 = fStack_c8 + -15f;
-  fStack_c4 = fStack_c4 + -15f;
-  fStack_c0 = fStack_c0 + 15f;
-  fStack_bc = fStack_bc + 15f;
-  fStack_b8 = fStack_b8 + 15f;
+  auStack_d8._12_4_ = (float)auStack_d8._12_4_ + -15.0f;
+  fStack_c8 = fStack_c8 + -15.0f;
+  fStack_c4 = fStack_c4 + -15.0f;
+  fStack_c0 = fStack_c0 + 15.0f;
+  fStack_bc = fStack_bc + 15.0f;
+  fStack_b8 = fStack_b8 + 15.0f;
   iVar5 = 0;
   iVar4 = 0;
   do {
@@ -131,7 +131,7 @@ LAB_005e2ed6:
     pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                        (in_stack_00000004,&CStack_84,&CStack_54);
     core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_48,pCVar1);
-    if (((CStack_48.x < DAT_00664b6c) || (DAT_00664b70 < CStack_48.x)) ||
+    if (((CStack_48.x < 0xBF060A92) || (0x3F9C61AA < CStack_48.x)) ||
        (SQRT(CStack_90.z * CStack_90.z + CStack_90.x * CStack_90.x + CStack_90.y * CStack_90.y) <
         SQRT(CStack_48.z * CStack_48.z + CStack_48.x * CStack_48.x + CStack_48.y * CStack_48.y)))
     goto LAB_005e2ed6;

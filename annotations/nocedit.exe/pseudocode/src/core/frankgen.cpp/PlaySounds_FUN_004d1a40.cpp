@@ -56,11 +56,11 @@ void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
     iVar2 = *(int *)(in_stack_00000004[1].actor_name + 4);
     if ((0x44ac8000 < iVar2) && (iVar2 < 0x44c58000)) {
       if (iVar2 < 0x44b90000) {
-        CStack_18.z = (*(float *)(in_stack_00000004[1].actor_name + 4) + -1380f) *
-                      (float)0.01 * (float)30 + 20f;
+        CStack_18.z = (*(float *)(in_stack_00000004[1].actor_name + 4) + -1380.0f) *
+                      (float)0.01 * (float)30 + 20.0f;
       }
       else {
-        CStack_18.z = (1580f - *(float *)(in_stack_00000004[1].actor_name + 4)) *
+        CStack_18.z = (1580.0f - *(float *)(in_stack_00000004[1].actor_name + 4)) *
                       (float)0.01 * (float)50;
       }
       iVar2 = core_frankgen_cpp_FUN_004d1ec0();

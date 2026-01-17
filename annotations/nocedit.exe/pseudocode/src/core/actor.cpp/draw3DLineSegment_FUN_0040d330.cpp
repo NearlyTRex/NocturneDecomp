@@ -47,15 +47,15 @@ core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *
   local_3c = local_48 + local_18;
   local_38 = local_44 + local_14;
   local_34 = local_40 + local_10;
-  local_54.x = (int)ROUND(local_24 * 256f);
-  local_54.y = (int)ROUND(local_20 * 256f);
-  local_54.z = (int)ROUND(local_1c * 256f);
+  local_54.x = (int)ROUND(local_24 * 256.0f);
+  local_54.y = (int)ROUND(local_20 * 256.0f);
+  local_54.z = (int)ROUND(local_1c * 256.0f);
   uStack_60 = 0x40d3f1;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_54);
-  local_30.x = (int)ROUND(local_3c * 256f);
-  local_30.y = (int)ROUND(local_38 * 256f);
-  local_30.z = (int)ROUND(local_34 * 256f);
+  local_30.x = (int)ROUND(local_3c * 256.0f);
+  local_30.y = (int)ROUND(local_38 * 256.0f);
+  local_30.z = (int)ROUND(local_34 * 256.0f);
   uStack_60 = 0x40d434;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_30);

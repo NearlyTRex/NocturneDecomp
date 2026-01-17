@@ -19,12 +19,12 @@ int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(int buffer_index)
        g_WaveInChannels *
        ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
              (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples;
-  MVar1 = (*waveInPrepareHeader)(g_WaveInHandle,g_WaveInHeaders[buffer_index],0x20);
+  MVar1 = (*g_waveInPrepareHeaderFunc)(g_WaveInHandle,g_WaveInHeaders[buffer_index],0x20);
   if (MVar1 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutPrepareHeader failed!");
     return 0;
   }
-  MVar1 = (*waveInAddBuffer)(g_WaveInHandle,g_WaveInHeaders[buffer_index],0x20);
+  MVar1 = (*g_waveInAddBufferFunc)(g_WaveInHandle,g_WaveInHeaders[buffer_index],0x20);
   if (MVar1 == 0) {
     return 1;
   }

@@ -12,7 +12,7 @@
 ;   sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0 at 005ab90e
 ;
 ; Referenced Globals:
-;   waveInGetDevCapsA* waveInGetDevCapsA = 002118b2
+;   waveInGetDevCapsA* g_waveInGetDevCapsAFunc = 002118b2
 ;   UINT g_WaveInDeviceID = 0xffffffff
 ;   CWavInDevice g_CWavInDeviceInstance
 ;
@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 005b161e
     MOV EDX,dword ptr [ESP + 0x3c]      ; 005b161f
     PUSH EDX                            ; 005b1623
-    CALL dword ptr CS:[0x611428]        ; 005b1624 | waveInGetDevCapsA
+    CALL dword ptr CS:[0x611428]        ; 005b1624 | g_waveInGetDevCapsAFunc
     TEST EAX,EAX                        ; 005b162b
     JZ 0x005b1635                       ; 005b162d
         ;   XREF to: 005b1635 (CONDITIONAL_JUMP)  ; LAB_005b1635

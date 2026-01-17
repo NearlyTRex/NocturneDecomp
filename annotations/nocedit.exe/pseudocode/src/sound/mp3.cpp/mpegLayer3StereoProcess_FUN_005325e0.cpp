@@ -27,29 +27,30 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
   float (*pafVar12) [18];
   float10 fVar13;
   float *pfVar14;
-  uint local_2078;
-  float afStack_2074 [576];
-  float afStack_1774 [576];
-  float afStack_e74 [575];
-  uint uStack_576;
+  uint local_207c;
+  float local_2078 [576];
+  float afStack_1778 [576];
+  float afStack_e78 [575];
+  uint uStack_57a;
+  int local_f8;
   int local_f4;
-  int local_f0;
-  SMpegLayer3Granule *local_ec;
+  SMpegLayer3Granule *local_f0;
+  int local_ec;
   int local_e8;
   int local_e4;
-  int local_e0;
-  uint local_dc;
+  uint local_e0;
+  int local_dc;
   int local_d8;
   int local_d4;
   int local_d0;
-  int local_cc;
-  SMpegScalefactorBandData *local_c8;
+  SMpegScalefactorBandData *local_cc;
+  int *local_c8;
   int *local_c4;
-  int *local_c0;
+  int local_c0;
   int local_bc;
   int local_b8;
-  int local_b4;
-  SMpegScalefactorBandData *local_b0;
+  SMpegScalefactorBandData *local_b4;
+  int local_b0;
   int local_ac;
   int local_a8;
   int local_a4;
@@ -64,21 +65,21 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
   int local_80;
   int local_7c;
   int local_78;
-  int local_74;
-  SMpegScalefactorBandData *local_70;
+  SMpegScalefactorBandData *local_74;
+  int local_70;
   int local_6c;
-  int local_68;
-  SMpegScalefactorBandData *local_64;
+  SMpegScalefactorBandData *local_68;
+  int local_64;
   int local_60;
-  int local_5c;
-  float (*local_58) [18];
-  SMpegStereoSubbandSamples *local_54;
-  float *local_50;
-  int local_4c;
+  float (*local_5c) [18];
+  SMpegStereoSubbandSamples *local_58;
+  float *local_54;
+  int local_50;
+  float (*local_4c) [18];
   float (*local_48) [18];
   float (*local_44) [18];
   float (*local_40) [18];
-  float (*local_3c) [18];
+  int local_3c;
   int local_38;
   int local_34;
   int local_30;
@@ -87,39 +88,38 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
-  uint uStack_14;
+  uint local_18;
   
-  local_ec = granule_array[4];
+  local_f0 = granule_array[4];
   if (((*granule_array)->big_value_pair_count == 1) && (((*granule_array)->global_gain & 2) != 0)) {
-    local_e8 = 1;
+    local_ec = 1;
   }
   else {
-    local_e8 = 0;
+    local_ec = 0;
   }
   if (((*granule_array)->big_value_pair_count == 1) && (((*granule_array)->global_gain & 1) != 0)) {
-    local_a8 = 1;
+    local_ac = 1;
   }
   else {
-    local_a8 = 0;
+    local_ac = 0;
   }
-  local_dc = (uint)((*granule_array)->field0_0x0 == 0);
+  local_e0 = (uint)((*granule_array)->field0_0x0 == 0);
   if ((frame_info->table_index & 1U) == 1) {
     pfVar14 = (float *)0x667f6ee7;
-    local_2078 = 0x3fe6a09e;
+    local_207c = 0x3fe6a09e;
   }
   else {
     pfVar14 = (float *)0x995b2417;
-    local_2078 = 0x3feae89f;
+    local_207c = 0x3feae89f;
   }
-  local_f0 = *(int *)((*granule_array)->field2_0x8 + 8) + (*granule_array)->field0_0x0 * 3;
+  local_f4 = *(int *)((*granule_array)->field2_0x8 + 8) + (*granule_array)->field0_0x0 * 3;
   iVar9 = 0;
   do {
     iVar6 = iVar9 + 2;
-    *(ushort *)((int)&uStack_576 + iVar9 + 2) = 7;
+    *(ushort *)((int)&uStack_57a + iVar9 + 2) = 7;
     iVar9 = iVar6;
   } while (iVar6 != 0x480);
-  if ((local_ec == (SMpegLayer3Granule *)&DAT_00000002) && (local_a8 != 0)) {
+  if ((local_f0 == (SMpegLayer3Granule *)&DAT_00000002) && (local_ac != 0)) {
     if ((frame_info->samples_per_granule == 0) || (frame_info->js_bound != 2)) {
       iVar6 = 0x1f;
       iVar11 = 0x11;
@@ -137,261 +137,260 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
           iVar11 = 0x11;
         }
       } while (-1 < iVar6);
-      iVar11 = local_f0 * 0x94;
-      local_e4 = 0;
+      iVar11 = local_f4 * 0x94;
+      local_e8 = 0;
       iVar6 = *(int *)(&DAT_0067e6c8 + iVar11);
       while (iVar6 <= iVar9) {
-        local_e4 = local_e4 + 1;
+        local_e8 = local_e8 + 1;
         piVar1 = (int *)(&DAT_0067e6cc + iVar11);
         iVar11 = iVar11 + 4;
         iVar6 = *piVar1;
       }
       iVar9 = *(int *)(&DAT_0067e6c8 + iVar11);
-      local_90 = local_f0 * 0x94;
-      local_88 = local_f0 * 0x94 + local_e4 * 4;
-      if (local_e4 < 0x15) {
-        local_84 = local_e4 * 4;
+      local_94 = local_f4 * 0x94;
+      local_8c = local_f4 * 0x94 + local_e8 * 4;
+      if (local_e8 < 0x15) {
+        local_88 = local_e8 * 4;
         do {
-          iVar6 = *(int *)(&DAT_0067e6cc + local_88) - *(int *)(&DAT_0067e6c8 + local_88);
+          iVar6 = *(int *)(&DAT_0067e6cc + local_8c) - *(int *)(&DAT_0067e6c8 + local_8c);
           if (0 < iVar6) {
             iVar11 = iVar9 * 2;
-            local_a4 = (int)scalefactor_data->reserved + local_84;
-            local_8c = iVar9 * 4;
+            local_a8 = (int)scalefactor_data->reserved + local_88;
+            local_90 = iVar9 * 4;
             do {
-              sVar3 = *(short *)(local_a4 + 0xf8);
-              *(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;
+              sVar3 = *(short *)(local_a8 + 0xf8);
+              *(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;
               if (sVar3 != 7) {
-                if (local_dc == 0) {
-                  fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *
+                if (local_e0 == 0) {
+                  fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *
                                           (float10)0.26179938779914902);
-                  *(float *)((int)afStack_e74 + local_8c) = (float)fVar13;
+                  *(float *)((int)afStack_e78 + local_90) = (float)fVar13;
                 }
                 else {
                   sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
-                            (*(int *)((int)&uStack_576 + iVar11) >> 0x10,
-                             (double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar9,(int)afStack_2074,pfVar14);
+                            (*(int *)((int)&uStack_57a + iVar11) >> 0x10,
+                             (double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14);
                 }
               }
               iVar11 = iVar11 + 2;
               iVar9 = iVar9 + 1;
               iVar6 = iVar6 + -1;
-              local_8c = local_8c + 4;
+              local_90 = local_90 + 4;
             } while (0 < iVar6);
           }
-          local_84 = local_84 + 4;
           local_88 = local_88 + 4;
-          local_e4 = local_e4 + 1;
-        } while (local_84 < 0x54);
+          local_8c = local_8c + 4;
+          local_e8 = local_e8 + 1;
+        } while (local_88 < 0x54);
       }
-      iVar11 = 0x240 - *(int *)(&DAT_0067e71c + local_90);
-      iVar6 = *(int *)(&DAT_0067e718 + local_90);
+      iVar11 = 0x240 - *(int *)(&DAT_0067e71c + local_94);
+      iVar6 = *(int *)(&DAT_0067e718 + local_94);
       if (0 < iVar11) {
-        local_a0 = iVar6 * 2;
-        local_80 = iVar9 * 2;
+        local_a4 = iVar6 * 2;
+        local_84 = iVar9 * 2;
         iVar9 = iVar9 * 4;
         do {
-          iVar5 = local_80;
-          iVar8 = local_a0;
-          fVar2 = afStack_e74[iVar6];
+          iVar5 = local_84;
+          iVar8 = local_a4;
+          fVar2 = afStack_e78[iVar6];
           iVar11 = iVar11 + -1;
-          *(float *)((int)afStack_2074 + iVar9) = afStack_2074[iVar6];
-          *(float *)((int)afStack_e74 + iVar9) = fVar2;
-          uVar4 = *(ushort *)((int)&uStack_576 + iVar8 + 2);
-          *(float *)((int)afStack_1774 + iVar9) = afStack_1774[iVar6];
-          local_80 = local_80 + 2;
-          *(ushort *)((int)&uStack_576 + iVar5 + 2) = uVar4;
+          *(float *)((int)local_2078 + iVar9) = local_2078[iVar6];
+          *(float *)((int)afStack_e78 + iVar9) = fVar2;
+          uVar4 = *(ushort *)((int)&uStack_57a + iVar8 + 2);
+          *(float *)((int)afStack_1778 + iVar9) = afStack_1778[iVar6];
+          local_84 = local_84 + 2;
+          *(ushort *)((int)&uStack_57a + iVar5 + 2) = uVar4;
           iVar9 = iVar9 + 4;
         } while (0 < iVar11);
       }
     }
     else {
-      iVar9 = local_f0 * 0x94;
+      iVar9 = local_f4 * 0x94;
       if (frame_info->sblimit == 0) {
-        local_98 = iVar9;
-        local_b8 = iVar9;
-        local_e0 = frame_info->sblimit;
-        local_70 = scalefactor_data;
+        local_9c = iVar9;
+        local_bc = iVar9;
+        local_e4 = frame_info->sblimit;
+        local_74 = scalefactor_data;
         do {
           iVar9 = 0xc;
-          local_bc = -1;
-          local_b4 = local_e0 + 1;
+          local_c0 = -1;
+          local_b8 = local_e4 + 1;
           do {
-            iVar11 = iVar9 * 4 + local_b8;
+            iVar11 = iVar9 * 4 + local_bc;
             iVar6 = *(int *)(iVar11 + 0x67e724);
             iVar11 = *(int *)(&DAT_0067e728 + iVar11) - iVar6;
-            iVar6 = iVar6 * 3 + (local_e0 + 1) * iVar11;
+            iVar6 = iVar6 * 3 + (local_e4 + 1) * iVar11;
             for (; 0 < iVar11; iVar11 = iVar11 + -1) {
               iVar6 = iVar6 + -1;
-              uStack_14 = 0x12;
+              local_18 = 0x12;
               if (ABS(input_lr_samples->channels[1].samples[iVar6 / 0x12][iVar6 % 0x12]) != 0.0) {
-                local_bc = iVar9;
+                local_c0 = iVar9;
                 iVar9 = -10;
                 iVar11 = -10;
               }
             }
             iVar9 = iVar9 + -1;
           } while (-1 < iVar9);
-          local_2c = local_bc + 1;
-          local_b0 = local_70;
-          local_78 = local_98 + local_2c * 4;
-          if (local_2c < 0xc) {
-            local_74 = local_2c * 4;
+          local_30 = local_c0 + 1;
+          local_b4 = local_74;
+          local_7c = local_9c + local_30 * 4;
+          if (local_30 < 0xc) {
+            local_78 = local_30 * 4;
             do {
-              iVar9 = *(int *)(&DAT_0067e728 + local_78) - *(int *)(local_78 + 0x67e724);
-              iVar6 = *(int *)(local_78 + 0x67e724) * 3 + local_e0 * iVar9;
+              iVar9 = *(int *)(&DAT_0067e728 + local_7c) - *(int *)(local_7c + 0x67e724);
+              iVar6 = *(int *)(local_7c + 0x67e724) * 3 + local_e4 * iVar9;
               if (0 < iVar9) {
                 iVar11 = iVar6 * 2;
-                local_ac = (int)local_b0->reserved + local_74;
-                local_7c = iVar6 * 4;
+                local_b0 = (int)local_b4->reserved + local_78;
+                local_80 = iVar6 * 4;
                 do {
-                  sVar3 = *(short *)(local_ac + 0x154);
-                  *(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;
+                  sVar3 = *(short *)(local_b0 + 0x154);
+                  *(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;
                   if (sVar3 != 7) {
-                    if (local_dc == 0) {
-                      fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *
+                    if (local_e0 == 0) {
+                      fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *
                                               (float10)0.26179938779914902);
-                      *(float *)((int)afStack_e74 + local_7c) = (float)fVar13;
+                      *(float *)((int)afStack_e78 + local_80) = (float)fVar13;
                     }
                     else {
                       sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
-                                (*(int *)((int)&uStack_576 + iVar11) >> 0x10,
-                                 (double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar6,(int)afStack_2074,
-                                 pfVar14);
+                                (*(int *)((int)&uStack_57a + iVar11) >> 0x10,
+                                 (double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14)
+                      ;
                     }
                   }
                   iVar11 = iVar11 + 2;
                   iVar6 = iVar6 + 1;
                   iVar9 = iVar9 + -1;
-                  local_7c = local_7c + 4;
+                  local_80 = local_80 + 4;
                 } while (0 < iVar9);
               }
-              local_74 = local_74 + 4;
               local_78 = local_78 + 4;
-              local_2c = local_2c + 1;
-            } while (local_74 < 0x30);
+              local_7c = local_7c + 4;
+              local_30 = local_30 + 1;
+            } while (local_78 < 0x30);
           }
-          iVar6 = *(int *)(&DAT_0067e758 + local_98) - *(int *)(&DAT_0067e754 + local_98);
-          local_24 = *(int *)(&DAT_0067e750 + local_98) * 3;
-          iVar9 = local_e0 *
-                  (*(int *)(&DAT_0067e754 + local_98) - *(int *)(&DAT_0067e750 + local_98)) +
-                  local_24;
-          local_24 = local_24 + local_e0 * iVar6;
+          iVar6 = *(int *)(&DAT_0067e758 + local_9c) - *(int *)(&DAT_0067e754 + local_9c);
+          local_28 = *(int *)(&DAT_0067e750 + local_9c) * 3;
+          iVar9 = local_e4 *
+                  (*(int *)(&DAT_0067e754 + local_9c) - *(int *)(&DAT_0067e750 + local_9c)) +
+                  local_28;
+          local_28 = local_28 + local_e4 * iVar6;
           if (0 < iVar6) {
-            iVar11 = local_24 * 4;
-            iVar8 = local_24 * 2;
+            iVar11 = local_28 * 4;
+            iVar8 = local_28 * 2;
             do {
-              fVar2 = afStack_e74[iVar9];
+              fVar2 = afStack_e78[iVar9];
               iVar6 = iVar6 + -1;
-              uVar4 = *(ushort *)((int)&uStack_576 + iVar9 * 2 + 2);
-              *(float *)((int)afStack_2074 + iVar11) = afStack_2074[iVar9];
-              *(float *)((int)afStack_e74 + iVar11) = fVar2;
-              *(ushort *)((int)&uStack_576 + iVar8 + 2) = uVar4;
-              *(float *)((int)afStack_1774 + iVar11) = afStack_1774[iVar9];
-              local_24 = local_24 + 1;
+              uVar4 = *(ushort *)((int)&uStack_57a + iVar9 * 2 + 2);
+              *(float *)((int)local_2078 + iVar11) = local_2078[iVar9];
+              *(float *)((int)afStack_e78 + iVar11) = fVar2;
+              *(ushort *)((int)&uStack_57a + iVar8 + 2) = uVar4;
+              *(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar9];
+              local_28 = local_28 + 1;
               iVar11 = iVar11 + 4;
               iVar8 = iVar8 + 2;
             } while (0 < iVar6);
           }
-          local_e0 = local_e0 + 1;
-          local_70 = (SMpegScalefactorBandData *)(local_70->reserved + 0xd);
-        } while (local_e0 < 3);
+          local_e4 = local_e4 + 1;
+          local_74 = (SMpegScalefactorBandData *)(local_74->reserved + 0xd);
+        } while (local_e4 < 3);
       }
       else {
-        local_94 = iVar9;
-        local_d0 = iVar9;
-        local_d8 = 0;
-        local_20 = 0;
-        local_64 = scalefactor_data;
+        local_98 = iVar9;
+        local_d4 = iVar9;
+        local_dc = 0;
+        local_24 = 0;
+        local_68 = scalefactor_data;
         do {
           iVar9 = 0xc;
-          local_d4 = 2;
-          local_cc = local_20 + 1;
+          local_d8 = 2;
+          local_d0 = local_24 + 1;
           do {
-            iVar11 = iVar9 * 4 + local_d0;
+            iVar11 = iVar9 * 4 + local_d4;
             iVar6 = *(int *)(iVar11 + 0x67e724);
             iVar11 = *(int *)(&DAT_0067e728 + iVar11) - iVar6;
-            iVar6 = (local_20 + 1) * iVar11 + iVar6 * 3;
+            iVar6 = (local_24 + 1) * iVar11 + iVar6 * 3;
             for (; 0 < iVar11; iVar11 = iVar11 + -1) {
               iVar6 = iVar6 + -1;
-              uStack_14 = 0x12;
+              local_18 = 0x12;
               if (ABS(input_lr_samples->channels[1].samples[iVar6 / 0x12][iVar6 % 0x12]) != 0.0) {
-                local_d4 = iVar9;
+                local_d8 = iVar9;
                 iVar9 = -10;
                 iVar11 = -10;
               }
             }
             iVar9 = iVar9 + -1;
           } while (2 < iVar9);
-          local_30 = local_d4 + 1;
-          if (local_d8 < local_30) {
-            local_d8 = local_30;
+          local_34 = local_d8 + 1;
+          if (local_dc < local_34) {
+            local_dc = local_34;
           }
-          local_c8 = local_64;
-          local_68 = local_30 * 4 + local_94;
-          for (; local_30 < 0xc; local_30 = local_30 + 1) {
-            iVar9 = *(int *)(&DAT_0067e728 + local_68) - *(int *)(local_68 + 0x67e724);
-            iVar6 = *(int *)(local_68 + 0x67e724) * 3 + local_20 * iVar9;
+          local_cc = local_68;
+          local_6c = local_34 * 4 + local_98;
+          for (; local_34 < 0xc; local_34 = local_34 + 1) {
+            iVar9 = *(int *)(&DAT_0067e728 + local_6c) - *(int *)(local_6c + 0x67e724);
+            iVar6 = *(int *)(local_6c + 0x67e724) * 3 + local_24 * iVar9;
             if (0 < iVar9) {
               iVar11 = iVar6 * 2;
-              local_c4 = local_c8->reserved + local_30;
-              local_6c = iVar6 * 4;
+              local_c8 = local_cc->reserved + local_34;
+              local_70 = iVar6 * 4;
               do {
-                sVar3 = *(short *)(local_c4 + 0x55);
-                *(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;
+                sVar3 = *(short *)(local_c8 + 0x55);
+                *(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;
                 if (sVar3 != 7) {
-                  if (local_dc == 0) {
-                    fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *
+                  if (local_e0 == 0) {
+                    fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *
                                             (float10)0.26179938779914902);
-                    *(float *)((int)afStack_e74 + local_6c) = (float)fVar13;
+                    *(float *)((int)afStack_e78 + local_70) = (float)fVar13;
                   }
                   else {
                     sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
-                              (*(int *)((int)&uStack_576 + iVar11) >> 0x10,
-                               (double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar6,(int)afStack_2074,pfVar14)
-                    ;
+                              (*(int *)((int)&uStack_57a + iVar11) >> 0x10,
+                               (double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14);
                   }
                 }
                 iVar11 = iVar11 + 2;
                 iVar6 = iVar6 + 1;
                 iVar9 = iVar9 + -1;
-                local_6c = local_6c + 4;
+                local_70 = local_70 + 4;
               } while (0 < iVar9);
             }
-            local_68 = local_68 + 4;
+            local_6c = local_6c + 4;
           }
-          iVar6 = *(int *)(&DAT_0067e758 + local_94) - *(int *)(&DAT_0067e754 + local_94);
-          local_28 = *(int *)(&DAT_0067e750 + local_94) * 3;
-          iVar9 = local_20 *
-                  (*(int *)(&DAT_0067e754 + local_94) - *(int *)(&DAT_0067e750 + local_94)) +
-                  local_28;
-          local_28 = local_28 + local_20 * iVar6;
+          iVar6 = *(int *)(&DAT_0067e758 + local_98) - *(int *)(&DAT_0067e754 + local_98);
+          local_2c = *(int *)(&DAT_0067e750 + local_98) * 3;
+          iVar9 = local_24 *
+                  (*(int *)(&DAT_0067e754 + local_98) - *(int *)(&DAT_0067e750 + local_98)) +
+                  local_2c;
+          local_2c = local_2c + local_24 * iVar6;
           if (0 < iVar6) {
-            iVar11 = local_28 * 4;
-            iVar8 = local_28 * 2;
+            iVar11 = local_2c * 4;
+            iVar8 = local_2c * 2;
             do {
-              fVar2 = afStack_e74[iVar9];
+              fVar2 = afStack_e78[iVar9];
               iVar6 = iVar6 + -1;
-              uVar4 = *(ushort *)((int)&uStack_576 + iVar9 * 2 + 2);
-              *(float *)((int)afStack_2074 + iVar11) = afStack_2074[iVar9];
-              *(float *)((int)afStack_e74 + iVar11) = fVar2;
-              *(ushort *)((int)&uStack_576 + iVar8 + 2) = uVar4;
-              *(float *)((int)afStack_1774 + iVar11) = afStack_1774[iVar9];
-              local_28 = local_28 + 1;
+              uVar4 = *(ushort *)((int)&uStack_57a + iVar9 * 2 + 2);
+              *(float *)((int)local_2078 + iVar11) = local_2078[iVar9];
+              *(float *)((int)afStack_e78 + iVar11) = fVar2;
+              *(ushort *)((int)&uStack_57a + iVar8 + 2) = uVar4;
+              *(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar9];
+              local_2c = local_2c + 1;
               iVar11 = iVar11 + 4;
               iVar8 = iVar8 + 2;
             } while (0 < iVar6);
           }
-          local_20 = local_20 + 1;
-          local_64 = (SMpegScalefactorBandData *)(local_64->reserved + 0xd);
-        } while (local_20 < 3);
-        if (local_d8 < 4) {
+          local_24 = local_24 + 1;
+          local_68 = (SMpegScalefactorBandData *)(local_68->reserved + 0xd);
+        } while (local_24 < 3);
+        if (local_dc < 4) {
           iVar9 = 2;
           iVar6 = 0x11;
-          local_18 = -1;
+          local_1c = -1;
           pafVar12 = input_lr_samples->channels[0].samples + 2;
           do {
             if ((*(uint *)((int)(pafVar12 + 0x20) + iVar6 * 4) & 0x7fffffff) != 0) {
-              local_18 = iVar9 * 0x12 + iVar6;
+              local_1c = iVar9 * 0x12 + iVar6;
               break;
             }
             iVar6 = iVar6 + -1;
@@ -401,88 +400,88 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
               iVar6 = 0x11;
             }
           } while (-1 < iVar9);
-          iVar6 = local_f0 * 0x94;
-          local_34 = 0;
+          iVar6 = local_f4 * 0x94;
+          local_38 = 0;
           iVar9 = *(int *)(&DAT_0067e6c8 + iVar6);
-          while (iVar9 <= local_18) {
-            local_34 = local_34 + 1;
+          while (iVar9 <= local_1c) {
+            local_38 = local_38 + 1;
             piVar1 = (int *)(&DAT_0067e6cc + iVar6);
             iVar6 = iVar6 + 4;
             iVar9 = *piVar1;
           }
           iVar9 = *(int *)(&DAT_0067e6c8 + iVar6);
-          if (local_34 < 8) {
-            local_5c = local_34 * 4 + local_f0 * 0x94;
+          if (local_38 < 8) {
+            local_60 = local_38 * 4 + local_f4 * 0x94;
             do {
-              iVar6 = *(int *)(&DAT_0067e6cc + local_5c) - *(int *)(&DAT_0067e6c8 + local_5c);
+              iVar6 = *(int *)(&DAT_0067e6cc + local_60) - *(int *)(&DAT_0067e6c8 + local_60);
               if (0 < iVar6) {
                 iVar11 = iVar9 * 2;
-                local_c0 = scalefactor_data->reserved + local_34;
-                local_60 = iVar9 * 4;
+                local_c4 = scalefactor_data->reserved + local_38;
+                local_64 = iVar9 * 4;
                 do {
-                  sVar3 = *(short *)(local_c0 + 0x3e);
-                  *(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;
+                  sVar3 = *(short *)(local_c4 + 0x3e);
+                  *(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;
                   if (sVar3 != 7) {
-                    if (local_dc == 0) {
-                      fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *
+                    if (local_e0 == 0) {
+                      fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *
                                               (float10)0.26179938779914902);
-                      *(float *)((int)afStack_e74 + local_60) = (float)fVar13;
+                      *(float *)((int)afStack_e78 + local_64) = (float)fVar13;
                     }
                     else {
                       sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
-                                (*(int *)((int)&uStack_576 + iVar11) >> 0x10,
-                                 (double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar9,(int)afStack_2074,
-                                 pfVar14);
+                                (*(int *)((int)&uStack_57a + iVar11) >> 0x10,
+                                 (double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14)
+                      ;
                     }
                   }
                   iVar11 = iVar11 + 2;
                   iVar9 = iVar9 + 1;
                   iVar6 = iVar6 + -1;
-                  local_60 = local_60 + 4;
+                  local_64 = local_64 + 4;
                 } while (0 < iVar6);
               }
-              local_34 = local_34 + 1;
-              local_5c = local_5c + 4;
-            } while (local_34 < 8);
+              local_38 = local_38 + 1;
+              local_60 = local_60 + 4;
+            } while (local_38 < 8);
           }
         }
       }
     }
   }
-  local_58 = (float (*) [18])output_samples;
-  local_54 = output_samples + 1;
+  local_5c = (float (*) [18])output_samples;
+  local_58 = output_samples + 1;
   do {
     iVar9 = 0;
-    pafVar12 = local_58;
+    pafVar12 = local_5c;
     do {
       pafVar12 = pafVar12 + 1;
-      pafVar7 = local_58 + iVar9;
+      pafVar7 = local_5c + iVar9;
       do {
         (*pafVar7)[0] = 0.0;
         pafVar7 = (float (*) [18])(*pafVar7 + 1);
       } while (pafVar7 != pafVar12);
       iVar9 = iVar9 + 1;
     } while (iVar9 < 0x20);
-    local_58 = local_58 + 0x20;
-  } while ((SMpegStereoSubbandSamples *)local_58 != output_samples + 1);
-  if (local_ec == (SMpegLayer3Granule *)&DAT_00000002) {
-    local_1c = 0;
-    local_40 = (float (*) [18])input_lr_samples;
-    local_38 = 0;
-    local_3c = (float (*) [18])output_samples;
+    local_5c = local_5c + 0x20;
+  } while ((SMpegStereoSubbandSamples *)local_5c != output_samples + 1);
+  if (local_f0 == (SMpegLayer3Granule *)&DAT_00000002) {
+    local_20 = 0;
+    local_44 = (float (*) [18])input_lr_samples;
+    local_3c = 0;
+    local_40 = (float (*) [18])output_samples;
     do {
-      local_9c = local_1c * 0x12;
-      local_4c = local_38;
+      local_a0 = local_20 * 0x12;
+      local_50 = local_3c;
       iVar9 = 0;
-      local_48 = local_3c;
+      local_4c = local_40;
       iVar6 = 0;
-      local_44 = local_40;
+      local_48 = local_44;
       do {
-        local_f4 = local_9c + iVar9;
-        pfVar10 = (float *)((int)*local_48 + iVar6);
-        pfVar14 = (float *)((int)*local_44 + iVar6);
-        if (*(short *)((int)&uStack_576 + local_4c + 2) == 7) {
-          if (local_e8 == 0) {
+        local_f8 = local_a0 + iVar9;
+        pfVar10 = (float *)((int)*local_4c + iVar6);
+        pfVar14 = (float *)((int)*local_48 + iVar6);
+        if (*(short *)((int)&uStack_57a + local_50 + 2) == 7) {
+          if (local_ec == 0) {
             *pfVar10 = *pfVar14;
             pfVar10[0x240] = pfVar14[0x240];
           }
@@ -495,14 +494,14 @@ LAB_005327f7:
           }
         }
         else {
-          if (local_a8 != 0) {
-            if (local_dc == 0) {
-              *pfVar10 = (afStack_e74[local_f4] / (afStack_e74[local_f4] + 1.0)) * *pfVar14;
-              fVar2 = (1.0 / (afStack_e74[local_f4] + 1.0)) * *pfVar14;
+          if (local_ac != 0) {
+            if (local_e0 == 0) {
+              *pfVar10 = (afStack_e78[local_f8] / (afStack_e78[local_f8] + 1.0)) * *pfVar14;
+              fVar2 = (1.0 / (afStack_e78[local_f8] + 1.0)) * *pfVar14;
             }
             else {
-              *pfVar10 = *pfVar14 * afStack_2074[local_f4];
-              fVar2 = *pfVar14 * afStack_1774[local_f4];
+              *pfVar10 = *pfVar14 * local_2078[local_f8];
+              fVar2 = *pfVar14 * afStack_1778[local_f8];
             }
             goto LAB_005327f7;
           }
@@ -513,22 +512,22 @@ LAB_005327f7:
         }
         iVar9 = iVar9 + 1;
         iVar6 = iVar6 + 4;
-        local_4c = local_4c + 2;
+        local_50 = local_50 + 2;
       } while (iVar9 < 0x12);
-      local_1c = local_1c + 1;
-      local_3c = local_3c + 1;
-      local_38 = local_38 + 0x24;
+      local_20 = local_20 + 1;
       local_40 = local_40 + 1;
-    } while (local_1c < 0x20);
+      local_3c = local_3c + 0x24;
+      local_44 = local_44 + 1;
+    } while (local_20 < 0x20);
   }
   else {
     iVar9 = 0;
-    local_50 = (float *)output_samples;
+    local_54 = (float *)output_samples;
     pafVar12 = (float (*) [18])input_lr_samples;
     do {
       pafVar12 = pafVar12 + 1;
       pafVar7 = input_lr_samples->channels[0].samples + iVar9;
-      pfVar14 = local_50;
+      pfVar14 = local_54;
       do {
         pfVar10 = *pafVar7;
         pafVar7 = (float (*) [18])(*pafVar7 + 1);
@@ -536,7 +535,7 @@ LAB_005327f7:
         pfVar14 = pfVar14 + 1;
       } while (pafVar7 != pafVar12);
       iVar9 = iVar9 + 1;
-      local_50 = local_50 + 0x12;
+      local_54 = local_54 + 0x12;
     } while (iVar9 < 0x20);
   }
   return;

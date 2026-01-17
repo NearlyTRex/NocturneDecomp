@@ -17,8 +17,8 @@
 ;
 ; Referenced Globals:
 ;   void*[7] g_FPExceptionJumpTable
-;   ExitProcess* PTR_ExitProcess_00611534 = 00211d12
-;   UnhandledExceptionFilter* PTR_SetUnhandledExceptionFilter_0061165c = 0021227a
+;   ExitProcess* g_ExitProcessFunc = 00211d12
+;   UnhandledExceptionFilter* g_UnhandledExceptionFilterFunc = 0021227a
 ;   EXCEPTION_FILTER_FUNC* g_UserExceptionFilter = 00000000
 ;   EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup = 00000000
 ;   BYTE g_SignalHandlingActive
@@ -214,13 +214,13 @@ section .text
     PUSH EAX                            ; 0060ab7d
     MOV dword ptr [ESP + 0x4],ESI       ; 0060ab7e
     MOV dword ptr [ESP + 0x8],EDI       ; 0060ab82
-    CALL dword ptr CS:[0x61165c]        ; 0060ab86 | PTR_SetUnhandledExceptionFilter_0061165c
+    CALL dword ptr CS:[0x61165c]        ; 0060ab86 | g_UnhandledExceptionFilterFunc
     TEST EAX,EAX                        ; 0060ab8d
     JZ 0x0060ab9a                       ; 0060ab8f
         ;   XREF to: 0060ab9a (CONDITIONAL_JUMP)  ; LAB_0060ab9a
     PUSH -0x1                           ; 0060ab91
     CALL dword ptr CS:[0x611534]        ; 0060ab93
-        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; PTR_ExitProcess_00611534
+        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; g_ExitProcessFunc
     MOV EAX,0x1                         ; 0060ab9a
         ;   Label: LAB_0060ab9a
     ADD ESP,0x8                         ; 0060ab9f

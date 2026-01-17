@@ -28,8 +28,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
   CDemonActor *pCVar15;
   int extraout_EAX_00;
   float in_stack_00000008;
-  SCollisionInfo *in_stack_fffffdfe;
-  SDamageInfo local_188;
+  SCollisionInfo *in_stack_fffffe7c;
   CVector3f local_14c;
   float local_140;
   float local_13c;
@@ -157,7 +156,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
         local_c8.z = *(float *)(iVar10 + 0x28) -
                      (this_ptr->base_enemy).base_character.base_actor.location.position.z;
         if (SQRT(local_c8.z * local_c8.z + local_c8.x * local_c8.x + local_c8.y * local_c8.y) <
-            DAT_0065a76c) {
+            0x40600000) {
           core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_c8);
           local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                (local_80.y -
@@ -174,7 +173,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
     case 2:
       (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)this_ptr);
-      fVar5 = DAT_0065a76c;
+      fVar5 = 0x40600000;
       pCVar3 = &(this_ptr->base_enemy).base_character.model;
       if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
@@ -188,7 +187,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
         }
       }
       else {
-        local_2c = DAT_0065a76c;
+        local_2c = 0x40600000;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
              (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
@@ -246,11 +245,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_188);
-      local_188.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      local_188.attacker = (CDemonActor *)this_ptr;
-      local_188.wielder = (CDemonActor *)this_ptr;
-      local_14 = local_188.damage_amount;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_104,&g_ZeroVector,
                            (CMatrix3x4f *)
@@ -308,9 +304,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
       case 1:
         fVar5 = this_ptr->vanish_timer + in_stack_00000008;
         this_ptr->vanish_timer = fVar5;
-        if (DAT_0065a778 < fVar5) {
+        if (0x3F800000 < fVar5) {
           this_ptr->mist_state = 2;
-          this_ptr->vanish_timer = DAT_0065a778;
+          this_ptr->vanish_timer = 0x3F800000;
         }
         pCVar3 = &(this_ptr->base_enemy).base_character.model;
         iVar10 = 0;
@@ -333,12 +329,12 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
       case 2:
         local_30 = 1;
         local_1c = 0;
-        for (local_18 = 0; fVar5 = DAT_0065a778, local_18 < g_CDemonSetPtr->damage_listener_count;
+        for (local_18 = 0; fVar5 = 0x3F800000, local_18 < g_CDemonSetPtr->damage_listener_count;
             local_18 = local_18 + 1) {
           this_ptr_00 = *(CBatman **)(g_CDemonSetPtr->field19_0x14f0a0 + local_1c + -4);
           if (((this_ptr_00 != (CBatman *)0x0) && (this_ptr_00 != this_ptr)) &&
              (iVar10 = (*(this_ptr_00->base_enemy).base_character.base_actor.vtable[1].hasCollision)
-                                 ((CDemonActor *)this_ptr_00,in_stack_fffffdfe), iVar10 < 1)) {
+                                 ((CDemonActor *)this_ptr_00,in_stack_fffffe7c), iVar10 < 1)) {
             local_50 = (this_ptr_00->base_enemy).base_character.base_actor.location.position.x -
                        (this_ptr->new_pos).x;
             local_4c = (this_ptr_00->base_enemy).base_character.base_actor.location.position.y -

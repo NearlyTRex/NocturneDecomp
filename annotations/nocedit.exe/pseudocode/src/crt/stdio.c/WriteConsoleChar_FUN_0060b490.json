@@ -54,7 +54,7 @@
   "globals": [
     {
       "addr": "00611674",
-      "name": "PTR_WriteConsoleA_00611674",
+      "name": "g_WriteConsoleAFunc",
       "type": "WriteConsoleA*",
       "value": "002122f0"
     },
@@ -136,7 +136,7 @@
       "description": "Direct stack address reference",
       "line": 13,
       "match": "&stack0xfffffffc",
-      "text": "(*PTR_WriteConsoleA_00611674)(hConsoleOutput,&stack0xfffffffc,1,(LPDWORD)local_8,(LPVOID)0x0);",
+      "text": "(*g_WriteConsoleAFunc)(hConsoleOutput,&stack0xfffffffc,1,(LPDWORD)local_8,(LPVOID)0x0);",
       "type": "stack_ref"
     },
     {

@@ -12,12 +12,12 @@
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026ba
 ;
 ; Referenced Globals:
-;   ExitProcess* PTR_ExitProcess_00611534 = 00211d12
-;   GetCommandLineA* GetCommandLineA = 00211df8
-;   GetCommandLineW* PTR_GetCommandLineW_0061156c = 00211e0a
-;   GetEnvironmentStrings* PTR_GetEnvironmentStrings_0061158c = 00211eae
-;   GetModuleFileNameA* GetModuleFileNameA = 00211f42
-;   GetVersion* PTR_GetVersion_006115c8 = 00211fca
+;   ExitProcess* g_ExitProcessFunc = 00211d12
+;   GetCommandLineA* g_GetCommandLineAFunc = 00211df8
+;   GetCommandLineW* g_GetCommandLineWFunc = 00211e0a
+;   GetEnvironmentStrings* g_GetEnvironmentStringsFunc = 00211eae
+;   GetModuleFileNameA* g_GetModuleFileNameAFunc = 00211f42
+;   GetVersion* g_GetVersionFunc = 00211fca
 ;   char[36] g_EmptyStringBuffer
 ;   char[256] g_CharacterClassificationTable
 ;   DWORD g_WinMainCmdShow = 0x0
@@ -62,15 +62,15 @@ section .text
         ;   XREF to: 006026a1 (CONDITIONAL_JUMP)  ; LAB_006026a1
     PUSH 0x1                            ; 00602488
     CALL dword ptr CS:[0x611534]        ; 0060248a
-        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; PTR_ExitProcess_00611534
+        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; g_ExitProcessFunc
     CALL crt_io.c_InitializeStandardHandles_FUN_00608b20 ; 00602491
         ;   XREF to: 00608b20 (UNCONDITIONAL_CALL)  ; int crt_io.c_InitializeStandardHandles_FUN_00608b20()
         ;   Label: LAB_00602491
-    CALL dword ptr CS:[0x61158c]        ; 00602496 | PTR_GetEnvironmentStrings_0061158c
+    CALL dword ptr CS:[0x61158c]        ; 00602496 | g_GetEnvironmentStringsFunc
     XOR EBX,EBX                         ; 0060249d
     MOV [0x00685011],EAX                ; 0060249f | g_EnvironmentStrings
     MOV dword ptr [0x03f9b864],EBX      ; 006024a4 | g_EnvironmentBlock
-    CALL dword ptr CS:[0x6115c8]        ; 006024aa | PTR_GetVersion_006115c8
+    CALL dword ptr CS:[0x6115c8]        ; 006024aa | g_GetVersionFunc
     MOV EDX,EAX                         ; 006024b1
     MOV EBX,EAX                         ; 006024b3
     MOV [0x00685017],AL                 ; 006024b5 | g_WindowsMinorVersion
@@ -98,7 +98,7 @@ section .text
     OR EAX,EDX                          ; 00602514
     PUSH 0x0                            ; 00602516
     MOV [0x00685027],EAX                ; 00602518 | g_WindowsVersionCombined
-    CALL dword ptr CS:[0x6115ac]        ; 0060251d | GetModuleFileNameA
+    CALL dword ptr CS:[0x6115ac]        ; 0060251d | g_GetModuleFileNameAFunc
     PUSH 0x208                          ; 00602524
     PUSH 0x3f9b334                      ; 00602529 | g_ExeFileNameBuffer_W
     MOV ECX,0x3f9b230                   ; 0060252e | g_ExeFileNameBuffer_A
@@ -109,7 +109,7 @@ section .text
         ;   XREF to: 0060a560 (UNCONDITIONAL_CALL)  ; DWORD crt_startup.c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule, LPWSTR lpFilename, DWORD nSize)
     ADD ESP,0xc                         ; 00602545
     MOV dword ptr [0x00684fe4],EDI      ; 00602548 | g_ExeFileNameW
-    CALL dword ptr CS:[0x611568]        ; 0060254e | GetCommandLineA
+    CALL dword ptr CS:[0x611568]        ; 0060254e | g_GetCommandLineAFunc
     PUSH EAX                            ; 00602555
     CALL crt_string.c_strdup_FUN_0060a610 ; 00602556
         ;   XREF to: 0060a610 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strdup_FUN_0060a610(char * str)
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 006025a5 (UNCONDITIONAL_JUMP)  ; LAB_006025a5
     MOV [0x00684fd4],EAX                ; 006025bb | g_WinMainCmdShow
         ;   Label: LAB_006025bb
-    CALL dword ptr CS:[0x61156c]        ; 006025c0 | PTR_GetCommandLineW_0061156c
+    CALL dword ptr CS:[0x61156c]        ; 006025c0 | g_GetCommandLineWFunc
     TEST EAX,EAX                        ; 006025c7
     JZ 0x00602650                       ; 006025c9
         ;   XREF to: 00602650 (CONDITIONAL_JUMP)  ; LAB_00602650
@@ -239,7 +239,7 @@ section .text
     PUSH 0x3f9b53c                      ; 00602663 | g_DllFileNameBuffer_A
     MOV EBP,dword ptr [ESP + 0x24]      ; 00602668
     PUSH EBP                            ; 0060266c
-    CALL dword ptr CS:[0x6115ac]        ; 0060266d | GetModuleFileNameA
+    CALL dword ptr CS:[0x6115ac]        ; 0060266d | g_GetModuleFileNameAFunc
     PUSH 0x208                          ; 00602674
     PUSH 0x3f9b640                      ; 00602679 | g_DllFileNameBuffer_W
     MOV EAX,0x3f9b53c                   ; 0060267e | g_DllFileNameBuffer_A

@@ -35,9 +35,9 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
         sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);
         iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
                           (*(uint *)dest,(CSfxSample *)&stack0xfffffe90);
-        pCVar3 = (CEvent *)&stack0xfffffe90;
         if (iVar2 == 0) goto LAB_004b0e30;
         pCVar4 = dest + 0x18;
+        pCVar3 = (CEvent *)&stack0xfffffe90;
         do {
           CVar1 = *pCVar3;
           *pCVar4 = CVar1;

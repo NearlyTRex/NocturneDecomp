@@ -22,7 +22,7 @@ int __cdecl crt_io_c_close_FUN_00609bd0(int fd)
     iVar1 = 0;
     if ((g_SpecialDeviceCloseFunc == (SPECIAL_DEVICE_CLOSE_FUNC *)0x0) ||
        (cleanup_result = (*g_IsSpecialDeviceFuncPtr)(fd), cleanup_result == 0)) {
-      BVar2 = (*CloseHandle)(unaff_ESI);
+      BVar2 = (*g_CloseHandleFunc)(unaff_ESI);
       if (BVar2 == 0) {
         crt_errno_c_setErrno_FUN_00602790(4);
         return -1;

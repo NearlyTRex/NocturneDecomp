@@ -34,21 +34,21 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   do {
     core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(this_ptr,&local_1c,corner_index);
     corner_index = corner_index + 1;
-    *piVar3 = (int)ROUND(local_1c.x * 256f);
-    piVar3[1] = (int)ROUND(local_1c.y * 256f);
-    piVar3[2] = (int)ROUND(local_1c.z * 256f);
+    *piVar3 = (int)ROUND(local_1c.x * 256.0f);
+    piVar3[1] = (int)ROUND(local_1c.y * 256.0f);
+    piVar3[2] = (int)ROUND(local_1c.z * 256.0f);
     piVar3 = piVar3 + 3;
   } while ((int)corner_index < 8);
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(g_CDemonSetPtr,8,local_b0);
   local_50.base.count = 4;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
-  local_28 = (int)ROUND((this_ptr->min).x * 256f);
-  local_24 = (int)ROUND((this_ptr->min).y * 256f);
-  local_20 = (int)ROUND((this_ptr->min).z * 256f);
-  local_10 = (int)ROUND((this_ptr->max).x * 256f);
-  local_c = (int)ROUND((this_ptr->max).y * 256f);
-  local_8 = (int)ROUND((this_ptr->max).z * 256f);
+  local_28 = (int)ROUND((this_ptr->min).x * 256.0f);
+  local_24 = (int)ROUND((this_ptr->min).y * 256.0f);
+  local_20 = (int)ROUND((this_ptr->min).z * 256.0f);
+  local_10 = (int)ROUND((this_ptr->max).x * 256.0f);
+  local_c = (int)ROUND((this_ptr->max).y * 256.0f);
+  local_8 = (int)ROUND((this_ptr->max).z * 256.0f);
   pvVar2 = (void *)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
   pCVar1 = g_CDemonRendererPtr;
   if (pvVar2 == (void *)0x0) {

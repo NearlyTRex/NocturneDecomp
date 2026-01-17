@@ -8,7 +8,7 @@
 ;   crt_unknown.c_staticFinal_FUN_0060a4cc at 0060a54d
 ;
 ; Referenced Globals:
-;   DeleteCriticalSection* PTR_DeleteCriticalSection_00611520 = 00211caa
+;   DeleteCriticalSection* g_DeleteCriticalSectionFunc = 00211caa
 ;   CRITICAL_SECTION[64] g_StaticCriticalSectionArray
 ;   undefined4 g_StaticCriticalSectionArray[1].DebugInfo
 ;   DWORD g_StaticCriticalSectionCounter
@@ -29,7 +29,7 @@ section .text
     PUSH EBX                            ; 00609fdb | g_StaticCriticalSectionArray | g_StaticCriticalSectionArray[1].DebugInfo
         ;   Label: LAB_00609fdb
     INC ESI                             ; 00609fdc
-    CALL dword ptr CS:[0x611520]        ; 00609fdd | PTR_DeleteCriticalSection_00611520
+    CALL dword ptr CS:[0x611520]        ; 00609fdd | g_DeleteCriticalSectionFunc
     MOV ECX,dword ptr [0x03f9c000]      ; 00609fe4 | g_StaticCriticalSectionCounter
     ADD EBX,0x18                        ; 00609fea
     CMP ESI,ECX                         ; 00609fed

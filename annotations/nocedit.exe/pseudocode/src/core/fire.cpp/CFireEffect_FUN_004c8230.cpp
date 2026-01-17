@@ -220,7 +220,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
       }
       if (0.0 < in_stack_00000010->alpha_or_wetness) {
         local_30 = (local_9c * in_stack_0000000c[2] +
-                   local_a4 * *in_stack_0000000c + local_a0 * in_stack_0000000c[1]) * 2f
+                   local_a4 * *in_stack_0000000c + local_a0 * in_stack_0000000c[1]) * 2.0f
         ;
         local_d4 = local_a4 * local_30;
         local_d0 = local_a0 * local_30;

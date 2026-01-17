@@ -29,7 +29,9 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
   float fStack_44;
   float fStack_40;
   CVector3f CStack_3c;
+  float fStack_30;
   float fStack_2c;
+  float fStack_28;
   float fStack_24;
   float fStack_20;
   float fStack_1c;
@@ -100,41 +102,41 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
       else {
         CStack_54.x = CStack_54.x - fStack_2c;
       }
-      CStack_54.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(CStack_54.x);
-      fStack_18 = CStack_54.y;
+      CStack_54.x = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(CStack_54.x);
+      fStack_18 = CStack_54.x;
     }
-    if ((((float)0.01 <= fVar1) &&
-        (dVar2 = (double)(SQRT(fVar1 * fVar1 - local_9c.y * local_9c.y) / fVar1), dVar2 < 1.0)) &&
-       (0.0 <= dVar2)) {
+    if ((((float)0.01 <= fStack_bc) &&
+        (dVar2 = (double)(SQRT(fStack_bc * fStack_bc - local_9c.x * local_9c.x) / fStack_bc),
+        dVar2 < 1.0)) && (0.0 <= dVar2)) {
       dVar2 = crt_math_c_acos_FUN_00600162(dVar2);
-      CStack_3c.z = (float)dVar2;
-      if (0.0 <= local_9c.x) {
-        CStack_60.z = CStack_60.z + CStack_3c.z;
+      CStack_3c.y = (float)dVar2;
+      if (0.0 <= CStack_a8.z) {
+        CStack_60.y = CStack_60.y + CStack_3c.y;
       }
       else {
-        CStack_60.z = CStack_60.z - CStack_3c.z;
+        CStack_60.y = CStack_60.y - CStack_3c.y;
       }
-      CStack_54.x = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(CStack_60.z);
+      core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(CStack_60.y);
     }
   }
-  fStack_18 = CStack_54.y;
   fStack_1c = CStack_54.x;
-  if (CStack_54.x < DAT_00663770) {
-    fStack_1c = DAT_00663770;
+  fStack_20 = CStack_60.z;
+  if (CStack_60.z < 0xBF860A92) {
+    fStack_20 = 0xBF860A92;
   }
-  if (DAT_00663774 < fStack_1c) {
-    fStack_1c = DAT_00663774;
+  if (0x3F9C61AA < fStack_20) {
+    fStack_20 = 0x3F9C61AA;
   }
-  if (CStack_54.y < fStack_24) {
-    fStack_18 = fStack_24;
+  if (CStack_54.x < fStack_28) {
+    fStack_1c = fStack_28;
   }
-  if (fStack_2c < fStack_18) {
-    fStack_18 = fStack_2c;
+  if (fStack_30 < fStack_1c) {
+    fStack_1c = fStack_30;
   }
   in_stack_00000004[0x17a].location.area_id = 0x3f800000;
-  in_stack_00000004[0x17a].location.position.y = fStack_18;
-  in_stack_00000004[0x17a].location.position.x = fStack_1c;
-  *(float *)(in_stack_00000004[0x17a].actor_name + 0x1c) = fStack_18;
-  *(float *)(in_stack_00000004[0x17a].actor_name + 0x18) = fStack_1c;
+  in_stack_00000004[0x17a].location.position.y = fStack_1c;
+  in_stack_00000004[0x17a].location.position.x = fStack_20;
+  *(float *)(in_stack_00000004[0x17a].actor_name + 0x1c) = fStack_1c;
+  *(float *)(in_stack_00000004[0x17a].actor_name + 0x18) = fStack_20;
   return;
 }

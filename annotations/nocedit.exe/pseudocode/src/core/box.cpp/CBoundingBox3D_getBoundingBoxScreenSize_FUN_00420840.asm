@@ -27,7 +27,7 @@
 ;
 ; Referenced Globals:
 ;   float g_BoundingBoxCenterScaleFactor = 0.5
-;   double g_BoundingBoxFixedPointScaleFactor = 0.00390625
+;   double g_BoundingBoxFixedPointScaleFactor1 = 0.00390625
 ;   float g_BoundingBoxWorldToIntegerScale = 256
 ;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 ;   int g_ProjectionScale = 0x10000
@@ -103,7 +103,7 @@ section .text
     FSUB float ptr [ESI + 0x4]          ; 004208eb
     MOV dword ptr [ESP + 0x2c],EAX      ; 004208ee
     FILD dword ptr [ESP + 0x2c]         ; 004208f2
-    FMUL double ptr [0x006165ef]        ; 004208f6 | g_BoundingBoxFixedPointScaleFactor
+    FMUL double ptr [0x006165ef]        ; 004208f6 | g_BoundingBoxFixedPointScaleFactor1
     FDIVP                               ; 004208fc
     FILD dword ptr [0x02d0254c]         ; 004208fe | g_ViewportCenterYFixed
     FMULP                               ; 00420904

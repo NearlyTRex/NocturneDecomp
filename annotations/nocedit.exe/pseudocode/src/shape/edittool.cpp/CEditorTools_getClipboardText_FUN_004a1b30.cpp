@@ -18,9 +18,9 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEd
   byte bVar7;
   
   bVar7 = 0;
-  BVar2 = (*OpenClipboard)(g_MainWindowHandle);
+  BVar2 = (*g_OpenClipboardFunc)(g_MainWindowHandle);
   if (BVar2 != 0) {
-    pcVar3 = (*GetClipboardData)(1);
+    pcVar3 = (*g_GetClipboardDataFunc)(1);
     if (pcVar3 != (char *)0x0) {
       uVar4 = 0xffffffff;
       pcVar6 = pcVar3;
@@ -48,7 +48,7 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEd
         }
       }
     }
-    (*CloseClipboard)();
+    (*g_CloseClipboardFunc)();
   }
   if (g_ClipboardBackupText != (char *)0x0) {
     return g_ClipboardBackupText;

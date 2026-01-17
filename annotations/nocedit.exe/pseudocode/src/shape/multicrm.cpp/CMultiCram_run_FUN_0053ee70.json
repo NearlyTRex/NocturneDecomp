@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 113,
+    "complexity_score": 403,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 24,
     "pseudocode_lines": 98,
-    "suspect_count": 1,
+    "suspect_count": 29,
     "suspect_types": [
-      "param_count_too_few"
+      "call_esp_anchor",
+      "param_count_too_few",
+      "variadic_anchor"
     ],
     "total_lines": 520
   },
@@ -278,92 +280,6 @@
     "declared_params": 1,
     "estimated_params": 5
   },
-  "pcode_overrides": {
-    "0053eec2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053eeff": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053ef17": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053ef3e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053ef53": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053efbe": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053efd9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f00f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f038": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f04d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f083": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f0aa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f0b9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f0e0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f0f7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f13b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f156": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f183": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f19e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f1c9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f1de": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f214": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f23f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f24e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f279": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f290": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f2db": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ],
-    "0053f2f1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.2956521739130435,
     "instruction_count": 345,
@@ -394,7 +310,76 @@
     },
     "pcode_op_count": 2172
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 300,
+    "local_size": 296,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMultiCram *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:5",
+      "param_delta": 4,
+      "text": "Function declares 1 params but call sites push 5 (4 missing)",
+      "type": "param_count_too_few"
+    },
     {
       "add_esp_value": 4,
       "call_address": "0053eefa",
@@ -791,77 +776,6 @@
       "target_address": "0x401fd0",
       "text": "Direct CALL at 0053f2ec, ADD ESP at 0053f2f1 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 300,
-    "local_size": 296,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_124",
-        "offset": -292,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_120",
-        "offset": -288,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_11c",
-        "offset": -284,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CMultiCram *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:5",
-      "param_delta": 4,
-      "text": "Function declares 1 params but call sites push 5 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

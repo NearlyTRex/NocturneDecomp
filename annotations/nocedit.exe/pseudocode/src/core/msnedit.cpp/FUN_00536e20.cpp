@@ -15,10 +15,15 @@ void core_msnedit_cpp_FUN_00536e20(void)
   CDeformableModelInstance *this_ptr;
   int iVar1;
   SMotion *motion_name;
+  char *pcVar2;
   int y1;
+  double dVar3;
+  float frame_number;
   float local_f8;
-  char local_f4 [196];
-  double dStack_30;
+  char local_f4 [192];
+  uint uStack_34;
+  uint uStack_30;
+  uint local_2c;
   uint local_24;
   int local_20;
   int local_1c;
@@ -43,9 +48,9 @@ void core_msnedit_cpp_FUN_00536e20(void)
     motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                             (&this_ptr->motion_controller);
     local_f8 = (this_ptr->motion_controller).current_frame_number;
-    core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(&this_ptr->motion_controller)
-    ;
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"%s (%s)",motion_name);
+    pcVar2 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
+                       (&this_ptr->motion_controller);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"%s (%s)",motion_name,pcVar2);
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -56,7 +61,9 @@ void core_msnedit_cpp_FUN_00536e20(void)
     if (iVar1 != 0) {
       DAT_02f7c52c = -1;
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"%6.2f",(double)local_f8);
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (local_f4,"%6.2f",SUB84 /* extract 2-byte value */((double)local_f8,0),
+               (int)((ulonglong)(double)local_f8 >> 0x20));
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       local_18 = motion_name->frame_count + -1;
@@ -70,11 +77,16 @@ void core_msnedit_cpp_FUN_00536e20(void)
       DAT_02f7c530 = 0;
       local_f8 = 0.0;
     }
+    frame_number = 0.0;
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
-      dStack_30 = crt_math_c_ceil_FUN_006001b2((double)local_f8);
-      if (dStack_30 + _DAT_0063b73c < 0.0) {
+      dVar3 = crt_math_c_ceil_FUN_006001b2((double)local_f8);
+      uStack_30 = SUB84 /* extract 2-byte value */(dVar3,0);
+      local_2c = (uint)((ulonglong)dVar3 >> 0x20);
+      frame_number = (float)((float10)dVar3 + (float10)_DAT_0063b73c);
+      if ((float10)dVar3 + (float10)_DAT_0063b73c < (float10)0) {
         local_1c = motion_name->frame_count + -1;
+        frame_number = (float)local_1c;
       }
       DAT_02f7c530 = 0;
     }
@@ -92,22 +104,24 @@ void core_msnedit_cpp_FUN_00536e20(void)
     }
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
-      dStack_30 = crt_math_c_floor_FUN_005feb90((double)local_f8);
+      dVar3 = crt_math_c_floor_FUN_005feb90((double)frame_number);
+      uStack_34 = SUB84 /* extract 2-byte value */(dVar3,0);
+      uStack_30 = (uint)((ulonglong)dVar3 >> 0x20);
       DAT_02f7c530 = 0;
     }
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
-      local_18 = motion_name->frame_count + -1;
+      local_1c = motion_name->frame_count + -1;
       DAT_02f7c530 = 0;
-      local_f8 = (float)local_18;
+      frame_number = (float)local_1c;
     }
     if ((DAT_02f7c530 != 0) &&
-       (local_f8 = g_CGamePtr->delta_time_float * motion_name->fps + local_f8,
-       (float)motion_name->frame_count <= local_f8)) {
-      local_f8 = 0.0;
+       (frame_number = g_CGamePtr->delta_time_float * motion_name->fps + frame_number,
+       (float)motion_name->frame_count <= frame_number)) {
+      frame_number = 0.0;
     }
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-              (&this_ptr->motion_controller,motion_name->motion_name,local_f8);
+              (&this_ptr->motion_controller,motion_name->motion_name,frame_number);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr);
   }
   return;

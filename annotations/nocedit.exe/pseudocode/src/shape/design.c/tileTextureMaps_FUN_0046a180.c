@@ -84,13 +84,13 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
           local_1c0 = g_ModelPolygonData[local_14].uv_v[local_1c];
         }
       }
-      crt_math_c_round_FUN_005fe6b0((double)(local_1c0 * 65536f));
-      crt_math_c_round_FUN_005fe6b0((double)(local_1bc * 65536f));
+      crt_math_c_round_FUN_005fe6b0((double)(local_1c0 * 65536.0f));
+      crt_math_c_round_FUN_005fe6b0((double)(local_1bc * 65536.0f));
       max_v = 0x46a41d;
-      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_1b8 * 65536f));
+      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_1b8 * 65536.0f));
       iVar2 = (int)ROUND(dVar8);
       min_v = 0x46a43a;
-      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_1b4 * 65536f));
+      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_1b4 * 65536.0f));
       shape_design_c_cramTextures_FUN_0046a970
                 (g_ModelPolygonData[local_14].texture_name,(int)ROUND(dVar8),min_v,iVar2,max_v);
     }

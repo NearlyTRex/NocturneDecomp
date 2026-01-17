@@ -80,7 +80,7 @@ engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
     piVar3 = (int *)crt_errno_c_errno_FUN_00601450();
     if (*piVar3 != 6) break;
     iVar2 = iVar2 + 1;
-    (*Sleep)(500);
+    (*g_SleepFunc)(500);
   } while (iVar2 < 10);
   stream_ptr = (FILE *)0x0;
 LAB_004b36b4:

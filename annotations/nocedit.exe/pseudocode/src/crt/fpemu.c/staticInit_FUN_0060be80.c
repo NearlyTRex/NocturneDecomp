@@ -14,10 +14,10 @@ void __cdecl crt_fpemu_c_staticInit_FUN_0060be80(void)
   char cVar3;
   double dVar4;
   
-  cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\x03');
-  cVar2 = (char)(DAT_00684acd - 3) < '\0';
-  uVar1 = DAT_00684acd == 3;
-  if (2 < DAT_00684acd) {
+  cVar3 = SBORROW /* signed borrow */1(0,'\x03');
+  cVar2 = (char)(0 - 3) < '\0';
+  uVar1 = 0 == 3;
+  if (2 < 0) {
     dVar4 = (double)crt_unknown_c_FUN_0060dcf6(0xc0000000,0x4150017e,0x80000000,0x4147ffff);
     dVar4 = crt_math_c_dmul_FUN_0060e0b9(dVar4,3145727.0);
     dVar4 = crt_math_c_dadd_FUN_0060defc(4195835.0,dVar4);

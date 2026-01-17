@@ -1,18 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 247,
+    "complexity_score": 306,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 22,
-    "suspect_count": 21,
+    "pseudocode_lines": 21,
+    "suspect_count": 26,
     "suspect_types": [
+      "call_esp_anchor",
       "concat_artifact",
+      "stack_align_anchor",
       "stack_param",
       "sub_artifact"
     ],
-    "total_lines": 85
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -42,17 +44,6 @@
     "confidence": "unknown",
     "declared_params": 0,
     "estimated_params": 0
-  },
-  "pcode_overrides": {
-    "00442406": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "0044243a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "0044247e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.074074074074074,
@@ -94,44 +85,6 @@
     },
     "pcode_op_count": 382
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
-      "fix_address": "00442406",
-      "frame_offset": 16,
-      "match": "AND ESP",
-      "sub_esp_offset": 16,
-      "text": "Stack alignment at 00442406 (SUB ESP, 0x10 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00442429",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0044243a",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "0044242e",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00442429, ADD ESP at 0044243a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0044246d",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0044247e",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "00442472",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 0044246d, ADD ESP at 0044247e with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 36,
@@ -198,14 +151,14 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
-      "text": "uStack_14 = SUB84 /* extract 2-byte value */((double)in_stack_00000004,0);",
+      "text": "local_18 = SUB84 /* extract 2-byte value */((double)in_stack_00000004,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
       "line": 11,
       "match": "SUB84",
-      "text": "uStack_14 = SUB84 /* extract 2-byte value */((double)in_stack_00000004,0);",
+      "text": "local_18 = SUB84 /* extract 2-byte value */((double)in_stack_00000004,0);",
       "type": "sub_artifact"
     },
     {
@@ -219,81 +172,102 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
-      "text": "dVar1 = crt_math_c_floor_FUN_005feb90((double)(-in_stack_00000004 / in_stack_00000008));",
+      "text": "uVar2 = (uint)((ulonglong)(double)(-in_stack_00000004 / in_stack_00000008) >> 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
+      "text": "uVar2 = (uint)((ulonglong)(double)(-in_stack_00000004 / in_stack_00000008) >> 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
       "text": "dVar1 = crt_math_c_floor_FUN_005feb90((double)(-in_stack_00000004 / in_stack_00000008));",
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "SUB84",
-      "text": "local_10 = SUB84 /* extract 2-byte value */(dVar1,0);",
-      "type": "sub_artifact"
+      "match": "in_stack_00000008",
+      "text": "dVar1 = crt_math_c_floor_FUN_005feb90((double)(-in_stack_00000004 / in_stack_00000008));",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004 =",
+      "text": "in_stack_00000004 = (float)dVar1 * in_stack_00000008 + (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000008",
-      "text": "(float)dVar1 * in_stack_00000008 + (float)(double)CONCAT44 /* combine 2-byte values */(local_10,uStack_14);",
+      "text": "in_stack_00000004 = (float)dVar1 * in_stack_00000008 + (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 16,
+      "line": 15,
       "match": "CONCAT44",
-      "text": "(float)dVar1 * in_stack_00000008 + (float)(double)CONCAT44 /* combine 2-byte values */(local_10,uStack_14);",
+      "text": "in_stack_00000004 = (float)dVar1 * in_stack_00000008 + (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2);",
       "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004 < 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "return in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "uVar2 = (uint)((ulonglong)(double)(in_stack_00000004 / in_stack_00000008) >> 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "uVar2 = (uint)((ulonglong)(double)(in_stack_00000004 / in_stack_00000008) >> 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
       "text": "dVar1 = crt_math_c_floor_FUN_005feb90((double)(in_stack_00000004 / in_stack_00000008));",
@@ -307,25 +281,54 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 23,
-      "match": "SUB84",
-      "text": "local_10 = SUB84 /* extract 2-byte value */(dVar1,0);",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000008",
-      "text": "return (float)(double)CONCAT44 /* combine 2-byte values */(local_10,uStack_14) - (float)dVar1 * in_stack_00000008;",
+      "text": "return (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2) - (float)dVar1 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 24,
+      "line": 23,
       "match": "CONCAT44",
-      "text": "return (float)(double)CONCAT44 /* combine 2-byte values */(local_10,uStack_14) - (float)dVar1 * in_stack_00000008;",
+      "text": "return (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2) - (float)dVar1 * in_stack_00000008;",
       "type": "concat_artifact"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
+      "fix_address": "00442406",
+      "frame_offset": 16,
+      "match": "AND ESP",
+      "sub_esp_offset": 16,
+      "text": "Stack alignment at 00442406 (SUB ESP, 0x10 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00442429",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0044243a",
+      "frame_offset": 16,
+      "match": "CALL...ADD ESP",
+      "return_address": "0044242e",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00442429, ADD ESP at 0044243a with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0044246d",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0044247e",
+      "frame_offset": 16,
+      "match": "CALL...ADD ESP",
+      "return_address": "00442472",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 0044246d, ADD ESP at 0044247e with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

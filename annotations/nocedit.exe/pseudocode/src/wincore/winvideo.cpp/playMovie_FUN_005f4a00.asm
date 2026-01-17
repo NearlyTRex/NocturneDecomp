@@ -14,15 +14,15 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00508041
 ;
 ; Referenced Globals:
-;   mciGetErrorStringA* mciGetErrorStringA = 0021183a
-;   mciSendStringA* mciSendStringA = 00211850
-;   GetClientRect* GetClientRect = 00211ac0
-;   MessageBoxA* MessageBoxA = 00211b44
-;   MoveWindow* MoveWindow = 00211b52
-;   SetRectEmpty* SetRectEmpty = 00211bf6
-;   GetCurrentProcess* GetCurrentProcess = 00211e5a
-;   SetThreadPriority* SetThreadPriority = 002121f6
-;   Sleep* Sleep = 00212228
+;   mciGetErrorStringA* g_mciGetErrorStringAFunc = 0021183a
+;   mciSendStringA* g_mciSendStringAFunc = 00211850
+;   GetClientRect* g_GetClientRectFunc = 00211ac0
+;   MessageBoxA* g_MessageBoxAFunc = 00211b44
+;   MoveWindow* g_MoveWindowFunc = 00211b52
+;   SetRectEmpty* g_SetRectEmptyFunc = 00211bf6
+;   GetCurrentProcess* g_GetCurrentProcessFunc = 00211e5a
+;   SetThreadPriority* g_SetThreadPriorityFunc = 002121f6
+;   Sleep* g_SleepFunc = 00212228
 ;   TerminatedCString s_where_mov_source_006581dd
 ;   TerminatedCString s_open_s_alias_mov_style_c_006581f8
 ;   TerminatedCString s_status_mov_window_handle_00658222
@@ -119,7 +119,7 @@ section .text
     PUSH 0x0                            ; 005f4ab1
     LEA EAX,[ESP + 0x18]                ; 005f4ab3
     PUSH EAX                            ; 005f4ab7
-    CALL dword ptr CS:[0x611410]        ; 005f4ab8 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f4ab8 | g_mciSendStringAFunc
     TEST EAX,EAX                        ; 005f4abf
     JNZ 0x005f4d4e                      ; 005f4ac1
         ;   XREF to: 005f4d4e (CONDITIONAL_JUMP)  ; LAB_005f4d4e
@@ -130,7 +130,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 005f4ad8
     PUSH EAX                            ; 005f4adc
     PUSH 0x658222                       ; 005f4add | = "status mov window handle"
-    CALL dword ptr CS:[0x611410]        ; 005f4ae2 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f4ae2 | g_mciSendStringAFunc
     TEST EAX,EAX                        ; 005f4ae9
     JNZ 0x005f4b88                      ; 005f4aeb
         ;   XREF to: 005f4b88 (CONDITIONAL_JUMP)  ; LAB_005f4b88
@@ -150,16 +150,16 @@ section .text
     LEA EAX,[ESP + 0x1f0]               ; 005f4b1d
     PUSH EAX                            ; 005f4b24
     PUSH EBX                            ; 005f4b25
-    CALL dword ptr CS:[0x6114a4]        ; 005f4b26 | GetClientRect
+    CALL dword ptr CS:[0x6114a4]        ; 005f4b26 | g_GetClientRectFunc
     PUSH 0x0                            ; 005f4b2d
     PUSH 0x80                           ; 005f4b2f
     LEA EAX,[ESP + 0x118]               ; 005f4b34
     PUSH EAX                            ; 005f4b3b
     PUSH 0x6581dd                       ; 005f4b3c | = "where mov source"
-    CALL dword ptr CS:[0x611410]        ; 005f4b41 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f4b41 | g_mciSendStringAFunc
     LEA EAX,[ESP + 0x1e0]               ; 005f4b48
     PUSH EAX                            ; 005f4b4f
-    CALL dword ptr CS:[0x6114f0]        ; 005f4b50 | SetRectEmpty
+    CALL dword ptr CS:[0x6114f0]        ; 005f4b50 | g_SetRectEmptyFunc
     MOV DL,byte ptr [ESP + 0x110]       ; 005f4b57
     LEA EAX,[ESP + 0x110]               ; 005f4b5e
     CMP DL,0x20                         ; 005f4b65
@@ -186,13 +186,13 @@ section .text
     LEA EDX,[ESP + 0x10]                ; 005f4b8d
     PUSH EDX                            ; 005f4b91
     PUSH EAX                            ; 005f4b92
-    CALL dword ptr CS:[0x61140c]        ; 005f4b93 | mciGetErrorStringA
+    CALL dword ptr CS:[0x61140c]        ; 005f4b93 | g_mciGetErrorStringAFunc
     PUSH 0x30                           ; 005f4b9a
     PUSH 0x0                            ; 005f4b9c
     LEA EAX,[ESP + 0x14]                ; 005f4b9e
     PUSH EAX                            ; 005f4ba2
     PUSH EBX                            ; 005f4ba3
-    CALL dword ptr CS:[0x6114c4]        ; 005f4ba4 | MessageBoxA
+    CALL dword ptr CS:[0x6114c4]        ; 005f4ba4 | g_MessageBoxAFunc
     JMP 0x005f4b03                      ; 005f4bab
         ;   XREF to: 005f4b03 (UNCONDITIONAL_JUMP)  ; LAB_005f4b03
     CMP byte ptr [EAX],0x20             ; 005f4bb0
@@ -303,7 +303,7 @@ section .text
     PUSH EBX                            ; 005f4ca8
     MOV EDI,dword ptr [0x03f994fc]      ; 005f4ca9 | g_MovieWindowHandle
     PUSH EDI                            ; 005f4caf
-    CALL dword ptr CS:[0x6114c8]        ; 005f4cb0 | MoveWindow
+    CALL dword ptr CS:[0x6114c8]        ; 005f4cb0 | g_MoveWindowFunc
     MOV ECX,dword ptr [0x03f99500]      ; 005f4cb7 | g_MovieHandle
         ;   Label: LAB_005f4cb7
     MOV EAX,[0x03f98468]                ; 005f4cbd | g_MainWindowHandle
@@ -322,13 +322,13 @@ section .text
     PUSH 0x0                            ; 005f4cea
     PUSH 0x0                            ; 005f4cec
     PUSH 0x658250                       ; 005f4cee | = "play mov fullscreen notify"
-    CALL dword ptr CS:[0x611410]        ; 005f4cf3 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f4cf3 | g_mciSendStringAFunc
         ;   Label: LAB_005f4cf3
-    CALL dword ptr CS:[0x61157c]        ; 005f4cfa | GetCurrentProcess
+    CALL dword ptr CS:[0x61157c]        ; 005f4cfa | g_GetCurrentProcessFunc
     PUSH -0xf                           ; 005f4d01
     PUSH EAX                            ; 005f4d03
     MOV EBX,EAX                         ; 005f4d04
-    CALL dword ptr CS:[0x61163c]        ; 005f4d06 | SetThreadPriority
+    CALL dword ptr CS:[0x61163c]        ; 005f4d06 | g_SetThreadPriorityFunc
     XOR ESI,ESI                         ; 005f4d0d
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 ; 005f4d0f
         ;   XREF to: 005f35e0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0()
@@ -345,7 +345,7 @@ section .text
     JZ 0x005f4d89                       ; 005f4d2b
         ;   XREF to: 005f4d89 (CONDITIONAL_JUMP)  ; LAB_005f4d89
     PUSH 0x14                           ; 005f4d2d
-    CALL dword ptr CS:[0x611644]        ; 005f4d2f | Sleep
+    CALL dword ptr CS:[0x611644]        ; 005f4d2f | g_SleepFunc
     JMP 0x005f4d0f                      ; 005f4d36
         ;   XREF to: 005f4d0f (UNCONDITIONAL_JUMP)  ; LAB_005f4d0f
     CMP dword ptr [ESP + 0x1fc],0x12c   ; 005f4d38
@@ -360,7 +360,7 @@ section .text
     PUSH 0x65823b                       ; 005f4d52 | = "Unable to open .AVI!"
     PUSH EBX                            ; 005f4d57
     XOR EBP,EBP                         ; 005f4d58
-    CALL dword ptr CS:[0x6114c4]        ; 005f4d5a | MessageBoxA
+    CALL dword ptr CS:[0x6114c4]        ; 005f4d5a | g_MessageBoxAFunc
     MOV dword ptr [0x03f99504],EBP      ; 005f4d61 | g_MoviePlaying
     JMP 0x005f4cb7                      ; 005f4d67
         ;   XREF to: 005f4cb7 (UNCONDITIONAL_JUMP)  ; LAB_005f4cb7
@@ -381,7 +381,7 @@ section .text
     PUSH 0x1                            ; 005f4d89
         ;   Label: LAB_005f4d89
     PUSH EBX                            ; 005f4d8b
-    CALL dword ptr CS:[0x61163c]        ; 005f4d8c | SetThreadPriority
+    CALL dword ptr CS:[0x61163c]        ; 005f4d8c | g_SetThreadPriorityFunc
     MOV EAX,[0x03f98468]                ; 005f4d93 | g_MainWindowHandle
     PUSH EAX                            ; 005f4d98
     CALL wincore_winvideo.cpp_closeMovie_FUN_005f46b0 ; 005f4d99

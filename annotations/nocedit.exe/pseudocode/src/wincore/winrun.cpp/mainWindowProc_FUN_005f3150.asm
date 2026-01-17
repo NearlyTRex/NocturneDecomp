@@ -13,11 +13,11 @@
 ;   wincore_winrun.cpp_winMain_FUN_005f3680 at 005f37eb
 ;
 ; Referenced Globals:
-;   DefWindowProcA* PTR_DefWindowProcA_00611498 = 00211a8c
-;   PostQuitMessage* PTR_PostQuitMessage_006114d4 = 00211b80
-;   SetCursor* PTR_SetCursor_006114e4 = 00211bc8
-;   GetCurrentProcess* GetCurrentProcess = 00211e5a
-;   SetThreadPriority* SetThreadPriority = 002121f6
+;   DefWindowProcA* g_DefWindowProcAFunc = 00211a8c
+;   PostQuitMessage* g_PostQuitMessageFunc = 00211b80
+;   SetCursor* g_SetCursorFunc = 00211bc8
+;   GetCurrentProcess* g_GetCurrentProcessFunc = 00211e5a
+;   SetThreadPriority* g_SetThreadPriorityFunc = 002121f6
 ;   int g_InputKeyMask = 0x7f
 ;   int g_WindowActive = -0x1
 ;   int g_PreviousActiveState = -0x1
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 005f35bd (CONDITIONAL_JUMP)  ; LAB_005f35bd
     PUSH 0x0                            ; 005f31c0
     MOV EBX,0x1                         ; 005f31c2
-    CALL dword ptr CS:[0x6114d4]        ; 005f31c7 | PTR_PostQuitMessage_006114d4
+    CALL dword ptr CS:[0x6114d4]        ; 005f31c7 | g_PostQuitMessageFunc
     MOV dword ptr [0x03f9846c],EBX      ; 005f31ce | g_InputDisabled
     MOV ESI,dword ptr [ESP + 0x20]      ; 005f31d4
         ;   Label: LAB_005f31d4
@@ -107,7 +107,7 @@ section .text
     PUSH EDI                            ; 005f31de
         ;   Label: LAB_005f31de
     PUSH EBP                            ; 005f31df
-    CALL dword ptr CS:[0x611498]        ; 005f31e0 | PTR_DefWindowProcA_00611498
+    CALL dword ptr CS:[0x611498]        ; 005f31e0 | g_DefWindowProcAFunc
     MOV EDI,EAX                         ; 005f31e7
     MOV EAX,EDI                         ; 005f31e9
     POP EBP                             ; 005f31eb
@@ -151,7 +151,7 @@ section .text
     CMP EAX,dword ptr [0x006849a4]      ; 005f3237 | g_WindowActive
     JZ 0x005f31d4                       ; 005f323d
         ;   XREF to: 005f31d4 (CONDITIONAL_JUMP)  ; LAB_005f31d4
-    CALL dword ptr CS:[0x61157c]        ; 005f323f | GetCurrentProcess
+    CALL dword ptr CS:[0x61157c]        ; 005f323f | g_GetCurrentProcessFunc
     MOV ESI,dword ptr [0x006849a4]      ; 005f3246 | g_WindowActive
     MOV EBX,EAX                         ; 005f324c
     TEST ESI,ESI                        ; 005f324e
@@ -159,7 +159,7 @@ section .text
         ;   XREF to: 005f3282 (CONDITIONAL_JUMP)  ; LAB_005f3282
     PUSH 0x1                            ; 005f3252
     PUSH EAX                            ; 005f3254
-    CALL dword ptr CS:[0x61163c]        ; 005f3255 | SetThreadPriority
+    CALL dword ptr CS:[0x61163c]        ; 005f3255 | g_SetThreadPriorityFunc
     CALL wincore_wddvmem.cpp_videoRestore_FUN_005edc80 ; 005f325c
         ;   XREF to: 005edc80 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_videoRestore_FUN_005edc80()
     CMP dword ptr [0x006849ac],-0x1     ; 005f3261 | g_PreviousActiveState
@@ -175,14 +175,14 @@ section .text
         ;   Label: LAB_005f3282
     PUSH -0xf                           ; 005f3287
     PUSH EBX                            ; 005f3289
-    CALL dword ptr CS:[0x61163c]        ; 005f328a | SetThreadPriority
+    CALL dword ptr CS:[0x61163c]        ; 005f328a | g_SetThreadPriorityFunc
     MOV dword ptr [0x03f98470],ESI      ; 005f3291 | g_ApplicationActive
     JMP 0x005f31d4                      ; 005f3297
         ;   XREF to: 005f31d4 (UNCONDITIONAL_JUMP)  ; LAB_005f31d4
     PUSH 0x0                            ; 005f329c
         ;   Label: LAB_005f329c
     MOV EDI,0x1                         ; 005f329e
-    CALL dword ptr CS:[0x6114e4]        ; 005f32a3 | PTR_SetCursor_006114e4
+    CALL dword ptr CS:[0x6114e4]        ; 005f32a3 | g_SetCursorFunc
     MOV EAX,EDI                         ; 005f32aa
     POP EBP                             ; 005f32ac
     POP EDI                             ; 005f32ad

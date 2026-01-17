@@ -11,6 +11,6 @@ HMODULE __cdecl wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(LPCSTR lpLibFileNam
 {
   HMODULE pHVar1;
   
-  pHVar1 = (*PTR_LoadLibraryA_006115e8)(lpLibFileName);
+  pHVar1 = (*g_LoadLibraryAFunc)(lpLibFileName);
   return pHVar1;
 }

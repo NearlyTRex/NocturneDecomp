@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 128,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 33,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
+      "call_esp_anchor",
       "concat_artifact",
       "pointer_cast",
+      "stack_align_anchor",
       "unknown_field"
     ],
     "total_lines": 102
@@ -56,14 +58,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00519689": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ],
-    "005196e9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.053571428571429,
     "instruction_count": 56,
@@ -99,31 +93,6 @@
     },
     "pcode_op_count": 283
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
-      "fix_address": "00519689",
-      "frame_offset": 12,
-      "match": "AND ESP",
-      "sub_esp_offset": 12,
-      "text": "Stack alignment at 00519689 (SUB ESP, 0xc before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005196e4",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005196e9",
-      "frame_offset": 12,
-      "match": "CALL...ADD ESP",
-      "return_address": "005196e9",
-      "target_address": "0x518910",
-      "text": "Direct CALL at 005196e4, ADD ESP at 005196e9 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 36,
@@ -176,14 +145,14 @@
       "description": "Unknown/mangled field access",
       "line": 13,
       "match": "._0_4_",
-      "text": "uStack_1c = 9.9999999999999997e+34._0_4_;",
+      "text": "local_20 = 9.9999999999999997e+34._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 15,
       "match": "._4_4_",
-      "text": "local_18 = 9.9999999999999997e+34._4_4_;",
+      "text": "uStack_1c = 9.9999999999999997e+34._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -211,22 +180,45 @@
       "description": "Decompiler double/longlong composition artifact",
       "line": 25,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c)) {",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_1c,local_20)) {",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(uint *)((int)",
-      "text": "uStack_1c = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20);",
+      "text": "local_20 = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(uint *)((int)",
-      "text": "local_18 = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x1c);",
+      "text": "uStack_1c = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x1c);",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
+      "fix_address": "00519689",
+      "frame_offset": 12,
+      "match": "AND ESP",
+      "sub_esp_offset": 12,
+      "text": "Stack alignment at 00519689 (SUB ESP, 0xc before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005196e4",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005196e9",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "005196e9",
+      "target_address": "0x518910",
+      "text": "Direct CALL at 005196e4, ADD ESP at 005196e9 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

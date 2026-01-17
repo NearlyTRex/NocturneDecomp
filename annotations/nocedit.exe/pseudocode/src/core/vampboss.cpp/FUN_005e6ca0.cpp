@@ -15,8 +15,8 @@ void core_vampboss_cpp_FUN_005e6ca0(void)
   uint uVar1;
   int in_stack_00000004;
   float in_stack_00000008;
-  float local_74;
-  char acStack_70 [100];
+  float local_78;
+  char local_74 [104];
   
   if (0.0 < in_stack_00000008) {
 LAB_005e6cc2:
@@ -25,19 +25,19 @@ LAB_005e6cc2:
                         ((CMotionController *)(in_stack_00000004 + 0xbebc));
       if (uVar1 < 0x66) {
         if (uVar1 == 0x65) {
-          local_74 = 0.0;
+          local_78 = 0.0;
           if (*(int *)(in_stack_00000004 + 0xcdcc0) == 1) {
-            local_74 = *(float *)(in_stack_00000004 + 0xce8f0);
+            local_78 = *(float *)(in_stack_00000004 + 0xce8f0);
           }
           if (*(int *)(in_stack_00000004 + 0xcdcc0) == 2) {
-            local_74 = 1.0;
+            local_78 = 1.0;
           }
           if (*(int *)(in_stack_00000004 + 0xcdcc0) == 3) {
-            local_74 = *(float *)(in_stack_00000004 + 0xce8f0);
+            local_78 = *(float *)(in_stack_00000004 + 0xce8f0);
           }
-          if (0.0 < (double)local_74) {
+          if (0.0 < (double)local_78) {
             crt_stdio_c_sprintf_FUN_005fdbd0
-                      (acStack_70,"wing?.wav @%f",(double)local_74 * 2.5);
+                      (local_74,"wing?.wav @%f",(double)local_78 * 2.5);
             goto LAB_005e6d59;
           }
         }

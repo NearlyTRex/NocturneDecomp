@@ -14,7 +14,7 @@ engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(CFileFinder *this_ptr,char *s
   _WIN32_FIND_DATAA _Stack_144;
   
   engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(this_ptr);
-  pvVar1 = (*PTR_FindFirstFileA_0061154c)(search_pattern,&_Stack_144);
+  pvVar1 = (*g_FindFirstFileAFunc)(search_pattern,&_Stack_144);
   if (pvVar1 == (HANDLE)0xffffffff) {
     if (this_ptr->has_results == 0) {
       engine_dosio_c_CFileFinder_reset_FUN_00481db0(this_ptr);

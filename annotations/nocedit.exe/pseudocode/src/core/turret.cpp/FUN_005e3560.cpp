@@ -62,7 +62,7 @@ void core_turret_cpp_FUN_005e3560(void)
           fVar4 = input_local_point->x - fVar1;
           fVar6 = *(float *)(in_stack_00000004 + 0x850) - fVar2;
           fVar5 = *(float *)(in_stack_00000004 + 0x854) - fVar3;
-          if (25f < fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4) break;
+          if (25.0f < fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4) break;
           iVar7 = iVar7 + 1;
           if (4 < iVar7) {
             return;

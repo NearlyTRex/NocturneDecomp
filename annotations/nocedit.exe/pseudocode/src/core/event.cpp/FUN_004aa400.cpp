@@ -55,7 +55,7 @@ CHero * core_event_cpp_FUN_004aa400(void)
     actor_ptr = g_HeroActors[g_LocalHeroIndex];
   }
   if (actor_ptr == (CHero *)0x0) {
-    return DAT_0065d95c;
+    return 0x0FFFFFFF;
   }
 LAB_004aa48f:
   iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,in_stack_00000008);
@@ -63,7 +63,7 @@ LAB_004aa48f:
     return actor_ptr;
   }
   if (*in_stack_00000004 == '@') {
-    return DAT_0065d95c;
+    return 0x0FFFFFFF;
   }
   pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)actor_ptr);
   crt_stdio_c_sprintf_FUN_005fdbd0

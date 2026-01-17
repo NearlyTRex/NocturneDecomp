@@ -39,15 +39,15 @@ double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
     if (0x7fe < iVar2) {
       crt_math_c_set_range_error_errno_FUN_006027ac();
       if ((short)uStack_1e < 1) {
-        dVar1 = -(double)CONCAT44 /* combine 2-byte values */(inf._4_4_,inf._0_4_);
+        dVar1 = -(double)CONCAT44 /* combine 2-byte values */(INFINITY._4_4_,INFINITY._0_4_);
         local_1c = SUB82 /* extract 2-byte value */(dVar1,0);
         uStack_1a = (ushort)((ulonglong)dVar1 >> 0x10);
         uStack_18 = (uint)((ulonglong)dVar1 >> 0x20);
       }
       else {
-        local_1c = (ushort)inf._0_4_;
-        uStack_1a = (ushort)((uint)inf._0_4_ >> 0x10);
-        uStack_18 = inf._4_4_;
+        local_1c = (ushort)INFINITY._0_4_;
+        uStack_1a = (ushort)((uint)INFINITY._0_4_ >> 0x10);
+        uStack_18 = INFINITY._4_4_;
       }
       goto LAB_006000b6;
     }

@@ -1,13 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 414,
-    "complexity_score": 150,
+    "complexity_score": 270,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 16,
     "pseudocode_lines": 150,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 11,
+    "suspect_types": [
+      "call_esp_anchor",
+      "variadic_anchor"
+    ],
     "total_lines": 564
   },
   "cross_references": [
@@ -172,41 +175,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00459a5a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459b4f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459c6c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459ce8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459d03": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459d1c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459d3d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459d56": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459d71": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459d8a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ],
-    "00459dbd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffc040,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.597864768683274,
     "instruction_count": 281,
@@ -237,7 +205,128 @@
     },
     "pcode_op_count": 1292
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 16348,
+    "local_size": 16340,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3fd0",
+        "offset": -16336,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3fcc",
+        "offset": -16332,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14c",
+        "offset": -332,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_83",
+        "offset": -131,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "directory_path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
     {
       "add_esp_value": 8,
       "call_address": "00459cfe",
@@ -390,127 +479,5 @@
       "text": "Direct CALL at 00459db8, ADD ESP at 00459dbd with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ],
-  "stack_frame": {
-    "frame_size": 16348,
-    "local_size": 16340,
-    "param_offset": 4,
-    "param_size": 8,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_3fd0",
-        "offset": -16336,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3fcc",
-        "offset": -16332,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14c",
-        "offset": -332,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_83",
-        "offset": -131,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "directory_path",
-        "offset": 4,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "mode",
-        "offset": 8,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": []
+  ]
 }

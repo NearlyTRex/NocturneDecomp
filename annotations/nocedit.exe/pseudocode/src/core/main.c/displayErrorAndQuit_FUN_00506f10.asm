@@ -76,7 +76,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00506f2d
     PUSH EBX                            ; 00506f31
     MOV ECX,0x1                         ; 00506f32
-    PUSH 0x2dd3130                      ; 00506f37 | g_ErrorMessageBuffer
+    PUSH 0x2dd3130                      ; 00506f37 | g_ErrorMessageBuffer_02dd3130
     XOR ESI,ESI                         ; 00506f3c
     MOV dword ptr [0x02f0ca50],ECX      ; 00506f3e | g_RecursiveCallFlag
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 00506f44
@@ -187,7 +187,7 @@ section .text
         ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90()
     CALL wincore_winrun.cpp_endPeriod_FUN_005f2db0 ; 00507022
         ;   XREF to: 005f2db0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_005f2db0()
-    PUSH 0x2dd3130                      ; 00507027 | g_ErrorMessageBuffer
+    PUSH 0x2dd3130                      ; 00507027 | g_ErrorMessageBuffer_02dd3130
     CALL wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920 ; 0050702c
         ;   XREF to: 005f3920 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920(char * message)
     PUSH EDI                            ; 0050703b
@@ -202,7 +202,7 @@ section .text
     CALL crt_time.c_time_with_rounding_FUN_006001f0 ; 0050704f
         ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 00507054
-    PUSH 0x2dd3130                      ; 00507057 | g_ErrorMessageBuffer
+    PUSH 0x2dd3130                      ; 00507057 | g_ErrorMessageBuffer_02dd3130
     PUSH 0x631656                       ; 0050705c | = "Msg: %s\n"
     PUSH ESI                            ; 00507061
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00507062

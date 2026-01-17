@@ -12,7 +12,7 @@
 ;   crt_startup.c_WriteErrorAndExit_FUN_00606620 at 00606658
 ;
 ; Referenced Globals:
-;   ExitProcess* PTR_ExitProcess_00611534 = 00211d12
+;   ExitProcess* g_ExitProcessFunc = 00211d12
 ;   void* PTR_crt_sync.c_CriticalSectionCleanup_FUN_00602434_00684f20 = 00602434
 ;   undefined4 g_SpecialExitHandler
 ;   int g_EmergencyExitFlag
@@ -52,5 +52,5 @@ section .text
         ;   Label: LAB_0060273b
     PUSH ECX                            ; 0060273e
     CALL dword ptr CS:[0x611534]        ; 0060273f
-        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; PTR_ExitProcess_00611534
+        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; g_ExitProcessFunc
 

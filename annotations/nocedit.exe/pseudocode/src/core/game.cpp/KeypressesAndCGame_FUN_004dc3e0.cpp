@@ -33,9 +33,9 @@ void __cdecl core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(CGame *game,SPlayerCo
       *pfVar1 = 1.0;
     }
   }
-  else if ((-1f < *pfVar1) &&
+  else if ((-1.0f < *pfVar1) &&
           (fVar2 = *pfVar1 - g_CGamePtr->delta_time_float / 0.01f, *pfVar1 = fVar2,
-          fVar2 < -1f)) {
+          fVar2 < -1.0f)) {
     *pfVar1 = -1.0;
   }
   if (g_KeyboardState[game->key_strafe] == '\0') {
@@ -74,9 +74,9 @@ void __cdecl core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(CGame *game,SPlayerCo
         *pfVar1 = 1.0;
       }
     }
-    else if ((-1f < *pfVar1) &&
+    else if ((-1.0f < *pfVar1) &&
             (fVar2 = *pfVar1 - g_CGamePtr->delta_time_float / 0.01f, *pfVar1 = fVar2,
-            fVar2 < -1f)) {
+            fVar2 < -1.0f)) {
       *pfVar1 = -1.0;
     }
     in_stack_ffffffec =

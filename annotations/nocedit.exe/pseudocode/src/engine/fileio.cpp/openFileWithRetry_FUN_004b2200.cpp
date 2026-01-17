@@ -24,7 +24,7 @@ FILE * __cdecl engine_fileio_cpp_openFileWithRetry_FUN_004b2200(char *filename,c
     piVar1 = (int *)crt_errno_c_errno_FUN_00601450();
     if (*piVar1 != 6) break;
     iVar2 = iVar2 + 1;
-    (*Sleep)(500);
+    (*g_SleepFunc)(500);
     if (9 < iVar2) {
       return (FILE *)0x0;
     }

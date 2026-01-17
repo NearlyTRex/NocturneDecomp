@@ -8,7 +8,7 @@
 ;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e4bd
 ;
 ; Referenced Globals:
-;   SetStdHandle* PTR_SetStdHandle_00611638 = 002121e6
+;   SetStdHandle* g_SetStdHandleFunc = 002121e6
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f18 = 00602434
 ;   EXIT_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f1c = 00602434
 ;   SIOControlBlock* g_IOControlBlock = 00000000
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_00608a5c
     PUSH EDX                            ; 00608a60
     PUSH -0xc                           ; 00608a61
-    CALL dword ptr CS:[0x611638]        ; 00608a63 | PTR_SetStdHandle_00611638
+    CALL dword ptr CS:[0x611638]        ; 00608a63 | g_SetStdHandleFunc
         ;   Label: LAB_00608a63
     MOV EBP,dword ptr [0x00685270]      ; 00608a6a | g_CurrentHandleCount
         ;   Label: LAB_00608a6a

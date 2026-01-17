@@ -853,7 +853,7 @@ LAB_004b9af4:
                 piVar9 = (int *)crt_errno_c_errno_FUN_00601450();
                 if (*piVar9 != 6) break;
                 iVar3 = iVar3 + 1;
-                (*Sleep)(500);
+                (*g_SleepFunc)(500);
               } while (iVar3 < 10);
               pcVar13 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_94,local_20);
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

@@ -18,7 +18,7 @@ crt_io_c_findNextWithAttributes_FUN_00609d5c
       lpFindFileData->dwFileAttributes = 0x80;
     }
     if ((lpFindFileData->dwFileAttributes & dwAttributeMask) != 0) break;
-    BVar1 = (*PTR_FindNextFileA_00611550)(hFindFile,lpFindFileData);
+    BVar1 = (*g_FindNextFileAFunc)(hFindFile,lpFindFileData);
     if (BVar1 == 0) {
       return 0;
     }

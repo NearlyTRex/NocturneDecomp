@@ -10,9 +10,9 @@
 ;   crt_startup.c_staticInit_FUN_0060aef4 at 0060aef6
 ;
 ; Referenced Globals:
-;   GetACP* PTR_GetACP_00611560 = 00211de2
-;   GetCPInfo* PTR_GetCPInfo_00611564 = 00211dec
-;   GetOEMCP* PTR_GetOEMCP_006115b8 = 00211f82
+;   GetACP* g_GetACPFunc = 00211de2
+;   GetCPInfo* g_GetCPInfoFunc = 00211dec
+;   GetOEMCP* g_GetOEMCPFunc = 00211f82
 ;   uint g_CodePage = 0x1
 ;   int g_MultibyteLocaleActive
 ;   undefined4 DAT_03f9c030
@@ -38,7 +38,7 @@ section .text
     CMP ESI,-0x1                        ; 0060d23a
     JNZ 0x0060d24d                      ; 0060d23d
         ;   XREF to: 0060d24d (CONDITIONAL_JUMP)  ; LAB_0060d24d
-    CALL dword ptr CS:[0x611560]        ; 0060d23f | PTR_GetACP_00611560
+    CALL dword ptr CS:[0x611560]        ; 0060d23f | g_GetACPFunc
     MOV ESI,EAX                         ; 0060d246
     JMP 0x0060d2eb                      ; 0060d248
         ;   XREF to: 0060d2eb (UNCONDITIONAL_JUMP)  ; LAB_0060d2eb
@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_0060d24d
     JNZ 0x0060d260                      ; 0060d250
         ;   XREF to: 0060d260 (CONDITIONAL_JUMP)  ; LAB_0060d260
-    CALL dword ptr CS:[0x6115b8]        ; 0060d252 | PTR_GetOEMCP_006115b8
+    CALL dword ptr CS:[0x6115b8]        ; 0060d252 | g_GetOEMCPFunc
     MOV ESI,EAX                         ; 0060d259
     JMP 0x0060d2eb                      ; 0060d25b
         ;   XREF to: 0060d2eb (UNCONDITIONAL_JUMP)  ; LAB_0060d2eb
@@ -107,7 +107,7 @@ section .text
         ;   Label: LAB_0060d2f4
     PUSH EAX                            ; 0060d2f6
     PUSH ESI                            ; 0060d2f7
-    CALL dword ptr CS:[0x611564]        ; 0060d2f8 | PTR_GetCPInfo_00611564
+    CALL dword ptr CS:[0x611564]        ; 0060d2f8 | g_GetCPInfoFunc
     TEST EAX,EAX                        ; 0060d2ff
     JNZ 0x0060d30f                      ; 0060d301
         ;   XREF to: 0060d30f (CONDITIONAL_JUMP)  ; LAB_0060d30f
@@ -163,7 +163,7 @@ section .text
     CMP ESI,0x1                         ; 0060d36f
     JNZ 0x0060d389                      ; 0060d372
         ;   XREF to: 0060d389 (CONDITIONAL_JUMP)  ; LAB_0060d389
-    CALL dword ptr CS:[0x6115b8]        ; 0060d374 | PTR_GetOEMCP_006115b8
+    CALL dword ptr CS:[0x6115b8]        ; 0060d374 | g_GetOEMCPFunc
     MOV [0x00685570],EAX                ; 0060d37b | g_CodePage
     XOR EAX,EAX                         ; 0060d380
     ADD ESP,0x14                        ; 0060d382

@@ -1,19 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 378,
+    "complexity_score": 501,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 18,
-    "pseudocode_lines": 158,
-    "suspect_count": 20,
+    "pseudocode_lines": 131,
+    "suspect_count": 33,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "pointer_cast",
+      "stack_align_anchor",
       "stack_param",
+      "stack_ref",
       "suspect_float",
       "warning_overlapping_globals"
     ],
-    "total_lines": 480
+    "total_lines": 453
   },
   "cross_references": [],
   "function": {
@@ -213,47 +217,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "004cc30c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc31b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc33e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc356": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc35f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc3b2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc4aa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc53b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc581": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc5c1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc6a5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc6b5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "004cc6eb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.92,
     "instruction_count": 275,
@@ -294,7 +257,180 @@
     },
     "pcode_op_count": 1353
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004cc30c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x1f].create_prob = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_58);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_58);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x1f].create_prob = 1.4013e-45;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 41,
+      "match": "1.4013e-45",
+      "text": "in_stack_00000004[0x1f].create_prob = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000004",
+      "text": "pcStack_18 = in_stack_00000004[1].actor_name + 0x10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 112,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(SRenderVertex *)((int)",
+      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(short *)((int)",
+      "text": "psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(short *)((int)",
+      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(short *)((int)",
+      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 125,
+      "match": "&stack0xffffff64",
+      "text": "(pCVar2,(SMRGLHeaderPrimitive *)&stack0xffffff64,999);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 130,
+      "match": "in_stack_00000004",
+      "text": "} while (iStack_20 < *(int *)(in_stack_00000004[1].actor_name + 0xc));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 133,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "004cc353",
@@ -458,181 +594,6 @@
       "target_address": "0x4cc230",
       "text": "Direct CALL at 004cc6e6, ADD ESP at 004cc6eb with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 92,
-    "local_size": 92,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 1,
-        "type": "undefined1"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004cc30c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x1f].create_prob = 0.0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_54);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_54);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x1f].create_prob = 1.4013e-45;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 52,
-      "match": "1.4013e-45",
-      "text": "in_stack_00000004[0x1f].create_prob = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_00000004",
-      "text": "pcStack_1c = in_stack_00000004[1].actor_name + 0x10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 139,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(SRenderVertex *)((int)",
-      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(short *)((int)",
-      "text": "psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(short *)((int)",
-      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(short *)((int)",
-      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 155,
-      "match": "(char *)((int)",
-      "text": "pcStack_1c = (char *)((int)pcStack_1c + 0x34);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 157,
-      "match": "in_stack_00000004",
-      "text": "} while (iStack_20 < *(int *)(in_stack_00000004[1].actor_name + 0xc));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 160,
-      "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

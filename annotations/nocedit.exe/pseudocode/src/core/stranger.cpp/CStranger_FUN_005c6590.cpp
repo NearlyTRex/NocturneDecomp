@@ -31,7 +31,7 @@ void core_stranger_cpp_CStranger_FUN_005c6590(void)
         (*this_ptr->vtable[1].renderTransparent)(this_ptr);
         *(uint *)(in_stack_00000004 + 0x1fc2c) = 0;
         *(uint *)(in_stack_00000004 + 0x2a8c) = 0;
-        uVar1 = DAT_00663744;
+        uVar1 = 0x41200000;
         *(uint *)(in_stack_00000004 + 0x2a90) = 0;
         *(uint *)(in_stack_00000004 + 0x1fbe4) = uVar1;
         if (*(int *)(in_stack_00000004 + 0x1fc38) == 3) {

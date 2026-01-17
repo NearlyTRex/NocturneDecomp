@@ -32,7 +32,8 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
   byte *pbVar18;
   C3DSCamera *pCVar19;
   byte bVar20;
-  FILE *in_stack_ffffb878;
+  FILE *pFVar21;
+  uint in_stack_ffffb878;
   uint in_stack_ffffb87c;
   uint in_stack_ffffb880;
   uint in_stack_ffffb884;
@@ -199,7 +200,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
         core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_f08,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
+                (&local_f08,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
                  in_stack_ffffb884,in_stack_ffffb888);
       break;
     case 0x33:
@@ -220,7 +221,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
         core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_1658,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
+                (&local_1658,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
                  in_stack_ffffb884,in_stack_ffffb888);
       break;
     case 0x34:
@@ -442,7 +443,7 @@ LAB_0057eb3b:
           }
         }
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_12b0,0,(uint)in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
+                  (&local_12b0,0,in_stack_ffffb878,in_stack_ffffb87c,in_stack_ffffb880,
                    in_stack_ffffb884,in_stack_ffffb888);
       }
       break;
@@ -595,9 +596,10 @@ LAB_0057f7c1:
             pFVar5 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_5bc,"wb");
             do {
+              pFVar6 = pFVar5;
               iVar16 = crt_stdio_c_fgetc_FUN_005fe840(local_48);
               iVar14 = iVar14 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar16,in_stack_ffffb878);
+              crt_stdio_c_fputc_FUN_006007a0(iVar16,pFVar6);
             } while (iVar14 < 0x4b000);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\core\\setedit.cpp",0xecd);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xece);
@@ -610,9 +612,10 @@ LAB_0057f7c1:
                                ("backdrop",local_5bc,"wb");
             pFVar5 = local_48;
             do {
+              pFVar21 = pFVar6;
               iVar14 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
               iVar10 = iVar10 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar14,in_stack_ffffb878);
+              crt_stdio_c_fputc_FUN_006007a0(iVar14,pFVar21);
             } while (iVar10 < 0x300);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xed6);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\setedit.cpp",0xed7);
@@ -652,9 +655,10 @@ LAB_0057fa1d:
             pFVar6 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_1bc,"wb");
             do {
+              pFVar21 = pFVar6;
               iVar14 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
               iVar10 = iVar10 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar14,in_stack_ffffb878);
+              crt_stdio_c_fputc_FUN_006007a0(iVar14,pFVar21);
             } while (iVar10 < 0x4b000);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xef5);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\setedit.cpp",0xef6);
@@ -666,9 +670,10 @@ LAB_0057fa1d:
             pFVar6 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_1bc,"wb");
             do {
+              pFVar21 = pFVar6;
               iVar14 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
               iVar10 = iVar10 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar14,in_stack_ffffb878);
+              crt_stdio_c_fputc_FUN_006007a0(iVar14,pFVar21);
             } while (iVar10 < 0x300);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xefe);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\setedit.cpp",0xeff);

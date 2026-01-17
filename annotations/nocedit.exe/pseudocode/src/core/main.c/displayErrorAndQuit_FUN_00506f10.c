@@ -29,7 +29,7 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
   }
   local_14 = &stack0x00000008;
   g_RecursiveCallFlag = 1;
-  crt_stdio_c_vsprintf_FUN_005fdba8(g_ErrorMessageBuffer,format,&local_14);
+  crt_stdio_c_vsprintf_FUN_005fdba8(g_ErrorMessageBuffer_02dd3130,format,&local_14);
   local_14 = (va_list_t)0x0;
   pcVar5 = g_CurrentFilename;
   do {
@@ -50,7 +50,7 @@ LAB_00506f71:
         if (pFVar1 != (FILE *)0x0) {
           crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"----------------------------------------------------------------\n");
           crt_time_c_time_with_rounding_FUN_006001f0(&local_10);
-          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"Msg: %s\n",g_ErrorMessageBuffer);
+          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"Msg: %s\n",g_ErrorMessageBuffer_02dd3130);
           crt_stdio_c_fprintf_FUN_005fe6d0
                     (pFVar1,"File: %s line %d\n",g_CurrentFilename,g_CurrentLineNumber);
           timeptr = crt_time_c_localtime_FUN_00600288(&local_10);
@@ -66,7 +66,7 @@ LAB_00506f71:
         engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90();
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
                     /* WARNING: Subroutine does not return */
-        wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer);
+        wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer_02dd3130);
       }
       do {
         pcVar5 = g_CurrentFilename;

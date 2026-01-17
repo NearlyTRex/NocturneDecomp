@@ -11,6 +11,6 @@ int __cdecl crt_io_c_findCloseWrapper_FUN_00602380(HANDLE find_handle)
 {
   BOOL BVar1;
   
-  BVar1 = (*PTR_FindClose_00611548)(find_handle);
+  BVar1 = (*g_FindCloseFunc)(find_handle);
   return (BVar1 == 1) - 1;
 }

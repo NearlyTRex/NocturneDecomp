@@ -11,8 +11,8 @@
 ;   engine_winfont.cpp_CWinFont_dtor_FUN_005f2390 at 005f23a3
 ;
 ; Referenced Globals:
-;   DeleteDC* DeleteDC = 00211784
-;   SelectObject* SelectObject = 002117d6
+;   DeleteDC* g_DeleteDCFunc = 00211784
+;   SelectObject* g_SelectObjectFunc = 002117d6
 ;
 ; Called Functions:
 ;   DeleteDC
@@ -41,11 +41,11 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10]      ; 005f2a5b
     PUSH ECX                            ; 005f2a5e
     PUSH EDX                            ; 005f2a5f
-    CALL dword ptr CS:[0x6113ec]        ; 005f2a60 | SelectObject
+    CALL dword ptr CS:[0x6113ec]        ; 005f2a60 | g_SelectObjectFunc
     MOV EDI,dword ptr [EBX + 0x4]       ; 005f2a67
     PUSH EDI                            ; 005f2a6a
     MOV dword ptr [EBX + 0x10],0x0      ; 005f2a6b
-    CALL dword ptr CS:[0x6113d8]        ; 005f2a72 | DeleteDC
+    CALL dword ptr CS:[0x6113d8]        ; 005f2a72 | g_DeleteDCFunc
     MOV dword ptr [EBX + 0x4],0x0       ; 005f2a79
     MOV dword ptr [EBX + 0x8],0x0       ; 005f2a80
     MOV dword ptr [EBX + 0x14],0x0      ; 005f2a87

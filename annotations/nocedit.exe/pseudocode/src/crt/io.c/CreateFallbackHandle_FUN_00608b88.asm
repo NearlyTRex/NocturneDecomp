@@ -9,7 +9,7 @@
 ;   crt_stdio.c_CreateFileImpl_FUN_006090a0 at 0060913b
 ;
 ; Referenced Globals:
-;   CreateEventA* PTR_CreateEventA_0061150c = 00211c5a
+;   CreateEventA* g_CreateEventAFunc = 00211c5a
 ;   undefined4 g_FakeHandleCounter
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
     PUSH 0x0                            ; 00608b8a
     PUSH 0x0                            ; 00608b8c
     PUSH 0x0                            ; 00608b8e
-    CALL dword ptr CS:[0x61150c]        ; 00608b90 | PTR_CreateEventA_0061150c
+    CALL dword ptr CS:[0x61150c]        ; 00608b90 | g_CreateEventAFunc
     MOV EDX,EAX                         ; 00608b97
     TEST EAX,EAX                        ; 00608b99
     JNZ 0x00608baa                      ; 00608b9b

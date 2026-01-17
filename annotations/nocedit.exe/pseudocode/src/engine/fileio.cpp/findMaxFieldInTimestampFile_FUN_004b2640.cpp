@@ -30,7 +30,7 @@ int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *fil
     piVar1 = (int *)crt_errno_c_errno_FUN_00601450();
     if (*piVar1 != 6) break;
     iVar4 = iVar4 + 1;
-    (*Sleep)(500);
+    (*g_SleepFunc)(500);
   } while (iVar4 < 10);
   local_18 = (FILE *)0x0;
 LAB_004b2681:

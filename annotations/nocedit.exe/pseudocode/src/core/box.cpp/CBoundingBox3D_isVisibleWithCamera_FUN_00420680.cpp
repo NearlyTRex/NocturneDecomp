@@ -28,9 +28,9 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
   iVar6 = 0;
   do {
     core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(this_ptr,&local_34,corner_index);
-    local_28.x = (int)ROUND(local_34.x * 256f);
-    local_28.y = (int)ROUND(local_34.y * 256f);
-    local_28.z = (int)ROUND(local_34.z * 256f);
+    local_28.x = (int)ROUND(local_34.x * 256.0f);
+    local_28.y = (int)ROUND(local_34.y * 256.0f);
+    local_28.z = (int)ROUND(local_34.z * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +

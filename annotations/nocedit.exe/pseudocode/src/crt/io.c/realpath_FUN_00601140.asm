@@ -14,7 +14,7 @@
 ;   engine_dosio.c_getFullPath_FUN_004820c0 at 004820d1
 ;
 ; Referenced Globals:
-;   GetFullPathNameA* PTR_GetFullPathNameA_006115a0 = 00211f0e
+;   GetFullPathNameA* g_GetFullPathNameAFunc = 00211f0e
 ;   TerminatedCString s_con_00658c2c
 ;   undefined4 DAT_006e6f63
 ;
@@ -118,7 +118,7 @@ section .text
     PUSH EBX                            ; 006011d9
     PUSH EDI                            ; 006011da
     PUSH ESI                            ; 006011db
-    CALL dword ptr CS:[0x6115a0]        ; 006011dc | PTR_GetFullPathNameA_006115a0
+    CALL dword ptr CS:[0x6115a0]        ; 006011dc | g_GetFullPathNameAFunc
     TEST EAX,EAX                        ; 006011e3
     JNZ 0x006011f6                      ; 006011e5
         ;   XREF to: 006011f6 (CONDITIONAL_JUMP)  ; LAB_006011f6

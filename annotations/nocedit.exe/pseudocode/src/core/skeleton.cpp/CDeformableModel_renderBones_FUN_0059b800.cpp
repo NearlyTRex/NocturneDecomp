@@ -27,9 +27,9 @@ core_skeleton_cpp_CDeformableModel_renderBones_FUN_0059b800
     do {
       core_xform_cpp_getTranslation_FUN_005f6110
                 ((CVector3f *)bone_matrices,(CMatrix3x4f *)&local_20);
-      local_2c.x = (int)ROUND(local_20 * 256f);
-      local_2c.y = (int)ROUND(local_1c * 256f);
-      local_2c.z = (int)ROUND(local_18 * 256f);
+      local_2c.x = (int)ROUND(local_20 * 256.0f);
+      local_2c.y = (int)ROUND(local_1c * 256.0f);
+      local_2c.z = (int)ROUND(local_18 * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_2c);
       pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;

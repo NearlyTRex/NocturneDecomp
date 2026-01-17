@@ -19,7 +19,7 @@
 ;   sound_sndmain.cpp_unlockSound_FUN_005abdc0 at 005abddf
 ;
 ; Referenced Globals:
-;   ReleaseMutex* ReleaseMutex = 002120fe
+;   ReleaseMutex* g_ReleaseMutexFunc = 002120fe
 ;
 ; Called Functions:
 ;   ReleaseMutex
@@ -36,6 +36,6 @@ section .text
     RET                                 ; 005f4058
     PUSH EAX                            ; 005f4059
         ;   Label: LAB_005f4059
-    CALL dword ptr CS:[0x611608]        ; 005f405a | ReleaseMutex
+    CALL dword ptr CS:[0x611608]        ; 005f405a | g_ReleaseMutexFunc
     RET                                 ; 005f4061
 

@@ -12,12 +12,13 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
   char cVar1;
   int iVar2;
   uint sfx_handle;
+  float unaff_EBP;
   char *pcVar3;
   char *pcVar4;
   double dVar5;
   uint in_stack_fffffe90;
+  uint in_stack_fffffe98;
   int local_60;
-  float local_18;
   
   sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);
   pcVar4 = &stack0xfffffe90;
@@ -57,17 +58,16 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
     }
     else {
       dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);
-      local_18 = (float)dVar5;
-      if (0.0 <= local_18) {
+      if (0.0 <= (float)dVar5) {
         while (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar2 != 0) {
           iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
           if (iVar2 != 0) {
             return "Canceled";
           }
-          dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);
-          if ((float)dVar5 < local_18) break;
+          dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe98);
+          if ((float)dVar5 < unaff_EBP) break;
           wincore_winrun_cpp_sleep_FUN_005f40e0(0.05);
-          local_18 = (float)dVar5;
+          unaff_EBP = (float)dVar5;
         }
       }
       pcVar3 = (char *)0x0;

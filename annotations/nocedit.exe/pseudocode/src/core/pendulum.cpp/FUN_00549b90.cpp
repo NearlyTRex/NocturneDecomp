@@ -31,8 +31,8 @@ void core_pendulum_cpp_FUN_00549b90(void)
   float local_50;
   float local_4c;
   float local_48;
-  float local_40;
-  CVector3f local_30;
+  float local_44;
+  CVector3f local_38;
   ulonglong local_24;
   uint local_1c;
   float local_14;
@@ -41,16 +41,14 @@ void core_pendulum_cpp_FUN_00549b90(void)
   dVar8 = crt_math_c_floor_FUN_005feb90(local_24);
   local_24._4_4_ = SUB84 /* extract 2-byte value */(dVar8,0);
   local_1c = (uint)((ulonglong)dVar8 >> 0x20);
-  local_50 = (float)((float10)(double)CONCAT44 /* combine 2-byte values */(local_24._4_4_,(uint)local_24) - (float10)dVar8
-                    );
   *(float *)(extraout_EBX + 0x3a0) =
        in_stack_00000008 / *(float *)(extraout_EBX + 0x3a4) + *(float *)(extraout_EBX + 0x3a0);
   if ((*(int *)(extraout_EBX + 0x43c) != 0) && (1.0 < *(float *)(extraout_EBX + 0x3a0))) {
     *(float *)(extraout_EBX + 0x3a0) = *(float *)(extraout_EBX + 0x3a0) + 0.5f;
   }
   dVar8 = crt_math_c_floor_FUN_005feb90((double)*(float *)(extraout_EBX + 0x3a0));
-  local_24._4_4_ = SUB84 /* extract 2-byte value */(dVar8,0);
-  local_1c = (uint)((ulonglong)dVar8 >> 0x20);
+  local_24._0_4_ = SUB84 /* extract 2-byte value */(dVar8,0);
+  local_24._4_4_ = (uint)((ulonglong)dVar8 >> 0x20);
   fVar4 = (float10)this_ptr[2].field13_0xec.y - (float10)dVar8;
   this_ptr[2].field13_0xec.y = (float)fVar4;
   fVar5 = (float10)fsin(fVar4 * (float10)2 * (float10)3.1415926535000001);
@@ -66,7 +64,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
   (this_ptr->orient).heading = (float)(fVar4 * fVar5 * (float10)fVar1);
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr);
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     (this_ptr,&local_30,(CVector3f *)(this_ptr[3].actor_name + 8));
+                     (this_ptr,&local_38,(CVector3f *)(this_ptr[3].actor_name + 8));
   if ((CVector3f *)(this_ptr[3].actor_name + 0x14) != pCVar3) {
     ((CVector3f *)(this_ptr[3].actor_name + 0x14))->x = pCVar3->x;
     *(float *)(this_ptr[3].actor_name + 0x18) = pCVar3->y;
@@ -79,39 +77,39 @@ void core_pendulum_cpp_FUN_00549b90(void)
   fVar5 = (float10)f2xm1(fVar7 - (fVar7 / fVar4) * fVar4);
   fVar4 = (float10)fscale(fVar5 + fVar4,fVar7);
   if ((0.0 < in_stack_00000008) && ((float)0.10000000000000001 < (float)fVar4)) {
-    local_40 = this_ptr[2].field13_0xec.y;
-    local_48 = local_50;
-    if (local_50 < (float)-0.5) {
-      local_48 = local_50 + 1.0;
+    local_50 = local_4c;
+    local_48 = this_ptr[2].field13_0xec.y;
+    if (local_4c < (float)-0.5) {
+      local_50 = local_4c + 1.0;
     }
-    if ((float)0.5 + 0.0 < local_48) {
-      local_48 = local_48 + -1f;
+    if ((float)0.5 + 0.0 < local_50) {
+      local_50 = local_50 + -1.0f;
     }
-    if (local_48 <= 0.0) {
-      if (local_40 < local_48) {
-        local_40 = local_40 + 1.0;
+    if (local_50 <= 0.0) {
+      if (local_48 < local_50) {
+        local_48 = local_48 + 1.0;
       }
-      if (local_40 < local_48) {
-        local_40 = local_40 + 1.0;
+      if (local_48 < local_50) {
+        local_48 = local_48 + 1.0;
       }
-      if (local_48 + 1.0 < local_40) {
-        local_40 = local_40 + -1f;
+      if (local_50 + 1.0 < local_48) {
+        local_48 = local_48 + -1.0f;
       }
-      if (local_48 + 1.0 < local_40) {
-        local_40 = local_40 + -1f;
+      if (local_50 + 1.0 < local_48) {
+        local_48 = local_48 + -1.0f;
       }
-      if (0.0 < local_40) {
+      if (0.0 < local_48) {
         (*this_ptr->vtable->playSound)(this_ptr,(char *)&this_ptr[2].field22_0x120);
       }
     }
     local_14 = (float)this_ptr[2].field21_0x11c + (float)0.25;
+    local_54 = local_44;
     local_64 = this_ptr[2].field13_0xec.y;
-    local_54 = local_50;
-    if (local_50 < local_14 + (float)-0.5) {
-      local_54 = local_50 + 1.0;
+    if (local_44 < local_14 + (float)-0.5) {
+      local_54 = local_44 + 1.0;
     }
     if (local_14 + (float)0.5 < local_54) {
-      local_54 = local_54 + -1f;
+      local_54 = local_54 + -1.0f;
     }
     if (local_54 <= local_14) {
       if (local_64 < local_54) {
@@ -121,10 +119,10 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_64 = local_64 + 1.0;
       }
       if (local_54 + 1.0 < local_64) {
-        local_64 = local_64 + -1f;
+        local_64 = local_64 + -1.0f;
       }
       if (local_54 + 1.0 < local_64) {
-        local_64 = local_64 + -1f;
+        local_64 = local_64 + -1.0f;
       }
       if (local_14 < local_64) {
         core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
@@ -132,13 +130,13 @@ void core_pendulum_cpp_FUN_00549b90(void)
                    (CVector3f *)(this_ptr[3].actor_name + 0x14));
       }
     }
+    local_4c = local_44;
     local_60 = this_ptr[2].field13_0xec.y;
-    local_4c = local_50;
-    if (local_50 < 0.0) {
-      local_4c = local_50 + 1.0;
+    if (local_44 < 0.0) {
+      local_4c = local_44 + 1.0;
     }
     if ((float)0.5 + 0.5 < local_4c) {
-      local_4c = local_4c + -1f;
+      local_4c = local_4c + -1.0f;
     }
     if (local_4c <= 0.5) {
       if (local_60 < local_4c) {
@@ -148,25 +146,26 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_60 = local_60 + 1.0;
       }
       if (local_4c + 1.0 < local_60) {
-        local_60 = local_60 + -1f;
+        local_60 = local_60 + -1.0f;
       }
       if (local_4c + 1.0 < local_60) {
-        local_60 = local_60 + -1f;
+        local_60 = local_60 + -1.0f;
       }
       if (0.5 < local_60) {
         (*this_ptr->vtable->playSound)
                   (this_ptr,(char *)&this_ptr[2].previous_transform_state.dirty_flags);
       }
     }
-    local_14 = (float)this_ptr[2].field21_0x11c + (float)0.75;
+    local_38.x = (float)this_ptr[2].field21_0x11c + (float)0.75;
+    local_50 = local_44;
     local_68 = this_ptr[2].field13_0xec.y;
-    if (local_50 < local_14 + (float)-0.5) {
-      local_50 = local_50 + 1.0;
+    if (local_44 < local_38.x + (float)-0.5) {
+      local_50 = local_44 + 1.0;
     }
-    if (local_14 + (float)0.5 < local_50) {
-      local_50 = local_50 + -1f;
+    if (local_38.x + (float)0.5 < local_50) {
+      local_50 = local_50 + -1.0f;
     }
-    if (local_50 <= local_14) {
+    if (local_50 <= local_38.x) {
       if (local_68 < local_50) {
         local_68 = local_68 + 1.0;
       }
@@ -174,12 +173,13 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_68 = local_68 + 1.0;
       }
       if (local_50 + 1.0 < local_68) {
-        local_68 = local_68 + -1f;
+        local_68 = local_68 + -1.0f;
       }
       if (local_50 + 1.0 < local_68) {
-        local_68 = local_68 + -1f;
+        local_68 = local_68 + -1.0f;
       }
-      if (local_14 < local_68) {
+      if (local_38.x < local_68) {
+        local_14 = local_38.x;
         core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
                   (g_CSoundPtr,this_ptr,(char *)&this_ptr[2].is_transparent,
                    (CVector3f *)(this_ptr[3].actor_name + 0x14));

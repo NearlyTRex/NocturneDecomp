@@ -31,7 +31,7 @@
 ;
 ; Referenced Globals:
 ;   double g_TextureScaleFactor = 65536
-;   double g_FixedPointToFloat = 0.0000152587890625
+;   double g_FixedPointToFloat_0062022b = 0.0000152587890625
 ;   double g_MaxTextureCoordinate = 255.999000000000
 ;
 ; Called Functions:
@@ -261,7 +261,7 @@ section .text
     JLE 0x0047a725                      ; 0047a65c
         ;   XREF to: 0047a725 (CONDITIONAL_JUMP)  ; LAB_0047a725
     MOV ESI,EBX                         ; 0047a662
-    FLD double ptr [0x0062022b]         ; 0047a664 | g_FixedPointToFloat
+    FLD double ptr [0x0062022b]         ; 0047a664 | g_FixedPointToFloat_0062022b
         ;   Label: LAB_0047a664
     FILD dword ptr [ESI + 0x1c]         ; 0047a66a
     FMUL ST1                            ; 0047a66d

@@ -50,7 +50,7 @@ void __cdecl crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4(void)
   PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f18 = crt_unknown_c_FUN_0060a1dc;
   crt_tls_c_register_thread_data_FUN_0060cbd0
             (*(void **)((int)g_CurrentThreadTlsBlock + 0xda),g_CurrentThreadTlsBlock);
-  (*PTR_TlsSetValue_00611658)(g_TLSIndex,g_CurrentThreadTlsBlock);
+  (*g_TlsSetValueFunc)(g_TLSIndex,g_CurrentThreadTlsBlock);
   PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4 = crt_tls_c_get_thread_local_data_FUN_0060a1fc;
   return;
 }

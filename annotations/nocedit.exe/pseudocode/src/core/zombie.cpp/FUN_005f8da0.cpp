@@ -13,20 +13,25 @@ CVector3f * core_zombie_cpp_FUN_005f8da0(void)
 {
   CVector3f *in_stack_00000004;
   CDemonActor *in_stack_00000008;
-  CBoundingBox3D CStack_3c;
-  CVector3f CStack_24;
-  CVector3f CStack_18;
+  float fStack_38;
+  float fStack_34;
+  float fStack_30;
+  float fStack_2c;
+  float fStack_28;
+  CVector3f CStack_20;
+  float fStack_14;
+  float fStack_10;
   
-  (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&CStack_3c);
-  core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_18);
-  CStack_18.x = CStack_3c.min.x + CStack_3c.max.x;
-  CStack_18.y = CStack_3c.min.y + CStack_3c.max.y;
-  CStack_18.z = CStack_3c.min.z + CStack_3c.max.z;
-  core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_24);
-  CStack_24.x = CStack_18.x * _DAT_0065844d;
-  CStack_24.y = CStack_18.y * _DAT_0065844d;
-  CStack_24.z = CStack_3c.min.z + (float)_DAT_00658455;
+  (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0)
+  ;
+  core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&fStack_14);
+  fStack_14 = fStack_38 + fStack_2c;
+  fStack_10 = fStack_34 + fStack_28;
+  core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_20);
+  CStack_20.x = fStack_14 * _DAT_0065844d;
+  CStack_20.y = fStack_10 * _DAT_0065844d;
+  CStack_20.z = fStack_30 + (float)_DAT_00658455;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000008,in_stack_00000004,&CStack_24);
+            (in_stack_00000008,in_stack_00000004,&CStack_20);
   return in_stack_00000004;
 }

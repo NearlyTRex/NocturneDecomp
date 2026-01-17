@@ -20,7 +20,7 @@
 ;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 at 004a3ab4
 ;
 ; Referenced Globals:
-;   FindFirstFileA* PTR_FindFirstFileA_0061154c = 00211d84
+;   FindFirstFileA* g_FindFirstFileAFunc = 00211d84
 ;
 ; Called Functions:
 ;   engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70
@@ -44,7 +44,7 @@ section .text
     PUSH EAX                            ; 00481c89
     MOV EDX,dword ptr [ESP + 0x150]     ; 00481c8a
     PUSH EDX                            ; 00481c91
-    CALL dword ptr CS:[0x61154c]        ; 00481c92 | PTR_FindFirstFileA_0061154c
+    CALL dword ptr CS:[0x61154c]        ; 00481c92 | g_FindFirstFileAFunc
     CMP EAX,-0x1                        ; 00481c99
     JNZ 0x00481cb5                      ; 00481c9c
         ;   XREF to: 00481cb5 (CONDITIONAL_JUMP)  ; LAB_00481cb5

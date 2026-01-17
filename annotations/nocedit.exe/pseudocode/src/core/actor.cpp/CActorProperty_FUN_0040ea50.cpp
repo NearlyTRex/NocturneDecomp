@@ -263,7 +263,7 @@ void core_actor_cpp_CActorProperty_FUN_0040ea50(void)
     iVar10 = 0;
     pcVar9 = in_stack_0000000c;
     do {
-      if ((*(uint *)in_stack_00000004[0x1a] & *(uint *)((int)&DAT_0066e30c + iVar10)) != 0) {
+      if ((*(uint *)in_stack_00000004[0x1a] & *(uint *)((int)&0x00000001 + iVar10)) != 0) {
         if (in_stack_0000000c < pcVar9) {
           iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar9,", ");
           pcVar9 = pcVar9 + iVar5;

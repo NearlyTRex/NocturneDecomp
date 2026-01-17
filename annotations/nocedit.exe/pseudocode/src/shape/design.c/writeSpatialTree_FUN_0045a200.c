@@ -27,13 +27,13 @@ shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,FILE *output_file,i
     }
     else {
       uVar8 = 0x45a26c;
-      dVar1 = crt_math_c_round_FUN_005fe6b0((double)(node->data1 * 65535f));
+      dVar1 = crt_math_c_round_FUN_005fe6b0((double)(node->data1 * 65535.0f));
       uVar7 = 0x45a280;
-      dVar2 = crt_math_c_round_FUN_005fe6b0((double)(node->data2 * 65535f));
+      dVar2 = crt_math_c_round_FUN_005fe6b0((double)(node->data2 * 65535.0f));
       uVar6 = 0x45a294;
-      dVar3 = crt_math_c_round_FUN_005fe6b0((double)(node->data3 * 65535f));
+      dVar3 = crt_math_c_round_FUN_005fe6b0((double)(node->data3 * 65535.0f));
       uVar5 = 0x45a2a8;
-      dVar4 = crt_math_c_round_FUN_005fe6b0((double)(node->data4 * 65535f));
+      dVar4 = crt_math_c_round_FUN_005fe6b0((double)(node->data4 * 65535.0f));
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (output_file,"\tORDER\t%d,%d,%d,%d,MODEL%d,MODEL%d\n\n",(int)ROUND(dVar1),(int)ROUND(dVar2)
                  ,(int)ROUND(dVar3),(int)ROUND(dVar4),node_index * 2 + 1,node_index * 2,uVar5,uVar6,

@@ -56,9 +56,9 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
       local_3c = (float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * local_c;
       local_38 = (float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * local_c;
       local_34 = (float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * local_c;
-      local_30.x = (int)ROUND(local_3c * 256f);
-      local_30.y = (int)ROUND(local_38 * 256f);
-      local_30.z = (int)ROUND(local_34 * 256f);
+      local_30.x = (int)ROUND(local_3c * 256.0f);
+      local_30.y = (int)ROUND(local_38 * 256.0f);
+      local_30.z = (int)ROUND(local_34 * 256.0f);
       iVar1 = iVar1 + 0xc;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)

@@ -13,11 +13,11 @@
 ; Referenced Globals:
 ;   double g_Atan2SinCosThreshold = 0.707000000000000
 ;   double g_Atan2SinCosThresholdNeg = -0.707000000000000
-;   double g_Atan2NegativeOne = -1
-;   double g_Atan2Pi = 3.14159265359000
-;   double g_Atan2NegativePi = -3.14159265359000
-;   float g_Atan2TwoPi = 6.283185
-;   float g_Atan2NegativeTwoPi = -6.283185
+;   double g_Atan2NegativeOne_0061edfb = -1
+;   double g_Atan2Pi_0061ee03 = 3.14159265359000
+;   double g_Atan2NegativePi_0061ee0b = -3.14159265359000
+;   float g_Atan2TwoPi_0061ee13 = 6.283185
+;   float g_Atan2NegativeTwoPi_0061ee17 = -6.283185
 ;
 ; Called Functions:
 ;   crt_math.c_acos_FUN_00600162
@@ -56,21 +56,21 @@ section .text
     JBE 0x004720d8                      ; 004720ca
         ;   XREF to: 004720d8 (CONDITIONAL_JUMP)  ; LAB_004720d8
     FLD float ptr [ESP]                 ; 004720cc
-    FSUBR double ptr [0x0061ee03]       ; 004720cf | g_Atan2Pi
+    FSUBR double ptr [0x0061ee03]       ; 004720cf | g_Atan2Pi_0061ee03
     FSTP float ptr [ESP]                ; 004720d5
     FLD float ptr [ESP]                 ; 004720d8
         ;   Label: LAB_004720d8
-    FCOMP double ptr [0x0061ee0b]       ; 004720db | g_Atan2NegativePi
+    FCOMP double ptr [0x0061ee0b]       ; 004720db | g_Atan2NegativePi_0061ee0b
     FNSTSW AX                           ; 004720e1
     SAHF                                ; 004720e3
     JNC 0x004720f2                      ; 004720e4
         ;   XREF to: 004720f2 (CONDITIONAL_JUMP)  ; LAB_004720f2
     FLD float ptr [ESP]                 ; 004720e6
-    FADD float ptr [0x0061ee13]         ; 004720e9 | g_Atan2TwoPi
+    FADD float ptr [0x0061ee13]         ; 004720e9 | g_Atan2TwoPi_0061ee13
     FSTP float ptr [ESP]                ; 004720ef
     FLD float ptr [ESP]                 ; 004720f2
         ;   Label: LAB_004720f2
-    FCOMP double ptr [0x0061ee03]       ; 004720f5 | g_Atan2Pi
+    FCOMP double ptr [0x0061ee03]       ; 004720f5 | g_Atan2Pi_0061ee03
     FNSTSW AX                           ; 004720fb
     SAHF                                ; 004720fd
     JA 0x0047214b                       ; 004720fe
@@ -81,7 +81,7 @@ section .text
     RET                                 ; 00472106
     FLD double ptr [EBP + 0x10]         ; 00472107
         ;   Label: LAB_00472107
-    FCOMP double ptr [0x0061edfb]       ; 0047210a | g_Atan2NegativeOne
+    FCOMP double ptr [0x0061edfb]       ; 0047210a | g_Atan2NegativeOne_0061edfb
     FNSTSW AX                           ; 00472110
     SAHF                                ; 00472112
     JA 0x0047212d                       ; 00472113
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 0047211c (UNCONDITIONAL_JUMP)  ; LAB_0047211c
     FLD float ptr [ESP]                 ; 0047214b
         ;   Label: LAB_0047214b
-    FADD float ptr [0x0061ee17]         ; 0047214e | g_Atan2NegativeTwoPi
+    FADD float ptr [0x0061ee17]         ; 0047214e | g_Atan2NegativeTwoPi_0061ee17
     FSTP float ptr [ESP]                ; 00472154
     MOV EAX,dword ptr [ESP]             ; 00472157
     MOV ESP,EBP                         ; 0047215a

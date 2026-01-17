@@ -17,9 +17,9 @@ void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer
   crt_memory_c_memset_FUN_005fde40(buffer,0,0x200);
   lpBuffer = buffer + 0x100;
   local_10 = 0x100;
-  (*GetComputerNameA)(lpBuffer,&local_10);
+  (*g_GetComputerNameAFunc)(lpBuffer,&local_10);
   local_10 = 0x100;
-  (*GetUserNameA)(buffer,&local_10);
+  (*g_GetUserNameAFunc)(buffer,&local_10);
   if ((buffer[0x100] == '\0') &&
      (pcVar2 = crt_env_c_getenv_FUN_006013f0("COMPUTERNAME"), pcVar2 != (char *)0x0)) {
     do {

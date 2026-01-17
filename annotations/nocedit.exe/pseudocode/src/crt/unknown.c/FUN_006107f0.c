@@ -18,7 +18,7 @@ BOOL crt_unknown_c_FUN_006107f0(void)
   LPWSTR in_stack_00000008;
   
   if (g_WindowsPlatformVersion < 0x8000) {
-    BVar1 = (*PTR_SetEnvironmentVariableW_00611620)(in_stack_00000004,in_stack_00000008);
+    BVar1 = (*g_SetEnvironmentVariableWFunc)(in_stack_00000004,in_stack_00000008);
     return BVar1;
   }
   uVar2 = crt_string_c_wcslen_FUN_0060cd30(in_stack_00000004);
@@ -49,7 +49,7 @@ BOOL crt_unknown_c_FUN_006107f0(void)
       crt_memory_c_free_FUN_00601cd0(dest_00);
       return 0;
     }
-    BVar1 = (*PTR_SetEnvironmentVariableA_0061161c)(dest,dest_00);
+    BVar1 = (*g_SetEnvironmentVariableAFunc)(dest,dest_00);
     crt_memory_c_free_FUN_00601cd0(dest);
     if (dest_00 != (char *)0x0) {
       crt_memory_c_free_FUN_00601cd0(dest_00);

@@ -10,7 +10,7 @@
 ;   crt_time.c_time_with_rounding_FUN_006001f0 at 006001fb
 ;
 ; Referenced Globals:
-;   GetLocalTime* PTR_GetLocalTime_006115a8 = 00211f32
+;   GetLocalTime* g_GetLocalTimeFunc = 00211f32
 ;
 ; Called Functions:
 ;   GetLocalTime
@@ -25,7 +25,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 00607154
     MOV EAX,ESP                         ; 00607158
     PUSH EAX                            ; 0060715a
-    CALL dword ptr CS:[0x6115a8]        ; 0060715b | PTR_GetLocalTime_006115a8
+    CALL dword ptr CS:[0x6115a8]        ; 0060715b | g_GetLocalTimeFunc
     XOR EAX,EAX                         ; 00607162
     MOV AX,word ptr [ESP]               ; 00607164
     SUB EAX,0x76c                       ; 00607168

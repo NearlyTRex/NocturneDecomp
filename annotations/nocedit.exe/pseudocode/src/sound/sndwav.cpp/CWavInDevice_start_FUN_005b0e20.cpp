@@ -37,7 +37,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_005b0e20(CWavInDevice *this_
   }
   g_WaveInCurrentBufferIndex = g_WaveInNumBuffers + -1;
   g_WaveInCurrentSampleOffset = g_WaveInBufferSizeSamples;
-  MVar2 = (*waveInStart)(g_WaveInHandle);
+  MVar2 = (*g_waveInStartFunc)(g_WaveInHandle);
   if (MVar2 == 0) {
     return 1;
   }

@@ -24,7 +24,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Warning_00623010
-;   char[1024] g_DialogMessageBuffer
+;   char[1024] g_DialogMessageBuffer_02cef130
 ;   HWND g_DialogParentWindow
 ;
 ; Called Functions:
@@ -44,13 +44,13 @@ section .text
     PUSH EAX                            ; 0049e6fd
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e6fe
     PUSH EDX                            ; 0049e702
-    PUSH 0x2cef130                      ; 0049e703 | g_DialogMessageBuffer
+    PUSH 0x2cef130                      ; 0049e703 | g_DialogMessageBuffer_02cef130
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e708
         ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 0049e70d
     MOV EBX,dword ptr [0x02cf2a90]      ; 0049e710 | g_DialogParentWindow
     PUSH EBX                            ; 0049e716
-    PUSH 0x2cef130                      ; 0049e717 | g_DialogMessageBuffer
+    PUSH 0x2cef130                      ; 0049e717 | g_DialogMessageBuffer_02cef130
     XOR ECX,ECX                         ; 0049e71c
     PUSH 0x623010                       ; 0049e71e | = "Warning"
     MOV dword ptr [ESP + 0xc],ECX       ; 0049e723

@@ -13,8 +13,8 @@
 ;   sound_sndmain.cpp_processAudio_FUN_005abe20 at 005abe43
 ;
 ; Referenced Globals:
-;   WaitForSingleObject* WaitForSingleObject = 002122c4
-;   double g_SecondsToMillisecondsMultiplier = 1000
+;   WaitForSingleObject* g_WaitForSingleObjectFunc = 002122c4
+;   double g_SecondsToMillisecondsWaitMultiplier = 1000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -35,14 +35,14 @@ section .text
     RET                                 ; 005f4020
     FLD double ptr [ESP + 0x10]         ; 005f4021
         ;   Label: LAB_005f4021
-    FMUL double ptr [0x0065817c]        ; 005f4025 | g_SecondsToMillisecondsMultiplier
+    FMUL double ptr [0x0065817c]        ; 005f4025 | g_SecondsToMillisecondsWaitMultiplier
     CALL crt_math.c_round_FUN_005fe6b0  ; 005f402b
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP qword ptr [ESP]               ; 005f4030
     MOV EAX,dword ptr [ESP]             ; 005f4033
     PUSH EAX                            ; 005f4036
     PUSH EDX                            ; 005f4037
-    CALL dword ptr CS:[0x61166c]        ; 005f4038 | WaitForSingleObject
+    CALL dword ptr CS:[0x61166c]        ; 005f4038 | g_WaitForSingleObjectFunc
     TEST EAX,EAX                        ; 005f403f
     SETZ AL                             ; 005f4041
     AND EAX,0xff                        ; 005f4044

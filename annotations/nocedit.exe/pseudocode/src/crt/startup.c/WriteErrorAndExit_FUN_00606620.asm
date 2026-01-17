@@ -14,7 +14,7 @@
 ;   crt_startup.c_HandleRuntimeError_FUN_00606660 at 00606684
 ;
 ; Referenced Globals:
-;   WriteFile* PTR_WriteFile_00611678 = 00212300
+;   WriteFile* g_WriteFileFunc = 00212300
 ;   SIOControlBlock* g_IOControlBlock = 00000000
 ;
 ; Called Functions:
@@ -50,7 +50,7 @@ section .text
     PUSH EDX                            ; 00606647
     MOV EBX,dword ptr [EAX + 0x8]       ; 00606648
     PUSH EBX                            ; 0060664b
-    CALL dword ptr CS:[0x611678]        ; 0060664c | PTR_WriteFile_00611678
+    CALL dword ptr CS:[0x611678]        ; 0060664c | g_WriteFileFunc
     MOV ECX,dword ptr [ESP + 0x10]      ; 00606653
     PUSH ECX                            ; 00606657
     JMP 0x00602700                      ; 00606658

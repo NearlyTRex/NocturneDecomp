@@ -1,17 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 477,
-    "complexity_score": 221,
+    "complexity_score": 581,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 23,
-    "pseudocode_lines": 181,
-    "suspect_count": 3,
+    "pseudocode_lines": 191,
+    "suspect_count": 36,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "extra_output",
+      "stack_align_anchor",
+      "stack_ref",
       "sub_artifact"
     ],
-    "total_lines": 658
+    "total_lines": 668
   },
   "cross_references": [],
   "function": {
@@ -261,101 +265,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "00448f2c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00448f47": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00448f59": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00448f62": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00448f9d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "0044907b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "0044908c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004490a1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004490db": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449101": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "0044919d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004491be": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004491ec": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449202": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "0044922a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449245": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449272": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "0044927c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "0044929e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004492ad": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004492c4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004492d9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449307": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449322": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449438": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449480": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "0044949f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004494bc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004494c7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "004494ea": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ],
-    "00449533": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.263922518159807,
     "instruction_count": 413,
@@ -398,7 +307,82 @@
     },
     "pcode_op_count": 2174
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 80,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrossbow *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00448f2c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 84,
+      "match": "SUB84",
+      "text": "(iVar2 = (*pCVar6->vtable[1].hasCollision)(pCVar6,SUB84 /* extract 2-byte value */(dVar4,0)), 0 < iVar2)) {",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 103,
+      "match": "SUB84",
+      "text": "pCVar5 = SUB84 /* extract 2-byte value */(dVar4,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 116,
+      "match": "extraout_EAX",
+      "text": "if (extraout_EAX == 0) break;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 135,
+      "match": "&stack0xffffff14",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff14);",
+      "type": "stack_ref"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "00448f41",
@@ -786,69 +770,6 @@
       "target_address": "0x4c7bb0",
       "text": "Direct CALL at 0044952e, ADD ESP at 00449533 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 84,
-    "local_size": 80,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CCrossbow *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "00448f2c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 77,
-      "match": "SUB84",
-      "text": "collision_info = SUB84 /* extract 2-byte value */(dVar5,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 107,
-      "match": "extraout_EAX",
-      "text": "if (extraout_EAX == 0) break;",
-      "type": "extra_output"
     }
   ],
   "vtable_info": {

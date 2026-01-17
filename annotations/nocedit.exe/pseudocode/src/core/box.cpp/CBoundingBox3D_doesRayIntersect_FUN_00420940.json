@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 434,
-    "complexity_score": 194,
+    "complexity_score": 209,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 179,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "stack_align_anchor",
       "warning_unreachable"
     ],
     "total_lines": 613
@@ -77,11 +78,6 @@
   },
   "function_calls": [],
   "globals": [],
-  "pcode_overrides": {
-    "00420949": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.975409836065574,
     "instruction_count": 366,
@@ -121,18 +117,6 @@
     },
     "pcode_op_count": 2553
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x4c",
-      "fix_address": "00420949",
-      "frame_offset": 76,
-      "match": "AND ESP",
-      "sub_esp_offset": 76,
-      "text": "Stack alignment at 00420949 (SUB ESP, 0x4c before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 116,
     "local_size": 100,
@@ -320,6 +304,16 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x00420d35) */",
       "type": "warning_unreachable"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x4c",
+      "fix_address": "00420949",
+      "frame_offset": 76,
+      "match": "AND ESP",
+      "sub_esp_offset": 76,
+      "text": "Stack alignment at 00420949 (SUB ESP, 0x4c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

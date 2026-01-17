@@ -12,10 +12,10 @@ void __cdecl wincore_winvideo_cpp_closeMovie_FUN_005f46b0(HWND window_handle)
   if (g_MoviePlaying == 0) {
     return;
   }
-  (*mciSendStringA)("close mov",(LPSTR)0x0,0,(HWND)0x0);
+  (*g_mciSendStringAFunc)("close mov",(LPSTR)0x0,0,(HWND)0x0);
   g_MovieHandle = 0;
   g_MoviePlaying = 0;
-  (*InvalidateRect)(window_handle,(RECT *)0x0,1);
-  (*UpdateWindow)(window_handle);
+  (*g_InvalidateRectFunc)(window_handle,(RECT *)0x0,1);
+  (*g_UpdateWindowFunc)(window_handle);
   return;
 }

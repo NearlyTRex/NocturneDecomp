@@ -106,6 +106,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
       }
       iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
       if (iVar2 != 0) {
+        builtin_strncpy(local_194,"J\x04T",4);
         engine_2d_c_clearInputAndWait_FUN_00403260();
         return 0;
       }
@@ -123,6 +124,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
       iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
       if (iVar2 != 0) {
+        builtin_strncpy(local_194,"\x13\x05T",4);
         engine_2d_c_clearInputAndWait_FUN_00403260();
         return 0;
       }

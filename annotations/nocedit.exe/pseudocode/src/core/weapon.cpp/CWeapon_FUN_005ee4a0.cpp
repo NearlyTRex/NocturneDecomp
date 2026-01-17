@@ -41,7 +41,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee4a0(CWeapon *this_ptr)
   pCVar1 = (*((this_ptr->base_actor).vtable)->getCarrier)(&this_ptr->base_actor);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,in_stack_ffffffcc);
   if ((pCVar1 != (CDemonActor *)0x0) &&
-     (*(float *)(pCVar1[0x176].create_event + 0x30) < 15f)) {
+     (*(float *)(pCVar1[0x176].create_event + 0x30) < 15.0f)) {
     unaff_ESI = *(float *)(pCVar1[0x176].create_event + 0x30) * 0.06666667f;
   }
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,unaff_ESI);

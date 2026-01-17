@@ -22,8 +22,7 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   int in_stack_00000004;
   int in_stack_00000008;
   CDeformableModelInstance *in_stack_0000000c;
-  CMatrix3x4f *in_stack_fffffef6;
-  CMatrix3x4f local_94;
+  CMatrix3x4f *in_stack_ffffff6c;
   uint local_64 [12];
   CVector3f local_34;
   CVector3f local_28;
@@ -71,9 +70,10 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             ((CMatrix3x4f *)(bone_name + 0x48),&local_28,&local_34);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            (&local_94,(CVector3f *)(bone_name + 0x1c),(CVector3f *)(bone_name + 0x28));
+            ((CMatrix3x4f *)&stack0xffffff6c,(CVector3f *)(bone_name + 0x1c),
+             (CVector3f *)(bone_name + 0x28));
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)(bone_name + 0x48),&local_94,in_stack_fffffef6);
+            ((CMatrix3x4f *)(bone_name + 0x48),(CMatrix3x4f *)&stack0xffffff6c,in_stack_ffffff6c);
   puVar3 = local_64;
   pcVar4 = bone_name + 0x48;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

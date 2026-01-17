@@ -17,7 +17,7 @@ int __cdecl engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(CFileFinder *this_p
     g_CurrentLineNumber = 0x244;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFileFinder::open - search not opened!");
   }
-  BVar1 = (*PTR_FindNextFileA_00611550)(this_ptr->search_handle,&_Stack_148);
+  BVar1 = (*g_FindNextFileAFunc)(this_ptr->search_handle,&_Stack_148);
   if (BVar1 != 0) {
     engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0(this_ptr,&_Stack_148);
     return 1;

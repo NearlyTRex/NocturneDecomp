@@ -15,7 +15,7 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   int iVar2;
   int extraout_EAX;
   int iVar3;
-  float *pfVar4;
+  CVector3f *pCVar4;
   CMatrix3x3i *pCVar5;
   int *piVar6;
   byte bVar7;
@@ -23,10 +23,10 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   float10 fVar9;
   float10 fVar10;
   double dVar11;
-  int aiStackY_1048 [1016];
-  CVector3i *in_stack_ffffffa0;
-  CVector3i *local_54;
-  int local_50 [2];
+  int aiStackY_1050 [1016];
+  CVector3i *input_ptr;
+  CVector3i *pCStack_5c;
+  int aiStack_58 [4];
   char (*pacStack_48) [320];
   int (*paiStack_44) [320];
   CVector3f *local_40;
@@ -34,13 +34,11 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   int local_38;
   int local_34;
   int local_30;
-  int local_2c;
-  int local_28;
-  int *local_24;
-  uint *local_20;
-  CVector3i *local_1c;
-  int local_18;
-  char *local_14;
+  int *local_2c;
+  uint *local_28;
+  CVector3i *local_24;
+  int local_20;
+  char *local_1c;
   
   bVar7 = 0;
   g_CurrentLightForCorona = light_source;
@@ -72,6 +70,7 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   fVar10 = (float10)0.3010299956639812 * fVar9 * (float10)3.3219280948900001;
   dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
   fVar9 = (float10)dVar11;
+  input_ptr = (CVector3i *)0x450b76;
   dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar10);
   g_CoronaDepthShift = (int)ROUND(dVar11);
   g_CoronaMaxDepth = (int)ROUND(fVar9);
@@ -84,64 +83,64 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
     local_3c = g_TempWorldPositionRow;
     local_38 = extraout_EAX;
     do {
-      if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {
-        local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);
-        local_28 = *(int *)((int)g_CoronaRightExtent + local_2c);
-        local_1c = (CVector3i *)(local_34 + local_18 * 0xc);
-        local_14 = (char *)((int)&local_40->x + local_18);
-        local_24 = &local_3c->x + local_18;
-        local_20 = g_ZBufferScanlineArray[local_30 << ((byte)g_CameraDownscaleIterations & 0x1f)] +
-                   (local_18 << ((byte)g_CameraDownscaleIterations & 0x1f));
-        pfVar4 = (float *)(local_18 * 0xc + local_38);
-        iVar3 = local_18 - local_28;
-        bVar8 = SBORROW /* signed borrow */4(local_18,local_28);
+      if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_34)) {
+        local_20 = *(int *)((int)g_CoronaLeftExtent + local_34);
+        local_30 = *(int *)((int)g_CoronaRightExtent + local_34);
+        local_24 = local_3c + local_20;
+        local_1c = *pacStack_48 + local_20;
+        local_2c = *paiStack_44 + local_20;
+        local_28 = g_ZBufferScanlineArray[local_38 << ((byte)g_CameraDownscaleIterations & 0x1f)] +
+                   (local_20 << ((byte)g_CameraDownscaleIterations & 0x1f));
+        pCVar4 = local_40 + local_20;
+        iVar3 = local_20 - local_30;
+        bVar8 = SBORROW /* signed borrow */4(local_20,local_30);
         while (bVar8 != iVar3 < 0) {
-          if ((*local_20 < (uint)*local_24) &&
-             (0.0 <= pfVar4[2] * (float)g_CoronaCameraRotationMatrix.m[2].z +
-                     *pfVar4 * (float)g_CoronaCameraRotationMatrix.m[0].z +
-                     pfVar4[1] * (float)g_CoronaCameraRotationMatrix.m[1].z)) {
+          if ((*local_28 < (uint)*local_2c) &&
+             (0.0 <= pCVar4->z * (float)g_CoronaCameraRotationMatrix.m[2].z +
+                     pCVar4->x * (float)g_CoronaCameraRotationMatrix.m[0].z +
+                     pCVar4->y * (float)g_CoronaCameraRotationMatrix.m[1].z)) {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-                      (&g_CurrentLightForCorona->base,local_1c,in_stack_ffffffa0);
-            local_54 = in_stack_ffffffa0;
-            local_50[(uint)bVar7 * -2] = *(int *)(&stack0xffffffa4 + (uint)bVar7 * -8);
-            local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 *(int *)(&stack0xffffffa8 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-            if ((0 < local_50[1]) &&
+                      (&g_CurrentLightForCorona->base,local_24,input_ptr);
+            pCStack_5c = input_ptr;
+            aiStack_58[(uint)bVar7 * -2] = *(int *)(&stack0xffffff9c + (uint)bVar7 * -8);
+            aiStack_58[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+                 *(int *)(&stack0xffffffa0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+            if ((0 < aiStack_58[1]) &&
                ((uVar1 = (uint)g_CurrentLightForCorona->shadow_depth_buffer
-                               [(local_50[0] >> 0x10) * g_CurrentLightForCorona->shadow_map_width +
-                                ((int)local_54 >> 0x10)], (int)uVar1 < g_CoronaMaxDepth &&
-                (local_50[1] < (int)(uVar1 + 0x80))))) {
-              *local_14 = *local_14 +
+                               [(aiStack_58[0] >> 0x10) * g_CurrentLightForCorona->shadow_map_width
+                                + ((int)pCStack_5c >> 0x10)], (int)uVar1 < g_CoronaMaxDepth &&
+                (aiStack_58[1] < (int)(uVar1 + 0x80))))) {
+              *local_1c = *local_1c +
                           (char)((int)((g_CoronaMaxDepth - uVar1) *
                                       (uint)g_CurrentLightForCorona->precomputed_lighting_textures
                                             [((g_CurrentLightForCorona->teture_coord_mask &
-                                              local_50[0] >>
+                                              aiStack_58[0] >>
                                               ((byte)g_CurrentLightForCorona->shadow_y_shift & 0x1f)
                                               ) << ((byte)g_CurrentLightForCorona->texture_row_shift
                                                    & 0x1f)) +
-                                             ((int)local_54 >>
+                                             ((int)pCStack_5c >>
                                               ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f)
                                              & g_CurrentLightForCorona->teture_coord_mask)]) >>
                                 ((byte)g_CoronaDepthShift & 0x1f));
             }
           }
-          pfVar4 = pfVar4 + 3;
+          pCVar4 = pCVar4 + 1;
+          local_2c = local_2c + 1;
           local_24 = local_24 + 1;
+          local_20 = local_20 + 1;
+          local_28 = local_28 + (1 << ((byte)g_CameraDownscaleIterations & 0x1f));
           local_1c = local_1c + 1;
-          local_18 = local_18 + 1;
-          local_20 = local_20 + (1 << ((byte)g_CameraDownscaleIterations & 0x1f));
-          local_14 = local_14 + 1;
-          iVar3 = local_18 - local_28;
-          bVar8 = SBORROW /* signed borrow */4(local_18,local_28);
+          iVar3 = local_20 - local_30;
+          bVar8 = SBORROW /* signed borrow */4(local_20,local_30);
         }
       }
-      local_2c = local_2c + 4;
-      local_38 = local_38 + 0xf00;
-      local_3c = (CVector3i *)&local_3c[0x6a].z;
-      local_40 = (CVector3f *)&local_40[0x1a].z;
-      local_34 = local_34 + 0xf00;
-      local_30 = local_30 + 1;
-    } while (local_30 < this_ptr->display_height);
+      local_34 = local_34 + 4;
+      local_40 = local_40 + 0x140;
+      paiStack_44 = paiStack_44 + 1;
+      pacStack_48 = pacStack_48 + 1;
+      local_3c = local_3c + 0x140;
+      local_38 = local_38 + 1;
+    } while (local_38 < this_ptr->display_height);
   }
   g_BackdropSaveActive = 1;
   return;

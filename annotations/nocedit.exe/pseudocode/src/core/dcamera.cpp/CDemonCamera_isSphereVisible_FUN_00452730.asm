@@ -21,7 +21,7 @@
 ;   core_fire.cpp_CFireEffect_FUN_004c76a0 at 004c7790
 ;
 ; Referenced Globals:
-;   float g_CameraFixedPointScale = 256
+;   float g_CameraFixedPointScale_0065c63c = 256
 ;
 ; *****************************************************************************
 
@@ -37,16 +37,16 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 00452739
     LEA EBX,[EBP + -0x20]               ; 0045273c
     FLD float ptr [EAX]                 ; 0045273f
-    FMUL float ptr [0x0065c63c]         ; 00452741 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452741 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 00452747
     FLD float ptr [EAX + 0x4]           ; 00452749
-    FMUL float ptr [0x0065c63c]         ; 0045274c | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0045274c | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 00452752
     FLD float ptr [EAX + 0x8]           ; 00452755
-    FMUL float ptr [0x0065c63c]         ; 00452758 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452758 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 0045275e
     FLD float ptr [EBP + 0x1c]          ; 00452761
-    FLD float ptr [0x0065c63c]          ; 00452767 | g_CameraFixedPointScale
+    FLD float ptr [0x0065c63c]          ; 00452767 | g_CameraFixedPointScale_0065c63c
     FMULP                               ; 0045276d
     FIST dword ptr [EBP + 0xfffffff8]   ; 0045276f
     FISTP dword ptr [EBP + 0xfffffffc]  ; 00452775

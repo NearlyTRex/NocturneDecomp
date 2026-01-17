@@ -29,7 +29,7 @@ sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70
   if (iVar2 == 0) {
     return 0;
   }
-  MVar3 = (*waveInGetDevCapsA)(g_WaveInDeviceID,&tStack_54,0x30);
+  MVar3 = (*g_waveInGetDevCapsAFunc)(g_WaveInDeviceID,&tStack_54,0x30);
   if (MVar3 != 0) {
     return 0;
   }
@@ -88,20 +88,21 @@ sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70
     if (0 < g_WaveInNumBuffers) {
       iVar8 = 0;
       do {
-        pvVar5 = (*GlobalAlloc)(0x2002,((int)((g_WaveInBitsPerSample +
-                                              (g_WaveInBitsPerSample >> 0x1f) * -8) -
-                                             (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3)
-                                       * g_WaveInBufferSizeSamples * g_WaveInChannels);
+        pvVar5 = (*g_GlobalAllocFunc)
+                           (0x2002,((int)((g_WaveInBitsPerSample +
+                                          (g_WaveInBitsPerSample >> 0x1f) * -8) -
+                                         (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) *
+                                   g_WaveInBufferSizeSamples * g_WaveInChannels);
         *(HGLOBAL *)((int)g_WaveInBufferHandles + iVar8) = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
-        pvVar6 = (*GlobalLock)(pvVar5);
+        pvVar6 = (*g_GlobalLockFunc)(pvVar5);
         *(LPVOID *)((int)g_WaveInBuffers + iVar8) = pvVar6;
         if (pvVar6 == (LPVOID)0x0) break;
-        pvVar5 = (*GlobalAlloc)(0x2002,0x20);
+        pvVar5 = (*g_GlobalAllocFunc)(0x2002,0x20);
         *(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8) = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
         iVar7 = iVar7 + 1;
-        pvVar6 = (*GlobalLock)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8));
+        pvVar6 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8));
         iVar1 = g_WaveInNumBuffers;
         *(LPVOID *)((int)g_WaveInHeaders + iVar8) = pvVar6;
         iVar8 = iVar8 + 4;
@@ -115,7 +116,7 @@ sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70
            (short)((int)(g_WaveInBitsPerSample & 0xffffU) >> 3) * (WORD)g_WaveInChannels;
       WStack_24.nSamplesPerSec = g_WaveInSampleRate;
       WStack_24.nAvgBytesPerSec = g_WaveInSampleRate * (uint)WStack_24.nBlockAlign;
-      MVar3 = (*waveInOpen)(&g_WaveInHandle,g_WaveOutDeviceID,&WStack_24,0,0,0);
+      MVar3 = (*g_waveInOpenFunc)(&g_WaveInHandle,g_WaveOutDeviceID,&WStack_24,0,0,0);
       if (MVar3 == 0) {
         return 1;
       }

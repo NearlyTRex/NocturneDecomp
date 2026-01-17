@@ -66,7 +66,7 @@ engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,
     piVar3 = (int *)crt_errno_c_errno_FUN_00601450();
     if (*piVar3 != 6) break;
     iVar5 = iVar5 + 1;
-    (*Sleep)(500);
+    (*g_SleepFunc)(500);
   } while (iVar5 < 10);
   stream_ptr = (FILE *)0x0;
 LAB_004b32cc:

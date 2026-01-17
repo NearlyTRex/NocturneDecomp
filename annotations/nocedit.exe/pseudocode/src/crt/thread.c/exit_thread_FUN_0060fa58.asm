@@ -8,7 +8,7 @@
 ;   crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878 at 0060e878
 ;
 ; Referenced Globals:
-;   ExitThread* PTR_ExitThread_00611538 = 00211d20
+;   ExitThread* g_ExitThreadFunc = 00211d20
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f28 = 00602458
 ;   int g_EmergencyExitFlag
 ;
@@ -35,5 +35,5 @@ section .text
     ADD ESP,0x4                         ; 0060fa73
     PUSH 0x0                            ; 0060fa76
         ;   Label: LAB_0060fa76
-    CALL dword ptr CS:[0x611538]        ; 0060fa78 | PTR_ExitThread_00611538
+    CALL dword ptr CS:[0x611538]        ; 0060fa78 | g_ExitThreadFunc
 

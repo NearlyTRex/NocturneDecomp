@@ -125,7 +125,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
       local_1e4.vertices[0].z = quad_vertices->vertices[0].z;
     }
     local_80 = quad_vertices->vertices[0].x + quad_vertices->vertices[1].x;
-    local_170 = local_80 / 2f;
+    local_170 = local_80 / 2.0f;
     local_7c = quad_vertices->vertices[0].y + quad_vertices->vertices[1].y;
     local_78 = quad_vertices->vertices[0].z + quad_vertices->vertices[1].z;
     local_16c = local_7c * 0.5f;
@@ -142,7 +142,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
     local_10c = local_124 + quad_vertices->vertices[2].y;
     local_108 = local_120 + quad_vertices->vertices[2].z;
     local_ec = local_110 + quad_vertices->vertices[3].x;
-    local_98 = local_ec / 4f;
+    local_98 = local_ec / 4.0f;
     local_e8 = local_10c + quad_vertices->vertices[3].y;
     local_e4 = local_108 + quad_vertices->vertices[3].z;
     local_94 = local_e8 * 0.25f;
@@ -153,7 +153,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
       local_1e4.vertices[2].z = local_90;
     }
     local_50 = quad_vertices->vertices[0].x + quad_vertices->vertices[3].x;
-    local_5c = local_50 / 2f;
+    local_5c = local_50 / 2.0f;
     local_4c = quad_vertices->vertices[0].y + quad_vertices->vertices[3].y;
     local_48 = quad_vertices->vertices[0].z + quad_vertices->vertices[3].z;
     local_58 = local_4c * 0.5f;
@@ -178,7 +178,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
     core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
               (this_ptr,&local_1e4,&local_1b4,&local_1a4,subdivision_level + 1);
     local_44 = quad_vertices->vertices[0].x + quad_vertices->vertices[1].x;
-    local_14c = local_44 / 2f;
+    local_14c = local_44 / 2.0f;
     local_40 = quad_vertices->vertices[0].y + quad_vertices->vertices[1].y;
     local_3c = quad_vertices->vertices[0].z + quad_vertices->vertices[1].z;
     local_148 = local_40 * 0.5f;
@@ -194,7 +194,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
       local_1e4.vertices[1].z = quad_vertices->vertices[1].z;
     }
     local_20 = quad_vertices->vertices[1].x + quad_vertices->vertices[2].x;
-    local_104 = local_20 / 2f;
+    local_104 = local_20 / 2.0f;
     local_1c = quad_vertices->vertices[1].y + quad_vertices->vertices[2].y;
     local_18 = quad_vertices->vertices[1].z + quad_vertices->vertices[2].z;
     local_100 = local_1c * 0.5f;
@@ -211,7 +211,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
     local_dc = local_c4 + quad_vertices->vertices[2].y;
     local_d8 = local_c0 + quad_vertices->vertices[2].z;
     local_2c = local_e0 + quad_vertices->vertices[3].x;
-    local_17c = local_2c / 4f;
+    local_17c = local_2c / 4.0f;
     local_28 = local_dc + quad_vertices->vertices[3].y;
     local_24 = local_d8 + quad_vertices->vertices[3].z;
     local_178 = local_28 * 0.25f;
@@ -242,7 +242,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
     local_a0 = local_184 + quad_vertices->vertices[2].y;
     local_9c = local_180 + quad_vertices->vertices[2].z;
     local_38 = local_a4 + quad_vertices->vertices[3].x;
-    local_f8 = local_38 / 4f;
+    local_f8 = local_38 / 4.0f;
     local_34 = local_a0 + quad_vertices->vertices[3].y;
     local_30 = local_9c + quad_vertices->vertices[3].z;
     local_f4 = local_34 * 0.25f;
@@ -253,7 +253,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
       local_1e4.vertices[0].z = local_f0;
     }
     local_164 = quad_vertices->vertices[1].x + quad_vertices->vertices[2].x;
-    local_74 = local_164 / 2f;
+    local_74 = local_164 / 2.0f;
     local_160 = quad_vertices->vertices[1].y + quad_vertices->vertices[2].y;
     local_15c = quad_vertices->vertices[1].z + quad_vertices->vertices[2].z;
     local_70 = local_160 * 0.5f;
@@ -269,7 +269,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
       local_1e4.vertices[2].z = quad_vertices->vertices[2].z;
     }
     local_158 = quad_vertices->vertices[2].x + quad_vertices->vertices[3].x;
-    local_194 = local_158 / 2f;
+    local_194 = local_158 / 2.0f;
     local_154 = quad_vertices->vertices[2].y + quad_vertices->vertices[3].y;
     local_150 = quad_vertices->vertices[2].z + quad_vertices->vertices[3].z;
     local_190 = local_154 * 0.5f;
@@ -294,7 +294,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
     core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
               (this_ptr,&local_1e4,&local_1b4,&local_1a4,subdivision_level + 1);
     local_11c = quad_vertices->vertices[0].x + quad_vertices->vertices[3].x;
-    local_134 = local_11c / 2f;
+    local_134 = local_11c / 2.0f;
     local_118 = quad_vertices->vertices[0].y + quad_vertices->vertices[3].y;
     local_114 = quad_vertices->vertices[0].z + quad_vertices->vertices[3].z;
     local_130 = local_118 * 0.5f;
@@ -311,7 +311,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
     local_d0 = local_64 + quad_vertices->vertices[2].y;
     local_cc = local_60 + quad_vertices->vertices[2].z;
     local_bc = local_d4 + quad_vertices->vertices[3].x;
-    local_8c = local_bc / 4f;
+    local_8c = local_bc / 4.0f;
     local_b8 = local_d0 + quad_vertices->vertices[3].y;
     local_b4 = local_cc + quad_vertices->vertices[3].z;
     local_88 = local_b8 * 0.25f;
@@ -322,7 +322,7 @@ core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
       local_1e4.vertices[1].z = local_84;
     }
     local_b0 = quad_vertices->vertices[2].x + quad_vertices->vertices[3].x;
-    local_140 = local_b0 / 2f;
+    local_140 = local_b0 / 2.0f;
     local_ac = quad_vertices->vertices[2].y + quad_vertices->vertices[3].y;
     local_a8 = quad_vertices->vertices[2].z + quad_vertices->vertices[3].z;
     local_13c = local_ac * 0.5f;

@@ -11,6 +11,6 @@ HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_005f3fe0(void)
 {
   HANDLE pvVar1;
   
-  pvVar1 = (*CreateMutexA)((LPSECURITY_ATTRIBUTES)0x0,0,(LPCSTR)0x0);
+  pvVar1 = (*g_CreateMutexAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,(LPCSTR)0x0);
   return pvVar1;
 }

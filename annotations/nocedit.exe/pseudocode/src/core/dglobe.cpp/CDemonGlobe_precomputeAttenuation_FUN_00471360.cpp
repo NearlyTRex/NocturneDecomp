@@ -18,7 +18,7 @@ core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe *this
   double dVar4;
   float unaff_retaddr;
   
-  fVar1 = radius * 256f;
+  fVar1 = radius * 256.0f;
   fVar2 = (float10)radius * (float10)radius * (float10)65536;
   this_ptr->radius = radius;
   dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar1);

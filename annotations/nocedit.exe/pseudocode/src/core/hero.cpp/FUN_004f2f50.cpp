@@ -42,7 +42,7 @@ uint core_hero_cpp_FUN_004f2f50(void)
         if (ABS(pCVar2->y) <= (float)1.04719755116667) {
           iVar3 = core_lever_cpp_FUN_00505080();
           if (iVar3 != 0) {
-            local_14 = SQRT((local_3c.z + -2f) * (local_3c.z + -2f) +
+            local_14 = SQRT((local_3c.z + -2.0f) * (local_3c.z + -2.0f) +
                             (local_3c.x + _DAT_0062ec4e) * (local_3c.x + _DAT_0062ec4e));
             if (local_14 <= local_18) {
               in_stack_00000004[0x179].scale.z = (int)pCVar1;

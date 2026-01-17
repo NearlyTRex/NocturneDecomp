@@ -25,7 +25,7 @@ BOOL __cdecl crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8(void *init_param)
       crt_memory_c_free_FUN_00601cd0(thread_param);
       return 0;
     }
-    (*PTR_TlsSetValue_00611658)(g_TLSIndex,thread_param);
+    (*g_TlsSetValueFunc)(g_TLSIndex,thread_param);
     BVar1 = 1;
   }
   return BVar1;

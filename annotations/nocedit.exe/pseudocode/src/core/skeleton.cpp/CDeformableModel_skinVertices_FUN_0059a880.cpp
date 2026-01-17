@@ -64,9 +64,9 @@ core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880
         local_30.z = local_30.z + local_40;
       }
     }
-    *local_18 = (int)ROUND(local_30.x * 256f);
-    local_18[1] = (int)ROUND(local_30.y * 256f);
-    local_18[2] = (int)ROUND(local_30.z * 256f);
+    *local_18 = (int)ROUND(local_30.x * 256.0f);
+    local_18[1] = (int)ROUND(local_30.y * 256.0f);
+    local_18[2] = (int)ROUND(local_30.z * 256.0f);
     local_18 = local_18 + 3;
     local_1c = local_1c + 0x34;
   }

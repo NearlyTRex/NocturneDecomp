@@ -1,22 +1,26 @@
 {
   "complexity": {
     "assembly_lines": 1775,
-    "complexity_score": 1386,
+    "complexity_score": 2952,
     "cross_reference_count": 0,
     "function_call_count": 56,
     "global_count": 80,
-    "pseudocode_lines": 661,
-    "suspect_count": 69,
+    "pseudocode_lines": 657,
+    "suspect_count": 224,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "concat_artifact",
       "negative_offset",
       "pointer_cast",
+      "stack_align_anchor",
       "stack_param",
       "stack_ref",
       "undefined_type",
+      "variadic_anchor",
       "warning_unreachable"
     ],
-    "total_lines": 2436
+    "total_lines": 2432
   },
   "cross_references": [],
   "function": {
@@ -317,7 +321,7 @@
   "globals": [
     {
       "addr": "00611644",
-      "name": "Sleep",
+      "name": "g_SleepFunc",
       "type": "Sleep*",
       "value": "00212228"
     },
@@ -803,473 +807,6 @@
     "declared_params": 4,
     "estimated_params": 4
   },
-  "pcode_overrides": {
-    "004baf0c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004baf18": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004baf49": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004baf58": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004baf6d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bafd1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb019": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb089": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb0a1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb0c5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb0e9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb129": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb180": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb195": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb1aa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb1bf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb1d8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb1f7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb207": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb21f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb23b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb24b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb2b6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb2cb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb2e0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb2f5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb319": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb333": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb354": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb369": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb377": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb391": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb3b2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb3c2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb3e7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb408": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb438": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb451": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb46a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb47e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb49f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb4b3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb4cc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb4e8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb4fd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb522": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb531": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb543": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb555": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb569": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb58b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb5ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb5ed": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb604": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb621": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb63e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb683": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb69b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb6c6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb6e7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb713": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb73d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb75d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb781": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb7cd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb7df": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb7ef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb810": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb844": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb864": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb889": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb8a7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb8c5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb8df": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb905": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb91e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb944": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb966": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb98b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb9d0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bb9ed": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bba0a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bba6c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bba86": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bba96": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbaae": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbac9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbae1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbafb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbb42": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbb71": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbb96": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbbbb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbbcb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbc05": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbc3b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbc61": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbc86": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbc96": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbcda": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbcf6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbd25": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbd3f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbd4f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbd79": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbda4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbdb2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbdc2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbdea": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbe00": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbe0f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbe37": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbe47": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbe79": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbe9b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbeab": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbed0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbef3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbf03": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbf39": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbf50": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbf89": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbf95": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbfb1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbfda": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bbfee": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc00f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc02f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc057": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc070": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc089": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc0ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc0bc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc0df": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc0fa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc10a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc11f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc134": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc149": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc15e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc17b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc197": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc1ae": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc1ca": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc1db": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc1f4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc20a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc220": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc231": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc23f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc259": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc26c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc27a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc294": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ],
-    "004bc2a4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffda14,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.108185053380783,
     "instruction_count": 1405,
@@ -1304,7 +841,950 @@
     },
     "pcode_op_count": 5772
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 9756,
+    "local_size": 9740,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2608",
+        "offset": -9736,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2600",
+        "offset": -9728,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_21f0",
+        "offset": -8688,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_21ec",
+        "offset": -8684,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_21d4",
+        "offset": -8660,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1e2c",
+        "offset": -7724,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a84",
+        "offset": -6788,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_16dc",
+        "offset": -5852,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_16db",
+        "offset": -5851,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14d8",
+        "offset": -5336,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14d0",
+        "offset": -5328,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14c8",
+        "offset": -5320,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_14c7",
+        "offset": -5319,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_12c4",
+        "offset": -4804,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_12bc",
+        "offset": -4796,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_12b4",
+        "offset": -4788,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_12b3",
+        "offset": -4787,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10b0",
+        "offset": -4272,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10a8",
+        "offset": -4264,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10a0",
+        "offset": -4256,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_eac",
+        "offset": -3756,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_d1c",
+        "offset": -3356,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8c",
+        "offset": -2956,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8b",
+        "offset": -2955,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a88",
+        "offset": -2696,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_984",
+        "offset": -2436,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_983",
+        "offset": -2435,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_880",
+        "offset": -2176,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_87f",
+        "offset": -2175,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_77c",
+        "offset": -1916,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_678",
+        "offset": -1656,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_677",
+        "offset": -1655,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_574",
+        "offset": -1396,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_573",
+        "offset": -1395,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_470",
+        "offset": -1136,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_370",
+        "offset": -880,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_270",
+        "offset": -624,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_170",
+        "offset": -368,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
+      },
+      {
+        "is_param": true,
+        "name": "checkout_item_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "timestamp_file",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "pod_filename",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004baf0c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004bbc51) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 13,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 16,
+      "match": "undefined3 extraout_var_00",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_ffffda00",
+      "text": "uint in_stack_ffffda00;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_ffffda04",
+      "text": "uint in_stack_ffffda04;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffffda08",
+      "text": "uint in_stack_ffffda08;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_ffffda0c",
+      "text": "uint in_stack_ffffda0c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_ffffda10",
+      "text": "uint in_stack_ffffda10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 84,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 85,
+      "match": "&stack0xffffda00",
+      "text": "iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xffffda00,local_77c)",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 91,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(uint *)((int)",
+      "text": "puVar8 = (uint *)((int)&local_21ec->name_or_offset + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_ffffda00",
+      "text": "(&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_ffffda04",
+      "text": "(&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_ffffda08",
+      "text": "(&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_ffffda0c",
+      "text": "in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_ffffda10",
+      "text": "in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 133,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 140,
+      "match": "in_stack_ffffda00",
+      "text": "(&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 140,
+      "match": "in_stack_ffffda04",
+      "text": "(&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 140,
+      "match": "in_stack_ffffda08",
+      "text": "(&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 140,
+      "match": "in_stack_ffffda0c",
+      "text": "(&local_1e2c,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 141,
+      "match": "in_stack_ffffda10",
+      "text": ",in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 148,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(SFoundFileInfo *)((int)",
+      "text": "pSVar11 = (SFoundFileInfo *)((int)pSVar12 + (uint)bVar14 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 187,
+      "match": "pSVar11[-1].",
+      "text": "pcVar9 = (char *)((int)&pSVar11[-1].container_size + 3);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 187,
+      "match": "(char *)((int)",
+      "text": "pcVar9 = (char *)((int)&pSVar11[-1].container_size + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 217,
+      "match": "in_stack_ffffda00",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 217,
+      "match": "in_stack_ffffda04",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 217,
+      "match": "in_stack_ffffda08",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 218,
+      "match": "in_stack_ffffda0c",
+      "text": "in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 218,
+      "match": "in_stack_ffffda10",
+      "text": "in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 235,
+      "match": "in_stack_ffffda00",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 235,
+      "match": "in_stack_ffffda04",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 235,
+      "match": "in_stack_ffffda08",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 236,
+      "match": "in_stack_ffffda0c",
+      "text": "in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 236,
+      "match": "in_stack_ffffda10",
+      "text": "in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 242,
+      "match": "in_stack_ffffda00",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 242,
+      "match": "in_stack_ffffda04",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 242,
+      "match": "in_stack_ffffda08",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 242,
+      "match": "in_stack_ffffda0c",
+      "text": "(&local_1a84,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 243,
+      "match": "in_stack_ffffda10",
+      "text": ",in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 478,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 521,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 547,
+      "match": "CONCAT31",
+      "text": "CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0)) || (iVar3 < 0)) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 574,
+      "match": "in_stack_ffffda00",
+      "text": "(&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 574,
+      "match": "in_stack_ffffda04",
+      "text": "(&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 575,
+      "match": "in_stack_ffffda08",
+      "text": "in_stack_ffffda08,in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 575,
+      "match": "in_stack_ffffda0c",
+      "text": "in_stack_ffffda08,in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 575,
+      "match": "in_stack_ffffda10",
+      "text": "in_stack_ffffda08,in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 576,
+      "match": "in_stack_ffffda00",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0,in_stack_ffffda00)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 578,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 589,
+      "match": "in_stack_ffffda00",
+      "text": "(&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 589,
+      "match": "in_stack_ffffda04",
+      "text": "(&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 589,
+      "match": "in_stack_ffffda08",
+      "text": "(&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 590,
+      "match": "in_stack_ffffda0c",
+      "text": ",in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 590,
+      "match": "in_stack_ffffda10",
+      "text": ",in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 591,
+      "match": "in_stack_ffffda00",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0,in_stack_ffffda00);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 592,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 596,
+      "match": "in_stack_ffffda00",
+      "text": "(&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 596,
+      "match": "in_stack_ffffda04",
+      "text": "(&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 596,
+      "match": "in_stack_ffffda08",
+      "text": "(&local_21d4,0,in_stack_ffffda00,in_stack_ffffda04,in_stack_ffffda08,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 597,
+      "match": "in_stack_ffffda0c",
+      "text": "in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 597,
+      "match": "in_stack_ffffda10",
+      "text": "in_stack_ffffda0c,in_stack_ffffda10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 605,
+      "match": "in_stack_ffffda00",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0,in_stack_ffffda00);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 606,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 616,
+      "match": "in_stack_ffffda00",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_70,0,in_stack_ffffda00);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 617,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 659,
+      "match": "&stack0xffffda00",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda00);",
+      "type": "stack_ref"
+    },
     {
       "add_esp_value": 4,
       "callind_address": "004bb540",
@@ -3384,951 +3864,6 @@
       "target_address": "0x54f610",
       "text": "Direct CALL at 004bc29f, ADD ESP at 004bc2a4 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 9756,
-    "local_size": 9740,
-    "param_offset": 4,
-    "param_size": 16,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_2608",
-        "offset": -9736,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2600",
-        "offset": -9728,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_21f0",
-        "offset": -8688,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_21ec",
-        "offset": -8684,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_21d4",
-        "offset": -8660,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_1e2c",
-        "offset": -7724,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_1a84",
-        "offset": -6788,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_16dc",
-        "offset": -5852,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_16db",
-        "offset": -5851,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14d8",
-        "offset": -5336,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14d0",
-        "offset": -5328,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14c8",
-        "offset": -5320,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_14c7",
-        "offset": -5319,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_12c4",
-        "offset": -4804,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_12bc",
-        "offset": -4796,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_12b4",
-        "offset": -4788,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_12b3",
-        "offset": -4787,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_10b0",
-        "offset": -4272,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10a8",
-        "offset": -4264,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10a0",
-        "offset": -4256,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_eac",
-        "offset": -3756,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_d1c",
-        "offset": -3356,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_b8c",
-        "offset": -2956,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_b8b",
-        "offset": -2955,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a88",
-        "offset": -2696,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_984",
-        "offset": -2436,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_983",
-        "offset": -2435,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_880",
-        "offset": -2176,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_87f",
-        "offset": -2175,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_77c",
-        "offset": -1916,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_678",
-        "offset": -1656,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_677",
-        "offset": -1655,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_574",
-        "offset": -1396,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_573",
-        "offset": -1395,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_470",
-        "offset": -1136,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_370",
-        "offset": -880,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_270",
-        "offset": -624,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_170",
-        "offset": -368,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CFileManager *"
-      },
-      {
-        "is_param": true,
-        "name": "checkout_item_name",
-        "offset": 8,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "timestamp_file",
-        "offset": 12,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "pod_filename",
-        "offset": 16,
-        "size": 4,
-        "type": "char *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004baf0c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004bbc51) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 13,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 16,
-      "match": "undefined3 extraout_var_00",
-      "text": "undefined3 extraout_var_00;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_ffffda04",
-      "text": "uint in_stack_ffffda04;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_ffffda08",
-      "text": "uint in_stack_ffffda08;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_ffffda0c",
-      "text": "uint in_stack_ffffda0c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_ffffda10",
-      "text": "uint in_stack_ffffda10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_ffffda14",
-      "text": "uint in_stack_ffffda14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 86,
-      "match": "&stack0xffffda04",
-      "text": "((CPodFile *)&stack0xffffda04,acStack_778);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 91,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&pCStack_21e8->name_or_offset + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 131,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_1e28,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 131,
-      "match": "in_stack_ffffda08",
-      "text": "(&CStack_1e28,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 131,
-      "match": "in_stack_ffffda0c",
-      "text": "(&CStack_1e28,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 132,
-      "match": "in_stack_ffffda10",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 132,
-      "match": "in_stack_ffffda14",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 133,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 140,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_1e28,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 140,
-      "match": "in_stack_ffffda08",
-      "text": "(&CStack_1e28,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 140,
-      "match": "in_stack_ffffda0c",
-      "text": "(&CStack_1e28,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 141,
-      "match": "in_stack_ffffda10",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 141,
-      "match": "in_stack_ffffda14",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 148,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(SFoundFileInfo *)((int)",
-      "text": "pSVar11 = (SFoundFileInfo *)((int)pSVar12 + (uint)bVar14 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 187,
-      "match": "pSVar11[-1].",
-      "text": "pcVar9 = (char *)((int)&pSVar11[-1].container_size + 3);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 187,
-      "match": "(char *)((int)",
-      "text": "pcVar9 = (char *)((int)&pSVar11[-1].container_size + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_ffffda08",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_ffffda0c",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 218,
-      "match": "in_stack_ffffda10",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 218,
-      "match": "in_stack_ffffda14",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 235,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 235,
-      "match": "in_stack_ffffda08",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 235,
-      "match": "in_stack_ffffda0c",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 236,
-      "match": "in_stack_ffffda10",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 236,
-      "match": "in_stack_ffffda14",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 242,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 242,
-      "match": "in_stack_ffffda08",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 242,
-      "match": "in_stack_ffffda0c",
-      "text": "(&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 243,
-      "match": "in_stack_ffffda10",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 243,
-      "match": "in_stack_ffffda14",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 481,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 524,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 550,
-      "match": "CONCAT31",
-      "text": "CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0)) || (iVar3 < 0)) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 578,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 578,
-      "match": "in_stack_ffffda08",
-      "text": "(&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 579,
-      "match": "in_stack_ffffda0c",
-      "text": "in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 579,
-      "match": "in_stack_ffffda10",
-      "text": "in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 579,
-      "match": "in_stack_ffffda14",
-      "text": "in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 581,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_6c,0,in_stack_ffffda04);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 582,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 593,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 593,
-      "match": "in_stack_ffffda08",
-      "text": "(&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 594,
-      "match": "in_stack_ffffda0c",
-      "text": "in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 594,
-      "match": "in_stack_ffffda10",
-      "text": "in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 594,
-      "match": "in_stack_ffffda14",
-      "text": "in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 595,
-      "match": "in_stack_ffffda04",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_6c,0,in_stack_ffffda04);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 596,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 600,
-      "match": "in_stack_ffffda04",
-      "text": "(&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 600,
-      "match": "in_stack_ffffda08",
-      "text": "(&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 600,
-      "match": "in_stack_ffffda0c",
-      "text": "(&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 601,
-      "match": "in_stack_ffffda10",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 601,
-      "match": "in_stack_ffffda14",
-      "text": "in_stack_ffffda10,in_stack_ffffda14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 609,
-      "match": "in_stack_ffffda04",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_6c,0,in_stack_ffffda04);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 610,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 620,
-      "match": "in_stack_ffffda04",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_6c,0,in_stack_ffffda04);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 621,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 663,
-      "match": "&stack0xffffda04",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);",
-      "type": "stack_ref"
     }
   ]
 }

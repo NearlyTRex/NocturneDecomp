@@ -8,7 +8,7 @@
 ;   crt_unknown.c_staticFinal_FUN_0060a4cc at 0060a506
 ;
 ; Referenced Globals:
-;   DeleteCriticalSection* PTR_DeleteCriticalSection_00611520 = 00211caa
+;   DeleteCriticalSection* g_DeleteCriticalSectionFunc = 00211caa
 ;   DWORD g_DynamicCriticalSectionCounter
 ;   LPCRITICAL_SECTION* g_DynamicCriticalSectionArray
 ;
@@ -34,7 +34,7 @@ section .text
         ;   Label: LAB_0060a006
     MOV ECX,dword ptr [EBX + EAX*0x1]   ; 0060a00b
     PUSH ECX                            ; 0060a00e
-    CALL dword ptr CS:[0x611520]        ; 0060a00f | PTR_DeleteCriticalSection_00611520
+    CALL dword ptr CS:[0x611520]        ; 0060a00f | g_DeleteCriticalSectionFunc
     MOV EAX,[0x03f9c008]                ; 0060a016 | g_DynamicCriticalSectionArray
     MOV EDI,dword ptr [EBX + EAX*0x1]   ; 0060a01b
     PUSH EDI                            ; 0060a01e

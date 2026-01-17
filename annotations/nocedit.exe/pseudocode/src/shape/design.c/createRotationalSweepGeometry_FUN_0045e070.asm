@@ -38,8 +38,8 @@
 ;   TerminatedCString s_Enter_in_of_sections_0061b4fc
 ;   TerminatedCString s_I_nside_O_utside_B_oth_0061b516
 ;   double g_DegreesInCircle = 360
-;   double g_DegreesToRadiansFactor = 0.00555555555555555
-;   double g_PiConstant = 3.14159265350000
+;   double g_DegreesToRadiansShapeFactor = 0.00555555555555555
+;   double g_Pi_0061b546 = 3.14159265350000
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
 ;   undefined4 DAT_01626410
@@ -190,13 +190,13 @@ section .text
     JG 0x0045e3ee                       ; 0045e1a3
         ;   XREF to: 0045e3ee (CONDITIONAL_JUMP)  ; LAB_0045e3ee
     FLD float ptr [EBP + -0x34]         ; 0045e1a9
-    FMUL double ptr [0x0061b53e]        ; 0045e1ac | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061b546]        ; 0045e1b2 | g_PiConstant
+    FMUL double ptr [0x0061b53e]        ; 0045e1ac | g_DegreesToRadiansShapeFactor
+    FMUL double ptr [0x0061b546]        ; 0045e1b2 | g_Pi_0061b546
     FSIN                                ; 0045e1b8
     FSTP float ptr [EBP + -0x24]        ; 0045e1ba
     FLD float ptr [EBP + -0x34]         ; 0045e1bd
-    FMUL double ptr [0x0061b53e]        ; 0045e1c0 | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061b546]        ; 0045e1c6 | g_PiConstant
+    FMUL double ptr [0x0061b53e]        ; 0045e1c0 | g_DegreesToRadiansShapeFactor
+    FMUL double ptr [0x0061b546]        ; 0045e1c6 | g_Pi_0061b546
     FCOS                                ; 0045e1cc
     FSTP float ptr [EBP + -0x20]        ; 0045e1ce
     MOV dword ptr [EBP + -0x2c],0x1     ; 0045e1d1

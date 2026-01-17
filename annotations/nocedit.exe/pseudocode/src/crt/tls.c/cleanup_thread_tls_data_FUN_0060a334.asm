@@ -11,9 +11,9 @@
 ;   crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388 at 0060a38a
 ;
 ; Referenced Globals:
-;   CloseHandle* CloseHandle = 00211c38
-;   TlsGetValue* PTR_TlsGetValue_00611654 = 0021225e
-;   TlsSetValue* PTR_TlsSetValue_00611658 = 0021226c
+;   CloseHandle* g_CloseHandleFunc = 00211c38
+;   TlsGetValue* g_TlsGetValueFunc = 0021225e
+;   TlsSetValue* g_TlsSetValueFunc = 0021226c
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     JZ 0x0060a385                       ; 0060a33f
         ;   XREF to: 0060a385 (CONDITIONAL_JUMP)  ; LAB_0060a385
     PUSH EDX                            ; 0060a341
-    CALL dword ptr CS:[0x611654]        ; 0060a342 | PTR_TlsGetValue_00611654
+    CALL dword ptr CS:[0x611654]        ; 0060a342 | g_TlsGetValueFunc
     TEST EAX,EAX                        ; 0060a349
     JZ 0x0060a385                       ; 0060a34b
         ;   XREF to: 0060a385 (CONDITIONAL_JUMP)  ; LAB_0060a385
@@ -47,7 +47,7 @@ section .text
     PUSH 0x0                            ; 0060a362
     MOV ESI,dword ptr [0x00684ee0]      ; 0060a364 | g_TLSIndex
     PUSH ESI                            ; 0060a36a
-    CALL dword ptr CS:[0x611658]        ; 0060a36b | PTR_TlsSetValue_00611658
+    CALL dword ptr CS:[0x611658]        ; 0060a36b | g_TlsSetValueFunc
     TEST EBX,EBX                        ; 0060a372
     JZ 0x0060a385                       ; 0060a374
         ;   XREF to: 0060a385 (CONDITIONAL_JUMP)  ; LAB_0060a385
@@ -55,7 +55,7 @@ section .text
     JZ 0x0060a385                       ; 0060a37b
         ;   XREF to: 0060a385 (CONDITIONAL_JUMP)  ; LAB_0060a385
     PUSH EBX                            ; 0060a37d
-    CALL dword ptr CS:[0x611504]        ; 0060a37e | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 0060a37e | g_CloseHandleFunc
     POP ESI                             ; 0060a385
         ;   Label: LAB_0060a385
     POP EBX                             ; 0060a386

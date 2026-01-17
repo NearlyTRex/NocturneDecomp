@@ -25,7 +25,7 @@
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 at 0056dbe2
 ;
 ; Referenced Globals:
-;   float g_FixedPointScale = 65536
+;   float g_FixedPointScale_0065c640 = 65536
 ;   float g_WorldToFloat = 0.00390625
 ;   int g_LightAttenuationMax
 ;
@@ -109,13 +109,13 @@ section .text
     FSTP float ptr [ESP + 0x1c]         ; 0044eebd
     FSTP float ptr [ESP + 0x20]         ; 0044eec1
     FLD float ptr [EAX]                 ; 0044eec5
-    FMUL float ptr [0x0065c640]         ; 0044eec7 | g_FixedPointScale
+    FMUL float ptr [0x0065c640]         ; 0044eec7 | g_FixedPointScale_0065c640
     FISTP dword ptr [EBX]               ; 0044eecd
     FLD float ptr [EAX + 0x4]           ; 0044eecf
-    FMUL float ptr [0x0065c640]         ; 0044eed2 | g_FixedPointScale
+    FMUL float ptr [0x0065c640]         ; 0044eed2 | g_FixedPointScale_0065c640
     FISTP dword ptr [EBX + 0x4]         ; 0044eed8
     FLD float ptr [EAX + 0x8]           ; 0044eedb
-    FMUL float ptr [0x0065c640]         ; 0044eede | g_FixedPointScale
+    FMUL float ptr [0x0065c640]         ; 0044eede | g_FixedPointScale_0065c640
     FISTP dword ptr [EBX + 0x8]         ; 0044eee4
     MOV EAX,dword ptr [ESP]             ; 0044eee7
     MOV EDX,dword ptr [ECX]             ; 0044eeea

@@ -105,8 +105,8 @@ LAB_004187db:
   }
   if ((this_ptr->morphing != 0) &&
      (fVar1 = this_ptr->morph_timer + in_stack_00000008, this_ptr->morph_timer = fVar1,
-     DAT_0065ac10 < fVar1)) {
-    this_ptr->morph_timer = DAT_0065ac10;
+     0x40800000 < fVar1)) {
+    this_ptr->morph_timer = 0x40800000;
     return;
   }
   return;

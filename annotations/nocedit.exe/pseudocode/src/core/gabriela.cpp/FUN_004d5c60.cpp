@@ -15,93 +15,93 @@ uint core_gabriela_cpp_FUN_004d5c60(void)
   CVector3f *pCVar1;
   int iVar2;
   CDemonActor *in_stack_00000004;
-  CVector3f local_8c;
-  CVector3f local_80;
-  CVector3f CStack_74;
-  CVector3f CStack_68;
+  CVector3f local_90;
+  CVector3f local_84;
+  CVector3f local_78;
+  CVector3f local_6c;
+  float local_60;
   float local_5c;
   float local_58;
-  float local_54;
-  CVector3f CStack_50;
-  CVector3f local_44;
-  CVector3f CStack_38;
-  CVector3f CStack_2c;
-  CDemonActor *local_20;
+  CVector3f local_54;
+  CVector3f local_48;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CDemonActor *local_24;
+  int local_20;
   int local_1c;
-  int local_18;
-  float fStack_14;
+  float local_18;
   
   iVar2 = 0;
-  local_18 = 0;
+  local_1c = 0;
   in_stack_00000004[0x179].field19_0x114 = 0;
   do {
     if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar2) {
       return 0;
     }
     this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_18),
+                         (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_1c),
                           g_CLadderClassInfo.name_hash);
-    local_20 = this_ptr;
+    local_24 = this_ptr;
     if (this_ptr != (CDemonActor *)0x0) {
-      local_5c = (in_stack_00000004->location).position.x - (this_ptr->location).position.x;
-      local_58 = (in_stack_00000004->location).position.y - (this_ptr->location).position.y;
-      local_54 = (in_stack_00000004->location).position.z - (this_ptr->location).position.z;
-      if ((ABS(local_58) <= (float)5) &&
-         (local_58 = 0.0, SQRT(local_54 * local_54 + local_5c * local_5c) <= (float)3)
+      local_60 = (in_stack_00000004->location).position.x - (this_ptr->location).position.x;
+      local_5c = (in_stack_00000004->location).position.y - (this_ptr->location).position.y;
+      local_58 = (in_stack_00000004->location).position.z - (this_ptr->location).position.z;
+      if ((ABS(local_5c) <= (float)5) &&
+         (local_5c = 0.0, SQRT(local_58 * local_58 + local_60 * local_60) <= (float)3)
          ) {
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                  (in_stack_00000004,&local_8c,&(this_ptr->location).position);
-        if ((ABS(local_8c.x) <= (float)0.29999999999999999) &&
-           (((float)0.5 <= local_8c.z && ((double)local_8c.z <= 3)))) {
+                  (in_stack_00000004,&local_90,&(this_ptr->location).position);
+        if ((ABS(local_90.x) <= (float)0.29999999999999999) &&
+           (((float)0.5 <= local_90.z && ((double)local_90.z <= 3)))) {
           pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                             (&CStack_50,&local_8c);
-          fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar1->y);
-          if (ABS(fStack_14) <= (float)0.17453292519444399) {
-            local_1c = 0;
+                             (&local_54,&local_90);
+          local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar1->y);
+          if (ABS(local_18) <= (float)0.17453292519444399) {
+            local_20 = 0;
             pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                               (this_ptr,&CStack_74,&(in_stack_00000004->location).position);
-            if (&local_8c != pCVar1) {
-              local_8c.x = pCVar1->x;
-              local_8c.y = pCVar1->y;
-              local_8c.z = pCVar1->z;
+                               (this_ptr,&local_78,&(in_stack_00000004->location).position);
+            if (&local_90 != pCVar1) {
+              local_90.x = pCVar1->x;
+              local_90.y = pCVar1->y;
+              local_90.z = pCVar1->z;
             }
-            if (local_8c.z < 0.0) {
-              local_1c = 1;
-              local_8c.z = -local_8c.z;
+            if (local_90.z < 0.0) {
+              local_20 = 1;
+              local_90.z = -local_90.z;
             }
-            if (((ABS(local_8c.x) <= (float)0.29999999999999999) &&
-                ((float)0.5 <= local_8c.z)) && ((double)local_8c.z <= 3))
+            if (((ABS(local_90.x) <= (float)0.29999999999999999) &&
+                ((float)0.5 <= local_90.z)) && ((double)local_90.z <= 3))
             {
               pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                                 (&CStack_2c,&local_8c);
-              fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar1->y);
-              if (ABS(fStack_14) <= (float)0.17453292519444399) {
-                in_stack_00000004[0x179].field19_0x114 = (int)local_20;
+                                 (&local_30,&local_90);
+              local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar1->y);
+              if (ABS(local_18) <= (float)0.17453292519444399) {
+                in_stack_00000004[0x179].field19_0x114 = (int)local_24;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           ((CMotionController *)(in_stack_00000004 + 1),0x16,1);
                 in_stack_00000004[0x8d].create_event[0x48] = '\0';
                 in_stack_00000004[0x8d].create_event[0x49] = '\0';
                 in_stack_00000004[0x8d].create_event[0x4a] = '\0';
                 in_stack_00000004[0x8d].create_event[0x4b] = '\0';
-                local_80.x = 0.0;
-                local_80.y = 0.0;
-                local_80.z = 2.0;
-                if (local_1c != 0) {
-                  local_80.z = -2.0;
+                local_84.x = 0.0;
+                local_84.y = 0.0;
+                local_84.z = 2.0;
+                if (local_20 != 0) {
+                  local_84.z = -2.0;
                 }
                 pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                                   (local_20,&CStack_68,&local_80);
+                                   (local_24,&local_6c,&local_84);
                 (in_stack_00000004->location).position.x = pCVar1->x;
                 (in_stack_00000004->location).position.y = pCVar1->y;
                 (in_stack_00000004->location).position.z = pCVar1->z;
-                local_44.x = (local_20->location).position.x -
+                local_48.x = (local_24->location).position.x -
                              (in_stack_00000004->location).position.x;
-                local_44.y = (local_20->location).position.y -
+                local_48.y = (local_24->location).position.y -
                              (in_stack_00000004->location).position.y;
-                local_44.z = (local_20->location).position.z -
+                local_48.z = (local_24->location).position.z -
                              (in_stack_00000004->location).position.z;
                 pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                                   (&CStack_38,&local_44);
+                                   (&local_3c,&local_48);
                 (in_stack_00000004->orient).bank = pCVar1->y;
                 core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
                 return 1;
@@ -111,7 +111,7 @@ uint core_gabriela_cpp_FUN_004d5c60(void)
         }
       }
     }
-    local_18 = local_18 + 4;
+    local_1c = local_1c + 4;
     iVar2 = iVar2 + 1;
   } while( true );
 }

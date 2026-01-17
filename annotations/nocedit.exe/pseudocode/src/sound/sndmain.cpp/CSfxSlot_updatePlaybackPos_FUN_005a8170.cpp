@@ -12,12 +12,13 @@ sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
 
 {
   CSfxSample *this_ptr_00;
-  double dVar1;
-  int iVar2;
+  int iVar1;
   CSfxSlot *extraout_EBX;
-  double dVar3;
+  double dVar2;
   uint local_28;
   uint uStack_24;
+  uint uStack_1c;
+  uint local_18;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -30,13 +31,13 @@ sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
     g_CurrentLineNumber = 0xbc2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::updatePlaybackPos - invalid buffer position");
   }
-  dVar1 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
-  if (dVar1 < 0.0) {
-    dVar1 = (double)this_ptr->sample->streaming_buffer_size + dVar1;
+  dVar2 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
+  if (dVar2 < 0.0) {
+    dVar2 = (double)this_ptr->sample->streaming_buffer_size + dVar2;
   }
-  uStack_24 = (uint)((ulonglong)dVar1 >> 0x20);
-  local_28 = SUB84 /* extract 2-byte value */(dVar1,0);
-  if ((dVar1 < 0.0) || ((double)this_ptr->sample->streaming_buffer_size + 0.001 < dVar1))
+  uStack_24 = (uint)((ulonglong)dVar2 >> 0x20);
+  local_28 = SUB84 /* extract 2-byte value */(dVar2,0);
+  if ((dVar2 < 0.0) || ((double)this_ptr->sample->streaming_buffer_size + 0.001 < dVar2))
   {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbd0;
@@ -48,7 +49,7 @@ sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
   }
   if (((this_ptr->options).trigger_time != this_ptr->prev_hardware_playback_pos) ||
      (hardware_playback_pos < (this_ptr->options).trigger_time)) {
-    (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + dVar1;
+    (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + dVar2;
   }
   else {
     (this_ptr->options).trigger_time = hardware_playback_pos;
@@ -60,14 +61,16 @@ sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
   this_ptr_00 = this_ptr->sample;
   if ((-1 < (this_ptr_00->sample_info).sample_count) &&
      ((double)(this_ptr_00->sample_info).sample_count <= (this_ptr->options).trigger_time)) {
-    iVar2 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
-    if (iVar2 == 0) {
+    iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
+    if (iVar1 == 0) {
       (this_ptr->options).trigger_time = (double)(this_ptr->sample->sample_info).sample_count;
     }
     else {
-      dVar1 = (double)(this_ptr->sample->sample_info).sample_count;
-      dVar3 = crt_math_c_floor_FUN_005feb90((this_ptr->options).trigger_time / dVar1);
-      (extraout_EBX->options).trigger_time = (extraout_EBX->options).trigger_time - dVar3 * dVar1;
+      dVar2 = (double)(this_ptr->sample->sample_info).sample_count;
+      local_18 = SUB84 /* extract 2-byte value */(dVar2,0);
+      dVar2 = crt_math_c_floor_FUN_005feb90((this_ptr->options).trigger_time / dVar2);
+      (extraout_EBX->options).trigger_time =
+           (extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);
       this_ptr = extraout_EBX;
     }
   }

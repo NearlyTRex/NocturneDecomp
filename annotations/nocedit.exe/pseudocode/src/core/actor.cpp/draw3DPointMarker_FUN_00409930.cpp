@@ -17,9 +17,9 @@ core_actor_cpp_draw3DPointMarker_FUN_00409930(CVector3f *world_position,int mark
   int iVar5;
   CVector3i local_14;
   
-  local_14.x = (int)ROUND(world_position->x * 256f);
-  local_14.y = (int)ROUND(world_position->y * 256f);
-  local_14.z = (int)ROUND(world_position->z * 256f);
+  local_14.x = (int)ROUND(world_position->x * 256.0f);
+  local_14.y = (int)ROUND(world_position->y * 256.0f);
+  local_14.z = (int)ROUND(world_position->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_14);
   pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;

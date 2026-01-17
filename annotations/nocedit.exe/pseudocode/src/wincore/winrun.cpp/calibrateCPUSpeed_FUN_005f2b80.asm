@@ -12,10 +12,10 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507bd0
 ;
 ; Referenced Globals:
-;   timeBeginPeriod* timeBeginPeriod = 00211862
-;   MessageBoxA* MessageBoxA = 00211b44
-;   QueryPerformanceCounter* QueryPerformanceCounter = 002120a8
-;   QueryPerformanceFrequency* QueryPerformanceFrequency = 002120c2
+;   timeBeginPeriod* g_timeBeginPeriodFunc = 00211862
+;   MessageBoxA* g_MessageBoxAFunc = 00211b44
+;   QueryPerformanceCounter* g_QueryPerformanceCounterFunc = 002120a8
+;   QueryPerformanceFrequency* g_QueryPerformanceFrequencyFunc = 002120c2
 ;   TerminatedCString s_Unable_to_set_timer_00657f14
 ;   double g_RelatedToQPC3 = 4294967296
 ;   TerminatedCString s_Nocturne_Editor_006581b7
@@ -48,7 +48,7 @@ section .text
     MOV EBP,ESP                         ; 005f2b84
     SUB ESP,0x10                        ; 005f2b86
     PUSH 0x3f96bb0                      ; 005f2b89 | g_PerformanceFrequency
-    CALL dword ptr CS:[0x6115fc]        ; 005f2b8e | QueryPerformanceFrequency
+    CALL dword ptr CS:[0x6115fc]        ; 005f2b8e | g_QueryPerformanceFrequencyFunc
     CMP EAX,0x1                         ; 005f2b95
     JNZ 0x005f2d5a                      ; 005f2b98
         ;   XREF to: 005f2d5a (CONDITIONAL_JUMP)  ; LAB_005f2d5a
@@ -62,7 +62,7 @@ section .text
     FADDP                               ; 005f2bba
     PUSH 0x3f96ba8                      ; 005f2bbc | g_PerformanceCounter
     FSTP double ptr [0x03f96bb8]        ; 005f2bc1 | g_TimerCalibration
-    CALL dword ptr CS:[0x6115f8]        ; 005f2bc7 | QueryPerformanceCounter
+    CALL dword ptr CS:[0x6115f8]        ; 005f2bc7 | g_QueryPerformanceCounterFunc
     XOR EAX,EAX                         ; 005f2bce
         ;   Label: LAB_005f2bce
     MOV dword ptr [EBP + -0x8],EAX      ; 005f2bd0
@@ -206,7 +206,7 @@ section .text
         ;   Label: LAB_005f2d5a
     PUSH ECX                            ; 005f2d5f
     MOV dword ptr [0x03f96bc4],ECX      ; 005f2d60 | g_UseMultimediaTimer
-    CALL dword ptr CS:[0x611414]        ; 005f2d66 | timeBeginPeriod
+    CALL dword ptr CS:[0x611414]        ; 005f2d66 | g_timeBeginPeriodFunc
     TEST EAX,EAX                        ; 005f2d6d
     JZ 0x005f2bce                       ; 005f2d6f
         ;   XREF to: 005f2bce (CONDITIONAL_JUMP)  ; LAB_005f2bce
@@ -216,7 +216,7 @@ section .text
     PUSH 0x657f14                       ; 005f2d7e | = "Unable to set timer"
     MOV ESI,dword ptr [0x03f98468]      ; 005f2d83 | g_MainWindowHandle
     PUSH ESI                            ; 005f2d89
-    CALL dword ptr CS:[0x6114c4]        ; 005f2d8a | MessageBoxA
+    CALL dword ptr CS:[0x6114c4]        ; 005f2d8a | g_MessageBoxAFunc
     CMP EAX,0x2                         ; 005f2d91
     JNZ 0x005f2bce                      ; 005f2d94
         ;   XREF to: 005f2bce (CONDITIONAL_JUMP)  ; LAB_005f2bce

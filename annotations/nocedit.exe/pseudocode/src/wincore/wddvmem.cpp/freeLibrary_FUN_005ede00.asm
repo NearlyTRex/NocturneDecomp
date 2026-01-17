@@ -10,7 +10,7 @@
 ;   wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 at 005b5e9b
 ;
 ; Referenced Globals:
-;   FreeLibrary* PTR_FreeLibrary_0061155c = 00211dd4
+;   FreeLibrary* g_FreeLibraryFunc = 00211dd4
 ;
 ; Called Functions:
 ;   FreeLibrary
@@ -22,6 +22,6 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005ede00
         ;   Label: wincore_wddvmem.cpp_freeLibrary_FUN_005ede00
     PUSH EDX                            ; 005ede04
-    CALL dword ptr CS:[0x61155c]        ; 005ede05 | PTR_FreeLibrary_0061155c
+    CALL dword ptr CS:[0x61155c]        ; 005ede05 | g_FreeLibraryFunc
     RET                                 ; 005ede0c
 

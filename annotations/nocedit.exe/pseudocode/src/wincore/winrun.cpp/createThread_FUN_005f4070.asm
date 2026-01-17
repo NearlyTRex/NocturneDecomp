@@ -11,7 +11,7 @@
 ;   sound_sndmain.cpp_startSoundThread_FUN_005abc00 at 005abc58
 ;
 ; Referenced Globals:
-;   CreateThread* CreateThread = 00211c9a
+;   CreateThread* g_CreateThreadFunc = 00211c9a
 ;
 ; Called Functions:
 ;   CreateThread
@@ -31,7 +31,7 @@ section .text
     PUSH ECX                            ; 005f4081
     PUSH 0x0                            ; 005f4082
     PUSH 0x0                            ; 005f4084
-    CALL dword ptr CS:[0x61151c]        ; 005f4086 | CreateThread
+    CALL dword ptr CS:[0x61151c]        ; 005f4086 | g_CreateThreadFunc
     ADD ESP,0x4                         ; 005f408d
     RET                                 ; 005f4090
 

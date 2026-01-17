@@ -15,7 +15,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
-;   float g_CameraFixedPointScale = 256
+;   float g_CameraFixedPointScale_0065c63c = 256
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
@@ -100,13 +100,13 @@ section .text
         ;   Label: LAB_0044f021
     LEA EBX,[EBP + 0x16c]               ; 0044f024
     FLD float ptr [EAX]                 ; 0044f02a
-    FMUL float ptr [0x0065c63c]         ; 0044f02c | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0044f02c | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 0044f032
     FLD float ptr [EAX + 0x4]           ; 0044f034
-    FMUL float ptr [0x0065c63c]         ; 0044f037 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0044f037 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 0044f03d
     FLD float ptr [EAX + 0x8]           ; 0044f040
-    FMUL float ptr [0x0065c63c]         ; 0044f043 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0044f043 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 0044f049
     POP EBX                             ; 0044f04c
     POP ESI                             ; 0044f04d

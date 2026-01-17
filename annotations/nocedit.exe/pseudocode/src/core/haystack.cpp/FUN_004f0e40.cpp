@@ -22,31 +22,28 @@ void core_haystack_cpp_FUN_004f0e40(void)
   SMotion *pSVar7;
   uint uVar8;
   int iVar9;
-  uint *puVar10;
-  byte bVar11;
+  CDeformableModelInstance *unaff_EBP;
+  byte bVar10;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  float afStackY_1858 [1519];
-  CDeformableModelInstance *this_ptr_00;
+  float afStackY_1854 [1518];
   CQuaternion4f *source_quaternions;
-  SCollisionInfo *in_stack_ffffff74;
-  int in_stack_ffffff78;
-  CDeformableModel_MotionBlendWeightFunc *in_stack_ffffff7c;
-  float fStack_7c;
-  CQuaternion4f local_6c;
-  CVector3f CStack_5c;
-  CVector3f CStack_50;
-  CVector3f CStack_44;
+  SCollisionInfo *in_stack_ffffff7c;
+  code *blend_callback;
+  float fStack_78;
+  float local_6c;
+  byte local_68 [20];
+  CVector3f local_54;
+  CVector3f local_48;
+  float local_3c;
   float local_38;
   float local_34;
-  float fStack_30;
-  SCollisionInfo *pSStack_24;
-  CMotionController *local_20;
-  SCollisionInfo *local_1c;
-  int local_18;
-  CDeformableModelInstance *pCStack_14;
+  float local_28;
+  float local_20;
+  int local_1c;
+  CDemonActor_vtable *local_18;
   
-  bVar11 = 0;
+  bVar10 = 0;
   iVar4 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar4 == 0) {
     return;
@@ -119,11 +116,11 @@ void core_haystack_cpp_FUN_004f0e40(void)
             iVar9 = core_hero_cpp_FUN_004f2af0();
             bVar1 = false;
             if (iVar9 != 0) goto LAB_004f11d6;
-            local_18 = core_hero_cpp_FUN_004f2d70();
-            if ((local_18 != 0) && (local_18 != 1)) {
+            local_1c = core_hero_cpp_FUN_004f2d70();
+            if ((local_1c != 0) && (local_1c != 1)) {
               core_hero_cpp_FUN_004f2ed0();
             }
-            if ((local_18 != 0) || (iVar9 = core_hero_cpp_FUN_004f2c40(), iVar9 != 0))
+            if ((local_1c != 0) || (iVar9 = core_hero_cpp_FUN_004f2c40(), iVar9 != 0))
             goto LAB_004f11d6;
             iVar9 = core_hero_cpp_FUN_004f2f50();
             if (iVar9 != 0) {
@@ -195,11 +192,11 @@ switchD_004f12ce_caseD_8:
     *(float *)(in_stack_00000004->field2_0x240c + 0x20) =
          *(float *)(in_stack_00000004->field2_0x240c + 0x20) -
          in_stack_00000008 * (float)32;
-    local_38 = pCVar5->x + *(float *)(in_stack_00000004->field2_0x240c + 0x10);
-    local_34 = (in_stack_00000004->model).accumulated_root_motion.y +
+    local_3c = pCVar5->x + *(float *)(in_stack_00000004->field2_0x240c + 0x10);
+    local_38 = (in_stack_00000004->model).accumulated_root_motion.y +
                *(float *)(in_stack_00000004->field2_0x240c + 0x14);
-    fStack_30 = (in_stack_00000004->model).accumulated_root_motion.z +
-                *(float *)(in_stack_00000004->field2_0x240c + 0x18);
+    local_34 = (in_stack_00000004->model).accumulated_root_motion.z +
+               *(float *)(in_stack_00000004->field2_0x240c + 0x18);
     (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
     (in_stack_00000004->model).accumulated_root_motion.y =
          (in_stack_00000004->model).accumulated_root_motion.z;
@@ -215,52 +212,50 @@ switchD_004f12ce_caseD_8:
     pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(in_stack_00000004->model).motion_controller);
     if ((pSVar7->state_index == 0xe) || (pSVar7->state_index == 0xf)) {
-      local_34 = 0.0;
       local_38 = 0.0;
-      fStack_30 = 0.0;
+      local_3c = 0.0;
+      local_34 = 0.0;
     }
-    local_6c.x = *(float *)(in_stack_00000004->field2_0x240c + 0x1c) * in_stack_00000008;
-    local_6c.y = *(float *)(in_stack_00000004->field2_0x240c + 0x20) * in_stack_00000008;
-    local_6c.z = in_stack_00000008 * *(float *)(in_stack_00000004->field2_0x240c + 0x24);
-    local_38 = local_38 + local_6c.x;
-    local_34 = local_34 + local_6c.y;
-    fStack_30 = fStack_30 + local_6c.z;
+    local_6c = *(float *)(in_stack_00000004->field2_0x240c + 0x1c) * in_stack_00000008;
+    local_68._0_4_ = *(float *)(in_stack_00000004->field2_0x240c + 0x20) * in_stack_00000008;
+    local_68._4_4_ = in_stack_00000008 * *(float *)(in_stack_00000004->field2_0x240c + 0x24);
+    local_3c = local_3c + local_6c;
+    local_38 = local_38 + (float)local_68._0_4_;
+    local_34 = local_34 + (float)local_68._4_4_;
     core_charactr_cpp_CCharacter_FUN_00428f40(in_stack_00000004);
   }
   else {
     if (in_stack_00000004->grabbed_type == 0) {
       pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (&in_stack_00000004->base_actor,&CStack_5c,
+                         (&in_stack_00000004->base_actor,(CVector3f *)(local_68 + 8),
                           &(in_stack_00000004->grabbed_by->location).position);
-      pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_50,pCVar5);
-      pCStack_14 = (CDeformableModelInstance *)
-                   core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar5->y);
-      in_stack_ffffff74 = (SCollisionInfo *)pCStack_14;
-      if ((float)pCStack_14 < (float)-1.57079632675) {
-        in_stack_ffffff74 = (SCollisionInfo *)((float)pCStack_14 + 3.141593f);
+      pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_54,pCVar5);
+      local_18 = (CDemonActor_vtable *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar5->y);
+      fVar6 = (float)local_18;
+      if ((float)local_18 < (float)-1.57079632675) {
+        fVar6 = (float)local_18 + 3.141593f;
       }
-      if ((float)1.57079632675 < (float)in_stack_ffffff74) {
-        in_stack_ffffff74 = (SCollisionInfo *)((float)in_stack_ffffff74 + -3.141593f);
+      if ((float)1.57079632675 < fVar6) {
+        fVar6 = fVar6 + -3.141593f;
       }
-      local_1c = (SCollisionInfo *)(in_stack_00000008 * (float)3.1415926535000001);
-      pSStack_24 = (SCollisionInfo *)-(float)local_1c;
-      if ((float)in_stack_ffffff74 < (float)pSStack_24) {
-        in_stack_ffffff74 = pSStack_24;
+      local_20 = in_stack_00000008 * (float)3.1415926535000001;
+      local_28 = -local_20;
+      if (fVar6 < local_28) {
+        fVar6 = local_28;
       }
-      if ((float)local_1c < (float)in_stack_ffffff74) {
-        in_stack_ffffff74 = local_1c;
+      if (local_20 < fVar6) {
+        fVar6 = local_20;
       }
       (in_stack_00000004->base_actor).orient.bank =
-           (in_stack_00000004->base_actor).orient.bank + (float)in_stack_ffffff74;
+           (in_stack_00000004->base_actor).orient.bank + fVar6;
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
                 (&in_stack_00000004->base_actor);
     }
     this_ptr = in_stack_00000004->grabbed_by;
-    pCStack_14 = (CDeformableModelInstance *)this_ptr->vtable;
+    local_18 = this_ptr->vtable;
     pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                       (&in_stack_00000004->model,&CStack_44,0);
-    fVar6 = (*(code *)pCStack_14->transformed_vertices[0x11].x)
-                      (this_ptr,(float)in_stack_00000004,pCVar5);
+                       (&in_stack_00000004->model,&local_48,0);
+    fVar6 = (*local_18[1].cylinderGroundCheck)(this_ptr,(float)in_stack_00000004,pCVar5);
     if (fVar6 == 0.0) {
       in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
 LAB_004f1041:
@@ -276,31 +271,32 @@ LAB_004f1041:
   }
 LAB_004f1054:
   core_charactr_cpp_CCharacter_FUN_00429820(in_stack_00000004);
-  local_20 = &(in_stack_00000004->model).motion_controller;
+  local_18 = (CDemonActor_vtable *)&in_stack_00000004->model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-            ((CDeformableModelInstance *)local_20);
+            ((CDeformableModelInstance *)local_18);
   iVar4 = (*(in_stack_00000004->base_actor).vtable[1].hasCollision)
-                    (&in_stack_00000004->base_actor,in_stack_ffffff74);
+                    (&in_stack_00000004->base_actor,in_stack_ffffff7c);
   if ((iVar4 == 0) &&
-     (pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(local_20),
-     pSVar7->state_index != 0x13)) {
+     (pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&unaff_EBP->motion_controller), pSVar7->state_index != 0x13)) {
+    blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+    pCVar5 = *(CVector3f **)(in_stack_00000004[2].cloth_data + 0x5508);
+    iVar4 = DAT_02db8700;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-              ((CQuaternion4f *)(in_stack_00000004[2].cloth_data + 0x54fc),
-               *(CVector3f **)(in_stack_00000004[2].cloth_data + 0x5508));
-    this_ptr_00 = pCStack_14;
-    source_quaternions = &local_6c;
-    local_6c.w = fStack_7c;
-    puVar10 = (uint *)((int)&local_6c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-    *(uint *)((int)&local_6c + (uint)bVar11 * -8 + 4) =
-         *(uint *)(&stack0xffffff88 + (uint)bVar11 * -8);
-    *puVar10 = *(uint *)(&stack0xffffff8c + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-    puVar10[(uint)bVar11 * -2 + 1] =
+              ((CQuaternion4f *)(in_stack_00000004[2].cloth_data + 0x54fc),pCVar5);
+    source_quaternions = (CQuaternion4f *)local_68;
+    local_68._0_4_ = fStack_78;
+    *(uint *)(local_68 + (uint)bVar10 * -8 + 4) =
+         *(uint *)(&stack0xffffff8c + (uint)bVar10 * -8);
+    *(uint *)(local_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+         *(uint *)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+    *(uint *)
+     ((int)(local_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) + ((uint)bVar10 * -2 + 1) * 4) =
          *(uint *)
-          ((int)(&stack0xffffff8c + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
-          ((uint)bVar11 * -2 + 1) * 4);
+          ((int)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8) +
+          ((uint)bVar10 * -2 + 1) * 4);
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (this_ptr_00,source_quaternions,(float)in_stack_ffffff74,in_stack_ffffff78,
-               in_stack_ffffff7c);
+              (unaff_EBP,source_quaternions,(float)pCVar5,iVar4,blend_callback);
   }
   core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
 switchD_004f12ce_caseD_9:

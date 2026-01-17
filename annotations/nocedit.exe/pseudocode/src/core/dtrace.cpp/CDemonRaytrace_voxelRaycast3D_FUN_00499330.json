@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 209,
+    "complexity_score": 255,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 159,
-    "suspect_count": 4,
+    "pseudocode_lines": 120,
+    "suspect_count": 12,
     "suspect_types": [
-      "suspect_float",
+      "call_esp_anchor",
+      "stack_align_anchor",
       "warning_unreachable"
     ],
-    "total_lines": 588
+    "total_lines": 549
   },
   "cross_references": [
     {
@@ -83,14 +84,6 @@
     "declared_params": 3,
     "estimated_params": 3
   },
-  "pcode_overrides": {
-    "00499339": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "00499618": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.052770448548813,
     "instruction_count": 379,
@@ -142,31 +135,6 @@
     },
     "pcode_op_count": 2673
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x78",
-      "fix_address": "00499339",
-      "frame_offset": 120,
-      "match": "AND ESP",
-      "sub_esp_offset": 120,
-      "text": "Stack alignment at 00499339 (SUB ESP, 0x78 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "00499611",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00499618",
-      "frame_offset": 120,
-      "match": "CALL...ADD ESP",
-      "return_address": "00499616",
-      "target_address": "0x4952b0",
-      "text": "Direct CALL at 00499611, ADD ESP at 00499618 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 152,
     "local_size": 140,
@@ -405,25 +373,90 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 62,
-      "match": "6.757053e-39",
-      "text": "fVar22 = 6.757053e-39;",
-      "type": "suspect_float"
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0049946d) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 67,
-      "match": "6.757102e-39",
-      "text": "fVar21 = 6.757102e-39;",
-      "type": "suspect_float"
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00499701) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 83,
-      "match": "6.757112e-39",
-      "text": "fVar16 = (float10)6.757112e-39;",
-      "type": "suspect_float"
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004994c8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004994ec) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00499501) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00499525) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0049953a) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 10,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00499751) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 11,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0049955e) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x78",
+      "fix_address": "00499339",
+      "frame_offset": 120,
+      "match": "AND ESP",
+      "sub_esp_offset": 120,
+      "text": "Stack alignment at 00499339 (SUB ESP, 0x78 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00499611",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00499618",
+      "frame_offset": 120,
+      "match": "CALL...ADD ESP",
+      "return_address": "00499616",
+      "target_address": "0x4952b0",
+      "text": "Direct CALL at 00499611, ADD ESP at 00499618 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

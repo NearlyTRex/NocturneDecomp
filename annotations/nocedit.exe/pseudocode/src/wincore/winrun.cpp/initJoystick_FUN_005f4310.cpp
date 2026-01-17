@@ -12,11 +12,11 @@ void __cdecl wincore_winrun_cpp_initJoystick_FUN_005f4310(void)
   MMRESULT MVar1;
   tagJOYCAPSA tStack_194;
   
-  g_WinmmDll = (*GetModuleHandleA)("winmm.dll");
+  g_WinmmDll = (*g_GetModuleHandleAFunc)("winmm.dll");
   if (g_WinmmDll != (HMODULE)0x0) {
-    g_joyGetPosEx = (joyGetPosEx *)(*GetProcAddress)(g_WinmmDll,"joyGetPosEx");
+    g_joyGetPosEx = (joyGetPosEx *)(*g_GetProcAddressFunc)(g_WinmmDll,"joyGetPosEx");
   }
-  MVar1 = (*joyGetDevCapsA)(0,&tStack_194,0x194);
+  MVar1 = (*g_joyGetDevCapsAFunc)(0,&tStack_194,0x194);
   if (MVar1 == 0) {
     g_JoystickHasPOV = (int)(((byte)tStack_194.wCaps & 0x10) != 0);
     g_JoystickNumButtons = tStack_194.wMaxButtons;

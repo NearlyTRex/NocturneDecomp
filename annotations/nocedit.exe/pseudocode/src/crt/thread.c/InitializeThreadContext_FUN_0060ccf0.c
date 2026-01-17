@@ -14,7 +14,7 @@ void __cdecl crt_thread_c_InitializeThreadContext_FUN_0060ccf0(ThreadData *pThre
   if (pThreadData != (ThreadData *)0x0) {
     pThreadData->random_seed = 1;
     crt_memory_c_GetMemoryBounds_FUN_0060a6a0(pThreadData,(uint *)0x0);
-    pvVar1 = (void *)(*PTR_GetCurrentThreadId_00611584)();
+    pvVar1 = (void *)(*g_GetCurrentThreadIdFunc)();
     pThreadData->cleanup_data = pvVar1;
   }
   return;

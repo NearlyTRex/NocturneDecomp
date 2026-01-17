@@ -42,9 +42,9 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
     pcVar2 = this_ptr->field12_0x4b8;
     if (0 < this_ptr->broken_vertex_count) {
       do {
-        *(int *)pcVar2 = (int)ROUND(pCVar1->x * 256f);
-        *(int *)(pcVar2 + 4) = (int)ROUND(pCVar1->y * 256f);
-        *(int *)(pcVar2 + 8) = (int)ROUND(pCVar1->z * 256f);
+        *(int *)pcVar2 = (int)ROUND(pCVar1->x * 256.0f);
+        *(int *)(pcVar2 + 4) = (int)ROUND(pCVar1->y * 256.0f);
+        *(int *)(pcVar2 + 8) = (int)ROUND(pCVar1->z * 256.0f);
         iVar4 = iVar4 + 1;
         pCVar1 = pCVar1 + 1;
         pcVar2 = pcVar2 + 0xc;

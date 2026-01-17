@@ -11,7 +11,7 @@ void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005edc50(void
 {
   if ((g_FullscreenMode != 0) && (g_GraphicsResetFlag != 0)) {
     wincore_windll_cpp_restoreVideoMode_FUN_005b75b0();
-    (*ShowWindow)(g_MainWindowHandle,6);
+    (*g_ShowWindowFunc)(g_MainWindowHandle,6);
     return;
   }
   return;

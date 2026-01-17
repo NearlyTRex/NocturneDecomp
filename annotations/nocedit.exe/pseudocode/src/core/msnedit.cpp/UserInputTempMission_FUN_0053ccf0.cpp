@@ -76,7 +76,7 @@ void core_msnedit_cpp_UserInputTempMission_FUN_0053ccf0(void)
   in_stack_00000004->field2_0xc[0x32] = '\0';
   in_stack_00000004->field2_0xc[0x33] = '\0';
   g_CDemonMissionPtr = in_stack_00000004;
-  puVar6 = &DAT_00680970;
+  puVar6 = &0x0000002A;
   pcVar5 = local_a0;
   for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(uint *)pcVar5 = *puVar6;

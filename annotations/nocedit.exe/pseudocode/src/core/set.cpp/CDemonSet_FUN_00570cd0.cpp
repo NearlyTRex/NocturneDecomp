@@ -18,9 +18,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570cd0(CDemonSet *this_ptr)
     this_ptr->mirror_render_param1 = 0;
     return;
   }
-  local_10.x = (int)ROUND(*in_stack_00000008 * 256f);
-  local_10.y = (int)ROUND(in_stack_00000008[1] * 256f);
-  local_10.z = (int)ROUND(in_stack_00000008[2] * 256f);
+  local_10.x = (int)ROUND(*in_stack_00000008 * 256.0f);
+  local_10.y = (int)ROUND(in_stack_00000008[1] * 256.0f);
+  local_10.z = (int)ROUND(in_stack_00000008[2] * 256.0f);
   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(this_ptr,&local_10,(CVector3i *)0x0,0,0);
   fVar1 = g_RenderVertexBuffer[0].light;
   this_ptr->mirror_render_param1 = 1;

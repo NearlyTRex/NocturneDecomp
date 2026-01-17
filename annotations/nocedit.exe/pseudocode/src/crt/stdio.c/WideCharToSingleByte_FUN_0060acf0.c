@@ -15,7 +15,7 @@ int __cdecl crt_stdio_c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char,char
   if (_wide_char == (LPSTR)0x0) {
     return 0;
   }
-  iVar1 = (*PTR_WideCharToMultiByte_00611670)
+  iVar1 = (*g_WideCharToMultiByteFunc)
                     (g_CodePage,0x200,(LPCWSTR)&output_buffer,1,_wide_char,2,(LPCSTR)0x0,(LPBOOL)0x0
                     );
   if (iVar1 != 0) {

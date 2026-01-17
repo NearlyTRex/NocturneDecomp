@@ -25,11 +25,11 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
   crt_process_c_build_command_line_FUN_006103a4(cmdline,in_stack_00000014,envblock,0);
   crt_memory_c_memset_FUN_005fde40(&local_6c,0,0x44);
   local_6c.wShowWindow = 1;
-  BVar1 = (*PTR_CreateProcessA_00611518)
+  BVar1 = (*g_CreateProcessAFunc)
                     ((LPCSTR)0x0,envblock,(LPSECURITY_ATTRIBUTES)0x0,(LPSECURITY_ATTRIBUTES)0x0,1,0,
                      reserved,(LPCSTR)0x0,&local_6c,&local_28);
   if (BVar1 == 0) {
-    DVar2 = (*GetLastError)();
+    DVar2 = (*g_GetLastErrorFunc)();
     if (((DVar2 == 5) || (DVar2 == 0xc1)) || (DVar2 == 0xa1)) {
       DVar2 = 2;
     }
@@ -38,30 +38,30 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
   else {
     if (mode == 0) {
       if ((g_WindowsPlatformVersion < 0x8000) || (3 < g_WindowsMinorVersion)) {
-        DVar2 = (*WaitForSingleObject)(local_28.hProcess,0xffffffff);
+        DVar2 = (*g_WaitForSingleObjectFunc)(local_28.hProcess,0xffffffff);
         if (DVar2 == 0) {
-          (*PTR_GetExitCodeProcess_00611590)(local_28.hProcess,(LPDWORD)&pvStack_18);
+          (*g_GetExitCodeProcessFunc)(local_28.hProcess,(LPDWORD)&pvStack_18);
         }
         else {
           pvStack_18 = (HANDLE)crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
         }
       }
       else {
-        (*Sleep)(1000);
+        (*g_SleepFunc)(1000);
         pvStack_18 = (HANDLE)0x103;
         do {
-          (*Sleep)(100);
-          BVar1 = (*PTR_GetExitCodeProcess_00611590)(local_28.hProcess,(LPDWORD)&pvStack_18);
+          (*g_SleepFunc)(100);
+          BVar1 = (*g_GetExitCodeProcessFunc)(local_28.hProcess,(LPDWORD)&pvStack_18);
           if (BVar1 == 0) {
             DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
             return DVar2;
           }
         } while (pvStack_18 == (HANDLE)0x103);
       }
-      (*CloseHandle)(local_28.hProcess);
+      (*g_CloseHandleFunc)(local_28.hProcess);
     }
     else if (mode == 3) {
-      (*CloseHandle)(local_28.hProcess);
+      (*g_CloseHandleFunc)(local_28.hProcess);
       pvStack_18 = (HANDLE)local_28.dwProcessId;
     }
     else {
@@ -69,10 +69,10 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
       BVar1 = 0;
       DVar2 = 0;
       lpTargetHandle = &pvStack_14;
-      hTargetProcessHandle = (*GetCurrentProcess)();
+      hTargetProcessHandle = (*g_GetCurrentProcessFunc)();
       hSourceHandle = local_28.hProcess;
-      hSourceProcessHandle = (*GetCurrentProcess)();
-      BVar1 = (*PTR_DuplicateHandle_0061152c)
+      hSourceProcessHandle = (*g_GetCurrentProcessFunc)();
+      BVar1 = (*g_DuplicateHandleFunc)
                         (hSourceProcessHandle,hSourceHandle,hTargetProcessHandle,lpTargetHandle,
                          DVar2,BVar1,dwOptions);
       pvStack_18 = pvStack_14;
@@ -81,7 +81,7 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
         pvStack_18 = pvStack_14;
       }
     }
-    (*CloseHandle)(local_28.hThread);
+    (*g_CloseHandleFunc)(local_28.hThread);
   }
   return (int)pvStack_18;
 }

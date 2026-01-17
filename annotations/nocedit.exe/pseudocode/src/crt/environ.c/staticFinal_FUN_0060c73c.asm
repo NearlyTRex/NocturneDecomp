@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   FreeEnvironmentStringsA* FreeEnvironmentStringsA = 00211dba
+;   FreeEnvironmentStringsA* g_FreeEnvironmentStringsAFunc = 00211dba
 ;   char* g_EnvironmentStrings = 00000000
 ;   char** g_EnvironmentBlock
 ;   undefined4 DAT_03f9c150
@@ -50,7 +50,7 @@ section .text
     JZ 0x0060c78a                       ; 0060c780
         ;   XREF to: 0060c78a (CONDITIONAL_JUMP)  ; LAB_0060c78a
     PUSH EAX                            ; 0060c782
-    CALL dword ptr CS:[0x611558]        ; 0060c783 | FreeEnvironmentStringsA
+    CALL dword ptr CS:[0x611558]        ; 0060c783 | g_FreeEnvironmentStringsAFunc
     POP EBP                             ; 0060c78a
         ;   Label: LAB_0060c78a
     POP ESI                             ; 0060c78b

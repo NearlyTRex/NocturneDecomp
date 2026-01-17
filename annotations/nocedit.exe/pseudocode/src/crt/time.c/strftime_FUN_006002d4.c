@@ -163,16 +163,16 @@ LAB_006004a2:
       }
     }
     else if (bVar2 < 0x6f) {
-      pacVar6 = (char (*) [4])&DAT_00658bf4;
+      pacVar6 = (char (*) [4])&0x0A;
     }
     else if (bVar2 < 0x77) {
       if (bVar2 < 0x72) {
         if (bVar2 != 0x70) goto LAB_006006b4;
         if (time_ptr->tm_hour < 0xc) {
-          pacVar6 = (char (*) [4])&DAT_00658c04;
+          pacVar6 = (char (*) [4])&0x41;
         }
         else {
-          pacVar6 = (char (*) [4])&DAT_00658c08;
+          pacVar6 = (char (*) [4])&0x50;
         }
       }
       else {
@@ -182,7 +182,7 @@ LAB_006004a2:
           goto LAB_0060030a;
         }
         if (bVar2 != 0x74) goto LAB_006006b4;
-        pacVar6 = (char (*) [4])&DAT_00658c0c;
+        pacVar6 = (char (*) [4])&0x09;
       }
     }
     else {

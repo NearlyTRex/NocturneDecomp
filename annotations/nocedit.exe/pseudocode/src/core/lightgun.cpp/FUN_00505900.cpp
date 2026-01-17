@@ -47,7 +47,7 @@ CLightGun * __cdecl core_lightgun_cpp_FUN_00505900(CLightGun *this_ptr)
   (pCVar3->base_weapon).fire_cooldown = 1.4013e-45;
   uVar1 = _DAT_00660a3c;
   (pCVar3->base_weapon).can_attach_light = 0;
-  uVar2 = DAT_00660a40;
+  uVar2 = 0x41F00000;
   pCVar3->field1_0x578[0x10] = '\0';
   pCVar3->field1_0x578[0x11] = '\0';
   pCVar3->field1_0x578[0x12] = '\0';

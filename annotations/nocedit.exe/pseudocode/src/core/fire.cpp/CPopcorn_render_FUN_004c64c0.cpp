@@ -35,9 +35,9 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   
   bVar2 = 0;
   vertex_ptr = g_CDemonRendererPtr->vertex_buffer_ptr;
-  local_48.x = (int)ROUND((this_ptr->base).position.x * 256f);
-  local_48.y = (int)ROUND((this_ptr->base).position.y * 256f);
-  local_48.z = (int)ROUND((this_ptr->base).position.z * 256f);
+  local_48.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
+  local_48.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
+  local_48.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr->projected_vertex,&local_48);
   iVar1 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(g_CDemonRendererPtr,vertex_ptr);
   if (iVar1 == 0) {
@@ -57,33 +57,33 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   local_30 = 0xbe000000;
   local_2c = 0xbe000000;
   local_28 = 0;
-  local_18.x = (int)ROUND(256f * -0.125);
-  local_18.y = (int)ROUND(256f * -0.125);
-  local_18.z = (int)ROUND(256f * 0.0);
+  local_18.x = (int)ROUND(256.0f * -0.125);
+  local_18.y = (int)ROUND(256.0f * -0.125);
+  local_18.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_18);
   local_30 = 0x3e000000;
   local_2c = 0xbe000000;
   local_28 = 0;
-  local_3c.x = (int)ROUND(256f * 0.125);
-  local_3c.y = (int)ROUND(256f * -0.125);
-  local_3c.z = (int)ROUND(256f * 0.0);
+  local_3c.x = (int)ROUND(256.0f * 0.125);
+  local_3c.y = (int)ROUND(256.0f * -0.125);
+  local_3c.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_3c);
   local_30 = 0x3e000000;
   local_2c = 0x3e000000;
   local_28 = 0;
-  local_6c.x = (int)ROUND(256f * 0.125);
-  local_6c.y = (int)ROUND(256f * 0.125);
-  local_6c.z = (int)ROUND(256f * 0.0);
+  local_6c.x = (int)ROUND(256.0f * 0.125);
+  local_6c.y = (int)ROUND(256.0f * 0.125);
+  local_6c.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_6c);
   local_30 = 0xbe000000;
   local_2c = 0x3e000000;
   local_28 = 0;
-  local_54.x = (int)ROUND(256f * -0.125);
-  local_54.y = (int)ROUND(256f * 0.125);
-  local_54.z = (int)ROUND(256f * 0.0);
+  local_54.x = (int)ROUND(256.0f * -0.125);
+  local_54.y = (int)ROUND(256.0f * 0.125);
+  local_54.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_54);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -98,9 +98,9 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   g_RenderVertexBuffer[3].u = 7.34684e-40;
   g_RenderVertexBuffer[0].w_recip = (float)(0xffff - (int)g_PerspectiveReciprocal);
   g_RenderVertexBuffer[3].v = 7.34684e-40;
-  CStack_24.x = (int)ROUND((this_ptr->base).position.x * 256f);
-  CStack_24.y = (int)ROUND((this_ptr->base).position.y * 256f);
-  CStack_24.z = (int)ROUND((this_ptr->base).position.z * 256f);
+  CStack_24.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
+  CStack_24.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
+  CStack_24.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
   g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;

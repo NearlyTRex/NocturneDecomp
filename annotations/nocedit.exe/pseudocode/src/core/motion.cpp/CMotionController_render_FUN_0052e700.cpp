@@ -18,7 +18,6 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
   char *pcVar5;
   int iVar6;
   char *pcVar7;
-  char local_a8 [100];
   CBoundingBox3D local_44;
   CVector3i local_2c;
   float local_20;
@@ -32,9 +31,9 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
     pCVar3 = (*actor->vtable->getBoundingBox)(actor,&local_44);
     local_1c = (pCVar3->max).y;
     local_18 = 0;
-    local_2c.x = (int)ROUND(local_20 * 256f);
-    local_2c.y = (int)ROUND(local_1c * 256f);
-    local_2c.z = (int)ROUND(256f * 0.0);
+    local_2c.x = (int)ROUND(local_20 * 256.0f);
+    local_2c.y = (int)ROUND(local_1c * 256.0f);
+    local_2c.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_2c);
     pSVar2 = g_CDemonRendererPtr->vertex_buffer_ptr;
@@ -46,7 +45,7 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
          (pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr),
          pSVar4->state_index == this_ptr->state_index)) {
         pcVar5 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(this_ptr);
-        pcVar7 = local_a8;
+        pcVar7 = &stack0xffffff58;
         do {
           cVar1 = *pcVar5;
           *pcVar7 = cVar1;
@@ -60,12 +59,12 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
       else {
         core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);
         core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(this_ptr);
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,"%s -> %s");
+        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,"%s -> %s");
       }
-      engine_2d_c_drawText_FUN_00401fd0(local_a8,local_14,iVar6 + -0x16);
-      core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,"%s : %5.2f");
-      engine_2d_c_drawText_FUN_00401fd0(local_a8,local_14,iVar6 + -0xb);
+      engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0x16);
+      pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
+      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,"%s : %5.2f",pSVar4);
+      engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0xb);
       return;
     }
   }

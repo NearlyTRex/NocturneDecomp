@@ -88,7 +88,7 @@ LAB_00537aa5:
     }
     else {
       iVar4 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                        (g_CEditorToolsPtr,"Enter minimum random speed",&DAT_006804b0,true,
+                        (g_CEditorToolsPtr,"Enter minimum random speed",&0x3F666666,true,
                          0.01,100.0,true);
       if (iVar4 == 0) {
         in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
@@ -98,8 +98,8 @@ LAB_00537aa5:
       }
       else {
         iVar4 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                          (g_CEditorToolsPtr,"Enter maximum random speed",&DAT_006804b4,true,
-                           DAT_006804b0,100.0,true);
+                          (g_CEditorToolsPtr,"Enter maximum random speed",&0x3F8CCCCD,true,
+                           0x3F666666,100.0,true);
         if (iVar4 == 0) {
           in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -127,7 +127,7 @@ LAB_00537aa5:
                    iVar4 != 0)))) &&
                  (iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                                     (&DAT_00680580,pCVar3->actor_name,0), iVar4 != 0)) {
-                fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(DAT_006804b0,DAT_006804b4);
+                fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0x3F666666,0x3F8CCCCD);
                 pCVar2 = pCVar3->vtable;
                 *(float *)(pCVar3[0x8d].create_event + 0x34) = fStack_14;
                 (*pCVar2->setup)(pCVar3);

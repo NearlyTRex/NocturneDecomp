@@ -59,9 +59,9 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
       local_3c = (float)(fVar6 * fVar8 * fVar10);
       local_44 = (float)(fVar7 * fVar8 * fVar10);
       local_40 = (float)(fVar9 * fVar8);
-      local_50.x = (int)ROUND(local_44 * 256f);
-      local_50.y = (int)ROUND(local_40 * 256f);
-      local_50.z = (int)ROUND(local_3c * 256f);
+      local_50.x = (int)ROUND(local_44 * 256.0f);
+      local_50.y = (int)ROUND(local_40 * 256.0f);
+      local_50.z = (int)ROUND(local_3c * 256.0f);
       local_8 = iVar5;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
@@ -71,15 +71,15 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
       *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar4) = 0x800000;
       *(uint *)((int)&pCVar3->vertex_buffer_ptr->v + iVar4) = 0x800000;
       pSVar1 = pCVar3->vertex_buffer_ptr;
-      dVar11 = crt_math_c_round_FUN_005fe6b0((double)((this_ptr->color).r * 255f));
+      dVar11 = crt_math_c_round_FUN_005fe6b0((double)((this_ptr->color).r * 255.0f));
       local_c = (int)ROUND(dVar11);
       *(int *)((int)&pSVar1->light + iVar4) = local_c;
       iVar2 = *extraout_EDX;
-      dVar11 = crt_math_c_round_FUN_005fe6b0((double)((this_ptr->color).g * 255f));
+      dVar11 = crt_math_c_round_FUN_005fe6b0((double)((this_ptr->color).g * 255.0f));
       local_10 = (int)ROUND(dVar11);
       *(int *)(iVar2 + iVar4 + 0x24) = local_10;
       iVar2 = *extraout_EDX_00;
-      dVar11 = crt_math_c_round_FUN_005fe6b0((double)((this_ptr->color).b * 255f));
+      dVar11 = crt_math_c_round_FUN_005fe6b0((double)((this_ptr->color).b * 255.0f));
       local_14 = (int)ROUND(dVar11);
       iVar5 = iVar5 + 1;
       *(int *)(iVar4 + 0x28 + iVar2) = local_14;

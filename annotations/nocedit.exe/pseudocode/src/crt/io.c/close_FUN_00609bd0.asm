@@ -13,7 +13,7 @@
 ;   crt_stdio.c_fclose_force_FUN_00601fd0 at 0060203e
 ;
 ; Referenced Globals:
-;   CloseHandle* CloseHandle = 00211c38
+;   CloseHandle* g_CloseHandleFunc = 00211c38
 ;   uint g_MaxHandleCount = 0x14
 ;   SIOControlBlock* g_IOControlBlock = 00000000
 ;   IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr = 00000000
@@ -81,7 +81,7 @@ section .text
         ;   XREF to: 00609c5f (CONDITIONAL_JUMP)  ; LAB_00609c5f
     MOV ESI,dword ptr [ESP]             ; 00609c3f
     PUSH ESI                            ; 00609c42
-    CALL dword ptr CS:[0x611504]        ; 00609c43 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 00609c43 | g_CloseHandleFunc
     TEST EAX,EAX                        ; 00609c4a
     JNZ 0x00609c5f                      ; 00609c4c
         ;   XREF to: 00609c5f (CONDITIONAL_JUMP)  ; LAB_00609c5f

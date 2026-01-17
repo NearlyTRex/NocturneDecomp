@@ -28,7 +28,7 @@ crt_stdio_c_write_FUN_006038c0(int file_handle_index,void *buffer,int bytes_to_w
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file_handle_index);
     uVar1 = crt_io_c_getFileTypeFlags_FUN_006088b0(file_handle_index);
     if ((uVar1 & 0x80) != 0) {
-      DVar2 = (*SetFilePointer)(hFile,0,(PLONG)0x0,2);
+      DVar2 = (*g_SetFilePointerFunc)(hFile,0,(PLONG)0x0,2);
       if (DVar2 == 0xffffffff) {
         (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
         DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
@@ -43,9 +43,8 @@ crt_stdio_c_write_FUN_006038c0(int file_handle_index,void *buffer,int bytes_to_w
         return iVar3;
       }
     }
-    BVar4 = (*PTR_WriteFile_00611678)
-                      (hFile,in_stack_00000010,bytes_to_write,(LPDWORD)&stack0xfffffff4,
-                       (LPOVERLAPPED)0x0);
+    BVar4 = (*g_WriteFileFunc)(hFile,in_stack_00000010,bytes_to_write,(LPDWORD)&stack0xfffffff4,
+                               (LPOVERLAPPED)0x0);
     if (BVar4 == 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
       DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();

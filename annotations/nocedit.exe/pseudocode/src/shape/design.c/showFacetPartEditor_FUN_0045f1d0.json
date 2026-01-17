@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 1620,
-    "complexity_score": 797,
+    "complexity_score": 1517,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 135,
     "pseudocode_lines": 592,
-    "suspect_count": 19,
+    "suspect_count": 90,
     "suspect_types": [
+      "call_esp_anchor",
       "format_string_mismatch",
       "pointer_cast",
-      "sub_artifact"
+      "sub_artifact",
+      "variadic_anchor"
     ],
     "total_lines": 2212
   },
@@ -1065,221 +1067,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "0045f2de": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f372": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f3e3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f423": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f430": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f43e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f452": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f473": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f48d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f567": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f7ce": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f809": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f83d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f86f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f894": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f8c6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f900": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f933": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f941": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f981": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f9b7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f9d5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045f9fb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fa0e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fa1c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fa34": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fa5b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fa76": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045faa0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fab5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fadc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045faf7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fb21": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fb36": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fb5d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fb78": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fba2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fbfd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fc24": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fce8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fd70": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fe78": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fe95": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045feaf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045fef1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045ff23": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045ff53": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045ff6d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045ff8b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045ffa8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0045ffc2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460068": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460096": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "004600ed": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0046011b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460147": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460162": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460190": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "004601ff": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0046022d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0046027f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "004602d5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460303": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "0046033f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460418": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460453": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460494": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460558": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460593": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460705": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "00460718": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.795592705167174,
     "instruction_count": 1316,
@@ -1326,7 +1113,331 @@
     },
     "pcode_op_count": 8943
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 268,
+    "local_size": 268,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 294,
+      "match": "SUB84",
+      "text": "local_d8 = SUB84 /* extract 2-byte value */((double)local_2c,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 475,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 476,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 481,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ModelPolygonData +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 484,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)g_ModelPolygonData +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 487,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)g_ModelPolygonData +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 546,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 547,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 16,
       "call_address": "0045f838",
@@ -1726,6 +1837,127 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00460553 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"Detail : %04x / %05d\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "Detail : %04x / %05d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 232,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Detail : %04x / %05d\",g_EditorDetailLevel);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Renderer : %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Renderer : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 238,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Renderer : %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Current part : %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Current part : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 274,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Current part : %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" : %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " : %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 280,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" : %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " : %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 284,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" : %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " : %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 288,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 370,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"P: %x B: %x H: %x\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "P: %x B: %x H: %x",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 382,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"P: %x B: %x H: %x\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Selected polygon : %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Selected polygon : %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 388,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Selected polygon : %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Texture : %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Texture : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 425,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Texture : %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%03d : %+011.6f %+011.6f %+011.6f\" has 4 specifiers but 0 arguments after it",
+      "expected_args": 4,
+      "format_string": "%03d : %+011.6f %+011.6f %+011.6f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 458,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"%03d : %+011.6f %+011.6f %+011.6f\");",
+      "text": "Format string expects 4 args but got 0",
+      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,
@@ -2324,453 +2556,6 @@
       "target_address": "0x4648e0",
       "text": "Direct CALL at 00460713, ADD ESP at 00460718 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 268,
-    "local_size": 268,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_108",
-        "offset": -264,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_100",
-        "offset": -256,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_f8",
-        "offset": -248,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_f0",
-        "offset": -240,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_e8",
-        "offset": -232,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e4",
-        "offset": -228,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_dc",
-        "offset": -220,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_d8",
-        "offset": -216,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_d0",
-        "offset": -208,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_cc",
-        "offset": -204,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c4",
-        "offset": -196,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c0",
-        "offset": -192,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b8",
-        "offset": -184,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 294,
-      "match": "SUB84",
-      "text": "local_d8 = SUB84 /* extract 2-byte value */((double)local_2c,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 475,
-      "match": "(SShapeEditorPolygon *)((int)",
-      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 476,
-      "match": "(SShapeEditorPolygon *)((int)",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 481,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_ModelPolygonData +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 484,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)g_ModelPolygonData +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 487,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)g_ModelPolygonData +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 546,
-      "match": "(SShapeEditorPolygon *)((int)",
-      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 547,
-      "match": "(SShapeEditorPolygon *)((int)",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"Detail : %04x / %05d\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "Detail : %04x / %05d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 232,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Detail : %04x / %05d\",g_EditorDetailLevel);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Renderer : %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Renderer : %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 238,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Renderer : %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Current part : %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Current part : %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 274,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Current part : %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" : %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": " : %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 280,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" : %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": " : %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 284,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" : %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": " : %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 288,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 370,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"%s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"P: %x B: %x H: %x\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "P: %x B: %x H: %x",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 382,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"P: %x B: %x H: %x\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Selected polygon : %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Selected polygon : %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 388,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Selected polygon : %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Texture : %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Texture : %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 425,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Texture : %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%03d : %+011.6f %+011.6f %+011.6f\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "%03d : %+011.6f %+011.6f %+011.6f",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 458,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"%03d : %+011.6f %+011.6f %+011.6f\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

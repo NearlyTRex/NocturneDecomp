@@ -60,11 +60,11 @@ core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30
     (this_ptr->base).position.z = (int)pCVar3->z;
   }
   (this_ptr->camera_origin).x =
-       (int)ROUND((float)(this_ptr->base).position.x * 256f);
+       (int)ROUND((float)(this_ptr->base).position.x * 256.0f);
   (this_ptr->camera_origin).y =
-       (int)ROUND((float)(this_ptr->base).position.y * 256f);
+       (int)ROUND((float)(this_ptr->base).position.y * 256.0f);
   (this_ptr->camera_origin).z =
-       (int)ROUND((float)(this_ptr->base).position.z * 256f);
+       (int)ROUND((float)(this_ptr->base).position.z * 256.0f);
   fVar4 = (float10)(this_ptr->transform_state).saved_source_matrix.m[0].x;
   dVar6 = crt_math_c_round_FUN_005fe6b0
                     ((double)((float)(this_ptr->transform_state).saved_source_matrix.m[0].z *

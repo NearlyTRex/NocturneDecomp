@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   play_state
 ;
 ; Referenced Globals:
-;   mciSendStringA* mciSendStringA = 00211850
+;   mciSendStringA* g_mciSendStringAFunc = 00211850
 ;   TerminatedCString s_play_mov_fullscreen_noti_00658250
 ;   TerminatedCString s_play_mov_window_notify_0065826b
 ;   TerminatedCString s_pause_mov_00658282
@@ -42,7 +42,7 @@ section .text
     PUSH 0x0                            ; 005f49c1
     PUSH 0x0                            ; 005f49c3
     PUSH 0x658250                       ; 005f49c5 | = "play mov fullscreen notify"
-    CALL dword ptr CS:[0x611410]        ; 005f49ca | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f49ca | g_mciSendStringAFunc
         ;   Label: LAB_005f49ca
     POP EDI                             ; 005f49d1
     POP EBX                             ; 005f49d2
@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 005f49e8
     PUSH EDI                            ; 005f49e9
     PUSH 0x65826b                       ; 005f49ea | = "play mov window notify"
-    CALL dword ptr CS:[0x611410]        ; 005f49ef | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f49ef | g_mciSendStringAFunc
     POP EDI                             ; 005f49f6
     POP EBX                             ; 005f49f7
     RET                                 ; 005f49f8

@@ -23,7 +23,7 @@ void __cdecl core_morph_cpp_FUN_0052b160(void)
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
   dVar4 = crt_math_c_round_FUN_005fe6b0
                     ((double)(in_stack_00000008 * (float)65535 *
-                             (2f - in_stack_00000008)));
+                             (2.0f - in_stack_00000008)));
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr,
              (uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x10 |

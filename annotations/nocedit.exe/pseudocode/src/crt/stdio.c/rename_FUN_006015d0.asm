@@ -13,7 +13,7 @@
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004fb660 at 004fb87d
 ;
 ; Referenced Globals:
-;   MoveFileA* PTR_MoveFileA_006115f0 = 00212086
+;   MoveFileA* g_MoveFileAFunc = 00212086
 ;
 ; Called Functions:
 ;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
@@ -29,7 +29,7 @@ section .text
     PUSH EDX                            ; 006015d5
     MOV EBX,dword ptr [ESP + 0xc]       ; 006015d6
     PUSH EBX                            ; 006015da
-    CALL dword ptr CS:[0x6115f0]        ; 006015db | PTR_MoveFileA_006115f0
+    CALL dword ptr CS:[0x6115f0]        ; 006015db | g_MoveFileAFunc
     TEST EAX,EAX                        ; 006015e2
     JNZ 0x006015ed                      ; 006015e4
         ;   XREF to: 006015ed (CONDITIONAL_JUMP)  ; LAB_006015ed

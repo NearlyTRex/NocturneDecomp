@@ -33,7 +33,7 @@ int __watcallStack crt_stdio_c_DrainConsoleInputWithBuffering_FUN_0060b2e0(HANDL
     }
   }
   do {
-    BVar1 = (*PTR_ReadConsoleInputA_00611600)(hConsoleInput,&local_28,1,&local_14);
+    BVar1 = (*g_ReadConsoleInputAFunc)(hConsoleInput,&local_28,1,&local_14);
     if (BVar1 == 0) {
       return -1;
     }

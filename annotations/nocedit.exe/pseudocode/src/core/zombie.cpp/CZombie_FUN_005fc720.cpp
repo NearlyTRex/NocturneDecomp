@@ -17,47 +17,47 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fc720(CZombie *this_ptr)
   int iVar3;
   CVector3f *in_stack_00000008;
   int bone_index;
-  CVector3f CStack_5c;
-  CVector3f CStack_50;
-  CVector3f local_44;
-  CVector3f CStack_38;
-  CVector3f local_2c;
-  CVector3f CStack_20;
-  int iStack_14;
+  CVector3f local_60;
+  CVector3f local_54;
+  CVector3f local_48;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
+  int local_18;
   
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            (&(this_ptr->base_enemy).base_character.model,&local_2c,
+            (&(this_ptr->base_enemy).base_character.model,&local_30,
              *(int *)(this_ptr->field4_0xbf48 + 0x28));
-  if (&local_2c != in_stack_00000008) {
-    in_stack_00000008->x = local_2c.x;
-    in_stack_00000008->y = local_2c.y;
-    in_stack_00000008->z = local_2c.z;
+  if (&local_30 != in_stack_00000008) {
+    in_stack_00000008->x = local_30.x;
+    in_stack_00000008->y = local_30.y;
+    in_stack_00000008->z = local_30.z;
   }
   iVar3 = 1;
-  iStack_14 = 0;
+  local_18 = 0;
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
   do {
-    switch((iStack_14 + (this_ptr->base_enemy).base_character.base_actor.field7_0x6c) % 4) {
+    switch((local_18 + (this_ptr->base_enemy).base_character.base_actor.field7_0x6c) % 4) {
     case 0:
       if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
           [*(int *)(this_ptr->field4_0xbf48 + 0x30)] != 0) {
         bone_index = *(int *)(this_ptr->field4_0xbf48 + 0x18);
-        pCVar1 = &CStack_20;
+        pCVar1 = &local_24;
 LAB_005fc7ac:
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr_00,pCVar1,bone_index);
-        if (&local_44 != pCVar1) {
-          local_44.x = pCVar1->x;
-          local_44.y = pCVar1->y;
-          local_44.z = pCVar1->z;
+        if (&local_48 != pCVar1) {
+          local_48.x = pCVar1->x;
+          local_48.y = pCVar1->y;
+          local_48.z = pCVar1->z;
         }
-        local_44.y = local_2c.y * (float)_DAT_00658a35 + local_44.y * (float)_DAT_00658a2d;
-        local_44.x = local_2c.x * (float)_DAT_00658a25 + local_44.x * (float)_DAT_00658a25;
+        local_48.y = local_30.y * (float)_DAT_00658a35 + local_48.y * (float)_DAT_00658a2d;
+        local_48.x = local_30.x * (float)_DAT_00658a25 + local_48.x * (float)_DAT_00658a25;
         pCVar1 = in_stack_00000008 + iVar3;
-        if (pCVar1 != &local_44) {
-          pCVar1->x = local_44.x;
-          pCVar1->y = local_44.y;
-          pCVar1->z = local_44.z;
+        if (pCVar1 != &local_48) {
+          pCVar1->x = local_48.x;
+          pCVar1->y = local_48.y;
+          pCVar1->z = local_48.z;
         }
 LAB_005fc82e:
         iVar3 = iVar3 + 1;
@@ -67,7 +67,7 @@ LAB_005fc82e:
       if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
           [*(int *)(this_ptr->field4_0xbf48 + 0x38)] != 0) {
         bone_index = *(int *)(this_ptr->field4_0xbf48 + 0x1c);
-        pCVar1 = &CStack_50;
+        pCVar1 = &local_54;
         goto LAB_005fc7ac;
       }
       break;
@@ -75,7 +75,7 @@ LAB_005fc82e:
       if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
           [*(int *)(this_ptr->field4_0xbf48 + 0x48)] != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr_00,&CStack_38,*(int *)(this_ptr->field4_0xbf48 + 4));
+                           (this_ptr_00,&local_3c,*(int *)(this_ptr->field4_0xbf48 + 4));
         pCVar2 = in_stack_00000008 + iVar3;
         if (pCVar2 != pCVar1) {
           pCVar2->x = pCVar1->x;
@@ -89,7 +89,7 @@ LAB_005fc82e:
       if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
           [*(int *)(this_ptr->field4_0xbf48 + 0x44)] != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr_00,&CStack_5c,*(int *)(this_ptr->field4_0xbf48 + 0x2c));
+                           (this_ptr_00,&local_60,*(int *)(this_ptr->field4_0xbf48 + 0x2c));
         pCVar2 = in_stack_00000008 + iVar3;
         if (pCVar2 != pCVar1) {
           pCVar2->x = pCVar1->x;
@@ -99,8 +99,8 @@ LAB_005fc82e:
         goto LAB_005fc82e;
       }
     }
-    iStack_14 = iStack_14 + 1;
-    if (3 < iStack_14) {
+    local_18 = local_18 + 1;
+    if (3 < local_18) {
       return iVar3;
     }
   } while( true );

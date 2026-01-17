@@ -18,11 +18,10 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
   FILE *file_ptr;
   char *pcVar5;
   int *piVar6;
-  float in_stack_fffffde4;
-  char acStack_218 [256];
-  char acStack_118 [256];
-  int iStack_18;
-  uint uStack_14;
+  uint uStack00000078;
+  int iStack0000007c;
+  float fVar7;
+  char acStack_b4 [164];
   
   if (g_CheatSystemEnabled == 0) {
     if (this_ptr->cutscene_skippable == 0) {
@@ -128,17 +127,19 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x40);
     if ((iVar4 != 0) && (this_ptr->letterbox_mode == 0)) {
       core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr,"quicksavedgame.noc");
+      fVar7 = 2.0;
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Quick Save");
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,in_stack_fffffde4);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,fVar7);
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x43), iVar4 != 0)) {
       file_ptr = engine_dosio_c_getFile_FUN_00481a50
                            ("save","quicksavedgame.noc","rb");
       if (file_ptr == (FILE *)0x0) {
+        fVar7 = 2.0;
         pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("No quicked saved game to load");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,in_stack_fffffde4);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,fVar7);
       }
       else {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\game.cpp",0x975);
@@ -222,8 +223,8 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         this_ptr->gamma = 0x8000;
       }
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_118,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,acStack_118,1.0);
+                (acStack_b4,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,acStack_b4,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr->gamma);
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x58);
@@ -234,8 +235,8 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         this_ptr->gamma = 0x10000;
       }
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_218,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,acStack_218,1.0);
+                (&stack0xfffffe54,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe54,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr->gamma);
     }
     if (((this_ptr->velocity_debug_enabled != 0) &&
@@ -246,12 +247,9 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
     if (((this_ptr->velocity_debug_enabled != 0) &&
         (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar4 != 0)) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e), iVar4 != 0)) {
-      uStack_14 = 0x3ca3d70a;
-      iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-      if (iVar4 != 0) {
-        uStack_14 = 0xbca3d70a;
-      }
-      iStack_18 = g_CDemonCameraInstance.corona_blend_factor;
+      uStack00000078 = 0x3ca3d70a;
+      (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      iStack0000007c = g_CDemonCameraInstance.corona_blend_factor;
       for (iVar4 = 0; iVar4 < g_CDemonSetPtr->camera_count; iVar4 = iVar4 + 1) {
         core_set_cpp_CDemonSet_FUN_00570e20(g_CDemonSetPtr);
       }

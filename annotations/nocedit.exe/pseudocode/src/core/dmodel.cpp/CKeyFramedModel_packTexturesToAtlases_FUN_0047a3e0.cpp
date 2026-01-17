@@ -19,18 +19,24 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
   int iVar6;
   int iVar7;
   int max_u;
-  SCramConfig *pSVar8;
-  char *pcVar9;
-  float10 fVar10;
-  double dVar11;
-  float fVar12;
-  float fStack_bc;
-  SCramConfig local_b8;
-  SMRGLTextureExtended *pSStack_40;
-  char *local_3c;
-  int iStack_38;
-  char *pcStack_34;
-  int iStack_30;
+  char *pcVar8;
+  float10 fVar9;
+  double dVar10;
+  float fVar11;
+  float fStack_b4;
+  float afStack_b0 [18];
+  int local_68;
+  int local_64;
+  int local_60;
+  int local_5c;
+  int local_58;
+  int local_54;
+  int local_50;
+  int local_4c;
+  int iStack_40;
+  SMRGLTextureExtended *local_3c;
+  int iStack_34;
+  char *pcStack_30;
   int iStack_2c;
   int iStack_28;
   int local_24;
@@ -43,7 +49,7 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
   shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
   local_24 = 0;
   if (0 < model_ptr->texture_count) {
-    local_3c = model_ptr->texture_list[0].base.texture_name;
+    local_3c = (SMRGLTextureExtended *)model_ptr->texture_list[0].base.texture_name;
     do {
       iVar7 = 0x7fffffff;
       max_u = -0x7fffffff;
@@ -79,91 +85,103 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
         } while (local_18 < model_ptr->poly_count);
       }
       if (iVar7 <= max_u) {
-        shape_design_c_cramTextures_FUN_0046a970(local_3c,iVar7,iVar4,max_u,iVar5);
+        shape_design_c_cramTextures_FUN_0046a970((char *)local_3c,iVar7,iVar4,max_u,iVar5);
       }
-      local_3c = local_3c + 0x48;
+      local_3c = local_3c + 1;
       local_24 = local_24 + 1;
     } while (local_24 < model_ptr->texture_count);
   }
-  shape_design_c_initializeCramConfig_FUN_0046b6e0(&local_b8);
-  pSVar8 = &local_b8;
+  shape_design_c_initializeCramConfig_FUN_0046b6e0((SCramConfig *)&stack0xffffff48);
+  pcVar8 = &stack0xffffff48;
   do {
     cVar1 = *atlas_filename;
-    pSVar8->filename[0] = cVar1;
+    *pcVar8 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = atlas_filename[1];
     atlas_filename = atlas_filename + 2;
-    pSVar8->filename[1] = cVar1;
-    pSVar8 = (SCramConfig *)(pSVar8->filename + 2);
+    pcVar8[1] = cVar1;
+    pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  local_b8.initial_value = pack_parameter;
-  local_b8.enable_optimization = 1;
-  local_b8.coverage_threshold = 0x5f;
-  local_b8.algorithm_mode = 2;
-  local_b8.enable_gap_filling = quality_parameter;
-  local_b8.enable_scaling = 1;
-  local_b8.enable_rotation = 1;
-  local_b8.enable_flipping = 1;
-  shape_design_c_cramTextureList_FUN_0046bb80(&local_b8);
-  iStack_30 = 0;
+  local_68 = pack_parameter;
+  local_5c = 1;
+  local_60 = 0x5f;
+  local_64 = 2;
+  local_58 = quality_parameter;
+  local_4c = 1;
+  local_54 = 1;
+  local_50 = 1;
+  shape_design_c_cramTextureList_FUN_0046bb80((SCramConfig *)&stack0xffffff48);
+  iStack_2c = 0;
   if (0 < model_ptr->poly_count) {
-    pSStack_40 = model_ptr->texture_list;
-    iStack_38 = 0;
-    iStack_2c = 0;
+    local_3c = model_ptr->texture_list;
+    iStack_34 = 0;
+    iStack_28 = 0;
     do {
-      piVar2 = (int *)((int)model_ptr->poly_texture_index_list + iStack_2c);
+      piVar2 = (int *)((int)model_ptr->poly_texture_index_list + iStack_28);
       if (*piVar2 < 0) {
         *piVar2 = 0;
       }
-      iStack_28 = shape_design_c_findTextureByFilename_FUN_0046dfc0
-                            (pSStack_40
-                             [*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c)].base.
-                             texture_name);
-      iVar5 = (int)model_ptr->poly_vert_list + iStack_38;
+      local_24 = shape_design_c_findTextureByFilename_FUN_0046dfc0
+                           (local_3c[*(int *)((int)model_ptr->poly_texture_index_list + iStack_28)].
+                            base.texture_name);
+      iVar5 = (int)model_ptr->poly_vert_list + iStack_34;
       iVar7 = 0;
       iVar4 = iVar5;
       if (0 < *(int *)(iVar5 + 4)) {
         do {
-          shape_design_c_fixupCramUV_FUN_0046e090
-                    (iStack_30,(float *)&stack0xffffff3c,(float *)&stack0xffffff38);
-          fVar10 = (float10)65536;
-          fVar12 = 6.580217e-39;
-          dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_bc * fVar10));
-          local_b8.final_mode = (int)ROUND(dVar11);
-          *(int *)(iVar4 + 0x1c) = local_b8.final_mode;
-          dVar11 = crt_math_c_round_FUN_005fe6b0((double)(fVar10 * (float10)fVar12));
-          local_b8.enable_scaling = (int)ROUND(dVar11);
-          *(int *)(iVar4 + 0x20) = local_b8.enable_scaling;
+          afStack_b0[0] = (float)*(int *)(iVar4 + 0x1c) * (float)1.52587890625e-05;
+          fStack_b4 = (float)*(int *)(iVar4 + 0x20) * (float)1.52587890625e-05;
+          if (afStack_b0[0] < 0.0) {
+            afStack_b0[0] = 0.0;
+          }
+          if ((float)255.999 < afStack_b0[0]) {
+            afStack_b0[0] = 255.999;
+          }
+          if (fStack_b4 < 0.0) {
+            fStack_b4 = 0.0;
+          }
+          if ((float)255.999 < fStack_b4) {
+            fStack_b4 = 255.999;
+          }
+          shape_design_c_fixupCramUV_FUN_0046e090(local_1c,afStack_b0,&fStack_b4);
+          fVar9 = (float10)65536;
+          fVar11 = 6.580217e-39;
+          dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)afStack_b0[0] * fVar9));
+          local_3c = (SMRGLTextureExtended *)(int)ROUND(dVar10);
+          *(SMRGLTextureExtended **)(iVar4 + 0x1c) = local_3c;
+          dVar10 = crt_math_c_round_FUN_005fe6b0((double)(fVar9 * (float10)fVar11));
+          iStack_40 = (int)ROUND(dVar10);
+          *(int *)(iVar4 + 0x20) = iStack_40;
           iVar7 = iVar7 + 1;
           iVar4 = iVar4 + 0xc;
         } while (iVar7 < *(int *)(iVar5 + 4));
       }
-      iVar4 = shape_design_c_getAtlasMapIndex_FUN_0046e030(iStack_30);
-      iStack_30 = iStack_30 + 1;
-      *(int *)((int)model_ptr->poly_texture_index_list + iStack_2c) = iVar4;
-      iStack_2c = iStack_2c + 4;
-      iStack_38 = iStack_38 + 0x48;
-    } while (iStack_30 < model_ptr->poly_count);
+      iVar4 = shape_design_c_getAtlasMapIndex_FUN_0046e030(local_24);
+      iStack_2c = iStack_2c + 1;
+      *(int *)((int)model_ptr->poly_texture_index_list + iStack_28) = iVar4;
+      iStack_28 = iStack_28 + 4;
+      iStack_34 = iStack_34 + 0x48;
+    } while (iStack_2c < model_ptr->poly_count);
   }
   iVar4 = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
   iVar5 = 0;
   model_ptr->texture_count = iVar4;
   if (0 < iVar4) {
-    pcStack_34 = model_ptr->texture_list[0].base.texture_name;
+    pcStack_30 = model_ptr->texture_list[0].base.texture_name;
     do {
       pcVar3 = shape_design_c_getTextureName_FUN_0046e060(iVar5);
-      pcVar9 = pcStack_34;
+      pcVar8 = pcStack_30;
       do {
         cVar1 = *pcVar3;
-        *pcVar9 = cVar1;
+        *pcVar8 = cVar1;
         if (cVar1 == '\0') break;
         cVar1 = pcVar3[1];
         pcVar3 = pcVar3 + 2;
-        pcVar9[1] = cVar1;
-        pcVar9 = pcVar9 + 2;
+        pcVar8[1] = cVar1;
+        pcVar8 = pcVar8 + 2;
       } while (cVar1 != '\0');
       iVar5 = iVar5 + 1;
-      pcStack_34 = pcStack_34 + 0x48;
+      pcStack_30 = pcStack_30 + 0x48;
     } while (iVar5 < model_ptr->texture_count);
   }
   core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(model_ptr);

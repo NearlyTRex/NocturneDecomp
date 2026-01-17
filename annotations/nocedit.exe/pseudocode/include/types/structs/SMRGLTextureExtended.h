@@ -1,0 +1,13 @@
+#pragma once
+
+// Dependencies
+#include "system/basetypes.h"
+#include "types/structs/SMRGLTextureBasic.h"
+
+// Structure: SMRGLTextureExtended
+// Ghidra size: 0x48 (72 bytes)
+typedef struct SMRGLTextureExtended {
+    SMRGLTextureBasic base; // 0x0
+    char unknown[48]; // 0x18
+} SMRGLTextureExtended;
+

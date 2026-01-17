@@ -1,20 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 361,
+    "complexity_score": 371,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 176,
-    "suspect_count": 16,
+    "pseudocode_lines": 161,
+    "suspect_count": 17,
     "suspect_types": [
+      "call_esp_anchor",
       "extra_output",
       "param_count_too_few",
+      "pointer_cast",
+      "stack_align_anchor",
       "stack_param",
       "suspect_float",
       "warning_unreachable"
     ],
-    "total_lines": 464
+    "total_lines": 449
   },
   "cross_references": [
     {
@@ -93,17 +96,6 @@
     "declared_params": 0,
     "estimated_params": 4
   },
-  "pcode_overrides": {
-    "0041aa4c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff54,4)"
-    ],
-    "0041aac7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff54,4)"
-    ],
-    "0041adb9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff54,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.815261044176707,
     "instruction_count": 249,
@@ -144,44 +136,6 @@
     },
     "pcode_op_count": 1697
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
-      "fix_address": "0041aa4c",
-      "frame_offset": 172,
-      "match": "AND ESP",
-      "sub_esp_offset": 172,
-      "text": "Stack alignment at 0041aa4c (SUB ESP, 0xac before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0041aac2",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0041aac7",
-      "frame_offset": 172,
-      "match": "CALL...ADD ESP",
-      "return_address": "0041aac7",
-      "target_address": "0x471d30",
-      "text": "Direct CALL at 0041aac2, ADD ESP at 0041aac7 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0041adb4",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0041adb9",
-      "frame_offset": 172,
-      "match": "CALL...ADD ESP",
-      "return_address": "0041adb9",
-      "target_address": "0x41a630",
-      "text": "Direct CALL at 0041adb4, ADD ESP at 0041adb9 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 196,
     "local_size": 196,
@@ -491,94 +445,80 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 13,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 73,
-      "match": "6.030683e-39",
-      "text": "CStack_d8.m[2].x = 6.030683e-39;",
+      "line": 75,
+      "match": "1.4013e-45",
+      "text": "local_78 = -1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 76,
+      "match": "1.4013e-45",
+      "text": "fStack_7c = -1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 77,
-      "match": "6.030716e-39",
-      "text": "CStack_d8.m[1].z = 6.030716e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 84,
       "match": "1.4013e-45",
-      "text": "local_74.x = -1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 88,
-      "match": "6.030813e-39",
-      "text": "CStack_d8.m[1].y = 6.030813e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 91,
-      "match": "6.030823e-39",
-      "text": "CStack_d8.m[1].x = 6.030823e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 94,
-      "match": "6.030833e-39",
-      "text": "CStack_d8.m[0].z = 6.030833e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 97,
-      "match": "6.030842e-39",
-      "text": "CStack_d8.m[0].y = 6.030842e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 100,
-      "match": "6.030852e-39",
-      "text": "CStack_d8.m[0].x = 6.030852e-39;",
+      "text": "fStack_80 = -1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 114,
+      "line": 99,
       "match": "extraout_EDX",
       "text": "if (0 < extraout_EDX) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
+      "line": 102,
       "match": "in_stack_00000004",
-      "text": "piVar3 = (int *)(*(int *)(in_stack_00000004 + 0x178) + local_3c);",
+      "text": "piVar4 = (int *)(*(int *)(in_stack_00000004 + 0x178) + local_40);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 156,
+      "line": 141,
       "match": "in_stack_00000004",
-      "text": "} while (iVar6 < *(int *)(in_stack_00000004 + 0x174));",
+      "text": "} while (iVar7 < *(int *)(in_stack_00000004 + 0x174));",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_b8 + (uint)bVar8 * -8 + 0x14) = afStack_94[(uint)bVar8 * -2 + 5];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_b8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 0x18) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(float *)((int)",
+      "text": "afStack_94[(uint)bVar8 * -2 + 2] = *(float *)((int)&local_b8 + (uint)bVar8 * -8 + 0x20);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,
@@ -590,6 +530,42 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
+      "fix_address": "0041aa4c",
+      "frame_offset": 172,
+      "match": "AND ESP",
+      "sub_esp_offset": 172,
+      "text": "Stack alignment at 0041aa4c (SUB ESP, 0xac before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0041aac2",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0041aac7",
+      "frame_offset": 172,
+      "match": "CALL...ADD ESP",
+      "return_address": "0041aac7",
+      "target_address": "0x471d30",
+      "text": "Direct CALL at 0041aac2, ADD ESP at 0041aac7 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0041adb4",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0041adb9",
+      "frame_offset": 172,
+      "match": "CALL...ADD ESP",
+      "return_address": "0041adb9",
+      "target_address": "0x41a630",
+      "text": "Direct CALL at 0041adb4, ADD ESP at 0041adb9 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

@@ -50,7 +50,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
       local_34 = 0x41a00000;
       local_44.z = g_SoundListenerPrev.z;
       local_30 = 0;
-      local_44.y = g_SoundListenerPrev.y + 20f;
+      local_44.y = g_SoundListenerPrev.y + 20.0f;
       iVar4 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
                         (g_CDemonSetPtr,&local_50,&local_44);
       if (iVar4 == 0) {

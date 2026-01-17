@@ -35,7 +35,7 @@ char * __cdecl crt_io_c_realpath_FUN_00601140(char *buffer,char *path,SIZE_T buf
       *(char (*) [4])buffer = "con";
     }
     else {
-      DVar3 = (*PTR_GetFullPathNameA_006115a0)(path,buffer_size,buffer,&pCStack_14);
+      DVar3 = (*g_GetFullPathNameAFunc)(path,buffer_size,buffer,&pCStack_14);
       if (DVar3 == 0) {
         crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
         return (char *)0x0;

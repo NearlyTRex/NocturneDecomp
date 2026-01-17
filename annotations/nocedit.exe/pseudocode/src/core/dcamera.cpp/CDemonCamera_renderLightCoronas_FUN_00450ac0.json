@@ -1,20 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 323,
+    "complexity_score": 317,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
-    "pseudocode_lines": 138,
-    "suspect_count": 16,
+    "pseudocode_lines": 137,
+    "suspect_count": 15,
     "suspect_types": [
+      "call_esp_anchor",
       "extra_output",
       "pointer_cast",
       "sborrow_artifact",
-      "stack_param",
+      "stack_align_anchor",
       "stack_ref"
     ],
-    "total_lines": 410
+    "total_lines": 409
   },
   "cross_references": [
     {
@@ -271,17 +272,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00450ac9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
-    ],
-    "00450b55": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
-    ],
-    "00450d1f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.336065573770492,
     "instruction_count": 244,
@@ -326,44 +316,6 @@
     },
     "pcode_op_count": 1546
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x50",
-      "fix_address": "00450ac9",
-      "frame_offset": 80,
-      "match": "AND ESP",
-      "sub_esp_offset": 80,
-      "text": "Stack alignment at 00450ac9 (SUB ESP, 0x50 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00450b44",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00450b55",
-      "frame_offset": 80,
-      "match": "CALL...ADD ESP",
-      "return_address": "00450b49",
-      "target_address": "0x4736c0",
-      "text": "Direct CALL at 00450b44, ADD ESP at 00450b55 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00450d16",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00450d1f",
-      "frame_offset": 80,
-      "match": "CALL...ADD ESP",
-      "return_address": "00450d1b",
-      "target_address": "0x44d7d0",
-      "text": "Direct CALL at 00450d16, ADD ESP at 00450d1f with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 108,
     "local_size": 100,
@@ -525,109 +477,117 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffffa0",
-      "text": "CVector3i *in_stack_ffffffa0;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_DitherPatternTable + iVar2) = uVar1 & 0xff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_CoronaLeftExtent + iVar2) = this_ptr->display_width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 56,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar2) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 78,
+      "line": 77,
       "match": "extraout_EAX",
       "text": "local_38 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(int *)((int)",
+      "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_34)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 80,
       "match": "(int *)((int)",
-      "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {",
+      "text": "local_20 = *(int *)((int)g_CoronaLeftExtent + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(int *)((int)",
-      "text": "local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(int *)((int)",
-      "text": "local_28 = *(int *)((int)g_CoronaRightExtent + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(char *)((int)",
-      "text": "local_14 = (char *)((int)&local_40->x + local_18);",
+      "text": "local_30 = *(int *)((int)g_CoronaRightExtent + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 90,
+      "line": 89,
       "match": "SBORROW",
-      "text": "bVar8 = SBORROW /* signed borrow */4(local_18,local_28);",
+      "text": "bVar8 = SBORROW /* signed borrow */4(local_20,local_30);",
       "type": "sborrow_artifact"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_ffffffa0",
-      "text": "(&g_CurrentLightForCorona->base,local_1c,in_stack_ffffffa0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Direct stack address reference",
       "line": 98,
-      "match": "in_stack_ffffffa0",
-      "text": "local_54 = in_stack_ffffffa0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 99,
-      "match": "&stack0xffffffa4",
-      "text": "local_50[(uint)bVar7 * -2] = *(int *)(&stack0xffffffa4 + (uint)bVar7 * -8);",
+      "match": "&stack0xffffff9c",
+      "text": "aiStack_58[(uint)bVar7 * -2] = *(int *)(&stack0xffffff9c + (uint)bVar7 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
-      "match": "&stack0xffffffa8",
-      "text": "*(int *)(&stack0xffffffa8 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "line": 100,
+      "match": "&stack0xffffffa0",
+      "text": "*(int *)(&stack0xffffffa0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 128,
+      "line": 127,
       "match": "SBORROW",
-      "text": "bVar8 = SBORROW /* signed borrow */4(local_18,local_28);",
+      "text": "bVar8 = SBORROW /* signed borrow */4(local_20,local_30);",
       "type": "sborrow_artifact"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x50",
+      "fix_address": "00450ac9",
+      "frame_offset": 80,
+      "match": "AND ESP",
+      "sub_esp_offset": 80,
+      "text": "Stack alignment at 00450ac9 (SUB ESP, 0x50 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00450b44",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00450b55",
+      "frame_offset": 80,
+      "match": "CALL...ADD ESP",
+      "return_address": "00450b49",
+      "target_address": "0x4736c0",
+      "text": "Direct CALL at 00450b44, ADD ESP at 00450b55 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00450d16",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00450d1f",
+      "frame_offset": 80,
+      "match": "CALL...ADD ESP",
+      "return_address": "00450d1b",
+      "target_address": "0x44d7d0",
+      "text": "Direct CALL at 00450d16, ADD ESP at 00450d1f with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

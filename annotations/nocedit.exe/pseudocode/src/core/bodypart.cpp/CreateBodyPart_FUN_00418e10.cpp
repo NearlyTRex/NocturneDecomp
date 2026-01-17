@@ -54,7 +54,7 @@ CBodyPart * core_bodypart_cpp_CreateBodyPart_FUN_00418e10(void)
     fVar5 = (float10)fcos((float10)fVar2);
     fVar6 = (float10)fsin((float10)fVar3);
     fVar7 = (float10)fsin((float10)fVar2);
-    fVar8 = (float10)10f;
+    fVar8 = (float10)10.0f;
     *(float *)(this_ptr_00->field1_0x158 + 300) = (float)(fVar7 * fVar8);
     *(float *)(this_ptr_00->field1_0x158 + 0x128) = (float)(fVar4 * fVar8 * fVar5);
     *(float *)(this_ptr_00->field1_0x158 + 0x130) = (float)(fVar6 * fVar8 * fVar5);

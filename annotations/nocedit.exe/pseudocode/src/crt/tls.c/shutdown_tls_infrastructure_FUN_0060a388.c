@@ -15,7 +15,7 @@ BOOL __cdecl crt_tls_c_shutdown_tls_infrastructure_FUN_0060a388(void)
   crt_tls_c_cleanup_thread_tls_data_FUN_0060a334(1);
   BVar1 = extraout_EAX;
   if (g_TLSIndex != 0xffffffff) {
-    BVar1 = (*PTR_TlsFree_00611650)(g_TLSIndex);
+    BVar1 = (*g_TlsFreeFunc)(g_TLSIndex);
     g_TLSIndex = 0xffffffff;
   }
   return BVar1;

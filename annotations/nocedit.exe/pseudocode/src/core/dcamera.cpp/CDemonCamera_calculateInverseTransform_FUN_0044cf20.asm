@@ -32,7 +32,7 @@
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0 at 0044d287
 ;
 ; Referenced Globals:
-;   double g_FixedPointToFloat = 0.0000152587890625
+;   double g_FixedPointToFloat_0061a09a = 0.0000152587890625
 ;   double g_FloatToFixedPoint = 65536
 ;
 ; Called Functions:
@@ -49,27 +49,27 @@ section .text
     AND ESP,0xfffffff8                  ; 0044cf26
     MOV EAX,dword ptr [EBP + 0x8]       ; 0044cf29
     FILD dword ptr [EAX + 0x178]        ; 0044cf2c
-    FMUL double ptr [0x0061a09a]        ; 0044cf32 | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf32 | g_FixedPointToFloat_0061a09a
     FILD dword ptr [EAX + 0x17c]        ; 0044cf38
-    FMUL double ptr [0x0061a09a]        ; 0044cf3e | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf3e | g_FixedPointToFloat_0061a09a
     FILD dword ptr [EAX + 0x180]        ; 0044cf44
-    FMUL double ptr [0x0061a09a]        ; 0044cf4a | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf4a | g_FixedPointToFloat_0061a09a
     FILD dword ptr [EAX + 0x184]        ; 0044cf50
-    FMUL double ptr [0x0061a09a]        ; 0044cf56 | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf56 | g_FixedPointToFloat_0061a09a
     FILD dword ptr [EAX + 0x188]        ; 0044cf5c
-    FMUL double ptr [0x0061a09a]        ; 0044cf62 | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf62 | g_FixedPointToFloat_0061a09a
     FILD dword ptr [EAX + 0x18c]        ; 0044cf68
-    FMUL double ptr [0x0061a09a]        ; 0044cf6e | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf6e | g_FixedPointToFloat_0061a09a
     FILD dword ptr [EAX + 0x190]        ; 0044cf74
-    FMUL double ptr [0x0061a09a]        ; 0044cf7a | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf7a | g_FixedPointToFloat_0061a09a
     FXCH ST6                            ; 0044cf80
     FSTP float ptr [ESP + 0x50]         ; 0044cf82
     FILD dword ptr [EAX + 0x194]        ; 0044cf86
-    FMUL double ptr [0x0061a09a]        ; 0044cf8c | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf8c | g_FixedPointToFloat_0061a09a
     FXCH ST2                            ; 0044cf92
     FSTP float ptr [ESP + 0x44]         ; 0044cf94
     FILD dword ptr [EAX + 0x198]        ; 0044cf98
-    FMUL double ptr [0x0061a09a]        ; 0044cf9e | g_FixedPointToFloat
+    FMUL double ptr [0x0061a09a]        ; 0044cf9e | g_FixedPointToFloat_0061a09a
     FXCH                                ; 0044cfa4
     FST float ptr [ESP + 0x1c]          ; 0044cfa6
     FXCH ST2                            ; 0044cfaa

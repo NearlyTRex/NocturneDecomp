@@ -18,7 +18,7 @@ core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
   int iVar4;
   float10 fVar5;
   double dVar6;
-  float local_18;
+  float local_1c;
   
   if ((0.0 < marker_position) &&
      (marker_position < (float)(this_ptr->motion_list_ptr->motions[motion_index].marker_count + 1)))
@@ -37,14 +37,14 @@ core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
     fVar2 = (float)iVar4 * (1.0 - (float)(fVar5 - (float10)iVar1)) +
             (float)iVar3 * (float)(fVar5 - (float10)iVar1);
     if (fVar2 < 0.0) {
-      local_18 = 0.0;
+      local_1c = 0.0;
     }
     else {
-      local_18 = (float)(*(int *)(extraout_EDX + 100) + -1);
-      if (fVar2 <= local_18) {
+      local_1c = (float)(*(int *)(extraout_EDX + 100) + -1);
+      if (fVar2 <= local_1c) {
         return fVar2;
       }
     }
   }
-  return local_18;
+  return local_1c;
 }

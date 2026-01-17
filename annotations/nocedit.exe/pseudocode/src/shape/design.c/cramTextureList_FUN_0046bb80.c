@@ -172,6 +172,10 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
                         (double)local_980 * 5.9604644775390599e-08);
     g_TextureAtlasEntries[local_5c].processed_width = (int)ROUND(dVar13);
     local_980 = g_TextureAtlasEntries[local_5c].max_v - g_TextureAtlasEntries[local_5c].min_v;
+    local_b58[0] = -0x31;
+    local_b58[1] = -0x40;
+    local_b58[2] = 'F';
+    local_b58[3] = '\0';
     dVar13 = crt_math_c_round_FUN_005fe6b0
                        ((double)(int)g_TextureAtlasEntries[local_5c].original_height *
                         (double)local_980 * 5.9604644775390599e-08);

@@ -15,8 +15,10 @@ shape_design_c_loadTextureData_FUN_0046b060
   int iVar1;
   double dVar2;
   int in_stack_00000018;
-  byte *in_stack_fffffe7c;
-  byte *in_stack_fffffe80;
+  byte *blue_out;
+  byte *alpha_out;
+  byte local_184 [4];
+  byte local_180 [4];
   byte local_17c [4];
   double local_178;
   double local_170;
@@ -113,10 +115,12 @@ shape_design_c_loadTextureData_FUN_0046b060
   local_34 = (int)ROUND(dVar2);
   config_ptr->scaled_dest_x = local_38;
   config_ptr->scaled_dest_y = local_34;
+  alpha_out = (byte *)0x46b3a9;
   dVar2 = crt_math_c_round_FUN_005fe6b0
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_x1) /
                      (double)atlas_height + 0.5);
   local_30 = (int)ROUND(dVar2);
+  blue_out = (byte *)0x46b3cd;
   dVar2 = crt_math_c_round_FUN_005fe6b0
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_y1) /
                      (double)in_stack_00000018 + 0.5);
@@ -150,8 +154,8 @@ shape_design_c_loadTextureData_FUN_0046b060
                   (double)local_34) * 5.9604644775390599e-08;
       shape_design_c_sampleAndFilterPixel_FUN_0046ae20
                 (local_28,local_24,config_ptr->source_width,config_ptr->source_height,local_160,
-                 local_168,local_170,local_178,(int)&stack0xfffffe7c,(int)&stack0xfffffe80,local_154
-                 ,local_17c,in_stack_fffffe7c,in_stack_fffffe80);
+                 local_168,local_170,local_178,(int)local_184,(int)local_180,local_154,local_17c,
+                 blue_out,alpha_out);
       if (config_ptr->processing_mode == 0) {
         local_150 = g_TextureAtlasDimension * (local_2c + local_3c) + local_30 + local_40;
       }
@@ -160,8 +164,8 @@ shape_design_c_loadTextureData_FUN_0046b060
                     local_30 + ((local_34 + -1) - local_3c);
       }
       local_14c = local_150 * 3;
-      *(char *)((int)rgb_buffer + local_14c) = (char)in_stack_fffffe7c;
-      *(char *)((int)rgb_buffer + local_14c + 1) = (char)in_stack_fffffe80;
+      *(byte *)((int)rgb_buffer + local_14c) = local_184[0];
+      *(byte *)((int)rgb_buffer + local_14c + 1) = local_180[0];
       *(byte *)((int)rgb_buffer + local_14c + 2) = local_154[0];
       *(byte *)((int)alpha_buffer + local_150) = local_17c[0];
     }

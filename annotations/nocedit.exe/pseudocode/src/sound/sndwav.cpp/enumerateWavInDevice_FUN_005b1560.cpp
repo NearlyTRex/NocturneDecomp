@@ -20,7 +20,7 @@ sound_sndwav_cpp_enumerateWavInDevice_FUN_005b1560(UINT device_id,SRecordingDevi
   tagWAVEINCAPSA local_38;
   
   bVar7 = 0;
-  MVar2 = (*waveInGetDevCapsA)(device_id,&local_38,0x30);
+  MVar2 = (*g_waveInGetDevCapsAFunc)(device_id,&local_38,0x30);
   if (MVar2 != 0) {
     return 0;
   }

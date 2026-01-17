@@ -58,7 +58,7 @@ char * __cdecl crt_io_c_getTempDirectory_FUN_00609afc(void)
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
     if ((*(char *)(uVar3 + 0x6852da) != '\\') && (*(char *)(uVar3 + 0x6852da) != '/')) {
-      (&DAT_006852db)[uVar3] = 0x5c;
+      (&0)[uVar3] = 0x5c;
       g_TempDirectoryBuffer[uVar3] = '\0';
     }
   }

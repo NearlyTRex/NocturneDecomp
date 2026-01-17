@@ -11,9 +11,9 @@
 ;   sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0 at 005b0957
 ;
 ; Referenced Globals:
-;   waveOutPrepareHeader* waveOutPrepareHeader = 00211952
-;   waveOutUnprepareHeader* waveOutUnprepareHeader = 0021197a
-;   waveOutWrite* waveOutWrite = 00211994
+;   waveOutPrepareHeader* g_waveOutPrepareHeaderFunc = 00211952
+;   waveOutUnprepareHeader* g_waveOutUnprepareHeaderFunc = 0021197a
+;   waveOutWrite* g_waveOutWriteFunc = 00211994
 ;   TerminatedCString s_waveOutUnprepareHeader_f_0065231f
 ;   TerminatedCString s_waveOutPrepareHeader_fai_0065233e
 ;   TerminatedCString s_waveOutWrite_failed_0065235b
@@ -64,7 +64,7 @@ section .text
     PUSH ECX                            ; 005b06ed
     MOV ESI,dword ptr [0x03f6ad34]      ; 005b06ee | g_WaveOutHandle
     PUSH ESI                            ; 005b06f4
-    CALL dword ptr CS:[0x611454]        ; 005b06f5 | waveOutUnprepareHeader
+    CALL dword ptr CS:[0x611454]        ; 005b06f5 | g_waveOutUnprepareHeaderFunc
     TEST EAX,EAX                        ; 005b06fc
     JNZ 0x005b07f4                      ; 005b06fe
         ;   XREF to: 005b07f4 (CONDITIONAL_JUMP)  ; LAB_005b07f4
@@ -128,7 +128,7 @@ section .text
     PUSH EDI                            ; 005b07b5
     MOV EBP,dword ptr [0x03f6ad34]      ; 005b07b6 | g_WaveOutHandle
     PUSH EBP                            ; 005b07bc
-    CALL dword ptr CS:[0x61144c]        ; 005b07bd | waveOutPrepareHeader
+    CALL dword ptr CS:[0x61144c]        ; 005b07bd | g_waveOutPrepareHeaderFunc
     TEST EAX,EAX                        ; 005b07c4
     JNZ 0x005b080b                      ; 005b07c6
         ;   XREF to: 005b080b (CONDITIONAL_JUMP)  ; LAB_005b080b
@@ -138,7 +138,7 @@ section .text
     PUSH EDX                            ; 005b07d4
     MOV ECX,dword ptr [0x03f6ad34]      ; 005b07d5 | g_WaveOutHandle
     PUSH ECX                            ; 005b07db
-    CALL dword ptr CS:[0x611458]        ; 005b07dc | waveOutWrite
+    CALL dword ptr CS:[0x611458]        ; 005b07dc | g_waveOutWriteFunc
     TEST EAX,EAX                        ; 005b07e3
     JNZ 0x005b0822                      ; 005b07e5
         ;   XREF to: 005b0822 (CONDITIONAL_JUMP)  ; LAB_005b0822

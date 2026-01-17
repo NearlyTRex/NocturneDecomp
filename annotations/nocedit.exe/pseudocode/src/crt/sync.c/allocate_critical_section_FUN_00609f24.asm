@@ -9,7 +9,7 @@
 ;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 at 0060a46a
 ;
 ; Referenced Globals:
-;   InitializeCriticalSection* PTR_InitializeCriticalSection_006115e0 = 00212028
+;   InitializeCriticalSection* g_InitializeCriticalSectionFunc = 00212028
 ;   TerminatedCString s_Unable_to_allocate_semap_006590c8
 ;   TerminatedCString s_Unable_to_allocate_semap_006590ec
 ;   CRITICAL_SECTION[64] g_StaticCriticalSectionArray
@@ -86,7 +86,7 @@ section .text
     MOV dword ptr [0x03f9c004],ESI      ; 00609fb3 | g_DynamicCriticalSectionCounter
     PUSH EBX                            ; 00609fb9
         ;   Label: LAB_00609fb9
-    CALL dword ptr CS:[0x6115e0]        ; 00609fba | PTR_InitializeCriticalSection_006115e0
+    CALL dword ptr CS:[0x6115e0]        ; 00609fba | g_InitializeCriticalSectionFunc
     MOV EAX,EBX                         ; 00609fc1
     POP EDI                             ; 00609fc3
     POP ESI                             ; 00609fc4

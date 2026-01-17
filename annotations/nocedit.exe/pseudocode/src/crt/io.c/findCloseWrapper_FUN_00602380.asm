@@ -10,7 +10,7 @@
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc44d
 ;
 ; Referenced Globals:
-;   FindClose* PTR_FindClose_00611548 = 00211d78
+;   FindClose* g_FindCloseFunc = 00211d78
 ;
 ; *****************************************************************************
 
@@ -19,7 +19,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00602380
         ;   Label: crt_io.c_findCloseWrapper_FUN_00602380
     PUSH EDX                            ; 00602384
-    CALL dword ptr CS:[0x611548]        ; 00602385 | PTR_FindClose_00611548
+    CALL dword ptr CS:[0x611548]        ; 00602385 | g_FindCloseFunc
     CMP EAX,0x1                         ; 0060238c
     SETZ AL                             ; 0060238f
     AND EAX,0xff                        ; 00602392

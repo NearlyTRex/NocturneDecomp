@@ -13,7 +13,7 @@ void __cdecl engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder *th
     engine_dosio_c_CFileFinder_reset_FUN_00481db0(this_ptr);
     return;
   }
-  (*PTR_FindClose_00611548)(this_ptr->search_handle);
+  (*g_FindCloseFunc)(this_ptr->search_handle);
   this_ptr->has_results = 0;
   engine_dosio_c_CFileFinder_reset_FUN_00481db0(this_ptr);
   return;

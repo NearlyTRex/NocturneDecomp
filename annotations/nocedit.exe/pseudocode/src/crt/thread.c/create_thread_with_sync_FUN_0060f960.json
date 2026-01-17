@@ -78,37 +78,37 @@
   "globals": [
     {
       "addr": "00611504",
-      "name": "CloseHandle",
+      "name": "g_CloseHandleFunc",
       "type": "CloseHandle*",
       "value": "00211c38"
     },
     {
       "addr": "0061150c",
-      "name": "PTR_CreateEventA_0061150c",
+      "name": "g_CreateEventAFunc",
       "type": "CreateEventA*",
       "value": "00211c5a"
     },
     {
       "addr": "0061151c",
-      "name": "CreateThread",
+      "name": "g_CreateThreadFunc",
       "type": "CreateThread*",
       "value": "00211c9a"
     },
     {
       "addr": "00611584",
-      "name": "PTR_GetCurrentThreadId_00611584",
+      "name": "g_GetCurrentThreadIdFunc",
       "type": "GetCurrentThreadId*",
       "value": "00211e84"
     },
     {
       "addr": "00611588",
-      "name": "PTR_GetCurrentThread_00611588",
+      "name": "g_GetCurrentThreadFunc",
       "type": "GetCurrentThread*",
       "value": "00211e9a"
     },
     {
       "addr": "0061166c",
-      "name": "WaitForSingleObject",
+      "name": "g_WaitForSingleObjectFunc",
       "type": "WaitForSingleObject*",
       "value": "002122c4"
     },
@@ -246,7 +246,7 @@
       "description": "Direct stack address reference",
       "line": 50,
       "match": "&stack0xffffffb4",
-      "text": "pvStack_20 = (*PTR_CreateEventA_0061150c)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
+      "text": "pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
       "type": "stack_ref"
     },
     {

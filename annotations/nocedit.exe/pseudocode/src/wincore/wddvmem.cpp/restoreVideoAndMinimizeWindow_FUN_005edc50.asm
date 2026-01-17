@@ -8,7 +8,7 @@
 ;   wincore_winrun.cpp_mainWindowProc_FUN_005f3150 at 005f3282
 ;
 ; Referenced Globals:
-;   ShowWindow* ShowWindow = 00211c06
+;   ShowWindow* g_ShowWindowFunc = 00211c06
 ;   int g_FullscreenMode
 ;   int g_GraphicsResetFlag
 ;   HWND g_MainWindowHandle
@@ -37,7 +37,7 @@ section .text
     PUSH 0x6                            ; 005edc69
     MOV EBX,dword ptr [0x03f98468]      ; 005edc6b | g_MainWindowHandle
     PUSH EBX                            ; 005edc71
-    CALL dword ptr CS:[0x6114f4]        ; 005edc72 | ShowWindow
+    CALL dword ptr CS:[0x6114f4]        ; 005edc72 | g_ShowWindowFunc
     POP EBX                             ; 005edc79
     RET                                 ; 005edc7a
 

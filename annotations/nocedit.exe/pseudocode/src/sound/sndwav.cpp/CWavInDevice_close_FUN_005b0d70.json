@@ -52,13 +52,13 @@
   "globals": [
     {
       "addr": "00611424",
-      "name": "waveInClose",
+      "name": "g_waveInCloseFunc",
       "type": "waveInClose*",
       "value": "002118a4"
     },
     {
       "addr": "006115d0",
-      "name": "GlobalFree",
+      "name": "g_GlobalFreeFunc",
       "type": "GlobalFree*",
       "value": "00211fe6"
     },
@@ -195,7 +195,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(HGLOBAL *)((int)",
-      "text": "(*GlobalFree)(*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar1));",
+      "text": "(*g_GlobalFreeFunc)(*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar1));",
       "type": "pointer_cast"
     },
     {
@@ -223,7 +223,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(HGLOBAL *)((int)",
-      "text": "(*GlobalFree)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar1));",
+      "text": "(*g_GlobalFreeFunc)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar1));",
       "type": "pointer_cast"
     },
     {

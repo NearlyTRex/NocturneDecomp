@@ -62,7 +62,7 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005edc80(void)
       wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0
                 (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     }
-    (*PTR_SetFocus_006114e8)(g_MainWindowHandle);
+    (*g_SetFocusFunc)(g_MainWindowHandle);
   }
   return;
 }

@@ -13,9 +13,9 @@ void core_fire_cpp_FUN_004c9400(void)
   float *in_stack_0000000c;
   CVector3i local_10;
   
-  local_10.x = (int)ROUND(*in_stack_0000000c * 256f);
-  local_10.y = (int)ROUND(in_stack_0000000c[1] * 256f);
-  local_10.z = (int)ROUND(in_stack_0000000c[2] * 256f);
+  local_10.x = (int)ROUND(*in_stack_0000000c * 256.0f);
+  local_10.y = (int)ROUND(in_stack_0000000c[1] * 256.0f);
+  local_10.z = (int)ROUND(in_stack_0000000c[2] * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25(in_stack_00000008,&local_10);
   return;
 }

@@ -10,7 +10,7 @@ void crt_unknown_c_FUN_0060a394(void)
 
 {
   if (g_TLSIndex != 0xffffffff) {
-    (*PTR_TlsFree_00611650)(g_TLSIndex);
+    (*g_TlsFreeFunc)(g_TLSIndex);
     g_TLSIndex = 0xffffffff;
   }
   return;

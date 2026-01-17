@@ -51,9 +51,8 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
   piVar4 = apiStack_34[2];
   for (local_1c = 0; local_1c < g_CDemonCameraInstance.framebuffer_height; local_1c = local_1c + 1)
   {
-    local_18 = (CVector3i *)0x0;
-    while( true ) {
-      if (g_CDemonCameraInstance.framebuffer_width <= (int)local_18) break;
+    for (local_18 = (CVector3i *)0x0; (int)local_18 < g_CDemonCameraInstance.framebuffer_width;
+        local_18 = (CVector3i *)((int)&local_18->x + 1)) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                 (&g_CDemonCameraInstance,local_18,local_1c,(int)in_stack_ffffffb0);
       local_44.x = local_38;
@@ -71,7 +70,6 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
       else {
         *piVar4 = 0x7fffffff;
       }
-      local_18 = (CVector3i *)((int)&local_18->x + 1);
       piVar4 = piVar4 + 3;
     }
   }

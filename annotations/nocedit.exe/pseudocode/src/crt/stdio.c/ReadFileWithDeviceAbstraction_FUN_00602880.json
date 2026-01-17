@@ -67,7 +67,7 @@
   "globals": [
     {
       "addr": "00611604",
-      "name": "PTR_ReadFile_00611604",
+      "name": "g_ReadFileFunc",
       "type": "ReadFile*",
       "value": "002120f2"
     },
@@ -214,21 +214,21 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000010",
-      "text": "(g_IOControlBlock->standard_handles[file_handle_index],in_stack_00000010,",
+      "text": "in_stack_00000010,in_stack_00000014,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000014",
-      "text": "in_stack_00000014,(LPDWORD)&stack0xfffffff4,(LPOVERLAPPED)0x0);",
+      "text": "in_stack_00000010,in_stack_00000014,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 30,
+      "line": 29,
       "match": "&stack0xfffffff4",
-      "text": "in_stack_00000014,(LPDWORD)&stack0xfffffff4,(LPOVERLAPPED)0x0);",
+      "text": "in_stack_00000010,in_stack_00000014,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_ref"
     },
     {

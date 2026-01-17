@@ -8,7 +8,7 @@
 ;   crt_tls.c_get_thread_local_data_FUN_0060a1fc at 0060a21b
 ;
 ; Referenced Globals:
-;   TlsGetValue* PTR_TlsGetValue_00611654 = 0021225e
+;   TlsGetValue* g_TlsGetValueFunc = 0021225e
 ;   TerminatedCString s_Thread_has_no_thread_spe_00659620
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 0060cae0 (CONDITIONAL_JUMP)  ; LAB_0060cae0
     MOV EDX,dword ptr [0x00684ee0]      ; 0060cad0 | g_TLSIndex
     PUSH EDX                            ; 0060cad6
-    CALL dword ptr CS:[0x611654]        ; 0060cad7 | PTR_TlsGetValue_00611654
+    CALL dword ptr CS:[0x611654]        ; 0060cad7 | g_TlsGetValueFunc
     MOV EBX,EAX                         ; 0060cade
     TEST EBX,EBX                        ; 0060cae0
         ;   Label: LAB_0060cae0

@@ -12,7 +12,8 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(int keycode)
   int iVar1;
   
   if ((keycode < 0x200) &&
-     (iVar1 = (*GetKeyNameTextA)((keycode & 0x1ffU) << 0x10,g_KeyNameBuffer,200), 0 < iVar1)) {
+     (iVar1 = (*g_GetKeyNameTextAFunc)((keycode & 0x1ffU) << 0x10,g_KeyNameBuffer,200), 0 < iVar1))
+  {
     return g_KeyNameBuffer;
   }
   if ((uint)keycode < 0x34) {

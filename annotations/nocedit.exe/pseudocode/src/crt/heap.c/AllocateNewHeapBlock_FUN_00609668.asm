@@ -10,7 +10,7 @@
 ;   crt_heap.c_SystemAllocWrapper_FUN_00609718 at 00609722
 ;
 ; Referenced Globals:
-;   VirtualAlloc* PTR_VirtualAlloc_00611660 = 00212296
+;   VirtualAlloc* g_VirtualAllocFunc = 00212296
 ;   undefined4 DAT_00684fd0
 ;   undefined4 DAT_006854f0
 ;
@@ -59,7 +59,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 006096a5
     PUSH ECX                            ; 006096a9
     PUSH 0x0                            ; 006096aa
-    CALL dword ptr CS:[0x611660]        ; 006096ac | PTR_VirtualAlloc_00611660
+    CALL dword ptr CS:[0x611660]        ; 006096ac | g_VirtualAllocFunc
     MOV EBX,EAX                         ; 006096b3
     TEST EAX,EAX                        ; 006096b5
     JZ 0x00609713                       ; 006096b7

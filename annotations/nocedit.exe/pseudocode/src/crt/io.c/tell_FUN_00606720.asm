@@ -12,7 +12,7 @@
 ;   crt_stdio.c_ftell_FUN_00601560 at 00601581
 ;
 ; Referenced Globals:
-;   SetFilePointer* SetFilePointer = 002121b6
+;   SetFilePointer* g_SetFilePointerFunc = 002121b6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14
@@ -57,7 +57,7 @@ section .text
     PUSH 0x0                            ; 00606759
     PUSH 0x0                            ; 0060675b
     PUSH ESI                            ; 0060675d
-    CALL dword ptr CS:[0x61162c]        ; 0060675e | SetFilePointer
+    CALL dword ptr CS:[0x61162c]        ; 0060675e | g_SetFilePointerFunc
     PUSH EBX                            ; 00606765
     MOV ESI,EAX                         ; 00606766
     CALL dword ptr [0x00684eec]         ; 00606768 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec

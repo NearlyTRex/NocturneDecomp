@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 124,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 34,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
-      "concat_artifact",
-      "special_crt_function",
-      "stack_param",
-      "stack_ref"
+      "call_esp_anchor",
+      "special_crt_function"
     ],
     "total_lines": 99
   },
@@ -102,17 +100,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "00602146": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "00602185": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ],
-    "006021a5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.5686274509803924,
     "instruction_count": 51,
@@ -139,7 +126,37 @@
     },
     "pcode_op_count": 182
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "command",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
     {
       "add_esp_value": 4,
       "call_address": "0060213e",
@@ -178,80 +195,6 @@
       "target_address": "0x609c90",
       "text": "Direct CALL at 006021a0, ADD ESP at 006021a5 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 32,
-    "local_size": 28,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "command",
-        "offset": 4,
-        "size": 4,
-        "type": "char *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffffe8",
-      "text": "void *in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffffec",
-      "text": "uint in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffffec",
-      "text": "result = (int *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffffec >> 8),1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 20,
-      "match": "CONCAT31",
-      "text": "result = (int *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffffec >> 8),1);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffffe8",
-      "text": "crt_process_c_set_shell_execute_flag_FUN_00609c80(&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffffe8",
-      "text": "iVar2 = crt_process_c_spawnCommand_FUN_00609c90(0,cmdPath,cmdName,args,in_stack_ffffffe8,result)",
-      "type": "stack_param"
     },
     {
       "address": "00602130",

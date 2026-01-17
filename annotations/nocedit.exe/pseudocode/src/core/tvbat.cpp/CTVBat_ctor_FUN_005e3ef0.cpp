@@ -26,9 +26,9 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   this_ptr_00[1].part_visibility_flags[6] = 0x40a00000;
   this_ptr_00[1].part_visibility_flags[5] = 0x41700000;
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
-  this_ptr_00[1].part_visibility_flags[8] = (int)(fVar2 * 10f);
+  this_ptr_00[1].part_visibility_flags[8] = (int)(fVar2 * 10.0f);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
-  this_ptr_00[1].part_visibility_flags[7] = (int)(fVar2 * 2f);
+  this_ptr_00[1].part_visibility_flags[7] = (int)(fVar2 * 2.0f);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
   this_ptr_00[1].part_visibility_flags[10] = 0;
   this_ptr_00[1].part_visibility_flags[0xb] = 0;

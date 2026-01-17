@@ -37,7 +37,7 @@ void core_manpuz_cpp_FUN_0050a610(void)
   float local_18;
   float local_14;
   
-  local_28 = in_stack_0000000c * 255f;
+  local_28 = in_stack_0000000c * 255.0f;
   local_14 = local_28 / _DAT_00660d94;
   pfVar11 = (float *)((int)&in_stack_00000004[7].previous_transform_state +
                      in_stack_00000008 * 0xb8 + 0x10);

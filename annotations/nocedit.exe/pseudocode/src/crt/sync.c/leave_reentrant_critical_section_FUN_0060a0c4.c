@@ -16,7 +16,7 @@ void __cdecl crt_sync_c_leave_reentrant_critical_section_FUN_0060a0c4(ReentrantC
     rcs->lockCount = iVar1;
     if (iVar1 == 0) {
       rcs->ownerThreadId = 0;
-      (*PTR_LeaveCriticalSection_006115e4)(rcs->cs);
+      (*g_LeaveCriticalSectionFunc)(rcs->cs);
     }
   }
   return;

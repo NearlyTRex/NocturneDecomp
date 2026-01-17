@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 19,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 19,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "call_esp_anchor"
+    ],
     "total_lines": 93
   },
   "cross_references": [],
@@ -79,20 +81,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "0046e78b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ],
-    "0046e7a2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ],
-    "0046e7b9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ],
-    "0046e7d0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.528301886792453,
     "instruction_count": 53,
@@ -127,7 +115,30 @@
     },
     "pcode_op_count": 240
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "line_number",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
     {
       "add_esp_value": 12,
       "call_address": "0046e786",
@@ -180,29 +191,5 @@
       "text": "Direct CALL at 0046e7cb, ADD ESP at 0046e7d0 with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ],
-  "stack_frame": {
-    "frame_size": 28,
-    "local_size": 24,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "line_number",
-        "offset": 4,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": []
+  ]
 }

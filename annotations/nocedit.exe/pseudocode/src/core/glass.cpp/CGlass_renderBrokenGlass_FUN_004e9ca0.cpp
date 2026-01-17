@@ -43,7 +43,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
     pfVar5 = (float *)&in_stack_0000000c[2].field11_0xdc;
     iVar3 = 0;
     do {
-      iStack_8 = (int)ROUND(*pfVar5 * 256f);
+      iStack_8 = (int)ROUND(*pfVar5 * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +

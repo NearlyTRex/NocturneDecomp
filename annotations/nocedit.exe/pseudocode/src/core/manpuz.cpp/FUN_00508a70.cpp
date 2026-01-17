@@ -249,7 +249,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
   in_stack_00000004[0xe].create_event[0x25] = ')';
   in_stack_00000004[0xe].create_event[0x26] = -0x3b;
   in_stack_00000004[0xe].create_event[0x27] = -0x41;
-  in_stack_00000004[0xe].create_prob = fVar1 + -4f;
+  in_stack_00000004[0xe].create_prob = fVar1 + -4.0f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)(in_stack_00000004[0xe].create_event + 0x2c),
              (CVector3f *)(in_stack_00000004[0xe].create_event + 0x20));

@@ -13,11 +13,11 @@ int __cdecl crt_io_c_chdir_FUN_006012a0(char *path)
   DWORD windows_error;
   int iVar2;
   
-  BVar1 = (*SetCurrentDirectoryA)(path);
+  BVar1 = (*g_SetCurrentDirectoryAFunc)(path);
   if (BVar1 != 0) {
     return 0;
   }
-  windows_error = (*GetLastError)();
+  windows_error = (*g_GetLastErrorFunc)();
   iVar2 = crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(windows_error);
   return iVar2;
 }

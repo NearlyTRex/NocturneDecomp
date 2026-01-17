@@ -15,7 +15,7 @@ int core_lever_cpp_FUN_00504cf0(void)
   int iVar1;
   CKeyFramedModel *pCVar2;
   CDemonActor *in_stack_00000004;
-  float in_stack_ffffffd4;
+  float render_flags;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
   this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
@@ -25,12 +25,13 @@ int core_lever_cpp_FUN_00504cf0(void)
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
     return 0;
   }
+  render_flags = -NAN;
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),
              (float)(pCVar2->frame_count + -1) * (float)in_stack_00000004[2].location.area_id,
-             (int)in_stack_ffffffd4);
+             (int)render_flags);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
   return iVar1;
 }

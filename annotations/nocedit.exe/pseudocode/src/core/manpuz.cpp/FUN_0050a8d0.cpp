@@ -112,10 +112,10 @@ LAB_0050a92e:
     ;
     local_60.x = 0.0;
     local_60.y = ((float)in_stack_00000004[4].was_created -
-                 *(float *)(in_stack_00000004[4].create_event + 0x10)) * 4f;
-    local_60.z = -(in_stack_00000004[0xf].field12_0xe0.y * 2f +
+                 *(float *)(in_stack_00000004[4].create_event + 0x10)) * 4.0f;
+    local_60.z = -(in_stack_00000004[0xf].field12_0xe0.y * 2.0f +
                    *(float *)(in_stack_00000004[4].create_event + 0x14) +
-                  in_stack_00000004[4].create_prob) * 4f;
+                  in_stack_00000004[4].create_prob) * 4.0f;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
               ((CMatrix3x3f *)local_1c,&local_30,&local_60);
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(in_stack_00000004,&local_54,&local_30);

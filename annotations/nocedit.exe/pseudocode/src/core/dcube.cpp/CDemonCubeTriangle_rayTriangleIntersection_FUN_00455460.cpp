@@ -17,12 +17,12 @@ core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
   float fVar4;
   float fVar5;
   CVector3f *pCVar6;
+  float local_28;
   float local_24;
   float local_20;
   float local_1c;
   float local_18;
   float local_14;
-  float local_10;
   
   fVar2 = (this_ptr->normal).z * ray_direction->z +
           (this_ptr->normal).x * ray_direction->x + (this_ptr->normal).y * ray_direction->y;
@@ -45,39 +45,39 @@ core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
   if (uVar3 == 0) {
     pCVar6 = this_ptr->vertices[0];
     fVar1 = this_ptr->vertices[2]->z;
-    local_10 = fVar5 - pCVar6->y;
+    local_14 = fVar5 - pCVar6->y;
     fVar2 = pCVar6->z;
-    local_18 = this_ptr->vertices[1]->y - pCVar6->y;
-    local_24 = this_ptr->vertices[1]->z - pCVar6->z;
-    local_14 = this_ptr->vertices[2]->y - pCVar6->y;
+    local_1c = this_ptr->vertices[1]->y - pCVar6->y;
+    local_28 = this_ptr->vertices[1]->z - pCVar6->z;
+    local_18 = this_ptr->vertices[2]->y - pCVar6->y;
   }
   else {
     if (1 < uVar3) {
       if (uVar3 == 2) {
         pCVar6 = this_ptr->vertices[0];
-        local_10 = fVar2 - pCVar6->x;
-        local_1c = fVar5 - pCVar6->y;
-        local_18 = this_ptr->vertices[1]->x - pCVar6->x;
-        local_24 = this_ptr->vertices[1]->y - pCVar6->y;
-        local_14 = this_ptr->vertices[2]->x - pCVar6->x;
-        local_20 = this_ptr->vertices[2]->y - pCVar6->y;
+        local_14 = fVar2 - pCVar6->x;
+        local_20 = fVar5 - pCVar6->y;
+        local_1c = this_ptr->vertices[1]->x - pCVar6->x;
+        local_28 = this_ptr->vertices[1]->y - pCVar6->y;
+        local_18 = this_ptr->vertices[2]->x - pCVar6->x;
+        local_24 = this_ptr->vertices[2]->y - pCVar6->y;
       }
       goto LAB_0045556e;
     }
     pCVar6 = this_ptr->vertices[0];
     fVar1 = this_ptr->vertices[2]->z;
-    local_10 = fVar2 - pCVar6->x;
+    local_14 = fVar2 - pCVar6->x;
     fVar2 = pCVar6->z;
-    local_18 = this_ptr->vertices[1]->x - pCVar6->x;
-    local_24 = this_ptr->vertices[1]->z - pCVar6->z;
-    local_14 = this_ptr->vertices[2]->x - pCVar6->x;
+    local_1c = this_ptr->vertices[1]->x - pCVar6->x;
+    local_28 = this_ptr->vertices[1]->z - pCVar6->z;
+    local_18 = this_ptr->vertices[2]->x - pCVar6->x;
   }
-  local_1c = (fVar4 * ray_direction->z + ray_origin->z) - fVar2;
-  local_20 = fVar1 - pCVar6->z;
+  local_20 = (fVar4 * ray_direction->z + ray_origin->z) - fVar2;
+  local_24 = fVar1 - pCVar6->z;
 LAB_0045556e:
-  fVar5 = 1.0 / (local_18 * local_20 - local_24 * local_14);
-  fVar2 = (local_10 * local_20 - local_14 * local_1c) * fVar5;
-  if (((0.0 <= fVar2) && (fVar5 = (local_18 * local_1c - local_24 * local_10) * fVar5, 0.0 <= fVar5)
+  fVar5 = 1.0 / (local_1c * local_24 - local_28 * local_18);
+  fVar2 = (local_14 * local_24 - local_18 * local_20) * fVar5;
+  if (((0.0 <= fVar2) && (fVar5 = (local_1c * local_20 - local_28 * local_14) * fVar5, 0.0 <= fVar5)
       ) && (fVar2 + fVar5 <= 1.0)) {
     return fVar4;
   }

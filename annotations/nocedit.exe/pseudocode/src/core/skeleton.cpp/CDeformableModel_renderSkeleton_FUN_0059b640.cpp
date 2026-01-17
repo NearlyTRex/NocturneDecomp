@@ -41,9 +41,9 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
       do {
         local_1c = iVar5 * 0x30;
         core_xform_cpp_getTranslation_FUN_005f6110(output_vector,(CMatrix3x4f *)(local_40.m + 2));
-        local_4c.x = (int)ROUND(local_40.m[2].x * 256f);
-        local_4c.y = (int)ROUND(local_40.m[2].y * 256f);
-        local_4c.z = (int)ROUND(local_40.m[2].z * 256f);
+        local_4c.x = (int)ROUND(local_40.m[2].x * 256.0f);
+        local_4c.y = (int)ROUND(local_40.m[2].y * 256.0f);
+        local_4c.z = (int)ROUND(local_40.m[2].z * 256.0f);
         iVar5 = iVar5 + 1;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   ((SProjectedVertex *)

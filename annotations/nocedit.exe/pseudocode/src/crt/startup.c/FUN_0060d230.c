@@ -16,10 +16,10 @@ int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
   _cpinfo _Stack_20;
   
   if (cp == 0xffffffff) {
-    cp = (*PTR_GetACP_00611560)();
+    cp = (*g_GetACPFunc)();
   }
   else if (cp == 0xfffffffe) {
-    cp = (*PTR_GetOEMCP_006115b8)();
+    cp = (*g_GetOEMCPFunc)();
   }
   else {
     if (cp == 0xfffffffd) {
@@ -50,7 +50,7 @@ int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
   if (cp == 0) {
     cp = 1;
   }
-  BVar2 = (*PTR_GetCPInfo_00611564)(cp,&_Stack_20);
+  BVar2 = (*g_GetCPInfoFunc)(cp,&_Stack_20);
   if (BVar2 == 0) {
     return 1;
   }
@@ -67,6 +67,6 @@ int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
     g_CodePage = cp;
     return 0;
   }
-  g_CodePage = (*PTR_GetOEMCP_006115b8)();
+  g_CodePage = (*g_GetOEMCPFunc)();
   return 0;
 }

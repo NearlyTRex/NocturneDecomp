@@ -19,9 +19,8 @@ void __cdecl crt_startup_c_WriteErrorAndExit_FUN_00606620(char *error_message,in
   while (cVar1 = *pcVar2, pcVar2 = pcVar2 + 1, cVar1 != '\0') {
     nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
   }
-  (*PTR_WriteFile_00611678)
-            (g_IOControlBlock->standard_handles[2],error_message,nNumberOfBytesToWrite,
-             (LPDWORD)&stack0xfffffff8,(LPOVERLAPPED)0x0);
+  (*g_WriteFileFunc)(g_IOControlBlock->standard_handles[2],error_message,nNumberOfBytesToWrite,
+                     (LPDWORD)&stack0xfffffff8,(LPOVERLAPPED)0x0);
                     /* WARNING: Subroutine does not return */
   crt_exit_c_ExitProcess_FUN_00602700(in_stack_fffffff8);
 }

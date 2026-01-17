@@ -8,7 +8,7 @@
 ;   crt_startup.c_initialize_runtime_FUN_0060245c at 00602491
 ;
 ; Referenced Globals:
-;   GetStdHandle* PTR_GetStdHandle_006115c0 = 00211fa0
+;   GetStdHandle* g_GetStdHandleFunc = 00211fa0
 ;
 ; Called Functions:
 ;   crt_io.c_CreateFallbackHandle_FUN_00608b88
@@ -21,7 +21,7 @@ section .text
 
     PUSH -0xa                           ; 00608b20
         ;   Label: crt_io.c_InitializeStandardHandles_FUN_00608b20
-    CALL dword ptr CS:[0x6115c0]        ; 00608b22 | PTR_GetStdHandle_006115c0
+    CALL dword ptr CS:[0x6115c0]        ; 00608b22 | g_GetStdHandleFunc
     MOV EDX,EAX                         ; 00608b29
     TEST EAX,EAX                        ; 00608b2b
     JZ 0x00608b34                       ; 00608b2d
@@ -38,7 +38,7 @@ section .text
         ;   XREF to: 00608990 (UNCONDITIONAL_CALL)  ; int crt_io.c_register_handle_FUN_00608990(HANDLE handle)
     ADD ESP,0x4                         ; 00608b3f
     PUSH -0xb                           ; 00608b42
-    CALL dword ptr CS:[0x6115c0]        ; 00608b44 | PTR_GetStdHandle_006115c0
+    CALL dword ptr CS:[0x6115c0]        ; 00608b44 | g_GetStdHandleFunc
     MOV EDX,EAX                         ; 00608b4b
     TEST EAX,EAX                        ; 00608b4d
     JZ 0x00608b56                       ; 00608b4f
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 00608990 (UNCONDITIONAL_CALL)  ; int crt_io.c_register_handle_FUN_00608990(HANDLE handle)
     ADD ESP,0x4                         ; 00608b61
     PUSH -0xc                           ; 00608b64
-    CALL dword ptr CS:[0x6115c0]        ; 00608b66 | PTR_GetStdHandle_006115c0
+    CALL dword ptr CS:[0x6115c0]        ; 00608b66 | g_GetStdHandleFunc
     MOV EDX,EAX                         ; 00608b6d
     TEST EAX,EAX                        ; 00608b6f
     JZ 0x00608b78                       ; 00608b71

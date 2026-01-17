@@ -16,8 +16,8 @@
 ;   crt_unknown.c_FUN_0060a1dc at 0060a1e1
 ;
 ; Referenced Globals:
-;   EnterCriticalSection* PTR_EnterCriticalSection_00611530 = 00211cfa
-;   GetCurrentThreadId* PTR_GetCurrentThreadId_00611584 = 00211e84
+;   EnterCriticalSection* g_EnterCriticalSectionFunc = 00211cfa
+;   GetCurrentThreadId* g_GetCurrentThreadIdFunc = 00211e84
 ;   LPCRITICAL_SECTION g_GlobalInitLock
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     PUSH EDI                            ; 0060a062
     PUSH EBP                            ; 0060a063
     MOV EBX,dword ptr [ESP + 0x14]      ; 0060a064
-    CALL dword ptr CS:[0x611584]        ; 0060a068 | PTR_GetCurrentThreadId_00611584
+    CALL dword ptr CS:[0x611584]        ; 0060a068 | g_GetCurrentThreadIdFunc
     MOV EDX,dword ptr [EBX + 0x8]       ; 0060a06f
     MOV ESI,EAX                         ; 0060a072
     CMP EAX,EDX                         ; 0060a074
@@ -65,7 +65,7 @@ section .text
     MOV EBP,dword ptr [EBX]             ; 0060a0ad
         ;   Label: LAB_0060a0ad
     PUSH EBP                            ; 0060a0af
-    CALL dword ptr CS:[0x611530]        ; 0060a0b0 | PTR_EnterCriticalSection_00611530
+    CALL dword ptr CS:[0x611530]        ; 0060a0b0 | g_EnterCriticalSectionFunc
     MOV dword ptr [EBX + 0x8],ESI       ; 0060a0b7
     INC dword ptr [EBX + 0xc]           ; 0060a0ba
         ;   Label: LAB_0060a0ba

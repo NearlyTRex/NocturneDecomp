@@ -40,21 +40,21 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
     wincore_winvideo_cpp_closeMovie_FUN_005f46b0(g_MainWindowHandle);
   }
   crt_stdio_c_sprintf_FUN_005fdbd0(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,pHVar7);
-  MVar3 = (*mciSendStringA)(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
+  MVar3 = (*g_mciSendStringAFunc)(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar3 == 0) {
     g_MoviePlaying = 1;
-    MVar3 = (*mciSendStringA)("status mov window handle",local_1f8,0x104,(HWND)0x0);
+    MVar3 = (*g_mciSendStringAFunc)("status mov window handle",local_1f8,0x104,(HWND)0x0);
     if (MVar3 == 0) {
       g_MovieWindowHandle = (HWND)crt_stdlib_c_atoi_FUN_005ffef0(local_1f8);
     }
     else {
-      (*mciGetErrorStringA)(MVar3,local_1f8,0x104);
-      (*MessageBoxA)(pHVar7,local_1f8,(LPCSTR)0x0,0x30);
+      (*g_mciGetErrorStringAFunc)(MVar3,local_1f8,0x104);
+      (*g_MessageBoxAFunc)(pHVar7,local_1f8,(LPCSTR)0x0,0x30);
     }
     if ((g_FullscreenMovie == 0) && (g_MoviePlaying != 0)) {
-      (*GetClientRect)(pHVar7,&tStack_14);
-      (*mciSendStringA)("where mov source",(LPSTR)&bStack_f4,0x80,(HWND)0x0);
-      (*SetRectEmpty)(&tStack_24);
+      (*g_GetClientRectFunc)(pHVar7,&tStack_14);
+      (*g_mciSendStringAFunc)("where mov source",(LPSTR)&bStack_f4,0x80,(HWND)0x0);
+      (*g_SetRectEmptyFunc)(&tStack_24);
       pbVar4 = &bStack_f4;
       while (bStack_f4 == 0x20) {
         pbVar1 = pbVar4 + 1;
@@ -81,12 +81,13 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
         tStack_24.right = tStack_24.right * 2;
         tStack_24.bottom = tStack_24.bottom * 2;
       }
-      (*MoveWindow)(g_MovieWindowHandle,tStack_14.right / 2 - tStack_24.right / 2,
-                    tStack_14.bottom / 2 - tStack_24.bottom / 2,tStack_24.right,tStack_24.bottom,1);
+      (*g_MoveWindowFunc)(g_MovieWindowHandle,tStack_14.right / 2 - tStack_24.right / 2,
+                          tStack_14.bottom / 2 - tStack_24.bottom / 2,tStack_24.right,
+                          tStack_24.bottom,1);
     }
   }
   else {
-    (*MessageBoxA)(pHVar7,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
+    (*g_MessageBoxAFunc)(pHVar7,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
     g_MoviePlaying = 0;
   }
   bVar6 = g_MovieHandle == 0;
@@ -104,15 +105,15 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
     pHVar7 = (HWND)0x0;
     lpstrCommand = "pause mov";
   }
-  (*mciSendStringA)(lpstrCommand,(LPSTR)0x0,0,pHVar7);
-  hThread = (*GetCurrentProcess)();
-  (*SetThreadPriority)(hThread,-0xf);
+  (*g_mciSendStringAFunc)(lpstrCommand,(LPSTR)0x0,0,pHVar7);
+  hThread = (*g_GetCurrentProcessFunc)();
+  (*g_SetThreadPriorityFunc)(hThread,-0xf);
   while (((wincore_winrun_cpp_processWindowMessages_FUN_005f35e0(), g_MovieHandle != 0 &&
           (iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(), iVar5 == 0)) &&
          (g_MoviePlaying != 0))) {
-    (*Sleep)(0x14);
+    (*g_SleepFunc)(0x14);
   }
-  (*SetThreadPriority)(hThread,1);
+  (*g_SetThreadPriorityFunc)(hThread,1);
   wincore_winvideo_cpp_closeMovie_FUN_005f46b0(g_MainWindowHandle);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

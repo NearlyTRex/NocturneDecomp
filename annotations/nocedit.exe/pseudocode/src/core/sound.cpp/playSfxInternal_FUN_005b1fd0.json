@@ -1,17 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 665,
-    "complexity_score": 407,
+    "complexity_score": 791,
     "cross_reference_count": 6,
     "function_call_count": 27,
     "global_count": 43,
-    "pseudocode_lines": 267,
-    "suspect_count": 13,
+    "pseudocode_lines": 266,
+    "suspect_count": 50,
     "suspect_types": [
+      "call_esp_anchor",
       "format_string_mismatch",
-      "sub_artifact"
+      "stack_align_anchor",
+      "sub_artifact",
+      "variadic_anchor"
     ],
-    "total_lines": 932
+    "total_lines": 931
   },
   "cross_references": [
     {
@@ -523,119 +526,6 @@
     "declared_params": 7,
     "estimated_params": 7
   },
-  "pcode_overrides": {
-    "005b1fdc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b20f7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b21d0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b21dc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b21ea": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b21f6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2201": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2211": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2287": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b22b8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b22c6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b22e0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b23d7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2406": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b242a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2441": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2466": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2473": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2487": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b24a7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b24bb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b24cb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b24de": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b24ee": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b24f7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2506": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2513": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2526": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2533": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2546": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2559": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b259d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b25cd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2632": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b2661": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b26ba": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ],
-    "005b26e2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe94,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.734653465346534,
     "instruction_count": 505,
@@ -675,7 +565,257 @@
     },
     "pcode_op_count": 2391
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 440,
+    "local_size": 412,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_198",
+        "offset": -408,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_190",
+        "offset": -400,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_188",
+        "offset": -392,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_180",
+        "offset": -384,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_17c",
+        "offset": -380,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_178",
+        "offset": -376,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_177",
+        "offset": -375,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_113",
+        "offset": -275,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "user_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "z",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "position_tracker",
+        "offset": 24,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 28,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005b1fdc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 159,
+      "match": "SUB41",
+      "text": "cVar5 = SUB41 /* extract 2-byte value */(fVar4,0) + '0';",
+      "type": "sub_artifact"
+    },
     {
       "add_esp_value": 20,
       "call_address": "005b2282",
@@ -915,6 +1055,138 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005b26b5 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"[%d,%d]%n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "[%d,%d]%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 53,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(local_38,\"[%d,%d]%n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid sfx string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 57,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't find wav: %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't find wav: %s\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 179,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Can't find wav: %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Missing: %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Missing: %s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 194,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"Missing: %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Time: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Time: %s",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 197,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"Time: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"USERNAME: %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "USERNAME: %s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 200,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"USERNAME: %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"COMPUTERNAME: %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "COMPUTERNAME: %s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 204,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"COMPUTERNAME: %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"@%f%n\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "@%f%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 219,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(local_38,\"@%f%n\",&local_17c);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid sfx string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 223,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"*%f%n\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "*%f%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 232,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(local_38,\"*%f%n\",&local_180);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid sfx string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 236,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid sfx string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 246,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     },
     {
       "align_instruction": "AND ESP,0xfffffff8",
@@ -1198,390 +1470,6 @@
       "target_address": "0x5a88e0",
       "text": "Direct CALL at 005b26dd, ADD ESP at 005b26e2 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 440,
-    "local_size": 412,
-    "param_offset": 4,
-    "param_size": 28,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_198",
-        "offset": -408,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_190",
-        "offset": -400,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_188",
-        "offset": -392,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_180",
-        "offset": -384,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_17c",
-        "offset": -380,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_178",
-        "offset": -376,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_177",
-        "offset": -375,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_114",
-        "offset": -276,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_113",
-        "offset": -275,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_b0",
-        "offset": -176,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "user_data",
-        "offset": 4,
-        "size": 4,
-        "type": "void *"
-      },
-      {
-        "is_param": true,
-        "name": "sound_name",
-        "offset": 8,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "x",
-        "offset": 12,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "y",
-        "offset": 16,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "z",
-        "offset": 20,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "position_tracker",
-        "offset": 24,
-        "size": 4,
-        "type": "CVector3f *"
-      },
-      {
-        "is_param": true,
-        "name": "flags",
-        "offset": 28,
-        "size": 4,
-        "type": "uint"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005b1fdc",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 159,
-      "match": "SUB41",
-      "text": "cVar5 = SUB41 /* extract 2-byte value */(fVar4,0) + '0';",
-      "type": "sub_artifact"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"[%d,%d]%n\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "[%d,%d]%n",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 53,
-      "match": "crt_stdio_c_sscanf_FUN_0060013c(local_34,\"[%d,%d]%n\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid sfx string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 57,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't find wav: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't find wav: %s\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 180,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Can't find wav: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Missing: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Missing: %s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 195,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"Missing: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Time: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Time: %s",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 198,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"Time: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"USERNAME: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "USERNAME: %s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 201,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"USERNAME: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"COMPUTERNAME: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "COMPUTERNAME: %s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 205,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"COMPUTERNAME: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"@%f%n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "@%f%n",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 220,
-      "match": "crt_stdio_c_sscanf_FUN_0060013c(local_34,\"@%f%n\",&local_178);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid sfx string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 224,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"*%f%n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "*%f%n",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 233,
-      "match": "crt_stdio_c_sscanf_FUN_0060013c(local_34,\"*%f%n\",&local_17c);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid sfx string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 237,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid sfx string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 247,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

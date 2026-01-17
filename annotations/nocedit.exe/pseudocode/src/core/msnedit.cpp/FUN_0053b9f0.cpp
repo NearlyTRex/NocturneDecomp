@@ -52,10 +52,10 @@ void core_msnedit_cpp_FUN_0053b9f0(void)
   }
   shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffffbb8);
   iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                    ((CPickList *)&stack0xfffffbb8,"Choose type of actor to create",DAT_00680648,
+                    ((CPickList *)&stack0xfffffbb8,"Choose type of actor to create",0xFFFFFFFF,
                      0);
   if (-1 < iVar4) {
-    DAT_00680648 = iVar4;
+    0xFFFFFFFF = iVar4;
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                        ((CStrList *)&stack0xfffffbb8,iVar4);
     crt_stdio_c_sprintf_FUN_005fdbd0(local_a0,"C%s",pcVar2);

@@ -99,10 +99,10 @@ switchD_0060aa00_default:
   }
 LAB_0060ab7b:
   local_14 = ExceptionRecord;
-  lVar3 = (*PTR_SetUnhandledExceptionFilter_0061165c)((_EXCEPTION_POINTERS *)&local_14);
+  lVar3 = (*g_UnhandledExceptionFilterFunc)((_EXCEPTION_POINTERS *)&local_14);
   if (lVar3 == 0) {
     return ExceptionContinueSearch;
   }
-  EVar4 = (*PTR_ExitProcess_00611534)(0xffffffff);
+  EVar4 = (*g_ExitProcessFunc)(0xffffffff);
   return EVar4;
 }

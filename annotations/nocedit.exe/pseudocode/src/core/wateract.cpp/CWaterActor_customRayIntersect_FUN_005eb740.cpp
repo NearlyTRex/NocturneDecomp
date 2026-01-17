@@ -16,64 +16,63 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWat
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   float *in_stack_00000010;
-  ulonglong in_stack_ffffff64;
-  CVector3f *in_stack_ffffff6c;
-  float fStack_88;
-  CDemonTriangle CStack_84;
-  CBoundingBox3D CStack_4c;
-  float fStack_34;
+  CVector3f *ray_origin;
+  CVector3f *in_stack_ffffff60;
+  CVector3f *in_stack_ffffff64;
+  float fStack_84;
+  byte auStack_80 [80];
   float fStack_30;
   float fStack_2c;
   float fStack_28;
   float fStack_24;
   float fStack_20;
   float fStack_1c;
-  int iStack_18;
-  float fStack_14;
+  float fStack_18;
+  int iStack_14;
   
-  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_4c)
-  ;
+  ray_origin = (CVector3f *)0x0;
+  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+                          (&this_ptr->base_actor,(CBoundingBox3D *)(auStack_80 + 0x30));
   fVar1 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                    (this_ptr_00,(CVector3f *)in_stack_ffffff64,
-                     (CVector3f *)((ulonglong)in_stack_ffffff64 >> 0x20),in_stack_ffffff6c);
+                    (this_ptr_00,ray_origin,in_stack_ffffff60,in_stack_ffffff64);
   if ((fVar1 < 0.0) || (1.0 < fVar1)) {
-    fStack_1c = 2.0;
+    fStack_18 = 2.0;
   }
   else {
-    iStack_18 = *(int *)(this_ptr->field21_0x298 + 0x2af9c);
+    iStack_14 = *(int *)(this_ptr->field21_0x298 + 0x2af9c);
     iVar3 = 0;
-    fStack_88 = 2.0;
+    fStack_84 = 2.0;
     pcVar2 = this_ptr->field21_0x298 + 0x7d10;
-    if (0 < iStack_18) {
+    if (0 < iStack_14) {
       do {
         core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                  (&CStack_84,
+                  ((CDemonTriangle *)auStack_80,
                    (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x18) * 0x20 + 4),
                    (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x24) * 0x20 + 4),
                    (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x30) * 0x20 + 4));
-        fStack_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                              (&CStack_84,in_stack_00000008,in_stack_0000000c);
-        if (((fStack_14 < fStack_88) && (0.0 <= fStack_14)) && (fStack_14 <= 1.0)) {
-          fStack_34 = -CStack_84.normal.x;
-          fStack_30 = -CStack_84.normal.y;
-          fStack_2c = -CStack_84.normal.z;
-          fStack_88 = fStack_14;
-          if (&fStack_28 != &fStack_34) {
-            fStack_28 = fStack_34;
+        fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                          ((CDemonTriangle *)auStack_80,in_stack_00000008,in_stack_0000000c);
+        if (((fVar1 < fStack_84) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {
+          fStack_30 = -(float)auStack_80._36_4_;
+          fStack_2c = -(float)auStack_80._40_4_;
+          fStack_28 = -(float)auStack_80._44_4_;
+          fStack_84 = fVar1;
+          if (&fStack_24 != &fStack_30) {
             fStack_24 = fStack_30;
             fStack_20 = fStack_2c;
+            fStack_1c = fStack_28;
           }
         }
         iVar3 = iVar3 + 1;
         pcVar2 = pcVar2 + 0x48;
-      } while (iVar3 < iStack_18);
+      } while (iVar3 < iStack_14);
     }
-    if ((fStack_88 < 1.0) && (&fStack_28 != in_stack_00000010)) {
-      *in_stack_00000010 = fStack_28;
-      in_stack_00000010[1] = fStack_24;
-      in_stack_00000010[2] = fStack_20;
+    if ((fStack_84 < 1.0) && (&fStack_24 != in_stack_00000010)) {
+      *in_stack_00000010 = fStack_24;
+      in_stack_00000010[1] = fStack_20;
+      in_stack_00000010[2] = fStack_1c;
     }
-    fStack_1c = fStack_88;
+    fStack_18 = fStack_84;
   }
-  return fStack_1c;
+  return fStack_18;
 }

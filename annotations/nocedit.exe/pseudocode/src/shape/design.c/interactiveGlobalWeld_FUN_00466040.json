@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 70,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 11,
     "pseudocode_lines": 55,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_esp_anchor",
       "param_count_too_many"
     ],
     "total_lines": 226
@@ -155,17 +156,6 @@
     "declared_params": 1,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "00466066": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff9c,4)"
-    ],
-    "00466088": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff9c,4)"
-    ],
-    "004660ae": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff9c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.472,
     "instruction_count": 125,
@@ -207,47 +197,6 @@
     },
     "pcode_op_count": 809
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 20,
-      "call_address": "00466061",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00466066",
-      "frame_offset": 100,
-      "match": "CALL...ADD ESP",
-      "return_address": "00466066",
-      "target_address": "0x4032c0",
-      "text": "Direct CALL at 00466061, ADD ESP at 00466066 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00466083",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00466088",
-      "frame_offset": 100,
-      "match": "CALL...ADD ESP",
-      "return_address": "00466088",
-      "target_address": "0x5ffef0",
-      "text": "Direct CALL at 00466083, ADD ESP at 00466088 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004660a9",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004660ae",
-      "frame_offset": 100,
-      "match": "CALL...ADD ESP",
-      "return_address": "004660ae",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 004660a9, ADD ESP at 004660ae with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 124,
     "local_size": 120,
@@ -317,6 +266,45 @@
       "param_delta": -1,
       "text": "Function declares 1 params but call sites push 0 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "00466061",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00466066",
+      "frame_offset": 100,
+      "match": "CALL...ADD ESP",
+      "return_address": "00466066",
+      "target_address": "0x4032c0",
+      "text": "Direct CALL at 00466061, ADD ESP at 00466066 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00466083",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00466088",
+      "frame_offset": 100,
+      "match": "CALL...ADD ESP",
+      "return_address": "00466088",
+      "target_address": "0x5ffef0",
+      "text": "Direct CALL at 00466083, ADD ESP at 00466088 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004660a9",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004660ae",
+      "frame_offset": 100,
+      "match": "CALL...ADD ESP",
+      "return_address": "004660ae",
+      "target_address": "0x401fd0",
+      "text": "Direct CALL at 004660a9, ADD ESP at 004660ae with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

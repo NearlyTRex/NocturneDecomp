@@ -10,9 +10,9 @@ void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(char *mess
 
 {
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (g_ErrorMessageBuffer,"%s\n\nFile: %s\nLine: %d",message,g_CurrentFilename,
+            (g_ErrorMessageBuffer_03f96c30,"%s\n\nFile: %s\nLine: %d",message,g_CurrentFilename,
              g_CurrentLineNumber);
-  (*MessageBoxA)(g_MainWindowHandle,g_ErrorMessageBuffer,g_ApplicationTitle,0x30);
-  (*PTR_ExitProcess_00611534)(1);
+  (*g_MessageBoxAFunc)(g_MainWindowHandle,g_ErrorMessageBuffer_03f96c30,g_ApplicationTitle,0x30);
+  (*g_ExitProcessFunc)(1);
   return;
 }

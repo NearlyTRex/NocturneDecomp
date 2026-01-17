@@ -11,6 +11,6 @@ BOOL __cdecl wincore_wddvmem_cpp_freeLibrary_FUN_005ede00(HMODULE hLibModule)
 {
   BOOL BVar1;
   
-  BVar1 = (*PTR_FreeLibrary_0061155c)(hLibModule);
+  BVar1 = (*g_FreeLibraryFunc)(hLibModule);
   return BVar1;
 }

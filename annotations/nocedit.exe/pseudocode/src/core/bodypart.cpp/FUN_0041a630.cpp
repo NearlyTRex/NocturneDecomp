@@ -58,18 +58,18 @@ void core_bodypart_cpp_FUN_0041a630(void)
   bVar10 = 0;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)local_a4,in_stack_00000008);
-  fVar11 = (float10)(float)local_a4._4_4_ * (float10)65536f;
-  fVar12 = (float10)local_9c * (float10)65536f;
-  fVar13 = (float10)local_98 * (float10)65536f;
-  fVar14 = (float10)local_94.x * (float10)65536f;
-  fVar15 = (float10)local_94.y * (float10)65536f;
-  fVar16 = (float10)local_94.z * (float10)65536f;
-  dVar18 = crt_math_c_round_FUN_005fe6b0((double)((float)local_a4._0_4_ * 65536f));
+  fVar11 = (float10)(float)local_a4._4_4_ * (float10)65536.0f;
+  fVar12 = (float10)local_9c * (float10)65536.0f;
+  fVar13 = (float10)local_98 * (float10)65536.0f;
+  fVar14 = (float10)local_94.x * (float10)65536.0f;
+  fVar15 = (float10)local_94.y * (float10)65536.0f;
+  fVar16 = (float10)local_94.z * (float10)65536.0f;
+  dVar18 = crt_math_c_round_FUN_005fe6b0((double)((float)local_a4._0_4_ * 65536.0f));
   local_30 = (int)ROUND(dVar18);
-  fVar17 = (float10)local_94.z * (float10)65536f;
+  fVar17 = (float10)local_94.z * (float10)65536.0f;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar11);
   local_30 = (int)ROUND(dVar18);
-  fVar11 = (float10)local_94.z * (float10)65536f;
+  fVar11 = (float10)local_94.z * (float10)65536.0f;
   iVar9 = 0;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
   fVar12 = (float10)dVar18;

@@ -13,7 +13,7 @@
 ;   crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8 at 0060b458
 ;
 ; Referenced Globals:
-;   ReadConsoleInputA* PTR_ReadConsoleInputA_00611600 = 002120de
+;   ReadConsoleInputA* g_ReadConsoleInputAFunc = 002120de
 ;   int g_ConsoleInputState = 0x0
 ;   int g_BufferedCharacter
 ;   int g_BufferedVirtualKey
@@ -82,7 +82,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0060b358
     PUSH EAX                            ; 0060b35c
     PUSH EBX                            ; 0060b35d
-    CALL dword ptr CS:[0x611600]        ; 0060b35e | PTR_ReadConsoleInputA_00611600
+    CALL dword ptr CS:[0x611600]        ; 0060b35e | g_ReadConsoleInputAFunc
     TEST EAX,EAX                        ; 0060b365
     JZ 0x0060b3d3                       ; 0060b367
         ;   XREF to: 0060b3d3 (CONDITIONAL_JUMP)  ; LAB_0060b3d3

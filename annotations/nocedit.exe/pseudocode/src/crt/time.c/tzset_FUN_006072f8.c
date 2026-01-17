@@ -21,7 +21,7 @@ void __cdecl crt_time_c_tzset_FUN_006072f8(void)
   }
   if (((g_TimezoneInitFlags & 1) == 0) || ((g_TimezoneInitFlags & 2) == 0)) {
     g_TimezoneInitFlags = g_TimezoneInitFlags | 2;
-    DVar1 = (*PTR_GetTimeZoneInformation_006115c4)(&_Stack_b4);
+    DVar1 = (*g_GetTimeZoneInformationFunc)(&_Stack_b4);
     if (DVar1 != 0) {
       if (DVar1 < 2) {
         g_DaylightSavingActive = 0;

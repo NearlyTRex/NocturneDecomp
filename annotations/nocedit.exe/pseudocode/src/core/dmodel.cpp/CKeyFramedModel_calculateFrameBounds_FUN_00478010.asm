@@ -24,7 +24,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d53e
 ;
 ; Referenced Globals:
-;   double g_FixedPointScale = 0.00390625
+;   double g_FixedPointScale_0061f79b = 0.00390625
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
@@ -58,7 +58,7 @@ section .text
     ADD EDI,EBX                         ; 00478055
     MOV EBX,dword ptr [EBP + 0x10c]     ; 00478057
     ADD EBX,EAX                         ; 0047805d
-    FLD double ptr [0x0061f79b]         ; 0047805f | g_FixedPointScale
+    FLD double ptr [0x0061f79b]         ; 0047805f | g_FixedPointScale_0061f79b
     FILD dword ptr [EBX]                ; 00478065
     FMUL ST1                            ; 00478067
     FSTP float ptr [ESP]                ; 00478069
@@ -92,14 +92,14 @@ section .text
         ;   XREF to: 004780f3 (CONDITIONAL_JUMP)  ; LAB_004780f3
     FILD dword ptr [EBX + 0xc]          ; 004780b3
         ;   Label: LAB_004780b3
-    FMUL double ptr [0x0061f79b]        ; 004780b6 | g_FixedPointScale
+    FMUL double ptr [0x0061f79b]        ; 004780b6 | g_FixedPointScale_0061f79b
     FSTP float ptr [ESP]                ; 004780bc
     FILD dword ptr [EBX + 0x10]         ; 004780bf
-    FMUL double ptr [0x0061f79b]        ; 004780c2 | g_FixedPointScale
+    FMUL double ptr [0x0061f79b]        ; 004780c2 | g_FixedPointScale_0061f79b
     MOV EAX,ESP                         ; 004780c8
     FSTP float ptr [ESP + 0x4]          ; 004780ca
     FILD dword ptr [EBX + 0x14]         ; 004780ce
-    FMUL double ptr [0x0061f79b]        ; 004780d1 | g_FixedPointScale
+    FMUL double ptr [0x0061f79b]        ; 004780d1 | g_FixedPointScale_0061f79b
     PUSH EAX                            ; 004780d7
     ADD EBX,0xc                         ; 004780d8
     INC ESI                             ; 004780db

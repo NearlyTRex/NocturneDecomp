@@ -24,7 +24,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Error_00623018
-;   char[256] g_ErrorMessageBuffer
+;   char[256] g_ErrorMessageBuffer_02cef530
 ;   CEditorTools* g_CUserInterfacePtr
 ;
 ; Called Functions:
@@ -44,13 +44,13 @@ section .text
     PUSH EAX                            ; 0049e74d
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e74e
     PUSH EDX                            ; 0049e752
-    PUSH 0x2cef530                      ; 0049e753 | g_ErrorMessageBuffer
+    PUSH 0x2cef530                      ; 0049e753 | g_ErrorMessageBuffer_02cef530
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e758
         ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 0049e75d
     MOV EBX,dword ptr [0x02cf2a94]      ; 0049e760 | g_CUserInterfacePtr
     PUSH EBX                            ; 0049e766
-    PUSH 0x2cef530                      ; 0049e767 | g_ErrorMessageBuffer
+    PUSH 0x2cef530                      ; 0049e767 | g_ErrorMessageBuffer_02cef530
     XOR ECX,ECX                         ; 0049e76c
     PUSH 0x623018                       ; 0049e76e | = "Error"
     MOV dword ptr [ESP + 0xc],ECX       ; 0049e773

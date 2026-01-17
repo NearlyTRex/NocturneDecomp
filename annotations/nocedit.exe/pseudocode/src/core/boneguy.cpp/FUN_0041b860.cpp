@@ -14,56 +14,56 @@ float * core_boneguy_cpp_FUN_0041b860(void)
   float fVar3;
   float *in_stack_00000004;
   float *in_stack_00000008;
+  float fStack_38;
   float fStack_34;
   float local_30;
-  float fStack_2c;
-  float local_1c;
+  float local_20;
   
   fVar1 = *in_stack_00000008;
   fVar2 = in_stack_00000008[1];
   fVar3 = in_stack_00000008[2];
-  local_1c = fVar1;
+  local_20 = fVar1;
   if (fVar2 < fVar1) {
-    local_1c = fVar2;
+    local_20 = fVar2;
   }
-  if (fVar3 < local_1c) {
-    local_1c = fVar3;
+  if (fVar3 < local_20) {
+    local_20 = fVar3;
   }
-  fStack_2c = fVar1;
+  local_30 = fVar1;
   if (fVar1 < fVar2) {
-    fStack_2c = fVar2;
+    local_30 = fVar2;
   }
-  if (fStack_2c < fVar3) {
-    fStack_2c = fVar3;
+  if (local_30 < fVar3) {
+    local_30 = fVar3;
   }
-  local_1c = fStack_2c - local_1c;
-  if (fStack_2c <= 0.0) {
+  local_20 = local_30 - local_20;
+  if (local_30 <= 0.0) {
+    fStack_38 = 0.0;
+  }
+  else {
+    fStack_38 = local_20 / local_30;
+  }
+  if (fStack_38 <= 0.0) {
     fStack_34 = 0.0;
   }
   else {
-    fStack_34 = local_1c / fStack_2c;
-  }
-  if (fStack_34 <= 0.0) {
-    local_30 = 0.0;
-  }
-  else {
-    fStack_34 = fStack_34 * (float)255;
-    if (fVar1 == fStack_2c) {
-      local_1c = (fVar2 - fVar3) / local_1c;
+    fStack_38 = fStack_38 * (float)255;
+    if (fVar1 == local_30) {
+      local_20 = (fVar2 - fVar3) / local_20;
     }
-    else if (fVar2 == fStack_2c) {
-      local_1c = (float)2 - (fVar3 - fVar1) / local_1c;
+    else if (fVar2 == local_30) {
+      local_20 = (float)2 - (fVar3 - fVar1) / local_20;
     }
     else {
-      local_1c = (fVar1 - fVar2) / local_1c + (float)4;
+      local_20 = (fVar1 - fVar2) / local_20 + (float)4;
     }
-    local_30 = local_1c * (float)42.5;
-    if (local_30 < 0.0) {
-      local_30 = local_30 + 255f;
+    fStack_34 = local_20 * (float)42.5;
+    if (fStack_34 < 0.0) {
+      fStack_34 = fStack_34 + 255.0f;
     }
   }
-  *in_stack_00000004 = local_30;
-  in_stack_00000004[1] = fStack_34;
-  in_stack_00000004[2] = fStack_2c;
+  *in_stack_00000004 = fStack_34;
+  in_stack_00000004[1] = fStack_38;
+  in_stack_00000004[2] = local_30;
   return in_stack_00000004;
 }

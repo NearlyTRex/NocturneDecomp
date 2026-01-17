@@ -80,13 +80,13 @@ int __cdecl core_dcube_cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder 
     fVar5 = cylinder->intersect_x - cylinder->center_x;
     fVar3 = cylinder->intersect_z - cylinder->center_z;
     fVar1 = cylinder->normal_z * cylinder->normal_z + cylinder->normal_x * cylinder->normal_x;
-    fVar2 = (cylinder->normal_z * fVar3 + cylinder->normal_x * fVar5) * -2f
+    fVar2 = (cylinder->normal_z * fVar3 + cylinder->normal_x * fVar5) * -2.0f
     ;
     fVar5 = fVar2 * fVar2 -
-            fVar1 * 4f *
+            fVar1 * 4.0f *
             ((fVar3 * fVar3 + fVar5 * fVar5) - cylinder->radius * cylinder->radius);
     if (0.0 <= fVar5) {
-      fVar1 = (-fVar2 - SQRT(fVar5)) / (fVar1 * 2f);
+      fVar1 = (-fVar2 - SQRT(fVar5)) / (fVar1 * 2.0f);
       cylinder->param_t = fVar1;
       if (((0.0 <= fVar1) && (fVar1 <= 1.0)) && (cylinder->param_t < cylinder->max_distance)) {
         return 1;

@@ -47,7 +47,7 @@ core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams 
       local_3c = local_60;
       local_38 = local_5c;
     }
-    local_34 = local_40 / 8f;
+    local_34 = local_40 / 8.0f;
     local_30 = local_3c * 0.125f;
     local_2c = local_38 * 0.125f;
     if (&local_28 != &local_34) {

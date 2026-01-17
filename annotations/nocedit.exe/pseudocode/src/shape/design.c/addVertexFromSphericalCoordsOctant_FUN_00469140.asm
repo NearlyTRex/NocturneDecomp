@@ -17,8 +17,8 @@
 ;   shape_design.c_generateOctant_FUN_00469420 at 00469623
 ;
 ; Referenced Globals:
-;   double g_DegreesToRadiansFactor = 0.00555555555555555
-;   double g_PiConstant = 3.14159265350000
+;   double g_DegreesToRadiansVertexFactor3 = 0.00555555555555555
+;   double g_Pi_0061cf06 = 3.14159265350000
 ;   double g_UvCoordinateScale = 0.0111111111111111
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
@@ -39,28 +39,28 @@ section .text
     MOV EBP,ESP                         ; 00469144
     SUB ESP,0x10                        ; 00469146
     FLD float ptr [EBP + 0x18]          ; 0046914c
-    FMUL double ptr [0x0061cefe]        ; 0046914f | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061cf06]        ; 00469155 | g_PiConstant
+    FMUL double ptr [0x0061cefe]        ; 0046914f | g_DegreesToRadiansVertexFactor3
+    FMUL double ptr [0x0061cf06]        ; 00469155 | g_Pi_0061cf06
     FSIN                                ; 0046915b
     FLD float ptr [EBP + 0x1c]          ; 0046915d
     FMULP                               ; 00469160
     FSTP float ptr [EBP + -0x8]         ; 00469162
     FLD float ptr [EBP + 0x18]          ; 00469165
-    FMUL double ptr [0x0061cefe]        ; 00469168 | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061cf06]        ; 0046916e | g_PiConstant
+    FMUL double ptr [0x0061cefe]        ; 00469168 | g_DegreesToRadiansVertexFactor3
+    FMUL double ptr [0x0061cf06]        ; 0046916e | g_Pi_0061cf06
     FCOS                                ; 00469174
     FSTP float ptr [EBP + -0x10]        ; 00469176
     FLD float ptr [EBP + 0x14]          ; 00469179
-    FMUL double ptr [0x0061cefe]        ; 0046917c | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061cf06]        ; 00469182 | g_PiConstant
+    FMUL double ptr [0x0061cefe]        ; 0046917c | g_DegreesToRadiansVertexFactor3
+    FMUL double ptr [0x0061cf06]        ; 00469182 | g_Pi_0061cf06
     FCOS                                ; 00469188
     FLD float ptr [EBP + -0x10]         ; 0046918a
     FMUL float ptr [EBP + 0x1c]         ; 0046918d
     FMULP                               ; 00469190
     FSTP float ptr [EBP + -0xc]         ; 00469192
     FLD float ptr [EBP + 0x14]          ; 00469195
-    FMUL double ptr [0x0061cefe]        ; 00469198 | g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061cf06]        ; 0046919e | g_PiConstant
+    FMUL double ptr [0x0061cefe]        ; 00469198 | g_DegreesToRadiansVertexFactor3
+    FMUL double ptr [0x0061cf06]        ; 0046919e | g_Pi_0061cf06
     FSIN                                ; 004691a4
     FLD float ptr [EBP + -0x10]         ; 004691a6
     FMUL float ptr [EBP + 0x1c]         ; 004691a9

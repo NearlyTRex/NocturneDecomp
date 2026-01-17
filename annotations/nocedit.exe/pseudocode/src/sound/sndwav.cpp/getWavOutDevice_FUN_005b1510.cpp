@@ -17,7 +17,7 @@ CWavOutDevice * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_005b1510(UINT devic
   if (iVar1 == 0) {
     return (CWavOutDevice *)0x0;
   }
-  MVar2 = (*waveOutGetDevCapsA)(device_id,&local_34,0x34);
+  MVar2 = (*g_waveOutGetDevCapsAFunc)(device_id,&local_34,0x34);
   if (MVar2 != 0) {
     return (CWavOutDevice *)0x0;
   }

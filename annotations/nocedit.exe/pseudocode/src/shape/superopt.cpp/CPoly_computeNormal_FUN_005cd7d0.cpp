@@ -18,199 +18,196 @@ void __cdecl shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0(CPoly *this_ptr
   int iVar7;
   double *pdVar8;
   double *pdVar9;
+  uint local_2f0;
   uint uStack_2ec;
-  uint local_2e8;
-  ulonglong uStack_2e4;
-  ulonglong uStack_2d4;
-  double dStack_2a4;
-  double dStack_28c;
-  double dStack_284;
-  double dStack_27c;
-  double dStack_274;
-  double dStack_26c;
-  double dStack_264;
-  double dStack_25c;
-  double dStack_254;
-  double dStack_24c;
-  double dStack_244;
-  double dStack_23c;
-  double dStack_234;
-  double dStack_22c;
-  double dStack_224;
-  double dStack_21c;
-  double dStack_214;
-  double dStack_20c;
-  double dStack_204;
-  double dStack_1fc;
-  double dStack_1f4;
-  double dStack_1ec;
-  double dStack_1e4;
-  double dStack_1dc;
-  double dStack_1d4;
-  double dStack_1cc;
-  double dStack_1c4;
-  double dStack_1bc;
-  double dStack_19c;
-  double dStack_194;
-  double dStack_18c;
-  double dStack_184;
-  double dStack_17c;
-  double dStack_174;
-  double dStack_16c;
-  double dStack_164;
-  double dStack_15c;
-  double dStack_154;
-  double dStack_14c;
-  double dStack_144;
-  double dStack_13c;
-  double dStack_134;
-  double dStack_12c;
-  double dStack_124;
-  double dStack_11c;
-  double dStack_114;
-  double dStack_10c;
-  double dStack_104;
-  double dStack_fc;
-  double dStack_f4;
-  double dStack_ec;
-  double dStack_e4;
-  double dStack_dc;
-  double dStack_d4;
-  double dStack_cc;
-  double dStack_ac;
-  double dStack_a4;
-  double dStack_9c;
-  CVert *pCStack_14;
+  ulonglong local_2e8;
+  ulonglong local_2d8;
+  double local_2a8;
+  double local_290;
+  double local_288;
+  double local_280;
+  double local_278;
+  double local_270;
+  double local_268;
+  double local_260;
+  double local_258;
+  double local_250;
+  double local_248;
+  double local_240;
+  double local_238;
+  double local_230;
+  double local_228;
+  double local_220;
+  double local_218;
+  double local_210;
+  double local_208;
+  double local_200;
+  double local_1f8;
+  double local_1f0;
+  double local_1e8;
+  double local_1e0;
+  double local_1d8;
+  double local_1d0;
+  double local_1c8;
+  double local_1c0;
+  double local_1a0;
+  double local_198;
+  double local_190;
+  double local_188;
+  double local_180;
+  double local_178;
+  double local_170;
+  double local_168;
+  double local_160;
+  double local_158;
+  double local_150;
+  double local_148;
+  double local_140;
+  double local_138;
+  double local_130;
+  double local_128;
+  double local_120;
+  double local_118;
+  double local_110;
+  double local_108;
+  double local_100;
+  double local_f8;
+  double local_f0;
+  double local_e8;
+  double local_e0;
+  double local_d8;
+  double local_d0;
+  double local_b0;
+  double local_a8;
+  double local_a0;
+  CVert *local_18;
   
-  local_2e8 = 0x3ff00000;
-  uStack_2ec = 0;
+  uStack_2ec = 0x3ff00000;
+  local_2f0 = 0;
   pCVar6 = this_ptr->parent_obj->vertex_data;
   pCVar1 = pCVar6 + this_ptr->vertex_idx_0;
   pCVar2 = pCVar6 + this_ptr->vertex_idx_1;
-  dStack_154 = (pCVar2->position).x - (pCVar1->position).x;
-  dStack_14c = (pCVar2->position).y - (pCVar1->position).y;
-  pCStack_14 = pCVar6 + this_ptr->vertex_idx_2;
-  dStack_144 = (pCVar2->position).z - (pCVar1->position).z;
-  pdVar8 = &dStack_154;
-  pdVar9 = &dStack_244;
+  local_158 = (pCVar2->position).x - (pCVar1->position).x;
+  local_150 = (pCVar2->position).y - (pCVar1->position).y;
+  local_18 = pCVar6 + this_ptr->vertex_idx_2;
+  local_148 = (pCVar2->position).z - (pCVar1->position).z;
+  pdVar8 = &local_158;
+  pdVar9 = &local_248;
   for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
     *(uint *)pdVar9 = *(uint *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
     pdVar9 = (double *)((int)pdVar9 + 4);
   }
-  dStack_18c = 1.0 / SQRT(dStack_234 * dStack_234 +
-                          dStack_244 * dStack_244 + dStack_23c * dStack_23c);
-  dStack_19c = dStack_244 * dStack_18c;
-  dStack_194 = dStack_23c * dStack_18c;
-  dStack_18c = dStack_234 * dStack_18c;
-  dStack_274 = (pCStack_14->position).x - (pCVar2->position).x;
-  dStack_26c = (pCStack_14->position).y - (pCVar2->position).y;
-  dStack_264 = (pCStack_14->position).z - (pCVar2->position).z;
-  pdVar8 = &dStack_274;
-  pdVar9 = &dStack_184;
+  local_190 = 1.0 / SQRT(local_238 * local_238 + local_248 * local_248 + local_240 * local_240);
+  local_1a0 = local_248 * local_190;
+  local_198 = local_240 * local_190;
+  local_190 = local_238 * local_190;
+  local_278 = (local_18->position).x - (pCVar2->position).x;
+  local_270 = (local_18->position).y - (pCVar2->position).y;
+  local_268 = (local_18->position).z - (pCVar2->position).z;
+  pdVar8 = &local_278;
+  pdVar9 = &local_188;
   for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
     *(uint *)pdVar9 = *(uint *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
     pdVar9 = (double *)((int)pdVar9 + 4);
   }
-  dStack_24c = 1.0 / SQRT(dStack_174 * dStack_174 +
-                          dStack_184 * dStack_184 + dStack_17c * dStack_17c);
-  dStack_25c = dStack_184 * dStack_24c;
-  dStack_254 = dStack_17c * dStack_24c;
-  dStack_24c = dStack_174 * dStack_24c;
-  uStack_2d4 = dStack_19c * dStack_25c + dStack_194 * dStack_254 + dStack_18c * dStack_24c;
-  if (uStack_2d4 < 0.0) {
-    uStack_2d4 = -uStack_2d4;
+  local_250 = 1.0 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180);
+  local_260 = local_188 * local_250;
+  local_258 = local_180 * local_250;
+  local_250 = local_178 * local_250;
+  local_2d8 = local_1a0 * local_260 + local_198 * local_258 + local_190 * local_250;
+  if (local_2d8 < 0.0) {
+    local_2d8 = -local_2d8;
   }
-  if (uStack_2d4 < 1.0) {
-    uStack_2ec = (uint)uStack_2d4;
-    local_2e8 = uStack_2d4._4_4_;
-    dStack_1e4 = dStack_194 * dStack_24c - dStack_18c * dStack_254;
-    dStack_1dc = dStack_18c * dStack_25c - dStack_19c * dStack_24c;
-    dStack_1d4 = dStack_19c * dStack_254 - dStack_194 * dStack_25c;
-    (this_ptr->normal).x = dStack_1e4;
-    (this_ptr->normal).y = dStack_1dc;
-    (this_ptr->normal).z = dStack_1d4;
+  if (local_2d8 < 1.0) {
+    local_2f0 = (uint)local_2d8;
+    uStack_2ec = local_2d8._4_4_;
+    local_1e8 = local_198 * local_250 - local_190 * local_258;
+    local_1e0 = local_190 * local_260 - local_1a0 * local_250;
+    local_1d8 = local_1a0 * local_258 - local_198 * local_260;
+    (this_ptr->normal).x = local_1e8;
+    (this_ptr->normal).y = local_1e0;
+    (this_ptr->normal).z = local_1d8;
   }
-  dStack_10c = (pCStack_14->position).x - (pCVar2->position).x;
-  dStack_104 = (pCStack_14->position).y - (pCVar2->position).y;
-  dStack_fc = (pCStack_14->position).z - (pCVar2->position).z;
-  pdVar8 = &dStack_10c;
-  pdVar9 = &dStack_16c;
+  local_110 = (local_18->position).x - (pCVar2->position).x;
+  local_108 = (local_18->position).y - (pCVar2->position).y;
+  local_100 = (local_18->position).z - (pCVar2->position).z;
+  pdVar8 = &local_110;
+  pdVar9 = &local_170;
   for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
     *(uint *)pdVar9 = *(uint *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
     pdVar9 = (double *)((int)pdVar9 + 4);
   }
-  dVar3 = 1.0 / SQRT(dStack_15c * dStack_15c + dStack_16c * dStack_16c + dStack_164 * dStack_164);
-  dStack_f4 = dStack_16c * dVar3;
-  dStack_ec = dStack_164 * dVar3;
-  dStack_e4 = dStack_15c * dVar3;
-  dStack_1cc = (pCVar1->position).x - (pCStack_14->position).x;
-  dStack_1c4 = (pCVar1->position).y - (pCStack_14->position).y;
-  dStack_1bc = (pCVar1->position).z - (pCStack_14->position).z;
-  pdVar8 = &dStack_1cc;
-  pdVar9 = &dStack_1fc;
+  dVar3 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);
+  local_f8 = local_170 * dVar3;
+  local_f0 = local_168 * dVar3;
+  local_e8 = local_160 * dVar3;
+  local_1d0 = (pCVar1->position).x - (local_18->position).x;
+  local_1c8 = (pCVar1->position).y - (local_18->position).y;
+  local_1c0 = (pCVar1->position).z - (local_18->position).z;
+  pdVar8 = &local_1d0;
+  pdVar9 = &local_200;
   for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
     *(uint *)pdVar9 = *(uint *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
     pdVar9 = (double *)((int)pdVar9 + 4);
   }
-  dStack_114 = 1.0 / SQRT(dStack_1ec * dStack_1ec +
-                          dStack_1fc * dStack_1fc + dStack_1f4 * dStack_1f4);
-  dStack_124 = dStack_1fc * dStack_114;
-  dStack_11c = dStack_1f4 * dStack_114;
-  dStack_114 = dStack_1ec * dStack_114;
-  uStack_2e4 = dStack_f4 * dStack_124 + dStack_ec * dStack_11c + dStack_e4 * dStack_114;
-  if (uStack_2e4 < 0.0) {
-    uStack_2e4 = -uStack_2e4;
+  local_118 = 1.0 / SQRT(local_1f0 * local_1f0 + local_200 * local_200 + local_1f8 * local_1f8);
+  local_128 = local_200 * local_118;
+  local_120 = local_1f8 * local_118;
+  local_118 = local_1f0 * local_118;
+  local_2e8 = local_f8 * local_128 + local_f0 * local_120 + local_e8 * local_118;
+  if (local_2e8 < 0.0) {
+    local_2e8 = -local_2e8;
   }
-  if (uStack_2e4 < (double)CONCAT44 /* combine 2-byte values */(local_2e8,uStack_2ec)) {
-    uStack_2ec = (uint)uStack_2e4;
-    local_2e8 = uStack_2e4._4_4_;
-    dStack_ac = dStack_ec * dStack_114 - dStack_e4 * dStack_11c;
-    dStack_a4 = dStack_e4 * dStack_124 - dStack_f4 * dStack_114;
-    dStack_9c = dStack_f4 * dStack_11c - dStack_ec * dStack_124;
-    (this_ptr->normal).x = dStack_ac;
-    (this_ptr->normal).y = dStack_a4;
-    (this_ptr->normal).z = dStack_9c;
+  if (local_2e8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {
+    local_2f0 = (uint)local_2e8;
+    uStack_2ec = local_2e8._4_4_;
+    local_b0 = local_f0 * local_118 - local_e8 * local_120;
+    local_a8 = local_e8 * local_128 - local_f8 * local_118;
+    local_a0 = local_f8 * local_120 - local_f0 * local_128;
+    (this_ptr->normal).x = local_b0;
+    (this_ptr->normal).y = local_a8;
+    (this_ptr->normal).z = local_a0;
   }
-  dStack_13c = (pCVar1->position).x - (pCStack_14->position).x;
-  dStack_134 = (pCVar1->position).y - (pCStack_14->position).y;
-  dStack_12c = (pCVar1->position).z - (pCStack_14->position).z;
-  pdVar8 = &dStack_13c;
-  pdVar9 = &dStack_22c;
+  local_140 = (pCVar1->position).x - (local_18->position).x;
+  local_138 = (pCVar1->position).y - (local_18->position).y;
+  local_130 = (pCVar1->position).z - (local_18->position).z;
+  pdVar8 = &local_140;
+  pdVar9 = &local_230;
   for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
     *(uint *)pdVar9 = *(uint *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
     pdVar9 = (double *)((int)pdVar9 + 4);
   }
-  dVar3 = 1.0 / SQRT(dStack_21c * dStack_21c + dStack_22c * dStack_22c + dStack_224 * dStack_224);
-  dStack_214 = dStack_22c * dVar3;
-  dStack_20c = dStack_224 * dVar3;
-  dStack_204 = dStack_21c * dVar3;
-  dStack_dc = (pCVar2->position).x - (pCVar1->position).x;
-  dStack_d4 = (pCVar2->position).y - (pCVar1->position).y;
-  dStack_cc = (pCVar2->position).z - (pCVar1->position).z;
-  pdVar8 = &dStack_dc;
-  pdVar9 = &dStack_28c;
+  dVar3 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);
+  local_218 = local_230 * dVar3;
+  local_210 = local_228 * dVar3;
+  local_208 = local_220 * dVar3;
+  local_e0 = (pCVar2->position).x - (pCVar1->position).x;
+  local_d8 = (pCVar2->position).y - (pCVar1->position).y;
+  local_d0 = (pCVar2->position).z - (pCVar1->position).z;
+  pdVar8 = &local_e0;
+  pdVar9 = &local_290;
   for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
     *(uint *)pdVar9 = *(uint *)pdVar8;
     pdVar8 = (double *)((int)pdVar8 + 4);
     pdVar9 = (double *)((int)pdVar9 + 4);
   }
-  dVar5 = 1.0 / SQRT(dStack_27c * dStack_27c + dStack_28c * dStack_28c + dStack_284 * dStack_284);
-  dVar3 = dStack_28c * dVar5;
-  dVar4 = dStack_284 * dVar5;
-  dVar5 = dStack_27c * dVar5;
-  dStack_2a4 = dStack_214 * dVar3 + dStack_20c * dVar4 + dStack_204 * dVar5;
-  if (dStack_2a4 < 0.0) {
-    dStack_2a4 = -dStack_2a4;
+  dVar5 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);
+  dVar3 = local_290 * dVar5;
+  dVar4 = local_288 * dVar5;
+  dVar5 = local_280 * dVar5;
+  local_2a8 = local_218 * dVar3 + local_210 * dVar4 + local_208 * dVar5;
+  if (local_2a8 < 0.0) {
+    local_2a8 = -local_2a8;
   }
-  if (dStack_2a4 < (double)CONCAT44 /* combine 2-byte values */(local_2e8,uStack_2ec)) {
-    (this_ptr->normal).x = dStack_20c * dVar5 - dStack_204 * dVar4;
-    (this_ptr->normal).y = dStack_204 * dVar3 - dStack_214 * dVar5;
-    (this_ptr->normal).z = dStack_214 * dVar4 - dStack_20c * dVar3;
+  if (local_2a8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {
+    (this_ptr->normal).x = local_210 * dVar5 - local_208 * dVar4;
+    (this_ptr->normal).y = local_208 * dVar3 - local_218 * dVar5;
+    (this_ptr->normal).z = local_218 * dVar4 - local_210 * dVar3;
   }
   dVar3 = (this_ptr->normal).y;
   dVar4 = (this_ptr->normal).x;

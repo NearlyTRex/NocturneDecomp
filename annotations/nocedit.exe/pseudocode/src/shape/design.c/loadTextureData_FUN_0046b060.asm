@@ -444,7 +444,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b46e
     FILD dword ptr [EAX + 0x240]        ; 0046b471
     FADDP                               ; 0046b477
-    FMUL double ptr [0x0061d37e]        ; 0046b479 | g_TextureScalingFactor
+    FMUL double ptr [0x0061d37e]        ; 0046b479 | g_TextureScalingFactor_0061d37e
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b47f
     FILD dword ptr [EAX + 0x200]        ; 0046b482
     FMULP                               ; 0046b488
@@ -462,7 +462,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b4b8
     FILD dword ptr [EAX + 0x244]        ; 0046b4bb
     FADDP                               ; 0046b4c1
-    FMUL double ptr [0x0061d37e]        ; 0046b4c3 | g_TextureScalingFactor
+    FMUL double ptr [0x0061d37e]        ; 0046b4c3 | g_TextureScalingFactor_0061d37e
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b4c9
     FILD dword ptr [EAX + 0x204]        ; 0046b4cc
     FMULP                               ; 0046b4d2
@@ -484,7 +484,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b511
     FILD dword ptr [EAX + 0x240]        ; 0046b514
     FADDP                               ; 0046b51a
-    FMUL double ptr [0x0061d37e]        ; 0046b51c | g_TextureScalingFactor
+    FMUL double ptr [0x0061d37e]        ; 0046b51c | g_TextureScalingFactor_0061d37e
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b522
     FILD dword ptr [EAX + 0x200]        ; 0046b525
     FMULP                               ; 0046b52b
@@ -506,7 +506,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b56a
     FILD dword ptr [EAX + 0x244]        ; 0046b56d
     FADDP                               ; 0046b573
-    FMUL double ptr [0x0061d37e]        ; 0046b575 | g_TextureScalingFactor
+    FMUL double ptr [0x0061d37e]        ; 0046b575 | g_TextureScalingFactor_0061d37e
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b57b
     FILD dword ptr [EAX + 0x204]        ; 0046b57e
     FMULP                               ; 0046b584

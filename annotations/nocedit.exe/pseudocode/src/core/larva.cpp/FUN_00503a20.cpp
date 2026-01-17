@@ -18,9 +18,8 @@ void core_larva_cpp_FUN_00503a20(void)
   int iVar4;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
-  char acStack_e4 [100];
-  char acStack_80 [100];
-  CVector3f CStack_1c;
+  char local_e8 [100];
+  char local_84 [116];
   
   pCVar1 = (CDemonActor *)
            ((float)in_stack_00000004[0x1a].next_actor - *(float *)(in_stack_00000008 + 4));
@@ -40,8 +39,8 @@ void core_larva_cpp_FUN_00503a20(void)
       else {
         pcVar3 = "sml";
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_80,"l%s-shot?.wav",pcVar3);
-      iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,acStack_80);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"l%s-shot?.wav",pcVar3);
+      iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,local_84);
       in_stack_00000004[0x8d].field26_0x148 = iVar4;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -68,12 +67,13 @@ void core_larva_cpp_FUN_00503a20(void)
     else {
       pcVar3 = "sml";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e4,"l%s-die?.wav",pcVar3);
-    iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,acStack_e4);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_e8,"l%s-die?.wav",pcVar3);
+    iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,local_e8);
     in_stack_00000004[0x8d].field26_0x148 = iVar4;
   }
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x1c));
+            (in_stack_00000004,(CVector3f *)(local_84 + 0x6c),
+             (CVector3f *)(in_stack_00000008 + 0x1c));
   core_gore_cpp_FUN_004edbb0();
   core_enemy_cpp_FUN_004a9f10();
   return;

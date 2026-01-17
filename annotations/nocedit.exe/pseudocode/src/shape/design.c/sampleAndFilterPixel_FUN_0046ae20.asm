@@ -41,7 +41,7 @@
 ;   shape_design.c_loadTextureData_FUN_0046b060 at 0046b5f2
 ;
 ; Referenced Globals:
-;   double g_RoundingOffset = 0.5
+;   double g_RoundingOffset_0061d296 = 0.5
 ;
 ; Called Functions:
 ;   crt_math.c_ceil_FUN_006001b2
@@ -229,25 +229,25 @@ section .text
     FSTP double ptr [EBP + -0x24]       ; 0046affc
     FLD double ptr [EBP + -0x3c]        ; 0046afff
         ;   Label: LAB_0046afff
-    FADD double ptr [0x0061d296]        ; 0046b002 | g_RoundingOffset
+    FADD double ptr [0x0061d296]        ; 0046b002 | g_RoundingOffset_0061d296
     MOV EAX,dword ptr [EBP + 0x44]      ; 0046b008
     CALL crt_math.c_round_FUN_005fe6b0  ; 0046b00b
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EAX]               ; 0046b010
     FLD double ptr [EBP + -0x34]        ; 0046b012
-    FADD double ptr [0x0061d296]        ; 0046b015 | g_RoundingOffset
+    FADD double ptr [0x0061d296]        ; 0046b015 | g_RoundingOffset_0061d296
     MOV EAX,dword ptr [EBP + 0x48]      ; 0046b01b
     CALL crt_math.c_round_FUN_005fe6b0  ; 0046b01e
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EAX]               ; 0046b023
     FLD double ptr [EBP + -0x2c]        ; 0046b025
-    FADD double ptr [0x0061d296]        ; 0046b028 | g_RoundingOffset
+    FADD double ptr [0x0061d296]        ; 0046b028 | g_RoundingOffset_0061d296
     MOV EAX,dword ptr [EBP + 0x4c]      ; 0046b02e
     CALL crt_math.c_round_FUN_005fe6b0  ; 0046b031
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EAX]               ; 0046b036
     FLD double ptr [EBP + -0x24]        ; 0046b038
-    FADD double ptr [0x0061d296]        ; 0046b03b | g_RoundingOffset
+    FADD double ptr [0x0061d296]        ; 0046b03b | g_RoundingOffset_0061d296
     MOV EAX,dword ptr [EBP + 0x50]      ; 0046b041
     CALL crt_math.c_round_FUN_005fe6b0  ; 0046b044
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)

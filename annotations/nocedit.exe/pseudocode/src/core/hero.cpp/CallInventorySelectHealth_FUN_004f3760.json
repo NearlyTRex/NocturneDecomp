@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 104,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 24,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
+      "call_esp_anchor",
       "stack_param",
       "unresolved_funcptr"
     ],
@@ -59,17 +60,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004f3787": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004f37b5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ],
-    "004f37c2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.346938775510204,
     "instruction_count": 49,
@@ -94,47 +84,6 @@
     },
     "pcode_op_count": 213
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "call_address": "004f3782",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004f3787",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "004f3787",
-      "target_address": "0x40c6d0",
-      "text": "Direct CALL at 004f3782, ADD ESP at 004f3787 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004f37b0",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004f37b5",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "004f37b5",
-      "target_address": "0x4ff800",
-      "text": "Direct CALL at 004f37b0, ADD ESP at 004f37b5 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004f37bd",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004f37c2",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "004f37c2",
-      "target_address": "0x4f35b0",
-      "text": "Direct CALL at 004f37bd, ADD ESP at 004f37c2 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -192,6 +141,45 @@
       "match": "in_stack_00000004",
       "text": "*(CDemonActor **)(in_stack_00000004 + 0x1fa6c));",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004f3782",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004f3787",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "004f3787",
+      "target_address": "0x40c6d0",
+      "text": "Direct CALL at 004f3782, ADD ESP at 004f3787 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004f37b0",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004f37b5",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "004f37b5",
+      "target_address": "0x4ff800",
+      "text": "Direct CALL at 004f37b0, ADD ESP at 004f37b5 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004f37bd",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004f37c2",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "004f37c2",
+      "target_address": "0x4f35b0",
+      "text": "Direct CALL at 004f37bd, ADD ESP at 004f37c2 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

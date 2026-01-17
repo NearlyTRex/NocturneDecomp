@@ -27,16 +27,18 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   CGame *in_stack_00000004;
   CGame *in_stack_fffffab0;
   float fVar14;
-  char local_54c [1024];
-  char local_14c [256];
-  CAlphaBitmap local_4c;
+  char acStack_15c [256];
+  byte auStack_5c [28];
+  uint uStack_40;
+  int iStack_3c;
   int iStack_38;
-  uint local_30;
-  int local_2c;
+  int iStack_34;
+  int local_30;
+  CBitFont *local_2c;
   uint local_28;
   int local_24;
   int local_20;
-  CBitFont *local_1c;
+  int local_1c;
   int local_18;
   
   bVar11 = 0;
@@ -63,21 +65,23 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
        in_stack_00000004->player_rotation + in_stack_00000004->player_pos_y;
   in_stack_00000004->game_state_flags =
        in_stack_00000004->game_state_flags + (int)in_stack_00000004->player_pos_x;
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_4c);
-  engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_4c,"stats",0x280,0x1e0);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)(auStack_5c + 0x10));
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
+            ((CAlphaBitmap *)(auStack_5c + 0x10),"stats",0x280,0x1e0);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_4c,0,0,0xffff);
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
+            ((CAlphaBitmap *)(auStack_5c + 0x10),0,0,0xffff);
   fVar12 = (float10)in_stack_00000004->player_pos_y;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 * (float10)0.00027777777777777799));
-  local_2c = (int)ROUND(dVar13);
-  fVar12 = fVar12 - (float10)local_2c * (float10)3600;
+  local_2c = (CBitFont *)(int)ROUND(dVar13);
+  fVar12 = fVar12 - (float10)(int)local_2c * (float10)3600;
   in_stack_00000004->player_pos_y = (float)fVar12;
-  local_18 = local_2c;
+  local_18 = (int)local_2c;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 * (float10)0.016666666666666701));
   iStack_38 = (int)ROUND(dVar13);
   fVar12 = fVar12 - (float10)iStack_38 * (float10)60;
   in_stack_00000004->player_pos_y = (float)fVar12;
-  local_1c = (CBitFont *)iStack_38;
+  local_1c = iStack_38;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
   local_24 = (int)ROUND(dVar13);
   fVar14 = in_stack_00000004->player_pos_y - (float)local_24;
@@ -85,9 +89,9 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   pcVar3 = (char *)0x4e3d9f;
   local_20 = local_24;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar14 * (float)100));
-  local_4c.height = (int)ROUND(dVar13);
+  iStack_3c = (int)ROUND(dVar13);
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3);
-  pcVar3 = local_54c;
+  pcVar3 = &stack0xfffffaa4;
   do {
     cVar1 = *pcVar4;
     *pcVar3 = cVar1;
@@ -97,10 +101,10 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  iVar2 = local_2c;
+  iVar2 = iStack_3c;
   pcVar4 = "\n\n";
   iVar5 = -1;
-  pcVar3 = local_54c;
+  pcVar3 = &stack0xfffffaa4;
   do {
     pcVar9 = pcVar3;
     if (iVar5 == 0) break;
@@ -121,10 +125,10 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   } while (cVar1 != '\0');
   uVar7 = 0;
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (local_14c,"%2d:%2d:%2d.%2d\n\n",local_28,local_30,local_18,iVar2);
+            (acStack_15c,"%2d:%2d:%2d.%2d\n\n",iStack_38,uStack_40,local_28,iVar2);
   do {
     uVar6 = 0xffffffff;
-    pcVar3 = local_14c;
+    pcVar3 = acStack_15c;
     do {
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
@@ -132,14 +136,14 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
       pcVar3 = pcVar3 + (uint)bVar11 * -2 + 1;
     } while (cVar1 != '\0');
     if (~uVar6 - 1 <= uVar7) break;
-    if (local_14c[uVar7] == ' ') {
-      local_14c[uVar7] = '0';
+    if (acStack_15c[uVar7] == ' ') {
+      acStack_15c[uVar7] = '0';
     }
     uVar7 = uVar7 + 1;
   } while( true );
-  pcVar3 = local_14c;
+  pcVar3 = acStack_15c;
   iVar2 = -1;
-  pcVar4 = local_54c;
+  pcVar4 = &stack0xfffffaa4;
   do {
     pcVar9 = pcVar4;
     if (iVar2 == 0) break;
@@ -160,7 +164,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   } while (cVar1 != '\0');
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Total body count");
   iVar2 = -1;
-  pcVar3 = local_54c;
+  pcVar3 = &stack0xfffffaa4;
   do {
     pcVar9 = pcVar3;
     if (iVar2 == 0) break;
@@ -181,7 +185,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   } while (cVar1 != '\0');
   pcVar4 = "\n\n";
   iVar2 = -1;
-  pcVar3 = local_54c;
+  pcVar3 = &stack0xfffffaa4;
   do {
     pcVar9 = pcVar3;
     if (iVar2 == 0) break;
@@ -200,10 +204,10 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_14c,"%d\n\n",in_stack_00000004->game_state_flags);
-  pcVar3 = local_14c;
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_15c,"%d\n\n",in_stack_00000004->game_state_flags);
+  pcVar3 = acStack_15c;
   iVar2 = -1;
-  pcVar4 = local_54c;
+  pcVar4 = &stack0xfffffaa4;
   do {
     pcVar9 = pcVar4;
     if (iVar2 == 0) break;
@@ -222,29 +226,29 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  local_1c = g_ThemeFont;
+  local_2c = g_ThemeFont;
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-  pCVar8 = local_1c;
+  pCVar8 = local_2c;
   iVar2 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                    (local_1c,local_54c,&DAT_02d7d6f0,0x14,0x100,0xc0);
+                    (local_2c,&stack0xfffffaa4,&DAT_02d7d6f0,0x14,0x100,0xc0);
   iVar10 = 0;
-  local_24 = iVar2;
-  local_20 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar8,0x58);
+  iStack_34 = iVar2;
+  local_30 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar8,0x58);
   iVar5 = 0xf0;
   if (0 < iVar2) {
     pcVar3 = &DAT_02d7d6f0;
     do {
       iVar10 = iVar10 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
-                (local_1c,0x1c0,0x27f,iVar5,0xf8,0,pcVar3);
+                (local_2c,0x1c0,0x27f,iVar5,0xf8,0,pcVar3);
       pcVar3 = pcVar3 + 0x100;
-      iVar5 = iVar5 + local_20;
-    } while (iVar10 < local_24);
+      iVar5 = iVar5 + local_30;
+    } while (iVar10 < iStack_34);
   }
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_4c);
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)auStack_5c);
   return;
 }

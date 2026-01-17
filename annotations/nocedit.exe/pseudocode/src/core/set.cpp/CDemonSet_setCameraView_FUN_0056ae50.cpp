@@ -296,9 +296,9 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
           ;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr_00,&CStack_4c,pCVar4);
           corner_index = corner_index + 1;
-          *piVar14 = (int)ROUND(CStack_4c.x * 256f);
-          piVar14[1] = (int)ROUND(CStack_4c.y * 256f);
-          piVar14[2] = (int)ROUND(CStack_4c.z * 256f);
+          *piVar14 = (int)ROUND(CStack_4c.x * 256.0f);
+          piVar14[1] = (int)ROUND(CStack_4c.y * 256.0f);
+          piVar14[2] = (int)ROUND(CStack_4c.z * 256.0f);
           piVar14 = piVar14 + 3;
         } while ((int)corner_index < 8);
       }

@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 29,
+    "complexity_score": 44,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 29,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_align_anchor"
+    ],
     "total_lines": 125
   },
   "cross_references": [],
@@ -51,31 +53,31 @@
     },
     {
       "addr": "006582fd",
-      "name": "g_Atan2NegativeOne",
+      "name": "g_Atan2NegativeOne_006582fd",
       "type": "double",
       "value": "-1"
     },
     {
       "addr": "00658305",
-      "name": "g_Atan2Pi",
+      "name": "g_Atan2Pi_00658305",
       "type": "double",
       "value": "3.14159265359000"
     },
     {
       "addr": "0065830d",
-      "name": "g_Atan2NegativePi",
+      "name": "g_Atan2NegativePi_0065830d",
       "type": "double",
       "value": "-3.14159265359000"
     },
     {
       "addr": "00658315",
-      "name": "g_Atan2TwoPi",
+      "name": "g_Atan2TwoPi_00658315",
       "type": "float",
       "value": "6.283185"
     },
     {
       "addr": "00658319",
-      "name": "g_Atan2NegativeTwoPi",
+      "name": "g_Atan2NegativeTwoPi_00658319",
       "type": "float",
       "value": "-6.283185"
     }
@@ -86,11 +88,6 @@
     "confidence": "unknown",
     "declared_params": 2,
     "estimated_params": 2
-  },
-  "pcode_overrides": {
-    "005f55c6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
-    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 8.453333333333333,
@@ -128,18 +125,6 @@
     },
     "pcode_op_count": 634
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x4",
-      "fix_address": "005f55c6",
-      "frame_offset": 4,
-      "match": "AND ESP",
-      "sub_esp_offset": 4,
-      "text": "Stack alignment at 005f55c6 (SUB ESP, 0x4 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 16,
@@ -194,5 +179,16 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x4",
+      "fix_address": "005f55c6",
+      "frame_offset": 4,
+      "match": "AND ESP",
+      "sub_esp_offset": 4,
+      "text": "Stack alignment at 005f55c6 (SUB ESP, 0x4 before)",
+      "type": "stack_align_anchor"
+    }
+  ]
 }

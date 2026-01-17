@@ -14,7 +14,7 @@
 ;   crt_string.c_wcstombs_FUN_0060c0c0 at 0060c163
 ;
 ; Referenced Globals:
-;   WideCharToMultiByte* PTR_WideCharToMultiByte_00611670 = 002122da
+;   WideCharToMultiByte* g_WideCharToMultiByteFunc = 002122da
 ;   uint g_CodePage = 0x1
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     PUSH 0x200                          ; 0060ad07
     MOV EDX,dword ptr [0x00685570]      ; 0060ad0c | g_CodePage
     PUSH EDX                            ; 0060ad12
-    CALL dword ptr CS:[0x611670]        ; 0060ad13 | PTR_WideCharToMultiByte_00611670
+    CALL dword ptr CS:[0x611670]        ; 0060ad13 | g_WideCharToMultiByteFunc
     TEST EAX,EAX                        ; 0060ad1a
     JZ 0x0060ad1f                       ; 0060ad1c
         ;   XREF to: 0060ad1f (CONDITIONAL_JUMP)  ; LAB_0060ad1f

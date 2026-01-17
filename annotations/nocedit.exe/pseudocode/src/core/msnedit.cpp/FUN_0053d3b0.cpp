@@ -57,7 +57,7 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
         }
       }
       fVar6 = (float10)(float)pCVar4[0x1a].next_actor * (float10)local_14;
-      dVar7 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * 100f));
+      dVar7 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * 100.0f));
       local_28 = (int)ROUND(dVar7);
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar4,

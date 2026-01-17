@@ -23,7 +23,7 @@ void __cdecl core_colonel_cpp_CColonel_FUN_004404b0(CColonel *this_ptr)
   if (g_CGamePtr->allow_damage_flag == 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  (this_ptr->base_hero).field1_0xbe24 = DAT_0065bd48;
+  (this_ptr->base_hero).field1_0xbe24 = 0x3F000000;
   fVar1 = (this_ptr->base_hero).base_character.hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr_00 = &(this_ptr->base_hero).base_character.model;
   (this_ptr->base_hero).base_character.hit_points = fVar1;

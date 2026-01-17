@@ -176,7 +176,7 @@ LAB_005a900a:
           pCVar11->ref_count = 0;
           iVar3 = (pCVar11->sample_info).sample_rate;
           pCVar11->buffer_id = 0;
-          fVar1 = (float)iVar3 * 2f;
+          fVar1 = (float)iVar3 * 2.0f;
           pCVar11->stream_read_position = 0;
           pCVar11->stream_write_position = 0;
           pCVar20 = (CSfxSample *)0x5a93a9;
@@ -217,7 +217,7 @@ joined_r0x005a94f6:
             sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(local_18);
             iVar3 = (local_18->sample_info).sample_rate;
             local_18->taken = 0;
-            fVar1 = (float)iVar3 * 2f;
+            fVar1 = (float)iVar3 * 2.0f;
             local_18->ref_count = 0;
             local_18->buffer_id = 0;
             dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar1);

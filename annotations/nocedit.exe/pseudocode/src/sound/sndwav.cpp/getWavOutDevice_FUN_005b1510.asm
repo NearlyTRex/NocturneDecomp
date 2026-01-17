@@ -12,7 +12,7 @@
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0 at 005ab5f7
 ;
 ; Referenced Globals:
-;   waveOutGetDevCapsA* waveOutGetDevCapsA = 0021192e
+;   waveOutGetDevCapsA* g_waveOutGetDevCapsAFunc = 0021192e
 ;   UINT g_WaveOutDeviceID = 0xffffffff
 ;   CWavOutDevice g_CWavOutDeviceInstance
 ;
@@ -41,7 +41,7 @@ section .text
     PUSH EAX                            ; 005b152e
     MOV EDX,dword ptr [ESP + 0x40]      ; 005b152f
     PUSH EDX                            ; 005b1533
-    CALL dword ptr CS:[0x611444]        ; 005b1534 | waveOutGetDevCapsA
+    CALL dword ptr CS:[0x611444]        ; 005b1534 | g_waveOutGetDevCapsAFunc
     TEST EAX,EAX                        ; 005b153b
     JZ 0x005b1545                       ; 005b153d
         ;   XREF to: 005b1545 (CONDITIONAL_JUMP)  ; LAB_005b1545

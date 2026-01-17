@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 206,
+    "complexity_score": 221,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 91,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "stack_align_anchor"
     ],
     "total_lines": 207
   },
@@ -34,11 +35,6 @@
     "confidence": "unknown",
     "declared_params": 3,
     "estimated_params": 3
-  },
-  "pcode_overrides": {
-    "005d294c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff54,4)"
-    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.252252252252252,
@@ -71,18 +67,6 @@
     },
     "pcode_op_count": 583
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
-      "fix_address": "005d294c",
-      "frame_offset": 172,
-      "match": "AND ESP",
-      "sub_esp_offset": 172,
-      "text": "Stack alignment at 005d294c (SUB ESP, 0xac before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 208,
     "local_size": 196,
@@ -318,21 +302,21 @@
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(uint *)((int)",
-      "text": "local_88 = *(uint *)((int)&scale->x + 4);",
+      "text": "uStack_8c = *(uint *)((int)&scale->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(uint *)((int)",
-      "text": "local_80 = *(uint *)((int)&scale->y + 4);",
+      "text": "uStack_84 = *(uint *)((int)&scale->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(uint *)((int)",
-      "text": "local_78 = *(uint *)((int)&scale->z + 4);",
+      "text": "uStack_7c = *(uint *)((int)&scale->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -374,22 +358,32 @@
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_2c[1];",
+      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_30[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_2c[3];",
+      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_30[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_18;",
+      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_1c;",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
+      "fix_address": "005d294c",
+      "frame_offset": 172,
+      "match": "AND ESP",
+      "sub_esp_offset": 172,
+      "text": "Stack alignment at 005d294c (SUB ESP, 0xac before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

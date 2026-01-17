@@ -18,8 +18,8 @@
 ;   ... and 36 more
 ;
 ; Referenced Globals:
-;   timeGetTime* timeGetTime = 00211884
-;   QueryPerformanceCounter* QueryPerformanceCounter = 002120a8
+;   timeGetTime* g_timeGetTimeFunc = 00211884
+;   QueryPerformanceCounter* g_QueryPerformanceCounterFunc = 002120a8
 ;   double g_HighPartMultiplier = 4294967296
 ;   double g_TimeScaleFactor1 = 65536
 ;   double g_TimeScaleFactor2 = 18
@@ -45,7 +45,7 @@ section .text
     CMP dword ptr [0x03f96bc4],0x0      ; 005f2dc3 | g_UseMultimediaTimer
     JZ 0x005f2ddd                       ; 005f2dca
         ;   XREF to: 005f2ddd (CONDITIONAL_JUMP)  ; LAB_005f2ddd
-    CALL dword ptr CS:[0x61141c]        ; 005f2dcc | timeGetTime
+    CALL dword ptr CS:[0x61141c]        ; 005f2dcc | g_timeGetTimeFunc
     IMUL EAX,EAX,0x49c                  ; 005f2dd3
     ADD ESP,0x24                        ; 005f2dd9
     RET                                 ; 005f2ddc
@@ -57,7 +57,7 @@ section .text
     PUSH 0x3f96ba8                      ; 005f2de9 | g_PerformanceCounter
     MOVSD ES:EDI,ESI                    ; 005f2dee | g_PreviousCounterLow | g_PerformanceCounter
     MOVSD ES:EDI,ESI                    ; 005f2def | g_PreviousCounterHigh | g_PerformanceCounter+4
-    CALL dword ptr CS:[0x6115f8]        ; 005f2df0 | QueryPerformanceCounter
+    CALL dword ptr CS:[0x6115f8]        ; 005f2df0 | g_QueryPerformanceCounterFunc
     FLD double ptr [0x00657f34]         ; 005f2df7 | g_HighPartMultiplier
     FILD dword ptr [0x03f96ba4]         ; 005f2dfd | g_PreviousCounterHigh
     FMUL ST1                            ; 005f2e03

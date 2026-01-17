@@ -8,7 +8,7 @@
 ;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f982
 ;
 ; Referenced Globals:
-;   TlsSetValue* PTR_TlsSetValue_00611658 = 0021226c
+;   TlsSetValue* g_TlsSetValueFunc = 0021226c
 ;   DWORD g_TLSIndex = 0xffffffff
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
@@ -92,7 +92,7 @@ section .text
     MOV ECX,dword ptr [0x00684ee0]      ; 0060a4ae | g_TLSIndex
     PUSH ECX                            ; 0060a4b4
     MOV ESI,0x60a1fc                    ; 0060a4b5
-    CALL dword ptr CS:[0x611658]        ; 0060a4ba | PTR_TlsSetValue_00611658
+    CALL dword ptr CS:[0x611658]        ; 0060a4ba | g_TlsSetValueFunc
     MOV dword ptr [0x00684ee4],ESI      ; 0060a4c1 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
     POP EBP                             ; 0060a4c7
     POP EDI                             ; 0060a4c8

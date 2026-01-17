@@ -10,7 +10,7 @@
 ;   core_menu.cpp_getKeyDisplayName_FUN_005134e0 at 0051370d
 ;
 ; Referenced Globals:
-;   GetKeyNameTextA* GetKeyNameTextA = 00211ae4
+;   GetKeyNameTextA* g_GetKeyNameTextAFunc = 00211ae4
 ;   TerminatedCString s_Esc_00657f9a
 ;   TerminatedCString s_s_1_00657f9e
 ;   TerminatedCString s_s_2_00657fa0
@@ -72,7 +72,7 @@ section .text
     PUSH 0x3f983a0                      ; 005f39da | g_KeyNameBuffer
     SHL EAX,0x10                        ; 005f39df
     PUSH EAX                            ; 005f39e2
-    CALL dword ptr CS:[0x6114ac]        ; 005f39e3 | GetKeyNameTextA
+    CALL dword ptr CS:[0x6114ac]        ; 005f39e3 | g_GetKeyNameTextAFunc
     TEST EAX,EAX                        ; 005f39ea
     JLE 0x005f398d                      ; 005f39ec
         ;   XREF to: 005f398d (CONDITIONAL_JUMP)  ; LAB_005f398d

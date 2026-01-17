@@ -12,7 +12,7 @@ void __cdecl crt_sync_c_enter_reentrant_critical_section_FUN_0060a060(ReentrantC
   DWORD DVar1;
   LPCRITICAL_SECTION p_Var2;
   
-  DVar1 = (*PTR_GetCurrentThreadId_00611584)();
+  DVar1 = (*g_GetCurrentThreadIdFunc)();
   if (DVar1 != rcs->ownerThreadId) {
     if (rcs->initialized == 0) {
       crt_sync_c_enter_reentrant_critical_section_FUN_0060a060
@@ -25,7 +25,7 @@ void __cdecl crt_sync_c_enter_reentrant_critical_section_FUN_0060a060(ReentrantC
       crt_sync_c_leave_reentrant_critical_section_FUN_0060a0c4
                 ((ReentrantCriticalSection *)&g_GlobalInitLock);
     }
-    (*PTR_EnterCriticalSection_00611530)(rcs->cs);
+    (*g_EnterCriticalSectionFunc)(rcs->cs);
     rcs->ownerThreadId = DVar1;
   }
   rcs->lockCount = rcs->lockCount + 1;

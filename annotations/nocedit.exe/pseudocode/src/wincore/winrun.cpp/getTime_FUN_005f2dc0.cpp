@@ -14,12 +14,12 @@ int __cdecl wincore_winrun_cpp_getTime_FUN_005f2dc0(void)
   double dVar3;
   
   if (g_UseMultimediaTimer != 0) {
-    DVar2 = (*timeGetTime)();
+    DVar2 = (*g_timeGetTimeFunc)();
     return DVar2 * 0x49c;
   }
   g_PreviousCounterLow = g_PerformanceCounter.s.LowPart;
   g_PreviousCounterHigh = g_PerformanceCounter.s.HighPart;
-  (*QueryPerformanceCounter)(&g_PerformanceCounter);
+  (*g_QueryPerformanceCounterFunc)(&g_PerformanceCounter);
   iVar1 = g_AccumulatedGameTime;
   dVar3 = crt_math_c_round_FUN_005fe6b0
                     (((((double)g_PerformanceCounter._0_4_ +

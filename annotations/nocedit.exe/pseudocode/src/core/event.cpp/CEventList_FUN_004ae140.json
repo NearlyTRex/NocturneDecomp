@@ -1,17 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 3369,
-    "complexity_score": 3132,
+    "complexity_score": 4166,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 231,
-    "pseudocode_lines": 1562,
-    "suspect_count": 156,
+    "pseudocode_lines": 1496,
+    "suspect_count": 264,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
+      "stack_align_anchor",
       "stack_param",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "variadic_anchor"
     ],
-    "total_lines": 4931
+    "total_lines": 4865
   },
   "cross_references": [
     {
@@ -1534,326 +1538,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004ae14c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae1ab": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae203": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae280": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae2af": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae323": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae34b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae395": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae404": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae4ab": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae525": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae544": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae581": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae5b0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae616": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae639": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae65c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae67f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae6a2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae701": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae71c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae77d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae797": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae7d0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae83f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae899": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae8dc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae924": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004ae99f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aea42": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aea74": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aeab6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aeb25": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aebd3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aebf9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aec36": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aec60": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aeca8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aecff": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aedf1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aee2b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aee9a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aeef4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aef50": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aef89": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aefcd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af02f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af069": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af090": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af0f0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af125": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af157": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af178": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af1bf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af1f1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af218": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af281": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af2ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af2e8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af3d7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af419": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af488": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af536": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af55c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af594": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af5be": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af600": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af66f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af716": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af73c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af76a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af7ef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af8d0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af8f6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af933": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af96c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004af99d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afa21": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afa65": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afa96": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afb0a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afb44": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afbb3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afc0e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afc40": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afc7a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afca1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afd2e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afd68": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afd92": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afe53": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afe64": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004afecb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aff05": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aff2c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004aff95": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004affac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004affe6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004b000d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004b009d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004b00d6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004b00ef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004b014d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004b0186": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004b01ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ],
-    "004b020f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff584,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.479446935724963,
     "instruction_count": 2676,
@@ -1902,7 +1586,1839 @@
     },
     "pcode_op_count": 11987
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 2712,
+    "local_size": 2708,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a90",
+        "offset": -2704,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_a88",
+        "offset": -2696,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a84",
+        "offset": -2692,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a83",
+        "offset": -2691,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_985",
+        "offset": -2437,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_984",
+        "offset": -2436,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_983",
+        "offset": -2435,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_920",
+        "offset": -2336,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_91f",
+        "offset": -2335,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_8bc",
+        "offset": -2236,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_858",
+        "offset": -2136,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_857",
+        "offset": -2135,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7f4",
+        "offset": -2036,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_790",
+        "offset": -1936,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_78f",
+        "offset": -1935,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_72d",
+        "offset": -1837,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_72c",
+        "offset": -1836,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_72b",
+        "offset": -1835,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c8",
+        "offset": -1736,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_665",
+        "offset": -1637,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_664",
+        "offset": -1636,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_663",
+        "offset": -1635,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_600",
+        "offset": -1536,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_59c",
+        "offset": -1436,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_59b",
+        "offset": -1435,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_538",
+        "offset": -1336,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4d5",
+        "offset": -1237,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4d4",
+        "offset": -1236,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4d3",
+        "offset": -1235,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_470",
+        "offset": -1136,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_46f",
+        "offset": -1135,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_40c",
+        "offset": -1036,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3a9",
+        "offset": -937,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3a8",
+        "offset": -936,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3a7",
+        "offset": -935,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_344",
+        "offset": -836,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_343",
+        "offset": -835,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2e0",
+        "offset": -736,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_27c",
+        "offset": -636,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_27b",
+        "offset": -635,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_218",
+        "offset": -536,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b4",
+        "offset": -436,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b3",
+        "offset": -435,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_150",
+        "offset": -336,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14f",
+        "offset": -335,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ae14c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000000c",
+      "text": "int *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_fffff570",
+      "text": "CDemonActor *in_stack_fffff570;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 98,
+      "match": "in_stack_00000008",
+      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 98,
+      "match": "in_stack_0000000c",
+      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_00000008",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == '.') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_0000000c",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == '.') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 102,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 102,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 104,
+      "match": "in_stack_00000008",
+      "text": "cVar1 = *(char *)(in_stack_00000008 + *in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 104,
+      "match": "in_stack_0000000c",
+      "text": "cVar1 = *(char *)(in_stack_00000008 + *in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 122,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 122,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 127,
+      "match": "in_stack_00000008",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ')') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 127,
+      "match": "in_stack_0000000c",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ')') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 128,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 128,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 130,
+      "match": "in_stack_0000000c",
+      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 130,
+      "match": "in_stack_00000008",
+      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 151,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 151,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 177,
+      "match": "in_stack_00000008",
+      "text": "*pcVar13 = *(char *)(in_stack_00000008 + *in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 177,
+      "match": "in_stack_0000000c",
+      "text": "*pcVar13 = *(char *)(in_stack_00000008 + *in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 178,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 178,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 183,
+      "match": "in_stack_00000008",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != '(') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 183,
+      "match": "in_stack_0000000c",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != '(') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 185,
+      "match": "in_stack_0000000c",
+      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 185,
+      "match": "in_stack_00000008",
+      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 186,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 186,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 198,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",acStack_345 + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 198,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",acStack_345 + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 241,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_6c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 241,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_6c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 264,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_859 + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 264,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_859 + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 311,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_b8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 311,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_b8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 318,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^)] )%n\",acStack_59d + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 318,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^)] )%n\",acStack_59d + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 386,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_ac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 386,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_ac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 391,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_ac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 391,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_ac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 418,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %d )%n\",&local_a0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 418,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %d )%n\",&local_a0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 473,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 473,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 480,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_27d + 1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 480,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_27d + 1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 525,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_9c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 525,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_9c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 528,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_9c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 528,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_9c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 539,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_8bc,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 539,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_8bc,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 563,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_94;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 563,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_94;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 570,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_6c8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 570,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_6c8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 591,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_90;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 591,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_90;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 595,
+      "match": "in_stack_fffff570",
+      "text": "(pCVar8,(SCollisionInfo *)in_stack_fffff570);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 597,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 597,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 608,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",&local_8c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 608,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",&local_8c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 626,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_8c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 626,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_8c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 634,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %n\",&local_88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 634,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %n\",&local_88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 651,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 651,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 658,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %n\",&local_88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 658,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %n\",&local_88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 675,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 675,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 680,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %f )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 680,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %f )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 698,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 698,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 708,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ ,] , %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 708,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ ,] , %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 778,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_70;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 778,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_70;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 782,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_70;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 782,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_70;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 793,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^,)]%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 793,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^,)]%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 864,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 864,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 866,
+      "match": "in_stack_00000008",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ',') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 866,
+      "match": "in_stack_0000000c",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ',') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 869,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\",%f %n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 869,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\",%f %n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 903,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 903,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 906,
+      "match": "in_stack_00000008",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != ')') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 906,
+      "match": "in_stack_0000000c",
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != ')') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 922,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 922,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 936,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_218",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 936,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_218",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 973,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_54;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 973,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_54;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 980,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 980,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 998,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_44;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 998,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_44;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1005,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1005,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1051,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_40;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1051,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_40;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1058,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1058,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1080,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_38;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1080,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_38;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1087,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1087,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 1117,
+      "match": "code *",
+      "text": "(iVar10 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(),",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 1119,
+      "match": "code *",
+      "text": "(iVar10 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x68))(),",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1132,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + iStack_2c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1132,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + iStack_2c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1143,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1143,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1170,
+      "match": "in_stack_fffff570",
+      "text": "(pCVar8,(int)in_stack_fffff570);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1172,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + (int)local_18[0];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1172,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + (int)local_18[0];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1180,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\"",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1180,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\"",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1203,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1203,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1206,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1206,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1233,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1233,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1254,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_cc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1254,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_cc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1257,
+      "match": "in_stack_fffff570",
+      "text": "iVar6 = (*pCVar8->vtable[1].onPickup)(pCVar8,in_stack_fffff570);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1259,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_c4[0];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1259,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_c4[0];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1268,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1268,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1287,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_d8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1287,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_d8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1304,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %s %s %[^ )] )%n\",acStack_921 + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1304,
+      "match": "in_stack_0000000c",
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %s %s %[^ )] )%n\",acStack_921 + 1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1443,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_dc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1443,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_dc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1477,
+      "match": "in_stack_00000008",
+      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1477,
+      "match": "in_stack_0000000c",
+      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1478,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 1478,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 4,
       "callind_address": "004af0ea",
@@ -3351,1826 +4867,6 @@
       "target_address": "0x4aa400",
       "text": "Direct CALL at 004b01a7, ADD ESP at 004b01ac with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 2712,
-    "local_size": 2708,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_a90",
-        "offset": -2704,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_a88",
-        "offset": -2696,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a84",
-        "offset": -2692,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a83",
-        "offset": -2691,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_985",
-        "offset": -2437,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_984",
-        "offset": -2436,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_983",
-        "offset": -2435,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_920",
-        "offset": -2336,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_91f",
-        "offset": -2335,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_8bc",
-        "offset": -2236,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_858",
-        "offset": -2136,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_857",
-        "offset": -2135,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7f4",
-        "offset": -2036,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_790",
-        "offset": -1936,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_78f",
-        "offset": -1935,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_72d",
-        "offset": -1837,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_72c",
-        "offset": -1836,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_72b",
-        "offset": -1835,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c8",
-        "offset": -1736,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_665",
-        "offset": -1637,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_664",
-        "offset": -1636,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_663",
-        "offset": -1635,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_600",
-        "offset": -1536,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_59c",
-        "offset": -1436,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_59b",
-        "offset": -1435,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_538",
-        "offset": -1336,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4d5",
-        "offset": -1237,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4d4",
-        "offset": -1236,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4d3",
-        "offset": -1235,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_470",
-        "offset": -1136,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_46f",
-        "offset": -1135,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_40c",
-        "offset": -1036,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3a9",
-        "offset": -937,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3a8",
-        "offset": -936,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3a7",
-        "offset": -935,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_344",
-        "offset": -836,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_343",
-        "offset": -835,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2e0",
-        "offset": -736,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_27c",
-        "offset": -636,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_27b",
-        "offset": -635,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_218",
-        "offset": -536,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1b4",
-        "offset": -436,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1b3",
-        "offset": -435,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_150",
-        "offset": -336,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14f",
-        "offset": -335,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_110",
-        "offset": -272,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_10c",
-        "offset": -268,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_104",
-        "offset": -260,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_100",
-        "offset": -256,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_fc",
-        "offset": -252,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f8",
-        "offset": -248,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_ec",
-        "offset": -236,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e8",
-        "offset": -232,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e4",
-        "offset": -228,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e0",
-        "offset": -224,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_dc",
-        "offset": -220,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_d8",
-        "offset": -216,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_d4",
-        "offset": -212,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_d0",
-        "offset": -208,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_cc",
-        "offset": -204,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c4",
-        "offset": -196,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c0",
-        "offset": -192,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b8",
-        "offset": -184,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b4",
-        "offset": -180,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b0",
-        "offset": -176,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_ac",
-        "offset": -172,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a8",
-        "offset": -168,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a4",
-        "offset": -164,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a0",
-        "offset": -160,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_9c",
-        "offset": -156,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_98",
-        "offset": -152,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_94",
-        "offset": -148,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_90",
-        "offset": -144,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_8c",
-        "offset": -140,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CEventList *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004ae14c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "text": "int *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_fffff574",
-      "text": "ulonglong in_stack_fffff574;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_00000008",
-      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_0000000c",
-      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_00000008",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == '.') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_0000000c",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == '.') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000008",
-      "text": "cVar1 = *(char *)(in_stack_00000008 + *in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_0000000c",
-      "text": "cVar1 = *(char *)(in_stack_00000008 + *in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 129,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 129,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 134,
-      "match": "in_stack_00000008",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ')') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 134,
-      "match": "in_stack_0000000c",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ')') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 135,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 135,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 137,
-      "match": "in_stack_0000000c",
-      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 137,
-      "match": "in_stack_00000008",
-      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 138,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 138,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 184,
-      "match": "in_stack_00000008",
-      "text": "*pcVar14 = *(char *)(in_stack_00000008 + *in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 184,
-      "match": "in_stack_0000000c",
-      "text": "*pcVar14 = *(char *)(in_stack_00000008 + *in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 188,
-      "match": "in_stack_fffff574",
-      "text": "pCVar9 = (CDemonActor *)in_stack_fffff574;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 191,
-      "match": "in_stack_00000008",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != '(') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 191,
-      "match": "in_stack_0000000c",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != '(') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 193,
-      "match": "in_stack_0000000c",
-      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 193,
-      "match": "in_stack_00000008",
-      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 194,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 194,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 206,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",acStack_341 + 1,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 206,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",acStack_341 + 1,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 255,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_68;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 255,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_68;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 278,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_855 + 1,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 278,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_855 + 1,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 327,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_b4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 327,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_b4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 334,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^)] )%n\",acStack_599 + 1,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 334,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^)] )%n\",acStack_599 + 1,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 403,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 403,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 409,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 409,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 436,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %d )%n\",&local_9c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 436,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %d )%n\",&local_9c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 493,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 493,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 500,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_279 + 1",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 500,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_279 + 1",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 546,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_98;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 546,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_98;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 550,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_98;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 550,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_98;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 561,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",acStack_8b8,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 561,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",acStack_8b8,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 586,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_90;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 586,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_90;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 593,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",auStack_6c4,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 593,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",auStack_6c4,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 615,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_8c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 615,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_8c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 620,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_8c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 620,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_8c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 631,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",&local_88);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 631,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",&local_88);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 649,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 649,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 657,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %n\",&local_84);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 657,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %n\",&local_84);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 674,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 674,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 681,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %n\",&local_84);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 681,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %n\",&local_84);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 698,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 698,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 703,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %f )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 703,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %f )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 721,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 721,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 740,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ ,] , %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 740,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ ,] , %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 811,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 811,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 815,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 815,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 826,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^,)]%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 826,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^,)]%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 897,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 897,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 899,
-      "match": "in_stack_00000008",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ',') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 899,
-      "match": "in_stack_0000000c",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ',') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 902,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\",%f %n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 902,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\",%f %n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 936,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 936,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 939,
-      "match": "in_stack_00000008",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != ')') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 939,
-      "match": "in_stack_0000000c",
-      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != ')') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 955,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 955,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 979,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 979,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1017,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_50;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1017,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_50;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1024,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1024,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1043,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_40;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1043,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_40;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1050,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1050,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1099,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_3c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1099,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_3c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1106,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1106,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1137,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_34;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1137,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_34;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1144,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1144,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1174,
-      "match": "code *",
-      "text": "(iVar8 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1176,
-      "match": "code *",
-      "text": "(iVar8 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x68))(),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1189,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1189,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1200,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1200,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1228,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1228,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1236,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\"",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1236,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\"",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1260,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1260,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1264,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1264,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1291,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1291,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1313,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1313,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1318,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1318,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1327,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1327,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1346,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_d4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1346,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_d4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1363,
-      "match": "in_stack_00000008",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %s %s %[^ )] )%n\",acStack_91d + 1,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1363,
-      "match": "in_stack_0000000c",
-      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %s %s %[^ )] )%n\",acStack_91d + 1,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1502,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_d8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1502,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + local_d8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1543,
-      "match": "in_stack_00000008",
-      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1543,
-      "match": "in_stack_0000000c",
-      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1544,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 1544,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
     }
   ]
 }

@@ -24,10 +24,8 @@ void core_chain_cpp_FUN_004300d0(void)
   COrientation *pCVar10;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
-  float local_ec;
-  float local_e8;
-  float local_cc;
-  float local_c8;
+  float fStack_e4;
+  float fStack_e0;
   float local_c4;
   float local_c0;
   float local_bc;
@@ -35,8 +33,8 @@ void core_chain_cpp_FUN_004300d0(void)
   float local_b4;
   float local_b0;
   float local_ac;
-  float local_9c;
-  float local_98;
+  float fStack_a8;
+  float fStack_a4;
   float local_94;
   float local_90;
   float local_8c;
@@ -47,49 +45,51 @@ void core_chain_cpp_FUN_004300d0(void)
   float local_78;
   float local_74;
   float local_70;
-  float local_60;
-  float local_5c;
+  float fStack_6c;
+  float fStack_68;
   float local_58;
-  CVector3f *local_54;
-  int local_50;
-  int local_4c;
-  float *local_48;
-  CDemonActor *local_44;
-  float local_40;
-  char *local_3c;
-  int local_38;
-  CVector3f *local_34;
-  float *local_30;
-  int local_2c;
-  CLocation *local_28;
-  int *local_24;
-  CVector3f *local_20;
-  CVector3f *local_1c;
-  int iStack_18;
+  float local_54;
+  float local_50;
+  CVector3f *local_4c;
+  int local_48;
+  int local_44;
+  float *local_40;
+  CDemonActor *local_3c;
+  float local_38;
+  char *local_34;
+  int local_30;
+  CVector3f *local_2c;
+  float *local_28;
+  int local_24;
+  CLocation *local_20;
+  int *local_1c;
+  CVector3f *pCStack_18;
+  CVector3f *pCStack_14;
   
-  if (*(float *)(in_stack_00000004[4].actor_name + 0xc) < -9900f) {
+  if (*(float *)(in_stack_00000004[4].actor_name + 0xc) < -9900.0f) {
     fVar5 = (*in_stack_00000004->vtable->cylinderGroundCheck)
                       (in_stack_00000004,0.1,(CVector3f *)0x0);
     *(float *)(in_stack_00000004[4].actor_name + 0xc) = fVar5;
   }
   if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {
     pCVar8 = in_stack_00000004 + 2;
-    local_e8 = 0.0;
+    fStack_e0 = 0.0;
     for (iVar9 = 0; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {
-      local_78 = pCVar8[-1].previous_transform_state.orientation.x - *(float *)pCVar8->actor_name;
-      local_74 = pCVar8[-1].previous_transform_state.orientation.y -
-                 *(float *)(pCVar8->actor_name + 4);
-      local_70 = pCVar8[-1].previous_transform_state.orientation.z -
-                 *(float *)(pCVar8->actor_name + 8);
+      local_70 = pCVar8[-1].previous_transform_state.orientation.x - *(float *)pCVar8->actor_name;
+      fStack_6c = pCVar8[-1].previous_transform_state.orientation.y -
+                  *(float *)(pCVar8->actor_name + 4);
+      fStack_68 = pCVar8[-1].previous_transform_state.orientation.z -
+                  *(float *)(pCVar8->actor_name + 8);
       pCVar8 = (CDemonActor *)&(pCVar8->location).position.y;
-      local_e8 = SQRT(local_70 * local_70 + local_78 * local_78 + local_74 * local_74) + local_e8;
+      fStack_e0 = SQRT(fStack_68 * fStack_68 + local_70 * local_70 + fStack_6c * fStack_6c) +
+                  fStack_e0;
     }
   }
   piVar1 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;
   *(float *)(in_stack_00000004[4].actor_name + 0x10) = 1.0 / in_stack_00000008;
-  local_60 = (float)*piVar1;
-  local_5c = (float)piVar1[1];
-  local_58 = (float)piVar1[2];
+  local_58 = (float)*piVar1;
+  local_54 = (float)piVar1[1];
+  local_50 = (float)piVar1[2];
   piVar1 = (int *)core_chain_cpp_FUN_0042fcc0();
   piVar2 = &(&in_stack_00000004[1].scale)[*(int *)in_stack_00000004[1].actor_name * 3].z;
   if (piVar2 != piVar1) {
@@ -114,99 +114,98 @@ void core_chain_cpp_FUN_004300d0(void)
   in_stack_00000004[1].field26_0x148 = 0;
   in_stack_00000004[1].field25_0x144 = in_stack_00000004[1].field26_0x148;
   in_stack_00000004[1].previous_transform_state.dirty_flags = in_stack_00000004[1].field25_0x144;
-  local_54 = &in_stack_00000004[1].previous_transform_state.orientation;
-  local_3c = in_stack_00000004[4].actor_name + 8;
-  local_30 = &in_stack_00000004[2].location.position.y;
+  local_4c = &in_stack_00000004[1].previous_transform_state.orientation;
+  local_34 = in_stack_00000004[4].actor_name + 8;
+  local_28 = &in_stack_00000004[2].location.position.y;
   pCVar10 = (COrientation *)(in_stack_00000004[2].actor_name + 0xc);
-  local_34 = local_54;
-  for (local_2c = 1; local_2c < *(int *)in_stack_00000004[1].actor_name + -1;
-      local_2c = local_2c + 1) {
-    pCVar10->pitch = *(float *)local_3c * pCVar10->pitch;
-    pCVar10->bank = *(float *)local_3c * pCVar10->bank;
-    pCVar10->heading = *(float *)local_3c * pCVar10->heading;
-    local_40 = (float)in_stack_00000004[3].vtable * (float)0.03125;
-    local_b4 = (1.0 / local_40) * 0.0;
-    local_b0 = (0.0 - (float)in_stack_00000004[3].vtable) * (1.0 / local_40);
-    pCVar6 = local_54 + local_2c * 3;
-    if (&local_cc != &local_b4) {
-      local_cc = local_b4;
-      local_c8 = local_b0;
-      local_c4 = local_b4;
+  local_2c = local_4c;
+  for (local_24 = 1; local_24 < *(int *)in_stack_00000004[1].actor_name + -1;
+      local_24 = local_24 + 1) {
+    pCVar10->pitch = *(float *)local_34 * pCVar10->pitch;
+    pCVar10->bank = *(float *)local_34 * pCVar10->bank;
+    pCVar10->heading = *(float *)local_34 * pCVar10->heading;
+    local_38 = (float)in_stack_00000004[3].vtable * (float)0.03125;
+    local_ac = (1.0 / local_38) * 0.0;
+    fStack_a8 = (0.0 - (float)in_stack_00000004[3].vtable) * (1.0 / local_38);
+    pCVar6 = local_4c + local_24 * 3;
+    if (&local_c4 != &local_ac) {
+      local_c4 = local_ac;
+      local_c0 = fStack_a8;
+      local_bc = local_ac;
     }
-    local_84 = local_cc * in_stack_00000008;
-    local_80 = local_c8 * in_stack_00000008;
     local_7c = local_c4 * in_stack_00000008;
-    local_90 = pCVar6[1].x + local_84;
-    pCVar6[1].x = local_90;
-    local_90 = local_90 * in_stack_00000008;
-    *(float *)((int)(pCVar6 + 1) + 4) = *(float *)((int)(pCVar6 + 1) + 4) + local_80;
-    *(float *)((int)(pCVar6 + 1) + 8) = *(float *)((int)(pCVar6 + 1) + 8) + local_7c;
-    local_8c = *(float *)((int)(pCVar6 + 1) + 4) * in_stack_00000008;
-    local_88 = in_stack_00000008 * *(float *)((int)(pCVar6 + 1) + 8);
-    pCVar6->x = pCVar6->x + local_90;
-    pCVar6->y = pCVar6->y + local_8c;
-    pCVar6->z = pCVar6->z + local_88;
-    local_ac = local_b4;
+    local_78 = local_c0 * in_stack_00000008;
+    local_74 = local_bc * in_stack_00000008;
+    local_88 = pCVar6[1].x + local_7c;
+    pCVar6[1].x = local_88;
+    local_88 = local_88 * in_stack_00000008;
+    *(float *)((int)(pCVar6 + 1) + 4) = *(float *)((int)(pCVar6 + 1) + 4) + local_78;
+    *(float *)((int)(pCVar6 + 1) + 8) = *(float *)((int)(pCVar6 + 1) + 8) + local_74;
+    local_84 = *(float *)((int)(pCVar6 + 1) + 4) * in_stack_00000008;
+    local_80 = in_stack_00000008 * *(float *)((int)(pCVar6 + 1) + 8);
+    pCVar6->x = pCVar6->x + local_88;
+    pCVar6->y = pCVar6->y + local_84;
+    pCVar6->z = pCVar6->z + local_80;
+    fStack_a4 = local_ac;
     core_chain_cpp_FUN_0042fed0();
     core_chain_cpp_FUN_0042fed0();
     pCVar10 = pCVar10 + 3;
-    local_30 = local_30 + 9;
-    local_34 = local_34 + 3;
+    local_28 = local_28 + 9;
+    local_2c = local_2c + 3;
   }
-  local_24 = &in_stack_00000004[1].previous_transform_state.dirty_flags;
-  local_20 = &in_stack_00000004[1].previous_transform_state.orientation;
-  local_28 = &in_stack_00000004->location;
-  local_48 = &in_stack_00000004[2].location.position.y;
-  local_44 = in_stack_00000004 + 2;
-  local_38 = 0;
+  local_1c = &in_stack_00000004[1].previous_transform_state.dirty_flags;
+  pCStack_18 = &in_stack_00000004[1].previous_transform_state.orientation;
+  local_20 = &in_stack_00000004->location;
+  local_40 = &in_stack_00000004[2].location.position.y;
+  local_3c = in_stack_00000004 + 2;
+  local_30 = 0;
   do {
     pfVar3 = (float *)core_chain_cpp_FUN_0042fcc0();
-    pCVar6 = local_20 + (*(int *)in_stack_00000004[1].actor_name + -1) * 3;
+    pCVar6 = pCStack_18 + (*(int *)in_stack_00000004[1].actor_name + -1) * 3;
     if (pCVar6 != (CVector3f *)pfVar3) {
       pCVar6->x = *pfVar3;
       pCVar6->y = pfVar3[1];
       pCVar6->z = pfVar3[2];
     }
     iVar9 = *(int *)in_stack_00000004[1].actor_name + -1;
-    local_20[iVar9 * 3 + 1].z = 0.0;
-    local_20[iVar9 * 3 + 1].y = local_20[iVar9 * 3 + 1].z;
-    local_20[iVar9 * 3 + 1].x = local_20[iVar9 * 3 + 1].y;
-    if ((CLocation *)local_20 != local_28) {
-      local_20->x = (local_28->position).x;
-      local_20->y = (local_28->position).y;
-      local_20->z = (local_28->position).z;
+    pCStack_18[iVar9 * 3 + 1].z = 0.0;
+    pCStack_18[iVar9 * 3 + 1].y = pCStack_18[iVar9 * 3 + 1].z;
+    pCStack_18[iVar9 * 3 + 1].x = pCStack_18[iVar9 * 3 + 1].y;
+    if ((CLocation *)pCStack_18 != local_20) {
+      pCStack_18->x = (local_20->position).x;
+      pCStack_18->y = (local_20->position).y;
+      pCStack_18->z = (local_20->position).z;
     }
-    local_24[2] = 0;
-    iStack_18 = 1;
-    local_24[1] = local_24[2];
-    *local_24 = local_24[1];
-    local_1c = local_20;
-    for (; iStack_18 < *(int *)in_stack_00000004[1].actor_name + -1; iStack_18 = iStack_18 + 1) {
+    local_1c[2] = 0;
+    local_1c[1] = local_1c[2];
+    *local_1c = local_1c[1];
+    pCStack_14 = pCStack_18;
+    for (iVar9 = 1; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {
       core_chain_cpp_FUN_0042fed0();
       core_chain_cpp_FUN_0042fed0();
-      local_1c = local_1c + 3;
+      pCStack_14 = pCStack_14 + 3;
     }
     pfVar3 = (float *)core_chain_cpp_FUN_0042fcc0();
-    pCVar6 = local_20 + (*(int *)in_stack_00000004[1].actor_name + -1) * 3;
+    pCVar6 = pCStack_18 + (*(int *)in_stack_00000004[1].actor_name + -1) * 3;
     if (pCVar6 != (CVector3f *)pfVar3) {
       pCVar6->x = *pfVar3;
       pCVar6->y = pfVar3[1];
       pCVar6->z = pfVar3[2];
     }
     iVar9 = *(int *)in_stack_00000004[1].actor_name + -1;
-    local_20[iVar9 * 3 + 1].z = 0.0;
-    local_20[iVar9 * 3 + 1].y = local_20[iVar9 * 3 + 1].z;
-    local_20[iVar9 * 3 + 1].x = local_20[iVar9 * 3 + 1].y;
-    if ((CLocation *)local_20 != local_28) {
-      local_20->x = (local_28->position).x;
-      local_20->y = (local_28->position).y;
-      local_20->z = (local_28->position).z;
+    pCStack_18[iVar9 * 3 + 1].z = 0.0;
+    pCStack_18[iVar9 * 3 + 1].y = pCStack_18[iVar9 * 3 + 1].z;
+    pCStack_18[iVar9 * 3 + 1].x = pCStack_18[iVar9 * 3 + 1].y;
+    if ((CLocation *)pCStack_18 != local_20) {
+      pCStack_18->x = (local_20->position).x;
+      pCStack_18->y = (local_20->position).y;
+      pCStack_18->z = (local_20->position).z;
     }
-    local_24[2] = 0;
-    local_24[1] = local_24[2];
-    *local_24 = local_24[1];
-    local_38 = local_38 + 1;
-  } while (local_38 < 3);
+    local_1c[2] = 0;
+    local_1c[1] = local_1c[2];
+    *local_1c = local_1c[1];
+    local_30 = local_30 + 1;
+  } while (local_30 < 3);
   iVar9 = 0;
   if (0 < *(int *)in_stack_00000004[1].actor_name) {
     ppCVar7 = &in_stack_00000004[1].next_actor;
@@ -222,35 +221,36 @@ void core_chain_cpp_FUN_004300d0(void)
       ppCVar7 = ppCVar7 + 9;
     } while (iVar9 < *(int *)in_stack_00000004[1].actor_name);
   }
-  local_50 = 0;
-  local_4c = 0;
+  local_48 = 0;
+  local_44 = 0;
   if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {
-    if (local_e8 < *(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.90000000000000002) {
+    if (fStack_e0 < *(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.90000000000000002) {
       pCVar8 = in_stack_00000004 + 2;
-      local_ec = 0.0;
+      fStack_e4 = 0.0;
       for (iVar9 = 0; iVar9 < *(int *)in_stack_00000004[1].actor_name + -1; iVar9 = iVar9 + 1) {
-        local_c0 = pCVar8[-1].previous_transform_state.orientation.x - *(float *)pCVar8->actor_name;
-        local_bc = pCVar8[-1].previous_transform_state.orientation.y -
+        local_b8 = pCVar8[-1].previous_transform_state.orientation.x - *(float *)pCVar8->actor_name;
+        local_b4 = pCVar8[-1].previous_transform_state.orientation.y -
                    *(float *)(pCVar8->actor_name + 4);
-        local_b8 = pCVar8[-1].previous_transform_state.orientation.z -
+        local_b0 = pCVar8[-1].previous_transform_state.orientation.z -
                    *(float *)(pCVar8->actor_name + 8);
         pCVar8 = (CDemonActor *)&(pCVar8->location).position.y;
-        local_ec = SQRT(local_b8 * local_b8 + local_c0 * local_c0 + local_bc * local_bc) + local_ec;
+        fStack_e4 = SQRT(local_b0 * local_b0 + local_b8 * local_b8 + local_b4 * local_b4) +
+                    fStack_e4;
       }
-      if (*(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.90000000000000002 < local_ec) {
-        local_4c = 1;
+      if (*(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.90000000000000002 < fStack_e4) {
+        local_44 = 1;
       }
     }
     iVar9 = *(int *)in_stack_00000004[1].actor_name;
-    local_9c = local_60 - (float)(&in_stack_00000004[1].scale)[iVar9 * 3].z;
-    local_98 = local_5c - (float)(&in_stack_00000004[1].field19_0x114)[iVar9 * 9];
-    local_94 = local_58 - (float)(&in_stack_00000004[1].field20_0x118)[iVar9 * 9];
+    local_94 = local_58 - (float)(&in_stack_00000004[1].scale)[iVar9 * 3].z;
+    local_90 = local_54 - (float)(&in_stack_00000004[1].field19_0x114)[iVar9 * 9];
+    local_8c = local_50 - (float)(&in_stack_00000004[1].field20_0x118)[iVar9 * 9];
     if (in_stack_00000008 * (float)0.10000000000000001 <
-        SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {
-      local_50 = 1;
+        SQRT(local_8c * local_8c + local_94 * local_94 + local_90 * local_90)) {
+      local_48 = 1;
     }
   }
-  if ((local_4c != 0) && (*(char *)&in_stack_00000004[1].orient_matrix.m[2].z != '\0')) {
+  if ((local_44 != 0) && (*(char *)&in_stack_00000004[1].orient_matrix.m[2].z != '\0')) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40
               ((uint)in_stack_00000004[1].previous_transform_state.position.x);
     iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
@@ -267,7 +267,7 @@ void core_chain_cpp_FUN_004300d0(void)
   }
   in_stack_00000004[1].previous_transform_state.position.y =
        in_stack_00000004[1].previous_transform_state.position.y - in_stack_00000008;
-  if (local_50 == 0) {
+  if (local_48 == 0) {
     if (0.0 <= in_stack_00000004[1].previous_transform_state.position.y) {
       return;
     }

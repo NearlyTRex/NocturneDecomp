@@ -19,7 +19,7 @@ void __cdecl crt_environ_c_staticFinal_FUN_0060c73c(void)
     DAT_03f9c150 = (void *)0x0;
   }
   if (g_EnvironmentStrings != (char *)0x0) {
-    (*FreeEnvironmentStringsA)(g_EnvironmentStrings);
+    (*g_FreeEnvironmentStringsAFunc)(g_EnvironmentStrings);
   }
   return;
 }

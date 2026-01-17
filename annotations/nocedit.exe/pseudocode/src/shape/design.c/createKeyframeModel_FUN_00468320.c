@@ -19,6 +19,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
   char (*pacVar6) [16];
   byte bVar7;
   double dVar8;
+  uint uVar9;
   ulonglong in_stack_fffffd94;
   SMRGLKeyframeModel local_264;
   char local_10c [80];
@@ -98,6 +99,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
         dVar8 = crt_string_c_strtod_FUN_005ff0f3(pcVar5);
         local_14 = (float)dVar8;
         if ((0.0 < local_14) && (local_14 < (float)127)) {
+          uVar9 = 0x4684ef;
           dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)65536));
           local_264.cycle_length = (int)ROUND(dVar8);
           local_264.header.base.type = 0x20;
@@ -105,7 +107,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
           if (local_1c == (FILE *)0x0) {
             g_CurrentFilename = "..\\shape\\design.c";
             g_CurrentLineNumber = 0x2277;
-            core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write keyframed model");
+            core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write keyframed model",uVar9);
           }
           crt_stdio_c_fwrite_FUN_005fdc00(&local_264,1,0x158,local_1c);
           local_18 = 0;

@@ -11,7 +11,7 @@
 ;   crt_io.c_file_exists_FUN_0060f380 at 0060f387
 ;
 ; Referenced Globals:
-;   GetFileAttributesA* PTR_GetFileAttributesA_00611594 = 00211edc
+;   GetFileAttributesA* g_GetFileAttributesAFunc = 00211edc
 ;
 ; Called Functions:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390
@@ -24,7 +24,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060c9f0
         ;   Label: crt_io.c_check_file_access_FUN_0060c9f0
     PUSH EDX                            ; 0060c9f4
-    CALL dword ptr CS:[0x611594]        ; 0060c9f5 | PTR_GetFileAttributesA_00611594
+    CALL dword ptr CS:[0x611594]        ; 0060c9f5 | g_GetFileAttributesAFunc
     CMP EAX,-0x1                        ; 0060c9fc
     JZ 0x006083fc                       ; 0060c9ff
         ;   XREF to: 006083fc (CONDITIONAL_JUMP)

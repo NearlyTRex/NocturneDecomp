@@ -65,7 +65,7 @@ void core_bugs_cpp_FUN_004257f0(void)
   dVar12 = crt_math_c_round_FUN_005fe6b0(local_4c);
   local_20 = (int)ROUND(dVar12);
   fVar9 = (float10)_DAT_0065b5c8;
-  fVar11 = (float10)_DAT_0065b5c8 * (float10)11f * (float10)0.5;
+  fVar11 = (float10)_DAT_0065b5c8 * (float10)11.0f * (float10)0.5;
   *(float *)(extraout_EBX + 0x199ec) =
        (float)((fVar10 - (float10)*(float *)(extraout_EBX + 0x20)) - fVar11);
   *(float *)(extraout_EBX + 0x199f0) =

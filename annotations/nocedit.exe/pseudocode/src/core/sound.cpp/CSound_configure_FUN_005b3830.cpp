@@ -21,8 +21,8 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *this_ptr)
     sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(0,0.25f);
   }
   fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(2);
-  if (1f < fVar1) {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(2,1f);
+  if (1.0f < fVar1) {
+    sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(2,1.0f);
   }
   iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
   if (iVar2 == 0) {

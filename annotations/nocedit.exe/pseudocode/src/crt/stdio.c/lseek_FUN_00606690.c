@@ -20,8 +20,9 @@ crt_stdio_c_lseek_FUN_00606690(int file_handle_index,long distance_to_move,int m
     if ((0 < move_method) && ((uVar1 & 0x80) == 0)) {
       crt_io_c_setFileDescriptorFlags_FUN_00608908(file_handle_index,uVar1 | 0x8000);
     }
-    DVar2 = (*SetFilePointer)(g_IOControlBlock->standard_handles[file_handle_index],move_method,
-                              (PLONG)0x0,in_stack_00000010);
+    DVar2 = (*g_SetFilePointerFunc)
+                      (g_IOControlBlock->standard_handles[file_handle_index],move_method,(PLONG)0x0,
+                       in_stack_00000010);
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle_index);
     if (DVar2 == 0xffffffff) {
       crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();

@@ -12,7 +12,7 @@ bool crt_signal_c_unregisterConsoleHandler_FUN_0060cfe4(void)
   BOOL BVar1;
   
   if (g_ConsoleHandlerRegistered) {
-    BVar1 = (*PTR_SetConsoleCtrlHandler_0061160c)(crt_signal_c_consoleCtrlHandler_FUN_0060cf20,0);
+    BVar1 = (*g_SetConsoleCtrlHandlerFunc)(crt_signal_c_consoleCtrlHandler_FUN_0060cf20,0);
     if (BVar1 != 0) {
       g_ConsoleHandlerRegistered = false;
     }

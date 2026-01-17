@@ -11,7 +11,7 @@ void __watcallStack crt_time_c_get_local_time_FUN_00607150(tm *tm_output)
 {
   _SYSTEMTIME _Stack_14;
   
-  (*PTR_GetLocalTime_006115a8)(&_Stack_14);
+  (*g_GetLocalTimeFunc)(&_Stack_14);
   tm_output->tm_year = _Stack_14.wYear - 0x76c;
   tm_output->tm_mon = _Stack_14.wMonth - 1;
   tm_output->tm_mday = (uint)_Stack_14.wDay;

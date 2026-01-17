@@ -13,15 +13,15 @@ shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500
 {
   double dVar1;
   double *in_stack_00000004;
-  double dStack_6c;
+  double local_70;
   
   dVar1 = plane_point->z * ray_origin->z +
           plane_point->x * ray_origin->x + plane_point->y * ray_origin->y;
-  dStack_6c = dVar1;
+  local_70 = dVar1;
   if (dVar1 < 0.0) {
-    dStack_6c = -dVar1;
+    local_70 = -dVar1;
   }
-  if (1e-08 <= dStack_6c) {
+  if (1e-08 <= local_70) {
     return -((plane_point->z * in_stack_00000004[2] +
               plane_point->x * *in_stack_00000004 + plane_point->y * in_stack_00000004[1] +
              -(plane_point->z * ray_dir->z +

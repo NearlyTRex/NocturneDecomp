@@ -17,7 +17,7 @@ int __watcallStack crt_stdio_c_WriteConsoleChar_FUN_0060b490(int character)
   if (g_SpecialConsoleOutputHandler == (SPECIAL_CONSOLE_OUTPUT_HANDLER_FUNC *)0x0) {
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(1);
     hConsoleOutput = crt_stdio_c_GetConsoleOutputHandle_FUN_0060ce3c();
-    (*PTR_WriteConsoleA_00611674)(hConsoleOutput,&stack0xfffffffc,1,(LPDWORD)local_8,(LPVOID)0x0);
+    (*g_WriteConsoleAFunc)(hConsoleOutput,&stack0xfffffffc,1,(LPDWORD)local_8,(LPVOID)0x0);
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(1);
   }
   else {

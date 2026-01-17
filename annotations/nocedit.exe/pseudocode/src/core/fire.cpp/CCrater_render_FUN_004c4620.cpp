@@ -25,24 +25,24 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
             (g_CDemonRendererPtr,(CVector3f *)(this_ptr->field0_0x0 + 0xc));
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr,&g_FireEffectBlastTexture);
-  local_20.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x40) * 256f);
-  local_20.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x44) * 256f);
-  local_20.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x48) * 256f);
+  local_20.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x40) * 256.0f);
+  local_20.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x44) * 256.0f);
+  local_20.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x48) * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[0].projected_vertex,&local_20);
-  local_2c.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x4c) * 256f);
-  local_2c.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x50) * 256f);
-  local_2c.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x54) * 256f);
+  local_2c.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x4c) * 256.0f);
+  local_2c.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x50) * 256.0f);
+  local_2c.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x54) * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[1].projected_vertex,&local_2c);
-  local_38.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x58) * 256f);
-  local_38.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x5c) * 256f);
-  local_38.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x60) * 256f);
+  local_38.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x58) * 256.0f);
+  local_38.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x5c) * 256.0f);
+  local_38.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x60) * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[2].projected_vertex,&local_38);
-  local_14.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 100) * 256f);
-  local_14.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x68) * 256f);
-  local_14.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x6c) * 256f);
+  local_14.x = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 100) * 256.0f);
+  local_14.y = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x68) * 256.0f);
+  local_14.z = (int)ROUND(*(float *)(this_ptr->field0_0x0 + 0x6c) * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[3].projected_vertex,&local_14);
   g_RenderVertexBuffer[0].light = 9.18341e-41;

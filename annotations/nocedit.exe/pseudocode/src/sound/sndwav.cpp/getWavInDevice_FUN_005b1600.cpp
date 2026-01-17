@@ -17,7 +17,7 @@ CWavInDevice * __cdecl sound_sndwav_cpp_getWavInDevice_FUN_005b1600(UINT device_
   if (iVar1 == 0) {
     return (CWavInDevice *)0x0;
   }
-  MVar2 = (*waveInGetDevCapsA)(device_id,&local_30,0x30);
+  MVar2 = (*g_waveInGetDevCapsAFunc)(device_id,&local_30,0x30);
   if (MVar2 != 0) {
     return (CWavInDevice *)0x0;
   }

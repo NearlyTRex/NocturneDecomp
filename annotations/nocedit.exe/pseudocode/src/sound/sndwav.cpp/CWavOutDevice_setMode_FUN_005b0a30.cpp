@@ -42,20 +42,21 @@ sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30
   if (0 < g_WaveOutNumBuffers) {
     iVar6 = 0;
     do {
-      pvVar3 = (*GlobalAlloc)(0x2002,((int)((g_WaveOutBitsPerSample +
-                                            (g_WaveOutBitsPerSample >> 0x1f) * -8) -
-                                           (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3)
-                                     * g_WaveOutBufferSize * g_WaveOutChannels);
+      pvVar3 = (*g_GlobalAllocFunc)
+                         (0x2002,((int)((g_WaveOutBitsPerSample +
+                                        (g_WaveOutBitsPerSample >> 0x1f) * -8) -
+                                       (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) *
+                                 g_WaveOutBufferSize * g_WaveOutChannels);
       *(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_005b0bdc;
-      pvVar4 = (*GlobalLock)(pvVar3);
+      pvVar4 = (*g_GlobalLockFunc)(pvVar3);
       *(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;
       if (pvVar4 == (LPVOID)0x0) goto LAB_005b0bdc;
-      pvVar3 = (*GlobalAlloc)(0x2002,0x20);
+      pvVar3 = (*g_GlobalAllocFunc)(0x2002,0x20);
       *(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_005b0bdc;
       iVar1 = iVar1 + 1;
-      pvVar4 = (*GlobalLock)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));
+      pvVar4 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));
       *(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;
       iVar6 = iVar6 + 4;
     } while (iVar1 < g_WaveOutNumBuffers);
@@ -67,7 +68,7 @@ sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30
        (short)((int)(g_WaveOutBitsPerSample & 0xffffU) >> 3) * (WORD)g_WaveOutChannels;
   WStack_24.nSamplesPerSec = g_WaveOutSampleRate;
   WStack_24.nAvgBytesPerSec = g_WaveOutSampleRate * (uint)WStack_24.nBlockAlign;
-  MVar5 = (*waveOutOpen)(&g_WaveOutHandle,g_WaveOutDeviceID,&WStack_24,0,0,0);
+  MVar5 = (*g_waveOutOpenFunc)(&g_WaveOutHandle,g_WaveOutDeviceID,&WStack_24,0,0,0);
   if (MVar5 == 0) {
     *out_samples_per_block = g_WaveOutBufferSize;
     return 1;

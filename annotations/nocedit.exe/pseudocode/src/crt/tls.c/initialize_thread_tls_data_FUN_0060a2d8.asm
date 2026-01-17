@@ -11,7 +11,7 @@
 ;   crt_tls.c_create_thread_local_data_FUN_0060cac0 at 0060cac4
 ;
 ; Referenced Globals:
-;   TlsSetValue* PTR_TlsSetValue_00611658 = 0021226c
+;   TlsSetValue* g_TlsSetValueFunc = 0021226c
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
 ; Called Functions:
@@ -65,7 +65,7 @@ section .text
         ;   Label: LAB_0060a31d
     MOV ESI,dword ptr [0x00684ee0]      ; 0060a31e | g_TLSIndex
     PUSH ESI                            ; 0060a324
-    CALL dword ptr CS:[0x611658]        ; 0060a325 | PTR_TlsSetValue_00611658
+    CALL dword ptr CS:[0x611658]        ; 0060a325 | g_TlsSetValueFunc
     MOV EAX,0x1                         ; 0060a32c
     POP ESI                             ; 0060a331
         ;   Label: LAB_0060a331

@@ -62,11 +62,11 @@ core_mirror_cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50
     local_54.y = local_54.y - local_24.y;
     local_54.z = local_54.z - local_24.z;
   }
-  local_3c = (int)ROUND(local_54.x * 65536f);
-  local_38[0] = (int)ROUND(local_54.y * 65536f);
-  local_38[1] = (int)ROUND(local_54.z * 65536f);
+  local_3c = (int)ROUND(local_54.x * 65536.0f);
+  local_38[0] = (int)ROUND(local_54.y * 65536.0f);
+  local_38[1] = (int)ROUND(local_54.z * 65536.0f);
   piVar2 = (int *)((int)unaff_ESI + (uint)bVar3 * -8 + 4);
-  unaff_ESI->x = (int)ROUND(local_54.x * 65536f);
+  unaff_ESI->x = (int)ROUND(local_54.x * 65536.0f);
   *piVar2 = local_38[(uint)bVar3 * -2];
   piVar2[(uint)bVar3 * -2 + 1] = local_38[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
   return unaff_ESI;

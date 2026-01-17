@@ -87,9 +87,9 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
         g_ActiveRenderColor = color_value;
         do {
           uVar1 = local_20 ^ 1;
-          local_8c.x = (int)ROUND(*pfVar3 * 256f);
-          local_8c.y = (int)ROUND(pfVar3[1] * 256f);
-          local_8c.z = (int)ROUND(pfVar3[2] * 256f);
+          local_8c.x = (int)ROUND(*pfVar3 * 256.0f);
+          local_8c.y = (int)ROUND(pfVar3[1] * 256.0f);
+          local_8c.z = (int)ROUND(pfVar3[2] * 256.0f);
           engine_matrix_c_transformToCache_FUN_0050cd70(0,&local_8c);
           local_68 = afStack_110[uVar1 * 3] * 0.2f;
           local_64 = afStack_110[uVar1 * 3 + 1] * 0.2f;
@@ -100,9 +100,9 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_44 = *pfVar3 * 0.8f + afStack_110[uVar1 * 3] * 0.2f;
           local_40 = pfVar3[1] * 0.8f + afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_3c = local_30 + afStack_110[uVar1 * 3 + 2] * 0.2f;
-          local_8c.x = (int)ROUND(local_44 * 256f);
-          local_8c.y = (int)ROUND(local_40 * 256f);
-          local_8c.z = (int)ROUND(local_3c * 256f);
+          local_8c.x = (int)ROUND(local_44 * 256.0f);
+          local_8c.y = (int)ROUND(local_40 * 256.0f);
+          local_8c.z = (int)ROUND(local_3c * 256.0f);
           engine_matrix_c_transformToCache_FUN_0050cd70(1,&local_8c);
           pSVar4 = g_RenderVertexBuffer + 1;
           piVar5 = aiStack_140;
@@ -120,9 +120,9 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           }
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe90,in_stack_fffffe94);
           uVar1 = local_20 ^ 2;
-          local_b0.x = (int)ROUND(*pfVar3 * 256f);
-          local_b0.y = (int)ROUND(pfVar3[1] * 256f);
-          local_b0.z = (int)ROUND(pfVar3[2] * 256f);
+          local_b0.x = (int)ROUND(*pfVar3 * 256.0f);
+          local_b0.y = (int)ROUND(pfVar3[1] * 256.0f);
+          local_b0.z = (int)ROUND(pfVar3[2] * 256.0f);
           engine_matrix_c_transformToCache_FUN_0050cd70(0,&local_b0);
           local_98 = afStack_110[uVar1 * 3] * 0.2f;
           local_94 = afStack_110[uVar1 * 3 + 1] * 0.2f;
@@ -133,9 +133,9 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_2c = *pfVar3 * 0.8f + afStack_110[uVar1 * 3] * 0.2f;
           local_28 = pfVar3[1] * 0.8f + afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_24 = local_6c + afStack_110[uVar1 * 3 + 2] * 0.2f;
-          local_b0.x = (int)ROUND(local_2c * 256f);
-          local_b0.y = (int)ROUND(local_28 * 256f);
-          local_b0.z = (int)ROUND(local_24 * 256f);
+          local_b0.x = (int)ROUND(local_2c * 256.0f);
+          local_b0.y = (int)ROUND(local_28 * 256.0f);
+          local_b0.z = (int)ROUND(local_24 * 256.0f);
           engine_matrix_c_transformToCache_FUN_0050cd70(1,&local_b0);
           pSVar4 = g_RenderVertexBuffer + 1;
           piVar5 = aiStack_140;
@@ -153,9 +153,9 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           }
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe90,in_stack_fffffe94);
           uVar1 = local_20 ^ 4;
-          local_50.x = (int)ROUND(*pfVar3 * 256f);
-          local_50.y = (int)ROUND(pfVar3[1] * 256f);
-          local_50.z = (int)ROUND(pfVar3[2] * 256f);
+          local_50.x = (int)ROUND(*pfVar3 * 256.0f);
+          local_50.y = (int)ROUND(pfVar3[1] * 256.0f);
+          local_50.z = (int)ROUND(pfVar3[2] * 256.0f);
           engine_matrix_c_transformToCache_FUN_0050cd70(0,&local_50);
           local_80 = afStack_110[uVar1 * 3] * 0.2f;
           local_7c = afStack_110[uVar1 * 3 + 1] * 0.2f;
@@ -166,9 +166,9 @@ shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
           local_5c = *pfVar3 * 0.8f + afStack_110[uVar1 * 3] * 0.2f;
           local_58 = pfVar3[1] * 0.8f + afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_54 = local_9c + 0.2f * afStack_110[uVar1 * 3 + 2];
-          local_50.x = (int)ROUND(local_5c * 256f);
-          local_50.y = (int)ROUND(local_58 * 256f);
-          local_50.z = (int)ROUND(local_54 * 256f);
+          local_50.x = (int)ROUND(local_5c * 256.0f);
+          local_50.y = (int)ROUND(local_58 * 256.0f);
+          local_50.z = (int)ROUND(local_54 * 256.0f);
           engine_matrix_c_transformToCache_FUN_0050cd70(1,&local_50);
           pSVar4 = g_RenderVertexBuffer + 1;
           piVar5 = aiStack_140;

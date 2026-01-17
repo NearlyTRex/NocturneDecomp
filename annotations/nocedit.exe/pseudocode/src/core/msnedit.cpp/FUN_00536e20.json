@@ -1,17 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 133,
+    "complexity_score": 372,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 103,
-    "suspect_count": 2,
+    "pseudocode_lines": 117,
+    "suspect_count": 23,
     "suspect_types": [
-      "format_string_mismatch",
+      "call_esp_anchor",
+      "stack_align_anchor",
+      "sub_artifact",
+      "variadic_anchor",
       "warning_overlapping_globals"
     ],
-    "total_lines": 462
+    "total_lines": 476
   },
   "cross_references": [
     {
@@ -275,65 +278,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "00536e2c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536efe": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536f0a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536f1b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536f2f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536f50": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536f80": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536fa4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536fcd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00536ff1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "0053702c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "0053705a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00537086": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "0053710a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00537132": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "00537188": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "005371e3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "005371ec": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ],
-    "0053720c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.698675496688741,
     "instruction_count": 302,
@@ -373,7 +317,124 @@
     },
     "pcode_op_count": 1721
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 260,
+    "local_size": 260,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00536e2c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 58,
+      "match": "SUB84",
+      "text": "(local_f4,\"%6.2f\",SUB84 /* extract 2-byte value */((double)local_f8,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 77,
+      "match": "SUB84",
+      "text": "uStack_30 = SUB84 /* extract 2-byte value */(dVar3,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 101,
+      "match": "SUB84",
+      "text": "uStack_34 = SUB84 /* extract 2-byte value */(dVar3,0);",
+      "type": "sub_artifact"
+    },
     {
       "add_esp_value": 16,
       "call_address": "00536f2a",
@@ -623,115 +684,6 @@
       "target_address": "0x536cd0",
       "text": "Direct CALL at 00537207, ADD ESP at 0053720c with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 260,
-    "local_size": 260,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_100",
-        "offset": -256,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_f8",
-        "offset": -248,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f4",
-        "offset": -244,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "00536e2c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s (%s)\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s (%s)",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 41,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,\"%s (%s)\",motion_name);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
     }
   ]
 }

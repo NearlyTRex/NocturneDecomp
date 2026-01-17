@@ -21,7 +21,7 @@ DWORD __cdecl crt_file_c_setReadonlyAttribute_FUN_00600c30(char *filename,DWORD 
   if ((file_attributes & 0x80) == 0) {
     DVar1 = DVar1 | 1;
   }
-  BVar2 = (*SetFileAttributesA)(filename,DVar1);
+  BVar2 = (*g_SetFileAttributesAFunc)(filename,DVar1);
   if (BVar2 == 0) {
     DVar1 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
     return DVar1;

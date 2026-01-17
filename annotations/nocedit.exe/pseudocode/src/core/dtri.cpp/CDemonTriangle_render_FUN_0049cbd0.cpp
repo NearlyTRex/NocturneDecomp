@@ -16,19 +16,19 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *th
   CVector3i local_24;
   CVector3i local_18;
   
-  local_30.x = (int)ROUND((this_ptr->vertex1).x * 256f);
-  local_30.y = (int)ROUND((this_ptr->vertex1).y * 256f);
-  local_30.z = (int)ROUND((this_ptr->vertex1).z * 256f);
+  local_30.x = (int)ROUND((this_ptr->vertex1).x * 256.0f);
+  local_30.y = (int)ROUND((this_ptr->vertex1).y * 256.0f);
+  local_30.z = (int)ROUND((this_ptr->vertex1).z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_30);
-  local_18.x = (int)ROUND((this_ptr->vertex2).x * 256f);
-  local_18.y = (int)ROUND((this_ptr->vertex2).y * 256f);
-  local_18.z = (int)ROUND((this_ptr->vertex2).z * 256f);
+  local_18.x = (int)ROUND((this_ptr->vertex2).x * 256.0f);
+  local_18.y = (int)ROUND((this_ptr->vertex2).y * 256.0f);
+  local_18.z = (int)ROUND((this_ptr->vertex2).z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_18);
-  local_24.x = (int)ROUND((this_ptr->vertex3).x * 256f);
-  local_24.y = (int)ROUND((this_ptr->vertex3).y * 256f);
-  local_24.z = (int)ROUND((this_ptr->vertex3).z * 256f);
+  local_24.x = (int)ROUND((this_ptr->vertex3).x * 256.0f);
+  local_24.y = (int)ROUND((this_ptr->vertex3).y * 256.0f);
+  local_24.z = (int)ROUND((this_ptr->vertex3).z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_24);
   fVar1 = (float10)-65536;

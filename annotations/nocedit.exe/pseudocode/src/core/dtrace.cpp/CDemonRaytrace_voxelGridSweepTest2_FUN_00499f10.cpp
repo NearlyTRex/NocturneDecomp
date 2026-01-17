@@ -18,77 +18,82 @@ core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
-  double dVar7;
-  float local_98;
-  float local_94;
-  float local_90;
-  CMatrix3x3f local_8c;
-  CVector3f local_64;
-  float local_58;
-  float local_54;
-  float local_50;
+  float10 fVar7;
+  double dVar8;
+  float fVar9;
+  float fVar10;
+  byte local_98 [40];
+  CVector3f CStack_70;
+  float local_5c;
+  CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
-  CVector3f local_34;
+  int local_34;
+  int iStack_30;
+  int iStack_2c;
   int local_28;
   int local_24;
   int local_20;
-  float local_1c;
-  float local_18;
-  int local_14;
+  int local_1c;
+  int local_18;
   
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_8c,light_data);
-  local_58 = end_position->x - start_position->x;
-  local_54 = end_position->y - start_position->y;
-  local_50 = end_position->z - start_position->z;
-  fVar4 = (float10)local_54 / (float10)(this_ptr->adjusted_size).y;
-  fVar5 = (float10)local_50 / (float10)(this_ptr->adjusted_size).z;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+            ((CMatrix3x3f *)(local_98 + 0xc),light_data);
+  local_58.x = end_position->x - start_position->x;
+  local_58.y = end_position->y - start_position->y;
+  local_58.z = end_position->z - start_position->z;
+  fVar4 = (float10)local_58.y / (float10)(this_ptr->adjusted_size).y;
+  fVar5 = (float10)local_58.z / (float10)(this_ptr->adjusted_size).z;
   fVar6 = (float10)2;
-  dVar7 = crt_math_c_round_FUN_005fe6b0
+  dVar8 = crt_math_c_round_FUN_005fe6b0
                     ((double)((float10)1 +
-                             ((float10)local_58 / (float10)(this_ptr->adjusted_size).x) * fVar6));
-  local_34.z = (float)(int)ROUND(dVar7);
-  local_18 = local_34.z;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)1 + fVar4 * fVar6));
-  local_34.z = (float)(int)ROUND(dVar7);
-  local_1c = local_34.z;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)1 + fVar5 * fVar6));
-  local_28 = (int)ROUND(dVar7);
-  local_34.z = 0.0;
-  local_20 = local_28;
-  if (0 < (int)local_34.x) {
+                             ((float10)local_58.x / (float10)(this_ptr->adjusted_size).x) * fVar6));
+  iStack_2c = (int)ROUND(dVar8);
+  fVar7 = (float10)local_5c / (float10)iStack_2c;
+  local_18 = iStack_2c;
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)1 + fVar4 * fVar6));
+  iStack_2c = (int)ROUND(dVar8);
+  fVar4 = (float10)local_5c / (float10)iStack_2c;
+  local_1c = iStack_2c;
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)1 + fVar5 * fVar6));
+  local_28 = (int)ROUND(dVar8);
+  fVar10 = local_5c / (float)local_28;
+  iStack_2c = 0;
+  fVar9 = (float)fVar4;
+  if (0 < local_34) {
     do {
-      local_18 = 0.0;
-      if (0 < local_24) {
+      local_24 = 0;
+      if (0 < iStack_30) {
         do {
           iVar3 = 0;
-          if (0 < (int)local_1c) {
+          if (0 < local_28) {
             do {
               fVar1 = (float)0.5;
-              local_40.x = local_98 * fVar1 + (float)local_20 * local_98 + start_position->x;
-              local_40.y = local_94 * fVar1 + (float)(int)local_18 * local_94 + start_position->y;
-              local_40.z = (float)iVar3 * local_90 + start_position->z + local_90 * fVar1;
-              local_14 = iVar3;
+              local_4c.x = (float)fVar7 * fVar1 +
+                           (float)iStack_2c * (float)fVar7 + start_position->x;
+              local_4c.y = fVar9 * fVar1 + (float)local_24 * fVar9 + start_position->y;
+              local_4c.z = (float)iVar3 * fVar10 + start_position->z + fVar10 * fVar1;
+              local_20 = iVar3;
               pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                                 (&local_8c,&local_34,&local_40);
-              local_64.x = pCVar2->x + offset_vector->x;
-              local_64.y = pCVar2->y + offset_vector->y;
-              local_64.z = pCVar2->z + offset_vector->z;
-              if (&local_4c != &local_64) {
-                local_4c.x = local_64.x;
-                local_4c.y = local_64.y;
-                local_4c.z = local_64.z;
+                                 ((CMatrix3x3f *)local_98,&local_40,&local_4c);
+              CStack_70.x = pCVar2->x + offset_vector->x;
+              CStack_70.y = pCVar2->y + offset_vector->y;
+              CStack_70.z = pCVar2->z + offset_vector->z;
+              if (&local_58 != &CStack_70) {
+                local_58.x = CStack_70.x;
+                local_58.y = CStack_70.y;
+                local_58.z = CStack_70.z;
               }
-              core_dtrace_cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280(this_ptr,&local_4c)
+              core_dtrace_cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280(this_ptr,&local_58)
               ;
               iVar3 = iVar3 + 1;
-            } while (iVar3 < (int)local_1c);
+            } while (iVar3 < local_28);
           }
-          local_18 = (float)((int)local_18 + 1);
-        } while ((int)local_18 < local_24);
+          local_24 = local_24 + 1;
+        } while (local_24 < iStack_30);
       }
-      local_20 = local_20 + 1;
-    } while (local_20 < local_28);
+      iStack_2c = iStack_2c + 1;
+    } while (iStack_2c < local_34);
   }
   return;
 }

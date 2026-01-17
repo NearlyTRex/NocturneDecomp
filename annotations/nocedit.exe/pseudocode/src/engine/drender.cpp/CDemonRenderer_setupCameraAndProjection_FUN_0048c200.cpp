@@ -26,17 +26,17 @@ engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
   float10 fVar11;
   float10 fVar12;
   double dVar13;
-  CVector3f local_1c;
+  CVector3f local_20;
   
-  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(transform_matrix,&local_1c);
+  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(transform_matrix,&local_20);
   fVar6 = (float10)transform_matrix->m[0].y * (float10)65536;
   fVar7 = (float10)transform_matrix->m[0].z * (float10)65536;
   fVar8 = (float10)transform_matrix->m[1].x * (float10)65536;
-  fVar9 = (float10)local_1c.x * (float10)0.31830988619288902 * (float10)32768
+  fVar9 = (float10)local_20.x * (float10)0.31830988619288902 * (float10)32768
   ;
-  fVar10 = (float10)local_1c.z * (float10)0.31830988619288902 *
+  fVar10 = (float10)local_20.z * (float10)0.31830988619288902 *
            (float10)32768;
-  fVar11 = (float10)local_1c.y * (float10)0.31830988619288902 *
+  fVar11 = (float10)local_20.y * (float10)0.31830988619288902 *
            (float10)32768;
   dVar13 = crt_math_c_round_FUN_005fe6b0
                      ((double)(transform_matrix->m[0].x * (float)65536));

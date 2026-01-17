@@ -37,24 +37,24 @@ void core_ladder_cpp_FUN_00502d00(void)
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e);
     if (iVar2 != 0) {
       in_stack_00000004[2].location.position.z =
-           in_stack_00000004[2].location.position.z - DAT_006605e8;
+           in_stack_00000004[2].location.position.z - 0x3F800000;
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x10);
     if (iVar2 != 0) {
       in_stack_00000004[2].location.position.z =
-           DAT_006605e8 + in_stack_00000004[2].location.position.z;
+           0x3F800000 + in_stack_00000004[2].location.position.z;
     }
     if (in_stack_00000004[2].location.position.y < (float)0.5) {
       in_stack_00000004[2].location.position.y = 0.5;
     }
-    if (in_stack_00000004[2].location.position.z < DAT_006605e8) {
-      in_stack_00000004[2].location.position.z = DAT_006605e8;
+    if (in_stack_00000004[2].location.position.z < 0x3F800000) {
+      in_stack_00000004[2].location.position.z = 0x3F800000;
     }
   }
   dVar3 = crt_math_c_floor_FUN_005feb90
-                    ((double)(in_stack_00000004[2].location.position.z / DAT_006605e8 +
+                    ((double)(in_stack_00000004[2].location.position.z / 0x3F800000 +
                              (float)0.5));
-  fVar1 = (float)dVar3 * DAT_006605e8;
+  fVar1 = (float)dVar3 * 0x3F800000;
   *(uint *)(extraout_EBX + 0x2dc) = 0;
   *(float *)(extraout_EBX + 0x2d8) = fVar1;
   return;

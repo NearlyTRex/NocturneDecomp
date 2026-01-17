@@ -65,13 +65,13 @@
   "globals": [
     {
       "addr": "00611574",
-      "name": "PTR_GetConsoleMode_00611574",
+      "name": "g_GetConsoleModeFunc",
       "type": "GetConsoleMode*",
       "value": "00211e30"
     },
     {
       "addr": "00611610",
-      "name": "PTR_SetConsoleMode_00611610",
+      "name": "g_SetConsoleModeFunc",
       "type": "SetConsoleMode*",
       "value": "00212126"
     },
@@ -169,14 +169,14 @@
       "description": "Direct stack address reference",
       "line": 14,
       "match": "&stack0xfffffff8",
-      "text": "(*PTR_GetConsoleMode_00611574)(hConsoleHandle,(LPDWORD)&stack0xfffffff8);",
+      "text": "(*g_GetConsoleModeFunc)(hConsoleHandle,(LPDWORD)&stack0xfffffff8);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
       "line": 17,
       "match": "unaff_ESI",
-      "text": "(*PTR_SetConsoleMode_00611610)(hConsoleHandle,unaff_ESI);",
+      "text": "(*g_SetConsoleModeFunc)(hConsoleHandle,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {

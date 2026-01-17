@@ -32,7 +32,7 @@ void core_msnedit_cpp_FUN_0053c730(void)
   bVar7 = 0;
   core_actor_cpp_FUN_0040e150();
   if (*(int *)(in_stack_00000004 + 0x28) != 0) {
-    puVar3 = &DAT_00680908;
+    puVar3 = &0;
     pcVar4 = local_6c;
     for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(uint *)pcVar4 = *puVar3;

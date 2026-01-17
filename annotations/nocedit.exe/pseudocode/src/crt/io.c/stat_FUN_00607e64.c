@@ -58,12 +58,12 @@ int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,stat *file_info)
       local_368.dwFileAttributes = 0x10;
     }
     else {
-      hFindFile = (*PTR_FindFirstFileA_0061154c)(filename,&local_368);
+      hFindFile = (*g_FindFirstFileAFunc)(filename,&local_368);
       if (hFindFile == (HANDLE)0xffffffff) {
         DVar5 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
         return DVar5;
       }
-      (*PTR_FindClose_00611548)(hFindFile);
+      (*g_FindCloseFunc)(hFindFile);
     }
     pcVar2 = crt_string_c_mbtowc_next_FUN_00605a70(filename);
     if (*pcVar2 == ':') {

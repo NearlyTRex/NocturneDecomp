@@ -24,9 +24,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
       shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
                 (this_ptr,&local_10,
                  (CVector3f *)(this_ptr->vertex_data->lod_workspace + iVar4 + -0x10));
-      local_1c.x = (int)ROUND(local_10.x * 256f);
-      local_1c.y = (int)ROUND(local_10.y * 256f);
-      local_1c.z = (int)ROUND(local_10.z * 256f);
+      local_1c.x = (int)ROUND(local_10.x * 256.0f);
+      local_1c.y = (int)ROUND(local_10.y * 256.0f);
+      local_1c.z = (int)ROUND(local_10.z * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +

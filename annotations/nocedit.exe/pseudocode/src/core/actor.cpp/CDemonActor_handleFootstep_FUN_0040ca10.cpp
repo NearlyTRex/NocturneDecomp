@@ -29,7 +29,7 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
   fVar1 = position->x - (float)g_CDemonCameraInstance.base.position.x;
   fVar3 = position->y - (float)g_CDemonCameraInstance.base.position.y;
   fVar2 = position->z - (float)g_CDemonCameraInstance.base.position.z;
-  if (10000f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
+  if (10000.0f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
     return 0;
   }
   iVar4 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);

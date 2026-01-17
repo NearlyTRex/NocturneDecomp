@@ -11,7 +11,7 @@
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc426
 ;
 ; Referenced Globals:
-;   FindNextFileA* PTR_FindNextFileA_00611550 = 00211d96
+;   FindNextFileA* g_FindNextFileAFunc = 00211d96
 ;
 ; Called Functions:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390
@@ -30,7 +30,7 @@ section .text
     PUSH EAX                            ; 00602309
     MOV EDX,dword ptr [ESP + 0x14c]     ; 0060230a
     PUSH EDX                            ; 00602311
-    CALL dword ptr CS:[0x611550]        ; 00602312 | PTR_FindNextFileA_00611550
+    CALL dword ptr CS:[0x611550]        ; 00602312 | g_FindNextFileAFunc
     TEST EAX,EAX                        ; 00602319
     JNZ 0x00602329                      ; 0060231b
         ;   XREF to: 00602329 (CONDITIONAL_JUMP)  ; LAB_00602329

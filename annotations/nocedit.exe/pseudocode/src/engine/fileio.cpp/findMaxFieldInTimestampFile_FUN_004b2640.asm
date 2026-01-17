@@ -14,7 +14,7 @@
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bb696
 ;
 ; Referenced Globals:
-;   Sleep* Sleep = 00212228
+;   Sleep* g_SleepFunc = 00212228
 ;   TerminatedCString s_engine_fileio_cpp_0062604b
 ;   TerminatedCString s_engine_fileio_cpp_00626129
 ;   TerminatedCString s_rt_006261e5
@@ -138,7 +138,7 @@ section .text
     PUSH 0x1f4                          ; 004b2725
         ;   Label: LAB_004b2725
     INC ESI                             ; 004b272a
-    CALL dword ptr CS:[0x611644]        ; 004b272b | Sleep
+    CALL dword ptr CS:[0x611644]        ; 004b272b | g_SleepFunc
     CMP ESI,0xa                         ; 004b2732
     JL 0x004b264d                       ; 004b2735
         ;   XREF to: 004b264d (CONDITIONAL_JUMP)  ; LAB_004b264d

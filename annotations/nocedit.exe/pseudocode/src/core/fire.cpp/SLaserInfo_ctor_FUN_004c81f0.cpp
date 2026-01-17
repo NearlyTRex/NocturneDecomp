@@ -37,6 +37,6 @@ SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(SLaserInfo *this
   this_ptr->field0_0x0[0x1d] = '\0';
   this_ptr->field0_0x0[0x1e] = '\0';
   this_ptr->field0_0x0[0x1f] = '\0';
-  *(uint *)(this_ptr->field0_0x0 + 4) = DAT_0065dcc0;
+  *(uint *)(this_ptr->field0_0x0 + 4) = 0x3CA3D70A;
   return this_ptr;
 }

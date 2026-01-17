@@ -145,16 +145,16 @@ uint core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(void)
         pcVar6 = local_10f + iVar4 * 0x28;
         piVar10 = local_24;
         if (local_44[3] == in_stack_00000004[0x45]) {
-          DAT_00680a04 = local_44[3] ^ in_stack_00000004[0x45];
+          0x00000001 = local_44[3] ^ in_stack_00000004[0x45];
           iVar9 = crt_string_c_strcmp_FUN_005fef20((char *)local_24,pcVar6);
           if (iVar9 != 0) {
-            DAT_00680a04 = 1;
+            0x00000001 = 1;
           }
           if (local_28[0x19] == aiStack_f3[iVar4 * 10 + 2]) {
-            if (DAT_00680a04 == 0) goto LAB_005429ed;
+            if (0x00000001 == 0) goto LAB_005429ed;
           }
           else {
-            DAT_00680a04 = 1;
+            0x00000001 = 1;
           }
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0();
         }

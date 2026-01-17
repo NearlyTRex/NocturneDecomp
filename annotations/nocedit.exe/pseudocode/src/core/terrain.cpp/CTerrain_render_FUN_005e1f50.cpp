@@ -16,33 +16,33 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
   float10 fVar3;
   float10 fVar4;
   double dVar5;
-  CVector3i local_2c;
+  CVector3i local_30;
+  int local_24;
   int local_20;
   int local_1c;
-  int local_18;
   
   if (g_CTerrainInstance.initialized == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-            (g_CDemonRendererPtr,(float *)&local_2c);
-  local_20 = 0x40800;
-  local_18 = 0;
-  local_1c = core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(g_CGroundPtr,0,0x40800);
-  iVar1 = local_18;
+            (g_CDemonRendererPtr,(float *)&local_30);
+  local_24 = 0x40800;
+  local_1c = 0;
+  local_20 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(g_CGroundPtr,0,0x40800);
+  iVar1 = local_1c;
   fVar2 = (float10)256;
-  fVar3 = (float10)(float)local_2c.y * fVar2;
-  fVar4 = (float10)(float)local_2c.z * fVar2;
-  crt_math_c_round_FUN_005fe6b0((double)((float10)(float)local_2c.x * fVar2));
+  fVar3 = (float10)(float)local_30.y * fVar2;
+  fVar4 = (float10)(float)local_30.z * fVar2;
+  crt_math_c_round_FUN_005fe6b0((double)((float10)(float)local_30.x * fVar2));
   dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
-  local_1c = (int)ROUND(dVar5);
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
-  local_2c.y = extraout_EAX + extraout_EDX;
   local_20 = (int)ROUND(dVar5);
-  local_2c.z = (iVar1 + local_20) - this_ptr->animation_counter;
-  engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130(g_CDemonRendererPtr,&local_2c);
+  dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
+  local_30.y = extraout_EAX + extraout_EDX;
+  local_24 = (int)ROUND(dVar5);
+  local_30.z = (iVar1 + local_24) - this_ptr->animation_counter;
+  engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130(g_CDemonRendererPtr,&local_30);
   core_ground_cpp_CGround_render_FUN_004efc90(g_CGroundPtr);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr,&local_2c);
+            (g_CDemonRendererPtr,(CVector3i *)&stack0xffffffc4);
   return;
 }

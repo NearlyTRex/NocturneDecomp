@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 209,
-    "complexity_score": 89,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
     "pseudocode_lines": 54,
-    "suspect_count": 3,
+    "suspect_count": 17,
     "suspect_types": [
-      "pointer_cast"
+      "call_esp_anchor",
+      "pointer_cast",
+      "variadic_anchor"
     ],
     "total_lines": 263
   },
@@ -151,50 +153,6 @@
     "declared_params": 3,
     "estimated_params": 3
   },
-  "pcode_overrides": {
-    "0046b9d2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046b9f2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046ba16": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046ba41": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046ba61": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046ba85": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046baad": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046bacd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046baf1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046bafd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046bb09": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046bb24": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046bb46": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ],
-    "0046bb71": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.8225806451612905,
     "instruction_count": 186,
@@ -224,7 +182,79 @@
     },
     "pcode_op_count": 711
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 1260,
+    "local_size": 1248,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4dc",
+        "offset": -1244,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "image_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "output_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(byte *)((int)",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(byte *)((int)",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(byte *)((int)",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 16,
       "call_address": "0046bb41",
@@ -409,80 +439,6 @@
       "target_address": "0x46b770",
       "text": "Direct CALL at 0046bb6c, ADD ESP at 0046bb71 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 1260,
-    "local_size": 1248,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_4dc",
-        "offset": -1244,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_dc",
-        "offset": -220,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "image_buffer",
-        "offset": 4,
-        "size": 4,
-        "type": "void *"
-      },
-      {
-        "is_param": true,
-        "name": "output_filename",
-        "offset": 8,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "texture_size",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(byte *)((int)",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(byte *)((int)",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
-      "type": "pointer_cast"
     }
   ]
 }

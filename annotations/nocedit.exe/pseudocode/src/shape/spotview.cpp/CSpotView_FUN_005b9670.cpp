@@ -9,114 +9,122 @@
 void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9670(CSpotView *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
+  char *pcVar1;
+  CSpotView *this_ptr_00;
+  int iVar2;
+  float in_stack_00000008;
+  float in_stack_0000000c;
+  float in_stack_00000010;
+  float in_stack_00000014;
+  float in_stack_00000018;
+  float in_stack_0000001c;
+  float in_stack_00000020;
+  float in_stack_00000024;
+  float in_stack_fffffff0;
   float fVar3;
-  int iVar4;
-  uint in_stack_00000008;
-  float local_20;
-  float fStack_1c;
-  float fStack_c;
   
-  local_20 = 1.0;
-  iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
-  if (iVar4 == 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-    if (iVar4 != 0) {
-      local_20 = 4.0;
+  this_ptr_00 = this_ptr;
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  if ((iVar2 == 0) && (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a), iVar2 != 0)) {
+    in_stack_fffffff0 = 4.0;
+  }
+  fVar3 = in_stack_fffffff0 * (float)1.1000000000000001;
+  pcVar1 = this_ptr->field0_0x0;
+  this_ptr = *(CSpotView **)(this_ptr->field0_0x0 + 0x2c);
+  if (*(float *)(pcVar1 + 0x2c) < 1.0) {
+    this_ptr = (CSpotView *)0x3f800000;
+  }
+  this_ptr = (CSpotView *)((float)this_ptr * g_CGamePtr->delta_time_float * in_stack_fffffff0);
+  if (((uint)in_stack_00000008 & 2) != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x52);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x28) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x28) + in_stack_00000008;
+    }
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x53);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x28) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x28) - in_stack_00000010;
+    }
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x35);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x28) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x28) + in_stack_00000018;
+    }
+    this_ptr = (CSpotView *)0x37;
+    fVar3 = 8.411417e-39;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x37);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x28) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x28) - in_stack_00000020;
     }
   }
-  else {
-    local_20 = 0.05;
-  }
-  fVar3 = (float)1.1000000000000001;
-  fVar1 = g_CGamePtr->delta_time_float * local_20;
-  fStack_1c = *(float *)(this_ptr->field0_0x0 + 0x2c) * (float)1.5;
-  fVar2 = fVar1 * (float)3.1415926535000001;
-  if (fStack_1c < 1.0) {
-    fStack_1c = 1.0;
-  }
-  fStack_c = *(float *)(this_ptr->field0_0x0 + 0x2c);
-  if (*(float *)(this_ptr->field0_0x0 + 0x2c) < 1.0) {
-    fStack_c = 1.0;
-  }
-  fStack_c = fStack_c * fVar1;
-  if ((in_stack_00000008 & 2) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x52);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x28) = *(float *)(this_ptr->field0_0x0 + 0x28) + fVar2;
+  if (((uint)in_stack_00000008 & 1) != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4a);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x24) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x24) + in_stack_00000008;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x53);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x28) = *(float *)(this_ptr->field0_0x0 + 0x28) - fVar2;
-    }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x35);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x28) = *(float *)(this_ptr->field0_0x0 + 0x28) + fVar2;
-    }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x37);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x28) = *(float *)(this_ptr->field0_0x0 + 0x28) - fVar2;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4e);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x24) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x24) - in_stack_00000010;
     }
   }
-  if ((in_stack_00000008 & 1) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4a);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x24) = *(float *)(this_ptr->field0_0x0 + 0x24) + fVar2;
+  if (((uint)in_stack_00000008 & 8) != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x30) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x30) - in_stack_0000000c;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4e);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x24) = *(float *)(this_ptr->field0_0x0 + 0x24) - fVar2;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x30) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x30) + in_stack_00000014;
     }
-  }
-  if ((in_stack_00000008 & 8) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x30) = *(float *)(this_ptr->field0_0x0 + 0x30) - fStack_c;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x34) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x34) + in_stack_0000001c;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x30) = *(float *)(this_ptr->field0_0x0 + 0x30) + fStack_c;
-    }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x34) = *(float *)(this_ptr->field0_0x0 + 0x34) + fStack_c;
-    }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x34) = *(float *)(this_ptr->field0_0x0 + 0x34) - fStack_c;
+    this_ptr = (CSpotView *)0x1e;
+    fVar3 = 8.411684e-39;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x34) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x34) - in_stack_00000024;
     }
   }
-  if ((in_stack_00000008 & 4) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x2c) =
-           *(float *)(this_ptr->field0_0x0 + 0x2c) - fStack_1c * fVar1;
+  if (((uint)in_stack_00000008 & 4) != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x2c) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x2c) - fVar3;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x2c) =
-           *(float *)(this_ptr->field0_0x0 + 0x2c) + fStack_1c * fVar1;
-    }
-  }
-  if ((in_stack_00000008 & 0x10) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xd);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x38) =
-           *(float *)(this_ptr->field0_0x0 + 0x38) / (local_20 * fVar3);
-    }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xc);
-    if (iVar4 != 0) {
-      *(float *)(this_ptr->field0_0x0 + 0x38) =
-           *(float *)(this_ptr->field0_0x0 + 0x38) * local_20 * fVar3;
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x2c) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x2c) + (float)this_ptr;
     }
   }
-  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4c);
-  if (iVar4 == 0) {
-    shape_spotview_cpp_CSpotView_FUN_005b9950(this_ptr);
+  if (((uint)in_stack_00000008 & 0x10) != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xd);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x38) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x38) / (float)this_ptr;
+    }
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xc);
+    if (iVar2 != 0) {
+      *(float *)(this_ptr_00->field0_0x0 + 0x38) =
+           *(float *)(this_ptr_00->field0_0x0 + 0x38) * in_stack_0000000c;
+    }
+  }
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4c);
+  if (iVar2 == 0) {
+    shape_spotview_cpp_CSpotView_FUN_005b9950(this_ptr_00);
     return;
   }
-  shape_spotview_cpp_CSpotView_FUN_005b9620(this_ptr);
-  shape_spotview_cpp_CSpotView_FUN_005b9950(this_ptr);
+  shape_spotview_cpp_CSpotView_FUN_005b9620(this_ptr_00);
+  shape_spotview_cpp_CSpotView_FUN_005b9950(this_ptr_00);
   return;
 }

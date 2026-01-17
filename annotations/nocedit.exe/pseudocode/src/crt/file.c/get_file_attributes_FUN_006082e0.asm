@@ -10,7 +10,7 @@
 ;   crt_file.c_setReadonlyAttribute_FUN_00600c30 at 00600c36
 ;
 ; Referenced Globals:
-;   FindFirstFileA* PTR_FindFirstFileA_0061154c = 00211d84
+;   FindFirstFileA* g_FindFirstFileAFunc = 00211d84
 ;
 ; Called Functions:
 ;   FindFirstFileA
@@ -82,7 +82,7 @@ section .text
         ;   Label: LAB_00608336
     PUSH EAX                            ; 00608338
     PUSH EBX                            ; 00608339
-    CALL dword ptr CS:[0x61154c]        ; 0060833a | PTR_FindFirstFileA_0061154c
+    CALL dword ptr CS:[0x61154c]        ; 0060833a | g_FindFirstFileAFunc
     CMP EAX,-0x1                        ; 00608341
     JZ 0x00608349                       ; 00608344
         ;   XREF to: 00608349 (CONDITIONAL_JUMP)  ; LAB_00608349

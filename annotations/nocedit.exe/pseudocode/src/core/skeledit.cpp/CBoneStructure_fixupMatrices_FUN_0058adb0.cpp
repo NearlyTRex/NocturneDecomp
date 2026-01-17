@@ -14,7 +14,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneSt
   float *matrix;
   double dVar3;
   int *in_stack_00000004;
-  int iStack_24;
+  int local_28;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x30);
   piVar1 = in_stack_00000004;
@@ -29,8 +29,8 @@ void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneSt
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("CBoneStructure::fixupMatrices - %s is mirrored.",piVar1 + iVar2 * 0x21 + 1);
       }
-      iStack_24 = SUB84 /* extract 2-byte value */(dVar3,0);
-      if ((((ulonglong)dVar3 & 0x7fffffff00000000) == 0) && (iStack_24 == 0)) {
+      local_28 = SUB84 /* extract 2-byte value */(dVar3,0);
+      if ((((ulonglong)dVar3 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
         g_CurrentLineNumber = 0x3b6;
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         core_main_c_displayErrorAndQuit_FUN_00506f10

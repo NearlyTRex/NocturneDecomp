@@ -11,10 +11,10 @@
 ;   crt_io.c_stat_FUN_00607e64 at 00607ff7
 ;
 ; Referenced Globals:
-;   CloseHandle* CloseHandle = 00211c38
-;   CreateFileA* PTR_CreateFileA_00611510 = 00211c6a
-;   GetFileType* PTR_GetFileType_0061159c = 00211f00
-;   GetLastError* GetLastError = 00211f22
+;   CloseHandle* g_CloseHandleFunc = 00211c38
+;   CreateFileA* g_CreateFileAFunc = 00211c6a
+;   GetFileType* g_GetFileTypeFunc = 00211f00
+;   GetLastError* g_GetLastErrorFunc = 00211f22
 ;   TerminatedCString s_con_0065905c
 ;   TerminatedCString s_conin_00659060
 ;   TerminatedCString s_EXE_00659068
@@ -72,13 +72,13 @@ section .text
     PUSH 0x0                            ; 00607da0
     PUSH 0x0                            ; 00607da2
     PUSH EAX                            ; 00607da4 | = "conin$"
-    CALL dword ptr CS:[0x611510]        ; 00607da5 | PTR_CreateFileA_00611510
+    CALL dword ptr CS:[0x611510]        ; 00607da5 | g_CreateFileAFunc
     MOV EDI,EAX                         ; 00607dac
     CMP EAX,-0x1                        ; 00607dae
     JZ 0x00607ddb                       ; 00607db1
         ;   XREF to: 00607ddb (CONDITIONAL_JUMP)  ; LAB_00607ddb
     PUSH EAX                            ; 00607db3
-    CALL dword ptr CS:[0x61159c]        ; 00607db4 | PTR_GetFileType_0061159c
+    CALL dword ptr CS:[0x61159c]        ; 00607db4 | g_GetFileTypeFunc
     CMP EAX,0x2                         ; 00607dbb
     JNZ 0x00607dc7                      ; 00607dbe
         ;   XREF to: 00607dc7 (CONDITIONAL_JUMP)  ; LAB_00607dc7
@@ -92,14 +92,14 @@ section .text
     MOV EBX,0x1000                      ; 00607dcc
     PUSH EDI                            ; 00607dd1
         ;   Label: LAB_00607dd1
-    CALL dword ptr CS:[0x611504]        ; 00607dd2 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 00607dd2 | g_CloseHandleFunc
     JMP 0x00607df7                      ; 00607dd9
         ;   XREF to: 00607df7 (UNCONDITIONAL_JUMP)  ; LAB_00607df7
     CMP word ptr [0x00685019],0x8000    ; 00607ddb | g_WindowsPlatformVersion
         ;   Label: LAB_00607ddb
     JNC 0x00607df2                      ; 00607de4
         ;   XREF to: 00607df2 (CONDITIONAL_JUMP)  ; LAB_00607df2
-    CALL dword ptr CS:[0x6115a4]        ; 00607de6 | GetLastError
+    CALL dword ptr CS:[0x6115a4]        ; 00607de6 | g_GetLastErrorFunc
     CMP EAX,0x5                         ; 00607ded
     JNZ 0x00607df7                      ; 00607df0
         ;   XREF to: 00607df7 (CONDITIONAL_JUMP)  ; LAB_00607df7

@@ -11,8 +11,8 @@
 ;   sound_sndwav.cpp_CWavInDevice_start_FUN_005b0e20 at 005b0e8a
 ;
 ; Referenced Globals:
-;   waveInAddBuffer* waveInAddBuffer = 00211892
-;   waveInPrepareHeader* waveInPrepareHeader = 002118d4
+;   waveInAddBuffer* g_waveInAddBufferFunc = 00211892
+;   waveInPrepareHeader* g_waveInPrepareHeaderFunc = 002118d4
 ;   TerminatedCString s_waveOutPrepareHeader_fai_00652408
 ;   TerminatedCString s_waveOutWrite_failed_00652425
 ;   HWAVEIN g_WaveInHandle
@@ -66,7 +66,7 @@ section .text
     PUSH EDI                            ; 005b0d10
     MOV EBP,dword ptr [0x03f6adcc]      ; 005b0d11 | g_WaveInHandle
     PUSH EBP                            ; 005b0d17
-    CALL dword ptr CS:[0x611430]        ; 005b0d18 | waveInPrepareHeader
+    CALL dword ptr CS:[0x611430]        ; 005b0d18 | g_waveInPrepareHeaderFunc
     TEST EAX,EAX                        ; 005b0d1f
     JNZ 0x005b0d47                      ; 005b0d21
         ;   XREF to: 005b0d47 (CONDITIONAL_JUMP)  ; LAB_005b0d47
@@ -75,7 +75,7 @@ section .text
     PUSH EAX                            ; 005b0d2b
     MOV EDX,dword ptr [0x03f6adcc]      ; 005b0d2c | g_WaveInHandle
     PUSH EDX                            ; 005b0d32
-    CALL dword ptr CS:[0x611420]        ; 005b0d33 | waveInAddBuffer
+    CALL dword ptr CS:[0x611420]        ; 005b0d33 | g_waveInAddBufferFunc
     TEST EAX,EAX                        ; 005b0d3a
     JNZ 0x005b0d5a                      ; 005b0d3c
         ;   XREF to: 005b0d5a (CONDITIONAL_JUMP)  ; LAB_005b0d5a

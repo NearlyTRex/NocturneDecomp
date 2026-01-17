@@ -55,17 +55,17 @@ void core_game_cpp_FUN_004d7810(void)
       pFStack_1c = engine_dosio_c_getFile_FUN_00481a50("movie",acStack_88,"wb");
       if (pFStack_1c != (FILE *)0x0) {
         iStack_20 = 0;
-        if (0 < DAT_0067b668) {
+        if (0 < 0x00000040) {
           do {
             iStack_18 = 0;
-            if (0 < DAT_0067b664) {
+            if (0 < 0x00000040) {
               iStack_24 = iStack_20 + 1;
               do {
                 file = pFStack_1c;
-                iVar3 = (iStack_18 * g_WindowWidth) / DAT_0067b664;
-                iVar4 = ((iStack_18 + 1) * g_WindowWidth) / DAT_0067b664;
-                iVar2 = (iStack_20 * g_WindowHeight) / DAT_0067b668;
-                iVar5 = (iStack_24 * g_WindowHeight) / DAT_0067b668;
+                iVar3 = (iStack_18 * g_WindowWidth) / 0x00000040;
+                iVar4 = ((iStack_18 + 1) * g_WindowWidth) / 0x00000040;
+                iVar2 = (iStack_20 * g_WindowHeight) / 0x00000040;
+                iVar5 = (iStack_24 * g_WindowHeight) / 0x00000040;
                 iVar9 = 0;
                 iVar7 = 0;
                 iVar8 = 0;
@@ -94,10 +94,10 @@ void core_game_cpp_FUN_004d7810(void)
                 crt_stdio_c_fputc_FUN_006007a0(iVar8 / iVar10,file);
                 crt_stdio_c_fputc_FUN_006007a0(iVar9 / iVar10,file);
                 iStack_18 = iStack_18 + 1;
-              } while (iStack_18 < DAT_0067b664);
+              } while (iStack_18 < 0x00000040);
             }
             iStack_20 = iStack_20 + 1;
-          } while (iStack_20 < DAT_0067b668);
+          } while (iStack_20 < 0x00000040);
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFStack_1c,"..\\core\\game.cpp",0x110);
         engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,0);

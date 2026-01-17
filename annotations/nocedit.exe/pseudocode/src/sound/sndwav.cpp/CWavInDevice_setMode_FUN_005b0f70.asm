@@ -11,10 +11,10 @@
 ; int *            Stack[0x14]:4   out_samples_per_block
 ;
 ; Referenced Globals:
-;   waveInGetDevCapsA* waveInGetDevCapsA = 002118b2
-;   waveInOpen* waveInOpen = 002118c6
-;   GlobalAlloc* GlobalAlloc = 00211fd8
-;   GlobalLock* GlobalLock = 00211ff4
+;   waveInGetDevCapsA* g_waveInGetDevCapsAFunc = 002118b2
+;   waveInOpen* g_waveInOpenFunc = 002118c6
+;   GlobalAlloc* g_GlobalAllocFunc = 00211fd8
+;   GlobalLock* g_GlobalLockFunc = 00211ff4
 ;   TerminatedCString s_WavInDevice_setMode_Can__00652476
 ;   UINT g_WaveOutDeviceID = 0xffffffff
 ;   UINT g_WaveInDeviceID = 0xffffffff
@@ -70,7 +70,7 @@ section .text
     PUSH EAX                            ; 005b0fab
     MOV ECX,dword ptr [0x00681e08]      ; 005b0fac | g_WaveInDeviceID
     PUSH ECX                            ; 005b0fb2
-    CALL dword ptr CS:[0x611428]        ; 005b0fb3 | waveInGetDevCapsA
+    CALL dword ptr CS:[0x611428]        ; 005b0fb3 | g_waveInGetDevCapsAFunc
     TEST EAX,EAX                        ; 005b0fba
     JNZ 0x005b11b0                      ; 005b0fbc
         ;   XREF to: 005b11b0 (CONDITIONAL_JUMP)  ; LAB_005b11b0
@@ -200,7 +200,7 @@ section .text
     IMUL EAX,dword ptr [0x03f6af14]     ; 005b1140 | g_WaveInChannels
     PUSH EAX                            ; 005b1147
     PUSH 0x2002                         ; 005b1148
-    CALL dword ptr CS:[0x6115cc]        ; 005b114d | GlobalAlloc
+    CALL dword ptr CS:[0x6115cc]        ; 005b114d | g_GlobalAllocFunc
     MOV dword ptr [EBX + 0x3f6ae70],EAX ; 005b1154 | g_WaveInBufferHandles
     TEST EAX,EAX                        ; 005b115a
     JNZ 0x005b11dd                      ; 005b115c
@@ -254,14 +254,14 @@ section .text
     RET                                 ; 005b11dc
     PUSH EAX                            ; 005b11dd
         ;   Label: LAB_005b11dd
-    CALL dword ptr CS:[0x6115d4]        ; 005b11de | GlobalLock
+    CALL dword ptr CS:[0x6115d4]        ; 005b11de | g_GlobalLockFunc
     MOV dword ptr [EBX + 0x3f6aec0],EAX ; 005b11e5 | g_WaveInBuffers
     TEST EAX,EAX                        ; 005b11eb
     JZ 0x005b1162                       ; 005b11ed
         ;   XREF to: 005b1162 (CONDITIONAL_JUMP)  ; LAB_005b1162
     PUSH 0x20                           ; 005b11f3
     PUSH 0x2002                         ; 005b11f5
-    CALL dword ptr CS:[0x6115cc]        ; 005b11fa | GlobalAlloc
+    CALL dword ptr CS:[0x6115cc]        ; 005b11fa | g_GlobalAllocFunc
     MOV dword ptr [EBX + 0x3f6add0],EAX ; 005b1201 | g_WaveInHeaderHandles
     TEST EAX,EAX                        ; 005b1207
     JZ 0x005b1162                       ; 005b1209
@@ -270,7 +270,7 @@ section .text
     PUSH EAX                            ; 005b1215
     ADD EBX,0x4                         ; 005b1216
     INC ESI                             ; 005b1219
-    CALL dword ptr CS:[0x6115d4]        ; 005b121a | GlobalLock
+    CALL dword ptr CS:[0x6115d4]        ; 005b121a | g_GlobalLockFunc
     MOV EDX,dword ptr [0x03f6af24]      ; 005b1221 | g_WaveInNumBuffers
     MOV dword ptr [EBX + 0x3f6ae1c],EAX ; 005b1227 | g_WaveInHeaders
     CMP ESI,EDX                         ; 005b122d
@@ -311,7 +311,7 @@ section .text
     PUSH ESI                            ; 005b12a5
     PUSH 0x3f6adcc                      ; 005b12a6 | g_WaveInHandle
     MOV dword ptr [ESP + 0x50],EDX      ; 005b12ab
-    CALL dword ptr CS:[0x61142c]        ; 005b12af | waveInOpen
+    CALL dword ptr CS:[0x61142c]        ; 005b12af | g_waveInOpenFunc
     TEST EAX,EAX                        ; 005b12b6
     JNZ 0x005b116e                      ; 005b12b8
         ;   XREF to: 005b116e (CONDITIONAL_JUMP)  ; LAB_005b116e

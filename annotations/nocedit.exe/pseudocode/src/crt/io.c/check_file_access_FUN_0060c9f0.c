@@ -12,9 +12,9 @@ int __watcallStack crt_io_c_check_file_access_FUN_0060c9f0(char *filename,int ac
   DWORD DVar1;
   int iVar2;
   
-  DVar1 = (*PTR_GetFileAttributesA_00611594)(filename);
+  DVar1 = (*g_GetFileAttributesAFunc)(filename);
   if (DVar1 == 0xffffffff) {
-    DVar1 = (*GetLastError)();
+    DVar1 = (*g_GetLastErrorFunc)();
     iVar2 = crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(DVar1);
     return iVar2;
   }

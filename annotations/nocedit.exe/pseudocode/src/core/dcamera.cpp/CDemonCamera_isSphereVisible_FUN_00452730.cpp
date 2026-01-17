@@ -23,11 +23,11 @@ core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00452730
   uint uVar10;
   uint uVar11;
   
-  iVar1 = (int)ROUND(256f * radius);
-  iVar2 = (int)ROUND(256f * radius);
-  uVar10 = (int)ROUND(position->x * 256f) - (this_ptr->camera_origin).x;
-  uVar6 = (int)ROUND(position->y * 256f) - (this_ptr->camera_origin).y;
-  uVar11 = (int)ROUND(position->z * 256f) - (this_ptr->camera_origin).z;
+  iVar1 = (int)ROUND(256.0f * radius);
+  iVar2 = (int)ROUND(256.0f * radius);
+  uVar10 = (int)ROUND(position->x * 256.0f) - (this_ptr->camera_origin).x;
+  uVar6 = (int)ROUND(position->y * 256.0f) - (this_ptr->camera_origin).y;
+  uVar11 = (int)ROUND(position->z * 256.0f) - (this_ptr->camera_origin).z;
   if (((iVar1 <= (int)((uVar10 ^ (int)uVar10 >> 0x1f) - ((int)uVar10 >> 0x1f))) ||
       (iVar1 <= (int)((uVar6 ^ (int)uVar6 >> 0x1f) - ((int)uVar6 >> 0x1f)))) ||
      (iVar1 <= (int)((uVar11 ^ (int)uVar11 >> 0x1f) - ((int)uVar11 >> 0x1f)))) {

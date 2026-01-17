@@ -1,16 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 168,
+    "complexity_score": 290,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 83,
-    "suspect_count": 8,
+    "pseudocode_lines": 90,
+    "suspect_count": 18,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
+      "stack_align_anchor",
       "stack_param"
     ],
-    "total_lines": 283
+    "total_lines": 290
   },
   "cross_references": [
     {
@@ -127,38 +130,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004f3129": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f3135": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f317a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f319b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f31d0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f31f8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f3255": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f326b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f3311": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ],
-    "004f3326": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.529411764705882,
     "instruction_count": 170,
@@ -202,7 +173,96 @@
     },
     "pcode_op_count": 940
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 132,
+    "local_size": 132,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004f3129",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "CCharacter *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = core_charactr_cpp_CCharacter_FUN_0042d360(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x54c4) == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->base_actor,&CStack_30,&CStack_54);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000004",
+      "text": "*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c4) = pCVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000004",
+      "text": "if (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c4) == (CDemonActor *)0x0)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000004",
+      "text": "(*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c4),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000004",
+      "text": "pCVar2[2].was_created = (int)in_stack_00000004;",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "004f3198",
@@ -325,97 +385,6 @@
       "target_address": "0x40cd70",
       "text": "Direct CALL at 004f3317, ADD ESP at 004f3326 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 132,
-    "local_size": 132,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_80",
-        "offset": -128,
-        "size": 1,
-        "type": "undefined1"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004f3129",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "CCharacter *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = core_charactr_cpp_CCharacter_FUN_0042d360(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x54c4) == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,&CStack_38,&CStack_5c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000004",
-      "text": "*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c4) = pCVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000004",
-      "text": "if (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c4) == (CDemonActor *)0x0)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 72,
-      "match": "in_stack_00000004",
-      "text": "(*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c4),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00000004",
-      "text": "pCVar2[2].was_created = (int)in_stack_00000004;",
-      "type": "stack_param"
     }
   ]
 }

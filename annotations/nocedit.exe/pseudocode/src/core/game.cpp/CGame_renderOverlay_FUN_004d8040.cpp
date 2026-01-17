@@ -26,7 +26,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   int local_50;
   int local_4c;
   int local_48;
-  int local_44;
+  CBitFont *local_44;
   CBitFont *local_40;
   int local_3c;
   CBitFont *local_38;
@@ -34,7 +34,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   int local_30;
   int local_28;
   int local_24;
-  int local_20;
+  char *local_20;
   char *local_1c;
   CGame *local_18;
   int local_14;
@@ -101,7 +101,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   if ((this_ptr->letterbox_mode == 0) && (0 < this_ptr->status_display_count)) {
     iVar4 = local_60 >> 0x1f;
     iVar3 = local_60 + iVar4 * -4;
-    local_44 = local_5c / 0x28;
+    local_44 = (CBitFont *)(local_5c / 0x28);
     local_40 = g_SmallEditorFont;
     if (0x280 < g_WindowWidth) {
       local_40 = g_TinyFont;
@@ -110,20 +110,20 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
       local_40 = g_MediumFont;
     }
     iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_40,0x58);
-    if (local_44 < iVar5) {
-      local_44 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_40,0x58);
+    if ((int)local_44 < iVar5) {
+      local_44 = (CBitFont *)engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_40,0x58);
     }
     local_3c = local_60 / 0x50;
     local_58 = local_3c + ((int)(iVar3 - (uint)(iVar4 << 1 < 0)) >> 2);
     iVar3 = local_64 - local_5c / 0x50;
-    local_20 = 0;
+    local_20 = (char *)0x0;
     if (0 < this_ptr->status_display_count) {
       local_1c = this_ptr->field101_0x38c;
-      local_50 = (local_44 * 3) / 2;
+      local_50 = ((int)local_44 * 3) / 2;
       local_18 = this_ptr;
       do {
         iVar4 = local_3c;
-        local_34 = iVar3 - local_44;
+        local_34 = iVar3 - (int)local_44;
         local_28 = local_58;
         iVar5 = 2;
         fVar1 = *(float *)(local_18->field101_0x38c + 0x500);
@@ -143,14 +143,13 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
           engine_2d_c_fillRectColor_FUN_00403170
                     (iVar4,(int)local_38,local_30 + iVar4,local_28,iVar5);
         }
-        pcVar2 = local_1c;
+        pcVar2 = local_20;
         engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                  (local_40,local_1c,local_3c,local_30,0xf8,0);
-        local_1c = pcVar2 + 0x100;
-        local_18 = (CGame *)&local_18->game_pixy;
-        iVar3 = iVar3 - local_50;
-        local_20 = local_20 + 1;
-      } while (local_20 < this_ptr->status_display_count);
+                  (local_44,local_20,(int)local_40,local_34,0xf8,0);
+        local_20 = pcVar2 + 0x100;
+        local_1c = local_1c + 4;
+        iVar3 = iVar3 - local_54;
+      } while (local_24 + 1 < this_ptr->status_display_count);
     }
   }
   return;

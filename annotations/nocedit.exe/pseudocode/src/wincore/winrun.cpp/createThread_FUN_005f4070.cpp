@@ -13,6 +13,6 @@ wincore_winrun_cpp_createThread_FUN_005f4070(LPTHREAD_START_ROUTINE thread_func,
   HANDLE pvVar1;
   DWORD DStack_4;
   
-  pvVar1 = (*CreateThread)((LPSECURITY_ATTRIBUTES)0x0,0,thread_func,thread_param,0,&DStack_4);
+  pvVar1 = (*g_CreateThreadFunc)((LPSECURITY_ATTRIBUTES)0x0,0,thread_func,thread_param,0,&DStack_4);
   return pvVar1;
 }

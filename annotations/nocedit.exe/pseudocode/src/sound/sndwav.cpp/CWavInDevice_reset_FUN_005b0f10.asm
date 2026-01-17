@@ -7,8 +7,8 @@
 ; CWavInDevice *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   waveInReset* waveInReset = 002118ea
-;   waveInUnprepareHeader* waveInUnprepareHeader = 00211906
+;   waveInReset* g_waveInResetFunc = 002118ea
+;   waveInUnprepareHeader* g_waveInUnprepareHeaderFunc = 00211906
 ;   TerminatedCString s_waveInReset_failed_00652462
 ;   HWAVEIN g_WaveInHandle
 ;   LPWAVEHDR[20] g_WaveInHeaders
@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 005b0f30
     MOV EAX,[0x03f6adcc]                ; 005b0f31 | g_WaveInHandle
     PUSH EAX                            ; 005b0f36
-    CALL dword ptr CS:[0x61143c]        ; 005b0f37 | waveInUnprepareHeader
+    CALL dword ptr CS:[0x61143c]        ; 005b0f37 | g_waveInUnprepareHeaderFunc
     ADD EBX,0x4                         ; 005b0f3e
         ;   Label: LAB_005b0f3e
     CMP EBX,0x50                        ; 005b0f41
@@ -56,7 +56,7 @@ section .text
     RET                                 ; 005b0f4b
     PUSH EDX                            ; 005b0f4c
         ;   Label: LAB_005b0f4c
-    CALL dword ptr CS:[0x611434]        ; 005b0f4d | waveInReset
+    CALL dword ptr CS:[0x611434]        ; 005b0f4d | g_waveInResetFunc
     TEST EAX,EAX                        ; 005b0f54
     JZ 0x005b0f22                       ; 005b0f56
         ;   XREF to: 005b0f22 (CONDITIONAL_JUMP)  ; LAB_005b0f22

@@ -67,7 +67,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004b868c = 004b97f9
-;   Sleep* Sleep = 00212228
+;   Sleep* g_SleepFunc = 00212228
 ;   TerminatedCString s_engine_fileio_cpp_0062604b
 ;   TerminatedCString s_engine_fileio_cpp_00626129
 ;   TerminatedCString s_You_currently_have_s_che_00626502
@@ -1917,7 +1917,7 @@ section .text
         ;   XREF to: 004b9c63 (CONDITIONAL_JUMP)  ; LAB_004b9c63
     PUSH 0x1f4                          ; 004b9c4d
     INC ESI                             ; 004b9c52
-    CALL dword ptr CS:[0x611644]        ; 004b9c53 | Sleep
+    CALL dword ptr CS:[0x611644]        ; 004b9c53 | g_SleepFunc
     CMP ESI,0xa                         ; 004b9c5a
     JL 0x004b9b21                       ; 004b9c5d
         ;   XREF to: 004b9b21 (CONDITIONAL_JUMP)  ; LAB_004b9b21

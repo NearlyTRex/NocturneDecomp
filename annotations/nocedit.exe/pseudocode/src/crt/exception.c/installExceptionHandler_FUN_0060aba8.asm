@@ -9,7 +9,7 @@
 ;   crt_thread.c_threadStartupWrapper_FUN_0060f8c0 at 0060f937
 ;
 ; Referenced Globals:
-;   SetUnhandledExceptionFilter* PTR_SetUnhandledExceptionFilter_00611640 = 0021220a
+;   SetUnhandledExceptionFilter* g_SetUnhandledExceptionFilterFunc = 0021220a
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@ section .text
     XOR EDX,EDX                         ; 0060abe1
     MOV dword ptr FS:[EDX],EAX          ; 0060abe3
     PUSH 0x60a7a4                       ; 0060abe6 | lpTopLevelExceptionFilter_0060a7a4
-    CALL dword ptr CS:[0x611640]        ; 0060abeb | PTR_SetUnhandledExceptionFilter_00611640
+    CALL dword ptr CS:[0x611640]        ; 0060abeb | g_SetUnhandledExceptionFilterFunc
     POP EBX                             ; 0060abf2
     RET                                 ; 0060abf3
 

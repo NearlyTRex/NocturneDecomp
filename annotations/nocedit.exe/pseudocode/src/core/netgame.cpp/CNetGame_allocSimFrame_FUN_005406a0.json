@@ -1,14 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 1085,
-    "complexity_score": 473,
+    "complexity_score": 788,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 43,
     "pseudocode_lines": 403,
-    "suspect_count": 6,
+    "suspect_count": 36,
     "suspect_types": [
+      "call_esp_anchor",
       "pointer_cast",
+      "stack_align_anchor",
+      "variadic_anchor",
       "warning_unreachable"
     ],
     "total_lines": 1488
@@ -366,98 +369,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "005406ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "005406c1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "0054073f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540798": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "0054080d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540868": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "0054088d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "0054098e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "005409ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "005409ea": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540af2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540b6f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540ba4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540cce": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540d27": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540dee": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540e07": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540e5b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540ea5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540f0f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540f1b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540f48": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540f6b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540f77": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00540f90": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "0054106c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "005410e4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00541116": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "00541149": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ],
-    "005411a9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff20,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.381114903299204,
     "instruction_count": 879,
@@ -499,7 +410,320 @@
     },
     "pcode_op_count": 4730
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 256,
+    "local_size": 244,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_df",
+        "offset": -223,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_de",
+        "offset": -222,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_cb",
+        "offset": -203,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ca",
+        "offset": -202,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7b",
+        "offset": -123,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6b",
+        "offset": -107,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5f",
+        "offset": -95,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_47",
+        "offset": -71,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3b",
+        "offset": -59,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "source_addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "packet_data",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005406ac",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0054104d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 114,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 217,
+      "match": "(int *)((int)",
+      "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 343,
+      "match": "(int *)((int)",
+      "text": "if (local_2c == *(int *)((int)&g_SimFrameHistory + iVar5)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 345,
+      "match": "(int *)((int)",
+      "text": "piVar3 = (int *)((int)&g_SimFrameHistory + iVar5);",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 4,
       "call_address": "00541067",
@@ -895,321 +1119,6 @@
       "target_address": "0x543930",
       "text": "Direct CALL at 005411a4, ADD ESP at 005411a9 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 256,
-    "local_size": 244,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_f0",
-        "offset": -240,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_ec",
-        "offset": -236,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e8",
-        "offset": -232,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e4",
-        "offset": -228,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e0",
-        "offset": -224,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_df",
-        "offset": -223,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_de",
-        "offset": -222,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_cb",
-        "offset": -203,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_ca",
-        "offset": -202,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7b",
-        "offset": -123,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6b",
-        "offset": -107,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_5f",
-        "offset": -95,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_47",
-        "offset": -71,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3b",
-        "offset": -59,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CNetGame *"
-      },
-      {
-        "is_param": true,
-        "name": "source_addr",
-        "offset": 8,
-        "size": 4,
-        "type": "SNetworkAddr *"
-      },
-      {
-        "is_param": true,
-        "name": "packet_data",
-        "offset": 12,
-        "size": 4,
-        "type": "char *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005406ac",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0054104d) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 217,
-      "match": "(int *)((int)",
-      "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 343,
-      "match": "(int *)((int)",
-      "text": "if (local_2c == *(int *)((int)&g_SimFrameHistory + iVar5)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 345,
-      "match": "(int *)((int)",
-      "text": "piVar3 = (int *)((int)&g_SimFrameHistory + iVar5);",
-      "type": "pointer_cast"
     }
   ]
 }

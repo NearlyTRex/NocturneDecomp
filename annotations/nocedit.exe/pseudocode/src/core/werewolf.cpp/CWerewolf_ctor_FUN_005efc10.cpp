@@ -41,7 +41,7 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005efc10(CWerewolf *thi
   pCVar5->chain_length = 5.0;
   uVar3 = _PTR_FUN_00665761_3;
   pCVar5->field8_0xbef0[0] = '\0';
-  fVar4 = DAT_00665768;
+  fVar4 = 0x41200000;
   pCVar5->field8_0xbef0[1] = '\0';
   pCVar5->field8_0xbef0[2] = '\0';
   pCVar5->field8_0xbef0[3] = '\0';

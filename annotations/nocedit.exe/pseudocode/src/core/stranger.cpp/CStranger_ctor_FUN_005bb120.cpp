@@ -102,7 +102,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   pCVar5[-0xffffffff00000001].animation_state[6] = '\0';
   pCVar5[-0xffffffff00000001].animation_state[7] = '\0';
   pCVar5[-0xffffffff00000001].animation_state[8] = '\0';
-  uVar1 = DAT_00663744;
+  uVar1 = 0x41200000;
   pCVar5[-0xffffffff00000001].animation_state[9] = '\0';
   pCVar5[-0xffffffff00000001].animation_state[10] = '\0';
   pCVar5[-0xffffffff00000001].animation_state[0xb] = '\0';

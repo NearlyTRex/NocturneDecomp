@@ -10,7 +10,7 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507bc1
 ;
 ; Referenced Globals:
-;   double g_PI = 3.14159265350000
+;   double g_Pi_00635a25 = 3.14159265350000
 ;   double g_TrigTableStepSize = 0.0078125
 ;   double g_FixedPoint16Scale = 65536
 ;   int[257] g_SinTable
@@ -32,7 +32,7 @@ section .text
     XOR ECX,ECX                         ; 0050c53b
     FLD double ptr [0x00635a35]         ; 0050c53d | g_FixedPoint16Scale
     FLD double ptr [0x00635a2d]         ; 0050c543 | g_TrigTableStepSize
-    FLD double ptr [0x00635a25]         ; 0050c549 | g_PI
+    FLD double ptr [0x00635a25]         ; 0050c549 | g_Pi_00635a25
     MOV dword ptr [ESP + 0x8],ECX       ; 0050c54f
         ;   Label: LAB_0050c54f
     FILD dword ptr [ESP + 0x8]          ; 0050c553

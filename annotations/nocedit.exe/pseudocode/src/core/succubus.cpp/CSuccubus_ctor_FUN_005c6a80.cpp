@@ -30,9 +30,9 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             ((CDeformableModelInstance *)(iVar5 + -0x2480),"hotdemon.dfm");
   *(uint *)(iVar5 + -0xb560) = 0x3f19999a;
-  fVar2 = 50f;
+  fVar2 = 50.0f;
   *(uint *)(iVar5 + -0xb55c) = 0x3f666666;
-  fVar3 = 100f;
+  fVar3 = 100.0f;
   *(uint *)(iVar5 + -0x1cc) = 1;
   *(float *)(iVar5 + -0xb558) = fVar2;
   *(float *)(iVar5 + -0xb554) = fVar3;

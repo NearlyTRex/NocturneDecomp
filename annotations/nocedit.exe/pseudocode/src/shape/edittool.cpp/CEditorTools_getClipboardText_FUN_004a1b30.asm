@@ -12,9 +12,9 @@
 ;   shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0049d660 at 0049d66d
 ;
 ; Referenced Globals:
-;   CloseClipboard* CloseClipboard = 00211a68
-;   GetClipboardData* GetClipboardData = 00211ad0
-;   OpenClipboard* OpenClipboard = 00211b60
+;   CloseClipboard* g_CloseClipboardFunc = 00211a68
+;   GetClipboardData* g_GetClipboardDataFunc = 00211ad0
+;   OpenClipboard* g_OpenClipboardFunc = 00211b60
 ;   TerminatedCString s_shape_edittool_cpp_0062357d
 ;   char s_EmptyChar_00623593 = \x00
 ;   char* g_ClipboardBackupText
@@ -34,7 +34,7 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
     MOV EDX,dword ptr [0x03f98468]      ; 004a1b31 | g_MainWindowHandle
     PUSH EDX                            ; 004a1b37
-    CALL dword ptr CS:[0x6114cc]        ; 004a1b38 | OpenClipboard
+    CALL dword ptr CS:[0x6114cc]        ; 004a1b38 | g_OpenClipboardFunc
     TEST EAX,EAX                        ; 004a1b3f
     JNZ 0x004a1b54                      ; 004a1b41
         ;   XREF to: 004a1b54 (CONDITIONAL_JUMP)  ; LAB_004a1b54
@@ -50,7 +50,7 @@ section .text
         ;   Label: LAB_004a1b54
     PUSH ESI                            ; 004a1b55
     PUSH 0x1                            ; 004a1b56
-    CALL dword ptr CS:[0x6114a8]        ; 004a1b58 | GetClipboardData
+    CALL dword ptr CS:[0x6114a8]        ; 004a1b58 | g_GetClipboardDataFunc
     MOV ESI,EAX                         ; 004a1b5f
     TEST EAX,EAX                        ; 004a1b61
     JZ 0x004a1bab                       ; 004a1b63
@@ -85,7 +85,7 @@ section .text
     AND CL,0x3                          ; 004a1ba5
     MOVSB.REP ES:EDI,ESI                ; 004a1ba8
     POP EDI                             ; 004a1baa
-    CALL dword ptr CS:[0x611490]        ; 004a1bab | CloseClipboard
+    CALL dword ptr CS:[0x611490]        ; 004a1bab | g_CloseClipboardFunc
         ;   Label: LAB_004a1bab
     POP ESI                             ; 004a1bb2
     POP EDI                             ; 004a1bb3

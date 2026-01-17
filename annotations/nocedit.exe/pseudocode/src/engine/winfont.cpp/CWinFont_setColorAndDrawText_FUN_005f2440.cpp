@@ -65,11 +65,11 @@ engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
       pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
     } while (cVar1 != '\0');
     if (in_stack_0000002c != -1) {
-      (*SetTextColor)(this_ptr->deviceContextHandle,CStack_18);
-      (*TextOutA)(this_ptr->deviceContextHandle,1,1,(LPCSTR)x_position,~uVar6 - 1);
+      (*g_SetTextColorFunc)(this_ptr->deviceContextHandle,CStack_18);
+      (*g_TextOutAFunc)(this_ptr->deviceContextHandle,1,1,(LPCSTR)x_position,~uVar6 - 1);
     }
-    (*SetTextColor)(this_ptr->deviceContextHandle,CStack_24);
-    (*TextOutA)(this_ptr->deviceContextHandle,0,0,(LPCSTR)x_position,~uVar6 - 1);
+    (*g_SetTextColorFunc)(this_ptr->deviceContextHandle,CStack_24);
+    (*g_TextOutAFunc)(this_ptr->deviceContextHandle,0,0,(LPCSTR)x_position,~uVar6 - 1);
   }
   if (this_ptr->right + y_position < g_WindowWidth) {
     iVar3 = this_ptr->right;

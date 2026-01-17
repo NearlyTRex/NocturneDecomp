@@ -15,10 +15,10 @@ BOOL __cdecl crt_windows_c_has_active_window_FUN_0060a710(void)
   FARPROC pFVar1;
   int iVar2;
   
-  hModule = (*PTR_LoadLibraryA_006115e8)("USER32.DLL");
+  hModule = (*g_LoadLibraryAFunc)("USER32.DLL");
   iVar2 = 0;
   if (hModule != (HMODULE)0x0) {
-    pFVar1 = (*GetProcAddress)(hModule,"GetActiveWindow");
+    pFVar1 = (*g_GetProcAddressFunc)(hModule,"GetActiveWindow");
     if (pFVar1 != (FARPROC)0x0) {
       iVar2 = (*pFVar1)();
     }

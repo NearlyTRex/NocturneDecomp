@@ -18,7 +18,7 @@
 ;   TerminatedCString s_Yes_to_All_006230ca
 ;   TerminatedCString s_No_006230d6
 ;   TerminatedCString s_Cancel_006230da
-;   char[1024] g_DialogMessageBuffer
+;   char[1024] g_DialogMessageBuffer_02cf0930
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005fdba8
@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 0049f190
     MOV EDX,dword ptr [ESP + 0x24]      ; 0049f191
     PUSH EDX                            ; 0049f195
-    PUSH 0x2cf0930                      ; 0049f196 | g_DialogMessageBuffer
+    PUSH 0x2cf0930                      ; 0049f196 | g_DialogMessageBuffer_02cf0930
     CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049f19b
         ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 0049f1a0
@@ -78,7 +78,7 @@ section .text
     PUSH 0x0                            ; 0049f1fc
     LEA EAX,[ESP + 0x4]                 ; 0049f1fe
     PUSH EAX                            ; 0049f202
-    PUSH 0x2cf0930                      ; 0049f203 | g_DialogMessageBuffer
+    PUSH 0x2cf0930                      ; 0049f203 | g_DialogMessageBuffer_02cf0930
     CALL shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 ; 0049f208
         ;   XREF to: 0049e9d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList * str_list, char * dialog_title, int dialog_mode)
     ADD ESP,0xc                         ; 0049f20d

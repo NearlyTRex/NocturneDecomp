@@ -21,7 +21,7 @@ void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
   
   bVar6 = 0;
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f10)();
-  currentThreadId = (*PTR_GetCurrentThreadId_00611584)();
+  currentThreadId = (*g_GetCurrentThreadIdFunc)();
   for (pTVar1 = g_ThreadDataRegistryList;
       (pTVar1 != (ThreadRegistryEntry *)0x0 && ((void *)currentThreadId != pTVar1->threadDataKey));
       pTVar1 = pTVar1->next) {
@@ -57,7 +57,7 @@ void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
   dwTlsIndex = g_TLSIndex;
   *(byte *)((int)lpTlsValue + 0x52) = 1;
   *(byte *)((int)lpTlsValue + 0x53) = 0;
-  (*PTR_TlsSetValue_00611658)(dwTlsIndex,lpTlsValue);
+  (*g_TlsSetValueFunc)(dwTlsIndex,lpTlsValue);
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f14)();
   return lpTlsValue;
 }

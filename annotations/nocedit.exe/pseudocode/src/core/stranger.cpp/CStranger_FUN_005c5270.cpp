@@ -27,6 +27,7 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
   float in_stack_00000008;
   CVector3f CStack_5c;
   CVector3f CStack_50;
+  uint local_40;
   int local_3c;
   char *local_38;
   CDemonActor *local_34;
@@ -50,22 +51,19 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
     in_stack_00000004->field13_0x2620[0x46e] = '\0';
     in_stack_00000004->field13_0x2620[0x46f] = '\0';
   }
-  local_3c = -1;
-  local_18 = (CDemonActor *)0x0;
+  local_40 = 0xffffffff;
+  local_1c = (CInventory *)0x0;
   if (*(int *)(in_stack_00000004[2].cloth_data + 0x54d0) == 0) {
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) != 0) {
       pCVar10 = in_stack_00000004->carry_hands[1].carry_actor;
-      if (pCVar10 == (CDemonActor *)0x0) {
-        local_18 = *(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x5388);
-      }
-      else {
-        local_18 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar10,g_CWeaponClassInfo.name_hash)
-        ;
-        if ((local_18 == (CDemonActor *)0x0) &&
-           (pCVar10 = in_stack_00000004->carry_hands[1].carry_actor,
-           uVar8 = (*pCVar10->vtable->getAllowedMeleeAttackTypes)(pCVar10), (uVar8 & 3) != 0)) {
-          local_3c = 8;
-        }
+      if (((pCVar10 != (CDemonActor *)0x0) &&
+          (local_1c = (CInventory *)
+                      core_actor_cpp_castToClassHash_FUN_0040c790
+                                (pCVar10,g_CWeaponClassInfo.name_hash),
+          local_1c == (CInventory *)0x0)) &&
+         (pCVar10 = in_stack_00000004->carry_hands[1].carry_actor,
+         uVar8 = (*pCVar10->vtable->getAllowedMeleeAttackTypes)(pCVar10), (uVar8 & 3) != 0)) {
+        local_3c = 8;
       }
       if ((local_18 == (CDemonActor *)0x0) && (local_3c < 0)) {
         in_stack_00000004[2].cloth_data[0x54f4] = '\0';
@@ -97,8 +95,8 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
           fVar1 = in_stack_00000008 * (float)25 +
                   *(float *)(in_stack_00000004[2].cloth_data + 0x5504);
           *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = fVar1;
-          if (DAT_00663748 < fVar1) {
-            *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = DAT_00663748;
+          if (0x428C0000 < fVar1) {
+            *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = 0x428C0000;
           }
           if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 0x14) != 0) {
             return;
@@ -108,17 +106,17 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
       }
       else {
         pCVar7 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(local_1c);
-        if ((((((pCVar7 == (CLightGun *)0x0) ||
-               (*(int *)(in_stack_00000004[2].cloth_data + 0x54b8) != 0)) &&
-              ((pCVar7 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(local_1c),
-               pCVar7 == (CLightGun *)0x0 ||
-               (*(int *)(in_stack_00000004[2].cloth_data + 0x54b8) != 1)))) &&
+        if ((((pCVar7 == (CLightGun *)0x0) ||
+             (*(int *)(in_stack_00000004[2].cloth_data + 0x54b8) != 0)) &&
+            (((pCVar7 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(local_1c),
+              pCVar7 == (CLightGun *)0x0 ||
+              (*(int *)(in_stack_00000004[2].cloth_data + 0x54b8) != 1)) &&
              ((pCVar7 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(local_1c),
               pCVar7 != (CLightGun *)0x0 ||
-              (*(int *)(in_stack_00000004[2].cloth_data + 0x54b8) != 2)))) &&
-            ((pCVar7 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(local_1c),
+              (*(int *)(in_stack_00000004[2].cloth_data + 0x54b8) != 2)))))) &&
+           (((pCVar7 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(local_1c),
              pCVar7 != (CLightGun *)0x0 || (*(int *)(in_stack_00000004[2].cloth_data + 0x54b8) != 1)
-             ))) && (local_3c < 0)) {
+             ) && (local_3c < 0)))) {
           pCVar10 = *(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c);
           if (pCVar10 == local_18) {
             if (*(int *)(in_stack_00000004[2].cloth_data + 0x554c) == 0) {
@@ -219,7 +217,7 @@ switchD_005c56f5_caseD_8:
           in_stack_00000004[2].cloth_data[0x5559] = '\0';
           in_stack_00000004[2].cloth_data[0x555a] = '\0';
           in_stack_00000004[2].cloth_data[0x555b] = '\0';
-          *(uint *)(in_stack_00000004[2].cloth_data + 0x5504) = DAT_00663744;
+          *(uint *)(in_stack_00000004[2].cloth_data + 0x5504) = 0x41200000;
         }
       }
       if (1.0 <= *(float *)(in_stack_00000004->field13_0x2620 + 0x470)) {

@@ -25,15 +25,15 @@ crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam
   g_CurrentThreadTlsBlock = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(unaff_EBP);
   if (g_CurrentThreadTlsBlock == (void *)0x0) {
     if (in_stack_00000004 == 0) {
-      (*PTR_ExitProcess_00611534)(1);
+      (*g_ExitProcessFunc)(1);
       return;
     }
   }
   else {
     crt_io_c_InitializeStandardHandles_FUN_00608b20();
-    g_EnvironmentStrings = (*PTR_GetEnvironmentStrings_0061158c)();
+    g_EnvironmentStrings = (*g_GetEnvironmentStringsFunc)();
     g_EnvironmentBlock = (char **)0x0;
-    DVar3 = (*PTR_GetVersion_006115c8)();
+    DVar3 = (*g_GetVersionFunc)();
     g_WindowsMinorVersion = (BYTE)DVar3;
     g_WindowsPlatformVersion = (WORD)(DVar3 >> 0x10);
     g_WindowsPlatformVersionExt = (uint)g_WindowsPlatformVersion;
@@ -41,11 +41,11 @@ crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam
     g_WindowsVersionLow = DVar3 & 0xff;
     g_WindowsVersionMid = (uint)g_WindowsMajorVersion;
     g_WindowsVersionCombined = g_WindowsVersionLow << 8 | g_WindowsVersionMid;
-    (*GetModuleFileNameA)((HMODULE)0x0,g_ExeFileNameBuffer_A,0x104);
+    (*g_GetModuleFileNameAFunc)((HMODULE)0x0,g_ExeFileNameBuffer_A,0x104);
     g_ExeFileNameA = g_ExeFileNameBuffer_A;
     crt_startup_c_GetModuleFileNameCompat_FUN_0060a560((HMODULE)0x0,g_ExeFileNameBuffer_W,0x208);
     g_ExeFileNameW = g_ExeFileNameBuffer_W;
-    str = (*GetCommandLineA)();
+    str = (*g_GetCommandLineAFunc)();
     g_CommandLineA = crt_string_c_strdup_FUN_0060a610(str);
     g_WinMainCmdShow = (DWORD)g_CommandLineA;
     if (*g_CommandLineA == '\"') {
@@ -68,7 +68,7 @@ crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam
     while ((g_CharacterClassificationTable[(byte)(*(char *)g_WinMainCmdShow + 1)] & 2U) != 0) {
       g_WinMainCmdShow = g_WinMainCmdShow + 1;
     }
-    str_00 = (*PTR_GetCommandLineW_0061156c)();
+    str_00 = (*g_GetCommandLineWFunc)();
     if (str_00 == (LPWSTR)0x0) {
       pcVar5 = g_EmptyStringBuffer;
     }
@@ -97,7 +97,7 @@ crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam
     }
     g_CommandLineArgsW = (WCHAR *)pcVar5;
     if (in_stack_00000004 != 0) {
-      (*GetModuleFileNameA)(in_stack_0000000c,g_DllFileNameBuffer_A,0x104);
+      (*g_GetModuleFileNameAFunc)(in_stack_0000000c,g_DllFileNameBuffer_A,0x104);
       g_DllFileNameA = g_DllFileNameBuffer_A;
       crt_startup_c_GetModuleFileNameCompat_FUN_0060a560
                 (in_stack_0000000c,g_DllFileNameBuffer_W,0x208);

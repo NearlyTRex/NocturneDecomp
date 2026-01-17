@@ -17,7 +17,7 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
   CHAR aCStack_110 [260];
   
   bVar5 = 0;
-  DVar1 = (*GetCurrentDirectoryA)(0x104,aCStack_110);
+  DVar1 = (*g_GetCurrentDirectoryAFunc)(0x104,aCStack_110);
   if (DVar1 == 0) {
     crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
     buffer = (char *)0x0;

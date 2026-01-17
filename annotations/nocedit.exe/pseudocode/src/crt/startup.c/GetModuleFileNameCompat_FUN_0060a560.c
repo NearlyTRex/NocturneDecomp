@@ -14,20 +14,20 @@ crt_startup_c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule,LPWSTR lpFile
   ulong lpFilename_00;
   int iVar2;
   
-  DVar1 = (*PTR_GetVersion_006115c8)();
+  DVar1 = (*g_GetVersionFunc)();
   if ((ushort)(DVar1 >> 0x10) < 0x8000) {
-    DVar1 = (*PTR_GetModuleFileNameW_006115b0)(hModule,lpFilename,nSize);
+    DVar1 = (*g_GetModuleFileNameWFunc)(hModule,lpFilename,nSize);
     return DVar1;
   }
   lpFilename_00 = (ulong)crt_memory_c_malloc_FUN_00601bb0(0x208);
   DVar1 = 0;
   if (lpFilename_00 != 0) {
-    DVar1 = (*GetModuleFileNameA)(hModule,(LPSTR)lpFilename_00,0x208);
+    DVar1 = (*g_GetModuleFileNameAFunc)(hModule,(LPSTR)lpFilename_00,0x208);
     if (DVar1 == 0) {
       crt_memory_c_free_FUN_00601cd0((void *)lpFilename_00);
       return 0;
     }
-    iVar2 = (*PTR_MultiByteToWideChar_006115f4)(1,1,(LPCSTR)lpFilename_00,-1,lpFilename,nSize);
+    iVar2 = (*g_MultiByteToWideCharFunc)(1,1,(LPCSTR)lpFilename_00,-1,lpFilename,nSize);
     crt_memory_c_free_FUN_00601cd0((void *)lpFilename_00);
     if (iVar2 == 0) {
       return 0;

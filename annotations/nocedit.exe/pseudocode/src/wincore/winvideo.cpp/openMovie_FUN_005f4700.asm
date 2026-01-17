@@ -10,12 +10,12 @@
 ; undefined        Stack[-0x1b4]:1  local_1b4
 ;
 ; Referenced Globals:
-;   mciGetErrorStringA* mciGetErrorStringA = 0021183a
-;   mciSendStringA* mciSendStringA = 00211850
-;   GetClientRect* GetClientRect = 00211ac0
-;   MessageBoxA* MessageBoxA = 00211b44
-;   MoveWindow* MoveWindow = 00211b52
-;   SetRectEmpty* SetRectEmpty = 00211bf6
+;   mciGetErrorStringA* g_mciGetErrorStringAFunc = 0021183a
+;   mciSendStringA* g_mciSendStringAFunc = 00211850
+;   GetClientRect* g_GetClientRectFunc = 00211ac0
+;   MessageBoxA* g_MessageBoxAFunc = 00211b44
+;   MoveWindow* g_MoveWindowFunc = 00211b52
+;   SetRectEmpty* g_SetRectEmptyFunc = 00211bf6
 ;   TerminatedCString s_where_mov_source_006581dd
 ;   TerminatedCString s_open_s_alias_mov_style_c_006581f8
 ;   TerminatedCString s_status_mov_window_handle_00658222
@@ -62,7 +62,7 @@ section .text
     PUSH 0x0                            ; 005f4742
     LEA EAX,[ESP + 0xc]                 ; 005f4744
     PUSH EAX                            ; 005f4748
-    CALL dword ptr CS:[0x611410]        ; 005f4749 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f4749 | g_mciSendStringAFunc
     TEST EAX,EAX                        ; 005f4750
     JNZ 0x005f4960                      ; 005f4752
         ;   XREF to: 005f4960 (CONDITIONAL_JUMP)  ; LAB_005f4960
@@ -73,7 +73,7 @@ section .text
     MOV ESI,0x1                         ; 005f4763
     PUSH 0x658222                       ; 005f4768 | = "status mov window handle"
     MOV dword ptr [0x03f99504],ESI      ; 005f476d | g_MoviePlaying
-    CALL dword ptr CS:[0x611410]        ; 005f4773 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f4773 | g_mciSendStringAFunc
     TEST EAX,EAX                        ; 005f477a
     JNZ 0x005f47ac                      ; 005f477c
         ;   XREF to: 005f47ac (CONDITIONAL_JUMP)  ; LAB_005f47ac
@@ -103,29 +103,29 @@ section .text
     LEA EDX,[ESP + 0x4]                 ; 005f47b1
     PUSH EDX                            ; 005f47b5
     PUSH EAX                            ; 005f47b6
-    CALL dword ptr CS:[0x61140c]        ; 005f47b7 | mciGetErrorStringA
+    CALL dword ptr CS:[0x61140c]        ; 005f47b7 | g_mciGetErrorStringAFunc
     PUSH 0x30                           ; 005f47be
     PUSH 0x0                            ; 005f47c0
     LEA EAX,[ESP + 0x8]                 ; 005f47c2
     PUSH EAX                            ; 005f47c6
     PUSH EBX                            ; 005f47c7
-    CALL dword ptr CS:[0x6114c4]        ; 005f47c8 | MessageBoxA
+    CALL dword ptr CS:[0x6114c4]        ; 005f47c8 | g_MessageBoxAFunc
     JMP 0x005f478e                      ; 005f47cf
         ;   XREF to: 005f478e (UNCONDITIONAL_JUMP)  ; LAB_005f478e
     LEA EAX,[ESP + 0x194]               ; 005f47d1
         ;   Label: LAB_005f47d1
     PUSH EAX                            ; 005f47d8
     PUSH EBX                            ; 005f47d9
-    CALL dword ptr CS:[0x6114a4]        ; 005f47da | GetClientRect
+    CALL dword ptr CS:[0x6114a4]        ; 005f47da | g_GetClientRectFunc
     PUSH EDI                            ; 005f47e1
     PUSH 0x80                           ; 005f47e2
     LEA EAX,[ESP + 0x10c]               ; 005f47e7
     PUSH EAX                            ; 005f47ee
     PUSH 0x6581dd                       ; 005f47ef | = "where mov source"
-    CALL dword ptr CS:[0x611410]        ; 005f47f4 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f47f4 | g_mciSendStringAFunc
     LEA EAX,[ESP + 0x184]               ; 005f47fb
     PUSH EAX                            ; 005f4802
-    CALL dword ptr CS:[0x6114f0]        ; 005f4803 | SetRectEmpty
+    CALL dword ptr CS:[0x6114f0]        ; 005f4803 | g_SetRectEmptyFunc
     MOV DL,byte ptr [ESP + 0x104]       ; 005f480a
     LEA EAX,[ESP + 0x104]               ; 005f4811
     CMP DL,0x20                         ; 005f4818
@@ -254,7 +254,7 @@ section .text
     PUSH EBX                            ; 005f4930
     MOV ECX,dword ptr [0x03f994fc]      ; 005f4931 | g_MovieWindowHandle
     PUSH ECX                            ; 005f4937
-    CALL dword ptr CS:[0x6114c8]        ; 005f4938 | MoveWindow
+    CALL dword ptr CS:[0x6114c8]        ; 005f4938 | g_MoveWindowFunc
     ADD ESP,0x1a4                       ; 005f493f
     POP EBP                             ; 005f4945
     POP EDI                             ; 005f4946
@@ -273,7 +273,7 @@ section .text
     PUSH 0x65823b                       ; 005f4964 | = "Unable to open .AVI!"
     PUSH EBX                            ; 005f4969
     XOR EBX,EBX                         ; 005f496a
-    CALL dword ptr CS:[0x6114c4]        ; 005f496c | MessageBoxA
+    CALL dword ptr CS:[0x6114c4]        ; 005f496c | g_MessageBoxAFunc
     MOV dword ptr [0x03f99504],EBX      ; 005f4973 | g_MoviePlaying
     ADD ESP,0x1a4                       ; 005f4979
     POP EBP                             ; 005f497f

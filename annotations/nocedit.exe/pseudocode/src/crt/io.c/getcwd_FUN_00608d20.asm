@@ -14,7 +14,7 @@
 ;   crt_io.c_stat_FUN_00607e64 at 00607eb7
 ;
 ; Referenced Globals:
-;   GetCurrentDirectoryA* GetCurrentDirectoryA = 00211e42
+;   GetCurrentDirectoryA* g_GetCurrentDirectoryAFunc = 00211e42
 ;
 ; Called Functions:
 ;   crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
@@ -36,7 +36,7 @@ section .text
     MOV EAX,ESP                         ; 00608d37
     PUSH EAX                            ; 00608d39
     PUSH 0x104                          ; 00608d3a
-    CALL dword ptr CS:[0x611578]        ; 00608d3f | GetCurrentDirectoryA
+    CALL dword ptr CS:[0x611578]        ; 00608d3f | g_GetCurrentDirectoryAFunc
     MOV EDI,EAX                         ; 00608d46
     TEST EAX,EAX                        ; 00608d48
     JNZ 0x00608d55                      ; 00608d4a

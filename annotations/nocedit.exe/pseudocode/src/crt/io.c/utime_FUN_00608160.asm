@@ -11,12 +11,12 @@
 ;   crt_io.c_utime_thunk_00600c1e at 00600c1e
 ;
 ; Referenced Globals:
-;   CloseHandle* CloseHandle = 00211c38
-;   CreateFileA* PTR_CreateFileA_00611510 = 00211c6a
-;   GetFileTime* PTR_GetFileTime_00611598 = 00211ef2
-;   LocalFileTimeToFileTime* PTR_LocalFileTimeToFileTime_006115ec = 0021206c
-;   SetFileTime* PTR_SetFileTime_00611630 = 002121c8
-;   SystemTimeToFileTime* PTR_SystemTimeToFileTime_00611648 = 00212230
+;   CloseHandle* g_CloseHandleFunc = 00211c38
+;   CreateFileA* g_CreateFileAFunc = 00211c6a
+;   GetFileTime* g_GetFileTimeFunc = 00211ef2
+;   LocalFileTimeToFileTime* g_LocalFileTimeToFileTimeFunc = 0021206c
+;   SetFileTime* g_SetFileTimeFunc = 002121c8
+;   SystemTimeToFileTime* g_SystemTimeToFileTimeFunc = 00212230
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -47,7 +47,7 @@ section .text
     PUSH 0xc0000000                     ; 00608174
     MOV EDX,dword ptr [ESP + 0x70]      ; 00608179
     PUSH EDX                            ; 0060817d
-    CALL dword ptr CS:[0x611510]        ; 0060817e | PTR_CreateFileA_00611510
+    CALL dword ptr CS:[0x611510]        ; 0060817e | g_CreateFileAFunc
     MOV EBX,EAX                         ; 00608185
     MOV ESI,EAX                         ; 00608187
     CMP EAX,-0x1                        ; 00608189
@@ -65,12 +65,12 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 006081a2
     PUSH EAX                            ; 006081a6
     PUSH EBX                            ; 006081a7
-    CALL dword ptr CS:[0x611598]        ; 006081a8 | PTR_GetFileTime_00611598
+    CALL dword ptr CS:[0x611598]        ; 006081a8 | g_GetFileTimeFunc
     TEST EAX,EAX                        ; 006081af
     JNZ 0x006081c7                      ; 006081b1
         ;   XREF to: 006081c7 (CONDITIONAL_JUMP)  ; LAB_006081c7
     PUSH EBX                            ; 006081b3
-    CALL dword ptr CS:[0x611504]        ; 006081b4 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 006081b4 | g_CloseHandleFunc
     CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006081bb
         ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     ADD ESP,0x48                        ; 006081c0
@@ -123,22 +123,22 @@ section .text
     PUSH EAX                            ; 00608251
     MOV word ptr [ESP + 0x26],DX        ; 00608252
     MOV word ptr [ESP + 0x16],DX        ; 00608257
-    CALL dword ptr CS:[0x611648]        ; 0060825c | PTR_SystemTimeToFileTime_00611648
+    CALL dword ptr CS:[0x611648]        ; 0060825c | g_SystemTimeToFileTimeFunc
     LEA EAX,[ESP + 0x20]                ; 00608263
     PUSH EAX                            ; 00608267
     LEA EAX,[ESP + 0x2c]                ; 00608268
     PUSH EAX                            ; 0060826c
-    CALL dword ptr CS:[0x6115ec]        ; 0060826d | PTR_LocalFileTimeToFileTime_006115ec
+    CALL dword ptr CS:[0x6115ec]        ; 0060826d | g_LocalFileTimeToFileTimeFunc
     LEA EAX,[ESP + 0x28]                ; 00608274
     PUSH EAX                            ; 00608278
     LEA EAX,[ESP + 0x14]                ; 00608279
     PUSH EAX                            ; 0060827d
-    CALL dword ptr CS:[0x611648]        ; 0060827e | PTR_SystemTimeToFileTime_00611648
+    CALL dword ptr CS:[0x611648]        ; 0060827e | g_SystemTimeToFileTimeFunc
     LEA EAX,[ESP + 0x40]                ; 00608285
     PUSH EAX                            ; 00608289
     LEA EAX,[ESP + 0x2c]                ; 0060828a
     PUSH EAX                            ; 0060828e
-    CALL dword ptr CS:[0x6115ec]        ; 0060828f | PTR_LocalFileTimeToFileTime_006115ec
+    CALL dword ptr CS:[0x6115ec]        ; 0060828f | g_LocalFileTimeToFileTimeFunc
     LEA EAX,[ESP + 0x20]                ; 00608296
     PUSH EAX                            ; 0060829a
     LEA EAX,[ESP + 0x44]                ; 0060829b
@@ -146,12 +146,12 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 006082a0
     PUSH EAX                            ; 006082a4
     PUSH ESI                            ; 006082a5
-    CALL dword ptr CS:[0x611630]        ; 006082a6 | PTR_SetFileTime_00611630
+    CALL dword ptr CS:[0x611630]        ; 006082a6 | g_SetFileTimeFunc
     TEST EAX,EAX                        ; 006082ad
     JNZ 0x006082c5                      ; 006082af
         ;   XREF to: 006082c5 (CONDITIONAL_JUMP)  ; LAB_006082c5
     PUSH ESI                            ; 006082b1
-    CALL dword ptr CS:[0x611504]        ; 006082b2 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 006082b2 | g_CloseHandleFunc
     CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006082b9
         ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     ADD ESP,0x48                        ; 006082be
@@ -161,7 +161,7 @@ section .text
     RET                                 ; 006082c4
     PUSH ESI                            ; 006082c5
         ;   Label: LAB_006082c5
-    CALL dword ptr CS:[0x611504]        ; 006082c6 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 006082c6 | g_CloseHandleFunc
     XOR EAX,EAX                         ; 006082cd
     ADD ESP,0x48                        ; 006082cf
         ;   Label: LAB_006082cf

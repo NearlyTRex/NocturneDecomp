@@ -148,14 +148,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   this_ptr->field6_0x54c[0x33f] = '\0';
   local_14 = 0;
   while (local_14 < local_28 + local_24) {
-    puVar7 = &DAT_0067d5c0;
+    puVar7 = &0;
     pcVar8 = local_90;
     for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(uint *)pcVar8 = *puVar7;
       puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
       pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
     }
-    puVar7 = &DAT_0067d628;
+    puVar7 = &0;
     pcVar8 = local_f4;
     for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(uint *)pcVar8 = *puVar7;

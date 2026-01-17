@@ -29,8 +29,6 @@ void core_drone_cpp_FUN_0048ec70(void)
   uint uVar12;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  int in_stack_fffffeaa;
-  SDamageInfo local_dc;
   CVector3f local_a0;
   CVector3f local_94;
   CVector3f local_88;
@@ -104,7 +102,7 @@ void core_drone_cpp_FUN_0048ec70(void)
     case 1:
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)in_stack_00000004);
-      uVar12 = DAT_0065d0a8;
+      uVar12 = 0x40400000;
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
         if (extraout_EAX_00 == 0) {
@@ -113,7 +111,7 @@ void core_drone_cpp_FUN_0048ec70(void)
         }
       }
       else {
-        local_18 = DAT_0065d0a8;
+        local_18 = 0x40400000;
         (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
         (in_stack_00000004->base_character).model.accumulated_root_motion.y =
              (in_stack_00000004->base_character).model.accumulated_root_motion.z;
@@ -150,11 +148,8 @@ void core_drone_cpp_FUN_0048ec70(void)
       }
       break;
     case 2:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_dc);
-      local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
-      local_dc.attacker = (CDemonActor *)in_stack_00000004;
-      local_dc.wielder = (CDemonActor *)in_stack_00000004;
-      local_14 = local_dc.damage_amount;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff24);
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_88,&g_ZeroVector,
                            (in_stack_00000004->base_character).model.bone_transform.
@@ -164,10 +159,7 @@ void core_drone_cpp_FUN_0048ec70(void)
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_58,pCVar11);
       core_enemy_cpp_FUN_004a9880();
-      local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
-      local_dc.attacker = (CDemonActor *)in_stack_00000004;
-      local_dc.wielder = (CDemonActor *)in_stack_00000004;
-      local_14 = local_dc.damage_amount;
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_4c,&g_ZeroVector,
                            (in_stack_00000004->base_character).model.bone_transform.
@@ -216,7 +208,7 @@ LAB_0048ef7a:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&this_ptr->motion_controller,0,1)
     ;
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
   }
   (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
   (in_stack_00000004->base_character).model.accumulated_root_motion.y =
@@ -238,8 +230,9 @@ switchD_0048f284_caseD_3:
                       (*(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18));
     if (iVar7 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
+      iVar7 = 2;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,in_stack_fffffeaa);
+      sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar7);
       uVar12 = (*((in_stack_00000004->base_character).base_actor.vtable)->playAmbientSound)
                          ((CDemonActor *)in_stack_00000004,"slime.wav");
       *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18) = uVar12;

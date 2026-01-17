@@ -8,8 +8,8 @@
 ;   crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4 at 0060a7ba
 ;
 ; Referenced Globals:
-;   GetProcAddress* GetProcAddress = 00211f8e
-;   LoadLibraryA* PTR_LoadLibraryA_006115e8 = 0021205c
+;   GetProcAddress* g_GetProcAddressFunc = 00211f8e
+;   LoadLibraryA* g_LoadLibraryAFunc = 0021205c
 ;   TerminatedCString s_USER32_DLL_00659110
 ;   TerminatedCString s_GetActiveWindow_0065911c
 ;
@@ -24,14 +24,14 @@ section .text
     PUSH EBX                            ; 0060a710
         ;   Label: crt_windows.c_has_active_window_FUN_0060a710
     PUSH 0x659110                       ; 0060a711 | = "USER32.DLL"
-    CALL dword ptr CS:[0x6115e8]        ; 0060a716 | PTR_LoadLibraryA_006115e8
+    CALL dword ptr CS:[0x6115e8]        ; 0060a716 | g_LoadLibraryAFunc
     XOR EBX,EBX                         ; 0060a71d
     TEST EAX,EAX                        ; 0060a71f
     JZ 0x0060a73a                       ; 0060a721
         ;   XREF to: 0060a73a (CONDITIONAL_JUMP)  ; LAB_0060a73a
     PUSH 0x65911c                       ; 0060a723 | = "GetActiveWindow"
     PUSH EAX                            ; 0060a728
-    CALL dword ptr CS:[0x6115bc]        ; 0060a729 | GetProcAddress
+    CALL dword ptr CS:[0x6115bc]        ; 0060a729 | g_GetProcAddressFunc
     MOV EDX,EAX                         ; 0060a730
     TEST EAX,EAX                        ; 0060a732
     JZ 0x0060a73a                       ; 0060a734

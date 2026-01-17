@@ -25,8 +25,17 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
   unkbyte10 Var10;
   float10 fVar11;
   double dVar12;
-  float afStackY_10d8 [955];
+  float afStackY_10d8 [985];
   CVector3i *in_stack_fffffea0;
+  int local_15c;
+  int local_158;
+  int local_154;
+  int local_150;
+  int local_14c;
+  uint local_148;
+  uint local_144;
+  uint local_140;
+  uint local_13c;
   CVector3f local_138;
   CVector3i local_12c;
   CVector3f local_120;
@@ -184,9 +193,9 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
               }
               local_fc = local_f4 * local_34;
               local_f8 = local_f4 * local_30;
-              local_12c.x = (int)ROUND(local_fc * 256f);
-              local_12c.y = (int)ROUND(local_f8 * 256f);
-              local_12c.z = (int)ROUND(local_f4 * 256f);
+              local_12c.x = (int)ROUND(local_fc * 256.0f);
+              local_12c.y = (int)ROUND(local_f8 * 256.0f);
+              local_12c.z = (int)ROUND(local_f4 * 256.0f);
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_12c);
               local_f4 = local_2c;
@@ -195,9 +204,9 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
               }
               local_fc = local_f4 * local_3c;
               local_f8 = local_f4 * local_38;
-              local_a8.x = (int)ROUND(local_fc * 256f);
-              local_a8.y = (int)ROUND(local_f8 * 256f);
-              local_a8.z = (int)ROUND(local_f4 * 256f);
+              local_a8.x = (int)ROUND(local_fc * 256.0f);
+              local_a8.y = (int)ROUND(local_f8 * 256.0f);
+              local_a8.z = (int)ROUND(local_f4 * 256.0f);
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_a8);
               local_f4 = local_2c;
@@ -206,9 +215,9 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
               }
               local_fc = local_f4 * local_3c;
               local_f8 = local_f4 * local_38;
-              local_d8.x = (int)ROUND(local_fc * 256f);
-              local_d8.y = (int)ROUND(local_f8 * 256f);
-              local_d8.z = (int)ROUND(local_f4 * 256f);
+              local_d8.x = (int)ROUND(local_fc * 256.0f);
+              local_d8.y = (int)ROUND(local_f8 * 256.0f);
+              local_d8.z = (int)ROUND(local_f4 * 256.0f);
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_d8);
               local_f4 = local_28;
@@ -217,9 +226,9 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
               }
               local_fc = local_f4 * local_34;
               local_f8 = local_f4 * local_30;
-              local_c0.x = (int)ROUND(local_fc * 256f);
-              local_c0.y = (int)ROUND(local_f8 * 256f);
-              local_c0.z = (int)ROUND(local_f4 * 256f);
+              local_c0.x = (int)ROUND(local_fc * 256.0f);
+              local_c0.y = (int)ROUND(local_f8 * 256.0f);
+              local_c0.z = (int)ROUND(local_f4 * 256.0f);
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_c0);
               this_ptr_00 = g_CDemonRendererPtr;
@@ -227,7 +236,16 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
               this_ptr_00->vertex_buffer_ptr[1].light = local_68;
               this_ptr_00->vertex_buffer_ptr[2].light = local_64;
               this_ptr_00->vertex_buffer_ptr[3].light = local_64;
+              local_15c = 4;
+              local_140 = 1;
+              local_14c = 0;
+              local_150 = 0;
+              local_154 = 0;
+              local_158 = 0;
               iVar4 = local_24 + 1;
+              local_144 = 2;
+              local_13c = 0;
+              local_148 = 3;
               local_24 = iVar4;
               engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
                         (this_ptr_00,(SMRGLHeaderPrimitive *)&stack0xfffffea0,

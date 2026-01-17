@@ -48,28 +48,28 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
             (g_CDemonRendererPtr,&local_20,(CVector3i *)0x0);
   local_3c = 0.0;
   local_44 = *(float *)(this_ptr->field0_0x0 + 0xc) * *(float *)(this_ptr->field0_0x0 + 0x14);
-  local_2c.x = (int)ROUND(local_44 * 256f);
-  local_2c.y = (int)ROUND(local_44 * 256f);
-  local_2c.z = (int)ROUND(256f * 0.0);
+  local_2c.x = (int)ROUND(local_44 * 256.0f);
+  local_2c.y = (int)ROUND(local_44 * 256.0f);
+  local_2c.z = (int)ROUND(256.0f * 0.0);
   local_40 = local_44;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_2c);
   local_44 = -local_44;
-  local_14.x = (int)ROUND(local_44 * 256f);
-  local_14.y = (int)ROUND(local_40 * 256f);
-  local_14.z = (int)ROUND(local_3c * 256f);
+  local_14.x = (int)ROUND(local_44 * 256.0f);
+  local_14.y = (int)ROUND(local_40 * 256.0f);
+  local_14.z = (int)ROUND(local_3c * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_14);
   local_40 = -local_40;
-  local_38.x = (int)ROUND(local_44 * 256f);
-  local_38.y = (int)ROUND(local_40 * 256f);
-  local_38.z = (int)ROUND(local_3c * 256f);
+  local_38.x = (int)ROUND(local_44 * 256.0f);
+  local_38.y = (int)ROUND(local_40 * 256.0f);
+  local_38.z = (int)ROUND(local_3c * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_38);
   local_44 = -local_44;
-  local_50.x = (int)ROUND(local_44 * 256f);
-  local_50.y = (int)ROUND(local_40 * 256f);
-  local_50.z = (int)ROUND(local_3c * 256f);
+  local_50.x = (int)ROUND(local_44 * 256.0f);
+  local_50.y = (int)ROUND(local_40 * 256.0f);
+  local_50.z = (int)ROUND(local_3c * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_50);
   g_RenderVertexBuffer[0].u = 7.34684e-40;

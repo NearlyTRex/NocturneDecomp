@@ -1,15 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 207,
-    "complexity_score": 137,
+    "complexity_score": 362,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 7,
     "pseudocode_lines": 67,
-    "suspect_count": 6,
+    "suspect_count": 26,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
+      "stack_align_anchor",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unaffected_reg",
+      "variadic_anchor"
     ],
     "total_lines": 274
   },
@@ -171,56 +176,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "005ad3bc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad3c7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad3f1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad41b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad450": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad46c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad479": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad485": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad4b6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad4d8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad500": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad51d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad53a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad54b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad57a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ],
-    "005ad5b1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.401197604790419,
     "instruction_count": 167,
@@ -258,7 +213,153 @@
     },
     "pcode_op_count": 735
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 376,
+    "local_size": 372,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_170",
+        "offset": -368,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_16f",
+        "offset": -367,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sample_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005ad3bc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "005ad3ca",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "text": "float unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffffe90",
+      "text": "uint in_stack_fffffe90;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_fffffe98",
+      "text": "uint in_stack_fffffe98;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 16,
+      "match": "&stack0xfffffe90",
+      "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xfffffe90",
+      "text": "pcVar4 = &stack0xfffffe90;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xfffffe90",
+      "text": "iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe90);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_fffffe90",
+      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_fffffe98",
+      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe98);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_EBP",
+      "text": "if ((float)dVar5 < unaff_EBP) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = (float)dVar5;",
+      "type": "unaffected_reg"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "005ad549",
@@ -470,126 +571,6 @@
       "target_address": "0x5f40e0",
       "text": "Direct CALL at 005ad5ac, ADD ESP at 005ad5b1 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 376,
-    "local_size": 372,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_170",
-        "offset": -368,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_16f",
-        "offset": -367,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "sample_name",
-        "offset": 4,
-        "size": 4,
-        "type": "char *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 2,
-    "pattern_types": [
-      "alt_frame_pointer",
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005ad3bc",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      },
-      {
-        "address": "005ad3ca",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_fffffe90",
-      "text": "uint in_stack_fffffe90;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xfffffe90",
-      "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xfffffe90",
-      "text": "pcVar4 = &stack0xfffffe90;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xfffffe90",
-      "text": "iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_fffffe90",
-      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_fffffe90",
-      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);",
-      "type": "stack_param"
     }
   ]
 }

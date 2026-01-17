@@ -99,11 +99,11 @@ void core_set_cpp_FUN_005702b0(void)
           }
           else {
             local_50[0].x =
-                 (int)ROUND(DAT_032c1c68 * 256f) - g_TransformedVertexArray[iVar3].x;
+                 (int)ROUND(DAT_032c1c68 * 256.0f) - g_TransformedVertexArray[iVar3].x;
             local_50[0].y =
-                 (int)ROUND(DAT_032c1c6c * 256f) - g_TransformedVertexArray[iVar3].y;
+                 (int)ROUND(DAT_032c1c6c * 256.0f) - g_TransformedVertexArray[iVar3].y;
             local_50[0].z =
-                 (int)ROUND(DAT_032c1c70 * 256f) - g_TransformedVertexArray[iVar3].z;
+                 (int)ROUND(DAT_032c1c70 * 256.0f) - g_TransformedVertexArray[iVar3].z;
             engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(local_50);
             aiStack_34[2] = local_38;
             aiStack_34[(uint)bVar6 * -2 + 3] = aiStack_34[(uint)bVar6 * -2];

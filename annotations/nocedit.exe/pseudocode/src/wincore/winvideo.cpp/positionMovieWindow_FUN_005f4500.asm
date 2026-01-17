@@ -9,10 +9,10 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; Referenced Globals:
-;   mciSendStringA* mciSendStringA = 00211850
-;   GetClientRect* GetClientRect = 00211ac0
-;   MoveWindow* MoveWindow = 00211b52
-;   SetRectEmpty* SetRectEmpty = 00211bf6
+;   mciSendStringA* g_mciSendStringAFunc = 00211850
+;   GetClientRect* g_GetClientRectFunc = 00211ac0
+;   MoveWindow* g_MoveWindowFunc = 00211b52
+;   SetRectEmpty* g_SetRectEmptyFunc = 00211bf6
 ;   TerminatedCString s_where_mov_source_006581dd
 ;   HWND g_MovieWindowHandle
 ;   int g_MoviePlaying
@@ -35,16 +35,16 @@ section .text
     PUSH EAX                            ; 005f451f
     MOV ECX,dword ptr [ESP + 0xac]      ; 005f4520
     PUSH ECX                            ; 005f4527
-    CALL dword ptr CS:[0x6114a4]        ; 005f4528 | GetClientRect
+    CALL dword ptr CS:[0x6114a4]        ; 005f4528 | g_GetClientRectFunc
     PUSH 0x0                            ; 005f452f
     PUSH 0x80                           ; 005f4531
     LEA EAX,[ESP + 0x8]                 ; 005f4536
     PUSH EAX                            ; 005f453a
     PUSH 0x6581dd                       ; 005f453b | = "where mov source"
-    CALL dword ptr CS:[0x611410]        ; 005f4540 | mciSendStringA
+    CALL dword ptr CS:[0x611410]        ; 005f4540 | g_mciSendStringAFunc
     LEA EAX,[ESP + 0x90]                ; 005f4547
     PUSH EAX                            ; 005f454e
-    CALL dword ptr CS:[0x6114f0]        ; 005f454f | SetRectEmpty
+    CALL dword ptr CS:[0x6114f0]        ; 005f454f | g_SetRectEmptyFunc
     MOV DL,byte ptr [ESP]               ; 005f4556
     MOV EAX,ESP                         ; 005f4559
     CMP DL,0x20                         ; 005f455b
@@ -173,7 +173,7 @@ section .text
     PUSH EBX                            ; 005f4674
     MOV EDI,dword ptr [0x03f994fc]      ; 005f4675 | g_MovieWindowHandle
     PUSH EDI                            ; 005f467b
-    CALL dword ptr CS:[0x6114c8]        ; 005f467c | MoveWindow
+    CALL dword ptr CS:[0x6114c8]        ; 005f467c | g_MoveWindowFunc
     POP EBX                             ; 005f4683
     POP ESI                             ; 005f4684
     POP EDI                             ; 005f4685

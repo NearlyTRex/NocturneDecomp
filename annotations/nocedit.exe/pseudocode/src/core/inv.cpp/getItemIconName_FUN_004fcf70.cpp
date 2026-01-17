@@ -28,6 +28,6 @@ char * __cdecl core_inv_cpp_getItemIconName_FUN_004fcf70(CDemonActor *actor_ptr)
     } while (iVar3 < g_ItemDefinitionCount);
   }
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (g_ErrorMessageBuffer2,"Add to dict: %s",pCVar1->model_name);
-  return g_ErrorMessageBuffer2;
+            (g_ErrorMessageBuffer_02db8b70,"Add to dict: %s",pCVar1->model_name);
+  return g_ErrorMessageBuffer_02db8b70;
 }

@@ -27,7 +27,7 @@
 ;   TerminatedCString s_engine_matrix_c_00635aed
 ;   TerminatedCString s_Matrix_unbalance_00635b00
 ;   double g_InverseTwoPi = 0.318309886192889
-;   double g_FixedPointScale = 32768
+;   double g_FixedPointScale_00635b1d = 32768
 ;   int g_RelativeX
 ;   int g_RelativeY
 ;   int g_RelativeZ
@@ -114,7 +114,7 @@ section .text
     FXCH ST2                            ; 0050dc16
     FMULP                               ; 0050dc18
     FXCH                                ; 0050dc1a
-    FLD double ptr [0x00635b1d]         ; 0050dc1c | g_FixedPointScale
+    FLD double ptr [0x00635b1d]         ; 0050dc1c | g_FixedPointScale_00635b1d
     FXCH                                ; 0050dc22
     FMUL ST1                            ; 0050dc24
     FXCH ST2                            ; 0050dc26

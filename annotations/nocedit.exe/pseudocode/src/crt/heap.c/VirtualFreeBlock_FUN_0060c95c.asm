@@ -10,7 +10,7 @@
 ;   crt_heap.c_UnlinkAndFreeBlock_FUN_0060c9bc at 0060c9c9
 ;
 ; Referenced Globals:
-;   VirtualFree* PTR_VirtualFree_00611664 = 002122a6
+;   VirtualFree* g_VirtualFreeFunc = 002122a6
 ;   Heap* g_MainHeap = 00000000
 ;   Heap* g_SecondaryHeap = 00000000
 ;   undefined4 DAT_00684edc
@@ -31,7 +31,7 @@ section .text
     PUSH 0x0                            ; 0060c967
     PUSH ESI                            ; 0060c969
     MOV EBX,dword ptr [ESI + 0x8]       ; 0060c96a
-    CALL dword ptr CS:[0x611664]        ; 0060c96d | PTR_VirtualFree_00611664
+    CALL dword ptr CS:[0x611664]        ; 0060c96d | g_VirtualFreeFunc
     TEST EAX,EAX                        ; 0060c974
     JNZ 0x0060c980                      ; 0060c976
         ;   XREF to: 0060c980 (CONDITIONAL_JUMP)  ; LAB_0060c980

@@ -17,7 +17,7 @@ void crt_unknown_c_FUN_00609fc8(void)
     lpCriticalSection = g_StaticCriticalSectionArray;
     do {
       iVar1 = iVar1 + 1;
-      (*PTR_DeleteCriticalSection_00611520)(lpCriticalSection);
+      (*g_DeleteCriticalSectionFunc)(lpCriticalSection);
       lpCriticalSection = lpCriticalSection + 1;
     } while (iVar1 < (int)g_StaticCriticalSectionCounter);
   }

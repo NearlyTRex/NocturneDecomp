@@ -40,8 +40,7 @@ void core_dracbrid_cpp_FUN_00484410(uint param_1)
   double dVar20;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  SCollisionInfo *in_stack_fffffaf2;
-  char local_494 [100];
+  SCollisionInfo *in_stack_fffffb6c;
   char local_430 [100];
   char local_3cc [100];
   char local_368 [100];
@@ -126,10 +125,7 @@ void core_dracbrid_cpp_FUN_00484410(uint param_1)
           *(uint *)(iVar13 + 0xfc) = 1;
           *(uint *)(iVar13 + 0xcb4) = 1;
           iVar11 = iVar11 + 1;
-          local_494[0] = -0x12;
-          local_494[1] = 'E';
-          local_494[2] = 'H';
-          local_494[3] = '\0';
+          in_stack_fffffb6c = (SCollisionInfo *)0x4845ee;
           dVar20 = crt_math_c_round_FUN_005fe6b0
                              ((double)(((float10)in_stack_00000004[1].base_character.base_actor.
                                                  previous_transform_state.orientation.x * fVar19) /
@@ -275,10 +271,7 @@ LAB_004848f9:
         iVar11 = iVar11 + 4;
       }
       if (iVar13 == *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c)) {
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_430,"bride-%d?.wav",
-                   *(uint *)
-                    (in_stack_00000004[1].base_character.base_actor.create_event + 0x18));
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_430,"bride-%d?.wav");
         core_dracbrid_cpp_FUN_004864c0();
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(in_stack_00000004->base_character).model.motion_controller,0x17,1);
@@ -414,7 +407,7 @@ LAB_004848f9:
     if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
       if (0.0 <= *(float *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x28)) {
         local_58 = 0;
-        local_50 = DAT_0065cd6c;
+        local_50 = 0x40000000;
         local_54 = 0;
         (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))();
         iVar11 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
@@ -480,7 +473,7 @@ LAB_004852f8:
     break;
   case 0xc:
     iVar11 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                       ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffaf2);
+                       ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffb6c);
     if ((iVar11 == 0) &&
        (iVar11 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                            (g_CEventListPtr,
@@ -504,7 +497,7 @@ LAB_004852f8:
     }
     (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
               ((CDemonActor *)in_stack_00000004);
-    uVar10 = DAT_0065cd68;
+    uVar10 = 0x3FC00000;
     pCVar3 = &(in_stack_00000004->base_character).model;
     if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
       core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
@@ -514,7 +507,7 @@ LAB_004852f8:
       }
     }
     else {
-      local_34 = DAT_0065cd68;
+      local_34 = 0x3FC00000;
       (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
       (in_stack_00000004->base_character).model.accumulated_root_motion.y =
            (in_stack_00000004->base_character).model.accumulated_root_motion.z;
@@ -577,7 +570,7 @@ LAB_004852f8:
     goto switchD_004858cd_caseD_10;
   case 0x12:
     iVar11 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                       ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffaf2);
+                       ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffb6c);
     if ((iVar11 == 0) &&
        (iVar11 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                            (g_CEventListPtr,
@@ -645,7 +638,7 @@ LAB_004852f8:
   case 0x17:
     if (*(float *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x24) <= 0.0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_494,"bride-%d?.wav",
+                (&stack0xfffffb6c,"bride-%d?.wav",
                  *(uint *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x18)
                 );
       core_dracbrid_cpp_FUN_004864c0();
@@ -663,14 +656,14 @@ LAB_004852f8:
       fVar5 = *(float *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x20) +
               in_stack_00000008;
       *(float *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x20) = fVar5;
-      if (DAT_0065cd88 < fVar5) {
+      if (0x3F800000 < fVar5) {
         pCVar9 = &in_stack_00000004[1].base_character;
         (pCVar9->base_actor).create_event[0x1c] = '\x02';
         (pCVar9->base_actor).create_event[0x1d] = '\0';
         (pCVar9->base_actor).create_event[0x1e] = '\0';
         (pCVar9->base_actor).create_event[0x1f] = '\0';
         *(float *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x20) =
-             DAT_0065cd88;
+             0x3F800000;
       }
       local_2c = &(in_stack_00000004->base_character).model;
       iVar11 = 0;
@@ -695,12 +688,12 @@ LAB_004852f8:
       local_30 = 1;
       local_1c = 0;
       pcVar4 = in_stack_00000004[1].base_character.base_actor.create_event + 0x2c;
-      for (local_18 = 0; fVar5 = DAT_0065cd88, local_18 < g_CDemonSetPtr->damage_listener_count;
+      for (local_18 = 0; fVar5 = 0x3F800000, local_18 < g_CDemonSetPtr->damage_listener_count;
           local_18 = local_18 + 1) {
         pCVar14 = *(CEnemy **)(g_CDemonSetPtr->field19_0x14f0a0 + local_1c + -4);
         if (((pCVar14 != (CEnemy *)0x0) && (pCVar14 != in_stack_00000004)) &&
            (iVar11 = (*(pCVar14->base_character).base_actor.vtable[1].hasCollision)
-                               ((CDemonActor *)pCVar14,in_stack_fffffaf2), iVar11 < 1)) {
+                               ((CDemonActor *)pCVar14,in_stack_fffffb6c), iVar11 < 1)) {
           local_19c = (pCVar14->base_character).base_actor.location.position.x - *(float *)pcVar4;
           local_198 = (pCVar14->base_character).base_actor.location.position.y -
                       *(float *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x30)

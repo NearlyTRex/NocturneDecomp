@@ -1,14 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 165,
+    "complexity_score": 245,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 55,
-    "suspect_count": 10,
+    "suspect_count": 16,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
+      "stack_align_anchor",
       "stack_param",
+      "stack_ref",
       "unresolved_funcptr"
     ],
     "total_lines": 181
@@ -97,23 +101,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004f2af9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ],
-    "004f2b18": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ],
-    "004f2b88": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ],
-    "004f2bb2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ],
-    "004f2bf4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.31858407079646,
     "instruction_count": 113,
@@ -154,7 +141,117 @@
     },
     "pcode_op_count": 601
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 104,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004f2af9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffff9c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xffffff9c",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffff9c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_44,&CStack_38)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "text": "fVar2 = (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar3) + 0x154)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x5c))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x8d].create_event[0x48] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x8d].create_event[0x49] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x8d].create_event[0x4a] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x8d].create_event[0x4b] = '\\0';",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "004f2b0e",
@@ -210,111 +307,6 @@
       "target_address": "0x408ec0",
       "text": "Direct CALL at 004f2b83, ADD ESP at 004f2b88 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 104,
-    "local_size": 104,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 1,
-        "type": "undefined1"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004f2af9",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_48,&CStack_3c)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
-      "match": "code *",
-      "text": "fStack_14 = (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar2) +",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 49,
-      "match": "code *",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x5c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x8d].create_event[0x48] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x8d].create_event[0x49] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x8d].create_event[0x4a] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x8d].create_event[0x4b] = '\\0';",
-      "type": "stack_param"
     }
   ]
 }

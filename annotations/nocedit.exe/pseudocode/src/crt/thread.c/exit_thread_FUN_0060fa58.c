@@ -14,6 +14,6 @@ void __cdecl crt_thread_c_exit_thread_FUN_0060fa58(void)
   if (g_EmergencyExitFlag == 0) {
     crt_tls_c_cleanup_thread_tls_data_FUN_0060a334(1);
   }
-  (*PTR_ExitThread_00611538)(0);
+  (*g_ExitThreadFunc)(0);
   return;
 }

@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 356,
+    "complexity_score": 556,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
     "pseudocode_lines": 216,
-    "suspect_count": 13,
+    "suspect_count": 32,
     "suspect_types": [
+      "call_esp_anchor",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "variadic_anchor"
     ],
     "total_lines": 841
   },
@@ -320,65 +322,6 @@
     "declared_params": 3,
     "estimated_params": 3
   },
-  "pcode_overrides": {
-    "004678a4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "004678ec": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467914": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467925": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467952": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "0046798e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "004679c3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "004679ec": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467a0c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467a6f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467a95": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467ab5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467acc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467cc5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467d0c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467d9a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467db1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467dff": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ],
-    "00467e4b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.523012552301255,
     "instruction_count": 478,
@@ -424,7 +367,233 @@
     },
     "pcode_op_count": 3118
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 348,
+    "local_size": 336,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14c",
+        "offset": -332,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_134",
+        "offset": -308,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_133",
+        "offset": -307,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "tolerance",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "angle_tolerance",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "display_progress",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_fffffebc",
+      "text": "char *in_stack_fffffebc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_fffffebc",
+      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 81,
+      "match": "in_stack_fffffebc",
+      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_18 + local_34 * 8) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_18 + local_34 * 8 + 4) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_14 + local_2c->vertex_indices[local_30] * 4) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 134,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 134,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + local_30 * 8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + local_34 * 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 173,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + local_2c->vertex_indices[local_30] * 8 + 4);",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 24,
       "call_address": "00467dfa",
@@ -674,234 +843,6 @@
       "target_address": "0x401fd0",
       "text": "Direct CALL at 00467e46, ADD ESP at 00467e4b with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 348,
-    "local_size": 336,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_14c",
-        "offset": -332,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_144",
-        "offset": -324,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_140",
-        "offset": -320,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_13c",
-        "offset": -316,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_134",
-        "offset": -308,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_133",
-        "offset": -307,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "tolerance",
-        "offset": 4,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "angle_tolerance",
-        "offset": 8,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "display_progress",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffffebc",
-      "text": "char *in_stack_fffffebc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_fffffebc",
-      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_fffffebc",
-      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)local_18 + local_34 * 8) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)local_18 + local_34 * 8 + 4) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 123,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)local_14 + local_2c->vertex_indices[local_30] * 4) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 157,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_18 + local_30 * 8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 158,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_18 + local_34 * 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 173,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_18 + local_2c->vertex_indices[local_30] * 8 + 4);",
-      "type": "pointer_cast"
     }
   ]
 }

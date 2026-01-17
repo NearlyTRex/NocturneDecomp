@@ -29,11 +29,11 @@ CPathMap * core_path_cpp_FUN_00548390(void)
     ;
     crt_stdlib_c_atexit_FUN_005ff060(&DAT_00680bc8);
   }
-  if (DAT_00680bd8 < 0) {
+  if (0xFFFFFFFF < 0) {
     iVar2 = 0;
     iVar1 = 0;
     do {
-      *(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;
+      *(int *)((int)&0xFFFFFFFF + iVar2) = iVar1;
       iVar1 = iVar1 + 1;
       iVar2 = iVar2 + 4;
     } while (iVar1 < 0xc);
@@ -54,7 +54,7 @@ CPathMap * core_path_cpp_FUN_00548390(void)
        (iVar5 = iVar2, local_18[1] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.z + iVar3))
        ) break;
     iVar5 = iVar1;
-    if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {
+    if ((&0xFFFFFFFF)[iVar1] < *(int *)((int)&0xFFFFFFFF + iVar4)) {
       iVar5 = iVar2;
     }
     iVar4 = iVar4 + 4;
@@ -64,12 +64,12 @@ CPathMap * core_path_cpp_FUN_00548390(void)
   } while (iVar2 < 0xc);
   iVar1 = 0;
   do {
-    if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {
-      *(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;
+    if (*(int *)((int)&0xFFFFFFFF + iVar1) < (&0xFFFFFFFF)[iVar5]) {
+      *(int *)((int)&0xFFFFFFFF + iVar1) = *(int *)((int)&0xFFFFFFFF + iVar1) + 1;
     }
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x30);
-  (&DAT_00680bd8)[iVar5] = 0;
+  (&0xFFFFFFFF)[iVar5] = 0;
   local_28.x = in_stack_00000004->x;
   local_28.y = in_stack_00000004->y;
   local_28.z = in_stack_00000004->z;

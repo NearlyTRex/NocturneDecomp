@@ -18,7 +18,7 @@ void core_script_cpp_GetReferencedActor_FUN_00560760(void)
   uint *in_stack_00000008;
   char local_d0 [200];
   
-  puVar3 = &DAT_00680d60;
+  puVar3 = &0;
   pcVar1 = local_d0;
   for (iVar2 = 0x32; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(uint *)pcVar1 = *puVar3;

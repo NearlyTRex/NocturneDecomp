@@ -18,11 +18,11 @@ time_t __cdecl crt_time_c_filetime_to_time_t_FUN_00609da0(FILETIME *filetime)
   if ((filetime->dwLowDateTime == 0) && (filetime->dwHighDateTime == 0)) {
     return -1;
   }
-  BVar1 = (*PTR_FileTimeToLocalFileTime_00611540)(filetime,&local_c);
+  BVar1 = (*g_FileTimeToLocalFileTimeFunc)(filetime,&local_c);
   if (BVar1 == 0) {
     return -1;
   }
-  BVar1 = (*PTR_FileTimeToSystemTime_00611544)(&local_c,&_Stack_1c);
+  BVar1 = (*g_FileTimeToSystemTimeFunc)(&local_c,&_Stack_1c);
   if (BVar1 == 0) {
     return -1;
   }

@@ -12,14 +12,14 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(CLodMesh
   CLodEdge *pCVar1;
   int edge_index;
   int iVar2;
+  uint local_20;
   uint uStack_1c;
-  uint local_18;
-  int iStack_14;
+  int local_18;
   
   edge_index = 0;
-  uStack_1c = 9.9999999999999997e+34._0_4_;
-  iStack_14 = -1;
-  local_18 = 9.9999999999999997e+34._4_4_;
+  local_20 = 9.9999999999999997e+34._0_4_;
+  local_18 = -1;
+  uStack_1c = 9.9999999999999997e+34._4_4_;
   if (0 < this_ptr->edge_count) {
     iVar2 = 0;
     do {
@@ -29,15 +29,15 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(CLodMesh
         }
         pCVar1 = this_ptr->edges_ptr;
         if (*(double *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20) <
-            (double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c)) {
-          uStack_1c = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20);
-          local_18 = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x1c);
-          iStack_14 = edge_index;
+            (double)CONCAT44 /* combine 2-byte values */(uStack_1c,local_20)) {
+          local_20 = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20);
+          uStack_1c = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x1c);
+          local_18 = edge_index;
         }
       }
       edge_index = edge_index + 1;
       iVar2 = iVar2 + 0xf0;
     } while (edge_index < this_ptr->edge_count);
   }
-  return iStack_14;
+  return local_18;
 }

@@ -7,7 +7,7 @@
 ; CWavInDevice *   Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   waveInStart* waveInStart = 002118f8
+;   waveInStart* g_waveInStartFunc = 002118f8
 ;   TerminatedCString s_waveInStart_failed_0065244e
 ;   HWAVEIN g_WaveInHandle
 ;   LPWAVEHDR[20] g_WaveInHeaders
@@ -86,7 +86,7 @@ section .text
     MOV EAX,[0x03f6af20]                ; 005b0eb5 | g_WaveInBufferSizeSamples
     PUSH EBX                            ; 005b0eba
     MOV [0x03f6af3c],EAX                ; 005b0ebb | g_WaveInCurrentSampleOffset
-    CALL dword ptr CS:[0x611438]        ; 005b0ec0 | waveInStart
+    CALL dword ptr CS:[0x611438]        ; 005b0ec0 | g_waveInStartFunc
     TEST EAX,EAX                        ; 005b0ec7
     JNZ 0x005b0ee5                      ; 005b0ec9
         ;   XREF to: 005b0ee5 (CONDITIONAL_JUMP)  ; LAB_005b0ee5

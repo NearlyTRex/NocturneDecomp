@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rustplat_raw_0061ce7e
-;   double g_UVScaleFactor = 256
+;   double g_UVScaleFactor_2 = 256
 ;   undefined4 DAT_01626418
 ;   undefined4 DAT_0162641c
 ;   int g_PolygonCount
@@ -80,42 +80,42 @@ section .text
     MOV dword ptr [EDX + 0xc4],EAX      ; 00468d9b | DAT_016e99d4
     IMUL EAX,dword ptr [EBP + 0x14],0x14 ; 00468da1
     FLD float ptr [EAX + 0x1626418]     ; 00468da5 | DAT_01626418
-    FMUL double ptr [0x0061ce8e]        ; 00468dab | g_UVScaleFactor
+    FMUL double ptr [0x0061ce8e]        ; 00468dab | g_UVScaleFactor_2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468db1
     FSTP float ptr [EAX + 0xf8]         ; 00468db4 | DAT_016e9a08
     IMUL EAX,dword ptr [EBP + 0x14],0x14 ; 00468dba
     FLD float ptr [EAX + 0x162641c]     ; 00468dbe | DAT_0162641c
-    FMUL double ptr [0x0061ce8e]        ; 00468dc4 | g_UVScaleFactor
+    FMUL double ptr [0x0061ce8e]        ; 00468dc4 | g_UVScaleFactor_2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468dca
     FSTP float ptr [EAX + 0x138]        ; 00468dcd | DAT_016e9a48
     IMUL EAX,dword ptr [EBP + 0x18],0x14 ; 00468dd3
     FLD float ptr [EAX + 0x1626418]     ; 00468dd7 | DAT_01626418
-    FMUL double ptr [0x0061ce8e]        ; 00468ddd | g_UVScaleFactor
+    FMUL double ptr [0x0061ce8e]        ; 00468ddd | g_UVScaleFactor_2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468de3
     FSTP float ptr [EAX + 0xfc]         ; 00468de6 | DAT_016e9a0c
     IMUL EAX,dword ptr [EBP + 0x18],0x14 ; 00468dec
     FLD float ptr [EAX + 0x162641c]     ; 00468df0 | DAT_0162641c
-    FMUL double ptr [0x0061ce8e]        ; 00468df6 | g_UVScaleFactor
+    FMUL double ptr [0x0061ce8e]        ; 00468df6 | g_UVScaleFactor_2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468dfc
     FSTP float ptr [EAX + 0x13c]        ; 00468dff | DAT_016e9a4c
     IMUL EAX,dword ptr [EBP + 0x1c],0x14 ; 00468e05
     FLD float ptr [EAX + 0x1626418]     ; 00468e09 | DAT_01626418
-    FMUL double ptr [0x0061ce8e]        ; 00468e0f | g_UVScaleFactor
+    FMUL double ptr [0x0061ce8e]        ; 00468e0f | g_UVScaleFactor_2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468e15
     FSTP float ptr [EAX + 0x100]        ; 00468e18 | DAT_016e9a10
     IMUL EAX,dword ptr [EBP + 0x1c],0x14 ; 00468e1e
     FLD float ptr [EAX + 0x162641c]     ; 00468e22 | DAT_0162641c
-    FMUL double ptr [0x0061ce8e]        ; 00468e28 | g_UVScaleFactor
+    FMUL double ptr [0x0061ce8e]        ; 00468e28 | g_UVScaleFactor_2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468e2e
     FSTP float ptr [EAX + 0x140]        ; 00468e31 | DAT_016e9a50
     IMUL EAX,dword ptr [EBP + 0x20],0x14 ; 00468e37
     FLD float ptr [EAX + 0x1626418]     ; 00468e3b | DAT_01626418
-    FMUL double ptr [0x0061ce8e]        ; 00468e41 | g_UVScaleFactor
+    FMUL double ptr [0x0061ce8e]        ; 00468e41 | g_UVScaleFactor_2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468e47
     FSTP float ptr [EAX + 0x104]        ; 00468e4a | DAT_016e9a14
     IMUL EAX,dword ptr [EBP + 0x20],0x14 ; 00468e50
     FLD float ptr [EAX + 0x162641c]     ; 00468e54 | DAT_0162641c
-    FMUL double ptr [0x0061ce8e]        ; 00468e5a | g_UVScaleFactor
+    FMUL double ptr [0x0061ce8e]        ; 00468e5a | g_UVScaleFactor_2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468e60
     FSTP float ptr [EAX + 0x144]        ; 00468e63 | DAT_016e9a54
     MOV dword ptr [EBP + -0x8],0x0      ; 00468e69

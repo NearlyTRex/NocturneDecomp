@@ -20,13 +20,13 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   char *pcVar7;
   int iVar8;
   char *pcVar9;
-  char acStack_9c [100];
-  CVector3f local_38;
-  CVector3f local_2c;
-  SVDBox *local_20;
-  SRoom *local_1c;
+  char local_a0 [100];
+  CVector3f local_3c;
+  CVector3f local_30;
+  SVDBox *local_24;
+  SRoom *local_20;
+  CMatrix3x3f *local_1c;
   CMatrix3x3f *local_18;
-  CMatrix3x3f *pCStack_14;
   
   this_ptr->set_file_version = 0x1c;
   file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
@@ -35,6 +35,8 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
     g_CurrentLineNumber = 0x6d6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::Unable to save output");
   }
+  pcVar9 = local_a0;
+  pcVar7 = local_a0;
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%f\n",(double)this_ptr->set_scale_factor);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"unused.act\n");
@@ -92,22 +94,22 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
   iVar8 = 0;
   if (0 < this_ptr->room_count) {
-    local_1c = this_ptr->rooms;
-    pCStack_14 = &this_ptr->rooms[0].rotation_matrix;
+    local_20 = this_ptr->rooms;
+    local_18 = &this_ptr->rooms[0].rotation_matrix;
     do {
-      pSVar2 = local_1c + iVar8;
+      pSVar2 = local_20 + iVar8;
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (file,"%g,%g,%g\n",(double)(pSVar2->position).x,(double)(pSVar2->position).y,
                  (double)(pSVar2->position).z);
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (file,"%g,%g,%g\n",(double)(pSVar2->extents).x,(double)(pSVar2->extents).y,
                  (double)(pSVar2->extents).z);
-      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(pCStack_14,&local_2c);
+      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_18,&local_30);
       crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",(double)local_2c.x,(double)local_2c.z,(double)local_2c.y);
+                (file,"%g,%g,%g\n",(double)local_30.x,(double)local_30.z,(double)local_30.y);
       crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
       iVar8 = iVar8 + 1;
-      pCStack_14 = (CMatrix3x3f *)((int)(pCStack_14 + 1) + 0x20);
+      local_18 = (CMatrix3x3f *)((int)(local_18 + 1) + 0x20);
     } while (iVar8 < this_ptr->room_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"Default ground type\n");
@@ -118,21 +120,21 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
   iVar8 = 0;
   if (0 < this_ptr->vdir_box_count) {
-    local_20 = this_ptr->vdir_boxes;
-    local_18 = &this_ptr->vdir_boxes[0].rotation_matrix;
+    local_24 = this_ptr->vdir_boxes;
+    local_1c = &this_ptr->vdir_boxes[0].rotation_matrix;
     do {
-      pSVar3 = local_20 + iVar8;
+      pSVar3 = local_24 + iVar8;
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (file,"%g,%g,%g\n",(double)(pSVar3->position).x,(double)(pSVar3->position).y,
                  (double)(pSVar3->position).z);
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (file,"%g,%g,%g\n",(double)(pSVar3->extents).x,(double)(pSVar3->extents).y,
                  (double)(pSVar3->extents).z);
-      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_18,&local_38);
+      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_1c,&local_3c);
       crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",(double)local_38.x,(double)local_38.z,(double)local_38.y);
+                (file,"%g,%g,%g\n",(double)local_3c.x,(double)local_3c.z,(double)local_3c.y);
       iVar8 = iVar8 + 1;
-      local_18 = (CMatrix3x3f *)((int)(local_18 + 1) + 0x20);
+      local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);
     } while (iVar8 < this_ptr->vdir_box_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"PVS list\n");
@@ -146,19 +148,17 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
     } while (iVar8 < this_ptr->camera_count);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x74d);
-  pcVar9 = acStack_9c;
-  pcVar7 = acStack_9c;
   pcVar5 = this_ptr->geometry_filename;
   do {
     cVar1 = *pcVar5;
     *pcVar9 = cVar1;
-    pcVar6 = acStack_9c;
+    pcVar6 = local_a0;
     if (cVar1 == '\0') break;
     cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
-    pcVar6 = acStack_9c;
+    pcVar6 = local_a0;
   } while (cVar1 != '\0');
   do {
     pcVar9 = pcVar6;
@@ -193,6 +193,6 @@ LAB_0057a87e:
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
   core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
-  core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,acStack_9c);
+  core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,local_a0);
   return;
 }

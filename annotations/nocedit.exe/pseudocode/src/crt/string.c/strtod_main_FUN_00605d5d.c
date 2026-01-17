@@ -19,7 +19,6 @@ double __cdecl crt_string_c_strtod_main_FUN_00605d5d(char *str,char **endptr)
   ulonglong local_34;
   byte uStack_2c;
   byte bStack_2b;
-  ushort uStack_2a;
   ulonglong local_28;
   ulonglong local_20;
   ulonglong local_18;
@@ -34,22 +33,16 @@ LAB_00605d83:
   }
   uVar6 = (uint)(CONCAT11 /* combine 2-byte values */(bStack_2b,uStack_2c) & 0x7fff);
   if (0x43fe < uVar6) {
-    uStack_2c = 0xa2;
-    bStack_2b = 0x5d;
-    uStack_2a = 0x60;
     crt_math_c_set_range_error_errno_FUN_006027ac();
-    uVar5 = inf._4_4_;
-    uVar1 = inf._0_4_;
+    uVar5 = INFINITY._4_4_;
+    uVar1 = INFINITY._0_4_;
     if ((bStack_2b & 0x80) != 0) {
-      return -(double)CONCAT44 /* combine 2-byte values */(inf._4_4_,inf._0_4_);
+      return -(double)CONCAT44 /* combine 2-byte values */(INFINITY._4_4_,INFINITY._0_4_);
     }
     goto LAB_00605d83;
   }
   if (uVar6 < 0x3bcd) {
     if ((int)uVar6 < -0x34) {
-      uStack_2c = 0xda;
-      bStack_2b = 0x5d;
-      uStack_2a = 0x60;
       crt_math_c_set_range_error_errno_FUN_006027ac();
       return 0.0;
     }
@@ -72,9 +65,6 @@ LAB_00605d83:
     return local_28;
   }
 LAB_00605e33:
-  uStack_2c = 0x38;
-  bStack_2b = 0x5e;
-  uStack_2a = 0x60;
   crt_math_c_set_range_error_errno_FUN_006027ac();
   return local_28;
 }

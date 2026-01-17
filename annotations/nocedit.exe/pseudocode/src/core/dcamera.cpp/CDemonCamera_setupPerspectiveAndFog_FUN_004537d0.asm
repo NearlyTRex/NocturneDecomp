@@ -17,7 +17,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c90b
 ;
 ; Referenced Globals:
-;   float g_CameraFixedPointScale = 256
+;   float g_CameraFixedPointScale_0065c63c = 256
 ;   int g_FogColorIndexR = 0x40
 ;   int g_FogColorIndexG = 0x40
 ;   int g_FogColorIndexB = 0x40
@@ -61,13 +61,13 @@ section .text
     PUSH EBX                            ; 00453802
     LEA EBX,[ESP + 0xc]                 ; 00453803
     FLD float ptr [EAX]                 ; 00453807
-    FMUL float ptr [0x0065c63c]         ; 00453809 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00453809 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 0045380f
     FLD float ptr [EAX + 0x4]           ; 00453811
-    FMUL float ptr [0x0065c63c]         ; 00453814 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00453814 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x4]         ; 0045381a
     FLD float ptr [EAX + 0x8]           ; 0045381d
-    FMUL float ptr [0x0065c63c]         ; 00453820 | g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00453820 | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX + 0x8]         ; 00453826
     MOV EBX,dword ptr [ESP + 0x28]      ; 00453829
     PUSH EBX                            ; 0045382d

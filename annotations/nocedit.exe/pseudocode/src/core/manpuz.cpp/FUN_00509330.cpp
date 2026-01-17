@@ -21,54 +21,53 @@ float core_manpuz_cpp_FUN_00509330(void)
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   CVector3f *in_stack_00000010;
-  CBoundingBox3D local_c8;
-  CVector3f local_b0;
-  CVector3f CStack_a4;
-  CVector3f local_98;
-  CVector3f CStack_8c;
-  CVector3f CStack_80;
-  CVector3f CStack_74;
-  CVector3f CStack_68;
-  CVector3f CStack_5c;
-  CVector3f CStack_50;
-  CVector3f local_44;
-  CVector3f CStack_38;
-  int local_2c;
-  int *local_28;
+  CBoundingBox3D local_cc;
+  CVector3f local_b4;
+  CVector3f local_a8;
+  CVector3f local_9c;
+  CVector3f local_90;
+  CVector3f local_84;
+  CVector3f local_78;
+  CVector3f local_6c;
+  CVector3f local_60;
+  CVector3f local_54;
+  CVector3f local_48;
+  CVector3f local_3c;
+  int local_30;
+  int *local_2c;
+  int local_28;
   int local_24;
   int local_20;
-  int local_1c;
+  float local_1c;
   float local_18;
-  float fStack_14;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
-  local_c8.min.x = (pCVar1->bounds_min).x;
-  local_c8.min.y = (pCVar1->bounds_min).y;
-  local_c8.min.z = (pCVar1->bounds_min).z;
-  local_c8.max.x = (pCVar1->bounds_max).x;
-  local_c8.max.y = (pCVar1->bounds_max).y;
-  local_c8.max.z = (pCVar1->bounds_max).z;
-  local_24 = in_stack_00000004 + 0xaa0;
-  local_18 = 1.01;
-  local_28 = (int *)(in_stack_00000004 + 0x5f0);
-  local_1c = 0;
+  local_cc.min.x = (pCVar1->bounds_min).x;
+  local_cc.min.y = (pCVar1->bounds_min).y;
+  local_cc.min.z = (pCVar1->bounds_min).z;
+  local_cc.max.x = (pCVar1->bounds_max).x;
+  local_cc.max.y = (pCVar1->bounds_max).y;
+  local_cc.max.z = (pCVar1->bounds_max).z;
+  local_28 = in_stack_00000004 + 0xaa0;
+  local_1c = 1.01;
+  local_2c = (int *)(in_stack_00000004 + 0x5f0);
+  local_20 = 0;
   do {
-    if (*local_28 != 0) {
-      local_b0.x = in_stack_00000008->x - (float)local_28[3];
-      local_b0.y = in_stack_00000008->y - (float)local_28[4];
-      local_b0.z = in_stack_00000008->z - (float)local_28[5];
-      pCVar4 = (CMatrix3x3f *)(local_28 + 9);
-      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(pCVar4,&CStack_68,&local_b0)
-      ;
+    if (*local_2c != 0) {
+      local_b4.x = in_stack_00000008->x - (float)local_2c[3];
+      local_b4.y = in_stack_00000008->y - (float)local_2c[4];
+      local_b4.z = in_stack_00000008->z - (float)local_2c[5];
+      pCVar4 = (CMatrix3x3f *)(local_2c + 9);
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(pCVar4,&local_6c,&local_b4);
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                (pCVar4,&CStack_38,in_stack_0000000c);
-      fStack_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                            (&local_c8,&CStack_68,&CStack_38,&CStack_a4);
-      if ((0.0 <= fStack_14) && (fStack_14 < local_18)) {
-        local_18 = fStack_14;
+                (pCVar4,&local_3c,in_stack_0000000c);
+      local_18 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+                           (&local_cc,&local_6c,&local_3c,&local_a8);
+      if ((0.0 <= local_18) && (local_18 < local_1c)) {
+        local_1c = local_18;
         pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                           (pCVar4,&CStack_8c,&CStack_a4);
+                           (pCVar4,&local_90,&local_a8);
         if (in_stack_00000010 != pCVar2) {
           in_stack_00000010->x = pCVar2->x;
           in_stack_00000010->y = pCVar2->y;
@@ -76,58 +75,57 @@ float core_manpuz_cpp_FUN_00509330(void)
         }
       }
     }
-    local_2c = local_24 + local_1c;
+    local_30 = local_28 + local_20;
     iVar3 = 0;
     do {
-      triangle = (CDemonTriangle *)(local_2c + 0x3c + iVar3);
-      fStack_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                            (triangle,in_stack_00000008,in_stack_0000000c);
-      if ((0.0 <= fStack_14) && (fStack_14 < local_18)) {
-        local_44.x = -(triangle->normal).x;
-        local_44.y = -(triangle->normal).y;
-        local_44.z = -(triangle->normal).z;
-        local_18 = fStack_14;
-        if (in_stack_00000010 != &local_44) {
-          in_stack_00000010->x = local_44.x;
-          in_stack_00000010->y = local_44.y;
-          in_stack_00000010->z = local_44.z;
+      triangle = (CDemonTriangle *)(local_30 + 0x3c + iVar3);
+      local_18 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                           (triangle,in_stack_00000008,in_stack_0000000c);
+      if ((0.0 <= local_18) && (local_18 < local_1c)) {
+        local_48.x = -(triangle->normal).x;
+        local_48.y = -(triangle->normal).y;
+        local_48.z = -(triangle->normal).z;
+        local_1c = local_18;
+        if (in_stack_00000010 != &local_48) {
+          in_stack_00000010->x = local_48.x;
+          in_stack_00000010->y = local_48.y;
+          in_stack_00000010->z = local_48.z;
         }
       }
       iVar3 = iVar3 + 0x38;
     } while (iVar3 != 0x70);
-    local_1c = local_1c + 0xb8;
-    local_28 = local_28 + 0x19;
-  } while (local_1c != 0x8a0);
+    local_20 = local_20 + 0xb8;
+    local_2c = local_2c + 0x19;
+  } while (local_20 != 0x8a0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x450));
-  if (&local_c8 != (CBoundingBox3D *)&pCVar1->bounds_min) {
-    local_c8.min.x = (pCVar1->bounds_min).x;
-    local_c8.min.y = (pCVar1->bounds_min).y;
-    local_c8.min.z = (pCVar1->bounds_min).z;
+  if (&local_cc != (CBoundingBox3D *)&pCVar1->bounds_min) {
+    local_cc.min.x = (pCVar1->bounds_min).x;
+    local_cc.min.y = (pCVar1->bounds_min).y;
+    local_cc.min.z = (pCVar1->bounds_min).z;
   }
-  if (&local_c8.max != &pCVar1->bounds_max) {
-    local_c8.max.x = (pCVar1->bounds_max).x;
-    local_c8.max.y = (pCVar1->bounds_max).y;
-    local_c8.max.z = (pCVar1->bounds_max).z;
+  if (&local_cc.max != &pCVar1->bounds_max) {
+    local_cc.max.x = (pCVar1->bounds_max).x;
+    local_cc.max.y = (pCVar1->bounds_max).y;
+    local_cc.max.z = (pCVar1->bounds_max).z;
   }
   iVar3 = in_stack_00000004 + 0x1340;
-  local_20 = in_stack_00000004 + 0x1400;
+  local_24 = in_stack_00000004 + 0x1400;
   do {
     if (0.0 < *(float *)(iVar3 + 0x18)) {
-      local_98.x = in_stack_00000008->x - *(float *)(iVar3 + 0x1c);
-      local_98.y = in_stack_00000008->y - *(float *)(iVar3 + 0x20);
-      local_98.z = in_stack_00000008->z - *(float *)(iVar3 + 0x24);
+      local_9c.x = in_stack_00000008->x - *(float *)(iVar3 + 0x1c);
+      local_9c.y = in_stack_00000008->y - *(float *)(iVar3 + 0x20);
+      local_9c.z = in_stack_00000008->z - *(float *)(iVar3 + 0x24);
       pCVar4 = (CMatrix3x3f *)(iVar3 + 0x34);
-      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(pCVar4,&CStack_5c,&local_98)
-      ;
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(pCVar4,&local_60,&local_9c);
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                (pCVar4,&CStack_74,in_stack_0000000c);
-      fStack_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                            (&local_c8,&CStack_5c,&CStack_74,&CStack_50);
-      if ((0.0 <= fStack_14) && (fStack_14 < local_18)) {
-        local_18 = fStack_14;
+                (pCVar4,&local_78,in_stack_0000000c);
+      local_18 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+                           (&local_cc,&local_60,&local_78,&local_54);
+      if ((0.0 <= local_18) && (local_18 < local_1c)) {
+        local_1c = local_18;
         pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                           (pCVar4,&CStack_80,&CStack_50);
+                           (pCVar4,&local_84,&local_54);
         if (in_stack_00000010 != pCVar2) {
           in_stack_00000010->x = pCVar2->x;
           in_stack_00000010->y = pCVar2->y;
@@ -136,6 +134,6 @@ float core_manpuz_cpp_FUN_00509330(void)
       }
     }
     iVar3 = iVar3 + 0x60;
-  } while (iVar3 != local_20);
-  return local_18;
+  } while (iVar3 != local_24);
+  return local_1c;
 }

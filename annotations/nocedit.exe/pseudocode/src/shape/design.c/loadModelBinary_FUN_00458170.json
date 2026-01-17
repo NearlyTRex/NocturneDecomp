@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 735,
-    "complexity_score": 305,
+    "complexity_score": 695,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 38,
     "pseudocode_lines": 255,
-    "suspect_count": 4,
+    "suspect_count": 42,
     "suspect_types": [
+      "call_esp_anchor",
       "format_string_mismatch",
-      "stack_param"
+      "stack_param",
+      "variadic_anchor"
     ],
     "total_lines": 990
   },
@@ -350,122 +352,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00458198": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004581c4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004581d7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458215": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458228": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045825b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458280": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004582b3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458320": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045834b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458370": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045838c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004583d0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458442": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045849a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004584d5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458507": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045854b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004585df": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045860e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458643": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045868b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004586ae": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004586c1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458846": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458859": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458875": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045888b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004588b6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004588c8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004588fa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458933": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458946": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "0045897f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "00458992": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004589cb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004589de": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ],
-    "004589f0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe74,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.893169877408056,
     "instruction_count": 571,
@@ -504,7 +390,303 @@
     },
     "pcode_op_count": 2794
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 428,
+    "local_size": 424,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1a4",
+        "offset": -420,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_19c",
+        "offset": -412,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_198",
+        "offset": -408,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_164",
+        "offset": -356,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_87",
+        "offset": -135,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffffe64",
+      "text": "SMRGLModelBounds *in_stack_fffffe64;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 227,
+      "match": "in_stack_fffffe64",
+      "text": "engine_model_c_getMRGLBounds_FUN_00528140(local_1c,in_stack_fffffe64);",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 12,
       "call_address": "004581bf",
@@ -600,6 +782,28 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004589c6 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"loadBinary: Unable to read binary file: (%s)\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "loadBinary: Unable to read binary file: (%s)",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 55,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_160,\"loadBinary: Unable to read binary file: (%s)\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"loadBinary: type %d is not known\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "loadBinary: type %d is not known",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 176,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_160,\"loadBinary: type %d is not known\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,
@@ -1016,326 +1220,6 @@
       "target_address": "0x401fd0",
       "text": "Direct CALL at 004589eb, ADD ESP at 004589f0 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 428,
-    "local_size": 424,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_1a4",
-        "offset": -420,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_19c",
-        "offset": -412,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_198",
-        "offset": -408,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_164",
-        "offset": -356,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_160",
-        "offset": -352,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_110",
-        "offset": -272,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10c",
-        "offset": -268,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_108",
-        "offset": -264,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_104",
-        "offset": -260,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_100",
-        "offset": -256,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_fc",
-        "offset": -252,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_dc",
-        "offset": -220,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a8",
-        "offset": -168,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a4",
-        "offset": -164,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_90",
-        "offset": -144,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_87",
-        "offset": -135,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "filename",
-        "offset": 4,
-        "size": 4,
-        "type": "char *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffffe64",
-      "text": "SMRGLModelBounds *in_stack_fffffe64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 227,
-      "match": "in_stack_fffffe64",
-      "text": "engine_model_c_getMRGLBounds_FUN_00528140(local_1c,in_stack_fffffe64);",
-      "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"loadBinary: Unable to read binary file: (%s)\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "loadBinary: Unable to read binary file: (%s)",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 55,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_160,\"loadBinary: Unable to read binary file: (%s)\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"loadBinary: type %d is not known\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "loadBinary: type %d is not known",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 176,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_160,\"loadBinary: type %d is not known\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

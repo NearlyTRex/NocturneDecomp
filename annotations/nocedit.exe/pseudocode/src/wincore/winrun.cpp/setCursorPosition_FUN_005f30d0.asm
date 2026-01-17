@@ -14,7 +14,7 @@
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 at 004a61e3
 ;
 ; Referenced Globals:
-;   SetCursorPos* SetCursorPos = 00211bb8
+;   SetCursorPos* g_SetCursorPosFunc = 00211bb8
 ;   int g_MouseX
 ;   int g_MouseY
 ;
@@ -30,7 +30,7 @@ section .text
     PUSH EDX                            ; 005f30d4
     MOV ECX,dword ptr [ESP + 0x8]       ; 005f30d5
     PUSH ECX                            ; 005f30d9
-    CALL dword ptr CS:[0x6114e0]        ; 005f30da | SetCursorPos
+    CALL dword ptr CS:[0x6114e0]        ; 005f30da | g_SetCursorPosFunc
     MOV EAX,dword ptr [ESP + 0x4]       ; 005f30e1
     MOV [0x02cf6a8c],EAX                ; 005f30e5 | g_MouseX
     MOV EAX,dword ptr [ESP + 0x8]       ; 005f30ea

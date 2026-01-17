@@ -30,34 +30,34 @@ void core_bodypart_cpp_FUN_0041a050(void)
   float10 fVar16;
   double dVar17;
   CBodyPart *in_stack_00000004;
-  CVector3f CStack_74;
-  CVector3f local_68;
+  CVector3f local_78;
+  CVector3f local_6c;
+  int local_60;
   int local_5c;
   int local_58;
   int local_54;
   int local_50;
   int local_4c;
-  int local_48;
-  CVector3f CStack_44;
-  CVector3f CStack_38;
-  char *local_24;
+  CVector3f local_48;
+  CVector3f local_3c;
+  char *local_28;
+  int local_24;
   int local_20;
-  int local_1c;
+  float local_1c;
   float local_18;
-  float fStack_14;
   
   if ((2 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) &&
      (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x28))) {
     core_bodypart_cpp_FUN_0041aa40();
-    fStack_14 = (float)-((local_50 + local_5c) / 2);
-    iVar12 = -((local_4c + local_58) / 2);
+    local_18 = (float)-((local_54 + local_60) / 2);
+    iVar12 = -((local_50 + local_5c) / 2);
     iVar9 = 0;
-    iVar13 = -((local_48 + local_54) / 2);
+    iVar13 = -((local_4c + local_58) / 2);
     if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) {
       iVar11 = 0;
       do {
         iVar2 = *(int *)(in_stack_00000004->field1_0x158 + 0x20);
-        *(int *)(iVar11 + iVar2) = *(int *)(iVar11 + iVar2) + (int)fStack_14;
+        *(int *)(iVar11 + iVar2) = *(int *)(iVar11 + iVar2) + (int)local_18;
         piVar7 = (int *)(iVar11 + 4 + iVar2);
         *piVar7 = *piVar7 + iVar12;
         piVar7 = (int *)(iVar11 + 8 + iVar2);
@@ -66,25 +66,25 @@ void core_bodypart_cpp_FUN_0041a050(void)
         iVar11 = iVar11 + 0xc;
       } while (iVar9 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c));
     }
-    local_50 = local_50 + (int)fStack_14;
-    local_4c = local_4c + iVar12;
-    local_48 = local_48 + iVar13;
-    local_5c = local_5c + (int)fStack_14;
-    local_54 = local_54 + iVar13;
-    local_58 = local_58 + iVar12;
-    local_68.x = (float)0.00390625;
-    *(float *)(in_stack_00000004->field1_0x158 + 4) = (float)local_50 * local_68.x;
-    *(float *)(in_stack_00000004->field1_0x158 + 8) = (float)local_4c * local_68.x;
-    *(float *)(in_stack_00000004->field1_0x158 + 0xc) = (float)local_48 * local_68.x;
-    *(float *)(in_stack_00000004->field1_0x158 + 0x10) = (float)local_5c * local_68.x;
-    local_68.y = (float)iVar12 * local_68.x;
-    *(float *)(in_stack_00000004->field1_0x158 + 0x14) = (float)local_58 * local_68.x;
-    local_68.z = (float)iVar13 * local_68.x;
-    *(float *)(in_stack_00000004->field1_0x158 + 0x18) = (float)local_54 * local_68.x;
-    local_68.x = (float)(int)fStack_14 * local_68.x;
-    local_18 = local_68.z;
+    local_54 = local_54 + (int)local_18;
+    local_50 = local_50 + iVar12;
+    local_4c = local_4c + iVar13;
+    local_60 = local_60 + (int)local_18;
+    local_58 = local_58 + iVar13;
+    local_5c = local_5c + iVar12;
+    local_6c.x = (float)0.00390625;
+    *(float *)(in_stack_00000004->field1_0x158 + 4) = (float)local_54 * local_6c.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 8) = (float)local_50 * local_6c.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0xc) = (float)local_4c * local_6c.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x10) = (float)local_60 * local_6c.x;
+    local_6c.y = (float)iVar12 * local_6c.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x14) = (float)local_5c * local_6c.x;
+    local_6c.z = (float)iVar13 * local_6c.x;
+    *(float *)(in_stack_00000004->field1_0x158 + 0x18) = (float)local_58 * local_6c.x;
+    local_6c.x = (float)(int)local_18 * local_6c.x;
+    local_1c = local_6c.z;
     pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                       (&in_stack_00000004->base_actor,&CStack_44,&local_68);
+                       (&in_stack_00000004->base_actor,&local_48,&local_6c);
     pCVar1 = &(in_stack_00000004->base_actor).location;
     (pCVar1->position).x = (pCVar1->position).x - pCVar5->x;
     (in_stack_00000004->base_actor).location.position.y =
@@ -95,25 +95,25 @@ void core_bodypart_cpp_FUN_0041a050(void)
     if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x134)) {
       pcVar6 = in_stack_00000004->field1_0x158 + 0x138;
       do {
-        *(float *)pcVar6 = *(float *)pcVar6 + local_68.x;
-        *(float *)(pcVar6 + 4) = *(float *)(pcVar6 + 4) + local_68.y;
+        *(float *)pcVar6 = *(float *)pcVar6 + local_6c.x;
+        *(float *)(pcVar6 + 4) = *(float *)(pcVar6 + 4) + local_6c.y;
         iVar9 = iVar9 + 1;
-        *(float *)(pcVar6 + 8) = *(float *)(pcVar6 + 8) + local_68.z;
+        *(float *)(pcVar6 + 8) = *(float *)(pcVar6 + 8) + local_6c.z;
         pcVar6 = pcVar6 + 0x194;
       } while (iVar9 < *(int *)(in_stack_00000004->field1_0x158 + 0x134));
     }
     iVar9 = 0;
     if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x5f4)) {
-      local_24 = in_stack_00000004->field1_0x158 + 0x5f8;
+      local_28 = in_stack_00000004->field1_0x158 + 0x5f8;
       pcVar6 = in_stack_00000004->field1_0x158 + 0x624;
       do {
-        pCVar5 = (CVector3f *)(local_24 + iVar9 * 0x2b0);
-        pCVar5->x = pCVar5->x + local_68.x;
-        pCVar5->y = pCVar5->y + local_68.y;
-        pCVar5->z = pCVar5->z + local_68.z;
+        pCVar5 = (CVector3f *)(local_28 + iVar9 * 0x2b0);
+        pCVar5->x = pCVar5->x + local_6c.x;
+        pCVar5->y = pCVar5->y + local_6c.y;
+        pCVar5->z = pCVar5->z + local_6c.z;
         iVar9 = iVar9 + 1;
         pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           (&in_stack_00000004->base_actor,&CStack_38,pCVar5);
+                           (&in_stack_00000004->base_actor,&local_3c,pCVar5);
         *(float *)pcVar6 = pCVar5->x;
         *(float *)(pcVar6 + 4) = pCVar5->y;
         *(float *)(pcVar6 + 8) = pCVar5->z;
@@ -123,11 +123,11 @@ void core_bodypart_cpp_FUN_0041a050(void)
     crt_memory_c_memset_FUN_005fde40
               (*(void **)(in_stack_00000004->field1_0x158 + 0x24),0,
                *(int *)(in_stack_00000004->field1_0x158 + 0x1c) * 0xc);
-    local_1c = 0;
+    local_20 = 0;
     if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x28)) {
-      local_20 = 0;
+      local_24 = 0;
       do {
-        output = (SSurfaceNormal *)(*(int *)(in_stack_00000004->field1_0x158 + 0x2c) + local_20);
+        output = (SSurfaceNormal *)(*(int *)(in_stack_00000004->field1_0x158 + 0x2c) + local_24);
         output->vertex_count = 3;
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0
                   (*(CVector3i **)(in_stack_00000004->field1_0x158 + 0x20),output);
@@ -144,9 +144,9 @@ void core_bodypart_cpp_FUN_0041a050(void)
             pSVar10 = (SSurfaceNormal *)&pSVar10->normal_y;
           } while (iVar9 < output->vertex_count);
         }
-        local_20 = local_20 + 0x3c;
-        local_1c = local_1c + 1;
-      } while (local_1c < *(int *)(in_stack_00000004->field1_0x158 + 0x28));
+        local_24 = local_24 + 0x3c;
+        local_20 = local_20 + 1;
+      } while (local_20 < *(int *)(in_stack_00000004->field1_0x158 + 0x28));
     }
     iVar9 = 0;
     if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) {
@@ -190,17 +190,17 @@ void core_bodypart_cpp_FUN_0041a050(void)
            *(uint *)(in_stack_00000004->field1_0x158 + 0x130);
     }
     pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       ((CMatrix3x3f *)(in_stack_00000004->field1_0x158 + 0xb8c),&CStack_74,
+                       ((CMatrix3x3f *)(in_stack_00000004->field1_0x158 + 0xb8c),&local_78,
                         (CVector3f *)(in_stack_00000004->field1_0x158 + 0x128));
     if ((CVector3f *)(in_stack_00000004->field1_0x158 + 0xbc0) != pCVar5) {
       ((CVector3f *)(in_stack_00000004->field1_0x158 + 0xbc0))->x = pCVar5->x;
       *(float *)(in_stack_00000004->field1_0x158 + 0xbc4) = pCVar5->y;
       *(float *)(in_stack_00000004->field1_0x158 + 0xbc8) = pCVar5->z;
     }
-    fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
-    *(float *)(in_stack_00000004->field1_0x158 + 0xbe4) = fStack_14;
-    fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
-    *(float *)(in_stack_00000004->field1_0x158 + 0xbec) = fStack_14;
+    local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+    *(float *)(in_stack_00000004->field1_0x158 + 0xbe4) = local_18;
+    local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+    *(float *)(in_stack_00000004->field1_0x158 + 0xbec) = local_18;
     fVar8 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
     *(float *)(in_stack_00000004->field1_0x158 + 0xbe8) = fVar8;
     return;

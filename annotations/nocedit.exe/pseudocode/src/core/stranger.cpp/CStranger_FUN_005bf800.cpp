@@ -17,7 +17,7 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
   float fVar3;
   int in_stack_00000004;
   float in_stack_00000008;
-  float local_30;
+  float local_34;
   
   *(uint *)(in_stack_00000004 + 0x1fc80) = 0;
   *(uint *)(in_stack_00000004 + 0x1fc7c) = *(uint *)(in_stack_00000004 + 0x1fc80);
@@ -64,14 +64,14 @@ void core_stranger_cpp_CStranger_FUN_005bf800(void)
     *(float *)(in_stack_00000004 + 0x1fc58) = (1.0 - *(float *)(in_stack_00000004 + 0x1fc54)) * 1.6;
   }
   if (*(float *)(in_stack_00000004 + 0x1fc58) <= 0.0) {
-    local_30 = ABS(*(float *)(in_stack_00000004 + 0x1fc50) * (float)0.31830988619288902);
+    local_34 = ABS(*(float *)(in_stack_00000004 + 0x1fc50) * (float)0.31830988619288902);
     if (iVar1 != *(int *)(in_stack_00000004 + 0x1fc84)) {
-      local_30 = 0.0;
+      local_34 = 0.0;
     }
-    if (1.0 < local_30) {
-      local_30 = 1.0;
+    if (1.0 < local_34) {
+      local_34 = 1.0;
     }
-    fVar3 = (local_30 - *(float *)(in_stack_00000004 + 0x1fc54)) +
+    fVar3 = (local_34 - *(float *)(in_stack_00000004 + 0x1fc54)) +
             *(float *)(in_stack_00000004 + 0x1fc54);
     *(float *)(in_stack_00000004 + 0x1fc54) = fVar3;
     if ((float)0.001 < fVar3) {

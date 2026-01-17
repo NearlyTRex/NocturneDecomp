@@ -46,12 +46,11 @@ uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930
       while( true ) {
         if ((g_SpecialDeviceReadFuncPtr == (SPECIAL_DEVICE_READ_FUNC *)0x0) ||
            (iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_10), iVar3 == 0)) {
-          BVar4 = (*PTR_ReadFile_00611604)
-                            (unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,
-                             (LPOVERLAPPED)0x0);
+          BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,
+                                    (LPOVERLAPPED)0x0);
           if (BVar4 == 0) {
             (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_10);
-            DVar5 = (*GetLastError)();
+            DVar5 = (*g_GetLastErrorFunc)();
             if (DVar5 == 0x6d) {
               return uVar2;
             }
@@ -90,12 +89,11 @@ uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930
       uVar2 = unaff_EDI;
       if ((g_SpecialDeviceReadFuncPtr == (SPECIAL_DEVICE_READ_FUNC *)0x0) ||
          (iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_5), uVar2 = unaff_EDI, iVar3 == 0)) {
-        BVar4 = (*PTR_ReadFile_00611604)
-                          (unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,(LPOVERLAPPED)0x0
-                          );
+        BVar4 = (*g_ReadFileFunc)(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,
+                                  (LPOVERLAPPED)0x0);
         if (BVar4 == 0) {
           (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(param_10);
-          DVar5 = (*GetLastError)();
+          DVar5 = (*g_GetLastErrorFunc)();
           if (DVar5 == 0x6d) {
             return uVar2;
           }

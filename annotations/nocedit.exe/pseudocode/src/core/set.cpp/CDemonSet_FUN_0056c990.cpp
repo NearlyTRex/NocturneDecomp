@@ -86,9 +86,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
     core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
     core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(local_14);
-    local_5c.x = (int)ROUND(local_38.m[1].x * 256f);
-    local_5c.y = (int)ROUND(local_38.m[1].y * 256f);
-    local_5c.z = (int)ROUND(local_38.m[1].z * 256f);
+    local_5c.x = (int)ROUND(local_38.m[1].x * 256.0f);
+    local_5c.y = (int)ROUND(local_38.m[1].y * 256.0f);
+    local_5c.z = (int)ROUND(local_38.m[1].z * 256.0f);
     core_set_cpp_CDemonSet_FUN_0056d380(this_ptr);
     iVar3 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                       (this_ptr,&local_5c,(CVector3i *)0x0);

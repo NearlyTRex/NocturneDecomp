@@ -20,8 +20,8 @@
 ;   crt_unknown.c_FUN_00600c80 at 00600cd4
 ;
 ; Referenced Globals:
-;   SetFilePointer* SetFilePointer = 002121b6
-;   WriteFile* PTR_WriteFile_00611678 = 00212300
+;   SetFilePointer* g_SetFilePointerFunc = 002121b6
+;   WriteFile* g_WriteFileFunc = 00212300
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14
@@ -116,7 +116,7 @@ section .text
     PUSH 0x0                            ; 00608576
     MOV EBX,dword ptr [EBP + -0x8]      ; 00608578
     PUSH EBX                            ; 0060857b
-    CALL dword ptr CS:[0x61162c]        ; 0060857c | SetFilePointer
+    CALL dword ptr CS:[0x61162c]        ; 0060857c | g_SetFilePointerFunc
     CMP EAX,-0x1                        ; 00608583
     JNZ 0x0060859c                      ; 00608586
         ;   XREF to: 0060859c (CONDITIONAL_JUMP)  ; LAB_0060859c
@@ -181,7 +181,7 @@ section .text
     PUSH ECX                            ; 0060860a
     MOV ESI,dword ptr [EBP + -0x8]      ; 0060860b
     PUSH ESI                            ; 0060860e
-    CALL dword ptr CS:[0x611678]        ; 0060860f | PTR_WriteFile_00611678
+    CALL dword ptr CS:[0x611678]        ; 0060860f | g_WriteFileFunc
     TEST EAX,EAX                        ; 00608616
     JNZ 0x00608630                      ; 00608618
         ;   XREF to: 00608630 (CONDITIONAL_JUMP)  ; LAB_00608630
@@ -288,7 +288,7 @@ section .text
     PUSH ESI                            ; 006086fc
     MOV ECX,dword ptr [EBP + -0x8]      ; 006086fd
     PUSH ECX                            ; 00608700
-    CALL dword ptr CS:[0x611678]        ; 00608701 | PTR_WriteFile_00611678
+    CALL dword ptr CS:[0x611678]        ; 00608701 | g_WriteFileFunc
     TEST EAX,EAX                        ; 00608708
     JNZ 0x00608722                      ; 0060870a
         ;   XREF to: 00608722 (CONDITIONAL_JUMP)  ; LAB_00608722
@@ -368,7 +368,7 @@ section .text
     PUSH ESI                            ; 006087a8
     MOV EDX,dword ptr [EBP + -0x8]      ; 006087a9
     PUSH EDX                            ; 006087ac
-    CALL dword ptr CS:[0x611678]        ; 006087ad | PTR_WriteFile_00611678
+    CALL dword ptr CS:[0x611678]        ; 006087ad | g_WriteFileFunc
     TEST EAX,EAX                        ; 006087b4
     JNZ 0x006087ce                      ; 006087b6
         ;   XREF to: 006087ce (CONDITIONAL_JUMP)  ; LAB_006087ce
@@ -444,7 +444,7 @@ section .text
     PUSH ESI                            ; 0060884c
     MOV EDX,dword ptr [EBP + -0x8]      ; 0060884d
     PUSH EDX                            ; 00608850
-    CALL dword ptr CS:[0x611678]        ; 00608851 | PTR_WriteFile_00611678
+    CALL dword ptr CS:[0x611678]        ; 00608851 | g_WriteFileFunc
     TEST EAX,EAX                        ; 00608858
     JNZ 0x00608872                      ; 0060885a
         ;   XREF to: 00608872 (CONDITIONAL_JUMP)  ; LAB_00608872

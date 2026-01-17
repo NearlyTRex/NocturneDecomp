@@ -20,8 +20,8 @@
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074 at 00609091
 ;
 ; Referenced Globals:
-;   CloseHandle* CloseHandle = 00211c38
-;   CreateFileA* PTR_CreateFileA_00611510 = 00211c6a
+;   CloseHandle* g_CloseHandleFunc = 00211c38
+;   CreateFileA* g_CreateFileAFunc = 00211c6a
 ;   TerminatedCString s_con_006590a0
 ;   undefined4 DAT_00684ed0
 ;   REGISTER_HANDLE_FUNC* PTR_crt_sync.c_RegisterHandle_FUN_00602438_00684ef0 = 00602438
@@ -185,7 +185,7 @@ section .text
     PUSH EAX                            ; 006091f2
     MOV EDX,dword ptr [ESP + 0x44]      ; 006091f3
     PUSH EDX                            ; 006091f7
-    CALL dword ptr CS:[0x611510]        ; 006091f8 | PTR_CreateFileA_00611510
+    CALL dword ptr CS:[0x611510]        ; 006091f8 | g_CreateFileAFunc
     MOV EDI,EAX                         ; 006091ff
     CMP EAX,-0x1                        ; 00609201
     JNZ 0x0060923d                      ; 00609204
@@ -203,7 +203,7 @@ section .text
     PUSH ECX                            ; 0060921c
     MOV EDI,dword ptr [ESP + 0x44]      ; 0060921d
     PUSH EDI                            ; 00609221
-    CALL dword ptr CS:[0x611510]        ; 00609222 | PTR_CreateFileA_00611510
+    CALL dword ptr CS:[0x611510]        ; 00609222 | g_CreateFileAFunc
     MOV EDI,EAX                         ; 00609229
     CMP EDI,-0x1                        ; 0060922b
         ;   Label: LAB_0060922b
@@ -228,7 +228,7 @@ section .text
     JC 0x00609274                       ; 00609253
         ;   XREF to: 00609274 (CONDITIONAL_JUMP)  ; LAB_00609274
     PUSH EDI                            ; 00609255
-    CALL dword ptr CS:[0x611504]        ; 00609256 | CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 00609256 | g_CloseHandleFunc
     PUSH 0x5                            ; 0060925d
     CALL crt_errno.c_setErrno_FUN_00602790 ; 0060925f
         ;   XREF to: 00602790 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00602790(int error_code)

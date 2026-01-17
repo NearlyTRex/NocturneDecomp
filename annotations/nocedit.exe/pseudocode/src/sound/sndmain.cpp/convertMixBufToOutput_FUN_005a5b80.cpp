@@ -37,7 +37,7 @@ LAB_005a5ccd:
           *(byte *)local_30 = 0;
         }
         else if (fVar1 < 1.0) {
-          local_28 = (byte)(int)ROUND(fVar1 * 127f + 128f);
+          local_28 = (byte)(int)ROUND(fVar1 * 127.0f + 128.0f);
           *(byte *)local_30 = local_28;
         }
         else {
@@ -59,7 +59,7 @@ LAB_005a5ccd:
           *local_30 = 0x8001;
         }
         else if (fVar1 < 1.0) {
-          local_20 = (ushort)(int)ROUND(fVar1 * 32766f);
+          local_20 = (ushort)(int)ROUND(fVar1 * 32766.0f);
           *local_30 = local_20;
         }
         else {

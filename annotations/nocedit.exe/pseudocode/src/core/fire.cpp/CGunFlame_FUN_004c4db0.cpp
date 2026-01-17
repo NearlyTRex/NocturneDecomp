@@ -27,7 +27,7 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4db0(CGunFlame *this_ptr)
     *(uint *)(this_ptr->field0_0x0 + 0xc) = in_stack_00000008[2];
   }
   local_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.0);
-  *(float *)this_ptr->field0_0x0 = 2f * local_c;
+  *(float *)this_ptr->field0_0x0 = 2.0f * local_c;
   local_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,19.0);
   *(float *)(this_ptr->field0_0x0 + 0x1c) = local_c;
   local_20.x = *in_stack_0000000c;

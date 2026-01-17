@@ -12,6 +12,6 @@ void __cdecl wincore_winrun_cpp_releaseMutex_FUN_005f4050(HANDLE mutex_handle)
   if (mutex_handle == (HANDLE)0x0) {
     return;
   }
-  (*ReleaseMutex)(mutex_handle);
+  (*g_ReleaseMutexFunc)(mutex_handle);
   return;
 }

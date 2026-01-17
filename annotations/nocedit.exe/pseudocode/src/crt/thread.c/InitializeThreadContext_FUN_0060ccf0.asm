@@ -10,7 +10,7 @@
 ;   crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c at 0060a26d
 ;
 ; Referenced Globals:
-;   GetCurrentThreadId* PTR_GetCurrentThreadId_00611584 = 00211e84
+;   GetCurrentThreadId* g_GetCurrentThreadIdFunc = 00211e84
 ;
 ; Called Functions:
 ;   crt_memory.c_GetMemoryBounds_FUN_0060a6a0
@@ -32,7 +32,7 @@ section .text
     CALL crt_memory.c_GetMemoryBounds_FUN_0060a6a0 ; 0060cd03
         ;   XREF to: 0060a6a0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_GetMemoryBounds_FUN_0060a6a0(ThreadData * pStackBound, uint * pHeapBound)
     ADD ESP,0x8                         ; 0060cd08
-    CALL dword ptr CS:[0x611584]        ; 0060cd0b | PTR_GetCurrentThreadId_00611584
+    CALL dword ptr CS:[0x611584]        ; 0060cd0b | g_GetCurrentThreadIdFunc
     MOV dword ptr [EBX + 0xda],EAX      ; 0060cd12
     POP EBX                             ; 0060cd18
         ;   Label: LAB_0060cd18

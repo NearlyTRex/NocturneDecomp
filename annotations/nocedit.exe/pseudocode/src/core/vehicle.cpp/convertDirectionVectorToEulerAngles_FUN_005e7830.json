@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 161,
+    "complexity_score": 176,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 31,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "concat_artifact",
-      "extra_output"
+      "extra_output",
+      "stack_align_anchor"
     ],
     "total_lines": 97
   },
@@ -480,11 +481,6 @@
     }
   ],
   "globals": [],
-  "pcode_overrides": {
-    "005e7838": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.267857142857143,
     "instruction_count": 56,
@@ -522,18 +518,6 @@
     },
     "pcode_op_count": 295
   },
-  "resolved_suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
-      "fix_address": "005e7838",
-      "frame_offset": 8,
-      "match": "AND ESP",
-      "sub_esp_offset": 8,
-      "text": "Stack alignment at 005e7838 (SUB ESP, 0x8 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 28,
@@ -607,7 +591,7 @@
       "description": "Decompiler double/longlong composition artifact",
       "line": 22,
       "match": "CONCAT44",
-      "text": "out_euler_angles->x = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_10,0x54411744);",
+      "text": "out_euler_angles->x = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_14,0x54411744);",
       "type": "concat_artifact"
     },
     {
@@ -665,6 +649,16 @@
       "match": "extraout_ECX_00",
       "text": "return extraout_ECX_00;",
       "type": "extra_output"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
+      "fix_address": "005e7838",
+      "frame_offset": 8,
+      "match": "AND ESP",
+      "sub_esp_offset": 8,
+      "text": "Stack alignment at 005e7838 (SUB ESP, 0x8 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

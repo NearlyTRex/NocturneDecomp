@@ -29,7 +29,6 @@ void core_cow_cpp_FUN_00444310(void)
   int extraout_EAX_01;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  SDamageInfo local_c0;
   CVector3f local_84;
   CVector3f local_78;
   float local_6c;
@@ -105,7 +104,7 @@ void core_cow_cpp_FUN_00444310(void)
     case 1:
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)in_stack_00000004);
-      uVar11 = DAT_0065c098;
+      uVar11 = 0x40900000;
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
         if (extraout_EAX_01 == 0) {
@@ -114,7 +113,7 @@ void core_cow_cpp_FUN_00444310(void)
         }
       }
       else {
-        local_18 = DAT_0065c098;
+        local_18 = 0x40900000;
         (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
         (in_stack_00000004->base_character).model.accumulated_root_motion.y =
              (in_stack_00000004->base_character).model.accumulated_root_motion.z;
@@ -128,7 +127,7 @@ void core_cow_cpp_FUN_00444310(void)
                           (&in_stack_00000004->base_character);
         if (iVar6 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
-                    (g_CConsolePtr,"%s gave up chase - I'm confused\n",in_stack_00000004);
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr->motion_controller,0,1);
         }
@@ -143,11 +142,8 @@ void core_cow_cpp_FUN_00444310(void)
       }
       break;
     case 2:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_c0);
-      local_c0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      local_c0.attacker = (CDemonActor *)in_stack_00000004;
-      local_c0.wielder = (CDemonActor *)in_stack_00000004;
-      local_14 = local_c0.damage_amount;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff40);
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_3c,&g_ZeroVector,
                            (in_stack_00000004->base_character).model.bone_transform.

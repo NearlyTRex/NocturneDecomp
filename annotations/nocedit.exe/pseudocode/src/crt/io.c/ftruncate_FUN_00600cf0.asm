@@ -14,8 +14,8 @@
 ;   engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0 at 004b2f78
 ;
 ; Referenced Globals:
-;   SetEndOfFile* SetEndOfFile = 00212150
-;   SetFilePointer* SetFilePointer = 002121b6
+;   SetEndOfFile* g_SetEndOfFileFunc = 00212150
+;   SetFilePointer* g_SetFilePointerFunc = 002121b6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   WORD g_WindowsPlatformVersion = 0x0
@@ -86,7 +86,7 @@ section .text
     PUSH EBP                            ; 00600d65
     MOV ECX,dword ptr [ESP + 0xc]       ; 00600d66
     PUSH ECX                            ; 00600d6a
-    CALL dword ptr CS:[0x61162c]        ; 00600d6b | SetFilePointer
+    CALL dword ptr CS:[0x61162c]        ; 00600d6b | g_SetFilePointerFunc
     CMP EAX,-0x1                        ; 00600d72
     JNZ 0x00600d8e                      ; 00600d75
         ;   XREF to: 00600d8e (CONDITIONAL_JUMP)  ; LAB_00600d8e
@@ -104,7 +104,7 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 00600d8e
         ;   Label: LAB_00600d8e
     PUSH EAX                            ; 00600d91
-    CALL dword ptr CS:[0x611618]        ; 00600d92 | SetEndOfFile
+    CALL dword ptr CS:[0x611618]        ; 00600d92 | g_SetEndOfFileFunc
     TEST EAX,EAX                        ; 00600d99
     JNZ 0x00600db4                      ; 00600d9b
         ;   XREF to: 00600db4 (CONDITIONAL_JUMP)  ; LAB_00600db4

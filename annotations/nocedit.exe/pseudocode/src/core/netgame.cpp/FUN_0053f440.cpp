@@ -10,14 +10,14 @@ float core_netgame_cpp_FUN_0053f440(void)
 
 {
   int in_stack_00000004;
-  uint local_c;
+  uint local_10;
   
-  local_c = (float)(int)(g_CurrentGameTime - in_stack_00000004) * (float)1.52587890625e-05;
-  if (local_c < 0.0) {
-    local_c = 0.0;
+  local_10 = (float)(int)(g_CurrentGameTime - in_stack_00000004) * (float)1.52587890625e-05;
+  if (local_10 < 0.0) {
+    local_10 = 0.0;
   }
-  if (local_c <= (float)30) {
-    return local_c;
+  if (local_10 <= (float)30) {
+    return local_10;
   }
   return 30.0;
 }

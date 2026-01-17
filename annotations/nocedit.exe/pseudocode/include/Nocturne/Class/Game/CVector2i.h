@@ -1,9 +1,0 @@
-#pragma once
-
-// Structure: CVector2i
-// Ghidra size: 0x8 (8 bytes)
-typedef struct CVector2i {
-    int x; // 0x0
-    int y; // 0x4
-} CVector2i;
-

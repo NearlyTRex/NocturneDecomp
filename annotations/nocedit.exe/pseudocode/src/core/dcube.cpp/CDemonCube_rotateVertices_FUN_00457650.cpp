@@ -45,9 +45,9 @@ core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint 
   output = g_CDemonRendererPtr->vertex_buffer_ptr;
   if (0 < this_ptr->vertex_count) {
     do {
-      local_48.x = (int)ROUND(pCVar4->x * 256f);
-      local_48.y = (int)ROUND(pCVar4->y * 256f);
-      local_48.z = (int)ROUND(pCVar4->z * 256f);
+      local_48.x = (int)ROUND(pCVar4->x * 256.0f);
+      local_48.y = (int)ROUND(pCVar4->y * 256.0f);
+      local_48.z = (int)ROUND(pCVar4->z * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&output->projected_vertex,&local_48);
       if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
         local_20 = local_20 + 1;
@@ -86,9 +86,9 @@ core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint 
         local_38 = *(float *)((int)pCVar2->vertices + local_18 + 0x10);
         local_34 = *(float *)((int)pCVar2->vertices + local_18 + 0x14);
       }
-      local_3c = local_3c * 127f;
-      local_38 = local_38 * 127f;
-      local_34 = 127f * local_34;
+      local_3c = local_3c * 127.0f;
+      local_38 = local_38 * 127.0f;
+      local_34 = 127.0f * local_34;
       local_28 = (uint)ROUND(local_34);
       local_2c = (uint)ROUND(local_38);
       local_30 = (uint)ROUND(local_3c);

@@ -13,11 +13,11 @@ int __watcallStack crt_stdio_c_remove_FUN_00606600(char *filename)
   DWORD windows_error;
   int iVar2;
   
-  BVar1 = (*PTR_DeleteFileA_00611524)(filename);
+  BVar1 = (*g_DeleteFileAFunc)(filename);
   if (BVar1 != 0) {
     return 0;
   }
-  windows_error = (*GetLastError)();
+  windows_error = (*g_GetLastErrorFunc)();
   iVar2 = crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(windows_error);
   return iVar2;
 }

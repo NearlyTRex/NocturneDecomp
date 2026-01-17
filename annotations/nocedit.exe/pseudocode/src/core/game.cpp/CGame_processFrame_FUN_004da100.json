@@ -1,21 +1,25 @@
 {
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 738,
+    "complexity_score": 1573,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
-    "pseudocode_lines": 388,
-    "suspect_count": 32,
+    "pseudocode_lines": 373,
+    "suspect_count": 115,
     "suspect_types": [
+      "call_esp_anchor",
+      "callind_anchor",
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
+      "stack_ref",
       "sub_artifact",
       "unknown_field",
+      "variadic_anchor",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1524
+    "total_lines": 1509
   },
   "cross_references": [
     {
@@ -769,248 +773,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004da16e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da189": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da19b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da1a9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da1c7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da216": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da230": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da29e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da2c5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da2f2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da315": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da364": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da379": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da394": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da3a7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da3c7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da416": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da44c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da46f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da493": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da4a0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da4c6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da4d9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da4ee": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da501": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da515": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da563": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da572": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da58d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da5cc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da648": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da6cd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da6e0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da71c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da73b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da772": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da787": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da7ad": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da81a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da82f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da843": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da858": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da86c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da886": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da8a5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da8b6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da8c4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da8d2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da8e0": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da8eb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da8f6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da90b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da91e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da946": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da956": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da96f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da978": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da99c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004da9d7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004daa01": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004daa16": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004daa32": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004daa44": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004daa9f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004daab7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004daad5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004daaeb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dab0b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dab15": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dab47": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dab56": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dab68": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dabb3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dabce": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dabe7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dad37": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dad44": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dad61": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dad94": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ],
-    "004dadae": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.971122994652406,
     "instruction_count": 935,
@@ -1056,7 +818,492 @@
     },
     "pcode_op_count": 4648
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 1588,
+    "local_size": 1584,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_62c",
+        "offset": -1580,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4dc",
+        "offset": -1244,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4db",
+        "offset": -1243,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3dc",
+        "offset": -988,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2dc",
+        "offset": -732,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1dc",
+        "offset": -476,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_fffff9e4",
+      "text": "CVector3i *in_stack_fffff9e4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._0_4_",
+      "text": "local_b0._0_4_ = (pCVar9->position).x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 90,
+      "match": "._4_4_",
+      "text": "local_b0._4_4_ = (pCVar4->base_character).base_actor.location.position.y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 91,
+      "match": "._8_4_",
+      "text": "local_b0._8_4_ = (pCVar4->base_character).base_actor.location.position.z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._12_4_",
+      "text": "local_b0._12_4_ = pCVar10->pitch;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 107,
+      "match": "in_stack_fffff9e4",
+      "text": "(&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_fffff9e4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 112,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 115,
+      "match": "in_stack_fffff9e4",
+      "text": "(&g_CDemonCameraInstance,output_ptr,in_stack_fffff9e4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar15 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 127,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 159,
+      "match": "._4_4_",
+      "text": "uVar16._4_4_ = this_ptr;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 160,
+      "match": "._0_4_",
+      "text": "uVar16._0_4_ = (CKeys *)0x4da4e8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 163,
+      "match": "._4_4_",
+      "text": "uVar16._4_4_ = (CGame *)0x1d;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 164,
+      "match": "._0_4_",
+      "text": "uVar16._0_4_ = g_CKeysPtr;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 167,
+      "match": "._4_4_",
+      "text": "uVar16._4_4_ = (CGame *)0x4da515;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 208,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 264,
+      "match": "SUB84",
+      "text": "(double)(pCVar4->base_character).base_actor.location.position.x,SUB84 /* extract 2-byte value */(dVar2,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 265,
+      "match": "SUB84",
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 266,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(180 *",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 275,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */((double)*(float *)this_ptr->field102_0x9bc,0));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 306,
+      "match": "&stack0xfffff9d4",
+      "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffff9d4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 308,
+      "match": "&stack0xfffff9d4",
+      "text": "(uVar6,(CSfxSample *)&stack0xfffff9d4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 310,
+      "match": "&stack0xfffff9d4",
+      "text": "engine_2d_c_drawTextXY_FUN_00402130(0,iVar5,&stack0xfffff9d4);",
+      "type": "stack_ref"
+    },
     {
       "add_esp_value": 12,
       "callind_address": "004da2bc",
@@ -1298,6 +1545,105 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004dabc9 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"screen paint : %3.2f ms\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "screen paint : %3.2f ms\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 139,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"screen paint : %3.2f ms\\n\")",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"demon%d.pcx\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "demon%d.pcx",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 151,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d82570,\"demon%d.pcx\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"noc%05d.raw\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "noc%05d.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 182,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_114,\"noc%05d.raw\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Movie recording active: movie\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Movie recording active: movie\\\\%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 183,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_1dc,\"Movie recording active: movie\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Camera: \\\"%s\\\" Group %d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Camera: \\\"%s\\\" Group %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 253,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"Camera: \\\"%s\\\" Group %d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"FR: %f, AVG: %f, PC: %d\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "FR: %f, AVG: %f, PC: %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 257,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"FR: %f, AVG: %f, PC: %d\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Slew : %s, Virtual Director : %s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Slew : %s, Virtual Director : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 270,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"Slew : %s, Virtual Director : %s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk ...\" has 7 specifiers but 0 arguments after it",
+      "expected_args": 7,
+      "format_string": "SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 282,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total ",
+      "text": "Format string expects 7 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d\" has 6 specifiers but 1 arguments after it",
+      "expected_args": 6,
+      "format_string": "32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 296,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d\",iVar5);",
+      "text": "Format string expects 6 args but got 1",
+      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,
@@ -2117,543 +2463,6 @@
       "target_address": "0x401fd0",
       "text": "Direct CALL at 004dada2, ADD ESP at 004dadae with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 1588,
-    "local_size": 1584,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_62c",
-        "offset": -1580,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4dc",
-        "offset": -1244,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4db",
-        "offset": -1243,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3dc",
-        "offset": -988,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2dc",
-        "offset": -732,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1dc",
-        "offset": -476,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_114",
-        "offset": -276,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_b0",
-        "offset": -176,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_ac",
-        "offset": -172,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a8",
-        "offset": -168,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a4",
-        "offset": -164,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a0",
-        "offset": -160,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_9c",
-        "offset": -156,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_94",
-        "offset": -148,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CGame *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_fffff956",
-      "text": "SCollisionInfo *in_stack_fffff956;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 91,
-      "match": "._0_4_",
-      "text": "local_b0._0_4_ = (pCVar13->position).x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 92,
-      "match": "._4_4_",
-      "text": "local_b0._4_4_ = (pCVar4->base_character).base_actor.location.position.y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 93,
-      "match": "._8_4_",
-      "text": "local_b0._8_4_ = (pCVar4->base_character).base_actor.location.position.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 98,
-      "match": "._12_4_",
-      "text": "local_b0._12_4_ = pCVar14->pitch;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_fffff956",
-      "text": "in_stack_fffff956 = (SCollisionInfo *)local_b0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_fffff956",
-      "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)in_stack_fffff956);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_fffff956",
-      "text": "(&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_fffff956);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 113,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar19 * -2 + -1) * 4 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 115,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar19 * -2 + (uint)bVar19 * -2) * 4 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_fffff956",
-      "text": "(&g_CDemonCameraInstance,output_ptr,(CVector3i *)in_stack_fffff956);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 120,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar19 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar19 * -2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 121,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar19 * -2 + (uint)bVar19 * -2) * 4 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 130,
-      "match": "._0_1_",
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 145,
-      "match": "SUB84",
-      "text": "(g_CConsolePtr,\"screen paint : %3.2f ms\\n\",SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 208,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 261,
-      "match": "SUB84",
-      "text": "(local_3dc,\"FR: %f, AVG: %f, PC: %d\",SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 262,
-      "match": "SUB84",
-      "text": "(int)((ulonglong)dVar1 >> 0x20),SUB84 /* extract 2-byte value */((double)DAT_02d7c2e8 / _DAT_02d7c2e0,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 277,
-      "match": "SUB84",
-      "text": "(double)(pCVar4->base_character).base_actor.location.position.x,SUB84 /* extract 2-byte value */(dVar2,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 278,
-      "match": "SUB84",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 279,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar6,0),(int)((ulonglong)dVar6 >> 0x20),SUB84 /* extract 2-byte value */(dVar7,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 279,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar6,0),(int)((ulonglong)dVar6 >> 0x20),SUB84 /* extract 2-byte value */(dVar7,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 280,
-      "match": "SUB84",
-      "text": "(int)((ulonglong)dVar7 >> 0x20),SUB84 /* extract 2-byte value */(dVar8,0),(int)((ulonglong)dVar8 >> 0x20));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 290,
-      "match": "SUB84",
-      "text": "(local_3dc,\"Fudge: %g,%g,%g\",SUB84 /* extract 2-byte value */((double)*pfVar5,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 291,
-      "match": "SUB84",
-      "text": "(int)((ulonglong)(double)*pfVar5 >> 0x20),SUB84 /* extract 2-byte value */((double)pfVar5[1],0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 292,
-      "match": "SUB84",
-      "text": "(int)((ulonglong)(double)pfVar5[1] >> 0x20),SUB84 /* extract 2-byte value */((double)pfVar5[2],0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 342,
-      "match": "in_stack_fffff956",
-      "text": "((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffff956);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 353,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar18 + 1) = cVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 354,
-      "match": "(int *)((int)",
-      "text": "piVar18 = (int *)((int)piVar18 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk ...\" has 7 specifiers but 0 arguments after it",
-      "expected_args": 7,
-      "format_string": "SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 300,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total ",
-      "text": "Format string expects 7 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d\" has 6 specifiers but 1 arguments after it",
-      "expected_args": 6,
-      "format_string": "32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 314,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d\",iVar9);",
-      "text": "Format string expects 6 args but got 1",
-      "type": "format_string_mismatch"
     }
   ]
 }

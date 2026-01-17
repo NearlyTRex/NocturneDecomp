@@ -28,7 +28,7 @@ engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860
   if (((this_ptr->deviceContextHandle == (HDC)0x0 || this_ptr->right < width) ||
       this_ptr->top < height) || this_ptr->bpp != g_BitsPerPixel) {
     engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(this_ptr);
-    pHVar2 = (*CreateCompatibleDC)((HDC)0x0);
+    pHVar2 = (*g_CreateCompatibleDCFunc)((HDC)0x0);
     this_ptr->deviceContextHandle = pHVar2;
     crt_memory_c_memset_FUN_005fde40(&BStack_48,0,0x2c);
     BStack_48.bmiHeader.biSize = 0x28;
@@ -42,22 +42,22 @@ engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860
     BStack_48.bmiHeader.biYPelsPerMeter = 0;
     BStack_48.bmiHeader.biClrImportant = 0;
     BStack_48.bmiHeader.biWidth = width;
-    h = (*CreateDIBSection)(this_ptr->deviceContextHandle,&BStack_48,0,&this_ptr->ppvBits,
-                            (HANDLE)0x0,0);
+    h = (*g_CreateDIBSectionFunc)
+                  (this_ptr->deviceContextHandle,&BStack_48,0,&this_ptr->ppvBits,(HANDLE)0x0,0);
     this_ptr->dibHandle = h;
     iVar1 = 0;
     if (h != (HBITMAP)0x0) {
-      (*SelectObject)(this_ptr->deviceContextHandle,h);
-      (*SetBkMode)(this_ptr->deviceContextHandle,2);
-      (*SetBkColor)(this_ptr->deviceContextHandle,0xff00ff);
+      (*g_SelectObjectFunc)(this_ptr->deviceContextHandle,h);
+      (*g_SetBkModeFunc)(this_ptr->deviceContextHandle,2);
+      (*g_SetBkColorFunc)(this_ptr->deviceContextHandle,0xff00ff);
       LStack_1c.lbStyle = 0;
       LStack_1c.lbColor = 0xff00ff;
       LStack_1c.lbHatch = 0;
-      h_00 = (*CreateBrushIndirect)(&LStack_1c);
-      (*SelectObject)(this_ptr->deviceContextHandle,h_00);
-      (*Rectangle)(this_ptr->deviceContextHandle,0,-this_ptr->top,this_ptr->right,0);
-      (*DeleteObject)(h_00);
-      pvVar3 = (*SelectObject)(this_ptr->deviceContextHandle,this_ptr->fontHandle);
+      h_00 = (*g_CreateBrushIndirectFunc)(&LStack_1c);
+      (*g_SelectObjectFunc)(this_ptr->deviceContextHandle,h_00);
+      (*g_RectangleFunc)(this_ptr->deviceContextHandle,0,-this_ptr->top,this_ptr->right,0);
+      (*g_DeleteObjectFunc)(h_00);
+      pvVar3 = (*g_SelectObjectFunc)(this_ptr->deviceContextHandle,this_ptr->fontHandle);
       this_ptr->objectHandle = pvVar3;
       this_ptr->right = width;
       this_ptr->top = height;

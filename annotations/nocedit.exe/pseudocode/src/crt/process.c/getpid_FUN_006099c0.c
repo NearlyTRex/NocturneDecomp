@@ -9,6 +9,6 @@
 void __cdecl crt_process_c_getpid_FUN_006099c0(void)
 
 {
-  (*PTR_GetCurrentProcessId_00611580)();
+  (*g_GetCurrentProcessIdFunc)();
   return;
 }

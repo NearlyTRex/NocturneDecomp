@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 115,
+    "complexity_score": 116,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 13,
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 56,
     "suspect_count": 5,
     "suspect_types": [
       "lea_esp_stack_addr",
       "pointer_cast"
     ],
-    "total_lines": 204
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -69,19 +69,19 @@
   "globals": [
     {
       "addr": "0061144c",
-      "name": "waveOutPrepareHeader",
+      "name": "g_waveOutPrepareHeaderFunc",
       "type": "waveOutPrepareHeader*",
       "value": "00211952"
     },
     {
       "addr": "00611454",
-      "name": "waveOutUnprepareHeader",
+      "name": "g_waveOutUnprepareHeaderFunc",
       "type": "waveOutUnprepareHeader*",
       "value": "0021197a"
     },
     {
       "addr": "00611458",
-      "name": "waveOutWrite",
+      "name": "g_waveOutWriteFunc",
       "type": "waveOutWrite*",
       "value": "00211994"
     },
@@ -248,9 +248,9 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 53,
       "match": "(LPWAVEHDR *)((int)",
-      "text": "MVar3 = (*waveOutWrite)(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iStack_14),0x20);",
+      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iStack_14),0x20);",
       "type": "pointer_cast"
     },
     {

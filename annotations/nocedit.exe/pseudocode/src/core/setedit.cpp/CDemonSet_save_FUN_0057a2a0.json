@@ -1,15 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 378,
+    "complexity_score": 923,
     "cross_reference_count": 4,
     "function_call_count": 11,
     "global_count": 56,
     "pseudocode_lines": 188,
-    "suspect_count": 18,
+    "suspect_count": 71,
     "suspect_types": [
+      "call_esp_anchor",
       "format_string_mismatch",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_align_anchor",
+      "variadic_anchor"
     ],
     "total_lines": 814
   },
@@ -447,167 +450,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "0057a2ac": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a2cf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a2f1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a30e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a31c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a333": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a350": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a362": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a370": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a395": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a3a3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a3c4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a3d7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a3e8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a3f6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a40e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a42c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a43a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a45e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a46c": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a484": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a492": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a4aa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a4c9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a4eb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a4ff": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a517": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a53b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a553": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a56b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a5cb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a5f4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a609": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a63b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a64d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a68b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a6a3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a6b1": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a6c9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a6d7": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a6ef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a749": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a772": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a787": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a7b3": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a7eb": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a803": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a830": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a8a6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a8b2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a8dc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a8ff": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ],
-    "0057a912": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.196116504854369,
     "instruction_count": 515,
@@ -640,7 +482,195 @@
     },
     "pcode_op_count": 2676
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 196,
+    "local_size": 188,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_9f",
+        "offset": -159,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_9d",
+        "offset": -157,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 4,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0057a2ac",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "0057a836",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0057a85a",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0057a91a",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(CMatrix3x3f *)((int)",
+      "text": "local_18 = (CMatrix3x3f *)((int)(local_18 + 1) + 0x20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(CMatrix3x3f *)((int)",
+      "text": "local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);",
+      "type": "pointer_cast"
+    },
     {
       "add_esp_value": 12,
       "call_address": "0057a2ec",
@@ -1314,6 +1344,182 @@
       "type": "variadic_anchor"
     },
     {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 33,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 36,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%d,%s\\n\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 43,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%s\\n\",this_ptr->use_enviro_model);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 45,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 47,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%d,%s\\n\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 52,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%s\\n\",this_ptr->sky_type);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"1,%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "1,%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 59,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"1,%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 62,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 64,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 75,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 86,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 87,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 103,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 109,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 111,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 113,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x8c",
       "fix_address": "0057a2ac",
@@ -1452,372 +1658,6 @@
       "target_address": "0x575e40",
       "text": "Direct CALL at 0057a8ad, ADD ESP at 0057a8b2 with uncertain ESP",
       "type": "call_esp_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 196,
-    "local_size": 188,
-    "param_offset": 4,
-    "param_size": 8,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_b8",
-        "offset": -184,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_b0",
-        "offset": -176,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_a8",
-        "offset": -168,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_a0",
-        "offset": -160,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_9f",
-        "offset": -159,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_9d",
-        "offset": -157,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDemonSet *"
-      },
-      {
-        "is_param": true,
-        "name": "filename",
-        "offset": 8,
-        "size": 4,
-        "type": "char *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 4,
-    "pattern_types": [
-      "alt_frame_pointer",
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "0057a2ac",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      },
-      {
-        "address": "0057a836",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
-        "address": "0057a85a",
-        "description": "Alternative frame pointer (ESI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV ESI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
-        "address": "0057a91a",
-        "description": "Alternative frame pointer (ESI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV ESI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(CMatrix3x3f *)((int)",
-      "text": "pCStack_14 = (CMatrix3x3f *)((int)(pCStack_14 + 1) + 0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(CMatrix3x3f *)((int)",
-      "text": "local_18 = (CMatrix3x3f *)((int)(local_18 + 1) + 0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 31,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 34,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%d,%s\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 41,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%s\\n\",this_ptr->use_enviro_model);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 43,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 45,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%d,%s\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 50,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%s\\n\",this_ptr->sky_type);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"1,%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "1,%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 57,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"1,%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 60,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 62,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 73,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 84,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 85,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 101,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 107,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 109,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 111,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

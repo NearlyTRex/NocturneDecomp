@@ -19,6 +19,6 @@ int __cdecl crt_process_c_execv_FUN_006101f0(int argc,char *program,char **argv)
     return -1;
   }
   (*PTR_crt_exit_c_ExitHookStub_FUN_0060b530_00685478)();
-  iVar2 = (*PTR_ExitProcess_00611534)(uExitCode);
+  iVar2 = (*g_ExitProcessFunc)(uExitCode);
   return iVar2;
 }

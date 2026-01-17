@@ -26,7 +26,7 @@ engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0
   pCVar1->bpp = 0;
   pCVar1->cached_foreground_color = 0;
   pCVar1->cached_background_color = 0;
-  pHVar2 = (*CreateFontA)(-font_height,0,0,0,400,0,0,0,1,0,0,0,0,font_name);
+  pHVar2 = (*g_CreateFontAFunc)(-font_height,0,0,0,400,0,0,0,1,0,0,0,0,font_name);
   pCVar1->fontHandle = pHVar2;
   pCVar1->yOffset1 = font_width;
   pCVar1->yOffset2 = in_stack_00000014;

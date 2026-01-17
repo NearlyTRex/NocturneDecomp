@@ -27,13 +27,13 @@ double shape_superopt_cpp_FUN_005c9100(void)
   double *pdVar13;
   int in_stack_00000008;
   int in_stack_0000000c;
-  double dStack_24;
-  double dStack_1c;
-  double dStack_14;
+  double local_28;
+  double local_20;
+  double local_18;
   
-  dStack_24 = 0.0;
-  dStack_14 = 0.0;
-  dStack_1c = 0.0;
+  local_28 = 0.0;
+  local_18 = 0.0;
+  local_20 = 0.0;
   if (in_stack_0000000c != 0) {
     pdVar13 = (double *)(in_stack_00000008 + 0x10);
     do {
@@ -50,10 +50,10 @@ double shape_superopt_cpp_FUN_005c9100(void)
       pdVar9 = pdVar13 + 1;
       pdVar10 = pdVar13 + 3;
       pdVar13 = pdVar13 + 0xc;
-      dStack_1c = (*pdVar3 - dVar11) * (*pdVar1 + *pdVar2) * 0.5 + dStack_1c;
-      dStack_24 = (*pdVar8 - *pdVar9) * (*pdVar5 + *pdVar6) * 0.5 + dStack_24;
-      dStack_14 = (dVar12 + *pdVar10) * (*pdVar4 - *pdVar7) * 0.5 + dStack_14;
+      local_20 = (*pdVar3 - dVar11) * (*pdVar1 + *pdVar2) * 0.5 + local_20;
+      local_28 = (*pdVar8 - *pdVar9) * (*pdVar5 + *pdVar6) * 0.5 + local_28;
+      local_18 = (dVar12 + *pdVar10) * (*pdVar4 - *pdVar7) * 0.5 + local_18;
     } while (pdVar13 < (double *)(in_stack_0000000c * 0x60 + 0x10 + in_stack_00000008));
   }
-  return SQRT(dStack_14 * dStack_14 + dStack_24 * dStack_24 + dStack_1c * dStack_1c);
+  return SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20);
 }

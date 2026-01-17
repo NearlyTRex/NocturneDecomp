@@ -47,7 +47,7 @@ void core_manpuz_cpp_FUN_00509d50(void)
     }
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,1.0,0xfb);
   }
-  fVar4 = (float10)256f;
+  fVar4 = (float10)256.0f;
   fVar5 = (float10)pfVar3[1] * fVar4;
   fVar6 = (float10)*pfVar3 * fVar4;
   dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar3[2] * fVar4));
@@ -91,7 +91,7 @@ void core_manpuz_cpp_FUN_00509d50(void)
     local_3c.z = (int)ROUND(local_4c * _DAT_00660d70);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_3c);
-    fVar4 = (float10)256f;
+    fVar4 = (float10)256.0f;
     fVar5 = (float10)pfVar3[4] * fVar4;
     fVar6 = (float10)pfVar3[5] * fVar4;
     pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;

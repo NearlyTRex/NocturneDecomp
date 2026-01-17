@@ -31,10 +31,10 @@ core_mirror_cpp_transformMirrorVertex_FUN_005229b0
     local_30.y = pCVar1->y;
     local_30.z = pCVar1->z;
   }
-  local_24 = (int)ROUND(local_30.x * 256f);
-  local_20[0] = (int)ROUND(local_30.y * 256f);
-  local_20[1] = (int)ROUND(local_30.z * 256f);
-  *unaff_ESI = (int)ROUND(local_30.x * 256f);
+  local_24 = (int)ROUND(local_30.x * 256.0f);
+  local_20[0] = (int)ROUND(local_30.y * 256.0f);
+  local_20[1] = (int)ROUND(local_30.z * 256.0f);
+  *unaff_ESI = (int)ROUND(local_30.x * 256.0f);
   unaff_ESI[(uint)bVar2 * -2 + 1] = local_20[(uint)bVar2 * -2];
   (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
        local_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];

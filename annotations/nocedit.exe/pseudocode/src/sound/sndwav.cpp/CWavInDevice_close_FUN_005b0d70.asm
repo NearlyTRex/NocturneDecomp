@@ -10,8 +10,8 @@
 ;   sound_sndwav.cpp_getWavInDevice_FUN_005b1600 at 005b1608
 ;
 ; Referenced Globals:
-;   waveInClose* waveInClose = 002118a4
-;   GlobalFree* GlobalFree = 00211fe6
+;   waveInClose* g_waveInCloseFunc = 002118a4
+;   GlobalFree* g_GlobalFreeFunc = 00211fe6
 ;   TerminatedCString s_waveInClose_failed_0065243a
 ;   HWAVEIN g_WaveInHandle
 ;   HGLOBAL[20] g_WaveInHeaderHandles
@@ -55,7 +55,7 @@ section .text
     JZ 0x005b0da6                       ; 005b0d96
         ;   XREF to: 005b0da6 (CONDITIONAL_JUMP)  ; LAB_005b0da6
     PUSH EDX                            ; 005b0d98
-    CALL dword ptr CS:[0x6115d0]        ; 005b0d99 | GlobalFree
+    CALL dword ptr CS:[0x6115d0]        ; 005b0d99 | g_GlobalFreeFunc
     MOV dword ptr [EBX + 0x3f6ae70],EDI ; 005b0da0 | g_WaveInBufferHandles
     MOV EBP,dword ptr [EBX + 0x3f6add0] ; 005b0da6 | g_WaveInHeaderHandles | DAT_03f6add4
         ;   Label: LAB_005b0da6
@@ -64,7 +64,7 @@ section .text
     JZ 0x005b0dc4                       ; 005b0db4
         ;   XREF to: 005b0dc4 (CONDITIONAL_JUMP)  ; LAB_005b0dc4
     PUSH EBP                            ; 005b0db6
-    CALL dword ptr CS:[0x6115d0]        ; 005b0db7 | GlobalFree
+    CALL dword ptr CS:[0x6115d0]        ; 005b0db7 | g_GlobalFreeFunc
     MOV dword ptr [EBX + 0x3f6add0],EDI ; 005b0dbe | g_WaveInHeaderHandles
     ADD EBX,0x4                         ; 005b0dc4
         ;   Label: LAB_005b0dc4
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 005b0d8a (UNCONDITIONAL_JUMP)  ; LAB_005b0d8a
     PUSH EDX                            ; 005b0de7
         ;   Label: LAB_005b0de7
-    CALL dword ptr CS:[0x611424]        ; 005b0de8 | waveInClose
+    CALL dword ptr CS:[0x611424]        ; 005b0de8 | g_waveInCloseFunc
     TEST EAX,EAX                        ; 005b0def
     JZ 0x005b0e02                       ; 005b0df1
         ;   XREF to: 005b0e02 (CONDITIONAL_JUMP)  ; LAB_005b0e02

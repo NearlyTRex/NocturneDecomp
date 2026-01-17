@@ -24,10 +24,11 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   int in_stack_00000010;
   int in_stack_00000014;
   int in_stack_00000018;
-  float fVar5;
-  SMRGLHeaderPrimitive local_54;
-  uint local_3c;
-  uint local_38;
+  SMRGLHeaderPrimitive SStack_64;
+  uint local_4c;
+  uint local_48;
+  uint local_44;
+  uint local_40;
   int local_34;
   uint local_30;
   uint local_2c;
@@ -37,6 +38,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   int local_1c;
   int local_18;
   
+  SStack_64.base.type = 0x5817ea;
   dVar4 = crt_math_c_round_FUN_005fe6b0((double)(in_stack_0000000c * _DAT_00648b39));
   local_18 = (int)ROUND(dVar4);
   if (local_18 < 0) {
@@ -50,22 +52,27 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   local_1c = in_stack_00000018 << 8;
   uVar3 = 0;
   do {
-    fVar5 = *in_stack_00000008;
+    SStack_64.base.type = (int)*in_stack_00000008;
     iVar2 = uVar3 * 0x30;
     while( true ) {
-      dVar4 = crt_math_c_round_FUN_005fe6b0((double)(fVar5 * (float)256));
+      dVar4 = crt_math_c_round_FUN_005fe6b0
+                        ((double)((float)SStack_64.base.type * (float)256));
       local_34 = (int)ROUND(dVar4);
       pfVar1 = in_stack_00000008;
       if ((uVar3 & 2) != 0) {
         pfVar1 = in_stack_00000004;
       }
-      dVar4 = crt_math_c_round_FUN_005fe6b0((double)(pfVar1[1] * (float)256));
+      SStack_64.base.type = (int)pfVar1[1];
+      dVar4 = crt_math_c_round_FUN_005fe6b0
+                        ((double)((float)SStack_64.base.type * (float)256));
       local_34 = (int)ROUND(dVar4);
       pfVar1 = in_stack_00000008;
       if ((uVar3 & 4) != 0) {
         pfVar1 = in_stack_00000004;
       }
-      dVar4 = crt_math_c_round_FUN_005fe6b0((double)(pfVar1[2] * (float)256));
+      SStack_64.base.type = (int)pfVar1[2];
+      dVar4 = crt_math_c_round_FUN_005fe6b0
+                        ((double)((float)SStack_64.base.type * (float)256));
       local_34 = (int)ROUND(dVar4);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)(*extraout_EAX + iVar2),input);
@@ -79,51 +86,51 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
       *(int *)((int)&this_ptr->vertex_buffer_ptr->w_recip + iVar2) = local_24;
       if (7 < (int)uVar3) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_006816c0);
-        local_54.surface_normal.D = 0;
-        local_54.surface_normal.C = 0;
-        local_54.surface_normal.B = 0;
-        local_54.surface_normal.A = 0;
-        local_3c = 0;
-        local_34 = 6;
-        local_54.base.count = 4;
-        local_30 = 4;
-        local_38 = 2;
+        SStack_64.surface_normal.D = 0;
+        SStack_64.surface_normal.C = 0;
+        SStack_64.surface_normal.B = 0;
+        SStack_64.surface_normal.A = 0;
+        local_4c = 0;
+        local_44 = 6;
+        SStack_64.base.count = 4;
+        local_40 = 4;
+        local_48 = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&local_54);
-        local_30 = 5;
-        local_3c = 1;
-        local_38 = 3;
-        local_34 = 7;
+                  (g_CDemonRendererPtr,&SStack_64);
+        local_40 = 5;
+        local_4c = 1;
+        local_48 = 3;
+        local_44 = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&local_54);
-        local_3c = 0;
-        local_38 = 1;
-        local_34 = 3;
-        local_30 = 2;
+                  (g_CDemonRendererPtr,&SStack_64);
+        local_4c = 0;
+        local_48 = 1;
+        local_44 = 3;
+        local_40 = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&local_54);
-        local_3c = 4;
-        local_38 = 5;
-        local_34 = 7;
-        local_30 = 6;
+                  (g_CDemonRendererPtr,&SStack_64);
+        local_4c = 4;
+        local_48 = 5;
+        local_44 = 7;
+        local_40 = 6;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&local_54);
-        local_3c = 2;
-        local_30 = 6;
-        local_38 = 3;
-        local_34 = 7;
+                  (g_CDemonRendererPtr,&SStack_64);
+        local_4c = 2;
+        local_40 = 6;
+        local_48 = 3;
+        local_44 = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&local_54);
-        local_38 = 1;
-        local_3c = 0;
-        local_34 = 5;
-        local_30 = 4;
+                  (g_CDemonRendererPtr,&SStack_64);
+        local_48 = 1;
+        local_4c = 0;
+        local_44 = 5;
+        local_40 = 4;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&local_54);
+                  (g_CDemonRendererPtr,&SStack_64);
         return;
       }
       if ((uVar3 & 1) == 0) break;
-      fVar5 = *in_stack_00000004;
+      SStack_64.base.type = (int)*in_stack_00000004;
       iVar2 = iVar2 + 0x30;
     }
   } while( true );

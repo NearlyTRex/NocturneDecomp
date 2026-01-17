@@ -39,9 +39,9 @@ engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0
   }
   finder->timestamp = find_data->nFileSizeLow;
   finder->attributes = 0;
-  BVar1 = (*PTR_FileTimeToLocalFileTime_00611540)(&find_data->ftLastWriteTime,&local_18);
+  BVar1 = (*g_FileTimeToLocalFileTimeFunc)(&find_data->ftLastWriteTime,&local_18);
   if (BVar1 != 0) {
-    BVar1 = (*PTR_FileTimeToSystemTime_00611544)(&local_18,&_Stack_28);
+    BVar1 = (*g_FileTimeToSystemTimeFunc)(&local_18,&_Stack_28);
     if (BVar1 != 0) {
       tStack_4c.tm_sec = (int)_Stack_28.wSecond;
       tStack_4c.tm_min = (int)_Stack_28.wMinute;

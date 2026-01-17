@@ -26,20 +26,20 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
   fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
-                    (&g_HeroActors[g_LocalHeroIndex]->inventory,DAT_00660a40);
-  fVar1 = (DAT_00660a40 / fVar1) * in_stack_00000008 +
+                    (&g_HeroActors[g_LocalHeroIndex]->inventory,0x41F00000);
+  fVar1 = (0x41F00000 / fVar1) * in_stack_00000008 +
           *(float *)(in_stack_00000004[1].base_actor.actor_name + 8);
   *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar1;
-  if (DAT_00660a40 < fVar1) {
-    *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = DAT_00660a40;
+  if (0x41F00000 < fVar1) {
+    *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = 0x41F00000;
   }
-  fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / DAT_00660a40;
+  fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / 0x41F00000;
   *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = fVar1;
   dVar4 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)100));
   in_stack_00000004->ammo_count = (int)ROUND(dVar4);
   if (extraout_EDX == 2) {
-    fVar1 = (_DAT_00660a4c - DAT_00660a48) *
-            *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) + DAT_00660a48;
+    fVar1 = (_DAT_00660a4c - 0x40000000) *
+            *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) + 0x40000000;
     base_frequency =
          _DAT_00660a50 +
          (_DAT_00660a54 - _DAT_00660a50) *

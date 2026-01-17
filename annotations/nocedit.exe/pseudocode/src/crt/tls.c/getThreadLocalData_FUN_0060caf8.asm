@@ -8,8 +8,8 @@
 ;   crt_tls.c_get_thread_local_data_FUN_0060a1fc at 0060a228
 ;
 ; Referenced Globals:
-;   GetCurrentThreadId* PTR_GetCurrentThreadId_00611584 = 00211e84
-;   TlsSetValue* PTR_TlsSetValue_00611658 = 0021226c
+;   GetCurrentThreadId* g_GetCurrentThreadIdFunc = 00211e84
+;   TlsSetValue* g_TlsSetValueFunc = 0021226c
 ;   TerminatedCString s_Unable_to_resize_thread__00659648
 ;   TerminatedCString s_Unable_to_resize_thread__00659670
 ;   DWORD g_TLSIndex = 0xffffffff
@@ -35,7 +35,7 @@ section .text
     PUSH EDI                            ; 0060cafa
     PUSH EBP                            ; 0060cafb
     CALL dword ptr [0x00684f10]         ; 0060cafc | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f10
-    CALL dword ptr CS:[0x611584]        ; 0060cb02 | PTR_GetCurrentThreadId_00611584
+    CALL dword ptr CS:[0x611584]        ; 0060cb02 | g_GetCurrentThreadIdFunc
     MOV EBX,dword ptr [0x03f9c160]      ; 0060cb09 | g_ThreadDataRegistryList
     TEST EBX,EBX                        ; 0060cb0f
     JZ 0x0060cb1e                       ; 0060cb11
@@ -112,7 +112,7 @@ section .text
     MOV byte ptr [EBP + 0x52],0x1       ; 0060cbb0
     PUSH EAX                            ; 0060cbb4
     MOV byte ptr [EBP + 0x53],0x0       ; 0060cbb5
-    CALL dword ptr CS:[0x611658]        ; 0060cbb9 | PTR_TlsSetValue_00611658
+    CALL dword ptr CS:[0x611658]        ; 0060cbb9 | g_TlsSetValueFunc
     CALL dword ptr [0x00684f14]         ; 0060cbc0 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f14
     MOV EAX,EBP                         ; 0060cbc6
     POP EBP                             ; 0060cbc8

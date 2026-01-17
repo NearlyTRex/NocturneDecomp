@@ -10,7 +10,7 @@
 ;   crt_time.c_strftime_FUN_006002d4 at 006006a3
 ;
 ; Referenced Globals:
-;   GetTimeZoneInformation* PTR_GetTimeZoneInformation_006115c4 = 00211fb0
+;   GetTimeZoneInformation* g_GetTimeZoneInformationFunc = 00211fb0
 ;   TerminatedCString s_TZ_00659058
 ;   TerminatedCString s_EST_006850bc
 ;   undefined4 DAT_0068513c
@@ -48,7 +48,7 @@ section .text
     OR DH,0x2                           ; 00607220
     PUSH EAX                            ; 00607223
     MOV byte ptr [0x006851d4],DH        ; 00607224 | g_TimezoneInitFlags
-    CALL dword ptr CS:[0x6115c4]        ; 0060722a | PTR_GetTimeZoneInformation_006115c4
+    CALL dword ptr CS:[0x6115c4]        ; 0060722a | g_GetTimeZoneInformationFunc
     CMP EAX,0x1                         ; 00607231
     JC 0x006072ed                       ; 00607234
         ;   XREF to: 006072ed (CONDITIONAL_JUMP)  ; LAB_006072ed

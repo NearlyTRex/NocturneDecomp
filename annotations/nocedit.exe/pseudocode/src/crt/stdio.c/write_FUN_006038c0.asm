@@ -13,8 +13,8 @@
 ;   crt_stdio.c_fwrite_FUN_005fdc00 at 005fdcc8
 ;
 ; Referenced Globals:
-;   SetFilePointer* SetFilePointer = 002121b6
-;   WriteFile* PTR_WriteFile_00611678 = 00212300
+;   SetFilePointer* g_SetFilePointerFunc = 002121b6
+;   WriteFile* g_WriteFileFunc = 00212300
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   uint g_MaxHandleCount = 0x14
@@ -73,7 +73,7 @@ section .text
     PUSH 0x0                            ; 00603911
     PUSH 0x0                            ; 00603913
     PUSH ESI                            ; 00603915
-    CALL dword ptr CS:[0x61162c]        ; 00603916 | SetFilePointer
+    CALL dword ptr CS:[0x61162c]        ; 00603916 | g_SetFilePointerFunc
     CMP EAX,-0x1                        ; 0060391d
     JNZ 0x00603939                      ; 00603920
         ;   XREF to: 00603939 (CONDITIONAL_JUMP)  ; LAB_00603939
@@ -123,7 +123,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x28]      ; 0060397e
     PUSH EBP                            ; 00603982
     PUSH ESI                            ; 00603983
-    CALL dword ptr CS:[0x611678]        ; 00603984 | PTR_WriteFile_00611678
+    CALL dword ptr CS:[0x611678]        ; 00603984 | g_WriteFileFunc
     TEST EAX,EAX                        ; 0060398b
     JNZ 0x006039a6                      ; 0060398d
         ;   XREF to: 006039a6 (CONDITIONAL_JUMP)  ; LAB_006039a6

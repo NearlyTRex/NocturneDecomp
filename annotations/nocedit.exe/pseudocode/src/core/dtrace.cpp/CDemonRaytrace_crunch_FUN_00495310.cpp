@@ -23,6 +23,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   float10 fVar10;
   float10 fVar11;
   double dVar12;
+  uint uVar13;
   int local_e8;
   int local_e4;
   int local_e0;
@@ -89,6 +90,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   (this_ptr->grid_coord).y = (int)local_14 + 1;
   fVar11 = ((float10)(this_ptr->bbox_max).y - (float10)(this_ptr->bbox_min).y) /
            (float10)(this_ptr->grid_coord).y;
+  uVar13 = 0x495382;
   dVar12 = crt_math_c_round_FUN_005fe6b0
                      ((double)(((float10)(this_ptr->bbox_max).z - (float10)(this_ptr->bbox_min).z) *
                               fVar9));
@@ -100,7 +102,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   (this_ptr->cell_size).x = (float)fVar10;
   (this_ptr->cell_size).y = (float)fVar11;
   (this_ptr->cell_size).z = (fVar1 - fVar2) / (float)iVar5;
-  local_90 = (this_ptr->cell_size).x / 8f;
+  local_90 = (this_ptr->cell_size).x / 8.0f;
   local_8c = (this_ptr->cell_size).y * 0.125f;
   local_88 = 0.125f * (this_ptr->cell_size).z;
   if (&this_ptr->adjusted_size != (CVector3f *)&local_90) {
@@ -120,7 +122,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   if (local_44 == (int *)0x0) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 0x2ee;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::crunch - out of refList memory");
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::crunch - out of refList memory",uVar13);
   }
   iVar5 = 0;
   if (0 < this_ptr->triangle_count) {
