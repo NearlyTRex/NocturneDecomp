@@ -646,6 +646,10 @@ def generate_source_filename(func_name, decompiled_code):
     if ".cpp" in func_name:
         file_extension = ".cpp"
 
+    # Special case: entry function goes in entry/ folder
+    if func_name == "entry":
+        return os.path.join("entry", func_name + file_extension)
+
     if "FUN_" not in func_name:
         for potential_type in [".c", ".cpp"]:
             if potential_type in func_name:
