@@ -371,6 +371,17 @@ def collect_typedef_deps(currentProgram, type_obj, seen = None, visited_ids = No
         path.pop()
     return seen
 
+def get_ghidra_primitive_types():
+    return {
+        # Sized unsigned types
+        'byte', 'uchar', 'ushort', 'uint', 'ulong',
+        'longlong', 'ulonglong',
+        # Undefined placeholder types
+        'undefined', 'undefined1', 'undefined2', 'undefined4', 'undefined8',
+        # Pointer type
+        'pointer',
+    }
+
 def should_track_as_dependency(type_name):
 
     # Check type name
@@ -551,6 +562,165 @@ def resolve_circular_dependencies(type_deps, type_defs, depth=0, max_depth=100):
 #####################################################################
 ## Data type categories
 #####################################################################
+
+def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct=None, seen_pointer=None, visited_ids=None, path=None, is_pointer_context=False):
+    if seen_direct is None:
+        seen_direct = set()
+    if seen_pointer is None:
+        seen_pointer = set()
+    if visited_ids is None:
+        visited_ids = set()
+    if path is None:
+        path = []
+    if type_obj is None:
+        return (seen_direct, seen_pointer)
+
+    # Fallback for types without UUIDs
+    try:
+        dt_id = type_obj.getUniversalID()
+    except:
+        dt_id = id(type_obj)
+
+    # Already visited
+    if dt_id in visited_ids:
+        return (seen_direct, seen_pointer)
+
+    # Get type name
+    type_name = normalize_data_type_name(type_obj.getName())
+
+    # Allow self-reference through pointers but not direct reference
+    if type_name in path and not is_pointer_context:
+        return (seen_direct, seen_pointer)
+
+    visited_ids.add(dt_id)
+    path.append(type_name)
+
+    try:
+        # Typedefs
+        if isinstance(type_obj, TypeDef):
+            base_dt = type_obj.getDataType()
+            base_name = normalize_data_type_name(resolve_data_type_name(currentProgram, base_dt))
+            if should_track_as_dependency(base_name) and base_name != type_name:
+                # Typedef base types need direct includes
+                seen_direct.add(base_name)
+                collect_type_dependencies_with_context(currentProgram, base_dt, seen_direct, seen_pointer, visited_ids, path[:], False)
+
+        # Pointers
+        elif isinstance(type_obj, Pointer):
+            # Walk pointer chain to find ultimate pointed-to type
+            # This handles X*, X**, X***, etc.
+            pointed_dt = type_obj.getDataType()
+            original_pointed_dt = pointed_dt  # Keep for recursion
+            while pointed_dt and isinstance(pointed_dt, Pointer):
+                pointed_dt = pointed_dt.getDataType()
+            if pointed_dt:
+                pointed_name = normalize_data_type_name(resolve_data_type_name(currentProgram, pointed_dt))
+                if should_track_as_dependency(pointed_name) and pointed_name != path[0]:
+                    # Only struct/union pointers can be forward declared in C
+                    if isinstance(pointed_dt, (Structure, Union)):
+                        seen_pointer.add(pointed_name)
+                    else:
+                        seen_direct.add(pointed_name)
+            # Recurse with the immediate pointed-to type (not the ultimate one)
+            if original_pointed_dt:
+                collect_type_dependencies_with_context(currentProgram, original_pointed_dt, seen_direct, seen_pointer, visited_ids, path[:], True)
+
+        # Arrays
+        elif isinstance(type_obj, Array):
+            # Array element types need direct includes (for sizing)
+            elem_dt = type_obj.getDataType()
+            elem_name = normalize_data_type_name(resolve_data_type_name(currentProgram, elem_dt))
+            if should_track_as_dependency(elem_name) and elem_name != type_name:
+                seen_direct.add(elem_name)
+            collect_type_dependencies_with_context(currentProgram, elem_dt, seen_direct, seen_pointer, visited_ids, path[:], False)
+
+        # Structures / Unions
+        elif isinstance(type_obj, Structure) or isinstance(type_obj, Union):
+            for comp in type_obj.getComponents():
+                comp_dt = comp.getDataType()
+                if comp_dt:
+                    comp_name = normalize_data_type_name(resolve_data_type_name(currentProgram, comp_dt))
+
+                    if isinstance(comp_dt, Pointer):
+                        # Pointer field - only struct/union pointers can be forward declared
+                        # Walk pointer chain to find ultimate pointed-to type
+                        # This handles X*, X**, X***, etc.
+                        pointed_dt = comp_dt.getDataType()
+                        while pointed_dt and isinstance(pointed_dt, Pointer):
+                            pointed_dt = pointed_dt.getDataType()
+                        if pointed_dt:
+                            pointed_name = normalize_data_type_name(resolve_data_type_name(currentProgram, pointed_dt))
+                            if should_track_as_dependency(pointed_name) and pointed_name != type_name:
+                                # Only struct/union can be forward declared in C
+                                # Typedefs, function types, etc. must be defined first
+                                if isinstance(pointed_dt, (Structure, Union)):
+                                    seen_pointer.add(pointed_name)
+                                else:
+                                    seen_direct.add(pointed_name)
+                        # Still need to recurse with the original component type
+                        collect_type_dependencies_with_context(currentProgram, comp_dt.getDataType(), seen_direct, seen_pointer, visited_ids, path[:], True)
+                    else:
+                        # Non-pointer field - needs direct include for sizing
+                        if comp_name != type_name and should_track_as_dependency(comp_name):
+                            seen_direct.add(comp_name)
+                            collect_type_dependencies_with_context(currentProgram, comp_dt, seen_direct, seen_pointer, visited_ids, path[:], False)
+
+        # Function definitions (check by class name since there are multiple classes)
+        else:
+            class_name = type_obj.__class__.__name__.rsplit('.', 1)[-1]
+            if class_name in ['FunctionDefinitionDataType', 'FunctionDefinitionDB', 'FunctionDefinition', 'FunctionDefDataType']:
+                # Get return type dependencies
+                if hasattr(type_obj, 'getReturnType') and type_obj.getReturnType():
+                    ret_dt = type_obj.getReturnType()
+                    ret_name = normalize_data_type_name(resolve_data_type_name(currentProgram, ret_dt))
+                    if should_track_as_dependency(ret_name) and ret_name != type_name:
+                        # Return type - only struct/union pointers can be forward declared
+                        if isinstance(ret_dt, Pointer):
+                            # Walk pointer chain to find ultimate pointed-to type
+                            # This handles X*, X**, X***, etc.
+                            pointed_dt = ret_dt.getDataType()
+                            while pointed_dt and isinstance(pointed_dt, Pointer):
+                                pointed_dt = pointed_dt.getDataType()
+                            if pointed_dt:
+                                pointed_name = normalize_data_type_name(resolve_data_type_name(currentProgram, pointed_dt))
+                                if should_track_as_dependency(pointed_name):
+                                    if isinstance(pointed_dt, (Structure, Union)):
+                                        seen_pointer.add(pointed_name)
+                                    else:
+                                        seen_direct.add(pointed_name)
+                        else:
+                            seen_direct.add(ret_name)
+                    collect_type_dependencies_with_context(currentProgram, ret_dt, seen_direct, seen_pointer, visited_ids, path[:], isinstance(ret_dt, Pointer))
+
+                # Get parameter type dependencies
+                if hasattr(type_obj, 'getArguments') and type_obj.getArguments():
+                    for param in type_obj.getArguments():
+                        if hasattr(param, 'getDataType') and param.getDataType():
+                            param_dt = param.getDataType()
+                            param_name = normalize_data_type_name(resolve_data_type_name(currentProgram, param_dt))
+                            if should_track_as_dependency(param_name) and param_name != type_name:
+                                # Parameter type - only struct/union pointers can be forward declared
+                                if isinstance(param_dt, Pointer):
+                                    # Walk pointer chain to find ultimate pointed-to type
+                                    # This handles X*, X**, X***, etc.
+                                    pointed_dt = param_dt.getDataType()
+                                    while pointed_dt and isinstance(pointed_dt, Pointer):
+                                        pointed_dt = pointed_dt.getDataType()
+                                    if pointed_dt:
+                                        pointed_name = normalize_data_type_name(resolve_data_type_name(currentProgram, pointed_dt))
+                                        if should_track_as_dependency(pointed_name):
+                                            if isinstance(pointed_dt, (Structure, Union)):
+                                                seen_pointer.add(pointed_name)
+                                            else:
+                                                seen_direct.add(pointed_name)
+                                else:
+                                    seen_direct.add(param_name)
+                            collect_type_dependencies_with_context(currentProgram, param_dt, seen_direct, seen_pointer, visited_ids, path[:], isinstance(param_dt, Pointer))
+
+    finally:
+        path.pop()
+
+    return (seen_direct, seen_pointer)
 
 def is_standard_ghidra_category(path):
     return (
