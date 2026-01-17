@@ -311,11 +311,13 @@ def format_2d_char_array(raw_bytes, type_name=None):
 
     rows = None
     cols = None
+    is_2d_array = False
     if type_name:
         match = re.search(r'char\s*\[(\d+)\]\s*\[(\d+)\]', type_name)
         if match:
             rows = int(match.group(1))
             cols = int(match.group(2))
+            is_2d_array = True
 
     printable_count = sum(1 for b in raw_bytes if 32 <= b <= 126)
     null_count = raw_bytes.count(0)
@@ -381,6 +383,10 @@ def format_2d_char_array(raw_bytes, type_name=None):
                 pass
 
     if strings and len(strings) >= 2:
+        # Only return braced multi-string initializers for actual 2D arrays
+        # For 1D arrays, {"str1", "str2"} is invalid C - return None
+        if not is_2d_array:
+            return None
         if len(strings) <= 8:
             return "{%s}" % ", ".join(strings)
         else:
