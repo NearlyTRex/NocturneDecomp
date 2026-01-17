@@ -18,12 +18,12 @@ def delete_pseudocode(currentProgram, path):
         log_info("No pseudocode directory found - nothing to delete")
         return
 
-    # Delete all pseudocode files (now includes .asm and .json)
+    # Delete all pseudocode files
     deleted_count = 0
-    log_info("Deleting all pseudocode files (.cpp, .c, .h, .asm, .json)")
+    log_info("Deleting all pseudocode files")
     for root, dirs, files in os.walk(pseudocode_dir):
         for file in files:
-            if file.lower().endswith(('.c', '.cpp', '.h', '.asm', '.json')):
+            if file.lower().endswith(('.c', '.cpp', '.h', '.asm', '.json', '.pcode')):
                 file_path = os.path.join(root, file)
                 try:
                     os.remove(file_path)
