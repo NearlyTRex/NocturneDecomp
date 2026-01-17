@@ -342,7 +342,7 @@ def main():
             print("=" * 60)
             for rel_path, error in failed_headers:
                 print("\n--- %s ---" % rel_path)
-                print(error[:1000] if error else "(no error message)")
+                print(error if error else "(no error message)")
 
         sys.exit(1)
     else:
