@@ -663,7 +663,10 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
                         # Non-pointer field - needs direct include for sizing
                         if comp_name != type_name and should_track_as_dependency(comp_name):
                             seen_direct.add(comp_name)
-                            collect_type_dependencies_with_context(currentProgram, comp_dt, seen_direct, seen_pointer, visited_ids, path[:], False)
+                            # Only recurse into non-struct/union types (typedefs, arrays, etc.)
+                            # For struct/union fields, that type's header will include its own deps
+                            if not isinstance(comp_dt, (Structure, Union)):
+                                collect_type_dependencies_with_context(currentProgram, comp_dt, seen_direct, seen_pointer, visited_ids, path[:], False)
 
         # Function definitions (check by class name since there are multiple classes)
         else:
