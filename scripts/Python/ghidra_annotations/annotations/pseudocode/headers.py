@@ -9,10 +9,79 @@ from ghidra.program.model.data import Enum
 from ghidra.program.model.data import Structure
 from ghidra.program.model.data import Union
 from ghidra.program.model.data import TypeDef
-from ghidra_annotations.util import resolve_data_type_name, make_dirs
+from ghidra.program.model.data import Pointer
+from ghidra.program.model.data import Array
+from ghidra_annotations.util import make_dirs
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
+from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes
 from ghidra_annotations.annotations import is_standard_ghidra_category, get_primitive_data_types
+from ghidra_annotations.util.string import sanitize_c_identifier
 from ghidra_annotations.annotations.pseudocode.strings import sanitize_file_content
+
+
+def resolve_data_type_name_for_headers(currentProgram, type_obj, seen=None, preserve_typedefs=True):
+    """Resolve data type name with struct/union prefix for C header generation.
+
+    This variant adds 'struct ' or 'union ' prefix for pointer types pointing
+    to structs/unions, which is needed for forward declaration compatibility in C.
+
+    Args:
+        currentProgram: The Ghidra program
+        type_obj: The data type object to resolve
+        seen: Set of already seen type names (for cycle detection)
+        preserve_typedefs: Whether to preserve typedef names
+
+    Returns:
+        String representation of the type suitable for C headers
+    """
+    if type_obj is None:
+        return "void"
+
+    if seen is None:
+        seen = set()
+
+    type_name = type_obj.getName()
+    if type_name == "undefined":
+        type_name = "undefined1"
+
+    if type_name in seen:
+        return type_name
+
+    seen.add(type_name)
+
+    # Preserve typedef names
+    if preserve_typedefs and isinstance(type_obj, TypeDef):
+        return type_name
+
+    # Check primitives
+    from ghidra_annotations.util.data_type import get_primitive_data_types
+    if type_name in get_primitive_data_types().keys():
+        return type_name
+
+    # Check pointers - add struct/union prefix for forward declaration compatibility
+    if isinstance(type_obj, Pointer):
+        base_type = type_obj.getDataType()
+        base_name = resolve_data_type_name_for_headers(currentProgram, base_type, seen, preserve_typedefs)
+        # Use 'struct'/'union' prefix for struct/union pointers to handle forward references
+        if isinstance(base_type, Structure):
+            return "struct " + base_name + "*"
+        elif isinstance(base_type, Union):
+            return "union " + base_name + "*"
+        return base_name + "*"
+
+    # Check arrays
+    if isinstance(type_obj, Array):
+        dimensions = []
+        current_type = type_obj
+        while isinstance(current_type, Array):
+            dimensions.append(current_type.getNumElements())
+            current_type = current_type.getDataType()
+        base_name = resolve_data_type_name_for_headers(currentProgram, current_type, seen, preserve_typedefs)
+        dimension_str = "".join("[{}]".format(dim) for dim in dimensions)
+        return "{}{}".format(base_name, dimension_str)
+
+    return type_name
 
 
 def is_function_definition_type(data_type):
@@ -37,34 +106,57 @@ def is_function_definition_type(data_type):
     return simple_class_name in function_definition_classes
 
 
-def get_export_category_path(original_path, data_type):
-    """Get the export category path for file organization.
+def get_new_export_path(original_path, data_type):
+    """Map Ghidra category path to new flat export structure.
 
     Args:
-        original_path: The original Ghidra category path
-        data_type: The data type
+        original_path: Original Ghidra category path like /Nocturne/Class/Game
+        data_type: The data type object
 
     Returns:
-        Export path for file organization
+        Tuple of (export_path, is_individual_file)
+        - export_path: The new target directory path
+        - is_individual_file: True if this type should have its own .h file
     """
-    # If already starts with /Nocturne, keep as-is for export
-    if original_path.startswith("/Nocturne"):
-        return original_path
+    # Category mapping for game types (individual files)
+    category_map = {
+        "Class": "types/classes",
+        "Struct": "types/structs",
+        "Union": "types/unions",
+        "Enum": "types/enums",
+        "Typedef": "types/typedefs",
+        "FunctionDefinition": "types/funcdefs"
+    }
 
-    # Determine the data type category for export organization
-    if isinstance(data_type, Structure):
-        type_category = "Struct"
-    elif isinstance(data_type, Union):
-        type_category = "Union"
-    elif isinstance(data_type, Enum):
-        type_category = "Enum"
-    elif isinstance(data_type, TypeDef):
-        type_category = "Typedef"
-    elif is_function_definition_type(data_type):
-        type_category = "FunctionDefinition"
-    else:
-        type_category = "Unknown"
-    return "/Nocturne/%s/System" % type_category
+    # Game types -> types/{category} (individual files)
+    if original_path.endswith("/Game"):
+        parts = original_path.split("/")
+        if len(parts) >= 3:
+            type_category = parts[2]  # Class, Struct, etc.
+            new_path = category_map.get(type_category, "types/misc")
+            return (new_path, True)
+
+    # System types with header source -> system/{header} (grouped files)
+    if "/System/" in original_path:
+        parts = original_path.split("/")
+        # Find header file name (last component ending in .h)
+        for part in reversed(parts):
+            if part.endswith(".h"):
+                header_name = part[:-2]  # Remove .h suffix
+                return ("system/%s" % header_name, False)
+        # No .h found, use system/misc folder
+        return ("system/misc", False)
+
+    # Bare /System types (no header specified)
+    if original_path.endswith("/System"):
+        return ("system/misc", False)
+
+    # Non-Nocturne paths - route to system/misc
+    if not original_path.startswith("/Nocturne"):
+        return ("system/misc", False)
+
+    # Default fallback for unhandled /Nocturne paths
+    return ("types/misc", False)
 
 
 def format_field_declaration(field_type, field_name):
@@ -86,6 +178,270 @@ def format_field_declaration(field_type, field_name):
         return "%s %s" % (field_type, field_name)
 
 
+def type_uses_basetypes(currentProgram, data_type, visited=None):
+    """Check if a data type uses any types that require basetypes.h.
+
+    Args:
+        currentProgram: The Ghidra program
+        data_type: The data type to check
+        visited: Set of already visited type IDs to prevent infinite recursion
+
+    Returns:
+        True if the type uses basetypes, False otherwise
+    """
+    if visited is None:
+        visited = set()
+
+    if data_type is None:
+        return False
+
+    # Prevent infinite recursion
+    try:
+        dt_id = data_type.getUniversalID()
+    except:
+        dt_id = id(data_type)
+
+    if dt_id in visited:
+        return False
+    visited.add(dt_id)
+
+    type_name = data_type.getName()
+    basetypes = get_types_needing_basetypes()
+
+    # Check if this type itself is a basetype
+    if type_name in basetypes:
+        return True
+
+    # Also check if the type name looks like an array (e.g., "uchar[8][8]") and
+    # extract the base type name to check against basetypes. This is a fallback
+    # in case the isinstance(Array) check doesn't work as expected.
+    if '[' in type_name:
+        base_type_name = type_name[:type_name.index('[')]
+        if base_type_name in basetypes:
+            return True
+
+    # Also check if the type name looks like a pointer (e.g., "uint *" or "uint*")
+    # and extract the base type name to check against basetypes.
+    if type_name.endswith('*') or ' *' in type_name:
+        base_type_name = type_name.replace(' *', '').replace('*', '').strip()
+        if base_type_name in basetypes:
+            return True
+
+    # Helper to check if a type is a pointer (handles Jython isinstance issues)
+    def is_pointer_type(dt):
+        if isinstance(dt, Pointer):
+            return True
+        class_name = dt.__class__.__name__
+        return 'Pointer' in class_name
+
+    # Helper to check if a type is an array
+    def is_array_type(dt):
+        if isinstance(dt, Array):
+            return True
+        class_name = dt.__class__.__name__
+        return 'Array' in class_name
+
+    # Helper to check if a type is a typedef
+    def is_typedef_type(dt):
+        if isinstance(dt, TypeDef):
+            return True
+        class_name = dt.__class__.__name__
+        return 'TypeDef' in class_name or 'Typedef' in class_name
+
+    # Helper to check if a type is a struct or union
+    def is_struct_or_union(dt):
+        if isinstance(dt, (Structure, Union)):
+            return True
+        class_name = dt.__class__.__name__
+        return 'Structure' in class_name or 'Union' in class_name
+
+    # Check pointers
+    if is_pointer_type(data_type):
+        if hasattr(data_type, 'getDataType'):
+            return type_uses_basetypes(currentProgram, data_type.getDataType(), visited)
+
+    # Check arrays
+    if is_array_type(data_type):
+        if hasattr(data_type, 'getDataType'):
+            return type_uses_basetypes(currentProgram, data_type.getDataType(), visited)
+
+    # Check typedefs
+    if is_typedef_type(data_type):
+        if hasattr(data_type, 'getDataType'):
+            return type_uses_basetypes(currentProgram, data_type.getDataType(), visited)
+
+    # Check structs/unions - check all component types
+    if is_struct_or_union(data_type):
+        if hasattr(data_type, 'getComponents'):
+            for comp in data_type.getComponents():
+                comp_dt = comp.getDataType()
+                if comp_dt:
+                    # Check the component type name directly first
+                    comp_name = comp_dt.getName()
+                    if comp_name in basetypes:
+                        return True
+                    # Then check recursively for nested types
+                    if type_uses_basetypes(currentProgram, comp_dt, visited):
+                        return True
+
+    # Check function definitions
+    if is_function_definition_type(data_type):
+        if hasattr(data_type, 'getReturnType') and data_type.getReturnType():
+            ret_name = data_type.getReturnType().getName()
+            if ret_name in basetypes:
+                return True
+            if type_uses_basetypes(currentProgram, data_type.getReturnType(), visited):
+                return True
+        if hasattr(data_type, 'getArguments') and data_type.getArguments():
+            for param in data_type.getArguments():
+                if hasattr(param, 'getDataType') and param.getDataType():
+                    param_name = param.getDataType().getName()
+                    if param_name in basetypes:
+                        return True
+                    if type_uses_basetypes(currentProgram, param.getDataType(), visited):
+                        return True
+
+    return False
+
+
+def collect_type_dependencies(currentProgram, data_type):
+    """Collect dependencies for a type, separating pointer vs direct deps.
+
+    Args:
+        currentProgram: The Ghidra program
+        data_type: The data type to analyze
+
+    Returns:
+        Tuple of (direct_deps, pointer_deps) where:
+        - direct_deps: Set of types that need #include
+        - pointer_deps: Set of types that can use forward declaration
+    """
+    from ghidra.program.model.data import Pointer
+
+    direct_deps, pointer_deps = collect_type_dependencies_with_context(
+        currentProgram, data_type
+    )
+
+    # For pointer typedefs (typedef struct X* LPX or typedef struct X** LPLPX),
+    # ALL transitive dependencies through the struct should be ignored for ordering,
+    # since we only need a forward declaration. The recursive collection adds deps
+    # from X's members, but those aren't needed for the pointer typedef itself.
+    if isinstance(data_type, TypeDef):
+        base_dt = data_type.getDataType()
+        if isinstance(base_dt, Pointer):
+            # Walk the pointer chain to find the ultimate pointed-to type
+            # Handles X*, X**, X***, etc.
+            pointed_dt = base_dt.getDataType()
+            while isinstance(pointed_dt, Pointer):
+                pointed_dt = pointed_dt.getDataType()
+            if pointed_dt and isinstance(pointed_dt, (Structure, Union)):
+                # For pointer typedefs, we only need the pointed-to struct
+                # to be forward-declarable. Clear all direct deps and just
+                # add the struct as a pointer dep.
+                direct_deps.clear()
+                pointer_deps.add(pointed_dt.getName())
+
+
+    # Remove pointer deps that are also direct deps (direct wins)
+    pointer_only = pointer_deps - direct_deps
+
+    return (direct_deps, pointer_only)
+
+
+def strip_type_prefix(name):
+    """Strip 'struct ' or 'union ' prefix from a type name.
+
+    The dependency collection adds these prefixes for forward reference handling,
+    but we need the bare type name for matching against types_in_file.
+    """
+    if name.startswith('struct '):
+        return name[7:]
+    elif name.startswith('union '):
+        return name[6:]
+    return name
+
+
+def make_unique_param_name(param_name, used_names):
+    """Ensure param_name is unique by appending a number if needed.
+
+    Args:
+        param_name: The parameter name to check
+        used_names: Set of already used names (will be modified!)
+
+    Returns:
+        Unique parameter name
+    """
+    if param_name not in used_names:
+        used_names.add(param_name)
+        return param_name
+
+    idx = 1
+    while "%s%d" % (param_name, idx) in used_names:
+        idx += 1
+    unique_name = "%s%d" % (param_name, idx)
+    used_names.add(unique_name)
+    return unique_name
+
+
+def generate_dependency_includes(type_name, direct_deps, pointer_deps, type_to_path_map, needs_basetypes=False):
+    """Generate #include lines for a type header.
+
+    Args:
+        type_name: Name of the type being generated
+        direct_deps: Types needing full include
+        pointer_deps: Types needing only forward declaration (will include if path available)
+        type_to_path_map: Map of type names to their header paths
+        needs_basetypes: If True, always include system/basetypes.h
+
+    Returns:
+        List of lines with #includes
+    """
+    lines = []
+    includes = set()
+
+    # Add basetypes.h if needed (for Ghidra primitives like uint, uchar, etc.)
+    if needs_basetypes:
+        includes.add("system/basetypes.h")
+
+    # Process pointer-only deps - include them if we have a path
+    for dep in sorted(pointer_deps):
+        # Strip struct/union prefix for matching (added by resolve_data_type_name_for_headers)
+        dep_name = strip_type_prefix(dep)
+        if dep_name == type_name:
+            continue
+        if dep in direct_deps or dep_name in direct_deps:
+            continue
+        if dep_name in type_to_path_map:
+            dep_path = type_to_path_map[dep_name]
+            # Skip function definitions - they don't need includes for pointer use
+            if '/funcdefs/' in dep_path:
+                continue
+            includes.add(dep_path)
+        # No path - skip. Pointers to unknown types will compile as incomplete types
+
+    # Process direct deps
+    for dep in sorted(direct_deps):
+        # Strip struct/union prefix for matching (added by resolve_data_type_name_for_headers)
+        dep_name = strip_type_prefix(dep)
+        if dep_name == type_name:
+            continue
+        if dep_name in type_to_path_map:
+            includes.add(type_to_path_map[dep_name])
+
+    # Generate includes section
+    if includes:
+        lines.append("")
+        lines.append("// Dependencies")
+        # Put basetypes.h first if present
+        if "system/basetypes.h" in includes:
+            lines.append('#include "system/basetypes.h"')
+            includes.remove("system/basetypes.h")
+        for inc_path in sorted(includes):
+            lines.append('#include "%s"' % inc_path)
+
+    return lines
+
+
 def write_header_file(file_path, content):
     """Write content to a header file.
 
@@ -101,18 +457,29 @@ def write_header_file(file_path, content):
         log_info("Failed to write header file %s: %s" % (file_path, str(e)))
 
 
-def generate_individual_struct_header(currentProgram, struct):
+def generate_individual_struct_header(currentProgram, struct, type_to_path_map=None):
     """Generate header content for an individual struct.
 
     Args:
         currentProgram: The Ghidra program
         struct: The structure data type
+        type_to_path_map: Optional map of type names to header paths for includes
 
     Returns:
         Header content as string
     """
     content = []
     content.append("#pragma once")
+
+    # Add dependencies if type_to_path_map provided
+    if type_to_path_map is not None:
+        direct_deps, pointer_deps = collect_type_dependencies(currentProgram, struct)
+        # Always include basetypes.h for game types - they commonly use primitives
+        # and it's harmless to include when not strictly needed
+        needs_basetypes = True
+        dep_lines = generate_dependency_includes(struct.getName(), direct_deps, pointer_deps, type_to_path_map, needs_basetypes)
+        content.extend(dep_lines)
+
     content.append("")
     content.append("// Structure: %s" % struct.getName())
     if struct.getDescription():
@@ -151,8 +518,8 @@ def generate_individual_struct_header(currentProgram, struct):
     # Write struct
     content.append("typedef struct %s {" % struct.getName())
     for comp in struct.getComponents():
-        field_type = resolve_data_type_name(currentProgram, comp.getDataType())
-        field_name = comp.getFieldName() or ("field_%d" % comp.getOffset())
+        field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
         field_offset = comp.getOffset()
         comment_parts = []
         comment_parts.append("0x%x" % field_offset)
@@ -166,28 +533,36 @@ def generate_individual_struct_header(currentProgram, struct):
     return "\n".join(content)
 
 
-def generate_individual_union_header(currentProgram, union):
+def generate_individual_union_header(currentProgram, union, type_to_path_map=None):
     """Generate header content for an individual union.
 
     Args:
         currentProgram: The Ghidra program
         union: The union data type
+        type_to_path_map: Optional map of type names to header paths for includes
 
     Returns:
         Header content as string
     """
     content = []
     content.append("#pragma once")
-    content.append("")
-    content.append("// Individual union header for: %s" % union.getName())
+
+    # Add dependencies if type_to_path_map provided
+    if type_to_path_map is not None:
+        direct_deps, pointer_deps = collect_type_dependencies(currentProgram, union)
+        # Always include basetypes.h for game types
+        needs_basetypes = True
+        dep_lines = generate_dependency_includes(union.getName(), direct_deps, pointer_deps, type_to_path_map, needs_basetypes)
+        content.extend(dep_lines)
+
     content.append("")
     content.append("// Union: %s" % union.getName())
     if union.getDescription():
         content.append("// %s" % union.getDescription())
     content.append("typedef union %s {" % union.getName())
     for comp in union.getComponents():
-        field_type = resolve_data_type_name(currentProgram, comp.getDataType())
-        field_name = comp.getFieldName() or ("field_%d" % comp.getOffset())
+        field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
         comment = " // %s" % comp.getComment() if comp.getComment() else ""
         field_decl = format_field_declaration(field_type, field_name)
         content.append("    %s;%s" % (field_decl, comment))
@@ -196,20 +571,19 @@ def generate_individual_union_header(currentProgram, union):
     return "\n".join(content)
 
 
-def generate_individual_enum_header(currentProgram, enum):
+def generate_individual_enum_header(currentProgram, enum, type_to_path_map=None):
     """Generate header content for an individual enum.
 
     Args:
         currentProgram: The Ghidra program
         enum: The enum data type
+        type_to_path_map: Optional map of type names to header paths (unused for enums)
 
     Returns:
         Header content as string
     """
     content = []
     content.append("#pragma once")
-    content.append("")
-    content.append("// Individual enum header for: %s" % enum.getName())
     content.append("")
     content.append("// Enum: %s" % enum.getName())
     if enum.getDescription():
@@ -225,60 +599,140 @@ def generate_individual_enum_header(currentProgram, enum):
     return "\n".join(content)
 
 
-def generate_individual_typedef_header(currentProgram, typedef):
+def generate_individual_typedef_header(currentProgram, typedef, type_to_path_map=None):
     """Generate header content for an individual typedef.
 
     Args:
         currentProgram: The Ghidra program
         typedef: The typedef data type
+        type_to_path_map: Optional map of type names to header paths for includes
 
     Returns:
         Header content as string
     """
     content = []
     content.append("#pragma once")
-    content.append("")
-    content.append("// Individual typedef header for: %s" % typedef.getName())
+
+    # Add dependencies if type_to_path_map provided
+    if type_to_path_map is not None:
+        direct_deps, pointer_deps = collect_type_dependencies(currentProgram, typedef)
+        # Always include basetypes.h for game types
+        needs_basetypes = True
+        dep_lines = generate_dependency_includes(typedef.getName(), direct_deps, pointer_deps, type_to_path_map, needs_basetypes)
+        content.extend(dep_lines)
+
     content.append("")
     content.append("// Typedef: %s" % typedef.getName())
     if typedef.getDescription():
         content.append("// %s" % typedef.getDescription())
-    base_type = resolve_data_type_name(currentProgram, typedef.getDataType())
+    base_type = resolve_data_type_name_for_headers(currentProgram, typedef.getDataType())
     content.append("typedef %s %s;" % (base_type, typedef.getName()))
     content.append("")
     return "\n".join(content)
 
 
-def generate_individual_function_definition_header(currentProgram, func_def):
+def generate_individual_function_definition_header(currentProgram, func_def, type_to_path_map=None):
     """Generate header content for an individual function definition.
 
     Args:
         currentProgram: The Ghidra program
         func_def: The function definition data type
+        type_to_path_map: Optional map of type names to header paths for includes
 
     Returns:
         Header content as string
     """
     content = []
     content.append("#pragma once")
-    content.append("")
-    content.append("// Individual function definition header for: %s" % func_def.getName())
+
+    # Add dependencies if type_to_path_map provided
+    # For funcdef headers, we ONLY include basetypes.h - not class/vtable headers
+    # This prevents circular dependencies: funcdef->class->vtable->funcdef
+    # Struct/union types are handled via forward declarations below
+    if type_to_path_map is not None:
+        direct_deps, pointer_deps = collect_type_dependencies(currentProgram, func_def)
+        # Filter out class/vtable/struct dependencies to prevent circular includes
+        # We use forward declarations for struct pointer types instead
+        filtered_direct_deps = set()
+        filtered_pointer_deps = set()
+        for dep in direct_deps:
+            dep_name = strip_type_prefix(dep)
+            if dep_name in type_to_path_map:
+                path = type_to_path_map[dep_name]
+                # Skip class headers, vtable headers, and struct headers - use forward decls
+                if '/classes/' in path or '/structs/' in path:
+                    continue
+            filtered_direct_deps.add(dep)
+        for dep in pointer_deps:
+            dep_name = strip_type_prefix(dep)
+            if dep_name in type_to_path_map:
+                path = type_to_path_map[dep_name]
+                # Skip class headers, vtable headers, and struct headers - use forward decls
+                if '/classes/' in path or '/structs/' in path:
+                    continue
+            filtered_pointer_deps.add(dep)
+        # Always include basetypes.h for game types
+        needs_basetypes = True
+        dep_lines = generate_dependency_includes(func_def.getName(), filtered_direct_deps, filtered_pointer_deps, type_to_path_map, needs_basetypes)
+        content.extend(dep_lines)
+
+    # Collect struct/union types that need forward declarations
+    # These are types used as pointers in params/return that aren't included via headers
+    forward_decls = set()
+
+    def extract_struct_from_pointer_type(type_str):
+        """Extract struct/union name from a pointer type string like 'struct CStrList*'"""
+        type_str = type_str.strip()
+        if type_str.endswith('*'):
+            base = type_str[:-1].strip()
+            if base.startswith('struct '):
+                return ('struct', base[7:].strip())
+            elif base.startswith('union '):
+                return ('union', base[6:].strip())
+        return None
+
+    # Check return type
+    if hasattr(func_def, 'getReturnType') and func_def.getReturnType():
+        ret_type_str = resolve_data_type_name_for_headers(currentProgram, func_def.getReturnType())
+        decl = extract_struct_from_pointer_type(ret_type_str)
+        if decl:
+            forward_decls.add(decl)
+
+    # Check parameters
+    if hasattr(func_def, 'getArguments') and func_def.getArguments():
+        for param in func_def.getArguments():
+            if hasattr(param, 'getDataType') and param.getDataType():
+                param_type_str = resolve_data_type_name_for_headers(currentProgram, param.getDataType())
+                decl = extract_struct_from_pointer_type(param_type_str)
+                if decl:
+                    forward_decls.add(decl)
+
+    # Add forward declarations
+    if forward_decls:
+        content.append("")
+        content.append("// Forward declarations")
+        for keyword, name in sorted(forward_decls):
+            content.append("%s %s;" % (keyword, name))
+
     content.append("")
     content.append("// Function Definition: %s" % func_def.getName())
     if func_def.getComment():
         content.append("// %s" % func_def.getComment())
     return_type = "void"
     if hasattr(func_def, 'getReturnType') and func_def.getReturnType():
-        return_type = resolve_data_type_name(currentProgram, func_def.getReturnType())
+        return_type = resolve_data_type_name_for_headers(currentProgram, func_def.getReturnType())
     params = []
+    used_param_names = set()
     if hasattr(func_def, 'getArguments') and func_def.getArguments():
         for param in func_def.getArguments():
             param_type = "void"
             param_name = "param"
             if hasattr(param, 'getDataType') and param.getDataType():
-                param_type = resolve_data_type_name(currentProgram, param.getDataType())
+                param_type = resolve_data_type_name_for_headers(currentProgram, param.getDataType())
             if hasattr(param, 'getName') and param.getName():
                 param_name = param.getName()
+            # Ensure unique parameter names to avoid "conflicting types" errors
+            param_name = make_unique_param_name(param_name, used_param_names)
             params.append("%s %s" % (param_type, param_name))
     params_str = ", ".join(params) if params else "void"
     content.append("typedef %s (*%s)(%s);" % (return_type, func_def.getName(), params_str))
@@ -305,8 +759,8 @@ def generate_structs_header(currentProgram, structs):
             content.append("// %s" % struct.getDescription())
         content.append("typedef struct %s {" % struct.getName())
         for comp in struct.getComponents():
-            field_type = resolve_data_type_name(currentProgram, comp.getDataType())
-            field_name = comp.getFieldName() or ("field_%d" % comp.getOffset())
+            field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
@@ -334,8 +788,8 @@ def generate_unions_header(currentProgram, unions):
             content.append("// %s" % union.getDescription())
         content.append("typedef union %s {" % union.getName())
         for comp in union.getComponents():
-            field_type = resolve_data_type_name(currentProgram, comp.getDataType())
-            field_name = comp.getFieldName() or ("field_%d" % comp.getOffset())
+            field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
@@ -389,7 +843,7 @@ def generate_typedefs_header(currentProgram, typedefs):
         content.append("// Typedef: %s" % typedef.getName())
         if typedef.getDescription():
             content.append("// %s" % typedef.getDescription())
-        base_type = resolve_data_type_name(currentProgram, typedef.getDataType())
+        base_type = resolve_data_type_name_for_headers(currentProgram, typedef.getDataType())
         content.append("typedef %s %s;" % (base_type, typedef.getName()))
         content.append("")
     return "\n".join(content)
@@ -414,16 +868,19 @@ def generate_function_definitions_header(currentProgram, function_definitions):
             content.append("// %s" % func_def.getComment())
         return_type = "void"
         if hasattr(func_def, 'getReturnType') and func_def.getReturnType():
-            return_type = resolve_data_type_name(currentProgram, func_def.getReturnType())
+            return_type = resolve_data_type_name_for_headers(currentProgram, func_def.getReturnType())
         params = []
+        used_param_names = set()
         if hasattr(func_def, 'getArguments') and func_def.getArguments():
             for param in func_def.getArguments():
                 param_type = "void"
                 param_name = "param"
                 if hasattr(param, 'getDataType') and param.getDataType():
-                    param_type = resolve_data_type_name(currentProgram, param.getDataType())
+                    param_type = resolve_data_type_name_for_headers(currentProgram, param.getDataType())
                 if hasattr(param, 'getName') and param.getName():
                     param_name = param.getName()
+                # Ensure unique parameter names to avoid "conflicting types" errors
+                param_name = make_unique_param_name(param_name, used_param_names)
                 params.append("%s %s" % (param_type, param_name))
         params_str = ", ".join(params) if params else "void"
         content.append("typedef %s (*%s)(%s);" % (return_type, func_def.getName(), params_str))
@@ -497,6 +954,38 @@ def generate_equates_header(currentProgram, equates_list):
     return "\n".join(content)
 
 
+def is_valid_define_name(name):
+    """Check if a name is valid for a C #define.
+
+    Args:
+        name: The equate name to validate
+
+    Returns:
+        True if valid C identifier, False otherwise
+    """
+    if not name:
+        return False
+
+    # Must start with letter or underscore
+    if not (name[0].isalpha() or name[0] == '_'):
+        return False
+
+    # Rest must be alphanumeric or underscore
+    for char in name[1:]:
+        if not (char.isalnum() or char == '_'):
+            return False
+
+    # Reject names that are just numbers with prefix (like hex literals)
+    if name.startswith('0x') or name.startswith('0X'):
+        return False
+
+    # Reject names that look like addresses or raw hex
+    if re.match(r'^[0-9A-Fa-f]+$', name):
+        return False
+
+    return True
+
+
 def organize_equates_by_category(currentProgram):
     """Organize equates into categories.
 
@@ -509,10 +998,16 @@ def organize_equates_by_category(currentProgram):
     equates_by_category = {}
     equate_table = currentProgram.getEquateTable()
     all_equates = []
+    skipped_count = 0
 
     for equate in equate_table.getEquates():
         eq_name = equate.getName()
         eq_value = equate.getValue()
+
+        # Skip invalid define names
+        if not is_valid_define_name(eq_name):
+            skipped_count += 1
+            continue
 
         # Use Ghidra's built-in reference iterator instead of scanning all addresses
         refs = []
@@ -532,6 +1027,9 @@ def organize_equates_by_category(currentProgram):
         }
         all_equates.append(equate_data)
 
+    if skipped_count > 0:
+        log_info("Skipped %d equates with invalid define names" % skipped_count)
+
     # Categorize equates based on usage patterns and names
     for equate_data in all_equates:
         category = categorize_equate(currentProgram, equate_data)
@@ -549,17 +1047,17 @@ def categorize_equate(currentProgram, equate_data):
         equate_data: Equate dictionary
 
     Returns:
-        Category path string
+        Category path string (defines/system or defines/game)
     """
     eq_name = equate_data['name']
     eq_name_lower = eq_name.lower()
 
     # System constants
     if eq_name_lower.startswith("system_"):
-        return "/Nocturne/Constants/System"
+        return "defines/system"
 
-    # Default category
-    return "/Nocturne/Constants/Game"
+    # Default category - game defines
+    return "defines/game"
 
 
 def format_equate_value(value):
@@ -589,13 +1087,14 @@ def format_equate_value(value):
             return "0x%X" % (value & 0xFFFFFFFF)
 
 
-def export_individual_game_files(currentProgram, pseudocode_dir, game_individual_types):
+def export_individual_game_files(currentProgram, pseudocode_dir, game_individual_types, type_to_path_map=None):
     """Export individual header files for /Game category types.
 
     Args:
         currentProgram: The Ghidra program
         pseudocode_dir: Base directory for headers
         game_individual_types: List of type info dictionaries
+        type_to_path_map: Optional map of type names to header paths for includes
     """
     if not game_individual_types:
         return
@@ -613,23 +1112,23 @@ def export_individual_game_files(currentProgram, pseudocode_dir, game_individual
         header_dir = os.path.join(pseudocode_dir, export_path) if export_path else pseudocode_dir
         make_dirs(header_dir)
 
-        # Generate content based on data type
+        # Generate content based on data type (with dependency tracking)
         content = ""
         file_extension = ".h"
         if isinstance(dt, Structure):
-            content = generate_individual_struct_header(currentProgram, dt)
+            content = generate_individual_struct_header(currentProgram, dt, type_to_path_map)
             filename = "%s%s" % (dt_name, file_extension)
         elif isinstance(dt, Union):
-            content = generate_individual_union_header(currentProgram, dt)
+            content = generate_individual_union_header(currentProgram, dt, type_to_path_map)
             filename = "%s%s" % (dt_name, file_extension)
         elif isinstance(dt, Enum):
-            content = generate_individual_enum_header(currentProgram, dt)
+            content = generate_individual_enum_header(currentProgram, dt, type_to_path_map)
             filename = "%s%s" % (dt_name, file_extension)
         elif isinstance(dt, TypeDef):
-            content = generate_individual_typedef_header(currentProgram, dt)
+            content = generate_individual_typedef_header(currentProgram, dt, type_to_path_map)
             filename = "%s%s" % (dt_name, file_extension)
         elif is_function_definition_type(dt):
-            content = generate_individual_function_definition_header(currentProgram, dt)
+            content = generate_individual_function_definition_header(currentProgram, dt, type_to_path_map)
             filename = "%s%s" % (dt_name, file_extension)
         else:
             log_info("Unknown data type for individual export: %s" % dt_name)
@@ -639,6 +1138,715 @@ def export_individual_game_files(currentProgram, pseudocode_dir, game_individual
         file_path = os.path.join(header_dir, filename)
         write_header_file(file_path, content)
         log_info("Created individual file: %s (original Ghidra category: %s)" % (file_path, original_path))
+
+
+def collect_forward_declarations_needed(currentProgram, sorted_types, types_in_file):
+    """Collect struct/union forward declarations needed for function pointers.
+
+    When function definitions use pointers to structs that are defined later or
+    are external to this file, we need forward declarations to avoid
+    "declared inside parameter list" warnings.
+
+    Args:
+        currentProgram: The Ghidra program
+        sorted_types: Types in their sorted order
+        types_in_file: Set of type names in this file
+
+    Returns:
+        Set of type names needing forward declarations
+    """
+    forward_decls = set()
+    defined_so_far = set()
+
+    # Map type names to their data types
+    name_to_type = {dt.getName(): dt for dt in sorted_types}
+
+    for dt in sorted_types:
+        dt_name = dt.getName()
+
+        # Check if this is a function definition
+        class_name = dt.__class__.__name__.rsplit('.', 1)[-1]
+        if class_name in ['FunctionDefinitionDataType', 'FunctionDefinitionDB', 'FunctionDefinition', 'FunctionDefDataType']:
+            # Get pointer dependencies (structs/unions referenced by pointer)
+            _, pointer_deps = collect_type_dependencies(currentProgram, dt)
+
+            for dep in pointer_deps:
+                # Strip struct/union prefix for matching (added by resolve_data_type_name_for_headers)
+                dep_name = strip_type_prefix(dep)
+
+                # Case 1: Type is in this file but not yet defined - needs forward decl
+                if dep_name in types_in_file and dep_name not in defined_so_far:
+                    dep_dt = name_to_type.get(dep_name)
+                    if dep_dt and isinstance(dep_dt, (Structure, Union)):
+                        forward_decls.add(dep_name)
+
+                # Case 2: Type is NOT in this file (external) - also needs forward decl
+                # to avoid "declared inside parameter list" warning.
+                # Note: pointer_deps only contains struct/union types (per
+                # collect_type_dependencies_with_context which filters on line 635)
+                elif dep_name not in types_in_file:
+                    forward_decls.add(dep_name)
+
+        defined_so_far.add(dt_name)
+
+    return forward_decls
+
+
+def topological_sort_types(currentProgram, types_list, types_in_file):
+    """Topologically sort types by their internal dependencies.
+
+    Args:
+        currentProgram: The Ghidra program
+        types_list: List of data type objects
+        types_in_file: Set of type names in this file
+
+    Returns:
+        List of types sorted so dependencies come first
+    """
+    from collections import defaultdict
+
+    # Build name -> type mapping
+    name_to_type = {}
+    for dt in types_list:
+        name_to_type[dt.getName()] = dt
+
+    # Build set of function definition names (to filter spurious deps)
+    funcdef_names = set()
+    for dt in types_list:
+        if is_function_definition_type(dt):
+            funcdef_names.add(dt.getName())
+
+    # Build dependency graph (only for deps within this file)
+    # NOTE: Only use direct_deps for ordering. Pointer deps don't require
+    # ordering because we use 'struct TypeName*' syntax which allows
+    # forward references. This prevents cycles when types reference each
+    # other only through pointers (e.g., a struct has a pointer to a
+    # function type that takes a pointer to that struct as a parameter).
+    deps = defaultdict(set)  # deps[A] = set of types that A depends on
+    for dt in types_list:
+        dt_name = dt.getName()
+        is_funcdef = is_function_definition_type(dt)
+        direct_deps, pointer_deps = collect_type_dependencies(currentProgram, dt)
+        # Only track direct (non-pointer) internal dependencies
+        for dep in direct_deps:
+            # Strip struct/union prefix for matching (added by resolve_data_type_name_for_headers)
+            dep_name = strip_type_prefix(dep)
+            if dep_name in types_in_file and dep_name != dt_name:
+                # Filter out function-def-to-function-def deps (spurious from vtable traversal)
+                if is_funcdef and dep_name in funcdef_names:
+                    continue
+                deps[dt_name].add(dep_name)
+
+    # Kahn's algorithm for topological sort
+    in_degree = defaultdict(int)
+    for dt_name in name_to_type:
+        in_degree[dt_name] = 0
+    for dt_name, dt_deps in deps.items():
+        for dep in dt_deps:
+            if dep in name_to_type:  # Only count deps on types we're sorting
+                in_degree[dt_name] += 1
+
+    # Start with types that have no internal dependencies
+    queue = [name for name in name_to_type if in_degree[name] == 0]
+    queue.sort()  # Alphabetical as secondary sort
+
+    result = []
+    while queue:
+        # Take type with no remaining dependencies
+        current = queue.pop(0)
+        result.append(name_to_type[current])
+
+        # Update in-degrees
+        for dt_name in name_to_type:
+            if current in deps[dt_name]:
+                in_degree[dt_name] -= 1
+                if in_degree[dt_name] == 0 and dt_name not in [r.getName() for r in result]:
+                    queue.append(dt_name)
+                    queue.sort()
+
+    # Add any remaining types (circular deps - shouldn't happen often)
+    for dt in types_list:
+        if dt not in result:
+            result.append(dt)
+
+    return result
+
+
+def generate_type_definition(currentProgram, dt):
+    """Generate the definition for a single data type.
+
+    Args:
+        currentProgram: The Ghidra program
+        dt: The data type
+
+    Returns:
+        List of lines for this type definition
+    """
+    lines = []
+    dt_name = dt.getName()
+
+    if isinstance(dt, Enum):
+        lines.append("")
+        lines.append("// Enum: %s" % dt_name)
+        if dt.getDescription():
+            lines.append("// %s" % dt.getDescription())
+        lines.append("typedef enum %s {" % dt_name)
+        enum_values = []
+        for name in dt.getNames():
+            value = dt.getValue(name)
+            enum_values.append("    %s = %d" % (name, value))
+        lines.append(",\n".join(enum_values))
+        lines.append("} %s;" % dt_name)
+
+    elif isinstance(dt, TypeDef):
+        lines.append("")
+        lines.append("// Typedef: %s" % dt_name)
+        if dt.getDescription():
+            lines.append("// %s" % dt.getDescription())
+        base_type = resolve_data_type_name_for_headers(currentProgram, dt.getDataType())
+        lines.append("typedef %s %s;" % (base_type, dt_name))
+
+    elif isinstance(dt, Union):
+        lines.append("")
+        lines.append("// Union: %s" % dt_name)
+        if dt.getDescription():
+            lines.append("// %s" % dt.getDescription())
+        lines.append("typedef union %s {" % dt_name)
+        for comp in dt.getComponents():
+            field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
+            comment = " // %s" % comp.getComment() if comp.getComment() else ""
+            field_decl = format_field_declaration(field_type, field_name)
+            lines.append("    %s;%s" % (field_decl, comment))
+        lines.append("} %s;" % dt_name)
+
+    elif isinstance(dt, Structure):
+        lines.append("")
+        lines.append("// Structure: %s" % dt_name)
+        if dt.getDescription():
+            lines.append("// %s" % dt.getDescription())
+        lines.append("typedef struct %s {" % dt_name)
+        for comp in dt.getComponents():
+            field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
+            comment = " // %s" % comp.getComment() if comp.getComment() else ""
+            field_decl = format_field_declaration(field_type, field_name)
+            lines.append("    %s;%s" % (field_decl, comment))
+        lines.append("} %s;" % dt_name)
+
+    elif is_function_definition_type(dt):
+        lines.append("")
+        lines.append("// Function Definition: %s" % dt_name)
+        if hasattr(dt, 'getComment') and dt.getComment():
+            lines.append("// %s" % dt.getComment())
+        return_type = "void"
+        if hasattr(dt, 'getReturnType') and dt.getReturnType():
+            return_type = resolve_data_type_name_for_headers(currentProgram, dt.getReturnType())
+        params = []
+        used_param_names = set()
+        if hasattr(dt, 'getArguments') and dt.getArguments():
+            for param in dt.getArguments():
+                param_type = "void"
+                param_name = "param"
+                if hasattr(param, 'getDataType') and param.getDataType():
+                    param_type = resolve_data_type_name_for_headers(currentProgram, param.getDataType())
+                if hasattr(param, 'getName') and param.getName():
+                    param_name = param.getName()
+                # Ensure unique parameter names to avoid "conflicting types" errors
+                param_name = make_unique_param_name(param_name, used_param_names)
+                params.append("%s %s" % (param_type, param_name))
+        params_str = ", ".join(params) if params else "void"
+        lines.append("typedef %s (*%s)(%s);" % (return_type, dt_name, params_str))
+
+    return lines
+
+
+def get_basetypes_defined_types():
+    """Return the set of type names that are defined in basetypes.h.
+
+    These types should be skipped when generating system headers to avoid
+    redefinition errors. This delegates to the single source of truth in basetypes.py.
+    """
+    return get_all_basetypes()
+
+
+def generate_basetypes_header(pseudocode_dir):
+    """Generate system/basetypes.h with Ghidra and Windows primitive type definitions.
+
+    This header defines fundamental types that break circular dependencies between
+    system headers. Types defined here should match get_basetypes_defined_types().
+
+    Args:
+        pseudocode_dir: Base directory for headers
+    """
+    system_dir = os.path.join(pseudocode_dir, "system")
+    make_dirs(system_dir)
+
+    content = []
+    content.append("#pragma once")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// BASETYPES - Primitive Type Definitions")
+    content.append("// =============================================================================")
+    content.append("// This header defines Ghidra's built-in types and Windows primitives.")
+    content.append("// It must be included first to break circular dependencies between system headers.")
+    content.append("")
+    content.append("// Standard includes")
+    content.append("#include <stddef.h>  // for wchar_t")
+    content.append("#include <stdbool.h>  // for bool")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// Ghidra Primitive Types")
+    content.append("// =============================================================================")
+    content.append("")
+    content.append("// Sized unsigned types")
+    content.append("typedef unsigned char byte;")
+    content.append("typedef unsigned char uchar;")
+    content.append("typedef unsigned short ushort;")
+    content.append("typedef unsigned int uint;")
+    content.append("typedef unsigned long ulong;")
+    content.append("typedef long long longlong;")
+    content.append("typedef unsigned long long ulonglong;")
+    content.append("")
+    content.append("// Lowercase aliases (Ghidra sometimes uses these)")
+    content.append("typedef unsigned long dword;")
+    content.append("typedef unsigned short word;")
+    content.append("")
+    content.append("// Undefined types (placeholder bytes for unknown data)")
+    content.append("typedef unsigned char undefined;")
+    content.append("typedef unsigned char undefined1;")
+    content.append("typedef unsigned short undefined2;")
+    content.append("typedef unsigned int undefined4;")
+    content.append("typedef unsigned long long undefined8;")
+    content.append("")
+    content.append("// Generic pointer type")
+    content.append("typedef void* pointer;")
+    content.append("")
+    content.append("// Ghidra string types")
+    content.append("typedef char* TerminatedCString;")
+    content.append("typedef wchar_t* TerminatedUnicode;")
+    content.append("typedef char* string;  // Ghidra's generic string type")
+    content.append("")
+    content.append("// Extended precision float (x87 80-bit)")
+    content.append("typedef long double float10;")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// Windows Primitive Types")
+    content.append("// =============================================================================")
+    content.append("// These are the fundamental Windows types that other system headers depend on.")
+    content.append("// Defined here to break circular dependencies.")
+    content.append("")
+    content.append("// Basic Windows integer types")
+    content.append("typedef int BOOL;")
+    content.append("typedef unsigned char BYTE;")
+    content.append("typedef char CHAR;")
+    content.append("typedef unsigned short WORD;")
+    content.append("typedef unsigned long DWORD;")
+    content.append("typedef short SHORT;")
+    content.append("typedef long LONG;")
+    content.append("typedef int INT;")
+    content.append("typedef unsigned int UINT;")
+    content.append("typedef unsigned short USHORT;")
+    content.append("typedef unsigned long ULONG;")
+    content.append("typedef unsigned char UCHAR;")
+    content.append("typedef float FLOAT;")
+    content.append("typedef double DOUBLE;")
+    content.append("typedef wchar_t WCHAR;")
+    content.append("typedef long long LONGLONG;")
+    content.append("typedef unsigned long long ULONGLONG;")
+    content.append("typedef unsigned long long QWORD;")
+    content.append("")
+    content.append("// Pointer-sized types (32-bit)")
+    content.append("typedef long LONG_PTR;")
+    content.append("typedef unsigned long ULONG_PTR;")
+    content.append("typedef unsigned long DWORD_PTR;")
+    content.append("typedef unsigned long SIZE_T;")
+    content.append("typedef unsigned int UINT_PTR;")
+    content.append("typedef int INT_PTR;")
+    content.append("")
+    content.append("// Handle types")
+    content.append("typedef void* HANDLE;")
+    content.append("typedef void* PVOID;")
+    content.append("typedef void* LPVOID;")
+    content.append("typedef const void* LPCVOID;")
+    content.append("")
+    content.append("// String pointer types")
+    content.append("typedef char* LPSTR;")
+    content.append("typedef const char* LPCSTR;")
+    content.append("typedef wchar_t* LPWSTR;")
+    content.append("typedef const wchar_t* LPCWSTR;")
+    content.append("typedef BYTE* LPBYTE;")
+    content.append("typedef DWORD* LPDWORD;")
+    content.append("")
+    content.append("// Common typedefs")
+    content.append("typedef DWORD COLORREF;")
+    content.append("typedef UINT WPARAM;")
+    content.append("typedef LONG LPARAM;")
+    content.append("typedef LONG LRESULT;")
+    content.append("typedef long HRESULT;")
+    content.append("typedef WORD ATOM;")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// Windows PE Header Structures (Ghidra built-ins)")
+    content.append("// =============================================================================")
+    content.append("")
+    content.append("typedef struct IMAGE_FILE_HEADER {")
+    content.append("    WORD Machine;")
+    content.append("    WORD NumberOfSections;")
+    content.append("    DWORD TimeDateStamp;")
+    content.append("    DWORD PointerToSymbolTable;")
+    content.append("    DWORD NumberOfSymbols;")
+    content.append("    WORD SizeOfOptionalHeader;")
+    content.append("    WORD Characteristics;")
+    content.append("} IMAGE_FILE_HEADER;")
+    content.append("")
+    content.append("typedef struct IMAGE_DATA_DIRECTORY {")
+    content.append("    DWORD VirtualAddress;")
+    content.append("    DWORD Size;")
+    content.append("} IMAGE_DATA_DIRECTORY;")
+    content.append("")
+    content.append("typedef struct IMAGE_OPTIONAL_HEADER32 {")
+    content.append("    WORD Magic;")
+    content.append("    BYTE MajorLinkerVersion;")
+    content.append("    BYTE MinorLinkerVersion;")
+    content.append("    DWORD SizeOfCode;")
+    content.append("    DWORD SizeOfInitializedData;")
+    content.append("    DWORD SizeOfUninitializedData;")
+    content.append("    DWORD AddressOfEntryPoint;")
+    content.append("    DWORD BaseOfCode;")
+    content.append("    DWORD BaseOfData;")
+    content.append("    DWORD ImageBase;")
+    content.append("    DWORD SectionAlignment;")
+    content.append("    DWORD FileAlignment;")
+    content.append("    WORD MajorOperatingSystemVersion;")
+    content.append("    WORD MinorOperatingSystemVersion;")
+    content.append("    WORD MajorImageVersion;")
+    content.append("    WORD MinorImageVersion;")
+    content.append("    WORD MajorSubsystemVersion;")
+    content.append("    WORD MinorSubsystemVersion;")
+    content.append("    DWORD Win32VersionValue;")
+    content.append("    DWORD SizeOfImage;")
+    content.append("    DWORD SizeOfHeaders;")
+    content.append("    DWORD CheckSum;")
+    content.append("    WORD Subsystem;")
+    content.append("    WORD DllCharacteristics;")
+    content.append("    DWORD SizeOfStackReserve;")
+    content.append("    DWORD SizeOfStackCommit;")
+    content.append("    DWORD SizeOfHeapReserve;")
+    content.append("    DWORD SizeOfHeapCommit;")
+    content.append("    DWORD LoaderFlags;")
+    content.append("    DWORD NumberOfRvaAndSizes;")
+    content.append("    IMAGE_DATA_DIRECTORY DataDirectory[16];")
+    content.append("} IMAGE_OPTIONAL_HEADER32;")
+    content.append("")
+    content.append("typedef struct IMAGE_NT_HEADERS32 {")
+    content.append("    DWORD Signature;")
+    content.append("    IMAGE_FILE_HEADER FileHeader;")
+    content.append("    IMAGE_OPTIONAL_HEADER32 OptionalHeader;")
+    content.append("} IMAGE_NT_HEADERS32;")
+    content.append("")
+    content.append("typedef struct IMAGE_SECTION_HEADER {")
+    content.append("    BYTE Name[8];")
+    content.append("    DWORD VirtualSize;")
+    content.append("    DWORD VirtualAddress;")
+    content.append("    DWORD SizeOfRawData;")
+    content.append("    DWORD PointerToRawData;")
+    content.append("    DWORD PointerToRelocations;")
+    content.append("    DWORD PointerToLinenumbers;")
+    content.append("    WORD NumberOfRelocations;")
+    content.append("    WORD NumberOfLinenumbers;")
+    content.append("    DWORD Characteristics;")
+    content.append("} IMAGE_SECTION_HEADER;")
+    content.append("")
+    content.append("typedef struct IMAGE_RESOURCE_DIRECTORY {")
+    content.append("    DWORD Characteristics;")
+    content.append("    DWORD TimeDateStamp;")
+    content.append("    WORD MajorVersion;")
+    content.append("    WORD MinorVersion;")
+    content.append("    WORD NumberOfNamedEntries;")
+    content.append("    WORD NumberOfIdEntries;")
+    content.append("} IMAGE_RESOURCE_DIRECTORY;")
+    content.append("")
+    content.append("typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY {")
+    content.append("    DWORD Name;")
+    content.append("    DWORD OffsetToData;")
+    content.append("} IMAGE_RESOURCE_DIRECTORY_ENTRY;")
+    content.append("")
+    content.append("typedef struct IMAGE_RESOURCE_DATA_ENTRY {")
+    content.append("    DWORD OffsetToData;")
+    content.append("    DWORD Size;")
+    content.append("    DWORD CodePage;")
+    content.append("    DWORD Reserved;")
+    content.append("} IMAGE_RESOURCE_DATA_ENTRY;")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// Windows PE Resource Types (Ghidra built-ins)")
+    content.append("// =============================================================================")
+    content.append("")
+    content.append("// Placeholder types for PE resources - actual structure varies by resource")
+    content.append("typedef struct IconResource {")
+    content.append("    BYTE data[1]; // Variable size icon data")
+    content.append("} IconResource;")
+    content.append("")
+    content.append("typedef struct MenuResource {")
+    content.append("    BYTE data[1]; // Variable size menu data")
+    content.append("} MenuResource;")
+    content.append("")
+    content.append("typedef struct GroupIconResource {")
+    content.append("    BYTE data[1]; // Variable size group icon data")
+    content.append("} GroupIconResource;")
+    content.append("")
+    content.append("typedef struct VS_VERSION_INFO {")
+    content.append("    WORD wLength;")
+    content.append("    WORD wValueLength;")
+    content.append("    WORD wType;")
+    content.append("    WCHAR szKey[16]; // \"VS_VERSION_INFO\"")
+    content.append("    BYTE data[1]; // Variable size version data")
+    content.append("} VS_VERSION_INFO;")
+    content.append("")
+    content.append("typedef struct StringFileInfo {")
+    content.append("    WORD wLength;")
+    content.append("    WORD wValueLength;")
+    content.append("    WORD wType;")
+    content.append("} StringFileInfo;")
+    content.append("")
+    content.append("typedef struct StringInfo {")
+    content.append("    WORD wLength;")
+    content.append("    WORD wValueLength;")
+    content.append("    WORD wType;")
+    content.append("} StringInfo;")
+    content.append("")
+    content.append("typedef struct StringTable {")
+    content.append("    WORD wLength;")
+    content.append("    WORD wValueLength;")
+    content.append("    WORD wType;")
+    content.append("} StringTable;")
+    content.append("")
+    content.append("typedef struct Var {")
+    content.append("    WORD wLength;")
+    content.append("    WORD wValueLength;")
+    content.append("    WORD wType;")
+    content.append("} Var;")
+    content.append("")
+    content.append("typedef struct VarFileInfo {")
+    content.append("    WORD wLength;")
+    content.append("    WORD wValueLength;")
+    content.append("    WORD wType;")
+    content.append("} VarFileInfo;")
+    content.append("")
+
+    header_path = os.path.join(system_dir, "basetypes.h")
+    write_header_file(header_path, "\n".join(content))
+    log_info("Created system/basetypes.h with Ghidra and Windows primitive types")
+
+
+def detect_include_cycles(system_grouped_types, type_to_path_map):
+    """Detect circular include dependencies between system headers.
+
+    Args:
+        system_grouped_types: Dict mapping export_path to type lists
+        type_to_path_map: Map of type names to header paths
+
+    Returns:
+        Set of header paths involved in cycles
+    """
+    from collections import defaultdict
+
+    # Build dependency graph between headers
+    header_deps = defaultdict(set)
+    for export_path, types in system_grouped_types.items():
+        this_header = "%s.h" % export_path
+        all_types = (types['function_definitions'] + types['enums'] +
+                    types['typedefs'] + types['structs'] + types['unions'])
+
+        for dt in all_types:
+            dt_name = dt.getName()
+            if dt_name in type_to_path_map:
+                dep_header = type_to_path_map[dt_name]
+                if dep_header != this_header and dep_header.startswith("system/"):
+                    header_deps[this_header].add(dep_header)
+
+    # Find cycles using DFS
+    cycles = set()
+    visited = set()
+    rec_stack = set()
+
+    def dfs(header, path):
+        visited.add(header)
+        rec_stack.add(header)
+        path.append(header)
+
+        for dep in header_deps.get(header, []):
+            if dep not in visited:
+                if dfs(dep, path):
+                    return True
+            elif dep in rec_stack:
+                # Found a cycle
+                cycle_start = path.index(dep)
+                for h in path[cycle_start:]:
+                    cycles.add(h)
+                return True
+
+        path.pop()
+        rec_stack.remove(header)
+        return False
+
+    for header in header_deps:
+        if header not in visited:
+            dfs(header, [])
+
+    return cycles
+
+
+def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_types, type_to_path_map=None):
+    """Export grouped header files for system types as single files.
+
+    Args:
+        currentProgram: The Ghidra program
+        pseudocode_dir: Base directory for headers
+        system_grouped_types: Dict mapping export_path to type lists
+        type_to_path_map: Optional map of type names to header paths for includes
+    """
+    # Ensure system directory exists
+    system_dir = os.path.join(pseudocode_dir, "system")
+    make_dirs(system_dir)
+
+    # Generate basetypes.h with Ghidra primitives and Windows base types
+    generate_basetypes_header(pseudocode_dir)
+
+    # Get the set of types already defined in basetypes.h
+    basetypes_types = get_basetypes_defined_types()
+
+    # Detect cycles in header dependencies
+    if type_to_path_map:
+        cyclic_headers = detect_include_cycles(system_grouped_types, type_to_path_map)
+        if cyclic_headers:
+            log_info("Detected circular dependencies in headers: %s" % ", ".join(sorted(cyclic_headers)))
+
+    # Generate system headers
+    for export_path, types in system_grouped_types.items():
+        # export_path is like "system/winnt" or "system/ddraw"
+        header_name = export_path.split("/")[-1]
+        this_header_path = "%s.h" % export_path
+
+        # Collect all types in this header
+        # Put function_definitions first - they're needed by vtable structs.
+        # Pointer typedefs (like LPDIRECTDRAW) work with forward declarations
+        # so they don't create true circular deps with function defs.
+        all_types_list = (types['function_definitions'] + types['enums'] +
+                         types['typedefs'] + types['structs'] + types['unions'])
+
+        # Filter out types that are already defined in basetypes.h
+        filtered_types = [dt for dt in all_types_list if dt.getName() not in basetypes_types]
+        skipped_count = len(all_types_list) - len(filtered_types)
+        if skipped_count > 0:
+            log_info("Skipped %d types in %s (already in basetypes.h)" % (skipped_count, header_name))
+
+        # Skip empty headers
+        if not filtered_types:
+            continue
+
+        types_in_this_header = set(dt.getName() for dt in filtered_types)
+
+        # Collect external dependencies (excluding basetypes types)
+        all_deps = set()
+        if type_to_path_map is not None:
+            for dt in filtered_types:
+                direct_deps, pointer_deps = collect_type_dependencies(currentProgram, dt)
+                # Filter out basetypes - they're always available
+                all_deps.update(d for d in direct_deps if d not in basetypes_types)
+                all_deps.update(d for d in pointer_deps if d not in basetypes_types)
+
+        # Find which system headers we need to include
+        needed_includes = set()
+        # Always include basetypes.h first
+        needed_includes.add("system/basetypes.h")
+
+        if type_to_path_map is not None:
+            for dep in all_deps:
+                # Strip struct/union prefix for matching (added by resolve_data_type_name_for_headers)
+                dep_name = strip_type_prefix(dep)
+                if dep_name in types_in_this_header:
+                    continue
+                if dep_name in type_to_path_map:
+                    dep_path = type_to_path_map[dep_name]
+                    if dep_path != this_header_path and dep_path != "system/basetypes.h":
+                        needed_includes.add(dep_path)
+
+        content = []
+        content.append("#pragma once")
+
+        if needed_includes:
+            content.append("")
+            content.append("// Dependencies")
+            # Put basetypes.h first
+            if "system/basetypes.h" in needed_includes:
+                content.append('#include "system/basetypes.h"')
+                needed_includes.remove("system/basetypes.h")
+            for inc_path in sorted(needed_includes):
+                content.append('#include "%s"' % inc_path)
+
+        content.append("")
+        content.append("// =============================================================================")
+        content.append("// %s - System Header" % header_name.upper())
+        content.append("// =============================================================================")
+
+        # Topologically sort all types by internal dependencies
+        sorted_types = topological_sort_types(currentProgram, filtered_types, types_in_this_header)
+
+        # Collect forward declarations needed for function definitions
+        forward_decls = collect_forward_declarations_needed(currentProgram, sorted_types, types_in_this_header)
+        if forward_decls:
+            content.append("")
+            content.append("// Forward declarations")
+            for fwd_name in sorted(forward_decls):
+                # Determine if it's a struct or union
+                fwd_dt = next((dt for dt in sorted_types if dt.getName() == fwd_name), None)
+                if fwd_dt:
+                    if isinstance(fwd_dt, Union):
+                        content.append("union %s;" % fwd_name)
+                    else:
+                        content.append("struct %s;" % fwd_name)
+                else:
+                    # External type not in this file - assume struct (most common)
+                    # This handles types used in function pointers but defined elsewhere
+                    content.append("struct %s;" % fwd_name)
+
+        # Generate definitions in dependency order
+        for dt in sorted_types:
+            type_lines = generate_type_definition(currentProgram, dt)
+            content.extend(type_lines)
+
+        content.append("")
+
+        # Write header file
+        header_path = os.path.join(system_dir, "%s.h" % header_name)
+        write_header_file(header_path, "\n".join(content))
+        log_info("Created system/%s.h with %d types" % (header_name, len(filtered_types)))
+
+
+def generate_master_include(pseudocode_dir):
+    """Generate nocturne.h master include file.
+
+    NOTE: Currently generates a placeholder. The proper include ordering
+    needs to be implemented after system headers are fixed.
+
+    Args:
+        pseudocode_dir: Base directory for headers
+    """
+    content = []
+    content.append("#pragma once")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// NOCTURNE MASTER INCLUDE")
+    content.append("// =============================================================================")
+    content.append("// TODO: Implement proper include ordering after system headers are fixed")
+    content.append("")
+
+    # Write master include
+    master_path = os.path.join(pseudocode_dir, "nocturne.h")
+    write_header_file(master_path, "\n".join(content))
+    log_info("Created master include placeholder: %s" % master_path)
 
 
 def export_header_files(currentProgram, pseudocode_dir):
@@ -651,15 +1859,31 @@ def export_header_files(currentProgram, pseudocode_dir):
     # Get equates data first
     equates_by_category = organize_equates_by_category(currentProgram)
 
-    # Organize data types by category and type
-    type_categories = {}
+    # Organize data types into game (individual) and system (grouped)
     game_individual_types = []
+    system_grouped_types = {}
+    type_to_path_map = {}  # Map type names to their header paths for includes
+    seen_type_names = set()  # Track types to avoid duplicates across categories
+
+    # Map Ghidra primitive types to basetypes.h
+    for prim_name in get_ghidra_primitive_types():
+        type_to_path_map[prim_name] = "system/basetypes.h"
+
+    # Map all basetypes (including Windows primitives) to basetypes.h
+    for basetype_name in get_basetypes_defined_types():
+        type_to_path_map[basetype_name] = "system/basetypes.h"
+
     for dt in currentProgram.getDataTypeManager().getAllDataTypes():
         dt_name = dt.getName()
         if not dt_name or dt_name.startswith("undefined") or dt_name.startswith("__") or dt_name == "":
             continue
         if dt_name in get_primitive_data_types().keys():
             continue
+
+        # Skip duplicate types (same name in multiple categories)
+        if dt_name in seen_type_names:
+            continue
+        seen_type_names.add(dt_name)
 
         # Get the original category path
         original_cat_path = dt.getCategoryPath().getPath()
@@ -670,105 +1894,65 @@ def export_header_files(currentProgram, pseudocode_dir):
         if is_standard_ghidra_category(original_cat_path):
             continue
 
-        # Determine the export category path
-        export_cat_path = get_export_category_path(original_cat_path, dt)
+        # Determine the export path using new mapping
+        export_path, is_individual = get_new_export_path(original_cat_path, dt)
 
-        # Check if this should be handled as individual Game files
-        if original_cat_path.endswith("/Game"):
+        if is_individual:
+            # Game types get individual files
             game_individual_types.append({
                 'data_type': dt,
                 'original_path': original_cat_path,
-                'export_path': export_cat_path,
+                'export_path': export_path,
                 'name': dt_name
             })
-            continue
+            # Map type name to its header path (e.g., "types/classes/CDemonActor.h")
+            type_to_path_map[dt_name] = "%s/%s.h" % (export_path, dt_name)
+        else:
+            # System types are grouped by export path
+            if export_path not in system_grouped_types:
+                system_grouped_types[export_path] = {
+                    'structs': [],
+                    'unions': [],
+                    'enums': [],
+                    'typedefs': [],
+                    'function_definitions': []
+                }
 
-        # Normal category grouping
-        if export_cat_path not in type_categories:
-            type_categories[export_cat_path] = {
-                'structs': [],
-                'unions': [],
-                'enums': [],
-                'typedefs': [],
-                'function_definitions': [],
-                'equates': []
-            }
+            # Categorize the data type
+            if isinstance(dt, Structure):
+                system_grouped_types[export_path]['structs'].append(dt)
+            elif isinstance(dt, Union):
+                system_grouped_types[export_path]['unions'].append(dt)
+            elif isinstance(dt, Enum):
+                system_grouped_types[export_path]['enums'].append(dt)
+            elif isinstance(dt, TypeDef):
+                system_grouped_types[export_path]['typedefs'].append(dt)
+            elif is_function_definition_type(dt):
+                system_grouped_types[export_path]['function_definitions'].append(dt)
 
-        # Categorize the data type
-        if isinstance(dt, Structure):
-            type_categories[export_cat_path]['structs'].append(dt)
-        elif isinstance(dt, Union):
-            type_categories[export_cat_path]['unions'].append(dt)
-        elif isinstance(dt, Enum):
-            type_categories[export_cat_path]['enums'].append(dt)
-        elif isinstance(dt, TypeDef):
-            type_categories[export_cat_path]['typedefs'].append(dt)
-        elif is_function_definition_type(dt):
-            type_categories[export_cat_path]['function_definitions'].append(dt)
+            # Map system type to its header path (e.g., "system/ddraw.h")
+            # export_path is like "system/ddraw", so we add .h
+            type_to_path_map[dt_name] = "%s.h" % export_path
 
-    # Add equates to their respective categories
-    for category_path, equates_list in equates_by_category.items():
-        if category_path not in type_categories:
-            type_categories[category_path] = {
-                'structs': [],
-                'unions': [],
-                'enums': [],
-                'typedefs': [],
-                'function_definitions': [],
-                'equates': []
-            }
-        type_categories[category_path]['equates'] = equates_list
+    # Export all equates to a single defines.h in root include/
+    all_equates = []
+    for equates_list in equates_by_category.values():
+        all_equates.extend(equates_list)
 
-    # Create header files for grouped categories
-    for category_path, types in type_categories.items():
-        if category_path.startswith("/"):
-            category_path = category_path[1:]
+    if all_equates:
+        equates_content = generate_equates_header(currentProgram, all_equates)
+        defines_file = os.path.join(pseudocode_dir, "defines.h")
+        write_header_file(defines_file, equates_content)
+        log_info("Created defines.h with %d equates" % len(all_equates))
 
-        # Make header dir
-        header_dir = os.path.join(pseudocode_dir, category_path) if category_path else pseudocode_dir
-        make_dirs(header_dir)
+    # Export individual files for game types (with dependency tracking)
+    export_individual_game_files(currentProgram, pseudocode_dir, game_individual_types, type_to_path_map)
 
-        # Export equates
-        if types['equates']:
-            equates_content = generate_equates_header(currentProgram, types['equates'])
-            equates_file = os.path.join(header_dir, "defines.h")
-            write_header_file(equates_file, equates_content)
-            log_info("Created defines.h with %d equates in %s" % (len(types['equates']), header_dir))
+    # Export grouped files for system types (as single files, not subfolders)
+    export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_types, type_to_path_map)
 
-        # Export structs
-        if types['structs']:
-            structs_content = generate_structs_header(currentProgram, types['structs'])
-            structs_file = os.path.join(header_dir, "structs.h")
-            write_header_file(structs_file, structs_content)
-            log_info("Created structs.h with %d structures in %s" % (len(types['structs']), header_dir))
+    # Generate master nocturne.h include file
+    generate_master_include(pseudocode_dir)
 
-        # Export unions
-        if types['unions']:
-            unions_content = generate_unions_header(currentProgram, types['unions'])
-            unions_file = os.path.join(header_dir, "unions.h")
-            write_header_file(unions_file, unions_content)
-            log_info("Created unions.h with %d unions in %s" % (len(types['unions']), header_dir))
-
-        # Export enums
-        if types['enums']:
-            enums_content = generate_enums_header(currentProgram, types['enums'])
-            enums_file = os.path.join(header_dir, "enums.h")
-            write_header_file(enums_file, enums_content)
-            log_info("Created enums.h with %d enums in %s" % (len(types['enums']), header_dir))
-
-        # Export typedefs
-        if types['typedefs']:
-            typedefs_content = generate_typedefs_header(currentProgram, types['typedefs'])
-            typedefs_file = os.path.join(header_dir, "types.h")
-            write_header_file(typedefs_file, typedefs_content)
-            log_info("Created types.h with %d typedefs in %s" % (len(types['typedefs']), header_dir))
-
-        # Export function definitions
-        if types['function_definitions']:
-            func_defs_content = generate_function_definitions_header(currentProgram, types['function_definitions'])
-            func_defs_file = os.path.join(header_dir, "function_definitions.h")
-            write_header_file(func_defs_file, func_defs_content)
-            log_info("Created function_definitions.h with %d function definitions in %s" % (len(types['function_definitions']), header_dir))
-
-    # Create individual files for /Game ending categories
-    export_individual_game_files(currentProgram, pseudocode_dir, game_individual_types)
+    # Return the type_to_path_map for use by globals/constants generation
+    return type_to_path_map

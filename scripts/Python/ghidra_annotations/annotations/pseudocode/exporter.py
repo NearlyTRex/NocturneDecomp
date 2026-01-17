@@ -26,7 +26,8 @@ from ghidra_annotations.annotations.pseudocode.decompiler import (
 from ghidra_annotations.annotations.pseudocode.assembly import build_global_symbols_map
 from ghidra_annotations.annotations.pseudocode.globals import (
     extract_globals_and_constants, generate_constants_file,
-    generate_globals_file, split_data_by_address_range, generate_globals_cpp_file
+    generate_globals_file, generate_globals_header_file,
+    split_data_by_address_range, generate_globals_cpp_file
 )
 from ghidra_annotations.annotations.pseudocode.headers import (
     export_header_files, write_header_file
@@ -468,7 +469,7 @@ def export_pseudocode(currentProgram, path):
 
     # Export header files first
     timer.start_phase("Export header files")
-    export_header_files(currentProgram, pseudocode_include_dir)
+    type_to_path_map = export_header_files(currentProgram, pseudocode_include_dir)
     timer.end_phase()
 
     # Extract and export globals and constants
@@ -477,13 +478,17 @@ def export_pseudocode(currentProgram, path):
     globals_list, constants_list = extract_globals_and_constants(currentProgram)
     timer.end_phase()
 
-    # Generate constants files (split by address range)
+    # Generate constants files (split by address range) in constants/
     timer.start_phase("Generate constants files")
     if constants_list:
         log_info("Generating constants files with %d constants" % len(constants_list))
         const_ranges = split_data_by_address_range(constants_list)
 
-        # Generate main constants.h that includes all ranges
+        # Create constants directory for bucketed files
+        constants_dir = os.path.join(pseudocode_include_dir, "constants")
+        make_dirs(constants_dir)
+
+        # Generate main constants.h in root include/ that includes all ranges
         main_constants_content = []
         main_constants_content.append("#pragma once")
         main_constants_content.append("")
@@ -493,45 +498,71 @@ def export_pseudocode(currentProgram, path):
         main_constants_content.append("")
         for range_key in sorted(const_ranges.keys()):
             range_filename = "constants_%s.h" % range_key.replace("0x", "")
-            main_constants_content.append("#include \"%s\"" % range_filename)
+            main_constants_content.append("#include \"constants/%s\"" % range_filename)
 
-            # Generate individual range file
-            range_content = generate_constants_file(const_ranges[range_key])
-            range_path = os.path.join(pseudocode_include_dir, range_filename)
+            # Generate individual range file in constants/
+            range_content = generate_constants_file(const_ranges[range_key], type_to_path_map)
+            range_path = os.path.join(constants_dir, range_filename)
             write_header_file(range_path, range_content)
             log_info("Created constants range file: %s with %d constants" % (range_filename, len(const_ranges[range_key])))
 
-        # Write constants
+        # Write constants.h to root include/
         main_constants_content.append("")
         constants_path = os.path.join(pseudocode_include_dir, "constants.h")
         write_header_file(constants_path, "\n".join(main_constants_content))
         log_info("Created master constants file: %s" % constants_path)
     timer.end_phase()
 
-    # Generate globals files (split by address range)
+    # Generate globals files (split by address range) in globals/ and src/globals/
     timer.start_phase("Generate globals files")
     if globals_list:
         log_info("Generating globals files with %d globals" % len(globals_list))
         global_ranges = split_data_by_address_range(globals_list)
 
-        # Generate main globals.h with all extern declarations
-        globals_h_content = generate_globals_file(globals_list)
-        globals_h_path = os.path.join(pseudocode_include_dir, "globals.h")
-        write_header_file(globals_h_path, globals_h_content)
+        # Create globals directory for bucketed header files
+        globals_include_dir = os.path.join(pseudocode_include_dir, "globals")
+        make_dirs(globals_include_dir)
 
-        # Generate separate .cpp files for each range
-        make_dirs(pseudocode_src_dir)
+        # Generate main globals.h in root include/ that includes all range headers
+        main_globals_content = []
+        main_globals_content.append("#pragma once")
+        main_globals_content.append("")
+        main_globals_content.append("// =============================================================================")
+        main_globals_content.append("// GLOBALS - Master Include")
+        main_globals_content.append("// =============================================================================")
+        main_globals_content.append("")
+
+        for range_key in sorted(global_ranges.keys()):
+            range_header_filename = "globals_%s.h" % range_key.replace("0x", "")
+            main_globals_content.append("#include \"globals/%s\"" % range_header_filename)
+
+            # Generate individual range header file in globals/
+            range_header_content = generate_globals_header_file(global_ranges[range_key], range_key, type_to_path_map)
+            range_header_path = os.path.join(globals_include_dir, range_header_filename)
+            write_header_file(range_header_path, range_header_content)
+            log_info("Created globals header file: %s with %d globals" % (range_header_filename, len(global_ranges[range_key])))
+
+        # Write globals.h to root include/
+        main_globals_content.append("")
+        globals_h_path = os.path.join(pseudocode_include_dir, "globals.h")
+        write_header_file(globals_h_path, "\n".join(main_globals_content))
+        log_info("Created master globals header: %s" % globals_h_path)
+
+        # Create src/globals directory for cpp files
+        globals_src_dir = os.path.join(pseudocode_src_dir, "globals")
+        make_dirs(globals_src_dir)
+
+        # Generate separate .cpp files for each range in src/globals/
         for range_key in sorted(global_ranges.keys()):
             range_filename = "globals_%s.cpp" % range_key.replace("0x", "")
             globals_cpp_content = generate_globals_cpp_file(global_ranges[range_key], range_key)
-            globals_cpp_path = os.path.join(pseudocode_src_dir, range_filename)
+            globals_cpp_path = os.path.join(globals_src_dir, range_filename)
             try:
                 with open(globals_cpp_path, 'w') as f:
                     f.write(globals_cpp_content + "\n")
-                log_info("Created globals range file: %s with %d globals" % (range_filename, len(global_ranges[range_key])))
+                log_info("Created globals cpp file: %s with %d globals" % (range_filename, len(global_ranges[range_key])))
             except Exception as e:
                 log_info("Failed to write %s: %s" % (range_filename, str(e)))
-        log_info("Created globals header: %s" % globals_h_path)
     timer.end_phase()
 
     # Get program managers

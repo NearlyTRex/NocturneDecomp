@@ -2,14 +2,92 @@
 # Provides extraction of global variables and constants from the program
 
 import re
-import base64
 from ghidra_annotations.util import resolve_data_type_name
 from ghidra_annotations.util.string import is_string_data_type_obj
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.basetypes import (
+    get_types_needing_basetypes, is_primitive_type, bytes_to_int_le, format_int_by_size
+)
+from ghidra_annotations.util.string import sanitize_c_identifier
 from ghidra_annotations.annotations.pseudocode.strings import (
     get_safe_str, escape_c_string, format_char_array_as_c_strings,
-    format_single_char_pointer, format_2d_char_array
+    format_single_char_pointer, format_2d_char_array, format_array_initializer
 )
+from ghidra_annotations.annotations.pseudocode.headers import strip_type_prefix
+
+
+def format_struct_initializer(data_type, raw_bytes):
+    """Build a proper struct initializer by introspecting the struct's field layout.
+
+    Args:
+        data_type: The Ghidra Structure data type
+        raw_bytes: List of raw byte values
+
+    Returns:
+        A C initializer string like "{0x00000003, 0x80000030}" or None if can't introspect
+    """
+    try:
+        # Check if this is actually a Structure type
+        if not hasattr(data_type, 'getComponents'):
+            return None
+
+        components = data_type.getComponents()
+        if not components:
+            return None
+
+        field_values = []
+        for comp in components:
+            offset = comp.getOffset()
+            length = comp.getLength()
+            comp_type = comp.getDataType()
+            comp_type_name = comp_type.getName() if comp_type else ""
+
+            # Extract bytes for this field
+            if offset + length > len(raw_bytes):
+                # Not enough bytes, use 0
+                field_bytes = [0] * length
+            else:
+                field_bytes = raw_bytes[offset:offset + length]
+
+            # Convert bytes to appropriate value based on field size (little-endian)
+            if length <= 8:
+                val = bytes_to_int_le(field_bytes)
+                field_values.append(format_int_by_size(val, length))
+            else:
+                # For other sizes (arrays, nested structs), output as byte array
+                byte_vals = ["0x%02X" % b for b in field_bytes]
+                field_values.append("{%s}" % ", ".join(byte_vals))
+
+        return "{" + ", ".join(field_values) + "}"
+    except Exception:
+        return None
+
+
+def format_variable_declaration(type_name, var_name):
+    """Format a variable declaration correctly for C, handling array types.
+
+    In C, array dimensions go after the variable name, not the type:
+        char[80] name  ->  char name[80]
+        int[10][20] x  ->  int x[10][20]
+
+    Args:
+        type_name: The type as string (may include array dimensions)
+        var_name: The variable name
+
+    Returns:
+        Tuple of (base_type, full_var_name) where full_var_name includes array dims
+    """
+    # Match array dimensions at the end of type
+    # Handles char[80], int[10][20], etc.
+    array_pattern = re.compile(r'^(.+?)(\[[\d\][\[]+)$')
+    match = array_pattern.match(type_name)
+
+    if match:
+        base_type = match.group(1).strip()
+        array_dims = match.group(2)
+        return (base_type, var_name + array_dims)
+    else:
+        return (type_name, var_name)
 
 
 def extract_globals_and_constants(currentProgram):
@@ -38,7 +116,8 @@ def extract_globals_and_constants(currentProgram):
         data_type = data.getDataType()
 
         symbol = symbol_table.getPrimarySymbol(addr)
-        name = symbol.getName() if symbol else "DAT_%s" % str(addr).replace("0x", "").upper()
+        raw_name = symbol.getName() if symbol else "DAT_%s" % str(addr).replace("0x", "").upper()
+        name = sanitize_c_identifier(raw_name)
 
         if (name.startswith("FUN_") or name.startswith("LAB_") or name.startswith("LOOP_") or
             name.startswith("IMAGE_") or name.startswith("SWITCH_") or
@@ -89,36 +168,98 @@ def extract_globals_and_constants(currentProgram):
             is_initialized = True
         elif has_nonzero_bytes and raw_bytes is not None:
             is_initialized = True
-            if data_length > 256:
-                try:
-                    byte_array = bytearray(raw_bytes)
-                    b64_string = base64.b64encode(bytes(byte_array)).decode('ascii')
-                    lines = []
-                    for i in range(0, len(b64_string), 64):
-                        line = b64_string[i:i+64]
-                        if i == 0:
-                            lines.append('/* Base64 encoded data (%d bytes):' % data_length)
-                            lines.append('   "%s"' % line)
-                        else:
-                            lines.append('   "%s"' % line)
-                    lines.append('*/')
-                    initializer_value = '\n'.join(lines)
-                except Exception:
-                    initializer_value = "/* %d bytes of data */" % data_length
-            else:
-                hex_values = ["0x%02X" % b for b in raw_bytes]
-                bytes_per_line = 16
-                lines = []
-                for i in range(0, len(hex_values), bytes_per_line):
-                    line_bytes = hex_values[i:i+bytes_per_line]
-                    if i == 0:
-                        lines.append("{\n    " + ", ".join(line_bytes))
-                    else:
-                        lines.append("    " + ", ".join(line_bytes))
-                if len(lines) == 1:
-                    initializer_value = "{" + ", ".join(hex_values) + "}"
+            # Check if this is a struct type (not array, not primitive)
+            # For struct types, byte-by-byte initializers cause "excess elements" warnings
+            is_struct_type = (not is_array_type and
+                              not is_primitive_type(type_name) and
+                              not type_name.endswith('*'))
+            if is_struct_type:
+                # Try to build proper struct initializer by introspecting fields
+                struct_init = format_struct_initializer(data_type, raw_bytes)
+                if struct_init:
+                    initializer_value = struct_init
                 else:
-                    initializer_value = "\n".join(lines) + "\n}"
+                    # Fallback: output as byte array comment if can't introspect
+                    hex_values = ["0x%02X" % b for b in raw_bytes]
+                    initializer_value = "{0} /* raw: %s */" % ", ".join(hex_values)
+            else:
+                # Check if this is an undefined scalar type (undefined1, undefined2, undefined4, undefined8)
+                # These should be converted to integer values, not byte arrays
+                # BUT: if it's an array type, handle it as an array, not a scalar
+                base_type = type_name.split('[')[0].strip().lower()
+                is_undefined_scalar = (base_type in ('undefined1', 'undefined2', 'undefined4', 'undefined8', 'undefined')
+                                       and not is_array_type)
+                if is_undefined_scalar:
+                    # Convert bytes to integer value (little-endian)
+                    int_val = bytes_to_int_le(raw_bytes)
+                    initializer_value = format_int_by_size(int_val, len(raw_bytes))
+                elif is_array_type:
+                    # Check element type for proper grouping
+                    elem_type = data_type.getDataType() if hasattr(data_type, 'getDataType') else None
+                    elem_type_name = elem_type.getName().lower() if elem_type else ""
+                    is_pointer_array = elem_type and "Pointer" in elem_type.__class__.__name__
+                    is_double_array = "double" in elem_type_name or "float10" in elem_type_name
+                    is_float_array = "float" in elem_type_name and not is_double_array
+
+                    if is_double_array:
+                        # Double array - group bytes into 8-byte double values
+                        import struct
+                        double_size = 8
+                        double_values = []
+                        for i in range(0, len(raw_bytes), double_size):
+                            if i + double_size <= len(raw_bytes):
+                                double_bytes = bytes(raw_bytes[i:i+double_size])
+                                try:
+                                    double_val = struct.unpack('<d', double_bytes)[0]
+                                    # Format with enough precision
+                                    formatted = "%.17g" % double_val
+                                    double_values.append(formatted)
+                                except:
+                                    # Fallback to hex
+                                    double_values.append("0x%016X" % int.from_bytes(double_bytes, 'little'))
+                        initializer_value = format_array_initializer(double_values, vals_per_line=4)
+
+                    elif is_float_array:
+                        # Float array - group bytes into 4-byte float values
+                        import struct
+                        float_size = 4
+                        float_values = []
+                        for i in range(0, len(raw_bytes), float_size):
+                            if i + float_size <= len(raw_bytes):
+                                float_bytes = bytes(raw_bytes[i:i+float_size])
+                                try:
+                                    float_val = struct.unpack('<f', float_bytes)[0]
+                                    # Format with f suffix
+                                    formatted = "%.8g" % float_val
+                                    if '.' not in formatted and 'e' not in formatted.lower():
+                                        formatted += ".0"
+                                    float_values.append(formatted + "f")
+                                except:
+                                    # Fallback to hex
+                                    float_values.append("0x%08X" % int.from_bytes(float_bytes, 'little'))
+                        initializer_value = format_array_initializer(float_values, vals_per_line=4)
+
+                    elif is_pointer_array:
+                        # Pointer array - group bytes into 4-byte pointer values (32-bit)
+                        ptr_size = 4
+                        ptr_values = []
+                        for i in range(0, len(raw_bytes), ptr_size):
+                            if i + ptr_size <= len(raw_bytes):
+                                ptr_bytes = raw_bytes[i:i+ptr_size]
+                                ptr_val = bytes_to_int_le(ptr_bytes)
+                                if ptr_val == 0:
+                                    ptr_values.append("NULL")
+                                else:
+                                    ptr_values.append("(void*)0x%08X" % ptr_val)
+                        initializer_value = format_array_initializer(ptr_values, vals_per_line=4)
+                    else:
+                        # Regular array - byte values
+                        hex_values = ["0x%02X" % b for b in raw_bytes]
+                        initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+                else:
+                    # Other scalar types - try to convert to single value
+                    int_val = bytes_to_int_le(raw_bytes)
+                    initializer_value = "0x%X" % int_val
         elif is_array_type and data_length > 0:
             is_initialized = True
             initializer_value = "{}"
@@ -126,13 +267,41 @@ def extract_globals_and_constants(currentProgram):
         if ghidra_value is not None:
             if "char" in type_name.lower() and data_length == 1:
                 val = get_int(ghidra_value)
-                if val:
-                    if 32 <= val <= 126:
+                if val is not None:
+                    if val == 0:
+                        initializer_value = "'\\0'"
+                    elif 32 <= val <= 126:
                         initializer_value = "'%s'" % chr(val)
                     else:
                         initializer_value = "0x%02X" % val
                 else:
-                    initializer_value = get_safe_str(ghidra_value)
+                    # Ghidra might return escape sequences as strings
+                    str_val = get_safe_str(ghidra_value)
+                    if str_val == "" or str_val == "\\x00" or str_val == "\x00":
+                        initializer_value = "'\\0'"
+                    elif str_val.startswith("\\x") and len(str_val) == 4:
+                        # Convert \xNN to hex value
+                        try:
+                            hex_val = int(str_val[2:], 16)
+                            if hex_val == 0:
+                                initializer_value = "'\\0'"
+                            elif 32 <= hex_val <= 126:
+                                initializer_value = "'%s'" % chr(hex_val)
+                            else:
+                                initializer_value = "0x%02X" % hex_val
+                        except:
+                            initializer_value = "'\\0'"  # Default to null char
+                    elif len(str_val) == 1:
+                        # Single character
+                        char_val = ord(str_val)
+                        if char_val == 0:
+                            initializer_value = "'\\0'"
+                        elif 32 <= char_val <= 126:
+                            initializer_value = "'%s'" % str_val
+                        else:
+                            initializer_value = "0x%02X" % char_val
+                    else:
+                        initializer_value = "'\\0'"  # Default for unknown formats
 
             elif "bool" in type_name.lower():
                 val = get_int(ghidra_value)
@@ -143,26 +312,45 @@ def extract_globals_and_constants(currentProgram):
 
             elif "float" in type_name.lower():
                 float_val = get_float(ghidra_value)
-                if float_val:
-                    initializer_value = "%.8gf" % float_val
+                if float_val is not None:
+                    # Handle special float values
+                    import math
+                    if math.isinf(float_val):
+                        initializer_value = "INFINITY" if float_val > 0 else "(-INFINITY)"
+                    elif math.isnan(float_val):
+                        initializer_value = "NAN"
+                    else:
+                        # Ensure float literals always have a decimal point
+                        formatted = "%.8g" % float_val
+                        if '.' not in formatted and 'e' not in formatted.lower():
+                            formatted += ".0"
+                        initializer_value = formatted + "f"
                 else:
                     initializer_value = get_safe_str(ghidra_value)
 
             elif "double" in type_name.lower():
                 double_val = get_float(ghidra_value)
-                if double_val:
-                    initializer_value = "%.17g" % double_val
+                if double_val is not None:
+                    # Handle special double values
+                    import math
+                    if math.isinf(double_val):
+                        initializer_value = "INFINITY" if double_val > 0 else "(-INFINITY)"
+                    elif math.isnan(double_val):
+                        initializer_value = "NAN"
+                    else:
+                        initializer_value = "%.17g" % double_val
                 else:
                     initializer_value = get_safe_str(ghidra_value)
 
             elif name.startswith("s_") or is_string_data_type_obj(data_type):
                 str_val = get_safe_str(ghidra_value)
                 if str_val:
-                    if str_val.startswith('"') and str_val.endswith('"'):
-                        initializer_value = str_val
-                    else:
-                        escaped = escape_c_string(str_val)
-                        initializer_value = '"%s"' % escaped
+                    # Strip any existing quotes from Ghidra's representation
+                    if str_val.startswith('"') and str_val.endswith('"') and len(str_val) >= 2:
+                        str_val = str_val[1:-1]
+                    # Always escape the content for C string literal
+                    escaped = escape_c_string(str_val)
+                    initializer_value = '"%s"' % escaped
                 else:
                     initializer_value = '""'
 
@@ -179,15 +367,7 @@ def extract_globals_and_constants(currentProgram):
                 else:
                     if has_nonzero_bytes and raw_bytes and len(raw_bytes) >= 4:
                         hex_values = ["0x%02X" % b for b in raw_bytes]
-                        bytes_per_line = 16
-                        lines = []
-                        for i in range(0, len(hex_values), bytes_per_line):
-                            line_bytes = hex_values[i:i+bytes_per_line]
-                            if i == 0:
-                                lines.append("{\n    " + ", ".join(line_bytes))
-                            else:
-                                lines.append("    " + ", ".join(line_bytes))
-                        initializer_value = "\n".join(lines) + "\n}"
+                        initializer_value = format_array_initializer(hex_values, vals_per_line=16)
                     else:
                         initializer_value = "{}"
 
@@ -271,6 +451,18 @@ def extract_globals_and_constants(currentProgram):
                 else:
                     initializer_value = get_safe_str(ghidra_value)
 
+            elif "undefined" in type_name.lower() and data_length <= 8:
+                # Handle undefined types - convert to single hex value
+                int_val = get_int(ghidra_value, default_val=None)
+                if int_val is not None:
+                    initializer_value = format_int_by_size(int_val, data_length)
+                elif has_nonzero_bytes and raw_bytes:
+                    # Fallback to raw bytes conversion (little-endian)
+                    int_val = bytes_to_int_le(raw_bytes)
+                    initializer_value = format_int_by_size(int_val, data_length)
+                else:
+                    initializer_value = "0"
+
             elif name.startswith("STR_") or (ghidra_value and get_safe_str(ghidra_value).startswith('"')):
                 str_val = get_safe_str(ghidra_value)
                 if str_val:
@@ -346,17 +538,52 @@ def extract_globals_and_constants(currentProgram):
     return globals_list, constants_list
 
 
-def generate_constants_file(constants_list):
+def generate_constants_file(constants_list, type_to_path_map=None):
     """Generate a header file with constant definitions.
 
     Args:
         constants_list: List of constant entries
+        type_to_path_map: Optional map of type names to header paths for includes
 
     Returns:
         Header file content as a string
     """
     content = []
     content.append("#pragma once")
+
+    # Collect type dependencies from constants
+    needed_includes = set()
+    basetypes = get_types_needing_basetypes()
+    needs_math_h = False
+
+    if constants_list:
+        for const in constants_list:
+            type_name = extract_base_type_name(const['type'])
+            # Check if base type needs basetypes.h
+            if type_name in basetypes:
+                needed_includes.add("system/basetypes.h")
+            # Check if we have a mapping to a specific header
+            if type_to_path_map and type_name in type_to_path_map:
+                needed_includes.add(type_to_path_map[type_name])
+            # Check if initializer uses INFINITY or NAN macros
+            if const.get('initializer'):
+                init_val = str(const['initializer'])
+                if 'INFINITY' in init_val or 'NAN' in init_val:
+                    needs_math_h = True
+
+    if needed_includes or needs_math_h:
+        content.append("")
+        content.append("// Dependencies")
+        # Put math.h first if needed (for INFINITY/NAN macros)
+        if needs_math_h:
+            content.append('#include <math.h>')
+        # Put basetypes.h next if present
+        if "system/basetypes.h" in needed_includes:
+            content.append('#include "system/basetypes.h"')
+            needed_includes.remove("system/basetypes.h")
+        for inc_path in sorted(needed_includes):
+            content.append('#include "%s"' % inc_path)
+
     content.append("")
     content.append("// =============================================================================")
     content.append("// CONSTANTS")
@@ -377,10 +604,12 @@ def generate_constants_file(constants_list):
     for type_name in sorted(type_groups.keys()):
         content.append("// %s constants" % type_name)
         for const in type_groups[type_name]:
+            # Format the declaration correctly (handles array types)
+            base_type, full_var_name = format_variable_declaration(const['type'], const['name'])
             if const['is_initialized'] and const['initializer'] and const['initializer'] != "None":
-                content.append("const %s %s = %s;" % (const['type'], const['name'], const['initializer']))
+                content.append("const %s %s = %s;" % (base_type, full_var_name, const['initializer']))
             else:
-                content.append("// extern const %s %s; // No initializer found" % (const['type'], const['name']))
+                content.append("// extern const %s %s; // No initializer found" % (base_type, full_var_name))
         content.append("")
     return "\n".join(content)
 
@@ -407,7 +636,96 @@ def generate_globals_file(globals_list):
         return "\n".join(content)
 
     for global_var in globals_list:
-        content.append("extern %s %s;" % (global_var['type'], global_var['name']))
+        # Format the declaration correctly (handles array types)
+        base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
+        content.append("extern %s %s;" % (base_type, full_var_name))
+    content.append("")
+    return "\n".join(content)
+
+
+def extract_base_type_name(type_str):
+    """Extract the base type name from a type string.
+
+    Handles pointers, arrays, and struct/union prefixes.
+    Examples:
+        'CDemonActor*' -> 'CDemonActor'
+        'struct CDemonActor*' -> 'CDemonActor'
+        'char[80]' -> 'char'
+        'int' -> 'int'
+        'FileSearchHandler*[5]' -> 'FileSearchHandler'
+
+    Args:
+        type_str: Type string
+
+    Returns:
+        Base type name
+    """
+    base = type_str
+
+    # Remove array suffixes first (before removing pointer suffixes)
+    # This handles cases like 'Type*[5]' where the * comes before []
+    if '[' in base:
+        base = base[:base.index('[')].strip()
+
+    # Remove pointer suffixes
+    base = base.rstrip('*').strip()
+
+    # Remove struct/union prefixes using shared helper
+    return strip_type_prefix(base)
+
+
+def generate_globals_header_file(globals_list, range_key="", type_to_path_map=None):
+    """Generate a bucketed header file with global variable extern declarations.
+
+    Args:
+        globals_list: List of global variable entries for this range
+        range_key: Optional range key for organization
+        type_to_path_map: Optional map of type names to header paths for includes
+
+    Returns:
+        Header file content as a string
+    """
+    content = []
+    content.append("#pragma once")
+
+    # Collect type dependencies from globals
+    needed_includes = set()
+    needed_includes.add("system/basetypes.h")  # Always include basetypes
+
+    if type_to_path_map:
+        for global_var in globals_list:
+            type_name = extract_base_type_name(global_var['type'])
+            if type_name in type_to_path_map:
+                needed_includes.add(type_to_path_map[type_name])
+
+    if needed_includes:
+        content.append("")
+        content.append("// Type dependencies")
+        # Put basetypes.h first
+        if "system/basetypes.h" in needed_includes:
+            content.append('#include "system/basetypes.h"')
+            needed_includes.remove("system/basetypes.h")
+        for inc_path in sorted(needed_includes):
+            content.append('#include "%s"' % inc_path)
+
+    content.append("")
+    content.append("// =============================================================================")
+    if range_key:
+        content.append("// GLOBAL VARIABLES - Range %s" % range_key)
+    else:
+        content.append("// GLOBAL VARIABLES")
+    content.append("// =============================================================================")
+    content.append("")
+
+    if not globals_list:
+        content.append("// No global variables in this range")
+        content.append("")
+        return "\n".join(content)
+
+    for global_var in globals_list:
+        # Format the declaration correctly (handles array types)
+        base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
+        content.append("extern %s %s;" % (base_type, full_var_name))
     content.append("")
     return "\n".join(content)
 
@@ -460,9 +778,11 @@ def generate_globals_cpp_file(globals_list, range_key=""):
         return "\n".join(content)
 
     for global_var in globals_list:
+        # Format the declaration correctly (handles array types)
+        base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
         if global_var['is_initialized'] and global_var['initializer']:
-            content.append("%s %s = %s;" % (global_var['type'], global_var['name'], global_var['initializer']))
+            content.append("%s %s = %s;" % (base_type, full_var_name, global_var['initializer']))
         else:
-            content.append("%s %s;" % (global_var['type'], global_var['name']))
+            content.append("%s %s;" % (base_type, full_var_name))
     content.append("")
     return "\n".join(content)

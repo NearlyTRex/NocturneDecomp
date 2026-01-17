@@ -5,6 +5,32 @@ import re
 from ghidra_annotations.util.string import is_string_data_type_obj, extract_string_value
 
 
+def format_array_initializer(values, vals_per_line=16):
+    """Format a list of values as a C array initializer with line breaks.
+
+    Args:
+        values: List of string values (e.g., ["0x00", "0x01", ...])
+        vals_per_line: How many values per line (default 16 for bytes, use 4 for larger types)
+
+    Returns:
+        Formatted string like "{0x00, 0x01}" or multi-line for larger arrays
+    """
+    if not values:
+        return "{}"
+
+    if len(values) <= vals_per_line:
+        return "{" + ", ".join(values) + "}"
+
+    lines = []
+    for i in range(0, len(values), vals_per_line):
+        line_vals = values[i:i + vals_per_line]
+        if i == 0:
+            lines.append("{\n    " + ", ".join(line_vals))
+        else:
+            lines.append("    " + ", ".join(line_vals))
+    return ",\n".join(lines) + "\n}"
+
+
 def get_safe_str(val):
     """Convert a value to a safe ASCII string."""
     if val is None:
