@@ -2,6 +2,9 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "prototypes/prototypes_410000.h"
+#include "prototypes/prototypes_4E0000.h"
+#include "prototypes/prototypes_540000.h"
 #include "system/misc.h"
 
 // =============================================================================
@@ -1812,7 +1815,7 @@ const TerminatedCString s_bgnthd_00659784 = "__bgnthd";
 const TerminatedCString s_C_FILE_INFO_00659790 = "C_FILE_INFO=";
 
 // char[36] constants
-const char g_EmptyStringBuffer[36] = "";
+const char g_EmptyStringBuffer[] = "";
 
 // double constants
 const double DOUBLE_006501df = 0.050000000000000003;
@@ -2312,8 +2315,8 @@ const undefined4 DAT_0065f3e8 = 0x3F000000;
 const undefined4 DAT_0065fccc = 0x40000000;
 
 // void* constants
-const void* DAT_0065B0D4 = 0x0041D4C0;
-const void* DAT_0065F048 = 0x00545760;
-const void* DAT_0065F04C = 0x004EBAC0;
-const void* DAT_0065F050 = 0x004EC290;
+const void* DAT_0065B0D4 = (void*)core_boneguy_cpp_FUN_0041d4c0;
+const void* DAT_0065F048 = (void*)core_particle_cpp_CParticle_process_FUN_00545760;
+const void* DAT_0065F04C = (void*)core_gore_cpp_FUN_004ebac0;
+const void* DAT_0065F050 = (void*)core_gore_cpp_FUN_004ec290;
 

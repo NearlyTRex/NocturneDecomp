@@ -18,8 +18,8 @@ engine_dosio_c_reopenFileStream_FUN_00481b50
   crt_stdio_c_fflush_FUN_00600e29((FILE *)file_stream);
   crt_stdio_c_clear_and_preserve_state_FUN_00600e64
             ((FileEmbeddedData *)
-             ((file_stream->fstreambase_core).filebuf.__unbuffered_get_area +
-             *(int *)((int)(file_stream->fstreambase_core).layout_info + 4) + -0x38),0);
+             ((file_stream->_fstreambase_core)._filebuf.__unbuffered_get_area +
+             *(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);
   engine_dosio_c_getRelativeFilePath_FUN_004816c0(local_220.found_path,directory_path,filename);
   if ((file_mode_flags & 0x52) == 0) {
     iVar1 = engine_dosio_c_findFile_FUN_00481760(&local_220);

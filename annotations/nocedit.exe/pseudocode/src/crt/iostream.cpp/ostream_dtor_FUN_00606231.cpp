@@ -15,14 +15,14 @@ ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,u
   uint unaff_EBX;
   
   if ((d1 & 4) == 0) {
-    iVar1 = ((this_ptr->ostream_core).layout_info)->offset_to_base;
-    *(int *)((this_ptr->ios).padding + iVar1 + -0x31) = iVar1;
-    (this_ptr->ostream_core).destructor_vtable = (WatcomThunkedDestructor *)&g_OStream_Destructor;
+    iVar1 = ((this_ptr->_ostream_core).layout_info)->offset_to_base;
+    *(int *)((this_ptr->_ios).padding + iVar1 + -0x31) = iVar1;
+    (this_ptr->_ostream_core).destructor_vtable = (WatcomThunkedDestructor *)&g_OStream_Destructor;
     *(void ***)
-     ((this_ptr->ios).padding + ((this_ptr->ostream_core).layout_info)->offset_to_base + -5) =
+     ((this_ptr->_ios).padding + ((this_ptr->_ostream_core).layout_info)->offset_to_base + -5) =
          &g_OStream_IOSDestructor;
     if ((d1 & 1) == 0) {
-      piVar2 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->ios,1,unaff_EBX);
+      piVar2 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1,unaff_EBX);
       this_ptr = (ostream *)&piVar2[-1].__fill_character;
     }
     if ((d1 & 2) == 0) {

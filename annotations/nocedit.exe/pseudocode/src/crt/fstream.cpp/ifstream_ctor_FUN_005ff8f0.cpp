@@ -16,19 +16,19 @@ ifstream * __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0(ifstream *this_ptr
   ios *piVar5;
   
   if ((c1 & 1U) == 0) {
-    (this_ptr->fstreambase_core).layout_info = &g_IFStream_LayoutInfo;
-    (this_ptr->istream_core).layout_info =
+    (this_ptr->_fstreambase_core).layout_info = &g_IFStream_LayoutInfo;
+    (this_ptr->_istream_core).layout_info =
          (WatcomInheritanceLayout *)&g_IFStream_IStreamSubobjectLayout;
-    piVar5 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->ios);
+    piVar5 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->_ios);
     this_ptr = (ifstream *)&piVar5[-2].__tied_stream;
   }
   pfVar2 = crt_fstream_cpp_fstreambase_ctor_FUN_0060658f((fstreambase *)this_ptr,1);
   piVar3 = crt_iostream_cpp_istream_ctor_FUN_00606376((istream *)pfVar2->padding_0x44,1);
-  ppvVar4 = &piVar3[-2].ios.__i_lock;
+  ppvVar4 = &piVar3[-2]._ios.__i_lock;
   *(int *)((int)ppvVar4 + *(int *)((int)*ppvVar4 + 4) + -4) = *(int *)((int)*ppvVar4 + 4);
-  piVar3[-1].ios.cleanup_vtable = &g_IFStream_FStreamBaseDestructor;
+  piVar3[-1]._ios.cleanup_vtable = &g_IFStream_FStreamBaseDestructor;
   pvVar1 = *ppvVar4;
-  (piVar3->istream_core).destructor_vtable =
+  (piVar3->_istream_core).destructor_vtable =
        (WatcomThunkedDestructor *)&g_IFStream_IStreamDestructor;
   *(void ***)((int)ppvVar4 + *(int *)((int)pvVar1 + 4) + 0x28) = &g_IFStream_IOSDestructor;
   return (ifstream *)ppvVar4;

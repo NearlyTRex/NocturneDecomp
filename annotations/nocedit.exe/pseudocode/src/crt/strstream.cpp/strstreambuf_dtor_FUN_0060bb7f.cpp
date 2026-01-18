@@ -14,10 +14,10 @@ crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf *this_ptr,uint d1)
   void *pvVar1;
   
   if ((d1 & 4) == 0) {
-    pvVar1 = this_ptr[1].streambuf.__b_lock;
+    pvVar1 = this_ptr[1]._streambuf.__b_lock;
     this_ptr->__vtable = &g_StrstreambufVTable;
     if (((((uint)pvVar1 & 2) != 0) && (((uint)pvVar1 & 1) == 0)) &&
-       (ptr = (this_ptr->streambuf).__reserve_base, ptr != (char *)0x0)) {
+       (ptr = (this_ptr->_streambuf).__reserve_base, ptr != (char *)0x0)) {
       if (this_ptr->__free_fn == (void *)0x0) {
         crt_memory_c_free_FUN_005fe659(ptr);
       }
@@ -26,7 +26,7 @@ crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf *this_ptr,uint d1)
       }
     }
     this_ptr = (strstreambuf *)
-               crt_iostream_cpp_streambuf_destructor_FUN_0060d64f(&this_ptr->streambuf);
+               crt_iostream_cpp_streambuf_destructor_FUN_0060d64f(&this_ptr->_streambuf);
     if ((d1 & 2) == 0) {
       return this_ptr;
     }

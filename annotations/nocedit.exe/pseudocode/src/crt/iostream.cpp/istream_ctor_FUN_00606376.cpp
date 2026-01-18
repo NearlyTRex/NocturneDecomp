@@ -14,17 +14,19 @@ istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(istream *this_ptr,u
   ios *piVar3;
   
   if ((c1 & 1) == 0) {
-    (this_ptr->istream_core).layout_info = &DAT_00665e68;
-    piVar3 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->ios);
+    (this_ptr->_istream_core).layout_info = &DAT_00665e68;
+    piVar3 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->_ios);
     this_ptr = (istream *)&piVar3[-1].__xalloc_list;
   }
-  iVar2 = ((this_ptr->istream_core).layout_info)->offset_to_base;
-  *(int *)((this_ptr->ios).padding + iVar2 + -0x35) = iVar2;
-  (this_ptr->istream_core).destructor_vtable = &PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74;
-  *(void ***)((this_ptr->ios).padding + ((this_ptr->istream_core).layout_info)->offset_to_base + -9)
-       = &PTR_FUN_00665e7c;
-  (this_ptr->istream_core).__last_read_length = 0;
-  pcVar1 = (this_ptr->ios).padding + ((this_ptr->istream_core).layout_info)->offset_to_base + -0x25;
+  iVar2 = ((this_ptr->_istream_core).layout_info)->offset_to_base;
+  *(int *)((this_ptr->_ios).padding + iVar2 + -0x35) = iVar2;
+  (this_ptr->_istream_core).destructor_vtable = &PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74;
+  *(void ***)
+   ((this_ptr->_ios).padding + ((this_ptr->_istream_core).layout_info)->offset_to_base + -9) =
+       &PTR_FUN_00665e7c;
+  (this_ptr->_istream_core).__last_read_length = 0;
+  pcVar1 = (this_ptr->_ios).padding +
+           ((this_ptr->_istream_core).layout_info)->offset_to_base + -0x25;
   *pcVar1 = *pcVar1 | 1;
   return this_ptr;
 }

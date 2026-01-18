@@ -301,42 +301,42 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(int *)((int)",
-      "text": "iVar1 = *(int *)((int)(this_ptr->fstreambase_core).layout_info + 4);",
+      "text": "iVar1 = *(int *)((int)(this_ptr->_fstreambase_core).layout_info + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(int *)((int)",
-      "text": "((this_ptr->fstreambase_core).filebuf.__unbuffered_get_area + *(int *)((int)pvVar3 + 4) + -0x10",
+      "text": "*(int *)((int)pvVar3 + 4) + -0x10) = &g_OFStream_IOS;",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
       "line": 23,
       "match": "unaff_EBX",
-      "text": "((ostream *)&this_ptr->ostream_core,1,unaff_EBX);",
+      "text": "((ostream *)&this_ptr->_ostream_core,1,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 26,
       "match": "poVar2[-2].",
-      "text": "((fstreambase *)&poVar2[-2].ios.__fill_character,1,unaff_EBX,unaff_retaddr)",
+      "text": "((fstreambase *)&poVar2[-2]._ios.__fill_character,1,unaff_EBX,unaff_retaddr",
       "type": "negative_offset"
     },
     {
       "description": "Unaffected register variable",
       "line": 26,
       "match": "unaff_EBX",
-      "text": "((fstreambase *)&poVar2[-2].ios.__fill_character,1,unaff_EBX,unaff_retaddr)",
+      "text": "((fstreambase *)&poVar2[-2]._ios.__fill_character,1,unaff_EBX,unaff_retaddr",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 29,
       "match": "unaff_EBX",
-      "text": "piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->ios,1,unaff_EBX);",
+      "text": "piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {

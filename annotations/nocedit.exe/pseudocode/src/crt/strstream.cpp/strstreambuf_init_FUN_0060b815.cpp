@@ -21,19 +21,19 @@ crt_strstream_cpp_strstreambuf_init_FUN_0060b815
   this_ptr->__alloc_fn = (void *)0x0;
   this_ptr->__free_fn = (void *)0x0;
   this_ptr->__allocation_size = 0x20;
-  bVar2 = *(byte *)&this_ptr[1].streambuf.__b_lock;
+  bVar2 = *(byte *)&this_ptr[1]._streambuf.__b_lock;
   this_ptr->__minbuf_size = 0;
   this_ptr->__bit_flags = '\0';
   this_ptr->padding = '\0';
-  *(byte *)&this_ptr[1].streambuf.__b_lock = bVar2 & 0xf8;
+  *(byte *)&this_ptr[1]._streambuf.__b_lock = bVar2 & 0xf8;
   if (buffer_ptr == (char *)0x0) {
-    *(byte *)&this_ptr[1].streambuf.__b_lock = *(byte *)&this_ptr[1].streambuf.__b_lock | 2;
+    *(byte *)&this_ptr[1]._streambuf.__b_lock = *(byte *)&this_ptr[1]._streambuf.__b_lock | 2;
     return;
   }
   if (buffer_size < 1) {
     if (buffer_size != 0) {
       pcVar6 = buffer_ptr + 0x200;
-      *(byte *)&this_ptr[1].streambuf.__b_lock = *(byte *)&this_ptr[1].streambuf.__b_lock | 4;
+      *(byte *)&this_ptr[1]._streambuf.__b_lock = *(byte *)&this_ptr[1]._streambuf.__b_lock | 4;
       goto LAB_0060b85b;
     }
     uVar4 = 0xffffffff;
@@ -48,23 +48,23 @@ crt_strstream_cpp_strstreambuf_init_FUN_0060b815
   }
   pcVar6 = buffer_ptr + buffer_size;
 LAB_0060b85b:
-  crt_iostream_cpp_setBuffer_FUN_0060d6a8(&this_ptr->streambuf,buffer_ptr,pcVar6,0);
+  crt_iostream_cpp_setBuffer_FUN_0060d6a8(&this_ptr->_streambuf,buffer_ptr,pcVar6,0);
   if (((put_start == (char *)0x0) || (put_start < buffer_ptr)) ||
      ((pcVar3 = buffer_ptr, pcVar5 = pcVar6, pcVar6 <= put_start &&
-      (((uint)this_ptr[1].streambuf.__b_lock & 4) == 0)))) {
+      (((uint)this_ptr[1]._streambuf.__b_lock & 4) == 0)))) {
     put_start = (char *)0x0;
     pcVar3 = (char *)0x0;
     pcVar5 = (char *)0x0;
   }
-  (this_ptr->streambuf).__get_base = buffer_ptr;
-  (this_ptr->streambuf).__get_ptr = buffer_ptr;
-  (this_ptr->streambuf).__get_end = pcVar6;
-  (this_ptr->streambuf).__put_base = pcVar3;
-  (this_ptr->streambuf).__put_ptr = pcVar3;
-  (this_ptr->streambuf).__put_end = pcVar5;
+  (this_ptr->_streambuf).__get_base = buffer_ptr;
+  (this_ptr->_streambuf).__get_ptr = buffer_ptr;
+  (this_ptr->_streambuf).__get_end = pcVar6;
+  (this_ptr->_streambuf).__put_base = pcVar3;
+  (this_ptr->_streambuf).__put_ptr = pcVar3;
+  (this_ptr->_streambuf).__put_end = pcVar5;
   if (pcVar3 < put_start) {
-    (this_ptr->streambuf).__put_ptr =
-         (this_ptr->streambuf).__put_ptr + ((int)put_start - (int)pcVar3);
+    (this_ptr->_streambuf).__put_ptr =
+         (this_ptr->_streambuf).__put_ptr + ((int)put_start - (int)pcVar3);
     return;
   }
   return;

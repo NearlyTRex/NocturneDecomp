@@ -15,14 +15,14 @@ crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this_ptr,uint d1,uint d2,uint
   if ((d1 & 4) == 0) {
     this_ptr->__vtable = &g_FilebufVTable;
     if (this_ptr->__file_handle != -1) {
-      if ((this_ptr->streambuf).__put_ptr != (this_ptr->streambuf).__put_base) {
+      if ((this_ptr->_streambuf).__put_ptr != (this_ptr->_streambuf).__put_base) {
         crt_fstream_cpp_filebuf_sync_FUN_0060dc5e(this_ptr);
       }
       if ((this_ptr->__attached & 1U) == 0) {
         crt_fstream_cpp_filebuf_close_FUN_00608bcc(this_ptr);
       }
     }
-    this_ptr = (filebuf *)crt_iostream_cpp_streambuf_destructor_FUN_0060d64f(&this_ptr->streambuf);
+    this_ptr = (filebuf *)crt_iostream_cpp_streambuf_destructor_FUN_0060d64f(&this_ptr->_streambuf);
     if ((d1 & 2) == 0) {
       return this_ptr;
     }

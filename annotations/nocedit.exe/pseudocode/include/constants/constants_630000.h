@@ -2459,10 +2459,10 @@ const char s_EmptyChar_0063e5c1 = '\0';
 const char s_EmptyChar_0063e5cc = '\0';
 
 // char[14616] constants
-const char g_LicenseAgreement[14616] = "";
+const char g_LicenseAgreement[] = "";
 
 // char[2] constants
-const char g_MenuVersionText[2] = "";
+const char g_MenuVersionText[] = "";
 
 // double constants
 const double g_InventoryRandPiFactor = 3.1415926535000001;

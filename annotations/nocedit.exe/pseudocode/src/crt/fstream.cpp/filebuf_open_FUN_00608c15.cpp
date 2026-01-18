@@ -27,7 +27,7 @@ crt_fstream_cpp_filebuf_open_FUN_00608c15(filebuf *this_ptr,char *filename,int m
         this_ptr->__file_mode = mode;
         this_ptr->__attached = this_ptr->__attached & 0xfe;
         if ((mode & 4U) != 0) {
-          (*this_ptr->__vtable->seekoff)(&this_ptr->streambuf,0,2,mode);
+          (*this_ptr->__vtable->seekoff)(&this_ptr->_streambuf,0,2,mode);
         }
         return (int)this_ptr;
       }

@@ -10,7 +10,7 @@
 
 // Structure: filebuf
 typedef struct filebuf {
-    streambuf streambuf;
+    streambuf _streambuf;
     struct filebuf_vtable* vtable;
     int file_handle;
     int file_mode;
@@ -37,7 +37,7 @@ typedef struct filebuf_vtable {
 // Structure: fstreambase_core
 typedef struct fstreambase_core {
     void* layout_info;
-    filebuf filebuf;
+    filebuf _filebuf;
     void* destructor_vtable;
 } fstreambase_core;
 
@@ -50,15 +50,15 @@ typedef struct fstreambase {
 
 // Structure: ifstream
 typedef struct ifstream {
-    fstreambase_core fstreambase_core;
-    istream_core istream_core;
-    ios ios;
+    fstreambase_core _fstreambase_core;
+    istream_core _istream_core;
+    ios _ios;
 } ifstream;
 
 // Structure: ofstream
 typedef struct ofstream {
-    fstreambase_core fstreambase_core;
-    ostream_core ostream_core;
-    ios ios;
+    fstreambase_core _fstreambase_core;
+    ostream_core _ostream_core;
+    ios _ios;
 } ofstream;
 

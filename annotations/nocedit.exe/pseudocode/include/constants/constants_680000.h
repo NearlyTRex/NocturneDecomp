@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "prototypes/prototypes_600000.h"
 #include "system/misc.h"
 
 // =============================================================================
@@ -139,66 +140,66 @@ const TerminatedCString s_DEST_006869c2 = "DEST";
 
 // char*[12] constants
 const char* g_MonthNamesLong[12] = {
-    (void*)0x00658B64, (void*)0x00658B6C, (void*)0x00658B78, (void*)0x00658B80,
-    (void*)0x00658B88, (void*)0x00658B8C, (void*)0x00658B94, (void*)0x00658B9C,
-    (void*)0x00658BA4, (void*)0x00658BB0, (void*)0x00658BB8, (void*)0x00658BC4
+    (char*)0x00658B64, (char*)0x00658B6C, (char*)0x00658B78, (char*)0x00658B80,
+    (char*)0x00658B88, (char*)0x00658B8C, (char*)0x00658B94, (char*)0x00658B9C,
+    (char*)0x00658BA4, (char*)0x00658BB0, (char*)0x00658BB8, (char*)0x00658BC4
 };
 
 // char*[24] constants
 const char* g_MathFunctionNames[24] = {
-    (void*)0x00002424, (void*)0x006595B4, (void*)0x006595B9, (void*)0x006595BE,
-    (void*)0x006595C3, (void*)0x006595C7, (void*)0x006595CC, (void*)0x006595D1,
-    (void*)0x006595D5, (void*)0x006595DB, (void*)0x006595E0, (void*)0x006595E4,
-    (void*)0x006595EA, (void*)0x006595F0, (void*)0x006595F6, (void*)0x006595FB,
-    (void*)0x00659601, (void*)0x00659605, (void*)0x00659609, (void*)0x0065960D,
-    (void*)0x00659610, (void*)0x00659613, (void*)0x00659616, (void*)0x0065961A
+    (char*)0x00002424, (char*)0x006595B4, (char*)0x006595B9, (char*)0x006595BE,
+    (char*)0x006595C3, (char*)0x006595C7, (char*)0x006595CC, (char*)0x006595D1,
+    (char*)0x006595D5, (char*)0x006595DB, (char*)0x006595E0, (char*)0x006595E4,
+    (char*)0x006595EA, (char*)0x006595F0, (char*)0x006595F6, (char*)0x006595FB,
+    (char*)0x00659601, (char*)0x00659605, (char*)0x00659609, (char*)0x0065960D,
+    (char*)0x00659610, (char*)0x00659613, (char*)0x00659616, (char*)0x0065961A
 };
 
 // char*[41] constants
 const char* g_ErrorMessageTable[41] = {
-    (void*)0x00658C30, (void*)0x00658C3C, (void*)0x00658C58, (void*)0x00658C6C,
-    (void*)0x00658C80, (void*)0x00658C90, (void*)0x00658CA4, (void*)0x00658CB8,
-    (void*)0x00658CC4, (void*)0x00658CD8, (void*)0x00658CEC, (void*)0x00658D00,
-    (void*)0x00658D14, (void*)0x00658D2C, (void*)0x00658D40, (void*)0x00658D54,
-    (void*)0x00658D74, (void*)0x00658D8C, (void*)0x00658DA4, (void*)0x00658DC4,
-    (void*)0x00658DDC, (void*)0x00658DEC, (void*)0x00658DF8, (void*)0x00658E08,
-    (void*)0x00658E18, (void*)0x00658E28, (void*)0x00658E40, (void*)0x00658E58,
-    (void*)0x00658E74, (void*)0x00658E80, (void*)0x00658E8C, (void*)0x00658EA4,
-    (void*)0x00658EB4, (void*)0x00658EC4, (void*)0x00658ED4, (void*)0x00658EE0,
-    (void*)0x00658EF4, (void*)0x00658F04, (void*)0x00658F24, (void*)0x00658F38,
-    (void*)0x00658F4C
+    (char*)0x00658C30, (char*)0x00658C3C, (char*)0x00658C58, (char*)0x00658C6C,
+    (char*)0x00658C80, (char*)0x00658C90, (char*)0x00658CA4, (char*)0x00658CB8,
+    (char*)0x00658CC4, (char*)0x00658CD8, (char*)0x00658CEC, (char*)0x00658D00,
+    (char*)0x00658D14, (char*)0x00658D2C, (char*)0x00658D40, (char*)0x00658D54,
+    (char*)0x00658D74, (char*)0x00658D8C, (char*)0x00658DA4, (char*)0x00658DC4,
+    (char*)0x00658DDC, (char*)0x00658DEC, (char*)0x00658DF8, (char*)0x00658E08,
+    (char*)0x00658E18, (char*)0x00658E28, (char*)0x00658E40, (char*)0x00658E58,
+    (char*)0x00658E74, (char*)0x00658E80, (char*)0x00658E8C, (char*)0x00658EA4,
+    (char*)0x00658EB4, (char*)0x00658EC4, (char*)0x00658ED4, (char*)0x00658EE0,
+    (char*)0x00658EF4, (char*)0x00658F04, (char*)0x00658F24, (char*)0x00658F38,
+    (char*)0x00658F4C
 };
 
 // char*[7] constants
 const char* g_WeekdayNamesLong[7] = {
-    (void*)0x00658B20, (void*)0x00658B28, (void*)0x00658B30, (void*)0x00658B38,
-    (void*)0x00658B44, (void*)0x00658B50, (void*)0x00658B58
+    (char*)0x00658B20, (char*)0x00658B28, (char*)0x00658B30, (char*)0x00658B38,
+    (char*)0x00658B44, (char*)0x00658B50, (char*)0x00658B58
 };
 const char* g_MathErrorMessages[7] = {
-    NULL, (void*)0x006596A8, (void*)0x006596B5, (void*)0x006596CA,
-    (void*)0x006596DF, (void*)0x006596F5, (void*)0x00659710
+    nullptr, (char*)0x006596A8, (char*)0x006596B5, (char*)0x006596CA,
+    (char*)0x006596DF, (char*)0x006596F5, (char*)0x00659710
 };
 
 // char*[9] constants
 const char* g_DirectionCharacters[9] = {
-    (void*)0x0063EAD8, (void*)0x0063EADA, (void*)0x0063EADC, (void*)0x0063EADE,
-    (void*)0x0063EAE0, (void*)0x0063EAE2, (void*)0x0063EAE5, (void*)0x0063EAE8,
-    (void*)0x0063EAEB
+    (char*)0x0063EAD8, (char*)0x0063EADA, (char*)0x0063EADC, (char*)0x0063EADE,
+    (char*)0x0063EAE0, (char*)0x0063EAE2, (char*)0x0063EAE5, (char*)0x0063EAE8,
+    (char*)0x0063EAEB
 };
 
 // char[104] constants
-const char g_SoundResultBufferTemplate[104] = "";
+const char g_SoundResultBufferTemplate[] = "";
 
 // char[108] constants
-const char g_TrainSoundFilenameTemplate[108] = "";
+const char g_TrainSoundFilenameTemplate[] = "";
 
 // char[128] constants
-const char g_OSFontName[128] = "";
+const char g_OSFontName[] = "";
 
 // char[12] constants
-const char g_MonthInitial[12] = "JFMAMJJASOND";
-const char g_MonthSecondInitial[12] = "aeapauuuecoe";
-const char g_MonthThirdInitial[12] = "nbrrynlgptvc";
+const char g_MonthInitial[] = "JFMAMJJASOND";
+const char g_MonthSecondInitial[] = "aeapauuuecoe";
+const char g_MonthThirdInitial[] = "nbrrynlgptvc";
 
 // char[12][4] constants
 const char g_MonthNamesShort[12][4] = {
@@ -208,25 +209,25 @@ const char g_MonthNamesShort[12][4] = {
 };
 
 // char[17] constants
-const char g_HexLookupTable[17] = "0123456789abcdef";
+const char g_HexLookupTable[] = "0123456789abcdef";
 
 // char[256] constants
-const char g_DefaultRecordingDeviceName[256] = "";
-const char g_DefaultDeviceName[256] = "";
-const char g_CharacterClassificationTable[256] = "";
-const char g_ShiftJIS_TrailByteTable[256] = "";
+const char g_DefaultRecordingDeviceName[] = "";
+const char g_DefaultDeviceName[] = "";
+const char g_CharacterClassificationTable[] = "";
+const char g_ShiftJIS_TrailByteTable[] = "";
 
 // char[260] constants
-const char g_TempDirectoryBuffer[260] = "";
+const char g_TempDirectoryBuffer[] = "";
 
 // char[36] constants
-const char g_AlphaNumericCharacters1[36] = "0123456789abcdefghijklmnopqrstuvwxyz";
-const char g_AlphaNumericCharacters2[36] = "0123456789abcdefghijklmnopqrstuvwxyz";
+const char g_AlphaNumericCharacters1[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+const char g_AlphaNumericCharacters2[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 // char[7] constants
-const char g_WeekdayInitial[7] = "SMTWTFS";
-const char g_WeekdaySecondInitial[7] = "uouehra";
-const char g_WeekdayThirdInitial[7] = "nneduit";
+const char g_WeekdayInitial[] = "SMTWTFS";
+const char g_WeekdaySecondInitial[] = "uouehra";
+const char g_WeekdayThirdInitial[] = "nneduit";
 
 // char[7][4] constants
 const char g_WeekdayNamesShort[7][4] = {
@@ -317,248 +318,248 @@ const undefined4 DAT_006854f0 = 0x00000001;
 const undefined4 DAT_006855d8 = 0x0FFFFFFF;
 
 // void* constants
-const void* DAT_00680E30 = 0x006441CB;
-const void* DAT_00680E34 = 0x006441CD;
-const void* DAT_00680E38 = 0x00644209;
-const void* DAT_00680E3C = 0x00644250;
-const void* DAT_00680E40 = 0x00644270;
-const void* DAT_00680E44 = 0x0064428E;
-const void* DAT_00680E48 = 0x006442AD;
-const void* DAT_00680E4C = 0x006442CA;
-const void* DAT_00680E50 = 0x00644324;
-const void* DAT_00680E54 = 0x00644330;
-const void* DAT_00680E58 = 0x0064433D;
-const void* DAT_00680E5C = 0x00644348;
-const void* DAT_00680E60 = 0x00644359;
-const void* DAT_00680E64 = 0x0064437A;
-const void* DAT_00680E68 = 0x006443A1;
-const void* DAT_00680E6C = 0x006443C5;
-const void* DAT_00680E70 = 0x00644413;
-const void* DAT_00680E74 = 0x0064444D;
-const void* DAT_00680E78 = 0x006444AC;
-const void* DAT_00680E7C = 0x006444F7;
-const void* DAT_00680E80 = 0x00644506;
-const void* DAT_00680E84 = 0x0064451A;
-const void* DAT_00680E88 = 0x00644537;
-const void* DAT_00680E8C = 0x0064457F;
-const void* DAT_00680E90 = 0x0064460B;
-const void* DAT_00680E94 = 0x00644631;
-const void* DAT_00680E98 = 0x0064464F;
-const void* DAT_00680E9C = 0x006446A0;
-const void* DAT_00680EA0 = 0x006446A5;
-const void* DAT_00680EA4 = 0x006446C9;
-const void* DAT_00680EA8 = 0x00644702;
-const void* DAT_00680EAC = 0x00644733;
-const void* DAT_00680EB0 = 0x00644737;
-const void* DAT_00680EB4 = 0x0064476C;
-const void* DAT_00680EB8 = 0x00644773;
-const void* DAT_00680EBC = 0x0064477B;
-const void* DAT_00680EC0 = 0x006447B2;
-const void* DAT_00680EC4 = 0x006447C0;
-const void* DAT_00680EC8 = 0x006447DE;
-const void* DAT_00680ECC = 0x006447FD;
-const void* DAT_00680ED0 = 0x00644818;
-const void* DAT_00680ED4 = 0x00644834;
-const void* DAT_00680ED8 = 0x00644860;
-const void* DAT_00680EDC = 0x00644887;
-const void* DAT_00680EE0 = 0x006448BA;
-const void* DAT_00680EE4 = 0x006448C8;
-const void* DAT_00680EE8 = 0x006448D5;
-const void* DAT_00680EEC = 0x006448E2;
-const void* DAT_00680EF0 = 0x006448FF;
-const void* DAT_00680EF4 = 0x00644929;
-const void* DAT_00680EF8 = 0x00644970;
-const void* DAT_00680EFC = 0x00644975;
-const void* DAT_00680F00 = 0x00644985;
-const void* DAT_00680F04 = 0x0064499E;
-const void* DAT_00680F08 = 0x006449CD;
-const void* DAT_00680F0C = 0x00644A29;
-const void* DAT_00680F10 = 0x00644A95;
-const void* DAT_00680F14 = 0x00644AAB;
-const void* DAT_00680F18 = 0x00644ABE;
-const void* DAT_00680F1C = 0x00644AE7;
-const void* DAT_00680F20 = 0x00644B02;
-const void* DAT_00680F24 = 0x00644B0E;
-const void* DAT_00680F28 = 0x00644B2A;
-const void* DAT_00680F2C = 0x00644B4E;
-const void* DAT_00680F30 = 0x00644B7A;
-const void* DAT_00680F34 = 0x00644BF6;
-const void* DAT_00680F38 = 0x00644C05;
-const void* DAT_00680F3C = 0x00644C1E;
-const void* DAT_00680F40 = 0x00644C4A;
-const void* DAT_00680F44 = 0x00644C60;
-const void* DAT_00680F48 = 0x00644C8E;
-const void* DAT_00680F4C = 0x00644CB9;
-const void* DAT_00680F50 = 0x00644CE9;
-const void* DAT_00680F54 = 0x00644D04;
-const void* DAT_00680F58 = 0x00644D0B;
-const void* DAT_00680F5C = 0x00644D19;
-const void* DAT_00680F60 = 0x00644D40;
-const void* DAT_00680F64 = 0x00644D72;
-const void* DAT_00680F68 = 0x00644D9D;
-const void* DAT_00680F6C = 0x00644DB4;
-const void* DAT_00680F70 = 0x00644DE6;
-const void* DAT_00680F74 = 0x00644E18;
-const void* DAT_00680F78 = 0x00644E31;
-const void* DAT_00680F7C = 0x00644E51;
-const void* DAT_00680F80 = 0x00644E94;
-const void* DAT_00680F84 = 0x00644EAB;
-const void* DAT_00680F88 = 0x00644EEB;
-const void* DAT_00680F8C = 0x00644F12;
-const void* DAT_00680F90 = 0x00644F32;
-const void* DAT_00680F94 = 0x00644F5D;
-const void* DAT_00680F98 = 0x00644F92;
-const void* DAT_00680F9C = 0x00644FC5;
-const void* DAT_00680FA0 = 0x00644FDA;
-const void* DAT_00680FA4 = 0x00645007;
-const void* DAT_00680FA8 = 0x0064501D;
-const void* DAT_00680FAC = 0x0064503C;
-const void* DAT_00680FB0 = 0x00645066;
-const void* DAT_00680FB4 = 0x0064507D;
-const void* DAT_00680FB8 = 0x00645097;
-const void* DAT_00680FBC = 0x006450BA;
-const void* DAT_00680FC0 = 0x006450E8;
-const void* DAT_00680FC4 = 0x006450FE;
-const void* DAT_00680FC8 = 0x0064515F;
-const void* DAT_00680FCC = 0x00645195;
-const void* DAT_00680FD0 = 0x006451CC;
-const void* DAT_00680FD4 = 0x006451F8;
-const void* DAT_00680FD8 = 0x0064520F;
-const void* DAT_00680FDC = 0x00645239;
-const void* DAT_00680FE0 = 0x00645248;
-const void* DAT_00680FE4 = 0x00645256;
-const void* DAT_00680FE8 = 0x00645274;
-const void* DAT_00680FEC = 0x006452B6;
-const void* DAT_00680FF0 = 0x006452CB;
-const void* DAT_00680FF4 = 0x006452D9;
-const void* DAT_00680FF8 = 0x00645328;
-const void* DAT_00680FFC = 0x00645389;
-const void* DAT_00681000 = 0x006453BA;
-const void* DAT_00681004 = 0x00645407;
-const void* DAT_00681010 = 0x006454A5;
-const void* DAT_00681014 = 0x006454B6;
-const void* DAT_00681018 = 0x006454DF;
-const void* DAT_0068101C = 0x006454F8;
-const void* DAT_00681020 = 0x00645512;
-const void* DAT_00681024 = 0x0064552D;
-const void* DAT_00681028 = 0x00645560;
-const void* DAT_0068102C = 0x006455AC;
-const void* DAT_00681030 = 0x006455BD;
-const void* DAT_00681034 = 0x006455FC;
-const void* DAT_00681038 = 0x00645612;
-const void* DAT_0068103C = 0x00645624;
-const void* DAT_00681040 = 0x0064563E;
-const void* DAT_00681044 = 0x00645655;
-const void* DAT_00681048 = 0x00645673;
-const void* DAT_0068104C = 0x00645690;
-const void* DAT_00681050 = 0x006456AD;
-const void* DAT_00681054 = 0x006456CD;
-const void* DAT_00681058 = 0x006456E5;
-const void* DAT_006810EE = 0x00800000;
-const void* DAT_006817E8 = 0x00649199;
-const void* DAT_006817EC = 0x0064919D;
-const void* DAT_006817F4 = 0x006491A5;
-const void* DAT_006817F8 = 0x006491B6;
-const void* DAT_00681B04 = 0x0065153F;
-const void* DAT_00681B08 = 0x00651541;
-const void* DAT_00681B0C = 0x00651542;
-const void* DAT_00684128 = 0x00652EE7;
-const void* DAT_00684130 = 0x00652EEE;
-const void* DAT_00684140 = 0x00652F06;
-const void* DAT_00684148 = 0x00652F10;
-const void* DAT_00684150 = 0x00652F19;
-const void* DAT_0068436C = 0x00655871;
-const void* DAT_00684374 = 0x0065587A;
-const void* DAT_0068437C = 0x00655886;
-const void* DAT_0068438C = 0x006558AF;
-const void* DAT_00684394 = 0x006558C4;
-const void* DAT_0068439C = 0x006558D6;
-const void* DAT_006843A4 = 0x006558F4;
-const void* DAT_006843AC = 0x00655907;
-const void* DAT_006843B4 = 0x00655919;
-const void* DAT_006843BC = 0x0065592F;
-const void* DAT_006843C4 = 0x00655942;
-const void* DAT_006843CC = 0x00655955;
-const void* DAT_006843DC = 0x00655984;
-const void* DAT_0068441C = 0x006567B9;
-const void* DAT_00684424 = 0x006567C2;
-const void* DAT_0068442C = 0x006567C9;
-const void* DAT_00684434 = 0x006567D0;
-const void* DAT_0068448C = 0x00656FD6;
-const void* DAT_006844B8 = 0x00657198;
-const void* DAT_006844C0 = 0x0065719D;
-const void* DAT_006848BC = 0x00657B50;
-const void* DAT_006848C4 = 0x00657B5D;
-const void* DAT_006848CC = 0x00657B65;
-const void* DAT_00685594 = 0x0060F960;
-const void* DAT_006873D8 = 0x00606A87;
-const void* DAT_006873DC = 0x00606A8C;
-const void* DAT_006873E0 = 0x00606A92;
-const void* DAT_006873E4 = 0x00606A97;
-const void* DAT_006873E8 = 0x00606A9D;
-const void* DAT_006873EC = 0x00606AA3;
-const void* DAT_006873F0 = 0x00606AA9;
-const void* DAT_006873F4 = 0x00606AAF;
-const void* DAT_006873F8 = 0x00606ACB;
-const void* DAT_006873FC = 0x00606AD0;
-const void* DAT_00687400 = 0x00606AE6;
-const void* DAT_00687404 = 0x00606AEB;
-const void* DAT_00687408 = 0x00606B07;
-const void* DAT_0068740C = 0x00606B17;
-const void* DAT_00687410 = 0x00606B2B;
-const void* DAT_00687414 = 0x00606B3B;
-const void* DAT_00687418 = 0x00606B5B;
-const void* DAT_0068741C = 0x00606B60;
-const void* DAT_00687420 = 0x00606B7A;
-const void* DAT_00687424 = 0x00606B7F;
-const void* DAT_00687428 = 0x00606B9F;
-const void* DAT_0068742C = 0x00606BB3;
-const void* DAT_00687430 = 0x00606BCB;
-const void* DAT_00687434 = 0x00606BDF;
-const void* DAT_00687438 = 0x00606BFF;
-const void* DAT_0068743C = 0x00606C04;
-const void* DAT_00687440 = 0x00606C1E;
-const void* DAT_00687444 = 0x00606C23;
-const void* DAT_00687448 = 0x00606C43;
-const void* DAT_0068744C = 0x00606C57;
-const void* DAT_00687450 = 0x00606C6F;
-const void* DAT_00687454 = 0x00606C83;
-const void* DAT_00687458 = 0x00606CA3;
-const void* DAT_0068745C = 0x00606CA8;
-const void* DAT_00687460 = 0x00606CC2;
-const void* DAT_00687464 = 0x00606CC7;
-const void* DAT_00687468 = 0x00606CE7;
-const void* DAT_0068746C = 0x00606CFB;
-const void* DAT_00687470 = 0x00606D13;
-const void* DAT_00687474 = 0x00606D27;
-const void* DAT_00687478 = 0x00606D47;
-const void* DAT_0068747C = 0x00606D4C;
-const void* DAT_00687480 = 0x00606D66;
-const void* DAT_00687484 = 0x00606D6B;
-const void* DAT_00687488 = 0x00606D8B;
-const void* DAT_0068748C = 0x00606D9F;
-const void* DAT_00687490 = 0x00606DB7;
-const void* DAT_00687494 = 0x00606DCB;
-const void* DAT_00687498 = 0x00606DEB;
-const void* DAT_0068749C = 0x00606DF0;
-const void* DAT_006874A0 = 0x00606E0A;
-const void* DAT_006874A4 = 0x00606E0F;
-const void* DAT_006874A8 = 0x00606E2F;
-const void* DAT_006874AC = 0x00606E43;
-const void* DAT_006874B0 = 0x00606E5B;
-const void* DAT_006874B4 = 0x00606E6F;
-const void* DAT_006874B8 = 0x00606E8F;
-const void* DAT_006874BC = 0x00606E94;
-const void* DAT_006874C0 = 0x00606EAE;
-const void* DAT_006874C4 = 0x00606EB3;
-const void* DAT_006874C8 = 0x00606ED3;
-const void* DAT_006874CC = 0x00606EE7;
-const void* DAT_006874D0 = 0x00606EFF;
-const void* DAT_006874E8 = 0x0060C5AB;
-const void* DAT_006874EC = 0x0060C5B8;
-const void* DAT_006874F0 = 0x0060C5CB;
-const void* DAT_006874F4 = 0x0060C5E0;
-const void* DAT_006874F8 = 0x0060C5F3;
-const void* DAT_006874FC = 0x0060C608;
-const void* DAT_00687500 = 0x0060C61B;
+const void* DAT_00680E30 = (void*)0x006441CB; // s_anon_006441cb
+const void* DAT_00680E34 = (void*)0x006441CD; // s_addItemToInventory_actor_006441cd
+const void* DAT_00680E38 = (void*)0x00644209; // s_addLightFilter_spotLight_00644209
+const void* DAT_00680E3C = (void*)0x00644250; // s_advanceLightFilter_spotL_00644250
+const void* DAT_00680E40 = (void*)0x00644270; // s_allowEnemyAttack_conditi_00644270
+const void* DAT_00680E44 = (void*)0x0064428E; // s_allowHeroControls_condit_0064428e
+const void* DAT_00680E48 = (void*)0x006442AD; // s_allowHeroDamage_conditio_006442ad
+const void* DAT_00680E4C = (void*)0x006442CA; // s_attachActorToPlatform_ac_006442ca
+const void* DAT_00680E50 = (void*)0x00644324; // s_beginFadeIn_00644324
+const void* DAT_00680E54 = (void*)0x00644330; // s_beginFadeOut_00644330
+const void* DAT_00680E58 = (void*)0x0064433D; // s_breakPoint_0064433d
+const void* DAT_00680E5C = (void*)0x00644348; // s_cancelCameraHold_00644348
+const void* DAT_00680E60 = (void*)0x00644359; // s_cancelWalkTo_actor_CChar_00644359
+const void* DAT_00680E64 = (void*)0x0064437A; // s_chainToMission_filename__0064437a
+const void* DAT_00680E68 = (void*)0x006443A1; // s_clearActorVariable_actor_006443a1
+const void* DAT_00680E6C = (void*)0x006443C5; // s_createExplosion_float_ra_006443c5
+const void* DAT_00680E70 = (void*)0x00644413; // s_createExplosion_float_ra_00644413
+const void* DAT_00680E74 = (void*)0x0064444D; // s_createExplosion_float_ra_0064444d
+const void* DAT_00680E78 = (void*)0x006444AC; // s_createExplosion_float_ra_006444ac
+const void* DAT_00680E7C = (void*)0x006444F7; // s_dbSay_dbTag_006444f7
+const void* DAT_00680E80 = (void*)0x00644506; // s_dbStartSay_dbTag_00644506
+const void* DAT_00680E84 = (void*)0x0064451A; // s_debug_text_debug_message_0064451a
+const void* DAT_00680E88 = (void*)0x00644537; // s_dismember_actor_CCharact_00644537
+const void* DAT_00680E8C = (void*)0x0064457F; // s_dismember_actor_CCharact_0064457f
+const void* DAT_00680E90 = (void*)0x0064460B; // s_deleteActor_actor_actor__0064460b
+const void* DAT_00680E94 = (void*)0x00644631; // s_display_text_display_tex_00644631
+const void* DAT_00680E98 = (void*)0x0064464F; // s_displayBitmap_filename_a_0064464f
+const void* DAT_00680E9C = (void*)0x006446A0; // s_else_006446a0
+const void* DAT_00680EA0 = (void*)0x006446A5; // s_enableCamera_camera_cond_006446a5
+const void* DAT_00680EA4 = (void*)0x006446C9; // s_enableCameraGroup_int_ca_006446c9
+const void* DAT_00680EA8 = (void*)0x00644702; // s_enableHealthBar_actor_CC_00644702
+const void* DAT_00680EAC = (void*)0x00644733; // s_end_00644733
+const void* DAT_00680EB0 = (void*)0x00644737; // s_fadeAmbientSound_float_v_00644737
+const void* DAT_00680EB4 = (void*)0x0064476C; // s_fadeIn_0064476c
+const void* DAT_00680EB8 = (void*)0x00644773; // s_fadeOut_00644773
+const void* DAT_00680EBC = (void*)0x0064477B; // s_fadeSfx_sfxUsed_float_vo_0064477b
+const void* DAT_00680EC0 = (void*)0x006447B2; // s_finishedAct_006447b2
+const void* DAT_00680EC4 = (void*)0x006447C0; // s_flagOn_persistentEventNa_006447c0
+const void* DAT_00680EC8 = (void*)0x006447DE; // s_flagOff_persistentEventN_006447de
+const void* DAT_00680ECC = (void*)0x006447FD; // s_gameFlagOn_gameFlagName_006447fd
+const void* DAT_00680ED0 = (void*)0x00644818; // s_gameFlagOff_gameFlagName_00644818
+const void* DAT_00680ED4 = (void*)0x00644834; // s_gesture_actor_CCharacter_00644834
+const void* DAT_00680ED8 = (void*)0x00644860; // s_getIniInt_iniVariable_co_00644860
+const void* DAT_00680EDC = (void*)0x00644887; // s_getTriggerActor_actorVar_00644887
+const void* DAT_00680EE0 = (void*)0x006448BA; // s_gosub_label_006448ba
+const void* DAT_00680EE4 = (void*)0x006448C8; // s_goto_label_006448c8
+const void* DAT_00680EE8 = (void*)0x006448D5; // s_gtfo_text_006448d5
+const void* DAT_00680EEC = (void*)0x006448E2; // s_holsterWeapon_actor_CHer_006448e2
+const void* DAT_00680EF0 = (void*)0x006448FF; // s_holsterWeapon_actor_CHer_006448ff
+const void* DAT_00680EF4 = (void*)0x00644929; // s_hurtCharacter_actor_CCha_00644929
+const void* DAT_00680EF8 = (void*)0x00644970; // s_idle_00644970
+const void* DAT_00680EFC = (void*)0x00644975; // s_if_condition_00644975
+const void* DAT_00680F00 = (void*)0x00644985; // s_incCounter_counterSet_00644985
+const void* DAT_00680F04 = (void*)0x0064499E; // s_killCharacter_actor_CCha_0064499e
+const void* DAT_00680F08 = (void*)0x006449CD; // s_killCharacter_actor_CCha_006449cd
+const void* DAT_00680F0C = (void*)0x00644A29; // s_killCharacter_actor_CCha_00644a29
+const void* DAT_00680F10 = (void*)0x00644A95; // s_killHero_deathType_00644a95
+const void* DAT_00680F14 = (void*)0x00644AAB; // s_killSfx_sfxUsed_00644aab
+const void* DAT_00680F18 = (void*)0x00644ABE; // s_killSfx_sfxUsed_float_fa_00644abe
+const void* DAT_00680F1C = (void*)0x00644AE7; // s_letterBox_letterBoxMode_00644ae7
+const void* DAT_00680F20 = (void*)0x00644B02; // s_lightning_00644b02
+const void* DAT_00680F24 = (void*)0x00644B0E; // s_lockFocusActor_condition_00644b0e
+const void* DAT_00680F28 = (void*)0x00644B2A; // s_lookAt_actor_CCharacter__00644b2a
+const void* DAT_00680F2C = (void*)0x00644B4E; // s_openDoor_actor_CCharacte_00644b4e
+const void* DAT_00680F30 = (void*)0x00644B7A; // s_movePlatform_actor_CPlat_00644b7a
+const void* DAT_00680F34 = (void*)0x00644BF6; // s_playSfx_wav_00644bf6
+const void* DAT_00680F38 = (void*)0x00644C05; // s_playSfx_wav_sfxSet_00644c05
+const void* DAT_00680F3C = (void*)0x00644C1E; // s_pressButton_actor_CHero__00644c1e
+const void* DAT_00680F40 = (void*)0x00644C4A; // s_raise_eventCommand_00644c4a
+const void* DAT_00680F44 = (void*)0x00644C60; // s_releaseButton_actor_CHer_00644c60
+const void* DAT_00680F48 = (void*)0x00644C8E; // s_removeAllItemsFromInvent_00644c8e
+const void* DAT_00680F4C = (void*)0x00644CB9; // s_removeItemFromInventory__00644cb9
+const void* DAT_00680F50 = (void*)0x00644CE9; // s_removeKeys_int_keyMask_00644ce9
+const void* DAT_00680F54 = (void*)0x00644D04; // s_return_00644d04
+const void* DAT_00680F58 = (void*)0x00644D0B; // s_rollCredits_00644d0b
+const void* DAT_00680F5C = (void*)0x00644D19; // s_say_actor_CCharacter_wav_00644d19
+const void* DAT_00680F60 = (void*)0x00644D40; // s_selectWeapon_actor_CHero_00644d40
+const void* DAT_00680F64 = (void*)0x00644D72; // s_setActorVariable_actorVa_00644d72
+const void* DAT_00680F68 = (void*)0x00644D9D; // s_setAmbientSound_wav_00644d9d
+const void* DAT_00680F6C = (void*)0x00644DB4; // s_setCameraAmbient_camera__00644db4
+const void* DAT_00680F70 = (void*)0x00644DE6; // s_setCameraGroup_camera_in_00644de6
+const void* DAT_00680F74 = (void*)0x00644E18; // s_setCounter_counterSet_00644e18
+const void* DAT_00680F78 = (void*)0x00644E31; // s_setCounter_counterSet_in_00644e31
+const void* DAT_00680F7C = (void*)0x00644E51; // s_setCharacterHealth_actor_00644e51
+const void* DAT_00680F80 = (void*)0x00644E94; // s_setFocusActor_actor_00644e94
+const void* DAT_00680F84 = (void*)0x00644EAB; // s_setGroupAmbient_int_came_00644eab
+const void* DAT_00680F88 = (void*)0x00644EEB; // s_setHeroTask_actor_CHero__00644eeb
+const void* DAT_00680F8C = (void*)0x00644F12; // s_setIniInt_iniVariable_in_00644f12
+const void* DAT_00680F90 = (void*)0x00644F32; // s_setLeverState_actor_CLev_00644f32
+const void* DAT_00680F94 = (void*)0x00644F5D; // s_setLightFilterFrame_spot_00644f5d
+const void* DAT_00680F98 = (void*)0x00644F92; // s_setModelState_actor_CCha_00644f92
+const void* DAT_00680F9C = (void*)0x00644FC5; // s_setSayTimeOverride_00644fc5
+const void* DAT_00680FA0 = (void*)0x00644FDA; // s_setSayTimeOverride_float_00644fda
+const void* DAT_00680FA4 = (void*)0x00645007; // s_setSkipLabel_label_00645007
+const void* DAT_00680FA8 = (void*)0x0064501D; // s_setSpeaker_actor_CCharac_0064501d
+const void* DAT_00680FAC = (void*)0x0064503C; // s_setTimer_timer_float_tim_0064503c
+const void* DAT_00680FB0 = (void*)0x00645066; // s_setTimeFactor_float_00645066
+const void* DAT_00680FB4 = (void*)0x0064507D; // s_setVictim_actor_CEnemy_0064507d
+const void* DAT_00680FB8 = (void*)0x00645097; // s_setVictim_actor_CEnemy_d_00645097
+const void* DAT_00680FBC = (void*)0x006450BA; // s_setVictim_actor_CEnemy_a_006450ba
+const void* DAT_00680FC0 = (void*)0x006450E8; // s_setWeather_weather_006450e8
+const void* DAT_00680FC4 = (void*)0x006450FE; // s_shakeScreen_float_freque_006450fe
+const void* DAT_00680FC8 = (void*)0x0064515F; // s_slamModelToMotion_actor__0064515f
+const void* DAT_00680FCC = (void*)0x00645195; // s_snapToFace_actor_actorTo_00645195
+const void* DAT_00680FD0 = (void*)0x006451CC; // s_startSay_actor_CCharacte_006451cc
+const void* DAT_00680FD4 = (void*)0x006451F8; // s_switchCamera_camera_006451f8
+const void* DAT_00680FD8 = (void*)0x0064520F; // s_switchCamera_camera_floa_0064520f
+const void* DAT_00680FDC = (void*)0x00645239; // s_syntaxCheckOff_00645239
+const void* DAT_00680FE0 = (void*)0x00645248; // s_syntaxCheckOn_00645248
+const void* DAT_00680FE4 = (void*)0x00645256; // s_timedDisplay_float_text_00645256
+const void* DAT_00680FE8 = (void*)0x00645274; // s_turnToFace_actor_CCharac_00645274
+const void* DAT_00680FEC = (void*)0x006452B6; // s_waitFor_condition_006452b6
+const void* DAT_00680FF0 = (void*)0x006452CB; // s_wait_float_006452cb
+const void* DAT_00680FF4 = (void*)0x006452D9; // s_walkTo_actor_CCharacter__006452d9
+const void* DAT_00680FF8 = (void*)0x00645328; // s_walkTo_actor_CCharacter__00645328
+const void* DAT_00680FFC = (void*)0x00645389; // s_warpTo_actor_actorToWarp_00645389
+const void* DAT_00681000 = (void*)0x006453BA; // s_warpTo_actor_actorToWarp_006453ba
+const void* DAT_00681004 = (void*)0x00645407; // s_warpTo_actor_actorToWarp_00645407
+const void* DAT_00681010 = (void*)0x006454A5; // s_hasItem_actor_006454a5
+const void* DAT_00681014 = (void*)0x006454B6; // s_hasItemType_actor_CHero__006454b6
+const void* DAT_00681018 = (void*)0x006454DF; // s_isBroken_actor_CGlass_006454df
+const void* DAT_0068101C = (void*)0x006454F8; // s_isCurrentCamera_camera_006454f8
+const void* DAT_00681020 = (void*)0x00645512; // s_isDead_actor_CCharacter_00645512
+const void* DAT_00681024 = (void*)0x0064552D; // s_isFacing_actor_lookActor_0064552d
+const void* DAT_00681028 = (void*)0x00645560; // s_isFacing_actor_lookActor_00645560
+const void* DAT_0068102C = (void*)0x006455AC; // s_isFadeFinished_006455ac
+const void* DAT_00681030 = (void*)0x006455BD; // s_isInRange_actor_actor1_a_006455bd
+const void* DAT_00681034 = (void*)0x006455FC; // s_isLightOn_spotLight_006455fc
+const void* DAT_00681038 = (void*)0x00645612; // s_isNudityEnabled_00645612
+const void* DAT_0068103C = (void*)0x00645624; // s_isOfType_actor_text_00645624
+const void* DAT_00681040 = (void*)0x0064563E; // s_isSfxActive_sfxUsed_0064563e
+const void* DAT_00681044 = (void*)0x00645655; // s_isTalking_actor_CCharact_00645655
+const void* DAT_00681048 = (void*)0x00645673; // s_isVictim_actor_CCharacte_00645673
+const void* DAT_0068104C = (void*)0x00645690; // s_isWeaponDrawn_actor_CHer_00645690
+const void* DAT_00681050 = (void*)0x006456AD; // s_isWearingGasMask_actor_C_006456ad
+const void* DAT_00681054 = (void*)0x006456CD; // s_randBool_float_odds_006456cd
+const void* DAT_00681058 = (void*)0x006456E5; // s_reachedDest_actor_006456e5
+const void* DAT_006810EE = (void*)0x00800000; // DAT_00800000
+const void* DAT_006817E8 = (void*)0x00649199; // s_Off_00649199
+const void* DAT_006817EC = (void*)0x0064919D; // s_On_0064919d
+const void* DAT_006817F4 = (void*)0x006491A5; // s_Rain_Lightning_006491a5
+const void* DAT_006817F8 = (void*)0x006491B6; // s_Snow_006491b6
+const void* DAT_00681B04 = (void*)0x0065153F; // s_anon_0065153f
+const void* DAT_00681B08 = (void*)0x00651541; // s_anon_00651541
+const void* DAT_00681B0C = (void*)0x00651542; // s_anon_00651542
+const void* DAT_00684128 = (void*)0x00652EE7; // s_Random_00652ee7
+const void* DAT_00684130 = (void*)0x00652EEE; // s_One_shot_00652eee
+const void* DAT_00684140 = (void*)0x00652F06; // s_Extending_00652f06
+const void* DAT_00684148 = (void*)0x00652F10; // s_Extended_00652f10
+const void* DAT_00684150 = (void*)0x00652F19; // s_Retracting_00652f19
+const void* DAT_0068436C = (void*)0x00655871; // s_One_shot_00655871
+const void* DAT_00684374 = (void*)0x0065587A; // s_Rising_edge_0065587a
+const void* DAT_0068437C = (void*)0x00655886; // s_Falling_edge_00655886
+const void* DAT_0068438C = (void*)0x006558AF; // s_An_actor_triggers_me_006558af
+const void* DAT_00684394 = (void*)0x006558C4; // s_Light_triggers_me_006558c4
+const void* DAT_0068439C = (void*)0x006558D6; // s_The_action_button_trigge_006558d6
+const void* DAT_006843A4 = (void*)0x006558F4; // s_Bullet_triggers_me_006558f4
+const void* DAT_006843AC = (void*)0x00655907; // s_Laser_triggers_me_00655907
+const void* DAT_006843B4 = (void*)0x00655919; // s_Explosion_triggers_me_00655919
+const void* DAT_006843BC = (void*)0x0065592F; // s_Damage_triggers_me_0065592f
+const void* DAT_006843C4 = (void*)0x00655942; // s_Motion_triggers_me_00655942
+const void* DAT_006843CC = (void*)0x00655955; // s_Matched_actors_trigger_m_00655955
+const void* DAT_006843DC = (void*)0x00655984; // s_Cylinder_00655984
+const void* DAT_0068441C = (void*)0x006567B9; // s_Charging_006567b9
+const void* DAT_00684424 = (void*)0x006567C2; // s_Active_006567c2
+const void* DAT_0068442C = (void*)0x006567C9; // s_Patrol_006567c9
+const void* DAT_00684434 = (void*)0x006567D0; // s_PowerDown_006567d0
+const void* DAT_0068448C = (void*)0x00656FD6; // s_Right_rear_00656fd6
+const void* DAT_006844B8 = (void*)0x00657198; // s_Fire_00657198
+const void* DAT_006844C0 = (void*)0x0065719D; // s_Water_0065719d
+const void* DAT_006848BC = (void*)0x00657B50; // s_In_Inventory_00657b50
+const void* DAT_006848C4 = (void*)0x00657B5D; // s_In_Hand_00657b5d
+const void* DAT_006848CC = (void*)0x00657B65; // s_On_Hook_00657b65
+const void* DAT_00685594 = (void*)crt_thread_c_create_thread_with_sync_FUN_0060f960;
+const void* DAT_006873D8 = (void*)crt_math_c_fatal_math_error_FUN_00606a87;
+const void* DAT_006873DC = (void*)crt_math_c_generate_nan_FUN_00606a8c;
+const void* DAT_006873E0 = (void*)crt_math_c_fatal_math_error_FUN_00606a92;
+const void* DAT_006873E4 = (void*)crt_math_c_generate_nan_FUN_00606a97;
+const void* DAT_006873E8 = (void*)crt_math_c_generate_nan_FUN_00606a9d;
+const void* DAT_006873EC = (void*)crt_math_c_generate_nan_FUN_00606aa3;
+const void* DAT_006873F0 = (void*)crt_math_c_generate_nan_FUN_00606aa9;
+const void* DAT_006873F4 = (void*)crt_math_c_dispatch_divide_FUN_00606aaf;
+const void* DAT_006873F8 = (void*)crt_math_c_FUN_00606acb;
+const void* DAT_006873FC = (void*)crt_math_c_FUN_00606ad0;
+const void* DAT_00687400 = (void*)crt_math_c_FUN_00606ae6;
+const void* DAT_00687404 = (void*)crt_math_c_fdiv_thunk_FUN_00606aeb;
+const void* DAT_00687408 = (void*)crt_math_c_FUN_00606b07;
+const void* DAT_0068740C = (void*)crt_math_c_fdiv_thunk_FUN_00606b17;
+const void* DAT_00687410 = (void*)crt_math_c_FUN_00606b2b;
+const void* DAT_00687414 = (void*)crt_math_c_FUN_00606b3b;
+const void* DAT_00687418 = (void*)crt_math_c_FUN_00606b5b;
+const void* DAT_0068741C = (void*)crt_math_c_FUN_00606b60;
+const void* DAT_00687420 = (void*)crt_math_c_FUN_00606b7a;
+const void* DAT_00687424 = (void*)crt_math_c_fdiv_thunk_FUN_00606b7f;
+const void* DAT_00687428 = (void*)crt_math_c_FUN_00606b9f;
+const void* DAT_0068742C = (void*)crt_math_c_fdiv_thunk_FUN_00606bb3;
+const void* DAT_00687430 = (void*)crt_math_c_FUN_00606bcb;
+const void* DAT_00687434 = (void*)crt_math_c_FUN_00606bdf;
+const void* DAT_00687438 = (void*)crt_math_c_FUN_00606bff;
+const void* DAT_0068743C = (void*)crt_math_c_FUN_00606c04;
+const void* DAT_00687440 = (void*)crt_math_c_FUN_00606c1e;
+const void* DAT_00687444 = (void*)crt_math_c_FUN_00606c23;
+const void* DAT_00687448 = (void*)crt_math_c_FUN_00606c43;
+const void* DAT_0068744C = (void*)crt_math_c_FUN_00606c57;
+const void* DAT_00687450 = (void*)crt_math_c_FUN_00606c6f;
+const void* DAT_00687454 = (void*)crt_math_c_FUN_00606c83;
+const void* DAT_00687458 = (void*)crt_math_c_FUN_00606ca3;
+const void* DAT_0068745C = (void*)crt_math_c_FUN_00606ca8;
+const void* DAT_00687460 = (void*)crt_math_c_FUN_00606cc2;
+const void* DAT_00687464 = (void*)crt_math_c_fdiv_thunk_FUN_00606cc7;
+const void* DAT_00687468 = (void*)crt_math_c_FUN_00606ce7;
+const void* DAT_0068746C = (void*)crt_math_c_fdiv_thunk_FUN_00606cfb;
+const void* DAT_00687470 = (void*)crt_math_c_FUN_00606d13;
+const void* DAT_00687474 = (void*)crt_math_c_FUN_00606d27;
+const void* DAT_00687478 = (void*)crt_math_c_FUN_00606d47;
+const void* DAT_0068747C = (void*)crt_math_c_FUN_00606d4c;
+const void* DAT_00687480 = (void*)crt_math_c_FUN_00606d66;
+const void* DAT_00687484 = (void*)crt_math_c_fdiv_thunk_FUN_00606d6b;
+const void* DAT_00687488 = (void*)crt_math_c_FUN_00606d8b;
+const void* DAT_0068748C = (void*)crt_math_c_fdiv_thunk_FUN_00606d9f;
+const void* DAT_00687490 = (void*)crt_math_c_FUN_00606db7;
+const void* DAT_00687494 = (void*)crt_math_c_FUN_00606dcb;
+const void* DAT_00687498 = (void*)crt_math_c_FUN_00606deb;
+const void* DAT_0068749C = (void*)crt_math_c_FUN_00606df0;
+const void* DAT_006874A0 = (void*)crt_math_c_FUN_00606e0a;
+const void* DAT_006874A4 = (void*)crt_math_c_fdiv_thunk_FUN_00606e0f;
+const void* DAT_006874A8 = (void*)crt_math_c_FUN_00606e2f;
+const void* DAT_006874AC = (void*)crt_math_c_fdiv_thunk_FUN_00606e43;
+const void* DAT_006874B0 = (void*)crt_math_c_FUN_00606e5b;
+const void* DAT_006874B4 = (void*)crt_math_c_FUN_00606e6f;
+const void* DAT_006874B8 = (void*)crt_math_c_FUN_00606e8f;
+const void* DAT_006874BC = (void*)crt_math_c_FUN_00606e94;
+const void* DAT_006874C0 = (void*)crt_math_c_FUN_00606eae;
+const void* DAT_006874C4 = (void*)crt_math_c_FUN_00606eb3;
+const void* DAT_006874C8 = (void*)crt_math_c_FUN_00606ed3;
+const void* DAT_006874CC = (void*)crt_math_c_fdiv_thunk_FUN_00606ee7;
+const void* DAT_006874D0 = (void*)crt_math_c_FUN_00606eff;
+const void* DAT_006874E8 = (void*)crt_math_c_atan2_negate_epilogue_FUN_0060c5ab;
+const void* DAT_006874EC = (void*)crt_math_c_atan2_pi_minus_epilogue_FUN_0060c5b8;
+const void* DAT_006874F0 = (void*)crt_math_c_atan2_minus_pi_epilogue_FUN_0060c5cb;
+const void* DAT_006874F4 = (void*)crt_math_c_atan2_pi_half_minus_epilogue_FUN_0060c5e0;
+const void* DAT_006874F8 = (void*)crt_math_c_atan2_minus_pi_half_epilogue_FUN_0060c5f3;
+const void* DAT_006874FC = (void*)crt_math_c_atan2_pi_half_plus_epilogue_FUN_0060c608;
+const void* DAT_00687500 = (void*)crt_math_c_atan2_minus_pi_half_minus_epilogue_FUN_0060c61b;
 

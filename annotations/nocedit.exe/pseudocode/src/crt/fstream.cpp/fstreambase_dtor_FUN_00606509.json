@@ -216,7 +216,7 @@
       "description": "Unaffected register variable",
       "line": 21,
       "match": "unaff_EBX",
-      "text": "(&(this_ptr->base).filebuf,0,unaff_EBX,unaff_retaddr);",
+      "text": "(&(this_ptr->base)._filebuf,0,unaff_EBX,unaff_retaddr);",
       "type": "unaffected_reg"
     },
     {
@@ -230,7 +230,7 @@
       "description": "Unaffected register variable",
       "line": 25,
       "match": "unaff_EBX",
-      "text": "((ios *)&pfVar2[1].streambuf.__reserve_end,1,unaff_EBX);",
+      "text": "((ios *)&pfVar2[1]._streambuf.__reserve_end,1,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {

@@ -23,11 +23,11 @@ crt_fstream_cpp_fstreambase_constructor_FUN_00606456
     piVar2 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->ios_base);
     this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;
   }
-  this_ptr_00 = crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(&(this_ptr->base).filebuf);
+  this_ptr_00 = crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(&(this_ptr->base)._filebuf);
   pcVar1 = this_ptr_00[-1].__unbuffered_get_area + 4;
   *(int *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4) + -4) = *(int *)(*(int *)pcVar1 + 4);
   iVar3 = *(int *)pcVar1;
-  this_ptr_00[1].streambuf.__b_lock = &g_FStreamBase_Destructor;
+  this_ptr_00[1]._streambuf.__b_lock = &g_FStreamBase_Destructor;
   *(void ***)(this_ptr_00->__unbuffered_get_area + *(int *)(iVar3 + 4) + -0x10) =
        &g_FStreamBase_IOSDestructor;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815

@@ -2,21 +2,21 @@
 // Address: 004fbae0
 // Address Range: [[004fbae0, 004fbb1a]]
 // Convention: __cdecl
-// Signature: void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
+// Signature: void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
 
 #include "nocturne.h"
 
-void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile *this,char *section)
+void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile *this_ptr,char *section)
 
 {
   char cVar1;
   char *pcVar2;
   
   if (section == (char *)0x0) {
-    this->section[0] = '\0';
+    this_ptr->section[0] = '\0';
     return;
   }
-  pcVar2 = this->section;
+  pcVar2 = this_ptr->section;
   do {
     cVar1 = *section;
     *pcVar2 = cVar1;

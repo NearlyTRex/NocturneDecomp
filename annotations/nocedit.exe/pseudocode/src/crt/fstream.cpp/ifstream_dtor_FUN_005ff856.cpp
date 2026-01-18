@@ -18,22 +18,22 @@ crt_fstream_cpp_ifstream_dtor_FUN_005ff856(ifstream *this_ptr,uint d1,uint d2,ui
   uint unaff_retaddr;
   
   if ((d1 & 4) == 0) {
-    iVar1 = *(int *)((int)(this_ptr->fstreambase_core).layout_info + 4);
-    *(int *)((this_ptr->fstreambase_core).filebuf.__unbuffered_get_area + iVar1 + -0x3c) = iVar1;
-    (this_ptr->fstreambase_core).destructor_vtable = &g_IFStream_FStreamBaseDestructor;
-    pvVar3 = (this_ptr->fstreambase_core).layout_info;
-    (this_ptr->istream_core).destructor_vtable =
+    iVar1 = *(int *)((int)(this_ptr->_fstreambase_core).layout_info + 4);
+    *(int *)((this_ptr->_fstreambase_core)._filebuf.__unbuffered_get_area + iVar1 + -0x3c) = iVar1;
+    (this_ptr->_fstreambase_core).destructor_vtable = &g_IFStream_FStreamBaseDestructor;
+    pvVar3 = (this_ptr->_fstreambase_core).layout_info;
+    (this_ptr->_istream_core).destructor_vtable =
          (WatcomThunkedDestructor *)&g_IFStream_IStreamDestructor;
     *(void ***)
-     ((this_ptr->fstreambase_core).filebuf.__unbuffered_get_area + *(int *)((int)pvVar3 + 4) + -0x10
-     ) = &g_IFStream_IOSDestructor;
+     ((this_ptr->_fstreambase_core)._filebuf.__unbuffered_get_area +
+     *(int *)((int)pvVar3 + 4) + -0x10) = &g_IFStream_IOSDestructor;
     piVar2 = crt_iostream_cpp_istream_dtor_FUN_006063e1
-                       ((istream *)&this_ptr->istream_core,1,unaff_EBX);
+                       ((istream *)&this_ptr->_istream_core,1,unaff_EBX);
     this_ptr = (ifstream *)
                crt_fstream_cpp_fstreambase_dtor_FUN_00606509
-                         ((fstreambase *)&piVar2[-2].ios.__i_lock,1,unaff_EBX,unaff_retaddr);
+                         ((fstreambase *)&piVar2[-2]._ios.__i_lock,1,unaff_EBX,unaff_retaddr);
     if ((d1 & 1) == 0) {
-      piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->ios,1,unaff_EBX);
+      piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1,unaff_EBX);
       this_ptr = (ifstream *)&piVar4[-2].__tied_stream;
     }
     if ((d1 & 2) == 0) {

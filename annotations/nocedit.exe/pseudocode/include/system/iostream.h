@@ -77,14 +77,14 @@ typedef struct ios {
 
 // Structure: istream
 typedef struct istream {
-    istream_core istream_core;
-    ios ios;
+    istream_core _istream_core;
+    ios _ios;
 } istream;
 
 // Structure: ostream
 typedef struct ostream {
-    ostream_core ostream_core;
-    ios ios;
+    ostream_core _ostream_core;
+    ios _ios;
 } ostream;
 
 // Structure: streambuf

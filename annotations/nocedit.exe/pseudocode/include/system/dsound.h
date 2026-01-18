@@ -342,13 +342,13 @@ typedef struct DSCBUFFERDESC* LPDSCBUFFERDESC;
 typedef struct DSCCAPS* LPDSCCAPS;
 
 // Function Definition: IDirectSoundCapture_CreateCaptureBuffer
-typedef HRESULT (*IDirectSoundCapture_CreateCaptureBuffer)(struct IDirectSoundCapture* this, void* pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, LPUNKNOWN pUnkOuter);
+typedef HRESULT (*IDirectSoundCapture_CreateCaptureBuffer)(struct IDirectSoundCapture* this_ptr, void* pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, LPUNKNOWN pUnkOuter);
 
 // Function Definition: IDirectSoundCapture_GetCaps
-typedef HRESULT (*IDirectSoundCapture_GetCaps)(struct IDirectSoundCapture* this, LPDSCCAPS pDSCCaps);
+typedef HRESULT (*IDirectSoundCapture_GetCaps)(struct IDirectSoundCapture* this_ptr, LPDSCCAPS pDSCCaps);
 
 // Function Definition: IDirectSoundCapture_Initialize
-typedef HRESULT (*IDirectSoundCapture_Initialize)(struct IDirectSoundCapture* this, LPGUID pcGuidDevice);
+typedef HRESULT (*IDirectSoundCapture_Initialize)(struct IDirectSoundCapture* this_ptr, LPGUID pcGuidDevice);
 
 // Structure: IDirectSoundCapture
 typedef struct IDirectSoundCapture {
@@ -356,31 +356,31 @@ typedef struct IDirectSoundCapture {
 } IDirectSoundCapture;
 
 // Function Definition: IDirectSoundCaptureBuffer_GetCaps
-typedef HRESULT (*IDirectSoundCaptureBuffer_GetCaps)(struct IDirectSoundCaptureBuffer* this, LPDSCCAPS pDSCBCaps);
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetCaps)(struct IDirectSoundCaptureBuffer* this_ptr, LPDSCCAPS pDSCBCaps);
 
 // Function Definition: IDirectSoundCaptureBuffer_GetCurrentPosition
-typedef HRESULT (*IDirectSoundCaptureBuffer_GetCurrentPosition)(struct IDirectSoundCaptureBuffer* this, LPDWORD pdwCapturePosition, LPDWORD pdwReadPosition);
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetCurrentPosition)(struct IDirectSoundCaptureBuffer* this_ptr, LPDWORD pdwCapturePosition, LPDWORD pdwReadPosition);
 
 // Function Definition: IDirectSoundCaptureBuffer_GetFormat
-typedef HRESULT (*IDirectSoundCaptureBuffer_GetFormat)(struct IDirectSoundCaptureBuffer* this, LPWAVEFORMATEX pwfxFormat, DWORD dwSizeAllocated, LPDWORD pdwSizeWritten);
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetFormat)(struct IDirectSoundCaptureBuffer* this_ptr, LPWAVEFORMATEX pwfxFormat, DWORD dwSizeAllocated, LPDWORD pdwSizeWritten);
 
 // Function Definition: IDirectSoundCaptureBuffer_GetStatus
-typedef HRESULT (*IDirectSoundCaptureBuffer_GetStatus)(struct IDirectSoundCaptureBuffer* this, LPDWORD pdwStatus);
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetStatus)(struct IDirectSoundCaptureBuffer* this_ptr, LPDWORD pdwStatus);
 
 // Function Definition: IDirectSoundCaptureBuffer_Initialize
-typedef HRESULT (*IDirectSoundCaptureBuffer_Initialize)(struct IDirectSoundCaptureBuffer* this, LPDIRECTSOUNDCAPTURE pDirectSoundCapture, void* pcDSCBufferDesc);
+typedef HRESULT (*IDirectSoundCaptureBuffer_Initialize)(struct IDirectSoundCaptureBuffer* this_ptr, LPDIRECTSOUNDCAPTURE pDirectSoundCapture, void* pcDSCBufferDesc);
 
 // Function Definition: IDirectSoundCaptureBuffer_Lock
-typedef HRESULT (*IDirectSoundCaptureBuffer_Lock)(struct IDirectSoundCaptureBuffer* this, DWORD dwOffset, DWORD dwBytes, LPVOID* ppvAudioPtr1, LPDWORD pdwAudioBytes1, LPVOID* ppvAudioPtr2, LPDWORD pdwAudioBytes2, DWORD dwFlags);
+typedef HRESULT (*IDirectSoundCaptureBuffer_Lock)(struct IDirectSoundCaptureBuffer* this_ptr, DWORD dwOffset, DWORD dwBytes, LPVOID* ppvAudioPtr1, LPDWORD pdwAudioBytes1, LPVOID* ppvAudioPtr2, LPDWORD pdwAudioBytes2, DWORD dwFlags);
 
 // Function Definition: IDirectSoundCaptureBuffer_Start
-typedef HRESULT (*IDirectSoundCaptureBuffer_Start)(struct IDirectSoundCaptureBuffer* this, DWORD dwFlags);
+typedef HRESULT (*IDirectSoundCaptureBuffer_Start)(struct IDirectSoundCaptureBuffer* this_ptr, DWORD dwFlags);
 
 // Function Definition: IDirectSoundCaptureBuffer_Stop
-typedef HRESULT (*IDirectSoundCaptureBuffer_Stop)(struct IDirectSoundCaptureBuffer* this);
+typedef HRESULT (*IDirectSoundCaptureBuffer_Stop)(struct IDirectSoundCaptureBuffer* this_ptr);
 
 // Function Definition: IDirectSoundCaptureBuffer_Unlock
-typedef HRESULT (*IDirectSoundCaptureBuffer_Unlock)(struct IDirectSoundCaptureBuffer* this, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
+typedef HRESULT (*IDirectSoundCaptureBuffer_Unlock)(struct IDirectSoundCaptureBuffer* this_ptr, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
 
 // Structure: IDirectSoundCaptureBuffer
 typedef struct IDirectSoundCaptureBuffer {

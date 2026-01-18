@@ -3934,7 +3934,7 @@ section .text
     LEA EAX,[ESP + 0x244]               ; 0055d235
     PUSH EAX                            ; 0055d23c
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004fba70 ; 0055d23d
-        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this, char * filename, int read_mode)
+        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
     ADD ESP,0xc                         ; 0055d242
     LEA EAX,[ESP + 0x2124]              ; 0055d245
     PUSH EAX                            ; 0055d24c
@@ -3951,7 +3951,7 @@ section .text
     LEA EAX,[ESP + 0x244]               ; 0055d272
     PUSH EAX                            ; 0055d279
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 0055d27a
-        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * ini_file, char * key_name, int * value_ptr)
+        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 0055d27f
     MOV EDX,dword ptr [ESP + 0x3ed8]    ; 0055d282
     PUSH EDX                            ; 0055d289
@@ -6307,7 +6307,7 @@ section .text
     LEA EAX,[ESP + 0x44]                ; 0055ef50
     PUSH EAX                            ; 0055ef54
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004fba70 ; 0055ef55
-        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this, char * filename, int read_mode)
+        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
     ADD ESP,0xc                         ; 0055ef5a
     MOV EAX,dword ptr [ESP + 0x3f4c]    ; 0055ef5d
     PUSH EAX                            ; 0055ef64

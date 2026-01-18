@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 118,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 10,
     "suspect_count": 9,
     "suspect_types": [
       "format_string_mismatch",
@@ -13,7 +13,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 42
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -33,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0",
-    "signature": "void engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile * this, char * key, float * output)"
+    "signature": "void engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile * this_ptr, char * key, float * output)"
   },
   "function_calls": [
     {
@@ -138,7 +138,7 @@
       },
       {
         "is_param": true,
-        "name": "this",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CIniFile *"
@@ -162,35 +162,35 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 5,
+      "line": 6,
       "match": "in_stack_ffffff98",
       "text": "char *in_stack_ffffff98;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 7,
+      "line": 8,
       "match": "&stack0xffffff98",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,\"%g\",(double)*output);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 10,
       "match": "in_stack_ffffff98",
-      "text": "engine_ini_cpp_CIniFile_getString_FUN_004fbb20(this,key,&stack0xffffff98,100,in_stack_ffffff98);",
+      "text": "(this_ptr,key,&stack0xffffff98,100,in_stack_ffffff98);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 8,
+      "line": 10,
       "match": "&stack0xffffff98",
-      "text": "engine_ini_cpp_CIniFile_getString_FUN_004fbb20(this,key,&stack0xffffff98,100,in_stack_ffffff98);",
+      "text": "(this_ptr,key,&stack0xffffff98,100,in_stack_ffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 9,
+      "line": 11,
       "match": "&stack0xffffff98",
       "text": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff98,\"%f\");",
       "type": "stack_ref"
@@ -201,7 +201,7 @@
       "expected_args": 1,
       "format_string": "%f",
       "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 9,
+      "line_number": 11,
       "match": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff98,\"%f\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

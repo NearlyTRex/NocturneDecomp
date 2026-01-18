@@ -33,7 +33,7 @@ void writeProfileString(char * section, char * key, char * value, char * filenam
 
 // Original: engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 // Address: 004fba70
-CIniFile * CIniFile::ctor(CIniFile * this, char * filename, int read_mode);
+CIniFile * CIniFile::ctor(CIniFile * this_ptr, char * filename, int read_mode);
 
 // Original: engine_ini.cpp_CIniFile_init_FUN_004fbaa0
 // Address: 004fbaa0
@@ -41,19 +41,19 @@ void CIniFile::init(char * dest, char * source);
 
 // Original: engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0
 // Address: 004fbae0
-void CIniFile::readIniHeader(CIniFile * this, char * section);
+void CIniFile::readIniHeader(CIniFile * this_ptr, char * section);
 
 // Original: engine_ini.cpp_CIniFile_getString_FUN_004fbb20
 // Address: 004fbb20
-void CIniFile::getString(CIniFile * this, char * key, char * output_buffer, int buffer_size, char * default_value);
+void CIniFile::getString(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size, char * default_value);
 
 // Original: engine_ini.cpp_CIniFile_setString_FUN_004fbbb0
 // Address: 004fbbb0
-void CIniFile::setString(CIniFile * this, char * key, char * value);
+void CIniFile::setString(CIniFile * this_ptr, char * key, char * value);
 
 // Original: engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
 // Address: 004fbc30
-void CIniFile::getInteger(CIniFile * ini_file, char * key_name, int * value_ptr);
+void CIniFile::getInteger(CIniFile * this_ptr, char * key_name, int * value_ptr);
 
 // Original: engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90
 // Address: 004fbc90
@@ -61,11 +61,11 @@ void CIniFile::setInteger(CIniFile * this_ptr, char * key, int value);
 
 // Original: engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
 // Address: 004fbcd0
-void CIniFile::getFloat(CIniFile * this, char * key, float * output);
+void CIniFile::getFloat(CIniFile * this_ptr, char * key, float * output);
 
 // Original: engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30
 // Address: 004fbd30
-void CIniFile::setFloatValue(CIniFile * this, char * key, float value);
+void CIniFile::setFloatValue(CIniFile * this_ptr, char * key, float value);
 
 // Original: engine_ini.cpp_CIni_ctor_FUN_004fbd70
 // Address: 004fbd70

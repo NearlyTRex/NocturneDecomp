@@ -14,7 +14,7 @@ crt_fstream_cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e
   uint unaff_retaddr;
   
   crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
-            ((ofstream *)&this_ptr[-2].ios.__fill_character,dtor_flags,unaff_retaddr,(uint)this_ptr,
-             dtor_flags);
+            ((ofstream *)&this_ptr[-2]._ios.__fill_character,dtor_flags,unaff_retaddr,(uint)this_ptr
+             ,dtor_flags);
   return;
 }

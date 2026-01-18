@@ -15,14 +15,14 @@ istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(istream *this_ptr,u
   uint unaff_EBX;
   
   if ((d1 & 4) == 0) {
-    iVar1 = ((this_ptr->istream_core).layout_info)->offset_to_base;
-    *(int *)((this_ptr->ios).padding + iVar1 + -0x35) = iVar1;
-    (this_ptr->istream_core).destructor_vtable = &PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74;
+    iVar1 = ((this_ptr->_istream_core).layout_info)->offset_to_base;
+    *(int *)((this_ptr->_ios).padding + iVar1 + -0x35) = iVar1;
+    (this_ptr->_istream_core).destructor_vtable = &PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74;
     *(void ***)
-     ((this_ptr->ios).padding + ((this_ptr->istream_core).layout_info)->offset_to_base + -9) =
+     ((this_ptr->_ios).padding + ((this_ptr->_istream_core).layout_info)->offset_to_base + -9) =
          &PTR_FUN_00665e7c;
     if ((d1 & 1) == 0) {
-      piVar2 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->ios,1,unaff_EBX);
+      piVar2 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1,unaff_EBX);
       this_ptr = (istream *)&piVar2[-1].__xalloc_list;
     }
     if ((d1 & 2) == 0) {

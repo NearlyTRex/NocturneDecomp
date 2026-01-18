@@ -31,10 +31,10 @@ int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22(strstr
   void *old_buffer_start;
   
   bVar12 = 0;
-  pvVar2 = this_ptr[1].streambuf.__b_lock;
+  pvVar2 = this_ptr[1]._streambuf.__b_lock;
   if ((((uint)pvVar2 & 2) != 0) && (((uint)pvVar2 & 1) == 0)) {
-    ptr = (this_ptr->streambuf).__reserve_base;
-    iVar7 = (int)(this_ptr->streambuf).__reserve_end - (int)ptr;
+    ptr = (this_ptr->_streambuf).__reserve_base;
+    iVar7 = (int)(this_ptr->_streambuf).__reserve_end - (int)ptr;
     new_buffer_size = this_ptr->__allocation_size;
     if ((int)new_buffer_size <= iVar7) {
       new_buffer_size = iVar7 + 0x200;
@@ -47,11 +47,11 @@ int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22(strstr
     }
     if (new_buffer != (char *)0x0) {
       crt_iostream_cpp_setBuffer_FUN_0060d6a8
-                (&this_ptr->streambuf,new_buffer,new_buffer + new_buffer_size,0);
-      pcVar9 = (this_ptr->streambuf).__get_base;
+                (&this_ptr->_streambuf,new_buffer,new_buffer + new_buffer_size,0);
+      pcVar9 = (this_ptr->_streambuf).__get_base;
       if (pcVar9 != (char *)0x0) {
-        pcVar1 = (this_ptr->streambuf).__get_ptr;
-        iVar3 = (int)(this_ptr->streambuf).__get_end - (int)ptr;
+        pcVar1 = (this_ptr->_streambuf).__get_ptr;
+        iVar3 = (int)(this_ptr->_streambuf).__get_end - (int)ptr;
         uVar4 = iVar3 - ((int)pcVar9 - (int)ptr);
         pcVar8 = pcVar9;
         pcVar10 = new_buffer + ((int)pcVar9 - (int)ptr);
@@ -65,20 +65,20 @@ int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22(strstr
           pcVar8 = pcVar8 + (uint)bVar12 * -2 + 1;
           pcVar10 = pcVar10 + (uint)bVar12 * -2 + 1;
         }
-        (this_ptr->streambuf).__get_base = new_buffer + ((int)pcVar9 - (int)ptr);
-        (this_ptr->streambuf).__get_ptr = new_buffer + ((int)pcVar1 - (int)ptr);
-        (this_ptr->streambuf).__get_end = new_buffer + iVar3;
+        (this_ptr->_streambuf).__get_base = new_buffer + ((int)pcVar9 - (int)ptr);
+        (this_ptr->_streambuf).__get_ptr = new_buffer + ((int)pcVar1 - (int)ptr);
+        (this_ptr->_streambuf).__get_end = new_buffer + iVar3;
       }
-      pcVar9 = (this_ptr->streambuf).__put_base;
+      pcVar9 = (this_ptr->_streambuf).__put_base;
       if (pcVar9 == (char *)0x0) {
-        (this_ptr->streambuf).__put_base = new_buffer;
-        (this_ptr->streambuf).__put_ptr = new_buffer;
-        (this_ptr->streambuf).__put_end = new_buffer + new_buffer_size;
+        (this_ptr->_streambuf).__put_base = new_buffer;
+        (this_ptr->_streambuf).__put_ptr = new_buffer;
+        (this_ptr->_streambuf).__put_end = new_buffer + new_buffer_size;
       }
       else {
         iVar3 = (int)pcVar9 - (int)ptr;
-        pcVar8 = (this_ptr->streambuf).__put_ptr;
-        pcVar10 = (this_ptr->streambuf).__put_end;
+        pcVar8 = (this_ptr->_streambuf).__put_ptr;
+        pcVar10 = (this_ptr->_streambuf).__put_end;
         pcVar6 = pcVar10 + (-iVar3 - (int)ptr);
         pcVar1 = new_buffer + iVar3;
         pcVar11 = pcVar1;
@@ -92,12 +92,12 @@ int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22(strstr
           pcVar9 = pcVar9 + (uint)bVar12 * -2 + 1;
           pcVar11 = pcVar11 + (uint)bVar12 * -2 + 1;
         }
-        (this_ptr->streambuf).__put_base = pcVar1;
-        (this_ptr->streambuf).__put_ptr = pcVar1;
-        (this_ptr->streambuf).__put_end =
+        (this_ptr->_streambuf).__put_base = pcVar1;
+        (this_ptr->_streambuf).__put_ptr = pcVar1;
+        (this_ptr->_streambuf).__put_end =
              new_buffer + (int)(pcVar10 + ((new_buffer_size - iVar7) - (int)ptr));
-        (this_ptr->streambuf).__put_ptr =
-             (this_ptr->streambuf).__put_ptr + (int)(pcVar8 + (-iVar3 - (int)ptr));
+        (this_ptr->_streambuf).__put_ptr =
+             (this_ptr->_streambuf).__put_ptr + (int)(pcVar8 + (-iVar3 - (int)ptr));
       }
       if (ptr != (char *)0x0) {
         if (this_ptr->__free_fn == (void *)0x0) {

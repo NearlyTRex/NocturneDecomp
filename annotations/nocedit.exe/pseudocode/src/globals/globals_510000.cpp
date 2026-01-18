@@ -4,12 +4,12 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x510000
 // =============================================================================
 
-void* switchdataD_00510c50 = 0x0051115D;
-void* switchdataD_00511864 = 0x00511B9C;
-void* switchdataD_00511e20 = 0x005126CE;
-void* switchdataD_00512d1c = 0x00512E5D;
-void* switchdataD_00512f28 = 0x0051315C;
-void* switchdataD_005138c0 = 0x00514869;
-void* switchdataD_0051a3d8 = 0x0051A4B8;
-void* switchdataD_0051a694 = 0x0051A767;
+void* switchdataD_00510c50 = (void*)0x0051115D; // caseD_0
+void* switchdataD_00511864 = (void*)0x00511B9C; // caseD_0
+void* switchdataD_00511e20 = (void*)0x005126CE; // caseD_0
+void* switchdataD_00512d1c = (void*)0x00512E5D; // caseD_0
+void* switchdataD_00512f28 = (void*)0x0051315C; // caseD_0
+void* switchdataD_005138c0 = (void*)0x00514869; // caseD_254
+void* switchdataD_0051a3d8 = (void*)0x0051A4B8; // caseD_0
+void* switchdataD_0051a694 = (void*)0x0051A767; // caseD_0
 

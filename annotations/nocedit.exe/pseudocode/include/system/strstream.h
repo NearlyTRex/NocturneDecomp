@@ -11,7 +11,7 @@
 
 // Structure: strstreambuf
 typedef struct strstreambuf {
-    streambuf streambuf;
+    streambuf _streambuf;
     struct strstreambuf_vtable* vtable;
     void* alloc_fn;
     void* free_fn;
@@ -24,32 +24,32 @@ typedef struct strstreambuf {
 // Structure: strstreambase_core
 typedef struct strstreambase_core {
     struct WatcomVirtualBaseDescriptor* layout_info;
-    strstreambuf strstreambuf;
+    strstreambuf _strstreambuf;
     struct WatcomThunkedDestructor* destructor_vtable;
 } strstreambase_core;
 
 // Structure: istrstream
 typedef struct istrstream {
-    strstreambase_core strstreambase_core;
-    istream_core istream_core;
+    strstreambase_core _strstreambase_core;
+    istream_core _istream_core;
     char padding[4];
-    ios ios;
+    ios _ios;
 } istrstream;
 
 // Structure: ostrstream
 typedef struct ostrstream {
-    strstreambase_core strstreambase_core;
-    ostream_core field_68;
-    ios field_80;
-    char field_124[4];
+    strstreambase_core _strstreambase_core;
+    ostream_core _ostream_core;
+    ios _ios;
+    char padding[4];
 } ostrstream;
 
 // Structure: strstreambase
 typedef struct strstreambase {
-    strstreambase_core strstreambase_core;
+    strstreambase_core _strstreambase_core;
     char padding[4];
-    ios ios;
-    int field_116;
+    ios _ios;
+    int unknown;
 } strstreambase;
 
 // Structure: strstreambuf_vtable

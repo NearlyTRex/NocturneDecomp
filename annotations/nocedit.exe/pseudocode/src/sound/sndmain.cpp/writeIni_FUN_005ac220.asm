@@ -104,7 +104,7 @@ section .text
     PUSH 0x650fad                       ; 005ac294 | = "DeviceName"
     PUSH EBP                            ; 005ac299
     CALL engine_ini.cpp_CIniFile_setString_FUN_004fbbb0 ; 005ac29a
-        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
+        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this_ptr, char * key, char * value)
     ADD ESP,0xc                         ; 005ac29f
     LEA EAX,[ESP + 0x280]               ; 005ac2a2
     PUSH EAX                            ; 005ac2a9
@@ -153,7 +153,7 @@ section .text
     PUSH 0x650fd9                       ; 005ac331 | = "MaxSwLatency"
     PUSH EBP                            ; 005ac336
     CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30 ; 005ac337
-        ;   XREF to: 004fbd30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile * this, char * key, float value)
+        ;   XREF to: 004fbd30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile * this_ptr, char * key, float value)
     ADD ESP,0xc                         ; 005ac33c
     CALL sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0 ; 005ac33f
         ;   XREF to: 005a96b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0()
@@ -207,7 +207,7 @@ section .text
     PUSH EBP                            ; 005ac3cf
     INC EBX                             ; 005ac3d0
     CALL engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30 ; 005ac3d1
-        ;   XREF to: 004fbd30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile * this, char * key, float value)
+        ;   XREF to: 004fbd30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile * this_ptr, char * key, float value)
     MOV ECX,dword ptr [0x00681b10]      ; 005ac3d6 | g_MaxSoundChannels
     ADD ESP,0xc                         ; 005ac3dc
     CMP EBX,ECX                         ; 005ac3df

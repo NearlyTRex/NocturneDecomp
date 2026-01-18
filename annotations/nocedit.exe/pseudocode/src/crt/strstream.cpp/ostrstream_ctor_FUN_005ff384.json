@@ -201,7 +201,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 48,
       "match": "poVar6[-2].",
-      "text": "ppvVar1 = &poVar6[-2].ios.__xalloc_list;",
+      "text": "ppvVar1 = &poVar6[-2]._ios.__xalloc_list;",
       "type": "negative_offset"
     },
     {
@@ -229,14 +229,14 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 50,
       "match": "poVar6[-1].",
-      "text": "poVar6[-1].ios.cleanup_vtable = &PTR_FUN_00665b7c;",
+      "text": "poVar6[-1]._ios.cleanup_vtable = &PTR_FUN_00665b7c;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(int *)((int)",
-      "text": "*(void ***)((int)(&poVar6->ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
+      "text": "*(void ***)((int)(&poVar6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
       "type": "pointer_cast"
     },
     {

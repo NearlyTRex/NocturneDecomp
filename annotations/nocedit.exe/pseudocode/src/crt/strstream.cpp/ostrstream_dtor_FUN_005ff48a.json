@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 122,
+    "complexity_score": 123,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 4,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 38,
     "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "special_crt_function",
       "unaffected_reg"
     ],
-    "total_lines": 106
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -213,33 +213,33 @@
       "description": "Unaffected register variable",
       "line": 21,
       "match": "unaff_EBX",
-      "text": "((ostream *)&(this_ptr->field_68).destructor_vtable,1,unaff_EBX);",
+      "text": "((ostream *)&(this_ptr->_ostream_core).destructor_vtable,1,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 24,
       "match": "poVar3[-2].",
-      "text": "((strstreambase *)&poVar3[-2].ios.__xalloc_list,1,unaff_EBX,unaff_retaddr);",
+      "text": "((strstreambase *)&poVar3[-2]._ios.__xalloc_list,1,unaff_EBX,unaff_retaddr)",
       "type": "negative_offset"
     },
     {
       "description": "Unaffected register variable",
       "line": 24,
       "match": "unaff_EBX",
-      "text": "((strstreambase *)&poVar3[-2].ios.__xalloc_list,1,unaff_EBX,unaff_retaddr);",
+      "text": "((strstreambase *)&poVar3[-2]._ios.__xalloc_list,1,unaff_EBX,unaff_retaddr)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 27,
+      "line": 28,
       "match": "unaff_EBX",
-      "text": "((ios *)&(this_ptr->field_80).__tied_stream,1,unaff_EBX);",
+      "text": "((ios *)&(this_ptr->_ios).__tied_stream,1,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
+      "line": 29,
       "match": "piVar4[-2].",
       "text": "this_ptr = (ostrstream *)&piVar4[-2].__tied_stream;",
       "type": "negative_offset"

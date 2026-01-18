@@ -53,13 +53,13 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004fc521
     PUSH EAX                            ; 004fc525
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004fba70 ; 004fc526
-        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this, char * filename, int read_mode)
+        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
     ADD ESP,0xc                         ; 004fc52b
     PUSH 0x67cd08                       ; 004fc52e | = "Graphics"
     LEA EAX,[ESP + 0x4]                 ; 004fc533
     PUSH EAX                            ; 004fc537
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 ; 004fc538
-        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
+        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
     MOV EAX,[0x0067b654]                ; 004fc53d | g_CGamePtr
     ADD ESP,0x8                         ; 004fc542
     MOV EDX,dword ptr [EAX]             ; 004fc545 | g_CGameInstance
@@ -101,7 +101,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004fc5b3
     PUSH EAX                            ; 004fc5b7
     CALL engine_ini.cpp_CIniFile_setString_FUN_004fbbb0 ; 004fc5b8
-        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
+        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this_ptr, char * key, char * value)
     MOV EAX,[0x0067b654]                ; 004fc5bd | g_CGamePtr
     ADD ESP,0xc                         ; 004fc5c2
     MOV EDI,dword ptr [EAX + 0x224]     ; 004fc5c5 | DAT_02d81cc0
@@ -183,7 +183,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004fc6af
     PUSH EAX                            ; 004fc6b3
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 ; 004fc6b4
-        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
+        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
     ADD ESP,0x8                         ; 004fc6b9
     MOV EAX,ESP                         ; 004fc6bc
     PUSH EAX                            ; 004fc6be
@@ -194,7 +194,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004fc6cc
     PUSH EAX                            ; 004fc6d0
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 ; 004fc6d1
-        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
+        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
     MOV EAX,[0x0067b654]                ; 004fc6d6 | g_CGamePtr
     ADD ESP,0x8                         ; 004fc6db
     MOV EDI,dword ptr [EAX + 0xbc]      ; 004fc6de | g_CGameInstance.game_control
@@ -560,7 +560,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004fcb4c
     PUSH EAX                            ; 004fcb50
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 ; 004fcb51
-        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
+        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
     MOV EAX,[0x0066e8e0]                ; 004fcb56 | g_CConsolePtr
     ADD ESP,0x8                         ; 004fcb5b
     MOV EBX,dword ptr [EAX]             ; 004fcb5e | g_ConsolePtr
@@ -584,7 +584,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004fcb96
     PUSH EAX                            ; 004fcb9a
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 ; 004fcb9b
-        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
+        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
     ADD ESP,0x8                         ; 004fcba0
     MOV EAX,ESP                         ; 004fcba3
     PUSH EAX                            ; 004fcba5

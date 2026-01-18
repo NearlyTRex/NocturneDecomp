@@ -13,7 +13,7 @@ filebuf * __watcallStack crt_fstream_cpp_filebuf_close_FUN_00608bcc(filebuf *thi
   int iVar2;
   
   if (this_ptr->__file_handle != -1) {
-    iVar1 = (*this_ptr->__vtable->sync)(&this_ptr->streambuf);
+    iVar1 = (*this_ptr->__vtable->sync)(&this_ptr->_streambuf);
     iVar2 = this_ptr->__file_handle;
     this_ptr->__file_handle = -1;
     this_ptr->__attached = this_ptr->__attached & 0xfe;

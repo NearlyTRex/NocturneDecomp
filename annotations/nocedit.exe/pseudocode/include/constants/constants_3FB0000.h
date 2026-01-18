@@ -39,26 +39,26 @@ const StringInfo DAT_03FBF6D0 = {0x0034, 0x0008, 0x0001};
 const StringTable DAT_03FBF4D0 = {0x0234, 0x0000, 0x0001};
 
 // TerminatedUnicode constants
-const TerminatedUnicode DAT_03FBF4B2 = "StringFileInfo";
-const TerminatedUnicode DAT_03FBF4D6 = "040904b0";
-const TerminatedUnicode DAT_03FBF4EE = "CompanyName";
-const TerminatedUnicode DAT_03FBF508 = "Terminal Reality Inc.";
-const TerminatedUnicode DAT_03FBF53A = "InternalName";
-const TerminatedUnicode DAT_03FBF554 = "Nocturne";
-const TerminatedUnicode DAT_03FBF56E = "LegalCopyright";
-const TerminatedUnicode DAT_03FBF58C = " 1995-2000 Terminal Reality Inc.";
-const TerminatedUnicode DAT_03FBF5D6 = "FileDescription";
-const TerminatedUnicode DAT_03FBF5F8 = "Nocturne(TM) Editor";
-const TerminatedUnicode DAT_03FBF626 = "OriginalFilename";
-const TerminatedUnicode DAT_03FBF648 = "NocEdit.exe";
-const TerminatedUnicode DAT_03FBF666 = "ProductName";
-const TerminatedUnicode DAT_03FBF680 = "Nocturne Editor";
-const TerminatedUnicode DAT_03FBF6A6 = "FileVersion";
-const TerminatedUnicode DAT_03FBF6C0 = "1.00.50";
-const TerminatedUnicode DAT_03FBF6D6 = "ProductVersion";
-const TerminatedUnicode DAT_03FBF6F4 = "1.00.50";
-const TerminatedUnicode DAT_03FBF70A = "VarFileInfo";
-const TerminatedUnicode DAT_03FBF72A = "Translation";
+const TerminatedUnicode DAT_03FBF4B2 = L"StringFileInfo";
+const TerminatedUnicode DAT_03FBF4D6 = L"040904b0";
+const TerminatedUnicode DAT_03FBF4EE = L"CompanyName";
+const TerminatedUnicode DAT_03FBF508 = L"Terminal Reality Inc.";
+const TerminatedUnicode DAT_03FBF53A = L"InternalName";
+const TerminatedUnicode DAT_03FBF554 = L"Nocturne";
+const TerminatedUnicode DAT_03FBF56E = L"LegalCopyright";
+const TerminatedUnicode DAT_03FBF58C = L" 1995-2000 Terminal Reality Inc.";
+const TerminatedUnicode DAT_03FBF5D6 = L"FileDescription";
+const TerminatedUnicode DAT_03FBF5F8 = L"Nocturne(TM) Editor";
+const TerminatedUnicode DAT_03FBF626 = L"OriginalFilename";
+const TerminatedUnicode DAT_03FBF648 = L"NocEdit.exe";
+const TerminatedUnicode DAT_03FBF666 = L"ProductName";
+const TerminatedUnicode DAT_03FBF680 = L"Nocturne Editor";
+const TerminatedUnicode DAT_03FBF6A6 = L"FileVersion";
+const TerminatedUnicode DAT_03FBF6C0 = L"1.00.50";
+const TerminatedUnicode DAT_03FBF6D6 = L"ProductVersion";
+const TerminatedUnicode DAT_03FBF6F4 = L"1.00.50";
+const TerminatedUnicode DAT_03FBF70A = L"VarFileInfo";
+const TerminatedUnicode DAT_03FBF72A = L"Translation";
 
 // Var constants
 const Var DAT_03FBF724 = {0x0024, 0x0004, 0x0000};

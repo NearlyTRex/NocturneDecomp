@@ -5,18 +5,18 @@
 // =============================================================================
 
 // void* constants
-const void* DAT_005A27D4 = 0x005A2EF0;
-const void* DAT_005A27D8 = 0x005A2ABB;
-const void* DAT_005A27DC = 0x005A2ABB;
-const void* DAT_005A27E0 = 0x005A2ABB;
-const void* DAT_005A27E4 = 0x005A2B97;
-const void* DAT_005A27E8 = 0x005A2ABB;
-const void* DAT_005A27EC = 0x005A2D8D;
-const void* DAT_005A27F0 = 0x005A2C53;
-const void* DAT_005A27F4 = 0x005A2D47;
-const void* DAT_005A3288 = 0x005A34CC;
-const void* DAT_005A328C = 0x005A34D7;
-const void* DAT_005A3290 = 0x005A34E2;
-const void* DAT_005A3294 = 0x005A34ED;
-const void* DAT_005A3298 = 0x005A34F8;
+const void* DAT_005A27D4 = (void*)0x005A2EF0; // caseD_2
+const void* DAT_005A27D8 = (void*)0x005A2ABB; // caseD_7
+const void* DAT_005A27DC = (void*)0x005A2ABB; // caseD_7
+const void* DAT_005A27E0 = (void*)0x005A2ABB; // caseD_7
+const void* DAT_005A27E4 = (void*)0x005A2B97; // caseD_6
+const void* DAT_005A27E8 = (void*)0x005A2ABB; // caseD_7
+const void* DAT_005A27EC = (void*)0x005A2D8D; // caseD_8
+const void* DAT_005A27F0 = (void*)0x005A2C53; // caseD_9
+const void* DAT_005A27F4 = (void*)0x005A2D47; // caseD_a
+const void* DAT_005A3288 = (void*)0x005A34CC; // caseD_1
+const void* DAT_005A328C = (void*)0x005A34D7; // caseD_2
+const void* DAT_005A3290 = (void*)0x005A34E2; // caseD_3
+const void* DAT_005A3294 = (void*)0x005A34ED; // caseD_4
+const void* DAT_005A3298 = (void*)0x005A34F8; // caseD_5
 

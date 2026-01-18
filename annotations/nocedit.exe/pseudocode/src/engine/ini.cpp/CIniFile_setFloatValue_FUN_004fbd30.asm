@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile * this, char * key, float value)
+; __cdecl void engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile * this_ptr, char * key, float value)
 ;
 ; Parameters:
-; CIniFile *       Stack[0x4]:4   this
+; CIniFile *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   key
 ; float            Stack[0xc]:4   value
 ; Local Variables:
@@ -44,7 +44,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x70]      ; 004fbd57
     PUSH ECX                            ; 004fbd5b
     CALL engine_ini.cpp_CIniFile_setString_FUN_004fbbb0 ; 004fbd5c
-        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
+        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this_ptr, char * key, char * value)
     ADD ESP,0xc                         ; 004fbd61
     ADD ESP,0x64                        ; 004fbd64
     RET                                 ; 004fbd67

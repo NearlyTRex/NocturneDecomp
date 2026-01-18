@@ -3,6 +3,8 @@
 // Dependencies
 #include <math.h>
 #include "system/basetypes.h"
+#include "prototypes/prototypes_520000.h"
+#include "prototypes/prototypes_5A0000.h"
 #include "system/misc.h"
 #include "system/watcom.h"
 
@@ -87,23 +89,23 @@ const TerminatedCString s_CFilterFX_0066efd8 = "$CFilterFX$$";
 const TerminatedCString s_CFilterCache_0066efec = "$CFilterCache$$";
 
 // WatcomInheritanceLayout constants
-const WatcomInheritanceLayout DAT_00665e68 = {0x00000000, 0x00000010};
+const WatcomInheritanceLayout DAT_00665e68 = {nullptr, 0x00000010};
 
 // WatcomThunkedDestructor constants
-const WatcomThunkedDestructor DAT_00665b70 = {0x00000048, 0x0000000C};
+const WatcomThunkedDestructor DAT_00665b70 = {(void *)0x00000048, (int *)0x0000000C};
 
 // WatcomVirtualBaseDescriptor constants
 const WatcomVirtualBaseDescriptor DAT_00665b68 = {0x00000000, 0x00000054};
 const WatcomVirtualBaseDescriptor DAT_00665d60 = {0x00000000, 0x0000004C};
 
 // char[104] constants
-const char g_PropertyNamePrefix[104] = "";
+const char g_PropertyNamePrefix[] = "";
 
 // char[300] constants
-const char g_LocalizationTemplate[300] = "";
+const char g_LocalizationTemplate[] = "";
 
 // char[80] constants
-const char g_LoadedModelName[80] = "";
+const char g_LoadedModelName[] = "";
 
 // double constants
 const double g_InfiniteCollapseCost = 9.9999999999999997e+34;
@@ -164,8 +166,8 @@ const string s_Floating_point_value_0066e130 = "Floating point value";
 const string s_Integer_value_0066e148 = "Integer value";
 
 // uchar[8] constants
-const uchar g_VoxelGridBitmasks[8] = "";
-const uchar g_LightBitMaskLookup[8] = "";
+const uchar g_VoxelGridBitmasks[] = "";
+const uchar g_LightBitMaskLookup[] = "";
 
 // undefined4 constants
 const undefined4 DAT_00660028 = 0x40400000;
@@ -214,21 +216,21 @@ const undefined4 DAT_0066eb54 = 0;
 const undefined4 DAT_0066eeac = 0x00000003;
 
 // void* constants
-const void* DAT_006618F4 = 0x00527360;
-const void* DAT_006630E4 = 0x005A3280;
-const void* DAT_00664E89 = 0x0042F000;
-const void* DAT_00665B78 = 0x00665B90;
-const void* DAT_00665B80 = 0x00665B98;
-const void* DAT_00665B88 = 0x00665BA0;
-const void* DAT_00665CD0 = 0x00665CE8;
-const void* DAT_00665CE0 = 0x00665CF8;
-const void* DAT_00665D68 = 0x00665D78;
-const void* DAT_00665FA4 = 0x00685038;
-const void* DAT_0066E5E4 = 0x006167F6;
-const void* DAT_0066E5EC = 0x006167FE;
-const void* DAT_0066E5F4 = 0x00616808;
-const void* DAT_0066E5FC = 0x0061680E;
-const void* DAT_0066E760 = 0x0061776E;
-const void* DAT_0066E768 = 0x00617778;
-const void* DAT_0066EC5C = 0x00619453;
+const void* DAT_006618F4 = (void*)core_mobster_cpp_FUN_00527360;
+const void* DAT_006630E4 = (void*)core_smiley_cpp_FUN_005a3280;
+const void* DAT_00664E89 = (void*)0x0042F000; // LAB_0042f000
+const void* DAT_00665B78 = (void*)0x00665B90; // DAT_00665b90
+const void* DAT_00665B80 = (void*)0x00665B98; // DAT_00665b98
+const void* DAT_00665B88 = (void*)0x00665BA0; // DAT_00665ba0
+const void* DAT_00665CD0 = (void*)0x00665CE8; // DAT_00665ce8
+const void* DAT_00665CE0 = (void*)0x00665CF8; // DAT_00665cf8
+const void* DAT_00665D68 = (void*)0x00665D78; // DAT_00665d78
+const void* DAT_00665FA4 = (void*)0x00685038; // DAT_00685038
+const void* DAT_0066E5E4 = (void*)0x006167F6; // s_Rummage_006167f6
+const void* DAT_0066E5EC = (void*)0x006167FE; // s_Inventory_006167fe
+const void* DAT_0066E5F4 = (void*)0x00616808; // s_Carry_00616808
+const void* DAT_0066E5FC = (void*)0x0061680E; // s_Heavy_0061680e
+const void* DAT_0066E760 = (void*)0x0061776E; // s_When_hurt_0061776e
+const void* DAT_0066E768 = (void*)0x00617778; // s_Always_00617778
+const void* DAT_0066EC5C = (void*)0x00619453; // s_z_00619453
 

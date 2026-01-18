@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
+; __cdecl void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this_ptr, char * key, char * value)
 ;
 ; Parameters:
-; CIniFile *       Stack[0x4]:4   this
+; CIniFile *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   key
 ; char *           Stack[0xc]:4   value
 ;

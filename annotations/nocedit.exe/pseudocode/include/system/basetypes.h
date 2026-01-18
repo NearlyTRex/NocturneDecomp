@@ -37,10 +37,10 @@ typedef unsigned long long undefined8;
 // Generic pointer type
 typedef void* pointer;
 
-// Ghidra string types
-typedef char* TerminatedCString;
-typedef wchar_t* TerminatedUnicode;
-typedef char* string;  // Ghidra's generic string type
+// Ghidra string types (const for C++ string literal compatibility)
+typedef const char* TerminatedCString;
+typedef const wchar_t* TerminatedUnicode;
+typedef const char* string;  // Ghidra's generic string type
 
 // Extended precision float (x87 80-bit)
 typedef long double float10;

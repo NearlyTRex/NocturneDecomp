@@ -28,7 +28,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0058490f
     PUSH EDX                            ; 00584913
     CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 00584914
-        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this, char * key, char * output_buffer, int buffer_size, ...)
+        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size, ...)
     ADD ESP,0x10                        ; 00584919
     RET                                 ; 0058491c
 

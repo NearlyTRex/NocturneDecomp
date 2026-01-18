@@ -68,7 +68,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30",
-    "signature": "void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * ini_file, char * key_name, int * value_ptr)"
+    "signature": "void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)"
   },
   "function_calls": [
     {
@@ -237,7 +237,7 @@
       },
       {
         "is_param": true,
-        "name": "ini_file",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CIniFile *"
@@ -277,14 +277,14 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_ffffff94",
-      "text": "(ini_file,key_name,&stack0xffffff94,100,in_stack_ffffff94);",
+      "text": "(this_ptr,key_name,&stack0xffffff94,100,in_stack_ffffff94);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 10,
       "match": "&stack0xffffff94",
-      "text": "(ini_file,key_name,&stack0xffffff94,100,in_stack_ffffff94);",
+      "text": "(this_ptr,key_name,&stack0xffffff94,100,in_stack_ffffff94);",
       "type": "stack_ref"
     },
     {

@@ -17,26 +17,26 @@ int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_p
   SIZE_T count;
   long unaff_EDI;
   
-  pcVar4 = (this_ptr->streambuf).__get_end;
-  pcVar2 = (this_ptr->streambuf).__get_ptr;
+  pcVar4 = (this_ptr->_streambuf).__get_end;
+  pcVar2 = (this_ptr->_streambuf).__get_ptr;
   if (pcVar4 == pcVar2 || (int)pcVar4 - (int)pcVar2 < 0) {
-    (this_ptr->streambuf).__get_base = (char *)0x0;
-    (this_ptr->streambuf).__get_ptr = (char *)0x0;
-    (this_ptr->streambuf).__get_end = (char *)0x0;
+    (this_ptr->_streambuf).__get_base = (char *)0x0;
+    (this_ptr->_streambuf).__get_ptr = (char *)0x0;
+    (this_ptr->_streambuf).__get_end = (char *)0x0;
   }
   else {
-    iVar3 = (*this_ptr->__vtable->sync)(&this_ptr->streambuf);
+    iVar3 = (*this_ptr->__vtable->sync)(&this_ptr->_streambuf);
     if (iVar3 == -1) {
       return -1;
     }
   }
-  pcVar4 = (this_ptr->streambuf).__reserve_base;
+  pcVar4 = (this_ptr->_streambuf).__reserve_base;
   if (pcVar4 == (char *)0x0) {
-    if ((((this_ptr->streambuf).__flags & 1) == 0) &&
-       (iVar3 = (*this_ptr->__vtable->doallocate)(&this_ptr->streambuf), iVar3 == -1)) {
+    if ((((this_ptr->_streambuf).__flags & 1) == 0) &&
+       (iVar3 = (*this_ptr->__vtable->doallocate)(&this_ptr->_streambuf), iVar3 == -1)) {
       return -1;
     }
-    pcVar4 = (this_ptr->streambuf).__reserve_base;
+    pcVar4 = (this_ptr->_streambuf).__reserve_base;
     if (pcVar4 == (char *)0x0) {
       if (character != -1) {
         iVar3 = crt_io_c_write_FUN_006084ec
@@ -46,52 +46,52 @@ int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_p
       return 0;
     }
   }
-  else if ((this_ptr->streambuf).__put_base < (this_ptr->streambuf).__put_ptr) goto LAB_0060d930;
-  (this_ptr->streambuf).__put_base = pcVar4;
-  (this_ptr->streambuf).__put_ptr = pcVar4;
-  (this_ptr->streambuf).__put_end = (this_ptr->streambuf).__reserve_end;
+  else if ((this_ptr->_streambuf).__put_base < (this_ptr->_streambuf).__put_ptr) goto LAB_0060d930;
+  (this_ptr->_streambuf).__put_base = pcVar4;
+  (this_ptr->_streambuf).__put_ptr = pcVar4;
+  (this_ptr->_streambuf).__put_end = (this_ptr->_streambuf).__reserve_end;
 LAB_0060d930:
   if (((this_ptr->__file_mode & 8) == 0) ||
      ((unaff_EDI = crt_io_c_tell_FUN_00606720(this_ptr->__file_handle), -1 < unaff_EDI &&
       (iVar3 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,0,2), -1 < iVar3)))) {
     if ((character != -1) &&
-       (pcVar4 = (this_ptr->streambuf).__put_ptr, pcVar4 < (this_ptr->streambuf).__put_end)) {
+       (pcVar4 = (this_ptr->_streambuf).__put_ptr, pcVar4 < (this_ptr->_streambuf).__put_end)) {
       *pcVar4 = (char)character;
       character = -1;
-      (this_ptr->streambuf).__put_ptr = (this_ptr->streambuf).__put_ptr + 1;
+      (this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_ptr + 1;
     }
-    n = (int)(this_ptr->streambuf).__put_ptr - (int)(this_ptr->streambuf).__put_base;
+    n = (int)(this_ptr->_streambuf).__put_ptr - (int)(this_ptr->_streambuf).__put_base;
     while (n != 0) {
       count = n;
       if (0x7fffffff < n) {
         count = 0x7fffffff;
       }
       iVar3 = crt_io_c_write_FUN_006084ec
-                        (this_ptr->__file_handle,(this_ptr->streambuf).__put_base,count);
+                        (this_ptr->__file_handle,(this_ptr->_streambuf).__put_base,count);
       if (iVar3 == -1) {
         return -1;
       }
       if (iVar3 == 0) break;
       n = n - iVar3;
       if (n == 0) {
-        (this_ptr->streambuf).__put_ptr = (this_ptr->streambuf).__put_base;
-        (this_ptr->streambuf).__put_end = (this_ptr->streambuf).__put_end;
+        (this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_base;
+        (this_ptr->_streambuf).__put_end = (this_ptr->_streambuf).__put_end;
       }
       else {
-        pcVar4 = (this_ptr->streambuf).__put_base;
+        pcVar4 = (this_ptr->_streambuf).__put_base;
         crt_string_c_memmove_FUN_005fe5e0(pcVar4,pcVar4 + iVar3,n);
-        (this_ptr->streambuf).__put_ptr = (this_ptr->streambuf).__put_base;
-        (this_ptr->streambuf).__put_end = (this_ptr->streambuf).__put_end;
-        (this_ptr->streambuf).__put_ptr = (this_ptr->streambuf).__put_ptr + n;
+        (this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_base;
+        (this_ptr->_streambuf).__put_end = (this_ptr->_streambuf).__put_end;
+        (this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_ptr + n;
       }
     }
     if (character != -1) {
-      pcVar4 = (this_ptr->streambuf).__put_ptr;
-      if ((this_ptr->streambuf).__put_end <= pcVar4) {
+      pcVar4 = (this_ptr->_streambuf).__put_ptr;
+      if ((this_ptr->_streambuf).__put_end <= pcVar4) {
         return -1;
       }
       *pcVar4 = (char)character;
-      ppcVar1 = &(this_ptr->streambuf).__put_ptr;
+      ppcVar1 = &(this_ptr->_streambuf).__put_ptr;
       *ppcVar1 = *ppcVar1 + 1;
     }
     if ((((this_ptr->__file_mode & 8) == 0) ||

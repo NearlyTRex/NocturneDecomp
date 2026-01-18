@@ -11,11 +11,11 @@ int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(ostrstream *this_ptr
 {
   int iVar1;
   
-  iVar1 = ((this_ptr->strstreambase_core).layout_info)->offset_to_vbase;
-  if ((*(uint *)((this_ptr->field_80).padding + iVar1 + -0x61) & 3) != 0) {
+  iVar1 = ((this_ptr->_strstreambase_core).layout_info)->offset_to_vbase;
+  if ((*(uint *)((this_ptr->_ios).padding + iVar1 + -0x61) & 3) != 0) {
     return -1;
   }
-  iVar1 = (**(code **)(*(int *)(*(int *)((this_ptr->field_80).padding + iVar1 + -0x6d) + 0x28) +
-                      0x18))();
+  iVar1 = (**(code **)(*(int *)(*(int *)((this_ptr->_ios).padding + iVar1 + -0x6d) + 0x28) + 0x18))
+                    ();
   return iVar1;
 }

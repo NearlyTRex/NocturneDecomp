@@ -12,6 +12,6 @@ crt_strstream_cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f
 
 {
   crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a
-            ((ostrstream *)&this_ptr[-2].ios.__xalloc_list,dtor_flags);
+            ((ostrstream *)&this_ptr[-2]._ios.__xalloc_list,dtor_flags);
   return;
 }

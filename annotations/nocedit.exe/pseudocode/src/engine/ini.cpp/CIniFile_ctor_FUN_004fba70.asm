@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this, char * filename, int read_mode)
+; __cdecl CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
 ;
 ; Parameters:
-; CIniFile *       Stack[0x4]:4   this
+; CIniFile *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; int              Stack[0xc]:4   read_mode
 ;
@@ -37,7 +37,7 @@ section .text
     PUSH ECX                            ; 004fba87
     PUSH EBX                            ; 004fba88
     CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 ; 004fba89
-        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
+        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this_ptr, char * section)
     ADD ESP,0x8                         ; 004fba8e
     MOV EAX,EBX                         ; 004fba91
     POP EBX                             ; 004fba93

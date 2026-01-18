@@ -18,34 +18,34 @@ crt_strstream_cpp_strstreambuf_seekoff_FUN_0060ba80
   
   if (((flags & 3U) != 0) && ((seek_mode != 1 || ((flags & 3U) != 3)))) {
     if ((flags & 1U) != 0) {
-      pcVar3 = (this_ptr->streambuf).__put_ptr;
-      if ((pcVar3 == (char *)0x0) || (pcVar3 < (this_ptr->streambuf).__get_end)) {
-        pcVar3 = (this_ptr->streambuf).__get_end;
+      pcVar3 = (this_ptr->_streambuf).__put_ptr;
+      if ((pcVar3 == (char *)0x0) || (pcVar3 < (this_ptr->_streambuf).__get_end)) {
+        pcVar3 = (this_ptr->_streambuf).__get_end;
       }
       in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_0060d725
-                         (seek_distance,seek_mode,(this_ptr->streambuf).__get_base,
-                          (this_ptr->streambuf).__get_ptr,(this_ptr->streambuf).__get_end,pcVar3);
+                         (seek_distance,seek_mode,(this_ptr->_streambuf).__get_base,
+                          (this_ptr->_streambuf).__get_ptr,(this_ptr->_streambuf).__get_end,pcVar3);
       if (in_ECX != -1) {
-        pcVar3 = (this_ptr->streambuf).__get_end;
-        pcVar2 = (this_ptr->streambuf).__get_base + in_ECX;
+        pcVar3 = (this_ptr->_streambuf).__get_end;
+        pcVar2 = (this_ptr->_streambuf).__get_base + in_ECX;
         if (pcVar3 < pcVar2) {
-          pcVar3 = (this_ptr->streambuf).__put_end;
+          pcVar3 = (this_ptr->_streambuf).__put_end;
         }
-        (this_ptr->streambuf).__get_ptr = pcVar2;
-        (this_ptr->streambuf).__get_end = pcVar3;
+        (this_ptr->_streambuf).__get_ptr = pcVar2;
+        (this_ptr->_streambuf).__get_end = pcVar3;
       }
     }
     if (((flags & 2U) != 0) &&
-       (pcVar3 = (this_ptr->streambuf).__put_end,
+       (pcVar3 = (this_ptr->_streambuf).__put_end,
        in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_0060d725
-                          (seek_distance,seek_mode,(this_ptr->streambuf).__put_base,
-                           (this_ptr->streambuf).__put_ptr,pcVar3,pcVar3), in_ECX != -1)) {
-      (this_ptr->streambuf).__put_ptr = (this_ptr->streambuf).__put_base;
-      (this_ptr->streambuf).__put_end = (this_ptr->streambuf).__put_end;
+                          (seek_distance,seek_mode,(this_ptr->_streambuf).__put_base,
+                           (this_ptr->_streambuf).__put_ptr,pcVar3,pcVar3), in_ECX != -1)) {
+      (this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_base;
+      (this_ptr->_streambuf).__put_end = (this_ptr->_streambuf).__put_end;
       iVar1._0_2_ = this_ptr->__minbuf_size;
       iVar1._2_1_ = this_ptr->__bit_flags;
       iVar1._3_1_ = this_ptr->padding;
-      (this_ptr->streambuf).__put_ptr = (this_ptr->streambuf).__put_ptr + in_ECX;
+      (this_ptr->_streambuf).__put_ptr = (this_ptr->_streambuf).__put_ptr + in_ECX;
       if (iVar1 < in_ECX) {
         this_ptr->__minbuf_size = (short)in_ECX;
         this_ptr->__bit_flags = (char)((uint)in_ECX >> 0x10);

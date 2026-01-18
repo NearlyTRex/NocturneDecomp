@@ -14,9 +14,9 @@ crt_fstream_cpp_filebuf_seekoff_FUN_0060dbe8(filebuf *this_ptr,long offset,int d
   
   iVar1 = this_ptr->__file_handle;
   if (iVar1 != -1) {
-    if ((((this_ptr->streambuf).__put_ptr != (this_ptr->streambuf).__put_base) ||
-        ((this_ptr->streambuf).__get_end != (this_ptr->streambuf).__get_ptr)) &&
-       (iVar1 = (*this_ptr->__vtable->sync)(&this_ptr->streambuf), iVar1 == -1)) {
+    if ((((this_ptr->_streambuf).__put_ptr != (this_ptr->_streambuf).__put_base) ||
+        ((this_ptr->_streambuf).__get_end != (this_ptr->_streambuf).__get_ptr)) &&
+       (iVar1 = (*this_ptr->__vtable->sync)(&this_ptr->_streambuf), iVar1 == -1)) {
       return -1;
     }
     if (direction == 0) {

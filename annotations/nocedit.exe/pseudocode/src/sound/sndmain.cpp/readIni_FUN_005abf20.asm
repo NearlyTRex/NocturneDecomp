@@ -76,7 +76,7 @@ section .text
     PUSH EBP                            ; 005abf54
     MOVSD.REP ES:EDI,ESI                ; 005abf55 | g_DefaultRecordingDeviceName | s__00681b64
     CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 005abf57
-        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this, char * key, char * output_buffer, int buffer_size, ...)
+        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size, ...)
     ADD ESP,0x10                        ; 005abf5c
     XOR EBX,EBX                         ; 005abf5f
     CALL sound_sndmain.cpp_closeSoundDevice_FUN_005ab660 ; 005abf61
@@ -96,7 +96,7 @@ section .text
     PUSH 0x650f42                       ; 005abf85 | = "RecordingDeviceName"
     PUSH EBP                            ; 005abf8a
     CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 005abf8b
-        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this, char * key, char * output_buffer, int buffer_size, ...)
+        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size, ...)
     ADD ESP,0x10                        ; 005abf90
     XOR EBX,EBX                         ; 005abf93
     CALL sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930 ; 005abf95
@@ -167,7 +167,7 @@ section .text
     PUSH 0x650f56                       ; 005ac026 | = "HwMixingEnabled"
     PUSH EBP                            ; 005ac02b
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 005ac02c
-        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * ini_file, char * key_name, int * value_ptr)
+        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 005ac031
     MOV EDX,dword ptr [ESP + 0x394]     ; 005ac034
     PUSH EDX                            ; 005ac03b
@@ -184,7 +184,7 @@ section .text
     PUSH EBP                            ; 005ac064
     FSTP float ptr [ESP + 0x390]        ; 005ac065
     CALL engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0 ; 005ac06c
-        ;   XREF to: 004fbcd0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile * this, char * key, float * output)
+        ;   XREF to: 004fbcd0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile * this_ptr, char * key, float * output)
     ADD ESP,0xc                         ; 005ac071
     PUSH dword ptr [ESP + 0x384]        ; 005ac074
     CALL sound_sndmain.cpp_setMaxSwSoundLatency_FUN_005abeb0 ; 005ac07b
@@ -204,21 +204,21 @@ section .text
     PUSH 0x650f73                       ; 005ac0ab | = "Bits"
     PUSH EBP                            ; 005ac0b0
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 005ac0b1
-        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * ini_file, char * key_name, int * value_ptr)
+        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 005ac0b6
     LEA EAX,[ESP + 0x388]               ; 005ac0b9
     PUSH EAX                            ; 005ac0c0
     PUSH 0x650f78                       ; 005ac0c1 | = "Channels"
     PUSH EBP                            ; 005ac0c6
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 005ac0c7
-        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * ini_file, char * key_name, int * value_ptr)
+        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 005ac0cc
     LEA EAX,[ESP + 0x38c]               ; 005ac0cf
     PUSH EAX                            ; 005ac0d6
     PUSH 0x650f81                       ; 005ac0d7 | = "Hz"
     PUSH EBP                            ; 005ac0dc
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 005ac0dd
-        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * ini_file, char * key_name, int * value_ptr)
+        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 005ac0e2
     MOV ECX,dword ptr [ESP + 0x38c]     ; 005ac0e5
     PUSH ECX                            ; 005ac0ec
@@ -237,7 +237,7 @@ section .text
     PUSH 0x650f84                       ; 005ac119 | = "Mute"
     PUSH EBP                            ; 005ac11e
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 005ac11f
-        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * ini_file, char * key_name, int * value_ptr)
+        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 005ac124
     MOV EDI,dword ptr [ESP + 0x394]     ; 005ac127
     PUSH EDI                            ; 005ac12e
@@ -268,7 +268,7 @@ section .text
     PUSH EAX                            ; 005ac17b
     PUSH EBP                            ; 005ac17c
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 005ac17d
-        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * ini_file, char * key_name, int * value_ptr)
+        ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 005ac182
     MOV EDX,dword ptr [ESP + 0x398]     ; 005ac185
     PUSH EDX                            ; 005ac18c
@@ -296,7 +296,7 @@ section .text
     PUSH EBP                            ; 005ac1d3
     FSTP float ptr [ESP + 0x3a8]        ; 005ac1d4
     CALL engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0 ; 005ac1db
-        ;   XREF to: 004fbcd0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile * this, char * key, float * output)
+        ;   XREF to: 004fbcd0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile * this_ptr, char * key, float * output)
     ADD ESP,0xc                         ; 005ac1e0
     PUSH dword ptr [ESP + 0x39c]        ; 005ac1e3
     PUSH EBX                            ; 005ac1ea
