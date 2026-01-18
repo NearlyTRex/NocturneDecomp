@@ -201,8 +201,18 @@ def sanitize_file_content(text):
     return ''.join(result)
 
 
-def format_char_array_as_c_strings(currentProgram, raw_bytes, type_name):
-    """Format a char array as C string literals."""
+def format_char_array_as_c_strings(currentProgram, raw_bytes, type_name, string_map=None):
+    """Format a char array as C string literals.
+
+    Args:
+        currentProgram: The Ghidra program
+        raw_bytes: List of raw byte values
+        type_name: The type name (e.g., "char*[12]")
+        string_map: Optional map of address hex strings to escaped string values
+
+    Returns:
+        Formatted initializer string or None
+    """
     if not raw_bytes or len(raw_bytes) < 4:
         return None
 
@@ -218,55 +228,75 @@ def format_char_array_as_c_strings(currentProgram, raw_bytes, type_name):
                 ptr_val = (ptr_bytes[3] << 24) | (ptr_bytes[2] << 16) | (ptr_bytes[1] << 8) | ptr_bytes[0]
                 if ptr_val != 0:
                     string_found = False
-                    try:
-                        ptr_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(ptr_val)
-                        pointed_data = currentProgram.getListing().getDefinedDataAt(ptr_addr)
-                        if pointed_data and is_string_data_type_obj(pointed_data.getDataType()):
-                            pointed_value = extract_string_value(pointed_data)
-                            if pointed_value:
-                                safe_str = get_safe_str(pointed_value)
-                                escaped = escape_c_string(safe_str)
-                                string_array.append('"%s"' % escaped)
+
+                    # Strategy 1: Fast O(1) lookup in string_map
+                    if string_map and not string_found:
+                        addr_hex = "%08x" % ptr_val
+                        if addr_hex in string_map:
+                            string_array.append('"%s"' % string_map[addr_hex])
+                            successful_strings += 1
+                            string_found = True
+                        else:
+                            # Try without leading zeros
+                            addr_hex_short = "%x" % ptr_val
+                            if addr_hex_short in string_map:
+                                string_array.append('"%s"' % string_map[addr_hex_short])
                                 successful_strings += 1
                                 string_found = True
 
-                        if not string_found:
-                            try:
-                                memory = currentProgram.getMemory()
-                                string_chars = []
-                                for j in range(128):
-                                    char_addr = ptr_addr.add(j)
-                                    if not memory.contains(char_addr):
-                                        break
-                                    byte_val = memory.getByte(char_addr) & 0xFF
-                                    if byte_val == 0:
-                                        break
-                                    if 32 <= byte_val <= 126:
-                                        string_chars.append(chr(byte_val))
-                                    elif byte_val in [9, 10, 13]:
-                                        string_chars.append(chr(byte_val))
-                                    else:
-                                        if len(string_chars) > 0:
-                                            break
+                    # Strategy 2: Ghidra API lookup
+                    if not string_found:
+                        try:
+                            ptr_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(ptr_val)
+                            pointed_data = currentProgram.getListing().getDefinedDataAt(ptr_addr)
+                            if pointed_data and is_string_data_type_obj(pointed_data.getDataType()):
+                                pointed_value = extract_string_value(pointed_data)
+                                if pointed_value:
+                                    safe_str = get_safe_str(pointed_value)
+                                    escaped = escape_c_string(safe_str)
+                                    string_array.append('"%s"' % escaped)
+                                    successful_strings += 1
+                                    string_found = True
+                        except Exception:
+                            pass
 
-                                if string_chars and len(string_chars) >= 1:
-                                    string_val = ''.join(string_chars)
-                                    if string_val.strip():
-                                        escaped = escape_c_string(string_val)
-                                        string_array.append('"%s"' % escaped)
-                                        successful_strings += 1
-                                        string_found = True
-                            except:
-                                pass
+                    # Strategy 3: Memory scan for null-terminated string
+                    if not string_found:
+                        try:
+                            ptr_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(ptr_val)
+                            memory = currentProgram.getMemory()
+                            string_chars = []
+                            for j in range(128):
+                                char_addr = ptr_addr.add(j)
+                                if not memory.contains(char_addr):
+                                    break
+                                byte_val = memory.getByte(char_addr) & 0xFF
+                                if byte_val == 0:
+                                    break
+                                if 32 <= byte_val <= 126:
+                                    string_chars.append(chr(byte_val))
+                                elif byte_val in [9, 10, 13]:
+                                    string_chars.append(chr(byte_val))
+                                else:
+                                    if len(string_chars) > 0:
+                                        break
 
-                        if not string_found:
-                            string_array.append("0x%08X" % ptr_val)
-                    except Exception:
-                        string_array.append("0x%08X" % ptr_val)
+                            if string_chars and len(string_chars) >= 1:
+                                string_val = ''.join(string_chars)
+                                if string_val.strip():
+                                    escaped = escape_c_string(string_val)
+                                    string_array.append('"%s"' % escaped)
+                                    successful_strings += 1
+                                    string_found = True
+                        except:
+                            pass
+
+                    if not string_found:
+                        string_array.append("(char*)0x%08X" % ptr_val)
                 else:
-                    string_array.append("NULL")
+                    string_array.append("nullptr")
 
-        if string_array and successful_strings >= max(2, len(string_array) * 0.3):
+        if string_array and successful_strings >= max(1, len(string_array) * 0.3):
             if len(string_array) <= 8:
                 return "{%s}" % ", ".join(string_array)
             else:
@@ -277,7 +307,7 @@ def format_char_array_as_c_strings(currentProgram, raw_bytes, type_name):
                         lines.append("{\n    " + ", ".join(line_items))
                     else:
                         lines.append("    " + ", ".join(line_items))
-                return "\n".join(lines) + "\n}"
+                return ",\n".join(lines) + "\n}"
     return None
 
 
@@ -423,7 +453,7 @@ def format_2d_char_array(raw_bytes, type_name=None):
                     lines.append("{\n    " + ", ".join(line_items))
                 else:
                     lines.append("    " + ", ".join(line_items))
-            return "\n".join(lines) + "\n}"
+            return ",\n".join(lines) + "\n}"
     return None
 
 

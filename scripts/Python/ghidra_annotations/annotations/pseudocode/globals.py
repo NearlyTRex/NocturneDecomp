@@ -131,6 +131,170 @@ def resolve_pointer_to_symbol(currentProgram, address_int):
     return (usable_symbol, comment_symbol)
 
 
+def resolve_pointer_to_string(currentProgram, address_int, string_map=None):
+    """Try to resolve a pointer address to a string value.
+
+    Uses multiple strategies:
+    1. Fast O(1) lookup in string_map if provided
+    2. Ghidra API lookup for defined string data
+    3. Memory scan for null-terminated string
+
+    Args:
+        currentProgram: The Ghidra program
+        address_int: Integer address value to resolve
+        string_map: Optional map of address hex strings to escaped string values
+
+    Returns:
+        Escaped string value or None if not resolvable
+    """
+    if address_int == 0:
+        return None
+
+    # Strategy 1: Fast O(1) lookup in string_map
+    if string_map:
+        addr_hex = "%08x" % address_int
+        if addr_hex in string_map:
+            return string_map[addr_hex]
+        # Try without leading zeros
+        addr_hex_short = "%x" % address_int
+        if addr_hex_short in string_map:
+            return string_map[addr_hex_short]
+
+    try:
+        from ghidra.program.model.address import AddressFactory
+        addr_factory = currentProgram.getAddressFactory()
+        addr = addr_factory.getDefaultAddressSpace().getAddress(address_int)
+
+        # Strategy 2: Ghidra API lookup for defined string data
+        program_listing = currentProgram.getListing()
+        pointed_data = program_listing.getDefinedDataAt(addr)
+        if pointed_data:
+            from ghidra_annotations.util.string import is_string_data_type_obj, extract_string_value
+            if is_string_data_type_obj(pointed_data.getDataType()):
+                pointed_value = extract_string_value(pointed_data)
+                if pointed_value:
+                    safe_str = get_safe_str(pointed_value)
+                    return escape_c_string(safe_str)
+
+        # Strategy 3: Memory scan for null-terminated string
+        memory = currentProgram.getMemory()
+        string_chars = []
+        for j in range(256):  # Max string length to scan
+            char_addr = addr.add(j)
+            if not memory.contains(char_addr):
+                break
+            byte_val = memory.getByte(char_addr) & 0xFF
+            if byte_val == 0:
+                break
+            if 32 <= byte_val <= 126:
+                string_chars.append(chr(byte_val))
+            elif byte_val in (9, 10, 13):  # Tab, newline, carriage return
+                string_chars.append(chr(byte_val))
+            else:
+                # Non-printable character - give up
+                string_chars = []
+                break
+
+        if string_chars and len(string_chars) >= 1:
+            string_val = ''.join(string_chars)
+            if string_val.strip():
+                return escape_c_string(string_val)
+
+    except Exception:
+        pass
+
+    return None
+
+
+def format_char_pointer_array(currentProgram, raw_bytes, type_name, string_map=None):
+    """Format a char*[] array as C string literals.
+
+    Args:
+        currentProgram: The Ghidra program
+        raw_bytes: List of raw byte values
+        type_name: The type name (e.g., "char*[12]")
+        string_map: Optional map of address hex strings to escaped string values
+
+    Returns:
+        Formatted initializer string or None if resolution failed
+    """
+    if not raw_bytes or len(raw_bytes) < 4:
+        return None
+
+    ptr_size = 4  # 32-bit pointers
+    num_ptrs = len(raw_bytes) // ptr_size
+    string_array = []
+    successful_strings = 0
+
+    for i in range(num_ptrs):
+        ptr_bytes = raw_bytes[i * ptr_size:(i + 1) * ptr_size]
+        if len(ptr_bytes) == 4:
+            ptr_val = bytes_to_int_le(ptr_bytes)
+            if ptr_val == 0:
+                string_array.append("nullptr")
+            else:
+                # Try to resolve pointer to string
+                string_val = resolve_pointer_to_string(currentProgram, ptr_val, string_map)
+                if string_val:
+                    string_array.append('"%s"' % string_val)
+                    successful_strings += 1
+                else:
+                    # Fallback to hex address
+                    string_array.append("(char*)0x%08X" % ptr_val)
+
+    # Only return if we resolved at least 30% of non-null pointers
+    non_null_count = sum(1 for s in string_array if s != "nullptr")
+    if string_array and non_null_count > 0 and successful_strings >= max(1, non_null_count * 0.3):
+        return format_array_initializer(string_array, vals_per_line=4)
+
+    return None
+
+
+def format_1d_char_array_as_string(raw_bytes):
+    """Format a 1D char array as a C string literal.
+
+    Args:
+        raw_bytes: List of raw byte values
+
+    Returns:
+        Formatted string literal or None if not a valid string
+    """
+    if not raw_bytes:
+        return None
+
+    # Find null terminator
+    null_pos = -1
+    for i, b in enumerate(raw_bytes):
+        if b == 0:
+            null_pos = i
+            break
+
+    # If no null found, use all bytes
+    if null_pos == -1:
+        string_bytes = raw_bytes
+    else:
+        string_bytes = raw_bytes[:null_pos]
+
+    # Check if all bytes are printable
+    string_chars = []
+    for b in string_bytes:
+        if 32 <= b <= 126:
+            string_chars.append(chr(b))
+        elif b in (9, 10, 13):  # Tab, newline, carriage return
+            string_chars.append(chr(b))
+        else:
+            # Non-printable character
+            return None
+
+    # Need at least one character for a valid string
+    if not string_chars:
+        return '""'
+
+    string_val = ''.join(string_chars)
+    escaped = escape_c_string(string_val)
+    return '"%s"' % escaped
+
+
 def format_pointer_initializer(currentProgram, int_val, type_name):
     """Format a pointer initializer, resolving to symbol if possible.
 
@@ -264,11 +428,12 @@ def format_variable_declaration(type_name, var_name):
         return (type_name, var_name)
 
 
-def extract_globals_and_constants(currentProgram):
+def extract_globals_and_constants(currentProgram, string_map=None):
     """Extract global variables and constants from the program.
 
     Args:
         currentProgram: The Ghidra program
+        string_map: Optional map of address hex strings to escaped string values
 
     Returns:
         Tuple of (globals_list, constants_list)
@@ -376,7 +541,54 @@ def extract_globals_and_constants(currentProgram):
                     is_double_array = "double" in elem_type_name or "float10" in elem_type_name
                     is_float_array = "float" in elem_type_name and not is_double_array
 
-                    if is_double_array:
+                    # Check for char array types - handle these BEFORE falling back to byte arrays
+                    is_2d_char_array = "char" in type_name.lower() and type_name.count("[") >= 2
+                    is_1d_char_array = "char" in type_name.lower() and type_name.count("[") == 1 and not is_pointer_array
+                    is_char_pointer_array = is_pointer_array and "char" in type_name.lower()
+
+                    if is_2d_char_array:
+                        # 2D char array (e.g., char[12][4]) - format as array of string literals
+                        embedded_content = format_2d_char_array(raw_bytes, type_name)
+                        if embedded_content:
+                            initializer_value = embedded_content
+                        else:
+                            # Fallback to bytes if not valid strings
+                            hex_values = ["0x%02X" % b for b in raw_bytes]
+                            initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+
+                    elif is_1d_char_array:
+                        # 1D char array (e.g., char[17]) - format as string literal
+                        string_content = format_1d_char_array_as_string(raw_bytes)
+                        if string_content:
+                            initializer_value = string_content
+                        else:
+                            # Fallback to bytes if not valid string
+                            hex_values = ["0x%02X" % b for b in raw_bytes]
+                            initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+
+                    elif is_char_pointer_array:
+                        # char*[] array - resolve pointers to string literals
+                        string_content = format_char_pointer_array(currentProgram, raw_bytes, type_name, string_map)
+                        if string_content:
+                            initializer_value = string_content
+                        else:
+                            # Fallback to pointer array format
+                            element_type = type_name
+                            if '[' in element_type:
+                                element_type = element_type[:element_type.index('[')].strip()
+                            ptr_size = 4
+                            ptr_values = []
+                            for i in range(0, len(raw_bytes), ptr_size):
+                                if i + ptr_size <= len(raw_bytes):
+                                    ptr_bytes = raw_bytes[i:i+ptr_size]
+                                    ptr_val = bytes_to_int_le(ptr_bytes)
+                                    if ptr_val == 0:
+                                        ptr_values.append("nullptr")
+                                    else:
+                                        ptr_values.append("(%s)0x%08X" % (element_type, ptr_val))
+                            initializer_value = format_array_initializer(ptr_values, vals_per_line=4)
+
+                    elif is_double_array:
                         # Double array - group bytes into 8-byte double values
                         import struct
                         double_size = 8
@@ -551,7 +763,11 @@ def extract_globals_and_constants(currentProgram):
                   re.match(r'.*char\s*\*\s*\[', type_name)):
                 embedded_content = None
                 if has_nonzero_bytes and raw_bytes:
-                    embedded_content = format_char_array_as_c_strings(currentProgram, raw_bytes, type_name)
+                    # Try new helper with string_map first for better resolution
+                    embedded_content = format_char_pointer_array(currentProgram, raw_bytes, type_name, string_map)
+                    # Fall back to original function if needed
+                    if not embedded_content:
+                        embedded_content = format_char_array_as_c_strings(currentProgram, raw_bytes, type_name, string_map)
                 if embedded_content:
                     initializer_value = embedded_content
                 else:

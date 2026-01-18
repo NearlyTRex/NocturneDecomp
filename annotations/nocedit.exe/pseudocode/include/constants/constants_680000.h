@@ -140,51 +140,51 @@ const TerminatedCString s_DEST_006869c2 = "DEST";
 
 // char*[12] constants
 const char* g_MonthNamesLong[12] = {
-    (char*)0x00658B64, (char*)0x00658B6C, (char*)0x00658B78, (char*)0x00658B80,
-    (char*)0x00658B88, (char*)0x00658B8C, (char*)0x00658B94, (char*)0x00658B9C,
-    (char*)0x00658BA4, (char*)0x00658BB0, (char*)0x00658BB8, (char*)0x00658BC4
+    "January", "February", "March", "April",
+    "May", "June", "July", "August",
+    "September", "October", "November", "December"
 };
 
 // char*[24] constants
 const char* g_MathFunctionNames[24] = {
-    (char*)0x00002424, (char*)0x006595B4, (char*)0x006595B9, (char*)0x006595BE,
-    (char*)0x006595C3, (char*)0x006595C7, (char*)0x006595CC, (char*)0x006595D1,
-    (char*)0x006595D5, (char*)0x006595DB, (char*)0x006595E0, (char*)0x006595E4,
-    (char*)0x006595EA, (char*)0x006595F0, (char*)0x006595F6, (char*)0x006595FB,
-    (char*)0x00659601, (char*)0x00659605, (char*)0x00659609, (char*)0x0065960D,
-    (char*)0x00659610, (char*)0x00659613, (char*)0x00659616, (char*)0x0065961A
+    (char*)0x00002424, "acos", "asin", "sqrt",
+    "exp", "cosh", "sinh", "pow",
+    "acosh", "log2", "log", "log10",
+    "atanh", "atan2", "ipow", "dpowi",
+    "cos", "sin", "tan", "y0",
+    "y1", "yn", "mod", "cotan"
 };
 
 // char*[41] constants
 const char* g_ErrorMessageTable[41] = {
-    (char*)0x00658C30, (char*)0x00658C3C, (char*)0x00658C58, (char*)0x00658C6C,
-    (char*)0x00658C80, (char*)0x00658C90, (char*)0x00658CA4, (char*)0x00658CB8,
-    (char*)0x00658CC4, (char*)0x00658CD8, (char*)0x00658CEC, (char*)0x00658D00,
-    (char*)0x00658D14, (char*)0x00658D2C, (char*)0x00658D40, (char*)0x00658D54,
-    (char*)0x00658D74, (char*)0x00658D8C, (char*)0x00658DA4, (char*)0x00658DC4,
-    (char*)0x00658DDC, (char*)0x00658DEC, (char*)0x00658DF8, (char*)0x00658E08,
-    (char*)0x00658E18, (char*)0x00658E28, (char*)0x00658E40, (char*)0x00658E58,
-    (char*)0x00658E74, (char*)0x00658E80, (char*)0x00658E8C, (char*)0x00658EA4,
-    (char*)0x00658EB4, (char*)0x00658EC4, (char*)0x00658ED4, (char*)0x00658EE0,
-    (char*)0x00658EF4, (char*)0x00658F04, (char*)0x00658F24, (char*)0x00658F38,
-    (char*)0x00658F4C
+    "No error", "No such file or directory", "Arg list too big", "Exec format error",
+    "Bad file number", "Not enough memory", "Permission denied", "File exists",
+    "Cross-device link", "Invalid argument", "File table overflow", "Too many open files",
+    "No space left on device", "Argument too large", "Result too large", "Resource deadlock would occur",
+    "System call interrupted", "Child does not exist", "Resource unavailable, try again", "Device or resource busy",
+    "File too large", "I/O error", "Is a directory", "Not a directory",
+    "Too many links", "Block device required", "Not a character device", "No such device or address",
+    "Not owner", "Broken pipe", "Read-only file system", "Illegal seek",
+    "No such process", "Text file busy", "Bad address", "Filename too long",
+    "No such device", "No locks available in system", "Unknown system call", "Directory not empty",
+    "Illegal multibyte sequence"
 };
 
 // char*[7] constants
 const char* g_WeekdayNamesLong[7] = {
-    (char*)0x00658B20, (char*)0x00658B28, (char*)0x00658B30, (char*)0x00658B38,
-    (char*)0x00658B44, (char*)0x00658B50, (char*)0x00658B58
+    "Sunday", "Monday", "Tuesday", "Wednesday",
+    "Thursday", "Friday", "Saturday"
 };
 const char* g_MathErrorMessages[7] = {
-    nullptr, (char*)0x006596A8, (char*)0x006596B5, (char*)0x006596CA,
-    (char*)0x006596DF, (char*)0x006596F5, (char*)0x00659710
+    nullptr, "Domain error", "Argument singularity", "Overflow range error",
+    "Underflow range error", "Total loss of significance", "Partial loss of significance"
 };
 
 // char*[9] constants
 const char* g_DirectionCharacters[9] = {
-    (char*)0x0063EAD8, (char*)0x0063EADA, (char*)0x0063EADC, (char*)0x0063EADE,
-    (char*)0x0063EAE0, (char*)0x0063EAE2, (char*)0x0063EAE5, (char*)0x0063EAE8,
-    (char*)0x0063EAEB
+    "x", "N", "S", "E",
+    "W", "NE", "NW", "SE",
+    "SW"
 };
 
 // char[104] constants
@@ -203,9 +203,9 @@ const char g_MonthThirdInitial[] = "nbrrynlgptvc";
 
 // char[12][4] constants
 const char g_MonthNamesShort[12][4] = {
-    0x4A, 0x61, 0x6E, 0x00, 0x46, 0x65, 0x62, 0x00, 0x4D, 0x61, 0x72, 0x00, 0x41, 0x70, 0x72, 0x00,
-    0x4D, 0x61, 0x79, 0x00, 0x4A, 0x75, 0x6E, 0x00, 0x4A, 0x75, 0x6C, 0x00, 0x41, 0x75, 0x67, 0x00,
-    0x53, 0x65, 0x70, 0x00, 0x4F, 0x63, 0x74, 0x00, 0x4E, 0x6F, 0x76, 0x00, 0x44, 0x65, 0x63, 0x00
+    "Jan", "Feb", "Mar", "Apr",
+    "May", "Jun", "Jul", "Aug",
+    "Sep", "Oct", "Nov", "Dec"
 };
 
 // char[17] constants
@@ -230,10 +230,7 @@ const char g_WeekdaySecondInitial[] = "uouehra";
 const char g_WeekdayThirdInitial[] = "nneduit";
 
 // char[7][4] constants
-const char g_WeekdayNamesShort[7][4] = {
-    0x53, 0x75, 0x6E, 0x00, 0x4D, 0x6F, 0x6E, 0x00, 0x54, 0x75, 0x65, 0x00, 0x57, 0x65, 0x64, 0x00,
-    0x54, 0x68, 0x75, 0x00, 0x46, 0x72, 0x69, 0x00, 0x53, 0x61, 0x74, 0x00
-};
+const char g_WeekdayNamesShort[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
 // double constants
 const double DOUBLE_00681b30 = 1;

@@ -481,10 +481,19 @@ def export_pseudocode(currentProgram, path, strict=False):
     type_to_path_map = export_header_files(currentProgram, pseudocode_include_dir)
     timer.end_phase()
 
+    # Build string map early - needed for globals/constants extraction AND function processing
+    timer.start_phase("Build string map")
+    log_info("Building string map for symbol replacement")
+    program_listing = currentProgram.getListing()
+    defined_data = program_listing.getDefinedData(True)
+    string_map = build_string_map(defined_data)
+    log_info("Built string map with %d entries" % len(string_map))
+    timer.end_phase()
+
     # Extract and export globals and constants
     timer.start_phase("Extract globals and constants")
     log_info("Extracting globals and constants")
-    globals_list, constants_list = extract_globals_and_constants(currentProgram)
+    globals_list, constants_list = extract_globals_and_constants(currentProgram, string_map)
     timer.end_phase()
 
     # Extract function prototypes for use in constants headers
@@ -642,14 +651,6 @@ def export_pseudocode(currentProgram, path, strict=False):
     program_listing = currentProgram.getListing()
     reference_manager = currentProgram.getReferenceManager()
     symbol_table = currentProgram.getSymbolTable()
-
-    # Build string map for inline replacement
-    timer.start_phase("Build string map")
-    log_info("Building string map for symbol replacement")
-    defined_data = program_listing.getDefinedData(True)
-    string_map = build_string_map(defined_data)
-    log_info("Built string map with %d entries" % len(string_map))
-    timer.end_phase()
 
     # Build constants map for inline replacement of constant values
     timer.start_phase("Build constants map")

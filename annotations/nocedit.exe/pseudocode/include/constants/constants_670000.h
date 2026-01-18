@@ -293,8 +293,8 @@ const TerminatedCString s_CMorphModel_0067d7fe = "$CMorphModel$$";
 
 // char*[8] constants
 const char* g_MenuBitmapFilenames[8] = {
-    (char*)0x00637305, (char*)0x0063730B, (char*)0x00637311, (char*)0x00637317,
-    (char*)0x0063731D, (char*)0x00637323, (char*)0x00637329, (char*)0x0063732F
+    "f0100", "f0300", "f0500", "f0700",
+    "f0900", "f1100", "f1300", "f1500"
 };
 
 // char[100] constants
