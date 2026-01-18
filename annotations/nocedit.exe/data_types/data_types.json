@@ -15210,7 +15210,7 @@
       "name":"IDirectSoundCapture_CreateCaptureBuffer",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCapture*"
         },
         {
@@ -15236,7 +15236,7 @@
       "name":"IDirectSoundCapture_GetCaps",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCapture*"
         },
         {
@@ -15254,7 +15254,7 @@
       "name":"IDirectSoundCapture_Initialize",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCapture*"
         },
         {
@@ -15272,7 +15272,7 @@
       "name":"IDirectSoundCaptureBuffer_GetCaps",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         },
         {
@@ -15290,7 +15290,7 @@
       "name":"IDirectSoundCaptureBuffer_GetCurrentPosition",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         },
         {
@@ -15312,7 +15312,7 @@
       "name":"IDirectSoundCaptureBuffer_GetFormat",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         },
         {
@@ -15338,7 +15338,7 @@
       "name":"IDirectSoundCaptureBuffer_GetStatus",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         },
         {
@@ -15356,7 +15356,7 @@
       "name":"IDirectSoundCaptureBuffer_Initialize",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         },
         {
@@ -15378,7 +15378,7 @@
       "name":"IDirectSoundCaptureBuffer_Lock",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         },
         {
@@ -15420,7 +15420,7 @@
       "name":"IDirectSoundCaptureBuffer_Start",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         },
         {
@@ -15438,7 +15438,7 @@
       "name":"IDirectSoundCaptureBuffer_Stop",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         }
       ],
@@ -15452,7 +15452,7 @@
       "name":"IDirectSoundCaptureBuffer_Unlock",
       "parameters":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "type":"IDirectSoundCaptureBuffer*"
         },
         {
@@ -39306,7 +39306,7 @@
       "fields":[
         {
           "len":40,
-          "name":"streambuf",
+          "name":"_streambuf",
           "offset":0,
           "type":"streambuf"
         },
@@ -39936,7 +39936,7 @@
         },
         {
           "len":60,
-          "name":"filebuf",
+          "name":"_filebuf",
           "offset":4,
           "type":"filebuf"
         },
@@ -41544,19 +41544,19 @@
       "fields":[
         {
           "len":68,
-          "name":"fstreambase_core",
+          "name":"_fstreambase_core",
           "offset":0,
           "type":"fstreambase_core"
         },
         {
           "len":16,
-          "name":"istream_core",
+          "name":"_istream_core",
           "offset":68,
           "type":"istream_core"
         },
         {
           "len":44,
-          "name":"ios",
+          "name":"_ios",
           "offset":84,
           "type":"ios"
         }
@@ -42387,13 +42387,13 @@
       "fields":[
         {
           "len":16,
-          "name":"istream_core",
+          "name":"_istream_core",
           "offset":0,
           "type":"istream_core"
         },
         {
           "len":44,
-          "name":"ios",
+          "name":"_ios",
           "offset":16,
           "type":"ios"
         }
@@ -42447,13 +42447,13 @@
       "fields":[
         {
           "len":68,
-          "name":"strstreambase_core",
+          "name":"_strstreambase_core",
           "offset":0,
           "type":"strstreambase_core"
         },
         {
           "len":16,
-          "name":"istream_core",
+          "name":"_istream_core",
           "offset":68,
           "type":"istream_core"
         },
@@ -42465,7 +42465,7 @@
         },
         {
           "len":44,
-          "name":"ios",
+          "name":"_ios",
           "offset":88,
           "type":"ios"
         }
@@ -42699,19 +42699,19 @@
       "fields":[
         {
           "len":68,
-          "name":"fstreambase_core",
+          "name":"_fstreambase_core",
           "offset":0,
           "type":"fstreambase_core"
         },
         {
           "len":12,
-          "name":"ostream_core",
+          "name":"_ostream_core",
           "offset":68,
           "type":"ostream_core"
         },
         {
           "len":44,
-          "name":"ios",
+          "name":"_ios",
           "offset":80,
           "type":"ios"
         }
@@ -42729,13 +42729,13 @@
       "fields":[
         {
           "len":12,
-          "name":"ostream_core",
+          "name":"_ostream_core",
           "offset":0,
           "type":"ostream_core"
         },
         {
           "len":44,
-          "name":"ios",
+          "name":"_ios",
           "offset":12,
           "type":"ios"
         }
@@ -42783,25 +42783,25 @@
       "fields":[
         {
           "len":68,
-          "name":"strstreambase_core",
+          "name":"_strstreambase_core",
           "offset":0,
           "type":"strstreambase_core"
         },
         {
           "len":12,
-          "name":"field_68",
+          "name":"_ostream_core",
           "offset":68,
           "type":"ostream_core"
         },
         {
           "len":44,
-          "name":"field_80",
+          "name":"_ios",
           "offset":80,
           "type":"ios"
         },
         {
           "len":4,
-          "name":"field_124",
+          "name":"padding",
           "offset":124,
           "type":"char[4]"
         }
@@ -50349,7 +50349,7 @@
       "fields":[
         {
           "len":68,
-          "name":"strstreambase_core",
+          "name":"_strstreambase_core",
           "offset":0,
           "type":"strstreambase_core"
         },
@@ -50361,13 +50361,13 @@
         },
         {
           "len":44,
-          "name":"ios",
+          "name":"_ios",
           "offset":72,
           "type":"ios"
         },
         {
           "len":4,
-          "name":"field_116",
+          "name":"unknown",
           "offset":116,
           "type":"int"
         }
@@ -50391,7 +50391,7 @@
         },
         {
           "len":60,
-          "name":"strstreambuf",
+          "name":"_strstreambuf",
           "offset":4,
           "type":"strstreambuf"
         },
@@ -50415,7 +50415,7 @@
       "fields":[
         {
           "len":40,
-          "name":"streambuf",
+          "name":"_streambuf",
           "offset":0,
           "type":"streambuf"
         },
