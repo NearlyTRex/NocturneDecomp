@@ -62,6 +62,7 @@ from ghidra_annotations.annotations.pseudocode.headers import (
     get_new_export_path,
     export_individual_game_files,
     export_system_grouped_files,
+    export_equates_file,
     generate_master_include,
     is_valid_define_name,
     format_field_declaration,

@@ -999,8 +999,10 @@ def organize_equates_by_category(currentProgram):
     equate_table = currentProgram.getEquateTable()
     all_equates = []
     skipped_count = 0
+    total_count = 0
 
     for equate in equate_table.getEquates():
+        total_count += 1
         eq_name = equate.getName()
         eq_value = equate.getValue()
 
@@ -1027,8 +1029,8 @@ def organize_equates_by_category(currentProgram):
         }
         all_equates.append(equate_data)
 
-    if skipped_count > 0:
-        log_info("Skipped %d equates with invalid define names" % skipped_count)
+    log_info("Found %d equates in Ghidra (%d valid, %d skipped invalid names)" % (
+        total_count, len(all_equates), skipped_count))
 
     # Categorize equates based on usage patterns and names
     for equate_data in all_equates:
@@ -1085,6 +1087,37 @@ def format_equate_value(value):
             return str(value)
         else:
             return "0x%X" % (value & 0xFFFFFFFF)
+
+
+def export_equates_file(currentProgram, pseudocode_dir, equates_by_category):
+    """Export equates to defines.h.
+
+    Args:
+        currentProgram: The Ghidra program
+        pseudocode_dir: Base directory for headers
+        equates_by_category: Dictionary mapping categories to equate lists
+    """
+    log_info("Exporting equates to defines.h...")
+    try:
+        all_equates = []
+        for equates_list in equates_by_category.values():
+            all_equates.extend(equates_list)
+
+        defines_file = os.path.join(pseudocode_dir, "defines.h")
+
+        if all_equates:
+            equates_content = generate_equates_header(currentProgram, all_equates)
+            write_header_file(defines_file, equates_content)
+            log_info("Created defines.h with %d equates" % len(all_equates))
+        else:
+            # Create empty defines.h with placeholder comment
+            empty_content = "#pragma once\n\n// No equates defined in Ghidra\n// Add equates in Ghidra (Window -> Equates) to populate this file\n"
+            write_header_file(defines_file, empty_content)
+            log_info("Created empty defines.h (no equates found in Ghidra)")
+    except Exception as e:
+        log_info("ERROR exporting equates: %s" % str(e))
+        import traceback
+        log_info(traceback.format_exc())
 
 
 def export_individual_game_files(currentProgram, pseudocode_dir, game_individual_types, type_to_path_map=None):
@@ -1857,7 +1890,15 @@ def export_header_files(currentProgram, pseudocode_dir):
         pseudocode_dir: Base directory for headers
     """
     # Get equates data first
-    equates_by_category = organize_equates_by_category(currentProgram)
+    log_info("Collecting equates from Ghidra...")
+    try:
+        equates_by_category = organize_equates_by_category(currentProgram)
+        log_info("  Equate categories: %d" % len(equates_by_category))
+    except Exception as e:
+        log_info("ERROR collecting equates: %s" % str(e))
+        import traceback
+        log_info(traceback.format_exc())
+        equates_by_category = {}
 
     # Organize data types into game (individual) and system (grouped)
     game_individual_types = []
@@ -1934,16 +1975,11 @@ def export_header_files(currentProgram, pseudocode_dir):
             # export_path is like "system/ddraw", so we add .h
             type_to_path_map[dt_name] = "%s.h" % export_path
 
-    # Export all equates to a single defines.h in root include/
-    all_equates = []
-    for equates_list in equates_by_category.values():
-        all_equates.extend(equates_list)
+    # Ensure the include directory exists before writing any files
+    make_dirs(pseudocode_dir)
 
-    if all_equates:
-        equates_content = generate_equates_header(currentProgram, all_equates)
-        defines_file = os.path.join(pseudocode_dir, "defines.h")
-        write_header_file(defines_file, equates_content)
-        log_info("Created defines.h with %d equates" % len(all_equates))
+    # Export equates to defines.h
+    export_equates_file(currentProgram, pseudocode_dir, equates_by_category)
 
     # Export individual files for game types (with dependency tracking)
     export_individual_game_files(currentProgram, pseudocode_dir, game_individual_types, type_to_path_map)
