@@ -23,7 +23,7 @@
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004e0920 at 004e0883
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CVector3i g_CameraOutOfBoundsCoord
 ;   undefined4 g_CameraOutOfBoundsY
 ;   undefined4 g_CameraOutOfBoundsZ
@@ -44,7 +44,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 0044d7d6
     MOV EBP,ESI                         ; 0044d7da
     MOV ESI,dword ptr [ESP + 0x34]      ; 0044d7dc
-    MOV EDX,dword ptr [0x006703ec]      ; 0044d7e0 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044d7e0 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0044d7e6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00 ; 0044d7e7
         ;   XREF to: 0048ce00 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(CDemonRenderer * this_ptr)

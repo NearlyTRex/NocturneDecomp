@@ -143,7 +143,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
     g_CDemonCameraInstance.base.projection_scale = local_f0;
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,150.0,0);
-    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
     iVar7 = 0;
     if (0 < this_ptr->room_count) {
       local_14 = &local_20->rotation_matrix;
@@ -152,9 +152,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
         world_position = &local_20[iVar7].position;
         core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_14,&local_7c);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,world_position);
+                  (g_CDemonRendererPtr2,world_position);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr,(CVector3i *)&local_7c,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,(CVector3i *)&local_7c,(CVector3i *)0x0);
         if (iVar7 == local_1c) {
           local_64 = -pCVar4->x;
           local_60 = -pCVar4->y;

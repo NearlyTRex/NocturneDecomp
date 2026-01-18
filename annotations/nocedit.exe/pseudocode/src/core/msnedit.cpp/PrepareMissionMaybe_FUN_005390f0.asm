@@ -1737,7 +1737,7 @@ section .text
         ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)
     ADD ESP,0x4                         ; 0053a389
     PUSH 0x1                            ; 0053a38c
-    MOV ESI,dword ptr [0x006703ec]      ; 0053a38e | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0053a38e | g_CDemonRendererPtr2
     PUSH ESI                            ; 0053a394 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0053a395
         ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)

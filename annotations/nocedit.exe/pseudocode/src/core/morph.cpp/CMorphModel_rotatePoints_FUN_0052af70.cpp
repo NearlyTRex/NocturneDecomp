@@ -52,9 +52,9 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *t
       input->z = (int)ROUND((in_stack_00000008 * fVar4 + fVar7 * fVar2) * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
-                 ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+                 ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar10),input);
-      uVar6 = *(uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +
+      uVar6 = *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
                        iVar10);
       if ((uVar6 & 0x80000000) == 0) {
         local_14 = 0;
@@ -76,6 +76,6 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *t
   core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
             (g_CDemonSetPtr,this_ptr->num_points,*(int *)(this_ptr->field2_0x58 + 4),
              *(SInputFace **)(this_ptr->field2_0x58 + 8),0x2f3dbb4,3,0);
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,local_20);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,local_20);
   return;
 }

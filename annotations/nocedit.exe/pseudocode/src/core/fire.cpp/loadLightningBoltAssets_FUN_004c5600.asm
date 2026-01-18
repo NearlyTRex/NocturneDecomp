@@ -8,7 +8,7 @@
 ;   core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0 at 004c7b0b
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic[6] g_FireEffectLightningBoltTextures
 ;   undefined4 DAT_0067ae0c
 ;   SMRGLTextureBasic g_FireEffectPopcornTexture
@@ -28,7 +28,7 @@ section .text
     LEA ESI,[EBX + 0x90]                ; 004c5607 | g_FireEffectPopcornTexture
     PUSH EBX                            ; 004c560d | g_FireEffectLightningBoltTextures | DAT_0067ae0c
         ;   Label: LAB_004c560d
-    MOV EDX,dword ptr [0x006703ec]      ; 004c560e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c560e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c5614 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004c5615
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

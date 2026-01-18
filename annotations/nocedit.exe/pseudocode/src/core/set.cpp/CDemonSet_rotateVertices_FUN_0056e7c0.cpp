@@ -21,10 +21,10 @@ core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CDemonSet::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",vertex_count,20000);
   }
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
   iVar1 = 0;
   local_14 = 0;
-  output = g_CDemonRendererPtr->vertex_buffer_ptr;
+  output = g_CDemonRendererPtr2->vertex_buffer_ptr;
   if (0 < vertex_count) {
     do {
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -38,7 +38,7 @@ core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
     } while (iVar1 < vertex_count);
   }
   if (local_14 == vertex_count) {
-    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,0);
+    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,0);
   }
   core_set_cpp_CDemonSet_FUN_0056e5d0(this_ptr);
   return;

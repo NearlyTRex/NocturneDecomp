@@ -25,7 +25,7 @@
 ;   TerminatedCString s_core_setedit_cpp_00648531
 ;   TerminatedCString s_Out_of_memory_00648545
 ;   TerminatedCString s_core_setedit_cpp_00648553
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   char* g_CurrentDebugFilename = 0067d200
@@ -233,7 +233,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x10]     ; 0057fec1
         ;   Label: LAB_0057fec1
     PUSH EAX                            ; 0057fec4
-    MOV EDX,dword ptr [0x006703ec]      ; 0057fec5 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0057fec5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 0057fecb | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0057fecc
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -241,7 +241,7 @@ section .text
     PUSH 0x0                            ; 0057fed4
     MOV ECX,dword ptr [EBP + -0x14]     ; 0057fed6
     PUSH ECX                            ; 0057fed9
-    MOV EBX,dword ptr [0x006703ec]      ; 0057feda | g_CDemonRendererPtr | g_CDemonRendererInstance
+    MOV EBX,dword ptr [0x006703ec]      ; 0057feda | g_CDemonRendererPtr2 | g_CDemonRendererInstance
     PUSH EBX                            ; 0057fee0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0057fee1
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -251,7 +251,7 @@ section .text
     CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 ; 0057feed
         ;   XREF to: 004204f0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 0057fef2
-    MOV EDI,dword ptr [0x006703ec]      ; 0057fef5 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0057fef5 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0057fefb | g_CDemonRendererInstance
     MOV EBX,EAX                         ; 0057fefc
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0057fefe

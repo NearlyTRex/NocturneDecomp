@@ -37,7 +37,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
       core_morph_cpp_CMorphModel_FUN_0052bae0((CMorphModel *)this_ptr->field4_0xc040);
     }
     if (DAT_02f43978 != 0) {
-      iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+      iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar2 == 0) {
         core_motion_cpp_CMotionController_render_FUN_0052e700
                   (&(this_ptr->base_enemy).base_character.model.motion_controller,

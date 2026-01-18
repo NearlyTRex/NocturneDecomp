@@ -37,9 +37,9 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
   float local_c;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&this_ptr->position);
+            (g_CDemonRendererPtr1,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-            (g_CDemonRendererPtr,&local_18);
+            (g_CDemonRendererPtr2,&local_18);
   local_24 = local_18 - (this_ptr->position).x;
   local_20 = local_14 - (this_ptr->position).y;
   local_1c = local_10 - (this_ptr->position).z;
@@ -62,13 +62,13 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
       iVar1 = iVar1 + 0xc;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
-                 ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+                 ((int)&(g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar2),&local_30);
       iVar2 = iVar2 + 0x30;
     } while (iVar1 != 0x2e8);
     iVar1 = 0;
     do {
-      this_ptr_00 = g_CDemonRendererPtr;
+      this_ptr_00 = g_CDemonRendererPtr1;
       local_60 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x14);
       local_5c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x10);
       local_58 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0xc);

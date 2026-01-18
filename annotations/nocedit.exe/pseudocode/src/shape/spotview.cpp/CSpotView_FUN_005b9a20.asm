@@ -31,7 +31,7 @@
 ;   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 at 0051d59c
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -50,7 +50,7 @@ section .text
     PUSH ESI                            ; 005b9a21
     SUB ESP,0x64                        ; 005b9a22
     MOV EBX,dword ptr [ESP + 0x70]      ; 005b9a25
-    MOV EDX,dword ptr [0x006703ec]      ; 005b9a29 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005b9a29 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH 0x41e00000                     ; 005b9a2f
     PUSH EDX                            ; 005b9a34 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650 ; 005b9a35
@@ -101,7 +101,7 @@ section .text
     FADD float ptr [EAX + 0x8]          ; 005b9abf
     LEA EAX,[ESP + 0x28]                ; 005b9ac2
     PUSH EAX                            ; 005b9ac6
-    MOV EBX,dword ptr [0x006703ec]      ; 005b9ac7 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 005b9ac7 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 005b9acd | g_CDemonRendererInstance
     FSTP float ptr [ESP + 0x38]         ; 005b9ace
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 005b9ad2
@@ -109,7 +109,7 @@ section .text
     ADD ESP,0x8                         ; 005b9ad7
     LEA EAX,[ESP + 0x34]                ; 005b9ada
     PUSH EAX                            ; 005b9ade
-    MOV ESI,dword ptr [0x006703ec]      ; 005b9adf | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 005b9adf | g_CDemonRendererPtr2
     PUSH ESI                            ; 005b9ae5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 005b9ae6
         ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)

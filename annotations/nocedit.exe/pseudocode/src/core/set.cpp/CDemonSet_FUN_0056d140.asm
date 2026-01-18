@@ -10,7 +10,7 @@
 ;   core_flame.cpp_FUN_004ca110 at 004ca1e8
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
@@ -40,7 +40,7 @@ section .text
     PUSH ESI                            ; 0056d157
         ;   Label: LAB_0056d157
     PUSH EBX                            ; 0056d158
-    MOV EBX,dword ptr [0x006703ec]      ; 0056d159 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0056d159 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EDX,dword ptr [ESP + 0x10]      ; 0056d15f
     PUSH EBX                            ; 0056d163 | g_CDemonRendererInstance
     MOV dword ptr [ECX*0x4 + 0x3277860],EDX ; 0056d164 | DAT_03277860

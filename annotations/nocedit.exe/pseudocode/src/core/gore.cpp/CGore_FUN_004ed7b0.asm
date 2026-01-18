@@ -13,7 +13,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056cb77
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -53,7 +53,7 @@ section .text
     POP ESI                             ; 004ed7c6
     POP EBX                             ; 004ed7c7
     RET                                 ; 004ed7c8
-    MOV ECX,dword ptr [0x006703ec]      ; 004ed7c9 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004ed7c9 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_004ed7c9
     PUSH ECX                            ; 004ed7cf | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004ed7d0

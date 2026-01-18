@@ -10,7 +10,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056fb80 at 0056fb8c
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic[16] g_WaterTextures
 ;   undefined4 DAT_00684510
 ;   SMRGLTextureBasic* g_WaterTexturesEnd = 00000000
@@ -30,7 +30,7 @@ section .text
     LEA ESI,[EBX + 0x180]               ; 005e9e47 | g_WaterTexturesEnd
     PUSH EBX                            ; 005e9e4d | g_WaterTextures | DAT_00684510
         ;   Label: LAB_005e9e4d
-    MOV EDX,dword ptr [0x006703ec]      ; 005e9e4e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e9e4e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005e9e54 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005e9e55
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

@@ -76,8 +76,8 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
       local_34 = (int)ROUND(dVar4);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)(*extraout_EAX + iVar2),input);
-      this_ptr = g_CDemonRendererPtr;
-      *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar2) = 0x80000;
+      this_ptr = g_CDemonRendererPtr2;
+      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar2) = 0x80000;
       *(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x80000;
       *(uint *)((int)&this_ptr->vertex_buffer_ptr->light + iVar2) = local_30;
       *(uint *)((int)&this_ptr->vertex_buffer_ptr->color + iVar2) = local_2c;
@@ -96,37 +96,37 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
         local_40 = 4;
         local_48 = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&SStack_64);
+                  (g_CDemonRendererPtr2,&SStack_64);
         local_40 = 5;
         local_4c = 1;
         local_48 = 3;
         local_44 = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&SStack_64);
+                  (g_CDemonRendererPtr2,&SStack_64);
         local_4c = 0;
         local_48 = 1;
         local_44 = 3;
         local_40 = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&SStack_64);
+                  (g_CDemonRendererPtr2,&SStack_64);
         local_4c = 4;
         local_48 = 5;
         local_44 = 7;
         local_40 = 6;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&SStack_64);
+                  (g_CDemonRendererPtr2,&SStack_64);
         local_4c = 2;
         local_40 = 6;
         local_48 = 3;
         local_44 = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&SStack_64);
+                  (g_CDemonRendererPtr2,&SStack_64);
         local_48 = 1;
         local_4c = 0;
         local_44 = 5;
         local_40 = 4;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,&SStack_64);
+                  (g_CDemonRendererPtr2,&SStack_64);
         return;
       }
       if ((uVar3 & 1) == 0) break;

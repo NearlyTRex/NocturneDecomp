@@ -29,7 +29,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic DAT_0067d150
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -65,19 +65,19 @@ section .text
         ;   Label: LAB_0050c073
     PUSH ESI                            ; 0050c074
     PUSH 0x1                            ; 0050c075
-    MOV ECX,dword ptr [0x006703ec]      ; 0050c077 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0050c077 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0050c07d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 0050c07e
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 0050c083
     PUSH 0xffff                         ; 0050c086
-    MOV ESI,dword ptr [0x006703ec]      ; 0050c08b | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0050c08b | g_CDemonRendererPtr2
     PUSH ESI                            ; 0050c091 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0050c092
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050c097
     PUSH 0x67d150                       ; 0050c09a | DAT_0067d150
-    MOV EDI,dword ptr [0x006703ec]      ; 0050c09f | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0050c09f | g_CDemonRendererPtr2
     PUSH EDI                            ; 0050c0a5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0050c0a6
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 0050c0da (CONDITIONAL_JUMP)  ; LAB_0050c0da
     PUSH 0x0                            ; 0050c14e
         ;   Label: LAB_0050c14e
-    MOV EDX,dword ptr [0x006703ec]      ; 0050c150 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0050c150 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0050c156 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 0050c157
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)

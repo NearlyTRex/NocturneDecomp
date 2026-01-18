@@ -15,7 +15,7 @@ shape_meshlod_cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh *this_ptr,
   int iVar3;
   char local_28 [40];
   
-  pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+  pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   if ((int)(pSVar1[vertex_index].projected_vertex.screen_x & -0x80000000) != 0) {
     return;
   }

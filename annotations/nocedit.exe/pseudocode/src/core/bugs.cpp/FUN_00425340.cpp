@@ -43,7 +43,7 @@ void core_bugs_cpp_FUN_00425340(void)
       local_18 = iVar3;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
-                 ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+                 ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                  local_1c),&local_3c);
       iVar5 = iVar5 + 4;
       local_1c = local_1c + 0x240;
@@ -52,7 +52,7 @@ void core_bugs_cpp_FUN_00425340(void)
     local_28 = local_28 + 1;
     local_2c = local_2c + 0x30;
   } while (local_28 < 0xc);
-  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr,-1);
+  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,-1);
   local_24 = 0xc;
   do {
     local_20 = local_24;
@@ -62,11 +62,11 @@ void core_bugs_cpp_FUN_00425340(void)
     do {
       local_30 = local_20 + iVar4;
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                (g_CDemonRendererPtr,local_30,iVar5);
+                (g_CDemonRendererPtr2,local_30,iVar5);
       iVar5 = iVar5 + 1;
       iVar4 = iVar4 + 1;
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                (g_CDemonRendererPtr,local_30,iVar3);
+                (g_CDemonRendererPtr2,local_30,iVar3);
       iVar3 = iVar3 + 1;
     } while (iVar4 < 0xc);
     local_24 = local_24 + 0xc;

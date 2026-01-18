@@ -34,7 +34,7 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
   fVar2 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar1);
   in_stack_0000000c[0xc].orient_matrix.m[1].y = fVar2;
   if (fVar2 != 0.0) {
-    iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar3 == 0) || (g_CGamePtr->block_auto_save != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                 ((CKeyFramedModelInstance *)(in_stack_0000000c + 1),0.0,-1);
@@ -47,9 +47,9 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
         rotation = (CVector3i *)(in_stack_0000000c[8].actor_name + 0x18);
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr,(CVector3i *)&pCVar4->y,rotation);
+                    (g_CDemonRendererPtr2,(CVector3i *)&pCVar4->y,rotation);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr,position,(CVector3i *)0x0);
+                    (g_CDemonRendererPtr2,position,(CVector3i *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     (this_ptr_00,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
@@ -72,7 +72,7 @@ int __cdecl core_vehicle_cpp_CVehicle_FUN_005e88c0(CVehicle *this_ptr)
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);
   if ((in_stack_0000000c[0xc].orient_matrix.m[1].y != 0.0) &&
-     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     CStack_28.z = 6.0;
     CStack_1c.z = 6.0;

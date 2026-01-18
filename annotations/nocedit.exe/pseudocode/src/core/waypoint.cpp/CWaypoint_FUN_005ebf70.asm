@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   float FLOAT_00657583 = 0.5
 ;   undefined4 DAT_00665460
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ActiveRenderColor
@@ -60,7 +60,7 @@ section .text
     POP ESI                             ; 005ebf96
     POP EBX                             ; 005ebf97
     RET                                 ; 005ebf98
-    MOV ECX,dword ptr [0x006703ec]      ; 005ebf99 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005ebf99 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_005ebf99
     PUSH ECX                            ; 005ebf9f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005ebfa0
@@ -121,7 +121,7 @@ section .text
     FSTP float ptr [ESP + 0x48]         ; 005ec034
     FXCH                                ; 005ec038
     FSTP float ptr [ESP + 0x4c]         ; 005ec03a
-    MOV EDX,dword ptr [0x006703ec]      ; 005ec03e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005ec03e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FSTP float ptr [ESP + 0x50]         ; 005ec044
     FLD float ptr [EAX]                 ; 005ec048
     FMUL float ptr [0x00665460]         ; 005ec04a | DAT_00665460
@@ -283,7 +283,7 @@ section .text
     LEA EBX,[ESP + 0x30]                ; 005ec207
         ;   Label: LAB_005ec207
     LEA EAX,[ESP + 0x48]                ; 005ec20b
-    MOV EDX,dword ptr [0x006703ec]      ; 005ec20f | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005ec20f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 005ec215
     FMUL float ptr [0x00665460]         ; 005ec217 | DAT_00665460
     FISTP dword ptr [EBX]               ; 005ec21d

@@ -12,7 +12,7 @@
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0 at 00456741
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02c6d590
@@ -38,7 +38,7 @@ section .text
     CMP dword ptr [EBX + 0x1f0],0x0     ; 005708f6 | DAT_02d81c8c
     JNZ 0x00570930                      ; 005708fd
         ;   XREF to: 00570930 (CONDITIONAL_JUMP)  ; LAB_00570930
-    MOV EBX,dword ptr [0x006703ec]      ; 005708ff | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 005708ff | g_CDemonRendererPtr2
     MOV EBX,dword ptr [EBX + 0x18]      ; 00570905 | DAT_02c6d590
     TEST EBX,EBX                        ; 00570908
     JZ 0x00570935                       ; 0057090a
@@ -75,7 +75,7 @@ section .text
     MOV EBX,EAX                         ; 0057093b
     PUSH EBX                            ; 0057093d
         ;   Label: LAB_0057093d
-    MOV ECX,dword ptr [0x006703ec]      ; 0057093e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0057093e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00570944 | g_CDemonRendererInstance
     INC ESI                             ; 00570945
     CALL engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 ; 00570946

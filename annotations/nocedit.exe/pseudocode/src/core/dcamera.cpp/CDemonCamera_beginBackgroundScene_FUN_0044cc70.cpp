@@ -58,9 +58,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(CDe
       } while (iVar2 < this_ptr->framebuffer_height);
     }
     engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-              (g_CDemonRendererPtr,0,0,this_ptr->framebuffer_width + -1,
+              (g_CDemonRendererPtr2,0,0,this_ptr->framebuffer_width + -1,
                this_ptr->framebuffer_height + -1);
-    this_ptr_00 = g_CDemonRendererPtr;
+    this_ptr_00 = g_CDemonRendererPtr2;
     (this_ptr->saved_viewport_rect).left = g_ViewportCenterXFixed;
     (this_ptr->saved_viewport_rect).top = g_ViewportCenterYFixed;
     (this_ptr->saved_viewport_rect).right = g_ViewportRightFixed;

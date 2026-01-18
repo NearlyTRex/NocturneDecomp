@@ -30,12 +30,12 @@ int core_platfrm_cpp_FUN_0054d720(void)
   CVector3f CStack_1c;
   float fStack_10;
   
-  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar4 != 0) && (in_stack_00000004[3].scale.z == 0)) {
     return 0;
   }
   if ((2 < *(int *)(in_stack_00000004[3].create_event + 0x40)) &&
-     (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar4 == 0)) {
     return 0;
   }
@@ -43,7 +43,7 @@ int core_platfrm_cpp_FUN_0054d720(void)
         (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0)) &&
        (fVar1 = in_stack_00000004[2].location.position.y, fVar1 != 4.2039e-45)) &&
       ((fVar1 != 5.60519e-45 && (in_stack_00000004[5].was_created != 0)))) &&
-     (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar4 == 0)) {
     return 0;
   }
@@ -53,7 +53,7 @@ int core_platfrm_cpp_FUN_0054d720(void)
   iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar5);
   if (iVar4 != 0) {
     if (in_stack_00000004[3].field17_0x104 != 0) {
-      iVar6 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+      iVar6 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar6 != 0) {
         pCVar5 = (*in_stack_00000004->vtable->getBoundingBox)
                            (in_stack_00000004,(CBoundingBox3D *)&fStack_64);
@@ -69,7 +69,7 @@ int core_platfrm_cpp_FUN_0054d720(void)
 LAB_0054d802:
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
   if (((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-      (iVar6 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+      (iVar6 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar6 == 0)) &&
      ((pCVar2 = *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c),
       in_stack_00000004 == pCVar2 && (*(char *)&pCVar2[2].orient_matrix.m[0].y == '\0')))) {

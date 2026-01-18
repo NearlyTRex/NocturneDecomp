@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
@@ -38,7 +38,7 @@ section .text
     SUB ESP,0x18                        ; 004c1872
     MOV EBX,dword ptr [ESP + 0x24]      ; 004c1875
     PUSH EBX                            ; 004c1879
-    MOV EDX,dword ptr [0x006703ec]      ; 004c187a | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c187a | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c1880 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c1881
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -46,7 +46,7 @@ section .text
     PUSH 0x0                            ; 004c1889
     LEA EAX,[EBX + 0x38]                ; 004c188b
     PUSH EAX                            ; 004c188e
-    MOV ECX,dword ptr [0x006703ec]      ; 004c188f | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004c188f | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c1895 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0 ; 004c1896
         ;   XREF to: 0048c4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -78,7 +78,7 @@ section .text
     TEST EAX,EAX                        ; 004c18e5
     JNZ 0x004c18fe                      ; 004c18e7
         ;   XREF to: 004c18fe (CONDITIONAL_JUMP)  ; LAB_004c18fe
-    MOV EBP,dword ptr [0x006703ec]      ; 004c18e9 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 004c18e9 | g_CDemonRendererPtr2
         ;   Label: LAB_004c18e9
     PUSH EBP                            ; 004c18ef | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c18f0

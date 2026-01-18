@@ -93,7 +93,7 @@ void core_werewolf_cpp_FUN_005f1230(void)
   local_4c.y = (int)ROUND(local_54 * _DAT_00665740);
   local_4c.z = (int)ROUND(local_50 * _DAT_00665740);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_4c);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_4c);
   local_a0 = -0x3E4CCCCD;
   local_20 = 0x3E4CCCCD;
   local_98 = 0;
@@ -115,7 +115,7 @@ void core_werewolf_cpp_FUN_005f1230(void)
   local_7c.z = (int)ROUND(local_50 * _DAT_00665740);
   local_1c = local_a0;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_7c);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_7c);
   local_b4 = -0x3E4CCCCD;
   local_b8 = -0x3E4CCCCD;
   local_b0 = 0;
@@ -137,7 +137,7 @@ void core_werewolf_cpp_FUN_005f1230(void)
   local_1c = local_b8;
   local_18 = local_b4;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_34);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_34);
   local_d8 = -0x3E4CCCCD;
   local_14 = 0x3E4CCCCD;
   local_dc = 0x3E4CCCCD;
@@ -159,9 +159,9 @@ void core_werewolf_cpp_FUN_005f1230(void)
   local_c4.z = (int)ROUND(local_50 * _DAT_00665740);
   local_18 = local_d8;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_c4);
-  this_ptr = g_CDemonRendererPtr;
-  g_CDemonRendererPtr->vertex_buffer_ptr->light = 9.18341e-41;
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c4);
+  this_ptr = g_CDemonRendererPtr2;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->light = 9.18341e-41;
   this_ptr->vertex_buffer_ptr->color = 0;
   this_ptr->vertex_buffer_ptr->fog = 0.0;
   this_ptr->vertex_buffer_ptr[1].light = 9.18341e-41;
@@ -195,9 +195,9 @@ void core_werewolf_cpp_FUN_005f1230(void)
   local_100 = 1;
   local_fc = 2;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_0068495c);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr,&SStack_11c);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
+            (g_CDemonRendererPtr2,&SStack_11c);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   return;
 }

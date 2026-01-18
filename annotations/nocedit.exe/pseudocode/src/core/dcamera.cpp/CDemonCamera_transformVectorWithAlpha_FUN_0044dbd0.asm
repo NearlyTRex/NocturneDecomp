@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix[0][1]
@@ -88,7 +88,7 @@ section .text
     ADD EAX,EBX                         ; 0044dc52
     ADC EDX,ECX                         ; 0044dc54
     SHRD EAX,EDX,0x10                   ; 0044dc56
-    MOV EDX,dword ptr [0x006703ec]      ; 0044dc5a | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044dc5a | g_CDemonRendererPtr2
     PUSH EDX                            ; 0044dc60 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0xc],EAX       ; 0044dc61
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00 ; 0044dc65

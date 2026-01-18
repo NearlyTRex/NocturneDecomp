@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
@@ -39,7 +39,7 @@ section .text
     MOV EDX,0x4                         ; 00476a67
     PUSH 0x1                            ; 00476a6c
     MOV ESI,0x2                         ; 00476a6e
-    MOV EBP,dword ptr [0x006703ec]      ; 00476a73 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 00476a73 | g_CDemonRendererPtr2
     XOR ECX,ECX                         ; 00476a79
     XOR EBX,EBX                         ; 00476a7b
     MOV dword ptr [ESP + 0x8],EDX       ; 00476a7d
@@ -71,7 +71,7 @@ section .text
         ;   Label: LAB_00476aca
     PUSH 0x0                            ; 00476acf
         ;   Label: LAB_00476acf
-    MOV EAX,[0x006703ec]                ; 00476ad1 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00476ad1 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 00476ad6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 00476ad7
         ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)

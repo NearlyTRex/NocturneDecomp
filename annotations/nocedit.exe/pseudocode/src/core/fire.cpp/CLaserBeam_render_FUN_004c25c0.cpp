@@ -137,7 +137,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   
   bVar10 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,&g_FireEffectLaserTexture);
+            (g_CDemonRendererPtr2,&g_FireEffectLaserTexture);
   local_1a4.x = *(float *)(this_ptr->field0_0x0 + 0xc) - *(float *)this_ptr->field0_0x0;
   local_1a4.y = *(float *)(this_ptr->field0_0x0 + 0x10) - *(float *)(this_ptr->field0_0x0 + 4);
   local_1a4.z = *(float *)(this_ptr->field0_0x0 + 0x14) - *(float *)(this_ptr->field0_0x0 + 8);
@@ -148,7 +148,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   local_2f4 = *(float *)(this_ptr->field0_0x0 + 0x1c);
   local_2e8 = 0.0;
   pfVar5 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-                     (g_CDemonRendererPtr,local_f0);
+                     (g_CDemonRendererPtr2,local_f0);
   local_144 = *pfVar5 - *(float *)this_ptr->field0_0x0;
   local_140 = pfVar5[1] - *(float *)(this_ptr->field0_0x0 + 4);
   local_13c = pfVar5[2] - *(float *)(this_ptr->field0_0x0 + 8);
@@ -169,7 +169,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   if (0.0 < fVar1) {
     if (*(float *)(this_ptr->field0_0x0 + 0x3c) <= 0.0) {
       engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-                (g_CDemonRendererPtr,&local_1d4.x);
+                (g_CDemonRendererPtr2,&local_1d4.x);
       local_1d4.x = local_1d4.x - *(float *)this_ptr->field0_0x0;
       local_1d4.y = local_1d4.y - *(float *)(this_ptr->field0_0x0 + 4);
       local_1d4.z = local_1d4.z - *(float *)(this_ptr->field0_0x0 + 8);
@@ -201,14 +201,14 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_44 = (float)fVar11;
     }
   }
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   if ((0.0 < local_2e8) && (g_CGamePtr->halo_mode != 0)) {
     fVar1 = *(float *)(this_ptr->field0_0x0 + 0x18);
     fVar3 = 1.0 - local_2e8 * (float)2;
     local_2e0.base.type = (int)((float)local_2e0.base.type * fVar3);
     local_2f4 = fVar3 * local_2f4;
     iVar7 = 0;
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     do {
       local_2e0.base.count = (int)((float)iVar7 * 0.04f * fVar2);
       local_28 = local_44;
@@ -232,13 +232,13 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       }
       local_1c = iVar7;
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr,&local_168);
+                (g_CDemonRendererPtr2,&local_168);
       engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                (g_CDemonRendererPtr,(float *)&local_1f8);
+                (g_CDemonRendererPtr2,(float *)&local_1f8);
       local_1f8.z = (int)((float)iVar7 + (float)local_1f8.z);
       local_1c = iVar7;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,&local_1f8,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,&local_1f8,(CVector3i *)0x0);
       local_e4 = local_28;
       local_e0 = local_28;
       local_dc = 0.0;
@@ -246,27 +246,27 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_180.y = (int)ROUND(local_28 * 256.0f);
       local_180.z = (int)ROUND(256.0f * 0.0);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_180);
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_180);
       local_e4 = -local_e4;
       local_c0.x = (int)ROUND(local_e4 * 256.0f);
       local_c0.y = (int)ROUND(local_e0 * 256.0f);
       local_c0.z = (int)ROUND(local_dc * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_c0);
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_c0);
       local_e0 = -local_e0;
       local_1bc.x = (int)ROUND(local_e4 * 256.0f);
       local_1bc.y = (int)ROUND(local_e0 * 256.0f);
       local_1bc.z = (int)ROUND(local_dc * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_1bc);
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1bc);
       local_e4 = -local_e4;
       local_174.x = (int)ROUND(local_e4 * 256.0f);
       local_174.y = (int)ROUND(local_e0 * 256.0f);
       local_174.z = (int)ROUND(local_dc * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_174);
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_174);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr,&g_FireEffectHeadliteTexture);
+                (g_CDemonRendererPtr2,&g_FireEffectHeadliteTexture);
       local_24c.surface_normal.A = 4;
       local_234 = 0;
       local_24c.surface_normal.D = 0;
@@ -306,15 +306,15 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       iVar7 = iVar7 + 1;
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     } while (iVar7 < 0x19);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }
   if (0.0 < (float)local_2e0.base.type) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,&g_FireEffectBeamFuzzTexture);
+              (g_CDemonRendererPtr2,&g_FireEffectBeamFuzzTexture);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,(CVector3f *)this_ptr);
+              (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr,(CVector3i *)&local_9c,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,(CVector3i *)&local_9c,(CVector3i *)0x0);
     fVar1 = *(float *)(this_ptr->field0_0x0 + 0x3c);
     local_54 = *(float *)(this_ptr->field0_0x0 + 0x38);
     local_24 = 1.12104e-44;
@@ -333,15 +333,15 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_48 = (fVar2 * 16777220.0f) / 30.0f;
       local_30 = 0x100;
       do {
-        pCVar4 = g_CDemonRendererPtr;
+        pCVar4 = g_CDemonRendererPtr2;
         local_1c = local_20;
         local_18 = local_24;
         fVar11 = ((float10)local_20 / (float10)(int)local_24) * (float10)2 *
                  (float10)3.1415926535000001;
         fVar12 = (float10)fsin(fVar11);
         fVar11 = (float10)fcos(fVar11);
-        pSVar8 = g_CDemonRendererPtr->vertex_buffer_ptr;
-        pSVar9 = g_CDemonRendererPtr->vertex_buffer_ptr + 3;
+        pSVar8 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+        pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr + 3;
         for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
           (pSVar9->projected_vertex).transformed_x = (pSVar8->projected_vertex).transformed_x;
           pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);
@@ -372,10 +372,10 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
         local_108.y = (int)ROUND(local_c8 * 256.0f);
         local_108.z = (int)ROUND(local_c4 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_108);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_108);
         if (local_20 != 0) {
           dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_48);
-          pCVar4 = g_CDemonRendererPtr;
+          pCVar4 = g_CDemonRendererPtr2;
           local_2c8 = 0;
           local_2e0.surface_normal.D = 0;
           local_2e0.surface_normal.C = 0;
@@ -399,7 +399,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
             local_298 = 0x800000;
             local_2c0 = 0x800000;
           }
-          g_CDemonRendererPtr->vertex_buffer_ptr->light = *(float *)(this_ptr->field0_0x0 + 0x2c);
+          g_CDemonRendererPtr2->vertex_buffer_ptr->light = *(float *)(this_ptr->field0_0x0 + 0x2c);
           pCVar4->vertex_buffer_ptr->color = *(int *)(this_ptr->field0_0x0 + 0x30);
           pCVar4->vertex_buffer_ptr->fog = *(float *)(this_ptr->field0_0x0 + 0x34);
           pCVar4->vertex_buffer_ptr[1].light = *(float *)(this_ptr->field0_0x0 + 0x2c);
@@ -417,16 +417,16 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar4,1);
           fVar1 = local_44;
           dVar13 = crt_math_c_round_FUN_005fe6b0((double)((float)32767.5 * 448.0));
-          pCVar4 = g_CDemonRendererPtr;
+          pCVar4 = g_CDemonRendererPtr2;
           local_34 = (float)(int)ROUND(dVar13);
           if (fVar1 == 0.0) {
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-                      (g_CDemonRendererPtr,(int)local_34);
+                      (g_CDemonRendererPtr2,(int)local_34);
             engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-                      (g_CDemonRendererPtr,&local_2e0);
+                      (g_CDemonRendererPtr2,&local_2e0);
           }
           else {
-            g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = local_34;
+            g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = local_34;
             pCVar4->vertex_buffer_ptr[1].w_recip = 0.0;
             pCVar4->vertex_buffer_ptr[2].w_recip = 0.0;
             pCVar4->vertex_buffer_ptr[3].w_recip = local_34;
@@ -459,11 +459,11 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_9c.z = pCVar6->z;
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,&local_12c);
+              (g_CDemonRendererPtr2,&local_12c);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr,(CVector3i *)&local_9c,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,(CVector3i *)&local_9c,(CVector3i *)0x0);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,&g_FireEffectReticle);
+              (g_CDemonRendererPtr2,&g_FireEffectReticle);
     local_b4 = 0.2;
     local_ac = 0.0;
     local_b0 = 0.2;
@@ -471,26 +471,26 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     local_198.y = (int)ROUND(256.0f * 0.2);
     local_198.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_198);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_198);
     local_b4 = -local_b4;
     local_d8.x = (int)ROUND(local_b4 * 256.0f);
     local_d8.y = (int)ROUND(local_b0 * 256.0f);
     local_d8.z = (int)ROUND(local_ac * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_d8);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_d8);
     local_b0 = -local_b0;
     local_1ec.x = (int)ROUND(local_b4 * 256.0f);
     local_1ec.y = (int)ROUND(local_b0 * 256.0f);
     local_1ec.z = (int)ROUND(local_ac * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_1ec);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1ec);
     local_b4 = -local_b4;
     local_1c8.x = (int)ROUND(local_b4 * 256.0f);
     local_1c8.y = (int)ROUND(local_b0 * 256.0f);
     local_1c8.z = (int)ROUND(local_ac * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_1c8);
-    pCVar4 = g_CDemonRendererPtr;
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_1c8);
+    pCVar4 = g_CDemonRendererPtr2;
     local_294.surface_normal.A = 4;
     local_27c = 0;
     local_294.surface_normal.D = 0;
@@ -508,7 +508,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     local_24c.base.type = 0xf80000;
     local_26c = 1;
     local_260 = 2;
-    g_CDemonRendererPtr->vertex_buffer_ptr->light = *(float *)(this_ptr->field0_0x0 + 0x2c);
+    g_CDemonRendererPtr2->vertex_buffer_ptr->light = *(float *)(this_ptr->field0_0x0 + 0x2c);
     pCVar4->vertex_buffer_ptr->color = *(int *)(this_ptr->field0_0x0 + 0x30);
     pCVar4->vertex_buffer_ptr->fog = *(float *)(this_ptr->field0_0x0 + 0x34);
     pCVar4->vertex_buffer_ptr[1].light = *(float *)(this_ptr->field0_0x0 + 0x2c);
@@ -524,12 +524,12 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(32768.0,40959.0);
     dVar13 = crt_math_c_round_FUN_005fe6b0((double)(local_18 * local_2f4));
     local_20 = (int)ROUND(dVar13);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,local_20);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_20);
     engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-              (g_CDemonRendererPtr,&local_294);
+              (g_CDemonRendererPtr2,&local_294);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   }
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   return;
 }

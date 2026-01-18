@@ -47,8 +47,8 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
         iVar5 = iVar5 + 1;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   ((SProjectedVertex *)
-                   ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
-                   local_1c),&local_4c);
+                   ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
+                   + local_1c),&local_4c);
         output_vector = output_vector + 4;
       } while (iVar5 < pCVar2->bone_count);
     }
@@ -60,7 +60,7 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
       do {
         iVar4 = local_18->bone_list[0].parent_index;
         if (-1 < iVar4) {
-          pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+          pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar6 = pSVar1 + iVar4;
           piVar8 = aiStack_7c;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -90,7 +90,7 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
                 ((CVector3f *)bone_matrices,(CMatrix3x4f *)(local_40.m + 1));
       uStack_5c = 0x59b7ae;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,(CVector3i *)&local_40,(CVector3i *)(local_40.m + 1));
+                (g_CDemonRendererPtr2,(CVector3i *)&local_40,(CVector3i *)(local_40.m + 1));
       uStack_5c = 0x59b7c6;
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,0.5,0xff);
       iVar5 = iVar5 + 1;

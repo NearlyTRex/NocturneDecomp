@@ -28,7 +28,7 @@ core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
   int local_10;
   
   bVar6 = 0;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar4 == 0) {
     local_24 = output_ptr->x - (this_ptr->camera_origin).x;
     local_20 = output_ptr->y - (this_ptr->camera_origin).y;

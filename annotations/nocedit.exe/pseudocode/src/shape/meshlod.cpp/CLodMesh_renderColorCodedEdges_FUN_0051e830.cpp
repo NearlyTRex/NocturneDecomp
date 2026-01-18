@@ -40,7 +40,7 @@ shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
             do {
               iVar2 = piVar4[10];
               pCVar1 = this_ptr->tri_data;
-              pSVar6 = g_CDemonRendererPtr->vertex_buffer_ptr;
+              pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr;
               uStack_28 = 0x51e8ca;
               iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
                                 (pSVar6 + pCVar1[iVar2].vertex_idx_0,
@@ -75,7 +75,7 @@ shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
         else {
           g_ActiveRenderColor = 0xf9;
         }
-        pSVar6 = g_CDemonRendererPtr->vertex_buffer_ptr;
+        pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         pSVar5 = pSVar6 + piVar7[1];
         piVar4 = aiStack_48;
         for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

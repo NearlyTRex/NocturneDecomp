@@ -12,7 +12,7 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b453
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
 ;   int g_BackgroundSceneDepth
@@ -55,7 +55,7 @@ section .text
     POP ESI                             ; 0044ce09
     POP EBX                             ; 0044ce0a
     RET                                 ; 0044ce0b
-    MOV EBX,dword ptr [0x006703ec]      ; 0044ce0c | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0044ce0c | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0044ce0c
     PUSH EBX                            ; 0044ce12 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0044ce13

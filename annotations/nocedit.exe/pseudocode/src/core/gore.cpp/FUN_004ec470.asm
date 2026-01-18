@@ -8,7 +8,7 @@
 ;   core_gore.cpp_FUN_004ed830 at 004ed85a
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   undefined4 g_RenderVertexBuffer[1].u
@@ -55,7 +55,7 @@ section .text
     MOV [0x0068805c],EAX                ; 004ec4c2 | g_RenderVertexBuffer[1].u
     MOV [0x00688060],EAX                ; 004ec4c7 | g_RenderVertexBuffer[1].v
     MOV [0x0068808c],EAX                ; 004ec4cc | g_RenderVertexBuffer[2].u
-    MOV EAX,[0x006703ec]                ; 004ec4d1 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004ec4d1 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [0x00688090],EBP      ; 004ec4d6 | g_RenderVertexBuffer[2].v
     PUSH EAX                            ; 004ec4dc | g_CDemonRendererInstance
     MOV dword ptr [0x006880bc],EBP      ; 004ec4dd | g_RenderVertexBuffer[3].u

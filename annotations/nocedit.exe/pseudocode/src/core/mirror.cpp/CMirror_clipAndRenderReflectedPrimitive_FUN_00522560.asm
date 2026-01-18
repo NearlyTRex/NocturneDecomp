@@ -11,7 +11,7 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0 at 0057091d
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00522578
     ADD EAX,0xe8                        ; 0052257c
     PUSH EAX                            ; 00522581
-    MOV EBX,dword ptr [0x006703ec]      ; 00522582 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00522582 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00522588 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 ; 00522589
         ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)

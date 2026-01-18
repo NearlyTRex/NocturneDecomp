@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0065ac10
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02f43978
 ;
@@ -103,7 +103,7 @@ section .text
         ;   Label: LAB_00418a66
     JZ 0x00418a9f                       ; 00418a6d
         ;   XREF to: 00418a9f (CONDITIONAL_JUMP)  ; LAB_00418a9f
-    MOV EBP,dword ptr [0x006703ec]      ; 00418a6f | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 00418a6f | g_CDemonRendererPtr2
     PUSH EBP                            ; 00418a75 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00418a76
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)

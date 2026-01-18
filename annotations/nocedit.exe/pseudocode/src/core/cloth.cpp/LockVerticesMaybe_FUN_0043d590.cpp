@@ -98,7 +98,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
     shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector);
     local_18 = 0;
     if (0 < *(int *)(in_stack_00000004 + 0x104)) {
       iVar7 = 0;
@@ -106,14 +106,15 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
       do {
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   ((SProjectedVertex *)
-                   ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
-                   iVar9),(CVector3i *)(*(int *)(in_stack_00000004 + 0x10c) + iVar7));
+                   ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
+                   + iVar9),(CVector3i *)(*(int *)(in_stack_00000004 + 0x10c) + iVar7));
         iVar7 = iVar7 + 0xc;
         iVar9 = iVar9 + 0x30;
         local_18 = local_18 + 1;
       } while (local_18 < *(int *)(in_stack_00000004 + 0x104));
     }
-    engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr,0xff);
+    engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,0xff)
+    ;
     local_14 = 0;
     if (0 < *(int *)(in_stack_00000004 + 0x110)) {
       local_1c = 0;
@@ -125,7 +126,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
           do {
             iVar7 = iVar7 + 1;
             engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                      (g_CDemonRendererPtr,*(int *)(iVar9 + 0x18),
+                      (g_CDemonRendererPtr2,*(int *)(iVar9 + 0x18),
                        *(int *)((iVar7 % *(int *)(iVar8 + 4)) * 0xc + 0x18 + iVar8));
             iVar9 = iVar9 + 0xc;
           } while (iVar7 < *(int *)(iVar8 + 4));
@@ -165,7 +166,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
         else {
           g_ActiveRenderColor = 1;
         }
-        pSVar2 = g_CDemonRendererPtr->vertex_buffer_ptr;
+        pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar8 + 3) & 0x80) == 0) {
           iVar6 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar8) >> 0x10;
           iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar8) >> 0x10;
@@ -192,7 +193,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
       iVar9 = 0;
       do {
         iVar8 = *(int *)(iVar9 + *(int *)(in_stack_00000004 + 0x3fe3c));
-        pSVar2 = g_CDemonRendererPtr->vertex_buffer_ptr;
+        pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         if ((int)(pSVar2[iVar8].projected_vertex.screen_x & -0x80000000) == 0) {
           iVar5 = pSVar2[iVar8].projected_vertex.screen_x;
           local_40 = pSVar2[iVar8].projected_vertex.screen_y >> 0x10;

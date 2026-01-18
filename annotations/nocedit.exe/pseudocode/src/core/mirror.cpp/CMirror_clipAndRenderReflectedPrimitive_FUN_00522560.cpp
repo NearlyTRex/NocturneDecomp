@@ -18,6 +18,6 @@ core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560
     return;
   }
   engine_drender_cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820
-            (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)this_ptr->additional_data);
+            (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)this_ptr->additional_data);
   return;
 }

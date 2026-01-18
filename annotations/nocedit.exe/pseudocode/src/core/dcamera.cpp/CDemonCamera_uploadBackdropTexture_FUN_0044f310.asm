@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   SMRGLTextureBasic g_CameraBackdropTexture
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SRGBColorPalette g_CameraImagePaletteData
 ;   undefined4 DAT_00c196fc
 ;   undefined4 DAT_00c196fd
@@ -66,7 +66,7 @@ section .text
     JNZ 0x0044f318                      ; 0044f36e
         ;   XREF to: 0044f318 (CONDITIONAL_JUMP)  ; LAB_0044f318
     PUSH 0x66ed50                       ; 0044f370 | g_CameraBackdropTexture
-    MOV EDX,dword ptr [0x006703ec]      ; 0044f375 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044f375 | g_CDemonRendererPtr2
     PUSH EDX                            ; 0044f37b | g_CDemonRendererInstance
     MOV ESI,0x1566fa8                   ; 0044f37c | g_CameraTextureWorkBuffer
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0044f381
@@ -95,7 +95,7 @@ section .text
     POP EDI                             ; 0044f3c0
     PUSH 0xc196f8                       ; 0044f3c1 | g_CameraImagePaletteData
     PUSH 0x66ed50                       ; 0044f3c6 | g_CameraBackdropTexture
-    MOV ECX,dword ptr [0x006703ec]      ; 0044f3cb | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0044f3cb | g_CDemonRendererPtr2
     PUSH ECX                            ; 0044f3d1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30 ; 0044f3d2
         ;   XREF to: 0048dc30 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)

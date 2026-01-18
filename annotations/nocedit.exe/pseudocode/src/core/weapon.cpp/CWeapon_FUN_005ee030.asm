@@ -10,7 +10,7 @@
 ;   core_baron.cpp_FUN_CBaronWeapon_00413de0 at 00413de5
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -59,7 +59,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 005ee075
         ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005ee07a
-    MOV EDX,dword ptr [0x006703ec]      ; 005ee07d | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005ee07d | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005ee083 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x574],0x0     ; 005ee084
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005ee08e

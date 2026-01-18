@@ -21,7 +21,7 @@
 ;   double DOUBLE_00617132 = 65535
 ;   undefined4 DAT_0065b830
 ;   SMRGLTextureBasic DAT_0066e784
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00823c54
 ;   undefined4 DAT_00823c58
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -57,7 +57,7 @@ section .text
     RET                                 ; 0042ad1e
     PUSH 0x66e784                       ; 0042ad1f | DAT_0066e784
         ;   Label: LAB_0042ad1f
-    MOV ECX,dword ptr [0x006703ec]      ; 0042ad24 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0042ad24 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0042ad2a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0042ad2b
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -237,7 +237,7 @@ section .text
         ;   Label: LAB_0042af00
     MOV ECX,dword ptr [ESP + 0x18]      ; 0042af03
     MOV EBX,dword ptr [ESP + 0x14]      ; 0042af07
-    MOV EAX,[0x006703ec]                ; 0042af0b | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0042af0b | g_CDemonRendererInstance | g_CDemonRendererPtr2
     CALL crt_math.c_round_FUN_005fe6b0  ; 0042af10
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     INC EDI                             ; 0042af15

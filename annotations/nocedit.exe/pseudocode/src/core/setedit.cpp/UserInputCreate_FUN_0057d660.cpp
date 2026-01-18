@@ -204,7 +204,7 @@ LAB_0057d6df:
       g_CDemonCameraInstance.base.projection_scale = *(float *)((int)PTR_DAT_00681ab8 + 0x18);
       core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,0);
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr,&g_ZeroVector);
+                (g_CDemonRendererPtr2,&g_ZeroVector);
       if (iStack_48 == 0) {
         g_CDemonRaytraceInstance.rendering_mode = 1;
       }

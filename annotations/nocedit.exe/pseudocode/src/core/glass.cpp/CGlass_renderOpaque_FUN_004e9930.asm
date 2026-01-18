@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065eed0 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   float g_PerspectiveReciprocal
@@ -57,7 +57,7 @@ section .text
     POP EDI                             ; 004e9968
     POP ESI                             ; 004e9969
     RET                                 ; 004e996a
-    MOV EDI,dword ptr [0x006703ec]      ; 004e996b | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 004e996b | g_CDemonRendererPtr2
         ;   Label: LAB_004e996b
     PUSH EDI                            ; 004e9971 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004e9972
@@ -84,7 +84,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 004e99a3
     LEA EAX,[EBP + 0x164]               ; 004e99a7
     PUSH EAX                            ; 004e99ad
-    MOV EAX,[0x006703ec]                ; 004e99ae | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004e99ae | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 004e99b3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004e99b4
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -133,7 +133,7 @@ section .text
     IMUL EDX                            ; 004e9a3a
     SHRD EAX,EDX,0x10                   ; 004e9a3c
     PUSH EAX                            ; 004e9a40
-    MOV ESI,dword ptr [0x006703ec]      ; 004e9a41 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004e9a41 | g_CDemonRendererPtr2
     PUSH ESI                            ; 004e9a47 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004e9a48
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
@@ -158,7 +158,7 @@ section .text
     JLE 0x004e9ad0                      ; 004e9a83
         ;   XREF to: 004e9ad0 (CONDITIONAL_JUMP)  ; LAB_004e9ad0
     MOV EBX,EBP                         ; 004e9a85
-    MOV EAX,[0x006703ec]                ; 004e9a87 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004e9a87 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_004e9a87
     MOV dword ptr [EBX + 0x6b4],0x0     ; 004e9a8c
     PUSH EDI                            ; 004e9a96

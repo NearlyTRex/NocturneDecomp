@@ -11,7 +11,7 @@
 ;   core_manpuz.cpp_FUN_005090d0 at 00509184
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02f33744
@@ -60,7 +60,7 @@ section .text
     PUSH EAX                            ; 0050a232
     LEA EAX,[EBX + 0x28]                ; 0050a233
     PUSH EAX                            ; 0050a236
-    MOV ECX,dword ptr [0x006703ec]      ; 0050a237 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0050a237 | g_CDemonRendererPtr2
     PUSH ECX                            ; 0050a23d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0050a23e
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -82,7 +82,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 0050a26e
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0050a273
-    MOV EBX,dword ptr [0x006703ec]      ; 0050a276 | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0050a276 | g_CDemonRendererPtr2
     PUSH EBX                            ; 0050a27c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0050a27d
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()

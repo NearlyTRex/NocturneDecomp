@@ -108,7 +108,7 @@
 ;   double DOUBLE_00622bda = 0.00390625
 ;   float FLOAT_00622be2 = 256
 ;   double DOUBLE_00622bea = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr1 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_CubesTestedCount
 ;   int g_CubesWithVoxelsCount
@@ -156,7 +156,7 @@ section .text
     MOV dword ptr [0x02ca039c],ESI      ; 00497e83 | g_CubesVisibleCount
     MOV dword ptr [0x02ca03a0],ESI      ; 00497e89 | g_CubesRenderedCount
     MOV dword ptr [0x02ca03a4],ESI      ; 00497e8f | g_PVSDrawnCubeCount
-    MOV ESI,dword ptr [0x006703e8]      ; 00497e95 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703e8]      ; 00497e95 | g_CDemonRendererPtr1
     PUSH ESI                            ; 00497e9b | g_CDemonRendererInstance
     LEA ESI,[ESP + 0x64]                ; 00497e9c
     LEA EDI,[ESP + 0x7c]                ; 00497ea0
@@ -559,7 +559,7 @@ section .text
     MOV dword ptr [EBX + 0x68],EAX      ; 004983cb
     PUSH 0x2cee5b0                      ; 004983ce | g_DebugCubeBasePoint
         ;   Label: LAB_004983ce
-    MOV EDI,dword ptr [0x006703e8]      ; 004983d3 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703e8]      ; 004983d3 | g_CDemonRendererPtr1
     XOR ESI,ESI                         ; 004983d9
     PUSH EDI                            ; 004983db | g_CDemonRendererInstance
     MOV dword ptr [0x030e56b8],ESI      ; 004983dc | g_RenderedTriangleCount
@@ -569,7 +569,7 @@ section .text
     PUSH 0xff                           ; 004983ea
     PUSH 0xff                           ; 004983ef
     PUSH 0xff                           ; 004983f4
-    MOV EAX,[0x006703e8]                ; 004983f9 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703e8]                ; 004983f9 | g_CDemonRendererInstance | g_CDemonRendererPtr1
     PUSH EAX                            ; 004983fe | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970 ; 004983ff
         ;   XREF to: 0048c970 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)

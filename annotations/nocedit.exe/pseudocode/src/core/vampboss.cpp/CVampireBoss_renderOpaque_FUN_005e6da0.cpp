@@ -47,7 +47,7 @@ LAB_005e6e2e:
   }
   core_charactr_cpp_CCharacter_FUN_0042a420((CCharacter *)this_ptr);
   if (DAT_02f43978 != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_motion_cpp_CMotionController_render_FUN_0052e700
                 (&(this_ptr->base_enemy).base_character.model.motion_controller,

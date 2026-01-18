@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -16,7 +16,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x006703ec]      ; 0041d180 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0041d180 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: core_boneguy.cpp_FUN_0041d180
     PUSH EDX                            ; 0041d186 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0041d187

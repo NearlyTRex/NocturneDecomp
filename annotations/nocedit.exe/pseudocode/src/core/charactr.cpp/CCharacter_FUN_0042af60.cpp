@@ -17,8 +17,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   double dVar4;
   CBoundingBox3D *bounding_box;
   
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xc000);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xc000);
   if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
     dVar4 = crt_math_c_round_FUN_005fe6b0
                       ((double)((float)INT_00823a90 + g_CGamePtr->delta_time_float * 8388608.0f)
@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   }
   iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
   INT_00823a94 = iVar2 % 6;
-  g_CDemonRendererPtr->field8_0x20 = 1;
+  g_CDemonRendererPtr2->field8_0x20 = 1;
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0066e6b0 + iVar2 % 6);
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
@@ -42,17 +42,17 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(this_ptr_00);
   iVar2 = 0;
   do {
-    pCVar1 = g_CDemonRendererPtr;
-    *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar2) = 0xb332;
+    pCVar1 = g_CDemonRendererPtr2;
+    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar2) = 0xb332;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar2) = 0xb332;
     iVar3 = iVar2 + 0x30;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0xffff;
     iVar2 = iVar3;
   } while (iVar3 != 96000);
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(&this_ptr->model);
-  g_CDemonRendererPtr->field8_0x20 = 0;
+  g_CDemonRendererPtr2->field8_0x20 = 0;
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
             (&this_ptr->model,(SBoneTransformData *)&stack0xffffe550);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   return;
 }

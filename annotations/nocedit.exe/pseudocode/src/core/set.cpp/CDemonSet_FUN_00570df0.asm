@@ -12,7 +12,7 @@
 ;   core_dlight.cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60 at 00476b4a
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02c6d590
 ;
@@ -26,7 +26,7 @@ section .text
 
     MOV ECX,dword ptr [ESP + 0x8]       ; 00570df0
         ;   Label: core_set.cpp_CDemonSet_FUN_00570df0
-    MOV EAX,[0x006703ec]                ; 00570df4 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00570df4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EDX,dword ptr [EAX + 0x18]      ; 00570df9 | DAT_02c6d590
     TEST EDX,EDX                        ; 00570dfc
     JZ 0x00570e15                       ; 00570dfe

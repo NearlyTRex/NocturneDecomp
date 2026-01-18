@@ -45,7 +45,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
       _DAT_03f8f62c = 0xffff;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,g_WaterTextures + g_WaterCurrentFrame);
+              (g_CDemonRendererPtr2,g_WaterTextures + g_WaterCurrentFrame);
     g_PerspectiveReciprocal = 0.0;
     g_WaterAnimationPhase =
          g_CGamePtr->delta_time_float * (float)3.1415926535000001 * (float)0.5 *
@@ -61,7 +61,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_6c.z = (float)iVar2 * this_ptr->tile_size + _DAT_03f875f8;
         local_14 = iVar2;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,&local_6c);
+                  (g_CDemonRendererPtr2,&local_6c);
         local_30 = local_6c.x;
         local_2c = local_6c.y;
         local_28 = local_6c.z;
@@ -79,7 +79,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_60.y = (int)ROUND(local_6c.y * 256.0f);
         local_60.z = (int)ROUND(256.0f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_60);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_60);
         core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
         local_6c.x = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
@@ -93,7 +93,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_54.y = (int)ROUND(local_6c.y * 256.0f);
         local_54.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_54);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_54);
         core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
         local_6c.z = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
@@ -108,7 +108,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_48.y = (int)ROUND(local_6c.y * 256.0f);
         local_48.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_48);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_48);
         core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
         local_6c.x = 0.0;
         if (this_ptr->wave_animation_enabled != 0) {
@@ -122,30 +122,31 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_3c.y = (int)ROUND(local_6c.y * 256.0f);
         local_3c.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_3c);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_3c);
         core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
         if (this_ptr->wave_animation_enabled == 0) {
           if (g_UseExternalRenderer == 0) {
             if (render_mode == 0) {
               engine_drender_cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420
-                        (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&g_WaterTexturesEnd);
+                        (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&g_WaterTexturesEnd);
             }
             else {
               engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-                        (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&g_WaterTexturesEnd);
+                        (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&g_WaterTexturesEnd);
             }
           }
           else {
             engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                      (g_CDemonRendererPtr,1);
+                      (g_CDemonRendererPtr2,1);
             engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-                      (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&g_WaterTexturesEnd);
+                      (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&g_WaterTexturesEnd);
           }
         }
         else {
-          engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xa000);
+          engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xa000)
+          ;
           engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-                    (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&g_WaterTexturesEnd);
+                    (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&g_WaterTexturesEnd);
         }
         local_18 = local_18 + 4;
         local_1c = local_1c + 1;

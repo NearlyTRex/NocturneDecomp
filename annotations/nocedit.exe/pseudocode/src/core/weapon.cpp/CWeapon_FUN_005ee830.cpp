@@ -17,7 +17,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon *this_ptr)
   CVector3f local_28;
   CVector3f local_1c;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 != 0) {
     return;
   }

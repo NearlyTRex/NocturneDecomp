@@ -22,14 +22,14 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
   CBoundingBox3D local_24;
   
   if ((((this_ptr->background_flag == 0) && (this_ptr->opacity != 0)) && (this_ptr->shattered == 0))
-     && (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     && (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
         iVar2 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_01 = (*((this_ptr->base).vtable)->getBoundingBox)(&this_ptr->base,&local_24);
     iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     iVar6 = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,&this_ptr->glass_texture);
+              (g_CDemonRendererPtr2,&this_ptr->glass_texture);
     pCVar4 = this_ptr->broken_vertices;
     input_vertices = this_ptr->field12_0x4b8;
     pcVar3 = input_vertices;
@@ -47,7 +47,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,(int *)input_vertices);
     lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-              (g_CDemonRendererPtr,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+              (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     polygon_info = &this_ptr->broken_quads[0].base;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count,
@@ -56,7 +56,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
     pCVar5 = this_ptr;
     if (0 < this_ptr->broken_polygon_count) {
       do {
-        this_ptr_00 = g_CDemonRendererPtr;
+        this_ptr_00 = g_CDemonRendererPtr2;
         pCVar5->broken_quads[0].base.surface_normal.A = 0;
         pCVar5->broken_quads[0].base.surface_normal.B = 0;
         iVar6 = iVar6 + 1;

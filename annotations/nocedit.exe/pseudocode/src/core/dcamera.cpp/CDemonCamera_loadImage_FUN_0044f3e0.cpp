@@ -422,7 +422,7 @@ LAB_0044f4fd:
         iVar18 = iVar18 + 0x1e0;
       } while (iVar6 != 0x10000);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr,&g_CameraBackdropTexture);
+                (g_CDemonRendererPtr2,&g_CameraBackdropTexture);
       puVar13 = g_CameraTextureWorkBuffer;
       puVar28 = g_CurrentTextureData;
       for (iVar6 = 0x4000; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -448,7 +448,7 @@ LAB_0044f4fd:
         pbVar7 = pbVar7 + (uint)bVar31 * -2 + 1;
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30
-                (g_CDemonRendererPtr,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
+                (g_CDemonRendererPtr2,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
       core_event_cpp_FUN_004b19d0();
       if (g_WindowHeight == 0x180) {
         iStack_1c = 0;

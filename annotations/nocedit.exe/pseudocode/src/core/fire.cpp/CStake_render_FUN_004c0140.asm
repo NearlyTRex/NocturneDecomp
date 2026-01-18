@@ -18,7 +18,7 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_004c7180 at 004c748b
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CKeyFramedModelInstance g_FireEffectFlamingStakeModel
@@ -45,7 +45,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 004c0146
     LEA EBX,[EDI + 0x4]                 ; 004c014a
     PUSH EBX                            ; 004c014d
-    MOV EDX,dword ptr [0x006703ec]      ; 004c014e | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c014e | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c0154 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c0155
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -53,7 +53,7 @@ section .text
     PUSH 0x0                            ; 004c015d
     LEA ESI,[EDI + 0x10]                ; 004c015f
     PUSH ESI                            ; 004c0162
-    MOV ECX,dword ptr [0x006703ec]      ; 004c0163 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004c0163 | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c0169 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c016a
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -88,7 +88,7 @@ section .text
     TEST EAX,EAX                        ; 004c01c3
     JNZ 0x004c01dd                      ; 004c01c5
         ;   XREF to: 004c01dd (CONDITIONAL_JUMP)  ; LAB_004c01dd
-    MOV ESI,dword ptr [0x006703ec]      ; 004c01c7 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c01c7 | g_CDemonRendererPtr2
         ;   Label: LAB_004c01c7
     PUSH ESI                            ; 004c01cd | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c01ce

@@ -63,7 +63,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x54]      ; 004715e7
     LEA EAX,[EBP + 0x24]                ; 004715eb
     PUSH EAX                            ; 004715ee
-    MOV EDX,dword ptr [0x006703e8]      ; 004715ef | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 004715ef | g_CDemonRendererInstance | g_CDemonRendererPtr1
     PUSH EDX                            ; 004715f5 | g_CDemonRendererInstance
     XOR ESI,ESI                         ; 004715f6
     XOR EDI,EDI                         ; 004715f8
@@ -86,7 +86,7 @@ section .text
     FMUL float ptr [EBP + 0x30]         ; 00471638
     LEA EBX,[ESP + 0x34]                ; 0047163b
     LEA EAX,[ESP + 0x28]                ; 0047163f
-    MOV EDX,dword ptr [0x006703e8]      ; 00471643 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 00471643 | g_CDemonRendererInstance | g_CDemonRendererPtr1
     FSTP float ptr [ESP + 0x30]         ; 00471649
     FLD float ptr [EAX]                 ; 0047164d
     FMUL float ptr [0x0065c8c0]         ; 0047164f | g_CoronaCoordinateScaleFactor
@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 00471678
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00471679
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703e8]                ; 0047167e | g_CDemonRendererPtr
+    MOV EAX,[0x006703e8]                ; 0047167e | g_CDemonRendererPtr1
     MOV EBX,dword ptr [EAX]             ; 00471683 | g_CDemonRendererInstance
     MOV dword ptr [ESI + EBX*0x1 + 0x18],0x800000 ; 00471685 | DAT_00800000
     MOV EBX,dword ptr [EAX]             ; 0047168d | g_CDemonRendererInstance
@@ -146,7 +146,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x66f318]  ; 00471728 | DAT_0066f318 | DAT_0066f33c
     MOV dword ptr [ESP + 0x20],EAX      ; 0047172e
     MOV EAX,dword ptr [EBX + 0x66f31c]  ; 00471732 | DAT_0066f31c | DAT_0066f340
-    MOV ECX,dword ptr [0x006703e8]      ; 00471738 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703e8]      ; 00471738 | g_CDemonRendererInstance | g_CDemonRendererPtr1
     MOV dword ptr [ESP + 0x24],EAX      ; 0047173e
     MOV EAX,ESP                         ; 00471742
     ADD EBX,0x24                        ; 00471744

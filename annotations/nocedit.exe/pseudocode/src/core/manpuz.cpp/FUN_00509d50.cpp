@@ -38,9 +38,9 @@ void core_manpuz_cpp_FUN_00509d50(void)
   
   pfVar3 = (float *)(in_stack_00000004 + 0xaa0 + in_stack_00000008 * 0xb8);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)(pfVar3 + 0xc),(CVector3i *)(pfVar3 + 9));
+            (g_CDemonRendererPtr2,(CVector3i *)(pfVar3 + 0xc),(CVector3i *)(pfVar3 + 9));
   if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar2 == 0)) {
     if (DAT_02f0cb1c == 2) {
       shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
@@ -61,7 +61,7 @@ void core_manpuz_cpp_FUN_00509d50(void)
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x2d4),0.0,-1);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar2 == 0) &&
      ((((float)0.01 < pfVar3[3] || ((float)0.01 < pfVar3[4])) ||
       ((float)0.01 < pfVar3[5])))) {
@@ -72,29 +72,29 @@ void core_manpuz_cpp_FUN_00509d50(void)
     local_60.y = (int)ROUND(_DAT_00660d70 * 0.2);
     local_60.z = (int)ROUND(_DAT_00660d70 * -1.4);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_60);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_60);
     local_54 = -local_54;
     local_6c.x = (int)ROUND(local_54 * _DAT_00660d70);
     local_6c.y = (int)ROUND(local_50 * _DAT_00660d70);
     local_6c.z = (int)ROUND(local_4c * _DAT_00660d70);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_6c);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_6c);
     local_4c = -local_4c;
     local_48.x = (int)ROUND(local_54 * _DAT_00660d70);
     local_48.y = (int)ROUND(local_50 * _DAT_00660d70);
     local_48.z = (int)ROUND(local_4c * _DAT_00660d70);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_48);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_48);
     local_54 = -local_54;
     local_3c.x = (int)ROUND(local_54 * _DAT_00660d70);
     local_3c.y = (int)ROUND(local_50 * _DAT_00660d70);
     local_3c.z = (int)ROUND(local_4c * _DAT_00660d70);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_3c);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_3c);
     fVar4 = (float10)256.0f;
     fVar5 = (float10)pfVar3[4] * fVar4;
     fVar6 = (float10)pfVar3[5] * fVar4;
-    pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+    pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
     dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar3[3] * fVar4));
     local_30 = (float)(int)ROUND(dVar7);
     pSVar1->light = local_30;
@@ -119,12 +119,12 @@ void core_manpuz_cpp_FUN_00509d50(void)
     this_ptr->vertex_buffer_ptr[3].w_recip = 9.18341e-41;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (this_ptr,(SMRGLTextureBasic *)(in_stack_00000004 + 0x14c0));
-    engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,0);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
+    engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-              (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff40);
-    engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,1);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
+              (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff40);
+    engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return;

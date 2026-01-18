@@ -41,7 +41,7 @@ void core_gore_cpp_FUN_004eb9d0(void)
   _DAT_02d83388 = 2;
   _DAT_02d8338c = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-            (g_CDemonRendererPtr,in_stack_ffffff98);
+            (g_CDemonRendererPtr2,in_stack_ffffff98);
   _DAT_02d83390 = local_18;
   *(uint *)(&DAT_02d83394 + (uint)bVar5 * -8) = auStack_14[(uint)bVar5 * -2];
   *(uint *)(&DAT_02d83398 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =

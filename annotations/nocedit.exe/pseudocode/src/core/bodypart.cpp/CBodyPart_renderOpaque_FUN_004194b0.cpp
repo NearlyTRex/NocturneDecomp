@@ -24,7 +24,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
     *(int *)(this_ptr->field1_0x158 + 0xdd4) = iVar1;
     if (iVar1 != 0) {
       if ((*(int *)(this_ptr->field1_0x158 + 0xb5c) == 0) ||
-         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar1 != 0)) {
         core_bodypart_cpp_FUN_00419340();
       }
@@ -34,7 +34,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
         position = (CVector3i *)(this_ptr->field1_0x158 + 0x144);
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr,position,
+                    (g_CDemonRendererPtr2,position,
                      (CVector3i *)(this_ptr->field1_0x158 + iVar1 * 0x194 + 0x138));
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     (this_ptr_01,0.0,-1);

@@ -29,7 +29,7 @@
 ;   core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370 at 005004a4
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic g_Inventory3DTextureAtlas
 ;   undefined4 DAT_00f00000
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -52,19 +52,19 @@ section .text
     PUSH EBP                            ; 005001e3
     SUB ESP,0x38                        ; 005001e4
     PUSH 0x67cf14                       ; 005001e7 | g_Inventory3DTextureAtlas
-    MOV EDX,dword ptr [0x006703ec]      ; 005001ec | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005001ec | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005001f2 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005001f3
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 005001f8
     MOV ECX,dword ptr [ESP + 0x5c]      ; 005001fb
     PUSH ECX                            ; 005001ff
-    MOV EBX,dword ptr [0x006703ec]      ; 00500200 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00500200 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00500206 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 00500207
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050020c
-    MOV EAX,[0x006703ec]                ; 0050020f | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0050020f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV ECX,dword ptr [ESP + 0x4c]      ; 00500214
     MOV EDX,dword ptr [EAX]             ; 00500218 | g_CDemonRendererInstance
     SHL ECX,0x10                        ; 0050021a

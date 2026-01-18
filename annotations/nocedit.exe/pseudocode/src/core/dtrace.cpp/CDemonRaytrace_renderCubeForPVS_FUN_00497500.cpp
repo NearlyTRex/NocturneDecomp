@@ -62,7 +62,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_64.z = (float)(int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                                      256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);
       local_14 = grid_x + 1;
       local_2c = (float)local_14;
       local_7c.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -72,7 +72,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_7c.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_7c);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_7c);
       local_14 = grid_z + 1;
       local_24 = (float)local_14;
       local_40.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -82,7 +82,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_40.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_40);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[2].projected_vertex,&local_40);
       local_58.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256.0f);
       local_58.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -90,7 +90,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_58.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_58);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[3].projected_vertex,&local_58);
       local_14 = grid_y + 1;
       local_1c = (float)local_14;
       local_a0.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
@@ -100,7 +100,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_a0.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[4].projected_vertex,&local_a0);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[4].projected_vertex,&local_a0);
       local_94.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256.0f);
       local_94.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -108,7 +108,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_94.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[5].projected_vertex,&local_94);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[5].projected_vertex,&local_94);
       local_70.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256.0f);
       local_70.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -116,7 +116,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_70.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[6].projected_vertex,&local_70);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[6].projected_vertex,&local_70);
       local_88.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256.0f);
       local_88.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
@@ -124,7 +124,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_88.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[7].projected_vertex,&local_88);
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[7].projected_vertex,&local_88);
       uVar1 = g_RenderVertexBuffer[0].projected_vertex.screen_x &
               g_RenderVertexBuffer[1].projected_vertex.screen_x &
               g_RenderVertexBuffer[2].projected_vertex.screen_x &
@@ -198,10 +198,10 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
         g_CubesRenderedCount = g_CubesRenderedCount + 1;
         local_64.z = (float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,&local_64);
+                  (g_CDemonRendererPtr2,&local_64);
         core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(local_4c,this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,&g_ZeroVector);
+                  (g_CDemonRendererPtr2,&g_ZeroVector);
         iVar2 = g_PVSDrawnCubeCount;
         g_PVSCubePointers[g_PVSDrawnCubeCount] = local_4c;
         if (g_PVSCubePositions + iVar2 != &local_64) {

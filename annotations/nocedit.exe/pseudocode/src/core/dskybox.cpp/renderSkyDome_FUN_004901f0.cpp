@@ -70,9 +70,9 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
     5.0f = local_30;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,(CVector3f *)&CVector3i_02ca0388);
+            (g_CDemonRendererPtr2,(CVector3f *)&CVector3i_02ca0388);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,(SMRGLTextureBasic *)&(sky_texture->base).count);
+            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)&(sky_texture->base).count);
   fVar6 = (float10)fsin((float10)0.58904862253125001);
   fVar7 = (float10)5.0f * (float10)256;
   dVar8 = crt_math_c_round_FUN_005fe6b0
@@ -84,16 +84,16 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c((SProjectedVertex *)*extraout_ECX,input);
   local_74.x = -local_74.x;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_74);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_74);
   local_74.z = -local_74.z;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_74);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_74);
   local_74.x = -local_74.x;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_74);
-  this_ptr = g_CDemonRendererPtr;
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_74);
+  this_ptr = g_CDemonRendererPtr2;
   fVar2 = (float)(sky_texture->base).type;
-  g_CDemonRendererPtr->vertex_buffer_ptr->light = fVar2;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->light = fVar2;
   this_ptr->vertex_buffer_ptr->color = (int)fVar2;
   this_ptr->vertex_buffer_ptr->fog = fVar2;
   this_ptr->vertex_buffer_ptr->w_recip = 0.0;
@@ -144,7 +144,7 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
       local_40 = local_40 + 4;
       iVar5 = iVar5 + 1;
       engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff44,0x2c5);
+                (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff44,0x2c5);
     } while (iVar5 < 3);
     local_28 = local_28 + 4;
     local_30 = (float)CONCAT13 /* combine 2-byte values */(local_30._3_1_ + '\x01',(undefined3)local_30);

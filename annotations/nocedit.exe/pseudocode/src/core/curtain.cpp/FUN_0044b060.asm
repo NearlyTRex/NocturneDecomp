@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0065c4c0
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_RelativeZ
@@ -56,7 +56,7 @@ section .text
     TEST EAX,EAX                        ; 0044b08f
     JZ 0x0044b320                       ; 0044b091
         ;   XREF to: 0044b320 (CONDITIONAL_JUMP)  ; LAB_0044b320
-    MOV EDX,dword ptr [0x006703ec]      ; 0044b097 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044b097 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0044b09d | g_CDemonRendererInstance
     MOV dword ptr [ESI + 0x65b30],0x1   ; 0044b09e
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0044b0a8
@@ -76,14 +76,14 @@ section .text
     PUSH EBX                            ; 0044b0cb
     MOV EDI,dword ptr [ESI + 0x17c]     ; 0044b0cc
     PUSH EDI                            ; 0044b0d2
-    MOV EBP,dword ptr [0x006703ec]      ; 0044b0d3 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 0044b0d3 | g_CDemonRendererPtr2
     PUSH EBP                            ; 0044b0d9 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0044b0da
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0044b0df
     LEA EAX,[ESI + 0x164]               ; 0044b0e2
     PUSH EAX                            ; 0044b0e8
-    MOV EAX,[0x006703ec]                ; 0044b0e9 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0044b0e9 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0044b0ee | g_CDemonRendererInstance
     XOR EDI,EDI                         ; 0044b0ef
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0044b0f1
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
     ADD ESP,0xc                         ; 0044b164
     PUSH 0x1                            ; 0044b167
-    MOV EBX,dword ptr [0x006703ec]      ; 0044b169 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0044b169 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 0044b16f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 0044b170
         ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)
@@ -178,7 +178,7 @@ section .text
     JGE 0x0044b272                      ; 0044b1ff
         ;   XREF to: 0044b272 (CONDITIONAL_JUMP)  ; LAB_0044b272
     PUSH EBX                            ; 0044b201
-    MOV EDX,dword ptr [0x006703ec]      ; 0044b202 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044b202 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0044b208 | g_CDemonRendererInstance
     INC EDI                             ; 0044b209
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 0044b20a
@@ -258,7 +258,7 @@ section .text
     JGE 0x0044b30d                      ; 0044b2d4
         ;   XREF to: 0044b30d (CONDITIONAL_JUMP)  ; LAB_0044b30d
     PUSH EDI                            ; 0044b2d6
-    MOV EAX,[0x006703ec]                ; 0044b2d7 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0044b2d7 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0044b2dc | g_CDemonRendererInstance
     INC EBX                             ; 0044b2dd
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 0044b2de
@@ -281,7 +281,7 @@ section .text
     ADD ESP,0x10                        ; 0044b30a
     PUSH 0x0                            ; 0044b30d
         ;   Label: LAB_0044b30d
-    MOV EDX,dword ptr [0x006703ec]      ; 0044b30f | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044b30f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0044b315 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 0044b316
         ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)

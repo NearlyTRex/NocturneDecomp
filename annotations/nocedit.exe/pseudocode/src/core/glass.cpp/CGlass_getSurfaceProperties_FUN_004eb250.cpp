@@ -36,7 +36,7 @@ core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfac
     fVar4 = (this_ptr->glass_size).x;
     fVar5 = (float)0.5;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,&this_ptr->broken_texture);
+              (g_CDemonRendererPtr2,&this_ptr->broken_texture);
     fVar7 = (float10)(1.0 - fVar1 / fVar2) * (float10)g_CurrentTextureDimension;
     dVar8 = crt_math_c_round_FUN_005fe6b0
                       ((double)((float10)(fVar3 / fVar4 + fVar5) *

@@ -24,7 +24,7 @@ core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(CDemonCamera 
   (this_ptr->source_matrix).m[1].y = g_TransformMatrix.m[1].y;
   (this_ptr->source_matrix).m[1].z = g_TransformMatrix.m[1].z;
   (this_ptr->source_matrix).m[2].x = g_TransformMatrix.m[2].x;
-  this_ptr_00 = g_CDemonRendererPtr;
+  this_ptr_00 = g_CDemonRendererPtr2;
   (this_ptr->source_matrix).m[2].y = g_TransformMatrix.m[2].y;
   (this_ptr->source_matrix).m[2].z = g_TransformMatrix.m[2].z;
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760

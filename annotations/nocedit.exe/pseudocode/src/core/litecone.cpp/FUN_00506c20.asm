@@ -7,7 +7,7 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
     ADD ESP,0x18                        ; 00506c33
     POP EBX                             ; 00506c36
     RET                                 ; 00506c37
-    MOV ECX,dword ptr [0x006703ec]      ; 00506c38 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00506c38 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_00506c38
     PUSH ECX                            ; 00506c3e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00506c3f

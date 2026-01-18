@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065eed0 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 004e9ff1 (CONDITIONAL_JUMP)  ; LAB_004e9ff1
     LEA EAX,[EBP + 0x374]               ; 004e9ef5
     PUSH EAX                            ; 004e9efb
-    MOV EDX,dword ptr [0x006703ec]      ; 004e9efc | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004e9efc | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004e9f02 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004e9f03
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -119,7 +119,7 @@ section .text
     PUSH 0xc1                           ; 004e9f8b
         ;   Label: LAB_004e9f8b
     MOV dword ptr [EBX + 0x6b4],0x0     ; 004e9f90
-    MOV EAX,[0x006703ec]                ; 004e9f9a | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004e9f9a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [EBX + 0x6b8],0x0     ; 004e9f9f
     PUSH ESI                            ; 004e9fa9
     INC EDI                             ; 004e9faa
@@ -152,7 +152,7 @@ section .text
     LEA EAX,[EBP + 0x164]               ; 004e9ff1
         ;   Label: LAB_004e9ff1
     PUSH EAX                            ; 004e9ff7
-    MOV EAX,[0x006703ec]                ; 004e9ff8 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004e9ff8 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 004e9ffd | g_CDemonRendererInstance
     JMP 0x004e9f03                      ; 004e9ffe
         ;   XREF to: 004e9f03 (UNCONDITIONAL_JUMP)  ; LAB_004e9f03

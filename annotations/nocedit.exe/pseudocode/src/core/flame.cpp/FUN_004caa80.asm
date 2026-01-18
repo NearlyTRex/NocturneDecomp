@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062a13e = 5
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_CFlameClassInfo.name_hash
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x28                        ; 004caa86
     AND ESP,0xfffffff8                  ; 004caa89
     MOV EAX,dword ptr [EBP + 0x14]      ; 004caa8c
-    MOV EDX,dword ptr [0x006703ec]      ; 004caa8f | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004caa8f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [EAX + 0x2a0],0x0     ; 004caa95
     PUSH EDX                            ; 004caa9f | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x298],0x0     ; 004caaa0

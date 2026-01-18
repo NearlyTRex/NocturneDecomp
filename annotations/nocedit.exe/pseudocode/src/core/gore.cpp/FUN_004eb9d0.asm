@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062e2e2 = -65536
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02d83368.base.count
@@ -47,7 +47,7 @@ section .text
     MOV EDX,0x4                         ; 004eb9d6
     MOV EAX,0x1                         ; 004eb9db
     LEA ESI,[ESP + 0x50]                ; 004eb9e0
-    MOV EBX,dword ptr [0x006703ec]      ; 004eb9e4 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 004eb9e4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EDI,0x2d83390                   ; 004eb9ea | DAT_02d83390
     XOR ECX,ECX                         ; 004eb9ef
     MOV dword ptr [0x02d8336c],EDX      ; 004eb9f1 | DAT_02d83368.base.count

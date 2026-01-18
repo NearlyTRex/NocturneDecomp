@@ -45,7 +45,7 @@ int core_ladder_cpp_FUN_00502620(void)
                        (in_stack_00000004,(CBoundingBox3D *)(auStack_78 + 4));
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if ((iVar1 != 0) && (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0)) {
-    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar2 == 0) {
       g_ActiveRenderColor = 0xfb;
       fStack_70 = 0.0;
@@ -59,8 +59,8 @@ int core_ladder_cpp_FUN_00502620(void)
           CStack_48.y = (int)ROUND(fStack_70 * _DAT_006605d0);
           CStack_48.z = (int)ROUND(_DAT_006605d0 * 0.0);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                    (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&CStack_48);
-          pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_48);
+          pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar3 = pSVar4 + 2;
           piVar5 = aiStack_a8;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -75,7 +75,7 @@ int core_ladder_cpp_FUN_00502620(void)
             piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,in_stack_ffffff2c);
-          pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+          pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar3 = pSVar4 + 2;
           piVar5 = aiStack_a8;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -102,13 +102,13 @@ int core_ladder_cpp_FUN_00502620(void)
         CStack_30.y = (int)ROUND(fStack_70 * _DAT_006605d0);
         CStack_30.z = (int)ROUND(_DAT_006605d0 * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&CStack_30);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_30);
         CStack_54.x = (int)ROUND(fStack_24 * _DAT_006605d0);
         CStack_54.y = (int)ROUND(fStack_20 * _DAT_006605d0);
         CStack_54.z = (int)ROUND(fStack_1c * _DAT_006605d0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&CStack_54);
-        pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_54);
+        pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         pSVar3 = pSVar4 + 1;
         piVar5 = aiStack_a8;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

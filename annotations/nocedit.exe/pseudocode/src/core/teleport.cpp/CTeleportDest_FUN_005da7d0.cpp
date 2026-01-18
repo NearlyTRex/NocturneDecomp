@@ -13,7 +13,7 @@ int __cdecl core_teleport_cpp_CTeleportDest_FUN_005da7d0(CTeleportDest *this_ptr
   uint32_t color;
   
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       color = 1;
       if (*(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c) != (CDemonActor *)0x0) {

@@ -13,7 +13,7 @@
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 at 00472be1
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ViewportCenterXFixed
 ;   int g_ViewportCenterYFixed
@@ -58,7 +58,7 @@ section .text
     MOV ESI,dword ptr [0x02d05300]      ; 0044d212 | g_TransformMatrix[2][0]
     MOV dword ptr [EBX + 0x190],ESI     ; 0044d218
     MOV ESI,dword ptr [0x02d05304]      ; 0044d21e | g_TransformMatrix[2][1]
-    MOV EDX,dword ptr [0x006703ec]      ; 0044d224 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044d224 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [EBX + 0x194],ESI     ; 0044d22a
     MOV ESI,dword ptr [0x02d05308]      ; 0044d230 | g_TransformMatrix[2][2]
     PUSH EDX                            ; 0044d236 | g_CDemonRendererInstance

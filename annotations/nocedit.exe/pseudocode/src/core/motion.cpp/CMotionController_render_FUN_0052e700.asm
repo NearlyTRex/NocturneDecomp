@@ -34,7 +34,7 @@
 ;   TerminatedCString s_s_s_0063ac46
 ;   TerminatedCString s_s_5_2f_0063ac4f
 ;   float FLOAT_00661ba0 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02f43978
 ;
@@ -70,7 +70,7 @@ section .text
     POP ESI                             ; 0052e723
     POP EBX                             ; 0052e724
     RET                                 ; 0052e725
-    MOV ECX,dword ptr [0x006703ec]      ; 0052e726 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0052e726 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0052e726
     PUSH ECX                            ; 0052e72c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0052e72d
@@ -87,7 +87,7 @@ section .text
     LEA EBX,[EBP + 0x5e]                ; 0052e747
     XOR ESI,ESI                         ; 0052e74a
     CALL dword ptr [EAX + 0x14]         ; 0052e74c
-    MOV EDX,dword ptr [0x006703ec]      ; 0052e74f | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0052e74f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX + 0x10]      ; 0052e755
     ADD ESP,0x8                         ; 0052e758
     MOV dword ptr [EBP + 0x6e],EAX      ; 0052e75b
@@ -109,7 +109,7 @@ section .text
     PUSH EAX                            ; 0052e791
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0052e792
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 0052e797 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0052e797 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0052e79c | g_CDemonRendererInstance
     MOV DL,byte ptr [EAX + 0xea5e3]     ; 0052e79e
     ADD ESP,0x8                         ; 0052e7a4

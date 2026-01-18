@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_00649b6f
 ;   double DOUBLE_00649b77 = 0.00555555555555555
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CFireEffect g_CFireEffectInstance
@@ -32,7 +32,7 @@ section .text
     SUB ESP,0x68                        ; 005888f5
     AND ESP,0xfffffff8                  ; 005888f8
     MOV EBX,dword ptr [EBP + 0x10]      ; 005888fb
-    MOV EDX,dword ptr [0x006703ec]      ; 005888fe | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005888fe | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 00588904 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00588905
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)

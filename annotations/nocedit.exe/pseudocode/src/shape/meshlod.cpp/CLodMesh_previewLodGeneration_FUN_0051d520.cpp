@@ -37,7 +37,7 @@ shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,&local_28);
+              (g_CDemonRendererPtr2,&local_28);
     if (pause_flag == 0) {
       text = "Press and hold P to pause and spin, ESC to bail";
     }
@@ -77,7 +77,7 @@ LAB_0051d5ec:
     }
     if ((INT_02f31238 != 0) && (this_ptr->next_lod != (CLodMesh *)0x0)) {
       shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(this_ptr->next_lod);
-      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr,0xff,0,0xff);
+      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0xff,0,0xff);
       shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(this_ptr->next_lod);
     }
     iVar2 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr);

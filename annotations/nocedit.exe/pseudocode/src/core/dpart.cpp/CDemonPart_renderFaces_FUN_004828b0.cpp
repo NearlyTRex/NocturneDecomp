@@ -18,14 +18,14 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this
   int local_28;
   int local_1c;
   
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
   iVar1 = this_ptr->vertex_count / this_ptr->vertex_group_size;
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
             (g_CDemonSetPtr,iVar1,
              &this_ptr->vertex_positions[this_ptr->current_vertex_group * iVar1].x);
-  if (g_CDemonRendererPtr->advanced_culling_enabled != 0) {
-    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+  if (g_CDemonRendererPtr2->advanced_culling_enabled != 0) {
+    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
   }
   plane = this_ptr->face_data;
   uVar2 = 0;
@@ -34,7 +34,7 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this
       iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&plane->plane);
       if (iVar1 != 0) {
         engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                  (g_CDemonRendererPtr,-((uVar2 & 0x7f) + 0x80));
+                  (g_CDemonRendererPtr2,-((uVar2 & 0x7f) + 0x80));
         local_58.surface_normal.A = (plane->plane).A;
         local_58.surface_normal.B = (plane->plane).B;
         local_58.surface_normal.C = (plane->plane).C;
@@ -55,7 +55,7 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this
       plane = plane + 1;
     } while ((int)uVar2 < this_ptr->face_count);
   }
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,1);
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
   return;
 }

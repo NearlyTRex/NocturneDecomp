@@ -53,7 +53,7 @@ void core_path_cpp_FUN_00547fc0(void)
   int local_14;
   
   bVar2 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 != 0) {
     return;
   }
@@ -64,9 +64,9 @@ void core_path_cpp_FUN_00547fc0(void)
                + g_CDemonRaytraceInstance.bbox_min.z;
   iStack_7c = 0x548026;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&local_64);
+            (g_CDemonRendererPtr2,&local_64);
   iStack_7c = 0x54803f;
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_00680bb0);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_00680bb0);
   DAT_030d4fd0.base.count = 4;
   DAT_030d4fd0.surface_normal.A = 0;
   DAT_030d4fd0.surface_normal.B = 0;
@@ -85,7 +85,7 @@ void core_path_cpp_FUN_00547fc0(void)
   _DAT_030d5014 = 0x800000;
   _DAT_030d500c = 3;
   iStack_7c = 0x5480c6;
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
   local_20 = in_stack_00000008 << 8;
   local_28 = (byte *)(in_stack_0000000c << 8);
   local_24 = in_stack_00000010 << 8;
@@ -139,8 +139,8 @@ void core_path_cpp_FUN_00547fc0(void)
         crt_math_c_round_FUN_005fe6b0((double)((float)(int)puVar8 - local_54));
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   ((SProjectedVertex *)(*extraout_EAX + 0x90),input);
-        this_ptr = g_CDemonRendererPtr;
-        g_CDemonRendererPtr->vertex_buffer_ptr->light = local_38;
+        this_ptr = g_CDemonRendererPtr2;
+        g_CDemonRendererPtr2->vertex_buffer_ptr->light = local_38;
         this_ptr->vertex_buffer_ptr->color = (int)local_40;
         this_ptr->vertex_buffer_ptr->fog = local_3c;
         this_ptr->vertex_buffer_ptr->w_recip = fStack_34;
@@ -166,6 +166,6 @@ void core_path_cpp_FUN_00547fc0(void)
     local_2c = local_2c + 4;
   } while ((int)local_58 < 100);
   iStack_7c = 0x548163;
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
   return;
 }

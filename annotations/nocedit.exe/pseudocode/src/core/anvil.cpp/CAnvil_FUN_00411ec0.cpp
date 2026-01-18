@@ -17,9 +17,9 @@ int __cdecl core_anvil_cpp_CAnvil_FUN_00411ec0(CAnvil *this_ptr)
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&(this_ptr->base_actor).location.position);
+            (g_CDemonRendererPtr2,&(this_ptr->base_actor).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&(this_ptr->base_actor).orient,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,(CVector3i *)&(this_ptr->base_actor).orient,(CVector3i *)0x0);
   this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&local_1c);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {

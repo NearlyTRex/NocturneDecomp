@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0066136c = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 0051b2e0 (UNCONDITIONAL_CALL)  ; CVector3f * shape_meshlod.cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0(CLodMesh * this_ptr, CVector3f * output_point, CVector3f * input_point)
     ADD ESP,0xc                         ; 0051e6e8
     LEA EAX,[ESP + 0x18]                ; 0051e6eb
-    MOV EDX,dword ptr [0x006703ec]      ; 0051e6ef | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0051e6ef | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 0051e6f5
     FMUL float ptr [0x0066136c]         ; 0051e6f7 | FLOAT_0066136c
     FISTP dword ptr [EBX]               ; 0051e6fd
@@ -75,7 +75,7 @@ section .text
     PUSH EAX                            ; 0051e720
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0051e721
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 0051e726 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0051e726 | g_CDemonRendererPtr2
     MOV EDX,dword ptr [EAX]             ; 0051e72b | g_CDemonRendererInstance
     MOV dword ptr [EDX + ESI*0x1 + 0x20],0xffff ; 0051e72d
     MOV EDX,dword ptr [EAX]             ; 0051e735 | g_CDemonRendererInstance

@@ -47,7 +47,7 @@ int __cdecl core_fire_cpp_CSpark_initRender_FUN_004c0300(CSpark *this_ptr)
   g_BillboardPrimitive.vertices[2] = 2;
   g_BillboardPrimitive.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-            (g_CDemonRendererPtr,in_stack_ffffff98);
+            (g_CDemonRendererPtr2,in_stack_ffffff98);
   g_BillboardCameraRight.x = local_18;
   *(uint *)((int)&g_BillboardCameraRight + (uint)bVar5 * -8 + 4) =
        auStack_14[(uint)bVar5 * -2];

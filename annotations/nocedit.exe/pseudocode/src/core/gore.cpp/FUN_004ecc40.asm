@@ -9,7 +9,7 @@
 ;   core_gore.cpp_FUN_004ed830 at 004ed8a5
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   undefined4 g_RenderVertexBuffer[1].u
@@ -61,7 +61,7 @@ section .text
     MOV EDX,0xffff                      ; 004eccae
     MOV dword ptr [0x02d83370],ECX      ; 004eccb3 | DAT_02d83368.surface_normal.A
     PUSH EDX                            ; 004eccb9
-    MOV ESI,dword ptr [0x006703ec]      ; 004eccba | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004eccba | g_CDemonRendererPtr2
     MOV dword ptr [0x02d83378],ECX      ; 004eccc0 | DAT_02d83368.surface_normal.C
     PUSH ESI                            ; 004eccc6 | g_CDemonRendererInstance
     MOV dword ptr [0x02d8337c],ECX      ; 004eccc7 | DAT_02d83368.surface_normal.D

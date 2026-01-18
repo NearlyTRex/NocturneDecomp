@@ -17,7 +17,7 @@
 ;   double DOUBLE_0065565c = 2
 ;   double DOUBLE_00655664 = 3.14159265350000
 ;   undefined4 DAT_00664a00
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   SMRGLTextureBasic DAT_0068434c
 ;   undefined4 DAT_00800000
@@ -62,7 +62,7 @@ section .text
     POP ESI                             ; 005e00f0
     POP EBX                             ; 005e00f1
     RET                                 ; 005e00f2
-    MOV ECX,dword ptr [0x006703ec]      ; 005e00f3 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005e00f3 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_005e00f3
     PUSH ECX                            ; 005e00f9 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005e00fa
@@ -147,7 +147,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005e01d7
     FLD float ptr [EAX + 0x160]         ; 005e01da
     FMUL double ptr [0x0065564c]        ; 005e01e0 | DOUBLE_0065564c
-    MOV EDX,dword ptr [0x006703ec]      ; 005e01e6 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e01e6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     XOR ECX,ECX                         ; 005e01ec
     MOV EAX,dword ptr [ESP + 0x50]      ; 005e01ee
     MOV dword ptr [ESP + 0x70],ECX      ; 005e01f2
@@ -182,7 +182,7 @@ section .text
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 005e0260
     LEA EAX,[ESP + 0x70]                ; 005e0263
-    MOV EDX,dword ptr [0x006703ec]      ; 005e0267 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e0267 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 005e026d
     FMUL float ptr [0x00664a00]         ; 005e026f | DAT_00664a00
     FISTP dword ptr [EBX]               ; 005e0275
@@ -200,7 +200,7 @@ section .text
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 005e029f
     MOV EAX,dword ptr [ESP + 0x5c]      ; 005e02a2
-    MOV EDX,dword ptr [0x006703ec]      ; 005e02a6 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e02a6 | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x74],EAX      ; 005e02ac
     MOV ESI,dword ptr [EDX]             ; 005e02b0 | g_CDemonRendererInstance
     MOV ECX,0xc                         ; 005e02b2
@@ -256,7 +256,7 @@ section .text
     FMULP ST2                           ; 005e0365
     MOV EDI,dword ptr [ESP + 0xb8]      ; 005e0367
     MOV EAX,dword ptr [ESP + 0x50]      ; 005e036e
-    MOV EDX,dword ptr [0x006703ec]      ; 005e0372 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e0372 | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x74],EAX      ; 005e0378
     FSTP float ptr [ESP + 0x70]         ; 005e037c
     FSTP float ptr [ESP + 0x78]         ; 005e0380
@@ -285,7 +285,7 @@ section .text
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 005e03cf
     MOV EAX,dword ptr [ESP + 0x5c]      ; 005e03d2
-    MOV EDX,dword ptr [0x006703ec]      ; 005e03d6 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e03d6 | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x74],EAX      ; 005e03dc
     MOV EDI,dword ptr [ESP + 0xbc]      ; 005e03e0
     MOV ESI,dword ptr [EDX]             ; 005e03e7 | g_CDemonRendererInstance
@@ -328,7 +328,7 @@ section .text
     NOP                                 ; 005e046f
     PUSH 0x0                            ; 005e0470
         ;   Label: LAB_005e0470
-    MOV EBX,dword ptr [0x006703ec]      ; 005e0472 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 005e0472 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 005e0478 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0 ; 005e0479
         ;   XREF to: 0048c9f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer * this_ptr, int enabled)
@@ -350,7 +350,7 @@ section .text
     MOV dword ptr [ESP + 0xc4],EAX      ; 005e04ac
     MOV dword ptr [ESP + 0x34],EAX      ; 005e04b3
     LEA EAX,[ESP + 0x10]                ; 005e04b7
-    MOV ECX,dword ptr [0x006703ec]      ; 005e04bb | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005e04bb | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 005e04c1
     MOV dword ptr [ESP + 0x2c],ESI      ; 005e04c2
     MOV dword ptr [ESP + 0x30],EDI      ; 005e04c6
@@ -367,7 +367,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 005e04f3
     LEA EAX,[ESP + 0x10]                ; 005e04f7
     PUSH EAX                            ; 005e04fb
-    MOV ECX,dword ptr [0x006703ec]      ; 005e04fc | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005e04fc | g_CDemonRendererInstance | g_CDemonRendererPtr2
     XOR EDX,EDX                         ; 005e0502
     PUSH ECX                            ; 005e0504 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x30],ESI      ; 005e0505
@@ -381,7 +381,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 005e0525
     MOV dword ptr [ESP + 0x2c],EDI      ; 005e0529
     PUSH EAX                            ; 005e052d
-    MOV EDI,dword ptr [0x006703ec]      ; 005e052e | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 005e052e | g_CDemonRendererPtr2
     MOV ESI,0x1                         ; 005e0534
     PUSH EDI                            ; 005e0539 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x38],ESI      ; 005e053a
@@ -397,7 +397,7 @@ section .text
     MOV EAX,EAX                         ; 005e055e
     PUSH 0x1                            ; 005e0560
         ;   Label: LAB_005e0560
-    MOV EDX,dword ptr [0x006703ec]      ; 005e0562 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e0562 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005e0568 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0 ; 005e0569
         ;   XREF to: 0048c9f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer * this_ptr, int enabled)

@@ -79,7 +79,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
       do {
         (**(code **)(*(int *)(*(int *)(pCVar5->field73_0x15f6e4 + 4) + 0x154) + 8))();
         iVar3 = iVar3 + 1;
-        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
         pCVar5 = (CDemonSet *)pCVar5->cameras;
       } while (iVar3 < *(int *)this_ptr->field73_0x15f6e4);
     }
@@ -113,9 +113,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   }
   g_UseExternalRenderer = 0;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr,(CVector3i *)(local_38.m + 1));
-  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr,32.0);
-  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
+            (g_CDemonRendererPtr2,(CVector3i *)(local_38.m + 1));
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,32.0);
+  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
   g_CDemonRaytraceInstance.rendering_mode = 1;
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);

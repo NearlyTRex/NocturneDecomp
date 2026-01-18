@@ -41,22 +41,23 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     }
     if (this_ptr->use_custom_viewport != 0) {
       engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-                (g_CDemonRendererPtr,this_ptr->viewport_x,this_ptr->viewport_y,
+                (g_CDemonRendererPtr2,this_ptr->viewport_x,this_ptr->viewport_y,
                  this_ptr->viewport_width,this_ptr->viewport_height);
     }
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-              (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector);
+              (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector);
     local_18 = 56.0;
     if (this_ptr->use_custom_viewport != 0) {
       local_18 = 84.0;
     }
-    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr,local_18);
-    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
+    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,local_18)
+    ;
+    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
     local_24.x = 0.0;
     local_24.y = 0.0;
     local_24.z = 36.0;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,&local_24);
+              (g_CDemonRendererPtr2,&local_24);
     g_CDemonSetPtr->rendering_mode = 1;
     angle = 0x8000 - (short)((this_ptr->current_frame << 0xf) / this_ptr->total_frames);
     iVar3 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(angle);
@@ -79,27 +80,27 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     local_60.y = (int)ROUND(256.0f * 7.25);
     local_60.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_60);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_60);
     local_30 = -local_30;
     local_54.x = (int)ROUND(local_30 * 256.0f);
     local_54.y = (int)ROUND(local_2c * 256.0f);
     local_54.z = (int)ROUND(local_28 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_54);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_54);
     local_2c = -local_2c;
     local_3c.x = (int)ROUND(local_30 * 256.0f);
     local_3c.y = (int)ROUND(local_2c * 256.0f);
     local_3c.z = (int)ROUND(local_28 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_3c);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_3c);
     local_30 = -local_30;
     local_48.x = (int)ROUND(local_30 * 256.0f);
     local_48.y = (int)ROUND(local_2c * 256.0f);
     local_48.z = (int)ROUND(local_28 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_48);
-    pCVar1 = g_CDemonRendererPtr;
-    g_CDemonRendererPtr->vertex_buffer_ptr->u = 2.3509887e-38;
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_48);
+    pCVar1 = g_CDemonRendererPtr2;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 2.3509887e-38;
     pCVar1->vertex_buffer_ptr->v = 0.0;
     pCVar1->vertex_buffer_ptr[1].u = 0.0;
     pCVar1->vertex_buffer_ptr[1].v = 0.0;
@@ -107,19 +108,19 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     pCVar1->vertex_buffer_ptr[2].v = 2.3509887e-38;
     pCVar1->vertex_buffer_ptr[3].u = 2.3509887e-38;
     pCVar1->vertex_buffer_ptr[3].v = 2.3509887e-38;
-    pCVar1 = g_CDemonRendererPtr;
+    pCVar1 = g_CDemonRendererPtr2;
     fVar4 = (float)((this_ptr->current_frame * 0xffff) / this_ptr->total_frames);
     if (0xffff < (int)fVar4) {
       fVar4 = 9.18341e-41;
     }
-    g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = 0.0;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = 0.0;
     pCVar1->vertex_buffer_ptr[1].w_recip = fVar4;
     pCVar1->vertex_buffer_ptr[2].w_recip = 0.0;
     pCVar1->vertex_buffer_ptr[3].w_recip = 0.0;
     iVar3 = 0;
     do {
-      pCVar1 = g_CDemonRendererPtr;
-      *(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar3) =
+      pCVar1 = g_CDemonRendererPtr2;
+      *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar3) =
            (this_ptr->color).r << 8;
       *(int *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = (this_ptr->color).g << 8;
       iVar5 = iVar3 + 0x30;
@@ -137,14 +138,14 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     local_6c = 1;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar1,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,&g_LoadingMoonGlowTexture);
+              (g_CDemonRendererPtr2,&g_LoadingMoonGlowTexture);
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-              (g_CDemonRendererPtr,&local_88,0x327);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
+              (g_CDemonRendererPtr2,&local_88,0x327);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
               (&g_LoadingMoonModel,(CKeyFramedModelInstance *)0x0,0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
-      engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr);
+      engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
     }
     g_CDemonSetPtr->rendering_mode = 0;
     local_10 = g_ThemeFont;

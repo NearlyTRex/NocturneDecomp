@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   float g_MirrorProjectionScale = 256
 ;   float g_MirrorIntToFloat_Coarse = 0.00390625
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_MirrorInputVertexCount
 ;   CVector3f[32] g_MirrorInputVertices
@@ -62,7 +62,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0052233a
     SUB EAX,EDX                         ; 00522341
     MOV EDX,EAX                         ; 00522343
-    MOV EAX,[0x006703ec]                ; 00522345 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00522345 | g_CDemonRendererPtr2
     SHL EDX,0x4                         ; 0052234a
     MOV EAX,dword ptr [EAX]             ; 0052234d | g_CDemonRendererInstance
     MOV EBX,ESI                         ; 0052234f
@@ -189,7 +189,7 @@ section .text
     MOV EDI,0x2f3358c                   ; 005224d4 | g_MirrorOutputVertices
     MOV EBP,0xea000                     ; 005224d9
     MOV ESI,EDX                         ; 005224de
-    MOV EAX,[0x006703ec]                ; 005224e0 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 005224e0 | g_CDemonRendererPtr2
         ;   Label: LAB_005224e0
     MOV EBX,dword ptr [EAX]             ; 005224e5 | g_CDemonRendererInstance
     MOV EAX,EDI                         ; 005224e7
@@ -203,7 +203,7 @@ section .text
     FLD float ptr [EAX + 0x8]           ; 00522501 | DAT_02f33594 | DAT_02f335a0
     FMUL float ptr [0x006616e0]         ; 00522504 | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x8]         ; 0052250a
-    MOV EAX,[0x006703ec]                ; 0052250d | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0052250d | g_CDemonRendererPtr2
     MOV EDX,dword ptr [ESP]             ; 00522512
     MOV EAX,dword ptr [EAX]             ; 00522515 | g_CDemonRendererInstance
     ADD ESI,0x4                         ; 00522517

@@ -31,7 +31,7 @@ core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
   local_20 = output_ptr->z;
   local_28 = output_ptr->x;
   local_24 = output_ptr->y;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar4 == 0) {
     lVar1 = (longlong)local_24 * (longlong)(this_ptr->inverted_matrix).m[1].x +
             (longlong)local_28 * (longlong)(this_ptr->inverted_matrix).m[0].x +

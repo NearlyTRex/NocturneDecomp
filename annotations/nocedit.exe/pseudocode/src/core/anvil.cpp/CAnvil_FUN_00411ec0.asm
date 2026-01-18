@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@ section .text
     PUSH ESI                            ; 00411ed9
     LEA EAX,[EBX + 0x20]                ; 00411eda
     PUSH EAX                            ; 00411edd
-    MOV ECX,dword ptr [0x006703ec]      ; 00411ede | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00411ede | g_CDemonRendererPtr2
     PUSH ECX                            ; 00411ee4 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00411ee5
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -47,7 +47,7 @@ section .text
     PUSH 0x0                            ; 00411eed
     LEA EAX,[EBX + 0x30]                ; 00411eef
     PUSH EAX                            ; 00411ef2
-    MOV ESI,dword ptr [0x006703ec]      ; 00411ef3 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 00411ef3 | g_CDemonRendererPtr2
     PUSH ESI                            ; 00411ef9 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00411efa
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -73,7 +73,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 00411f2e
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 00411f33
-    MOV EDI,dword ptr [0x006703ec]      ; 00411f36 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 00411f36 | g_CDemonRendererPtr2
         ;   Label: LAB_00411f36
     PUSH EDI                            ; 00411f3c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00411f3d

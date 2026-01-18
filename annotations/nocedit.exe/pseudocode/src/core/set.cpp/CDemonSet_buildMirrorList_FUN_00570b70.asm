@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_0064602b
 ;   TerminatedCString s_CDemonSet_buildMirrorLis_0064603b
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   char* g_CurrentFilename
@@ -91,7 +91,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00570c23
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00570c28
-    MOV EDX,dword ptr [0x006703ec]      ; 00570c2b | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00570c2b | g_CDemonRendererPtr2
         ;   Label: LAB_00570c2b
     PUSH EDX                            ; 00570c31 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00570c32

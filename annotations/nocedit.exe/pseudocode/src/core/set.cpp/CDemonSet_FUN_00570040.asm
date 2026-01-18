@@ -20,7 +20,7 @@
 ;   core_set.cpp_CDemonSet_FUN_00570010 at 00570028
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_CurrentAlphaValue = 0xff
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   SMRGLTextureBasic DAT_006813e4
@@ -51,7 +51,7 @@ section .text
     SUB ESP,0xe4                        ; 00570044
     MOV EBP,dword ptr [ESP + 0xfc]      ; 0057004a
     PUSH 0x6813e4                       ; 00570051 | DAT_006813e4
-    MOV EDX,dword ptr [0x006703ec]      ; 00570056 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00570056 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0057005c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0057005d
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -64,7 +64,7 @@ section .text
     MOV EAX,[0x006793b4]                ; 00570079 | g_CurrentAlphaValue
     SHL EAX,0x8                         ; 0057007e
     MOV dword ptr [ESP + 0x104],EAX     ; 00570081
-    MOV EAX,[0x006703ec]                ; 00570088 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00570088 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_00570088
     PUSH EAX                            ; 0057008d | g_CDemonRendererInstance
     LEA ESI,[ESP + 0xd8]                ; 0057008e
@@ -190,7 +190,7 @@ section .text
         ;   XREF to: 00570299 (CONDITIONAL_JUMP)  ; LAB_00570299
     MOV EAX,ESP                         ; 00570215
     PUSH EAX                            ; 00570217
-    MOV EDX,dword ptr [0x006703ec]      ; 00570218 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00570218 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0057021e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0 ; 0057021f
         ;   XREF to: 0048b1e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
@@ -220,13 +220,13 @@ section .text
     IMUL EDX                            ; 0057026d
     SHRD EAX,EDX,0x10                   ; 0057026f
     PUSH EAX                            ; 00570273
-    MOV ESI,dword ptr [0x006703ec]      ; 00570274 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 00570274 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0057027a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0057027b
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00570280
     PUSH 0x0                            ; 00570283
-    MOV EDI,dword ptr [0x006703ec]      ; 00570285 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 00570285 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0057028b | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 0057028c
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
@@ -236,7 +236,7 @@ section .text
     MOV EAX,ESP                         ; 00570299
         ;   Label: LAB_00570299
     PUSH EAX                            ; 0057029b
-    MOV EAX,[0x006703ec]                ; 0057029c | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0057029c | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 005702a1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970 ; 005702a2
         ;   XREF to: 0048b970 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)

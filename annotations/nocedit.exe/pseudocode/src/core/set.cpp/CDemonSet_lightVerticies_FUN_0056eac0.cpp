@@ -108,7 +108,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               ("CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d",vertex_count,20000);
   }
   pCVar9 = (CDemonSet *)
-           engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+           engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (pCVar9 == (CDemonSet *)0x0) {
     iVar16 = vertex_count * 0x30;
     if (this_ptr->lighting_quality_mode == 0) {

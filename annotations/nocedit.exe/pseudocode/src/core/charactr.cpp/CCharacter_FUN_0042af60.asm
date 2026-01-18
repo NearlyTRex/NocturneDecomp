@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0061713a = 8388608
 ;   SMRGLTextureBasic DAT_0066e6b0
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   int INT_00823a90
 ;   int INT_00823a94
@@ -52,13 +52,13 @@ section .text
     SUB ESP,0x1aa0                      ; 0042af63
     MOV ESI,dword ptr [ESP + 0x1ab0]    ; 0042af69
     PUSH 0x1                            ; 0042af70
-    MOV EDX,dword ptr [0x006703ec]      ; 0042af72 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0042af72 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0042af78 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 0042af79
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 0042af7e
     PUSH 0xc000                         ; 0042af81
-    MOV ECX,dword ptr [0x006703ec]      ; 0042af86 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0042af86 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0042af8c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0042af8d
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
@@ -84,7 +84,7 @@ section .text
     MOV ECX,0x6                         ; 0042afd1
     SAR EDX,0x1f                        ; 0042afd6
     IDIV ECX                            ; 0042afd9
-    MOV EAX,[0x006703ec]                ; 0042afdb | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0042afdb | g_CDemonRendererPtr2
     MOV dword ptr [0x00823a94],EDX      ; 0042afe0 | INT_00823a94
     MOV dword ptr [EAX + 0x20],0x1      ; 0042afe6 | DAT_02c6d598
     LEA EAX,[EDX*0x4 + 0x0]             ; 0042afed
@@ -137,7 +137,7 @@ section .text
     XOR EAX,EAX                         ; 0042b069
     MOV EBX,0xb332                      ; 0042b06b
     POP EDI                             ; 0042b070
-    MOV EDX,dword ptr [0x006703ec]      ; 0042b071 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0042b071 | g_CDemonRendererPtr2
         ;   Label: LAB_0042b071
     MOV ECX,dword ptr [EDX]             ; 0042b077 | g_CDemonRendererInstance
     MOV dword ptr [ECX + EAX*0x1 + 0x20],EBX ; 0042b079
@@ -155,7 +155,7 @@ section .text
     PUSH EBX                            ; 0042b0a4
     CALL core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 ; 0042b0a5
         ;   XREF to: 005a0340 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr)
-    MOV EAX,[0x006703ec]                ; 0042b0aa | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0042b0aa | g_CDemonRendererPtr2
     ADD ESP,0xc                         ; 0042b0af
     MOV dword ptr [EAX + 0x20],0x0      ; 0042b0b2 | DAT_02c6d598
     MOV EAX,ESP                         ; 0042b0b9
@@ -165,7 +165,7 @@ section .text
         ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)
     ADD ESP,0x8                         ; 0042b0c2
     PUSH 0x0                            ; 0042b0c5
-    MOV EBP,dword ptr [0x006703ec]      ; 0042b0c7 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 0042b0c7 | g_CDemonRendererPtr2
     PUSH EBP                            ; 0042b0cd | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 0042b0ce
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)

@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0061a050
 ;   TerminatedCString s_CDemonCamera_beginBackgr_0061a064
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
 ;   int g_BackgroundSceneDepth
@@ -114,12 +114,12 @@ section .text
     PUSH EAX                            ; 0044cd6f
     PUSH 0x0                            ; 0044cd70
     PUSH 0x0                            ; 0044cd72
-    MOV ESI,dword ptr [0x006703ec]      ; 0044cd74 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0044cd74 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0044cd7a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890 ; 0044cd7b
         ;   XREF to: 0048c890 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     MOV EAX,[0x02d02548]                ; 0044cd80 | g_ViewportCenterXFixed
-    MOV EDI,dword ptr [0x006703ec]      ; 0044cd85 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0044cd85 | g_CDemonRendererPtr2
     MOV dword ptr [EBX + 0x1c0],EAX     ; 0044cd8b
     MOV EAX,[0x02d0254c]                ; 0044cd91 | g_ViewportCenterYFixed
     ADD ESP,0x14                        ; 0044cd96

@@ -23,7 +23,7 @@ void core_flame_cpp_FUN_004caa80(void)
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   
-  this_ptr = g_CDemonRendererPtr;
+  this_ptr = g_CDemonRendererPtr2;
   in_stack_00000004[1].field26_0x148 = 0;
   in_stack_00000004[1].previous_transform_state.dirty_flags = 0;
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr);

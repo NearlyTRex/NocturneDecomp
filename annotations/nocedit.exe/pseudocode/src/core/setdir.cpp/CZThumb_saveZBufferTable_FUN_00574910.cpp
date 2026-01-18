@@ -45,8 +45,8 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
               (this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
     return;
   }
-  value = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,0);
+  value = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,0);
   iVar1 = this_ptr->height;
   if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
@@ -65,7 +65,7 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
   core_setdir_cpp_CZThumb_setupZBufferScanlines_FUN_00574e30(this_ptr);
   core_setdir_cpp_CZThumb_pushRenderingContext_FUN_00574e70(this_ptr);
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
-            (g_CDemonRendererPtr,&g_VDTempVector);
+            (g_CDemonRendererPtr2,&g_VDTempVector);
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
   core_setdir_cpp_CZThumb_popRenderingContext_FUN_00574ef0(this_ptr);
@@ -85,6 +85,6 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
     } while (iVar3 < iVar1 * 4);
   }
   g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,value);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,value);
   return;
 }

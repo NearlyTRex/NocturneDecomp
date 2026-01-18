@@ -187,17 +187,17 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
         local_90.z = pCVar7->z;
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-                (g_CDemonRendererPtr,(CVector3i *)&local_90);
-      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
+                (g_CDemonRendererPtr2,(CVector3i *)&local_90);
+      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
-                (g_CDemonRendererPtr,local_80);
+                (g_CDemonRendererPtr2,local_80);
       local_114.x = 0.0;
       local_114.y = 0.0;
       local_114.z = 0.0;
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr,&local_114);
+                (g_CDemonRendererPtr1,&local_114);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,(CVector3i *)&local_114,(CVector3i *)0x0);
+                (g_CDemonRendererPtr1,(CVector3i *)&local_114,(CVector3i *)0x0);
       uVar18 = 0xffffffff;
       iVar8 = 0x47cdcc;
       dVar17 = crt_math_c_round_FUN_005fe6b0((double)local_70);
@@ -208,7 +208,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       if ((uVar5 != 0) && (iVar8 = 0, 0 < this_ptr->vertex_count)) {
         iVar10 = 0;
         do {
-          pSVar2 = g_CDemonRendererPtr->vertex_buffer_ptr;
+          pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar10 + 3) & 0x80) == 0) {
             local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar10) >> 0x10;
             x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;

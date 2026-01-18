@@ -23,7 +23,7 @@ void __cdecl core_fire_cpp_loadGunFlameTextures_FUN_004c4d50(void)
     iVar2 = iVar2 + 1;
     buffer = buffer + 0x18;
     iVar1 = iVar1 + 1;
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
   } while (iVar1 < 0x14);
   return;
 }

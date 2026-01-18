@@ -19,7 +19,7 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar2 != 0) {
     return;
   }
@@ -46,7 +46,7 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
       return;
     }
   }
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar2 == 0) {
     if (*(int *)(in_stack_00000004[3].create_event + 0x48) == 0) {
       in_stack_00000004[3].create_event[0x40] = '\x03';
@@ -64,7 +64,7 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar2 != 0) {
     if ((in_stack_00000004[3].scale.y == 0) ||
-       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
        iVar2 != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                 ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),0.0,-1);

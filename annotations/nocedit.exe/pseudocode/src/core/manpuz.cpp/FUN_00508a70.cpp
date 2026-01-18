@@ -79,7 +79,8 @@ void core_manpuz_cpp_FUN_00508a70(void)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004[3].orient_matrix.m + 1));
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,(SMRGLTextureBasic *)(in_stack_00000004[0xf].create_event + 0x20));
+            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(in_stack_00000004[0xf].create_event + 0x20))
+  ;
   pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
   local_c4 = (pCVar8->bounds_min).x;

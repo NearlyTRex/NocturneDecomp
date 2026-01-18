@@ -21,8 +21,8 @@ void __cdecl core_ground_cpp_CGround_render_FUN_004efc90(CGround *this_ptr)
     this_ptr->camera_y = this_ptr->camera_y + -1;
   }
   core_ground_cpp_CGround_transformAndStoreVertices_FUN_004ef490(this_ptr);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   core_ground_cpp_CGround_renderVisibleTerrain_FUN_004efb70(this_ptr);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   return;
 }

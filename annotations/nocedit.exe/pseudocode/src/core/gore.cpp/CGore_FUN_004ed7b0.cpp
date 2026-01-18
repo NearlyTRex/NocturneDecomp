@@ -13,7 +13,7 @@ void __cdecl core_gore_cpp_CGore_FUN_004ed7b0(CGore *this_ptr)
   CBloodParticle *pCVar2;
   
   if ((g_CGamePtr->blood_flag != 0) &&
-     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar1 == 0)) {
     core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
     pCVar2 = DAT_02d833d4;

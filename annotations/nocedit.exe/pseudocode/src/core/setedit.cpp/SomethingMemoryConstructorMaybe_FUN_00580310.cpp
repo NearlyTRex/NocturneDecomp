@@ -38,12 +38,12 @@ void core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310(void)
       do {
         piVar2 = (int *)(local_24 + (int)DAT_03659384);
         engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-                  (g_CDemonRendererPtr,0,0,0x140,0xf0);
+                  (g_CDemonRendererPtr2,0,0,0x140,0xf0);
         engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-                  (g_CDemonRendererPtr,local_20);
+                  (g_CDemonRendererPtr2,local_20);
         engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
-                  (g_CDemonRendererPtr,in_stack_00000004->cameras[local_18].projection_scale);
-        engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
+                  (g_CDemonRendererPtr2,in_stack_00000004->cameras[local_18].projection_scale);
+        engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
         piVar2[3] = g_TransformMatrix.m[0].x;
         piVar2[4] = g_TransformMatrix.m[0].y;
         piVar2[5] = g_TransformMatrix.m[0].z;
@@ -53,7 +53,7 @@ void core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310(void)
         piVar2[9] = g_TransformMatrix.m[2].x;
         piVar2[10] = g_TransformMatrix.m[2].y;
         piVar2[0xb] = g_TransformMatrix.m[2].z;
-        this_ptr = g_CDemonRendererPtr;
+        this_ptr = g_CDemonRendererPtr2;
         *piVar2 = g_CameraOriginX;
         piVar2[1] = g_CameraOriginY;
         piVar2[2] = g_CameraOriginZ;
@@ -77,7 +77,7 @@ void core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310(void)
           } while (iVar4 != 0x500);
           iVar5 = iVar5 + 4;
         } while (iVar5 != 0x3c0);
-        engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr);
+        engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
         local_20 = local_20 + 0x23;
         local_24 = local_24 + 0x4b030;
         local_18 = local_18 + 1;

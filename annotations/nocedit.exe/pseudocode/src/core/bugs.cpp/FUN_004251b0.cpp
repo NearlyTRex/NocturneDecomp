@@ -27,7 +27,7 @@ int core_bugs_cpp_FUN_004251b0(void)
   char *pcStack_8;
   
   if (in_stack_00000004[0x1a].field21_0x11c == 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
       this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
@@ -41,7 +41,7 @@ int core_bugs_cpp_FUN_004251b0(void)
           rotation = (CVector3i *)&in_stack_00000004[0x8d].vtable;
           do {
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                      (g_CDemonRendererPtr,position,rotation);
+                      (g_CDemonRendererPtr2,position,rotation);
             fStack_18 = (in_stack_00000004->location).position.x + (float)rotation->x;
             fStack_14 = (in_stack_00000004->location).position.y + (float)rotation->y;
             fStack_10 = (in_stack_00000004->location).position.z + (float)rotation->z;
@@ -52,7 +52,7 @@ int core_bugs_cpp_FUN_004251b0(void)
             }
             core_set_cpp_CDemonSet_FUN_00570cd0(g_CDemonSetPtr);
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-                      (g_CDemonRendererPtr,0xffff);
+                      (g_CDemonRendererPtr2,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                       ((CKeyFramedModelInstance *)
                        (pcStack_8 + (&in_stack_00000004[0x8d].field28_0x150)[iVar1 * 0x10] * 0x17c),

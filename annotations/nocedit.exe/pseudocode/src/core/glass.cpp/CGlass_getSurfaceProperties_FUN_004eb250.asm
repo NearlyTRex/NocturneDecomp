@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0062e111 = 0.0000152590218966964
 ;   double DOUBLE_0062e119 = 0.5
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_CurrentTextureDimension = 0x100
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   void* g_CurrentTextureData
@@ -67,7 +67,7 @@ section .text
     FLD1                                ; 004eb2a8
     FXCH                                ; 004eb2aa
     FADD double ptr [0x0062e119]        ; 004eb2ac | DOUBLE_0062e119
-    MOV EBX,dword ptr [0x006703ec]      ; 004eb2b2 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 004eb2b2 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FSTP float ptr [ESP + 0x8]          ; 004eb2b8
     FSUBRP                              ; 004eb2bc
     PUSH EBX                            ; 004eb2be | g_CDemonRendererInstance

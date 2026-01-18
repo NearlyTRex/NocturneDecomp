@@ -38,7 +38,7 @@
 ; Referenced Globals:
 ;   float FLOAT_00629cf3 = 0.2000000
 ;   double DOUBLE_00629cfb = 0.0100000000000000
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -202,7 +202,7 @@ section .text
     FSTP float ptr [ESP + 0x48]         ; 004c2385
     FLD float ptr [EBX + 0x4]           ; 004c2389
     FADD float ptr [ESP + 0x58]         ; 004c238c
-    MOV EAX,[0x006703ec]                ; 004c2390 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004c2390 | g_CDemonRendererPtr2
     FSTP float ptr [ESP + 0x4c]         ; 004c2395
     FLD float ptr [EBX + 0x8]           ; 004c2399
     FADD float ptr [ESP + 0x5c]         ; 004c239c
@@ -219,7 +219,7 @@ section .text
     MOV dword ptr [ESP + 0x40],EDX      ; 004c23bc
     PUSH EAX                            ; 004c23c0
     MOV dword ptr [ESP + 0x48],EDX      ; 004c23c1
-    MOV EDX,dword ptr [0x006703ec]      ; 004c23c5 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c23c5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c23cb | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c23cc
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -237,7 +237,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 004c23ed
         ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
     ADD ESP,0x10                        ; 004c23f2
-    MOV EDX,dword ptr [0x006703ec]      ; 004c23f5 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c23f5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c23fb | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c23fc
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()

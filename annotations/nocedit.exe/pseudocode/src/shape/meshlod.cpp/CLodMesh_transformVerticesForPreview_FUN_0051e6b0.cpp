@@ -29,10 +29,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
       local_1c.z = (int)ROUND(local_10.z * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
-                 ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+                 ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar3),&local_1c);
-      pCVar1 = g_CDemonRendererPtr;
-      *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar3) = 0xffff;
+      pCVar1 = g_CDemonRendererPtr2;
+      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar3) = 0xffff;
       *(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = 0xffff;
       *(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0xffff;
       iVar2 = iVar2 + 1;

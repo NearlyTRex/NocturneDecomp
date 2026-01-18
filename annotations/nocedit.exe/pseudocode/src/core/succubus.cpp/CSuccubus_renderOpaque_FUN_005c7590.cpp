@@ -14,7 +14,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
   int iVar2;
   int unaff_retaddr;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     (this_ptr->base_enemy).base_character.field13_0x2620[0] = '\0';
     (this_ptr->base_enemy).base_character.field13_0x2620[1] = '\0';
@@ -50,7 +50,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
         core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320();
       }
       if ((DAT_02f43978 != 0) &&
-         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar1 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_0052e700
                   (&(this_ptr->base_enemy).base_character.model.motion_controller,

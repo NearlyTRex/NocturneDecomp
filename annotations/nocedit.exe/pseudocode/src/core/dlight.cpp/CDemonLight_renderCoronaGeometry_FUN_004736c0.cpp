@@ -40,11 +40,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,(CVector3f *)&(this_ptr->base).base.position);
+            (g_CDemonRendererPtr2,(CVector3f *)&(this_ptr->base).base.position);
   core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
             ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_4c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&local_4c,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,(CVector3i *)&local_4c,(CVector3i *)0x0);
   local_a8._0_4_ =
        ((float)18 / (this_ptr->base).base.projection_scale) *
        (this_ptr->base).max_distance;
@@ -63,11 +63,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
     local_14 = iVar6;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
-               ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+               ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar5),&local_64);
-    pCVar1 = g_CDemonRendererPtr;
+    pCVar1 = g_CDemonRendererPtr2;
     iVar6 = iVar6 + 1;
-    *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar5) = 0;
+    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar5) = 0;
     iVar5 = iVar5 + 0x30;
   } while (iVar6 < 0x10);
   local_7c.x = (int)ROUND(DAT_026a72d8 * 256.0f);
@@ -75,11 +75,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   local_7c.z = (int)ROUND(DAT_026a72e0 * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&pCVar1->vertex_buffer_ptr[0x10].projected_vertex,&local_7c);
-  pCVar1 = g_CDemonRendererPtr;
-  g_CDemonRendererPtr->vertex_buffer_ptr[0x10].light = 9.18341e-41;
+  pCVar1 = g_CDemonRendererPtr2;
+  g_CDemonRendererPtr2->vertex_buffer_ptr[0x10].light = 9.18341e-41;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(pCVar1,1);
   pfVar2 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-                     (g_CDemonRendererPtr,local_58);
+                     (g_CDemonRendererPtr2,local_58);
   local_34[0].x = *pfVar2 - (float)(this_ptr->base).base.position.x;
   local_34[0].y = pfVar2[1] - (float)(this_ptr->base).base.position.y;
   bVar4 = false;
@@ -119,7 +119,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
       iVar6 = iVar5 + 1;
       local_88 = iVar5;
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-                (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)(local_a8 + 4),
+                (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)(local_a8 + 4),
                  core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
       iVar5 = iVar6;
     } while (iVar6 < 0x10);
@@ -137,12 +137,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
     local_8c = iVar5;
     local_88 = iVar6;
     engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-              (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)local_a8,
+              (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)local_a8,
                core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
     iVar5 = iVar6;
   } while (iVar6 < 0xe);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(this_ptr);
   return;
 }

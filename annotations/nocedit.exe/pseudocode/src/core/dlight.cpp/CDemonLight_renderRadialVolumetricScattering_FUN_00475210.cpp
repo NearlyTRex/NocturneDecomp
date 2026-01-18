@@ -55,14 +55,14 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,(CVector3f *)&(this_ptr->base).base.position);
+            (g_CDemonRendererPtr2,(CVector3f *)&(this_ptr->base).base.position);
   core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
             ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,(CVector3f *)(local_98 + 4));
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)(local_98 + 4),(CVector3i *)0x0);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,g_LightTextures)
-  ;
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
+            (g_CDemonRendererPtr2,(CVector3i *)(local_98 + 4),(CVector3i *)0x0);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+            (g_CDemonRendererPtr2,g_LightTextures);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   do {
     fVar2 = (float10)1 *
             ((float10)18 / (float10)(this_ptr->base).base.projection_scale) *
@@ -123,7 +123,7 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
         local_c8.y = (int)ROUND(local_ac * 256.0f);
         local_c8.z = (int)ROUND(local_a8 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_c8);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_c8);
         local_a8 = local_3c;
         if (local_30 < local_3c) {
           local_a8 = local_30;
@@ -134,7 +134,7 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
         local_bc.y = (int)ROUND(local_ac * 256.0f);
         local_bc.z = (int)ROUND(local_a8 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_bc);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_bc);
         local_a8 = local_3c;
         if (local_34 < local_3c) {
           local_a8 = local_34;
@@ -145,7 +145,7 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
         aCStack_8c[0].y = (int)ROUND(local_ac * 256.0f);
         aCStack_8c[0].z = (int)ROUND(local_a8 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,aCStack_8c);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,aCStack_8c);
         local_a8 = local_38;
         if (local_34 < local_38) {
           local_a8 = local_34;
@@ -156,10 +156,10 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
         local_98._4_4_ = (uint)ROUND(local_ac * 256.0f);
         iStack_90 = (int)ROUND(local_a8 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_98
-                  );
-        this_ptr_00 = g_CDemonRendererPtr;
-        g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = local_44;
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,
+                   (CVector3i *)local_98);
+        this_ptr_00 = g_CDemonRendererPtr2;
+        g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = local_44;
         this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;
         this_ptr_00->vertex_buffer_ptr->color = 0xffff;
         this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;

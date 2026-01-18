@@ -66,8 +66,8 @@ core_path_cpp_debugRenderGridQuad_FUN_00547dd0
   fVar3 = (float)((int)w_recip << 8);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             ((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar11);
-  this_ptr = g_CDemonRendererPtr;
-  g_CDemonRendererPtr->vertex_buffer_ptr->light = fVar1;
+  this_ptr = g_CDemonRendererPtr2;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->light = fVar1;
   this_ptr->vertex_buffer_ptr->color = iVar2;
   this_ptr->vertex_buffer_ptr->fog = fVar3;
   this_ptr->vertex_buffer_ptr->w_recip = (float)grid_x;

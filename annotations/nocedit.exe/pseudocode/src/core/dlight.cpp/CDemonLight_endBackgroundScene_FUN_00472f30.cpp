@@ -31,6 +31,6 @@ void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_00472f30(CDemonL
     ppvVar3 = (void **)((int)ppvVar3 + 1);
     ppvVar4 = (void **)((int)ppvVar4 + 1);
   }
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,0);
   return;
 }

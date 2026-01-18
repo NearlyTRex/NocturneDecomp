@@ -14,7 +14,7 @@
 ;   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 at 0051d69e
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -61,7 +61,7 @@ section .text
     SHL EDI,0x2                         ; 0051e7ba
     ADD EDI,ECX                         ; 0051e7bd
     IMUL ESI,dword ptr [EDI + 0x10],0x30 ; 0051e7bf
-    MOV EAX,[0x006703ec]                ; 0051e7c3 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0051e7c3 | g_CDemonRendererPtr2
     SUB ESP,0x30                        ; 0051e7c8
     MOV ECX,0xc                         ; 0051e7cb
     MOV EAX,dword ptr [EAX]             ; 0051e7d0 | g_CDemonRendererInstance

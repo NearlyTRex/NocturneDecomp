@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00661020
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
@@ -42,7 +42,7 @@ section .text
     PUSH EBP                            ; 0050bec3
     SUB ESP,0x34                        ; 0050bec4
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0050bec7
-    MOV ESI,dword ptr [0x006703ec]      ; 0050becb | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0050becb | g_CDemonRendererPtr2
     LEA EBX,[ESP + 0x28]                ; 0050bed1
     MOV ESI,dword ptr [ESI]             ; 0050bed5 | g_CDemonRendererInstance
     FLD float ptr [EAX]                 ; 0050bed7
@@ -59,7 +59,7 @@ section .text
     PUSH ESI                            ; 0050befe
     CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 0050beff
         ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 0050bf04 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0050bf04 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV ESI,dword ptr [EAX]             ; 0050bf09 | g_CDemonRendererInstance
     MOV ECX,0xc                         ; 0050bf0b
     LEA EDI,[ESI + 0x30]                ; 0050bf10

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x84]:4  local_84
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -54,7 +54,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 ; 005d9bf4
         ;   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005d9bf9
-    MOV EDX,dword ptr [0x006703ec]      ; 005d9bfc | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005d9bfc | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005d9c02 | g_CDemonRendererInstance
     MOV EBX,EAX                         ; 005d9c03
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005d9c05
@@ -79,7 +79,7 @@ section .text
     MOV dword ptr [ESI + EAX*0x4 + 0x2298],0x1 ; 005d9c42
     MOV EAX,dword ptr [ESI + 0x9f8d4]   ; 005d9c4d
     PUSH 0x0                            ; 005d9c53
-    MOV EBP,dword ptr [0x006703ec]      ; 005d9c55 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 005d9c55 | g_CDemonRendererPtr2
     MOV dword ptr [ESI + EAX*0x4 + 0x2298],0x1 ; 005d9c5b
     MOV EAX,[0x0067b654]                ; 005d9c66 | g_CGameInstance | g_CGamePtr
     PUSH EBP                            ; 005d9c6b | g_CDemonRendererInstance
@@ -89,7 +89,7 @@ section .text
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 005d9c81
     PUSH 0xbb80                         ; 005d9c84
-    MOV EAX,[0x006703ec]                ; 005d9c89 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 005d9c89 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 005d9c8e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 005d9c8f
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)

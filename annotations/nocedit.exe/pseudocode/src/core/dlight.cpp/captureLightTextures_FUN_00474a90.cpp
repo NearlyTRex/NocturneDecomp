@@ -13,9 +13,9 @@ void __cdecl core_dlight_cpp_captureLightTextures_FUN_00474a90(void)
   
   texture = g_LightTextures + 2;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,g_LightTextures + 1);
+            (g_CDemonRendererPtr2,g_LightTextures + 1);
   do {
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
     texture = texture + 2;
   } while (texture != (SMRGLTextureBasic *)&g_LightTexturesEnd);
   return;

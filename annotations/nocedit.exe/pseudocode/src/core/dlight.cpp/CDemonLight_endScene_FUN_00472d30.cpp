@@ -33,8 +33,8 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this
     }
     (this_ptr->base).max_distance = (float)uVar5 * (float)0.00390625;
   }
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,0);
-  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,0);
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
   iVar3 = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->shadow_map_height) {

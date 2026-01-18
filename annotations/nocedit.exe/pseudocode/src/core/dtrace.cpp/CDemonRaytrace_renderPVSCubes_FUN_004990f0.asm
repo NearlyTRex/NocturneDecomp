@@ -10,7 +10,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 at 00498790
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr1 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_PVSDrawnCubeCount
 ;   CDemonCube*[20000] g_PVSCubePointers
@@ -33,7 +33,7 @@ section .text
     PUSH 0xff                           ; 004990f2
     PUSH 0xff                           ; 004990f7
     PUSH 0xff                           ; 004990fc
-    MOV EDX,dword ptr [0x006703e8]      ; 00499101 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 00499101 | g_CDemonRendererInstance | g_CDemonRendererPtr1
     PUSH EDX                            ; 00499107 | g_CDemonRendererInstance
     XOR ESI,ESI                         ; 00499108
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970 ; 0049910a
@@ -49,7 +49,7 @@ section .text
     XOR EDI,EDI                         ; 00499123
     PUSH EBX                            ; 00499125 | g_PVSCubePositions | DAT_02cb3c38
         ;   Label: LAB_00499125
-    MOV EBP,dword ptr [0x006703e8]      ; 00499126 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703e8]      ; 00499126 | g_CDemonRendererPtr1
     PUSH EBP                            ; 0049912c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0049912d
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)

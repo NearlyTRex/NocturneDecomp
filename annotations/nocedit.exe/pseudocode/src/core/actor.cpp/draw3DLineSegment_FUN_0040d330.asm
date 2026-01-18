@@ -30,7 +30,7 @@
 ;   float FLOAT_0061444c = 0.2000000
 ;   float FLOAT_00614450 = 0.8000000
 ;   float FLOAT_006597b0 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr1 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -80,7 +80,7 @@ section .text
     FLD float ptr [ESP + 0x10]          ; 0040d39c
     FXCH                                ; 0040d3a0
     FSTP float ptr [ESP + 0x18]         ; 0040d3a2
-    MOV EDX,dword ptr [0x006703e8]      ; 0040d3a6 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0040d3a6 | g_CDemonRendererPtr1
     FADD float ptr [ESP + 0x40]         ; 0040d3ac
     FXCH                                ; 0040d3b0
     FST float ptr [ESP + 0x14]          ; 0040d3b2
@@ -106,7 +106,7 @@ section .text
     LEA EBX,[ESP + 0x2c]                ; 0040d3f1
     ADD ESP,0x8                         ; 0040d3f5
     LEA EAX,[ESP + 0x18]                ; 0040d3f8
-    MOV EDX,dword ptr [0x006703e8]      ; 0040d3fc | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0040d3fc | g_CDemonRendererPtr1
     FLD float ptr [EAX]                 ; 0040d402
     FMUL float ptr [0x006597b0]         ; 0040d404 | FLOAT_006597b0
     FISTP dword ptr [EBX]               ; 0040d40a
@@ -124,7 +124,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040d42f
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0040d434
-    MOV EAX,[0x006703e8]                ; 0040d437 | g_CDemonRendererPtr
+    MOV EAX,[0x006703e8]                ; 0040d437 | g_CDemonRendererPtr1
     SUB ESP,0x30                        ; 0040d43c
     MOV EAX,dword ptr [EAX]             ; 0040d43f | g_CDemonRendererInstance
     MOV ECX,0xc                         ; 0040d441

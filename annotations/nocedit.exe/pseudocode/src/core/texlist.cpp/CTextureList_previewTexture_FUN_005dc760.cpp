@@ -71,7 +71,7 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
       pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&local_28);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&local_28);
     engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0((SMRGLHeaderPrimitive *)&stack0xffffffb0);
     if (g_KeyboardState[0x1b] != '\0') {
       g_KeyboardState[0x1b] = '\0';

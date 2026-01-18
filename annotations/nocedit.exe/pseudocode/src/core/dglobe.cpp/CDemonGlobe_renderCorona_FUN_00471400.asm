@@ -70,14 +70,14 @@ section .text
     MOV EBP,dword ptr [ESP + 0x68]      ; 00471405
     LEA EBX,[EBP + 0x24]                ; 00471409
     PUSH EBX                            ; 0047140c
-    MOV EDX,dword ptr [0x006703e8]      ; 0047140d | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0047140d | g_CDemonRendererInstance | g_CDemonRendererPtr1
     PUSH EDX                            ; 00471413 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00471414
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00471419
     LEA EAX,[ESP + 0x4c]                ; 0047141c
     PUSH EAX                            ; 00471420
-    MOV ECX,dword ptr [0x006703ec]      ; 00471421 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00471421 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00471427 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 00471428
         ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, float * output)
@@ -128,7 +128,7 @@ section .text
     FMUL float ptr [ESP + 0x60]         ; 004714b3
     LEA EBX,[ESP + 0x3c]                ; 004714b7
     LEA EAX,[ESP + 0x30]                ; 004714bb
-    MOV EDX,dword ptr [0x006703e8]      ; 004714bf | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 004714bf | g_CDemonRendererInstance | g_CDemonRendererPtr1
     FXCH ST2                            ; 004714c5
     FSTP float ptr [ESP + 0x30]         ; 004714c7
     FSTP float ptr [ESP + 0x34]         ; 004714cb
@@ -175,7 +175,7 @@ section .text
     PUSH 0x450320                       ; 00471562
     MOV dword ptr [ESP + 0x2c],EAX      ; 00471567
     MOV EAX,dword ptr [EBX + 0x66f31c]  ; 0047156b | DAT_0066f31c | DAT_0066f340
-    MOV ESI,dword ptr [0x006703e8]      ; 00471571 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703e8]      ; 00471571 | g_CDemonRendererPtr1
     MOV dword ptr [ESP + 0x30],EAX      ; 00471577
     LEA EAX,[ESP + 0xc]                 ; 0047157b
     ADD EBX,0x24                        ; 0047157f

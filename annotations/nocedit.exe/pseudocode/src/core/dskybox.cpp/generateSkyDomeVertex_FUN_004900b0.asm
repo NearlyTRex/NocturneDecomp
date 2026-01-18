@@ -28,7 +28,7 @@
 ;   float g_SkyDomeVCoordToAngleScale = 0.25
 ;   double g_SkyDomeVScale2 = 0.5
 ;   double g_SkyDomeWorldRadius = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   float g_SkyDomeVertexScale = 5
 ;   undefined4 g_RenderVertexBuffer[0].light
 ;   undefined4 g_RenderVertexBuffer[0].color
@@ -107,7 +107,7 @@ section .text
     FMULP                               ; 00490158
     MOV ESI,dword ptr [EBP + 0x20]      ; 0049015a
     LEA EAX,[ESP + 0x4]                 ; 0049015d
-    MOV EDX,dword ptr [0x006703ec]      ; 00490161 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00490161 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 00490167
     FXCH                                ; 00490168
     CALL crt_math.c_round_FUN_005fe6b0  ; 0049016a

@@ -16,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00429aa0(CCharacter *this_ptr)
               (&this_ptr->model,-1,0xffffffff,1,0);
     core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320();
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     if (*(int *)(this_ptr->field11_0x25a0 + 0x74) == 0) {
       core_charactr_cpp_CCharacter_FUN_0042ad00(this_ptr);

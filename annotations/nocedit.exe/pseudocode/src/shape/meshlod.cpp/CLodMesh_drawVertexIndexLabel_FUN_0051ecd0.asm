@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0063852d
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
         ;   Label: shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0
     MOV ECX,dword ptr [ESP + 0x30]      ; 0051ecd3
     LEA EDX,[ECX*0x4 + 0x0]             ; 0051ecd7
-    MOV EAX,[0x006703ec]                ; 0051ecde | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0051ecde | g_CDemonRendererPtr2
     SUB EDX,ECX                         ; 0051ece3
     MOV EAX,dword ptr [EAX]             ; 0051ece5 | g_CDemonRendererInstance
     SHL EDX,0x4                         ; 0051ece7

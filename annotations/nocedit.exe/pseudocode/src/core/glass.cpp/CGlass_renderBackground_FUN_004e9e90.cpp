@@ -36,7 +36,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
     else {
       texture = &this_ptr->broken_texture;
     }
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
     pCVar1 = this_ptr->broken_vertices;
     iVar4 = 0;
     pcVar2 = this_ptr->field12_0x4b8;
@@ -58,7 +58,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
       pCVar3 = this_ptr;
       do {
         pCVar3->broken_quads[0].base.surface_normal.A = 0;
-        this_ptr_00 = g_CDemonRendererPtr;
+        this_ptr_00 = g_CDemonRendererPtr2;
         pCVar3->broken_quads[0].base.surface_normal.B = 0;
         iVar4 = iVar4 + 1;
         pCVar3->broken_quads[0].base.surface_normal.C = 0;

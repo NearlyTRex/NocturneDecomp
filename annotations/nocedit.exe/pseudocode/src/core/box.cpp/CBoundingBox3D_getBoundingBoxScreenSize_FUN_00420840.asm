@@ -29,7 +29,7 @@
 ;   float g_BoundingBoxCenterScaleFactor = 0.5
 ;   double g_BoundingBoxFixedPointScaleFactor1 = 0.00390625
 ;   float g_BoundingBoxWorldToIntegerScale = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_ProjectionScale = 0x10000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ViewportCenterYFixed
@@ -69,7 +69,7 @@ section .text
     FST float ptr [ESP + 0x8]           ; 0042087c
     FMULP ST2                           ; 00420880
     LEA EBX,[ESP + 0xc]                 ; 00420882
-    MOV EDX,dword ptr [0x006703ec]      ; 00420886 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00420886 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FXCH ST2                            ; 0042088c
     FSTP float ptr [ESP + 0x18]         ; 0042088e
     FXCH                                ; 00420892
@@ -92,7 +92,7 @@ section .text
     PUSH EAX                            ; 004208ce
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004208cf
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 004208d4 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004208d4 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 004208d9 | g_CDemonRendererInstance
     MOV EAX,dword ptr [EAX + 0xea5d8]   ; 004208db
     ADD ESP,0x8                         ; 004208e1

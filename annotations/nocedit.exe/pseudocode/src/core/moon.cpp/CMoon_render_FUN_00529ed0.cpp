@@ -35,14 +35,14 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector);
-  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr,112.0);
-  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
+            (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,112.0);
+  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
   local_5c.x = (this_ptr->rotation_phase + (float)-0.5) * (float)48;
   local_5c.y = (float)48 * (this_ptr->rotation_phase + (float)-0.5);
   local_5c.z = 72.0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&local_5c);
+            (g_CDemonRendererPtr2,&local_5c);
   pCVar1 = g_CDemonSetPtr;
   g_CDemonSetPtr->rendering_mode = 1;
   (pCVar1->light_direction).x = -37000;
@@ -69,9 +69,9 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar4);
         local_50.y = (int)((float)local_50.y + 1.570796f);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,&local_44);
+                  (g_CDemonRendererPtr2,&local_44);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr,&local_50,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,&local_50,(CVector3i *)0x0);
         render_flags = 0x52a0a9;
         dVar7 = crt_math_c_round_FUN_005fe6b0
                           ((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar4));

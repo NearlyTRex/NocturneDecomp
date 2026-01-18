@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr1 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   uchar[32768] g_ColorCubeLookup
 ;   int g_ActiveRenderColor
@@ -20,7 +20,7 @@ section .text
 
     PUSH EBX                            ; 004436d0
         ;   Label: core_course.cpp_FUN_004436d0
-    MOV EBX,dword ptr [0x006703e8]      ; 004436d1 | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703e8]      ; 004436d1 | g_CDemonRendererPtr1
     MOV EBX,dword ptr [EBX]             ; 004436d7 | g_CDemonRendererInstance
     TEST byte ptr [EBX + 0x13],0x80     ; 004436d9
     JNZ 0x00443754                      ; 004436dd

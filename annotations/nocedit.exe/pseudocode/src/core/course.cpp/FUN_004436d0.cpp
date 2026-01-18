@@ -13,7 +13,7 @@ void core_course_cpp_FUN_004436d0(void)
   int iVar1;
   int iVar2;
   
-  vertices = g_CDemonRendererPtr->vertex_buffer_ptr;
+  vertices = g_CDemonRendererPtr1->vertex_buffer_ptr;
   if ((int)((vertices->projected_vertex).screen_x & -0x80000000) == 0) {
     iVar2 = (vertices->projected_vertex).transformed_z;
     iVar1 = iVar2 >> 0x1f;

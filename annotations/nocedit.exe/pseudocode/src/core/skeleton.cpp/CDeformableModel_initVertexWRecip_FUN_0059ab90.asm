@@ -11,7 +11,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0 at 005a031a
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   float g_PerspectiveReciprocal
 ;
@@ -24,7 +24,7 @@ section .text
     PUSH ESI                            ; 0059ab91
     PUSH EDI                            ; 0059ab92
     PUSH EBP                            ; 0059ab93
-    MOV EDI,dword ptr [0x006703ec]      ; 0059ab94 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0059ab94 | g_CDemonRendererPtr2
     MOV EBP,dword ptr [0x02d051f4]      ; 0059ab9a | g_PerspectiveReciprocal
     MOV ESI,dword ptr [ESP + 0x18]      ; 0059aba0
     MOV ECX,dword ptr [ESP + 0x14]      ; 0059aba4
@@ -49,7 +49,7 @@ section .text
     NOP                                 ; 0059abcf
     MOV dword ptr [0x02d051f4],EBP      ; 0059abd0 | g_PerspectiveReciprocal
         ;   Label: LAB_0059abd0
-    MOV dword ptr [0x006703ec],EDI      ; 0059abd6 | g_CDemonRendererPtr
+    MOV dword ptr [0x006703ec],EDI      ; 0059abd6 | g_CDemonRendererPtr2
     POP EBP                             ; 0059abdc
     POP EDI                             ; 0059abdd
     POP ESI                             ; 0059abde

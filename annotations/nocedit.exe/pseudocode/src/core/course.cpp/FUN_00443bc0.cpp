@@ -99,9 +99,9 @@ void core_course_cpp_FUN_00443bc0(void)
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
+    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-              (g_CDemonRendererPtr,(CVector3i *)local_cc);
+              (g_CDemonRendererPtr2,(CVector3i *)local_cc);
     if (local_2c == 0) {
       local_50 = local_b0[0].x;
       local_4c = local_b0[0].y;
@@ -113,7 +113,7 @@ void core_course_cpp_FUN_00443bc0(void)
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,100.0,0);
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,local_b0);
+              (g_CDemonRendererPtr2,local_b0);
     local_14 = in_stack_00000004->len + -1;
     uStack_148 = (double)CONCAT44 /* combine 2-byte values */(0x443d61,(uint)uStack_148);
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
@@ -127,14 +127,14 @@ void core_course_cpp_FUN_00443bc0(void)
       local_5c.y = (int)ROUND(local_88 * 256.0f);
       local_5c.z = (int)ROUND(local_84 * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_5c);
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_5c);
       local_74.x = (float)(int)ROUND(local_68 * 256.0f);
       local_74.y = (float)(int)ROUND(local_64 * 256.0f);
       local_74.z = (float)(int)ROUND(local_60 * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&local_74)
-      ;
-      pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&local_74
+                );
+      pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       pSVar3 = pSVar4 + 1;
       pdVar5 = &dStack_160;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -161,9 +161,9 @@ void core_course_cpp_FUN_00443bc0(void)
     }
     if (local_24 == 0) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr,&local_80);
+                (g_CDemonRendererPtr2,&local_80);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,&local_98,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,&local_98,(CVector3i *)0x0);
       uStack_148 = (double)CONCAT44 /* combine 2-byte values */(0x443f1d,(uint)uStack_148);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (in_stack_00000008,(CKeyFramedModelInstance *)0x0,0,-1);

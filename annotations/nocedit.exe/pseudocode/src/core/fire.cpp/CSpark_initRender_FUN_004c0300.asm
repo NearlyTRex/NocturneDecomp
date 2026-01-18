@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00629c6b = -65536
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   undefined4 g_RenderVertexBuffer[1].u
@@ -69,7 +69,7 @@ section .text
     MOV dword ptr [0x006880c0],EBX      ; 004c0374 | g_RenderVertexBuffer[3].v
     MOV EDX,0x2                         ; 004c037a
     MOV ECX,0x3                         ; 004c037f
-    MOV ESI,dword ptr [0x006703ec]      ; 004c0384 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c0384 | g_CDemonRendererPtr2
     MOV dword ptr [0x02d12dec],EDX      ; 004c038a | g_BillboardPrimitive.vertices[2]
     PUSH ESI                            ; 004c0390 | g_CDemonRendererInstance
     LEA ESI,[ESP + 0x54]                ; 004c0391

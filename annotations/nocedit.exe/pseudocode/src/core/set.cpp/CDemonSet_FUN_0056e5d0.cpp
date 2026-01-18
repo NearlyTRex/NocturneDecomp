@@ -20,7 +20,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056e5d0(CDemonSet *this_ptr)
   int local_8;
   
   if (g_SkipClearBuffersSceneCamera != (CDemonCamera *)0x0) {
-    pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+    pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
     local_c = g_ViewportRightFixed - g_ViewportCenterXFixed;
     iVar5 = g_ViewportRightFixed + g_ViewportCenterXFixed;
     iVar3 = g_ViewportBottomFixed - g_ViewportCenterYFixed;

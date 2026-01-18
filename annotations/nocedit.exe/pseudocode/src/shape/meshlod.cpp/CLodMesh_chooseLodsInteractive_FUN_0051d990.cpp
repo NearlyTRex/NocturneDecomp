@@ -166,14 +166,14 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     local_d8 = (SSpatialGrid *)0x0;
     shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)(auStack_12c + 0x20));
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector);
     local_14 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_94);
     iVar12 = 0x51dcf0;
     dVar11 = crt_math_c_round_FUN_005fe6b0((double)local_14);
     local_38 = (int)ROUND(dVar11);
     shape_spotview_cpp_CSpotView_FUN_005b9a20(this_ptr_00);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector);
     if (iVar4 < 0) {
       iVar9 = local_34 + -1;
       if (iVar9 < 1) {

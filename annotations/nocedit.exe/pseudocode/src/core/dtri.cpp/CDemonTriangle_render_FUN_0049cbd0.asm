@@ -29,7 +29,7 @@
 ;   double g_TriangleDataScaleFactor = 65536
 ;   double g_TriangleDepthScaleFactor = 256
 ;   float g_VertexCoordinateScaleFactor = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr1 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x7c]      ; 0049cbd6
     LEA EBX,[ESP + 0x48]                ; 0049cbda
     MOV EAX,ESI                         ; 0049cbde
-    MOV EDX,dword ptr [0x006703e8]      ; 0049cbe0 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0049cbe0 | g_CDemonRendererPtr1
     FLD float ptr [EAX]                 ; 0049cbe6
     FMUL float ptr [0x0065d2d0]         ; 0049cbe8 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0049cbee
@@ -68,7 +68,7 @@ section .text
     LEA EBX,[ESP + 0x68]                ; 0049cc15
     ADD ESP,0x8                         ; 0049cc19
     LEA EAX,[ESI + 0xc]                 ; 0049cc1c
-    MOV EDX,dword ptr [0x006703e8]      ; 0049cc1f | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0049cc1f | g_CDemonRendererPtr1
     FLD float ptr [EAX]                 ; 0049cc25
     FMUL float ptr [0x0065d2d0]         ; 0049cc27 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0049cc2d
@@ -88,7 +88,7 @@ section .text
     LEA EBX,[ESP + 0x5c]                ; 0049cc57
     ADD ESP,0x8                         ; 0049cc5b
     LEA EAX,[ESI + 0x18]                ; 0049cc5e
-    MOV EDX,dword ptr [0x006703e8]      ; 0049cc61 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0049cc61 | g_CDemonRendererPtr1
     FLD float ptr [EAX]                 ; 0049cc67
     FMUL float ptr [0x0065d2d0]         ; 0049cc69 | g_VertexCoordinateScaleFactor
     FISTP dword ptr [EBX]               ; 0049cc6f
@@ -129,7 +129,7 @@ section .text
     MOV EAX,ESP                         ; 0049cce2
     MOV EBX,0x1                         ; 0049cce4
     PUSH EAX                            ; 0049cce9
-    MOV EDI,dword ptr [0x006703e8]      ; 0049ccea | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703e8]      ; 0049ccea | g_CDemonRendererPtr1
     XOR ECX,ECX                         ; 0049ccf0
     PUSH EDI                            ; 0049ccf2 | g_CDemonRendererInstance
     MOV ESI,0x2                         ; 0049ccf3

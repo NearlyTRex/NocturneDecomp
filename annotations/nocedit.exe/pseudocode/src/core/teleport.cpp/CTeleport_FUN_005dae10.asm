@@ -7,7 +7,7 @@
 ; CTeleport *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
@@ -29,7 +29,7 @@ section .text
     XOR EAX,EAX                         ; 005dae1b
         ;   Label: LAB_005dae1b
     RET                                 ; 005dae1d
-    MOV ECX,dword ptr [0x006703ec]      ; 005dae1e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005dae1e | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_005dae1e
     PUSH ECX                            ; 005dae24 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005dae25

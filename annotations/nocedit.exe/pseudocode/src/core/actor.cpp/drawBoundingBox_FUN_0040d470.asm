@@ -72,7 +72,7 @@
 ;   float FLOAT_00614454 = 0.2000000
 ;   float FLOAT_00614458 = 0.8000000
 ;   float FLOAT_006597b0 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr1 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ActiveRenderColor
 ;
@@ -147,7 +147,7 @@ section .text
     FLD float ptr [ESP + 0xe8]          ; 0040d534
     FXCH                                ; 0040d53b
     FSTP float ptr [ESP + 0x48]         ; 0040d53d
-    MOV EDX,dword ptr [0x006703e8]      ; 0040d541 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0040d541 | g_CDemonRendererPtr1
     FADD float ptr [ESP + 0x28]         ; 0040d547
     FXCH                                ; 0040d54b
     FST float ptr [ESP + 0xec]          ; 0040d54d
@@ -173,7 +173,7 @@ section .text
     LEA EBX,[ESP + 0x14]                ; 0040d594
     ADD ESP,0x8                         ; 0040d598
     LEA EAX,[ESP + 0x48]                ; 0040d59b
-    MOV EDX,dword ptr [0x006703e8]      ; 0040d59f | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0040d59f | g_CDemonRendererPtr1
     FLD float ptr [EAX]                 ; 0040d5a5
     FMUL float ptr [0x006597b0]         ; 0040d5a7 | FLOAT_006597b0
     FISTP dword ptr [EBX]               ; 0040d5ad
@@ -191,7 +191,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040d5d2
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0040d5d7
-    MOV EAX,[0x006703e8]                ; 0040d5da | g_CDemonRendererPtr
+    MOV EAX,[0x006703e8]                ; 0040d5da | g_CDemonRendererPtr1
     SUB ESP,0x30                        ; 0040d5df
     MOV EAX,dword ptr [EAX]             ; 0040d5e2 | g_CDemonRendererInstance
     MOV ECX,0xc                         ; 0040d5e4
@@ -258,7 +258,7 @@ section .text
     FLD float ptr [ESP + 0xf4]          ; 0040d6b2
     FXCH                                ; 0040d6b9
     FSTP float ptr [ESP + 0xc0]         ; 0040d6bb
-    MOV EDX,dword ptr [0x006703e8]      ; 0040d6c2 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0040d6c2 | g_CDemonRendererPtr1
     FADD float ptr [ESP + 0x34]         ; 0040d6c8
     FXCH                                ; 0040d6cc
     FST float ptr [ESP + 0xf8]          ; 0040d6ce
@@ -284,7 +284,7 @@ section .text
     LEA EBX,[ESP + 0x80]                ; 0040d71b
     ADD ESP,0x8                         ; 0040d722
     LEA EAX,[ESP + 0xc0]                ; 0040d725
-    MOV EDX,dword ptr [0x006703e8]      ; 0040d72c | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0040d72c | g_CDemonRendererPtr1
     FLD float ptr [EAX]                 ; 0040d732
     FMUL float ptr [0x006597b0]         ; 0040d734 | FLOAT_006597b0
     FISTP dword ptr [EBX]               ; 0040d73a
@@ -302,7 +302,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040d75f
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0040d764
-    MOV EAX,[0x006703e8]                ; 0040d767 | g_CDemonRendererPtr
+    MOV EAX,[0x006703e8]                ; 0040d767 | g_CDemonRendererPtr1
     SUB ESP,0x30                        ; 0040d76c
     MOV EAX,dword ptr [EAX]             ; 0040d76f | g_CDemonRendererInstance
     MOV ECX,0xc                         ; 0040d771
@@ -368,7 +368,7 @@ section .text
     FLD float ptr [ESP + 0x100]         ; 0040d84a
     FXCH                                ; 0040d851
     FSTP float ptr [ESP + 0x3c]         ; 0040d853
-    MOV EDX,dword ptr [0x006703e8]      ; 0040d857 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0040d857 | g_CDemonRendererPtr1
     FADD float ptr [ESP + 0xac]         ; 0040d85d
     FXCH                                ; 0040d864
     FST float ptr [ESP + 0x104]         ; 0040d866
@@ -394,7 +394,7 @@ section .text
     LEA EBX,[ESP + 0x20]                ; 0040d8b0
     ADD ESP,0x8                         ; 0040d8b4
     LEA EAX,[ESP + 0x3c]                ; 0040d8b7
-    MOV EDX,dword ptr [0x006703e8]      ; 0040d8bb | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0040d8bb | g_CDemonRendererPtr1
     FLD float ptr [EAX]                 ; 0040d8c1
     FMUL float ptr [0x006597b0]         ; 0040d8c3 | FLOAT_006597b0
     FISTP dword ptr [EBX]               ; 0040d8c9
@@ -412,7 +412,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040d8ee
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0040d8f3
-    MOV EAX,[0x006703e8]                ; 0040d8f6 | g_CDemonRendererPtr
+    MOV EAX,[0x006703e8]                ; 0040d8f6 | g_CDemonRendererPtr1
     SUB ESP,0x30                        ; 0040d8fb
     MOV EAX,dword ptr [EAX]             ; 0040d8fe | g_CDemonRendererInstance
     MOV ECX,0xc                         ; 0040d900

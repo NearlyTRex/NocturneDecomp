@@ -23,7 +23,7 @@ void core_manpuz_cpp_FUN_0050a1f0(void)
     return;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)(iVar2 + 0x28),(CVector3i *)(iVar2 + 0x1c));
+            (g_CDemonRendererPtr2,(CVector3i *)(iVar2 + 0x28),(CVector3i *)(iVar2 + 0x1c));
   render_flags = -1;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x450));

@@ -31,8 +31,8 @@ core_skeleton_cpp_CDeformableModel_renderBones_FUN_0059b800
       local_2c.y = (int)ROUND(local_1c * 256.0f);
       local_2c.z = (int)ROUND(local_18 * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_2c);
-      pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_2c);
+      pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       if ((int)(pSVar1[19999].projected_vertex.screen_x & -0x80000000) == 0) {
         engine_2d_c_drawText_FUN_00401fd0
                   (text->bone_name,pSVar1[19999].projected_vertex.screen_x >> 0x10,

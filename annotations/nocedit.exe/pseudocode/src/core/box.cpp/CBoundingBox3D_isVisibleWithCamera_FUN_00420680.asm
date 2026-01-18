@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   float g_BoundingBoxWorldToIntegerScale = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_CameraOriginX
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 004202b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
     ADD ESP,0xc                         ; 004206aa
     LEA EAX,[ESP + 0x60]                ; 004206ad
-    MOV ECX,dword ptr [0x006703ec]      ; 004206b1 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004206b1 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004206b7
     FMUL float ptr [0x0065b160]         ; 004206b9 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 004206bf
@@ -83,7 +83,7 @@ section .text
     PUSH EAX                            ; 004206e2
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004206e3
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 004206e8 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004206e8 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 004206ed | g_CDemonRendererInstance
     ADD EAX,EDI                         ; 004206ef
     MOV DL,byte ptr [EAX + 0x13]        ; 004206f1
@@ -103,7 +103,7 @@ section .text
         ;   XREF to: 00420832 (CONDITIONAL_JUMP)  ; LAB_00420832
     XOR ESI,ESI                         ; 00420714
     XOR ECX,ECX                         ; 00420716
-    MOV EAX,[0x006703ec]                ; 00420718 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00420718 | g_CDemonRendererPtr2
         ;   Label: LAB_00420718
     MOV EDI,dword ptr [EAX]             ; 0042071d | g_CDemonRendererInstance
     MOV EAX,dword ptr [EDI + ESI*0x1]   ; 0042071f

@@ -13,7 +13,7 @@
 ;   core_skeleton.cpp_getDeformableModel_FUN_005a1cf0 at 005a1da6
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -58,7 +58,7 @@ section .text
     MOV ESI,dword ptr [ESP]             ; 0059a7c5
     PUSH ESI                            ; 0059a7c8
         ;   Label: LAB_0059a7c8
-    MOV EAX,[0x006703ec]                ; 0059a7c9 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0059a7c9 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0059a7ce | g_CDemonRendererInstance
     INC EBX                             ; 0059a7cf
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0059a7d0

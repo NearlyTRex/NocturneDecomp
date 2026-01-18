@@ -126,7 +126,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   g_CubesRenderedCount = 0;
   g_PVSDrawnCubeCount = 0;
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-            (g_CDemonRendererPtr,in_stack_fffffe50);
+            (g_CDemonRendererPtr1,in_stack_fffffe50);
   local_138 = local_150;
   local_134[(uint)bVar7 * -2] = aiStack_14c[(uint)bVar7 * -2];
   local_134[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
@@ -334,8 +334,8 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   }
   g_RenderedTriangleCount = 0;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
-            (g_CDemonRendererPtr,&g_DebugCubeBasePoint);
-  engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr,0xff,0xff,0xff);
+            (g_CDemonRendererPtr1,&g_DebugCubeBasePoint);
+  engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr1,0xff,0xff,0xff);
   if ((4 < this_ptr->rendering_mode) || (this_ptr->rendering_mode < 0)) {
     this_ptr->rendering_mode = 1;
   }

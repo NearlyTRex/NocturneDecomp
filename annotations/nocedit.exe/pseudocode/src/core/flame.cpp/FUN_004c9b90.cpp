@@ -23,7 +23,7 @@ void core_flame_cpp_FUN_004c9b90(void)
   do {
     texture = &DAT_0067b100 + iVar3 * 8;
     do {
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,texture);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
       texture = texture + 1;
     } while (texture != pSVar2);
     iVar3 = iVar3 + 1;

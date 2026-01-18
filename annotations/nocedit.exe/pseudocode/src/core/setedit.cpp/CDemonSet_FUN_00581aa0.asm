@@ -284,7 +284,7 @@ section .text
         ;   XREF to: 0056a190 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 00581caa
     PUSH 0x1                            ; 00581cad
-    MOV EDX,dword ptr [0x006703ec]      ; 00581caf | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00581caf | g_CDemonRendererPtr2
     PUSH EDX                            ; 00581cb5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 00581cb6
         ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)
@@ -312,7 +312,7 @@ section .text
         ;   XREF to: 00472160 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00581cf8
     PUSH EBX                            ; 00581cfb
-    MOV EBX,dword ptr [0x006703ec]      ; 00581cfc | g_CDemonRendererPtr | g_CDemonRendererInstance
+    MOV EBX,dword ptr [0x006703ec]      ; 00581cfc | g_CDemonRendererPtr2 | g_CDemonRendererInstance
     PUSH EBX                            ; 00581d02 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00581d03
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -320,7 +320,7 @@ section .text
     PUSH 0x0                            ; 00581d0b
     LEA EAX,[EBP + 0x12]                ; 00581d0d
     PUSH EAX                            ; 00581d10
-    MOV EAX,[0x006703ec]                ; 00581d11 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00581d11 | g_CDemonRendererPtr2
     PUSH EAX                            ; 00581d16 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00581d17
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -379,7 +379,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 ; 00581da5
         ;   XREF to: 004a2050 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools * this_ptr, CVector3f * corner1, CVector3f * corner2, int color_value)
     ADD ESP,0x10                        ; 00581daa
-    MOV EBX,dword ptr [0x006703ec]      ; 00581dad | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00581dad | g_CDemonRendererPtr2
         ;   Label: LAB_00581dad
     PUSH EBX                            ; 00581db3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00581db4

@@ -38,7 +38,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(CLodMesh *t
           if (2 < iVar6) {
             iVar6 = 0;
           }
-          pSVar5 = g_CDemonRendererPtr->vertex_buffer_ptr;
+          pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar4 = pSVar5 + *(int *)(iVar6 * 4 + local_14 + 0x10);
           piVar7 = aiStack_4c;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

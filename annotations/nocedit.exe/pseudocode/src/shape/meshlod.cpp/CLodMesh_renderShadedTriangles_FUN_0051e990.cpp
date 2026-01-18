@@ -32,9 +32,9 @@ shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
   SStack_60.surface_normal.C = 0;
   SStack_60.surface_normal.B = 0;
   SStack_60.surface_normal.A = 0;
-  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr,0xff);
+  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,0xff);
   uVar2 = 0;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   if (0 < this_ptr->tri_count) {
     iVar3 = 0;
     do {
@@ -60,19 +60,19 @@ shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
           dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
           iStack_20 = (int)ROUND(dVar7);
           engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-                    (g_CDemonRendererPtr,iStack_20,green_component,blue_component);
+                    (g_CDemonRendererPtr2,iStack_20,green_component,blue_component);
         }
         else {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                    (g_CDemonRendererPtr,-((uVar2 & 0x7f) + 0x80));
+                    (g_CDemonRendererPtr2,-((uVar2 & 0x7f) + 0x80));
         }
         engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-                  (g_CDemonRendererPtr,&SStack_60);
+                  (g_CDemonRendererPtr2,&SStack_60);
       }
       uVar2 = uVar2 + 1;
       iVar3 = iVar3 + 0x8c;
     } while ((int)uVar2 < this_ptr->tri_count);
   }
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   return;
 }

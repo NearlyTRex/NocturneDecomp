@@ -27,12 +27,12 @@ void core_manpuz_cpp_FUN_00509c60(void)
   local_28.x = 0;
   local_28.y = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,&local_1c,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&local_1c,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,&local_28);
+            (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,&local_28);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,(CVector3i *)(in_stack_00000004 + 0x5e4)
-            );
+            (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,
+             (CVector3i *)(in_stack_00000004 + 0x5e4));
   if (DAT_02f0cb1c == 1) {
     shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
   }

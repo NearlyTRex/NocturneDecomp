@@ -19,10 +19,10 @@ core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int hei
   uint local_c;
   uint local_8;
   
-  this_ptr = g_CDemonRendererPtr;
+  this_ptr = g_CDemonRendererPtr2;
   if (0 < height_half * 2) {
     iVar1 = (x_center + -0x10) * 0x10000;
-    (g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;
+    (g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;
     (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y_top << 0x10;
     iVar2 = (x_center + 0x10) * 0x10000;
     this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar2;
@@ -50,18 +50,18 @@ core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int hei
     local_8 = 3;
     local_10 = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(this_ptr,0x8000);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,
+              (g_CDemonRendererPtr2,
                g_AudioSpectrumTextures +
                (((int)((g_AudioVisualizationCounter +
                        (g_AudioVisualizationCounter >> 0x1f) * -0x10000) -
                       (uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center
                & 7));
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-              (g_CDemonRendererPtr,&local_2c,0x23);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
+              (g_CDemonRendererPtr2,&local_2c,0x23);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   }
   return;
 }

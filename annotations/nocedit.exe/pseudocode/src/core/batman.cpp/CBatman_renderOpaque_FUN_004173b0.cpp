@@ -16,7 +16,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
   double dStack_30;
   CBoundingBox3D local_2c;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     (this_ptr->base_enemy).base_character.field13_0x2620[0] = '\0';
     (this_ptr->base_enemy).base_character.field13_0x2620[1] = '\0';
@@ -24,7 +24,7 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
     (this_ptr->base_enemy).base_character.field13_0x2620[3] = '\0';
   }
   if (((this_ptr->mist_state != 2) &&
-      (((iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+      (((iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
         iVar2 == 0 || (this_ptr->mist_state == 0)) && (iVar1 == 0)))) &&
      (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
@@ -53,11 +53,11 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
         }
         dStack_30 = (double)local_2c.min.y;
         if (0.0 < dStack_30) {
-          engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
+          engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
           engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
-                    (g_CDemonRendererPtr,local_2c.min.y);
+                    (g_CDemonRendererPtr2,local_2c.min.y);
           engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
-                    (g_CDemonRendererPtr,1);
+                    (g_CDemonRendererPtr2,1);
           if (dStack_30 <= 0.5) {
             render_flags = 0x267;
           }
@@ -66,11 +66,11 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
           }
           core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                     (&(this_ptr->base_enemy).base_character.model,-1,render_flags,1,0);
-          engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr);
+          engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
         }
       }
       if ((DAT_02f43978 != 0) &&
-         (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+         (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar2 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_0052e700
                   (&(this_ptr->base_enemy).base_character.model.motion_controller,

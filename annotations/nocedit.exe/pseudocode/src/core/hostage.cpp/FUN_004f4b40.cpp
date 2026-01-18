@@ -16,7 +16,7 @@ int core_hostage_cpp_FUN_004f4b40(void)
   CCharacter *in_stack_00000004;
   
   if (*(int *)(in_stack_00000004[2].cloth_data + 0x53fc) != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar1 != 0) && (*(int *)(in_stack_00000004[2].cloth_data + 0x53dc) == 4)) {
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(in_stack_00000004->model).motion_controller);

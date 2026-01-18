@@ -121,7 +121,7 @@
     },
     {
       "addr": "006703ec",
-      "name": "g_CDemonRendererPtr",
+      "name": "g_CDemonRendererPtr2",
       "type": "CDemonRenderer*",
       "value": "02c6d578"
     },
@@ -367,7 +367,7 @@
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar4) = 0x800000;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar4) = 0x800000;",
       "type": "pointer_cast"
     },
     {
@@ -402,7 +402,7 @@
       "description": "Direct stack address reference",
       "line": 96,
       "match": "&stack0xffffff7c",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff7c);",
+      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff7c);",
       "type": "stack_ref"
     },
     {

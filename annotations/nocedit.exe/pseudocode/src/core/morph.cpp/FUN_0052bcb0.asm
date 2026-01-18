@@ -88,7 +88,7 @@
 ;   WatcomTypeInfo g_CDeformableModelInstanceTypeInfo
 ;   float FLOAT_00661b48 = 0.00390625
 ;   WatcomTypeInfo g_SMorphControlPointTypeInfo
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   ... and 18 more
 ;
@@ -364,7 +364,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4d78]    ; 0052c022
     PUSH EDX                            ; 0052c029
     PUSH EAX                            ; 0052c02a
-    MOV ECX,dword ptr [0x006703ec]      ; 0052c02b | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0052c02b | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0052c031 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890 ; 0052c032
         ;   XREF to: 0048c890 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer * this_ptr, int x, int y, int width, ...)
@@ -375,7 +375,7 @@ section .text
         ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0052c046
     PUSH 0x3f87558                      ; 0052c049 | g_ZeroVector
-    MOV EAX,[0x006703ec]                ; 0052c04e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0052c04e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0052c053 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0052c054
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -412,7 +412,7 @@ section .text
     CMP EDX,dword ptr [EAX + 0x2c]      ; 0052c0d6
     JGE 0x0052c110                      ; 0052c0d9
         ;   XREF to: 0052c110 (CONDITIONAL_JUMP)  ; LAB_0052c110
-    MOV EAX,[0x006703ec]                ; 0052c0db | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0052c0db | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0052c0e0 | g_CDemonRendererInstance
     ADD EAX,EBX                         ; 0052c0e2
     MOV ECX,dword ptr [EAX + 0x10]      ; 0052c0e4
@@ -434,7 +434,7 @@ section .text
     ADD ESP,0x4db4                      ; 0052c108
     POP EBP                             ; 0052c10e
     RET                                 ; 0052c10f
-    MOV EBX,dword ptr [0x006703ec]      ; 0052c110 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0052c110 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0052c110
     PUSH EBX                            ; 0052c116 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0052c117
@@ -514,7 +514,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x4d78]    ; 0052c22e
     PUSH ESI                            ; 0052c235
     PUSH EAX                            ; 0052c236
-    MOV ECX,dword ptr [0x006703ec]      ; 0052c237 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0052c237 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0052c23d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890 ; 0052c23e
         ;   XREF to: 0048c890 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer * this_ptr, int x, int y, int width, ...)
@@ -525,7 +525,7 @@ section .text
         ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0052c252
     PUSH 0x3f87558                      ; 0052c255 | g_ZeroVector
-    MOV ESI,dword ptr [0x006703ec]      ; 0052c25a | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0052c25a | g_CDemonRendererPtr2
     PUSH ESI                            ; 0052c260 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0052c261
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -566,7 +566,7 @@ section .text
     MOV dword ptr [ESP + 0x4da0],EBX    ; 0052c2cf
     IMUL EAX,EAX,0x30                   ; 0052c2d6
         ;   Label: LAB_0052c2d6
-    MOV EDX,dword ptr [0x006703ec]      ; 0052c2d9 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0052c2d9 | g_CDemonRendererPtr2
     MOV EDX,dword ptr [EDX]             ; 0052c2df | g_CDemonRendererInstance
     PUSH 0x5                            ; 0052c2e1
     ADD EAX,EDX                         ; 0052c2e3
@@ -593,7 +593,7 @@ section .text
     CMP EAX,dword ptr [ESP + 0x4db8]    ; 0052c315
     JNZ 0x0052c8b8                      ; 0052c31c
         ;   XREF to: 0052c8b8 (CONDITIONAL_JUMP)  ; LAB_0052c8b8
-    MOV EAX,[0x006703ec]                ; 0052c322 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0052c322 | g_CDemonRendererPtr2
     MOV ECX,dword ptr [ESP + 0x4d60]    ; 0052c327
     MOV EAX,dword ptr [EAX]             ; 0052c32e | g_CDemonRendererInstance
     PUSH 0x5                            ; 0052c330
@@ -603,7 +603,7 @@ section .text
     CALL core_morph.cpp_FUN_0052bb80    ; 0052c335
         ;   XREF to: 0052bb80 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052bb80()
     ADD ESP,0x8                         ; 0052c33a
-    MOV EBX,dword ptr [0x006703ec]      ; 0052c33d | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0052c33d | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0052c33d
     PUSH EBX                            ; 0052c343 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0052c344
@@ -983,7 +983,7 @@ section .text
     ADD ESP,0xc                         ; 0052c8b0
     JMP 0x0052c29a                      ; 0052c8b3
         ;   XREF to: 0052c29a (UNCONDITIONAL_JUMP)  ; LAB_0052c29a
-    MOV EAX,[0x006703ec]                ; 0052c8b8 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0052c8b8 | g_CDemonRendererPtr2
         ;   Label: LAB_0052c8b8
     MOV EDX,dword ptr [ESP + 0x4d64]    ; 0052c8bd
     MOV EAX,dword ptr [EAX]             ; 0052c8c4 | g_CDemonRendererInstance

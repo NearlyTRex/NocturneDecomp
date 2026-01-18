@@ -7,7 +7,7 @@
 ; CTrap *          Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2c]      ; 005de927
     LEA EAX,[EBX + 0x20]                ; 005de92b
     PUSH EAX                            ; 005de92e
-    MOV EDX,dword ptr [0x006703ec]      ; 005de92f | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005de92f | g_CDemonRendererPtr2
     PUSH EDX                            ; 005de935 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 005de936
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -38,7 +38,7 @@ section .text
     PUSH 0x0                            ; 005de93e
     LEA EAX,[EBX + 0x30]                ; 005de940
     PUSH EAX                            ; 005de943
-    MOV ECX,dword ptr [0x006703ec]      ; 005de944 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005de944 | g_CDemonRendererPtr2
     PUSH ECX                            ; 005de94a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005de94b
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -69,7 +69,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 005de98a
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 005de98f
-    MOV EBP,dword ptr [0x006703ec]      ; 005de992 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 005de992 | g_CDemonRendererPtr2
         ;   Label: LAB_005de992
     PUSH EBP                            ; 005de998 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005de999

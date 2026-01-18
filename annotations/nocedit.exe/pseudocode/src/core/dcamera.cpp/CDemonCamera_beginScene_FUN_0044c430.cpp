@@ -90,7 +90,7 @@ switchD_0044c448_caseD_3:
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(this_ptr,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-            (g_CDemonRendererPtr,0,0,g_CameraScreenWidth + -1,g_CameraScreenHeight + -1);
+            (g_CDemonRendererPtr2,0,0,g_CameraScreenWidth + -1,g_CameraScreenHeight + -1);
   iVar3 = g_CameraShakeOffsetX;
   (this_ptr->viewport_rect).left = 0;
   (this_ptr->viewport_rect).top = 0;
@@ -99,14 +99,14 @@ switchD_0044c448_caseD_3:
   (this_ptr->viewport_rect).right = this_ptr->framebuffer_width + -1;
   g_ViewportBottomFixed = g_ViewportBottomFixed + g_CameraShakeOffsetY * -0x10000;
   (this_ptr->viewport_rect).bottom = this_ptr->framebuffer_height + -1;
-  this_ptr_00 = g_CDemonRendererPtr;
+  this_ptr_00 = g_CDemonRendererPtr2;
   this_ptr->skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (this_ptr_00,&(this_ptr->base).position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
-            (g_CDemonRendererPtr,(this_ptr->base).projection_scale);
+            (g_CDemonRendererPtr2,(this_ptr->base).projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr,(CMatrix3x3f *)&(this_ptr->base).rotation_matrix,unaff_EBP);
+            (g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).rotation_matrix,unaff_EBP);
   if (skip_clear_buffers == 0) {
     if (g_FullscreenMode != 0) {
       wincore_windll_cpp_beginScene_FUN_005b7280();

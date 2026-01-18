@@ -17,7 +17,7 @@
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a989
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -40,7 +40,7 @@ section .text
     PUSH EBX                            ; 00587e0c
         ;   Label: LAB_00587e0c
     FLD float ptr [EDX + 0x11d4]        ; 00587e0d
-    MOV EBX,dword ptr [0x006703ec]      ; 00587e13 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00587e13 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FCHS                                ; 00587e19
     ADD EDX,0x104                       ; 00587e1b
     FSTP float ptr [ESP + 0x4]          ; 00587e21

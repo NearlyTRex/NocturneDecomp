@@ -23,8 +23,8 @@ core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(CBoundingBox3D
   local_34.y = (int)ROUND(local_24 * 256.0f);
   local_34.z = (int)ROUND(local_20 * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_34);
-  iVar1 = g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex.transformed_z;
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_34);
+  iVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex.transformed_z;
   if (0 < iVar1) {
     return ABS(((float)g_ViewportCenterYFixed *
                (((this_ptr->max).y - (this_ptr->min).y) /

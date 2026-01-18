@@ -19,7 +19,7 @@ void core_cloth_cpp_FUN_0043c6e0(void)
   int x_00;
   int in_stack_00000004;
   
-  pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+  pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   if ((int)(pSVar1[in_stack_00000004].projected_vertex.screen_x & -0x80000000) == 0) {
     y = pSVar1[in_stack_00000004].projected_vertex.screen_y >> 0x10;
     x = pSVar1[in_stack_00000004].projected_vertex.screen_x >> 0x10;

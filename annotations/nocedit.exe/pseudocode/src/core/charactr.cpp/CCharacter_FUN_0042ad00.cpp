@@ -33,7 +33,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
   if (*(int *)(this_ptr->cloth_data + 0x478) == 0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_0066e784);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0066e784);
   this_ptr_00 = &this_ptr->model;
   if (*(int *)(this_ptr->cloth_data + 0x8d40) != 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150

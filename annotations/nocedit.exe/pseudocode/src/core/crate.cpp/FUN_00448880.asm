@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -26,7 +26,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 00448885
     LEA EAX,[EBX + 0x20]                ; 00448889
     PUSH EAX                            ; 0044888c
-    MOV EDX,dword ptr [0x006703ec]      ; 0044888d | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044888d | g_CDemonRendererPtr2
     PUSH EDX                            ; 00448893 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00448894
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -34,7 +34,7 @@ section .text
     PUSH 0x0                            ; 0044889c
     LEA EAX,[EBX + 0x30]                ; 0044889e
     PUSH EAX                            ; 004488a1
-    MOV ECX,dword ptr [0x006703ec]      ; 004488a2 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004488a2 | g_CDemonRendererPtr2
     PUSH ECX                            ; 004488a8 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004488a9
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -53,7 +53,7 @@ section .text
     TEST EAX,EAX                        ; 004488cc
     JNZ 0x004488f1                      ; 004488ce
         ;   XREF to: 004488f1 (CONDITIONAL_JUMP)  ; LAB_004488f1
-    MOV EBX,dword ptr [0x006703ec]      ; 004488d0 | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 004488d0 | g_CDemonRendererPtr2
         ;   Label: LAB_004488d0
     PUSH EBX                            ; 004488d6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004488d7

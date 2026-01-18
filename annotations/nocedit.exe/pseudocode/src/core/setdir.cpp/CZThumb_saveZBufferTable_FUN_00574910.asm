@@ -20,7 +20,7 @@
 ;   TerminatedCString s_core_setdir_cpp_00646464
 ;   TerminatedCString s_core_setdir_cpp_00646477
 ;   TerminatedCString s_Out_of_memory_0064648a
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   uint*[1024] g_ZBufferScanlineArray
@@ -109,13 +109,13 @@ section .text
     TEST EBP,EBP                        ; 005749ab
     JNZ 0x00574b02                      ; 005749ad
         ;   XREF to: 00574b02 (CONDITIONAL_JUMP)  ; LAB_00574b02
-    MOV EBX,dword ptr [0x006703ec]      ; 005749b3 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 005749b3 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 005749b9 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005749ba
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005749bf
     PUSH EBP                            ; 005749c2
-    MOV EBP,dword ptr [0x006703ec]      ; 005749c3 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 005749c3 | g_CDemonRendererPtr2
     PUSH EBP                            ; 005749c9 | g_CDemonRendererInstance
     MOV EDI,EAX                         ; 005749ca
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 005749cc
@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 00574e70 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70(CZThumb * this_ptr)
     ADD ESP,0x4                         ; 00574a3f
     PUSH 0x3346d14                      ; 00574a42 | g_VDTempVector
-    MOV EBX,dword ptr [0x006703ec]      ; 00574a47 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00574a47 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00574a4d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420 ; 00574a4e
         ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420(CDemonRenderer * this_ptr, CVector3f * input_point)
@@ -208,7 +208,7 @@ section .text
     NOP                                 ; 00574acf
     PUSH EDI                            ; 00574ad0
         ;   Label: LAB_00574ad0
-    MOV ESI,dword ptr [0x006703ec]      ; 00574ad1 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 00574ad1 | g_CDemonRendererPtr2
     XOR EBX,EBX                         ; 00574ad7
     PUSH ESI                            ; 00574ad9 | g_CDemonRendererInstance
     MOV dword ptr [0x0336362c],EBX      ; 00574ada | g_ZBufferScanlineArrayBackup

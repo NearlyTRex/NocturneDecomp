@@ -16,13 +16,13 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
   int local_c;
   
   motion_controller = &(this_ptr->base_character).model;
-  if (g_CHeroPlaceholderClassVersion < 4) {
+  if (g_CHeroClassVersion < 4) {
     core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0((CDemonActor *)this_ptr);
-    if (1 < g_CHeroPlaceholderClassVersion) {
+    if (1 < g_CHeroClassVersion) {
       core_actor_cpp_serializeMotionState_FUN_0040b9f0
                 (&motion_controller->motion_controller,"motion state");
     }
-    if (2 < g_CHeroPlaceholderClassVersion) {
+    if (2 < g_CHeroClassVersion) {
       core_actor_cpp_serializePartStatus_FUN_0040bae0
                 (&(this_ptr->base_character).model,"partStatus");
       core_actor_cpp_serializeActor_FUN_0040b870
@@ -36,15 +36,15 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
     core_actor_cpp_serializeMotionState_FUN_0040b9f0
               (&motion_controller->motion_controller,"motion state");
     core_actor_cpp_serializePartStatus_FUN_0040bae0(motion_controller,"partStatus");
-    if (g_CHeroPlaceholderClassVersion < 8) {
+    if (g_CHeroClassVersion < 8) {
       core_actor_cpp_serializeActor_FUN_0040b870
                 ((CDemonActor *)&(this_ptr->base_character).grabbed_by,"grabbedBy");
       (this_ptr->base_character).grabbed_type = 0;
     }
-    if (4 < g_CHeroPlaceholderClassVersion) {
+    if (4 < g_CHeroClassVersion) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->control_type,"controlType");
     }
-    if (6 < g_CHeroPlaceholderClassVersion) {
+    if (6 < g_CHeroClassVersion) {
       core_actor_cpp_serializeActor_FUN_0040b870
                 ((CDemonActor *)(this_ptr->field6_0x1fb9c + 4),"objectToPickUp");
       core_actor_cpp_serializeActor_FUN_0040b870
@@ -56,10 +56,10 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
       core_actor_cpp_serializeActor_FUN_0040b870
                 ((CDemonActor *)(this_ptr->field6_0x1fb9c + 8),"pushedObject");
     }
-    if (g_CHeroPlaceholderClassVersion == 10) {
+    if (g_CHeroClassVersion == 10) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_c,"keys");
     }
-    if ((7 < g_CHeroPlaceholderClassVersion) && (g_CHeroPlaceholderClassVersion < 0xb)) {
+    if ((7 < g_CHeroClassVersion) && (g_CHeroClassVersion < 0xb)) {
       iVar1 = 0;
       do {
         crt_stdio_c_sprintf_FUN_005fdbd0(local_70,"keyNameList[%d]",iVar1);
@@ -67,14 +67,14 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
         core_actor_cpp_serializeString_FUN_0040b5c0(local_d4,local_70);
       } while (iVar1 < 0x20);
     }
-    if (8 < g_CHeroPlaceholderClassVersion) {
+    if (8 < g_CHeroClassVersion) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->ai_task,"AITask");
     }
-    if (0xb < g_CHeroPlaceholderClassVersion) {
+    if (0xb < g_CHeroClassVersion) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0
                 (&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
     }
-    if (5 < g_CHeroPlaceholderClassVersion) {
+    if (5 < g_CHeroClassVersion) {
       if (g_ActorReadingMode != 1) {
         core_inv_cpp_CInventory_save_FUN_004ff210(&this_ptr->inventory,g_ActorDataFile);
         return;

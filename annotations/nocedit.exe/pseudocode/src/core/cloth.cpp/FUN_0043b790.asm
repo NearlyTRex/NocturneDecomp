@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -21,7 +21,7 @@ section .text
     PUSH ESI                            ; 0043b791
     MOV ESI,dword ptr [ESP + 0xc]       ; 0043b792
     PUSH 0xff                           ; 0043b796
-    MOV EDX,dword ptr [0x006703ec]      ; 0043b79b | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0043b79b | g_CDemonRendererPtr2
     PUSH EDX                            ; 0043b7a1 | g_CDemonRendererInstance
     XOR EBX,EBX                         ; 0043b7a2
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0043b7a4

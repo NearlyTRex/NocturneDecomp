@@ -139,7 +139,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     if (this_ptr->block_auto_save == 0) {
       core_set_cpp_CDemonSet_FUN_0056be80(g_CDemonSetPtr);
     }
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
     if (this_ptr->profile_mode != 0) {
       local_14 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
       local_14 = local_14 - local_44;

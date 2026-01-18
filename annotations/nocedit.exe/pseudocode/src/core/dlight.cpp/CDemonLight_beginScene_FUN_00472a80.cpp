@@ -24,22 +24,22 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   (this_ptr->base).scene_open_flag = 1;
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(&this_ptr->base,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-            (g_CDemonRendererPtr,0,0,this_ptr->shadow_map_width + -1,
+            (g_CDemonRendererPtr2,0,0,this_ptr->shadow_map_width + -1,
              this_ptr->shadow_map_height + -1);
   (this_ptr->base).viewport_rect.right = this_ptr->shadow_map_width + -1;
   iVar2 = this_ptr->shadow_map_height;
   (this_ptr->base).viewport_rect.left = 0;
   (this_ptr->base).viewport_rect.bottom = iVar2 + -1;
   (this_ptr->base).viewport_rect.top = 0;
-  this_ptr_00 = g_CDemonRendererPtr;
+  this_ptr_00 = g_CDemonRendererPtr2;
   (this_ptr->base).rect_array_count = 0;
   (this_ptr->base).skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (this_ptr_00,&(this_ptr->base).base.position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
-            (g_CDemonRendererPtr,(this_ptr->base).base.projection_scale);
+            (g_CDemonRendererPtr2,(this_ptr->base).base.projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,unaff_EBP);
+            (g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,unaff_EBP);
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[0].y;
   g_TransformMatrix.m[0].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[1].y;
@@ -61,7 +61,7 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
     } while (iVar2 < this_ptr->shadow_map_height);
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(&this_ptr->base);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,1);
   if (this_ptr == (CDemonLight *)0x0) {
     g_RasterizerDepthBias = (int)this_ptr;
     return;

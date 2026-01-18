@@ -10,7 +10,7 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b609
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_BackgroundSceneNestingCount
 ;   void*[1024] g_SavedScreenBufferArray
 ;   undefined4 DAT_026a5818
@@ -52,7 +52,7 @@ section .text
     MOVSB.REP ES:EDI,ESI                ; 00472f67 | g_ScreenBufferArray | g_ScreenBufferArray[1] | g_ScreenBufferArray[1]+1
     POP EDI                             ; 00472f69
     PUSH EDX                            ; 00472f6a
-    MOV EBX,dword ptr [0x006703ec]      ; 00472f6b | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00472f6b | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00472f71 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 00472f72
         ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)

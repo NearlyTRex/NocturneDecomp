@@ -56,7 +56,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr)
                   } while (iVar5 < this_ptr->mirror_glass_count);
                 }
                 engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
-                          (g_CDemonRendererPtr,1);
+                          (g_CDemonRendererPtr2,1);
                 local_18 = local_18 + 1;
                 pCVar6 = (CDemonSet *)pCVar6->cameras;
               } while (local_18 < *(int *)this_ptr->field73_0x15f6e4);
@@ -94,7 +94,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr)
               }
               iVar5 = iVar5 + 1;
               engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
-                        (g_CDemonRendererPtr,1);
+                        (g_CDemonRendererPtr2,1);
               pCVar6 = (CDemonSet *)pCVar6->cameras;
             } while (iVar5 < *(int *)this_ptr->field73_0x15f6e4);
           }

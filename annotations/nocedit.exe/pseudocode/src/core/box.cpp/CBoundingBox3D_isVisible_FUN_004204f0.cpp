@@ -27,7 +27,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D *t
   if (iVar1 == 0) {
     return 0;
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     local_2c = (this_ptr->min).x + (this_ptr->max).x;
     local_28 = (this_ptr->min).y + (this_ptr->max).y;

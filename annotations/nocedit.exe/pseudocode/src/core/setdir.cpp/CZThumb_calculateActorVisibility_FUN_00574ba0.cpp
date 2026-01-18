@@ -32,20 +32,20 @@ core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
   local_1c = 0x800000ff;
   local_24 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&(actor->location).position);
+            (g_CDemonRendererPtr2,&(actor->location).position);
   local_34.x = (int)(actor->orient).pitch;
   local_34.z = (int)(actor->orient).heading;
   local_34.y = (int)(this_ptr->look_at_position).y;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,&local_34,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&local_34,(CVector3i *)0x0);
   iVar7 = 0;
   do {
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
-               ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+               ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar7),bounding_box_vertices);
     bounding_box_vertices = bounding_box_vertices + 1;
-    uVar3 = *(uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +
+    uVar3 = *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
                      iVar7);
     local_1c = local_1c & uVar3;
     iVar7 = iVar7 + 0x30;
@@ -69,8 +69,8 @@ core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(actor);
   do {
     point = (SProjectedVertex *)
-            ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x + iVar7)
-    ;
+            ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x + iVar7
+            );
     iVar4 = point->transformed_z;
     if (0 < iVar4) {
       iVar8 = iVar4 + 0x80;
@@ -88,10 +88,10 @@ core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
   if (apply_scaling != 0) {
     iVar7 = 0;
     do {
-      if ((*(byte *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +
+      if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
                     iVar7 + 3) & 0x80) != 0) {
         dVar5 = 0.0625;
-        if (0 < *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
+        if (0 < *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                                transformed_z + iVar7)) {
           dVar5 = 0.5;
         }
@@ -100,11 +100,11 @@ core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
       iVar7 = iVar7 + 0x30;
     } while (iVar7 != 0x180);
   }
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   core_setdir_cpp_CZThumb_setupZBufferScanlines_FUN_00574e30(this_ptr);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
-            (g_CDemonRendererPtr,(uint)((local_24 & 0x80000000) != 0));
+            (g_CDemonRendererPtr2,(uint)((local_24 & 0x80000000) != 0));
   iVar7 = 0;
   if (0 < local_20) {
     iVar4 = local_20 * 4;
@@ -113,12 +113,12 @@ core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
       puVar2 = (uint *)((int)aiStack_4c + iVar8);
       iVar8 = iVar8 + 4;
       iVar6 = engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
-                        (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)*puVar2);
+                        (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)*puVar2);
       iVar7 = iVar7 + iVar6;
     } while (iVar8 < iVar4);
   }
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   core_setdir_cpp_CZThumb_popRenderingContext_FUN_00574ef0(this_ptr);
   return (float)iVar7 * local_50;
 }

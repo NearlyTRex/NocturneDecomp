@@ -15,7 +15,7 @@ int core_litecone_cpp_FUN_00506c20(void)
   CBoundingBox3D local_1c;
   
   if (*(int *)(in_stack_00000004[1].actor_name + 8) != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
       this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_1c);

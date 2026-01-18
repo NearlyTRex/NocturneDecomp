@@ -30,7 +30,7 @@
 ;   double DOUBLE_00645d5b = 0.0000152587890625
 ;   double DOUBLE_00645d63 = 1000
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGore* g_CGorePtr = 02d83364
@@ -224,7 +224,7 @@ section .text
         ;   XREF to: 0056c003 (CONDITIONAL_JUMP)  ; LAB_0056c003
     PUSH 0x1                            ; 0056c036
         ;   Label: LAB_0056c036
-    MOV EAX,[0x006703ec]                ; 0056c038 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0056c038 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0056c03d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056c03e
         ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)
@@ -291,7 +291,7 @@ section .text
     OR byte ptr [EBX + 0x140],0x22      ; 0056c0e0
     PUSH 0x1                            ; 0056c0e7
         ;   Label: LAB_0056c0e7
-    MOV EAX,[0x006703ec]                ; 0056c0e9 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0056c0e9 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0056c0ee | g_CDemonRendererInstance
     ADD EDI,0x4                         ; 0056c0ef
     INC EBP                             ; 0056c0f2

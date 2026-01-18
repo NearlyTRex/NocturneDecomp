@@ -34,10 +34,10 @@ int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr)
     pcVar5 = this_ptr->padding_0x0 + iVar1 * 400;
     pCVar3 = this_ptr;
     do {
-      pCVar2 = g_CDemonRendererPtr;
+      pCVar2 = g_CDemonRendererPtr2;
       iVar1 = *(int *)(pcVar5 + 0x3f1bc);
       *(float *)(pCVar3->padding_0x0 + 0x3f98c) =
-           g_CDemonRendererPtr->vertex_buffer_ptr[iVar1].light;
+           g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].light;
       *(int *)(pCVar3->padding_0x0 + 0x3fb1c) = pCVar2->vertex_buffer_ptr[iVar1].color;
       pCVar4 = (CCloth *)(pCVar3->padding_0x0 + 4);
       *(float *)(pCVar3->padding_0x0 + 0x3fcac) = pCVar2->vertex_buffer_ptr[iVar1].fog;

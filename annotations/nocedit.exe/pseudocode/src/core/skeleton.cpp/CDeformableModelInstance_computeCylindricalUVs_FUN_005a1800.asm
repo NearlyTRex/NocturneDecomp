@@ -17,7 +17,7 @@
 ;   TerminatedCString s_core_skeleton_cpp_0064efd4
 ;   TerminatedCString s_CDeformableModelInstance_0064efe9
 ;   double DOUBLE_0064f030 = 2670176.85779676
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_01000000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   char* g_CurrentFilename
@@ -99,7 +99,7 @@ section .text
     CMP dword ptr [EDX + 0x8],0x0       ; 005a1894
     JNZ 0x005a191b                      ; 005a1898
         ;   XREF to: 005a191b (CONDITIONAL_JUMP)  ; LAB_005a191b
-    MOV EAX,[0x006703ec]                ; 005a189e | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 005a189e | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 005a18a3 | g_CDemonRendererInstance
     MOV EBX,dword ptr [ESP + 0x20]      ; 005a18a5
     MOV dword ptr [ECX + EAX*0x1 + 0x18],EBX ; 005a18a9
@@ -112,7 +112,7 @@ section .text
     IDIV EBX                            ; 005a18bb
     MOV EDX,dword ptr [ESP + 0x24]      ; 005a18bd
     ADD EDX,EAX                         ; 005a18c1
-    MOV EAX,[0x006703ec]                ; 005a18c3 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 005a18c3 | g_CDemonRendererPtr2
     ADD ECX,0x30                        ; 005a18c8
     MOV EAX,dword ptr [EAX]             ; 005a18cb | g_CDemonRendererInstance
     MOV dword ptr [ECX + EAX*0x1 + -0x14],EDX ; 005a18cd
@@ -159,7 +159,7 @@ section .text
     MOV EBX,dword ptr [ESP]             ; 005a1937
     ADD EAX,EBX                         ; 005a193a
     MOV dword ptr [ESP],EAX             ; 005a193c
-    MOV EAX,[0x006703ec]                ; 005a193f | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 005a193f | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 005a1944 | g_CDemonRendererInstance
     MOV EBX,dword ptr [ESP]             ; 005a1946
     JMP 0x005a18a9                      ; 005a1949

@@ -21,7 +21,7 @@
 ; undefined1       Stack[-0x1f]:1  local_1f
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_TexturePreviewEnabled = 0x1
@@ -196,7 +196,7 @@ section .text
         ;   Label: LAB_005dc95d
     LEA EAX,[ESP + 0x28]                ; 005dc95e
     PUSH EAX                            ; 005dc962
-    MOV EBP,dword ptr [0x006703ec]      ; 005dc963 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 005dc963 | g_CDemonRendererPtr2
     PUSH EBP                            ; 005dc969 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005dc96a
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

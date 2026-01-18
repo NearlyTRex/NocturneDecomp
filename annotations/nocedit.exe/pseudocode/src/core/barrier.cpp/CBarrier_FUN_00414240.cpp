@@ -14,7 +14,7 @@ int __cdecl core_barrier_cpp_CBarrier_FUN_00414240(CBarrier *this_ptr)
   CBoundingBox3D local_20;
   
   if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar1 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
     this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)

@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062b075 = 0.900000000000000
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_CDynamiteClassInfo.name_hash
 ;
@@ -63,7 +63,7 @@ section .text
     CALL core_cloth.cpp_FUN_0043bae0    ; 004d6185
         ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bae0()
     ADD ESP,0x8                         ; 004d618a
-    MOV EDX,dword ptr [0x006703ec]      ; 004d618d | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004d618d | g_CDemonRendererPtr2
     PUSH EDX                            ; 004d6193 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004d6194
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()

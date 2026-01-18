@@ -47,7 +47,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,&this_ptr->glass_texture);
+            (g_CDemonRendererPtr2,&this_ptr->glass_texture);
   if (this_ptr->mirror_flag != 0) {
     local_84.z = 0.0;
     local_84.y = 0.0;

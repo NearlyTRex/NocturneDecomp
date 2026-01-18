@@ -42,9 +42,9 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
       core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_50,(CMatrix3x3f *)&local_14);
       core_xform_cpp_getTranslation_FUN_005f6110(local_50,(CMatrix3x4f *)&local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,&local_20);
+                (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,&local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,&local_14,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,&local_14,(CVector3i *)0x0);
       core_werewolf_cpp_FUN_005f1230();
       core_werewolf_cpp_FUN_005f1230();
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

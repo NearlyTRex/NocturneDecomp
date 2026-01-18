@@ -25,6 +25,6 @@ void core_gore_cpp_FUN_004ec470(void)
   g_RenderVertexBuffer[2].v = 7.34684e-40;
   g_RenderVertexBuffer[3].u = 7.34684e-40;
   g_RenderVertexBuffer[3].v = 7.34684e-40;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   return;
 }

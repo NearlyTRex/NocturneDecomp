@@ -10,11 +10,12 @@ void __cdecl
 core_set_cpp_CDemonSet_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive)
 
 {
-  if (g_CDemonRendererPtr->advanced_culling_enabled != 0) {
+  if (g_CDemonRendererPtr2->advanced_culling_enabled != 0) {
     core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(this_ptr->active_mirror,primitive)
     ;
     return;
   }
-  engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(g_CDemonRendererPtr,primitive);
+  engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(g_CDemonRendererPtr2,primitive)
+  ;
   return;
 }

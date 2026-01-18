@@ -11,7 +11,7 @@
 ;   core_ground.cpp_CGround_renderTerrainQuad_FUN_004ef990 at 004efb2a
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
         ;   Label: core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004ef970
     MOV EDX,dword ptr [ESP + 0xc]       ; 004ef975
     PUSH EDX                            ; 004ef979
-    MOV ECX,dword ptr [0x006703ec]      ; 004ef97a | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004ef97a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004ef980 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 004ef981
         ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)

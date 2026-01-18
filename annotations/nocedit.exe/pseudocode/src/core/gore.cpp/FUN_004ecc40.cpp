@@ -29,6 +29,6 @@ void core_gore_cpp_FUN_004ecc40(void)
   DAT_02d83368.surface_normal.C = 0;
   DAT_02d83368.surface_normal.D = 0;
   DAT_02d83368.surface_normal.B = 0xffff;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   return;
 }

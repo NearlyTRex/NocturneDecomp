@@ -34,7 +34,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
   CDemonActor *local_14;
   
   if (((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar1 == 0)) &&
      (local_14 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (*(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c),
@@ -54,7 +54,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
     iStack_60 = (int)ROUND(CStack_54.x * _DAT_00665460);
     iVar1 = 0;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,
                (CVector3i *)(auStack_6c + 4));
     pCVar4 = this_ptr;
     if (0 < this_ptr->num_adjacent_waypoints) {
@@ -86,7 +86,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
           auStack_6c._4_4_ = (uint)ROUND(CStack_54.y * _DAT_00665460);
           iStack_64 = (int)ROUND(CStack_54.z * _DAT_00665460);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                    (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
+                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
                      (CVector3i *)auStack_6c);
           engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(0,1);
         }

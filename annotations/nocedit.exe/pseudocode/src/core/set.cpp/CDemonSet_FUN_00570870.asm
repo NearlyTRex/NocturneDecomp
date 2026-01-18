@@ -10,7 +10,7 @@
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 at 0059ad25
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
@@ -36,7 +36,7 @@ section .text
     CMP dword ptr [EAX + 0x1f4],0x0     ; 00570880 | DAT_02d81c90
     JZ 0x0057089c                       ; 00570887
         ;   XREF to: 0057089c (CONDITIONAL_JUMP)  ; LAB_0057089c
-    MOV EBX,dword ptr [0x006703ec]      ; 00570889 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00570889 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 0057088f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00570890
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
@@ -51,7 +51,7 @@ section .text
     PUSH EDX                            ; 005708a5
     MOV ECX,dword ptr [ESP + 0x18]      ; 005708a6
     PUSH ECX                            ; 005708aa
-    MOV EBX,dword ptr [0x006703ec]      ; 005708ab | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 005708ab | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 005708b1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 ; 005708b2
         ;   XREF to: 0048d170 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)

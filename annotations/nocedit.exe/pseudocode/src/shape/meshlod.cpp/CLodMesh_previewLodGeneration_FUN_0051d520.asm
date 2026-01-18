@@ -36,7 +36,7 @@
 ;   TerminatedCString s_Pixel_Height_d_006382ac
 ;   TerminatedCString s_OK_let_go_of_ESC_006382bd
 ;   TerminatedCString s_Good_enough_006382d3
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
@@ -111,7 +111,7 @@ section .text
     ADD ESP,0x4                         ; 0051d5a1
     LEA EAX,[ESP + 0x94]                ; 0051d5a4
     PUSH EAX                            ; 0051d5ab
-    MOV EBX,dword ptr [0x006703ec]      ; 0051d5ac | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0051d5ac | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 0051d5b2 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0051d5b3
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -201,7 +201,7 @@ section .text
     PUSH 0xff                           ; 0051d67f
     PUSH 0x0                            ; 0051d684
     PUSH 0xff                           ; 0051d686
-    MOV EBX,dword ptr [0x006703ec]      ; 0051d68b | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0051d68b | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 0051d691 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970 ; 0051d692
         ;   XREF to: 0048c970 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)

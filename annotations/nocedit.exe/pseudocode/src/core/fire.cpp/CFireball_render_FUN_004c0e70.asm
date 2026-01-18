@@ -56,7 +56,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CKeyFramedModelInstance g_FireEffectFireballModel
@@ -100,7 +100,7 @@ section .text
     MOV dword ptr [ESP + 0xc8],0x3f2a7efa ; 004c0e9f
     PUSH ESI                            ; 004c0eaa
         ;   Label: LAB_004c0eaa
-    MOV EDX,dword ptr [0x006703ec]      ; 004c0eab | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c0eab | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c0eb1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c0eb2
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -108,7 +108,7 @@ section .text
     PUSH 0x0                            ; 004c0eba
     LEA EAX,[ESI + 0x4c]                ; 004c0ebc
     PUSH EAX                            ; 004c0ebf
-    MOV ECX,dword ptr [0x006703ec]      ; 004c0ec0 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004c0ec0 | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c0ec6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0 ; 004c0ec7
         ;   XREF to: 0048c4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -168,7 +168,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 004c0f5a
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 004c0f5f
-    MOV EDX,dword ptr [0x006703ec]      ; 004c0f62 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c0f62 | g_CDemonRendererPtr2
         ;   Label: LAB_004c0f62
     PUSH EDX                            ; 004c0f68 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c0f69

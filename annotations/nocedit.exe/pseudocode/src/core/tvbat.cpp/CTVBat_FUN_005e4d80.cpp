@@ -38,13 +38,13 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
-    iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar4 == 0) && (this_ptr == *(CTVBat **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr,
+                (g_CDemonRendererPtr2,
                  &(*(CTVBat **)(g_CDemonMissionPtr->field2_0xc + 0x1c))->home_pos);
       iVar4 = 0;
-      engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr,1);
+      engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,1);
       do {
         fVar5 = (float10)iVar4 * (float10)0.0055555555555555497 * (float10)3.1415926535000001;
         fStack_14 = (float)fVar5;
@@ -56,13 +56,13 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
         CStack_40.y = (int)ROUND(-this_ptr->max_height * _DAT_00664cb0);
         CStack_40.z = (int)ROUND(fVar2 * _DAT_00664cb0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&CStack_40);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_40);
         CStack_28.x = (int)ROUND(fVar1 * _DAT_00664cb0);
         CStack_28.y = (int)ROUND(this_ptr->max_height * _DAT_00664cb0);
         CStack_28.z = (int)ROUND(fVar2 * _DAT_00664cb0);
         iVar4 = iVar4 + 0xc;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&CStack_28);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_28);
         fVar5 = (float10)iVar4 * (float10)0.005555556f * (float10)3.1415926535000001;
         fStack_14 = (float)fVar5;
         fVar6 = (float10)fsin(fVar5);
@@ -73,15 +73,15 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
         CStack_4c.y = (int)ROUND(-this_ptr->max_height * _DAT_00664cb0);
         CStack_4c.z = (int)ROUND(fVar2 * _DAT_00664cb0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&CStack_4c);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_4c);
         CStack_34.x = (int)ROUND(fVar1 * _DAT_00664cb0);
         CStack_34.y = (int)ROUND(this_ptr->max_height * _DAT_00664cb0);
         CStack_34.z = (int)ROUND(fVar2 * _DAT_00664cb0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&CStack_34);
-        engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr,0,1);
-        engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr,2,3);
-        engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr,0,2);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_34);
+        engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr2,0,1);
+        engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr2,2,3);
+        engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr2,0,2);
       } while (iVar4 < 0x169);
     }
   }

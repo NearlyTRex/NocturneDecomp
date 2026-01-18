@@ -13,7 +13,7 @@
 ;   core_terrain.cpp_CTerrain_render_FUN_005e1f50 at 005e2027
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 004ef490 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490(CGround * this_ptr)
     ADD ESP,0x4                         ; 004efcdc
     PUSH 0x1                            ; 004efcdf
-    MOV EBP,dword ptr [0x006703ec]      ; 004efce1 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 004efce1 | g_CDemonRendererPtr2
     PUSH EBP                            ; 004efce7 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 004efce8
         ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)
@@ -74,7 +74,7 @@ section .text
         ;   XREF to: 004efb70 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround * this_ptr)
     ADD ESP,0x4                         ; 004efcf6
     PUSH 0x0                            ; 004efcf9
-    MOV EAX,[0x006703ec]                ; 004efcfb | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004efcfb | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 004efd00 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 004efd01
         ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)

@@ -50,18 +50,18 @@ void core_set_cpp_FUN_005702b0(void)
   int local_14;
   
   bVar6 = 0;
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&DAT_006813e4);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_006813e4);
   if (g_CGamePtr->field62_0x1f4 == 2) {
     in_stack_00000010 = g_CurrentAlphaValue << 8;
   }
   else {
     lVar2 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)in_stack_00000010;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-              (g_CDemonRendererPtr,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
+              (g_CDemonRendererPtr2,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-            (g_CDemonRendererPtr,in_stack_fffffee8);
+            (g_CDemonRendererPtr2,in_stack_fffffee8);
   local_20 = 0;
   if (0 < in_stack_0000000c) {
     do {
@@ -159,11 +159,11 @@ void core_set_cpp_FUN_005702b0(void)
       }
       if (in_stack_00000010 < 0xfde9) {
         engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xfffffee8);
+                  (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xfffffee8);
       }
       else {
         engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xfffffee8);
+                  (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xfffffee8);
       }
       in_stack_00000008 = in_stack_00000008 + 9;
       local_20 = local_20 + 1;

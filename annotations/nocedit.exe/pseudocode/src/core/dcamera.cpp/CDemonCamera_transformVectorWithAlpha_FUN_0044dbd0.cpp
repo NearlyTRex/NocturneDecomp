@@ -38,7 +38,7 @@ core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
           (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0].z +
           (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2].z;
   local_1c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar4 == 0) {
     lVar1 = (longlong)(int)local_20 * (longlong)(this_ptr->inverted_matrix).m[1].x +
             (longlong)(int)local_24 * (longlong)(this_ptr->inverted_matrix).m[0].x +

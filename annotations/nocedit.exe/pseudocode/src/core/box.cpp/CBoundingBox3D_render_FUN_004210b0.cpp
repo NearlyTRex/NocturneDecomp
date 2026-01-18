@@ -41,20 +41,21 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   } while ((int)corner_index < 8);
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(g_CDemonSetPtr,8,local_b0);
   local_50.base.count = 4;
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,1);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   local_28 = (int)ROUND((this_ptr->min).x * 256.0f);
   local_24 = (int)ROUND((this_ptr->min).y * 256.0f);
   local_20 = (int)ROUND((this_ptr->min).z * 256.0f);
   local_10 = (int)ROUND((this_ptr->max).x * 256.0f);
   local_c = (int)ROUND((this_ptr->max).y * 256.0f);
   local_8 = (int)ROUND((this_ptr->max).z * 256.0f);
-  pvVar2 = (void *)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
-  pCVar1 = g_CDemonRendererPtr;
+  pvVar2 = (void *)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2)
+  ;
+  pCVar1 = g_CDemonRendererPtr2;
   if (pvVar2 == (void *)0x0) {
     g_CurrentTextureData = pvVar2;
     g_CurrentTextureOpacityData = pvVar2;
-    g_CDemonRendererPtr->vertex_buffer_ptr->light = 4.59163e-41;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->light = 4.59163e-41;
     pCVar1->vertex_buffer_ptr->color = 0;
     pCVar1->vertex_buffer_ptr->fog = 0.0;
     pCVar1->vertex_buffer_ptr[1].light = 0.0;
@@ -88,7 +89,7 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   local_50.surface_normal.D = -local_28;
   local_2c = 2;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-            (g_CDemonRendererPtr,&local_50,0x2c4);
+            (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 1;
   local_50.surface_normal.D = local_10;
   local_50.surface_normal.B = 0;
@@ -98,7 +99,7 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   local_30 = 7;
   local_2c = 5;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-            (g_CDemonRendererPtr,&local_50,0x2c4);
+            (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 0;
   local_50.surface_normal.B = -1;
   local_50.surface_normal.C = 0;
@@ -108,7 +109,7 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   local_30 = 5;
   local_2c = 4;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-            (g_CDemonRendererPtr,&local_50,0x2c4);
+            (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 0;
   local_50.surface_normal.B = 1;
   local_50.surface_normal.C = 0;
@@ -118,7 +119,7 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   local_30 = 7;
   local_2c = 3;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-            (g_CDemonRendererPtr,&local_50,0x2c4);
+            (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 0;
   local_50.surface_normal.B = 0;
   local_50.surface_normal.C = -1;
@@ -128,7 +129,7 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   local_30 = 3;
   local_50.surface_normal.D = -local_20;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-            (g_CDemonRendererPtr,&local_50,0x2c4);
+            (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 0;
   local_50.surface_normal.B = 0;
   local_38 = 4;
@@ -138,6 +139,6 @@ core_box_cpp_CBoundingBox3D_render_FUN_004210b0
   local_30 = 7;
   local_2c = 6;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-            (g_CDemonRendererPtr,&local_50,0x2c4);
+            (g_CDemonRendererPtr2,&local_50,0x2c4);
   return;
 }

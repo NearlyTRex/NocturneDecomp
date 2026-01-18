@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   float FLOAT_006597b0 = 256
 ;   SMRGLTextureBasic DAT_0066e158
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 004202b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0(CBoundingBox3D * this_ptr, CVector3f * out_point, uint corner_index)
     ADD ESP,0xc                         ; 0040df37
     LEA EAX,[ESP + 0x40]                ; 0040df3a
-    MOV EDX,dword ptr [0x006703ec]      ; 0040df3e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0040df3e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 0040df44
     FMUL float ptr [0x006597b0]         ; 0040df46 | FLOAT_006597b0
     FISTP dword ptr [EBX]               ; 0040df4c
@@ -94,7 +94,7 @@ section .text
     PUSH EAX                            ; 0040df6f
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0040df70
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 0040df75 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0040df75 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     ADD ESP,0x8                         ; 0040df7a
     MOV EDX,dword ptr [EAX]             ; 0040df7d | g_CDemonRendererInstance
     MOV EBX,dword ptr [ESP + 0x5c]      ; 0040df7f
@@ -125,7 +125,7 @@ section .text
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA EAX,[ESP + 0x8]                 ; 0040dfd9
     ADD ESP,0x8                         ; 0040dfdd
-    MOV EBP,dword ptr [0x006703ec]      ; 0040dfe0 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 0040dfe0 | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x4],ESI       ; 0040dfe6
     MOV dword ptr [ESP + 0x14],EDI      ; 0040dfea
     MOV dword ptr [ESP + 0x10],EDI      ; 0040dfee
@@ -147,7 +147,7 @@ section .text
     MOV EDX,0x3                         ; 0040e02a
     MOV ECX,0x7                         ; 0040e02f
     ADD ESP,0x8                         ; 0040e034
-    MOV ESI,dword ptr [0x006703ec]      ; 0040e037 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0040e037 | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x18],EAX      ; 0040e03d
     MOV EAX,ESP                         ; 0040e041
     XOR EDI,EDI                         ; 0040e043
@@ -163,7 +163,7 @@ section .text
     MOV EDX,0x2                         ; 0040e062
     MOV ESI,0x5                         ; 0040e067
     ADD ESP,0x8                         ; 0040e06c
-    MOV ECX,dword ptr [0x006703ec]      ; 0040e06f | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0040e06f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x20],EAX      ; 0040e075
     MOV EAX,ESP                         ; 0040e079
     MOV dword ptr [ESP + 0x18],EDI      ; 0040e07b
@@ -179,7 +179,7 @@ section .text
     MOV EAX,ESP                         ; 0040e09b
     MOV dword ptr [ESP + 0x18],EBX      ; 0040e09d
     PUSH EAX                            ; 0040e0a1
-    MOV EAX,[0x006703ec]                ; 0040e0a2 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0040e0a2 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x20],ESI      ; 0040e0a7
     PUSH EAX                            ; 0040e0ab | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x28],EDI      ; 0040e0ac
@@ -192,7 +192,7 @@ section .text
     MOV EAX,ESP                         ; 0040e0c6
     MOV dword ptr [ESP + 0x20],EDI      ; 0040e0c8
     PUSH EAX                            ; 0040e0cc
-    MOV EDI,dword ptr [0x006703ec]      ; 0040e0cd | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0040e0cd | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x1c],EDX      ; 0040e0d3
     PUSH EDI                            ; 0040e0d7 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x24],ECX      ; 0040e0d8
@@ -205,7 +205,7 @@ section .text
     MOV EAX,ESP                         ; 0040e0f1
     MOV dword ptr [ESP + 0x24],EBX      ; 0040e0f3
     PUSH EAX                            ; 0040e0f7
-    MOV EBX,dword ptr [0x006703ec]      ; 0040e0f8 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0040e0f8 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     XOR EBP,EBP                         ; 0040e0fe
     PUSH EBX                            ; 0040e100 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x20],EBP      ; 0040e101

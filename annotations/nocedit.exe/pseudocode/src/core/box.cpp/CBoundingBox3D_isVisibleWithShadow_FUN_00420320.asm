@@ -18,7 +18,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 at 00420668
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonLight* g_CurrentShadowLight
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ViewportCenterXFixed
@@ -42,7 +42,7 @@ section .text
     PUSH EDI                            ; 00420331
     PUSH ESI                            ; 00420332
     PUSH EBX                            ; 00420333
-    MOV EDX,dword ptr [0x006703ec]      ; 00420334 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00420334 | g_CDemonRendererPtr2
     MOV EAX,[0x02d02550]                ; 0042033a | g_ViewportRightFixed
     MOV ECX,dword ptr [0x02d02548]      ; 0042033f | g_ViewportCenterXFixed
     MOV EDI,dword ptr [0x02d02550]      ; 00420345 | g_ViewportRightFixed

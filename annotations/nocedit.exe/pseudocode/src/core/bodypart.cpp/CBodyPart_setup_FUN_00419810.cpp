@@ -18,7 +18,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_setup_FUN_00419810(CBodyPart *this_ptr)
     texture = (SMRGLTextureBasic *)(this_ptr->field1_0x158 + 0x38);
     do {
       iVar1 = iVar1 + 1;
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,texture);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
       texture = texture + 1;
     } while (iVar1 < *(int *)(this_ptr->field1_0x158 + 0x34));
   }

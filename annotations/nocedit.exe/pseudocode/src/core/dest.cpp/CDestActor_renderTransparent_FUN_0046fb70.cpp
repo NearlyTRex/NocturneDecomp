@@ -18,7 +18,7 @@ uint core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
   CBoundingBox3D local_24;
   
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       if (*(CDemonActor **)in_stack_00000004[1].actor_name != (CDemonActor *)0x0) {
         iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0
@@ -38,7 +38,7 @@ uint core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
               core_main_c_displayErrorAndQuit_FUN_00506f10("CDestActor::renderTransparent - Catch 22");
             }
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-                      (g_CDemonRendererPtr,0x8000);
+                      (g_CDemonRendererPtr2,0x8000);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                       ((CKeyFramedModelInstance *)(pCVar3 + 1),0.0,0x2e6);
           }

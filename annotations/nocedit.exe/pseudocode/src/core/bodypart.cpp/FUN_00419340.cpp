@@ -25,15 +25,15 @@ void core_bodypart_cpp_FUN_00419340(void)
              *(SInputFace **)(in_stack_00000004 + 0x184),*(int *)(in_stack_00000004 + 0x178),3,
              *(int *)(in_stack_00000004 + 0x17c));
   if ((*(int *)(in_stack_00000004 + 0x18c) == 1) ||
-     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar2 != 0)) {
-    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar2 == 0) {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr,(SMRGLTextureBasic *)(in_stack_00000004 + 400));
+                (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(in_stack_00000004 + 400));
     }
     engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
-              (g_CDemonRendererPtr,*(SMRGLHeaderPrimitive **)(in_stack_00000004 + 0x184),
+              (g_CDemonRendererPtr2,*(SMRGLHeaderPrimitive **)(in_stack_00000004 + 0x184),
                *(int *)(in_stack_00000004 + 0x180),in_stack_00000008);
   }
   else {
@@ -46,12 +46,12 @@ void core_bodypart_cpp_FUN_00419340(void)
         iVar1 = *(int *)(*(int *)(in_stack_00000004 + 0x188) + local_14);
         if (iVar1 != local_18) {
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                    (g_CDemonRendererPtr,
+                    (g_CDemonRendererPtr2,
                      (SMRGLTextureBasic *)(iVar1 * 0x18 + in_stack_00000004 + 400));
           local_18 = iVar1;
         }
         engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                  (g_CDemonRendererPtr,
+                  (g_CDemonRendererPtr2,
                    (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x184) + iVar3),
                    in_stack_00000008);
         iVar2 = iVar2 + 1;
@@ -60,6 +60,6 @@ void core_bodypart_cpp_FUN_00419340(void)
       } while (iVar2 < *(int *)(in_stack_00000004 + 0x180));
     }
   }
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
   return;
 }

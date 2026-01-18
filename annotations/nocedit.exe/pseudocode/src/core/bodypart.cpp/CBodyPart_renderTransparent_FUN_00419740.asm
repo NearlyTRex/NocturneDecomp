@@ -7,7 +7,7 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
@@ -51,7 +51,7 @@ section .text
     ADD ESP,0x4                         ; 0041978b
     MOV EBP,dword ptr [EDI + 0xcc0]     ; 0041978e
     PUSH EBP                            ; 00419794
-    MOV EAX,[0x006703ec]                ; 00419795 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00419795 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0041979a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0041979b
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)

@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_0062ea66
 ;   TerminatedCString s_CHeroPlaceholder_0062ea6c
-;   int g_CHeroPlaceholderClassVersion = 0xc
+;   int g_CHeroClassVersion = 0xc
 ;   int g_CHeroPlaceholderClassVersion = 0x1
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CCharacterClassInfo
@@ -24,7 +24,7 @@ section .text
     PUSH 0x823c14                       ; 004f2120 | g_CCharacterClassInfo
         ;   Label: core_hero.cpp_staticInit_FUN_004f2120
     PUSH 0xc                            ; 004f2125
-    PUSH 0x67cc1c                       ; 004f2127 | g_CHeroPlaceholderClassVersion
+    PUSH 0x67cc1c                       ; 004f2127 | g_CHeroClassVersion
     PUSH 0x0                            ; 004f212c
     PUSH 0x62ea66                       ; 004f212e | = "CHero"
     PUSH 0x2db87d4                      ; 004f2133 | g_CHeroClassInfo

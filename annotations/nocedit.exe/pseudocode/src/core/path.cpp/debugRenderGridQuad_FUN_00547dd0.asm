@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0063ea28 = 256
 ;   double DOUBLE_0063ea30 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   SMRGLHeaderPrimitive DAT_030d4fd0
 ;   undefined4 g_CDemonRaytraceInstance.bbox_min.y
@@ -75,7 +75,7 @@ section .text
     FXCH ST4                            ; 00547e3d
     FMUL float ptr [ESP + 0x18]         ; 00547e3f
     SHL EDX,0x8                         ; 00547e43
-    MOV EAX,[0x006703ec]                ; 00547e46 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00547e46 | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x50],EDX      ; 00547e4b
     LEA EDX,[ESP + 0x4]                 ; 00547e4f
     FXCH ST2                            ; 00547e53
@@ -101,7 +101,7 @@ section .text
     ADD ESP,0x8                         ; 00547e83
     MOV EAX,dword ptr [ESP + 0x4]       ; 00547e86
     MOV dword ptr [ESP + 0x24],EAX      ; 00547e8a
-    MOV EDX,dword ptr [0x006703ec]      ; 00547e8e | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00547e8e | g_CDemonRendererPtr2
     FILD dword ptr [ESP + 0x24]         ; 00547e94
     LEA EAX,[ESP + 0x4]                 ; 00547e98
     FLD ST0                             ; 00547e9c
@@ -119,7 +119,7 @@ section .text
     ADD ESP,0x8                         ; 00547eb9
     MOV EAX,dword ptr [ESP + 0xc]       ; 00547ebc
     MOV dword ptr [ESP + 0x24],EAX      ; 00547ec0
-    MOV EDX,dword ptr [0x006703ec]      ; 00547ec4 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00547ec4 | g_CDemonRendererPtr2
     FILD dword ptr [ESP + 0x24]         ; 00547eca
     LEA EAX,[ESP + 0x4]                 ; 00547ece
     FLD ST0                             ; 00547ed2
@@ -137,7 +137,7 @@ section .text
     ADD ESP,0x8                         ; 00547eef
     MOV EAX,dword ptr [ESP + 0x4]       ; 00547ef2
     MOV dword ptr [ESP + 0x24],EAX      ; 00547ef6
-    MOV EDX,dword ptr [0x006703ec]      ; 00547efa | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00547efa | g_CDemonRendererPtr2
     FILD dword ptr [ESP + 0x24]         ; 00547f00
     LEA EAX,[ESP + 0x4]                 ; 00547f04
     FLD ST0                             ; 00547f08
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00547f30
     POP EBX                             ; 00547f33
-    MOV EAX,[0x006703ec]                ; 00547f34 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00547f34 | g_CDemonRendererPtr2
     MOV EDX,dword ptr [EAX]             ; 00547f39 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x20],EBP      ; 00547f3b
     MOV EDX,dword ptr [EAX]             ; 00547f3e | g_CDemonRendererInstance

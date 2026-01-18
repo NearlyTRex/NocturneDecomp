@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 633,
+    "complexity_score": 635,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 19,
-    "pseudocode_lines": 258,
+    "pseudocode_lines": 260,
     "suspect_count": 35,
     "suspect_types": [
       "call_esp_anchor",
@@ -14,7 +14,7 @@
       "suspect_float",
       "warning_overlapping_globals"
     ],
-    "total_lines": 805
+    "total_lines": 807
   },
   "cross_references": [
     {
@@ -120,7 +120,7 @@
     },
     {
       "addr": "006703ec",
-      "name": "g_CDemonRendererPtr",
+      "name": "g_CDemonRendererPtr2",
       "type": "CDemonRenderer*",
       "value": "02c6d578"
     },
@@ -637,7 +637,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar9) = 0x800000;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar9) = 0x800000;",
       "type": "pointer_cast"
     },
     {
@@ -649,112 +649,112 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar9) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 94,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0xffff;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0xffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar9) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 129,
       "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar9) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0xffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 184,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar6) = 0xffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 185,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar6) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 186,
       "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar6) = 0xffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 187,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar6) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 188,
+      "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar6) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 197,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar9) = 0xffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 198,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 199,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 220,
-      "match": "9.18341e-41",
-      "text": "g_CDemonRendererPtr->vertex_buffer_ptr->light = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 244,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar9) = 0xffff;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar9) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 200,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 201,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 222,
+      "match": "9.18341e-41",
+      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 246,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar9) = 0xffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 247,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 248,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;",
       "type": "pointer_cast"

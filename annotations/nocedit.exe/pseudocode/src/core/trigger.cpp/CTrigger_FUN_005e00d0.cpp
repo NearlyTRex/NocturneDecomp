@@ -47,7 +47,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
   
   bVar9 = 0;
   if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
     this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
@@ -126,11 +126,11 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         CStack_48.y = (int)ROUND(fStack_5c * _DAT_00664a00);
         CStack_48.z = (int)ROUND(fStack_58 * _DAT_00664a00);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&CStack_48);
-        pCVar2 = g_CDemonRendererPtr;
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_48);
+        pCVar2 = g_CDemonRendererPtr2;
         fStack_5c = CStack_88.max.z;
-        pSVar5 = g_CDemonRendererPtr->vertex_buffer_ptr;
-        pSVar7 = g_CDemonRendererPtr->vertex_buffer_ptr + 1;
+        pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+        pSVar7 = g_CDemonRendererPtr2->vertex_buffer_ptr + 1;
         for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
           (pSVar7->projected_vertex).transformed_x = (pSVar5->projected_vertex).transformed_x;
           pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);
@@ -146,7 +146,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
           iStack_18 = 0x60;
           iStack_14 = 0x90;
           do {
-            pCVar2 = g_CDemonRendererPtr;
+            pCVar2 = g_CDemonRendererPtr2;
             fVar11 = ((float10)iStack_d0 * (float10)2 * (float10)3.1415926535000001) /
                      (float10)(int)fVar1;
             fVar10 = (float10)fsin(fVar11);
@@ -154,8 +154,8 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
             fStack_5c = CStack_88.min.z;
             fStack_60 = (float)(fVar10 * (float10)fStack_cc);
             fStack_58 = (float)(fVar11 * (float10)fStack_cc);
-            pSVar5 = g_CDemonRendererPtr->vertex_buffer_ptr;
-            piVar8 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
+            pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+            piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                                    transformed_x + iStack_18);
             for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
               *piVar8 = (pSVar5->projected_vertex).transformed_x;
@@ -170,10 +170,10 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
                        ((int)&(pCVar2->vertex_buffer_ptr->projected_vertex).transformed_x +
                        iStack_18),&CStack_54);
             iVar3 = iStack_14;
-            pCVar2 = g_CDemonRendererPtr;
+            pCVar2 = g_CDemonRendererPtr2;
             fStack_5c = CStack_88.max.z;
-            pSVar5 = g_CDemonRendererPtr->vertex_buffer_ptr;
-            piVar8 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
+            pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+            piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                                    transformed_x + iStack_14);
             for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
               *piVar8 = (pSVar5->projected_vertex).transformed_x;
@@ -192,8 +192,8 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
             iStack_d0 = iStack_d0 + 1;
           } while (iStack_d0 <= (int)fVar1);
         }
-        engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,0)
-        ;
+        engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
+                  (g_CDemonRendererPtr2,0);
         iVar3 = 0;
         if (0 < (int)fVar1) {
           do {
@@ -205,23 +205,23 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
             local_a4.min.y = (float)(iVar4 + 2);
             fStack_20 = local_a4.min.x;
             engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-                      (g_CDemonRendererPtr,&SStack_c4,0x367);
+                      (g_CDemonRendererPtr2,&SStack_c4,0x367);
             SStack_c4.base.count = 3;
             local_a4.min.x = 0.0;
             fStack_ac = (float)(iVar4 + 4);
             fStack_a8 = (float)(iVar4 + 2);
             engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-                      (g_CDemonRendererPtr,&SStack_c4,0x367);
+                      (g_CDemonRendererPtr2,&SStack_c4,0x367);
             fStack_ac = fStack_20;
             local_a4.min.x = 1.4013e-45;
             fStack_a8 = (float)(iVar4 + 5);
             engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-                      (g_CDemonRendererPtr,&SStack_c4,0x367);
+                      (g_CDemonRendererPtr2,&SStack_c4,0x367);
             iVar3 = iVar3 + 1;
           } while (iVar3 < (int)fVar1);
         }
-        engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,1)
-        ;
+        engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
+                  (g_CDemonRendererPtr2,1);
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
         return iStack_1c;
       }

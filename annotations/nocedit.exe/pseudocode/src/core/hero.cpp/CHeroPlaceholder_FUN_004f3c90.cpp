@@ -14,7 +14,7 @@ int __cdecl core_hero_cpp_CHeroPlaceholder_FUN_004f3c90(CHeroPlaceholder *this_p
   CBoundingBox3D local_1c;
   
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
-    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
       this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)

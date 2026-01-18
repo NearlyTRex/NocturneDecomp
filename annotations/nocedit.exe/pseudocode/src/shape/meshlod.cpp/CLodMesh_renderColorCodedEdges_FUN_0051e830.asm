@@ -14,7 +14,7 @@
 ;   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 at 0051d603
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ActiveRenderColor
 ;
@@ -83,7 +83,7 @@ section .text
     MOV EDX,dword ptr [EDX + 0xc]       ; 0051e8a2
     ADD EDX,EAX                         ; 0051e8a5
     IMUL ECX,dword ptr [EDX + 0x18],0x30 ; 0051e8a7
-    MOV EAX,[0x006703ec]                ; 0051e8ab | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0051e8ab | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0051e8b0 | g_CDemonRendererInstance
     ADD ECX,EAX                         ; 0051e8b2
     MOV EDI,dword ptr [EDX + 0x14]      ; 0051e8b4
@@ -121,7 +121,7 @@ section .text
     MOV dword ptr [0x02d02570],0xfa     ; 0051e8f2 | g_ActiveRenderColor
     IMUL ESI,dword ptr [EBP + 0x4],0x30 ; 0051e8fc
         ;   Label: LAB_0051e8fc
-    MOV EAX,[0x006703ec]                ; 0051e900 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0051e900 | g_CDemonRendererPtr2
     MOV ECX,0xc                         ; 0051e905
     SUB ESP,0x30                        ; 0051e90a
     MOV EAX,dword ptr [EAX]             ; 0051e90d | g_CDemonRendererInstance

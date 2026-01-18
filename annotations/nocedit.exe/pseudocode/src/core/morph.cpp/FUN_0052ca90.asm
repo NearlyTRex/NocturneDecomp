@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0063a537 = 2
 ;   double DOUBLE_0063a53f = 0.333333333333333
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CGame* g_CGamePtr = 02d81a9c
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0052cb18
     PUSH 0x3f87558                      ; 0052cb1b | g_ZeroVector
-    MOV ECX,dword ptr [0x006703ec]      ; 0052cb20 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0052cb20 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0052cb26 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0052cb27
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)

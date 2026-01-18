@@ -29,7 +29,7 @@
 ;   double DOUBLE_0064601b = 0.0000152587890625
 ;   double DOUBLE_00646023 = 1000
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CConsole g_ConsolePtr
@@ -63,7 +63,7 @@ section .text
     CMP dword ptr [EAX + 0x20c],0x0     ; 0056fbdc | DAT_02d81ca8
     JNZ 0x0056fd2d                      ; 0056fbe3
         ;   XREF to: 0056fd2d (CONDITIONAL_JUMP)  ; LAB_0056fd2d
-    MOV EBX,dword ptr [0x006703ec]      ; 0056fbe9 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0056fbe9 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0056fbe9
     XOR ECX,ECX                         ; 0056fbef
     PUSH EBX                            ; 0056fbf1 | g_CDemonRendererInstance
@@ -74,7 +74,7 @@ section .text
     ADD ESP,0x4                         ; 0056fc01
     LEA EAX,[ESP + 0x18]                ; 0056fc04
     PUSH EAX                            ; 0056fc08
-    MOV ESI,dword ptr [0x006703ec]      ; 0056fc09 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0056fc09 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0056fc0f | g_CDemonRendererInstance
     MOV EDI,0xc                         ; 0056fc10
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 0056fc15

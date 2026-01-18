@@ -21,8 +21,8 @@ core_actor_cpp_draw3DPointMarker_FUN_00409930(CVector3f *world_position,int mark
   local_14.y = (int)ROUND(world_position->y * 256.0f);
   local_14.z = (int)ROUND(world_position->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_14);
-  pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
+            (&g_CDemonRendererPtr1->vertex_buffer_ptr[19999].projected_vertex,&local_14);
+  pSVar3 = g_CDemonRendererPtr1->vertex_buffer_ptr;
   if ((int)(pSVar3[19999].projected_vertex.screen_x & -0x80000000) == 0) {
     iVar5 = pSVar3[19999].projected_vertex.screen_x >> 0x10;
     g_ActiveRenderColor = marker_color;

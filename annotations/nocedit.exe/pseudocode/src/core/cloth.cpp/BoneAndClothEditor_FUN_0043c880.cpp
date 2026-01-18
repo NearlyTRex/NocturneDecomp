@@ -150,9 +150,9 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,(CVector3f *)&DAT_00838e40);
+              (g_CDemonRendererPtr2,(CVector3f *)&DAT_00838e40);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr,(CVector3i *)&DAT_00838e4c,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,(CVector3i *)&DAT_00838e4c,(CVector3i *)0x0);
     if ((SMotion *)local_50._4_4_ != (SMotion *)0x0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                 (&g_CDeformableModelInstanceInstance,-1,0xffffffff,1,0);
@@ -179,7 +179,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
           local_6c.y = (int)ROUND(pfVar5[1] * _DAT_0065bb3c);
           local_6c.z = (int)ROUND(pfVar5[2] * _DAT_0065bb3c);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                    (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_6c);
+                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_6c);
           core_cloth_cpp_FUN_0043c6e0();
           unaff_EBP = unaff_EBP + 1;
           iVar4 = iVar4 + 4;
@@ -192,11 +192,11 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
           uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                    (g_CDemonRendererPtr,CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar2));
+                    (g_CDemonRendererPtr2,CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar2));
         }
         else {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                    (g_CDemonRendererPtr,0xff);
+                    (g_CDemonRendererPtr2,0xff);
         }
         core_cloth_cpp_FUN_0043b7e0();
         fVar6 = (float)((int)fVar6 + 1);

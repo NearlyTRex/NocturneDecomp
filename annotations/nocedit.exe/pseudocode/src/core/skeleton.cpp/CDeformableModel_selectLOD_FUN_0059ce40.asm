@@ -15,7 +15,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 at 005a01a8
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     PUSH EBP                            ; 0059ce41
     SUB ESP,0x8                         ; 0059ce42
     MOV EBX,dword ptr [ESP + 0x14]      ; 0059ce45
-    MOV EDX,dword ptr [0x006703ec]      ; 0059ce49 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0059ce49 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0059ce4f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0059ce50
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)

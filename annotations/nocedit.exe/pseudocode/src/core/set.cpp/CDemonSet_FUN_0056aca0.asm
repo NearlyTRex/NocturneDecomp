@@ -13,7 +13,7 @@
 ;   core_set.cpp_FUN_005713c0 at 005713d8
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
@@ -99,7 +99,7 @@ section .text
         ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570ca0(CDemonSet * this_ptr)
     ADD ESP,0x10                        ; 0056ad4b
     PUSH 0xffff                         ; 0056ad4e
-    MOV EAX,[0x006703ec]                ; 0056ad53 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0056ad53 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0056ad58 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0056ad59
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
@@ -118,7 +118,7 @@ section .text
         ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570ca0(CDemonSet * this_ptr)
     ADD ESP,0x10                        ; 0056ad88
     PUSH 0x1                            ; 0056ad8b
-    MOV ECX,dword ptr [0x006703ec]      ; 0056ad8d | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0056ad8d | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0056ad93 | g_CDemonRendererInstance
     ADD EDI,0x4                         ; 0056ad94
     INC EBP                             ; 0056ad97

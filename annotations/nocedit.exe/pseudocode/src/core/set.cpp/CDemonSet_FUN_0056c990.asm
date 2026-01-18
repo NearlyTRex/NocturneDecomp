@@ -30,7 +30,7 @@
 ;   TerminatedCString s_Bip01_Head_00645dab
 ;   double DOUBLE_00645dbb = 0.261799387791667
 ;   float FLOAT_00662850 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
@@ -227,7 +227,7 @@ section .text
     CALL dword ptr [EDX + 0x8]          ; 0056cb48
     ADD ESP,0x4                         ; 0056cb4b
     PUSH 0x1                            ; 0056cb4e
-    MOV EAX,[0x006703ec]                ; 0056cb50 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0056cb50 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0056cb55 | g_CDemonRendererInstance
     ADD EBX,0x4                         ; 0056cb56
     INC ESI                             ; 0056cb59
@@ -351,7 +351,7 @@ section .text
     LEA EAX,[EBP + -0x1c]               ; 0056cc95
         ;   Label: LAB_0056cc95
     PUSH EAX                            ; 0056cc98
-    MOV EDI,dword ptr [0x006703ec]      ; 0056cc99 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0056cc99 | g_CDemonRendererPtr2
     XOR EBX,EBX                         ; 0056cc9f
     PUSH EDI                            ; 0056cca1 | g_CDemonRendererInstance
     MOV ESI,dword ptr [0x02d03e94]      ; 0056cca2 | g_UseExternalRenderer
@@ -359,7 +359,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 0056ccae
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
     ADD ESP,0x8                         ; 0056ccb3
-    MOV EAX,[0x006703ec]                ; 0056ccb6 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0056ccb6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH 0x42000000                     ; 0056ccbb
     PUSH EAX                            ; 0056ccc0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650 ; 0056ccc1
@@ -367,7 +367,7 @@ section .text
     ADD ESP,0x8                         ; 0056ccc6
     LEA EAX,[EBP + -0x10]               ; 0056ccc9
     PUSH EAX                            ; 0056cccc
-    MOV EDX,dword ptr [0x006703ec]      ; 0056cccd | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0056cccd | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0056ccd3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 0056ccd4
         ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)

@@ -26,7 +26,7 @@
 ;   ... and 4 more
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic* g_SkyDomeTexturePtr = 02ca0148
 ;   CVector3i g_GlobalLightDirection
 ;   int g_RenderMirrorsFlag = 0x1
@@ -71,12 +71,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 0056a197
     MOV ESI,dword ptr [ESP + 0x28]      ; 0056a19b
     PUSH 0x6810cc                       ; 0056a19f | g_GlobalLightDirection
-    MOV EDX,dword ptr [0x006703ec]      ; 0056a1a4 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0056a1a4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0056a1aa | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0 ; 0056a1ab
         ;   XREF to: 0048c6c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0(CDemonRenderer * this_ptr, CVector3i * direction)
     ADD ESP,0x8                         ; 0056a1b0
-    MOV ECX,dword ptr [0x006703ec]      ; 0056a1b3 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0056a1b3 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH 0x3e800000                     ; 0056a1b9
     PUSH ECX                            ; 0056a1be | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0048c690 ; 0056a1bf
@@ -120,7 +120,7 @@ section .text
     CALL core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0 ; 0056a233
         ;   XREF to: 00498fb0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array, int * * output_indices_array)
     ADD ESP,0xc                         ; 0056a238
-    MOV ECX,dword ptr [0x006703ec]      ; 0056a23b | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0056a23b | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0056a23b
     PUSH ECX                            ; 0056a241 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0056a242
@@ -146,7 +146,7 @@ section .text
         ;   XREF to: 0056a2a7 (CONDITIONAL_JUMP)  ; LAB_0056a2a7
     MOV EAX,ESP                         ; 0056a277
     PUSH EAX                            ; 0056a279
-    MOV EAX,[0x006703ec]                ; 0056a27a | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0056a27a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x4],EDX       ; 0056a27f
     PUSH EAX                            ; 0056a283 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0xc],EDX       ; 0056a284

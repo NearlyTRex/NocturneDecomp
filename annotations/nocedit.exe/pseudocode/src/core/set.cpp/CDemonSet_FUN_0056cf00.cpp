@@ -52,7 +52,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr)
           *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 8;
         }
         iVar3 = 0;
-        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
         if (0 < this_ptr->mirror_glass_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar3,0);
@@ -60,7 +60,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr)
             if (iVar4 != 0) {
               *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 8;
             }
-            engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+            engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1)
+            ;
             iVar3 = iVar3 + 1;
             core_set_cpp_FUN_00570af0();
           } while (iVar3 < this_ptr->mirror_glass_count);

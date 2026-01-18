@@ -12,6 +12,6 @@ core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970
 
 {
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-            (g_CDemonRendererPtr,primitive,0x24d);
+            (g_CDemonRendererPtr2,primitive,0x24d);
   return;
 }

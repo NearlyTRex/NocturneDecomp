@@ -81,7 +81,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   float local_24;
   float local_20;
   
-  CStack_13c.z = (int)g_CDemonRendererPtr;
+  CStack_13c.z = (int)g_CDemonRendererPtr2;
   CStack_13c.y = 0x4521b2;
   engine_drender_cpp_CDemonRenderer_matrixPush_FUN_0050d620();
   fVar4 = (float10)256;
@@ -112,7 +112,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   g_RelativeZ = (int)ROUND(dVar7);
   g_TransformMatrix.m[2].x = extraout_EAX_01;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,position_00,rotation);
+            (g_CDemonRendererPtr2,position_00,rotation);
   local_124 = *in_stack_00000014;
   local_120 = max_corner->y;
   local_11c = in_stack_00000014[2];
@@ -123,7 +123,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_74 = local_120;
   local_60 = local_11c;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[0x4e18].projected_vertex,&local_f4);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e18].projected_vertex,&local_f4);
   local_e8 = max_corner->x;
   local_e4 = max_corner->y;
   local_e0 = in_stack_00000014[2];
@@ -134,7 +134,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_70 = local_e4;
   local_6c = local_e0;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[0x4e19].projected_vertex,&local_dc);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e19].projected_vertex,&local_dc);
   local_94 = max_corner->x;
   local_90 = max_corner->y;
   local_8c = max_corner->z;
@@ -145,7 +145,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_58 = local_90;
   local_34 = local_8c;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_100);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_100);
   local_130 = *in_stack_00000014;
   local_12c = max_corner->y;
   local_128 = max_corner->z;
@@ -156,7 +156,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_24 = local_130;
   local_20 = local_128;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_118);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_118);
   local_ac = *in_stack_00000014;
   local_a8 = in_stack_00000014[1];
   local_a4 = in_stack_00000014[2];
@@ -167,7 +167,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_48 = local_ac;
   local_44 = local_a8;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[0x4e1c].projected_vertex,&CStack_13c);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1c].projected_vertex,&CStack_13c);
   local_a0 = max_corner->x;
   local_9c = in_stack_00000014[1];
   local_98 = in_stack_00000014[2];
@@ -178,7 +178,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_50 = local_9c;
   local_4c = local_98;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_b8);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_b8);
   local_10c = max_corner->x;
   local_108 = in_stack_00000014[1];
   local_104 = max_corner->z;
@@ -189,7 +189,7 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_2c = local_108;
   local_28 = local_104;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_88);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_88);
   local_d0 = *in_stack_00000014;
   local_cc = in_stack_00000014[1];
   local_c8 = max_corner->z;
@@ -200,11 +200,11 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_3c = local_cc;
   local_38 = local_c8;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_c4);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_c4);
   uVar3 = 0xffffffff;
   iVar2 = 0xea480;
   do {
-    puVar1 = (uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +
+    puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
                      iVar2);
     iVar2 = iVar2 + 0x30;
     uVar3 = uVar3 & *puVar1;

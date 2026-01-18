@@ -33,14 +33,14 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
     local_28.z = (int)ROUND(local_34.z * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
-               ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+               ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar6),&local_28);
-    if ((*(byte *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +
+    if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
                   iVar6 + 3) & 0x80) == 0) {
       uVar4 = 0;
     }
     else {
-      uVar4 = uVar4 & *(uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
+      uVar4 = uVar4 & *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                                       screen_x + iVar6);
     }
     corner_index = corner_index + 1;
@@ -50,7 +50,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
     iVar5 = 0;
     iVar6 = 0;
     do {
-      pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+      pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       iVar2 = *(int *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);
       local_18 = *(int *)((int)&(pSVar1->projected_vertex).transformed_y + iVar5);
       local_14 = *(int *)((int)&(pSVar1->projected_vertex).transformed_z + iVar5);

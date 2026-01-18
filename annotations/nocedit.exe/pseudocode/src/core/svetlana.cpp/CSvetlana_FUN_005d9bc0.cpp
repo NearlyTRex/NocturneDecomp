@@ -29,7 +29,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
     iVar4 = iVar3;
   } while (iVar3 < 0x1e);
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar3 == 0) && ((int)g_PerspectiveReciprocal < 0x4000)) {
     pCVar5 = this_ptr;
     do {
@@ -39,13 +39,13 @@ int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9bc0(CSvetlana *this_ptr)
     } while (pCVar6 != (CSvetlana *)(this_ptr->base_hero).base_character.base_actor.create_event);
     (this_ptr->base_hero).base_character.model.part_visibility_flags
     [*(int *)(this_ptr->field1_0x1fbd4 + 0x7fcfc)] = 1;
-    this_ptr_00 = g_CDemonRendererPtr;
+    this_ptr_00 = g_CDemonRendererPtr2;
     (this_ptr->base_hero).base_character.model.part_visibility_flags
     [*(int *)(this_ptr->field1_0x1fbd4 + 0x7fd00)] = 1;
     iVar3 = g_CGamePtr->field62_0x1f4;
     g_CGamePtr->field62_0x1f4 = 2;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(this_ptr_00,0);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,48000);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,48000);
     if (iVar4 != 0) {
       core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
     }

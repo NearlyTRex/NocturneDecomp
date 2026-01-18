@@ -27,11 +27,11 @@ core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0
   uint local_14;
   
   engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20
-            (g_CDemonRendererPtr,&g_SavedCameraState);
+            (g_CDemonRendererPtr2,&g_SavedCameraState);
   output = g_RenderVertexBuffer;
   pCVar1 = corners + 8;
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
-            (g_CDemonRendererPtr,&g_BackgroundSavedCameraState);
+            (g_CDemonRendererPtr2,&g_BackgroundSavedCameraState);
   do {
     wincore_windll_cpp_transformPoint_FUN_005b5a25(&output->projected_vertex,corners);
     corners = corners + 1;
@@ -42,7 +42,7 @@ core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0
   local_38.surface_normal.C = 0;
   local_38.surface_normal.B = 0;
   local_38.surface_normal.A = 0;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   iVar2 = 0;
   local_20 = 0;
   local_1c = 4;
@@ -87,8 +87,8 @@ core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0
   }
   iVar2 = 1;
 LAB_004545a7:
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
-            (g_CDemonRendererPtr,&g_SavedCameraState);
+            (g_CDemonRendererPtr2,&g_SavedCameraState);
   return iVar2;
 }

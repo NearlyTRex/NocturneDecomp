@@ -43,7 +43,7 @@
 ;   TerminatedCString s_L_Toggle_locking_unlocki_00618931
 ;   TerminatedCString s_N_Toggle_vertex_numbers_00618956
 ;   float FLOAT_00618972 = 0.5
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
@@ -200,7 +200,7 @@ section .text
         ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0043d6fb
     PUSH 0x3f87558                      ; 0043d6fe | g_ZeroVector
-    MOV EDI,dword ptr [0x006703ec]      ; 0043d703 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0043d703 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0043d709 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0043d70a
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -216,7 +216,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10c]     ; 0043d726
         ;   Label: LAB_0043d726
     ADD EAX,ESI                         ; 0043d72c
-    MOV EDX,dword ptr [0x006703ec]      ; 0043d72e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0043d72e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0043d734
     MOV EAX,dword ptr [EDX]             ; 0043d735 | g_CDemonRendererInstance
     ADD EAX,EDI                         ; 0043d737
@@ -235,7 +235,7 @@ section .text
         ;   XREF to: 0043d726 (CONDITIONAL_JUMP)  ; LAB_0043d726
     PUSH 0xff                           ; 0043d75b
         ;   Label: LAB_0043d75b
-    MOV ESI,dword ptr [0x006703ec]      ; 0043d760 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0043d760 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0043d766 | g_CDemonRendererInstance
     XOR EDI,EDI                         ; 0043d767
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0043d769
@@ -269,7 +269,7 @@ section .text
     PUSH EAX                            ; 0043d7b0
     MOV EDX,dword ptr [EDI + 0x18]      ; 0043d7b1
     PUSH EDX                            ; 0043d7b4
-    MOV ECX,dword ptr [0x006703ec]      ; 0043d7b5 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0043d7b5 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0043d7bb | g_CDemonRendererInstance
     ADD EDI,0xc                         ; 0043d7bc
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 ; 0043d7bf
@@ -329,7 +329,7 @@ section .text
     JZ 0x0043db25                       ; 0043d84f
         ;   XREF to: 0043db25 (CONDITIONAL_JUMP)  ; LAB_0043db25
     MOV dword ptr [0x02d02570],0x1      ; 0043d855 | g_ActiveRenderColor
-    MOV EAX,[0x006703ec]                ; 0043d85f | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0043d85f | g_CDemonRendererPtr2
         ;   Label: LAB_0043d85f
     MOV EAX,dword ptr [EAX]             ; 0043d864 | g_CDemonRendererInstance
     ADD EAX,EDI                         ; 0043d866
@@ -362,7 +362,7 @@ section .text
         ;   Label: LAB_0043d8a4
     MOV EAX,dword ptr [ESI + EAX*0x1]   ; 0043d8aa
     IMUL EDX,EAX,0x30                   ; 0043d8ad
-    MOV EAX,[0x006703ec]                ; 0043d8b0 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0043d8b0 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0043d8b5 | g_CDemonRendererInstance
     ADD EAX,EDX                         ; 0043d8b7
     TEST byte ptr [EAX + 0x13],0x80     ; 0043d8b9

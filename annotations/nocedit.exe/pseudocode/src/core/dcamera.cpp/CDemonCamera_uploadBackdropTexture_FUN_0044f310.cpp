@@ -43,7 +43,7 @@ core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CDemonCamera *t
     iVar8 = iVar8 + 0x1e0;
   } while (iVar5 != 0x10000);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,&g_CameraBackdropTexture);
+            (g_CDemonRendererPtr2,&g_CameraBackdropTexture);
   puVar6 = g_CameraTextureWorkBuffer;
   puVar9 = g_CurrentTextureData;
   for (iVar5 = 0x4000; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -69,6 +69,6 @@ core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CDemonCamera *t
     pbVar10 = pbVar10 + (uint)bVar11 * -2 + 1;
   }
   engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30
-            (g_CDemonRendererPtr,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
+            (g_CDemonRendererPtr2,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
   return;
 }

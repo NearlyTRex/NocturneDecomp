@@ -51,7 +51,7 @@ void core_curtain_cpp_FUN_00449810(void)
   bVar17 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,(SMRGLTextureBasic *)(in_stack_00000004[1].actor_name + 0xc));
+            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(in_stack_00000004[1].actor_name + 0xc));
   while( true ) {
     fVar18 = (float10)1 / (float10)*(float *)(in_stack_00000004[1].create_event + 0x2c);
     fVar19 = (float10)*(float *)(in_stack_00000004[1].actor_name + 4) * fVar18;

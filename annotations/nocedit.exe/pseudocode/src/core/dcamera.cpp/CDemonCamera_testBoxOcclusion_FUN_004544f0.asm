@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 DAT_00688044
@@ -47,13 +47,13 @@ section .text
     SUB ESP,0x28                        ; 004544f4
     MOV EBP,dword ptr [ESP + 0x40]      ; 004544f7
     PUSH 0x15c4184                      ; 004544fb | g_SavedCameraState
-    MOV EDX,dword ptr [0x006703ec]      ; 00454500 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00454500 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 00454506 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20 ; 00454507
         ;   XREF to: 0048de20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20(CDemonRenderer * this_ptr, SCameraViewportState * output_state)
     ADD ESP,0x8                         ; 0045450c
     PUSH 0x151be98                      ; 0045450f | g_BackgroundSavedCameraState
-    MOV ECX,dword ptr [0x006703ec]      ; 00454514 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00454514 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EDI,0x688014                    ; 0045451a | g_RenderVertexBuffer
     PUSH ECX                            ; 0045451f | g_CDemonRendererInstance
     MOV ESI,EBP                         ; 00454520
@@ -74,7 +74,7 @@ section .text
         ;   XREF to: 0045452d (CONDITIONAL_JUMP)  ; LAB_0045452d
     MOV EBX,0x4                         ; 00454541
     PUSH 0x1                            ; 00454546
-    MOV EDX,dword ptr [0x006703ec]      ; 00454548 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00454548 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     XOR ESI,EBP                         ; 0045454e
     XOR EDI,EDI                         ; 00454550
     MOV EBP,0x2                         ; 00454552
@@ -107,13 +107,13 @@ section .text
         ;   Label: LAB_004545a2
     PUSH 0x0                            ; 004545a7
         ;   Label: LAB_004545a7
-    MOV ECX,dword ptr [0x006703ec]      ; 004545a9 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004545a9 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004545af | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 004545b0
         ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 004545b5
     PUSH 0x15c4184                      ; 004545b8 | g_SavedCameraState
-    MOV EBX,dword ptr [0x006703ec]      ; 004545bd | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 004545bd | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 004545c3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0 ; 004545c4
         ;   XREF to: 0048dcc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0(CDemonRenderer * this_ptr, SCameraViewportState * camera_state)

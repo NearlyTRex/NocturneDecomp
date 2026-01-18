@@ -19,7 +19,7 @@ void __cdecl core_fire_cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole *this
   g_BillboardPrimitive.base.surface_normal.D = 0;
   g_BillboardPrimitive.base.surface_normal.C = 0xffff;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,&g_FireEffectBlackHoleTexture);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0x8000);
+            (g_CDemonRendererPtr2,&g_FireEffectBlackHoleTexture);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x8000);
   return;
 }

@@ -94,13 +94,13 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_1c.y = (int)ROUND(local_60 * 256.0f);
     local_1c.z = (int)ROUND(local_5c * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_1c);
+              (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_1c);
     local_124.x = (int)ROUND(local_e8 * 256.0f);
     local_124.y = (int)ROUND(local_e4 * 256.0f);
     local_124.z = (int)ROUND(local_e0 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_124);
-    pSVar5 = g_CDemonRendererPtr->vertex_buffer_ptr;
+              (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_124);
+    pSVar5 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     pSVar4 = pSVar5 + 1;
     piVar6 = aiStack_160;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -135,13 +135,13 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_28.y = (int)ROUND(local_78 * 256.0f);
     local_28.z = (int)ROUND(local_74 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_28);
+              (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_28);
     local_b8.x = (int)ROUND(local_70 * 256.0f);
     local_b8.y = (int)ROUND(local_6c * 256.0f);
     local_b8.z = (int)ROUND(local_68 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_b8);
-    pSVar5 = g_CDemonRendererPtr->vertex_buffer_ptr;
+              (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_b8);
+    pSVar5 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     pSVar4 = pSVar5 + 1;
     piVar6 = aiStack_160;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -176,13 +176,13 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_94.y = (int)ROUND(local_54 * 256.0f);
     local_94.z = (int)ROUND(local_50 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_94);
+              (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_94);
     local_118.x = (int)ROUND(local_f4 * 256.0f);
     local_118.y = (int)ROUND(local_f0 * 256.0f);
     local_118.z = (int)ROUND(local_ec * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_118);
-    pSVar5 = g_CDemonRendererPtr->vertex_buffer_ptr;
+              (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_118);
+    pSVar5 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     pSVar4 = pSVar5 + 1;
     piVar6 = aiStack_160;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

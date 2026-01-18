@@ -13,7 +13,7 @@
 ;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043d873
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -34,7 +34,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0043c6e7
     LEA EBX,[ESI*0x4 + 0x0]             ; 0043c6eb
     SUB EBX,ESI                         ; 0043c6f2
-    MOV ESI,dword ptr [0x006703ec]      ; 0043c6f4 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0043c6f4 | g_CDemonRendererPtr2
     SHL EBX,0x4                         ; 0043c6fa
     MOV ESI,dword ptr [ESI]             ; 0043c6fd | g_CDemonRendererInstance
     ADD ESI,EBX                         ; 0043c6ff

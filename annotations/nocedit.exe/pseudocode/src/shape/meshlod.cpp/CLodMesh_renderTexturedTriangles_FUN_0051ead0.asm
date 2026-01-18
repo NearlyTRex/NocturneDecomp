@@ -28,7 +28,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00638529 = 65535
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   SMRGLTextureBasic g_TempTextureDescriptor
 ;   undefined4 DAT_02f31248
@@ -207,7 +207,7 @@ section .text
     MOV EAX,ESP                         ; 0051ec50
         ;   Label: LAB_0051ec50
     PUSH EAX                            ; 0051ec52
-    MOV EDX,dword ptr [0x006703ec]      ; 0051ec53 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0051ec53 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0051ec59 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0 ; 0051ec5a
         ;   XREF to: 0048b1e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
@@ -241,14 +241,14 @@ section .text
     ADD EAX,0x80                        ; 0051ec9c
     NEG EAX                             ; 0051eca1
     PUSH EAX                            ; 0051eca3
-    MOV EBX,dword ptr [0x006703ec]      ; 0051eca4 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 0051eca4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 0051ecaa | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0051ecab
         ;   XREF to: 0048c960 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer * this_ptr, int color)
     ADD ESP,0x8                         ; 0051ecb0
     MOV EAX,ESP                         ; 0051ecb3
     PUSH EAX                            ; 0051ecb5
-    MOV ESI,dword ptr [0x006703ec]      ; 0051ecb6 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0051ecb6 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0051ecbc | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 ; 0051ecbd
         ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)

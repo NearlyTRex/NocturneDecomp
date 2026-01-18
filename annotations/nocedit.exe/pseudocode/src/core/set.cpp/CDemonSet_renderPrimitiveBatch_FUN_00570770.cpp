@@ -22,7 +22,7 @@ core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
   
   if (g_CGamePtr->scripted_sequence_active == 0) {
     if ((g_CGamePtr->field62_0x1f4 != 0) &&
-       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
        iVar2 == 0)) {
       core_set_cpp_CDemonSet_FUN_00570010(this_ptr);
       return;
@@ -42,12 +42,12 @@ core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
         pSVar1 = pSVar1 + 1;
         iVar2 = iVar2 + 1;
         engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-                  (g_CDemonRendererPtr,&local_38,
+                  (g_CDemonRendererPtr2,&local_38,
                    core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0);
       } while (iVar2 < primitive_count);
     }
     engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
-              (g_CDemonRendererPtr,&primitive_array->base,primitive_count,render_flags);
+              (g_CDemonRendererPtr2,&primitive_array->base,primitive_count,render_flags);
   }
   return;
 }

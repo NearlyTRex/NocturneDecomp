@@ -38,7 +38,7 @@
 ;   float g_VDCoordinateScaleFactor = 256
 ;   float g_VDCameraDistanceRadius = 200
 ;   float g_VDNearbyActorRadius = 100
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowHeight = 0xc8
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
@@ -114,7 +114,7 @@ section .text
         ;   XREF to: 00575725 (CONDITIONAL_JUMP)  ; LAB_00575725
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057523f
         ;   Label: LAB_0057523f
-    MOV ECX,dword ptr [0x006703ec]      ; 00575242 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00575242 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     XOR EDX,EDX                         ; 00575248
     MOV dword ptr [EAX + 0x15aeb4],0x0  ; 0057524a
     MOV EAX,[0x02d03e94]                ; 00575254 | g_UseExternalRenderer
@@ -125,7 +125,7 @@ section .text
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0057526c
     PUSH 0x0                            ; 0057526f
-    MOV EBX,dword ptr [0x006703ec]      ; 00575271 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00575271 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00575277 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x134],EAX     ; 00575278
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 0057527f
@@ -389,7 +389,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x12c]     ; 00575620
         ;   Label: LAB_00575620
     PUSH ECX                            ; 00575627
-    MOV EBX,dword ptr [0x006703ec]      ; 00575628 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00575628 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     XOR EDX,EDX                         ; 0057562e
     PUSH EBX                            ; 00575630 | g_CDemonRendererInstance
     MOV dword ptr [0x0336362c],EDX      ; 00575631 | g_ZBufferScanlineArrayBackup

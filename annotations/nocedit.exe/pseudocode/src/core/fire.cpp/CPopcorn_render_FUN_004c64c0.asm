@@ -29,7 +29,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065dca8 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic g_FireEffectPopcornTexture
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_RenderVertexBuffer[0].u
@@ -68,7 +68,7 @@ section .text
     PUSH EBP                            ; 004c64c2
     SUB ESP,0x94                        ; 004c64c3
     MOV EBP,dword ptr [ESP + 0xa4]      ; 004c64c9
-    MOV ESI,dword ptr [0x006703ec]      ; 004c64d0 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c64d0 | g_CDemonRendererPtr2
     LEA EBX,[ESP + 0x58]                ; 004c64d6
     MOV EAX,EBP                         ; 004c64da
     MOV ESI,dword ptr [ESI]             ; 004c64dc | g_CDemonRendererInstance
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004c650b
     PUSH ESI                            ; 004c650e
-    MOV EDX,dword ptr [0x006703ec]      ; 004c650f | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c650f | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c6515 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50 ; 004c6516
         ;   XREF to: 0048dc50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRenderer * this_ptr, SRenderVertex * vertex_ptr)
@@ -104,12 +104,12 @@ section .text
     PUSH EDI                            ; 004c652c
         ;   Label: LAB_004c652c
     PUSH EBP                            ; 004c652d
-    MOV ECX,dword ptr [0x006703ec]      ; 004c652e | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004c652e | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c6534 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c6535
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004c653a
-    MOV EBX,dword ptr [0x006703ec]      ; 004c653d | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 004c653d | g_CDemonRendererPtr2
     PUSH EBX                            ; 004c6543 | g_CDemonRendererInstance
     LEA ESI,[ESP + 0x30]                ; 004c6544
     LEA EDI,[ESP + 0x48]                ; 004c6548
@@ -123,14 +123,14 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c655f
     MOVSD ES:EDI,ESI                    ; 004c6560
     PUSH EAX                            ; 004c6561
-    MOV ESI,dword ptr [0x006703ec]      ; 004c6562 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c6562 | g_CDemonRendererPtr2
     PUSH ESI                            ; 004c6568 | g_CDemonRendererInstance
     LEA EBX,[ESP + 0x98]                ; 004c6569
     MOV EDI,0xbe000000                  ; 004c6570
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0 ; 004c6575
         ;   XREF to: 0048c4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     LEA EAX,[ESP + 0x80]                ; 004c657a
-    MOV ESI,dword ptr [0x006703ec]      ; 004c6581 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c6581 | g_CDemonRendererPtr2
     ADD ESP,0xc                         ; 004c6587
     XOR EDX,EDX                         ; 004c658a
     MOV dword ptr [ESP + 0x74],EDI      ; 004c658c
@@ -159,7 +159,7 @@ section .text
     MOV dword ptr [ESP + 0x74],ECX      ; 004c65dc
     MOV dword ptr [ESP + 0x78],EDI      ; 004c65e0
     MOV dword ptr [ESP + 0x7c],ESI      ; 004c65e4
-    MOV ESI,dword ptr [0x006703ec]      ; 004c65e8 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c65e8 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004c65ee
     FMUL float ptr [0x0065dca8]         ; 004c65f0 | FLOAT_0065dca8
     FISTP dword ptr [EBX]               ; 004c65f6
@@ -177,7 +177,7 @@ section .text
     MOV EDI,0x3e000000                  ; 004c661b
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004c6620
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV ESI,dword ptr [0x006703ec]      ; 004c6625 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c6625 | g_CDemonRendererPtr2
     ADD ESP,0x8                         ; 004c662b
     XOR EDX,EDX                         ; 004c662e
     MOV dword ptr [ESP + 0x74],EDI      ; 004c6630
@@ -209,7 +209,7 @@ section .text
     MOV dword ptr [ESP + 0x74],ECX      ; 004c6688
     MOV dword ptr [ESP + 0x78],EDI      ; 004c668c
     MOV dword ptr [ESP + 0x7c],ESI      ; 004c6690
-    MOV ESI,dword ptr [0x006703ec]      ; 004c6694 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c6694 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004c669a
     FMUL float ptr [0x0065dca8]         ; 004c669c | FLOAT_0065dca8
     FISTP dword ptr [EBX]               ; 004c66a2
@@ -228,7 +228,7 @@ section .text
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004c66ce
     PUSH 0x67ae84                       ; 004c66d1 | g_FireEffectPopcornTexture
-    MOV EDI,dword ptr [0x006703ec]      ; 004c66d6 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 004c66d6 | g_CDemonRendererPtr2
     PUSH EDI                            ; 004c66dc | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004c66dd
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -279,7 +279,7 @@ section .text
         ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 004c679a
     PUSH 0x1                            ; 004c679d
-    MOV EDI,dword ptr [0x006703ec]      ; 004c679f | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 004c679f | g_CDemonRendererPtr2
     PUSH EDI                            ; 004c67a5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 004c67a6
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
@@ -295,7 +295,7 @@ section .text
     MOV EDI,0x1                         ; 004c67ce
     MOV dword ptr [ESP + 0x28],EAX      ; 004c67d3
     LEA EAX,[ESP + 0x4]                 ; 004c67d7
-    MOV EDX,dword ptr [0x006703ec]      ; 004c67db | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c67db | g_CDemonRendererPtr2
     PUSH EAX                            ; 004c67e1
     MOV dword ptr [ESP + 0xc],EBP       ; 004c67e2
     MOV EBP,0x2                         ; 004c67e6
@@ -307,12 +307,12 @@ section .text
     ADD ESP,0x8                         ; 004c67f9
     XOR EBX,EBX                         ; 004c67fc
     PUSH EBX                            ; 004c67fe
-    MOV ECX,dword ptr [0x006703ec]      ; 004c67ff | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004c67ff | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c6805 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 004c6806
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 004c680b
-    MOV EBX,dword ptr [0x006703ec]      ; 004c680e | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 004c680e | g_CDemonRendererPtr2
     PUSH EBX                            ; 004c6814 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c6815
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()

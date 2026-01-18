@@ -32,15 +32,15 @@ core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
          fVar2 = (this_ptr->bounds_max).y - (this_ptr->bounds_min).y,
          fVar3 = (this_ptr->bounds_max).z - (this_ptr->bounds_min).z,
          (float)250 < SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2))) {
-        engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
+        engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
       }
     }
     else {
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
-      engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr,0);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
+      engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
     }
     iVar9 = -1;
-    iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+    iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     local_24 = 0;
     if (0 < this_ptr->part_count) {
       local_1c = this_ptr;
@@ -52,7 +52,7 @@ core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
           if ((this_ptr->texture_count < 2) || (iVar4 != 0)) {
             if (iVar4 == 0) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                        (g_CDemonRendererPtr,&this_ptr->texture_list[0].base);
+                        (g_CDemonRendererPtr2,&this_ptr->texture_list[0].base);
             }
             core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
                       (g_CDemonSetPtr,
@@ -63,7 +63,7 @@ core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
             while (iVar8 < iVar5) {
               if (iVar9 != this_ptr->poly_texture_index_list[iVar8]) {
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                          (g_CDemonRendererPtr,
+                          (g_CDemonRendererPtr2,
                            &this_ptr->texture_list[this_ptr->poly_texture_index_list[iVar8]].base);
                 iVar9 = this_ptr->poly_texture_index_list[iVar8];
               }
@@ -88,8 +88,8 @@ core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
         iVar8 = iVar5;
       } while (local_24 < this_ptr->part_count);
     }
-    engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
-    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+    engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
+    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
   }
   return;
 }

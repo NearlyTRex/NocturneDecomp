@@ -19,7 +19,7 @@
 ;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 at 0056e83a
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonCamera* g_SkipClearBuffersSceneCamera
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ViewportCenterXFixed
@@ -44,7 +44,7 @@ section .text
     PUSH ESI                            ; 0056e5e2
     PUSH EBX                            ; 0056e5e3
     MOV EBX,dword ptr [ESP + 0x34]      ; 0056e5e4
-    MOV EAX,[0x006703ec]                ; 0056e5e8 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0056e5e8 | g_CDemonRendererPtr2
     MOV EDI,dword ptr [0x02d02550]      ; 0056e5ed | g_ViewportRightFixed
     MOV ECX,dword ptr [0x02d02548]      ; 0056e5f3 | g_ViewportCenterXFixed
     MOV ESI,dword ptr [EAX]             ; 0056e5f9 | g_CDemonRendererInstance

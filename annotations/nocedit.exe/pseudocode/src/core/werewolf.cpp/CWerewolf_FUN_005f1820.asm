@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_00657db0
 ;   double DOUBLE_00657db4 = 0.800000000000000
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CVector3f g_ZeroVector
 ;   undefined4 DAT_03f96b44
@@ -91,7 +91,7 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 005f18cb
     PUSH EAX                            ; 005f18cf
     PUSH 0x3f87558                      ; 005f18d0 | g_ZeroVector
-    MOV EDI,dword ptr [0x006703ec]      ; 005f18d5 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 005f18d5 | g_CDemonRendererPtr2
     PUSH EDI                            ; 005f18db | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005f18dc
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -99,7 +99,7 @@ section .text
     PUSH 0x0                            ; 005f18e4
     LEA EAX,[ESP + 0x48]                ; 005f18e6
     PUSH EAX                            ; 005f18ea
-    MOV EBP,dword ptr [0x006703ec]      ; 005f18eb | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 005f18eb | g_CDemonRendererPtr2
     PUSH EBP                            ; 005f18f1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005f18f2
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)

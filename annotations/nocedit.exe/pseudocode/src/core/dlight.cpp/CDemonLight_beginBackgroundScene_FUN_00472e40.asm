@@ -14,7 +14,7 @@
 ;   TerminatedCString s_CDemonLight_beginBackgro_0061f05e
 ;   TerminatedCString s_core_dlight_cpp_0061f091
 ;   TerminatedCString s_CDemonLight_beginBackgro_0061f0a4
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_BackgroundSceneNestingCount
 ;   void*[1024] g_SavedScreenBufferArray
 ;   undefined4 DAT_026a5818
@@ -96,7 +96,7 @@ section .text
     NOP                                 ; 00472eef
     PUSH 0x1                            ; 00472ef0
         ;   Label: LAB_00472ef0
-    MOV EBP,dword ptr [0x006703ec]      ; 00472ef2 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 00472ef2 | g_CDemonRendererPtr2
     PUSH EBP                            ; 00472ef8 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 00472ef9
         ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)

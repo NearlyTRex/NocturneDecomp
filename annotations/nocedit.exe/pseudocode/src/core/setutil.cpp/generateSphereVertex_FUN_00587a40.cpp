@@ -34,10 +34,10 @@ core_setutil_cpp_generateSphereVertex_FUN_00587a40
   local_38[0].y = (int)ROUND((float)(fVar5 * fVar4) * 256.0f);
   local_38[0].z = (int)ROUND((float)(fVar2 * fVar4 * fVar6) * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[vertex_buffer_index].projected_vertex,local_38)
-  ;
-  pCVar1 = g_CDemonRendererPtr;
-  g_CDemonRendererPtr->vertex_buffer_ptr[vertex_buffer_index].u = 1.1754944e-38;
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_buffer_index].projected_vertex,local_38
+            );
+  pCVar1 = g_CDemonRendererPtr2;
+  g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_buffer_index].u = 1.1754944e-38;
   pCVar1->vertex_buffer_ptr[vertex_buffer_index].v = 1.1754944e-38;
   return;
 }

@@ -45,16 +45,16 @@ void core_gore_cpp_FUN_004ec500(void)
     *in_stack_00000004 = 1;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,(CVector3f *)(in_stack_00000004 + 1));
+            (g_CDemonRendererPtr2,(CVector3f *)(in_stack_00000004 + 1));
   if (in_stack_00000004[4] == 1) {
     DAT_02d83368.surface_normal.A = 0;
     DAT_02d83368.surface_normal.C = 0xffff;
     DAT_02d83368.surface_normal.B = 0;
     DAT_02d83368.surface_normal.D = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,&DAT_0067ba28 + in_stack_00000004[10] * 0x10 + local_18);
+              (g_CDemonRendererPtr2,&DAT_0067ba28 + in_stack_00000004[10] * 0x10 + local_18);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr,(CVector3i *)(in_stack_00000004 + 6),(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,(CVector3i *)(in_stack_00000004 + 6),(CVector3i *)0x0);
     local_78 = 0xbf000000;
     local_74 = 0xbf000000;
     local_70 = 0;
@@ -62,7 +62,7 @@ void core_gore_cpp_FUN_004ec500(void)
     local_6c.y = (int)ROUND(_DAT_0065f024 * -0.5);
     local_6c.z = (int)ROUND(_DAT_0065f024 * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_6c);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_6c);
     local_78 = 0x3f000000;
     local_70 = 0;
     local_74 = 0xbf000000;
@@ -70,7 +70,7 @@ void core_gore_cpp_FUN_004ec500(void)
     local_54.y = (int)ROUND(_DAT_0065f024 * -0.5);
     local_54.z = (int)ROUND(_DAT_0065f024 * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_54);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_54);
     local_78 = 0x3f000000;
     local_70 = 0;
     local_74 = 0x3f000000;
@@ -78,7 +78,7 @@ void core_gore_cpp_FUN_004ec500(void)
     local_3c.y = (int)ROUND(_DAT_0065f024 * 0.5);
     local_3c.z = (int)ROUND(_DAT_0065f024 * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_3c);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_3c);
     local_78 = 0xbf000000;
     local_70 = 0;
     local_74 = 0x3f000000;
@@ -96,7 +96,7 @@ void core_gore_cpp_FUN_004ec500(void)
     DAT_02d83368.surface_normal.C = 0;
     DAT_02d83368.surface_normal.D = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,&DAT_0067b9c8 + in_stack_00000004[10]);
+              (g_CDemonRendererPtr2,&DAT_0067b9c8 + in_stack_00000004[10]);
     local_48 = 0xbf000000;
     local_44 = 0;
     local_40 = 0xbf000000;
@@ -104,7 +104,7 @@ void core_gore_cpp_FUN_004ec500(void)
     local_24.y = (int)ROUND(_DAT_0065f024 * 0.0);
     local_24.z = (int)ROUND(_DAT_0065f024 * -0.5);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_24);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_24);
     local_48 = 0x3f000000;
     local_40 = 0xbf000000;
     local_44 = 0;
@@ -112,7 +112,7 @@ void core_gore_cpp_FUN_004ec500(void)
     CStack_90.y = (int)ROUND(_DAT_0065f024 * 0.0);
     CStack_90.z = (int)ROUND(_DAT_0065f024 * -0.5);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&CStack_90);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_90);
     local_48 = 0x3f000000;
     local_44 = 0;
     local_40 = 0x3f000000;
@@ -120,7 +120,7 @@ void core_gore_cpp_FUN_004ec500(void)
     local_60.y = (int)ROUND(_DAT_0065f024 * 0.0);
     local_60.z = (int)ROUND(_DAT_0065f024 * 0.5);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_60);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_60);
     local_48 = 0xbf000000;
     local_40 = 0x3f000000;
     local_44 = 0;
@@ -130,7 +130,7 @@ void core_gore_cpp_FUN_004ec500(void)
     input = &local_30;
   }
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,input);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,input);
   uVar1 = in_stack_00000004[5];
   if (uVar1 == 0) {
 LAB_004ec747:
@@ -197,7 +197,7 @@ LAB_004ec7a1:
 LAB_004ec7e0:
   g_RenderVertexBuffer[3].fog = 0.0;
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr,&DAT_02d83368);
+            (g_CDemonRendererPtr2,&DAT_02d83368);
   if (in_stack_00000004[4] == 1) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     return;

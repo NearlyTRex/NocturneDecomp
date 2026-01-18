@@ -11,7 +11,7 @@
 ;   float FLOAT_0062a436 = 64
 ;   double DOUBLE_0062a43e = 0.5
 ;   undefined4 DAT_0065e500
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   SMRGLTextureBasic DAT_0067b514
@@ -51,7 +51,7 @@ section .text
     MOV EBP,ESP                         ; 004cc304
     SUB ESP,0x8c                        ; 004cc306
     AND ESP,0xfffffff8                  ; 004cc30c
-    MOV EDX,dword ptr [0x006703ec]      ; 004cc30f | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004cc30f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004cc315 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004cc316
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
@@ -121,7 +121,7 @@ section .text
         ;   XREF to: 004cc5cf (CONDITIONAL_JUMP)  ; LAB_004cc5cf
     MOV ECX,0x3                         ; 004cc3d4
     MOV ESI,0x800000                    ; 004cc3d9 | DAT_00800000
-    MOV EAX,[0x006703ec]                ; 004cc3de | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004cc3de | g_CDemonRendererInstance | g_CDemonRendererPtr2
     XOR EBX,EBX                         ; 004cc3e3
     MOV dword ptr [ESP + 0x4],ECX       ; 004cc3e5
     MOV dword ptr [ESP + 0x14],EBX      ; 004cc3e9
@@ -215,7 +215,7 @@ section .text
         ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; undefined core_spline.cpp_FUN_005b92d0()
     ADD ESP,0x18                        ; 004cc53b
     LEA EAX,[ESP + 0x60]                ; 004cc53e
-    MOV EDX,dword ptr [0x006703ec]      ; 004cc542 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004cc542 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004cc548
     FMUL float ptr [0x0065e500]         ; 004cc54a | DAT_0065e500
     FISTP dword ptr [EBX]               ; 004cc550
@@ -231,7 +231,7 @@ section .text
     PUSH EAX                            ; 004cc571
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004cc572
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 004cc577 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004cc577 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EBX,dword ptr [EAX]             ; 004cc57c | g_CDemonRendererInstance
     MOV DL,byte ptr [EBX + 0x13]        ; 004cc57e
     ADD ESP,0x8                         ; 004cc581
@@ -267,7 +267,7 @@ section .text
         ;   Label: LAB_004cc5cf
     PUSH EAX                            ; 004cc5d0
     PUSH EAX                            ; 004cc5d1
-    MOV EDX,dword ptr [0x006703ec]      ; 004cc5d2 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004cc5d2 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004cc5d8 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970 ; 004cc5d9
         ;   XREF to: 0048c970 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)

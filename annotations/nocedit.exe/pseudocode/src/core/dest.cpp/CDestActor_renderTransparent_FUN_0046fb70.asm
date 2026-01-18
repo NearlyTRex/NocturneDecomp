@@ -10,7 +10,7 @@
 ;   TerminatedCString s_CBoxActor_0061e3b2
 ;   TerminatedCString s_core_dest_cpp_0061e3bc
 ;   TerminatedCString s_CDestActor_renderTranspa_0061e3cd
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -52,7 +52,7 @@ section .text
     POP ESI                             ; 0046fb8b
     POP EBX                             ; 0046fb8c
     RET                                 ; 0046fb8d
-    MOV ECX,dword ptr [0x006703ec]      ; 0046fb8e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0046fb8e | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0046fb8e
     PUSH ECX                            ; 0046fb94 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0046fb95
@@ -150,7 +150,7 @@ section .text
     PUSH EDI                            ; 0046fc78
         ;   Label: LAB_0046fc78
     PUSH 0x8000                         ; 0046fc79
-    MOV EDI,dword ptr [0x006703ec]      ; 0046fc7e | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0046fc7e | g_CDemonRendererPtr2
     PUSH EDI                            ; 0046fc84 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0046fc85
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)

@@ -30,7 +30,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_noc_d_pcx_00618693
 ;   undefined4 DAT_0065bb3c
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
@@ -216,14 +216,14 @@ section .text
     CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0043ca9f
         ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
     PUSH 0x838e40                       ; 0043caa4 | DAT_00838e40
-    MOV EDI,dword ptr [0x006703ec]      ; 0043caa9 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0043caa9 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0043caaf | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0043cab0
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0043cab5
     PUSH 0x0                            ; 0043cab8
     PUSH 0x838e4c                       ; 0043caba | DAT_00838e4c
-    MOV EAX,[0x006703ec]                ; 0043cabf | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0043cabf | g_CDemonRendererPtr2
     PUSH EAX                            ; 0043cac4 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0043cac5
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -293,7 +293,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x520]     ; 0043cb87
     LEA EBX,[ESP + 0x4e0]               ; 0043cb8e
     ADD EAX,ECX                         ; 0043cb95
-    MOV EDX,dword ptr [0x006703ec]      ; 0043cb97 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0043cb97 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 0043cb9d
     FMUL float ptr [0x0065bb3c]         ; 0043cb9f | DAT_0065bb3c
     FISTP dword ptr [EBX]               ; 0043cba5
@@ -345,7 +345,7 @@ section .text
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043cc40
     PUSH EAX                            ; 0043cc43
-    MOV EDX,dword ptr [0x006703ec]      ; 0043cc44 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0043cc44 | g_CDemonRendererPtr2
     PUSH EDX                            ; 0043cc4a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0043cc4b
         ;   XREF to: 0048c960 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer * this_ptr, int color)
@@ -361,7 +361,7 @@ section .text
     CMP EBX,dword ptr [ESI + 0x3ce8c]   ; 0043cc60
     JL 0x0043cc1a                       ; 0043cc66
         ;   XREF to: 0043cc1a (CONDITIONAL_JUMP)  ; LAB_0043cc1a
-    MOV ECX,dword ptr [0x006703ec]      ; 0043cc68 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0043cc68 | g_CDemonRendererPtr2
         ;   Label: LAB_0043cc68
     PUSH ECX                            ; 0043cc6e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0043cc6f
@@ -454,7 +454,7 @@ section .text
         ;   XREF to: 0043ca5e (UNCONDITIONAL_JUMP)  ; LAB_0043ca5e
     PUSH 0xff                           ; 0043d526
         ;   Label: LAB_0043d526
-    MOV EDI,dword ptr [0x006703ec]      ; 0043d52b | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0043d52b | g_CDemonRendererPtr2
     PUSH EDI                            ; 0043d531 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0043d532
         ;   XREF to: 0048c960 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer * this_ptr, int color)

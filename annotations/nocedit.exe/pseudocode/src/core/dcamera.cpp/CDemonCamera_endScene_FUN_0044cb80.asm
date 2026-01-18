@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0061a013
 ;   TerminatedCString s_CDemonCamera_endScene_Sc_0061a027
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   uint*[1024] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
@@ -97,7 +97,7 @@ section .text
     JL 0x0044cbd9                       ; 0044cc0e
         ;   XREF to: 0044cbd9 (CONDITIONAL_JUMP)  ; LAB_0044cbd9
     POP EDI                             ; 0044cc10
-    MOV EAX,[0x006703ec]                ; 0044cc11 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0044cc11 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0044cc11
     PUSH EAX                            ; 0044cc16 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0044cc17

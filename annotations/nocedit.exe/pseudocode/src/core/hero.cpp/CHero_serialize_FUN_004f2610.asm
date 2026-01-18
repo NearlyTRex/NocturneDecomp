@@ -61,7 +61,7 @@ section .text
     PUSH ESI                            ; 004f2611
     SUB ESP,0xcc                        ; 004f2612
     MOV ESI,dword ptr [ESP + 0xd8]      ; 004f2618
-    MOV EDX,dword ptr [0x0067cc1c]      ; 004f261f | g_CHeroPlaceholderClassVersion
+    MOV EDX,dword ptr [0x0067cc1c]      ; 004f261f | g_CHeroClassVersion
     LEA EBX,[ESI + 0x158]               ; 004f2625
     CMP EDX,0x4                         ; 004f262b
     JGE 0x004f26a2                      ; 004f262e
@@ -69,7 +69,7 @@ section .text
     PUSH ESI                            ; 004f2630
     CALL core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0 ; 004f2631
         ;   XREF to: 0040c1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0(CDemonActor * this_ptr)
-    MOV ECX,dword ptr [0x0067cc1c]      ; 004f2636 | g_CHeroPlaceholderClassVersion
+    MOV ECX,dword ptr [0x0067cc1c]      ; 004f2636 | g_CHeroClassVersion
     ADD ESP,0x4                         ; 004f263c
     CMP ECX,0x2                         ; 004f263f
     JL 0x004f2652                       ; 004f2642
@@ -79,7 +79,7 @@ section .text
     CALL core_actor.cpp_serializeMotionState_FUN_0040b9f0 ; 004f264a
         ;   XREF to: 0040b9f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeMotionState_FUN_0040b9f0(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 004f264f
-    CMP dword ptr [0x0067cc1c],0x3      ; 004f2652 | g_CHeroPlaceholderClassVersion
+    CMP dword ptr [0x0067cc1c],0x3      ; 004f2652 | g_CHeroClassVersion
         ;   Label: LAB_004f2652
     JGE 0x004f2664                      ; 004f2659
         ;   XREF to: 004f2664 (CONDITIONAL_JUMP)  ; LAB_004f2664
@@ -123,7 +123,7 @@ section .text
     PUSH EBX                            ; 004f26be
     CALL core_actor.cpp_serializePartStatus_FUN_0040bae0 ; 004f26bf
         ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializePartStatus_FUN_0040bae0(void * part, char * property_name)
-    MOV ECX,dword ptr [0x0067cc1c]      ; 004f26c4 | g_CHeroPlaceholderClassVersion
+    MOV ECX,dword ptr [0x0067cc1c]      ; 004f26c4 | g_CHeroClassVersion
     ADD ESP,0x8                         ; 004f26ca
     CMP ECX,0x8                         ; 004f26cd
     JGE 0x004f26f0                      ; 004f26d0
@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f26e3
     MOV dword ptr [ESI + 0x259c],0x0    ; 004f26e6
-    CMP dword ptr [0x0067cc1c],0x5      ; 004f26f0 | g_CHeroPlaceholderClassVersion
+    CMP dword ptr [0x0067cc1c],0x5      ; 004f26f0 | g_CHeroClassVersion
         ;   Label: LAB_004f26f0
     JL 0x004f270d                       ; 004f26f7
         ;   XREF to: 004f270d (CONDITIONAL_JUMP)  ; LAB_004f270d
@@ -145,7 +145,7 @@ section .text
     CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004f2705
         ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f270a
-    CMP dword ptr [0x0067cc1c],0x7      ; 004f270d | g_CHeroPlaceholderClassVersion
+    CMP dword ptr [0x0067cc1c],0x7      ; 004f270d | g_CHeroClassVersion
         ;   Label: LAB_004f270d
     JL 0x004f277a                       ; 004f2714
         ;   XREF to: 004f277a (CONDITIONAL_JUMP)  ; LAB_004f277a
@@ -179,7 +179,7 @@ section .text
     CALL core_actor.cpp_serializeActor_FUN_0040b870 ; 004f2772
         ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f2777
-    CMP dword ptr [0x0067cc1c],0xa      ; 004f277a | g_CHeroPlaceholderClassVersion
+    CMP dword ptr [0x0067cc1c],0xa      ; 004f277a | g_CHeroClassVersion
         ;   Label: LAB_004f277a
     JNZ 0x004f2798                      ; 004f2781
         ;   XREF to: 004f2798 (CONDITIONAL_JUMP)  ; LAB_004f2798
@@ -189,7 +189,7 @@ section .text
     CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004f2790
         ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f2795
-    MOV EAX,[0x0067cc1c]                ; 004f2798 | g_CHeroPlaceholderClassVersion
+    MOV EAX,[0x0067cc1c]                ; 004f2798 | g_CHeroClassVersion
         ;   Label: LAB_004f2798
     CMP EAX,0x8                         ; 004f279d
     JL 0x004f27e0                       ; 004f27a0
@@ -219,7 +219,7 @@ section .text
         ;   XREF to: 004f27a9 (CONDITIONAL_JUMP)  ; LAB_004f27a9
     LEA EAX,[EAX]                       ; 004f27d4
     LEA EDX,[EDX]                       ; 004f27da
-    CMP dword ptr [0x0067cc1c],0x9      ; 004f27e0 | g_CHeroPlaceholderClassVersion
+    CMP dword ptr [0x0067cc1c],0x9      ; 004f27e0 | g_CHeroClassVersion
         ;   Label: LAB_004f27e0
     JL 0x004f27fd                       ; 004f27e7
         ;   XREF to: 004f27fd (CONDITIONAL_JUMP)  ; LAB_004f27fd
@@ -229,7 +229,7 @@ section .text
     CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004f27f5
         ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f27fa
-    CMP dword ptr [0x0067cc1c],0xc      ; 004f27fd | g_CHeroPlaceholderClassVersion
+    CMP dword ptr [0x0067cc1c],0xc      ; 004f27fd | g_CHeroClassVersion
         ;   Label: LAB_004f27fd
     JL 0x004f281a                       ; 004f2804
         ;   XREF to: 004f281a (CONDITIONAL_JUMP)  ; LAB_004f281a
@@ -239,7 +239,7 @@ section .text
     CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 004f2812
         ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f2817
-    CMP dword ptr [0x0067cc1c],0x6      ; 004f281a | g_CHeroPlaceholderClassVersion
+    CMP dword ptr [0x0067cc1c],0x6      ; 004f281a | g_CHeroClassVersion
         ;   Label: LAB_004f281a
     JL 0x004f265b                       ; 004f2821
         ;   XREF to: 004f265b (CONDITIONAL_JUMP)  ; LAB_004f265b

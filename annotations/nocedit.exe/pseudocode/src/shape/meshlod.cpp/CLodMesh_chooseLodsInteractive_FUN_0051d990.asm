@@ -307,7 +307,7 @@ section .text
         ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0051dcaf
     PUSH 0x3f87558                      ; 0051dcb2 | g_ZeroVector
-    MOV ECX,dword ptr [0x006703ec]      ; 0051dcb7 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0051dcb7 | g_CDemonRendererPtr2
     PUSH ECX                            ; 0051dcbd | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0051dcbe
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -328,7 +328,7 @@ section .text
         ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0051dcfd
     PUSH 0x3f87558                      ; 0051dd00 | g_ZeroVector
-    MOV EBX,dword ptr [0x006703ec]      ; 0051dd05 | g_CDemonRendererPtr | g_CDemonRendererInstance
+    MOV EBX,dword ptr [0x006703ec]      ; 0051dd05 | g_CDemonRendererPtr2 | g_CDemonRendererInstance
     PUSH EBX                            ; 0051dd0b | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0051dd0c
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)

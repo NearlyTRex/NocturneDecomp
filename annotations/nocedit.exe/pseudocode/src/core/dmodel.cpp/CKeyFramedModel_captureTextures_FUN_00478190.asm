@@ -12,7 +12,7 @@
 ;   core_dmodel.cpp_loadModel_FUN_00478c00 at 00478c93
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     LEA ESI,[EDI + 0x124]               ; 004781a4
     PUSH ESI                            ; 004781aa
         ;   Label: LAB_004781aa
-    MOV ECX,dword ptr [0x006703ec]      ; 004781ab | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004781ab | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004781b1 | g_CDemonRendererInstance
     INC EBX                             ; 004781b2
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004781b3

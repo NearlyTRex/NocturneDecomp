@@ -30,19 +30,19 @@ core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint 
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&g_ZeroVector);
+            (g_CDemonRendererPtr2,&g_ZeroVector);
   if (20000 < this_ptr->vertex_count) {
     g_CurrentFilename = "..\\core\\dcube.cpp";
     g_CurrentLineNumber = 0x7bb;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CDemonCube::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",this_ptr->vertex_count,20000);
   }
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   pCVar4 = this_ptr->vertex_buffer;
   local_20 = 0;
   local_1c = 0;
-  output = g_CDemonRendererPtr->vertex_buffer_ptr;
+  output = g_CDemonRendererPtr2->vertex_buffer_ptr;
   if (0 < this_ptr->vertex_count) {
     do {
       local_48.x = (int)ROUND(pCVar4->x * 256.0f);
@@ -58,8 +58,8 @@ core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint 
     } while (local_1c < this_ptr->vertex_count);
   }
   if (local_20 == this_ptr->vertex_count) {
-    if (g_CDemonRendererPtr->advanced_culling_enabled == 0) {
-      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,0);
+    if (g_CDemonRendererPtr2->advanced_culling_enabled == 0) {
+      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,0);
     }
   }
   if ((g_ColorConstantsInitialized & 1) == 0) {
@@ -93,7 +93,7 @@ core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint 
       local_2c = (uint)ROUND(local_38);
       local_30 = (uint)ROUND(local_3c);
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-                (g_CDemonRendererPtr,local_30 & 0xff,local_2c & 0xff,local_28 & 0xff);
+                (g_CDemonRendererPtr2,local_30 & 0xff,local_2c & 0xff,local_28 & 0xff);
       iVar3 = local_18 + 0x20;
       iVar5 = local_14 + 1;
       core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0
@@ -103,7 +103,7 @@ core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint 
       local_14 = iVar5;
     } while (iVar5 < this_ptr->triangle_count);
   }
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   return;
 }

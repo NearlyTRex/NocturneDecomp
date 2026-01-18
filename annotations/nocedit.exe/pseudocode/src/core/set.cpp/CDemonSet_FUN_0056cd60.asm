@@ -13,7 +13,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c462
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -122,7 +122,7 @@ section .text
         ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570ca0(CDemonSet * this_ptr)
     ADD ESP,0x10                        ; 0056ce3e
     PUSH 0xffff                         ; 0056ce41
-    MOV ECX,dword ptr [0x006703ec]      ; 0056ce46 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0056ce46 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0056ce4c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0056ce4d
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
@@ -137,7 +137,7 @@ section .text
     OR byte ptr [EBX + 0x140],0x4       ; 0056ce6a
     PUSH 0x1                            ; 0056ce71
         ;   Label: LAB_0056ce71
-    MOV ESI,dword ptr [0x006703ec]      ; 0056ce73 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0056ce73 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0056ce79 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056ce7a
         ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)
@@ -164,7 +164,7 @@ section .text
     OR byte ptr [EBX + 0x140],0x4       ; 0056ceab
     PUSH 0x1                            ; 0056ceb2
         ;   Label: LAB_0056ceb2
-    MOV EDX,dword ptr [0x006703ec]      ; 0056ceb4 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0056ceb4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0056ceba | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056cebb
         ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)

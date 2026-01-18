@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02d01f4e
@@ -41,7 +41,7 @@ section .text
     POP ESI                             ; 00441f79
     POP EBX                             ; 00441f7a
     RET                                 ; 00441f7b
-    MOV ECX,dword ptr [0x006703ec]      ; 00441f7c | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00441f7c | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_00441f7c
     PUSH ECX                            ; 00441f82 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00441f83

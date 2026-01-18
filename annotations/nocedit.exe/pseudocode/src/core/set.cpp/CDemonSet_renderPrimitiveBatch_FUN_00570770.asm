@@ -27,7 +27,7 @@
 ;   core_wateract.cpp_CWaterActor_FUN_005eb280 at 005eb445
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
@@ -91,7 +91,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EAX      ; 005707f7
     LEA EAX,[ESP + 0x4]                 ; 005707fb
     PUSH EAX                            ; 005707ff
-    MOV EDX,dword ptr [0x006703ec]      ; 00570800 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00570800 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 00570806 | g_CDemonRendererInstance
     ADD EBX,0x48                        ; 00570807
     INC ESI                             ; 0057080a
@@ -108,7 +108,7 @@ section .text
     PUSH ECX                            ; 00570824
     PUSH EDI                            ; 00570825
     PUSH EBP                            ; 00570826
-    MOV EBX,dword ptr [0x006703ec]      ; 00570827 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00570827 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 0057082d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90 ; 0057082e
         ;   XREF to: 0048ce90 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
@@ -120,7 +120,7 @@ section .text
     POP ESI                             ; 0057083b
     POP EBX                             ; 0057083c
     RET                                 ; 0057083d
-    MOV ESI,dword ptr [0x006703ec]      ; 0057083e | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0057083e | g_CDemonRendererPtr2
         ;   Label: LAB_0057083e
     PUSH ESI                            ; 00570844 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00570845

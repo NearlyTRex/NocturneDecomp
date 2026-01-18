@@ -18,7 +18,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
   
   iVar3 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&this_ptr->position);
+            (g_CDemonRendererPtr1,&this_ptr->position);
   iVar2 = 0;
   do {
     local_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *
@@ -32,10 +32,10 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
                             256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
-               ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+               ((int)&(g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar2),&local_1c);
-    pCVar1 = g_CDemonRendererPtr;
-    *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar2) = 0x800000;
+    pCVar1 = g_CDemonRendererPtr1;
+    *(uint *)((int)&g_CDemonRendererPtr1->vertex_buffer_ptr->u + iVar2) = 0x800000;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar2) = 0x800000;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar2) = 0x8000;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->light + iVar2) = 0xffff;

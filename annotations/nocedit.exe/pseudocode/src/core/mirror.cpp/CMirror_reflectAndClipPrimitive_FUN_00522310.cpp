@@ -24,7 +24,7 @@ core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
     pCVar4 = g_MirrorInputVertices;
     pSVar3 = primitive;
     do {
-      pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr + pSVar3[1].base.type;
+      pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr + pSVar3[1].base.type;
       pCVar4->x = (float)(pSVar1->projected_vertex).transformed_x * 0.00390625f;
       pCVar4->y = (float)(pSVar1->projected_vertex).transformed_y * 0.00390625f;
       pCVar4->z = (float)(pSVar1->projected_vertex).transformed_z * 0.00390625f;
@@ -61,13 +61,13 @@ core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
       pCVar4 = g_MirrorOutputVertices;
       iVar5 = 0xea000;
       do {
-        piVar2 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
+        piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                                transformed_x + iVar5);
         *piVar2 = (int)ROUND(pCVar4->x * 256.0f);
         piVar2[1] = (int)ROUND(pCVar4->y * 256.0f);
         piVar2[2] = (int)ROUND(pCVar4->z * 256.0f);
         *(uint *)
-         ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x + iVar5) =
+         ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x + iVar5) =
              0xffffffff;
         *(int *)(this_ptr->additional_data + 0x18) = local_14 + 0x4e00;
         engine_matrix_c_projectCachedPoint_FUN_0050cda0(local_14 + 0x4e00);

@@ -26,7 +26,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_00645e93
 ;   TerminatedCString s_CDemonSet_rotateVerticie_00645ea3
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -54,11 +54,11 @@ section .text
         ;   XREF to: 0056e84a (CONDITIONAL_JUMP)  ; LAB_0056e84a
     PUSH 0x1                            ; 0056e7db
         ;   Label: LAB_0056e7db
-    MOV EDI,dword ptr [0x006703ec]      ; 0056e7dd | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0056e7dd | g_CDemonRendererPtr2
     PUSH EDI                            ; 0056e7e3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056e7e4
         ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)
-    MOV ESI,dword ptr [0x006703ec]      ; 0056e7e9 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0056e7e9 | g_CDemonRendererPtr2
     ADD ESP,0x8                         ; 0056e7ef
     XOR EAX,EAX                         ; 0056e7f2
     XOR EDI,EDI                         ; 0056e7f4
@@ -121,7 +121,7 @@ section .text
         ;   XREF to: 0056e7db (UNCONDITIONAL_JUMP)  ; LAB_0056e7db
     PUSH 0x0                            ; 0056e878
         ;   Label: LAB_0056e878
-    MOV ESI,dword ptr [0x006703ec]      ; 0056e87a | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 0056e87a | g_CDemonRendererPtr2
     PUSH ESI                            ; 0056e880 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056e881
         ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)

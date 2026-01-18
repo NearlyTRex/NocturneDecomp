@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   SMRGLHeaderPrimitive g_MirrorTempPrimitive
 ;   undefined4 g_MirrorTempPrimitive.base.count
@@ -63,7 +63,7 @@ section .text
         ;   Label: LAB_0052264b
     ADD EAX,0xe8                        ; 0052264f
     PUSH EAX                            ; 00522654
-    MOV ECX,dword ptr [0x006703ec]      ; 00522655 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00522655 | g_CDemonRendererPtr2
     PUSH ECX                            ; 0052265b | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 ; 0052265c
         ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)

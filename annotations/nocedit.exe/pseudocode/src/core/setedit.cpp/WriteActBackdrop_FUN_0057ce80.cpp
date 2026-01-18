@@ -74,15 +74,15 @@ void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
     g_WindowHeight = in_stack_0000001c;
   }
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-            (g_CDemonRendererPtr,0,0,in_stack_00000018 + -1,in_stack_0000001c + -1);
+            (g_CDemonRendererPtr2,0,0,in_stack_00000018 + -1,in_stack_0000001c + -1);
   g_CDemonRaytraceInstance.rendering_mode = 1;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_50,in_stack_00000008);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr,in_stack_00000004);
+            (g_CDemonRendererPtr2,in_stack_00000004);
   engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
-            (g_CDemonRendererPtr,in_stack_00000020);
+            (g_CDemonRendererPtr2,in_stack_00000020);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr,&local_50,in_stack_ffffd990);
+            (g_CDemonRendererPtr2,&local_50,in_stack_ffffd990);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
@@ -129,7 +129,7 @@ void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
   }
   crt_stdio_c_fwrite_FUN_005fdc00(g_SourcePaletteData,0x100,3,local_14);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\setedit.cpp",0xbf1);
-  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr);
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
   if (local_1c != (void *)0x0) {
     if (0 < in_stack_0000001c) {
       iVar5 = 0;

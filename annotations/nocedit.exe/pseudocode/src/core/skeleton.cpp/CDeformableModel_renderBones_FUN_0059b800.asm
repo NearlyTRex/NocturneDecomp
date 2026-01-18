@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00662e98 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -61,7 +61,7 @@ section .text
         ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_getTranslation_FUN_005f6110(CVector3f * output_vector, CMatrix3x4f * input_matrix)
     ADD ESP,0x8                         ; 0059b841
     LEA EAX,[ESP + 0xc]                 ; 0059b844
-    MOV EDX,dword ptr [0x006703ec]      ; 0059b848 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0059b848 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 0059b84e
     FMUL float ptr [0x00662e98]         ; 0059b850 | FLOAT_00662e98
     FISTP dword ptr [EBX]               ; 0059b856
@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 0059b87a
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0059b87b
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 0059b880 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0059b880 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0059b885 | g_CDemonRendererInstance
     ADD ESP,0x8                         ; 0059b887
     MOV DL,byte ptr [EAX + 0xea5e3]     ; 0059b88a

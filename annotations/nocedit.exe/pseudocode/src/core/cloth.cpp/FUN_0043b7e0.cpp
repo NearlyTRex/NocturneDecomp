@@ -40,7 +40,7 @@ void core_cloth_cpp_FUN_0043b7e0(void)
   core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160((CMatrix3x3f *)(iVar2 + 0x78),&local_58);
   vertex_index1 = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&local_58,(CVector3i *)(iVar2 + 0xa0));
+            (g_CDemonRendererPtr2,(CVector3i *)&local_58,(CVector3i *)(iVar2 + 0xa0));
   local_20 = 0x270;
   local_1c = 0;
   local_68 = 0;
@@ -59,7 +59,7 @@ void core_cloth_cpp_FUN_0043b7e0(void)
     local_64.z = (int)ROUND(_DAT_0065bb3c * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
-               ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+               ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                local_1c),&local_64);
     local_38 = *(float *)(iVar2 + 0x44);
     local_28 = vertex_index1 + 0xd;
@@ -68,15 +68,15 @@ void core_cloth_cpp_FUN_0043b7e0(void)
     local_4c.z = (int)ROUND(local_38 * _DAT_0065bb3c);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
-               ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+               ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                local_20),&local_4c);
     if (0 < vertex_index1) {
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                (g_CDemonRendererPtr,vertex_index1,local_28);
+                (g_CDemonRendererPtr2,vertex_index1,local_28);
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                (g_CDemonRendererPtr,vertex_index1,local_18);
+                (g_CDemonRendererPtr2,vertex_index1,local_18);
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                (g_CDemonRendererPtr,local_28,local_24);
+                (g_CDemonRendererPtr2,local_28,local_24);
     }
     vertex_index1 = vertex_index1 + 1;
     local_20 = local_20 + 0x30;

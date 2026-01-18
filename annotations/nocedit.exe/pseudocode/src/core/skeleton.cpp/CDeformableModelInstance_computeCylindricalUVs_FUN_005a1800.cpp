@@ -63,20 +63,20 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
     do {
       piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);
       if ((*piVar7 == 0) && (piVar7[2] == 0)) {
-        pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+        pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         iVar6 = in_stack_00000008;
       }
       else {
         fVar11 = crt_math_c_atan2_FUN_006013b1((float10)*piVar7,(float10)piVar7[2]);
         dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 * (float10)2670176.8577967598));
         iVar6 = extraout_EAX + (int)ROUND(dVar12);
-        pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+        pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         iVar5 = extraout_ECX;
         piVar7 = extraout_EDX;
       }
       *(int *)((int)&pSVar4->u + iVar5) = iVar6;
       iVar6 = iVar5 + 0x30;
-      *(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->v + iVar5) =
+      *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =
            in_stack_0000000c + (int)(((longlong)(piVar7[1] - iVar9) * 0x1000000) / (longlong)iVar8);
       iVar10 = iVar10 + 0xc;
       iVar5 = iVar6;

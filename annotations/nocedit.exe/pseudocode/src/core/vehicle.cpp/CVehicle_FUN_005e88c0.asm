@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x60]:1  local_60
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_CGameInstance.block_auto_save
@@ -59,7 +59,7 @@ section .text
     TEST EAX,EAX                        ; 005e890b
     JZ 0x005e8960                       ; 005e890d
         ;   XREF to: 005e8960 (CONDITIONAL_JUMP)  ; LAB_005e8960
-    MOV EBX,dword ptr [0x006703ec]      ; 005e890f | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 005e890f | g_CDemonRendererPtr2
     PUSH EBX                            ; 005e8915 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005e8916
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
@@ -128,7 +128,7 @@ section .text
     PUSH EBX                            ; 005e89d3
         ;   Label: LAB_005e89d3
     PUSH ESI                            ; 005e89d4
-    MOV EDX,dword ptr [0x006703ec]      ; 005e89d5 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e89d5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 005e89db | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005e89dc
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -136,7 +136,7 @@ section .text
     PUSH 0x0                            ; 005e89e4
     MOV ECX,dword ptr [ESP + 0x68]      ; 005e89e6
     PUSH ECX                            ; 005e89ea
-    MOV EAX,[0x006703ec]                ; 005e89eb | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 005e89eb | g_CDemonRendererPtr2
     PUSH EAX                            ; 005e89f0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005e89f1
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -147,11 +147,11 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 005e89fe
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 005e8a03
-    MOV EDX,dword ptr [0x006703ec]      ; 005e8a06 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005e8a06 | g_CDemonRendererPtr2
     PUSH EDX                            ; 005e8a0c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005e8a0d
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
-    MOV ESI,dword ptr [0x006703ec]      ; 005e8a57 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 005e8a57 | g_CDemonRendererPtr2
         ;   Label: LAB_005e8a57
     PUSH ESI                            ; 005e8a5d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005e8a5e

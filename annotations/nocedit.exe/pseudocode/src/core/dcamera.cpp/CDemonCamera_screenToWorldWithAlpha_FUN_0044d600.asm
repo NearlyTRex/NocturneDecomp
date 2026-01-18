@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 0044d615
     MOV EAX,dword ptr [ECX]             ; 0044d619
     MOV dword ptr [ESP],EAX             ; 0044d61b
-    MOV EDX,dword ptr [0x006703ec]      ; 0044d61e | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044d61e | g_CDemonRendererPtr2
     MOV EAX,dword ptr [ECX + 0x4]       ; 0044d624
     PUSH EDX                            ; 0044d627 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x8],EAX       ; 0044d628

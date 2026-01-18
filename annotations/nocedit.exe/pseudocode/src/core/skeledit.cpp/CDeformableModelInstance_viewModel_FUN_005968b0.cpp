@@ -442,7 +442,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
       local_44 = 0;
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,(CVector3f *)(local_10c + 0xc));
+              (g_CDemonRendererPtr2,(CVector3f *)(local_10c + 0xc));
     pCVar15 = in_stack_00000004;
     local_d0.x = 0;
     local_d0.y = 0;
@@ -478,21 +478,21 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430
               (in_stack_00000004);
     iVar7 = local_a4;
-    this_ptr_00 = g_CDemonRendererPtr;
+    this_ptr_00 = g_CDemonRendererPtr2;
     in_stack_00000004->texture_set_indices[local_44] = local_ac;
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(this_ptr_00,0);
     if (iVar7 < 2) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                 (in_stack_00000004,local_b0,0xffffffff,1,0);
     }
-    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr);
+    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
     uVar4 = local_84;
     core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(in_stack_00000004);
     if (uVar4 != 0) {
       iVar14 = 0;
       iVar7 = 0;
       while (iVar7 < local_c0->vertex_count[in_stack_00000004->cached_skinned_lod_index]) {
-        pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
+        pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar14 + 3) & 0x80) == 0) {
           local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar14) >> 0x10;
           x_pos = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar14) >> 0x10;
@@ -534,7 +534,7 @@ LAB_0059722b:
         local_1ec = pCVar11->z;
       }
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,(CVector3i *)(local_200 + 0xc),(CVector3i *)local_200);
+                (g_CDemonRendererPtr2,(CVector3i *)(local_200 + 0xc),(CVector3i *)local_200);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (&DAT_03665f74,(CKeyFramedModelInstance *)0x0,0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
@@ -545,11 +545,11 @@ LAB_0059722b:
                 (in_stack_00000004,(SBoneTransformData *)&stack0xffffcc64);
       core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
                 (pCVar15,(SBoneTransformData *)&DAT_036644d8);
-      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr,1);
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0x8000);
+      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x8000);
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                 (pCVar15,-1,0x2e7,1,0);
-      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr);
+      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
       core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
                 (pCVar15,(SBoneTransformData *)&stack0xffffcc64);
     }
@@ -564,25 +564,25 @@ LAB_0059722b:
       local_dc.y = (int)-local_fc;
       local_dc.z = (int)-local_f8;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,&local_d0,&local_dc);
+                (g_CDemonRendererPtr2,&local_d0,&local_dc);
       local_16c._24_4_ = 0xFFFFF100;
       afStack_150[(uint)bVar19 * -2] = (float)(&0)[(uint)bVar19 * -2];
       *(uint *)((int)&local_148 + (uint)bVar19 * -8 + (uint)bVar19 * -8 + -4) =
            (&0xFFFFF100)[(uint)bVar19 * -2 + (uint)bVar19 * -2];
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,
                  (CVector3i *)(local_16c + 0x18));
       local_16c._24_4_ = 5.38099e-42;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
                  (CVector3i *)(local_16c + 0x18));
       afStack_150[1] = 5.38099e-42;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,
                  (CVector3i *)(local_16c + 0x18));
       local_16c._24_4_ = -NAN;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,
                  (CVector3i *)(local_16c + 0x18));
       local_3a4.base.count = 4;
       local_37c = 0xfe0000;
@@ -602,10 +602,10 @@ LAB_0059722b:
       local_380 = 1;
       local_374 = 2;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr,&DAT_006819e4);
-      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr,0xff,0,0xff);
+                (g_CDemonRendererPtr2,&DAT_006819e4);
+      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0xff,0,0xff);
       engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
-                (g_CDemonRendererPtr,&local_3a4);
+                (g_CDemonRendererPtr2,&local_3a4);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
     iVar7 = local_a4;

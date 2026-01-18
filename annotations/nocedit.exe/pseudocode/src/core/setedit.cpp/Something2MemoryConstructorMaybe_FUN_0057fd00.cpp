@@ -82,9 +82,9 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
     do {
       if (local_14 != in_stack_0000000c) {
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,local_20);
+                  (g_CDemonRendererPtr2,local_20);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr,local_24,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,local_24,(CVector3i *)0x0);
         iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(local_28);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         if (iVar1 != 0) {

@@ -25,8 +25,8 @@ int core_manpuz_cpp_FUN_005090d0(void)
   if (iVar1 != 0) {
     iStack_c = (int)ROUND(g_ZeroVector.x * _DAT_00660d70);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1000].projected_vertex,(CVector3i *)&iStack_c
-              );
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1000].projected_vertex,
+               (CVector3i *)&iStack_c);
     iVar2 = 0;
     do {
       core_manpuz_cpp_FUN_00509bf0();
@@ -34,7 +34,7 @@ int core_manpuz_cpp_FUN_005090d0(void)
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0xc);
     if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
        iVar2 == 0)) {
       iVar2 = 0;
       do {

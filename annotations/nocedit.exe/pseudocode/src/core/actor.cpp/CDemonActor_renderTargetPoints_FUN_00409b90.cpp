@@ -35,8 +35,8 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90(CDemonAc
       CStack_1c.y = (int)ROUND(pfVar9[1] * 256.0f);
       CStack_1c.z = (int)ROUND(pfVar9[2] * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&CStack_1c);
-      pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
+                (&g_CDemonRendererPtr1->vertex_buffer_ptr[19999].projected_vertex,&CStack_1c);
+      pSVar3 = g_CDemonRendererPtr1->vertex_buffer_ptr;
       if ((int)(pSVar3[19999].projected_vertex.screen_x & -0x80000000) == 0) {
         iVar6 = pSVar3[19999].projected_vertex.screen_x >> 0x10;
         iVar8 = pSVar3[19999].projected_vertex.screen_y >> 0x10;

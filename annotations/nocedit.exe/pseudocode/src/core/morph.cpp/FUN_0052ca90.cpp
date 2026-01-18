@@ -22,7 +22,7 @@ void core_morph_cpp_FUN_0052ca90(void)
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector);
     core_morph_cpp_CMorphModel_FUN_0052bae0(in_stack_00000004);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);

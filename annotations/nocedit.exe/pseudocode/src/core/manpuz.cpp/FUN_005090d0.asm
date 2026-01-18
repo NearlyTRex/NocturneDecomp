@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00660d70
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
@@ -66,7 +66,7 @@ section .text
         ;   Label: LAB_00509112
     LEA EBX,[ESP + 0x1c]                ; 00509113
     MOV EAX,0x3f87558                   ; 00509117 | g_ZeroVector
-    MOV EDX,dword ptr [0x006703ec]      ; 0050911c | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0050911c | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 00509122 | g_ZeroVector
     FMUL float ptr [0x00660d70]         ; 00509124 | DAT_00660d70
     FISTP dword ptr [EBX]               ; 0050912a
@@ -126,7 +126,7 @@ section .text
     POP EDI                             ; 005091a1
     POP ESI                             ; 005091a2
     RET                                 ; 005091a3
-    MOV ECX,dword ptr [0x006703ec]      ; 005091a4 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005091a4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_005091a4
     PUSH ECX                            ; 005091aa | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005091ab

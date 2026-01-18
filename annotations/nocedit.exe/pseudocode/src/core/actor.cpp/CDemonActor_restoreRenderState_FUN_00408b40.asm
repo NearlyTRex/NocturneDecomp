@@ -20,7 +20,7 @@
 ;   ... and 61 more
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x006703ec]      ; 00408b40 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00408b40 | g_CDemonRendererPtr2
         ;   Label: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
     PUSH EDX                            ; 00408b46 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00408b47

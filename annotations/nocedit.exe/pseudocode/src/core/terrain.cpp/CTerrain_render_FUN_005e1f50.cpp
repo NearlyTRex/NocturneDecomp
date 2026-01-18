@@ -25,7 +25,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-            (g_CDemonRendererPtr,(float *)&local_30);
+            (g_CDemonRendererPtr2,(float *)&local_30);
   local_24 = 0x40800;
   local_1c = 0;
   local_20 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(g_CGroundPtr,0,0x40800);
@@ -40,9 +40,9 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
   local_30.y = extraout_EAX + extraout_EDX;
   local_24 = (int)ROUND(dVar5);
   local_30.z = (iVar1 + local_24) - this_ptr->animation_counter;
-  engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130(g_CDemonRendererPtr,&local_30);
+  engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130(g_CDemonRendererPtr2,&local_30);
   core_ground_cpp_CGround_render_FUN_004efc90(g_CGroundPtr);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr,(CVector3i *)&stack0xffffffc4);
+            (g_CDemonRendererPtr2,(CVector3i *)&stack0xffffffc4);
   return;
 }

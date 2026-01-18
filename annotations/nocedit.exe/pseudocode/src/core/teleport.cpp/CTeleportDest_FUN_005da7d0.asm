@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTeleport_00654c40
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
@@ -34,7 +34,7 @@ section .text
         ;   Label: LAB_005da7dc
     POP EBP                             ; 005da7de
     RET                                 ; 005da7df
-    MOV ECX,dword ptr [0x006703ec]      ; 005da7e0 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005da7e0 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_005da7e0
     PUSH ECX                            ; 005da7e6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005da7e7

@@ -18,7 +18,7 @@
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 at 005c76fd
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
@@ -45,7 +45,7 @@ section .text
     TEST EDX,EDX                        ; 00429aac
     JZ 0x00429b06                       ; 00429aae
         ;   XREF to: 00429b06 (CONDITIONAL_JUMP)  ; LAB_00429b06
-    MOV ECX,dword ptr [0x006703ec]      ; 00429ab0 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00429ab0 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_00429ab0
     PUSH ECX                            ; 00429ab6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00429ab7

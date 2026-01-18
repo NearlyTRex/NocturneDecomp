@@ -17,7 +17,7 @@ float core_marquee_cpp_FUN_0050be50(void)
   CDemonActor *in_stack_00000004;
   float fStack_1c;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 != 0) {
     return 0.0;
   }

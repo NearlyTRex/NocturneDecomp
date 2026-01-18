@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 469,
-    "complexity_score": 413,
+    "complexity_score": 414,
     "cross_reference_count": 5,
     "function_call_count": 18,
     "global_count": 17,
-    "pseudocode_lines": 163,
+    "pseudocode_lines": 164,
     "suspect_count": 23,
     "suspect_types": [
       "lea_esp_stack_addr",
@@ -13,7 +13,7 @@
       "pointer_cast",
       "suspect_float"
     ],
-    "total_lines": 632
+    "total_lines": 633
   },
   "cross_references": [
     {
@@ -160,7 +160,7 @@
     },
     {
       "addr": "006703ec",
-      "name": "g_CDemonRendererPtr",
+      "name": "g_CDemonRendererPtr2",
       "type": "CDemonRenderer*",
       "value": "02c6d578"
     },
@@ -646,56 +646,56 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 95,
+      "line": 96,
       "match": "2.3509887e-38",
-      "text": "g_CDemonRendererPtr->vertex_buffer_ptr->u = 2.3509887e-38;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 100,
-      "match": "2.3509887e-38",
-      "text": "pCVar1->vertex_buffer_ptr[2].v = 2.3509887e-38;",
+      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->u = 2.3509887e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 101,
       "match": "2.3509887e-38",
-      "text": "pCVar1->vertex_buffer_ptr[3].u = 2.3509887e-38;",
+      "text": "pCVar1->vertex_buffer_ptr[2].v = 2.3509887e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 102,
       "match": "2.3509887e-38",
+      "text": "pCVar1->vertex_buffer_ptr[3].u = 2.3509887e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 103,
+      "match": "2.3509887e-38",
       "text": "pCVar1->vertex_buffer_ptr[3].v = 2.3509887e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 106,
+      "line": 107,
       "match": "9.18341e-41",
       "text": "fVar4 = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 116,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar3) =",
+      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 118,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = (this_ptr->color).g << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 120,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = (this_ptr->color).b << 8;",
       "type": "pointer_cast"

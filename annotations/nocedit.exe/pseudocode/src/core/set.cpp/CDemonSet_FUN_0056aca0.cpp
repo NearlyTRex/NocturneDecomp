@@ -38,11 +38,11 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr)
       }
       core_set_cpp_CDemonSet_FUN_0056d380(this_ptr);
       core_set_cpp_CDemonSet_FUN_00570ca0(this_ptr);
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
       (**(code **)(*(int *)(iVar1 + 0x154) + 0x10))();
       core_set_cpp_CDemonSet_FUN_00570ca0(this_ptr);
       iVar3 = iVar3 + 1;
-      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
       pCVar4 = (CDemonSet *)pCVar4->cameras;
     } while (iVar3 < *(int *)this_ptr->field73_0x15f6e4);
   }

@@ -18,7 +18,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_00420320(CBoundi
   int local_8;
   
   if (g_CurrentShadowLight != (CDemonLight *)0x0) {
-    pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
+    pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
     local_c = g_ViewportRightFixed + g_ViewportCenterXFixed;
     local_20.top = g_ViewportRightFixed - g_ViewportCenterXFixed;
     local_20.bottom = g_ViewportBottomFixed + g_ViewportCenterYFixed;

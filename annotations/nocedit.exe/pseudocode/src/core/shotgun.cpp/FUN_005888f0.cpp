@@ -29,7 +29,7 @@ void core_shotgun_cpp_FUN_005888f0(void)
   float fStack_20;
   CVector3f CStack_1c;
   
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar2 != 0) {
     return;
   }

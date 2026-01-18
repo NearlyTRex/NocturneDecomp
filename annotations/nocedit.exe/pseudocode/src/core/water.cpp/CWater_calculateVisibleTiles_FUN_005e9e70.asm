@@ -59,7 +59,7 @@
 ;   double DOUBLE_0065721f = 1.10000000000000
 ;   float FLOAT_006652cc = 256
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_RenderPixelBudget = 0x1
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.screen_x
@@ -216,7 +216,7 @@ section .text
     MOV dword ptr [ESP + 0x68],EAX      ; 005ea03c
     FILD dword ptr [ESP + 0xa0]         ; 005ea040
     FMUL float ptr [EDI + 0x8]          ; 005ea047
-    MOV ECX,dword ptr [0x006703ec]      ; 005ea04a | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005ea04a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [ESP + 0x64]          ; 005ea050
     FADD float ptr [0x03f875f0]         ; 005ea054 | DAT_03f875f0
     FLD float ptr [ESP + 0x68]          ; 005ea05a
@@ -252,7 +252,7 @@ section .text
     MOV dword ptr [ESP + 0x68],EBX      ; 005ea0c4
     MOV dword ptr [ESP + 0x6c],EBX      ; 005ea0c8
     LEA EBX,[ESP + 0x58]                ; 005ea0cc
-    MOV EDX,dword ptr [0x006703ec]      ; 005ea0d0 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005ea0d0 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 005ea0d6
     FMUL float ptr [0x006652cc]         ; 005ea0d8 | FLOAT_006652cc
     FISTP dword ptr [EBX]               ; 005ea0de
@@ -273,7 +273,7 @@ section .text
     LEA EBX,[ESP + 0x34]                ; 005ea10b
     MOV dword ptr [ESP + 0x64],EAX      ; 005ea10f
     LEA EAX,[ESP + 0x64]                ; 005ea113
-    MOV EDX,dword ptr [0x006703ec]      ; 005ea117 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005ea117 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 005ea11d
     FMUL float ptr [0x006652cc]         ; 005ea11f | FLOAT_006652cc
     FISTP dword ptr [EBX]               ; 005ea125
@@ -295,7 +295,7 @@ section .text
     LEA EBX,[ESP + 0x7c]                ; 005ea155
     MOV dword ptr [ESP + 0x6c],EAX      ; 005ea159
     LEA EAX,[ESP + 0x64]                ; 005ea15d
-    MOV EDX,dword ptr [0x006703ec]      ; 005ea161 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005ea161 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 005ea167
     FMUL float ptr [0x006652cc]         ; 005ea169 | FLOAT_006652cc
     FISTP dword ptr [EBX]               ; 005ea16f
@@ -316,7 +316,7 @@ section .text
     LEA EAX,[ESP + 0x6c]                ; 005ea19d
     ADD ESP,0x8                         ; 005ea1a1
     XOR ECX,ECX                         ; 005ea1a4
-    MOV EDX,dword ptr [0x006703ec]      ; 005ea1a6 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005ea1a6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x64],ECX      ; 005ea1ac
     FLD float ptr [EAX]                 ; 005ea1b0
     FMUL float ptr [0x006652cc]         ; 005ea1b2 | FLOAT_006652cc
@@ -399,7 +399,7 @@ section .text
     MOV EAX,ESP                         ; 005ea2a7
     MOV dword ptr [ESP + 0x1c],EDX      ; 005ea2a9
     PUSH EAX                            ; 005ea2ad
-    MOV EDX,dword ptr [0x006703ec]      ; 005ea2ae | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005ea2ae | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV ECX,0x2                         ; 005ea2b4
     PUSH EDX                            ; 005ea2b9 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x28],ECX      ; 005ea2ba

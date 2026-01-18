@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_0061ef84
 ;   TerminatedCString s_CDemonLight_beginScene_S_0061ef97
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_RasterizerDepthBias
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   void*[1024] g_ScreenBufferArray
@@ -67,7 +67,7 @@ section .text
     PUSH EAX                            ; 00472abc
     PUSH 0x0                            ; 00472abd
     PUSH 0x0                            ; 00472abf
-    MOV EBP,dword ptr [0x006703ec]      ; 00472ac1 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 00472ac1 | g_CDemonRendererPtr2
     PUSH EBP                            ; 00472ac7 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890 ; 00472ac8
         ;   XREF to: 0048c890 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer * this_ptr, int x, int y, int width, ...)
@@ -82,14 +82,14 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 00472af4
     MOV dword ptr [EBX + 0x11d8],0x0    ; 00472af7
     PUSH EAX                            ; 00472b01
-    MOV EAX,[0x006703ec]                ; 00472b02 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00472b02 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV dword ptr [EBX + 0x1d0],0x0     ; 00472b07
     PUSH EAX                            ; 00472b11 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x168],EDI     ; 00472b12
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 00472b18
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
     ADD ESP,0x8                         ; 00472b1d
-    MOV EDX,dword ptr [0x006703ec]      ; 00472b20 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00472b20 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH dword ptr [EBX + 0x38]         ; 00472b26
     PUSH EDX                            ; 00472b29 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650 ; 00472b2a
@@ -97,7 +97,7 @@ section .text
     ADD ESP,0x8                         ; 00472b2f
     LEA EAX,[EBX + 0x10]                ; 00472b32
     PUSH EAX                            ; 00472b35
-    MOV ECX,dword ptr [0x006703ec]      ; 00472b36 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00472b36 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00472b3c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 ; 00472b3d
         ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)
@@ -151,7 +151,7 @@ section .text
         ;   XREF to: 0044d1c0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00472be6
     PUSH 0x1                            ; 00472be9
-    MOV EBX,dword ptr [0x006703ec]      ; 00472beb | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 00472beb | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00472bf1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 00472bf2
         ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)

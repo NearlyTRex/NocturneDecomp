@@ -18,8 +18,8 @@ core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
   int **in_stack_ffffffe4;
   
   engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0
-            (g_CDemonRendererPtr,&g_GlobalLightDirection);
-  engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690(g_CDemonRendererPtr,0.25);
+            (g_CDemonRendererPtr2,&g_GlobalLightDirection);
+  engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690(g_CDemonRendererPtr2,0.25);
   if ((render_mode == 0) || (iVar1 = this_ptr->selected_camera_index, iVar1 < 0)) {
 LAB_0056a371:
     if (render_mode == 1) {
@@ -48,7 +48,7 @@ LAB_0056a1fb:
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_count,
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,in_stack_ffffffe4);
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     if (g_UseExternalRenderer == 0) {
       core_set_cpp_CDemonSet_buildMirrorList_FUN_00570b70(this_ptr);
@@ -56,7 +56,7 @@ LAB_0056a1fb:
     if (g_UseExternalRenderer == 0) {
       if (this_ptr->use_enviro_model != 0) {
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,(CVector3f *)&stack0xffffffe4);
+                  (g_CDemonRendererPtr2,(CVector3f *)&stack0xffffffe4);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_CKeyFramedModelInstance,(CKeyFramedModelInstance *)0x0,0,-1);
       }

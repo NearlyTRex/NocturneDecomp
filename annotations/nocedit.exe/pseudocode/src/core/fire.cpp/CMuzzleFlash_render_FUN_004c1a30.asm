@@ -22,7 +22,7 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_004c7180 at 004c72dd
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -51,7 +51,7 @@ section .text
     PUSH ESI                            ; 004c1a45
     LEA EAX,[EBX + 0x4]                 ; 004c1a46
     PUSH EAX                            ; 004c1a49
-    MOV ECX,dword ptr [0x006703ec]      ; 004c1a4a | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004c1a4a | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c1a50 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c1a51
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -59,7 +59,7 @@ section .text
     PUSH 0x0                            ; 004c1a59
     LEA EAX,[EBX + 0x10]                ; 004c1a5b
     PUSH EAX                            ; 004c1a5e
-    MOV EBX,dword ptr [0x006703ec]      ; 004c1a5f | g_CDemonRendererPtr | g_CDemonRendererInstance
+    MOV EBX,dword ptr [0x006703ec]      ; 004c1a5f | g_CDemonRendererPtr2 | g_CDemonRendererInstance
     PUSH EBX                            ; 004c1a65 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c1a66
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)

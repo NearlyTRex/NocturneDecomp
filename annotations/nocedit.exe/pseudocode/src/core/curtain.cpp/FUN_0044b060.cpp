@@ -30,7 +30,7 @@ int core_curtain_cpp_FUN_0044b060(void)
   pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
                      (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
-  this_ptr = g_CDemonRendererPtr;
+  this_ptr = g_CDemonRendererPtr2;
   if (iVar3 == 0) goto LAB_0044b320;
   in_stack_00000004[0x4ba].previous_transform_state.dirty_flags = 1;
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr);
@@ -44,10 +44,10 @@ int core_curtain_cpp_FUN_0044b060(void)
     return 1;
   }
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-            (g_CDemonRendererPtr,(int)in_stack_00000004[1].location.position.y);
+            (g_CDemonRendererPtr2,(int)in_stack_00000004[1].location.position.y);
   iVar4 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,(SMRGLTextureBasic *)(in_stack_00000004[1].actor_name + 0xc));
+            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)(in_stack_00000004[1].actor_name + 0xc));
   piVar6 = (int *)(in_stack_00000004[1].create_event + 0x38);
   piVar5 = &in_stack_00000004[0x152].field17_0x104;
   if (0 < *(int *)(in_stack_00000004[1].create_event + 0x34)) {
@@ -63,7 +63,7 @@ int core_curtain_cpp_FUN_0044b060(void)
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
             (g_CDemonSetPtr,*(int *)(in_stack_00000004[1].create_event + 0x34),
              &in_stack_00000004[0x152].field17_0x104);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   bVar1 = 0 < g_RelativeZ;
   if (in_stack_00000004[1].location.position.z == 0.0) {
     bVar1 = true;
@@ -78,7 +78,7 @@ LAB_0044b1a4:
           iVar4 < in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100 *
                   2; iVar4 = iVar4 + 1) {
         engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-                  (g_CDemonRendererPtr,primitive_array);
+                  (g_CDemonRendererPtr2,primitive_array);
         primitive_array = primitive_array + 3;
       }
     }
@@ -101,7 +101,7 @@ LAB_0044b1a4:
           iVar4 < in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100 *
                   2; iVar4 = iVar4 + 1) {
         engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-                  (g_CDemonRendererPtr,&primitive_array_00->base);
+                  (g_CDemonRendererPtr2,&primitive_array_00->base);
         primitive_array_00 = primitive_array_00 + 1;
       }
     }
@@ -112,7 +112,7 @@ LAB_0044b1a4:
                  2,-1);
     }
   }
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
 LAB_0044b320:
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
   return iVar3;

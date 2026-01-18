@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -23,7 +23,7 @@ section .text
     CMP dword ptr [EBX + 0x1fadc],0x0   ; 004f4b45
     JZ 0x004f4b85                       ; 004f4b4c
         ;   XREF to: 004f4b85 (CONDITIONAL_JUMP)  ; LAB_004f4b85
-    MOV ECX,dword ptr [0x006703ec]      ; 004f4b4e | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004f4b4e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004f4b54 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004f4b55
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)

@@ -67,7 +67,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
     core_xform_cpp_getTranslation_FUN_005f6110(local_13c,(CMatrix3x4f *)local_ac);
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_13c,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr,(CVector3i *)&local_94,(CVector3i *)local_ac);
+              (g_CDemonRendererPtr2,(CVector3i *)&local_94,(CVector3i *)local_ac);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               ((CKeyFramedModelInstance *)(this_ptr->field4_0x1fc3c + 0x9c),0.0,-1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
@@ -191,14 +191,14 @@ LAB_005c33d7:
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_dc,&local_40);
     core_xform_cpp_getTranslation_FUN_005f6110(local_dc,(CMatrix3x4f *)local_4c);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr,(CVector3i *)&local_40,(CVector3i *)local_4c);
+              (g_CDemonRendererPtr2,(CVector3i *)&local_40,(CVector3i *)local_4c);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&(local_1c->base_weapon).model,0.0,-1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] == 0) &&
-      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar3 == 0)) && (0 < (this_ptr->base_hero).base_character.cloth_count)) {
     core_cloth_cpp_FUN_0043c070();
   }

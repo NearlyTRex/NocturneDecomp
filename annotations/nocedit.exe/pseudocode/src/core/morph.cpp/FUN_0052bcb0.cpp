@@ -192,11 +192,11 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
         local_44 = 0;
         do {
           engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-                    (g_CDemonRendererPtr,(g_WindowWidth / 2) * iVar15,local_54,g_WindowWidth / 2,
+                    (g_CDemonRendererPtr2,(g_WindowWidth / 2) * iVar15,local_54,g_WindowWidth / 2,
                      local_58);
           shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                    (g_CDemonRendererPtr,&g_ZeroVector);
+                    (g_CDemonRendererPtr2,&g_ZeroVector);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_40,0);
           local_14 = (g_MouseX + -5) * 0x10000;
           local_20 = (g_MouseX + 5) * 0x10000;
@@ -207,11 +207,11 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           pcVar4 = (char *)0x0;
           while (pcVar12 = pcVar4,
                 (int)pcVar12 < *(int *)(*(int *)((int)local_8c + local_44) + 0x2c)) {
-            iVar14 = *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
+            iVar14 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                                     screen_x + iVar10);
             if ((((iVar14 < local_14) || (local_20 < iVar14)) ||
-                (iVar14 = *(int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).
-                                         screen_y + iVar10), iVar14 < local_18)) ||
+                (iVar14 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)
+                                         .screen_y + iVar10), iVar14 < local_18)) ||
                (local_10 < iVar14)) {
               iVar10 = iVar10 + 0x30;
               pcVar4 = pcVar12 + 1;
@@ -223,7 +223,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
               pcVar16 = pcVar12;
             }
           }
-          engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr);
+          engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
           iVar15 = iVar15 + 1;
           local_44 = local_44 + 4;
           local_40 = local_40 + 1;
@@ -313,11 +313,11 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
         local_24 = -1;
         do {
           engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-                    (g_CDemonRendererPtr,(g_WindowWidth / 2) * local_c,local_54,g_WindowWidth / 2,
+                    (g_CDemonRendererPtr2,(g_WindowWidth / 2) * local_c,local_54,g_WindowWidth / 2,
                      local_58);
           shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                    (g_CDemonRendererPtr,&g_ZeroVector);
+                    (g_CDemonRendererPtr2,&g_ZeroVector);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);
           if (local_5c == 0) {
             core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(local_2c);
@@ -346,7 +346,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
             g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar5);
             core_morph_cpp_FUN_0052bb80();
           }
-          engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr);
+          engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);
           iVar15 = local_8;
           local_2c = local_2c + 1;
           local_38 = local_38 + 4;

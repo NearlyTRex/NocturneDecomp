@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fr46_03d_raw_00629f33
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   SMRGLTextureBasic[20] g_GunFlameTextures
 ;   undefined4 DAT_02d13cdc
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004c4d79
     PUSH EBP                            ; 004c4d7c | g_GunFlameTextures
-    MOV EDX,dword ptr [0x006703ec]      ; 004c4d7d | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c4d7d | g_CDemonRendererInstance | g_CDemonRendererPtr2
     INC ESI                             ; 004c4d83
     PUSH EDX                            ; 004c4d84 | g_CDemonRendererInstance
     ADD EDI,0x18                        ; 004c4d85

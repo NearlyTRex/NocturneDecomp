@@ -27,7 +27,7 @@
 ;   TerminatedCString s_core_morph_cpp_0063a3f7
 ;   TerminatedCString s_CMorphModel_rotatePoints_0063a409
 ;   float FLOAT_00661b40 = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   char* g_CurrentFilename
@@ -128,14 +128,14 @@ section .text
     FLD float ptr [EAX + 0x8]           ; 0052b055
     FMUL float ptr [0x00661b40]         ; 0052b058 | FLOAT_00661b40
     FISTP dword ptr [EBX + 0x8]         ; 0052b05e | DAT_02f3dbbc | DAT_02f3dbc8
-    MOV EAX,[0x006703ec]                ; 0052b061 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0052b061 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0052b066 | g_CDemonRendererInstance
     PUSH ESI                            ; 0052b068 | DAT_02f3dbb4 | DAT_02f3dbc0
     ADD EAX,EDI                         ; 0052b069
     PUSH EAX                            ; 0052b06b
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0052b06c
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x006703ec]                ; 0052b071 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0052b071 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0052b076 | g_CDemonRendererInstance
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x10] ; 0052b078
     ADD ESP,0x8                         ; 0052b07c
@@ -212,7 +212,7 @@ section .text
     ADD ESP,0x1c                        ; 0052b135
     MOV EDI,dword ptr [ESP + 0x24]      ; 0052b138
     PUSH EDI                            ; 0052b13c
-    MOV EBP,dword ptr [0x006703ec]      ; 0052b13d | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 0052b13d | g_CDemonRendererPtr2
     PUSH EBP                            ; 0052b143 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0052b144
         ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)

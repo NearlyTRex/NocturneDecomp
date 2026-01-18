@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_FUN_004e07a0 at 004e07b7
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic g_FireEffectBlackHoleTexture
 ;   SMRGLTextureBasic g_FireEffectSparkTexture
 ;   SMRGLTextureBasic g_FireEffectBlueSparkTexture
@@ -34,19 +34,19 @@ section .text
     PUSH EBX                            ; 004c7ab0
         ;   Label: core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0
     PUSH 0x67a794                       ; 004c7ab1 | g_FireEffectBlackHoleTexture
-    MOV EDX,dword ptr [0x006703ec]      ; 004c7ab6 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004c7ab6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c7abc | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004c7abd
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004c7ac2
     PUSH 0x67a7ac                       ; 004c7ac5 | g_FireEffectSparkTexture
-    MOV ECX,dword ptr [0x006703ec]      ; 004c7aca | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004c7aca | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c7ad0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004c7ad1
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004c7ad6
     PUSH 0x67a7c4                       ; 004c7ad9 | g_FireEffectBlueSparkTexture
-    MOV EBX,dword ptr [0x006703ec]      ; 004c7ade | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 004c7ade | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 004c7ae4 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004c7ae5
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

@@ -13,7 +13,7 @@
 ;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056cb86
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CSmokeParticle[2048] g_SmokeParticlePool
@@ -130,7 +130,7 @@ section .text
     CMP EBX,ESI                         ; 004c722d
     JNZ 0x004c7220                      ; 004c722f
         ;   XREF to: 004c7220 (CONDITIONAL_JUMP)  ; LAB_004c7220
-    MOV EAX,[0x006703ec]                ; 004c7231 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004c7231 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 004c7236 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004c7237
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)

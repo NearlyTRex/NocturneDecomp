@@ -29,9 +29,9 @@ void core_cloth_cpp_FUN_0043bae0(void)
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
             (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),*(int **)(in_stack_00000004 + 0x10c)
             );
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
-  engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
+  engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   dVar9 = crt_math_c_round_FUN_005fe6b0
                     ((double)(*(float *)(in_stack_00000004 + 0x3ce88) * (float)65535));
   iVar10 = (int)ROUND(dVar9);
@@ -39,7 +39,7 @@ void core_cloth_cpp_FUN_0043bae0(void)
     return;
   }
   if (iVar10 < 63000) {
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,iVar10);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,iVar10);
   }
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800
             ((SMRGLTextureBasic *)(in_stack_00000004 + 0x124));
@@ -51,9 +51,9 @@ void core_cloth_cpp_FUN_0043bae0(void)
     if ((in_stack_00000008 != 0) &&
        (iVar6 = 0, iVar3 = in_stack_00000004, 0 < *(int *)(in_stack_00000004 + 0x3f028))) {
       do {
-        pCVar2 = g_CDemonRendererPtr;
+        pCVar2 = g_CDemonRendererPtr2;
         iVar1 = *(int *)(iVar3 + 0x3f02c);
-        g_CDemonRendererPtr->vertex_buffer_ptr[iVar1].light = *(float *)(iVar3 + 0x3f98c);
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].light = *(float *)(iVar3 + 0x3f98c);
         pCVar2->vertex_buffer_ptr[iVar1].color = *(int *)(iVar3 + 0x3fb1c);
         pCVar2->vertex_buffer_ptr[iVar1].fog = *(float *)(iVar3 + 0x3fcac);
         iVar6 = iVar6 + 1;
@@ -93,9 +93,9 @@ void core_cloth_cpp_FUN_0043bae0(void)
     if ((in_stack_00000008 != 0) &&
        (iVar6 = 0, iVar3 = in_stack_00000004, 0 < *(int *)(in_stack_00000004 + 0x3f028))) {
       do {
-        pCVar2 = g_CDemonRendererPtr;
+        pCVar2 = g_CDemonRendererPtr2;
         iVar1 = *(int *)(iVar3 + 0x3f02c);
-        g_CDemonRendererPtr->vertex_buffer_ptr[iVar1].light = *(float *)(iVar3 + 0x3f98c);
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].light = *(float *)(iVar3 + 0x3f98c);
         pCVar2->vertex_buffer_ptr[iVar1].color = *(int *)(iVar3 + 0x3fb1c);
         pCVar2->vertex_buffer_ptr[iVar1].fog = *(float *)(iVar3 + 0x3fcac);
         iVar6 = iVar6 + 1;
@@ -154,7 +154,7 @@ void core_cloth_cpp_FUN_0043bae0(void)
   iVar10 = 0x267;
 LAB_0043bcda:
   core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(g_CDemonSetPtr,pSVar4,local_20,iVar10);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
   return;
 }

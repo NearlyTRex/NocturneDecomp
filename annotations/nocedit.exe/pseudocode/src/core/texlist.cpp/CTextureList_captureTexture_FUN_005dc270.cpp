@@ -11,6 +11,6 @@ core_texlist_cpp_CTextureList_captureTexture_FUN_005dc270(CTextureList *this_ptr
 
 {
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,this_ptr->texture_entries + (texture_index & 0xfff));
+            (g_CDemonRendererPtr2,this_ptr->texture_entries + (texture_index & 0xfff));
   return;
 }

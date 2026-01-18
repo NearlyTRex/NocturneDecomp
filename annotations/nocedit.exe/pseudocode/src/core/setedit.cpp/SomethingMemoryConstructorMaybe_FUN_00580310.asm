@@ -20,7 +20,7 @@
 ;   TerminatedCString s_core_setedit_cpp_00648567
 ;   TerminatedCString s_core_setedit_cpp_0064857b
 ;   TerminatedCString s_Out_of_memory_0064858f
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   uint*[1024] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
@@ -115,7 +115,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 005803c0
     MOV EAX,[0x03659384]                ; 005803c4 | DAT_03659384
     PUSH 0x0                            ; 005803c9
-    MOV EBP,dword ptr [0x006703ec]      ; 005803cb | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 005803cb | g_CDemonRendererPtr2
     ADD ECX,EAX                         ; 005803d1
     PUSH EBP                            ; 005803d3 | g_CDemonRendererInstance
     MOV EDI,dword ptr [ESP + 0x14]      ; 005803d4
@@ -125,13 +125,13 @@ section .text
     ADD ESP,0x14                        ; 005803e1
     MOV EAX,dword ptr [ESP + 0x8]       ; 005803e4
     PUSH EAX                            ; 005803e8
-    MOV EDX,dword ptr [0x006703ec]      ; 005803e9 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005803e9 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005803ef | g_CDemonRendererInstance
     ADD EBX,EDI                         ; 005803f0
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 005803f2
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
     ADD ESP,0x8                         ; 005803f7
-    MOV ECX,dword ptr [0x006703ec]      ; 005803fa | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005803fa | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH dword ptr [EBX + 0x144]        ; 00580400
     PUSH ECX                            ; 00580406 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650 ; 00580407
@@ -139,7 +139,7 @@ section .text
     ADD ESP,0x8                         ; 0058040c
     MOV EBX,dword ptr [ESP + 0xc]       ; 0058040f
     PUSH EBX                            ; 00580413
-    MOV ESI,dword ptr [0x006703ec]      ; 00580414 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 00580414 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0058041a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 0058041b
         ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
@@ -164,7 +164,7 @@ section .text
     MOV EAX,[0x02d05308]                ; 00580467 | g_TransformMatrix[2][2]
     MOV dword ptr [ECX + 0x2c],EAX      ; 0058046c
     MOV EAX,[0x02d052c4]                ; 0058046f | g_CameraOriginX
-    MOV EDI,dword ptr [0x006703ec]      ; 00580474 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 00580474 | g_CDemonRendererPtr2
     MOV dword ptr [ECX],EAX             ; 0058047a
     MOV EAX,[0x02d052c8]                ; 0058047c | g_CameraOriginY
     PUSH 0x3f87558                      ; 00580481 | g_ZeroVector
@@ -209,7 +209,7 @@ section .text
     CMP EBP,0x3c0                       ; 005804ee
     JNZ 0x005804b0                      ; 005804f4
         ;   XREF to: 005804b0 (CONDITIONAL_JUMP)  ; LAB_005804b0
-    MOV ECX,dword ptr [0x006703ec]      ; 005804f6 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005804f6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 005804fc | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 005804fd
         ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)

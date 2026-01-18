@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   float g_CameraFixedPointScale_0065c63c = 256
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@ section .text
     MOV EBX,ESP                         ; 00452128
     MOV dword ptr [ESP + 0x14],EAX      ; 0045212a
     LEA EAX,[ESP + 0xc]                 ; 0045212e
-    MOV EDX,dword ptr [0x006703ec]      ; 00452132 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00452132 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 00452138
     FMUL float ptr [0x0065c63c]         ; 0045213a | g_CameraFixedPointScale_0065c63c
     FISTP dword ptr [EBX]               ; 00452140

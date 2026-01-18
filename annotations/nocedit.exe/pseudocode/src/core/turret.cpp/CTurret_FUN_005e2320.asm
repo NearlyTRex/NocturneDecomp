@@ -7,7 +7,7 @@
 ; CTurret *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -92,7 +92,7 @@ section .text
     PUSH EDI                            ; 005e23ac
     LEA EAX,[EBX + 0x20]                ; 005e23ad
     PUSH EAX                            ; 005e23b0
-    MOV ECX,dword ptr [0x006703ec]      ; 005e23b1 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005e23b1 | g_CDemonRendererPtr2
     PUSH ECX                            ; 005e23b7 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 005e23b8
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -100,7 +100,7 @@ section .text
     PUSH 0x0                            ; 005e23c0
     LEA EAX,[EBX + 0x578]               ; 005e23c2
     PUSH EAX                            ; 005e23c8
-    MOV EDI,dword ptr [0x006703ec]      ; 005e23c9 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 005e23c9 | g_CDemonRendererPtr2
     PUSH EDI                            ; 005e23cf | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005e23d0
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -120,7 +120,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 005e23fa
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 005e23ff
-    MOV EBP,dword ptr [0x006703ec]      ; 005e2402 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 005e2402 | g_CDemonRendererPtr2
     PUSH EBP                            ; 005e2408 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005e2409
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()

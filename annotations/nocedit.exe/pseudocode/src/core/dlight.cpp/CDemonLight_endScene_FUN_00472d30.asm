@@ -18,7 +18,7 @@
 ;   TerminatedCString s_core_dlight_cpp_0061f005
 ;   TerminatedCString s_CDemonLight_endScene_Sce_0061f018
 ;   double g_ShadowDepthToDistanceScale = 0.00390625
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   void*[1024] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
@@ -81,12 +81,12 @@ section .text
     FSTP float ptr [ESI + 0x140]        ; 00472d94
     PUSH 0x0                            ; 00472d9a
         ;   Label: LAB_00472d9a
-    MOV EDX,dword ptr [0x006703ec]      ; 00472d9c | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00472d9c | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 00472da2 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0 ; 00472da3
         ;   XREF to: 0048cac0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 00472da8
-    MOV ECX,dword ptr [0x006703ec]      ; 00472dab | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 00472dab | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00472db1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 00472db2
         ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)

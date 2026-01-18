@@ -32,10 +32,10 @@ void core_marquee_cpp_FUN_0050bec0(void)
   local_1c.y = (int)ROUND(in_stack_00000008[1] * _DAT_00661020);
   local_1c.z = (int)ROUND(in_stack_00000008[2] * _DAT_00661020);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
-            (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_1c);
-  this_ptr = g_CDemonRendererPtr;
-  pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
-  pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr + 1;
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_1c);
+  this_ptr = g_CDemonRendererPtr2;
+  pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+  pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr + 1;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);

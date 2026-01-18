@@ -329,7 +329,7 @@ section .text
     ADD ESP,0x4                         ; 004da3a7
     PUSH 0xffff                         ; 004da3aa
         ;   Label: LAB_004da3aa
-    MOV ESI,dword ptr [0x006703ec]      ; 004da3af | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004da3af | g_CDemonRendererPtr2
     PUSH ESI                            ; 004da3b5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004da3b6
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)

@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x2c]:1  local_2c
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02f43978
 ;
@@ -101,7 +101,7 @@ section .text
     TEST EDI,EDI                        ; 005e6e45
     JZ 0x005e6e6c                       ; 005e6e47
         ;   XREF to: 005e6e6c (CONDITIONAL_JUMP)  ; LAB_005e6e6c
-    MOV EBP,dword ptr [0x006703ec]      ; 005e6e49 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 005e6e49 | g_CDemonRendererPtr2
     PUSH EBP                            ; 005e6e4f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005e6e50
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)

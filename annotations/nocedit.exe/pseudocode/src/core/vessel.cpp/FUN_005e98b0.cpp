@@ -27,9 +27,9 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
     core_flame_cpp_FUN_004ca110();
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&(this_ptr->base_actor).location.position);
+            (g_CDemonRendererPtr2,&(this_ptr->base_actor).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&(this_ptr->base_actor).orient,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,(CVector3i *)&(this_ptr->base_actor).orient,(CVector3i *)0x0);
   local_20.x = 0;
   local_20.z = 0;
   local_20.y = *(int *)(this_ptr->field14_0x3c0 + 0x2a8);
@@ -37,8 +37,8 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
   local_2c.y = 0x400ccccd;
   local_2c.z = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,&local_20,&local_2c);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
+            (g_CDemonRendererPtr2,&local_20,&local_2c);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   if (this_ptr->visual_type == 2) {
     uVar6 = 0x5e9a3e;
     dVar5 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->field14_0x3c0 + 0x42c));
@@ -47,7 +47,7 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
     crt_stdio_c_sprintf_FUN_005fdbd0
               (pCVar2->texture_list[0].base.texture_name,"BWATER%d.RAW",local_14 & 0xf,
                uVar6);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,48000);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,48000);
   }
   else {
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
@@ -64,15 +64,15 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
     if (this_ptr->visual_type == 0) {
-      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
+      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     }
     else {
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0x4000);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x4000);
     }
   }
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)(this_ptr->field14_0x3c0 + 0x2ac),0.0,0x267);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return 1;

@@ -47,7 +47,7 @@
 ;   void* switchdataD_005c3128 = 005c3326
 ;   double DOUBLE_00653c74 = 0.990000000000000
 ;   double DOUBLE_00653c7c = 0.950000000000000
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -385,7 +385,7 @@ section .text
     PUSH EAX                            ; 005c34c7
     LEA EAX,[EBP + 0x4e]                ; 005c34c8
     PUSH EAX                            ; 005c34cb
-    MOV EDX,dword ptr [0x006703ec]      ; 005c34cc | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 005c34cc | g_CDemonRendererPtr2
     PUSH EDX                            ; 005c34d2 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005c34d3
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -398,7 +398,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 005c34e8
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 005c34ed
-    MOV ECX,dword ptr [0x006703ec]      ; 005c34f0 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 005c34f0 | g_CDemonRendererPtr2
     PUSH ECX                            ; 005c34f6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005c34f7
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
@@ -412,7 +412,7 @@ section .text
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c350d
     JNZ 0x005c3542                      ; 005c3515
         ;   XREF to: 005c3542 (CONDITIONAL_JUMP)  ; LAB_005c3542
-    MOV EDI,dword ptr [0x006703ec]      ; 005c3517 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 005c3517 | g_CDemonRendererPtr2
     PUSH EDI                            ; 005c351d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 005c351e
         ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
@@ -497,7 +497,7 @@ section .text
     PUSH EAX                            ; 005c3600
     LEA EAX,[EBP + -0x6]                ; 005c3601
     PUSH EAX                            ; 005c3604
-    MOV ESI,dword ptr [0x006703ec]      ; 005c3605 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 005c3605 | g_CDemonRendererPtr2
     PUSH ESI                            ; 005c360b | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005c360c
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -509,7 +509,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 005c361f
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 005c3624
-    MOV EDI,dword ptr [0x006703ec]      ; 005c3627 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 005c3627 | g_CDemonRendererPtr2
     PUSH EDI                            ; 005c362d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005c362e
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()

@@ -40,7 +40,7 @@
 ;   float FLOAT_006165e7 = 0.5
 ;   float g_BoundingBoxWorldToIntegerScale = 256
 ;   float FLOAT_0065b168 = 0.00390625
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_StoredX
 ;   int g_StoredY
 ;   int g_StoredZ
@@ -76,7 +76,7 @@ section .text
     POP ESI                             ; 00420509
     POP EBX                             ; 0042050a
     RET                                 ; 0042050b
-    MOV EDX,dword ptr [0x006703ec]      ; 0042050c | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0042050c | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0042050c
     PUSH EDX                            ; 00420512 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00420513

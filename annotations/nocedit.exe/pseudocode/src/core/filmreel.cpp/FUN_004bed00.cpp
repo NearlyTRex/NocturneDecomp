@@ -30,9 +30,9 @@ int core_filmreel_cpp_FUN_004bed00(void)
   CStack_1c.z = 0;
   CStack_1c.y = 0x40000000;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,&CStack_1c);
+            (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,&CStack_1c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&iStack_10,(CVector3i *)&g_ZeroVector);
+            (g_CDemonRendererPtr2,(CVector3i *)&iStack_10,(CVector3i *)&g_ZeroVector);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)(in_stack_00000004[1].create_event + 0x24),0.0,-1);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

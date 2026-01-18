@@ -55,7 +55,7 @@ void core_course_cpp_FUN_00443760(void)
   local_20 = (int)ROUND(dVar6);
   in_stack_00000004->x = (float)local_24;
   in_stack_00000004->y = (float)(extraout_EAX_00 << 4);
-  this_ptr = g_CDemonRendererPtr;
+  this_ptr = g_CDemonRendererPtr1;
   local_3c.surface_normal.D =
        ((int)((local_20 + (local_20 >> 0x1f) * -0x10) - (uint)((local_20 >> 0x1f) << 3 < 0)) >> 4)
        << 4;
@@ -80,9 +80,9 @@ void core_course_cpp_FUN_00443760(void)
         local_48.z = (float)(int)ROUND(local_94 * 256.0f);
         local_20 = iVar4;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_48)
-        ;
-        pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+                  (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_48
+                  );
+        pSVar1 = g_CDemonRendererPtr1->vertex_buffer_ptr;
         if ((int)((pSVar1->projected_vertex).screen_x & -0x80000000) == 0) {
           iVar3 = (pSVar1->projected_vertex).transformed_z;
           iVar2 = iVar3 >> 0x1f;
@@ -110,7 +110,7 @@ void core_course_cpp_FUN_00443760(void)
     local_3c.surface_normal.A = local_3c.surface_normal.A + 0x10;
   } while (local_3c.surface_normal.A != 0x90);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,&local_54);
+            (g_CDemonRendererPtr1,&local_54);
   local_60 = 0;
   local_5c = 0;
   local_58 = 0;
@@ -118,7 +118,7 @@ void core_course_cpp_FUN_00443760(void)
   local_90.y = (int)ROUND(256.0f * 0.0);
   local_90.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_90);
+            (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_90);
   local_60 = 0x40400000;
   local_5c = 0;
   local_58 = 0;
@@ -126,7 +126,7 @@ void core_course_cpp_FUN_00443760(void)
   local_6c.y = (int)ROUND(256.0f * 0.0);
   local_6c.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_6c);
+            (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_6c);
   local_60 = 0;
   local_58 = 0;
   local_5c = 0x40400000;
@@ -134,7 +134,7 @@ void core_course_cpp_FUN_00443760(void)
   local_84.y = (int)ROUND(256.0f * 3.0);
   local_84.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_84);
+            (&g_CDemonRendererPtr1->vertex_buffer_ptr[2].projected_vertex,&local_84);
   local_60 = 0;
   local_5c = 0;
   local_58 = 0x40400000;
@@ -142,7 +142,7 @@ void core_course_cpp_FUN_00443760(void)
   local_78.y = (int)ROUND(256.0f * 0.0);
   local_78.z = (int)ROUND(256.0f * 3.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_78);
+            (&g_CDemonRendererPtr1->vertex_buffer_ptr[3].projected_vertex,&local_78);
   local_3c.base.count = -7;
   SStack_ac.vertex_count = 2;
   uStack_a4 = 0;
@@ -154,7 +154,7 @@ void core_course_cpp_FUN_00443760(void)
   uStack_a0 = 3;
   engine_3d_c_drawLineStrip2D_FUN_00404570(&SStack_ac);
   iVar5 = 4;
-  pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+  pSVar1 = g_CDemonRendererPtr1->vertex_buffer_ptr;
   do {
     if ((int)(pSVar1[1].projected_vertex.screen_x & -0x80000000) == 0) {
       engine_2d_c_drawText_FUN_00401fd0

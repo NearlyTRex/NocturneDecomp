@@ -40,7 +40,7 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
   (this_ptr->color).b = 0xff;
   core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&g_LoadingMoonModel,"moon.kfm");
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr,&g_LoadingMoonGlowTexture);
+            (g_CDemonRendererPtr2,&g_LoadingMoonGlowTexture);
   if ((image_variant == -1) && (this_ptr->use_custom_viewport == 0)) {
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
     image_variant = iVar1 % 3;

@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_FUN_004e07a0 at 004e07c6
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic DAT_0067b9b0
 ;   SMRGLTextureBasic DAT_0067b9c8
 ;   SMRGLTextureBasic DAT_0067b9e0
@@ -36,7 +36,7 @@ section .text
     PUSH EDI                            ; 004ede62
     PUSH EBP                            ; 004ede63
     PUSH 0x67b9b0                       ; 004ede64 | DAT_0067b9b0
-    MOV EDX,dword ptr [0x006703ec]      ; 004ede69 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004ede69 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004ede6f | g_CDemonRendererInstance
     MOV EBX,0x67b9c8                    ; 004ede70 | DAT_0067b9c8
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004ede75
@@ -45,7 +45,7 @@ section .text
     ADD ESP,0x8                         ; 004ede7d
     PUSH EBX                            ; 004ede80 | DAT_0067b9c8 | DAT_0067b9e0
         ;   Label: LAB_004ede80
-    MOV ECX,dword ptr [0x006703ec]      ; 004ede81 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004ede81 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004ede87 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004ede88
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -63,7 +63,7 @@ section .text
     ADD EBX,0x67ba28                    ; 004edeac | DAT_0067bba8 | DAT_0067ba28
     PUSH EBX                            ; 004edeb2 | DAT_0067ba28 | DAT_0067ba40 | DAT_0067bba8
         ;   Label: LAB_004edeb2
-    MOV EAX,[0x006703ec]                ; 004edeb3 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004edeb3 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 004edeb8 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004edeb9
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -86,7 +86,7 @@ section .text
     ADD EBX,0x67c028                    ; 004edee9 | DAT_0067c2e0 | DAT_0067c028
     PUSH EBX                            ; 004edeef | DAT_0067c028 | DAT_0067c040 | DAT_0067c2e0
         ;   Label: LAB_004edeef
-    MOV EDX,dword ptr [0x006703ec]      ; 004edef0 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004edef0 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004edef6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004edef7
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -101,7 +101,7 @@ section .text
     JL 0x004edee1                       ; 004edf10
         ;   XREF to: 004edee1 (CONDITIONAL_JUMP)  ; LAB_004edee1
     PUSH 0x67cb28                       ; 004edf12 | DAT_0067cb28
-    MOV ECX,dword ptr [0x006703ec]      ; 004edf17 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 004edf17 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004edf1d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004edf1e
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

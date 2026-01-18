@@ -38,10 +38,10 @@ void __cdecl core_actor_cpp_CDemonActor_FUN_0040dec0(CDemonActor *this_ptr)
     CStack_20.z = (int)ROUND(CStack_2c.z * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
-               ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
+               ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar1),&CStack_20);
-    this_ptr_00 = g_CDemonRendererPtr;
-    *(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar1) = in_stack_00000010 << 8;
+    this_ptr_00 = g_CDemonRendererPtr2;
+    *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar1) = in_stack_00000010 << 8;
     *(int *)((int)&this_ptr_00->vertex_buffer_ptr->color + iVar1) = in_stack_00000014 << 8;
     *(int *)((int)&this_ptr_00->vertex_buffer_ptr->fog + iVar1) = in_stack_00000018 << 8;
     *(int *)((int)&this_ptr_00->vertex_buffer_ptr->w_recip + iVar1) = iStack_14;
@@ -61,37 +61,37 @@ void __cdecl core_actor_cpp_CDemonActor_FUN_0040dec0(CDemonActor *this_ptr)
   local_4c._0_4_ = 8.40779e-45;
   local_4c._4_4_ = 5.60519e-45;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr,&SStack_6c);
+            (g_CDemonRendererPtr2,&SStack_6c);
   uStack_54 = 1;
   uStack_50 = 3;
   local_4c._0_4_ = 9.80909e-45;
   local_4c._4_4_ = 7.00649e-45;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr,&SStack_6c);
+            (g_CDemonRendererPtr2,&SStack_6c);
   local_4c._0_4_ = 4.2039e-45;
   uStack_54 = 0;
   uStack_50 = 1;
   local_4c._4_4_ = 2.8026e-45;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr,&SStack_6c);
+            (g_CDemonRendererPtr2,&SStack_6c);
   uStack_54 = 4;
   uStack_50 = 5;
   local_4c._0_4_ = 9.80909e-45;
   local_4c._4_4_ = 8.40779e-45;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr,&SStack_6c);
+            (g_CDemonRendererPtr2,&SStack_6c);
   local_4c._0_4_ = 9.80909e-45;
   uStack_54 = 2;
   uStack_50 = 3;
   local_4c._4_4_ = 8.40779e-45;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr,&SStack_6c);
+            (g_CDemonRendererPtr2,&SStack_6c);
   uStack_50 = 1;
   local_4c._4_4_ = 5.60519e-45;
   uStack_54 = 0;
   local_4c._0_4_ = 7.00649e-45;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr,&SStack_6c);
+            (g_CDemonRendererPtr2,&SStack_6c);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);
   return;
 }

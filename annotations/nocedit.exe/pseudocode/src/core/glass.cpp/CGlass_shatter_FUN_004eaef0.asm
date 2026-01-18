@@ -65,7 +65,7 @@
 ;   TerminatedCString s_glass_1_wav_2_0_0062e0f4
 ;   double DOUBLE_0062e109 = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_CurrentTextureDimension = 0x100
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 DAT_00f80000
@@ -245,7 +245,7 @@ section .text
     LEA EAX,[EBX + 0x164]               ; 004eb131
         ;   Label: LAB_004eb131
     PUSH EAX                            ; 004eb137
-    MOV EDX,dword ptr [0x006703ec]      ; 004eb138 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 004eb138 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004eb13e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004eb13f
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

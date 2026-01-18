@@ -96,7 +96,7 @@
 ;   TerminatedCString s_core_set_cpp_00645f98
 ;   TerminatedCString s_Need_more_normals_for_pa_00645fa8
 ;   double DOUBLE_00645fd3 = 65535
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   void* g_BackBuffer
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
@@ -139,7 +139,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0056eafb
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0xc                         ; 0056eb00
-    MOV EDI,dword ptr [0x006703ec]      ; 0056eb03 | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0056eb03 | g_CDemonRendererPtr2
         ;   Label: LAB_0056eb03
     PUSH EDI                            ; 0056eb09 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 0056eb0a

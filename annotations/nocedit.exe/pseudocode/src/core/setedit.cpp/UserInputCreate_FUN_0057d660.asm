@@ -593,7 +593,7 @@ section .text
         ;   XREF to: 0044c430 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430(CDemonCamera * this_ptr, int skip_clear_buffers)
     ADD ESP,0x8                         ; 0057dd22
     PUSH 0x3f87558                      ; 0057dd25 | g_ZeroVector
-    MOV EAX,[0x006703ec]                ; 0057dd2a | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0057dd2a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0057dd2f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0057dd30
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)

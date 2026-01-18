@@ -31,7 +31,7 @@
 ;   double DOUBLE_006184ba = 3.14159265350000
 ;   double DOUBLE_006184c2 = 0.0833333333333333
 ;   undefined4 DAT_0065bb3c
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CEditorTools g_CEditorToolsInstance
@@ -72,7 +72,7 @@ section .text
     PUSH EAX                            ; 0043b814
     LEA EAX,[ESP + 0x14]                ; 0043b815
     PUSH EAX                            ; 0043b819
-    MOV ECX,dword ptr [0x006703ec]      ; 0043b81a | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0043b81a | g_CDemonRendererPtr2
     PUSH ECX                            ; 0043b820 | g_CDemonRendererInstance
     MOV EBX,0x270                       ; 0043b821
     XOR ESI,ESI                         ; 0043b826
@@ -103,7 +103,7 @@ section .text
     FMUL float ptr [EDI + 0x18]         ; 0043b877
     LEA EBX,[ESP + 0x4]                 ; 0043b87a
     XOR EAX,EAX                         ; 0043b87e
-    MOV EDX,dword ptr [0x006703ec]      ; 0043b880 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0043b880 | g_CDemonRendererPtr2
     MOV dword ptr [ESP + 0x30],EAX      ; 0043b886
     LEA EAX,[ESP + 0x28]                ; 0043b88a
     FSTP float ptr [ESP + 0x2c]         ; 0043b88e
@@ -130,7 +130,7 @@ section .text
     LEA EBX,[ESP + 0x1c]                ; 0043b8d2
     MOV dword ptr [ESP + 0x40],EAX      ; 0043b8d6
     LEA EAX,[ESP + 0x28]                ; 0043b8da
-    MOV EDX,dword ptr [0x006703ec]      ; 0043b8de | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0043b8de | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 0043b8e4
     FMUL float ptr [0x0065bb3c]         ; 0043b8e6 | DAT_0065bb3c
     FISTP dword ptr [EBX]               ; 0043b8ec
@@ -175,7 +175,7 @@ section .text
     CMP dword ptr [EBP + 0x1c],0x0      ; 0043b95b
     JNZ 0x0043b9bd                      ; 0043b95f
         ;   XREF to: 0043b9bd (CONDITIONAL_JUMP)  ; LAB_0043b9bd
-    MOV EAX,[0x006703ec]                ; 0043b961 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0043b961 | g_CDemonRendererPtr2
         ;   Label: LAB_0043b961
     PUSH EAX                            ; 0043b966 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0043b967
@@ -184,7 +184,7 @@ section .text
         ;   Label: LAB_0043b976
     PUSH EBX                            ; 0043b97a
     PUSH ESI                            ; 0043b97b
-    MOV EAX,[0x006703ec]                ; 0043b97c | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0043b97c | g_CDemonRendererPtr2
     PUSH EAX                            ; 0043b981 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 ; 0043b982
         ;   XREF to: 0048caf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
@@ -192,7 +192,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x50]      ; 0043b98a
     PUSH EDX                            ; 0043b98e
     PUSH ESI                            ; 0043b98f
-    MOV ECX,dword ptr [0x006703ec]      ; 0043b990 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0043b990 | g_CDemonRendererPtr2
     PUSH ECX                            ; 0043b996 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 ; 0043b997
         ;   XREF to: 0048caf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)
@@ -201,7 +201,7 @@ section .text
     PUSH EBX                            ; 0043b9a3
     MOV EAX,dword ptr [ESP + 0x44]      ; 0043b9a4
     PUSH EAX                            ; 0043b9a8
-    MOV EDX,dword ptr [0x006703ec]      ; 0043b9a9 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0043b9a9 | g_CDemonRendererPtr2
     PUSH EDX                            ; 0043b9af | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 ; 0043b9b0
         ;   XREF to: 0048caf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CDemonRenderer * this_ptr, int vertex_index1, int vertex_index2)

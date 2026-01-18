@@ -24,12 +24,12 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
   int local_1c;
   float local_18;
   
-  vertex_ptr = g_CDemonRendererPtr->vertex_buffer_ptr;
+  vertex_ptr = g_CDemonRendererPtr2->vertex_buffer_ptr;
   local_64.x = (int)ROUND((this_ptr->position).x * 256.0f);
   local_64.y = (int)ROUND((this_ptr->position).y * 256.0f);
   local_64.z = (int)ROUND((this_ptr->position).z * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr->projected_vertex,&local_64);
-  iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(g_CDemonRendererPtr,vertex_ptr);
+  iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(g_CDemonRendererPtr2,vertex_ptr);
   if (iVar2 != 0) {
     dVar3 = crt_math_c_round_FUN_005fe6b0((double)this_ptr->age);
     local_1c = (int)ROUND(dVar3);
@@ -39,11 +39,11 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
       core_main_c_displayErrorAndQuit_FUN_00506f10("CSmokeParticle::render - Frame out of range");
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,g_FireEffectSmokeParticleTextures + local_1c);
+              (g_CDemonRendererPtr2,g_FireEffectSmokeParticleTextures + local_1c);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,&this_ptr->position);
+              (g_CDemonRendererPtr2,&this_ptr->position);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-              (g_CDemonRendererPtr,&g_BillboardCameraRight,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,&g_BillboardCameraRight,(CVector3i *)0x0);
     local_18 = this_ptr->drag_factor;
     local_54 = 0;
     local_64.z = (int)-local_18;
@@ -53,12 +53,12 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     local_58 = (float)local_64.z;
     local_20 = (float)local_64.z;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_2c);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_2c);
     local_64.z = (int)local_18;
     local_58 = local_20;
     local_54 = 0;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
                (CVector3i *)&stack0xffffff8c);
     local_54 = 0;
     local_64.z = (int)local_18;
@@ -67,7 +67,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     local_38.y = (int)ROUND(local_18 * 256.0f);
     local_38.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_38);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_38);
     local_64.z = (int)local_20;
     local_58 = local_18;
     local_54 = 0;
@@ -75,7 +75,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     local_50.y = (int)ROUND(local_18 * 256.0f);
     local_50.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_50);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_50);
     g_RenderVertexBuffer[0].u = 7.34684e-40;
     g_RenderVertexBuffer[0].v = 2.2775203e-38;
     g_RenderVertexBuffer[1].u = 2.2775203e-38;
@@ -92,9 +92,9 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
     lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)this_ptr->alpha_value;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-              (g_CDemonRendererPtr,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+              (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-              (g_CDemonRendererPtr,&g_BillboardPrimitive.base);
+              (g_CDemonRendererPtr2,&g_BillboardPrimitive.base);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   }
   return;

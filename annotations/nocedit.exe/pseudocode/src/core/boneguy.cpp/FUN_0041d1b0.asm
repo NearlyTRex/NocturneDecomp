@@ -7,7 +7,7 @@
 ; undefined1       Stack[-0x20]:1  local_20
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
@@ -61,13 +61,13 @@ section .text
         ;   XREF to: 0041d252 (CONDITIONAL_JUMP)  ; LAB_0041d252
     PUSH EDI                            ; 0041d1f5
     PUSH 0x0                            ; 0041d1f6
-    MOV ECX,dword ptr [0x006703ec]      ; 0041d1f8 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0041d1f8 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0041d1fe | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0 ; 0041d1ff
         ;   XREF to: 0048d6c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(CDemonRenderer * this_ptr, int enable_advanced_mode)
     ADD ESP,0x8                         ; 0041d204
     PUSH 0xffff                         ; 0041d207
-    MOV EDI,dword ptr [0x006703ec]      ; 0041d20c | g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0041d20c | g_CDemonRendererPtr2
     MOV EAX,[0x006810c8]                ; 0041d212 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDI                            ; 0041d217 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x15ac88],0x1  ; 0041d218 | DAT_0326ef00
@@ -78,7 +78,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_FUN_00429aa0 ; 0041d22b
         ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00429aa0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0041d230
-    MOV EBP,dword ptr [0x006703ec]      ; 0041d233 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x006703ec]      ; 0041d233 | g_CDemonRendererPtr2
     MOV EAX,[0x006810c8]                ; 0041d239 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBP                            ; 0041d23e | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x15ac88],0x0  ; 0041d23f | DAT_0326ef00

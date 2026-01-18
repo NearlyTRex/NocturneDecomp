@@ -11,7 +11,7 @@
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 at 00574a72
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -25,7 +25,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x006703ec]      ; 00574ef0 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00574ef0 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0
     PUSH EDX                            ; 00574ef6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 00574ef7

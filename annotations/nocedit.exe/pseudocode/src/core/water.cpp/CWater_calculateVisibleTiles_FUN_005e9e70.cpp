@@ -89,7 +89,7 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
             local_54.z = (float)iVar5 * this_ptr->tile_size + _DAT_03f875f8;
             local_18 = iVar5;
             engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                      (g_CDemonRendererPtr,&local_54);
+                      (g_CDemonRendererPtr2,&local_54);
             local_78 = (int)ROUND(local_54.x * 256.0f);
             local_74 = (int)ROUND(local_54.y * 256.0f);
             local_70 = (int)ROUND(local_54.z * 256.0f);
@@ -100,27 +100,27 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
             local_60.y = (int)ROUND(256.0f * 0.0);
             local_60.z = (int)ROUND(256.0f * 0.0);
             wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                      (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_60);
+                      (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_60);
             local_54.x = this_ptr->tile_size;
             local_8c._8_4_ = (uint)ROUND(local_54.x * 256.0f);
             local_80 = (int)ROUND(local_54.y * 256.0f);
             local_7c = (int)ROUND(local_54.z * 256.0f);
             wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                      (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
+                      (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
                        (CVector3i *)(local_8c + 8));
             local_54.z = this_ptr->tile_size;
             local_44._8_4_ = (uint)ROUND(local_54.x * 256.0f);
             local_38 = (int)ROUND(local_54.y * 256.0f);
             local_34 = (int)ROUND(local_54.z * 256.0f);
             wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                      (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,
+                      (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,
                        (CVector3i *)(local_44 + 8));
             local_54.x = 0.0;
             local_6c.x = (int)ROUND(256.0f * 0.0);
             local_6c.y = (int)ROUND(local_54.y * 256.0f);
             local_6c.z = (int)ROUND(local_54.z * 256.0f);
             wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                      (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_6c);
+                      (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_6c);
             iVar6 = g_RenderPixelBudget;
             uVar3 = g_RenderVertexBuffer[0].projected_vertex.screen_x &
                     g_RenderVertexBuffer[1].projected_vertex.screen_x &
@@ -129,7 +129,7 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
             if (((uVar3 & 0x80000000) == 0) || ((char)uVar3 == '\0')) {
               g_RenderPixelBudget = 0x10;
               iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff48);
+                                (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff48);
               if (iVar4 != 0) {
                 if (0xfff < g_VisibleWaterTileCount) {
                   g_CurrentFilename = "..\\core\\water.cpp";

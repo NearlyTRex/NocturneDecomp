@@ -296,19 +296,19 @@ section .text
     LEA EAX,[EBP + -0x2]                ; 0047cd4e
         ;   Label: LAB_0047cd4e
     PUSH EAX                            ; 0047cd51
-    MOV EAX,[0x006703ec]                ; 0047cd52 | g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 0047cd52 | g_CDemonRendererPtr2
     PUSH EAX                            ; 0047cd57 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 0047cd58
         ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
     ADD ESP,0x8                         ; 0047cd5d
     LEA EAX,[EBP + -0x4a]               ; 0047cd60
     PUSH EAX                            ; 0047cd63
-    MOV EDX,dword ptr [0x006703ec]      ; 0047cd64 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0047cd64 | g_CDemonRendererPtr2
     PUSH EDX                            ; 0047cd6a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 0047cd6b
         ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
     ADD ESP,0x8                         ; 0047cd70
-    MOV ECX,dword ptr [0x006703ec]      ; 0047cd73 | g_CDemonRendererPtr
+    MOV ECX,dword ptr [0x006703ec]      ; 0047cd73 | g_CDemonRendererPtr2
     PUSH dword ptr [EBP + 0xe]          ; 0047cd79
     PUSH ECX                            ; 0047cd7c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650 ; 0047cd7d
@@ -317,7 +317,7 @@ section .text
     LEA EAX,[EBP + 0xffffff7a]          ; 0047cd85
     XOR EBX,EBX                         ; 0047cd8b
     PUSH EAX                            ; 0047cd8d
-    MOV EAX,[0x006703e8]                ; 0047cd8e | g_CDemonRendererPtr
+    MOV EAX,[0x006703e8]                ; 0047cd8e | g_CDemonRendererPtr1
     MOV dword ptr [EBP + 0xffffff7a],EBX ; 0047cd93
     PUSH EAX                            ; 0047cd99 | g_CDemonRendererInstance
     MOV dword ptr [EBP + 0xffffff7e],EBX ; 0047cd9a
@@ -328,7 +328,7 @@ section .text
     PUSH EBX                            ; 0047cdab
     LEA EAX,[EBP + 0xffffff7a]          ; 0047cdac
     PUSH EAX                            ; 0047cdb2
-    MOV EDX,dword ptr [0x006703e8]      ; 0047cdb3 | g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703e8]      ; 0047cdb3 | g_CDemonRendererPtr1
     PUSH EDX                            ; 0047cdb9 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0047cdba
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -346,7 +346,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 0047cddb
         ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
     ADD ESP,0x10                        ; 0047cde0
-    MOV ESI,dword ptr [0x006703e8]      ; 0047cde3 | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703e8]      ; 0047cde3 | g_CDemonRendererPtr1
     PUSH ESI                            ; 0047cde9 | g_CDemonRendererInstance
     MOV EDI,dword ptr [EBP + 0x26]      ; 0047cdea
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0047cded

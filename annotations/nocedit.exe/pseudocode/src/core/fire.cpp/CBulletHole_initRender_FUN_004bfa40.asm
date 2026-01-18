@@ -11,7 +11,7 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_004c7180 at 004c7262
 ;
 ; Referenced Globals:
-;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic g_FireEffectBlackHoleTexture
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_BillboardPrimitive.base.base.count
@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [0x02d12df0],EDI      ; 004bfa76 | g_BillboardPrimitive.vertices[3]
     MOV dword ptr [0x02d12dd4],ECX      ; 004bfa7c | g_BillboardPrimitive.base.surface_normal.A
     MOV dword ptr [0x02d12dd8],ECX      ; 004bfa82 | g_BillboardPrimitive.base.surface_normal.B
-    MOV EBX,dword ptr [0x006703ec]      ; 004bfa88 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    MOV EBX,dword ptr [0x006703ec]      ; 004bfa88 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EDX,0xffff                      ; 004bfa8e
     PUSH EBX                            ; 004bfa93 | g_CDemonRendererInstance
     MOV dword ptr [0x02d12de0],ECX      ; 004bfa94 | g_BillboardPrimitive.base.surface_normal.D
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004bfaa5
     PUSH 0x8000                         ; 004bfaa8
-    MOV ESI,dword ptr [0x006703ec]      ; 004bfaad | g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004bfaad | g_CDemonRendererPtr2
     PUSH ESI                            ; 004bfab3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004bfab4
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)

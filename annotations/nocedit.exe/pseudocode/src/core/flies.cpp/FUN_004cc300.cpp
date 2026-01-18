@@ -35,7 +35,7 @@ int core_flies_cpp_FUN_004cc300(void)
   char *pcStack_18;
   
   bVar9 = 0;
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
+  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar3 != 0) {
     return 0;
   }
@@ -54,15 +54,15 @@ int core_flies_cpp_FUN_004cc300(void)
       } while (iVar3 < 0x40);
       INT_02d7a7c0 = 1;
     }
-    pCVar2 = g_CDemonRendererPtr;
+    pCVar2 = g_CDemonRendererPtr2;
     if (g_UseExternalRenderer == 0) {
-      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr,0,0,0);
+      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0,0,0);
       uVar4 = (int)g_PerspectiveReciprocal >> 8;
       DAT_02d7a800 = uVar4 | uVar4 << 8 | uVar4 << 0x10;
       DAT_02d7a804 = DAT_02d7a800 ^ 0xffffff;
     }
     else {
-      g_CDemonRendererPtr->vertex_buffer_ptr->light = 0.0;
+      g_CDemonRendererPtr2->vertex_buffer_ptr->light = 0.0;
       pCVar2->vertex_buffer_ptr->color = 0;
       pCVar2->vertex_buffer_ptr->fog = 0.0;
       pCVar2->vertex_buffer_ptr[1].light = 0.0;
@@ -95,9 +95,9 @@ int core_flies_cpp_FUN_004cc300(void)
         CStack_30.y = (int)ROUND(fStack_38 * _DAT_0065e500);
         CStack_30.z = (int)ROUND(fStack_34 * _DAT_0065e500);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&CStack_30);
-        pCVar2 = g_CDemonRendererPtr;
-        vertices = g_CDemonRendererPtr->vertex_buffer_ptr;
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_30);
+        pCVar2 = g_CDemonRendererPtr2;
+        vertices = g_CDemonRendererPtr2->vertex_buffer_ptr;
         if ((int)((vertices->projected_vertex).screen_x & -0x80000000) == 0) {
           iVar7 = (vertices->projected_vertex).screen_y >> 0x10;
           iVar3 = (vertices->projected_vertex).screen_x >> 0x10;
