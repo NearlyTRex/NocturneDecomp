@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "constants.h"
 #include "system/misc.h"
 
 // =============================================================================

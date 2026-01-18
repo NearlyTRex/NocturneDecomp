@@ -87,9 +87,6 @@ def resolve_pointer_to_symbol(currentProgram, address_int):
             # Skip C/C++ keywords
             if sym_name in CPP_KEYWORDS:
                 continue
-            # Skip string constants (s_*, STR_*)
-            if sym_name.startswith('s_') or sym_name.startswith('STR_'):
-                continue
             # Skip symbol labels that look like functions but have no actual function
             # (e.g., engine_palette.cpp_FUN_00545454 where no function exists at that address)
             # We already checked func_manager.getFunctionAt above and it returned None,
@@ -97,13 +94,22 @@ def resolve_pointer_to_symbol(currentProgram, address_int):
             if '_FUN_' in sym_name or sym_name.startswith('FUN_'):
                 continue
 
+            # Check if this is a string constant (s_*, STR_*)
+            # String constants are arrays, so the name decays to a pointer - no & needed
+            is_string_constant = sym_name.startswith('s_') or sym_name.startswith('STR_')
+
             # Check if this is an array/member access expression (needs & prefix)
             # vs a namespace-style name (needs . replaced with _)
             needs_address_of = '[' in sym_name
             is_namespace_pattern = '.cpp_' in sym_name or '.c_' in sym_name or \
                                    sym_name.endswith('.cpp') or sym_name.endswith('.c')
 
-            if needs_address_of or ('.' in sym_name and not is_namespace_pattern):
+            if is_string_constant:
+                # String constants are arrays - name decays to pointer, no & needed
+                # Must sanitize the name to match how it was declared in constants
+                usable_symbol = sanitize_c_identifier(sym_name)
+                break
+            elif needs_address_of or ('.' in sym_name and not is_namespace_pattern):
                 # Array element or member access - use & to take address
                 # Replace namespace dots with _ but keep member access dots
                 c_name = sym_name
@@ -958,6 +964,7 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
     basetypes = get_types_needing_basetypes()
     needs_math_h = False
     needs_globals_h = False
+    needs_constants_h = False
 
     if constants_list:
         for const in constants_list:
@@ -976,8 +983,11 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
                 # Check if initializer references a global variable (& prefix or g_ prefix)
                 if init_val.startswith('&') or 'g_' in init_val:
                     needs_globals_h = True
+                # Check if initializer references a string constant (s_ or STR_ prefix)
+                if 's_' in init_val or 'STR_' in init_val:
+                    needs_constants_h = True
 
-    if needed_includes or needs_math_h or needs_globals_h or needed_prototype_ranges:
+    if needed_includes or needs_math_h or needs_globals_h or needs_constants_h or needed_prototype_ranges:
         content.append("")
         content.append("// Dependencies")
         # Put math.h first if needed (for INFINITY/NAN macros)
@@ -990,6 +1000,9 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
         # Include globals.h if any initializer references global variables
         if needs_globals_h:
             content.append('#include "globals.h"')
+        # Include constants.h if any initializer references string constants from other files
+        if needs_constants_h:
+            content.append('#include "constants.h"')
         # Include prototype headers for referenced functions
         if needed_prototype_ranges:
             for range_key in sorted(needed_prototype_ranges):

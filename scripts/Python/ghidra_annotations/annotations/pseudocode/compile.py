@@ -53,6 +53,17 @@ def compile_header(header_path, include_dir, compiler='g++'):
     # Create a temporary C++ file that includes the header
     with tempfile.NamedTemporaryFile(mode='w', suffix='.cpp', delete=False) as f:
         rel_path = os.path.relpath(header_path, include_dir)
+
+        # For files in subdirectories (constants/, globals/, prototypes/),
+        # include the master header first to ensure all dependencies are available.
+        # This allows symbols from other address-range files to be resolved.
+        if rel_path.startswith('constants/') and rel_path != 'constants.h':
+            f.write('#include "constants.h"\n')
+        elif rel_path.startswith('globals/') and rel_path != 'globals.h':
+            f.write('#include "globals.h"\n')
+        elif rel_path.startswith('prototypes/') and rel_path != 'prototypes.h':
+            f.write('#include "prototypes.h"\n')
+
         f.write('#include "%s"\n' % rel_path)
         f.write('int main(void) { return 0; }\n')
         temp_file = f.name

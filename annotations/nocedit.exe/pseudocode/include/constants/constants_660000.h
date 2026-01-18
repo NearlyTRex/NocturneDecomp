@@ -3,6 +3,7 @@
 // Dependencies
 #include <math.h>
 #include "system/basetypes.h"
+#include "constants.h"
 #include "prototypes/prototypes_520000.h"
 #include "prototypes/prototypes_5A0000.h"
 #include "system/misc.h"
@@ -226,11 +227,11 @@ const void* DAT_00665CD0 = (void*)0x00665CE8; // DAT_00665ce8
 const void* DAT_00665CE0 = (void*)0x00665CF8; // DAT_00665cf8
 const void* DAT_00665D68 = (void*)0x00665D78; // DAT_00665d78
 const void* DAT_00665FA4 = (void*)0x00685038; // DAT_00685038
-const void* DAT_0066E5E4 = (void*)0x006167F6; // s_Rummage_006167f6
-const void* DAT_0066E5EC = (void*)0x006167FE; // s_Inventory_006167fe
-const void* DAT_0066E5F4 = (void*)0x00616808; // s_Carry_00616808
-const void* DAT_0066E5FC = (void*)0x0061680E; // s_Heavy_0061680e
-const void* DAT_0066E760 = (void*)0x0061776E; // s_When_hurt_0061776e
-const void* DAT_0066E768 = (void*)0x00617778; // s_Always_00617778
-const void* DAT_0066EC5C = (void*)0x00619453; // s_z_00619453
+const void* DAT_0066E5E4 = (void*)s_Rummage_006167f6;
+const void* DAT_0066E5EC = (void*)s_Inventory_006167fe;
+const void* DAT_0066E5F4 = (void*)s_Carry_00616808;
+const void* DAT_0066E5FC = (void*)s_Heavy_0061680e;
+const void* DAT_0066E760 = (void*)s_When_hurt_0061776e;
+const void* DAT_0066E768 = (void*)s_Always_00617778;
+const void* DAT_0066EC5C = (void*)s_z_00619453;
 

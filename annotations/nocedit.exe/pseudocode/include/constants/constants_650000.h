@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "constants.h"
 #include "prototypes/prototypes_410000.h"
 #include "prototypes/prototypes_4E0000.h"
 #include "prototypes/prototypes_540000.h"
