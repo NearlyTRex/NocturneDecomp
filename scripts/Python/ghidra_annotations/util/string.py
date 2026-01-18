@@ -87,6 +87,21 @@ def normalize_string_name(string_name, max_length = 32):
         string_name = "s_" + string_name
     return string_name[:max_length]
 
+# C++ reserved keywords that cannot be used as identifiers
+CPP_KEYWORDS = {
+    'this', 'class', 'struct', 'union', 'enum', 'virtual', 'public', 'private',
+    'protected', 'friend', 'operator', 'new', 'delete', 'template', 'typename',
+    'namespace', 'using', 'try', 'catch', 'throw', 'const', 'volatile', 'mutable',
+    'static', 'extern', 'register', 'auto', 'inline', 'explicit', 'export',
+    'true', 'false', 'nullptr', 'bool', 'char', 'short', 'int', 'long', 'float',
+    'double', 'void', 'signed', 'unsigned', 'wchar_t', 'char16_t', 'char32_t',
+    'if', 'else', 'switch', 'case', 'default', 'for', 'while', 'do', 'break',
+    'continue', 'return', 'goto', 'sizeof', 'alignof', 'decltype', 'typeid',
+    'static_cast', 'dynamic_cast', 'const_cast', 'reinterpret_cast',
+    'and', 'and_eq', 'bitand', 'bitor', 'compl', 'not', 'not_eq', 'or', 'or_eq',
+    'xor', 'xor_eq', 'asm', 'constexpr', 'noexcept', 'static_assert', 'thread_local',
+}
+
 def sanitize_c_identifier(name):
     if not name:
         return "unnamed"
@@ -101,6 +116,9 @@ def sanitize_c_identifier(name):
         return "unnamed"
     # If starts with digit, prepend underscore
     if sanitized[0].isdigit():
+        sanitized = "_" + sanitized
+    # If it's a C++ keyword, prefix with underscore
+    if sanitized in CPP_KEYWORDS:
         sanitized = "_" + sanitized
     return sanitized
 

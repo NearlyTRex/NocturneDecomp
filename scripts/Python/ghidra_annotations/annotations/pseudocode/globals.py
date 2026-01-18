@@ -8,12 +8,163 @@ from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.basetypes import (
     get_types_needing_basetypes, is_primitive_type, bytes_to_int_le, format_int_by_size
 )
-from ghidra_annotations.util.string import sanitize_c_identifier
+from ghidra_annotations.util.string import sanitize_c_identifier, CPP_KEYWORDS
 from ghidra_annotations.annotations.pseudocode.strings import (
     get_safe_str, escape_c_string, format_char_array_as_c_strings,
     format_single_char_pointer, format_2d_char_array, format_array_initializer
 )
 from ghidra_annotations.annotations.pseudocode.headers import strip_type_prefix
+
+
+def resolve_pointer_to_symbol(currentProgram, address_int):
+    """Try to resolve a pointer address to a symbol name.
+
+    Returns both a usable symbol (for code) and any symbol (for comments).
+    Usable symbols are those that can be referenced in global scope.
+    Comment symbols include local labels, switch cases, etc.
+
+    Args:
+        currentProgram: The Ghidra program
+        address_int: Integer address value
+
+    Returns:
+        Tuple of (usable_symbol, comment_symbol) where:
+        - usable_symbol: Symbol name usable in global scope, or None
+        - comment_symbol: Any symbol at this address for commenting, or None
+    """
+    if address_int == 0:
+        return (None, None)
+
+    # Prefixes for local/internal symbols that can't be used in global scope
+    LOCAL_PREFIXES = (
+        'caseD_', 'switchD_', 'switchdataD_',  # Switch case labels
+        'LAB_',                                  # Local labels
+        'DAT_',                                  # Auto-generated data labels
+        'PTR_',                                  # Pointer labels
+        'ADDR_',                                 # Address labels
+        'IMAGE_',                                # PE image headers (not exported)
+    )
+
+    usable_symbol = None
+    comment_symbol = None
+
+    try:
+        from ghidra.program.model.address import AddressFactory
+        addr_factory = currentProgram.getAddressFactory()
+        addr = addr_factory.getDefaultAddressSpace().getAddress(address_int)
+
+        # First check if it's a function - functions are always usable
+        func_manager = currentProgram.getFunctionManager()
+        func = func_manager.getFunctionAt(addr)
+        if func:
+            func_name = func.getName()
+            comment_symbol = func_name
+            # Skip thunks, auto-generated names, and keywords for usable
+            if not func_name.startswith("FUN_") and not func_name.startswith("thunk_") and func_name not in CPP_KEYWORDS:
+                # Replace dots with underscores for valid C identifier
+                usable_symbol = func_name.replace('.', '_')
+            return (usable_symbol, comment_symbol)
+
+        # Check symbol table for symbols
+        symbol_table = currentProgram.getSymbolTable()
+        symbols = list(symbol_table.getSymbols(addr))
+
+        # Find best symbol for commenting (prefer non-DAT names)
+        for sym in symbols:
+            sym_name = sym.getName()
+            if not sym_name.startswith("DAT_"):
+                comment_symbol = sym_name
+                break
+        if not comment_symbol and symbols:
+            comment_symbol = symbols[0].getName()
+
+        # Find usable symbol (skip local/internal symbols and keywords)
+        for sym in symbols:
+            sym_name = sym.getName()
+            # Skip local/internal symbols
+            if any(sym_name.startswith(prefix) for prefix in LOCAL_PREFIXES):
+                continue
+            # Skip C/C++ keywords
+            if sym_name in CPP_KEYWORDS:
+                continue
+            # Skip string constants (s_*, STR_*)
+            if sym_name.startswith('s_') or sym_name.startswith('STR_'):
+                continue
+            # Skip symbol labels that look like functions but have no actual function
+            # (e.g., engine_palette.cpp_FUN_00545454 where no function exists at that address)
+            # We already checked func_manager.getFunctionAt above and it returned None,
+            # so if this symbol looks like a function reference, it's invalid
+            if '_FUN_' in sym_name or sym_name.startswith('FUN_'):
+                continue
+
+            # Check if this is an array/member access expression (needs & prefix)
+            # vs a namespace-style name (needs . replaced with _)
+            needs_address_of = '[' in sym_name
+            is_namespace_pattern = '.cpp_' in sym_name or '.c_' in sym_name or \
+                                   sym_name.endswith('.cpp') or sym_name.endswith('.c')
+
+            if needs_address_of or ('.' in sym_name and not is_namespace_pattern):
+                # Array element or member access - use & to take address
+                # Replace namespace dots with _ but keep member access dots
+                c_name = sym_name
+                # Replace .cpp_ and .c_ patterns with _cpp_ and _c_
+                c_name = c_name.replace('.cpp_', '_cpp_').replace('.c_', '_c_')
+                usable_symbol = '&' + c_name
+                break
+            elif is_namespace_pattern:
+                # Namespace-style name - replace . with _
+                c_name = sym_name.replace('.', '_')
+                if c_name in CPP_KEYWORDS:
+                    continue
+                usable_symbol = c_name
+                break
+            else:
+                # Simple identifier - this is a global variable, use & to take address
+                if sym_name in CPP_KEYWORDS:
+                    continue
+                usable_symbol = '&' + sym_name
+                break
+
+    except Exception:
+        pass
+
+    return (usable_symbol, comment_symbol)
+
+
+def format_pointer_initializer(currentProgram, int_val, type_name):
+    """Format a pointer initializer, resolving to symbol if possible.
+
+    Args:
+        currentProgram: The Ghidra program
+        int_val: Integer pointer value
+        type_name: The pointer type name (e.g., "void*", "int (*)()")
+
+    Returns:
+        Tuple of (initializer_string, comment_or_none)
+        - initializer_string: The formatted initializer value
+        - comment_or_none: Symbol name for comment if different from usable, else None
+    """
+    if int_val == 0:
+        return ("nullptr", None)
+
+    # Try to resolve to a symbol
+    usable_symbol, comment_symbol = resolve_pointer_to_symbol(currentProgram, int_val)
+
+    if usable_symbol:
+        # Use the symbol directly
+        if "(*)" in type_name or "(**)" in type_name:
+            initializer = "(%s)%s" % (type_name.rstrip(), usable_symbol)
+        else:
+            initializer = "(%s)%s" % (type_name.rstrip(), usable_symbol)
+        return (initializer, None)  # No comment needed, symbol is in code
+    else:
+        # No usable symbol - use address with cast
+        if "(*)" in type_name or "(**)" in type_name:
+            initializer = "(%s)0x%08X" % (type_name.rstrip(), int_val)
+        else:
+            initializer = "(%s)0x%08X" % (type_name.rstrip(), int_val)
+        # Include comment symbol if we found one
+        return (initializer, comment_symbol)
 
 
 def format_struct_initializer(data_type, raw_bytes):
@@ -49,10 +200,33 @@ def format_struct_initializer(data_type, raw_bytes):
             else:
                 field_bytes = raw_bytes[offset:offset + length]
 
+            # Check if this field is a pointer type
+            is_pointer = (comp_type and "Pointer" in comp_type.__class__.__name__) or \
+                         '*' in comp_type_name or \
+                         comp_type_name.lower() in ('pointer', 'void*', 'char*')
+
+            # Get the actual pointer type for casting (use void* as fallback)
+            pointer_cast_type = "void*"
+            if is_pointer and comp_type:
+                # Try to get the actual type name from the component
+                try:
+                    actual_type = comp_type.getDisplayName() if hasattr(comp_type, 'getDisplayName') else comp_type_name
+                    if actual_type and '*' in actual_type:
+                        pointer_cast_type = actual_type
+                except:
+                    pass
+
             # Convert bytes to appropriate value based on field size (little-endian)
             if length <= 8:
                 val = bytes_to_int_le(field_bytes)
-                field_values.append(format_int_by_size(val, length))
+                if is_pointer:
+                    # For pointer fields, use nullptr for 0 or cast for non-zero
+                    if val == 0:
+                        field_values.append("nullptr")
+                    else:
+                        field_values.append("(%s)%s" % (pointer_cast_type, format_int_by_size(val, length)))
+                else:
+                    field_values.append(format_int_by_size(val, length))
             else:
                 # For other sizes (arrays, nested structs), output as byte array
                 byte_vals = ["0x%02X" % b for b in field_bytes]
@@ -146,6 +320,7 @@ def extract_globals_and_constants(currentProgram):
 
         is_initialized = False
         initializer_value = None
+        comment_value = None  # For symbol comments on pointer values
         data_length = data_type.getLength()
         is_array_type = "Array" in data_type.__class__.__name__
         ghidra_value = data.getValue()
@@ -241,6 +416,10 @@ def extract_globals_and_constants(currentProgram):
 
                     elif is_pointer_array:
                         # Pointer array - group bytes into 4-byte pointer values (32-bit)
+                        # Extract element type from array type (e.g., "void*[10]" -> "void*")
+                        element_type = type_name
+                        if '[' in element_type:
+                            element_type = element_type[:element_type.index('[')].strip()
                         ptr_size = 4
                         ptr_values = []
                         for i in range(0, len(raw_bytes), ptr_size):
@@ -248,9 +427,14 @@ def extract_globals_and_constants(currentProgram):
                                 ptr_bytes = raw_bytes[i:i+ptr_size]
                                 ptr_val = bytes_to_int_le(ptr_bytes)
                                 if ptr_val == 0:
-                                    ptr_values.append("NULL")
+                                    ptr_values.append("nullptr")
                                 else:
-                                    ptr_values.append("(void*)0x%08X" % ptr_val)
+                                    # Try to resolve to a symbol
+                                    usable_sym, comment_sym = resolve_pointer_to_symbol(currentProgram, ptr_val)
+                                    if usable_sym:
+                                        ptr_values.append("(%s)%s" % (element_type, usable_sym))
+                                    else:
+                                        ptr_values.append("(%s)0x%08X" % (element_type, ptr_val))
                         initializer_value = format_array_initializer(ptr_values, vals_per_line=4)
                     else:
                         # Regular array - byte values
@@ -350,9 +534,15 @@ def extract_globals_and_constants(currentProgram):
                         str_val = str_val[1:-1]
                     # Always escape the content for C string literal
                     escaped = escape_c_string(str_val)
-                    initializer_value = '"%s"' % escaped
+                    # Use L"" prefix for wide string types (TerminatedUnicode, wchar_t*, etc.)
+                    is_wide_string = 'unicode' in type_name.lower() or 'wchar' in type_name.lower()
+                    if is_wide_string:
+                        initializer_value = 'L"%s"' % escaped
+                    else:
+                        initializer_value = '"%s"' % escaped
                 else:
-                    initializer_value = '""'
+                    is_wide_string = 'unicode' in type_name.lower() or 'wchar' in type_name.lower()
+                    initializer_value = 'L""' if is_wide_string else '""'
 
             elif (type_name.startswith("char*[") or
                   type_name.startswith("char *[") or
@@ -386,14 +576,11 @@ def extract_globals_and_constants(currentProgram):
                                     int_val = int(str_val, 16)
                                 except ValueError:
                                     int_val = int(str_val, 10)
-                            if int_val == 0:
-                                initializer_value = "NULL"
-                            else:
-                                initializer_value = "0x%08X" % int_val
+                            initializer_value, comment_value = format_pointer_initializer(currentProgram, int_val, type_name)
                         except ValueError:
                             initializer_value = str_val
                     else:
-                        initializer_value = "NULL"
+                        initializer_value = "nullptr"
 
             elif "char" in type_name.lower() and "[" in type_name:
                 embedded_content = None
@@ -432,14 +619,11 @@ def extract_globals_and_constants(currentProgram):
                                 int_val = int(str_val, 16)
                             except ValueError:
                                 int_val = int(str_val, 10)
-                        if int_val == 0:
-                            initializer_value = "NULL"
-                        else:
-                            initializer_value = "0x%08X" % int_val
+                        initializer_value, comment_value = format_pointer_initializer(currentProgram, int_val, type_name)
                     except ValueError:
                         initializer_value = str_val
                 else:
-                    initializer_value = "NULL"
+                    initializer_value = "nullptr"
 
             elif data_length <= 8 and any(t in type_name.lower() for t in ["int", "word", "dword", "qword", "byte", "short", "long"]):
                 int_val = get_int(ghidra_value, default_val=0)
@@ -517,7 +701,8 @@ def extract_globals_and_constants(currentProgram):
             'address': str(addr),
             'size': data_type.getLength(),
             'is_initialized': is_initialized,
-            'initializer': initializer_value
+            'initializer': initializer_value,
+            'comment': comment_value
         }
 
         is_constant = False
@@ -538,12 +723,13 @@ def extract_globals_and_constants(currentProgram):
     return globals_list, constants_list
 
 
-def generate_constants_file(constants_list, type_to_path_map=None):
+def generate_constants_file(constants_list, type_to_path_map=None, needed_prototype_ranges=None):
     """Generate a header file with constant definitions.
 
     Args:
         constants_list: List of constant entries
         type_to_path_map: Optional map of type names to header paths for includes
+        needed_prototype_ranges: Optional set of prototype range keys to include
 
     Returns:
         Header file content as a string
@@ -555,6 +741,7 @@ def generate_constants_file(constants_list, type_to_path_map=None):
     needed_includes = set()
     basetypes = get_types_needing_basetypes()
     needs_math_h = False
+    needs_globals_h = False
 
     if constants_list:
         for const in constants_list:
@@ -570,8 +757,11 @@ def generate_constants_file(constants_list, type_to_path_map=None):
                 init_val = str(const['initializer'])
                 if 'INFINITY' in init_val or 'NAN' in init_val:
                     needs_math_h = True
+                # Check if initializer references a global variable (& prefix or g_ prefix)
+                if init_val.startswith('&') or 'g_' in init_val:
+                    needs_globals_h = True
 
-    if needed_includes or needs_math_h:
+    if needed_includes or needs_math_h or needs_globals_h or needed_prototype_ranges:
         content.append("")
         content.append("// Dependencies")
         # Put math.h first if needed (for INFINITY/NAN macros)
@@ -581,6 +771,14 @@ def generate_constants_file(constants_list, type_to_path_map=None):
         if "system/basetypes.h" in needed_includes:
             content.append('#include "system/basetypes.h"')
             needed_includes.remove("system/basetypes.h")
+        # Include globals.h if any initializer references global variables
+        if needs_globals_h:
+            content.append('#include "globals.h"')
+        # Include prototype headers for referenced functions
+        if needed_prototype_ranges:
+            for range_key in sorted(needed_prototype_ranges):
+                range_filename = "prototypes_%s.h" % range_key.replace("0x", "")
+                content.append('#include "prototypes/%s"' % range_filename)
         for inc_path in sorted(needed_includes):
             content.append('#include "%s"' % inc_path)
 
@@ -607,7 +805,19 @@ def generate_constants_file(constants_list, type_to_path_map=None):
             # Format the declaration correctly (handles array types)
             base_type, full_var_name = format_variable_declaration(const['type'], const['name'])
             if const['is_initialized'] and const['initializer'] and const['initializer'] != "None":
-                content.append("const %s %s = %s;" % (base_type, full_var_name, const['initializer']))
+                initializer = const['initializer']
+                # For char arrays initialized with string literals, omit array size
+                # to let compiler determine correct size (including null terminator)
+                if ('char' in base_type.lower() and '[' in full_var_name and
+                    (initializer.startswith('"') or initializer.startswith('L"'))):
+                    # Remove array dimensions from variable name
+                    var_name_no_dims = full_var_name.split('[')[0] + '[]'
+                    line = "const %s %s = %s;" % (base_type, var_name_no_dims, initializer)
+                else:
+                    line = "const %s %s = %s;" % (base_type, full_var_name, initializer)
+                if const.get('comment'):
+                    line += " // %s" % const['comment']
+                content.append(line)
             else:
                 content.append("// extern const %s %s; // No initializer found" % (base_type, full_var_name))
         content.append("")
@@ -781,8 +991,237 @@ def generate_globals_cpp_file(globals_list, range_key=""):
         # Format the declaration correctly (handles array types)
         base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
         if global_var['is_initialized'] and global_var['initializer']:
-            content.append("%s %s = %s;" % (base_type, full_var_name, global_var['initializer']))
+            initializer = global_var['initializer']
+            # For char arrays initialized with string literals, omit array size
+            # to let compiler determine correct size (including null terminator)
+            if ('char' in base_type.lower() and '[' in full_var_name and
+                (initializer.startswith('"') or initializer.startswith('L"'))):
+                # Remove array dimensions from variable name
+                var_name_no_dims = full_var_name.split('[')[0] + '[]'
+                line = "%s %s = %s;" % (base_type, var_name_no_dims, initializer)
+            else:
+                line = "%s %s = %s;" % (base_type, full_var_name, initializer)
+            if global_var.get('comment'):
+                line += " // %s" % global_var['comment']
+            content.append(line)
         else:
             content.append("%s %s;" % (base_type, full_var_name))
     content.append("")
     return "\n".join(content)
+
+
+def extract_all_function_prototypes(currentProgram):
+    """Extract all function prototypes from the program.
+
+    Args:
+        currentProgram: The Ghidra program
+
+    Returns:
+        List of function entries with name, address, signature, c_name
+    """
+    from ghidra_annotations.annotations import is_function_external
+
+    functions_list = []
+    function_manager = currentProgram.getFunctionManager()
+
+    for func in function_manager.getFunctions(True):
+        # Skip external/imported functions
+        if is_function_external(currentProgram, func):
+            continue
+
+        func_name = func.getName()
+        func_addr = str(func.getEntryPoint())
+        func_signature = func.getPrototypeString(True, False)
+
+        # Generate the C-compatible name (dots replaced with underscores)
+        c_name = func_name.replace('.', '_')
+
+        # Also fix the signature to use the C-compatible name
+        if func_signature:
+            c_signature = func_signature.replace(func_name, c_name)
+        else:
+            c_signature = "void %s(void)" % c_name
+
+        functions_list.append({
+            'name': func_name,
+            'c_name': c_name,
+            'address': func_addr,
+            'signature': c_signature
+        })
+
+    log_info("Extracted %d function prototypes" % len(functions_list))
+    return functions_list
+
+
+def extract_types_from_signature(signature):
+    """Extract type names from a function signature.
+
+    Args:
+        signature: Function signature string
+
+    Returns:
+        Set of type names found in the signature
+    """
+    types_found = set()
+
+    # Remove the function name and get just the types
+    # Signature format: "return_type func_name(param_type1 param1, param_type2 param2, ...)"
+
+    # Common primitive types and modifiers to skip
+    primitives = {
+        'void', 'int', 'char', 'short', 'long', 'float', 'double',
+        'signed', 'unsigned', 'const', 'volatile', 'static', 'extern',
+        'bool', 'size_t', 'ssize_t', 'ptrdiff_t', 'wchar_t',
+        '__cdecl', '__stdcall', '__fastcall', '__thiscall',
+    }
+
+    # Extract all potential type identifiers (words that aren't primitives)
+    # Match word boundaries but handle pointer/reference markers
+    words = re.findall(r'\b([A-Za-z_][A-Za-z0-9_]*)\b', signature)
+
+    for word in words:
+        # Skip primitives and common modifiers
+        if word.lower() in primitives or word in primitives:
+            continue
+        # Skip parameter names (heuristic: lowercase single words after type)
+        # Skip function names (contain FUN_ or are the declared name)
+        if 'FUN_' in word or word.startswith('param') or word.startswith('local'):
+            continue
+        # Skip common C types
+        if word in {'NULL', 'TRUE', 'FALSE', 'nullptr'}:
+            continue
+        # This might be a custom type
+        types_found.add(word)
+
+    return types_found
+
+
+def generate_prototypes_header_file(functions_list, range_key="", type_to_path_map=None):
+    """Generate a header file with function prototype declarations.
+
+    Args:
+        functions_list: List of function entries for this range
+        range_key: Optional range key for organization
+        type_to_path_map: Optional map of type names to header paths for includes
+
+    Returns:
+        Header file content as a string
+    """
+    content = []
+    content.append("#pragma once")
+
+    # Collect type dependencies from function signatures
+    needed_includes = set()
+    basetypes = get_types_needing_basetypes()
+
+    if functions_list and type_to_path_map:
+        all_types = set()
+        for func in functions_list:
+            sig_types = extract_types_from_signature(func['signature'])
+            all_types.update(sig_types)
+
+        for type_name in all_types:
+            # Check if base type needs basetypes.h
+            if type_name in basetypes:
+                needed_includes.add("system/basetypes.h")
+            # Check if we have a mapping to a specific header
+            if type_to_path_map and type_name in type_to_path_map:
+                needed_includes.add(type_to_path_map[type_name])
+
+    if needed_includes:
+        content.append("")
+        content.append("// Dependencies")
+        # Put basetypes.h first if present
+        if "system/basetypes.h" in needed_includes:
+            content.append('#include "system/basetypes.h"')
+            needed_includes.remove("system/basetypes.h")
+        for inc_path in sorted(needed_includes):
+            content.append('#include "%s"' % inc_path)
+
+    content.append("")
+    content.append("// =============================================================================")
+    if range_key:
+        content.append("// FUNCTION PROTOTYPES - Range %s" % range_key)
+    else:
+        content.append("// FUNCTION PROTOTYPES")
+    content.append("// =============================================================================")
+    content.append("")
+
+    if not functions_list:
+        content.append("// No functions in this range")
+        content.append("")
+        return "\n".join(content)
+
+    # Sort by address for consistent output
+    sorted_funcs = sorted(functions_list, key=lambda f: f['address'])
+
+    for func in sorted_funcs:
+        # The signature already includes the return type and parameters
+        # Just need to ensure it ends with a semicolon
+        sig = func['signature'].strip()
+        if not sig.endswith(';'):
+            sig += ';'
+        content.append(sig)
+
+    content.append("")
+    return "\n".join(content)
+
+
+def extract_function_references_from_constants(constants_list):
+    """Extract function names referenced in constant initializers.
+
+    Args:
+        constants_list: List of constant entries
+
+    Returns:
+        Set of function names (C-compatible, with underscores) referenced
+    """
+    referenced_funcs = set()
+
+    # Pattern to match function references in initializers
+    # Functions are referenced directly (not with & prefix) and typically have
+    # patterns like: module_file_cpp_FUN_XXXXXXXX or module_file_c_FUN_XXXXXXXX
+    # or module_file_cpp_ClassName_method_FUN_XXXXXXXX (class methods)
+    func_pattern = re.compile(r'\b([a-zA-Z_][a-zA-Z0-9_]*(?:_cpp_|_c_)[a-zA-Z0-9_]*FUN_[0-9a-fA-F]+)\b')
+
+    for const in constants_list:
+        initializer = const.get('initializer', '')
+        if initializer:
+            matches = func_pattern.findall(str(initializer))
+            for match in matches:
+                referenced_funcs.add(match)
+
+    return referenced_funcs
+
+
+def get_function_address_ranges(functions_list, referenced_funcs):
+    """Get the address ranges that contain the referenced functions.
+
+    Args:
+        functions_list: List of all function entries
+        referenced_funcs: Set of function names (C-compatible) that are referenced
+
+    Returns:
+        Set of range keys (e.g., "0x5B0000") that need to be included
+    """
+    needed_ranges = set()
+
+    # Build a map of c_name -> address for quick lookup
+    func_addr_map = {}
+    for func in functions_list:
+        func_addr_map[func['c_name']] = func['address']
+
+    for func_name in referenced_funcs:
+        addr_str = func_addr_map.get(func_name)
+        if addr_str:
+            # Parse address and compute range
+            addr_str_clean = addr_str.replace("0x", "").replace("0X", "")
+            try:
+                addr_val = int(addr_str_clean, 16)
+                range_start = (addr_val // 0x10000) * 0x10000
+                range_key = "0x%06X" % range_start
+                needed_ranges.add(range_key)
+            except ValueError:
+                pass
+
+    return needed_ranges

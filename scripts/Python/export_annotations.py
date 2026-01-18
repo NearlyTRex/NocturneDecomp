@@ -99,18 +99,29 @@ def get_export_categories():
         "pseudocode": export_pseudocode,
     }
 
-def export_selected_categories(currentProgram, folder, categories, export_categories, log_info, log_error):
+def export_selected_categories(currentProgram, folder, categories, export_categories, log_info, log_error, strict=False):
     for category in categories:
         category = category.strip().lower()
         if category in export_categories:
             log_info("Exporting category: %s" % category)
-            export_categories[category](currentProgram, folder)
+            # Pass strict to pseudocode export
+            if category == "pseudocode":
+                export_categories[category](currentProgram, folder, strict=strict)
+            else:
+                export_categories[category](currentProgram, folder)
         else:
             log_error("Unknown category: %s" % category)
             log_error("Available categories: %s" % ", ".join(sorted(export_categories.keys())))
 
-def run_export(currentProgram, script_args):
-    """Main export function that takes currentProgram and args"""
+def run_export(currentProgram, output_folder, categories=None, strict=False):
+    """Main export function that takes currentProgram and args.
+
+    Args:
+        currentProgram: The Ghidra program
+        output_folder: Directory to export annotations to
+        categories: List of category names to export, or None for all
+        strict: If True, raise error on compilation failures
+    """
 
     # Import after PyGhidra started
     from ghidra_annotations.annotations import export_annotations
@@ -121,24 +132,6 @@ def run_export(currentProgram, script_args):
 
     # Get export categories
     export_categories = get_export_categories()
-
-    # Parse arguments
-    if len(script_args) < 1:
-        log_error("Usage: export_annotations.py <project_dir> <project_name> <program_name> <output_folder> [categories]")
-        log_error("  output_folder: Directory to export annotations to")
-        log_error("  categories:    Comma-separated list of categories to export (optional)")
-        log_error("                 Use 'all' or omit to export everything")
-        log_error("")
-        log_error("Available categories: %s" % ", ".join(sorted(export_categories.keys())))
-        return
-
-    # Parse output folder and optional categories
-    output_folder = script_args[0]
-    categories = None
-    if len(script_args) >= 2:
-        categories_arg = script_args[1]
-        if categories_arg.lower() != "all":
-            categories = [c.strip() for c in categories_arg.split(",")]
 
     # Ensure output folder exists
     if not os.path.exists(output_folder):
@@ -155,13 +148,15 @@ def run_export(currentProgram, script_args):
         log_info("Categories: %s" % ", ".join(categories))
     else:
         log_info("Categories: all")
+    log_info("Strict mode: %s" % strict)
     log_info("=" * 60)
 
     # Export annotations
     if categories:
-        export_selected_categories(currentProgram, output_folder, categories, export_categories, log_info, log_error)
+        export_selected_categories(currentProgram, output_folder, categories, export_categories,
+                                   log_info, log_error, strict=strict)
     else:
-        export_annotations(currentProgram, output_folder)
+        export_annotations(currentProgram, output_folder, strict=strict)
 
     # Export complete
     log_info("=" * 60)
@@ -179,6 +174,7 @@ Examples:
   %(prog)s ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe
   %(prog)s ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe pseudocode
   %(prog)s ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe data_types,functions
+  %(prog)s ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe pseudocode --strict
 
 Available categories:
   """ + ", ".join(sorted(CATEGORY_NAMES))
@@ -189,6 +185,8 @@ Available categories:
     parser.add_argument("output_folder", help="Directory to export annotations to")
     parser.add_argument("categories", nargs="?", default="all",
                         help="Comma-separated list of categories to export (default: all)")
+    parser.add_argument("--strict", action="store_true",
+                        help="Exit with error if compilation fails (for pseudocode export)")
     args = parser.parse_args()
 
     # Import pyghidra
@@ -211,13 +209,14 @@ Available categories:
         project = pyghidra.open_project(args.project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as currentProgram:
 
-            # Build script args
-            script_args = [args.output_folder]
-            if args.categories != "all":
-                script_args.append(args.categories)
+            # Parse categories
+            categories = None
+            if args.categories.lower() != "all":
+                categories = [c.strip() for c in args.categories.split(",")]
 
             # Run export
-            run_export(currentProgram, script_args)
+            run_export(currentProgram, args.output_folder, categories=categories,
+                       strict=args.strict)
         project.close()
     except Exception as e:
         print("ERROR: %s" % str(e))

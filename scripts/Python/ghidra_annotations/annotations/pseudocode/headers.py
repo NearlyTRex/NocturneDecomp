@@ -169,13 +169,25 @@ def format_field_declaration(field_type, field_name):
     Returns:
         Formatted declaration string
     """
+    # Extract base type name (strip pointers and array dimensions)
+    base_type_name = field_type
+    if '[' in base_type_name:
+        base_type_name = base_type_name[:base_type_name.index('[')]
+    base_type_name = base_type_name.rstrip('*').strip()
+
+    # In C++, a field name cannot match its type name (shadows the type)
+    # Add underscore prefix if they match
+    actual_field_name = field_name
+    if field_name == base_type_name:
+        actual_field_name = "_%s" % field_name
+
     array_match = re.match(r'^(.+?)(\[.+\])$', field_type)
     if array_match:
         base_type = array_match.group(1)
         array_dims = array_match.group(2)
-        return "%s %s%s" % (base_type, field_name, array_dims)
+        return "%s %s%s" % (base_type, actual_field_name, array_dims)
     else:
-        return "%s %s" % (field_type, field_name)
+        return "%s %s" % (field_type, actual_field_name)
 
 
 def type_uses_basetypes(currentProgram, data_type, visited=None):
@@ -730,7 +742,7 @@ def generate_individual_function_definition_header(currentProgram, func_def, typ
             if hasattr(param, 'getDataType') and param.getDataType():
                 param_type = resolve_data_type_name_for_headers(currentProgram, param.getDataType())
             if hasattr(param, 'getName') and param.getName():
-                param_name = param.getName()
+                param_name = sanitize_c_identifier(param.getName())
             # Ensure unique parameter names to avoid "conflicting types" errors
             param_name = make_unique_param_name(param_name, used_param_names)
             params.append("%s %s" % (param_type, param_name))
@@ -878,7 +890,7 @@ def generate_function_definitions_header(currentProgram, function_definitions):
                 if hasattr(param, 'getDataType') and param.getDataType():
                     param_type = resolve_data_type_name_for_headers(currentProgram, param.getDataType())
                 if hasattr(param, 'getName') and param.getName():
-                    param_name = param.getName()
+                    param_name = sanitize_c_identifier(param.getName())
                 # Ensure unique parameter names to avoid "conflicting types" errors
                 param_name = make_unique_param_name(param_name, used_param_names)
                 params.append("%s %s" % (param_type, param_name))
@@ -1455,10 +1467,10 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// Generic pointer type")
     content.append("typedef void* pointer;")
     content.append("")
-    content.append("// Ghidra string types")
-    content.append("typedef char* TerminatedCString;")
-    content.append("typedef wchar_t* TerminatedUnicode;")
-    content.append("typedef char* string;  // Ghidra's generic string type")
+    content.append("// Ghidra string types (const for C++ string literal compatibility)")
+    content.append("typedef const char* TerminatedCString;")
+    content.append("typedef const wchar_t* TerminatedUnicode;")
+    content.append("typedef const char* string;  // Ghidra's generic string type")
     content.append("")
     content.append("// Extended precision float (x87 80-bit)")
     content.append("typedef long double float10;")

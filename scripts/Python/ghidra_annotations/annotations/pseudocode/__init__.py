@@ -101,7 +101,9 @@ from ghidra_annotations.annotations.pseudocode.cleanup import (
 from ghidra_annotations.annotations.pseudocode.compile import (
     verify_headers,
     verify_headers_after_export,
-    get_failed_headers_report
+    get_failed_headers_report,
+    verify_cpp_files,
+    verify_globals_after_export
 )
 from ghidra_annotations.annotations.pseudocode.transforms import (
     UNDEFINED_TYPE_REPLACEMENTS,

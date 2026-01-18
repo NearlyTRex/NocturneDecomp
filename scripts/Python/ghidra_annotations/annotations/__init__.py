@@ -44,7 +44,7 @@ def delete_annotations(currentProgram, path):
     delete_memory_layout(currentProgram, path)
     delete_pseudocode(currentProgram, path)
 
-def export_annotations(currentProgram, folder):
+def export_annotations(currentProgram, folder, strict=False):
     export_data_types(currentProgram, folder)
     export_functions(currentProgram, folder)
     export_comments(currentProgram, folder)
@@ -68,7 +68,7 @@ def export_annotations(currentProgram, folder):
     export_type_info(currentProgram, folder)
     export_vtables(currentProgram, folder)
     export_switch_tables(currentProgram, folder)
-    export_pseudocode(currentProgram, folder)
+    export_pseudocode(currentProgram, folder, strict=strict)
 
 def import_annotations(currentProgram, folder):
     import_memory_layout(currentProgram, folder)

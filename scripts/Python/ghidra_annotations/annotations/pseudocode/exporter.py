@@ -27,7 +27,9 @@ from ghidra_annotations.annotations.pseudocode.assembly import build_global_symb
 from ghidra_annotations.annotations.pseudocode.globals import (
     extract_globals_and_constants, generate_constants_file,
     generate_globals_file, generate_globals_header_file,
-    split_data_by_address_range, generate_globals_cpp_file
+    split_data_by_address_range, generate_globals_cpp_file,
+    extract_all_function_prototypes, generate_prototypes_header_file,
+    extract_function_references_from_constants, get_function_address_ranges
 )
 from ghidra_annotations.annotations.pseudocode.headers import (
     export_header_files, write_header_file
@@ -37,7 +39,9 @@ from ghidra_annotations.annotations.pseudocode.output import (
 )
 from ghidra_annotations.annotations.pseudocode.analysis import generate_analysis_report
 from ghidra_annotations.annotations.pseudocode.cleanup import delete_pseudocode
-from ghidra_annotations.annotations.pseudocode.compile import verify_headers_after_export
+from ghidra_annotations.annotations.pseudocode.compile import (
+    verify_headers_after_export, verify_globals_after_export
+)
 
 # Python-heavy processing imports (for main thread)
 from ghidra_annotations.annotations.pseudocode.functions import (
@@ -381,12 +385,14 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     }
 
 
-def export_pseudocode(currentProgram, path):
+def export_pseudocode(currentProgram, path, strict=False):
     """Export pseudocode for all functions in the program.
 
     Args:
         currentProgram: The Ghidra program
         path: Base directory for output files
+        strict: If True, raise RuntimeError when compilation fails.
+                If False (default), errors are logged to reports but export continues.
     """
     # Initialize profiling timer
     timer = PhaseTimer()
@@ -407,6 +413,7 @@ def export_pseudocode(currentProgram, path):
     pseudocode_dir = os.path.join(abs_path, "pseudocode")
     pseudocode_include_dir = os.path.join(pseudocode_dir, "include")
     pseudocode_src_dir = os.path.join(pseudocode_dir, "src")
+    reports_dir = os.path.join(abs_path, "reports")
 
     # Pre-load global callfixups.json BEFORE cleanup to preserve user modifications
     timer.start_phase("Preload callfixups")
@@ -479,6 +486,43 @@ def export_pseudocode(currentProgram, path):
     globals_list, constants_list = extract_globals_and_constants(currentProgram)
     timer.end_phase()
 
+    # Extract function prototypes for use in constants headers
+    timer.start_phase("Extract function prototypes")
+    log_info("Extracting function prototypes")
+    all_functions = extract_all_function_prototypes(currentProgram)
+    func_ranges = split_data_by_address_range(all_functions)
+    timer.end_phase()
+
+    # Generate function prototype headers (split by address range) in prototypes/
+    timer.start_phase("Generate prototype files")
+    prototypes_dir = os.path.join(pseudocode_include_dir, "prototypes")
+    make_dirs(prototypes_dir)
+
+    # Generate main prototypes.h in root include/ that includes all ranges
+    main_prototypes_content = []
+    main_prototypes_content.append("#pragma once")
+    main_prototypes_content.append("")
+    main_prototypes_content.append("// =============================================================================")
+    main_prototypes_content.append("// FUNCTION PROTOTYPES - Master Include")
+    main_prototypes_content.append("// =============================================================================")
+    main_prototypes_content.append("")
+    for range_key in sorted(func_ranges.keys()):
+        range_filename = "prototypes_%s.h" % range_key.replace("0x", "")
+        main_prototypes_content.append("#include \"prototypes/%s\"" % range_filename)
+
+        # Generate individual range file in prototypes/
+        range_content = generate_prototypes_header_file(func_ranges[range_key], range_key, type_to_path_map)
+        range_path = os.path.join(prototypes_dir, range_filename)
+        write_header_file(range_path, range_content)
+        log_info("Created prototypes range file: %s with %d functions" % (range_filename, len(func_ranges[range_key])))
+
+    # Write prototypes.h to root include/
+    main_prototypes_content.append("")
+    prototypes_path = os.path.join(pseudocode_include_dir, "prototypes.h")
+    write_header_file(prototypes_path, "\n".join(main_prototypes_content))
+    log_info("Created master prototypes file: %s" % prototypes_path)
+    timer.end_phase()
+
     # Generate constants files (split by address range) in constants/
     timer.start_phase("Generate constants files")
     if constants_list:
@@ -501,8 +545,16 @@ def export_pseudocode(currentProgram, path):
             range_filename = "constants_%s.h" % range_key.replace("0x", "")
             main_constants_content.append("#include \"constants/%s\"" % range_filename)
 
+            # Find which function prototypes are referenced by this constants range
+            referenced_funcs = extract_function_references_from_constants(const_ranges[range_key])
+            needed_proto_ranges = get_function_address_ranges(all_functions, referenced_funcs)
+            if referenced_funcs:
+                log_info("  Constants range %s references %d functions from %d prototype ranges" % (
+                    range_key, len(referenced_funcs), len(needed_proto_ranges)))
+
             # Generate individual range file in constants/
-            range_content = generate_constants_file(const_ranges[range_key], type_to_path_map)
+            range_content = generate_constants_file(
+                const_ranges[range_key], type_to_path_map, needed_proto_ranges)
             range_path = os.path.join(constants_dir, range_filename)
             write_header_file(range_path, range_content)
             log_info("Created constants range file: %s with %d constants" % (range_filename, len(const_ranges[range_key])))
@@ -532,7 +584,6 @@ def export_pseudocode(currentProgram, path):
         main_globals_content.append("// GLOBALS - Master Include")
         main_globals_content.append("// =============================================================================")
         main_globals_content.append("")
-
         for range_key in sorted(global_ranges.keys()):
             range_header_filename = "globals_%s.h" % range_key.replace("0x", "")
             main_globals_content.append("#include \"globals/%s\"" % range_header_filename)
@@ -568,10 +619,22 @@ def export_pseudocode(currentProgram, path):
 
     # Verify generated headers compile
     timer.start_phase("Verify headers compile")
-    headers_ok = verify_headers_after_export(pseudocode_dir)
-    if not headers_ok:
-        log_info("WARNING: Some headers failed to compile - check output above")
+    make_dirs(reports_dir)  # Ensure reports dir exists for compilation reports
+    headers_ok = verify_headers_after_export(pseudocode_dir, reports_dir=reports_dir)
     timer.end_phase()
+    if not headers_ok:
+        log_info("ERROR: Header compilation failed")
+        if strict:
+            raise RuntimeError("Header compilation failed. See reports/header_compilation.txt for details.")
+
+    # Verify globals cpp files compile
+    timer.start_phase("Verify globals compile")
+    globals_ok = verify_globals_after_export(pseudocode_dir, reports_dir=reports_dir)
+    timer.end_phase()
+    if not globals_ok:
+        log_info("ERROR: Globals compilation failed")
+        if strict:
+            raise RuntimeError("Globals compilation failed. See reports/globals_compilation.txt for details.")
 
     # Get program managers
     function_manager = currentProgram.getFunctionManager()
@@ -825,14 +888,38 @@ def export_pseudocode(currentProgram, path):
 
     timer.end_phase()
 
-    # Combine all errors
+    # Combine all errors and write to report file
     all_errors = decompile_errors + process_errors
     if all_errors:
-        log_info("Encountered %d errors during processing:" % len(all_errors))
+        log_info("Encountered %d errors during processing" % len(all_errors))
+        # Ensure reports directory exists
+        make_dirs(reports_dir)
+        # Write decompilation error report
+        error_report_path = os.path.join(reports_dir, "decompilation_errors.txt")
+        with open(error_report_path, 'w') as f:
+            f.write("=" * 80 + "\n")
+            f.write("DECOMPILATION ERROR REPORT\n")
+            f.write("=" * 80 + "\n\n")
+            f.write("Total errors: %d\n" % len(all_errors))
+            f.write("  - Decompilation failures: %d\n" % len(decompile_errors))
+            f.write("  - Processing failures: %d\n" % len(process_errors))
+            f.write("\n" + "-" * 80 + "\n")
+            f.write("DECOMPILATION ERRORS (%d)\n" % len(decompile_errors))
+            f.write("-" * 80 + "\n\n")
+            for err in decompile_errors:
+                f.write("%s\n" % err)
+            f.write("\n" + "-" * 80 + "\n")
+            f.write("PROCESSING ERRORS (%d)\n" % len(process_errors))
+            f.write("-" * 80 + "\n\n")
+            for err in process_errors:
+                f.write("%s\n" % err)
+        log_info("Error report written to: %s" % error_report_path)
+
+        # Show preview in console
         for err in all_errors[:10]:
             log_info("  %s" % err)
         if len(all_errors) > 10:
-            log_info("  ... and %d more errors" % (len(all_errors) - 10))
+            log_info("  ... and %d more errors (see report for full list)" % (len(all_errors) - 10))
 
     # Log per-phase timing breakdown
     log_info("")
@@ -885,8 +972,7 @@ def export_pseudocode(currentProgram, path):
     # Generate analysis report
     timer.start_phase("Generate analysis report")
     log_info("Generating analysis report...")
-    reports_dir = os.path.join(abs_path, "reports")
-    make_dirs(reports_dir)
+    make_dirs(reports_dir)  # Ensure reports dir exists (may already exist from error report)
     generate_analysis_report(pseudocode_src_dir, reports_dir)
     timer.end_phase()
 
