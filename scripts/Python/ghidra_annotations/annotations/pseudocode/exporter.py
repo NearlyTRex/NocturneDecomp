@@ -37,6 +37,7 @@ from ghidra_annotations.annotations.pseudocode.output import (
 )
 from ghidra_annotations.annotations.pseudocode.analysis import generate_analysis_report
 from ghidra_annotations.annotations.pseudocode.cleanup import delete_pseudocode
+from ghidra_annotations.annotations.pseudocode.compile import verify_headers_after_export
 
 # Python-heavy processing imports (for main thread)
 from ghidra_annotations.annotations.pseudocode.functions import (
@@ -563,6 +564,13 @@ def export_pseudocode(currentProgram, path):
                 log_info("Created globals cpp file: %s with %d globals" % (range_filename, len(global_ranges[range_key])))
             except Exception as e:
                 log_info("Failed to write %s: %s" % (range_filename, str(e)))
+    timer.end_phase()
+
+    # Verify generated headers compile
+    timer.start_phase("Verify headers compile")
+    headers_ok = verify_headers_after_export(pseudocode_dir)
+    if not headers_ok:
+        log_info("WARNING: Some headers failed to compile - check output above")
     timer.end_phase()
 
     # Get program managers

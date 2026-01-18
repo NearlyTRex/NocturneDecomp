@@ -98,6 +98,11 @@ from ghidra_annotations.annotations.pseudocode.analysis import (
 from ghidra_annotations.annotations.pseudocode.cleanup import (
     delete_pseudocode
 )
+from ghidra_annotations.annotations.pseudocode.compile import (
+    verify_headers,
+    verify_headers_after_export,
+    get_failed_headers_report
+)
 from ghidra_annotations.annotations.pseudocode.transforms import (
     UNDEFINED_TYPE_REPLACEMENTS,
     UNDEFINED_PTR_CAST_REPLACEMENTS,
