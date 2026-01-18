@@ -414,6 +414,7 @@ def export_pseudocode(currentProgram, path, strict=False):
     pseudocode_include_dir = os.path.join(pseudocode_dir, "include")
     pseudocode_src_dir = os.path.join(pseudocode_dir, "src")
     reports_dir = os.path.join(abs_path, "reports")
+    repo_dir = os.path.dirname(os.path.dirname(abs_path))
 
     # Pre-load global callfixups.json BEFORE cleanup to preserve user modifications
     timer.start_phase("Preload callfixups")
@@ -620,7 +621,7 @@ def export_pseudocode(currentProgram, path, strict=False):
     # Verify generated headers compile
     timer.start_phase("Verify headers compile")
     make_dirs(reports_dir)  # Ensure reports dir exists for compilation reports
-    headers_ok = verify_headers_after_export(pseudocode_dir, reports_dir=reports_dir)
+    headers_ok = verify_headers_after_export(pseudocode_dir, reports_dir=reports_dir, repo_dir=repo_dir)
     timer.end_phase()
     if not headers_ok:
         log_info("ERROR: Header compilation failed")
@@ -629,7 +630,7 @@ def export_pseudocode(currentProgram, path, strict=False):
 
     # Verify globals cpp files compile
     timer.start_phase("Verify globals compile")
-    globals_ok = verify_globals_after_export(pseudocode_dir, reports_dir=reports_dir)
+    globals_ok = verify_globals_after_export(pseudocode_dir, reports_dir=reports_dir, repo_dir=repo_dir)
     timer.end_phase()
     if not globals_ok:
         log_info("ERROR: Globals compilation failed")

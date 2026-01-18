@@ -128,7 +128,25 @@ def verify_headers(include_dir, compiler='g++', max_workers=4, skip_dirs=None, s
                 failed_headers.append((rel_path, error))
     return (passed, failed, failed_headers)
 
-def verify_headers_after_export(pseudocode_dir, compiler='g++', max_workers=4, reports_dir=None):
+def make_path_relative(path, base_dir):
+    """Make a path relative to base_dir if it's under base_dir."""
+    if base_dir and path.startswith(base_dir):
+        rel = os.path.relpath(path, base_dir)
+        return rel
+    return path
+
+
+def strip_paths_from_error(error_text, base_dir):
+    """Replace absolute paths in error text with paths relative to base_dir."""
+    if not error_text or not base_dir:
+        return error_text
+    # Replace the base_dir with empty string (making paths relative)
+    # Handle both with and without trailing slash
+    base_with_slash = base_dir.rstrip('/') + '/'
+    return error_text.replace(base_with_slash, '').replace(base_dir, '')
+
+
+def verify_headers_after_export(pseudocode_dir, compiler='g++', max_workers=4, reports_dir=None, repo_dir=None):
     """Verify headers after export, called from the export process.
 
     This is the main entry point for integration with export_pseudocode.
@@ -138,6 +156,7 @@ def verify_headers_after_export(pseudocode_dir, compiler='g++', max_workers=4, r
         compiler: Compiler to use
         max_workers: Number of parallel jobs
         reports_dir: Optional directory to write full compilation report
+        repo_dir: Optional repo root directory for making paths relative in reports
 
     Returns:
         True if all headers compiled successfully, False otherwise
@@ -178,12 +197,14 @@ def verify_headers_after_export(pseudocode_dir, compiler='g++', max_workers=4, r
     # Write full compilation report if reports_dir provided
     if reports_dir:
         report_path = os.path.join(reports_dir, "header_compilation.txt")
+        # Make paths relative for report
+        include_dir_display = make_path_relative(include_dir, repo_dir)
         with open(report_path, 'w') as f:
             f.write("=" * 80 + "\n")
             f.write("HEADER COMPILATION REPORT\n")
             f.write("=" * 80 + "\n\n")
             f.write("Compiler: %s\n" % compiler)
-            f.write("Include directory: %s\n\n" % include_dir)
+            f.write("Include directory: %s\n\n" % include_dir_display)
             f.write("Summary: %d passed, %d failed out of %d total (%.1f%% success)\n\n" % (
                 passed, failed, total, (passed * 100.0 / total) if total > 0 else 0))
             if failed > 0:
@@ -194,7 +215,9 @@ def verify_headers_after_export(pseudocode_dir, compiler='g++', max_workers=4, r
                     f.write("FILE: %s\n" % rel_path)
                     f.write("-" * 40 + "\n")
                     if error:
-                        f.write("%s\n" % error)
+                        # Strip absolute paths from error output
+                        error_display = strip_paths_from_error(error, repo_dir)
+                        f.write("%s\n" % error_display)
                     else:
                         f.write("(no error output)\n")
                     f.write("\n")
@@ -379,7 +402,7 @@ def verify_cpp_files(src_dir, include_dir, compiler='g++', max_workers=4, skip_d
                 failed_files.append((rel_path, error))
     return (passed, failed, failed_files)
 
-def verify_globals_after_export(pseudocode_dir, compiler='g++', max_workers=4, reports_dir=None):
+def verify_globals_after_export(pseudocode_dir, compiler='g++', max_workers=4, reports_dir=None, repo_dir=None):
     """Verify globals cpp files after export.
 
     Args:
@@ -387,6 +410,7 @@ def verify_globals_after_export(pseudocode_dir, compiler='g++', max_workers=4, r
         compiler: Compiler to use
         max_workers: Number of parallel jobs
         reports_dir: Optional directory to write full compilation report
+        repo_dir: Optional repo root directory for making paths relative in reports
 
     Returns:
         True if all globals compiled successfully, False otherwise
@@ -430,13 +454,16 @@ def verify_globals_after_export(pseudocode_dir, compiler='g++', max_workers=4, r
     # Write full compilation report if reports_dir provided
     if reports_dir:
         report_path = os.path.join(reports_dir, "globals_compilation.txt")
+        # Make paths relative for report
+        globals_src_dir_display = make_path_relative(globals_src_dir, repo_dir)
+        include_dir_display = make_path_relative(include_dir, repo_dir)
         with open(report_path, 'w') as f:
             f.write("=" * 80 + "\n")
             f.write("GLOBALS COMPILATION REPORT\n")
             f.write("=" * 80 + "\n\n")
             f.write("Compiler: %s\n" % compiler)
-            f.write("Source directory: %s\n" % globals_src_dir)
-            f.write("Include directory: %s\n\n" % include_dir)
+            f.write("Source directory: %s\n" % globals_src_dir_display)
+            f.write("Include directory: %s\n\n" % include_dir_display)
             f.write("Summary: %d passed, %d failed out of %d total (%.1f%% success)\n\n" % (
                 passed, failed, total, (passed * 100.0 / total) if total > 0 else 0))
             if failed > 0:
@@ -447,7 +474,9 @@ def verify_globals_after_export(pseudocode_dir, compiler='g++', max_workers=4, r
                     f.write("FILE: %s\n" % rel_path)
                     f.write("-" * 40 + "\n")
                     if error:
-                        f.write("%s\n" % error)
+                        # Strip absolute paths from error output
+                        error_display = strip_paths_from_error(error, repo_dir)
+                        f.write("%s\n" % error_display)
                     else:
                         f.write("(no error output)\n")
                     f.write("\n")
