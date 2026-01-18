@@ -10,5 +10,6 @@
 // =============================================================================
 
 extern CVector3f g_ShatterVertexArray[3000];
+extern CVector3f g_DeformableModelRayHitNormal;
 extern CDeformableModel g_DeformableModelPool[64];
 

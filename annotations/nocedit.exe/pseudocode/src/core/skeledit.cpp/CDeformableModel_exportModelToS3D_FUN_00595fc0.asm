@@ -152,7 +152,7 @@ section .text
     PUSH 0x64d67a                       ; 00596057 | = "Export capped faces?"
         ;   Label: LAB_00596057
     MOV EDI,dword ptr [0x00678a60]      ; 0059605c | g_CEditorToolsPtr
-    PUSH EDI                            ; 00596062 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00596062 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00596063
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00596068
@@ -475,7 +475,7 @@ section .text
         ;   Label: LAB_005963d8
     PUSH 0x64d632                       ; 005963d9 | = "Can't create %s"
     MOV EBX,dword ptr [0x00678a60]      ; 005963de | g_CEditorToolsPtr
-    PUSH EBX                            ; 005963e4 | g_CEditorToolsPtr
+    PUSH EBX                            ; 005963e4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005963e5
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005963ea

@@ -11,7 +11,7 @@
 ;   TerminatedCString s_actionPending_d_stranger_00653aac
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   undefined4 g_CAmmoBoxClassInfo.name_hash
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -63,7 +63,7 @@ section .text
     PUSH ECX                            ; 005c1f61
     PUSH 0x653aac                       ; 005c1f62 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x00678a60]      ; 005c1f67 | g_CEditorToolsPtr
-    PUSH EDI                            ; 005c1f6d | g_CEditorToolsPtr
+    PUSH EDI                            ; 005c1f6d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005c1f6e
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005c1f73

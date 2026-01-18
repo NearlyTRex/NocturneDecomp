@@ -363,8 +363,8 @@ section .text
         ;   XREF to: 0056787e (UNCONDITIONAL_JUMP)  ; LAB_0056787e
     PUSH 0x644196                       ; 00567b2b | = "Nothing to choose from!"
         ;   Label: LAB_00567b2b
-    MOV EBX,dword ptr [0x00678a60]      ; 00567b30 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00567b36 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00567b30 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 00567b36 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00567b37
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00567b3c

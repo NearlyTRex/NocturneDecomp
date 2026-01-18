@@ -15,7 +15,7 @@
 ;   TerminatedCString s_core_skeledit_cpp_00649d51
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   TerminatedCString s_skeledit_ini_00681868
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined1 DAT_03670848
 ;   undefined1 DAT_03670849
 ;   undefined1 DAT_03670950
@@ -243,7 +243,7 @@ section .text
     PUSH 0x681868                       ; 00589950 | = "skeledit.ini"
     PUSH 0x649d3b                       ; 00589955 | = "Deleting old %s file."
     MOV ECX,dword ptr [0x00678a60]      ; 0058995a | g_CEditorToolsPtr
-    PUSH ECX                            ; 00589960 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00589960 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00589961
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00589966

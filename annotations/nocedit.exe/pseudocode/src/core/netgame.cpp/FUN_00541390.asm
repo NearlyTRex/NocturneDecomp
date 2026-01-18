@@ -345,7 +345,7 @@ section .text
     PUSH 0x63d983                       ; 005416bd | = "You have been disconnected from the g..."
         ;   Label: LAB_005416bd
     MOV ECX,dword ptr [0x00678a60]      ; 005416c2 | g_CEditorToolsPtr
-    PUSH ECX                            ; 005416c8 | g_CEditorToolsPtr
+    PUSH ECX                            ; 005416c8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 005416c9
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 005416ce
@@ -604,7 +604,7 @@ section .text
     PUSH EDI                            ; 00541970
     PUSH 0x63da25                       ; 00541971 | = "Loading %s"
     MOV EAX,[0x00678a60]                ; 00541976 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0054197b | g_CEditorToolsPtr
+    PUSH EAX                            ; 0054197b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0054197c
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00541981
@@ -784,7 +784,7 @@ section .text
     PUSH EBX                            ; 00541b41
     PUSH 0x63da30                       ; 00541b42 | = "Loading %s"
     MOV ECX,dword ptr [0x00678a60]      ; 00541b47 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00541b4d | g_CEditorToolsPtr
+    PUSH ECX                            ; 00541b4d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00541b4e
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00541b53
@@ -881,7 +881,7 @@ section .text
     PUSH 0x2f7c640                      ; 00541c40 | DAT_02f7c640
     PUSH 0x63da3b                       ; 00541c45 | = "Send chat"
     MOV EAX,[0x00678a60]                ; 00541c4a | g_CEditorToolsPtr
-    PUSH EAX                            ; 00541c4f | g_CEditorToolsPtr
+    PUSH EAX                            ; 00541c4f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 00541c50
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 00541c55

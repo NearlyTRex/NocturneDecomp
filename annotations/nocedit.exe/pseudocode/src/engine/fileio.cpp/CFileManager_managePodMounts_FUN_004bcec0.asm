@@ -25,7 +25,7 @@
 ;   TerminatedCString s_Applying_changes_to_POD__006293a9
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
 ;   undefined4 DAT_030e5224
 ;
@@ -250,8 +250,8 @@ section .text
         ;   XREF to: 004bcfde (UNCONDITIONAL_JUMP)  ; LAB_004bcfde
     PUSH 0x6293a9                       ; 004bd0bf | = "Applying changes to POD.INI"
         ;   Label: LAB_004bd0bf
-    MOV ECX,dword ptr [0x00678a60]      ; 004bd0c4 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bd0ca | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004bd0c4 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bd0ca | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bd0cb
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004bd0d0
@@ -293,7 +293,7 @@ section .text
     PUSH 0x62759a                       ; 004bd12c | = "Remounting all pods..."
         ;   Label: LAB_004bd12c
     MOV ESI,dword ptr [0x00678a60]      ; 004bd131 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bd137 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bd137 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bd138
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004bd13d

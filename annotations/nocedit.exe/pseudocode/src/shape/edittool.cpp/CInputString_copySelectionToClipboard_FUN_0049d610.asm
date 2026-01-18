@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
@@ -44,7 +44,7 @@ section .text
     PUSH EAX                            ; 0049d638
     MOV ESI,dword ptr [0x00678a60]      ; 0049d639 | g_CEditorToolsPtr
     MOV CL,byte ptr [EBX]               ; 0049d63f
-    PUSH ESI                            ; 0049d641 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0049d641 | g_CEditorToolsInstance
     MOV dword ptr [ESP + 0x10],ECX      ; 0049d642
     MOV byte ptr [EBX],0x0              ; 0049d646
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 0049d649

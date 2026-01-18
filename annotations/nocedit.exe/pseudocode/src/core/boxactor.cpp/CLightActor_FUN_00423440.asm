@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Enter_FOV_mm_for_CLightA_006169de
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   undefined4 g_CLightActorClassInfo.name_hash
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -57,7 +57,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 004234a0
     PUSH EAX                            ; 004234a4
     MOV EDI,dword ptr [0x00678a60]      ; 004234a5 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004234ab | g_CEditorToolsPtr
+    PUSH EDI                            ; 004234ab | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 004234ac
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 004234b1

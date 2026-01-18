@@ -135,7 +135,7 @@ section .text
     PUSH 0x618a29                       ; 0043dedb | = "models"
     PUSH 0x618a30                       ; 0043dee0 | = "Load cloth file"
     MOV ECX,dword ptr [0x00678a60]      ; 0043dee5 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0043deeb | g_CEditorToolsPtr
+    PUSH ECX                            ; 0043deeb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0043deec
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0043def1
@@ -169,7 +169,7 @@ section .text
     PUSH 0x618a44                       ; 0043df31 | = "models"
     PUSH 0x618a4b                       ; 0043df36 | = "Save cloth file"
     MOV EDX,dword ptr [0x00678a60]      ; 0043df3b | g_CEditorToolsPtr
-    PUSH EDX                            ; 0043df41 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0043df41 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 0043df42
         ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 0043df47
@@ -198,7 +198,7 @@ section .text
     PUSH 0x618a61                       ; 0043df75 | = "models"
     PUSH 0x618a68                       ; 0043df7a | = "Select deformable model"
     MOV EAX,[0x00678a60]                ; 0043df7f | g_CEditorToolsPtr
-    PUSH EAX                            ; 0043df84 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0043df84 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0043df85
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0043df8a
@@ -239,7 +239,7 @@ section .text
     PUSH ESI                            ; 0043dfef
     PUSH 0x618a80                       ; 0043dff0 | = "Enter transparency (0..1.0)"
     MOV EDI,dword ptr [0x00678a60]      ; 0043dff5 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0043dffb | g_CEditorToolsPtr
+    PUSH EDI                            ; 0043dffb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0043dffc
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0043e001
@@ -253,7 +253,7 @@ section .text
     PUSH 0x618aa2                       ; 0043e018 | = "models"
     PUSH 0x618aa9                       ; 0043e01d | = "Create cloth file from KFM"
     MOV ECX,dword ptr [0x00678a60]      ; 0043e022 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0043e028 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0043e028 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0043e029
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0043e02e

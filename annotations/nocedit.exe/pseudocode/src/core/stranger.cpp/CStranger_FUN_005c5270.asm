@@ -34,7 +34,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   undefined4 g_CDynamiteClassInfo.name_hash
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CMeleeClassInfo.name_hash
 ;   CDemonMission g_CDemonMissionInstance
 ;   ... and 1 more
@@ -864,8 +864,8 @@ section .text
     PUSH 0x13b4                         ; 005c5aed
     PUSH EAX                            ; 005c5af2
     PUSH 0x653da3                       ; 005c5af3 | = "actionPending = %d\nstranger.cpp line %d"
-    MOV ECX,dword ptr [0x00678a60]      ; 005c5af8 | g_CEditorToolsPtr
-    PUSH ECX                            ; 005c5afe | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 005c5af8 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 005c5afe | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005c5aff
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005c5b04

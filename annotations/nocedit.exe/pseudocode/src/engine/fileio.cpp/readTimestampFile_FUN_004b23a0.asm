@@ -26,7 +26,7 @@
 ;   TerminatedCString s_engine_fileio_cpp_006261ad
 ;   TerminatedCString s_Out_of_memory_reading_s__006261c2
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgets_FUN_005fefd0
@@ -101,7 +101,7 @@ section .text
     PUSH 0x62616b                       ; 004b2456 | = "Error reading %s"
     MOV dword ptr [EAX],0x0             ; 004b245b
     MOV EAX,[0x00678a60]                ; 004b2461 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004b2466 | g_CEditorToolsPtr
+    PUSH EAX                            ; 004b2466 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b2467
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b246c
@@ -169,7 +169,7 @@ section .text
     PUSH EBP                            ; 004b251c
     PUSH 0x626191                       ; 004b251d | = "Error parsing %s, record %d"
     MOV EAX,[0x00678a60]                ; 004b2522 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004b2527 | g_CEditorToolsPtr
+    PUSH EAX                            ; 004b2527 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b2528
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004b252d
@@ -226,7 +226,7 @@ section .text
     PUSH ESI                            ; 004b25b5
     PUSH 0x6261c2                       ; 004b25b6 | = "Out of memory reading %s record %d"
     MOV EDI,dword ptr [0x00678a60]      ; 004b25bb | g_CEditorToolsPtr
-    PUSH EDI                            ; 004b25c1 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004b25c1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b25c2
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     MOV EAX,0xffffffff                  ; 004b25c7

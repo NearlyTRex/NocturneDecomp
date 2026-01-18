@@ -403,7 +403,7 @@ section .text
     ADD ESP,0x4                         ; 00494ad6
     PUSH 0x6228a9                       ; 00494ad9 | = "Converting .GEO file to version 4"
     MOV EDI,dword ptr [0x00678a60]      ; 00494ade | g_CEditorToolsPtr
-    PUSH EDI                            ; 00494ae4 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00494ae4 | g_CEditorToolsInstance
     XOR EBX,EBX                         ; 00494ae5
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 00494ae7
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
@@ -650,7 +650,7 @@ section .text
     SUB ESP,0x4                         ; 00494d43
     MOV ESI,dword ptr [0x00678a60]      ; 00494d46 | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00494d4c
-    PUSH ESI                            ; 00494d4f | g_CEditorToolsPtr
+    PUSH ESI                            ; 00494d4f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00494d50
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 00494d55
@@ -661,9 +661,9 @@ section .text
     MOV dword ptr [ESP + 0x30],EAX      ; 00494d63
     JMP 0x00494afc                      ; 00494d67
         ;   XREF to: 00494afc (UNCONDITIONAL_JUMP)  ; LAB_00494afc
-    MOV EBX,dword ptr [0x00678a60]      ; 00494d6c | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00494d6c | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_00494d6c
-    PUSH EBX                            ; 00494d72 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00494d72 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 00494d73
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00494d78

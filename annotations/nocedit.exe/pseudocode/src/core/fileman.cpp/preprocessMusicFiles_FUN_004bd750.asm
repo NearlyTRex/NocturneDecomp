@@ -26,7 +26,7 @@
 ;   TerminatedCString s_sfx_0062957c
 ;   TerminatedCString s_Computing_length_of_s_00629580
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -178,8 +178,8 @@ section .text
         ;   Label: LAB_004bd8ad
     PUSH EAX                            ; 004bd8af
     PUSH 0x629580                       ; 004bd8b0 | = "Computing length of %s"
-    MOV ECX,dword ptr [0x00678a60]      ; 004bd8b5 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bd8bb | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004bd8b5 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bd8bb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bd8bc
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004bd8c1

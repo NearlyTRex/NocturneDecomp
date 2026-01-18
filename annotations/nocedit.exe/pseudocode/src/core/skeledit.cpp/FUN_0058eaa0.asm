@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Optimized_deformable_mod_0064b09a
 ;   double DOUBLE_0064b0c2 = 0.0100000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stack.c_stack_probe_FUN_005ff9f3
@@ -45,7 +45,7 @@ section .text
     AND ESP,0xfffffff8                  ; 0058eab3
     PUSH 0x64b072                       ; 0058eab6 | = "Optimizing deformable model vertices..."
     MOV EDX,dword ptr [0x00678a60]      ; 0058eabb | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058eac1 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058eac1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058eac2
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0058eac7
@@ -103,7 +103,7 @@ section .text
     PUSH 0x64b09a                       ; 0058eb44 | = "Optimized deformable model vertices OK"
         ;   Label: LAB_0058eb44
     MOV ECX,dword ptr [0x00678a60]      ; 0058eb49 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0058eb4f | g_CEditorToolsPtr
+    PUSH ECX                            ; 0058eb4f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058eb50
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0058eb55

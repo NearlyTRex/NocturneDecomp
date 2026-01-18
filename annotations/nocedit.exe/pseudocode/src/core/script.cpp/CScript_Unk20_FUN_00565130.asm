@@ -19,7 +19,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   undefined4 DAT_0068105c
 ;   char[256] g_CharacterClassificationTable
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CEdButton* g_ActiveButton
 ;   int g_GlobalDeltaTimeInt
 ;   int g_MouseX
@@ -390,7 +390,7 @@ section .text
     PUSH EAX                            ; 00565435
     PUSH 0x643e4f                       ; 00565436 | = "Enter line number"
     MOV EDI,dword ptr [0x00678a60]      ; 0056543b | g_CEditorToolsPtr
-    PUSH EDI                            ; 00565441 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00565441 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 00565442
         ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 00565447
@@ -441,8 +441,8 @@ section .text
     PUSH 0x64                           ; 005654b7
     PUSH 0x310fd58                      ; 005654b9 | DAT_0310fd58
     PUSH 0x643e61                       ; 005654be | = "Find"
-    MOV EDX,dword ptr [0x00678a60]      ; 005654c3 | g_CEditorToolsPtr
-    PUSH EDX                            ; 005654c9 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 005654c3 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 005654c9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 005654ca
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 005654cf
@@ -514,8 +514,8 @@ section .text
     PUSH 0x64                           ; 0056558e
     PUSH 0x310fd58                      ; 00565590 | DAT_0310fd58
     PUSH 0x643e7d                       ; 00565595 | = "Find"
-    MOV EAX,[0x00678a60]                ; 0056559a | g_CEditorToolsPtr
-    PUSH EAX                            ; 0056559f | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0056559a | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0056559f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 005655a0
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 005655a5

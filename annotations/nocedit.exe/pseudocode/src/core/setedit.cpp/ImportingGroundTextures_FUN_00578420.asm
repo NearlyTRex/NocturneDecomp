@@ -27,7 +27,7 @@
 ;   TerminatedCString s_Imported_texture_ground__00646925
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char[256] g_CharacterClassificationTable
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -54,8 +54,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1a0]     ; 00578428
     PUSH EDX                            ; 0057842f
     PUSH 0x64688c                       ; 00578430 | = "Importing texture ground type list fr..."
-    MOV ECX,dword ptr [0x00678a60]      ; 00578435 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0057843b | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00578435 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057843b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0057843c
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00578441
@@ -259,7 +259,7 @@ section .text
     PUSH ESI                            ; 00578605
     PUSH 0x646925                       ; 00578606 | = "Imported texture ground type list fro..."
     MOV EDI,dword ptr [0x00678a60]      ; 0057860b | g_CEditorToolsPtr
-    PUSH EDI                            ; 00578611 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00578611 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00578612
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00578617

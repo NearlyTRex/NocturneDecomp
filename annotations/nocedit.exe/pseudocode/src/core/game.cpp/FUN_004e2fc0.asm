@@ -14,7 +14,7 @@
 ;   undefined4 s_.0.105_0067b86c
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CNetGame* g_CNetGameInstance = 02f7c740
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char g_CurrentSaveFile
 ;   CDemonMission g_CDemonMissionInstance
 ;   undefined4 DAT_02f7c740
@@ -45,7 +45,7 @@ section .text
     PUSH 0x62d3a7                       ; 004e2fd8 | = "Enter Server IP"
     MOV EDX,dword ptr [0x00678a60]      ; 004e2fdd | g_CEditorToolsPtr
     MOV ESI,0x67b868                    ; 004e2fe3 | = "10.0.0.105"
-    PUSH EDX                            ; 004e2fe8 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004e2fe8 | g_CEditorToolsInstance
     MOVSD.REP ES:EDI,ESI                ; 004e2fe9 | = "10.0.0.105" | s_.0.105_0067b86c
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004e2feb
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)

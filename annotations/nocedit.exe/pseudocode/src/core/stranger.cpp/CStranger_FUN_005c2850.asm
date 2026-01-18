@@ -54,7 +54,7 @@
 ;   CConsole g_ConsolePtr
 ;   undefined4 g_CCrateClassInfo.name_hash
 ;   undefined4 g_CActorDestinationClassInfo.name_hash
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_list_ptr
 ;   ... and 2 more
@@ -322,7 +322,7 @@ section .text
     PUSH EDX                            ; 005c2b41
     PUSH 0x653b64                       ; 005c2b42 | = "actionPending = %d\nstranger.cpp line %d"
     MOV ESI,dword ptr [0x00678a60]      ; 005c2b47 | g_CEditorToolsPtr
-    PUSH ESI                            ; 005c2b4d | g_CEditorToolsPtr
+    PUSH ESI                            ; 005c2b4d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005c2b4e
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005c2b53

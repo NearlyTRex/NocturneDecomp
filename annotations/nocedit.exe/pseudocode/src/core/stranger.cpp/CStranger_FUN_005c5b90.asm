@@ -19,7 +19,7 @@
 ;   double DOUBLE_00653e6c = 0.999900000000000
 ;   double DOUBLE_00653e74 = 0.990000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_0042e840
@@ -109,7 +109,7 @@ section .text
     PUSH EDX                            ; 005c5c21
     PUSH 0x653e19                       ; 005c5c22 | = "eDoorMoveNone returned by checkDoorOp..."
     MOV ESI,dword ptr [0x00678a60]      ; 005c5c27 | g_CEditorToolsPtr
-    PUSH ESI                            ; 005c5c2d | g_CEditorToolsPtr
+    PUSH ESI                            ; 005c5c2d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005c5c2e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005c5c33
@@ -141,8 +141,8 @@ section .text
     PUSH EDI                            ; 005c5c73
         ;   Label: LAB_005c5c73
     PUSH 0x653ddc                       ; 005c5c74 | = "eDoorMoveNone returned by checkDoorOp..."
-    MOV EAX,[0x00678a60]                ; 005c5c79 | g_CEditorToolsPtr
-    PUSH EAX                            ; 005c5c7e | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 005c5c79 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 005c5c7e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005c5c7f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005c5c84

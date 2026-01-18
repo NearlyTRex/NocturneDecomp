@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Sound_files_used_0063d0e0
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CScript* g_CScriptPtr = 0310f858
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
@@ -54,8 +54,8 @@ section .text
     JNZ 0x0053ecc8                      ; 0053eca9
         ;   XREF to: 0053ecc8 (CONDITIONAL_JUMP)  ; LAB_0053ecc8
     PUSH 0x63d07f                       ; 0053ecab | = "Setting up actors..."
-    MOV ECX,dword ptr [0x00678a60]      ; 0053ecb0 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053ecb6 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0053ecb0 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053ecb6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053ecb7
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053ecbc
@@ -65,8 +65,8 @@ section .text
     ADD ESP,0x4                         ; 0053ecc5
     PUSH 0x63d094                       ; 0053ecc8 | = "Finding sound files in mission..."
         ;   Label: LAB_0053ecc8
-    MOV EBX,dword ptr [0x00678a60]      ; 0053eccd | g_CEditorToolsPtr
-    PUSH EBX                            ; 0053ecd3 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0053eccd | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0053ecd3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053ecd4
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     MOV EDI,dword ptr [EDI + 0x548]     ; 0053ecd9
@@ -138,8 +138,8 @@ section .text
         ;   XREF to: 0053ecea (CONDITIONAL_JUMP)  ; LAB_0053ecea
     PUSH 0x63d0bf                       ; 0053ed8e | = "Finding sound files in script..."
         ;   Label: LAB_0053ed8e
-    MOV ECX,dword ptr [0x00678a60]      ; 0053ed93 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053ed99 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0053ed93 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053ed99 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053ed9a
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053ed9f

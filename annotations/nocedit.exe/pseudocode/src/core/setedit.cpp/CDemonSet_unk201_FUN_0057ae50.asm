@@ -29,7 +29,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   void* PTR_DAT_00681ab8 = 03f48f84
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   ... and 20 more
 ;
 ; Called Functions:
@@ -429,7 +429,7 @@ section .text
     PUSH EAX                            ; 0057b28f | DAT_03f48f9c
     PUSH 0x647760                       ; 0057b290 | = "Edit FOV"
     MOV ESI,dword ptr [0x00678a60]      ; 0057b295 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0057b29b | g_CEditorToolsPtr
+    PUSH ESI                            ; 0057b29b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057b29c
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057b2a1
@@ -448,8 +448,8 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 0057b2c0
     PUSH EAX                            ; 0057b2c7
     PUSH 0x647769                       ; 0057b2c8 | = "Edit light name"
-    MOV EAX,[0x00678a60]                ; 0057b2cd | g_CEditorToolsPtr
-    PUSH EAX                            ; 0057b2d2 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057b2cd | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057b2d2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0057b2d3
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0057b2d8

@@ -19,7 +19,7 @@
 ;   TerminatedCString s_core_fileman_cpp_00629763
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char* g_CurrentDebugFilename = 0067d200
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_CurrentDebugLine
@@ -46,8 +46,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 004be073
     PUSH ESI                            ; 004be077
     PUSH 0x6296fa                       ; 004be078 | = "Adding files for %s to extract list..."
-    MOV EDX,dword ptr [0x00678a60]      ; 004be07d | g_CEditorToolsPtr
-    PUSH EDX                            ; 004be083 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004be07d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004be083 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004be084
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004be089

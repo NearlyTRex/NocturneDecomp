@@ -19,7 +19,7 @@
 ;   int g_WindowWidth = 0x140
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CBitFont* g_EditorFont
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_MouseX
 ;   int g_MouseY
 ;   int g_ClipLeft
@@ -65,8 +65,8 @@ section .text
     SAR EAX,0x2                         ; 005107eb
     PUSH 0x2c                           ; 005107ee
     PUSH EAX                            ; 005107f0
-    MOV ECX,dword ptr [0x00678a60]      ; 005107f1 | g_CEditorToolsPtr
-    PUSH ECX                            ; 005107f7 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 005107f1 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 005107f7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890 ; 005107f8
         ;   XREF to: 004a0890 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 005107fd
@@ -101,7 +101,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EBX       ; 00510854
     MOV EDI,dword ptr [0x00678a60]      ; 00510858 | g_CEditorToolsPtr
         ;   Label: LAB_00510858
-    PUSH EDI                            ; 0051085e | g_CEditorToolsPtr
+    PUSH EDI                            ; 0051085e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80 ; 0051085f
         ;   XREF to: 004a0f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00510864
@@ -248,9 +248,9 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005109f0
         ;   Label: LAB_005109f0
     MOV dword ptr [EAX],ESI             ; 005109f3
-    MOV EBX,dword ptr [0x00678a60]      ; 005109f5 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 005109f5 | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_005109f5
-    PUSH EBX                            ; 005109fb | g_CEditorToolsPtr
+    PUSH EBX                            ; 005109fb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005109fc
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00510a01

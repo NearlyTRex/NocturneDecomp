@@ -407,7 +407,7 @@ section .text
         ;   XREF to: 0043dbdf (CONDITIONAL_JUMP)  ; LAB_0043dbdf
     PUSH 0x6188c1                       ; 0043d91c | = "Can't lock this many vertices!"
     MOV EDI,dword ptr [0x00678a60]      ; 0043d921 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0043d927 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0043d927 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0043d928
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0043d92d
@@ -470,16 +470,16 @@ section .text
         ;   XREF to: 00402130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402130(int x_pos, int y_pos, char * text)
     ADD ESP,0xc                         ; 0043d9d3
     PUSH 0x0                            ; 0043d9d6
-    MOV EDX,dword ptr [0x00678a60]      ; 0043d9d8 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0043d9de | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0043d9d8 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0043d9de | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0043d9df
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 0043d9e4
     CMP dword ptr [ESP + 0x60],0x0      ; 0043d9e7
     JL 0x0043da50                       ; 0043d9ec
         ;   XREF to: 0043da50 (CONDITIONAL_JUMP)  ; LAB_0043da50
-    MOV EBX,dword ptr [0x00678a60]      ; 0043d9ee | g_CEditorToolsPtr
-    PUSH EBX                            ; 0043d9f4 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0043d9ee | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0043d9f4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043d9f5
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043d9fa

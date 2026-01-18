@@ -12,7 +12,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   int g_ConfirmNewActorNames = 0x1
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
@@ -65,7 +65,7 @@ section .text
     PUSH EAX                            ; 00537455
     PUSH 0x63b7b6                       ; 00537456 | = "Confirm new actor name"
     MOV ECX,dword ptr [0x00678a60]      ; 0053745b | g_CEditorToolsPtr
-    PUSH ECX                            ; 00537461 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00537461 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 00537462
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 00537467

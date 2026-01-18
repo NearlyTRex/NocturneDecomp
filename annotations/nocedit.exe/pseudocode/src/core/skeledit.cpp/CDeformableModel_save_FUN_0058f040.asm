@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Saved_model_to_s_OK_0064b1da
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonPod g_CDemonPodInstance
@@ -51,8 +51,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0058f04d
     PUSH EBX                            ; 0058f051
     PUSH 0x64b160                       ; 0058f052 | = "Saving model to %s..."
-    MOV EDX,dword ptr [0x00678a60]      ; 0058f057 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058f05d | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0058f057 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058f05d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058f05e
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058f063
@@ -73,7 +73,7 @@ section .text
     PUSH 0x64b176                       ; 0058f086 | = "models"
     PUSH 0x64a0c6                       ; 0058f08b | = "%s\\%s already exists in a mounted po..."
     MOV ESI,dword ptr [0x00678a60]      ; 0058f090 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0058f096 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0058f096 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0058f097
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 0058f09c
@@ -103,8 +103,8 @@ section .text
     ADD ESP,0xc                         ; 0058f0d6
     PUSH EBX                            ; 0058f0d9
     PUSH 0x64b1da                       ; 0058f0da | = "Saved model to %s OK"
-    MOV EDX,dword ptr [0x00678a60]      ; 0058f0df | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058f0e5 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0058f0df | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058f0e5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058f0e6
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058f0eb

@@ -32,7 +32,7 @@
 ;   TerminatedCString s_rt_00626293
 ;   TerminatedCString s_Can_t_access_s_00626296
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char[264] g_VersionControlDirectory
 ;   char* g_CurrentFilename
 ;   ... and 1 more
@@ -221,7 +221,7 @@ section .text
     PUSH EAX                            ; 004b2a32
     PUSH 0x626296                       ; 004b2a33 | = "Can't access %s."
     MOV EBP,dword ptr [0x00678a60]      ; 004b2a38 | g_CEditorToolsPtr
-    PUSH EBP                            ; 004b2a3e | g_CEditorToolsPtr
+    PUSH EBP                            ; 004b2a3e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b2a3f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b2a44

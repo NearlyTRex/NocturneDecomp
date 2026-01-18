@@ -8,7 +8,7 @@
 ;   TerminatedCString s_s_s_already_exists_in_a__0064a0c6
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
     PUSH EDI                            ; 00589f7d
     PUSH 0x64a0c6                       ; 00589f7e | = "%s\\%s already exists in a mounted po..."
     MOV EBP,dword ptr [0x00678a60]      ; 00589f83 | g_CEditorToolsPtr
-    PUSH EBP                            ; 00589f89 | g_CEditorToolsPtr
+    PUSH EBP                            ; 00589f89 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00589f8a
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00589f8f

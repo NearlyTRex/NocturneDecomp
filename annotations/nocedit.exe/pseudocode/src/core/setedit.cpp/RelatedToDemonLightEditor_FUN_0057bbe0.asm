@@ -387,9 +387,9 @@ section .text
     MOV EDI,dword ptr [ESP + 0x874]     ; 0057c043
     PUSH EDI                            ; 0057c04a
     PUSH 0x6479a2                       ; 0057c04b | = "Enter on time"
-    MOV EAX,[0x00678a60]                ; 0057c050 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057c050 | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_0057c050
-    PUSH EAX                            ; 0057c055 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057c055 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c056
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
         ;   Label: LAB_0057c056
@@ -431,7 +431,7 @@ section .text
     PUSH EBX                            ; 0057c0ae
     PUSH 0x6479b0                       ; 0057c0af | = "Enter total time"
     MOV ESI,dword ptr [0x00678a60]      ; 0057c0b4 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0057c0ba | g_CEditorToolsPtr
+    PUSH ESI                            ; 0057c0ba | g_CEditorToolsInstance
     JMP 0x0057c056                      ; 0057c0bb
         ;   XREF to: 0057c056 (UNCONDITIONAL_JUMP)  ; LAB_0057c056
     MOV EAX,dword ptr [ESP + 0x890]     ; 0057c0bd
@@ -442,7 +442,7 @@ section .text
         ;   XREF to: 0057c0e8 (CONDITIONAL_JUMP)  ; LAB_0057c0e8
     PUSH 0x6479c1                       ; 0057c0cf | = "Already max filters for this light."
     MOV ECX,dword ptr [0x00678a60]      ; 0057c0d4 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0057c0da | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057c0da | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057c0db
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057c0e0
@@ -457,7 +457,7 @@ section .text
     PUSH EAX                            ; 0057c0f8
     PUSH 0x6479e5                       ; 0057c0f9 | = "Enter new filter name"
     MOV ESI,dword ptr [0x00678a60]      ; 0057c0fe | g_CEditorToolsPtr
-    PUSH ESI                            ; 0057c104 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0057c104 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0057c105
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0057c10a
@@ -475,8 +475,8 @@ section .text
     ADD EAX,EDI                         ; 0057c134
     PUSH EAX                            ; 0057c136
     PUSH 0x6479fb                       ; 0057c137 | = "Enter new filter time"
-    MOV EAX,[0x00678a60]                ; 0057c13c | g_CEditorToolsPtr
-    PUSH EAX                            ; 0057c141 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057c13c | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057c141 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c142
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057c147
@@ -577,8 +577,8 @@ section .text
         ;   XREF to: 0057c216 (UNCONDITIONAL_JUMP)  ; LAB_0057c216
     PUSH 0x647a11                       ; 0057c273 | = "No filters to delete!"
         ;   Label: LAB_0057c273
-    MOV EAX,[0x00678a60]                ; 0057c278 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0057c27d | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057c278 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057c27d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057c27e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057c283
@@ -647,7 +647,7 @@ section .text
     PUSH EAX                            ; 0057c332
     PUSH 0x647a69                       ; 0057c333 | = "Edit filter name"
     MOV EDI,dword ptr [0x00678a60]      ; 0057c338 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0057c33e | g_CEditorToolsPtr
+    PUSH EDI                            ; 0057c33e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0057c33f
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0057c344
@@ -663,8 +663,8 @@ section .text
     ADD EAX,EDX                         ; 0057c361
     PUSH EAX                            ; 0057c363
     PUSH 0x647a7a                       ; 0057c364 | = "Edit filter time"
-    MOV ECX,dword ptr [0x00678a60]      ; 0057c369 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0057c36f | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0057c369 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057c36f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c370
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057c375
@@ -680,7 +680,7 @@ section .text
     PUSH 0x647a3f                       ; 0057c38c | = "No filters to edit!"
         ;   Label: LAB_0057c38c
     MOV ECX,dword ptr [0x00678a60]      ; 0057c391 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0057c397 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057c397 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057c398
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057c39d
@@ -713,10 +713,10 @@ section .text
     FILD dword ptr [EAX + 0x17f8]       ; 0057c404
     LEA EAX,[ESP + 0x10]                ; 0057c40a
     PUSH EAX                            ; 0057c40e
-    MOV ECX,dword ptr [0x00678a60]      ; 0057c40f | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0057c40f | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH 0x647a8b                       ; 0057c415 | = "Enter light X velocity"
     FMUL double ptr [0x00647af5]        ; 0057c41a | DOUBLE_00647af5
-    PUSH ECX                            ; 0057c420 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057c420 | g_CEditorToolsInstance
     FSTP float ptr [ESP + 0x1c]         ; 0057c421
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c425
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
@@ -750,10 +750,10 @@ section .text
     FILD dword ptr [EAX + 0x17fc]       ; 0057c48d
     LEA EAX,[ESP + 0x10]                ; 0057c493
     PUSH EAX                            ; 0057c497
-    MOV EDX,dword ptr [0x00678a60]      ; 0057c498 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0057c498 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH 0x647aa2                       ; 0057c49e | = "Enter light Y velocity"
     FMUL double ptr [0x00647af5]        ; 0057c4a3 | DOUBLE_00647af5
-    PUSH EDX                            ; 0057c4a9 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0057c4a9 | g_CEditorToolsInstance
     FSTP float ptr [ESP + 0x1c]         ; 0057c4aa
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c4ae
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
@@ -769,7 +769,7 @@ section .text
     CALL crt_math.c_floor_FUN_005feb90  ; 0057c4d3
         ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x85c],EAX     ; 0057c4d8
-    MOV dword ptr [ESP + 0x860],EDX     ; 0057c4df | g_CEditorToolsPtr
+    MOV dword ptr [ESP + 0x860],EDX     ; 0057c4df | g_CEditorToolsInstance
     FLD double ptr [ESP + 0x85c]        ; 0057c4e6
     ADD ESP,0x8                         ; 0057c4ed
     MOV EAX,dword ptr [ESP + 0x890]     ; 0057c4f0
@@ -797,7 +797,7 @@ section .text
     PUSH EBX                            ; 0057c533
     PUSH 0x647ad8                       ; 0057c534 | = "Enter light intensity (0..1)"
     MOV ESI,dword ptr [0x00678a60]      ; 0057c539 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0057c53f | g_CEditorToolsPtr
+    PUSH ESI                            ; 0057c53f | g_CEditorToolsInstance
     JMP 0x0057c056                      ; 0057c540
         ;   XREF to: 0057c056 (UNCONDITIONAL_JUMP)  ; LAB_0057c056
 

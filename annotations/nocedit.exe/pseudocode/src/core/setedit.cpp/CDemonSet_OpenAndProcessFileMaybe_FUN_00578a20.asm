@@ -84,8 +84,8 @@ section .text
     PUSH EAX                            ; 00578a60
     PUSH 0x646ae0                       ; 00578a61 | = "*.s3d"
     PUSH 0x646ae6                       ; 00578a66 | = "Import set"
-    MOV EDX,dword ptr [0x00678a60]      ; 00578a6b | g_CEditorToolsPtr
-    PUSH EDX                            ; 00578a71 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 00578a6b | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 00578a71 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00578a72
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 00578a77

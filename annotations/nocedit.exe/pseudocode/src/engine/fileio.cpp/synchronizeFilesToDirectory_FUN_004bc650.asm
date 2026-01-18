@@ -240,8 +240,8 @@ section .text
         ;   XREF to: 004bc780 (UNCONDITIONAL_JUMP)  ; LAB_004bc780
     PUSH 0x62909b                       ; 004bc83d | = "Skipping files already in sync..."
         ;   Label: LAB_004bc83d
-    MOV EBX,dword ptr [0x00678a60]      ; 004bc842 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004bc848 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 004bc842 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 004bc848 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bc849
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     MOV EBX,0x1                         ; 004bc84e
@@ -289,8 +289,8 @@ section .text
     PUSH EAX                            ; 004bc8cd
     PUSH EBP                            ; 004bc8ce
     PUSH 0x629135                       ; 004bc8cf | = "Copying %s -> %s"
-    MOV ECX,dword ptr [0x00678a60]      ; 004bc8d4 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bc8da | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004bc8d4 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bc8da | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bc8db
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x10                        ; 004bc8e0
@@ -379,7 +379,7 @@ section .text
     PUSH EAX                            ; 004bc9d3
     PUSH 0x626577                       ; 004bc9d4 | = "WARNING: Error setting date/time on %..."
     MOV ESI,dword ptr [0x00678a60]      ; 004bc9d9 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bc9df | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bc9df | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bc9e0
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bc9e5

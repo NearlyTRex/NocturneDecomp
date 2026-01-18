@@ -14,7 +14,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   CKeys g_CKeysInstance
 ;   CDemonMission g_CDemonMissionInstance
@@ -180,7 +180,7 @@ section .text
     PUSH EDX                            ; 005dad5a
     PUSH 0x654d22                       ; 005dad5b | = "Switch to destination %s"
     MOV ESI,dword ptr [0x00678a60]      ; 005dad60 | g_CEditorToolsPtr
-    PUSH ESI                            ; 005dad66 | g_CEditorToolsPtr
+    PUSH ESI                            ; 005dad66 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 005dad67
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 005dad6c
@@ -203,8 +203,8 @@ section .text
     RET                                 ; 005dad91
     PUSH 0x654d05                       ; 005dad92 | = "Teleport has no destination!"
         ;   Label: LAB_005dad92
-    MOV EAX,[0x00678a60]                ; 005dad97 | g_CEditorToolsPtr
-    PUSH EAX                            ; 005dad9c | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 005dad97 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 005dad9c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005dad9d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 005dada2

@@ -16,7 +16,7 @@
 ;   TerminatedCString s_Can_t_querry_back_for_so_0063d468
 ;   TerminatedCString s_Initializing_network_OK_0063d48d
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_LastPingTime
 ;   uint g_CurrentGameTime
 ;
@@ -42,7 +42,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 0053fbc3
     PUSH 0x63d3f5                       ; 0053fbc7 | = "Initializing network..."
     MOV EDX,dword ptr [0x00678a60]      ; 0053fbcc | g_CEditorToolsPtr
-    PUSH EDX                            ; 0053fbd2 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053fbd2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053fbd3
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053fbd8
@@ -105,7 +105,7 @@ section .text
     PUSH 0x63d48d                       ; 0053fc73 | = "Initializing network...OK"
     MOV [0x02f7c8b4],EAX                ; 0053fc78 | g_LastPingTime
     MOV EAX,[0x00678a60]                ; 0053fc7d | g_CEditorToolsPtr
-    PUSH EAX                            ; 0053fc82 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0053fc82 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053fc83
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053fc88
@@ -117,7 +117,7 @@ section .text
     PUSH 0x63d40d                       ; 0053fc91 | = "Can't create datagram socket"
         ;   Label: LAB_0053fc91
     MOV ECX,dword ptr [0x00678a60]      ; 0053fc96 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053fc9c | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053fc9c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053fc9d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053fca2
@@ -129,7 +129,7 @@ section .text
     PUSH 0x63d42a                       ; 0053fcab | = "Can't turn off blocking mode for socket"
         ;   Label: LAB_0053fcab
     MOV EBX,dword ptr [0x00678a60]      ; 0053fcb0 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0053fcb6 | g_CEditorToolsPtr
+    PUSH EBX                            ; 0053fcb6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053fcb7
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053fcbc
@@ -141,7 +141,7 @@ section .text
     PUSH 0x63d452                       ; 0053fcc5 | = "Can't bind UDP socket"
         ;   Label: LAB_0053fcc5
     MOV ESI,dword ptr [0x00678a60]      ; 0053fcca | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053fcd0 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053fcd0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053fcd1
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053fcd6
@@ -154,7 +154,7 @@ section .text
         ;   Label: LAB_0053fcdf
     PUSH 0x63d468                       ; 0053fce0 | = "Can't querry back for socket address"
     MOV EDI,dword ptr [0x00678a60]      ; 0053fce5 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0053fceb | g_CEditorToolsPtr
+    PUSH EDI                            ; 0053fceb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053fcec
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053fcf1

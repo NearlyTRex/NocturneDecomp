@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_MouseX
 ;   int g_MouseY
 ;   undefined4 DAT_03114208
@@ -55,7 +55,7 @@ section .text
     PUSH ESI                            ; 00566bfc
     PUSH 0x1                            ; 00566bfd
     MOV EDI,dword ptr [0x00678a60]      ; 00566bff | g_CEditorToolsPtr
-    PUSH EDI                            ; 00566c05 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00566c05 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920 ; 00566c06
         ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int width, int height)
     ADD ESP,0x10                        ; 00566c0b

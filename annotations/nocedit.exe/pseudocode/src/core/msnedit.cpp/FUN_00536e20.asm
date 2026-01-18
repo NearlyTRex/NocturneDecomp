@@ -32,7 +32,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -227,8 +227,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 00537016
     PUSH EAX                            ; 0053701a
     PUSH 0x63b706                       ; 0053701b | = "Enter frame number"
-    MOV EBX,dword ptr [0x00678a60]      ; 00537020 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00537026 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00537020 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 00537026 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 00537027
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0053702c

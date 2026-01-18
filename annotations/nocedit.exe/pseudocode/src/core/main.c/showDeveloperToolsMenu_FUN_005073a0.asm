@@ -362,8 +362,8 @@ section .text
         ;   XREF to: 004a65e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_paint_FUN_004a65e0(CEdButton * this_ptr, int draw_border_flag)
     ADD ESP,0x8                         ; 00507702
     PUSH EDI                            ; 00507705
-    MOV EDX,dword ptr [0x00678a60]      ; 00507706 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0050770c | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 00507706 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0050770c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0050770d
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 00507712
@@ -561,8 +561,8 @@ section .text
     LEA EAX,[ESP + 0x200]               ; 00507909
         ;   Label: LAB_00507909
     PUSH EAX                            ; 00507910
-    MOV ECX,dword ptr [0x00678a60]      ; 00507911 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00507917 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00507911 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00507917 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 ; 00507918
         ;   XREF to: 004a2590 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools * this_ptr, char * output_buffer)
     ADD ESP,0x8                         ; 0050791d
@@ -610,8 +610,8 @@ section .text
     LEA EAX,[ESP + 0x204]               ; 005079a5
     PUSH EAX                            ; 005079ac
     PUSH 0x63526e                       ; 005079ad | = "%s\nAlso dumped memory usage to %s"
-    MOV EAX,[0x00678a60]                ; 005079b2 | g_CEditorToolsPtr
-    PUSH EAX                            ; 005079b7 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 005079b2 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 005079b7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 005079b8
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005079bd

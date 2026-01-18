@@ -75,8 +75,8 @@ section .text
     MOV EAX,ESP                         ; 0057a10c
     PUSH EAX                            ; 0057a10e
     PUSH 0x647312                       ; 0057a10f | = "Exporting lights and cameras to %s"
-    MOV EDX,dword ptr [0x00678a60]      ; 0057a114 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0057a11a | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0057a114 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0057a11a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0057a11b
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0057a120
@@ -179,8 +179,8 @@ section .text
     MOV EAX,ESP                         ; 0057a223
     PUSH EAX                            ; 0057a225
     PUSH 0x6473ce                       ; 0057a226 | = "Exported %s OK."
-    MOV EDX,dword ptr [0x00678a60]      ; 0057a22b | g_CEditorToolsPtr
-    PUSH EDX                            ; 0057a231 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0057a22b | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0057a231 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0057a232
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0057a237

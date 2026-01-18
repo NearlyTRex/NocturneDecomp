@@ -14,7 +14,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   void* PTR_s_label_006441c0_00680e28 = 006441c0
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;   undefined4 DAT_0310aa4c
 ;   undefined4 DAT_0310ab1c
@@ -118,7 +118,7 @@ section .text
     MOV EAX,0x643e99                    ; 00565da2 | = "No such actor %s"
     PUSH EAX                            ; 00565da7 | = "No such actor %s"
     MOV EDX,dword ptr [0x00678a60]      ; 00565da8 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00565dae | g_CEditorToolsPtr
+    PUSH EDX                            ; 00565dae | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00565daf
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00565db4
@@ -184,7 +184,7 @@ section .text
     MOV EAX,0x643eaa                    ; 00565e32 | = "No such label %s"
     PUSH EAX                            ; 00565e37 | = "No such label %s"
     MOV EDI,dword ptr [0x00678a60]      ; 00565e38 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00565e3e | g_CEditorToolsPtr
+    PUSH EDI                            ; 00565e3e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00565e3f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00565e44

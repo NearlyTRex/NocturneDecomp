@@ -32,7 +32,7 @@
 ;   TerminatedCString s_rb_006403fc
 ;   TerminatedCString s_engine_pod_cpp_006403ff
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   ... and 4 more
 ;
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_00550276
     PUSH EDI                            ; 00550279
     PUSH 0x6403d2                       ; 0055027a | = "Verifying CRC for %s..."
-    MOV EBX,dword ptr [0x00678a60]      ; 0055027f | g_CEditorToolsPtr
-    PUSH EBX                            ; 00550285 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0055027f | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 00550285 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00550286
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0055028b
@@ -244,7 +244,7 @@ section .text
     PUSH 0x64035d                       ; 00550413 | = "Checking individual file CRCs"
         ;   Label: LAB_00550413
     MOV ESI,dword ptr [0x00678a60]      ; 00550418 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0055041e | g_CEditorToolsPtr
+    PUSH ESI                            ; 0055041e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0055041f
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 00550424
@@ -279,9 +279,9 @@ section .text
     MOV dword ptr [ESP + 0x3b8],EDX     ; 0055047f
     FILD dword ptr [ESP + 0x3b8]        ; 00550486
     SUB ESP,0x4                         ; 0055048d
-    MOV EAX,[0x00678a60]                ; 00550490 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 00550490 | g_CEditorToolsInstance | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00550495
-    PUSH EAX                            ; 00550498 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00550498 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00550499
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 0055049e
@@ -310,9 +310,9 @@ section .text
     CMP EDI,EBP                         ; 005504da
     JL 0x00550444                       ; 005504dc
         ;   XREF to: 00550444 (CONDITIONAL_JUMP)  ; LAB_00550444
-    MOV EAX,[0x00678a60]                ; 005504e2 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 005504e2 | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_005504e2
-    PUSH EAX                            ; 005504e7 | g_CEditorToolsPtr
+    PUSH EAX                            ; 005504e7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005504e8
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 005504ed

@@ -28,7 +28,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   int g_InputKeyMask = 0x7f
 ;   CBitFont* g_EditorFont
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_FontCharacterHeight
 ;   int g_FontCharacterWidth
 ;   char* g_CurrentFilename
@@ -110,7 +110,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004a3ec3
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV ESI,dword ptr [0x00678a60]      ; 004a3ec8 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004a3ece | g_CEditorToolsPtr
+    PUSH ESI                            ; 004a3ece | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 004a3ecf
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004a3ed4

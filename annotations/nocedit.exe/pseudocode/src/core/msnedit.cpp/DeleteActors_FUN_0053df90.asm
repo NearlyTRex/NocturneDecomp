@@ -26,7 +26,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   undefined4 DAT_00680730
 ;   undefined4 DAT_00680798
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -196,7 +196,7 @@ section .text
     PUSH 0x680730                       ; 0053e103 | DAT_00680730
     PUSH 0x63cf05                       ; 0053e108 | = "Delete actors by name using wildcard"
     MOV ESI,dword ptr [0x00678a60]      ; 0053e10d | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053e113 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053e113 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0053e114
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0053e119
@@ -235,7 +235,7 @@ section .text
         ;   Label: LAB_0053e159
     PUSH 0x63cf2a                       ; 0053e15a | = "%d actors deleted"
     MOV EDI,dword ptr [0x00678a60]      ; 0053e15f | g_CEditorToolsPtr
-    PUSH EDI                            ; 0053e165 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0053e165 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0053e166
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053e16b
@@ -257,8 +257,8 @@ section .text
     PUSH 0x64                           ; 0053e191
     PUSH 0x680798                       ; 0053e193 | DAT_00680798
     PUSH 0x63cf3c                       ; 0053e198 | = "Delete actors by type"
-    MOV EAX,[0x00678a60]                ; 0053e19d | g_CEditorToolsPtr
-    PUSH EAX                            ; 0053e1a2 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0053e19d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0053e1a2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0053e1a3
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0053e1a8
@@ -295,8 +295,8 @@ section .text
     PUSH EBP                            ; 0053e1e6
         ;   Label: LAB_0053e1e6
     PUSH 0x63cf52                       ; 0053e1e7 | = "%d actors deleted"
-    MOV EDX,dword ptr [0x00678a60]      ; 0053e1ec | g_CEditorToolsPtr
-    PUSH EDX                            ; 0053e1f2 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0053e1ec | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053e1f2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0053e1f3
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053e1f8

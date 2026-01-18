@@ -23,7 +23,7 @@
 ;   TerminatedCString s_Importing_s_006190b7
 ;   TerminatedCString s_core_course_cpp_006190c4
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
@@ -154,7 +154,7 @@ section .text
     MOV EAX,ESP                         ; 00442cb0
     PUSH EAX                            ; 00442cb2
     MOV EBP,dword ptr [0x00678a60]      ; 00442cb3 | g_CEditorToolsPtr
-    PUSH EBP                            ; 00442cb9 | g_CEditorToolsPtr
+    PUSH EBP                            ; 00442cb9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 00442cba
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 00442cbf
@@ -166,8 +166,8 @@ section .text
     CALL core_course.cpp_CCourse_importMatrices_FUN_00442ea0 ; 00442cd3
         ;   XREF to: 00442ea0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_importMatrices_FUN_00442ea0(CCourse * this_ptr)
     ADD ESP,0xc                         ; 00442cd8
-    MOV ECX,dword ptr [0x00678a60]      ; 00442cdb | g_CEditorToolsPtr
-    PUSH ECX                            ; 00442ce1 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00442cdb | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00442ce1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 00442ce2
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00442ce7
@@ -188,7 +188,7 @@ section .text
         ;   Label: LAB_00442d0d
     PUSH 0x61905f                       ; 00442d0e | = "Can't open %s"
     MOV EDX,dword ptr [0x00678a60]      ; 00442d13 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00442d19 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00442d19 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00442d1a
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00442d1f
@@ -204,7 +204,7 @@ section .text
     PUSH EDI                            ; 00442d30
     PUSH 0x619078                       ; 00442d31 | = "%s contains %d nodes - must only cont..."
     MOV EDI,dword ptr [0x00678a60]      ; 00442d36 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00442d3c | g_CEditorToolsPtr
+    PUSH EDI                            ; 00442d3c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00442d3d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00442d42

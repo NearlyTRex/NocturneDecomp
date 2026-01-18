@@ -49,7 +49,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   char* g_CurrentDebugFilename = 0067d200
 ;   CBitFont* g_EditorFont
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -297,7 +297,7 @@ section .text
     PUSH EDI                            ; 0049ec16
     PUSH EDX                            ; 0049ec17
     MOV EDI,dword ptr [0x00678a60]      ; 0049ec18 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0049ec1e | g_CEditorToolsPtr
+    PUSH EDI                            ; 0049ec1e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890 ; 0049ec1f
         ;   XREF to: 004a0890 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     MOV EAX,[0x02d02560]                ; 0049ec24 | g_ClipRight
@@ -592,9 +592,9 @@ section .text
     CMP EBX,EBP                         ; 0049ef93
     JL 0x0049ef6e                       ; 0049ef95
         ;   XREF to: 0049ef6e (CONDITIONAL_JUMP)  ; LAB_0049ef6e
-    MOV EBX,dword ptr [0x00678a60]      ; 0049ef97 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0049ef97 | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_0049ef97
-    PUSH EBX                            ; 0049ef9d | g_CEditorToolsPtr
+    PUSH EBX                            ; 0049ef9d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80 ; 0049ef9e
         ;   XREF to: 004a0f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049efa3
@@ -619,8 +619,8 @@ section .text
         ;   XREF to: 0049efb3 (CONDITIONAL_JUMP)  ; LAB_0049efb3
     PUSH 0x0                            ; 0049efd7
         ;   Label: LAB_0049efd7
-    MOV ECX,dword ptr [0x00678a60]      ; 0049efd9 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0049efdf | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0049efd9 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0049efdf | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0049efe0
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 0049efe5
@@ -647,8 +647,8 @@ section .text
     MOV [0x006793a8],EAX                ; 0049f031 | g_InputKeyMask
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0049f036
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    MOV EAX,[0x00678a60]                ; 0049f03b | g_CEditorToolsPtr
-    PUSH EAX                            ; 0049f040 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0049f03b | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0049f040 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 0049f041
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049f046

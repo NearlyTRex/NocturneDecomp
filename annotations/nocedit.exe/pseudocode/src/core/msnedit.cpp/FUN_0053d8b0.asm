@@ -21,7 +21,7 @@
 ;   int g_NumActorClassTypes
 ;   CDemonActorType*[200] g_ActorClassRegistrations
 ;   undefined4 g_ActorClassRegistrations[1]
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
@@ -167,8 +167,8 @@ section .text
     CALL dword ptr [EAX]                ; 0053d9f8
     ADD ESP,0x4                         ; 0053d9fa
     PUSH 0x63cd56                       ; 0053d9fd | = "Attempt to transfer properties?"
-    MOV ECX,dword ptr [0x00678a60]      ; 0053da02 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053da08 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0053da02 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053da08 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0053da09
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053da0e

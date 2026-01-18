@@ -16,7 +16,7 @@
 ;   TerminatedCString s_models_006295a8
 ;   TerminatedCString s_Select_set_to_build_pod_006295af
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0
@@ -39,8 +39,8 @@ section .text
     PUSH 0x6295a2                       ; 004bd945 | = "*.set"
     PUSH 0x6295a8                       ; 004bd94a | = "models"
     PUSH 0x6295af                       ; 004bd94f | = "Select set to build pod."
-    MOV EDX,dword ptr [0x00678a60]      ; 004bd954 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bd95a | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004bd954 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bd95a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004bd95b
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 004bd960

@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Infinite_loop_detected_t_0064325f
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CGame* g_CGamePtr = 02d81a9c
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 DAT_02d81cc4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -102,7 +102,7 @@ section .text
     PUSH ECX                            ; 00560390
     PUSH 0x6431fd                       ; 00560391 | = "Error processing script to skip cinem..."
     MOV EDI,dword ptr [0x00678a60]      ; 00560396 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0056039c | g_CEditorToolsPtr
+    PUSH EDI                            ; 0056039c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0056039d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005603a2

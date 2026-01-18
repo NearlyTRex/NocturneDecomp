@@ -9,7 +9,7 @@
 ;   TerminatedCString s_LOD_generation_complete_00649dff
 ;   TerminatedCString s_LOD_generation_complete_00649e18
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stack.c_stack_probe_FUN_005ff9f3
@@ -45,13 +45,13 @@ section .text
     PUSH EBX                            ; 00589b36
     PUSH EDX                            ; 00589b37
     MOV ECX,dword ptr [0x00678a60]      ; 00589b38 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00589b3e | g_CEditorToolsPtr
+    PUSH ECX                            ; 00589b3e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940 ; 00589b3f
         ;   XREF to: 0049e940 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940(CEditorTools * this_ptr, char * dialog_text)
     ADD ESP,0x8                         ; 00589b44
     PUSH 0x649e18                       ; 00589b47 | = "LOD generation complete!"
     MOV EBX,dword ptr [0x00678a60]      ; 00589b4c | g_CEditorToolsPtr
-    PUSH EBX                            ; 00589b52 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00589b52 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 ; 00589b53
         ;   XREF to: 0049e870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00589b58
@@ -74,7 +74,7 @@ section .text
     JL 0x00589b64                       ; 00589b7b
         ;   XREF to: 00589b64 (CONDITIONAL_JUMP)  ; LAB_00589b64
     MOV EDI,dword ptr [0x00678a60]      ; 00589b7d | g_CEditorToolsPtr
-    PUSH EDI                            ; 00589b83 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00589b83 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 00589b84
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00589b89
@@ -87,7 +87,7 @@ section .text
     PUSH 0x649dff                       ; 00589b95 | = "LOD generation complete!"
         ;   Label: LAB_00589b95
     MOV ESI,dword ptr [0x00678a60]      ; 00589b9a | g_CEditorToolsPtr
-    PUSH ESI                            ; 00589ba0 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00589ba0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00589ba1
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00589ba6

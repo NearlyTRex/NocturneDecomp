@@ -13,7 +13,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CKeys g_CKeysInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;
@@ -68,7 +68,7 @@ section .text
     PUSH EBX                            ; 005da8ca
     PUSH 0x654c54                       ; 005da8cb | = "No teleporters go to %s"
     MOV EDI,dword ptr [0x00678a60]      ; 005da8d0 | g_CEditorToolsPtr
-    PUSH EDI                            ; 005da8d6 | g_CEditorToolsPtr
+    PUSH EDI                            ; 005da8d6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005da8d7
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005da8dc

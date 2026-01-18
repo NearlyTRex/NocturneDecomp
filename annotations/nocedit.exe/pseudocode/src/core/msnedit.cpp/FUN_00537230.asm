@@ -15,7 +15,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;   CDemonPod g_CDemonPodInstance
 ;
@@ -70,8 +70,8 @@ section .text
     MOV EAX,ESP                         ; 00537284
     PUSH EAX                            ; 00537286
     PUSH 0x63b756                       ; 00537287 | = "Loading %s..."
-    MOV EBX,dword ptr [0x00678a60]      ; 0053728c | g_CEditorToolsPtr
-    PUSH EBX                            ; 00537292 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0053728c | g_CEditorToolsPtr | g_CEditorToolsInstance
+    PUSH EBX                            ; 00537292 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00537293
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00537298
@@ -87,7 +87,7 @@ section .text
     PUSH EAX                            ; 005372b3
     PUSH 0x63b764                       ; 005372b4 | = "Saving %s..."
     MOV EDI,dword ptr [0x00678a60]      ; 005372b9 | g_CEditorToolsPtr
-    PUSH EDI                            ; 005372bf | g_CEditorToolsPtr
+    PUSH EDI                            ; 005372bf | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005372c0
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 005372c5
@@ -125,7 +125,7 @@ section .text
     PUSH EAX                            ; 0053730b
     PUSH 0x63b771                       ; 0053730c | = "Not converting local file %s - it is ..."
     MOV ECX,dword ptr [0x00678a60]      ; 00537311 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00537317 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00537317 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00537318
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053731d

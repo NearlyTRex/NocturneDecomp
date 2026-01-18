@@ -267,7 +267,7 @@ section .text
     PUSH 0x64e18c                       ; 0059919c | = "models"
     PUSH 0x64e193                       ; 005991a1 | = "Select model to view"
     MOV EDI,dword ptr [0x00678a60]      ; 005991a6 | g_CEditorToolsPtr
-    PUSH EDI                            ; 005991ac | g_CEditorToolsPtr
+    PUSH EDI                            ; 005991ac | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 005991ad
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 005991b2
@@ -360,8 +360,8 @@ section .text
     ADD ESP,0xc                         ; 0059929f
     PUSH 0x681868                       ; 005992a2 | = "skeledit.ini"
     PUSH 0x649d3b                       ; 005992a7 | = "Deleting old %s file."
-    MOV ECX,dword ptr [0x00678a60]      ; 005992ac | g_CEditorToolsPtr
-    PUSH ECX                            ; 005992b2 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 005992ac | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 005992b2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 005992b3
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005992b8

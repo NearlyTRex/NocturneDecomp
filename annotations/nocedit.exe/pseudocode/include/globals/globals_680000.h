@@ -294,6 +294,7 @@ extern BYTE g_ExitHandlerTableStart;
 extern BYTE g_ExitHandlerPriorityEnd;
 extern RUNTIME_HANDLER_FUNC* g_FirstExitHandler;
 extern RuntimeHandlerEntry g_ExitHandlers[6];
+extern RuntimeHandlerEntry g_ExitHandlerTableEnd;
 extern GUID DAT_00686d58;
 extern GUID g_IID_IDirectSound3DBuffer;
 extern byte g_IEEE754ExponentClassTable[16];

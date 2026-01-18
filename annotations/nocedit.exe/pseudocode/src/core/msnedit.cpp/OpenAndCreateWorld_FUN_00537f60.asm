@@ -99,8 +99,8 @@ section .text
         ;   XREF to: 0053d190 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190()
     ADD ESP,0x8                         ; 00537fcc
     PUSH 0x63bd59                       ; 00537fcf | = "Mission and script saved"
-    MOV EDX,dword ptr [0x00678a60]      ; 00537fd4 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00537fda | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 00537fd4 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 00537fda | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00537fdb
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00537fe0
@@ -195,7 +195,7 @@ section .text
     PUSH 0x63bd7a                       ; 005380e4 | = "world"
     PUSH 0x63bc4b                       ; 005380e9 | = "Can't find %s\\%s to copy to %s\\%s"
     MOV EDX,dword ptr [0x00678a60]      ; 005380ee | g_CEditorToolsPtr
-    PUSH EDX                            ; 005380f4 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005380f4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005380f5
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 005380fa
@@ -265,7 +265,7 @@ section .text
     PUSH EBX                            ; 005381bf | = "world"
     PUSH 0x63bd43                       ; 005381c0 | = "Copied %s\\%s to %s\\%s"
     MOV EBP,dword ptr [0x00678a60]      ; 005381c5 | g_CEditorToolsPtr
-    PUSH EBP                            ; 005381cb | g_CEditorToolsPtr
+    PUSH EBP                            ; 005381cb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 005381cc
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 005381d1

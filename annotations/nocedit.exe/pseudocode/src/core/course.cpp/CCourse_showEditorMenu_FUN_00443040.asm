@@ -197,7 +197,7 @@ section .text
     MOV EAX,0x6192c0                    ; 00443193 | = "Load course"
     PUSH EAX                            ; 00443198 | = "Load course"
     MOV EDI,dword ptr [0x00678a60]      ; 00443199 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0044319f | g_CEditorToolsPtr
+    PUSH EDI                            ; 0044319f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004431a0
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 004431a5
@@ -233,7 +233,7 @@ section .text
     MOV EAX,0x6192cc                    ; 004431e8 | = "No course to save!"
     PUSH EAX                            ; 004431ed | = "No course to save!"
     MOV ESI,dword ptr [0x00678a60]      ; 004431ee | g_CEditorToolsPtr
-    PUSH ESI                            ; 004431f4 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004431f4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004431f5
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     JMP 0x004431ba                      ; 004431fa
@@ -248,8 +248,8 @@ section .text
     PUSH EAX                            ; 00443211 | = "data"
     MOV EAX,0x6192e8                    ; 00443212 | = "Save course"
     PUSH EAX                            ; 00443217 | = "Save course"
-    MOV EBX,dword ptr [0x00678a60]      ; 00443218 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0044321e | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00443218 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0044321e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 0044321f
         ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 00443224
@@ -274,8 +274,8 @@ section .text
     PUSH EAX                            ; 00443252
     PUSH 0x6192f4                       ; 00443253 | = "*.crs"
     PUSH 0x6192fa                       ; 00443258 | = "Import .CRS file"
-    MOV EDX,dword ptr [0x00678a60]      ; 0044325d | g_CEditorToolsPtr
-    PUSH EDX                            ; 00443263 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0044325d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 00443263 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00443264
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 00443269
@@ -333,7 +333,7 @@ section .text
         ;   XREF to: 004432f0 (CONDITIONAL_JUMP)  ; LAB_004432f0
     PUSH 0x61932c                       ; 004432da | = "No course to view!"
     MOV ECX,dword ptr [0x00678a60]      ; 004432df | g_CEditorToolsPtr
-    PUSH ECX                            ; 004432e5 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004432e5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004432e6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     JMP 0x004431ba                      ; 004432eb
@@ -345,8 +345,8 @@ section .text
     PUSH 0x61933f                       ; 004432fa | = "*.kfm"
     PUSH 0x619345                       ; 004432ff | = "models"
     PUSH 0x61934c                       ; 00443304 | = "Select model to fly around"
-    MOV EDX,dword ptr [0x00678a60]      ; 00443309 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0044330f | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 00443309 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0044330f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 00443310
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 00443315
@@ -370,8 +370,8 @@ section .text
     JGE 0x00443359                      ; 00443342
         ;   XREF to: 00443359 (CONDITIONAL_JUMP)  ; LAB_00443359
     PUSH 0x619367                       ; 00443344 | = "No course to rotate!"
-    MOV EAX,[0x00678a60]                ; 00443349 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0044334e | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 00443349 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0044334e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0044334f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     JMP 0x004431ba                      ; 00443354
@@ -382,7 +382,7 @@ section .text
     PUSH EAX                            ; 00443362
     PUSH 0x61937c                       ; 00443363 | = "Enter local P,B,H to apply:"
     MOV ESI,dword ptr [0x00678a60]      ; 00443368 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0044336e | g_CEditorToolsPtr
+    PUSH ESI                            ; 0044336e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 ; 0044336f
         ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value)
     ADD ESP,0x10                        ; 00443374
@@ -444,7 +444,7 @@ section .text
         ;   XREF to: 0044344a (CONDITIONAL_JUMP)  ; LAB_0044344a
     PUSH 0x619398                       ; 00443434 | = "No course to scale!"
     MOV EBX,dword ptr [0x00678a60]      ; 00443439 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0044343f | g_CEditorToolsPtr
+    PUSH EBX                            ; 0044343f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00443440
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     JMP 0x004431ba                      ; 00443445
@@ -457,8 +457,8 @@ section .text
     LEA EAX,[ESP + 0x4ec]               ; 00443458
     PUSH EAX                            ; 0044345f
     PUSH 0x6193ac                       ; 00443460 | = "Enter scale factor"
-    MOV ECX,dword ptr [0x00678a60]      ; 00443465 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0044346b | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00443465 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0044346b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0044346c
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 00443471
@@ -520,7 +520,7 @@ section .text
         ;   XREF to: 00443522 (CONDITIONAL_JUMP)  ; LAB_00443522
     PUSH 0x6193bf                       ; 0044350c | = "No course in memory!"
     MOV EDX,dword ptr [0x00678a60]      ; 00443511 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00443517 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00443517 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00443518
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     JMP 0x004431ba                      ; 0044351d
@@ -528,7 +528,7 @@ section .text
     PUSH 0x6193d4                       ; 00443522 | = "Remove bank from course?"
         ;   Label: LAB_00443522
     MOV ESI,dword ptr [0x00678a60]      ; 00443527 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0044352d | g_CEditorToolsPtr
+    PUSH ESI                            ; 0044352d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0044352e
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00443533
@@ -591,7 +591,7 @@ section .text
     PUSH 0x6193ed                       ; 004435d9 | = "No course in memory!"
         ;   Label: LAB_004435d9
     MOV EBX,dword ptr [0x00678a60]      ; 004435de | g_CEditorToolsPtr
-    PUSH EBX                            ; 004435e4 | g_CEditorToolsPtr
+    PUSH EBX                            ; 004435e4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004435e5
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     JMP 0x004431ba                      ; 004435ea
@@ -628,8 +628,8 @@ section .text
     PUSH EAX                            ; 00443642
     PUSH 0x619310                       ; 00443643 | = "*.bon"
     PUSH 0x619316                       ; 00443648 | = "Import .BON file"
-    MOV EAX,[0x00678a60]                ; 0044364d | g_CEditorToolsPtr
-    PUSH EAX                            ; 00443652 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0044364d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00443652 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00443653
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 00443658

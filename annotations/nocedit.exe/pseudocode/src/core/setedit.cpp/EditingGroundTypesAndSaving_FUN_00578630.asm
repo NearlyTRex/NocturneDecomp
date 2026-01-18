@@ -236,7 +236,7 @@ section .text
         ;   Label: LAB_00578801
     PUSH 0x646953                       ; 00578802 | = "No ground type entries in %s"
     MOV EBX,dword ptr [0x00678a60]      ; 00578807 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0057880d | g_CEditorToolsPtr
+    PUSH EBX                            ; 0057880d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057880e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00578813
@@ -296,8 +296,8 @@ section .text
         ;   XREF to: 00578973 (CONDITIONAL_JUMP)  ; LAB_00578973
     PUSH EBP                            ; 005788b8
     PUSH 0x646a24                       ; 005788b9 | = "Saving %s..."
-    MOV ECX,dword ptr [0x00678a60]      ; 005788be | g_CEditorToolsPtr
-    PUSH ECX                            ; 005788c4 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 005788be | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 005788c4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005788c5
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 005788ca

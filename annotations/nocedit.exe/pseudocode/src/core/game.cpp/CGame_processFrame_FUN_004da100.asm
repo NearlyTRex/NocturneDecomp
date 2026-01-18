@@ -865,8 +865,8 @@ section .text
         ;   XREF to: 004daa19 (CONDITIONAL_JUMP)  ; LAB_004daa19
     LEA EAX,[EBP + 0xfffffdb2]          ; 004da9e9
     PUSH EAX                            ; 004da9ef
-    MOV ECX,dword ptr [0x00678a60]      ; 004da9f0 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004da9f6 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004da9f0 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004da9f6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 ; 004da9f7
         ;   XREF to: 004a2590 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools * this_ptr, char * output_buffer)
     MOV EAX,[0x00679398]                ; 004da9fc | g_WindowHeight
@@ -965,7 +965,7 @@ section .text
         ;   XREF to: 004dab0e (CONDITIONAL_JUMP)  ; LAB_004dab0e
     PUSH 0x0                            ; 004daafd
     MOV ESI,dword ptr [0x00678a60]      ; 004daaff | g_CEditorToolsPtr
-    PUSH ESI                            ; 004dab05 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004dab05 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 004dab06
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 004dab0b

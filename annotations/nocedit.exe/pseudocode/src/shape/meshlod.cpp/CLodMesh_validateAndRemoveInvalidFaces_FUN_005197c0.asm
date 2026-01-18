@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_WARNING_encountered_d_in_00637a16
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -75,7 +75,7 @@ section .text
         ;   Label: LAB_00519808
     PUSH 0x637a16                       ; 00519809 | = "WARNING - encountered %d invalid face..."
     MOV EBX,dword ptr [0x00678a60]      ; 0051980e | g_CEditorToolsPtr
-    PUSH EBX                            ; 00519814 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00519814 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00519815
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0051981a

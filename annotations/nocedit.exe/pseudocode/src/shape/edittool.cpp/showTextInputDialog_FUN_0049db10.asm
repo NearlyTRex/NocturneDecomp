@@ -33,7 +33,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   char[256] g_CharacterClassificationTable
 ;   CBitFont* g_EditorFont
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_FontCharacterHeight
 ;   int g_FontCharacterWidth
 ;   ... and 8 more
@@ -128,8 +128,8 @@ section .text
     SAR EDX,0x1f                        ; 0049dbd8
     IDIV ECX                            ; 0049dbdb
     PUSH EAX                            ; 0049dbdd
-    MOV EBX,dword ptr [0x00678a60]      ; 0049dbde | g_CEditorToolsPtr
-    PUSH EBX                            ; 0049dbe4 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0049dbde | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0049dbe4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890 ; 0049dbe5
         ;   XREF to: 004a0890 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 0049dbea
@@ -206,15 +206,15 @@ section .text
     MOV dword ptr [ESP + 0x30c],EAX     ; 0049dcc7
     MOV dword ptr [0x006793a8],ESI      ; 0049dcce | g_InputKeyMask
     XOR ESI,ESI                         ; 0049dcd4
-    MOV EAX,[0x00678a60]                ; 0049dcd6 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0049dcd6 | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_0049dcd6
-    PUSH EAX                            ; 0049dcdb | g_CEditorToolsPtr
+    PUSH EAX                            ; 0049dcdb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80 ; 0049dcdc
         ;   XREF to: 004a0f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049dce1
     PUSH 0x1                            ; 0049dce4
-    MOV EDX,dword ptr [0x00678a60]      ; 0049dce6 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0049dcec | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0049dce6 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0049dcec | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230 ; 0049dced
         ;   XREF to: 004a1230 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools * editor_tools, int line_position)
     ADD ESP,0x8                         ; 0049dcf2
@@ -246,8 +246,8 @@ section .text
         ;   XREF to: 004a65e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_paint_FUN_004a65e0(CEdButton * this_ptr, int draw_border_flag)
     ADD ESP,0x8                         ; 0049dd44
     PUSH 0x0                            ; 0049dd47
-    MOV EAX,[0x00678a60]                ; 0049dd49 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0049dd4e | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0049dd49 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0049dd4e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0049dd4f
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 0049dd54
@@ -312,7 +312,7 @@ section .text
         ;   Label: LAB_0049ddda
     MOV ESI,dword ptr [0x00678a60]      ; 0049dddc | g_CEditorToolsPtr
         ;   Label: LAB_0049dddc
-    PUSH ESI                            ; 0049dde2 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0049dde2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 0049dde3
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049dde8

@@ -65,8 +65,8 @@ section .text
     JNZ 0x00523644                      ; 00523625
         ;   XREF to: 00523644 (CONDITIONAL_JUMP)  ; LAB_00523644
     PUSH 0x638e64                       ; 00523627 | = "Preparing actors..."
-    MOV ECX,dword ptr [0x00678a60]      ; 0052362c | g_CEditorToolsPtr
-    PUSH ECX                            ; 00523632 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0052362c | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00523632 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00523633
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00523638

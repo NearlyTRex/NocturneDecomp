@@ -8,7 +8,7 @@
 ;   TerminatedCString s_Remounting_all_pods_0062759a
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
 ;   undefined4 DAT_030e5224
 ;
@@ -29,7 +29,7 @@ section .text
         ;   Label: LAB_004b535a
     PUSH 0x62759a                       ; 004b535b | = "Remounting all pods..."
     MOV ECX,dword ptr [0x00678a60]      ; 004b5360 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b5366 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b5366 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b5367
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004b536c

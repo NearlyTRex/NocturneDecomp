@@ -297,7 +297,7 @@ section .text
     ADD ESP,0x18                        ; 004794f8
     PUSH 0x61fd7c                       ; 004794fb | = "Skipping parts"
     MOV ESI,dword ptr [0x00678a60]      ; 00479500 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00479506 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00479506 | g_CEditorToolsInstance
     MOV EBX,0x1                         ; 00479507
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0047950c
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
@@ -559,8 +559,8 @@ section .text
     LEA EAX,[EBP + 0xfffffae2]          ; 0047977d
     PUSH EAX                            ; 00479783
     PUSH 0x61fe56                       ; 00479784 | = "Enter directory to copy textures from"
-    MOV EDX,dword ptr [0x00678a60]      ; 00479789 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0047978f | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 00479789 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0047978f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 00479790
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 00479795
@@ -687,8 +687,8 @@ section .text
     LEA EAX,[EBP + 0xfffff8da]          ; 004798ce
     PUSH EAX                            ; 004798d4
     PUSH 0x61fe9f                       ; 004798d5 | = "Copying %s -> %s"
-    MOV EDX,dword ptr [0x00678a60]      ; 004798da | g_CEditorToolsPtr
-    PUSH EDX                            ; 004798e0 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004798da | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004798e0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004798e1
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x10                        ; 004798e6
@@ -731,8 +731,8 @@ section .text
     LEA EAX,[EBP + 0xfffff8da]          ; 00479956
     PUSH EAX                            ; 0047995c
     PUSH 0x61feb0                       ; 0047995d | = "I can't copy %s to %s.  Continue impo..."
-    MOV EAX,[0x00678a60]                ; 00479962 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00479967 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 00479962 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00479967 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00479968
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x10                        ; 0047996d

@@ -76,7 +76,7 @@ section .text
         ;   Label: LAB_00560e23
     PUSH 0x643649                       ; 00560e24 | = "SCmdParm::setTemplateText - expected ..."
     MOV ECX,dword ptr [0x00678a60]      ; 00560e29 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00560e2f | g_CEditorToolsPtr
+    PUSH ECX                            ; 00560e2f | g_CEditorToolsInstance
     XOR ESI,ESI                         ; 00560e30
         ;   Label: LAB_00560e30
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00560e32
@@ -94,7 +94,7 @@ section .text
     MOV EAX,0x643680                    ; 00560e45 | = "SCmdParm::setTemplateText - expected ..."
     PUSH EAX                            ; 00560e4a | = "SCmdParm::setTemplateText - expected ..."
     MOV EBX,dword ptr [0x00678a60]      ; 00560e4b | g_CEditorToolsPtr
-    PUSH EBX                            ; 00560e51 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00560e51 | g_CEditorToolsInstance
     JMP 0x00560e30                      ; 00560e52
         ;   XREF to: 00560e30 (UNCONDITIONAL_JUMP)  ; LAB_00560e30
     MOV byte ptr [ESI],0x0              ; 00560e54
@@ -689,7 +689,7 @@ section .text
         ;   Label: LAB_00561575
     PUSH 0x643a5f                       ; 00561576 | = "SCmdParm::setTemplateText - %s unknow..."
     MOV EDI,dword ptr [0x00678a60]      ; 0056157b | g_CEditorToolsPtr
-    PUSH EDI                            ; 00561581 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00561581 | g_CEditorToolsInstance
     XOR ESI,ESI                         ; 00561582
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00561584
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
@@ -743,7 +743,7 @@ section .text
     PUSH EBP                            ; 005615ea
     PUSH 0x643ad1                       ; 005615eb | = "SCmdParm::setTemplateText - Invalid t..."
     MOV ESI,dword ptr [0x00678a60]      ; 005615f0 | g_CEditorToolsPtr
-    PUSH ESI                            ; 005615f6 | g_CEditorToolsPtr
+    PUSH ESI                            ; 005615f6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005615f7
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005615fc

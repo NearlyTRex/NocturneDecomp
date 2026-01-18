@@ -29,7 +29,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonRenderer g_CDemonRendererInstance
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_ActiveRenderColor
 ;
 ; Called Functions:
@@ -185,7 +185,7 @@ section .text
     PUSH 0xff                           ; 0059b7b1
     MOV EAX,[0x00678a60]                ; 0059b7b6 | g_CEditorToolsPtr
     PUSH 0x3f000000                     ; 0059b7bb
-    PUSH EAX                            ; 0059b7c0 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0059b7c0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 ; 0059b7c1
         ;   XREF to: 004a1ca0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 0059b7c6

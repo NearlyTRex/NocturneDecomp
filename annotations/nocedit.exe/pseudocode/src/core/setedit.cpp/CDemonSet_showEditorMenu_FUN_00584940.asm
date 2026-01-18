@@ -224,8 +224,8 @@ section .text
     PUSH EAX                            ; 00584b32 | = "models"
     MOV EAX,0x648f95                    ; 00584b33 | = "Load set"
     PUSH EAX                            ; 00584b38 | = "Load set"
-    MOV EDX,dword ptr [0x00678a60]      ; 00584b39 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00584b3f | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 00584b39 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 00584b3f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 00584b40
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 00584b45
@@ -416,8 +416,8 @@ section .text
     PUSH EAX                            ; 00584d0a
     PUSH 0x648fd8                       ; 00584d0b | = "*.txt"
     PUSH 0x648fde                       ; 00584d10 | = "Select ground type file to edit"
-    MOV EDX,dword ptr [0x00678a60]      ; 00584d15 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00584d1b | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 00584d15 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 00584d1b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00584d1c
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 00584d21
@@ -531,8 +531,8 @@ section .text
     PUSH 0x648fa3                       ; 00584e33 | = "set"
     PUSH 0x648fa7                       ; 00584e38 | = "models"
     PUSH 0x648fae                       ; 00584e3d | = "Save set"
-    MOV EAX,[0x00678a60]                ; 00584e42 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00584e47 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 00584e42 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00584e47 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 00584e48
         ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 00584e4d

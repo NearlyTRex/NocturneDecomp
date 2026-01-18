@@ -68,7 +68,7 @@ section .text
     ADD ESP,0x4                         ; 00534226
     PUSH 0x63b0eb                       ; 00534229 | = "Write file?"
     MOV EDX,dword ptr [0x00678a60]      ; 0053422e | g_CEditorToolsPtr
-    PUSH EDX                            ; 00534234 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00534234 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00534235
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053423a
@@ -198,7 +198,7 @@ section .text
     FSTP double ptr [ESP]               ; 005343a6
     PUSH 0x63b19c                       ; 005343a9 | = "%.1fk"
     MOV EAX,[0x00678a60]                ; 005343ae | g_CEditorToolsPtr
-    PUSH EAX                            ; 005343b3 | g_CEditorToolsPtr
+    PUSH EAX                            ; 005343b3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005343b4
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x10                        ; 005343b9

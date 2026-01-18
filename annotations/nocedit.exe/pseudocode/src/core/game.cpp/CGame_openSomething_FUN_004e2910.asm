@@ -381,7 +381,7 @@ section .text
         ;   Label: LAB_004e2d37
     PUSH 0x62d2a1                       ; 004e2d38 | = "Can't open %s"
     MOV EBX,dword ptr [0x00678a60]      ; 004e2d3d | g_CEditorToolsPtr
-    PUSH EBX                            ; 004e2d43 | g_CEditorToolsPtr
+    PUSH EBX                            ; 004e2d43 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004e2d44
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004e2d49
@@ -401,7 +401,7 @@ section .text
     PUSH ESI                            ; 004e2d6e
     PUSH 0x62d2af                       ; 004e2d6f | = "%s is %d bytes, but expected %dx%d=%d..."
     MOV ECX,dword ptr [0x00678a60]      ; 004e2d74 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004e2d7a | g_CEditorToolsPtr
+    PUSH ECX                            ; 004e2d7a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004e2d7b
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 004e2d80
@@ -418,7 +418,7 @@ section .text
     PUSH EAX                            ; 004e2da3
     PUSH 0x62d2eb                       ; 004e2da4 | = "Can't open %s"
     MOV EDI,dword ptr [0x00678a60]      ; 004e2da9 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004e2daf | g_CEditorToolsPtr
+    PUSH EDI                            ; 004e2daf | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004e2db0
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004e2db5

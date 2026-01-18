@@ -29,7 +29,7 @@
 ;   TerminatedCString s_Searching_for_duplicate__0064b125
 ;   TerminatedCString s_d_duplicate_faces_remove_0064b144
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stack.c_stack_probe_FUN_005ff9f3
@@ -51,7 +51,7 @@ section .text
     SUB ESP,0x44                        ; 0058edee
     PUSH 0x64b125                       ; 0058edf1 | = "Searching for duplicate faces."
     MOV EDX,dword ptr [0x00678a60]      ; 0058edf6 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058edfc | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058edfc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058edfd
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0058ee02
@@ -195,7 +195,7 @@ section .text
     PUSH EBP                            ; 0058ef9f
     PUSH 0x64b144                       ; 0058efa0 | = "%d duplicate faces removed."
     MOV EAX,[0x00678a60]                ; 0058efa5 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0058efaa | g_CEditorToolsPtr
+    PUSH EAX                            ; 0058efaa | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058efab
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058efb0

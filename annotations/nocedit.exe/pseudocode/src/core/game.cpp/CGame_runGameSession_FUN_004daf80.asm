@@ -108,7 +108,7 @@ section .text
     LEA EAX,[EBP + 0xfffffef0]          ; 004db012
     PUSH EAX                            ; 004db018
     MOV EDI,dword ptr [0x00678a60]      ; 004db019 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004db01f | g_CEditorToolsPtr
+    PUSH EDI                            ; 004db01f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 ; 004db020
         ;   XREF to: 004a2590 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools * this_ptr, char * output_buffer)
     ADD ESP,0x8                         ; 004db025
@@ -381,8 +381,8 @@ section .text
         ;   XREF to: 004db41b (CONDITIONAL_JUMP)  ; LAB_004db41b
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004db3f4
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    MOV ECX,dword ptr [0x00678a60]      ; 004db3f9 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004db3ff | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004db3f9 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004db3ff | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 004db400
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004db405
@@ -842,8 +842,8 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 004db924
     PUSH EAX                            ; 004db927
-    MOV ECX,dword ptr [0x00678a60]      ; 004db928 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004db92e | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004db928 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004db92e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 004db92f
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004db934

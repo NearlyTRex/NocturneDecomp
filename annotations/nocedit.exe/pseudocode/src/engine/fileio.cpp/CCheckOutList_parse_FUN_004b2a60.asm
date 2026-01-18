@@ -31,7 +31,7 @@
 ;   TerminatedCString s_Out_of_memory_reading_ch_006263b3
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char[256] g_CharacterClassificationTable
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -92,7 +92,7 @@ section .text
     PUSH 0x6262a7                       ; 004b2ac1 | = "File I/O error accessing checkout file."
         ;   Label: LAB_004b2ac1
     MOV EBX,dword ptr [0x00678a60]      ; 004b2ac6 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004b2acc | g_CEditorToolsPtr
+    PUSH EBX                            ; 004b2acc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b2acd
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
         ;   Label: LAB_004b2acd
@@ -144,8 +144,8 @@ section .text
     MOV dword ptr [EBP],0x0             ; 004b2b44
     PUSH 0x6262df                       ; 004b2b4b | = "Checkout file is corrupt, or file I/O..."
         ;   Label: LAB_004b2b4b
-    MOV EDX,dword ptr [0x00678a60]      ; 004b2b50 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b2b56 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b2b50 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b2b56 | g_CEditorToolsInstance
     JMP 0x004b2acd                      ; 004b2b57
         ;   XREF to: 004b2acd (UNCONDITIONAL_JUMP)  ; LAB_004b2acd
     MOV EDI,ESP                         ; 004b2b5c
@@ -290,7 +290,7 @@ section .text
     PUSH EAX                            ; 004b2c93
     PUSH 0x626335                       ; 004b2c94 | = "Multiple checkout detected for %s (us..."
     MOV EBX,dword ptr [0x00678a60]      ; 004b2c99 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004b2c9f | g_CEditorToolsPtr
+    PUSH EBX                            ; 004b2c9f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b2ca0
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 004b2ca5
@@ -321,7 +321,7 @@ section .text
     PUSH 0x6263b3                       ; 004b2ce9 | = "Out of memory reading checkout file....."
         ;   Label: LAB_004b2ce9
     MOV EAX,[0x00678a60]                ; 004b2cee | g_CEditorToolsPtr
-    PUSH EAX                            ; 004b2cf3 | g_CEditorToolsPtr
+    PUSH EAX                            ; 004b2cf3 | g_CEditorToolsInstance
     JMP 0x004b2acd                      ; 004b2cf4
         ;   XREF to: 004b2acd (UNCONDITIONAL_JUMP)  ; LAB_004b2acd
 

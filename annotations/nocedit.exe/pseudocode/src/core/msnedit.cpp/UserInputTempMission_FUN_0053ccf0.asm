@@ -60,8 +60,8 @@ section .text
     SUB ESP,0x43c                       ; 0053ccf3
     MOV EBP,dword ptr [ESP + 0x44c]     ; 0053ccf9
     PUSH 0x63c8ea                       ; 0053cd00 | = "Use a saved game file instead of a mi..."
-    MOV EDX,dword ptr [0x00678a60]      ; 0053cd05 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0053cd0b | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0053cd05 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053cd0b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0053cd0c
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053cd11
@@ -76,7 +76,7 @@ section .text
     PUSH 0x63c91c                       ; 0053cd29 | = "save"
     PUSH 0x63c921                       ; 0053cd2e | = "Select mission file to import actors ..."
     MOV ESI,dword ptr [0x00678a60]      ; 0053cd33 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053cd39 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053cd39 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0053cd3a
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0053cd3f
@@ -96,8 +96,8 @@ section .text
     PUSH 0x63c94b                       ; 0053cd59 | = "*.msn"
     PUSH 0x63c951                       ; 0053cd5e | = "world"
     PUSH 0x63c957                       ; 0053cd63 | = "Select mission file to import actors ..."
-    MOV ECX,dword ptr [0x00678a60]      ; 0053cd68 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053cd6e | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0053cd68 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053cd6e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0053cd6f
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0053cd74
@@ -112,7 +112,7 @@ section .text
     ADD ESP,0x4                         ; 0053cd82
     PUSH 0x63c981                       ; 0053cd85 | = "Creating temp mission"
     MOV EDI,dword ptr [0x00678a60]      ; 0053cd8a | g_CEditorToolsPtr
-    PUSH EDI                            ; 0053cd90 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0053cd90 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053cd91
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053cd96
@@ -144,7 +144,7 @@ section .text
     PUSH EAX                            ; 0053cdf4
     PUSH 0x63c9da                       ; 0053cdf5 | = "Loading %s"
     MOV ESI,dword ptr [0x00678a60]      ; 0053cdfa | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053ce00 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053ce00 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053ce01
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0053ce06
@@ -187,14 +187,14 @@ section .text
         ;   XREF to: 0053cf45 (CONDITIONAL_JUMP)  ; LAB_0053cf45
     PUSH 0x63c9e5                       ; 0053ce8e | = "No more actors to import from this mi..."
     MOV EDI,dword ptr [0x00678a60]      ; 0053ce93 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0053ce99 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0053ce99 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0053ce9a
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053ce9f
         ;   Label: LAB_0053ce9f
     PUSH 0x63caf2                       ; 0053cea2 | = "Cleaning up."
-    MOV EAX,[0x00678a60]                ; 0053cea7 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0053ceac | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0053cea7 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0053ceac | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053cead
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053ceb2
@@ -397,7 +397,7 @@ section .text
     PUSH EAX                            ; 0053d0b7
     PUSH 0x63cab4                       ; 0053d0b8 | = "Enter actor name wildcard pattern"
     MOV ESI,dword ptr [0x00678a60]      ; 0053d0bd | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053d0c3 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053d0c3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0053d0c4
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0053d0c9
@@ -419,8 +419,8 @@ section .text
     PUSH EAX                            ; 0053d0ed
     PUSH EDI                            ; 0053d0ee
     PUSH 0x63cad6                       ; 0053d0ef | = "Imported %d actors from %s."
-    MOV ECX,dword ptr [0x00678a60]      ; 0053d0f4 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053d0fa | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0053d0f4 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053d0fa | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0053d0fb
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0053d100

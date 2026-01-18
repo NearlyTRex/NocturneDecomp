@@ -188,8 +188,8 @@ section .text
         ;   XREF to: 004a5770 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_004a5770(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00576e8c
     PUSH 0x646704                       ; 00576e8f | = "Building thumbnail images"
-    MOV EBX,dword ptr [0x00678a60]      ; 00576e94 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00576e9a | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00576e94 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 00576e9a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 00576e9b
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 00576ea0
@@ -246,7 +246,7 @@ section .text
     SUB ESP,0x4                         ; 00576f38
     MOV EBP,dword ptr [0x00678a60]      ; 00576f3b | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00576f41
-    PUSH EBP                            ; 00576f44 | g_CEditorToolsPtr
+    PUSH EBP                            ; 00576f44 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00576f45
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 00576f4a
@@ -258,9 +258,9 @@ section .text
     CMP EBX,EDX                         ; 00576f68
     JL 0x00576ec2                       ; 00576f6a
         ;   XREF to: 00576ec2 (CONDITIONAL_JUMP)  ; LAB_00576ec2
-    MOV ECX,dword ptr [0x00678a60]      ; 00576f70 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00576f70 | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_00576f70
-    PUSH ECX                            ; 00576f76 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00576f76 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 00576f77
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     MOV EAX,[0x03653fc0]                ; 00576f7c | CPickList_03653fc0

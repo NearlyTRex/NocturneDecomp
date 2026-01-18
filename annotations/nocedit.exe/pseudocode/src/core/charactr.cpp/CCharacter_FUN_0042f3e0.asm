@@ -30,7 +30,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CCharacterClassInfo.name_hash
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;   undefined4 g_CDemonSetInstance.actor_list_ptr
 ;   undefined4 g_CDemonSetInstance.actor_list_data[0]
@@ -186,7 +186,7 @@ section .text
     PUSH 0x6176d4                       ; 0042f577 | = "No hands an carry items!"
         ;   Label: LAB_0042f577
     MOV EDI,dword ptr [0x00678a60]      ; 0042f57c | g_CEditorToolsPtr
-    PUSH EDI                            ; 0042f582 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0042f582 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0042f583
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0042f588

@@ -221,7 +221,7 @@ section .text
     PUSH EAX                            ; 0056057a
     PUSH 0x64333a                       ; 0056057b | = "Warning! Duplicate wav string %s dete..."
     MOV ESI,dword ptr [0x00678a60]      ; 00560580 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00560586 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00560586 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00560587
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0056058c

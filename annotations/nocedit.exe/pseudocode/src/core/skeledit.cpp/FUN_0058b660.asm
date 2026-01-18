@@ -33,7 +33,7 @@
 ;   TerminatedCString s_core_skeledit_cpp_0064a889
 ;   TerminatedCString s_Imported_deformable_mode_0064a89e
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     PUSH EDI                            ; 0058b679
     PUSH 0x64a78e                       ; 0058b67a | = "Importing deformable model from %s..."
     MOV EDX,dword ptr [0x00678a60]      ; 0058b67f | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058b685 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058b685 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058b686
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058b68b
@@ -314,7 +314,7 @@ section .text
     PUSH EDI                            ; 0058b8bb
     PUSH 0x64a89e                       ; 0058b8bc | = "Imported deformable model from %s OK"
     MOV ECX,dword ptr [0x00678a60]      ; 0058b8c1 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0058b8c7 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0058b8c7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058b8c8
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058b8cd

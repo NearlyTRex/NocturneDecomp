@@ -30,7 +30,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CBitFont* g_EditorFont
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_FontCharacterWidth
 ;   int g_LastClickItemIndex
 ;   int g_ClipLeft
@@ -425,7 +425,7 @@ section .text
     PUSH ESI                            ; 004a4a6d
     PUSH EBP                            ; 004a4a6e
     MOV ESI,dword ptr [0x00678a60]      ; 004a4a6f | g_CEditorToolsPtr
-    PUSH ESI                            ; 004a4a75 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004a4a75 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890 ; 004a4a76
         ;   XREF to: 004a0890 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     MOV EAX,[0x02d02560]                ; 004a4a7b | g_ClipRight

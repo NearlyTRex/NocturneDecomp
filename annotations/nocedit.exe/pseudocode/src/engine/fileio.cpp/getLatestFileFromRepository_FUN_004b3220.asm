@@ -38,7 +38,7 @@
 ;   TerminatedCString s_Can_t_create_s_006266bc
 ;   TerminatedCString s_Error_turning_on_read_on_006266cd
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_errno.c_errno_FUN_00601450
@@ -152,7 +152,7 @@ section .text
     PUSH EAX                            ; 004b32f1
     PUSH 0x626611                       ; 004b32f2 | = "Can't access %s.\nPerhaps someone els..."
     MOV ECX,dword ptr [0x00678a60]      ; 004b32f7 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b32fd | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b32fd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b32fe
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
         ;   Label: LAB_004b32fe
@@ -286,7 +286,7 @@ section .text
     PUSH EAX                            ; 004b3449
     PUSH 0x6266bc                       ; 004b344a | = "Can't create %s."
     MOV EDX,dword ptr [0x00678a60]      ; 004b344f | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b3455 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b3455 | g_CEditorToolsInstance
     JMP 0x004b32fe                      ; 004b3456
         ;   XREF to: 004b32fe (UNCONDITIONAL_JUMP)  ; LAB_004b32fe
     MOV dword ptr [ESP + 0x418],0xffffffff ; 004b345b
@@ -379,7 +379,7 @@ section .text
     PUSH ESI                            ; 004b3525
         ;   Label: LAB_004b3525
     MOV EAX,[0x00678a60]                ; 004b3526 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004b352b | g_CEditorToolsPtr
+    PUSH EAX                            ; 004b352b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b352c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b3531
@@ -390,7 +390,7 @@ section .text
     PUSH EAX                            ; 004b3540
     PUSH 0x626577                       ; 004b3541 | = "WARNING: Error setting date/time on %..."
     MOV EDI,dword ptr [0x00678a60]      ; 004b3546 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004b354c | g_CEditorToolsPtr
+    PUSH EDI                            ; 004b354c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b354d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b3552
@@ -417,7 +417,7 @@ section .text
     PUSH EAX                            ; 004b3580
     PUSH 0x6266cd                       ; 004b3581 | = "Error turning on read-only bit for %s."
     MOV EBP,dword ptr [0x00678a60]      ; 004b3586 | g_CEditorToolsPtr
-    PUSH EBP                            ; 004b358c | g_CEditorToolsPtr
+    PUSH EBP                            ; 004b358c | g_CEditorToolsInstance
     JMP 0x004b32fe                      ; 004b358d
         ;   XREF to: 004b32fe (UNCONDITIONAL_JUMP)  ; LAB_004b32fe
 

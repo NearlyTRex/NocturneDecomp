@@ -11,7 +11,7 @@
 ;   TerminatedCString s_I_m_not_going_to_add_s_i_0063c2c6
 ;   TerminatedCString s_Can_t_add_s_to_set_list__0063c30c
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_msnedit.cpp_FUN_00538f40
@@ -42,7 +42,7 @@ section .text
     PUSH ESI                            ; 00538d85
     PUSH 0x63c30c                       ; 00538d86 | = "Can't add %s to set list - too many s..."
     MOV EBX,dword ptr [0x00678a60]      ; 00538d8b | g_CEditorToolsPtr
-    PUSH EBX                            ; 00538d91 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00538d91 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00538d92
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00538d97
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_00538d9d
     PUSH 0x63c2c6                       ; 00538d9e | = "I'm not going to add %s into the set ..."
     MOV ESI,dword ptr [0x00678a60]      ; 00538da3 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00538da9 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00538da9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00538daa
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00538daf

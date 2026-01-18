@@ -143,7 +143,7 @@ section .text
     LEA EAX,[ESP + 0x3560]              ; 0040efb5
     PUSH EAX                            ; 0040efbc
     MOV EDI,dword ptr [0x00678a60]      ; 0040efbd | g_CEditorToolsPtr
-    PUSH EDI                            ; 0040efc3 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0040efc3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0040efc4
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0040efc9
@@ -201,7 +201,7 @@ section .text
     LEA EAX,[ESP + 0x3554]              ; 0040f056
     PUSH EAX                            ; 0040f05d
     MOV EDI,dword ptr [0x00678a60]      ; 0040f05e | g_CEditorToolsPtr
-    PUSH EDI                            ; 0040f064 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0040f064 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 ; 0040f065
         ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value)
     ADD ESP,0x10                        ; 0040f06a
@@ -301,8 +301,8 @@ section .text
     PUSH EAX                            ; 0040f170
     LEA EAX,[ESP + 0x3558]              ; 0040f171
     PUSH EAX                            ; 0040f178
-    MOV EDX,dword ptr [0x00678a60]      ; 0040f179 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0040f17f | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0040f179 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0040f17f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0040f180
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0040f185
@@ -1055,8 +1055,8 @@ section .text
     PUSH EAX                            ; 0040f8ec
     LEA EAX,[ESP + 0x3558]              ; 0040f8ed
     PUSH EAX                            ; 0040f8f4
-    MOV EAX,[0x00678a60]                ; 0040f8f5 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0040f8fa | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0040f8f5 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0040f8fa | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0040f8fb
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0040f900
@@ -1075,7 +1075,7 @@ section .text
         ;   XREF to: 0040f938 (CONDITIONAL_JUMP)  ; LAB_0040f938
     PUSH EAX                            ; 0040f926
     MOV ESI,dword ptr [0x00678a60]      ; 0040f927 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0040f92d | g_CEditorToolsPtr
+    PUSH ESI                            ; 0040f92d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0040f92e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0040f933
@@ -1142,8 +1142,8 @@ section .text
     PUSH EAX                            ; 0040f9af
     LEA EAX,[ESP + 0x3558]              ; 0040f9b0
     PUSH EAX                            ; 0040f9b7
-    MOV EDX,dword ptr [0x00678a60]      ; 0040f9b8 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0040f9be | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0040f9b8 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0040f9be | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0040f9bf
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0040f9c4
@@ -1162,7 +1162,7 @@ section .text
         ;   XREF to: 0040f9fc (CONDITIONAL_JUMP)  ; LAB_0040f9fc
     PUSH EAX                            ; 0040f9ea
     MOV EDI,dword ptr [0x00678a60]      ; 0040f9eb | g_CEditorToolsPtr
-    PUSH EDI                            ; 0040f9f1 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0040f9f1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0040f9f2
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0040f9f7
@@ -1539,7 +1539,7 @@ section .text
     LEA EAX,[ESP + 0x3558]              ; 0040fde2
     PUSH EAX                            ; 0040fde9
     MOV EBP,dword ptr [0x00678a60]      ; 0040fdea | g_CEditorToolsPtr
-    PUSH EBP                            ; 0040fdf0 | g_CEditorToolsPtr
+    PUSH EBP                            ; 0040fdf0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0040fdf1
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0040fdf6
@@ -1669,7 +1669,7 @@ section .text
     PUSH 0x61467f                       ; 0040ff1a | = "Please input rule as \"<condition> =>..."
         ;   Label: LAB_0040ff1a
     MOV EAX,[0x00678a60]                ; 0040ff1f | g_CEditorToolsPtr
-    PUSH EAX                            ; 0040ff24 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0040ff24 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0040ff25
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0040ff2a
@@ -1764,8 +1764,8 @@ section .text
     JZ 0x0040fffe                       ; 0040ffe7
         ;   XREF to: 0040fffe (CONDITIONAL_JUMP)
     PUSH EAX                            ; 0040ffe9
-    MOV EDX,dword ptr [0x00678a60]      ; 0040ffea | g_CEditorToolsPtr
-    PUSH EDX                            ; 0040fff0 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0040ffea | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0040fff0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0040fff1
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0040fff6

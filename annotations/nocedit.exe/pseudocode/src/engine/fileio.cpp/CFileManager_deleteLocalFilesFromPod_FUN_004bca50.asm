@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Can_t_mount_s_to_delete__006291d4
 ;   TerminatedCString s_Deleting_local_files_006291fa
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_io.c_deleteFile_FUN_005ff9d0
@@ -60,7 +60,7 @@ section .text
     PUSH ESI                            ; 004bca80
     PUSH 0x6291fa                       ; 004bca81 | = "Deleting local files"
     MOV ECX,dword ptr [0x00678a60]      ; 004bca86 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bca8c | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bca8c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 004bca8d
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 004bca92
@@ -89,7 +89,7 @@ section .text
     SUB ESP,0x4                         ; 004bcae2
     MOV EBP,dword ptr [0x00678a60]      ; 004bcae5 | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 004bcaeb
-    PUSH EBP                            ; 004bcaee | g_CEditorToolsPtr
+    PUSH EBP                            ; 004bcaee | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 004bcaef
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 004bcaf4
@@ -101,7 +101,7 @@ section .text
     POP EDI                             ; 004bcb05
     MOV EDX,dword ptr [0x00678a60]      ; 004bcb06 | g_CEditorToolsPtr
         ;   Label: LAB_004bcb06
-    PUSH EDX                            ; 004bcb0c | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bcb0c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 004bcb0d
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004bcb12
@@ -122,7 +122,7 @@ section .text
         ;   Label: LAB_004bcb35
     PUSH 0x6291d4                       ; 004bcb36 | = "Can't mount %s to delete local files."
     MOV EDX,dword ptr [0x00678a60]      ; 004bcb3b | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bcb41 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bcb41 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bcb42
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bcb47

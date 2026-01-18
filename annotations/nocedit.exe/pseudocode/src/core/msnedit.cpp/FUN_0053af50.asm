@@ -11,7 +11,7 @@
 ;   void* switchdataD_0053af24 = 0053af6c
 ;   TerminatedCString s_Reloading_keyframed_mode_0063c5bc
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 DAT_02f7a02c
 ;   undefined4 DAT_02f7c52c
 ;   undefined4 DAT_02f7c530
@@ -77,7 +77,7 @@ section .text
     ADD ESP,0x4                         ; 0053af99
     PUSH 0x63c5bc                       ; 0053af9c | = "Reloading keyframed models..."
     MOV EBP,dword ptr [0x00678a60]      ; 0053afa1 | g_CEditorToolsPtr
-    PUSH EBP                            ; 0053afa7 | g_CEditorToolsPtr
+    PUSH EBP                            ; 0053afa7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053afa8
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053afad

@@ -276,7 +276,7 @@ section .text
     JZ 0x0043cc04                       ; 0043cb4a
         ;   XREF to: 0043cc04 (CONDITIONAL_JUMP)  ; LAB_0043cc04
     MOV EDX,dword ptr [0x00678a60]      ; 0043cb50 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0043cb56 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0043cb56 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043cb57
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043cb5c
@@ -340,7 +340,7 @@ section .text
     JNZ 0x0043d526                      ; 0043cc2f
         ;   XREF to: 0043d526 (CONDITIONAL_JUMP)  ; LAB_0043d526
     MOV EAX,[0x00678a60]                ; 0043cc35 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0043cc3a | g_CEditorToolsPtr
+    PUSH EAX                            ; 0043cc3a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043cc3b
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043cc40

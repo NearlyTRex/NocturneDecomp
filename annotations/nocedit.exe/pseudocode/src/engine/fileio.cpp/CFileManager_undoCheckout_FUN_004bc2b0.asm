@@ -26,7 +26,7 @@
 ;   TerminatedCString s_Delete_local_files_00629059
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
 ;   undefined4 DAT_030e5224
 ;
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 004bc42d (CONDITIONAL_JUMP)  ; LAB_004bc42d
     PUSH 0x629059                       ; 004bc39e | = "Delete local files?"
     MOV ECX,dword ptr [0x00678a60]      ; 004bc3a3 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bc3a9 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bc3a9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004bc3aa
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004bc3af
@@ -164,7 +164,7 @@ section .text
     PUSH EDI                            ; 004bc3d8
     PUSH 0x62759a                       ; 004bc3d9 | = "Remounting all pods..."
     MOV ESI,dword ptr [0x00678a60]      ; 004bc3de | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bc3e4 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bc3e4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bc3e5
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004bc3ea

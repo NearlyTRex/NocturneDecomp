@@ -13,7 +13,7 @@
 ;   TerminatedCString s_Initializing_network_to__0063d30c
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CGame* g_CGamePtr = 02d81a9c
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 DAT_02d81b60
 ;   uchar[4] g_AnyAddressIP
@@ -36,7 +36,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0053f865
     PUSH 0x63d30c                       ; 0053f869 | = "Initializing network to host game"
     MOV EDX,dword ptr [0x00678a60]      ; 0053f86e | g_CEditorToolsPtr
-    PUSH EDX                            ; 0053f874 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053f874 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053f875
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053f87a

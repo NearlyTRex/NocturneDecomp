@@ -14,7 +14,7 @@
 ;   TerminatedCString s_core_msnedit_cpp_0063c811
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   TerminatedCString s_UNDO_TMP_00680800
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_load_FUN_0040b050
@@ -55,7 +55,7 @@ section .text
     PUSH 0x680800                       ; 0053c0e8 | = "$$UNDO$$.TMP"
     PUSH 0x63c802                       ; 0053c0ed | = "Can't open %s."
     MOV EBX,dword ptr [0x00678a60]      ; 0053c0f2 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0053c0f8 | g_CEditorToolsPtr
+    PUSH EBX                            ; 0053c0f8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053c0f9
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053c0fe

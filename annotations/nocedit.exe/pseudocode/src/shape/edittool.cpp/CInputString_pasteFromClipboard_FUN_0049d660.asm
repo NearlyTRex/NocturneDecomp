@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char[256] g_CharacterClassificationTable
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
@@ -27,8 +27,8 @@ section .text
         ;   Label: shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0049d660
     PUSH ESI                            ; 0049d661
     MOV ESI,dword ptr [ESP + 0xc]       ; 0049d662
-    MOV EDX,dword ptr [0x00678a60]      ; 0049d666 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0049d66c | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0049d666 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0049d66c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30 ; 0049d66d
         ;   XREF to: 004a1b30 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049d672

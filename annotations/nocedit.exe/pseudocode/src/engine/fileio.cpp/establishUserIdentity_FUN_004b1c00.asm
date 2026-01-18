@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Name_contains_invalid_ch_0062602a
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char[256] g_CharacterClassificationTable
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   SVersionControlSession g_VersionControlSession
 ;   undefined4 DAT_02d12bd1
 ;   undefined4 DAT_02d12bd2
@@ -71,8 +71,8 @@ section .text
     PUSH 0x20                           ; 004b1c49
     PUSH 0x2d12bd0                      ; 004b1c4b | g_VersionControlSession
     PUSH 0x625ffe                       ; 004b1c50 | = "Enter user name"
-    MOV EDX,dword ptr [0x00678a60]      ; 004b1c55 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b1c5b | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b1c55 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b1c5b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004b1c5c
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004b1c61
@@ -110,8 +110,8 @@ section .text
         ;   XREF to: 004b1c10 (CONDITIONAL_JUMP)  ; LAB_004b1c10
     PUSH 0x62602a                       ; 004b1cb0 | = "Name contains invalid characters"
         ;   Label: LAB_004b1cb0
-    MOV EBX,dword ptr [0x00678a60]      ; 004b1cb5 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004b1cbb | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 004b1cb5 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 004b1cbb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b1cbc
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b1cc1
@@ -163,8 +163,8 @@ section .text
     RET                                 ; 004b1d26
     PUSH 0x62600e                       ; 004b1d27 | = "You must enter a user name."
         ;   Label: LAB_004b1d27
-    MOV ECX,dword ptr [0x00678a60]      ; 004b1d2c | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b1d32 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004b1d2c | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b1d32 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b1d33
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b1d38

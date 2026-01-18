@@ -20,7 +20,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
 ;   CGame g_CGameInstance
 ;   CKeys g_CKeysInstance
@@ -169,8 +169,8 @@ section .text
     JNZ 0x005806bc                      ; 005806d7
         ;   XREF to: 005806bc (CONDITIONAL_JUMP)  ; LAB_005806bc
     PUSH 0x648618                       ; 005806d9 | = "Not all fog files were computed."
-    MOV EAX,[0x00678a60]                ; 005806de | g_CEditorToolsPtr
-    PUSH EAX                            ; 005806e3 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 005806de | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 005806e3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 005806e4
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 005806e9

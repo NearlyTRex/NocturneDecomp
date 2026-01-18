@@ -12,7 +12,7 @@
 ;   TerminatedCString s_Enter_new_spot_light_nam_006477ae
 ;   TerminatedCString s_Precompute_light_visibil_006477c8
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_FUN_0056d2d0
@@ -72,8 +72,8 @@ section .text
     PUSH 0x100                          ; 0057b480
     PUSH ESI                            ; 0057b485
     PUSH 0x6477ae                       ; 0057b486 | = "Enter new spot light name"
-    MOV EDX,dword ptr [0x00678a60]      ; 0057b48b | g_CEditorToolsPtr
-    PUSH EDX                            ; 0057b491 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0057b48b | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0057b491 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0057b492
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0057b497
@@ -89,8 +89,8 @@ section .text
         ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057b4aa
     PUSH 0x6477c8                       ; 0057b4ad | = "Precompute light visibility?"
-    MOV EBX,dword ptr [0x00678a60]      ; 0057b4b2 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0057b4b8 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0057b4b2 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0057b4b8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057b4b9
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057b4be
@@ -113,8 +113,8 @@ section .text
     RET                                 ; 0057b4dc
     PUSH 0x647795                       ; 0057b4dd | = "Too many lights already!"
         ;   Label: LAB_0057b4dd
-    MOV EAX,[0x00678a60]                ; 0057b4e2 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0057b4e7 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057b4e2 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057b4e7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057b4e8
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057b4ed

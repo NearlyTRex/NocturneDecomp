@@ -51,7 +51,7 @@
 ;   double DOUBLE_00637605 = -0.510000000000000
 ;   double DOUBLE_0063760d = 0.0500000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   ... and 1 more
 ;
@@ -92,7 +92,7 @@ section .text
     PUSH 0x637576                       ; 0051665b | = "Creating quick-grid"
         ;   Label: LAB_0051665b
     MOV EDX,dword ptr [0x00678a60]      ; 00516660 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00516666 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00516666 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 00516667
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 0051666c
@@ -293,7 +293,7 @@ section .text
     SUB ESP,0x4                         ; 005168ad
     MOV ECX,dword ptr [0x00678a60]      ; 005168b0 | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 005168b6
-    PUSH ECX                            ; 005168b9 | g_CEditorToolsPtr
+    PUSH ECX                            ; 005168b9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 005168ba
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 005168bf
@@ -313,7 +313,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x54]      ; 005168ec
     MOV dword ptr [EAX + 0x4000],EDX    ; 005168f0
     MOV EDX,dword ptr [0x00678a60]      ; 005168f6 | g_CEditorToolsPtr
-    PUSH EDX                            ; 005168fc | g_CEditorToolsPtr
+    PUSH EDX                            ; 005168fc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005168fd
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00516902

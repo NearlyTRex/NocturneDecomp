@@ -389,8 +389,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 00564b5c
         ;   Label: LAB_00564b5c
     PUSH EDX                            ; 00564b60
-    MOV ECX,dword ptr [0x00678a60]      ; 00564b61 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00564b67 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00564b61 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00564b67 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 00564b68
         ;   XREF to: 004a1bc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 00564b6d
@@ -423,8 +423,8 @@ section .text
         ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorAction_FUN_00564820()
     ADD ESP,0xc                         ; 00564bab
     PUSH 0x1                            ; 00564bae
-    MOV EAX,[0x00678a60]                ; 00564bb0 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00564bb5 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 00564bb0 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00564bb5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30 ; 00564bb6
         ;   XREF to: 004a1b30 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00564bbb

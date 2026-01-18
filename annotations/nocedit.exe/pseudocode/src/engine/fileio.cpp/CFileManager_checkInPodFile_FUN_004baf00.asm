@@ -386,7 +386,7 @@ section .text
     RET                                 ; 004bb212
     MOV ESI,dword ptr [0x00678a60]      ; 004bb213 | g_CEditorToolsPtr
         ;   Label: LAB_004bb213
-    PUSH ESI                            ; 004bb219 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bb219 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 004bb21a
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004bb21f
@@ -394,7 +394,7 @@ section .text
     PUSH EAX                            ; 004bb229
     PUSH 0x628df5                       ; 004bb22a | = "Can't mount %s to check status"
     MOV EDI,dword ptr [0x00678a60]      ; 004bb22f | g_CEditorToolsPtr
-    PUSH EDI                            ; 004bb235 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004bb235 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bb236
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bb23b
@@ -531,7 +531,7 @@ section .text
     PUSH EAX                            ; 004bb3a0
     PUSH 0x628f06                       ; 004bb3a1 | = "%s fails CRC check.  File not checked in"
     MOV EBX,dword ptr [0x00678a60]      ; 004bb3a6 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004bb3ac | g_CEditorToolsPtr
+    PUSH EBX                            ; 004bb3ac | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bb3ad
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bb3b2
@@ -554,7 +554,7 @@ section .text
     PUSH EAX                            ; 004bb3d5
     PUSH 0x626a97                       ; 004bb3d6 | = "Error accessing %s.  File not checked..."
     MOV ECX,dword ptr [0x00678a60]      ; 004bb3db | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bb3e1 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bb3e1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bb3e2
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bb3e7
@@ -565,7 +565,7 @@ section .text
     PUSH EAX                            ; 004bb3f6
     PUSH 0x626ac1                       ; 004bb3f7 | = "Error accessing %s.  File not checked..."
     MOV ESI,dword ptr [0x00678a60]      ; 004bb3fc | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bb402 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bb402 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bb403
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bb408
@@ -643,7 +643,7 @@ section .text
         ;   XREF to: 004bc112 (CONDITIONAL_JUMP)  ; LAB_004bc112
     PUSH 0x628fa5                       ; 004bb4d7 | = "Delete local files?"
     MOV EDX,dword ptr [0x00678a60]      ; 004bb4dc | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bb4e2 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bb4e2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004bb4e3
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004bb4e8
@@ -665,7 +665,7 @@ section .text
         ;   XREF to: 004bb546 (CONDITIONAL_JUMP)  ; LAB_004bb546
     PUSH 0x62759a                       ; 004bb511 | = "Remounting all pods..."
     MOV ECX,dword ptr [0x00678a60]      ; 004bb516 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bb51c | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bb51c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bb51d
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004bb522
@@ -716,7 +716,7 @@ section .text
     PUSH EAX                            ; 004bb595
     PUSH 0x626b95                       ; 004bb596 | = "Keep %s checked out after updating to..."
     MOV EBX,dword ptr [0x00678a60]      ; 004bb59b | g_CEditorToolsPtr
-    PUSH EBX                            ; 004bb5a1 | g_CEditorToolsPtr
+    PUSH EBX                            ; 004bb5a1 | g_CEditorToolsInstance
     MOV ESI,0x626bc4                    ; 004bb5a2 | = "history"
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004bb5a7
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
@@ -789,7 +789,7 @@ section .text
     PUSH EAX                            ; 004bb671
     PUSH 0x626bcc                       ; 004bb672 | = "Reading %s"
     MOV ECX,dword ptr [0x00678a60]      ; 004bb677 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bb67d | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bb67d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bb67e
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004bb683
@@ -808,7 +808,7 @@ section .text
     PUSH EAX                            ; 004bb6b4
     PUSH 0x626bd7                       ; 004bb6b5 | = "Opening local file %s"
     MOV ESI,dword ptr [0x00678a60]      ; 004bb6ba | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bb6c0 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bb6c0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bb6c1
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004bb6c6
@@ -830,7 +830,7 @@ section .text
         ;   XREF to: 004bb723 (CONDITIONAL_JUMP)  ; LAB_004bb723
     PUSH 0x626c13                       ; 004bb702 | = "Logging on as version control user..."
     MOV EDI,dword ptr [0x00678a60]      ; 004bb707 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004bb70d | g_CEditorToolsPtr
+    PUSH EDI                            ; 004bb70d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bb70e
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004bb713
@@ -895,7 +895,7 @@ section .text
     PUSH EAX                            ; 004bb7bb
     PUSH 0x626c44                       ; 004bb7bc | = "Creating temporary network file %s..."
     MOV EDX,dword ptr [0x00678a60]      ; 004bb7c1 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bb7c7 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bb7c7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bb7c8
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004bb7cd
@@ -929,7 +929,7 @@ section .text
     PUSH EAX                            ; 004bb832
     PUSH 0x626c82                       ; 004bb833 | = "Can't create %s.\nGet Fletch."
     MOV EBX,dword ptr [0x00678a60]      ; 004bb838 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004bb83e | g_CEditorToolsPtr
+    PUSH EBX                            ; 004bb83e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bb83f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
         ;   Label: LAB_004bb83f
@@ -999,7 +999,7 @@ section .text
     PUSH EAX                            ; 004bb8f3
     PUSH 0x626c05                       ; 004bb8f4 | = "Can't open %s"
     MOV ESI,dword ptr [0x00678a60]      ; 004bb8f9 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bb8ff | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bb8ff | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bb900
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bb905
@@ -1008,7 +1008,7 @@ section .text
     PUSH 0x626c9f                       ; 004bb90d | = "Copying file to temporary network file"
         ;   Label: LAB_004bb90d
     MOV ESI,dword ptr [0x00678a60]      ; 004bb912 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bb918 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bb918 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bb919
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004bb91e
@@ -1119,7 +1119,7 @@ section .text
     PUSH EBX                            ; 004bba5a
     PUSH 0x626d46                       ; 004bba5b | = "Finalizing %s to network..."
     MOV ESI,dword ptr [0x00678a60]      ; 004bba60 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bba66 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bba66 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bba67
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004bba6c
@@ -1153,7 +1153,7 @@ section .text
     JLE 0x004bbacc                      ; 004bbabb
         ;   XREF to: 004bbacc (CONDITIONAL_JUMP)  ; LAB_004bbacc
     MOV EDX,dword ptr [0x00678a60]      ; 004bbabd | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bbac3 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bbac3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 004bbac4
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004bbac9
@@ -1235,7 +1235,7 @@ section .text
     PUSH EAX                            ; 004bbba9
     PUSH 0x62729d                       ; 004bbbaa | = "Error creating history record in %s.\..."
     MOV EDX,dword ptr [0x00678a60]      ; 004bbbaf | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bbbb5 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bbbb5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bbbb6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bbbbb
@@ -1250,7 +1250,7 @@ section .text
         ;   Label: LAB_004bbbd3
     PUSH 0x626cce                       ; 004bbbd4 | = "%s\nGet Fletch."
     MOV ECX,dword ptr [0x00678a60]      ; 004bbbd9 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bbbdf | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bbbdf | g_CEditorToolsInstance
     JMP 0x004bb83f                      ; 004bbbe0
         ;   XREF to: 004bb83f (UNCONDITIONAL_JUMP)  ; LAB_004bb83f
     LEA EAX,[ESP + 0x1f88]              ; 004bbbe5
@@ -1258,7 +1258,7 @@ section .text
     PUSH EAX                            ; 004bbbec
     PUSH 0x626cdd                       ; 004bbbed | = "Grabbing %s..."
     MOV EDX,dword ptr [0x00678a60]      ; 004bbbf2 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bbbf8 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bbbf8 | g_CEditorToolsInstance
     LEA EDI,[ESP + 0x1f94]              ; 004bbbf9
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bbc00
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
@@ -1304,7 +1304,7 @@ section .text
     PUSH EAX                            ; 004bbc74
     PUSH 0x626cf0                       ; 004bbc75 | = "Can't access %s.  Get Fletch."
     MOV ECX,dword ptr [0x00678a60]      ; 004bbc7a | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bbc80 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bbc80 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bbc81
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bbc86
@@ -1368,7 +1368,7 @@ section .text
     PUSH 0x626d0e                       ; 004bbd2f | = "Hell froze - we no longer have the fi..."
         ;   Label: LAB_004bbd2f
     MOV EAX,[0x00678a60]                ; 004bbd34 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004bbd39 | g_CEditorToolsPtr
+    PUSH EAX                            ; 004bbd39 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bbd3a
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004bbd3f
@@ -1403,12 +1403,12 @@ section .text
     PUSH EAX                            ; 004bbd92
     PUSH 0x626d62                       ; 004bbd93 | = "Error renaming %s -> %s.\nThe file wa..."
     MOV EDI,dword ptr [0x00678a60]      ; 004bbd98 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004bbd9e | g_CEditorToolsPtr
+    PUSH EDI                            ; 004bbd9e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bbd9f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004bbda4
     MOV EAX,[0x00678a60]                ; 004bbda7 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004bbdac | g_CEditorToolsPtr
+    PUSH EAX                            ; 004bbdac | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 004bbdad
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004bbdb2
@@ -1435,7 +1435,7 @@ section .text
     LEA EAX,[ESP + 0x18e4]              ; 004bbded
     PUSH EAX                            ; 004bbdf4
     MOV EAX,[0x00678a60]                ; 004bbdf5 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004bbdfa | g_CEditorToolsPtr
+    PUSH EAX                            ; 004bbdfa | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 004bbdfb
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 004bbe00
@@ -1451,7 +1451,7 @@ section .text
     SUB ESP,0x4                         ; 004bbe25
     MOV EDX,dword ptr [0x00678a60]      ; 004bbe28 | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 004bbe2e
-    PUSH EDX                            ; 004bbe31 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bbe31 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 004bbe32
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 004bbe37
@@ -1485,7 +1485,7 @@ section .text
     PUSH EAX                            ; 004bbe8a
     PUSH 0x626ea8                       ; 004bbe8b | = "Error setting file date/time for %s.\..."
     MOV EAX,[0x00678a60]                ; 004bbe90 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004bbe95 | g_CEditorToolsPtr
+    PUSH EAX                            ; 004bbe95 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bbe96
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bbe9b
@@ -1514,7 +1514,7 @@ section .text
     PUSH EAX                            ; 004bbee1
     PUSH 0x6270ed                       ; 004bbee2 | = "Error setting file date/time for %s.\..."
     MOV ESI,dword ptr [0x00678a60]      ; 004bbee7 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bbeed | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bbeed | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bbeee
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bbef3
@@ -1680,7 +1680,7 @@ section .text
     PUSH EAX                            ; 004bc09b
     PUSH 0x6274c1                       ; 004bc09c | = "Error marking local file %s as read o..."
     MOV EAX,[0x00678a60]                ; 004bc0a1 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004bc0a6 | g_CEditorToolsPtr
+    PUSH EAX                            ; 004bc0a6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 004bc0a7
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bc0ac
@@ -1707,7 +1707,7 @@ section .text
     PUSH 0x627473                       ; 004bc0e9 | = "Out of memory...Restart the applicati..."
         ;   Label: LAB_004bc0e9
     MOV ECX,dword ptr [0x00678a60]      ; 004bc0ee | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bc0f4 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bc0f4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bc0f5
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004bc0fa

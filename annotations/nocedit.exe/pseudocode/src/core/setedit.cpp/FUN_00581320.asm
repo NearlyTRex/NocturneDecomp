@@ -16,7 +16,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
 ;   CGame g_CGameInstance
 ;   CKeys g_CKeysInstance
@@ -47,9 +47,9 @@ section .text
     MOV EBX,dword ptr [ESP + 0x114]     ; 0058132a
     MOV ESI,dword ptr [ESP + 0x118]     ; 00581331
     PUSH 0x6489b9                       ; 00581338 | = "Getting ready"
-    MOV ECX,dword ptr [0x00678a60]      ; 0058133d | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0058133d | g_CEditorToolsInstance | g_CEditorToolsPtr
     XOR EDX,EDX                         ; 00581343
-    PUSH ECX                            ; 00581345 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00581345 | g_CEditorToolsInstance
     MOV dword ptr [0x02d807a4],EDX      ; 00581346 | g_CDemonLightInstance.light_enabled_flag
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058134c
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
@@ -69,8 +69,8 @@ section .text
     ADD EDI,EBP                         ; 00581375
     PUSH EDI                            ; 00581377
     PUSH 0x6489c7                       ; 00581378 | = "Computing fog for camera %s"
-    MOV EAX,[0x00678a60]                ; 0058137d | g_CEditorToolsPtr
-    PUSH EAX                            ; 00581382 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0058137d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00581382 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00581383
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00581388

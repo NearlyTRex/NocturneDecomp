@@ -16,7 +16,7 @@
 ;   TerminatedCString s_shape_meshlod_cpp_0063747a
 ;   TerminatedCString s_Too_many_adj_faces_0063748f
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -45,7 +45,7 @@ section .text
     PUSH ESI                            ; 00515cbc
     PUSH 0x637466                       ; 00515cbd | = "Too many adj faces!"
     MOV ECX,dword ptr [0x00678a60]      ; 00515cc2 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00515cc8 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00515cc8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00515cc9
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00515cce

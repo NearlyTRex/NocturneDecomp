@@ -14,7 +14,7 @@
 ;   float g_MovieRecordingTargetFPS = 30
 ;   undefined4 DAT_0067b664
 ;   undefined4 DAT_0067b668
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_CheatFlags
 ;   int g_DebugRecording
 ;   undefined4 g_DebugRecordingParams
@@ -40,9 +40,9 @@ section .text
     PUSH 0x1                            ; 004d7740
     PUSH 0x67b660                       ; 004d7742 | g_MovieRecordingTargetFPS
     PUSH 0x62b161                       ; 004d7747 | = "Enter Movie FPS"
-    MOV EBX,dword ptr [0x00678a60]      ; 004d774c | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 004d774c | g_CEditorToolsInstance | g_CEditorToolsPtr
     XOR EDX,EDX                         ; 004d7752
-    PUSH EBX                            ; 004d7754 | g_CEditorToolsPtr
+    PUSH EBX                            ; 004d7754 | g_CEditorToolsInstance
     MOV dword ptr [0x02d831b4],EDX      ; 004d7755 | g_DebugRecording
     MOV dword ptr [0x02d831bc],EDX      ; 004d775b | DAT_02d831bc
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 004d7761
@@ -65,7 +65,7 @@ section .text
     PUSH 0x2d831b8                      ; 004d777d | g_DebugRecordingParams
     PUSH 0x62b171                       ; 004d7782 | = "Enter number of frames to record (or ..."
     MOV ESI,dword ptr [0x00678a60]      ; 004d7787 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004d778d | g_CEditorToolsPtr
+    PUSH ESI                            ; 004d778d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 004d778e
         ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 004d7793
@@ -79,7 +79,7 @@ section .text
     PUSH 0x67b664                       ; 004d77a5 | DAT_0067b664
     PUSH 0x62b1bb                       ; 004d77aa | = "Enter image width"
     MOV EDI,dword ptr [0x00678a60]      ; 004d77af | g_CEditorToolsPtr
-    PUSH EDI                            ; 004d77b5 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004d77b5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 004d77b6
         ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 004d77bb
@@ -93,7 +93,7 @@ section .text
     PUSH 0x67b668                       ; 004d77cd | DAT_0067b668
     PUSH 0x62b1cd                       ; 004d77d2 | = "Enter image height"
     MOV EBP,dword ptr [0x00678a60]      ; 004d77d7 | g_CEditorToolsPtr
-    PUSH EBP                            ; 004d77dd | g_CEditorToolsPtr
+    PUSH EBP                            ; 004d77dd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 004d77de
         ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 004d77e3
@@ -101,8 +101,8 @@ section .text
     JZ 0x004d776d                       ; 004d77e8
         ;   XREF to: 004d776d (CONDITIONAL_JUMP)  ; LAB_004d776d
     PUSH 0x62b1e0                       ; 004d77ea | = "Press CTRL+V to begin recording."
-    MOV EAX,[0x00678a60]                ; 004d77ef | g_CEditorToolsPtr
-    PUSH EAX                            ; 004d77f4 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 004d77ef | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 004d77f4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 004d77f5
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     MOV EDX,0x1                         ; 004d77fa

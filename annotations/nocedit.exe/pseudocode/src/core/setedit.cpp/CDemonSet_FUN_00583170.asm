@@ -183,7 +183,7 @@ section .text
     SUB EBP,0x7e                        ; 0058317c
     PUSH 0x648d37                       ; 0058317f | = "Preparing set."
     MOV EDX,dword ptr [0x00678a60]      ; 00583184 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058318a | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058318a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058318b
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00583190
@@ -464,7 +464,7 @@ section .text
         ;   XREF to: 005817d0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_005817d0(void * unk)
     ADD ESP,0x18                        ; 00583519
     MOV EDI,dword ptr [0x00678a60]      ; 0058351c | g_CEditorToolsPtr
-    PUSH EDI                            ; 00583522 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00583522 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 00583523
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00583528
@@ -472,7 +472,7 @@ section .text
     MOV EDI,EAX                         ; 0058352c
     MOV EAX,[0x00678a60]                ; 0058352e | g_CEditorToolsPtr
     PUSH 0x40000000                     ; 00583533
-    PUSH EAX                            ; 00583538 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00583538 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 ; 00583539
         ;   XREF to: 004a1ca0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools * this_ptr, float scale_factor, int text_color)
     FLD float ptr [EBX]                 ; 0058353e
@@ -489,7 +489,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 00583564
     PUSH EAX                            ; 00583567
     FCHS                                ; 00583568
-    PUSH EDX                            ; 0058356a | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058356a | g_CEditorToolsInstance
     FSTP float ptr [EBP + 0xffffff6e]   ; 0058356b
     CALL shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 ; 00583571
         ;   XREF to: 004a2050 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools * this_ptr, CVector3f * corner1, CVector3f * corner2, int color_value)
@@ -533,7 +533,7 @@ section .text
     PUSH EAX                            ; 005835d0
     MOV EAX,[0x00678a60]                ; 005835d1 | g_CEditorToolsPtr
     FCHS                                ; 005835d6
-    PUSH EAX                            ; 005835d8 | g_CEditorToolsPtr
+    PUSH EAX                            ; 005835d8 | g_CEditorToolsInstance
     FSTP float ptr [EBP + 0xa]          ; 005835d9
     CALL shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 ; 005835dc
         ;   XREF to: 004a2050 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools * this_ptr, CVector3f * corner1, CVector3f * corner2, int color_value)
@@ -914,8 +914,8 @@ section .text
         ;   XREF to: 0044cb80 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     ADD ESP,0x8                         ; 00583ae2
     PUSH 0x0                            ; 00583ae5
-    MOV EBX,dword ptr [0x00678a60]      ; 00583ae7 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00583aed | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00583ae7 | g_CEditorToolsPtr | g_CEditorToolsInstance
+    PUSH EBX                            ; 00583aed | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 00583aee
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 00583af3
@@ -1038,7 +1038,7 @@ section .text
         ;   XREF to: 005847a9 (CONDITIONAL_JUMP)  ; LAB_005847a9
     PUSH 0x648d86                       ; 00583c5b | = "Max number of boxes has been reached,..."
     MOV EDX,dword ptr [0x00678a60]      ; 00583c60 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00583c66 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00583c66 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00583c67
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
         ;   Label: LAB_00583c67
@@ -1063,7 +1063,7 @@ section .text
         ;   XREF to: 00583d09 (CONDITIONAL_JUMP)  ; LAB_00583d09
     PUSH 0x648ddf                       ; 00583ca0 | = "Delete the selected box?"
     MOV ESI,dword ptr [0x00678a60]      ; 00583ca5 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00583cab | g_CEditorToolsPtr
+    PUSH ESI                            ; 00583cab | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00583cac
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00583cb1
@@ -2056,7 +2056,7 @@ section .text
     PUSH 0x648d46                       ; 00584790 | = "Max number of boxes has been reached,..."
         ;   Label: LAB_00584790
     MOV ECX,dword ptr [0x00678a60]      ; 00584795 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0058479b | g_CEditorToolsPtr
+    PUSH ECX                            ; 0058479b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0058479c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 005847a1
@@ -2073,7 +2073,7 @@ section .text
     PUSH 0x648dbd                       ; 005847b4 | = "No box selected - can't replicate"
         ;   Label: LAB_005847b4
     MOV EAX,[0x00678a60]                ; 005847b9 | g_CEditorToolsPtr
-    PUSH EAX                            ; 005847be | g_CEditorToolsPtr
+    PUSH EAX                            ; 005847be | g_CEditorToolsInstance
     JMP 0x00583c67                      ; 005847bf
         ;   XREF to: 00583c67 (UNCONDITIONAL_JUMP)  ; LAB_00583c67
     IMUL EBX,EBX,0x44                   ; 005847c4

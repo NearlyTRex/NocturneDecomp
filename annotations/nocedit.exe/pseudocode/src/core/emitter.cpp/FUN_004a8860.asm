@@ -59,7 +59,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 DAT_02cf2b5c
 ;   undefined4 DAT_02cf2b60
 ;   undefined4 DAT_02cf2b6c
@@ -257,15 +257,15 @@ section .text
         ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)  ; LAB_004a88a9
     PUSH 0x2cf2b6c                      ; 004a8a3b | DAT_02cf2b6c
     PUSH 0x2cf2b60                      ; 004a8a40 | DAT_02cf2b60
-    MOV EAX,[0x00678a60]                ; 004a8a45 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004a8a4a | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 004a8a45 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 004a8a4a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 004a8a4b
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004a8a50
     PUSH EAX                            ; 004a8a53
-    MOV EDX,dword ptr [0x00678a60]      ; 004a8a54 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004a8a54 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH 0x3f800000                     ; 004a8a5a
-    PUSH EDX                            ; 004a8a5f | g_CEditorToolsPtr
+    PUSH EDX                            ; 004a8a5f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90 ; 004a8a60
         ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools * this_ptr, int param2, CQuaternion4f * world_position, CQuaternion4f * label_offset, ...)
     ADD ESP,0x14                        ; 004a8a65

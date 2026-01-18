@@ -19,7 +19,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CSound* g_CSoundPtr = 03f6af64
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CKeys g_CKeysInstance
 ;   CSound g_CSoundInstance
 ;
@@ -90,7 +90,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0053ebb2
     PUSH EAX                            ; 0053ebb6
     MOV EDI,dword ptr [0x00678a60]      ; 0053ebb7 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0053ebbd | g_CEditorToolsPtr
+    PUSH EDI                            ; 0053ebbd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0053ebbe
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 0053ebc3
@@ -111,9 +111,9 @@ section .text
     JA 0x0053ec1c                       ; 0053ebf0
         ;   XREF to: 0053ec1c (CONDITIONAL_JUMP)  ; LAB_0053ec1c
     PUSH 0x3f800000                     ; 0053ebf2
-    MOV EAX,[0x00678a60]                ; 0053ebf7 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0053ebf7 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH dword ptr [ESP + 0x4]          ; 0053ebfc
-    PUSH EAX                            ; 0053ec00 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0053ec00 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 0053ec01
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 0053ec06
@@ -126,9 +126,9 @@ section .text
     TEST EAX,EAX                        ; 0053ec18
     JZ 0x0053ebc6                       ; 0053ec1a
         ;   XREF to: 0053ebc6 (CONDITIONAL_JUMP)  ; LAB_0053ebc6
-    MOV EDX,dword ptr [0x00678a60]      ; 0053ec1c | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0053ec1c | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_0053ec1c
-    PUSH EDX                            ; 0053ec22 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053ec22 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 0053ec23
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0053ec28
@@ -149,7 +149,7 @@ section .text
     PUSH 0x63d024                       ; 0053ec46 | = "Can't start sound output.  (Maybe mut..."
         ;   Label: LAB_0053ec46
     MOV ECX,dword ptr [0x00678a60]      ; 0053ec4b | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053ec51 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053ec51 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053ec52
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053ec57
@@ -159,7 +159,7 @@ section .text
         ;   Label: LAB_0053ec5c
     PUSH 0x63d06b                       ; 0053ec5d | = "Failed to play \"%s\""
     MOV ESI,dword ptr [0x00678a60]      ; 0053ec62 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053ec68 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053ec68 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053ec69
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053ec6e

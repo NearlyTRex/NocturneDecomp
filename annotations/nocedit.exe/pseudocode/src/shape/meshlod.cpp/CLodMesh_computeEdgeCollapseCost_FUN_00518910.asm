@@ -612,7 +612,7 @@ section .text
         ;   XREF to: 00519026 (CONDITIONAL_JUMP)  ; LAB_00519026
     PUSH 0x637921                       ; 00518ff0 | = "Too many neighboring edges!"
     MOV EBX,dword ptr [0x00678a60]      ; 00518ff5 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00518ffb | g_CEditorToolsPtr
+    PUSH EBX                            ; 00518ffb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00518ffc
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00519001
@@ -702,7 +702,7 @@ section .text
         ;   XREF to: 00519178 (CONDITIONAL_JUMP)  ; LAB_00519178
     PUSH 0x63796e                       ; 00519142 | = "Too many neighboring faces!"
     MOV EAX,[0x00678a60]                ; 00519147 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0051914c | g_CEditorToolsPtr
+    PUSH EAX                            ; 0051914c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0051914d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00519152

@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Can_t_create_s_00637e5f
 ;   TerminatedCString s_shape_meshlod_cpp_00637e6f
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -38,7 +38,7 @@ section .text
     PUSH ESI                            ; 0051c077
     PUSH 0x637e25                       ; 0051c078 | = "Exporting %s"
     MOV EDX,dword ptr [0x00678a60]      ; 0051c07d | g_CEditorToolsPtr
-    PUSH EDX                            ; 0051c083 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0051c083 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0051c084
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0051c089

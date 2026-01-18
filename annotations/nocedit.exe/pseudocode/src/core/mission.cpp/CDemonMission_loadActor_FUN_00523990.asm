@@ -26,7 +26,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   TerminatedCString s_none_0067d690
 ;   char[256] g_CharacterClassificationTable
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -165,7 +165,7 @@ section .text
     PUSH EAX                            ; 00523aa3
     PUSH 0x639001                       ; 00523aa4 | = "WARNING.  Can't find actor '%s' in %s..."
     MOV ECX,dword ptr [0x00678a60]      ; 00523aa9 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00523aaf | g_CEditorToolsPtr
+    PUSH ECX                            ; 00523aaf | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00523ab0
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00523ab5

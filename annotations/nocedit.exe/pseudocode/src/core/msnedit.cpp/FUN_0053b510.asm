@@ -23,7 +23,7 @@
 ;   TerminatedCString s_Actors_relevent_to_s_0063c6b8
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char[256] g_CharacterClassificationTable
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_0040e130
@@ -465,8 +465,8 @@ section .text
         ;   XREF to: 0053b95f (UNCONDITIONAL_JUMP)  ; LAB_0053b95f
     PUSH 0x63c685                       ; 0053b9d3 | = "No actors relevent to the operation o..."
         ;   Label: LAB_0053b9d3
-    MOV EAX,[0x00678a60]                ; 0053b9d8 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0053b9dd | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0053b9d8 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0053b9dd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0053b9de
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     JMP 0x0053b7d5                      ; 0053b9e3

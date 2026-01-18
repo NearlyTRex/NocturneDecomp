@@ -24,7 +24,7 @@
 ;   TerminatedCString s_core_dmodel_cpp_00620629
 ;   TerminatedCString s_core_dmodel_cpp_0062063c
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetc_FUN_005fe840
@@ -72,7 +72,7 @@ section .text
     PUSH EDX                            ; 0047c973
     PUSH 0x6205d1                       ; 0047c974 | = "Can't open %s"
     MOV ECX,dword ptr [0x00678a60]      ; 0047c979 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047c97f | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047c97f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047c980
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0047c985
@@ -100,7 +100,7 @@ section .text
     PUSH ECX                            ; 0047c9b4
     PUSH 0x620618                       ; 0047c9b5 | = "Copying %s -> %s"
     MOV EDI,dword ptr [0x00678a60]      ; 0047c9ba | g_CEditorToolsPtr
-    PUSH EDI                            ; 0047c9c0 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0047c9c0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0047c9c1
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x10                        ; 0047c9c6
@@ -129,7 +129,7 @@ section .text
     PUSH EBP                            ; 0047c9f5
     PUSH 0x620608                       ; 0047c9f6 | = "Can't create %s"
     MOV EBP,dword ptr [0x00678a60]      ; 0047c9fb | g_CEditorToolsPtr
-    PUSH EBP                            ; 0047ca01 | g_CEditorToolsPtr
+    PUSH EBP                            ; 0047ca01 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047ca02
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0047ca07

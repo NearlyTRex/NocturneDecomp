@@ -16,7 +16,7 @@
 ;   TerminatedCString s_Actor_name_contains_inva_0063cb94
 ;   TerminatedCString s_Already_an_actor_named_s_0063cbbc
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_FUN_00524030
@@ -248,7 +248,7 @@ section .text
     PUSH 0x63cb94                       ; 0053d354 | = "Actor name contains invalid characters."
         ;   Label: LAB_0053d354
     MOV ESI,dword ptr [0x00678a60]      ; 0053d359 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053d35f | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053d35f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053d360
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053d365
@@ -269,7 +269,7 @@ section .text
     PUSH EBX                            ; 0053d37f
     PUSH 0x63cbbc                       ; 0053d380 | = "Already an actor named %s in this mis..."
     MOV EBX,dword ptr [0x00678a60]      ; 0053d385 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0053d38b | g_CEditorToolsPtr
+    PUSH EBX                            ; 0053d38b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053d38c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053d391

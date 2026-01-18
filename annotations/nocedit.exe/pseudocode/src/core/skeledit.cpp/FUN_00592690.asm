@@ -289,7 +289,7 @@ section .text
     PUSH 0x64c07b                       ; 005926ef | = "Reading state list from %s"
     MOV EAX,[0x00678a60]                ; 005926f4 | g_CEditorToolsPtr
     XOR EBX,EBX                         ; 005926f9
-    PUSH EAX                            ; 005926fb | g_CEditorToolsPtr
+    PUSH EAX                            ; 005926fb | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0xffffff72],EBX ; 005926fc
     MOV EBX,0x1                         ; 00592702
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00592707
@@ -374,7 +374,7 @@ section .text
     PUSH 0x64c0cf                       ; 005927da | = "State name begins with '/', state cou..."
     MOV ECX,dword ptr [0x00678a60]      ; 005927df | g_CEditorToolsPtr
         ;   Label: LAB_005927df
-    PUSH ECX                            ; 005927e5 | g_CEditorToolsPtr
+    PUSH ECX                            ; 005927e5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005927e6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005927eb
@@ -383,7 +383,7 @@ section .text
     JZ 0x00592806                       ; 005927f5
         ;   XREF to: 00592806 (CONDITIONAL_JUMP)  ; LAB_00592806
     MOV ESI,dword ptr [0x00678a60]      ; 005927f7 | g_CEditorToolsPtr
-    PUSH ESI                            ; 005927fd | g_CEditorToolsPtr
+    PUSH ESI                            ; 005927fd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005927fe
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00592803
@@ -412,7 +412,7 @@ section .text
     PUSH EDX                            ; 00592835
     PUSH 0x64c06d                       ; 00592836 | = "Can't open %s"
     MOV ECX,dword ptr [0x00678a60]      ; 0059283b | g_CEditorToolsPtr
-    PUSH ECX                            ; 00592841 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00592841 | g_CEditorToolsInstance
     XOR EBX,EBX                         ; 00592842
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00592844
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
@@ -450,7 +450,7 @@ section .text
     PUSH 0x64c13d                       ; 0059289e | = "Reading home pose filename"
         ;   Label: LAB_0059289e
     MOV ECX,dword ptr [0x00678a60]      ; 005928a3 | g_CEditorToolsPtr
-    PUSH ECX                            ; 005928a9 | g_CEditorToolsPtr
+    PUSH ECX                            ; 005928a9 | g_CEditorToolsInstance
     LEA EDI,[EBP + 0xffffe216]          ; 005928aa
     MOV ESI,0x6818e0                    ; 005928b0 | = "(file error)"
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005928b5
@@ -527,7 +527,7 @@ section .text
     PUSH EAX                            ; 0059297c
     PUSH 0x64c1b1                       ; 0059297d | = "Reading bone heirarchy and building r..."
     MOV EDI,dword ptr [0x00678a60]      ; 00592982 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00592988 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00592988 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00592989
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0059298e
@@ -580,7 +580,7 @@ section .text
     PUSH 0x64c1f4                       ; 00592a0c | = "Pass 1: Building list of animation fi..."
     MOV dword ptr [EBP + 0xffffff7a],EAX ; 00592a11
     MOV EAX,dword ptr [EBP + 0x8e]      ; 00592a17
-    PUSH ESI                            ; 00592a1d | g_CEditorToolsPtr
+    PUSH ESI                            ; 00592a1d | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0xffffff7e],EDI ; 00592a1e
     MOV dword ptr [EAX + 0x964],0x0     ; 00592a24
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00592a2e
@@ -709,7 +709,7 @@ section .text
     PUSH 0x64c616                       ; 00592ba8 | = "Importing skeleton animation frames..."
     MOV EDX,dword ptr [0x00678a60]      ; 00592bad | g_CEditorToolsPtr
     XOR EBX,EBX                         ; 00592bb3
-    PUSH EDX                            ; 00592bb5 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00592bb5 | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0x52],EBX      ; 00592bb6
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 00592bb9
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
@@ -742,7 +742,7 @@ section .text
     SUB ESP,0x4                         ; 00592c1c
     FILD dword ptr [EAX + 0x60]         ; 00592c1f
     FSTP float ptr [ESP]                ; 00592c22
-    PUSH EDI                            ; 00592c25 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00592c25 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00592c26
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     MOV EDI,dword ptr [EBP + 0xffffff6e] ; 00592c2b
@@ -890,7 +890,7 @@ section .text
     PUSH EAX                            ; 00592dfa
     PUSH 0x64c124                       ; 00592dfb | = "Duplicate state %s in %s"
     MOV EAX,[0x00678a60]                ; 00592e00 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00592e05 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00592e05 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00592e06
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00592e0b
@@ -1078,7 +1078,7 @@ section .text
     PUSH ECX                            ; 0059301c
     PUSH 0x64c25d                       ; 0059301d | = "Can't open %s mentioned in %s"
     MOV EBX,dword ptr [0x00678a60]      ; 00593022 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00593028 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00593028 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593029
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0059302e
@@ -1097,7 +1097,7 @@ section .text
     PUSH EBX                            ; 00593050
     PUSH 0x64c294                       ; 00593051 | = "Invalid frame start/end for animation..."
     MOV ESI,dword ptr [0x00678a60]      ; 00593056 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0059305c | g_CEditorToolsPtr
+    PUSH ESI                            ; 0059305c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0059305d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00593062
@@ -1139,7 +1139,7 @@ section .text
     PUSH EBX                            ; 005930c8
     PUSH 0x64c2cd                       ; 005930c9 | = "Too many motions in %s, max is %d"
     MOV ESI,dword ptr [0x00678a60]      ; 005930ce | g_CEditorToolsPtr
-    PUSH ESI                            ; 005930d4 | g_CEditorToolsPtr
+    PUSH ESI                            ; 005930d4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005930d5
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005930da
@@ -1278,7 +1278,7 @@ section .text
     PUSH EDX                            ; 0059326e
     PUSH 0x64c2fd                       ; 0059326f | = "Can't parse %s.  I don't understand t..."
     MOV ECX,dword ptr [0x00678a60]      ; 00593274 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0059327a | g_CEditorToolsPtr
+    PUSH ECX                            ; 0059327a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0059327b
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00593280
@@ -1329,7 +1329,7 @@ section .text
     PUSH EAX                            ; 00593302
     PUSH 0x64c333                       ; 00593303 | = "Invalid state %s for animation %s in %s"
     MOV EAX,[0x00678a60]                ; 00593308 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0059330d | g_CEditorToolsPtr
+    PUSH EAX                            ; 0059330d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0059330e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00593313
@@ -1424,7 +1424,7 @@ section .text
     PUSH EAX                            ; 005933ea
     PUSH 0x64c370                       ; 005933eb | = "User \"%s\" is currently working on t..."
     MOV EDX,dword ptr [0x00678a60]      ; 005933f0 | g_CEditorToolsPtr
-    PUSH EDX                            ; 005933f6 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005933f6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 005933f7
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 005933fc
@@ -1494,7 +1494,7 @@ section .text
     PUSH EAX                            ; 005934c5
     PUSH 0x64c3af                       ; 005934c6 | = "Expected animation keyword in %s but ..."
     MOV EDX,dword ptr [0x00678a60]      ; 005934cb | g_CEditorToolsPtr
-    PUSH EDX                            ; 005934d1 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005934d1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005934d2
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005934d7
@@ -1628,7 +1628,7 @@ section .text
     PUSH ESI                            ; 0059363c
     PUSH 0x64c46b                       ; 0059363d | = "Can't open %s mentioned in %s"
     MOV EAX,[0x00678a60]                ; 00593642 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00593647 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00593647 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593648
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0059364d
@@ -1687,7 +1687,7 @@ section .text
     PUSH EBX                            ; 005936de
     PUSH 0x64c4b3                       ; 005936df | = "Error parsing \"frames\" statement fo..."
     MOV EDI,dword ptr [0x00678a60]      ; 005936e4 | g_CEditorToolsPtr
-    PUSH EDI                            ; 005936ea | g_CEditorToolsPtr
+    PUSH EDI                            ; 005936ea | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005936eb
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005936f0
@@ -1732,7 +1732,7 @@ section .text
     PUSH EBX                            ; 00593757
     PUSH 0x64c4ef                       ; 00593758 | = "Error parsing \"frames\" statement fo..."
     MOV ECX,dword ptr [0x00678a60]      ; 0059375d | g_CEditorToolsPtr
-    PUSH ECX                            ; 00593763 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00593763 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593764
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00593769
@@ -1813,7 +1813,7 @@ section .text
     PUSH 0x366b650                      ; 0059382d | DAT_0366b650
         ;   Label: LAB_0059382d
     MOV ECX,dword ptr [0x00678a60]      ; 00593832 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00593838 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00593838 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 00593839
         ;   XREF to: 004a1bc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)
     JMP 0x005937ab                      ; 0059383e
@@ -1874,7 +1874,7 @@ section .text
         ;   XREF to: 00592bf5 (CONDITIONAL_JUMP)  ; LAB_00592bf5
     MOV EBX,dword ptr [0x00678a60]      ; 005938cf | g_CEditorToolsPtr
         ;   Label: LAB_005938cf
-    PUSH EBX                            ; 005938d5 | g_CEditorToolsPtr
+    PUSH EBX                            ; 005938d5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005938d6
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 005938db
@@ -1887,7 +1887,7 @@ section .text
     ADD ESP,0xc                         ; 005938f4
     PUSH 0x64d5c6                       ; 005938f7 | = "Biasing motions."
     MOV EDX,dword ptr [0x00678a60]      ; 005938fc | g_CEditorToolsPtr
-    PUSH EDX                            ; 00593902 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00593902 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00593903
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00593908
@@ -2031,7 +2031,7 @@ section .text
     PUSH EAX                            ; 00593ad0
     PUSH 0x64c677                       ; 00593ad1 | = "Error parsing \"fps\" statement for a..."
     MOV EDX,dword ptr [0x00678a60]      ; 00593ad6 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00593adc | g_CEditorToolsPtr
+    PUSH EDX                            ; 00593adc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593add
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00593ae2
@@ -2076,7 +2076,7 @@ section .text
     PUSH EAX                            ; 00593b47
     PUSH 0x64c6b3                       ; 00593b48 | = "Too many transitions in animation %s ..."
     MOV EDX,dword ptr [0x00678a60]      ; 00593b4d | g_CEditorToolsPtr
-    PUSH EDX                            ; 00593b53 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00593b53 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593b54
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00593b59
@@ -2115,7 +2115,7 @@ section .text
     PUSH EDX                            ; 00593bb6
     PUSH 0x64c6f1                       ; 00593bb7 | = "Error parsing \"if\" statement for an..."
     MOV ECX,dword ptr [0x00678a60]      ; 00593bbc | g_CEditorToolsPtr
-    PUSH ECX                            ; 00593bc2 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00593bc2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593bc3
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00593bc8
@@ -2202,7 +2202,7 @@ section .text
     PUSH EAX                            ; 00593c90
     PUSH 0x64c729                       ; 00593c91 | = "Invalid desired state \"%s\" in \"if\..."
     MOV EDI,dword ptr [0x00678a60]      ; 00593c96 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00593c9c | g_CEditorToolsPtr
+    PUSH EDI                            ; 00593c9c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593c9d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00593ca2
@@ -2223,7 +2223,7 @@ section .text
     PUSH EAX                            ; 00593ccc
     PUSH 0x64c771                       ; 00593ccd | = "Duplicate if %s's for animation %s in %s"
     MOV ESI,dword ptr [0x00678a60]      ; 00593cd2 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00593cd8 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00593cd8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593cd9
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00593cde
@@ -2246,7 +2246,7 @@ section .text
     PUSH EAX                            ; 00593d0f
     PUSH 0x64c79a                       ; 00593d10 | = "Invalid transition command in \"if %s..."
     MOV ESI,dword ptr [0x00678a60]      ; 00593d15 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00593d1b | g_CEditorToolsPtr
+    PUSH ESI                            ; 00593d1b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593d1c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00593d21
@@ -2317,7 +2317,7 @@ section .text
     PUSH EAX                            ; 00593dd0
     PUSH 0x64c7ef                       ; 00593dd1 | = "Error parsing \"if %s\" statement par..."
     MOV EAX,[0x00678a60]                ; 00593dd6 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00593ddb | g_CEditorToolsPtr
+    PUSH EAX                            ; 00593ddb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593ddc
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00593de1
@@ -2340,7 +2340,7 @@ section .text
     PUSH EAX                            ; 00593e12
     PUSH 0x64c830                       ; 00593e13 | = "Invalid destination animation for \"i..."
     MOV EBX,dword ptr [0x00678a60]      ; 00593e18 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00593e1e | g_CEditorToolsPtr
+    PUSH EBX                            ; 00593e1e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593e1f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00593e24
@@ -2458,7 +2458,7 @@ section .text
     PUSH EAX                            ; 00593f51
     PUSH 0x64c88b                       ; 00593f52 | = "Can't parse destination frame number ..."
     MOV ECX,dword ptr [0x00678a60]      ; 00593f57 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00593f5d | g_CEditorToolsPtr
+    PUSH ECX                            ; 00593f5d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593f5e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00593f63
@@ -2481,7 +2481,7 @@ section .text
     PUSH EAX                            ; 00593f94
     PUSH 0x64c8e1                       ; 00593f95 | = "Can't parse destination frame number ..."
     MOV EDI,dword ptr [0x00678a60]      ; 00593f9a | g_CEditorToolsPtr
-    PUSH EDI                            ; 00593fa0 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00593fa0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00593fa1
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00593fa6
@@ -2550,7 +2550,7 @@ section .text
     PUSH EAX                            ; 00594049
     PUSH 0x64c944                       ; 0059404a | = "Can't parse tween time for \"if %s\" ..."
     MOV EAX,[0x00678a60]                ; 0059404f | g_CEditorToolsPtr
-    PUSH EAX                            ; 00594054 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00594054 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594055
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 0059405a
@@ -2573,7 +2573,7 @@ section .text
     PUSH EAX                            ; 0059408b
     PUSH 0x64c98c                       ; 0059408c | = "Invalid tween time for \"if %s\" stat..."
     MOV EBX,dword ptr [0x00678a60]      ; 00594091 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00594097 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00594097 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594098
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 0059409d
@@ -2627,7 +2627,7 @@ section .text
     PUSH EAX                            ; 00594109
     PUSH 0x64c9da                       ; 0059410a | = "Extra parms in \"if %s\" statement fo..."
     MOV ESI,dword ptr [0x00678a60]      ; 0059410f | g_CEditorToolsPtr
-    PUSH ESI                            ; 00594115 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00594115 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594116
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x1c                        ; 0059411b
@@ -2789,7 +2789,7 @@ section .text
     PUSH EDX                            ; 0059429b
     PUSH 0x64ca45                       ; 0059429c | = "Error parsing \"->\" statement parms ..."
     MOV ECX,dword ptr [0x00678a60]      ; 005942a1 | g_CEditorToolsPtr
-    PUSH ECX                            ; 005942a7 | g_CEditorToolsPtr
+    PUSH ECX                            ; 005942a7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005942a8
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005942ad
@@ -2809,7 +2809,7 @@ section .text
     PUSH EDX                            ; 005942d4
     PUSH 0x64ca83                       ; 005942d5 | = "Invalid destination animation for \"-..."
     MOV EDI,dword ptr [0x00678a60]      ; 005942da | g_CEditorToolsPtr
-    PUSH EDI                            ; 005942e0 | g_CEditorToolsPtr
+    PUSH EDI                            ; 005942e0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005942e1
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005942e6
@@ -2929,7 +2929,7 @@ section .text
     PUSH EBX                            ; 0059441f
     PUSH 0x64cadb                       ; 00594420 | = "Can't parse destination frame number ..."
     MOV ESI,dword ptr [0x00678a60]      ; 00594425 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0059442b | g_CEditorToolsPtr
+    PUSH ESI                            ; 0059442b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0059442c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594431
@@ -2950,7 +2950,7 @@ section .text
     PUSH EAX                            ; 0059445b
     PUSH 0x64cb2e                       ; 0059445c | = "Can't parse destination frame number ..."
     MOV EDX,dword ptr [0x00678a60]      ; 00594461 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00594467 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00594467 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594468
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 0059446d
@@ -3033,7 +3033,7 @@ section .text
     PUSH EBX                            ; 00594541
     PUSH 0x64cba7                       ; 00594542 | = "Invalid transition command in \"->\" ..."
     MOV ESI,dword ptr [0x00678a60]      ; 00594547 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0059454d | g_CEditorToolsPtr
+    PUSH ESI                            ; 0059454d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0059454e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594553
@@ -3096,7 +3096,7 @@ section .text
     PUSH EAX                            ; 005945e9
     PUSH 0x64cbfc                       ; 005945ea | = "Can't parse tween time for \"->\" sta..."
     MOV EDX,dword ptr [0x00678a60]      ; 005945ef | g_CEditorToolsPtr
-    PUSH EDX                            ; 005945f5 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005945f5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005945f6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005945fb
@@ -3117,7 +3117,7 @@ section .text
     PUSH EBX                            ; 00594625
     PUSH 0x64cc41                       ; 00594626 | = "Invalid tween time for \"->\" stateme..."
     MOV ESI,dword ptr [0x00678a60]      ; 0059462b | g_CEditorToolsPtr
-    PUSH ESI                            ; 00594631 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00594631 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594632
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594637
@@ -3156,7 +3156,7 @@ section .text
     PUSH ESI                            ; 0059468e
     PUSH 0x64cc82                       ; 0059468f | = "Tween time for \"->\" statement is lo..."
     MOV EDI,dword ptr [0x00678a60]      ; 00594694 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0059469a | g_CEditorToolsPtr
+    PUSH EDI                            ; 0059469a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0059469b
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005946a0
@@ -3192,7 +3192,7 @@ section .text
     PUSH EDX                            ; 005946ed
     PUSH 0x64cce2                       ; 005946ee | = "Extra parms in \"->\" statement for a..."
     MOV ECX,dword ptr [0x00678a60]      ; 005946f3 | g_CEditorToolsPtr
-    PUSH ECX                            ; 005946f9 | g_CEditorToolsPtr
+    PUSH ECX                            ; 005946f9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005946fa
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 005946ff
@@ -3237,7 +3237,7 @@ section .text
     PUSH EDX                            ; 00594767
     PUSH 0x64cd34                       ; 00594768 | = "Too many signals in animation %s in %..."
     MOV EDX,dword ptr [0x00678a60]      ; 0059476d | g_CEditorToolsPtr
-    PUSH EDX                            ; 00594773 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00594773 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594774
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594779
@@ -3270,7 +3270,7 @@ section .text
     PUSH EBX                            ; 005947c1
     PUSH 0x64cd70                       ; 005947c2 | = "Error parsing \"signal\" statement fo..."
     MOV ESI,dword ptr [0x00678a60]      ; 005947c7 | g_CEditorToolsPtr
-    PUSH ESI                            ; 005947cd | g_CEditorToolsPtr
+    PUSH ESI                            ; 005947cd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005947ce
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005947d3
@@ -3324,7 +3324,7 @@ section .text
     PUSH EAX                            ; 0059485b
     PUSH 0x64cdac                       ; 0059485c | = "Invalid frame number in \"signal\" st..."
     MOV EDX,dword ptr [0x00678a60]      ; 00594861 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00594867 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00594867 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594868
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 0059486d
@@ -3345,7 +3345,7 @@ section .text
     PUSH EAX                            ; 00594897
     PUSH 0x64cdf2                       ; 00594898 | = "Signal value cannot be 0 in \"signal\..."
     MOV EDX,dword ptr [0x00678a60]      ; 0059489d | g_CEditorToolsPtr
-    PUSH EDX                            ; 005948a3 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005948a3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005948a4
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005948a9
@@ -3550,7 +3550,7 @@ section .text
     PUSH EDI                            ; 00594a6c
     PUSH 0x64ce84                       ; 00594a6d | = "Can't parse \"bias\" statement for an..."
     MOV EAX,[0x00678a60]                ; 00594a72 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00594a77 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00594a77 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594a78
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594a7d
@@ -3605,7 +3605,7 @@ section .text
     PUSH EDI                            ; 00594b07
     PUSH 0x64cf4f                       ; 00594b08 | = "Reference motion is same as motion to..."
     MOV EAX,[0x00678a60]                ; 00594b0d | g_CEditorToolsPtr
-    PUSH EAX                            ; 00594b12 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00594b12 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594b13
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594b18
@@ -3626,7 +3626,7 @@ section .text
     PUSH EDX                            ; 00594b42
     PUSH 0x64cebb                       ; 00594b43 | = "Can't parse frame to bias in \"bias\"..."
     MOV ECX,dword ptr [0x00678a60]      ; 00594b48 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00594b4e | g_CEditorToolsPtr
+    PUSH ECX                            ; 00594b4e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594b4f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594b54
@@ -3649,7 +3649,7 @@ section .text
     PUSH EAX                            ; 00594b85
     PUSH 0x64cf03                       ; 00594b86 | = "Invalid reference motion \"%s\" in \"..."
     MOV EBX,dword ptr [0x00678a60]      ; 00594b8b | g_CEditorToolsPtr
-    PUSH EBX                            ; 00594b91 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00594b91 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594b92
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00594b97
@@ -3689,7 +3689,7 @@ section .text
     PUSH EDX                            ; 00594bf4
     PUSH 0x64cfa8                       ; 00594bf5 | = "Can't parse frame to bias in \"bias\"..."
     MOV ECX,dword ptr [0x00678a60]      ; 00594bfa | g_CEditorToolsPtr
-    PUSH ECX                            ; 00594c00 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00594c00 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594c01
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594c06
@@ -3734,7 +3734,7 @@ section .text
     PUSH EDX                            ; 00594c6f
     PUSH 0x64cff8                       ; 00594c70 | = "Multiple \"markers\" statements for a..."
     MOV ECX,dword ptr [0x00678a60]      ; 00594c75 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00594c7b | g_CEditorToolsPtr
+    PUSH ECX                            ; 00594c7b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594c7c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00594c81
@@ -3822,7 +3822,7 @@ section .text
     PUSH EDX                            ; 00594d6e
     PUSH 0x64d032                       ; 00594d6f | = "Can't parse \"markers\" statement for..."
     MOV ECX,dword ptr [0x00678a60]      ; 00594d74 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00594d7a | g_CEditorToolsPtr
+    PUSH ECX                            ; 00594d7a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594d7b
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594d80
@@ -3845,7 +3845,7 @@ section .text
     PUSH ESI                            ; 00594dae
     PUSH 0x64d06d                       ; 00594daf | = "Can't place marker at invalid frame n..."
     MOV EDI,dword ptr [0x00678a60]      ; 00594db4 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00594dba | g_CEditorToolsPtr
+    PUSH EDI                            ; 00594dba | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594dbb
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00594dc0
@@ -3866,7 +3866,7 @@ section .text
     PUSH EAX                            ; 00594dea
     PUSH 0x64d0b6                       ; 00594deb | = "Too many markers in animation %s in %..."
     MOV EDX,dword ptr [0x00678a60]      ; 00594df0 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00594df6 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00594df6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594df7
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594dfc
@@ -3887,7 +3887,7 @@ section .text
     PUSH EBX                            ; 00594e26
     PUSH 0x64d0e1                       ; 00594e27 | = "Frame numbers are not strictly increa..."
     MOV ESI,dword ptr [0x00678a60]      ; 00594e2c | g_CEditorToolsPtr
-    PUSH ESI                            ; 00594e32 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00594e32 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594e33
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594e38
@@ -3952,7 +3952,7 @@ section .text
     PUSH EDX                            ; 00594ed9
     PUSH 0x64d14e                       ; 00594eda | = "Can't parse displacement vector in \"..."
     MOV ECX,dword ptr [0x00678a60]      ; 00594edf | g_CEditorToolsPtr
-    PUSH ECX                            ; 00594ee5 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00594ee5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00594ee6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00594eeb
@@ -4080,7 +4080,7 @@ section .text
     PUSH ESI                            ; 00595014
     PUSH 0x64d1c7                       ; 00595015 | = "Can't parse frame range in \"totalDis..."
     MOV EDI,dword ptr [0x00678a60]      ; 0059501a | g_CEditorToolsPtr
-    PUSH EDI                            ; 00595020 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00595020 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00595021
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00595026
@@ -4101,7 +4101,7 @@ section .text
     PUSH ESI                            ; 00595050
     PUSH 0x64d218                       ; 00595051 | = "Invalid frame range in \"totalDisplac..."
     MOV EDI,dword ptr [0x00678a60]      ; 00595056 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0059505c | g_CEditorToolsPtr
+    PUSH EDI                            ; 0059505c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0059505d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00595062
@@ -4185,7 +4185,7 @@ section .text
     PUSH ESI                            ; 0059511a
     PUSH 0x64d272                       ; 0059511b | = "Can't parse \"totalDisplacement\" key..."
     MOV EDI,dword ptr [0x00678a60]      ; 00595120 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00595126 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00595126 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00595127
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 0059512c
@@ -4240,7 +4240,7 @@ section .text
     PUSH EDI                            ; 0059519c
     PUSH 0x64d2b4                       ; 0059519d | = "Can't parse \"totalDisplacement\" key..."
     MOV EAX,[0x00678a60]                ; 005951a2 | g_CEditorToolsPtr
-    PUSH EAX                            ; 005951a7 | g_CEditorToolsPtr
+    PUSH EAX                            ; 005951a7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005951a8
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005951ad
@@ -4298,7 +4298,7 @@ section .text
     PUSH ECX                            ; 00595236
     PUSH 0x64d30d                       ; 00595237 | = "Multiple \"rotate\" keywords used in ..."
     MOV EBX,dword ptr [0x00678a60]      ; 0059523c | g_CEditorToolsPtr
-    PUSH EBX                            ; 00595242 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00595242 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00595243
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00595248
@@ -4333,7 +4333,7 @@ section .text
     PUSH ESI                            ; 0059529a
     PUSH 0x64d34c                       ; 0059529b | = "Can't parse rotation PBH in \"rotate\..."
     MOV EDI,dword ptr [0x00678a60]      ; 005952a0 | g_CEditorToolsPtr
-    PUSH EDI                            ; 005952a6 | g_CEditorToolsPtr
+    PUSH EDI                            ; 005952a6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005952a7
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005952ac
@@ -4354,7 +4354,7 @@ section .text
     PUSH ESI                            ; 005952d6
     PUSH 0x64d393                       ; 005952d7 | = "Invalid keyword for animation %s in %..."
     MOV EDI,dword ptr [0x00678a60]      ; 005952dc | g_CEditorToolsPtr
-    PUSH EDI                            ; 005952e2 | g_CEditorToolsPtr
+    PUSH EDI                            ; 005952e2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005952e3
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 005952e8
@@ -4493,7 +4493,7 @@ section .text
     SUB ESP,0x4                         ; 00595458
     FILD dword ptr [EBP + 0x5e]         ; 0059545b
     FSTP float ptr [ESP]                ; 0059545e
-    PUSH EDI                            ; 00595461 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00595461 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00595462
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     MOV EAX,dword ptr [EBP + -0x2e]     ; 00595467
@@ -4894,7 +4894,7 @@ section .text
     PUSH ESI                            ; 0059599b | DAT_0365caf8
     PUSH 0x64d3d6                       ; 0059599c | = "Can't open %s mentioned in %s"
     MOV EDX,dword ptr [0x00678a60]      ; 005959a1 | g_CEditorToolsPtr
-    PUSH EDX                            ; 005959a7 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005959a7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005959a8
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005959ad
@@ -5223,7 +5223,7 @@ section .text
     PUSH EDX                            ; 00595de3
     PUSH 0x64d42e                       ; 00595de4 | = "Total displacement for animation %s o..."
     MOV ECX,dword ptr [0x00678a60]      ; 00595de9 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00595def | g_CEditorToolsPtr
+    PUSH ECX                            ; 00595def | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00595df0
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00595df5
@@ -5232,7 +5232,7 @@ section .text
     PUSH 0x64d462                       ; 00595dfd | = "Setting total displacement on an axis..."
         ;   Label: LAB_00595dfd
     MOV EAX,[0x00678a60]                ; 00595e02 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00595e07 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00595e07 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00595e08
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00595e0d
@@ -5246,7 +5246,7 @@ section .text
     PUSH ESI                            ; 00595e24
     PUSH 0x64d4af                       ; 00595e25 | = "Total displacement for animation %s o..."
     MOV EDI,dword ptr [0x00678a60]      ; 00595e2a | g_CEditorToolsPtr
-    PUSH EDI                            ; 00595e30 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00595e30 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00595e31
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00595e36
@@ -5255,7 +5255,7 @@ section .text
     PUSH 0x64d4e3                       ; 00595e3e | = "Setting total displacement on an axis..."
         ;   Label: LAB_00595e3e
     MOV EBX,dword ptr [0x00678a60]      ; 00595e43 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00595e49 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00595e49 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00595e4a
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00595e4f
@@ -5269,7 +5269,7 @@ section .text
     PUSH EDX                            ; 00595e66
     PUSH 0x64d530                       ; 00595e67 | = "Total displacement for animation %s o..."
     MOV ECX,dword ptr [0x00678a60]      ; 00595e6c | g_CEditorToolsPtr
-    PUSH ECX                            ; 00595e72 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00595e72 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00595e73
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00595e78
@@ -5278,7 +5278,7 @@ section .text
     PUSH 0x64d564                       ; 00595e80 | = "Setting total displacement on an axis..."
         ;   Label: LAB_00595e80
     MOV EAX,[0x00678a60]                ; 00595e85 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00595e8a | g_CEditorToolsPtr
+    PUSH EAX                            ; 00595e8a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00595e8b
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00595e90
@@ -5299,7 +5299,7 @@ section .text
     PUSH EBX                            ; 00595ebe
     PUSH 0x64d5f2                       ; 00595ebf | = "Finished processing %s OK!"
     MOV ESI,dword ptr [0x00678a60]      ; 00595ec4 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00595eca | g_CEditorToolsPtr
+    PUSH ESI                            ; 00595eca | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00595ecb
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00595ed0
@@ -5322,7 +5322,7 @@ section .text
     PUSH EBX                            ; 00595ef9
     PUSH 0x64d5d7                       ; 00595efa | = "Cyclic bias detected in %s"
     MOV ESI,dword ptr [0x00678a60]      ; 00595eff | g_CEditorToolsPtr
-    PUSH ESI                            ; 00595f05 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00595f05 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00595f06
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00595f0b

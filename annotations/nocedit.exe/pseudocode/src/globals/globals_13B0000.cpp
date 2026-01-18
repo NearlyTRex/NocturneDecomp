@@ -5,5 +5,6 @@
 // =============================================================================
 
 int g_DitherPatternTable[256] = {};
+CMatrix3x3i g_CoronaCameraRotationMatrix;
 int g_CameraEdgeDetectionResults[10000] = {};
 

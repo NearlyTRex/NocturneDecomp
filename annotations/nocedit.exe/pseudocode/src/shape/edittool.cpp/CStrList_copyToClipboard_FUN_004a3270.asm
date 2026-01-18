@@ -19,7 +19,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_00623999
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char* g_CurrentDebugFilename = 0067d200
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_CurrentDebugLine
@@ -123,8 +123,8 @@ section .text
     MOV ECX,dword ptr [ESP]             ; 004a3320
         ;   Label: LAB_004a3320
     PUSH ECX                            ; 004a3323
-    MOV EBX,dword ptr [0x00678a60]      ; 004a3324 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004a332a | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 004a3324 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 004a332a | g_CEditorToolsInstance
     MOV byte ptr [EDI],0x0              ; 004a332b
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 004a332e
         ;   XREF to: 004a1bc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)

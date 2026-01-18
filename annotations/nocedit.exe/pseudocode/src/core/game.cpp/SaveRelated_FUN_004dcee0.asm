@@ -700,7 +700,7 @@ section .text
     ADD ESP,0x4                         ; 004dd5ae
     PUSH EAX                            ; 004dd5b1
     MOV EDI,dword ptr [0x00678a60]      ; 004dd5b2 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004dd5b8 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004dd5b8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 004dd5b9
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004dd5be

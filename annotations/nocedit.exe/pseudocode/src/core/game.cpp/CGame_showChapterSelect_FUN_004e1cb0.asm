@@ -1148,7 +1148,7 @@ section .text
     PUSH 0x62d22e                       ; 004e2845 | = "world"
     PUSH 0x62d234                       ; 004e284a | = "Select mission to play"
     MOV EDI,dword ptr [0x00678a60]      ; 004e284f | g_CEditorToolsPtr
-    PUSH EDI                            ; 004e2855 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004e2855 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004e2856
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 004e285b

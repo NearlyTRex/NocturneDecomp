@@ -24,7 +24,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   int g_WindowHeight = 0xc8
 ;   CBitFont* g_EditorFont
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_EnabledTextColor
 ;   int g_BackgroundColor1
 ;   int g_SelectionHighlightColor
@@ -61,14 +61,14 @@ section .text
     PUSH EDI                            ; 004a4d42
     PUSH EBP                            ; 004a4d43
     SUB ESP,0x14c                       ; 004a4d44
-    MOV EDX,dword ptr [0x00678a60]      ; 004a4d4a | g_CEditorToolsPtr
-    PUSH EDX                            ; 004a4d50 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004a4d4a | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004a4d50 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80 ; 004a4d51
         ;   XREF to: 004a0f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004a4d56
     PUSH 0x1                            ; 004a4d59
-    MOV ECX,dword ptr [0x00678a60]      ; 004a4d5b | g_CEditorToolsPtr
-    PUSH ECX                            ; 004a4d61 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004a4d5b | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004a4d61 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230 ; 004a4d62
         ;   XREF to: 004a1230 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools * editor_tools, int line_position)
     MOV EAX,[0x02d02558]                ; 004a4d67 | g_ClipLeft
@@ -424,7 +424,7 @@ section .text
     PUSH EBX                            ; 004a5216
         ;   Label: LAB_004a5216
     MOV ESI,dword ptr [0x00678a60]      ; 004a5217 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004a521d | g_CEditorToolsPtr
+    PUSH ESI                            ; 004a521d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 004a521e
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 004a5223

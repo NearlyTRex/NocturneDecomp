@@ -19,7 +19,7 @@
 ;   TerminatedCString s_Can_t_find_hero_placehol_00639448
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_HeroCount
 ;   CHero*[4] g_HeroActors
 ;   undefined4 g_CHeroPlaceholderClassInfo.name_hash
@@ -166,7 +166,7 @@ section .text
         ;   Label: LAB_00524a60
     PUSH 0x639448                       ; 00524a61 | = "Can't find hero placeholder for hero %d"
     MOV EDI,dword ptr [0x00678a60]      ; 00524a66 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00524a6c | g_CEditorToolsPtr
+    PUSH EDI                            ; 00524a6c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00524a6d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00524a72

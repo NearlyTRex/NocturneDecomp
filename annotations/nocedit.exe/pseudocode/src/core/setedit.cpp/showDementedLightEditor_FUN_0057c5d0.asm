@@ -536,7 +536,7 @@ section .text
     ADD ESP,0x4                         ; 0057caf4
     PUSH 0x647c25                       ; 0057caf7 | = "Precompute light visibility?"
     MOV ESI,dword ptr [0x00678a60]      ; 0057cafc | g_CEditorToolsPtr
-    PUSH ESI                            ; 0057cb02 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0057cb02 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057cb03
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057cb08
@@ -564,10 +564,10 @@ section .text
     FLD float ptr [EAX + 0x14d150]      ; 0057cb36
     LEA EAX,[ESP + 0x10]                ; 0057cb3c
     PUSH EAX                            ; 0057cb40
-    MOV EDX,dword ptr [0x00678a60]      ; 0057cb41 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0057cb41 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH 0x647c42                       ; 0057cb47 | = "Set ambient level (0..100)"
     FMUL float ptr [0x00647ca5]         ; 0057cb4c | FLOAT_00647ca5
-    PUSH EDX                            ; 0057cb52 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0057cb52 | g_CEditorToolsInstance
     FSTP float ptr [ESP + 0x1c]         ; 0057cb53
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057cb57
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
@@ -769,8 +769,8 @@ section .text
     PUSH 0x647c8f                       ; 0057cd3d | = "set"
     PUSH 0x647c93                       ; 0057cd42 | = "models"
     PUSH 0x647c9a                       ; 0057cd47 | = "Save set"
-    MOV EBX,dword ptr [0x00678a60]      ; 0057cd4c | g_CEditorToolsPtr
-    PUSH EBX                            ; 0057cd52 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0057cd4c | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0057cd52 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 0057cd53
         ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 0057cd58

@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Really_delete_actor_s_0063c71b
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
@@ -66,8 +66,8 @@ section .text
     PUSH ESI                            ; 0053bcc5
         ;   Label: LAB_0053bcc5
     PUSH 0x63c71b                       ; 0053bcc6 | = "Really delete actor %s"
-    MOV ECX,dword ptr [0x00678a60]      ; 0053bccb | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053bcd1 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0053bccb | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053bcd1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0053bcd2
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 0053bcd7

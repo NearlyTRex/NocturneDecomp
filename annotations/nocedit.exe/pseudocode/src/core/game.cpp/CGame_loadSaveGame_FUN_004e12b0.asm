@@ -470,8 +470,8 @@ section .text
     MOV EAX,ESP                         ; 004e1741
     PUSH EAX                            ; 004e1743
     PUSH 0x62cba6                       ; 004e1744 | = "Can't load old save game file %s.  So..."
-    MOV ECX,dword ptr [0x00678a60]      ; 004e1749 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004e174f | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004e1749 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004e174f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 004e1750
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004e1755
@@ -498,8 +498,8 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 004e1791
     PUSH EAX                            ; 004e1794
-    MOV EBX,dword ptr [0x00678a60]      ; 004e1795 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004e179b | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 004e1795 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 004e179b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004e179c
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 004e17a1
@@ -529,7 +529,7 @@ section .text
     ADD ESP,0x4                         ; 004e17eb
     PUSH EAX                            ; 004e17ee
     MOV EBX,dword ptr [0x00678a60]      ; 004e17ef | g_CEditorToolsPtr
-    PUSH EBX                            ; 004e17f5 | g_CEditorToolsPtr
+    PUSH EBX                            ; 004e17f5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004e17f6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e17fb
@@ -558,7 +558,7 @@ section .text
     ADD ESP,0x4                         ; 004e1837
     PUSH EAX                            ; 004e183a
     MOV EDI,dword ptr [0x00678a60]      ; 004e183b | g_CEditorToolsPtr
-    PUSH EDI                            ; 004e1841 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004e1841 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004e1842
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e1847
@@ -586,8 +586,8 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 004e1883
     PUSH EAX                            ; 004e1886
-    MOV EBX,dword ptr [0x00678a60]      ; 004e1887 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004e188d | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 004e1887 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 004e188d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004e188e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e1893
@@ -698,7 +698,7 @@ section .text
     PUSH EAX                            ; 004e19d3
     PUSH 0x62cc2f                       ; 004e19d4 | = "Can't find hero %s.  Sorry."
     MOV EDI,dword ptr [0x00678a60]      ; 004e19d9 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004e19df | g_CEditorToolsPtr
+    PUSH EDI                            ; 004e19df | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004e19e0
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004e19e5
@@ -861,8 +861,8 @@ section .text
     MOV EAX,ESP                         ; 004e1bd3
     PUSH EAX                            ; 004e1bd5
     PUSH 0x62cbe5                       ; 004e1bd6 | = "Can't load old save game file %s.  So..."
-    MOV EDX,dword ptr [0x00678a60]      ; 004e1bdb | g_CEditorToolsPtr
-    PUSH EDX                            ; 004e1be1 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004e1bdb | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004e1be1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 004e1be2
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004e1be7

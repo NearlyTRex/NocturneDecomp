@@ -21,7 +21,7 @@
 ;   TerminatedCString s_CRC_check_is_valid_006280ff
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
 ;
 ; Called Functions:
@@ -46,8 +46,8 @@ section .text
     PUSH EAX                            ; 004b7ca8
     PUSH 0x6280ad                       ; 004b7ca9 | = "*.pod"
     PUSH 0x6280b3                       ; 004b7cae | = "Select POD file to check"
-    MOV EDX,dword ptr [0x00678a60]      ; 004b7cb3 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b7cb9 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b7cb3 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b7cb9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 004b7cba
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 004b7cbf
@@ -91,7 +91,7 @@ section .text
     PUSH EAX                            ; 004b7d02
     PUSH 0x6280cc                       ; 004b7d03 | = "WARNING!  CRC is invalid.  This may b..."
     MOV ESI,dword ptr [0x00678a60]      ; 004b7d08 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004b7d0e | g_CEditorToolsPtr
+    PUSH ESI                            ; 004b7d0e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 004b7d0f
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004b7d14
@@ -104,8 +104,8 @@ section .text
     PUSH 0x0                            ; 004b7d21
     PUSH 0x0                            ; 004b7d23
     PUSH 0x6280ff                       ; 004b7d25 | = "CRC check is valid"
-    MOV EBX,dword ptr [0x00678a60]      ; 004b7d2a | g_CEditorToolsPtr
-    PUSH EBX                            ; 004b7d30 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 004b7d2a | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 004b7d30 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 004b7d31
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004b7d36

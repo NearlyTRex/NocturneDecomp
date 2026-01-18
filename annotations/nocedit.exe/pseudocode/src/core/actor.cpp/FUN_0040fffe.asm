@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEventList* g_CEventListPtr = 02d05310
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CEventList g_CEventListInstance
 ;
 ; Called Functions:
@@ -59,7 +59,7 @@ section .text
     PUSH EAX                            ; 00410052
         ;   Label: LAB_00410052
     MOV EAX,[0x00678a60]                ; 00410053 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00410058 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00410058 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00410059
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0041005e

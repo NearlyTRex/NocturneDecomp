@@ -324,7 +324,7 @@ section .text
         ;   XREF to: 00560aba (CONDITIONAL_JUMP)  ; LAB_00560aba
     PUSH 0x643474                       ; 00560b28 | = "The script you were using when this g..."
     MOV EBX,dword ptr [0x00678a60]      ; 00560b2d | g_CEditorToolsPtr
-    PUSH EBX                            ; 00560b33 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00560b33 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 00560b34
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00560b39

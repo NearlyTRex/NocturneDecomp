@@ -642,8 +642,8 @@ section .text
     PUSH 0x64888c                       ; 00580e22 | = "set"
     PUSH 0x648890                       ; 00580e27 | = "models"
     PUSH 0x648897                       ; 00580e2c | = "Save set"
-    MOV EDX,dword ptr [0x00678a60]      ; 00580e31 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00580e37 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 00580e31 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 00580e37 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 00580e38
         ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 00580e3d
@@ -1034,7 +1034,7 @@ section .text
         ;   XREF to: 00580cfc (CONDITIONAL_JUMP)  ; LAB_00580cfc
     PUSH 0x64885e                       ; 00581256 | = "Reset all cameras to master fog setting?"
     MOV ESI,dword ptr [0x00678a60]      ; 0058125b | g_CEditorToolsPtr
-    PUSH ESI                            ; 00581261 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00581261 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00581262
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00581267

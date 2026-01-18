@@ -14,7 +14,7 @@
 ;   TerminatedCString s_s_00643f7d
 ;   TerminatedCString s_core_script_cpp_00643f81
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 DAT_0310fd10
 ;
 ; Called Functions:
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_005661f8
     PUSH 0x643f67                       ; 005661f9 | = "Can't create world\\%s"
     MOV ECX,dword ptr [0x00678a60]      ; 005661fe | g_CEditorToolsPtr
-    PUSH ECX                            ; 00566204 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00566204 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00566205
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0056620a

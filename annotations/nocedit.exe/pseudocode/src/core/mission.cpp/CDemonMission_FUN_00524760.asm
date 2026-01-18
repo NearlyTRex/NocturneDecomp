@@ -23,7 +23,7 @@
 ;   CLevelLoader* g_CLevelLoaderPtr = 02dcd850
 ;   CScript* g_CScriptPtr = 0310f858
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CEventList g_CEventListInstance
 ;   CGame g_CGameInstance
 ;   undefined4 DAT_02d81cc4
@@ -115,7 +115,7 @@ section .text
     PUSH 0x639346                       ; 00524827 | = "Can't run mission - no heros"
         ;   Label: LAB_00524827
     MOV EBP,dword ptr [0x00678a60]      ; 0052482c | g_CEditorToolsPtr
-    PUSH EBP                            ; 00524832 | g_CEditorToolsPtr
+    PUSH EBP                            ; 00524832 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00524833
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00524838
@@ -128,7 +128,7 @@ section .text
     PUSH 0x639363                       ; 00524842 | = "Can't run mission - no local hero"
         ;   Label: LAB_00524842
     MOV EDI,dword ptr [0x00678a60]      ; 00524847 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0052484d | g_CEditorToolsPtr
+    PUSH EDI                            ; 0052484d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0052484e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00524853

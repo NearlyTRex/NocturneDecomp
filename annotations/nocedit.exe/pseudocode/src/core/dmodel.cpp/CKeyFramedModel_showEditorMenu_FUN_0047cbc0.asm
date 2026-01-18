@@ -1060,7 +1060,7 @@ section .text
     MOV EAX,0x620924                    ; 0047d690 | = "Load Keyframed model"
     PUSH EAX                            ; 0047d695 | = "Load Keyframed model"
     MOV ESI,dword ptr [0x00678a60]      ; 0047d696 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0047d69c | g_CEditorToolsPtr
+    PUSH ESI                            ; 0047d69c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0047d69d
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0047d6a2
@@ -1245,7 +1245,7 @@ section .text
     PUSH 0x62096b                       ; 0047d84d | = "models"
     PUSH 0x620972                       ; 0047d852 | = "Save Keyframed model"
     MOV EAX,[0x00678a60]                ; 0047d857 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0047d85c | g_CEditorToolsPtr
+    PUSH EAX                            ; 0047d85c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 0047d85d
         ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 0047d862
@@ -1265,7 +1265,7 @@ section .text
         ;   Label: LAB_0047d884
     PUSH EAX                            ; 0047d889 | = "You haven't crammed this model.  Save..."
     MOV ESI,dword ptr [0x00678a60]      ; 0047d88a | g_CEditorToolsPtr
-    PUSH ESI                            ; 0047d890 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0047d890 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0047d891
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0047d896
@@ -1278,7 +1278,7 @@ section .text
         ;   Label: LAB_0047d8a2
     PUSH EAX                            ; 0047d8a7 | = "Nothing to save!"
     MOV ECX,dword ptr [0x00678a60]      ; 0047d8a8 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047d8ae | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047d8ae | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047d8af
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047d8b4
@@ -1311,7 +1311,7 @@ section .text
     MOV EAX,0x6209a6                    ; 0047d8f0 | = "Import Keyframed model"
     PUSH EAX                            ; 0047d8f5 | = "Import Keyframed model"
     MOV ESI,dword ptr [0x00678a60]      ; 0047d8f6 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0047d8fc | g_CEditorToolsPtr
+    PUSH ESI                            ; 0047d8fc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 0047d8fd
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 0047d902
@@ -1444,7 +1444,7 @@ section .text
     PUSH EDI                            ; 0047da4e | = "t:\\"
     PUSH 0x620a18                       ; 0047da4f | = "Enter network model filename (*.KFM)"
     MOV ECX,dword ptr [0x00678a60]      ; 0047da54 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047da5a | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047da5a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0047da5b
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0047da60
@@ -1513,7 +1513,7 @@ section .text
         ;   Label: LAB_0047db0d
     PUSH EAX                            ; 0047db12 | = "No model"
     MOV EBX,dword ptr [0x00678a60]      ; 0047db13 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0047db19 | g_CEditorToolsPtr
+    PUSH EBX                            ; 0047db19 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047db1a
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047db1f
@@ -1542,7 +1542,7 @@ section .text
     MOV EAX,0x620a45                    ; 0047db5d | = "Nothing to cram!"
     PUSH EAX                            ; 0047db62 | = "Nothing to cram!"
     MOV ECX,dword ptr [0x00678a60]      ; 0047db63 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047db69 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047db69 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047db6a
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047db6f
@@ -1559,7 +1559,7 @@ section .text
     MOV EAX,0x620a56                    ; 0047db85 | = "Enter number of crams"
     PUSH EAX                            ; 0047db8a | = "Enter number of crams"
     MOV EDI,dword ptr [0x00678a60]      ; 0047db8b | g_CEditorToolsPtr
-    PUSH EDI                            ; 0047db91 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0047db91 | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0x52],ESI      ; 0047db92
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 0047db95
         ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
@@ -1601,7 +1601,7 @@ section .text
     PUSH EAX                            ; 0047dbf7
     PUSH 0x620a6c                       ; 0047dbf8 | = "Enter base name for cram"
     MOV EAX,[0x00678a60]                ; 0047dbfd | g_CEditorToolsPtr
-    PUSH EAX                            ; 0047dc02 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0047dc02 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0047dc03
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0047dc08
@@ -1625,7 +1625,7 @@ section .text
     PUSH EAX                            ; 0047dc3a
     PUSH 0x620a9b                       ; 0047dc3b | = "Enter crams output size"
     MOV EAX,[0x00678a60]                ; 0047dc40 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0047dc45 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0047dc45 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 0047dc46
         ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0047dc4b
@@ -1644,7 +1644,7 @@ section .text
         ;   XREF to: 0047dc7f (CONDITIONAL_JUMP)  ; LAB_0047dc7f
     PUSH 0x620ab3                       ; 0047dc69 | = "Cram size must be 64, 128, or 256"
     MOV EDX,dword ptr [0x00678a60]      ; 0047dc6e | g_CEditorToolsPtr
-    PUSH EDX                            ; 0047dc74 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0047dc74 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047dc75
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047dc7a
@@ -1669,7 +1669,7 @@ section .text
     PUSH 0x620a85                       ; 0047dcaa | = "Must enter something!"
         ;   Label: LAB_0047dcaa
     MOV ECX,dword ptr [0x00678a60]      ; 0047dcaf | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047dcb5 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047dcb5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047dcb6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047dcbb
@@ -1691,7 +1691,7 @@ section .text
     PUSH EAX                            ; 0047dceb | = "Enter vertex tolerance"
     MOV EAX,[0x00678a60]                ; 0047dcec | g_CEditorToolsPtr
     MOV EDI,0x3c23d70a                  ; 0047dcf1
-    PUSH EAX                            ; 0047dcf6 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0047dcf6 | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0x5a],EDI      ; 0047dcf7
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0047dcfa
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
@@ -1709,7 +1709,7 @@ section .text
     PUSH EAX                            ; 0047dd1e | = "Enter angle tolerance (degrees)"
     MOV ECX,dword ptr [0x00678a60]      ; 0047dd1f | g_CEditorToolsPtr
     MOV EDX,0x40800000                  ; 0047dd25
-    PUSH ECX                            ; 0047dd2a | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047dd2a | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0x5e],EDX      ; 0047dd2b
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0047dd2e
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
@@ -1734,7 +1734,7 @@ section .text
         ;   Label: LAB_0047dd6a
     PUSH EAX                            ; 0047dd6f | = "Nothing to reduce!"
     MOV ESI,dword ptr [0x00678a60]      ; 0047dd70 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0047dd76 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0047dd76 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047dd77
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047dd7c
@@ -1762,7 +1762,7 @@ section .text
         ;   Label: LAB_0047ddb7
     PUSH EAX                            ; 0047ddbc | = "Nothing to do!"
     MOV EDX,dword ptr [0x00678a60]      ; 0047ddbd | g_CEditorToolsPtr
-    PUSH EDX                            ; 0047ddc3 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0047ddc3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047ddc4
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047ddc9
@@ -1781,7 +1781,7 @@ section .text
     MOV EAX,0x620b2e                    ; 0047ddef | = "Enter S3D filename"
     PUSH EAX                            ; 0047ddf4 | = "Enter S3D filename"
     MOV EDI,dword ptr [0x00678a60]      ; 0047ddf5 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0047ddfb | g_CEditorToolsPtr
+    PUSH EDI                            ; 0047ddfb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0047ddfc
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0047de01
@@ -1801,7 +1801,7 @@ section .text
         ;   Label: LAB_0047de27
     PUSH EAX                            ; 0047de2c | = "Nothing to export!"
     MOV ESI,dword ptr [0x00678a60]      ; 0047de2d | g_CEditorToolsPtr
-    PUSH ESI                            ; 0047de33 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0047de33 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047de34
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047de39
@@ -1829,7 +1829,7 @@ section .text
     PUSH 0x620b54                       ; 0047de74 | = "Nothing to recenter!"
         ;   Label: LAB_0047de74
     MOV ECX,dword ptr [0x00678a60]      ; 0047de79 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047de7f | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047de7f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047de80
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047de85
@@ -1857,7 +1857,7 @@ section .text
     PUSH 0x620b69                       ; 0047dec0 | = "Nothing to bias!"
         ;   Label: LAB_0047dec0
     MOV ECX,dword ptr [0x00678a60]      ; 0047dec5 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047decb | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047decb | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047decc
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047ded1
@@ -2018,7 +2018,7 @@ section .text
     LEA EAX,[EBP + 0xfffffaf6]          ; 0047e0f0
     PUSH EAX                            ; 0047e0f6
     MOV ECX,dword ptr [0x00678a60]      ; 0047e0f7 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047e0fd | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047e0fd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 ; 0047e0fe
         ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value)
     ADD ESP,0x10                        ; 0047e103
@@ -2038,7 +2038,7 @@ section .text
         ;   Label: LAB_0047e129
     PUSH EAX                            ; 0047e12e | = "Nothing to bias!"
     MOV ECX,dword ptr [0x00678a60]      ; 0047e12f | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047e135 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047e135 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047e136
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047e13b
@@ -2059,7 +2059,7 @@ section .text
     PUSH 0x620c2a                       ; 0047e167 | = "Nothing to bias!"
         ;   Label: LAB_0047e167
     MOV EDI,dword ptr [0x00678a60]      ; 0047e16c | g_CEditorToolsPtr
-    PUSH EDI                            ; 0047e172 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0047e172 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047e173
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047e178
@@ -2087,7 +2087,7 @@ section .text
     PUSH 0x620d47                       ; 0047e1b5 | = "Nothing to scale!"
         ;   Label: LAB_0047e1b5
     MOV EAX,[0x00678a60]                ; 0047e1ba | g_CEditorToolsPtr
-    PUSH EAX                            ; 0047e1bf | g_CEditorToolsPtr
+    PUSH EAX                            ; 0047e1bf | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047e1c0
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047e1c5
@@ -2125,7 +2125,7 @@ section .text
     MOV EAX,0x620d64                    ; 0047e219 | = "Reorient using course"
     PUSH EAX                            ; 0047e21e | = "Reorient using course"
     MOV EDX,dword ptr [0x00678a60]      ; 0047e21f | g_CEditorToolsPtr
-    PUSH EDX                            ; 0047e225 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0047e225 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0047e226
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0047e22b
@@ -2262,7 +2262,7 @@ section .text
     MOV EAX,0x620d7a                    ; 0047e3ac | = "Can't import multi-frame model into t..."
     PUSH EAX                            ; 0047e3b1 | = "Can't import multi-frame model into t..."
     MOV EAX,[0x00678a60]                ; 0047e3b2 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0047e3b7 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0047e3b7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047e3b8
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047e3bd
@@ -2310,7 +2310,7 @@ section .text
         ;   Label: LAB_0047e43c
     PUSH EAX                            ; 0047e441 | = "Building exact collision list"
     MOV EAX,[0x00678a60]                ; 0047e442 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0047e447 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0047e447 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0047e448
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0047e44d
@@ -2463,7 +2463,7 @@ section .text
     LEA EAX,[EBP + 0xfffffbbe]          ; 0047e676
     PUSH EAX                            ; 0047e67c
     MOV EDX,dword ptr [0x00678a60]      ; 0047e67d | g_CEditorToolsPtr
-    PUSH EDX                            ; 0047e683 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0047e683 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0047e684
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0047e689
@@ -2490,7 +2490,7 @@ section .text
         ;   XREF to: 0047e19b (CONDITIONAL_JUMP)  ; LAB_0047e19b
     PUSH 0x620cf7                       ; 0047e6cf | = "Please enter either a single scale fa..."
     MOV ECX,dword ptr [0x00678a60]      ; 0047e6d4 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0047e6da | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047e6da | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047e6db
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047e6e0
@@ -2539,7 +2539,7 @@ section .text
     MOV EAX,0x6209c8                    ; 0047e751 | = "Get model and textures from network"
     PUSH EAX                            ; 0047e756 | = "Get model and textures from network"
     MOV ESI,dword ptr [0x00678a60]      ; 0047e757 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0047e75d | g_CEditorToolsPtr
+    PUSH ESI                            ; 0047e75d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 0047e75e
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 0047e763
@@ -2589,7 +2589,7 @@ section .text
     MOV EAX,0x6209f3                    ; 0047e7ec | = "%s is in mounted pod %s"
     PUSH EAX                            ; 0047e7f1 | = "%s is in mounted pod %s"
     MOV EBX,dword ptr [0x00678a60]      ; 0047e7f2 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0047e7f8 | g_CEditorToolsPtr
+    PUSH EBX                            ; 0047e7f8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047e7f9
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0047e7fe

@@ -389,7 +389,7 @@ section .text
     PUSH EAX                            ; 00576d50
     PUSH 0x64665c                       ; 00576d51 | = "Can't figure out image dimensions for %s"
     MOV EBX,dword ptr [0x00678a60]      ; 00576d56 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00576d5c | g_CEditorToolsPtr
+    PUSH EBX                            ; 00576d5c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00576d5d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00576d62

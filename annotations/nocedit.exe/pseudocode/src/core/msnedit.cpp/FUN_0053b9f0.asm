@@ -27,7 +27,7 @@
 ;   int g_NumActorClassTypes
 ;   CDemonActorType*[200] g_ActorClassRegistrations
 ;   undefined4 g_ActorClassRegistrations[1]
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_CurrentDebugLine
 ;   ... and 2 more
 ;
@@ -202,8 +202,8 @@ section .text
     LEA EAX,[ESP + 0x414]               ; 0053bb57
     PUSH EAX                            ; 0053bb5e
     PUSH 0x63b7b6                       ; 0053bb5f | = "Confirm new actor name"
-    MOV EAX,[0x00678a60]                ; 0053bb64 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0053bb69 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0053bb64 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0053bb69 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0053bb6a
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0053bb6f

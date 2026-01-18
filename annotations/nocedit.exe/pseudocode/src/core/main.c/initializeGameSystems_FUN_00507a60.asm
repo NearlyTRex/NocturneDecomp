@@ -489,7 +489,7 @@ section .text
     LEA EAX,[ESP + 0x200]               ; 00507e89
     PUSH EAX                            ; 00507e90
     MOV EDX,dword ptr [0x00678a60]      ; 00507e91 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00507e97 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00507e97 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 00507e98
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00507e9d
@@ -681,8 +681,8 @@ section .text
         ;   Label: LAB_00508017
     MOV EAX,ESP                         ; 00508018
     PUSH EAX                            ; 0050801a
-    MOV EBX,dword ptr [0x00678a60]      ; 0050801b | g_CEditorToolsPtr
-    PUSH EBX                            ; 00508021 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0050801b | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 00508021 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 00508022
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00508027

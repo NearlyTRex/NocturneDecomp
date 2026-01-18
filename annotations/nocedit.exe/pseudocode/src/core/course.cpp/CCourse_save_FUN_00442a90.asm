@@ -29,7 +29,7 @@
 ;   TerminatedCString s_g_g_g_g_g_g_g_0061901f
 ;   TerminatedCString s_core_course_cpp_00619036
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -147,7 +147,7 @@ section .text
         ;   Label: LAB_00442b98
     PUSH 0x618fbb                       ; 00442b99 | = "Can't create data\\%s"
     MOV ESI,dword ptr [0x00678a60]      ; 00442b9e | g_CEditorToolsPtr
-    PUSH ESI                            ; 00442ba4 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00442ba4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00442ba5
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00442baa

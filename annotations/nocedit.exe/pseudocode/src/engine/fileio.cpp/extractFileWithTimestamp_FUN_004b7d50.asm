@@ -25,7 +25,7 @@
 ;   TerminatedCString s_wb_00628127
 ;   TerminatedCString s_engine_fileio_cpp_0062812a
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
@@ -181,7 +181,7 @@ section .text
     PUSH EBX                            ; 004b7e81
     PUSH 0x626577                       ; 004b7e82 | = "WARNING: Error setting date/time on %..."
     MOV ECX,dword ptr [0x00678a60]      ; 004b7e87 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b7e8d | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b7e8d | g_CEditorToolsInstance
     XOR EDI,EDI                         ; 004b7e8e
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b7e90
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)

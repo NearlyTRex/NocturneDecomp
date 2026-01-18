@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Computing_initial_edge_c_006379ed
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
@@ -60,7 +60,7 @@ section .text
     PUSH 0x6379ed                       ; 00519740 | = "Computing initial edge collapse costs..."
         ;   Label: LAB_00519740
     MOV ESI,dword ptr [0x00678a60]      ; 00519745 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0051974b | g_CEditorToolsPtr
+    PUSH ESI                            ; 0051974b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0051974c
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 00519751
@@ -84,7 +84,7 @@ section .text
     SUB ESP,0x4                         ; 0051977b
     MOV EBP,dword ptr [0x00678a60]      ; 0051977e | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00519784
-    PUSH EBP                            ; 00519787 | g_CEditorToolsPtr
+    PUSH EBP                            ; 00519787 | g_CEditorToolsInstance
     INC ESI                             ; 00519788
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00519789
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
@@ -95,9 +95,9 @@ section .text
         ;   XREF to: 0051975d (CONDITIONAL_JUMP)  ; LAB_0051975d
     LEA EAX,[EAX]                       ; 00519798
     MOV EDX,EDX                         ; 0051979e
-    MOV EDX,dword ptr [0x00678a60]      ; 005197a0 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 005197a0 | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_005197a0
-    PUSH EDX                            ; 005197a6 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005197a6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005197a7
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 005197ac

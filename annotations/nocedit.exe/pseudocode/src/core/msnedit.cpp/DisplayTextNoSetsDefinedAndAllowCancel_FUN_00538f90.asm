@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_No_sets_defined_0063c33b
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -88,7 +88,7 @@ section .text
     PUSH 0x63c33b                       ; 0053902d | = "No sets defined."
         ;   Label: LAB_0053902d
     MOV EBX,dword ptr [0x00678a60]      ; 00539032 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00539038 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00539038 | g_CEditorToolsInstance
     MOV ESI,0xffffffff                  ; 00539039
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053903e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)

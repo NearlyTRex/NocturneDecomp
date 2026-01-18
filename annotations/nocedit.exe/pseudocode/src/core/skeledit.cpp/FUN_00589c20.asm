@@ -225,7 +225,7 @@ section .text
     PUSH 0x64a01a                       ; 00589dea | = "Error loading precompute file."
         ;   Label: LAB_00589dea
     MOV EDX,dword ptr [0x00678a60]      ; 00589def | g_CEditorToolsPtr
-    PUSH EDX                            ; 00589df5 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00589df5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00589df6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     MOV EAX,0xffffffff                  ; 00589dfb
@@ -243,7 +243,7 @@ section .text
     ADD ESP,0x4                         ; 00589e14
     PUSH 0x64a039                       ; 00589e17 | = "Error loading precompute file."
     MOV EAX,[0x00678a60]                ; 00589e1c | g_CEditorToolsPtr
-    PUSH EAX                            ; 00589e21 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00589e21 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00589e22
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     MOV EAX,0xffffffff                  ; 00589e27
@@ -294,7 +294,7 @@ section .text
     ADD ESP,0x4                         ; 00589e9b
     PUSH 0x649dff                       ; 00589e9e | = "LOD generation complete!"
     MOV ECX,dword ptr [0x00678a60]      ; 00589ea3 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00589ea9 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00589ea9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00589eaa
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00589eaf
@@ -317,7 +317,7 @@ section .text
     PUSH EAX                            ; 00589edb | = "No precompute file exists.  Generate ..." | s_No_precompute_file_exist_0064a058
         ;   Label: LAB_00589edb
     MOV ESI,dword ptr [0x00678a60]      ; 00589edc | g_CEditorToolsPtr
-    PUSH ESI                            ; 00589ee2 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00589ee2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00589ee3
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00589ee8
@@ -338,7 +338,7 @@ section .text
     ADD ESP,0x4                         ; 00589f0e
     PUSH 0x649dff                       ; 00589f11 | = "LOD generation complete!"
     MOV EDI,dword ptr [0x00678a60]      ; 00589f16 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00589f1c | g_CEditorToolsPtr
+    PUSH EDI                            ; 00589f1c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00589f1d
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00589f22

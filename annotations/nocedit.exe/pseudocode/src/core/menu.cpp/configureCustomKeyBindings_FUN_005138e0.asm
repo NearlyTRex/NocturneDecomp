@@ -1395,8 +1395,8 @@ section .text
         ;   Label: LAB_0051483d
     LEA EAX,[ESP + 0x7b0]               ; 0051483e
     PUSH EAX                            ; 00514845
-    MOV ECX,dword ptr [0x00678a60]      ; 00514846 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0051484c | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00514846 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0051484c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0051484d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00514852
@@ -1458,8 +1458,8 @@ section .text
         ;   Label: LAB_005148ca
     LEA EAX,[ESP + 0x3b0]               ; 005148cb
     PUSH EAX                            ; 005148d2
-    MOV EBX,dword ptr [0x00678a60]      ; 005148d3 | g_CEditorToolsPtr
-    PUSH EBX                            ; 005148d9 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 005148d3 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 005148d9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005148da
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     JMP 0x00514852                      ; 005148df
@@ -1491,8 +1491,8 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 0051491d
     PUSH EAX                            ; 00514920
-    MOV ECX,dword ptr [0x00678a60]      ; 00514921 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00514927 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00514921 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00514927 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00514928
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0051492d
@@ -1582,8 +1582,8 @@ section .text
         ;   Label: LAB_005149db
     LEA EAX,[ESP + 0x5b0]               ; 005149dc
     PUSH EAX                            ; 005149e3
-    MOV EBX,dword ptr [0x00678a60]      ; 005149e4 | g_CEditorToolsPtr
-    PUSH EBX                            ; 005149ea | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 005149e4 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 005149ea | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005149eb
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 005149f0
@@ -1632,8 +1632,8 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 00514a5a
     PUSH EAX                            ; 00514a5d
-    MOV EAX,[0x00678a60]                ; 00514a5e | g_CEditorToolsPtr
-    PUSH EAX                            ; 00514a63 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 00514a5e | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00514a63 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00514a64
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00514a69
@@ -2098,8 +2098,8 @@ section .text
         ;   XREF to: 004dbbc0 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0()
     ADD ESP,0x4                         ; 00514f25
     PUSH 0x6372cc                       ; 00514f28 | = "One or more keys not valid.  Restorin..."
-    MOV EAX,[0x00678a60]                ; 00514f2d | g_CEditorToolsPtr
-    PUSH EAX                            ; 00514f32 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 00514f2d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00514f32 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00514f33
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00514f38

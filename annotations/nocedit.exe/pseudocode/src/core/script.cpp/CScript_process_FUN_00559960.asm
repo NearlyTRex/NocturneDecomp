@@ -17,7 +17,7 @@
 ;   TerminatedCString s_WARNING_Infinite_loop_de_0064175d
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CGame* g_CGamePtr = 02d81a9c
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CGame g_CGameInstance
 ;   undefined4 DAT_02d81b68
 ;   undefined4 DAT_0310ec9c
@@ -139,7 +139,7 @@ section .text
     PUSH ECX                            ; 00559a44
     PUSH 0x64175d                       ; 00559a45 | = "!WARNING!  Infinite loop detected in ..."
     MOV ESI,dword ptr [0x00678a60]      ; 00559a4a | g_CEditorToolsPtr
-    PUSH ESI                            ; 00559a50 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00559a50 | g_CEditorToolsInstance
     MOV EDI,0x1                         ; 00559a51
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00559a56
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
@@ -156,7 +156,7 @@ section .text
     PUSH ECX                            ; 00559a79
     PUSH 0x641720                       ; 00559a7a | = "Error processing script.\nLine: %d\nT..."
     MOV EAX,[0x00678a60]                ; 00559a7f | g_CEditorToolsPtr
-    PUSH EAX                            ; 00559a84 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00559a84 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00559a85
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00559a8a

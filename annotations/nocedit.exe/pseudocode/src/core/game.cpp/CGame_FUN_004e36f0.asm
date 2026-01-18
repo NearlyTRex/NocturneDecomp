@@ -21,7 +21,7 @@
 ;   TerminatedCString s_save_0062d4d4
 ;   TerminatedCString s_Select_file_to_load_0062d4d9
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char g_CurrentSaveFile
 ;   undefined1 DAT_02d82c81
 ;   undefined1 DAT_02d82c82
@@ -102,8 +102,8 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 004e379a
     PUSH EAX                            ; 004e379d
-    MOV EDX,dword ptr [0x00678a60]      ; 004e379e | g_CEditorToolsPtr
-    PUSH EDX                            ; 004e37a4 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004e379e | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004e37a4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004e37a5
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 004e37aa

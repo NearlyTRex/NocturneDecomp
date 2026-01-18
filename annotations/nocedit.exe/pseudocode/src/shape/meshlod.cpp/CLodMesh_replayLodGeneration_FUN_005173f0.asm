@@ -23,7 +23,7 @@
 ;   undefined4 s_ay.txt_0067d4bc
 ;   undefined4 s_xt_0067d4c0
 ;   undefined4 s__0067d4c2
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_LodReplayMode
 ;
 ; Called Functions:
@@ -79,7 +79,7 @@ section .text
     ADD ESP,0x8                         ; 00517441
     PUSH 0x6377a7                       ; 00517444 | = "Replaying..."
     MOV EDX,dword ptr [0x00678a60]      ; 00517449 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0051744f | g_CEditorToolsPtr
+    PUSH EDX                            ; 0051744f | g_CEditorToolsInstance
     XOR ESI,ESI                         ; 00517450
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 00517452
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
@@ -113,7 +113,7 @@ section .text
     SUB ESP,0x4                         ; 005174a2
     MOV EAX,[0x00678a60]                ; 005174a5 | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 005174aa
-    PUSH EAX                            ; 005174ad | g_CEditorToolsPtr
+    PUSH EAX                            ; 005174ad | g_CEditorToolsInstance
     ADD EDI,0xf0                        ; 005174ae
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 005174b4
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
@@ -128,7 +128,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 005174d0 | g_CEditorToolsPtr
         ;   Label: LAB_005174d0
     MOV EAX,dword ptr [ESP + 0xc]       ; 005174d6
-    PUSH ECX                            ; 005174da | g_CEditorToolsPtr
+    PUSH ECX                            ; 005174da | g_CEditorToolsInstance
     MOV [0x02f33330],EAX                ; 005174db | g_LodReplayMode
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005174e0
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
@@ -155,7 +155,7 @@ section .text
     PUSH EAX                            ; 0051750f
     PUSH 0x637799                       ; 00517510 | = "Can't open %s"
     MOV EBP,dword ptr [0x00678a60]      ; 00517515 | g_CEditorToolsPtr
-    PUSH EBP                            ; 0051751b | g_CEditorToolsPtr
+    PUSH EBP                            ; 0051751b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0051751c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00517521

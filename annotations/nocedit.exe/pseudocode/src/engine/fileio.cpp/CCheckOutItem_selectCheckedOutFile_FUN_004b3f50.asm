@@ -24,7 +24,7 @@
 ;   TerminatedCString s_You_do_not_currently_hav_00626a04
 ;   TerminatedCString s_You_currently_don_t_have_00626a2d
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   SVersionControlSession g_VersionControlSession
 ;
 ; Called Functions:
@@ -164,7 +164,7 @@ section .text
         ;   Label: LAB_004b4064
     PUSH 0x626a04                       ; 004b4065 | = "You do not currently have %s checked out"
     MOV ECX,dword ptr [0x00678a60]      ; 004b406a | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b4070 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b4070 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b4071
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b4076
@@ -280,7 +280,7 @@ section .text
     PUSH 0x626a2d                       ; 004b4173 | = "You currently don't have any files ch..."
         ;   Label: LAB_004b4173
     MOV EBX,dword ptr [0x00678a60]      ; 004b4178 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004b417e | g_CEditorToolsPtr
+    PUSH EBX                            ; 004b417e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b417f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b4184

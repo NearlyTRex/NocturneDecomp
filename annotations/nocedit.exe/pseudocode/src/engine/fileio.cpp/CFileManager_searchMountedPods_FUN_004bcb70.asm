@@ -25,7 +25,7 @@
 ;   TerminatedCString s_No_files_found_matching__0062922f
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
 ;
 ; Called Functions:
@@ -75,8 +75,8 @@ section .text
     LEA EAX,[ESP + 0x8cc]               ; 004bcbab
     PUSH EAX                            ; 004bcbb2
     PUSH 0x629211                       ; 004bcbb3 | = "Enter filename wildcard"
-    MOV EDX,dword ptr [0x00678a60]      ; 004bcbb8 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bcbbe | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004bcbb8 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bcbbe | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004bcbbf
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004bcbc4
@@ -147,7 +147,7 @@ section .text
     PUSH EAX                            ; 004bcc79
     PUSH 0x62922f                       ; 004bcc7a | = "No files found matching %s"
     MOV EDI,dword ptr [0x00678a60]      ; 004bcc7f | g_CEditorToolsPtr
-    PUSH EDI                            ; 004bcc85 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004bcc85 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bcc86
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bcc8b

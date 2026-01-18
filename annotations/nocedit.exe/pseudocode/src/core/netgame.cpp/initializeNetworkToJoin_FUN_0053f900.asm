@@ -34,7 +34,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   int g_ForceMessagePump = 0x1
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 DAT_02d81b60
 ;   ... and 4 more
@@ -127,7 +127,7 @@ section .text
     PUSH 0x63d338                       ; 0053f9b9 | = "Contacting server.  Press ESC to give..."
     MOV dword ptr [EBX + 0x110],EAX     ; 0053f9be
     XOR EAX,EAX                         ; 0053f9c4
-    PUSH EDX                            ; 0053f9c6 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053f9c6 | g_CEditorToolsInstance
     SUB EDI,0x50000                     ; 0053f9c7
     MOV [0x02f7c8bc],EAX                ; 0053f9cd | DAT_02f7c8bc
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053f9d2
@@ -259,7 +259,7 @@ section .text
     PUSH 0x63d364                       ; 0053fb1d | = "Connection refused - computer is not ..."
         ;   Label: LAB_0053fb1d
     MOV ESI,dword ptr [0x00678a60]      ; 0053fb22 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053fb28 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053fb28 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053fb29
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053fb2e
@@ -278,7 +278,7 @@ section .text
     PUSH 0x63d392                       ; 0053fb45 | = "Connection refused - game is full"
         ;   Label: LAB_0053fb45
     MOV ECX,dword ptr [0x00678a60]      ; 0053fb4a | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053fb50 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053fb50 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053fb51
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053fb56
@@ -297,7 +297,7 @@ section .text
     PUSH 0x63d3b4                       ; 0053fb6d | = "Connection refused - already in the game"
         ;   Label: LAB_0053fb6d
     MOV EDX,dword ptr [0x00678a60]      ; 0053fb72 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0053fb78 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053fb78 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053fb79
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053fb7e

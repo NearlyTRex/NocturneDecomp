@@ -32,7 +32,7 @@
 ;   TerminatedCString s_s_s_s_d_s_00627dee
 ;   TerminatedCString s_Contents_of_pod_file_s_00627dfd
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -70,8 +70,8 @@ section .text
     PUSH EAX                            ; 004b747c
     PUSH 0x627d97                       ; 004b747d | = "*.pod"
     PUSH 0x627d9d                       ; 004b7482 | = "Select POD file to catalog"
-    MOV EDX,dword ptr [0x00678a60]      ; 004b7487 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b748d | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b7487 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b748d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 004b748e
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 004b7493
@@ -258,8 +258,8 @@ section .text
         ;   Label: LAB_004b768f
     PUSH EAX                            ; 004b7696
     PUSH 0x627db8                       ; 004b7697 | = "Can't mount %s to catalog files!"
-    MOV ECX,dword ptr [0x00678a60]      ; 004b769c | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b76a2 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004b769c | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b76a2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b76a3
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b76a8

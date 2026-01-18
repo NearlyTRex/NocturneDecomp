@@ -18,7 +18,7 @@
 ;   TerminatedCString s_core_mission_cpp_00639606
 ;   TerminatedCString s_Replaced_hero_OK_You_wil_0063961a
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CHeroPlaceholderClassInfo.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -185,7 +185,7 @@ section .text
     ADD ESP,0x8                         ; 00524d74
     PUSH 0x63961a                       ; 00524d77 | = "Replaced hero OK.  You will need to s..."
     MOV ESI,dword ptr [0x00678a60]      ; 00524d7c | g_CEditorToolsPtr
-    PUSH ESI                            ; 00524d82 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00524d82 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00524d83
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00524d88
@@ -220,7 +220,7 @@ section .text
     PUSH 0x6394de                       ; 00524dcb | = "Warning: mission has no hero placehol..."
         ;   Label: LAB_00524dcb
     MOV EDI,dword ptr [0x00678a60]      ; 00524dd0 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00524dd6 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00524dd6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00524dd7
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00524ddc

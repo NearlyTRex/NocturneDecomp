@@ -472,7 +472,7 @@ section .text
     JNZ 0x0051e537                      ; 0051deb9
         ;   XREF to: 0051e537 (CONDITIONAL_JUMP)  ; LAB_0051e537
     MOV EDX,dword ptr [0x00678a60]      ; 0051debf | g_CEditorToolsPtr
-    PUSH EDX                            ; 0051dec5 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0051dec5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0051dec6
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0051decb
@@ -529,7 +529,7 @@ section .text
     MOV EBX,EDI                         ; 0051df68
     MOV EAX,[0x00678a60]                ; 0051df6a | g_CEditorToolsPtr
         ;   Label: LAB_0051df6a
-    PUSH EAX                            ; 0051df6f | g_CEditorToolsPtr
+    PUSH EAX                            ; 0051df6f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0051df70
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0051df75
@@ -702,7 +702,7 @@ section .text
     PUSH EAX                            ; 0051e13b
     PUSH 0x638495                       ; 0051e13c | = "Enter face count"
     MOV ECX,dword ptr [0x00678a60]      ; 0051e141 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0051e147 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0051e147 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 0051e148
         ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0051e14d
@@ -729,7 +729,7 @@ section .text
     LEA EAX,[ESP + 0x538]               ; 0051e186
     PUSH EAX                            ; 0051e18d
     MOV EBX,dword ptr [0x00678a60]      ; 0051e18e | g_CEditorToolsPtr
-    PUSH EBX                            ; 0051e194 | g_CEditorToolsPtr
+    PUSH EBX                            ; 0051e194 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0051e195
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0051e19a
@@ -1073,7 +1073,7 @@ section .text
         ;   Label: LAB_0051e587
     PUSH 0x638477                       ; 0051e588 | = "Can't have more than %d LODs."
     MOV EDI,dword ptr [0x00678a60]      ; 0051e58d | g_CEditorToolsPtr
-    PUSH EDI                            ; 0051e593 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0051e593 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0051e594
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0051e599

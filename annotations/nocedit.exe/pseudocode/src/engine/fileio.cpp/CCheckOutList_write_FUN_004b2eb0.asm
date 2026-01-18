@@ -19,7 +19,7 @@
 ;   TerminatedCString s_File_I_O_error_accessing_0062647d
 ;   TerminatedCString s_s_s_006264ce
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_io.c_ftruncate_FUN_00600cf0
@@ -92,7 +92,7 @@ section .text
     PUSH 0x62647d                       ; 004b2f27 | = "File I/O error accessing checkout fil..."
         ;   Label: LAB_004b2f27
     MOV ESI,dword ptr [0x00678a60]      ; 004b2f2c | g_CEditorToolsPtr
-    PUSH ESI                            ; 004b2f32 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004b2f32 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b2f33
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     MOV EDI,dword ptr [EBP]             ; 004b2f38

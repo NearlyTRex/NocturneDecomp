@@ -38,7 +38,7 @@
 ;   undefined4 DAT_00663750
 ;   undefined4 DAT_00663758
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   ... and 3 more
 ;
@@ -198,7 +198,7 @@ section .text
     MOV EAX,0x653690                    ; 005bde9d | = "actionPending = %d\nstranger.cpp line %d"
     PUSH EAX                            ; 005bdea2 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x00678a60]                ; 005bdea3 | g_CEditorToolsPtr
-    PUSH EAX                            ; 005bdea8 | g_CEditorToolsPtr
+    PUSH EAX                            ; 005bdea8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005bdea9
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005bdeae
@@ -233,7 +233,7 @@ section .text
     MOV EAX,0x6536b8                    ; 005bdef7 | = "actionPending = %d\nstranger.cpp line %d"
     PUSH EAX                            ; 005bdefc | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x00678a60]                ; 005bdefd | g_CEditorToolsPtr
-    PUSH EAX                            ; 005bdf02 | g_CEditorToolsPtr
+    PUSH EAX                            ; 005bdf02 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005bdf03
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005bdf08
@@ -243,7 +243,7 @@ section .text
         ;   Label: LAB_005bdf0d
     PUSH 0x6536e0                       ; 005bdf12 | = "Object to pick up is now NULL\nstrang..."
     MOV EDX,dword ptr [0x00678a60]      ; 005bdf17 | g_CEditorToolsPtr
-    PUSH EDX                            ; 005bdf1d | g_CEditorToolsPtr
+    PUSH EDX                            ; 005bdf1d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005bdf1e
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005bdf23
@@ -266,7 +266,7 @@ section .text
     PUSH ECX                            ; 005bdf49
     PUSH 0x653713                       ; 005bdf4a | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x00678a60]                ; 005bdf4f | g_CEditorToolsPtr
-    PUSH EAX                            ; 005bdf54 | g_CEditorToolsPtr
+    PUSH EAX                            ; 005bdf54 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005bdf55
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005bdf5a
@@ -319,7 +319,7 @@ section .text
     PUSH EDI                            ; 005bdfea
     PUSH 0x65373b                       ; 005bdfeb | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDX,dword ptr [0x00678a60]      ; 005bdff0 | g_CEditorToolsPtr
-    PUSH EDX                            ; 005bdff6 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005bdff6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005bdff7
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     JMP 0x005bddef                      ; 005bdffc
@@ -509,7 +509,7 @@ section .text
     PUSH EDX                            ; 005be2e0
     PUSH 0x653788                       ; 005be2e1 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x00678a60]      ; 005be2e6 | g_CEditorToolsPtr
-    PUSH EDI                            ; 005be2ec | g_CEditorToolsPtr
+    PUSH EDI                            ; 005be2ec | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005be2ed
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005be2f2
@@ -580,7 +580,7 @@ section .text
     PUSH 0x822                          ; 005be38f
     PUSH 0x6537b0                       ; 005be394 | = "doorToOpen == NULL\nstranger.cpp line %d"
     MOV EDX,dword ptr [0x00678a60]      ; 005be399 | g_CEditorToolsPtr
-    PUSH EDX                            ; 005be39f | g_CEditorToolsPtr
+    PUSH EDX                            ; 005be39f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 005be3a0
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005be3a5

@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_WARNING_Error_setting_da_00626577
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   engine_dosio.c_copyFileTimestamp_FUN_00481910
@@ -40,7 +40,7 @@ section .text
     PUSH EBX                            ; 004b3202
     PUSH 0x626577                       ; 004b3203 | = "WARNING: Error setting date/time on %..."
     MOV ESI,dword ptr [0x00678a60]      ; 004b3208 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004b320e | g_CEditorToolsPtr
+    PUSH ESI                            ; 004b320e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b320f
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b3214

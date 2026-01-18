@@ -29,7 +29,7 @@
 ;   TerminatedCString s_core_texlist_cpp_00655065
 ;   TerminatedCString s_Too_many_editable_textur_00655079
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -81,7 +81,7 @@ section .text
     PUSH 0x655036                       ; 005dc2ec | = "Please wait, building texture list..."
         ;   Label: LAB_005dc2ec
     MOV ESI,dword ptr [0x00678a60]      ; 005dc2f1 | g_CEditorToolsPtr
-    PUSH ESI                            ; 005dc2f7 | g_CEditorToolsPtr
+    PUSH ESI                            ; 005dc2f7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940 ; 005dc2f8
         ;   XREF to: 0049e940 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940(CEditorTools * this_ptr, char * dialog_text)
     ADD ESP,0x8                         ; 005dc2fd
@@ -163,8 +163,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x6d64]    ; 005dc3c2
     PUSH EDX                            ; 005dc3c8
     PUSH 0x65505c                       ; 005dc3c9 | = "[%4d] %s"
-    MOV ECX,dword ptr [0x00678a60]      ; 005dc3ce | g_CEditorToolsPtr
-    PUSH ECX                            ; 005dc3d4 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 005dc3ce | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 005dc3d4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 ; 005dc3d5
         ;   XREF to: 0049e870 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x10                        ; 005dc3da
@@ -195,8 +195,8 @@ section .text
     TEST EAX,EAX                        ; 005dc42e
     JZ 0x005dc30d                       ; 005dc430
         ;   XREF to: 005dc30d (CONDITIONAL_JUMP)  ; LAB_005dc30d
-    MOV ECX,dword ptr [0x00678a60]      ; 005dc436 | g_CEditorToolsPtr
-    PUSH ECX                            ; 005dc43c | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 005dc436 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 005dc43c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005dc43d
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 005dc442

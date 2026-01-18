@@ -41,7 +41,7 @@
 ;   TerminatedCString s_core_skeledit_cpp_0064aa34
 ;   TerminatedCString s_Imported_vertex_assignme_0064aa49
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   ... and 1 more
@@ -78,7 +78,7 @@ section .text
     PUSH EDX                            ; 0058bd1c
     PUSH 0x64a90c                       ; 0058bd1d | = "Importing vertex assignments from %s..."
     MOV ECX,dword ptr [0x00678a60]      ; 0058bd22 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0058bd28 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0058bd28 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058bd29
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058bd2e
@@ -366,7 +366,7 @@ section .text
     PUSH EAX                            ; 0058c0f0
     PUSH 0x64aa49                       ; 0058c0f1 | = "Imported vertex assignments from %s OK"
     MOV EDX,dword ptr [0x00678a60]      ; 0058c0f6 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058c0fc | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058c0fc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058c0fd
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058c102

@@ -621,7 +621,7 @@ section .text
     PUSH 0x6481d5                       ; 0057ed14 | = "models"
     PUSH 0x6481dc                       ; 0057ed19 | = "Save set"
     MOV EDI,dword ptr [0x00678a60]      ; 0057ed1e | g_CEditorToolsPtr
-    PUSH EDI                            ; 0057ed24 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0057ed24 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 0057ed25
         ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 0057ed2a
@@ -851,8 +851,8 @@ section .text
     LEA EAX,[ESP + 0x42d4]              ; 0057ef5e
     PUSH EAX                            ; 0057ef65
     PUSH 0x648218                       ; 0057ef66 | = "Enter name of clone"
-    MOV EAX,[0x00678a60]                ; 0057ef6b | g_CEditorToolsPtr
-    PUSH EAX                            ; 0057ef70 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057ef6b | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057ef70 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0057ef71
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0057ef76
@@ -1055,8 +1055,8 @@ section .text
     PUSH 0x64822c                       ; 0057f23e | = "*.lc"
     PUSH 0x648231                       ; 0057f243 | = "models"
     PUSH 0x648238                       ; 0057f248 | = "Merge .LC"
-    MOV ECX,dword ptr [0x00678a60]      ; 0057f24d | g_CEditorToolsPtr
-    PUSH ECX                            ; 0057f253 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0057f24d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057f253 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0057f254
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0057f259
@@ -1204,7 +1204,7 @@ section .text
     ADD ESP,0x8                         ; 0057f418
     PUSH 0x6482b8                       ; 0057f41b | = "Import this camera?"
     MOV EDI,dword ptr [0x00678a60]      ; 0057f420 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0057f426 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0057f426 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057f427
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057f42c
@@ -1242,7 +1242,7 @@ section .text
     PUSH 0x6482e0                       ; 0057f487 | = "Recomputing all PVS"
     MOV EDI,dword ptr [0x00678a60]      ; 0057f48c | g_CEditorToolsPtr
     MOV dword ptr [ESI + 0x15ac90],0x1  ; 0057f492
-    PUSH EDI                            ; 0057f49c | g_CEditorToolsPtr
+    PUSH EDI                            ; 0057f49c | g_CEditorToolsInstance
     MOV dword ptr [ESI + 0x15ac84],0x1  ; 0057f49d
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0057f4a7
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
@@ -1296,9 +1296,9 @@ section .text
     FSTP float ptr [ESP]                ; 0057f548
     FILD dword ptr [ESP + 0x4778]       ; 0057f54b
     SUB ESP,0x4                         ; 0057f552
-    MOV ECX,dword ptr [0x00678a60]      ; 0057f555 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0057f555 | g_CEditorToolsInstance | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 0057f55b
-    PUSH ECX                            ; 0057f55e | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057f55e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 0057f55f
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 0057f564
@@ -1312,9 +1312,9 @@ section .text
     CMP ESI,EDX                         ; 0057f588
     JL 0x0057f4cb                       ; 0057f58a
         ;   XREF to: 0057f4cb (CONDITIONAL_JUMP)  ; LAB_0057f4cb
-    MOV ECX,dword ptr [0x00678a60]      ; 0057f590 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0057f590 | g_CEditorToolsInstance | g_CEditorToolsPtr
         ;   Label: LAB_0057f590
-    PUSH ECX                            ; 0057f596 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057f596 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 0057f597
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0057f59c
@@ -1335,8 +1335,8 @@ section .text
     PUSH 0x648318                       ; 0057f5d8 | = "*.lc"
     PUSH 0x64831d                       ; 0057f5dd | = "models"
     PUSH 0x648324                       ; 0057f5e2 | = "Merge2 .LC"
-    MOV ECX,dword ptr [0x00678a60]      ; 0057f5e7 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0057f5ed | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0057f5e7 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0057f5ed | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0057f5ee
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0057f5f3

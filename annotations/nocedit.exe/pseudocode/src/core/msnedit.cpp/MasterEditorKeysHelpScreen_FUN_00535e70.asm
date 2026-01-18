@@ -948,8 +948,8 @@ section .text
         ;   XREF to: 004a5fc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00536a8c
     PUSH EBP                            ; 00536a8f
-    MOV ECX,dword ptr [0x00678a60]      ; 00536a90 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00536a96 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00536a90 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00536a96 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 00536a97
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 00536a9c

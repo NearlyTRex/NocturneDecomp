@@ -827,8 +827,8 @@ section .text
         ;   XREF to: 0057e00a (CONDITIONAL_JUMP)  ; LAB_0057e00a
     PUSH 0x0                            ; 0057e032
         ;   Label: LAB_0057e032
-    MOV EBX,dword ptr [0x00678a60]      ; 0057e034 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0057e03a | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0057e034 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0057e03a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0057e03b
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 0057e040
@@ -1106,7 +1106,7 @@ section .text
         ;   XREF to: 0057e398 (CONDITIONAL_JUMP)  ; LAB_0057e398
     PUSH 0x648034                       ; 0057e37f | = "Can't set FOV on panning camera"
     MOV EDX,dword ptr [0x00678a60]      ; 0057e384 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0057e38a | g_CEditorToolsPtr
+    PUSH EDX                            ; 0057e38a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057e38b
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057e390
@@ -1121,8 +1121,8 @@ section .text
     ADD EAX,0x18                        ; 0057e3a4
     PUSH EAX                            ; 0057e3a7 | DAT_03f48f9c
     PUSH 0x648054                       ; 0057e3a8 | = "Enter FOV"
-    MOV EAX,[0x00678a60]                ; 0057e3ad | g_CEditorToolsPtr
-    PUSH EAX                            ; 0057e3b2 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057e3ad | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057e3b2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057e3b3
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057e3b8

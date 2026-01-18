@@ -38,7 +38,7 @@
 ;   TerminatedCString s_f_f_f_00619181
 ;   TerminatedCString s_f_f_f_0061918b
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -84,7 +84,7 @@ section .text
     SUB ESP,0x4                         ; 00442ed7
     MOV ESI,dword ptr [0x00678a60]      ; 00442eda | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00442ee0
-    PUSH ESI                            ; 00442ee3 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00442ee3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00442ee4
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 00442ee9

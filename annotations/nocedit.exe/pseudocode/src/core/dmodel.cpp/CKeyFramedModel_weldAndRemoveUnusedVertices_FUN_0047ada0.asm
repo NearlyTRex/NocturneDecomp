@@ -40,7 +40,7 @@
 ;   double DOUBLE_00620443 = 65536
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   char* g_CurrentDebugFilename = 0067d200
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   ... and 1 more
@@ -142,7 +142,7 @@ section .text
         ;   XREF to: 0047ae91 (CONDITIONAL_JUMP)  ; LAB_0047ae91
     PUSH 0x62038d                       ; 0047ae74 | = "Reducing vertices..."
     MOV EBP,dword ptr [0x00678a60]      ; 0047ae79 | g_CEditorToolsPtr
-    PUSH EBP                            ; 0047ae7f | g_CEditorToolsPtr
+    PUSH EBP                            ; 0047ae7f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0047ae80
         ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     MOV EAX,0x1                         ; 0047ae85
@@ -300,8 +300,8 @@ section .text
     CMP dword ptr [ESP + 0x18],0x0      ; 0047b03b
     JZ 0x0047adc8                       ; 0047b040
         ;   XREF to: 0047adc8 (CONDITIONAL_JUMP)  ; LAB_0047adc8
-    MOV EAX,[0x00678a60]                ; 0047b046 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0047b04b | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0047b046 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0047b04b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 0047b04c
         ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047b051
@@ -321,7 +321,7 @@ section .text
     SUB ESP,0x4                         ; 0047b074
     MOV EDI,dword ptr [0x00678a60]      ; 0047b077 | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 0047b07d
-    PUSH EDI                            ; 0047b080 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0047b080 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 0047b081
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 0047b086

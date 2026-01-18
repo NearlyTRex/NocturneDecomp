@@ -29,7 +29,7 @@
 ;   TerminatedCString s_core_dtrace_cpp_006229f0
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   undefined4 DAT_02cee5ac
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 00494e83
     PUSH ESI                            ; 00494e84
     PUSH 0x622939                       ; 00494e85 | = "Old .GEO file %s exists in file:\n%s\..."
-    MOV EBX,dword ptr [0x00678a60]      ; 00494e8a | g_CEditorToolsPtr
-    PUSH EBX                            ; 00494e90 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00494e8a | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 00494e90 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00494e91
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x10                        ; 00494e96

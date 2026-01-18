@@ -18,7 +18,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
 ;   CScript* g_CScriptPtr = 0310f858
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
 ;   CScript g_CScriptInstance
 ;
@@ -82,8 +82,8 @@ section .text
     PUSH EAX                            ; 0053d203
     PUSH EBX                            ; 0053d204
     PUSH 0x63cb19                       ; 0053d205 | = "Warning: %s exists in mounted pod %s...."
-    MOV ECX,dword ptr [0x00678a60]      ; 0053d20a | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053d210 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0053d20a | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053d210 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0053d211
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0053d216

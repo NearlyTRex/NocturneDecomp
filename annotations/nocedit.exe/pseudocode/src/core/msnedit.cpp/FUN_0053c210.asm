@@ -13,7 +13,7 @@
 ;   TerminatedCString s_No_actors_in_set_0063c850
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_list_ptr
 ;   undefined4 g_CDemonSetInstance.actor_list_data[0]
@@ -70,7 +70,7 @@ section .text
     PUSH 0x63c850                       ; 0053c265 | = "No actors in set."
         ;   Label: LAB_0053c265
     MOV ECX,dword ptr [0x00678a60]      ; 0053c26a | g_CEditorToolsPtr
-    PUSH ECX                            ; 0053c270 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0053c270 | g_CEditorToolsInstance
     XOR EBX,EBX                         ; 0053c271
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053c273
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)

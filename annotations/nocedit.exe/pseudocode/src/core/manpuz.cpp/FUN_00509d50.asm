@@ -51,7 +51,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 DAT_01000000
 ;   CDemonRenderer g_CDemonRendererInstance
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 DAT_02f0cb1c
 ;   undefined4 DAT_02f33744
 ;   CDemonSet g_CDemonSetInstance
@@ -118,7 +118,7 @@ section .text
     JNZ 0x00509dd5                      ; 00509dc5
         ;   XREF to: 00509dd5 (CONDITIONAL_JUMP)  ; LAB_00509dd5
     MOV EAX,[0x00678a60]                ; 00509dc7 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00509dcc | g_CEditorToolsPtr
+    PUSH EAX                            ; 00509dcc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 00509dcd
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00509dd2
@@ -126,7 +126,7 @@ section .text
         ;   Label: LAB_00509dd5
     MOV EDX,dword ptr [0x00678a60]      ; 00509dd6 | g_CEditorToolsPtr
     PUSH 0x3f800000                     ; 00509ddc
-    PUSH EDX                            ; 00509de1 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00509de1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 ; 00509de2
         ;   XREF to: 004a1ca0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00509de7

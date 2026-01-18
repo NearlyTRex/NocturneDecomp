@@ -20,7 +20,7 @@
 ;   TerminatedCString s_Heirarchy_for_s_0064a5b4
 ;   TerminatedCString s_s_0064a5c9
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 DAT_0366b650
 ;
 ; Called Functions:
@@ -175,7 +175,7 @@ section .text
     PUSH 0x366b650                      ; 0058b140 | DAT_0366b650
         ;   Label: LAB_0058b140
     MOV EBP,dword ptr [0x00678a60]      ; 0058b145 | g_CEditorToolsPtr
-    PUSH EBP                            ; 0058b14b | g_CEditorToolsPtr
+    PUSH EBP                            ; 0058b14b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 0058b14c
         ;   XREF to: 004a1bc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 0058b151

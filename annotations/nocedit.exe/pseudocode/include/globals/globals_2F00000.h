@@ -3,13 +3,25 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CMatrix3x3i.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2F00000
 // =============================================================================
 
+extern CAlphaBitmap g_LoadingScreenBitmap1;
+extern CAlphaBitmap g_LoadingScreenBitmap2;
+extern CAlphaBitmap g_LoadingScreenBitmap3;
+extern CAlphaBitmap g_LoadingScreenBitmap4;
+extern CDemonActorType g_CMansionPuzzleCircleClassInfo;
+extern CDemonActorType g_CMirrorHackClassInfo;
+extern CDemonActorType g_CMarqueeClassInfo;
 extern int g_SinTable[257];
 extern int g_CosTable[257];
+extern CMatrix3x3i g_InverseMatrix;
+extern CMatrix3x3i g_TransformMatrixCopy;
 extern int g_MatrixStack_M00[10];
 extern int g_MatrixStack_M01[10];
 extern int g_MatrixStack_M02[10];
@@ -43,5 +55,6 @@ extern int g_ViewportStack_ClipLeft[10];
 extern int g_ViewportStack_ClipRight[10];
 extern int g_ViewportStack_ClipTop[10];
 extern int g_ViewportStack_ClipBottom[10];
+extern CDemonActorType g_CMeleeClassInfo;
 extern FileTrackingEntry g_FileRegistry[100];
 

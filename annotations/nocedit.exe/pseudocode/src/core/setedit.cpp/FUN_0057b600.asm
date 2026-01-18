@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Enter_new_name_for_clone_0064782d
 ;   TerminatedCString s_Precompute_light_visibil_0064784d
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_FUN_0056d2d0
@@ -151,8 +151,8 @@ section .text
     ADD EAX,0x4                         ; 0057b828
     PUSH EAX                            ; 0057b82b
     PUSH 0x64782d                       ; 0057b82c | = "Enter new name for cloned light"
-    MOV EAX,[0x00678a60]                ; 0057b831 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0057b836 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057b831 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057b836 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0057b837
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0057b83c
@@ -183,7 +183,7 @@ section .text
     PUSH 0x647814                       ; 0057b871 | = "Too many lights already!"
         ;   Label: LAB_0057b871
     MOV EDI,dword ptr [0x00678a60]      ; 0057b876 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0057b87c | g_CEditorToolsPtr
+    PUSH EDI                            ; 0057b87c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057b87d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057b882
@@ -217,7 +217,7 @@ section .text
     ADD ESP,0x4                         ; 0057b8c4
     PUSH 0x64784d                       ; 0057b8c7 | = "Precompute light visibility?"
     MOV ESI,dword ptr [0x00678a60]      ; 0057b8cc | g_CEditorToolsPtr
-    PUSH ESI                            ; 0057b8d2 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0057b8d2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057b8d3
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057b8d8

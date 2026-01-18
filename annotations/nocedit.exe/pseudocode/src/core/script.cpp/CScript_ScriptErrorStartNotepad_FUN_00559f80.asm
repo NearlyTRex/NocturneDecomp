@@ -299,8 +299,8 @@ section .text
     JNZ 0x0055a31a                      ; 0055a206
         ;   XREF to: 0055a31a (CONDITIONAL_JUMP)  ; LAB_0055a31a
     PUSH 0x64192c                       ; 0055a20c | = "Note: This only works in NT.\nWhen yo..."
-    MOV EAX,[0x00678a60]                ; 0055a211 | g_CEditorToolsPtr
-    PUSH EAX                            ; 0055a216 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0055a211 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 0055a216 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0055a217
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0055a21c
@@ -366,8 +366,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x79c]     ; 0055a2bc
     PUSH EDX                            ; 0055a2c3
     PUSH 0x6417d6                       ; 0055a2c4 | = "Probable non-text file %s detected ne..."
-    MOV ECX,dword ptr [0x00678a60]      ; 0055a2c9 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0055a2cf | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0055a2c9 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0055a2cf | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0055a2d0
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0055a2d5

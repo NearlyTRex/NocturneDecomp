@@ -23,7 +23,7 @@
 ;   TerminatedCString s_Done_00615ed4
 ;   TerminatedCString s_Select_which_part_s_to_d_00615edb
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_FUN_0041a050
@@ -57,8 +57,8 @@ section .text
     PUSH 0x615ea0                       ; 0041b294 | = "*.dfm"
     PUSH 0x615ea6                       ; 0041b299 | = "models"
     PUSH 0x615ead                       ; 0041b29e | = "Select model to dismember"
-    MOV EDX,dword ptr [0x00678a60]      ; 0041b2a3 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0041b2a9 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0041b2a3 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0041b2a9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0041b2aa
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0041b2af
@@ -112,7 +112,7 @@ section .text
     JL 0x0041b313                       ; 0041b321
         ;   XREF to: 0041b313 (CONDITIONAL_JUMP)  ; LAB_0041b313
     LEA EAX,[EAX]                       ; 0041b323
-    LEA EDX,[EDX]                       ; 0041b329 | g_CEditorToolsPtr
+    LEA EDX,[EDX]                       ; 0041b329 | g_CEditorToolsInstance
     NOP                                 ; 0041b32f
     XOR EBX,EBX                         ; 0041b330
         ;   Label: LAB_0041b330

@@ -353,8 +353,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004be50a
     PUSH EAX                            ; 004be50e
     PUSH 0x629a25                       ; 004be50f | = "Enter source directory containing sou..."
-    MOV EDX,dword ptr [0x00678a60]      ; 004be514 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004be51a | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004be514 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004be51a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004be51b
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004be520

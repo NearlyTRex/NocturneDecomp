@@ -12,7 +12,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CNetGame* g_CNetGameInstance = 02f7c740
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char g_CurrentSaveFile
 ;   CDemonMission g_CDemonMissionInstance
 ;   undefined4 DAT_02f7c740
@@ -50,7 +50,7 @@ section .text
     PUSH 0x62d38a                       ; 004e2f38 | = "world"
     PUSH 0x62d390                       ; 004e2f3d | = "Select mission to play"
     MOV ESI,dword ptr [0x00678a60]      ; 004e2f42 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004e2f48 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004e2f48 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004e2f49
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 004e2f4e
@@ -85,7 +85,7 @@ section .text
     ADD ESP,0x8                         ; 004e2f8f
     PUSH 0x62d363                       ; 004e2f92 | = "Can't init network to host game."
     MOV EBX,dword ptr [0x00678a60]      ; 004e2f97 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004e2f9d | g_CEditorToolsPtr
+    PUSH EBX                            ; 004e2f9d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004e2f9e
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e2fa3

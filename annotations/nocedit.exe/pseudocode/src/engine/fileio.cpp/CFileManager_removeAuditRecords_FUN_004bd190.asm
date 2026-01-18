@@ -89,7 +89,7 @@ section .text
     PUSH 0x6293c5                       ; 004bd1ae | = "*.pod"
     PUSH 0x6293cb                       ; 004bd1b3 | = "Select POD file to remove audit records"
     MOV EDX,dword ptr [0x00678a60]      ; 004bd1b8 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bd1be | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bd1be | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 004bd1bf
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 004bd1c4
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 004bd23c (CONDITIONAL_JUMP)  ; LAB_004bd23c
     PUSH 0x629403                       ; 004bd228 | = "Can't remove audit records on POD of ..."
     MOV ESI,dword ptr [0x00678a60]      ; 004bd22d | g_CEditorToolsPtr
-    PUSH ESI                            ; 004bd233 | g_CEditorToolsPtr
+    PUSH ESI                            ; 004bd233 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bd234
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004bd239
@@ -163,7 +163,7 @@ section .text
     PUSH EAX                            ; 004bd273
     PUSH 0x629436                       ; 004bd274 | = "Remove audit records earlier than thi..."
     MOV EBP,dword ptr [0x00678a60]      ; 004bd279 | g_CEditorToolsPtr
-    PUSH EBP                            ; 004bd27f | g_CEditorToolsPtr
+    PUSH EBP                            ; 004bd27f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004bd280
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004bd285
@@ -188,7 +188,7 @@ section .text
     PUSH 0x629480                       ; 004bd2c2 | = "Please enter a valid date"
         ;   Label: LAB_004bd2c2
     MOV EAX,[0x00678a60]                ; 004bd2c7 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004bd2cc | g_CEditorToolsPtr
+    PUSH EAX                            ; 004bd2cc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bd2cd
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004bd2d2
@@ -199,7 +199,7 @@ section .text
     PUSH EAX                            ; 004bd2de
     PUSH 0x6293f3                       ; 004bd2df | = "Can't mount %s!"
     MOV ECX,dword ptr [0x00678a60]      ; 004bd2e4 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bd2ea | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bd2ea | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bd2eb
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bd2f0
@@ -328,7 +328,7 @@ section .text
         ;   XREF to: 004bd5fc (CONDITIONAL_JUMP)  ; LAB_004bd5fc
     PUSH 0x6294e1                       ; 004bd479 | = "Can't open %s to remove audit records"
     MOV EDI,dword ptr [0x00678a60]      ; 004bd47e | g_CEditorToolsPtr
-    PUSH EDI                            ; 004bd484 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004bd484 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bd485
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004bd48a
@@ -453,7 +453,7 @@ section .text
     PUSH 0x62949a                       ; 004bd5e6 | = "No audit records removed"
         ;   Label: LAB_004bd5e6
     MOV EBP,dword ptr [0x00678a60]      ; 004bd5eb | g_CEditorToolsPtr
-    PUSH EBP                            ; 004bd5f1 | g_CEditorToolsPtr
+    PUSH EBP                            ; 004bd5f1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 004bd5f2
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     JMP 0x004bd48a                      ; 004bd5f7
@@ -525,7 +525,7 @@ section .text
     PUSH EAX                            ; 004bd6ae
     PUSH 0x629507                       ; 004bd6af | = "Error accessing %s.  The POD may have..."
     MOV EBX,dword ptr [0x00678a60]      ; 004bd6b4 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004bd6ba | g_CEditorToolsPtr
+    PUSH EBX                            ; 004bd6ba | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bd6bb
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bd6c0

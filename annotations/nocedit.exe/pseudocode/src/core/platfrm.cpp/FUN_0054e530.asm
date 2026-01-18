@@ -22,7 +22,7 @@
 ;   TerminatedCString s_pth_0063fa97
 ;   TerminatedCString s_data_0063fa9d
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CPlatformClassInfo.name_hash
 ;
 ; Called Functions:
@@ -147,8 +147,8 @@ section .text
     PUSH 0x63fa72                       ; 0054e656 | = "data"
     LEA EAX,[ESP + 0x3b8]               ; 0054e65b
     PUSH EAX                            ; 0054e662
-    MOV EBX,dword ptr [0x00678a60]      ; 0054e663 | g_CEditorToolsPtr
-    PUSH EBX                            ; 0054e669 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0054e663 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0054e669 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0054e66a
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0054e66f
@@ -193,8 +193,8 @@ section .text
     PUSH 0x63fa9d                       ; 0054e6c9 | = "data"
     LEA EAX,[ESP + 0x480]               ; 0054e6ce
     PUSH EAX                            ; 0054e6d5
-    MOV ECX,dword ptr [0x00678a60]      ; 0054e6d6 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0054e6dc | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0054e6d6 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0054e6dc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0054e6dd
         ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
     ADD ESP,0x18                        ; 0054e6e2

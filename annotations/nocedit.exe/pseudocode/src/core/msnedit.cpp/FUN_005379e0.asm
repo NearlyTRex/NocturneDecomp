@@ -134,8 +134,8 @@ section .text
     PUSH 0xc8                           ; 00537abd
     PUSH 0x6804b8                       ; 00537ac2 | = "CEnemy"
     PUSH 0x63bb0c                       ; 00537ac7 | = "Enter enemy types to process"
-    MOV EBX,dword ptr [0x00678a60]      ; 00537acc | g_CEditorToolsPtr
-    PUSH EBX                            ; 00537ad2 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00537acc | g_CEditorToolsPtr | g_CEditorToolsInstance
+    PUSH EBX                            ; 00537ad2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 00537ad3
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 00537ad8
@@ -156,7 +156,7 @@ section .text
     PUSH 0x680580                       ; 00537afb | DAT_00680580
     PUSH 0x63bb29                       ; 00537b00 | = "Enter actor name wildcard"
     MOV ESI,dword ptr [0x00678a60]      ; 00537b05 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00537b0b | g_CEditorToolsPtr
+    PUSH ESI                            ; 00537b0b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 00537b0c
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 00537b11
@@ -179,7 +179,7 @@ section .text
     PUSH 0x6804b0                       ; 00537b3a | DAT_006804b0
     PUSH 0x63bb43                       ; 00537b3f | = "Enter minimum random speed"
     MOV EAX,[0x00678a60]                ; 00537b44 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00537b49 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00537b49 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 00537b4a
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 00537b4f
@@ -202,7 +202,7 @@ section .text
     PUSH 0x6804b4                       ; 00537b79 | DAT_006804b4
     PUSH 0x63bb5e                       ; 00537b7e | = "Enter maximum random speed"
     MOV EDX,dword ptr [0x00678a60]      ; 00537b83 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00537b89 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00537b89 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 00537b8a
         ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 00537b8f
@@ -280,7 +280,7 @@ section .text
         ;   XREF to: 00537d71 (CONDITIONAL_JUMP)  ; LAB_00537d71
     PUSH 0x63bbfd                       ; 00537c52 | = "No enemies matched criteria, no speed..."
     MOV EAX,[0x00678a60]                ; 00537c57 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00537c5c | g_CEditorToolsPtr
+    PUSH EAX                            ; 00537c5c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00537c5d
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00537c62

@@ -19,7 +19,7 @@
 ;   TerminatedCString s_engine_fileio_cpp_00627fff
 ;   TerminatedCString s_engine_fileio_cpp_00628014
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetc_FUN_005fe840
@@ -46,8 +46,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004b7ace
     PUSH EAX                            ; 004b7ad2
     PUSH 0x627fb1                       ; 004b7ad3 | = "Enter response filename"
-    MOV EDX,dword ptr [0x00678a60]      ; 004b7ad8 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b7ade | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b7ad8 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b7ade | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004b7adf
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004b7ae4
@@ -116,7 +116,7 @@ section .text
     PUSH 0x627fe1                       ; 004b7b64 | = "Unable to open response file!"
         ;   Label: LAB_004b7b64
     MOV ECX,dword ptr [0x00678a60]      ; 004b7b69 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b7b6f | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b7b6f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b7b70
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b7b75

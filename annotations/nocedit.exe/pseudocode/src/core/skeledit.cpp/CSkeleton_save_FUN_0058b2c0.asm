@@ -19,7 +19,7 @@
 ;   TerminatedCString s_Saved_skeleton_to_s_OK_0064a640
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonPod g_CDemonPodInstance
@@ -49,7 +49,7 @@ section .text
     PUSH EBX                            ; 0058b2d1
     PUSH 0x64a5ce                       ; 0058b2d2 | = "Saving skeleton to %s..."
     MOV EDX,dword ptr [0x00678a60]      ; 0058b2d7 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058b2dd | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058b2dd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058b2de
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058b2e3
@@ -70,7 +70,7 @@ section .text
     PUSH 0x64a5e7                       ; 0058b306 | = "data"
     PUSH 0x64a0c6                       ; 0058b30b | = "%s\\%s already exists in a mounted po..."
     MOV ESI,dword ptr [0x00678a60]      ; 0058b310 | g_CEditorToolsPtr
-    PUSH ESI                            ; 0058b316 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0058b316 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0058b317
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 0058b31c
@@ -101,7 +101,7 @@ section .text
     PUSH EBX                            ; 0058b359
     PUSH 0x64a640                       ; 0058b35a | = "Saved skeleton to %s OK"
     MOV EDX,dword ptr [0x00678a60]      ; 0058b35f | g_CEditorToolsPtr
-    PUSH EDX                            ; 0058b365 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0058b365 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058b366
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058b36b

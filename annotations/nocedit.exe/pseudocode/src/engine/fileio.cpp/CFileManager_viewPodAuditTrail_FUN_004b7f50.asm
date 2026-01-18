@@ -82,8 +82,8 @@ section .text
     PUSH EAX                            ; 004b7f6c
     PUSH 0x62813f                       ; 004b7f6d | = "*.pod"
     PUSH 0x628145                       ; 004b7f72 | = "Select POD file to view audit trail"
-    MOV EDX,dword ptr [0x00678a60]      ; 004b7f77 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b7f7d | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b7f77 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b7f7d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 004b7f7e
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 004b7f83
@@ -141,7 +141,7 @@ section .text
     PUSH ESI                            ; 004b8004
     PUSH 0x6281b0                       ; 004b8005 | = "Reading %d audit records from %s"
     MOV EDI,dword ptr [0x00678a60]      ; 004b800a | g_CEditorToolsPtr
-    PUSH EDI                            ; 004b8010 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004b8010 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b8011
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x10                        ; 004b8016
@@ -298,8 +298,8 @@ section .text
         ;   Label: LAB_004b81f1
     PUSH EAX                            ; 004b81f8
     PUSH 0x628169                       ; 004b81f9 | = "Can't mount %s to view audit!"
-    MOV ECX,dword ptr [0x00678a60]      ; 004b81fe | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b8204 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004b81fe | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b8204 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b8205
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b820a
@@ -318,8 +318,8 @@ section .text
         ;   Label: LAB_004b8226
     PUSH EAX                            ; 004b822d
     PUSH 0x628187                       ; 004b822e | = "%s doesn't contain any audit information"
-    MOV EDX,dword ptr [0x00678a60]      ; 004b8233 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b8239 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b8233 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b8239 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b823a
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b823f

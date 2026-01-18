@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 004b76e8
     PUSH 0x627e16                       ; 004b76e9 | = "*.pod"
     PUSH 0x627e1c                       ; 004b76ee | = "Select POD file to extract"
-    MOV EDX,dword ptr [0x00678a60]      ; 004b76f3 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b76f9 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b76f3 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b76f9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 004b76fa
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 004b76ff
@@ -291,7 +291,7 @@ section .text
     LEA EAX,[ESP + 0x434]               ; 004b795c
     PUSH EAX                            ; 004b7963
     MOV EDI,dword ptr [0x00678a60]      ; 004b7964 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004b796a | g_CEditorToolsPtr
+    PUSH EDI                            ; 004b796a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004b796b
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004b7970
@@ -357,8 +357,8 @@ section .text
         ;   Label: LAB_004b7a08
     PUSH EAX                            ; 004b7a0f
     PUSH 0x627e37                       ; 004b7a10 | = "Can't mount %s"
-    MOV ECX,dword ptr [0x00678a60]      ; 004b7a15 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b7a1b | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004b7a15 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b7a1b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b7a1c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b7a21
@@ -377,7 +377,7 @@ section .text
     PUSH EAX                            ; 004b7a40
     PUSH 0x627e5e                       ; 004b7a41 | = "Can't open %s"
     MOV EDI,dword ptr [0x00678a60]      ; 004b7a46 | g_CEditorToolsPtr
-    PUSH EDI                            ; 004b7a4c | g_CEditorToolsPtr
+    PUSH EDI                            ; 004b7a4c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b7a4d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b7a52
@@ -407,7 +407,7 @@ section .text
     PUSH EDX                            ; 004b7a9c
     PUSH 0x627f81                       ; 004b7a9d | = "Unable to extract file:\n%s"
     MOV ECX,dword ptr [0x00678a60]      ; 004b7aa2 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b7aa8 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b7aa8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b7aa9
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b7aae

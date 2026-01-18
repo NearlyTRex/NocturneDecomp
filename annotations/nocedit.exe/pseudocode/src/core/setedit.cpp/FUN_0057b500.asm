@@ -13,7 +13,7 @@
 ;   TerminatedCString s_Not_a_spot_light_006477e5
 ;   TerminatedCString s_Precompute_light_visibil_006477f7
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   int g_MasterLightCount
 ;   CDemonLight*[96] g_MasterLightList
 ;   undefined4 DAT_03276db4
@@ -96,7 +96,7 @@ section .text
     PUSH 0x6477e5                       ; 0057b590 | = "Not a spot light!"
         ;   Label: LAB_0057b590
     MOV EDX,dword ptr [0x00678a60]      ; 0057b595 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0057b59b | g_CEditorToolsPtr
+    PUSH EDX                            ; 0057b59b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057b59c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057b5a1
@@ -118,7 +118,7 @@ section .text
     ADD ESP,0x4                         ; 0057b5bc
     PUSH 0x6477f7                       ; 0057b5bf | = "Precompute light visibility?"
     MOV EBP,dword ptr [0x00678a60]      ; 0057b5c4 | g_CEditorToolsPtr
-    PUSH EBP                            ; 0057b5ca | g_CEditorToolsPtr
+    PUSH EBP                            ; 0057b5ca | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057b5cb
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057b5d0

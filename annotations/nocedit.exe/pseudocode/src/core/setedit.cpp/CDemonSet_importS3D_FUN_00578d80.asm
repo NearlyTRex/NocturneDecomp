@@ -211,21 +211,21 @@ section .text
         ;   XREF to: 005795a8 (CONDITIONAL_JUMP)  ; LAB_005795a8
     PUSH 0x646d07                       ; 00578e4d | = "Precompute light visibility?"
         ;   Label: LAB_00578e4d
-    MOV EBX,dword ptr [0x00678a60]      ; 00578e52 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00578e58 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 00578e52 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 00578e58 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00578e59
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00578e5e
     PUSH 0x646d24                       ; 00578e61 | = "Precompute fog?"
     MOV ESI,dword ptr [0x00678a60]      ; 00578e66 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00578e6c | g_CEditorToolsPtr
+    PUSH ESI                            ; 00578e6c | g_CEditorToolsInstance
     MOV dword ptr [ESP + 0x241c],EAX    ; 00578e6d
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00578e74
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00578e79
     PUSH 0x646d34                       ; 00578e7c | = "Reading S3D header, parts, and materials"
     MOV EDI,dword ptr [0x00678a60]      ; 00578e81 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00578e87 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00578e87 | g_CEditorToolsInstance
     MOV dword ptr [ESP + 0x2420],EAX    ; 00578e88
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00578e8f
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
@@ -308,8 +308,8 @@ section .text
         ;   XREF to: 0057960a (CONDITIONAL_JUMP)  ; LAB_0057960a
     PUSH 0x646e6b                       ; 00578f80 | = "Skipping part list"
         ;   Label: LAB_00578f80
-    MOV EAX,[0x00678a60]                ; 00578f85 | g_CEditorToolsPtr
-    PUSH EAX                            ; 00578f8a | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 00578f85 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00578f8a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00578f8b
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00578f90
@@ -368,7 +368,7 @@ section .text
         ;   XREF to: 0057964b (CONDITIONAL_JUMP)  ; LAB_0057964b
     PUSH 0x647070                       ; 00579005 | = "Skipping textures"
     MOV ESI,dword ptr [0x00678a60]      ; 0057900a | g_CEditorToolsPtr
-    PUSH ESI                            ; 00579010 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00579010 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00579011
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00579016
@@ -398,7 +398,7 @@ section .text
     PUSH 0x647082                       ; 0057904b | = "Skipping polygons"
         ;   Label: LAB_0057904b
     MOV EDI,dword ptr [0x00678a60]      ; 00579050 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00579056 | g_CEditorToolsPtr
+    PUSH EDI                            ; 00579056 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00579057
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0057905c
@@ -453,7 +453,7 @@ section .text
         ;   XREF to: 00579a95 (CONDITIONAL_JUMP)  ; LAB_00579a95
     PUSH 0x647134                       ; 005790d9 | = "Locating lights"
     MOV ESI,dword ptr [0x00678a60]      ; 005790de | g_CEditorToolsPtr
-    PUSH ESI                            ; 005790e4 | g_CEditorToolsPtr
+    PUSH ESI                            ; 005790e4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005790e5
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 005790ea
@@ -538,8 +538,8 @@ section .text
     JZ 0x0057a04d                       ; 00579199
         ;   XREF to: 0057a04d (CONDITIONAL_JUMP)  ; LAB_0057a04d
     PUSH 0x6471ce                       ; 0057919f | = "Reading cameras"
-    MOV EAX,[0x00678a60]                ; 005791a4 | g_CEditorToolsPtr
-    PUSH EAX                            ; 005791a9 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 005791a4 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 005791a9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005791aa
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 005791af
@@ -588,8 +588,8 @@ section .text
     JZ 0x005793dc                       ; 00579228
         ;   XREF to: 005793dc (CONDITIONAL_JUMP)  ; LAB_005793dc
     PUSH 0x6471de                       ; 0057922e | = "Reading polygons"
-    MOV ECX,dword ptr [0x00678a60]      ; 00579233 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00579239 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00579233 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00579239 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0057923a
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0057923f
@@ -699,7 +699,7 @@ section .text
     ADD ESP,0x8                         ; 0057939c
     PUSH 0x64725a                       ; 0057939f | = "Saving raytrace database"
     MOV ESI,dword ptr [0x00678a60]      ; 005793a4 | g_CEditorToolsPtr
-    PUSH ESI                            ; 005793aa | g_CEditorToolsPtr
+    PUSH ESI                            ; 005793aa | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005793ab
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 005793b0
@@ -731,8 +731,8 @@ section .text
         ;   XREF to: 0057a0a2 (CONDITIONAL_JUMP)  ; LAB_0057a0a2
     PUSH 0x647273                       ; 00579406 | = "Precalcs for virtual director"
         ;   Label: LAB_00579406
-    MOV EAX,[0x00678a60]                ; 0057940b | g_CEditorToolsPtr
-    PUSH EAX                            ; 00579410 | g_CEditorToolsPtr
+    MOV EAX,[0x00678a60]                ; 0057940b | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EAX                            ; 00579410 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00579411
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00579416
@@ -742,8 +742,8 @@ section .text
         ;   XREF to: 00575f60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00579426
     PUSH 0x647291                       ; 00579429 | = "Deleting possibly out-of-date fog files"
-    MOV ECX,dword ptr [0x00678a60]      ; 0057942e | g_CEditorToolsPtr
-    PUSH ECX                            ; 00579434 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 0057942e | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00579434 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00579435
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0057943a
@@ -813,7 +813,7 @@ section .text
     PUSH 0x6472ed                       ; 0057950a | = "CDemonSet::importS3D completed OK"
         ;   Label: LAB_0057950a
     MOV ESI,dword ptr [0x00678a60]      ; 0057950f | g_CEditorToolsPtr
-    PUSH ESI                            ; 00579515 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00579515 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00579516
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0057951b
@@ -839,7 +839,7 @@ section .text
         ;   XREF to: 00578e31 (CONDITIONAL_JUMP)  ; LAB_00578e31
     PUSH 0x646c1d                       ; 0057954e | = "Nothing to do!"
     MOV EBX,dword ptr [0x00678a60]      ; 00579553 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00579559 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00579559 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057955a
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057955f
@@ -856,7 +856,7 @@ section .text
         ;   XREF to: 00578e3f (CONDITIONAL_JUMP)  ; LAB_00578e3f
     PUSH 0x646c2c                       ; 00579581 | = "There are currently no lights current..."
     MOV EBP,dword ptr [0x00678a60]      ; 00579586 | g_CEditorToolsPtr
-    PUSH EBP                            ; 0057958c | g_CEditorToolsPtr
+    PUSH EBP                            ; 0057958c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0057958d
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00579592
@@ -875,8 +875,8 @@ section .text
     JGE 0x00578e4d                      ; 005795b2
         ;   XREF to: 00578e4d (CONDITIONAL_JUMP)  ; LAB_00578e4d
     PUSH 0x646c99                       ; 005795b8 | = "There are currently no cameras curren..."
-    MOV ECX,dword ptr [0x00678a60]      ; 005795bd | g_CEditorToolsPtr
-    PUSH ECX                            ; 005795c3 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 005795bd | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 005795c3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 005795c4
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 005795c9
@@ -968,8 +968,8 @@ section .text
         ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_ImportingGroundTextures_FUN_00578420()
     ADD ESP,0x4                         ; 005796f2
     PUSH 0x646e83                       ; 005796f5 | = "Reading textures"
-    MOV EBX,dword ptr [0x00678a60]      ; 005796fa | g_CEditorToolsPtr
-    PUSH EBX                            ; 00579700 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 005796fa | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 00579700 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00579701
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00579706
@@ -1211,7 +1211,7 @@ section .text
     PUSH EAX                            ; 005799a2
     PUSH 0x646ed3                       ; 005799a3 | = "Warning: Can't create/append %s"
     MOV EAX,[0x00678a60]                ; 005799a8 | g_CEditorToolsPtr
-    PUSH EAX                            ; 005799ad | g_CEditorToolsPtr
+    PUSH EAX                            ; 005799ad | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005799ae
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     MOV EDX,0x1                         ; 005799b3
@@ -1306,7 +1306,7 @@ section .text
     ADD ESP,0x4                         ; 00579aaf
     PUSH 0x647094                       ; 00579ab2 | = "Reading vertices"
     MOV EBP,dword ptr [0x00678a60]      ; 00579ab7 | g_CEditorToolsPtr
-    PUSH EBP                            ; 00579abd | g_CEditorToolsPtr
+    PUSH EBP                            ; 00579abd | g_CEditorToolsInstance
     MOV dword ptr [EDI + 0x15ae94],0x3f800000 ; 00579abe
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00579ac8
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
@@ -1450,8 +1450,8 @@ section .text
         ;   XREF to: 00579c1b (CONDITIONAL_JUMP)  ; LAB_00579c1b
     PUSH 0x64716f                       ; 00579c7d | = "Reading lights"
         ;   Label: LAB_00579c7d
-    MOV ECX,dword ptr [0x00678a60]      ; 00579c82 | g_CEditorToolsPtr
-    PUSH ECX                            ; 00579c88 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00579c82 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 00579c88 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00579c89
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00579c8e

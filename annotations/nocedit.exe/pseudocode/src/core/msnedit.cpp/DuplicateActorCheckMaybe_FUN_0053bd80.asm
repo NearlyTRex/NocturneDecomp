@@ -273,7 +273,7 @@ section .text
     PUSH 0x63c749                       ; 0053bfba | = "Can't create temp file to replicate a..."
         ;   Label: LAB_0053bfba
     MOV EBP,dword ptr [0x00678a60]      ; 0053bfbf | g_CEditorToolsPtr
-    PUSH EBP                            ; 0053bfc5 | g_CEditorToolsPtr
+    PUSH EBP                            ; 0053bfc5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0053bfc6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053bfcb
@@ -318,7 +318,7 @@ section .text
     PUSH EAX                            ; 0053c017
     PUSH 0x63b7b6                       ; 0053c018 | = "Confirm new actor name"
     MOV ESI,dword ptr [0x00678a60]      ; 0053c01d | g_CEditorToolsPtr
-    PUSH ESI                            ; 0053c023 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0053c023 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0053c024
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0053c029

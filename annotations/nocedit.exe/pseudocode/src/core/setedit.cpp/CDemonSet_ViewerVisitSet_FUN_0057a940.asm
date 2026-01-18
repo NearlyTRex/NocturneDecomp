@@ -238,8 +238,8 @@ section .text
         ;   XREF to: 0057ab66 (CONDITIONAL_JUMP)  ; LAB_0057ab66
     PUSH 0x0                            ; 0057ab8b
         ;   Label: LAB_0057ab8b
-    MOV EBX,dword ptr [0x00678a60]      ; 0057ab8d | g_CEditorToolsPtr
-    PUSH EBX                            ; 0057ab93 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 0057ab8d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 0057ab93 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0057ab94
         ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
     ADD ESP,0x8                         ; 0057ab99

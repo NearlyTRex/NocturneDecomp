@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -29,8 +29,8 @@ section .text
     PUSH EDX                            ; 005b3de9
     MOV ECX,dword ptr [ESP + 0x18]      ; 005b3dea
     PUSH ECX                            ; 005b3dee
-    MOV EBX,dword ptr [0x00678a60]      ; 005b3def | g_CEditorToolsPtr
-    PUSH EBX                            ; 005b3df5 | g_CEditorToolsPtr
+    MOV EBX,dword ptr [0x00678a60]      ; 005b3def | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EBX                            ; 005b3df5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 005b3df6
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 005b3dfb

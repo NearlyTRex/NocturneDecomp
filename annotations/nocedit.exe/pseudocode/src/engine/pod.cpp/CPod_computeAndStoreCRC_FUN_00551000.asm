@@ -31,7 +31,7 @@
 ;   TerminatedCString s_rb_00640822
 ;   TerminatedCString s_engine_pod_cpp_00640826
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   ... and 4 more
 ;
@@ -63,8 +63,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x454]     ; 0055100a
     PUSH EDX                            ; 00551011
     PUSH 0x640788                       ; 00551012 | = "Computing CRC over entire pod: %s..."
-    MOV ECX,dword ptr [0x00678a60]      ; 00551017 | g_CEditorToolsPtr
-    PUSH ECX                            ; 0055101d | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 00551017 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 0055101d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0055101e
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00551023

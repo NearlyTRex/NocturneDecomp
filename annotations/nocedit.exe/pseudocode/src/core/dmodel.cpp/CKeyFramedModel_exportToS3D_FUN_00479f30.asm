@@ -360,7 +360,7 @@ section .text
         ;   Label: LAB_0047a345
     PUSH 0x620031                       ; 0047a346 | = "Can't create %s"
     MOV EBX,dword ptr [0x00678a60]      ; 0047a34b | g_CEditorToolsPtr
-    PUSH EBX                            ; 0047a351 | g_CEditorToolsPtr
+    PUSH EBX                            ; 0047a351 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047a352
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0047a357

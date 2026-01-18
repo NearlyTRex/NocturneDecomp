@@ -3084,7 +3084,7 @@ section .text
     PUSH EDX                            ; 0055c785
     PUSH 0x6420f6                       ; 0055c786 | = "Script debug message at line %d:\n%s"
     MOV ECX,dword ptr [0x00678a60]      ; 0055c78b | g_CEditorToolsPtr
-    PUSH ECX                            ; 0055c791 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0055c791 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 0055c792
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0055c797
@@ -4164,7 +4164,7 @@ section .text
     PUSH ESI                            ; 0055d523
     PUSH 0x64252d                       ; 0055d524 | = "Script GTFO at line %d:\n%s\nTerminat..."
     MOV EDI,dword ptr [0x00678a60]      ; 0055d529 | g_CEditorToolsPtr
-    PUSH EDI                            ; 0055d52f | g_CEditorToolsPtr
+    PUSH EDI                            ; 0055d52f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0055d530
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0055d535

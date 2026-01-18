@@ -199,7 +199,7 @@ section .text
     PUSH EAX                            ; 004ba881
     PUSH 0x626884                       ; 004ba882 | = "You already have %s checked out"
     MOV EAX,[0x00678a60]                ; 004ba887 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004ba88c | g_CEditorToolsPtr
+    PUSH EAX                            ; 004ba88c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004ba88d
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004ba892
@@ -223,7 +223,7 @@ section .text
     PUSH EAX                            ; 004ba8bb
     PUSH 0x6268a4                       ; 004ba8bc | = "%s is currently checked out by %s"
     MOV EBP,dword ptr [0x00678a60]      ; 004ba8c1 | g_CEditorToolsPtr
-    PUSH EBP                            ; 004ba8c7 | g_CEditorToolsPtr
+    PUSH EBP                            ; 004ba8c7 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004ba8c8
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004ba8cd
@@ -258,7 +258,7 @@ section .text
         ;   XREF to: 004ba93f (CONDITIONAL_JUMP)  ; LAB_004ba93f
     PUSH 0x6268c6                       ; 004ba91e | = "Logging on as version control user..."
     MOV ECX,dword ptr [0x00678a60]      ; 004ba923 | g_CEditorToolsPtr
-    PUSH ECX                            ; 004ba929 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004ba929 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004ba92a
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004ba92f
@@ -317,7 +317,7 @@ section .text
     PUSH EBP                            ; 004ba9b5
     PUSH 0x6268ec                       ; 004ba9b6 | = "Marking %s as checked out..."
     MOV EDI,dword ptr [0x00678a60]      ; 004ba9bb | g_CEditorToolsPtr
-    PUSH EDI                            ; 004ba9c1 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004ba9c1 | g_CEditorToolsInstance
     XOR ESI,ESI                         ; 004ba9c2
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004ba9c4
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
@@ -352,7 +352,7 @@ section .text
     PUSH EAX                            ; 004baa1f
     PUSH 0x62690d                       ; 004baa20 | = "Can't access %s."
     MOV ESI,dword ptr [0x00678a60]      ; 004baa25 | g_CEditorToolsPtr
-    PUSH ESI                            ; 004baa2b | g_CEditorToolsPtr
+    PUSH ESI                            ; 004baa2b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004baa2c
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
         ;   Label: LAB_004baa2c
@@ -386,7 +386,7 @@ section .text
     PUSH 0x628dbd                       ; 004baa7f | = "Extract and dismount now?"
         ;   Label: LAB_004baa7f
     MOV EDX,dword ptr [0x00678a60]      ; 004baa84 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004baa8a | g_CEditorToolsPtr
+    PUSH EDX                            ; 004baa8a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004baa8b
         ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004baa90
@@ -508,7 +508,7 @@ section .text
     PUSH EAX                            ; 004babd9
     PUSH 0x62691e                       ; 004babda | = "You already have %s checked out"
     MOV ECX,dword ptr [0x00678a60]      ; 004babdf | g_CEditorToolsPtr
-    PUSH ECX                            ; 004babe5 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004babe5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004babe6
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004babeb
@@ -537,7 +537,7 @@ section .text
     PUSH EAX                            ; 004bac33
     PUSH 0x62693e                       ; 004bac34 | = "%s is currently checked out by %s"
     MOV EDX,dword ptr [0x00678a60]      ; 004bac39 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004bac3f | g_CEditorToolsPtr
+    PUSH EDX                            ; 004bac3f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bac40
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004bac45
@@ -607,7 +607,7 @@ section .text
     PUSH 0x626960                       ; 004bace2 | = "Out of memory...Restart the applicati..."
         ;   Label: LAB_004bace2
     MOV EDX,dword ptr [0x00678a60]      ; 004bace7 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004baced | g_CEditorToolsPtr
+    PUSH EDX                            ; 004baced | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004bacee
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004bacf3
@@ -642,7 +642,7 @@ section .text
     PUSH EBP                            ; 004bad47
     PUSH 0x6269ae                       ; 004bad48 | = "Getting %s..."
     MOV EDI,dword ptr [0x00678a60]      ; 004bad4d | g_CEditorToolsPtr
-    PUSH EDI                            ; 004bad53 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004bad53 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bad54
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004bad59
@@ -660,7 +660,7 @@ section .text
     PUSH EAX                            ; 004bad78
     PUSH 0x6269bc                       ; 004bad79 | = "Clearing read-only bit for %s..."
     MOV ECX,dword ptr [0x00678a60]      ; 004bad7e | g_CEditorToolsPtr
-    PUSH ECX                            ; 004bad84 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bad84 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bad85
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004bad8a
@@ -709,7 +709,7 @@ section .text
         ;   Label: LAB_004badde
     PUSH 0x6269dd                       ; 004baddf | = "Error turning off read-only bit for %s"
     MOV EBX,dword ptr [0x00678a60]      ; 004bade4 | g_CEditorToolsPtr
-    PUSH EBX                            ; 004badea | g_CEditorToolsPtr
+    PUSH EBX                            ; 004badea | g_CEditorToolsInstance
     JMP 0x004baa2c                      ; 004badeb
         ;   XREF to: 004baa2c (UNCONDITIONAL_JUMP)  ; LAB_004baa2c
     MOV EAX,dword ptr [ESP + 0x6a0]     ; 004badf0
@@ -766,7 +766,7 @@ section .text
         ;   XREF to: 004baed3 (CONDITIONAL_JUMP)  ; LAB_004baed3
     PUSH 0x62759a                       ; 004bae9f | = "Remounting all pods..."
     MOV EAX,[0x00678a60]                ; 004baea4 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004baea9 | g_CEditorToolsPtr
+    PUSH EAX                            ; 004baea9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004baeaa
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 004baeaf

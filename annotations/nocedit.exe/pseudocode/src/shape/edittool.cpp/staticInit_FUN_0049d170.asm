@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomStaticDestructorNode g_CEditorToolsDestructorNode
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   crt_stdlib.c_atexit_FUN_005ff060
@@ -16,7 +16,7 @@
 
 section .text
 
-    PUSH 0x2cf1cd4                      ; 0049d170 | g_CEditorToolsPtr
+    PUSH 0x2cf1cd4                      ; 0049d170 | g_CEditorToolsInstance
         ;   Label: shape_edittool.cpp_staticInit_FUN_0049d170
     CALL shape_edittool.cpp_CEditorTools_ctor_FUN_0049df80 ; 0049d175
         ;   XREF to: 0049df80 (UNCONDITIONAL_CALL)  ; CEditorTools * shape_edittool.cpp_CEditorTools_ctor_FUN_0049df80(CEditorTools * this_ptr)

@@ -28,7 +28,7 @@
 ;   TerminatedCString s_You_already_have_s_check_00627558
 ;   TerminatedCString s_s_is_currently_checked_o_00627578
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   SVersionControlSession g_VersionControlSession
 ;
 ; Called Functions:
@@ -255,8 +255,8 @@ section .text
         ;   XREF to: 004b5328 (CONDITIONAL_JUMP)  ; LAB_004b5328
     PUSH EAX                            ; 004b526c
     PUSH 0x627558                       ; 004b526d | = "You already have %s checked out"
-    MOV EDX,dword ptr [0x00678a60]      ; 004b5272 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b5278 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b5272 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b5278 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b5279
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b527e
@@ -334,7 +334,7 @@ section .text
     PUSH EAX                            ; 004b532f
     PUSH 0x627578                       ; 004b5330 | = "%s is currently checked out by %s"
     MOV EAX,[0x00678a60]                ; 004b5335 | g_CEditorToolsPtr
-    PUSH EAX                            ; 004b533a | g_CEditorToolsPtr
+    PUSH EAX                            ; 004b533a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b533b
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004b5340

@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Rebuilding_waypoint_conn_0063cd06
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 DAT_032690dc
 ;   undefined4 DAT_032690e0
@@ -38,8 +38,8 @@ section .text
     SUB ESP,0x4                         ; 0053d7b4
     MOV EBP,dword ptr [ESP + 0x18]      ; 0053d7b7
     PUSH 0x63ccf4                       ; 0053d7bb | = "Preparing actors."
-    MOV EDX,dword ptr [0x00678a60]      ; 0053d7c0 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0053d7c6 | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0053d7c0 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053d7c6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053d7c7
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0053d7cc
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_0053d7ed
     PUSH EAX                            ; 0053d7f0
     PUSH 0x63cd06                       ; 0053d7f1 | = "Rebuilding waypoint connectivity in s..."
-    MOV EDX,dword ptr [0x00678a60]      ; 0053d7f6 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0053d7fc | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0053d7f6 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0053d7fc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053d7fd
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0053d802

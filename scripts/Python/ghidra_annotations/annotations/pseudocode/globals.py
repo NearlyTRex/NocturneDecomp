@@ -337,24 +337,36 @@ def format_pointer_initializer(currentProgram, int_val, type_name):
         return (initializer, comment_symbol)
 
 
-def format_struct_initializer(data_type, raw_bytes):
+def format_struct_initializer(data_type, raw_bytes, currentProgram=None):
     """Build a proper struct initializer by introspecting the struct's field layout.
 
     Args:
         data_type: The Ghidra Structure data type
         raw_bytes: List of raw byte values
+        currentProgram: Optional Ghidra program for symbol resolution
 
     Returns:
         A C initializer string like "{0x00000003, 0x80000030}" or None if can't introspect
     """
     try:
-        # Check if this is actually a Structure type
+        # Check if this is actually a Structure type (not a Union)
         if not hasattr(data_type, 'getComponents'):
+            return None
+        if "Union" in data_type.__class__.__name__:
             return None
 
         components = data_type.getComponents()
         if not components:
             return None
+
+        # Check for overlapping fields (indicates union-like structure) - skip these
+        offsets_seen = set()
+        for comp in components:
+            offset = comp.getOffset()
+            if offset in offsets_seen:
+                # Overlapping fields - this is union-like, can't format properly
+                return None
+            offsets_seen.add(offset)
 
         field_values = []
         for comp in components:
@@ -375,6 +387,16 @@ def format_struct_initializer(data_type, raw_bytes):
                          '*' in comp_type_name or \
                          comp_type_name.lower() in ('pointer', 'void*', 'char*')
 
+            # Check if this field is a char array (string)
+            is_char_array = (comp_type and "Array" in comp_type.__class__.__name__ and
+                           'char' in comp_type_name.lower())
+
+            # Check if this field is a nested struct (but NOT a union - unions need different handling)
+            # Unions in Ghidra have class name containing "Union"
+            is_union = comp_type and "Union" in comp_type.__class__.__name__
+            is_nested_struct = (comp_type and hasattr(comp_type, 'getComponents') and
+                               not is_char_array and not is_pointer and not is_union)
+
             # Get the actual pointer type for casting (use void* as fallback)
             pointer_cast_type = "void*"
             if is_pointer and comp_type:
@@ -386,25 +408,88 @@ def format_struct_initializer(data_type, raw_bytes):
                 except:
                     pass
 
-            # Convert bytes to appropriate value based on field size (little-endian)
-            if length <= 8:
+            # Handle different field types
+            if is_char_array:
+                # Format char array as string literal
+                string_val = format_char_bytes_as_string(field_bytes)
+                if string_val:
+                    field_values.append(string_val)
+                else:
+                    # Fallback to byte array
+                    byte_vals = ["0x%02X" % b for b in field_bytes]
+                    field_values.append("{%s}" % ", ".join(byte_vals))
+            elif is_nested_struct:
+                # Recursively format nested struct
+                nested_init = format_struct_initializer(comp_type, field_bytes, currentProgram)
+                if nested_init:
+                    field_values.append(nested_init)
+                else:
+                    # Fallback to byte array
+                    byte_vals = ["0x%02X" % b for b in field_bytes]
+                    field_values.append("{%s}" % ", ".join(byte_vals))
+            elif length <= 8:
                 val = bytes_to_int_le(field_bytes)
                 if is_pointer:
-                    # For pointer fields, use nullptr for 0 or cast for non-zero
+                    # For pointer fields, use nullptr for 0 or try to resolve symbol
                     if val == 0:
                         field_values.append("nullptr")
                     else:
-                        field_values.append("(%s)%s" % (pointer_cast_type, format_int_by_size(val, length)))
+                        # Try to resolve pointer to a symbol (function or global)
+                        usable_sym = None
+                        if currentProgram:
+                            usable_sym, _ = resolve_pointer_to_symbol(currentProgram, val)
+                        if usable_sym:
+                            field_values.append("(%s)%s" % (pointer_cast_type, usable_sym))
+                        else:
+                            field_values.append("(%s)%s" % (pointer_cast_type, format_int_by_size(val, length)))
                 else:
                     field_values.append(format_int_by_size(val, length))
             else:
-                # For other sizes (arrays, nested structs), output as byte array
+                # For other large fields, output as byte array
                 byte_vals = ["0x%02X" % b for b in field_bytes]
                 field_values.append("{%s}" % ", ".join(byte_vals))
 
         return "{" + ", ".join(field_values) + "}"
     except Exception:
         return None
+
+
+def format_char_bytes_as_string(field_bytes):
+    """Format a char array's bytes as a C string literal.
+
+    Args:
+        field_bytes: List of byte values
+
+    Returns:
+        A quoted string like '"hello"' or None if not a valid string
+    """
+    # Find null terminator
+    null_pos = -1
+    for i, b in enumerate(field_bytes):
+        if b == 0:
+            null_pos = i
+            break
+
+    # Extract string bytes (up to null or all if no null)
+    if null_pos == -1:
+        string_bytes = field_bytes
+    else:
+        string_bytes = field_bytes[:null_pos]
+
+    # Check if printable
+    string_chars = []
+    for b in string_bytes:
+        if 32 <= b <= 126:
+            string_chars.append(chr(b))
+        elif b in (9, 10, 13):  # Tab, newline, carriage return
+            string_chars.append(chr(b))
+        else:
+            # Non-printable - not a valid string
+            return None
+
+    string_val = ''.join(string_chars)
+    escaped = escape_c_string(string_val)
+    return '"%s"' % escaped
 
 
 def format_variable_declaration(type_name, var_name):
@@ -521,7 +606,7 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                               not type_name.endswith('*'))
             if is_struct_type:
                 # Try to build proper struct initializer by introspecting fields
-                struct_init = format_struct_initializer(data_type, raw_bytes)
+                struct_init = format_struct_initializer(data_type, raw_bytes, currentProgram)
                 if struct_init:
                     initializer_value = struct_init
                 else:
@@ -654,6 +739,53 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                                     else:
                                         ptr_values.append("(%s)0x%08X" % (element_type, ptr_val))
                         initializer_value = format_array_initializer(ptr_values, vals_per_line=4)
+
+                    elif elem_type and hasattr(elem_type, 'getComponents'):
+                        # Struct array - format each element as a struct initializer
+                        elem_size = elem_type.getLength() if hasattr(elem_type, 'getLength') else 0
+                        if elem_size > 0:
+                            struct_values = []
+                            for i in range(0, len(raw_bytes), elem_size):
+                                if i + elem_size <= len(raw_bytes):
+                                    elem_bytes = raw_bytes[i:i + elem_size]
+                                    struct_init = format_struct_initializer(elem_type, elem_bytes, currentProgram)
+                                    if struct_init:
+                                        struct_values.append(struct_init)
+                                    else:
+                                        # Fallback to byte array for this element
+                                        byte_vals = ["0x%02X" % b for b in elem_bytes]
+                                        struct_values.append("{%s}" % ", ".join(byte_vals))
+                            if struct_values:
+                                initializer_value = format_array_initializer(struct_values, vals_per_line=1)
+                            else:
+                                # Fallback to byte array
+                                hex_values = ["0x%02X" % b for b in raw_bytes]
+                                initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+                        else:
+                            # Unknown element size, fallback to bytes
+                            hex_values = ["0x%02X" % b for b in raw_bytes]
+                            initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+
+                    elif elem_type and hasattr(elem_type, 'getLength'):
+                        # Integer/scalar array - group bytes by element size
+                        elem_size = elem_type.getLength()
+                        if elem_size > 1 and elem_size <= 8:
+                            int_values = []
+                            for i in range(0, len(raw_bytes), elem_size):
+                                if i + elem_size <= len(raw_bytes):
+                                    elem_bytes = raw_bytes[i:i + elem_size]
+                                    int_val = bytes_to_int_le(elem_bytes)
+                                    int_values.append(format_int_by_size(int_val, elem_size))
+                            if int_values:
+                                initializer_value = format_array_initializer(int_values, vals_per_line=8)
+                            else:
+                                hex_values = ["0x%02X" % b for b in raw_bytes]
+                                initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+                        else:
+                            # Single byte elements or unknown - output as bytes
+                            hex_values = ["0x%02X" % b for b in raw_bytes]
+                            initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+
                     else:
                         # Regular array - byte values
                         hex_values = ["0x%02X" % b for b in raw_bytes]
@@ -848,14 +980,30 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                     initializer_value = "nullptr"
 
             elif data_length <= 8 and any(t in type_name.lower() for t in ["int", "word", "dword", "qword", "byte", "short", "long"]):
-                int_val = get_int(ghidra_value, default_val=0)
-                if int_val:
+                int_val = get_int(ghidra_value, default_val=None)
+                if int_val is not None:
                     if int_val >= 0x100:
                         initializer_value = "0x%X" % int_val
+                    elif int_val == 0:
+                        initializer_value = "0"
                     else:
                         initializer_value = str(int_val)
                 else:
-                    initializer_value = get_safe_str(ghidra_value)
+                    # Try to get integer from raw string representation
+                    str_val = get_safe_str(ghidra_value)
+                    if str_val:
+                        # Check if it's a single character (Ghidra sometimes returns byte as char)
+                        if len(str_val) == 1:
+                            initializer_value = "0x%02X" % ord(str_val)
+                        elif str_val.startswith("0x") or str_val.startswith("0X"):
+                            initializer_value = str_val
+                        else:
+                            try:
+                                initializer_value = str(int(str_val))
+                            except ValueError:
+                                initializer_value = "0x%02X" % ord(str_val[0]) if str_val else "0"
+                    else:
+                        initializer_value = "0"
 
             elif "undefined" in type_name.lower() and data_length <= 8:
                 # Handle undefined types - convert to single hex value
@@ -914,6 +1062,9 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                     initializer_value = '""'
                 else:
                     initializer_value = "{}"
+            elif not is_primitive_type(type_name) and not type_name.endswith('*'):
+                # Non-primitive, non-pointer types (structs/classes) - use empty initializer
+                initializer_value = "{}"
             else:
                 continue
 

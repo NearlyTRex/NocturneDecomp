@@ -21,7 +21,7 @@
 ;   TerminatedCString s_Computing_plane_equation_00637cce
 ;   double DOUBLE_00637ced = 0.000100000000000000
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsPtr
+;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 00516a40 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b39d
     PUSH 0x637cce                       ; 0051b3a0 | = "Computing plane equations..."
-    MOV EDX,dword ptr [0x00678a60]      ; 0051b3a5 | g_CEditorToolsPtr
-    PUSH EDX                            ; 0051b3ab | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 0051b3a5 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 0051b3ab | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0051b3ac
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0051b3b1

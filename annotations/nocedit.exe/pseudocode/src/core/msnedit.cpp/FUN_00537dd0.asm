@@ -110,7 +110,7 @@ section .text
     PUSH EBP                            ; 00537e6e
     PUSH 0x63bc4b                       ; 00537e6f | = "Can't find %s\\%s to copy to %s\\%s"
     MOV EDI,dword ptr [0x00678a60]      ; 00537e74 | g_CEditorToolsPtr
-    PUSH EDI                            ; 00537e7a | g_CEditorToolsPtr
+    PUSH EDI                            ; 00537e7a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 00537e7b
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00537e80
@@ -181,7 +181,7 @@ section .text
     PUSH EBP                            ; 00537f3c
     PUSH 0x63bd43                       ; 00537f3d | = "Copied %s\\%s to %s\\%s"
     MOV ESI,dword ptr [0x00678a60]      ; 00537f42 | g_CEditorToolsPtr
-    PUSH ESI                            ; 00537f48 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00537f48 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 ; 00537f49
         ;   XREF to: 0049e6a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00537f4e

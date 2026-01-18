@@ -79,8 +79,8 @@ section .text
     PUSH EAX                            ; 004b82b9
     PUSH 0x62822a                       ; 004b82ba | = "*.pod"
     PUSH 0x628230                       ; 004b82bf | = "Select POD file to compare with local..."
-    MOV EDX,dword ptr [0x00678a60]      ; 004b82c4 | g_CEditorToolsPtr
-    PUSH EDX                            ; 004b82ca | g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004b82c4 | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b82ca | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 004b82cb
         ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
     ADD ESP,0x14                        ; 004b82d0
@@ -329,8 +329,8 @@ section .text
         ;   Label: LAB_004b8555
     PUSH EAX                            ; 004b8557
     PUSH 0x62825c                       ; 004b8558 | = "Can't mount %s to compare!"
-    MOV ECX,dword ptr [0x00678a60]      ; 004b855d | g_CEditorToolsPtr
-    PUSH ECX                            ; 004b8563 | g_CEditorToolsPtr
+    MOV ECX,dword ptr [0x00678a60]      ; 004b855d | g_CEditorToolsInstance | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b8563 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b8564
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b8569

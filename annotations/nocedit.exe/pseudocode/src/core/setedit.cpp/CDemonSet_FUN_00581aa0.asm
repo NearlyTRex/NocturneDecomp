@@ -115,7 +115,7 @@ section .text
     SUB EBP,0x7e                        ; 00581aac
     PUSH 0x648b45                       ; 00581aaf | = "Preparing set."
     MOV EDX,dword ptr [0x00678a60]      ; 00581ab4 | g_CEditorToolsPtr
-    PUSH EDX                            ; 00581aba | g_CEditorToolsPtr
+    PUSH EDX                            ; 00581aba | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00581abb
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00581ac0
@@ -349,7 +349,7 @@ section .text
         ;   XREF to: 005817d0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_005817d0(void * unk)
     ADD ESP,0x18                        ; 00581d59
     MOV ECX,dword ptr [0x00678a60]      ; 00581d5c | g_CEditorToolsPtr
-    PUSH ECX                            ; 00581d62 | g_CEditorToolsPtr
+    PUSH ECX                            ; 00581d62 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 00581d63
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00581d68
@@ -357,7 +357,7 @@ section .text
     MOV EBX,EAX                         ; 00581d6c
     MOV EAX,[0x00678a60]                ; 00581d6e | g_CEditorToolsPtr
     PUSH 0x40000000                     ; 00581d73
-    PUSH EAX                            ; 00581d78 | g_CEditorToolsPtr
+    PUSH EAX                            ; 00581d78 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 ; 00581d79
         ;   XREF to: 004a1ca0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools * this_ptr, float scale_factor, int text_color)
     FLD float ptr [ESI]                 ; 00581d7e
@@ -374,7 +374,7 @@ section .text
     FLD float ptr [ESI + 0x8]           ; 00581d9b
     PUSH EAX                            ; 00581d9e
     FCHS                                ; 00581d9f
-    PUSH EDX                            ; 00581da1 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00581da1 | g_CEditorToolsInstance
     FSTP float ptr [EBP + -0x16]        ; 00581da2
     CALL shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 ; 00581da5
         ;   XREF to: 004a2050 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools * this_ptr, CVector3f * corner1, CVector3f * corner2, int color_value)
@@ -660,7 +660,7 @@ section .text
         ;   XREF to: 00582164 (CONDITIONAL_JUMP)  ; LAB_00582164
     PUSH 0x648bdc                       ; 005820fd | = "Delete the selected room?"
     MOV EBX,dword ptr [0x00678a60]      ; 00582102 | g_CEditorToolsPtr
-    PUSH EBX                            ; 00582108 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00582108 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00582109
         ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0058210e
@@ -1440,7 +1440,7 @@ section .text
     PUSH 0x648b9c                       ; 005828c1 | = "Max number of rooms has been reached,..."
         ;   Label: LAB_005828c1
     MOV EBX,dword ptr [0x00678a60]      ; 005828c6 | g_CEditorToolsPtr
-    PUSH EBX                            ; 005828cc | g_CEditorToolsPtr
+    PUSH EBX                            ; 005828cc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 005828cd
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 005828d2
