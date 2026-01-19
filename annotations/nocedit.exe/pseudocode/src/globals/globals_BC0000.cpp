@@ -4,5 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0xBC0000
 // =============================================================================
 
+// int[76800]
 int g_PrecomputedDepthBuffer[76800] = {};
 

@@ -715,12 +715,12 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
       else if ((((ulonglong)dStack_378 & 0x7fffffff00000000) == 0) && (dStack_378._0_4_ == 0)) {
         iStack0000002c = 2;
         iStack00000024 = 0;
-        out_result = (CPolyIntersectResult *)&DAT_00000001;
+        out_result = (CPolyIntersectResult *)0x1;
       }
       else {
         iStack0000002c = 0;
         iStack00000024 = 1;
-        out_result = (CPolyIntersectResult *)&DAT_00000002;
+        out_result = (CPolyIntersectResult *)0x2;
       }
       iStack_18 = iStack0000002c * 8;
       dVar13 = (&dStack_380)[iStack0000002c] /

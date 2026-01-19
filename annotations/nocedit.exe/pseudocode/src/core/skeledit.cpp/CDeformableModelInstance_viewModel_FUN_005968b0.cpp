@@ -671,7 +671,7 @@ LAB_005975b4:
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    in_stack_ffffcca0 = (CMatrix3x4f *)&DAT_00000001;
+    in_stack_ffffcca0 = (CMatrix3x4f *)0x1;
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar7 != 0) break;
     iVar7 = 0;
@@ -929,7 +929,7 @@ LAB_00597a90:
                          (in_stack_00000004);
       iVar7 = pCVar8->num_lods;
       crt_stdio_c_sprintf_FUN_005fdbd0(local_534,"Select LOD (0..%d), or -1 for auto-LOD");
-      in_stack_ffffcd28 = (CKeys *)&DAT_00000001;
+      in_stack_ffffcd28 = (CKeys *)0x1;
       in_stack_ffffcd24 = &local_b0;
       shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                 (g_CEditorToolsPtr,local_534,in_stack_ffffcd24,true,-1,iVar7 + -1,true);

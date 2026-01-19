@@ -21,7 +21,7 @@ crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815
   this_ptr->__reserve_end = (char *)0x0;
   this_ptr->__put_ptr = (char *)0x0;
   if (buffer_ptr == (char *)0x0) {
-    this_ptr->__get_end = &DAT_00000001;
+    this_ptr->__get_end = (char *)0x1;
   }
   this_ptr->__reserve_base = buffer_ptr;
   return;

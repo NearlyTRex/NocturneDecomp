@@ -209,7 +209,7 @@ void core_stranger_cpp_CStranger_FUN_005bb960(void)
   core_stranger_cpp_CStranger_FUN_005bdd20();
   local_1c = 1;
   iStack_80 = 1;
-  pCStack_24 = (CMotionController *)&DAT_00000001;
+  pCStack_24 = (CMotionController *)0x1;
   bVar11 = true;
   if (in_stack_00000004->grabbed_by != (CDemonActor *)0x0) {
     local_1c = 0;

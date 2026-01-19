@@ -26,7 +26,7 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e
       } while (iVar2 < this_ptr->bitmap_count);
     }
     cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
-              (this_ptr,&DAT_00000001,bitmap_index);
+              (this_ptr,(char *)0x1,bitmap_index);
   }
   return;
 }

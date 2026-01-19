@@ -28,7 +28,7 @@ void core_conveyor_cpp_FUN_00441df0(void)
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,in_stack_00000004[5].create_event + 0x14);
   if (iVar1 != 0) {
-    in_stack_00000004[5].vtable = (CDemonActor_vtable *)&DAT_00000001;
+    in_stack_00000004[5].vtable = (CDemonActor_vtable *)0x1;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,(char *)&in_stack_00000004[5].field13_0xec.y);

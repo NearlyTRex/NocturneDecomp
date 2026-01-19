@@ -17,12 +17,12 @@ int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
-  if (pcVar1 != &DAT_00000001) {
+  if (pcVar1 != (char *)0x1) {
     if (pcVar1 != (char *)0x0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
       return -1;
     }
-    file->_link->__get_base = &DAT_00000001;
+    file->_link->__get_base = (char *)0x1;
   }
   if ((file->_flag & 2) == 0) {
     crt_errno_c_setErrno_FUN_00602790(4);

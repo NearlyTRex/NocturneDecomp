@@ -4,5 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x38C0000
 // =============================================================================
 
+// CSkeleton[40]
 CSkeleton g_SkeletonPool[40] = {};
 

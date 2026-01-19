@@ -32,9 +32,9 @@ void __cdecl shape_superopt_cpp_COptimize_FUN_005d7000(COptimize *this_ptr)
   }
   this_ptr->field6_0x3c = (void *)0x0;
   this_ptr->field5_0x38 = 0;
-  (*this_ptr->vtable->field1_0x4)();
-  (*this_ptr->vtable->field3_0xc)();
-  (*this_ptr->vtable->field5_0x14)();
-  (*this_ptr->vtable->field7_0x1c)();
+  (*this_ptr->vtable->func2)();
+  (*this_ptr->vtable->func4)();
+  (*this_ptr->vtable->func6)();
+  (*this_ptr->vtable->func8)();
   return;
 }

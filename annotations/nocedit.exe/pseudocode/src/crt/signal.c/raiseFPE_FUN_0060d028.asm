@@ -22,7 +22,7 @@ section .text
         ;   Label: crt_signal.c_raiseFPE_FUN_0060d028
     PUSH 0x2                            ; 0060d029
     CALL crt_signal.c_getSignalHandler_FUN_0060ceb4 ; 0060d02b
-        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
+        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
     ADD ESP,0x4                         ; 0060d030
     MOV EBX,EAX                         ; 0060d033
     CMP EAX,0x1                         ; 0060d035
@@ -37,7 +37,7 @@ section .text
     PUSH 0x2                            ; 0060d044
     PUSH 0x2                            ; 0060d046
     CALL crt_signal.c_setSignalHandler_FUN_0060ce60 ; 0060d048
-        ;   XREF to: 0060ce60 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER new_handler)
+        ;   XREF to: 0060ce60 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type)
     ADD ESP,0x8                         ; 0060d04d
     MOV EDX,dword ptr [ESP + 0x8]       ; 0060d050
     PUSH EDX                            ; 0060d054

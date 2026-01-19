@@ -469,8 +469,8 @@ crt_math.c_pow_FUN_005ffd76,005ffd76,crt/math.c,83,10,concat_artifact|extra_outp
 crt_math.c_fdiv_thunk_FUN_00606e43,00606e43,crt/math.c,18,6,concat_artifact|special_crt_function|stack_param|undefined_type,98
 crt_math.c_fdiv_thunk_FUN_00606cfb,00606cfb,crt/math.c,18,6,concat_artifact|special_crt_function|stack_param|undefined_type,98
 crt_math.c_generate_nan_FUN_00606a81,00606a81,crt/math.c,5,1,special_crt_function,20
-crt_signal.c_processSignal_FUN_0060d128,0060d128,crt/signal.c,41,1,special_crt_function,56
-crt_signal.c_raiseFPE_FUN_0060d028,0060d028,crt/signal.c,12,1,special_crt_function,27
+crt_signal.c_processSignal_FUN_0060d128,0060d128,crt/signal.c,40,7,special_crt_function|unresolved_funcptr,120
+crt_signal.c_raiseFPE_FUN_0060d028,0060d028,crt/signal.c,11,6,special_crt_function|unresolved_funcptr,81
 crt_signal.c_consoleCtrlHandler_FUN_0060cf20,0060cf20,crt/signal.c,25,1,special_crt_function,40
 crt_signal.c_setSignalHandler_FUN_0060ce60,0060ce60,crt/signal.c,16,1,special_crt_function,31
 crt_signal.c_registerConsoleHandler_FUN_0060cfb8,0060cfb8,crt/signal.c,11,1,special_crt_function,26
@@ -569,7 +569,7 @@ crt_unknown.c_FUN_0060445e,0060445e,crt/unknown.c,5,1,special_crt_function,20
 crt_unknown.c_FUN_0060fa90,0060fa90,crt/unknown.c,14,5,special_crt_function|stack_param,74
 crt_unknown.c_FUN_00600c80,00600c80,crt/unknown.c,23,15,lea_esp_stack_addr|special_crt_function|stack_param,188
 crt_unknown.c_FUN_00603bc9,00603bc9,crt/unknown.c,12,8,call_esp_anchor|special_crt_function|stack_param|sub_artifact,112
-crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068,0060d068,crt/unknown.c,30,11,special_crt_function|stack_param,150
+crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068,0060d068,crt/unknown.c,29,11,special_crt_function|stack_param,149
 crt_unknown.c_FUN_00600ee4,00600ee4,crt/unknown.c,18,11,pointer_cast|special_crt_function|stack_param|unresolved_funcptr,148
 crt_unknown.c_staticInit_FUN_0060240e,0060240e,crt/unknown.c,5,1,special_crt_function,20
 crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930,0060e930,crt/unknown.c,102,23,callind_preserve_lost|lea_esp_stack_addr|param_count_too_few|special_crt_function|stack_ref|unaffected_reg,362
@@ -588,7 +588,7 @@ crt_unknown.c_FUN_006047a4,006047a4,crt/unknown.c,11,1,special_crt_function,26
 crt_unknown.c_FUN_0060a394,0060a394,crt/unknown.c,8,1,special_crt_function,23
 crt_unknown.c_staticFinal_FUN_00608bb0,00608bb0,crt/unknown.c,8,1,special_crt_function,23
 crt_unknown.c_FUN_0060b07a,0060b07a,crt/unknown.c,17,8,special_crt_function|stack_param,107
-crt_unknown.c_FUN_0060cf80,0060cf80,crt/unknown.c,13,1,special_crt_function,28
+crt_unknown.c_FUN_0060cf80,0060cf80,crt/unknown.c,12,1,special_crt_function,27
 crt_unknown.c_FUN_00604824,00604824,crt/unknown.c,4,2,param_count_too_few|special_crt_function,34
 crt_unknown.c_staticFinal_FUN_00602748,00602748,crt/unknown.c,12,1,special_crt_function,27
 crt_unknown.c_FUN_00603d60,00603d60,crt/unknown.c,10,5,call_esp_anchor|special_crt_function|stack_param,75
@@ -666,7 +666,7 @@ crt_exception.c_installExceptionHandler_FUN_0060aba8,0060aba8,crt/exception.c,18
 crt_exception.c_RemoveExceptionHandler_FUN_0060abf4,0060abf4,crt/exception.c,12,1,special_crt_function,27
 crt_exception.c_ExceptionHandler_FUN_0060a9d8,0060a9d8,crt/exception.c,97,2,special_crt_function|warning_unreachable,127
 crt_exception.c_FormatHexString_FUN_0060a748,0060a748,crt/exception.c,32,1,special_crt_function,47
-crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4,0060a7a4,crt/exception.c,128,8,lea_esp_stack_addr|special_crt_function,218
+crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4,0060a7a4,crt/exception.c,127,8,lea_esp_stack_addr|special_crt_function,217
 crt_heap.c_heapCheckWrapper_FUN_006012c0,006012c0,crt/heap.c,6,2,param_count_too_few|special_crt_function,36
 crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0,00601ce0,crt/heap.c,43,10,pointer_cast|register_param|special_crt_function,158
 crt_heap.c_UnlinkAndFreeBlock_FUN_0060c9bc,0060c9bc,crt/heap.c,22,1,special_crt_function,37
@@ -5022,7 +5022,7 @@ core_event.cpp_FUN_004aa2d0,004aa2d0,core/event.cpp,8,4,stack_param,53
 core_event.cpp_CEventList_FUN_004adc10,004adc10,core/event.cpp,27,0,,27
 core_event.cpp_FUN_004b1670,004b1670,core/event.cpp,6,3,param_count_too_few|stack_param,46
 core_event.cpp_FUN_004aa400,004aa400,core/event.cpp,63,12,stack_param,188
-core_event.cpp_CEventList_FUN_004aacc0,004aacc0,core/event.cpp,2112,349,call_esp_anchor|callind_anchor|format_string_mismatch|pointer_cast|stack_param|stack_ref|sub_artifact|variadic_anchor|variadic_preserve_ebp,5647
+core_event.cpp_CEventList_FUN_004aacc0,004aacc0,core/event.cpp,2113,349,call_esp_anchor|callind_anchor|format_string_mismatch|pointer_cast|stack_param|stack_ref|sub_artifact|variadic_anchor|variadic_preserve_ebp,5648
 core_event.cpp_CEventList_loadState_FUN_004b0fc0,004b0fc0,core/event.cpp,121,35,format_string_mismatch|lea_esp_stack_addr|stack_param,486
 core_event.cpp_FUN_004b1a78,004b1a78,core/event.cpp,81,44,pointer_cast|register_param|stack_param|unaffected_reg|unresolved_funcptr|warning_indirect_jump|warning_jumptable,556
 core_event.cpp_FUN_004b1b54,004b1b54,core/event.cpp,6,0,,6
@@ -5314,7 +5314,7 @@ core_lever.cpp_staticInit_FUN_00504760,00504760,core/lever.cpp,8,0,,8
 core_lever.cpp_FUN_00504b20,00504b20,core/lever.cpp,40,18,stack_param|unresolved_funcptr,230
 core_lever.cpp_FUN_00504920,00504920,core/lever.cpp,68,30,stack_param,373
 core_lever.cpp_FUN_00504d80,00504d80,core/lever.cpp,19,10,stack_param,124
-core_lever.cpp_FUN_00505080,00505080,core/lever.cpp,20,9,call_esp_anchor|stack_align_anchor|stack_param,125
+core_lever.cpp_FUN_00505080,00505080,core/lever.cpp,19,9,call_esp_anchor|stack_align_anchor|stack_param,124
 core_lever.cpp_FUN_00505060,00505060,core/lever.cpp,6,2,stack_param,31
 core_lever.cpp_FUN_00505160,00505160,core/lever.cpp,9,2,stack_param,34
 core_lever.cpp_FUN_005047d0,005047d0,core/lever.cpp,46,2,negative_offset,71

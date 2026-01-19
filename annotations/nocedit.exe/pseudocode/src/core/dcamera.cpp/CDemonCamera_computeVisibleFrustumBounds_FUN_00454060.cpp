@@ -71,7 +71,7 @@ core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
     local_30 = aiStack_40[2];
     local_1c = (CVector3i *)0x0;
     local_24 = local_2c;
-    for (local_14 = (CVector3i *)&DAT_00000001; (int)local_14 < this_ptr->framebuffer_width + -1;
+    for (local_14 = (CVector3i *)0x1; (int)local_14 < this_ptr->framebuffer_width + -1;
         local_14 = (CVector3i *)((int)&local_14->x + 1)) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                 (this_ptr,local_14,local_18,(int)in_stack_ffffff14);

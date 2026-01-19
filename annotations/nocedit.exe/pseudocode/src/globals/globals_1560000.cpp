@@ -4,5 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x1560000
 // =============================================================================
 
+// uint[16384]
 uint g_CameraTextureWorkBuffer[16384] = {};
 

@@ -155,7 +155,9 @@ LAB_004aad41:
         pCVar16 = this_ptr->event_list;
         do {
           iVar6 = crt_string_c_stricmp_FUN_005fe7f0((char *)pCVar16,(char *)in_stack_00000008);
-          if (iVar6 == 0) goto LAB_004aace6;
+          if (iVar6 == 0) {
+            return (CDemonActor *)0x1;
+          }
           iVar5 = iVar5 + 1;
           pCVar16 = pCVar16 + 0x20;
         } while (iVar5 < this_ptr->event_count);
@@ -201,11 +203,11 @@ LAB_004aad41:
           pCVar16 = pCVar16 + (uint)bVar20 * -2 + 1;
         } while (CVar1 != (CEvent)0x0);
         if (~uVar13 - 1 <= local_14) {
-          if (local_f0 != 0) {
-            this_ptr->event_count = this_ptr->event_count + 1;
-            return (CDemonActor *)&DAT_00000001;
+          if (local_f0 == 0) {
+            return (CDemonActor *)0x1;
           }
-          goto LAB_004aace6;
+          this_ptr->event_count = this_ptr->event_count + 1;
+          return (CDemonActor *)0x1;
         }
         iVar5 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*pCVar15);
         *pCVar15 = SUB41 /* extract 2-byte value */(iVar5,0);
@@ -2125,6 +2127,5 @@ LAB_004aaf38:
       return pCVar7;
     }
   }
-LAB_004aace6:
-  return (CDemonActor *)&DAT_00000001;
+  return (CDemonActor *)0x1;
 }

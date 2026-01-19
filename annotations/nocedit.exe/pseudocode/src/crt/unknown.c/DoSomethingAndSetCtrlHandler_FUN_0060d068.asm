@@ -69,13 +69,13 @@ section .text
     PUSH EBX                            ; 0060d0c5
         ;   Label: LAB_0060d0c5
     CALL crt_signal.c_getSignalHandler_FUN_0060ceb4 ; 0060d0c6
-        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
+        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
     ADD ESP,0x4                         ; 0060d0cb
     PUSH EDI                            ; 0060d0ce
     PUSH EBX                            ; 0060d0cf
     MOV ESI,EAX                         ; 0060d0d0
     CALL crt_signal.c_setSignalHandler_FUN_0060ce60 ; 0060d0d2
-        ;   XREF to: 0060ce60 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER new_handler)
+        ;   XREF to: 0060ce60 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type)
     ADD ESP,0x8                         ; 0060d0d7
     CALL crt_unknown.c_FUN_0060cf80     ; 0060d0da
         ;   XREF to: 0060cf80 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060cf80()

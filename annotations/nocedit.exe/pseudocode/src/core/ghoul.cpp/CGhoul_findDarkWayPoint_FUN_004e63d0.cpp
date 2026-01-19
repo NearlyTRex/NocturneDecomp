@@ -43,7 +43,7 @@ void core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)
                             (PTR_s_darkPoint_0062df3e_0067b930,this_ptr->actor_name,0), iVar1 != 0))
       {
         iVar1 = 0;
-        local_20 = (CVector3f *)&DAT_00000001;
+        local_20 = (CVector3f *)0x1;
         for (iVar3 = 0; iVar3 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
             iVar3 = iVar3 + 1) {
           pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790

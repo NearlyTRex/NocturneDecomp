@@ -72,7 +72,7 @@ void core_gabriela_cpp_FUN_004d6540(void)
       }
       *(uint *)(in_stack_00000004[0x17a].actor_name + 8) = local_28;
     }
-    if (in_stack_00000004[0x179].vtable == (CDemonActor_vtable *)&DAT_00000002) {
+    if (in_stack_00000004[0x179].vtable == (CDemonActor_vtable *)0x2) {
       if (*(int *)(in_stack_00000004[0x17a].actor_name + 8) == 0) {
         in_stack_00000004[0x17a].actor_name[0x18] = '\0';
         in_stack_00000004[0x17a].actor_name[0x19] = '\0';

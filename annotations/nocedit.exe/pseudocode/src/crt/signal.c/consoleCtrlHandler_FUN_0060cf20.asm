@@ -32,7 +32,7 @@ section .text
     PUSH 0x4                            ; 0060cf30
         ;   Label: LAB_0060cf30
     CALL crt_signal.c_getSignalHandler_FUN_0060ceb4 ; 0060cf32
-        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
+        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
     ADD ESP,0x4                         ; 0060cf37
     MOV EBX,EAX                         ; 0060cf3a
     TEST EAX,EAX                        ; 0060cf3c
@@ -47,7 +47,7 @@ section .text
     PUSH 0x7                            ; 0060cf4c
         ;   Label: LAB_0060cf4c
     CALL crt_signal.c_getSignalHandler_FUN_0060ceb4 ; 0060cf4e
-        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
+        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
     ADD ESP,0x4                         ; 0060cf53
     MOV EBX,EAX                         ; 0060cf56
     TEST EAX,EAX                        ; 0060cf58

@@ -9,11 +9,11 @@
 BOOL __stdcall crt_signal_c_consoleCtrlHandler_FUN_0060cf20(DWORD dwCtrlType)
 
 {
-  SIGNAL_HANDLER pSVar1;
+  SIGNAL_HANDLER_TYPE SVar1;
   
   if (dwCtrlType == 0) {
-    pSVar1 = crt_signal_c_getSignalHandler_FUN_0060ceb4(4);
-    if (pSVar1 == (SIGNAL_HANDLER)0x0) {
+    SVar1 = crt_signal_c_getSignalHandler_FUN_0060ceb4(4);
+    if (SVar1 == 0) {
       return 0;
     }
     crt_signal_c_processSignal_FUN_0060d128(4);
@@ -22,13 +22,13 @@ BOOL __stdcall crt_signal_c_consoleCtrlHandler_FUN_0060cf20(DWORD dwCtrlType)
     if (dwCtrlType != 1) {
       return 0;
     }
-    pSVar1 = crt_signal_c_getSignalHandler_FUN_0060ceb4(7);
-    if (pSVar1 == (SIGNAL_HANDLER)0x0) {
+    SVar1 = crt_signal_c_getSignalHandler_FUN_0060ceb4(7);
+    if (SVar1 == 0) {
       return 0;
     }
     crt_signal_c_processSignal_FUN_0060d128(7);
   }
-  if ((pSVar1 != (SIGNAL_HANDLER)&DAT_00000002) && (pSVar1 != (SIGNAL_HANDLER)0x3)) {
+  if ((SVar1 != 2) && (SVar1 != 3)) {
     return 1;
   }
   return 0;

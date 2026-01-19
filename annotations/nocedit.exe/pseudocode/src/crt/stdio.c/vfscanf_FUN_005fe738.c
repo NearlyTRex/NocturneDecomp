@@ -18,12 +18,12 @@ int __cdecl crt_stdio_c_vfscanf_FUN_005fe738(FILE *file,char *format,va_list_t a
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
-  if (pcVar1 != &DAT_00000001) {
+  if (pcVar1 != (char *)0x1) {
     if (pcVar1 != (char *)0x0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
       return 0;
     }
-    file->_link->__get_base = &DAT_00000001;
+    file->_link->__get_base = (char *)0x1;
   }
   pcStack_1c = crt_stdio_c_ungetc_helper_FUN_005fe720;
   pFStack_18 = file;

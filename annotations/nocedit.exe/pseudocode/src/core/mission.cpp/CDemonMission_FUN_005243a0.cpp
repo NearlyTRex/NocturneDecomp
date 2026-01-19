@@ -14,7 +14,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_005243a0(CDemonMission *this_ptr
   char *in_stack_00000008;
   
   pcVar2 = this_ptr->field4_0x148;
-  this_ptr->set_list = &DAT_00000001;
+  this_ptr->set_list = (void *)0x1;
   do {
     cVar1 = *in_stack_00000008;
     *pcVar2 = cVar1;

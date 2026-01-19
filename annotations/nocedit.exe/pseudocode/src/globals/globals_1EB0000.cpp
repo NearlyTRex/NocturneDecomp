@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x1EB0000
 // =============================================================================
 
-CMultiCram g_CMultiCramInstance;
+// CDSEModel
 CDSEModel g_CDSEModelInstance;
+
+// CMultiCram
+CMultiCram g_CMultiCramInstance;
 

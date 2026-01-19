@@ -233,7 +233,7 @@ void core_gabriela_cpp_FUN_004d2ea0(void)
         goto LAB_004d321d;
       }
 LAB_004d385a:
-      pCVar12 = (CVector3f *)&DAT_00000001;
+      pCVar12 = (CVector3f *)0x1;
       pCVar21 = (CCharacter *)0x0;
       goto LAB_004d320e;
     }
@@ -304,13 +304,13 @@ LAB_004d3af9:
       pSVar10 = in_stack_fffffe24;
       if (uVar3 < 2) {
         if (uVar3 != 1) goto LAB_004d385a;
-        pCVar21 = (CCharacter *)&DAT_00000001;
-        pCVar12 = (CVector3f *)&DAT_00000001;
+        pCVar21 = (CCharacter *)0x1;
+        pCVar12 = (CVector3f *)0x1;
       }
       else {
         if (2 < uVar3) {
           if (uVar3 != 3) {
-            pCVar12 = (CVector3f *)&DAT_00000001;
+            pCVar12 = (CVector3f *)0x1;
             pCVar21 = (CCharacter *)0x0;
             goto LAB_004d320e;
           }
@@ -320,8 +320,8 @@ LAB_004d3af9:
                     (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
           goto LAB_004d321d;
         }
-        pCVar12 = (CVector3f *)&DAT_00000001;
-        pCVar21 = (CCharacter *)&DAT_00000002;
+        pCVar12 = (CVector3f *)0x1;
+        pCVar21 = (CCharacter *)0x2;
       }
       goto LAB_004d3215;
     }

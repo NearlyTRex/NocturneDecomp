@@ -449,7 +449,7 @@ LAB_00592a67:
             pFVar2 = local_11c;
             do {
               iVar13 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0
-                                 ((char *)pFVar2,(FILE *)&DAT_00000001,(int)in_stack_fffeec08);
+                                 ((char *)pFVar2,(FILE *)0x1,(int)in_stack_fffeec08);
               if (iVar13 == 0) {
                 g_CurrentFilename = "..\\core\\skeledit.cpp";
                 g_CurrentLineNumber = 0x11a5;
@@ -501,7 +501,7 @@ LAB_00592a67:
             if (0 < *(int *)((int)aiStack_2720 + (int)fVar15)) {
               do {
                 core_skeledit_cpp_readNonEmptyLine_FUN_005895f0
-                          ((char *)local_11c,(FILE *)&DAT_00000001,(int)in_stack_fffeec08);
+                          ((char *)local_11c,(FILE *)0x1,(int)in_stack_fffeec08);
                 iVar13 = crt_string_c_strnicmp_FUN_005ff070(local_20a4,"fps",3);
                 if (iVar13 == 0) {
                   pcVar11 = local_20a2;
@@ -1322,7 +1322,7 @@ LAB_0059518b:
                                       iVar13 = crt_string_c_strnicmp_FUN_005ff070
                                                          (local_20a4,"flipXZ",6);
                                       if (iVar13 == 0) {
-                                        local_d8 = (FILE *)&DAT_00000001;
+                                        local_d8 = (FILE *)0x1;
                                       }
                                       else {
                                         iVar13 = crt_string_c_strnicmp_FUN_005ff070
@@ -1490,7 +1490,7 @@ LAB_0059518b:
                       local_1b0.m[2].y = local_1e0.y;
                       local_1b0.m[2].z = local_1e0.z;
                     }
-                    local_b8._8_4_ = &DAT_00000001;
+                    local_b8._8_4_ = (streambuf *)0x1;
                   }
                   break;
                 }

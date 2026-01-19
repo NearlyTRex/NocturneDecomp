@@ -4,12 +4,23 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2CF0000
 // =============================================================================
 
-CEditorTools g_CEditorToolsInstance;
-SWindow g_WindowStack[5] = {};
-HWND g_DialogParentWindow;
+// CDemonActorType
 CDemonActorType g_CElephantGunClassInfo;
 CDemonActorType g_CEmitterClassInfo;
 CDemonActorType g_CEnemyClassInfo;
-void* g_ScreenBufferArray[1024] = {};
+
+// CEditorTools
+CEditorTools g_CEditorToolsInstance;
+
+// HWND
+HWND g_DialogParentWindow;
+
+// SWindow[5]
+SWindow g_WindowStack[5] = {};
+
+// uint*[1024]
 uint* g_ZBufferScanlineArray[1024] = {};
+
+// void*[1024]
+void* g_ScreenBufferArray[1024] = {};
 

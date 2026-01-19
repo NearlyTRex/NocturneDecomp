@@ -196,7 +196,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base_strlist,pcVar3);
             pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Return to game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base_strlist,pcVar3);
-            in_stack_fffff79c = (CStrList_vtable *)&DAT_00000001;
+            in_stack_fffff79c = (CStrList_vtable *)0x1;
             in_stack_fffff798 = (CPickList *)0x0;
             in_stack_fffff794 =
                  support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -213,7 +213,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base_strlist,pcVar3);
             pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Return to game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base_strlist,pcVar3);
-            in_stack_fffff79c = (CStrList_vtable *)&DAT_00000001;
+            in_stack_fffff79c = (CStrList_vtable *)0x1;
             in_stack_fffff798 = (CPickList *)0x0;
             in_stack_fffff794 =
                  support_newmsg_cpp_getLocalizedString_FUN_005441f0

@@ -15,13 +15,13 @@ int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
-  if (pcVar1 != &DAT_00000001) {
+  if (pcVar1 != (char *)0x1) {
     if (pcVar1 != (char *)0x0) {
       iVar2 = file->_handle;
       uVar3 = 0xffffffff;
       goto LAB_005fe8fe;
     }
-    file->_link->__get_base = &DAT_00000001;
+    file->_link->__get_base = (char *)0x1;
   }
   if ((file->_flag & 1) == 0) {
     crt_errno_c_setErrno_FUN_00602790(4);

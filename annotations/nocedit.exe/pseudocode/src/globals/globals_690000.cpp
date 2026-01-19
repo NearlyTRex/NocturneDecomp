@@ -4,6 +4,7 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x690000
 // =============================================================================
 
+// int[12]
 int g_AALineVertex1[12] = {};
 int g_AALineVertex2[12] = {};
 

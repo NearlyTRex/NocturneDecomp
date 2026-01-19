@@ -16,12 +16,11 @@ uint core_lever_cpp_FUN_00505080(void)
   CVector3f *in_stack_00000008;
   CVector3f local_20;
   
-  if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)&DAT_00000002) {
+  if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x2) {
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               (in_stack_00000004,&local_20,in_stack_00000008);
     if ((in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x0) || (local_20.z <= 0.0)) {
-      if ((in_stack_00000004[5].vtable == (CDemonActor_vtable *)&DAT_00000001) && (local_20.z < 0.0)
-         ) {
+      if ((in_stack_00000004[5].vtable == (CDemonActor_vtable *)0x1) && (local_20.z < 0.0)) {
         return 1;
       }
       return 0;

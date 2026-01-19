@@ -52,9 +52,9 @@ sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
       *(uint *)((int)&g_HuffmanTables[0].table_size + iVar8) =
            *(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);
       *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 4) =
-           *(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + local_18);
+           *(uint *)((int)&g_HuffmanTableSources[0].unk1 + local_18);
       *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 8) =
-           *(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + local_18);
+           *(uint *)((int)&g_HuffmanTableSources[0].unk2 + local_18);
       *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 0xc) =
            *(uint *)((int)&g_HuffmanTableSources[0].bits + local_18);
       *(int *)(g_HuffmanTables[0].table_id + iVar8 + 0x10) =

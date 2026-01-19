@@ -34,9 +34,9 @@ void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
       *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3) =
            *(uint *)((int)&g_HuffmanTableSources[0].table_size + local_8);
       *(uint *)(g_HuffmanTables[0].table_id + iVar3 + 4) =
-           *(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + local_8);
+           *(uint *)((int)&g_HuffmanTableSources[0].unk1 + local_8);
       *(uint *)(g_HuffmanTables[0].table_id + iVar3 + 8) =
-           *(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + local_8);
+           *(uint *)((int)&g_HuffmanTableSources[0].unk2 + local_8);
       *(uint *)(g_HuffmanTables[0].table_id + iVar3 + 0xc) =
            *(uint *)((int)&g_HuffmanTableSources[0].bits + local_8);
       *(int *)(g_HuffmanTables[0].table_id + iVar3 + 0x10) =

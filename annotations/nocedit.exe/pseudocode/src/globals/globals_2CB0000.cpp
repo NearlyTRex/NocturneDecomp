@@ -4,5 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2CB0000
 // =============================================================================
 
+// CVector3f[20000]
 CVector3f g_PVSCubePositions[20000] = {};
 

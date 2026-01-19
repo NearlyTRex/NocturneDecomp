@@ -130,7 +130,7 @@ typedef struct IMAGE_OPTIONAL_HEADER32 {
     DWORD AddressOfEntryPoint;
     DWORD BaseOfCode;
     DWORD BaseOfData;
-    DWORD ImageBase;
+    void* ImageBase;
     DWORD SectionAlignment;
     DWORD FileAlignment;
     WORD MajorOperatingSystemVersion;
@@ -155,14 +155,14 @@ typedef struct IMAGE_OPTIONAL_HEADER32 {
 } IMAGE_OPTIONAL_HEADER32;
 
 typedef struct IMAGE_NT_HEADERS32 {
-    DWORD Signature;
+    char Signature[4]; // "PE\0\0"
     IMAGE_FILE_HEADER FileHeader;
     IMAGE_OPTIONAL_HEADER32 OptionalHeader;
 } IMAGE_NT_HEADERS32;
 
 typedef struct IMAGE_SECTION_HEADER {
-    BYTE Name[8];
-    DWORD VirtualSize;
+    char Name[8];
+    DWORD Misc; // Union: PhysicalAddress or VirtualSize
     DWORD VirtualAddress;
     DWORD SizeOfRawData;
     DWORD PointerToRawData;
@@ -212,11 +212,21 @@ typedef struct GroupIconResource {
 } GroupIconResource;
 
 typedef struct VS_VERSION_INFO {
-    WORD wLength;
-    WORD wValueLength;
-    WORD wType;
-    WCHAR szKey[16]; // "VS_VERSION_INFO"
-    BYTE data[1]; // Variable size version data
+    WORD StructLength;
+    WORD ValueLength;
+    WORD StructType;
+    WCHAR Info[16]; // "VS_VERSION_INFO" key
+    BYTE Padding[2];
+    DWORD Signature;
+    WORD StructVersion[2];
+    WORD FileVersion[4];
+    WORD ProductVersion[4];
+    DWORD FileFlagsMask[2];
+    DWORD FileFlags;
+    DWORD FileOS;
+    DWORD FileType;
+    DWORD FileSubtype;
+    DWORD FileTimestamp;
 } VS_VERSION_INFO;
 
 typedef struct StringFileInfo {

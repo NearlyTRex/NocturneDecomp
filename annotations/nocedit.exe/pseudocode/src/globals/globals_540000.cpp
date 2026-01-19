@@ -4,6 +4,7 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x540000
 // =============================================================================
 
+// void*
 void* switchdataD_00540654 = (void*)0x0054044C; // caseD_e
 void* switchdataD_00546554 = (void*)0x00546654; // caseD_1
 void* switchdataD_00546564 = (void*)0x00546685; // caseD_1

@@ -63,7 +63,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
   local_2c = 1.4013e-45;
   local_40 = 1.4013e-45;
   local_54 = 1;
-  local_50._0_4_ = &DAT_00000001;
+  local_50._0_4_ = (char *)0x1;
   local_50._4_4_ = (SMotion *)0x0;
   local_48 = 0.0;
   local_28 = 0.0;
@@ -339,7 +339,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
       in_stack_fffffacc = (char *)g_CKeysPtr;
       iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2d);
       if (iVar4 != 0) {
-        in_stack_fffffacc = &DAT_00000001;
+        in_stack_fffffacc = (char *)0x1;
         in_stack_fffffac8 = (CEditorTools *)(iVar7 + 0x14);
         in_stack_fffffac4 = "Enter X radius";
         in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(g_CEditorToolsPtr,0x43d2a9);

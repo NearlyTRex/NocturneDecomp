@@ -90,14 +90,14 @@ const TerminatedCString s_CFilterFX_0066efd8 = "$CFilterFX$$";
 const TerminatedCString s_CFilterCache_0066efec = "$CFilterCache$$";
 
 // WatcomInheritanceLayout constants
-const WatcomInheritanceLayout DAT_00665e68 = {nullptr, 0x00000010};
+const WatcomInheritanceLayout DAT_00665e68 = {.base_type = nullptr, .offset_to_base = 0x00000010};
 
 // WatcomThunkedDestructor constants
-const WatcomThunkedDestructor DAT_00665b70 = {(void *)0x00000048, (int *)0x0000000C};
+const WatcomThunkedDestructor DAT_00665b70 = {.destructor_func = (void *)0x00000048, .this_adjustment_ptr = (int *)0x0000000C};
 
 // WatcomVirtualBaseDescriptor constants
-const WatcomVirtualBaseDescriptor DAT_00665b68 = {0x00000000, 0x00000054};
-const WatcomVirtualBaseDescriptor DAT_00665d60 = {0x00000000, 0x0000004C};
+const WatcomVirtualBaseDescriptor DAT_00665b68 = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
+const WatcomVirtualBaseDescriptor DAT_00665d60 = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
 
 // char[104] constants
 const char g_PropertyNamePrefix[] = "";

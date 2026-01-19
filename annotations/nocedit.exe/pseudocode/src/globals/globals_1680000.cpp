@@ -4,5 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x1680000
 // =============================================================================
 
+// SVertexData[20000]
 SVertexData g_VertexNormals[20000] = {};
 

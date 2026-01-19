@@ -119,7 +119,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
     *(ushort *)((int)&uStack_57a + iVar9 + 2) = 7;
     iVar9 = iVar6;
   } while (iVar6 != 0x480);
-  if ((local_f0 == (SMpegLayer3Granule *)&DAT_00000002) && (local_ac != 0)) {
+  if ((local_f0 == (SMpegLayer3Granule *)0x2) && (local_ac != 0)) {
     if ((frame_info->samples_per_granule == 0) || (frame_info->js_bound != 2)) {
       iVar6 = 0x1f;
       iVar11 = 0x11;
@@ -464,7 +464,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
     } while (iVar9 < 0x20);
     local_5c = local_5c + 0x20;
   } while ((SMpegStereoSubbandSamples *)local_5c != output_samples + 1);
-  if (local_f0 == (SMpegLayer3Granule *)&DAT_00000002) {
+  if (local_f0 == (SMpegLayer3Granule *)0x2) {
     local_20 = 0;
     local_44 = (float (*) [18])input_lr_samples;
     local_3c = 0;

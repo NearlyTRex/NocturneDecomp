@@ -4,13 +4,128 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x400000
 // =============================================================================
 
-IMAGE_NT_HEADERS32 DAT_00400080 = {"PE", {0x014C, 0x0006, 0x387A4F8F, 0x00000000, 0x00000000, 0x00E0, 0x0182}, {0x010B, 0x02, 0x12, 0x00210000, 0x00075C00, 0x03914200, 0x0020239A, 0x00001000, 0x00211000, (void*)0x00400000, 0x00001000, 0x00000200, 0x0001, 0x000B, 0x0000, 0x0000, 0x0003, 0x000A, 0x00000000, 0x03BC0000, 0x00000400, 0x00000000, 0x0002, 0x0000, 0x000F4240, 0x00010000, 0x00002000, 0x00001000, 0x00000000, 0x00000010, {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x21, 0x00, 0x1F, 0x13, 0x00, 0x00, 0x00, 0xF0, 0xBB, 0x03, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xD0, 0xB9, 0x03, 0x28, 0x1D, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}}};
-IMAGE_SECTION_HEADER DAT_00400178 = {"AUTO", 0x00000000, 0x00001000, 0x00210000, 0x00000400, 0x00000000, 0x00000000, 0x0000, 0x0000, 0x60000020};
-IMAGE_SECTION_HEADER DAT_004001A0 = {".idata", 0x00000000, 0x00211000, 0x00001400, 0x00210400, 0x00000000, 0x00000000, 0x0000, 0x0000, 0xC0000040};
-IMAGE_SECTION_HEADER DAT_004001C8 = {"DGROUP", 0x00000000, 0x00213000, 0x00074800, 0x00211800, 0x00000000, 0x00000000, 0x0000, 0x0000, 0xC0000040};
-IMAGE_SECTION_HEADER DAT_004001F0 = {".bss", 0x00000000, 0x00288000, 0x03914200, 0x00000000, 0x00000000, 0x00000000, 0x0000, 0x0000, 0xC0000080};
-IMAGE_SECTION_HEADER DAT_00400218 = {".reloc", 0x00000000, 0x03B9D000, 0x00021E00, 0x00286000, 0x00000000, 0x00000000, 0x0000, 0x0000, 0x42000040};
-IMAGE_SECTION_HEADER DAT_00400240 = {".rsrc", 0x00000000, 0x03BBF000, 0x00000800, 0x002A7E00, 0x00000000, 0x00000000, 0x0000, 0x0000, 0x40000040};
+// IMAGE_NT_HEADERS32
+IMAGE_NT_HEADERS32 DAT_00400080 = {
+    .Signature = "PE",
+    .FileHeader = {
+        .Machine = 0x014C,
+        .NumberOfSections = 0x0006,
+        .TimeDateStamp = 0x387A4F8F,
+        .PointerToSymbolTable = 0x00000000,
+        .NumberOfSymbols = 0x00000000,
+        .SizeOfOptionalHeader = 0x00E0,
+        .Characteristics = 0x0182
+    },
+    .OptionalHeader = {
+        .Magic = 0x010B,
+        .MajorLinkerVersion = 0x02,
+        .MinorLinkerVersion = 0x12,
+        .SizeOfCode = 0x00210000,
+        .SizeOfInitializedData = 0x00075C00,
+        .SizeOfUninitializedData = 0x03914200,
+        .AddressOfEntryPoint = 0x0020239A,
+        .BaseOfCode = 0x00001000,
+        .BaseOfData = 0x00211000,
+        .ImageBase = (void*)0x00400000,
+        .SectionAlignment = 0x00001000,
+        .FileAlignment = 0x00000200,
+        .MajorOperatingSystemVersion = 0x0001,
+        .MinorOperatingSystemVersion = 0x000B,
+        .MajorImageVersion = 0x0000,
+        .MinorImageVersion = 0x0000,
+        .MajorSubsystemVersion = 0x0003,
+        .MinorSubsystemVersion = 0x000A,
+        .Win32VersionValue = 0x00000000,
+        .SizeOfImage = 0x03BC0000,
+        .SizeOfHeaders = 0x00000400,
+        .CheckSum = 0x00000000,
+        .Subsystem = 0x0002,
+        .DllCharacteristics = 0x0000,
+        .SizeOfStackReserve = 0x000F4240,
+        .SizeOfStackCommit = 0x00010000,
+        .SizeOfHeapReserve = 0x00002000,
+        .SizeOfHeapCommit = 0x00001000,
+        .LoaderFlags = 0x00000000,
+        .NumberOfRvaAndSizes = 0x00000010,
+        .DataDirectory = {{.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00211000, .Size = 0x0000131F}, {.VirtualAddress = 0x03BBF000, .Size = 0x00000800}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x03B9D000, .Size = 0x00021D28}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}, {.VirtualAddress = 0x00000000, .Size = 0x00000000}}
+    }
+};
+
+// IMAGE_SECTION_HEADER
+IMAGE_SECTION_HEADER DAT_00400178 = {
+    .Name = "AUTO",
+    .Misc = 0x00000000,
+    .VirtualAddress = 0x00001000,
+    .SizeOfRawData = 0x00210000,
+    .PointerToRawData = 0x00000400,
+    .PointerToRelocations = 0x00000000,
+    .PointerToLinenumbers = 0x00000000,
+    .NumberOfRelocations = 0x0000,
+    .NumberOfLinenumbers = 0x0000,
+    .Characteristics = 0x60000020
+};
+IMAGE_SECTION_HEADER DAT_004001A0 = {
+    .Name = ".idata",
+    .Misc = 0x00000000,
+    .VirtualAddress = 0x00211000,
+    .SizeOfRawData = 0x00001400,
+    .PointerToRawData = 0x00210400,
+    .PointerToRelocations = 0x00000000,
+    .PointerToLinenumbers = 0x00000000,
+    .NumberOfRelocations = 0x0000,
+    .NumberOfLinenumbers = 0x0000,
+    .Characteristics = 0xC0000040
+};
+IMAGE_SECTION_HEADER DAT_004001C8 = {
+    .Name = "DGROUP",
+    .Misc = 0x00000000,
+    .VirtualAddress = 0x00213000,
+    .SizeOfRawData = 0x00074800,
+    .PointerToRawData = 0x00211800,
+    .PointerToRelocations = 0x00000000,
+    .PointerToLinenumbers = 0x00000000,
+    .NumberOfRelocations = 0x0000,
+    .NumberOfLinenumbers = 0x0000,
+    .Characteristics = 0xC0000040
+};
+IMAGE_SECTION_HEADER DAT_004001F0 = {
+    .Name = ".bss",
+    .Misc = 0x00000000,
+    .VirtualAddress = 0x00288000,
+    .SizeOfRawData = 0x03914200,
+    .PointerToRawData = 0x00000000,
+    .PointerToRelocations = 0x00000000,
+    .PointerToLinenumbers = 0x00000000,
+    .NumberOfRelocations = 0x0000,
+    .NumberOfLinenumbers = 0x0000,
+    .Characteristics = 0xC0000080
+};
+IMAGE_SECTION_HEADER DAT_00400218 = {
+    .Name = ".reloc",
+    .Misc = 0x00000000,
+    .VirtualAddress = 0x03B9D000,
+    .SizeOfRawData = 0x00021E00,
+    .PointerToRawData = 0x00286000,
+    .PointerToRelocations = 0x00000000,
+    .PointerToLinenumbers = 0x00000000,
+    .NumberOfRelocations = 0x0000,
+    .NumberOfLinenumbers = 0x0000,
+    .Characteristics = 0x42000040
+};
+IMAGE_SECTION_HEADER DAT_00400240 = {
+    .Name = ".rsrc",
+    .Misc = 0x00000000,
+    .VirtualAddress = 0x03BBF000,
+    .SizeOfRawData = 0x00000800,
+    .PointerToRawData = 0x002A7E00,
+    .PointerToRelocations = 0x00000000,
+    .PointerToLinenumbers = 0x00000000,
+    .NumberOfRelocations = 0x0000,
+    .NumberOfLinenumbers = 0x0000,
+    .Characteristics = 0x40000040
+};
+
+// void*
 void* switchdataD_0040ea00 = (void*)0x0040EA6E; // caseD_0
 void* switchdataD_0040ee84 = (void*)0x0040EF01; // caseD_0
 

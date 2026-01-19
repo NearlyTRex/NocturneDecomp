@@ -46,7 +46,7 @@ void core_script_cpp_CScript_RelatedToSubtitles_FUN_00559d80(void)
     if (index < 0) {
       index = 0;
     }
-    text = &DAT_00000002;
+    text = (char *)0x2;
     local_14 = (CBitFont *)(in_stack_00000004 + 0x38);
     local_18 = iVar1 - local_1c;
     if (2 < local_18) {

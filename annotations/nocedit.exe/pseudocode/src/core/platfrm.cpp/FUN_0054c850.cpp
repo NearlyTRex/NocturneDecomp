@@ -91,7 +91,7 @@ CPlatform * __cdecl core_platfrm_cpp_FUN_0054c850(CPlatform *this_ptr)
     piVar6 = (int *)iVar2;
   } while ((CCourse *)iVar2 != pCVar5 + -0x16);
   pCVar5[0x2b].len = 0;
-  pCVar5[0x2b].frame_list = (CCourseFrameList *)&DAT_00000001;
+  pCVar5[0x2b].frame_list = (CCourseFrameList *)0x1;
   pCVar5[0x2a].loop = 0;
   return (CPlatform *)&pCVar5[-0x42].loop;
 }

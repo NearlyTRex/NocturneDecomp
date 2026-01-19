@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 125,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 19,
     "suspect_count": 9,
     "suspect_types": [
       "call_esp_anchor",
       "stack_align_anchor",
       "stack_param"
     ],
-    "total_lines": 87
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -137,7 +137,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)&DAT_00000002) {",
+      "text": "if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x2) {",
       "type": "stack_param"
     },
     {
@@ -165,7 +165,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004[5].vtable == (CDemonActor_vtable *)&DAT_00000001) && (local_20.z < 0.0)",
+      "text": "if ((in_stack_00000004[5].vtable == (CDemonActor_vtable *)0x1) && (local_20.z < 0.0)) {",
       "type": "stack_param"
     },
     {

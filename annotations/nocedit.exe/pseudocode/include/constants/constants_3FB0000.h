@@ -23,20 +23,60 @@ const IMAGE_RESOURCE_DIRECTORY_ENTRY DAT_03FBF0D0 = {0} /* raw: 0x00, 0x00, 0x00
 const IMAGE_RESOURCE_DIRECTORY_ENTRY DAT_03FBF0E8 = {0} /* raw: 0x00, 0x00, 0x00, 0x00, 0x20, 0x01, 0x00, 0x00 */;
 
 // StringFileInfo constants
-const StringFileInfo DAT_03FBF4AC = {0x0258, 0x0000, 0x0001};
+const StringFileInfo DAT_03FBF4AC = {
+    .wLength = 0x0258,
+    .wValueLength = 0x0000,
+    .wType = 0x0001
+};
 
 // StringInfo constants
-const StringInfo DAT_03FBF4E8 = {0x004C, 0x0016, 0x0001};
-const StringInfo DAT_03FBF534 = {0x0034, 0x0009, 0x0001};
-const StringInfo DAT_03FBF568 = {0x0068, 0x0022, 0x0001};
-const StringInfo DAT_03FBF5D0 = {0x0050, 0x0014, 0x0001};
-const StringInfo DAT_03FBF620 = {0x0040, 0x000C, 0x0001};
-const StringInfo DAT_03FBF660 = {0x0040, 0x0010, 0x0001};
-const StringInfo DAT_03FBF6A0 = {0x0030, 0x0008, 0x0001};
-const StringInfo DAT_03FBF6D0 = {0x0034, 0x0008, 0x0001};
+const StringInfo DAT_03FBF4E8 = {
+    .wLength = 0x004C,
+    .wValueLength = 0x0016,
+    .wType = 0x0001
+};
+const StringInfo DAT_03FBF534 = {
+    .wLength = 0x0034,
+    .wValueLength = 0x0009,
+    .wType = 0x0001
+};
+const StringInfo DAT_03FBF568 = {
+    .wLength = 0x0068,
+    .wValueLength = 0x0022,
+    .wType = 0x0001
+};
+const StringInfo DAT_03FBF5D0 = {
+    .wLength = 0x0050,
+    .wValueLength = 0x0014,
+    .wType = 0x0001
+};
+const StringInfo DAT_03FBF620 = {
+    .wLength = 0x0040,
+    .wValueLength = 0x000C,
+    .wType = 0x0001
+};
+const StringInfo DAT_03FBF660 = {
+    .wLength = 0x0040,
+    .wValueLength = 0x0010,
+    .wType = 0x0001
+};
+const StringInfo DAT_03FBF6A0 = {
+    .wLength = 0x0030,
+    .wValueLength = 0x0008,
+    .wType = 0x0001
+};
+const StringInfo DAT_03FBF6D0 = {
+    .wLength = 0x0034,
+    .wValueLength = 0x0008,
+    .wType = 0x0001
+};
 
 // StringTable constants
-const StringTable DAT_03FBF4D0 = {0x0234, 0x0000, 0x0001};
+const StringTable DAT_03FBF4D0 = {
+    .wLength = 0x0234,
+    .wValueLength = 0x0000,
+    .wType = 0x0001
+};
 
 // TerminatedUnicode constants
 const TerminatedUnicode DAT_03FBF4B2 = L"StringFileInfo";
@@ -61,10 +101,18 @@ const TerminatedUnicode DAT_03FBF70A = L"VarFileInfo";
 const TerminatedUnicode DAT_03FBF72A = L"Translation";
 
 // Var constants
-const Var DAT_03FBF724 = {0x0024, 0x0004, 0x0000};
+const Var DAT_03FBF724 = {
+    .wLength = 0x0024,
+    .wValueLength = 0x0004,
+    .wType = 0x0000
+};
 
 // VarFileInfo constants
-const VarFileInfo DAT_03FBF704 = {0x0044, 0x0000, 0x0001};
+const VarFileInfo DAT_03FBF704 = {
+    .wLength = 0x0044,
+    .wValueLength = 0x0000,
+    .wType = 0x0001
+};
 
 // dword constants
 const dword DAT_03FB0020 = 0x14b000;

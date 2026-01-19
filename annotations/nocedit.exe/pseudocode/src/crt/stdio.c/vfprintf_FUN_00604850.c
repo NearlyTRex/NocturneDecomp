@@ -18,12 +18,12 @@ int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
-  if (pcVar1 != &DAT_00000001) {
+  if (pcVar1 != (char *)0x1) {
     if (pcVar1 != (char *)0x0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
       return 0;
     }
-    file->_link->__get_base = &DAT_00000001;
+    file->_link->__get_base = (char *)0x1;
   }
   uVar2 = file->_flag;
   *(byte *)&file->_flag = (byte)file->_flag & 0xcf;

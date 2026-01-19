@@ -27,12 +27,12 @@ section .text
     PUSH 0x2                            ; 0060d1fa
     PUSH 0x4                            ; 0060d1fc
     CALL crt_signal.c_setSignalHandler_FUN_0060ce60 ; 0060d1fe
-        ;   XREF to: 0060ce60 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER new_handler)
+        ;   XREF to: 0060ce60 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type)
     ADD ESP,0x8                         ; 0060d203
     PUSH 0x2                            ; 0060d206
     PUSH 0x7                            ; 0060d208
     CALL crt_signal.c_setSignalHandler_FUN_0060ce60 ; 0060d20a
-        ;   XREF to: 0060ce60 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER new_handler)
+        ;   XREF to: 0060ce60 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER_TYPE crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type)
     ADD ESP,0x8                         ; 0060d20f
     RET                                 ; 0060d212
         ;   Label: LAB_0060d212

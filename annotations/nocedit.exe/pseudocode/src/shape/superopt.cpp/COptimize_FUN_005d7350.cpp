@@ -30,13 +30,13 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d7350(COptimize *this_ptr)
     if (uVar6 == (this_ptr->obj).poly_count) {
       return 1;
     }
-    iVar2 = (*this_ptr->vtable->field14_0x38)();
+    iVar2 = (*this_ptr->vtable->func15)();
     if (iVar2 == 0) {
       shape_superopt_cpp_logToFile_FUN_005c7910("Unable to add polygon for complex pass",0);
       return 0;
     }
     uVar6 = 0;
-    (*this_ptr->vtable->field12_0x30)();
+    (*this_ptr->vtable->func13)();
     if ((this_ptr->obj).poly_count != 0) {
       iVar5 = 0;
       do {

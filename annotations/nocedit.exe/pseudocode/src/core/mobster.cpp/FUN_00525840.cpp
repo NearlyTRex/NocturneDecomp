@@ -199,7 +199,7 @@ void core_mobster_cpp_FUN_00525840(void)
           in_stack_fffffe70 = in_stack_00000008;
           core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
           if (extraout_EAX != 0) {
-            in_stack_fffffe70 = (CEnemy *)&DAT_00000001;
+            in_stack_fffffe70 = (CEnemy *)0x1;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar2->motion_controller,1,1);
           }
@@ -216,7 +216,7 @@ void core_mobster_cpp_FUN_00525840(void)
                        *(float *)((int)fVar14 + 0x28);
             if ((float)2 <
                 SQRT(local_c8 * local_c8 + local_d0 * local_d0 + local_cc * local_cc)) {
-              in_stack_fffffe70 = (CEnemy *)&DAT_00000001;
+              in_stack_fffffe70 = (CEnemy *)0x1;
               in_stack_00000004[1].base_character.base_actor.location.position.y = 1.4013e-45;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar2->motion_controller,8,1);
@@ -246,7 +246,7 @@ void core_mobster_cpp_FUN_00525840(void)
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)in_stack_fffffe70);
             if ((ABS(local_14) < (float)0.52359877558333301) &&
                (*(float *)in_stack_00000004->field6_0xbe38 <= 0.0)) {
-              in_stack_fffffe70 = (CEnemy *)&DAT_00000001;
+              in_stack_fffffe70 = (CEnemy *)0x1;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(in_stack_00000004->base_character).model.motion_controller,9,1);
               in_stack_00000004->field6_0xbe38[0] = '\0';
@@ -262,7 +262,7 @@ void core_mobster_cpp_FUN_00525840(void)
             else {
               iVar7 = 1;
             }
-            in_stack_fffffe70 = (CEnemy *)&DAT_00000001;
+            in_stack_fffffe70 = (CEnemy *)0x1;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(in_stack_00000004->base_character).model.motion_controller,iVar7,1);
           }
@@ -270,7 +270,7 @@ void core_mobster_cpp_FUN_00525840(void)
             in_stack_fffffe70 = (CEnemy *)0x3f333333;
             iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.7);
             if (iVar7 != 0) {
-              in_stack_fffffe70 = (CEnemy *)&DAT_00000001;
+              in_stack_fffffe70 = (CEnemy *)0x1;
               core_mobster_cpp_FUN_005279f0();
               pCVar6 = &in_stack_00000004[1].base_character;
               (pCVar6->base_actor).actor_name[0x18] = '\x01';
@@ -312,12 +312,12 @@ void core_mobster_cpp_FUN_00525840(void)
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
         if (extraout_EAX_00 == 0) {
-          in_stack_fffffe70 = (CEnemy *)&DAT_00000001;
+          in_stack_fffffe70 = (CEnemy *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,0,1);
         }
         else {
-          in_stack_fffffe70 = (CEnemy *)&DAT_00000001;
+          in_stack_fffffe70 = (CEnemy *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,1,1);
         }

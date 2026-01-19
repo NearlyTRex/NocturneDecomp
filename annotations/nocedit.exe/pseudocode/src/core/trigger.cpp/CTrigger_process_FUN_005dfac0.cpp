@@ -58,7 +58,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
           iVar8 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0();
           if (iVar8 != 0) {
             uVar4 = *(uint *)((int)g_HeroActors + iVar10);
-            local_2c = &DAT_00000001;
+            local_2c = (char *)0x1;
             goto LAB_005dfb52;
           }
           iVar9 = iVar9 + 1;
@@ -117,7 +117,7 @@ LAB_005dfb52:
       local_b8[0] = (double)iVar9;
       if ((*(float *)(this_ptr->field1_0x158 + 0xc4) * (float)65536 <= (float)iVar9) &&
          ((float)iVar9 <= *(float *)(this_ptr->field1_0x158 + 200) * (float)65536)) {
-        local_2c = &DAT_00000001;
+        local_2c = (char *)0x1;
       }
     }
     break;

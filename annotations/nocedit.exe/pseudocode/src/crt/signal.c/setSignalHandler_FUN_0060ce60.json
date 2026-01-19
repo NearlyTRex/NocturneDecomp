@@ -48,7 +48,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_signal.c_setSignalHandler_FUN_0060ce60",
-    "signature": "SIGNAL_HANDLER crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER new_handler)"
+    "signature": "SIGNAL_HANDLER_TYPE crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type)"
   },
   "function_calls": [
     {
@@ -67,7 +67,7 @@
     {
       "addr": "00685504",
       "name": "g_GlobalSignalHandlers",
-      "type": "SIGNAL_HANDLER[26]",
+      "type": "SIGNAL_HANDLER_TYPE[26]",
       "value": null
     }
   ],
@@ -112,10 +112,10 @@
       },
       {
         "is_param": true,
-        "name": "new_handler",
+        "name": "new_handler_type",
         "offset": 8,
         "size": 4,
-        "type": "typedef SIGNAL_HANDLER SIGNAL_HANDLER_FUNC *"
+        "type": "typedef SIGNAL_HANDLER_TYPE int"
       }
     ]
   },

@@ -88,7 +88,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   this_ptr->previous_best_camera_timer = 3.0;
   this_ptr->lighting_quality_mode = 1;
   iVar5 = 0;
-  this_ptr->rendering_flags_ptr = (int *)&DAT_00000001;
+  this_ptr->rendering_flags_ptr = (int *)0x1;
   g_ActiveLightCount = 0;
   this_ptr->previous_best_camera_index = this_ptr->selected_camera_index;
   DAT_03277d80 = 0;

@@ -9,10 +9,10 @@
 int __watcallStack crt_signal_c_processSignal_FUN_0060d128(int signal_number)
 
 {
-  SIGNAL_HANDLER pSVar1;
+  code *pcVar1;
   int iVar2;
   
-  pSVar1 = crt_signal_c_getSignalHandler_FUN_0060ceb4(signal_number);
+  pcVar1 = (code *)crt_signal_c_getSignalHandler_FUN_0060ceb4(signal_number);
   switch(signal_number) {
   case 1:
     break;
@@ -33,14 +33,13 @@ int __watcallStack crt_signal_c_processSignal_FUN_0060d128(int signal_number)
   default:
     return -1;
   }
-  if (pSVar1 == (SIGNAL_HANDLER)&DAT_00000002) {
+  if (pcVar1 == (code *)0x2) {
     crt_startup_c_reportAbnormalTermination_FUN_00601628();
   }
 switchD_0060d141_caseD_c:
-  if (((pSVar1 != (SIGNAL_HANDLER)&DAT_00000001) && (pSVar1 != (SIGNAL_HANDLER)&DAT_00000002)) &&
-     (pSVar1 != (SIGNAL_HANDLER)0x3)) {
-    crt_signal_c_setSignalHandler_FUN_0060ce60(signal_number,(SIGNAL_HANDLER)&DAT_00000002);
-    (*pSVar1)(signal_number);
+  if (((pcVar1 != (code *)0x1) && (pcVar1 != (code *)0x2)) && (pcVar1 != (code *)0x3)) {
+    crt_signal_c_setSignalHandler_FUN_0060ce60(signal_number,2);
+    (*pcVar1)();
   }
   iVar2 = crt_unknown_c_FUN_0060cf80();
   if (iVar2 != 0) {

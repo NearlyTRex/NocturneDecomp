@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack SIGNAL_HANDLER crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER new_handler)
+; __watcallStack SIGNAL_HANDLER_TYPE crt_signal.c_setSignalHandler_FUN_0060ce60(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   signal_number
-; typedef SIGNAL_HANDLER SIGNAL_HANDLER_FUNC * Stack[0x8]:4   new_handler
+; typedef SIGNAL_HANDLER_TYPE int Stack[0x8]:4   new_handler_type
 ;
 ; XREF[4]:
 ;   crt_signal.c_processSignal_FUN_0060d128 at 0060d177
@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
-;   SIGNAL_HANDLER[26] g_GlobalSignalHandlers
+;   SIGNAL_HANDLER_TYPE[26] g_GlobalSignalHandlers
 ;
 ; Called Functions:
 ;   crt_thread.c_GetTLS_FUN_0060242c

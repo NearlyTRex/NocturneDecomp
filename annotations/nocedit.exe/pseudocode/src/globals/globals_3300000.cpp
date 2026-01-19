@@ -4,5 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x3300000
 // =============================================================================
 
+// CVector3f[20000]
 CVector3f g_VertexNormalArray[20000] = {};
 

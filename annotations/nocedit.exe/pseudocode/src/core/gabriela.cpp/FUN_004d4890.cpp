@@ -106,7 +106,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
     case 3:
       (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
                 (&in_stack_00000004->base_actor);
-      in_stack_ffffff58 = (CCharacter *)&DAT_00000001;
+      in_stack_ffffff58 = (CCharacter *)0x1;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,0,1);
       break;

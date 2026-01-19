@@ -53,7 +53,7 @@ SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T coun
         *(byte *)((int)&file->_flag + 1) = bVar7 | 1;
       }
       pcVar8 = file->_link->__get_base;
-      file->_link->__get_base = &DAT_00000001;
+      file->_link->__get_base = (char *)0x1;
       do {
         bVar7 = *(byte *)size;
         size = size + 1;

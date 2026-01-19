@@ -2,7 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
-#include "system/misc.h"
+#include "system/windef.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x3FB0000
@@ -20,8 +20,8 @@ extern IMAGE_RESOURCE_DATA_ENTRY DAT_03FBF0F0;
 extern IMAGE_RESOURCE_DATA_ENTRY DAT_03FBF100;
 extern IMAGE_RESOURCE_DATA_ENTRY DAT_03FBF110;
 extern IMAGE_RESOURCE_DATA_ENTRY DAT_03FBF120;
-extern IconResource Rsrc_Icon_1_0;
-extern MenuResource Rsrc_Menu_66_0;
-extern GroupIconResource Rsrc_GroupIcon_65_0;
+extern BYTE Rsrc_Icon_1_0[11];
+extern BYTE Rsrc_Menu_66_0[3];
+extern BYTE Rsrc_GroupIcon_65_0[8];
 extern VS_VERSION_INFO Rsrc_Version_1_0;
 

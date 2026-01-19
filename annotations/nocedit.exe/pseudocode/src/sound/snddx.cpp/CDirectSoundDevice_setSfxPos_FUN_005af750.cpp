@@ -155,7 +155,7 @@ LAB_005af8a8:
       uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_67c);
     }
-    local_2c = (int *)&DAT_00000001;
+    local_2c = (int *)0x1;
   }
   if ((update_flags & 0x80U) == 0) {
     if (local_2c != (int *)0x0) goto LAB_005af982;

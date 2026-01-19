@@ -283,7 +283,7 @@ extern int g_HeapFlags;
 extern DWORD g_RuntimeBufferSize;
 extern HANDLE g_ConsoleInputHandle;
 extern HANDLE g_ConsoleOutputHandle;
-extern SIGNAL_HANDLER g_GlobalSignalHandlers[26];
+extern SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26];
 extern char g_ConsoleHandlerRegistered;
 extern uint g_CodePage;
 extern BYTE g_InitHandlerStatusStart;

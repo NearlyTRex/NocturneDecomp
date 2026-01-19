@@ -101,7 +101,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't call LodMesh::chooseLodsInteractive until LODs have been created!");
   }
   *in_stack_00000008 = 999999;
-  local_30 = (int *)&DAT_00000001;
+  local_30 = (int *)0x1;
   iVar4 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr->next_lod);
   *in_stack_0000000c = iVar4;
   shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(this_ptr,&local_94);

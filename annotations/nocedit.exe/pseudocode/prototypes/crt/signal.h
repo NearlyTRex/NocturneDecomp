@@ -5,11 +5,11 @@
 
 // Original: crt_signal.c_setSignalHandler_FUN_0060ce60
 // Address: 0060ce60
-SIGNAL_HANDLER setSignalHandler(int signal_number, SIGNAL_HANDLER new_handler);
+SIGNAL_HANDLER_TYPE setSignalHandler(int signal_number, SIGNAL_HANDLER_TYPE new_handler_type);
 
 // Original: crt_signal.c_getSignalHandler_FUN_0060ceb4
 // Address: 0060ceb4
-SIGNAL_HANDLER getSignalHandler(int signal_number);
+SIGNAL_HANDLER_TYPE getSignalHandler(int signal_number);
 
 // Original: crt_signal.c_consoleCtrlHandler_FUN_0060cf20
 // Address: 0060cf20

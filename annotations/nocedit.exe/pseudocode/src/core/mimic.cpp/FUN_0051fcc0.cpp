@@ -202,7 +202,7 @@ LAB_0051fd7d:
           }
           goto LAB_0051fdb4;
         }
-        this_ptr = (CHero *)&DAT_00000001;
+        this_ptr = (CHero *)0x1;
         pCVar14 = (CCharacter *)0x0;
         pCVar13 = local_18;
         goto LAB_0051fdac;
@@ -223,8 +223,8 @@ LAB_0051fd7d:
       goto LAB_0051fdb4;
     }
 LAB_005202b7:
-    this_ptr = (CHero *)&DAT_00000001;
-    pCVar14 = (CCharacter *)&DAT_00000002;
+    this_ptr = (CHero *)0x1;
+    pCVar14 = (CCharacter *)0x2;
 LAB_0051fda5:
     pCVar13 = &in_stack_00000004->model;
 LAB_0051fdac:
