@@ -98,42 +98,15 @@ USAGE
 import os
 import json
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 
 
 # Filename for the callfixups JSON file
 CALLFIXUPS_FILENAME = "callfixups.json"
 
-# Cache for the global callfixups.json content (to survive cleanup)
-_global_callfixups_cache = None
-
-
-def preload_global_callfixups(pseudocode_dir):
-    """Preload the global callfixups.json file before cleanup.
-
-    This caches the existing callfixups so they can be preserved
-    after the cleanup phase deletes the file.
-
-    Args:
-        pseudocode_dir: The pseudocode directory
-
-    Returns:
-        List of existing callfixups, or empty list if not found
-    """
-    global _global_callfixups_cache
-
-    callfixups_path = os.path.join(pseudocode_dir, CALLFIXUPS_FILENAME)
-    _global_callfixups_cache = []
-
-    if os.path.exists(callfixups_path):
-        try:
-            with open(callfixups_path, 'r') as f:
-                _global_callfixups_cache = json.load(f)
-                log_info("Preloaded %d callfixups from %s" % (
-                    len(_global_callfixups_cache), callfixups_path))
-        except Exception as e:
-            log_info("Could not preload callfixups.json: %s" % str(e))
-
-    return _global_callfixups_cache
+# Cache manager for callfixups (global only, root-level array, no per-function files)
+callfixups_cache = JsonCacheManager('callfixups', json_key=None,
+                                     default_factory=list, type_check=list)
 
 
 def generate_callfixups_file(pseudocode_dir):
@@ -141,7 +114,7 @@ def generate_callfixups_file(pseudocode_dir):
 
     Preserves any previously cached user-defined callfixups.
 
-    Call preload_global_callfixups() before cleanup to cache existing modifications.
+    Call callfixups_cache.preload_global() before cleanup to cache existing modifications.
 
     Args:
         pseudocode_dir: The pseudocode directory (e.g., annotations/nocedit.exe/pseudocode)
@@ -149,12 +122,10 @@ def generate_callfixups_file(pseudocode_dir):
     Returns:
         Path to the generated file
     """
-    global _global_callfixups_cache
-
     callfixups_path = os.path.join(pseudocode_dir, CALLFIXUPS_FILENAME)
 
     # Use cached callfixups (preloaded before cleanup)
-    callfixups = _global_callfixups_cache if _global_callfixups_cache else []
+    callfixups = callfixups_cache.get_global_cache()
 
     # Write the callfixups file as a top-level array
     try:

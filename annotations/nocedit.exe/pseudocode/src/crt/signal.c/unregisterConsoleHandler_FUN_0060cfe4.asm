@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   SetConsoleCtrlHandler* g_SetConsoleCtrlHandlerFunc = 0021210e
-;   char g_ConsoleHandlerRegistered = \x00
+;   byte g_ConsoleHandlerRegistered = 0x0
 ;
 ; Called Functions:
 ;   SetConsoleCtrlHandler

@@ -76,7 +76,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058f152
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x8                         ; 0058f157
-    MOV EBX,dword ptr [0x00681864]      ; 0058f15a | DAT_00681864
+    MOV EBX,dword ptr [0x00681864]      ; 0058f15a | INT_00681864
     PUSH EBX                            ; 0058f160
     PUSH 0x64b1fb                       ; 0058f161 | = "%d\n"
     MOV ESI,dword ptr [ESP + 0x50]      ; 0058f166

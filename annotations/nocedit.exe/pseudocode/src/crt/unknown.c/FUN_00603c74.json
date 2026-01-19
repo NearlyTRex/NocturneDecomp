@@ -46,14 +46,14 @@
     {
       "addr": "00684f30",
       "name": "DAT_00684f30",
-      "type": "undefined4",
-      "value": null
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "00684f34",
       "name": "DAT_00684f34",
-      "type": "undefined4",
-      "value": null
+      "type": "int",
+      "value": "-0x60000000"
     },
     {
       "addr": "00684f38",
@@ -166,21 +166,21 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = *pfVar1 * *in_stack_00000004;",
+      "text": "*in_stack_00000004 = *(float10 *)piVar1 * *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = *pfVar1 * *in_stack_00000004;",
+      "text": "*in_stack_00000004 = *(float10 *)piVar1 * *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(float10 *)((int)",
-      "text": "pfVar1 = (float10 *)((int)pfVar1 + 10);",
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)piVar1 + 10);",
       "type": "pointer_cast"
     },
     {

@@ -78,104 +78,44 @@ def escape_c_string(s):
     return ''.join(result)
 
 
-def escape_for_c_string(s):
-    """Escape special characters in a string for C string literal.
-
-    Similar to escape_c_string but with slightly different handling.
-    """
-    if not s:
-        return ""
-
-    result = []
-    for char in s:
-        code = ord(char)
-        if char == '"':
-            result.append('\\"')
-        elif char == '\\':
-            result.append('\\\\')
-        elif char == '\n':
-            result.append('\\n')
-        elif char == '\r':
-            result.append('\\r')
-        elif char == '\t':
-            result.append('\\t')
-        elif 32 <= code <= 126:
-            result.append(char)
-        else:
-            result.append('\\x%02x' % code)
-    return ''.join(result)
-
-
-def sanitize_for_ascii(text):
-    """Convert text to ASCII-safe representation, escaping non-ASCII characters.
-
-    Note: This function escapes newlines to \\n for use in C string literals.
-    For file content that should preserve newlines, use sanitize_file_content instead.
-    """
-    if not text:
-        return ""
-
-    # Fast path: check if already clean ASCII without special chars
-    try:
-        text.encode('ascii')
-        # Check for chars that need escaping
-        if '"' not in text and '\\' not in text and '\n' not in text and '\r' not in text and '\t' not in text:
-            # Check for control characters
-            has_control = False
-            for c in text:
-                if ord(c) < 32:
-                    has_control = True
-                    break
-            if not has_control:
-                return text
-    except UnicodeEncodeError:
-        pass  # Has non-ASCII, fall through to slow path
-
-    # Slow path: character-by-character processing
-    result = []
-    for char in text:
-        code = ord(char)
-        if 32 <= code <= 126:
-            if char == '"':
-                result.append('\\"')
-            elif char == '\\':
-                result.append('\\\\')
-            else:
-                result.append(char)
-        elif char == '\n':
-            result.append('\\n')
-        elif char == '\r':
-            result.append('\\r')
-        elif char == '\t':
-            result.append('\\t')
-        elif code < 128:
-            result.append('\\x%02x' % code)
-        else:
-            result.append('\\u%04x' % code)
-    return ''.join(result)
-
-
 # Pre-compiled regex for control character detection (excluding tab, newline, carriage return)
 _CONTROL_CHAR_PATTERN = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\xff]')
 
 
-def sanitize_file_content(text):
-    """Convert text to ASCII-safe representation for file output, preserving newlines.
+def sanitize_string(text, preserve_newlines=False):
+    """Convert text to ASCII-safe representation.
 
-    Unlike sanitize_for_ascii, this function preserves newlines, tabs, and other
-    whitespace characters that are valid in file content. Non-printable and
-    non-ASCII characters are escaped as hex codes to preserve their values.
+    Args:
+        text: String to sanitize
+        preserve_newlines: If True, preserve newlines/tabs and don't escape quotes/backslashes
+                          (for multi-line file content like code blocks).
+                          If False, escape them as \\n, \\t, etc. and escape quotes/backslashes
+                          (for single-line metadata in C-style comments).
+
+    Returns:
+        ASCII-safe string representation
     """
     if not text:
         return ""
 
     # Fast path: check if text is already clean ASCII (common case)
-    # Use regex search which is much faster than character-by-character iteration
     try:
         text.encode('ascii')
-        # If we get here, it's all ASCII - just check for control chars using regex
-        if not _CONTROL_CHAR_PATTERN.search(text):
-            return text
+        if preserve_newlines:
+            # For file content: only need to check for control chars (not newlines/tabs)
+            if not _CONTROL_CHAR_PATTERN.search(text):
+                return text
+        else:
+            # For metadata: also need to escape quotes, backslashes, newlines, tabs
+            if '"' not in text and '\\' not in text and '\n' not in text and '\r' not in text and '\t' not in text:
+                # Check for control characters
+                has_control = False
+                for c in text:
+                    if ord(c) < 32:
+                        has_control = True
+                        break
+                if not has_control:
+                    return text
     except UnicodeEncodeError:
         pass  # Has non-ASCII, fall through to slow path
 
@@ -184,11 +124,29 @@ def sanitize_file_content(text):
     for char in text:
         code = ord(char)
         if 32 <= code <= 126:
-            # Printable ASCII - keep as-is (don't escape quotes or backslashes)
-            result.append(char)
+            if preserve_newlines:
+                # File content: keep printable ASCII as-is
+                result.append(char)
+            else:
+                # Metadata: escape quotes and backslashes
+                if char == '"':
+                    result.append('\\"')
+                elif char == '\\':
+                    result.append('\\\\')
+                else:
+                    result.append(char)
         elif char in '\n\r\t':
-            # Preserve whitespace characters
-            result.append(char)
+            if preserve_newlines:
+                # File content: preserve whitespace
+                result.append(char)
+            else:
+                # Metadata: escape whitespace
+                if char == '\n':
+                    result.append('\\n')
+                elif char == '\r':
+                    result.append('\\r')
+                elif char == '\t':
+                    result.append('\\t')
         elif code < 128:
             # Other ASCII control characters - escape as hex
             result.append('\\x%02x' % code)
@@ -199,6 +157,8 @@ def sanitize_file_content(text):
             else:
                 result.append('\\u%04x' % code)
     return ''.join(result)
+
+
 
 
 def format_char_array_as_c_strings(currentProgram, raw_bytes, type_name, string_map=None):

@@ -12,7 +12,7 @@
 ;   crt_startup.c_HandleRuntimeError_FUN_00606660 at 0060666e
 ;
 ; Referenced Globals:
-;   char g_DebuggerIsAttached = \x00
+;   byte g_DebuggerIsAttached = 0x0
 ;
 ; *****************************************************************************
 

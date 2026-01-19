@@ -77,8 +77,8 @@
     {
       "addr": "00684f2c",
       "name": "g_SpecialExitHandler",
-      "type": "undefined4",
-      "value": null
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "03f9b220",
@@ -164,9 +164,9 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 13,
       "match": "code *",
-      "text": "else if (g_SpecialExitHandler != (code *)0x0) {",
+      "text": "(*(code *)g_SpecialExitHandler)();",
       "type": "unresolved_funcptr"
     },
     {

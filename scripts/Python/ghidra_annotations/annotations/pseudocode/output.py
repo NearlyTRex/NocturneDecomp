@@ -6,7 +6,7 @@ import re
 import json
 from ghidra_annotations.util import make_dirs
 from ghidra_annotations.util.log import log_info
-from ghidra_annotations.annotations.pseudocode.strings import sanitize_for_ascii, sanitize_file_content
+from ghidra_annotations.annotations.pseudocode.strings import sanitize_string
 from ghidra_annotations.annotations.pseudocode.functions import (
     extract_virtual_filename, extract_cpp_function_name, generate_function_prototype
 )
@@ -42,7 +42,7 @@ def create_pseudocode_file_content(
         xrefs_section = "// Cross-references:\n"
         for xref in func_xrefs:
             xref_line = "//   %s (%s) at %s [%s]\n" % (
-                sanitize_for_ascii(xref['name']),
+                sanitize_string(xref['name']),
                 xref['addr'],
                 xref['from_addr'],
                 xref['type'])
@@ -55,13 +55,13 @@ def create_pseudocode_file_content(
         for global_ref in func_globals:
             if global_ref.get('value') is not None:
                 global_line = "//   %s %s = %s\n" % (
-                    sanitize_for_ascii(global_ref['type']),
-                    sanitize_for_ascii(global_ref['name']),
-                    sanitize_for_ascii(global_ref['value']))
+                    sanitize_string(global_ref['type']),
+                    sanitize_string(global_ref['name']),
+                    sanitize_string(global_ref['value']))
             else:
                 global_line = "//   %s %s\n" % (
-                    sanitize_for_ascii(global_ref['type']),
-                    sanitize_for_ascii(global_ref['name']))
+                    sanitize_string(global_ref['type']),
+                    sanitize_string(global_ref['name']))
             globals_section += global_line
 
     # Build FUNCTION CALLS section
@@ -69,7 +69,7 @@ def create_pseudocode_file_content(
     if func_calls:
         calls_section = "// Function calls:\n"
         for call in func_calls:
-            call_line = "//   %s\n" % sanitize_for_ascii(call['name'])
+            call_line = "//   %s\n" % sanitize_string(call['name'])
             calls_section += call_line
 
     # Function template - only include sections that have content
@@ -100,14 +100,14 @@ def create_pseudocode_file_content(
     template = "\n".join(template_parts)
 
     # Format from template
-    # Use sanitize_file_content for multi-line code blocks to preserve newlines
-    safe_decompiled = sanitize_file_content(decompiled_code)
-    safe_assembly = sanitize_file_content(assembly_code)
-    # Use sanitize_for_ascii for single-line metadata (escapes special chars)
-    safe_signature = sanitize_for_ascii(func_signature)
-    safe_func_name = sanitize_for_ascii(func_name)
-    safe_convention = sanitize_for_ascii(func_convention or "unknown")
-    safe_addr_range = sanitize_for_ascii(str(func_addr_range))
+    # Use sanitize_string with preserve_newlines=True for multi-line code blocks
+    safe_decompiled = sanitize_string(decompiled_code, preserve_newlines=True)
+    safe_assembly = sanitize_string(assembly_code, preserve_newlines=True)
+    # Use sanitize_string (default) for single-line metadata (escapes special chars)
+    safe_signature = sanitize_string(func_signature)
+    safe_func_name = sanitize_string(func_name)
+    safe_convention = sanitize_string(func_convention or "unknown")
+    safe_addr_range = sanitize_string(str(func_addr_range))
     return template.format(
         func_name=safe_func_name,
         func_addr=func_addr,
@@ -136,13 +136,13 @@ def create_lean_cpp_content(func_name, func_addr, func_addr_range, func_conventi
     Returns:
         File content as string
     """
-    # Use sanitize_file_content for multi-line code blocks to preserve newlines
-    safe_decompiled = sanitize_file_content(decompiled_code)
-    # Use sanitize_for_ascii for single-line metadata
-    safe_signature = sanitize_for_ascii(func_signature)
-    safe_func_name = sanitize_for_ascii(func_name)
-    safe_convention = sanitize_for_ascii(func_convention or "unknown")
-    safe_addr_range = sanitize_for_ascii(str(func_addr_range))
+    # Use sanitize_string with preserve_newlines=True for multi-line code blocks
+    safe_decompiled = sanitize_string(decompiled_code, preserve_newlines=True)
+    # Use sanitize_string (default) for single-line metadata
+    safe_signature = sanitize_string(func_signature)
+    safe_func_name = sanitize_string(func_name)
+    safe_convention = sanitize_string(func_convention or "unknown")
+    safe_addr_range = sanitize_string(str(func_addr_range))
     template_parts = [
         "// Name: {func_name}",
         "// Address: {func_addr}",
@@ -182,11 +182,11 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
     Returns:
         File content as string
     """
-    safe_func_name = sanitize_for_ascii(func_name)
-    # Use sanitize_file_content for multi-line assembly to preserve newlines
-    safe_assembly = sanitize_file_content(assembly_code)
-    safe_addr_range = sanitize_for_ascii(str(func_addr_range))
-    safe_signature = sanitize_for_ascii(func_signature) if func_signature else "unknown"
+    safe_func_name = sanitize_string(func_name)
+    # Use sanitize_string with preserve_newlines=True for multi-line assembly
+    safe_assembly = sanitize_string(assembly_code, preserve_newlines=True)
+    safe_addr_range = sanitize_string(str(func_addr_range))
+    safe_signature = sanitize_string(func_signature) if func_signature else "unknown"
     asm_lines = []
 
     # Function Header Block
@@ -224,7 +224,7 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
         xref_count = len(func_xrefs)
         asm_lines.append("; XREF[%d]:" % xref_count)
         for xref in func_xrefs[:10]:
-            asm_lines.append(";   %s at %s" % (sanitize_for_ascii(xref.get('name', 'unknown')), xref.get('from_addr', '?')))
+            asm_lines.append(";   %s at %s" % (sanitize_string(xref.get('name', 'unknown')), xref.get('from_addr', '?')))
         if xref_count > 10:
             asm_lines.append(";   ... and %d more" % (xref_count - 10))
         asm_lines.append(";")
@@ -233,11 +233,11 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
     if func_globals:
         asm_lines.append("; Referenced Globals:")
         for glob in func_globals[:15]:
-            glob_type = sanitize_for_ascii(glob.get('type', 'undefined'))
-            glob_name = sanitize_for_ascii(glob.get('name', 'unknown'))
+            glob_type = sanitize_string(glob.get('type', 'undefined'))
+            glob_name = sanitize_string(glob.get('name', 'unknown'))
             glob_value = glob.get('value')
             if glob_value:
-                asm_lines.append(";   %s %s = %s" % (glob_type, glob_name, sanitize_for_ascii(str(glob_value))))
+                asm_lines.append(";   %s %s = %s" % (glob_type, glob_name, sanitize_string(str(glob_value))))
             else:
                 asm_lines.append(";   %s %s" % (glob_type, glob_name))
         if len(func_globals) > 15:
@@ -248,7 +248,7 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
     if func_calls:
         asm_lines.append("; Called Functions:")
         for call in func_calls[:15]:
-            asm_lines.append(";   %s" % sanitize_for_ascii(call.get('name', 'unknown')))
+            asm_lines.append(";   %s" % sanitize_string(call.get('name', 'unknown')))
         if len(func_calls) > 15:
             asm_lines.append(";   ... and %d more" % (len(func_calls) - 15))
         asm_lines.append(";")

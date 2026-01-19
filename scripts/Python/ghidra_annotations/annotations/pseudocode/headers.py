@@ -17,7 +17,7 @@ from ghidra_annotations.util.data_type import collect_type_dependencies_with_con
 from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes
 from ghidra_annotations.annotations import is_standard_ghidra_category, get_primitive_data_types
 from ghidra_annotations.util.string import sanitize_c_identifier
-from ghidra_annotations.annotations.pseudocode.strings import sanitize_file_content
+from ghidra_annotations.annotations.pseudocode.strings import sanitize_string
 
 
 def resolve_data_type_name_for_headers(currentProgram, type_obj, seen=None, preserve_typedefs=True):
@@ -463,7 +463,7 @@ def write_header_file(file_path, content):
     """
     try:
         with open(file_path, 'w') as f:
-            f.write(sanitize_file_content(content))
+            f.write(sanitize_string(content, preserve_newlines=True))
             f.write("\n")
     except Exception as e:
         log_info("Failed to write header file %s: %s" % (file_path, str(e)))

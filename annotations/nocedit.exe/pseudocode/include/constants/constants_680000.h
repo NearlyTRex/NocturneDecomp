@@ -298,6 +298,9 @@ const float10 g_PiOver2 = 1.5707963f;
 const float10 g_CalculatedPi = 3.1415927f;
 const float10 g_HalfCalculatedPi = 1.5707963f;
 
+// int constants
+const int DAT_00684f34 = 0x2D;
+
 // undefined2 constants
 const undefined2 DAT_00684f38 = 0x4002;
 const undefined2 DAT_0068546c = 0x127F;
@@ -310,14 +313,12 @@ const undefined4 DAT_006810dc = 0x00000180;
 const undefined4 DAT_006810e0 = 0x00000200;
 const undefined4 DAT_006810e4 = 0x00000180;
 const undefined4 DAT_00681264 = 0x00000080;
-const undefined4 DAT_00681864 = 0x00000007;
 const undefined4 DAT_006819fc = 0xFFFFF100;
 const undefined4 DAT_00681a04 = 0xFFFFF100;
 const undefined4 DAT_006844f4 = 0x00002000;
 const undefined4 DAT_00684cd0 = 0x00000001;
 const undefined4 DAT_00684cea = 0x00000002;
 const undefined4 DAT_00684ed0 = 0x00000100;
-const undefined4 DAT_00684f34 = 0xA0000000;
 const undefined4 DAT_006850a4 = 0x00000005;
 const undefined4 DAT_006850a8 = 0x00000009;
 const undefined4 DAT_00685210 = 0xFF010806;

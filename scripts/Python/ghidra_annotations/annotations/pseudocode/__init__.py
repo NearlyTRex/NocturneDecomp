@@ -1,6 +1,7 @@
 # Pseudocode export submodules
 # This package contains modularized components for pseudocode export functionality
 
+from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 from ghidra_annotations.annotations.pseudocode.parallel import (
     DecompilerThreadLocal,
     DecompileResult,
@@ -11,9 +12,7 @@ from ghidra_annotations.annotations.pseudocode.parallel import (
 from ghidra_annotations.annotations.pseudocode.strings import (
     get_safe_str,
     escape_c_string,
-    escape_for_c_string,
-    sanitize_for_ascii,
-    sanitize_file_content,
+    sanitize_string,
     format_char_array_as_c_strings,
     format_single_char_pointer,
     detect_char_array_pattern,
@@ -115,8 +114,13 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
     transform_sborrow_artifacts,
     apply_all_transforms,
     count_auto_fixable_suspects,
-    get_remaining_suspects_after_transforms
+    get_remaining_suspects_after_transforms,
+    replacements_cache,
+    pcode_overrides_cache
 )
+from ghidra_annotations.annotations.pseudocode.proto import proto_cache
+from ghidra_annotations.annotations.pseudocode.callfixups import callfixups_cache
+from ghidra_annotations.annotations.pseudocode.decompiler_fixes import per_function_fixes_cache
 from ghidra_annotations.annotations.pseudocode.exporter import (
     export_pseudocode
 )

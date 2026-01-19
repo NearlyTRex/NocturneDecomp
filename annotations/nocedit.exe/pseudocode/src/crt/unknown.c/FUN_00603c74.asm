@@ -10,8 +10,8 @@
 ;   crt_unknown.c_CondCallDoNothing_FUN_00603ccc at 00603d3a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00684f30
-;   undefined4 DAT_00684f34
+;   int DAT_00684f30 = 0x0
+;   int DAT_00684f34 = -0x60000000
 ;   undefined2 DAT_00684f38
 ;
 ; Called Functions:

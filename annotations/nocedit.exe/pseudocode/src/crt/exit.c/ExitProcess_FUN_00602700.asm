@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   ExitProcess* g_ExitProcessFunc = 00211d12
 ;   void* PTR_crt_sync.c_CriticalSectionCleanup_FUN_00602434_00684f20 = 00602434
-;   undefined4 g_SpecialExitHandler
+;   int g_SpecialExitHandler = 0x0
 ;   int g_EmergencyExitFlag
 ;
 ; Called Functions:

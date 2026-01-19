@@ -26,7 +26,7 @@
 ;   char[21] s__0062a87d
 ;   char[11] s__0062a892
 ;   TerminatedCString s_maxCharHght_d_0062a89d
-;   char s_CharMax_0062a8ad = \u00ff
+;   char s_CharMax_0062a8ad = \xff
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight

@@ -253,13 +253,11 @@ extern WatcomStaticDestructorNode* g_AtexitListHead;
 // byte
 extern byte g_WindowsMajorVersion;
 extern byte g_TimezoneInitFlags;
+extern byte g_DebuggerIsAttached;
+extern byte g_ConsoleHandlerRegistered;
 
 // byte[16]
 extern byte g_IEEE754ExponentClassTable[16];
-
-// char
-extern char g_DebuggerIsAttached;
-extern char g_ConsoleHandlerRegistered;
 
 // char*
 extern char* g_CurrentTrainMode;
@@ -299,6 +297,7 @@ extern dst_rule g_DstStartRule;
 extern float g_MaxSoftwareLatency;
 
 // int
+extern int g_DynamicRenderMode;
 extern int g_ConfirmNewActorNames;
 extern int g_CNPCClassVersion;
 extern int g_CPassengerClassVersion;
@@ -311,6 +310,8 @@ extern int g_RenderMirrorsFlag;
 extern int g_CShotgunClassVersion;
 extern int g_CShovelClassVersion;
 extern int g_CSimBoxClassVersion;
+extern int g_CSkeletonVersion;
+extern int INT_00681864;
 extern int g_CSmileyClassVersion;
 extern int g_SfxPlaybackStateCounter;
 extern int g_MaxSoundChannels;
@@ -389,6 +390,8 @@ extern int g_ForceMessagePump;
 extern int g_PreviousActiveState;
 extern int g_CZombieClassVersion;
 extern int g_MaxErrnoValue;
+extern int g_SpecialExitHandler;
+extern int DAT_00684f30;
 extern int g_ConsoleInitializationFlag;
 extern int g_UseSoftwareMath;
 extern int g_DstTransitionSecond;
@@ -446,7 +449,6 @@ extern undefined1 DAT_006852db;
 
 // undefined4
 extern undefined4 DAT_00680648;
-extern undefined4 g_DynamicRenderMode;
 extern undefined4 DAT_00680818;
 extern undefined4 DAT_00680830;
 extern undefined4 DAT_00680834;
@@ -461,12 +463,9 @@ extern undefined4 DAT_00680d64;
 extern undefined4 DAT_0068105c;
 extern undefined4 DAT_0068125c;
 extern undefined4 DAT_00681260;
-extern undefined4 g_CSkeletonVersion;
 extern undefined4 DAT_00681a00;
 extern undefined4 DAT_00684ccc;
 extern undefined4 DAT_00684edc;
-extern undefined4 g_SpecialExitHandler;
-extern undefined4 DAT_00684f30;
 extern undefined4 DAT_00684fd0;
 extern undefined4 DAT_00685094;
 extern undefined4 DAT_006850b0;

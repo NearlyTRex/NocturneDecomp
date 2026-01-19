@@ -49,8 +49,8 @@ from ghidra_annotations.annotations.pseudocode.functions import (
     extract_virtual_filename, generate_source_filename, load_vtable_data
 )
 from ghidra_annotations.annotations.pseudocode.transforms import (
-    apply_all_transforms, load_custom_replacements, apply_custom_replacements,
-    preload_custom_replacements, set_pcode_overrides_cache, load_pcode_overrides
+    apply_all_transforms, apply_custom_replacements,
+    replacements_cache, pcode_overrides_cache
 )
 from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_suspect_lines, calculate_complexity_metrics, identify_pcode_suspects,
@@ -69,17 +69,16 @@ from ghidra_annotations.annotations.pseudocode.pcode import (
 )
 from ghidra_annotations.annotations.pseudocode.callfixups import (
     register_callfixups, clear_callfixups, generate_callfixups_file,
-    preload_global_callfixups
+    callfixups_cache, CALLFIXUPS_FILENAME
 )
 from ghidra_annotations.annotations.pseudocode.proto import (
     register_proto_overrides, apply_proto_overrides,
-    preload_proto_overrides, load_proto_overrides_for_function,
-    generate_proto_overrides_file, preload_global_proto_overrides
+    generate_proto_overrides_file, proto_cache, PROTO_OVERRIDES_FILENAME
 )
 from ghidra_annotations.annotations.pseudocode.decompiler_fixes import (
     preload_decompiler_fixes, generate_decompiler_fixes_file,
     register_decompiler_fixes, clear_decompiler_fixes,
-    preload_per_function_decompiler_fixes, load_decompiler_fixes_for_function
+    preload_per_function_decompiler_fixes, per_function_fixes_cache
 )
 
 # Suspect types to omit from output (no longer useful after BADSPACEBASE fix)
@@ -198,7 +197,7 @@ def register_pcode_overrides(src_dir):
                     continue
 
                 # Cache for preservation in output JSON
-                set_pcode_overrides_cache(filepath, overrides)
+                pcode_overrides_cache.set_cache(filepath, overrides)
 
                 # Get function address from the JSON data (nested in function object)
                 func_addr_str = data.get('function', {}).get('address', '')
@@ -259,18 +258,18 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     else:
         json_base = source_filename
     existing_json_path = os.path.join(pseudocode_src_dir, json_base + '.json')
-    custom_replacements = load_custom_replacements(existing_json_path)
+    custom_replacements = replacements_cache.load_for_function(existing_json_path)
     if custom_replacements:
         decompiled_code = apply_custom_replacements(decompiled_code, custom_replacements)
 
     # Load pcode overrides to preserve them in output
-    pcode_overrides = load_pcode_overrides(existing_json_path)
+    pcode_overrides = pcode_overrides_cache.load_for_function(existing_json_path)
 
     # Load proto overrides to preserve them in output
-    proto_overrides = load_proto_overrides_for_function(existing_json_path)
+    proto_overrides = proto_cache.load_for_function(existing_json_path)
 
     # Load decompiler fixes to preserve them in output
-    decompiler_fixes = load_decompiler_fixes_for_function(existing_json_path)
+    decompiler_fixes = per_function_fixes_cache.load_for_function(existing_json_path)
     transform_time = time.time() - transform_start
 
     # === PYTHON-ONLY: Analysis using pre-computed data from worker ===
@@ -420,15 +419,15 @@ def export_pseudocode(currentProgram, path, strict=False):
     # Pre-load global callfixups.json BEFORE cleanup to preserve user modifications
     timer.start_phase("Preload callfixups")
     log_info("Pre-loading global callfixups.json...")
-    preload_global_callfixups(pseudocode_dir)
+    callfixups_cache.preload_global(pseudocode_dir, CALLFIXUPS_FILENAME)
     timer.end_phase()
 
     # Pre-load global proto_overrides.json BEFORE cleanup to preserve user modifications
     timer.start_phase("Preload proto_overrides")
     log_info("Pre-loading global proto_overrides.json...")
-    preload_global_proto_overrides(pseudocode_dir)
+    proto_cache.preload_global(pseudocode_dir, PROTO_OVERRIDES_FILENAME)
     log_info("Pre-loading per-function proto_overrides from existing JSON files...")
-    preload_proto_overrides(pseudocode_src_dir)
+    proto_cache.preload_directory(pseudocode_src_dir)
     timer.end_phase()
 
     # Pre-load decompiler fixes configuration BEFORE cleanup to preserve user modifications
@@ -443,7 +442,7 @@ def export_pseudocode(currentProgram, path, strict=False):
     # (pcode overrides are already cached by register_pcode_overrides above)
     timer.start_phase("Preload custom replacements")
     log_info("Pre-loading custom replacements from existing JSON files...")
-    preload_custom_replacements(pseudocode_src_dir)
+    replacements_cache.preload_directory(pseudocode_src_dir)
     timer.end_phase()
 
     # Clean up existing pseudocode files (now safe - all user data is cached)

@@ -200,6 +200,7 @@ import json
 from ghidra.app.decompiler import DecompInterface
 
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 
 # Fix flag constants - must match DecompilerFixFlags in decompiler_fixes.hh
 DFIX_NONE = 0
@@ -218,12 +219,12 @@ FIX_NAME_TO_FLAG = {
     "spacebase_propagation": DFIX_SPACEBASE_PROPAGATION,
 }
 
-# Cache of loaded fixes configuration (global file)
+# Cache of loaded fixes configuration (global file - bitmask per address)
 _fixes_cache = {}
 
-# Cache for per-function decompiler_fixes loaded from JSON files
-_per_function_fixes_cache = {}
-_per_function_fixes_cache_dir = None
+# Cache manager for per-function decompiler_fixes (list of fix names)
+per_function_fixes_cache = JsonCacheManager('decompiler_fixes', json_key='decompiler_fixes',
+                                             default_factory=list, type_check=list)
 
 
 def preload_decompiler_fixes(pseudocode_dir):
@@ -423,14 +424,17 @@ def preload_per_function_decompiler_fixes(base_dir):
     Args:
         base_dir: Directory containing function JSON files
     """
-    global _per_function_fixes_cache, _per_function_fixes_cache_dir, _fixes_cache
-    _per_function_fixes_cache = {}
-    _per_function_fixes_cache_dir = base_dir
+    global _fixes_cache
+
+    # Clear the per-function cache
+    per_function_fixes_cache.clear()
 
     if not base_dir or not os.path.exists(base_dir):
         return
 
     # Recursively scan for all .json files and load their decompiler_fixes
+    # We do this manually because we also need to extract the function address
+    # from the same JSON file to merge into the bitmask cache
     loaded_count = 0
     try:
         for root, dirs, files in os.walk(base_dir):
@@ -443,7 +447,7 @@ def preload_per_function_decompiler_fixes(base_dir):
                             decompiler_fixes = data.get('decompiler_fixes')
                             if decompiler_fixes and isinstance(decompiler_fixes, list):
                                 # Cache for preservation in output JSON
-                                _per_function_fixes_cache[json_path] = decompiler_fixes
+                                per_function_fixes_cache.set_cache(json_path, decompiler_fixes)
 
                                 # Also merge into _fixes_cache for registration
                                 # Get function address from the JSON
@@ -474,53 +478,3 @@ def preload_per_function_decompiler_fixes(base_dir):
         log_info("Preloaded decompiler_fixes from %d function JSON files" % loaded_count)
 
 
-def load_decompiler_fixes_for_function(json_path):
-    """Load decompiler_fixes from an existing function JSON file.
-
-    Looks for a 'decompiler_fixes' key in the JSON that contains a list
-    of fix names (e.g., ["multiequal_stack_trace"]).
-
-    Uses cache if preload_per_function_decompiler_fixes was called.
-
-    Args:
-        json_path: Path to the function's JSON file
-
-    Returns:
-        List of fix names, or empty list if none found
-    """
-    global _per_function_fixes_cache
-
-    if not json_path:
-        return []
-
-    # Use cache if available
-    if json_path in _per_function_fixes_cache:
-        return _per_function_fixes_cache[json_path]
-
-    # Fallback to file I/O (handles cache misses and path mismatches)
-    if not os.path.exists(json_path):
-        return []
-
-    try:
-        with open(json_path, 'r') as f:
-            data = json.load(f)
-            decompiler_fixes = data.get('decompiler_fixes')
-            if decompiler_fixes and isinstance(decompiler_fixes, list):
-                return decompiler_fixes
-    except Exception:
-        pass
-
-    return []
-
-
-def set_decompiler_fixes_cache(json_path, decompiler_fixes):
-    """Set a decompiler_fixes entry in the cache.
-
-    Called by preload to populate cache while loading from JSON.
-
-    Args:
-        json_path: Path to the JSON file
-        decompiler_fixes: List of fix names
-    """
-    global _per_function_fixes_cache
-    _per_function_fixes_cache[json_path] = decompiler_fixes

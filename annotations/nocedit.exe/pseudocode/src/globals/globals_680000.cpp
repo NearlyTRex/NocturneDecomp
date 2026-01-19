@@ -3649,13 +3649,11 @@ WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 // byte
 byte g_WindowsMajorVersion = 0x0;
 byte g_TimezoneInitFlags = 0x1;
+byte g_DebuggerIsAttached = 0x0;
+byte g_ConsoleHandlerRegistered = 0x0;
 
 // byte[16]
 byte g_IEEE754ExponentClassTable[16] = {0x00, 0x01, 0x00, 0x00, 0x04, 0x00, 0x00, 0x07, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x0D, 0x00, 0x00};
-
-// char
-char g_DebuggerIsAttached = '\0';
-char g_ConsoleHandlerRegistered = '\0';
 
 // char*
 char* g_CurrentTrainMode = (char*)s_int_00652706;
@@ -3704,6 +3702,7 @@ dst_rule g_DstStartRule = {
 float g_MaxSoftwareLatency = 0.5f;
 
 // int
+int g_DynamicRenderMode = 0x1;
 int g_ConfirmNewActorNames = 0x1;
 int g_CNPCClassVersion = 0x4;
 int g_CPassengerClassVersion = 0x6;
@@ -3716,6 +3715,8 @@ int g_RenderMirrorsFlag = 0x1;
 int g_CShotgunClassVersion = 0x1;
 int g_CShovelClassVersion = 0x1;
 int g_CSimBoxClassVersion = 0x3;
+int g_CSkeletonVersion = 0x3;
+int INT_00681864 = 0x7;
 int g_CSmileyClassVersion = 0x1;
 int g_SfxPlaybackStateCounter = 0x1;
 int g_MaxSoundChannels = 0x20;
@@ -3794,6 +3795,8 @@ int g_ForceMessagePump = 0x1;
 int g_PreviousActiveState = 0x2D;
 int g_CZombieClassVersion = 0xb;
 int g_MaxErrnoValue = 0x28;
+int g_SpecialExitHandler = 0x0;
+int DAT_00684f30 = 0x0;
 int g_ConsoleInitializationFlag = 0x0;
 int g_UseSoftwareMath = 0x0;
 int g_DstTransitionSecond = 0x0;
@@ -3857,7 +3860,6 @@ undefined1 DAT_006852db = 0;
 
 // undefined4
 undefined4 DAT_00680648 = 0xFFFFFFFF;
-undefined4 g_DynamicRenderMode = 0x00000001;
 undefined4 DAT_00680818 = 0x501502F9;
 undefined4 DAT_00680830 = 0;
 undefined4 DAT_00680834 = 0;
@@ -3872,12 +3874,9 @@ undefined4 DAT_00680d64 = 0;
 undefined4 DAT_0068105c = 0x00000001;
 undefined4 DAT_0068125c = 0;
 undefined4 DAT_00681260 = 0;
-undefined4 g_CSkeletonVersion = 0x00000003;
 undefined4 DAT_00681a00 = 0;
 undefined4 DAT_00684ccc = 0;
 undefined4 DAT_00684edc = 0;
-undefined4 g_SpecialExitHandler = 0;
-undefined4 DAT_00684f30 = 0;
 undefined4 DAT_00684fd0 = 0;
 undefined4 DAT_00685094 = 0;
 undefined4 DAT_006850b0 = 0;

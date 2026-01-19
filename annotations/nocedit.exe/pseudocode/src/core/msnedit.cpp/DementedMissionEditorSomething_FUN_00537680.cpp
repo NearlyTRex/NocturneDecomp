@@ -75,12 +75,12 @@ void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
     }
     crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"4. Disable mouse selection of CBarriers: %s",pcVar5);
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x4d);
-    if (g_DynamicRenderMode < 2) {
+    if ((uint)g_DynamicRenderMode < 2) {
 LAB_005377d8:
       pcVar5 = "5. Dynamic render mode: flat shade";
       g_DynamicRenderMode = 1;
     }
-    else if (g_DynamicRenderMode < 3) {
+    else if ((uint)g_DynamicRenderMode < 3) {
       pcVar5 = "5. Dynamic render mode: multi-color";
     }
     else {

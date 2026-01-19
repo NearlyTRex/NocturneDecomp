@@ -16,8 +16,8 @@ void __cdecl crt_exit_c_ExitProcess_FUN_00602700(int exit_code)
     crt_exit_c_ProcessExitHandlers_FUN_0060ac88('\0','\x0f');
     (*PTR_crt_sync_c_CriticalSectionCleanup_FUN_00602434_00684f20)();
   }
-  else if (g_SpecialExitHandler != (code *)0x0) {
-    (*g_SpecialExitHandler)();
+  else if (g_SpecialExitHandler != 0) {
+    (*(code *)g_SpecialExitHandler)();
   }
   (*g_ExitProcessFunc)(unaff_retaddr);
   return;

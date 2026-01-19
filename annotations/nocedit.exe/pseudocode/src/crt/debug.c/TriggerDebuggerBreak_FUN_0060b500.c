@@ -12,7 +12,7 @@ int __cdecl crt_debug_c_TriggerDebuggerBreak_FUN_0060b500(char *error_message,us
   code *pcVar1;
   int iVar2;
   
-  if (g_DebuggerIsAttached != '\0') {
+  if (g_DebuggerIsAttached != 0) {
     pcVar1 = (code *)swi(3);
     iVar2 = (*pcVar1)();
     return iVar2;

@@ -17,7 +17,7 @@
 ;   TerminatedCString s_disableMouseHitOnBarrier_0063b87e
 ;   TerminatedCString s_dynamicRenderMode_0063b898
 ;   TerminatedCString s_confirmNewActorNames_0063b8aa
-;   undefined4 g_DynamicRenderMode
+;   int g_DynamicRenderMode = 0x1
 ;   int g_ConfirmNewActorNames = 0x1
 ;   int g_DisableMouseHitOnBarrier
 ;

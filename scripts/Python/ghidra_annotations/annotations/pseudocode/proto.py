@@ -139,6 +139,7 @@ USAGE
 import os
 import json
 from ghidra_annotations.util.log import log_info, log_error
+from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 
 
 # Default proto overrides - define in annotations/<program>/pseudocode/proto_overrides.json
@@ -148,133 +149,16 @@ DEFAULT_PROTO_OVERRIDES = []
 PROTO_OVERRIDES_FILENAME = "proto_overrides.json"
 
 # ============================================================================
-# Cache for proto overrides loaded from JSON files
+# Cache manager for proto overrides
 # ============================================================================
 
-# Cache for proto overrides to avoid repeated file I/O and survive cleanup
-_proto_overrides_cache = {}
-_proto_overrides_cache_dir = None
-# Path to the main proto_overrides.json file
-_proto_overrides_json_path = None
-# Cache for the global proto_overrides.json content (to survive cleanup)
-_global_proto_overrides_cache = None
+# Cache manager for proto overrides (global file is root-level array,
+# per-function files have data under 'proto_overrides' key)
+proto_cache = JsonCacheManager('proto_overrides', json_key='proto_overrides',
+                                default_factory=list, type_check=list)
+
 # Pending overrides loaded by register_proto_overrides(), applied by apply_proto_overrides()
 _pending_proto_overrides = []
-
-
-# ============================================================================
-# Preload and cache functions (called before cleanup)
-# ============================================================================
-
-def preload_global_proto_overrides(pseudocode_dir):
-    """Preload the global proto_overrides.json file before cleanup.
-
-    This caches the existing proto overrides so they can be merged with defaults
-    after the cleanup phase deletes the file.
-
-    Args:
-        pseudocode_dir: The pseudocode directory
-
-    Returns:
-        List of existing proto overrides, or empty list if not found
-    """
-    global _global_proto_overrides_cache, _proto_overrides_json_path
-
-    proto_overrides_path = os.path.join(pseudocode_dir, PROTO_OVERRIDES_FILENAME)
-    _proto_overrides_json_path = proto_overrides_path
-    _global_proto_overrides_cache = []
-    if os.path.exists(proto_overrides_path):
-        try:
-            with open(proto_overrides_path, 'r') as f:
-                _global_proto_overrides_cache = json.load(f)
-                log_info("Preloaded %d proto overrides from %s" % (
-                    len(_global_proto_overrides_cache), proto_overrides_path))
-        except Exception as e:
-            log_info("Could not preload proto_overrides.json: %s" % str(e))
-    return _global_proto_overrides_cache
-
-
-def preload_proto_overrides(base_dir):
-    """Pre-load all proto overrides from JSON files in a directory.
-
-    Call this once before processing functions to cache all proto overrides.
-    Recursively scans all subdirectories.
-
-    Args:
-        base_dir: Directory containing function JSON files
-    """
-    global _proto_overrides_cache, _proto_overrides_cache_dir
-    _proto_overrides_cache = {}
-    _proto_overrides_cache_dir = base_dir
-
-    if not base_dir or not os.path.exists(base_dir):
-        return
-
-    # Recursively scan for all .json files and load their proto_overrides
-    try:
-        for root, dirs, files in os.walk(base_dir):
-            for filename in files:
-                if filename.endswith('.json'):
-                    json_path = os.path.join(root, filename)
-                    try:
-                        with open(json_path, 'r') as f:
-                            data = json.load(f)
-                            proto_overrides = data.get('proto_overrides')
-                            if proto_overrides and isinstance(proto_overrides, list):
-                                log_info("Preloaded %d proto overrides from %s" % (len(proto_overrides), json_path))
-                                _proto_overrides_cache[json_path] = proto_overrides
-                    except Exception:
-                        pass
-    except Exception:
-        pass
-
-
-def load_proto_overrides_for_function(json_path):
-    """Load proto overrides from an existing function JSON file.
-
-    Looks for a 'proto_overrides' key in the JSON that contains a list
-    of override definitions.
-
-    Uses cache if preload_proto_overrides was called.
-
-    Args:
-        json_path: Path to the function's JSON file
-
-    Returns:
-        List of proto overrides, or empty list if none found
-    """
-    global _proto_overrides_cache
-    if not json_path:
-        return []
-
-    # Use cache if available
-    if json_path in _proto_overrides_cache:
-        return _proto_overrides_cache[json_path]
-
-    # Fallback to file I/O (handles cache misses and path mismatches)
-    if not os.path.exists(json_path):
-        return []
-
-    try:
-        with open(json_path, 'r') as f:
-            data = json.load(f)
-            proto_overrides = data.get('proto_overrides')
-            if proto_overrides and isinstance(proto_overrides, list):
-                return proto_overrides
-    except Exception:
-        pass
-    return []
-
-
-def set_proto_overrides_cache(json_path, proto_overrides):
-    """Set a proto overrides entry in the cache.
-
-    Args:
-        json_path: Path to the JSON file
-        proto_overrides: List of proto override definitions
-    """
-    global _proto_overrides_cache
-    _proto_overrides_cache[json_path] = proto_overrides
 
 
 # ============================================================================
@@ -287,7 +171,7 @@ def generate_proto_overrides_file(pseudocode_dir):
     This merges any previously cached user-defined proto overrides,
     preserving user modifications.
 
-    Call preload_global_proto_overrides() before cleanup to cache existing modifications.
+    Call proto_cache.preload_global() before cleanup to cache existing modifications.
 
     Args:
         pseudocode_dir: The pseudocode directory (e.g., annotations/nocedit.exe/pseudocode)
@@ -295,14 +179,13 @@ def generate_proto_overrides_file(pseudocode_dir):
     Returns:
         Path to the generated file
     """
-    global _proto_overrides_json_path, _global_proto_overrides_cache
     proto_overrides_path = os.path.join(pseudocode_dir, PROTO_OVERRIDES_FILENAME)
-    _proto_overrides_json_path = proto_overrides_path
 
     # Start with defaults, then merge cached overrides
     proto_overrides = list(DEFAULT_PROTO_OVERRIDES)
-    if _global_proto_overrides_cache:
-        proto_overrides.extend(_global_proto_overrides_cache)
+    cached = proto_cache.get_global_cache()
+    if cached:
+        proto_overrides.extend(cached)
 
     # Write the merged proto overrides as a plain array
     try:
@@ -593,7 +476,6 @@ def apply_proto_overrides(program):
 
 def clear_proto_overrides():
     """Clear all registered proto overrides and the cache."""
-    global _proto_overrides_cache
     from ghidra.program.model.pcode import HighFunction
     HighFunction.clearProtoOverrides()
-    _proto_overrides_cache = {}
+    proto_cache.clear()

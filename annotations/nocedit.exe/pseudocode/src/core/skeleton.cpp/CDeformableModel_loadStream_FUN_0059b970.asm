@@ -115,7 +115,7 @@ section .text
     ADD ESP,0x4                         ; 0059b9d4
     MOV EAX,dword ptr [ESP + 0x28]      ; 0059b9d7
         ;   Label: LAB_0059b9d7
-    MOV EDI,dword ptr [0x00681864]      ; 0059b9db | DAT_00681864
+    MOV EDI,dword ptr [0x00681864]      ; 0059b9db | INT_00681864
     CMP EAX,EDI                         ; 0059b9e1
     JLE 0x0059ba0d                      ; 0059b9e3
         ;   XREF to: 0059ba0d (CONDITIONAL_JUMP)  ; LAB_0059ba0d
