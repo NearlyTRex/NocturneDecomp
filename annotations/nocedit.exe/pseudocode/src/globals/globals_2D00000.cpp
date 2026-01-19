@@ -5,10 +5,10 @@
 // =============================================================================
 
 // CEventList
-CEventList g_CEventListInstance;
+CEventList g_CEventListInstance = {};
 
 // CMatrix3x3i
-CMatrix3x3i g_TransformMatrix;
+CMatrix3x3i g_TransformMatrix = {};
 
 // uint[1600]
 uint g_ReciprocalLookupTable[1600] = {};

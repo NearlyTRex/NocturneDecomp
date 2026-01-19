@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CDemonPod
-CDemonPod g_CDemonPodInstance;
+CDemonPod g_CDemonPodInstance = {};
 
 // SSoftwareEdge[16]
 SSoftwareEdge g_SoftwareEdgeBuffer[16] = {};

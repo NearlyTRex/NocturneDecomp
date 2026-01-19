@@ -5,11 +5,11 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CNPCClassInfo;
-CDemonActorType g_CPassengerClassInfo;
+CDemonActorType g_CNPCClassInfo = {};
+CDemonActorType g_CPassengerClassInfo = {};
 
 // CMouse
-CMouse g_CMouseInstance;
+CMouse g_CMouseInstance = {};
 
 // CPathMap[12]
 CPathMap DAT_02fd9060[12] = {};

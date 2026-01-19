@@ -5,20 +5,20 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CSpikeClassInfo;
-CDemonActorType g_CStairsClassInfo;
-CDemonActorType g_CTempleStoneClassInfo;
-CDemonActorType g_CStrangerClassInfo;
-CDemonActorType g_CSuccubusClassInfo;
-CDemonActorType g_CSvetlanaClassInfo;
-CDemonActorType g_CBassPlayerClassInfo;
-CDemonActorType g_CDrummerClassInfo;
-CDemonActorType g_CTeleportDestClassInfo;
-CDemonActorType g_CTeleportClassInfo;
-CDemonActorType g_CTentacleClassInfo;
+CDemonActorType g_CSpikeClassInfo = {};
+CDemonActorType g_CStairsClassInfo = {};
+CDemonActorType g_CTempleStoneClassInfo = {};
+CDemonActorType g_CStrangerClassInfo = {};
+CDemonActorType g_CSuccubusClassInfo = {};
+CDemonActorType g_CSvetlanaClassInfo = {};
+CDemonActorType g_CBassPlayerClassInfo = {};
+CDemonActorType g_CDrummerClassInfo = {};
+CDemonActorType g_CTeleportDestClassInfo = {};
+CDemonActorType g_CTeleportClassInfo = {};
+CDemonActorType g_CTentacleClassInfo = {};
 
 // CDirectSoundDevice
-CDirectSoundDevice g_CDirectSoundDeviceInstance;
+CDirectSoundDevice g_CDirectSoundDeviceInstance = {};
 
 // CSfxOptions[8]
 CSfxOptions g_SfxOptions[8] = {};
@@ -27,37 +27,37 @@ CSfxOptions g_SfxOptions[8] = {};
 CSfxSample g_SfxSamples[64] = {};
 
 // CSound
-CSound g_CSoundInstance;
+CSound g_CSoundInstance = {};
 
 // CSpotView
-CSpotView g_CSpotViewInstance;
+CSpotView g_CSpotViewInstance = {};
 
 // CStrList
-CStrList g_MissingSoundsList;
-CStrList g_SoundFileList;
+CStrList g_MissingSoundsList = {};
+CStrList g_SoundFileList = {};
 
 // CTextureList
-CTextureList g_CTextureListInstance;
+CTextureList g_CTextureListInstance = {};
 
 // CVector3d
-CVector3d g_Cached3DListenerPos;
-CVector3d g_Cached3DListenerVelocity;
-CVector3d g_Cached3DListenerOrientFront;
-CVector3d g_Cached3DListenerOrientUp;
-CVector3d g_Cached3DListenerOrientRight;
+CVector3d g_Cached3DListenerPos = {};
+CVector3d g_Cached3DListenerVelocity = {};
+CVector3d g_Cached3DListenerOrientFront = {};
+CVector3d g_Cached3DListenerOrientUp = {};
+CVector3d g_Cached3DListenerOrientRight = {};
 
 // CVector3f
-CVector3f g_DeferredOrientRight;
-CVector3f g_SoundListenerPrev;
-CVector3f CVector3f_03f6af7c;
-CVector3f g_SoundListenerOrient;
-CVector3f g_TrainVelocityVector;
+CVector3f g_DeferredOrientRight = {};
+CVector3f g_SoundListenerPrev = {};
+CVector3f CVector3f_03f6af7c = {};
+CVector3f g_SoundListenerOrient = {};
+CVector3f g_TrainVelocityVector = {};
 
 // CWavInDevice
-CWavInDevice g_CWavInDeviceInstance;
+CWavInDevice g_CWavInDeviceInstance = {};
 
 // CWavOutDevice
-CWavOutDevice g_CWavOutDeviceInstance;
+CWavOutDevice g_CWavOutDeviceInstance = {};
 
 // HGLOBAL[20]
 HGLOBAL g_WaveInHeaderHandles[20] = {};
@@ -68,16 +68,16 @@ HGLOBAL g_WaveOutHeaderHandles[8] = {};
 HGLOBAL g_WaveOutBufferHandles[8] = {};
 
 // HMODULE
-HMODULE g_RendererDLLHandle;
+HMODULE g_RendererDLLHandle = {};
 
 // HWAVEIN
-HWAVEIN g_WaveInHandle;
+HWAVEIN g_WaveInHandle = {};
 
 // HWAVEOUT
-HWAVEOUT g_WaveOutHandle;
+HWAVEOUT g_WaveOutHandle = {};
 
 // HWND
-HWND g_StoredWindowHandle;
+HWND g_StoredWindowHandle = {};
 
 // IDirectSound3DBuffer*[31]
 IDirectSound3DBuffer* g_DirectSound3DBufferInterfaces[31] = {};

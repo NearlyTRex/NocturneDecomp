@@ -5,5 +5,5 @@
 // =============================================================================
 
 // CKeyFramedModel
-CKeyFramedModel DAT_03665f74;
+CKeyFramedModel DAT_03665f74 = {};
 

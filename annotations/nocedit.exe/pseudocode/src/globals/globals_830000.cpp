@@ -5,15 +5,15 @@
 // =============================================================================
 
 // CConsole
-CConsole g_ConsolePtr;
+CConsole g_ConsolePtr = {};
 
 // CDeformableModelInstance
-CDeformableModelInstance g_CDeformableModelInstanceInstance;
+CDeformableModelInstance g_CDeformableModelInstanceInstance = {};
 
 // CDemonActorType
-CDemonActorType g_CColonelClassInfo;
-CDemonActorType g_CConveyorClassInfo;
-CDemonActorType g_CZombieCowClassInfo;
+CDemonActorType g_CColonelClassInfo = {};
+CDemonActorType g_CConveyorClassInfo = {};
+CDemonActorType g_CZombieCowClassInfo = {};
 
 // SCramWorkingEntry[1]
 SCramWorkingEntry g_CramSortedTextureEntries[1] = {};

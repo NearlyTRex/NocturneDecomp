@@ -5,33 +5,33 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CTommyGunClassInfo;
-CDemonActorType g_CTrapClassInfo;
-CDemonActorType g_CTrashClassInfo;
-CDemonActorType g_CTriggerClassInfo;
-CDemonActorType g_CTurretClassInfo;
-CDemonActorType g_CTVBatClassInfo;
-CDemonActorType g_CVampireBossClassInfo;
-CDemonActorType g_CVehicleClassInfo;
-CDemonActorType g_CCryptVesselClassInfo;
+CDemonActorType g_CTommyGunClassInfo = {};
+CDemonActorType g_CTrapClassInfo = {};
+CDemonActorType g_CTrashClassInfo = {};
+CDemonActorType g_CTriggerClassInfo = {};
+CDemonActorType g_CTurretClassInfo = {};
+CDemonActorType g_CTVBatClassInfo = {};
+CDemonActorType g_CVampireBossClassInfo = {};
+CDemonActorType g_CVehicleClassInfo = {};
+CDemonActorType g_CCryptVesselClassInfo = {};
 
 // CTerrain
-CTerrain g_CTerrainInstance;
+CTerrain g_CTerrainInstance = {};
 
 // CVector3f
-CVector3f g_ZeroVector;
+CVector3f g_ZeroVector = {};
 
 // CVector3f[100]
 CVector3f DAT_03f8f638[100] = {};
 
 // CWater
-CWater g_CWaterInstance;
+CWater g_CWaterInstance = {};
 
 // SCollisionInfo[100]
 SCollisionInfo DAT_03f8fae8[100] = {};
 
 // SMRGLTextureBasic
-SMRGLTextureBasic g_CurrentTexture;
+SMRGLTextureBasic g_CurrentTexture = {};
 
 // int[4096]
 int g_VisibleWaterTilesX[4096] = {};

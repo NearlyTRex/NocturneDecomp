@@ -5,10 +5,10 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CShotgunClassInfo;
-CDemonActorType g_CShovelClassInfo;
-CDemonActorType g_CSimBoxClassInfo;
+CDemonActorType g_CShotgunClassInfo = {};
+CDemonActorType g_CShovelClassInfo = {};
+CDemonActorType g_CSimBoxClassInfo = {};
 
 // CPickList
-CPickList CPickList_03653fc0;
+CPickList CPickList_03653fc0 = {};
 

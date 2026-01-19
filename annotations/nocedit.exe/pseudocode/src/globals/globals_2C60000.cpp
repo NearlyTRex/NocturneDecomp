@@ -5,10 +5,10 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CDraculaBrideClassInfo;
+CDemonActorType g_CDraculaBrideClassInfo = {};
 
 // CDemonRenderer
-CDemonRenderer g_CDemonRendererInstance;
+CDemonRenderer g_CDemonRendererInstance = {};
 
 // SEdgeData[16]
 SEdgeData g_EdgeInterpolationArray[16] = {};

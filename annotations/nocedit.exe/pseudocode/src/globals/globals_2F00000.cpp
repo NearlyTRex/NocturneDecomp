@@ -5,20 +5,20 @@
 // =============================================================================
 
 // CAlphaBitmap
-CAlphaBitmap g_LoadingScreenBitmap1;
-CAlphaBitmap g_LoadingScreenBitmap2;
-CAlphaBitmap g_LoadingScreenBitmap3;
-CAlphaBitmap g_LoadingScreenBitmap4;
+CAlphaBitmap g_LoadingScreenBitmap1 = {};
+CAlphaBitmap g_LoadingScreenBitmap2 = {};
+CAlphaBitmap g_LoadingScreenBitmap3 = {};
+CAlphaBitmap g_LoadingScreenBitmap4 = {};
 
 // CDemonActorType
-CDemonActorType g_CMansionPuzzleCircleClassInfo;
-CDemonActorType g_CMirrorHackClassInfo;
-CDemonActorType g_CMarqueeClassInfo;
-CDemonActorType g_CMeleeClassInfo;
+CDemonActorType g_CMansionPuzzleCircleClassInfo = {};
+CDemonActorType g_CMirrorHackClassInfo = {};
+CDemonActorType g_CMarqueeClassInfo = {};
+CDemonActorType g_CMeleeClassInfo = {};
 
 // CMatrix3x3i
-CMatrix3x3i g_InverseMatrix;
-CMatrix3x3i g_TransformMatrixCopy;
+CMatrix3x3i g_InverseMatrix = {};
+CMatrix3x3i g_TransformMatrixCopy = {};
 
 // FileTrackingEntry[100]
 FileTrackingEntry g_FileRegistry[100] = {};

@@ -5,14 +5,14 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CLeverClassInfo;
-CDemonActorType g_CLightGunClassInfo;
-CDemonActorType g_CLightConeClassInfo;
+CDemonActorType g_CLeverClassInfo = {};
+CDemonActorType g_CLightGunClassInfo = {};
+CDemonActorType g_CLightConeClassInfo = {};
 
 // CDemonFileManager
-CDemonFileManager g_CDemonFileManagerInstance;
+CDemonFileManager g_CDemonFileManagerInstance = {};
 
 // CVector3i
-CVector3i g_CachedViewPosition;
-CVector3i g_NormalizedViewVector;
+CVector3i g_CachedViewPosition = {};
+CVector3i g_NormalizedViewVector = {};
 

@@ -5,14 +5,14 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CDynamiteClassInfo;
+CDemonActorType g_CDynamiteClassInfo = {};
 
 // CDemonTriangle[8]
 CDemonTriangle g_ClippedTriangleBuffer[8] = {};
 
 // CVector3f
-CVector3f g_DebugCubeBasePoint;
-CVector3f g_FloorRayDirection;
+CVector3f g_DebugCubeBasePoint = {};
+CVector3f g_FloorRayDirection = {};
 
 // CVector3f[16]
 CVector3f g_ClipInputVertices[16] = {};

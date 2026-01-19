@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CLZWDecompress
-CLZWDecompress g_CLZWDecompressInstance;
+CLZWDecompress g_CLZWDecompressInstance = {};
 
 // SFogImagePlane
-SFogImagePlane g_CameraPlaneWorkBuffer;
+SFogImagePlane g_CameraPlaneWorkBuffer = {};
 

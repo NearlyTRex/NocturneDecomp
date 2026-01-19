@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CSentinelClassInfo;
+CDemonActorType g_CSentinelClassInfo = {};
 
 // CDemonSet
-CDemonSet g_CDemonSetInstance;
+CDemonSet g_CDemonSetInstance = {};
 

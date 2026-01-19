@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CAlphaBitmap
-CAlphaBitmap g_MoonCloudTexture;
+CAlphaBitmap g_MoonCloudTexture = {};
 
 // CAlphaBitmap[30]
 CAlphaBitmap g_MoonAnimTextures[30] = {};
@@ -14,16 +14,16 @@ CAlphaBitmap g_MoonAnimTextures[30] = {};
 CCourse g_MoonBatCourses[3] = {};
 
 // CDemonActorType
-CDemonActorType g_CMimicClassInfo;
-CDemonActorType g_CMineCarClassInfo;
-CDemonActorType g_CMobsterClassInfo;
-CDemonActorType g_CMolochClassInfo;
+CDemonActorType g_CMimicClassInfo = {};
+CDemonActorType g_CMineCarClassInfo = {};
+CDemonActorType g_CMobsterClassInfo = {};
+CDemonActorType g_CMolochClassInfo = {};
 
 // CDemonMission
-CDemonMission g_CDemonMissionInstance;
+CDemonMission g_CDemonMissionInstance = {};
 
 // CKeyFramedModel
-CKeyFramedModel g_MoonBatModel;
+CKeyFramedModel g_MoonBatModel = {};
 
 // CVector3f[32]
 CVector3f g_MirrorInputVertices[32] = {};
@@ -36,8 +36,8 @@ CVector3f g_SamplePointArray[400] = {};
 SBat g_MoonBats[30] = {};
 
 // SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive g_MirrorTempPrimitive;
+SMRGLHeaderPrimitive g_MirrorTempPrimitive = {};
 
 // SMRGLTextureBasic
-SMRGLTextureBasic g_TempTextureDescriptor;
+SMRGLTextureBasic g_TempTextureDescriptor = {};
 

@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CMatrix3x3i
-CMatrix3x3i g_CoronaCameraRotationMatrix;
+CMatrix3x3i g_CoronaCameraRotationMatrix = {};
 
 // int[10000]
 int g_CameraEdgeDetectionResults[10000] = {};

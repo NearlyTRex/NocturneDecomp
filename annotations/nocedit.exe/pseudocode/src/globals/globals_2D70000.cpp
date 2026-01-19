@@ -5,16 +5,16 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CFlameClassInfo;
-CDemonActorType g_CFlameCanClassInfo;
-CDemonActorType g_CFlameThrowerClassInfo;
-CDemonActorType g_CFlashlightClassInfo;
-CDemonActorType g_CFliesClassInfo;
-CDemonActorType g_CFrankenstienMachineClassInfo;
-CDemonActorType g_CGabriellaClassInfo;
+CDemonActorType g_CFlameClassInfo = {};
+CDemonActorType g_CFlameCanClassInfo = {};
+CDemonActorType g_CFlameThrowerClassInfo = {};
+CDemonActorType g_CFlashlightClassInfo = {};
+CDemonActorType g_CFliesClassInfo = {};
+CDemonActorType g_CFrankenstienMachineClassInfo = {};
+CDemonActorType g_CGabriellaClassInfo = {};
 
 // CDemonLight
-CDemonLight g_CDemonLightInstance;
+CDemonLight g_CDemonLightInstance = {};
 
 // CLightningBolt[10]
 CLightningBolt g_LightningBoltPool[10] = {};

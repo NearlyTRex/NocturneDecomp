@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CDemonCamera
-CDemonCamera g_CDemonCameraInstance;
+CDemonCamera g_CDemonCameraInstance = {};
 
 // CDemonGlobe*[100]
 CDemonGlobe* g_CoronaGlobes[100] = {};
@@ -18,13 +18,13 @@ CDemonLight* g_MasterLightList[96] = {};
 CDemonLight* g_ActiveLightList[96] = {};
 
 // CDemonRaytrace
-CDemonRaytrace g_CDemonRaytraceInstance;
+CDemonRaytrace g_CDemonRaytraceInstance = {};
 
 // CKeyFramedModel
-CKeyFramedModel g_CKeyFramedModelInstance;
+CKeyFramedModel g_CKeyFramedModelInstance = {};
 
 // CRect
-CRect DAT_032770b4;
+CRect DAT_032770b4 = {};
 
 // int[65536]
 int g_IntensityToValueLookupTable[65536] = {};

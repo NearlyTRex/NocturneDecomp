@@ -670,9 +670,56 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_des
                          '*' in comp_type_name or \
                          comp_type_name.lower() in ('pointer', 'void*', 'char*')
 
-            # Check if this field is a wide char array (WCHAR or wchar_t)
-            is_wchar_array = (comp_type and "Array" in comp_type.__class__.__name__ and
-                             ('wchar' in comp_type_name.lower() or 'WCHAR' in comp_type_name))
+            # Check if this field is a wide char array (WCHAR or wchar_t) or unicode string
+            # Need to check both array type name AND drill down to element type
+            # Also handle Ghidra's "unicode" type which may not be an Array class
+            is_wchar_array = False
+            wchar_elem_size = 0
+
+            # First check if this is a unicode string type (not necessarily an array)
+            if comp_type and 'unicode' in comp_type_name.lower() and length >= 2 and length % 2 == 0:
+                is_wchar_array = True
+                wchar_elem_size = 2
+
+            if not is_wchar_array and comp_type and "Array" in comp_type.__class__.__name__:
+                # First check the array type name (including display name)
+                type_names_to_check = [comp_type_name]
+                if hasattr(comp_type, 'getDisplayName'):
+                    type_names_to_check.append(comp_type.getDisplayName())
+
+                for name_to_check in type_names_to_check:
+                    if name_to_check:
+                        name_lower = name_to_check.lower()
+                        if ('wchar' in name_lower or 'WCHAR' in name_to_check or 'unicode' in name_lower):
+                            is_wchar_array = True
+                            wchar_elem_size = 2
+                            break
+
+                if not is_wchar_array:
+                    # Drill down to element type and check its name and size
+                    try:
+                        elem_type = comp_type
+                        while hasattr(elem_type, 'getDataType'):
+                            elem_type = elem_type.getDataType()
+                        if elem_type:
+                            elem_name = elem_type.getName() if hasattr(elem_type, 'getName') else ""
+                            elem_display = elem_type.getDisplayName() if hasattr(elem_type, 'getDisplayName') else ""
+                            elem_size = elem_type.getLength() if hasattr(elem_type, 'getLength') else 0
+                            # Check for wchar_t, WCHAR, wchar16, unicode
+                            for en in [elem_name, elem_display]:
+                                if en:
+                                    en_lower = en.lower()
+                                    if ('wchar' in en_lower or 'WCHAR' in en or 'unicode' in en_lower):
+                                        is_wchar_array = True
+                                        wchar_elem_size = elem_size if elem_size else 2
+                                        break
+                            # Also check for 2-byte types like ushort/word/short that might be WCHAR
+                            if not is_wchar_array and elem_size == 2:
+                                if elem_name.lower() in ('ushort', 'word', 'short', 'undefined2', 'wchar16', 'unicode'):
+                                    is_wchar_array = True
+                                    wchar_elem_size = 2
+                    except:
+                        pass
 
             # Check if this field is a char array (string) - but NOT wchar
             is_char_array = (comp_type and "Array" in comp_type.__class__.__name__ and
@@ -1096,9 +1143,18 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                 if struct_init:
                     initializer_value = struct_init
                 else:
-                    # Fallback: output as byte array comment if can't introspect
-                    hex_values = ["0x%02X" % b for b in raw_bytes]
-                    initializer_value = "{0} /* raw: %s */" % ", ".join(hex_values)
+                    # Fallback: try to generate DWORD-based initializers for structs
+                    # that are multiples of 4 bytes (common for PE structs)
+                    if len(raw_bytes) > 0 and len(raw_bytes) % 4 == 0:
+                        dword_values = []
+                        for i in range(0, len(raw_bytes), 4):
+                            dword_val = bytes_to_int_le(raw_bytes[i:i+4])
+                            dword_values.append("0x%08X" % dword_val)
+                        initializer_value = "{%s}" % ", ".join(dword_values)
+                    else:
+                        # Last resort: output as byte array comment
+                        hex_values = ["0x%02X" % b for b in raw_bytes]
+                        initializer_value = "{0} /* raw: %s */" % ", ".join(hex_values)
             else:
                 # Check if this is an undefined scalar type (undefined1, undefined2, undefined4, undefined8)
                 # These should be converted to integer values, not byte arrays
@@ -1987,7 +2043,8 @@ def generate_globals_cpp_file(globals_list, range_key=""):
                     line += " // %s" % global_var['comment']
                 content.append(line)
             else:
-                content.append("%s %s;" % (base_type, full_var_name))
+                # Add explicit zero-initialization for uninitialized globals
+                content.append("%s %s = {};" % (base_type, full_var_name))
         content.append("")  # Blank line after each type group
     return "\n".join(content)
 

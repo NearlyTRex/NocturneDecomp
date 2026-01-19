@@ -5,22 +5,22 @@
 // =============================================================================
 
 // CAlphaBitmap
-CAlphaBitmap g_MenuBlurLeft;
-CAlphaBitmap g_MenuBlurMiddle;
-CAlphaBitmap g_MenuBlurRight;
-CAlphaBitmap g_CalibrationBitmap;
+CAlphaBitmap g_MenuBlurLeft = {};
+CAlphaBitmap g_MenuBlurMiddle = {};
+CAlphaBitmap g_MenuBlurRight = {};
+CAlphaBitmap g_CalibrationBitmap = {};
 
 // CAlphaBitmap[8]
 CAlphaBitmap g_MenuBitmaps[8] = {};
 
 // CLeakChecker
-CLeakChecker g_CLeakCheckerInstance;
+CLeakChecker g_CLeakCheckerInstance = {};
 
 // CLodFace[200]
 CLodFace g_TempNeighborFaces[200] = {};
 
 // CMoon
-CMoon g_CMoonInstance;
+CMoon g_CMoonInstance = {};
 
 // int*[31]
 int* g_CustomKeyPointers[31] = {};

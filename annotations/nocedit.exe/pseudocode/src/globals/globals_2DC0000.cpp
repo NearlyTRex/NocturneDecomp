@@ -5,28 +5,28 @@
 // =============================================================================
 
 // CAlphaBitmap
-CAlphaBitmap g_BatteryIconBitmap;
-CAlphaBitmap g_HealthBar1Bitmap;
-CAlphaBitmap g_HealthBar2Bitmap;
-CAlphaBitmap g_TommyClipIconBitmap;
-CAlphaBitmap g_BulletIconBitmap;
-CAlphaBitmap g_LithiumIconBitmap;
-CAlphaBitmap g_MercuryBulletIconBitmap;
-CAlphaBitmap g_ShotShellIconBitmap;
-CAlphaBitmap g_SilverBulletIconBitmap;
-CAlphaBitmap g_HolyBulletIconBitmap;
+CAlphaBitmap g_BatteryIconBitmap = {};
+CAlphaBitmap g_HealthBar1Bitmap = {};
+CAlphaBitmap g_HealthBar2Bitmap = {};
+CAlphaBitmap g_TommyClipIconBitmap = {};
+CAlphaBitmap g_BulletIconBitmap = {};
+CAlphaBitmap g_LithiumIconBitmap = {};
+CAlphaBitmap g_MercuryBulletIconBitmap = {};
+CAlphaBitmap g_ShotShellIconBitmap = {};
+CAlphaBitmap g_SilverBulletIconBitmap = {};
+CAlphaBitmap g_HolyBulletIconBitmap = {};
 
 // CDemonActorType
-CDemonActorType g_CKeyActorClassInfo;
-CDemonActorType g_CLadderClassInfo;
-CDemonActorType g_CLarvaClassInfo;
+CDemonActorType g_CKeyActorClassInfo = {};
+CDemonActorType g_CLadderClassInfo = {};
+CDemonActorType g_CLarvaClassInfo = {};
 
 // CKeyFramedModel
-CKeyFramedModel g_LoadingMoonModel;
+CKeyFramedModel g_LoadingMoonModel = {};
 
 // CKeys
-CKeys g_CKeysInstance;
+CKeys g_CKeysInstance = {};
 
 // CLevelLoader
-CLevelLoader g_CLevelLoaderInstance;
+CLevelLoader g_CLevelLoaderInstance = {};
 

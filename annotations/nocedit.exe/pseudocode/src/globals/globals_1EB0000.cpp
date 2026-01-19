@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CDSEModel
-CDSEModel g_CDSEModelInstance;
+CDSEModel g_CDSEModelInstance = {};
 
 // CMultiCram
-CMultiCram g_CMultiCramInstance;
+CMultiCram g_CMultiCramInstance = {};
 

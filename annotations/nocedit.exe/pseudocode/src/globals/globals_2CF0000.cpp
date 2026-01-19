@@ -5,15 +5,15 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CElephantGunClassInfo;
-CDemonActorType g_CEmitterClassInfo;
-CDemonActorType g_CEnemyClassInfo;
+CDemonActorType g_CElephantGunClassInfo = {};
+CDemonActorType g_CEmitterClassInfo = {};
+CDemonActorType g_CEnemyClassInfo = {};
 
 // CEditorTools
-CEditorTools g_CEditorToolsInstance;
+CEditorTools g_CEditorToolsInstance = {};
 
 // HWND
-HWND g_DialogParentWindow;
+HWND g_DialogParentWindow = {};
 
 // SWindow[5]
 SWindow g_WindowStack[5] = {};

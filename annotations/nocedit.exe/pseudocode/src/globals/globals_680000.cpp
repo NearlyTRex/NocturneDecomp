@@ -84,7 +84,7 @@ RUNTIME_HANDLER_FUNC* g_FirstInitHandler = (RUNTIME_HANDLER_FUNC*)core_actor_cpp
 RUNTIME_HANDLER_FUNC* g_FirstExitHandler = (RUNTIME_HANDLER_FUNC*)crt_stub_c_staticFinal_FUN_005fde93;
 
 // RuntimeHandlerEntry
-RuntimeHandlerEntry g_ExitHandlerTableEnd;
+RuntimeHandlerEntry g_ExitHandlerTableEnd = {};
 
 // RuntimeHandlerEntry[166]
 RuntimeHandlerEntry g_InitHandlers[166] = {

@@ -11,20 +11,20 @@ CBloodParticle DAT_02d833d4[256] = {};
 CBloodSplat DAT_02d873dc[2000] = {};
 
 // CDemonActorType
-CDemonActorType g_CGargoyleClassInfo;
-CDemonActorType g_CGasMaskClassInfo;
-CDemonActorType g_CGhoulClassInfo;
-CDemonActorType g_CGlassClassInfo;
+CDemonActorType g_CGargoyleClassInfo = {};
+CDemonActorType g_CGasMaskClassInfo = {};
+CDemonActorType g_CGhoulClassInfo = {};
+CDemonActorType g_CGlassClassInfo = {};
 
 // CGame
-CGame g_CGameInstance;
+CGame g_CGameInstance = {};
 
 // CGore
-CGore g_CGoreInstance;
+CGore g_CGoreInstance = {};
 
 // CPickList
-CPickList g_CPickList;
+CPickList g_CPickList = {};
 
 // SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive DAT_02d83368;
+SMRGLHeaderPrimitive DAT_02d83368 = {};
 

@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CZombieDogClassInfo;
-CDemonActorType g_CDoorClassInfo;
+CDemonActorType g_CZombieDogClassInfo = {};
+CDemonActorType g_CDoorClassInfo = {};
 
 // FileSearchHandler*[5]
 FileSearchHandler* g_SearchHandlers[5] = {};

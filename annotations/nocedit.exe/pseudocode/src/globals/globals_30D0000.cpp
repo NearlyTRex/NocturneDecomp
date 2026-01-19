@@ -5,9 +5,9 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CPendulumClassInfo;
-CDemonActorType g_CPlatformClassInfo;
+CDemonActorType g_CPendulumClassInfo = {};
+CDemonActorType g_CPlatformClassInfo = {};
 
 // SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive DAT_030d4fd0;
+SMRGLHeaderPrimitive DAT_030d4fd0 = {};
 

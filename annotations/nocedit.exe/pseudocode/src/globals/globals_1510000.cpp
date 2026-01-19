@@ -5,13 +5,13 @@
 // =============================================================================
 
 // CVector3i
-CVector3i g_CameraOutOfBoundsCoord;
+CVector3i g_CameraOutOfBoundsCoord = {};
 
 // SCameraViewportState
-SCameraViewportState g_BackgroundSavedCameraState;
+SCameraViewportState g_BackgroundSavedCameraState = {};
 
 // SFogGrid
-SFogGrid g_CameraFogGrid;
+SFogGrid g_CameraFogGrid = {};
 
 // int[256]
 int g_ScanlineSpanLeft[256] = {};

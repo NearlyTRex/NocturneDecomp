@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CEdCheck
-CEdCheck g_CEdCheckInstance;
+CEdCheck g_CEdCheckInstance = {};
 
 // SChatHistory[400]
 SChatHistory g_ChatHistory[400] = {};

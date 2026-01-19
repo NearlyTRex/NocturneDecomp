@@ -5,11 +5,11 @@
 // =============================================================================
 
 // CVector3f
-CVector3f g_DownwardRayDirection;
-CVector3f g_StaticColorVector;
-CVector3f g_TempNormal0;
-CVector3f g_TempNormal1;
-CVector3f g_TempNormal2;
+CVector3f g_DownwardRayDirection = {};
+CVector3f g_StaticColorVector = {};
+CVector3f g_TempNormal0 = {};
+CVector3f g_TempNormal1 = {};
+CVector3f g_TempNormal2 = {};
 
 // CVector3f[16]
 CVector3f g_CubeInputTriangleBuffer[16] = {};
@@ -21,7 +21,7 @@ CVector3f g_ClipStageMinZBuffer[16] = {};
 CVector3f g_CubeClippedTriangleBuffer[16] = {};
 
 // SCameraViewportState
-SCameraViewportState g_SavedCameraState;
+SCameraViewportState g_SavedCameraState = {};
 
 // SPolygonScreenData[20000]
 SPolygonScreenData g_PolygonScreenCache[20000] = {};

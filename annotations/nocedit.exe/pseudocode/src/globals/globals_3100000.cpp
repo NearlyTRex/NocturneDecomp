@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CScatClassInfo;
+CDemonActorType g_CScatClassInfo = {};
 
 // CScript
-CScript g_CScriptInstance;
+CScript g_CScriptInstance = {};
 

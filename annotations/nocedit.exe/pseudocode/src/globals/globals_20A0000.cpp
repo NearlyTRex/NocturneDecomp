@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CActorDestinationClassInfo;
+CDemonActorType g_CActorDestinationClassInfo = {};
 
 // CDemonFilter[4]
 CDemonFilter CDemonFilter_ARRAY_020a4ad8[4] = {};
@@ -14,8 +14,8 @@ CDemonFilter CDemonFilter_ARRAY_020a4ad8[4] = {};
 CDemonFilter CDemonFilter_ARRAY_020a4878[8] = {};
 
 // CFilterCache
-CFilterCache g_CFilterCacheInstance;
+CFilterCache g_CFilterCacheInstance = {};
 
 // CFilterFx
-CFilterFx g_CFilterFXInstance;
+CFilterFx g_CFilterFXInstance = {};
 

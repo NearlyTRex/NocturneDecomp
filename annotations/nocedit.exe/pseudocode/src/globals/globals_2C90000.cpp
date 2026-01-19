@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType g_CDripClassInfo;
-CDemonActorType g_CDroneClassInfo;
+CDemonActorType g_CDripClassInfo = {};
+CDemonActorType g_CDroneClassInfo = {};
 
 // SFace*[5000]
 SFace* g_CapturedFacePointers[5000] = {};
