@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTentacle_00654d94
-;   undefined4 g_CTentacleClassVersion
+;   int g_CTentacleClassVersion = 0x2
 ;   CDemonActorType g_CEnemyClassInfo
 ;   CDemonActorType g_CTentacleClassInfo
 ;

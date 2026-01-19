@@ -14,7 +14,7 @@
 ;   TerminatedCString s_mistState_0061591c
 ;   TerminatedCString s_vanishTimer_00615926
 ;   TerminatedCString s_newPos_00615932
-;   undefined4 g_CBatmanClassVersion
+;   int g_CBatmanClassVersion = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970

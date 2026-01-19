@@ -18,7 +18,7 @@
 ;   TerminatedCString s_motion_state_0063e390
 ;   TerminatedCString s_shootMe_0063e39d
 ;   TerminatedCString s_poolMe_0063e3a5
-;   undefined4 g_CNPCClassVersion
+;   int g_CNPCClassVersion = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0

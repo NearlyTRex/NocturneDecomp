@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   uint g_MaxHandleCount = 0x14
 ;   SIOControlBlock* g_IOControlBlock = 00000000
-;   undefined4 g_CurrentHandleCount
+;   int g_CurrentHandleCount = 0x0
 ;
 ; *****************************************************************************
 

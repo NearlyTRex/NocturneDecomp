@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CEmitter_0062404a
-;   undefined4 g_CEmitterClassVersion
+;   int g_CEmitterClassVersion = 0x7
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CEmitterClassInfo
 ;

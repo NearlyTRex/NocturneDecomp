@@ -11,7 +11,7 @@
 ;   TerminatedCString s_useCount_0062ea05
 ;   TerminatedCString s_hpRestored_0062ea0e
 ;   TerminatedCString s_descriptiveName_0062ea19
-;   undefined4 g_CHealthItemClassVersion
+;   int g_CHealthItemClassVersion = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0

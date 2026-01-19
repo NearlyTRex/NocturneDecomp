@@ -13,7 +13,7 @@
 ;   TerminatedCString s_wolfSize_0063e816
 ;   TerminatedCString s_nameOfWolf_0063e81f
 ;   TerminatedCString s_transformWav_0063e82a
-;   undefined4 g_CPassengerClassVersion
+;   int g_CPassengerClassVersion = 0x6
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970

@@ -11,7 +11,7 @@
 ;   TerminatedCString s_modelName_0062103f
 ;   TerminatedCString s_guardDistance_00621049
 ;   TerminatedCString s_motion_state_00621057
-;   undefined4 g_CZombieDogClassVersion
+;   int g_CZombieDogClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970

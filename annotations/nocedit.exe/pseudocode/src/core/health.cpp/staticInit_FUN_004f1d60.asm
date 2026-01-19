@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHealthItem_0062e9d1
-;   undefined4 g_CHealthItemClassVersion
+;   int g_CHealthItemClassVersion = 0x3
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CHealthItemClassInfo
 ;

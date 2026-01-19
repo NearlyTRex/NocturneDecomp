@@ -592,6 +592,29 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None):
             is_nested_struct = (comp_type and hasattr(comp_type, 'getComponents') and
                                not is_char_array and not is_pointer and not is_union)
 
+            # Check if this field is a primitive array (int[4], short[8], etc.)
+            is_primitive_array = False
+            primitive_elem_size = 0
+            primitive_elem_signed = True
+            if comp_type and "Array" in comp_type.__class__.__name__ and not is_char_array:
+                try:
+                    elem_type = comp_type
+                    while hasattr(elem_type, 'getDataType'):
+                        elem_type = elem_type.getDataType()
+                    elem_name = elem_type.getName().lower() if elem_type else ""
+                    # Check for int/short/long array types
+                    if elem_name in ('int', 'uint', 'long', 'ulong', 'dword', 'short', 'ushort', 'word'):
+                        is_primitive_array = True
+                        primitive_elem_size = elem_type.getLength() if hasattr(elem_type, 'getLength') else 4
+                        primitive_elem_signed = 'u' not in elem_name and elem_name not in ('dword', 'word')
+                except:
+                    pass
+
+            # Check if this field is a float or double
+            comp_type_lower = comp_type_name.lower()
+            is_float = (length == 4 and comp_type_lower in ('float', 'd3dvalue'))
+            is_double = (length == 8 and comp_type_lower in ('double', 'float10'))
+
             # Get the actual pointer type for casting (use void* as fallback)
             pointer_cast_type = "void*"
             if is_pointer and comp_type:
@@ -622,6 +645,51 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None):
                     # Fallback to byte array
                     byte_vals = ["0x%02X" % b for b in field_bytes]
                     field_values.append("{%s}" % ", ".join(byte_vals))
+            elif is_primitive_array:
+                # Format primitive array (int[4], short[8], etc.) as proper array
+                elem_values = []
+                for i in range(0, len(field_bytes), primitive_elem_size):
+                    if i + primitive_elem_size <= len(field_bytes):
+                        elem_bytes = field_bytes[i:i + primitive_elem_size]
+                        elem_val = bytes_to_int_le(elem_bytes)
+                        if primitive_elem_signed:
+                            elem_values.append(format_signed_int(elem_val, primitive_elem_size, "int"))
+                        else:
+                            elem_values.append(format_int_by_size(elem_val, primitive_elem_size))
+                field_values.append("{%s}" % ", ".join(elem_values))
+            elif is_float:
+                # Convert bytes to float literal
+                import struct
+                try:
+                    float_val = struct.unpack('<f', bytes(field_bytes))[0]
+                    import math
+                    if math.isinf(float_val):
+                        formatted = "INFINITY" if float_val > 0 else "(-INFINITY)"
+                    elif math.isnan(float_val):
+                        formatted = "NAN"
+                    else:
+                        formatted = "%.8g" % float_val
+                        if '.' not in formatted and 'e' not in formatted and 'E' not in formatted:
+                            formatted += ".0"
+                        formatted += "f"
+                    field_values.append(formatted)
+                except:
+                    field_values.append(format_int_by_size(bytes_to_int_le(field_bytes), length))
+            elif is_double:
+                # Convert bytes to double literal
+                import struct
+                try:
+                    double_val = struct.unpack('<d', bytes(field_bytes))[0]
+                    import math
+                    if math.isinf(double_val):
+                        formatted = "INFINITY" if double_val > 0 else "(-INFINITY)"
+                    elif math.isnan(double_val):
+                        formatted = "NAN"
+                    else:
+                        formatted = "%.17g" % double_val
+                    field_values.append(formatted)
+                except:
+                    field_values.append(format_int_by_size(bytes_to_int_le(field_bytes), length))
             elif length <= 8:
                 val = bytes_to_int_le(field_bytes)
                 if is_pointer:
@@ -795,11 +863,25 @@ def extract_globals_and_constants(currentProgram, string_map=None):
             is_initialized = True
         elif has_nonzero_bytes and raw_bytes is not None:
             is_initialized = True
-            # Check if this is a struct type (not array, not primitive)
+            # Check if this is a struct type (not array, not primitive, not pointer/pointer typedef)
             # For struct types, byte-by-byte initializers cause "excess elements" warnings
+            is_pointer_typedef = False
+            if data_type and hasattr(data_type, 'getBaseDataType'):
+                # Check if this is a typedef to a pointer (like HANDLE -> void*)
+                base_dt = data_type
+                while base_dt and hasattr(base_dt, 'getBaseDataType'):
+                    base_dt = base_dt.getBaseDataType()
+                if base_dt and "Pointer" in base_dt.__class__.__name__:
+                    is_pointer_typedef = True
+            # Also check for common pointer typedef names
+            if type_name.upper() in ('HANDLE', 'HWND', 'HINSTANCE', 'HMODULE', 'HDC', 'HBITMAP',
+                                     'HBRUSH', 'HFONT', 'HICON', 'HCURSOR', 'HMENU', 'HRGN',
+                                     'LPVOID', 'PVOID', 'LPCVOID'):
+                is_pointer_typedef = True
             is_struct_type = (not is_array_type and
                               not is_primitive_type(type_name) and
-                              not type_name.endswith('*'))
+                              not type_name.endswith('*') and
+                              not is_pointer_typedef)
             if is_struct_type:
                 # Try to build proper struct initializer by introspecting fields
                 struct_init = format_struct_initializer(data_type, raw_bytes, currentProgram)
@@ -1014,6 +1096,13 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                         # Regular array - byte values
                         hex_values = ["0x%02X" % b for b in raw_bytes]
                         initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+                elif is_pointer_typedef:
+                    # Pointer typedef (HANDLE, HWND, etc.) - format as pointer value with cast
+                    int_val = bytes_to_int_le(raw_bytes)
+                    if int_val == 0:
+                        initializer_value = "nullptr"
+                    else:
+                        initializer_value = "(%s)0x%X" % (type_name, int_val)
                 else:
                     # Other scalar types - try to convert to single value
                     int_val = bytes_to_int_le(raw_bytes)

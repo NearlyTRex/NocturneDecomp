@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBoneGuy_00615efd
-;   undefined4 g_CBoneGuyClassVersion
+;   int g_CBoneGuyClassVersion = 0x5
 ;   CDemonActorType g_CBoneGuyClassInfo
 ;   CDemonActorType g_CEnemyClassInfo
 ;

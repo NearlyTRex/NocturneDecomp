@@ -11,18 +11,18 @@ int __cdecl crt_io_c_CheckFileHandleAvailability_FUN_00608940(void)
 {
   int iVar1;
   
-  if (g_CurrentHandleCount < g_MaxHandleCount) {
+  if ((uint)g_CurrentHandleCount < g_MaxHandleCount) {
     iVar1 = 0;
   }
   else {
-    if (0 < (int)g_CurrentHandleCount) {
+    if (0 < g_CurrentHandleCount) {
       iVar1 = 0;
       do {
         if (*(int *)((int)g_IOControlBlock->standard_handles + iVar1) == 0) {
           return 0;
         }
         iVar1 = iVar1 + 4;
-      } while (iVar1 < (int)(g_CurrentHandleCount * 4));
+      } while (iVar1 < g_CurrentHandleCount * 4);
     }
     iVar1 = 1;
   }

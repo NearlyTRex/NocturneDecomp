@@ -47,8 +47,8 @@ int g_ConfirmNewActorNames = 0x1;
 WatcomStaticDestructorNode DAT_006809f0 = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_00661c70, 0x00000001, (void *)0x02F7C740};
 CNetGame* g_CNetGameInstance = (CNetGame*)0x02F7C740; // DAT_02f7c740
 WatcomStaticDestructorNode g_CMouseDestructorNode = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_00661d20, 0x00000001, (void *)&g_CMouseInstance};
-undefined4 g_CNPCClassVersion = 0x00000004;
-undefined4 g_CPassengerClassVersion = 0x00000006;
+int g_CNPCClassVersion = 0x4;
+int g_CPassengerClassVersion = 0x6;
 SMRGLTextureBasic DAT_00680bb0 = {{0x0000000D, 0x00000000}, "HEADLITE.RAW"};
 WatcomStaticDestructorNode DAT_00680bc8 = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_006620e0, 0x00000001, (void *)0x02FD9060};
 int g_PathfindingDeltaX[9] = {
@@ -60,7 +60,7 @@ int g_PathfindingDeltaZ[9] = {
     -1
 };
 int g_CPendulumClassVersion = 0x8;
-undefined4 g_CPlatformClassVersion = 0x0000000B;
+int g_CPlatformClassVersion = 0xb;
 WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {nullptr, (WatcomDestructorCall *)&g_CDemonPodDestructorNode, 0x00000001, (void *)&g_CDemonPodInstance};
 CDemonPod* g_CDemonPodPtr = (CDemonPod*)&g_CDemonPodInstance;
 int g_MaxViewportScanline = 0x4b0;
@@ -103,9 +103,9 @@ WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode = {nullptr, (Watc
 WatcomStaticDestructorNode g_SkeletonPoolDestructorNode = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_00662e8c, 0x00000001, (void *)&g_SkeletonPool};
 int g_CSmileyClassVersion = 0x1;
 WatcomStaticDestructorNode g_SfxSamplesDestructorNode = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_00663110, 0x00000001, (void *)&g_SfxSamples};
-WatcomStaticDestructorNode g_CMP3DecoderDestructorNode = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_0066311c, 0x00000001, (void *)&g_CMP3DecoderInstance};
+WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1 = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_0066311c, 0x00000001, (void *)&g_CMP3DecoderInstance};
 int g_SfxPlaybackStateCounter = 0x1;
-WatcomStaticDestructorNode g_CMP3DecoderDestructorNode = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_00663128, 0x00000001, (void *)&g_CMP3DecoderInstance};
+WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2 = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_00663128, 0x00000001, (void *)&g_CMP3DecoderInstance};
 int g_MaxSoundChannels = 0x20;
 int g_AudioBitsPerSample = 0x10;
 int g_AudioChannelCount = 0x2;
@@ -146,33 +146,33 @@ char* g_CurrentTrainMode = (char*)s_int_00652706;
 char* g_PreviousTrainMode = (char*)s_x_0065270a;
 CSound* g_CSoundPtr = (CSound*)&g_CSoundInstance;
 SSoundModeEntry g_SoundModeTable[27] = {
-    {(char *)s_OFF_00652855, {0x00000000, 0x00000000, 0x00000000}},
-    {(char *)s_GENERIC_00652859, {0x3F000000, 0x3FBF1AA0, 0x3F000000}},
-    {(char *)s_PADDEDCELL_00652861, {0x3E800000, 0x3DCCCCCD, 0x00000000}},
-    {(char *)s_ROOM_0065286c, {0x3ED58106, 0x3ECCCCCD, 0x3F2A7EFA}},
-    {(char *)s_BATHROOM_00652871, {0x3F272B02, 0x3FBFDF3B, 0x3E29FBE7}},
-    {(char *)s_LIVINGROOM_0065287a, {0x3E54FDF4, 0x3EF4BC6A, 0x00000000}},
-    {(char *)s_STONEROOM_00652885, {0x3F000000, 0x4013C6A8, 0x3F6353F8}},
-    {(char *)s_AUDITORIUM_0065288f, {0x3ECE5604, 0x4088ED91, 0x3F000000}},
-    {(char *)s_CONCERTHALL_0065289a, {0x3F000000, 0x407D8106, 0x3F000000}},
-    {(char *)s_CAVE_006528a6, {0x3F000000, 0x4038B439, 0x3FA6E979}},
-    {(char *)s_ARENA_006528ab, {0x3EB8D4FE, 0x40E91687, 0x3EA9FBE7}},
-    {(char *)s_HANGAR_006528b1, {0x3F000000, 0x41200000, 0x3E99999A}},
-    {(char *)s_CARPETEDHALLWAY_006528b8, {0x3E1CAC08, 0x3E849BA6, 0x40000000}},
-    {(char *)s_HALLWAY_006528c8, {0x3EB8D4FE, 0x3FBF1AA0, 0x00000000}},
-    {(char *)s_STONECORRIDOR_006528d0, {0x3EE353F8, 0x402C9BA6, 0x3F2353F8}},
-    {(char *)s_ALLEY_006528de, {0x3E800000, 0x3FE04189, 0x3F46A7F0}},
-    {(char *)s_FOREST_006528e4, {0x3DE353F8, 0x404947AE, 0x3EF1A9FC}},
-    {(char *)s_CITY_006528eb, {0x3DE353F8, 0x40311687, 0x3E656042}},
-    {(char *)s_MOUNTAINS_006528f0, {0x3E46A7F0, 0x40FAE979, 0x3EF1A9FC}},
-    {(char *)s_QUARRY_006528fa, {0x3F800000, 0x3FBFDF3B, 0x3F000000}},
-    {(char *)s_PLAIN_00652901, {0x3DC6A7F0, 0x40311687, 0x3E656042}},
-    {(char *)s_PARKINGLOT_00652907, {0x3E54FDF4, 0x3FD374BC, 0x3FC00000}},
-    {(char *)s_SEWERPIPE_00652912, {0x3F26E979, 0x4038B439, 0x3E800000}},
-    {(char *)s_UNDERWATER_0065291c, {0x3F800000, 0x3FBFDF3B, 0x00000000}},
-    {(char *)s_DRUGGED_00652927, {0x3F600000, 0x410645A2, 0x3FB1A9FC}},
-    {(char *)s_DIZZY_0065292f, {0x3E0E5604, 0x4189DF3B, 0x3F2A7EFA}},
-    {(char *)s_PSYCHOTIC_00652935, {0x3EF8D4FE, 0x40F20419, 0x3F4E5604}}
+    {(char *)s_OFF_00652855, {0.0f, 0.0f, 0.0f}},
+    {(char *)s_GENERIC_00652859, {0.5f, 1.493f, 0.5f}},
+    {(char *)s_PADDEDCELL_00652861, {0.25f, 0.1f, 0.0f}},
+    {(char *)s_ROOM_0065286c, {0.417f, 0.40000001f, 0.66600001f}},
+    {(char *)s_BATHROOM_00652871, {0.653f, 1.499f, 0.16599999f}},
+    {(char *)s_LIVINGROOM_0065287a, {0.208f, 0.47799999f, 0.0f}},
+    {(char *)s_STONEROOM_00652885, {0.5f, 2.309f, 0.88800001f}},
+    {(char *)s_AUDITORIUM_0065288f, {0.403f, 4.2789998f, 0.5f}},
+    {(char *)s_CONCERTHALL_0065289a, {0.5f, 3.961f, 0.5f}},
+    {(char *)s_CAVE_006528a6, {0.5f, 2.8859999f, 1.304f}},
+    {(char *)s_ARENA_006528ab, {0.361f, 7.2839999f, 0.33199999f}},
+    {(char *)s_HANGAR_006528b1, {0.5f, 10.0f, 0.30000001f}},
+    {(char *)s_CARPETEDHALLWAY_006528b8, {0.153f, 0.259f, 2.0f}},
+    {(char *)s_HALLWAY_006528c8, {0.361f, 1.493f, 0.0f}},
+    {(char *)s_STONECORRIDOR_006528d0, {0.44400001f, 2.697f, 0.63800001f}},
+    {(char *)s_ALLEY_006528de, {0.25f, 1.752f, 0.77600002f}},
+    {(char *)s_FOREST_006528e4, {0.111f, 3.145f, 0.472f}},
+    {(char *)s_CITY_006528eb, {0.111f, 2.767f, 0.22400001f}},
+    {(char *)s_MOUNTAINS_006528f0, {0.19400001f, 7.8410001f, 0.472f}},
+    {(char *)s_QUARRY_006528fa, {1.0f, 1.499f, 0.5f}},
+    {(char *)s_PLAIN_00652901, {0.097000003f, 2.767f, 0.22400001f}},
+    {(char *)s_PARKINGLOT_00652907, {0.208f, 1.652f, 1.5f}},
+    {(char *)s_SEWERPIPE_00652912, {0.65200001f, 2.8859999f, 0.25f}},
+    {(char *)s_UNDERWATER_0065291c, {1.0f, 1.499f, 0.0f}},
+    {(char *)s_DRUGGED_00652927, {0.875f, 8.3920002f, 1.388f}},
+    {(char *)s_DIZZY_0065292f, {0.139f, 17.233999f, 0.66600001f}},
+    {(char *)s_PSYCHOTIC_00652935, {0.486f, 7.5630002f, 0.80599999f}}
 };
 int g_ScanlinePixelCount = 0x0;
 int g_StartTextureU = 0x0;
@@ -491,7 +491,7 @@ int g_CBassPlayerClassVersion = 0x1;
 int g_CDrummerClassVersion = 0x1;
 int g_CTeleportDestClassVersion = 0x1;
 int g_CTeleportClassVersion = 0x1;
-undefined4 g_CTentacleClassVersion = 0x00000002;
+int g_CTentacleClassVersion = 0x2;
 WatcomStaticDestructorNode g_CTextureListDestructorNode = {nullptr, (WatcomDestructorCall *)&WatcomDestructorCall_00664600, 0x00000001, (void *)&g_CTextureListInstance};
 int g_TexturePreviewEnabled = 0x1;
 int g_CTommyGunClassVersion = 0x1;
@@ -594,8 +594,8 @@ int g_DaylightSavingOffset = 0xe10;
 byte g_TimezoneInitFlags = 0x1;
 uint g_MaxHandleCount = 0x14;
 SIOControlBlock* g_IOControlBlock = nullptr;
-undefined4 g_CurrentHandleCount = 0;
-undefined4 g_FakeHandleCounter = 0x80000000;
+int g_CurrentHandleCount = 0x0;
+int g_FakeHandleCounter = 0x2D;
 short g_PureVirtualCallFlag = 0x0;
 WatcomStaticDestructorNode* g_AtexitListHead = nullptr;
 IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr = nullptr;
@@ -610,16 +610,18 @@ int g_ProcessSpawnEnabled = 0x1;
 EXCEPTION_FILTER_FUNC* g_UserExceptionFilter = nullptr;
 EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup = nullptr;
 int g_ConsoleInputState = 0x0;
-undefined1 g_DebuggerIsAttached = 0;
+char g_DebuggerIsAttached = '\0';
 int g_HeapFlags = 0x10000;
 DWORD g_RuntimeBufferSize = 0xf4;
 HANDLE g_ConsoleInputHandle = {0x66, 0x66, 0x66, 0x66};
 HANDLE g_ConsoleOutputHandle = {0x66, 0x66, 0x66, 0x66};
-SIGNAL_HANDLER g_GlobalSignalHandlers[16] = {
+SIGNAL_HANDLER g_GlobalSignalHandlers[26] = {
     0x00000001, 0xFFFFFFFF, 0x00000002, 0xFFFFFFFF, 0x00000001, 0xFFFFFFFF, 0x00000002, 0xC000001D,
-    0x00000002, 0xC000013A, 0x00000002, 0xC0000005, 0x00000002, 0xC000013A, 0x00000002, 0xC000013A
+    0x00000002, 0xC000013A, 0x00000002, 0xC0000005, 0x00000002, 0xC000013A, 0x00000002, 0xC000013A,
+    0x00000001, 0xFFFFFFFF, 0x00000001, 0xFFFFFFFF, 0x00000001, 0xFFFFFFFF, 0x00000002, 0xC0000094,
+    0x00000001, 0xC0000095
 };
-bool g_ConsoleHandlerRegistered = false;
+char g_ConsoleHandlerRegistered = '\0';
 uint g_CodePage = 0x1;
 BYTE g_InitHandlerStatusStart = 0x00;
 BYTE g_InitHandlerPriorityStart = 0x40;

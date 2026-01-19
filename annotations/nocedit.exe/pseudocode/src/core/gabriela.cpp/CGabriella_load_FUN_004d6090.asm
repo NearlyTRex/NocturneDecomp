@@ -11,7 +11,7 @@
 ;   TerminatedCString s_ladderToClimb_0062b04b
 ;   TerminatedCString s_lhCarryObject_0062b059
 ;   TerminatedCString s_rhCarryObject_0062b067
-;   undefined4 g_CGabriellaClassVersion
+;   int g_CGabriellaClassVersion = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializeActor_FUN_0040b870

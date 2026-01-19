@@ -26,7 +26,7 @@
 ;   TerminatedCString s_Unknown_sample_file_form_00650bab
 ;   TerminatedCString s_sound_sndmain_cpp_00650bd4
 ;   TerminatedCString s_getSampleInfo_can_t_dete_00650be9
-;   WatcomStaticDestructorNode g_CMP3DecoderDestructorNode
+;   WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CMP3Decoder g_CMP3DecoderInstance
@@ -237,7 +237,7 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0 ; 005aa598
         ;   XREF to: 005344f0 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 005aa59d
-    PUSH 0x681af4                       ; 005aa5a0 | g_CMP3DecoderDestructorNode
+    PUSH 0x681af4                       ; 005aa5a0 | g_CMP3DecoderDestructorNode2
     CALL crt_stdlib.c_atexit_FUN_005ff060 ; 005aa5a5
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005aa5aa

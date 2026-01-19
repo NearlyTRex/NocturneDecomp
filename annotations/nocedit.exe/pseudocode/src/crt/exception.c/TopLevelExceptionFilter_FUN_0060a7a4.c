@@ -93,13 +93,13 @@ crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS *Except
       }
       goto LAB_0060a968;
     }
-    if (puVar4 < (byte *)0xc0000094) {
+    if (puVar4 < &DAT_c0000094) {
       value = pEVar2->ExceptionAddress;
       pcVar9 = "The instruction at 0x00000000 caused an underflow floating point exception.\n";
       goto LAB_0060a968;
     }
     if (puVar4 < (byte *)0xc0000096) {
-      if (puVar4 == (byte *)0xc0000094) {
+      if (puVar4 == &DAT_c0000094) {
         value = pEVar2->ExceptionAddress;
         pcVar9 = "An integer divide by zero was encountered at address 0x00000000.\n";
         goto LAB_0060a968;

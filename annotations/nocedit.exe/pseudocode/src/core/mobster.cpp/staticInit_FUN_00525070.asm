@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CMobster_00639686
-;   undefined4 g_CMobsterClassVersion
+;   int g_CMobsterClassVersion = 0x7
 ;   CDemonActorType g_CEnemyClassInfo
 ;   CDemonActorType g_CMobsterClassInfo
 ;

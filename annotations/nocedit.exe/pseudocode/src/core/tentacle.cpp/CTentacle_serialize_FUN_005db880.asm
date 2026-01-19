@@ -12,7 +12,7 @@
 ;   TerminatedCString s_motion_state_00654e64
 ;   TerminatedCString s_partStatus_00654e71
 ;   TerminatedCString s_graveActor_00654e7c
-;   undefined4 g_CTentacleClassVersion
+;   int g_CTentacleClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializeActor_FUN_0040b870

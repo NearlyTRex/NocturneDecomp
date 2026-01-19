@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBat_006152c6
-;   undefined4 g_CBatClassVersion
+;   int g_CBatClassVersion = 0x4
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CBatClassInfo
 ;

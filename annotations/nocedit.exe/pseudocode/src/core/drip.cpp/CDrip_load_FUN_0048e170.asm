@@ -16,7 +16,7 @@
 ;   TerminatedCString s_damage_00622288
 ;   TerminatedCString s_hitSound_0062228f
 ;   TerminatedCString s_noRockFlag_00622298
-;   undefined4 g_CDripClassVersion
+;   int g_CDripClassVersion = 0x6
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0

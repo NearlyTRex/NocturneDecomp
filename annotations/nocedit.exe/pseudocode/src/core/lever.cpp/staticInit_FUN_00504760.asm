@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CLever_00631058
-;   undefined4 g_CLeverClassVersion
+;   int g_CLeverClassVersion = 0x8
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CLeverClassInfo
 ;

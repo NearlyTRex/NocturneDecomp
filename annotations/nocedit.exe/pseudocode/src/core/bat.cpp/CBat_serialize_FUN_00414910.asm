@@ -16,7 +16,7 @@
 ;   TerminatedCString s_periodicSoundTimerMin_0061532e
 ;   TerminatedCString s_periodicSoundTimerMax_00615344
 ;   double DOUBLE_0061535e = 30
-;   undefined4 g_CBatClassVersion
+;   int g_CBatClassVersion = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0

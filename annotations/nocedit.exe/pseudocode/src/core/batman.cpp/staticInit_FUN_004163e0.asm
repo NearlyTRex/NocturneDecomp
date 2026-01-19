@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBatman_006156c5
-;   undefined4 g_CBatmanClassVersion
+;   int g_CBatmanClassVersion = 0x3
 ;   CDemonActorType g_CBatmanClassInfo
 ;   CDemonActorType g_CEnemyClassInfo
 ;

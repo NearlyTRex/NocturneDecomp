@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CKeyActor_00630c15
-;   undefined4 g_CKeyActorClassVersion
+;   int g_CKeyActorClassVersion = 0x3
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CKeyActorClassInfo
 ;

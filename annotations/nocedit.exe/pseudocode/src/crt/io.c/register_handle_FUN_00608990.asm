@@ -15,7 +15,7 @@
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f18 = 00602434
 ;   EXIT_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f1c = 00602434
 ;   SIOControlBlock* g_IOControlBlock = 00000000
-;   undefined4 g_CurrentHandleCount
+;   int g_CurrentHandleCount = 0x0
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_00601df0

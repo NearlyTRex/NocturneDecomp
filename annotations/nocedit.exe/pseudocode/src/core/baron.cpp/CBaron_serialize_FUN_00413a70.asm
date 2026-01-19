@@ -10,7 +10,7 @@
 ;   TerminatedCString s_summonEvent_00615069
 ;   TerminatedCString s_goAwayEvent_00615075
 ;   TerminatedCString s_summoned_00615081
-;   undefined4 g_CBaronClassVersion
+;   int g_CBaronClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializeInteger_FUN_0040b7f0

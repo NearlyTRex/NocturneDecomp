@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDrone_00622354
-;   undefined4 g_CDroneClassVersion
+;   int g_CDroneClassVersion = 0x2
 ;   CDemonActorType g_CDroneClassInfo
 ;   CDemonActorType g_CEnemyClassInfo
 ;

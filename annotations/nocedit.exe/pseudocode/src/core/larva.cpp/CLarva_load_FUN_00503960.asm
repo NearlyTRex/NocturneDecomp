@@ -9,7 +9,7 @@
 ;   TerminatedCString s_modelName_00630f99
 ;   TerminatedCString s_guardDistance_00630fa3
 ;   TerminatedCString s_motion_state_00630fb1
-;   undefined4 g_CLarvaClassVersion
+;   int g_CLarvaClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970

@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBaron_00614eb1
-;   undefined4 g_CBaronClassVersion
+;   int g_CBaronClassVersion = 0x2
 ;   CDemonActorType g_CBaronClassInfo
 ;   CDemonActorType g_CHeroClassInfo
 ;

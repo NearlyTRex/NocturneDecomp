@@ -62,7 +62,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
         if ((g_GlobalMP3DecoderInitialized & 1) == 0) {
           g_GlobalMP3DecoderInitialized = g_GlobalMP3DecoderInitialized | 1;
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
-          crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode);
+          crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode2);
         }
         sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(&g_CMP3DecoderInstance,(char *)out_sample);
         (out_sample->sample_info).bit_depth = 0x10;

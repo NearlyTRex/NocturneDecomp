@@ -63,7 +63,7 @@ LAB_005a4cea:
   if ((g_GlobalMP3DecoderInitialized & 1) == 0) {
     g_GlobalMP3DecoderInitialized = g_GlobalMP3DecoderInitialized | 1;
     sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
-    crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode);
+    crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode1);
   }
   local_14 = (FILE *)0x0;
   iVar7 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);

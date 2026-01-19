@@ -234,6 +234,9 @@ const char g_WeekdayThirdInitial[] = "nneduit";
 // char[7][4] constants
 const char g_WeekdayNamesShort[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
+// char[8] constants
+const char s_filebuf_00685484[] = "$filebuf";
+
 // double constants
 const double DOUBLE_00681b30 = 1;
 const double DOUBLE_00681b38 = 1;

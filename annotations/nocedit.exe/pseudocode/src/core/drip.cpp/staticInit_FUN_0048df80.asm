@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDrip_006221ff
-;   undefined4 g_CDripClassVersion
+;   int g_CDripClassVersion = 0x6
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CDripClassInfo
 ;   undefined4 DAT_02c9b170

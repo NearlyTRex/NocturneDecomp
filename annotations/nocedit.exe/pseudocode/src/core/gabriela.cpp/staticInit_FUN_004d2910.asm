@@ -12,7 +12,7 @@
 ;   undefined4 DAT_0065e7dc
 ;   undefined4 DAT_0065e7e0
 ;   undefined4 DAT_0065e7e4
-;   undefined4 g_CGabriellaClassVersion
+;   int g_CGabriellaClassVersion = 0x3
 ;   undefined4 DAT_02d7b808
 ;   undefined4 DAT_02d7b80c
 ;   undefined4 DAT_02d7b810

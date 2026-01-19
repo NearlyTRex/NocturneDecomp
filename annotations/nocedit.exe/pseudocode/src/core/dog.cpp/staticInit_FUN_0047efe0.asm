@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CZombieDog_00620f81
-;   undefined4 g_CZombieDogClassVersion
+;   int g_CZombieDogClassVersion = 0x2
 ;   CDemonActorType g_CZombieDogClassInfo
 ;   CDemonActorType g_CEnemyClassInfo
 ;

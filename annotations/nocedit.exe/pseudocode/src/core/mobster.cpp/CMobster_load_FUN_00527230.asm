@@ -16,7 +16,7 @@
 ;   TerminatedCString s_sideOfCar_0063997c
 ;   TerminatedCString s_holdPosFlag_00639986
 ;   TerminatedCString s_holdPosCond_00639992
-;   undefined4 g_CMobsterClassVersion
+;   int g_CMobsterClassVersion = 0x7
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializeActor_FUN_0040b870

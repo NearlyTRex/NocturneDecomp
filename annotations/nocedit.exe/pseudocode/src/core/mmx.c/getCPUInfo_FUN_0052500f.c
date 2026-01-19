@@ -15,8 +15,8 @@ bool __cdecl core_mmx_c_getCPUInfo_FUN_0052500f(SCPUInfo *cpu_info)
     cpu_info->family = (uint)g_CPUInfoFamily;
     cpu_info->model = (uint)g_CPUInfoModel;
     cpu_info->stepping = (uint)g_CPUInfoStepping;
-    cpu_info->is_intel = (uint)g_CPUInfoIntelCPU;
-    cpu_info->mmx_supported = (uint)g_CPUInfoMMXSupported;
+    cpu_info->is_intel = (uint)(byte)g_CPUInfoIntelCPU;
+    cpu_info->mmx_supported = (uint)(byte)g_CPUInfoMMXSupported;
   }
   return cpu_info != (SCPUInfo *)0x0;
 }

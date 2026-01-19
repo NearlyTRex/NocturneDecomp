@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CNPC_0063e2f4
-;   undefined4 g_CNPCClassVersion
+;   int g_CNPCClassVersion = 0x4
 ;   CDemonActorType g_CCharacterClassInfo
 ;   CDemonActorType g_CNPCClassInfo
 ;

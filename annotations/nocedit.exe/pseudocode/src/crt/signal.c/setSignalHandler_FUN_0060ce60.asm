@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
-;   SIGNAL_HANDLER[16] g_GlobalSignalHandlers
+;   SIGNAL_HANDLER[26] g_GlobalSignalHandlers
 ;
 ; Called Functions:
 ;   crt_thread.c_GetTLS_FUN_0060242c

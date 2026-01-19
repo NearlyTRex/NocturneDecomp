@@ -14,7 +14,7 @@
 ;   TerminatedCString s_item_00614c4d
 ;   TerminatedCString s_hasCollision_00614c52
 ;   TerminatedCString s_openSound_00614c5f
-;   undefined4 g_CAmmoBoxClassVersion
+;   int g_CAmmoBoxClassVersion = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0

@@ -303,6 +303,9 @@ const char* g_MenuBitmapFilenames[8] = {
 const char g_DefaultAuditPath[] = "";
 const char g_DefaultAuditRecordPath[] = "";
 
+// char[15] constants
+const char s_CMotionController_0067d811[] = "$CMotionControl";
+
 // char[260] constants
 const char g_FilePathBuffer[] = "";
 const char g_DefaultCheckOutPath[] = "";
@@ -399,9 +402,6 @@ const uchar g_VoxelYBitMasks[] = "";
 
 // undefined1 constants
 const undefined1 DAT_0067b685 = 0x46;
-
-// undefined1[15] constants
-const undefined1 s_CMotionController_0067d811[15] = {0x24, 0x43, 0x4D, 0x6F, 0x74, 0x69, 0x6F, 0x6E, 0x43, 0x6F, 0x6E, 0x74, 0x72, 0x6F, 0x6C};
 
 // undefined2 constants
 const undefined2 DAT_0067aebc = 0;

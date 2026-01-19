@@ -12,7 +12,7 @@
 ;   TerminatedCString s_modelName_00630c55
 ;   TerminatedCString s_keyMask_00630c5f
 ;   TerminatedCString s_descriptiveName_00630c67
-;   undefined4 g_CKeyActorClassVersion
+;   int g_CKeyActorClassVersion = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0

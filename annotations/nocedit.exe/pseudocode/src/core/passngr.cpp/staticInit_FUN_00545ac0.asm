@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CPassenger_0063e765
-;   undefined4 g_CPassengerClassVersion
+;   int g_CPassengerClassVersion = 0x6
 ;   CDemonActorType g_CNPCClassInfo
 ;   CDemonActorType g_CPassengerClassInfo
 ;

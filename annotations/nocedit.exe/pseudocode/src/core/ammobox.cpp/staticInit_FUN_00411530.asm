@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CAmmoBox_00614ba3
-;   undefined4 g_CAmmoBoxClassVersion
+;   int g_CAmmoBoxClassVersion = 0x4
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CAmmoBoxClassInfo
 ;

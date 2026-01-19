@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   CreateEventA* g_CreateEventAFunc = 00211c5a
-;   undefined4 g_FakeHandleCounter
+;   int g_FakeHandleCounter = -0x80000000
 ;
 ; Called Functions:
 ;   CreateEventA

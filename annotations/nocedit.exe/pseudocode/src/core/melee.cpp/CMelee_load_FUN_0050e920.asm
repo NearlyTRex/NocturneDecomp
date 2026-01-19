@@ -15,7 +15,7 @@
 ;   TerminatedCString s_thrustHitCharacterSound_00635c64
 ;   TerminatedCString s_swingHitCharacterSound_00635c7c
 ;   TerminatedCString s_hitOtherSound_00635c93
-;   undefined4 g_CMeleeClassVersion
+;   int g_CMeleeClassVersion = 0x7
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializeFloat_FUN_0040b770

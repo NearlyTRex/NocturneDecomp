@@ -9,7 +9,7 @@
 ;   TerminatedCString s_modelName_00622412
 ;   TerminatedCString s_guardDistance_0062241c
 ;   TerminatedCString s_motion_state_0062242a
-;   undefined4 g_CDroneClassVersion
+;   int g_CDroneClassVersion = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970

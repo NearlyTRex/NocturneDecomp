@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHostage_0062ee12
-;   undefined4 g_CHostageClassVersion
+;   int g_CHostageClassVersion = 0xc
 ;   CDemonActorType g_CHostageClassInfo
 ;   CDemonActorType g_CNPCClassInfo
 ;

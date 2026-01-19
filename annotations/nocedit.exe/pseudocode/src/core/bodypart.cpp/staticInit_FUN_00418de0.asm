@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBodyPart_00615b6c
-;   undefined4 g_CBodyPartClassVersion
+;   int g_CBodyPartClassVersion = 0x5
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CBodyPartClassInfo
 ;

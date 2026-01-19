@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDoor_00621079
-;   undefined4 g_CDoorClassVersion
+;   int g_CDoorClassVersion = 0xb
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CDoorClassInfo
 ;

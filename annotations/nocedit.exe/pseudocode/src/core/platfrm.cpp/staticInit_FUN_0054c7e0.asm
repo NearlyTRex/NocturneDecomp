@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CPlatform_0063f756
-;   undefined4 g_CPlatformClassVersion
+;   int g_CPlatformClassVersion = 0xb
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CPlatformClassInfo
 ;

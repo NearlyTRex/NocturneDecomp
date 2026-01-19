@@ -11,13 +11,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_GenuineIntel_0067d6c0
 ;   undefined4 s__0067d6cc
-;   undefined4 g_cpuidbasicinfo_2
-;   undefined4 g_cpuidbasicinfo_3
+;   int g_cpuidbasicinfo_2 = 0x1000c900
+;   int g_cpuidbasicinfo_3 = -0x22000000
 ;   byte g_CPUInfoFamily = 0x96
 ;   byte g_CPUInfoModel = 0x13
 ;   byte g_CPUInfoStepping = 0x0
-;   bool g_CPUIDSupported = False
-;   bool g_CPUInfoIntelCPU = False
+;   char g_CPUIDSupported = \x00
+;   char g_CPUInfoIntelCPU = \x00
 ;   uint g_CPUFeatureFlags = 0x0
 ;
 ; *****************************************************************************

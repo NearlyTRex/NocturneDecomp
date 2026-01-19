@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CLarva_00630ec3
-;   undefined4 g_CLarvaClassVersion
+;   int g_CLarvaClassVersion = 0x2
 ;   CDemonActorType g_CEnemyClassInfo
 ;   CDemonActorType g_CLarvaClassInfo
 ;

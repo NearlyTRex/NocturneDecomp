@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CMelee_00635bbd
-;   undefined4 g_CMeleeClassVersion
+;   int g_CMeleeClassVersion = 0x7
 ;   CDemonActorType g_CMeleeClassInfo
 ;   CDemonActorType g_CWeaponClassInfo
 ;
