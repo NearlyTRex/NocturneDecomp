@@ -10,10 +10,8 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
 
 {
   HWND pHVar1;
-  bool bVar2;
-  FARPROC pFVar3;
-  undefined3 extraout_var;
-  int iVar4;
+  FARPROC pFVar2;
+  int iVar3;
   char acStack_3c2c [4];
   byte auStack_1e64 [7624];
   CExternalRendererBridge CStack_9c;
@@ -32,18 +30,18 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
     g_FullscreenMode = (int)g_RendererDLLHandle;
     return 0;
   }
-  pFVar3 = wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
+  pFVar2 = wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                      (g_RendererDLLHandle,"APIDLLInformation");
-  if (pFVar3 == (FARPROC)0x0) {
+  if (pFVar2 == (FARPROC)0x0) {
     wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
     g_FullscreenMode = 0;
     return 0;
   }
-  (*pFVar3)(g_RendererDLLHandle,acStack_3c2c);
+  (*pFVar2)(g_RendererDLLHandle,acStack_3c2c);
   wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90((CExternalRenderer *)auStack_1e64);
-  bVar2 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
+  iVar3 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
                     ((CExternalRenderer *)acStack_3c2c,(CExternalRenderer *)auStack_1e64);
-  if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) {
+  if (iVar3 != 0) {
     g_DLLFunctionsMissing = 0;
     g_APIDLL_init =
          (APIDLL_init *)
@@ -400,8 +398,8 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.sizeof5 = 0x20;
       CStack_9c.sizeof6 = 0x24;
       CStack_9c.sizeof7 = 0x28;
-      iVar4 = (*g_APIDLL_init)(pHVar1,&CStack_9c);
-      if (iVar4 != 0) {
+      iVar3 = (*g_APIDLL_init)(pHVar1,&CStack_9c);
+      if (iVar3 != 0) {
         acStack_3c2c[0] = -0x3b;
         acStack_3c2c[1] = 'q';
         acStack_3c2c[2] = '[';
@@ -409,7 +407,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
         wincore_windll_cpp_selectCard_FUN_005b7d90(g_RendererHandle);
         return 1;
       }
-      g_FullscreenMode = iVar4;
+      g_FullscreenMode = iVar3;
       return 0;
     }
   }

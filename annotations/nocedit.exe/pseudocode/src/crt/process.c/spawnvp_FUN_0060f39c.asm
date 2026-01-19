@@ -383,7 +383,7 @@ section .text
     PUSH EBX                            ; 0060f644
     MOV EDI,0xffffffff                  ; 0060f645
     CALL crt_io.c_file_exists_FUN_0060f380 ; 0060f64a
-        ;   XREF to: 0060f380 (UNCONDITIONAL_CALL)  ; bool crt_io.c_file_exists_FUN_0060f380(char * filename)
+        ;   XREF to: 0060f380 (UNCONDITIONAL_CALL)  ; BOOL crt_io.c_file_exists_FUN_0060f380(char * filename)
     ADD ESP,0x4                         ; 0060f64f
     TEST EAX,EAX                        ; 0060f652
     JNZ 0x0060f79d                      ; 0060f654
@@ -512,7 +512,7 @@ section .text
     ADD ESP,0x8                         ; 0060f78d
     PUSH EBX                            ; 0060f790
     CALL crt_io.c_file_exists_FUN_0060f380 ; 0060f791
-        ;   XREF to: 0060f380 (UNCONDITIONAL_CALL)  ; bool crt_io.c_file_exists_FUN_0060f380(char * filename)
+        ;   XREF to: 0060f380 (UNCONDITIONAL_CALL)  ; BOOL crt_io.c_file_exists_FUN_0060f380(char * filename)
     ADD ESP,0x4                         ; 0060f796
     TEST EAX,EAX                        ; 0060f799
     JZ 0x0060f80e                       ; 0060f79b

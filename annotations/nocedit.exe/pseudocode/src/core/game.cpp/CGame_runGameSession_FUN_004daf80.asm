@@ -752,7 +752,7 @@ section .text
     LEA EAX,[EBP + 0xfffff7a0]          ; 004db836
     PUSH EAX                            ; 004db83c
     CALL shape_edittool.cpp_CPickList_enableItem_FUN_004a5410 ; 004db83d
-        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
     ADD ESP,0xc                         ; 004db842
     PUSH 0x0                            ; 004db845
         ;   Label: LAB_004db845

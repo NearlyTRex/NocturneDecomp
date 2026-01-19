@@ -141,31 +141,31 @@ int CEditorTools::showConfirmationDialog(CEditorTools * this_ptr, char * format,
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 // Address: 0049f270
-int CEditorTools::showFileSelectionDialog(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, bool auto_select_flag);
+int CEditorTools::showFileSelectionDialog(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, int auto_select_flag);
 
 // Original: shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
 // Address: 0049f420
-bool CEditorTools::showDirectoryBrowser(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path);
+int CEditorTools::showDirectoryBrowser(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path);
 
 // Original: shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
 // Address: 0049fb70
-bool CEditorTools::showFilenameInputDialog(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, bool show_directory);
+int CEditorTools::showFilenameInputDialog(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, int show_directory);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
 // Address: 004a0020
-bool CEditorTools::promptForValidInteger(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, int min_value, int max_value, bool show_current_value);
+int CEditorTools::promptForValidInteger(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, int min_value, int max_value, int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 // Address: 004a00f0
-int CEditorTools::promptForValidFloat(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, float min_value, float max_value, bool show_current_value);
+int CEditorTools::promptForValidFloat(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, float min_value, float max_value, int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
 // Address: 004a01f0
-int CEditorTools::promptForValidDouble(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, bool enable_range_check, double min_value, double max_value, bool show_current_value);
+int CEditorTools::promptForValidDouble(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, int enable_range_check, double min_value, double max_value, int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300
 // Address: 004a0300
-int CEditorTools::promptForValidVector(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value);
+int CEditorTools::promptForValidVector(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 // Address: 004a03d0
@@ -213,7 +213,7 @@ uchar CEditorTools::getTimeCycledColorByte(CEditorTools * this_ptr);
 
 // Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
 // Address: 004a1380
-void CEditorTools::setMousePointerType(CEditorTools * this_ptr, bool use_clipping);
+void CEditorTools::setMousePointerType(CEditorTools * this_ptr, int use_clipping);
 
 // Original: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
 // Address: 004a1b30
@@ -417,7 +417,7 @@ int CPickList::getItemAtMousePosition(CPickList * this_ptr, int mouse_x, int mou
 
 // Original: shape_edittool.cpp_CPickList_enableItem_FUN_004a5410
 // Address: 004a5410
-void CPickList::enableItem(CPickList * this_ptr, int item_index, bool enable_flag);
+void CPickList::enableItem(CPickList * this_ptr, int item_index, int enable_flag);
 
 // Original: shape_edittool.cpp_CPickList_isItemEnabled_FUN_004a54e0
 // Address: 004a54e0
@@ -429,7 +429,7 @@ void CPickList::setItemHotKey(CPickList * this_ptr, int item_index, int hotkey_c
 
 // Original: shape_edittool.cpp_CPickList_getItemHotKey_FUN_004a5610
 // Address: 004a5610
-undefined CPickList::getItemHotKey();
+int CPickList::getItemHotKey(CPickList * this_ptr, int index);
 
 // Original: shape_edittool.cpp_CPickList_insert_FUN_004a5670
 // Address: 004a5670

@@ -28,7 +28,7 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_process.c_spawnvp_FUN_0060f39c
     Address: 0060f39c
-    Suspect count: 70
+    Suspect count: 66
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0060f51c: SUB ESP,EAX
     - [dynamic_alloca] at 0060f5d6: SUB ESP,EAX
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 33.2 suspects/function
+  With stack patterns:    avg 33.1 suspects/function
   Without stack patterns: avg 7.0 suspects/function

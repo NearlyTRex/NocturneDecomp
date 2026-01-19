@@ -153,7 +153,7 @@ void parseFileInfo(void);
 
 // Original: crt_io.c_file_exists_FUN_0060f380
 // Address: 0060f380
-bool file::exists(char * filename);
+BOOL file::exists(char * filename);
 
 // Original: crt_io.c_get_handle_FUN_006109f0
 // Address: 006109f0

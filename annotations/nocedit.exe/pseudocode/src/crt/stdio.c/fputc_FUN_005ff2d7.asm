@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 005ff35d
         ;   Label: LAB_005ff35d
     CALL crt_stdio.c_prepare_stream_for_write_FUN_00606055 ; 005ff35e
-        ;   XREF to: 00606055 (UNCONDITIONAL_CALL)  ; bool crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
+        ;   XREF to: 00606055 (UNCONDITIONAL_CALL)  ; BOOL crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
     ADD ESP,0x4                         ; 005ff363
     TEST EAX,EAX                        ; 005ff366
     JNZ 0x005ff305                      ; 005ff368

@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 879,
+    "complexity_score": 847,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 30,
-    "pseudocode_lines": 214,
-    "suspect_count": 63,
+    "pseudocode_lines": 212,
+    "suspect_count": 61,
     "suspect_types": [
-      "concat_artifact",
       "format_string_mismatch",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
-      "stack_ref",
-      "undefined_type"
+      "stack_ref"
     ],
-    "total_lines": 769
+    "total_lines": 767
   },
   "cross_references": [],
   "function": {
@@ -614,127 +612,113 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 9,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_fffff180",
       "text": "uint in_stack_fffff180;",
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 48,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 64,
+      "line": 62,
       "match": "&stack0xfffff17c",
       "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 65,
+      "line": 63,
       "match": "&stack0xfffff17c",
-      "text": "iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff17c,local_244)",
+      "text": "iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff17c,local_244)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 70,
+      "line": 68,
       "match": "&stack0xfffff17c",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 71,
+      "match": "&stack0xfffff17c",
+      "text": "iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 73,
-      "match": "&stack0xfffff17c",
-      "text": "iVar3 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
       "match": "&stack0xfffff280",
-      "text": "ptVar4 = crt_time_c_localtime_FUN_00600288((time_t *)&stack0xfffff280);",
+      "text": "ptVar3 = crt_time_c_localtime_FUN_00600288((time_t *)&stack0xfffff280);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 80,
+      "line": 78,
       "match": "&stack0xfffff17c",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 87,
+      "line": 85,
       "match": "&stack0xfffff180",
       "text": "(&stack0xfffff180,(char *)0x0,\"rb\",\"..\\\\engine\\\\fileio.cpp\",",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 92,
+      "line": 90,
       "match": "&stack0xfffff17c",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 103,
       "match": "(uint *)((int)",
-      "text": "puVar6 = (uint *)((int)&local_a70->name_or_offset + local_1c);",
+      "text": "puVar5 = (uint *)((int)&local_a70->name_or_offset + local_1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 148,
+      "line": 146,
       "match": "&stack0xfffff170",
-      "text": "ptVar8 = (time_t *)(&stack0xfffff170 + (uint)bVar12 * -8 + (uint)bVar12 * -8);",
+      "text": "ptVar7 = (time_t *)(&stack0xfffff170 + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 150,
+      "line": 148,
       "match": "&stack0xfffff16c",
-      "text": "*(time_t *)(&stack0xfffff16c + (uint)bVar12 * -8) = local_40[(uint)bVar12 * -2];",
+      "text": "*(time_t *)(&stack0xfffff16c + (uint)bVar11 * -8) = local_40[(uint)bVar11 * -2];",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 196,
+      "line": 194,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 213,
+      "line": 211,
       "match": "in_stack_fffff180",
       "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(local_30 + 4),0,in_stack_fffff180);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 215,
+      "line": 213,
       "match": "&stack0xfffff180",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff180);",
       "type": "stack_ref"
@@ -745,7 +729,7 @@
       "expected_args": 2,
       "format_string": "%s %s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 164,
+      "line_number": 162,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_a58.found_path,\"%s %s\");",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"
@@ -756,7 +740,7 @@
       "expected_args": 1,
       "format_string": "%d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 166,
+      "line_number": 164,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_a58.found_path,\"%d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -767,7 +751,7 @@
       "expected_args": 1,
       "format_string": "%d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 168,
+      "line_number": 166,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_a58.found_path,\"%d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

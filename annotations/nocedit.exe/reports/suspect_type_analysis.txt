@@ -4,12 +4,12 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    31464 ( 45.8%)
+  stack_param                    31447 ( 45.9%)
   call_esp_anchor                 9239 ( 13.5%)
   lea_esp_stack_addr              6858 ( 10.0%)
   pointer_cast                    5363 (  7.8%)
   unknown_field                   1857 (  2.7%)
-  concat_artifact                 1801 (  2.6%)
+  concat_artifact                 1748 (  2.6%)
   stack_ref                       1699 (  2.5%)
   unaffected_reg                  1684 (  2.5%)
   extra_output                    1440 (  2.1%)
@@ -22,12 +22,12 @@ SUSPECT TYPE COUNTS
   unresolved_funcptr               478 (  0.7%)
   negative_offset                  413 (  0.6%)
   format_string_mismatch           360 (  0.5%)
-  sub_artifact                     261 (  0.4%)
+  sub_artifact                     220 (  0.3%)
   warning_overlapping_globals      218 (  0.3%)
   register_param                   200 (  0.3%)
-  undefined_type                   111 (  0.2%)
   warning_unreachable               99 (  0.1%)
   param_count_too_many              89 (  0.1%)
+  undefined_type                    50 (  0.1%)
   variadic_preserve_ebp             38 (  0.1%)
   sborrow_artifact                  28 (  0.0%)
   special_math_intrinsic            23 (  0.0%)
@@ -40,12 +40,12 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (31464 occurrences)
+TYPE: stack_param (31447 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  17265x  in_stack_00000004
-  7002x  in_stack_00000008
+  17261x  in_stack_00000004
+  6997x  in_stack_00000008
   1826x  in_stack_0000000c
    742x  in_stack_00000010
    342x  in_stack_00000014
@@ -218,14 +218,13 @@ Example functions:
     if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
 
 ====================================================================================================
-TYPE: concat_artifact (1801 occurrences)
+TYPE: concat_artifact (1748 occurrences)
 ====================================================================================================
 
 Unique patterns:
    619x  CONCAT44
    150x  CONCAT11
    110x  CONCAT22
-   105x  CONCAT31
     96x  CONCAT12
     82x  CONCAT14
     68x  CONCAT21
@@ -234,6 +233,7 @@ Unique patterns:
     63x  CONCAT24
     55x  CONCAT25
     53x  CONCAT41
+    52x  CONCAT31
     50x  CONCAT34
     31x  CONCAT43
     29x  CONCAT52
@@ -246,8 +246,6 @@ Unique patterns:
 Example functions:
   cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
     CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)index...
-  crt_process.c_spawnvp_FUN_0060f39c
-    if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0) goto LAB_0...
   crt_stdlib.c_i64toa_FUN_0060ad40
     local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte...
   crt_stdlib.c_qsort_FUN_005fdf38
@@ -268,6 +266,8 @@ Example functions:
     return (double)CONCAT44 /* combine 2-byte values */(local_14,local_18);...
   crt_math.c_fdiv_FUN_00606960
     fVar1 = (float10)CONCAT28 /* combine 2-byte values */(in_stack_0000000c,CONCAT44...
+  crt_math.c_fdiv_thunk_FUN_00606aeb
+    return (float10)CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_000...
 
 ====================================================================================================
 TYPE: stack_ref (1699 occurrences)
@@ -908,16 +908,15 @@ Example functions:
     Format string expects 1 args but got 0...
 
 ====================================================================================================
-TYPE: sub_artifact (261 occurrences)
+TYPE: sub_artifact (220 occurrences)
 ====================================================================================================
 
 Unique patterns:
    203x  SUB84
-    43x  SUB41
      9x  SUB82
      3x  SUB104
+     3x  SUB41
      1x  SUB86
-     1x  SUB81
      1x  SUB42
 
 Example functions:
@@ -949,8 +948,6 @@ Example functions:
     local_38 = SUB84 /* extract 2-byte value */(dVar4,0);...
   engine_colquant.c_FUN_00441260
     local_70 = SUB84 /* extract 2-byte value */(dVar1,0);...
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-    SUB41 /* extract 2-byte value */(local_290,0));...
   sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400
     local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);...
   sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
@@ -1068,91 +1065,6 @@ Example functions:
     ushort in_DS;...
   crt_memory.c_BulkDwordFill_FUN_00603b37
     uint in_ECX;...
-
-====================================================================================================
-TYPE: undefined_type (111 occurrences)
-====================================================================================================
-
-Unique patterns:
-    49x  undefined3 extraout_var
-    14x  undefined3 extraout_var_00
-     7x  undefined6 uStack00000020
-     7x  undefined6 uStack00000050
-     7x  undefined6 uStack0000000c
-     7x  undefined3 extraout_var_01
-     3x  undefined3 in_stack_0000000d
-     3x  undefined3 in_stack_00000011
-     2x  undefined6 uVar7
-     2x  undefined3 extraout_var_02
-     2x  undefined3 in_stack_00000015
-     1x  undefined3 in_stack_00000019
-     1x  undefined3 in_stack_00000005
-     1x  undefined3 uVar3
-     1x  undefined3 extraout_var_03
-     1x  undefined3 in_stack_00000009
-     1x  undefined5 uVar8
-     1x  undefined7 uVar5
-     1x  undefined3 uVar2
-
-Example functions:
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
-    undefined3 in_stack_00000019;...
-  crt_process.c_spawnvp_FUN_0060f39c
-    undefined3 extraout_var;...
-  crt_locale.c_istrailbyte_FUN_00610a70
-    undefined3 in_stack_00000005;...
-  crt_math.c_fdiv_thunk_FUN_00606d6b
-    undefined6 uStack00000020;...
-  crt_math.c_FUN_00606b7a
-    undefined6 uStack00000050;...
-  crt_math.c_fdiv_thunk_FUN_00606bb3
-    undefined6 uStack0000000c;...
-  crt_math.c_FUN_00606c23
-    undefined6 uStack00000020;...
-  crt_math.c_fdiv_thunk_FUN_00606aeb
-    undefined6 uStack00000020;...
-  crt_math.c_fdiv_thunk_FUN_00606e0f
-    undefined6 uStack00000020;...
-  crt_math.c_FUN_00606ae6
-    undefined6 uStack00000050;...
-  crt_math.c_fdiv_thunk_FUN_00606b7f
-    undefined6 uStack00000020;...
-  crt_math.c_FUN_00606eae
-    undefined6 uStack00000050;...
-  crt_math.c_FUN_00606cc2
-    undefined6 uStack00000050;...
-  crt_math.c_fdiv_thunk_FUN_00606cc7
-    undefined6 uStack00000020;...
-  crt_math.c_FUN_00606c57
-    undefined6 uStack0000000c;...
-  crt_math.c_FUN_00606d66
-    undefined6 uStack00000050;...
-  crt_math.c_fdiv_thunk_FUN_00606ee7
-    undefined6 uStack0000000c;...
-  crt_math.c_fdiv_thunk_FUN_00606d9f
-    undefined6 uStack0000000c;...
-  crt_math.c_FUN_00606eb3
-    undefined6 uStack00000020;...
-  crt_math.c_FUN_00606c1e
-    undefined6 uStack00000050;...
-  crt_math.c_FUN_00606e0a
-    undefined6 uStack00000050;...
-  crt_math.c_fdiv_thunk_FUN_00606b17
-    undefined6 uStack0000000c;...
-  crt_math.c_pow_FUN_005ffd76
-    undefined6 uVar7;...
-  crt_math.c_fdiv_thunk_FUN_00606e43
-    undefined6 uStack0000000c;...
-  crt_math.c_fdiv_thunk_FUN_00606cfb
-    undefined6 uStack0000000c;...
-  crt_stdio.c_fputc_FUN_005ff2d7
-    undefined3 extraout_var;...
-  crt_stdio.c_stream_write_internal_FUN_005ffcb3
-    undefined3 extraout_var;...
-  engine_dosio.c_reopenFileStream_FUN_00481b50
-    undefined3 in_stack_0000000d;...
-  engine_2d.c_clipAndDrawLine_FUN_00402ca0
-    undefined3 extraout_var;...
 
 ====================================================================================================
 TYPE: warning_unreachable (99 occurrences)
@@ -1298,6 +1210,83 @@ Example functions:
     Function declares 2 params but call sites push 1 (1 extra)...
   engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
     Function declares 7 params but call sites push 6 (1 extra)...
+
+====================================================================================================
+TYPE: undefined_type (50 occurrences)
+====================================================================================================
+
+Unique patterns:
+    13x  undefined3 extraout_var
+     7x  undefined6 uStack00000020
+     7x  undefined6 uStack00000050
+     7x  undefined6 uStack0000000c
+     4x  undefined3 extraout_var_00
+     2x  undefined6 uVar7
+     2x  undefined3 extraout_var_01
+     1x  undefined3 in_stack_00000019
+     1x  undefined3 in_stack_00000005
+     1x  undefined3 in_stack_0000000d
+     1x  undefined3 extraout_var_02
+     1x  undefined3 uVar3
+     1x  undefined5 uVar8
+     1x  undefined7 uVar5
+     1x  undefined3 uVar2
+
+Example functions:
+  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
+    undefined3 in_stack_00000019;...
+  crt_locale.c_istrailbyte_FUN_00610a70
+    undefined3 in_stack_00000005;...
+  crt_math.c_fdiv_thunk_FUN_00606d6b
+    undefined6 uStack00000020;...
+  crt_math.c_FUN_00606b7a
+    undefined6 uStack00000050;...
+  crt_math.c_fdiv_thunk_FUN_00606bb3
+    undefined6 uStack0000000c;...
+  crt_math.c_FUN_00606c23
+    undefined6 uStack00000020;...
+  crt_math.c_fdiv_thunk_FUN_00606aeb
+    undefined6 uStack00000020;...
+  crt_math.c_fdiv_thunk_FUN_00606e0f
+    undefined6 uStack00000020;...
+  crt_math.c_FUN_00606ae6
+    undefined6 uStack00000050;...
+  crt_math.c_fdiv_thunk_FUN_00606b7f
+    undefined6 uStack00000020;...
+  crt_math.c_FUN_00606eae
+    undefined6 uStack00000050;...
+  crt_math.c_FUN_00606cc2
+    undefined6 uStack00000050;...
+  crt_math.c_fdiv_thunk_FUN_00606cc7
+    undefined6 uStack00000020;...
+  crt_math.c_FUN_00606c57
+    undefined6 uStack0000000c;...
+  crt_math.c_FUN_00606d66
+    undefined6 uStack00000050;...
+  crt_math.c_fdiv_thunk_FUN_00606ee7
+    undefined6 uStack0000000c;...
+  crt_math.c_fdiv_thunk_FUN_00606d9f
+    undefined6 uStack0000000c;...
+  crt_math.c_FUN_00606eb3
+    undefined6 uStack00000020;...
+  crt_math.c_FUN_00606c1e
+    undefined6 uStack00000050;...
+  crt_math.c_FUN_00606e0a
+    undefined6 uStack00000050;...
+  crt_math.c_fdiv_thunk_FUN_00606b17
+    undefined6 uStack0000000c;...
+  crt_math.c_pow_FUN_005ffd76
+    undefined6 uVar7;...
+  crt_math.c_fdiv_thunk_FUN_00606e43
+    undefined6 uStack0000000c;...
+  crt_math.c_fdiv_thunk_FUN_00606cfb
+    undefined6 uStack0000000c;...
+  engine_dosio.c_reopenFileStream_FUN_00481b50
+    undefined3 in_stack_0000000d;...
+  engine_2d.c_clipAndDrawLine_FUN_00402ca0
+    undefined3 extraout_var;...
+  core_cloth.cpp_FUN_0043b7e0
+    undefined3 extraout_var;...
 
 ====================================================================================================
 TYPE: variadic_preserve_ebp (38 occurrences)

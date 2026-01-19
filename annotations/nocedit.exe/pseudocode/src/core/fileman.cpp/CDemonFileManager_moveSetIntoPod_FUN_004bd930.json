@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 49,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 5,
     "pseudocode_lines": 19,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "lea_esp_stack_addr",
-      "sub_artifact"
+      "lea_esp_stack_addr"
     ],
     "total_lines": 64
   },
@@ -157,13 +156,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 11,
-      "match": "SUB41",
-      "text": "\"*.set\",SUB41 /* extract 2-byte value */(local_104,0));",
-      "type": "sub_artifact"
-    },
     {
       "address": "004bd940",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

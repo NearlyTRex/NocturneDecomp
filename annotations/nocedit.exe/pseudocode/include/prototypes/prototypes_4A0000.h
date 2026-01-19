@@ -23,10 +23,10 @@
 // FUNCTION PROTOTYPES - Range 0x4A0000
 // =============================================================================
 
-bool shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, int min_value, int max_value, bool show_current_value);
-int shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, float min_value, float max_value, bool show_current_value);
-int shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, bool enable_range_check, double min_value, double max_value, bool show_current_value);
-int shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value);
+int shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, int min_value, int max_value, int show_current_value);
+int shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, float min_value, float max_value, int show_current_value);
+int shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, int enable_range_check, double min_value, double max_value, int show_current_value);
+int shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, int show_current_value);
 int shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, int dialog_flags);
 int shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_004a0400(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, int dialog_flags);
 void shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text);
@@ -38,7 +38,7 @@ void shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditorTools * 
 void shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools * this_ptr);
 void shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools * editor_tools, int line_position);
 uchar shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr);
-void shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping);
+void shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping);
 char * shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools * this_ptr);
 void shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data);
 void shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools * this_ptr, float scale_factor, int text_color);
@@ -89,10 +89,10 @@ void shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d
 void shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList * this_ptr);
 void shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(CPickList * this_ptr);
 int shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_004a53a0(CPickList * this_ptr, int mouse_x, int mouse_y);
-void shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag);
+void shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag);
 int shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(CPickList * this_ptr, int item_index);
 void shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(CPickList * this_ptr, int item_index, int hotkey_code);
-undefined shape_edittool_cpp_CPickList_getItemHotKey_FUN_004a5610();
+int shape_edittool_cpp_CPickList_getItemHotKey_FUN_004a5610(CPickList * this_ptr, int index);
 void shape_edittool_cpp_CPickList_insert_FUN_004a5670(CPickList * this_ptr, int insert_index, int item_data);
 void shape_edittool_cpp_CPickList_remove_FUN_004a56f0(CPickList * this_ptr, int start_index, int end_index);
 void shape_edittool_cpp_CPickList_clear_FUN_004a5770(CPickList * this_ptr);

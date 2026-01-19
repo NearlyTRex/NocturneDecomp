@@ -391,7 +391,7 @@ section .text
         ;   Label: LAB_0057c050
     PUSH EAX                            ; 0057c055 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c056
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
         ;   Label: LAB_0057c056
     ADD ESP,0x1c                        ; 0057c05b
     CMP dword ptr [ESP + 0x878],0x1b    ; 0057c05e
@@ -478,7 +478,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0057c13c | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 0057c141 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c142
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057c147
     TEST EAX,EAX                        ; 0057c14a
     JZ 0x0057c05e                       ; 0057c14c
@@ -666,7 +666,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0057c369 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0057c36f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c370
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057c375
     PUSH 0x0                            ; 0057c378
         ;   Label: LAB_0057c378
@@ -719,7 +719,7 @@ section .text
     PUSH ECX                            ; 0057c420 | g_CEditorToolsInstance
     FSTP float ptr [ESP + 0x1c]         ; 0057c421
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c425
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057c42a
     TEST EAX,EAX                        ; 0057c42d
     JZ 0x0057c05e                       ; 0057c42f
@@ -756,7 +756,7 @@ section .text
     PUSH EDX                            ; 0057c4a9 | g_CEditorToolsInstance
     FSTP float ptr [ESP + 0x1c]         ; 0057c4aa
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057c4ae
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057c4b3
     TEST EAX,EAX                        ; 0057c4b6
     JZ 0x0057c05e                       ; 0057c4b8

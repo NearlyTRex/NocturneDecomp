@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, bool auto_select_flag)
+; __cdecl int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, int auto_select_flag)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   search_pattern
 ; char *           Stack[0xc]:4   directory
 ; char *           Stack[0x10]:4   target_filename
-; bool             Stack[0x14]:1   auto_select_flag
+; int              Stack[0x14]:4   auto_select_flag
 ; Local Variables:
 ; undefined4       Stack[-0x8bc]:4  local_8bc
 ; undefined1       Stack[-0x514]:1  local_514

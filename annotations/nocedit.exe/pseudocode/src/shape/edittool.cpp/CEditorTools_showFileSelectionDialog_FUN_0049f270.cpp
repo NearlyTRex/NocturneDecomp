@@ -2,21 +2,20 @@
 // Address: 0049f270
 // Address Range: [[0049f270, 0049f41a]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, bool auto_select_flag)
+// Signature: int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, int auto_select_flag)
 
 #include "nocturne.h"
 
 int __cdecl
 shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
           (CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,
-          bool auto_select_flag)
+          int auto_select_flag)
 
 {
   int iVar1;
   char *pcVar2;
   char *output_buffer;
   char *pcVar3;
-  undefined3 in_stack_00000015;
   byte in_stack_00000018;
   uint in_stack_fffff744;
   uint in_stack_fffff748;
@@ -47,7 +46,7 @@ shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   ((CStrList *)&stack0xfffff744,(int)local_514,output_buffer,1);
         engine_dosio_c_makePath_FUN_00481f50(local_114,(char *)0x0,(char *)0x0,local_314,local_514);
-        iVar1 = crt_string_c_stricmp_FUN_005fe7f0(local_114,_auto_select_flag);
+        iVar1 = crt_string_c_stricmp_FUN_005fe7f0(local_114,(char *)auto_select_flag);
         pcVar2 = output_buffer;
         if (iVar1 == 0) break;
         output_buffer = output_buffer + 1;
@@ -65,7 +64,7 @@ shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
       shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                 ((CStrList *)&stack0xfffff744,(int)local_514,pcVar2,1);
       engine_dosio_c_makePath_FUN_00481f50
-                (_auto_select_flag,(char *)0x0,(char *)0x0,local_314,local_514);
+                ((char *)auto_select_flag,(char *)0x0,(char *)0x0,local_314,local_514);
       iVar1 = 1;
     }
   }

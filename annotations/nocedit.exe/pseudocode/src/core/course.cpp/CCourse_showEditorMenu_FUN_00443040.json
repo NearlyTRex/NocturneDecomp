@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 602,
-    "complexity_score": 1025,
+    "complexity_score": 917,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 50,
-    "pseudocode_lines": 305,
-    "suspect_count": 68,
+    "pseudocode_lines": 302,
+    "suspect_count": 59,
     "suspect_types": [
-      "concat_artifact",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
       "stack_ref",
-      "sub_artifact",
-      "undefined_type",
       "unknown_field"
     ],
-    "total_lines": 907
+    "total_lines": 904
   },
   "cross_references": [
     {
@@ -746,234 +743,171 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 10,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 11,
-      "match": "undefined3 extraout_var_00",
-      "text": "undefined3 extraout_var_00;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 13,
-      "match": "undefined3 extraout_var_01",
-      "text": "undefined3 extraout_var_01;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 20,
       "match": "in_stack_fffffb04",
       "text": "CQuaternion4f *in_stack_fffffb04;",
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 83,
-      "match": "SUB41",
-      "text": "\"*.pth\",SUB41 /* extract 2-byte value */(local_1f0,0)), iVar6 != 0)) {",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 95,
-      "match": "SUB41",
-      "text": "SUB41 /* extract 2-byte value */(local_1f0,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 96,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 99,
       "match": "&stack0xfffffb04",
-      "text": "puVar9 = (uint *)&stack0xfffffb04;",
+      "text": "puVar8 = (uint *)&stack0xfffffb04;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 107,
       "match": "&stack0xfffffb04",
-      "text": "(g_CEditorToolsPtr,\"Import .CRS file\",true,&stack0xfffffb04);",
+      "text": "(g_CEditorToolsPtr,\"Import .CRS file\",0x6192f4,&stack0xfffffb04)",
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 112,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar3) == 0) goto LAB_004431bd;",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 113,
       "match": "&stack0xfffffb04",
       "text": "(&stack0xfffffb04,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0);",
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 150,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar3) == 0) goto LAB_004431bd;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 186,
-      "match": "SUB41",
-      "text": "\"*.kfm\",SUB41 /* extract 2-byte value */(local_2f4,0));",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 203,
+      "line": 200,
       "match": "._0_4_",
       "text": "local_44._0_4_ = local_38._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 203,
+      "line": 200,
       "match": "._12_4_",
       "text": "local_44._0_4_ = local_38._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 204,
+      "line": 201,
       "match": "._8_4_",
       "text": "local_44._8_4_ = local_28;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 205,
+      "line": 202,
       "match": "._4_4_",
       "text": "local_44._4_4_ = local_24;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 204,
       "match": "in_stack_fffffb04",
       "text": "((CQuaternion4f *)local_44,(CVector3f *)in_stack_fffffb04);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 206,
       "match": "(float *)((int)",
-      "text": "pfVar10 = (float *)((int)&local_74 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "text": "pfVar9 = (float *)((int)&local_74 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 207,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_74 + (uint)bVar14 * -8 + 4) = afStack_80[(uint)bVar14 * -2];",
+      "text": "*(float *)((int)&local_74 + (uint)bVar13 * -8 + 4) = afStack_80[(uint)bVar13 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 218,
+      "line": 215,
       "match": "(CQuaternion4f *)((int)",
-      "text": "(CQuaternion4f *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar6),",
+      "text": "(CQuaternion4f *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 219,
+      "line": 216,
       "match": "in_stack_fffffb04",
       "text": "in_stack_fffffb04);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 217,
       "match": "(float *)((int)",
-      "text": "pfVar10 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar6);",
+      "text": "pfVar9 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 224,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)(local_44 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + -8) +",
+      "text": "*(float *)((int)(local_44 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + -8) +",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 246,
+      "line": 243,
       "match": "._0_4_",
       "text": "local_9c._0_4_ = (pCVar2->frame1).pos.x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 247,
+      "line": 244,
       "match": "._4_4_",
       "text": "local_9c._4_4_ = (pCVar2->frame1).pos.y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 248,
+      "line": 245,
       "match": "._8_4_",
       "text": "local_9c._8_4_ = (pCVar2->frame1).pos.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 251,
+      "line": 248,
       "match": "._12_4_",
       "text": "local_9c._12_4_ = (pCVar2->frame1).pos.x;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 257,
+      "line": 254,
       "match": "(CVector3f *)((int)",
-      "text": "point = (CVector3f *)((int)&(this_ptr->frame_list->frame1).pos.x + iVar6);",
+      "text": "point = (CVector3f *)((int)&(this_ptr->frame_list->frame1).pos.x + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 277,
+      "line": 274,
       "match": "(CQuaternion4f *)((int)",
-      "text": "(CQuaternion4f *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar6));",
+      "text": "(CQuaternion4f *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5));",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 278,
+      "line": 275,
       "match": "._8_4_",
       "text": "local_38._8_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 280,
+      "line": 277,
       "match": "in_stack_fffffb04",
       "text": "((CQuaternion4f *)local_38,(CVector3f *)in_stack_fffffb04);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 281,
+      "line": 278,
       "match": "(float *)((int)",
-      "text": "pfVar10 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar6);",
+      "text": "pfVar9 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5);",
       "type": "pointer_cast"
     },
     {

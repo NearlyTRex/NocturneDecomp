@@ -25,7 +25,7 @@ core_game_cpp_CGame_loadSaveGame_FUN_004e12b0
   bool bVar11;
   byte bVar12;
   char *target_filename;
-  byte auto_select_flag;
+  byte *auto_select_flag;
   uint class_name_hash;
   uint in_stack_fffff9c8;
   uint in_stack_fffff9cc;
@@ -89,10 +89,10 @@ core_game_cpp_CGame_loadSaveGame_FUN_004e12b0
     if (save_filename == (char *)0x0) {
       target_filename = "*.noc";
       pcVar5 = "save";
-      auto_select_flag = (char)&stack0xfffff9c8;
+      auto_select_flag = &stack0xfffff9c8;
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select file to load");
       iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                        (g_CEditorToolsPtr,pcVar8,pcVar5,target_filename,(bool)auto_select_flag);
+                        (g_CEditorToolsPtr,pcVar8,pcVar5,target_filename,(int)auto_select_flag);
       if (iVar2 == 0) {
 LAB_004e17ac:
         g_EditorFont = local_3c;

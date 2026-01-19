@@ -15,15 +15,13 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
   bool bVar2;
   CEdButton *pCVar3;
   CEdButton *pCVar4;
-  bool bVar5;
-  char cVar6;
-  int iVar7;
-  undefined3 extraout_var;
+  char cVar5;
+  int iVar6;
+  uint uVar7;
   uint uVar8;
-  uint uVar9;
-  int iVar10;
-  char *pcVar11;
-  byte bVar12;
+  int iVar9;
+  char *pcVar10;
+  byte bVar11;
   CEdButton *in_stack_00000004;
   char *in_stack_0000007c;
   char *in_stack_00000080;
@@ -48,7 +46,7 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
   char cStack000000dc;
   byte uStack000000dd;
   
-  bVar12 = 0;
+  bVar11 = 0;
   (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
   DAT_0310fd40 = DAT_0310fd40 + g_GlobalDeltaTimeInt & 0xfffff;
   core_script_cpp_CScript_CallingScriptEditorX2_2_FUN_00566910();
@@ -58,54 +56,54 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
   shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_0310fcd8);
   core_script_cpp_FUN_00566880();
   bVar2 = false;
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
+  if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
+  if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
+  if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
+  if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
+  if (iVar6 != 0) {
     (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
+  if (iVar6 != 0) {
     (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x51);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x51);
+  if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x49);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x49);
+  if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x53);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x53);
+  if (iVar6 != 0) {
     bVar2 = true;
     if (-1 < DAT_0310fd4c) {
       (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
     }
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x52);
-  if (iVar7 != 0) {
-    iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-    if (iVar7 == 0) {
-      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-      if (iVar7 == 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x52);
+  if (iVar6 != 0) {
+    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    if (iVar6 == 0) {
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      if (iVar6 == 0) {
         DAT_0068105c = (uint)(DAT_0068105c == 0);
         goto LAB_00565363;
       }
@@ -114,63 +112,63 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
 LAB_00565363:
-  iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if (iVar7 != 0) {
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2d);
-    if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if (iVar6 != 0) {
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2d);
+    if (iVar6 != 0) {
       core_script_cpp_CScript_editorAction_FUN_00564820();
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
-    if (iVar7 != 0) {
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
+    if (iVar6 != 0) {
       core_script_cpp_CScript_editorAction_FUN_00564820();
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
-    if (iVar7 != 0) {
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
+    if (iVar6 != 0) {
       core_script_cpp_CScript_editorAction_FUN_00564820();
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
   }
-  iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if ((iVar7 != 0) &&
-     (iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22), iVar7 != 0)) {
+  iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if ((iVar6 != 0) &&
+     (iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22), iVar6 != 0)) {
     in_stack_0000007c = (char *)(DAT_0310fd48 + 1);
-    iVar7 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
+    iVar6 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
                       ((CBitFont *)(in_stack_00000004->button_text + 0x1c));
-    bVar5 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                      (g_CEditorToolsPtr,"Enter line number",(int *)&stack0x0000007c,true,1
-                       ,iVar7 + 1,true);
-    if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar5) != 0) {
+    iVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
+                      (g_CEditorToolsPtr,"Enter line number",(int *)&stack0x0000007c,1,1,
+                       iVar6 + 1,1);
+    if (iVar6 != 0) {
       DAT_0310fd48 = (int)(((CEdButton *)((int)in_stack_0000007c + -0xe4))->button_text + 199);
       bVar2 = true;
       DAT_0310fd44 = 0;
     }
     engine_2d_c_clearInputAndWait_FUN_00403260();
   }
-  iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-  if ((iVar7 != 0) &&
-     (iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21), iVar7 != 0)) {
+  iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if ((iVar6 != 0) &&
+     (iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21), iVar6 != 0)) {
     in_stack_00000080 = (char *)0x2a;
     in_stack_0000007c = (char *)g_CKeysPtr;
-    uVar9 = 1;
-    iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-    if (iVar7 != 0) {
-      uVar9 = 0xffffffff;
+    uVar8 = 1;
+    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    if (iVar6 != 0) {
+      uVar8 = 0xffffffff;
     }
     in_stack_00000088 = (char *)0x1;
     in_stack_00000084 = (char *)0x64;
     in_stack_00000080 = &DAT_0310fd58;
     in_stack_0000007c = "Find";
-    iVar7 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+    iVar6 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                       (g_CEditorToolsPtr,"Find",&DAT_0310fd58,100,1);
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       in_stack_00000084 = (char *)&stack0x00000090;
       in_stack_00000080 = (char *)&stack0x0000008c;
       in_stack_0000007c = (char *)&stack0x00000098;
-      in_stack_00000088 = (char *)uVar9;
-      iVar7 = core_script_cpp_FUN_00566cc0();
-      if (iVar7 == 0) {
+      in_stack_00000088 = (char *)uVar8;
+      iVar6 = core_script_cpp_FUN_00566cc0();
+      if (iVar6 == 0) {
         in_stack_00000088 = &DAT_0310fd58;
         in_stack_00000084 = "Can't find %s";
         in_stack_00000080 = &DAT_0310fdc0;
@@ -195,15 +193,15 @@ LAB_00565363:
   in_stack_00000088 = (char *)0x3d;
   in_stack_00000084 = (char *)g_CKeysPtr;
   in_stack_00000080 = (char *)0x56555b;
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3d);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3d);
+  if (iVar6 != 0) {
     in_stack_00000090 = (char *)0x2a;
     in_stack_0000008c = (char *)g_CKeysPtr;
-    iVar10 = 1;
+    iVar9 = 1;
     in_stack_00000088 = (char *)0x565577;
-    iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-    if (iVar7 != 0) {
-      iVar10 = -1;
+    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    if (iVar6 != 0) {
+      iVar9 = -1;
     }
     if (DAT_0310fd58 == '\0') {
       in_stack_00000098 = (char *)0x1;
@@ -220,12 +218,12 @@ LAB_00565363:
       in_stack_00000090 = (char *)&stack0x000000b0;
       in_stack_0000008c = (char *)&stack0x000000ac;
       in_stack_00000088 = (char *)DAT_0310fd48;
-      in_stack_00000084 = (char *)(iVar10 + DAT_0310fd44);
+      in_stack_00000084 = (char *)(iVar9 + DAT_0310fd44);
       in_stack_00000080 = &DAT_0310fd58;
       in_stack_0000007c = (char *)in_stack_00000004;
-      in_stack_00000098 = (char *)iVar10;
-      iVar7 = core_script_cpp_FUN_00566cc0();
-      if (iVar7 == 0) {
+      in_stack_00000098 = (char *)iVar9;
+      iVar6 = core_script_cpp_FUN_00566cc0();
+      if (iVar6 == 0) {
         in_stack_00000098 = &DAT_0310fd58;
         in_stack_00000094 = "Can't find %s";
         in_stack_00000090 = &DAT_0310fdc0;
@@ -250,8 +248,8 @@ LAB_00565363:
   in_stack_00000098 = (char *)0x3e;
   in_stack_00000094 = (char *)g_CKeysPtr;
   in_stack_00000090 = (char *)0x56563a;
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
+  if (iVar6 != 0) {
     in_stack_000000a0 = (CEdButton *)DAT_0310fd48;
     in_stack_0000009c = (CKeys *)DAT_0310fd44;
     in_stack_00000098 = (char *)in_stack_00000004;
@@ -262,8 +260,8 @@ LAB_00565363:
   in_stack_000000a0 = (CEdButton *)0x40;
   in_stack_0000009c = g_CKeysPtr;
   in_stack_00000098 = (char *)0x56566a;
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x40);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x40);
+  if (iVar6 != 0) {
     in_stack_000000a8 = (CEdButton *)DAT_0310fd48;
     in_stack_000000a4 = (CKeys *)DAT_0310fd44;
     in_stack_000000a0 = in_stack_00000004;
@@ -274,8 +272,8 @@ LAB_00565363:
   in_stack_000000a8 = (CEdButton *)0x3b;
   in_stack_000000a4 = g_CKeysPtr;
   in_stack_000000a0 = (CEdButton *)0x565699;
-  iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
-  if (iVar7 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
+  if (iVar6 != 0) {
     in_stack_000000b0 = (int *)DAT_0310fd48;
     in_stack_000000ac = (int *)DAT_0310fd44;
     in_stack_000000a8 = in_stack_00000004;
@@ -336,8 +334,8 @@ LAB_00565363:
         in_stack_000000a0 = in_stack_00000004;
         g_MouseButtonFlags = (int)g_ActiveButton;
         in_stack_0000009c = (CKeys *)0x5658f6;
-        iVar7 = core_script_cpp_FUN_00566c20();
-        if (iVar7 != 0) {
+        iVar6 = core_script_cpp_FUN_00566c20();
+        if (iVar6 != 0) {
           in_stack_000000b0 = (int *)DAT_0310fd48;
           in_stack_000000ac = (int *)DAT_0310fd44;
           in_stack_000000a8 = in_stack_00000004;
@@ -353,15 +351,15 @@ LAB_00565363:
       in_stack_000000a4 = (CKeys *)g_MouseX;
       in_stack_000000a0 = in_stack_00000004;
       in_stack_0000009c = (CKeys *)0x565880;
-      iVar7 = core_script_cpp_FUN_00566c20();
+      iVar6 = core_script_cpp_FUN_00566c20();
       pCVar4 = g_ActiveButton;
-      if (iVar7 != 0) {
+      if (iVar6 != 0) {
         in_stack_000000b0 = (int *)0x38;
         in_stack_000000ac = (int *)g_CKeysPtr;
         in_stack_000000a8 = (CEdButton *)0x565893;
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
         pCVar4 = in_stack_00000004;
-        if (iVar7 != 0) {
+        if (iVar6 != 0) {
           in_stack_000000b8 = DAT_0310fd48;
           in_stack_000000b4 = DAT_0310fd44;
           in_stack_000000b0 = &in_stack_00000004->enabled;
@@ -384,8 +382,8 @@ LAB_00565363:
         while( true ) {
           while( true ) {
             in_stack_000000b0 = (int *)0x565776;
-            iVar7 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-            if (iVar7 == 0) {
+            iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+            if (iVar6 == 0) {
               in_stack_000000b0 = &in_stack_00000004->enabled;
               in_stack_000000ac = (int *)0x565a1c;
               core_script_cpp_CScript_Unk18_FUN_005669a0();
@@ -413,24 +411,24 @@ LAB_00565363:
               return;
             }
             in_stack_000000b0 = (int *)0x565785;
-            uVar8 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-            cVar6 = (char)uVar8;
-            uVar8 = uVar8 & 0xff;
-            if (uVar8 != 0xd) break;
+            uVar7 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+            cVar5 = (char)uVar7;
+            uVar7 = uVar7 & 0xff;
+            if (uVar7 != 0xd) break;
             in_stack_000000b0 = (int *)0x0;
             in_stack_000000ac = (int *)0x12;
             in_stack_000000a8 = in_stack_00000004;
             in_stack_000000a4 = (CKeys *)0x56579a;
             core_script_cpp_CScript_editorAction_FUN_00564820();
           }
-          if (uVar8 != 8) break;
+          if (uVar7 != 8) break;
           in_stack_000000b0 = (int *)0x0;
           in_stack_000000ac = (int *)&DAT_00000010;
           in_stack_000000a8 = in_stack_00000004;
           in_stack_000000a4 = (CKeys *)0x56592b;
           core_script_cpp_CScript_editorAction_FUN_00564820();
         }
-      } while (((g_CharacterClassificationTable[(byte)(cVar6 + 1)] & 8U) == 0) && (uVar8 != 9));
+      } while (((g_CharacterClassificationTable[(byte)(cVar5 + 1)] & 8U) == 0) && (uVar7 != 9));
       in_stack_000000b0 = (int *)0x0;
       in_stack_000000ac = (int *)0xf;
       in_stack_000000a8 = in_stack_00000004;
@@ -442,7 +440,7 @@ LAB_00565363:
       in_stack_000000a8 = in_stack_00000004;
       uStack000000dd = 0;
       in_stack_000000a4 = (CKeys *)0x565971;
-      cStack000000dc = cVar6;
+      cStack000000dc = cVar5;
       core_script_cpp_FUN_00566390();
       bVar2 = true;
     }
@@ -450,30 +448,30 @@ LAB_00565363:
     in_stack_000000ac = &in_stack_00000004->enabled;
     in_stack_000000a8 = (CEdButton *)0x565995;
     core_script_cpp_FUN_00566230();
-    uVar8 = 0xffffffff;
-    pcVar11 = &DAT_031101c0;
+    uVar7 = 0xffffffff;
+    pcVar10 = &DAT_031101c0;
     do {
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      cVar1 = *pcVar11;
-      pcVar11 = pcVar11 + (uint)bVar12 * -2 + 1;
+      if (uVar7 == 0) break;
+      uVar7 = uVar7 - 1;
+      cVar1 = *pcVar10;
+      pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
     } while (cVar1 != '\0');
     in_stack_000000b0 = (int *)DAT_0310fd44;
     in_stack_000000ac = (int *)DAT_0310fd48;
     in_stack_000000a8 = in_stack_00000004;
     in_stack_000000a4 = (CKeys *)0x5659be;
-    iVar10 = core_script_cpp_CScript_editorX2Index_FUN_00566a90();
-    for (iVar7 = ~uVar8 - 1; iVar7 < iVar10; iVar7 = iVar7 + 1) {
-      (&DAT_031101c0)[iVar7] = 0x20;
+    iVar9 = core_script_cpp_CScript_editorX2Index_FUN_00566a90();
+    for (iVar6 = ~uVar7 - 1; iVar6 < iVar9; iVar6 = iVar6 + 1) {
+      (&DAT_031101c0)[iVar6] = 0x20;
     }
-    (&DAT_031101c0)[iVar10] = cVar6;
-    if (iVar7 <= iVar10) {
-      iVar7 = iVar7 + 1;
+    (&DAT_031101c0)[iVar9] = cVar5;
+    if (iVar6 <= iVar9) {
+      iVar6 = iVar6 + 1;
     }
-    in_stack_000000b0 = (int *)(iVar10 + 1);
+    in_stack_000000b0 = (int *)(iVar9 + 1);
     in_stack_000000ac = (int *)DAT_0310fd48;
     in_stack_000000a8 = in_stack_00000004;
-    (&DAT_031101c0)[iVar7] = 0;
+    (&DAT_031101c0)[iVar6] = 0;
     in_stack_000000a4 = (CKeys *)0x5659f4;
     DAT_0310fd44 = core_script_cpp_CScript_editorIndex2X_FUN_00566b30();
     in_stack_000000b0 = (int *)DAT_0310fd48;

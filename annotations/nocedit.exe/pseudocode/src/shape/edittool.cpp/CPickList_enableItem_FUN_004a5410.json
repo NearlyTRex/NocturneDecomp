@@ -1,17 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 59,
+    "complexity_score": 28,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 29,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param",
-      "undefined_type"
-    ],
-    "total_lines": 103
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -43,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CPickList_enableItem_FUN_004a5410",
-    "signature": "void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)"
+    "signature": "void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)"
   },
   "function_calls": [
     {
@@ -132,10 +129,10 @@
     "pcode_op_count": 263
   },
   "stack_frame": {
-    "frame_size": 13,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 9,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -156,25 +153,10 @@
         "is_param": true,
         "name": "enable_flag",
         "offset": 12,
-        "size": 1,
-        "type": "bool"
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000d",
-      "text": "undefined3 in_stack_0000000d;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 8,
-      "match": "undefined3 in_stack_0000000d",
-      "text": "undefined3 in_stack_0000000d;",
-      "type": "undefined_type"
-    }
-  ]
+  "suspects": []
 }

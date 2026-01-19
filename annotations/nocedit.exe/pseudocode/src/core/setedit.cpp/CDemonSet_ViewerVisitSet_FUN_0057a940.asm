@@ -241,7 +241,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 0057ab8d | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0057ab93 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0057ab94
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0057ab99
     MOV ESI,dword ptr [0x02ca03a0]      ; 0057ab9c | g_CubesRenderedCount
         ;   Label: LAB_0057ab9c

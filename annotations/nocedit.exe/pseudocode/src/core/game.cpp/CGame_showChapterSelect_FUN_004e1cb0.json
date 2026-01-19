@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1095,
-    "complexity_score": 1850,
+    "complexity_score": 1835,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 97,
     "pseudocode_lines": 420,
-    "suspect_count": 141,
+    "suspect_count": 140,
     "suspect_types": [
       "lea_esp_stack_addr",
       "stack_param",
-      "stack_ref",
-      "sub_artifact"
+      "stack_ref"
     ],
     "total_lines": 1515
   },
@@ -954,13 +953,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 77,
-      "match": "SUB41",
-      "text": "\"*.msn\",SUB41 /* extract 2-byte value */(local_144,0));",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 88,
       "match": "&stack0xfffff914",
@@ -1013,7 +1005,7 @@
       "description": "Direct stack address reference",
       "line": 115,
       "match": "&stack0xfffff914",
-      "text": "((CPickList *)&stack0xfffff914,iVar5,false);",
+      "text": "((CPickList *)&stack0xfffff914,iVar5,0);",
       "type": "stack_ref"
     },
     {
@@ -1125,7 +1117,7 @@
       "description": "Direct stack address reference",
       "line": 174,
       "match": "&stack0xfffff914",
-      "text": "((CPickList *)&stack0xfffff914,iVar6,false);",
+      "text": "((CPickList *)&stack0xfffff914,iVar6,0);",
       "type": "stack_ref"
     },
     {
@@ -1195,7 +1187,7 @@
       "description": "Direct stack address reference",
       "line": 222,
       "match": "&stack0xfffff914",
-      "text": "((CPickList *)&stack0xfffff914,iVar6,false);",
+      "text": "((CPickList *)&stack0xfffff914,iVar6,0);",
       "type": "stack_ref"
     },
     {
@@ -1293,7 +1285,7 @@
       "description": "Direct stack address reference",
       "line": 277,
       "match": "&stack0xfffff914",
-      "text": "((CPickList *)&stack0xfffff914,iVar6,false);",
+      "text": "((CPickList *)&stack0xfffff914,iVar6,0);",
       "type": "stack_ref"
     },
     {
@@ -1342,7 +1334,7 @@
       "description": "Direct stack address reference",
       "line": 311,
       "match": "&stack0xfffff914",
-      "text": "((CPickList *)&stack0xfffff914,iVar6,false);",
+      "text": "((CPickList *)&stack0xfffff914,iVar6,0);",
       "type": "stack_ref"
     },
     {
@@ -1370,7 +1362,7 @@
       "description": "Direct stack address reference",
       "line": 336,
       "match": "&stack0xfffff914",
-      "text": "((CPickList *)&stack0xfffff914,iVar6,false);",
+      "text": "((CPickList *)&stack0xfffff914,iVar6,0);",
       "type": "stack_ref"
     },
     {

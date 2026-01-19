@@ -470,7 +470,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004e219a
     PUSH EAX                            ; 004e219e
     CALL shape_edittool.cpp_CPickList_enableItem_FUN_004a5410 ; 004e219f
-        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
     ADD ESP,0xc                         ; 004e21a4
         ;   Label: LAB_004e21a4
     MOV EAX,dword ptr [ESP]             ; 004e21a7
@@ -607,7 +607,7 @@ section .text
     PUSH EBX                            ; 004e231b
     PUSH EDI                            ; 004e231c
     CALL shape_edittool.cpp_CPickList_enableItem_FUN_004a5410 ; 004e231d
-        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
     ADD ESP,0xc                         ; 004e2322
     INC EBX                             ; 004e2325
     ADD ESI,0x4                         ; 004e2326
@@ -765,7 +765,7 @@ section .text
     PUSH EBX                            ; 004e24a7
     PUSH EDI                            ; 004e24a8
     CALL shape_edittool.cpp_CPickList_enableItem_FUN_004a5410 ; 004e24a9
-        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
     ADD ESP,0xc                         ; 004e24ae
         ;   Label: LAB_004e24ae
     INC EBX                             ; 004e24b1
@@ -943,7 +943,7 @@ section .text
     PUSH EBX                            ; 004e2666
     PUSH EDI                            ; 004e2667
     CALL shape_edittool.cpp_CPickList_enableItem_FUN_004a5410 ; 004e2668
-        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
     ADD ESP,0xc                         ; 004e266d
         ;   Label: LAB_004e266d
     INC EBX                             ; 004e2670
@@ -1038,7 +1038,7 @@ section .text
     PUSH EBX                            ; 004e274b
     PUSH EDI                            ; 004e274c
     CALL shape_edittool.cpp_CPickList_enableItem_FUN_004a5410 ; 004e274d
-        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
     ADD ESP,0xc                         ; 004e2752
         ;   Label: LAB_004e2752
     INC EBX                             ; 004e2755
@@ -1103,7 +1103,7 @@ section .text
     PUSH EBX                            ; 004e27df
     PUSH EDI                            ; 004e27e0
     CALL shape_edittool.cpp_CPickList_enableItem_FUN_004a5410 ; 004e27e1
-        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
     ADD ESP,0xc                         ; 004e27e6
         ;   Label: LAB_004e27e6
     INC EBX                             ; 004e27e9

@@ -101,7 +101,7 @@ section .text
     PUSH EDX                            ; 005ffd49
         ;   Label: LAB_005ffd49
     CALL crt_stdio.c_prepare_stream_for_write_FUN_00606055 ; 005ffd4a
-        ;   XREF to: 00606055 (UNCONDITIONAL_CALL)  ; bool crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
+        ;   XREF to: 00606055 (UNCONDITIONAL_CALL)  ; BOOL crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
     ADD ESP,0x4                         ; 005ffd4f
     TEST EAX,EAX                        ; 005ffd52
     JNZ 0x005ffce8                      ; 005ffd54

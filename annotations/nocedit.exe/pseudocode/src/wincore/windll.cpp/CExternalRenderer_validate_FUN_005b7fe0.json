@@ -1,16 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 104,
+    "complexity_score": 106,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 61,
     "suspect_count": 4,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 190
+    "total_lines": 192
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0",
-    "signature": "bool wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities)"
+    "signature": "int wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities)"
   },
   "function_calls": [
     {
@@ -129,30 +129,30 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._0_2_",
-      "text": "iVar3._0_2_ = this_ptr->hardware_flag1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 31,
-      "match": "._2_2_",
-      "text": "iVar3._2_2_ = this_ptr->hardware_flag2;",
+      "match": "._0_2_",
+      "text": "iVar5._0_2_ = this_ptr->hardware_flag1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 32,
-      "match": "._0_2_",
-      "text": "iVar2._0_2_ = capabilities->hardware_flag1;",
+      "match": "._2_2_",
+      "text": "iVar5._2_2_ = this_ptr->hardware_flag2;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 33,
+      "match": "._0_2_",
+      "text": "iVar3._0_2_ = capabilities->hardware_flag1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 34,
       "match": "._2_2_",
-      "text": "iVar2._2_2_ = capabilities->hardware_flag2;",
+      "text": "iVar3._2_2_ = capabilities->hardware_flag2;",
       "type": "unknown_field"
     }
   ]

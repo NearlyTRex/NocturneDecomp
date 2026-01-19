@@ -1676,7 +1676,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2318]    ; 004b99af
     PUSH EBX                            ; 004b99b6
     CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004b99b7
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; bool engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004b99bc
     JMP 0x004b8f32                      ; 004b99bf
         ;   XREF to: 004b8f32 (UNCONDITIONAL_JUMP)  ; LAB_004b8f32
@@ -1688,7 +1688,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2318]    ; 004b99cb
     PUSH EBX                            ; 004b99d2
     CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004b99d3
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; bool engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004b99d8
     PUSH EBX                            ; 004b99db
     CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 004b99dc
@@ -1795,7 +1795,7 @@ section .text
     LEA EAX,[EDI + 0x100]               ; 004b9af6
     PUSH EAX                            ; 004b9afc
     CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004b9afd
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; bool engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004b9b02
     MOV EBP,dword ptr [ESP + 0x2318]    ; 004b9b05
         ;   Label: LAB_004b9b05
@@ -2012,7 +2012,7 @@ section .text
     LEA EBX,[EDI + 0x100]               ; 004b9d61
     PUSH EBX                            ; 004b9d67
     CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004b9d68
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; bool engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004b9d6d
     TEST EAX,EAX                        ; 004b9d70
     JZ 0x004b9e08                       ; 004b9d72

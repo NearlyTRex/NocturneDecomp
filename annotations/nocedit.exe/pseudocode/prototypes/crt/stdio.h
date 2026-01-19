@@ -313,7 +313,7 @@ void reportStreamError(FileEmbeddedData * embedded_data, uint error_flags);
 
 // Original: crt_stdio.c_prepare_stream_for_write_FUN_00606055
 // Address: 00606055
-bool prepare::stream_for_write(FILE * stream);
+BOOL prepare::stream_for_write(FILE * stream);
 
 // Original: crt_stdio.c_stream_flush_FUN_006060bb
 // Address: 006060bb

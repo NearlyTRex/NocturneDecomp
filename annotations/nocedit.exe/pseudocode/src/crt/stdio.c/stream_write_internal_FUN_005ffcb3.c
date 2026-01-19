@@ -11,8 +11,7 @@ crt_stdio_c_stream_write_internal_FUN_005ffcb3(FILE *stream,void *buffer,SIZE_T 
 
 {
   int iVar1;
-  bool bVar2;
-  undefined3 extraout_var;
+  BOOL BVar2;
   SIZE_T SVar3;
   uint uVar4;
   uint *puVar5;
@@ -22,8 +21,7 @@ crt_stdio_c_stream_write_internal_FUN_005ffcb3(FILE *stream,void *buffer,SIZE_T 
   if ((*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) &&
      (((*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0 &&
        ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x4000) == 0)) ||
-      (bVar2 = crt_stdio_c_prepare_stream_for_write_FUN_00606055(stream),
-      CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)))) {
+      (BVar2 = crt_stdio_c_prepare_stream_for_write_FUN_00606055(stream), BVar2 != 0)))) {
     if (count != 0) {
       iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));
       if ((int)count < *(int *)(iVar1 + 0x1c) - (int)*(uint **)(iVar1 + 0x20)) {

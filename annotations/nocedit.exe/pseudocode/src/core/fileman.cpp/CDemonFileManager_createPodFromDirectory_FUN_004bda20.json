@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 824,
+    "complexity_score": 767,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 48,
-    "pseudocode_lines": 269,
-    "suspect_count": 53,
+    "pseudocode_lines": 267,
+    "suspect_count": 49,
     "suspect_types": [
-      "concat_artifact",
       "format_string_mismatch",
-      "lea_esp_stack_addr",
-      "sub_artifact",
-      "undefined_type"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 903
+    "total_lines": 901
   },
   "cross_references": [
     {
@@ -685,41 +682,13 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 10,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 30,
-      "match": "SUB41",
-      "text": "\"*.vox\",SUB41 /* extract 2-byte value */(local_598,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 36,
-      "match": "SUB41",
-      "text": "0x6295e9,SUB41 /* extract 2-byte value */(local_140,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 37,
-      "match": "CONCAT31",
-      "text": "if ((CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) &&",
-      "type": "concat_artifact"
-    },
-    {
       "actual_args": 2,
       "description": "Format \" %[^:]:%s\" has 1 specifiers but 2 arguments after it",
       "expected_args": 1,
       "format_string": " %[^:]:%s",
       "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 85,
-      "match": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(local_798,\" %[^:]:%s\",local_2a5 + 1,local_3a5 + 1);",
+      "line_number": 83,
+      "match": "iVar2 = crt_stdio_c_sscanf_FUN_0060013c(local_798,\" %[^:]:%s\",local_2a5 + 1,local_3a5 + 1);",
       "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
     },

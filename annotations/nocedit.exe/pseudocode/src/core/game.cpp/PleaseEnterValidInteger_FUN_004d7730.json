@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 122,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 14,
-    "pseudocode_lines": 37,
-    "suspect_count": 7,
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
     "suspect_types": [
-      "concat_artifact",
-      "undefined_type",
       "warning_overlapping_globals"
     ],
-    "total_lines": 121
+    "total_lines": 116
   },
   "cross_references": [],
   "function": {
@@ -175,48 +173,6 @@
       "match": "WARNING: Globals starting with",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 10,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 11,
-      "match": "undefined3 extraout_var_00",
-      "text": "undefined3 extraout_var_00;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 12,
-      "match": "undefined3 extraout_var_01",
-      "text": "undefined3 extraout_var_01;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 23,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar1) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 27,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar1) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 31,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar1) != 0) {",
-      "type": "concat_artifact"
     }
   ]
 }

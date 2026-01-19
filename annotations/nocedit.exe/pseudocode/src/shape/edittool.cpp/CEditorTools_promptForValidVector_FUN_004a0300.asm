@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value)
+; __cdecl int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, int show_current_value)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   editor_tools
 ; char *           Stack[0x8]:4   prompt_text
 ; CVector3f *      Stack[0xc]:4   result_ptr
-; bool             Stack[0x10]:1   show_current_value
+; int              Stack[0x10]:4   show_current_value
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58
 ; undefined8       Stack[-0x50]:8  local_50

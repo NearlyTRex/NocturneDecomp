@@ -100,7 +100,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
           y_pos = y_pos + 0xb;
         } while (iVar3 < iVar2 * 4);
       }
-      shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
+      shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     }
     crt_stdio_c_sprintf_FUN_005fdbd0
               (acStack_134,"Visit %d, rotate: %d, zcheck %d, render %d",g_CubesTestedCount,

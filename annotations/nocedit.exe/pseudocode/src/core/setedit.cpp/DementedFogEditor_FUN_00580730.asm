@@ -645,7 +645,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 00580e31 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 00580e37 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 00580e38
-        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
+        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 00580e3d
     TEST EAX,EAX                        ; 00580e40
     JZ 0x00580c22                       ; 00580e42

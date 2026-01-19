@@ -55,7 +55,7 @@ section .text
     PUSH EBX                            ; 004e1c76
     PUSH EDI                            ; 004e1c77
     CALL shape_edittool.cpp_CPickList_enableItem_FUN_004a5410 ; 004e1c78
-        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+        ;   XREF to: 004a5410 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
     ADD ESP,0xc                         ; 004e1c7d
     JMP 0x004e1c95                      ; 004e1c80
         ;   XREF to: 004e1c95 (UNCONDITIONAL_JUMP)  ; LAB_004e1c95

@@ -2,14 +2,14 @@
 // Address: 0049fb70
 // Address Range: [[0049fb70, 004a0012]]
 // Convention: __cdecl
-// Signature: bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, bool show_directory)
+// Signature: int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, int show_directory)
 
 #include "nocturne.h"
 
-bool __cdecl
+int __cdecl
 shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
           (CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,
-          bool show_directory)
+          int show_directory)
 
 {
   char cVar1;
@@ -22,7 +22,6 @@ shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
   CInputString *pCVar7;
   char *pcVar8;
   byte bVar9;
-  undefined3 in_stack_00000015;
   byte in_stack_00000018;
   int color_value;
   int in_stack_fffffca0;
@@ -44,7 +43,7 @@ shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x6a);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
             (this_ptr,g_FontCharacterHeight * 0x1e,g_FontCharacterWidth * 2,prompt_text,0);
-  pcVar8 = _show_directory;
+  pcVar8 = (char *)show_directory;
   if ((in_stack_00000018 & 1) == 0) {
     pcVar8 = (char *)0x0;
   }
@@ -113,12 +112,12 @@ shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(), iVar3 != 0) {
       iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
       if (iVar3 == 0x1b) {
-        *_show_directory = '\0';
+        *(byte *)show_directory = 0;
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(this_ptr);
         engine_2d_c_clearInputAndWait_FUN_00403260();
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         g_InputKeyMask = local_18;
-        return false;
+        return 0;
       }
       if ((iVar3 == 0xd) && (local_158.string_data[0] != '\0')) {
         pCVar6 = &local_158;
@@ -208,14 +207,14 @@ LAB_0049fea7:
   pCVar6 = &local_158;
   do {
     cVar1 = pCVar6->string_data[0];
-    *_show_directory = cVar1;
+    *(char *)show_directory = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pCVar6->string_data[1];
     pCVar6 = (CInputString *)(pCVar6->string_data + 2);
-    _show_directory[1] = cVar1;
-    _show_directory = _show_directory + 2;
+    *(char *)(show_directory + 1) = cVar1;
+    show_directory = show_directory + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(this_ptr);
   g_InputKeyMask = local_18;
-  return true;
+  return 1;
 }

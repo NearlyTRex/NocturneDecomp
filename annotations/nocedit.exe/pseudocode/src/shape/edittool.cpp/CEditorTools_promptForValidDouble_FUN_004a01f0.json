@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 233,
+    "complexity_score": 202,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 53,
-    "suspect_count": 14,
+    "pseudocode_lines": 52,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_anchor",
       "concat_artifact",
       "pointer_cast",
       "stack_align_anchor",
-      "stack_param",
-      "undefined_type",
       "unknown_field",
       "variadic_anchor"
     ],
-    "total_lines": 174
+    "total_lines": 173
   },
   "cross_references": [],
   "function": {
@@ -31,7 +29,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0",
-    "signature": "int shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, bool enable_range_check, double min_value, double max_value, bool show_current_value)"
+    "signature": "int shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, int enable_range_check, double min_value, double max_value, int show_current_value)"
   },
   "function_calls": [
     {
@@ -124,10 +122,10 @@
     "pcode_op_count": 436
   },
   "stack_frame": {
-    "frame_size": 109,
+    "frame_size": 112,
     "local_size": 76,
     "param_offset": 4,
-    "param_size": 33,
+    "param_size": 36,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -183,8 +181,8 @@
         "is_param": true,
         "name": "enable_range_check",
         "offset": 16,
-        "size": 1,
-        "type": "bool"
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
@@ -204,8 +202,8 @@
         "is_param": true,
         "name": "show_current_value",
         "offset": 36,
-        "size": 1,
-        "type": "bool"
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -228,57 +226,43 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000011",
-      "text": "undefined3 in_stack_00000011;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 9,
-      "match": "undefined3 in_stack_00000011",
-      "text": "undefined3 in_stack_00000011;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result_ptr + 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 45,
+      "line": 44,
       "match": "CONCAT44",
       "text": "((local_40 <= (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) &&",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 46,
+      "line": 45,
       "match": "CONCAT44",
       "text": "((double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) <= local_38)))) break;",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 47,
       "match": "._4_4_",
       "text": "(this_ptr,\"Please enter a valid integer between %.15g and %.15g.\",(uint)local_40,local_40._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 49,
+      "line": 48,
       "match": "._4_4_",
       "text": "(uint)local_38,local_38._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result_ptr + 4) = uStack_44;",
       "type": "pointer_cast"
@@ -286,7 +270,7 @@
     {
       "add_esp_value": 16,
       "call_address": "004a025f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -302,7 +286,7 @@
     {
       "add_esp_value": 12,
       "call_address": "004a0276",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -318,7 +302,7 @@
     {
       "add_esp_value": 8,
       "call_address": "004a02c0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -334,7 +318,7 @@
     {
       "add_esp_value": 24,
       "call_address": "004a02e7",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

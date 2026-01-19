@@ -133,7 +133,7 @@ CDemonMission * core_mission_cpp_CDemonMission_dtor_FUN_00524f00(CDemonMission *
 void core_mmx_c_detectCPUFeatures_FUN_00524f10(void);
 void core_mmx_c_detectIntelProcessor_FUN_00524f4c(void);
 void core_mmx_c_detectMMXSupport_FUN_00524ff9(void);
-bool core_mmx_c_getCPUInfo_FUN_0052500f(SCPUInfo * cpu_info);
+int core_mmx_c_getCPUInfo_FUN_0052500f(SCPUInfo * cpu_info);
 CDemonActorType * core_mobster_cpp_staticInit_FUN_00525070(void);
 undefined core_mobster_cpp_FUN_005250a0();
 undefined core_mobster_cpp_FUN_00525110();

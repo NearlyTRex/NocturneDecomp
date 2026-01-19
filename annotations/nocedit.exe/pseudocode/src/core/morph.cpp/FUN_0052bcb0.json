@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 1265,
+    "complexity_score": 1240,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 33,
     "pseudocode_lines": 445,
-    "suspect_count": 78,
+    "suspect_count": 76,
     "suspect_types": [
       "concat_artifact",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
       "stack_ref",
-      "sub_artifact",
       "unaffected_reg",
       "undefined_type"
     ],
@@ -1041,25 +1040,11 @@
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 104,
-      "match": "SUB41",
-      "text": "\"*.dfm\",SUB41 /* extract 2-byte value */(local_228,0));",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 107,
       "match": "&stack0xffffb248",
       "text": "((CDeformableModelInstance *)&stack0xffffb248,local_228);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 110,
-      "match": "SUB41",
-      "text": "\"*.dfm\",SUB41 /* extract 2-byte value */(local_228,0));",
-      "type": "sub_artifact"
     },
     {
       "description": "Direct stack address reference",

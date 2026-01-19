@@ -83,7 +83,7 @@ section .text
     JZ 0x0060d0ea                       ; 0060d0e1
         ;   XREF to: 0060d0ea (CONDITIONAL_JUMP)  ; LAB_0060d0ea
     CALL crt_signal.c_registerConsoleHandler_FUN_0060cfb8 ; 0060d0e3
-        ;   XREF to: 0060cfb8 (UNCONDITIONAL_CALL)  ; bool crt_signal.c_registerConsoleHandler_FUN_0060cfb8()
+        ;   XREF to: 0060cfb8 (UNCONDITIONAL_CALL)  ; BOOL crt_signal.c_registerConsoleHandler_FUN_0060cfb8()
     JMP 0x0060d0ef                      ; 0060d0e8
         ;   XREF to: 0060d0ef (UNCONDITIONAL_JUMP)  ; LAB_0060d0ef
     CALL crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4 ; 0060d0ea

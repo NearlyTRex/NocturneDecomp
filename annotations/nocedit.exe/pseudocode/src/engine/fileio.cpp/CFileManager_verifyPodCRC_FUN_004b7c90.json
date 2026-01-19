@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 83,
+    "complexity_score": 51,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 38,
-    "suspect_count": 3,
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
     "suspect_types": [
-      "concat_artifact",
-      "lea_esp_stack_addr",
-      "undefined_type"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 119
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -186,20 +184,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unresolved type",
-      "line": 8,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 17,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {",
-      "type": "concat_artifact"
-    },
     {
       "address": "004b7ca4",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

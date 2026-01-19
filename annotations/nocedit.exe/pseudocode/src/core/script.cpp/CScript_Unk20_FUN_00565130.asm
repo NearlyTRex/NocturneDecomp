@@ -392,7 +392,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 0056543b | g_CEditorToolsPtr
     PUSH EDI                            ; 00565441 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 00565442
-        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 00565447
     TEST EAX,EAX                        ; 0056544a
     JZ 0x00565464                       ; 0056544c

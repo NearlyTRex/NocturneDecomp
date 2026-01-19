@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 375,
+    "complexity_score": 343,
     "cross_reference_count": 6,
     "function_call_count": 13,
     "global_count": 12,
-    "pseudocode_lines": 145,
-    "suspect_count": 21,
+    "pseudocode_lines": 143,
+    "suspect_count": 19,
     "suspect_types": [
-      "concat_artifact",
       "lea_esp_stack_addr",
-      "pointer_cast",
-      "undefined_type"
+      "pointer_cast"
     ],
-    "total_lines": 506
+    "total_lines": 504
   },
   "cross_references": [
     {
@@ -356,25 +354,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 12,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 33,
       "match": "(char *)((int)",
-      "text": "pcVar7 = (char *)((int)pSVar8 + (uint)bVar10 * -2 + 1);",
+      "text": "pcVar6 = (char *)((int)pSVar7 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 135,
-      "match": "CONCAT31",
-      "text": ", CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)) && (-1 < (int)uVar4)) {",
-      "type": "concat_artifact"
     },
     {
       "address": "004b3231",

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined shape_edittool.cpp_CPickList_getItemHotKey_FUN_004a5610()
+; __cdecl int shape_edittool.cpp_CPickList_getItemHotKey_FUN_004a5610(CPickList * this_ptr, int index)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_00623be4

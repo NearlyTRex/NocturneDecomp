@@ -17,4 +17,4 @@ void detectMMXSupport(void);
 
 // Original: core_mmx.c_getCPUInfo_FUN_0052500f
 // Address: 0052500f
-bool getCPUInfo(SCPUInfo * cpu_info);
+int getCPUInfo(SCPUInfo * cpu_info);

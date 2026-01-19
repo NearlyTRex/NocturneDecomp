@@ -37,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_prepare_stream_for_write_FUN_00606055",
-    "signature": "bool crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)"
+    "signature": "BOOL crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)"
   },
   "function_calls": [
     {
@@ -137,7 +137,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(int *)((int)",
-      "text": "return *(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0;",
+      "text": "return (uint)(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0);",
       "type": "pointer_cast"
     },
     {

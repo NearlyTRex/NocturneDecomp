@@ -704,7 +704,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0051e141 | g_CEditorToolsPtr
     PUSH ECX                            ; 0051e147 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 0051e148
-        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0051e14d
     PUSH 0x20                           ; 0051e150
         ;   Label: LAB_0051e150

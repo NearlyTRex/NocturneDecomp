@@ -1059,7 +1059,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 0052c9b7 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0052c9bd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0052c9be
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0052c9c3
     JMP 0x0052c3d7                      ; 0052c9c6
         ;   XREF to: 0052c3d7 (UNCONDITIONAL_JUMP)  ; LAB_0052c3d7

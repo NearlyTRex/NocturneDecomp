@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, bool enable_flag)
+; __cdecl void shape_edittool.cpp_CPickList_enableItem_FUN_004a5410(CPickList * this_ptr, int item_index, int enable_flag)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   item_index
-; bool             Stack[0xc]:1   enable_flag
+; int              Stack[0xc]:4   enable_flag
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db83d

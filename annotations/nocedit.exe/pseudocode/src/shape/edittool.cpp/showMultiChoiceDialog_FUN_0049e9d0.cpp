@@ -227,7 +227,7 @@ LAB_0049eae7:
         pCVar12 = pCVar12 + 1;
       } while (iVar6 < iVar2);
     }
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
+    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   } while (iVar11 == -2);
   g_CurrentDebugFilename = "..\\shape\\edittool.cpp";

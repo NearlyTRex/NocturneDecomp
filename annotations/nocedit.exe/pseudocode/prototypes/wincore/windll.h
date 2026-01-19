@@ -277,7 +277,7 @@ void CExternalRenderer::ctor(CExternalRenderer * this_ptr);
 
 // Original: wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0
 // Address: 005b7fe0
-bool CExternalRenderer::validate(CExternalRenderer * this_ptr, CExternalRenderer * capabilities);
+int CExternalRenderer::validate(CExternalRenderer * this_ptr, CExternalRenderer * capabilities);
 
 // Original: wincore_windll.cpp_CExternalRenderer_switchRenderer_FUN_005b8117
 // Address: 005b8117

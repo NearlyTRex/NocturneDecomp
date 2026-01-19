@@ -1247,7 +1247,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0047d857 | g_CEditorToolsPtr
     PUSH EAX                            ; 0047d85c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 0047d85d
-        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
+        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 0047d862
     TEST EAX,EAX                        ; 0047d865
     JZ 0x0047d6c7                       ; 0047d867
@@ -1313,7 +1313,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 0047d8f6 | g_CEditorToolsPtr
     PUSH ESI                            ; 0047d8fc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 0047d8fd
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
     ADD ESP,0x14                        ; 0047d902
     TEST EAX,EAX                        ; 0047d905
     JZ 0x0047d6c7                       ; 0047d907
@@ -1562,7 +1562,7 @@ section .text
     PUSH EDI                            ; 0047db91 | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0x52],ESI      ; 0047db92
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 0047db95
-        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0047db9a
     TEST EAX,EAX                        ; 0047db9d
     JZ 0x0047d6c7                       ; 0047db9f
@@ -1627,7 +1627,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0047dc40 | g_CEditorToolsPtr
     PUSH EAX                            ; 0047dc45 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 0047dc46
-        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0047dc4b
     TEST EAX,EAX                        ; 0047dc4e
     JZ 0x0047d6c7                       ; 0047dc50
@@ -1694,7 +1694,7 @@ section .text
     PUSH EAX                            ; 0047dcf6 | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0x5a],EDI      ; 0047dcf7
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0047dcfa
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0047dcff
     TEST EAX,EAX                        ; 0047dd02
     JZ 0x0047d6c7                       ; 0047dd04
@@ -1712,7 +1712,7 @@ section .text
     PUSH ECX                            ; 0047dd2a | g_CEditorToolsInstance
     MOV dword ptr [EBP + 0x5e],EDX      ; 0047dd2b
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0047dd2e
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0047dd33
     TEST EAX,EAX                        ; 0047dd36
     JZ 0x0047d6c7                       ; 0047dd38
@@ -2020,7 +2020,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0047e0f7 | g_CEditorToolsPtr
     PUSH ECX                            ; 0047e0fd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 ; 0047e0fe
-        ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value)
+        ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, int show_current_value)
     ADD ESP,0x10                        ; 0047e103
     TEST EAX,EAX                        ; 0047e106
     JZ 0x0047d6c7                       ; 0047e108
@@ -2541,7 +2541,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 0047e757 | g_CEditorToolsPtr
     PUSH ESI                            ; 0047e75d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 0047e75e
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
     ADD ESP,0x14                        ; 0047e763
     TEST EAX,EAX                        ; 0047e766
     JZ 0x0047d6c7                       ; 0047e768

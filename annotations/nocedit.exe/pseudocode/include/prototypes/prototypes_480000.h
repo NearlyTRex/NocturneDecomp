@@ -73,7 +73,7 @@ int engine_dosio_c_getFileSize_FUN_00481880(char * directory, char * filename);
 uint engine_dosio_c_getFileTimestamp_FUN_004818d0(char * directory_path, char * filename);
 int engine_dosio_c_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file);
 int engine_dosio_c_getFileTimestamp_FUN_00481960(char * directory, char * filename);
-bool engine_dosio_c_setFileAttributes_FUN_004819f0(char * filename, byte flags);
+int engine_dosio_c_setFileAttributes_FUN_004819f0(char * filename, byte flags);
 int engine_dosio_c_truncateFile_FUN_00481a20(FILE * file_handle, long new_size_bytes);
 FILE * engine_dosio_c_getFile_FUN_00481a50(char * directory, char * filename, char * mode);
 void engine_dosio_c_reopenFileStream_FUN_00481b50(char * directory_path, char * filename, byte file_mode_flags, ifstream * file_stream);

@@ -88,8 +88,8 @@ LAB_00537aa5:
     }
     else {
       iVar4 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                        (g_CEditorToolsPtr,"Enter minimum random speed",&0x3F666666,true,
-                         0.01,100.0,true);
+                        (g_CEditorToolsPtr,"Enter minimum random speed",&0x3F666666,1,0.01,
+                         100.0,1);
       if (iVar4 == 0) {
         in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -98,8 +98,8 @@ LAB_00537aa5:
       }
       else {
         iVar4 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                          (g_CEditorToolsPtr,"Enter maximum random speed",&0x3F8CCCCD,true,
-                           0x3F666666,100.0,true);
+                          (g_CEditorToolsPtr,"Enter maximum random speed",&0x3F8CCCCD,1,
+                           0x3F666666,100.0,1);
         if (iVar4 == 0) {
           in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80

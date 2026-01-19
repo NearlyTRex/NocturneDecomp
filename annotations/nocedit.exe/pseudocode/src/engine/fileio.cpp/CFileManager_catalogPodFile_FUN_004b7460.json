@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 611,
+    "complexity_score": 579,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 8,
-    "pseudocode_lines": 96,
-    "suspect_count": 48,
+    "pseudocode_lines": 94,
+    "suspect_count": 46,
     "suspect_types": [
-      "concat_artifact",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
       "stack_ref",
-      "unaffected_reg",
-      "undefined_type"
+      "unaffected_reg"
     ],
-    "total_lines": 314
+    "total_lines": 312
   },
   "cross_references": [
     {
@@ -315,134 +313,120 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 9,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 11,
       "match": "unaff_EBX",
       "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_fffff300",
       "text": "uint in_stack_fffff300;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_fffff304",
       "text": "uint in_stack_fffff304;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_fffff308",
       "text": "uint in_stack_fffff308;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_fffff30c",
       "text": "uint in_stack_fffff30c;",
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 35,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 51,
+      "line": 49,
       "match": "&stack0xfffff300",
       "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff300);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 52,
+      "line": 50,
       "match": "&stack0xfffff300",
-      "text": "iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff300,local_52c)",
+      "text": "iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff300,local_52c)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 55,
       "match": "&stack0xfffff300",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff300);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 64,
       "match": "(time_t *)((int)",
-      "text": "time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)((int)&local_8ec->timestamp + iVar5));",
+      "text": "time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)((int)&local_8ec->timestamp + iVar4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 82,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_8ec->size + iVar5),local_2c);",
+      "text": "*(uint *)((int)&local_8ec->size + iVar4),local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 91,
+      "line": 89,
       "match": "&stack0xfffff304",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_52c,\"Contents of pod file:\\n%s\",&stack0xfffff304);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 93,
       "match": "in_stack_fffff300",
       "text": "(&local_8d4,0,unaff_EBX,in_stack_fffff300,in_stack_fffff304,in_stack_fffff308,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 93,
       "match": "in_stack_fffff304",
       "text": "(&local_8d4,0,unaff_EBX,in_stack_fffff300,in_stack_fffff304,in_stack_fffff308,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 95,
+      "line": 93,
       "match": "in_stack_fffff308",
       "text": "(&local_8d4,0,unaff_EBX,in_stack_fffff300,in_stack_fffff304,in_stack_fffff308,",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 95,
+      "line": 93,
       "match": "unaff_EBX",
       "text": "(&local_8d4,0,unaff_EBX,in_stack_fffff300,in_stack_fffff304,in_stack_fffff308,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 94,
       "match": "in_stack_fffff30c",
       "text": "in_stack_fffff30c);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 97,
+      "line": 95,
       "match": "&stack0xfffff300",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff300);",
       "type": "stack_ref"

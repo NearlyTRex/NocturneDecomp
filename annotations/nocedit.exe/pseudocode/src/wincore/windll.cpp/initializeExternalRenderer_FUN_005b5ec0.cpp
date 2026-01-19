@@ -9,9 +9,8 @@
 int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
 
 {
-  bool bVar1;
-  FARPROC pFVar2;
-  undefined3 extraout_var;
+  FARPROC pFVar1;
+  int iVar2;
   CExternalRenderer CStack_3ba0;
   
   g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllName);
@@ -19,19 +18,19 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
     g_FullscreenMode = (int)g_RendererDLLHandle;
     return 0;
   }
-  pFVar2 = wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
+  pFVar1 = wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                      (g_RendererDLLHandle,"APIDLLInformation");
-  if (pFVar2 == (FARPROC)0x0) {
+  if (pFVar1 == (FARPROC)0x0) {
     wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
     g_FullscreenMode = 0;
     return 0;
   }
-  (*pFVar2)(g_RendererDLLHandle,&CStack_3ba0);
+  (*pFVar1)(g_RendererDLLHandle,&CStack_3ba0);
   wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90
             ((CExternalRenderer *)CStack_3ba0.renderer_dll_name);
-  bVar1 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
+  iVar2 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
                     (&CStack_3ba0,(CExternalRenderer *)CStack_3ba0.renderer_dll_name);
-  if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar1) == 0) {
+  if (iVar2 == 0) {
     wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
     g_FullscreenMode = 0;
     return 0;

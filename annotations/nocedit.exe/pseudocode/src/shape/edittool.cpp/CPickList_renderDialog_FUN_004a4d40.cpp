@@ -138,6 +138,6 @@ LAB_004a4f19:
   if (this_ptr->state_flag != 0) {
     return;
   }
-  shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
+  shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
   return;
 }

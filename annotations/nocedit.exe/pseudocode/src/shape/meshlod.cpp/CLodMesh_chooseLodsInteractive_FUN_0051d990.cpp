@@ -332,8 +332,7 @@ LAB_0051e453:
       iVar12 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
       if (iVar12 != 0) {
         shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                  (g_CEditorToolsPtr,"Enter face count",in_stack_0000000c + iVar4,false,0,0
-                   ,true);
+                  (g_CEditorToolsPtr,"Enter face count",in_stack_0000000c + iVar4,0,0,0,1);
       }
     }
     iVar12 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);

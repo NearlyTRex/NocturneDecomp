@@ -37,7 +37,7 @@ int getFileTimestamp(char * directory, char * filename);
 
 // Original: engine_dosio.c_setFileAttributes_FUN_004819f0
 // Address: 004819f0
-bool setFileAttributes(char * filename, byte flags);
+int setFileAttributes(char * filename, byte flags);
 
 // Original: engine_dosio.c_truncateFile_FUN_00481a20
 // Address: 00481a20

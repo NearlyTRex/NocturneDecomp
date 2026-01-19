@@ -244,7 +244,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             }
             if (this_ptr->letterbox_mode != 0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
-                        ((CPickList *)&stack0xfffff790,3,false);
+                        ((CPickList *)&stack0xfffff790,3,0);
             }
             config_param2 = (CStrList_vtable *)0x0;
             config_param1 = (char **)0xffffffff;

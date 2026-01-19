@@ -24,7 +24,6 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
   int in_stack_00000008;
   char *pcVar10;
   float *result_ptr;
-  bool enable_range_check;
   ulonglong uVar11;
   float in_stack_fffff758;
   uint in_stack_fffff75c;
@@ -130,7 +129,7 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
       goto LAB_0057c050;
     case 0x42:
       uVar11 = 0x100000000;
-      enable_range_check = false;
+      iVar7 = 0;
       pcVar10 = "Enter total time";
       result_ptr = local_3c;
       goto LAB_0057c056;
@@ -142,8 +141,7 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
         if ((iVar7 != 0) &&
            (iVar7 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                               (g_CEditorToolsPtr,"Enter new filter time",
-                               local_2c + local_18->filter_count,false,0.0,0.0,false), iVar7 != 0))
-        {
+                               local_2c + local_18->filter_count,0,0.0,0.0,0), iVar7 != 0)) {
           local_18->filter_count = local_18->filter_count + 1;
         }
       }
@@ -223,8 +221,7 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
                               (g_CEditorToolsPtr,"Edit filter name",local_28[iVar7],0x28,0)
            , iVar5 != 0)) {
           shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                    (g_CEditorToolsPtr,"Edit filter time",local_2c + iVar7,false,0.0,0.0,
-                     true);
+                    (g_CEditorToolsPtr,"Edit filter time",local_2c + iVar7,0,0.0,0.0,1);
         }
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                   ((CPickList *)&stack0xfffff75c,0,(uint)in_stack_fffff758,in_stack_fffff75c,
@@ -241,7 +238,7 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
       in_stack_fffff758 = (float)(local_18->filter_vel).x * (float)0.00390625;
       iVar7 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                         (g_CEditorToolsPtr,"Enter light X velocity",
-                         (float *)&stack0xfffff758,false,0.0,0.0,true);
+                         (float *)&stack0xfffff758,0,0.0,0.0,1);
       if (iVar7 != 0) {
         dStack_58 = crt_math_c_floor_FUN_005feb90
                               ((double)(in_stack_fffff758 * (float)256 +
@@ -254,7 +251,7 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
       in_stack_fffff758 = (float)(local_18->filter_vel).y * (float)0.00390625;
       iVar7 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                         (g_CEditorToolsPtr,"Enter light Y velocity",
-                         (float *)&stack0xfffff758,false,0.0,0.0,true);
+                         (float *)&stack0xfffff758,0,0.0,0.0,1);
       if (iVar7 != 0) {
         dStack_58 = crt_math_c_floor_FUN_005feb90
                               ((double)(in_stack_fffff758 * (float)256 +
@@ -268,17 +265,17 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
       result_ptr = local_48;
 LAB_0057c050:
       uVar11 = 0x100000000;
-      enable_range_check = false;
+      iVar7 = 0;
       goto LAB_0057c056;
     case 0x4b:
       uVar11 = 0x13f800000;
-      enable_range_check = true;
+      iVar7 = 1;
       pcVar10 = "Enter light intensity (0..1)";
       result_ptr = local_40;
 LAB_0057c056:
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                (g_CEditorToolsPtr,pcVar10,result_ptr,enable_range_check,0.0,(float)uVar11,
-                 SUB81 /* extract 2-byte value */((ulonglong)uVar11 >> 0x20,0));
+                (g_CEditorToolsPtr,pcVar10,result_ptr,iVar7,0.0,(float)uVar11,
+                 (int)((ulonglong)uVar11 >> 0x20));
     }
     if (local_30 == 0x1b) {
       core_set_cpp_CDemonSet_FUN_0056d2d0(in_stack_00000004);

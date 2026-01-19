@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl bool engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+; __cdecl int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

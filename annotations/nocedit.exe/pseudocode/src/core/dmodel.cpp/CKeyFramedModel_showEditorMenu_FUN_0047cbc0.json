@@ -1,28 +1,25 @@
 {
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 2847,
+    "complexity_score": 2693,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
-    "pseudocode_lines": 922,
-    "suspect_count": 186,
+    "pseudocode_lines": 913,
+    "suspect_count": 173,
     "suspect_types": [
       "call_esp_anchor",
       "callind_anchor",
-      "concat_artifact",
       "extra_output",
       "format_string_mismatch",
       "negative_offset",
       "pointer_cast",
       "stack_param",
       "stack_ref",
-      "sub_artifact",
-      "undefined_type",
       "variadic_anchor",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3351
+    "total_lines": 3342
   },
   "cross_references": [
     {
@@ -2079,220 +2076,129 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_EAX",
       "text": "uint extraout_EAX;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved type",
-      "line": 15,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 16,
-      "match": "undefined3 extraout_var_00",
-      "text": "undefined3 extraout_var_00;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 17,
-      "match": "undefined3 extraout_var_01",
-      "text": "undefined3 extraout_var_01;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 18,
-      "match": "undefined3 extraout_var_02",
-      "text": "undefined3 extraout_var_02;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 14,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved type",
-      "line": 20,
-      "match": "undefined3 extraout_var_03",
-      "text": "undefined3 extraout_var_03;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 27,
       "match": "in_stack_fffff150",
       "text": "CGame *in_stack_fffff150;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 138,
       "match": "in_stack_fffff150",
       "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff150);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 199,
       "match": "(byte *)((int)",
-      "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar10 + 3) & 0x80) == 0) {",
+      "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar9 + 3) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
+      "line": 200,
       "match": "(int *)((int)",
-      "text": "local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar10) >> 0x10;",
+      "text": "local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar9) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 201,
       "match": "(int *)((int)",
-      "text": "x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;",
+      "text": "x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar9) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 225,
+      "line": 219,
       "match": "extraout_EAX",
-      "text": "(local_408,\"Frame: %d of %d\",local_1c,extraout_EAX,uVar18);",
+      "text": "(local_408,\"Frame: %d of %d\",local_1c,extraout_EAX,uVar17);",
       "type": "extra_output"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 452,
+      "line": 445,
       "match": "local_1c[-1].",
       "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 452,
+      "line": 445,
       "match": "(CKeyFramedModelInstance *)((int)",
       "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 475,
-      "match": "SUB41",
-      "text": "\"models\",\"*.kfm\",SUB41 /* extract 2-byte value */(local_408,0)),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 492,
-      "match": "SUB41",
-      "text": "\"models\",0x620967,SUB41 /* extract 2-byte value */(this_ptr,0)),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 493,
-      "match": "CONCAT31",
-      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,bVar6) != 0)) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 514,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar6) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 526,
+      "line": 518,
       "match": "(CKeyFramedModel *)((int)",
-      "text": "pCVar14 = (CKeyFramedModel *)((int)pCVar9 + (uint)bVar15 * -2 + 1);",
+      "text": "pCVar13 = (CKeyFramedModel *)((int)pCVar8 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 530,
-      "match": "pCVar14[-1].",
-      "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
+      "line": 522,
+      "match": "pCVar13[-1].",
+      "text": "pcVar10 = (char *)((int)&pCVar13[-1].padding + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 530,
+      "line": 522,
       "match": "(char *)((int)",
-      "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
+      "text": "pcVar10 = (char *)((int)&pCVar13[-1].padding + 3);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 546,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_03,bVar6) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 550,
+      "line": 542,
       "match": "&stack0xfffff150",
       "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 551,
+      "line": 543,
       "match": "&stack0xfffff150",
-      "text": "iVar8 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
+      "text": "iVar7 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 553,
+      "line": 545,
       "match": "&stack0xfffff150",
-      "text": "iVar8 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);",
+      "text": "iVar7 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);",
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 625,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar6) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 743,
-      "match": "SUB41",
-      "text": "\"*.pth\",SUB41 /* extract 2-byte value */(local_340,0));",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 770,
+      "line": 762,
       "match": "extraout_EAX_00",
-      "text": "*(CKeyFramedModelInstance **)(extraout_EAX_00 + iVar8 + 4) = local_1c;",
+      "text": "*(CKeyFramedModelInstance **)(extraout_EAX_00 + iVar7 + 4) = local_1c;",
       "type": "extra_output"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 800,
+      "line": 792,
       "match": "collision_triangle_list[-1].",
       "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 916,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar6) == 0) goto LAB_0047d6c7;",
-      "type": "concat_artifact"
     },
     {
       "add_esp_value": 8,
@@ -3018,8 +2924,8 @@
       "expected_args": 1,
       "format_string": "%d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 209,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_2dc,\"%d\",iVar8,uVar18);",
+      "line_number": 203,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_2dc,\"%d\",iVar7,uVar17);",
       "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
     },
@@ -3029,7 +2935,7 @@
       "expected_args": 1,
       "format_string": "noc%d.pcx",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 427,
+      "line_number": 420,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02c14c88,\"noc%d.pcx\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -3040,7 +2946,7 @@
       "expected_args": 10,
       "format_string": "Current dimensions on frame %d\\nX: (%6.2f ... %6.2f), center = %g\\nY: (%6.2f ... %6.2f), center = %g\\nZ: (%6.2f ... %6.2f), center = %g\\n\\nEnter x,y,z bias amount\\n",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 731,
+      "line_number": 723,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_598,\"Current dimensions on frame %d\\nX: (%6.2f ... %6.2f), ce",
       "text": "Format string expects 10 args but got 0",
       "type": "format_string_mismatch"
@@ -3051,7 +2957,7 @@
       "expected_args": 10,
       "format_string": "Current dimensions on frame %d\\nX: (%6.2f ... %6.2f), size = %g\\nY: (%6.2f ... %6.2f), size = %g\\nZ: (%6.2f ... %6.2f), size = %g\\n\\nEnter uniform scale factor, or x,y,z scale factor\\n",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 862,
+      "line_number": 854,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_4d0,\"Current dimensions on frame %d\\nX: (%6.2f ... %6.2f), si",
       "text": "Format string expects 10 args but got 0",
       "type": "format_string_mismatch"
@@ -3062,8 +2968,8 @@
       "expected_args": 3,
       "format_string": "%f,%f,%f",
       "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 872,
-      "match": "iVar8 = crt_stdio_c_sscanf_FUN_0060013c(local_278,\"%f,%f,%f\");",
+      "line_number": 864,
+      "match": "iVar7 = crt_stdio_c_sscanf_FUN_0060013c(local_278,\"%f,%f,%f\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
     },

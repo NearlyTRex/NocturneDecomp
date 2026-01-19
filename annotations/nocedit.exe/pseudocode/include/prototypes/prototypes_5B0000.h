@@ -183,7 +183,7 @@ int wincore_windll_cpp_lockFrameX_FUN_005b7f0b(void);
 int wincore_windll_cpp_unlockFrameX_FUN_005b7f40(void);
 int wincore_windll_cpp_toggleX_FUN_005b7f66(void);
 void wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90(CExternalRenderer * this_ptr);
-bool wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities);
+int wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities);
 int wincore_windll_cpp_CExternalRenderer_switchRenderer_FUN_005b8117(CExternalRenderer * this_ptr, int renderer_handle);
 int wincore_windll_cpp_switchRenderer_FUN_005b8140(char * new_dll_name, int renderer_handle);
 char * wincore_windll_cpp_getCurrentRenderer_FUN_005b8185(int * renderer);

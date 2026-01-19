@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, bool enable_range_check, double min_value, double max_value, bool show_current_value)
+; __cdecl int shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, int enable_range_check, double min_value, double max_value, int show_current_value)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   prompt_text
 ; double *         Stack[0xc]:4   result_ptr
-; bool             Stack[0x10]:1   enable_range_check
+; int              Stack[0x10]:4   enable_range_check
 ; double           Stack[0x14]:8   min_value
 ; double           Stack[0x1c]:8   max_value
-; bool             Stack[0x24]:1   show_current_value
+; int              Stack[0x24]:4   show_current_value
 ; Local Variables:
 ; undefined8       Stack[-0x48]:8  local_48
 ; undefined8       Stack[-0x40]:8  local_40

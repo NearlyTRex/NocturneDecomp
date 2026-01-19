@@ -11,10 +11,10 @@
 int core_platfrm_cpp_FUN_0054e530(void)
 
 {
+  float *auto_select_flag;
   CDemonActor *pCVar1;
   int iVar2;
   CDemonActor *in_stack_00000004;
-  bool auto_select_flag;
   uint in_stack_fffffabc;
   uint in_stack_fffffac0;
   char **in_stack_fffffac4;
@@ -25,12 +25,13 @@ int core_platfrm_cpp_FUN_0054e530(void)
   
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CPlatformClassInfo.name_hash);
-  auto_select_flag = (bool)((char)pCVar1 + -0x10);
+  auto_select_flag = &pCVar1[2].orient_matrix.m[0].y;
   if (*(char *)&pCVar1[2].orient_matrix.m[0].y == '\0') {
     crt_stdio_c_sprintf_FUN_005fdbd0(local_d4,"Select a course for platform %s",in_stack_00000004)
     ;
     iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                      (g_CEditorToolsPtr,local_d4,"data","*.pth",auto_select_flag);
+                      (g_CEditorToolsPtr,local_d4,"data","*.pth",
+                       (int)auto_select_flag);
     return iVar2;
   }
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffabc);
@@ -60,7 +61,8 @@ int core_platfrm_cpp_FUN_0054e530(void)
     return 0;
   }
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                    (g_CEditorToolsPtr,local_19c,"data","*.pth",auto_select_flag);
+                    (g_CEditorToolsPtr,local_19c,"data","*.pth",
+                     (int)auto_select_flag);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
             ((CPickList *)&stack0xfffffabc,0,in_stack_fffffabc,in_stack_fffffac0,
              (uint)in_stack_fffffac4,(uint)in_stack_fffffac8,in_stack_fffffacc);

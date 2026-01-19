@@ -1,25 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 1019,
-    "complexity_score": 1901,
+    "complexity_score": 1854,
     "cross_reference_count": 1,
     "function_call_count": 36,
     "global_count": 55,
-    "pseudocode_lines": 391,
-    "suspect_count": 146,
+    "pseudocode_lines": 389,
+    "suspect_count": 143,
     "suspect_types": [
       "call_esp_anchor",
-      "concat_artifact",
       "format_string_mismatch",
       "pointer_cast",
       "stack_align_anchor",
       "stack_param",
       "stack_ref",
-      "sub_artifact",
-      "undefined_type",
       "variadic_anchor"
     ],
-    "total_lines": 1410
+    "total_lines": 1408
   },
   "cross_references": [
     {
@@ -761,106 +758,113 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 9,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_fffffa18",
       "text": "char *in_stack_fffffa18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_fffffa1c",
       "text": "uint in_stack_fffffa1c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_fffffa20",
       "text": "char **in_stack_fffffa20;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_fffffa24",
       "text": "CStrList_vtable *in_stack_fffffa24;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 20,
       "match": "in_stack_fffffa28",
       "text": "uint in_stack_fffffa28;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)unk + 0x15aea4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "local_24 = (uint *)((int)unk + 0x15ac30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "local_18 = (uint *)((int)unk + 0x15ac3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(int *)((int)",
       "text": "local_38 = (int *)((int)unk + 0x15ac7c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(char *)((int)",
       "text": "local_34 = (char *)((int)unk + 0x14d0f0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)",
+      "text": "iVar2 = *(int *)((int)unk + 0x15aea4) * 0x1a4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 48,
       "match": "(int *)((int)",
-      "text": "iVar3 = *(int *)((int)unk + 0x15aea4) * 0x1a4;",
+      "text": "if (*(int *)((int)unk + iVar2 + 0x154) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)unk + iVar3 + 0x154) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
       "type": "pointer_cast"
@@ -869,453 +873,425 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
+      "text": "(g_CSoundPtr,*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(int *)((int)",
       "text": "(g_CSoundPtr,*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(int *)((int)",
-      "text": "(g_CSoundPtr,*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
+      "line": 86,
       "match": "(int *)((int)",
       "text": "*(int *)((int)unk + 0x15aea4) * 0x1a4 + local_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 90,
       "match": "(int *)((int)",
       "text": "(g_CSoundPtr,*(int *)((int)unk + 0x15ac7c));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 100,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_03659388 + iVar7) = *(uint *)((int)pvVar4 + 0x154);",
+      "text": "*(uint *)((int)&DAT_03659388 + iVar6) = *(uint *)((int)pvVar3 + 0x154);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 100,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_03659388 + iVar7) = *(uint *)((int)pvVar4 + 0x154);",
+      "text": "*(uint *)((int)&DAT_03659388 + iVar6) = *(uint *)((int)pvVar3 + 0x154);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 103,
       "match": "(void *)((int)",
-      "text": "pvVar4 = (void *)((int)pvVar4 + 0x1a4);",
+      "text": "pvVar3 = (void *)((int)pvVar3 + 0x1a4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(int *)((int)",
+      "text": "iVar6 = *(int *)((int)unk + 0x15aea4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 110,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)unk + iVar6 * 0x1a4 + 0x154) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
       "match": "(int *)((int)",
-      "text": "iVar7 = *(int *)((int)unk + 0x15aea4);",
+      "text": "(uint)(*(int *)((int)unk + iVar6 * 0x1a4 + 0x154) == 0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 112,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)unk + iVar7 * 0x1a4 + 0x154) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 113,
       "match": "(int *)((int)",
-      "text": "(uint)(*(int *)((int)unk + iVar7 * 0x1a4 + 0x154) == 0);",
+      "text": "iVar2 = *(int *)((int)unk + 0x15aea4) * 0x1a4 + local_28;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 126,
       "match": "(int *)((int)",
-      "text": "iVar3 = *(int *)((int)unk + 0x15aea4) * 0x1a4 + local_28;",
+      "text": "*(int *)((int)unk + 0x15aea4) = iVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)unk + 0x15aea4) = iVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 141,
+      "line": 139,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 139,
       "match": "(int *)((int)",
       "text": "*(uint *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 140,
       "match": "(int *)((int)",
       "text": "(uint)(*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 140,
       "match": "(int *)((int)",
       "text": "(uint)(*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 141,
       "match": "(int *)((int)",
-      "text": "iVar3 = *(int *)((int)unk + 0x15aea4) * 0x1a4 + local_28;",
+      "text": "iVar2 = *(int *)((int)unk + 0x15aea4) * 0x1a4 + local_28;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 203,
+      "line": 201,
       "match": "in_stack_fffffa18",
       "text": "local_40 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 220,
+      "line": 218,
       "match": "in_stack_fffffa18",
       "text": "local_40 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa18);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
+      "line": 231,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar4 + 0x154) = 1;",
+      "text": "*(uint *)((int)pvVar3 + 0x154) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 243,
+      "line": 241,
       "match": "(void *)((int)",
-      "text": "pvVar4 = (void *)((int)pvVar4 + 0x1a4);",
+      "text": "pvVar3 = (void *)((int)pvVar3 + 0x1a4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
+      "line": 246,
       "match": "(void *)((int)",
-      "text": "} while (pvVar4 != (void *)((int)unk + 0x19a28));",
+      "text": "} while (pvVar3 != (void *)((int)unk + 0x19a28));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 264,
+      "line": 262,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 264,
+      "line": 262,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 268,
+      "line": 266,
       "match": "(int *)((int)",
-      "text": "(int *)(*(int *)((int)unk + 0x15aea4) * 0x1a4 + iVar3 + 0x178));",
+      "text": "(int *)(*(int *)((int)unk + 0x15aea4) * 0x1a4 + iVar2 + 0x178));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 276,
+      "line": 274,
       "match": "(char *)((int)",
       "text": "if (*(char *)((int)unk + 0x14d0f0) == '\\0') {",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 307,
-      "match": "SUB41",
-      "text": "SUB41 /* extract 2-byte value */(local_140,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 308,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 325,
+      "line": 323,
       "match": "in_stack_fffffa18",
       "text": "local_40 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa18);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
+      "line": 328,
+      "match": "(int *)((int)",
+      "text": "iVar2 = *(int *)((int)unk + 0x15ac7c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 329,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 329,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 330,
       "match": "(int *)((int)",
-      "text": "iVar3 = *(int *)((int)unk + 0x15ac7c);",
+      "text": "iVar2 = *(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 331,
+      "line": 330,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 331,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 332,
-      "match": "(int *)((int)",
-      "text": "iVar3 = *(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 332,
-      "match": "(int *)((int)",
-      "text": "iVar3 = *(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c);",
+      "text": "iVar2 = *(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 340,
+      "line": 338,
       "match": "&stack0xfffffa18",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffa18);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 342,
+      "line": 340,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"45.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 344,
+      "line": 342,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"cre-fire.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 346,
+      "line": 344,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"shotgun.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 348,
+      "line": 346,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"zom-s04.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 350,
+      "line": 348,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"stranger_hit01.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 352,
+      "line": 350,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"xplode1.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 354,
+      "line": 352,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"limb1.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 356,
+      "line": 354,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-ct-1.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 358,
+      "line": 356,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-wd-1.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 360,
+      "line": 358,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-mt-1.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 362,
+      "line": 360,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-mb-1.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 364,
+      "line": 362,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-gr-1.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 366,
+      "line": 364,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"ric-mt0a.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 368,
+      "line": 366,
       "match": "&stack0xfffffa18",
       "text": "((CStrList *)&stack0xfffffa18,\"ric-ct0a.wav\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 372,
+      "line": 370,
       "match": "&stack0xfffffa18",
-      "text": "((CPickList *)&stack0xfffffa18,pcVar5,iVar7,config_param2);",
+      "text": "((CPickList *)&stack0xfffffa18,pcVar4,iVar6,config_param2);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 377,
+      "line": 375,
       "match": "&stack0xfffffa18",
-      "text": "((CStrList *)&stack0xfffffa18,iVar7);",
+      "text": "((CStrList *)&stack0xfffffa18,iVar6);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 381,
+      "line": 379,
       "match": "in_stack_fffffa18",
       "text": "((CPickList *)&stack0xfffffa18,0,(uint)in_stack_fffffa18,in_stack_fffffa1c,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 381,
+      "line": 379,
       "match": "in_stack_fffffa1c",
       "text": "((CPickList *)&stack0xfffffa18,0,(uint)in_stack_fffffa18,in_stack_fffffa1c,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 381,
+      "line": 379,
       "match": "&stack0xfffffa18",
       "text": "((CPickList *)&stack0xfffffa18,0,(uint)in_stack_fffffa18,in_stack_fffffa1c,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 382,
+      "line": 380,
       "match": "in_stack_fffffa20",
       "text": "(uint)in_stack_fffffa20,(uint)in_stack_fffffa24,in_stack_fffffa28);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 382,
+      "line": 380,
       "match": "in_stack_fffffa24",
       "text": "(uint)in_stack_fffffa20,(uint)in_stack_fffffa24,in_stack_fffffa28);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 382,
+      "line": 380,
       "match": "in_stack_fffffa28",
       "text": "(uint)in_stack_fffffa20,(uint)in_stack_fffffa24,in_stack_fffffa28);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 385,
+      "line": 383,
       "match": "in_stack_fffffa18",
       "text": "((CPickList *)&stack0xfffffa18,0,(uint)in_stack_fffffa18,in_stack_fffffa1c,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 385,
+      "line": 383,
       "match": "in_stack_fffffa1c",
       "text": "((CPickList *)&stack0xfffffa18,0,(uint)in_stack_fffffa18,in_stack_fffffa1c,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 385,
+      "line": 383,
       "match": "&stack0xfffffa18",
       "text": "((CPickList *)&stack0xfffffa18,0,(uint)in_stack_fffffa18,in_stack_fffffa1c,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 386,
+      "line": 384,
       "match": "in_stack_fffffa20",
       "text": "(uint)in_stack_fffffa20,(uint)in_stack_fffffa24,in_stack_fffffa28);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 386,
+      "line": 384,
       "match": "in_stack_fffffa24",
       "text": "(uint)in_stack_fffffa20,(uint)in_stack_fffffa24,in_stack_fffffa28);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 386,
+      "line": 384,
       "match": "in_stack_fffffa28",
       "text": "(uint)in_stack_fffffa20,(uint)in_stack_fffffa24,in_stack_fffffa28);",
       "type": "stack_param"
@@ -1518,7 +1494,7 @@
       "expected_args": 1,
       "format_string": "1.  Fog settings for camera %s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 56,
+      "line_number": 54,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_240,\"1.  Fog settings for camera %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -1529,7 +1505,7 @@
       "expected_args": 3,
       "format_string": "2.  Fog color : %d,%d,%d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 63,
+      "line_number": 61,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_140,\"2.  Fog color : %d,%d,%d\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
@@ -1540,7 +1516,7 @@
       "expected_args": 1,
       "format_string": "R.  Default set reverb : %s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 93,
+      "line_number": 91,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_140,\"R.  Default set reverb : %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -1551,7 +1527,7 @@
       "expected_args": 3,
       "format_string": "%d,%d,%d",
       "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 169,
+      "line_number": 167,
       "match": "crt_stdio_c_sscanf_FUN_0060013c(local_140,\"%d,%d,%d\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
@@ -1562,7 +1538,7 @@
       "expected_args": 3,
       "format_string": "%f,%f,%f",
       "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 187,
+      "line_number": 185,
       "match": "crt_stdio_c_sscanf_FUN_0060013c(local_140,\"%f,%f,%f\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
@@ -1573,7 +1549,7 @@
       "expected_args": 1,
       "format_string": "Edit reverb for camera %s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 265,
+      "line_number": 263,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_140,\"Edit reverb for camera %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

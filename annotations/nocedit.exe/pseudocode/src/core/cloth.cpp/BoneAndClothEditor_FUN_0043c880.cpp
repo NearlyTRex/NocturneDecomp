@@ -344,8 +344,8 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
         in_stack_fffffac4 = "Enter X radius";
         in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(g_CEditorToolsPtr,0x43d2a9);
         shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                  (g_CEditorToolsPtr,"Enter X radius",(float *)in_stack_fffffac8,true,0.0,
-                   9999.0,true);
+                  (g_CEditorToolsPtr,"Enter X radius",(float *)in_stack_fffffac8,1,0.0,
+                   9999.0,1);
       }
       iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x15);
       if (iVar4 != 0) {
@@ -353,15 +353,15 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
         in_stack_fffffac4 = (char *)0x43d2e0;
         in_stack_fffffac8 = g_CEditorToolsPtr;
         shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                  (g_CEditorToolsPtr,"Enter Y radius",(float *)(iVar7 + 0x18),true,0.0,
-                   9999.0,true);
+                  (g_CEditorToolsPtr,"Enter Y radius",(float *)(iVar7 + 0x18),1,0.0,9999.0,
+                   1);
       }
       iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x18);
       if (iVar4 != 0) {
         in_stack_fffffacc = (char *)0x43d316;
         shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                  (g_CEditorToolsPtr,"Enter cylinder length, 0 to use length of bone",(float *)(iVar7 + 0x34),
-                   true,0.0,9999.0,true);
+                  (g_CEditorToolsPtr,"Enter cylinder length, 0 to use length of bone",(float *)(iVar7 + 0x34),1,
+                   0.0,9999.0,1);
       }
       core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
                 (&g_CDeformableModelInstanceInstance);

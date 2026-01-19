@@ -23329,17 +23329,17 @@
           "name":"show_current_value",
           "storage":{
             "offset":16,
-            "size":1,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x10]",
                 "offset":16,
-                "size":1
+                "size":4
               }
             ]
           },
-          "type":"bool"
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -23615,17 +23615,17 @@
           "name":"use_clipping",
           "storage":{
             "offset":8,
-            "size":1,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
-                "size":1
+                "size":4
               }
             ]
           },
-          "type":"bool"
+          "type":"int"
         }
       ]
     }
@@ -76005,7 +76005,7 @@
     "conv":"__watcallStack",
     "importable":true,
     "name":"crt_io.c_file_exists_FUN_0060f380",
-    "ret":"bool",
+    "ret":"BOOL",
     "vars":{
       "params":[
         {
@@ -76026,12 +76026,12 @@
         }
       ],
       "ret_storage":{
-        "reg":"AL",
-        "size":1,
+        "reg":"EAX",
+        "size":4,
         "varnodes":[
           {
             "addr":"register:00000000",
-            "size":1
+            "size":4
           }
         ]
       }

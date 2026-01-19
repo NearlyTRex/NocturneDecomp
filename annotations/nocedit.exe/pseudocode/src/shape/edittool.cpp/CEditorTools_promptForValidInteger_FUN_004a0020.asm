@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, int min_value, int max_value, bool show_current_value)
+; __cdecl int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, int min_value, int max_value, int show_current_value)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   prompt_text
 ; int *            Stack[0xc]:4   result_ptr
-; bool             Stack[0x10]:1   enable_range_check
+; int              Stack[0x10]:4   enable_range_check
 ; int              Stack[0x14]:4   min_value
 ; int              Stack[0x18]:4   max_value
-; bool             Stack[0x1c]:1   show_current_value
+; int              Stack[0x1c]:4   show_current_value
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x14]:4  local_14

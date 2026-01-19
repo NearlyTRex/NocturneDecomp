@@ -11,12 +11,12 @@ void __cdecl core_game_cpp_CGame_FUN_004e36f0(CGame *this_ptr)
 {
   char cVar1;
   int iVar2;
-  byte auto_select_flag;
   char *pcVar3;
   char *pcVar4;
   int *piVar5;
   char *directory;
   char *target_filename;
+  char *auto_select_flag;
   char local_210 [260];
   char local_10c [256];
   
@@ -42,13 +42,13 @@ void __cdecl core_game_cpp_CGame_FUN_004e36f0(CGame *this_ptr)
   else {
     local_210[0] = '\0';
   }
-  auto_select_flag = SUB41 /* extract 2-byte value */(local_210,0);
+  auto_select_flag = local_210;
   pcVar3 = local_210;
   target_filename = "*.noc";
   directory = "save";
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select file to load");
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                    (g_CEditorToolsPtr,pcVar4,directory,target_filename,(bool)auto_select_flag);
+                    (g_CEditorToolsPtr,pcVar4,directory,target_filename,(int)auto_select_flag);
   if (iVar2 == 0) {
     return;
   }

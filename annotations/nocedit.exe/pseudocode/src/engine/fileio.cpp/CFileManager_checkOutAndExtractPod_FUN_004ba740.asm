@@ -680,7 +680,7 @@ section .text
     PUSH EAX                            ; 004bada4
     PUSH EBP                            ; 004bada5
     CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004bada6
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; bool engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004badab
     TEST EAX,EAX                        ; 004badae
     JZ 0x004badde                       ; 004badb0

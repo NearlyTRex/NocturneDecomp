@@ -2,11 +2,11 @@
 // Address: 00606055
 // Address Range: [[00606055, 006060ba]]
 // Convention: __cdecl
-// Signature: bool crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
+// Signature: BOOL crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)
 
 #include "nocturne.h"
 
-bool __cdecl crt_stdio_c_prepare_stream_for_write_FUN_00606055(FILE *stream)
+BOOL __cdecl crt_stdio_c_prepare_stream_for_write_FUN_00606055(FILE *stream)
 
 {
   FILE *pFVar1;
@@ -21,5 +21,5 @@ bool __cdecl crt_stdio_c_prepare_stream_for_write_FUN_00606055(FILE *stream)
     pFVar1 = crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(2);
     crt_stdio_c_fflushInternal_FUN_006039d0(pFVar1);
   }
-  return *(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0;
+  return (uint)(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0);
 }

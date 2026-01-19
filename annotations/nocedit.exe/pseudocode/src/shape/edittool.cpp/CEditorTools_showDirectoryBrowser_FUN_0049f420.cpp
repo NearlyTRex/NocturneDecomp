@@ -2,13 +2,13 @@
 // Address: 0049f420
 // Address Range: [[0049f420, 0049fb65]]
 // Convention: __cdecl
-// Signature: bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
+// Signature: int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
 
 #include "nocturne.h"
 
-bool __cdecl
+int __cdecl
 shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-          (CEditorTools *this_ptr,char *file_pattern,bool include_files,char *initial_path)
+          (CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
 
 {
   char cVar1;
@@ -20,7 +20,6 @@ shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
   uint *puVar5;
   uint unaff_EDI;
   byte bVar6;
-  undefined3 in_stack_0000000d;
   byte in_stack_00000014;
   char *pcVar7;
   uint in_stack_ffffe138;
@@ -56,7 +55,7 @@ shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
   char local_1c4 [200];
   char local_fc [200];
   char local_34 [32];
-  uint local_14;
+  int local_14;
   char local_10 [4];
   char local_c [4];
   
@@ -65,7 +64,7 @@ shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
   if (pcVar2 == (char *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (this_ptr,"Error getting current directory.");
-    return false;
+    return 0;
   }
   puVar5 = &DAT_00678a70;
   pcVar2 = local_12c8;
@@ -95,10 +94,10 @@ LAB_0049f47a:
     crt_stdio_c_sprintf_FUN_005fdbd0(local_1b20,"%s\n%s",file_pattern,local_17dc);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffe138);
     engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_18f0);
-    if (_include_files == (char *)0x0) {
-      _include_files = "*.*";
+    if (include_files == 0) {
+      include_files = (int)"*.*";
     }
-    engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_18f0,_include_files);
+    engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_18f0,(char *)include_files);
     sort_type = in_stack_ffffe138;
     while (local_18f0.filename[0] != '\0') {
       if (((byte)local_18f0.file_size & 4) == 0) {
@@ -222,7 +221,7 @@ LAB_0049f983:
                 ((CPickList *)&stack0xffffe138,0,unaff_ESI,unaff_EDI,in_stack_ffffe138,
                  in_stack_ffffe13c,(uint)in_stack_ffffe140);
       crt_io_c_chdir_FUN_006012a0(local_14d0);
-      return SUB41 /* extract 2-byte value */(local_14,0);
+      return local_14;
     }
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
               ((CStrList *)&stack0xffffe138,(int)local_10c4,pcVar2,0);

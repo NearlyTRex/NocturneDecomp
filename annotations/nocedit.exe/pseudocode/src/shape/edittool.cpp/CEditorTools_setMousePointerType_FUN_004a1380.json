@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 738,
-    "complexity_score": 223,
+    "complexity_score": 197,
     "cross_reference_count": 15,
     "function_call_count": 3,
     "global_count": 16,
-    "pseudocode_lines": 168,
-    "suspect_count": 4,
+    "pseudocode_lines": 167,
+    "suspect_count": 2,
     "suspect_types": [
       "concat_artifact",
-      "stack_param",
       "undefined_type"
     ],
-    "total_lines": 906
+    "total_lines": 905
   },
   "cross_references": [
     {
@@ -116,7 +115,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380",
-    "signature": "void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)"
+    "signature": "void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)"
   },
   "function_calls": [
     {
@@ -264,10 +263,10 @@
     "pcode_op_count": 2636
   },
   "stack_frame": {
-    "frame_size": 41,
+    "frame_size": 44,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 5,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -309,8 +308,8 @@
         "is_param": true,
         "name": "use_clipping",
         "offset": 8,
-        "size": 1,
-        "type": "bool"
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -323,22 +322,8 @@
       "type": "undefined_type"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000009",
-      "text": "undefined3 in_stack_00000009;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 13,
-      "match": "undefined3 in_stack_00000009",
-      "text": "undefined3 in_stack_00000009;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 16,
+      "line": 15,
       "match": "CONCAT31",
       "text": "g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar1);",
       "type": "concat_artifact"

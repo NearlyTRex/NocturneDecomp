@@ -17,7 +17,7 @@ BOOL consoleCtrlHandler(DWORD dwCtrlType);
 
 // Original: crt_signal.c_registerConsoleHandler_FUN_0060cfb8
 // Address: 0060cfb8
-bool registerConsoleHandler(void);
+BOOL registerConsoleHandler(void);
 
 // Original: crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4
 // Address: 0060cfe4

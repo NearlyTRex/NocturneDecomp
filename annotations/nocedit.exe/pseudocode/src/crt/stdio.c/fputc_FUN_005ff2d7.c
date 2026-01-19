@@ -11,16 +11,14 @@ int __cdecl crt_stdio_c_fputc_FUN_005ff2d7(FILE *stream,int character)
 {
   int iVar1;
   byte *pbVar2;
-  bool bVar3;
-  undefined3 extraout_var;
+  BOOL BVar3;
   uint uVar4;
   byte local_c;
   
   if ((*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) &&
      (((*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0 &&
        ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x4000) == 0)) ||
-      (bVar3 = crt_stdio_c_prepare_stream_for_write_FUN_00606055(stream),
-      CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) != 0)))) {
+      (BVar3 = crt_stdio_c_prepare_stream_for_write_FUN_00606055(stream), BVar3 != 0)))) {
     iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));
     pbVar2 = *(byte **)(iVar1 + 0x20);
     if (pbVar2 < *(byte **)(iVar1 + 0x1c)) {

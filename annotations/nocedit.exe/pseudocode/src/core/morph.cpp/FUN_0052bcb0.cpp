@@ -108,13 +108,13 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
             (&stack0xffffb248,2,&g_CDeformableModelInstanceTypeInfo);
   iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select 1st model file","models",
-                     "*.dfm",SUB41 /* extract 2-byte value */(local_228,0));
+                     "*.dfm",(int)local_228);
   if (iVar6 != 0) {
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
               ((CDeformableModelInstance *)&stack0xffffb248,local_228);
     iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select 2nd model file","models",
-                       "*.dfm",SUB41 /* extract 2-byte value */(local_228,0));
+                       "*.dfm",(int)local_228);
     if (iVar6 != 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
                 ((CDeformableModelInstance *)local_2b04,local_228);
@@ -386,7 +386,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           local_70 = -1;
         }
         if ((int)pcVar16 < 0) {
-          shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
+          shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
         }
         local_78 = g_MouseButtonFlags;
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

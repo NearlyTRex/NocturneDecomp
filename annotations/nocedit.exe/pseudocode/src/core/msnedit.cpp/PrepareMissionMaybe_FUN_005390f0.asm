@@ -842,7 +842,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 00539984 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0053998a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0053998b
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 00539990
     PUSH 0x0                            ; 00539993
     PUSH 0x0                            ; 00539995

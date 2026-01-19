@@ -68,8 +68,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     if (iVar1 != 0) {
       local_18 = motion_name->frame_count + -1;
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                (g_CEditorToolsPtr,"Enter frame number",&local_f8,true,0.0,(float)local_18,
-                 true);
+                (g_CEditorToolsPtr,"Enter frame number",&local_f8,1,0.0,(float)local_18,1);
     }
     local_1c = local_20 + 0x21;
     iVar1 = core_msnedit_cpp_FUN_00536cd0();

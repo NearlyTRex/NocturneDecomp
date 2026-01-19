@@ -230,7 +230,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 00537020 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 00537026 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 00537027
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0053702c
     PUSH 0x0                            ; 0053702f
         ;   Label: LAB_0053702f

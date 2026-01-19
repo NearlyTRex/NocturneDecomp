@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 4794,
+    "complexity_score": 4724,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
-    "pseudocode_lines": 2054,
-    "suspect_count": 268,
+    "pseudocode_lines": 2049,
+    "suspect_count": 262,
     "suspect_types": [
       "call_esp_anchor",
       "callind_anchor",
@@ -15,13 +15,12 @@
       "stack_align_anchor",
       "stack_ref",
       "sub_artifact",
-      "undefined_type",
       "unknown_field",
       "unresolved_funcptr",
       "variadic_anchor",
       "warning_overlapping_globals"
     ],
-    "total_lines": 6001
+    "total_lines": 5996
   },
   "cross_references": [
     {
@@ -1807,101 +1806,59 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved type",
-      "line": 23,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 24,
-      "match": "undefined3 extraout_var_00",
-      "text": "undefined3 extraout_var_00;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 25,
-      "match": "undefined3 extraout_var_01",
-      "text": "undefined3 extraout_var_01;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 250,
+      "line": 246,
       "match": "CONCAT31",
-      "text": "iVar11 = CONCAT31 /* combine 2-byte values */((int3)((uint)iVar14 >> 8),g_InputHistory[iVar18]);",
+      "text": "iVar10 = CONCAT31 /* combine 2-byte values */((int3)((uint)iVar13 >> 8),g_InputHistory[iVar17]);",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 329,
+      "line": 325,
       "match": "._4_4_",
       "text": "local_2ac._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 330,
+      "line": 326,
       "match": "._4_4_",
       "text": "uVar8 = local_2ac._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 331,
+      "line": 327,
       "match": "._0_4_",
       "text": "local_2ac._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 331,
+      "line": 327,
       "match": "SUB84",
       "text": "local_2ac._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Direct stack address reference",
-      "line": 334,
+      "line": 330,
       "match": "&stack0xfffffba8",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffba8,\"FPS: %3.2lf\",uVar9,uVar8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 335,
+      "line": 331,
       "match": "&stack0xfffffba8",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffba8,5.0);",
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 615,
-      "match": "CONCAT31",
-      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,bVar10) != 0)) &&",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 618,
-      "match": "CONCAT31",
-      "text": ",1,9999,true), CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar10) != 0)) &&",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 621,
-      "match": "CONCAT31",
-      "text": ",1,9999,true), CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar10) != 0)) {",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1264,
+      "line": 1259,
       "match": "code *",
-      "text": "(**(code **)(*(int *)(iVar18 + 0x154) + 0x11c))();",
+      "text": "(**(code **)(*(int *)(iVar17 + 0x154) + 0x11c))();",
       "type": "unresolved_funcptr"
     },
     {
@@ -2024,7 +1981,7 @@
       "expected_args": 1,
       "format_string": "FPS: %3.2lf",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 334,
+      "line_number": 330,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffba8,\"FPS: %3.2lf\",uVar9,uVar8);",
       "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"

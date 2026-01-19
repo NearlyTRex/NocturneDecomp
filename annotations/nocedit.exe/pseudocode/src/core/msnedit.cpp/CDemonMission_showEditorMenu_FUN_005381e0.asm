@@ -592,7 +592,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 005387ac | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 005387b1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 005387b2
-        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
+        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 005387b7
     TEST EAX,EAX                        ; 005387ba
     JZ 0x005384ec                       ; 005387bc

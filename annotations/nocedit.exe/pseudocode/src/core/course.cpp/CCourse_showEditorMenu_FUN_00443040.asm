@@ -251,7 +251,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 00443218 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0044321e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 0044321f
-        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
+        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
     ADD ESP,0x18                        ; 00443224
     TEST EAX,EAX                        ; 00443227
     JZ 0x004431bd                       ; 00443229
@@ -277,7 +277,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0044325d | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 00443263 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00443264
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
     ADD ESP,0x14                        ; 00443269
     TEST EAX,EAX                        ; 0044326c
     JZ 0x004431bd                       ; 0044326e
@@ -384,7 +384,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 00443368 | g_CEditorToolsPtr
     PUSH ESI                            ; 0044336e | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 ; 0044336f
-        ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, bool show_current_value)
+        ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, int show_current_value)
     ADD ESP,0x10                        ; 00443374
     TEST EAX,EAX                        ; 00443377
     JZ 0x004431bd                       ; 00443379
@@ -460,7 +460,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 00443465 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0044346b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0044346c
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 00443471
     TEST EAX,EAX                        ; 00443474
     JZ 0x004431bd                       ; 00443476
@@ -631,7 +631,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0044364d | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 00443652 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00443653
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, bool include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
     ADD ESP,0x14                        ; 00443658
     TEST EAX,EAX                        ; 0044365b
     JZ 0x004431bd                       ; 0044365d

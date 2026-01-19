@@ -15,7 +15,7 @@ void core_game_cpp_FUN_004e2f10(uint param_1,uint param_2,uint unaff_EBX)
   if (iVar1 != 0) {
     iVar1 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select mission to play","world",
-                       "*.msn",(bool)((char)g_CNetGameInstance + '\x18'));
+                       "*.msn",(int)g_CNetGameInstance->field7_0x118);
     if (iVar1 != 0) {
       g_CurrentSaveFile = '\0';
       while( true ) {

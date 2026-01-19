@@ -830,7 +830,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 0057e034 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0057e03a | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0057e03b
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, bool use_clipping)
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0057e040
     PUSH 0x0                            ; 0057e043
         ;   Label: LAB_0057e043
@@ -1124,7 +1124,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0057e3ad | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 0057e3b2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 0057e3b3
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 0057e3b8
     JMP 0x0057e21f                      ; 0057e3bb
         ;   XREF to: 0057e21f (UNCONDITIONAL_JUMP)  ; LAB_0057e21f

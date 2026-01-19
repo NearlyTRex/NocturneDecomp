@@ -188,7 +188,7 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70(void)
     local_48.max_value = (g_ClipBottom - g_ClipTop) + -1;
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&local_48);
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&local_48);
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
+    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar4 != 0) break;

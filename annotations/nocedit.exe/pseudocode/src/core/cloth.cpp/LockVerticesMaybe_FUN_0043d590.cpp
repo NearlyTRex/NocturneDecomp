@@ -272,7 +272,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     engine_2d_c_drawTextXY_FUN_00402130(0,0,text);
     engine_2d_c_drawTextXY_FUN_00402130(0,0xb,"L Toggle locking/unlocking vertices.");
     engine_2d_c_drawTextXY_FUN_00402130(0,0x16,"N Toggle vertex numbers.");
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
+    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     if (-1 < (int)local_24) {
       uVar4 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
       ;

@@ -2,11 +2,11 @@
 // Address: 004819f0
 // Address Range: [[004819f0, 00481a1b]]
 // Convention: __cdecl
-// Signature: bool engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+// Signature: int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
 
 #include "nocturne.h"
 
-bool __cdecl engine_dosio_c_setFileAttributes_FUN_004819f0(char *filename,byte flags)
+int __cdecl engine_dosio_c_setFileAttributes_FUN_004819f0(char *filename,byte flags)
 
 {
   DWORD DVar1;
@@ -16,5 +16,5 @@ bool __cdecl engine_dosio_c_setFileAttributes_FUN_004819f0(char *filename,byte f
     DVar1 = 0x100;
   }
   DVar1 = crt_file_c_setReadonlyAttribute_FUN_00600c30(filename,DVar1);
-  return DVar1 == 0;
+  return (uint)(DVar1 == 0);
 }

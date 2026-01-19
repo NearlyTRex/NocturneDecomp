@@ -2,25 +2,27 @@
 // Address: 004a01f0
 // Address Range: [[004a01f0, 004a02f3]]
 // Convention: __cdecl
-// Signature: int shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, bool enable_range_check, double min_value, double max_value, bool show_current_value)
+// Signature: int shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools * this_ptr, char * prompt_text, double * result_ptr, int enable_range_check, double min_value, double max_value, int show_current_value)
 
 #include "nocturne.h"
 
 int __cdecl
 shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
-          (CEditorTools *this_ptr,char *prompt_text,double *result_ptr,bool enable_range_check,
-          double min_value,double max_value,bool show_current_value)
+          (CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check,
+          double min_value,double max_value,int show_current_value)
 
 {
   int iVar1;
-  undefined3 in_stack_00000011;
   uint local_48;
   uint uStack_44;
   ulonglong local_40;
   ulonglong local_38;
   char local_30 [32];
   
-  if (show_current_value) {
+  if ((show_current_value & 1U) == 0) {
+    local_30[0] = '\0';
+  }
+  else {
     local_40 = min_value;
     local_38 = max_value;
     crt_stdio_c_sprintf_FUN_005fdbd0
@@ -28,9 +30,6 @@ shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
                *(uint *)((int)result_ptr + 4));
     min_value = local_40;
     max_value = local_38;
-  }
-  else {
-    local_30[0] = '\0';
   }
   while( true ) {
     while( true ) {
@@ -48,7 +47,7 @@ shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
       min_value = local_40;
       max_value = local_38;
     }
-    if ((_enable_range_check == 0) ||
+    if ((enable_range_check == 0) ||
        ((local_40 <= (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) &&
         ((double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) <= local_38)))) break;
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

@@ -46,7 +46,7 @@ section .text
     MOV dword ptr [0x02d831b4],EDX      ; 004d7755 | g_DebugRecording
     MOV dword ptr [0x02d831bc],EDX      ; 004d775b | DAT_02d831bc
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 004d7761
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004d7766
     TEST EAX,EAX                        ; 004d7769
     JNZ 0x004d7772                      ; 004d776b
@@ -67,7 +67,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 004d7787 | g_CEditorToolsPtr
     PUSH ESI                            ; 004d778d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 004d778e
-        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004d7793
     TEST EAX,EAX                        ; 004d7796
     JZ 0x004d776d                       ; 004d7798
@@ -81,7 +81,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 004d77af | g_CEditorToolsPtr
     PUSH EDI                            ; 004d77b5 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 004d77b6
-        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004d77bb
     TEST EAX,EAX                        ; 004d77be
     JZ 0x004d776d                       ; 004d77c0
@@ -95,7 +95,7 @@ section .text
     MOV EBP,dword ptr [0x00678a60]      ; 004d77d7 | g_CEditorToolsPtr
     PUSH EBP                            ; 004d77dd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020 ; 004d77de
-        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; bool shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, bool enable_range_check, ...)
+        ;   XREF to: 004a0020 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
     ADD ESP,0x1c                        ; 004d77e3
     TEST EAX,EAX                        ; 004d77e6
     JZ 0x004d776d                       ; 004d77e8

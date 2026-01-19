@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl bool shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, bool show_directory)
+; __cdecl int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, int show_directory)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   prompt_text
 ; char *           Stack[0xc]:4   filename_buffer
 ; int              Stack[0x10]:4   buffer_size
-; bool             Stack[0x14]:1   show_directory
+; int              Stack[0x14]:4   show_directory
 ; Local Variables:
 ; undefined1       Stack[-0x360]:1  local_360
 ; undefined1       Stack[-0x35f]:1  local_35f

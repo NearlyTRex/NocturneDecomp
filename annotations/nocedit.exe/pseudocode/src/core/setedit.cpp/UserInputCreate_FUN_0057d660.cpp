@@ -302,7 +302,7 @@ LAB_0057db4e:
             y_pos = y_pos + 0xb;
           } while (iVar9 < iVar16 * 4);
         }
-        shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
+        shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
       }
       engine_2d_c_drawText_FUN_00401fd0("Move camera with slew keys.  Press SPACE when done.  ESC to cancel",0,0);
       crt_stdio_c_sprintf_FUN_005fdbd0(CStack_570.cancel_button.button_text + 0xbc,"%f");
@@ -407,7 +407,7 @@ LAB_0057db4e:
         if (*(int *)(unaff_ESI->texture_list[0].unknown + 8) == 0) {
           shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                     (g_CEditorToolsPtr,"Enter FOV",(float *)((int)PTR_DAT_00681ab8 + 0x18),
-                     false,0.0,0.0,true);
+                     0,0.0,0.0,1);
         }
         else {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

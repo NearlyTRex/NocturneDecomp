@@ -80,7 +80,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005b5f2f
     PUSH EAX                            ; 005b5f33
     CALL wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0 ; 005b5f34
-        ;   XREF to: 005b7fe0 (UNCONDITIONAL_CALL)  ; bool wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities)
+        ;   XREF to: 005b7fe0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities)
     ADD ESP,0x8                         ; 005b5f39
     TEST EAX,EAX                        ; 005b5f3c
     JZ 0x005b670d                       ; 005b5f3e

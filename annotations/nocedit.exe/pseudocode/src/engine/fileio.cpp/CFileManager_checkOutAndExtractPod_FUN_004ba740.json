@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 809,
+    "complexity_score": 777,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
-    "pseudocode_lines": 309,
-    "suspect_count": 47,
+    "pseudocode_lines": 307,
+    "suspect_count": 45,
     "suspect_types": [
-      "concat_artifact",
       "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
-      "stack_ref",
-      "undefined_type"
+      "stack_ref"
     ],
-    "total_lines": 1039
+    "total_lines": 1037
   },
   "cross_references": [],
   "function": {
@@ -633,57 +631,43 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 14,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_fffff970",
       "text": "uint in_stack_fffff970;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 57,
       "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)&pFVar7->_ptr + 1);",
+      "text": "cVar1 = *(char *)((int)&pFVar6->_ptr + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(FILE *)((int)",
-      "text": "pFVar7 = (FILE *)((int)&pFVar7->_ptr + 2);",
+      "text": "pFVar6 = (FILE *)((int)&pFVar6->_ptr + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
+      "line": 106,
       "match": "&stack0xfffff964",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 109,
       "match": "&stack0xfffff964",
       "text": "((int *)&stack0xfffff964,g_VersionControlSession.field1_0x20 + 4);",
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 231,
-      "match": "CONCAT31",
-      "text": ", CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)) && (-1 < (int)uVar5)) {",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 310,
+      "line": 308,
       "match": "in_stack_fffff970",
       "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(auStack_30 + 4),0,in_stack_fffff970);",
       "type": "stack_param"

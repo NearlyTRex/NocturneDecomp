@@ -153,8 +153,8 @@ LAB_0057af67:
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
   if (iVar3 != 0) {
     shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-              (g_CEditorToolsPtr,"Edit FOV",(float *)((int)PTR_DAT_00681ab8 + 0x18),true,
-               0.0,100.0,true);
+              (g_CEditorToolsPtr,"Edit FOV",(float *)((int)PTR_DAT_00681ab8 + 0x18),1,0.0,
+               100.0,1);
   }
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
   if (iVar3 != 0) {

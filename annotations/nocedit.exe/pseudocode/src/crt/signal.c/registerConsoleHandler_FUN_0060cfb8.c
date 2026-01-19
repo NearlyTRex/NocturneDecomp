@@ -2,11 +2,11 @@
 // Address: 0060cfb8
 // Address Range: [[0060cfb8, 0060cfe1]]
 // Convention: __watcallRegister
-// Signature: bool crt_signal.c_registerConsoleHandler_FUN_0060cfb8(void)
+// Signature: BOOL crt_signal.c_registerConsoleHandler_FUN_0060cfb8(void)
 
 #include "nocturne.h"
 
-bool crt_signal_c_registerConsoleHandler_FUN_0060cfb8(void)
+BOOL crt_signal_c_registerConsoleHandler_FUN_0060cfb8(void)
 
 {
   BOOL BVar1;
@@ -17,5 +17,5 @@ bool crt_signal_c_registerConsoleHandler_FUN_0060cfb8(void)
       g_ConsoleHandlerRegistered = 1;
     }
   }
-  return (bool)g_ConsoleHandlerRegistered;
+  return (uint)g_ConsoleHandlerRegistered;
 }

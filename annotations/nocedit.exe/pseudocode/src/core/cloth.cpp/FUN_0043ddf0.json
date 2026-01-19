@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 324,
+    "complexity_score": 247,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 31,
-    "pseudocode_lines": 109,
-    "suspect_count": 19,
+    "pseudocode_lines": 107,
+    "suspect_count": 13,
     "suspect_types": [
-      "concat_artifact",
       "lea_esp_stack_addr",
-      "stack_param",
-      "sub_artifact",
-      "undefined_type"
+      "stack_param"
     ],
-    "total_lines": 359
+    "total_lines": 357
   },
   "cross_references": [],
   "function": {
@@ -382,67 +379,25 @@
   },
   "suspects": [
     {
-      "description": "Unresolved type",
-      "line": 8,
-      "match": "undefined3 extraout_var",
-      "text": "undefined3 extraout_var;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "CCloth *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "local_14 = in_stack_00000004->padding_0x0 + 0x3ce88;",
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 40,
-      "match": "SUB41",
-      "text": "\"*.cth\",SUB41 /* extract 2-byte value */(local_178,0));",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "core_cloth_cpp_CCloth_load_FUN_00438cf0(in_stack_00000004,local_178);",
       "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 48,
-      "match": "SUB41",
-      "text": "SUB41 /* extract 2-byte value */(local_178,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 49,
-      "match": "CONCAT31",
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 59,
-      "match": "SUB41",
-      "text": "\"*.dfm\",SUB41 /* extract 2-byte value */(local_278,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 80,
-      "match": "SUB41",
-      "text": "\"*.kfm\",SUB41 /* extract 2-byte value */(local_78,0));",
-      "type": "sub_artifact"
     },
     {
       "address": "0043dece",

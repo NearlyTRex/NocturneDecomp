@@ -143,7 +143,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar2);
     core_fire_cpp_CFireEffect_process_FUN_004c6ec0(g_CFireEffectPtr);
     core_gore_cpp_CGore_process_FUN_004ed9e0();
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
+    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
