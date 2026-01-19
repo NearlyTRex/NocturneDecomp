@@ -167,8 +167,8 @@ const string s_Floating_point_value_0066e130 = "Floating point value";
 const string s_Integer_value_0066e148 = "Integer value";
 
 // uchar[8] constants
-const uchar g_VoxelGridBitmasks[] = "";
-const uchar g_LightBitMaskLookup[] = "";
+const uchar g_VoxelGridBitmasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+const uchar g_LightBitMaskLookup[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined4 constants
 const undefined4 DAT_00660028 = 0x40400000;

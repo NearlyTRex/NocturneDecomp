@@ -1816,7 +1816,11 @@ const TerminatedCString s_bgnthd_00659784 = "__bgnthd";
 const TerminatedCString s_C_FILE_INFO_00659790 = "C_FILE_INFO=";
 
 // char[36] constants
-const char g_EmptyStringBuffer[] = "";
+const char g_EmptyStringBuffer[36] = {
+    (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x35, (char)0x70, (char)0xF0, (char)0xDF, (char)0xFF, (char)0xFF, (char)0xEF, (char)0x47,
+    (char)0x9B, (char)0x63, (char)0x0A, (char)0x00, (char)0x00, (char)0x00, (char)0x10, (char)0x38, (char)0x35, (char)0x70, (char)0xF0, (char)0xDF,
+    (char)0xFF, (char)0xFF, (char)0xEF, (char)0xC7, (char)0x9B, (char)0x63, (char)0x0A, (char)0x00, (char)0x00, (char)0x00, (char)0x10, (char)0xB8
+};
 
 // double constants
 const double DOUBLE_006501df = 0.050000000000000003;

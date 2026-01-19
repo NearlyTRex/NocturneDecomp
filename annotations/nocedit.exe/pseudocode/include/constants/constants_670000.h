@@ -398,7 +398,7 @@ const float g_MpegSynthesisWindow[16][32] = {
 const string s_Show_local_file_differences_00679db8 = "Show local file differences";
 
 // uchar[8] constants
-const uchar g_VoxelYBitMasks[] = "";
+const uchar g_VoxelYBitMasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined1 constants
 const undefined1 DAT_0067b685 = 0x46;

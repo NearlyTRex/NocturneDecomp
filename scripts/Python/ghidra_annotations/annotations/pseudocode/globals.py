@@ -1571,6 +1571,19 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                         pass
                 if embedded_content:
                     initializer_value = embedded_content
+                elif has_nonzero_bytes and raw_bytes:
+                    # Non-printable char array (e.g., XOR-encoded data) - output as hex bytes
+                    # Check if unsigned char - no cast needed for uchar/unsigned char
+                    type_lower = type_name.lower()
+                    is_unsigned = 'uchar' in type_lower or 'unsigned' in type_lower
+                    if is_unsigned:
+                        # Unsigned char - no cast needed, values 0-255 are valid
+                        byte_vals = ["0x%02X" % b for b in raw_bytes]
+                        initializer_value = format_array_initializer(byte_vals, vals_per_line=16)
+                    else:
+                        # Signed char - use cast to avoid narrowing for values > 127
+                        byte_vals = ["(char)0x%02X" % b for b in raw_bytes]
+                        initializer_value = format_array_initializer(byte_vals, vals_per_line=12)
                 else:
                     initializer_value = None
 
