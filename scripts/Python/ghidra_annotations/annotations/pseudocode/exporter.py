@@ -28,6 +28,7 @@ from ghidra_annotations.annotations.pseudocode.globals import (
     extract_globals_and_constants, generate_constants_file,
     generate_globals_file, generate_globals_header_file,
     split_data_by_address_range, generate_globals_cpp_file,
+    build_write_xref_addresses,
     extract_all_function_prototypes, generate_prototypes_header_file,
     extract_function_references_from_constants, get_function_address_ranges
 )
@@ -490,10 +491,16 @@ def export_pseudocode(currentProgram, path, strict=False):
     log_info("Built string map with %d entries" % len(string_map))
     timer.end_phase()
 
+    # Build write xref addresses set for constant vs global classification
+    timer.start_phase("Build write xref addresses")
+    log_info("Building write xref addresses set from cross-references")
+    write_xref_addrs = build_write_xref_addresses(abs_path)
+    timer.end_phase()
+
     # Extract and export globals and constants
     timer.start_phase("Extract globals and constants")
     log_info("Extracting globals and constants")
-    globals_list, constants_list = extract_globals_and_constants(currentProgram, string_map)
+    globals_list, constants_list = extract_globals_and_constants(currentProgram, string_map, write_xref_addrs)
     timer.end_phase()
 
     # Extract function prototypes for use in constants headers

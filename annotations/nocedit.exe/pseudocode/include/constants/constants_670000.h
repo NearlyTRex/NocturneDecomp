@@ -274,7 +274,6 @@ const TerminatedCString s_memdbg_txt_0067d1f0 = "memdbg.txt";
 const TerminatedCString s_unknown_0067d200 = "(unknown)";
 const TerminatedCString s_CLeakChecker_0067d214 = "$CLeakChecker$$";
 const TerminatedCString s_CMoon_0067d368 = "$CMoon$$";
-const TerminatedCString s_meshlod_0067d3a0 = "meshlod";
 const TerminatedCString s_meshlod_simplify_log_0067d4a0 = "meshlod\\simplify.log";
 const TerminatedCString s_replay_txt_0067d4b8 = "replay.txt";
 const TerminatedCString s_LodMesh_0067d4d4 = "$LodMesh$$";
@@ -299,23 +298,8 @@ const char* g_MenuBitmapFilenames[8] = {
     "f0900", "f1100", "f1300", "f1500"
 };
 
-// char[100] constants
-const char g_DefaultAuditPath[] = "";
-const char g_DefaultAuditRecordPath[] = "";
-
 // char[15] constants
 const char s_CMotionController_0067d811[] = "$CMotionControl";
-
-// char[260] constants
-const char g_FilePathBuffer[] = "";
-const char g_DefaultCheckOutPath[] = "";
-const char g_DefaultPodDirectoryPath[] = "";
-const char g_DirectoryBufferTemplate[] = "";
-const char g_FilenameBufferTemplate[] = "";
-
-// char[512] constants
-const char g_Field1ParseBuffer[] = "";
-const char g_Field2ParseBuffer[] = "";
 
 // double constants
 const double g_LightmapXorMask = 0.12694552529182901;
@@ -369,8 +353,6 @@ const double g_Mp3AntiAliasCSSource[8] = {
 };
 
 // float constants
-const float g_DashAnimationThreshold = 0.1f;
-const float g_SkyDomeVertexScale = 5.0f;
 const float g_MovieRecordingTargetFPS = 30.0f;
 const float g_SamplePointWeight = 0.75f;
 
@@ -403,28 +385,7 @@ const uchar g_VoxelYBitMasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x8
 // undefined1 constants
 const undefined1 DAT_0067b685 = 0x46;
 
-// undefined2 constants
-const undefined2 DAT_0067aebc = 0;
-
 // undefined4 constants
-const undefined4 DAT_00670210 = 0;
-const undefined4 DAT_00670214 = 0;
-const undefined4 DAT_0067241c = 0;
-const undefined4 DAT_00672420 = 0;
-const undefined4 DAT_00672424 = 0;
-const undefined4 DAT_00672428 = 0;
-const undefined4 DAT_0067242c = 0;
-const undefined4 DAT_00672430 = 0;
-const undefined4 DAT_00672434 = 0;
-const undefined4 DAT_00672438 = 0;
-const undefined4 DAT_0067243c = 0;
-const undefined4 DAT_00672440 = 0;
-const undefined4 DAT_00672444 = 0;
-const undefined4 DAT_00672448 = 0;
-const undefined4 DAT_0067244c = 0;
-const undefined4 DAT_00672450 = 0;
-const undefined4 DAT_00672454 = 0;
-const undefined4 DAT_00672458 = 0;
 const undefined4 DAT_00677cf0 = 0x18001800;
 const undefined4 DAT_00677d10 = 0x19001900;
 const undefined4 DAT_00677d30 = 0x1A001A00;
@@ -465,30 +426,11 @@ const undefined4 DAT_00678170 = 0x3C003C00;
 const undefined4 DAT_00678190 = 0x3D003D00;
 const undefined4 DAT_006781b0 = 0x3E003E00;
 const undefined4 DAT_006781d0 = 0x3F003F00;
-const undefined4 DAT_00678a70 = 0;
-const undefined4 DAT_00678a74 = 0;
-const undefined4 DAT_00678c80 = 0;
-const undefined4 DAT_00678c84 = 0;
-const undefined4 DAT_006793d8 = 0;
-const undefined4 DAT_006793dc = 0;
-const undefined4 DAT_006794a0 = 0;
-const undefined4 DAT_006794a4 = 0;
-const undefined4 DAT_0067aeb8 = 0;
 const undefined4 DAT_0067b664 = 0x00000040;
 const undefined4 DAT_0067b668 = 0x00000040;
-const undefined4 DAT_0067b718 = 0;
 const undefined4 DAT_0067cb08 = 0x3F800000;
 const undefined4 DAT_0067cb0c = 0xBF800000;
 const undefined4 DAT_0067cb18 = 0x3F800000;
-const undefined4 DAT_0067ce48 = 0;
-const undefined4 DAT_0067ce4c = 0;
-const undefined4 DAT_0067ceb0 = 0;
-const undefined4 DAT_0067ceb4 = 0;
-const undefined4 DAT_0067d5c0 = 0;
-const undefined4 DAT_0067d5c4 = 0;
-const undefined4 DAT_0067d628 = 0;
-const undefined4 DAT_0067d62c = 0;
-const undefined4 DAT_0067e184 = 0;
 
 // void* constants
 const void* DAT_00670308 = (void*)s_Gate_0062136d;

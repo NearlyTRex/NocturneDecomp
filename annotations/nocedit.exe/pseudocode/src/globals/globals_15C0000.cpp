@@ -26,6 +26,10 @@ SCameraViewportState g_SavedCameraState = {};
 // SPolygonScreenData[20000]
 SPolygonScreenData g_PolygonScreenCache[20000] = {};
 
+// char[40]
+char g_BackupModelName[40] = {};
+char g_SavedModelName[40] = {};
+
 // int[240]
 int g_CoronaLeftIntensity[240] = {};
 int g_CoronaRightIntensity[240] = {};

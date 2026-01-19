@@ -19,3 +19,6 @@ CFilterCache g_CFilterCacheInstance = {};
 // CFilterFx
 CFilterFx g_CFilterFXInstance = {};
 
+// uchar[6291656]
+uchar g_ShadowRestoreBuffer[6291656] = {};
+

@@ -106,7 +106,7 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
     if (iVar7 == 0) {
       iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar7 == 0) {
-        0x00000001 = (uint)(0x00000001 == 0);
+        DAT_0068105c = (uint)(DAT_0068105c == 0);
         goto LAB_00565363;
       }
       bVar2 = true;
@@ -436,7 +436,7 @@ LAB_00565363:
       in_stack_000000a8 = in_stack_00000004;
       in_stack_000000a4 = (CKeys *)0x56594d;
       core_script_cpp_CScript_editorAction_FUN_00564820();
-      if (0x00000001 == 0) break;
+      if (DAT_0068105c == 0) break;
       in_stack_000000b0 = (int *)0x1;
       in_stack_000000ac = (int *)&stack0x000000dc;
       in_stack_000000a8 = in_stack_00000004;

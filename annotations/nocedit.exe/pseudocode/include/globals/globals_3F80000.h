@@ -13,21 +13,40 @@
 // GLOBAL VARIABLES - Range 0x3F80000
 // =============================================================================
 
-extern SMRGLTextureBasic g_CurrentTexture;
+// CDemonActorType
 extern CDemonActorType g_CTommyGunClassInfo;
 extern CDemonActorType g_CTrapClassInfo;
 extern CDemonActorType g_CTrashClassInfo;
 extern CDemonActorType g_CTriggerClassInfo;
-extern CTerrain g_CTerrainInstance;
 extern CDemonActorType g_CTurretClassInfo;
 extern CDemonActorType g_CTVBatClassInfo;
 extern CDemonActorType g_CVampireBossClassInfo;
-extern CVector3f g_ZeroVector;
 extern CDemonActorType g_CVehicleClassInfo;
 extern CDemonActorType g_CCryptVesselClassInfo;
+
+// CTerrain
+extern CTerrain g_CTerrainInstance;
+
+// CVector3f
+extern CVector3f g_ZeroVector;
+
+// CVector3f[100]
+extern CVector3f DAT_03f8f638[100];
+
+// CWater
 extern CWater g_CWaterInstance;
+
+// SCollisionInfo[100]
+extern SCollisionInfo DAT_03f8fae8[100];
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_CurrentTexture;
+
+// int[4096]
 extern int g_VisibleWaterTilesX[4096];
 extern int g_VisibleWaterTilesY[4096];
-extern CVector3f DAT_03f8f638[100];
-extern SCollisionInfo DAT_03f8fae8[100];
+
+// uchar[4]
+extern uchar g_BroadcastIP[4];
+extern uchar g_AnyAddressIP[4];
 

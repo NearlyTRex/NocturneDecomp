@@ -3464,6 +3464,8 @@ SSoundModeEntry g_SoundModeTable[27] = {
 
 // TerminatedCString
 TerminatedCString g_RendererDllName = "trid3d.dll";
+TerminatedCString s_EST_006850bc = "EST";
+TerminatedCString s_EDT_0068513d = "EDT";
 
 // UINT
 UINT g_WaveOutDeviceID = 0xffffffff;
@@ -3667,6 +3669,25 @@ char* g_EnvironmentStrings = nullptr;
 // char**
 char** g_TempEnvVarNames = (char**)0x006590A4; // DAT_006590a4
 
+// char[104]
+char g_SoundResultBufferTemplate[] = "";
+
+// char[108]
+char g_TrainSoundFilenameTemplate[] = "";
+
+// char[256]
+char g_DefaultRecordingDeviceName[] = "";
+char g_DefaultDeviceName[] = "";
+
+// char[260]
+char g_TempDirectoryBuffer[] = "";
+
+// double
+double DOUBLE_00681b30 = 1;
+double DOUBLE_00681b38 = 1;
+double g_SelectedClearColor = 0;
+double g_ClearColor = 0;
+
 // dst_rule
 dst_rule g_DstStartRule = {
     .seconds = 0x00000000,
@@ -3678,6 +3699,9 @@ dst_rule g_DstStartRule = {
     .day_of_year = 0x00000000,
     .rule_type = 0x00000000
 };
+
+// float
+float g_MaxSoftwareLatency = 0.5f;
 
 // int
 int g_ConfirmNewActorNames = 0x1;
@@ -3824,10 +3848,45 @@ ulonglong g_TotalColorBits = 0x8;
 ulonglong g_GreenBlueBits = 0x5;
 ulonglong g_BlueBitShift = 0x3;
 
+// undefined1
+undefined1 DAT_00684acc = 0;
+undefined1 DAT_00684acd = 0;
+undefined1 DAT_00684d05 = 0;
+undefined1 DAT_0068500c = 0;
+undefined1 DAT_006852db = 0;
+
 // undefined4
+undefined4 DAT_00680648 = 0xFFFFFFFF;
 undefined4 g_DynamicRenderMode = 0x00000001;
+undefined4 DAT_00680818 = 0x501502F9;
+undefined4 DAT_00680830 = 0;
+undefined4 DAT_00680834 = 0;
+undefined4 DAT_00680908 = 0;
+undefined4 DAT_0068090c = 0;
+undefined4 DAT_00680974 = 0;
+undefined4 DAT_00680a04 = 0x00000001;
+undefined4 DAT_00680bd8 = 0xFFFFFFFF;
+undefined4 DAT_00680bdc = 0;
+undefined4 DAT_00680d60 = 0;
+undefined4 DAT_00680d64 = 0;
+undefined4 DAT_0068105c = 0x00000001;
+undefined4 DAT_0068125c = 0;
+undefined4 DAT_00681260 = 0;
 undefined4 g_CSkeletonVersion = 0x00000003;
+undefined4 DAT_00681a00 = 0;
+undefined4 DAT_00684ccc = 0;
+undefined4 DAT_00684edc = 0;
 undefined4 g_SpecialExitHandler = 0;
+undefined4 DAT_00684f30 = 0;
+undefined4 DAT_00684fd0 = 0;
+undefined4 DAT_00685094 = 0;
+undefined4 DAT_006850b0 = 0;
+undefined4 DAT_006850b4 = 0;
+undefined4 DAT_006850b8 = 0;
+undefined4 DAT_00685280 = 0;
+undefined4 DAT_0068528c = 0;
+undefined4 DAT_006852c4 = 0;
+undefined4 DAT_006854ec = 0;
 
 // void*
 void* g_CrtStackBuffer = nullptr;

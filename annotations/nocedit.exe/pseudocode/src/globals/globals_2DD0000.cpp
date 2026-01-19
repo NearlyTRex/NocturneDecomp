@@ -16,3 +16,6 @@ CDemonFileManager g_CDemonFileManagerInstance = {};
 CVector3i g_CachedViewPosition = {};
 CVector3i g_NormalizedViewVector = {};
 
+// char[512]
+char g_ErrorMessageBuffer_02dd3130[512] = {};
+

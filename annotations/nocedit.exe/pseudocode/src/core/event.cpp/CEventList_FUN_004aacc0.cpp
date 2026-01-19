@@ -996,7 +996,7 @@ LAB_004aaf38:
                                                   (local_13ad + 1,local_13ad + 2,SVar14);
                                         SVar14 = SVar14 - 1;
                                       }
-                                      puVar17 = &0;
+                                      puVar17 = &DAT_006793d8;
                                       pcVar8 = local_b15 + 1;
                                       for (iVar5 = 0x32; iVar5 != 0; iVar5 = iVar5 + -1) {
                                         *(uint *)pcVar8 = *puVar17;
@@ -1839,7 +1839,7 @@ LAB_004aaf38:
                                                         pCVar16 = pCVar16 + 1;
                                                       }
                                                       local_1c = -1;
-                                                      puVar17 = &0;
+                                                      puVar17 = &DAT_006794a0;
                                                       puVar19 = local_344;
                                                       for (iVar5 = 0x19; iVar5 != 0;
                                                           iVar5 = iVar5 + -1) {

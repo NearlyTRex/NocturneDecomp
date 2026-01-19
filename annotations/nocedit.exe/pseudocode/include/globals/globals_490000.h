@@ -7,6 +7,7 @@
 // GLOBAL VARIABLES - Range 0x490000
 // =============================================================================
 
+// void*
 extern void* switchdataD_0049b850;
 extern void* switchdataD_0049b9b0;
 extern void* switchdataD_0049bb14;

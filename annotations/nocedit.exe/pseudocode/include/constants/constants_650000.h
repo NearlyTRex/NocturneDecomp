@@ -2281,12 +2281,6 @@ const undefined1 DAT_00658c08 = 0x50;
 const undefined1 DAT_00658c0c = 0x09;
 const undefined1 DAT_006590a4 = 0x54;
 const undefined1 DAT_006590a8 = 0x54;
-const undefined1 DAT_006597a1 = 0;
-const undefined1 DAT_006597a2 = 0;
-const undefined1 DAT_006597a3 = 0;
-const undefined1 DAT_006597a5 = 0;
-const undefined1 DAT_006597a6 = 0;
-const undefined1 DAT_006597a7 = 0;
 
 // undefined4 constants
 const undefined4 DAT_0065a5ac = 0x40600000;

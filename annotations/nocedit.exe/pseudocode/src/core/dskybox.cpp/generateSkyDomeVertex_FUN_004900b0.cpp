@@ -36,7 +36,7 @@ core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0
   fVar4 = (float10)fsin(fVar3);
   fVar5 = (float10)fcos((float10)local_48);
   fVar3 = (float10)fcos(fVar3);
-  fVar6 = (float10)5.0f;
+  fVar6 = (float10)g_SkyDomeVertexScale;
   fVar7 = (float10)256;
   fVar4 = fVar4 * fVar6 * (float10)(double)fVar5 * fVar7;
   fVar3 = fVar3 * fVar6 * (float10)(double)fVar5 * fVar7;

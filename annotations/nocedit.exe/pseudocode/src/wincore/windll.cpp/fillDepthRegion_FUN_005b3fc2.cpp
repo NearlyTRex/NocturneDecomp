@@ -14,7 +14,7 @@ void __cdecl wincore_windll_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,
   uint uVar3;
   double *pdVar4;
   
-  dVar2 = 0;
+  dVar2 = g_SelectedClearColor;
   if (g_UseExternalRenderer != 0) {
     wincore_windll_cpp_clearZBox_FUN_005b7c00(left,right,top,bottom);
     return;
@@ -30,6 +30,6 @@ void __cdecl wincore_windll_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,
     } while (bVar1);
     top = top + 1;
   } while ((uint)top <= (uint)bottom);
-  0 = dVar2;
+  g_ClearColor = dVar2;
   return;
 }

@@ -115,6 +115,25 @@ SSoundDeviceInfo g_SoundDevices[8] = {};
 // STrainNoise[10]
 STrainNoise g_TrainNoiseArray[10] = {};
 
+// char[40]
+char g_SoundAmbientSoundName[40] = {};
+
+// char[40][40]
+char g_SoundMatchedFilenames[40][40] = {};
+
+// double[8]
+double g_VirtualSpeakerXPositions[8] = {};
+double g_VirtualSpeakerYPositions[8] = {};
+double g_VirtualSpeakerZPositions[8] = {};
+
+// float*[8]
+float* g_ChannelTertiaryBuffers[8] = {};
+float* g_ChannelSecondaryBuffersA[8] = {};
+float* g_ChannelSecondaryBuffersB[8] = {};
+
+// float[32]
+float g_SfxChannelVolumes[32] = {};
+
 // int[32]
 int g_SfxChannelEnabled[32] = {};
 

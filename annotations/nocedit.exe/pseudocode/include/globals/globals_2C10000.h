@@ -9,7 +9,13 @@
 // GLOBAL VARIABLES - Range 0x2C10000
 // =============================================================================
 
+// CDemonActorType
 extern CDemonActorType g_CZombieDogClassInfo;
 extern CDemonActorType g_CDoorClassInfo;
+
+// FileSearchHandler*[5]
 extern FileSearchHandler* g_SearchHandlers[5];
+
+// char[72]
+extern char g_PolyDataConversionBuffer[72];
 

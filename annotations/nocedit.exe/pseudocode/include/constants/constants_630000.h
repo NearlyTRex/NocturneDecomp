@@ -4035,15 +4035,9 @@ const float FLOAT_0063f986 = -1.0f;
 
 // undefined1 constants
 const undefined1 DAT_00635428 = 0x0A;
-const undefined1 DAT_00635429 = 0;
 const undefined1 DAT_00635459 = 0x0A;
-const undefined1 DAT_0063545a = 0;
 const undefined1 DAT_0063548d = 0x0A;
-const undefined1 DAT_0063548e = 0;
 const undefined1 DAT_006354a9 = 0x0A;
-const undefined1 DAT_006354aa = 0;
 const undefined1 DAT_00635507 = 0x0A;
-const undefined1 DAT_00635508 = 0;
 const undefined1 DAT_00635536 = 0x0A;
-const undefined1 DAT_00635537 = 0;
 

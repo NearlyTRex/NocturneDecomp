@@ -41,8 +41,8 @@ void __cdecl crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(void *ptr)
     else {
 LAB_00601d9c:
       crt_heap_c_CoalesceAndAddFreeBlock_FUN_006094c0(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);
-      if ((pHVar2 < g_SecondaryHeap) && (0 < pHVar2[1].next_heap_block)) {
-        0 = pHVar2[1].next_heap_block;
+      if ((pHVar2 < g_SecondaryHeap) && (DAT_00684edc < pHVar2[1].next_heap_block)) {
+        DAT_00684edc = pHVar2[1].next_heap_block;
       }
       DAT_03f9b850 = 0;
       DAT_03f9b210 = pHVar2;

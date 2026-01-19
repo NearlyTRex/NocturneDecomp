@@ -34,3 +34,6 @@ CTrail g_TrailPool[100] = {};
 // SHardwareEdge[16]
 SHardwareEdge g_HardwareEdgeTable[16] = {};
 
+// char[256]
+char g_TempTextBuffer[256] = {};
+

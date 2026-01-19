@@ -86,7 +86,7 @@ LAB_004c7785:
       } while (iVar2 < 8);
     }
   }
-  puVar5 = &0;
+  puVar5 = &DAT_0067aeb8;
   pcVar3 = acStack_5c;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(uint *)pcVar3 = *puVar5;

@@ -7,8 +7,11 @@
 // GLOBAL VARIABLES - Range 0x600000
 // =============================================================================
 
+// void*
 extern void* switchdataD_00603db4;
 extern void* switchdataD_00604468;
-extern void* g_FPExceptionJumpTable[7];
 extern void* switchdataD_0060d0f8;
+
+// void*[7]
+extern void* g_FPExceptionJumpTable[7];
 

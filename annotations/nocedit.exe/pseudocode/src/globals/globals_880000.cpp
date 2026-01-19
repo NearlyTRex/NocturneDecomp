@@ -15,3 +15,6 @@ CVector3f DAT_008879c0[100] = {};
 // SCollisionInfo[100]
 SCollisionInfo DAT_00887e70[100] = {};
 
+// char[500000]
+char g_CameraLoadImageReadBuffer[500000] = {};
+

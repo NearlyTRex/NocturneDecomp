@@ -11,12 +11,12 @@ void __cdecl crt_fpu_c_staticInit_FUN_006047e0(void)
 {
   char cVar1;
   
-  if (0 == '\0') {
-    0 = 0;
+  if (DAT_00684acc == '\0') {
+    DAT_00684acd = DAT_00684acc;
     cVar1 = crt_unknown_c_FUN_006047a4();
-    if (0 == '\0') {
-      0 = cVar1;
-      0 = cVar1;
+    if (DAT_0068500c == '\0') {
+      DAT_00684acc = cVar1;
+      DAT_00684acd = cVar1;
     }
   }
   return;

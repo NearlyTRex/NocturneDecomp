@@ -52,7 +52,7 @@ void core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(void)
   } while (cVar1 != '\0');
   g_LastPingTime = iVar2 / 0x12;
   core_netgame_cpp_CNetGame_send_FUN_005411c0();
-  0x00000001 = 1;
+  DAT_00680a04 = 1;
   in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0x18] = g_CurrentGameTime;
   return;
 }

@@ -17,7 +17,7 @@ uint crt_unknown_c_SomethingFPUControlWord_FUN_0060e8e0(void)
   uint local_c;
   
   local_c = 0;
-  if ((0 != '\0') && (local_c = (uint)in_FPUControlWord, in_stack_00000008 != 0)) {
+  if ((DAT_00684acc != '\0') && (local_c = (uint)in_FPUControlWord, in_stack_00000008 != 0)) {
     local_c = ~in_stack_00000008 & local_c | in_stack_00000004 & in_stack_00000008 & 0xffff;
   }
   return local_c;

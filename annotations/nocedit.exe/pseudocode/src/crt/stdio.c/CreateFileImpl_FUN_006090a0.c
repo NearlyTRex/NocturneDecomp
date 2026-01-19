@@ -35,7 +35,7 @@ crt_stdio_c_CreateFileImpl_FUN_006090a0
   crt_io_c_ConvertAccessMode_FUN_0060c850(access_mode_00,&desired_access,&extra_parameter);
   dwFlagsAndAttributes = 0x80;
   crt_io_c_ConvertCreationDisposition_FUN_0060c894(share_mode | access_mode_00,&share_mode_windows);
-  if ((0 == (code *)0x0) ||
+  if ((DAT_0068528c == (code *)0x0) ||
      (iVar2 = crt_string_c_stricmp_FUN_005fe7f0(filename,"con"), iVar2 != 0)) {
     if ((access_mode & 0x20) == 0) {
       if ((access_mode & 0x40) == 0) {
@@ -51,7 +51,7 @@ LAB_006091db:
       *extra_args = (va_list_t)(puVar1 + 1);
       uVar4 = *puVar1;
       *extra_args = (va_list_t)0x0;
-      extra_parameter = uVar4 & ~0;
+      extra_parameter = uVar4 & ~DAT_006854ec;
       if (((extra_parameter & 0x100) != 0) && ((extra_parameter & 0x80) == 0)) {
         dwFlagsAndAttributes = 1;
       }
@@ -99,7 +99,7 @@ LAB_006091db:
     pvVar3 = crt_io_c_CreateFallbackHandle_FUN_00608b88();
     handle_index = (HANDLE)(*PTR_crt_sync_c_RegisterHandle_FUN_00602438_00684ef0)(pvVar3);
     uVar4 = 0x2000;
-    (*0)();
+    (*DAT_0068528c)();
   }
   if (access_mode_00 == 2) {
     uVar4 = uVar4 | 3;

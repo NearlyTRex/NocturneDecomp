@@ -3338,43 +3338,27 @@ const double DOUBLE_0061fff3 = -0.25;
 const double DOUBLE_0061fffb = 1.3333333333333299;
 
 // dword constants
-const dword DAT_00611004 = 0x0;
-const dword DAT_00611008 = 0x0;
 const dword DAT_0061100C = 0x2116dc;
 const dword DAT_00611010 = 0x2113c8;
 const dword DAT_00611014 = 0x2110f0;
-const dword DAT_00611018 = 0x0;
-const dword DAT_0061101C = 0x0;
 const dword DAT_00611020 = 0x2116e6;
 const dword DAT_00611024 = 0x211404;
 const dword DAT_00611028 = 0x21114c;
-const dword DAT_0061102C = 0x0;
-const dword DAT_00611030 = 0x0;
 const dword DAT_00611034 = 0x2116f0;
 const dword DAT_00611038 = 0x211460;
 const dword DAT_0061103C = 0x211174;
-const dword DAT_00611040 = 0x0;
-const dword DAT_00611044 = 0x0;
 const dword DAT_00611048 = 0x2116fd;
 const dword DAT_0061104C = 0x211488;
 const dword DAT_00611050 = 0x2111f0;
-const dword DAT_00611054 = 0x0;
-const dword DAT_00611058 = 0x0;
 const dword DAT_0061105C = 0x211708;
 const dword DAT_00611060 = 0x211504;
 const dword DAT_00611064 = 0x21136c;
-const dword DAT_00611068 = 0x0;
-const dword DAT_0061106C = 0x0;
 const dword DAT_00611070 = 0x211715;
 const dword DAT_00611074 = 0x211680;
 const dword DAT_00611078 = 0x211374;
-const dword DAT_0061107C = 0x0;
-const dword DAT_00611080 = 0x0;
 const dword DAT_00611084 = 0x21171f;
 const dword DAT_00611088 = 0x211688;
 const dword DAT_0061108C = 0x2113bc;
-const dword DAT_00611090 = 0x0;
-const dword DAT_00611094 = 0x0;
 const dword DAT_00611098 = 0x21172b;
 const dword DAT_0061109C = 0x2116d0;
 const dword DAT_006110B4 = 0x211736;
@@ -3687,9 +3671,6 @@ const string s_Bip01_L_UpperArm_00618bc7 = "Bip01 L UpperArm";
 const string s_Stop_condition_00618ea2 = "Stop condition";
 const string s_backdrop_0061a16d = "backdrop";
 const string s_Debug_font_object_not_allocated_0061e97f = "Debug font object not allocated!";
-
-// undefined1 constants
-const undefined1 DAT_00614464 = 0;
 
 // void* constants
 const void* DAT_00610ADA = (void*)&g_DosDateTimeToFileTimeFunc;

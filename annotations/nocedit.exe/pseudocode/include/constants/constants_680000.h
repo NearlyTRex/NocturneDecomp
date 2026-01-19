@@ -112,8 +112,6 @@ const TerminatedCString s_fstreambase_00684b12 = "$fstreambase$$";
 const TerminatedCString s_Stack_Overflow_00684b24 = "Stack Overflow!\r\n";
 const TerminatedCString s_streambuf_0068503c = "$streambuf$$";
 const TerminatedCString s_strstreambuf_0068504d = "$strstreambuf$$";
-const TerminatedCString s_EST_006850bc = "EST";
-const TerminatedCString s_EDT_0068513d = "EDT";
 const TerminatedCString s_s_0123456789abcdefghijkl_006851d8 = "0123456789abcdefghijklmnopqrstuvwxyz";
 const TerminatedCString s_DEST_00686842 = "DEST";
 const TerminatedCString s_DEST_00686852 = "DEST";
@@ -189,12 +187,6 @@ const char* g_DirectionCharacters[9] = {
     "SW"
 };
 
-// char[104] constants
-const char g_SoundResultBufferTemplate[] = "";
-
-// char[108] constants
-const char g_TrainSoundFilenameTemplate[] = "";
-
 // char[128] constants
 const char g_OSFontName[128] = {
     (char)0x82, (char)0x6C, (char)0x82, (char)0x72, (char)0x20, (char)0x82, (char)0x6F, (char)0x83, (char)0x53, (char)0x83, (char)0x56, (char)0x83,
@@ -226,8 +218,6 @@ const char g_MonthNamesShort[12][4] = {
 const char g_HexLookupTable[] = "0123456789abcdef";
 
 // char[256] constants
-const char g_DefaultRecordingDeviceName[] = "";
-const char g_DefaultDeviceName[] = "";
 const char g_CharacterClassificationTable[256] = {
     (char)0x00, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x03, (char)0x03,
     (char)0x03, (char)0x03, (char)0x03, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01, (char)0x01,
@@ -277,9 +267,6 @@ const char g_ShiftJIS_TrailByteTable[256] = {
     (char)0x0C, (char)0x00, (char)0x00, (char)0x00
 };
 
-// char[260] constants
-const char g_TempDirectoryBuffer[] = "";
-
 // char[36] constants
 const char g_AlphaNumericCharacters1[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 const char g_AlphaNumericCharacters2[] = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -296,15 +283,10 @@ const char g_WeekdayNamesShort[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri"
 const char s_filebuf_00685484[] = "$filebuf";
 
 // double constants
-const double DOUBLE_00681b30 = 1;
-const double DOUBLE_00681b38 = 1;
-const double g_SelectedClearColor = 0;
-const double g_ClearColor = 0;
 const double g_ExpUnderflowLimit = 709.78271289338397;
 const double DOUBLE_0068506c = -709.78271289338397;
 
 // float constants
-const float g_MaxSoftwareLatency = 0.5f;
 const float FLOAT_00684170 = 12.0f;
 const float FLOAT_00684174 = 1.0f;
 const float g_IEEE754NormalScaleFactor = 0.9375f;
@@ -316,13 +298,6 @@ const float10 g_PiOver2 = 1.5707963f;
 const float10 g_CalculatedPi = 3.1415927f;
 const float10 g_HalfCalculatedPi = 1.5707963f;
 
-// undefined1 constants
-const undefined1 DAT_00684acc = 0;
-const undefined1 DAT_00684acd = 0;
-const undefined1 DAT_00684d05 = 0;
-const undefined1 DAT_0068500c = 0;
-const undefined1 DAT_006852db = 0;
-
 // undefined2 constants
 const undefined2 DAT_00684f38 = 0x4002;
 const undefined2 DAT_0068546c = 0x127F;
@@ -330,50 +305,22 @@ const undefined2 DAT_0068546c = 0x127F;
 // undefined4 constants
 const undefined4 DAT_006804b0 = 0x3F666666;
 const undefined4 DAT_006804b4 = 0x3F8CCCCD;
-const undefined4 DAT_00680648 = 0xFFFFFFFF;
-const undefined4 DAT_00680818 = 0x501502F9;
-const undefined4 DAT_00680830 = 0;
-const undefined4 DAT_00680834 = 0;
-const undefined4 DAT_00680908 = 0;
-const undefined4 DAT_0068090c = 0;
 const undefined4 DAT_00680970 = 0x0000002A;
-const undefined4 DAT_00680974 = 0;
-const undefined4 DAT_00680a04 = 0x00000001;
-const undefined4 DAT_00680bd8 = 0xFFFFFFFF;
-const undefined4 DAT_00680bdc = 0;
-const undefined4 DAT_00680d60 = 0;
-const undefined4 DAT_00680d64 = 0;
-const undefined4 DAT_0068105c = 0x00000001;
 const undefined4 DAT_006810dc = 0x00000180;
 const undefined4 DAT_006810e0 = 0x00000200;
 const undefined4 DAT_006810e4 = 0x00000180;
-const undefined4 DAT_0068125c = 0;
-const undefined4 DAT_00681260 = 0;
 const undefined4 DAT_00681264 = 0x00000080;
 const undefined4 DAT_00681864 = 0x00000007;
 const undefined4 DAT_006819fc = 0xFFFFF100;
-const undefined4 DAT_00681a00 = 0;
 const undefined4 DAT_00681a04 = 0xFFFFF100;
 const undefined4 DAT_006844f4 = 0x00002000;
-const undefined4 DAT_00684ccc = 0;
 const undefined4 DAT_00684cd0 = 0x00000001;
 const undefined4 DAT_00684cea = 0x00000002;
 const undefined4 DAT_00684ed0 = 0x00000100;
-const undefined4 DAT_00684edc = 0;
-const undefined4 DAT_00684f30 = 0;
 const undefined4 DAT_00684f34 = 0xA0000000;
-const undefined4 DAT_00684fd0 = 0;
-const undefined4 DAT_00685094 = 0;
 const undefined4 DAT_006850a4 = 0x00000005;
 const undefined4 DAT_006850a8 = 0x00000009;
-const undefined4 DAT_006850b0 = 0;
-const undefined4 DAT_006850b4 = 0;
-const undefined4 DAT_006850b8 = 0;
 const undefined4 DAT_00685210 = 0xFF010806;
-const undefined4 DAT_00685280 = 0;
-const undefined4 DAT_0068528c = 0;
-const undefined4 DAT_006852c4 = 0;
-const undefined4 DAT_006854ec = 0;
 const undefined4 DAT_006854f0 = 0x00000001;
 const undefined4 DAT_006855d8 = 0x0FFFFFFF;
 

@@ -10,3 +10,6 @@ CLZWDecompress g_CLZWDecompressInstance = {};
 // SFogImagePlane
 SFogImagePlane g_CameraPlaneWorkBuffer = {};
 
+// char[4096]
+char g_CameraLookupTable[4096] = {};
+

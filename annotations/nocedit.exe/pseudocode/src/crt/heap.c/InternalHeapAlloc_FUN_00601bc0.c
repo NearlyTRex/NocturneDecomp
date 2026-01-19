@@ -30,15 +30,15 @@ void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
   bVar2 = false;
   while( true ) {
     while( true ) {
-      if (0 < local_24) {
+      if (DAT_00684edc < local_24) {
         pHVar5 = g_SecondaryHeap;
         if (g_SecondaryHeap == (Heap *)0x0) {
-          0 = g_SecondaryHeap;
+          DAT_00684edc = g_SecondaryHeap;
           pHVar5 = g_MainHeap;
         }
       }
       else {
-        0 = (Heap *)0x0;
+        DAT_00684edc = (Heap *)0x0;
         pHVar5 = g_MainHeap;
       }
       for (; pHVar5 != (Heap *)0x0; pHVar5 = pHVar5->next_heap_block) {
@@ -48,8 +48,8 @@ void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
            (pvVar6 = crt_heap_c_AllocateFromFreeList_FUN_00609410
                                (size,(HeapBlock *)(uint)in_DS,(ushort)pvVar6), pvVar6 != (void *)0x0
            )) goto LAB_00601cb0;
-        if (0 < pHVar1) {
-          0 = pHVar1;
+        if (DAT_00684edc < pHVar1) {
+          DAT_00684edc = pHVar1;
         }
       }
       if ((bVar2) ||

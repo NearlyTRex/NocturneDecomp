@@ -9,7 +9,18 @@
 // GLOBAL VARIABLES - Range 0x3F50000
 // =============================================================================
 
+// CMP3Decoder
 extern CMP3Decoder g_CMP3DecoderInstance;
-extern int g_ChannelFFTTimestamps[8];
+
+// CSfxSlot[64]
 extern CSfxSlot g_SfxSlots[64];
+
+// char[15360]
+extern char g_SfxStreamReadBuffer[15360];
+
+// char[220]
+extern char g_SoundTestErrorBuffer[220];
+
+// int[8]
+extern int g_ChannelFFTTimestamps[8];
 

@@ -13,6 +13,9 @@ SCameraViewportState g_BackgroundSavedCameraState = {};
 // SFogGrid
 SFogGrid g_CameraFogGrid = {};
 
+// char[307200]
+char g_CameraIndexedImageData[307200] = {};
+
 // int[256]
 int g_ScanlineSpanLeft[256] = {};
 int g_ScanlineSpanRight[256] = {};

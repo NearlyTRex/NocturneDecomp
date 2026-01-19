@@ -566,7 +566,7 @@ LAB_0059722b:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
       local_16c._24_4_ = 0xFFFFF100;
-      afStack_150[(uint)bVar19 * -2] = (float)(&0)[(uint)bVar19 * -2];
+      afStack_150[(uint)bVar19 * -2] = (float)(&DAT_00681a00)[(uint)bVar19 * -2];
       *(uint *)((int)&local_148 + (uint)bVar19 * -8 + (uint)bVar19 * -8 + -4) =
            (&0xFFFFF100)[(uint)bVar19 * -2 + (uint)bVar19 * -2];
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c

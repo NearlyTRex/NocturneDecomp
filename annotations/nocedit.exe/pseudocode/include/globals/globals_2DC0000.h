@@ -12,6 +12,7 @@
 // GLOBAL VARIABLES - Range 0x2DC0000
 // =============================================================================
 
+// CAlphaBitmap
 extern CAlphaBitmap g_BatteryIconBitmap;
 extern CAlphaBitmap g_HealthBar1Bitmap;
 extern CAlphaBitmap g_HealthBar2Bitmap;
@@ -22,10 +23,18 @@ extern CAlphaBitmap g_MercuryBulletIconBitmap;
 extern CAlphaBitmap g_ShotShellIconBitmap;
 extern CAlphaBitmap g_SilverBulletIconBitmap;
 extern CAlphaBitmap g_HolyBulletIconBitmap;
+
+// CDemonActorType
 extern CDemonActorType g_CKeyActorClassInfo;
-extern CKeys g_CKeysInstance;
 extern CDemonActorType g_CLadderClassInfo;
 extern CDemonActorType g_CLarvaClassInfo;
-extern CLevelLoader g_CLevelLoaderInstance;
+
+// CKeyFramedModel
 extern CKeyFramedModel g_LoadingMoonModel;
+
+// CKeys
+extern CKeys g_CKeysInstance;
+
+// CLevelLoader
+extern CLevelLoader g_CLevelLoaderInstance;
 

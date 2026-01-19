@@ -10,3 +10,9 @@ CDSEModel g_CDSEModelInstance = {};
 // CMultiCram
 CMultiCram g_CMultiCramInstance = {};
 
+// char[80]
+char g_CurrentModelFilename[80] = {};
+
+// char[9][80]
+char g_TextureNameArray[9][80] = {};
+

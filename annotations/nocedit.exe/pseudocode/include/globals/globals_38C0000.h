@@ -8,5 +8,6 @@
 // GLOBAL VARIABLES - Range 0x38C0000
 // =============================================================================
 
+// CSkeleton[40]
 extern CSkeleton g_SkeletonPool[40];
 

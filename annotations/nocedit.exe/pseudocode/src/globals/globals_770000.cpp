@@ -13,6 +13,9 @@ SRenderVertex g_QuadVertex1 = {};
 SRenderVertex g_QuadVertex2 = {};
 SRenderVertex g_QuadVertex3 = {};
 
+// float[256]
+float g_PaletteLuminanceCache[256] = {};
+
 // int[24]
 int g_ProcessedVertexIndices[24] = {};
 

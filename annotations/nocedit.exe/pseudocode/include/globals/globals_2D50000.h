@@ -10,7 +10,12 @@
 // GLOBAL VARIABLES - Range 0x2D50000
 // =============================================================================
 
-extern CSpark g_SparkPool[256];
-extern CMuzzleFlash g_MuzzleFlashPool[20];
+// CGlassParticle[256]
 extern CGlassParticle g_GlassParticlePool[256];
+
+// CMuzzleFlash[20]
+extern CMuzzleFlash g_MuzzleFlashPool[20];
+
+// CSpark[256]
+extern CSpark g_SparkPool[256];
 

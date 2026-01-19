@@ -1472,6 +1472,9 @@ SMRGLTextureBasic g_AudioSpectrumTextures[8] = {
     }
 };
 
+// TerminatedCString
+TerminatedCString s_meshlod_0067d3a0 = "meshlod";
+
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode = {
     .next = nullptr,
@@ -1797,6 +1800,25 @@ byte g_CPUInfoMMXSupported = 0x0;
 // char*
 char* g_CurrentDebugFilename = (char*)s_unknown_0067d200;
 
+// char[100]
+char g_DefaultAuditPath[] = "";
+char g_DefaultAuditRecordPath[] = "";
+
+// char[260]
+char g_FilePathBuffer[] = "";
+char g_DefaultCheckOutPath[] = "";
+char g_DefaultPodDirectoryPath[] = "";
+char g_DirectoryBufferTemplate[] = "";
+char g_FilenameBufferTemplate[] = "";
+
+// char[512]
+char g_Field1ParseBuffer[] = "";
+char g_Field2ParseBuffer[] = "";
+
+// float
+float g_DashAnimationThreshold = 0.1f;
+float g_SkyDomeVertexScale = 5.0f;
+
 // int
 int g_CZombieDogClassVersion = 0x2;
 int g_CDoorClassVersion = 0xb;
@@ -1966,6 +1988,48 @@ ulonglong g_LightmapBlendBias4 = 0x60006000600060;
 
 // undefined1
 undefined1 g_MagicNumEFD = 0x45;
+
+// undefined2
+undefined2 DAT_0067aebc = 0;
+
+// undefined4
+undefined4 DAT_00670210 = 0;
+undefined4 DAT_00670214 = 0;
+undefined4 DAT_0067241c = 0;
+undefined4 DAT_00672420 = 0;
+undefined4 DAT_00672424 = 0;
+undefined4 DAT_00672428 = 0;
+undefined4 DAT_0067242c = 0;
+undefined4 DAT_00672430 = 0;
+undefined4 DAT_00672434 = 0;
+undefined4 DAT_00672438 = 0;
+undefined4 DAT_0067243c = 0;
+undefined4 DAT_00672440 = 0;
+undefined4 DAT_00672444 = 0;
+undefined4 DAT_00672448 = 0;
+undefined4 DAT_0067244c = 0;
+undefined4 DAT_00672450 = 0;
+undefined4 DAT_00672454 = 0;
+undefined4 DAT_00672458 = 0;
+undefined4 DAT_00678a70 = 0;
+undefined4 DAT_00678a74 = 0;
+undefined4 DAT_00678c80 = 0;
+undefined4 DAT_00678c84 = 0;
+undefined4 DAT_006793d8 = 0;
+undefined4 DAT_006793dc = 0;
+undefined4 DAT_006794a0 = 0;
+undefined4 DAT_006794a4 = 0;
+undefined4 DAT_0067aeb8 = 0;
+undefined4 DAT_0067b718 = 0;
+undefined4 DAT_0067ce48 = 0;
+undefined4 DAT_0067ce4c = 0;
+undefined4 DAT_0067ceb0 = 0;
+undefined4 DAT_0067ceb4 = 0;
+undefined4 DAT_0067d5c0 = 0;
+undefined4 DAT_0067d5c4 = 0;
+undefined4 DAT_0067d628 = 0;
+undefined4 DAT_0067d62c = 0;
+undefined4 DAT_0067e184 = 0;
 
 // ushort[384]
 ushort g_LightmapData[384] = {

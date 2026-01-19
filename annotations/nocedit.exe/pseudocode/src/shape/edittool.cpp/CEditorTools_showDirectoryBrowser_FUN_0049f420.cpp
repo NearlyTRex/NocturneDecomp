@@ -67,7 +67,7 @@ shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
               (this_ptr,"Error getting current directory.");
     return false;
   }
-  puVar5 = &0;
+  puVar5 = &DAT_00678a70;
   pcVar2 = local_12c8;
   for (iVar3 = 0x41; iVar3 != 0; iVar3 = iVar3 + -1) {
     *(uint *)pcVar2 = *puVar5;
@@ -187,7 +187,7 @@ LAB_0049f64e:
                                ((CPickList *)&stack0xffffe138,local_1b20,(int)pcVar2,0);
     if ((int)pcVar2 < 0) goto LAB_0049f983;
     if ((int)(in_stack_ffffe138 - 1) <= (int)pcVar2) {
-      puVar5 = &0;
+      puVar5 = &DAT_00678c80;
       pcVar2 = local_16d8;
       for (iVar3 = 0x41; iVar3 != 0; iVar3 = iVar3 + -1) {
         *(uint *)pcVar2 = *puVar5;

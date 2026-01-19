@@ -43,7 +43,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   int local_18;
   
   bVar11 = 0;
-  fVar4 = (float)1;
+  fVar4 = (float)DOUBLE_00681b38;
   fVar1 = 20.0f * fVar4;
   fVar5 = g_SoundReferenceVolumeDistance * fVar4;
   fVar4 = 10000.0f * fVar4;

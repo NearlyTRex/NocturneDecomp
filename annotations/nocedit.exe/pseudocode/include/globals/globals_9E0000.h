@@ -8,5 +8,6 @@
 // GLOBAL VARIABLES - Range 0x9E0000
 // =============================================================================
 
+// CVector3i[320]
 extern CVector3i g_TempWorldPositionRow[320];
 

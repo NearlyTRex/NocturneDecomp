@@ -1,13 +1,12 @@
 #pragma once
 
-// Dependencies
+// Type dependencies
 #include "system/basetypes.h"
 
 // =============================================================================
-// CONSTANTS
+// GLOBAL VARIABLES - Range 0x2FB0000
 // =============================================================================
 
-// uchar[4] constants
-const uchar g_BroadcastIP[4] = {};
-const uchar g_AnyAddressIP[4] = {};
+// char[500][256]
+extern char g_MessageTextStorage[500][256];
 

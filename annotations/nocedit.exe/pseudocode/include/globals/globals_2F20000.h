@@ -11,16 +11,65 @@
 // GLOBAL VARIABLES - Range 0x2F20000
 // =============================================================================
 
-extern CLeakChecker g_CLeakCheckerInstance;
-extern CAlphaBitmap g_MenuBitmaps[8];
-extern CMoon g_CMoonInstance;
+// CAlphaBitmap
 extern CAlphaBitmap g_MenuBlurLeft;
 extern CAlphaBitmap g_MenuBlurMiddle;
 extern CAlphaBitmap g_MenuBlurRight;
 extern CAlphaBitmap g_CalibrationBitmap;
-extern int g_GraphicsCardVendorIDs[16];
-extern int g_GraphicsCardDeviceIDs[17];
-extern int* g_CustomKeyPointers[31];
-extern int g_MaxNeighborVerts[200];
+
+// CAlphaBitmap[8]
+extern CAlphaBitmap g_MenuBitmaps[8];
+
+// CLeakChecker
+extern CLeakChecker g_CLeakCheckerInstance;
+
+// CLodFace[200]
 extern CLodFace g_TempNeighborFaces[200];
+
+// CMoon
+extern CMoon g_CMoonInstance;
+
+// char*[10]
+extern char* g_ControlOptionsMenuPointers[10];
+extern char* g_SoundOptionsMenuPointers[10];
+
+// char*[16]
+extern char* g_GraphicsCardNames[16];
+
+// char*[4]
+extern char* g_OptionsMenuPointers[4];
+extern char* g_MenuTextPointers[4];
+
+// char*[9]
+extern char* g_GraphicsMenuTextPointers[9];
+
+// char[10][256]
+extern char g_SoundMenuTextBuffers[10][256];
+extern char g_StringBuffers[10][256];
+
+// char[30][40]
+extern char g_CustomKeyNames[30][40];
+
+// char[4][256]
+extern char g_OptionsMenuTextBuffers[4][256];
+extern char g_MainMenuTextBuffers[4][256];
+
+// char[64]
+extern char g_GraphicsCardDriverData[64];
+
+// char[9][256]
+extern char g_GraphicsMenuTextBuffers[9][256];
+extern char g_ControlsMenuTextBuffers[9][256];
+
+// int*[31]
+extern int* g_CustomKeyPointers[31];
+
+// int[16]
+extern int g_GraphicsCardVendorIDs[16];
+
+// int[17]
+extern int g_GraphicsCardDeviceIDs[17];
+
+// int[200]
+extern int g_MaxNeighborVerts[200];
 

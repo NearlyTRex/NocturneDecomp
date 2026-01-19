@@ -9,7 +9,12 @@
 // GLOBAL VARIABLES - Range 0x3680000
 // =============================================================================
 
-extern CVector3f g_ShatterVertexArray[3000];
-extern CVector3f g_DeformableModelRayHitNormal;
+// CDeformableModel[64]
 extern CDeformableModel g_DeformableModelPool[64];
+
+// CVector3f
+extern CVector3f g_DeformableModelRayHitNormal;
+
+// CVector3f[3000]
+extern CVector3f g_ShatterVertexArray[3000];
 

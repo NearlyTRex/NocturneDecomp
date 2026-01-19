@@ -8,5 +8,6 @@
 // GLOBAL VARIABLES - Range 0x1E80000
 // =============================================================================
 
+// STextureAtlasEntry[250]
 extern STextureAtlasEntry g_TextureAtlasEntries[250];
 

@@ -58,3 +58,6 @@ SRenderVertex g_ClipperInputBuffer[16] = {};
 SRenderVertex g_ClipperWorkingBuffer[16] = {};
 SRenderVertex g_ClipperIntermediateBuffer[16] = {};
 
+// char[50]
+char g_ActorDebugBuffer[50] = {};
+

@@ -21,7 +21,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d190(CDemonSet *this_ptr)
   if (0 < g_ActiveLightCount) {
     iVar4 = 0;
     do {
-      piVar1 = (int *)((int)&0 + iVar4);
+      piVar1 = (int *)((int)&DAT_0068125c + iVar4);
       piVar2 = (int *)((int)&0x00000180 + iVar4);
       puVar3 = (uint *)((int)g_ActiveLightList + iVar4);
       iVar4 = iVar4 + 4;
@@ -35,7 +35,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d190(CDemonSet *this_ptr)
     iVar5 = iVar5 * 4;
     iVar6 = 0;
     do {
-      piVar1 = (int *)((int)&0 + iVar5);
+      piVar1 = (int *)((int)&DAT_0068125c + iVar5);
       piVar2 = (int *)((int)&0x00000180 + iVar5);
       puVar3 = (uint *)((int)g_DynamicLights + iVar6);
       iVar6 = iVar6 + 4;
@@ -47,8 +47,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d190(CDemonSet *this_ptr)
   }
   iVar5 = g_ActiveLightCount + g_DynamicLightCount;
   crt_stdio_c_sprintf_FUN_005fdbd0(local_110,"%d omni lights",DAT_03277d80);
-  engine_2d_c_drawText_FUN_00401fd0(local_110,(&0x00000180)[iVar5],(&0)[iVar5]);
+  engine_2d_c_drawText_FUN_00401fd0(local_110,(&0x00000180)[iVar5],(&DAT_0068125c)[iVar5]);
   crt_stdio_c_sprintf_FUN_005fdbd0(local_110,"%d spot lights",g_ActiveLightCount);
-  engine_2d_c_drawText_FUN_00401fd0(local_110,(&0x00000180)[iVar5],(&0)[iVar5] + 0xb);
+  engine_2d_c_drawText_FUN_00401fd0(local_110,(&0x00000180)[iVar5],(&DAT_0068125c)[iVar5] + 0xb);
   return;
 }

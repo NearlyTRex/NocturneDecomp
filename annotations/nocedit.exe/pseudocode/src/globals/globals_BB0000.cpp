@@ -1,12 +1,9 @@
-#pragma once
+#include "nocturne.h"
 
 // =============================================================================
-// CONSTANTS
+// GLOBAL VARIABLE DEFINITIONS - Range 0xBB0000
 // =============================================================================
 
-// char[80] constants
-const char g_CurrentModelFilename[80] = {};
-
-// char[9][80] constants
-const char g_TextureNameArray[9][80] = {};
+// char[241][320]
+char g_CoronaBlurWorkBuffer[241][320] = {};
 

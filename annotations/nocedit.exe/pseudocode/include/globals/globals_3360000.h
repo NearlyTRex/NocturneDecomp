@@ -7,6 +7,9 @@
 // GLOBAL VARIABLES - Range 0x3360000
 // =============================================================================
 
-extern uint* g_ZBufferScanlineArrayBackup[1024];
+// int[250]
 extern int g_VDCameraSortIndices[250];
+
+// uint*[1024]
+extern uint* g_ZBufferScanlineArrayBackup[1024];
 

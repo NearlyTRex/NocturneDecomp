@@ -10,9 +10,17 @@
 // GLOBAL VARIABLES - Range 0x3340000
 // =============================================================================
 
+// CVector3f
 extern CVector3f g_SavedCameraOrigin;
 extern CVector3f g_SavedCameraRotation;
-extern SRaytraceState g_RaytraceStateStack[5];
 extern CVector3f g_VDTempVector;
+
+// CZThumb[1500]
 extern CZThumb g_CZThumbPool[1500];
+
+// SRaytraceState[5]
+extern SRaytraceState g_RaytraceStateStack[5];
+
+// float[250]
+extern float g_VDCameraScores[250];
 

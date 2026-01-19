@@ -10,6 +10,21 @@ CEventList g_CEventListInstance = {};
 // CMatrix3x3i
 CMatrix3x3i g_TransformMatrix = {};
 
+// char[1024]
+char g_FileTransferErrorMessage[1024] = {};
+
+// char[256]
+char g_KeyboardState[256] = {};
+
+// char[32768]
+char g_FileTransferBuffer[32768] = {};
+
+// char[768]
+char g_SourcePaletteData[768] = {};
+
+// uchar[768]
+uchar g_DefaultPalette[768] = {};
+
 // uint[1600]
 uint g_ReciprocalLookupTable[1600] = {};
 

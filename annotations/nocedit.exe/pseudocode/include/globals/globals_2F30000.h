@@ -16,19 +16,46 @@
 // GLOBAL VARIABLES - Range 0x2F30000
 // =============================================================================
 
-extern SMRGLTextureBasic g_TempTextureDescriptor;
-extern CVector3f g_SamplePointArray[400];
+// CAlphaBitmap
+extern CAlphaBitmap g_MoonCloudTexture;
+
+// CAlphaBitmap[30]
+extern CAlphaBitmap g_MoonAnimTextures[30];
+
+// CCourse[3]
+extern CCourse g_MoonBatCourses[3];
+
+// CDemonActorType
 extern CDemonActorType g_CMimicClassInfo;
 extern CDemonActorType g_CMineCarClassInfo;
-extern CVector3f g_MirrorInputVertices[32];
-extern CVector3f g_MirrorOutputVertices[32];
-extern SMRGLHeaderPrimitive g_MirrorTempPrimitive;
-extern CDemonMission g_CDemonMissionInstance;
 extern CDemonActorType g_CMobsterClassInfo;
 extern CDemonActorType g_CMolochClassInfo;
-extern CAlphaBitmap g_MoonCloudTexture;
-extern CAlphaBitmap g_MoonAnimTextures[30];
-extern CCourse g_MoonBatCourses[3];
-extern SBat g_MoonBats[30];
+
+// CDemonMission
+extern CDemonMission g_CDemonMissionInstance;
+
+// CKeyFramedModel
 extern CKeyFramedModel g_MoonBatModel;
+
+// CVector3f[32]
+extern CVector3f g_MirrorInputVertices[32];
+extern CVector3f g_MirrorOutputVertices[32];
+
+// CVector3f[400]
+extern CVector3f g_SamplePointArray[400];
+
+// SBat[30]
+extern SBat g_MoonBats[30];
+
+// SMRGLHeaderPrimitive
+extern SMRGLHeaderPrimitive g_MirrorTempPrimitive;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_TempTextureDescriptor;
+
+// char[400]
+extern char g_LodMeshProgressBuffer[400];
+
+// double[400]
+extern double g_SampleDistances[400];
 

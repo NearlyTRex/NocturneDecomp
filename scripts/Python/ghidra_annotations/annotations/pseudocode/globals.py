@@ -2,7 +2,7 @@
 # Provides extraction of global variables and constants from the program
 
 import re
-from ghidra_annotations.util import resolve_data_type_name
+from ghidra_annotations.util import resolve_data_type_name, load_json_files
 from ghidra_annotations.util.string import is_string_data_type_obj
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.basetypes import (
@@ -14,6 +14,31 @@ from ghidra_annotations.annotations.pseudocode.strings import (
     format_single_char_pointer, format_2d_char_array, format_array_initializer
 )
 from ghidra_annotations.annotations.pseudocode.headers import strip_type_prefix
+
+
+def build_write_xref_addresses(annotations_path):
+    """Build a set of addresses that have WRITE cross-references to them.
+
+    Args:
+        annotations_path: Path to the annotations directory containing cross_references/
+
+    Returns:
+        Set of address strings (lowercase hex) that have write xrefs
+    """
+    write_addrs = set()
+    try:
+        xrefs = load_json_files(annotations_path, "cross_references")
+        if xrefs:
+            for xref in xrefs:
+                if xref.get("type") == "WRITE" or xref.get("type") == "READ_WRITE":
+                    to_addr = xref.get("to", "")
+                    # Normalize address to lowercase for consistent comparison
+                    if to_addr and not to_addr.startswith("Stack["):
+                        write_addrs.add(to_addr.lower())
+            log_info("Found %d addresses with write xrefs" % len(write_addrs))
+    except Exception as e:
+        log_info("Warning: Could not load cross references: %s" % str(e))
+    return write_addrs
 
 
 def is_signed_int_type(type_name):
@@ -995,16 +1020,20 @@ def format_variable_declaration(type_name, var_name):
         return (type_name, var_name)
 
 
-def extract_globals_and_constants(currentProgram, string_map=None):
+def extract_globals_and_constants(currentProgram, string_map=None, write_xref_addrs=None):
     """Extract global variables and constants from the program.
 
     Args:
         currentProgram: The Ghidra program
         string_map: Optional map of address hex strings to escaped string values
+        write_xref_addrs: Optional set of addresses (lowercase hex) that have write xrefs.
+                          If provided, addresses with write xrefs are classified as globals.
 
     Returns:
         Tuple of (globals_list, constants_list)
     """
+    if write_xref_addrs is None:
+        write_xref_addrs = set()
     globals_list = []
     constants_list = []
     memory = currentProgram.getMemory()
@@ -1739,14 +1768,25 @@ def extract_globals_and_constants(currentProgram, string_map=None):
         }
 
         is_constant = False
-        if name.startswith("STR_") or name.startswith("s_") or name.startswith("CONST_"):
+        # Check if this address has write xrefs - if so, it's definitely mutable (global)
+        addr_hex = str(addr).lower()
+        has_write_xref = addr_hex in write_xref_addrs
+
+        if has_write_xref:
+            # Address is written to, so it must be a mutable global
+            is_constant = False
+        # Name-based classification (strong indicators for string literals)
+        elif name.startswith("STR_") or name.startswith("s_") or name.startswith("CONST_"):
             is_constant = True
-        elif is_initialized and data_type.getLength() <= 8 and name.startswith("DAT_"):
-            is_constant = True
-        elif "char" in type_name.lower() and "[" in type_name and is_initialized:
-            is_constant = True
-        elif is_initialized and ("float" in type_name.lower() or "double" in type_name.lower()):
-            is_constant = True
+        # Content-based classification - only treat as constant if there's actual non-zero data
+        # Zero-initialized data is likely a mutable buffer/table that gets filled at runtime
+        elif has_nonzero_bytes:
+            if is_initialized and data_type.getLength() <= 8 and name.startswith("DAT_"):
+                is_constant = True
+            elif "char" in type_name.lower() and "[" in type_name and is_initialized:
+                is_constant = True
+            elif is_initialized and ("float" in type_name.lower() or "double" in type_name.lower()):
+                is_constant = True
         if is_constant:
             constants_list.append(entry)
         else:
@@ -1972,11 +2012,23 @@ def generate_globals_header_file(globals_list, range_key="", type_to_path_map=No
         content.append("")
         return "\n".join(content)
 
+    # Group globals by type for better organization
+    type_groups = {}
     for global_var in globals_list:
-        # Format the declaration correctly (handles array types)
-        base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
-        content.append("extern %s %s;" % (base_type, full_var_name))
-    content.append("")
+        type_name = global_var['type']
+        if type_name not in type_groups:
+            type_groups[type_name] = []
+        type_groups[type_name].append(global_var)
+
+    # Output each type group with a comment header
+    for type_name in sorted(type_groups.keys()):
+        content.append("// %s" % type_name)
+        for global_var in type_groups[type_name]:
+            # Format the declaration correctly (handles array types)
+            base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
+            content.append("extern %s %s;" % (base_type, full_var_name))
+        content.append("")  # Blank line after each type group
+
     return "\n".join(content)
 
 

@@ -8,5 +8,6 @@
 // GLOBAL VARIABLES - Range 0x840000
 // =============================================================================
 
+// SCramRectangle[50]
 extern SCramRectangle g_CramRectangles[50];
 

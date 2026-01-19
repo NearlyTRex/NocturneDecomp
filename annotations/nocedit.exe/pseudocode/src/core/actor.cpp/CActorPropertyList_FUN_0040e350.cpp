@@ -21,7 +21,7 @@ int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList *t
   iVar2 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
                     (this_ptr,5,in_stack_00000008,in_stack_0000000c,in_stack_00000018);
   if (in_stack_00000014 == (char *)0x0) {
-    in_stack_00000014 = &0;
+    in_stack_00000014 = &DAT_00614464;
   }
   pcVar3 = (char *)(iVar2 + 0x84);
   do {

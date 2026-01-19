@@ -28,3 +28,9 @@ CPickList g_CPickList = {};
 // SMRGLHeaderPrimitive
 SMRGLHeaderPrimitive DAT_02d83368 = {};
 
+// char[20]
+char g_InputHistory[20] = {};
+
+// char[600]
+char g_PrevKeyboardState[600] = {};
+

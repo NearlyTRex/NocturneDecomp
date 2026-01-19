@@ -99,15 +99,6 @@ const WatcomThunkedDestructor DAT_00665b70 = {.destructor_func = (void *)0x00000
 const WatcomVirtualBaseDescriptor DAT_00665b68 = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
 const WatcomVirtualBaseDescriptor DAT_00665d60 = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
 
-// char[104] constants
-const char g_PropertyNamePrefix[] = "";
-
-// char[300] constants
-const char g_LocalizationTemplate[] = "";
-
-// char[80] constants
-const char g_LoadedModelName[] = "";
-
 // double constants
 const double g_InfiniteCollapseCost = 9.9999999999999997e+34;
 const double DOUBLE_00663138 = -1;
@@ -203,17 +194,10 @@ const undefined4 DAT_00665768 = 0x41200000;
 const undefined4 DAT_0066576c = 0x3E4CCCCD;
 const undefined4 DAT_00665770 = 0x3E4CCCCD;
 const undefined4 DAT_00665968 = 0x3F800000;
-const undefined4 DAT_0066596c = 0;
 const undefined4 DAT_006659c8 = 0x3FA66666;
 const undefined4 DAT_00665f3a = 0x003B001F;
 const undefined4 DAT_0066e30c = 0x00000001;
 const undefined4 DAT_0066e314 = 0x00000002;
-const undefined4 DAT_0066e940 = 0;
-const undefined4 DAT_0066e944 = 0;
-const undefined4 DAT_0066ea48 = 0;
-const undefined4 DAT_0066ea4c = 0;
-const undefined4 DAT_0066eb50 = 0;
-const undefined4 DAT_0066eb54 = 0;
 const undefined4 DAT_0066eeac = 0x00000003;
 
 // void* constants

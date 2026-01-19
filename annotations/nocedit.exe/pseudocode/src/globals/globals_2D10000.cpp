@@ -37,3 +37,12 @@ SMRGLTextureBasic g_GunFlameTextures[20] = {};
 // SVersionControlSession
 SVersionControlSession g_VersionControlSession = {};
 
+// char[256]
+char g_CurrentFilename[256] = {};
+
+// char[264]
+char g_VersionControlDirectory[264] = {};
+
+// char[32]
+char g_WorkingDirectoryPath[32] = {};
+

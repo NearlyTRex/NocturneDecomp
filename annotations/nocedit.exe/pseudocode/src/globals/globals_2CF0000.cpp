@@ -18,6 +18,17 @@ HWND g_DialogParentWindow = {};
 // SWindow[5]
 SWindow g_WindowStack[5] = {};
 
+// char[1024]
+char g_YesNoDialogBuffer[1024] = {};
+char g_DialogMessageBuffer_02cf0930[1024] = {};
+char g_TempStringBuffer[1024] = {};
+
+// char[200]
+char g_TextWrapBuffer[200] = {};
+
+// uchar[32768]
+uchar g_ColorCubeLookup[32768] = {};
+
 // uint*[1024]
 uint* g_ZBufferScanlineArray[1024] = {};
 

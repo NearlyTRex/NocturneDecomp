@@ -15,19 +15,45 @@
 // GLOBAL VARIABLES - Range 0x2D10000
 // =============================================================================
 
-extern SVersionControlSession g_VersionControlSession;
+// CDemonActorType
 extern CDemonActorType g_CFilmReelClassInfo;
 extern CDemonActorType g_CFilmProjectorClassInfo;
+
+// CFireEffect
 extern CFireEffect g_CFireEffectInstance;
-extern CVector3i g_BillboardCameraRight;
-extern CVector3i g_BillboardCameraUp;
-extern SMRGLPrimitiveQuadIndex g_BillboardPrimitive;
+
+// CKeyFramedModelInstance
 extern CKeyFramedModelInstance g_FireEffectFlamingStakeModel;
 extern CKeyFramedModelInstance g_FireEffectFireballModel;
 extern CKeyFramedModelInstance g_FireEffectFireballSmallModel;
 extern CKeyFramedModelInstance g_FireEffectFireballGreenModel;
 extern CKeyFramedModelInstance g_FireEffectGunFlashModel;
+
+// CKeyFramedModelInstance[5]
 extern CKeyFramedModelInstance g_CFireEffectDebrisModels[5];
-extern SMRGLTextureBasic g_GunFlameTextures[20];
+
+// CSmokeParticle[2048]
 extern CSmokeParticle g_SmokeParticlePool[2048];
+
+// CVector3i
+extern CVector3i g_BillboardCameraRight;
+extern CVector3i g_BillboardCameraUp;
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_BillboardPrimitive;
+
+// SMRGLTextureBasic[20]
+extern SMRGLTextureBasic g_GunFlameTextures[20];
+
+// SVersionControlSession
+extern SVersionControlSession g_VersionControlSession;
+
+// char[256]
+extern char g_CurrentFilename[256];
+
+// char[264]
+extern char g_VersionControlDirectory[264];
+
+// char[32]
+extern char g_WorkingDirectoryPath[32];
 

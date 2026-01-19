@@ -5025,6 +5025,15 @@ WatcomVirtualBaseDescriptor g_OFStream_VirtualBaseLayout = {.flags = 0x00000000,
 WatcomVirtualBaseDescriptor g_OFStream_OStreamSubobjectLayout = {.flags = 0x00000044, .offset_to_vbase = 0x0000000C};
 WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout = {.flags = 0x00000000, .offset_to_vbase = 0x00000048};
 
+// char[104]
+char g_PropertyNamePrefix[] = "";
+
+// char[300]
+char g_LocalizationTemplate[] = "";
+
+// char[80]
+char g_LoadedModelName[] = "";
+
 // filebuf_vtable
 filebuf_vtable g_FilebufVTable = {
     .do_sgetn = (cpp_streambuf_do_sgetn *)crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932,
@@ -5142,6 +5151,15 @@ strstreambuf_vtable g_StrstreambufVTable = {
     .destructor = (cpp_streambuf_destructor *)crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f,
     .doallocate = (cpp_streambuf_doallocate *)crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22
 };
+
+// undefined4
+undefined4 DAT_0066596c = 0;
+undefined4 DAT_0066e940 = 0;
+undefined4 DAT_0066e944 = 0;
+undefined4 DAT_0066ea48 = 0;
+undefined4 DAT_0066ea4c = 0;
+undefined4 DAT_0066eb50 = 0;
+undefined4 DAT_0066eb54 = 0;
 
 // void*
 void* g_IFStream_FStreamBaseDestructor = (void*)crt_fstream_cpp_ifstream_dtor_FUN_005ff856;

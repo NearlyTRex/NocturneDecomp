@@ -12,3 +12,6 @@ CDemonActorType g_CSimBoxClassInfo = {};
 // CPickList
 CPickList CPickList_03653fc0 = {};
 
+// char[100][30]
+char g_BoneNameBuffer[100][30] = {};
+

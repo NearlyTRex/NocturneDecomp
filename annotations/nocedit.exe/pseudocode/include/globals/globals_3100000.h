@@ -9,6 +9,9 @@
 // GLOBAL VARIABLES - Range 0x3100000
 // =============================================================================
 
+// CDemonActorType
 extern CDemonActorType g_CScatClassInfo;
+
+// CScript
 extern CScript g_CScriptInstance;
 

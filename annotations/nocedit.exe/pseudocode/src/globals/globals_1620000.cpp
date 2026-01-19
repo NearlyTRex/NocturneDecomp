@@ -7,3 +7,6 @@
 // SVertexData[20000]
 SVertexData g_LoadedVertices[20000] = {};
 
+// char[80]
+char g_TempTextureName[80] = {};
+

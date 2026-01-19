@@ -22,6 +22,38 @@ CLodFace g_TempNeighborFaces[200] = {};
 // CMoon
 CMoon g_CMoonInstance = {};
 
+// char*[10]
+char* g_ControlOptionsMenuPointers[10] = {};
+char* g_SoundOptionsMenuPointers[10] = {};
+
+// char*[16]
+char* g_GraphicsCardNames[16] = {};
+
+// char*[4]
+char* g_OptionsMenuPointers[4] = {};
+char* g_MenuTextPointers[4] = {};
+
+// char*[9]
+char* g_GraphicsMenuTextPointers[9] = {};
+
+// char[10][256]
+char g_SoundMenuTextBuffers[10][256] = {};
+char g_StringBuffers[10][256] = {};
+
+// char[30][40]
+char g_CustomKeyNames[30][40] = {};
+
+// char[4][256]
+char g_OptionsMenuTextBuffers[4][256] = {};
+char g_MainMenuTextBuffers[4][256] = {};
+
+// char[64]
+char g_GraphicsCardDriverData[64] = {};
+
+// char[9][256]
+char g_GraphicsMenuTextBuffers[9][256] = {};
+char g_ControlsMenuTextBuffers[9][256] = {};
+
 // int*[31]
 int* g_CustomKeyPointers[31] = {};
 

@@ -35,60 +35,284 @@
 // GLOBAL VARIABLES - Range 0x680000
 // =============================================================================
 
+// BYTE
+extern BYTE g_WindowsMinorVersion;
+extern BYTE g_InitHandlerStatusStart;
+extern BYTE g_InitHandlerPriorityStart;
+extern BYTE g_ExitHandlerTableStart;
+extern BYTE g_ExitHandlerPriorityEnd;
+
+// CDemonPod*
+extern CDemonPod* g_CDemonPodPtr;
+
+// CDemonSet*
+extern CDemonSet* g_CDemonSetPtr;
+
+// CNetGame*
+extern CNetGame* g_CNetGameInstance;
+
+// CScript*
+extern CScript* g_CScriptPtr;
+
+// CSound*
+extern CSound* g_CSoundPtr;
+
+// CSpotView*
+extern CSpotView* g_CSpotViewPtr;
+
+// CTerrain*
+extern CTerrain* g_CTerrainPtr;
+
+// CVector3i
+extern CVector3i g_GlobalLightDirection;
+
+// CWater*
+extern CWater* g_CWaterPtr;
+
+// CWeather*
+extern CWeather* g_CWeatherPtr;
+
+// DWORD
+extern DWORD g_TLSIndex;
+extern DWORD g_WinMainCmdShow;
+extern DWORD g_StackAllocSize;
+extern DWORD g_RuntimeBufferSize;
+
+// EXCEPTION_CLEANUP_FUNC*
+extern EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup;
+
+// EXCEPTION_FILTER_FUNC*
+extern EXCEPTION_FILTER_FUNC* g_UserExceptionFilter;
+
+// FILE*
+extern FILE* g_StaticFilePoolStart;
+extern FILE* g_StderrLogFile;
+
+// GUID
+extern GUID g_IID_IKsPropertySet;
+extern GUID g_KSPROPSETID_DirectSound3DListener;
+extern GUID DAT_00681df0;
+extern GUID DAT_00686d58;
+extern GUID g_IID_IDirectSound3DBuffer;
+
+// HANDLE
+extern HANDLE g_ConsoleInputHandle;
+extern HANDLE g_ConsoleOutputHandle;
+
+// Heap*
+extern Heap* g_MainHeap;
+extern Heap* g_SecondaryHeap;
+
+// IS_SPECIAL_DEVICE_FUNC*
+extern IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr;
+
+// RUNTIME_HANDLER_FUNC*
+extern RUNTIME_HANDLER_FUNC* g_FirstInitHandler;
+extern RUNTIME_HANDLER_FUNC* g_FirstExitHandler;
+
+// RuntimeHandlerEntry
+extern RuntimeHandlerEntry g_ExitHandlerTableEnd;
+
+// RuntimeHandlerEntry[166]
+extern RuntimeHandlerEntry g_InitHandlers[166];
+
+// RuntimeHandlerEntry[6]
+extern RuntimeHandlerEntry g_ExitHandlers[6];
+
+// SAlphaEntry[256]
+extern SAlphaEntry g_AlphaTable[256];
+
+// SAudioFormatDescriptor[12]
+extern SAudioFormatDescriptor g_WaveInFormatTable[12];
+
+// SHuffmanTableSource[34]
 extern SHuffmanTableSource g_HuffmanTableSources[34];
+
+// SIGNAL_HANDLER_TYPE[26]
+extern SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26];
+
+// SIOControlBlock*
+extern SIOControlBlock* g_IOControlBlock;
+
+// SMRGLPrimitiveQuad*
+extern SMRGLPrimitiveQuad* g_BoundingBoxQuadTemplateEnd;
+
+// SMRGLPrimitiveQuad[6]
+extern SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6];
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic DAT_00680bb0;
+extern SMRGLTextureBasic DAT_006813e4;
+extern SMRGLTextureBasic DAT_006816c0;
+extern SMRGLTextureBasic SMRGLTextureBasic_006817fc;
+extern SMRGLTextureBasic DAT_006819e4;
+extern SMRGLTextureBasic DAT_00684178;
+extern SMRGLTextureBasic DAT_0068423C;
+extern SMRGLTextureBasic DAT_0068434c;
+extern SMRGLTextureBasic DAT_006843FC;
+extern SMRGLTextureBasic DAT_006846f0;
+extern SMRGLTextureBasic DAT_00684708;
+extern SMRGLTextureBasic DAT_00684720;
+extern SMRGLTextureBasic DAT_00684738;
+extern SMRGLTextureBasic DAT_00684750;
+extern SMRGLTextureBasic DAT_00684768;
+extern SMRGLTextureBasic DAT_00684780;
+extern SMRGLTextureBasic DAT_00684798;
+extern SMRGLTextureBasic DAT_006847B0;
+extern SMRGLTextureBasic DAT_006847C8;
+extern SMRGLTextureBasic DAT_006847E0;
+extern SMRGLTextureBasic DAT_006847F8;
+extern SMRGLTextureBasic DAT_00684810;
+extern SMRGLTextureBasic DAT_00684828;
+extern SMRGLTextureBasic DAT_00684840;
+extern SMRGLTextureBasic DAT_00684858;
+extern SMRGLTextureBasic DAT_00684900;
+extern SMRGLTextureBasic DAT_00684918;
+extern SMRGLTextureBasic DAT_00684930;
+extern SMRGLTextureBasic DAT_0068495c;
+
+// SMRGLTextureBasic*
+extern SMRGLTextureBasic* g_WaterTexturesEnd;
+
+// SMRGLTextureBasic[16]
+extern SMRGLTextureBasic g_WaterTextures[16];
+
+// SPECIAL_CONSOLE_INPUT_HANDLER_FUNC*
+extern SPECIAL_CONSOLE_INPUT_HANDLER_FUNC* g_SpecialConsoleInputHandler;
+
+// SPECIAL_CONSOLE_OUTPUT_HANDLER_FUNC*
+extern SPECIAL_CONSOLE_OUTPUT_HANDLER_FUNC* g_SpecialConsoleOutputHandler;
+
+// SPECIAL_DEVICE_CLEANUP_FUNC*
+extern SPECIAL_DEVICE_CLEANUP_FUNC* g_SpecialDeviceCleanupFunc;
+
+// SPECIAL_DEVICE_CLOSE_FUNC*
+extern SPECIAL_DEVICE_CLOSE_FUNC* g_SpecialDeviceCloseFunc;
+
+// SPECIAL_DEVICE_READ_FUNC*
+extern SPECIAL_DEVICE_READ_FUNC* g_SpecialDeviceReadFuncPtr;
+
+// SPECIAL_DEVICE_WRITE_FUNC*
+extern SPECIAL_DEVICE_WRITE_FUNC* g_SpecialDeviceWriteFuncPtr;
+
+// SRenderVertex[16]
+extern SRenderVertex g_RenderVertexBuffer[16];
+
+// SSoundModeEntry[27]
+extern SSoundModeEntry g_SoundModeTable[27];
+
+// TerminatedCString
+extern TerminatedCString g_RendererDllName;
+extern TerminatedCString s_EST_006850bc;
+extern TerminatedCString s_EDT_0068513d;
+
+// UINT
+extern UINT g_WaveOutDeviceID;
+extern UINT g_WaveInDeviceID;
+
+// WCHAR*
+extern WCHAR* g_CommandLineArgsW;
+extern WCHAR* g_ExeFileNameW;
+extern WCHAR* g_DllFileNameW;
+
+// WORD
+extern WORD g_WindowsPlatformVersion;
+
+// WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_CEdCheckDestructorNode;
 extern WatcomStaticDestructorNode DAT_0068064c;
-extern undefined4 g_DynamicRenderMode;
-extern int g_ConfirmNewActorNames;
 extern WatcomStaticDestructorNode DAT_006809f0;
-extern CNetGame* g_CNetGameInstance;
 extern WatcomStaticDestructorNode g_CMouseDestructorNode;
-extern int g_CNPCClassVersion;
-extern int g_CPassengerClassVersion;
-extern SMRGLTextureBasic DAT_00680bb0;
 extern WatcomStaticDestructorNode DAT_00680bc8;
-extern int g_PathfindingDeltaX[9];
-extern int g_PathfindingDeltaZ[9];
-extern int g_CPendulumClassVersion;
-extern int g_CPlatformClassVersion;
 extern WatcomStaticDestructorNode g_CDemonPodMainDestructorNode;
-extern CDemonPod* g_CDemonPodPtr;
-extern int g_MaxViewportScanline;
-extern int g_CScatClassVersion;
 extern WatcomStaticDestructorNode DAT_00680d10;
 extern WatcomStaticDestructorNode DAT_00680d20;
 extern WatcomStaticDestructorNode DAT_00680d30;
 extern WatcomStaticDestructorNode DAT_00680d40;
-extern CScript* g_CScriptPtr;
-extern int g_CSentinelClassVersion;
 extern WatcomStaticDestructorNode g_CDemonSetDestructorNode;
 extern WatcomStaticDestructorNode g_CDemonCameraDestructorNode;
 extern WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode;
 extern WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode;
-extern CDemonSet* g_CDemonSetPtr;
-extern CVector3i g_GlobalLightDirection;
-extern int g_RenderMirrorsFlag;
-extern SMRGLTextureBasic DAT_006813e4;
 extern WatcomStaticDestructorNode g_CZThumbPoolDestructorNode;
-extern SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6];
-extern SMRGLPrimitiveQuad* g_BoundingBoxQuadTemplateEnd;
 extern WatcomStaticDestructorNode DAT_006816a0;
 extern WatcomStaticDestructorNode DAT_006816b0;
-extern SMRGLTextureBasic DAT_006816c0;
-extern SMRGLTextureBasic SMRGLTextureBasic_006817fc;
+extern WatcomStaticDestructorNode DAT_00681850;
+extern WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode;
+extern WatcomStaticDestructorNode g_SkeletonPoolDestructorNode;
+extern WatcomStaticDestructorNode g_SfxSamplesDestructorNode;
+extern WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1;
+extern WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2;
+extern WatcomStaticDestructorNode DAT_00681ed0;
+extern WatcomStaticDestructorNode g_MissingSoundsListDestructorNode;
+extern WatcomStaticDestructorNode g_CTextureListDestructorNode;
+extern WatcomStaticDestructorNode g_CWaterDestructorNode;
+
+// WatcomStaticDestructorNode*
+extern WatcomStaticDestructorNode* g_AtexitListHead;
+
+// byte
+extern byte g_WindowsMajorVersion;
+extern byte g_TimezoneInitFlags;
+
+// byte[16]
+extern byte g_IEEE754ExponentClassTable[16];
+
+// char
+extern char g_DebuggerIsAttached;
+extern char g_ConsoleHandlerRegistered;
+
+// char*
+extern char* g_CurrentTrainMode;
+extern char* g_PreviousTrainMode;
+extern char* g_ApplicationTitle;
+extern char* g_ApplicationTimerTitle;
+extern char* g_ExeFileNameA;
+extern char* g_DllFileNameA;
+extern char* g_EnvironmentStrings;
+
+// char**
+extern char** g_TempEnvVarNames;
+
+// char[104]
+extern char g_SoundResultBufferTemplate[104];
+
+// char[108]
+extern char g_TrainSoundFilenameTemplate[108];
+
+// char[256]
+extern char g_DefaultRecordingDeviceName[256];
+extern char g_DefaultDeviceName[256];
+
+// char[260]
+extern char g_TempDirectoryBuffer[260];
+
+// double
+extern double DOUBLE_00681b30;
+extern double DOUBLE_00681b38;
+extern double g_SelectedClearColor;
+extern double g_ClearColor;
+
+// dst_rule
+extern dst_rule g_DstStartRule;
+
+// float
+extern float g_MaxSoftwareLatency;
+
+// int
+extern int g_ConfirmNewActorNames;
+extern int g_CNPCClassVersion;
+extern int g_CPassengerClassVersion;
+extern int g_CPendulumClassVersion;
+extern int g_CPlatformClassVersion;
+extern int g_MaxViewportScanline;
+extern int g_CScatClassVersion;
+extern int g_CSentinelClassVersion;
+extern int g_RenderMirrorsFlag;
 extern int g_CShotgunClassVersion;
 extern int g_CShovelClassVersion;
 extern int g_CSimBoxClassVersion;
-extern WatcomStaticDestructorNode DAT_00681850;
-extern undefined4 g_CSkeletonVersion;
-extern SMRGLTextureBasic DAT_006819e4;
-extern WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode;
-extern WatcomStaticDestructorNode g_SkeletonPoolDestructorNode;
 extern int g_CSmileyClassVersion;
-extern WatcomStaticDestructorNode g_SfxSamplesDestructorNode;
-extern WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1;
 extern int g_SfxPlaybackStateCounter;
-extern WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2;
 extern int g_MaxSoundChannels;
 extern int g_AudioBitsPerSample;
 extern int g_AudioChannelCount;
@@ -103,25 +327,11 @@ extern int g_CurrentRecordingDevice;
 extern int g_RecordingBitsPerSample;
 extern int g_RecordingChannelCount;
 extern int g_RecordingSampleRate;
-extern GUID g_IID_IKsPropertySet;
-extern GUID g_KSPROPSETID_DirectSound3DListener;
-extern GUID DAT_00681df0;
 extern int g_DirectSoundDeviceCount;
-extern UINT g_WaveOutDeviceID;
-extern UINT g_WaveInDeviceID;
-extern SAudioFormatDescriptor g_WaveInFormatTable[12];
-extern WatcomStaticDestructorNode DAT_00681ed0;
-extern WatcomStaticDestructorNode g_MissingSoundsListDestructorNode;
-extern char* g_CurrentTrainMode;
-extern char* g_PreviousTrainMode;
-extern CSound* g_CSoundPtr;
-extern SSoundModeEntry g_SoundModeTable[27];
 extern int g_ScanlinePixelCount;
 extern int g_StartTextureU;
 extern int g_StartTextureV;
 extern int g_StartDepthW;
-extern int* g_CurrentScreenPtr;
-extern int* g_CurrentZBufferPtr;
 extern int g_DeltaTextureU;
 extern int g_DeltaTextureV;
 extern int g_DeltaDepthW;
@@ -143,160 +353,130 @@ extern int g_VertexGreenDelta;
 extern int g_VertexBlueDelta;
 extern int g_VertexAlphaStart;
 extern int g_VertexAlphaDelta;
-extern ulonglong g_TextureShift1;
-extern ulonglong g_TextureShift2;
-extern ulonglong g_TextureMask1;
-extern ulonglong g_TextureMask2;
-extern uint g_RedMask16;
-extern uint g_GreenMask16;
-extern uint g_BlueMask16;
-extern ulonglong g_RedMask32;
-extern ulonglong g_GreenMask32;
-extern ulonglong g_BlueMask32;
-extern ulonglong g_TotalColorBits;
-extern ulonglong g_GreenBlueBits;
-extern ulonglong g_BlueBitShift;
 extern int g_SpecialColor;
-extern SAlphaEntry g_AlphaTable[256];
-extern TerminatedCString g_RendererDllName;
 extern int g_SystemInitialized;
 extern int g_VideoMemorySize;
 extern int g_MaxTextureSize;
 extern int g_SystemMemorySize;
 extern int g_CSpikeClassVersion;
-extern CSpotView* g_CSpotViewPtr;
-extern SMRGLTextureBasic DAT_00684178;
 extern int g_CStairsClassVersion;
 extern int g_CTempleStoneClassVersion;
 extern int g_CStrangerClassVersion;
 extern int g_CSuccubusClassVersion;
 extern int g_CSvetlanaClassVersion;
-extern SMRGLTextureBasic DAT_0068423C;
 extern int g_CBassPlayerClassVersion;
 extern int g_CDrummerClassVersion;
 extern int g_CTeleportDestClassVersion;
 extern int g_CTeleportClassVersion;
 extern int g_CTentacleClassVersion;
-extern WatcomStaticDestructorNode g_CTextureListDestructorNode;
 extern int g_TexturePreviewEnabled;
 extern int g_CTommyGunClassVersion;
 extern int g_CTrapClassVersion;
 extern int g_CTrashClassVersion;
-extern SMRGLTextureBasic DAT_0068434c;
 extern int g_CTriggerClassVersion;
-extern CTerrain* g_CTerrainPtr;
-extern SMRGLTextureBasic DAT_006843FC;
 extern int g_CTurretClassVersion;
 extern int g_CTVBatClassVersion;
 extern int g_CVampireBossVersion;
 extern int g_CVehicleClassVersion;
 extern int g_CCryptVesselClassVersion;
-extern WatcomStaticDestructorNode g_CWaterDestructorNode;
-extern CWater* g_CWaterPtr;
-extern SMRGLTextureBasic g_WaterTextures[16];
-extern SMRGLTextureBasic* g_WaterTexturesEnd;
-extern SMRGLTextureBasic DAT_006846f0;
-extern SMRGLTextureBasic DAT_00684708;
-extern SMRGLTextureBasic DAT_00684720;
-extern SMRGLTextureBasic DAT_00684738;
-extern SMRGLTextureBasic DAT_00684750;
-extern SMRGLTextureBasic DAT_00684768;
-extern SMRGLTextureBasic DAT_00684780;
-extern SMRGLTextureBasic DAT_00684798;
-extern SMRGLTextureBasic DAT_006847B0;
-extern SMRGLTextureBasic DAT_006847C8;
-extern SMRGLTextureBasic DAT_006847E0;
-extern SMRGLTextureBasic DAT_006847F8;
-extern SMRGLTextureBasic DAT_00684810;
-extern SMRGLTextureBasic DAT_00684828;
-extern SMRGLTextureBasic DAT_00684840;
-extern SMRGLTextureBasic DAT_00684858;
 extern int g_CWaterActorVersion;
 extern int g_CWayPointClassVersion;
 extern int g_CWeaponClassVersion;
-extern CWeather* g_CWeatherPtr;
-extern SMRGLTextureBasic DAT_00684900;
-extern SMRGLTextureBasic DAT_00684918;
-extern SMRGLTextureBasic DAT_00684930;
 extern int g_CWerewolfClassVersion;
-extern SMRGLTextureBasic DAT_0068495c;
 extern int g_BrightnessDirection;
-extern char* g_ApplicationTitle;
-extern char* g_ApplicationTimerTitle;
 extern int g_WindowActive;
 extern int g_ForceMessagePump;
 extern int g_PreviousActiveState;
 extern int g_CZombieClassVersion;
 extern int g_MaxErrnoValue;
-extern FILE* g_StaticFilePoolStart;
-extern FILE* g_StderrLogFile;
-extern Heap* g_MainHeap;
-extern Heap* g_SecondaryHeap;
-extern DWORD g_TLSIndex;
-extern undefined4 g_SpecialExitHandler;
-extern DWORD g_WinMainCmdShow;
-extern char* g_ExeFileNameA;
-extern char* g_DllFileNameA;
-extern WCHAR* g_CommandLineArgsW;
-extern WCHAR* g_ExeFileNameW;
-extern WCHAR* g_DllFileNameW;
-extern DWORD g_StackAllocSize;
-extern void* g_CrtStackBuffer;
 extern int g_ConsoleInitializationFlag;
-extern char* g_EnvironmentStrings;
-extern BYTE g_WindowsMinorVersion;
-extern byte g_WindowsMajorVersion;
-extern WORD g_WindowsPlatformVersion;
-extern uint g_WindowsPlatformVersionExt;
-extern uint g_WindowsVersionLow;
-extern uint g_WindowsVersionMid;
-extern uint g_WindowsVersionCombined;
 extern int g_UseSoftwareMath;
-extern dst_rule g_DstStartRule;
 extern int g_DstTransitionSecond;
 extern int g_DstTransitionMinute;
 extern int g_DstTransitionHour;
 extern int g_TimezoneOffset;
 extern int g_DaylightSavingActive;
 extern int g_DaylightSavingOffset;
-extern byte g_TimezoneInitFlags;
-extern uint g_MaxHandleCount;
-extern SIOControlBlock* g_IOControlBlock;
 extern int g_CurrentHandleCount;
 extern int g_FakeHandleCounter;
-extern short g_PureVirtualCallFlag;
-extern WatcomStaticDestructorNode* g_AtexitListHead;
-extern IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr;
-extern SPECIAL_DEVICE_CLEANUP_FUNC* g_SpecialDeviceCleanupFunc;
-extern SPECIAL_DEVICE_CLOSE_FUNC* g_SpecialDeviceCloseFunc;
-extern SPECIAL_DEVICE_READ_FUNC* g_SpecialDeviceReadFuncPtr;
-extern SPECIAL_DEVICE_WRITE_FUNC* g_SpecialDeviceWriteFuncPtr;
-extern SPECIAL_CONSOLE_INPUT_HANDLER_FUNC* g_SpecialConsoleInputHandler;
-extern SPECIAL_CONSOLE_OUTPUT_HANDLER_FUNC* g_SpecialConsoleOutputHandler;
-extern char** g_TempEnvVarNames;
 extern int g_ProcessSpawnEnabled;
-extern EXCEPTION_FILTER_FUNC* g_UserExceptionFilter;
-extern EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup;
 extern int g_ConsoleInputState;
-extern char g_DebuggerIsAttached;
 extern int g_HeapFlags;
-extern DWORD g_RuntimeBufferSize;
-extern HANDLE g_ConsoleInputHandle;
-extern HANDLE g_ConsoleOutputHandle;
-extern SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26];
-extern char g_ConsoleHandlerRegistered;
+
+// int*
+extern int* g_CurrentScreenPtr;
+extern int* g_CurrentZBufferPtr;
+
+// int[9]
+extern int g_PathfindingDeltaX[9];
+extern int g_PathfindingDeltaZ[9];
+
+// short
+extern short g_PureVirtualCallFlag;
+
+// uint
+extern uint g_RedMask16;
+extern uint g_GreenMask16;
+extern uint g_BlueMask16;
+extern uint g_WindowsPlatformVersionExt;
+extern uint g_WindowsVersionLow;
+extern uint g_WindowsVersionMid;
+extern uint g_WindowsVersionCombined;
+extern uint g_MaxHandleCount;
 extern uint g_CodePage;
-extern BYTE g_InitHandlerStatusStart;
-extern BYTE g_InitHandlerPriorityStart;
-extern RUNTIME_HANDLER_FUNC* g_FirstInitHandler;
-extern RuntimeHandlerEntry g_InitHandlers[166];
-extern BYTE g_ExitHandlerTableStart;
-extern BYTE g_ExitHandlerPriorityEnd;
-extern RUNTIME_HANDLER_FUNC* g_FirstExitHandler;
-extern RuntimeHandlerEntry g_ExitHandlers[6];
-extern RuntimeHandlerEntry g_ExitHandlerTableEnd;
-extern GUID DAT_00686d58;
-extern GUID g_IID_IDirectSound3DBuffer;
-extern byte g_IEEE754ExponentClassTable[16];
-extern SRenderVertex g_RenderVertexBuffer[16];
+
+// ulonglong
+extern ulonglong g_TextureShift1;
+extern ulonglong g_TextureShift2;
+extern ulonglong g_TextureMask1;
+extern ulonglong g_TextureMask2;
+extern ulonglong g_RedMask32;
+extern ulonglong g_GreenMask32;
+extern ulonglong g_BlueMask32;
+extern ulonglong g_TotalColorBits;
+extern ulonglong g_GreenBlueBits;
+extern ulonglong g_BlueBitShift;
+
+// undefined1
+extern undefined1 DAT_00684acc;
+extern undefined1 DAT_00684acd;
+extern undefined1 DAT_00684d05;
+extern undefined1 DAT_0068500c;
+extern undefined1 DAT_006852db;
+
+// undefined4
+extern undefined4 DAT_00680648;
+extern undefined4 g_DynamicRenderMode;
+extern undefined4 DAT_00680818;
+extern undefined4 DAT_00680830;
+extern undefined4 DAT_00680834;
+extern undefined4 DAT_00680908;
+extern undefined4 DAT_0068090c;
+extern undefined4 DAT_00680974;
+extern undefined4 DAT_00680a04;
+extern undefined4 DAT_00680bd8;
+extern undefined4 DAT_00680bdc;
+extern undefined4 DAT_00680d60;
+extern undefined4 DAT_00680d64;
+extern undefined4 DAT_0068105c;
+extern undefined4 DAT_0068125c;
+extern undefined4 DAT_00681260;
+extern undefined4 g_CSkeletonVersion;
+extern undefined4 DAT_00681a00;
+extern undefined4 DAT_00684ccc;
+extern undefined4 DAT_00684edc;
+extern undefined4 g_SpecialExitHandler;
+extern undefined4 DAT_00684f30;
+extern undefined4 DAT_00684fd0;
+extern undefined4 DAT_00685094;
+extern undefined4 DAT_006850b0;
+extern undefined4 DAT_006850b4;
+extern undefined4 DAT_006850b8;
+extern undefined4 DAT_00685280;
+extern undefined4 DAT_0068528c;
+extern undefined4 DAT_006852c4;
+extern undefined4 DAT_006854ec;
+
+// void*
+extern void* g_CrtStackBuffer;
 

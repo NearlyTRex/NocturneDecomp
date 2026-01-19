@@ -21,7 +21,7 @@ int __cdecl crt_stdio_c_OpenModeStringParser_FUN_006017d0(char *mode_string,char
   bVar5 = false;
   bVar3 = false;
   if (output_flags != (char *)0x0) {
-    if (0 == 1) {
+    if (DAT_00685280 == 1) {
       output_flags[0] = '\x01';
       output_flags[1] = '\0';
       output_flags[2] = '\0';

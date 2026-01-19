@@ -26,9 +26,9 @@ cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
          (float)g_GlobalDeltaTimeInt * (float)1.52587890625e-05 + g_DashAnimationAccumulator
     ;
     g_LastAnimationTimerValue = g_AnimationTimerValue;
-    if (0.1f < g_DashAnimationAccumulator) {
+    if (g_DashAnimationThreshold < g_DashAnimationAccumulator) {
       g_DashOffsetCounter =
-           g_DashAnimationAccumulator / 0.1f + g_DashOffsetCounter;
+           g_DashAnimationAccumulator / g_DashAnimationThreshold + g_DashOffsetCounter;
       if ((float)(g_DashLength * 2) < g_DashOffsetCounter) {
         g_DashOffsetCounter = 0.0;
       }

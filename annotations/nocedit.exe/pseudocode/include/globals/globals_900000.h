@@ -8,5 +8,6 @@
 // GLOBAL VARIABLES - Range 0x900000
 // =============================================================================
 
+// CVector3i[15360]
 extern CVector3i g_PrecomputedWorldPositions[15360];
 

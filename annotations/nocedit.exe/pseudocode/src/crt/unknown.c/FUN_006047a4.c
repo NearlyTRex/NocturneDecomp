@@ -9,7 +9,7 @@
 void crt_unknown_c_FUN_006047a4(void)
 
 {
-  if (0 != '\0') {
+  if (DAT_00684acd != '\0') {
     PTR_crt_thread_c_EnterCriticalSection_FUN_0060b180_00685464 =
          (ENTER_CRITICAL_SECTION_FUNC *)&LAB_00604790;
     PTR_crt_thread_c_ExitCriticalSection_FUN_0060b180_00685468 =

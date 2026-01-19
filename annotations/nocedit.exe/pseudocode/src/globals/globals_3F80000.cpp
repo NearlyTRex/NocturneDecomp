@@ -37,3 +37,7 @@ SMRGLTextureBasic g_CurrentTexture = {};
 int g_VisibleWaterTilesX[4096] = {};
 int g_VisibleWaterTilesY[4096] = {};
 
+// uchar[4]
+uchar g_BroadcastIP[4] = {};
+uchar g_AnyAddressIP[4] = {};
+

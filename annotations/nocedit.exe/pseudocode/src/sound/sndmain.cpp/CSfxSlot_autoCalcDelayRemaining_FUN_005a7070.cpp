@@ -27,6 +27,6 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070(CSfx
   dVar3 = (this_ptr->options).position.y - g_Cached3DListenerPos.y;
   dVar2 = (this_ptr->options).position.z - g_Cached3DListenerPos.z;
   (this_ptr->options).delay_remaining =
-       (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) * 1) / 1116.4000000000001;
+       (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) * DOUBLE_00681b30) / 1116.4000000000001;
   return;
 }

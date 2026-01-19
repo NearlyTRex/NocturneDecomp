@@ -256,7 +256,7 @@ LAB_005415cb:
         in_stack_00000004->network_mode = 1;
         goto LAB_005416d1;
       }
-      if ((in_stack_00000004->connection_type == 2) && (0x00000001 != 0)) {
+      if ((in_stack_00000004->connection_type == 2) && (DAT_00680a04 != 0)) {
         fVar12 = (float)(int)(g_CurrentGameTime -
                              *(int *)(in_stack_00000004->players
                                       [in_stack_00000004->local_player_index].field5_0x38 + 8)) *

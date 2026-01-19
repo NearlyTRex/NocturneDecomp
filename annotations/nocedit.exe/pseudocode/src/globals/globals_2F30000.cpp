@@ -41,3 +41,9 @@ SMRGLHeaderPrimitive g_MirrorTempPrimitive = {};
 // SMRGLTextureBasic
 SMRGLTextureBasic g_TempTextureDescriptor = {};
 
+// char[400]
+char g_LodMeshProgressBuffer[400] = {};
+
+// double[400]
+double g_SampleDistances[400] = {};
+

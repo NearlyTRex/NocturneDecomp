@@ -10,9 +10,16 @@
 // GLOBAL VARIABLES - Range 0x2C90000
 // =============================================================================
 
-extern SFace* g_CapturedFacePointers[5000];
-extern SMRGLTextureBasic g_CapturedTextureArray[100];
+// CDemonActorType
 extern CDemonActorType g_CDripClassInfo;
 extern CDemonActorType g_CDroneClassInfo;
+
+// SFace*[5000]
+extern SFace* g_CapturedFacePointers[5000];
+
+// SMRGLTextureBasic[100]
+extern SMRGLTextureBasic g_CapturedTextureArray[100];
+
+// int[5000]
 extern int g_VertexIdRegistry[5000];
 

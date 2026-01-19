@@ -1,9 +1,9 @@
-#pragma once
+#include "nocturne.h"
 
 // =============================================================================
-// CONSTANTS
+// GLOBAL VARIABLE DEFINITIONS - Range 0x2FB0000
 // =============================================================================
 
-// char[100][30] constants
-const char g_BoneNameBuffer[100][30] = {};
+// char[500][256]
+char g_MessageTextStorage[500][256] = {};
 

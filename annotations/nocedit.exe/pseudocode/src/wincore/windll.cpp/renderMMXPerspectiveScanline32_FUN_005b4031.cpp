@@ -306,12 +306,12 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
         uVar8 = uVar8 + g_DeltaTextureV;
         iVar17 = iVar17 + g_DeltaDepthW;
         iVar10 = iVar10 + g_VertexAlphaDelta;
-        uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >> 0x30) < sVar41),
-                          CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >> 0x20) <
+        uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar41),
+                          CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
                                             sVar40),
-                                   CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >>
+                                   CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
                                                              0x10) < sVar39),
-                                            -(ushort)(SUB82 /* extract 2-byte value */(0,0) < sVar36)))) &
+                                            -(ushort)(SUB82 /* extract 2-byte value */(g_SelectedClearColor,0) < sVar36)))) &
                  CONCAT26 /* combine 2-byte values */(sVar41,CONCAT24 /* combine 2-byte values */(sVar40,CONCAT22 /* combine 2-byte values */(sVar39,sVar36)));
       }
     }
@@ -453,13 +453,13 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
           uVar8 = uVar8 + g_DeltaTextureV;
           iVar17 = iVar17 + g_DeltaDepthW;
           iVar10 = iVar10 + g_VertexAlphaDelta;
-          uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >> 0x30) <
+          uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) <
                                      (short)(uVar20 + sVar46)),
-                            CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >> 0x20) <
+                            CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
                                               (short)(uVar48 + sVar45)),
-                                     CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >>
+                                     CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
                                                                0x10) < (short)(uVar47 + sVar44)),
-                                              -(ushort)(SUB82 /* extract 2-byte value */(0,0) <
+                                              -(ushort)(SUB82 /* extract 2-byte value */(g_SelectedClearColor,0) <
                                                        (short)(uVar37 + sVar42))))) &
                    CONCAT26 /* combine 2-byte values */(uVar20 + sVar46,
                             CONCAT24 /* combine 2-byte values */(uVar48 + sVar45,CONCAT22 /* combine 2-byte values */(uVar47 + sVar44,uVar37 + sVar42)));
@@ -566,12 +566,12 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
         uVar8 = uVar8 + g_DeltaTextureV;
         iVar17 = iVar17 + g_DeltaDepthW;
         iVar10 = iVar10 + g_VertexAlphaDelta;
-        uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >> 0x30) < sVar41),
-                          CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >> 0x20) <
+        uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar41),
+                          CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
                                             sVar40),
-                                   CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)0 >>
+                                   CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
                                                              0x10) < sVar39),
-                                            -(ushort)(SUB82 /* extract 2-byte value */(0,0) < sVar36)))) &
+                                            -(ushort)(SUB82 /* extract 2-byte value */(g_SelectedClearColor,0) < sVar36)))) &
                  CONCAT26 /* combine 2-byte values */(sVar41,CONCAT24 /* combine 2-byte values */(sVar40,CONCAT22 /* combine 2-byte values */(sVar39,sVar36)));
       }
     }

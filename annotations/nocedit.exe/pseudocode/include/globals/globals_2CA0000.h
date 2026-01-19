@@ -10,7 +10,12 @@
 // GLOBAL VARIABLES - Range 0x2CA0000
 // =============================================================================
 
-extern SMRGLTextureBasic g_SkyDomeTextureData;
-extern CVector3i CVector3i_02ca0388;
+// CDemonCube*[20000]
 extern CDemonCube* g_PVSCubePointers[20000];
+
+// CVector3i
+extern CVector3i CVector3i_02ca0388;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SkyDomeTextureData;
 

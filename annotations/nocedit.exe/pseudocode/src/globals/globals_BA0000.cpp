@@ -1,9 +1,9 @@
-#pragma once
+#include "nocturne.h"
 
 // =============================================================================
-// CONSTANTS
+// GLOBAL VARIABLE DEFINITIONS - Range 0xBA0000
 // =============================================================================
 
-// char[256] constants
-const char g_CurrentMp3Filename[256] = {};
+// char[241][320]
+char g_CoronaBlurOutputBuffer[241][320] = {};
 

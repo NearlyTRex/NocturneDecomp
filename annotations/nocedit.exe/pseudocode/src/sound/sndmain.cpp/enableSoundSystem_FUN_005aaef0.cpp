@@ -71,7 +71,7 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
                (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.z._4_4_,
                                 g_Cached3DListenerVelocity.z._0_4_));
     (*g_CSoundDevicePtr->vtable->set3DListenerDistanceFactor)
-              (g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));
+              (g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(DOUBLE_00681b30._4_4_,DOUBLE_00681b30._0_4_));
     (*g_CSoundDevicePtr->vtable->commitDeferredSettings)(g_CSoundDevicePtr);
     g_SoundStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     iVar3 = (*g_CSoundDevicePtr->vtable->start)(g_CSoundDevicePtr);

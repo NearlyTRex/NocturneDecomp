@@ -9,6 +9,9 @@
 // GLOBAL VARIABLES - Range 0x3F40000
 // =============================================================================
 
+// CDemonActorType
 extern CDemonActorType g_CSmileyClassInfo;
+
+// CMP3Decoder
 extern CMP3Decoder g_CMP3DecoderInstance;
 

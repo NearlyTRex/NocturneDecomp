@@ -3191,18 +3191,5 @@ const string s_removeAllItemsFromInventory_00642903 = "removeAllItemsFromInvento
 const string s_Total_displacement_for_animation_0064d42e = "Total displacement for animation %s on X-axis is %g";
 
 // undefined1 constants
-const undefined1 DAT_00641c5a = 0;
-const undefined1 DAT_00641ce3 = 0;
-const undefined1 DAT_00641cf2 = 0;
-const undefined1 DAT_00641d02 = 0;
-const undefined1 DAT_00641e5e = 0;
-const undefined1 DAT_006424ec = 0;
-const undefined1 DAT_00642527 = 0;
-const undefined1 DAT_00643d07 = 0;
 const undefined1 DAT_00643d08 = 0x20;
-const undefined1 DAT_00643d09 = 0;
-const undefined1 DAT_00643de8 = 0;
-const undefined1 DAT_00643e07 = 0;
-const undefined1 DAT_00643e08 = 0;
-const undefined1 DAT_00643f94 = 0;
 

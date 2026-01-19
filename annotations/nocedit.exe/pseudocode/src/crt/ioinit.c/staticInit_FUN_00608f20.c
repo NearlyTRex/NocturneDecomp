@@ -14,7 +14,7 @@ void __cdecl crt_ioinit_c_staticInit_FUN_00608f20(void)
   streambuf *psVar3;
   FILE **ppFVar4;
   
-  0 = 0 & 0xf8 | 4;
+  DAT_00684d05 = DAT_00684d05 & 0xf8 | 4;
   ppFVar4 = &g_StaticFilePoolStart;
   iVar1 = 0x00000001;
   while (iVar1 != 0) {

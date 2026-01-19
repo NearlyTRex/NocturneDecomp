@@ -9,6 +9,15 @@
 // GLOBAL VARIABLES - Range 0x1EB0000
 // =============================================================================
 
-extern CMultiCram g_CMultiCramInstance;
+// CDSEModel
 extern CDSEModel g_CDSEModelInstance;
+
+// CMultiCram
+extern CMultiCram g_CMultiCramInstance;
+
+// char[80]
+extern char g_CurrentModelFilename[80];
+
+// char[9][80]
+extern char g_TextureNameArray[9][80];
 

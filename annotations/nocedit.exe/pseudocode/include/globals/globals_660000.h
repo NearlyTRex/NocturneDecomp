@@ -37,13 +37,165 @@
 // GLOBAL VARIABLES - Range 0x660000
 // =============================================================================
 
+// CCharacter_vtable
 extern CCharacter_vtable DAT_00660120;
-extern CHero_vtable DAT_00660188;
-extern WatcomTypeInfo g_CIcePickTypeInfo;
 extern CCharacter_vtable DAT_006602E0;
+extern CCharacter_vtable DAT_00660820;
+extern CCharacter_vtable DAT_00661510;
+extern CCharacter_vtable DAT_00661880;
+extern CCharacter_vtable DAT_00661A30;
+extern CCharacter_vtable DAT_00661E80;
+extern CCharacter_vtable DAT_00662050;
+extern CCharacter_vtable DAT_00662550;
+extern CCharacter_vtable DAT_00662780;
+extern CCharacter_vtable DAT_00663070;
+extern CCharacter_vtable DAT_00663870;
+extern CCharacter_vtable DAT_00663A30;
+extern CCharacter_vtable DAT_00663E50;
+extern CCharacter_vtable DAT_00664000;
+extern CCharacter_vtable DAT_00664160;
+extern CCharacter_vtable DAT_00664560;
+extern CCharacter_vtable DAT_00664DC0;
+extern CCharacter_vtable DAT_00664F80;
+extern CCharacter_vtable DAT_00665870;
+extern CCharacter_vtable DAT_00665AD0;
+
+// CConsole*
+extern CConsole* g_CConsolePtr;
+
+// CDemonActor_vtable
+extern CDemonActor_vtable g_CSimBoxVTable;
+extern CDemonActor_vtable g_CSmileyVTable;
+extern CDemonActor_vtable g_CSpikeVTable;
+extern CDemonActor_vtable g_CStairsVTable;
+extern CDemonActor_vtable g_CTempleStoneVTable;
+extern CDemonActor_vtable g_CStrangerVTable;
+extern CDemonActor_vtable g_CSuccubusVTable;
+extern CDemonActor_vtable g_CSvetlanaVTable;
+extern CDemonActor_vtable g_CBassPlayerVTable;
+extern CDemonActor_vtable g_CDrummerVTable;
+extern CDemonActor_vtable g_CTeleportDestVTable;
+extern CDemonActor_vtable g_CTeleportVTable;
+extern CDemonActor_vtable g_CTentacleVTable;
+extern CDemonActor_vtable g_CTommyGunVTable;
+extern CDemonActor_vtable g_CTrapVTable;
+extern CDemonActor_vtable g_CTrashVTable;
+extern CDemonActor_vtable g_CTriggerVTable;
+extern CDemonActor_vtable g_CTurretVTable;
+extern CDemonActor_vtable g_CTVBatVTable;
+extern CDemonActor_vtable g_CVampireBossVTable;
+extern CDemonActor_vtable g_CCryptVesselVTable;
+extern CDemonActor_vtable g_CWayPointVTable;
+extern CDemonActor_vtable g_CWeaponVTable;
+
+// CDemonFilter*
+extern CDemonFilter* g_GlobalFilters;
+extern CDemonFilter* g_PlayerFilters;
+
+// CDemonPod_vtable
+extern CDemonPod_vtable g_CDemonPodVTable;
+
+// CEnemy_vtable
 extern CEnemy_vtable DAT_00660348;
-extern WatcomTypeInfo g_CImpTypeInfo;
-extern WatcomTypeInfo g_CIniTypeInfo;
+extern CEnemy_vtable DAT_00660888;
+extern CEnemy_vtable DAT_00661578;
+extern CEnemy_vtable DAT_006618E8;
+extern CEnemy_vtable DAT_006627E8;
+extern CEnemy_vtable DAT_006630D8;
+extern CEnemy_vtable DAT_00663A98;
+extern CEnemy_vtable DAT_006645C8;
+extern CEnemy_vtable DAT_00664E28;
+extern CEnemy_vtable DAT_00664FE8;
+extern CEnemy_vtable DAT_006658D8;
+extern CEnemy_vtable DAT_00665B38;
+
+// CFileManager_vtable
+extern CFileManager_vtable g_CDemonFileManagerVTable;
+
+// CFilterCache*
+extern CFilterCache* g_CFilterCachePtr;
+
+// CFilterFx*
+extern CFilterFx* g_CFilterFXPtr;
+
+// CFont_vtable
+extern CFont_vtable g_CFontVTable;
+extern CFont_vtable g_CWinFontVTable;
+
+// CHero_vtable
+extern CHero_vtable DAT_00660188;
+extern CHero_vtable DAT_00661A98;
+extern CHero_vtable DAT_006625B8;
+extern CHero_vtable DAT_006638D8;
+extern CHero_vtable DAT_00663EB8;
+
+// CKeys_vtable
+extern CKeys_vtable g_CKeysVTable;
+
+// CMotionController_vtable
+extern CMotionController_vtable g_CMotionControllerVTable;
+extern CMotionController_vtable g_CDeformableModelInstanceVTable;
+
+// CObj_vtable
+extern CObj_vtable g_CObjVTable;
+
+// COptimize_vtable
+extern COptimize_vtable g_COptimizeVTable;
+
+// CParticle_vtable
+extern CParticle_vtable g_CParticleVTable;
+
+// CPod_vtable
+extern CPod_vtable g_CPodVTable;
+
+// CPoly_vtable
+extern CPoly_vtable g_CPolyVTable;
+
+// CSoundDeviceBasic_vtable
+extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;
+
+// CSoundDeviceFull_vtable
+extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
+extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
+
+// CVector3i[62]
+extern CVector3i g_CoronaVertexPositions[62];
+
+// CWeapon_vtable
+extern CWeapon_vtable DAT_00660B50;
+extern CWeapon_vtable DAT_00661260;
+extern CWeapon_vtable DAT_00662B70;
+extern CWeapon_vtable DAT_00662CC0;
+extern CWeapon_vtable DAT_00664760;
+extern CWeapon_vtable DAT_00664C70;
+extern CWeapon_vtable DAT_006656A0;
+
+// MRGLBlockHandlerFunc*[67]
+extern MRGLBlockHandlerFunc* g_MRGLBlockHandlerTable[67];
+
+// SMRGLLightPrimitive[84]
+extern SMRGLLightPrimitive g_CoronaFacePrimitives[84];
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic DAT_0066e158;
+extern SMRGLTextureBasic DAT_0066e460;
+extern SMRGLTextureBasic DAT_0066e6b0;
+extern SMRGLTextureBasic DAT_0066E6C8;
+extern SMRGLTextureBasic DAT_0066E6E0;
+extern SMRGLTextureBasic DAT_0066E6F8;
+extern SMRGLTextureBasic DAT_0066E710;
+extern SMRGLTextureBasic DAT_0066E728;
+extern SMRGLTextureBasic DAT_0066e784;
+extern SMRGLTextureBasic g_CameraBackdropTexture;
+extern SMRGLTextureBasic g_CoronaHeadliteTexture;
+
+// SMRGLTextureBasic[20]
+extern SMRGLTextureBasic g_LightTextures[20];
+
+// SResolutionEntry[9]
+extern SResolutionEntry g_ResolutionTable[9];
+
+// WatcomDestructorCall
 extern WatcomDestructorCall WatcomDestructorCall_006603c0;
 extern WatcomDestructorCall WatcomDestructorCall_006603cc;
 extern WatcomDestructorCall WatcomDestructorCall_006603d8;
@@ -58,23 +210,72 @@ extern WatcomDestructorCall WatcomDestructorCall_00660438;
 extern WatcomDestructorCall WatcomDestructorCall_00660444;
 extern WatcomDestructorCall WatcomDestructorCall_00660450;
 extern WatcomDestructorCall WatcomDestructorCall_0066045c;
-extern WatcomTypeInfo g_CKeyActorTypeInfo;
-extern CKeys_vtable g_CKeysVTable;
-extern WatcomTypeInfo g_CLadderTypeInfo;
-extern CCharacter_vtable DAT_00660820;
-extern CEnemy_vtable DAT_00660888;
-extern WatcomTypeInfo g_CLarvaTypeInfo;
 extern WatcomDestructorCall WatcomDestructorCall_006608c0;
-extern WatcomTypeInfo g_CLeverTypeInfo;
-extern CWeapon_vtable DAT_00660B50;
-extern WatcomTypeInfo g_CLightGunTypeInfo;
-extern WatcomTypeInfo g_CLightConeTypeInfo;
 extern WatcomDestructorCall WatcomDestructorCall_00660cc0;
 extern WatcomDestructorCall WatcomDestructorCall_00660ccc;
 extern WatcomDestructorCall WatcomDestructorCall_00660cd8;
 extern WatcomDestructorCall WatcomDestructorCall_00660ce4;
 extern WatcomDestructorCall WatcomDestructorCall_00660cf0;
-extern CFileManager_vtable g_CDemonFileManagerVTable;
+extern WatcomDestructorCall WatcomDestructorCall_006612a0;
+extern WatcomDestructorCall WatcomDestructorCall_006612d0;
+extern WatcomDestructorCall WatcomDestructorInfo_006612dc;
+extern WatcomDestructorCall WatcomDestructorCall_006612e8;
+extern WatcomDestructorCall WatcomDestructorCall_006612f4;
+extern WatcomDestructorCall WatcomDestructorCall_00661300;
+extern WatcomDestructorCall WatcomDestructorCall_0066130c;
+extern WatcomDestructorCall WatcomDestructorCall_00661360;
+extern WatcomDestructorCall WatcomDestructorCall_00661ad0;
+extern WatcomDestructorCall WatcomDestructorCall_00661adc;
+extern WatcomDestructorCall WatcomDestructorCall_00661ae8;
+extern WatcomDestructorCall WatcomDestructorCall_00661af4;
+extern WatcomDestructorCall WatcomDestructorCall_00661c10;
+extern WatcomDestructorCall WatcomDestructorCall_00661c1c;
+extern WatcomDestructorCall WatcomDestructorCall_00661c70;
+extern WatcomDestructorCall WatcomDestructorCall_00661d20;
+extern WatcomDestructorCall WatcomDestructorCall_006620e0;
+extern WatcomDestructorCall g_CDemonPodDestructorNode;
+extern WatcomDestructorCall WatcomDestructorCall_006625f0;
+extern WatcomDestructorCall WatcomDestructorCall_006625fc;
+extern WatcomDestructorCall WatcomDestructorCall_00662608;
+extern WatcomDestructorCall WatcomDestructorCall_00662614;
+extern WatcomDestructorCall WatcomDestructorCall_00662820;
+extern WatcomDestructorCall WatcomDestructorCall_0066282c;
+extern WatcomDestructorCall WatcomDestructorCall_00662838;
+extern WatcomDestructorCall WatcomDestructorCall_00662844;
+extern WatcomDestructorCall WatcomDestructorCall_006629b0;
+extern WatcomDestructorCall WatcomDestructorCall_00662a10;
+extern WatcomDestructorCall WatcomDestructorCall_00662a1c;
+extern WatcomDestructorCall WatcomDestructorCall_00662e30;
+extern WatcomDestructorCall WatcomDestructorCall_00662e80;
+extern WatcomDestructorCall WatcomDestructorCall_00662e8c;
+extern WatcomDestructorCall WatcomDestructorCall_00663110;
+extern WatcomDestructorCall WatcomDestructorCall_0066311c;
+extern WatcomDestructorCall WatcomDestructorCall_00663128;
+extern WatcomDestructorCall WatcomDestructorCall_006632e0;
+extern WatcomDestructorCall WatcomDestructorCall_006632ec;
+extern WatcomDestructorCall WatcomDestructorCall_00664600;
+extern WatcomDestructorCall WatcomDestructorCall_006652c0;
+
+// WatcomStaticDestructorNode
+extern WatcomStaticDestructorNode DAT_0066e5cc;
+extern WatcomStaticDestructorNode g_CDeformableModelInstanceDestructorNode;
+extern WatcomStaticDestructorNode g_ConsoleDestructorNode;
+extern WatcomStaticDestructorNode g_CLZWDecompressDestructorNode;
+extern WatcomStaticDestructorNode DAT_0066ef5c;
+extern WatcomStaticDestructorNode DAT_0066ef6c;
+extern WatcomStaticDestructorNode g_CFilterCacheDestructorNode;
+extern WatcomStaticDestructorNode g_CFilterFXDestructorNode;
+
+// WatcomTypeInfo
+extern WatcomTypeInfo g_CIcePickTypeInfo;
+extern WatcomTypeInfo g_CImpTypeInfo;
+extern WatcomTypeInfo g_CIniTypeInfo;
+extern WatcomTypeInfo g_CKeyActorTypeInfo;
+extern WatcomTypeInfo g_CLadderTypeInfo;
+extern WatcomTypeInfo g_CLarvaTypeInfo;
+extern WatcomTypeInfo g_CLeverTypeInfo;
+extern WatcomTypeInfo g_CLightGunTypeInfo;
+extern WatcomTypeInfo g_CLightConeTypeInfo;
 extern WatcomTypeInfo g_CDemonFileManagerTypeInfo;
 extern WatcomTypeInfo g_CEdScrollBarTypeInfo;
 extern WatcomTypeInfo g_SPanelTypeInfo;
@@ -83,81 +284,37 @@ extern WatcomTypeInfo g_SReflectorTypeInfo;
 extern WatcomTypeInfo g_CMirrorHackTypeInfo;
 extern WatcomTypeInfo g_CMansionPuzzleCircleTypeInfo;
 extern WatcomTypeInfo g_CMarqueeTypeInfo;
-extern CWeapon_vtable DAT_00661260;
 extern WatcomTypeInfo g_CMeleeTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_006612a0;
 extern WatcomTypeInfo g_CLeakCheckerTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_006612d0;
-extern WatcomDestructorCall WatcomDestructorInfo_006612dc;
-extern WatcomDestructorCall WatcomDestructorCall_006612e8;
-extern WatcomDestructorCall WatcomDestructorCall_006612f4;
-extern WatcomDestructorCall WatcomDestructorCall_00661300;
-extern WatcomDestructorCall WatcomDestructorCall_0066130c;
 extern WatcomTypeInfo g_CMoonTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00661360;
 extern WatcomTypeInfo g_LodFaceTypeInfo;
 extern WatcomTypeInfo g_CSpotViewTypeInfo;
 extern WatcomTypeInfo g_LodMeshTypeInfo;
-extern CCharacter_vtable DAT_00661510;
-extern CEnemy_vtable DAT_00661578;
 extern WatcomTypeInfo g_CMimicTypeInfo;
 extern WatcomTypeInfo g_CMineCarTypeInfo;
 extern WatcomTypeInfo g_SClipPlaneTypeInfo;
 extern WatcomTypeInfo g_CDemonMissionTypeInfo;
-extern CCharacter_vtable DAT_00661880;
-extern CEnemy_vtable DAT_006618E8;
 extern WatcomTypeInfo g_CMobsterTypeInfo;
-extern CCharacter_vtable DAT_00661A30;
-extern CHero_vtable DAT_00661A98;
 extern WatcomTypeInfo g_CMolochTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00661ad0;
-extern WatcomDestructorCall WatcomDestructorCall_00661adc;
-extern WatcomDestructorCall WatcomDestructorCall_00661ae8;
-extern WatcomDestructorCall WatcomDestructorCall_00661af4;
 extern WatcomTypeInfo g_SBatTypeInfo;
 extern WatcomTypeInfo g_CMorphModelTypeInfo;
 extern WatcomTypeInfo g_SMorphControlPointTypeInfo;
-extern CMotionController_vtable g_CMotionControllerVTable;
 extern WatcomTypeInfo g_CMotionControllerTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00661c10;
-extern WatcomDestructorCall WatcomDestructorCall_00661c1c;
 extern WatcomTypeInfo g_CEdCheckTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00661c70;
 extern WatcomTypeInfo g_CNetGameTypeInfo;
 extern WatcomTypeInfo g_SChatHistoryTypeInfo;
 extern WatcomTypeInfo g_SPlayerTypeInfo;
 extern WatcomTypeInfo g_SNetPlayerTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00661d20;
 extern WatcomTypeInfo g_CMouseTypeInfo;
-extern CCharacter_vtable DAT_00661E80;
-extern CFont_vtable g_CFontVTable;
-extern CParticle_vtable g_CParticleVTable;
-extern CCharacter_vtable DAT_00662050;
 extern WatcomTypeInfo g_CPassengerTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_006620e0;
 extern WatcomTypeInfo g_CPathMapTypeInfo;
 extern WatcomTypeInfo g_CPendulumTypeInfo;
 extern WatcomTypeInfo g_CPackedBitmapTypeInfo;
-extern CPod_vtable g_CPodVTable;
 extern WatcomTypeInfo g_CPodTypeInfo;
-extern WatcomDestructorCall g_CDemonPodDestructorNode;
-extern CDemonPod_vtable g_CDemonPodVTable;
 extern WatcomTypeInfo g_CDemonPodTypeInfo;
-extern CCharacter_vtable DAT_00662550;
-extern CHero_vtable DAT_006625B8;
 extern WatcomTypeInfo g_CScatTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_006625f0;
-extern WatcomDestructorCall WatcomDestructorCall_006625fc;
-extern WatcomDestructorCall WatcomDestructorCall_00662608;
-extern WatcomDestructorCall WatcomDestructorCall_00662614;
 extern WatcomTypeInfo g_CScriptTypeInfo;
-extern CCharacter_vtable DAT_00662780;
-extern CEnemy_vtable DAT_006627E8;
 extern WatcomTypeInfo g_CSentinelTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00662820;
-extern WatcomDestructorCall WatcomDestructorCall_0066282c;
-extern WatcomDestructorCall WatcomDestructorCall_00662838;
-extern WatcomDestructorCall WatcomDestructorCall_00662844;
 extern WatcomTypeInfo g_CDemonSetTypeInfo;
 extern WatcomTypeInfo g_CDemonRaytraceTypeInfo;
 extern WatcomTypeInfo g_C3DSCameraTypeInfo;
@@ -167,168 +324,93 @@ extern WatcomTypeInfo g_SVDBoxTypeInfo;
 extern WatcomTypeInfo g_SRaytraceStateTypeInfo;
 extern WatcomTypeInfo g_SCollisionReturnInfoTypeInfo;
 extern WatcomTypeInfo g_SIntersectXZCylinderTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_006629b0;
 extern WatcomTypeInfo g_CZThumbTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00662a10;
-extern WatcomDestructorCall WatcomDestructorCall_00662a1c;
-extern CWeapon_vtable DAT_00662B70;
 extern WatcomTypeInfo g_CShotgunTypeInfo;
-extern CWeapon_vtable DAT_00662CC0;
 extern WatcomTypeInfo g_CShovelTypeInfo;
-extern CDemonActor_vtable g_CSimBoxVTable;
 extern WatcomTypeInfo g_CSimBoxTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00662e30;
 extern WatcomTypeInfo g_LodVertTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00662e80;
-extern WatcomDestructorCall WatcomDestructorCall_00662e8c;
-extern CMotionController_vtable g_CDeformableModelInstanceVTable;
 extern WatcomTypeInfo g_SVertTypeInfo;
 extern WatcomTypeInfo g_CDeformableModelTypeInfo;
 extern WatcomTypeInfo g_CSkeletonTypeInfo;
-extern CDemonActor_vtable g_CSmileyVTable;
-extern CCharacter_vtable DAT_00663070;
-extern CEnemy_vtable DAT_006630D8;
 extern WatcomTypeInfo g_CSmileyTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00663110;
-extern WatcomDestructorCall WatcomDestructorCall_0066311c;
-extern WatcomDestructorCall WatcomDestructorCall_00663128;
 extern WatcomTypeInfo g_SfxSlotTypeInfo;
 extern WatcomTypeInfo g_SfxOptionsTypeInfo;
 extern WatcomTypeInfo g_SfxSampleTypeInfo;
 extern WatcomTypeInfo g_CMP3DecoderTypeInfo;
-extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
-extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;
-extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
-extern WatcomDestructorCall WatcomDestructorCall_006632e0;
-extern WatcomDestructorCall WatcomDestructorCall_006632ec;
 extern WatcomTypeInfo g_STrainNoiseTypeInfo;
-extern CDemonActor_vtable g_CSpikeVTable;
 extern WatcomTypeInfo g_CSpikeTypeInfo;
-extern CDemonActor_vtable g_CStairsVTable;
 extern WatcomTypeInfo g_CStairsTypeInfo;
-extern CDemonActor_vtable g_CTempleStoneVTable;
 extern WatcomTypeInfo g_CTempleStoneTypeInfo;
-extern CDemonActor_vtable g_CStrangerVTable;
-extern CCharacter_vtable DAT_00663870;
-extern CHero_vtable DAT_006638D8;
 extern WatcomTypeInfo g_CStrangerTypeInfo;
-extern CDemonActor_vtable g_CSuccubusVTable;
-extern CCharacter_vtable DAT_00663A30;
-extern CEnemy_vtable DAT_00663A98;
 extern WatcomTypeInfo g_CSuccubusTypeInfo;
-extern CPoly_vtable g_CPolyVTable;
-extern CObj_vtable g_CObjVTable;
-extern COptimize_vtable g_COptimizeVTable;
 extern WatcomTypeInfo g_CVecTypeInfo;
 extern WatcomTypeInfo g_CP2DTypeInfo;
 extern WatcomTypeInfo g_CP3DTypeInfo;
 extern WatcomTypeInfo g_CPolyTypeInfo;
 extern WatcomTypeInfo g_CObjTypeInfo;
 extern WatcomTypeInfo g_COptimizeTypeInfo;
-extern CDemonActor_vtable g_CSvetlanaVTable;
-extern CCharacter_vtable DAT_00663E50;
-extern CHero_vtable DAT_00663EB8;
 extern WatcomTypeInfo g_CSvetlanaTypeInfo;
-extern CDemonActor_vtable g_CBassPlayerVTable;
-extern CCharacter_vtable DAT_00664000;
-extern CDemonActor_vtable g_CDrummerVTable;
-extern CCharacter_vtable DAT_00664160;
 extern WatcomTypeInfo g_CDrummerTypeInfo;
 extern WatcomTypeInfo g_CBassPlayerTypeInfo;
-extern CDemonActor_vtable g_CTeleportDestVTable;
-extern CDemonActor_vtable g_CTeleportVTable;
 extern WatcomTypeInfo g_CTeleportTypeInfo;
 extern WatcomTypeInfo g_CTeleportDestTypeInfo;
-extern CDemonActor_vtable g_CTentacleVTable;
-extern CCharacter_vtable DAT_00664560;
-extern CEnemy_vtable DAT_006645C8;
 extern WatcomTypeInfo g_CTentacleTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_00664600;
 extern WatcomTypeInfo g_CTextureListTypeInfo;
-extern CDemonActor_vtable g_CTommyGunVTable;
-extern CWeapon_vtable DAT_00664760;
 extern WatcomTypeInfo g_CTommyGunTypeInfo;
-extern CDemonActor_vtable g_CTrapVTable;
 extern WatcomTypeInfo g_CTrapTypeInfo;
-extern CDemonActor_vtable g_CTrashVTable;
 extern WatcomTypeInfo g_CTrashTypeInfo;
-extern CDemonActor_vtable g_CTriggerVTable;
 extern WatcomTypeInfo g_CTriggerTypeInfo;
-extern CDemonActor_vtable g_CTurretVTable;
-extern CWeapon_vtable DAT_00664C70;
 extern WatcomTypeInfo g_CTurretTypeInfo;
-extern CDemonActor_vtable g_CTVBatVTable;
-extern CCharacter_vtable DAT_00664DC0;
-extern CEnemy_vtable DAT_00664E28;
 extern WatcomTypeInfo g_CTVBatTypeInfo;
-extern CDemonActor_vtable g_CVampireBossVTable;
-extern CCharacter_vtable DAT_00664F80;
-extern CEnemy_vtable DAT_00664FE8;
 extern WatcomTypeInfo g_CVampireBossTypeInfo;
 extern WatcomTypeInfo g_CTireTypeInfo;
 extern WatcomTypeInfo g_CVehicleTypeInfo;
-extern CDemonActor_vtable g_CCryptVesselVTable;
 extern WatcomTypeInfo g_CCryptVesselTypeInfo;
-extern WatcomDestructorCall WatcomDestructorCall_006652c0;
 extern WatcomTypeInfo g_CWaterTypeInfo;
 extern WatcomTypeInfo g_SWaterVertexTypeInfo;
 extern WatcomTypeInfo g_CWaterActorTypeInfo;
-extern CDemonActor_vtable g_CWayPointVTable;
 extern WatcomTypeInfo g_CWayPointTypeInfo;
-extern CDemonActor_vtable g_CWeaponVTable;
-extern CWeapon_vtable DAT_006656A0;
 extern WatcomTypeInfo g_CWeaponTypeInfo;
 extern WatcomTypeInfo g_CDemonGlobeTypeInfo;
 extern WatcomTypeInfo g_CWeatherTypeInfo;
-extern CCharacter_vtable DAT_00665870;
-extern CEnemy_vtable DAT_006658D8;
 extern WatcomTypeInfo g_CWerewolfTypeInfo;
-extern CFont_vtable g_CWinFontVTable;
 extern WatcomTypeInfo g_CWinFontTypeInfo;
-extern CCharacter_vtable DAT_00665AD0;
-extern CEnemy_vtable DAT_00665B38;
 extern WatcomTypeInfo g_CZombieTypeInfo;
-extern WatcomVirtualBaseDescriptor g_IstrstreamLayoutInfo;
-extern int g_Istrstream_IstreamLastReadLength;
-extern int g_DefaultStreamBufferSize;
-extern WatcomVirtualBaseDescriptor g_IFStream_LayoutInfo;
-extern WatcomVirtualBaseDescriptor g_IFStream_IStreamSubobjectLayout;
-extern void* g_IFStream_FStreamBaseDestructor;
-extern void* g_IFStream_IStreamDestructor;
-extern void* g_IFStream_IOSDestructor;
-extern WatcomVirtualBaseDescriptor g_OFStream_VirtualBaseLayout;
-extern WatcomVirtualBaseDescriptor g_OFStream_OStreamSubobjectLayout;
-extern void* g_OFStream_FStreamBaseDestructor;
-extern void* g_OFStream_OStream;
-extern void* g_OFStream_IOS;
-extern strstreambuf_vtable g_StrstreambufVTable;
-extern void* g_StrStreamBase_Destructor;
-extern void* g_StrStreamBase_IOSDestructor;
-extern void* g_OStream_Destructor;
-extern void* g_OStream_IOSDestructor;
-extern void* g_IOS_Destructor;
 extern WatcomTypeInfo g_OStreamTypeInfo;
 extern WatcomTypeInfo g_StrStreamBaseTypeInfo;
 extern WatcomTypeInfo g_IOSTypeInfo;
 extern WatcomTypeInfo g_IStreamTypeInfo;
-extern WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout;
-extern void* g_FStreamBase_Destructor;
-extern void* g_FStreamBase_IOSDestructor;
 extern WatcomTypeInfo g_FStreamBaseTypeInfo;
-extern short g_DaysInMonth_Normal;
-extern short g_DaysInMonth_Leap;
-extern streambuf_vtable g_StreambufVTable;
 extern WatcomTypeInfo g_StrStreamBufTypeInfo;
-extern filebuf_vtable g_FilebufVTable;
 extern WatcomTypeInfo g_FilebufTypeInfo;
-extern SResolutionEntry g_ResolutionTable[9];
+
+// WatcomVirtualBaseDescriptor
+extern WatcomVirtualBaseDescriptor g_IstrstreamLayoutInfo;
+extern WatcomVirtualBaseDescriptor g_IFStream_LayoutInfo;
+extern WatcomVirtualBaseDescriptor g_IFStream_IStreamSubobjectLayout;
+extern WatcomVirtualBaseDescriptor g_OFStream_VirtualBaseLayout;
+extern WatcomVirtualBaseDescriptor g_OFStream_OStreamSubobjectLayout;
+extern WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout;
+
+// char[104]
+extern char g_PropertyNamePrefix[104];
+
+// char[300]
+extern char g_LocalizationTemplate[300];
+
+// char[80]
+extern char g_LoadedModelName[80];
+
+// filebuf_vtable
+extern filebuf_vtable g_FilebufVTable;
+
+// int
+extern int g_Istrstream_IstreamLastReadLength;
+extern int g_DefaultStreamBufferSize;
 extern int g_TextWrapEnabled;
 extern int g_CurrentTextColor;
 extern int INT_0066df80;
 extern int g_CurrentRenderColor;
-extern MRGLBlockHandlerFunc* g_MRGLBlockHandlerTable[67];
-extern int g_ColorLookupTable[16];
-extern SMRGLTextureBasic DAT_0066e158;
 extern int g_CDemonActorClassVersion;
 extern int g_CAmmoClassVersion;
 extern int g_CAmmoBoxClassVersion;
@@ -336,7 +418,6 @@ extern int g_CAnvilClassVersion;
 extern int g_CArmourClassVersion;
 extern int g_CBackgroundActorClassVersion;
 extern int g_CBaronClassVersion;
-extern SMRGLTextureBasic DAT_0066e460;
 extern int g_CBaronWeaponClassVersion;
 extern int g_CBarrierClassVersion;
 extern int g_CBatClassVersion;
@@ -347,58 +428,74 @@ extern int g_CBeastClassVersion;
 extern int g_CBiggsClassVersion;
 extern int g_CBodyPartClassVersion;
 extern int g_CBoneGuyClassVersion;
-extern WatcomStaticDestructorNode DAT_0066e5cc;
 extern int g_CBoxActorClassVersion;
 extern int g_CLightActorClassVersion;
 extern int g_CBrideClassVersion;
 extern int g_CBugsClassVersion;
-extern SMRGLTextureBasic DAT_0066e6b0;
-extern SMRGLTextureBasic DAT_0066E6C8;
-extern SMRGLTextureBasic DAT_0066E6E0;
-extern SMRGLTextureBasic DAT_0066E6F8;
-extern SMRGLTextureBasic DAT_0066E710;
-extern SMRGLTextureBasic DAT_0066E728;
 extern int g_CCharacterClassVersion;
-extern SMRGLTextureBasic DAT_0066e784;
 extern int g_CChainClassVersion;
 extern int g_LineClippingDisabled;
 extern int g_NearPlaneDistance;
-extern WatcomStaticDestructorNode g_CDeformableModelInstanceDestructorNode;
 extern int g_CColonelClassVersion;
-extern WatcomStaticDestructorNode g_ConsoleDestructorNode;
-extern CConsole* g_CConsolePtr;
 extern int g_CConveyorClassVersion;
 extern int g_CZombieCowClassVersion;
 extern int g_CCrateClassVersion;
 extern int g_CCrossbowClassVersion;
 extern int g_CCurtainClassVersion;
-extern WatcomStaticDestructorNode g_CLZWDecompressDestructorNode;
 extern int g_CameraShakePeakValue;
 extern int g_CameraShakeSustainValue;
 extern int g_CameraShakeState;
 extern int g_FogColorIndexR;
 extern int g_FogColorIndexG;
 extern int g_FogColorIndexB;
-extern int g_CameraEdgeOffsetX[8];
-extern int g_CameraEdgeOffsetY[8];
-extern SMRGLTextureBasic g_CameraBackdropTexture;
 extern int g_EditorDetailLevel;
 extern int g_MouseReferenceY;
 extern int g_EditorColorMode;
 extern int g_EditorCurrentTexture;
 extern int g_ZBufferEnabled;
-extern int g_OctantRotationAngles[14];
 extern int g_CActorDestinationClassVersion;
-extern WatcomStaticDestructorNode DAT_0066ef5c;
-extern WatcomStaticDestructorNode DAT_0066ef6c;
-extern WatcomStaticDestructorNode g_CFilterCacheDestructorNode;
-extern WatcomStaticDestructorNode g_CFilterFXDestructorNode;
-extern CDemonFilter* g_GlobalFilters;
-extern CDemonFilter* g_PlayerFilters;
-extern CFilterCache* g_CFilterCachePtr;
-extern CFilterFx* g_CFilterFXPtr;
-extern SMRGLTextureBasic g_CoronaHeadliteTexture;
-extern CVector3i g_CoronaVertexPositions[62];
-extern SMRGLLightPrimitive g_CoronaFacePrimitives[84];
-extern SMRGLTextureBasic g_LightTextures[20];
+
+// int[14]
+extern int g_OctantRotationAngles[14];
+
+// int[16]
+extern int g_ColorLookupTable[16];
+
+// int[8]
+extern int g_CameraEdgeOffsetX[8];
+extern int g_CameraEdgeOffsetY[8];
+
+// short
+extern short g_DaysInMonth_Normal;
+extern short g_DaysInMonth_Leap;
+
+// streambuf_vtable
+extern streambuf_vtable g_StreambufVTable;
+
+// strstreambuf_vtable
+extern strstreambuf_vtable g_StrstreambufVTable;
+
+// undefined4
+extern undefined4 DAT_0066596c;
+extern undefined4 DAT_0066e940;
+extern undefined4 DAT_0066e944;
+extern undefined4 DAT_0066ea48;
+extern undefined4 DAT_0066ea4c;
+extern undefined4 DAT_0066eb50;
+extern undefined4 DAT_0066eb54;
+
+// void*
+extern void* g_IFStream_FStreamBaseDestructor;
+extern void* g_IFStream_IStreamDestructor;
+extern void* g_IFStream_IOSDestructor;
+extern void* g_OFStream_FStreamBaseDestructor;
+extern void* g_OFStream_OStream;
+extern void* g_OFStream_IOS;
+extern void* g_StrStreamBase_Destructor;
+extern void* g_StrStreamBase_IOSDestructor;
+extern void* g_OStream_Destructor;
+extern void* g_OStream_IOSDestructor;
+extern void* g_IOS_Destructor;
+extern void* g_FStreamBase_Destructor;
+extern void* g_FStreamBase_IOSDestructor;
 

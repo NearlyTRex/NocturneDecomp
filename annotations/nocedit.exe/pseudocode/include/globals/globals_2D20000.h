@@ -9,6 +9,9 @@
 // GLOBAL VARIABLES - Range 0x2D20000
 // =============================================================================
 
+// CBulletHole[256]
 extern CBulletHole g_BulletHolePool[256];
+
+// CStake[256]
 extern CStake g_StakePool[256];
 

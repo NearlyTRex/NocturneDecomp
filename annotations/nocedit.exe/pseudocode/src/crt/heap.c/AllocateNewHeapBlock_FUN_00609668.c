@@ -18,7 +18,7 @@ int __cdecl crt_heap_c_AllocateNewHeapBlock_FUN_00609668(uint size)
   if (0x00000001 == 0) {
     return 0;
   }
-  if (0 == -2) {
+  if (DAT_00684fd0 == -2) {
     return 0;
   }
   new_block = crt_heap_c_CalculateHeapBlockSize_FUN_0060972c(&size);

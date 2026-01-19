@@ -52,7 +52,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   int local_14;
   
   bVar14 = 0;
-  puVar7 = &0;
+  puVar7 = &DAT_0066e940;
   pcVar4 = local_1f0;
   for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
     *(uint *)pcVar4 = *puVar7;
@@ -106,7 +106,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         }
       }
       else if (local_1c < 0x34) {
-        puVar7 = &0;
+        puVar7 = &DAT_0066ea48;
         puVar9 = (uint *)&stack0xfffffb04;
         for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
           *puVar9 = *puVar7;
@@ -144,7 +144,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         } while (cVar1 != '\0');
       }
       else {
-        puVar7 = &0;
+        puVar7 = &DAT_0066eb50;
         pcVar4 = local_3f8;
         for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
           *(uint *)pcVar4 = *puVar7;

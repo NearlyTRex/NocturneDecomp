@@ -8,5 +8,6 @@
 // GLOBAL VARIABLES - Range 0x3660000
 // =============================================================================
 
+// CKeyFramedModel
 extern CKeyFramedModel DAT_03665f74;
 

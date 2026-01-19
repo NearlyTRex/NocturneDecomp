@@ -91,7 +91,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
       else {
         dVar4 = (dVar6 * dVar10 + dVar5 * dVar9 + dVar7 * dVar8) / dVar4;
       }
-      local_60 = (dVar4 * 1 + 1116.4000000000001) / 1116.4000000000001;
+      local_60 = (dVar4 * DOUBLE_00681b30 + 1116.4000000000001) / 1116.4000000000001;
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  doppler = %5.2f\n",(uint)local_60);

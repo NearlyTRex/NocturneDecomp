@@ -13,11 +13,24 @@
 // GLOBAL VARIABLES - Range 0x2C60000
 // =============================================================================
 
-extern SEdgeData g_EdgeInterpolationArray[16];
+// CDemonActorType
 extern CDemonActorType g_CDraculaBrideClassInfo;
-extern SFreaky SFreaky_ARRAY_02c6d0c0[6];
-extern SEdgeTableEntry g_GlobalEdgeTable[40];
+
+// CDemonRenderer
 extern CDemonRenderer g_CDemonRendererInstance;
-extern int g_VertexIndexBuffer[16];
+
+// SEdgeData[16]
+extern SEdgeData g_EdgeInterpolationArray[16];
+
+// SEdgeTableEntry[40]
+extern SEdgeTableEntry g_GlobalEdgeTable[40];
+
+// SFace[5000]
 extern SFace g_CapturedFaces[5000];
+
+// SFreaky[6]
+extern SFreaky SFreaky_ARRAY_02c6d0c0[6];
+
+// int[16]
+extern int g_VertexIndexBuffer[16];
 

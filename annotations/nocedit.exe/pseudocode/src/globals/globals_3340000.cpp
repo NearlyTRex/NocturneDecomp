@@ -15,3 +15,6 @@ CZThumb g_CZThumbPool[1500] = {};
 // SRaytraceState[5]
 SRaytraceState g_RaytraceStateStack[5] = {};
 
+// float[250]
+float g_VDCameraScores[250] = {};
+

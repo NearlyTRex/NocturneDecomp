@@ -212,7 +212,7 @@ void core_script_cpp_CScript_editorAction_FUN_00564820(void)
     for (iVar5 = ~uVar6 - 1; iVar5 < (int)uVar10; iVar5 = iVar5 + 1) {
       (&DAT_031101c0)[iVar5] = 0x20;
     }
-    pcVar9 = &0;
+    pcVar9 = &DAT_00643de8;
     iVar5 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
                       ((CBitFont *)(in_stack_00000004 + 0x38));
     if (DAT_031141cc < iVar5) {
@@ -352,7 +352,7 @@ void core_script_cpp_CScript_editorAction_FUN_00564820(void)
       iVar5 = DAT_0310fd48 + 1;
       iVar4 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
                         ((CBitFont *)(in_stack_00000004 + 0x38));
-      pcVar9 = &0;
+      pcVar9 = &DAT_00643e07;
       if (iVar5 < iVar4) {
         pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                            ((CStrList *)(in_stack_00000004 + 0x38),DAT_0310fd48 + 1);
@@ -378,8 +378,8 @@ void core_script_cpp_CScript_editorAction_FUN_00564820(void)
     }
     break;
   case 0x12:
-    uVar10 = 0x00000001;
-    if (0x00000001 == 0) {
+    uVar10 = DAT_0068105c;
+    if (DAT_0068105c == 0) {
       core_script_cpp_FUN_005644e0();
       DAT_0310fd48 = DAT_0310fd48 + 1;
       DAT_0310fd44 = uVar10;
@@ -389,7 +389,7 @@ void core_script_cpp_CScript_editorAction_FUN_00564820(void)
       while (iVar5 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
                                ((CBitFont *)(in_stack_00000004 + 0x38)), iVar5 <= DAT_0310fd48) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)(in_stack_00000004 + 0x38),&0);
+                  ((CStrList *)(in_stack_00000004 + 0x38),&DAT_00643e08);
       }
       core_script_cpp_FUN_00566230();
       uVar10 = 0xffffffff;

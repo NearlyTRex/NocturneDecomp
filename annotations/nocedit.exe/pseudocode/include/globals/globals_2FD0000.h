@@ -10,8 +10,13 @@
 // GLOBAL VARIABLES - Range 0x2FD0000
 // =============================================================================
 
-extern CMouse g_CMouseInstance;
+// CDemonActorType
 extern CDemonActorType g_CNPCClassInfo;
 extern CDemonActorType g_CPassengerClassInfo;
+
+// CMouse
+extern CMouse g_CMouseInstance;
+
+// CPathMap[12]
 extern CPathMap DAT_02fd9060[12];
 

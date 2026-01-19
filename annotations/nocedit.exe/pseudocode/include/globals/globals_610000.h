@@ -15,200 +15,600 @@
 // GLOBAL VARIABLES - Range 0x610000
 // =============================================================================
 
-extern dword DWORD_00611000;
-extern CreateBrushIndirect* g_CreateBrushIndirectFunc;
-extern CreateCompatibleDC* g_CreateCompatibleDCFunc;
-extern CreateDIBSection* g_CreateDIBSectionFunc;
-extern CreateFontA* g_CreateFontAFunc;
-extern DeleteDC* g_DeleteDCFunc;
-extern DeleteObject* g_DeleteObjectFunc;
-extern GetStockObject* g_GetStockObjectFunc;
-extern GetTextExtentPoint32A* g_GetTextExtentPoint32A;
-extern Rectangle* g_RectangleFunc;
-extern SelectObject* g_SelectObjectFunc;
-extern SetBkColor* g_SetBkColorFunc;
-extern SetBkMode* g_SetBkModeFunc;
-extern SetTextColor* g_SetTextColorFunc;
-extern TextOutA* g_TextOutAFunc;
-extern joyGetDevCapsA* g_joyGetDevCapsAFunc;
-extern joyGetPos* g_joyGetPosFunc;
-extern mciGetErrorStringA* g_mciGetErrorStringAFunc;
-extern mciSendStringA* g_mciSendStringAFunc;
-extern timeBeginPeriod* g_timeBeginPeriodFunc;
-extern timeEndPeriod* g_timeEndPeriodFunc;
-extern timeGetTime* g_timeGetTimeFunc;
-extern waveInAddBuffer* g_waveInAddBufferFunc;
-extern waveInClose* g_waveInCloseFunc;
-extern waveInGetDevCapsA* g_waveInGetDevCapsAFunc;
-extern waveInOpen* g_waveInOpenFunc;
-extern waveInPrepareHeader* g_waveInPrepareHeaderFunc;
-extern waveInReset* g_waveInResetFunc;
-extern waveInStart* g_waveInStartFunc;
-extern waveInUnprepareHeader* g_waveInUnprepareHeaderFunc;
-extern waveOutClose* g_waveOutCloseFunc;
-extern waveOutGetDevCapsA* g_waveOutGetDevCapsAFunc;
-extern waveOutOpen* g_waveOutOpenFunc;
-extern waveOutPrepareHeader* g_waveOutPrepareHeaderFunc;
-extern waveOutReset* g_waveOutResetFunc;
-extern waveOutUnprepareHeader* g_waveOutUnprepareHeaderFunc;
-extern waveOutWrite* g_waveOutWriteFunc;
-extern GetUserNameA* g_GetUserNameAFunc;
-extern ImpersonateLoggedOnUser* g_ImpersonateLoggedOnUserFunc;
-extern LogonUserA* g_LogonUserAFunc;
-extern RegCloseKey* g_RegCloseKeyFunc;
-extern RegCreateKeyExA* g_RegCreateKeyExAFunc;
-extern RegOpenKeyExA* g_RegOpenKeyExAFunc;
-extern RegQueryValueExA* g_RegQueryValueExAFunc;
-extern RegSetValueExA* g_RegSetValueExAFunc;
-extern RevertToSelf* g_RevertToSelfFunc;
+// BringWindowToTop*
 extern BringWindowToTop* g_BringWindowToTopFunc;
+
+// CharUpperBuffA*
 extern CharUpperBuffA* g_CharUpperBuffAFunc;
+
+// CloseClipboard*
 extern CloseClipboard* g_CloseClipboardFunc;
-extern CreateWindowExA* g_CreateWindowExAFunc;
-extern DefWindowProcA* g_DefWindowProcAFunc;
-extern DispatchMessageA* g_DispatchMessageAFunc;
-extern FindWindowA* g_FindWindowAFunc;
-extern GetClientRect* g_GetClientRectFunc;
-extern GetClipboardData* g_GetClipboardDataFunc;
-extern GetKeyNameTextA* g_GetKeyNameTextAFunc;
-extern GetLastActivePopup* g_GetLastActivePopupFunc;
-extern InvalidateRect* g_InvalidateRectFunc;
-extern IsIconic* g_IsIconicFunc;
-extern LoadCursorA* g_LoadCursorAFunc;
-extern LoadIconA* g_LoadIconAFunc;
-extern MessageBoxA* g_MessageBoxAFunc;
-extern MoveWindow* g_MoveWindowFunc;
-extern OpenClipboard* g_OpenClipboardFunc;
-extern PeekMessageA* g_PeekMessageAFunc;
-extern PostQuitMessage* g_PostQuitMessageFunc;
-extern RegisterClassA* g_RegisterClassAFunc;
-extern SetClipboardData* g_SetClipboardDataFunc;
-extern SetCursorPos* g_SetCursorPosFunc;
-extern SetCursor* g_SetCursorFunc;
-extern SetFocus* g_SetFocusFunc;
-extern SetForegroundWindow* g_SetForegroundWindowFunc;
-extern SetRectEmpty* g_SetRectEmptyFunc;
-extern ShowWindow* g_ShowWindowFunc;
-extern TranslateMessage* g_TranslateMessageFunc;
-extern UpdateWindow* g_UpdateWindowFunc;
+
+// CloseHandle*
 extern CloseHandle* g_CloseHandleFunc;
+
+// CreateBrushIndirect*
+extern CreateBrushIndirect* g_CreateBrushIndirectFunc;
+
+// CreateCompatibleDC*
+extern CreateCompatibleDC* g_CreateCompatibleDCFunc;
+
+// CreateDIBSection*
+extern CreateDIBSection* g_CreateDIBSectionFunc;
+
+// CreateDirectoryA*
 extern CreateDirectoryA* g_CreateDirectoryAFunc;
+
+// CreateEventA*
 extern CreateEventA* g_CreateEventAFunc;
+
+// CreateFileA*
 extern CreateFileA* g_CreateFileAFunc;
+
+// CreateFontA*
+extern CreateFontA* g_CreateFontAFunc;
+
+// CreateMutexA*
 extern CreateMutexA* g_CreateMutexAFunc;
+
+// CreateProcessA*
 extern CreateProcessA* g_CreateProcessAFunc;
+
+// CreateThread*
 extern CreateThread* g_CreateThreadFunc;
+
+// CreateWindowExA*
+extern CreateWindowExA* g_CreateWindowExAFunc;
+
+// DefWindowProcA*
+extern DefWindowProcA* g_DefWindowProcAFunc;
+
+// DeleteCriticalSection*
 extern DeleteCriticalSection* g_DeleteCriticalSectionFunc;
+
+// DeleteDC*
+extern DeleteDC* g_DeleteDCFunc;
+
+// DeleteFileA*
 extern DeleteFileA* g_DeleteFileAFunc;
-extern DosDateTimeToFileTime* g_DosDateTimeToFileTimeFunc;
-extern DuplicateHandle* g_DuplicateHandleFunc;
-extern EnterCriticalSection* g_EnterCriticalSectionFunc;
-extern ExitProcess* g_ExitProcessFunc;
-extern ExitThread* g_ExitThreadFunc;
-extern FileTimeToDosDateTime* g_FileTimeToDosDateTimeFunc;
-extern FileTimeToLocalFileTime* g_FileTimeToLocalFileTimeFunc;
-extern FileTimeToSystemTime* g_FileTimeToSystemTimeFunc;
-extern FindClose* g_FindCloseFunc;
-extern FindFirstFileA* g_FindFirstFileAFunc;
-extern FindNextFileA* g_FindNextFileAFunc;
-extern FlushFileBuffers* g_FlushFileBuffersFunc;
-extern FreeEnvironmentStringsA* g_FreeEnvironmentStringsAFunc;
-extern FreeLibrary* g_FreeLibraryFunc;
-extern GetACP* g_GetACPFunc;
-extern GetCPInfo* g_GetCPInfoFunc;
-extern GetCommandLineA* g_GetCommandLineAFunc;
-extern GetCommandLineW* g_GetCommandLineWFunc;
-extern GetComputerNameA* g_GetComputerNameAFunc;
-extern GetConsoleMode* g_GetConsoleModeFunc;
-extern GetCurrentDirectoryA* g_GetCurrentDirectoryAFunc;
-extern GetCurrentProcess* g_GetCurrentProcessFunc;
-extern GetCurrentProcessId* g_GetCurrentProcessIdFunc;
-extern GetCurrentThreadId* g_GetCurrentThreadIdFunc;
-extern GetCurrentThread* g_GetCurrentThreadFunc;
-extern GetEnvironmentStrings* g_GetEnvironmentStringsFunc;
-extern GetExitCodeProcess* g_GetExitCodeProcessFunc;
-extern GetFileAttributesA* g_GetFileAttributesAFunc;
-extern GetFileTime* g_GetFileTimeFunc;
-extern GetFileType* g_GetFileTypeFunc;
-extern GetFullPathNameA* g_GetFullPathNameAFunc;
-extern GetLastError* g_GetLastErrorFunc;
-extern GetLocalTime* g_GetLocalTimeFunc;
-extern GetModuleFileNameA* g_GetModuleFileNameAFunc;
-extern GetModuleFileNameW* g_GetModuleFileNameWFunc;
-extern GetModuleHandleA* g_GetModuleHandleAFunc;
-extern GetOEMCP* g_GetOEMCPFunc;
-extern GetProcAddress* g_GetProcAddressFunc;
-extern GetStdHandle* g_GetStdHandleFunc;
-extern GetTimeZoneInformation* g_GetTimeZoneInformationFunc;
-extern GetVersion* g_GetVersionFunc;
-extern GlobalAlloc* g_GlobalAllocFunc;
-extern GlobalFree* g_GlobalFreeFunc;
-extern GlobalLock* g_GlobalLockFunc;
-extern GlobalMemoryStatus* g_GlobalMemoryStatusFunc;
-extern GlobalUnlock* g_GlobalUnlockFunc;
-extern InitializeCriticalSection* g_InitializeCriticalSectionFunc;
-extern LeaveCriticalSection* g_LeaveCriticalSectionFunc;
-extern LoadLibraryA* g_LoadLibraryAFunc;
-extern LocalFileTimeToFileTime* g_LocalFileTimeToFileTimeFunc;
-extern MoveFileA* g_MoveFileAFunc;
-extern MultiByteToWideChar* g_MultiByteToWideCharFunc;
-extern QueryPerformanceCounter* g_QueryPerformanceCounterFunc;
-extern QueryPerformanceFrequency* g_QueryPerformanceFrequencyFunc;
-extern ReadConsoleInputA* g_ReadConsoleInputAFunc;
-extern ReadFile* g_ReadFileFunc;
-extern ReleaseMutex* g_ReleaseMutexFunc;
-extern SetConsoleCtrlHandler* g_SetConsoleCtrlHandlerFunc;
-extern SetConsoleMode* g_SetConsoleModeFunc;
-extern SetCurrentDirectoryA* g_SetCurrentDirectoryAFunc;
-extern SetEndOfFile* g_SetEndOfFileFunc;
-extern SetEnvironmentVariableA* g_SetEnvironmentVariableAFunc;
-extern SetEnvironmentVariableW* g_SetEnvironmentVariableWFunc;
-extern SetEvent* g_SetEventFunc;
-extern SetFileAttributesA* g_SetFileAttributesAFunc;
-extern SetFilePointer* g_SetFilePointerFunc;
-extern SetFileTime* g_SetFileTimeFunc;
-extern SetLastError* g_SetLastErrorFunc;
-extern SetStdHandle* g_SetStdHandleFunc;
-extern SetThreadPriority* g_SetThreadPriorityFunc;
-extern SetUnhandledExceptionFilter* g_SetUnhandledExceptionFilterFunc;
-extern Sleep* g_SleepFunc;
-extern SystemTimeToFileTime* g_SystemTimeToFileTimeFunc;
-extern TlsAlloc* g_TlsAllocFunc;
-extern TlsFree* g_TlsFreeFunc;
-extern TlsGetValue* g_TlsGetValueFunc;
-extern TlsSetValue* g_TlsSetValueFunc;
-extern UnhandledExceptionFilter* g_UnhandledExceptionFilterFunc;
-extern VirtualAlloc* g_VirtualAllocFunc;
-extern VirtualFree* g_VirtualFreeFunc;
-extern VirtualQuery* g_VirtualQueryFunc;
-extern WaitForSingleObject* g_WaitForSingleObjectFunc;
-extern WideCharToMultiByte* g_WideCharToMultiByteFunc;
-extern WriteConsoleA* g_WriteConsoleAFunc;
-extern WriteFile* g_WriteFileFunc;
+
+// DeleteObject*
+extern DeleteObject* g_DeleteObjectFunc;
+
+// DirectDrawCreate*
 extern DirectDrawCreate* g_DirectDrawCreateFunc;
-extern WSACleanup* g_WSACleanupFunc;
-extern WSAStartup* g_WSAStartupFunc;
-extern setsockopt* g_setsockoptFunc;
-extern ioctlsocket* g_ioctlsocketFunc;
-extern getsockname* g_getsocknameFunc;
-extern accept* g_acceptFunc;
-extern listen* g_listenFunc;
-extern closesocket* g_closesocketFunc;
-extern sendto* g_sendtoFunc;
-extern send* g_sendFunc;
-extern recvfrom* g_recvfromFunc;
-extern recv* g_recvFunc;
-extern connect* g_connectFunc;
-extern bind* g_bindFunc;
-extern shutdown* g_shutdownFunc;
-extern htons* g_htonsFunc;
-extern ntohs* g_ntohsFunc;
-extern DirectSoundEnumerateA* g_DirectSoundEnumerateAFunc;
+
+// DirectSoundCreate*
 extern DirectSoundCreate* g_DirectSoundCreateFunc;
+
+// DirectSoundEnumerateA*
+extern DirectSoundEnumerateA* g_DirectSoundEnumerateAFunc;
+
+// DispatchMessageA*
+extern DispatchMessageA* g_DispatchMessageAFunc;
+
+// DosDateTimeToFileTime*
+extern DosDateTimeToFileTime* g_DosDateTimeToFileTimeFunc;
+
+// DuplicateHandle*
+extern DuplicateHandle* g_DuplicateHandleFunc;
+
+// EnterCriticalSection*
+extern EnterCriticalSection* g_EnterCriticalSectionFunc;
+
+// ExitProcess*
+extern ExitProcess* g_ExitProcessFunc;
+
+// ExitThread*
+extern ExitThread* g_ExitThreadFunc;
+
+// FileTimeToDosDateTime*
+extern FileTimeToDosDateTime* g_FileTimeToDosDateTimeFunc;
+
+// FileTimeToLocalFileTime*
+extern FileTimeToLocalFileTime* g_FileTimeToLocalFileTimeFunc;
+
+// FileTimeToSystemTime*
+extern FileTimeToSystemTime* g_FileTimeToSystemTimeFunc;
+
+// FindClose*
+extern FindClose* g_FindCloseFunc;
+
+// FindFirstFileA*
+extern FindFirstFileA* g_FindFirstFileAFunc;
+
+// FindNextFileA*
+extern FindNextFileA* g_FindNextFileAFunc;
+
+// FindWindowA*
+extern FindWindowA* g_FindWindowAFunc;
+
+// FlushFileBuffers*
+extern FlushFileBuffers* g_FlushFileBuffersFunc;
+
+// FreeEnvironmentStringsA*
+extern FreeEnvironmentStringsA* g_FreeEnvironmentStringsAFunc;
+
+// FreeLibrary*
+extern FreeLibrary* g_FreeLibraryFunc;
+
+// GetACP*
+extern GetACP* g_GetACPFunc;
+
+// GetCPInfo*
+extern GetCPInfo* g_GetCPInfoFunc;
+
+// GetClientRect*
+extern GetClientRect* g_GetClientRectFunc;
+
+// GetClipboardData*
+extern GetClipboardData* g_GetClipboardDataFunc;
+
+// GetCommandLineA*
+extern GetCommandLineA* g_GetCommandLineAFunc;
+
+// GetCommandLineW*
+extern GetCommandLineW* g_GetCommandLineWFunc;
+
+// GetComputerNameA*
+extern GetComputerNameA* g_GetComputerNameAFunc;
+
+// GetConsoleMode*
+extern GetConsoleMode* g_GetConsoleModeFunc;
+
+// GetCurrentDirectoryA*
+extern GetCurrentDirectoryA* g_GetCurrentDirectoryAFunc;
+
+// GetCurrentProcess*
+extern GetCurrentProcess* g_GetCurrentProcessFunc;
+
+// GetCurrentProcessId*
+extern GetCurrentProcessId* g_GetCurrentProcessIdFunc;
+
+// GetCurrentThread*
+extern GetCurrentThread* g_GetCurrentThreadFunc;
+
+// GetCurrentThreadId*
+extern GetCurrentThreadId* g_GetCurrentThreadIdFunc;
+
+// GetEnvironmentStrings*
+extern GetEnvironmentStrings* g_GetEnvironmentStringsFunc;
+
+// GetExitCodeProcess*
+extern GetExitCodeProcess* g_GetExitCodeProcessFunc;
+
+// GetFileAttributesA*
+extern GetFileAttributesA* g_GetFileAttributesAFunc;
+
+// GetFileTime*
+extern GetFileTime* g_GetFileTimeFunc;
+
+// GetFileType*
+extern GetFileType* g_GetFileTypeFunc;
+
+// GetFullPathNameA*
+extern GetFullPathNameA* g_GetFullPathNameAFunc;
+
+// GetKeyNameTextA*
+extern GetKeyNameTextA* g_GetKeyNameTextAFunc;
+
+// GetLastActivePopup*
+extern GetLastActivePopup* g_GetLastActivePopupFunc;
+
+// GetLastError*
+extern GetLastError* g_GetLastErrorFunc;
+
+// GetLocalTime*
+extern GetLocalTime* g_GetLocalTimeFunc;
+
+// GetModuleFileNameA*
+extern GetModuleFileNameA* g_GetModuleFileNameAFunc;
+
+// GetModuleFileNameW*
+extern GetModuleFileNameW* g_GetModuleFileNameWFunc;
+
+// GetModuleHandleA*
+extern GetModuleHandleA* g_GetModuleHandleAFunc;
+
+// GetOEMCP*
+extern GetOEMCP* g_GetOEMCPFunc;
+
+// GetProcAddress*
+extern GetProcAddress* g_GetProcAddressFunc;
+
+// GetStdHandle*
+extern GetStdHandle* g_GetStdHandleFunc;
+
+// GetStockObject*
+extern GetStockObject* g_GetStockObjectFunc;
+
+// GetTextExtentPoint32A*
+extern GetTextExtentPoint32A* g_GetTextExtentPoint32A;
+
+// GetTimeZoneInformation*
+extern GetTimeZoneInformation* g_GetTimeZoneInformationFunc;
+
+// GetUserNameA*
+extern GetUserNameA* g_GetUserNameAFunc;
+
+// GetVersion*
+extern GetVersion* g_GetVersionFunc;
+
+// GlobalAlloc*
+extern GlobalAlloc* g_GlobalAllocFunc;
+
+// GlobalFree*
+extern GlobalFree* g_GlobalFreeFunc;
+
+// GlobalLock*
+extern GlobalLock* g_GlobalLockFunc;
+
+// GlobalMemoryStatus*
+extern GlobalMemoryStatus* g_GlobalMemoryStatusFunc;
+
+// GlobalUnlock*
+extern GlobalUnlock* g_GlobalUnlockFunc;
+
+// ImpersonateLoggedOnUser*
+extern ImpersonateLoggedOnUser* g_ImpersonateLoggedOnUserFunc;
+
+// InitializeCriticalSection*
+extern InitializeCriticalSection* g_InitializeCriticalSectionFunc;
+
+// InvalidateRect*
+extern InvalidateRect* g_InvalidateRectFunc;
+
+// IsIconic*
+extern IsIconic* g_IsIconicFunc;
+
+// LeaveCriticalSection*
+extern LeaveCriticalSection* g_LeaveCriticalSectionFunc;
+
+// LoadCursorA*
+extern LoadCursorA* g_LoadCursorAFunc;
+
+// LoadIconA*
+extern LoadIconA* g_LoadIconAFunc;
+
+// LoadLibraryA*
+extern LoadLibraryA* g_LoadLibraryAFunc;
+
+// LocalFileTimeToFileTime*
+extern LocalFileTimeToFileTime* g_LocalFileTimeToFileTimeFunc;
+
+// LogonUserA*
+extern LogonUserA* g_LogonUserAFunc;
+
+// MessageBoxA*
+extern MessageBoxA* g_MessageBoxAFunc;
+
+// MoveFileA*
+extern MoveFileA* g_MoveFileAFunc;
+
+// MoveWindow*
+extern MoveWindow* g_MoveWindowFunc;
+
+// MultiByteToWideChar*
+extern MultiByteToWideChar* g_MultiByteToWideCharFunc;
+
+// OpenClipboard*
+extern OpenClipboard* g_OpenClipboardFunc;
+
+// PeekMessageA*
+extern PeekMessageA* g_PeekMessageAFunc;
+
+// PostQuitMessage*
+extern PostQuitMessage* g_PostQuitMessageFunc;
+
+// QueryPerformanceCounter*
+extern QueryPerformanceCounter* g_QueryPerformanceCounterFunc;
+
+// QueryPerformanceFrequency*
+extern QueryPerformanceFrequency* g_QueryPerformanceFrequencyFunc;
+
+// ReadConsoleInputA*
+extern ReadConsoleInputA* g_ReadConsoleInputAFunc;
+
+// ReadFile*
+extern ReadFile* g_ReadFileFunc;
+
+// Rectangle*
+extern Rectangle* g_RectangleFunc;
+
+// RegCloseKey*
+extern RegCloseKey* g_RegCloseKeyFunc;
+
+// RegCreateKeyExA*
+extern RegCreateKeyExA* g_RegCreateKeyExAFunc;
+
+// RegOpenKeyExA*
+extern RegOpenKeyExA* g_RegOpenKeyExAFunc;
+
+// RegQueryValueExA*
+extern RegQueryValueExA* g_RegQueryValueExAFunc;
+
+// RegSetValueExA*
+extern RegSetValueExA* g_RegSetValueExAFunc;
+
+// RegisterClassA*
+extern RegisterClassA* g_RegisterClassAFunc;
+
+// ReleaseMutex*
+extern ReleaseMutex* g_ReleaseMutexFunc;
+
+// RevertToSelf*
+extern RevertToSelf* g_RevertToSelfFunc;
+
+// SelectObject*
+extern SelectObject* g_SelectObjectFunc;
+
+// SetBkColor*
+extern SetBkColor* g_SetBkColorFunc;
+
+// SetBkMode*
+extern SetBkMode* g_SetBkModeFunc;
+
+// SetClipboardData*
+extern SetClipboardData* g_SetClipboardDataFunc;
+
+// SetConsoleCtrlHandler*
+extern SetConsoleCtrlHandler* g_SetConsoleCtrlHandlerFunc;
+
+// SetConsoleMode*
+extern SetConsoleMode* g_SetConsoleModeFunc;
+
+// SetCurrentDirectoryA*
+extern SetCurrentDirectoryA* g_SetCurrentDirectoryAFunc;
+
+// SetCursor*
+extern SetCursor* g_SetCursorFunc;
+
+// SetCursorPos*
+extern SetCursorPos* g_SetCursorPosFunc;
+
+// SetEndOfFile*
+extern SetEndOfFile* g_SetEndOfFileFunc;
+
+// SetEnvironmentVariableA*
+extern SetEnvironmentVariableA* g_SetEnvironmentVariableAFunc;
+
+// SetEnvironmentVariableW*
+extern SetEnvironmentVariableW* g_SetEnvironmentVariableWFunc;
+
+// SetEvent*
+extern SetEvent* g_SetEventFunc;
+
+// SetFileAttributesA*
+extern SetFileAttributesA* g_SetFileAttributesAFunc;
+
+// SetFilePointer*
+extern SetFilePointer* g_SetFilePointerFunc;
+
+// SetFileTime*
+extern SetFileTime* g_SetFileTimeFunc;
+
+// SetFocus*
+extern SetFocus* g_SetFocusFunc;
+
+// SetForegroundWindow*
+extern SetForegroundWindow* g_SetForegroundWindowFunc;
+
+// SetLastError*
+extern SetLastError* g_SetLastErrorFunc;
+
+// SetRectEmpty*
+extern SetRectEmpty* g_SetRectEmptyFunc;
+
+// SetStdHandle*
+extern SetStdHandle* g_SetStdHandleFunc;
+
+// SetTextColor*
+extern SetTextColor* g_SetTextColorFunc;
+
+// SetThreadPriority*
+extern SetThreadPriority* g_SetThreadPriorityFunc;
+
+// SetUnhandledExceptionFilter*
+extern SetUnhandledExceptionFilter* g_SetUnhandledExceptionFilterFunc;
+
+// ShowWindow*
+extern ShowWindow* g_ShowWindowFunc;
+
+// Sleep*
+extern Sleep* g_SleepFunc;
+
+// SystemTimeToFileTime*
+extern SystemTimeToFileTime* g_SystemTimeToFileTimeFunc;
+
+// TextOutA*
+extern TextOutA* g_TextOutAFunc;
+
+// TlsAlloc*
+extern TlsAlloc* g_TlsAllocFunc;
+
+// TlsFree*
+extern TlsFree* g_TlsFreeFunc;
+
+// TlsGetValue*
+extern TlsGetValue* g_TlsGetValueFunc;
+
+// TlsSetValue*
+extern TlsSetValue* g_TlsSetValueFunc;
+
+// TranslateMessage*
+extern TranslateMessage* g_TranslateMessageFunc;
+
+// UnhandledExceptionFilter*
+extern UnhandledExceptionFilter* g_UnhandledExceptionFilterFunc;
+
+// UpdateWindow*
+extern UpdateWindow* g_UpdateWindowFunc;
+
+// VirtualAlloc*
+extern VirtualAlloc* g_VirtualAllocFunc;
+
+// VirtualFree*
+extern VirtualFree* g_VirtualFreeFunc;
+
+// VirtualQuery*
+extern VirtualQuery* g_VirtualQueryFunc;
+
+// WSACleanup*
+extern WSACleanup* g_WSACleanupFunc;
+
+// WSAStartup*
+extern WSAStartup* g_WSAStartupFunc;
+
+// WaitForSingleObject*
+extern WaitForSingleObject* g_WaitForSingleObjectFunc;
+
+// WideCharToMultiByte*
+extern WideCharToMultiByte* g_WideCharToMultiByteFunc;
+
+// WriteConsoleA*
+extern WriteConsoleA* g_WriteConsoleAFunc;
+
+// WriteFile*
+extern WriteFile* g_WriteFileFunc;
+
+// accept*
+extern accept* g_acceptFunc;
+
+// bind*
+extern bind* g_bindFunc;
+
+// closesocket*
+extern closesocket* g_closesocketFunc;
+
+// connect*
+extern connect* g_connectFunc;
+
+// dword
+extern dword DWORD_00611000;
+extern dword DAT_00611004;
+extern dword DAT_00611008;
+extern dword DAT_00611018;
+extern dword DAT_0061101C;
+extern dword DAT_0061102C;
+extern dword DAT_00611030;
+extern dword DAT_00611040;
+extern dword DAT_00611044;
+extern dword DAT_00611054;
+extern dword DAT_00611058;
+extern dword DAT_00611068;
+extern dword DAT_0061106C;
+extern dword DAT_0061107C;
+extern dword DAT_00611080;
+extern dword DAT_00611090;
+extern dword DAT_00611094;
+
+// getsockname*
+extern getsockname* g_getsocknameFunc;
+
+// htons*
+extern htons* g_htonsFunc;
+
+// int
 extern int INT_00613000;
 extern int INT_006142ec;
 extern int g_RandToFloatFixedMultiplier;
 extern int INT_00614304;
 extern int INT_00614308;
 extern int INT_0061430c;
+
+// ioctlsocket*
+extern ioctlsocket* g_ioctlsocketFunc;
+
+// joyGetDevCapsA*
+extern joyGetDevCapsA* g_joyGetDevCapsAFunc;
+
+// joyGetPos*
+extern joyGetPos* g_joyGetPosFunc;
+
+// listen*
+extern listen* g_listenFunc;
+
+// mciGetErrorStringA*
+extern mciGetErrorStringA* g_mciGetErrorStringAFunc;
+
+// mciSendStringA*
+extern mciSendStringA* g_mciSendStringAFunc;
+
+// ntohs*
+extern ntohs* g_ntohsFunc;
+
+// recv*
+extern recv* g_recvFunc;
+
+// recvfrom*
+extern recvfrom* g_recvfromFunc;
+
+// send*
+extern send* g_sendFunc;
+
+// sendto*
+extern sendto* g_sendtoFunc;
+
+// setsockopt*
+extern setsockopt* g_setsockoptFunc;
+
+// shutdown*
+extern shutdown* g_shutdownFunc;
+
+// timeBeginPeriod*
+extern timeBeginPeriod* g_timeBeginPeriodFunc;
+
+// timeEndPeriod*
+extern timeEndPeriod* g_timeEndPeriodFunc;
+
+// timeGetTime*
+extern timeGetTime* g_timeGetTimeFunc;
+
+// undefined1
+extern undefined1 DAT_00614464;
+
+// waveInAddBuffer*
+extern waveInAddBuffer* g_waveInAddBufferFunc;
+
+// waveInClose*
+extern waveInClose* g_waveInCloseFunc;
+
+// waveInGetDevCapsA*
+extern waveInGetDevCapsA* g_waveInGetDevCapsAFunc;
+
+// waveInOpen*
+extern waveInOpen* g_waveInOpenFunc;
+
+// waveInPrepareHeader*
+extern waveInPrepareHeader* g_waveInPrepareHeaderFunc;
+
+// waveInReset*
+extern waveInReset* g_waveInResetFunc;
+
+// waveInStart*
+extern waveInStart* g_waveInStartFunc;
+
+// waveInUnprepareHeader*
+extern waveInUnprepareHeader* g_waveInUnprepareHeaderFunc;
+
+// waveOutClose*
+extern waveOutClose* g_waveOutCloseFunc;
+
+// waveOutGetDevCapsA*
+extern waveOutGetDevCapsA* g_waveOutGetDevCapsAFunc;
+
+// waveOutOpen*
+extern waveOutOpen* g_waveOutOpenFunc;
+
+// waveOutPrepareHeader*
+extern waveOutPrepareHeader* g_waveOutPrepareHeaderFunc;
+
+// waveOutReset*
+extern waveOutReset* g_waveOutResetFunc;
+
+// waveOutUnprepareHeader*
+extern waveOutUnprepareHeader* g_waveOutUnprepareHeaderFunc;
+
+// waveOutWrite*
+extern waveOutWrite* g_waveOutWriteFunc;
 

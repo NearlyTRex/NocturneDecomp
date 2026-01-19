@@ -1,12 +1,12 @@
 #pragma once
 
+// Type dependencies
+#include "system/basetypes.h"
+
 // =============================================================================
-// CONSTANTS
+// GLOBAL VARIABLES - Range 0xBA0000
 // =============================================================================
 
-// char[15360] constants
-const char g_SfxStreamReadBuffer[15360] = {};
-
-// char[220] constants
-const char g_SoundTestErrorBuffer[220] = {};
+// char[241][320]
+extern char g_CoronaBlurOutputBuffer[241][320];
 

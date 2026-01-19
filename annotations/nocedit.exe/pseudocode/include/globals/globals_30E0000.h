@@ -9,7 +9,10 @@
 // GLOBAL VARIABLES - Range 0x30E0000
 // =============================================================================
 
+// CDemonPod
 extern CDemonPod g_CDemonPodInstance;
+
+// SSoftwareEdge[16]
 extern SSoftwareEdge g_SoftwareEdgeBuffer[16];
 extern SSoftwareEdge g_SoftwareEdgeTable[16];
 

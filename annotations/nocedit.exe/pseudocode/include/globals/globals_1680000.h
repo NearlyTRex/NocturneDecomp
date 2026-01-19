@@ -8,5 +8,6 @@
 // GLOBAL VARIABLES - Range 0x1680000
 // =============================================================================
 
+// SVertexData[20000]
 extern SVertexData g_VertexNormals[20000];
 

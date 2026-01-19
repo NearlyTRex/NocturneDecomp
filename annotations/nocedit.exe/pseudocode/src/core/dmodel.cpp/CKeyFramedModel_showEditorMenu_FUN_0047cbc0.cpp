@@ -867,7 +867,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               local_11c = local_170;
               local_118 = local_16c;
               crt_stdio_c_sprintf_FUN_005fdbd0(local_4d0,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), size = %g\nY: (%6.2f ... %6.2f), size = %g\nZ: (%6.2f ... %6.2f), size = %g\n\nEnter uniform scale factor, or x,y,z scale factor\n");
-              puVar12 = &0;
+              puVar12 = &DAT_00670210;
               pcVar13 = local_278;
               for (iVar8 = 0x19; iVar8 != 0; iVar8 = iVar8 + -1) {
                 *(uint *)pcVar13 = *puVar12;

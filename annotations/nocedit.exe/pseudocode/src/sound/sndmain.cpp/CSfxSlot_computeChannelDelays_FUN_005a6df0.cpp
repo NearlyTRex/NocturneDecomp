@@ -28,7 +28,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSl
     this_ptr->channel_target_buffer_offsets[0] = 0;
   }
   else if (((this_ptr->options).flags & 1) == 0) {
-    local_20 = (double)g_AudioSampleRate * (1 / 1116.4000000000001);
+    local_20 = (double)g_AudioSampleRate * (DOUBLE_00681b30 / 1116.4000000000001);
     iVar2 = 99999;
     pCVar3 = this_ptr;
     if (0 < g_AudioChannelCount) {

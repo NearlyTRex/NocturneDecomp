@@ -10,10 +10,22 @@
 // GLOBAL VARIABLES - Range 0x1510000
 // =============================================================================
 
+// CVector3i
+extern CVector3i g_CameraOutOfBoundsCoord;
+
+// SCameraViewportState
+extern SCameraViewportState g_BackgroundSavedCameraState;
+
+// SFogGrid
 extern SFogGrid g_CameraFogGrid;
+
+// char[307200]
+extern char g_CameraIndexedImageData[307200];
+
+// int[256]
 extern int g_ScanlineSpanLeft[256];
 extern int g_ScanlineSpanRight[256];
+
+// void*[1024]
 extern void* g_BackgroundSavedScreenBufferArray[1024];
-extern SCameraViewportState g_BackgroundSavedCameraState;
-extern CVector3i g_CameraOutOfBoundsCoord;
 

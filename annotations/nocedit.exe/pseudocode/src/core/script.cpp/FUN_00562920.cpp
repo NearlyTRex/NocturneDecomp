@@ -733,7 +733,7 @@ uint core_script_cpp_FUN_00562920(void)
       }
       iVar7 = 0;
       local_14 = 0;
-      local_1c = &0;
+      local_1c = &DAT_00643d07;
       *in_stack_00000004 = '\0';
       do {
         iVar8 = core_charactr_cpp_CCharacter_FUN_0042f9c0(local_20);

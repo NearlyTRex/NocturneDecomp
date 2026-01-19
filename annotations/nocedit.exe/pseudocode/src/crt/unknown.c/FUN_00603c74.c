@@ -18,7 +18,7 @@ void crt_unknown_c_FUN_00603c74(void)
   if (0x1fff < (int)in_stack_00000008) {
     in_stack_00000008 = 0x2000;
   }
-  pfVar1 = (float10 *)&0;
+  pfVar1 = (float10 *)&DAT_00684f30;
   for (; 0 < (int)in_stack_00000008; in_stack_00000008 = (int)in_stack_00000008 >> 1) {
     if ((in_stack_00000008 & 1) != 0) {
       *in_stack_00000004 = *pfVar1 * *in_stack_00000004;

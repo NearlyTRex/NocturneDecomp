@@ -474,6 +474,22 @@ connect* g_connectFunc = (connect*)0x80000004; // DAT_80000004
 
 // dword
 dword DWORD_00611000 = 0x2110b4;
+dword DAT_00611004 = 0x0;
+dword DAT_00611008 = 0x0;
+dword DAT_00611018 = 0x0;
+dword DAT_0061101C = 0x0;
+dword DAT_0061102C = 0x0;
+dword DAT_00611030 = 0x0;
+dword DAT_00611040 = 0x0;
+dword DAT_00611044 = 0x0;
+dword DAT_00611054 = 0x0;
+dword DAT_00611058 = 0x0;
+dword DAT_00611068 = 0x0;
+dword DAT_0061106C = 0x0;
+dword DAT_0061107C = 0x0;
+dword DAT_00611080 = 0x0;
+dword DAT_00611090 = 0x0;
+dword DAT_00611094 = 0x0;
 
 // getsockname*
 getsockname* g_getsocknameFunc = (getsockname*)0x80000006; // DAT_80000006
@@ -536,6 +552,9 @@ timeEndPeriod* g_timeEndPeriodFunc = (timeEndPeriod*)0x00211874; // DAT_00211874
 
 // timeGetTime*
 timeGetTime* g_timeGetTimeFunc = (timeGetTime*)0x00211884; // DAT_00211884
+
+// undefined1
+undefined1 DAT_00614464 = 0;
 
 // waveInAddBuffer*
 waveInAddBuffer* g_waveInAddBufferFunc = (waveInAddBuffer*)0x00211892; // DAT_00211892

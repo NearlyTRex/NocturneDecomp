@@ -9,6 +9,9 @@
 // GLOBAL VARIABLES - Range 0x2DA0000
 // =============================================================================
 
+// CBloodPool[32]
 extern CBloodPool DAT_02da8724[32];
+
+// CFootstep[1000]
 extern CFootstep DAT_02da8c2c[1000];
 

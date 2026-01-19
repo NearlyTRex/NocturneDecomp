@@ -11,17 +11,26 @@
 // GLOBAL VARIABLES - Range 0x2F00000
 // =============================================================================
 
+// CAlphaBitmap
 extern CAlphaBitmap g_LoadingScreenBitmap1;
 extern CAlphaBitmap g_LoadingScreenBitmap2;
 extern CAlphaBitmap g_LoadingScreenBitmap3;
 extern CAlphaBitmap g_LoadingScreenBitmap4;
+
+// CDemonActorType
 extern CDemonActorType g_CMansionPuzzleCircleClassInfo;
 extern CDemonActorType g_CMirrorHackClassInfo;
 extern CDemonActorType g_CMarqueeClassInfo;
-extern int g_SinTable[257];
-extern int g_CosTable[257];
+extern CDemonActorType g_CMeleeClassInfo;
+
+// CMatrix3x3i
 extern CMatrix3x3i g_InverseMatrix;
 extern CMatrix3x3i g_TransformMatrixCopy;
+
+// FileTrackingEntry[100]
+extern FileTrackingEntry g_FileRegistry[100];
+
+// int[10]
 extern int g_MatrixStack_M00[10];
 extern int g_MatrixStack_M01[10];
 extern int g_MatrixStack_M02[10];
@@ -55,6 +64,8 @@ extern int g_ViewportStack_ClipLeft[10];
 extern int g_ViewportStack_ClipRight[10];
 extern int g_ViewportStack_ClipTop[10];
 extern int g_ViewportStack_ClipBottom[10];
-extern CDemonActorType g_CMeleeClassInfo;
-extern FileTrackingEntry g_FileRegistry[100];
+
+// int[257]
+extern int g_SinTable[257];
+extern int g_CosTable[257];
 

@@ -9,6 +9,9 @@
 // GLOBAL VARIABLES - Range 0x3110000
 // =============================================================================
 
+// CDemonActorType
 extern CDemonActorType g_CSentinelClassInfo;
+
+// CDemonSet
 extern CDemonSet g_CDemonSetInstance;
 

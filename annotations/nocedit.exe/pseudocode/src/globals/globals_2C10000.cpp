@@ -11,3 +11,6 @@ CDemonActorType g_CDoorClassInfo = {};
 // FileSearchHandler*[5]
 FileSearchHandler* g_SearchHandlers[5] = {};
 
+// char[72]
+char g_PolyDataConversionBuffer[72] = {};
+

@@ -11,10 +11,17 @@
 // GLOBAL VARIABLES - Range 0x830000
 // =============================================================================
 
-extern CDeformableModelInstance g_CDeformableModelInstanceInstance;
-extern CDemonActorType g_CColonelClassInfo;
+// CConsole
 extern CConsole g_ConsolePtr;
+
+// CDeformableModelInstance
+extern CDeformableModelInstance g_CDeformableModelInstanceInstance;
+
+// CDemonActorType
+extern CDemonActorType g_CColonelClassInfo;
 extern CDemonActorType g_CConveyorClassInfo;
 extern CDemonActorType g_CZombieCowClassInfo;
+
+// SCramWorkingEntry[1]
 extern SCramWorkingEntry g_CramSortedTextureEntries[1];
 

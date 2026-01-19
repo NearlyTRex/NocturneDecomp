@@ -10,9 +10,17 @@
 // GLOBAL VARIABLES - Range 0x880000
 // =============================================================================
 
+// CDemonActorType
 extern CDemonActorType g_CCrateClassInfo;
 extern CDemonActorType g_CCrossbowClassInfo;
-extern CVector3f DAT_008879c0[100];
-extern SCollisionInfo DAT_00887e70[100];
 extern CDemonActorType g_CCurtainClassInfo;
+
+// CVector3f[100]
+extern CVector3f DAT_008879c0[100];
+
+// SCollisionInfo[100]
+extern SCollisionInfo DAT_00887e70[100];
+
+// char[500000]
+extern char g_CameraLoadImageReadBuffer[500000];
 

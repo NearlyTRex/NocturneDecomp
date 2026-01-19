@@ -220,7 +220,7 @@ int core_script_cpp_CScript_step_FUN_0055a810(void)
   in_stack_00000004[0x12] = local_110 + 1;
   cVar4 = *pcVar18;
   if ((cVar4 == '{') || (cVar4 == '}')) {
-    local_11c = &0;
+    local_11c = &DAT_00641c5a;
   }
   else if (cVar4 == ':') {
     local_11c = (byte *)core_script_cpp_FUN_005593d0();
@@ -252,7 +252,7 @@ int core_script_cpp_CScript_step_FUN_0055a810(void)
         return -1;
       }
     }
-    local_11c = &0;
+    local_11c = &DAT_00641ce3;
   }
   else {
     iVar8 = crt_string_c_strnicmp_FUN_005ff070(pcVar18,"syntaxCheckOn",0xd);
@@ -260,7 +260,7 @@ int core_script_cpp_CScript_step_FUN_0055a810(void)
       if (DAT_0310ec9c != 0) {
         DAT_0310ec9c = 1;
       }
-      local_11c = &0;
+      local_11c = &DAT_00641cf2;
     }
     else {
       iVar8 = crt_string_c_strnicmp_FUN_005ff070(pcVar18,"syntaxCheckOff",0xe);
@@ -269,7 +269,7 @@ int core_script_cpp_CScript_step_FUN_0055a810(void)
         if (DAT_0310ec9c != 0) {
           DAT_0310ec9c = 2;
         }
-        local_11c = &0;
+        local_11c = &DAT_00641d02;
       }
       else if (DAT_0310ec9c != 2) {
         iVar8 = crt_string_c_strnicmp_FUN_005ff070(pcVar18,"advanceLightFilter",0x12);
@@ -361,7 +361,7 @@ int core_script_cpp_CScript_step_FUN_0055a810(void)
             pcVar18 = (char *)core_event_cpp_CEventList_FUN_004add40(g_CEventListPtr);
             if (pcVar18 != (char *)0x0) goto LAB_0055bb9d;
           }
-          local_11c = &0;
+          local_11c = &DAT_00641e5e;
         }
         else {
           iVar8 = crt_string_c_strnicmp_FUN_005ff070(pcVar18,"addItemToInventory",0x12);
@@ -1295,10 +1295,10 @@ LAB_0055a97f:
                                                     in_stack_00000004[0x12] = iVar8;
                                                     in_stack_00000004[0x117] =
                                                          in_stack_00000004[0x117] + 1;
-                                                    local_11c = &0;
+                                                    local_11c = &DAT_006424ec;
                                                   }
                                                   else {
-                                                    local_11c = &0;
+                                                    local_11c = &DAT_006424ec;
                                                   }
                                                   }
                                                   else {
@@ -1317,10 +1317,10 @@ LAB_0055a97f:
                                                   }
                                                   if (DAT_0310ec9c == 0) {
                                                     in_stack_00000004[0x12] = iVar8;
-                                                    local_11c = &0;
+                                                    local_11c = &DAT_00642527;
                                                   }
                                                   else {
-                                                    local_11c = &0;
+                                                    local_11c = &DAT_00642527;
                                                   }
                                                   }
                                                   else {
