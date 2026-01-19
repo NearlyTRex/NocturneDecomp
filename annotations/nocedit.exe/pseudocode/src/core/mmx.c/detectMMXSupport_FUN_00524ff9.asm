@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   uint g_CPUFeatureFlags = 0x0
-;   char g_CPUInfoMMXSupported = \x00
+;   byte g_CPUInfoMMXSupported = 0x0
 ;   undefined4 DAT_00800000
 ;
 ; *****************************************************************************

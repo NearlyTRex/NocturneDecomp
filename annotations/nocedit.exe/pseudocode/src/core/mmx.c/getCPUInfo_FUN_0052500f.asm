@@ -10,8 +10,8 @@
 ;   byte g_CPUInfoFamily = 0x96
 ;   byte g_CPUInfoModel = 0x13
 ;   byte g_CPUInfoStepping = 0x0
-;   char g_CPUInfoIntelCPU = \x00
-;   char g_CPUInfoMMXSupported = \x00
+;   byte g_CPUInfoIntelCPU = 0x0
+;   byte g_CPUInfoMMXSupported = 0x0
 ;
 ; Called Functions:
 ;   core_mmx.c_detectIntelProcessor_FUN_00524f4c

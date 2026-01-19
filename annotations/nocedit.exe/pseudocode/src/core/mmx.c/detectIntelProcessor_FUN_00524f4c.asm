@@ -11,13 +11,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_GenuineIntel_0067d6c0
 ;   undefined4 s__0067d6cc
-;   int g_cpuidbasicinfo_2 = 0x1000c900
-;   int g_cpuidbasicinfo_3 = -0x22000000
+;   int g_CPUInfoBasicInfo2 = 0x1000c900
+;   int g_CPUInfoBaseInfo3 = -0x22000000
 ;   byte g_CPUInfoFamily = 0x96
 ;   byte g_CPUInfoModel = 0x13
 ;   byte g_CPUInfoStepping = 0x0
-;   char g_CPUIDSupported = \x00
-;   char g_CPUInfoIntelCPU = \x00
+;   byte g_CPUIDSupported = 0x0
+;   byte g_CPUInfoIntelCPU = 0x0
 ;   uint g_CPUFeatureFlags = 0x0
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     XOR EAX,EAX                         ; 00524f8d
     CPUID                               ; 00524f8f
     MOV dword ptr [0x0067d6cc],EBX      ; 00524f91 | s__0067d6cc
-    MOV dword ptr [0x0067d6d0],EDX      ; 00524f97 | g_cpuidbasicinfo_2
-    MOV dword ptr [0x0067d6d4],ECX      ; 00524f9d | g_cpuidbasicinfo_3
+    MOV dword ptr [0x0067d6d0],EDX      ; 00524f97 | g_CPUInfoBasicInfo2
+    MOV dword ptr [0x0067d6d4],ECX      ; 00524f9d | g_CPUInfoBaseInfo3
     MOV ESI,0x67d6cc                    ; 00524fa3 | s__0067d6cc
     MOV EDI,0x67d6c0                    ; 00524fa8 | = "GenuineIntel"
     MOV ECX,0x1                         ; 00524fad

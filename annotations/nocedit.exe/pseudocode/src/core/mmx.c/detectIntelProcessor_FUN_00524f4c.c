@@ -58,11 +58,11 @@ void core_mmx_c_detectIntelProcessor_FUN_00524f4c(void)
          (uint)((uVar6 & 0x10) != 0) * 0x10 | (uint)((uVar6 & 4) != 0) * 4 |
          (uint)((uVar6 & 1) != 0) | (uint)((uVar6 & 0x200000) != 0) * 0x200000 |
         (uint)((uVar6 & 0x40000) != 0) * 0x40000) != uVar10) {
-      g_CPUIDSupported = '\x01';
+      g_CPUIDSupported = 1;
       piVar3 = (int *)cpuid_basic_info(0);
       register0x0000000c = piVar3[1];
-      g_cpuidbasicinfo_2 = piVar3[2];
-      g_cpuidbasicinfo_3 = piVar3[3];
+      g_CPUInfoBasicInfo2 = piVar3[2];
+      g_CPUInfoBaseInfo3 = piVar3[3];
       iVar7 = 1;
       pcVar8 = "GenuineIntel" + 0xc;
       pcVar9 = "GenuineIntel";
@@ -74,7 +74,7 @@ void core_mmx_c_detectIntelProcessor_FUN_00524f4c(void)
         pcVar8 = pcVar8 + 1;
         pcVar9 = pcVar9 + 1;
       } while (cVar1 == cVar2);
-      if ((iVar7 == 0) && (g_CPUInfoIntelCPU = '\x01', 0 < *piVar3)) {
+      if ((iVar7 == 0) && (g_CPUInfoIntelCPU = 1, 0 < *piVar3)) {
         puVar4 = (uint *)cpuid_Version_info(1);
         g_CPUFeatureFlags = puVar4[2];
         bVar5 = (byte)*puVar4;

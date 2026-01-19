@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   uint g_CPUFamily = 0x5
 ;   byte g_CPUInfoFamily = 0x96
-;   char g_CPUInfoIntelCPU = \x00
-;   char g_CPUInfoMMXSupported = \x00
+;   byte g_CPUInfoIntelCPU = 0x0
+;   byte g_CPUInfoMMXSupported = 0x0
 ;   BOOL g_MMXSupported
 ;   int g_CPUModel
 ;

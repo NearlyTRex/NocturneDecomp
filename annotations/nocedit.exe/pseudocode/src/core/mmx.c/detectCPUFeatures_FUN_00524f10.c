@@ -11,8 +11,8 @@ void __cdecl core_mmx_c_detectCPUFeatures_FUN_00524f10(void)
 {
   core_mmx_c_detectIntelProcessor_FUN_00524f4c();
   core_mmx_c_detectMMXSupport_FUN_00524ff9();
-  g_MMXSupported = (uint)(byte)g_CPUInfoMMXSupported;
+  g_MMXSupported = (uint)g_CPUInfoMMXSupported;
   g_CPUFamily = (uint)g_CPUInfoFamily;
-  g_CPUModel = (uint)(byte)g_CPUInfoIntelCPU;
+  g_CPUModel = (uint)g_CPUInfoIntelCPU;
   return;
 }

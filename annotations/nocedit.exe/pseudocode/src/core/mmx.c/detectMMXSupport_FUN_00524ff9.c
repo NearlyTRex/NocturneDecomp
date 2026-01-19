@@ -10,7 +10,7 @@ void __cdecl core_mmx_c_detectMMXSupport_FUN_00524ff9(void)
 
 {
   if ((g_CPUFeatureFlags & 0x800000) != 0) {
-    g_CPUInfoMMXSupported = '\x01';
+    g_CPUInfoMMXSupported = 1;
   }
   return;
 }
