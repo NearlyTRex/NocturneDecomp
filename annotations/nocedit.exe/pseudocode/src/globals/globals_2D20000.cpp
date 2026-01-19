@@ -1,4 +1,4 @@
-#include "globals.h"
+#include "nocturne.h"
 
 // =============================================================================
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2D20000

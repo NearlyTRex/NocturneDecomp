@@ -1870,11 +1870,147 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
         log_info("Created system/%s.h with %d types" % (header_name, len(filtered_types)))
 
 
+def generate_type_category_aggregate(pseudocode_dir, category_name):
+    """Generate an aggregate header for a types subdirectory.
+
+    Args:
+        pseudocode_dir: Base directory for headers
+        category_name: Name of the category (classes, structs, unions, funcdefs)
+
+    Returns:
+        Number of headers included, or 0 if directory doesn't exist
+    """
+    category_dir = os.path.join(pseudocode_dir, "types", category_name)
+    if not os.path.exists(category_dir):
+        return 0
+
+    # Get all .h files in the category directory
+    headers = []
+    for filename in sorted(os.listdir(category_dir)):
+        if filename.endswith('.h'):
+            headers.append(filename)
+
+    if not headers:
+        return 0
+
+    content = []
+    content.append("#pragma once")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// %s - Aggregate Header" % category_name.upper())
+    content.append("// =============================================================================")
+    content.append("// Auto-generated aggregate of all %s type definitions." % category_name)
+    content.append("")
+
+    for header in headers:
+        content.append('#include "types/%s/%s"' % (category_name, header))
+
+    content.append("")
+
+    # Write aggregate in types/ directory
+    aggregate_path = os.path.join(pseudocode_dir, "types", "%s.h" % category_name)
+    write_header_file(aggregate_path, "\n".join(content))
+    return len(headers)
+
+
+def generate_types_aggregate(pseudocode_dir):
+    """Generate types.h aggregate that includes all game type headers.
+
+    This provides a single include for all game type definitions (classes, structs, etc.).
+
+    Args:
+        pseudocode_dir: Base directory for headers
+    """
+    types_dir = os.path.join(pseudocode_dir, "types")
+    if not os.path.exists(types_dir):
+        log_info("Types directory does not exist, skipping types.h generation")
+        return
+
+    # Generate aggregates for each category
+    categories = ['structs', 'unions', 'funcdefs', 'classes']  # Order matters for dependencies
+    category_counts = {}
+
+    for category in categories:
+        count = generate_type_category_aggregate(pseudocode_dir, category)
+        if count > 0:
+            category_counts[category] = count
+            log_info("Created types/%s.h with %d headers" % (category, count))
+
+    # Generate main types.h that includes all category aggregates
+    content = []
+    content.append("#pragma once")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// TYPES - All Game Type Definitions")
+    content.append("// =============================================================================")
+    content.append("// This header includes all game types (classes, structs, unions, funcdefs).")
+    content.append("")
+
+    for category in categories:
+        if category in category_counts:
+            content.append('#include "types/%s.h"' % category)
+
+    content.append("")
+
+    # Write types.h in the include directory
+    types_path = os.path.join(pseudocode_dir, "types.h")
+    write_header_file(types_path, "\n".join(content))
+    total = sum(category_counts.values())
+    log_info("Created types aggregate: %s (%d total headers)" % (types_path, total))
+
+
+def generate_system_aggregate(pseudocode_dir):
+    """Generate system.h aggregate that includes all system headers.
+
+    This provides a single include for all system type definitions.
+
+    Args:
+        pseudocode_dir: Base directory for headers
+    """
+    system_dir = os.path.join(pseudocode_dir, "system")
+    if not os.path.exists(system_dir):
+        log_info("System directory does not exist, skipping system.h generation")
+        return
+
+    # Get all .h files in system directory (except system.h itself)
+    system_headers = []
+    for filename in sorted(os.listdir(system_dir)):
+        if filename.endswith('.h') and filename != 'system.h':
+            system_headers.append(filename)
+
+    content = []
+    content.append("#pragma once")
+    content.append("")
+    content.append("// =============================================================================")
+    content.append("// SYSTEM - Aggregate System Headers")
+    content.append("// =============================================================================")
+    content.append("// This header includes all system type definitions for convenience.")
+    content.append("// Individual headers manage their own dependencies.")
+    content.append("")
+
+    # Include basetypes.h first as the foundation
+    if 'basetypes.h' in system_headers:
+        content.append('#include "system/basetypes.h"')
+        system_headers.remove('basetypes.h')
+        content.append("")
+
+    # Include remaining headers alphabetically
+    for header in system_headers:
+        content.append('#include "system/%s"' % header)
+
+    content.append("")
+
+    # Write system.h in the include directory (not system subdirectory)
+    system_path = os.path.join(pseudocode_dir, "system.h")
+    write_header_file(system_path, "\n".join(content))
+    log_info("Created system aggregate: %s (%d headers)" % (system_path, len(system_headers) + 1))
+
+
 def generate_master_include(pseudocode_dir):
     """Generate nocturne.h master include file.
 
-    NOTE: Currently generates a placeholder. The proper include ordering
-    needs to be implemented after system headers are fixed.
+    This is the main include file that should be included by all source files.
+    It aggregates all the major headers in the correct order.
 
     Args:
         pseudocode_dir: Base directory for headers
@@ -1885,13 +2021,32 @@ def generate_master_include(pseudocode_dir):
     content.append("// =============================================================================")
     content.append("// NOCTURNE MASTER INCLUDE")
     content.append("// =============================================================================")
-    content.append("// TODO: Implement proper include ordering after system headers are fixed")
+    content.append("// Include this file in all source files to get access to all declarations.")
+    content.append("// This provides all type definitions, constants, globals, and prototypes.")
+    content.append("")
+    content.append("// System type definitions (Windows API, C runtime, DirectX, DirectSound, etc.)")
+    content.append('#include "system.h"')
+    content.append("")
+    content.append("// Game type definitions (classes, structs, unions, function pointer types)")
+    content.append('#include "types.h"')
+    content.append("")
+    content.append("// Symbolic constants (#define macros extracted from Ghidra equates)")
+    content.append('#include "defines.h"')
+    content.append("")
+    content.append("// Constant data (const arrays, lookup tables, string literals)")
+    content.append('#include "constants.h"')
+    content.append("")
+    content.append("// Global variables (extern declarations for all global state)")
+    content.append('#include "globals.h"')
+    content.append("")
+    content.append("// Function prototypes (declarations for all decompiled functions)")
+    content.append('#include "prototypes.h"')
     content.append("")
 
     # Write master include
     master_path = os.path.join(pseudocode_dir, "nocturne.h")
     write_header_file(master_path, "\n".join(content))
-    log_info("Created master include placeholder: %s" % master_path)
+    log_info("Created master include: %s" % master_path)
 
 
 def export_header_files(currentProgram, pseudocode_dir):
@@ -1998,6 +2153,10 @@ def export_header_files(currentProgram, pseudocode_dir):
 
     # Export grouped files for system types (as single files, not subfolders)
     export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_types, type_to_path_map)
+
+    # Generate aggregate headers
+    generate_system_aggregate(pseudocode_dir)
+    generate_types_aggregate(pseudocode_dir)
 
     # Generate master nocturne.h include file
     generate_master_include(pseudocode_dir)

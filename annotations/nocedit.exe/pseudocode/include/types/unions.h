@@ -1,9 +1,9 @@
-#include "nocturne.h"
+#pragma once
 
 // =============================================================================
-// GLOBAL VARIABLE DEFINITIONS - Range 0x3F40000
+// UNIONS - Aggregate Header
 // =============================================================================
+// Auto-generated aggregate of all unions type definitions.
 
-CDemonActorType g_CSmileyClassInfo;
-CMP3Decoder g_CMP3DecoderInstance;
+#include "types/unions/CodeCommandData.h"
 

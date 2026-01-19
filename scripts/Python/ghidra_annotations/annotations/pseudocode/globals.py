@@ -16,6 +16,60 @@ from ghidra_annotations.annotations.pseudocode.strings import (
 from ghidra_annotations.annotations.pseudocode.headers import strip_type_prefix
 
 
+def is_signed_int_type(type_name):
+    """Check if a type name represents a signed integer type.
+
+    Args:
+        type_name: The type name string
+
+    Returns:
+        True if the type is a signed integer (not unsigned)
+    """
+    if not type_name:
+        return False
+    name_lower = type_name.lower()
+    # Unsigned types
+    if 'unsigned' in name_lower or name_lower.startswith('u') and name_lower[1:] in ('int', 'short', 'long', 'char'):
+        return False
+    if name_lower in ('uint', 'uint8', 'uint16', 'uint32', 'uint64', 'uchar', 'ushort', 'ulong', 'ulonglong',
+                      'dword', 'word', 'byte', 'qword', 'size_t'):
+        return False
+    if 'undefined' in name_lower:
+        return False
+    # Signed types
+    if name_lower in ('int', 'short', 'long', 'longlong', 'int8', 'int16', 'int32', 'int64', 'char'):
+        return True
+    if 'int' in name_lower and 'unsigned' not in name_lower and 'uint' not in name_lower:
+        return True
+    return False
+
+
+def format_signed_int(val, num_bytes, type_name=None):
+    """Format an integer value, handling signed types properly.
+
+    Args:
+        val: Integer value (unsigned representation)
+        num_bytes: Number of bytes
+        type_name: Optional type name to check for signed-ness
+
+    Returns:
+        Formatted string (negative decimal for signed negatives, hex otherwise)
+    """
+    is_signed = is_signed_int_type(type_name) if type_name else False
+
+    if is_signed:
+        # Check if high bit is set (negative value)
+        max_val = (1 << (num_bytes * 8))
+        sign_bit = max_val >> 1
+        if val >= sign_bit:
+            # Convert to negative
+            signed_val = val - max_val
+            return str(signed_val)
+
+    # Use standard hex formatting
+    return format_int_by_size(val, num_bytes)
+
+
 def resolve_pointer_to_symbol(currentProgram, address_int):
     """Try to resolve a pointer address to a symbol name.
 
@@ -115,7 +169,15 @@ def resolve_pointer_to_symbol(currentProgram, address_int):
                 c_name = sym_name
                 # Replace .cpp_ and .c_ patterns with _cpp_ and _c_
                 c_name = c_name.replace('.cpp_', '_cpp_').replace('.c_', '_c_')
-                usable_symbol = '&' + c_name
+                # Check if there's an arithmetic offset (e.g., +1, -2)
+                # If so, we need to cast through char* for valid pointer arithmetic
+                offset_match = re.search(r'([+-]\d+)$', c_name)
+                if offset_match:
+                    base_name = c_name[:offset_match.start()]
+                    offset = offset_match.group(1)
+                    usable_symbol = '(char*)(&%s)%s' % (base_name, offset)
+                else:
+                    usable_symbol = '&' + c_name
                 break
             elif is_namespace_pattern:
                 # Namespace-style name - replace . with _
@@ -135,6 +197,132 @@ def resolve_pointer_to_symbol(currentProgram, address_int):
         pass
 
     return (usable_symbol, comment_symbol)
+
+
+def parse_array_dimensions(type_name):
+    """Parse array dimensions from a type name like 'int[2][3][15]'.
+
+    Args:
+        type_name: The type name string
+
+    Returns:
+        Tuple of (base_type, dimensions_list) e.g., ('int', [2, 3, 15])
+    """
+    import re
+    # Find all [N] patterns
+    dims = re.findall(r'\[(\d+)\]', type_name)
+    if not dims:
+        return type_name, []
+    # Get base type (everything before first [)
+    base_type = type_name[:type_name.index('[')].strip()
+    return base_type, [int(d) for d in dims]
+
+
+def format_multidim_array(raw_bytes, type_name, elem_size, elem_type_name=None):
+    """Format a multi-dimensional array with proper nested braces.
+
+    Args:
+        raw_bytes: List of byte values
+        type_name: The full type name like 'int[2][3][15]'
+        elem_size: Size of each element in bytes
+        elem_type_name: Name of element type for signed-ness detection
+
+    Returns:
+        Formatted C initializer string with nested braces
+    """
+    import struct
+
+    base_type, dims = parse_array_dimensions(type_name)
+    if not dims:
+        return None
+
+    # Check if element type is float, double, or pointer
+    elem_name_lower = (elem_type_name or "").lower()
+    is_float = elem_name_lower == "float" or (elem_size == 4 and "float" in base_type.lower())
+    is_double = elem_name_lower == "double" or elem_name_lower == "float10" or \
+                (elem_size == 8 and "double" in base_type.lower())
+    is_pointer = '*' in base_type or 'pointer' in elem_name_lower
+
+    def format_element(elem_bytes):
+        """Format a single element value."""
+        if is_double and len(elem_bytes) == 8:
+            # Convert bytes to double
+            try:
+                double_val = struct.unpack('<d', bytes(elem_bytes))[0]
+                formatted = "%.17g" % double_val
+                # Ensure there's always a decimal point for valid C++ literal
+                if '.' not in formatted and 'e' not in formatted.lower():
+                    formatted += ".0"
+                return formatted
+            except:
+                return "0.0"
+        elif is_float and len(elem_bytes) == 4:
+            # Convert bytes to float
+            try:
+                float_val = struct.unpack('<f', bytes(elem_bytes))[0]
+                formatted = "%.9g" % float_val
+                # Ensure there's always a decimal point for valid C++ literal
+                if '.' not in formatted and 'e' not in formatted.lower():
+                    formatted += ".0"
+                return formatted + "f"
+            except:
+                return "0.0f"
+        elif is_pointer:
+            # Pointer type - format as hex address with cast
+            int_val = bytes_to_int_le(elem_bytes)
+            if int_val == 0:
+                return "nullptr"
+            else:
+                return "(%s)0x%08X" % (base_type.rstrip('[]0123456789 '), int_val)
+        else:
+            # Integer type
+            int_val = bytes_to_int_le(elem_bytes)
+            return format_signed_int(int_val, elem_size, elem_type_name)
+
+    def format_recursive(data, dimensions, depth=0):
+        """Recursively format nested array dimensions."""
+        if len(dimensions) == 1:
+            # Base case: innermost dimension - format as list of values
+            count = dimensions[0]
+            values = []
+            for i in range(count):
+                offset = i * elem_size
+                if offset + elem_size <= len(data):
+                    elem_bytes = data[offset:offset + elem_size]
+                    values.append(format_element(elem_bytes))
+                else:
+                    if is_double:
+                        values.append("0.0")
+                    elif is_float:
+                        values.append("0.0f")
+                    else:
+                        values.append("0")
+            return "{" + ", ".join(values) + "}"
+        else:
+            # Recursive case: format sub-arrays
+            outer_count = dimensions[0]
+            inner_dims = dimensions[1:]
+            # Calculate size of each sub-array
+            inner_total = 1
+            for d in inner_dims:
+                inner_total *= d
+            sub_array_size = inner_total * elem_size
+
+            sub_arrays = []
+            for i in range(outer_count):
+                offset = i * sub_array_size
+                sub_data = data[offset:offset + sub_array_size] if offset < len(data) else []
+                sub_arrays.append(format_recursive(sub_data, inner_dims, depth + 1))
+
+            # Format with line breaks for readability at outer levels
+            if depth == 0 and len(sub_arrays) > 1:
+                indent = "    "
+                inner = (",\n" + indent).join(sub_arrays)
+                return "{\n" + indent + inner + "\n}"
+            else:
+                return "{" + ", ".join(sub_arrays) + "}"
+
+    return format_recursive(list(raw_bytes), dims)
 
 
 def resolve_pointer_to_string(currentProgram, address_int, string_map=None):
@@ -355,6 +543,13 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None):
         if "Union" in data_type.__class__.__name__:
             return None
 
+        # Check if raw_bytes exceeds struct's defined length (variable-length struct)
+        # This handles cases like IconResource with BYTE data[1] but larger actual data
+        struct_length = data_type.getLength() if hasattr(data_type, 'getLength') else 0
+        if struct_length > 0 and len(raw_bytes) > struct_length:
+            # Data exceeds struct definition - can't properly initialize
+            return None
+
         components = data_type.getComponents()
         if not components:
             return None
@@ -443,7 +638,8 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None):
                         else:
                             field_values.append("(%s)%s" % (pointer_cast_type, format_int_by_size(val, length)))
                 else:
-                    field_values.append(format_int_by_size(val, length))
+                    # Use signed-aware formatting to avoid narrowing conversion errors
+                    field_values.append(format_signed_int(val, length, comp_type_name))
             else:
                 # For other large fields, output as byte array
                 byte_vals = ["0x%02X" % b for b in field_bytes]
@@ -679,6 +875,33 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                                         ptr_values.append("(%s)0x%08X" % (element_type, ptr_val))
                             initializer_value = format_array_initializer(ptr_values, vals_per_line=4)
 
+                    elif type_name.count("[") >= 2 and "char" not in type_name.lower():
+                        # Multi-dimensional array (not char) - format with nested braces
+                        # Get the innermost element type and size
+                        # Traverse array types but stop at non-array types (like pointers)
+                        innermost_type = elem_type
+                        while innermost_type and hasattr(innermost_type, 'getDataType'):
+                            # Stop if this is not an array type (e.g., it's a pointer)
+                            if "Array" not in innermost_type.__class__.__name__:
+                                break
+                            inner = innermost_type.getDataType()
+                            if inner:
+                                innermost_type = inner
+                            else:
+                                break
+                        if innermost_type and hasattr(innermost_type, 'getLength'):
+                            inner_size = innermost_type.getLength()
+                            inner_name = innermost_type.getName() if hasattr(innermost_type, 'getName') else ""
+                            multidim_init = format_multidim_array(raw_bytes, type_name, inner_size, inner_name)
+                            if multidim_init:
+                                initializer_value = multidim_init
+                            else:
+                                hex_values = ["0x%02X" % b for b in raw_bytes]
+                                initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+                        else:
+                            hex_values = ["0x%02X" % b for b in raw_bytes]
+                            initializer_value = format_array_initializer(hex_values, vals_per_line=16)
+
                     elif is_double_array:
                         # Double array - group bytes into 8-byte double values
                         import struct
@@ -769,13 +992,14 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                     elif elem_type and hasattr(elem_type, 'getLength'):
                         # Integer/scalar array - group bytes by element size
                         elem_size = elem_type.getLength()
+                        elem_type_name_for_sign = elem_type.getName() if hasattr(elem_type, 'getName') else ""
                         if elem_size > 1 and elem_size <= 8:
                             int_values = []
                             for i in range(0, len(raw_bytes), elem_size):
                                 if i + elem_size <= len(raw_bytes):
                                     elem_bytes = raw_bytes[i:i + elem_size]
                                     int_val = bytes_to_int_le(elem_bytes)
-                                    int_values.append(format_int_by_size(int_val, elem_size))
+                                    int_values.append(format_signed_int(int_val, elem_size, elem_type_name_for_sign))
                             if int_values:
                                 initializer_value = format_array_initializer(int_values, vals_per_line=8)
                             else:
@@ -844,7 +1068,8 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                 else:
                     initializer_value = get_safe_str(ghidra_value)
 
-            elif "float" in type_name.lower():
+            elif "float" in type_name.lower() and "[" not in type_name:
+                # Single float value (not an array)
                 float_val = get_float(ghidra_value)
                 if float_val is not None:
                     # Handle special float values
@@ -862,7 +1087,8 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                 else:
                     initializer_value = get_safe_str(ghidra_value)
 
-            elif "double" in type_name.lower():
+            elif "double" in type_name.lower() and "[" not in type_name:
+                # Single double value (not an array)
                 double_val = get_float(ghidra_value)
                 if double_val is not None:
                     # Handle special double values
@@ -1031,30 +1257,54 @@ def extract_globals_and_constants(currentProgram, string_map=None):
                     initializer_value = '""'
 
             else:
-                data_length = data_type.getLength()
-                byte_values = []
-                str_val = get_str(ghidra_value)
-                if str_val:
-                    if data_length <= 8:
-                        int_val = get_int(str_val, default_val=0)
-                        if int_val:
-                            for i in range(data_length):
-                                byte_values.append((int_val >> (i * 8)) & 0xFF)
+                # Check for multi-dimensional arrays first
+                if type_name.count("[") >= 2 and "char" not in type_name.lower() and has_nonzero_bytes and raw_bytes:
+                    # Multi-dimensional array - format with nested braces
+                    # Get the innermost element type and size
+                    # Traverse array types but stop at non-array types (like pointers)
+                    elem_type = data_type.getDataType() if hasattr(data_type, 'getDataType') else None
+                    innermost_type = elem_type
+                    while innermost_type and hasattr(innermost_type, 'getDataType'):
+                        # Stop if this is not an array type (e.g., it's a pointer)
+                        if "Array" not in innermost_type.__class__.__name__:
+                            break
+                        inner = innermost_type.getDataType()
+                        if inner:
+                            innermost_type = inner
                         else:
-                            byte_values = [ord(c) for c in str_val[:data_length]]
-                            while len(byte_values) < data_length:
-                                byte_values.append(0)
-                    else:
-                        byte_values = [ord(c) for c in str_val[:min(len(str_val), data_length)]]
-                        while len(byte_values) < data_length and len(byte_values) < 16:
-                            byte_values.append(0)
+                            break
+                    if innermost_type and hasattr(innermost_type, 'getLength'):
+                        inner_size = innermost_type.getLength()
+                        inner_name = innermost_type.getName() if hasattr(innermost_type, 'getName') else ""
+                        multidim_init = format_multidim_array(raw_bytes, type_name, inner_size, inner_name)
+                        if multidim_init:
+                            initializer_value = multidim_init
 
-                if len(byte_values) <= 16:
-                    hex_bytes = ", ".join("0x%02X" % b for b in byte_values)
-                    initializer_value = "{%s}" % hex_bytes
-                else:
-                    hex_bytes = ", ".join("0x%02X" % b for b in byte_values[:12])
-                    initializer_value = "{%s /* ... %d bytes total */}" % (hex_bytes, data_length)
+                if not initializer_value:
+                    data_length = data_type.getLength()
+                    byte_values = []
+                    str_val = get_str(ghidra_value)
+                    if str_val:
+                        if data_length <= 8:
+                            int_val = get_int(str_val, default_val=0)
+                            if int_val:
+                                for i in range(data_length):
+                                    byte_values.append((int_val >> (i * 8)) & 0xFF)
+                            else:
+                                byte_values = [ord(c) for c in str_val[:data_length]]
+                                while len(byte_values) < data_length:
+                                    byte_values.append(0)
+                        else:
+                            byte_values = [ord(c) for c in str_val[:min(len(str_val), data_length)]]
+                            while len(byte_values) < data_length and len(byte_values) < 16:
+                                byte_values.append(0)
+
+                    if len(byte_values) <= 16:
+                        hex_bytes = ", ".join("0x%02X" % b for b in byte_values)
+                        initializer_value = "{%s}" % hex_bytes
+                    else:
+                        hex_bytes = ", ".join("0x%02X" % b for b in byte_values[:12])
+                        initializer_value = "{%s /* ... %d bytes total */}" % (hex_bytes, data_length)
 
         if not initializer_value:
             if "[" in type_name:
@@ -1352,7 +1602,7 @@ def generate_globals_cpp_file(globals_list, range_key=""):
         C++ file content as a string
     """
     content = []
-    content.append('#include "globals.h"')
+    content.append('#include "nocturne.h"')
     content.append("")
     content.append("// =============================================================================")
     if range_key:
