@@ -8,6 +8,10 @@ import json
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.analysis import (
+    create_compilation_overview_svg,
+    create_all_files_compilation_svg
+)
 
 # =============================================================================
 # Path Normalization
@@ -458,177 +462,6 @@ def compile_all_functions(src_dir, include_dir, compiler='g++', num_threads=8,
 
 
 # =============================================================================
-# SVG Progress Visualization
-# =============================================================================
-
-def generate_progress_svg(results, output_path):
-    """Generate SVG visualization of compilation status.
-
-    Creates:
-    - Pie chart showing success/fail/skipped ratios
-    - Bar chart by error category
-
-    Args:
-        results: Dict from compile_all_functions()
-        output_path: Path to write compilation_progress.svg
-    """
-    import math
-
-    # Calculate statistics
-    total = len(results)
-    if total == 0:
-        return
-
-    successful = sum(1 for r in results.values() if r.get('success', False))
-    failed = total - successful
-
-    # Count errors by category
-    error_counts = {}
-    for result in results.values():
-        for error in result.get('errors', []):
-            category = error.get('category', 'other')
-            error_counts[category] = error_counts.get(category, 0) + 1
-
-    # Sort error categories by count
-    sorted_categories = sorted(error_counts.items(), key=lambda x: -x[1])[:8]
-
-    # SVG dimensions
-    width = 800
-    height = 500
-    pie_cx, pie_cy = 200, 200
-    pie_radius = 140
-
-    # Color palette
-    colors = {
-        'success': '#4CAF50',  # Green
-        'failed': '#F44336',   # Red
-    }
-    bar_colors = [
-        '#FF5722', '#FF9800', '#FFC107', '#FFEB3B',
-        '#8BC34A', '#03A9F4', '#3F51B5', '#9C27B0',
-    ]
-
-    # Build SVG
-    svg_parts = []
-    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
-    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (
-        width, height, width, height))
-    svg_parts.append('  <style>')
-    svg_parts.append('    .title { font: bold 16px sans-serif; }')
-    svg_parts.append('    .subtitle { font: bold 14px sans-serif; }')
-    svg_parts.append('    .label { font: 12px sans-serif; }')
-    svg_parts.append('    .value { font: bold 12px sans-serif; }')
-    svg_parts.append('  </style>')
-
-    # Background
-    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
-
-    # Main title
-    svg_parts.append('  <text x="%d" y="30" class="title" text-anchor="middle">Function Compilation Status</text>' % (
-        width // 2))
-
-    # === PIE CHART (left side) ===
-    svg_parts.append('  <text x="%d" y="60" class="subtitle" text-anchor="middle">Compilation Results</text>' % pie_cx)
-
-    pie_data = [
-        ('Successful', successful, colors['success']),
-        ('Failed', failed, colors['failed']),
-    ]
-
-    start_angle = -90
-    for label, value, color in pie_data:
-        if value == 0:
-            continue
-
-        percentage = value / total
-        angle = percentage * 360
-        end_angle = start_angle + angle
-        large_arc = 1 if angle > 180 else 0
-
-        start_rad = math.radians(start_angle)
-        end_rad = math.radians(end_angle)
-
-        x1 = pie_cx + pie_radius * math.cos(start_rad)
-        y1 = pie_cy + pie_radius * math.sin(start_rad)
-        x2 = pie_cx + pie_radius * math.cos(end_rad)
-        y2 = pie_cy + pie_radius * math.sin(end_rad)
-
-        if angle >= 359.9:
-            svg_parts.append('  <circle cx="%d" cy="%d" r="%d" fill="%s" stroke="white" stroke-width="2"/>' % (
-                pie_cx, pie_cy, pie_radius, color))
-        else:
-            path = 'M %d,%d L %.2f,%.2f A %d,%d 0 %d,1 %.2f,%.2f Z' % (
-                pie_cx, pie_cy, x1, y1, pie_radius, pie_radius, large_arc, x2, y2
-            )
-            svg_parts.append('  <path d="%s" fill="%s" stroke="white" stroke-width="2"/>' % (path, color))
-
-        start_angle = end_angle
-
-    # Pie legend
-    legend_y = 360
-    for i, (label, value, color) in enumerate(pie_data):
-        if value == 0:
-            continue
-        percentage = value / total * 100
-        svg_parts.append('  <rect x="80" y="%d" width="15" height="15" fill="%s"/>' % (
-            legend_y + i * 22, color))
-        svg_parts.append('  <text x="100" y="%d" class="label">%s: %d (%.1f%%)</text>' % (
-            legend_y + i * 22 + 12, label, value, percentage))
-
-    # === BAR CHART (right side) ===
-    if sorted_categories:
-        bar_x = 420
-        bar_y = 80
-        bar_width = 200
-        bar_height = 25
-        bar_spacing = 8
-
-        svg_parts.append('  <text x="%d" y="60" class="subtitle">Error Categories</text>' % bar_x)
-
-        max_count = sorted_categories[0][1] if sorted_categories else 1
-
-        for i, (category, count) in enumerate(sorted_categories):
-            y = bar_y + i * (bar_height + bar_spacing)
-            width_pct = (count / max_count) if max_count > 0 else 0
-            actual_width = int(width_pct * bar_width)
-
-            # Category label (truncated)
-            display_label = category[:20]
-            svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="end">%s</text>' % (
-                bar_x - 5, y + bar_height - 8, display_label))
-
-            # Background bar
-            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="#E0E0E0" rx="3"/>' % (
-                bar_x, y, bar_width, bar_height))
-
-            # Filled bar
-            color = bar_colors[i % len(bar_colors)]
-            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="3"/>' % (
-                bar_x, y, actual_width, bar_height, color))
-
-            # Count label
-            svg_parts.append('  <text x="%d" y="%d" class="value">%d</text>' % (
-                bar_x + bar_width + 10, y + bar_height - 8, count))
-
-    # Summary stats at bottom
-    summary_y = 450
-    success_rate = (successful * 100.0 / total) if total > 0 else 0
-    svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="middle">' % (width // 2, summary_y))
-    svg_parts.append('    Total: %d | Success Rate: %.1f%%' % (total, success_rate))
-    svg_parts.append('  </text>')
-
-    svg_parts.append('</svg>')
-
-    # Write SVG
-    try:
-        with open(output_path, 'w') as f:
-            f.write('\n'.join(svg_parts))
-        log_info("Wrote compilation progress SVG: %s" % output_path)
-    except Exception as e:
-        log_info("Failed to write compilation progress SVG: %s" % str(e))
-
-
-# =============================================================================
 # JSON Update Functions
 # =============================================================================
 
@@ -754,12 +587,15 @@ def compile_functions_after_export(pseudocode_dir, compiler='g++', num_threads=8
     log_info("  Successful: %d (%.1f%%)" % (successful, success_rate))
     log_info("  Failed: %d" % failed)
 
-    # Generate progress visualization
+    # Generate progress visualizations
     if reports_dir is None:
         reports_dir = pseudocode_dir
 
     svg_path = os.path.join(reports_dir, "compilation_progress.svg")
-    generate_progress_svg(results, svg_path)
+    create_compilation_overview_svg(results, svg_path)
+
+    all_files_svg_path = os.path.join(reports_dir, "all_files_compilation.svg")
+    create_all_files_compilation_svg(results, src_dir, all_files_svg_path)
 
     return {
         'total': total,

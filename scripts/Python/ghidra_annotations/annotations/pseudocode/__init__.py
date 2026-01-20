@@ -92,7 +92,13 @@ from ghidra_annotations.annotations.pseudocode.output import (
     export_function_prototypes
 )
 from ghidra_annotations.annotations.pseudocode.analysis import (
-    generate_analysis_report
+    generate_analysis_report,
+    create_pie_chart_svg,
+    create_progress_bar_svg,
+    create_overall_progress_svg,
+    create_compilation_overview_svg,
+    create_all_files_decompilation_svg,
+    create_all_files_compilation_svg
 )
 from ghidra_annotations.annotations.pseudocode.cleanup import (
     delete_pseudocode
@@ -110,7 +116,6 @@ from ghidra_annotations.annotations.pseudocode.function_compile import (
     parse_error_output,
     load_function_info_from_json,
     compile_all_functions,
-    generate_progress_svg,
     compile_functions_after_export
 )
 from ghidra_annotations.annotations.pseudocode.transforms import (

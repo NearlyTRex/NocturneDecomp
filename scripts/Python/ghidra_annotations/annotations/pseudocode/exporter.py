@@ -980,13 +980,6 @@ def export_pseudocode(currentProgram, path, strict=False):
     export_function_prototypes(currentProgram, pseudocode_dir, function_groups)
     timer.end_phase()
 
-    # Generate analysis report
-    timer.start_phase("Generate analysis report")
-    log_info("Generating analysis report...")
-    make_dirs(reports_dir)  # Ensure reports dir exists (may already exist from error report)
-    generate_analysis_report(pseudocode_src_dir, reports_dir)
-    timer.end_phase()
-
     # Second pass: Update JSON files with vtable indirect caller analysis
     timer.start_phase("Vtable indirect caller analysis")
     if os.path.isdir(vtables_dir):
@@ -1011,6 +1004,13 @@ def export_pseudocode(currentProgram, path, strict=False):
             compile_result['total'],
             compile_result['success_rate']
         ))
+    timer.end_phase()
+
+    # Generate analysis report (after compilation so it includes compilation status)
+    timer.start_phase("Generate analysis report")
+    log_info("Generating analysis report...")
+    make_dirs(reports_dir)  # Ensure reports dir exists (may already exist from error report)
+    generate_analysis_report(pseudocode_src_dir, reports_dir)
     timer.end_phase()
 
     # Log timing profile

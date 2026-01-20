@@ -8,18 +8,25 @@ This project uses [Ghidra](https://ghidra-sre.org/) to decompile and analyze the
 
 **Status:** Active Research - This is an ongoing research project with continuous updates as new discoveries are made.
 
-## Decompilation Progress
+## Progress
 
-### Overall Completion
-![Completion Status](annotations/nocedit.exe/reports/completion_pie.svg)
+![Overall Progress](annotations/nocedit.exe/reports/overall_progress.svg)
 
-### Virtual File Progress
-![File Progress](annotations/nocedit.exe/reports/files_progress.svg)
+*"Complete" = function has clean decompilation (no suspect patterns) AND compiles successfully with g++.*
 
-### Suspect Pattern Distribution
-![Suspect Breakdown](annotations/nocedit.exe/reports/suspect_breakdown.svg)
+### Decompilation Details
 
-*Graphs are automatically generated during annotation export. "Clean" functions have no decompiler artifacts (extraout_, unaff_, BADSPACEBASE, etc.) and represent high-confidence decompilation output.*
+| Status | Breakdown |
+|:------:|:---------:|
+| [![Completion](annotations/nocedit.exe/reports/completion_pie.svg)](annotations/nocedit.exe/reports/all_files_decompilation.svg) | [![Suspects](annotations/nocedit.exe/reports/suspect_breakdown.svg)](annotations/nocedit.exe/reports/all_files_decompilation.svg) |
+
+*Click charts to see per-file breakdown. "Clean" = no decompiler artifacts (extraout_, unaff_, BADSPACEBASE, etc.).*
+
+### Compilation Details
+
+[![Compilation Status](annotations/nocedit.exe/reports/compilation_progress.svg)](annotations/nocedit.exe/reports/all_files_compilation.svg)
+
+*Click chart to see per-file breakdown. Compiled with g++ -fsyntax-only.*
 
 ## Project Structure
 

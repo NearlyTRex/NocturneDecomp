@@ -27,7 +27,7 @@ from ghidra_annotations.util.log import log_info
 # SVG Graph Generation (no external dependencies)
 # =============================================================================
 
-def generate_svg_pie_chart(data, title, filename, output_path, colors=None):
+def create_pie_chart_svg(data, title, filename, output_path, colors=None):
     """Generate an SVG pie chart.
 
     Args:
@@ -148,7 +148,7 @@ def generate_svg_pie_chart(data, title, filename, output_path, colors=None):
         log_info("Failed to write SVG pie chart: %s" % str(e))
 
 
-def generate_svg_bar_chart(data, title, filename, output_path, show_percent=True):
+def create_progress_bar_svg(data, title, filename, output_path, show_percent=True):
     """Generate an SVG horizontal bar chart.
 
     Args:
@@ -247,6 +247,777 @@ def generate_svg_bar_chart(data, title, filename, output_path, show_percent=True
         log_info("Failed to write SVG bar chart: %s" % str(e))
 
 
+def create_overall_progress_svg(functions, compilation_results, output_path):
+    """Generate SVG showing combined decompilation + compilation progress.
+
+    Shows:
+    - Main progress bar: functions that are both clean AND compile successfully
+    - Detail bars: separate decompilation and compilation progress
+    - Summary statistics
+
+    Args:
+        functions: List of function data dicts with 'name' and 'complexity' fields
+        compilation_results: Dict from compile_all_functions() mapping func_name -> result
+        output_path: Path to write the SVG file
+    """
+    if not functions:
+        return
+
+    total = len(functions)
+
+    # Calculate decompilation stats
+    clean_funcs = set()
+    for f in functions:
+        if f.get('complexity', {}).get('suspect_count', 0) == 0:
+            clean_funcs.add(f.get('function', {}).get('name', ''))
+
+    # Calculate compilation stats
+    compiled_funcs = set()
+    if compilation_results:
+        for func_name, result in compilation_results.items():
+            if result.get('success', False):
+                compiled_funcs.add(func_name)
+
+    # Calculate combined stats
+    fully_complete = clean_funcs & compiled_funcs  # Both clean AND compiles
+    clean_only = clean_funcs - compiled_funcs      # Clean but doesn't compile
+    compiles_only = compiled_funcs - clean_funcs   # Compiles but has suspects
+    neither = total - len(clean_funcs | compiled_funcs)  # Neither clean nor compiles
+
+    decompiled_count = len(clean_funcs)
+    compiled_count = len(compiled_funcs)
+    complete_count = len(fully_complete)
+
+    decompiled_pct = (decompiled_count * 100.0 / total) if total > 0 else 0
+    compiled_pct = (compiled_count * 100.0 / total) if total > 0 else 0
+    complete_pct = (complete_count * 100.0 / total) if total > 0 else 0
+
+    # SVG dimensions
+    width = 600
+    height = 200
+    bar_width = 450
+    bar_height = 30
+    small_bar_height = 16
+    margin_left = 120
+    margin_top = 50
+
+    # Colors
+    complete_color = '#2E7D32'    # Dark green - fully done
+    decompile_color = '#4CAF50'  # Green - clean decompilation
+    compile_color = '#2196F3'    # Blue - compiles
+    bg_color = '#E0E0E0'         # Gray background
+
+    svg_parts = []
+    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
+    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (
+        width, height, width, height))
+    svg_parts.append('  <style>')
+    svg_parts.append('    .title { font: bold 16px sans-serif; }')
+    svg_parts.append('    .label { font: 12px sans-serif; fill: #333; }')
+    svg_parts.append('    .small-label { font: 10px sans-serif; fill: #666; }')
+    svg_parts.append('    .percent { font: bold 14px sans-serif; fill: #333; }')
+    svg_parts.append('    .small-percent { font: bold 11px sans-serif; fill: #333; }')
+    svg_parts.append('    .summary { font: 11px sans-serif; fill: #666; }')
+    svg_parts.append('  </style>')
+
+    # Background
+    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
+
+    # Title
+    svg_parts.append('  <text x="%d" y="25" class="title" text-anchor="middle">Decompilation Progress</text>' % (width // 2))
+
+    # Main progress bar - "Complete" (clean + compiles)
+    y = margin_top
+    svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="end">Complete</text>' % (
+        margin_left - 10, y + bar_height // 2 + 5))
+
+    # Background bar
+    svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="4"/>' % (
+        margin_left, y, bar_width, bar_height, bg_color))
+
+    # Progress bar
+    progress_width = int(complete_pct / 100.0 * bar_width)
+    if progress_width > 0:
+        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="4"/>' % (
+            margin_left, y, progress_width, bar_height, complete_color))
+
+    # Percentage label
+    svg_parts.append('  <text x="%d" y="%d" class="percent">%.1f%% (%d/%d)</text>' % (
+        margin_left + bar_width + 10, y + bar_height // 2 + 5, complete_pct, complete_count, total))
+
+    # Detail bars
+    detail_y = y + bar_height + 25
+
+    # Decompilation bar
+    svg_parts.append('  <text x="%d" y="%d" class="small-label" text-anchor="end">Decompiled</text>' % (
+        margin_left - 10, detail_y + small_bar_height // 2 + 4))
+    svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="3"/>' % (
+        margin_left, detail_y, bar_width, small_bar_height, bg_color))
+    decompile_width = int(decompiled_pct / 100.0 * bar_width)
+    if decompile_width > 0:
+        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="3"/>' % (
+            margin_left, detail_y, decompile_width, small_bar_height, decompile_color))
+    svg_parts.append('  <text x="%d" y="%d" class="small-percent">%.1f%%</text>' % (
+        margin_left + bar_width + 10, detail_y + small_bar_height // 2 + 4, decompiled_pct))
+
+    # Compilation bar
+    compile_y = detail_y + small_bar_height + 8
+    svg_parts.append('  <text x="%d" y="%d" class="small-label" text-anchor="end">Compiles</text>' % (
+        margin_left - 10, compile_y + small_bar_height // 2 + 4))
+    svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="3"/>' % (
+        margin_left, compile_y, bar_width, small_bar_height, bg_color))
+    compile_width = int(compiled_pct / 100.0 * bar_width)
+    if compile_width > 0:
+        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="3"/>' % (
+            margin_left, compile_y, compile_width, small_bar_height, compile_color))
+    svg_parts.append('  <text x="%d" y="%d" class="small-percent">%.1f%%</text>' % (
+        margin_left + bar_width + 10, compile_y + small_bar_height // 2 + 4, compiled_pct))
+
+    # Summary footer
+    summary_y = height - 15
+    svg_parts.append('  <text x="%d" y="%d" class="summary" text-anchor="middle">' % (width // 2, summary_y))
+    svg_parts.append('    %d functions total | %d clean | %d compile | %d fully complete' % (
+        total, decompiled_count, compiled_count, complete_count))
+    svg_parts.append('  </text>')
+
+    svg_parts.append('</svg>')
+
+    # Write SVG
+    try:
+        with open(output_path, 'w') as f:
+            f.write('\n'.join(svg_parts))
+        log_info("Wrote overall progress SVG: %s" % output_path)
+    except Exception as e:
+        log_info("Failed to write overall progress SVG: %s" % str(e))
+
+
+def create_all_files_decompilation_svg(files, output_path):
+    """Generate SVG showing decompilation status for ALL virtual files.
+
+    Args:
+        files: Dict of virtual file name -> {clean_count, suspect_count, total_count, clean_percent}
+        output_path: Path to write the SVG file
+    """
+    if not files:
+        return
+
+    # Sort by clean percentage (descending), then by name
+    sorted_files = sorted(
+        files.items(),
+        key=lambda x: (-x[1].get('clean_percent', 0), x[0])
+    )
+
+    # SVG dimensions - dynamic height based on file count
+    bar_height = 18
+    bar_spacing = 3
+    label_width = 300
+    bar_max_width = 300
+    count_width = 100
+    margin_top = 60
+    margin_bottom = 40
+    margin_left = 20
+    margin_right = 20
+
+    height = margin_top + len(sorted_files) * (bar_height + bar_spacing) + margin_bottom
+    width = margin_left + label_width + bar_max_width + count_width + margin_right
+
+    # Colors
+    clean_color = '#4CAF50'  # Green
+    suspect_color = '#F44336'  # Red
+
+    # Build SVG
+    svg_parts = []
+    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
+    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (
+        width, height, width, height))
+    svg_parts.append('  <style>')
+    svg_parts.append('    .title { font: bold 14px sans-serif; }')
+    svg_parts.append('    .label { font: 10px monospace; }')
+    svg_parts.append('    .count { font: 9px sans-serif; fill: #666; }')
+    svg_parts.append('  </style>')
+
+    # Background
+    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
+
+    # Title
+    svg_parts.append('  <text x="%d" y="20" class="title" text-anchor="middle">Virtual File Decompilation Status (All %d Files)</text>' % (
+        width // 2, len(sorted_files)))
+
+    # Legend
+    legend_y = 40
+    svg_parts.append('  <rect x="%d" y="%d" width="12" height="12" fill="%s"/>' % (
+        width // 2 - 100, legend_y - 10, clean_color))
+    svg_parts.append('  <text x="%d" y="%d" class="count">Clean</text>' % (
+        width // 2 - 85, legend_y))
+    svg_parts.append('  <rect x="%d" y="%d" width="12" height="12" fill="%s"/>' % (
+        width // 2 + 20, legend_y - 10, suspect_color))
+    svg_parts.append('  <text x="%d" y="%d" class="count">Has Suspects</text>' % (
+        width // 2 + 35, legend_y))
+
+    # Bars
+    for i, (vfile, stats) in enumerate(sorted_files):
+        y = margin_top + i * (bar_height + bar_spacing)
+        total = stats.get('total_count', 0)
+        clean = stats.get('clean_count', 0)
+        # Number of functions with suspects (not the count of suspect patterns)
+        with_suspects = total - clean
+
+        if total == 0:
+            continue
+
+        clean_rate = clean / total
+        suspect_rate = with_suspects / total
+
+        clean_width = int(clean_rate * bar_max_width)
+        suspect_width = int(suspect_rate * bar_max_width)
+
+        # Truncate label if too long
+        display_label = vfile
+        if len(display_label) > 42:
+            display_label = '...' + display_label[-39:]
+
+        # File label
+        svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="end">%s</text>' % (
+            margin_left + label_width - 5, y + bar_height - 4, display_label))
+
+        bar_x = margin_left + label_width
+
+        # Background bar
+        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="#E0E0E0" rx="2"/>' % (
+            bar_x, y, bar_max_width, bar_height))
+
+        # Clean portion
+        if clean_width > 0:
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="2"/>' % (
+                bar_x, y, clean_width, bar_height, clean_color))
+
+        # Suspect portion (stacked after clean)
+        if suspect_width > 0:
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s"/>' % (
+                bar_x + clean_width, y, suspect_width, bar_height, suspect_color))
+
+        # Count label
+        svg_parts.append('  <text x="%d" y="%d" class="count">%d/%d (%.0f%%)</text>' % (
+            bar_x + bar_max_width + 5, y + bar_height - 4, clean, total, clean_rate * 100))
+
+    # Summary at bottom
+    total_funcs = sum(s.get('total_count', 0) for s in files.values())
+    total_clean = sum(s.get('clean_count', 0) for s in files.values())
+    overall_rate = (total_clean * 100.0 / total_funcs) if total_funcs > 0 else 0
+
+    summary_y = height - 15
+    svg_parts.append('  <text x="%d" y="%d" class="count" text-anchor="middle">' % (width // 2, summary_y))
+    svg_parts.append('    %d files | %d/%d functions clean (%.1f%%)' % (
+        len(files), total_clean, total_funcs, overall_rate))
+    svg_parts.append('  </text>')
+
+    svg_parts.append('</svg>')
+
+    # Write SVG
+    try:
+        with open(output_path, 'w') as f:
+            f.write('\n'.join(svg_parts))
+        log_info("Wrote all files decompilation SVG: %s" % output_path)
+    except Exception as e:
+        log_info("Failed to write all files decompilation SVG: %s" % str(e))
+
+
+def create_all_files_compilation_svg(results, src_dir, output_path):
+    """Generate SVG showing compilation status for ALL virtual files.
+
+    Args:
+        results: Dict from compile_all_functions() mapping func_name -> result dict
+        src_dir: Source directory to calculate relative paths
+        output_path: Path to write the SVG file
+    """
+    if not results:
+        return
+
+    # Group results by virtual file (parent directory of cpp file)
+    virtual_files = {}
+    for func_name, result in results.items():
+        cpp_path = result.get('cpp_path', '')
+        if not cpp_path:
+            continue
+
+        # Get relative path from src_dir
+        try:
+            rel_path = os.path.relpath(os.path.dirname(cpp_path), src_dir)
+        except ValueError:
+            rel_path = os.path.dirname(cpp_path)
+
+        if rel_path not in virtual_files:
+            virtual_files[rel_path] = {'success': 0, 'failed': 0, 'total': 0}
+
+        virtual_files[rel_path]['total'] += 1
+        if result.get('success', False):
+            virtual_files[rel_path]['success'] += 1
+        else:
+            virtual_files[rel_path]['failed'] += 1
+
+    if not virtual_files:
+        return
+
+    # Sort by success rate (descending), then by name
+    sorted_files = sorted(
+        virtual_files.items(),
+        key=lambda x: (-x[1]['success'] / max(x[1]['total'], 1), x[0])
+    )
+
+    # SVG dimensions - dynamic height based on file count
+    bar_height = 18
+    bar_spacing = 3
+    label_width = 300
+    bar_max_width = 300
+    count_width = 100
+    margin_top = 60
+    margin_bottom = 40
+    margin_left = 20
+    margin_right = 20
+
+    height = margin_top + len(sorted_files) * (bar_height + bar_spacing) + margin_bottom
+    width = margin_left + label_width + bar_max_width + count_width + margin_right
+
+    # Colors
+    success_color = '#4CAF50'  # Green
+    failed_color = '#F44336'  # Red
+
+    # Build SVG
+    svg_parts = []
+    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
+    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (
+        width, height, width, height))
+    svg_parts.append('  <style>')
+    svg_parts.append('    .title { font: bold 14px sans-serif; }')
+    svg_parts.append('    .label { font: 10px monospace; }')
+    svg_parts.append('    .count { font: 9px sans-serif; fill: #666; }')
+    svg_parts.append('  </style>')
+
+    # Background
+    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
+
+    # Title
+    svg_parts.append('  <text x="%d" y="20" class="title" text-anchor="middle">Virtual File Compilation Status (All %d Files)</text>' % (
+        width // 2, len(sorted_files)))
+
+    # Legend
+    legend_y = 40
+    svg_parts.append('  <rect x="%d" y="%d" width="12" height="12" fill="%s"/>' % (
+        width // 2 - 100, legend_y - 10, success_color))
+    svg_parts.append('  <text x="%d" y="%d" class="count">Success</text>' % (
+        width // 2 - 85, legend_y))
+    svg_parts.append('  <rect x="%d" y="%d" width="12" height="12" fill="%s"/>' % (
+        width // 2 + 20, legend_y - 10, failed_color))
+    svg_parts.append('  <text x="%d" y="%d" class="count">Failed</text>' % (
+        width // 2 + 35, legend_y))
+
+    # Bars
+    for i, (vfile, stats) in enumerate(sorted_files):
+        y = margin_top + i * (bar_height + bar_spacing)
+        total = stats['total']
+        success = stats['success']
+        failed = stats['failed']
+
+        success_rate = success / total if total > 0 else 0
+        failed_rate = failed / total if total > 0 else 0
+
+        success_width = int(success_rate * bar_max_width)
+        failed_width = int(failed_rate * bar_max_width)
+
+        # Truncate label if too long
+        display_label = vfile
+        if len(display_label) > 42:
+            display_label = '...' + display_label[-39:]
+
+        # File label
+        svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="end">%s</text>' % (
+            margin_left + label_width - 5, y + bar_height - 4, display_label))
+
+        bar_x = margin_left + label_width
+
+        # Background bar
+        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="#E0E0E0" rx="2"/>' % (
+            bar_x, y, bar_max_width, bar_height))
+
+        # Success portion
+        if success_width > 0:
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="2"/>' % (
+                bar_x, y, success_width, bar_height, success_color))
+
+        # Failed portion (stacked after success)
+        if failed_width > 0:
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s"/>' % (
+                bar_x + success_width, y, failed_width, bar_height, failed_color))
+
+        # Count label
+        svg_parts.append('  <text x="%d" y="%d" class="count">%d/%d (%.0f%%)</text>' % (
+            bar_x + bar_max_width + 5, y + bar_height - 4, success, total, success_rate * 100))
+
+    # Summary at bottom
+    total_funcs = sum(s['total'] for s in virtual_files.values())
+    total_success = sum(s['success'] for s in virtual_files.values())
+    overall_rate = (total_success * 100.0 / total_funcs) if total_funcs > 0 else 0
+
+    summary_y = height - 15
+    svg_parts.append('  <text x="%d" y="%d" class="count" text-anchor="middle">' % (width // 2, summary_y))
+    svg_parts.append('    %d files | %d/%d functions compile (%.1f%%)' % (
+        len(virtual_files), total_success, total_funcs, overall_rate))
+    svg_parts.append('  </text>')
+
+    svg_parts.append('</svg>')
+
+    # Write SVG
+    try:
+        with open(output_path, 'w') as f:
+            f.write('\n'.join(svg_parts))
+        log_info("Wrote all files compilation SVG: %s" % output_path)
+    except Exception as e:
+        log_info("Failed to write all files compilation SVG: %s" % str(e))
+
+
+def create_compilation_overview_svg(results, output_path):
+    """Generate SVG visualization of compilation status.
+
+    Creates:
+    - Pie chart showing success/fail ratios
+    - Horizontal bar chart by error category with labels inside bars
+
+    Args:
+        results: Dict from compile_all_functions() mapping func_name -> result dict
+        output_path: Path to write compilation_progress.svg
+    """
+    # Calculate statistics
+    total = len(results)
+    if total == 0:
+        return
+
+    successful = sum(1 for r in results.values() if r.get('success', False))
+    failed = total - successful
+
+    # Count errors by category
+    error_counts = {}
+    for result in results.values():
+        for error in result.get('errors', []):
+            category = error.get('category', 'other')
+            error_counts[category] = error_counts.get(category, 0) + 1
+
+    # Sort error categories by count
+    sorted_categories = sorted(error_counts.items(), key=lambda x: -x[1])[:8]
+
+    # Format category names for display
+    def format_category(cat):
+        return cat.replace('_', ' ').title()
+
+    # SVG dimensions
+    width = 700
+    height = 480
+    pie_cx, pie_cy = 150, 180
+    pie_radius = 100
+
+    # Color palette
+    colors = {
+        'success': '#4CAF50',  # Green
+        'failed': '#F44336',   # Red
+    }
+    bar_colors = [
+        '#E53935', '#FB8C00', '#FDD835', '#43A047',
+        '#1E88E5', '#5E35B1', '#D81B60', '#00ACC1',
+    ]
+
+    # Build SVG
+    svg_parts = []
+    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
+    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (
+        width, height, width, height))
+    svg_parts.append('  <style>')
+    svg_parts.append('    .title { font: bold 18px sans-serif; }')
+    svg_parts.append('    .subtitle { font: bold 13px sans-serif; fill: #444; }')
+    svg_parts.append('    .label { font: 12px sans-serif; }')
+    svg_parts.append('    .bar-label { font: bold 11px sans-serif; fill: white; }')
+    svg_parts.append('    .bar-label-dark { font: bold 11px sans-serif; fill: #333; }')
+    svg_parts.append('    .count { font: bold 12px sans-serif; fill: #333; }')
+    svg_parts.append('    .summary { font: 12px sans-serif; fill: #666; }')
+    svg_parts.append('  </style>')
+
+    # Background
+    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
+
+    # Main title
+    svg_parts.append('  <text x="%d" y="30" class="title" text-anchor="middle">Function Compilation Status</text>' % (
+        width // 2))
+
+    # === PIE CHART (left side) ===
+    svg_parts.append('  <text x="%d" y="60" class="subtitle" text-anchor="middle">Results</text>' % pie_cx)
+
+    pie_data = [
+        ('Successful', successful, colors['success']),
+        ('Failed', failed, colors['failed']),
+    ]
+
+    start_angle = -90
+    for label, value, color in pie_data:
+        if value == 0:
+            continue
+
+        percentage = value / total
+        angle = percentage * 360
+        end_angle = start_angle + angle
+        large_arc = 1 if angle > 180 else 0
+
+        start_rad = math.radians(start_angle)
+        end_rad = math.radians(end_angle)
+
+        x1 = pie_cx + pie_radius * math.cos(start_rad)
+        y1 = pie_cy + pie_radius * math.sin(start_rad)
+        x2 = pie_cx + pie_radius * math.cos(end_rad)
+        y2 = pie_cy + pie_radius * math.sin(end_rad)
+
+        if angle >= 359.9:
+            svg_parts.append('  <circle cx="%d" cy="%d" r="%d" fill="%s" stroke="white" stroke-width="2"/>' % (
+                pie_cx, pie_cy, pie_radius, color))
+        else:
+            path = 'M %d,%d L %.2f,%.2f A %d,%d 0 %d,1 %.2f,%.2f Z' % (
+                pie_cx, pie_cy, x1, y1, pie_radius, pie_radius, large_arc, x2, y2
+            )
+            svg_parts.append('  <path d="%s" fill="%s" stroke="white" stroke-width="2"/>' % (path, color))
+
+        start_angle = end_angle
+
+    # Pie legend (below pie)
+    legend_y = 300
+    for i, (label, value, color) in enumerate(pie_data):
+        if value == 0:
+            continue
+        percentage = value / total * 100
+        svg_parts.append('  <rect x="%d" y="%d" width="14" height="14" fill="%s" rx="2"/>' % (
+            pie_cx - 70, legend_y + i * 24, color))
+        svg_parts.append('  <text x="%d" y="%d" class="label">%s: %d (%.1f%%)</text>' % (
+            pie_cx - 50, legend_y + i * 24 + 11, label, value, percentage))
+
+    # === BAR CHART (right side) ===
+    if sorted_categories:
+        bar_section_x = 320
+        bar_y_start = 70
+        bar_max_width = 280
+        bar_height = 32
+        bar_spacing = 12
+
+        svg_parts.append('  <text x="%d" y="60" class="subtitle">Error Categories</text>' % bar_section_x)
+
+        max_count = sorted_categories[0][1] if sorted_categories else 1
+
+        for i, (category, count) in enumerate(sorted_categories):
+            y = bar_y_start + i * (bar_height + bar_spacing)
+            width_pct = (count / max_count) if max_count > 0 else 0
+            actual_width = max(int(width_pct * bar_max_width), 2)  # Min width of 2px
+
+            # Background bar
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="#EEEEEE" rx="4"/>' % (
+                bar_section_x, y, bar_max_width, bar_height))
+
+            # Filled bar
+            color = bar_colors[i % len(bar_colors)]
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="4"/>' % (
+                bar_section_x, y, actual_width, bar_height, color))
+
+            # Category label inside bar (or outside if bar too small)
+            display_label = format_category(category)
+            label_x = bar_section_x + 8
+            text_y = y + bar_height // 2 + 4
+
+            if actual_width > 120:
+                # Label inside bar (white text)
+                svg_parts.append('  <text x="%d" y="%d" class="bar-label">%s</text>' % (
+                    label_x, text_y, display_label))
+            else:
+                # Label outside bar (dark text)
+                svg_parts.append('  <text x="%d" y="%d" class="bar-label-dark">%s</text>' % (
+                    bar_section_x + actual_width + 8, text_y, display_label))
+
+            # Count at end of bar area
+            svg_parts.append('  <text x="%d" y="%d" class="count" text-anchor="end">%s</text>' % (
+                bar_section_x + bar_max_width + 50, text_y, format(count, ',')))
+
+    # Summary stats at bottom
+    summary_y = height - 25
+    success_rate = (successful * 100.0 / total) if total > 0 else 0
+    svg_parts.append('  <text x="%d" y="%d" class="summary" text-anchor="middle">' % (width // 2, summary_y))
+    svg_parts.append('    %s functions total | %s successful | %.1f%% success rate' % (
+        format(total, ','), format(successful, ','), success_rate))
+    svg_parts.append('  </text>')
+
+    svg_parts.append('</svg>')
+
+    # Write SVG
+    try:
+        with open(output_path, 'w') as f:
+            f.write('\n'.join(svg_parts))
+        log_info("Wrote compilation progress SVG: %s" % output_path)
+    except Exception as e:
+        log_info("Failed to write compilation progress SVG: %s" % str(e))
+
+
+def create_compilation_by_file_svg(results, src_dir, output_path):
+    """Generate SVG visualization of compilation status per virtual file.
+
+    Groups functions by their parent directory (virtual source file) and shows
+    a horizontal bar chart of compilation success rates.
+
+    Args:
+        results: Dict from compile_all_functions() mapping func_name -> result dict
+        src_dir: Source directory to calculate relative paths
+        output_path: Path to write virtual_file_compilation.svg
+    """
+    if not results:
+        return
+
+    # Group results by virtual file (parent directory of cpp file)
+    virtual_files = {}
+    for func_name, result in results.items():
+        cpp_path = result.get('cpp_path', '')
+        if not cpp_path:
+            continue
+
+        # Get relative path from src_dir
+        try:
+            rel_path = os.path.relpath(os.path.dirname(cpp_path), src_dir)
+        except ValueError:
+            rel_path = os.path.dirname(cpp_path)
+
+        if rel_path not in virtual_files:
+            virtual_files[rel_path] = {'success': 0, 'failed': 0, 'total': 0}
+
+        virtual_files[rel_path]['total'] += 1
+        if result.get('success', False):
+            virtual_files[rel_path]['success'] += 1
+        else:
+            virtual_files[rel_path]['failed'] += 1
+
+    if not virtual_files:
+        return
+
+    # Sort by success rate (descending), then by name
+    sorted_files = sorted(
+        virtual_files.items(),
+        key=lambda x: (-x[1]['success'] / max(x[1]['total'], 1), x[0])
+    )
+
+    # Limit to top 30 files for readability
+    display_files = sorted_files[:30]
+
+    # SVG dimensions
+    bar_height = 20
+    bar_spacing = 4
+    label_width = 280
+    bar_max_width = 300
+    count_width = 80
+    margin_top = 50
+    margin_bottom = 40
+    margin_left = 20
+    margin_right = 20
+
+    height = margin_top + len(display_files) * (bar_height + bar_spacing) + margin_bottom
+    width = margin_left + label_width + bar_max_width + count_width + margin_right
+
+    # Color palette
+    success_color = '#4CAF50'  # Green
+    failed_color = '#F44336'   # Red
+
+    # Build SVG
+    svg_parts = []
+    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
+    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (
+        width, height, width, height))
+    svg_parts.append('  <style>')
+    svg_parts.append('    .title { font: bold 14px sans-serif; }')
+    svg_parts.append('    .label { font: 11px monospace; }')
+    svg_parts.append('    .count { font: 10px sans-serif; fill: #666; }')
+    svg_parts.append('  </style>')
+
+    # Background
+    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
+
+    # Title
+    svg_parts.append('  <text x="%d" y="25" class="title" text-anchor="middle">Virtual File Compilation Status</text>' % (
+        width // 2))
+
+    # Legend
+    legend_y = 40
+    svg_parts.append('  <rect x="%d" y="%d" width="12" height="12" fill="%s"/>' % (
+        width // 2 - 100, legend_y - 10, success_color))
+    svg_parts.append('  <text x="%d" y="%d" class="count">Success</text>' % (
+        width // 2 - 85, legend_y))
+    svg_parts.append('  <rect x="%d" y="%d" width="12" height="12" fill="%s"/>' % (
+        width // 2 + 20, legend_y - 10, failed_color))
+    svg_parts.append('  <text x="%d" y="%d" class="count">Failed</text>' % (
+        width // 2 + 35, legend_y))
+
+    # Bars
+    for i, (vfile, stats) in enumerate(display_files):
+        y = margin_top + i * (bar_height + bar_spacing)
+        total = stats['total']
+        success = stats['success']
+        failed = stats['failed']
+
+        success_rate = success / total if total > 0 else 0
+        failed_rate = failed / total if total > 0 else 0
+
+        success_width = int(success_rate * bar_max_width)
+        failed_width = int(failed_rate * bar_max_width)
+
+        # Truncate label if too long
+        display_label = vfile
+        if len(display_label) > 38:
+            display_label = '...' + display_label[-35:]
+
+        # File label
+        svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="end">%s</text>' % (
+            margin_left + label_width - 5, y + bar_height - 5, display_label))
+
+        bar_x = margin_left + label_width
+
+        # Background bar
+        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="#E0E0E0" rx="2"/>' % (
+            bar_x, y, bar_max_width, bar_height))
+
+        # Success portion
+        if success_width > 0:
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="2"/>' % (
+                bar_x, y, success_width, bar_height, success_color))
+
+        # Failed portion (stacked after success)
+        if failed_width > 0:
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s"/>' % (
+                bar_x + success_width, y, failed_width, bar_height, failed_color))
+
+        # Count label
+        svg_parts.append('  <text x="%d" y="%d" class="count">%d/%d (%.0f%%)</text>' % (
+            bar_x + bar_max_width + 5, y + bar_height - 5, success, total, success_rate * 100))
+
+    # Summary at bottom
+    total_funcs = sum(s['total'] for s in virtual_files.values())
+    total_success = sum(s['success'] for s in virtual_files.values())
+    overall_rate = (total_success * 100.0 / total_funcs) if total_funcs > 0 else 0
+
+    summary_y = height - 15
+    svg_parts.append('  <text x="%d" y="%d" class="count" text-anchor="middle">' % (width // 2, summary_y))
+    svg_parts.append('    %d virtual files | %d/%d functions compile (%.1f%%)' % (
+        len(virtual_files), total_success, total_funcs, overall_rate))
+    if len(sorted_files) > 30:
+        svg_parts.append(' | Showing top 30')
+    svg_parts.append('  </text>')
+
+    svg_parts.append('</svg>')
+
+    # Write SVG
+    try:
+        with open(output_path, 'w') as f:
+            f.write('\n'.join(svg_parts))
+        log_info("Wrote virtual file compilation SVG: %s" % output_path)
+    except Exception as e:
+        log_info("Failed to write virtual file compilation SVG: %s" % str(e))
+
+
 def generate_graphs(functions, files, output_path):
     """Generate all SVG graphs for README embedding.
 
@@ -255,6 +1026,22 @@ def generate_graphs(functions, files, output_path):
         files: Dict of virtual file analysis data
         output_path: Directory to write graphs to
     """
+    # 0. Overall progress bar (combined decompilation + compilation)
+    # Extract compilation results from function data
+    compilation_results = {}
+    for func in functions:
+        func_name = func.get('function', {}).get('name', '')
+        comp_status = func.get('compilation_status', {})
+        # Check if compilation was run (has success field)
+        if 'success' in comp_status:
+            compilation_results[func_name] = {
+                'success': comp_status.get('success', False),
+                'skipped': comp_status.get('skipped', False),
+            }
+
+    overall_svg_path = os.path.join(output_path, 'overall_progress.svg')
+    create_overall_progress_svg(functions, compilation_results, overall_svg_path)
+
     # 1. Overall completion pie chart
     total_funcs = len(functions)
     clean_funcs = sum(1 for f in functions if f.get('complexity', {}).get('suspect_count', 0) == 0)
@@ -264,7 +1051,7 @@ def generate_graphs(functions, files, output_path):
         ('Clean', clean_funcs),
         ('Has Suspects', suspect_funcs),
     ]
-    generate_svg_pie_chart(
+    create_pie_chart_svg(
         completion_data,
         'Function Completion Status (%d total)' % total_funcs,
         'completion_pie.svg',
@@ -272,28 +1059,7 @@ def generate_graphs(functions, files, output_path):
         colors=['#4CAF50', '#F44336']  # Green, Red
     )
 
-    # 2. Top files by completion bar chart
-    sorted_files = sorted(files.items(), key=lambda x: (-x[1]['clean_percent'], x[0]))
-    # Show mix of complete and incomplete files
-    complete_files = [(k, v) for k, v in sorted_files if v['clean_percent'] == 100][:5]
-    incomplete_files = [(k, v) for k, v in sorted_files if v['clean_percent'] < 100][:15]
-
-    # Combine and sort by percentage
-    display_files = complete_files + incomplete_files
-    display_files.sort(key=lambda x: -x[1]['clean_percent'])
-
-    bar_data = [
-        (vfile, data['clean_percent'], 100)
-        for vfile, data in display_files[:20]
-    ]
-    generate_svg_bar_chart(
-        bar_data,
-        'Virtual File Completion (Top 20)',
-        'files_progress.svg',
-        output_path
-    )
-
-    # 3. Suspect type breakdown pie chart
+    # 2. Suspect type breakdown pie chart
     suspect_counts = defaultdict(int)
     for func in functions:
         for suspect in func.get('suspects', []):
@@ -302,12 +1068,16 @@ def generate_graphs(functions, files, output_path):
     # Sort by count and take top 8
     suspect_data = sorted(suspect_counts.items(), key=lambda x: -x[1])[:8]
     if suspect_data:
-        generate_svg_pie_chart(
+        create_pie_chart_svg(
             suspect_data,
             'Suspect Types Distribution',
             'suspect_breakdown.svg',
             output_path
         )
+
+    # 4. All files decompilation status
+    all_files_svg_path = os.path.join(output_path, 'all_files_decompilation.svg')
+    create_all_files_decompilation_svg(files, all_files_svg_path)
 
 
 def load_function_data(pseudocode_src_dir):
