@@ -27,6 +27,11 @@ from ghidra_annotations.util.log import log_info
 # SVG Graph Generation (no external dependencies)
 # =============================================================================
 
+def fmt_num(n):
+    """Format a number with comma separators (e.g., 1234 -> '1,234')."""
+    return '{:,}'.format(n)
+
+
 def create_pie_chart_svg(data, title, filename, output_path, colors=None):
     """Generate an SVG pie chart.
 
@@ -293,7 +298,7 @@ def create_overall_progress_svg(functions, compilation_results, output_path):
     complete_pct = (complete_count * 100.0 / total) if total > 0 else 0
 
     # SVG dimensions
-    width = 600
+    width = 750
     height = 200
     bar_width = 450
     bar_height = 30
@@ -342,8 +347,8 @@ def create_overall_progress_svg(functions, compilation_results, output_path):
             margin_left, y, progress_width, bar_height, complete_color))
 
     # Percentage label
-    svg_parts.append('  <text x="%d" y="%d" class="percent">%.1f%% (%d/%d)</text>' % (
-        margin_left + bar_width + 10, y + bar_height // 2 + 5, complete_pct, complete_count, total))
+    svg_parts.append('  <text x="%d" y="%d" class="percent">%.1f%% (%s/%s)</text>' % (
+        margin_left + bar_width + 10, y + bar_height // 2 + 5, complete_pct, fmt_num(complete_count), fmt_num(total)))
 
     # Detail bars
     detail_y = y + bar_height + 25
@@ -376,8 +381,8 @@ def create_overall_progress_svg(functions, compilation_results, output_path):
     # Summary footer
     summary_y = height - 15
     svg_parts.append('  <text x="%d" y="%d" class="summary" text-anchor="middle">' % (width // 2, summary_y))
-    svg_parts.append('    %d functions total | %d clean | %d compile | %d fully complete' % (
-        total, decompiled_count, compiled_count, complete_count))
+    svg_parts.append('    %s functions total | %s clean | %s compile | %s fully complete' % (
+        fmt_num(total), fmt_num(decompiled_count), fmt_num(compiled_count), fmt_num(complete_count)))
     svg_parts.append('  </text>')
 
     svg_parts.append('</svg>')
@@ -497,8 +502,8 @@ def create_all_files_decompilation_svg(files, output_path):
                 bar_x + clean_width, y, suspect_width, bar_height, suspect_color))
 
         # Count label
-        svg_parts.append('  <text x="%d" y="%d" class="count">%d/%d (%.0f%%)</text>' % (
-            bar_x + bar_max_width + 5, y + bar_height - 4, clean, total, clean_rate * 100))
+        svg_parts.append('  <text x="%d" y="%d" class="count">%s/%s (%.0f%%)</text>' % (
+            bar_x + bar_max_width + 5, y + bar_height - 4, fmt_num(clean), fmt_num(total), clean_rate * 100))
 
     # Summary at bottom
     total_funcs = sum(s.get('total_count', 0) for s in files.values())
@@ -507,8 +512,8 @@ def create_all_files_decompilation_svg(files, output_path):
 
     summary_y = height - 15
     svg_parts.append('  <text x="%d" y="%d" class="count" text-anchor="middle">' % (width // 2, summary_y))
-    svg_parts.append('    %d files | %d/%d functions clean (%.1f%%)' % (
-        len(files), total_clean, total_funcs, overall_rate))
+    svg_parts.append('    %s files | %s/%s functions clean (%.1f%%)' % (
+        fmt_num(len(files)), fmt_num(total_clean), fmt_num(total_funcs), overall_rate))
     svg_parts.append('  </text>')
 
     svg_parts.append('</svg>')
@@ -650,8 +655,8 @@ def create_all_files_compilation_svg(results, src_dir, output_path):
                 bar_x + success_width, y, failed_width, bar_height, failed_color))
 
         # Count label
-        svg_parts.append('  <text x="%d" y="%d" class="count">%d/%d (%.0f%%)</text>' % (
-            bar_x + bar_max_width + 5, y + bar_height - 4, success, total, success_rate * 100))
+        svg_parts.append('  <text x="%d" y="%d" class="count">%s/%s (%.0f%%)</text>' % (
+            bar_x + bar_max_width + 5, y + bar_height - 4, fmt_num(success), fmt_num(total), success_rate * 100))
 
     # Summary at bottom
     total_funcs = sum(s['total'] for s in virtual_files.values())
@@ -660,8 +665,8 @@ def create_all_files_compilation_svg(results, src_dir, output_path):
 
     summary_y = height - 15
     svg_parts.append('  <text x="%d" y="%d" class="count" text-anchor="middle">' % (width // 2, summary_y))
-    svg_parts.append('    %d files | %d/%d functions compile (%.1f%%)' % (
-        len(virtual_files), total_success, total_funcs, overall_rate))
+    svg_parts.append('    %s files | %s/%s functions compile (%.1f%%)' % (
+        fmt_num(len(virtual_files)), fmt_num(total_success), fmt_num(total_funcs), overall_rate))
     svg_parts.append('  </text>')
 
     svg_parts.append('</svg>')
@@ -991,8 +996,8 @@ def create_compilation_by_file_svg(results, src_dir, output_path):
                 bar_x + success_width, y, failed_width, bar_height, failed_color))
 
         # Count label
-        svg_parts.append('  <text x="%d" y="%d" class="count">%d/%d (%.0f%%)</text>' % (
-            bar_x + bar_max_width + 5, y + bar_height - 5, success, total, success_rate * 100))
+        svg_parts.append('  <text x="%d" y="%d" class="count">%s/%s (%.0f%%)</text>' % (
+            bar_x + bar_max_width + 5, y + bar_height - 5, fmt_num(success), fmt_num(total), success_rate * 100))
 
     # Summary at bottom
     total_funcs = sum(s['total'] for s in virtual_files.values())
@@ -1001,8 +1006,8 @@ def create_compilation_by_file_svg(results, src_dir, output_path):
 
     summary_y = height - 15
     svg_parts.append('  <text x="%d" y="%d" class="count" text-anchor="middle">' % (width // 2, summary_y))
-    svg_parts.append('    %d virtual files | %d/%d functions compile (%.1f%%)' % (
-        len(virtual_files), total_success, total_funcs, overall_rate))
+    svg_parts.append('    %s virtual files | %s/%s functions compile (%.1f%%)' % (
+        fmt_num(len(virtual_files)), fmt_num(total_success), fmt_num(total_funcs), overall_rate))
     if len(sorted_files) > 30:
         svg_parts.append(' | Showing top 30')
     svg_parts.append('  </text>')
@@ -1053,7 +1058,7 @@ def generate_graphs(functions, files, output_path):
     ]
     create_pie_chart_svg(
         completion_data,
-        'Function Completion Status (%d total)' % total_funcs,
+        'Function Completion Status (%s total)' % fmt_num(total_funcs),
         'completion_pie.svg',
         output_path,
         colors=['#4CAF50', '#F44336']  # Green, Red
