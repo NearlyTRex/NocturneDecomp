@@ -16,6 +16,20 @@ SFogGrid g_CameraFogGrid = {};
 // char[307200]
 char g_CameraIndexedImageData[307200] = {};
 
+// int
+int g_ImageProcessingState1 = {};
+int g_ImageProcessingState2 = {};
+int g_ImageBytesPerPixel = {};
+int g_CameraScreenWidth = {};
+int g_CameraScreenHeight = {};
+int g_ScanlineSpanCount = {};
+int g_BackgroundSceneDepth = {};
+int g_BackgroundSavedBitsPerPixel = {};
+int g_BackgroundSavedUseExternalRenderer = {};
+int g_BackgroundSavedRedBitPosition = {};
+int g_BackgroundSavedGreenBitPosition = {};
+int g_BackgroundSavedBlueBitPosition = {};
+
 // int[256]
 int g_ScanlineSpanLeft[256] = {};
 int g_ScanlineSpanRight[256] = {};

@@ -52,3 +52,30 @@ extern char DAT_02db8c70[256];
 extern char DAT_02db9670[256];
 extern char DAT_02dba070[256];
 
+// int
+extern int g_HeroCount;
+extern int g_LocalHeroIndex;
+extern int g_SkipIntroVideo;
+extern int g_ItemDefinitionCount;
+
+// undefined4
+extern undefined4 DAT_02db8700;
+extern undefined4 DAT_02db8734;
+extern undefined4 DAT_02db8738;
+extern undefined4 DAT_02db8888;
+extern undefined4 DAT_02db88c8;
+extern undefined4 DAT_02db88d0;
+extern undefined4 DAT_02db88ec;
+extern undefined4 DAT_02db88f4;
+extern undefined4 DAT_02db8970;
+extern undefined4 DAT_02db89a4;
+extern undefined4 DAT_02db89a8;
+extern undefined4 DAT_02db89b0;
+extern undefined4 DAT_02db89f4;
+extern undefined4 DAT_02db89f8;
+extern undefined4 DAT_02db89fc;
+extern undefined4 DAT_02db8a08;
+extern undefined4 DAT_02db8a0c;
+extern undefined4 DAT_02db8a18;
+extern undefined4 DAT_02db8a20;
+

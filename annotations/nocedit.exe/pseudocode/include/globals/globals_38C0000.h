@@ -11,3 +11,6 @@
 // CSkeleton[40]
 extern CSkeleton g_SkeletonPool[40];
 
+// int
+extern int g_SkeletonPoolCount;
+

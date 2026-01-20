@@ -22,17 +22,17 @@ cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
   iVar1 = x2;
   this_ptr_00 = this_ptr;
   if (g_AnimationTimerValue != g_LastAnimationTimerValue) {
-    g_DashAnimationAccumulator =
-         (float)g_GlobalDeltaTimeInt * (float)1.52587890625e-05 + g_DashAnimationAccumulator
-    ;
+    g_DashAnimationAccumulatorOther =
+         (float)g_GlobalDeltaTimeInt * (float)1.52587890625e-05 +
+         g_DashAnimationAccumulatorOther;
     g_LastAnimationTimerValue = g_AnimationTimerValue;
-    if (g_DashAnimationThreshold < g_DashAnimationAccumulator) {
+    if (g_DashAnimationThreshold < g_DashAnimationAccumulatorOther) {
       g_DashOffsetCounter =
-           g_DashAnimationAccumulator / g_DashAnimationThreshold + g_DashOffsetCounter;
+           g_DashAnimationAccumulatorOther / g_DashAnimationThreshold + g_DashOffsetCounter;
       if ((float)(g_DashLength * 2) < g_DashOffsetCounter) {
         g_DashOffsetCounter = 0.0;
       }
-      g_DashAnimationAccumulator = 0.0;
+      g_DashAnimationAccumulatorOther = 0.0;
     }
   }
   dVar3 = crt_math_c_round_FUN_005fe6b0((double)g_DashOffsetCounter);

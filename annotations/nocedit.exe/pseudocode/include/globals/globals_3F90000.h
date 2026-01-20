@@ -3,6 +3,9 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/ddraw.h"
+#include "system/mmsystem.h"
+#include "system/stdio.h"
+#include "system/unknwn.h"
 #include "system/watcom.h"
 #include "system/windef.h"
 #include "system/winnt.h"
@@ -17,6 +20,12 @@
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x3F90000
 // =============================================================================
+
+// BOOL
+extern BOOL g_UseMultimediaTimer;
+
+// BYTE
+extern BYTE g_SignalHandlingActive;
 
 // CDemonActorType
 extern CDemonActorType g_CWaterActorClassInfo;
@@ -37,6 +46,16 @@ extern CVector3i g_TempProjectedCoord;
 // CWeather
 extern CWeather g_CWeatherInstance;
 
+// DWORD
+extern DWORD g_PreviousCounterLow;
+extern DWORD g_PreviousCounterHigh;
+extern DWORD g_MovieHandle;
+extern DWORD g_StaticCriticalSectionCounter;
+extern DWORD g_DynamicCriticalSectionCounter;
+
+// FileListNode*
+extern FileListNode* g_AllocatedListHead;
+
 // HMODULE
 extern HMODULE g_WinmmDll;
 
@@ -44,12 +63,25 @@ extern HMODULE g_WinmmDll;
 extern HWND g_MainWindowHandle;
 extern HWND g_MovieWindowHandle;
 
+// IDirectDraw*
+extern IDirectDraw* g_DirectDrawObject;
+
+// IDirectDrawSurface*
+extern IDirectDrawSurface* g_DirectDrawSurface;
+extern IDirectDrawSurface* g_SoftwareRenderSurface;
+
+// IUnknown*
+extern IUnknown* g_DirectDrawUnknown;
+
 // LARGE_INTEGER
 extern LARGE_INTEGER g_PerformanceCounter;
 extern LARGE_INTEGER g_PerformanceFrequency;
 
 // LPCRITICAL_SECTION
 extern LPCRITICAL_SECTION g_GlobalInitLock;
+
+// LPCRITICAL_SECTION*
+extern LPCRITICAL_SECTION* g_DynamicCriticalSectionArray;
 
 // PALETTEENTRY[256]
 extern PALETTEENTRY g_DDPaletteBuffer[256];
@@ -70,8 +102,24 @@ extern SRenderVertex g_ClipVertexBufferStage1[32];
 extern SRenderVertex g_ClipVertexBufferStage3[32];
 extern SRenderVertex g_ClipVertexBufferStage4[32];
 
+// ThreadRegistryEntry*
+extern ThreadRegistryEntry* g_ThreadDataRegistryList;
+
+// WCHAR*
+extern WCHAR* g_CommandLineW;
+
 // WNDPROC[4]
 extern WNDPROC g_WindowMessageHandlers[4];
+
+// byte
+extern byte g_CommandLineBuffer;
+
+// char*
+extern char* g_CommandLineA;
+
+// char**
+extern char** g_EnvironStringArea;
+extern char** g_EnvironmentBlock;
 
 // char*[128]
 extern char* g_ArgVector[128];
@@ -91,14 +139,84 @@ extern char g_DllFileNameBuffer_A[260];
 // char[512]
 extern char g_ErrorMessageBuffer_03f96c30[512];
 
+// double
+extern double g_TimerCalibration;
+
 // dword
 extern dword DWORD_03f9d000;
+
+// int
+extern int g_RenderingInProgress;
+extern int g_GraphicsResetFlag;
+extern int g_UseSoftwareRendering;
+extern int g_AccumulatedGameTime;
+extern int g_InputReadIndex;
+extern int g_InputWriteIndex;
+extern int g_InputCountMaybe;
+extern int g_UnknownInputValue;
+extern int g_CrosshairBrightness;
+extern int g_InputDisabled;
+extern int g_ApplicationActive;
+extern int g_TotalPhysicalMemory;
+extern int g_LeftMouseReleased;
+extern int g_RightMouseReleased;
+extern int g_MiddleMouseReleased;
+extern int g_NumWindowMessageHandlers;
+extern int g_ArgCount;
+extern int g_MoviePlaying;
+extern int g_FullscreenMovie;
+extern int g_ClipVertexCountStage1;
+extern int g_ClipVertexCountStage2;
+extern int g_ClipVertexCountStage3;
+extern int g_ClipVertexCountStage4;
+extern int g_RasterizerEdgeCount;
+extern int g_RasterizerMinY;
+extern int g_RasterizerMaxY;
+extern int g_EmergencyExitFlag;
+extern int g_EnvironInitialized;
+extern int g_MultibyteLocaleActive;
+extern int g_BufferedCharacter;
+extern int g_BufferedVirtualKey;
+extern int g_BufferedRepeatCount;
 
 // int[20]
 extern int g_InputBuffer[20];
 
 // int[513]
 extern int g_MessageFlags[513];
+
+// joyGetPosEx*
+extern joyGetPosEx* g_joyGetPosEx;
+
+// undefined1
+extern undefined1 DAT_03f96a78;
+extern undefined1 DAT_03f96a79;
+extern undefined1 DAT_03f98ff1;
+extern undefined1 DAT_03f98ff2;
+extern undefined1 DAT_03f98ff3;
+extern undefined1 DAT_03f98ff4;
+extern undefined1 DAT_03f9b850;
+
+// undefined4
+extern undefined4 DAT_03f90a88;
+extern undefined4 DAT_03f90a8c;
+extern undefined4 DAT_03f90a90;
+extern undefined4 DAT_03f90a94;
+extern undefined4 DAT_03f90a98;
+extern undefined4 DAT_03f90a9c;
+extern undefined4 DAT_03f939a4;
+extern undefined4 DAT_03f939a8;
+extern undefined4 DAT_03f96758;
+extern undefined4 DAT_03f9675c;
+extern undefined4 DAT_03f96b40;
+extern undefined4 g_FreeListHeadPointer;
+extern undefined4 DAT_03f9b210;
+extern undefined4 DAT_03f9c150;
+
+// void*
+extern void* g_SoftwareFrameBuffer;
+extern void* g_CurrentThreadTlsBlock;
+extern void* g_TlsDataBase;
 
 // wchar_t[260]
 extern wchar_t g_ExeFileNameBuffer_W[260];

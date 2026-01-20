@@ -19,3 +19,8 @@ CVector3i g_NormalizedViewVector = {};
 // char[512]
 char g_ErrorMessageBuffer_02dd3130[512] = {};
 
+// int
+int g_LightDirectionX2 = {};
+int g_LightDirectionY2 = {};
+int g_LightDirectionZ2 = {};
+

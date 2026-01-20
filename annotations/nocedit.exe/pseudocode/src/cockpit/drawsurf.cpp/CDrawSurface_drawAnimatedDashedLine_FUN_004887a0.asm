@@ -23,7 +23,7 @@
 ;   double g_TimeNormalizationFactor = 0.0000152587890625
 ;   int g_DashLength = 0x1
 ;   float g_DashAnimationThreshold = 0.1000000
-;   float g_DashAnimationAccumulator
+;   float g_DashAnimationAccumulatorOther
 ;   float g_DashOffsetCounter
 ;   int g_LastAnimationTimerValue
 ;   int g_GlobalDeltaTimeInt
@@ -194,18 +194,18 @@ section .text
     FILD dword ptr [0x02cf6a80]         ; 004888f3 | g_GlobalDeltaTimeInt
         ;   Label: LAB_004888f3
     FMUL double ptr [0x00621e3e]        ; 004888f9 | g_TimeNormalizationFactor
-    FLD float ptr [0x02c6d2c4]          ; 004888ff | g_DashAnimationAccumulator
+    FLD float ptr [0x02c6d2c4]          ; 004888ff | g_DashAnimationAccumulatorOther
     FXCH                                ; 00488905
     FADD ST0,ST1                        ; 00488907
     MOV dword ptr [0x02c6d2cc],ECX      ; 00488909 | g_LastAnimationTimerValue
     FSTP ST1                            ; 0048890f
-    FST float ptr [0x02c6d2c4]          ; 00488911 | g_DashAnimationAccumulator
+    FST float ptr [0x02c6d2c4]          ; 00488911 | g_DashAnimationAccumulatorOther
     FCOMP float ptr [0x006703e0]        ; 00488917 | g_DashAnimationThreshold
     FNSTSW AX                           ; 0048891d
     SAHF                                ; 0048891f
     JBE 0x004887c5                      ; 00488920
         ;   XREF to: 004887c5 (CONDITIONAL_JUMP)  ; LAB_004887c5
-    FLD float ptr [0x02c6d2c4]          ; 00488926 | g_DashAnimationAccumulator
+    FLD float ptr [0x02c6d2c4]          ; 00488926 | g_DashAnimationAccumulatorOther
     FDIV float ptr [0x006703e0]         ; 0048892c | g_DashAnimationThreshold
     MOV EDX,dword ptr [0x006703dc]      ; 00488932 | g_DashLength
     ADD EDX,EDX                         ; 00488938
@@ -223,7 +223,7 @@ section .text
     MOV dword ptr [0x02c6d2c8],EBX      ; 0048895d | g_DashOffsetCounter
     XOR EAX,EAX                         ; 00488963
         ;   Label: LAB_00488963
-    MOV [0x02c6d2c4],EAX                ; 00488965 | g_DashAnimationAccumulator
+    MOV [0x02c6d2c4],EAX                ; 00488965 | g_DashAnimationAccumulatorOther
     JMP 0x004887c5                      ; 0048896a
         ;   XREF to: 004887c5 (UNCONDITIONAL_JUMP)  ; LAB_004887c5
     PUSH EBX                            ; 0048896f

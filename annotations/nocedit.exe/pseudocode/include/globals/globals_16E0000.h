@@ -11,3 +11,6 @@
 // SShapeEditorPolygon[20000]
 extern SShapeEditorPolygon g_ModelPolygonData[20000];
 
+// int
+extern int g_PolygonCount;
+

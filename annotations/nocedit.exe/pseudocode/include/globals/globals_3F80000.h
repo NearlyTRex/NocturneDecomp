@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CTerrain.h"
+#include "types/classes/CTextureCache.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWater.h"
 #include "types/structs/SCollisionInfo.h"
@@ -27,6 +28,9 @@ extern CDemonActorType g_CCryptVesselClassInfo;
 // CTerrain
 extern CTerrain g_CTerrainInstance;
 
+// CTextureCache*
+extern CTextureCache* g_TextureCacheInstance;
+
 // CVector3f
 extern CVector3f g_ZeroVector;
 
@@ -42,6 +46,20 @@ extern SCollisionInfo DAT_03f8fae8[100];
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_CurrentTexture;
 
+// float
+extern float g_WaterAnimationPhase;
+
+// int
+extern int g_TexturePreviewFullscreen;
+extern int g_TexturePreviewX;
+extern int g_TexturePreviewY;
+extern int g_TexturePreviewWidth;
+extern int g_TexturePreviewHeight;
+extern int g_CurrentTextureIndex;
+extern int g_WaterAnimationTimer;
+extern int g_WaterCurrentFrame;
+extern int g_VisibleWaterTileCount;
+
 // int[4096]
 extern int g_VisibleWaterTilesX[4096];
 extern int g_VisibleWaterTilesY[4096];
@@ -49,4 +67,8 @@ extern int g_VisibleWaterTilesY[4096];
 // uchar[4]
 extern uchar g_BroadcastIP[4];
 extern uchar g_AnyAddressIP[4];
+
+// undefined1
+extern undefined1 DAT_03f8f608;
+extern undefined1 DAT_03f8f609;
 

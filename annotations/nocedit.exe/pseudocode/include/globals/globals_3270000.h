@@ -35,6 +35,25 @@ extern CKeyFramedModel g_CKeyFramedModelInstance;
 // CRect
 extern CRect DAT_032770b4;
 
+// int
+extern int g_MasterLightCount;
+extern int g_ActiveLightCount;
+extern int g_DynamicLightCount;
+extern int g_CoronaGlobeCount;
+
 // int[65536]
 extern int g_IntensityToValueLookupTable[65536];
+
+// undefined4
+extern undefined4 DAT_0327785c;
+extern undefined4 DAT_03277860;
+extern undefined4 DAT_03277864;
+extern undefined4 DAT_032779f0;
+extern undefined4 DAT_032779f4;
+extern undefined4 DAT_03277b80;
+extern undefined4 DAT_03277b84;
+extern undefined4 DAT_03277b88;
+extern undefined4 DAT_03277d80;
+extern undefined4 DAT_03277d84;
+extern undefined4 DAT_03277d88;
 

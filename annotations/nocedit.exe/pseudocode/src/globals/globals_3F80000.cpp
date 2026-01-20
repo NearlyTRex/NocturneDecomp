@@ -18,6 +18,9 @@ CDemonActorType g_CCryptVesselClassInfo = {};
 // CTerrain
 CTerrain g_CTerrainInstance = {};
 
+// CTextureCache*
+CTextureCache* g_TextureCacheInstance = {};
+
 // CVector3f
 CVector3f g_ZeroVector = {};
 
@@ -33,6 +36,20 @@ SCollisionInfo DAT_03f8fae8[100] = {};
 // SMRGLTextureBasic
 SMRGLTextureBasic g_CurrentTexture = {};
 
+// float
+float g_WaterAnimationPhase = {};
+
+// int
+int g_TexturePreviewFullscreen = {};
+int g_TexturePreviewX = {};
+int g_TexturePreviewY = {};
+int g_TexturePreviewWidth = {};
+int g_TexturePreviewHeight = {};
+int g_CurrentTextureIndex = {};
+int g_WaterAnimationTimer = {};
+int g_WaterCurrentFrame = {};
+int g_VisibleWaterTileCount = {};
+
 // int[4096]
 int g_VisibleWaterTilesX[4096] = {};
 int g_VisibleWaterTilesY[4096] = {};
@@ -40,4 +57,8 @@ int g_VisibleWaterTilesY[4096] = {};
 // uchar[4]
 uchar g_BroadcastIP[4] = {};
 uchar g_AnyAddressIP[4] = {};
+
+// undefined1
+undefined1 DAT_03f8f608 = {};
+undefined1 DAT_03f8f609 = {};
 

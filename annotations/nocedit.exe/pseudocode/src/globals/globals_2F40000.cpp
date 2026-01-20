@@ -27,3 +27,11 @@ double g_Mp3AntiAliasCA[8] = {};
 // float[64][32]
 float g_MpegSynthesisDctTable[64][32] = {};
 
+// int
+int g_HuffmanTablesInitialized = {};
+int g_MpegRequantTablesInitialized = {};
+
+// undefined4
+undefined4 DAT_02f43974 = {};
+undefined4 DAT_02f43978 = {};
+

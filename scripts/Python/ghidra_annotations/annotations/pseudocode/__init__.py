@@ -97,12 +97,21 @@ from ghidra_annotations.annotations.pseudocode.analysis import (
 from ghidra_annotations.annotations.pseudocode.cleanup import (
     delete_pseudocode
 )
-from ghidra_annotations.annotations.pseudocode.compile import (
+from ghidra_annotations.annotations.pseudocode.header_compile import (
     verify_headers,
     verify_headers_after_export,
     get_failed_headers_report,
     verify_cpp_files,
     verify_globals_after_export
+)
+from ghidra_annotations.annotations.pseudocode.function_compile import (
+    compile_function_cpp,
+    categorize_error,
+    parse_error_output,
+    load_function_info_from_json,
+    compile_all_functions,
+    generate_progress_svg,
+    compile_functions_after_export
 )
 from ghidra_annotations.annotations.pseudocode.transforms import (
     UNDEFINED_TYPE_REPLACEMENTS,

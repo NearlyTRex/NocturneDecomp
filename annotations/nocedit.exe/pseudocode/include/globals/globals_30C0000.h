@@ -15,3 +15,14 @@ extern CPathMap* g_PathMapList[200];
 // CPathQueueNode[5000]
 extern CPathQueueNode g_PathfindingQueue[5000];
 
+// int
+extern int g_PathfindingMaxClimbHeight;
+extern int g_PathMapCount;
+extern int g_PathfindingCurrentX;
+extern int g_PathfindingCurrentZ;
+extern int g_PathfindingDestX;
+extern int g_PathfindingDestZ;
+
+// undefined1
+extern undefined1 DAT_030c3ab0;
+

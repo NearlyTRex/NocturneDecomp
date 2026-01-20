@@ -11,3 +11,6 @@
 // STextureAtlasEntry[250]
 extern STextureAtlasEntry g_TextureAtlasEntries[250];
 
+// int
+extern int g_TextureProcessedCount;
+

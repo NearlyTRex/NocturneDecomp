@@ -251,7 +251,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
               } while (iVar7 < this_ptr->tracked_file_count);
             }
             if (this_ptr->tracked_file_count <= iVar7) {
-              pcVar14 = g_CurrentFilename;
+              pcVar14 = g_CurrentFilenameBuffer;
               iVar2 = 0x4e;
               pcVar13 = *(char **)((int)&local_1424->name_or_offset + local_2c);
               g_AuditOperationType = 1;
@@ -459,7 +459,7 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                 }
               }
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0x88e);
-              pcVar13 = g_CurrentFilename;
+              pcVar13 = g_CurrentFilenameBuffer;
               pacVar8 = local_1c;
               do {
                 cVar1 = (*pacVar8)[0];

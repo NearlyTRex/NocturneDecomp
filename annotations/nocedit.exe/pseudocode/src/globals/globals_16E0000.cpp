@@ -7,3 +7,6 @@
 // SShapeEditorPolygon[20000]
 SShapeEditorPolygon g_ModelPolygonData[20000] = {};
 
+// int
+int g_PolygonCount = {};
+

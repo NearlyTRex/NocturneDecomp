@@ -18,3 +18,13 @@ extern CVector3f g_DeformableModelRayHitNormal;
 // CVector3f[3000]
 extern CVector3f g_ShatterVertexArray[3000];
 
+// int
+extern int g_DeformableModelRayHitPartIndex;
+extern int g_DeformableModelRayHitLodIndex;
+extern int g_DeformableModelRayHitTriangleIndex;
+extern int g_DeformableModelCount;
+
+// uchar
+extern uchar g_FloatVertexArrayInitialized;
+extern uchar g_ShatterVertexArrayInitialized;
+

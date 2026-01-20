@@ -10,3 +10,6 @@ CBoundingBox3D g_VDNearbyActorBoundingBoxes[2000] = {};
 // CDemonActor*[2000]
 CDemonActor* g_VDNearbyActorPointers[2000] = {};
 
+// int
+int g_VDNearbyActorCount = {};
+

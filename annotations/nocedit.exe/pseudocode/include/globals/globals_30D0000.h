@@ -22,3 +22,8 @@ extern char g_PathfindingVisited[101][100];
 // char[65536]
 extern char g_FileIOBuffer[65536];
 
+// int
+extern int g_PathfindingQueueHead;
+extern int g_PathfindingQueueTail;
+extern int g_PathfindingNodesExpanded;
+

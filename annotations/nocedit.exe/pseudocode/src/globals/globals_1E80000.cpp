@@ -7,3 +7,6 @@
 // STextureAtlasEntry[250]
 STextureAtlasEntry g_TextureAtlasEntries[250] = {};
 
+// int
+int g_TextureProcessedCount = {};
+

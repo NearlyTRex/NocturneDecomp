@@ -22,6 +22,20 @@ extern SFogGrid g_CameraFogGrid;
 // char[307200]
 extern char g_CameraIndexedImageData[307200];
 
+// int
+extern int g_ImageProcessingState1;
+extern int g_ImageProcessingState2;
+extern int g_ImageBytesPerPixel;
+extern int g_CameraScreenWidth;
+extern int g_CameraScreenHeight;
+extern int g_ScanlineSpanCount;
+extern int g_BackgroundSceneDepth;
+extern int g_BackgroundSavedBitsPerPixel;
+extern int g_BackgroundSavedUseExternalRenderer;
+extern int g_BackgroundSavedRedBitPosition;
+extern int g_BackgroundSavedGreenBitPosition;
+extern int g_BackgroundSavedBlueBitPosition;
+
 // int[256]
 extern int g_ScanlineSpanLeft[256];
 extern int g_ScanlineSpanRight[256];

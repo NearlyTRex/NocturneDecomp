@@ -38,3 +38,7 @@ extern CKeys g_CKeysInstance;
 // CLevelLoader
 extern CLevelLoader g_CLevelLoaderInstance;
 
+// int
+extern int g_InventoryScreenHeight;
+extern int INT_02dcd794;
+

@@ -18,3 +18,9 @@ SCollisionInfo DAT_00887e70[100] = {};
 // char[500000]
 char g_CameraLoadImageReadBuffer[500000] = {};
 
+// undefined4
+undefined4 DAT_008879bc = {};
+
+// void*
+void* g_CramAlgorithmState = {};
+

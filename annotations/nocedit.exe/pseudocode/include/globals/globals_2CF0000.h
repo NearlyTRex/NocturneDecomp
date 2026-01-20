@@ -3,7 +3,9 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/winuser.h"
+#include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEdButton.h"
 #include "types/classes/CEditorTools.h"
 #include "types/structs/SWindow.h"
 
@@ -11,19 +13,31 @@
 // GLOBAL VARIABLES - Range 0x2CF0000
 // =============================================================================
 
+// CBitFont*
+extern CBitFont* g_EditorFont;
+
 // CDemonActorType
 extern CDemonActorType g_CElephantGunClassInfo;
 extern CDemonActorType g_CEmitterClassInfo;
 extern CDemonActorType g_CEnemyClassInfo;
 
+// CEdButton*
+extern CEdButton* g_ActiveButton;
+
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
+
+// CEditorTools*
+extern CEditorTools* g_CUserInterfacePtr;
 
 // HWND
 extern HWND g_DialogParentWindow;
 
 // SWindow[5]
 extern SWindow g_WindowStack[5];
+
+// char*
+extern char* g_ClipboardBackupText;
 
 // char[1024]
 extern char g_YesNoDialogBuffer[1024];
@@ -33,11 +47,76 @@ extern char g_TempStringBuffer[1024];
 // char[200]
 extern char g_TextWrapBuffer[200];
 
+// int
+extern int g_WindowStackCount;
+extern int g_FontCharacterHeight;
+extern int g_FontCharacterWidth;
+extern int g_MouseCursorType;
+extern int g_WindowBorderColor1;
+extern int g_WindowBorderColor2;
+extern int g_TitleBarColor;
+extern int g_WindowFillColor;
+extern int g_WindowFontColor;
+extern int g_SelectionColor;
+extern int g_TextColor;
+extern int g_CursorColor;
+extern int g_StatusTextColor;
+extern int g_WindowStatusTextColor;
+extern int g_ButtonColor;
+extern int g_ProgressBarBackgroundColor;
+extern int g_ProgressBarFillColor;
+extern int g_ProgressBarBorderColor;
+extern int g_ProgressBarTextColor;
+extern int g_AxisLabelTextColor;
+extern int g_EnabledTextColor;
+extern int g_BackgroundColor1;
+extern int g_SelectionHighlightColor;
+extern int g_HighlightColor1;
+extern int g_HighlightColor2;
+extern int g_ShadowColor;
+extern int g_ShadowHighlightColor;
+extern int g_ButtonFaceColor;
+extern int g_UITextColor;
+extern int g_InsetColor;
+extern int g_HighlightColor;
+extern int g_BackgroundColor2;
+extern int g_LastClickTimestamp;
+extern int g_LastClickItemIndex;
+extern int g_ScrollAction;
+extern int g_ScrollTimer;
+extern int g_ScrollDelay;
+extern int g_DragStartMouseX;
+extern int g_DragStartMouseY;
+extern int g_DragStartScrollPos;
+extern int g_DragStartThumbPos;
+extern int g_GlobalDeltaTimeInt;
+extern int g_AnimationTimerValue;
+extern int g_MouseX;
+extern int g_MouseY;
+extern int g_MouseButtonFlags;
+
 // uchar[32768]
 extern uchar g_ColorCubeLookup[32768];
 
 // uint*[1024]
 extern uint* g_ZBufferScanlineArray[1024];
+
+// undefined4
+extern undefined4 DAT_02cf2a78;
+extern undefined4 DAT_02cf2aac;
+extern undefined4 DAT_02cf2b5c;
+extern undefined4 DAT_02cf2b60;
+extern undefined4 DAT_02cf2b64;
+extern undefined4 DAT_02cf2b68;
+extern undefined4 DAT_02cf2b6c;
+extern undefined4 DAT_02cf2b70;
+extern undefined4 DAT_02cf2b74;
+extern undefined4 DAT_02cf2b78;
+extern undefined4 DAT_02cf2bf4;
+extern undefined4 DAT_02cf2bf8;
+extern undefined4 DAT_02cf4b30;
+extern undefined4 DAT_02cf4b34;
+extern undefined4 DAT_02cf4b38;
 
 // void*[1024]
 extern void* g_ScreenBufferArray[1024];

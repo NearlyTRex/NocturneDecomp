@@ -40,8 +40,11 @@ from ghidra_annotations.annotations.pseudocode.output import (
 )
 from ghidra_annotations.annotations.pseudocode.analysis import generate_analysis_report
 from ghidra_annotations.annotations.pseudocode.cleanup import delete_pseudocode
-from ghidra_annotations.annotations.pseudocode.compile import (
+from ghidra_annotations.annotations.pseudocode.header_compile import (
     verify_headers_after_export, verify_globals_after_export
+)
+from ghidra_annotations.annotations.pseudocode.function_compile import (
+    compile_functions_after_export
 )
 
 # Python-heavy processing imports (for main thread)
@@ -991,6 +994,23 @@ def export_pseudocode(currentProgram, path, strict=False):
         update_vtable_indirect_callers(pseudocode_src_dir, vtables_dir)
     else:
         log_info("Skipping vtable indirect caller analysis (no vtables directory)")
+    timer.end_phase()
+
+    # Compile functions and verify syntax
+    timer.start_phase("Function compilation verification")
+    compile_result = compile_functions_after_export(
+        pseudocode_dir,
+        compiler='g++',
+        num_threads=num_threads,
+        reports_dir=reports_dir,
+        repo_dir=repo_dir
+    )
+    if compile_result:
+        log_info("Function compilation: %d/%d successful (%.1f%%)" % (
+            compile_result['successful'],
+            compile_result['total'],
+            compile_result['success_rate']
+        ))
     timer.end_phase()
 
     # Log timing profile

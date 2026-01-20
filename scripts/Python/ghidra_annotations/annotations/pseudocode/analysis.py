@@ -1027,6 +1027,135 @@ def generate_param_mismatch_report(functions, output_path):
     return report_text
 
 
+def generate_compilation_summary_report(functions, output_path):
+    """Generate report on function compilation status.
+
+    Args:
+        functions: List of function data dicts (with compilation_status)
+        output_path: Directory to write report
+    """
+    lines = []
+    lines.append("=" * 100)
+    lines.append("FUNCTION COMPILATION SUMMARY")
+    lines.append("=" * 100)
+    lines.append("")
+
+    # Collect compilation statistics
+    funcs_with_status = [f for f in functions if f.get('compilation_status')]
+    if not funcs_with_status:
+        lines.append("No compilation status data available.")
+        lines.append("Run export with compilation verification enabled to generate this data.")
+        report_text = "\n".join(lines)
+        report_path = os.path.join(output_path, "compilation_summary.txt")
+        try:
+            with open(report_path, 'w') as f:
+                f.write(report_text)
+            log_info("Wrote compilation summary report: %s" % report_path)
+        except Exception as e:
+            log_info("Failed to write compilation summary report: %s" % str(e))
+        return report_text
+
+    # Calculate statistics
+    total = len(funcs_with_status)
+    successful = sum(1 for f in funcs_with_status
+                     if f['compilation_status'].get('success', False))
+    failed = total - successful
+    success_rate = (successful * 100.0 / total) if total > 0 else 0
+
+    lines.append("SUMMARY")
+    lines.append("-" * 50)
+    lines.append("Total functions compiled: %d" % total)
+    lines.append("Successful: %d (%.1f%%)" % (successful, success_rate))
+    lines.append("Failed: %d" % failed)
+    lines.append("")
+
+    # Count errors by category
+    error_categories = defaultdict(list)
+    for func in funcs_with_status:
+        status = func.get('compilation_status', {})
+        if not status.get('success'):
+            for error in status.get('errors', []):
+                category = error.get('category', 'other')
+                func_name = func.get('function', {}).get('name', 'unknown')
+                error_categories[category].append({
+                    'func': func_name,
+                    'message': error.get('message', ''),
+                    'line': error.get('line', 0),
+                })
+
+    if error_categories:
+        lines.append("ERROR CATEGORIES")
+        lines.append("-" * 50)
+        for category in sorted(error_categories.keys(), key=lambda x: -len(error_categories[x])):
+            count = len(error_categories[category])
+            lines.append("  %-30s %5d" % (category, count))
+        lines.append("")
+
+        # Show details for each category
+        for category in sorted(error_categories.keys(), key=lambda x: -len(error_categories[x])):
+            errors = error_categories[category]
+            lines.append("=" * 100)
+            lines.append("CATEGORY: %s (%d errors)" % (category, len(errors)))
+            lines.append("=" * 100)
+            lines.append("")
+
+            # Show unique functions with this error type
+            seen_funcs = set()
+            for error in errors[:30]:
+                if error['func'] not in seen_funcs:
+                    seen_funcs.add(error['func'])
+                    msg_preview = error['message'][:80] if error['message'] else ''
+                    lines.append("  %s" % error['func'])
+                    if msg_preview:
+                        lines.append("    Line %d: %s..." % (error['line'], msg_preview))
+
+            if len(errors) > 30:
+                lines.append("")
+                lines.append("  ... and %d more errors" % (len(errors) - 30))
+            lines.append("")
+
+    # Correlation with suspect patterns
+    lines.append("=" * 100)
+    lines.append("COMPILATION VS SUSPECT PATTERNS")
+    lines.append("=" * 100)
+    lines.append("")
+
+    # Calculate average suspects for successful vs failed compilations
+    successful_suspects = [f.get('complexity', {}).get('suspect_count', 0)
+                          for f in funcs_with_status
+                          if f['compilation_status'].get('success')]
+    failed_suspects = [f.get('complexity', {}).get('suspect_count', 0)
+                       for f in funcs_with_status
+                       if not f['compilation_status'].get('success')]
+
+    if successful_suspects:
+        avg_successful = sum(successful_suspects) / len(successful_suspects)
+        lines.append("Average suspects in successfully compiled functions: %.2f" % avg_successful)
+    if failed_suspects:
+        avg_failed = sum(failed_suspects) / len(failed_suspects)
+        lines.append("Average suspects in failed compilations: %.2f" % avg_failed)
+
+    # Count functions that compile but have suspects (may still have issues)
+    compiles_with_suspects = sum(1 for f in funcs_with_status
+                                  if f['compilation_status'].get('success')
+                                  and f.get('complexity', {}).get('suspect_count', 0) > 0)
+    lines.append("")
+    lines.append("Functions that compile but have suspect patterns: %d" % compiles_with_suspects)
+    lines.append("(These may have runtime issues even though syntax is valid)")
+
+    report_text = "\n".join(lines)
+
+    report_path = os.path.join(output_path, "compilation_summary.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote compilation summary report: %s" % report_path)
+    except Exception as e:
+        log_info("Failed to write compilation summary report: %s" % str(e))
+
+    return report_text
+
+
 def generate_csv_data(functions, files, output_path):
     """Generate CSV files for further analysis or graphing."""
 
@@ -1124,6 +1253,23 @@ def generate_summary_report(functions, files, output_path):
     report_lines.append("")
     report_lines.append("Average complexity score: %.1f" % avg_score)
     report_lines.append("")
+
+    # Compilation statistics (if available)
+    funcs_with_compile = [f for f in functions if f.get('compilation_status')]
+    if funcs_with_compile:
+        compile_success = sum(1 for f in funcs_with_compile
+                              if f['compilation_status'].get('success', False))
+        compile_total = len(funcs_with_compile)
+        compile_failed = compile_total - compile_success
+        compile_rate = (compile_success * 100.0 / compile_total) if compile_total > 0 else 0
+
+        report_lines.append("COMPILATION STATUS")
+        report_lines.append("-" * 40)
+        report_lines.append("Functions compiled: %d" % compile_total)
+        report_lines.append("Successful: %d (%.1f%%)" % (compile_success, compile_rate))
+        report_lines.append("Failed: %d" % compile_failed)
+        report_lines.append("")
+
     report_lines.append("SUSPECT PATTERN BREAKDOWN")
     report_lines.append("-" * 40)
     for stype, count in sorted(suspect_type_counts.items(), key=lambda x: -x[1]):
@@ -1253,6 +1399,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_easy_wins_list(functions, files, output_path)
     generate_stack_pattern_report(functions, output_path)
     generate_param_mismatch_report(functions, output_path)
+    generate_compilation_summary_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
     # Generate SVG graphs for README

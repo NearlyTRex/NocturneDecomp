@@ -14,3 +14,10 @@ CMouse g_CMouseInstance = {};
 // CPathMap[12]
 CPathMap DAT_02fd9060[12] = {};
 
+// undefined1
+undefined1 DAT_02fd8d24 = {};
+undefined1 DAT_02fd8d25 = {};
+
+// undefined4
+undefined4 DAT_02fd8d20 = {};
+

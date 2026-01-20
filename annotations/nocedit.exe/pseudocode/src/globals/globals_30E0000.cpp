@@ -11,3 +11,12 @@ CDemonPod g_CDemonPodInstance = {};
 SSoftwareEdge g_SoftwareEdgeBuffer[16] = {};
 SSoftwareEdge g_SoftwareEdgeTable[16] = {};
 
+// int
+int g_SoftwareEdgeCount = {};
+int g_SoftwareMinScanline = {};
+int g_SoftwareMaxScanline = {};
+int g_RenderedTriangleCount = {};
+int g_ActiveEdgeCount = {};
+int g_MinScanline = {};
+int g_MaxScanline = {};
+

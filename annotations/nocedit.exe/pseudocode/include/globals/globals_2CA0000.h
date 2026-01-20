@@ -19,3 +19,11 @@ extern CVector3i CVector3i_02ca0388;
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_SkyDomeTextureData;
 
+// int
+extern int g_CubesTestedCount;
+extern int g_CubesWithVoxelsCount;
+extern int g_CubesVisibleCount;
+extern int g_CubesRenderedCount;
+extern int g_PVSDrawnCubeCount;
+extern int g_PVSReadyFlag;
+

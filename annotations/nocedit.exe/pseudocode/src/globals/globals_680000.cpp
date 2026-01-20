@@ -3889,4 +3889,5 @@ undefined4 DAT_006854ec = 0;
 
 // void*
 void* g_CrtStackBuffer = nullptr;
+void* g_BackBuffer = {};
 

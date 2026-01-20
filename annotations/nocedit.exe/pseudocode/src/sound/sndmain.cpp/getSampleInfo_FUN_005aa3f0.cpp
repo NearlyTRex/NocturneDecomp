@@ -59,8 +59,8 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
     if (iVar4 != 0) {
       iVar4 = crt_string_c_stricmp_FUN_005fe7f0(&local_114,"mp3");
       if (iVar4 == 0) {
-        if ((g_GlobalMP3DecoderInitialized & 1) == 0) {
-          g_GlobalMP3DecoderInitialized = g_GlobalMP3DecoderInitialized | 1;
+        if ((g_GlobalMP3DecoderInitializedOther & 1) == 0) {
+          g_GlobalMP3DecoderInitializedOther = g_GlobalMP3DecoderInitializedOther | 1;
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
           crt_stdlib_c_atexit_FUN_005ff060(&g_CMP3DecoderDestructorNode2);
         }

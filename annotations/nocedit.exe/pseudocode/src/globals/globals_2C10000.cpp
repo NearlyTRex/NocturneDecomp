@@ -8,9 +8,23 @@
 CDemonActorType g_CZombieDogClassInfo = {};
 CDemonActorType g_CDoorClassInfo = {};
 
+// CKeyFramedModel*
+CKeyFramedModel* g_KeyFrameModelPoolEnd = {};
+
 // FileSearchHandler*[5]
 FileSearchHandler* g_SearchHandlers[5] = {};
 
 // char[72]
 char g_PolyDataConversionBuffer[72] = {};
+
+// int
+int g_NumSearchHandlers = {};
+
+// undefined4
+undefined4 DAT_02c14cd8 = {};
+undefined4 DAT_02c14d80 = {};
+undefined4 DAT_02c14d84 = {};
+undefined4 DAT_02c14d88 = {};
+undefined4 DAT_02c14d8c = {};
+undefined4 DAT_02c14d90 = {};
 

@@ -3,13 +3,20 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "system/windef.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3i.h"
+#include "types/structs/SMemHead.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2F00000
 // =============================================================================
+
+// BOOL
+extern BOOL g_RecursiveCallFlag;
+extern BOOL g_MemoryTraceInitialized;
+extern BOOL g_TraceFileInitialized;
 
 // CAlphaBitmap
 extern CAlphaBitmap g_LoadingScreenBitmap1;
@@ -29,6 +36,24 @@ extern CMatrix3x3i g_TransformMatrixCopy;
 
 // FileTrackingEntry[100]
 extern FileTrackingEntry g_FileRegistry[100];
+
+// HANDLE
+extern HANDLE g_FileMutex;
+
+// SMemHead*
+extern SMemHead* g_MemoryListHead;
+
+// char*
+extern char* g_CurrentFilename;
+
+// int
+extern int g_CurrentLineNumber;
+extern int g_PixelAspectCorrection;
+extern int g_MatrixStackIndex;
+extern int g_ViewportStackIndex;
+extern int g_IsDestroyingLeakChecker;
+extern int g_CurrentDebugLine;
+extern int g_OpenFileCount;
 
 // int[10]
 extern int g_MatrixStack_M00[10];
@@ -68,4 +93,15 @@ extern int g_ViewportStack_ClipBottom[10];
 // int[257]
 extern int g_SinTable[257];
 extern int g_CosTable[257];
+
+// uint
+extern uint g_SavedRotationX;
+extern uint g_SavedRotationY;
+extern uint g_SavedRotationZ;
+
+// undefined4
+extern undefined4 DAT_02f0cb1c;
+
+// void*
+extern void* g_DebugContext;
 

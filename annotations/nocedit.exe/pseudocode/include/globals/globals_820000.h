@@ -2,7 +2,10 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/structs/SEdge.h"
@@ -12,6 +15,9 @@
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x820000
 // =============================================================================
+
+// CDemonActor*
+extern CDemonActor* g_CurrentActorBeingProcessed;
 
 // CDemonActorType
 extern CDemonActorType g_CDemonActorClassInfo;
@@ -41,12 +47,18 @@ extern CDemonActorType g_CChainClassInfo;
 // CDemonActorType*[200]
 extern CDemonActorType* g_ActorClassRegistrations[200];
 
+// CDemonCamera*
+extern CDemonCamera* g_CurrentSceneCamera;
+
 // CDemonFilter[8]
 extern CDemonFilter CDemonFilter_ARRAY_008229ec[8];
 
 // CKeyFramedModelInstance
 extern CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance;
 extern CKeyFramedModelInstance DAT_00823a98;
+
+// FILE*
+extern FILE* g_ActorDataFile;
 
 // SEdge[512]
 extern SEdge g_TracedEdgeBuffer[512];
@@ -69,4 +81,83 @@ extern SRenderVertex g_ClipperIntermediateBuffer[16];
 
 // char[50]
 extern char g_ActorDebugBuffer[50];
+
+// int
+extern int g_RenderFaceCount;
+extern int g_ActorReadingMode;
+extern int g_IncludeCommentsWhenWriting;
+extern int g_NumActorClassTypes;
+extern int INT_00823a90;
+extern int INT_00823a94;
+extern int g_LineBlendingDisabled;
+extern int g_ClippedVertexCount;
+extern int g_ClipperTempCount;
+extern int g_InputVertexCount;
+extern int g_OutputVertexCount;
+extern int g_TempVertexCount;
+extern int g_IntermediateVertexCount;
+
+// uint
+extern uint g_RandomSeedValue;
+
+// undefined1
+extern undefined1 DAT_00822d0c;
+extern undefined1 DAT_00823a80;
+extern undefined1 DAT_00823a81;
+extern undefined1 DAT_00823a82;
+extern undefined1 DAT_00823a83;
+
+// undefined4
+extern undefined4 DAT_00821ff4;
+extern undefined4 DAT_00822498;
+extern undefined4 DAT_008224cc;
+extern undefined4 DAT_008224d0;
+extern undefined4 DAT_008224dc;
+extern undefined4 DAT_0082274c;
+extern undefined4 DAT_00822754;
+extern undefined4 DAT_008227b8;
+extern undefined4 DAT_008227c0;
+extern undefined4 DAT_008227dc;
+extern undefined4 DAT_008227e4;
+extern undefined4 DAT_00822944;
+extern undefined4 DAT_00822948;
+extern undefined4 DAT_0082294c;
+extern undefined4 DAT_00822958;
+extern undefined4 DAT_0082295c;
+extern undefined4 DAT_00822968;
+extern undefined4 DAT_0082296c;
+extern undefined4 DAT_008229ac;
+extern undefined4 DAT_00822cdc;
+extern undefined4 DAT_00822ce0;
+extern undefined4 DAT_00822ce4;
+extern undefined4 DAT_00822ce8;
+extern undefined4 DAT_00822cec;
+extern undefined4 DAT_00822cf0;
+extern undefined4 DAT_00822cf4;
+extern undefined4 DAT_00822d00;
+extern undefined4 DAT_00822d08;
+extern undefined4 DAT_00822f48;
+extern undefined4 DAT_00822f4c;
+extern undefined4 DAT_00822f50;
+extern undefined4 DAT_00823c50;
+extern undefined4 DAT_00823c54;
+extern undefined4 DAT_00823c58;
+extern undefined4 DAT_008254a8;
+extern undefined4 DAT_008254b8;
+extern undefined4 DAT_008254bc;
+extern undefined4 DAT_008254dc;
+extern undefined4 DAT_008254e8;
+extern undefined4 DAT_00825514;
+extern undefined4 DAT_00827504;
+extern undefined4 DAT_00827518;
+extern undefined4 DAT_0082751c;
+extern undefined4 DAT_00827520;
+extern undefined4 DAT_00827524;
+extern undefined4 DAT_00827528;
+extern undefined4 DAT_0082752c;
+extern undefined4 DAT_0082754c;
+
+// undefined8
+extern undefined8 DAT_008254ac;
+extern undefined8 DAT_008254e0;
 

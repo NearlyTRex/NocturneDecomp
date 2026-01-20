@@ -1754,8 +1754,12 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
             elif not is_primitive_type(type_name) and not type_name.endswith('*'):
                 # Non-primitive, non-pointer types (structs/classes) - use empty initializer
                 initializer_value = "{}"
+            elif type_name.endswith('*'):
+                # Pointer types - use nullptr
+                initializer_value = "nullptr"
             else:
-                continue
+                # Primitive types (int, char, etc.) - use 0
+                initializer_value = "0"
 
         entry = {
             'name': name,

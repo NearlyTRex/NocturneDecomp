@@ -16,3 +16,12 @@ extern CDemonPod g_CDemonPodInstance;
 extern SSoftwareEdge g_SoftwareEdgeBuffer[16];
 extern SSoftwareEdge g_SoftwareEdgeTable[16];
 
+// int
+extern int g_SoftwareEdgeCount;
+extern int g_SoftwareMinScanline;
+extern int g_SoftwareMaxScanline;
+extern int g_RenderedTriangleCount;
+extern int g_ActiveEdgeCount;
+extern int g_MinScanline;
+extern int g_MaxScanline;
+

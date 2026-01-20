@@ -61,6 +61,15 @@ extern char g_GraphicsCardDriverData[64];
 extern char g_GraphicsMenuTextBuffers[9][256];
 extern char g_ControlsMenuTextBuffers[9][256];
 
+// int
+extern int g_MenuLeftRightPressed;
+extern int g_AudioVisualizationCounter;
+extern int g_MenuInputHappened;
+extern int g_GraphicsCardHandle;
+extern int g_GraphicsCardCount;
+extern int g_CustomKeyCount;
+extern int g_StringBufferIndex;
+
 // int*[31]
 extern int* g_CustomKeyPointers[31];
 

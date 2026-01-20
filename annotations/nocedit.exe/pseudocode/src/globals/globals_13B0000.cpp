@@ -4,8 +4,17 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x13B0000
 // =============================================================================
 
+// CDemonLight*
+CDemonLight* g_CurrentLightForCorona = {};
+
 // CMatrix3x3i
 CMatrix3x3i g_CoronaCameraRotationMatrix = {};
+
+// int
+int g_BackdropSaveActive = {};
+int g_DitherPatternOffset = {};
+int g_CameraDownscaleIterations = {};
+int g_CameraEdgeCount = {};
 
 // int[10000]
 int g_CameraEdgeDetectionResults[10000] = {};

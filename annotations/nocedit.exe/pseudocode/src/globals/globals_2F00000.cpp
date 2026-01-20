@@ -4,6 +4,11 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2F00000
 // =============================================================================
 
+// BOOL
+BOOL g_RecursiveCallFlag = {};
+BOOL g_MemoryTraceInitialized = {};
+BOOL g_TraceFileInitialized = {};
+
 // CAlphaBitmap
 CAlphaBitmap g_LoadingScreenBitmap1 = {};
 CAlphaBitmap g_LoadingScreenBitmap2 = {};
@@ -22,6 +27,24 @@ CMatrix3x3i g_TransformMatrixCopy = {};
 
 // FileTrackingEntry[100]
 FileTrackingEntry g_FileRegistry[100] = {};
+
+// HANDLE
+HANDLE g_FileMutex = {};
+
+// SMemHead*
+SMemHead* g_MemoryListHead = {};
+
+// char*
+char* g_CurrentFilename = {};
+
+// int
+int g_CurrentLineNumber = {};
+int g_PixelAspectCorrection = {};
+int g_MatrixStackIndex = {};
+int g_ViewportStackIndex = {};
+int g_IsDestroyingLeakChecker = {};
+int g_CurrentDebugLine = {};
+int g_OpenFileCount = {};
 
 // int[10]
 int g_MatrixStack_M00[10] = {};
@@ -61,4 +84,15 @@ int g_ViewportStack_ClipBottom[10] = {};
 // int[257]
 int g_SinTable[257] = {};
 int g_CosTable[257] = {};
+
+// uint
+uint g_SavedRotationX = {};
+uint g_SavedRotationY = {};
+uint g_SavedRotationZ = {};
+
+// undefined4
+undefined4 DAT_02f0cb1c = {};
+
+// void*
+void* g_DebugContext = {};
 

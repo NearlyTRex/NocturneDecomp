@@ -459,16 +459,16 @@ section .text
     MOV EAX,0x1                         ; 004b5e1d
     MOV ESI,dword ptr [ESP + 0x414]     ; 004b5e22
     MOV EDX,dword ptr [ESP + 0x180c]    ; 004b5e29
-    MOV EDI,0x2d129b8                   ; 004b5e30 | g_CurrentFilename
+    MOV EDI,0x2d129b8                   ; 004b5e30 | g_CurrentFilenameBuffer
     ADD ESI,EDX                         ; 004b5e35
     MOV ECX,0x4e                        ; 004b5e37
     XOR EBX,EBX                         ; 004b5e3c
     MOV ESI,dword ptr [ESI]             ; 004b5e3e
     MOV [0x02d129b4],EAX                ; 004b5e40 | g_AuditOperationType
-    PUSH EDI                            ; 004b5e45 | g_CurrentFilename
+    PUSH EDI                            ; 004b5e45 | g_CurrentFilenameBuffer
     MOV AL,byte ptr [ESI]               ; 004b5e46
         ;   Label: LAB_004b5e46
-    MOV byte ptr [EDI],AL               ; 004b5e48 | g_CurrentFilename | DAT_02d129ba
+    MOV byte ptr [EDI],AL               ; 004b5e48 | g_CurrentFilenameBuffer | DAT_02d129ba
     CMP AL,0x0                          ; 004b5e4a
     JZ 0x004b5e5e                       ; 004b5e4c
         ;   XREF to: 004b5e5e (CONDITIONAL_JUMP)  ; LAB_004b5e5e
@@ -1094,12 +1094,12 @@ section .text
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004b6627
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 004b662c
-    MOV EDI,0x2d129b8                   ; 004b662f | g_CurrentFilename
+    MOV EDI,0x2d129b8                   ; 004b662f | g_CurrentFilenameBuffer
     MOV ESI,dword ptr [ESP + 0x181c]    ; 004b6634
-    PUSH EDI                            ; 004b663b | g_CurrentFilename
+    PUSH EDI                            ; 004b663b | g_CurrentFilenameBuffer
     MOV AL,byte ptr [ESI]               ; 004b663c
         ;   Label: LAB_004b663c
-    MOV byte ptr [EDI],AL               ; 004b663e | g_CurrentFilename | DAT_02d129ba
+    MOV byte ptr [EDI],AL               ; 004b663e | g_CurrentFilenameBuffer | DAT_02d129ba
     CMP AL,0x0                          ; 004b6640
     JZ 0x004b6654                       ; 004b6642
         ;   XREF to: 004b6654 (CONDITIONAL_JUMP)  ; LAB_004b6654

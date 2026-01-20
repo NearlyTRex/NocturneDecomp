@@ -21,6 +21,19 @@ extern char g_SfxStreamReadBuffer[15360];
 // char[220]
 extern char g_SoundTestErrorBuffer[220];
 
+// float
+extern float g_SoundReferenceVolumeDistance;
+
+// int
+extern int g_ShutdownInProgress;
+
 // int[8]
 extern int g_ChannelFFTTimestamps[8];
+
+// uchar
+extern uchar g_GlobalMP3DecoderInitialized;
+extern uchar g_GlobalMP3DecoderInitializedOther;
+
+// undefined4
+extern undefined4 DAT_03f5d97c;
 

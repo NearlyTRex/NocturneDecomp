@@ -21,3 +21,9 @@ extern char g_CurrentModelFilename[80];
 // char[9][80]
 extern char g_TextureNameArray[9][80];
 
+// int
+extern int g_TextureManagerMode;
+extern int g_TextureQualityLevel;
+extern int g_TextureAtlasDimension;
+extern int g_LastTextureProcessIndex;
+

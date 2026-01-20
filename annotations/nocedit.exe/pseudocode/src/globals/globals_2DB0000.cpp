@@ -43,3 +43,30 @@ char DAT_02db8c70[256] = {};
 char DAT_02db9670[256] = {};
 char DAT_02dba070[256] = {};
 
+// int
+int g_HeroCount = {};
+int g_LocalHeroIndex = {};
+int g_SkipIntroVideo = {};
+int g_ItemDefinitionCount = {};
+
+// undefined4
+undefined4 DAT_02db8700 = {};
+undefined4 DAT_02db8734 = {};
+undefined4 DAT_02db8738 = {};
+undefined4 DAT_02db8888 = {};
+undefined4 DAT_02db88c8 = {};
+undefined4 DAT_02db88d0 = {};
+undefined4 DAT_02db88ec = {};
+undefined4 DAT_02db88f4 = {};
+undefined4 DAT_02db8970 = {};
+undefined4 DAT_02db89a4 = {};
+undefined4 DAT_02db89a8 = {};
+undefined4 DAT_02db89b0 = {};
+undefined4 DAT_02db89f4 = {};
+undefined4 DAT_02db89f8 = {};
+undefined4 DAT_02db89fc = {};
+undefined4 DAT_02db8a08 = {};
+undefined4 DAT_02db8a0c = {};
+undefined4 DAT_02db8a18 = {};
+undefined4 DAT_02db8a20 = {};
+

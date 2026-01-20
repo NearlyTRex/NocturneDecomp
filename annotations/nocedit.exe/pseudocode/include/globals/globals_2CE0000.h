@@ -29,6 +29,9 @@ extern CVector3f g_ClipBuffer4Vertices[16];
 extern CVector3f g_ClipBuffer5Vertices[16];
 extern CVector3f g_ClipOutputVertices[16];
 
+// byte
+extern byte g_FloorCacheValid;
+
 // char[1024]
 extern char g_DialogMessageBuffer_02cef130[1024];
 extern char g_StatusMessageBuffer[1024];
@@ -41,4 +44,16 @@ extern char g_ErrorMessageBuffer_02cef530[256];
 
 // char[512]
 extern char g_MessageFormatBuffer[512];
+
+// int
+extern int g_ClipInputVertexCount;
+extern int g_ClipBuffer1VertexCount;
+extern int g_ClipBuffer2VertexCount;
+extern int g_ClipBuffer3VertexCount;
+extern int g_ClipBuffer4VertexCount;
+extern int g_ClipBuffer5VertexCount;
+extern int g_ClipOutputVertexCount;
+
+// undefined4
+extern undefined4 DAT_02cee5ac;
 

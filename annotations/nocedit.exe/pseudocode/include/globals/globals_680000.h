@@ -478,4 +478,5 @@ extern undefined4 DAT_006854ec;
 
 // void*
 extern void* g_CrtStackBuffer;
+extern void* g_BackBuffer;
 

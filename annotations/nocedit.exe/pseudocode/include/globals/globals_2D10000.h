@@ -5,6 +5,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFireEffect.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CPodAuditRecord.h"
 #include "types/classes/CSmokeParticle.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SMRGLPrimitiveQuadIndex.h"
@@ -32,6 +33,9 @@ extern CKeyFramedModelInstance g_FireEffectGunFlashModel;
 // CKeyFramedModelInstance[5]
 extern CKeyFramedModelInstance g_CFireEffectDebrisModels[5];
 
+// CPodAuditRecord*
+extern CPodAuditRecord* g_AuditRecordsArray;
+
 // CSmokeParticle[2048]
 extern CSmokeParticle g_SmokeParticlePool[2048];
 
@@ -49,11 +53,31 @@ extern SMRGLTextureBasic g_GunFlameTextures[20];
 extern SVersionControlSession g_VersionControlSession;
 
 // char[256]
-extern char g_CurrentFilename[256];
+extern char g_CurrentFilenameBuffer[256];
 
 // char[264]
 extern char g_VersionControlDirectory[264];
 
 // char[32]
 extern char g_WorkingDirectoryPath[32];
+
+// int
+extern int g_PodCreationTime;
+extern int g_AuditOperationType;
+extern int g_CurrentFileTimestamp;
+extern int g_CurrentFileSize;
+extern int g_CurrentFileOffset;
+extern int g_CurrentFileCompressedSize;
+extern int g_AuditRecordCount;
+extern int g_SmokeParticleAllocIndex;
+
+// undefined4
+extern undefined4 DAT_02d13560;
+extern undefined4 DAT_02d13564;
+extern undefined4 DAT_02d13eb4;
+extern undefined4 DAT_02d13eb8;
+extern undefined4 DAT_02d13f80;
+extern undefined4 DAT_02d13f84;
+extern undefined4 DAT_02d13f88;
+extern undefined4 DAT_02d141e0;
 

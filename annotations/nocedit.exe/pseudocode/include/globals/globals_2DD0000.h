@@ -25,3 +25,8 @@ extern CVector3i g_NormalizedViewVector;
 // char[512]
 extern char g_ErrorMessageBuffer_02dd3130[512];
 
+// int
+extern int g_LightDirectionX2;
+extern int g_LightDirectionY2;
+extern int g_LightDirectionZ2;
+

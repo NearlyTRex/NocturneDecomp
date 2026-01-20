@@ -24,3 +24,9 @@ extern SCollisionInfo DAT_00887e70[100];
 // char[500000]
 extern char g_CameraLoadImageReadBuffer[500000];
 
+// undefined4
+extern undefined4 DAT_008879bc;
+
+// void*
+extern void* g_CramAlgorithmState;
+

@@ -54,6 +54,15 @@ char g_GraphicsCardDriverData[64] = {};
 char g_GraphicsMenuTextBuffers[9][256] = {};
 char g_ControlsMenuTextBuffers[9][256] = {};
 
+// int
+int g_MenuLeftRightPressed = {};
+int g_AudioVisualizationCounter = {};
+int g_MenuInputHappened = {};
+int g_GraphicsCardHandle = {};
+int g_GraphicsCardCount = {};
+int g_CustomKeyCount = {};
+int g_StringBufferIndex = {};
+
 // int*[31]
 int* g_CustomKeyPointers[31] = {};
 

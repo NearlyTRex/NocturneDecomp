@@ -13,3 +13,10 @@ CMuzzleFlash g_MuzzleFlashPool[20] = {};
 // CSpark[256]
 CSpark g_SparkPool[256] = {};
 
+// CStake*
+CStake* g_StakeActiveListHead = {};
+
+// int
+int g_SparkActiveCount = {};
+int g_GlassParticleNextIndex = {};
+

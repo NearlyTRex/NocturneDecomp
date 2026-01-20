@@ -15,3 +15,6 @@ extern CBoundingBox3D g_VDNearbyActorBoundingBoxes[2000];
 // CDemonActor*[2000]
 extern CDemonActor* g_VDNearbyActorPointers[2000];
 
+// int
+extern int g_VDNearbyActorCount;
+

@@ -226,14 +226,14 @@ section .text
     TEST EAX,EAX                        ; 005aa575
     JNZ 0x005aa5f7                      ; 005aa577
         ;   XREF to: 005aa5f7 (CONDITIONAL_JUMP)  ; LAB_005aa5f7
-    MOV DL,byte ptr [0x03f5d878]        ; 005aa57d | g_GlobalMP3DecoderInitialized
+    MOV DL,byte ptr [0x03f5d878]        ; 005aa57d | g_GlobalMP3DecoderInitializedOther
     TEST DL,0x1                         ; 005aa583
     JNZ 0x005aa5ad                      ; 005aa586
         ;   XREF to: 005aa5ad (CONDITIONAL_JUMP)  ; LAB_005aa5ad
     MOV DH,DL                           ; 005aa588
     OR DH,0x1                           ; 005aa58a
     PUSH 0x3f55248                      ; 005aa58d | g_CMP3DecoderInstance
-    MOV byte ptr [0x03f5d878],DH        ; 005aa592 | g_GlobalMP3DecoderInitialized
+    MOV byte ptr [0x03f5d878],DH        ; 005aa592 | g_GlobalMP3DecoderInitializedOther
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0 ; 005aa598
         ;   XREF to: 005344f0 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 005aa59d
