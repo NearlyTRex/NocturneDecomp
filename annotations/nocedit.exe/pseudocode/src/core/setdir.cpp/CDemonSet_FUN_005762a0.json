@@ -20,15 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 114,
+    "complexity_score": 119,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 19,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 88
@@ -223,27 +222,25 @@
       "type": "stack_param"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
-      "fix_address": "005762a7",
-      "frame_offset": 24,
-      "match": "AND ESP",
-      "sub_esp_offset": 24,
-      "text": "Stack alignment at 005762a7 (SUB ESP, 0x18 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ABS",
+      "text": "if (((ABS(local_20.x) <= (pSVar1->extents).x) && (ABS(local_20.y) <= (pSVar1->extents).y)) &&",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 12,
-      "call_address": "005762ef",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005762f4",
-      "frame_offset": 24,
-      "match": "CALL...ADD ESP",
-      "return_address": "005762f4",
-      "target_address": "0x472030",
-      "text": "Direct CALL at 005762ef, ADD ESP at 005762f4 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ABS",
+      "text": "if (((ABS(local_20.x) <= (pSVar1->extents).x) && (ABS(local_20.y) <= (pSVar1->extents).y)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ABS",
+      "text": "(ABS(local_20.z) <= (pSVar1->extents).z)) {",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

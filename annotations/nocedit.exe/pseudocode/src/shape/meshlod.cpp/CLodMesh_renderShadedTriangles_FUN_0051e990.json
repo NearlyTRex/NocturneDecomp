@@ -104,13 +104,14 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 143,
+    "complexity_score": 178,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
     "pseudocode_lines": 68,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 195
@@ -363,6 +364,27 @@
       "match": "(float *)((int)",
       "text": "((double)((float10)*(float *)((int)pCVar1->edge_perpendiculars +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "ROUND",
+      "text": "iStack_20 = (int)ROUND(fVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ROUND",
+      "text": "iStack_1c = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ROUND",
+      "text": "iStack_20 = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

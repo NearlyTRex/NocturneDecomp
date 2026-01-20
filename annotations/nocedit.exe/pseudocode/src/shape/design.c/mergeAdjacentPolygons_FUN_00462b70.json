@@ -1,17 +1,77 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 141,
+        "message": "'SUB84' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 68,
+        "line": 148,
+        "message": "'SUB84' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 207,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 208,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 47,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 207,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 208,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 215,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 867,
-    "complexity_score": 424,
+    "complexity_score": 349,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "pseudocode_lines": 224,
-    "suspect_count": 18,
+    "suspect_count": 11,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "sub_artifact"
+      "stack_param"
     ],
     "total_lines": 1091
   },
@@ -393,11 +453,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 134,
       "match": "SUB84",
       "text": "SUB84 /* extract 2-byte value */(in_stack_fffffde4,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -414,25 +474,25 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 141,
       "match": "SUB84",
       "text": "((int)(&local_5c)[local_3c[6]],local_58[0],SUB84 /* extract 2-byte value */(in_stack_fffffde4,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 147,
       "match": "SUB84",
       "text": "(local_58[0],local_58[1],SUB84 /* extract 2-byte value */(dVar7,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 163,
       "match": "SUB84",
       "text": "(local_58[1],local_58[2],SUB84 /* extract 2-byte value */(dVar7,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -447,97 +507,6 @@
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00462c34",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00462c39",
-      "frame_offset": 524,
-      "match": "CALL...ADD ESP",
-      "return_address": "00462c39",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00462c34, ADD ESP at 00462c39 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004631dd",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004631f4",
-      "frame_offset": 524,
-      "match": "CALL...ADD ESP",
-      "return_address": "004631e2",
-      "target_address": "0x462050",
-      "text": "Direct CALL at 004631dd, ADD ESP at 004631f4 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00463258",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0046326f",
-      "frame_offset": 524,
-      "match": "CALL...ADD ESP",
-      "return_address": "0046325d",
-      "target_address": "0x462050",
-      "text": "Direct CALL at 00463258, ADD ESP at 0046326f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004632c7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004632de",
-      "frame_offset": 524,
-      "match": "CALL...ADD ESP",
-      "return_address": "004632cc",
-      "target_address": "0x462050",
-      "text": "Direct CALL at 004632c7, ADD ESP at 004632de with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00463314",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00463319",
-      "frame_offset": 524,
-      "match": "CALL...ADD ESP",
-      "return_address": "00463319",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00463314, ADD ESP at 00463319 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004633c0",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004633d7",
-      "frame_offset": 524,
-      "match": "CALL...ADD ESP",
-      "return_address": "004633c5",
-      "target_address": "0x462050",
-      "text": "Direct CALL at 004633c0, ADD ESP at 004633d7 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0046354f",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00463554",
-      "frame_offset": 524,
-      "match": "CALL...ADD ESP",
-      "return_address": "00463554",
-      "target_address": "0x45caa0",
-      "text": "Direct CALL at 0046354f, ADD ESP at 00463554 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

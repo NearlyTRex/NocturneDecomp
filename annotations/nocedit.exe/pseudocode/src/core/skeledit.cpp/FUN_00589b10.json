@@ -31,14 +31,15 @@
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 58,
+    "complexity_score": 113,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 5,
     "pseudocode_lines": 33,
-    "suspect_count": 2,
+    "suspect_count": 7,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 102
   },
@@ -183,6 +184,41 @@
       "match": "unaff_EBX",
       "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_5",
+      "text": "if (param_5 == 0) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",

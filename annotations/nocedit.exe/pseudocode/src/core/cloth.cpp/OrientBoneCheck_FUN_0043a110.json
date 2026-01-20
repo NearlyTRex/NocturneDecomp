@@ -50,17 +50,17 @@
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 270,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
     "pseudocode_lines": 80,
-    "suspect_count": 17,
+    "suspect_count": 14,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
-      "variadic_anchor"
+      "unnamed_param"
     ],
     "total_lines": 244
   },
@@ -267,6 +267,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "uint param_3) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
@@ -323,6 +330,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "SQRT",
+      "text": "(local_14 = SQRT(pCVar2->z * pCVar2->z + pCVar2->x * pCVar2->x + pCVar2->y * pCVar2->y),",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 59,
       "match": "in_stack_0000000c",
@@ -349,74 +363,6 @@
       "match": "&stack0xffffff6c",
       "text": "((CMatrix3x4f *)(bone_name + 0x48),(CMatrix3x4f *)&stack0xffffff6c,in_stack_ffffff6c);",
       "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043a1c4",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0043a1c9",
-      "frame_offset": 132,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0043a1c9",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0043a1c4 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0043a156",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043a168",
-      "frame_offset": 132,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043a15b",
-      "target_address": "0x599fc0",
-      "text": "Direct CALL at 0043a156, ADD ESP at 0043a168 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043a1eb",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043a1f0",
-      "frame_offset": 132,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043a1f0",
-      "target_address": "0x5e7830",
-      "text": "Direct CALL at 0043a1eb, ADD ESP at 0043a1f0 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0043a20a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043a20f",
-      "frame_offset": 132,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043a20f",
-      "target_address": "0x5f5390",
-      "text": "Direct CALL at 0043a20a, ADD ESP at 0043a20f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0043a21e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043a223",
-      "frame_offset": 132,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043a223",
-      "target_address": "0x5f5390",
-      "text": "Direct CALL at 0043a21e, ADD ESP at 0043a223 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

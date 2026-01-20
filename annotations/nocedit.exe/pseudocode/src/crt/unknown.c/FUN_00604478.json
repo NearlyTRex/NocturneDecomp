@@ -8,12 +8,12 @@
     "pseudocode_lines": 178,
     "suspect_count": 78,
     "suspect_types": [
-      "call_esp_anchor",
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
       "stack_param",
-      "unknown_field"
+      "unknown_field",
+      "unnamed_param"
     ],
     "total_lines": 542
   },
@@ -137,6 +137,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "uint param_4, uint param_5) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_5",
+      "text": "uint param_4, uint param_5) */",
+      "type": "unnamed_param"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
@@ -665,32 +679,6 @@
       "param_delta": 7,
       "text": "Function declares 0 params but call sites push 7 (7 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00604545",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0060454d",
-      "frame_offset": 8,
-      "match": "CALL...ADD ESP",
-      "return_address": "0060454a",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 00604545, ADD ESP at 0060454d with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00604597",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0060459e",
-      "frame_offset": 8,
-      "match": "CALL...ADD ESP",
-      "return_address": "0060459c",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 00604597, ADD ESP at 0060459e with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "address": "00604478",

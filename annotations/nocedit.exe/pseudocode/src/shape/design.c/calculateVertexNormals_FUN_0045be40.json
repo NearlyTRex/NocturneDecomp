@@ -1,4 +1,23 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 41,
+        "message": "'SQRT' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 154,
     "complexity_score": 63,
@@ -8,7 +27,7 @@
     "pseudocode_lines": 48,
     "suspect_count": 1,
     "suspect_types": [
-      "call_esp_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 202
   },
@@ -278,17 +297,11 @@
   },
   "suspects": [
     {
-      "add_esp_value": 4,
-      "call_address": "0045be75",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045be7a",
-      "frame_offset": 48,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045be7a",
-      "target_address": "0x45caa0",
-      "text": "Direct CALL at 0045be75, ADD ESP at 0045be7a with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(local_18 * local_18 + local_1c * local_1c + local_20 * local_20);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

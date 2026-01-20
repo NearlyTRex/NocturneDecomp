@@ -74,15 +74,15 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 78,
+    "complexity_score": 88,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 38,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "extra_output",
-      "sub_artifact"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 121
   },
@@ -244,11 +244,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "SUB84",
       "text": "iVar7 = SUB84 /* extract 2-byte value */(dVar5,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -256,6 +256,13 @@
       "match": "extraout_ECX",
       "text": "for (iVar2 = extraout_ECX; iVar2 < model_ptr->frame_count * model_ptr->vertex_count;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "*(int *)(iVar3 + 8 + (int)model_ptr->vertex_list) + (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

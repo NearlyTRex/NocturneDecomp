@@ -1,16 +1,67 @@
 {
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 31,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 69,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 127,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 132,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 137,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 142,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 150,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 414,
-    "complexity_score": 270,
+    "complexity_score": 150,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 16,
     "pseudocode_lines": 150,
-    "suspect_count": 11,
-    "suspect_types": [
-      "call_esp_anchor",
-      "variadic_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 564
   },
   "cross_references": [
@@ -326,158 +377,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 8,
-      "call_address": "00459cfe",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00459d03",
-      "frame_offset": 16320,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00459d03",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00459cfe (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459d38",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00459d3d",
-      "frame_offset": 16320,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00459d3d",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00459d38 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459d6c",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00459d71",
-      "frame_offset": 16320,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00459d71",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00459d6c (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459a55",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00459a5a",
-      "frame_offset": 16320,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459a5a",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00459a55, ADD ESP at 00459a5a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00459b4a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00459b4f",
-      "frame_offset": 16320,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459b4f",
-      "target_address": "0x481880",
-      "text": "Direct CALL at 00459b4a, ADD ESP at 00459b4f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00459c67",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00459c6c",
-      "frame_offset": 16320,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459c6c",
-      "target_address": "0x5fef20",
-      "text": "Direct CALL at 00459c67, ADD ESP at 00459c6c with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459ce3",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00459ce8",
-      "frame_offset": 16320,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459ce8",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00459ce3, ADD ESP at 00459ce8 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459d17",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00459d1c",
-      "frame_offset": 16320,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459d1c",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00459d17, ADD ESP at 00459d1c with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459d51",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00459d56",
-      "frame_offset": 16320,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459d56",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00459d51, ADD ESP at 00459d56 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459d85",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00459d8a",
-      "frame_offset": 16320,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459d8a",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00459d85, ADD ESP at 00459d8a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459db8",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00459dbd",
-      "frame_offset": 16320,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459dbd",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00459db8, ADD ESP at 00459dbd with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

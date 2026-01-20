@@ -1,16 +1,49 @@
 {
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 3,
+        "line": 58,
+        "message": "label at end of compound statement only available with '-std=c++2b' or '-std=gnu++2b' [-Wc++23-extensions]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 59,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 91,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 92,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 153,
+    "complexity_score": 113,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 21,
     "pseudocode_lines": 113,
-    "suspect_count": 3,
-    "suspect_types": [
-      "call_esp_anchor",
-      "variadic_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 351
   },
   "cross_references": [
@@ -308,51 +341,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 12,
-      "call_address": "0046ab04",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0046ab09",
-      "frame_offset": 468,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0046ab09",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046ab04 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0046ab27",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0046ab2c",
-      "frame_offset": 468,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0046ab2c",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046ab27 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0046aa44",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0046aa49",
-      "frame_offset": 468,
-      "match": "CALL...ADD ESP",
-      "return_address": "0046aa49",
-      "target_address": "0x5fe7f0",
-      "text": "Direct CALL at 0046aa44, ADD ESP at 0046aa49 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

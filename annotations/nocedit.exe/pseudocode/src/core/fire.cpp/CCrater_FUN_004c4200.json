@@ -488,13 +488,14 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 298,
+    "complexity_score": 343,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 128,
-    "suspect_count": 16,
+    "suspect_count": 20,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param"
     ],
@@ -895,6 +896,34 @@
       "match": "in_stack_0000000c",
       "text": "local_4c = *(float *)(this_ptr->field0_0x0 + 0x14) + in_stack_0000000c;",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 113,
+      "match": "ABS",
+      "text": "if (1.0 < ABS(*(float *)(this_ptr->field0_0x0 + 0x44) - *(float *)(this_ptr->field0_0x0 + 0x10)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "ABS",
+      "text": "if (1.0 < ABS(*(float *)(this_ptr->field0_0x0 + 0x50) - *(float *)(this_ptr->field0_0x0 + 0x10)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 121,
+      "match": "ABS",
+      "text": "if (1.0 < ABS(*(float *)(this_ptr->field0_0x0 + 0x5c) - *(float *)(this_ptr->field0_0x0 + 0x10)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 125,
+      "match": "ABS",
+      "text": "if (ABS(*(float *)(this_ptr->field0_0x0 + 0x68) - *(float *)(this_ptr->field0_0x0 + 0x10)) <= 1.0)",
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

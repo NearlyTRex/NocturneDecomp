@@ -74,13 +74,15 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 36,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 36,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 118
   },
   "cross_references": [],
@@ -206,7 +208,15 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "SQRT",
+      "text": "*(float *)(pCVar5->field2_0x374 + 4) = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);",
+      "type": "decompiler_intrinsic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

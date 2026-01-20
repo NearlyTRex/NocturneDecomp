@@ -146,15 +146,14 @@
   },
   "complexity": {
     "assembly_lines": 419,
-    "complexity_score": 540,
+    "complexity_score": 515,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 17,
     "pseudocode_lines": 230,
-    "suspect_count": 29,
+    "suspect_count": 27,
     "suspect_types": [
       "format_string_mismatch",
-      "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param"
     ],
@@ -887,24 +886,6 @@
       "match": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr,\"\\\"%[^\\\"]\\\",%d\\n\",piVar9,local_2c);",
       "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
-    },
-    {
-      "address": "0058a736",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 400,
-      "instruction": "LEA EDI, [ESP + 0x190]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0058a736",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0058a858",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 400,
-      "instruction": "LEA ESI, [ESP + 0x190]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0058a858",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

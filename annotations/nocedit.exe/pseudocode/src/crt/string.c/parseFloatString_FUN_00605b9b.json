@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 214,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 124,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "call_esp_anchor",
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function"
@@ -232,19 +231,6 @@
       "param_delta": 4,
       "text": "Function declares 3 params but call sites push 7 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00605d09",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00605d0e",
-      "frame_offset": 48,
-      "match": "CALL...ADD ESP",
-      "return_address": "00605d0e",
-      "target_address": "0x603d60",
-      "text": "Direct CALL at 00605d09, ADD ESP at 00605d0e with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "address": "00605b9b",

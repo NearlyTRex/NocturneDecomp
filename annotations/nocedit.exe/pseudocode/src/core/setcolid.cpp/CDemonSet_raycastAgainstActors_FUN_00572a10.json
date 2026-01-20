@@ -206,16 +206,13 @@
   },
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 476,
+    "complexity_score": 381,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 136,
-    "suspect_count": 31,
+    "suspect_count": 23,
     "suspect_types": [
-      "call_esp_anchor",
-      "callind_anchor",
-      "stack_align_anchor",
       "stack_ref",
       "unaffected_reg",
       "unknown_field"
@@ -735,103 +732,6 @@
       "match": "._8_4_",
       "text": "local_7c._8_4_ = ray_origin->x;",
       "type": "unknown_field"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "00572c10",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00572c13",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 192,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00572c10, ADD ESP at 00572c13",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00572c69",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00572c6c",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 192,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00572c69, ADD ESP at 00572c6c",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc0",
-      "fix_address": "00572a1c",
-      "frame_offset": 192,
-      "match": "AND ESP",
-      "sub_esp_offset": 192,
-      "text": "Stack alignment at 00572a1c (SUB ESP, 0xc0 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00572b48",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00572b4d",
-      "frame_offset": 192,
-      "match": "CALL...ADD ESP",
-      "return_address": "00572b4d",
-      "target_address": "0x420240",
-      "text": "Direct CALL at 00572b48, ADD ESP at 00572b4d with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00572b55",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00572b5a",
-      "frame_offset": 192,
-      "match": "CALL...ADD ESP",
-      "return_address": "00572b5a",
-      "target_address": "0x5743c0",
-      "text": "Direct CALL at 00572b55, ADD ESP at 00572b5a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00572bc5",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00572bca",
-      "frame_offset": 192,
-      "match": "CALL...ADD ESP",
-      "return_address": "00572bca",
-      "target_address": "0x572e20",
-      "text": "Direct CALL at 00572bc5, ADD ESP at 00572bca with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 28,
-      "call_address": "00572c8e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00572ca1",
-      "frame_offset": 192,
-      "match": "CALL...ADD ESP",
-      "return_address": "00572c93",
-      "target_address": "0x409470",
-      "text": "Direct CALL at 00572c8e, ADD ESP at 00572ca1 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00572e0a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00572e0f",
-      "frame_offset": 192,
-      "match": "CALL...ADD ESP",
-      "return_address": "00572e0f",
-      "target_address": "0x420240",
-      "text": "Direct CALL at 00572e0a, ADD ESP at 00572e0f with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

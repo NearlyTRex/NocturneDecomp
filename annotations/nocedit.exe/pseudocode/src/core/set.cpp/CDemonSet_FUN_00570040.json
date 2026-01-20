@@ -248,14 +248,14 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 528,
+    "complexity_score": 558,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
     "pseudocode_lines": 113,
-    "suspect_count": 39,
+    "suspect_count": 42,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
@@ -623,6 +623,27 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(g_VertexNormalArray[iVar3].x);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(g_VertexNormalArray[iVar3].z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(int *)((int)",
@@ -630,11 +651,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ROUND",
+      "text": "*(int *)((int)&local_6c + iVar6) = (int)ROUND(g_VertexNormalArray[iVar3].x) + 0x8000;",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_ac + iVar6) = 0x8000 - (int)ROUND(fVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "*(int *)((int)&local_ac + iVar6) = 0x8000 - (int)ROUND(fVar2);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -800,24 +835,6 @@
       "param_delta": 6,
       "text": "Function declares 1 params but call sites push 7 (6 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "0057008e",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 216,
-      "instruction": "LEA ESI, [ESP + 0xd8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0057008e",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005700d5",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 200,
-      "instruction": "LEA EBX, [ESP + 0xc8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005700d5",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

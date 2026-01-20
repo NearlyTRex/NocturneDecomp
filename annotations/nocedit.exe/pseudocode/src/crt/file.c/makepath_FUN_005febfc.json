@@ -8,7 +8,7 @@
     "pseudocode_lines": 103,
     "suspect_count": 2,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "special_crt_function"
     ],
     "total_lines": 342
@@ -287,11 +287,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "CONCAT22",
       "text": "if ((CONCAT22 /* combine 2-byte values */(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "005febfc",

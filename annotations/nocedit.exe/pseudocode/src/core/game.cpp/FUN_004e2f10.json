@@ -26,14 +26,15 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 49,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 12,
     "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 99
   },
@@ -201,6 +202,20 @@
       "match": "unaff_EBX",
       "text": "void core_game_cpp_FUN_004e2f10(uint param_1,uint param_2,uint unaff_EBX)",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void core_game_cpp_FUN_004e2f10(uint param_1,uint param_2,uint unaff_EBX)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void core_game_cpp_FUN_004e2f10(uint param_1,uint param_2,uint unaff_EBX)",
+      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",

@@ -1,13 +1,51 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 34,
+        "message": "'SQRT' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 37,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 34,
+        "message": "'ABS' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 93,
+    "complexity_score": 118,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
     "pseudocode_lines": 43,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast",
       "unaffected_reg"
     ],
@@ -255,6 +293,20 @@
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ABS",
+      "text": "fVar3 = ABS(SQRT((float)blue * (float)blue +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "SQRT",
+      "text": "fVar3 = ABS(SQRT((float)blue * (float)blue +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

@@ -1,16 +1,45 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 49,
+        "message": "'SUB84' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 54,
+        "message": "'CONCAT44' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 65,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 104,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 59,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
-      "sub_artifact"
+      "decompiler_intrinsic"
     ],
     "total_lines": 249
   },
@@ -235,31 +264,18 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "SUB84",
       "text": "local_44 = SUB84 /* extract 2-byte value */(dVar3,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "CONCAT44",
       "text": "if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_28,local_2c)) {",
-      "type": "concat_artifact"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00466c48",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00466c4d",
-      "frame_offset": 84,
-      "match": "CALL...ADD ESP",
-      "return_address": "00466c4d",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00466c48, ADD ESP at 00466c4d with uncertain ESP",
-      "type": "call_esp_anchor"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

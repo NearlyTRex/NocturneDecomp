@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 155,
+    "complexity_score": 220,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 2,
     "pseudocode_lines": 75,
-    "suspect_count": 7,
+    "suspect_count": 13,
     "suspect_types": [
       "special_crt_function",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 265
   },
@@ -149,6 +150,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "uint crt_unknown_c_FUN_0060fcf4(short *param_1)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
@@ -182,6 +190,41 @@
       "match": "in_stack_00000004",
       "text": "psVar2 = in_stack_00000004;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "text": "while ((param_1 = psVar2 + 1, sVar1 != 0 && (*param_1 != 0x3d))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "text": "while ((param_1 = psVar2 + 1, sVar1 != 0 && (*param_1 != 0x3d))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "text": "psVar2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "text": "if (*param_1 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "text": "sVar1 = param_1[1];",
+      "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",

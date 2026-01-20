@@ -1,14 +1,39 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 26,
+        "message": "'ROUND' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 60,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 119,
+    "complexity_score": 149,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 27,
     "pseudocode_lines": 84,
-    "suspect_count": 3,
+    "suspect_count": 6,
     "suspect_types": [
-      "call_esp_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 365
   },
@@ -374,43 +399,46 @@
   },
   "suspects": [
     {
-      "add_esp_value": 8,
-      "call_address": "0045d646",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d64b",
-      "frame_offset": 124,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d64b",
-      "target_address": "0x50cd70",
-      "text": "Direct CALL at 0045d646, ADD ESP at 0045d64b with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_28.x = (int)ROUND(dVar4);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 12,
-      "call_address": "0045d74e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d753",
-      "frame_offset": 124,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d753",
-      "target_address": "0x505530",
-      "text": "Direct CALL at 0045d74e, ADD ESP at 0045d753 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "local_28.y = (int)ROUND(dVar4);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 4,
-      "call_address": "0045d908",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d90d",
-      "frame_offset": 124,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d90d",
-      "target_address": "0x45ce20",
-      "text": "Direct CALL at 0045d908, ADD ESP at 0045d90d with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "local_28.z = (int)ROUND(dVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "((int)ROUND(dVar4),(int)ROUND(dVar5),(int)ROUND(dVar6));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "((int)ROUND(dVar4),(int)ROUND(dVar5),(int)ROUND(dVar6));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "((int)ROUND(dVar4),(int)ROUND(dVar5),(int)ROUND(dVar6));",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

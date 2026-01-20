@@ -8,7 +8,7 @@
     "pseudocode_lines": 15,
     "suspect_count": 7,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "register_param",
       "special_crt_function"
     ],
@@ -178,11 +178,11 @@
       "type": "register_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "CONCAT22",
       "text": "(in_DS,(void *)CONCAT22 /* combine 2-byte values */((short)(new_size >> 0x10),in_DS),(ulong)ptr,in_ECX);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "00609974",

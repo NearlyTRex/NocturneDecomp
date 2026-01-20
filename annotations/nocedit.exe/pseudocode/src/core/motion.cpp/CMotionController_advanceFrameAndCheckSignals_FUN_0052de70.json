@@ -26,15 +26,13 @@
   },
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 132,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
     "pseudocode_lines": 57,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "callind_anchor",
-      "stack_align_anchor",
       "unaffected_reg"
     ],
     "total_lines": 231
@@ -246,49 +244,6 @@
       "match": "unaff_EBP",
       "text": "*inout_frame_number = unaff_EBP;",
       "type": "unaffected_reg"
-    },
-    {
-      "add_esp_value": 16,
-      "callind_address": "0052df1b",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0052df24",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 24,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0052df1b, ADD ESP at 0052df24",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "callind_address": "0052dfd2",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0052dfd5",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 24,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0052dfd2, ADD ESP at 0052dfd5",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "callind_address": "0052e00a",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0052e00d",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 24,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0052e00a, ADD ESP at 0052e00d",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
-      "fix_address": "0052de79",
-      "frame_offset": 24,
-      "match": "AND ESP",
-      "sub_esp_offset": 24,
-      "text": "Stack alignment at 0052de79 (SUB ESP, 0x18 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

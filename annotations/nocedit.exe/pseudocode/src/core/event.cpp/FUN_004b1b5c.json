@@ -92,14 +92,16 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 113,
+    "complexity_score": 433,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 58,
-    "suspect_count": 5,
+    "suspect_count": 36,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "unnamed_param"
     ],
     "total_lines": 140
   },
@@ -173,11 +175,74 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "text": "void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "text": "void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "text": "cVar2 = (char)*param_2;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(uint *)((int)",
       "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_4",
+      "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_4",
+      "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_4",
+      "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_4",
+      "text": "*(char *)param_4 = cVar2;",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
@@ -187,11 +252,53 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "text": "cVar2 = *(char *)((int)param_2 + 1);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
       "text": "param_2 = (uint *)((int)param_2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "text": "param_2 = (uint *)((int)param_2 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "text": "param_2 = (uint *)((int)param_2 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "text": "lVar1 = *(longlong *)param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "text": "uVar3 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_4",
+      "text": "*(char *)param_4 = (char)uVar3;",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
@@ -201,11 +308,123 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_4",
+      "text": "*(byte *)((int)param_4 + 2) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_4",
+      "text": "*param_4 = uVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "text": "uVar4 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "text": "param_2 = param_2 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "text": "param_2 = param_2 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_4",
+      "text": "*(char *)(param_4 + 1) = (char)uVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_4",
+      "text": "*(short *)(param_4 + 1) = (short)uVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_4",
+      "text": "*param_4 = uVar3;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)param_4 + 6) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_4",
+      "text": "*(byte *)((int)param_4 + 6) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_4",
+      "text": "*(longlong *)param_4 = (longlong)ROUND((float10)lVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "*(longlong *)param_4 = (longlong)ROUND((float10)lVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_4",
+      "text": "*(longlong *)param_4 = (longlong)ROUND((float10)lVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "ROUND",
+      "text": "*(longlong *)param_4 = (longlong)ROUND((float10)lVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_4",
+      "text": "param_4 = param_4 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_4",
+      "text": "param_4 = param_4 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_4",
+      "text": "*(short *)param_4 = (short)uVar3;",
+      "type": "unnamed_param"
     }
   ]
 }

@@ -68,13 +68,14 @@
   },
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 236,
+    "complexity_score": 251,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "pseudocode_lines": 76,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
       "pointer_cast",
@@ -325,6 +326,13 @@
       "match": "extraout_EAX",
       "text": "iVar6 = extraout_EAX + (int)ROUND(dVar12);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ROUND",
+      "text": "iVar6 = extraout_EAX + (int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

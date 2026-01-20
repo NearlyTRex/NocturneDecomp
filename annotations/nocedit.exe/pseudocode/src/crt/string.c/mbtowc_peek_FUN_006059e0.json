@@ -8,7 +8,7 @@
     "pseudocode_lines": 7,
     "suspect_count": 2,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "special_crt_function"
     ],
     "total_lines": 30
@@ -120,11 +120,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 6,
       "match": "CONCAT11",
       "text": "return CONCAT11 /* combine 2-byte values */(*str,str[1]);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "006059e0",

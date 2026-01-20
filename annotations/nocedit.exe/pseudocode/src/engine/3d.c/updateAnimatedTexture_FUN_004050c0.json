@@ -1,14 +1,62 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 21,
+        "line": 28,
+        "message": "cast from 'SAnimatedTexture*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 40,
+        "message": "cast from 'SAnimatedTexture*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 43,
+        "message": "cast from 'SAnimatedTexture*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 28,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 40,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 84,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 34,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast"
     ],
     "total_lines": 113
@@ -140,15 +188,6 @@
       "match": "(SMRGLHeaderExtended *)((int)",
       "text": "return (SMRGLHeaderExtended *)((int)anim_texture + anim_texture->frame_count * 0x20 + 0x1c);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "0040510a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EDI, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0040510a",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

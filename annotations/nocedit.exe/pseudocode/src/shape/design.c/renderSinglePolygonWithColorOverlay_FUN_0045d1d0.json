@@ -1,14 +1,39 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 23,
+        "message": "'ROUND' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 79,
+        "line": 42,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 61,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "pseudocode_lines": 36,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 137
   },
@@ -234,30 +259,32 @@
   },
   "suspects": [
     {
-      "add_esp_value": 4,
-      "call_address": "0045d2db",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d2e0",
-      "frame_offset": 92,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d2e0",
-      "target_address": "0x45d300",
-      "text": "Direct CALL at 0045d2db, ADD ESP at 0045d2e0 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ROUND",
+      "text": "local_6c.surface_normal.A = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 8,
-      "call_address": "0045d2ed",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d2f2",
-      "frame_offset": 92,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d2f2",
-      "target_address": "0x45d470",
-      "text": "Direct CALL at 0045d2ed, ADD ESP at 0045d2f2 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_6c.surface_normal.B = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "local_6c.surface_normal.C = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "text": "local_6c.surface_normal.D = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

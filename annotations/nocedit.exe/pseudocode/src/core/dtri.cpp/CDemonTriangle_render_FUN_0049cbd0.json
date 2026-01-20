@@ -20,14 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 101,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 36,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
-      "lea_esp_stack_addr"
+      "decompiler_intrinsic"
     ],
     "total_lines": 142
   },
@@ -270,58 +270,67 @@
   },
   "suspects": [
     {
-      "address": "0049cbda",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 72,
-      "instruction": "LEA EBX, [ESP + 0x48]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0049cbda",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ROUND",
+      "text": "local_30.x = (int)ROUND((this_ptr->vertex1).x * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "0049cc08",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 72,
-      "instruction": "LEA EAX, [ESP + 0x48]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0049cc08",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "text": "local_30.y = (int)ROUND((this_ptr->vertex1).y * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "0049cc15",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 104,
-      "instruction": "LEA EBX, [ESP + 0x68]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0049cc15",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ROUND",
+      "text": "local_30.z = (int)ROUND((this_ptr->vertex1).z * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "0049cc47",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 96,
-      "instruction": "LEA EAX, [ESP + 0x60]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0049cc47",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "local_18.x = (int)ROUND((this_ptr->vertex2).x * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "0049cc57",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 92,
-      "instruction": "LEA EBX, [ESP + 0x5c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0049cc57",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "text": "local_18.y = (int)ROUND((this_ptr->vertex2).y * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "0049cc89",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 84,
-      "instruction": "LEA EAX, [ESP + 0x54]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0049cc89",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_18.z = (int)ROUND((this_ptr->vertex2).z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "local_24.x = (int)ROUND((this_ptr->vertex3).x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "local_24.y = (int)ROUND((this_ptr->vertex3).y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "local_24.z = (int)ROUND((this_ptr->vertex3).z * 256.0f);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

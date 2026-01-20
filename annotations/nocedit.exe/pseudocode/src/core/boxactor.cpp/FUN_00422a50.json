@@ -68,14 +68,13 @@
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 562,
+    "complexity_score": 437,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 4,
     "pseudocode_lines": 82,
-    "suspect_count": 46,
+    "suspect_count": 34,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
       "unaffected_reg"
@@ -554,114 +553,6 @@
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x28].create_event[0x23] = '\\0';",
       "type": "stack_param"
-    },
-    {
-      "address": "00422b8c",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 208,
-      "instruction": "LEA EAX, [ESP + 0xd0]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422b8c",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422b9a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 216,
-      "instruction": "LEA EAX, [ESP + 0xd8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422b9a",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422bd9",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 160,
-      "instruction": "LEA EAX, [ESP + 0xa0]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422bd9",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422bf2",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 64,
-      "instruction": "LEA EAX, [ESP + 0x40]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422bf2",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422bff",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 56,
-      "instruction": "LEA EAX, [ESP + 0x38]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422bff",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422c04",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 156,
-      "instruction": "LEA EAX, [ESP + 0x9c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422c04",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422c0c",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA ESI, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422c0c",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422c10",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 112,
-      "instruction": "LEA EDI, [ESP + 0x70]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422c10",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422c1c",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 200,
-      "instruction": "LEA EAX, [ESP + 0xc8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422c1c",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422c29",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 108,
-      "instruction": "LEA EAX, [ESP + 0x6c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422c29",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422c2d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA ESI, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422c2d",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00422c3c",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 200,
-      "instruction": "LEA EAX, [ESP + 0xc8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00422c3c",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

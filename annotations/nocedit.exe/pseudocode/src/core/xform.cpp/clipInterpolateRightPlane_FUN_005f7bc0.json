@@ -33,7 +33,7 @@
     "pseudocode_lines": 51,
     "suspect_count": 1,
     "suspect_types": [
-      "concat_artifact"
+      "decompiler_intrinsic"
     ],
     "total_lines": 142
   },
@@ -143,11 +143,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "CONCAT44",
       "text": "iVar4 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar5);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

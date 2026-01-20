@@ -20,14 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 183,
+    "complexity_score": 198,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 4,
     "pseudocode_lines": 28,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 69
   },
@@ -116,6 +117,13 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "uint param_3) */",
+      "type": "unnamed_param"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 9,

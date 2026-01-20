@@ -74,16 +74,15 @@
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 259,
+    "complexity_score": 254,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 39,
     "suspect_count": 20,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "stack_param",
-      "sub_artifact",
       "unknown_field"
     ],
     "total_lines": 129
@@ -250,11 +249,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "SUB84",
       "text": "this_ptr = SUB84 /* extract 2-byte value */(input_value,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -271,11 +270,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT44",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(this_ptr,in_stack_00000004);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -320,11 +319,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "CONCAT44",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(this_ptr,in_stack_00000004) - dVar2;",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -334,11 +333,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "SUB84",
       "text": "in_stack_00000004 = SUB84 /* extract 2-byte value */(dVar2,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -348,11 +347,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CONCAT44",
       "text": "(&in_stack_00000004->sample_info,(double)CONCAT44 /* combine 2-byte values */(2,this_ptr),",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",

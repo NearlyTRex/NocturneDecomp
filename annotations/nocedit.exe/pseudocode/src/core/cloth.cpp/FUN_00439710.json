@@ -506,16 +506,17 @@
   },
   "complexity": {
     "assembly_lines": 716,
-    "complexity_score": 1226,
+    "complexity_score": 1251,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 1,
     "pseudocode_lines": 356,
-    "suspect_count": 85,
+    "suspect_count": 87,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
+      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 1072
@@ -1084,6 +1085,20 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "uint param_3, uint param_4) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "text": "uint param_3, uint param_4) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
@@ -1448,6 +1463,27 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 198,
+      "match": "ROUND",
+      "text": "*piVar13 = (int)ROUND(*pfVar10 * _DAT_0065bb3c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 199,
+      "match": "ROUND",
+      "text": "piVar13[1] = (int)ROUND(pfVar10[1] * _DAT_0065bb3c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 200,
+      "match": "ROUND",
+      "text": "piVar13[2] = (int)ROUND(pfVar10[2] * _DAT_0065bb3c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 204,
       "match": "in_stack_00000004",
@@ -1649,33 +1685,6 @@
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x3fe64) = *(uint *)(in_stack_00000004 + 0x3fe68);",
       "type": "stack_param"
-    },
-    {
-      "address": "00439a6c",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 24,
-      "instruction": "LEA EAX, [ESP + 0x18]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00439a6c",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00439be2",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 68,
-      "instruction": "LEA EAX, [ESP + 0x44]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00439be2",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00439df7",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 44,
-      "instruction": "LEA EAX, [ESP + 0x2c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00439df7",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

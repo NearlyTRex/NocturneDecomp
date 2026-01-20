@@ -86,14 +86,13 @@
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 109,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "pseudocode_lines": 29,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast"
     ],
     "total_lines": 113
@@ -275,15 +274,6 @@
       "match": "(void *)((int)",
       "text": "polygons = (void *)((int)polygons + 6);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "005b7931",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b7931",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

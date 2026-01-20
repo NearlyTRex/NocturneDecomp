@@ -1,16 +1,43 @@
 {
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 22,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 26,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 82,
+    "complexity_score": 22,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "pseudocode_lines": 22,
-    "suspect_count": 5,
-    "suspect_types": [
-      "call_esp_anchor",
-      "variadic_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 93
   },
   "cross_references": [
@@ -160,77 +187,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 16,
-      "call_address": "00460a4a",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "00460a4f",
-      "frame_offset": 88,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00460a4f",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00460a4a (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00460a70",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "00460a75",
-      "frame_offset": 88,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00460a75",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00460a70 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00460a5a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00460a5f",
-      "frame_offset": 88,
-      "match": "CALL...ADD ESP",
-      "return_address": "00460a5f",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00460a5a, ADD ESP at 00460a5f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00460a80",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00460a85",
-      "frame_offset": 88,
-      "match": "CALL...ADD ESP",
-      "return_address": "00460a85",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00460a80, ADD ESP at 00460a85 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00460a92",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00460a97",
-      "frame_offset": 88,
-      "match": "CALL...ADD ESP",
-      "return_address": "00460a97",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00460a92, ADD ESP at 00460a97 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

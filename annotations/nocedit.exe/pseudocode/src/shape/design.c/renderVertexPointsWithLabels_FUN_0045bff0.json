@@ -1,15 +1,39 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 31,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 66,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 125,
+    "complexity_score": 110,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 23,
     "pseudocode_lines": 75,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_anchor",
-      "variadic_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 374
   },
@@ -364,59 +388,25 @@
   },
   "suspects": [
     {
-      "add_esp_value": 12,
-      "call_address": "0045c2b8",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045c2bd",
-      "frame_offset": 120,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0045c2bd",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0045c2b8 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "local_38.x = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 8,
-      "call_address": "0045c096",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045c09b",
-      "frame_offset": 120,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045c09b",
-      "target_address": "0x50cd70",
-      "text": "Direct CALL at 0045c096, ADD ESP at 0045c09b with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "local_38.y = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 8,
-      "call_address": "0045c275",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045c27a",
-      "frame_offset": 120,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045c27a",
-      "target_address": "0x401140",
-      "text": "Direct CALL at 0045c275, ADD ESP at 0045c27a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0045c2ce",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045c2d3",
-      "frame_offset": 120,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045c2d3",
-      "target_address": "0x402430",
-      "text": "Direct CALL at 0045c2ce, ADD ESP at 0045c2d3 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "local_38.z = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

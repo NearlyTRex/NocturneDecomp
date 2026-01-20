@@ -56,10 +56,11 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
     replacements_cache, pcode_overrides_cache
 )
 from ghidra_annotations.annotations.pseudocode.suspects import (
-    identify_suspect_lines, calculate_complexity_metrics, identify_pcode_suspects,
-    identify_param_count_mismatch, identify_variadic_calls, identify_format_string_mismatch,
-    identify_stack_align_anchor, identify_direct_call_esp_uncertainty,
-    identify_lea_esp_stack_addr, identify_special_functions
+    identify_suspect_lines, identify_assembly_suspects, calculate_complexity_metrics,
+    identify_pcode_suspects, identify_param_count_mismatch, identify_variadic_calls,
+    identify_format_string_mismatch, identify_stack_align_anchor,
+    identify_direct_call_esp_uncertainty, identify_lea_esp_stack_addr,
+    identify_special_functions
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -84,8 +85,14 @@ from ghidra_annotations.annotations.pseudocode.decompiler_fixes import (
     preload_per_function_decompiler_fixes, per_function_fixes_cache
 )
 
-# Suspect types to omit from output (no longer useful after BADSPACEBASE fix)
-OMIT_SUSPECT_TYPES = {'call_esp_preserve', 'callind_preserve', 'variadic_preserve'}
+# Suspect types to omit from output
+OMIT_SUSPECT_TYPES = {
+    'call_esp_preserve', 'call_esp_anchor',
+    'callind_preserve', 'callind_preserve_lost', 'callind_anchor',
+    'variadic_preserve', 'variadic_preserve_ebp', 'variadic_anchor',
+    'stack_align_anchor', 'lea_esp_stack_addr',
+    'unnamed_local', 'float10_type',
+}
 
 
 class PhaseTimer:
@@ -281,6 +288,10 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
 
     # Identify suspect patterns (Python regex matching on decompiled code)
     suspects = identify_suspect_lines(decompiled_code)
+
+    # Identify assembly-based suspects (MMX, etc.)
+    assembly_suspects = identify_assembly_suspects(result.assembly_code)
+    suspects.extend(assembly_suspects)
 
     # Identify P-code based suspects (fixable patterns like CALLIND+ESP)
     # Pass existing overrides to separate unfixed from resolved suspects

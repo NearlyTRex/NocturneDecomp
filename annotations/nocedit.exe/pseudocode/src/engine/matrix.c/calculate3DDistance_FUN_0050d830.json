@@ -1,13 +1,40 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 16,
+        "message": "'SQRT' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 19,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 10,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 43
   },
   "cross_references": [],
@@ -131,5 +158,20 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
+      "match": "SQRT",
+      "text": "(SQRT((double)(z1 - z2) * (double)(z1 - z2) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ROUND",
+      "text": "return (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

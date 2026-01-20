@@ -104,20 +104,17 @@
   },
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 384,
+    "complexity_score": 369,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
     "pseudocode_lines": 109,
     "suspect_count": 24,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
+      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "stack_align_anchor",
-      "stack_ref",
-      "sub_artifact"
+      "stack_ref"
     ],
     "total_lines": 374
   },
@@ -552,11 +549,18 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "CONCAT44",
       "text": "uVar18 = CONCAT44 /* combine 2-byte values */(uVar19,0x47c678);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ROUND",
+      "text": "fVar5 = (float)((int)ROUND(dVar16) + 0x2000U & 0xc000);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -566,11 +570,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "SUB84",
       "text": "fVar21 = SUB84 /* extract 2-byte value */(value,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -601,6 +605,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "local_34 = (float)(int)ROUND(dVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 95,
       "match": "extraout_EBX",
@@ -629,6 +640,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 102,
+      "match": "ROUND",
+      "text": "*(int *)(extraout_EAX_00 + extraout_EBX_00 + 4) = (int)ROUND(dVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 104,
       "match": "extraout_EBX_01",
@@ -636,11 +654,18 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "CONCAT44",
       "text": "uVar18 = CONCAT44 /* combine 2-byte values */(uVar19,0x47c90a);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "ROUND",
+      "text": "local_44 = (float)(int)ROUND(dVar16);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -655,55 +680,6 @@
       "match": "(float *)((int)",
       "text": "*(float *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = local_44;",
       "type": "pointer_cast"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x74",
-      "fix_address": "0047c5f9",
-      "frame_offset": 116,
-      "match": "AND ESP",
-      "sub_esp_offset": 116,
-      "text": "Stack alignment at 0047c5f9 (SUB ESP, 0x74 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0047c60d",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0047c612",
-      "frame_offset": 116,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047c612",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 0047c60d, ADD ESP at 0047c612 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0047c83d",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0047c84e",
-      "frame_offset": 116,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047c842",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 0047c83d, ADD ESP at 0047c84e with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0047c894",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0047c8a5",
-      "frame_offset": 116,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047c899",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 0047c894, ADD ESP at 0047c8a5 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

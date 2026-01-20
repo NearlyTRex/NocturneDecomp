@@ -818,17 +818,15 @@
   },
   "complexity": {
     "assembly_lines": 500,
-    "complexity_score": 1367,
+    "complexity_score": 1317,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 242,
-    "suspect_count": 110,
+    "suspect_count": 106,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "stack_param",
-      "sub_artifact",
       "unknown_field"
     ],
     "total_lines": 742
@@ -2144,11 +2142,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 222,
       "match": "SUB84",
       "text": "(&local_108,&local_f8,SUB84 /* extract 2-byte value */(in_stack_fffffe80,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2165,18 +2163,18 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 226,
       "match": "SUB84",
       "text": "(&local_108,&local_118,SUB84 /* extract 2-byte value */(in_stack_fffffe80,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 227,
       "match": "SUB84",
       "text": "local_148 = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2193,11 +2191,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 230,
       "match": "SUB84",
       "text": "(SUB84 /* extract 2-byte value */(in_stack_fffffe80,0) == 0)) ||",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2233,55 +2231,6 @@
       "match": "in_stack_0000000c",
       "text": "} while (uVar3 < in_stack_0000000c);",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x16c",
-      "fix_address": "005cb3ac",
-      "frame_offset": 364,
-      "match": "AND ESP",
-      "sub_esp_offset": 364,
-      "text": "Stack alignment at 005cb3ac (SUB ESP, 0x16c before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "005cb3c0",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005cb3c5",
-      "frame_offset": 364,
-      "match": "CALL...ADD ESP",
-      "return_address": "005cb3c5",
-      "target_address": "0x5cbb40",
-      "text": "Direct CALL at 005cb3c0, ADD ESP at 005cb3c5 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005cb90e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005cb928",
-      "frame_offset": 364,
-      "match": "CALL...ADD ESP",
-      "return_address": "005cb913",
-      "target_address": "0x5d6640",
-      "text": "Direct CALL at 005cb90e, ADD ESP at 005cb928 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005cb93e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005cb958",
-      "frame_offset": 364,
-      "match": "CALL...ADD ESP",
-      "return_address": "005cb943",
-      "target_address": "0x5d6640",
-      "text": "Direct CALL at 005cb93e, ADD ESP at 005cb958 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

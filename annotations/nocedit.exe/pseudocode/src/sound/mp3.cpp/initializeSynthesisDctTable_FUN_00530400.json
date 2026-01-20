@@ -74,18 +74,15 @@
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 271,
+    "complexity_score": 226,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 61,
-    "suspect_count": 18,
+    "suspect_count": 15,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
+      "decompiler_intrinsic",
       "extra_output",
-      "stack_align_anchor",
-      "sub_artifact",
       "unknown_field"
     ],
     "total_lines": 151
@@ -293,11 +290,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "CONCAT44",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_30._4_4_,(uint)local_30);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -307,11 +304,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_30,local_38._4_4_);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -321,11 +318,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_38,puVar7);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -349,11 +346,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "SUB84",
       "text": "local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -375,42 +372,6 @@
       "match": "._4_4_",
       "text": "} while (local_30._4_4_ < 0x40);",
       "type": "unknown_field"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
-      "fix_address": "00530409",
-      "frame_offset": 36,
-      "match": "AND ESP",
-      "sub_esp_offset": 36,
-      "text": "Stack alignment at 00530409 (SUB ESP, 0x24 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00530471",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00530476",
-      "frame_offset": 36,
-      "match": "CALL...ADD ESP",
-      "return_address": "00530476",
-      "target_address": "0x602102",
-      "text": "Direct CALL at 00530471, ADD ESP at 00530476 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005304db",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005304e0",
-      "frame_offset": 36,
-      "match": "CALL...ADD ESP",
-      "return_address": "005304e0",
-      "target_address": "0x602102",
-      "text": "Direct CALL at 005304db, ADD ESP at 005304e0 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

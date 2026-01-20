@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 61,
+    "complexity_score": 166,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 46,
-    "suspect_count": 1,
+    "suspect_count": 11,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "unnamed_param"
     ],
     "total_lines": 188
   },
@@ -135,6 +136,76 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,uint *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_4",
+      "text": "param_4[2] = (int)(((ulonglong)seconds % 0x15180) / 0xe10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_4",
+      "text": "param_4[1] = (int)(uVar1 / 0x3c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_4",
+      "text": "*param_4 = (int)(uVar1 % 0x3c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_4",
+      "text": "param_4[5] = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_4",
+      "text": "param_4[7] = uVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_4",
+      "text": "param_4[4] = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_4",
+      "text": "param_4[3] = (uVar4 - (int)local_14[uVar2]) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_4",
+      "text": "param_4[6] = (uVar5 + 1) % 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_4",
+      "text": "return param_4;",
+      "type": "unnamed_param"
+    },
     {
       "address": "00607690",
       "crt_type": "runtime support",

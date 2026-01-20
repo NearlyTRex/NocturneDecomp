@@ -1,14 +1,38 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 37,
+        "message": "invalid conversion from 'uint*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 44,
+        "message": "'stack0xffffff38' was not declared in this scope; did you mean 'in_stack_ffffff38'?"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 137,
+    "complexity_score": 102,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 42,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "stack_ref"
     ],
@@ -206,33 +230,6 @@
       "match": "in_stack_ffffff3c",
       "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff38,in_stack_ffffff3c);",
       "type": "stack_param"
-    },
-    {
-      "address": "00407d29",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 48,
-      "instruction": "LEA EDI, [ESP + 0x30]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00407d29",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00407d3d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 96,
-      "instruction": "LEA ESI, [ESP + 0x60]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00407d3d",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00407d4d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 96,
-      "instruction": "LEA ESI, [ESP + 0x60]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00407d4d",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

@@ -39,7 +39,7 @@
     "pseudocode_lines": 34,
     "suspect_count": 13,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
       "pointer_cast"
@@ -302,6 +302,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "uVar1 = (uint)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 28,
       "match": "extraout_EDX",
@@ -332,19 +339,6 @@
       "param_delta": 4,
       "text": "Function declares 2 params but call sites push 6 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00453c7d",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00453c82",
-      "frame_offset": 12,
-      "match": "CALL...ADD ESP",
-      "return_address": "00453c82",
-      "target_address": "0x5b7b80",
-      "text": "Direct CALL at 00453c7d, ADD ESP at 00453c82 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

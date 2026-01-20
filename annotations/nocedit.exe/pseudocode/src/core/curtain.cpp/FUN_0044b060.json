@@ -116,14 +116,14 @@
   },
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 643,
+    "complexity_score": 663,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 6,
     "pseudocode_lines": 108,
-    "suspect_count": 51,
+    "suspect_count": 53,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
       "stack_ref",
@@ -484,6 +484,27 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "ROUND",
+      "text": "*piVar5 = (int)ROUND((float)*piVar6 * _DAT_0065c4c0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "ROUND",
+      "text": "((CVector3i *)(piVar5 + 1))->x = (int)ROUND((float)piVar6[1] * _DAT_0065c4c0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "ROUND",
+      "text": "piVar5[2] = (int)ROUND((float)piVar6[2] * _DAT_0065c4c0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_00000004",
@@ -668,15 +689,6 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "0044b217",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 24,
-      "instruction": "LEA EAX, [ESP + 0x18]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0044b217",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

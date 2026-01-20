@@ -44,13 +44,14 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 129,
+    "complexity_score": 164,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 24,
-    "suspect_count": 10,
+    "suspect_count": 13,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 59
@@ -220,6 +221,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "*extraout_ECX = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 22,
       "match": "extraout_EAX",
@@ -234,6 +242,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "*(int *)(extraout_ECX_00 + 4) = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 24,
       "match": "extraout_EAX_00",
@@ -246,6 +261,13 @@
       "match": "extraout_ECX_01",
       "text": "*(int *)(extraout_ECX_01 + 8) = (int)ROUND(dVar2);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "*(int *)(extraout_ECX_01 + 8) = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

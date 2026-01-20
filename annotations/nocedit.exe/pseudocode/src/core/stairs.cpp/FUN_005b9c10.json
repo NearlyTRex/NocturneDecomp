@@ -434,14 +434,14 @@
   },
   "complexity": {
     "assembly_lines": 587,
-    "complexity_score": 1360,
+    "complexity_score": 1350,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 10,
     "pseudocode_lines": 330,
-    "suspect_count": 100,
+    "suspect_count": 99,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "stack_ref",
@@ -828,11 +828,53 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ROUND",
+      "text": "CStack_84.x = (int)ROUND(fStack_90 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "ROUND",
+      "text": "CStack_84.y = (int)ROUND(fStack_8c * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "CStack_84.z = (int)ROUND(fStack_88 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 83,
       "match": "in_stack_0000000c",
       "text": "fStack_88 = fStack_88 + *(float *)(in_stack_0000000c[1].actor_name + 4);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 84,
+      "match": "ROUND",
+      "text": "CStack_78.x = (int)ROUND(fStack_90 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 85,
+      "match": "ROUND",
+      "text": "CStack_78.y = (int)ROUND(fStack_8c * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 86,
+      "match": "ROUND",
+      "text": "CStack_78.z = (int)ROUND(fStack_88 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -849,11 +891,53 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 93,
+      "match": "ROUND",
+      "text": "CStack_48.x = (int)ROUND(fStack_90 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "CStack_48.y = (int)ROUND(fStack_8c * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "CStack_48.z = (int)ROUND(fStack_88 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 100,
       "match": "in_stack_0000000c",
       "text": "fStack_88 = fStack_88 + *(float *)(in_stack_0000000c[1].actor_name + 4);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 101,
+      "match": "ROUND",
+      "text": "CStack_60.x = (int)ROUND(fStack_90 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 102,
+      "match": "ROUND",
+      "text": "CStack_60.y = (int)ROUND(fStack_8c * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "ROUND",
+      "text": "CStack_60.z = (int)ROUND(fStack_88 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1234,6 +1318,69 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 298,
+      "match": "ROUND",
+      "text": "CStack_6c.x = (int)ROUND(*(float *)pcVar3 * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 299,
+      "match": "ROUND",
+      "text": "CStack_6c.y = (int)ROUND(*(float *)(pcVar3 + 4) * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 300,
+      "match": "ROUND",
+      "text": "CStack_6c.z = (int)ROUND((((CLocation *)(pcVar3 + 8))->position).x * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 303,
+      "match": "ROUND",
+      "text": "CStack_9c.x = (int)ROUND(*pfStack_2c * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 304,
+      "match": "ROUND",
+      "text": "CStack_9c.y = (int)ROUND(pfStack_2c[1] * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 305,
+      "match": "ROUND",
+      "text": "CStack_9c.z = (int)ROUND(pfStack_2c[2] * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 308,
+      "match": "ROUND",
+      "text": "CStack_54.x = (int)ROUND(pCStack_28->pitch * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 309,
+      "match": "ROUND",
+      "text": "CStack_54.y = (int)ROUND(pCStack_28->bank * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 310,
+      "match": "ROUND",
+      "text": "CStack_54.z = (int)ROUND(pCStack_28->heading * _DAT_006634b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 316,
       "match": "(uint *)((int)",
@@ -1288,204 +1435,6 @@
       "match": "in_stack_0000000c",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
       "type": "stack_param"
-    },
-    {
-      "address": "005b9c52",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 52,
-      "instruction": "LEA EDX, [ESP + 0x34]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9c52",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9cfa",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 100,
-      "instruction": "LEA EBX, [ESP + 0x64]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9cfa",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9d04",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 88,
-      "instruction": "LEA EAX, [ESP + 0x58]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9d04",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9d2e",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 100,
-      "instruction": "LEA EAX, [ESP + 0x64]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9d2e",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9d3d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 120,
-      "instruction": "LEA EBX, [ESP + 0x78]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9d3d",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9d5b",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 88,
-      "instruction": "LEA EAX, [ESP + 0x58]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9d5b",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9d85",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 112,
-      "instruction": "LEA EAX, [ESP + 0x70]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9d85",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9d94",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 168,
-      "instruction": "LEA EBX, [ESP + 0xa8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9d94",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9dc5",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 88,
-      "instruction": "LEA EAX, [ESP + 0x58]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9dc5",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9def",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 160,
-      "instruction": "LEA EAX, [ESP + 0xa0]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9def",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9e06",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 144,
-      "instruction": "LEA EBX, [ESP + 0x90]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9e06",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9e27",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 88,
-      "instruction": "LEA EAX, [ESP + 0x58]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9e27",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005b9e51",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 136,
-      "instruction": "LEA EAX, [ESP + 0x88]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b9e51",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba203",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba203",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba21f",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba21f",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba30c",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 124,
-      "instruction": "LEA EBX, [ESP + 0x7c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba30c",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba33a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 124,
-      "instruction": "LEA EAX, [ESP + 0x7c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba33a",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba34a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 76,
-      "instruction": "LEA EBX, [ESP + 0x4c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba34a",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba37d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 76,
-      "instruction": "LEA EAX, [ESP + 0x4c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba37d",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba390",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 148,
-      "instruction": "LEA EBX, [ESP + 0x94]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba390",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba3c6",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 148,
-      "instruction": "LEA EAX, [ESP + 0x94]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba3c6",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ba421",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ba421",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

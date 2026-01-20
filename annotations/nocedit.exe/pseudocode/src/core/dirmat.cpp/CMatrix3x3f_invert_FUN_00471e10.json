@@ -32,15 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 115,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 85,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_align_anchor",
-      "variadic_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 247
   },
@@ -220,30 +219,11 @@
   },
   "suspects": [
     {
-      "add_esp_value": 4,
-      "call_address": "00471fb6",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00471fbb",
-      "frame_offset": 40,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00471fbb",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00471fb6 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x28",
-      "fix_address": "00471e18",
-      "frame_offset": 40,
-      "match": "AND ESP",
-      "sub_esp_offset": 40,
-      "text": "Stack alignment at 00471e18 (SUB ESP, 0x28 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ABS",
+      "text": "if (ABS(fVar30) == 0.0) {",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

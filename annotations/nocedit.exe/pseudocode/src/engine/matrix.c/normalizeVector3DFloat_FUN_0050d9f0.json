@@ -1,14 +1,45 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 25,
+        "message": "'SQRT' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 26,
+        "message": "'SUB84' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 38,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 102,
+    "complexity_score": 142,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 32,
-    "suspect_count": 6,
+    "suspect_count": 10,
     "suspect_types": [
-      "sub_artifact",
+      "decompiler_intrinsic",
       "unaffected_reg"
     ],
     "total_lines": 119
@@ -182,11 +213,18 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "SQRT",
+      "text": "dVar4 = SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "SUB84",
       "text": "local_38 = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
@@ -196,6 +234,13 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "text": "unaff_ESI->x = (int)ROUND(local_30);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 32,
       "match": "unaff_ESI",
@@ -203,11 +248,25 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "unaff_ESI->y = (int)ROUND(local_28);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 33,
       "match": "unaff_ESI",
       "text": "unaff_ESI->z = (int)ROUND(local_20);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "unaff_ESI->z = (int)ROUND(local_20);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",

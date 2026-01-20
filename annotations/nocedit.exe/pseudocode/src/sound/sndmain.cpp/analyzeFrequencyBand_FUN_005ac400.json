@@ -62,17 +62,14 @@
   },
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 292,
+    "complexity_score": 277,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 177,
     "suspect_count": 9,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
-      "stack_align_anchor",
-      "sub_artifact",
+      "decompiler_intrinsic",
       "warning_unreachable"
     ],
     "total_lines": 606
@@ -460,75 +457,60 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "CONCAT44",
       "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(iStack_48,local_4c);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "SUB84",
       "text": "local_8c = SUB84 /* extract 2-byte value */(dVar28,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "CONCAT44",
       "text": "fVar22 = fVar26 * (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_88,local_8c) - (float10)dVar9;",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 115,
       "match": "CONCAT44",
       "text": "dVar9 = (double)CONCAT44 /* combine 2-byte values */(uStack_88,local_8c);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "SUB84",
       "text": "local_94 = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xb4",
-      "fix_address": "005ac40c",
-      "frame_offset": 180,
-      "match": "AND ESP",
-      "sub_esp_offset": 180,
-      "text": "Stack alignment at 005ac40c (SUB ESP, 0xb4 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 152,
+      "match": "ROUND",
+      "text": "local_4c = (int)ROUND(dVar28);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 8,
-      "call_address": "005ac7e5",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005ac7ff",
-      "frame_offset": 180,
-      "match": "CALL...ADD ESP",
-      "return_address": "005ac7ea",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 005ac7e5, ADD ESP at 005ac7ff with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 175,
+      "match": "SQRT",
+      "text": "fVar6 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) + fVar6;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 8,
-      "call_address": "005ac828",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005ac842",
-      "frame_offset": 180,
-      "match": "CALL...ADD ESP",
-      "return_address": "005ac82d",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 005ac828, ADD ESP at 005ac842 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 178,
+      "match": "SQRT",
+      "text": "return (int)(SQRT((fVar6 / (float)iVar21) / (float)iVar13) * (float)2);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

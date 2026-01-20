@@ -1,15 +1,118 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 55,
+        "message": "'SQRT' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 75,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 76,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 103,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 104,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 132,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 133,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 37,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 39,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 75,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 76,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 103,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 104,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 132,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 133,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 216,
+    "complexity_score": 236,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 24,
     "pseudocode_lines": 136,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
-      "variadic_anchor"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
     "total_lines": 469
   },
@@ -431,6 +534,27 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "SQRT",
+      "text": "fVar4 = SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar7 * fVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "SQRT",
+      "text": "fVar6 = SQRT(fVar12 * fVar12 + fVar11 * fVar11 + fVar10 * fVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(SShapeEditorPolygon *)((int)",
@@ -471,22 +595,6 @@
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + ((uint)bVar18 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0046edb6",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0046edbb",
-      "frame_offset": 100,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0046edbb",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046edb6 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
     }
   ]
 }

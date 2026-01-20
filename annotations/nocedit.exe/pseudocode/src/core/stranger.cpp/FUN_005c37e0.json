@@ -26,15 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 313,
+    "complexity_score": 308,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 48,
     "suspect_count": 25,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 209
@@ -280,6 +279,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "SQRT",
+      "text": "fVar2 = SQRT(in_stack_00000008->z * in_stack_00000008->z +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
@@ -329,6 +335,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "SQRT",
+      "text": "(dVar4 = (double)(SQRT(fVar2 * fVar2 - -*in_stack_0000000c * -*in_stack_0000000c) / fVar2),",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_0000000c",
@@ -341,6 +354,13 @@
       "match": "in_stack_0000000c",
       "text": "(dVar4 = (double)(SQRT(fVar2 * fVar2 - in_stack_0000000c[1] * in_stack_0000000c[1]) / fVar2)",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "SQRT",
+      "text": "(dVar4 = (double)(SQRT(fVar2 * fVar2 - in_stack_0000000c[1] * in_stack_0000000c[1]) / fVar2)",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -383,42 +403,6 @@
       "match": "in_stack_00000004",
       "text": "return in_stack_00000004;",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x3c",
-      "fix_address": "005c37e9",
-      "frame_offset": 60,
-      "match": "AND ESP",
-      "sub_esp_offset": 60,
-      "text": "Stack alignment at 005c37e9 (SUB ESP, 0x3c before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005c38bc",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005c38cb",
-      "frame_offset": 60,
-      "match": "CALL...ADD ESP",
-      "return_address": "005c38c1",
-      "target_address": "0x40cd70",
-      "text": "Direct CALL at 005c38bc, ADD ESP at 005c38cb with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005c3933",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005c3942",
-      "frame_offset": 60,
-      "match": "CALL...ADD ESP",
-      "return_address": "005c3938",
-      "target_address": "0x40cd70",
-      "text": "Direct CALL at 005c3933, ADD ESP at 005c3942 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

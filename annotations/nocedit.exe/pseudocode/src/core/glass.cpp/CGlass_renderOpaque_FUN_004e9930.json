@@ -38,14 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 97,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 6,
     "pseudocode_lines": 67,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "stack_ref"
     ],
     "total_lines": 225
@@ -225,13 +225,25 @@
       "type": "stack_ref"
     },
     {
-      "address": "004e9988",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004e9988",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "*(int *)pcVar4 = (int)ROUND(pCVar5->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "*(int *)(pcVar4 + 4) = (int)ROUND(pCVar5->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "*(int *)(pcVar4 + 8) = (int)ROUND(pCVar5->z * 256.0f);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -26,13 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 82,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 7,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 24
@@ -121,6 +122,13 @@
       "match": "in_stack_00000004",
       "text": "return SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "SQRT",
+      "text": "return SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

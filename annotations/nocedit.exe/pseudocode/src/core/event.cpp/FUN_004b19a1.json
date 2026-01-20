@@ -13,13 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 8,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 8,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_param"
+    ],
     "total_lines": 16
   },
   "cross_references": [],
@@ -77,5 +79,62 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "text": "(uint param_1,uint *param_2,uint param_3,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "(uint param_1,uint *param_2,uint param_3,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "(uint param_1,uint *param_2,uint param_3,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "text": "(uint param_1,uint *param_2,uint param_3,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_5",
+      "text": "uint *param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "text": "*param_2 = *param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_5",
+      "text": "*param_2 = *param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "text": "return param_2;",
+      "type": "unnamed_param"
+    }
+  ]
 }

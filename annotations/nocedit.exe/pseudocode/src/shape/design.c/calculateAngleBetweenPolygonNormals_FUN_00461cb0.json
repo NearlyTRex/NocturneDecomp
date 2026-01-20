@@ -1,15 +1,51 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 19,
+        "message": "'CONCAT44' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 21,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 23,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 25,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 128,
+    "complexity_score": 113,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 18,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
+      "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param"
     ],
@@ -175,11 +211,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 12,
       "match": "CONCAT44",
       "text": "((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffffe0,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -212,19 +248,6 @@
       "param_delta": 4,
       "text": "Function declares 2 params but call sites push 6 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00461cfc",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00461d0a",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "00461d01",
-      "target_address": "0x461c50",
-      "text": "Direct CALL at 00461cfc, ADD ESP at 00461d0a with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

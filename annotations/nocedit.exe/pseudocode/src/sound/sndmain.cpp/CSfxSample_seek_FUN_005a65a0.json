@@ -80,15 +80,15 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 103,
+    "complexity_score": 113,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
     "pseudocode_lines": 53,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param",
-      "sub_artifact"
+      "decompiler_intrinsic",
+      "stack_param"
     ],
     "total_lines": 190
   },
@@ -317,11 +317,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "SUB84",
       "text": "(SUB84 /* extract 2-byte value */((double)playback_position,0),",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -336,6 +336,13 @@
       "match": "in_stack_ffffffe4",
       "text": "(uint)((ulonglong)in_stack_ffffffe4 >> 0x20));",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "this_ptr->stream_read_position = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

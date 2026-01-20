@@ -152,13 +152,14 @@
   },
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 246,
+    "complexity_score": 281,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 111,
-    "suspect_count": 13,
+    "suspect_count": 16,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 253
@@ -366,6 +367,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 100,
+      "match": "ROUND",
+      "text": "uStack_18 = (byte)(int)ROUND(dVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 101,
       "match": "extraout_EAX",
@@ -380,6 +388,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "ROUND",
+      "text": "uStack_1c = (byte)(int)ROUND(dVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 104,
       "match": "extraout_EAX_00",
@@ -392,6 +407,13 @@
       "match": "extraout_EDX_00",
       "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EDX_00 + 0x1038));",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 106,
+      "match": "ROUND",
+      "text": "uStack_20 = (byte)(int)ROUND(dVar11);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

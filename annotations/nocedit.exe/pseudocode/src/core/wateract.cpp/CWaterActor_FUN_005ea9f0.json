@@ -464,15 +464,15 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 479,
+    "complexity_score": 529,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 269,
-    "suspect_count": 20,
+    "suspect_count": 25,
     "suspect_types": [
-      "extra_output",
-      "stack_align_anchor"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 281
   },
@@ -706,6 +706,20 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "ROUND",
+      "text": "*(int *)(this_ptr->field21_0x298 + 0x7d08) = (int)ROUND(dVar19);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "ROUND",
+      "text": "iVar11 = (int)ROUND(dVar19) + 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 51,
       "match": "extraout_EAX",
@@ -727,6 +741,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "ROUND",
+      "text": "*(int *)(extraout_EAX_00 + 0x18) = (int)ROUND(dVar19) + 0x20000;",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 77,
       "match": "extraout_EAX_00",
@@ -739,6 +760,13 @@
       "match": "extraout_EAX_01",
       "text": "extraout_EAX_01[-1] = (float)((int)ROUND(dVar19) + 0x20000);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 79,
+      "match": "ROUND",
+      "text": "extraout_EAX_01[-1] = (float)((int)ROUND(dVar19) + 0x20000);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -769,6 +797,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 191,
+      "match": "ROUND",
+      "text": "*(int *)(this_ptr->field21_0x298 + extraout_ECX + 0x1c) = (int)ROUND(dVar19);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 197,
       "match": "extraout_ECX_00",
@@ -776,21 +811,18 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 197,
+      "match": "ROUND",
+      "text": "*(int *)(this_ptr->field21_0x298 + extraout_ECX_00 + 0x20) = (int)ROUND(dVar19);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 198,
       "match": "extraout_EDX",
       "text": "iVar5 = extraout_EDX + 1;",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x40",
-      "fix_address": "005ea9f9",
-      "frame_offset": 64,
-      "match": "AND ESP",
-      "sub_esp_offset": 64,
-      "text": "Stack alignment at 005ea9f9 (SUB ESP, 0x40 before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

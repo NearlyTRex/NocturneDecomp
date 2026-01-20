@@ -50,14 +50,13 @@
   },
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 302,
+    "complexity_score": 197,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 52,
-    "suspect_count": 23,
+    "suspect_count": 13,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "stack_ref",
       "unaffected_reg"
@@ -356,96 +355,6 @@
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
       "type": "unaffected_reg"
-    },
-    {
-      "address": "004f8b63",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 108,
-      "instruction": "LEA ESI, [ESP + 0x6c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8b63",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8b75",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 144,
-      "instruction": "LEA EAX, [ESP + 0x90]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8b75",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8b9a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 120,
-      "instruction": "LEA EAX, [ESP + 0x78]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8b9a",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8ba9",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 132,
-      "instruction": "LEA ESI, [ESP + 0x84]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8ba9",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8bd2",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 132,
-      "instruction": "LEA EAX, [ESP + 0x84]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8bd2",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8bda",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 112,
-      "instruction": "LEA EAX, [ESP + 0x70]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8bda",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8bdf",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 56,
-      "instruction": "LEA EAX, [ESP + 0x38]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8bdf",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8c08",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 52,
-      "instruction": "LEA EAX, [ESP + 0x34]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8c08",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8c0d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA ESI, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8c0d",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004f8c1d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA ESI, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004f8c1d",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

@@ -692,17 +692,18 @@
   },
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 1206,
+    "complexity_score": 1241,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
     "pseudocode_lines": 196,
-    "suspect_count": 99,
+    "suspect_count": 102,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
-      "stack_align_anchor",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 847
   },
@@ -1463,6 +1464,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
@@ -1638,6 +1646,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "SQRT",
+      "text": ", DAT_00887e70[local_18].cylinder_radius <= SQRT(fVar3 * fVar3 + fVar5 * fVar5))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000008",
@@ -1692,6 +1707,13 @@
       "match": "(float *)((int)",
       "text": "*(float *)((int)&DAT_008879c0[0].z + iVar11);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT(local_104[0] * local_104[0] + local_fc * local_fc);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2023,6 +2045,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 163,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 172,
       "match": "in_stack_00000008",
@@ -2151,16 +2180,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x148",
-      "fix_address": "00449fcc",
-      "frame_offset": 328,
-      "match": "AND ESP",
-      "sub_esp_offset": 328,
-      "text": "Stack alignment at 00449fcc (SUB ESP, 0x148 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

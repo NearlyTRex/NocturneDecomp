@@ -75,7 +75,7 @@
     "pseudocode_lines": 41,
     "suspect_count": 8,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
@@ -361,11 +361,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(g_GreenBitCount,g_GreenBitCount + g_BlueBitCount);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

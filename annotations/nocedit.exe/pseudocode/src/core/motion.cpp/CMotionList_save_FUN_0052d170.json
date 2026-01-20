@@ -165,8 +165,8 @@
     "pseudocode_lines": 96,
     "suspect_count": 4,
     "suspect_types": [
-      "format_string_mismatch",
-      "sub_artifact"
+      "decompiler_intrinsic",
+      "format_string_mismatch"
     ],
     "total_lines": 390
   },
@@ -429,18 +429,18 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "SUB84",
       "text": "SUB84 /* extract 2-byte value */((double)local_14->exit_backward_to_frame,0),",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 66,
       "match": "SUB84",
       "text": "SUB84 /* extract 2-byte value */((double)*pfVar2,0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "actual_args": 0,

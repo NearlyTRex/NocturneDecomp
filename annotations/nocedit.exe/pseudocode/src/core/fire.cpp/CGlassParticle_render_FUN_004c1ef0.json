@@ -20,14 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 143,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
     "pseudocode_lines": 58,
-    "suspect_count": 8,
+    "suspect_count": 12,
     "suspect_types": [
-      "lea_esp_stack_addr"
+      "decompiler_intrinsic"
     ],
     "total_lines": 214
   },
@@ -350,76 +350,88 @@
   },
   "suspects": [
     {
-      "address": "004c1f18",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 76,
-      "instruction": "LEA EBX, [ESP + 0x4c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004c1f18",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "text": "local_28.x = (int)ROUND((this_ptr->triangle_delta).vertices[0].x * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004c1f4f",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 64,
-      "instruction": "LEA EAX, [ESP + 0x40]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004c1f4f",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_28.y = (int)ROUND((this_ptr->triangle_delta).vertices[0].y * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004c1f5c",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 84,
-      "instruction": "LEA EBX, [ESP + 0x54]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004c1f5c",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "local_28.z = (int)ROUND((this_ptr->triangle_delta).vertices[0].z * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004c1f91",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 76,
-      "instruction": "LEA EAX, [ESP + 0x4c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004c1f91",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "local_1c.x = (int)ROUND((this_ptr->triangle_delta).vertices[1].x * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004c1fa1",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 60,
-      "instruction": "LEA EBX, [ESP + 0x3c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004c1fa1",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "local_1c.y = (int)ROUND((this_ptr->triangle_delta).vertices[1].y * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004c1fd6",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 52,
-      "instruction": "LEA EAX, [ESP + 0x34]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004c1fd6",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "local_1c.z = (int)ROUND((this_ptr->triangle_delta).vertices[1].z * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004c2040",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 40,
-      "instruction": "LEA EBX, [ESP + 0x28]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004c2040",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "local_34.x = (int)ROUND((this_ptr->triangle_delta).vertices[2].x * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004c206e",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 52,
-      "instruction": "LEA EAX, [ESP + 0x34]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004c206e",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ROUND",
+      "text": "local_34.y = (int)ROUND((this_ptr->triangle_delta).vertices[2].y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "local_34.z = (int)ROUND((this_ptr->triangle_delta).vertices[2].z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ROUND",
+      "text": "local_40.x = (int)ROUND((this_ptr->base).position.x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ROUND",
+      "text": "local_40.y = (int)ROUND((this_ptr->base).position.y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ROUND",
+      "text": "local_40.z = (int)ROUND((this_ptr->base).position.z * 256.0f);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

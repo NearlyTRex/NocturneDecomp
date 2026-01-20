@@ -32,13 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 138,
+    "complexity_score": 163,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 53,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 165
@@ -253,6 +254,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "*extraout_ECX_00 = (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 29,
       "match": "extraout_ECX_00",
@@ -265,6 +273,13 @@
       "match": "extraout_ECX_00",
       "text": "*out_blend_weight = (float)(fVar4 - (float10)*extraout_ECX_00);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ROUND",
+      "text": "*out_frame2 = (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

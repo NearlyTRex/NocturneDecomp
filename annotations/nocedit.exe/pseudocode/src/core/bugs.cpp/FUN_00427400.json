@@ -345,7 +345,7 @@
     "pseudocode_lines": 105,
     "suspect_count": 45,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
@@ -786,11 +786,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "CONCAT44",
       "text": "(0,(int)(CONCAT44 /* combine 2-byte values */(*(int *)(in_stack_00000004 + 0x12b34) >> 0x1f,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

@@ -45,8 +45,8 @@
     "pseudocode_lines": 33,
     "suspect_count": 8,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
+      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 102
@@ -235,6 +235,13 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
@@ -275,15 +282,6 @@
       "match": "in_stack_00000004",
       "text": "(CVector3i *)(in_stack_00000004 + 0x5e4));",
       "type": "stack_param"
-    },
-    {
-      "address": "00509c95",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA EAX, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00509c95",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

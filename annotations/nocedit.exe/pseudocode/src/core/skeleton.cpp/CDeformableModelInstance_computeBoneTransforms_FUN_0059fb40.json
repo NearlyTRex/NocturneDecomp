@@ -278,14 +278,13 @@
   },
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 331,
+    "complexity_score": 316,
     "cross_reference_count": 17,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 91,
-    "suspect_count": 23,
+    "suspect_count": 22,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast"
     ],
     "total_lines": 231
@@ -698,15 +697,6 @@
       "match": "(CVector3f *)((int)",
       "text": "(&CStack_3c,(CVector3f *)((int)&local_30->x + local_18),local_14 + iVar1);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "0059fbe7",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0059fbe7",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

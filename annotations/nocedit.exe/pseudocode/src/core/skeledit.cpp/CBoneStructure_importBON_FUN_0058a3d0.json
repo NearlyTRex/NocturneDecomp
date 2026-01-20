@@ -62,14 +62,13 @@
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 116,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 8,
     "pseudocode_lines": 31,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "stack_ref"
     ],
@@ -317,15 +316,6 @@
       "match": "in_stack_ffffffe8",
       "text": "core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(in_stack_ffffffe8);",
       "type": "stack_param"
-    },
-    {
-      "address": "0058a438",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0058a438",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

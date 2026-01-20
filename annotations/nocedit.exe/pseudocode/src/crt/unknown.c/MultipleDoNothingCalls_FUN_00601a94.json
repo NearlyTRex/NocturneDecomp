@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 89,
+    "complexity_score": 174,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 34,
-    "suspect_count": 4,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "special_crt_function",
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 97
   },
@@ -138,11 +139,67 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "FILE *param_5)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EBX",
       "text": "(*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ef8)(unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_5",
+      "text": "if (param_5 == file_handle) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_5",
+      "text": "return param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_5",
+      "text": "} while (param_5 != pFVar1->file_struct);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_5",
+      "text": "return param_5;",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 1,

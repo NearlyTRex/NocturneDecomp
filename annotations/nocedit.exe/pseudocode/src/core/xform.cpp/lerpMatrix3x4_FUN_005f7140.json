@@ -110,18 +110,16 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 308,
+    "complexity_score": 248,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 78,
-    "suspect_count": 20,
+    "suspect_count": 15,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "param_count_too_many",
       "pointer_cast",
-      "stack_align_anchor",
-      "sub_artifact",
       "unaffected_reg"
     ],
     "total_lines": 199
@@ -460,11 +458,11 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "SUB84",
       "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_a->m,SUB84 /* extract 2-byte value */(dVar7,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -481,11 +479,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "SUB84",
       "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_b->m,SUB84 /* extract 2-byte value */(dVar7,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -502,11 +500,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "SUB84",
       "text": "(&local_70,&local_40,(CQuaternion4f *)t,SUB84 /* extract 2-byte value */(dVar7,0));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -560,68 +558,6 @@
       "param_delta": -1,
       "text": "Function declares 3 params but call sites push 2 (1 extra)",
       "type": "param_count_too_many"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xcc",
-      "fix_address": "005f714b",
-      "frame_offset": 204,
-      "match": "AND ESP",
-      "sub_esp_offset": 204,
-      "text": "Stack alignment at 005f714b (SUB ESP, 0xcc before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005f71ac",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005f71b1",
-      "frame_offset": 204,
-      "match": "CALL...ADD ESP",
-      "return_address": "005f71b1",
-      "target_address": "0x5f7420",
-      "text": "Direct CALL at 005f71ac, ADD ESP at 005f71b1 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005f71ce",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005f71d7",
-      "frame_offset": 204,
-      "match": "CALL...ADD ESP",
-      "return_address": "005f71d3",
-      "target_address": "0x5f7420",
-      "text": "Direct CALL at 005f71ce, ADD ESP at 005f71d7 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005f71fc",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005f7208",
-      "frame_offset": 204,
-      "match": "CALL...ADD ESP",
-      "return_address": "005f7201",
-      "target_address": "0x5f77e0",
-      "text": "Direct CALL at 005f71fc, ADD ESP at 005f7208 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005f721c",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005f7221",
-      "frame_offset": 204,
-      "match": "CALL...ADD ESP",
-      "return_address": "005f7221",
-      "target_address": "0x5f7280",
-      "text": "Direct CALL at 005f721c, ADD ESP at 005f7221 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

@@ -8,7 +8,7 @@
     "pseudocode_lines": 54,
     "suspect_count": 2,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "special_crt_function"
     ],
     "total_lines": 167
@@ -328,11 +328,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "CONCAT22",
       "text": "iVar3 = CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "005ff178",

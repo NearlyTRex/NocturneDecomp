@@ -1,13 +1,46 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 38,
+        "message": "'SQRT' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 39,
+        "message": "'ABS' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 51,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 47,
+    "complexity_score": 112,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 47,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 6,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 180
   },
   "cross_references": [
@@ -191,5 +224,48 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "SQRT",
+      "text": "local_20 = SQRT(fVar7 * fVar7 + fVar5 * fVar5 + fVar6 * fVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ABS",
+      "text": "if (ABS(local_20) == 0.0) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "ROUND",
+      "text": "output->normal_x = (int)ROUND(fVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ROUND",
+      "text": "output->normal_y = (int)ROUND(fVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ROUND",
+      "text": "output->normal_z = (int)ROUND(fVar8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "ROUND",
+      "text": "(int)ROUND((float)iVar4 * fVar8 + (float)iVar2 * fVar6 + (float)iVar3 * fVar5);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

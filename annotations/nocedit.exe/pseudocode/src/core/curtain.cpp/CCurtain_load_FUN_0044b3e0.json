@@ -134,15 +134,15 @@
   },
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 325,
+    "complexity_score": 335,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 20,
     "pseudocode_lines": 65,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
-      "lea_esp_stack_addr",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 236
   },
@@ -359,6 +359,20 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "param_3, char* param_4) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "param_3, char* param_4) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
@@ -525,15 +539,6 @@
       "match": "in_stack_00000004",
       "text": "((int *)(in_stack_00000004[1].create_event + 0x30),\"blockVirtualDirectorFlag\");",
       "type": "stack_param"
-    },
-    {
-      "address": "0044b44b",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0044b44b",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

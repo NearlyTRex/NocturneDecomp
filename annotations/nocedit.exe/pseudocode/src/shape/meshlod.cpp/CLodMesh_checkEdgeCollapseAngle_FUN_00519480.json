@@ -26,14 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 193,
-    "complexity_score": 92,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 77,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_align_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 270
   },
@@ -250,14 +250,25 @@
   },
   "suspects": [
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x28",
-      "fix_address": "00519489",
-      "frame_offset": 40,
-      "match": "AND ESP",
-      "sub_esp_offset": 40,
-      "text": "Stack alignment at 00519489 (SUB ESP, 0x28 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT(local_1c * local_1c + local_24 * local_24 + local_20 * local_20);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT(local_28 * local_28 + local_30 * local_30 + local_2c * local_2c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ABS",
+      "text": "if (ABS(local_1c * local_28 + local_24 * local_30 + local_20 * local_2c) <",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

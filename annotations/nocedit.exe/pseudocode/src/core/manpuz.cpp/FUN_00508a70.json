@@ -182,13 +182,14 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 1267,
+    "complexity_score": 1292,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 272,
-    "suspect_count": 97,
+    "suspect_count": 99,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "stack_param",
@@ -704,6 +705,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 93,
+      "match": "SQRT",
+      "text": "if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 94,
       "match": "in_stack_00000004",
@@ -786,6 +794,13 @@
       "match": "in_stack_00000004",
       "text": "if (SQRT(in_stack_00000004[4].create_prob * in_stack_00000004[4].create_prob +",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 106,
+      "match": "SQRT",
+      "text": "if (SQRT(in_stack_00000004[4].create_prob * in_stack_00000004[4].create_prob +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

@@ -81,7 +81,7 @@
     "pseudocode_lines": 48,
     "suspect_count": 6,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
@@ -319,6 +319,13 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "INT_00823a90 = (int)ROUND(dVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 27,
       "match": "&stack0xffffe550",
@@ -352,15 +359,6 @@
       "match": "&stack0xffffe550",
       "text": "(&this_ptr->model,(SBoneTransformData *)&stack0xffffe550);",
       "type": "stack_ref"
-    },
-    {
-      "address": "0042b007",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0042b007",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

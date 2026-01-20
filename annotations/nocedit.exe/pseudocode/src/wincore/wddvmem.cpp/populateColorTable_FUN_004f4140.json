@@ -39,7 +39,7 @@
     "pseudocode_lines": 26,
     "suspect_count": 2,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 75
@@ -185,11 +185,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(0x400,iVar1);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

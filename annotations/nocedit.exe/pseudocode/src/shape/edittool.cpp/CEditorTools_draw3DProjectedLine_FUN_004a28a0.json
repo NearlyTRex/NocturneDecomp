@@ -27,7 +27,7 @@
     "pseudocode_lines": 17,
     "suspect_count": 4,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "param_count_too_many"
     ],
     "total_lines": 61
@@ -218,6 +218,27 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ROUND",
+      "text": "local_10.x = (int)ROUND(world_point->w * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ROUND",
+      "text": "local_10.y = (int)ROUND(world_point->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ROUND",
+      "text": "local_10.z = (int)ROUND(world_point->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "call_site_count": 3,
       "declared_params": 3,
       "description": "Signature has too many params - likely wrong calling convention",
@@ -227,33 +248,6 @@
       "param_delta": -1,
       "text": "Function declares 3 params but call sites push 2 (1 extra)",
       "type": "param_count_too_many"
-    },
-    {
-      "address": "004a28a8",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 48,
-      "instruction": "LEA EBX, [ESP + 0x30]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004a28a8",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004a28ce",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 48,
-      "instruction": "LEA EBX, [ESP + 0x30]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004a28ce",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004a28d3",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EBX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004a28d3",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

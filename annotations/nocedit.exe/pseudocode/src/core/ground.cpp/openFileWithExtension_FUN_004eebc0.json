@@ -37,14 +37,13 @@
   },
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 96,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 56,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param"
     ],
     "total_lines": 169
@@ -225,15 +224,6 @@
       "match": "in_stack_00000010",
       "text": "pFVar2 = engine_dosio_c_getFile_FUN_00481a50(base_filename,local_60,in_stack_00000010);",
       "type": "stack_param"
-    },
-    {
-      "address": "004eec50",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004eec50",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

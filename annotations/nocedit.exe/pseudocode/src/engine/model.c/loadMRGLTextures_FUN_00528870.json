@@ -1,14 +1,50 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 31,
+        "line": 45,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 46,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 45,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 46,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 92,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 52,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast"
     ],
     "total_lines": 156
@@ -188,15 +224,6 @@
       "match": "(int *)((int)",
       "text": "piVar6 = (int *)((int)piVar6 + 2);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "005288f5",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EDI, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005288f5",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

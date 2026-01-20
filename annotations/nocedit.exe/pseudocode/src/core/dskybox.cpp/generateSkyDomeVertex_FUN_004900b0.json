@@ -32,15 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 145,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 13,
     "pseudocode_lines": 45,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "extra_output",
-      "stack_align_anchor"
+      "extra_output"
     ],
     "total_lines": 154
   },
@@ -377,16 +376,6 @@
       "match": "extraout_EAX",
       "text": "(&g_RenderVertexBuffer[0].w_recip)[extraout_EAX * 4] = 0.0;",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x34",
-      "fix_address": "004900b9",
-      "frame_offset": 52,
-      "match": "AND ESP",
-      "sub_esp_offset": 52,
-      "text": "Stack alignment at 004900b9 (SUB ESP, 0x34 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

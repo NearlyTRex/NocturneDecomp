@@ -20,14 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 56,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 41,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_align_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 198
   },
@@ -238,14 +238,25 @@
   },
   "suspects": [
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x78",
-      "fix_address": "005996e7",
-      "frame_offset": 120,
-      "match": "AND ESP",
-      "sub_esp_offset": 120,
-      "text": "Stack alignment at 005996e7 (SUB ESP, 0x78 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "SQRT",
+      "text": "fVar3 = SQRT(fVar4 * fVar4 + fVar1 * fVar1 + fVar2 * fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "SQRT",
+      "text": "return SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "SQRT",
+      "text": "return SQRT(fVar2 * fVar2 + fVar1);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

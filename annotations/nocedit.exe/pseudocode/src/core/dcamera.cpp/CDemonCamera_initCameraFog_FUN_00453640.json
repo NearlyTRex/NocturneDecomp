@@ -20,13 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 37,
+    "complexity_score": 92,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 11,
     "pseudocode_lines": 37,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 5,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 99
   },
   "cross_references": [
@@ -184,5 +186,41 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "g_CameraFogGrid.scroll_vector.x = (int)ROUND(fVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "g_CameraFogGrid.scroll_vector.y = (int)ROUND(fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "g_CameraFogGrid.scroll_vector.z = (int)ROUND(fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ROUND",
+      "text": "g_CameraFogGrid.height_threshold = (int)ROUND(fVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ROUND",
+      "text": "g_CameraFogGrid.density_multiplier = (int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

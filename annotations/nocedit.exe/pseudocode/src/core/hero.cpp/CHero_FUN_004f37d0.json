@@ -86,13 +86,14 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 50,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 25,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
+      "decompiler_intrinsic",
       "unaffected_reg"
     ],
     "total_lines": 91
@@ -192,6 +193,27 @@
       "match": "unaff_EBX",
       "text": "((CDemonActor *)this_ptr,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ABS",
+      "text": "((float)0.10000000000000001 < ABS(*(float *)(this_ptr->field3_0xbe2c + 0x20)))))))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ABS",
+      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->field3_0xbe2c + 0x24)) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ABS",
+      "text": "(((float)0.10000000000000001 < ABS(*(float *)(this_ptr->field3_0xbe2c + 0x28)) ||",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

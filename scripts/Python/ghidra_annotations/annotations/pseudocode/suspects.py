@@ -31,12 +31,6 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\(\w+\s*\*\s*\)\s*\(\s*\(int\)', 'pointer_cast', 'Complex pointer cast'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
-    # CONCAT44, CONCAT22, etc - Decompiler confused about double/long long composition
-    (r'\bCONCAT\d+\b', 'concat_artifact', 'Decompiler double/longlong composition artifact'),
-    # SUB84, SUB42, etc - Decompiler confused about extracting parts from double/long long
-    (r'\bSUB\d+\b', 'sub_artifact', 'Decompiler double/longlong extraction artifact'),
-    # SBORROW - Decompiler artifact for signed borrow detection
-    (r'\bSBORROW\b', 'sborrow_artifact', 'Decompiler signed borrow artifact'),
     # code * - Unresolved function pointer (failed vtable lookup)
     (r'\bcode\s*\*', 'unresolved_funcptr', 'Unresolved function pointer (vtable lookup failed)'),
     # WARNING: Removing unreachable block
@@ -49,6 +43,17 @@ _SUSPECT_PATTERN_DEFS = [
     (r'WARNING:\s*Subroutine does not return', 'warning_noreturn', 'Subroutine marked as non-returning'),
     # WARNING: Globals starting with '_' overlap
     (r'WARNING:\s*Globals starting with', 'warning_overlapping_globals', 'Overlapping global symbols'),
+    # uRamXXXX - Undefined RAM references (Ghidra couldn't resolve memory location)
+    (r'\b[pu]?uRam[0-9a-fA-F]+\b', 'undefined_ram', 'Undefined RAM reference'),
+    # param_N - Unnamed function parameters (need meaningful names)
+    (r'\bparam_\d+\b', 'unnamed_param', 'Unnamed function parameter'),
+    # local_XX - Unnamed local variables (need meaningful names)
+    (r'\blocal_[0-9a-fA-F]+\b', 'unnamed_local', 'Unnamed local variable'),
+    # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
+    # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, etc.
+    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY|SCARRY|SBORROW|CONCAT\d+|SUB\d+)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
+    # float10 - Extended precision float type (x87 FPU artifact)
+    (r'\bfloat10\b', 'float10_type', 'Extended precision float (x87 FPU artifact)'),
 ]
 
 # Pre-compiled patterns for performance (compiled once at module load)
@@ -88,6 +93,74 @@ def identify_suspect_lines(decompiled_code):
                     'text': line_stripped,
                     'description': description
                 })
+    return suspects
+
+
+def identify_assembly_suspects(assembly_code):
+    """Identify suspect patterns in assembly code.
+
+    Currently detects:
+    - MMX instructions (MOVQ, EMMS, etc.) which indicate SIMD code that
+      may not decompile cleanly
+
+    Args:
+        assembly_code: The assembly code as a string
+
+    Returns:
+        A list of suspect dictionaries with line, type, match, text, and description
+    """
+    suspects = []
+
+    if not assembly_code:
+        return suspects
+
+    # MMX instruction patterns
+    mmx_pattern = re.compile(
+        r'\b(MOVQ|MOVD|PACKSSWB|PACKSSDW|PACKUSWB|PUNPCKHBW|PUNPCKHWD|PUNPCKHDQ|'
+        r'PUNPCKLBW|PUNPCKLWD|PUNPCKLDQ|PADDB|PADDW|PADDD|PADDSB|PADDSW|PADDUSB|'
+        r'PADDUSW|PSUBB|PSUBW|PSUBD|PSUBSB|PSUBSW|PSUBUSB|PSUBUSW|PMULLW|PMULHW|'
+        r'PMADDWD|PCMPEQB|PCMPEQW|PCMPEQD|PCMPGTB|PCMPGTW|PCMPGTD|PAND|PANDN|'
+        r'POR|PXOR|PSLLW|PSLLD|PSLLQ|PSRLW|PSRLD|PSRLQ|PSRAW|PSRAD|EMMS)\b',
+        re.IGNORECASE
+    )
+
+    # MM register pattern (MM0-MM7)
+    mm_reg_pattern = re.compile(r'\bMM[0-7]\b', re.IGNORECASE)
+
+    lines = assembly_code.split('\n')
+    mmx_found = False
+    first_mmx_line = None
+    mmx_instructions = set()
+
+    for line_num, line in enumerate(lines, 1):
+        line_stripped = line.strip()
+        if not line_stripped or line_stripped.startswith(';'):
+            continue
+
+        # Check for MMX instructions
+        mmx_match = mmx_pattern.search(line)
+        if mmx_match:
+            mmx_found = True
+            mmx_instructions.add(mmx_match.group(1).upper())
+            if first_mmx_line is None:
+                first_mmx_line = line_num
+
+        # Also check for MM register usage
+        if mm_reg_pattern.search(line) and not mmx_found:
+            mmx_found = True
+            if first_mmx_line is None:
+                first_mmx_line = line_num
+
+    # Add a single suspect for MMX usage (not one per instruction)
+    if mmx_found:
+        suspects.append({
+            'line': first_mmx_line or 1,
+            'type': 'mmx_assembly',
+            'match': ', '.join(sorted(mmx_instructions)[:5]) if mmx_instructions else 'MMX',
+            'text': 'Function uses MMX instructions',
+            'description': 'MMX/SIMD assembly - may not decompile to clean C code'
+        })
+
     return suspects
 
 

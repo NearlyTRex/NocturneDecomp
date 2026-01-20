@@ -26,18 +26,18 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 380,
+    "complexity_score": 420,
     "cross_reference_count": 15,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 95,
-    "suspect_count": 26,
+    "suspect_count": 30,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "extra_output",
-      "stack_align_anchor",
       "stack_param",
-      "suspect_float"
+      "suspect_float",
+      "unnamed_param"
     ],
     "total_lines": 232
   },
@@ -398,6 +398,27 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "uint param_3, uint param_4, uint param_5) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "uint param_3, uint param_4, uint param_5) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_5",
+      "text": "uint param_3, uint param_4, uint param_5) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 11,
       "match": "extraout_ST1",
@@ -482,6 +503,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "SQRT",
+      "text": "local_1c = SQRT(in_stack_0000000c[2] * in_stack_0000000c[2] +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_0000000c",
@@ -538,11 +566,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "SQRT",
+      "text": "SQRT(local_3c.y * local_3c.y + local_40 * local_40 + local_3c.x * local_3c.x);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 60,
       "match": "7.242299e-39",
       "text": "local_7c.m[0].x = 7.242299e-39;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "SQRT",
+      "text": "SQRT((float10)local_40 * (float10)local_40 +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -564,29 +606,6 @@
       "match": "in_stack_00000010",
       "text": "} while (iVar2 < in_stack_00000010);",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x64",
-      "fix_address": "004edbb9",
-      "frame_offset": 100,
-      "match": "AND ESP",
-      "sub_esp_offset": 100,
-      "text": "Stack alignment at 004edbb9 (SUB ESP, 0x64 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "004edbe0",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "004edbe5",
-      "frame_offset": 100,
-      "match": "CALL...ADD ESP",
-      "return_address": "004edbe5",
-      "target_address": "0x4edaa0",
-      "text": "Direct CALL at 004edbe0, ADD ESP at 004edbe5 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

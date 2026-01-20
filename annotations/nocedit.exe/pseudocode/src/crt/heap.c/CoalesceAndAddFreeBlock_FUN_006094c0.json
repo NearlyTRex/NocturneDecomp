@@ -8,7 +8,7 @@
     "pseudocode_lines": 96,
     "suspect_count": 6,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "param_count_too_many",
       "pointer_cast",
       "special_crt_function"
@@ -100,11 +100,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "CONCAT22",
       "text": "iVar7 = CONCAT22 /* combine 2-byte values */(unaff_0000000e,segment);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

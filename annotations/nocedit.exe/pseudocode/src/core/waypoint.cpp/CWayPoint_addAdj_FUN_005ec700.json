@@ -116,14 +116,16 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 190,
+    "complexity_score": 220,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 25,
-    "suspect_count": 16,
+    "suspect_count": 18,
     "suspect_types": [
-      "stack_param"
+      "decompiler_intrinsic",
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 84
   },
@@ -238,6 +240,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
@@ -334,6 +343,13 @@
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0x378 + *(int *)(in_stack_00000004 + 0x370) * 8) =",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "SQRT",
+      "text": "SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

@@ -1,4 +1,35 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 18,
+        "line": 49,
+        "message": "'SBORROW' was not declared in this scope"
+      },
+      {
+        "category": "syntax_error",
+        "column": 25,
+        "line": 49,
+        "message": "expected ')' before numeric constant"
+      },
+      {
+        "category": "syntax_error",
+        "column": 134,
+        "line": 49,
+        "message": "expected ')' before ';' token"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 85,
     "complexity_score": 65,
@@ -8,7 +39,7 @@
     "pseudocode_lines": 40,
     "suspect_count": 2,
     "suspect_types": [
-      "sborrow_artifact"
+      "decompiler_intrinsic"
     ],
     "total_lines": 125
   },
@@ -147,18 +178,18 @@
   },
   "suspects": [
     {
-      "description": "Decompiler signed borrow artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "SBORROW",
       "text": "return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed borrow */4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);",
-      "type": "sborrow_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler signed borrow artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "SBORROW",
       "text": "return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed borrow */4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);",
-      "type": "sborrow_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

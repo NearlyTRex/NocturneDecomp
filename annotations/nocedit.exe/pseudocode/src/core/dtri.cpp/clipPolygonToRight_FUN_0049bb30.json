@@ -13,16 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 95,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 12,
     "pseudocode_lines": 55,
-    "suspect_count": 3,
-    "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 196
   },
   "cross_references": [],
@@ -214,42 +211,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x4",
-      "fix_address": "0049bb39",
-      "frame_offset": 4,
-      "match": "AND ESP",
-      "sub_esp_offset": 4,
-      "text": "Stack alignment at 0049bb39 (SUB ESP, 0x4 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 44,
-      "call_address": "0049bc0a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0049bc15",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "0049bc0f",
-      "target_address": "0x49b6c0",
-      "text": "Direct CALL at 0049bc0a, ADD ESP at 0049bc15 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 44,
-      "call_address": "0049bc68",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0049bc73",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "0049bc6d",
-      "target_address": "0x49b6c0",
-      "text": "Direct CALL at 0049bc68, ADD ESP at 0049bc73 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

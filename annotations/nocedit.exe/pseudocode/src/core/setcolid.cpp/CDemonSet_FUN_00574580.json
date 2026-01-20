@@ -39,7 +39,7 @@
     "pseudocode_lines": 42,
     "suspect_count": 11,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
       "unaffected_reg"
@@ -219,6 +219,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ABS",
+      "text": "if ((ABS(g_CWaterPtr->water_level_y) == 0.0) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
@@ -270,15 +277,6 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "005745f5",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 28,
-      "instruction": "LEA EAX, [ESP + 0x1c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005745f5",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

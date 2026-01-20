@@ -44,14 +44,14 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 183,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 13,
     "pseudocode_lines": 123,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 362
@@ -400,17 +400,18 @@
       "type": "extra_output"
     },
     {
-      "add_esp_value": 12,
-      "call_address": "0053071e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00530726",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "00530723",
-      "target_address": "0x602102",
-      "text": "Direct CALL at 0053071e, ADD ESP at 00530726 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "ABS",
+      "text": "if ((float)1.0000000000000001e-05 < ABS(subband_samples[iVar7])) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 113,
+      "match": "ROUND",
+      "text": "local_30 = (int)ROUND(fVar2 * 32768.0);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

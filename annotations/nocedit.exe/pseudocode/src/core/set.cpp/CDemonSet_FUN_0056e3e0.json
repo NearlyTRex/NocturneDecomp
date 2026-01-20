@@ -93,9 +93,9 @@
     "pseudocode_lines": 67,
     "suspect_count": 18,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 227
@@ -472,14 +472,11 @@
       "type": "stack_param"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x34",
-      "fix_address": "0056e3e8",
-      "frame_offset": 52,
-      "match": "AND ESP",
-      "sub_esp_offset": 52,
-      "text": "Stack alignment at 0056e3e8 (SUB ESP, 0x34 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar9) << 8);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -39,7 +39,7 @@
     "pseudocode_lines": 13,
     "suspect_count": 6,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 22
@@ -136,11 +136,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(fVar1,uVar2);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

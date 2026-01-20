@@ -1,16 +1,89 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 27,
+        "line": 39,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 45,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 34,
+        "line": 74,
+        "message": "'ROUND' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 77,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 33,
+        "line": 89,
+        "message": "'ROUND' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 92,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 39,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 45,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 77,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 92,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 224,
+    "complexity_score": 274,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
     "pseudocode_lines": 89,
-    "suspect_count": 12,
+    "suspect_count": 17,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
-      "pointer_cast",
-      "stack_align_anchor"
+      "pointer_cast"
     ],
     "total_lines": 366
   },
@@ -314,6 +387,27 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "local_34 = (uint)(longlong)ROUND(fVar13);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ROUND",
+      "text": "uStack_2c = (uint)(longlong)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ROUND",
+      "text": "local_3c = (uint)(longlong)ROUND(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 70,
       "match": "extraout_EAX_00",
@@ -335,6 +429,27 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "uStack_2c = (uint)(longlong)ROUND(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 83,
+      "match": "ROUND",
+      "text": "local_34 = (uint)(longlong)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 84,
+      "match": "ROUND",
+      "text": "local_3c = (uint)(longlong)ROUND(fVar13);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 85,
       "match": "extraout_EAX",
@@ -354,16 +469,6 @@
       "match": "extraout_CL",
       "text": ") | (ushort)((local_3c >> (extraout_CL & 0x1f)) << ((byte)g_RedBitPosition & 0x1f))",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
-      "fix_address": "00433f59",
-      "frame_offset": 44,
-      "match": "AND ESP",
-      "sub_esp_offset": 44,
-      "text": "Stack alignment at 00433f59 (SUB ESP, 0x2c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

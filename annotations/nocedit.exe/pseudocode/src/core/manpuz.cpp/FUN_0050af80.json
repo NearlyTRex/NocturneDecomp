@@ -33,8 +33,8 @@
     "pseudocode_lines": 21,
     "suspect_count": 5,
     "suspect_types": [
-      "lea_esp_stack_addr",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 83
   },
@@ -174,6 +174,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
@@ -200,15 +207,6 @@
       "match": "in_stack_00000008",
       "text": "pfVar3 = (float *)(in_stack_00000004 + 0x1340 + in_stack_00000008 * 0x60);",
       "type": "stack_param"
-    },
-    {
-      "address": "0050affc",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0050affc",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

@@ -68,14 +68,13 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 175,
+    "complexity_score": 130,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 16,
     "pseudocode_lines": 75,
-    "suspect_count": 9,
+    "suspect_count": 5,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param"
     ],
     "total_lines": 225
@@ -318,42 +317,6 @@
       "match": "in_stack_00000004",
       "text": "(\"Texture filename %s is too long to add to CGroundTypeList!\",in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "address": "005782a2",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005782a2",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0057830d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 264,
-      "instruction": "LEA EAX, [ESP + 0x108]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0057830d",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00578358",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 260,
-      "instruction": "LEA EDI, [ESP + 0x104]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00578358",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005783a8",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 260,
-      "instruction": "LEA ESI, [ESP + 0x104]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005783a8",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 112,
+    "complexity_score": 97,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "special_crt_function",
-      "stack_param",
-      "sub_artifact"
+      "stack_param"
     ],
     "total_lines": 32
   },
@@ -132,11 +131,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "SUB84",
       "text": "*in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -144,19 +143,6 @@
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1] = local_8;",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00603bd5",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00603be0",
-      "frame_offset": 8,
-      "match": "CALL...ADD ESP",
-      "return_address": "00603bda",
-      "target_address": "0x605d5d",
-      "text": "Direct CALL at 00603bd5, ADD ESP at 00603be0 with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "address": "00603bc9",

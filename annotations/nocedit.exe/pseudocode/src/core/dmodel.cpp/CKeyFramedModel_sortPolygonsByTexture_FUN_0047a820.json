@@ -13,14 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 115,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 35,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "warning_unreachable"
     ],
     "total_lines": 187
@@ -285,15 +284,6 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0047a965) */",
       "type": "warning_unreachable"
-    },
-    {
-      "address": "0047a913",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 36,
-      "instruction": "LEA EAX, [ESP + 0x24]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0047a913",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

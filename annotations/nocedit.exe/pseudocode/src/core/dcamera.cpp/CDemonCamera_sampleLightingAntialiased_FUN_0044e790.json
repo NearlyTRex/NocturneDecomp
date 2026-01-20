@@ -80,13 +80,14 @@
   },
   "complexity": {
     "assembly_lines": 515,
-    "complexity_score": 261,
+    "complexity_score": 276,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "pseudocode_lines": 206,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 721
@@ -326,6 +327,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "return (int)ROUND((float)intensity *",
+      "type": "decompiler_intrinsic"
+    },
     {
       "description": "Complex pointer cast",
       "line": 133,

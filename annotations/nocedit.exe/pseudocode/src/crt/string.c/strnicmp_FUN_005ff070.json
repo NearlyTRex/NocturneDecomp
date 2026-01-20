@@ -8,7 +8,7 @@
     "pseudocode_lines": 28,
     "suspect_count": 4,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "special_crt_function"
     ],
     "total_lines": 89
@@ -195,25 +195,25 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "CONCAT11",
       "text": "uVar1 = (uint)CONCAT11 /* combine 2-byte values */(*str2,bVar2);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "CONCAT11",
       "text": "uVar1 = (uint)CONCAT11 /* combine 2-byte values */(*str2,bVar2 + 0x20);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "CONCAT11",
       "text": "uVar1 = (uint)CONCAT11 /* combine 2-byte values */(bVar2 + 0x20,(char)uVar1);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "005ff070",

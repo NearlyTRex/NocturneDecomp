@@ -1,15 +1,45 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 40,
+        "message": "'ROUND' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 28,
+        "line": 97,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 122,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 167,
+    "complexity_score": 192,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 25,
     "pseudocode_lines": 117,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_esp_anchor",
-      "variadic_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 413
   },
@@ -457,59 +487,53 @@
   },
   "suspects": [
     {
-      "add_esp_value": 16,
-      "call_address": "004665db",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "004665e0",
-      "frame_offset": 244,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004665e0",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004665db (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "local_104.x = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 8,
-      "call_address": "004662e7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004662ec",
-      "frame_offset": 244,
-      "match": "CALL...ADD ESP",
-      "return_address": "004662ec",
-      "target_address": "0x50cd70",
-      "text": "Direct CALL at 004662e7, ADD ESP at 004662ec with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "local_104.y = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 4,
-      "call_address": "00466577",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0046657c",
-      "frame_offset": 244,
-      "match": "CALL...ADD ESP",
-      "return_address": "0046657c",
-      "target_address": "0x403950",
-      "text": "Direct CALL at 00466577, ADD ESP at 0046657c with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "ROUND",
+      "text": "local_104.z = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 12,
-      "call_address": "004665f5",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004665fa",
-      "frame_offset": 244,
-      "match": "CALL...ADD ESP",
-      "return_address": "004665fa",
-      "target_address": "0x402430",
-      "text": "Direct CALL at 004665f5, ADD ESP at 004665fa with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 90,
+      "match": "ROUND",
+      "text": "local_f0[0].A = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "local_f0[0].B = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 98,
+      "match": "ROUND",
+      "text": "local_f0[0].C = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 102,
+      "match": "ROUND",
+      "text": "local_f0[0].D = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

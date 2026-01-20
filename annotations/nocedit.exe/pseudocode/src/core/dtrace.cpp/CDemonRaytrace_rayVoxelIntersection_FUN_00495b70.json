@@ -122,19 +122,16 @@
   },
   "complexity": {
     "assembly_lines": 558,
-    "complexity_score": 695,
+    "complexity_score": 690,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 205,
-    "suspect_count": 45,
+    "suspect_count": 46,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
+      "decompiler_intrinsic",
       "extra_output",
-      "stack_align_anchor",
       "stack_ref",
-      "sub_artifact",
       "suspect_float",
       "unknown_field"
     ],
@@ -614,6 +611,13 @@
       "type": "suspect_float"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 71,
       "match": "._0_4_",
@@ -621,11 +625,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "SUB84",
       "text": "local_7c._0_4_ = SUB84 /* extract 2-byte value */(dVar12,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -635,6 +639,13 @@
       "type": "suspect_float"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "ROUND",
+      "text": "iVar5 = (int)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 81,
       "match": "6.737297e-39",
@@ -642,18 +653,60 @@
       "type": "suspect_float"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 83,
+      "match": "ROUND",
+      "text": "local_8c = (int)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 101,
       "match": "SUB84",
       "text": "local_94 = SUB84 /* extract 2-byte value */(dVar13,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 104,
+      "match": "SQRT",
+      "text": "fVar2 = SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 109,
+      "match": "ABS",
+      "text": "fVar9 = ABS((float10)fVar17 - (float10)fVar16) * fVar8;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 110,
+      "match": "ABS",
+      "text": "fVar11 = ABS((float10)fVar18 - (float10)fVar6) * fVar8;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 111,
+      "match": "ABS",
+      "text": "crt_math_c_round_FUN_005fe6b0((double)(ABS((float10)fVar19 - (float10)fVar15) * fVar8));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "CONCAT44",
       "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(dVar14),(int)local_84);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "ROUND",
+      "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(dVar14),(int)local_84);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -670,11 +723,11 @@
       "type": "suspect_float"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 125,
       "match": "SUB84",
       "text": "local_9c = SUB84 /* extract 2-byte value */(dVar12,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -705,11 +758,25 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 146,
+      "match": "ROUND",
+      "text": "fVar10 = (float10)(int)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 155,
+      "match": "ROUND",
+      "text": "local_70 = (int)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 157,
       "match": "CONCAT44",
       "text": "local_7c = CONCAT44 /* combine 2-byte values */(iVar1,(float)local_7c);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -789,11 +856,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 185,
       "match": "CONCAT44",
       "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */(local_84._4_4_ + local_68,(int)local_84);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -803,11 +870,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 187,
       "match": "CONCAT44",
       "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_ + local_64,(float)local_7c);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -817,11 +884,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "CONCAT44",
       "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_,(int)(float)local_7c + local_94);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -831,11 +898,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 196,
       "match": "CONCAT44",
       "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */(local_84._4_4_,(int)local_84 + local_98);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -845,125 +912,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 197,
       "match": "CONCAT44",
       "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_ - local_90,(float)local_7c);",
-      "type": "concat_artifact"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xa0",
-      "fix_address": "00495b7c",
-      "frame_offset": 160,
-      "match": "AND ESP",
-      "sub_esp_offset": 160,
-      "text": "Stack alignment at 00495b7c (SUB ESP, 0xa0 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495bc9",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495bda",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495bce",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495bc9, ADD ESP at 00495bda with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495bf2",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495c03",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495bf7",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495bf2, ADD ESP at 00495c03 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495c1b",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495c2c",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495c20",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495c1b, ADD ESP at 00495c2c with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495c6e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495c7f",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495c73",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495c6e, ADD ESP at 00495c7f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495c96",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495ca7",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495c9b",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495c96, ADD ESP at 00495ca7 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495cbf",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495cd0",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495cc4",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495cbf, ADD ESP at 00495cd0 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "00495f6d",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495f72",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495f72",
-      "target_address": "0x4952b0",
-      "text": "Direct CALL at 00495f6d, ADD ESP at 00495f72 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0049611a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0049612d",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "0049611f",
-      "target_address": "0x4578f0",
-      "text": "Direct CALL at 0049611a, ADD ESP at 0049612d with uncertain ESP",
-      "type": "call_esp_anchor"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

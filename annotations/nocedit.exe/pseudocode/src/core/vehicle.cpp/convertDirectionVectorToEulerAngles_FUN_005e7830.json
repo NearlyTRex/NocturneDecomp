@@ -38,16 +38,15 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 176,
+    "complexity_score": 191,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 31,
-    "suspect_count": 13,
+    "suspect_count": 15,
     "suspect_types": [
-      "concat_artifact",
-      "extra_output",
-      "stack_align_anchor"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 97
   },
@@ -625,11 +624,25 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ABS",
+      "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ABS",
+      "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "CONCAT44",
       "text": "out_euler_angles->x = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_14,0x54411744);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -660,6 +673,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "SQRT",
+      "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 31,
       "match": "extraout_EDX",
@@ -686,16 +706,6 @@
       "match": "extraout_ECX_00",
       "text": "return extraout_ECX_00;",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
-      "fix_address": "005e7838",
-      "frame_offset": 8,
-      "match": "AND ESP",
-      "sub_esp_offset": 8,
-      "text": "Stack alignment at 005e7838 (SUB ESP, 0x8 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

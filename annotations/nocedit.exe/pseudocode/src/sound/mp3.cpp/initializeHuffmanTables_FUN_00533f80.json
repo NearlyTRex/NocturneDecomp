@@ -218,14 +218,13 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 232,
+    "complexity_score": 217,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 36,
     "pseudocode_lines": 112,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast"
     ],
     "total_lines": 311
@@ -620,15 +619,6 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_HuffmanTables[0].table_size + iVar3) = g_HuffmanTables[iVar2].table_size;",
       "type": "pointer_cast"
-    },
-    {
-      "address": "0053400d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0053400d",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

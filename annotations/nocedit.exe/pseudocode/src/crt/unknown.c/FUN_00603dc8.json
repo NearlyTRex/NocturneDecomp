@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 961,
+    "complexity_score": 951,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 246,
     "suspect_count": 69,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
+      "decompiler_intrinsic",
       "special_crt_function",
-      "stack_param",
-      "sub_artifact"
+      "stack_param"
     ],
     "total_lines": 492
   },
@@ -313,95 +311,102 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "CONCAT11",
       "text": "iVar10 = (CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44) - 0x3ffe) * 0x7597;",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "CONCAT11",
       "text": "uVar1 = CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "CONCAT22",
       "text": "iVar4 = CONCAT22 /* combine 2-byte values */(uStack_42,uVar1);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "CONCAT11",
       "text": "uVar1 = CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "CONCAT22",
       "text": "((uVar6 = CONCAT22 /* combine 2-byte values */(uStack_42,uVar1), uVar1 != 0x4034 ||",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "CONCAT28",
       "text": "_local_40 = (float10)CONCAT28 /* combine 2-byte values */(0x4019,0xbebc200000000000);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 95,
       "match": "CONCAT19",
       "text": "iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "CONCAT18",
       "text": "CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) /",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "CONCAT44",
       "text": "CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) /",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 100,
       "match": "CONCAT19",
       "text": "fVar12 = (float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 100,
       "match": "CONCAT18",
       "text": "fVar12 = (float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 100,
       "match": "CONCAT44",
       "text": "fVar12 = (float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "SUB104",
       "text": "local_4c = SUB104 /* extract 3-byte value */(fVar12,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -509,67 +514,74 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 157,
       "match": "CONCAT11",
       "text": "if ((CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44) & 0x7fff) != 0) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 158,
+      "match": "ROUND",
+      "text": "iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 158,
       "match": "CONCAT19",
       "text": "iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "CONCAT18",
       "text": "CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "CONCAT44",
       "text": "CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 163,
       "match": "CONCAT28",
       "text": "_auStack_58 = (float10)CONCAT28 /* combine 2-byte values */(0x4019,0xbebc200000000000);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 167,
       "match": "CONCAT19",
       "text": "((float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 167,
       "match": "CONCAT18",
       "text": "((float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 167,
       "match": "CONCAT44",
       "text": "((float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 169,
       "match": "SUB104",
       "text": "local_4c = SUB104 /* extract 3-byte value */(fVar12,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -675,32 +687,6 @@
       "match": "in_stack_00000008",
       "text": "((*(byte *)(in_stack_00000008 + 2) & 8) == 0)))))) {",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00603e45",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00603e4a",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "00603e4a",
-      "target_address": "0x60b07a",
-      "text": "Direct CALL at 00603e45, ADD ESP at 00603e4a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00603fc8",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00603fcd",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "00603fcd",
-      "target_address": "0x603d60",
-      "text": "Direct CALL at 00603fc8, ADD ESP at 00603fcd with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "address": "00603dc8",

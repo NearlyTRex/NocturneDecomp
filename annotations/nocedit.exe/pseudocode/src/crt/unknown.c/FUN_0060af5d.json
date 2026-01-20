@@ -8,7 +8,7 @@
     "pseudocode_lines": 43,
     "suspect_count": 28,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "extra_output",
       "register_param",
       "special_crt_function",
@@ -358,18 +358,18 @@
       "type": "register_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "CONCAT22",
       "text": "return CONCAT44 /* combine 2-byte values */(CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "0060af5d",

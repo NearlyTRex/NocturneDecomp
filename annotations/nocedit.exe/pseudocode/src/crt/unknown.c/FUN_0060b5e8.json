@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 133,
+    "complexity_score": 298,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 43,
-    "suspect_count": 7,
+    "suspect_count": 23,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "param_count_too_few",
       "special_crt_function",
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 87
   },
@@ -98,6 +99,20 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "text": "ulonglong crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "ulonglong crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_EBP",
@@ -112,11 +127,39 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "text": "if ((param_1 != 0 || param_2 != 0) || unaff_EBP != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "text": "if ((param_1 != 0 || param_2 != 0) || unaff_EBP != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "text": "uVar1 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 18,
       "match": "unaff_EBP",
       "text": "uVar4 = unaff_EBP;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "text": "if (param_2 == 0) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
@@ -126,11 +169,81 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "text": "param_2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "text": "param_2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "text": "uVar3 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "text": "if (param_2 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "text": "param_1 = uVar2 + CARRY4(uVar5,uVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "text": "param_2 = uVar3 + uVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
+      "text": "param_2 = param_2 >> 1 | 0x80000000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
+      "text": "param_2 = param_2 >> 1 | 0x80000000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(param_2,param_1);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

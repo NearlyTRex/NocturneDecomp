@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 81,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 21,
     "suspect_count": 4,
     "suspect_types": [
-      "sborrow_artifact",
+      "decompiler_intrinsic",
       "special_crt_function",
-      "sub_artifact",
       "unknown_field"
     ],
     "total_lines": 58
@@ -136,18 +135,18 @@
   },
   "suspects": [
     {
-      "description": "Decompiler signed borrow artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "SBORROW",
       "text": "cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\\x03');",
-      "type": "sborrow_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "SUB84",
       "text": "crt_unknown_c_FUN_0060e256(SUB84 /* extract 2-byte value */(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),0xe2308c3a,0x3e45798e)",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",

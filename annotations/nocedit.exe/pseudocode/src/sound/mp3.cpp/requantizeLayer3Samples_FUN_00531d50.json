@@ -278,16 +278,15 @@
   },
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 476,
+    "complexity_score": 461,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 17,
     "pseudocode_lines": 191,
-    "suspect_count": 27,
+    "suspect_count": 26,
     "suspect_types": [
       "extra_output",
-      "pointer_cast",
-      "stack_align_anchor"
+      "pointer_cast"
     ],
     "total_lines": 585
   },
@@ -900,16 +899,6 @@
       "match": "(float *)((int)",
       "text": "local_6c = (float *)((int)local_6c + 0x12);",
       "type": "pointer_cast"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x68",
-      "fix_address": "00531d59",
-      "frame_offset": 104,
-      "match": "AND ESP",
-      "sub_esp_offset": 104,
-      "text": "Stack alignment at 00531d59 (SUB ESP, 0x68 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

@@ -32,14 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 58,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 43,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_align_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 223
   },
@@ -157,14 +157,25 @@
   },
   "suspects": [
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
-      "fix_address": "005f51e9",
-      "frame_offset": 48,
-      "match": "AND ESP",
-      "sub_esp_offset": 48,
-      "text": "Stack alignment at 005f51e9 (SUB ESP, 0x30 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "SQRT",
+      "text": "dVar4 = 1.0 / SQRT(dVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "SQRT",
+      "text": "dVar4 = 1.0 / SQRT(dVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "SQRT",
+      "text": "dVar4 = 1.0 / SQRT(dVar4);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

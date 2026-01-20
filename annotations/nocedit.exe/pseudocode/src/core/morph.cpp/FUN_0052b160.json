@@ -62,13 +62,14 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 190,
+    "complexity_score": 215,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "pseudocode_lines": 45,
-    "suspect_count": 13,
+    "suspect_count": 15,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
       "stack_param"
@@ -298,11 +299,25 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "(uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x10 |",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 23,
       "match": "extraout_EAX",
       "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x20) <<",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x20) <<",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

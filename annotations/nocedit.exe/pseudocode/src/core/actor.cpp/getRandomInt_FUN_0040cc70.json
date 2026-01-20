@@ -27,7 +27,7 @@
     "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
-      "stack_align_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 90
   },
@@ -417,14 +417,11 @@
   },
   "suspects": [
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
-      "fix_address": "0040cc78",
-      "frame_offset": 20,
-      "match": "AND ESP",
-      "sub_esp_offset": 20,
-      "text": "Stack alignment at 0040cc78 (SUB ESP, 0x14 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(dVar4);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -272,16 +272,15 @@
   },
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 566,
+    "complexity_score": 561,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 121,
     "suspect_count": 41,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "extra_output",
-      "lea_esp_stack_addr",
       "pointer_cast",
       "stack_param",
       "unknown_field",
@@ -715,6 +714,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ROUND",
+      "text": "iStack_3c = (int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 56,
       "match": "._4_4_",
@@ -727,6 +733,13 @@
       "match": "._4_4_",
       "text": "fVar10 = (float10)local_44._4_4_ * (float10)_DAT_0065b5c8;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -813,11 +826,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "CONCAT44",
       "text": "uVar13 = CONCAT44 /* combine 2-byte values */(local_5c.y,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -909,24 +922,6 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)local_c + 0x199e8) = local_20;",
       "type": "pointer_cast"
-    },
-    {
-      "address": "00425b28",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 80,
-      "instruction": "LEA EAX, [ESP + 0x50]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00425b28",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00425b2d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 64,
-      "instruction": "LEA EAX, [ESP + 0x40]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00425b2d",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

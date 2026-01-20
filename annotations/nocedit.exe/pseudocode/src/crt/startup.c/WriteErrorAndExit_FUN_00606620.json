@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 101,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "special_crt_function",
       "stack_param",
       "stack_ref",
@@ -150,15 +149,6 @@
       "match": "in_stack_fffffff8",
       "text": "crt_exit_c_ExitProcess_FUN_00602700(in_stack_fffffff8);",
       "type": "stack_param"
-    },
-    {
-      "address": "00606638",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00606638",
-      "type": "lea_esp_stack_addr"
     },
     {
       "address": "00606620",

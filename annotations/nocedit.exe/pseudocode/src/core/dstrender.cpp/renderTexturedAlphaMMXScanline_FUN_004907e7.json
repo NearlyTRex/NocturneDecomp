@@ -62,13 +62,14 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 100,
+    "complexity_score": 115,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 16,
     "pseudocode_lines": 65,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "mmx_assembly",
       "pointer_cast"
     ],
     "total_lines": 152
@@ -286,6 +287,13 @@
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "MMX/SIMD assembly - may not decompile to clean C code",
+      "line": 52,
+      "match": "EMMS, MOVD, PADDD, PAND, PSRLQ",
+      "text": "Function uses MMX instructions",
+      "type": "mmx_assembly"
     }
   ]
 }

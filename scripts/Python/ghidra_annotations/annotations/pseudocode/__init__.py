@@ -23,6 +23,7 @@ from ghidra_annotations.annotations.pseudocode.strings import (
 from ghidra_annotations.annotations.pseudocode.suspects import (
     SUSPECT_PATTERNS,
     identify_suspect_lines,
+    identify_assembly_suspects,
     calculate_complexity_metrics,
     identify_format_string_mismatch
 )

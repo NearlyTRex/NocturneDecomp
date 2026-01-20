@@ -57,8 +57,8 @@
     "pseudocode_lines": 40,
     "suspect_count": 7,
     "suspect_types": [
-      "extra_output",
-      "stack_align_anchor"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 157
   },
@@ -269,6 +269,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 24,
       "match": "extraout_EDX",
@@ -302,16 +309,6 @@
       "match": "extraout_EDX",
       "text": "local_1c = (float)(*(int *)(extraout_EDX + 100) + -1);",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
-      "fix_address": "0052e3a8",
-      "frame_offset": 24,
-      "match": "AND ESP",
-      "sub_esp_offset": 24,
-      "text": "Stack alignment at 0052e3a8 (SUB ESP, 0x18 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

@@ -4,34 +4,28 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    31447 ( 45.9%)
-  call_esp_anchor                 9239 ( 13.5%)
-  lea_esp_stack_addr              6858 ( 10.0%)
-  pointer_cast                    5363 (  7.8%)
-  unknown_field                   1857 (  2.7%)
-  concat_artifact                 1748 (  2.6%)
-  stack_ref                       1699 (  2.5%)
-  unaffected_reg                  1684 (  2.5%)
-  extra_output                    1440 (  2.1%)
-  variadic_anchor                 1331 (  1.9%)
-  callind_anchor                  1056 (  1.5%)
-  suspect_float                    733 (  1.1%)
-  param_count_too_few              631 (  0.9%)
-  special_crt_function             626 (  0.9%)
-  stack_align_anchor               529 (  0.8%)
-  unresolved_funcptr               478 (  0.7%)
-  negative_offset                  413 (  0.6%)
-  format_string_mismatch           360 (  0.5%)
-  sub_artifact                     220 (  0.3%)
-  warning_overlapping_globals      218 (  0.3%)
-  register_param                   200 (  0.3%)
-  warning_unreachable               99 (  0.1%)
-  param_count_too_many              89 (  0.1%)
+  stack_param                    31447 ( 58.8%)
+  pointer_cast                    5363 ( 10.0%)
+  decompiler_intrinsic            4547 (  8.5%)
+  unknown_field                   1857 (  3.5%)
+  stack_ref                       1699 (  3.2%)
+  unaffected_reg                  1684 (  3.1%)
+  unnamed_param                   1447 (  2.7%)
+  extra_output                    1440 (  2.7%)
+  suspect_float                    733 (  1.4%)
+  param_count_too_few              631 (  1.2%)
+  special_crt_function             626 (  1.2%)
+  unresolved_funcptr               478 (  0.9%)
+  negative_offset                  413 (  0.8%)
+  format_string_mismatch           360 (  0.7%)
+  warning_overlapping_globals      218 (  0.4%)
+  register_param                   200 (  0.4%)
+  warning_unreachable               99 (  0.2%)
+  param_count_too_many              89 (  0.2%)
   undefined_type                    50 (  0.1%)
-  variadic_preserve_ebp             38 (  0.1%)
-  sborrow_artifact                  28 (  0.0%)
+  mmx_assembly                      34 (  0.1%)
+  undefined_ram                     27 (  0.1%)
   special_math_intrinsic            23 (  0.0%)
-  callind_preserve_lost             19 (  0.0%)
   warning_jumptable                 10 (  0.0%)
   warning_indirect_jump             10 (  0.0%)
   undefined_ptr_cast                 6 (  0.0%)
@@ -92,50 +86,6 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
-TYPE: call_esp_anchor (9239 occurrences)
-====================================================================================================
-
-Unique patterns:
-  9239x  CALL...ADD ESP
-
-Example functions:
-  cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
-    Direct CALL at 00433a83, ADD ESP at 00433a88 with uncertain ESP...
-  cockpit_ckptutil.c_drawLineAA_FUN_00433c90
-    Direct CALL at 00433d10, ADD ESP at 00433d15 with uncertain ESP...
-  crt_io.c_write_FUN_006084ec
-    Direct CALL at 00608522, ADD ESP at 00608529 with uncertain ESP...
-  crt_process.c_spawnvp_FUN_0060f39c
-    Direct CALL at 0060f3fd, ADD ESP at 0060f404 with uncertain ESP...
-
-====================================================================================================
-TYPE: lea_esp_stack_addr (6858 occurrences)
-====================================================================================================
-
-Unique patterns:
-  6858x  LEA...ESP
-
-Example functions:
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
-    LEA takes address of ESP-relative stack location at 0054c42b...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
-    LEA takes address of ESP-relative stack location at 0054bfe4...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
-    LEA takes address of ESP-relative stack location at 0054be25...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
-    LEA takes address of ESP-relative stack location at 0054bedf...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    LEA takes address of ESP-relative stack location at 0054c241...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-    LEA takes address of ESP-relative stack location at 00489529...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    LEA takes address of ESP-relative stack location at 00489c47...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    LEA takes address of ESP-relative stack location at 00489a3a...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
-    LEA takes address of ESP-relative stack location at 00489bb8...
-
-====================================================================================================
 TYPE: pointer_cast (5363 occurrences)
 ====================================================================================================
 
@@ -172,6 +122,58 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar7) <...
   cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
+
+====================================================================================================
+TYPE: decompiler_intrinsic (4547 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1840x  ROUND
+   619x  CONCAT44
+   419x  SQRT
+   292x  ABS
+   203x  SUB84
+   150x  CONCAT11
+   110x  CONCAT22
+    96x  CONCAT12
+    82x  CONCAT14
+    68x  CONCAT21
+    65x  CONCAT13
+    63x  CONCAT26
+    63x  CONCAT24
+    55x  CONCAT25
+    53x  CONCAT41
+    52x  CONCAT31
+    50x  CONCAT34
+    31x  CONCAT43
+    29x  CONCAT52
+    28x  SBORROW
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
+    g_DashLength = (int)ROUND(dVar2);...
+  cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
+    iVar2 = (int)ROUND(dVar3);...
+  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
+    local_1c = (uint)ROUND(dVar5);...
+  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
+    CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)index...
+  cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
+    (longlong)ROUND((float10)*(longlong *)(iVar7 + -0x18 + (int)src_buffer));...
+  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
+    local_34 = (uint)(longlong)ROUND(fVar13);...
+  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
+    local_3c = (uint)(longlong)ROUND(fVar9);...
+  crt_fpemu.c_staticInit_FUN_0060be80
+    cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\x03');...
+  crt_stdlib.c_i64toa_FUN_0060ad40
+    local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte...
+  crt_stdlib.c_qsort_FUN_005fdf38
+    puStack_18 = (uint *)CONCAT22 /* combine 2-byte values */(puStack_18._2_2_,in_GS...
+  crt_memory.c_memset_FUN_005fde40
+    (dest,CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(...
+  crt_math.c_dadd_FUN_0060defc
+    uVar12 = SUB84 /* extract 2-byte value */(b,0);...
 
 ====================================================================================================
 TYPE: unknown_field (1857 occurrences)
@@ -216,58 +218,6 @@ Example functions:
     if (y._4_1_ < 2) {...
   crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98
     if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
-
-====================================================================================================
-TYPE: concat_artifact (1748 occurrences)
-====================================================================================================
-
-Unique patterns:
-   619x  CONCAT44
-   150x  CONCAT11
-   110x  CONCAT22
-    96x  CONCAT12
-    82x  CONCAT14
-    68x  CONCAT21
-    65x  CONCAT13
-    63x  CONCAT26
-    63x  CONCAT24
-    55x  CONCAT25
-    53x  CONCAT41
-    52x  CONCAT31
-    50x  CONCAT34
-    31x  CONCAT43
-    29x  CONCAT52
-    28x  CONCAT16
-    27x  CONCAT17
-    27x  CONCAT15
-    23x  CONCAT64
-    20x  CONCAT62
-
-Example functions:
-  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
-    CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)index...
-  crt_stdlib.c_i64toa_FUN_0060ad40
-    local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte...
-  crt_stdlib.c_qsort_FUN_005fdf38
-    puStack_18 = (uint *)CONCAT22 /* combine 2-byte values */(puStack_18._2_2_,in_GS...
-  crt_memory.c_memset_FUN_005fde40
-    (dest,CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(...
-  crt_math.c_dadd_FUN_0060defc
-    return (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar12);...
-  crt_math.c_fdiv_thunk_FUN_00606d6b
-    return (float10)CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_000...
-  crt_math.c_FUN_00606b7a
-    return CONCAT64 /* combine 2-byte values */(uStack00000050,in_stack_0000004c);...
-  crt_math.c_fdiv_thunk_FUN_00606bb3
-    return (float10)CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* ...
-  crt_math.c_FUN_00606c23
-    return CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_0000001c);...
-  crt_math.c_handle_math_error_FUN_0060c02b
-    return (double)CONCAT44 /* combine 2-byte values */(local_14,local_18);...
-  crt_math.c_fdiv_FUN_00606960
-    fVar1 = (float10)CONCAT28 /* combine 2-byte values */(in_stack_0000000c,CONCAT44...
-  crt_math.c_fdiv_thunk_FUN_00606aeb
-    return (float10)CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_000...
 
 ====================================================================================================
 TYPE: stack_ref (1699 occurrences)
@@ -366,6 +316,35 @@ Example functions:
     int unaff_EBP;...
 
 ====================================================================================================
+TYPE: unnamed_param (1447 occurrences)
+====================================================================================================
+
+Unique patterns:
+   492x  param_2
+   316x  param_5
+   161x  param_3
+   150x  param_4
+   147x  param_1
+   130x  param_6
+    21x  param_7
+    14x  param_8
+     7x  param_10
+     4x  param_9
+     2x  param_11
+     2x  param_13
+     1x  param_12
+
+Example functions:
+  cockpit_pkbitmap.cpp_FUN_0054b930
+    (uint param_1,uint param_2,uint unaff_EBX,uint param_4,...
+  crt_time.c_gmtime_r_FUN_00607690
+    crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,uint ...
+  crt_unknown.c_FUN_0060ced8
+    (uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5...
+  crt_unknown.c_FUN_0060411c
+    (uint param_1,uint param_2,byte *unaff_EBX,uint param_4,...
+
+====================================================================================================
 TYPE: extra_output (1440 occurrences)
 ====================================================================================================
 
@@ -406,79 +385,6 @@ Example functions:
     char *extraout_EAX;...
   crt_stdlib.c_qsort_FUN_005fdf38
     void *extraout_EAX;...
-
-====================================================================================================
-TYPE: variadic_anchor (1331 occurrences)
-====================================================================================================
-
-Unique patterns:
-   460x  CALL crt_stdio.c_sprintf_FUN_005fdbd0
-   226x  CALL core_main.c_displayErrorAndQuit_FUN_00506f10
-   158x  CALL crt_stdio.c_sscanf_FUN_0060013c
-   156x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
-   135x  CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-    91x  CALL engine_console.cpp_CConsole_printf_FUN_00441890
-    42x  CALL crt_stdio.c_fscanf_FUN_005fe7c0
-    13x  CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
-    12x  CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-    12x  CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-     9x  CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-     9x  CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-     3x  CALL shape_superopt.cpp_logToFile_FUN_005c7910
-     2x  CALL engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20
-     2x  CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
-     1x  CALL crt_process.c_execvp_FUN_00610790
-
-Example functions:
-  crt_process.c_spawnvp_FUN_0060f39c
-    Call to variadic function crt_process.c_execvp_FUN_00610790 at 0060f804 (EBP fra...
-  engine_colquant.c_FUN_004406c0
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004407f3 (EBP fram...
-  engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850
-    Call to variadic function engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20 at 00...
-  engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
-    Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00501f...
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740...
-
-====================================================================================================
-TYPE: callind_anchor (1056 occurrences)
-====================================================================================================
-
-Unique patterns:
-  1056x  CALLIND...ADD ESP
-
-Example functions:
-  crt_io.c_write_FUN_006084ec
-    CALLIND at 00608564, ADD ESP at 0060856a...
-  crt_process.c_spawnvp_FUN_0060f39c
-    CALLIND at 0060f58f, ADD ESP at 0060f595...
-  crt_fstream.cpp_filebuf_overflow_FUN_0060d881
-    CALLIND at 0060d8cf, ADD ESP at 0060d8d2...
-  crt_math.c_report_math_error_FUN_0060e2e5
-    CALLIND at 0060e2f1, ADD ESP at 0060e2f7...
-  crt_thread.c_threadStartupWrapper_FUN_0060f8c0
-    CALLIND at 0060f946, ADD ESP at 0060f949...
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    CALLIND at 004bb540, ADD ESP at 004bb543...
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    CALLIND at 004b4cdf, ADD ESP at 004b4ce2...
-  sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
-    CALLIND at 005ad549, ADD ESP at 005ad54b...
-  sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
-    CALLIND at 005a8110, ADD ESP at 005a811f...
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-    CALLIND at 005a7378, ADD ESP at 005a737b...
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    CALLIND at 00540437, ADD ESP at 0054043a...
-  core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900
-    CALLIND at 0053faee, ADD ESP at 0053faf1...
-  core_netgame.cpp_FUN_00541390
-    CALLIND at 00541a97, ADD ESP at 00541a9a...
-  core_dog.cpp_CZombieDog_process_FUN_0047f140
-    CALLIND at 0047f295, ADD ESP at 0047f29b...
-  core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    CALLIND at 004157ce, ADD ESP at 004157da...
 
 ====================================================================================================
 TYPE: suspect_float (733 occurrences)
@@ -680,75 +586,6 @@ Example functions:
     CRT function (runtime support) at 00609afc...
 
 ====================================================================================================
-TYPE: stack_align_anchor (529 occurrences)
-====================================================================================================
-
-Unique patterns:
-   529x  AND ESP
-
-Example functions:
-  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    Stack alignment at 00433f59 (SUB ESP, 0x2c before)...
-  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    Stack alignment at 004342f9 (SUB ESP, 0x2c before)...
-  cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
-    Stack alignment at 004339c9 (SUB ESP, 0x3c before)...
-  cockpit_ckptutil.c_drawLineAA_FUN_00433c90
-    Stack alignment at 00433c99 (SUB ESP, 0x30 before)...
-  engine_matrix.c_initializeTrigTables_FUN_0050c530
-    Stack alignment at 0050c536 (SUB ESP, 0xc before)...
-  engine_matrix.c_projectToScreen_FUN_0050e5b0
-    Stack alignment at 0050e5b9 (SUB ESP, 0x3c before)...
-  engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    Stack alignment at 0050c646 (SUB ESP, 0x54 before)...
-  engine_colquant.c_FUN_00441260
-    Stack alignment at 00441269 (SUB ESP, 0x7c before)...
-  engine_colquant.c_FUN_00441790
-    Stack alignment at 00441796 (SUB ESP, 0x10 before)...
-  engine_colquant.c_FUN_004406c0
-    Stack alignment at 004406cc (SUB ESP, 0x14c before)...
-  engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
-    Stack alignment at 00501f39 (SUB ESP, 0x30 before)...
-  engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-    Stack alignment at 0048c808 (SUB ESP, 0x10 before)...
-  engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-    Stack alignment at 0048c209 (SUB ESP, 0xc before)...
-  engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-    Stack alignment at 0048c788 (SUB ESP, 0x10 before)...
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    Stack alignment at 004baf0c (SUB ESP, 0x25ec before)...
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    Stack alignment at 004b422c (SUB ESP, 0x13b8 before)...
-  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
-    Stack alignment at 005af75c (SUB ESP, 0xcac before)...
-  sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
-    Stack alignment at 005ae34c (SUB ESP, 0x328 before)...
-  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
-    Stack alignment at 005afd6c (SUB ESP, 0x1a8 before)...
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
-    Stack alignment at 00534d4c (SUB ESP, 0x60c0 before)...
-  sound_mp3.cpp_requantizeSamples_FUN_005301b0
-    Stack alignment at 005301b9 (SUB ESP, 0x20 before)...
-  sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50
-    Stack alignment at 00531d59 (SUB ESP, 0x68 before)...
-  sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400
-    Stack alignment at 00530409 (SUB ESP, 0x24 before)...
-  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
-    Stack alignment at 005334b9 (SUB ESP, 0x38 before)...
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
-    Stack alignment at 005325ec (SUB ESP, 0x206c before)...
-  sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210
-    Stack alignment at 00534219 (SUB ESP, 0x28 before)...
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
-    Stack alignment at 005ac40c (SUB ESP, 0xb4 before)...
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-    Stack alignment at 005a8589 (SUB ESP, 0x8 before)...
-  sound_sndmain.cpp_getChannelLevels_FUN_005ac990
-    Stack alignment at 005ac999 (SUB ESP, 0xc before)...
-  sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
-    Stack alignment at 005ad3bc (SUB ESP, 0x160 before)...
-
-====================================================================================================
 TYPE: unresolved_funcptr (478 occurrences)
 ====================================================================================================
 
@@ -906,58 +743,6 @@ Example functions:
     Format string expects 1 args but got 0...
   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0
     Format string expects 1 args but got 0...
-
-====================================================================================================
-TYPE: sub_artifact (220 occurrences)
-====================================================================================================
-
-Unique patterns:
-   203x  SUB84
-     9x  SUB82
-     3x  SUB104
-     3x  SUB41
-     1x  SUB86
-     1x  SUB42
-
-Example functions:
-  crt_fpemu.c_staticInit_FUN_0060be80
-    crt_unknown_c_FUN_0060e256(SUB84 /* extract 2-byte value */(dVar4,0),(int)((ulon...
-  crt_math.c_dadd_FUN_0060defc
-    uVar12 = SUB84 /* extract 2-byte value */(b,0);...
-  crt_math.c_handle_math_error_FUN_0060c02b
-    local_10 = SUB84 /* extract 2-byte value */(dVar1,0);...
-  crt_math.c_fdiv_FUN_00606960
-    in_stack_00000004 = SUB104 /* extract 3-byte value */(fVar2,0);...
-  crt_math.c_dmul_FUN_0060e0b9
-    uVar14 = SUB84 /* extract 2-byte value */(b,0);...
-  crt_math.c_ldexp_FUN_00600002
-    local_20 = SUB82 /* extract 2-byte value */(x,0);...
-  crt_math.c_math_domain_error_FUN_00606832
-    local_10._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);...
-  crt_math.c_doubleToFloat_FUN_0060b26c
-    uVar4 = SUB84 /* extract 2-byte value */(val,0);...
-  crt_math.c_pow_FUN_005ffd76
-    uVar7 = SUB86 /* extract 2-byte value */((double)exp,0);...
-  crt_unknown.c_FUN_00603dc8
-    local_4c = SUB104 /* extract 3-byte value */(fVar12,0);...
-  crt_unknown.c_FUN_00603bc9
-    *in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);...
-  crt_unknown.c_FUN_0060dcf6
-    uVar4 = SUB84 /* extract 2-byte value */((double)fVar20,0);...
-  engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
-    local_38 = SUB84 /* extract 2-byte value */(dVar4,0);...
-  engine_colquant.c_FUN_00441260
-    local_70 = SUB84 /* extract 2-byte value */(dVar1,0);...
-  sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400
-    local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);...
-  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
-    local_48 = SUB84 /* extract 2-byte value */(dVar5,0);...
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
-    local_8c = SUB84 /* extract 2-byte value */(dVar28,0);...
-  sound_sndmain.cpp_startSoundThread_FUN_005abc00
-    g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);...
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-    this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);...
 
 ====================================================================================================
 TYPE: warning_overlapping_globals (218 occurrences)
@@ -1289,109 +1074,106 @@ Example functions:
     undefined3 extraout_var;...
 
 ====================================================================================================
-TYPE: variadic_preserve_ebp (38 occurrences)
+TYPE: mmx_assembly (34 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    28x  CALL engine_console.cpp_CConsole_printf_FUN_00441890
-     5x  CALL crt_stdio.c_sprintf_FUN_005fdbd0
-     2x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
-     1x  CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-     1x  CALL crt_stdio.c_sscanf_FUN_0060013c
-     1x  CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+    13x  EMMS, MOVD, MOVQ, PACKUSWB, PADDW
+     3x  EMMS, MOVQ
+     3x  EMMS, MOVQ, PACKUSWB, PADDUSW, PSLLQ
+     2x  EMMS, MOVD, PACKUSWB, PADDW, PMULLW
+     2x  EMMS, MOVD, PADDD, PAND, PSRLQ
+     2x  EMMS, MOVD, MOVQ, PACKUSWB, PADDUSW
+     2x  EMMS, MOVD, MOVQ, PACKUSWB, PADDD
+     2x  EMMS, MOVD
+     1x  EMMS, MOVD, MOVQ, PADDUSB, POR
+     1x  EMMS, MOVD, PACKUSWB, PADDW, PMULHW
+     1x  MOVQ
+     1x  EMMS, MOVD, PACKUSWB, PADDW, PSLLW
+     1x  EMMS, MOVD, MOVQ, PADDD, PADDW
 
 Example functions:
-  core_dog.cpp_CZombieDog_process_FUN_0047f140
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_dracbrid.cpp_FUN_00484410
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_drone.cpp_FUN_0048ec70
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_icepick.cpp_FUN_004f80b0
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0057be06 (EBP fram...
-  core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_mobster.cpp_FUN_00525840
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_succubus.cpp_CSuccubus_process_FUN_005c6e90
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_imp.cpp_FUN_004f9c30
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005393df (EBP fram...
-  core_smiley.cpp_FUN_005a2800
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_haystack.cpp_FUN_004f0e40
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_sentinel.cpp_FUN_00568030
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_stranger.cpp_CStranger_FUN_005bdd20
-    Call to variadic function shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6...
-  core_stranger.cpp_CStranger_FUN_005bb960
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0059665a (EBP fram...
-  core_ghoul.cpp_CGhoul_FUN_004e6600
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_larva.cpp_FUN_00503080
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_moloch.cpp_CMoloch_process_FUN_00528d20
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
-  core_colonel.cpp_FUN_0043fa00
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_event.cpp_CEventList_FUN_004aacc0
-    Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004abcab (EBP frame...
-  core_cow.cpp_FUN_00444310
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
-  core_batman.cpp_CBatman_process_FUN_00416870
-    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00431622
+    Function uses MMX instructions...
+  engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
+    Function uses MMX instructions...
+  core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
+    Function uses MMX instructions...
+  core_flies.cpp_FUN_004cc230
+    Function uses MMX instructions...
+  core_moon.cpp_CMoon_render_FUN_00529ed0
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_004924a9
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
+    Function uses MMX instructions...
+  core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
+    Function uses MMX instructions...
+  core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8
+    Function uses MMX instructions...
+  core_dstrender.cpp_saveMMXRegisters_FUN_004906b0
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a
+    Function uses MMX instructions...
+  core_dstrender.cpp_spatialFilter9TapMMX_FUN_004923ff
+    Function uses MMX instructions...
+  core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d
+    Function uses MMX instructions...
+  core_dstrender.cpp_verticalBlur3TapMMXStride256_FUN_00492185
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_004925c5
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4
+    Function uses MMX instructions...
+  core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5
+    Function uses MMX instructions...
+  core_dstrender.cpp_memcpyMMX_FUN_00492001
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendSinglePixelLightmapMMX_FUN_004937b6
+    Function uses MMX instructions...
+  core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
+    Function uses MMX instructions...
+  core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03
+    Function uses MMX instructions...
+  core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042
+    Function uses MMX instructions...
+  wincore_windll.cpp_renderAlphaRow32_FUN_005b555c
+    Function uses MMX instructions...
+  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    Function uses MMX instructions...
+  wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+    Function uses MMX instructions...
 
 ====================================================================================================
-TYPE: sborrow_artifact (28 occurrences)
+TYPE: undefined_ram (27 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    28x  SBORROW
+     8x  uRam00682694
+     8x  uRam006826b4
+     3x  puRam0000000a
+     2x  uRam0068269c
+     2x  uRam006826a4
+     2x  uRam006826bc
+     2x  uRam006826c4
 
 Example functions:
-  crt_fpemu.c_staticInit_FUN_0060be80
-    cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\x03');...
-  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-    bVar11 = SBORROW /* signed borrow */4(size,local_2c);...
-  engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    bVar13 = SBORROW /* signed borrow */4(g_SoftwareMinScanline,g_MaxViewportScanlin...
-  engine_prim.c_getTriangleWindingFromIndices_FUN_00552210
-    return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed bo...
-  engine_prim.c_renderPolygonSoftware_FUN_00552510
-    bVar13 = SBORROW /* signed borrow */4(g_SoftwareMinScanline,g_MaxViewportScanlin...
-  engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-    return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed bo...
-  engine_prim.c_getTriangleWindingFromIndices_FUN_00552300
-    return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed bo...
-  engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
-    return (uint)((SBORROW /* signed borrow */4(iVar7,iVar6) != SBORROW /* signed bo...
-  engine_3d.c_isVisiblePlane_FUN_00403950
-    iVar4 = 1, (SBORROW /* signed borrow */4(iVar6,iVar5) != SBORROW /* signed borro...
-  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
-    while (SBORROW /* signed borrow */4(local_28,iVar5) != iVar3 < 0) {...
-  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
-    bVar8 = SBORROW /* signed borrow */4(local_20,local_30);...
-  core_script.cpp_FUN_005675a0
-    bVar6 = SBORROW /* signed borrow */4(iVar2,iVar4);...
-  core_skeledit.cpp_FUN_00592690
-    while (bVar22 || SBORROW /* signed borrow */4((int)fVar15,(int)local_94) != iVar...
-  core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
-    if (SBORROW /* signed borrow */4(iVar7,(int)local_20) != (int)local_20 * -2 < 0)...
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-    bVar8 = SBORROW /* signed borrow */4(local_ac,iVar3);...
+  crt_stdio.c_fputc_FUN_006007a0
+    *puRam0000000a = 0xd;...
+  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    uVar39 = ((CONCAT44 /* combine 2-byte values */(uRam00682694,uVar9) & 0xffffffff...
+  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
+    uVar38 = ((CONCAT44 /* combine 2-byte values */(uRam00682694,uVar8) & 0xffffffff...
 
 ====================================================================================================
 TYPE: special_math_intrinsic (23 occurrences)
@@ -1456,43 +1238,6 @@ Example functions:
     Math intrinsic (round) at 005fe6b0...
   crt_math.c_pow_FUN_005ffd76
     Math intrinsic (pow) at 005ffd76...
-
-====================================================================================================
-TYPE: callind_preserve_lost (19 occurrences)
-====================================================================================================
-
-Unique patterns:
-    19x  CALLIND...ADD ESP
-
-Example functions:
-  crt_process.c_spawn_FUN_006105a0
-    CALLIND at 00610740, ADD ESP at 0061074b (no EBP frame)...
-  crt_thread.c_create_thread_with_sync_FUN_0060f960
-    CALLIND at 0060fa43, ADD ESP at 0060fa4c (no EBP frame)...
-  crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930
-    CALLIND at 0060eb26, ADD ESP at 0060eb2c (no EBP frame)...
-  crt_stdio.c_write_FUN_006038c0
-    CALLIND at 00603943, ADD ESP at 00603949 (no EBP frame)...
-  crt_stdio.c_fgetc_FUN_005fe840
-    CALLIND at 005fe8fe, ADD ESP at 005fe904 (no EBP frame)...
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-    CALLIND at 005ae80c, ADD ESP at 005ae816 (no EBP frame)...
-  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410
-    CALLIND at 005af59d, ADD ESP at 005af5a8 (no EBP frame)...
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    CALLIND at 005b1179, ADD ESP at 005b117b (no EBP frame)...
-  sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
-    CALLIND at 005b0bdf, ADD ESP at 005b0be1 (no EBP frame)...
-  core_zombie.cpp_CZombie_FUN_005fc4f0
-    CALLIND at 005fc5db, ADD ESP at 005fc5de (no EBP frame)...
-  core_imp.cpp_FUN_004fae00
-    CALLIND at 004faef0, ADD ESP at 004faef3 (no EBP frame)...
-  core_sentinel.cpp_SentinelBehavior_FUN_00568cd0
-    CALLIND at 00568d41, ADD ESP at 00568d44 (no EBP frame)...
-  core_boneguy.cpp_CBoneGuy_FUN_0041d680
-    CALLIND at 0041d867, ADD ESP at 0041d86a (no EBP frame)...
-  shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
-    CALLIND at 005d353a, ADD ESP at 005d353d (no EBP frame)...
 
 ====================================================================================================
 TYPE: warning_jumptable (10 occurrences)

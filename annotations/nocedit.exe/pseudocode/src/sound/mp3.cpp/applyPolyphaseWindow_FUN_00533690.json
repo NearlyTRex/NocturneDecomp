@@ -543,7 +543,7 @@
     "pseudocode_lines": 270,
     "suspect_count": 40,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 724
@@ -1202,6 +1202,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 177,
+      "match": "ABS",
+      "text": "if ((float)1.0000000000000001e-05 < ABS(input_samples[iVar11])) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 211,
       "match": "(double *)((int)",
@@ -1347,19 +1354,6 @@
       "match": "(double *)((int)",
       "text": "input_samples[5] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar8)) * (float)*pdVar2 +",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00533a4e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00533a53",
-      "frame_offset": 140,
-      "match": "CALL...ADD ESP",
-      "return_address": "00533a53",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 00533a4e, ADD ESP at 00533a53 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

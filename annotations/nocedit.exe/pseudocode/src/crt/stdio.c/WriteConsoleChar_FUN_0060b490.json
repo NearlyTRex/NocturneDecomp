@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 73,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 18,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "special_crt_function",
       "stack_ref"
     ],
@@ -138,24 +137,6 @@
       "match": "&stack0xfffffffc",
       "text": "(*g_WriteConsoleAFunc)(hConsoleOutput,&stack0xfffffffc,1,(LPDWORD)local_8,(LPVOID)0x0);",
       "type": "stack_ref"
-    },
-    {
-      "address": "0060b4d0",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EDX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0060b4d0",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0060b4d7",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA EDX, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0060b4d7",
-      "type": "lea_esp_stack_addr"
     },
     {
       "address": "0060b490",

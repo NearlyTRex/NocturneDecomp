@@ -20,14 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 65,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 40,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "lea_esp_stack_addr"
+      "decompiler_intrinsic"
     ],
     "total_lines": 148
   },
@@ -236,22 +236,25 @@
   },
   "suspects": [
     {
-      "address": "0044ee20",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EBX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0044ee20",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(fVar4 * fVar8 * 65536.0f) *",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "0044eeb3",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 24,
-      "instruction": "LEA EAX, [ESP + 0x18]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0044eeb3",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(fVar5 * fVar8 * 65536.0f) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "lVar3 = (longlong)(int)ROUND(fVar6 * fVar8 * 65536.0f) *",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

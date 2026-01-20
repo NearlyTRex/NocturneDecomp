@@ -38,16 +38,16 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 212,
+    "complexity_score": 262,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 37,
-    "suspect_count": 16,
+    "suspect_count": 21,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
-      "stack_param"
+      "decompiler_intrinsic",
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 141
   },
@@ -229,6 +229,20 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2, uint param_3) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "param_2, uint param_3) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
@@ -299,6 +313,48 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ABS",
+      "text": "if ((ABS(local_20) <= (float)10) && (ABS(local_24) <= (float)30)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ABS",
+      "text": "if ((ABS(local_20) <= (float)10) && (ABS(local_24) <= (float)30)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ABS",
+      "text": "if ((float)30 < ABS(local_1c)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ABS",
+      "text": "else if (((ABS(local_20) <= (float)8) && (ABS(local_24) <= (float)25))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ABS",
+      "text": "else if (((ABS(local_20) <= (float)8) && (ABS(local_24) <= (float)25))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ABS",
+      "text": "&& (ABS(local_1c) <= (float)25)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
@@ -318,42 +374,6 @@
       "match": "in_stack_00000004",
       "text": "local_18.z = in_stack_00000004[2];",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
-      "fix_address": "005ebd47",
-      "frame_offset": 36,
-      "match": "AND ESP",
-      "sub_esp_offset": 36,
-      "text": "Stack alignment at 005ebd47 (SUB ESP, 0x24 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005ebe00",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005ebe05",
-      "frame_offset": 36,
-      "match": "CALL...ADD ESP",
-      "return_address": "005ebe05",
-      "target_address": "0x548500",
-      "text": "Direct CALL at 005ebe00, ADD ESP at 005ebe05 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "005ebe15",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005ebe1a",
-      "frame_offset": 36,
-      "match": "CALL...ADD ESP",
-      "return_address": "005ebe1a",
-      "target_address": "0x547d00",
-      "text": "Direct CALL at 005ebe15, ADD ESP at 005ebe1a with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

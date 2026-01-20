@@ -68,15 +68,15 @@
   },
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 117,
+    "complexity_score": 147,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 67,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
-      "pointer_cast",
-      "stack_align_anchor"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
     "total_lines": 279
   },
@@ -360,14 +360,32 @@
       "type": "pointer_cast"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc0",
-      "fix_address": "00572e8a",
-      "frame_offset": 192,
-      "match": "AND ESP",
-      "sub_esp_offset": 192,
-      "text": "Stack alignment at 00572e8a (SUB ESP, 0xc0 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "SQRT",
+      "text": "fVar3 = SQRT(fVar5 - fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ABS",
+      "text": "if (ABS(cylinder->normal_x) <= ABS(cylinder->normal_z)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ABS",
+      "text": "if (ABS(cylinder->normal_x) <= ABS(cylinder->normal_z)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "SQRT",
+      "text": "fVar2 = SQRT(fVar1) - fVar2;",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

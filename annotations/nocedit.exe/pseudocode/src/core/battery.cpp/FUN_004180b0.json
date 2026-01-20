@@ -20,14 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 87,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 12,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 49
   },
@@ -117,6 +118,13 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "CActorPropertyList* param_2) */",
+      "type": "unnamed_param"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 8,

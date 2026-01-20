@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 329,
+    "complexity_score": 309,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 49,
-    "suspect_count": 24,
+    "suspect_count": 23,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
+      "decompiler_intrinsic",
       "pointer_cast",
       "special_crt_function",
       "stack_param",
       "stack_ref",
-      "sub_artifact",
       "unknown_field"
     ],
     "total_lines": 136
@@ -186,11 +184,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT44",
       "text": "if (0.0 < (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -207,11 +205,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "CONCAT44",
       "text": "if (0.0 <= (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -228,11 +226,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_) <= 0.0) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -249,11 +247,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(x._0_4_,in_stack_00000004) <= 0.0) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
@@ -277,11 +275,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "SUB84",
       "text": "local_10._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -298,24 +296,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "CONCAT44",
       "text": "local_10 = (double)CONCAT44 /* combine 2-byte values */(local_14,local_18);",
-      "type": "concat_artifact"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "006068a6",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "006068b1",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "006068ab",
-      "target_address": "0x60bf2d",
-      "text": "Direct CALL at 006068a6, ADD ESP at 006068b1 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "00606832",

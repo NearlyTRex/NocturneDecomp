@@ -338,14 +338,13 @@
   },
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 483,
+    "complexity_score": 458,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 47,
     "pseudocode_lines": 148,
-    "suspect_count": 31,
+    "suspect_count": 29,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "stack_ref",
       "unresolved_funcptr",
@@ -1004,24 +1003,6 @@
       "match": "in_stack_00000004",
       "text": "((CMorph *)(in_stack_00000004[6].base_character.cloth_data + 0x1b54));",
       "type": "stack_param"
-    },
-    {
-      "address": "0051f6a4",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EDI, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0051f6a4",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0051f6b8",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA ESI, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0051f6b8",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

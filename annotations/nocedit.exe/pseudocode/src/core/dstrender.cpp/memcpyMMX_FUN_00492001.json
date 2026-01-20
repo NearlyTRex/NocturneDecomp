@@ -38,13 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 51,
+    "complexity_score": 66,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 26,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "mmx_assembly",
       "register_param"
     ],
     "total_lines": 63
@@ -167,6 +168,13 @@
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"
+    },
+    {
+      "description": "MMX/SIMD assembly - may not decompile to clean C code",
+      "line": 23,
+      "match": "EMMS, MOVQ",
+      "text": "Function uses MMX instructions",
+      "type": "mmx_assembly"
     }
   ]
 }

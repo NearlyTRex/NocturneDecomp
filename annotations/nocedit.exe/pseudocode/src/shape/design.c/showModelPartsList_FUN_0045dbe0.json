@@ -1,16 +1,38 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 6,
+        "line": 9,
+        "message": "ambiguating new declaration of 'void shape_design_c_showModelPartsList_FUN_0045dbe0()'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 54,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 4,
     "pseudocode_lines": 24,
-    "suspect_count": 2,
-    "suspect_types": [
-      "call_esp_anchor",
-      "variadic_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 113
   },
   "cross_references": [],
@@ -165,35 +187,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 16,
-      "call_address": "0045dc80",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045dc85",
-      "frame_offset": 188,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0045dc85",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0045dc80 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0045dc95",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045dc9a",
-      "frame_offset": 188,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045dc9a",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 0045dc95, ADD ESP at 0045dc9a with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

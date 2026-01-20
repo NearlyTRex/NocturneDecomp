@@ -13,13 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 20,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 8,
     "pseudocode_lines": 20,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "mmx_assembly"
+    ],
     "total_lines": 30
   },
   "cross_references": [],
@@ -112,5 +114,13 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "MMX/SIMD assembly - may not decompile to clean C code",
+      "line": 1,
+      "match": "MOVQ",
+      "text": "Function uses MMX instructions",
+      "type": "mmx_assembly"
+    }
+  ]
 }

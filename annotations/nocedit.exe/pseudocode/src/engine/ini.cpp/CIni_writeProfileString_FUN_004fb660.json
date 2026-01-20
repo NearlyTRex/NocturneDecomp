@@ -122,14 +122,13 @@
   },
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 221,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 16,
     "pseudocode_lines": 101,
-    "suspect_count": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "param_count_too_few"
     ],
     "total_lines": 379
@@ -441,96 +440,6 @@
       "param_delta": 2,
       "text": "Function declares 5 params but call sites push 7 (2 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "004fb705",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 256,
-      "instruction": "LEA EDI, [ESP + 0x100]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb705",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb751",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 272,
-      "instruction": "LEA EAX, [ESP + 0x110]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb751",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb79b",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb79b",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb7c4",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 520,
-      "instruction": "LEA EAX, [ESP + 0x208]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb7c4",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb7e9",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb7e9",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb808",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 512,
-      "instruction": "LEA EAX, [ESP + 0x200]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb808",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb875",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 260,
-      "instruction": "LEA EAX, [ESP + 0x104]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb875",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb8a4",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 516,
-      "instruction": "LEA EAX, [ESP + 0x204]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb8a4",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb90e",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb90e",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004fb92d",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004fb92d",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

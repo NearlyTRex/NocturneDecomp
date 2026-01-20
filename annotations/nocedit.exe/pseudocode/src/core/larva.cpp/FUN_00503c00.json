@@ -26,14 +26,13 @@
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 108,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 18,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param"
     ],
     "total_lines": 49
@@ -155,15 +154,6 @@
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->z = pCVar1->z;",
       "type": "stack_param"
-    },
-    {
-      "address": "00503c0a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00503c0a",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

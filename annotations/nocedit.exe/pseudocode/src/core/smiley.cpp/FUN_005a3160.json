@@ -62,16 +62,16 @@
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 218,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 28,
-    "suspect_count": 17,
+    "suspect_count": 15,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "stack_ref",
+      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 96
@@ -170,6 +170,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
@@ -266,33 +273,6 @@
       "match": "code *",
       "text": "(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "address": "005a31c8",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 20,
-      "instruction": "LEA EAX, [ESP + 0x14]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005a31c8",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005a31d6",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005a31d6",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005a31ec",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005a31ec",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

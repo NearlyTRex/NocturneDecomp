@@ -266,14 +266,13 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 146,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "pseudocode_lines": 81,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "suspect_float"
     ],
@@ -451,15 +450,6 @@
       "match": "in_stack_00000014",
       "text": "((CBox *)(this_ptr->field1_0x158 + 0x200),in_stack_00000014);",
       "type": "stack_param"
-    },
-    {
-      "address": "00588fb2",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00588fb2",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

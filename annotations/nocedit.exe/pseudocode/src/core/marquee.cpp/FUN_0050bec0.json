@@ -104,17 +104,18 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 331,
+    "complexity_score": 346,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 86,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "suspect_float",
+      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 191
@@ -317,6 +318,13 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
@@ -331,6 +339,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "local_1c.x = (int)ROUND(*in_stack_00000008 * _DAT_00661020);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000008",
@@ -338,11 +353,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "local_1c.y = (int)ROUND(in_stack_00000008[1] * _DAT_00661020);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000008",
       "text": "local_1c.z = (int)ROUND(in_stack_00000008[2] * _DAT_00661020);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "text": "local_1c.z = (int)ROUND(in_stack_00000008[2] * _DAT_00661020);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -441,33 +470,6 @@
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
-    },
-    {
-      "address": "0050bed1",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 40,
-      "instruction": "LEA EBX, [ESP + 0x28]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0050bed1",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0050bef9",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 40,
-      "instruction": "LEA EAX, [ESP + 0x28]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0050bef9",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0050c003",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EBX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0050c003",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

@@ -1,14 +1,25 @@
 {
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_anchor",
       "stack_param"
     ],
     "total_lines": 47
@@ -134,19 +145,6 @@
       "match": "in_stack_ffffffe4",
       "text": "(polygon2,in_stack_ffffffe4);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00461d44",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00461d52",
-      "frame_offset": 12,
-      "match": "CALL...ADD ESP",
-      "return_address": "00461d49",
-      "target_address": "0x461cb0",
-      "text": "Direct CALL at 00461d44, ADD ESP at 00461d52 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

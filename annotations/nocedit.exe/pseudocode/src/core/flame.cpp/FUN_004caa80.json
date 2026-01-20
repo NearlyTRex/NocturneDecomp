@@ -56,16 +56,14 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 393,
+    "complexity_score": 333,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 58,
-    "suspect_count": 31,
+    "suspect_count": 26,
     "suspect_types": [
-      "call_esp_anchor",
-      "callind_anchor",
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "stack_param",
       "stack_ref"
     ],
@@ -329,6 +327,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "SQRT",
+      "text": "(((1.0 < SQRT(*(float *)(in_stack_00000004[1].actor_name + 8) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
@@ -406,90 +411,11 @@
       "type": "stack_param"
     },
     {
-      "add_esp_value": 8,
-      "callind_address": "004caad9",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004caadc",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 40,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004caad9, ADD ESP at 004caadc",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x28",
-      "fix_address": "004caa89",
-      "frame_offset": 40,
-      "match": "AND ESP",
-      "sub_esp_offset": 40,
-      "text": "Stack alignment at 004caa89 (SUB ESP, 0x28 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004caaaa",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "004caaaf",
-      "frame_offset": 40,
-      "match": "CALL...ADD ESP",
-      "return_address": "004caaaf",
-      "target_address": "0x48cae0",
-      "text": "Direct CALL at 004caaaa, ADD ESP at 004caaaf with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004caac7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004caacc",
-      "frame_offset": 40,
-      "match": "CALL...ADD ESP",
-      "return_address": "004caacc",
-      "target_address": "0x408b00",
-      "text": "Direct CALL at 004caac7, ADD ESP at 004caacc with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004caae0",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004caae5",
-      "frame_offset": 40,
-      "match": "CALL...ADD ESP",
-      "return_address": "004caae5",
-      "target_address": "0x4204f0",
-      "text": "Direct CALL at 004caae0, ADD ESP at 004caae5 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004caaef",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004caafa",
-      "frame_offset": 40,
-      "match": "CALL...ADD ESP",
-      "return_address": "004caaf4",
-      "target_address": "0x408b40",
-      "text": "Direct CALL at 004caaef, ADD ESP at 004caafa with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004cab94",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004cab9b",
-      "frame_offset": 40,
-      "match": "CALL...ADD ESP",
-      "return_address": "004cab99",
-      "target_address": "0x40c790",
-      "text": "Direct CALL at 004cab94, ADD ESP at 004cab9b with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "SQRT",
+      "text": "SQRT(fVar2 * fVar2 + fVar4 * fVar4 + fVar1 * fVar1) < (float)5)) &&",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

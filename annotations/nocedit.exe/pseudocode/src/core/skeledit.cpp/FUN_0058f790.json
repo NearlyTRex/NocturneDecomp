@@ -93,7 +93,7 @@
     "pseudocode_lines": 39,
     "suspect_count": 13,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "undefined_type"
@@ -224,18 +224,18 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT31",
       "text": "piVar2 = (int *)CONCAT31 /* combine 2-byte values */(uVar3,cVar1);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "CONCAT31",
       "text": "piVar2 = (int *)CONCAT31 /* combine 2-byte values */(uVar3,cVar1);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -280,11 +280,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(iVar4,piVar2);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

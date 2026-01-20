@@ -38,15 +38,15 @@
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 70,
+    "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 30,
-    "suspect_count": 3,
+    "suspect_count": 10,
     "suspect_types": [
-      "lea_esp_stack_addr",
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 79
   },
@@ -199,20 +199,67 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "uint param_5,FILE *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "text": "uint param_5,FILE *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_5",
+      "text": "local_c = param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_6",
+      "text": "crt_stdio_c_fwrite_FUN_005fdc00(local_10,8,1,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_6",
+      "text": "if ((param_6->_flag & 0x20) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 31,
       "match": "unaff_EBX",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing PBG header\",unaff_EBX);",
       "type": "unaffected_reg"
-    },
-    {
-      "address": "0054b962",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EDI, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0054b962",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

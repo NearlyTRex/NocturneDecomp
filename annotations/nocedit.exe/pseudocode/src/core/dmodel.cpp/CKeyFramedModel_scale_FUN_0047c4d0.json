@@ -92,17 +92,16 @@
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 222,
+    "complexity_score": 197,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 32,
-    "suspect_count": 17,
+    "suspect_count": 15,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "extra_output",
-      "pointer_cast",
-      "stack_align_anchor"
+      "pointer_cast"
     ],
     "total_lines": 124
   },
@@ -317,6 +316,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX) = (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 22,
       "match": "extraout_EBX",
@@ -336,6 +342,13 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_00 + 4) = (int)ROUND(dVar3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_00 + 4) = (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -366,66 +379,11 @@
       "type": "pointer_cast"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
-      "fix_address": "0047c4d9",
-      "frame_offset": 12,
-      "match": "AND ESP",
-      "sub_esp_offset": 12,
-      "text": "Stack alignment at 0047c4d9 (SUB ESP, 0xc before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0047c4f7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0047c4fc",
-      "frame_offset": 12,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047c4fc",
-      "target_address": "0x478010",
-      "text": "Direct CALL at 0047c4f7, ADD ESP at 0047c4fc with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0047c531",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0047c536",
-      "frame_offset": 12,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047c536",
-      "target_address": "0x5fe6b0",
-      "text": "Direct CALL at 0047c531, ADD ESP at 0047c536 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0047c577",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0047c582",
-      "frame_offset": 12,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047c57c",
-      "target_address": "0x5fe6b0",
-      "text": "Direct CALL at 0047c577, ADD ESP at 0047c582 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0047c5c1",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0047c5cc",
-      "frame_offset": 12,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047c5c6",
-      "target_address": "0x5fe6b0",
-      "text": "Direct CALL at 0047c5c1, ADD ESP at 0047c5cc with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

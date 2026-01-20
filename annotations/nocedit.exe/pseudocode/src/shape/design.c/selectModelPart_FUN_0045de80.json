@@ -1,15 +1,38 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 6,
+        "line": 9,
+        "message": "ambiguating new declaration of 'void shape_design_c_selectModelPart_FUN_0045de80()'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 22,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 75,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 50,
-    "suspect_count": 2,
-    "suspect_types": [
-      "call_esp_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 147
   },
   "cross_references": [],
@@ -158,32 +181,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 20,
-      "call_address": "0045de9c",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0045dea1",
-      "frame_offset": 28,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045dea1",
-      "target_address": "0x4032c0",
-      "text": "Direct CALL at 0045de9c, ADD ESP at 0045dea1 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0045deea",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045deef",
-      "frame_offset": 28,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045deef",
-      "target_address": "0x5fef20",
-      "text": "Direct CALL at 0045deea, ADD ESP at 0045deef with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

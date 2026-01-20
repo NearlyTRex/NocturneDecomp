@@ -20,14 +20,13 @@
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 71,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "pseudocode_lines": 21,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param"
     ],
     "total_lines": 69
@@ -153,24 +152,6 @@
       "match": "in_stack_00000004",
       "text": "LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);",
       "type": "stack_param"
-    },
-    {
-      "address": "005f4247",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA EAX, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005f4247",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005f4251",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 28,
-      "instruction": "LEA EAX, [ESP + 0x1c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005f4251",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

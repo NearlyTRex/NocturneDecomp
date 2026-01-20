@@ -1,14 +1,38 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 19,
+        "line": 18,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 77,
+        "line": 19,
+        "message": "'stack0xffffffe0' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 59,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 19,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_anchor",
       "stack_ref"
     ],
     "total_lines": 88
@@ -169,32 +193,6 @@
       "match": "&stack0xffffffe0",
       "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffe0);",
       "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0045d96a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d96f",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d96f",
-      "target_address": "0x403e30",
-      "text": "Direct CALL at 0045d96a, ADD ESP at 0045d96f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0045d9a7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d9ac",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d9ac",
-      "target_address": "0x45d1d0",
-      "text": "Direct CALL at 0045d9a7, ADD ESP at 0045d9ac with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

@@ -152,13 +152,14 @@
   },
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 91,
+    "complexity_score": 116,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 19,
     "pseudocode_lines": 66,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 269
@@ -463,6 +464,20 @@
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "SQRT",
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0(SQRT((double)iVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "this_ptr->size = (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

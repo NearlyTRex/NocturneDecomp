@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 40,
+    "complexity_score": 25,
     "cross_reference_count": 39,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_anchor",
       "special_math_intrinsic"
     ],
     "total_lines": 43
@@ -349,19 +348,6 @@
     ]
   },
   "suspects": [
-    {
-      "add_esp_value": 12,
-      "call_address": "005feba3",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005febae",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "005feba8",
-      "target_address": "0x602102",
-      "text": "Direct CALL at 005feba3, ADD ESP at 005febae with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
     {
       "address": "005feb90",
       "description": "Math library function with FPU stack or unusual patterns",

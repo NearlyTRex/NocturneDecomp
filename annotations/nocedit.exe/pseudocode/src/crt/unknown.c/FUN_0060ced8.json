@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 52,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 11,
     "suspect_types": [
       "special_crt_function",
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 30
   },
@@ -94,11 +95,67 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_5",
+      "text": "if ((param_5 != 7) && (param_5 != 4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_5",
+      "text": "if ((param_5 != 7) && (param_5 != 4)) {",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EBX",
       "text": "pTVar1 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_5",
+      "text": "return pTVar1->signal_handlers[param_5].flags;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_5",
+      "text": "return g_GlobalSignalHandlers[param_5 * 2 + 1];",
+      "type": "unnamed_param"
     },
     {
       "address": "0060ced8",

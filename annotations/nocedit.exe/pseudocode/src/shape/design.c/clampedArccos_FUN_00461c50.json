@@ -1,4 +1,41 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 69,
+        "line": 15,
+        "message": "request for member '_0_4_' in 'dot_product', which is of non-class type 'double'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 15,
+        "message": "'CONCAT44' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 66,
+        "line": 16,
+        "message": "request for member '_0_4_' in 'dot_product', which is of non-class type 'double'"
+      },
+      {
+        "category": "other",
+        "column": 104,
+        "line": 17,
+        "message": "request for member '_0_4_' in 'dot_product', which is of non-class type 'double'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 42,
     "complexity_score": 148,
@@ -8,7 +45,7 @@
     "pseudocode_lines": 18,
     "suspect_count": 11,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "param_count_too_many",
       "stack_param",
       "unknown_field"
@@ -177,11 +214,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 8,
       "match": "CONCAT44",
       "text": "if (-1 < (double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004)) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -198,11 +235,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 9,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004) < 1.0) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -219,11 +256,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "CONCAT44",
       "text": "local_18 = crt_math_c_acos_FUN_00600162((double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004))",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 3,

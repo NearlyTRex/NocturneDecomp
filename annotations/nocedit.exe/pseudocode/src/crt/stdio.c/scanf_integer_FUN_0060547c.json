@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 428,
+    "complexity_score": 383,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "pseudocode_lines": 208,
-    "suspect_count": 19,
+    "suspect_count": 15,
     "suspect_types": [
-      "concat_artifact",
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "pointer_cast",
       "special_crt_function",
       "undefined_ptr_cast",
@@ -321,11 +320,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "CONCAT44",
       "text": "uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44 /* combine 2-byte values */(local_28,local_2c));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -349,11 +348,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 114,
       "match": "CONCAT44",
       "text": "local_3c = CONCAT44 /* combine 2-byte values */(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Cast to undefined pointer type",
@@ -384,11 +383,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 205,
       "match": "CONCAT44",
       "text": "uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44 /* combine 2-byte values */(local_28,local_2c));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -412,47 +411,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 208,
       "match": "CONCAT44",
       "text": "local_3c = CONCAT44 /* combine 2-byte values */(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
-      "type": "concat_artifact"
-    },
-    {
-      "address": "00605627",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA EBX, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00605627",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0060564f",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EBX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0060564f",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "006056cc",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA EBX, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 006056cc",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "006056f2",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EBX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 006056f2",
-      "type": "lea_esp_stack_addr"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "0060547c",

@@ -32,14 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 100,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 20,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "extra_output",
       "unaffected_reg",
       "unknown_field"
@@ -175,11 +175,18 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT44",
       "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ROUND",
+      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -187,6 +194,20 @@
       "match": "._0_4_",
       "text": "*input._0_4_ = (int)(longlong)ROUND(dVar2);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "text": "*input._0_4_ = (int)(longlong)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "uStackY_18 = (uint)(longlong)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

@@ -26,17 +26,17 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 116,
+    "complexity_score": 216,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
     "pseudocode_lines": 36,
-    "suspect_count": 6,
+    "suspect_count": 16,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "param_count_too_few",
       "pointer_cast",
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 94
   },
@@ -185,6 +185,55 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,CMatrix3x4f *unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,CMatrix3x4f *unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,CMatrix3x4f *unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "int *param_5,CMatrix3x4f *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "text": "int *param_5,CMatrix3x4f *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_5",
+      "text": "if (0 < *param_5) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_5",
+      "text": "output_matrix = (float *)(param_5 + 0x16);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 22,
       "match": "unaff_EBX",
@@ -192,11 +241,46 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_6",
+      "text": "pCVar3 = param_6;",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_6",
+      "text": "core_xform_cpp_clearTranslation_FUN_005f5370(param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_6",
+      "text": "param_6 = param_6 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_6",
+      "text": "param_6 = param_6 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_5",
+      "text": "} while (local_8 < *param_5);",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 2,
@@ -208,24 +292,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "0058aed9",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA ESI, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0058aed9",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0058aeec",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA ESI, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0058aeec",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

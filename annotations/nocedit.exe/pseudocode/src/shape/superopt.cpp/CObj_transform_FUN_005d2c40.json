@@ -110,16 +110,14 @@
   },
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 199,
+    "complexity_score": 169,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 84,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
-      "callind_anchor",
-      "pointer_cast",
-      "stack_align_anchor"
+      "pointer_cast"
     ],
     "total_lines": 216
   },
@@ -289,27 +287,6 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar2->position).z + 4) = uStack_60;",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005d2c5c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005d2c5f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005d2c5c, ADD ESP at 005d2c5f",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x94",
-      "fix_address": "005d2c4c",
-      "frame_offset": 148,
-      "match": "AND ESP",
-      "sub_esp_offset": 148,
-      "text": "Stack alignment at 005d2c4c (SUB ESP, 0x94 before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

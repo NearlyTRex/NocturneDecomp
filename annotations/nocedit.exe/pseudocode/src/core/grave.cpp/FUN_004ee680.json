@@ -32,14 +32,13 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 158,
+    "complexity_score": 143,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 23,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "stack_ref"
     ],
@@ -226,15 +225,6 @@
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "address": "004ee6bc",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004ee6bc",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

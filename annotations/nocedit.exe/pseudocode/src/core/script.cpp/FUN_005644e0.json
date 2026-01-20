@@ -13,13 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 103,
+    "complexity_score": 128,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 18,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
+      "unnamed_param",
       "warning_unreachable"
     ],
     "total_lines": 47
@@ -184,6 +185,20 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x00564531) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "text": "uint core_script_cpp_FUN_005644e0(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "text": "return param_1;",
+      "type": "unnamed_param"
     }
   ]
 }

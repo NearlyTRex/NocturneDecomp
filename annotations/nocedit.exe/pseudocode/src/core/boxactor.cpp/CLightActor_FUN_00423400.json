@@ -20,14 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 35,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "suspect_count": 10,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 30
   },
@@ -132,11 +133,67 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "CDemonActor *param_5,uint param_6,char *param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "text": "CDemonActor *param_5,uint param_6,char *param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_7",
+      "text": "CDemonActor *param_5,uint param_6,char *param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_5",
+      "text": "pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(param_5,g_CLightActorClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EBX",
       "text": "(param_7,\"%g mm\",(double)(float)pCVar1[4].field26_0x148,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_7",
+      "text": "(param_7,\"%g mm\",(double)(float)pCVar1[4].field26_0x148,unaff_EBX);",
+      "type": "unnamed_param"
     }
   ]
 }

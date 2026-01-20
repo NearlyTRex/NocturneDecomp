@@ -92,15 +92,14 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 155,
+    "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
     "pseudocode_lines": 70,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "callind_preserve_lost",
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 223
@@ -337,6 +336,13 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "g_WaveOutBufferSize = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(HGLOBAL *)((int)",
@@ -370,29 +376,6 @@
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_deref",
-      "call_target_value": "EAX",
-      "callind_address": "005b0bdf",
-      "callind_assembly": "CALL dword ptr [EAX]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
-      "fix_address": "005b0be1",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 36,
-      "return_address": "005b0be1",
-      "text": "CALLIND at 005b0bdf, ADD ESP at 005b0be1 (no EBP frame)",
-      "type": "callind_preserve_lost"
-    },
-    {
-      "address": "005b0baf",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b0baf",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

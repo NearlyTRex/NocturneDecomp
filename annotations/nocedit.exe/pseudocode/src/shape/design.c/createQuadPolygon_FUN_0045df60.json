@@ -1,14 +1,32 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 6,
+        "line": 9,
+        "message": "ambiguating new declaration of 'void shape_design_c_createQuadPolygon_FUN_0045df60()'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 119,
+    "complexity_score": 104,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 12,
     "pseudocode_lines": 19,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_anchor",
       "stack_param"
     ],
     "total_lines": 63
@@ -217,19 +235,6 @@
       "match": "in_stack_00000010",
       "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[3] = in_stack_00000010;",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0045e02d",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0045e032",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045e032",
-      "target_address": "0x45caa0",
-      "text": "Direct CALL at 0045e02d, ADD ESP at 0045e032 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

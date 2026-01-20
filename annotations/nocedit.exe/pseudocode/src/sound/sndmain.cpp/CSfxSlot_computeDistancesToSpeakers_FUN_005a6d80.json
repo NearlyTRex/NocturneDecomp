@@ -56,13 +56,14 @@
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 88,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
     "pseudocode_lines": 28,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast",
       "register_param"
     ],
@@ -224,6 +225,13 @@
       "match": "(double *)((int)",
       "text": "(float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "SQRT",
+      "text": "pCVar1->distance_to_speakers[0] = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred register parameter",

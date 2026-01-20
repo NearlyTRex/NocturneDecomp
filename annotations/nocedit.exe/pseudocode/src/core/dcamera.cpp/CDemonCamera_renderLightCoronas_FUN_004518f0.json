@@ -248,16 +248,15 @@
   },
   "complexity": {
     "assembly_lines": 674,
-    "complexity_score": 540,
+    "complexity_score": 515,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 41,
     "pseudocode_lines": 265,
-    "suspect_count": 24,
+    "suspect_count": 22,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "pointer_cast",
-      "sborrow_artifact",
       "stack_param",
       "stack_ref",
       "unknown_field",
@@ -986,29 +985,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler signed borrow artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 232,
       "match": "SBORROW",
       "text": "while (SBORROW /* signed borrow */4(local_28,iVar5) != iVar3 < 0) {",
-      "type": "sborrow_artifact"
-    },
-    {
-      "address": "00451935",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA ESI, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00451935",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00451943",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA ESI, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00451943",
-      "type": "lea_esp_stack_addr"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

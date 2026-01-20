@@ -26,15 +26,16 @@
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 268,
+    "complexity_score": 283,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 17,
     "pseudocode_lines": 28,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "extra_output",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 167
   },
@@ -233,6 +234,13 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,

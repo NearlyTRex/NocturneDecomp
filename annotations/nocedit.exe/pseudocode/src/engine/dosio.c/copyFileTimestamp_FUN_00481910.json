@@ -1,15 +1,25 @@
 {
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 29,
+    "complexity_score": 14,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 14,
-    "suspect_count": 1,
-    "suspect_types": [
-      "lea_esp_stack_addr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [
@@ -149,15 +159,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "address": "0048193b",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 72,
-      "instruction": "LEA EAX, [ESP + 0x48]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0048193b",
-      "type": "lea_esp_stack_addr"
-    }
-  ]
+  "suspects": []
 }

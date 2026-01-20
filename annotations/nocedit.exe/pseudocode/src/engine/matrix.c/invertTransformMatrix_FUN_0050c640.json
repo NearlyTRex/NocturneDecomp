@@ -1,14 +1,33 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 33,
+        "line": 64,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 210,
-    "complexity_score": 121,
+    "complexity_score": 201,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 29,
     "pseudocode_lines": 81,
-    "suspect_count": 3,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "suspect_float"
     ],
     "total_lines": 291
@@ -432,11 +451,25 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[0].x = (int)ROUND(dVar21);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 58,
       "match": "7.418788e-39",
       "text": "fVar20 = (float10)uStack_54 * (float10)7.418788e-39;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[0].y = (int)ROUND(dVar21);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -446,14 +479,53 @@
       "type": "suspect_float"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x54",
-      "fix_address": "0050c646",
-      "frame_offset": 84,
-      "match": "AND ESP",
-      "sub_esp_offset": 84,
-      "text": "Stack alignment at 0050c646 (SUB ESP, 0x54 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[0].z = (int)ROUND(fVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[1].x = (int)ROUND(fVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[1].y = (int)ROUND(fVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 79,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[1].z = (int)ROUND(fVar18);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[2].x = (int)ROUND(fVar19);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 81,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[2].y = (int)ROUND(fVar20);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "g_InverseMatrix.m[2].z = (int)ROUND(dVar21);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

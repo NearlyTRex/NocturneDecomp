@@ -32,16 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 78,
+    "complexity_score": 58,
     "cross_reference_count": 58,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 23,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "concat_artifact",
-      "stack_align_anchor",
-      "sub_artifact"
+      "decompiler_intrinsic"
     ],
     "total_lines": 88
   },
@@ -553,35 +551,25 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "SUB84",
       "text": "local_18 = SUB84 /* extract 2-byte value */(dVar1,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "CONCAT44",
       "text": "(float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "CONCAT44",
       "text": "return ((float)dVar1 + 1.0) * (float)-6.2831853070000001 + (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2);",
-      "type": "concat_artifact"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
-      "fix_address": "0040cd76",
-      "frame_offset": 20,
-      "match": "AND ESP",
-      "sub_esp_offset": 20,
-      "text": "Stack alignment at 0040cd76 (SUB ESP, 0x14 before)",
-      "type": "stack_align_anchor"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

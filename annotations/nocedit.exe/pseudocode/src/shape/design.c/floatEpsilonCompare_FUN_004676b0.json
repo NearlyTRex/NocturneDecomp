@@ -1,13 +1,34 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 14,
+        "message": "'ABS' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 6,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 6,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 36
   },
   "cross_references": [],
@@ -110,5 +131,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "ABS",
+      "text": "local_18 = (uint)(ABS(value1 - value2) < epsilon);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

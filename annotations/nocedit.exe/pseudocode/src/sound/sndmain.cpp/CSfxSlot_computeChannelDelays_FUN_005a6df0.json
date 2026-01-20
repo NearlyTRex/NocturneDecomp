@@ -50,17 +50,15 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 161,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 9,
     "pseudocode_lines": 61,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "concat_artifact",
-      "extra_output",
-      "stack_align_anchor",
-      "variadic_anchor"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 171
   },
@@ -266,11 +264,18 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "text": "iVar4 = (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "CONCAT44",
       "text": "local_20 = (double)CONCAT44 /* combine 2-byte values */(iVar4,0x5a6eb0);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -292,32 +297,6 @@
       "match": "extraout_ECX",
       "text": "} while (extraout_ECX + 1 < iVar1);",
       "type": "extra_output"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005a6e68",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005a6e6d",
-      "frame_offset": 12,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005a6e6d",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a6e68 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
-      "fix_address": "005a6df9",
-      "frame_offset": 12,
-      "match": "AND ESP",
-      "sub_esp_offset": 12,
-      "text": "Stack alignment at 005a6df9 (SUB ESP, 0xc before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

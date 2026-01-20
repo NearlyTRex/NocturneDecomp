@@ -38,13 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 176,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 66,
-    "suspect_count": 10,
+    "suspect_count": 15,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "unknown_field"
     ],
@@ -267,6 +268,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "text": "((float10)(int)ROUND(dVar7) * (float10)(this_ptr->cell_size).x +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 34,
       "match": "extraout_EDX_00",
@@ -274,11 +282,39 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "((float10)(int)ROUND(dVar7) * (float10)(this_ptr->cell_size).y +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ROUND",
+      "text": "iStack_34 = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 39,
       "match": "extraout_EDX_01",
       "text": "fVar4 = ((float10)*(float *)(extraout_EDX_01 + 8) -",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "text": "local_30 = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

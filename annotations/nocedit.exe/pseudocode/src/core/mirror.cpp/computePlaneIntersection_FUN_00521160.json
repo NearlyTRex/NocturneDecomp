@@ -32,13 +32,15 @@
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 38,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 38,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 139
   },
   "cross_references": [
@@ -239,5 +241,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ABS",
+      "text": "if (ABS(local_18) == 0.0) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

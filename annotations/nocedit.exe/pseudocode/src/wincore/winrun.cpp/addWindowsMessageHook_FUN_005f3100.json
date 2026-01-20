@@ -25,14 +25,15 @@
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 38,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "suspect_count": 7,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 39
   },
@@ -143,11 +144,46 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "text": "WNDPROC param_5)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_EBX",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"addWindowsMessageHook - too many!\",unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_5",
+      "text": "g_WindowMessageHandlers[g_NumWindowMessageHandlers] = param_5;",
+      "type": "unnamed_param"
     }
   ]
 }

@@ -38,15 +38,16 @@
   },
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 111,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 21,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 64
   },
@@ -128,6 +129,13 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 10,

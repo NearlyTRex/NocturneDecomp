@@ -20,13 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 48,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 48,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 5,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 204
   },
   "cross_references": [
@@ -182,5 +184,41 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(256.0f * radius);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(256.0f * radius);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "uVar10 = (int)ROUND(position->x * 256.0f) - (this_ptr->camera_origin).x;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "uVar6 = (int)ROUND(position->y * 256.0f) - (this_ptr->camera_origin).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "uVar11 = (int)ROUND(position->z * 256.0f) - (this_ptr->camera_origin).z;",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

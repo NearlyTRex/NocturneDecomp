@@ -1,14 +1,122 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 36,
+        "line": 40,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 47,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 16,
+        "line": 51,
+        "message": "invalid conversion from 'uint*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 16,
+        "line": 65,
+        "message": "invalid conversion from 'uint*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 72,
+        "message": "'stack0xfffffef8' was not declared in this scope; did you mean 'in_stack_fffffef8'?"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 80,
+        "message": "cast from 'SMRGLHeaderPrimitive*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 84,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 91,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 95,
+        "message": "invalid conversion from 'uint*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 109,
+        "message": "invalid conversion from 'uint*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 116,
+        "message": "'stack0xfffffef8' was not declared in this scope; did you mean 'in_stack_fffffef8'?"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 40,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 38,
+        "line": 80,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 84,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 91,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 295,
+    "complexity_score": 260,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 115,
-    "suspect_count": 16,
+    "suspect_count": 13,
     "suspect_types": [
-      "call_esp_anchor",
       "pointer_cast",
       "stack_param",
       "stack_ref"
@@ -281,45 +389,6 @@
       "match": "in_stack_fffffefc",
       "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,in_stack_fffffefc);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0045d31c",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0045d321",
-      "frame_offset": 152,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d321",
-      "target_address": "0x403950",
-      "text": "Direct CALL at 0045d31c, ADD ESP at 0045d321 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 96,
-      "call_address": "0045d3cd",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d3d2",
-      "frame_offset": 152,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d3d2",
-      "target_address": "0x407d70",
-      "text": "Direct CALL at 0045d3cd, ADD ESP at 0045d3d2 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 96,
-      "call_address": "0045d454",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d459",
-      "frame_offset": 152,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d459",
-      "target_address": "0x407d70",
-      "text": "Direct CALL at 0045d454, ADD ESP at 0045d459 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

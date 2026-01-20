@@ -26,15 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 117,
+    "complexity_score": 102,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 32,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "extra_output",
-      "lea_esp_stack_addr",
       "stack_ref"
     ],
     "total_lines": 91
@@ -244,15 +243,6 @@
       "match": "&stack0xffffffd8",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "address": "00499903",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA ESI, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00499903",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

@@ -188,16 +188,15 @@
   },
   "complexity": {
     "assembly_lines": 539,
-    "complexity_score": 400,
+    "complexity_score": 455,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 210,
-    "suspect_count": 17,
+    "suspect_count": 23,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "pointer_cast",
-      "stack_align_anchor",
       "unknown_field"
     ],
     "total_lines": 749
@@ -885,6 +884,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "SQRT",
+      "text": "local_190 = 1.0 / SQRT(local_238 * local_238 + local_248 * local_248 + local_240 * local_240);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(double *)((int)",
@@ -897,6 +903,13 @@
       "match": "(double *)((int)",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 108,
+      "match": "SQRT",
+      "text": "local_250 = 1.0 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -920,6 +933,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 136,
+      "match": "SQRT",
+      "text": "dVar3 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 147,
       "match": "(double *)((int)",
@@ -934,11 +954,18 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 150,
+      "match": "SQRT",
+      "text": "local_118 = 1.0 / SQRT(local_1f0 * local_1f0 + local_200 * local_200 + local_1f8 * local_1f8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 158,
       "match": "CONCAT44",
       "text": "if (local_2e8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -962,6 +989,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 178,
+      "match": "SQRT",
+      "text": "dVar3 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 189,
       "match": "(double *)((int)",
@@ -976,21 +1010,25 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 192,
+      "match": "SQRT",
+      "text": "dVar5 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 200,
       "match": "CONCAT44",
       "text": "if (local_2a8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2dc",
-      "fix_address": "005cd7dc",
-      "frame_offset": 732,
-      "match": "AND ESP",
-      "sub_esp_offset": 732,
-      "text": "Stack alignment at 005cd7dc (SUB ESP, 0x2dc before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 208,
+      "match": "SQRT",
+      "text": "dVar3 = 1.0 / SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -183,8 +183,8 @@
     "pseudocode_lines": 132,
     "suspect_count": 10,
     "suspect_types": [
-      "extra_output",
-      "lea_esp_stack_addr"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 464
   },
@@ -590,6 +590,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 84,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 86,
       "match": "extraout_EDX",
@@ -632,22 +639,11 @@
       "type": "extra_output"
     },
     {
-      "address": "005347b5",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 48,
-      "instruction": "LEA EAX, [ESP + 0x30]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005347b5",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005347d6",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 48,
-      "instruction": "LEA EBX, [ESP + 0x30]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005347d6",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 131,
+      "match": "ROUND",
+      "text": "*(int *)(extraout_EAX + 0x100) = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

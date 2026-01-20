@@ -1,15 +1,38 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 53,
+        "line": 14,
+        "message": "invalid conversion from 'void*' to 'STreeNode*' [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 14,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "call_esp_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 28
   },
   "cross_references": [
@@ -127,19 +150,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 12,
-      "call_address": "00457ee9",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00457eee",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "00457eee",
-      "target_address": "0x50f250",
-      "text": "Direct CALL at 00457ee9, ADD ESP at 00457eee with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

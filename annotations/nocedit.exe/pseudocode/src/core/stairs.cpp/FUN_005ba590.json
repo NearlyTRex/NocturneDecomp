@@ -32,16 +32,15 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 190,
+    "complexity_score": 195,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 35,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 122
   },
@@ -188,6 +187,27 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2, uint param_3, uint param_4) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "param_2, uint param_3, uint param_4) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_4",
+      "text": "param_2, uint param_3, uint param_4) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
@@ -270,29 +290,6 @@
       "match": "in_stack_00000010",
       "text": "in_stack_00000010[2] = local_1c;",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x20",
-      "fix_address": "005ba599",
-      "frame_offset": 32,
-      "match": "AND ESP",
-      "sub_esp_offset": 32,
-      "text": "Stack alignment at 005ba599 (SUB ESP, 0x20 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005ba5d6",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005ba5e3",
-      "frame_offset": 32,
-      "match": "CALL...ADD ESP",
-      "return_address": "005ba5db",
-      "target_address": "0x49a800",
-      "text": "Direct CALL at 005ba5d6, ADD ESP at 005ba5e3 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

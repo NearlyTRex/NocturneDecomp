@@ -260,17 +260,15 @@
   },
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 495,
+    "complexity_score": 465,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 130,
-    "suspect_count": 34,
+    "suspect_count": 32,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
+      "decompiler_intrinsic",
       "pointer_cast",
-      "stack_align_anchor",
       "unknown_field"
     ],
     "total_lines": 439
@@ -782,46 +780,46 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "CONCAT44",
       "text": "if ((((double)CONCAT44 /* combine 2-byte values */(uVar1,local_b0) + -0.0001 <= point->x) &&",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "CONCAT44",
       "text": "(point->x <= (double)CONCAT44 /* combine 2-byte values */(uVar4,local_a8) + 0.0001)) &&",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "CONCAT44",
       "text": "(((double)CONCAT44 /* combine 2-byte values */(uVar2,local_c0) + -0.0001 <= point->y &&",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "CONCAT44",
       "text": "(((point->y <= (double)CONCAT44 /* combine 2-byte values */(uVar5,local_f0) + 0.0001 &&",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 95,
       "match": "CONCAT44",
       "text": "((double)CONCAT44 /* combine 2-byte values */(uVar3,local_f8) + -0.0001 <= point->z)) &&",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "CONCAT44",
       "text": "(point->z <= (double)CONCAT44 /* combine 2-byte values */(uVar6,local_b8) + 0.0001)))))) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -920,29 +918,6 @@
       "match": "._4_4_",
       "text": "local_28.z._4_4_ = local_5c;",
       "type": "unknown_field"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xf0",
-      "fix_address": "005d6c1c",
-      "frame_offset": 240,
-      "match": "AND ESP",
-      "sub_esp_offset": 240,
-      "text": "Stack alignment at 005d6c1c (SUB ESP, 0xf0 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005d6f72",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005d6f77",
-      "frame_offset": 240,
-      "match": "CALL...ADD ESP",
-      "return_address": "005d6f77",
-      "target_address": "0x5d66e0",
-      "text": "Direct CALL at 005d6f72, ADD ESP at 005d6f77 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

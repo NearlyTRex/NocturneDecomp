@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 212,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 10,
     "pseudocode_lines": 77,
-    "suspect_count": 11,
+    "suspect_count": 4,
     "suspect_types": [
-      "callind_preserve_lost",
-      "lea_esp_stack_addr",
       "param_count_too_few",
       "special_crt_function",
       "stack_param"
@@ -295,20 +293,6 @@
       "type": "stack_param"
     },
     {
-      "add_esp_value": 92,
-      "call_target_type": "mem_absolute",
-      "call_target_value": 6362372,
-      "callind_address": "00610740",
-      "callind_assembly": "CALL dword ptr CS:[0x611504]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
-      "fix_address": "0061074b",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 108,
-      "return_address": "00610747",
-      "text": "CALLIND at 00610740, ADD ESP at 0061074b (no EBP frame)",
-      "type": "callind_preserve_lost"
-    },
-    {
       "call_site_count": 3,
       "declared_params": 4,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -318,60 +302,6 @@
       "param_delta": 1,
       "text": "Function declares 4 params but call sites push 5 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "006105ca",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 006105ca",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "006105d7",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 68,
-      "instruction": "LEA EAX, [ESP + 0x44]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 006105d7",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "006105dc",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 006105dc",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0061068b",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 84,
-      "instruction": "LEA EAX, [ESP + 0x54]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0061068b",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "006106bf",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 84,
-      "instruction": "LEA EAX, [ESP + 0x54]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 006106bf",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00610706",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 100,
-      "instruction": "LEA EAX, [ESP + 0x64]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00610706",
-      "type": "lea_esp_stack_addr"
     },
     {
       "address": "006105a0",

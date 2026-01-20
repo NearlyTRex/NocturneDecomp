@@ -134,19 +134,16 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 252,
+    "complexity_score": 227,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
     "pseudocode_lines": 72,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
+      "decompiler_intrinsic",
       "extra_output",
-      "stack_align_anchor",
       "stack_param",
-      "sub_artifact",
       "unknown_field",
       "unresolved_funcptr"
     ],
@@ -436,11 +433,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "SUB84",
       "text": "local_20 = SUB84 /* extract 2-byte value */(dVar3,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -450,18 +447,18 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "SUB84",
       "text": "local_28._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "CONCAT44",
       "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */((uint)local_28,uStack_2c);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -469,6 +466,13 @@
       "match": "extraout_EBX",
       "text": "(*(uint *)(extraout_EBX + 0x57c),(CSfxSample *)local_1e0);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -497,29 +501,6 @@
       "match": "extraout_EBX",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(extraout_EBX + 0x57c));",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x1dc",
-      "fix_address": "005de36c",
-      "frame_offset": 476,
-      "match": "AND ESP",
-      "sub_esp_offset": 476,
-      "text": "Stack alignment at 005de36c (SUB ESP, 0x1dc before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005de376",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005de381",
-      "frame_offset": 476,
-      "match": "CALL...ADD ESP",
-      "return_address": "005de37b",
-      "target_address": "0x5ee110",
-      "text": "Direct CALL at 005de376, ADD ESP at 005de381 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

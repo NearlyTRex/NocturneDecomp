@@ -62,14 +62,13 @@
   },
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 134,
+    "complexity_score": 119,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 22,
     "pseudocode_lines": 69,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "unaffected_reg"
     ],
@@ -434,15 +433,6 @@
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
-    },
-    {
-      "address": "00512e36",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00512e36",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

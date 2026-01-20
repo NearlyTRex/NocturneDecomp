@@ -50,14 +50,14 @@
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 88,
+    "complexity_score": 128,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 23,
-    "suspect_count": 5,
+    "suspect_count": 9,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "param_count_too_many",
       "pointer_cast"
     ],
@@ -264,6 +264,34 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "text": "CStack_28.x = (float)(int)ROUND(label_offset->w * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ROUND",
+      "text": "CStack_28.y = (float)(int)ROUND(label_offset->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ROUND",
+      "text": "CStack_28.z = (float)(int)ROUND(label_offset->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(*(float *)param5 * 10430.38f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(float *)((int)",
@@ -271,11 +299,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(*(float *)((int)param5 + 8) * 10430.38f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(float *)((int)",
       "text": "local_10 = (int)ROUND(*(float *)((int)param5 + 4) * 10430.38f);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_10 = (int)ROUND(*(float *)((int)param5 + 4) * 10430.38f);",
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 2,
@@ -287,24 +329,6 @@
       "param_delta": -2,
       "text": "Function declares 5 params but call sites push 3 (2 extra)",
       "type": "param_count_too_many"
-    },
-    {
-      "address": "004a1e9a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EBX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004a1e9a",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004a1ecb",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA EBX, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004a1ecb",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

@@ -20,15 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 255,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 120,
-    "suspect_count": 12,
+    "suspect_count": 18,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "warning_unreachable"
     ],
     "total_lines": 549
@@ -455,27 +454,60 @@
       "type": "warning_unreachable"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x78",
-      "fix_address": "00499339",
-      "frame_offset": 120,
-      "match": "AND ESP",
-      "sub_esp_offset": 120,
-      "text": "Stack alignment at 00499339 (SUB ESP, 0x78 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "if ((((float)(int)ROUND(fVar13) == fVar6 - fVar7) && ((float)(int)ROUND(fVar17) == fVar4 - fVar5))",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 16,
-      "call_address": "00499611",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00499618",
-      "frame_offset": 120,
-      "match": "CALL...ADD ESP",
-      "return_address": "00499616",
-      "target_address": "0x4952b0",
-      "text": "Direct CALL at 00499611, ADD ESP at 00499618 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "if ((((float)(int)ROUND(fVar13) == fVar6 - fVar7) && ((float)(int)ROUND(fVar17) == fVar4 - fVar5))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 81,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar20) == (int)ROUND(fVar12))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 81,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar20) == (int)ROUND(fVar12))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 102,
+      "match": "ROUND",
+      "text": "fVar10 = (float)((int)local_4c - (int)ROUND(dVar19));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "ROUND",
+      "text": "local_60 = (float)((int)local_60 + (int)ROUND(fVar12));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 115,
+      "match": "ROUND",
+      "text": "local_5c = (float)((int)local_5c + (int)ROUND(fVar14));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "ROUND",
+      "text": "local_58 = (float)((int)local_58 - (int)ROUND(dVar19));",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

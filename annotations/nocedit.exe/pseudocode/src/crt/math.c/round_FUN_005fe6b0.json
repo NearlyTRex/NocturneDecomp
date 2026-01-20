@@ -8,7 +8,7 @@
     "pseudocode_lines": 4,
     "suspect_count": 2,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "special_math_intrinsic"
     ],
     "total_lines": 16
@@ -1491,13 +1491,11 @@
   },
   "suspects": [
     {
-      "address": "005fe6c8",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA ESP, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005fe6c8",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 5,
+      "match": "ROUND",
+      "text": "return ROUND(value);",
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "005fe6b0",

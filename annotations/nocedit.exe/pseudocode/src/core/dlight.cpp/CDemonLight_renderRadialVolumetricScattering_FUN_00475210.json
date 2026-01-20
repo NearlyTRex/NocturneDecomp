@@ -74,16 +74,15 @@
   },
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 558,
+    "complexity_score": 593,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 13,
     "pseudocode_lines": 183,
-    "suspect_count": 34,
+    "suspect_count": 38,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "extra_output",
-      "stack_align_anchor",
       "stack_ref",
       "suspect_float",
       "unknown_field",
@@ -654,11 +653,102 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "iStack_64 = (int)ROUND(dVar8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 87,
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(dVar8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 88,
       "match": "extraout_EAX",
       "text": "local_34 = (float)this_ptr->shadow_depth_buffer[extraout_EAX + local_60] *",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "ROUND",
+      "text": "local_44 = (float)(int)ROUND(fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 108,
+      "match": "ROUND",
+      "text": "local_40 = (float)(int)ROUND(dVar8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 115,
+      "match": "ROUND",
+      "text": "local_c8.x = (int)ROUND(local_b0 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "ROUND",
+      "text": "local_c8.y = (int)ROUND(local_ac * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "ROUND",
+      "text": "local_c8.z = (int)ROUND(local_a8 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 126,
+      "match": "ROUND",
+      "text": "local_bc.x = (int)ROUND(local_b0 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 127,
+      "match": "ROUND",
+      "text": "local_bc.y = (int)ROUND(local_ac * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 128,
+      "match": "ROUND",
+      "text": "local_bc.z = (int)ROUND(local_a8 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 137,
+      "match": "ROUND",
+      "text": "aCStack_8c[0].x = (int)ROUND(local_b0 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 138,
+      "match": "ROUND",
+      "text": "aCStack_8c[0].y = (int)ROUND(local_ac * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 139,
+      "match": "ROUND",
+      "text": "aCStack_8c[0].z = (int)ROUND(local_a8 * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -668,11 +758,32 @@
       "type": "unknown_field"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 148,
+      "match": "ROUND",
+      "text": "local_98._0_4_ = (uint)ROUND(local_b0 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 149,
       "match": "._4_4_",
       "text": "local_98._4_4_ = (uint)ROUND(local_ac * 256.0f);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 149,
+      "match": "ROUND",
+      "text": "local_98._4_4_ = (uint)ROUND(local_ac * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 150,
+      "match": "ROUND",
+      "text": "iStack_90 = (int)ROUND(local_a8 * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -792,159 +903,6 @@
       "match": "&stack0xffffff10",
       "text": "(this_ptr_00,(SMRGLHeaderPrimitive *)&stack0xffffff10);",
       "type": "stack_ref"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xd4",
-      "fix_address": "0047521c",
-      "frame_offset": 212,
-      "match": "AND ESP",
-      "sub_esp_offset": 212,
-      "text": "Stack alignment at 0047521c (SUB ESP, 0xd4 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0047523d",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00475242",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "00475242",
-      "target_address": "0x48c450",
-      "text": "Direct CALL at 0047523d, ADD ESP at 00475242 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0047524e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00475253",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "00475253",
-      "target_address": "0x472160",
-      "text": "Direct CALL at 0047524e, ADD ESP at 00475253 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00475264",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00475269",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "00475269",
-      "target_address": "0x48c4f0",
-      "text": "Direct CALL at 00475264, ADD ESP at 00475269 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00475278",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0047527d",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047527d",
-      "target_address": "0x48db80",
-      "text": "Direct CALL at 00475278, ADD ESP at 0047527d with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00475288",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00475292",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "0047528d",
-      "target_address": "0x48ca50",
-      "text": "Direct CALL at 00475288, ADD ESP at 00475292 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": null,
-      "call_address": "004753c0",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004753cc",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "004753c5",
-      "target_address": "0x5fe6b0",
-      "text": "Direct CALL at 004753c0, ADD ESP at 004753cc with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00475552",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00475557",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "00475557",
-      "target_address": "0x5b575c",
-      "text": "Direct CALL at 00475552, ADD ESP at 00475557 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004755d7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004755dc",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "004755dc",
-      "target_address": "0x5b575c",
-      "text": "Direct CALL at 004755d7, ADD ESP at 004755dc with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0047565c",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00475661",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "00475661",
-      "target_address": "0x5b575c",
-      "text": "Direct CALL at 0047565c, ADD ESP at 00475661 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004756e3",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004756ee",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "004756e8",
-      "target_address": "0x5b575c",
-      "text": "Direct CALL at 004756e3, ADD ESP at 004756ee with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00475834",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00475839",
-      "frame_offset": 212,
-      "match": "CALL...ADD ESP",
-      "return_address": "00475839",
-      "target_address": "0x48bad0",
-      "text": "Direct CALL at 00475834, ADD ESP at 00475839 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

@@ -44,13 +44,14 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 70,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 25,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 82
@@ -230,6 +231,13 @@
       "match": "extraout_ECX",
       "text": "for (iVar1 = extraout_ECX; iVar1 < model_ptr->frame_count * model_ptr->vertex_count;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "*(int *)(iVar2 + 4 + (int)model_ptr->vertex_list) + (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

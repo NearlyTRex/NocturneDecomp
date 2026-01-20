@@ -26,13 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 37,
+    "complexity_score": 62,
     "cross_reference_count": 46,
     "function_call_count": 3,
     "global_count": 12,
     "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "decompiler_intrinsic",
       "unknown_field"
     ],
     "total_lines": 74
@@ -471,6 +472,20 @@
       "match": "._0_4_",
       "text": "(((((double)g_PerformanceCounter._0_4_ +",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "g_AccumulatedGameTime = iVar1 + (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "return iVar1 + (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

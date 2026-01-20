@@ -62,13 +62,14 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 47,
+    "complexity_score": 62,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 32,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 107
@@ -270,6 +271,13 @@
       "match": "(ushort *)((int)",
       "text": "this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar6)],0,0,iVar4);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

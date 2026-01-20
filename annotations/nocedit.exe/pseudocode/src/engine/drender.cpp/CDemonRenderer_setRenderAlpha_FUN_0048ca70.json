@@ -20,13 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 9,
+    "complexity_score": 24,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 23
   },
   "cross_references": [
@@ -172,5 +174,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ROUND",
+      "text": "engine_3d_c_setRenderAlpha_FUN_00406d80((int)ROUND(dVar1));",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

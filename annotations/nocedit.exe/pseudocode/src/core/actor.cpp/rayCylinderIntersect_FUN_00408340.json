@@ -26,14 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 132,
+    "complexity_score": 162,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 117,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_align_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 506
   },
@@ -369,14 +369,32 @@
   },
   "suspects": [
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xfc",
-      "fix_address": "0040834b",
-      "frame_offset": 252,
-      "match": "AND ESP",
-      "sub_esp_offset": 252,
-      "text": "Stack alignment at 0040834b (SUB ESP, 0xfc before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "SQRT",
+      "text": "fVar2 = SQRT(ray_direction->x * ray_direction->x + ray_direction->z * ray_direction->z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "SQRT",
+      "text": "if ((fVar1 <= fVar7) || (fVar9 = fVar9 - SQRT(fVar1 - fVar7), fVar2 < fVar9)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(fVar5 * out_normal->z + fVar6 * out_normal->x + out_normal->y * out_normal->y",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(out_normal->z * out_normal->z +",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -8,7 +8,7 @@
     "pseudocode_lines": 61,
     "suspect_count": 4,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "pointer_cast",
       "special_crt_function"
     ],
@@ -148,18 +148,18 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CONCAT11",
       "text": "uVar2 = CONCAT11 /* combine 2-byte values */(1,bVar1);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "CONCAT11",
       "text": "uVar2 = CONCAT11 /* combine 2-byte values */(2,bVar1);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

@@ -80,18 +80,17 @@
   },
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 371,
+    "complexity_score": 496,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 161,
-    "suspect_count": 17,
+    "suspect_count": 30,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
       "pointer_cast",
-      "stack_align_anchor",
       "stack_param",
       "suspect_float",
       "warning_unreachable"
@@ -537,6 +536,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(dVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(dVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 75,
       "match": "1.4013e-45",
@@ -558,6 +571,55 @@
       "type": "suspect_float"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 92,
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(fVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 93,
+      "match": "ROUND",
+      "text": "local_44 = (int)ROUND(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "local_58 = (int)ROUND(fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "local_54.y = (float)(int)ROUND(fVar13);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 96,
+      "match": "ROUND",
+      "text": "local_54.x = (float)(int)ROUND(fVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 97,
+      "match": "ROUND",
+      "text": "local_5c = (int)ROUND(fVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 98,
+      "match": "ROUND",
+      "text": "iStack_64 = (int)ROUND(dVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 99,
       "match": "extraout_EDX",
@@ -570,6 +632,55 @@
       "match": "in_stack_00000004",
       "text": "piVar4 = (int *)(*(int *)(in_stack_00000004 + 0x178) + local_40);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(fVar11) * (longlong)piVar4[1];",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 104,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)piVar4[2];",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 109,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(fVar12) * (longlong)piVar4[1];",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 110,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(fVar15) * (longlong)piVar4[2];",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 115,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(fVar10) * (longlong)*piVar4;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(fVar13) * (longlong)piVar4[1];",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(dVar16) * (longlong)piVar4[2];",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -609,42 +720,6 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
-      "fix_address": "0041aa4c",
-      "frame_offset": 172,
-      "match": "AND ESP",
-      "sub_esp_offset": 172,
-      "text": "Stack alignment at 0041aa4c (SUB ESP, 0xac before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0041aac2",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0041aac7",
-      "frame_offset": 172,
-      "match": "CALL...ADD ESP",
-      "return_address": "0041aac7",
-      "target_address": "0x471d30",
-      "text": "Direct CALL at 0041aac2, ADD ESP at 0041aac7 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0041adb4",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0041adb9",
-      "frame_offset": 172,
-      "match": "CALL...ADD ESP",
-      "return_address": "0041adb9",
-      "target_address": "0x41a630",
-      "text": "Direct CALL at 0041adb4, ADD ESP at 0041adb9 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

@@ -44,17 +44,15 @@
   },
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 525,
+    "complexity_score": 515,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 155,
     "suspect_count": 35,
     "suspect_types": [
-      "concat_artifact",
-      "extra_output",
-      "stack_align_anchor",
-      "sub_artifact"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 521
   },
@@ -506,6 +504,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "SQRT",
+      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 43,
       "match": "extraout_EDX_00",
@@ -513,11 +518,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "SUB84",
       "text": "uStack_94 = SUB84 /* extract 2-byte value */(dVar8,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -541,11 +546,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "SUB84",
       "text": "uStack_84 = SUB84 /* extract 2-byte value */(dVar8,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -555,11 +560,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "SUB84",
       "text": "uStack_5c = SUB84 /* extract 2-byte value */(dVar1,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -590,11 +595,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 66,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_84,local_68) < 0.0) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -611,18 +616,18 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_5c,local_80) < 0.0) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 87,
       "match": "CONCAT44",
       "text": "fVar3 = 1.0 / (float)(double)CONCAT44 /* combine 2-byte values */(uStack_94,local_98);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -651,16 +656,6 @@
       "match": "extraout_EDX",
       "text": "euler_angles = extraout_EDX;",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x84",
-      "fix_address": "0047216b",
-      "frame_offset": 132,
-      "match": "AND ESP",
-      "sub_esp_offset": 132,
-      "text": "Stack alignment at 0047216b (SUB ESP, 0x84 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

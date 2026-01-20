@@ -56,15 +56,16 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 460,
+    "complexity_score": 475,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 60,
-    "suspect_count": 39,
+    "suspect_count": 40,
     "suspect_types": [
-      "stack_align_anchor",
-      "stack_param"
+      "decompiler_intrinsic",
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 75
   },
@@ -332,6 +333,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "uint param_3) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
@@ -479,6 +487,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "SQRT",
+      "text": "fVar3 = SQRT(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_0000000c",
@@ -596,16 +611,6 @@
       "match": "in_stack_00000008",
       "text": "return in_stack_00000008;",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x6c",
-      "fix_address": "004cc829",
-      "frame_offset": 108,
-      "match": "AND ESP",
-      "sub_esp_offset": 108,
-      "text": "Stack alignment at 004cc829 (SUB ESP, 0x6c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

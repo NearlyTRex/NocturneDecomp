@@ -38,14 +38,13 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 89,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 19,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param"
     ],
     "total_lines": 72
@@ -189,33 +188,6 @@
       "match": "in_stack_00000004",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_13c,\"Enter FOV (mm) for CLightActor %s\",in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "address": "0042346e",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0042346e",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00423498",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 316,
-      "instruction": "LEA EAX, [ESP + 0x13c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00423498",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004234a0",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 20,
-      "instruction": "LEA EAX, [ESP + 0x14]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004234a0",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

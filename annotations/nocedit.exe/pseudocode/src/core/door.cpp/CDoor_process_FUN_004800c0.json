@@ -177,7 +177,7 @@
     "pseudocode_lines": 192,
     "suspect_count": 16,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "stack_param",
       "unknown_field",
       "unresolved_funcptr"
@@ -466,40 +466,32 @@
       "type": "unknown_field"
     },
     {
-      "address": "004801cc",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 40,
-      "instruction": "LEA EDX, [ESP + 0x28]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004801cc",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 160,
+      "match": "SQRT",
+      "text": "fStack_28 = SQRT(fVar3 - (fStack_94 - CStack_64.x) * (fStack_94 - CStack_64.x));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "0048049a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 76,
-      "instruction": "LEA EAX, [ESP + 0x4c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0048049a",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 165,
+      "match": "SQRT",
+      "text": "fStack_14 = SQRT(fVar3 - (fStack_a0 - CStack_64.x) * (fStack_a0 - CStack_64.x));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004804a6",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 68,
-      "instruction": "LEA EAX, [ESP + 0x44]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004804a6",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 170,
+      "match": "SQRT",
+      "text": "fStack_18 = SQRT(fVar3 - (fStack_8c - CStack_64.z) * (fStack_8c - CStack_64.z));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "address": "004804ce",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 112,
-      "instruction": "LEA EAX, [ESP + 0x70]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004804ce",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 175,
+      "match": "SQRT",
+      "text": "fStack_30 = SQRT(fVar3 - (fStack_98 - CStack_64.z) * (fStack_98 - CStack_64.z));",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

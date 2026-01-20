@@ -1,16 +1,83 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 27,
+        "line": 34,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 40,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 56,
+        "message": "'ROUND' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 63,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 68,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 34,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 40,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 63,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 68,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 179,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
     "pseudocode_lines": 64,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
-      "pointer_cast",
-      "stack_align_anchor"
+      "pointer_cast"
     ],
     "total_lines": 285
   },
@@ -306,11 +373,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "ROUND",
+      "text": "local_3c = (uint)(longlong)ROUND(fVar9);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 50,
       "match": "extraout_CL",
       "text": "local_3c = local_3c >> (extraout_CL & 0x1f);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ROUND",
+      "text": "local_38 = (uint)(longlong)ROUND(dVar11);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -339,16 +420,6 @@
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_ScreenBufferArray[y] + extraout_EDX * 2) =",
       "type": "pointer_cast"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
-      "fix_address": "004342f9",
-      "frame_offset": 44,
-      "match": "AND ESP",
-      "sub_esp_offset": 44,
-      "text": "Stack alignment at 004342f9 (SUB ESP, 0x2c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

@@ -11,7 +11,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   crt/fpemu.c (1 remaining of 1)
     - crt_fpemu.c_staticInit_FUN_0060be80
-      Suspects: sborrow_artifact, sub_artifact, unknown_field, special_crt_function
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, unknown_field, special_crt_function
 
   crt/io.c/stat/thunk (1 remaining of 1)
     - crt_io.c_stat_thunk_00600c18
@@ -63,11 +63,15 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   engine/light.cpp (1 remaining of 10)
     - engine_light.cpp_calculatePhongLighting_FUN_00505530
-      Suspects: pointer_cast, stack_ref, stack_ref, param_count_too_few, lea_esp_stack_addr, lea_esp_stack_addr
+      Suspects: pointer_cast, stack_ref, stack_ref, param_count_too_few
 
   core/dcube.cpp/CDemonCube (1 remaining of 1)
     - core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData
       Suspects: pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
+
+  core/inivar.cpp (1 remaining of 2)
+    - core_inivar.cpp_readIniData_FUN_004fbd90
+      Suspects: unaffected_reg, unaffected_reg
 
   core/mmx.c (1 remaining of 4)
     - core_mmx.c_detectIntelProcessor_FUN_00524f4c
@@ -75,11 +79,15 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/slew.cpp (1 remaining of 4)
     - core_slew.cpp_CSlew_processInput_FUN_005a20b0
-      Suspects: unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, unaffected_reg, unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, stack_align_anchor
+      Suspects: unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, unaffected_reg, unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
+
+  core/level.cpp (1 remaining of 6)
+    - core_level.cpp_CLevelLoader_update_FUN_00504160
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, suspect_float, suspect_float, suspect_float, suspect_float, suspect_float, pointer_cast, pointer_cast, pointer_cast, param_count_too_many
 
   shape/multicrm.cpp (1 remaining of 6)
     - shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
-      Suspects: param_count_too_few, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor
+      Suspects: param_count_too_few
 
   entry (1 remaining of 1)
     - entry
@@ -103,11 +111,17 @@ PRIORITY 1: Files with 1-2 functions remaining
     - crt_fpu.c_ClearFPUExceptions_FUN_0060ce50
       Suspects: special_crt_function
 
+  engine/pcx.c (2 remaining of 4)
+    - engine_pcx.c_writePCXScanline_FUN_00548c50
+      Suspects: pointer_cast, pointer_cast, pointer_cast, pointer_cast
+    - engine_pcx.c_saveScreenshotGeneral_FUN_005490c0
+      Suspects: pointer_cast, pointer_cast, pointer_cast, pointer_cast
+
   engine/console.cpp (2 remaining of 8)
     - engine_console.cpp_CConsole_render_FUN_00441b00
-      Suspects: pointer_cast, lea_esp_stack_addr
+      Suspects: pointer_cast
     - engine_console.cpp_CConsole_printf_FUN_00441890
-      Suspects: stack_ref, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
+      Suspects: stack_ref
 
   core/shovel.cpp (2 remaining of 8)
     - core_shovel.cpp_CShovel_dtor_FUN_00588c80
@@ -117,7 +131,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/dimage.cpp (2 remaining of 6)
     - core_dimage.cpp_CDemonImage_load_FUN_00471ad0
-      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, lea_esp_stack_addr, lea_esp_stack_addr
+      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
     - core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a40
       Suspects: param_count_too_few
 
@@ -125,55 +139,49 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_podmain.cpp_CDemonPod_dtor_FUN_00551b20
       Suspects: unaffected_reg, unaffected_reg
     - core_podmain.cpp_CDemonPod_load_FUN_005519c0
-      Suspects: unaffected_reg, unaffected_reg, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
+      Suspects: unaffected_reg, unaffected_reg
 
   core/gun.cpp (2 remaining of 7)
     - core_gun.cpp_FUN_004f0b50
       Suspects: unaffected_reg, unaffected_reg
     - core_gun.cpp_FUN_004f0350
-      Suspects: extra_output, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, sub_artifact, sub_artifact, stack_param, stack_param, extra_output, stack_param, stack_param, stack_ref, stack_param, stack_param, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_ref, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, stack_align_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor
+      Suspects: extra_output, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, stack_param, stack_param, extra_output, stack_param, stack_param, stack_ref, stack_param, stack_param, decompiler_intrinsic, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_ref, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param
 
   core/terrain.cpp (2 remaining of 4)
     - core_terrain.cpp_CTerrain_dtor_FUN_005e1f30
       Suspects: extra_output, extra_output
     - core_terrain.cpp_CTerrain_render_FUN_005e1f50
-      Suspects: extra_output, extra_output, extra_output, extra_output, stack_ref, stack_align_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor
+      Suspects: extra_output, extra_output, decompiler_intrinsic, extra_output, extra_output, decompiler_intrinsic, stack_ref
 
   core/particle.cpp (2 remaining of 6)
     - core_particle.cpp_CParticle_process_FUN_00545760
-      Suspects: stack_param, stack_param, pointer_cast, pointer_cast, pointer_cast, callind_anchor, stack_align_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor
+      Suspects: stack_param, stack_param, pointer_cast, pointer_cast, pointer_cast
     - core_particle.cpp_CParticle_dtor_FUN_00545670
       Suspects: param_count_too_few
 
   core/dskybox.cpp (2 remaining of 4)
     - core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0
-      Suspects: extra_output, extra_output, extra_output, extra_output, extra_output, extra_output, extra_output, extra_output, stack_align_anchor
+      Suspects: extra_output, extra_output, extra_output, extra_output, extra_output, extra_output, extra_output, extra_output
     - core_dskybox.cpp_renderSkyDome_FUN_004901f0
-      Suspects: extra_output, extra_output, stack_ref, pointer_cast, stack_ref, unknown_field, concat_artifact, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
-
-  core/inivar.cpp (2 remaining of 2)
-    - core_inivar.cpp_readIniData_FUN_004fbd90
-      Suspects: unaffected_reg, unaffected_reg, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
-    - core_inivar.cpp_writeIniData_FUN_004fc510
-      Suspects: lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
+      Suspects: extra_output, decompiler_intrinsic, decompiler_intrinsic, extra_output, stack_ref, pointer_cast, stack_ref, unknown_field, decompiler_intrinsic
 
   core/minecar.cpp (2 remaining of 7)
     - core_minecar.cpp_FUN_00520eb0
-      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
+      Suspects: unnamed_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
     - core_minecar.cpp_FUN_00520e90
       Suspects: stack_param, stack_param
 
-  core/level.cpp (2 remaining of 6)
-    - core_level.cpp_CLevelLoader_update_FUN_00504160
-      Suspects: suspect_float, suspect_float, suspect_float, suspect_float, suspect_float, pointer_cast, pointer_cast, pointer_cast, param_count_too_many, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
-    - core_level.cpp_CLevelLoader_show_FUN_00503dc0
-      Suspects: lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
+  shape/spotview.cpp (2 remaining of 6)
+    - shape_spotview.cpp_CSpotView_FUN_005b9620
+      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, param_count_too_few
+    - shape_spotview.cpp_CSpotView_FUN_005b9670
+      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [special_crt_function] - 275 functions
+  [special_crt_function] - 297 functions
     crt_stub.c_staticInit_FUN_005fde92                      (  4 lines)
     crt_stub.c_staticFinal_FUN_005fde93                     (  4 lines)
     crt_stub.c_staticInit_FUN_005ff9f2                      (  4 lines)
@@ -184,9 +192,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_thread.c_GetTLS_FUN_0060242c                        (  4 lines)
     crt_unknown.c_FUN_0060eb3a                              (  4 lines)
     crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
-    ... and 265 more
+    ... and 287 more
 
-  [param_count_too_few] - 132 functions
+  [param_count_too_few] - 138 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
@@ -197,9 +205,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_water.cpp_CWater_process_FUN_005e9ed0              (  4 lines)
     support_newmsg.cpp_freeSkullBitmaps_FUN_00544750        (  5 lines)
     support_newmsg.cpp_freeBitmap_FUN_00544730              (  5 lines)
-    ... and 122 more
+    ... and 128 more
 
-  [pointer_cast] - 63 functions
+  [pointer_cast] - 64 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
     core_dracbrid.cpp_ctor_FUN_00486d30                     (  7 lines)
@@ -210,23 +218,22 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  7 lines)
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  7 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  7 lines)
-    ... and 53 more
+    ... and 54 more
 
-  [lea_esp_stack_addr] - 58 functions
-    core_actor.cpp_crc32ProcessInt_FUN_0040cf50             (  5 lines)
-    core_actor.cpp_matchesClassName_FUN_0040c740            (  6 lines)
-    shape_memdbg.cpp_CLeakChecker_ctor_FUN_0050fba0         (  6 lines)
-    support_trisock.cpp_setSocketBroadcast_FUN_005e1e90     (  7 lines)
-    engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90         (  8 lines)
-    engine_3d.c_oldFunction_FUN_004041d0                    (  9 lines)
-    engine_3d.c_oldFunction_FUN_00404df0                    (  9 lines)
-    engine_3d.c_oldFunc_FUN_00403740                        (  9 lines)
-    engine_fileio.cpp_writeArtFileEntries_FUN_004bc9f0      ( 10 lines)
-    cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440      ( 11 lines)
-    ... and 48 more
+  [stack_ref] - 43 functions
+    engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 (  9 lines)
+    engine_2d.c_drawTextFormatted_FUN_00402150              ( 10 lines)
+    engine_2d.c_drawTextColorFormatted_FUN_004024c0         ( 11 lines)
+    engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0    ( 11 lines)
+    engine_2d.c_getStringWidthFormatted_FUN_004027a0        ( 11 lines)
+    shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a ( 11 lines)
+    shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f ( 11 lines)
+    shape_edittool.cpp_CEditorTools_showError_FUN_0049e740  ( 11 lines)
+    engine_2d.c_drawTextCenteredFormatted_FUN_004023c0      ( 12 lines)
+    engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730 ( 12 lines)
+    ... and 33 more
 
   [warning_overlapping_globals] - 31 functions
-    core_script.cpp_FUN_00559ac0                            ( 10 lines)
     core_dynamite.cpp_staticInit_FUN_0049cd40               ( 12 lines)
     core_werewolf.cpp_staticInit_FUN_005efb70               ( 15 lines)
     core_stranger.cpp_staticInit_FUN_005bae80               ( 15 lines)
@@ -236,20 +243,34 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dcamera.cpp_CDemonCamera_processCorona_FUN_0045113 ( 22 lines)
     core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005 ( 24 lines)
     core_gabriela.cpp_staticInit_FUN_004d2910               ( 24 lines)
+    core_batcreat.cpp_CBatCreature_ctor_FUN_004150f0        ( 27 lines)
     ... and 21 more
 
-  [param_count_too_many] - 23 functions
+  [param_count_too_many] - 26 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
     support_trisock.cpp_cleanupWinsock_FUN_005e1ee0         (  7 lines)
     core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0 (  8 lines)
     engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930    (  9 lines)
     engine_texture.cpp_updateTextureWithPalette_FUN_005dd90 (  9 lines)
     engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0     (  9 lines)
+    engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30      (  9 lines)
     core_skeleton.cpp_CDeformableModel_lightVertices_FUN_00 (  9 lines)
     core_game.cpp_CallToJoystickStuff_FUN_004dc230          (  9 lines)
     shape_edittool.cpp_CEditorTools_showCheatInputDialog_FU ( 10 lines)
-    core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0047c4 ( 11 lines)
-    ... and 13 more
+    ... and 16 more
+
+  [decompiler_intrinsic] - 25 functions
+    shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
+    engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00 (  9 lines)
+    engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN (  9 lines)
+    engine_drender.cpp_CDemonRenderer_setProjectionScaleSim ( 10 lines)
+    engine_drender.cpp_CDemonRenderer_setProjectionScale_FU ( 11 lines)
+    wincore_winrun.cpp_sleep_FUN_005f40e0                   ( 12 lines)
+    core_game.cpp_CGame_slamDT_FUN_004e3080                 ( 14 lines)
+    core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0       ( 18 lines)
+    core_dmodel.cpp_CKeyFramedModelInstance_prepareForRende ( 19 lines)
+    engine_drender.cpp_CDemonRenderer_setCameraOriginFromSc ( 20 lines)
+    ... and 15 more
 
   [negative_offset] - 22 functions
     core_fire.cpp_CStake_dtor_FUN_004c9760                  (  6 lines)
@@ -264,46 +285,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_course.cpp_CCourse_free_FUN_004426c0               ( 14 lines)
     ... and 12 more
 
-  [call_esp_anchor] - 15 functions
-    shape_design.c_multicramTextures_FUN_0046eb80           (  5 lines)
-    shape_design.c_qsortCompareByField4Wrapper_FUN_00466210 (  6 lines)
-    shape_design.c_allocateSpatialTreeNode_FUN_00457ed0     (  6 lines)
-    shape_design.c_showModelEditor_FUN_00461aa0             (  8 lines)
-    shape_design.c_renderPolygonsByPart_FUN_004616a0        ( 10 lines)
-    shape_design.c_initializeTextureManager_FUN_0046a880    ( 11 lines)
-    core_gore.cpp_CGore_FUN_004ee070                        ( 12 lines)
-    shape_design.c_setTextureQualityParameter_FUN_0046a8e0  ( 12 lines)
-    shape_design.c_initializeCramConfig_FUN_0046b6e0        ( 15 lines)
-    shape_design.c_skipLines_FUN_00459360                   ( 16 lines)
-    ... and 5 more
-
-  [stack_align_anchor] - 15 functions
-    engine_drender.cpp_CDemonRenderer_getCameraOriginScaled ( 13 lines)
-    core_fire.cpp_CExplosion_process_FUN_004c3ac0           ( 14 lines)
-    engine_drender.cpp_CDemonRenderer_getCameraRotationAsRa ( 15 lines)
-    core_actor.cpp_getRandomInt_FUN_0040cc70                ( 22 lines)
-    core_motion.cpp_CMotionController_getStateBlendWeight_F ( 25 lines)
-    core_dirmat.cpp_atan2Custom_FUN_00472090                ( 29 lines)
-    core_xform.cpp_atan2Approximation_FUN_005f55c0          ( 29 lines)
-    core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180            ( 36 lines)
-    core_dcamera.cpp_CDemonCamera_screenToWorldDirection_FU ( 39 lines)
-    core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004 ( 40 lines)
-    ... and 5 more
-
-  [stack_ref] - 11 functions
-    core_sound.cpp_resetTrainSounds_FUN_005b26f0            ( 12 lines)
-    core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80           ( 16 lines)
-    core_simbox.cpp_CSimBox_FUN_005890f0                    ( 17 lines)
-    core_bat.cpp_CBat_FUN_00414bf0                          ( 18 lines)
-    core_door.cpp_CDoor_renderBackground_FUN_004809e0       ( 19 lines)
-    core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00   ( 21 lines)
-    cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 ( 23 lines)
-    core_weapon.cpp_CWeapon_FUN_005ee030                    ( 24 lines)
-    core_trap.cpp_CTrap_FUN_005de920                        ( 25 lines)
-    core_turret.cpp_CTurret_FUN_005e2320                    ( 36 lines)
-    ... and 1 more
-
-  [special_math_intrinsic] - 10 functions
+  [special_math_intrinsic] - 12 functions
     crt_math.c_atan2_minus_pi_half_epilogue_FUN_0060c5f3    (  5 lines)
     crt_math.c_atan2_epilogue_FUN_0060c5a0                  (  5 lines)
     crt_math.c_atan2_minus_pi_epilogue_FUN_0060c5cb         (  5 lines)
@@ -313,43 +295,48 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_math.c_atan2_negate_epilogue_FUN_0060c5ab           (  5 lines)
     crt_math.c_atan2_pi_half_minus_epilogue_FUN_0060c5e0    (  5 lines)
     crt_math.c_pentiumFdivpWorkaround_FUN_00606f13          (  6 lines)
-    crt_math.c_atan2_FUN_006013b1                           ( 11 lines)
+    crt_math.c_ceil_FUN_006001b2                            (  6 lines)
+    ... and 2 more
 
-  [variadic_anchor] - 6 functions
-    shape_dsemodel.cpp_CDSEModel_convertVertex_FUN_0048f6f0 ( 17 lines)
-    shape_dsemodel.cpp_CDSEModel_logVertex_FUN_0048f660     ( 18 lines)
-    shape_design.c_qsortByOriginalIndex_FUN_004677c0        ( 22 lines)
-    shape_design.c_addQuadPolygon_FUN_004687c0              ( 26 lines)
-    shape_design.c_qsortByVertexX_FUN_004676f0              ( 40 lines)
-    shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20    ( 47 lines)
+  [format_string_mismatch] - 8 functions
+    core_dcamera.cpp_saveCameraFog_FUN_00453f10             ( 14 lines)
+    shape_design.c_writeBinaryTreeNode_FUN_00457fd0         ( 16 lines)
+    core_actor.cpp_serializeFloat_FUN_0040b770              ( 17 lines)
+    core_actor.cpp_serializeVector_FUN_0040b340             ( 17 lines)
+    core_actor.cpp_serializeOrientation_FUN_0040b3e0        ( 19 lines)
+    core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirector ( 27 lines)
+    shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN ( 33 lines)
+    shape_edittool.cpp_CEditorTools_promptForValidVector_FU ( 34 lines)
 
-  [unknown_field] - 5 functions
-    shape_design.c_normalizeVertex_FUN_00461e60             ( 14 lines)
-    core_fire.cpp_CFireEffect_FUN_004c93d0                  ( 16 lines)
-    wincore_winrun.cpp_getTime_FUN_005f2dc0                 ( 22 lines)
-    shape_design.c_calculatePolygonNormal_FUN_0045caa0      ( 43 lines)
-    wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80       ( 43 lines)
-
-  [unresolved_funcptr] - 4 functions
+  [unresolved_funcptr] - 6 functions
     core_stranger.cpp_CStranger_FUN_005c3710                (  9 lines)
+    core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_0 ( 18 lines)
+    core_gore.cpp_CGore_FUN_004ed7b0                        ( 19 lines)
     engine_dosio.c_findFile_FUN_00481760                    ( 23 lines)
     core_charactr.cpp_CCharacter_FUN_0042b110               ( 23 lines)
     core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00        ( 40 lines)
 
-  [format_string_mismatch] - 4 functions
-    core_dcamera.cpp_saveCameraFog_FUN_00453f10             ( 14 lines)
-    core_actor.cpp_serializeFloat_FUN_0040b770              ( 17 lines)
-    core_actor.cpp_serializeVector_FUN_0040b340             ( 17 lines)
-    core_actor.cpp_serializeOrientation_FUN_0040b3e0        ( 19 lines)
+  [unknown_field] - 4 functions
+    core_fire.cpp_CFireEffect_FUN_004c93d0                  ( 16 lines)
+    engine_2d.c_getInputWithPrompt_FUN_004032c0             ( 40 lines)
+    core_actor.cpp_CDemonActor_testLineIntersection_FUN_004 ( 42 lines)
+    wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80       ( 43 lines)
 
-  [warning_unreachable] - 3 functions
+  [warning_unreachable] - 4 functions
     core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554 ( 20 lines)
     engine_font.cpp_setShadowColor_FUN_004ce0f0             ( 26 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487 ( 39 lines)
+    shape_design.c_setupViewMatrix_FUN_0045ba60             ( 42 lines)
 
   [stack_param] - 2 functions
     engine_matrix.c_interpolatedCos_FUN_0050c600            ( 11 lines)
     engine_matrix.c_interpolatedSin_FUN_0050c5c0            ( 11 lines)
+
+  [unnamed_param] - 1 functions
+    core_conveyor.cpp_FUN_004422f0                          (  7 lines)
+
+  [mmx_assembly] - 1 functions
+    core_dstrender.cpp_saveMMXRegisters_FUN_004906b0        ( 20 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
@@ -358,4 +345,4 @@ PRIORITY 3: Files at 90%+ (finish them off!)
   engine/light.cpp (90.0% complete)
     1 functions remaining:
       engine_light.cpp_calculatePhongLighting_FUN_005055 (98 lines)
-        Types: ['lea_esp_stack_addr', 'param_count_too_few', 'pointer_cast', 'stack_ref']
+        Types: ['param_count_too_few', 'pointer_cast', 'stack_ref']

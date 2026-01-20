@@ -105,8 +105,8 @@
     "pseudocode_lines": 43,
     "suspect_count": 15,
     "suspect_types": [
-      "callind_preserve_lost",
       "stack_param",
+      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 150
@@ -224,6 +224,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
@@ -320,23 +327,6 @@
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0xbebc) = uVar3;",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 36,
-        "reg": "EAX"
-      },
-      "callind_address": "00568d41",
-      "callind_assembly": "CALL dword ptr [EAX + 0x24]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
-      "fix_address": "00568d44",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "00568d44",
-      "text": "CALLIND at 00568d41, ADD ESP at 00568d44 (no EBP frame)",
-      "type": "callind_preserve_lost"
     }
   ],
   "vtable_info": {

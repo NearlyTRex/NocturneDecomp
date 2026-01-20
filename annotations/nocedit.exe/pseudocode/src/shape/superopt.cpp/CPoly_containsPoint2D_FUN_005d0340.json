@@ -1532,16 +1532,15 @@
   },
   "complexity": {
     "assembly_lines": 620,
-    "complexity_score": 2475,
+    "complexity_score": 2460,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 335,
-    "suspect_count": 212,
+    "suspect_count": 211,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast",
-      "stack_align_anchor",
-      "sub_artifact",
       "unknown_field"
     ],
     "total_lines": 955
@@ -2424,11 +2423,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 113,
       "match": "SUB84",
       "text": "p3 = SUB84 /* extract 2-byte value */(dVar3,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -3899,16 +3898,6 @@
       "match": "._4_4_",
       "text": "local_bc = local_188.y._4_4_;",
       "type": "unknown_field"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x1c8",
-      "fix_address": "005d034b",
-      "frame_offset": 456,
-      "match": "AND ESP",
-      "sub_esp_offset": 456,
-      "text": "Stack alignment at 005d034b (SUB ESP, 0x1c8 before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

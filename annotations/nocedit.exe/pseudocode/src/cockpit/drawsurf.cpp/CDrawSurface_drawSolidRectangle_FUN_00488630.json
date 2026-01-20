@@ -20,13 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 41,
+    "complexity_score": 56,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 16,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 55
@@ -181,6 +182,13 @@
       "match": "extraout_EAX",
       "text": "float extraout_EAX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ROUND",
+      "text": "g_DashLength = (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

@@ -110,13 +110,14 @@
   },
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 112,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 10,
     "pseudocode_lines": 62,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "stack_param"
     ],
@@ -315,6 +316,13 @@
       "match": "extraout_EDX",
       "text": "iVar2 = extraout_EDX + (int)ROUND(dVar4);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ROUND",
+      "text": "iVar2 = extraout_EDX + (int)ROUND(dVar4);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

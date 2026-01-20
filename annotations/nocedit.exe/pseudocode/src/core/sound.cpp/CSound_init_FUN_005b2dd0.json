@@ -38,15 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 105,
+    "complexity_score": 90,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 27,
     "pseudocode_lines": 50,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "extra_output",
-      "lea_esp_stack_addr",
       "stack_ref"
     ],
     "total_lines": 186
@@ -420,15 +419,6 @@
       "match": "&stack0x00000000",
       "text": "if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {",
       "type": "stack_ref"
-    },
-    {
-      "address": "005b2f05",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005b2f05",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

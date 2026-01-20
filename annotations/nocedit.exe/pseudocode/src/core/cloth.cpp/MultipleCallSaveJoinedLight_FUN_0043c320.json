@@ -26,15 +26,16 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 126,
+    "complexity_score": 211,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 26,
-    "suspect_count": 9,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 85
   },
@@ -143,6 +144,20 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "text": "int core_cloth_cpp_MultipleCallSaveJoinedLight_FUN_0043c320(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
@@ -185,6 +200,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "text": "param_1 = *in_stack_00000004;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "text": "} while (iVar2 < param_1);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
@@ -192,11 +221,39 @@
       "type": "stack_param"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "text": "core_cloth_cpp_FUN_0043bae0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
       "text": "param_1 = *in_stack_00000004;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "text": "param_1 = *in_stack_00000004;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "text": "} while (iVar2 < param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "text": "return param_1;",
+      "type": "unnamed_param"
     },
     {
       "call_site_count": 2,

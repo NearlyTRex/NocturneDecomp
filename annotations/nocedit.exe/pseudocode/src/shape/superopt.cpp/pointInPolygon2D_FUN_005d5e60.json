@@ -74,18 +74,16 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 305,
+    "complexity_score": 285,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 80,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "param_count_too_few",
-      "pointer_cast",
-      "stack_align_anchor",
-      "sub_artifact"
+      "pointer_cast"
     ],
     "total_lines": 260
   },
@@ -352,102 +350,102 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "CONCAT44",
       "text": "if ((((double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50) <= test_point->y) &&",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 56,
       "match": "CONCAT44",
       "text": "(test_point->y <= (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40))) &&",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 57,
       "match": "CONCAT44",
       "text": "((test_point->y != (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50) ||",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "CONCAT44",
       "text": "(test_point->y != (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40))))) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 59,
       "match": "CONCAT44",
       "text": "if ((test_point->x < (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58)) ||",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "CONCAT44",
       "text": "(test_point->x < (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48))) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "CONCAT44",
       "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) - (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "CONCAT44",
       "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) - (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "CONCAT44",
       "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40) - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "CONCAT44",
       "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40) - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "SUB84",
       "text": "local_38 = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "SUB84",
       "text": "local_30 = SUB84 /* extract 2-byte value */(dVar5,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "CONCAT44",
       "text": "(test_point->y - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50)) * local_60 +",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58)) goto LAB_005d5ef4;",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 2,
@@ -459,16 +457,6 @@
       "param_delta": 4,
       "text": "Function declares 3 params but call sites push 7 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x5c",
-      "fix_address": "005d5e69",
-      "frame_offset": 92,
-      "match": "AND ESP",
-      "sub_esp_offset": 92,
-      "text": "Stack alignment at 005d5e69 (SUB ESP, 0x5c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

@@ -32,15 +32,17 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 376,
+    "complexity_score": 426,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 31,
-    "suspect_count": 33,
+    "suspect_count": 37,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
+      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 82
@@ -141,6 +143,13 @@
       "match": "WARNING: Globals starting with",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "uint param_3) */",
+      "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
@@ -255,6 +264,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0xb] = (int)ROUND(*in_stack_00000008 * _DAT_0065f024);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000004",
@@ -269,6 +285,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0xc] = (int)ROUND(in_stack_00000008[1] * _DAT_0065f024);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000004",
@@ -281,6 +304,13 @@
       "match": "in_stack_00000008",
       "text": "in_stack_00000004[0xd] = (int)ROUND(in_stack_00000008[2] * _DAT_0065f024);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0xd] = (int)ROUND(in_stack_00000008[2] * _DAT_0065f024);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

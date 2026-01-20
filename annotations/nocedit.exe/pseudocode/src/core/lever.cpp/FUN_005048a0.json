@@ -68,14 +68,13 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 137,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 32,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_anchor",
       "pointer_cast",
       "stack_param"
     ],
@@ -198,19 +197,6 @@
       "match": "(int *)((int)",
       "text": "piVar4 = (int *)((int)piVar4 + 2);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005048b0",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005048b5",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "005048b5",
-      "target_address": "0x478d60",
-      "text": "Direct CALL at 005048b0, ADD ESP at 005048b5 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

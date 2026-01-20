@@ -38,17 +38,15 @@
   },
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 667,
+    "complexity_score": 677,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 177,
-    "suspect_count": 47,
+    "suspect_count": 49,
     "suspect_types": [
-      "concat_artifact",
-      "extra_output",
-      "stack_align_anchor",
-      "sub_artifact"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 632
   },
@@ -454,18 +452,32 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "SQRT",
+      "text": "dVar6 = (double)SQRT(euler_out->z * euler_out->z +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "SUB84",
       "text": "local_88 = SUB84 /* extract 2-byte value */(dVar6,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "SQRT",
+      "text": "dVar6 = (double)SQRT(euler_out[3].y * euler_out[3].y +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "SUB84",
       "text": "local_80 = SUB84 /* extract 2-byte value */(dVar6,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -487,6 +499,13 @@
       "match": "extraout_ST1",
       "text": "dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "SQRT",
+      "text": "dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -517,11 +536,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "SUB84",
       "text": "uStack_3c = SUB84 /* extract 2-byte value */(dVar6,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -531,11 +550,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 66,
       "match": "CONCAT44",
       "text": "dVar1 = (double)extraout_EDX[2].z * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -545,25 +564,25 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "CONCAT44",
       "text": "dVar6 = (double)extraout_EDX[3].y * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "SUB84",
       "text": "uStack_34 = SUB84 /* extract 2-byte value */(dVar1,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 70,
       "match": "SUB84",
       "text": "uStack_64 = SUB84 /* extract 2-byte value */(dVar6,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -594,11 +613,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_34,local_30) < 0.0) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -615,46 +634,46 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 90,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_64,local_68) < 0.0) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 101,
       "match": "CONCAT44",
       "text": "fVar2 = pCVar4->y * fVar2 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "SUB84",
       "text": "local_b0 = SUB84 /* extract 2-byte value */(dVar6,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 104,
       "match": "CONCAT44",
       "text": "dVar1 = (double)(pCVar4[1].z * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_9c,local_a0) *",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "CONCAT44",
       "text": "(float)(double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "CONCAT44",
       "text": "dVar6 = (double)CONCAT44 /* combine 2-byte values */((float)dVar6,local_b0);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -671,18 +690,18 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 148,
       "match": "CONCAT44",
       "text": "fVar2 = -euler_out->z * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 150,
       "match": "CONCAT44",
       "text": "dVar1 = (double)(euler_out->x * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -697,16 +716,6 @@
       "match": "extraout_ECX",
       "text": "matrix_ptr = (CMatrix3x3f *)extraout_ECX;",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x9c",
-      "fix_address": "005f5bdb",
-      "frame_offset": 156,
-      "match": "AND ESP",
-      "sub_esp_offset": 156,
-      "text": "Stack alignment at 005f5bdb (SUB ESP, 0x9c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

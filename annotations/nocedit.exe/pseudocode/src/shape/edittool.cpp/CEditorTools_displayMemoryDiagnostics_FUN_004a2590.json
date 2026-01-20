@@ -31,17 +31,13 @@
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 103,
+    "complexity_score": 58,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 58,
-    "suspect_count": 3,
-    "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
-      "variadic_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 159
   },
   "cross_references": [
@@ -279,45 +275,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "add_esp_value": 28,
-      "call_address": "004a2641",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "004a2646",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004a2646",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004a2641 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
-      "fix_address": "004a2599",
-      "frame_offset": 20,
-      "match": "AND ESP",
-      "sub_esp_offset": 20,
-      "text": "Stack alignment at 004a2599 (SUB ESP, 0x14 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004a25af",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "004a25b4",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "004a25b4",
-      "target_address": "0x6012c0",
-      "text": "Direct CALL at 004a25af, ADD ESP at 004a25b4 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

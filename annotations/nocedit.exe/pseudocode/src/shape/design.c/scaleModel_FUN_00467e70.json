@@ -1,14 +1,31 @@
 {
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 25,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 85,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 35,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_anchor",
       "stack_param"
     ],
     "total_lines": 110
@@ -190,32 +207,6 @@
       "match": "in_stack_ffffff90",
       "text": "dVar6 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff90);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "00467e96",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00467e9b",
-      "frame_offset": 96,
-      "match": "CALL...ADD ESP",
-      "return_address": "00467e9b",
-      "target_address": "0x4032c0",
-      "text": "Direct CALL at 00467e96, ADD ESP at 00467e9b with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00467eb5",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00467ec3",
-      "frame_offset": 96,
-      "match": "CALL...ADD ESP",
-      "return_address": "00467eba",
-      "target_address": "0x5ff0f3",
-      "text": "Direct CALL at 00467eb5, ADD ESP at 00467ec3 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

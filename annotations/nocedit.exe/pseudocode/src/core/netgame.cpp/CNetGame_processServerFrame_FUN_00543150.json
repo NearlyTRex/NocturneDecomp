@@ -212,14 +212,13 @@
   },
   "complexity": {
     "assembly_lines": 413,
-    "complexity_score": 275,
+    "complexity_score": 260,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 30,
     "pseudocode_lines": 205,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast"
     ],
     "total_lines": 618
@@ -684,15 +683,6 @@
       "match": "(int *)((int)",
       "text": "if (local_20 == *(int *)((int)&g_SimFrameHistory + iVar4)) goto LAB_005434de;",
       "type": "pointer_cast"
-    },
-    {
-      "address": "00543524",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": null,
-      "instruction": "LEA EDI, [ESP + ESI*0x1 + 0x11]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00543524",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

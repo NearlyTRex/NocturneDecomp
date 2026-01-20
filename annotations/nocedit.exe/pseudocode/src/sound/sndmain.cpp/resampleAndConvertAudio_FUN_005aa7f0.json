@@ -206,13 +206,14 @@
   },
   "complexity": {
     "assembly_lines": 596,
-    "complexity_score": 1230,
+    "complexity_score": 1475,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 320,
-    "suspect_count": 90,
+    "suspect_count": 114,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast"
     ],
@@ -779,6 +780,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 86,
+      "match": "ROUND",
+      "text": "*(byte *)psVar8 = *(byte *)((int)ROUND(dVar10) + extraout_EAX);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(short *)((int)",
@@ -798,6 +806,13 @@
       "match": "(byte *)((int)",
       "text": "uVar1 = *(byte *)((int)ROUND(dVar10) + extraout_EAX_00);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 97,
+      "match": "ROUND",
+      "text": "uVar1 = *(byte *)((int)ROUND(dVar10) + extraout_EAX_00);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -821,11 +836,25 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 113,
+      "match": "ROUND",
+      "text": "((int)*(char *)(extraout_EAX_01 + (int)ROUND(dVar10) * 2) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 114,
       "match": "extraout_EAX_01",
       "text": "(int)*(char *)(extraout_EAX_01 + 1 + (int)ROUND(dVar10) * 2) >> 1);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 114,
+      "match": "ROUND",
+      "text": "(int)*(char *)(extraout_EAX_01 + 1 + (int)ROUND(dVar10) * 2) >> 1);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -849,6 +878,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 128,
+      "match": "ROUND",
+      "text": "*(byte *)psVar8 = *(byte *)(extraout_EAX_02 + (int)ROUND(dVar10) * 2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 129,
       "match": "extraout_EDX_02",
@@ -868,6 +904,13 @@
       "match": "extraout_EAX_02",
       "text": "*(byte *)(extraout_EAX_02 + 1 + (int)ROUND(dVar10) * 2);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 131,
+      "match": "ROUND",
+      "text": "*(byte *)(extraout_EAX_02 + 1 + (int)ROUND(dVar10) * 2);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -891,6 +934,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 146,
+      "match": "ROUND",
+      "text": "*psVar8 = (short)*(char *)((int)ROUND(dVar10) + extraout_EAX_03) << 8;",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 157,
       "match": "extraout_EAX_04",
@@ -903,6 +953,13 @@
       "match": "(char *)((int)",
       "text": "sVar4 = (short)*(char *)((int)ROUND(dVar10) + extraout_EAX_04) << 8;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 157,
+      "match": "ROUND",
+      "text": "sVar4 = (short)*(char *)((int)ROUND(dVar10) + extraout_EAX_04) << 8;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -933,11 +990,25 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 173,
+      "match": "ROUND",
+      "text": "*psVar8 = *(char *)(extraout_EAX_05 + (int)ROUND(dVar10) * 2) * 0x80 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 174,
       "match": "extraout_EAX_05",
       "text": "*(char *)(extraout_EAX_05 + 1 + (int)ROUND(dVar10) * 2) * 0x80;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 174,
+      "match": "ROUND",
+      "text": "*(char *)(extraout_EAX_05 + 1 + (int)ROUND(dVar10) * 2) * 0x80;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -952,6 +1023,13 @@
       "match": "extraout_EAX_06",
       "text": "*extraout_EDX_06 = (short)*(char *)(extraout_EAX_06 + (int)ROUND(dVar10) * 2) << 8;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 185,
+      "match": "ROUND",
+      "text": "*extraout_EDX_06 = (short)*(char *)(extraout_EAX_06 + (int)ROUND(dVar10) * 2) << 8;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -968,6 +1046,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 188,
+      "match": "ROUND",
+      "text": "(short)*(char *)(extraout_EAX_06 + 1 + (int)ROUND(dVar10) * 2) << 8;",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 202,
       "match": "extraout_EDX_07",
@@ -982,6 +1067,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 204,
+      "match": "ROUND",
+      "text": "(char)((ushort)*(ushort *)(extraout_EAX_07 + (int)ROUND(dVar10) * 2) >> 8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 205,
       "match": "(short *)((int)",
@@ -994,6 +1086,13 @@
       "match": "extraout_EAX_08",
       "text": "((ushort)*(ushort *)(extraout_EAX_08 + (int)ROUND(dVar10) * 2) >> 8);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 216,
+      "match": "ROUND",
+      "text": "((ushort)*(ushort *)(extraout_EAX_08 + (int)ROUND(dVar10) * 2) >> 8);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1024,11 +1123,25 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 233,
+      "match": "ROUND",
+      "text": "(char)((int)*(short *)(extraout_EAX_09 + (int)ROUND(dVar10) * 4) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 234,
       "match": "extraout_EAX_09",
       "text": "(*(int *)(extraout_EAX_09 + (int)ROUND(dVar10) * 4) >> 0x10) >> 9);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 234,
+      "match": "ROUND",
+      "text": "(*(int *)(extraout_EAX_09 + (int)ROUND(dVar10) * 4) >> 0x10) >> 9);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1045,11 +1158,25 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 247,
+      "match": "ROUND",
+      "text": "((ushort)*(ushort *)(extraout_EAX_10 + (int)ROUND(dVar10) * 4) >> 8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 250,
       "match": "extraout_EAX_10",
       "text": "((uint)*(uint *)(extraout_EAX_10 + (int)ROUND(dVar10) * 4) >> 0x18);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 250,
+      "match": "ROUND",
+      "text": "((uint)*(uint *)(extraout_EAX_10 + (int)ROUND(dVar10) * 4) >> 0x18);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1080,11 +1207,25 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 267,
+      "match": "ROUND",
+      "text": "*psVar8 = *(short *)(extraout_EAX_11 + (int)ROUND(dVar10) * 2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 278,
       "match": "extraout_EAX_12",
       "text": "uVar2 = *(ushort *)(extraout_EAX_12 + (int)ROUND(dVar10) * 2);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 278,
+      "match": "ROUND",
+      "text": "uVar2 = *(ushort *)(extraout_EAX_12 + (int)ROUND(dVar10) * 2);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1115,6 +1256,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 294,
+      "match": "ROUND",
+      "text": "*psVar8 = (short)((int)*(short *)(extraout_EAX_13 + (int)ROUND(dVar10) * 4) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 295,
       "match": "extraout_EAX_13",
@@ -1122,6 +1270,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 295,
+      "match": "ROUND",
+      "text": "(*(int *)(extraout_EAX_13 + (int)ROUND(dVar10) * 4) >> 0x10) >> 1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 306,
       "match": "extraout_EDX_14",
@@ -1136,6 +1291,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 306,
+      "match": "ROUND",
+      "text": "*extraout_EDX_14 = *(ushort *)(extraout_EAX_14 + (int)ROUND(dVar10) * 4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 308,
       "match": "extraout_EDX_14",
@@ -1148,6 +1310,13 @@
       "match": "extraout_EAX_14",
       "text": "extraout_EDX_14[1] = *(ushort *)(extraout_EAX_14 + 2 + (int)ROUND(dVar10) * 4);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 308,
+      "match": "ROUND",
+      "text": "extraout_EDX_14[1] = *(ushort *)(extraout_EAX_14 + 2 + (int)ROUND(dVar10) * 4);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

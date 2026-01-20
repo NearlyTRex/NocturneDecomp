@@ -74,15 +74,13 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 178,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 33,
-    "suspect_count": 12,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_anchor",
-      "callind_anchor",
       "param_count_too_few",
       "stack_param",
       "unresolved_funcptr"
@@ -289,28 +287,6 @@
       "type": "stack_param"
     },
     {
-      "add_esp_value": 12,
-      "callind_address": "00413653",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00413656",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 36,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00413653, ADD ESP at 00413656",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "0041367a",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00413680",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 36,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0041367a, ADD ESP at 00413680",
-      "type": "callind_anchor"
-    },
-    {
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -320,32 +296,6 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00413667",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0041366c",
-      "frame_offset": 36,
-      "match": "CALL...ADD ESP",
-      "return_address": "0041366c",
-      "target_address": "0x40c790",
-      "text": "Direct CALL at 00413667, ADD ESP at 0041366c with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00413694",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00413699",
-      "frame_offset": 36,
-      "match": "CALL...ADD ESP",
-      "return_address": "00413699",
-      "target_address": "0x4135a0",
-      "text": "Direct CALL at 00413694, ADD ESP at 00413699 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

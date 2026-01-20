@@ -68,15 +68,15 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 105,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "pseudocode_lines": 65,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "variadic_anchor"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
     "total_lines": 218
   },
@@ -321,6 +321,13 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "local_28 = (byte)(int)ROUND(fVar1 * 127.0f + 128.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(ushort *)((int)",
@@ -328,27 +335,18 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ROUND",
+      "text": "local_20 = (ushort)(int)ROUND(fVar1 * 32766.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(ushort *)((int)",
       "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005a5ce9",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005a5cee",
-      "frame_offset": 52,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005a5cee",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a5ce9 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
     }
   ]
 }

@@ -44,13 +44,14 @@
   },
   "complexity": {
     "assembly_lines": 209,
-    "complexity_score": 172,
+    "complexity_score": 187,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 8,
     "pseudocode_lines": 97,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 306
@@ -310,6 +311,13 @@
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ROUND",
+      "text": "local_1c = (uint)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

@@ -57,8 +57,8 @@
     "pseudocode_lines": 32,
     "suspect_count": 11,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few",
-      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 87
@@ -237,6 +237,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "SQRT",
+      "text": "if (9.9999999999999995e-08 < SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_0000000c",
@@ -253,16 +260,6 @@
       "param_delta": 9,
       "text": "Function declares 0 params but call sites push 9 (9 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
-      "fix_address": "005cbf28",
-      "frame_offset": 24,
-      "match": "AND ESP",
-      "sub_esp_offset": 24,
-      "text": "Stack alignment at 005cbf28 (SUB ESP, 0x18 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

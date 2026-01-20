@@ -63,7 +63,7 @@
     "pseudocode_lines": 51,
     "suspect_count": 16,
     "suspect_types": [
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 181
@@ -403,6 +403,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_0000000c",
@@ -457,16 +464,6 @@
       "match": "in_stack_00000014",
       "text": "*in_stack_00000014 = *(uint *)(pCVar5->field0_0x0 + 0x14);",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x3c",
-      "fix_address": "004c8c99",
-      "frame_offset": 60,
-      "match": "AND ESP",
-      "sub_esp_offset": 60,
-      "text": "Stack alignment at 004c8c99 (SUB ESP, 0x3c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

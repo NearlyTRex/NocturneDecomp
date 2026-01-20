@@ -20,13 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 64,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "pseudocode_lines": 39,
-    "suspect_count": 2,
+    "suspect_count": 6,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 91
@@ -207,6 +208,34 @@
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "g_CameraShakeSustainValue = (int)ROUND(fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "g_CameraShakeAttackTime = (int)ROUND(fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ROUND",
+      "text": "g_CameraShakeDecayDuration = (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "g_CameraShakePeakValue = (int)ROUND(fVar1);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

@@ -206,13 +206,14 @@
   },
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 559,
+    "complexity_score": 614,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 24,
     "pseudocode_lines": 134,
-    "suspect_count": 41,
+    "suspect_count": 46,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "unaffected_reg"
@@ -629,6 +630,13 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ROUND",
+      "text": "unaff_EDI = (int)ROUND(dVar9);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 48,
       "match": "unaff_EDI",
@@ -671,6 +679,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "*(int *)((int)ppCVar2 + extraout_EDX + 4) = (int)ROUND(dVar9);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(float *)((int)",
@@ -704,6 +719,13 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppCVar2 + extraout_EDX_00 + 8) = (int)ROUND(dVar9);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ROUND",
+      "text": "*(int *)((int)ppCVar2 + extraout_EDX_00 + 8) = (int)ROUND(dVar9);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -755,6 +777,13 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 85,
+      "match": "ROUND",
+      "text": "unaff_EDI = (int)ROUND(dVar9);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 86,
       "match": "unaff_EDI",
@@ -788,6 +817,13 @@
       "match": "extraout_ECX_02",
       "text": "*(int *)(extraout_EAX + extraout_ECX_02 + 0x20) = (int)ROUND(dVar9);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 90,
+      "match": "ROUND",
+      "text": "*(int *)(extraout_EAX + extraout_ECX_02 + 0x20) = (int)ROUND(dVar9);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

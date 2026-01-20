@@ -273,7 +273,7 @@
     "pseudocode_lines": 96,
     "suspect_count": 4,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 272
@@ -518,13 +518,11 @@
       "type": "stack_param"
     },
     {
-      "address": "00419d9e",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00419d9e",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "SQRT",
+      "text": "SQRT(*(float *)(this_ptr->field1_0x158 + 0xbbc) *",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

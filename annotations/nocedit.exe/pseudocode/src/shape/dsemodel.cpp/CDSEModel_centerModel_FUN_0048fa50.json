@@ -32,15 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 114,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 64,
     "suspect_count": 4,
     "suspect_types": [
-      "concat_artifact",
-      "sub_artifact"
+      "decompiler_intrinsic"
     ],
     "total_lines": 281
   },
@@ -227,32 +226,32 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "SUB84",
       "text": "local_34 = SUB84 /* extract 2-byte value */(dVar3,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "CONCAT44",
       "text": "if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)) {",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "CONCAT44",
       "text": "((dVar6 - (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)) * 0.5 +",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

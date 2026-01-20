@@ -140,16 +140,15 @@
   },
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 237,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 47,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "param_count_too_few",
-      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 172
@@ -414,6 +413,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "SQRT",
+      "text": "if (SQRT(local_24.z * local_24.z + local_24.x * local_24.x + local_24.y * local_24.y) <=",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000004",
@@ -456,6 +462,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "SQRT",
+      "text": "if (1.0 <= SQRT(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
@@ -472,42 +485,6 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
-      "fix_address": "004e48a7",
-      "frame_offset": 48,
-      "match": "AND ESP",
-      "sub_esp_offset": 48,
-      "text": "Stack alignment at 004e48a7 (SUB ESP, 0x30 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004e4975",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004e4980",
-      "frame_offset": 48,
-      "match": "CALL...ADD ESP",
-      "return_address": "004e497a",
-      "target_address": "0x5e7830",
-      "text": "Direct CALL at 004e4975, ADD ESP at 004e4980 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004e49ae",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004e49bb",
-      "frame_offset": 48,
-      "match": "CALL...ADD ESP",
-      "return_address": "004e49b3",
-      "target_address": "0x40cd70",
-      "text": "Direct CALL at 004e49ae, ADD ESP at 004e49bb with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

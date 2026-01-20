@@ -85,14 +85,15 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 46,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 15,
     "pseudocode_lines": 21,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 93
   },
@@ -267,6 +268,20 @@
       "match": "unaff_EBX",
       "text": "void core_skeledit_cpp_FUN_00589a40(uint param_1,uint param_2,uint unaff_EBX)",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "text": "void core_skeledit_cpp_FUN_00589a40(uint param_1,uint param_2,uint unaff_EBX)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void core_skeledit_cpp_FUN_00589a40(uint param_1,uint param_2,uint unaff_EBX)",
+      "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",

@@ -68,14 +68,14 @@
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 306,
+    "complexity_score": 296,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 6,
     "pseudocode_lines": 71,
-    "suspect_count": 22,
+    "suspect_count": 21,
     "suspect_types": [
-      "lea_esp_stack_addr",
+      "decompiler_intrinsic",
       "pointer_cast",
       "stack_param"
     ],
@@ -455,6 +455,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "SQRT",
+      "text": "SQRT(local_34 * local_34 + local_3c * local_3c + local_38 * local_38) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_0000000c",
@@ -488,24 +495,6 @@
       "match": "in_stack_0000000c",
       "text": "shape_meshlod_cpp_CLodMesh_translateVertices_FUN_00516570(in_stack_0000000c,&local_30);",
       "type": "stack_param"
-    },
-    {
-      "address": "0051ba77",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 48,
-      "instruction": "LEA EAX, [ESP + 0x30]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0051ba77",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "0051ba85",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 44,
-      "instruction": "LEA EAX, [ESP + 0x2c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0051ba85",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

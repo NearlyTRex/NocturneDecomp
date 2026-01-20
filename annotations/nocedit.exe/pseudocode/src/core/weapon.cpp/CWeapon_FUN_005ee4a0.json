@@ -68,14 +68,13 @@
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 208,
+    "complexity_score": 163,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 23,
     "pseudocode_lines": 48,
-    "suspect_count": 13,
+    "suspect_count": 9,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
@@ -397,42 +396,6 @@
       "match": "unaff_ESI",
       "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,unaff_ESI);",
       "type": "unaffected_reg"
-    },
-    {
-      "address": "005ee4be",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 28,
-      "instruction": "LEA EAX, [ESP + 0x1c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ee4be",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ee4ce",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 36,
-      "instruction": "LEA EAX, [ESP + 0x24]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ee4ce",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ee528",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ee528",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ee5d6",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 28,
-      "instruction": "LEA EAX, [ESP + 0x1c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ee5d6",
-      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

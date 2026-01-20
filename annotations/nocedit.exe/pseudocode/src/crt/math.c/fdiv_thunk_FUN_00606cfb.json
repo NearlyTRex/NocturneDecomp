@@ -8,7 +8,7 @@
     "pseudocode_lines": 18,
     "suspect_count": 6,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "special_crt_function",
       "stack_param",
       "undefined_type"
@@ -102,18 +102,18 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT64",
       "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(in_stack_0000000a,uStack00000008));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT22",
       "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(in_stack_0000000a,uStack00000008));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "00606cfb",

@@ -1,15 +1,153 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 189,
+        "message": "'SBORROW' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 232,
+        "message": "'stack0xffffff98' was not declared in this scope; did you mean 'in_stack_ffffff9c'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 237,
+        "message": "'stack0xffffff9c' was not declared in this scope; did you mean 'in_stack_ffffff9c'?"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 213,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 213,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 213,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 214,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 214,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 214,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 215,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 215,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 215,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 216,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 216,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 216,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 217,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 217,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 217,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 219,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 219,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 219,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 489,
-    "complexity_score": 605,
+    "complexity_score": 590,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
     "pseudocode_lines": 230,
-    "suspect_count": 35,
+    "suspect_count": 34,
     "suspect_types": [
-      "lea_esp_stack_addr",
-      "sborrow_artifact",
+      "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
       "unaffected_reg"
@@ -421,11 +559,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler signed borrow artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 182,
       "match": "SBORROW",
       "text": "bVar13 = SBORROW /* signed borrow */4(g_SoftwareMinScanline,g_MaxViewportScanline);",
-      "type": "sborrow_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -603,11 +741,11 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler signed borrow artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 214,
       "match": "SBORROW",
       "text": "bVar13 = SBORROW /* signed borrow */4(unaff_EDI,g_MaxViewportScanline);",
-      "type": "sborrow_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
@@ -622,15 +760,6 @@
       "match": "&stack0xffffff9c",
       "text": "((SRenderVertex **)&stack0xffffff9c,vertex_count,g_RenderStateFlags);",
       "type": "stack_ref"
-    },
-    {
-      "address": "00552b0b",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00552b0b",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

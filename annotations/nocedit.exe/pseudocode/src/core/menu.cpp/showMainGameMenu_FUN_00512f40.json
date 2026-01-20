@@ -122,14 +122,13 @@
   },
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 283,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 49,
     "pseudocode_lines": 193,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast",
       "stack_ref",
       "unaffected_reg"
@@ -689,15 +688,6 @@
       "match": "unaff_EBX",
       "text": "unaff_EBX = (CGame *)g_CKeysPtr;",
       "type": "unaffected_reg"
-    },
-    {
-      "address": "00513124",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 20,
-      "instruction": "LEA EAX, [ESP + 0x14]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00513124",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

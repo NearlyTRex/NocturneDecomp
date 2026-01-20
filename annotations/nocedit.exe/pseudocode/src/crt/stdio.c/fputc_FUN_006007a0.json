@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 120,
+    "complexity_score": 155,
     "cross_reference_count": 25,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 55,
-    "suspect_count": 5,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
-      "stack_param"
+      "stack_param",
+      "undefined_ram"
     ],
     "total_lines": 208
   },
@@ -271,6 +272,27 @@
       "match": "in_stack_0000000c",
       "text": "byte in_stack_0000000c;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 32,
+      "match": "puRam0000000a",
+      "text": "*puRam0000000a = 0xd;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 33,
+      "match": "puRam0000000a",
+      "text": "puRam0000000a = puRam0000000a + 1;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 33,
+      "match": "puRam0000000a",
+      "text": "puRam0000000a = puRam0000000a + 1;",
+      "type": "undefined_ram"
     },
     {
       "description": "Complex pointer cast",

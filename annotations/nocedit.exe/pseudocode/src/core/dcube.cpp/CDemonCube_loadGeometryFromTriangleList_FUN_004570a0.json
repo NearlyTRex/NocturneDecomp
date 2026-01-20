@@ -458,14 +458,13 @@
   },
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 528,
+    "complexity_score": 513,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 41,
     "pseudocode_lines": 148,
-    "suspect_count": 37,
+    "suspect_count": 36,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast"
     ],
     "total_lines": 414
@@ -1168,15 +1167,6 @@
       "match": "(SVoxelGrid *)((int)",
       "text": "pSVar10 = (SVoxelGrid *)((int)pSVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "00457122",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00457122",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

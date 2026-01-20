@@ -8,7 +8,7 @@
     "pseudocode_lines": 24,
     "suspect_count": 12,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "param_count_too_few",
       "special_crt_function",
       "stack_param",
@@ -169,11 +169,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT22",
       "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar1),in_stack_fffffff4);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",

@@ -45,7 +45,7 @@
     "pseudocode_lines": 24,
     "suspect_count": 3,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "undefined_type"
     ],
     "total_lines": 70
@@ -528,18 +528,18 @@
       "type": "undefined_type"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "CONCAT31",
       "text": "return CONCAT31 /* combine 2-byte values */(uVar2,uVar3);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "CONCAT31",
       "text": "return CONCAT31 /* combine 2-byte values */(uVar2,uVar3);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

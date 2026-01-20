@@ -32,15 +32,15 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 66,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 26,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "extra_output",
-      "lea_esp_stack_addr"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
     "total_lines": 100
   },
@@ -214,6 +214,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "SQRT",
+      "text": "((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 22,
       "match": "extraout_EDX",
@@ -221,13 +228,11 @@
       "type": "extra_output"
     },
     {
-      "address": "0045373a",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 12,
-      "instruction": "LEA EAX, [ESP + 0xc]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 0045373a",
-      "type": "lea_esp_stack_addr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "(&g_CameraFogGrid,(CVector3i *)(extraout_EDX + 0x16c),end_pos,(int)ROUND(dVar5))",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

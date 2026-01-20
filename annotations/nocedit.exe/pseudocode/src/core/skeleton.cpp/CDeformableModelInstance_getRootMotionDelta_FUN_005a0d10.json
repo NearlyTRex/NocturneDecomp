@@ -98,13 +98,14 @@
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 139,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 69,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "unaffected_reg"
     ],
@@ -382,6 +383,13 @@
       "match": "unaff_ESI",
       "text": "float unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(dVar13);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

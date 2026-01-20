@@ -27,7 +27,7 @@
     "pseudocode_lines": 54,
     "suspect_count": 1,
     "suspect_types": [
-      "stack_align_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 172
   },
@@ -172,14 +172,11 @@
   },
   "suspects": [
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
-      "fix_address": "005172c9",
-      "frame_offset": 20,
-      "match": "AND ESP",
-      "sub_esp_offset": 20,
-      "text": "Stack alignment at 005172c9 (SUB ESP, 0x14 before)",
-      "type": "stack_align_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "SQRT",
+      "text": "fVar4 = SQRT(out_normal->z * out_normal->z +",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

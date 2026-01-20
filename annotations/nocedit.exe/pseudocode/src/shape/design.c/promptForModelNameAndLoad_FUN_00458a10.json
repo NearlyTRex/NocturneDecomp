@@ -1,15 +1,37 @@
 {
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 23,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 45,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 85,
+    "complexity_score": 60,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 60,
-    "suspect_count": 2,
-    "suspect_types": [
-      "call_esp_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 155
   },
   "cross_references": [
@@ -148,32 +170,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "add_esp_value": 20,
-      "call_address": "00458a31",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00458a36",
-      "frame_offset": 84,
-      "match": "CALL...ADD ESP",
-      "return_address": "00458a36",
-      "target_address": "0x4032c0",
-      "text": "Direct CALL at 00458a31, ADD ESP at 00458a36 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00458a9f",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00458aa4",
-      "frame_offset": 84,
-      "match": "CALL...ADD ESP",
-      "return_address": "00458aa4",
-      "target_address": "0x458ac0",
-      "text": "Direct CALL at 00458a9f, ADD ESP at 00458aa4 with uncertain ESP",
-      "type": "call_esp_anchor"
-    }
-  ]
+  "suspects": []
 }

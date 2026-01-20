@@ -212,13 +212,14 @@
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 370,
+    "complexity_score": 405,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 17,
     "pseudocode_lines": 80,
-    "suspect_count": 28,
+    "suspect_count": 31,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast"
     ],
@@ -513,6 +514,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ROUND",
+      "text": "*(int *)((int)&pCVar1->x + iVar3) = (int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(float *)((int)",
@@ -539,6 +547,13 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)&pCVar1->y + extraout_EDX) = (int)ROUND(dVar6);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ROUND",
+      "text": "*(int *)((int)&pCVar1->y + extraout_EDX) = (int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -574,6 +589,13 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)&pCVar1->z + extraout_EDX_00) = (int)ROUND(dVar6);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "*(int *)((int)&pCVar1->z + extraout_EDX_00) = (int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

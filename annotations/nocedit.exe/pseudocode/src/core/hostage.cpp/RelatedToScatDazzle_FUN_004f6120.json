@@ -44,14 +44,15 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 48,
+    "complexity_score": 213,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "suspect_count": 18,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "unnamed_param"
     ],
     "total_lines": 58
   },
@@ -136,11 +137,123 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_5",
+      "text": "CNPC *param_5,uint param_6,uint param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_6",
+      "text": "CNPC *param_5,uint param_6,uint param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_7",
+      "text": "CNPC *param_5,uint param_6,uint param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_8",
+      "text": "CNPC *param_5,uint param_6,uint param_7,int param_8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_5",
+      "text": "iVar1 = (*(param_5->base_character).base_actor.vtable[1].hasCollision)",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_EBX",
       "text": "((CDemonActor *)param_5,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_5",
+      "text": "((CDemonActor *)param_5,unaff_EBX);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_5",
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)param_5,\"ScatDazzle\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_8",
+      "text": "if (param_8 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_5",
+      "text": "(param_5->base_character).field2_0x240c[0] = '\\x01';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_5",
+      "text": "(param_5->base_character).field2_0x240c[1] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_5",
+      "text": "(param_5->base_character).field2_0x240c[2] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_5",
+      "text": "(param_5->base_character).field2_0x240c[3] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_5",
+      "text": "core_npc_cpp_CNPC_FUN_00544b70(param_5);",
+      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

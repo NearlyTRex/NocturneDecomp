@@ -38,14 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 247,
+    "complexity_score": 277,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 67,
-    "suspect_count": 17,
+    "suspect_count": 20,
     "suspect_types": [
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "unaffected_reg"
     ],
     "total_lines": 258
@@ -238,6 +238,13 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "SQRT",
+      "text": "local_48 = SQRT(fVar2 + 1.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 27,
       "match": "unaff_ESI",
@@ -271,6 +278,13 @@
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT((quat_out[1].x - (quat_out[2].y + quat_out->w)) + 1.0);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
@@ -308,6 +322,20 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "SQRT",
+      "text": "local_44 = SQRT((quat_out->w - (quat_out[1].x + quat_out[2].y)) + 1.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT((quat_out[2].y - fVar1) + 1.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 65,
       "match": "unaff_ESI",
@@ -341,16 +369,6 @@
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x44",
-      "fix_address": "005f7427",
-      "frame_offset": 68,
-      "match": "AND ESP",
-      "sub_esp_offset": 68,
-      "text": "Stack alignment at 005f7427 (SUB ESP, 0x44 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

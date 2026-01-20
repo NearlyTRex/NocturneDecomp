@@ -50,15 +50,17 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 462,
+    "complexity_score": 562,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 37,
-    "suspect_count": 41,
+    "suspect_count": 50,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
+      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 111
@@ -176,6 +178,20 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "uint param_3, uint param_4) */",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "text": "uint param_3, uint param_4) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
@@ -281,6 +297,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "SQRT",
+      "text": "SQRT((float10)*in_stack_0000000c * (float10)*in_stack_0000000c +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_0000000c",
@@ -358,6 +381,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0xb] = (int)ROUND(*in_stack_00000008 * _DAT_0065f024);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
@@ -370,6 +400,13 @@
       "match": "in_stack_00000008",
       "text": "in_stack_00000004[0xc] = (int)ROUND(in_stack_00000008[1] * _DAT_0065f024);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0xc] = (int)ROUND(in_stack_00000008[1] * _DAT_0065f024);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -386,6 +423,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0xd] = (int)ROUND(in_stack_00000008[2] * _DAT_0065f024);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
@@ -398,6 +442,13 @@
       "match": "in_stack_0000000c",
       "text": "in_stack_00000004[0xe] = (int)ROUND(*in_stack_0000000c * _DAT_0065f028);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0xe] = (int)ROUND(*in_stack_0000000c * _DAT_0065f028);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -414,6 +465,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0xf] = (int)ROUND(in_stack_0000000c[1] * _DAT_0065f028);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
@@ -426,6 +484,13 @@
       "match": "in_stack_0000000c",
       "text": "in_stack_00000004[0x10] = (int)ROUND(in_stack_0000000c[2] * _DAT_0065f028);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ROUND",
+      "text": "in_stack_00000004[0x10] = (int)ROUND(in_stack_0000000c[2] * _DAT_0065f028);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

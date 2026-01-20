@@ -110,15 +110,14 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 219,
+    "complexity_score": 204,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 34,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 72
@@ -328,6 +327,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "iStack_18 = (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
@@ -368,29 +374,6 @@
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x188) = 2;",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
-      "fix_address": "004cad98",
-      "frame_offset": 24,
-      "match": "AND ESP",
-      "sub_esp_offset": 24,
-      "text": "Stack alignment at 004cad98 (SUB ESP, 0x18 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004caddc",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "004cade1",
-      "frame_offset": 24,
-      "match": "CALL...ADD ESP",
-      "return_address": "004cade1",
-      "target_address": "0x471310",
-      "text": "Direct CALL at 004caddc, ADD ESP at 004cade1 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

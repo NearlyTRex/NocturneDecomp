@@ -230,17 +230,16 @@
   },
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 823,
+    "complexity_score": 838,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "pseudocode_lines": 163,
-    "suspect_count": 63,
+    "suspect_count": 65,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
-      "stack_align_anchor",
       "stack_param",
       "stack_ref"
     ],
@@ -863,6 +862,69 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 86,
+      "match": "ABS",
+      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].x))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 87,
+      "match": "ABS",
+      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].y))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 88,
+      "match": "ABS",
+      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].z))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 89,
+      "match": "ROUND",
+      "text": "aiStack_34[2] = (int)ROUND(g_VertexNormalArray[iVar3].x);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 90,
+      "match": "ROUND",
+      "text": "aiStack_34[3] = (int)ROUND(g_VertexNormalArray[iVar3].y);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 91,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(g_VertexNormalArray[iVar3].z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "(int)ROUND(DAT_032c1c68 * 256.0f) - g_TransformedVertexArray[iVar3].x;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 97,
+      "match": "ROUND",
+      "text": "(int)ROUND(DAT_032c1c6c * 256.0f) - g_TransformedVertexArray[iVar3].y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 99,
+      "match": "ROUND",
+      "text": "(int)ROUND(DAT_032c1c70 * 256.0f) - g_TransformedVertexArray[iVar3].z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 108,
       "match": "&stack0xffffff30",
@@ -1096,94 +1158,6 @@
       "param_delta": 8,
       "text": "Function declares 0 params but call sites push 8 (8 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x108",
-      "fix_address": "005702bc",
-      "frame_offset": 264,
-      "match": "AND ESP",
-      "sub_esp_offset": 264,
-      "text": "Stack alignment at 005702bc (SUB ESP, 0x108 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005702cb",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005702db",
-      "frame_offset": 264,
-      "match": "CALL...ADD ESP",
-      "return_address": "005702d0",
-      "target_address": "0x48db80",
-      "text": "Direct CALL at 005702cb, ADD ESP at 005702db with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005702ff",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00570304",
-      "frame_offset": 264,
-      "match": "CALL...ADD ESP",
-      "return_address": "00570304",
-      "target_address": "0x48c760",
-      "text": "Direct CALL at 005702ff, ADD ESP at 00570304 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005704b8",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005704c4",
-      "frame_offset": 264,
-      "match": "CALL...ADD ESP",
-      "return_address": "005704bd",
-      "target_address": "0x50d9f0",
-      "text": "Direct CALL at 005704b8, ADD ESP at 005704c4 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00570690",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00570695",
-      "frame_offset": 264,
-      "match": "CALL...ADD ESP",
-      "return_address": "00570695",
-      "target_address": "0x48ca60",
-      "text": "Direct CALL at 00570690, ADD ESP at 00570695 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005706a1",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005706a6",
-      "frame_offset": 264,
-      "match": "CALL...ADD ESP",
-      "return_address": "005706a6",
-      "target_address": "0x48ca50",
-      "text": "Direct CALL at 005706a1, ADD ESP at 005706a6 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005706b6",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005706bb",
-      "frame_offset": 264,
-      "match": "CALL...ADD ESP",
-      "return_address": "005706bb",
-      "target_address": "0x501bc0",
-      "text": "Direct CALL at 005706b6, ADD ESP at 005706bb with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

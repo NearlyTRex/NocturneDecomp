@@ -33,7 +33,7 @@
     "pseudocode_lines": 19,
     "suspect_count": 19,
     "suspect_types": [
-      "stack_align_anchor",
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 67
@@ -152,6 +152,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 8,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
@@ -255,16 +262,6 @@
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 = in_stack_00000004[1];",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
-      "fix_address": "00427a66",
-      "frame_offset": 8,
-      "match": "AND ESP",
-      "sub_esp_offset": 8,
-      "text": "Stack alignment at 00427a66 (SUB ESP, 0x8 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

@@ -20,15 +20,14 @@
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 15,
     "pseudocode_lines": 22,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "concat_artifact",
-      "stack_align_anchor"
+      "decompiler_intrinsic"
     ],
     "total_lines": 78
   },
@@ -234,21 +233,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "CONCAT44",
       "text": "return (double)CONCAT44 /* combine 2-byte values */(g_CramTextureCount,",
-      "type": "concat_artifact"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
-      "fix_address": "00447e93",
-      "frame_offset": 12,
-      "match": "AND ESP",
-      "sub_esp_offset": 12,
-      "text": "Stack alignment at 00447e93 (SUB ESP, 0xc before)",
-      "type": "stack_align_anchor"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

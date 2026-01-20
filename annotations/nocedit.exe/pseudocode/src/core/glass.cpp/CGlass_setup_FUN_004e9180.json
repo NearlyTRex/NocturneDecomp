@@ -362,16 +362,16 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 438,
+    "complexity_score": 468,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 273,
-    "suspect_count": 14,
+    "suspect_count": 17,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "stack_align_anchor",
       "stack_ref",
       "suspect_float"
     ],
@@ -775,6 +775,20 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 96,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(dVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "ROUND",
+      "text": "local_1c = (int)ROUND(dVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 127,
       "match": "&stack0xffffff20",
@@ -789,11 +803,25 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 138,
+      "match": "ROUND",
+      "text": "*(int *)(extraout_ECX + 0x5e4) = (int)ROUND(dVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 140,
       "match": "7.216921e-39",
       "text": "fVar11 = 7.216921e-39;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 144,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(dVar10);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -843,16 +871,6 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) +",
       "type": "pointer_cast"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc8",
-      "fix_address": "004e918c",
-      "frame_offset": 200,
-      "match": "AND ESP",
-      "sub_esp_offset": 200,
-      "text": "Stack alignment at 004e918c (SUB ESP, 0xc8 before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

@@ -50,13 +50,14 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 52,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 27,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 73
@@ -180,11 +181,32 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "SQRT",
+      "text": "((double)(SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 21,
       "match": "extraout_EAX",
       "text": "lVar4 = (longlong)extraout_EAX * (longlong)(int)ROUND(dVar6);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "lVar4 = (longlong)extraout_EAX * (longlong)(int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "lVar4 = (longlong)(iVar5 / 2) * (longlong)(int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

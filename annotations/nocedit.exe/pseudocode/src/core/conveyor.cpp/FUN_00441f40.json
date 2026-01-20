@@ -13,13 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 5,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 5,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_param"
+    ],
     "total_lines": 10
   },
   "cross_references": [],
@@ -65,7 +67,29 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "text": "longlong core_conveyor_cpp_FUN_00441f40(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "longlong core_conveyor_cpp_FUN_00441f40(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "text": "return (ulonglong)param_2 << 0x20;",
+      "type": "unnamed_param"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -8,9 +8,9 @@
     "pseudocode_lines": 22,
     "suspect_count": 3,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few",
-      "special_crt_function",
-      "sub_artifact"
+      "special_crt_function"
     ],
     "total_lines": 59
   },
@@ -97,11 +97,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "SUB84",
       "text": "uVar4 = SUB84 /* extract 2-byte value */(val,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

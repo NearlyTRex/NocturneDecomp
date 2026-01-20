@@ -20,14 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 73,
+    "complexity_score": 188,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 6,
     "pseudocode_lines": 18,
-    "suspect_count": 5,
+    "suspect_count": 16,
     "suspect_types": [
-      "concat_artifact"
+      "decompiler_intrinsic",
+      "unnamed_param"
     ],
     "total_lines": 41
   },
@@ -123,39 +124,116 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,uint param_3,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,uint param_3,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "(uint param_1,uint param_2,uint param_3,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "text": "(uint param_1,uint param_2,uint param_3,uint param_4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_5",
+      "text": "uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_5",
+      "text": "switch(param_5) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"Custom\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"Custom\");",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"Flashlight\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 12,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"Flashlight\");",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"Lantern\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"Lantern\");",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"Globe\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"Globe\");",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"???\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(param_2,\"???\");",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

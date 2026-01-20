@@ -128,14 +128,15 @@
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 265,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 60,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
-      "concat_artifact"
+      "decompiler_intrinsic",
+      "mmx_assembly"
     ],
     "total_lines": 108
   },
@@ -248,144 +249,151 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "CONCAT52",
       "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >>",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "CONCAT41",
       "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >>",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "CONCAT34",
       "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >>",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "CONCAT25",
       "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >>",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "CONCAT14",
       "text": "CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "CONCAT52",
       "text": "CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "CONCAT43",
       "text": "CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "CONCAT34",
       "text": "CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "CONCAT25",
       "text": "CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "CONCAT14",
       "text": "CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2)) >> 0x20),",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "CONCAT12",
       "text": "CONCAT12 /* combine 2-byte values */((char)(uVar2 >> 8),(short)uVar2)) >> 0x10),",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CONCAT26",
       "text": "uVar6 = pmulhw(uVar6,CONCAT26 /* combine 2-byte values */(uVar11 >> 1,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "CONCAT24",
       "text": "CONCAT24 /* combine 2-byte values */((ushort)alpha2 >> 1,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "CONCAT22",
       "text": "CONCAT22 /* combine 2-byte values */(uVar11 >> 1,(ushort)alpha2 >> 1))));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "CONCAT26",
       "text": "uVar10 = pmulhw(uVar10,CONCAT26 /* combine 2-byte values */(uVar12 >> 1,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "CONCAT24",
       "text": "CONCAT24 /* combine 2-byte values */((ushort)alpha1 >> 1,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "CONCAT22",
       "text": "CONCAT22 /* combine 2-byte values */(uVar12 >> 1,(ushort)alpha1 >> 1))));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "CONCAT13",
       "text": "CONCAT13 /* combine 2-byte values */((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "CONCAT12",
       "text": "CONCAT12 /* combine 2-byte values */((uVar8 != 0) * (uVar8 < 0x100) * (char)uVar8 - (0xff < uVar8),",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "CONCAT11",
       "text": "CONCAT11 /* combine 2-byte values */((uVar7 != 0) * (uVar7 < 0x100) * (char)uVar7 - (0xff < uVar7),",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "MMX/SIMD assembly - may not decompile to clean C code",
+      "line": 12,
+      "match": "EMMS, MOVD, PACKUSWB, PADDW, PMULHW",
+      "text": "Function uses MMX instructions",
+      "type": "mmx_assembly"
     }
   ]
 }

@@ -1,14 +1,32 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 16,
+        "message": "'stack0x00000008' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 61,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 11,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "stack_ref"
     ],
     "total_lines": 33
@@ -106,33 +124,6 @@
       "match": "&stack0x00000008",
       "text": "local_4 = &stack0x00000008;",
       "type": "stack_ref"
-    },
-    {
-      "address": "004027a6",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4108,
-      "instruction": "LEA EAX, [ESP + 0x100c]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004027a6",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004027b4",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4096,
-      "instruction": "LEA EAX, [ESP + 0x1000]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004027b4",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004027c4",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004027c4",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

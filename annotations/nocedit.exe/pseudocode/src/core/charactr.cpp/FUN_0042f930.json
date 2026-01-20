@@ -38,13 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 114,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 14,
-    "suspect_count": 9,
+    "suspect_count": 12,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param",
       "warning_overlapping_globals"
     ],
@@ -184,6 +185,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ROUND",
+      "text": "local_10.x = (int)ROUND(*in_stack_0000000c * _DAT_0065b810);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_0000000c",
@@ -191,11 +199,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "text": "local_10.y = (int)ROUND(in_stack_0000000c[1] * _DAT_0065b810);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_0000000c",
       "text": "local_10.z = (int)ROUND(in_stack_0000000c[2] * _DAT_0065b810);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ROUND",
+      "text": "local_10.z = (int)ROUND(in_stack_0000000c[2] * _DAT_0065b810);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

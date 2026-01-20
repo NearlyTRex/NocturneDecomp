@@ -1,13 +1,39 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 39,
+        "message": "'SQRT' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 40,
+        "message": "request for member '_0_4_' in 'local_28', which is of non-class type 'double'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 58,
+    "complexity_score": 73,
     "cross_reference_count": 10,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 43,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "decompiler_intrinsic",
       "unknown_field"
     ],
     "total_lines": 171
@@ -233,6 +259,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "SQRT",
+      "text": "local_28 = SQRT(dVar4 * dVar4 + dVar6 * dVar6 + dVar10 * dVar10);",
+      "type": "decompiler_intrinsic"
+    },
     {
       "description": "Unknown/mangled field access",
       "line": 33,

@@ -92,17 +92,16 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 137,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "pseudocode_lines": 37,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "sub_artifact"
+      "stack_param"
     ],
     "total_lines": 124
   },
@@ -260,11 +259,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */((this_ptr->options).trigger_id,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -274,11 +273,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "SUB84",
       "text": "SUB84 /* extract 2-byte value */(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -293,6 +292,13 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ROUND",
+      "text": "sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(this_ptr_00,(int)ROUND(dVar2),dest_buffer_offset);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

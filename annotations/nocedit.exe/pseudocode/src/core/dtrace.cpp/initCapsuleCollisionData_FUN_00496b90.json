@@ -27,8 +27,8 @@
     "pseudocode_lines": 28,
     "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_many",
-      "stack_align_anchor"
+      "decompiler_intrinsic",
+      "param_count_too_many"
     ],
     "total_lines": 105
   },
@@ -216,6 +216,13 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(dir_z * dir_z + dir_x * dir_x);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "call_site_count": 3,
       "declared_params": 8,
       "description": "Signature has too many params - likely wrong calling convention",
@@ -225,16 +232,6 @@
       "param_delta": -2,
       "text": "Function declares 8 params but call sites push 6 (2 extra)",
       "type": "param_count_too_many"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
-      "fix_address": "00496b96",
-      "frame_offset": 20,
-      "match": "AND ESP",
-      "sub_esp_offset": 20,
-      "text": "Stack alignment at 00496b96 (SUB ESP, 0x14 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

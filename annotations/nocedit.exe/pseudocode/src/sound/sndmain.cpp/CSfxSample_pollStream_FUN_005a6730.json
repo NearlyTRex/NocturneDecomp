@@ -158,13 +158,14 @@
   },
   "complexity": {
     "assembly_lines": 524,
-    "complexity_score": 265,
+    "complexity_score": 290,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 32,
     "pseudocode_lines": 230,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output"
     ],
     "total_lines": 754
@@ -609,6 +610,20 @@
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ROUND",
+      "text": "SVar8 = (SIZE_T)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "iVar13 = (int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

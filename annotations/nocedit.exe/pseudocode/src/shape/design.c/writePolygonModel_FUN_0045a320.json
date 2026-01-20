@@ -1,16 +1,88 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 76,
+        "line": 48,
+        "message": "'ROUND' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 76,
+        "line": 75,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 43,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 52,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 54,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 71,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 79,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 81,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 83,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 85,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 253,
+    "complexity_score": 208,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
     "pseudocode_lines": 78,
-    "suspect_count": 16,
+    "suspect_count": 12,
     "suspect_types": [
-      "call_esp_anchor",
-      "format_string_mismatch",
-      "variadic_anchor"
+      "decompiler_intrinsic",
+      "format_string_mismatch"
     ],
     "total_lines": 325
   },
@@ -361,164 +433,60 @@
   },
   "suspects": [
     {
-      "add_esp_value": 12,
-      "call_address": "0045a3f9",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0045a3fe",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a3fe",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a3f9 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 28,
-      "call_address": "0045a43a",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0045a43f",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a43f",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a43a (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 12,
-      "call_address": "0045a482",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045a487",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a487",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a482 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 8,
-      "call_address": "0045a496",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045a49b",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a49b",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a496 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 12,
-      "call_address": "0045a507",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045a50c",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a50c",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a507 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ROUND",
+      "text": "g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 28,
-      "call_address": "0045a536",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045a53b",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a53b",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a536 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 12,
-      "call_address": "0045a582",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045a587",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a587",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a582 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "add_esp_value": 16,
-      "call_address": "0045a5af",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045a5b4",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a5b4",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a5af (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "0045a5dc",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045a5e1",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a5e1",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a5dc (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0045a5f3",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0045a5f8",
-      "frame_offset": 20,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0045a5f8",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a5f3 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
+      "type": "decompiler_intrinsic"
     },
     {
       "actual_args": 0,
@@ -563,32 +531,6 @@
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0045a33b",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0045a340",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045a340",
-      "target_address": "0x45caa0",
-      "text": "Direct CALL at 0045a33b, ADD ESP at 0045a340 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0045a4bb",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045a4c0",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045a4c0",
-      "target_address": "0x5fef20",
-      "text": "Direct CALL at 0045a4bb, ADD ESP at 0045a4c0 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

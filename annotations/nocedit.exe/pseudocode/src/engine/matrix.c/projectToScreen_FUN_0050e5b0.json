@@ -1,16 +1,64 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 61,
+        "line": 23,
+        "message": "'stack0xffffffb0' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 24,
+        "message": "'stack0xffffffb4' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 25,
+        "message": "'stack0xffffffc0' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 26,
+        "message": "'stack0xffffffb8' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 27,
+        "message": "'stack0xffffffc4' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 34,
+        "message": "'ROUND' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 137,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 27,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "pointer_cast",
-      "stack_align_anchor",
       "stack_ref"
     ],
     "total_lines": 85
@@ -237,27 +285,11 @@
       "type": "stack_ref"
     },
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x3c",
-      "fix_address": "0050e5b9",
-      "frame_offset": 60,
-      "match": "AND ESP",
-      "sub_esp_offset": 60,
-      "text": "Stack alignment at 0050e5b9 (SUB ESP, 0x3c before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0050e5d6",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0050e5df",
-      "frame_offset": 60,
-      "match": "CALL...ADD ESP",
-      "return_address": "0050e5db",
-      "target_address": "0x50cc40",
-      "text": "Direct CALL at 0050e5d6, ADD ESP at 0050e5df with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "return (int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

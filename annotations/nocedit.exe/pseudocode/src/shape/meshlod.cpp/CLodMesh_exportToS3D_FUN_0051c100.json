@@ -207,9 +207,9 @@
     "pseudocode_lines": 64,
     "suspect_count": 15,
     "suspect_types": [
+      "decompiler_intrinsic",
       "format_string_mismatch",
-      "pointer_cast",
-      "sub_artifact"
+      "pointer_cast"
     ],
     "total_lines": 216
   },
@@ -458,11 +458,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "SUB84",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -486,11 +486,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "SUB84",
       "text": "SUB84 /* extract 2-byte value */((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "actual_args": 0,

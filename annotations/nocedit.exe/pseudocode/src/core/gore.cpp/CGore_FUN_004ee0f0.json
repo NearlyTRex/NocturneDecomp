@@ -80,13 +80,14 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 147,
+    "complexity_score": 212,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 24,
     "pseudocode_lines": 42,
-    "suspect_count": 10,
+    "suspect_count": 16,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 154
@@ -351,6 +352,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ABS",
+      "text": "if (((ABS(in_stack_00000008[1] - *(float *)(pCVar1->field0_0x0 + 8)) <= (float)0.5",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
@@ -358,11 +366,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ABS",
+      "text": ") && (ABS(*in_stack_00000008 - *(float *)(pCVar1->field0_0x0 + 4)) <=",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
       "text": "(ABS(in_stack_00000008[2] - *(float *)(pCVar1->field0_0x0 + 0xc)) <= (float)1.333",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ABS",
+      "text": "(ABS(in_stack_00000008[2] - *(float *)(pCVar1->field0_0x0 + 0xc)) <= (float)1.333",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -379,6 +401,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ABS",
+      "text": "(ABS(in_stack_00000008[1] - *(float *)(pCVar2->field0_0x0 + 8)) <= (float)0.5)",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000008",
@@ -386,11 +415,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ABS",
+      "text": ") && ((ABS(*in_stack_00000008 - *(float *)(pCVar2->field0_0x0 + 4)) <=",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
       "text": "(ABS(in_stack_00000008[2] - *(float *)(pCVar2->field0_0x0 + 0xc)) <=",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ABS",
+      "text": "(ABS(in_stack_00000008[2] - *(float *)(pCVar2->field0_0x0 + 0xc)) <=",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

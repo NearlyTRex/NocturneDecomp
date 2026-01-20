@@ -32,14 +32,13 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 88,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "param_count_too_few",
       "stack_ref"
     ],
@@ -196,42 +195,6 @@
       "param_delta": 1,
       "text": "Function declares 4 params but call sites push 5 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "00489459",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4132,
-      "instruction": "LEA EAX, [ESP + 0x1024]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00489459",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00489467",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4096,
-      "instruction": "LEA EAX, [ESP + 0x1000]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00489467",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00489477",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00489477",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "00489494",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00489494",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

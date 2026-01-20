@@ -1,14 +1,80 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 22,
+        "message": "'stack0xffffffd8' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 25,
+        "message": "'stack0xffffffdc' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 26,
+        "message": "'stack0xffffffe8' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 27,
+        "message": "'stack0xffffffe0' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 28,
+        "message": "'stack0xffffffec' was not declared in this scope"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 32,
+        "line": 33,
+        "message": "cannot convert 'void(STexturedVertex*, STexturedVertex*, int)' to 'void (**)(void*, void*, int)' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 32,
+        "line": 36,
+        "message": "cannot convert 'void(STexturedVertex*, STexturedVertex*, int)' to 'void (**)(void*, void*, int)' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 30,
+        "line": 40,
+        "message": "cannot convert 'void(STexturedVertex*, STexturedVertex*, int)' to 'void (**)(void*, void*, int)' in assignment"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 30,
+        "line": 43,
+        "message": "cannot convert 'void(STexturedVertex*, STexturedVertex*, int)' to 'void (**)(void*, void*, int)' in assignment"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 147,
+    "complexity_score": 112,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 42,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast",
       "stack_ref"
     ],
@@ -205,33 +271,6 @@
       "match": "&stack0xffffffec",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "address": "004055d2",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA ESI, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004055d2",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004055d6",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EDI, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004055d6",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "004055df",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 16,
-      "instruction": "LEA ESI, [ESP + 0x10]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 004055df",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

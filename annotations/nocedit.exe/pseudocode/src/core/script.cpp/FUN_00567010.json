@@ -27,9 +27,9 @@
     "pseudocode_lines": 28,
     "suspect_count": 14,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "param_count_too_few",
-      "stack_param"
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 82
   },
@@ -147,6 +147,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_3",
+      "text": "uint param_3) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000008",
@@ -240,15 +247,6 @@
       "param_delta": 5,
       "text": "Function declares 0 params but call sites push 5 (5 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "00567053",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 00567053",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

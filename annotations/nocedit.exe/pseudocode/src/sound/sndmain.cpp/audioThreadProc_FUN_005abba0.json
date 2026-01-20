@@ -39,7 +39,7 @@
     "pseudocode_lines": 16,
     "suspect_count": 3,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "unknown_field"
     ],
     "total_lines": 51
@@ -167,11 +167,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT44",
       "text": "((double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     }
   ]
 }

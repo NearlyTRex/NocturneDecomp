@@ -224,23 +224,20 @@
   },
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 690,
+    "complexity_score": 1355,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 12,
     "pseudocode_lines": 250,
-    "suspect_count": 39,
+    "suspect_count": 107,
     "suspect_types": [
-      "call_esp_anchor",
-      "callind_anchor",
       "pointer_cast",
-      "stack_align_anchor",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
       "unknown_field",
-      "unresolved_funcptr",
-      "variadic_preserve_ebp"
+      "unnamed_param",
+      "unresolved_funcptr"
     ],
     "total_lines": 734
   },
@@ -651,11 +648,53 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 6,
       "match": "unaff_EBX",
       "text": "(uint param_1,uint param_2,CDeformableModelInstance *unaff_EBX,",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "text": "(uint param_1,uint param_2,CDeformableModelInstance *unaff_EBX,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_2",
+      "text": "(uint param_1,uint param_2,CDeformableModelInstance *unaff_EBX,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_4",
+      "text": "uint param_4,CCharacter *param_5,float param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_5",
+      "text": "uint param_4,CCharacter *param_5,float param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_6",
+      "text": "uint param_4,CCharacter *param_5,float param_6)",
+      "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
@@ -672,6 +711,510 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_5",
+      "text": "iVar4 = core_charactr_cpp_CCharacter_FUN_00429870(param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_5",
+      "text": "fVar6 = *(float *)param_5[1].base_actor.actor_name - param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_6",
+      "text": "fVar6 = *(float *)param_5[1].base_actor.actor_name - param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_5",
+      "text": "*(float *)param_5[1].base_actor.actor_name = fVar6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_5",
+      "text": "param_5[1].base_actor.actor_name[0] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_5",
+      "text": "param_5[1].base_actor.actor_name[1] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_5",
+      "text": "param_5[1].base_actor.actor_name[2] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_5",
+      "text": "param_5[1].base_actor.actor_name[3] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_5",
+      "text": "(param_5->model).accumulated_root_motion.z = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_5",
+      "text": "(param_5->model).accumulated_root_motion.y = (param_5->model).accumulated_root_motion.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_5",
+      "text": "(param_5->model).accumulated_root_motion.y = (param_5->model).accumulated_root_motion.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_5",
+      "text": "(param_5->model).accumulated_root_motion.x = (param_5->model).accumulated_root_motion.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_5",
+      "text": "(param_5->model).accumulated_root_motion.x = (param_5->model).accumulated_root_motion.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_5",
+      "text": "if (*(int *)(param_5[1].base_actor.actor_name + 4) == 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x28) = (param_5->model).accumulated_root_motion.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x28) = (param_5->model).accumulated_root_motion.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x2c) = param_6 * fVar6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_6",
+      "text": "*(float *)(param_5->field2_0x240c + 0x2c) = param_6 * fVar6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_5",
+      "text": "iVar4 = core_charactr_cpp_CCharacter_FUN_0042ca70(param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_5",
+      "text": "(&(param_5->model).motion_controller);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_5",
+      "text": "if (*(int *)(param_5->field2_0x240c + 4) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_5",
+      "text": "if (*(int *)(param_5[1].base_actor.actor_name + 8) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_5",
+      "text": "if (*(int *)(param_5[1].base_actor.actor_name + 0x10) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_5",
+      "text": "if (*(int *)(param_5[1].base_actor.actor_name + 0xc) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_5",
+      "text": "if (param_5[1].base_actor.location.position.x != 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_5",
+      "text": "iVar7 = *(int *)(param_5[2].cloth_data + 0x54f4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_5",
+      "text": "param_5[1].base_actor.location.position.x = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_5",
+      "text": "*(uint *)(param_5[2].cloth_data + 0x54f4) = (uint)(iVar7 == 0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_5",
+      "text": "if (*(int *)(param_5[1].base_actor.actor_name + 0x14) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 93,
+      "match": "param_5",
+      "text": "if ((*(int *)(param_5[2].cloth_data + 0x54f4) == 0) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_5",
+      "text": "(*(int *)(param_5[1].base_actor.actor_name + 4) != 2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_5",
+      "text": "pCVar3 = param_5 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 121,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0xc) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 122,
+      "match": "param_5",
+      "text": "(float)param_5[1].base_actor.location.area_id *",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 123,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x2c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 125,
+      "match": "param_5",
+      "text": "(&(param_5->model).motion_controller);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 134,
+      "match": "param_5",
+      "text": "uVar1 = *(uint *)(param_5->field11_0x25a0 + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 148,
+      "match": "param_5",
+      "text": "(&(param_5->model).motion_controller,0,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 150,
+      "match": "param_5",
+      "text": "(g_CConsolePtr,\"%s confused while walking to scriptDest!\\n\",param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 159,
+      "match": "param_5",
+      "text": "(&(param_5->model).motion_controller,iVar4,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 162,
+      "match": "param_5",
+      "text": "if (param_5->grabbed_by == (CDemonActor *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 163,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x20) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 164,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x20) - param_6 * (float)32;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 164,
+      "match": "param_6",
+      "text": "*(float *)(param_5->field2_0x240c + 0x20) - param_6 * (float)32;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 165,
+      "match": "param_5",
+      "text": "local_38 = *(float *)(param_5->field2_0x240c + 0x1c) * param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 165,
+      "match": "param_6",
+      "text": "local_38 = *(float *)(param_5->field2_0x240c + 0x1c) * param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 166,
+      "match": "param_5",
+      "text": "local_34 = *(float *)(param_5->field2_0x240c + 0x20) * param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 166,
+      "match": "param_6",
+      "text": "local_34 = *(float *)(param_5->field2_0x240c + 0x20) * param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 167,
+      "match": "param_6",
+      "text": "local_30 = param_6 * *(float *)(param_5->field2_0x240c + 0x24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 167,
+      "match": "param_5",
+      "text": "local_30 = param_6 * *(float *)(param_5->field2_0x240c + 0x24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 168,
+      "match": "param_5",
+      "text": "pCVar5 = &(param_5->model).accumulated_root_motion;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 169,
+      "match": "param_5",
+      "text": "local_50 = pCVar5->x + *(float *)(param_5->field2_0x240c + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 170,
+      "match": "param_5",
+      "text": "local_4c = (param_5->model).accumulated_root_motion.y +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 171,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 173,
+      "match": "param_5",
+      "text": "local_48 = (param_5->model).accumulated_root_motion.z +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 174,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 177,
+      "match": "param_5",
+      "text": "(param_5->model).accumulated_root_motion.z = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 178,
+      "match": "param_5",
+      "text": "(param_5->model).accumulated_root_motion.y = (param_5->model).accumulated_root_motion.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 178,
+      "match": "param_5",
+      "text": "(param_5->model).accumulated_root_motion.y = (param_5->model).accumulated_root_motion.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 179,
+      "match": "param_5",
+      "text": "pCVar5->x = (param_5->model).accumulated_root_motion.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 180,
+      "match": "param_5",
+      "text": "param_5->field2_0x240c[0x18] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 181,
+      "match": "param_5",
+      "text": "param_5->field2_0x240c[0x19] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 182,
+      "match": "param_5",
+      "text": "param_5->field2_0x240c[0x1a] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 183,
+      "match": "param_5",
+      "text": "param_5->field2_0x240c[0x1b] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 184,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x14) = *(float *)(param_5->field2_0x240c + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 184,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x14) = *(float *)(param_5->field2_0x240c + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 185,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x10) = *(float *)(param_5->field2_0x240c + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 185,
+      "match": "param_5",
+      "text": "*(float *)(param_5->field2_0x240c + 0x10) = *(float *)(param_5->field2_0x240c + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 186,
+      "match": "param_5",
+      "text": "core_charactr_cpp_CCharacter_FUN_00428f40(param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 189,
+      "match": "param_5",
+      "text": "if (param_5->grabbed_type == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 191,
+      "match": "param_5",
+      "text": "(&param_5->base_actor,&local_5c,&(param_5->grabbed_by->location).position);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 191,
+      "match": "param_5",
+      "text": "(&param_5->base_actor,&local_5c,&(param_5->grabbed_by->location).position);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 196,
       "match": "._0_4_",
@@ -679,11 +1222,130 @@
       "type": "unknown_field"
     },
     {
+      "description": "Unnamed function parameter",
+      "line": 201,
+      "match": "param_6",
+      "text": "local_1c = param_6 * (float)3.1415926535000001;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 209,
+      "match": "param_5",
+      "text": "(param_5->base_actor).orient.bank = (param_5->base_actor).orient.bank + fVar6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 209,
+      "match": "param_5",
+      "text": "(param_5->base_actor).orient.bank = (param_5->base_actor).orient.bank + fVar6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 210,
+      "match": "param_5",
+      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&param_5->base_actor);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 212,
+      "match": "param_5",
+      "text": "this_ptr = param_5->grabbed_by;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 215,
+      "match": "param_5",
+      "text": "(&param_5->model,(CVector3f *)local_74,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 216,
+      "match": "param_5",
+      "text": "fVar6 = (*local_14[1].cylinderGroundCheck)(this_ptr,(float)param_5,pCVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 218,
+      "match": "param_5",
+      "text": "param_5->grabbed_by = (CDemonActor *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 223,
+      "match": "param_5",
+      "text": "if (param_5->grabbed_by == (CDemonActor *)0x0) goto LAB_0043fc01;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 224,
+      "match": "param_5",
+      "text": "if (*(int *)(param_5[1].base_actor.actor_name + 0x14) == 0) goto LAB_0043fc14;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
+      "match": "param_5",
+      "text": "(&(param_5->model).motion_controller,iVar4,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 231,
+      "match": "param_5",
+      "text": "core_charactr_cpp_CCharacter_FUN_00429820(param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 232,
+      "match": "param_5",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(&param_5->model);",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 233,
       "match": "in_stack_ffffff74",
       "text": "iVar4 = (*(param_5->base_actor).vtable[1].hasCollision)(&param_5->base_actor,in_stack_ffffff74);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 233,
+      "match": "param_5",
+      "text": "iVar4 = (*(param_5->base_actor).vtable[1].hasCollision)(&param_5->base_actor,in_stack_ffffff74);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 233,
+      "match": "param_5",
+      "text": "iVar4 = (*(param_5->base_actor).vtable[1].hasCollision)(&param_5->base_actor,in_stack_ffffff74);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 236,
+      "match": "param_5",
+      "text": "pCVar5 = *(CVector3f **)(param_5[2].cloth_data + 0x5508);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 239,
+      "match": "param_5",
+      "text": "((CQuaternion4f *)(param_5[2].cloth_data + 0x54fc),pCVar5);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
@@ -728,362 +1390,11 @@
       "type": "unaffected_reg"
     },
     {
-      "add_esp_value": 12,
-      "callind_address": "0043fbe3",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0043fbe9",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 136,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0043fbe3, ADD ESP at 0043fbe9",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "0043fc3a",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0043fc40",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 136,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0043fc3a, ADD ESP at 0043fc40",
-      "type": "callind_anchor"
-    },
-    {
-      "call_address": "0043fcba",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "frame_offset": 136,
-      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
-      "return_address": "0043fcbf",
-      "target_address": "0x441890",
-      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 0043fcba (EBP frame, no ADD ESP)",
-      "type": "variadic_preserve_ebp"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x88",
-      "fix_address": "0043fa0c",
-      "frame_offset": 136,
-      "match": "AND ESP",
-      "sub_esp_offset": 136,
-      "text": "Stack alignment at 0043fa0c (SUB ESP, 0x88 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043fa16",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fa1b",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fa1b",
-      "target_address": "0x429870",
-      "text": "Direct CALL at 0043fa16, ADD ESP at 0043fa1b with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043fa64",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fa6f",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fa69",
-      "target_address": "0x440430",
-      "text": "Direct CALL at 0043fa64, ADD ESP at 0043fa6f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043fa7b",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fa80",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fa80",
-      "target_address": "0x43ff20",
-      "text": "Direct CALL at 0043fa7b, ADD ESP at 0043fa80 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043faa2",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043faad",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043faa7",
-      "target_address": "0x42ca70",
-      "text": "Direct CALL at 0043faa2, ADD ESP at 0043faad with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0043fb00",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fb05",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fb05",
-      "target_address": "0x408f10",
-      "text": "Direct CALL at 0043fb00, ADD ESP at 0043fb05 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043fb0e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fb13",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fb13",
-      "target_address": "0x5e7830",
-      "text": "Direct CALL at 0043fb0e, ADD ESP at 0043fb13 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fb19",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fb2c",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fb1e",
-      "target_address": "0x40cd70",
-      "text": "Direct CALL at 0043fb19, ADD ESP at 0043fb2c with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fba8",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fbad",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fbad",
-      "target_address": "0x408c10",
-      "text": "Direct CALL at 0043fba8, ADD ESP at 0043fbad with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0043fbd1",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fbd6",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fbd6",
-      "target_address": "0x59fb00",
-      "text": "Direct CALL at 0043fbd1, ADD ESP at 0043fbd6 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fc15",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fc1a",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fc1a",
-      "target_address": "0x429820",
-      "text": "Direct CALL at 0043fc15, ADD ESP at 0043fc1a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fc2b",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fc30",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fc30",
-      "target_address": "0x59e020",
-      "text": "Direct CALL at 0043fc2b, ADD ESP at 0043fc30 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fc64",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fc69",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fc69",
-      "target_address": "0x5f7b20",
-      "text": "Direct CALL at 0043fc64, ADD ESP at 0043fc69 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0043fc85",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fc8a",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fc8a",
-      "target_address": "0x59f750",
-      "text": "Direct CALL at 0043fc85, ADD ESP at 0043fc8a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043fc91",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0043fc96",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fc96",
-      "target_address": "0x42dfc0",
-      "text": "Direct CALL at 0043fc91, ADD ESP at 0043fc96 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0043fca5",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fcaa",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fcaa",
-      "target_address": "0x52db00",
-      "text": "Direct CALL at 0043fca5, ADD ESP at 0043fcaa with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fd87",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fd8f",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fd8c",
-      "target_address": "0x52dab0",
-      "text": "Direct CALL at 0043fd87, ADD ESP at 0043fd8f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fdb7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fdbe",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fdbc",
-      "target_address": "0x4f2af0",
-      "text": "Direct CALL at 0043fdb7, ADD ESP at 0043fdbe with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fdc6",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fdcb",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fdcb",
-      "target_address": "0x4f2d70",
-      "text": "Direct CALL at 0043fdc6, ADD ESP at 0043fdcb with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fde7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fdec",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fdec",
-      "target_address": "0x4f2c40",
-      "text": "Direct CALL at 0043fde7, ADD ESP at 0043fdec with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fdf8",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fdfd",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fdfd",
-      "target_address": "0x4f2f50",
-      "text": "Direct CALL at 0043fdf8, ADD ESP at 0043fdfd with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fe0a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fe0f",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fe0f",
-      "target_address": "0x4f2ed0",
-      "text": "Direct CALL at 0043fe0a, ADD ESP at 0043fe0f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fe15",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fe1a",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fe1a",
-      "target_address": "0x4f30f0",
-      "text": "Direct CALL at 0043fe15, ADD ESP at 0043fe1a with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0043fe23",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043fe2b",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043fe28",
-      "target_address": "0x52dab0",
-      "text": "Direct CALL at 0043fe23, ADD ESP at 0043fe2b with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0043ff0a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0043ff0f",
-      "frame_offset": 136,
-      "match": "CALL...ADD ESP",
-      "return_address": "0043ff0f",
-      "target_address": "0x428f40",
-      "text": "Direct CALL at 0043ff0a, ADD ESP at 0043ff0f with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Unnamed function parameter",
+      "line": 251,
+      "match": "param_5",
+      "text": "core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(param_5);",
+      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

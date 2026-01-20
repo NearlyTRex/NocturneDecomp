@@ -86,16 +86,15 @@
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 266,
+    "complexity_score": 251,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 156,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "extra_output",
-      "stack_align_anchor",
       "suspect_float"
     ],
     "total_lines": 224
@@ -242,6 +241,13 @@
       "type": "suspect_float"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "ROUND",
+      "text": "auStack_1c[0] = (uint)ROUND(dVar8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 153,
       "match": "extraout_ECX",
@@ -268,29 +274,6 @@
       "match": "extraout_ECX_00",
       "text": "((CMatrix3x3f *)(extraout_ECX_00 + 0x118),(CVector3f *)(extraout_ECX_00 + 0x10c));",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x22c",
-      "fix_address": "00585c9c",
-      "frame_offset": 556,
-      "match": "AND ESP",
-      "sub_esp_offset": 556,
-      "text": "Stack alignment at 00585c9c (SUB ESP, 0x22c before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00585cb8",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00585cbd",
-      "frame_offset": 556,
-      "match": "CALL...ADD ESP",
-      "return_address": "00585cbd",
-      "target_address": "0x5fefd0",
-      "text": "Direct CALL at 00585cb8, ADD ESP at 00585cbd with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

@@ -26,13 +26,15 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 59,
+    "complexity_score": 134,
     "cross_reference_count": 62,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 59,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 7,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 186
   },
   "cross_references": [
@@ -532,5 +534,55 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "iVar10 = (int)ROUND(fVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "((ushort)(int)ROUND(dVar8),rotY,uVar11,iVar10,iVar12,iVar13);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ROUND",
+      "text": "iVar10 = (int)ROUND(fVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ROUND",
+      "text": "iVar12 = (int)ROUND(dVar8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "ROUND",
+      "text": "iVar13 = (int)ROUND(fVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ROUND",
+      "text": "((ushort)(int)ROUND(dVar9),(ushort)(int)ROUND(dVar8),uVar11,iVar13,iVar12,iVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ROUND",
+      "text": "((ushort)(int)ROUND(dVar9),(ushort)(int)ROUND(dVar8),uVar11,iVar13,iVar12,iVar10);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

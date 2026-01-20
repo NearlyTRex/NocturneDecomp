@@ -329,14 +329,20 @@ def load_function_info_from_json(json_path):
         if not func_name:
             return None
 
-        # Derive cpp path from json path
-        cpp_path = json_path.replace('.json', '.cpp')
+        # Derive source path from json path - check for both .c and .cpp
+        base_path = json_path[:-5]  # Remove '.json'
+        if os.path.exists(base_path + '.cpp'):
+            src_path = base_path + '.cpp'
+        elif os.path.exists(base_path + '.c'):
+            src_path = base_path + '.c'
+        else:
+            src_path = base_path + '.cpp'  # Default to .cpp for error message
 
         return {
             'name': func_name,
             'address': func_addr,
             'json_path': json_path,
-            'cpp_path': cpp_path,
+            'cpp_path': src_path,
         }
     except Exception:
         return None

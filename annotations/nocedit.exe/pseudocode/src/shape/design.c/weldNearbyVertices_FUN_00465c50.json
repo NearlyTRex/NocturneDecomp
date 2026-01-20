@@ -1,13 +1,33 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 20,
+        "message": "'ABS' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 36,
+    "complexity_score": 71,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 21,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_many"
     ],
     "total_lines": 119
@@ -180,6 +200,27 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ABS",
+      "text": "if (((ABS(g_LoadedVertices[uVar1].vertex.x - g_LoadedVertices[local_18].vertex.x) < tolerance)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ABS",
+      "text": "&& (ABS(g_LoadedVertices[uVar1].vertex.y - g_LoadedVertices[local_18].vertex.y) <",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ABS",
+      "text": "(ABS(g_LoadedVertices[uVar1].vertex.z - g_LoadedVertices[local_18].vertex.z) < tolerance))",
+      "type": "decompiler_intrinsic"
+    },
     {
       "call_site_count": 1,
       "declared_params": 2,

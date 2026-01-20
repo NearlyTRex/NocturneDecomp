@@ -122,14 +122,13 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 186,
+    "complexity_score": 171,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 86,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "callind_preserve_lost",
       "pointer_cast",
       "stack_param",
       "stack_ref"
@@ -392,23 +391,6 @@
       "match": "&stack0xffffffbc",
       "text": "((int)(&stack0xffffffbc + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4) +",
       "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 8,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 36,
-        "reg": "EAX"
-      },
-      "callind_address": "0041d867",
-      "callind_assembly": "CALL dword ptr [EAX + 0x24]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
-      "fix_address": "0041d86a",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 72,
-      "return_address": "0041d86a",
-      "text": "CALLIND at 0041d867, ADD ESP at 0041d86a (no EBP frame)",
-      "type": "callind_preserve_lost"
     }
   ]
 }

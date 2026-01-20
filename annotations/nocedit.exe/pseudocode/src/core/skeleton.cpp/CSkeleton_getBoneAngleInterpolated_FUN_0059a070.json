@@ -62,18 +62,16 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 242,
+    "complexity_score": 202,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 52,
-    "suspect_count": 16,
+    "suspect_count": 13,
     "suspect_types": [
-      "call_esp_anchor",
+      "decompiler_intrinsic",
       "pointer_cast",
-      "stack_align_anchor",
       "stack_ref",
-      "sub_artifact",
       "unaffected_reg"
     ],
     "total_lines": 133
@@ -251,11 +249,11 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "SUB84",
       "text": "t = SUB84 /* extract 2-byte value */(dVar5,0);",
-      "type": "sub_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -333,42 +331,6 @@
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x28",
-      "fix_address": "0059a078",
-      "frame_offset": 40,
-      "match": "AND ESP",
-      "sub_esp_offset": 40,
-      "text": "Stack alignment at 0059a078 (SUB ESP, 0x28 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0059a0d5",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0059a0da",
-      "frame_offset": 40,
-      "match": "CALL...ADD ESP",
-      "return_address": "0059a0da",
-      "target_address": "0x59a050",
-      "text": "Direct CALL at 0059a0d5, ADD ESP at 0059a0da with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0059a0e4",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0059a0e9",
-      "frame_offset": 40,
-      "match": "CALL...ADD ESP",
-      "return_address": "0059a0e9",
-      "target_address": "0x59a050",
-      "text": "Direct CALL at 0059a0e4, ADD ESP at 0059a0e9 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

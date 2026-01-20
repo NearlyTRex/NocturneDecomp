@@ -1,14 +1,74 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 44,
+        "line": 32,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 39,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 40,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 47,
+        "message": "cast from 'SShapeEditorPolygon*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 32,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 39,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 40,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 118,
+    "complexity_score": 103,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 43,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_anchor",
       "param_count_too_few",
       "pointer_cast"
     ],
@@ -193,19 +253,6 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0045b90e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045b913",
-      "frame_offset": 396,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045b913",
-      "target_address": "0x45b850",
-      "text": "Direct CALL at 0045b90e, ADD ESP at 0045b913 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

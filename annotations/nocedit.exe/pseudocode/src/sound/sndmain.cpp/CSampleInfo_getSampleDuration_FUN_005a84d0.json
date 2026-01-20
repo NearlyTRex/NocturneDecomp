@@ -31,14 +31,13 @@
   },
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 69,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 36
@@ -177,16 +176,6 @@
       "match": "in_stack_00000004",
       "text": "return (double)*(int *)(in_stack_00000004 + 0x110) / (double)*(int *)(in_stack_00000004 + 0x10c)",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
-      "fix_address": "005a84d6",
-      "frame_offset": 8,
-      "match": "AND ESP",
-      "sub_esp_offset": 8,
-      "text": "Stack alignment at 005a84d6 (SUB ESP, 0x8 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

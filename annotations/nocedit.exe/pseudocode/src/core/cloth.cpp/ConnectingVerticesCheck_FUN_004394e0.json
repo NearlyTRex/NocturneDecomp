@@ -230,13 +230,14 @@
   },
   "complexity": {
     "assembly_lines": 214,
-    "complexity_score": 191,
+    "complexity_score": 206,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 96,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 310
@@ -480,6 +481,13 @@
       "match": "in_stack_00000004",
       "text": "*(float *)(iVar5 * 0x11c + 0x579c + in_stack_00000004))) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "SQRT",
+      "text": "SQRT((pfVar6[2] - pfVar4[2]) * (pfVar6[2] - pfVar4[2]) +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

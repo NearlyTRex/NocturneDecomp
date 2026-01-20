@@ -93,8 +93,8 @@
     "pseudocode_lines": 127,
     "suspect_count": 19,
     "suspect_types": [
+      "decompiler_intrinsic",
       "extra_output",
-      "lea_esp_stack_addr",
       "stack_param"
     ],
     "total_lines": 394
@@ -438,6 +438,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 86,
+      "match": "ROUND",
+      "text": "sfx_sample->streaming_buffer_size = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 87,
       "match": "extraout_EAX",
@@ -480,29 +487,18 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "ROUND",
+      "text": "sfx_sample->streaming_buffer_size = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 120,
       "match": "extraout_EAX_00",
       "text": "sfx_sample->streaming_slot_index = extraout_EAX_00;",
       "type": "extra_output"
-    },
-    {
-      "address": "005a5295",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005a5295",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005a5413",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 4,
-      "instruction": "LEA EAX, [ESP + 0x4]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005a5413",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

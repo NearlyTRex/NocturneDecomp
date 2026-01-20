@@ -8,7 +8,7 @@
     "pseudocode_lines": 16,
     "suspect_count": 7,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "special_crt_function",
       "stack_param",
       "undefined_type",
@@ -99,11 +99,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "CONCAT64",
       "text": "return CONCAT64 /* combine 2-byte values */(uStack00000050,in_stack_0000004c);",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "00606e0a",

@@ -39,9 +39,9 @@
     "pseudocode_lines": 38,
     "suspect_count": 11,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
-      "stack_param"
+      "decompiler_intrinsic",
+      "stack_param",
+      "unnamed_param"
     ],
     "total_lines": 125
   },
@@ -207,6 +207,13 @@
   },
   "suspects": [
     {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "text": "param_2) */",
+      "type": "unnamed_param"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
@@ -256,6 +263,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "SQRT",
+      "text": "if (SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) <",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
@@ -268,29 +282,6 @@
       "match": "in_stack_00000004",
       "text": "*(CDemonActor **)(in_stack_00000004[0x8d].create_event + 0x4c) = actor_ptr;",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
-      "fix_address": "005db909",
-      "frame_offset": 24,
-      "match": "AND ESP",
-      "sub_esp_offset": 24,
-      "text": "Stack alignment at 005db909 (SUB ESP, 0x18 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005db94e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005db953",
-      "frame_offset": 24,
-      "match": "CALL...ADD ESP",
-      "return_address": "005db953",
-      "target_address": "0x40c6d0",
-      "text": "Direct CALL at 005db94e, ADD ESP at 005db953 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

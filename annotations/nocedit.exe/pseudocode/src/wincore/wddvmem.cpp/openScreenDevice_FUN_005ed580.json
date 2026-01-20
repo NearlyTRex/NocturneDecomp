@@ -44,14 +44,13 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 69,
+    "complexity_score": 44,
     "cross_reference_count": 9,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "lea_esp_stack_addr",
       "pointer_cast"
     ],
     "total_lines": 101
@@ -250,24 +249,6 @@
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_ScreenBufferArray + iVar3) = local_74.lpSurface;",
       "type": "pointer_cast"
-    },
-    {
-      "address": "005ed5a9",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA EAX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ed5a9",
-      "type": "lea_esp_stack_addr"
-    },
-    {
-      "address": "005ed5ba",
-      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
-      "esp_offset": 8,
-      "instruction": "LEA ECX, [ESP + 0x8]",
-      "match": "LEA...ESP",
-      "text": "LEA takes address of ESP-relative stack location at 005ed5ba",
-      "type": "lea_esp_stack_addr"
     }
   ]
 }

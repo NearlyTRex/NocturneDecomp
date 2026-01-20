@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_many",
       "special_math_intrinsic"
     ],
@@ -147,6 +148,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "SQRT",
+      "text": "dVar1 = SQRT(value);",
+      "type": "decompiler_intrinsic"
+    },
     {
       "call_site_count": 2,
       "declared_params": 1,

@@ -134,14 +134,14 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 340,
+    "complexity_score": 380,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 120,
-    "suspect_count": 20,
+    "suspect_count": 24,
     "suspect_types": [
-      "concat_artifact",
+      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "unknown_field"
@@ -429,6 +429,20 @@
       "type": "extra_output"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "ROUND",
+      "text": "this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ROUND",
+      "text": "this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 55,
       "match": "extraout_ECX",
@@ -436,11 +450,18 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "CONCAT44",
       "text": "(float)CONCAT44 /* combine 2-byte values */(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "ROUND",
+      "text": "this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar15);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -485,11 +506,18 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "CONCAT44",
       "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar13)));",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ROUND",
+      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar15);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

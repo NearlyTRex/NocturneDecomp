@@ -1,17 +1,58 @@
 {
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 82,
+        "message": "'CONCAT44' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 86,
+        "message": "'SUB84' was not declared in this scope"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 41,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 51,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 62,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 181,
+    "complexity_score": 141,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 81,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
-      "stack_param",
-      "sub_artifact"
+      "decompiler_intrinsic",
+      "stack_param"
     ],
     "total_lines": 208
   },
@@ -352,11 +393,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "CONCAT44",
       "text": "((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff64,",
-      "type": "concat_artifact"
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -366,50 +407,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "SUB84",
       "text": "in_stack_ffffff64 = SUB84 /* extract 2-byte value */(dVar5,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00461fd8",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00461fdd",
-      "frame_offset": 140,
-      "match": "CALL...ADD ESP",
-      "return_address": "00461fdd",
-      "target_address": "0x461e60",
-      "text": "Direct CALL at 00461fd8, ADD ESP at 00461fdd with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00461fe4",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00461fe9",
-      "frame_offset": 140,
-      "match": "CALL...ADD ESP",
-      "return_address": "00461fe9",
-      "target_address": "0x461e60",
-      "text": "Direct CALL at 00461fe4, ADD ESP at 00461fe9 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0046200b",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00462022",
-      "frame_offset": 140,
-      "match": "CALL...ADD ESP",
-      "return_address": "00462010",
-      "target_address": "0x461c50",
-      "text": "Direct CALL at 0046200b, ADD ESP at 00462022 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "type": "decompiler_intrinsic"
     }
   ]
 }
