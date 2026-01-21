@@ -340,6 +340,115 @@
             <register name="EDX" />
         </killedbycall>
     </prototype>
+    <!-- __stack_esi: Hybrid convention - 1 stack param + ESI param, returns EAX -->
+    <prototype name="__stack_esi" extrapop="4" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="4" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="ESI" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="ESP" />
+            <register name="EBX" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __stack2_esi: Hybrid convention - 2 stack params + ESI input, returns EAX -->
+    <prototype name="__stack2_esi" extrapop="4" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="4" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="8" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="ESI" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="ESP" />
+            <register name="EBX" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __stack3_esi: Hybrid convention - 3 stack params + ESI input, returns EAX -->
+    <prototype name="__stack3_esi" extrapop="4" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="4" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="8" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="12" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="ESI" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="ESP" />
+            <register name="EBX" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __stack_esi_edi: Hybrid convention - 1 stack param + ESI + EDI params, returns EAX -->
+    <prototype name="__stack_esi_edi" extrapop="4" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="4" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="ESI" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="EDI" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="ESP" />
+            <register name="EBX" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __stack2_esi_edi: Hybrid convention - 2 stack params + ESI + EDI params, returns EAX -->
+    <prototype name="__stack2_esi_edi" extrapop="4" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="4" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4" align="4"><addr offset="8" space="stack" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="ESI" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="EDI" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="ESP" />
+            <register name="EBX" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
     <prototype name="__syscall" extrapop="4" stackshift="4">
         <input>
             <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
