@@ -1,0 +1,6499 @@
+{
+  "summary": {
+    "total_functions": 7180,
+    "convention_counts": {
+      "unknown": 1965,
+      "__cdecl": 4996,
+      "__watcallRegister": 51,
+      "__stdcall": 25,
+      "__stack2_esi": 4,
+      "__stack_esi": 18,
+      "__stack3_esi": 1,
+      "__watcallStack": 93,
+      "__fpureg": 4,
+      "__softfp_double": 3,
+      "__fpustack": 8,
+      "__fpu_thunk": 11,
+      "__mathinternal": 1
+    },
+    "suggestion_counts": {
+      "__cdecl": 4198,
+      "__watcallRegister": 385,
+      "__stack_esi": 90,
+      "__stack3_esi": 52,
+      "__stack2_esi": 86,
+      "__stack2_esi_edi": 136,
+      "__stack_esi_edi": 58,
+      "__fpureg": 60,
+      "__fpustack": 1
+    },
+    "high_confidence_mismatches": 457
+  },
+  "mismatches": [
+    {
+      "name": "engine_2d.c_loadPaletteFile_FUN_004015a0",
+      "address": "004015a0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_2d.c_drawCharacter_FUN_00401610",
+      "address": "00401610",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_2d.c_drawCharacter_FUN_00401a10",
+      "address": "00401a10",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_2d.c_draw320x200SizeDot_FUN_00402a8e",
+      "address": "00402a8e",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_processTextureCoordinates_FUN_00403a80",
+      "address": "00403a80",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_processPolygonColor_FUN_00403e30",
+      "address": "00403e30",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_setVertexTextureU_FUN_00405270",
+      "address": "00405270",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290",
+      "address": "00406290",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860",
+      "address": "00406860",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0",
+      "address": "00406de0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20",
+      "address": "00406f20",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0",
+      "address": "004070c0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_renderPrim_FUN_00407920",
+      "address": "00407920",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_3d.c_addFaceIfVisible_FUN_004079c0",
+      "address": "004079c0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0",
+      "address": "004093f0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_actor.cpp_serializeVector_FUN_0040b340",
+      "address": "0040b340",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_actor.cpp_serializeOrientation_FUN_0040b3e0",
+      "address": "0040b3e0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_actor.cpp_serializeQuaternion_FUN_0040b520",
+      "address": "0040b520",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770",
+      "address": "0040b770",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10",
+      "address": "0040cc10",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70",
+      "address": "0040cc70",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10",
+      "address": "0040cd10",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700",
+      "address": "00411700",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_anvil.cpp_CAnvil_FUN_00411ec0",
+      "address": "00411ec0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_backgnd.cpp_CBackgroundActor_FUN_004128d0",
+      "address": "004128d0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0",
+      "address": "00413ae0",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "core_barrier.cpp_CBarrier_FUN_00414240",
+      "address": "00414240",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_bat.cpp_FUN_00414ce0",
+      "address": "00414ce0",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EAX', 'EDX'}"
+        ],
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ]
+      ]
+    },
+    {
+      "name": "core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0",
+      "address": "004189b0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0",
+      "address": "004194b0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 10 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610",
+      "address": "00419610",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_bodypart.cpp_FUN_0041ae50",
+      "address": "0041ae50",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_boneguy.cpp_FUN_0041b860",
+      "address": "0041b860",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ],
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0",
+      "address": "0041bbc0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_boneguy.cpp_FUN_0041ca40",
+      "address": "0041ca40",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 28 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_boneguy.cpp_FUN_0041d1b0",
+      "address": "0041d1b0",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_00420320",
+      "address": "00420320",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_boxactor.cpp_FUN_00421e00",
+      "address": "00421e00",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_boxactor.cpp_FUN_00421ef0",
+      "address": "00421ef0",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_boxactor.cpp_FUN_00422340",
+      "address": "00422340",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_bride.cpp_FUN_00424a10",
+      "address": "00424a10",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_bugs.cpp_CBugs_FUN_004277e0",
+      "address": "004277e0",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0",
+      "address": "0042a2c0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b760",
+      "address": "0042b760",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b810",
+      "address": "0042b810",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042c920",
+      "address": "0042c920",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d300",
+      "address": "0042d300",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0",
+      "address": "0042d3d0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d530",
+      "address": "0042d530",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0",
+      "address": "0042dcd0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800",
+      "address": "0042f800",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_ckptutil.c_applyColorPalette_FUN_004319b0",
+      "address": "00431830",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0",
+      "address": "00432df0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0",
+      "address": "004342f0",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0",
+      "address": "00438cb0",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_cloth.cpp_FUN_0043c2d0",
+      "address": "0043c2d0",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_cloth.cpp_FUN_0043c3a0",
+      "address": "0043c3a0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0",
+      "address": "0043eef0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90",
+      "address": "0043ef90",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200",
+      "address": "0043f200",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160",
+      "address": "00446160",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 38 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590",
+      "address": "00447590",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0",
+      "address": "004478c0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930",
+      "address": "00447930",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0",
+      "address": "004479a0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10",
+      "address": "00447a10",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80",
+      "address": "00447a80",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0",
+      "address": "00447ab0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 7 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20",
+      "address": "00447c20",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 13 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80",
+      "address": "00447e80",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0",
+      "address": "004481d0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_crate.cpp_FUN_00448a70",
+      "address": "00448a70",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740",
+      "address": "0044c740",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0",
+      "address": "0044d2a0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310",
+      "address": "0044d310",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600",
+      "address": "0044d600",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0",
+      "address": "0044d7d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90",
+      "address": "0044da90",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30",
+      "address": "0044ef30",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 21 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090",
+      "address": "00451090",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130",
+      "address": "00451130",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0",
+      "address": "004537d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0",
+      "address": "004538c0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70",
+      "address": "00453a70",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460",
+      "address": "00455460",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0",
+      "address": "004567b0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dest.cpp_FUN_0046fcc0",
+      "address": "0046fcc0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00470260",
+      "address": "00470260",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dfilter.cpp_CDemonFilter_init_FUN_004705a0",
+      "address": "004705a0",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_dfilter.cpp_CFilterFX_process_FUN_004708e0",
+      "address": "004708e0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_004719e0",
+      "address": "004719e0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540",
+      "address": "00472540",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dlight.cpp_getRestoreMemory_FUN_00472950",
+      "address": "00472950",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0",
+      "address": "004729d0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00472f30",
+      "address": "00472f30",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850",
+      "address": "00477850",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190",
+      "address": "00478190",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80",
+      "address": "00478d80",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10",
+      "address": "0047ea10",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0",
+      "address": "0047edd0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30",
+      "address": "0047ee30",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_dosio.c_findFileNormally_FUN_004817c0",
+      "address": "004817c0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_dosio.c_CFileFinder_findNext_FUN_00481cf0",
+      "address": "00481cf0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210",
+      "address": "00483210",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0",
+      "address": "004840b0",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dracbrid.cpp_FUN_00485b20",
+      "address": "00485b20",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_00489090",
+      "address": "00489090",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0",
+      "address": "0048aeb0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0",
+      "address": "0048b1e0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420",
+      "address": "0048b420",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550",
+      "address": "0048b550",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80",
+      "address": "0048da80",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380",
+      "address": "00494380",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040",
+      "address": "00495040",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60",
+      "address": "00496c60",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50",
+      "address": "00498e50",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330",
+      "address": "00499330",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0",
+      "address": "004997d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880",
+      "address": "00499880",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_dtri.cpp_rayTriangleIntersection_FUN_0049a800",
+      "address": "0049a800",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_dynamite.cpp_FUN_0049ce70",
+      "address": "0049ce70",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CInputString_init_FUN_0049d3d0",
+      "address": "0049d3d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CInputString_insertChar_FUN_0049d480",
+      "address": "0049d480",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0049d610",
+      "address": "0049d610",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX'}"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+      "address": "0049f420",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0",
+      "address": "004a0dd0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CStrList_clear_FUN_004a2b10",
+      "address": "004a2b10",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CPickList_insert_FUN_004a5670",
+      "address": "004a5670",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CPickList_remove_FUN_004a56f0",
+      "address": "004a56f0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CPickList_sort_FUN_004a57f0",
+      "address": "004a57f0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_CPickList_swap_FUN_004a5870",
+      "address": "004a5870",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0",
+      "address": "004a68e0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_004a6970",
+      "address": "004a6970",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_elephant.cpp_FUN_004a7070",
+      "address": "004a7070",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_event.cpp_CEventList_FUN_004add80",
+      "address": "004add80",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0f00",
+      "address": "004b0f00",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1a49",
+      "address": "004b1a49",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1a59",
+      "address": "004b1a59",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "core_event.cpp_FUN_004b1b5c",
+      "address": "004b1b5c",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EDX'}"
+        ],
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00",
+      "address": "004b2d00",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_fileio.cpp_copyFileTimestamp_FUN_004b31e0",
+      "address": "004b31e0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0",
+      "address": "004ba4f0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50",
+      "address": "004bca50",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0",
+      "address": "004bf2f0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CStake_init_FUN_004bfe20",
+      "address": "004bfe20",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CMuzzleFlash_process_FUN_004c1a00",
+      "address": "004c1a00",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30",
+      "address": "004c1a30",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_FUN_004c5680",
+      "address": "004c5680",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 5 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720",
+      "address": "004c5720",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90",
+      "address": "004c5e90",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI saved to local vars, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0",
+      "address": "004c79d0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 5 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7db0",
+      "address": "004c7db0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7eb0",
+      "address": "004c7eb0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7f20",
+      "address": "004c7f20",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8c10",
+      "address": "004c8c10",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8ea0",
+      "address": "004c8ea0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8f50",
+      "address": "004c8f50",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_flamegun.cpp_FUN_004cb920",
+      "address": "004cb920",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_flies.cpp_FUN_004cc2c0",
+      "address": "004cc2c0",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230",
+      "address": "004d0230",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_frankgen.cpp_PlaySounds_FUN_004d1a40",
+      "address": "004d1a40",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "core_gabriela.cpp_FUN_004d29f0",
+      "address": "004d29f0",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_gabriela.cpp_FUN_004d2a80",
+      "address": "004d2a80",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_gabriela.cpp_CGabriella_FUN_004d7120",
+      "address": "004d7120",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_game.cpp_FUN_004e3110",
+      "address": "004e3110",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_ghoul.cpp_FUN_004e82d0",
+      "address": "004e82d0",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0",
+      "address": "004e9ca0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004e9e90",
+      "address": "004e9e90",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 12 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_gore.cpp_FUN_004ec290",
+      "address": "004ec290",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_gore.cpp_FUN_004edaa0",
+      "address": "004edaa0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_gore.cpp_FUN_004edb40",
+      "address": "004edb40",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_gore.cpp_FUN_004edb70",
+      "address": "004edb70",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_gore.cpp_FUN_004ede30",
+      "address": "004ede30",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_grave.cpp_FUN_004ee680",
+      "address": "004ee680",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0",
+      "address": "004effb0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_hero.cpp_CHero_FUN_004f2580",
+      "address": "004f2580",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_hero.cpp_CHero_FUN_004f25c0",
+      "address": "004f25c0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_hero.cpp_FUN_004f3890",
+      "address": "004f3890",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_hero.cpp_CHeroPlaceholder_FUN_004f3c90",
+      "address": "004f3c90",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_hostage.cpp_CHostage_FUN_004f6550",
+      "address": "004f6550",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_icepick.cpp_FUN_004f8810",
+      "address": "004f8810",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_icepick.cpp_FUN_004f8b20",
+      "address": "004f8b20",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_imp.cpp_FUN_004fa920",
+      "address": "004fa920",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "engine_ini.cpp_CIniFile_getString_FUN_004fbb20",
+      "address": "004fbb20",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_ini.cpp_CIniFile_setString_FUN_004fbbb0",
+      "address": "004fbbb0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_inv.cpp_CInventory_clear_FUN_004fd0e0",
+      "address": "004fd0e0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_inv.cpp_CInventory_loadItems_FUN_004ff740",
+      "address": "004ff740",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10",
+      "address": "004ffe10",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_ladder.cpp_FUN_00502a70",
+      "address": "00502a70",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_litecone.cpp_FUN_00506c20",
+      "address": "00506c20",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_manpuz.cpp_FUN_00508920",
+      "address": "00508920",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_manpuz.cpp_FUN_005091d0",
+      "address": "005091d0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_manpuz.cpp_FUN_0050a490",
+      "address": "0050a490",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_manpuz.cpp_FUN_0050a8d0",
+      "address": "0050a8d0",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_marquee.cpp_FUN_0050c050",
+      "address": "0050c050",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_matrix.c_transformWorldToView_FUN_0050cc40",
+      "address": "0050cc40",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0",
+      "address": "0050d9f0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 5 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_melee.cpp_FUN_0050ec10",
+      "address": "0050ec10",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0",
+      "address": "0050eea0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20",
+      "address": "0050ef20",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70",
+      "address": "0050fe70",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30",
+      "address": "00512d30",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40",
+      "address": "00512f40",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0",
+      "address": "00515ca0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_meshlod.cpp_CLodVert_addAdjacentEdge_FUN_00515d90",
+      "address": "00515d90",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500",
+      "address": "00516500",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50",
+      "address": "00516d50",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250",
+      "address": "0051d250",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0",
+      "address": "0051e6b0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0",
+      "address": "0051ecd0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_mirror.cpp_transformMirrorVertex_FUN_005229b0",
+      "address": "005229b0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50",
+      "address": "00522a50",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_mission.cpp_CDemonMission_save_FUN_00522e30",
+      "address": "00522e30",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520",
+      "address": "00523520",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f50",
+      "address": "00523f50",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_mobster.cpp_FUN_00525650",
+      "address": "00525650",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_mobster.cpp_FUN_00525720",
+      "address": "00525720",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_mobster.cpp_FUN_00526b20",
+      "address": "00526b20",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "engine_model.c_freeMRGLData_FUN_005280b0",
+      "address": "005280b0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_model.c_getMRGLBounds_FUN_00528140",
+      "address": "00528140",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + 1 stack param, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750",
+      "address": "00529750",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020",
+      "address": "0052e020",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ],
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_motion.cpp_CMotionController_load_FUN_0052e5d0",
+      "address": "0052e5d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50",
+      "address": "0052ee50",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260",
+      "address": "0052f260",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400",
+      "address": "00530400",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EAX', 'EDX'}"
+        ],
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0",
+      "address": "005304f0",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0",
+      "address": "00533ba0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_mp3.cpp_initializeHuffmanTables_FUN_00533f80",
+      "address": "00533f80",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0",
+      "address": "00538ba0",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_msnedit.cpp_FUN_00538df0",
+      "address": "00538df0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060",
+      "address": "00539060",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_msnedit.cpp_FUN_0053c730",
+      "address": "0053c730",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_netgame.cpp_FUN_0053f550",
+      "address": "0053f550",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_netgame.cpp_allocSimFrame_FUN_0053f5a0",
+      "address": "0053f5a0",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0",
+      "address": "005438c0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0",
+      "address": "005441f0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10",
+      "address": "00544f10",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180",
+      "address": "00545180",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_passngr.cpp_FUN_005460c0",
+      "address": "005460c0",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_path.cpp_FUN_005463d0",
+      "address": "005463d0",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_path.cpp_CPathMap_ctor_FUN_00546450",
+      "address": "00546450",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_005490c0",
+      "address": "005490c0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_0054afb0",
+      "address": "0054afb0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 6 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_0054b520",
+      "address": "0054b520",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620",
+      "address": "0054c620",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteOrReload_FUN_0054c660",
+      "address": "0054c660",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e",
+      "address": "0054c72e",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_platfrm.cpp_FUN_0054c850",
+      "address": "0054c850",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590",
+      "address": "00550590",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0",
+      "address": "005506c0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_scat.cpp_FUN_00557df0",
+      "address": "00557df0",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_script.cpp_FUN_005594a0",
+      "address": "005594a0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_script.cpp_CScript_FreeSomething2_FUN_005598f0",
+      "address": "005598f0",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_script.cpp_FUN_00559b20",
+      "address": "00559b20",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_script.cpp_CScript_SkipCinematic_FUN_005602e0",
+      "address": "005602e0",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_script.cpp_CScript_dbLoad_FUN_005603c0",
+      "address": "005603c0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_script.cpp_FUN_005627f0",
+      "address": "005627f0",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_script.cpp_FUN_00566bc0",
+      "address": "00566bc0",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_sentinel.cpp_FUN_00568b70",
+      "address": "00568b70",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_0056d140",
+      "address": "0056d140",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_0056e5d0",
+      "address": "0056e5d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_set.cpp_FUN_0056e890",
+      "address": "0056e890",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_set.cpp_FUN_0056e960",
+      "address": "0056e960",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + 1 stack param, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_set.cpp_FUN_00570700",
+      "address": "00570700",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_00570870",
+      "address": "00570870",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_set.cpp_CDemonSet_isCameraPanning_FUN_00571320",
+      "address": "00571320",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_setcolid.cpp_CDemonSet_refinedRaycast_FUN_005726c0",
+      "address": "005726c0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0",
+      "address": "00574ba0",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ],
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30",
+      "address": "00574e30",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_setedit.cpp_ImportingGroundTextures_FUN_00578420",
+      "address": "00578420",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_setedit.cpp_FUN_0057b910",
+      "address": "0057b910",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_setedit.cpp_FUN_0057e430",
+      "address": "0057e430",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50",
+      "address": "00587b50",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_shotgun.cpp_FUN_00587f70",
+      "address": "00587f70",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_shotgun.cpp_CShotgun_FUN_005887a0",
+      "address": "005887a0",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI saved to local vars, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589450",
+      "address": "00589450",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_005894c0",
+      "address": "005894c0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_readNonEmptyLine_FUN_005895f0",
+      "address": "005895f0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589740",
+      "address": "00589740",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589b10",
+      "address": "00589b10",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589bb0",
+      "address": "00589bb0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589c20",
+      "address": "00589c20",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 10 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589f40",
+      "address": "00589f40",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00589fe0",
+      "address": "00589fe0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058a0f0",
+      "address": "0058a0f0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058a1b0",
+      "address": "0058a1b0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058a2b0",
+      "address": "0058a2b0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0",
+      "address": "0058a3d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0",
+      "address": "0058a4a0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 40 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10",
+      "address": "0058aa10",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0",
+      "address": "0058abb0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058ac30",
+      "address": "0058ac30",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058ac80",
+      "address": "0058ac80",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 6 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058ad30",
+      "address": "0058ad30",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0",
+      "address": "0058adb0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058aeb0",
+      "address": "0058aeb0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 6 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058af40",
+      "address": "0058af40",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058afe0",
+      "address": "0058afe0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 8 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058b160",
+      "address": "0058b160",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058b200",
+      "address": "0058b200",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058b260",
+      "address": "0058b260",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0",
+      "address": "0058b2c0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0",
+      "address": "0058b3a0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058b660",
+      "address": "0058b660",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 12 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058b8e0",
+      "address": "0058b8e0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058b9b0",
+      "address": "0058b9b0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 16 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058bc40",
+      "address": "0058bc40",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058bd00",
+      "address": "0058bd00",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 25 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058c190",
+      "address": "0058c190",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 121 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058d790",
+      "address": "0058d790",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 29 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058dde0",
+      "address": "0058dde0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 7 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058de70",
+      "address": "0058de70",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 19 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058e0b0",
+      "address": "0058e0b0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 9 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058e240",
+      "address": "0058e240",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 13 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058e3e0",
+      "address": "0058e3e0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0",
+      "address": "0058e4e0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 6 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058e600",
+      "address": "0058e600",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690",
+      "address": "0058e690",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 19 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058eaa0",
+      "address": "0058eaa0",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60",
+      "address": "0058ec60",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058ede0",
+      "address": "0058ede0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 17 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'ECX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CDeformableModel_save_FUN_0058f040",
+      "address": "0058f040",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120",
+      "address": "0058f120",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 22 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_0058f790",
+      "address": "0058f790",
+      "current": "unknown",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810",
+      "address": "0058f810",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 205 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00592520",
+      "address": "00592520",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 4 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00595f30",
+      "address": "00595f30",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 7 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00598f10",
+      "address": "00598f10",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0",
+      "address": "00598fc0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_FUN_00599480",
+      "address": "00599480",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeledit.cpp_LodVert_copy_FUN_00599550",
+      "address": "00599550",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070",
+      "address": "0059a070",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 5 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40",
+      "address": "0059ce40",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40",
+      "address": "0059df40",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820",
+      "address": "0059f820",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340",
+      "address": "005a0340",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0",
+      "address": "005a03b0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0",
+      "address": "005a07a0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040",
+      "address": "005a1040",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160",
+      "address": "005a1160",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX', 'EDX'}"
+        ],
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510",
+      "address": "005a1510",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0",
+      "address": "005a15e0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0",
+      "address": "005a63b0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540",
+      "address": "005a6540",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070",
+      "address": "005a7070",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100",
+      "address": "005a7100",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0",
+      "address": "005a96e0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_setSfxPosition_FUN_005a9820",
+      "address": "005a9820",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 7 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0",
+      "address": "005a98b0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_setSfxTrackedDoublePosition_FUN_005a9910",
+      "address": "005a9910",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_setSfxVelocity_FUN_005a9970",
+      "address": "005a9970",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 7 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00",
+      "address": "005a9a00",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70",
+      "address": "005a9a70",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0",
+      "address": "005a9ae0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40",
+      "address": "005a9b40",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_set3DListenerPos_FUN_005aa020",
+      "address": "005aa020",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 7 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0",
+      "address": "005aa1c0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 7 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10",
+      "address": "005abb10",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_selectTexture_FUN_005b72b3",
+      "address": "005b72b3",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_updateTexture_FUN_005b72fb",
+      "address": "005b72fb",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_selectTexture_FUN_005b7340",
+      "address": "005b7340",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_updateTexture_FUN_005b7380",
+      "address": "005b7380",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_selectTextureBGRA_FUN_005b73be",
+      "address": "005b73be",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_updateTextureBGRA_FUN_005b73f6",
+      "address": "005b73f6",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_drawPolygon_FUN_005b75e0",
+      "address": "005b75e0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_drawPolygon2_FUN_005b7610",
+      "address": "005b7610",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_add3dLine_FUN_005b79d3",
+      "address": "005b79d3",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_setFogColorFromPalette_FUN_005b7b01",
+      "address": "005b7b01",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_clearZBox_FUN_005b7c00",
+      "address": "005b7c00",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30",
+      "address": "005b7c30",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_restoreZBuffer_FUN_005b7d20",
+      "address": "005b7d20",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_getVideoMemory_FUN_005b7d60",
+      "address": "005b7d60",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_buildCardList_FUN_005b7db0",
+      "address": "005b7db0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_windll.cpp_setVideoModeX_FUN_005b7e8b",
+      "address": "005b7e8b",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_stairs.cpp_FUN_005b9c10",
+      "address": "005b9c10",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_FUN_005baee0",
+      "address": "005baee0",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_CStranger_FUN_005c06b0",
+      "address": "005c06b0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_CStranger_FUN_005c07b0",
+      "address": "005c07b0",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_FUN_005c3750",
+      "address": "005c3750",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_FUN_005c37e0",
+      "address": "005c37e0",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370",
+      "address": "005c4370",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX', 'EDX'}"
+        ],
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "core_stranger.cpp_CStranger_FUN_005c5170",
+      "address": "005c5170",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590",
+      "address": "005c7590",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "address": "005c7910",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005c8280",
+      "address": "005c8280",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30",
+      "address": "005d0d30",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_CObj_copyFrom_FUN_005d2650",
+      "address": "005d2650",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_CObj_appendTo_FUN_005d2720",
+      "address": "005d2720",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40",
+      "address": "005d3e40",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0",
+      "address": "005d3ed0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020",
+      "address": "005d6020",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0",
+      "address": "005d63d0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d8350",
+      "address": "005d8350",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d8390",
+      "address": "005d8390",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d83d0",
+      "address": "005d83d0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d84d0",
+      "address": "005d84d0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d8520",
+      "address": "005d8520",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d85a0",
+      "address": "005d85a0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d85f0",
+      "address": "005d85f0",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "shape_superopt.cpp_FUN_005d8630",
+      "address": "005d8630",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_tbplayer.cpp_FUN_005da120",
+      "address": "005da120",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_tbplayer.cpp_FUN_005da370",
+      "address": "005da370",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EAX', 'EDX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_teleport.cpp_CTeleportDest_FUN_005da7d0",
+      "address": "005da7d0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_tentacle.cpp_FUN_005db9d0",
+      "address": "005db9d0",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_tentacle.cpp_FUN_005dbb70",
+      "address": "005dbb70",
+      "current": "unknown",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_texlist.cpp_CTextureList_captureAllTextures_FUN_005dc230",
+      "address": "005dc230",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_texlist.cpp_CTextureList_renderTexture_FUN_005dca30",
+      "address": "005dca30",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_trigger.cpp_CTrigger_FUN_005e1350",
+      "address": "005e1350",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_trisock.cpp_parseIPAddress_FUN_005e1700",
+      "address": "005e1700",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_trisock.cpp_parseIPComponents_FUN_005e1800",
+      "address": "005e1800",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_trisock.cpp_buildSockaddrIn_FUN_005e19d0",
+      "address": "005e19d0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_trisock.cpp_acceptConnection_FUN_005e1d80",
+      "address": "005e1d80",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "support_trisock.cpp_getSocketName_FUN_005e1df0",
+      "address": "005e1df0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_terrain.cpp_CTerrain_process_FUN_005e2050",
+      "address": "005e2050",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_vampboss.cpp_FUN_005e6b80",
+      "address": "005e6b80",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 40,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0",
+      "address": "005e6da0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_vehicle.cpp_CVehicle_serialize_FUN_005e8720",
+      "address": "005e8720",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_waypoint.cpp_FUN_005ec320",
+      "address": "005ec320",
+      "current": "unknown",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ece60",
+      "address": "005ece60",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_005efde0",
+      "address": "005efde0",
+      "current": "__cdecl",
+      "suggested": "__fpureg",
+      "confidence": 35,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0, uses single-operand FPU"
+        ]
+      ]
+    },
+    {
+      "name": "core_werewolf.cpp_CWerewolf_FUN_005f1820",
+      "address": "005f1820",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0",
+      "address": "005f23f0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0",
+      "address": "005f2dc0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi_edi",
+          "ESI and EDI used as inputs + stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'ECX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210",
+      "address": "005f4210",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 4 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290",
+      "address": "005f4290",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_winvideo.cpp_closeMovie_FUN_005f46b0",
+      "address": "005f46b0",
+      "current": "__cdecl",
+      "suggested": "__stack_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack_esi",
+          "ESI input + stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "wincore_winvideo.cpp_playMovie_FUN_005f4a00",
+      "address": "005f4a00",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0",
+      "address": "005f77e0",
+      "current": "__cdecl",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 3 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_zombie.cpp_CZombie_FUN_005fb1f0",
+      "address": "005fb1f0",
+      "current": "unknown",
+      "suggested": "__stack3_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack3_esi",
+          "ESI input + 32 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "core_zombie.cpp_FUN_005fcd20",
+      "address": "005fcd20",
+      "current": "unknown",
+      "suggested": "__stack2_esi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi",
+          "ESI input + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_acos_FUN_00600162",
+      "address": "00600162",
+      "current": "__fpustack",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_FUN_00606960",
+      "address": "00606960",
+      "current": "__fpustack",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_generate_nan_FUN_00606a81",
+      "address": "00606a81",
+      "current": "__watcallRegister",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_generate_nan_FUN_00606a8c",
+      "address": "00606a8c",
+      "current": "__watcallRegister",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_generate_nan_FUN_00606a97",
+      "address": "00606a97",
+      "current": "__watcallRegister",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_generate_nan_FUN_00606a9d",
+      "address": "00606a9d",
+      "current": "__watcallRegister",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_generate_nan_FUN_00606aa3",
+      "address": "00606aa3",
+      "current": "__watcallRegister",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_generate_nan_FUN_00606aa9",
+      "address": "00606aa9",
+      "current": "__watcallRegister",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606aeb",
+      "address": "00606aeb",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606b17",
+      "address": "00606b17",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606b7f",
+      "address": "00606b7f",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606bb3",
+      "address": "00606bb3",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_FUN_00606c23",
+      "address": "00606c23",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_FUN_00606c57",
+      "address": "00606c57",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606cc7",
+      "address": "00606cc7",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606cfb",
+      "address": "00606cfb",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606d6b",
+      "address": "00606d6b",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606d9f",
+      "address": "00606d9f",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606e0f",
+      "address": "00606e0f",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606e43",
+      "address": "00606e43",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_FUN_00606eb3",
+      "address": "00606eb3",
+      "current": "unknown",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_fdiv_thunk_FUN_00606ee7",
+      "address": "00606ee7",
+      "current": "__fpu_thunk",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98",
+      "address": "00606f98",
+      "current": "__fpustack",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ],
+        [
+          "__cdecl/__watcallStack",
+          "No register inputs, only stack params"
+        ]
+      ]
+    },
+    {
+      "name": "crt_strstream.cpp_strstreambuf_overflow_FUN_0060b9bd",
+      "address": "0060b9bd",
+      "current": "__watcallStack",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 2 stack params, returns EAX"
+        ]
+      ]
+    },
+    {
+      "name": "crt_math.c_dmul_FUN_0060e0b9",
+      "address": "0060e0b9",
+      "current": "__watcallRegister",
+      "suggested": "__fpureg",
+      "confidence": 30,
+      "reasons": [
+        [
+          "__fpureg",
+          "Returns float via ST0"
+        ]
+      ]
+    },
+    {
+      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
+      "address": "0060e6a0",
+      "current": "__cdecl",
+      "suggested": "__stack2_esi_edi",
+      "confidence": 25,
+      "reasons": [
+        [
+          "__stack2_esi_edi",
+          "ESI+EDI inputs + 5 stack params, returns EAX"
+        ],
+        [
+          "__watcallRegister",
+          "Multiple watcall regs as inputs: {'EBX', 'EAX'}"
+        ]
+      ]
+    }
+  ]
+}
