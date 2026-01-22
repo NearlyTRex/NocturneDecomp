@@ -100,24 +100,24 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     if (g_RenderStateFlag2 == PREPROCESS_TEXTURE_NORMALIZE_ALT) {
       uVar19 = pSVar16->texture_u;
       g_StartTextureU =
-           (int)(CONCAT44 /* combine 2-byte values */(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
+           (int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
                 (longlong)pSVar16->perspective_w);
       uVar19 = right_vertex->texture_u;
       g_DeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
-                  ((int)(CONCAT44 /* combine 2-byte values */(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
+                  ((int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
                         (longlong)right_vertex->perspective_w) - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       uVar19 = pSVar16->texture_v;
       g_StartTextureV =
-           (int)(CONCAT44 /* combine 2-byte values */(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
+           (int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
                 (longlong)pSVar16->perspective_w);
       uVar19 = right_vertex->texture_v;
       g_DeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
-                  ((int)(CONCAT44 /* combine 2-byte values */(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
+                  ((int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
                         (longlong)right_vertex->perspective_w) - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
     }
@@ -173,12 +173,12 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                         (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
         g_VertexRedStart = uVar8 & 0xffff;
         g_VertexRedDelta = uVar19 & 0xffff;
-        uVar38 = ((CONCAT44 /* combine 2-byte values */(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44 /* combine 2-byte values */(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44 /* combine 2-byte values */(uRam00682694,uVar8) & 0xffffffff0000ffff;
-        uVar43 = ((CONCAT44 /* combine 2-byte values */(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44 /* combine 2-byte values */(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44 /* combine 2-byte values */(uRam006826b4,uVar19) & 0xffffffff0000ffff;
+        uVar38 = ((CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff;
+        uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff;
       }
     }
     else {
@@ -200,12 +200,12 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                      (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       g_VertexBlueStart = uVar14 & 0xffff;
       g_VertexBlueDelta = uVar8 & 0xffff;
-      uVar38 = ((CONCAT44 /* combine 2-byte values */(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44 /* combine 2-byte values */(uRam0068269c,uVar13) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44 /* combine 2-byte values */(uRam006826a4,uVar14) & 0xffffffff0000ffff;
-      uVar43 = ((CONCAT44 /* combine 2-byte values */(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44 /* combine 2-byte values */(uRam006826bc,uVar11) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44 /* combine 2-byte values */(uRam006826c4,uVar8) & 0xffffffff0000ffff;
+      uVar38 = ((CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam0068269c,uVar13) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam006826a4,uVar14) & 0xffffffff0000ffff;
+      uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam006826bc,uVar11) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam006826c4,uVar8) & 0xffffffff0000ffff;
     }
     uVar19 = 0;
     sVar42 = (short)uVar43;
@@ -244,49 +244,49 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                               (int)g_CurrentTextureData)];
           }
           uVar23 = psllw((ulonglong)
-                         CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)(
+                         CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(
                                                   uVar9 >> 0x18) << 0x30) >> 0x28),
                                                   (char)(uVar9 >> 0x10)) << 0x20) >> 0x18),
-                                                  CONCAT12 /* combine 2-byte values */((char)(uVar9 >> 8),(short)uVar9)) >> 0x10
+                                                  CONCAT12((char)(uVar9 >> 8),(short)uVar9)) >> 0x10
                                         ),(short)uVar9) & 0xffffffff00ff00ff,4);
-          uVar23 = pmulhw(uVar23,CONCAT26 /* combine 2-byte values */(uVar20 >> 3,
-                                          CONCAT24 /* combine 2-byte values */(uVar48 >> 3,
-                                                   CONCAT22 /* combine 2-byte values */(uVar47 >> 3,(ushort)uVar38 >> 3))));
+          uVar23 = pmulhw(uVar23,CONCAT26(uVar20 >> 3,
+                                          CONCAT24(uVar48 >> 3,
+                                                   CONCAT22(uVar47 >> 3,(ushort)uVar38 >> 3))));
           sVar36 = (short)uVar23;
           bVar3 = (0 < sVar36) * (sVar36 < 0x100) * (char)uVar23 - (0xff < sVar36);
           sVar36 = (short)((ulonglong)uVar23 >> 0x10);
           cVar4 = (0 < sVar36) * (sVar36 < 0x100) * (char)((ulonglong)uVar23 >> 0x10) -
                   (0xff < sVar36);
-          uVar21 = CONCAT11 /* combine 2-byte values */(cVar4,bVar3);
+          uVar21 = CONCAT11(cVar4,bVar3);
           sVar36 = (short)((ulonglong)uVar23 >> 0x20);
           cVar5 = (0 < sVar36) * (sVar36 < 0x100) * (char)((ulonglong)uVar23 >> 0x20) -
                   (0xff < sVar36);
           sVar36 = (short)((ulonglong)uVar23 >> 0x30);
           bVar6 = (0 < sVar36) * (sVar36 < 0x100) * (char)((ulonglong)uVar23 >> 0x30) -
                   (0xff < sVar36);
-          uVar22 = CONCAT13 /* combine 2-byte values */(bVar6,CONCAT12 /* combine 2-byte values */(cVar5,uVar21));
+          uVar22 = CONCAT13(bVar6,CONCAT12(cVar5,uVar21));
           if ((g_RenderStateFlags & 8U) != 0) {
             SVar1 = g_AlphaTable[iVar10 >> 8];
             uVar34 = (ulonglong)SVar1 ^ (ulonglong)g_AlphaTable[0xff];
-            uVar9 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)bVar6 << 0x30) >> 0x28),
-                                                    CONCAT14 /* combine 2-byte values */(cVar5,uVar22)) >> 0x20),uVar22) >> 0x18
+            uVar9 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar6 << 0x30) >> 0x28),
+                                                    CONCAT14(cVar5,uVar22)) >> 0x20),uVar22) >> 0x18
                           );
             uVar25 = (uint5)uVar9 & 0xffffffff00;
             uVar24 = (ushort)bVar3 * (short)uVar34 + (ushort)bVar33 * SVar1.red;
-            uVar29 = ((ushort)(CONCAT43 /* combine 2-byte values */(uVar9,CONCAT12 /* combine 2-byte values */(cVar4,uVar21)) >> 0x10) & 0xff) *
+            uVar29 = ((ushort)(CONCAT43(uVar9,CONCAT12(cVar4,uVar21)) >> 0x10) & 0xff) *
                      (short)(uVar34 >> 0x10) + (ushort)(byte)uVar43 * SVar1.green;
             uVar27 = (short)(uVar25 >> 8) * (short)(uVar34 >> 0x20) +
-                     (short)CONCAT21 /* combine 2-byte values */(uVar37,(char)uVar35) * SVar1.blue;
+                     (short)CONCAT21(uVar37,(char)uVar35) * SVar1.blue;
             uVar31 = (short)(uVar25 >> 0x18) * (short)(uVar34 >> 0x30) + (uVar37 >> 8) * SVar1.pad;
             uVar26 = uVar24 >> 8;
             uVar30 = uVar29 >> 8;
             uVar28 = uVar27 >> 8;
             uVar32 = uVar31 >> 8;
-            uVar22 = CONCAT13 /* combine 2-byte values */((uVar32 != 0) * (uVar32 < 0x100) * (char)(uVar31 >> 8) -
+            uVar22 = CONCAT13((uVar32 != 0) * (uVar32 < 0x100) * (char)(uVar31 >> 8) -
                               (0xff < uVar32),
-                              CONCAT12 /* combine 2-byte values */((uVar28 != 0) * (uVar28 < 0x100) * (char)(uVar27 >> 8) -
+                              CONCAT12((uVar28 != 0) * (uVar28 < 0x100) * (char)(uVar27 >> 8) -
                                        (0xff < uVar28),
-                                       CONCAT11 /* combine 2-byte values */((uVar30 != 0) * (uVar30 < 0x100) *
+                                       CONCAT11((uVar30 != 0) * (uVar30 < 0x100) *
                                                 (char)(uVar29 >> 8) - (0xff < uVar30),
                                                 (uVar26 != 0) * (uVar26 < 0x100) *
                                                 (char)(uVar24 >> 8) - (0xff < uVar26))));
@@ -306,13 +306,13 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
         uVar8 = uVar8 + g_DeltaTextureV;
         iVar17 = iVar17 + g_DeltaDepthW;
         iVar10 = iVar10 + g_VertexAlphaDelta;
-        uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar41),
-                          CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
+        uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar41),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
                                             sVar40),
-                                   CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
                                                              0x10) < sVar39),
-                                            -(ushort)(SUB82 /* extract 2-byte value */(g_SelectedClearColor,0) < sVar36)))) &
-                 CONCAT26 /* combine 2-byte values */(sVar41,CONCAT24 /* combine 2-byte values */(sVar40,CONCAT22 /* combine 2-byte values */(sVar39,sVar36)));
+                                            -(ushort)(SUB82(g_SelectedClearColor,0) < sVar36)))) &
+                 CONCAT26(sVar41,CONCAT24(sVar40,CONCAT22(sVar39,sVar36)));
       }
     }
     else {
@@ -336,9 +336,9 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                               (int)g_CurrentTextureData);
             uVar9 = g_Hardware32BitPalette[*pbVar15];
             uVar38 = (ulonglong)
-                     CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar9 
+                     CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar9 
                                                   >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14 /* combine 2-byte values */((char)(uVar9 >> 0x10),uVar9)) >> 0x20),
+                                                  CONCAT14((char)(uVar9 >> 0x10),uVar9)) >> 0x20),
                                                   uVar9) >> 0x18),(char)(uVar9 >> 8)),
                               (ushort)(byte)uVar9) & 0xffffffff00ffffff;
             uVar9 = (uint)*(byte *)(((int)pbVar15 - (int)g_CurrentTextureData) +
@@ -349,14 +349,14 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                 uVar22 = *(uint *)(uVar19 + (int)g_CurrentScreenPtr);
                 uVar24 = (ushort)(((uint7)(byte)((uint)uVar22 >> 0x18) << 0x30) >> 0x28);
                 uVar43 = (ulonglong)
-                         CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */(uVar24,CONCAT14 /* combine 2-byte values */((char)((uint)uVar22 >> 0x10),
+                         CONCAT34((int3)(CONCAT25(uVar24,CONCAT14((char)((uint)uVar22 >> 0x10),
                                                                   uVar22)) >> 0x20),uVar22) &
                          0xffffffff00ffffff;
-                uVar7 = CONCAT51 /* combine 2-byte values */((int5)(uVar43 >> 0x18),(char)((uint)uVar22 >> 8));
+                uVar7 = CONCAT51((int5)(uVar43 >> 0x18),(char)((uint)uVar22 >> 8));
                 uVar23 = psllw(uVar38,4);
-                uVar23 = pmulhw(uVar23,CONCAT26 /* combine 2-byte values */(uVar20 >> 3,
-                                                CONCAT24 /* combine 2-byte values */(uVar48 >> 3,
-                                                         CONCAT22 /* combine 2-byte values */(uVar47 >> 3,uVar37 >> 3))));
+                uVar23 = pmulhw(uVar23,CONCAT26(uVar20 >> 3,
+                                                CONCAT24(uVar48 >> 3,
+                                                         CONCAT22(uVar47 >> 3,uVar37 >> 3))));
                 SVar1 = g_AlphaTable[uVar9 * iVar10 >> 0x10];
                 sVar36 = (short)uVar23;
                 sVar39 = (short)((ulonglong)uVar23 >> 0x10);
@@ -370,30 +370,30 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                                        (0xff < sVar36));
                 uVar30 = (ushort)(byte)((0 < sVar39) * (sVar39 < 0x100) *
                                         (char)((ulonglong)uVar23 >> 0x10) - (0xff < sVar39));
-                sVar36 = (short)CONCAT21 /* combine 2-byte values */(uVar29,(0 < sVar40) * (sVar40 < 0x100) *
+                sVar36 = (short)CONCAT21(uVar29,(0 < sVar40) * (sVar40 < 0x100) *
                                                 (char)((ulonglong)uVar23 >> 0x20) - (0xff < sVar40))
                 ;
                 uVar29 = uVar29 >> 8;
                 if (g_BlendMode == 0) {
-                  uVar23 = paddusw(CONCAT26 /* combine 2-byte values */(uVar29 * SVar1.pad,
-                                            CONCAT24 /* combine 2-byte values */(sVar36 * SVar1.blue,
-                                                     CONCAT22 /* combine 2-byte values */(uVar30 * SVar1.green,
+                  uVar23 = paddusw(CONCAT26(uVar29 * SVar1.pad,
+                                            CONCAT24(sVar36 * SVar1.blue,
+                                                     CONCAT22(uVar30 * SVar1.green,
                                                               uVar26 * SVar1.red))),
-                                   CONCAT26 /* combine 2-byte values */((uVar24 >> 8) * (short)(uVar38 >> 0x30),
-                                            CONCAT24 /* combine 2-byte values */((short)(uVar43 >> 0x20) *
+                                   CONCAT26((uVar24 >> 8) * (short)(uVar38 >> 0x30),
+                                            CONCAT24((short)(uVar43 >> 0x20) *
                                                      (short)(uVar38 >> 0x20),
-                                                     CONCAT22 /* combine 2-byte values */((short)uVar7 * (short)(uVar38 >> 0x10)
+                                                     CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)
                                                               ,(ushort)(byte)uVar22 * (short)uVar38)
                                                     )));
                   uVar24 = (ushort)uVar23 >> 8;
                   uVar26 = (ushort)((ulonglong)uVar23 >> 0x10) >> 8;
                   uVar29 = (ushort)((ulonglong)uVar23 >> 0x20) >> 8;
                   uVar30 = (ushort)((ulonglong)uVar23 >> 0x38);
-                  uVar22 = CONCAT13 /* combine 2-byte values */((uVar30 != 0) * (uVar30 < 0x100) *
+                  uVar22 = CONCAT13((uVar30 != 0) * (uVar30 < 0x100) *
                                     (char)((ulonglong)uVar23 >> 0x38) - (0xff < uVar30),
-                                    CONCAT12 /* combine 2-byte values */((uVar29 != 0) * (uVar29 < 0x100) *
+                                    CONCAT12((uVar29 != 0) * (uVar29 < 0x100) *
                                              (char)((ulonglong)uVar23 >> 0x28) - (0xff < uVar29),
-                                             CONCAT11 /* combine 2-byte values */((uVar26 != 0) * (uVar26 < 0x100) *
+                                             CONCAT11((uVar26 != 0) * (uVar26 < 0x100) *
                                                       (char)((ulonglong)uVar23 >> 0x18) -
                                                       (0xff < uVar26),
                                                       (uVar24 != 0) * (uVar24 < 0x100) *
@@ -401,20 +401,20 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
                                                       (0xff < uVar24))));
                 }
                 else {
-                  uVar23 = psllw(CONCAT62 /* combine 2-byte values */(uVar7,(ushort)(byte)uVar22),8);
-                  uVar23 = paddusw(CONCAT26 /* combine 2-byte values */(uVar29 * SVar1.pad,
-                                            CONCAT24 /* combine 2-byte values */(sVar36 * SVar1.blue,
-                                                     CONCAT22 /* combine 2-byte values */(uVar30 * SVar1.green,
+                  uVar23 = psllw(CONCAT62(uVar7,(ushort)(byte)uVar22),8);
+                  uVar23 = paddusw(CONCAT26(uVar29 * SVar1.pad,
+                                            CONCAT24(sVar36 * SVar1.blue,
+                                                     CONCAT22(uVar30 * SVar1.green,
                                                               uVar26 * SVar1.red))),uVar23);
                   uVar24 = (ushort)uVar23 >> 8;
                   uVar26 = (ushort)((ulonglong)uVar23 >> 0x10) >> 8;
                   uVar29 = (ushort)((ulonglong)uVar23 >> 0x20) >> 8;
                   uVar30 = (ushort)((ulonglong)uVar23 >> 0x38);
-                  uVar22 = CONCAT13 /* combine 2-byte values */((uVar30 != 0) * (uVar30 < 0x100) *
+                  uVar22 = CONCAT13((uVar30 != 0) * (uVar30 < 0x100) *
                                     (char)((ulonglong)uVar23 >> 0x38) - (0xff < uVar30),
-                                    CONCAT12 /* combine 2-byte values */((uVar29 != 0) * (uVar29 < 0x100) *
+                                    CONCAT12((uVar29 != 0) * (uVar29 < 0x100) *
                                              (char)((ulonglong)uVar23 >> 0x28) - (0xff < uVar29),
-                                             CONCAT11 /* combine 2-byte values */((uVar26 != 0) * (uVar26 < 0x100) *
+                                             CONCAT11((uVar26 != 0) * (uVar26 < 0x100) *
                                                       (char)((ulonglong)uVar23 >> 0x18) -
                                                       (0xff < uVar26),
                                                       (uVar24 != 0) * (uVar24 < 0x100) *
@@ -424,18 +424,18 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
               }
               else {
                 uVar23 = psllw(uVar38,4);
-                uVar23 = pmulhw(uVar23,CONCAT26 /* combine 2-byte values */(uVar20 >> 3,
-                                                CONCAT24 /* combine 2-byte values */(uVar48 >> 3,
-                                                         CONCAT22 /* combine 2-byte values */(uVar47 >> 3,uVar37 >> 3))));
+                uVar23 = pmulhw(uVar23,CONCAT26(uVar20 >> 3,
+                                                CONCAT24(uVar48 >> 3,
+                                                         CONCAT22(uVar47 >> 3,uVar37 >> 3))));
                 sVar36 = (short)uVar23;
                 sVar39 = (short)((ulonglong)uVar23 >> 0x10);
                 sVar40 = (short)((ulonglong)uVar23 >> 0x20);
                 sVar41 = (short)((ulonglong)uVar23 >> 0x30);
-                uVar22 = CONCAT13 /* combine 2-byte values */((0 < sVar41) * (sVar41 < 0x100) *
+                uVar22 = CONCAT13((0 < sVar41) * (sVar41 < 0x100) *
                                   (char)((ulonglong)uVar23 >> 0x30) - (0xff < sVar41),
-                                  CONCAT12 /* combine 2-byte values */((0 < sVar40) * (sVar40 < 0x100) *
+                                  CONCAT12((0 < sVar40) * (sVar40 < 0x100) *
                                            (char)((ulonglong)uVar23 >> 0x20) - (0xff < sVar40),
-                                           CONCAT11 /* combine 2-byte values */((0 < sVar39) * (sVar39 < 0x100) *
+                                           CONCAT11((0 < sVar39) * (sVar39 < 0x100) *
                                                     (char)((ulonglong)uVar23 >> 0x10) -
                                                     (0xff < sVar39),
                                                     (0 < sVar36) * (sVar36 < 0x100) * (char)uVar23 -
@@ -453,16 +453,16 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
           uVar8 = uVar8 + g_DeltaTextureV;
           iVar17 = iVar17 + g_DeltaDepthW;
           iVar10 = iVar10 + g_VertexAlphaDelta;
-          uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) <
+          uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) <
                                      (short)(uVar20 + sVar46)),
-                            CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
+                            CONCAT24(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
                                               (short)(uVar48 + sVar45)),
-                                     CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
+                                     CONCAT22(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
                                                                0x10) < (short)(uVar47 + sVar44)),
-                                              -(ushort)(SUB82 /* extract 2-byte value */(g_SelectedClearColor,0) <
+                                              -(ushort)(SUB82(g_SelectedClearColor,0) <
                                                        (short)(uVar37 + sVar42))))) &
-                   CONCAT26 /* combine 2-byte values */(uVar20 + sVar46,
-                            CONCAT24 /* combine 2-byte values */(uVar48 + sVar45,CONCAT22 /* combine 2-byte values */(uVar47 + sVar44,uVar37 + sVar42)));
+                   CONCAT26(uVar20 + sVar46,
+                            CONCAT24(uVar48 + sVar45,CONCAT22(uVar47 + sVar44,uVar37 + sVar42)));
         }
         return;
       }
@@ -480,21 +480,21 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
           if ((g_RenderStateFlags & 0x20U) != 0) {
             uVar22 = *(uint *)(uVar19 + (int)g_CurrentScreenPtr);
             uVar43 = (ulonglong)
-                     CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)((uint)
+                     CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
                                                   uVar22 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14 /* combine 2-byte values */((char)((uint)uVar22 >> 0x10),uVar22)) >>
+                                                  CONCAT14((char)((uint)uVar22 >> 0x10),uVar22)) >>
                                                   0x20),uVar22) >> 0x18),(char)((uint)uVar22 >> 8)),
                               (ushort)(byte)uVar22) & 0xffffffff00ffffff;
           }
           uVar23 = psllw((ulonglong)
-                         CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(
+                         CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(
                                                   uVar9 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14 /* combine 2-byte values */((char)(uVar9 >> 0x10),uVar9)) >> 0x20),
+                                                  CONCAT14((char)(uVar9 >> 0x10),uVar9)) >> 0x20),
                                                   uVar9) >> 0x18),(char)(uVar9 >> 8)),
                                   (ushort)(byte)uVar9) & 0xffffffff00ffffff,4);
-          uVar23 = pmulhw(uVar23,CONCAT26 /* combine 2-byte values */(uVar48 >> 3,
-                                          CONCAT24 /* combine 2-byte values */(uVar47 >> 3,
-                                                   CONCAT22 /* combine 2-byte values */(uVar37 >> 3,(ushort)uVar38 >> 3))));
+          uVar23 = pmulhw(uVar23,CONCAT26(uVar48 >> 3,
+                                          CONCAT24(uVar47 >> 3,
+                                                   CONCAT22(uVar37 >> 3,(ushort)uVar38 >> 3))));
           SVar1 = g_AlphaTable[iVar10 >> 8];
           sVar36 = (short)uVar23;
           sVar39 = (short)((ulonglong)uVar23 >> 0x10);
@@ -507,46 +507,46 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
           uVar20 = (ushort)(byte)((0 < sVar36) * (sVar36 < 0x100) * (char)uVar23 - (0xff < sVar36));
           uVar26 = (ushort)(byte)((0 < sVar39) * (sVar39 < 0x100) *
                                   (char)((ulonglong)uVar23 >> 0x10) - (0xff < sVar39));
-          sVar36 = (short)CONCAT21 /* combine 2-byte values */(uVar24,(0 < sVar40) * (sVar40 < 0x100) *
+          sVar36 = (short)CONCAT21(uVar24,(0 < sVar40) * (sVar40 < 0x100) *
                                           (char)((ulonglong)uVar23 >> 0x20) - (0xff < sVar40));
           uVar24 = uVar24 >> 8;
           if (g_BlendMode == 0) {
-            uVar23 = paddusw(CONCAT26 /* combine 2-byte values */(uVar24 * SVar1.pad,
-                                      CONCAT24 /* combine 2-byte values */(sVar36 * SVar1.blue,
-                                               CONCAT22 /* combine 2-byte values */(uVar26 * SVar1.green,uVar20 * SVar1.red))),
-                             CONCAT26 /* combine 2-byte values */((short)(uVar43 >> 0x30) * (short)(uVar35 >> 0x30),
-                                      CONCAT24 /* combine 2-byte values */((short)(uVar43 >> 0x20) * (short)(uVar35 >> 0x20),
-                                               CONCAT22 /* combine 2-byte values */((short)(uVar43 >> 0x10) *
+            uVar23 = paddusw(CONCAT26(uVar24 * SVar1.pad,
+                                      CONCAT24(sVar36 * SVar1.blue,
+                                               CONCAT22(uVar26 * SVar1.green,uVar20 * SVar1.red))),
+                             CONCAT26((short)(uVar43 >> 0x30) * (short)(uVar35 >> 0x30),
+                                      CONCAT24((short)(uVar43 >> 0x20) * (short)(uVar35 >> 0x20),
+                                               CONCAT22((short)(uVar43 >> 0x10) *
                                                         (short)(uVar35 >> 0x10),
                                                         (short)uVar43 * (short)uVar35))));
             uVar20 = (ushort)uVar23 >> 8;
             uVar24 = (ushort)((ulonglong)uVar23 >> 0x10) >> 8;
             uVar26 = (ushort)((ulonglong)uVar23 >> 0x20) >> 8;
             uVar29 = (ushort)((ulonglong)uVar23 >> 0x38);
-            uVar22 = CONCAT13 /* combine 2-byte values */((uVar29 != 0) * (uVar29 < 0x100) * (char)((ulonglong)uVar23 >> 0x38) -
+            uVar22 = CONCAT13((uVar29 != 0) * (uVar29 < 0x100) * (char)((ulonglong)uVar23 >> 0x38) -
                               (0xff < uVar29),
-                              CONCAT12 /* combine 2-byte values */((uVar26 != 0) * (uVar26 < 0x100) *
+                              CONCAT12((uVar26 != 0) * (uVar26 < 0x100) *
                                        (char)((ulonglong)uVar23 >> 0x28) - (0xff < uVar26),
-                                       CONCAT11 /* combine 2-byte values */((uVar24 != 0) * (uVar24 < 0x100) *
+                                       CONCAT11((uVar24 != 0) * (uVar24 < 0x100) *
                                                 (char)((ulonglong)uVar23 >> 0x18) - (0xff < uVar24),
                                                 (uVar20 != 0) * (uVar20 < 0x100) *
                                                 (char)((ulonglong)uVar23 >> 8) - (0xff < uVar20))));
           }
           else {
             uVar23 = psllw(uVar43,8);
-            uVar23 = paddusw(CONCAT26 /* combine 2-byte values */(uVar24 * SVar1.pad,
-                                      CONCAT24 /* combine 2-byte values */(sVar36 * SVar1.blue,
-                                               CONCAT22 /* combine 2-byte values */(uVar26 * SVar1.green,uVar20 * SVar1.red))),
+            uVar23 = paddusw(CONCAT26(uVar24 * SVar1.pad,
+                                      CONCAT24(sVar36 * SVar1.blue,
+                                               CONCAT22(uVar26 * SVar1.green,uVar20 * SVar1.red))),
                              uVar23);
             uVar20 = (ushort)uVar23 >> 8;
             uVar24 = (ushort)((ulonglong)uVar23 >> 0x10) >> 8;
             uVar26 = (ushort)((ulonglong)uVar23 >> 0x20) >> 8;
             uVar29 = (ushort)((ulonglong)uVar23 >> 0x38);
-            uVar22 = CONCAT13 /* combine 2-byte values */((uVar29 != 0) * (uVar29 < 0x100) * (char)((ulonglong)uVar23 >> 0x38) -
+            uVar22 = CONCAT13((uVar29 != 0) * (uVar29 < 0x100) * (char)((ulonglong)uVar23 >> 0x38) -
                               (0xff < uVar29),
-                              CONCAT12 /* combine 2-byte values */((uVar26 != 0) * (uVar26 < 0x100) *
+                              CONCAT12((uVar26 != 0) * (uVar26 < 0x100) *
                                        (char)((ulonglong)uVar23 >> 0x28) - (0xff < uVar26),
-                                       CONCAT11 /* combine 2-byte values */((uVar24 != 0) * (uVar24 < 0x100) *
+                                       CONCAT11((uVar24 != 0) * (uVar24 < 0x100) *
                                                 (char)((ulonglong)uVar23 >> 0x18) - (0xff < uVar24),
                                                 (uVar20 != 0) * (uVar20 < 0x100) *
                                                 (char)((ulonglong)uVar23 >> 8) - (0xff < uVar20))));
@@ -566,13 +566,13 @@ wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031
         uVar8 = uVar8 + g_DeltaTextureV;
         iVar17 = iVar17 + g_DeltaDepthW;
         iVar10 = iVar10 + g_VertexAlphaDelta;
-        uVar38 = CONCAT26 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar41),
-                          CONCAT24 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
+        uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar41),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
                                             sVar40),
-                                   CONCAT22 /* combine 2-byte values */(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
                                                              0x10) < sVar39),
-                                            -(ushort)(SUB82 /* extract 2-byte value */(g_SelectedClearColor,0) < sVar36)))) &
-                 CONCAT26 /* combine 2-byte values */(sVar41,CONCAT24 /* combine 2-byte values */(sVar40,CONCAT22 /* combine 2-byte values */(sVar39,sVar36)));
+                                            -(ushort)(SUB82(g_SelectedClearColor,0) < sVar36)))) &
+                 CONCAT26(sVar41,CONCAT24(sVar40,CONCAT22(sVar39,sVar36)));
       }
     }
   }

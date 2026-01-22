@@ -19,7 +19,7 @@ void crt_heap_c_CoalesceAndAddFreeBlock_FUN_006094c0(void *ptr,HeapBlock *heap_b
   int iVar7;
   uint *puVar8;
   
-  iVar7 = CONCAT22 /* combine 2-byte values */(unaff_0000000e,segment);
+  iVar7 = CONCAT22(unaff_0000000e,segment);
   if (ptr == (void *)0x0) {
     return;
   }

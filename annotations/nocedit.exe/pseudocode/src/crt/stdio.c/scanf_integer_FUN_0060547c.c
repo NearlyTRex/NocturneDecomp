@@ -115,10 +115,10 @@ LAB_00605786:
           }
           local_30 = 0;
           local_34 = uVar3;
-          uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44 /* combine 2-byte values */(local_28,local_2c));
+          uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44(local_28,local_2c));
           local_3c._4_4_ = (int)(uVar10 >> 0x20);
           local_3c._0_4_ = (uint)uVar10;
-          local_3c = CONCAT44 /* combine 2-byte values */(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),
+          local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),
                               (uint)local_3c + local_34);
           local_24 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
           iVar7 = iVar7 + 1;
@@ -209,10 +209,10 @@ LAB_0060569e:
   if (base <= (int)uVar3) goto LAB_00605786;
   local_30 = 0;
   local_34 = uVar3;
-  uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44 /* combine 2-byte values */(local_28,local_2c));
+  uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44(local_28,local_2c));
   local_3c._4_4_ = (int)(uVar10 >> 0x20);
   local_3c._0_4_ = (uint)uVar10;
-  local_3c = CONCAT44 /* combine 2-byte values */(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),
+  local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),
                       (uint)local_3c + local_34);
   goto LAB_0060569e;
 }

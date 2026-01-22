@@ -230,16 +230,17 @@
   },
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 505,
+    "complexity_score": 540,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 40,
     "pseudocode_lines": 180,
-    "suspect_count": 30,
+    "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -911,6 +912,27 @@
       "match": "in_stack_00000004",
       "text": "iVar4 = *(int *)(in_stack_00000004 + 0x2c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 146,
+      "match": "DAT_0310fd48",
+      "text": "if (iVar2 != DAT_0310fd48) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 147,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = *(int *)(iVar4 + 0x104);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 148,
+      "match": "DAT_0310fd48",
+      "text": "DAT_0310fd48 = iVar2;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

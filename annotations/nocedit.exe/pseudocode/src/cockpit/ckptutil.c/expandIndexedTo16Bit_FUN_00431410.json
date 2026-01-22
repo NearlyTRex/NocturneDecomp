@@ -21,7 +21,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 54,
         "line": 27,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
@@ -108,7 +108,7 @@
       },
       {
         "category": "other",
-        "column": 73,
+        "column": 45,
         "line": 27,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -285,14 +285,14 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(byte *)((int)",
-      "text": "CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
+      "text": "CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT22",
-      "text": "CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
+      "text": "CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
       "type": "decompiler_intrinsic"
     },
     {
@@ -341,7 +341,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "CONCAT22",
-      "text": "*(uint *)output_buffer = CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*pbVar1],g_Hardware16BitPalette[bVar2])",
+      "text": "*(uint *)output_buffer = CONCAT22(g_Hardware16BitPalette[*pbVar1],g_Hardware16BitPalette[bVar2])",
       "type": "decompiler_intrinsic"
     },
     {

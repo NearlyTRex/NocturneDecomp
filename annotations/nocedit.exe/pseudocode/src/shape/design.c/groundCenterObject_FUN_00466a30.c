@@ -46,12 +46,12 @@ void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
     if (fVar2 < fVar8) {
       fVar8 = fVar2;
     }
-    local_44 = SUB84 /* extract 2-byte value */(dVar3,0);
+    local_44 = SUB84(dVar3,0);
     uStack_40 = (uint)((ulonglong)dVar3 >> 0x20);
     if (dVar4 < dVar3) {
       dVar4 = dVar3;
     }
-    if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_28,local_2c)) {
+    if (dVar3 < (double)CONCAT44(uStack_28,local_2c)) {
       local_2c = local_44;
       uStack_28 = uStack_40;
     }

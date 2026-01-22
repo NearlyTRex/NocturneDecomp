@@ -464,12 +464,12 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 529,
+    "complexity_score": 549,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 269,
-    "suspect_count": 25,
+    "suspect_count": 27,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output"
@@ -788,6 +788,20 @@
       "match": "extraout_ECX_01",
       "text": "} while (extraout_ECX_01 < iVar11);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 176,
+      "match": "fcos",
+      "text": "fVar15 = (float10)fcos(fVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 177,
+      "match": "fsin",
+      "text": "fVar17 = (float10)fsin(fVar17);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

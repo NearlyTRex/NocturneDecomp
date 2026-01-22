@@ -56,17 +56,18 @@
   },
   "complexity": {
     "assembly_lines": 354,
-    "complexity_score": 712,
+    "complexity_score": 727,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
     "pseudocode_lines": 192,
-    "suspect_count": 49,
+    "suspect_count": 50,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
       "suspect_float",
+      "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -1021,6 +1022,13 @@
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 190,
+      "match": "DAT_0068495c",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_0068495c);",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 2,

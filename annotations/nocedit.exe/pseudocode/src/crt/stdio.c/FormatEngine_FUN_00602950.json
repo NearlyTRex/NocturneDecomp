@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 475,
-    "complexity_score": 761,
+    "complexity_score": 791,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 251,
-    "suspect_count": 49,
+    "suspect_count": 51,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "special_crt_function",
-      "unknown_field"
+      "unknown_field",
+      "warning_struct_overlap",
+      "warning_type_propagation"
     ],
     "total_lines": 726
   },
@@ -261,6 +263,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Struct has overlapping fields",
+      "line": 3,
+      "match": "WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields",
+      "text": "/* WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields */",
+      "type": "warning_struct_overlap"
+    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 24,

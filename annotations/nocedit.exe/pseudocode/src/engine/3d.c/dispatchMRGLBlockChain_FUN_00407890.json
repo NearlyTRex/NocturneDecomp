@@ -37,13 +37,15 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 21,
+    "complexity_score": 36,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 8,
     "pseudocode_lines": 21,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
     "total_lines": 76
   },
   "cross_references": [
@@ -172,5 +174,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 18,
+      "match": "code",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Bad code!\");",
+      "type": "unresolved_funcptr"
+    }
+  ]
 }

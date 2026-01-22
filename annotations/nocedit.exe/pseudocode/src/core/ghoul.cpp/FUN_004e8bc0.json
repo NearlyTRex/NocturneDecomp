@@ -86,14 +86,15 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 298,
+    "complexity_score": 353,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 9,
     "pseudocode_lines": 93,
-    "suspect_count": 20,
+    "suspect_count": 25,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 274
   },
@@ -348,6 +349,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_02d83320",
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_30,DAT_02d83320);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000008",
@@ -404,6 +412,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_02d83310",
+      "text": "bone_index = DAT_02d83310;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000008",
@@ -425,6 +440,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_02d83314",
+      "text": "bone_index = DAT_02d83314;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000004",
@@ -437,6 +459,13 @@
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf08) * 4) != 0) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_02d832fc",
+      "text": "(this_ptr,&local_3c,DAT_02d832fc);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -458,6 +487,13 @@
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf04) * 4) != 0) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 82,
+      "match": "DAT_02d83324",
+      "text": "(this_ptr,&local_60,DAT_02d83324);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 778,
-    "complexity_score": 791,
+    "complexity_score": 806,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
     "pseudocode_lines": 381,
-    "suspect_count": 38,
+    "suspect_count": 39,
     "suspect_types": [
       "badspacebase",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
       "special_crt_function",
-      "unknown_field"
+      "unknown_field",
+      "warning_struct_overlap"
     ],
     "total_lines": 1159
   },
@@ -204,6 +205,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Struct has overlapping fields",
+      "line": 2,
+      "match": "WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields",
+      "text": "/* WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields */",
+      "type": "warning_struct_overlap"
+    },
     {
       "description": "Ghidra failed to resolve stack frame",
       "line": 10,

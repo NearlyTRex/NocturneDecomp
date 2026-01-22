@@ -212,16 +212,17 @@
   },
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 815,
+    "complexity_score": 860,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 12,
     "pseudocode_lines": 160,
-    "suspect_count": 63,
+    "suspect_count": 67,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
+      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -688,6 +689,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_02f37ed0",
+      "text": "(CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_02f37ed0 * 4].z);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 65,
       "match": "in_stack_00000004",
@@ -898,6 +906,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 129,
+      "match": "DAT_02f37ef0",
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),iVar1,6.0,fVar7,DAT_02f37ef0,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 133,
       "match": "(uint *)((int)",
@@ -940,6 +955,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_02f37ef0",
+      "text": "DAT_02f37ef0,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 146,
       "match": "(uint *)((int)",
@@ -966,6 +988,13 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 150,
+      "match": "DAT_02f37ef0",
+      "text": "iVar1 = DAT_02f37ef0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

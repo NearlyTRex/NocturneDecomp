@@ -343,7 +343,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           if (-1 < (int)pcVar16) {
             uVar5 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                               (g_CEditorToolsPtr);
-            g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar5);
+            g_ActiveRenderColor = CONCAT31(extraout_var,uVar5);
             core_morph_cpp_FUN_0052bb80();
           }
           engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr2);

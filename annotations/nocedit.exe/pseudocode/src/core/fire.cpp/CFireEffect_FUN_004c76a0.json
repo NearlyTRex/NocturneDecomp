@@ -37,17 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 411,
+    "complexity_score": 426,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
     "pseudocode_lines": 141,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "suspect_float",
-      "unaffected_reg"
+      "unaffected_reg",
+      "undefined_data"
     ],
     "total_lines": 460
   },
@@ -582,6 +583,13 @@
       "match": "in_stack_00000010",
       "text": "switch(in_stack_00000010) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 82,
+      "match": "DAT_0067aeb8",
+      "text": "puVar5 = &DAT_0067aeb8;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

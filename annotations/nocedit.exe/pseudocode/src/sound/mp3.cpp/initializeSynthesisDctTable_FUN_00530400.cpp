@@ -28,7 +28,7 @@ void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *outpu
   local_28 = 0;
   local_1c = output_dct_table;
   do {
-    dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_30._4_4_,(uint)local_30);
+    dVar2 = (double)CONCAT44(local_30._4_4_,(uint)local_30);
     iVar4 = 1;
     pfVar3 = local_1c;
     pfVar5 = local_1c;
@@ -43,7 +43,7 @@ void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *outpu
         local_30 = (double)*pfVar3;
         crt_math_c_modf_FUN_00602102((double)(*pfVar3 + (float)0.5),(double *)&local_30)
         ;
-        dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_30,local_38._4_4_);
+        dVar1 = (double)CONCAT44((uint)local_30,local_38._4_4_);
         pfVar3 = extraout_EBX_00;
         dVar2 = local_30;
       }
@@ -52,12 +52,12 @@ void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *outpu
         local_30 = dVar2;
         crt_math_c_modf_FUN_00602102((double)(*pfVar3 + (float)-0.5),(double *)&local_38)
         ;
-        dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_38,puVar7);
+        dVar1 = (double)CONCAT44((uint)local_38,puVar7);
         pfVar3 = extraout_EBX;
         dVar2 = local_30;
       }
       local_30._4_4_ = (int)((ulonglong)dVar2 >> 0x20);
-      local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);
+      local_30._0_4_ = SUB84(dVar2,0);
       *pfVar3 = (float)dVar1;
       pfVar3 = pfVar3 + 1;
       iVar4 = iVar4 + 2;

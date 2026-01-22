@@ -52,16 +52,16 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
   local_18 = (int)ROUND(dVar1);
   for (local_14 = local_24; local_14 < local_20; local_14 = local_14 + 1) {
     dVar1 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
-                      ((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)
+                      ((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)
                                        ),
-                       (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),
-                       (double)CONCAT44 /* combine 2-byte values */(uVar3,(int)((ulonglong)coord_y2 >> 0x20)));
+                       (double)CONCAT44(SUB84(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),
+                       (double)CONCAT44(uVar3,(int)((ulonglong)coord_y2 >> 0x20)));
     for (local_60 = local_1c; local_60 < local_18; local_60 = local_60 + 1) {
       dVar2 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
-                        ((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),
+                        ((double)CONCAT44(SUB84(coord_x1,0),
                                           (int)((ulonglong)(double)local_60 >> 0x20)),
-                         (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),
-                         (double)CONCAT44 /* combine 2-byte values */(uVar3,(int)((ulonglong)coord_x2 >> 0x20)));
+                         (double)CONCAT44(SUB84(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),
+                         (double)CONCAT44(uVar3,(int)((ulonglong)coord_x2 >> 0x20)));
       shape_design_c_samplePixelAndAccumulate_FUN_0046ad00
                 (rgb_buffer,alpha_buffer,col_coord,row_coord,local_60,local_14,dVar2 * dVar1,
                  &local_4c,&local_44,&local_3c,&local_34);

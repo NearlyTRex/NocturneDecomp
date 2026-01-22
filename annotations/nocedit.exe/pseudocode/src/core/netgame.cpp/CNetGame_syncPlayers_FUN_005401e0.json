@@ -104,14 +104,16 @@
   },
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 144,
+    "complexity_score": 184,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
     "pseudocode_lines": 129,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
-      "suspect_float"
+      "builtin_function",
+      "suspect_float",
+      "unresolved_funcptr"
     ],
     "total_lines": 453
   },
@@ -472,6 +474,27 @@
       "match": "1.4013e-45",
       "text": "local_1c = 1.4013e-45;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Ghidra builtin function",
+      "line": 102,
+      "match": "builtin_strncpy",
+      "text": "builtin_strncpy(local_194,\"J\\x04T\",4);",
+      "type": "builtin_function"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 114,
+      "match": "code",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_94,\"Waiting on sync code %d from server...\",sync_stage);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Ghidra builtin function",
+      "line": 120,
+      "match": "builtin_strncpy",
+      "text": "builtin_strncpy(local_194,\"\\x13\\x05T\",4);",
+      "type": "builtin_function"
     }
   ]
 }

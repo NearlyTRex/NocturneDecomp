@@ -253,7 +253,7 @@ LAB_0051e453:
         if ((iVar4 == 0) && (iVar9 == 0)) {
           uVar3 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
-          g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar3);
+          g_ActiveRenderColor = CONCAT31(extraout_var,uVar3);
         }
         else if (iStack_17c == *local_24) {
           g_ActiveRenderColor = 0xfa;
@@ -278,7 +278,7 @@ LAB_0051e453:
       }
       uVar3 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
       ;
-      g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar3);
+      g_ActiveRenderColor = CONCAT31(extraout_var_00,uVar3);
       engine_2d_c_drawLine_FUN_004011b0(0,iVar9,10,iVar9);
     }
     shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0((CLodMesh *)auStack_184);

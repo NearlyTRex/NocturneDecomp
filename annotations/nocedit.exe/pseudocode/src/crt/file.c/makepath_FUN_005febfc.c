@@ -85,7 +85,7 @@ crt_file_c_makepath_FUN_005febfc
   else {
     wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(filename);
     wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,(wchar_t *)&local_18);
-    if ((CONCAT22 /* combine 2-byte values */(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {
+    if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {
       path_buffer = (char *)((byte *)path_buffer + 1);
     }
     for (; *filename != '\0'; filename = crt_string_c_mbtowc_next_FUN_00605a70(filename)) {

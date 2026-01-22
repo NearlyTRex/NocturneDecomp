@@ -52,7 +52,7 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr
       crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: exitBackwardToMotionNumber,exitBackwardToFrameNumber\n",local_18);
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (file_handle,"%d,%g\n",local_14->exit_backward_to_motion,
-                 SUB84 /* extract 2-byte value */((double)local_14->exit_backward_to_frame,0),
+                 SUB84((double)local_14->exit_backward_to_frame,0),
                  (int)((ulonglong)(double)local_14->exit_backward_to_frame >> 0x20));
       crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n",local_18);
       iVar7 = 0;
@@ -70,7 +70,7 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr
           iVar7 = iVar7 + 1;
           crt_stdio_c_fprintf_FUN_005fe6d0
                     (file_handle,"%d,%d,%d,%g,%g,%d\n",*piVar6,*piVar5,*piVar4,(double)*pfVar3,
-                     SUB84 /* extract 2-byte value */((double)*pfVar2,0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);
+                     SUB84((double)*pfVar2,0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);
         } while (iVar7 < local_14->transition_count);
       }
       crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d signal count, list: frameNumber, value\n",local_18);

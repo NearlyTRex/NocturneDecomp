@@ -26,13 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 122,
+    "complexity_score": 167,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "pseudocode_lines": 107,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
+      "decompiler_intrinsic",
       "warning_unreachable"
     ],
     "total_lines": 371
@@ -326,6 +327,34 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x005a3fc6) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos(fVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "fsin",
+      "text": "fVar18 = (float10)fsin(fVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "fsin",
+      "text": "fVar20 = (float10)fsin(fVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "fcos",
+      "text": "fVar17 = (float10)fcos(fVar17);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

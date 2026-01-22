@@ -662,16 +662,18 @@
   },
   "complexity": {
     "assembly_lines": 1765,
-    "complexity_score": 1918,
+    "complexity_score": 1988,
     "cross_reference_count": 0,
     "function_call_count": 65,
     "global_count": 65,
     "pseudocode_lines": 713,
-    "suspect_count": 119,
+    "suspect_count": 125,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "unknown_field"
+      "undefined_data",
+      "unknown_field",
+      "warning_type_propagation"
     ],
     "total_lines": 2478
   },
@@ -2099,6 +2101,13 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
@@ -2148,6 +2157,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_03670650",
+      "text": "DAT_03670650 = 0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 105,
       "match": "in_stack_00000008",
@@ -2160,6 +2176,13 @@
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,\"Can't open %s\",in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_03670650",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,\"Can't open %s\",in_stack_00000008);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2197,6 +2220,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 129,
+      "match": "DAT_03670650",
+      "text": "(&DAT_03670650,\"Heirarchy in %s does not match that in skeleton %s\",in_stack_00000008,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 130,
       "match": "in_stack_00000004",
@@ -2223,6 +2253,13 @@
       "match": "in_stack_00000004",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_418,\"Display %s\",in_stack_00000004->model_name)",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_03670650",
+      "text": "(&local_1260,&DAT_03670650,iVar14,0);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2265,6 +2302,13 @@
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,\"%s is corrupt!\",in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 166,
+      "match": "DAT_03670650",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,\"%s is corrupt!\",in_stack_00000008);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

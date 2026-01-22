@@ -28,7 +28,7 @@ void __cdecl core_gore_cpp_FUN_004ed830(CGore *this_ptr)
             core_gore_cpp_FUN_004ec500();
             uVar1 = extraout_EDX;
           }
-          uVar4 = CONCAT44 /* combine 2-byte values */(uVar1,DAT_02d873d8);
+          uVar4 = CONCAT44(uVar1,DAT_02d873d8);
           iVar3 = iVar3 + 1;
           iVar2 = iVar2 + 0x44;
         } while (iVar3 < DAT_02d873d8);

@@ -28,7 +28,7 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfx
   fVar4 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90((this_ptr->options).channel_index);
   fVar3 = (fVar4 * (this_ptr->options).current_volume) / (float)(1 << ((char)iVar6 - 1U & 0x1f));
   bVar1 = (byte)(this_ptr->options).flags;
-  fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));
+  fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));
   if ((bVar1 & 1) == 0) {
     iVar6 = 0;
     pCVar7 = this_ptr;
@@ -37,7 +37,7 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfx
         local_30 = pCVar7->distance_to_speakers[0];
         fVar4 = this_ptr->min_distance;
         fVar2 = this_ptr->max_distance;
-        fVar5 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),local_30 < fVar4) << 8);
+        fVar5 = (float)((uint)CONCAT21((short)((uint)fVar2 >> 0x10),local_30 < fVar4) << 8);
         if (local_30 < fVar4) {
           fVar5 = fVar4;
           local_30 = fVar4;
@@ -56,7 +56,7 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfx
         }
         iVar6 = iVar6 + 1;
         pCVar7->channel_volumes[0] = fVar3 * local_20;
-        fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),
+        fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),
                                 (ushort)(local_30 < fVar2) << 8 |
                                 (ushort)(NAN(local_30) || NAN(fVar2)) << 10 |
                                 (ushort)(local_30 == fVar2) << 0xe);

@@ -74,12 +74,12 @@
   },
   "complexity": {
     "assembly_lines": 724,
-    "complexity_score": 341,
+    "complexity_score": 371,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 23,
     "pseudocode_lines": 216,
-    "suspect_count": 11,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -617,7 +617,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "CONCAT22",
-      "text": "uVar4 = CONCAT22 /* combine 2-byte values */((short)((ulonglong)dVar9 >> 0x10),",
+      "text": "uVar4 = CONCAT22((short)((ulonglong)dVar9 >> 0x10),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "NAN",
+      "text": "(ushort)(NAN(dVar9) || NAN(359.5)) << 10 |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "NAN",
+      "text": "(ushort)(NAN(dVar9) || NAN(359.5)) << 10 |",
       "type": "decompiler_intrinsic"
     },
     {
@@ -647,6 +661,13 @@
       "match": "in_stack_fffffe0c",
       "text": "in_stack_fffffe0c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 130,
+      "match": "fcos",
+      "text": "fVar8 = (float10)fcos((float10)0.52359877560000001);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

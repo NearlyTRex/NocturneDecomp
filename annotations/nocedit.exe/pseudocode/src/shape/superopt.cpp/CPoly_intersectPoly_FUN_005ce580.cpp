@@ -231,11 +231,11 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
   bVar30 = 0;
   (*other_poly->vtable->getBounds)(other_poly,(CVector3d *)(auStack_3d8 + 0x10),&local_458);
   (*this_ptr->vtable->getBounds)(this_ptr,(CVector3d *)auStack_4c4,(CVector3d *)(auStack_2e8 + 4));
-  if ((((((double)auStack_3b8._8_8_ <= (double)CONCAT44 /* combine 2-byte values */(uStack_2d4,uStack_2d8)) &&
+  if ((((((double)auStack_3b8._8_8_ <= (double)CONCAT44(uStack_2d4,uStack_2d8)) &&
         ((double)auStack_4c4._12_8_ <= dStack_440)) &&
-       ((double)auStack_3b8._16_8_ <= (double)CONCAT44 /* combine 2-byte values */(uStack_2cc,uStack_2d0))) &&
+       ((double)auStack_3b8._16_8_ <= (double)CONCAT44(uStack_2cc,uStack_2d0))) &&
       (((double)auStack_4c4._20_8_ <= dStack_438 &&
-       (dStack_3a0 <= (double)CONCAT44 /* combine 2-byte values */(uStack_2c4,uStack_2c8))))) && (dStack_4a8 <= dStack_430)) {
+       (dStack_3a0 <= (double)CONCAT44(uStack_2c4,uStack_2c8))))) && (dStack_4a8 <= dStack_430)) {
     pCVar23 = other_poly->parent_obj->vertex_data;
     iVar15 = (*this_ptr->vtable->rayIntersect)
                        (this_ptr,&pCVar23[other_poly->vertex_idx_0].position,
@@ -336,14 +336,14 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
     dStack_338 = dStack_2a8 * pCVar1->x;
     dStack_330 = dStack_2a0 * *pdVar26;
     dStack_328 = dStack_298 * *pdVar29;
-    dStack_470 = pCVar1->x * (double)CONCAT44 /* combine 2-byte values */(uStack_568._4_4_,(uint)uStack_568);
-    dStack_468 = *pdVar26 * (double)CONCAT44 /* combine 2-byte values */(uStack_560._4_4_,(uint)uStack_560);
-    dStack_460 = *pdVar29 * (double)CONCAT44 /* combine 2-byte values */(uStack_558._4_4_,(uint)uStack_558);
-    dStack_260 = pCVar1->x * (double)CONCAT44 /* combine 2-byte values */(uStack_54c,uStack_550);
-    dStack_258 = *pdVar26 * (double)CONCAT44 /* combine 2-byte values */(uStack_544,uStack_548);
-    dStack_250 = *pdVar29 * (double)CONCAT44 /* combine 2-byte values */(uStack_53c,uStack_540);
-    dStack_248 = pCVar1->x * (double)CONCAT44 /* combine 2-byte values */(uStack_534,uStack_538);
-    dStack_240 = *pdVar26 * (double)CONCAT44 /* combine 2-byte values */(uStack_52c,uStack_530);
+    dStack_470 = pCVar1->x * (double)CONCAT44(uStack_568._4_4_,(uint)uStack_568);
+    dStack_468 = *pdVar26 * (double)CONCAT44(uStack_560._4_4_,(uint)uStack_560);
+    dStack_460 = *pdVar29 * (double)CONCAT44(uStack_558._4_4_,(uint)uStack_558);
+    dStack_260 = pCVar1->x * (double)CONCAT44(uStack_54c,uStack_550);
+    dStack_258 = *pdVar26 * (double)CONCAT44(uStack_544,uStack_548);
+    dStack_250 = *pdVar29 * (double)CONCAT44(uStack_53c,uStack_540);
+    dStack_248 = pCVar1->x * (double)CONCAT44(uStack_534,uStack_538);
+    dStack_240 = *pdVar26 * (double)CONCAT44(uStack_52c,uStack_530);
     pdVar26 = &dStack_338;
     pdVar29 = &dStack_1d0;
     for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {
@@ -351,7 +351,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
       pdVar26 = (double *)((int)pdVar26 + (uint)bVar30 * -8 + 4);
       pdVar29 = (double *)((int)pdVar29 + (uint)bVar30 * -8 + 4);
     }
-    dStack_238 = dVar13 * (double)CONCAT44 /* combine 2-byte values */(uStack_524,uStack_528);
+    dStack_238 = dVar13 * (double)CONCAT44(uStack_524,uStack_528);
     pdVar26 = &dStack_470;
     pdVar29 = &dStack_320;
     for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {
@@ -463,7 +463,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
         uStack_110 = *pdVar19 - *pdVar21;
         dStack_108 = (double)(&uStack_4e8)[aiStack_5c[3] * 2] -
                      (double)(&uStack_4e8)[iStack00000028 * 2];
-        uStack_110._0_4_ = SUB84 /* extract 2-byte value */(*pdVar19 - *pdVar21,0);
+        uStack_110._0_4_ = SUB84(*pdVar19 - *pdVar21,0);
         uStack_140 = (uint)uStack_110;
         (&uStack_13c)[(uint)bVar30 * -2] = *(uint *)((int)&uStack_110 + (uint)bVar30 * -8 + 4)
         ;
@@ -473,7 +473,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
          ((int)(&dStack_138 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4) =
              *(uint *)
               ((int)(&dStack_108 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4);
-        uStack_a0 = (double)CONCAT44 /* combine 2-byte values */(uStack_13c,uStack_140) * dVar13;
+        uStack_a0 = (double)CONCAT44(uStack_13c,uStack_140) * dVar13;
         dStack_98 = dStack_138 * dVar13;
         uStack_150 = (uint)uStack_a0;
         (&uStack_14c)[(uint)bVar30 * -2] = *(uint *)((int)&uStack_a0 + (uint)bVar30 * -8 + 4);
@@ -483,7 +483,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
          ((int)(&dStack_148 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4) =
              *(uint *)
               ((int)(&dStack_98 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4);
-        uStack_d0 = *pdVar19 - (double)CONCAT44 /* combine 2-byte values */(uStack_14c,uStack_150);
+        uStack_d0 = *pdVar19 - (double)CONCAT44(uStack_14c,uStack_150);
         dStack_c8 = (double)(&uStack_4e8)[aiStack_5c[3] * 2] - dStack_148;
         pdStack_3c = (double *)(&uStack_4f0 + iStack_34 * 2);
         auStack_bc[3] = (uint)uStack_d0;
@@ -553,7 +553,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
          ((int)(&dStack_f8 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4) =
              *(uint *)
               ((int)(&dStack_e8 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4);
-        uStack_e0 = (double)CONCAT44 /* combine 2-byte values */(uStack_fc,uStack_100) * dVar13;
+        uStack_e0 = (double)CONCAT44(uStack_fc,uStack_100) * dVar13;
         dStack_d8 = dStack_f8 * dVar13;
         uStack_130 = (uint)uStack_e0;
         (&uStack_12c)[(uint)bVar30 * -2] = *(uint *)((int)&uStack_e0 + (uint)bVar30 * -8 + 4);
@@ -563,7 +563,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
          ((int)(&dStack_128 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4) =
              *(uint *)
               ((int)(&dStack_d8 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4);
-        uStack_170 = *pdVar26 - (double)CONCAT44 /* combine 2-byte values */(uStack_12c,uStack_130);
+        uStack_170 = *pdVar26 - (double)CONCAT44(uStack_12c,uStack_130);
         dStack_168 = pdVar26[1] - dStack_128;
         uStack_60 = (uint)uStack_170;
         aiStack_5c[(uint)bVar30 * -2] = *(int *)((int)&uStack_170 + (uint)bVar30 * -8 + 4);
@@ -772,7 +772,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
       uStack_160 = *pdVar26 - *pdVar29;
       dStack_158 = (double)(&uStack_4e8)[iStack0000002c * 2] -
                    (double)(&uStack_4e8)[iStack00000024 * 2];
-      uStack_160._0_4_ = SUB84 /* extract 2-byte value */(*pdVar26 - *pdVar29,0);
+      uStack_160._0_4_ = SUB84(*pdVar26 - *pdVar29,0);
       uStack_90 = (uint)uStack_160;
       (&uStack_8c)[(uint)bVar30 * -2] = *(uint *)((int)&uStack_160 + (uint)bVar30 * -8 + 4);
       *(uint *)(&dStack_88 + (-(uint)bVar30 - (uint)bVar30)) =
@@ -781,7 +781,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
        ((int)(&dStack_88 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4) =
            *(uint *)
             ((int)(&dStack_158 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4);
-      uStack_70 = (double)CONCAT44 /* combine 2-byte values */(uStack_8c,uStack_90) * dVar13;
+      uStack_70 = (double)CONCAT44(uStack_8c,uStack_90) * dVar13;
       dStack_68 = dStack_88 * dVar13;
       uStack_120 = (uint)uStack_70;
       (&uStack_11c)[(uint)bVar30 * -2] = *(uint *)((int)&uStack_70 + (uint)bVar30 * -8 + 4);
@@ -791,7 +791,7 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
        ((int)(&dStack_118 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4) =
            *(uint *)
             ((int)(&dStack_68 + (-(uint)bVar30 - (uint)bVar30)) + ((uint)bVar30 * -2 + 1) * 4);
-      uStack_80 = *pdVar26 - (double)CONCAT44 /* combine 2-byte values */(uStack_11c,uStack_120);
+      uStack_80 = *pdVar26 - (double)CONCAT44(uStack_11c,uStack_120);
       dStack_78 = (double)(&uStack_4e8)[iStack0000002c * 2] - dStack_118;
       uStack_c0 = (uint)uStack_80;
       auStack_bc[(uint)bVar30 * -2] = *(uint *)((int)&uStack_80 + (uint)bVar30 * -8 + 4);

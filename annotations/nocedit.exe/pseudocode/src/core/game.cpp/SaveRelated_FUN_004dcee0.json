@@ -134,15 +134,16 @@
   },
   "complexity": {
     "assembly_lines": 864,
-    "complexity_score": 298,
+    "complexity_score": 323,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 38,
     "pseudocode_lines": 248,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 1112
   },
@@ -584,6 +585,20 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_02f43978",
+      "text": "DAT_02f43978 = (uint)(DAT_02f43978 == 0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_02f43978",
+      "text": "DAT_02f43978 = (uint)(DAT_02f43978 == 0);",
+      "type": "undefined_data"
+    },
     {
       "description": "Complex pointer cast",
       "line": 153,

@@ -35,14 +35,14 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_startup.cpp_WinMainBootstrap_FUN_00609e70
     Address: 00609e70
-    Suspect count: 8
+    Suspect count: 9
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 00609e8b: SUB ESP,EAX
     - [dynamic_alloca] at 00609ede: SUB ESP,EAX
 
   crt_thread.c_threadStartupWrapper_FUN_0060f8c0
     Address: 0060f8c0
-    Suspect count: 12
+    Suspect count: 13
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0060f8ed: SUB ESP,EAX
 
@@ -120,7 +120,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00601729: MOV ESI,ESP
 
   crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0
-    File: crt/unknown.c, Suspects: 7
+    File: crt/unknown.c, Suspects: 8
     - [alt_frame_pointer] at 0060e8f8: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e913: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e91c: MOV EDI,ESP
@@ -134,7 +134,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0060c11b: MOV ESI,ESP
 
   crt_stdio.c_scanf_integer_FUN_0060547c
-    File: crt/stdio.c, Suspects: 15
+    File: crt/stdio.c, Suspects: 17
     - [alt_frame_pointer] at 00605637: MOV ESI,ESP
     - [alt_frame_pointer] at 0060564d: MOV ESI,ESP
     - [alt_frame_pointer] at 006056ca: MOV ESI,ESP
@@ -143,11 +143,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0060583b: MOV ESI,ESP
 
   crt_stdio.c_scanf_float_FUN_00605178
-    File: crt/stdio.c, Suspects: 34
+    File: crt/stdio.c, Suspects: 35
     - [alt_frame_pointer] at 00605189: MOV ESI,ESP
 
   crt_stdio.c_FormatWideString_FUN_006031c0
-    File: crt/stdio.c, Suspects: 1
+    File: crt/stdio.c, Suspects: 2
     - [alt_frame_pointer] at 006031ff: MOV EDI,ESP
 
   support_trisock.cpp_connectSocket_FUN_005e1bd0
@@ -167,7 +167,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0050e311: MOV ESI,ESP
 
   engine_matrix.c_initializeTrigTables_FUN_0050c530
-    File: engine/matrix.c, Suspects: 7
+    File: engine/matrix.c, Suspects: 9
     - [stack_alignment] at 0050c536: AND ESP,0xfffffff8
 
   engine_matrix.c_projectToScreen_FUN_0050e5b0
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 23.4 suspects/function
-  Without stack patterns: avg 5.6 suspects/function
+  With stack patterns:    avg 24.7 suspects/function
+  Without stack patterns: avg 6.1 suspects/function

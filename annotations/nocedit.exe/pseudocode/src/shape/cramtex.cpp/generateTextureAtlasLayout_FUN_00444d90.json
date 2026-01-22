@@ -326,14 +326,15 @@
   },
   "complexity": {
     "assembly_lines": 926,
-    "complexity_score": 521,
+    "complexity_score": 536,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 100,
     "pseudocode_lines": 406,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "undefined_data"
     ],
     "total_lines": 1332
   },
@@ -1258,6 +1259,13 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_CramSortedTextureEntries[0].height + iVar14) = *piVar6;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 96,
+      "match": "DAT_0084a8b0",
+      "text": "g_CramAlgorithmState = &DAT_0084a8b0;",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

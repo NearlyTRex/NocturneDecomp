@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 344,
-    "complexity_score": 554,
+    "complexity_score": 569,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "pseudocode_lines": 174,
-    "suspect_count": 34,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
+      "nonstandard_int",
       "register_param",
       "special_crt_function",
       "stack_param",
@@ -299,21 +300,21 @@
       "description": "Inferred register parameter",
       "line": 29,
       "match": "in_ES",
-      "text": "fStack_10 = (float)CONCAT22 /* combine 2-byte values */(fStack_10._2_2_,in_ES);",
+      "text": "fStack_10 = (float)CONCAT22(fStack_10._2_2_,in_ES);",
       "type": "register_param"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 29,
       "match": "._2_2_",
-      "text": "fStack_10 = (float)CONCAT22 /* combine 2-byte values */(fStack_10._2_2_,in_ES);",
+      "text": "fStack_10 = (float)CONCAT22(fStack_10._2_2_,in_ES);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "CONCAT22",
-      "text": "fStack_10 = (float)CONCAT22 /* combine 2-byte values */(fStack_10._2_2_,in_ES);",
+      "text": "fStack_10 = (float)CONCAT22(fStack_10._2_2_,in_ES);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -341,22 +342,29 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_ffffff80",
-      "text": "in_stack_ffffff80 = (char *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
+      "text": "in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_ffffff80",
-      "text": "in_stack_ffffff80 = (char *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
+      "text": "in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "CONCAT31",
-      "text": "in_stack_ffffff80 = (char *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
+      "text": "in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 44,
+      "match": "int3",
+      "text": "in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
+      "type": "nonstandard_int"
     },
     {
       "description": "Direct stack address reference",
@@ -404,7 +412,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "CONCAT12",
-      "text": "uVar5 = CONCAT12 /* combine 2-byte values */(*pcVar1 + -0x30,local_18) / 10;",
+      "text": "uVar5 = CONCAT12(*pcVar1 + -0x30,local_18) / 10;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -439,14 +447,14 @@
       "description": "Unknown/mangled field access",
       "line": 146,
       "match": "._2_2_",
-      "text": "local_1c = -CONCAT22 /* combine 2-byte values */(local_1c._2_2_,(ushort)local_1c);",
+      "text": "local_1c = -CONCAT22(local_1c._2_2_,(ushort)local_1c);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 146,
       "match": "CONCAT22",
-      "text": "local_1c = -CONCAT22 /* combine 2-byte values */(local_1c._2_2_,(ushort)local_1c);",
+      "text": "local_1c = -CONCAT22(local_1c._2_2_,(ushort)local_1c);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -502,7 +510,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 172,
       "match": "CONCAT44",
-      "text": "fStack_10 = crt_math_c_doubleToFloat_FUN_0060b26c((double)CONCAT44 /* combine 2-byte values */(local_20,local_24));",
+      "text": "fStack_10 = crt_math_c_doubleToFloat_FUN_0060b26c((double)CONCAT44(local_20,local_24));",
       "type": "decompiler_intrinsic"
     },
     {

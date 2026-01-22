@@ -68,13 +68,14 @@
   },
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 199,
+    "complexity_score": 244,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
     "pseudocode_lines": 149,
-    "suspect_count": 4,
+    "suspect_count": 8,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param",
       "stack_ref"
     ],
@@ -518,6 +519,34 @@
       "match": "in_stack_ffffff48",
       "text": "(CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 93,
+      "match": "NAN",
+      "text": "out_hit_normal[1].y = -NAN;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "NAN",
+      "text": "out_hit_normal[1].z = -NAN;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "NAN",
+      "text": "out_hit_normal[2].x = -NAN;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 97,
+      "match": "NAN",
+      "text": "out_hit_normal[1].x = -NAN;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",

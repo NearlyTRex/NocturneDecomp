@@ -69,7 +69,7 @@ uint core_emitter_cpp_FUN_004a8860(void)
           uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
           shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
-                    (g_CEditorToolsPtr,0x3f800000,(CQuaternion4f *)CONCAT31 /* combine 2-byte values */(extraout_var,uVar1),
+                    (g_CEditorToolsPtr,0x3f800000,(CQuaternion4f *)CONCAT31(extraout_var,uVar1),
                      label_offset,param5);
           return 0;
         }

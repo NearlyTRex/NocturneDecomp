@@ -632,17 +632,18 @@
   },
   "complexity": {
     "assembly_lines": 1167,
-    "complexity_score": 2565,
+    "complexity_score": 2590,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 34,
     "pseudocode_lines": 525,
-    "suspect_count": 201,
+    "suspect_count": 203,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -1767,6 +1768,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_02db89f4",
+      "text": "(pCVar1,&local_104,DAT_02db89f4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 133,
       "match": "in_stack_00000004",
@@ -2507,6 +2515,13 @@
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_character).model.bone_transform.",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 401,
+      "match": "DAT_02db89fc",
+      "text": "bone_world_matrices[DAT_02db89fc].m);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

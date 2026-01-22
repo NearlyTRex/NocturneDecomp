@@ -104,15 +104,16 @@
   },
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 178,
+    "complexity_score": 193,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "pseudocode_lines": 58,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "unknown_field",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_max_restarts"
     ],
     "total_lines": 204
   },
@@ -261,6 +262,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler iteration limit exceeded",
+      "line": 2,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
+    },
     {
       "description": "Unknown/mangled field access",
       "line": 24,

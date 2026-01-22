@@ -44,14 +44,15 @@
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 168,
+    "complexity_score": 183,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
     "pseudocode_lines": 38,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 118
@@ -264,6 +265,13 @@
       "match": "in_stack_00000004",
       "text": "(&DAT_0310eca0,\"Character %s model %s does not have a part '%s'\",in_stack_00000004,uVar3,pcVar4);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_0310eca0",
+      "text": "(&DAT_0310eca0,\"Character %s model %s does not have a part '%s'\",in_stack_00000004,uVar3,pcVar4);",
+      "type": "undefined_data"
     }
   ]
 }

@@ -2504,12 +2504,12 @@
   },
   "complexity": {
     "assembly_lines": 3291,
-    "complexity_score": 4216,
+    "complexity_score": 4296,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 125,
     "pseudocode_lines": 1471,
-    "suspect_count": 269,
+    "suspect_count": 276,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -2520,8 +2520,10 @@
       "stack_param",
       "stack_ref",
       "suspect_float",
+      "undefined_data",
       "unknown_field",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
     "total_lines": 4762
   },
@@ -4966,6 +4968,13 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Overlapping global symbols",
       "line": 3,
       "match": "WARNING: Globals starting with",
@@ -5048,6 +5057,13 @@
       "match": "in_stack_00000004",
       "text": "if (*in_stack_00000004 != 1) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 291,
+      "match": "DAT_03670650",
+      "text": "(&DAT_03670650,\"%s has incorrect S3D version %d\",",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -5139,6 +5155,13 @@
       "match": "in_stack_00000004",
       "text": "if (0x4f < in_stack_00000004[0x2f]) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 391,
+      "match": "DAT_03670650",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,\"Texture list full determining parts\");",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -6597,6 +6620,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 1311,
+      "match": "DAT_03670650",
+      "text": "(&DAT_03670650,\"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face\");",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 1314,
       "match": "(int *)((int)",
@@ -6681,6 +6711,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 1380,
+      "match": "DAT_03670650",
+      "text": "(&DAT_03670650,\"Can't find opposing part for capped face!\");",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 1383,
       "match": "in_stack_00000004",
@@ -6756,6 +6793,20 @@
       "match": "local_188[-1].",
       "text": "crt_memory_c_free_FUN_005fe659(&local_188[-1]._ungotten);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1428,
+      "match": "DAT_03670650",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,\"Deformable model has more faces than segmented model!\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1439,
+      "match": "DAT_03670650",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,pcVar15);",
+      "type": "undefined_data"
     },
     {
       "description": "Negative struct offset (wrong base type)",

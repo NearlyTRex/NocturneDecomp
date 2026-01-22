@@ -9,7 +9,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 75,
+        "column": 47,
         "line": 95,
         "message": "'SUB84' was not declared in this scope"
       },
@@ -648,14 +648,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 88,
       "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar5,0),uVar9) + 0.5);",
+      "text": "((double)CONCAT44(SUB84(dVar5,0),uVar9) + 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 88,
       "match": "SUB84",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar5,0),uVar9) + 0.5);",
+      "text": "((double)CONCAT44(SUB84(dVar5,0),uVar9) + 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -683,14 +683,14 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 94,
       "match": "extraout_EDX",
-      "text": "extraout_EDX,uVar8,uVar9,SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
+      "text": "extraout_EDX,uVar8,uVar9,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "SUB84",
-      "text": "extraout_EDX,uVar8,uVar9,SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
+      "text": "extraout_EDX,uVar8,uVar9,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
       "type": "decompiler_intrinsic"
     }
   ]

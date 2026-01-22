@@ -626,12 +626,12 @@
   },
   "complexity": {
     "assembly_lines": 1369,
-    "complexity_score": 3568,
+    "complexity_score": 3593,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 26,
     "pseudocode_lines": 663,
-    "suspect_count": 286,
+    "suspect_count": 288,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -639,6 +639,7 @@
       "stack_param",
       "stack_ref",
       "suspect_float",
+      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -3088,6 +3089,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 545,
+      "match": "DAT_02f37ecc",
+      "text": "bone_world_matrices + DAT_02f37ecc);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 547,
       "match": "in_stack_00000004",
@@ -3114,6 +3122,13 @@
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_character).model.bone_transform.",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 557,
+      "match": "DAT_02f37ed0",
+      "text": "bone_world_matrices + DAT_02f37ed0);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

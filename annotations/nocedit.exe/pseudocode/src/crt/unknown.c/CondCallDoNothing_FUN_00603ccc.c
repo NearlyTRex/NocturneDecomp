@@ -18,11 +18,11 @@ void crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
   if (in_stack_00000008 != 0) {
     if (in_stack_00000008 < 0) {
       crt_unknown_c_FUN_00603c74();
-      *in_stack_00000004 = *in_stack_00000004 / (float10)CONCAT28 /* combine 2-byte values */(0x3fff,0x8000000000000000);
+      *in_stack_00000004 = *in_stack_00000004 / (float10)CONCAT28(0x3fff,0x8000000000000000);
     }
     else {
       crt_unknown_c_FUN_00603c74();
-      *in_stack_00000004 = (float10)CONCAT28 /* combine 2-byte values */(0x3fff,0x8000000000000000) * *in_stack_00000004;
+      *in_stack_00000004 = (float10)CONCAT28(0x3fff,0x8000000000000000) * *in_stack_00000004;
     }
     crt_unknown_c_FUN_0060445e(in_FPUControlWord);
     return;

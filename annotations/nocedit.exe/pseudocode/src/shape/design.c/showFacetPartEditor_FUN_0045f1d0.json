@@ -338,12 +338,12 @@
   },
   "complexity": {
     "assembly_lines": 1620,
-    "complexity_score": 817,
+    "complexity_score": 837,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 135,
     "pseudocode_lines": 592,
-    "suspect_count": 21,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
@@ -1719,6 +1719,20 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "fptan",
+      "text": "fVar8 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "fptan",
+      "text": "fVar8 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 114,
       "match": "ROUND",
       "text": "iVar4 = (int)ROUND(dVar9);",
@@ -1735,7 +1749,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 294,
       "match": "SUB84",
-      "text": "local_d8 = SUB84 /* extract 2-byte value */((double)local_2c,0);",
+      "text": "local_d8 = SUB84((double)local_2c,0);",
       "type": "decompiler_intrinsic"
     },
     {

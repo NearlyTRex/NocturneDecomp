@@ -60,24 +60,24 @@ wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
     if (g_RenderStateFlag2 == 5) {
       uVar10 = pSVar7->texture_u;
       g_StartTextureU =
-           (int)(CONCAT44 /* combine 2-byte values */(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
+           (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
                 (longlong)pSVar7->perspective_w);
       uVar10 = right_vertex->texture_u;
       g_DeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
-                  ((int)(CONCAT44 /* combine 2-byte values */(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
+                  ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
                         (longlong)right_vertex->perspective_w) - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
       uVar10 = pSVar7->texture_v;
       g_StartTextureV =
-           (int)(CONCAT44 /* combine 2-byte values */(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
+           (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
                 (longlong)pSVar7->perspective_w);
       uVar10 = right_vertex->texture_v;
       g_DeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
-                  ((int)(CONCAT44 /* combine 2-byte values */(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
+                  ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
                         (longlong)right_vertex->perspective_w) - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }

@@ -31,32 +31,32 @@ core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00492e8a
     uVar1 = *source1_buffer;
     uVar2 = *source2_buffer;
     uVar6 = psllw((ulonglong)
-                  CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 
+                  CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 
                                                   0x18) << 0x30) >> 0x28),
-                                                  CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),
+                                                  CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),
                                                   uVar1) >> 0x18),(char)(uVar1 >> 8)),
                            (ushort)(byte)uVar1) & 0xffffffff00ffffff,7);
     uVar10 = psllw((ulonglong)
-                   CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(
+                   CONCAT52((int5)(CONCAT43((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(
                                                   uVar2 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2)) >> 0x20),
+                                                  CONCAT14((char)(uVar2 >> 0x10),uVar2)) >> 0x20),
                                                   uVar2) >> 0x18),
-                                            CONCAT12 /* combine 2-byte values */((char)(uVar2 >> 8),(short)uVar2)) >> 0x10),
+                                            CONCAT12((char)(uVar2 >> 8),(short)uVar2)) >> 0x10),
                             (short)uVar2) & 0xffffffff00ff00ff,7);
-    uVar6 = pmulhw(uVar6,CONCAT26 /* combine 2-byte values */(uVar11 >> 1,
-                                  CONCAT24 /* combine 2-byte values */((ushort)alpha2 >> 1,
-                                           CONCAT22 /* combine 2-byte values */(uVar11 >> 1,(ushort)alpha2 >> 1))));
-    uVar10 = pmulhw(uVar10,CONCAT26 /* combine 2-byte values */(uVar12 >> 1,
-                                    CONCAT24 /* combine 2-byte values */((ushort)alpha1 >> 1,
-                                             CONCAT22 /* combine 2-byte values */(uVar12 >> 1,(ushort)alpha1 >> 1))));
+    uVar6 = pmulhw(uVar6,CONCAT26(uVar11 >> 1,
+                                  CONCAT24((ushort)alpha2 >> 1,
+                                           CONCAT22(uVar11 >> 1,(ushort)alpha2 >> 1))));
+    uVar10 = pmulhw(uVar10,CONCAT26(uVar12 >> 1,
+                                    CONCAT24((ushort)alpha1 >> 1,
+                                             CONCAT22(uVar12 >> 1,(ushort)alpha1 >> 1))));
     uVar5 = (ushort)((short)uVar6 + (short)uVar10) >> 6;
     uVar7 = (ushort)((short)((ulonglong)uVar6 >> 0x10) + (short)((ulonglong)uVar10 >> 0x10)) >> 6;
     uVar8 = (ushort)((short)((ulonglong)uVar6 >> 0x20) + (short)((ulonglong)uVar10 >> 0x20)) >> 6;
     uVar9 = (ushort)((short)((ulonglong)uVar6 >> 0x30) + (short)((ulonglong)uVar10 >> 0x30)) >> 6;
     *output_buffer =
-         CONCAT13 /* combine 2-byte values */((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),
-                  CONCAT12 /* combine 2-byte values */((uVar8 != 0) * (uVar8 < 0x100) * (char)uVar8 - (0xff < uVar8),
-                           CONCAT11 /* combine 2-byte values */((uVar7 != 0) * (uVar7 < 0x100) * (char)uVar7 - (0xff < uVar7),
+         CONCAT13((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),
+                  CONCAT12((uVar8 != 0) * (uVar8 < 0x100) * (char)uVar8 - (0xff < uVar8),
+                           CONCAT11((uVar7 != 0) * (uVar7 < 0x100) * (char)uVar7 - (0xff < uVar7),
                                     (uVar5 != 0) * (uVar5 < 0x100) * (char)uVar5 - (0xff < uVar5))))
     ;
     source1_buffer = source1_buffer + 1;

@@ -278,15 +278,16 @@
   },
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 353,
+    "complexity_score": 488,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 17,
     "pseudocode_lines": 183,
-    "suspect_count": 16,
+    "suspect_count": 29,
     "suspect_types": [
       "extra_output",
-      "pointer_cast"
+      "pointer_cast",
+      "undefined_data"
     ],
     "total_lines": 577
   },
@@ -740,6 +741,34 @@
       "type": "extra_output"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_0067e6cc",
+      "text": "local_1c = *(float **)(&DAT_0067e6cc + iVar8 * 0x94);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_0067e728",
+      "text": "local_1c = (float *)(*(int *)(&DAT_0067e728 + iVar4) * 3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_0067e728",
+      "text": "local_28 = *(int *)(&DAT_0067e728 + iVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_0067e6cc",
+      "text": "local_1c = *(float **)(&DAT_0067e6cc + iVar4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(double *)((int)",
@@ -773,6 +802,69 @@
       "match": "extraout_ST2",
       "text": "base = extraout_ST2;",
       "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 96,
+      "match": "DAT_0067e6cc",
+      "text": "local_1c = *(float **)(&DAT_0067e6cc + iVar7 * 4 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_0067e728",
+      "text": "iVar1 = *(int *)(&DAT_0067e728 + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_0067e728",
+      "text": "local_28 = *(int *)(&DAT_0067e728 + iVar6) - iVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_0067e6e8",
+      "text": "if (local_20 != *(float **)(&DAT_0067e6e8 + iVar8)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_0067e6e8",
+      "text": "if ((int)local_20 < (int)*(float **)(&DAT_0067e6e8 + iVar8)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_0067e6cc",
+      "text": "local_1c = *(float **)(&DAT_0067e6cc + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_0067e734",
+      "text": "iVar1 = *(int *)(&DAT_0067e734 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_0067e730",
+      "text": "iVar2 = *(int *)(&DAT_0067e730 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_0067e734",
+      "text": "local_28 = *(int *)(&DAT_0067e734 + iVar8) - iVar2;",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

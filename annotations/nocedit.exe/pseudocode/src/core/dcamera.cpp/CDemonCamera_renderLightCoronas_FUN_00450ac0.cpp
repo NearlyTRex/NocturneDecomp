@@ -93,7 +93,7 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
                    (local_20 << ((byte)g_CameraDownscaleIterations & 0x1f));
         pCVar4 = local_40 + local_20;
         iVar3 = local_20 - local_30;
-        bVar8 = SBORROW /* signed borrow */4(local_20,local_30);
+        bVar8 = SBORROW4(local_20,local_30);
         while (bVar8 != iVar3 < 0) {
           if ((*local_28 < (uint)*local_2c) &&
              (0.0 <= pCVar4->z * (float)g_CoronaCameraRotationMatrix.m[2].z +
@@ -131,7 +131,7 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
           local_28 = local_28 + (1 << ((byte)g_CameraDownscaleIterations & 0x1f));
           local_1c = local_1c + 1;
           iVar3 = local_20 - local_30;
-          bVar8 = SBORROW /* signed borrow */4(local_20,local_30);
+          bVar8 = SBORROW4(local_20,local_30);
         }
       }
       local_34 = local_34 + 4;

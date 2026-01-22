@@ -280,7 +280,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
     uStack_1c8 = 0x4982c3;
     dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar10);
     fVar10 = (float10)dVar13;
-    dStack_1c0 = (double)CONCAT44 /* combine 2-byte values */(dStack_1c0._4_4_,0x4982ca);
+    dStack_1c0 = (double)CONCAT44(dStack_1c0._4_4_,0x4982ca);
     dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar11);
     local_134[1] = (int)ROUND(fVar9);
     local_134[2] = (int)ROUND(fVar10);
@@ -433,7 +433,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               }
               iVar3 = (this_ptr->grid_bounds_min).y;
               iVar4 = local_ac - iVar3;
-              bVar8 = SBORROW /* signed borrow */4(local_ac,iVar3);
+              bVar8 = SBORROW4(local_ac,iVar3);
               iVar3 = local_ac;
               while (bVar8 == iVar4 < 0) {
                 iVar5 = iVar3 + -1;
@@ -441,7 +441,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
                           (this_ptr,(int)local_58,iVar3,iVar6,local_c0);
                 iVar3 = (this_ptr->grid_bounds_min).y;
                 iVar4 = iVar5 - iVar3;
-                bVar8 = SBORROW /* signed borrow */4(iVar5,iVar3);
+                bVar8 = SBORROW4(iVar5,iVar3);
                 iVar3 = iVar5;
               }
               local_58 = (float)((int)local_58 + 1);
@@ -563,7 +563,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               }
               iVar3 = (this_ptr->grid_bounds_min).z;
               iVar4 = local_9c - iVar3;
-              bVar8 = SBORROW /* signed borrow */4(local_9c,iVar3);
+              bVar8 = SBORROW4(local_9c,iVar3);
               iVar3 = local_9c;
               while (bVar8 == iVar4 < 0) {
                 iVar5 = iVar3 + -1;
@@ -571,7 +571,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
                           (this_ptr,(int)local_68,iVar6,iVar3,local_e0);
                 iVar3 = (this_ptr->grid_bounds_min).z;
                 iVar4 = iVar5 - iVar3;
-                bVar8 = SBORROW /* signed borrow */4(iVar5,iVar3);
+                bVar8 = SBORROW4(iVar5,iVar3);
                 iVar3 = iVar5;
               }
               local_68 = (float)((int)local_68 + 1);

@@ -147,7 +147,7 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
                 (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff44,0x2c5);
     } while (iVar5 < 3);
     local_28 = local_28 + 4;
-    local_30 = (float)CONCAT13 /* combine 2-byte values */(local_30._3_1_ + '\x01',(undefined3)local_30);
+    local_30 = (float)CONCAT13(local_30._3_1_ + '\x01',(undefined3)local_30);
   } while (local_28 != 0x40);
   return;
 }

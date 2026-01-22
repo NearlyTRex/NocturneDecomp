@@ -188,17 +188,18 @@
   },
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 884,
+    "complexity_score": 959,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 25,
     "pseudocode_lines": 219,
-    "suspect_count": 64,
+    "suspect_count": 71,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "suspect_float",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 499
@@ -726,6 +727,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_02d83390",
+      "text": "(g_CDemonRendererPtr2,(CVector3i *)&DAT_02d83390,(CVector3i *)0x0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "ROUND",
@@ -810,6 +818,13 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_0067b9b0",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0067b9b0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 88,
       "match": "in_stack_00000004",
@@ -866,6 +881,13 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_02d8339c",
+      "text": "(g_CDemonSetPtr,&local_88,(CVector3i *)&DAT_02d8339c,0,4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 103,
       "match": "in_stack_00000004",
@@ -915,6 +937,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 136,
+      "match": "DAT_02d83368",
+      "text": "(g_CDemonRendererPtr2,&DAT_02d83368);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 138,
       "match": "in_stack_00000004",
@@ -962,6 +991,13 @@
       "match": "in_stack_00000004",
       "text": "fStack_6c = fStack_6c - fStack_ec * in_stack_00000004[2].y;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 160,
+      "match": "DAT_02d83390",
+      "text": "(g_CDemonRendererPtr2,(CVector3i *)&DAT_02d83390,(CVector3i *)0x0);",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -1069,6 +1105,13 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 199,
+      "match": "DAT_02d8339c",
+      "text": "(g_CDemonSetPtr,&local_88,(CVector3i *)&DAT_02d8339c,0,4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 202,
       "match": "(int *)((int)",
@@ -1109,6 +1152,13 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar4) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 218,
+      "match": "DAT_02d83368",
+      "text": "(g_CDemonRendererPtr2,&DAT_02d83368);",
+      "type": "undefined_data"
     }
   ],
   "vtable_info": {

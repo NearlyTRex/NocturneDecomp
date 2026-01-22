@@ -49,5 +49,5 @@ ulonglong crt_unknown_c_FUN_0060af5d(void)
     *(int *)(in_stack_0000000c + 0x20) = iVar2;
     *(byte *)(in_stack_00000004 + iVar1) = 0x2b;
   }
-  return CONCAT44 /* combine 2-byte values */(CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);
+  return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);
 }

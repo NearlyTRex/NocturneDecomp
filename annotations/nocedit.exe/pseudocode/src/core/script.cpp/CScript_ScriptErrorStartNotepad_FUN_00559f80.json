@@ -224,16 +224,17 @@
   },
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 713,
+    "complexity_score": 748,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 26,
     "pseudocode_lines": 163,
-    "suspect_count": 53,
+    "suspect_count": 56,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 546
@@ -797,11 +798,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 124,
+      "match": "DAT_0310f4b0",
+      "text": "shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&DAT_0310f4b0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 128,
       "match": "in_stack_00000008",
       "text": "(&DAT_031089e8,\"Syntax error on %s line %d:\\n%s\",in_stack_00000008,local_1c + 1,",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 128,
+      "match": "DAT_031089e8",
+      "text": "(&DAT_031089e8,\"Syntax error on %s line %d:\\n%s\",in_stack_00000008,local_1c + 1,",
+      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
@@ -844,6 +859,13 @@
       "match": "&stack0xfffff870",
       "text": "((CPickList *)&stack0xfffff870,&DAT_031089e8,-1,0);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_031089e8",
+      "text": "((CPickList *)&stack0xfffff870,&DAT_031089e8,-1,0);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -14,14 +14,14 @@ core_boxactor_cpp_FUN_0042307e
 {
   switch(param_5) {
   case 0:
-    return CONCAT44 /* combine 2-byte values */(param_2,"Custom");
+    return CONCAT44(param_2,"Custom");
   case 1:
-    return CONCAT44 /* combine 2-byte values */(param_2,"Flashlight");
+    return CONCAT44(param_2,"Flashlight");
   case 2:
-    return CONCAT44 /* combine 2-byte values */(param_2,"Lantern");
+    return CONCAT44(param_2,"Lantern");
   case 3:
-    return CONCAT44 /* combine 2-byte values */(param_2,"Globe");
+    return CONCAT44(param_2,"Globe");
   default:
-    return CONCAT44 /* combine 2-byte values */(param_2,"???");
+    return CONCAT44(param_2,"???");
   }
 }

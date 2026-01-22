@@ -344,15 +344,16 @@
   },
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 435,
+    "complexity_score": 510,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 47,
     "pseudocode_lines": 235,
-    "suspect_count": 19,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 739
   },
@@ -849,6 +850,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_02fd8d20",
+      "text": "puVar13 = (uchar *)&DAT_02fd8d20;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_02fd8d20",
+      "text": "crt_stdio_c_fread_FUN_005fd990(&DAT_02fd8d20,0x300,1,pFVar5);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 120,
       "match": "in_stack_00000004",
@@ -898,11 +913,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 180,
+      "match": "DAT_02fd8d20",
+      "text": "bVar2 = *(byte *)((int)&DAT_02fd8d20 + iVar3 + 1);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 182,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)&DAT_02fd8d20 + iVar3 + 2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 182,
+      "match": "DAT_02fd8d20",
+      "text": "cVar1 = *(char *)((int)&DAT_02fd8d20 + iVar3 + 2);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -912,11 +941,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 183,
+      "match": "DAT_02fd8d20",
+      "text": "if (((*(char *)((int)&DAT_02fd8d20 + iVar3) != '\\0') || (local_c != 0)) || (cVar1 != '\\0')",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 185,
       "match": "(char *)((int)",
       "text": "*pcVar12 = *(char *)((int)&DAT_02fd8d20 + iVar3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 185,
+      "match": "DAT_02fd8d20",
+      "text": "*pcVar12 = *(char *)((int)&DAT_02fd8d20 + iVar3);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -938,6 +981,13 @@
       "match": "in_stack_00000008",
       "text": "pcVar12 = in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 221,
+      "match": "DAT_0063e68c",
+      "text": "pcVar12 = &DAT_0063e68c;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

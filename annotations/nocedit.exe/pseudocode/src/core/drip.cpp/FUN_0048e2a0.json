@@ -98,15 +98,17 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 767,
+    "complexity_score": 827,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "pseudocode_lines": 117,
-    "suspect_count": 63,
+    "suspect_count": 68,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param",
       "suspect_float",
+      "undefined_data",
       "unknown_field",
       "unresolved_funcptr"
     ],
@@ -548,6 +550,41 @@
       "match": "in_stack_00000004",
       "text": "local_48[0].x = local_48[0].x + (in_stack_00000004->location).position.z;",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 72,
+      "match": "fcos",
+      "text": "fVar7 = (float10)fcos((float10)fVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 73,
+      "match": "fcos",
+      "text": "fVar8 = (float10)fcos((float10)fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "fsin",
+      "text": "fVar9 = (float10)fsin((float10)fVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "fsin",
+      "text": "fVar10 = (float10)fsin((float10)fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_02c9b170",
+      "text": "((CKeyFramedModelInstance *)&DAT_02c9b170);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -68,13 +68,14 @@
   },
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 504,
+    "complexity_score": 589,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 11,
     "pseudocode_lines": 114,
-    "suspect_count": 38,
+    "suspect_count": 46,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param",
       "unaffected_reg"
     ],
@@ -475,6 +476,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos((float10)this_ptr->yaw);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "fsin",
+      "text": "fVar2 = (float10)fsin((float10)this_ptr->yaw);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 47,
       "match": "unaff_EBP",
@@ -487,6 +502,20 @@
       "match": "unaff_EBP",
       "text": "(this_ptr->position).z = (float)(fVar3 * (float10)unaff_EBP + (float10)(this_ptr->position).z);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos((float10)this_ptr->yaw);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "fsin",
+      "text": "fVar2 = (float10)fsin((float10)this_ptr->yaw);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -503,6 +532,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "fsin",
+      "text": "fVar3 = (float10)fsin((float10)this_ptr->yaw + (float10)-1.57079632675);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "fcos",
+      "text": "fVar2 = (float10)fcos((float10)this_ptr->yaw + (float10)-1.57079632675);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 64,
       "match": "in_stack_00000008",
@@ -515,6 +558,20 @@
       "match": "in_stack_00000008",
       "text": "(float)(fVar2 * (float10)in_stack_00000008 + (float10)(this_ptr->position).z);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "fsin",
+      "text": "fVar3 = (float10)fsin((float10)this_ptr->yaw + (float10)1.57079632675);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "fcos",
+      "text": "fVar2 = (float10)fcos((float10)this_ptr->yaw + (float10)1.57079632675);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

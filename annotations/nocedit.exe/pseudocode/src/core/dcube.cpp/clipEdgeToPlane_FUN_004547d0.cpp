@@ -19,7 +19,7 @@ core_dcube_cpp_clipEdgeToPlane_FUN_004547d0
   fVar2 = (vertex2->z - vertex1->z) * (float)plane_nz +
           (vertex2->x - vertex1->x) * (float)plane_nx + (vertex2->y - vertex1->y) * (float)plane_ny;
   dVar1 = (double)fVar2;
-  local_28 = SUB84 /* extract 2-byte value */(dVar1,0);
+  local_28 = SUB84(dVar1,0);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
     g_CurrentFilename = "..\\core\\dcube.cpp";
     g_CurrentLineNumber = 0x6e;

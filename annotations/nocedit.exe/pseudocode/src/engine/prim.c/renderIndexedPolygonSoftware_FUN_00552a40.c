@@ -186,7 +186,7 @@ engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int 
        (local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(g_SoftwareMinScanline,edge_ptr),
        iVar3 = g_SoftwareMinScanline, local_14 != (SSoftwareEdge *)0x0)) {
       iVar9 = g_SoftwareMinScanline - g_MaxViewportScanline;
-      bVar13 = SBORROW /* signed borrow */4(g_SoftwareMinScanline,g_MaxViewportScanline);
+      bVar13 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);
       while (bVar13 != iVar9 < 0) {
         if (edge_ptr->y_max <= iVar3) {
           edge_ptr->y_min = -1;
@@ -218,7 +218,7 @@ engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int 
         unaff_EDI = unaff_EDI + 1;
         *(int *)(unaff_ESI + 0x30) = *(int *)(unaff_ESI + 0x30) + *(int *)(unaff_ESI + 0x34);
         iVar9 = unaff_EDI - g_MaxViewportScanline;
-        bVar13 = SBORROW /* signed borrow */4(unaff_EDI,g_MaxViewportScanline);
+        bVar13 = SBORROW4(unaff_EDI,g_MaxViewportScanline);
       }
     }
   }

@@ -127,7 +127,7 @@ joined_r0x005a47dc:
         dVar2 = (double)fVar1;
         if (fVar1 < (float)0.10000000000000001) {
           uStack_474 = (uint)((ulonglong)dVar2 >> 0x20);
-          local_478 = SUB84 /* extract 2-byte value */(dVar2,0);
+          local_478 = SUB84(dVar2,0);
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x292;
           core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -152,7 +152,7 @@ joined_r0x005a47dc:
           dVar2 = (double)fVar1;
           if (fVar1 < (float)0.10000000000000001) {
             uStack_46c = (uint)((ulonglong)dVar2 >> 0x20);
-            local_470 = SUB84 /* extract 2-byte value */(dVar2,0);
+            local_470 = SUB84(dVar2,0);
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
             g_CurrentLineNumber = 0x29a;
             core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -180,7 +180,7 @@ joined_r0x005a47dc:
               if (local_468 < (float)0.001) {
                 g_CurrentFilename = "..\\sound\\sndmain.cpp";
                 uStack_47c = (uint)((ulonglong)(double)local_468 >> 0x20);
-                local_480 = SUB84 /* extract 2-byte value */((double)local_468,0);
+                local_480 = SUB84((double)local_468,0);
                 g_CurrentLineNumber = 0x2a7;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
                           ("maxVol %g is too small in %s line %d!",local_480,uStack_47c,local_138,

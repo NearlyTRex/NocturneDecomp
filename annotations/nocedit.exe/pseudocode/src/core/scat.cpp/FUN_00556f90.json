@@ -206,14 +206,15 @@
   },
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 125,
+    "complexity_score": 200,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 37,
     "pseudocode_lines": 55,
-    "suspect_count": 6,
+    "suspect_count": 13,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 206
@@ -535,6 +536,55 @@
       "match": "in_stack_00000004",
       "text": "(&(in_stack_00000004->base_character).model);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_0310615c",
+      "text": "DAT_0310615c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 head\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_03106168",
+      "text": "DAT_03106168 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_0310616c",
+      "text": "DAT_0310616c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_03106170",
+      "text": "DAT_03106170 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_03106174",
+      "text": "DAT_03106174 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_03106194",
+      "text": "DAT_03106194 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 R Hand\")",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_0310619c",
+      "text": "DAT_0310619c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 Spine1\")",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

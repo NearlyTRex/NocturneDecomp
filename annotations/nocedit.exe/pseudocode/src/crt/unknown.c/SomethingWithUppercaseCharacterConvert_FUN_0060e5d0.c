@@ -24,7 +24,7 @@ char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(void)
     if (iVar2 != 0) break;
     wVar1 = crt_string_c_mbtowc_peek_FUN_006059e0(str);
     wVar1 = crt_locale_c_toupper_multibyte_FUN_0060f300
-                      ((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar1),in_stack_fffffff4);
+                      ((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);
     crt_locale_c_wchar_to_bytes_FUN_00605a20(wVar1,&stack0xfffffff4);
     iVar2 = crt_locale_c_mblen_FUN_00605a40(&stack0xfffffff4);
     (&stack0xfffffff4)[iVar2] = 0;

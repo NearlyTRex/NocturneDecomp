@@ -22,5 +22,5 @@ unkbyte10 crt_math_c_FUN_00606c57(void)
   uStack00000012 = (uint)((unkuint10)in_ST0 >> 0x30);
   uStack00000008 = (ushort)((unkuint10)in_ST3 >> 0x40);
   crt_math_c_fdiv_FUN_00606960(in_ST2,in_ST1);
-  return CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(uStack0000000a,uStack00000008));
+  return CONCAT64(uStack0000000c,CONCAT22(uStack0000000a,uStack00000008));
 }

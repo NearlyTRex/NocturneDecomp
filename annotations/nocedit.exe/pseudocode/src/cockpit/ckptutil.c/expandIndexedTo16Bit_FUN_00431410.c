@@ -24,7 +24,7 @@ cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410
     while( true ) {
       if (pixel_count < 2) break;
       *(uint *)output_buffer =
-           CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],
+           CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],
                     g_Hardware16BitPalette[*(byte *)indexed_input_buffer]);
       indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);
       output_buffer = (void *)((int)output_buffer + 4);
@@ -45,7 +45,7 @@ cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410
     pbVar1 = (byte *)((int)indexed_input_buffer + 1);
     bVar2 = *(byte *)indexed_input_buffer;
     indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);
-    *(uint *)output_buffer = CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*pbVar1],g_Hardware16BitPalette[bVar2])
+    *(uint *)output_buffer = CONCAT22(g_Hardware16BitPalette[*pbVar1],g_Hardware16BitPalette[bVar2])
     ;
     output_buffer = (void *)((int)output_buffer + 4);
     pixel_count = pixel_count + -2;

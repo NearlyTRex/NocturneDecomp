@@ -115,7 +115,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     ((CVector3f *)CStack_24.z)->y = (float)in_stack_ffffff50;
     ((CVector3f *)CStack_24.z)->z = in_stack_ffffff54;
     if ((CBoxActor *)&stack0xffffff58 != pCStack_18) {
-      *(float *)&pCStack_18->base_actor = SUB84 /* extract 2-byte value */(in_stack_ffffff58,0);
+      *(float *)&pCStack_18->base_actor = SUB84(in_stack_ffffff58,0);
       *(float *)((int)pCStack_18 + 4) = (float)((ulonglong)in_stack_ffffff58 >> 0x20);
       *(float *)((int)pCStack_18 + 8) = fStack_a0;
     }
@@ -170,7 +170,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
         fStack_80 = (float)CStack_24.y * _DAT_00661c30;
         fStack_7c = (float)CStack_24.z * _DAT_00661c30;
         if ((float *)&stack0xffffff54 != &stack0xffffff7c) {
-          in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */(fStack_7c,fStack_80);
+          in_stack_ffffff58 = (double)CONCAT44(fStack_7c,fStack_80);
         }
       }
       g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
@@ -226,13 +226,13 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     in_stack_ffffff50 = g_CKeysPtr;
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
     if (iVar5 != 0) {
-      in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */("Reset gore?",g_CEditorToolsPtr);
+      in_stack_ffffff58 = (double)CONCAT44("Reset gore?",g_CEditorToolsPtr);
       in_stack_ffffff54 = 7.705851e-39;
       iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"Reset gore?");
       if (iVar5 != 0) {
         core_gore_cpp_FUN_004ed760();
-        in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);
+        in_stack_ffffff58 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);
         in_stack_ffffff54 = 7.705913e-39;
         core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                   (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);

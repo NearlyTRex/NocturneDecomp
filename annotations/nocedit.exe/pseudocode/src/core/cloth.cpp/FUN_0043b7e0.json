@@ -51,7 +51,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 53,
+        "column": 25,
         "line": 92,
         "message": "'extraout_var' was not declared in this scope"
       },
@@ -128,14 +128,15 @@
   },
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 270,
+    "complexity_score": 315,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 7,
     "pseudocode_lines": 85,
-    "suspect_count": 16,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "stack_param",
       "undefined_type",
       "unnamed_param",
@@ -468,6 +469,13 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
@@ -501,6 +509,20 @@
       "match": "in_stack_00000004",
       "text": "iVar2 = in_stack_00000008 * 0xac + in_stack_00000004 + 0x3ce90;",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "fsin",
+      "text": "fVar4 = (float10)fsin(fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos(fVar3);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -552,10 +574,17 @@
       "type": "stack_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 85,
+      "match": "extraout_var",
+      "text": "CONCAT31(extraout_var,uVar1));",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "CONCAT31",
-      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,uVar1));",
+      "text": "CONCAT31(extraout_var,uVar1));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -33,7 +33,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
   byte uStack_15;
   float fStack_10;
   
-  fStack_10 = (float)CONCAT22 /* combine 2-byte values */(fStack_10._2_2_,in_ES);
+  fStack_10 = (float)CONCAT22(fStack_10._2_2_,in_ES);
   pcVar8 = &stack0xffffff80;
   iVar9 = 0;
   local_24 = 0.0;
@@ -48,7 +48,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
   pcVar8 = &stack0xffffff80;
   if (iVar10 != 0) {
     if ((character == 0x2b) || (pcVar8 = &stack0xffffff80, character == 0x2d)) {
-      in_stack_ffffff80 = (char *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffff80 >> 8),(char)character);
+      in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);
       local_24 = (float)((int)local_24 + 1);
       pcVar8 = &stack0xffffff81;
       character = crt_stdio_c_scanf_getc_with_width_FUN_00605918(state);
@@ -100,7 +100,7 @@ int __cdecl crt_stdio_c_scanf_float_FUN_00605178(scanf_state_t *state,va_list_t 
             pcVar6 = pcVar6 + -1;
             if (*pcVar1 == '.') break;
             local_20 = 1.4013e-44;
-            uVar5 = CONCAT12 /* combine 2-byte values */(*pcVar1 + -0x30,local_18) / 10;
+            uVar5 = CONCAT12(*pcVar1 + -0x30,local_18) / 10;
             local_18 = (ushort)uVar5;
             uStack_16 = (byte)(uVar5 >> 0x10);
           }
@@ -150,7 +150,7 @@ LAB_006053ad:
                 ((double *)&stack0xffffff80,&local_30,in_stack_ffffff80);
     }
     else if ((char)in_stack_ffffff80 == '-') {
-      local_1c = -CONCAT22 /* combine 2-byte values */(local_1c._2_2_,(ushort)local_1c);
+      local_1c = -CONCAT22(local_1c._2_2_,(ushort)local_1c);
     }
     if ((state->flags & 4) == 0) {
       if ((state->flags & 8) == 0) {
@@ -176,7 +176,7 @@ LAB_006053ad:
         pfVar7[1] = local_20;
         return iVar9;
       }
-      fStack_10 = crt_math_c_doubleToFloat_FUN_0060b26c((double)CONCAT44 /* combine 2-byte values */(local_20,local_24));
+      fStack_10 = crt_math_c_doubleToFloat_FUN_0060b26c((double)CONCAT44(local_20,local_24));
     }
     *pfVar7 = fStack_10;
   }

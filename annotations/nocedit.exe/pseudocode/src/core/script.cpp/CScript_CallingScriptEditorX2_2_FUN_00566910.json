@@ -26,14 +26,15 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 46,
+    "complexity_score": 151,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 21,
-    "suspect_count": 2,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 83
   },
@@ -190,6 +191,76 @@
       "match": "in_stack_00000004",
       "text": "iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(in_stack_00000004 + 0x38))",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0310fcdc",
+      "text": "DAT_0310fcdc = iVar1 + 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0310fcdc",
+      "text": "if (DAT_0310fcdc <= DAT_0310fd48) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0310fd48",
+      "text": "if (DAT_0310fcdc <= DAT_0310fd48) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_0310fd48",
+      "text": "DAT_0310fd48 = iVar1 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_0310fd48",
+      "text": "if (DAT_0310fd48 < 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0310fd48",
+      "text": "DAT_0310fd48 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_0310fd44",
+      "text": "if (DAT_0310fd44 < 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = core_script_cpp_CScript_editorX2Index_FUN_00566a90();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = core_script_cpp_CScript_editorIndex2X_FUN_00566b30();",
+      "type": "undefined_data"
     }
   ]
 }

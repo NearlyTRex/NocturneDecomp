@@ -3,13 +3,13 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 127,
+        "column": 71,
         "line": 31,
         "message": "'SUB41' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
-        "column": 84,
+        "column": 56,
         "line": 31,
         "message": "'CONCAT11' was not declared in this scope"
       },
@@ -62,12 +62,12 @@
   },
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 124,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 69,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
@@ -299,35 +299,49 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "CONCAT22",
-      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));",
+      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "CONCAT11",
-      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));",
+      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "SUB41",
-      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));",
+      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "CONCAT21",
-      "text": "fVar5 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),local_30 < fVar4) << 8);",
+      "text": "fVar5 = (float)((uint)CONCAT21((short)((uint)fVar2 >> 0x10),local_30 < fVar4) << 8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "CONCAT22",
-      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),",
+      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "NAN",
+      "text": "(ushort)(NAN(local_30) || NAN(fVar2)) << 10 |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "NAN",
+      "text": "(ushort)(NAN(local_30) || NAN(fVar2)) << 10 |",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -46,5 +46,5 @@ int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(STriangleIn
   uVar2 = (uint)((uint)((longlong)local_20 * (longlong)local_1c) <
                 (uint)((longlong)local_24 * (longlong)local_18));
   iVar1 = iVar4 - iVar3;
-  return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed borrow */4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);
+  return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);
 }

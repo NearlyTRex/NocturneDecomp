@@ -332,18 +332,19 @@
   },
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 1008,
+    "complexity_score": 1053,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 21,
     "pseudocode_lines": 288,
-    "suspect_count": 68,
+    "suspect_count": 72,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
       "suspect_float",
+      "undefined_data",
       "unknown_field",
       "unnamed_param",
       "unresolved_funcptr"
@@ -816,6 +817,34 @@
       "match": "in_stack_00000004",
       "text": "if ((*(int *)(in_stack_00000004[0x176].create_event + 0x2c) == 2) && (local_48 == 0)) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 85,
+      "match": "DAT_03f6bb00",
+      "text": "iVar6 = DAT_03f6bb00;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_03f6bad8",
+      "text": "iVar7 = DAT_03f6bad8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_03f6bb04",
+      "text": "iVar6 = DAT_03f6bb04;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_03f6badc",
+      "text": "iVar7 = DAT_03f6badc;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

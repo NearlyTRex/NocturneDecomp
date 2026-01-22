@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 153,
+    "complexity_score": 168,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 93,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function"
+      "special_crt_function",
+      "warning_struct_overlap"
     ],
     "total_lines": 294
   },
@@ -122,6 +123,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Struct has overlapping fields",
+      "line": 2,
+      "match": "WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields",
+      "text": "/* WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields */",
+      "type": "warning_struct_overlap"
+    },
     {
       "description": "Complex pointer cast",
       "line": 69,

@@ -404,15 +404,16 @@
   },
   "complexity": {
     "assembly_lines": 1026,
-    "complexity_score": 1055,
+    "complexity_score": 1080,
     "cross_reference_count": 2,
     "function_call_count": 57,
     "global_count": 80,
     "pseudocode_lines": 405,
-    "suspect_count": 64,
+    "suspect_count": 66,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 1431
   },
@@ -1420,6 +1421,20 @@
       "match": "&stack0xfffff790",
       "text": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"ESP: %08X\\n\",&stack0xfffff790)",
       "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_02d82d80",
+      "text": "if (DAT_02d82d80 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_02d82d80",
+      "text": "DAT_02d82d80 = 0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

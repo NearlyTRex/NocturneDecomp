@@ -104,12 +104,12 @@
   },
   "complexity": {
     "assembly_lines": 207,
-    "complexity_score": 270,
+    "complexity_score": 310,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
     "pseudocode_lines": 100,
-    "suspect_count": 15,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -471,6 +471,34 @@
       "line": 32,
       "match": "ABS",
       "text": "if (ABS(this_ptr->atten_end) == 0.0) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "fsin",
+      "text": "fVar7 = (float10)fsin(fVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "fcos",
+      "text": "fVar6 = (float10)fcos(fVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "fcos",
+      "text": "fVar10 = (float10)fcos(fVar9);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "fsin",
+      "text": "fVar9 = (float10)fsin(fVar9);",
       "type": "decompiler_intrinsic"
     },
     {

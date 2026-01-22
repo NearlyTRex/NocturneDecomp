@@ -17,13 +17,13 @@ int __cdecl crt_string_c_strnicmp_FUN_005ff070(char *str1,char *str2,int count)
       return 0;
     }
     bVar2 = *str1;
-    uVar1 = (uint)CONCAT11 /* combine 2-byte values */(*str2,bVar2);
+    uVar1 = (uint)CONCAT11(*str2,bVar2);
     if ((0x40 < bVar2) && (bVar2 < 0x5b)) {
-      uVar1 = (uint)CONCAT11 /* combine 2-byte values */(*str2,bVar2 + 0x20);
+      uVar1 = (uint)CONCAT11(*str2,bVar2 + 0x20);
     }
     bVar2 = (byte)(uVar1 >> 8);
     if ((0x40 < bVar2) && (bVar2 < 0x5b)) {
-      uVar1 = (uint)CONCAT11 /* combine 2-byte values */(bVar2 + 0x20,(char)uVar1);
+      uVar1 = (uint)CONCAT11(bVar2 + 0x20,(char)uVar1);
     }
     bVar2 = (byte)(uVar1 >> 8);
     if ((byte)uVar1 != bVar2) break;

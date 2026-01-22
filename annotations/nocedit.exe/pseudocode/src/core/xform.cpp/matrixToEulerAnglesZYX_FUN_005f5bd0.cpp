@@ -41,7 +41,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
     dVar6 = 1.0 / dVar6;
   }
   uStack_84 = (uint)((ulonglong)dVar6 >> 0x20);
-  local_88 = SUB84 /* extract 2-byte value */(dVar6,0);
+  local_88 = SUB84(dVar6,0);
   fVar1 = matrix_ptr->m[2].z;
   fVar2 = matrix_ptr[1].m[0].x;
   fVar3 = matrix_ptr[1].m[0].y;
@@ -49,7 +49,7 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
   if (0.0 < dVar6) {
     dVar6 = 1.0 / dVar6;
   }
-  local_80 = SUB84 /* extract 2-byte value */(dVar6,0);
+  local_80 = SUB84(dVar6,0);
   fVar1 = -matrix_ptr[1].m[0].x * (float)dVar6;
   if ((float)-1 < fVar1) {
     if ((double)fVar1 < 1.0) {
@@ -61,26 +61,26 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
       }
       if (0.0 < dVar6) {
         dVar6 = 1.0 / dVar6;
-        uStack_3c = SUB84 /* extract 2-byte value */(dVar6,0);
-        dVar4 = (double)matrix_ptr->m[2].z * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;
-        dVar6 = (double)matrix_ptr[1].m[0].y * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;
-        uStack_34 = SUB84 /* extract 2-byte value */(dVar4,0);
+        uStack_3c = SUB84(dVar6,0);
+        dVar4 = (double)matrix_ptr->m[2].z * (double)CONCAT44(local_80,uStack_84) * dVar6;
+        dVar6 = (double)matrix_ptr[1].m[0].y * (double)CONCAT44(local_80,uStack_84) * dVar6;
+        uStack_34 = SUB84(dVar4,0);
         local_30 = (uint)((ulonglong)dVar4 >> 0x20);
-        uStack_64 = SUB84 /* extract 2-byte value */(dVar6,0);
+        uStack_64 = SUB84(dVar6,0);
         if ((0.70699999999999996 <= dVar4) ||
            (dVar4 <= -0.70699999999999996)) {
           if ((-1 < dVar6) && (dVar6 < 1.0)) {
             dVar6 = crt_math_c_acos_FUN_00600162(dVar6);
             local_18 = (float)dVar6;
           }
-          if ((double)CONCAT44 /* combine 2-byte values */(uStack_34,local_30) < 0.0) {
+          if ((double)CONCAT44(uStack_34,local_30) < 0.0) {
             local_18 = -local_18;
           }
         }
         else {
           fVar5 = crt_math_c_asin_FUN_00600b94((float10)dVar4);
           local_18 = (float)fVar5;
-          if ((double)CONCAT44 /* combine 2-byte values */(uStack_64,local_68) < 0.0) {
+          if ((double)CONCAT44(uStack_64,local_68) < 0.0) {
             local_18 = (float)3.1415926535900001 - local_18;
           }
         }
@@ -91,17 +91,17 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
           local_18 = local_18 + -6.283185f;
         }
         euler_out->y = local_18;
-        fVar1 = matrix_ptr->m[0].y * fVar1 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40);
+        fVar1 = matrix_ptr->m[0].y * fVar1 * (float)(double)CONCAT44(uStack_3c,local_40);
         dVar6 = (double)fVar1;
-        local_b0 = SUB84 /* extract 2-byte value */(dVar6,0);
-        dVar4 = (double)(matrix_ptr->m[1].z * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_9c,local_a0) *
-                        (float)(double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40));
+        local_b0 = SUB84(dVar6,0);
+        dVar4 = (double)(matrix_ptr->m[1].z * (float)(double)CONCAT44(uStack_9c,local_a0) *
+                        (float)(double)CONCAT44(uStack_3c,local_40));
         if ((0.70699999999999996 <= dVar6) ||
            (dVar6 <= -0.70699999999999996)) {
           if (-1 < dVar4) {
             if (dVar4 < 1.0) {
               dVar6 = crt_math_c_acos_FUN_00600162(dVar4);
-              dVar6 = (double)CONCAT44 /* combine 2-byte values */((float)dVar6,local_b0);
+              dVar6 = (double)CONCAT44((float)dVar6,local_b0);
             }
             else {
               local_20 = 0.0;
@@ -136,9 +136,9 @@ core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVect
   }
   uStack_8c = (uint)((ulonglong)(double)fVar1 >> 0x20);
   euler_out->z = 0.0;
-  fVar1 = -matrix_ptr->m[0].z * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c);
+  fVar1 = -matrix_ptr->m[0].z * (float)(double)CONCAT44(local_88,uStack_8c);
   dVar6 = (double)fVar1;
-  dVar4 = (double)(matrix_ptr->m[0].x * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c));
+  dVar4 = (double)(matrix_ptr->m[0].x * (float)(double)CONCAT44(local_88,uStack_8c));
   if ((0.70699999999999996 <= dVar6) || (dVar6 <= -0.70699999999999996)) {
     if (-1 < dVar4) {
       if (dVar4 < 1.0) {

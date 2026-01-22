@@ -314,12 +314,12 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 391,
+    "complexity_score": 401,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
     "pseudocode_lines": 216,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -904,6 +904,13 @@
       "line": 143,
       "match": "ABS",
       "text": "(ABS(g_LoadedVertices[iVar2].vertex.z - g_LoadedVertices[iVar3].vertex.z) <",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 146,
+      "match": "fcos",
+      "text": "fVar8 = (float10)fcos((float10)angle_tolerance *",
       "type": "decompiler_intrinsic"
     },
     {

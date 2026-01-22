@@ -38,13 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 34,
+    "complexity_score": 59,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 14,
     "pseudocode_lines": 19,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 79
@@ -262,11 +263,25 @@
   },
   "suspects": [
     {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_02d833d4",
+      "text": "pCVar2 = DAT_02d833d4;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 16,
       "match": "code *",
       "text": "(**(code **)(*(int *)(pCVar2->field0_0x0 + 0x34) + 8))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_02d873d4",
+      "text": "} while (pCVar2 != (CBloodParticle *)&DAT_02d873d4);",
+      "type": "undefined_data"
     }
   ]
 }

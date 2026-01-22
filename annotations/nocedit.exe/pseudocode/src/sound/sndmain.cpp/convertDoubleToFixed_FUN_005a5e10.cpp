@@ -20,7 +20,7 @@ sound_sndmain_cpp_convertDoubleToFixed_FUN_005a5e10
   
   dVar1 = crt_math_c_floor_FUN_005feb90(input);
   dVar2 = crt_math_c_round_FUN_005fe6b0(dVar1);
-  dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)
+  dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)
           ) * 4294967296;
   *input._0_4_ = (int)(longlong)ROUND(dVar2);
   dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);

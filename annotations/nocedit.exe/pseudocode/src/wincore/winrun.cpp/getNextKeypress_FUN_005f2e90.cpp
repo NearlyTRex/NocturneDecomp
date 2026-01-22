@@ -27,8 +27,8 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_005f2e90(void)
     g_InputReadIndex = iVar1;
     if (0x13 < iVar1) {
       g_InputReadIndex = 0;
-      return CONCAT31 /* combine 2-byte values */(uVar2,uVar3);
+      return CONCAT31(uVar2,uVar3);
     }
   }
-  return CONCAT31 /* combine 2-byte values */(uVar2,uVar3);
+  return CONCAT31(uVar2,uVar3);
 }

@@ -24,7 +24,7 @@ int __cdecl engine_3d_c_isVisiblePlane_FUN_00403950(SClipPlane *plane)
               (longlong)plane->A * (longlong)g_RelativeX +
               (longlong)plane->C * (longlong)g_RelativeZ, iVar5 = (int)((ulonglong)lVar3 >> 0x20),
      iVar6 = plane->D >> 0x1f, uVar1 = (uint)((uint)plane->D < (uint)lVar3), iVar2 = iVar6 - iVar5,
-     iVar4 = 1, (SBORROW /* signed borrow */4(iVar6,iVar5) != SBORROW /* signed borrow */4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {
+     iVar4 = 1, (SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {
     iVar4 = 0;
   }
   return iVar4;

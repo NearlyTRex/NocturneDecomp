@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 51,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 11,
-    "suspect_count": 3,
+    "suspect_count": 7,
     "suspect_types": [
+      "fpu_register_input",
       "special_crt_function",
       "unresolved_funcptr"
     ],
@@ -68,11 +69,39 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "FPU register input (calling convention issue)",
+      "line": 7,
+      "match": "in_ST2",
+      "text": "float10 in_ST2;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 8,
+      "match": "in_ST3",
+      "text": "float10 in_ST3;",
+      "type": "fpu_register_input"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 10,
       "match": "code *",
       "text": "pcVar1 = (code *)swi(6);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 12,
+      "match": "in_ST2",
+      "text": "fVar2 = crt_math_c_fdiv_FUN_00606960(in_ST2,in_ST3);",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 12,
+      "match": "in_ST3",
+      "text": "fVar2 = crt_math_c_fdiv_FUN_00606960(in_ST2,in_ST3);",
+      "type": "fpu_register_input"
     },
     {
       "address": "00606deb",

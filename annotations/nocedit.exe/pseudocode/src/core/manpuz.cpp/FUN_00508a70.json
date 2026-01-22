@@ -188,12 +188,12 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 1211,
+    "complexity_score": 1241,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 271,
-    "suspect_count": 92,
+    "suspect_count": 95,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -653,6 +653,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 88,
+      "match": "fcos",
+      "text": "fVar18 = (float10)fcos((float10)_DAT_00660d8c * (float10)0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 89,
       "match": "in_stack_00000004",
@@ -910,6 +917,20 @@
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar17 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 216,
+      "match": "fcos",
+      "text": "fVar18 = (float10)fcos((float10)_DAT_00660d8c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 217,
+      "match": "fsin",
+      "text": "fVar19 = (float10)fsin((float10)_DAT_00660d8c);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

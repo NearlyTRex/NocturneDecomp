@@ -13,13 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 36,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 32,
     "pseudocode_lines": 36,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 94
   },
   "cross_references": [
@@ -288,5 +290,20 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02cf2a78",
+      "text": "DAT_02cf2a78 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02cf2aac",
+      "text": "DAT_02cf2aac = 0xff;",
+      "type": "undefined_data"
+    }
+  ]
 }

@@ -39,7 +39,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,F
   local_24 = 0;
   if (0 < (int)local_38) {
     local_2c = (int)local_34 + 4;
-    dVar2 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *
+    dVar2 = (double)CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *
             0.94999999999999996;
     local_28 = (int)local_34 + 8;
     local_1c = 0;

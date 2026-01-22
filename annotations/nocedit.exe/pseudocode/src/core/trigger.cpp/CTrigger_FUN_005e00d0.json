@@ -176,17 +176,18 @@
   },
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 517,
+    "complexity_score": 552,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
     "pseudocode_lines": 222,
-    "suspect_count": 27,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "suspect_float",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 661
@@ -502,6 +503,13 @@
       "type": "suspect_float"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_0068434c",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_01,&DAT_0068434c);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 118,
       "match": "ROUND",
@@ -555,6 +563,20 @@
       "line": 134,
       "match": "ROUND",
       "text": "CStack_6c.z = (int)ROUND(fStack_58 * _DAT_00664a00);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 145,
+      "match": "fsin",
+      "text": "fVar10 = (float10)fsin(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 146,
+      "match": "fcos",
+      "text": "fVar11 = (float10)fcos(fVar11);",
       "type": "decompiler_intrinsic"
     },
     {

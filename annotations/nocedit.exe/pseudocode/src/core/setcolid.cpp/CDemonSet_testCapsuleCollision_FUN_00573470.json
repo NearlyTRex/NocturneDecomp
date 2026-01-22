@@ -254,18 +254,19 @@
   },
   "complexity": {
     "assembly_lines": 670,
-    "complexity_score": 521,
+    "complexity_score": 536,
     "cross_reference_count": 4,
     "function_call_count": 13,
     "global_count": 8,
     "pseudocode_lines": 266,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
-      "unknown_field"
+      "unknown_field",
+      "warning_type_propagation"
     ],
     "total_lines": 936
   },
@@ -741,6 +742,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 24,

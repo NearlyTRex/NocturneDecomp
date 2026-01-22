@@ -608,20 +608,20 @@ LAB_005bd19f:
               pCStack_78 = (CDemonActor *)
                            core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                      (pCStack_24,0x22);
-              in_stack_fffffd18 = (double)CONCAT44 /* combine 2-byte values */(uVar22,0x23);
-              in_stack_fffffd10 = (double)CONCAT44 /* combine 2-byte values */(pCStack_24,0x5bc90d);
+              in_stack_fffffd18 = (double)CONCAT44(uVar22,0x23);
+              in_stack_fffffd10 = (double)CONCAT44(pCStack_24,0x5bc90d);
               fVar16 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                  (pCStack_24,0x23);
               fVar23 = (float)((ulonglong)in_stack_fffffd18 >> 0x20);
               if (fVar16 + (float)pCStack_78 <= 0.0) {
-                in_stack_fffffd18 = (double)CONCAT44 /* combine 2-byte values */(fVar23,in_stack_00000004);
-                in_stack_fffffd10 = (double)CONCAT44 /* combine 2-byte values */(0x5bceeb,SUB84 /* extract 2-byte value */(in_stack_fffffd10,0));
+                in_stack_fffffd18 = (double)CONCAT44(fVar23,in_stack_00000004);
+                in_stack_fffffd10 = (double)CONCAT44(0x5bceeb,SUB84(in_stack_fffffd10,0));
                 (*(in_stack_00000004->base_actor).vtable[1].processFootstep)
                           (&in_stack_00000004->base_actor,fVar23);
               }
               else if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 0x14) != 0) {
-                in_stack_fffffd18 = (double)CONCAT44 /* combine 2-byte values */(fVar23,1);
-                in_stack_fffffd10 = (double)CONCAT44 /* combine 2-byte values */(0x23,pCStack_24);
+                in_stack_fffffd18 = (double)CONCAT44(fVar23,1);
+                in_stack_fffffd10 = (double)CONCAT44(0x23,pCStack_24);
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(pCStack_24,0x23,1);
                 pCVar12 = in_stack_00000004 + 1;
                 (pCVar12->base_actor).actor_name[0x14] = '\0';
@@ -632,7 +632,7 @@ LAB_005bd19f:
             }
             goto switchD_005bd22e_caseD_6;
           }
-          in_stack_fffffd18 = (double)CONCAT44 /* combine 2-byte values */(uVar22,1);
+          in_stack_fffffd18 = (double)CONCAT44(uVar22,1);
           in_stack_fffffd10 = (double)ZEXT48(&in_stack_00000004->model);
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(in_stack_00000004->model).motion_controller,0,1);
@@ -834,7 +834,7 @@ LAB_005bd19f:
     }
   }
 switchD_005bd22e_caseD_6:
-  iVar19 = SUB84 /* extract 2-byte value */(in_stack_fffffd18,0);
+  iVar19 = SUB84(in_stack_fffffd18,0);
   pCStack_68 = &(in_stack_00000004->model).motion_controller;
   pSVar17 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(pCStack_68);
   if ((pSVar17->state_index == 0x1b) &&
@@ -1052,7 +1052,7 @@ LAB_005bd5e6:
           in_stack_00000004[1].base_actor.actor_name[2] = '\0';
           in_stack_00000004[1].base_actor.actor_name[3] = '\0';
           (*pCVar9[1].playAmbientSoundWithVolume)
-                    (&in_stack_00000004->base_actor,(char *)&SStack_2bc,SUB84 /* extract 2-byte value */(in_stack_fffffd10,0));
+                    (&in_stack_00000004->base_actor,(char *)&SStack_2bc,SUB84(in_stack_fffffd10,0));
           if ((in_stack_00000004->hit_points <= 0.0) || (pCStack_68 != (CMotionController *)0x0)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(in_stack_00000004->model).motion_controller,0x12,1);

@@ -189,13 +189,13 @@ LAB_00500870:
                           (this_ptr,&this_ptr->selected_weapon->base_actor,1), iVar7 == 0)) {
       pcVar6 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base_actor);
       pcVar4 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base_actor);
-      uVar14 = CONCAT44 /* combine 2-byte values */(pcVar6,pcVar4);
+      uVar14 = CONCAT44(pcVar6,pcVar4);
       pcVar6 = "%s\n\n%s";
       goto LAB_005008cd;
     }
     pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base_actor);
     pcVar4 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base_actor);
-    uVar14 = CONCAT44 /* combine 2-byte values */(pcVar6,pcVar4);
+    uVar14 = CONCAT44(pcVar6,pcVar4);
     pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base_actor);
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17c,"%s\n\n%s %s",pcVar6,uVar14);
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(" are loaded.");
@@ -223,7 +223,7 @@ LAB_00500870:
   else {
     pcVar6 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base_actor);
     pcVar4 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base_actor);
-    uVar14 = CONCAT44 /* combine 2-byte values */(pcVar6,pcVar4);
+    uVar14 = CONCAT44(pcVar6,pcVar4);
     pcVar6 = "%s\n\n%s";
 LAB_005008cd:
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17c,pcVar6,uVar14);

@@ -98,14 +98,15 @@
   },
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 156,
+    "complexity_score": 181,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 21,
-    "suspect_count": 13,
+    "suspect_count": 15,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 43
   },
@@ -263,6 +264,20 @@
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0x2dc) = fVar1;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_02c9b170",
+      "text": "((CKeyFramedModelInstance *)&DAT_02c9b170,\"stalrock.kfm\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02c9b170",
+      "text": "((CKeyFramedModelInstance *)&DAT_02c9b170);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

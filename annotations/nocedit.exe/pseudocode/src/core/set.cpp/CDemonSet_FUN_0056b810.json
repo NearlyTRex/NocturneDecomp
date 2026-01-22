@@ -21,7 +21,7 @@
       },
       {
         "category": "other",
-        "column": 57,
+        "column": 29,
         "line": 66,
         "message": "cast from 'CDemonActor*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
@@ -368,18 +368,19 @@
   },
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 440,
+    "complexity_score": 695,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
     "pseudocode_lines": 265,
-    "suspect_count": 15,
+    "suspect_count": 40,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "stack_param",
-      "suspect_float"
+      "suspect_float",
+      "undefined_data"
     ],
     "total_lines": 841
   },
@@ -837,7 +838,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 59,
       "match": "CONCAT22",
-      "text": "CONCAT22 /* combine 2-byte values */((short)((uint)collision_info >> 0x10),",
+      "text": "CONCAT22((short)((uint)collision_info >> 0x10),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "NAN",
+      "text": "(ushort)NAN((float)collision_info) << 10 |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "NAN",
+      "text": "local_24 = -NAN;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -848,11 +863,123 @@
       "type": "suspect_float"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 93,
+      "match": "DAT_00821ff4",
+      "text": "DAT_00821ff4 = pCVar5;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 97,
+      "match": "DAT_00821ff4",
+      "text": "(*DAT_00821ff4->vtable->process)(DAT_00821ff4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 97,
+      "match": "DAT_00821ff4",
+      "text": "(*DAT_00821ff4->vtable->process)(DAT_00821ff4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_032bd794 + iVar7) = iVar9 - local_40;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_032bd794",
+      "text": "*(int *)((int)&DAT_032bd794 + iVar7) = iVar9 - local_40;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_032bf6d4",
+      "text": "*(CDemonActor **)((int)&DAT_032bf6d4 + iVar7) = DAT_00821ff4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_00821ff4",
+      "text": "*(CDemonActor **)((int)&DAT_032bf6d4 + iVar7) = DAT_00821ff4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_00821ff4",
+      "text": "collision_info = DAT_00821ff4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_00821ff4",
+      "text": "this_ptr_00 = (*DAT_00821ff4->vtable->getPathMap)(DAT_00821ff4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_00821ff4",
+      "text": "this_ptr_00 = (*DAT_00821ff4->vtable->getPathMap)(DAT_00821ff4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_00821ff4",
+      "text": "collision_info = (CDemonActor *)&DAT_00821ff4->location;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_00821ff4",
+      "text": "if (((fStack_5c == (DAT_00821ff4->orient).bank) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_00821ff4",
+      "text": "(local_60 == (DAT_00821ff4->orient).pitch)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_00821ff4",
+      "text": "(fStack_58 == (DAT_00821ff4->orient).heading)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_00821ff4",
+      "text": "DAT_00821ff4 = (CDemonActor *)0x0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_00821ff4",
+      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(DAT_00821ff4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
+      "match": "DAT_00821ff4",
+      "text": "DAT_00821ff4 = (CDemonActor *)0x0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -876,11 +1003,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 212,
+      "match": "DAT_032bd794",
+      "text": "if (iVar7 < *(int *)((int)&DAT_032bd794 + iVar8)) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 214,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_032bd794 + iVar8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 214,
+      "match": "DAT_032bd794",
+      "text": "*(uint *)((int)&DAT_032bd794 + iVar8);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -890,6 +1031,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 215,
+      "match": "DAT_032bd794",
+      "text": "*(int *)((int)&DAT_032bd794 + iVar8) = iVar7;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 218,
       "match": "(uint *)((int)",
@@ -897,11 +1045,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 218,
+      "match": "DAT_032bf6d4",
+      "text": "*(uint *)((int)&DAT_032bf6d4 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 219,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_032bf6d4 + iVar8) = uVar3;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 219,
+      "match": "DAT_032bf6d4",
+      "text": "*(uint *)((int)&DAT_032bf6d4 + iVar8) = uVar3;",
+      "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -918,11 +1080,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 236,
+      "match": "DAT_032bd794",
+      "text": "piVar1 = (int *)((int)&DAT_032bd794 + iVar7);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 237,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&DAT_032bf6d4 + iVar7);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 237,
+      "match": "DAT_032bf6d4",
+      "text": "puVar2 = (uint *)((int)&DAT_032bf6d4 + iVar7);",
+      "type": "undefined_data"
     }
   ]
 }

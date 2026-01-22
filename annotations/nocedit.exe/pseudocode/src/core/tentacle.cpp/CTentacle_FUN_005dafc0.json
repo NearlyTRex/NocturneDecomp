@@ -37,13 +37,15 @@
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 14,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "pseudocode_lines": 14,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 62
   },
   "cross_references": [],
@@ -174,7 +176,36 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_03f6cd08",
+      "text": "DAT_03f6cd08 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,\"bipp02\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_03f6cd0c",
+      "text": "DAT_03f6cd0c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,\"bipp05\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_03f6cd10",
+      "text": "DAT_03f6cd10 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,\"bipp06\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_03f6cd14",
+      "text": "DAT_03f6cd14 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,\"bipp09\");",
+      "type": "undefined_data"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -120,7 +120,7 @@ uint core_stranger_cpp_CStranger_FUN_005c2400(void)
                                (in_stack_00000004,&CStack_68,&(this_ptr->location).position);
             if (0.0 < pCVar4->z) {
               uStack_ec = (uint)((ulonglong)dVar2 >> 0x20);
-              local_f0 = SUB84 /* extract 2-byte value */(dVar2,0);
+              local_f0 = SUB84(dVar2,0);
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (g_CConsolePtr,"Ladder dot : %f\n",local_f0,uStack_ec);
               in_stack_00000004[0x17a].orient.heading = (float)this_ptr;

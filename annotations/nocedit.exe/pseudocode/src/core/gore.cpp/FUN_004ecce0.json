@@ -32,16 +32,17 @@
   },
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 430,
+    "complexity_score": 455,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 18,
     "pseudocode_lines": 130,
-    "suspect_count": 28,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "suspect_float",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 429
@@ -419,6 +420,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0067c028",
+      "text": "(g_CDemonRendererPtr2,&DAT_0067c028 + in_stack_00000004[5] * 0x1d + local_18);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "ROUND",
@@ -557,6 +565,13 @@
       "match": "1.14794e-41",
       "text": "g_RenderVertexBuffer[3].light = 1.14794e-41;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 132,
+      "match": "DAT_02d83368",
+      "text": "(g_CDemonRendererPtr2,&DAT_02d83368);",
+      "type": "undefined_data"
     }
   ]
 }

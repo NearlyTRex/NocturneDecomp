@@ -95,13 +95,7 @@
         "category": "undeclared_identifier",
         "column": 9,
         "line": 82,
-        "message": "'SBORROW' was not declared in this scope"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 82,
-        "message": "expected ')' before numeric constant"
+        "message": "'SBORROW4' was not declared in this scope"
       },
       {
         "category": "other",
@@ -158,16 +152,17 @@
   },
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 513,
+    "complexity_score": 528,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 28,
     "pseudocode_lines": 148,
-    "suspect_count": 34,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_ref",
+      "undefined_data",
       "unknown_field",
       "warning_overlapping_globals"
     ],
@@ -789,6 +784,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_03f8f608",
+      "text": "(&DAT_03f8f608)[iVar7] = *(byte *)(iVar4 + 0x2cf901f + iVar2);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ABS",
@@ -875,8 +877,8 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
-      "match": "SBORROW",
-      "text": "if (SBORROW /* signed borrow */4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {",
+      "match": "SBORROW4",
+      "text": "if (SBORROW4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {",
       "type": "decompiler_intrinsic"
     },
     {

@@ -95,12 +95,12 @@ shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
     local_b8 = *(uint *)&segStart->z;
     uVar6 = *(uint *)((int)&segStart->z + 4);
   }
-  if ((((double)CONCAT44 /* combine 2-byte values */(uVar1,local_b0) + -0.0001 <= point->x) &&
-      (point->x <= (double)CONCAT44 /* combine 2-byte values */(uVar4,local_a8) + 0.0001)) &&
-     (((double)CONCAT44 /* combine 2-byte values */(uVar2,local_c0) + -0.0001 <= point->y &&
-      (((point->y <= (double)CONCAT44 /* combine 2-byte values */(uVar5,local_f0) + 0.0001 &&
-        ((double)CONCAT44 /* combine 2-byte values */(uVar3,local_f8) + -0.0001 <= point->z)) &&
-       (point->z <= (double)CONCAT44 /* combine 2-byte values */(uVar6,local_b8) + 0.0001)))))) {
+  if ((((double)CONCAT44(uVar1,local_b0) + -0.0001 <= point->x) &&
+      (point->x <= (double)CONCAT44(uVar4,local_a8) + 0.0001)) &&
+     (((double)CONCAT44(uVar2,local_c0) + -0.0001 <= point->y &&
+      (((point->y <= (double)CONCAT44(uVar5,local_f0) + 0.0001 &&
+        ((double)CONCAT44(uVar3,local_f8) + -0.0001 <= point->z)) &&
+       (point->z <= (double)CONCAT44(uVar6,local_b8) + 0.0001)))))) {
     local_a0 = point->x - segStart->x;
     local_98 = point->y - segStart->y;
     local_90 = point->z - segStart->z;

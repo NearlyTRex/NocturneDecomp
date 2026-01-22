@@ -226,15 +226,15 @@ uint shape_superopt_cpp_FUN_005cb3a0(void)
               local_84 = local_118.y._4_4_;
             }
             dVar4 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                              (&local_108,&local_f8,SUB84 /* extract 2-byte value */(in_stack_fffffe80,0));
+                              (&local_108,&local_f8,SUB84(in_stack_fffffe80,0));
             local_40 = dVar4;
             in_stack_fffffe80 =
                  shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                           (&local_108,&local_118,SUB84 /* extract 2-byte value */(in_stack_fffffe80,0));
-            local_148 = SUB84 /* extract 2-byte value */(dVar4,0);
+                           (&local_108,&local_118,SUB84(in_stack_fffffe80,0));
+            local_148 = SUB84(dVar4,0);
             if (((((((ulonglong)dVar4 & 0x7fffffff00000000) == 0) && (local_148 == 0)) &&
                  (((ulonglong)in_stack_fffffe80 & 0x7fffffff00000000) == 0)) &&
-                (SUB84 /* extract 2-byte value */(in_stack_fffffe80,0) == 0)) ||
+                (SUB84(in_stack_fffffe80,0) == 0)) ||
                (((dVar4 < 0.0 && (0.0 < in_stack_fffffe80)) ||
                 ((local_40 = in_stack_fffffe80, 0.0 < dVar4 && (in_stack_fffffe80 < 0.0)))))) {
               return 0;

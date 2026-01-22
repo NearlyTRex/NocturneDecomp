@@ -9,7 +9,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 62,
+        "column": 34,
         "line": 22,
         "message": "'extraout_var' was not declared in this scope"
       },
@@ -44,14 +44,15 @@
   },
   "complexity": {
     "assembly_lines": 738,
-    "complexity_score": 197,
+    "complexity_score": 222,
     "cross_reference_count": 15,
     "function_call_count": 3,
     "global_count": 16,
     "pseudocode_lines": 167,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "undefined_type"
     ],
     "total_lines": 905
@@ -365,10 +366,24 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_var",
+      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar1);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "CONCAT31",
-      "text": "g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar1);",
+      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar1);",
       "type": "decompiler_intrinsic"
     }
   ]

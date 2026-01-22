@@ -68,7 +68,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
         bVar17 = CARRY4(unaff_EBX,unaff_EBX);
         unaff_EBX = unaff_EBX * 2;
         uVar10 = uVar10 * 2 + (uint)bVar17;
-        uVar7 = CONCAT22 /* combine 2-byte values */((short)(uVar7 >> 0x10),(short)uVar7 + -1);
+        uVar7 = CONCAT22((short)(uVar7 >> 0x10),(short)uVar7 + -1);
       } while ((uVar10 & 0x100000) == 0);
     }
     else {
@@ -90,13 +90,13 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
       if (bVar17) {
         uVar4 = uVar7 - uVar10;
       }
-      uVar1 = CONCAT44 /* combine 2-byte values */(uVar4,param_1) / (ulonglong)uVar10;
+      uVar1 = CONCAT44(uVar4,param_1) / (ulonglong)uVar10;
       local_20 = (uint)uVar1;
       uVar2 = (ulonglong)unaff_EBX * (uVar1 & 0xffffffff);
       iVar5 = (int)uVar2;
       lVar3 = (ulonglong)uVar10 * (uVar1 & 0xffffffff) + (uVar2 >> 0x20);
       if (bVar17) {
-        lVar3 = lVar3 + CONCAT44 /* combine 2-byte values */(uVar10,unaff_EBX);
+        lVar3 = lVar3 + CONCAT44(uVar10,unaff_EBX);
       }
       uVar8 = -iVar5;
       uVar4 = (uint)(iVar5 != 0);
@@ -120,7 +120,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
         local_20 = local_20 + 1;
         bVar17 = (bool)(bVar17 ^ bVar18);
       }
-      uVar1 = CONCAT44 /* combine 2-byte values */(uVar11,uVar8) / (ulonglong)uVar10;
+      uVar1 = CONCAT44(uVar11,uVar8) / (ulonglong)uVar10;
       local_24 = (uint)uVar1;
       if (local_24 != 0) {
         uVar2 = (ulonglong)unaff_EBX * (uVar1 & 0xffffffff);
@@ -175,15 +175,15 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
     return uVar4;
   }
   if (((byte)g_UseSoftwareMath & 1) == 0) {
-    fVar20 = (float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1) /
-             (float10)(double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX);
+    fVar20 = (float10)(double)CONCAT44(param_2,param_1) /
+             (float10)(double)CONCAT44(param_4,unaff_EBX);
   }
   else {
     fVar20 = crt_math_c_pentiumFdivBugWorkaroundDouble_FUN_00606f98
-                       ((float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1),
-                        (double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX));
+                       ((float10)(double)CONCAT44(param_2,param_1),
+                        (double)CONCAT44(param_4,unaff_EBX));
   }
-  uVar4 = SUB84 /* extract 2-byte value */((double)fVar20,0);
+  uVar4 = SUB84((double)fVar20,0);
   if ((int)((ulonglong)(double)fVar20 >> 0x20) == -0x80000000) {
     uVar4 = 0;
   }

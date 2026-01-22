@@ -57,7 +57,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 81,
+        "column": 53,
         "line": 166,
         "message": "'extraout_var' was not declared in this scope"
       },
@@ -458,18 +458,20 @@
   },
   "complexity": {
     "assembly_lines": 1363,
-    "complexity_score": 1497,
+    "complexity_score": 1577,
     "cross_reference_count": 0,
     "function_call_count": 36,
     "global_count": 58,
     "pseudocode_lines": 502,
-    "suspect_count": 96,
+    "suspect_count": 103,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "undefined_type",
       "unknown_field"
     ],
@@ -1509,6 +1511,13 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_fffff378",
@@ -1684,17 +1693,31 @@
       "type": "unknown_field"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 159,
+      "match": "extraout_var",
+      "text": "(g_CEditorToolsPtr,2.0,CONCAT31(extraout_var,uVar3));",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "CONCAT31",
-      "text": "(g_CEditorToolsPtr,2.0,CONCAT31 /* combine 2-byte values */(extraout_var,uVar3));",
+      "text": "(g_CEditorToolsPtr,2.0,CONCAT31(extraout_var,uVar3));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 164,
+      "match": "extraout_var",
+      "text": "(g_CEditorToolsPtr,&local_ac,pCVar4,CONCAT31(extraout_var,uVar3));",
+      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 164,
       "match": "CONCAT31",
-      "text": "(g_CEditorToolsPtr,&local_ac,pCVar4,CONCAT31 /* combine 2-byte values */(extraout_var,uVar3));",
+      "text": "(g_CEditorToolsPtr,&local_ac,pCVar4,CONCAT31(extraout_var,uVar3));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1796,6 +1819,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 321,
+      "match": "DAT_00000048",
+      "text": "in_stack_fffff3f4 = (CPickList *)&DAT_00000048;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 322,
       "match": "in_stack_fffff3ec",
@@ -1887,6 +1917,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 392,
+      "match": "DAT_03365cbc",
+      "text": "(in_stack_fffff3dc,\"Create new room\",DAT_03365cbc,0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 395,
       "match": "in_stack_fffff3ec",
@@ -1920,6 +1957,13 @@
       "match": "in_stack_fffff3fc",
       "text": "(uint)in_stack_fffff3f4,in_stack_fffff3f8,(uint)in_stack_fffff3fc);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 399,
+      "match": "DAT_03365cbc",
+      "text": "DAT_03365cbc = iVar7;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1976,6 +2020,13 @@
       "match": "._8_4_",
       "text": "(local_18->position).z = (float)local_108._8_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 418,
+      "match": "DAT_03365cbc",
+      "text": "local_18->field4_0x40 = DAT_03365cbc;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

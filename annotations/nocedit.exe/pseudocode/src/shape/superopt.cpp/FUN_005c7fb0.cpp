@@ -69,9 +69,9 @@ int shape_superopt_cpp_FUN_005c7fb0(void)
   local_a0.y._4_4_ = local_28[3];
   local_a0.z._0_4_ = local_18;
   local_a0.z._4_4_ = uStack_14;
-  if (0.0 <= (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) * (double)CONCAT44 /* combine 2-byte values */(uStack_14,local_18) +
-             (double)CONCAT44 /* combine 2-byte values */(local_58[1],local_58[0]) * (double)CONCAT44 /* combine 2-byte values */(local_28[1],local_28[0]) +
-             (double)CONCAT44 /* combine 2-byte values */(local_58[3],local_58[2]) * (double)CONCAT44 /* combine 2-byte values */(local_28[3],local_28[2]))
+  if (0.0 <= (double)CONCAT44(uStack_44,local_48) * (double)CONCAT44(uStack_14,local_18) +
+             (double)CONCAT44(local_58[1],local_58[0]) * (double)CONCAT44(local_28[1],local_28[0]) +
+             (double)CONCAT44(local_58[3],local_58[2]) * (double)CONCAT44(local_28[3],local_28[2]))
   {
     iVar1 = shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(&local_40,&local_a0);
     return iVar1;

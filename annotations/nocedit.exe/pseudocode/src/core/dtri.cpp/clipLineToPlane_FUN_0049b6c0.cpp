@@ -20,7 +20,7 @@ core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
           (point2_ptr->x - point1_ptr->x) * (float)plane_nx +
           (point2_ptr->y - point1_ptr->y) * (float)plane_ny;
   dVar1 = (double)fVar2;
-  local_28 = SUB84 /* extract 2-byte value */(dVar1,0);
+  local_28 = SUB84(dVar1,0);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
     g_CurrentFilename = "..\\core\\dtri.cpp";
     g_CurrentLineNumber = 0x457;

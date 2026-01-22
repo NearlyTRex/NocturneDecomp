@@ -24,7 +24,7 @@ uint core_gore_cpp_CGore_process_FUN_004ed9e0(void)
     if (0.0 < fVar1) {
       uVar3 = (**(code **)(*(int *)(pCVar4->field0_0x0 + 0x34) + 4))();
     }
-    uVar6 = CONCAT44 /* combine 2-byte values */(DAT_02d873d8,uVar3);
+    uVar6 = CONCAT44(DAT_02d873d8,uVar3);
     pCVar4 = pCVar4 + 1;
   } while (pCVar4 != (CBloodParticle *)&DAT_02d873d4);
   iVar5 = 0;

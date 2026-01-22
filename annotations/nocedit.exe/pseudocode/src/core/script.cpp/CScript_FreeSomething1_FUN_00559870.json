@@ -92,15 +92,16 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 141,
+    "complexity_score": 156,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 21,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 73
   },
@@ -339,6 +340,13 @@
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x28) = 0;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_0310f4b0",
+      "text": "shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&DAT_0310f4b0);",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 5,

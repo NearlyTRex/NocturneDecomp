@@ -92,16 +92,17 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 180,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
     "pseudocode_lines": 55,
-    "suspect_count": 10,
+    "suspect_count": 24,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "unaffected_reg",
+      "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -412,6 +413,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_02f7c528",
+      "text": "DAT_02f7c528 = 0xffffffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_02f7c538",
+      "text": "DAT_02f7c538 = 0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
@@ -433,11 +448,81 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02f79818",
+      "text": "if ((DAT_02f79818 & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02f79818",
+      "text": "DAT_02f79818 = DAT_02f79818 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02f79818",
+      "text": "DAT_02f79818 = DAT_02f79818 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_02f797e4",
+      "text": "shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&DAT_02f797e4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_0068064c",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0068064c);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x24) != 0) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_02f797e4",
+      "text": "((CEdScrollBar *)&DAT_02f797e4,iVar1 + -0xb,1,iVar1 + -1,0xee);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_02f7c510",
+      "text": "_DAT_02f797e8 = DAT_02f7c510;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_02f7c510",
+      "text": "_DAT_02f797f0 = DAT_02f7c510 / _DAT_02f7a028;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_02f797e4",
+      "text": "shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_02f797e4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_02f7c528",
+      "text": "DAT_02f7c528 = core_actor_cpp_CActorPropertyList_FUN_0040e9c0();",
+      "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
@@ -447,11 +532,25 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_02f797e4",
+      "text": "shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_02f797e4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000004",
       "text": "(acStack_13c,\"Selected: %s\",*(uint *)(in_stack_00000004 + 0x28));",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_02f797e4",
+      "text": "((CEdScrollBar *)&DAT_02f797e4);",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 1,

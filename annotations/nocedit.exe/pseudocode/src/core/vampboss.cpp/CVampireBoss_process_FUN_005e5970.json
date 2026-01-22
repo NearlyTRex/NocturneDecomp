@@ -1208,12 +1208,12 @@
   },
   "complexity": {
     "assembly_lines": 1466,
-    "complexity_score": 999,
+    "complexity_score": 1039,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
     "pseudocode_lines": 669,
-    "suspect_count": 30,
+    "suspect_count": 34,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -2307,6 +2307,34 @@
       "match": "in_stack_00000008",
       "text": "(float)local_34 * in_stack_00000008 * local_64 +",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 288,
+      "match": "fsin",
+      "text": "fVar17 = (float10)fsin(fVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 290,
+      "match": "fsin",
+      "text": "fVar19 = (float10)fsin(fVar18);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 291,
+      "match": "fcos",
+      "text": "fVar16 = (float10)fcos(fVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 292,
+      "match": "fcos",
+      "text": "fVar18 = (float10)fcos(fVar18);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

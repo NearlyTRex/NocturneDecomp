@@ -86,14 +86,15 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 163,
+    "complexity_score": 188,
     "cross_reference_count": 12,
     "function_call_count": 7,
     "global_count": 9,
     "pseudocode_lines": 33,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 116
@@ -333,6 +334,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_02f7c52c",
+      "text": "DAT_02f7c52c = 0xffffffff;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
@@ -380,6 +388,13 @@
       "match": "in_stack_00000004",
       "text": "core_mission_cpp_CDemonMission_FUN_00523fb0(in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02f7c53c",
+      "text": "if ((DAT_02f7c53c == 0) && (g_CEdCheckInstance.checked_state != 0)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

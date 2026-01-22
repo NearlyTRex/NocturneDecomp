@@ -177,7 +177,7 @@
       },
       {
         "category": "missing_member",
-        "column": 83,
+        "column": 56,
         "line": 282,
         "message": "'CGame' {aka 'struct CGame'} has no member named 'field102_0x9bc'"
       },
@@ -350,17 +350,18 @@
   },
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 763,
+    "complexity_score": 838,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "pseudocode_lines": 373,
-    "suspect_count": 36,
+    "suspect_count": 43,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
       "stack_ref",
+      "undefined_data",
       "unknown_field",
       "warning_overlapping_globals"
     ],
@@ -1566,6 +1567,34 @@
       "type": "unknown_field"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 150,
+      "match": "DAT_02d82568",
+      "text": "DAT_02d82568 = DAT_02d82568 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 150,
+      "match": "DAT_02d82568",
+      "text": "DAT_02d82568 = DAT_02d82568 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 151,
+      "match": "DAT_02d82570",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d82570,\"demon%d.pcx\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
+      "match": "DAT_02d82570",
+      "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 159,
       "match": "._4_4_",
@@ -1608,31 +1637,52 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 250,
+      "match": "DAT_02d7c2e8",
+      "text": "DAT_02d7c2e8 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 255,
+      "match": "DAT_02d7c2e8",
+      "text": "DAT_02d7c2e8 = DAT_02d7c2e8 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 255,
+      "match": "DAT_02d7c2e8",
+      "text": "DAT_02d7c2e8 = DAT_02d7c2e8 + 1;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 264,
       "match": "SUB84",
-      "text": "(double)(pCVar4->base_character).base_actor.location.position.x,SUB84 /* extract 2-byte value */(dVar2,0),",
+      "text": "(double)(pCVar4->base_character).base_actor.location.position.x,SUB84(dVar2,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 265,
       "match": "SUB84",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 266,
       "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(180 *",
+      "text": "SUB84(180 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 275,
       "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)*(float *)this_ptr->field102_0x9bc,0));",
+      "text": "SUB84((double)*(float *)this_ptr->field102_0x9bc,0));",
       "type": "decompiler_intrinsic"
     },
     {

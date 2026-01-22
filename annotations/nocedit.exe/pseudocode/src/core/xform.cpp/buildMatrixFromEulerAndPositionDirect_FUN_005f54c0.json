@@ -26,13 +26,15 @@
   },
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 44,
+    "complexity_score": 109,
     "cross_reference_count": 35,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 44,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 6,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 133
   },
   "cross_references": [
@@ -352,5 +354,48 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "fsin",
+      "text": "fVar6 = (float10)fsin((float10)euler_angles->x);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "fcos",
+      "text": "fVar7 = (float10)fcos((float10)euler_angles->x);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "fsin",
+      "text": "fVar8 = (float10)fsin((float10)euler_angles->z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "fcos",
+      "text": "fVar9 = (float10)fcos((float10)euler_angles->z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "fsin",
+      "text": "fVar10 = (float10)fsin((float10)euler_angles->y);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "fcos",
+      "text": "fVar11 = (float10)fcos((float10)euler_angles->y);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

@@ -536,12 +536,12 @@
   },
   "complexity": {
     "assembly_lines": 454,
-    "complexity_score": 680,
+    "complexity_score": 760,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 55,
     "pseudocode_lines": 270,
-    "suspect_count": 40,
+    "suspect_count": 48,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
@@ -1076,11 +1076,25 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "fsin",
+      "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(double *)((int)",
       "text": "*(double *)((int)g_Mp3WindowTables[0] + iVar11) = (double)fVar14;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "fsin",
+      "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1102,6 +1116,13 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "fsin",
+      "text": "fVar15 = (float10)fsin(((float10)iVar10 + fVar14 + fVar13) * fVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1139,6 +1160,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 96,
+      "match": "fsin",
+      "text": "fVar15 = (float10)fsin(((float10)iVar10 + fVar14 + fVar13) * fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(double *)((int)",
@@ -1160,11 +1188,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 113,
+      "match": "fsin",
+      "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 115,
       "match": "(double *)((int)",
       "text": "*(double *)((int)g_Mp3WindowTables[3] + iVar11) = (double)fVar14;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 123,
+      "match": "fsin",
+      "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1188,11 +1230,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 143,
+      "match": "fcos",
+      "text": "fVar13 = (float10)fcos((float10)iVar8 * (float10)(iVar11 + 6) * fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 145,
       "match": "(double *)((int)",
       "text": "*(double *)((int)g_Mp3DctMatrix[0] + iVar10) = (double)fVar13;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 160,
+      "match": "fcos",
+      "text": "fVar13 = (float10)fcos((float10)(iVar10 % 0x90) * fVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

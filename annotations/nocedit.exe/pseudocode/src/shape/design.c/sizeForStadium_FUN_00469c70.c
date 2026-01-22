@@ -74,7 +74,7 @@ void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar4 != -2) {
-          dVar7 = crt_string_c_strtod_FUN_005ff0f3(SUB84 /* extract 2-byte value */(dVar7,0));
+          dVar7 = crt_string_c_strtod_FUN_005ff0f3(SUB84(dVar7,0));
           local_44 = 999999.9;
           local_40 = -999999.9;
           local_3c = 999999.9;

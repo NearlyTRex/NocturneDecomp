@@ -62,15 +62,16 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 81,
+    "complexity_score": 166,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 13,
     "pseudocode_lines": 36,
-    "suspect_count": 3,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
+      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 117
@@ -310,6 +311,20 @@
   },
   "suspects": [
     {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_02d833d4",
+      "text": "pCVar4 = DAT_02d833d4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "NAN",
+      "text": "uVar3 = (uint)(ushort)((ushort)(0.0 < fVar1) << 8 | (ushort)NAN(fVar1) << 10 |",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 18,
       "match": "code *",
@@ -320,8 +335,50 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT44",
-      "text": "uVar6 = CONCAT44 /* combine 2-byte values */(DAT_02d873d8,uVar3);",
+      "text": "uVar6 = CONCAT44(DAT_02d873d8,uVar3);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_02d873d8",
+      "text": "uVar6 = CONCAT44(DAT_02d873d8,uVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02d873d4",
+      "text": "} while (pCVar4 != (CBloodParticle *)&DAT_02d873d4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_02d873d8",
+      "text": "if (0 < DAT_02d873d8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_02d873d8",
+      "text": "} while (iVar5 < DAT_02d873d8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_02da8720",
+      "text": "if (0 < DAT_02da8720) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_02da8720",
+      "text": "} while (iVar5 < DAT_02da8720);",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 3,

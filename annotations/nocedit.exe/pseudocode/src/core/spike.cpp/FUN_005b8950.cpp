@@ -151,7 +151,7 @@ void core_spike_cpp_FUN_005b8950(void)
           auStack_15c._52_4_ = in_stack_00000004;
           pCStack_124 = in_stack_00000004;
           (*this_ptr->vtable[1].playAmbientSoundWithVolume)
-                    (this_ptr,auStack_15c,SUB84 /* extract 2-byte value */(dStack_1c8,0));
+                    (this_ptr,auStack_15c,SUB84(dStack_1c8,0));
         }
       }
     }

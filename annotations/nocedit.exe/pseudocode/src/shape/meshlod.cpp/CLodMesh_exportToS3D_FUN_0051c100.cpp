@@ -41,7 +41,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh *this_p
                    (double)*(float *)((int)pCVar2->uv_coords[0] + iVar7),
                    (double)*(float *)((int)pCVar2->uv_coords[0] + iVar7 + 4),
                    *(uint *)((int)(pCVar2->uv_coords + -1) + iVar7),
-                   (double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84 /* extract 2-byte value */(dVar1,0),
+                   (double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),
                    (int)((ulonglong)dVar1 >> 0x20),
                    *(uint *)((int)(pCVar2->uv_coords + -1) + iVar7 + 4),
                    (double)*(float *)((int)pCVar2->uv_coords[2] + iVar7),
@@ -64,7 +64,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh *this_p
       iVar7 = iVar7 + 1;
       iVar6 = crt_stdio_c_fprintf_FUN_005fe6d0
                         (file_ptr,"%f,%f,%f\n",
-                         SUB84 /* extract 2-byte value */((double)*(float *)(pCVar3->lod_workspace + iVar5),0),
+                         SUB84((double)*(float *)(pCVar3->lod_workspace + iVar5),0),
                          (int)((ulonglong)(double)*(float *)(pCVar3->lod_workspace + iVar5) >> 0x20)
                          ,(double)*(float *)(pCVar3->lod_workspace + iVar4),
                          (double)*(float *)(pCVar3->lod_workspace + iVar6));

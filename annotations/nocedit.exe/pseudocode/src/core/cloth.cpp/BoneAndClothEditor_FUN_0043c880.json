@@ -123,7 +123,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 66,
+        "column": 38,
         "line": 172,
         "message": "'extraout_var' was not declared in this scope"
       },
@@ -153,7 +153,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 80,
+        "column": 52,
         "line": 195,
         "message": "'extraout_var_00' was not declared in this scope"
       },
@@ -632,20 +632,22 @@
   },
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 1471,
+    "complexity_score": 1591,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 32,
     "pseudocode_lines": 391,
-    "suspect_count": 103,
+    "suspect_count": 114,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "suspect_float",
       "unaffected_reg",
+      "undefined_data",
       "undefined_type",
       "unknown_field",
       "warning_overlapping_globals"
@@ -1232,11 +1234,25 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved type",
       "line": 14,
       "match": "undefined3 extraout_var_00",
       "text": "undefined3 extraout_var_00;",
       "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_var_00",
+      "text": "undefined3 extraout_var_00;",
+      "type": "extra_output"
     },
     {
       "description": "Unaffected register variable",
@@ -1421,6 +1437,20 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 146,
+      "match": "DAT_00838e40",
+      "text": "(g_CDemonRendererPtr2,(CVector3f *)&DAT_00838e40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 148,
+      "match": "DAT_00838e4c",
+      "text": "(g_CDemonRendererPtr2,(CVector3i *)&DAT_00838e4c,(CVector3i *)0x0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 149,
       "match": "._4_4_",
@@ -1435,10 +1465,45 @@
       "type": "unknown_field"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 158,
+      "match": "DAT_0083b10c",
+      "text": "DAT_0083b10c = DAT_0083b10c + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 158,
+      "match": "DAT_0083b10c",
+      "text": "DAT_0083b10c = DAT_0083b10c + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 159,
+      "match": "DAT_0083b110",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0083b110,\"noc%d.pcx\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 160,
+      "match": "DAT_0083b110",
+      "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_0083b110);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 165,
+      "match": "extraout_var",
+      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar2);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 165,
       "match": "CONCAT31",
-      "text": "g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);",
+      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar2);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1498,10 +1563,17 @@
       "type": "suspect_float"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 188,
+      "match": "extraout_var_00",
+      "text": "(g_CDemonRendererPtr2,CONCAT31(extraout_var_00,uVar2));",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 188,
       "match": "CONCAT31",
-      "text": "(g_CDemonRendererPtr2,CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar2));",
+      "text": "(g_CDemonRendererPtr2,CONCAT31(extraout_var_00,uVar2));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1510,6 +1582,13 @@
       "match": "&stack0xfffffac0",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 206,
+      "match": "NAN",
+      "text": "fStack_1c = -NAN;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -1634,14 +1713,14 @@
       "description": "Unresolved stack parameter",
       "line": 252,
       "match": "in_stack_fffffabc",
-      "text": "in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(0x43ceb4,pCVar9);",
+      "text": "in_stack_fffffabc = CONCAT44(0x43ceb4,pCVar9);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 252,
       "match": "CONCAT44",
-      "text": "in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(0x43ceb4,pCVar9);",
+      "text": "in_stack_fffffabc = CONCAT44(0x43ceb4,pCVar9);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1739,14 +1818,14 @@
       "description": "Unresolved stack parameter",
       "line": 317,
       "match": "in_stack_fffffabc",
-      "text": "in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(0x43d213,uVar10);",
+      "text": "in_stack_fffffabc = CONCAT44(0x43d213,uVar10);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 317,
       "match": "CONCAT44",
-      "text": "in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(0x43d213,uVar10);",
+      "text": "in_stack_fffffabc = CONCAT44(0x43d213,uVar10);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1823,14 +1902,14 @@
       "description": "Unresolved stack parameter",
       "line": 338,
       "match": "in_stack_fffffabc",
-      "text": "in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(g_CEditorToolsPtr,0x43d2a9);",
+      "text": "in_stack_fffffabc = CONCAT44(g_CEditorToolsPtr,0x43d2a9);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 338,
       "match": "CONCAT44",
-      "text": "in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(g_CEditorToolsPtr,0x43d2a9);",
+      "text": "in_stack_fffffabc = CONCAT44(g_CEditorToolsPtr,0x43d2a9);",
       "type": "decompiler_intrinsic"
     },
     {

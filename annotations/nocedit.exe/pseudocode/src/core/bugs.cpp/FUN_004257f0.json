@@ -272,17 +272,18 @@
   },
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 561,
+    "complexity_score": 586,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 121,
-    "suspect_count": 41,
+    "suspect_count": 43,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "stack_param",
+      "undefined_data",
       "unknown_field",
       "warning_overlapping_globals"
     ],
@@ -805,6 +806,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_00822d08",
+      "text": "puVar6 = &DAT_00822d08;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(uint *)((int)",
@@ -829,7 +837,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "CONCAT44",
-      "text": "uVar13 = CONCAT44 /* combine 2-byte values */(local_5c.y,",
+      "text": "uVar13 = CONCAT44(local_5c.y,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -908,6 +916,13 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_00822d08",
+      "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar3);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

@@ -24,7 +24,7 @@ engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0
   dVar2 = (double)input_vector->y;
   dVar3 = (double)input_vector->z;
   dVar4 = SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);
-  local_38 = SUB84 /* extract 2-byte value */(dVar4,0);
+  local_38 = SUB84(dVar4,0);
   if ((((ulonglong)dVar4 & 0x7fffffff00000000) == 0) && (local_38 == 0)) {
     local_20 = 0.0;
     local_28 = 0.0;

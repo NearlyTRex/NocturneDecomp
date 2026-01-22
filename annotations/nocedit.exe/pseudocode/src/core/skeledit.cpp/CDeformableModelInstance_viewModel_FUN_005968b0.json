@@ -111,7 +111,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 60,
+        "column": 32,
         "line": 635,
         "message": "'extraout_var' was not declared in this scope; did you mean 'extraout_EAX'?"
       },
@@ -1076,12 +1076,12 @@
   },
   "complexity": {
     "assembly_lines": 3337,
-    "complexity_score": 4124,
+    "complexity_score": 4399,
     "cross_reference_count": 2,
     "function_call_count": 91,
     "global_count": 146,
     "pseudocode_lines": 1269,
-    "suspect_count": 281,
+    "suspect_count": 308,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -1090,6 +1090,7 @@
       "stack_param",
       "stack_ref",
       "suspect_float",
+      "undefined_data",
       "undefined_type",
       "unknown_field"
     ],
@@ -3682,6 +3683,13 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 19,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
@@ -3840,6 +3848,69 @@
       "match": "._16_4_",
       "text": "local_e8 = (float)local_35c._16_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 230,
+      "match": "DAT_0366b64c",
+      "text": "if ((DAT_0366b64c & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 231,
+      "match": "DAT_0366b64c",
+      "text": "DAT_0366b64c = DAT_0366b64c | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 231,
+      "match": "DAT_0366b64c",
+      "text": "DAT_0366b64c = DAT_0366b64c | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 238,
+      "match": "DAT_0366b64c",
+      "text": "if ((DAT_0366b64c & 2) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 239,
+      "match": "DAT_0366b64c",
+      "text": "DAT_0366b64c = DAT_0366b64c | 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 239,
+      "match": "DAT_0366b64c",
+      "text": "DAT_0366b64c = DAT_0366b64c | 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 240,
+      "match": "DAT_03665f74",
+      "text": "core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&DAT_03665f74);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 241,
+      "match": "DAT_00681850",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681850);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 243,
+      "match": "DAT_03665f74",
+      "text": "core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&DAT_03665f74);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -4339,6 +4410,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 511,
+      "match": "DAT_03665f74",
+      "text": "if (0 < DAT_03665f74.poly_count) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 519,
       "match": "(CMatrix3x4f *)((int)",
@@ -4381,6 +4459,13 @@
       "type": "unknown_field"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 538,
+      "match": "DAT_03665f74",
+      "text": "(&DAT_03665f74,(CKeyFramedModelInstance *)0x0,0,-1);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 541,
       "match": "in_stack_00000004",
@@ -4402,11 +4487,46 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 546,
+      "match": "DAT_036644d8",
+      "text": "(pCVar14,(SBoneTransformData *)&DAT_036644d8);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 553,
       "match": "&stack0xffffcc64",
       "text": "(pCVar14,(SBoneTransformData *)&stack0xffffcc64);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 557,
+      "match": "DAT_036712e0",
+      "text": "DAT_036712e0 = DAT_036712e0 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 557,
+      "match": "DAT_036712e0",
+      "text": "DAT_036712e0 = DAT_036712e0 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 558,
+      "match": "DAT_036712e8",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_036712e8,\"noc%d.pcx\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 559,
+      "match": "DAT_036712e8",
+      "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_036712e8);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -4416,11 +4536,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 568,
+      "match": "DAT_00681a00",
+      "text": "*(uint *)((int)&local_154 + (uint)bVar19 * -8 + 4) = (&DAT_00681a00)[(uint)bVar19 * -2];",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 569,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_154 + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 600,
+      "match": "DAT_006819e4",
+      "text": "(g_CDemonRendererPtr2,&DAT_006819e4);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -4444,10 +4578,17 @@
       "type": "suspect_float"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 628,
+      "match": "extraout_var",
+      "text": "fVar21 = (float)CONCAT31(extraout_var,uVar5);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 628,
       "match": "CONCAT31",
-      "text": "fVar21 = (float)CONCAT31 /* combine 2-byte values */(extraout_var,uVar5);",
+      "text": "fVar21 = (float)CONCAT31(extraout_var,uVar5);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4470,6 +4611,20 @@
       "match": "ROUND",
       "text": "local_18 = (float)(int)ROUND(dVar20);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 661,
+      "match": "DAT_03665f74",
+      "text": "if (0 < DAT_03665f74.poly_count) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 686,
+      "match": "DAT_03665f74",
+      "text": "if (((DAT_03665f74.poly_count < 1) ||",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -4573,21 +4728,21 @@
       "description": "Unresolved stack parameter",
       "line": 886,
       "match": "in_stack_ffffcd2c",
-      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0),",
+      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84(in_stack_ffffcd30,0),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 886,
       "match": "in_stack_ffffcd30",
-      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0),",
+      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84(in_stack_ffffcd30,0),",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 886,
       "match": "SUB84",
-      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0),",
+      "text": "(uint)in_stack_ffffcd2c,(uint)SUB84(in_stack_ffffcd30,0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4685,14 +4840,14 @@
       "description": "Unresolved stack parameter",
       "line": 930,
       "match": "in_stack_ffffcd30",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x5982e5,pCVar22);",
+      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x5982e5,pCVar22);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 930,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x5982e5,pCVar22);",
+      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x5982e5,pCVar22);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4706,42 +4861,42 @@
       "description": "Unresolved stack parameter",
       "line": 936,
       "match": "in_stack_ffffcd30",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 936,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 940,
       "match": "in_stack_ffffcd30",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 940,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 942,
       "match": "in_stack_ffffcd30",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x598339,fVar21);",
+      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x598339,fVar21);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 942,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x598339,fVar21);",
+      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x598339,fVar21);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4755,42 +4910,42 @@
       "description": "Unresolved stack parameter",
       "line": 946,
       "match": "in_stack_ffffcd30",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 946,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd30,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 950,
       "match": "in_stack_ffffcd30",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x598378,fVar21);",
+      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x598378,fVar21);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 950,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x598378,fVar21);",
+      "text": "in_stack_ffffcd30 = (double)CONCAT44(0x598378,fVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 954,
       "match": "in_stack_ffffcd48",
-      "text": "(&local_1558,0,(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0),",
+      "text": "(&local_1558,0,(uint)SUB84(in_stack_ffffcd48,0),",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 954,
       "match": "SUB84",
-      "text": "(&local_1558,0,(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0),",
+      "text": "(&local_1558,0,(uint)SUB84(in_stack_ffffcd48,0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4811,84 +4966,91 @@
       "description": "Unresolved stack parameter",
       "line": 956,
       "match": "in_stack_ffffcd50",
-      "text": "(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd50,4),(uint)fVar24);",
+      "text": "(uint)SUB84(in_stack_ffffcd50,4),(uint)fVar24);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 956,
       "match": "SUB84",
-      "text": "(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd50,4),(uint)fVar24);",
+      "text": "(uint)SUB84(in_stack_ffffcd50,4),(uint)fVar24);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 958,
       "match": "in_stack_ffffcd48",
-      "text": "pCVar22 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);",
+      "text": "pCVar22 = SUB84(in_stack_ffffcd48,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 958,
       "match": "SUB84",
-      "text": "pCVar22 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);",
+      "text": "pCVar22 = SUB84(in_stack_ffffcd48,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 970,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x17,g_CKeysPtr);",
+      "text": "dVar20 = (double)CONCAT44(0x17,g_CKeysPtr);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 971,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x5983c7,pCVar22);",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5983c7,pCVar22);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 971,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x5983c7,pCVar22);",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5983c7,pCVar22);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 973,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(dVar20,0);",
+      "text": "fVar21 = SUB84(dVar20,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 977,
+      "match": "DAT_03665f74",
+      "text": "if (0 < DAT_03665f74.poly_count) {",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 985,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */((double)local_19c.x,0);",
+      "text": "fVar21 = SUB84((double)local_19c.x,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 993,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x59882c,fVar21);",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x59882c,fVar21);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 993,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x59882c,fVar21);",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x59882c,fVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 996,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x59883f,pCVar23);",
+      "text": "dVar20 = (double)CONCAT44(0x59883f,pCVar23);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4930,7 +5092,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 1001,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(dVar20,0);",
+      "text": "fVar21 = SUB84(dVar20,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4944,70 +5106,84 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 1006,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(\"Select model to position\",g_CEditorToolsPtr);",
+      "text": "(double)CONCAT44(\"Select model to position\",g_CEditorToolsPtr);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1010,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(dVar20,0);",
+      "text": "fVar21 = SUB84(dVar20,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1012,
+      "match": "DAT_03665f74",
+      "text": "if (DAT_03665f74.poly_count < 1) break;",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1015,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x598431,fVar21);",
+      "text": "dVar20 = (double)CONCAT44(0x598431,fVar21);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1016,
+      "match": "DAT_03665f74",
+      "text": "core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&DAT_03665f74,local_408);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1021,
       "match": "in_stack_ffffcd48",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd48,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1021,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd48,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1028,
       "match": "in_stack_ffffcd48",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd48,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1028,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);",
+      "text": "fVar21 = SUB84(in_stack_ffffcd48,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1034,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598495,fVar21);",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598495,fVar21);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1034,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598495,fVar21);",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598495,fVar21);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1040,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x5984ad,pCVar23);",
+      "text": "dVar20 = (double)CONCAT44(0x5984ad,pCVar23);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -5049,91 +5225,91 @@
       "description": "Unresolved stack parameter",
       "line": 1047,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x5984d0,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1047,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x5984d0,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1047,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x5984d0,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1047,
       "match": "SUB84",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x5984d0,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1057,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598511,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1057,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598511,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1057,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598511,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1057,
       "match": "SUB84",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598511,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1065,
       "match": "SUB84",
-      "text": "pcVar18 = SUB84 /* extract 2-byte value */(dVar20,0);",
+      "text": "pcVar18 = SUB84(dVar20,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1073,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598570,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 1073,
       "match": "in_stack_ffffcd48",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598570,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1073,
       "match": "CONCAT44",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598570,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1073,
       "match": "SUB84",
-      "text": "in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598570,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));",
+      "text": "in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -5175,7 +5351,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 1105,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x598e17,pcVar18);",
+      "text": "dVar20 = (double)CONCAT44(0x598e17,pcVar18);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -5224,7 +5400,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 1120,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44 /* combine 2-byte values */(g_CEditorToolsPtr,0x5986d2);",
+      "text": "dVar20 = (double)CONCAT44(g_CEditorToolsPtr,0x5986d2);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -5459,6 +5635,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 1171,
+      "match": "DAT_036644d8",
+      "text": "(in_stack_00000004,(SBoneTransformData *)&DAT_036644d8);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 1175,
       "match": "in_stack_ffffcd6c",
@@ -5499,6 +5682,13 @@
       "match": "in_stack_ffffccb0",
       "text": "core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(in_stack_ffffccac,in_stack_ffffccb0);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1270,
+      "match": "DAT_03665f74",
+      "text": "core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&DAT_03665f74);",
+      "type": "undefined_data"
     },
     {
       "actual_args": 0,

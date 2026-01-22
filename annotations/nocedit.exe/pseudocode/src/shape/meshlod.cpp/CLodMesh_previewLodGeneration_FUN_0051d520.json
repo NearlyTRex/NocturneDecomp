@@ -27,7 +27,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 66,
+        "column": 38,
         "line": 74,
         "message": "'extraout_var' was not declared in this scope"
       },
@@ -98,18 +98,20 @@
   },
   "complexity": {
     "assembly_lines": 427,
-    "complexity_score": 339,
+    "complexity_score": 389,
     "cross_reference_count": 3,
     "function_call_count": 30,
     "global_count": 25,
     "pseudocode_lines": 149,
-    "suspect_count": 16,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "format_string_mismatch",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
+      "undefined_data",
       "undefined_type"
     ],
     "total_lines": 576
@@ -661,6 +663,13 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_EDI",
@@ -696,11 +705,32 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_02f313e8",
+      "text": "if (DAT_02f313e8 != (CQuaternion4f *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 67,
+      "match": "extraout_var",
+      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar1);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "CONCAT31",
-      "text": "g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar1);",
+      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar1);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_02f313e8",
+      "text": "(g_CEditorToolsPtr,DAT_02f313e8,4);",
+      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

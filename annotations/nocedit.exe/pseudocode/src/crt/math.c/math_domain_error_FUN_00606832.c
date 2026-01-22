@@ -18,12 +18,12 @@ double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar
   
   if (y._4_1_ < 2) {
     if (y._4_1_ == 0) {
-      if (0.0 < (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {
+      if (0.0 < (double)CONCAT44(y._0_4_,x._4_4_)) {
         local_18 = 0;
         local_14 = 0;
         goto LAB_006068c0;
       }
-      if (0.0 <= (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {
+      if (0.0 <= (double)CONCAT44(y._0_4_,x._4_4_)) {
         errorFlags = 0x4047;
       }
       else {
@@ -35,12 +35,12 @@ double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar
     }
   }
   else {
-    if ((double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_) <= 0.0) {
+    if ((double)CONCAT44(y._0_4_,x._4_4_) <= 0.0) {
       local_18 = 0;
       local_14 = 0;
       goto LAB_006068c0;
     }
-    if ((double)CONCAT44 /* combine 2-byte values */(x._0_4_,in_stack_00000004) <= 0.0) {
+    if ((double)CONCAT44(x._0_4_,in_stack_00000004) <= 0.0) {
       errorFlags = 0x1107;
     }
     else {
@@ -49,11 +49,11 @@ double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar
   }
   dVar1 = crt_math_c_process_math_error_FUN_0060bf2d
                     (errorFlags,(double *)&stack0x00000004,(double *)((int)&x + 4));
-  local_10._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);
+  local_10._0_4_ = SUB84(dVar1,0);
   local_18 = (uint)local_10;
   local_10._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
   local_14 = local_10._4_4_;
 LAB_006068c0:
-  local_10 = (double)CONCAT44 /* combine 2-byte values */(local_14,local_18);
+  local_10 = (double)CONCAT44(local_14,local_18);
   return local_10;
 }

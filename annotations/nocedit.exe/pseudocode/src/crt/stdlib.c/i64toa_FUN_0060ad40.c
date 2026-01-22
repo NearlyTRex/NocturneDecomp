@@ -30,7 +30,7 @@ char * __cdecl crt_stdlib_c_i64toa_FUN_0060ad40(longlong *value,char *buffer,int
     do {
       iVar2 = local_28;
       uVar3 = local_24;
-      local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte values */(local_24,local_28));
+      local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44(local_24,local_28));
       local_30 = iVar2;
       local_2c = uVar3;
       *pcVar4 = g_AlphaNumericCharacters1[iVar2];

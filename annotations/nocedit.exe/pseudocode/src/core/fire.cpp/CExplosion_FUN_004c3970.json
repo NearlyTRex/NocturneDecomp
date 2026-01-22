@@ -104,13 +104,14 @@
   },
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 150,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 40,
-    "suspect_count": 10,
+    "suspect_count": 14,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param"
     ],
@@ -342,6 +343,34 @@
       "match": "in_stack_00000010",
       "text": "*(uint *)(this_ptr->field0_0x0 + 0x14) = in_stack_00000010;",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "fcos",
+      "text": "fcos((float10)fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "fcos",
+      "text": "fcos((float10)fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "fsin",
+      "text": "fsin((float10)fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "fsin",
+      "text": "fsin((float10)fVar2);",
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

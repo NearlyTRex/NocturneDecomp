@@ -62,14 +62,15 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 82,
+    "complexity_score": 97,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
     "pseudocode_lines": 57,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "undefined_data"
     ],
     "total_lines": 172
   },
@@ -245,6 +246,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_00666041",
+      "text": "pcVar1 = &DAT_00666041 + iVar5;",
+      "type": "undefined_data"
+    },
     {
       "description": "Complex pointer cast",
       "line": 26,

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 49,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 34,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "warning_struct_overlap"
     ],
     "total_lines": 100
   },
@@ -132,6 +133,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Struct has overlapping fields",
+      "line": 2,
+      "match": "WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields",
+      "text": "/* WARNING: Struct \"FormatSpec\": ignoring multiple overlapping fields */",
+      "type": "warning_struct_overlap"
+    },
     {
       "address": "006031c0",
       "crt_type": "runtime support",

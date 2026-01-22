@@ -146,7 +146,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         local_278 = *(uint *)&(segStart->position).x;
         uVar12 = *(uint *)((int)&(segStart->position).x + 4);
       }
-      if ((pCVar10->position).x <= (double)CONCAT44 /* combine 2-byte values */(uVar12,local_278)) {
+      if ((pCVar10->position).x <= (double)CONCAT44(uVar12,local_278)) {
         local_270 = *(uint *)&(pCVar10->position).x;
         uVar12 = *(uint *)((int)&(pCVar10->position).x + 4);
       }
@@ -163,7 +163,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         local_270 = local_2a0;
         uStack_29c = uVar12;
       }
-      dVar1 = (double)CONCAT44 /* combine 2-byte values */(uVar12,local_270) + -0.0001;
+      dVar1 = (double)CONCAT44(uVar12,local_270) + -0.0001;
       if ((segEnd->position).y <= (segStart->position).y) {
         local_2b8 = *(uint *)&(segEnd->position).y;
         pCVar11 = segEnd;
@@ -173,7 +173,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         pCVar11 = segStart;
       }
       uStack_2b4 = *(uint *)((int)&(pCVar11->position).y + 4);
-      if ((pCVar10->position).y <= (double)CONCAT44 /* combine 2-byte values */(uStack_2b4,local_2b8)) {
+      if ((pCVar10->position).y <= (double)CONCAT44(uStack_2b4,local_2b8)) {
         local_250 = *(uint *)&(pCVar10->position).y;
         uVar12 = *(uint *)((int)&(pCVar10->position).y + 4);
       }
@@ -189,7 +189,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         uVar12 = *(uint *)((int)&(pCVar11->position).y + 4);
         local_250 = local_200;
       }
-      dVar2 = (double)CONCAT44 /* combine 2-byte values */(uVar12,local_250) + -0.0001;
+      dVar2 = (double)CONCAT44(uVar12,local_250) + -0.0001;
       if ((segEnd->position).z <= (segStart->position).z) {
         local_288 = *(uint *)&(segEnd->position).z;
         pCVar11 = segEnd;
@@ -199,7 +199,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         pCVar11 = segStart;
       }
       uStack_284 = *(uint *)((int)&(pCVar11->position).z + 4);
-      if ((pCVar10->position).z <= (double)CONCAT44 /* combine 2-byte values */(uStack_284,local_288)) {
+      if ((pCVar10->position).z <= (double)CONCAT44(uStack_284,local_288)) {
         local_228 = *(uint *)&(pCVar10->position).z;
         uVar12 = *(uint *)((int)&(pCVar10->position).z + 4);
       }
@@ -215,7 +215,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         uVar12 = *(uint *)((int)&(pCVar11->position).z + 4);
         local_228 = local_1f8;
       }
-      dVar3 = (double)CONCAT44 /* combine 2-byte values */(uVar12,local_228) + -0.0001;
+      dVar3 = (double)CONCAT44(uVar12,local_228) + -0.0001;
       if ((segStart->position).x <= (segEnd->position).x) {
         local_290 = *(uint *)&(segEnd->position).x;
         pCVar11 = segEnd;
@@ -225,7 +225,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         pCVar11 = segStart;
       }
       uStack_28c = *(uint *)((int)&(pCVar11->position).x + 4);
-      if ((double)CONCAT44 /* combine 2-byte values */(uStack_28c,local_290) <= (pCVar10->position).x) {
+      if ((double)CONCAT44(uStack_28c,local_290) <= (pCVar10->position).x) {
         local_260 = *(uint *)&(pCVar10->position).x;
         uVar12 = *(uint *)((int)&(pCVar10->position).x + 4);
       }
@@ -241,7 +241,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         uVar12 = *(uint *)((int)&(pCVar11->position).x + 4);
         local_260 = local_258;
       }
-      dVar4 = (double)CONCAT44 /* combine 2-byte values */(uVar12,local_260) + 0.0001;
+      dVar4 = (double)CONCAT44(uVar12,local_260) + 0.0001;
       if ((segStart->position).y <= (segEnd->position).y) {
         local_2c8 = *(uint *)&(segEnd->position).y;
         pCVar11 = segEnd;
@@ -250,7 +250,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         local_2c8 = *(uint *)&(segStart->position).y;
         pCVar11 = segStart;
       }
-      if ((double)CONCAT44 /* combine 2-byte values */(*(uint *)((int)&(pCVar11->position).y + 4),local_2c8) <=
+      if ((double)CONCAT44(*(uint *)((int)&(pCVar11->position).y + 4),local_2c8) <=
           (pCVar10->position).y) {
         local_2b0 = *(uint *)&(pCVar10->position).y;
         local_2ac = *(uint *)((int)&(pCVar10->position).y + 4);
@@ -268,7 +268,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         local_2b0 = local_298;
         uStack_294 = local_2ac;
       }
-      dVar5 = (double)CONCAT44 /* combine 2-byte values */(local_2ac,local_2b0) + 0.0001;
+      dVar5 = (double)CONCAT44(local_2ac,local_2b0) + 0.0001;
       if ((segStart->position).z <= (segEnd->position).z) {
         local_2a8 = *(uint *)&(segEnd->position).z;
         pCVar11 = segEnd;
@@ -278,7 +278,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         pCVar11 = segStart;
       }
       local_2a4 = *(uint *)((int)&(pCVar11->position).z + 4);
-      if ((double)CONCAT44 /* combine 2-byte values */(local_2a4,local_2a8) <= (pCVar10->position).z) {
+      if ((double)CONCAT44(local_2a4,local_2a8) <= (pCVar10->position).z) {
         local_268 = *(uint *)&(pCVar10->position).z;
         uVar12 = *(uint *)((int)&(pCVar10->position).z + 4);
       }
@@ -294,7 +294,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
         uVar12 = *(uint *)((int)&(pCVar11->position).z + 4);
       }
       uVar14 = 0;
-      dVar6 = (double)CONCAT44 /* combine 2-byte values */(uVar12,local_268) + 0.0001;
+      dVar6 = (double)CONCAT44(uVar12,local_268) + 0.0001;
       if (this_ptr->vertex_count != 0) {
         local_2c = local_20->uv_coords + 2;
         local_28 = local_20->uv_coords + 1;
@@ -405,24 +405,24 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               local_2e0 = 0x5d522f;
               shape_superopt_cpp_CPoly_copyFrom_FUN_005cc6a0((CPoly *)local_1f0,local_20,this_ptr);
               pCVar9 = local_20;
-              dVar1 = (double)CONCAT44 /* combine 2-byte values */(uStack_128,local_12c) -
-                      (double)CONCAT44 /* combine 2-byte values */(uStack_110,local_114);
+              dVar1 = (double)CONCAT44(uStack_128,local_12c) -
+                      (double)CONCAT44(uStack_110,local_114);
               local_1f0._4_4_ = uVar14;
-              dVar6 = (double)CONCAT44 /* combine 2-byte values */(uStack_120,local_124) -
-                      (double)CONCAT44 /* combine 2-byte values */(uStack_108,local_10c);
+              dVar6 = (double)CONCAT44(uStack_120,local_124) -
+                      (double)CONCAT44(uStack_108,local_10c);
               local_1f0._8_4_ = *(int *)((int)local_20->uv_coords + local_30 * 4 + -0xc);
-              dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_118,local_11c) -
-                      (double)CONCAT44 /* combine 2-byte values */(uStack_100,local_104);
+              dVar5 = (double)CONCAT44(uStack_118,local_11c) -
+                      (double)CONCAT44(uStack_100,local_104);
               local_1e4 = *(int *)((int)local_20->uv_coords + local_38 * 4 + -0xc);
               *(uint *)((int)local_20->uv_coords + local_30 * 4 + -0xc) = uVar14;
-              dVar2 = local_fc.x - (double)CONCAT44 /* combine 2-byte values */(uStack_110,local_114);
-              dVar3 = local_fc.y - (double)CONCAT44 /* combine 2-byte values */(uStack_108,local_10c);
-              dVar4 = local_fc.z - (double)CONCAT44 /* combine 2-byte values */(uStack_100,local_104);
-              local_e4 = (double)CONCAT44 /* combine 2-byte values */(uStack_22c,local_230) -
-                         (double)CONCAT44 /* combine 2-byte values */(uStack_234,local_238);
-              dVar7 = (double)CONCAT44 /* combine 2-byte values */(uStack_2bc,local_2c0);
+              dVar2 = local_fc.x - (double)CONCAT44(uStack_110,local_114);
+              dVar3 = local_fc.y - (double)CONCAT44(uStack_108,local_10c);
+              dVar4 = local_fc.z - (double)CONCAT44(uStack_100,local_104);
+              local_e4 = (double)CONCAT44(uStack_22c,local_230) -
+                         (double)CONCAT44(uStack_234,local_238);
+              dVar7 = (double)CONCAT44(uStack_2bc,local_2c0);
               dVar8 = local_e4;
-              local_dc = (double)CONCAT44 /* combine 2-byte values */(uVar12,local_248) - dVar7;
+              local_dc = (double)CONCAT44(uVar12,local_248) - dVar7;
               local_b4 = (uint)local_e4;
               (&uStack_b0)[(uint)bVar19 * -2] =
                    *(uint *)((int)&local_e4 + (uint)bVar19 * -8 + 4);
@@ -436,7 +436,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                     );
               dVar1 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2) /
                       SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar1 * dVar1);
-              uStack_94 = (double)CONCAT44 /* combine 2-byte values */(uStack_b0,local_b4) * dVar1;
+              uStack_94 = (double)CONCAT44(uStack_b0,local_b4) * dVar1;
               dVar2 = uStack_94;
               adStack_8c[0] = local_ac * dVar1;
               local_cc[2] = (uint)uStack_94;
@@ -449,8 +449,8 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                    *(uint *)
                     ((int)(adStack_8c + (-(uint)bVar19 - (uint)bVar19)) +
                     ((uint)bVar19 * -2 + 1) * 4);
-              local_a4 = (double)CONCAT44 /* combine 2-byte values */(uStack_234,local_238) +
-                         (double)CONCAT44 /* combine 2-byte values */(local_cc[3],local_cc[2]);
+              local_a4 = (double)CONCAT44(uStack_234,local_238) +
+                         (double)CONCAT44(local_cc[3],local_cc[2]);
               dVar1 = local_a4;
               local_9c = dVar7 + local_bc;
               local_d4 = (uint)local_a4;

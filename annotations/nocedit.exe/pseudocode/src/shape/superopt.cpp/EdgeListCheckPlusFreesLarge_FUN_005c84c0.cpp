@@ -106,12 +106,12 @@ uint shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
         local_a8 = uStack_78;
         local_a4 = local_74;
         local_a0 = uStack_70;
-        local_cc = (double)CONCAT44 /* combine 2-byte values */(uStack_78,local_7c) * local_1c[2] -
-                   (double)CONCAT44 /* combine 2-byte values */(uStack_70,local_74) * local_1c[1];
-        local_c4 = (double)CONCAT44 /* combine 2-byte values */(uStack_70,local_74) * *local_1c -
-                   (double)CONCAT44 /* combine 2-byte values */(uStack_80,local_84) * local_1c[2];
-        local_bc = (double)CONCAT44 /* combine 2-byte values */(uStack_80,local_84) * local_1c[1] -
-                   (double)CONCAT44 /* combine 2-byte values */(uStack_78,local_7c) * *local_1c;
+        local_cc = (double)CONCAT44(uStack_78,local_7c) * local_1c[2] -
+                   (double)CONCAT44(uStack_70,local_74) * local_1c[1];
+        local_c4 = (double)CONCAT44(uStack_70,local_74) * *local_1c -
+                   (double)CONCAT44(uStack_80,local_84) * local_1c[2];
+        local_bc = (double)CONCAT44(uStack_80,local_84) * local_1c[1] -
+                   (double)CONCAT44(uStack_78,local_7c) * *local_1c;
         dVar1 = 1.0 / SQRT(local_bc * local_bc + local_cc * local_cc + local_c4 * local_c4);
         local_cc = local_cc * dVar1;
         local_c4 = local_c4 * dVar1;

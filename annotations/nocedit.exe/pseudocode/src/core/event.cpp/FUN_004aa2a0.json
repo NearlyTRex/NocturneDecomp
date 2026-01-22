@@ -32,15 +32,16 @@
   },
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 49,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 9,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 27
   },
@@ -139,6 +140,13 @@
       "match": "in_stack_00000004",
       "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&DAT_02d0a460,in_stack_00000004,&local_4);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02d0a460",
+      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&DAT_02d0a460,in_stack_00000004,&local_4);",
+      "type": "undefined_data"
     }
   ]
 }

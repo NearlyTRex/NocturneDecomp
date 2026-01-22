@@ -170,17 +170,18 @@
   },
   "complexity": {
     "assembly_lines": 308,
-    "complexity_score": 425,
+    "complexity_score": 500,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 30,
     "pseudocode_lines": 160,
-    "suspect_count": 24,
+    "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 468
@@ -742,6 +743,48 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_00680bb0",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_00680bb0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_030d4fd0",
+      "text": "DAT_030d4fd0.base.count = 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_030d4fd0",
+      "text": "DAT_030d4fd0.surface_normal.A = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_030d4fd0",
+      "text": "DAT_030d4fd0.surface_normal.B = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_030d4fd0",
+      "text": "DAT_030d4fd0.surface_normal.C = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_030d4fd0",
+      "text": "DAT_030d4fd0.surface_normal.D = 0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 82,
       "match": "in_stack_00000008",
@@ -824,6 +867,13 @@
       "match": "extraout_EAX",
       "text": "((SProjectedVertex *)(*extraout_EAX + 0x90),input);",
       "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 153,
+      "match": "DAT_030d4fd0",
+      "text": "(this_ptr,&DAT_030d4fd0);",
+      "type": "undefined_data"
     }
   ]
 }

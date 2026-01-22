@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 298,
+    "complexity_score": 368,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 43,
-    "suspect_count": 23,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -197,11 +197,53 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "CARRY4",
+      "text": "for (; -1 < (int)uVar3; uVar3 = uVar3 * 2 + (uint)(bVar7 || CARRY4(uVar1,(uint)bVar6))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "CARRY4",
+      "text": "bVar6 = CARRY4(uVar5,uVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "CARRY4",
+      "text": "bVar7 = CARRY4(uVar2,uVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 39,
       "match": "param_1",
       "text": "param_1 = uVar2 + CARRY4(uVar5,uVar5);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "CARRY4",
+      "text": "param_1 = uVar2 + CARRY4(uVar5,uVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "CARRY4",
+      "text": "uVar1 = (uint)CARRY4(uVar2,(uint)CARRY4(uVar5,uVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "CARRY4",
+      "text": "uVar1 = (uint)CARRY4(uVar2,(uint)CARRY4(uVar5,uVar5));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unnamed function parameter",
@@ -211,6 +253,13 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "CARRY4",
+      "text": "if (CARRY4(uVar3,uVar1)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 43,
       "match": "param_2",
@@ -228,21 +277,21 @@
       "description": "Unnamed function parameter",
       "line": 46,
       "match": "param_2",
-      "text": "return CONCAT44 /* combine 2-byte values */(param_2,param_1);",
+      "text": "return CONCAT44(param_2,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 46,
       "match": "param_1",
-      "text": "return CONCAT44 /* combine 2-byte values */(param_2,param_1);",
+      "text": "return CONCAT44(param_2,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "CONCAT44",
-      "text": "return CONCAT44 /* combine 2-byte values */(param_2,param_1);",
+      "text": "return CONCAT44(param_2,param_1);",
       "type": "decompiler_intrinsic"
     },
     {

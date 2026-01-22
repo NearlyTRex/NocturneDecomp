@@ -93,7 +93,7 @@ void core_bugs_cpp_FUN_00427400(void)
           *(uint *)(iVar7 + 0xbef0) = 0xffffffff;
           *(int *)(iVar7 + 0xbef4) = (&DAT_00822f48)[iVar9];
           iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70
-                            (0,(int)(CONCAT44 /* combine 2-byte values */(*(int *)(in_stack_00000004 + 0x12b34) >> 0x1f,
+                            (0,(int)(CONCAT44(*(int *)(in_stack_00000004 + 0x12b34) >> 0x1f,
                                               *(uint *)(in_stack_00000004 + 0x12b34)) / 0xf));
           *(int *)(iVar7 + 0xbf00) = iVar6;
           iVar9 = iVar9 + 1;

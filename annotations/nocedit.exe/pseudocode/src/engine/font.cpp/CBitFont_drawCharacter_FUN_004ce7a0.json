@@ -386,14 +386,15 @@
   },
   "complexity": {
     "assembly_lines": 1782,
-    "complexity_score": 750,
+    "complexity_score": 765,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 27,
     "pseudocode_lines": 545,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "undefined_data"
     ],
     "total_lines": 2327
   },
@@ -1071,6 +1072,13 @@
       "match": "(int *)((int)",
       "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 113,
+      "match": "DAT_02d7b410",
+      "text": "*puVar7 = DAT_02d7b410;",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

@@ -224,7 +224,7 @@ int core_script_cpp_CScript_step_FUN_0055a810(void)
   }
   else if (cVar4 == ':') {
     local_11c = (byte *)core_script_cpp_FUN_005593d0();
-    dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_124,local_11c);
+    dVar2 = (double)CONCAT44(local_124,local_11c);
     if (DAT_0310ec9c != 0) {
       bVar21 = *local_11c;
       pbVar17 = local_11c;
@@ -1273,11 +1273,11 @@ LAB_0055cd52:
                                                   core_script_cpp_FUN_005593d0();
                                                   iVar8 = core_script_cpp_FUN_00560160();
                                                   if (iVar8 < 0) {
-                                                    dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_124,local_11c);
+                                                    dVar2 = (double)CONCAT44(local_124,local_11c);
                                                     pcVar18 = "Undefined label %s used in gosub statement on line %d";
 LAB_0055a97f:
                                                     crt_stdio_c_sprintf_FUN_005fdbd0
-                                                              (&DAT_0310eca0,pcVar18,SUB84 /* extract 2-byte value */(dVar2,0),
+                                                              (&DAT_0310eca0,pcVar18,SUB84(dVar2,0),
                                                                (int)((ulonglong)dVar2 >> 0x20));
                                                     return -1;
                                                   }
@@ -1311,7 +1311,7 @@ LAB_0055a97f:
                                                   core_script_cpp_FUN_005593d0();
                                                   iVar8 = core_script_cpp_FUN_00560160();
                                                   if (iVar8 < 0) {
-                                                    dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_124,local_11c);
+                                                    dVar2 = (double)CONCAT44(local_124,local_11c);
                                                     pcVar18 = "Undefined label %s used in goto statement on line %d";
                                                     goto LAB_0055a97f;
                                                   }
@@ -2924,7 +2924,7 @@ LAB_0055f91c:
                                                   else {
                                                     iVar8 = crt_string_c_strnicmp_FUN_005ff070
                                                                       (pcVar18,"walkTo",6);
-                                                    dVar2 = (double)CONCAT44 /* combine 2-byte values */(pcVar18,local_124);
+                                                    dVar2 = (double)CONCAT44(pcVar18,local_124);
                                                     if ((iVar8 != 0) ||
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar18[6] + 1)] & 0xe0U) != 0)) {

@@ -61,9 +61,9 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
       local_28 = (int)ROUND(dVar7);
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar4,
-                 SUB84 /* extract 2-byte value */((double)(float)pCVar4[0x1a].next_actor,0),
+                 SUB84((double)(float)pCVar4[0x1a].next_actor,0),
                  (int)((ulonglong)(double)(float)pCVar4[0x1a].next_actor >> 0x20),local_28,
-                 SUB84 /* extract 2-byte value */((double)fVar6,0),(int)((ulonglong)(double)fVar6 >> 0x20));
+                 SUB84((double)fVar6,0),(int)((ulonglong)(double)fVar6 >> 0x20));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_d1c.base_strlist,local_224);
       local_20 = (float)pCVar4[0x1a].next_actor * local_14 + local_20;
     }
@@ -81,8 +81,8 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
       dVar7 = (double)((float)(int)pCVar4[2].location.position.y * pCVar4[2].location.position.z);
       dVar1 = (double)pCVar4[2].location.position.z;
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar4,SUB84 /* extract 2-byte value */(dVar1,0),
-                 (int)((ulonglong)dVar1 >> 0x20),pCVar4[2].location.position.y,SUB84 /* extract 2-byte value */(dVar7,0),
+                (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar4,SUB84(dVar1,0),
+                 (int)((ulonglong)dVar1 >> 0x20),pCVar4[2].location.position.y,SUB84(dVar7,0),
                  (int)((ulonglong)dVar7 >> 0x20));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffef3c,local_224);
       local_24 = (float)(int)pCVar4[2].location.position.y * pCVar4[2].location.position.z +
@@ -93,7 +93,7 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
   dVar7 = (double)local_20;
   local_30._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);
   uVar3 = local_30._4_4_;
-  local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);
+  local_30._0_4_ = SUB84(dVar7,0);
   uVar2 = (uint)local_30;
   local_30 = dVar7;
   crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total enemy HP\t%g",uVar2,uVar3);
@@ -107,7 +107,7 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
   dVar7 = (double)local_24;
   local_30._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);
   uVar3 = local_30._4_4_;
-  local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);
+  local_30._0_4_ = SUB84(dVar7,0);
   uVar2 = (uint)local_30;
   local_30 = dVar7;
   crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total health items\t%g",uVar2,uVar3);

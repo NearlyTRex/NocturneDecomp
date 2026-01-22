@@ -524,18 +524,19 @@
   },
   "complexity": {
     "assembly_lines": 979,
-    "complexity_score": 2827,
+    "complexity_score": 3602,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 35,
     "pseudocode_lines": 472,
-    "suspect_count": 233,
+    "suspect_count": 310,
     "suspect_types": [
       "format_string_mismatch",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 1451
   },
@@ -1116,11 +1117,67 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_0310fd40",
+      "text": "DAT_0310fd40 = DAT_0310fd40 + g_GlobalDeltaTimeInt & 0xfffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_0310fd40",
+      "text": "DAT_0310fd40 = DAT_0310fd40 + g_GlobalDeltaTimeInt & 0xfffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_0310fd0c",
+      "text": "shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_0310fd0c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_0310fcd8",
+      "text": "shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_0310fcd8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_0310fd4c",
+      "text": "if (-1 < DAT_0310fd4c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_0068105c",
+      "text": "DAT_0068105c = (uint)(DAT_0068105c == 0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_0068105c",
+      "text": "DAT_0068105c = (uint)(DAT_0068105c == 0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 129,
       "match": "in_stack_0000007c",
       "text": "in_stack_0000007c = (char *)(DAT_0310fd48 + 1);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 129,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_0000007c = (char *)(DAT_0310fd48 + 1);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1149,6 +1206,20 @@
       "match": "(CEdButton *)((int)",
       "text": "DAT_0310fd48 = (int)(((CEdButton *)((int)in_stack_0000007c + -0xe4))->button_text + 199);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 136,
+      "match": "DAT_0310fd48",
+      "text": "DAT_0310fd48 = (int)(((CEdButton *)((int)in_stack_0000007c + -0xe4))->button_text + 199);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 138,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = 0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1186,11 +1257,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 154,
+      "match": "DAT_0310fd58",
+      "text": "in_stack_00000080 = &DAT_0310fd58;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 155,
       "match": "in_stack_0000007c",
       "text": "in_stack_0000007c = \"Find\";",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 157,
+      "match": "DAT_0310fd58",
+      "text": "(g_CEditorToolsPtr,\"Find\",&DAT_0310fd58,100,1);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1249,6 +1334,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 165,
+      "match": "DAT_0310fd58",
+      "text": "in_stack_00000088 = &DAT_0310fd58;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 166,
       "match": "in_stack_00000084",
@@ -1263,6 +1355,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 167,
+      "match": "DAT_0310fdc0",
+      "text": "in_stack_00000080 = &DAT_0310fdc0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 168,
       "match": "in_stack_0000007c",
@@ -1270,11 +1369,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 169,
+      "match": "DAT_0310fdc0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,\"Can't find %s\");",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 172,
       "match": "in_stack_00000088",
       "text": "in_stack_00000088 = &DAT_0310fd58;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 172,
+      "match": "DAT_0310fd58",
+      "text": "in_stack_00000088 = &DAT_0310fd58;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1291,11 +1404,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 174,
+      "match": "DAT_0310fdc0",
+      "text": "in_stack_00000080 = &DAT_0310fdc0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 175,
       "match": "in_stack_0000007c",
       "text": "in_stack_0000007c = (char *)0x56551e;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 176,
+      "match": "DAT_0310fdc0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,\"Found %s\");",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1305,6 +1432,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 177,
+      "match": "DAT_0310fd48",
+      "text": "DAT_0310fd48 = (int)in_stack_0000008c;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 178,
       "match": "in_stack_00000098",
@@ -1312,11 +1446,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 178,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = (int)in_stack_00000098;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 180,
       "match": "in_stack_00000090",
       "text": "DAT_0310fd4c = (int)in_stack_00000090;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 180,
+      "match": "DAT_0310fd4c",
+      "text": "DAT_0310fd4c = (int)in_stack_00000090;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1331,6 +1479,13 @@
       "match": "in_stack_0000008c",
       "text": "DAT_0310fd50 = (int)in_stack_0000008c;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 182,
+      "match": "DAT_0310fd50",
+      "text": "DAT_0310fd50 = (int)in_stack_0000008c;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1375,6 +1530,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 199,
+      "match": "DAT_0310fd58",
+      "text": "if (DAT_0310fd58 == '\\0') {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 200,
       "match": "in_stack_00000098",
@@ -1396,6 +1558,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 202,
+      "match": "DAT_0310fd58",
+      "text": "in_stack_00000090 = &DAT_0310fd58;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 203,
       "match": "in_stack_0000008c",
@@ -1415,6 +1584,20 @@
       "match": "in_stack_00000084",
       "text": "in_stack_00000084 = (char *)0x5655a5;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 207,
+      "match": "DAT_0310fd58",
+      "text": "(g_CEditorToolsPtr,\"Find\",&DAT_0310fd58,100,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 209,
+      "match": "DAT_0310fd58",
+      "text": "if (DAT_0310fd58 != '\\0') {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1466,6 +1649,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 213,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_00000088 = (char *)DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 214,
       "match": "in_stack_00000084",
@@ -1473,11 +1663,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 214,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_00000084 = (char *)(iVar9 + DAT_0310fd44);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 215,
       "match": "in_stack_00000080",
       "text": "in_stack_00000080 = &DAT_0310fd58;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 215,
+      "match": "DAT_0310fd58",
+      "text": "in_stack_00000080 = &DAT_0310fd58;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1508,6 +1712,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 220,
+      "match": "DAT_0310fd58",
+      "text": "in_stack_00000098 = &DAT_0310fd58;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 221,
       "match": "in_stack_00000094",
@@ -1522,6 +1733,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 222,
+      "match": "DAT_0310fdc0",
+      "text": "in_stack_00000090 = &DAT_0310fdc0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 223,
       "match": "in_stack_0000008c",
@@ -1529,11 +1747,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 224,
+      "match": "DAT_0310fdc0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,\"Can't find %s\");",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 227,
       "match": "in_stack_00000098",
       "text": "in_stack_00000098 = &DAT_0310fd58;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 227,
+      "match": "DAT_0310fd58",
+      "text": "in_stack_00000098 = &DAT_0310fd58;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1550,11 +1782,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 229,
+      "match": "DAT_0310fdc0",
+      "text": "in_stack_00000090 = &DAT_0310fdc0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 230,
       "match": "in_stack_0000008c",
       "text": "in_stack_0000008c = (char *)0x5655fb;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 231,
+      "match": "DAT_0310fdc0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310fdc0,\"Found %s\");",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1564,6 +1810,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 232,
+      "match": "DAT_0310fd48",
+      "text": "DAT_0310fd48 = (int)in_stack_000000b0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 233,
       "match": "in_stack_000000ac",
@@ -1571,11 +1824,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 233,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = (int)in_stack_000000ac;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 235,
       "match": "in_stack_000000b4",
       "text": "DAT_0310fd4c = in_stack_000000b4;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 235,
+      "match": "DAT_0310fd4c",
+      "text": "DAT_0310fd4c = in_stack_000000b4;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1590,6 +1857,13 @@
       "match": "in_stack_000000b0",
       "text": "DAT_0310fd50 = (int)in_stack_000000b0;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 237,
+      "match": "DAT_0310fd50",
+      "text": "DAT_0310fd50 = (int)in_stack_000000b0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1620,11 +1894,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 246,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000a0 = (CEdButton *)DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 247,
       "match": "in_stack_0000009c",
       "text": "in_stack_0000009c = (CKeys *)DAT_0310fd44;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 247,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_0000009c = (CKeys *)DAT_0310fd44;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1676,11 +1964,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 258,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000a8 = (CEdButton *)DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 259,
       "match": "in_stack_000000a4",
       "text": "in_stack_000000a4 = (CKeys *)DAT_0310fd44;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 259,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_000000a4 = (CKeys *)DAT_0310fd44;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1732,11 +2034,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 270,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000b0 = (int *)DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 271,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)DAT_0310fd44;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 271,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_000000ac = (int *)DAT_0310fd44;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1774,11 +2090,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 282,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000b0 = &DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 283,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = &DAT_0310fd44;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 283,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_000000ac = &DAT_0310fd44;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1809,6 +2139,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 289,
+      "match": "DAT_031141e0",
+      "text": "if (g_MouseX <= DAT_031141e0) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 290,
       "match": "in_stack_000000b0",
@@ -1835,6 +2172,13 @@
       "match": "in_stack_000000a4",
       "text": "in_stack_000000a4 = (CKeys *)0x56570c;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 296,
+      "match": "DAT_031141e8",
+      "text": "if (DAT_031141e8 <= g_MouseX) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1872,6 +2216,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 303,
+      "match": "DAT_031141e4",
+      "text": "if (g_MouseY <= DAT_031141e4) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 304,
       "match": "in_stack_000000b0",
@@ -1905,6 +2256,13 @@
       "match": "in_stack_000000a4",
       "text": "in_stack_000000a4 = (CKeys *)0x565742;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 310,
+      "match": "DAT_031141ec",
+      "text": "if (DAT_031141ec <= g_MouseY) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1956,11 +2314,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 323,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000b0 = &DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 324,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = &DAT_0310fd44;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 324,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_000000ac = &DAT_0310fd44;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2005,11 +2377,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 332,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000b0 = (int *)DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 333,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)DAT_0310fd44;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 333,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_000000ac = (int *)DAT_0310fd44;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2040,11 +2426,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 341,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000b0 = &DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 342,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = &DAT_0310fd44;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 342,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_000000ac = &DAT_0310fd44;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2117,11 +2517,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 356,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000b8 = DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 357,
       "match": "in_stack_000000b4",
       "text": "in_stack_000000b4 = DAT_0310fd44;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 357,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_000000b4 = DAT_0310fd44;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2215,6 +2629,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 387,
+      "match": "DAT_0310fd44",
+      "text": "else if ((in_stack_000000d4 != DAT_0310fd44) || (in_stack_000000d0 != DAT_0310fd48)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 387,
+      "match": "DAT_0310fd48",
+      "text": "else if ((in_stack_000000d4 != DAT_0310fd44) || (in_stack_000000d0 != DAT_0310fd48)) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 388,
       "match": "in_stack_000000d8",
@@ -2229,6 +2657,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 392,
+      "match": "DAT_0310fd4c",
+      "text": "else if (DAT_0310fd4c < 0) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 393,
       "match": "in_stack_000000d4",
@@ -2236,11 +2671,32 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 393,
+      "match": "DAT_0310fd4c",
+      "text": "DAT_0310fd4c = in_stack_000000d4;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 394,
       "match": "in_stack_000000d0",
       "text": "DAT_0310fd50 = in_stack_000000d0;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 394,
+      "match": "DAT_0310fd50",
+      "text": "DAT_0310fd50 = in_stack_000000d0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 396,
+      "match": "DAT_0310fd40",
+      "text": "DAT_0310fd40 = 0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2341,6 +2797,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 419,
+      "match": "DAT_00000010",
+      "text": "in_stack_000000ac = (int *)&DAT_00000010;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 420,
       "match": "in_stack_000000a8",
@@ -2397,6 +2860,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 430,
+      "match": "DAT_0068105c",
+      "text": "if (DAT_0068105c == 0) break;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 431,
       "match": "in_stack_000000b0",
@@ -2446,6 +2916,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 440,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000b0 = (int *)DAT_0310fd48;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 441,
       "match": "in_stack_000000ac",
@@ -2467,6 +2944,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 445,
+      "match": "DAT_031101c0",
+      "text": "pcVar10 = &DAT_031101c0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 452,
       "match": "in_stack_000000b0",
@@ -2474,11 +2958,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 452,
+      "match": "DAT_0310fd44",
+      "text": "in_stack_000000b0 = (int *)DAT_0310fd44;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 453,
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)DAT_0310fd48;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 453,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000ac = (int *)DAT_0310fd48;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2502,6 +3000,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 458,
+      "match": "DAT_031101c0",
+      "text": "(&DAT_031101c0)[iVar6] = 0x20;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 460,
+      "match": "DAT_031101c0",
+      "text": "(&DAT_031101c0)[iVar9] = cVar5;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 464,
       "match": "in_stack_000000b0",
@@ -2514,6 +3026,13 @@
       "match": "in_stack_000000ac",
       "text": "in_stack_000000ac = (int *)DAT_0310fd48;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 465,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000ac = (int *)DAT_0310fd48;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2530,6 +3049,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 467,
+      "match": "DAT_031101c0",
+      "text": "(&DAT_031101c0)[iVar6] = 0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 468,
       "match": "in_stack_000000a4",
@@ -2537,11 +3063,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 469,
+      "match": "DAT_0310fd44",
+      "text": "DAT_0310fd44 = core_script_cpp_CScript_editorIndex2X_FUN_00566b30();",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 470,
       "match": "in_stack_000000b0",
       "text": "in_stack_000000b0 = (int *)DAT_0310fd48;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 470,
+      "match": "DAT_0310fd48",
+      "text": "in_stack_000000b0 = (int *)DAT_0310fd48;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

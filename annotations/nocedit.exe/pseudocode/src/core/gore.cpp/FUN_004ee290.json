@@ -31,14 +31,15 @@
   },
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 69,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 24,
-    "suspect_count": 4,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 95
   },
@@ -200,11 +201,53 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02da8720",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\",DAT_02da8720);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_02da8720",
+      "text": "if (0 < DAT_02da8720) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_02da8720",
+      "text": "} while (iVar2 < DAT_02da8720);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000008",
       "text": "iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\",DAT_02d873d8);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_02d873d8",
+      "text": "iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\",DAT_02d873d8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_02d873d8",
+      "text": "if (0 < DAT_02d873d8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_02d873d8",
+      "text": "} while (iVar1 < DAT_02d873d8);",
+      "type": "undefined_data"
     }
   ]
 }

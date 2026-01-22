@@ -13,13 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 17,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 13,
     "pseudocode_lines": 17,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 69
   },
   "cross_references": [],
@@ -172,5 +174,48 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_0067d224",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d224);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0067d234",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d234);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0067d244",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d244);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0067d254",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d254);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_0067d264",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d264);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0067d274",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0067d274);",
+      "type": "undefined_data"
+    }
+  ]
 }

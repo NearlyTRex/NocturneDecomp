@@ -20,14 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 38,
+    "complexity_score": 153,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "suspect_count": 13,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 60
   },
@@ -153,6 +154,83 @@
       "match": "in_stack_00000004",
       "text": "(g_ThemeFont,in_stack_00000004,DAT_02d831c4,DAT_02d831c8,7,-1);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02d831c4",
+      "text": "(g_ThemeFont,in_stack_00000004,DAT_02d831c4,DAT_02d831c8,7,-1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02d831c8",
+      "text": "(g_ThemeFont,in_stack_00000004,DAT_02d831c4,DAT_02d831c8,7,-1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_02d831c8",
+      "text": "DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_02d831c8",
+      "text": "DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_02d831cc",
+      "text": "DAT_02d831c8 = DAT_02d831c8 + DAT_02d831cc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_02d831c8",
+      "text": "if (DAT_02d831c8 <= g_WindowHeight + DAT_02d831cc * -4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_02d831cc",
+      "text": "if (DAT_02d831c8 <= g_WindowHeight + DAT_02d831cc * -4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_02d831c8",
+      "text": "DAT_02d831c8 = DAT_02d831cc * 6;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_02d831cc",
+      "text": "DAT_02d831c8 = DAT_02d831cc * 6;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_02d831c4",
+      "text": "DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_02d831c4",
+      "text": "DAT_02d831c4 = DAT_02d831c4 + g_WindowWidth / 3;",
+      "type": "undefined_data"
     }
   ]
 }

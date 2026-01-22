@@ -45,13 +45,13 @@
       },
       {
         "category": "other",
-        "column": 69,
+        "column": 41,
         "line": 150,
         "message": "request for member '_3_1_' in 'local_30', which is of non-class type 'uint' {aka 'unsigned int'}"
       },
       {
         "category": "undeclared_identifier",
-        "column": 85,
+        "column": 57,
         "line": 150,
         "message": "'undefined3' was not declared in this scope; did you mean 'undefined8'?"
       },
@@ -86,12 +86,12 @@
   },
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 258,
+    "complexity_score": 268,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 13,
     "pseudocode_lines": 143,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -608,6 +608,13 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "fsin",
+      "text": "fVar6 = (float10)fsin((float10)0.58904862253125001);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "ROUND",
       "text": "local_74.y = (int)ROUND(dVar8);",
@@ -652,14 +659,14 @@
       "description": "Unknown/mangled field access",
       "line": 143,
       "match": "._3_1_",
-      "text": "local_30 = (float)CONCAT13 /* combine 2-byte values */(local_30._3_1_ + '\\x01',(undefined3)local_30);",
+      "text": "local_30 = (float)CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 143,
       "match": "CONCAT13",
-      "text": "local_30 = (float)CONCAT13 /* combine 2-byte values */(local_30._3_1_ + '\\x01',(undefined3)local_30);",
+      "text": "local_30 = (float)CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30);",
       "type": "decompiler_intrinsic"
     }
   ]

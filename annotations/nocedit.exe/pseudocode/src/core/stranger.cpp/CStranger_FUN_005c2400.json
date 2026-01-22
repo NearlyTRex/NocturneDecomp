@@ -164,12 +164,12 @@
   },
   "complexity": {
     "assembly_lines": 330,
-    "complexity_score": 615,
+    "complexity_score": 625,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "pseudocode_lines": 155,
-    "suspect_count": 44,
+    "suspect_count": 45,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -614,6 +614,13 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 101,
+      "match": "fcos",
+      "text": "fVar5 = (float10)fcos((float10)0.261799387791667);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "ABS",
       "text": "fVar3 = ABS((float)pCStack_9c * fStack_a8 + fStack_a4 * fStack_b0 + fStack_a0 * fStack_ac)",
@@ -630,7 +637,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "SUB84",
-      "text": "local_f0 = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "local_f0 = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
     {

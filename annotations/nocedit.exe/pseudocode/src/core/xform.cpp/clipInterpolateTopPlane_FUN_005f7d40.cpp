@@ -23,7 +23,7 @@ core_xform_cpp_clipInterpolateTopPlane_FUN_005f7d40
   uVar3 = iVar4 - (vertex_a->projected_vertex).transformed_y;
   if ((int)uVar3 < iVar5) {
     if (-iVar5 < (int)uVar3) {
-      iVar4 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar5);
+      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar5);
     }
     else {
       iVar4 = -0x80000000;

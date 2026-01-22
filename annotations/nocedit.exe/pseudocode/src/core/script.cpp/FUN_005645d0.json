@@ -44,15 +44,16 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 120,
+    "complexity_score": 565,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
     "pseudocode_lines": 45,
-    "suspect_count": 6,
+    "suspect_count": 50,
     "suspect_types": [
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 226
@@ -335,11 +336,263 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_031141d0",
+      "text": "(DAT_031141d0,DAT_031141d4,(DAT_031141d8 - DAT_031141d0) + -1,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_031141d4",
+      "text": "(DAT_031141d0,DAT_031141d4,(DAT_031141d8 - DAT_031141d0) + -1,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_031141d8",
+      "text": "(DAT_031141d0,DAT_031141d4,(DAT_031141d8 - DAT_031141d0) + -1,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_031141d0",
+      "text": "(DAT_031141d0,DAT_031141d4,(DAT_031141d8 - DAT_031141d0) + -1,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_031141dc",
+      "text": "(DAT_031141dc - DAT_031141d4) + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_031141d4",
+      "text": "(DAT_031141dc - DAT_031141d4) + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_031141d0",
+      "text": "(DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1,DAT_031141dc + -1,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_031141d4",
+      "text": "(DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1,DAT_031141dc + -1,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_031141d8",
+      "text": "(DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1,DAT_031141dc + -1,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_031141dc",
+      "text": "(DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1,DAT_031141dc + -1,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_031141d0",
+      "text": "engine_2d_c_drawHLine_FUN_00402ee0(DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_031141d4",
+      "text": "engine_2d_c_drawHLine_FUN_00402ee0(DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_031141d8",
+      "text": "engine_2d_c_drawHLine_FUN_00402ee0(DAT_031141d0,DAT_031141d4,DAT_031141d8 + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_0310fd0c",
+      "text": "shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_0310fd0c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_0310fcd8",
+      "text": "shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_0310fcd8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_031141e0",
+      "text": "(DAT_031141e0,DAT_031141e4,(DAT_031141e8 - DAT_031141e0) + -1,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_031141e4",
+      "text": "(DAT_031141e0,DAT_031141e4,(DAT_031141e8 - DAT_031141e0) + -1,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_031141e8",
+      "text": "(DAT_031141e0,DAT_031141e4,(DAT_031141e8 - DAT_031141e0) + -1,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_031141e0",
+      "text": "(DAT_031141e0,DAT_031141e4,(DAT_031141e8 - DAT_031141e0) + -1,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_031141ec",
+      "text": "(DAT_031141ec - DAT_031141e4) + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_031141e4",
+      "text": "(DAT_031141ec - DAT_031141e4) + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_0310fcd8",
+      "text": "for (iVar1 = DAT_0310fcd8; iVar1 <= DAT_0310fcd8 + DAT_0310fce0; iVar1 = iVar1 + 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_0310fcd8",
+      "text": "for (iVar1 = DAT_0310fcd8; iVar1 <= DAT_0310fcd8 + DAT_0310fce0; iVar1 = iVar1 + 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_0310fce0",
+      "text": "for (iVar1 = DAT_0310fcd8; iVar1 <= DAT_0310fcd8 + DAT_0310fce0; iVar1 = iVar1 + 1) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 28,
       "match": "._1_1_",
       "text": "if ((DAT_0310fd40._1_1_ & 0x40) == 0) {",
       "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_0310fd40",
+      "text": "if ((DAT_0310fd40._1_1_ & 0x40) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_0310fd48",
+      "text": "iVar1 = (DAT_0310fd48 - DAT_0310fcd8) * DAT_03114208 + DAT_031141e4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_0310fcd8",
+      "text": "iVar1 = (DAT_0310fd48 - DAT_0310fcd8) * DAT_03114208 + DAT_031141e4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_03114208",
+      "text": "iVar1 = (DAT_0310fd48 - DAT_0310fcd8) * DAT_03114208 + DAT_031141e4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_031141e4",
+      "text": "iVar1 = (DAT_0310fd48 - DAT_0310fcd8) * DAT_03114208 + DAT_031141e4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_03114204",
+      "text": "x1 = DAT_03114204 * (DAT_0310fd44 - DAT_0310fd0c) + DAT_031141e0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0310fd44",
+      "text": "x1 = DAT_03114204 * (DAT_0310fd44 - DAT_0310fd0c) + DAT_031141e0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0310fd0c",
+      "text": "x1 = DAT_03114204 * (DAT_0310fd44 - DAT_0310fd0c) + DAT_031141e0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_031141e0",
+      "text": "x1 = DAT_03114204 * (DAT_0310fd44 - DAT_0310fd0c) + DAT_031141e0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_03114208",
+      "text": "y = iVar1 + DAT_03114208 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0068105c",
+      "text": "if (DAT_0068105c == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_03114204",
+      "text": "engine_2d_c_drawHLine_FUN_00402ee0(x1,y,DAT_03114204 + x1 + -1);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -356,11 +609,67 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_0310fd48",
+      "text": "(&stack0xfffffdfc,\"Ln %d, Col %d\",DAT_0310fd48 + 1,DAT_0310fd44 + 1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_0310fd44",
+      "text": "(&stack0xfffffdfc,\"Ln %d, Col %d\",DAT_0310fd48 + 1,DAT_0310fd44 + 1);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 44,
       "match": "&stack0xfffffdfc",
       "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_03114200",
+      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_031141f8",
+      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_031141f4",
+      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_03114200",
+      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_031141f0",
+      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_031141f4",
+      "text": "(DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

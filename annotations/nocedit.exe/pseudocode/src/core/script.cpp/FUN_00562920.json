@@ -854,18 +854,20 @@
   },
   "complexity": {
     "assembly_lines": 2421,
-    "complexity_score": 3182,
+    "complexity_score": 3262,
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
     "pseudocode_lines": 807,
-    "suspect_count": 235,
+    "suspect_count": 242,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "stack_ref",
-      "unnamed_param"
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr"
     ],
     "total_lines": 3228
   },
@@ -3103,11 +3105,32 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 585,
+      "match": "DAT_031099e8",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_031099e8,\"%s\\t%s\\t%s\",iVar4,iVar4 + 0x78);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 587,
+      "match": "DAT_031099e8",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_33ac.base_strlist,&DAT_031099e8);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 590,
       "match": "in_stack_00000004",
       "text": "(&local_33ac.base_strlist,in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 593,
+      "match": "DAT_0310a9e8",
+      "text": "(&local_33ac.base_strlist,&DAT_0310a9e8), -1 < iVar6)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3171,6 +3194,13 @@
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = in_stack_00000004 + 2;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 614,
+      "match": "DAT_0310a9e8",
+      "text": "pcVar8 = &DAT_0310a9e8;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3313,6 +3343,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 686,
+      "match": "code",
+      "text": "(g_CEditorToolsPtr,\"WARNING! chooseParm - unknown parm type %d (code needs to be updated)\");",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 693,
+      "match": "DAT_0310eca0",
+      "text": "shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,&DAT_0310eca0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 714,
       "match": "in_stack_ffffc8a8",
@@ -3381,6 +3425,13 @@
       "match": "in_stack_ffffc8b8",
       "text": "(uint)in_stack_ffffc8b4,(uint)in_stack_ffffc8b8);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 727,
+      "match": "DAT_00643d07",
+      "text": "local_1c = &DAT_00643d07;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -42,16 +42,16 @@ core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00492042
   uVar6 = (byte)((uint)(uint)g_FilterBlendConstant >> 0x10);
   uVar5 = (byte)((uint)(uint)g_FilterBlendConstant >> 8);
   uVar4 = (byte)(uint)g_FilterBlendConstant;
-  uVar12 = CONCAT62 /* combine 2-byte values */(CONCAT51 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */(CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar7,(char)(uVar1 >> 0x18)),uVar6)
+  uVar12 = CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar1 >> 0x18)),uVar6)
                                                ,(char)(uVar1 >> 0x10)),uVar5),(char)(uVar1 >> 8)),
-                    CONCAT11 /* combine 2-byte values */(uVar4,(char)uVar1));
-  uVar9 = paddusw(CONCAT62 /* combine 2-byte values */(CONCAT51 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */(CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar7,(char)(uVar11 >> 0x18)
+                    CONCAT11(uVar4,(char)uVar1));
+  uVar9 = paddusw(CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar11 >> 0x18)
                                                                        ),uVar6),
                                                       (char)(uVar11 >> 0x10)),uVar5),
-                                    (char)(uVar11 >> 8)),CONCAT11 /* combine 2-byte values */(uVar4,(char)uVar11)),uVar12);
-  uVar12 = paddusw(uVar12,CONCAT62 /* combine 2-byte values */(CONCAT51 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */(CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar7,(char)(uVar2 
+                                    (char)(uVar11 >> 8)),CONCAT11(uVar4,(char)uVar11)),uVar12);
+  uVar12 = paddusw(uVar12,CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar2 
                                                   >> 0x18)),uVar6),(char)(uVar2 >> 0x10)),uVar5),
-                                            (char)(uVar2 >> 8)),CONCAT11 /* combine 2-byte values */(uVar4,(char)uVar2)));
+                                            (char)(uVar2 >> 8)),CONCAT11(uVar4,(char)uVar2)));
   uVar10 = paddusw(uVar9,uVar12);
   uVar11 = input_buffer[-0x29];
   uVar1 = input_buffer[-1];
@@ -60,21 +60,21 @@ core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00492042
   uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);
   uVar6 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x10);
   uVar7 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x18);
-  uVar12 = CONCAT17 /* combine 2-byte values */(uVar7,CONCAT16 /* combine 2-byte values */((char)(uVar1 >> 0x38),
-                                   CONCAT15 /* combine 2-byte values */(uVar6,CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x30),
-                                                           CONCAT13 /* combine 2-byte values */(uVar5,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 
-                                                  0x28),CONCAT11 /* combine 2-byte values */(uVar4,(char)(uVar1 >> 0x20))))))));
-  uVar9 = paddusw(CONCAT17 /* combine 2-byte values */(uVar7,CONCAT16 /* combine 2-byte values */((char)(uVar11 >> 0x38),
-                                          CONCAT15 /* combine 2-byte values */(uVar6,CONCAT14 /* combine 2-byte values */((char)(uVar11 >> 0x30),
-                                                                  CONCAT13 /* combine 2-byte values */(uVar5,CONCAT12 /* combine 2-byte values */((char)(
+  uVar12 = CONCAT17(uVar7,CONCAT16((char)(uVar1 >> 0x38),
+                                   CONCAT15(uVar6,CONCAT14((char)(uVar1 >> 0x30),
+                                                           CONCAT13(uVar5,CONCAT12((char)(uVar1 >> 
+                                                  0x28),CONCAT11(uVar4,(char)(uVar1 >> 0x20))))))));
+  uVar9 = paddusw(CONCAT17(uVar7,CONCAT16((char)(uVar11 >> 0x38),
+                                          CONCAT15(uVar6,CONCAT14((char)(uVar11 >> 0x30),
+                                                                  CONCAT13(uVar5,CONCAT12((char)(
                                                   uVar11 >> 0x28),
-                                                  CONCAT11 /* combine 2-byte values */(uVar4,(char)(uVar11 >> 0x20)))))))),
+                                                  CONCAT11(uVar4,(char)(uVar11 >> 0x20)))))))),
                   uVar12);
-  uVar12 = paddusw(uVar12,CONCAT17 /* combine 2-byte values */(uVar7,CONCAT16 /* combine 2-byte values */((char)(uVar2 >> 0x38),
-                                                  CONCAT15 /* combine 2-byte values */(uVar6,CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x30),
-                                                                          CONCAT13 /* combine 2-byte values */(uVar5,CONCAT12 /* combine 2-byte values */((
+  uVar12 = paddusw(uVar12,CONCAT17(uVar7,CONCAT16((char)(uVar2 >> 0x38),
+                                                  CONCAT15(uVar6,CONCAT14((char)(uVar2 >> 0x30),
+                                                                          CONCAT13(uVar5,CONCAT12((
                                                   char)(uVar2 >> 0x28),
-                                                  CONCAT11 /* combine 2-byte values */(uVar4,(char)(uVar2 >> 0x20)))))))));
+                                                  CONCAT11(uVar4,(char)(uVar2 >> 0x20)))))))));
   uVar11 = paddusw(uVar9,uVar12);
   do {
     uVar9 = paddusw(uVar11 >> 0x30,uVar10);
@@ -87,23 +87,23 @@ core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00492042
     uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);
     uVar6 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x10);
     uVar7 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x18);
-    uVar12 = CONCAT17 /* combine 2-byte values */(uVar7,CONCAT16 /* combine 2-byte values */((char)(uVar1 >> 0x38),
-                                     CONCAT15 /* combine 2-byte values */(uVar6,CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x30),
-                                                             CONCAT13 /* combine 2-byte values */(uVar5,CONCAT12 /* combine 2-byte values */((char)(uVar1 >>
+    uVar12 = CONCAT17(uVar7,CONCAT16((char)(uVar1 >> 0x38),
+                                     CONCAT15(uVar6,CONCAT14((char)(uVar1 >> 0x30),
+                                                             CONCAT13(uVar5,CONCAT12((char)(uVar1 >>
                                                                                            0x28),
-                                                                                     CONCAT11 /* combine 2-byte values */(uVar4,
+                                                                                     CONCAT11(uVar4,
                                                   (char)(uVar1 >> 0x20))))))));
-    uVar9 = paddusw(CONCAT17 /* combine 2-byte values */(uVar7,CONCAT16 /* combine 2-byte values */((char)(uVar11 >> 0x38),
-                                            CONCAT15 /* combine 2-byte values */(uVar6,CONCAT14 /* combine 2-byte values */((char)(uVar11 >> 0x30),
-                                                                    CONCAT13 /* combine 2-byte values */(uVar5,CONCAT12 /* combine 2-byte values */((char)(
+    uVar9 = paddusw(CONCAT17(uVar7,CONCAT16((char)(uVar11 >> 0x38),
+                                            CONCAT15(uVar6,CONCAT14((char)(uVar11 >> 0x30),
+                                                                    CONCAT13(uVar5,CONCAT12((char)(
                                                   uVar11 >> 0x28),
-                                                  CONCAT11 /* combine 2-byte values */(uVar4,(char)(uVar11 >> 0x20)))))))),
+                                                  CONCAT11(uVar4,(char)(uVar11 >> 0x20)))))))),
                     uVar12);
-    uVar12 = paddusw(uVar12,CONCAT17 /* combine 2-byte values */(uVar7,CONCAT16 /* combine 2-byte values */((char)(uVar2 >> 0x38),
-                                                    CONCAT15 /* combine 2-byte values */(uVar6,CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x30),
-                                                                            CONCAT13 /* combine 2-byte values */(uVar5,CONCAT12 /* combine 2-byte values */(
+    uVar12 = paddusw(uVar12,CONCAT17(uVar7,CONCAT16((char)(uVar2 >> 0x38),
+                                                    CONCAT15(uVar6,CONCAT14((char)(uVar2 >> 0x30),
+                                                                            CONCAT13(uVar5,CONCAT12(
                                                   (char)(uVar2 >> 0x28),
-                                                  CONCAT11 /* combine 2-byte values */(uVar4,(char)(uVar2 >> 0x20)))))))));
+                                                  CONCAT11(uVar4,(char)(uVar2 >> 0x20)))))))));
     uVar11 = paddusw(uVar9,uVar12);
     uVar12 = paddusw(uVar15,uVar13);
     uVar9 = paddusw(uVar10 >> 0x30,uVar11);
@@ -117,17 +117,17 @@ core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00492042
     uVar6 = (byte)((uint)(uint)g_FilterBlendConstant >> 0x10);
     uVar5 = (byte)((uint)(uint)g_FilterBlendConstant >> 8);
     uVar4 = (byte)(uint)g_FilterBlendConstant;
-    uVar12 = CONCAT62 /* combine 2-byte values */(CONCAT51 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */(CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar7,(char)(uVar2 >> 0x18)),
+    uVar12 = CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar2 >> 0x18)),
                                                           uVar6),(char)(uVar2 >> 0x10)),uVar5),
-                               (char)(uVar2 >> 8)),CONCAT11 /* combine 2-byte values */(uVar4,(char)uVar2));
-    uVar9 = paddusw(CONCAT62 /* combine 2-byte values */(CONCAT51 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */(CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar7,(char)(uVar1 >> 0x18
+                               (char)(uVar2 >> 8)),CONCAT11(uVar4,(char)uVar2));
+    uVar9 = paddusw(CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar1 >> 0x18
                                                                                       )),uVar6),
                                                         (char)(uVar1 >> 0x10)),uVar5),
-                                      (char)(uVar1 >> 8)),CONCAT11 /* combine 2-byte values */(uVar4,(char)uVar1)),uVar12);
-    uVar12 = paddusw(uVar12,CONCAT62 /* combine 2-byte values */(CONCAT51 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */(CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar7,(char)(
+                                      (char)(uVar1 >> 8)),CONCAT11(uVar4,(char)uVar1)),uVar12);
+    uVar12 = paddusw(uVar12,CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(
                                                   uVar10 >> 0x18)),uVar6),(char)(uVar10 >> 0x10)),
                                                   uVar5),(char)(uVar10 >> 8)),
-                                     CONCAT11 /* combine 2-byte values */(uVar4,(char)uVar10)));
+                                     CONCAT11(uVar4,(char)uVar10)));
     uVar10 = paddusw(uVar9,uVar12);
     uVar9 = paddusw(uVar20,uVar13);
     uVar14 = (ushort)uVar15 >> 4;
@@ -141,17 +141,17 @@ core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00492042
     uVar23 = (ushort)((ulonglong)uVar9 >> 0x34);
     input_buffer = input_buffer + 1;
     *output_buffer =
-         CONCAT17 /* combine 2-byte values */((uVar23 != 0) * (uVar23 < 0x100) * (char)uVar23 - (0xff < uVar23),
-                  CONCAT16 /* combine 2-byte values */((uVar22 != 0) * (uVar22 < 0x100) * (char)uVar22 - (0xff < uVar22),
-                           CONCAT15 /* combine 2-byte values */((uVar21 != 0) * (uVar21 < 0x100) * (char)uVar21 -
+         CONCAT17((uVar23 != 0) * (uVar23 < 0x100) * (char)uVar23 - (0xff < uVar23),
+                  CONCAT16((uVar22 != 0) * (uVar22 < 0x100) * (char)uVar22 - (0xff < uVar22),
+                           CONCAT15((uVar21 != 0) * (uVar21 < 0x100) * (char)uVar21 -
                                     (0xff < uVar21),
-                                    CONCAT14 /* combine 2-byte values */((uVar19 != 0) * (uVar19 < 0x100) * (char)uVar19 -
+                                    CONCAT14((uVar19 != 0) * (uVar19 < 0x100) * (char)uVar19 -
                                              (0xff < uVar19),
-                                             CONCAT13 /* combine 2-byte values */((uVar18 != 0) * (uVar18 < 0x100) *
+                                             CONCAT13((uVar18 != 0) * (uVar18 < 0x100) *
                                                       (char)uVar18 - (0xff < uVar18),
-                                                      CONCAT12 /* combine 2-byte values */((uVar17 != 0) * (uVar17 < 0x100) *
+                                                      CONCAT12((uVar17 != 0) * (uVar17 < 0x100) *
                                                                (char)uVar17 - (0xff < uVar17),
-                                                               CONCAT11 /* combine 2-byte values */((uVar16 != 0) *
+                                                               CONCAT11((uVar16 != 0) *
                                                                         (uVar16 < 0x100) *
                                                                         (char)uVar16 -
                                                                         (0xff < uVar16),

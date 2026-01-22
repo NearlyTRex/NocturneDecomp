@@ -44,12 +44,12 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 193,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 13,
     "pseudocode_lines": 123,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output"
@@ -384,6 +384,13 @@
       "match": "extraout_EBX_00",
       "text": "float *extraout_EBX_00;",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "fcos",
+      "text": "fVar10 = (float10)fcos((float10)iVar7 *",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

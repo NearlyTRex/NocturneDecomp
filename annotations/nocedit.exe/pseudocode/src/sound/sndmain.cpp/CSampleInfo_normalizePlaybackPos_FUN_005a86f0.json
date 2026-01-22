@@ -252,7 +252,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "SUB84",
-      "text": "this_ptr = SUB84 /* extract 2-byte value */(input_value,0);",
+      "text": "this_ptr = SUB84(input_value,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -266,14 +266,14 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(this_ptr,in_stack_00000004);",
+      "text": "dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(this_ptr,in_stack_00000004);",
+      "text": "dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -315,42 +315,42 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(this_ptr,in_stack_00000004) - dVar2;",
+      "text": "dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004) - dVar2;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(this_ptr,in_stack_00000004) - dVar2;",
+      "text": "dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004) - dVar2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "in_stack_00000004 = SUB84(dVar2,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "SUB84",
-      "text": "in_stack_00000004 = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "in_stack_00000004 = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->sample_info,(double)CONCAT44 /* combine 2-byte values */(2,this_ptr),",
+      "text": "(&in_stack_00000004->sample_info,(double)CONCAT44(2,this_ptr),",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CONCAT44",
-      "text": "(&in_stack_00000004->sample_info,(double)CONCAT44 /* combine 2-byte values */(2,this_ptr),",
+      "text": "(&in_stack_00000004->sample_info,(double)CONCAT44(2,this_ptr),",
       "type": "decompiler_intrinsic"
     },
     {

@@ -79,7 +79,7 @@ shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh *this_p
   local_58->needs_recalc_flag = 0;
   iVar3 = shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
                     (this_ptr,local_58->vertex_idx_1,local_58->vertex_idx_2,
-                     SUB84 /* extract 2-byte value */(in_stack_fffffed8,0));
+                     SUB84(in_stack_fffffed8,0));
   if (iVar3 == edge_index) {
     iVar3 = shape_meshlod_cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
                       (this_ptr,edge_index,local_58->vertex_idx_1);
@@ -346,9 +346,9 @@ LAB_0051919d:
                       do {
                         local_8c = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
                                              (local_34,(SLodSamplePoint *)pCVar11,
-                                              SUB84 /* extract 2-byte value */(in_stack_fffffed8,0));
-                        if (local_8c < (double)CONCAT44 /* combine 2-byte values */(uStack_114,local_118)) {
-                          local_108 = SUB84 /* extract 2-byte value */(local_8c,0);
+                                              SUB84(in_stack_fffffed8,0));
+                        if (local_8c < (double)CONCAT44(uStack_114,local_118)) {
+                          local_108 = SUB84(local_8c,0);
                           local_118 = local_108;
                           uStack_104 = (uint)((ulonglong)local_8c >> 0x20);
                           uStack_114 = uStack_104;
@@ -359,7 +359,7 @@ LAB_0051919d:
                     }
                     local_100 = local_100 + 1;
                     fVar2 = (float)local_34->active_attribute_count *
-                            (float)(double)CONCAT44 /* combine 2-byte values */(uStack_114,local_118) + fVar2;
+                            (float)(double)CONCAT44(uStack_114,local_118) + fVar2;
                   }
                   local_4c = local_4c + 0x1c;
                   local_40 = local_40 + 1;

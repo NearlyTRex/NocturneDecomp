@@ -860,12 +860,12 @@
   },
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1323,
+    "complexity_score": 1358,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
     "pseudocode_lines": 913,
-    "suspect_count": 37,
+    "suspect_count": 40,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -874,6 +874,7 @@
       "pointer_cast",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 3342
@@ -3023,6 +3024,20 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 420,
+      "match": "DAT_02c14c88",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02c14c88,\"noc%d.pcx\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 421,
+      "match": "DAT_02c14c88",
+      "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
       "line": 445,
       "match": "local_1c[-1].",
@@ -3147,6 +3162,13 @@
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 855,
+      "match": "DAT_00670210",
+      "text": "puVar11 = &DAT_00670210;",
+      "type": "undefined_data"
     },
     {
       "actual_args": 2,

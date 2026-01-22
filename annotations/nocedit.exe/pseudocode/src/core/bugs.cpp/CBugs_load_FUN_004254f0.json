@@ -74,14 +74,16 @@
   },
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 193,
+    "complexity_score": 223,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 10,
     "pseudocode_lines": 48,
-    "suspect_count": 14,
+    "suspect_count": 16,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data",
+      "warning_type_propagation"
     ],
     "total_lines": 146
   },
@@ -231,6 +233,13 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
@@ -264,6 +273,13 @@
       "match": "in_stack_00000004",
       "text": "pCVar1 = (CKeyFramedModelInstance *)(in_stack_00000004[1].base_character.cloth_data + 0x397c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00616d44",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(pCVar1,&DAT_00616d44);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

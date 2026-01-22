@@ -260,17 +260,18 @@
   },
   "complexity": {
     "assembly_lines": 698,
-    "complexity_score": 1193,
+    "complexity_score": 1238,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 25,
     "pseudocode_lines": 308,
-    "suspect_count": 86,
+    "suspect_count": 90,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 1006
@@ -1075,6 +1076,13 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 98,
+      "match": "DAT_02f33378",
+      "text": "(local_18,DAT_02f33378,&local_1a8);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(CMatrix3x4f *)((int)",
@@ -1250,6 +1258,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 183,
+      "match": "DAT_02f33398",
+      "text": "(local_18,&local_ac,DAT_02f33398);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 184,
       "match": "._3_1_",
@@ -1404,6 +1419,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 249,
+      "match": "DAT_02f33394",
+      "text": "(pCVar13,&local_c4,DAT_02f33394);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 250,
       "match": "._3_1_",
@@ -1437,6 +1459,13 @@
       "match": "in_stack_00000004",
       "text": "else if ((uVar7 == 7) && (*(int *)(in_stack_00000004->field2_0x240c + 4) != 0)) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 257,
+      "match": "DAT_02f33398",
+      "text": "(pCVar13,&local_100,DAT_02f33398);",
+      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",

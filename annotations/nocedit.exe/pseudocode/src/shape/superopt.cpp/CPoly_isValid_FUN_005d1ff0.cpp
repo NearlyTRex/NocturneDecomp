@@ -60,7 +60,7 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
     pCVar1 = pCVar6 + this_ptr->vertex_idx_0;
     iVar7 = this_ptr->vertex_idx_1;
     dVar3 = pCVar6[iVar7].position.x - (pCVar1->position).x;
-    local_c8._0_4_ = SUB84 /* extract 2-byte value */(dVar3,0);
+    local_c8._0_4_ = SUB84(dVar3,0);
     local_c8._4_4_ = (uint)((ulonglong)dVar3 >> 0x20);
     local_c0 = pCVar6[iVar7].position.y - (pCVar1->position).y;
     local_b8 = pCVar6[iVar7].position.z - (pCVar1->position).z;

@@ -37,7 +37,7 @@ int shape_superopt_cpp_FUN_005c8e70(void)
   int local_18;
   int local_14;
   
-  dVar7 = (double)CONCAT44 /* combine 2-byte values */(local_34._4_4_,(uint)local_34);
+  dVar7 = (double)CONCAT44(local_34._4_4_,(uint)local_34);
   bVar6 = 0;
   local_18 = 0;
   local_24 = 0;

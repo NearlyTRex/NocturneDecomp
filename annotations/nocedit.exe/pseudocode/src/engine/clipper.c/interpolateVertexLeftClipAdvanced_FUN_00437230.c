@@ -22,7 +22,7 @@ engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_00437230
   uVar4 = iVar3 - (v1->projected_vertex).transformed_x;
   if ((int)uVar4 < iVar2) {
     if (-iVar2 < (int)uVar4) {
-      iVar3 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
+      iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
     }
     else {
       iVar3 = -0x80000000;

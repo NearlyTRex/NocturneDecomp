@@ -52,23 +52,23 @@ void engine_colquant_c_FUN_00441260(void)
       dVar12 = (double)*pbVar9 + dVar12;
       dVar1 = (double)pbVar9[1] + dVar1;
       dVar11 = (double)pbVar9[2] + dVar11;
-      local_70 = SUB84 /* extract 2-byte value */(dVar1,0);
+      local_70 = SUB84(dVar1,0);
       pbVar9 = pbVar9 + 4;
     } while (iVar8 < iVar7);
   }
-  local_50 = SUB84 /* extract 2-byte value */(dVar11,0);
+  local_50 = SUB84(dVar11,0);
   uStack_74 = (uint)((ulonglong)dVar12 >> 0x20);
-  local_78 = SUB84 /* extract 2-byte value */(dVar12,0);
+  local_78 = SUB84(dVar12,0);
   iVar8 = in_stack_00000004 + in_stack_00000008 * 0x40;
   dVar11 = crt_math_c_round_FUN_005fe6b0(dVar12 / (double)*(uint *)(iVar8 + 0x4044));
   *(short *)(iVar8 + 0x4008) = (short)(int)ROUND(dVar11);
   dVar11 = crt_math_c_round_FUN_005fe6b0
-                     ((double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74) / (double)*(uint *)(iVar8 + 0x4044));
+                     ((double)CONCAT44(local_70,uStack_74) / (double)*(uint *)(iVar8 + 0x4044));
   *(short *)(iVar8 + 0x400a) = (short)(int)ROUND(dVar11);
   dVar12 = crt_math_c_round_FUN_005fe6b0
-                     ((double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58) /
-                      (double)CONCAT44 /* combine 2-byte values */(extraout_ECX,*(uint *)(iVar8 + 0x4044)));
-  dVar11 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,local_78);
+                     ((double)CONCAT44(uStack_54,local_58) /
+                      (double)CONCAT44(extraout_ECX,*(uint *)(iVar8 + 0x4044)));
+  dVar11 = (double)CONCAT44(extraout_ECX_00,local_78);
   *(short *)(iVar8 + 0x400c) = (short)(int)ROUND(dVar12);
   *(uint *)(iVar8 + 0x4018) = extraout_ECX_00;
   *(uint *)(iVar8 + 0x401c) = extraout_ECX_00;
@@ -78,12 +78,12 @@ void engine_colquant_c_FUN_00441260(void)
   *(uint *)(iVar8 + 0x402c) = extraout_ECX_00;
   *(uint *)(iVar8 + 0x4030) = extraout_ECX_00;
   *(uint *)(iVar8 + 0x4034) = extraout_ECX_00;
-  local_68 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,extraout_ECX_00);
+  local_68 = (double)CONCAT44(extraout_ECX_00,extraout_ECX_00);
   *(uint *)(iVar8 + 0x4010) = extraout_ECX_00;
-  uStack_a0 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,0x441433);
+  uStack_a0 = (double)CONCAT44(extraout_ECX_00,0x441433);
   dVar12 = crt_math_c_round_FUN_005fe6b0
-                     ((double)CONCAT44 /* combine 2-byte values */(local_50,uStack_54) /
-                      (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,*(uint *)(iVar8 + 0x4044)));
+                     ((double)CONCAT44(local_50,uStack_54) /
+                      (double)CONCAT44(extraout_ECX_00,*(uint *)(iVar8 + 0x4044)));
   *(short *)(iVar8 + 0x400e) = (short)(int)ROUND(dVar12);
   *(uint *)(iVar8 + 0x4014) = extraout_ECX_01;
   dVar12 = dVar11;

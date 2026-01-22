@@ -37,7 +37,7 @@ void core_bugs_cpp_FUN_004278d0(void)
   iVar7 = 0;
   uVar6 = core_bugs_cpp_FUN_004257f0();
   iVar5 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24);
-  uVar8 = CONCAT44 /* combine 2-byte values */(iVar5,uVar6);
+  uVar8 = CONCAT44(iVar5,uVar6);
   if (0 < iVar5) {
     do {
       iVar7 = iVar7 + 1;

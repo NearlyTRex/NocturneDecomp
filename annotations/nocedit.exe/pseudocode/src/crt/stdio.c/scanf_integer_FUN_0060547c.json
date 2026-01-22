@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 383,
+    "complexity_score": 403,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "pseudocode_lines": 208,
-    "suspect_count": 15,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -323,7 +323,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "CONCAT44",
-      "text": "uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44 /* combine 2-byte values */(local_28,local_2c));",
+      "text": "uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44(local_28,local_2c));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -344,14 +344,21 @@
       "description": "Unknown/mangled field access",
       "line": 114,
       "match": "._4_4_",
-      "text": "local_3c = CONCAT44 /* combine 2-byte values */(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
+      "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 114,
       "match": "CONCAT44",
-      "text": "local_3c = CONCAT44 /* combine 2-byte values */(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
+      "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 114,
+      "match": "CARRY4",
+      "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -386,7 +393,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 205,
       "match": "CONCAT44",
-      "text": "uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44 /* combine 2-byte values */(local_28,local_2c));",
+      "text": "uVar10 = crt_math_c_multiply64_FUN_0060b2b8(local_3c,CONCAT44(local_28,local_2c));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -407,14 +414,21 @@
       "description": "Unknown/mangled field access",
       "line": 208,
       "match": "._4_4_",
-      "text": "local_3c = CONCAT44 /* combine 2-byte values */(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
+      "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 208,
       "match": "CONCAT44",
-      "text": "local_3c = CONCAT44 /* combine 2-byte values */(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
+      "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 208,
+      "match": "CARRY4",
+      "text": "local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),",
       "type": "decompiler_intrinsic"
     },
     {

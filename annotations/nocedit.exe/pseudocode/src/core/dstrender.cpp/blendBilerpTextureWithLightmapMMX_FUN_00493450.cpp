@@ -39,7 +39,7 @@ core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
   uint5 uVar25;
   
   uVar24 = psllw((ulonglong)
-                 CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)
                                                   g_SolidColorMode >> 0x18) << 0x30) >> 0x28),
                                                   (char)((uint)g_SolidColorMode >> 0x10)) << 0x20)
                                         >> 0x18),(char)((uint)g_SolidColorMode >> 8)),
@@ -49,15 +49,15 @@ core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
     uVar1 = g_LightmapTexturePalette[(uint)*texture_indices + (uint)texture_indices[0x140] >> 1];
     uVar7 = (ushort)(((uint7)(byte)(uVar9 >> 0x18) << 0x30) >> 0x28);
     uVar2 = g_LightmapTexturePalette[(uint)texture_indices[1] + (uint)texture_indices[0x141] >> 1];
-    uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),
-                                            CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)
+    uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),
+                                            CONCAT14((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)
                   >> 0x18);
     uVar25 = (uint5)uVar4 & 0xffffffff00;
-    uVar5 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),
-                                            CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)
+    uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),
+                                            CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)
                   >> 0x18);
     uVar19 = (uint5)uVar5 & 0xffffffff00;
-    uVar12 = (ushort)(CONCAT43 /* combine 2-byte values */(uVar5,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),(ushort)uVar1)) >> 0x10) & 0xff;
+    uVar12 = (ushort)(CONCAT43(uVar5,CONCAT12((char)(uVar1 >> 8),(ushort)uVar1)) >> 0x10) & 0xff;
     uVar11 = (ushort)uVar1 & 0xff;
     sVar20 = (short)(uVar19 >> 8);
     sVar21 = (short)(uVar19 >> 0x18);
@@ -67,15 +67,15 @@ core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
               ((uint)*lightmap_indices +
               ((uint)texture_indices[1] + (uint)texture_indices[0x141] >> 2)) * 4) ^
              (ulonglong)0.12694552529182901;
-    uVar8 = pmulhw(CONCAT26 /* combine 2-byte values */((uVar7 >> 8) * sVar21,
-                            CONCAT24 /* combine 2-byte values */((short)CONCAT21 /* combine 2-byte values */(uVar7,(char)(uVar9 >> 0x10)) * sVar20,
-                                     CONCAT22 /* combine 2-byte values */((byte)(uVar9 >> 8) * uVar12,
+    uVar8 = pmulhw(CONCAT26((uVar7 >> 8) * sVar21,
+                            CONCAT24((short)CONCAT21(uVar7,(char)(uVar9 >> 0x10)) * sVar20,
+                                     CONCAT22((byte)(uVar9 >> 8) * uVar12,
                                               ((ushort)uVar9 & 0xff) * uVar11))),uVar18);
-    uVar14 = pmulhw(CONCAT26 /* combine 2-byte values */((uVar10 >> 8) * ((ushort)((short)(uVar25 >> 0x18) + sVar21) >> 1),
-                             CONCAT24 /* combine 2-byte values */((short)CONCAT21 /* combine 2-byte values */(uVar10,(char)(uVar9 >> 0x30)) *
+    uVar14 = pmulhw(CONCAT26((uVar10 >> 8) * ((ushort)((short)(uVar25 >> 0x18) + sVar21) >> 1),
+                             CONCAT24((short)CONCAT21(uVar10,(char)(uVar9 >> 0x30)) *
                                       ((ushort)((short)(uVar25 >> 8) + sVar20) >> 1),
-                                      CONCAT22 /* combine 2-byte values */((ushort)(byte)(uVar9 >> 0x28) *
-                                               ((ushort)(((ushort)CONCAT41 /* combine 2-byte values */(uVar4,(char)(uVar2 >> 8))
+                                      CONCAT22((ushort)(byte)(uVar9 >> 0x28) *
+                                               ((ushort)(((ushort)CONCAT41(uVar4,(char)(uVar2 >> 8))
                                                          & 0xff) + uVar12) >> 1),
                                                ((ushort)(uVar9 >> 0x20) & 0xff) *
                                                ((ushort)((byte)uVar2 + uVar11) >> 1)))),uVar18);
@@ -101,16 +101,16 @@ core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
     uVar17 = (ushort)((short)((ulonglong)uVar14 >> 0x30) + sVar23 +
                      (short)(g_LightmapBlendBias4 >> 0x30)) >> 4;
     uVar9 = (ulonglong)
-            CONCAT13 /* combine 2-byte values */((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
-                     CONCAT12 /* combine 2-byte values */((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),
-                              CONCAT11 /* combine 2-byte values */((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 -
+            CONCAT13((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
+                     CONCAT12((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),
+                              CONCAT11((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 -
                                        (0xff < uVar10),
                                        (uVar7 != 0) * (uVar7 < 0x100) * (char)uVar7 - (0xff < uVar7)
                                       )));
     uVar18 = (ulonglong)
-             CONCAT13 /* combine 2-byte values */((uVar17 != 0) * (uVar17 < 0x100) * (char)uVar17 - (0xff < uVar17),
-                      CONCAT12 /* combine 2-byte values */((uVar16 != 0) * (uVar16 < 0x100) * (char)uVar16 - (0xff < uVar16),
-                               CONCAT11 /* combine 2-byte values */((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 -
+             CONCAT13((uVar17 != 0) * (uVar17 < 0x100) * (char)uVar17 - (0xff < uVar17),
+                      CONCAT12((uVar16 != 0) * (uVar16 < 0x100) * (char)uVar16 - (0xff < uVar16),
+                               CONCAT11((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 -
                                         (0xff < uVar15),
                                         (uVar13 != 0) * (uVar13 < 0x100) * (char)uVar13 -
                                         (0xff < uVar13))));

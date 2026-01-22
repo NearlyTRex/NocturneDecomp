@@ -146,15 +146,16 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 339,
+    "complexity_score": 454,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 19,
     "pseudocode_lines": 129,
-    "suspect_count": 19,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "undefined_data",
       "unknown_field",
       "warning_unreachable"
     ],
@@ -381,6 +382,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_008254a8",
+      "text": "DAT_008254a8 = g_ClippedVertexCount;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(longlong *)((int)",
@@ -388,11 +396,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_008254ac",
+      "text": "plVar10 = (longlong *)((int)&DAT_008254ac + 4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 40,
       "match": "._0_4_",
       "text": "DAT_008254ac._0_4_ = g_ClippedVertexBuffer[0].projected_vertex.transformed_x;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_008254ac",
+      "text": "DAT_008254ac._0_4_ = g_ClippedVertexBuffer[0].projected_vertex.transformed_x;",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -407,6 +429,41 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)plVar10 + 4) = piVar8[1];",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_008254a8",
+      "text": "if (0 < (int)DAT_008254a8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_008254ac",
+      "text": "v1 = (SRenderVertex *)&DAT_008254ac;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_008254a8",
+      "text": "if (uVar6 == DAT_008254a8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_008254a8",
+      "text": "uVar6 = uVar6 ^ DAT_008254a8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_008254b4",
+      "text": "if (g_NearPlaneDistance <= *(int *)(&DAT_008254b4 + uVar6 * 0x30)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -451,6 +508,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 95,
+      "match": "DAT_008254ac",
+      "text": "((SRenderVertex *)(&DAT_008254ac + uVar6 * 6),v1,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 104,
       "match": "._0_4_",
@@ -491,6 +555,20 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
+      "match": "DAT_008254ac",
+      "text": "(v1,(SRenderVertex *)(&DAT_008254ac + uVar6 * 6),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 128,
+      "match": "DAT_008254a8",
+      "text": "} while (iVar5 < (int)DAT_008254a8);",
+      "type": "undefined_data"
     }
   ]
 }

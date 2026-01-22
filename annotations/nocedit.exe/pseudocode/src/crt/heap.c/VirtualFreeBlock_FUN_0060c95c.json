@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 49,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "pseudocode_lines": 19,
-    "suspect_count": 2,
+    "suspect_count": 6,
     "suspect_types": [
       "param_count_too_few",
-      "special_crt_function"
+      "special_crt_function",
+      "undefined_data"
     ],
     "total_lines": 61
   },
@@ -130,6 +131,34 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_00684edc",
+      "text": "DAT_00684edc = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_03f9b210",
+      "text": "if (block == DAT_03f9b210) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_03f9b210",
+      "text": "DAT_03f9b210 = (HeapBlock *)((uint)block ^ (uint)DAT_03f9b210);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_03f9b210",
+      "text": "DAT_03f9b210 = (HeapBlock *)((uint)block ^ (uint)DAT_03f9b210);",
+      "type": "undefined_data"
+    },
     {
       "call_site_count": 1,
       "declared_params": 1,

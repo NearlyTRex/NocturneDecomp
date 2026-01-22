@@ -632,7 +632,7 @@ LAB_0059722b:
     else {
       uVar5 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
       ;
-      fVar21 = (float)CONCAT31 /* combine 2-byte values */(extraout_var,uVar5);
+      fVar21 = (float)CONCAT31(extraout_var,uVar5);
 LAB_005975b4:
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
                 (g_CEditorToolsPtr,2.0,(int)fVar21);
@@ -890,7 +890,7 @@ LAB_005975b4:
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 (&local_1900,0,(uint)in_stack_ffffcd24,(uint)in_stack_ffffcd28,
-                 (uint)in_stack_ffffcd2c,(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0),
+                 (uint)in_stack_ffffcd2c,(uint)SUB84(in_stack_ffffcd30,0),
                  (uint)(float)((ulonglong)in_stack_ffffcd30 >> 0x20));
     }
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
@@ -934,35 +934,35 @@ LAB_005975b4:
     if (iVar6 != 0) {
       local_a8 = (uint)(local_a8 == 0);
     }
-    in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x5982e5,pCVar22);
+    in_stack_ffffcd30 = (double)CONCAT44(0x5982e5,pCVar22);
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2c);
     if (iVar6 != 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1558);
       pCVar7 = local_c0;
       fVar24 = (float)in_stack_ffffcd58;
-      fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);
+      fVar21 = SUB84(in_stack_ffffcd30,0);
       iVar6 = 0;
       if (0 < local_bc->bone_count) {
         do {
-          fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);
+          fVar21 = SUB84(in_stack_ffffcd30,0);
           core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0(pCVar7,iVar6);
-          in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x598339,fVar21);
+          in_stack_ffffcd30 = (double)CONCAT44(0x598339,fVar21);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"%s\t%s");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1558.base_strlist,(char *)local_46c);
           fVar24 = (float)in_stack_ffffcd58;
-          fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd30,0);
+          fVar21 = SUB84(in_stack_ffffcd30,0);
           iVar6 = iVar6 + 1;
         } while (iVar6 < local_bc->bone_count);
       }
-      in_stack_ffffcd30 = (double)CONCAT44 /* combine 2-byte values */(0x598378,fVar21);
+      in_stack_ffffcd30 = (double)CONCAT44(0x598378,fVar21);
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 (&local_1558,"Part for bone info",-1,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_1558,0,(uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0),
+                (&local_1558,0,(uint)SUB84(in_stack_ffffcd48,0),
                  (uint)(float)((ulonglong)in_stack_ffffcd48 >> 0x20),(uint)(float)in_stack_ffffcd50,
-                 (uint)SUB84 /* extract 2-byte value */(in_stack_ffffcd50,4),(uint)fVar24);
+                 (uint)SUB84(in_stack_ffffcd50,4),(uint)fVar24);
     }
-    pCVar22 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);
+    pCVar22 = SUB84(in_stack_ffffcd48,0);
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
     if (iVar6 != 0) {
       pCVar22 = g_CKeysPtr;
@@ -974,10 +974,10 @@ LAB_005975b4:
         local_44 = local_44 + -1;
       }
     }
-    dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x17,g_CKeysPtr);
-    in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x5983c7,pCVar22);
+    dVar20 = (double)CONCAT44(0x17,g_CKeysPtr);
+    in_stack_ffffcd48 = (double)CONCAT44(0x5983c7,pCVar22);
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x17);
-    fVar21 = SUB84 /* extract 2-byte value */(dVar20,0);
+    fVar21 = SUB84(dVar20,0);
     if (iVar6 != 0) {
       while( true ) {
         local_2c = 0;
@@ -989,7 +989,7 @@ LAB_005975b4:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base_strlist,(char *)local_46c);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"Pos: %5.3f %5.3f %5.3f");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base_strlist,(char *)local_46c);
-          fVar21 = SUB84 /* extract 2-byte value */((double)local_19c.x,0);
+          fVar21 = SUB84((double)local_19c.x,0);
           crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_46c,"Orient: %5.3f %5.3f %5.3f");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base_strlist,(char *)local_46c);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -997,61 +997,61 @@ LAB_005975b4:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (&local_e08.base_strlist,"Copy position/orientation to clipboard");
           pCVar23 = &local_e08;
-          in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x59882c,fVar21);
+          in_stack_ffffcd48 = (double)CONCAT44(0x59882c,fVar21);
           local_2c = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (pCVar23,"Item tester",-1,0);
-          dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x59883f,pCVar23);
+          dVar20 = (double)CONCAT44(0x59883f,pCVar23);
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                     (&local_e08,0,(uint)in_stack_ffffcd60,(uint)in_stack_ffffcd64,
                      (uint)in_stack_ffffcd68,(uint)in_stack_ffffcd6c,(uint)in_stack_ffffcd70);
         }
-        fVar21 = SUB84 /* extract 2-byte value */(dVar20,0);
+        fVar21 = SUB84(dVar20,0);
         if (local_2c < 0) break;
         if (local_2c == 0) {
           dVar20 = 9.28252630231411e-307;
           in_stack_ffffcd48 =
-               (double)CONCAT44 /* combine 2-byte values */("Select model to position",g_CEditorToolsPtr);
+               (double)CONCAT44("Select model to position",g_CEditorToolsPtr);
           iVar6 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                             (g_CEditorToolsPtr,"Select model to position","models"
                              ,"*.kfm",(int)local_408);
-          fVar21 = SUB84 /* extract 2-byte value */(dVar20,0);
+          fVar21 = SUB84(dVar20,0);
           if (iVar6 == 0) {
             if (DAT_03665f74.poly_count < 1) break;
           }
           else {
-            dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x598431,fVar21);
+            dVar20 = (double)CONCAT44(0x598431,fVar21);
             core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&DAT_03665f74,local_408);
           }
         }
         if (local_2c == 1) {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_11b0);
-          fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);
+          fVar21 = SUB84(in_stack_ffffcd48,0);
           iVar6 = 0;
           string_data = local_28;
           if (0 < local_bc->bone_count) {
             do {
               shape_edittool_cpp_CStrList_add_FUN_004a2b80
                         (&local_11b0.base_strlist,string_data->bone_name);
-              fVar21 = SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0);
+              fVar21 = SUB84(in_stack_ffffcd48,0);
               iVar6 = iVar6 + 1;
               string_data = string_data + 1;
             } while (iVar6 < local_bc->bone_count);
           }
           pCVar23 = &local_11b0;
-          in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598495,fVar21);
+          in_stack_ffffcd48 = (double)CONCAT44(0x598495,fVar21);
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                             (pCVar23,"Select bone",-1,0);
           if (-1 < iVar6) {
             local_64 = iVar6;
           }
-          dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x5984ad,pCVar23);
+          dVar20 = (double)CONCAT44(0x5984ad,pCVar23);
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                     (&local_11b0,0,(uint)in_stack_ffffcd60,(uint)in_stack_ffffcd64,
                      (uint)in_stack_ffffcd68,(uint)in_stack_ffffcd6c,(uint)in_stack_ffffcd70);
         }
         if (local_2c == 2) {
           dVar20 = (double)ZEXT48(g_CEditorToolsPtr);
-          in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x5984d0,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));
+          in_stack_ffffcd48 = (double)CONCAT44(0x5984d0,SUB84(in_stack_ffffcd48,0));
           shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                     (g_CEditorToolsPtr,"Edit item pos",&local_184,1);
         }
@@ -1061,7 +1061,7 @@ LAB_005975b4:
           local_19c.z = local_19c.y;
           local_19c.y = fVar21;
           dVar20 = (double)ZEXT48(g_CEditorToolsPtr);
-          in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598511,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));
+          in_stack_ffffcd48 = (double)CONCAT44(0x598511,SUB84(in_stack_ffffcd48,0));
           shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                     (g_CEditorToolsPtr,"Edit item orient (P,B,H)",&local_19c,1);
           fVar21 = local_19c.z;
@@ -1069,7 +1069,7 @@ LAB_005975b4:
           local_19c.z = local_19c.y;
           local_19c.y = fVar21;
         }
-        pcVar18 = SUB84 /* extract 2-byte value */(dVar20,0);
+        pcVar18 = SUB84(dVar20,0);
         if (local_2c == 4) {
           iVar6 = 0;
           pcVar16 = shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(g_CEditorToolsPtr)
@@ -1077,7 +1077,7 @@ LAB_005975b4:
           cVar2 = *pcVar16;
           while (cVar2 != '\0') {
             local_1c = 0;
-            in_stack_ffffcd48 = (double)CONCAT44 /* combine 2-byte values */(0x598570,SUB84 /* extract 2-byte value */(in_stack_ffffcd48,0));
+            in_stack_ffffcd48 = (double)CONCAT44(0x598570,SUB84(in_stack_ffffcd48,0));
             pcVar18 = pcVar16;
             crt_stdio_c_sscanf_FUN_0060013c(pcVar16,"%f%n");
             if (local_1c < 1) {
@@ -1109,7 +1109,7 @@ LAB_005975b4:
             }
           }
           else {
-            dVar20 = (double)CONCAT44 /* combine 2-byte values */(0x598e17,pcVar18);
+            dVar20 = (double)CONCAT44(0x598e17,pcVar18);
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"Couldn't parse clipboard text.");
           }
@@ -1124,7 +1124,7 @@ LAB_005975b4:
                     ((char *)in_stack_ffffcd28,"CVector(%g,%g,%g), makePBH(%g,%g,%g)");
           shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
                     (g_CEditorToolsPtr,(char *)local_46c);
-          dVar20 = (double)CONCAT44 /* combine 2-byte values */(g_CEditorToolsPtr,0x5986d2);
+          dVar20 = (double)CONCAT44(g_CEditorToolsPtr,0x5986d2);
           shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                     (g_CEditorToolsPtr,"Copied text to clipboard:\n\n%s");
         }

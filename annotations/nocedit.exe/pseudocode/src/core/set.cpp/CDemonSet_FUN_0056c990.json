@@ -86,16 +86,17 @@
   },
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 189,
+    "complexity_score": 204,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 36,
     "pseudocode_lines": 114,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_type_propagation"
     ],
     "total_lines": 466
   },
@@ -638,6 +639,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
     {
       "description": "Direct stack address reference",
       "line": 42,

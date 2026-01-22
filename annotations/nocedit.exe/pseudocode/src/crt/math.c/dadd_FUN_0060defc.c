@@ -28,9 +28,9 @@ double crt_math_c_dadd_FUN_0060defc(double a,double b)
   int iVar7;
   
   uVar6 = (uint)((ulonglong)b >> 0x20);
-  uVar12 = SUB84 /* extract 2-byte value */(b,0);
+  uVar12 = SUB84(b,0);
   uVar8 = (uint)((ulonglong)a >> 0x20);
-  uVar13 = SUB84 /* extract 2-byte value */(a,0);
+  uVar13 = SUB84(a,0);
   uVar5 = uVar6 ^ 0x80000000;
   if (uVar12 == 0) {
     if (((ulonglong)b & 0x7fffffff00000000) == 0) {
@@ -40,12 +40,12 @@ double crt_math_c_dadd_FUN_0060defc(double a,double b)
   }
   if (uVar13 == 0) {
     if (((ulonglong)a & 0x7fffffff00000000) == 0) {
-      return (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar12);
+      return (double)CONCAT44(uVar5,uVar12);
     }
     uVar8 = uVar8 & 0x7fffffff | (uint)CARRY4(uVar8,uVar8) << 0x1f;
   }
   if (DAT_00684acd != '\0') {
-    dVar17 = (double)CONCAT44 /* combine 2-byte values */(uVar8,uVar13) + (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar12);
+    dVar17 = (double)CONCAT44(uVar8,uVar13) + (double)CONCAT44(uVar5,uVar12);
     if ((int)((ulonglong)dVar17 >> 0x20) == -0x80000000) {
       dVar17 = 0.0;
     }
@@ -69,12 +69,12 @@ double crt_math_c_dadd_FUN_0060defc(double a,double b)
   uVar13 = uVar12 * 2;
   uVar9 = uVar5 * 2 + (uint)CARRY4(uVar12,uVar12);
   sVar4 = uVar3 - uVar15;
-  iVar7 = CONCAT22 /* combine 2-byte values */(sVar2,sVar4);
+  iVar7 = CONCAT22(sVar2,sVar4);
   uVar5 = uVar11;
   uVar12 = uVar10;
   if (sVar4 != 0) {
     if (uVar3 < uVar15) {
-      iVar7 = CONCAT22 /* combine 2-byte values */(sVar2,-sVar4);
+      iVar7 = CONCAT22(sVar2,-sVar4);
       uVar5 = uVar13;
       uVar12 = uVar9;
       uVar13 = uVar11;
@@ -82,7 +82,7 @@ double crt_math_c_dadd_FUN_0060defc(double a,double b)
       uVar9 = uVar10;
     }
     if (0x36 < (ushort)iVar7) {
-      return (double)CONCAT44 /* combine 2-byte values */(uVar9 >> 1 & 0x800fffff | (uint)CARRY4(uVar6,uVar6) << 0x1f |
+      return (double)CONCAT44(uVar9 >> 1 & 0x800fffff | (uint)CARRY4(uVar6,uVar6) << 0x1f |
                               uVar6 << 0x14,uVar13 >> 1 | (uint)((uVar9 & 1) != 0) << 0x1f);
     }
   }
@@ -123,14 +123,14 @@ double crt_math_c_dadd_FUN_0060defc(double a,double b)
   if (uVar5 != 0) {
     if ((short)uVar6 == 0) {
 LAB_0060e0a5:
-      return (double)CONCAT44 /* combine 2-byte values */(uVar13 >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f,
+      return (double)CONCAT44(uVar13 >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f,
                               uVar11 >> 1 | (uint)((uVar13 & 1) != 0) << 0x1f);
     }
     while( true ) {
       uVar14 = (ushort)(uVar6 >> 0x10);
       if ((uVar13 & 0x7fe00000) != 0) break;
       sVar4 = (short)uVar6 + -1;
-      uVar6 = CONCAT22 /* combine 2-byte values */(uVar14,sVar4);
+      uVar6 = CONCAT22(uVar14,sVar4);
       if (sVar4 == 0) goto LAB_0060e0a5;
       bVar16 = CARRY4(uVar11,uVar11);
       uVar11 = uVar11 * 2;
@@ -143,7 +143,7 @@ LAB_0060e0a5:
       uVar11 = uVar11 >> 1 | (uint)(uVar9 != 0) << 0x1f;
       uVar8 = uVar8 + (uVar12 != 0);
       sVar4 = (short)uVar6 + 1;
-      uVar6 = CONCAT22 /* combine 2-byte values */(uVar14,sVar4);
+      uVar6 = CONCAT22(uVar14,sVar4);
       if (sVar4 == 0x7ff) goto LAB_0060e0af;
     }
     uVar9 = uVar13 & 1;
@@ -151,7 +151,7 @@ LAB_0060e0a5:
     uVar12 = uVar11 & 1;
     uVar11 = uVar11 >> 1 | (uint)(uVar9 != 0) << 0x1f;
     if (uVar12 != 0) {
-      uVar8 = CONCAT31 /* combine 2-byte values */((int3)(uVar5 >> 8),uVar8 != 0) | uVar11;
+      uVar8 = CONCAT31((int3)(uVar5 >> 8),uVar8 != 0) | uVar11;
       uVar5 = uVar8 >> 1;
       uVar8 = (uint)((uVar8 & 1) != 0);
       bVar16 = CARRY4(uVar11,uVar8);
@@ -162,7 +162,7 @@ LAB_0060e0a5:
         uVar13 = uVar13 >> 1;
         uVar11 = uVar11 >> 1 | (uint)(uVar8 != 0) << 0x1f;
         sVar4 = (short)uVar6 + 1;
-        uVar6 = CONCAT22 /* combine 2-byte values */((short)(uVar6 >> 0x10),sVar4);
+        uVar6 = CONCAT22((short)(uVar6 >> 0x10),sVar4);
         if (sVar4 == 0x7ff) {
 LAB_0060e0af:
           dVar17 = (double)crt_unknown_c_FUN_0060eb57(uVar6,uVar13,uVar5);
@@ -172,5 +172,5 @@ LAB_0060e0af:
     }
     uVar13 = uVar13 & 0xfffff | (uVar6 << 0x15) >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f;
   }
-  return (double)CONCAT44 /* combine 2-byte values */(uVar13,uVar11);
+  return (double)CONCAT44(uVar13,uVar11);
 }

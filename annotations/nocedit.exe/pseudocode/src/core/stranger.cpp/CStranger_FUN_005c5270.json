@@ -314,12 +314,12 @@
   },
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 1885,
+    "complexity_score": 1905,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
     "pseudocode_lines": 395,
-    "suspect_count": 146,
+    "suspect_count": 148,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
@@ -1068,7 +1068,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 171,
       "match": "CONCAT22",
-      "text": "(CONCAT22 /* combine 2-byte values */((short)((ulonglong)lVar2 >> 0x10),",
+      "text": "(CONCAT22((short)((ulonglong)lVar2 >> 0x10),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 173,
+      "match": "NAN",
+      "text": "(ushort)(NAN(fVar3) || NAN(fVar1)) << 10 |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 173,
+      "match": "NAN",
+      "text": "(ushort)(NAN(fVar3) || NAN(fVar1)) << 10 |",
       "type": "decompiler_intrinsic"
     },
     {

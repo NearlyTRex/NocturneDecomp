@@ -210,7 +210,7 @@ LAB_004aad41:
           return (CDemonActor *)0x1;
         }
         iVar5 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*pCVar15);
-        *pCVar15 = SUB41 /* extract 2-byte value */(iVar5,0);
+        *pCVar15 = SUB41(iVar5,0);
         iVar5 = core_event_cpp_FUN_004b0f90();
         if (iVar5 == 0) {
           pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();

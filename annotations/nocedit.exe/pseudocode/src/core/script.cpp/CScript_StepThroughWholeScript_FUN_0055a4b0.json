@@ -68,14 +68,15 @@
   },
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 136,
+    "complexity_score": 181,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 26,
-    "suspect_count": 10,
+    "suspect_count": 14,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 89
@@ -208,6 +209,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0310ec9c",
+      "text": "DAT_0310ec9c = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_0310f4b0",
+      "text": "shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&DAT_0310f4b0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
@@ -243,6 +258,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_0310eca0",
+      "text": "return &DAT_0310eca0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000004",
@@ -255,6 +277,13 @@
       "match": "in_stack_00000004",
       "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0x30));",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_0310ec9c",
+      "text": "DAT_0310ec9c = 0;",
+      "type": "undefined_data"
     }
   ]
 }

@@ -368,16 +368,17 @@
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 525,
+    "complexity_score": 550,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 39,
     "pseudocode_lines": 260,
-    "suspect_count": 25,
+    "suspect_count": 27,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 839
   },
@@ -977,6 +978,20 @@
       "match": "in_stack_00000008",
       "text": "iVar2 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 144,
+      "match": "DAT_0067d5c0",
+      "text": "puVar7 = &DAT_0067d5c0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 151,
+      "match": "DAT_0067d628",
+      "text": "puVar7 = &DAT_0067d628;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

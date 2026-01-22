@@ -398,12 +398,12 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 1002,
+    "complexity_score": 1017,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
     "pseudocode_lines": 242,
-    "suspect_count": 72,
+    "suspect_count": 73,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -411,6 +411,7 @@
       "stack_param",
       "stack_ref",
       "suspect_float",
+      "undefined_data",
       "unknown_field",
       "warning_overlapping_globals"
     ],
@@ -1070,6 +1071,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_02f7c634",
+      "text": "DAT_02f7c634 = 0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
@@ -1206,14 +1214,14 @@
       "description": "Unresolved stack parameter",
       "line": 111,
       "match": "in_stack_ffffff58",
-      "text": "*(float *)&pCStack_18->base_actor = SUB84 /* extract 2-byte value */(in_stack_ffffff58,0);",
+      "text": "*(float *)&pCStack_18->base_actor = SUB84(in_stack_ffffff58,0);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "SUB84",
-      "text": "*(float *)&pCStack_18->base_actor = SUB84 /* extract 2-byte value */(in_stack_ffffff58,0);",
+      "text": "*(float *)&pCStack_18->base_actor = SUB84(in_stack_ffffff58,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1346,14 +1354,14 @@
       "description": "Unresolved stack parameter",
       "line": 166,
       "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */(fStack_7c,fStack_80);",
+      "text": "in_stack_ffffff58 = (double)CONCAT44(fStack_7c,fStack_80);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 166,
       "match": "CONCAT44",
-      "text": "in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */(fStack_7c,fStack_80);",
+      "text": "in_stack_ffffff58 = (double)CONCAT44(fStack_7c,fStack_80);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1451,14 +1459,14 @@
       "description": "Unresolved stack parameter",
       "line": 222,
       "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */(\"Reset gore?\",g_CEditorToolsPtr);",
+      "text": "in_stack_ffffff58 = (double)CONCAT44(\"Reset gore?\",g_CEditorToolsPtr);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 222,
       "match": "CONCAT44",
-      "text": "in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */(\"Reset gore?\",g_CEditorToolsPtr);",
+      "text": "in_stack_ffffff58 = (double)CONCAT44(\"Reset gore?\",g_CEditorToolsPtr);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1479,14 +1487,14 @@
       "description": "Unresolved stack parameter",
       "line": 228,
       "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
+      "text": "in_stack_ffffff58 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 228,
       "match": "CONCAT44",
-      "text": "in_stack_ffffff58 = (double)CONCAT44 /* combine 2-byte values */(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
+      "text": "in_stack_ffffff58 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
       "type": "decompiler_intrinsic"
     },
     {

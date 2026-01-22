@@ -124,7 +124,7 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
                         (((double)local_14 * 0.6931471805599453) /
                          (2 * 0.6931471805599453));
       local_18 = (int)ROUND(dVar6) + 1;
-      dVar6 = crt_math_c_ldexp_FUN_00600002((double)CONCAT44 /* combine 2-byte values */(local_18,0x3ff00000),iVar11);
+      dVar6 = crt_math_c_ldexp_FUN_00600002((double)CONCAT44(local_18,0x3ff00000),iVar11);
       local_14 = (float)64 / (float)dVar6;
     }
     local_38 = 0x14;

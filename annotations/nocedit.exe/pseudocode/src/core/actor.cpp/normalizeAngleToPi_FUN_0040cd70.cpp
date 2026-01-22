@@ -15,19 +15,19 @@ float __cdecl core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians
   uint uStack_c;
   
   dVar1 = (double)angle_radians;
-  local_18 = SUB84 /* extract 2-byte value */(dVar1,0);
+  local_18 = SUB84(dVar1,0);
   if (angle_radians < (float)-3.1415926535000001) {
     dVar1 = (dVar1 + 3.1415926535000001) * -0.15915494309644401;
     uVar2 = (uint)((ulonglong)dVar1 >> 0x20);
     dVar1 = crt_math_c_floor_FUN_005feb90(dVar1);
     uStack_c = ((float)dVar1 + 1.0) * (float)6.2831853070000001 +
-               (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2);
+               (float)(double)CONCAT44(local_18,uVar2);
   }
   else if (3.1415926535000001 < dVar1) {
     dVar1 = (dVar1 + -3.1415926535000001) * 0.15915494309644401;
     uVar2 = (uint)((ulonglong)dVar1 >> 0x20);
     dVar1 = crt_math_c_floor_FUN_005feb90(dVar1);
-    return ((float)dVar1 + 1.0) * (float)-6.2831853070000001 + (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uVar2);
+    return ((float)dVar1 + 1.0) * (float)-6.2831853070000001 + (float)(double)CONCAT44(local_18,uVar2);
   }
   return uStack_c;
 }

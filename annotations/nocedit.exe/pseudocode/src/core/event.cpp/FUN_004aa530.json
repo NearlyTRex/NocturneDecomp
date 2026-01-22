@@ -80,14 +80,15 @@
   },
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 222,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 37,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 157
   },
@@ -304,6 +305,13 @@
       "match": "in_stack_00000008",
       "text": "((char *)(in_stack_00000004 + *in_stack_00000008),\" %[^ ,(){}]%n\",local_78,&local_14);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_02d0a460",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,\"Error parsing vector location\");",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

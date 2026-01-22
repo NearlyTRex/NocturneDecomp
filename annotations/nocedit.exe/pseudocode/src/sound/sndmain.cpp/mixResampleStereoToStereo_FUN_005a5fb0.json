@@ -122,17 +122,18 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 374,
+    "complexity_score": 399,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 64,
-    "suspect_count": 29,
+    "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
-      "unknown_field"
+      "unknown_field",
+      "warning_deadcode_restart"
     ],
     "total_lines": 179
   },
@@ -354,6 +355,13 @@
   },
   "suspects": [
     {
+      "description": "Deadcode elimination delayed",
+      "line": 2,
+      "match": "WARNING: Restarted to delay deadcode elimination",
+      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
+      "type": "warning_deadcode_restart"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
@@ -392,14 +400,14 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000010",
-      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));",
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44(sample_data,in_stack_00000010));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "CONCAT44",
-      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));",
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44(sample_data,in_stack_00000010));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -441,7 +449,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "CONCAT44",
-      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers));",
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44(channel_gains,channel_buffers));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -469,7 +477,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "CONCAT44",
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) - (double)local_34) *",
+      "text": "(((double)CONCAT44(channel_gains,channel_buffers) - (double)local_34) *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -522,6 +530,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "CARRY4",
+      "text": "bVar11 = CARRY4(uVar8,(uint)local_34);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 59,
       "match": "in_stack_00000004",
@@ -539,14 +554,14 @@
       "description": "Unknown/mangled field access",
       "line": 64,
       "match": "._0_4_",
-      "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +",
+      "text": "(double)resample_position._0_4_ * (double)CONCAT44(channel_gains,channel_buffers) +",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "CONCAT44",
-      "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +",
+      "text": "(double)resample_position._0_4_ * (double)CONCAT44(channel_gains,channel_buffers) +",
       "type": "decompiler_intrinsic"
     },
     {

@@ -22,7 +22,7 @@ sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - '%s' isn't streamed!",this_ptr);
   }
   dVar2 = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-                    (SUB84 /* extract 2-byte value */((double)playback_position,0),
+                    (SUB84((double)playback_position,0),
                      (double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,
                      (uint)((ulonglong)in_stack_ffffffe4 >> 0x20));
   dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2);

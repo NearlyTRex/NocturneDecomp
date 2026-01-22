@@ -454,14 +454,14 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(float *)((int)",
-      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84 /* extract 2-byte value */(dVar1,0),",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "SUB84",
-      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84 /* extract 2-byte value */(dVar1,0),",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -489,7 +489,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
+      "text": "SUB84((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
       "type": "decompiler_intrinsic"
     },
     {

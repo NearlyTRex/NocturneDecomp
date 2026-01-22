@@ -37,5 +37,5 @@ engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
   uVar1 = (uint)((uint)((longlong)local_20 * (longlong)local_1c) <
                 (uint)((longlong)local_24 * (longlong)local_18));
   iVar2 = iVar4 - iVar3;
-  return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed borrow */4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);
+  return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);
 }

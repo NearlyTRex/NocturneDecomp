@@ -20,14 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 198,
+    "complexity_score": 273,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 4,
     "pseudocode_lines": 28,
-    "suspect_count": 16,
+    "suspect_count": 23,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 69
@@ -146,6 +147,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_031141c4",
+      "text": "iVar1 = DAT_031141c4;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
@@ -158,6 +166,20 @@
       "match": "in_stack_00000004",
       "text": "if ((DAT_031141c4 <= in_stack_00000004) && (in_stack_00000004 <= DAT_031141cc)) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_031141c4",
+      "text": "if ((DAT_031141c4 <= in_stack_00000004) && (in_stack_00000004 <= DAT_031141cc)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_031141cc",
+      "text": "if ((DAT_031141c4 <= in_stack_00000004) && (in_stack_00000004 <= DAT_031141cc)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -188,11 +210,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_031141c0",
+      "text": "*in_stack_00000008 = DAT_031141c0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004 != DAT_031141cc) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_031141cc",
+      "text": "if (in_stack_00000004 != DAT_031141cc) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -202,11 +238,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_031141cc",
+      "text": "else if (in_stack_00000004 != DAT_031141cc) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_0000000c",
       "text": "*in_stack_0000000c = DAT_031141c8;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_031141c8",
+      "text": "*in_stack_0000000c = DAT_031141c8;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

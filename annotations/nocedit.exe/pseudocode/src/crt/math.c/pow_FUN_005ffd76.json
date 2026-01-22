@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 243,
+    "complexity_score": 283,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 83,
-    "suspect_count": 14,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -194,6 +194,20 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "NAN",
+      "text": "exponent = (ushort)(base < fVar3) << 8 | (ushort)(NAN(base) || NAN(fVar3)) << 10 |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "NAN",
+      "text": "exponent = (ushort)(base < fVar3) << 8 | (ushort)(NAN(base) || NAN(fVar3)) << 10 |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
       "text": "fVar4 = ROUND(exp);",
@@ -201,9 +215,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "NAN",
+      "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "NAN",
+      "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "SUB86",
-      "text": "uVar7 = SUB86 /* extract 2-byte value */((double)exp,0);",
+      "text": "uVar7 = SUB86((double)exp,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -217,7 +245,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "CONCAT64",
-      "text": "fVar3 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar7,uVar6),exponent);",
+      "text": "fVar3 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64(uVar7,uVar6),exponent);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -231,7 +259,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "CONCAT64",
-      "text": "fVar4 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar7,uVar6),exponent);",
+      "text": "fVar4 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64(uVar7,uVar6),exponent);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -245,7 +273,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "SUB82",
-      "text": "if (((SUB82 /* extract 2-byte value */(dVar1,0) != 0 || sStack_a != 0) || sStack_8 != 0) ||",
+      "text": "if (((SUB82(dVar1,0) != 0 || sStack_a != 0) || sStack_8 != 0) ||",
       "type": "decompiler_intrinsic"
     },
     {

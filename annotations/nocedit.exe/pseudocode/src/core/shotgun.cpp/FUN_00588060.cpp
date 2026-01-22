@@ -120,7 +120,7 @@ uint core_shotgun_cpp_FUN_00588060(void)
                              (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
         if ((this_ptr != (CDemonSet *)0x0) &&
            (iVar3 = (**(code **)(this_ptr->cameras[0].fog_enabled + 0x120))
-                              ((CDemonActor *)this_ptr,SUB84 /* extract 2-byte value */(dVar1,0)), 0 < iVar3)) {
+                              ((CDemonActor *)this_ptr,SUB84(dVar1,0)), 0 < iVar3)) {
           this_ptr = (CDemonSet *)0x0;
         }
         pCStack_38 = core_actor_cpp_castToClassHash_FUN_0040c790

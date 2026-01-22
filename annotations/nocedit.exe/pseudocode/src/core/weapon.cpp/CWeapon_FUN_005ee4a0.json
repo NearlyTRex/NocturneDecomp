@@ -68,16 +68,17 @@
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 163,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 23,
     "pseudocode_lines": 48,
-    "suspect_count": 9,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unaffected_reg",
+      "undefined_data",
       "unknown_field",
       "warning_overlapping_globals"
     ],
@@ -396,6 +397,27 @@
       "match": "unaff_ESI",
       "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,unaff_ESI);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_03f95d7c",
+      "text": "((CDemonGlobe *)&DAT_03f95d7c,(CColor3f *)(auStack_1c + 4));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_03f95d98",
+      "text": "DAT_03f95d98 = 0x20;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_03f95d7c",
+      "text": "core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360((CDemonGlobe *)&DAT_03f95d7c,3.0);",
+      "type": "undefined_data"
     }
   ],
   "vtable_info": {

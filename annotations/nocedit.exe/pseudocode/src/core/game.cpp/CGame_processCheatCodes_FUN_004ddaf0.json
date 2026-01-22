@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 56,
+        "column": 28,
         "line": 253,
         "message": "'int3' was not declared in this scope; did you mean 'int'?"
       },
@@ -956,16 +956,18 @@
   },
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 2189,
+    "complexity_score": 2689,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
     "pseudocode_lines": 2049,
-    "suspect_count": 11,
+    "suspect_count": 60,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
+      "nonstandard_int",
       "stack_ref",
+      "undefined_data",
       "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -2756,11 +2758,39 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 222,
+      "match": "code",
+      "text": "pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(\"Enter cheat code\");",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 246,
       "match": "CONCAT31",
-      "text": "iVar10 = CONCAT31 /* combine 2-byte values */((int3)((uint)iVar13 >> 8),g_InputHistory[iVar17]);",
+      "text": "iVar10 = CONCAT31((int3)((uint)iVar13 >> 8),g_InputHistory[iVar17]);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 246,
+      "match": "int3",
+      "text": "iVar10 = CONCAT31((int3)((uint)iVar13 >> 8),g_InputHistory[iVar17]);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 251,
+      "match": "DAT_0062ba32",
+      "text": "((SEncryptedMessage *)DAT_0062ba32);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 288,
+      "match": "DAT_0062ba90",
+      "text": "((SEncryptedMessage *)DAT_0062ba90);",
+      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -2780,14 +2810,14 @@
       "description": "Unknown/mangled field access",
       "line": 327,
       "match": "._0_4_",
-      "text": "local_2ac._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);",
+      "text": "local_2ac._0_4_ = SUB84(dVar7,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 327,
       "match": "SUB84",
-      "text": "local_2ac._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);",
+      "text": "local_2ac._0_4_ = SUB84(dVar7,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2805,6 +2835,181 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 336,
+      "match": "DAT_0062bad0",
+      "text": "((SEncryptedMessage *)DAT_0062bad0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 371,
+      "match": "DAT_0062bb05",
+      "text": "((SEncryptedMessage *)DAT_0062bb05);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 414,
+      "match": "DAT_0062bb63",
+      "text": "((SEncryptedMessage *)DAT_0062bb63);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 463,
+      "match": "DAT_0062bbc4",
+      "text": "((SEncryptedMessage *)DAT_0062bbc4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 505,
+      "match": "DAT_0062bc2d",
+      "text": "((SEncryptedMessage *)DAT_0062bc2d);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 540,
+      "match": "DAT_0062bc80",
+      "text": "((SEncryptedMessage *)DAT_0062bc80);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 576,
+      "match": "DAT_0062bccf",
+      "text": "((SEncryptedMessage *)DAT_0062bccf);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 625,
+      "match": "DAT_0062bd02",
+      "text": "((SEncryptedMessage *)DAT_0062bd02);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 655,
+      "match": "DAT_0062bd39",
+      "text": "((SEncryptedMessage *)DAT_0062bd39);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 687,
+      "match": "NAN",
+      "text": "this_ptr_01[2].location.position.y = -NAN;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 709,
+      "match": "DAT_0062bdbc",
+      "text": "((SEncryptedMessage *)DAT_0062bdbc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 753,
+      "match": "DAT_0062be21",
+      "text": "((SEncryptedMessage *)DAT_0062be21);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 795,
+      "match": "DAT_0062be9e",
+      "text": "((SEncryptedMessage *)DAT_0062be9e);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 831,
+      "match": "DAT_0062bef3",
+      "text": "((SEncryptedMessage *)DAT_0062bef3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 866,
+      "match": "DAT_0062bf3e",
+      "text": "((SEncryptedMessage *)DAT_0062bf3e);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 901,
+      "match": "DAT_0062bf92",
+      "text": "((SEncryptedMessage *)DAT_0062bf92);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 937,
+      "match": "DAT_0062bfe9",
+      "text": "((SEncryptedMessage *)DAT_0062bfe9);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 973,
+      "match": "DAT_0062c04b",
+      "text": "((SEncryptedMessage *)DAT_0062c04b);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1009,
+      "match": "DAT_0062c0a8",
+      "text": "((SEncryptedMessage *)DAT_0062c0a8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1045,
+      "match": "DAT_0062c10c",
+      "text": "((SEncryptedMessage *)DAT_0062c10c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1079,
+      "match": "DAT_0062c141",
+      "text": "((SEncryptedMessage *)DAT_0062c141);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1128,
+      "match": "DAT_0062c203",
+      "text": "((SEncryptedMessage *)DAT_0062c203);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1168,
+      "match": "DAT_0062c263",
+      "text": "((SEncryptedMessage *)DAT_0062c263);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1204,
+      "match": "DAT_0067b5f0",
+      "text": "(g_CEditorToolsPtr,\"Raise an event\",&DAT_0067b5f0,100,1),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1216,
+      "match": "DAT_0062c2b1",
+      "text": "((SEncryptedMessage *)DAT_0062c2b1);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1255,
       "match": "SQRT",
@@ -2817,6 +3022,146 @@
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar17 + 0x154) + 0x11c))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1265,
+      "match": "DAT_0062c2f2",
+      "text": "((SEncryptedMessage *)DAT_0062c2f2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1307,
+      "match": "DAT_0062c377",
+      "text": "((SEncryptedMessage *)DAT_0062c377);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1340,
+      "match": "DAT_0062c3c7",
+      "text": "((SEncryptedMessage *)DAT_0062c3c7);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1371,
+      "match": "DAT_0062c406",
+      "text": "((SEncryptedMessage *)DAT_0062c406);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1402,
+      "match": "DAT_0062c445",
+      "text": "((SEncryptedMessage *)DAT_0062c445);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1458,
+      "match": "DAT_0062c4f0",
+      "text": "((SEncryptedMessage *)DAT_0062c4f0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1492,
+      "match": "DAT_0062c52f",
+      "text": "((SEncryptedMessage *)DAT_0062c52f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1525,
+      "match": "DAT_0062c561",
+      "text": "((SEncryptedMessage *)DAT_0062c561);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1565,
+      "match": "DAT_0062c5bc",
+      "text": "((SEncryptedMessage *)DAT_0062c5bc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1600,
+      "match": "DAT_0062c61a",
+      "text": "((SEncryptedMessage *)DAT_0062c61a);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1629,
+      "match": "DAT_0062c654",
+      "text": "((SEncryptedMessage *)DAT_0062c654);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1658,
+      "match": "DAT_0062c68b",
+      "text": "((SEncryptedMessage *)DAT_0062c68b);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1789,
+      "match": "DAT_0062c710",
+      "text": "((SEncryptedMessage *)DAT_0062c710);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1819,
+      "match": "DAT_0062c744",
+      "text": "((SEncryptedMessage *)DAT_0062c744);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1861,
+      "match": "DAT_0062c7a0",
+      "text": "((SEncryptedMessage *)DAT_0062c7a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1893,
+      "match": "DAT_0062c7e5",
+      "text": "((SEncryptedMessage *)DAT_0062c7e5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1933,
+      "match": "DAT_0062c830",
+      "text": "((SEncryptedMessage *)DAT_0062c830);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1962,
+      "match": "DAT_0062c869",
+      "text": "((SEncryptedMessage *)DAT_0062c869);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1991,
+      "match": "DAT_0062c8a0",
+      "text": "((SEncryptedMessage *)DAT_0062c8a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 2021,
+      "match": "DAT_0062c8da",
+      "text": "((SEncryptedMessage *)DAT_0062c8da);",
+      "type": "undefined_data"
     },
     {
       "actual_args": 2,

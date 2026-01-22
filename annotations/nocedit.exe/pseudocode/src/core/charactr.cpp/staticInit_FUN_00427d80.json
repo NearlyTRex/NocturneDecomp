@@ -19,13 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 8,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 8,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 23
   },
   "cross_references": [],
@@ -120,5 +122,13 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_00823a98",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&DAT_00823a98);",
+      "type": "undefined_data"
+    }
+  ]
 }

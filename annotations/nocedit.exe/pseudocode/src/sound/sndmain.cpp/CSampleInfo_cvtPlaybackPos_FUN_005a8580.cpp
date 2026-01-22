@@ -18,8 +18,8 @@ sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
     if (position._4_4_ != 0) {
       if ((ulonglong)position < 0x200000000) {
         dVar1 = (double)*(int *)(in_stack_00000004 + 0x10c) *
-                (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);
-        this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);
+                (double)CONCAT44(position._0_4_,this_ptr);
+        this_ptr = SUB84(dVar1,0);
         position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
       }
       else if (position._4_4_ == 2) {
@@ -28,17 +28,17 @@ sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
           g_CurrentLineNumber = 0xc44;
           core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
           dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *
-                  (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);
-          this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);
+                  (double)CONCAT44(position._0_4_,this_ptr);
+          this_ptr = SUB84(dVar1,0);
           position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
-          position = (double)CONCAT44 /* combine 2-byte values */(2,position._0_4_);
+          position = (double)CONCAT44(2,position._0_4_);
         }
         else {
           dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *
-                  (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);
-          this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);
+                  (double)CONCAT44(position._0_4_,this_ptr);
+          this_ptr = SUB84(dVar1,0);
           position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
-          position = (double)CONCAT44 /* combine 2-byte values */(2,position._0_4_);
+          position = (double)CONCAT44(2,position._0_4_);
         }
       }
       else {
@@ -49,9 +49,9 @@ sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
     }
     if (input_type != 0) {
       if (input_type < 2) {
-        dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /
+        dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /
                 (double)*(int *)(in_stack_00000004 + 0x10c);
-        this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);
+        this_ptr = SUB84(dVar1,0);
         position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
       }
       else if (input_type == 2) {
@@ -59,15 +59,15 @@ sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0xc57;
           core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
-          dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /
+          dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /
                   (double)*(int *)(in_stack_00000004 + 0x110);
-          this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);
+          this_ptr = SUB84(dVar1,0);
           position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
         }
         else {
-          dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /
+          dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /
                   (double)*(int *)(in_stack_00000004 + 0x110);
-          this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);
+          this_ptr = SUB84(dVar1,0);
           position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
         }
       }
@@ -78,5 +78,5 @@ sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
       }
     }
   }
-  return (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);
+  return (double)CONCAT44(position._0_4_,this_ptr);
 }

@@ -48,7 +48,7 @@ int shape_superopt_cpp_FUN_005c8b50(void)
   int local_18;
   double *local_14;
   
-  dVar7 = (double)CONCAT44 /* combine 2-byte values */(local_3c._4_4_,(uint)local_3c);
+  dVar7 = (double)CONCAT44(local_3c._4_4_,(uint)local_3c);
   bVar6 = 0;
   local_1c = 0;
   local_20 = 0;
@@ -79,12 +79,12 @@ int shape_superopt_cpp_FUN_005c8b50(void)
         pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
         puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
       }
-      local_9c = (double)CONCAT44 /* combine 2-byte values */(uStack_c0,local_c4) * local_14[2] -
-                 (double)CONCAT44 /* combine 2-byte values */(uStack_b8,local_bc) * local_14[1];
-      local_94 = (double)CONCAT44 /* combine 2-byte values */(uStack_b8,local_bc) * *local_14 -
-                 (double)CONCAT44 /* combine 2-byte values */(uStack_c8,local_cc) * local_14[2];
-      local_8c = (double)CONCAT44 /* combine 2-byte values */(uStack_c8,local_cc) * local_14[1] -
-                 (double)CONCAT44 /* combine 2-byte values */(uStack_c0,local_c4) * *local_14;
+      local_9c = (double)CONCAT44(uStack_c0,local_c4) * local_14[2] -
+                 (double)CONCAT44(uStack_b8,local_bc) * local_14[1];
+      local_94 = (double)CONCAT44(uStack_b8,local_bc) * *local_14 -
+                 (double)CONCAT44(uStack_c8,local_cc) * local_14[2];
+      local_8c = (double)CONCAT44(uStack_c8,local_cc) * local_14[1] -
+                 (double)CONCAT44(uStack_c0,local_c4) * *local_14;
       dVar7 = 1.0 / SQRT(local_8c * local_8c + local_9c * local_9c + local_94 * local_94);
       local_9c = local_9c * dVar7;
       local_94 = local_94 * dVar7;

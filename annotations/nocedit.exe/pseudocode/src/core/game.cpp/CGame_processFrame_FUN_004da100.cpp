@@ -268,9 +268,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         dVar2 = (double)(pCVar4->base_character).base_actor.location.position.y;
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
-                   (double)(pCVar4->base_character).base_actor.location.position.x,SUB84 /* extract 2-byte value */(dVar2,0),
-                   (int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
-                   SUB84 /* extract 2-byte value */(180 *
+                   (double)(pCVar4->base_character).base_actor.location.position.x,SUB84(dVar2,0),
+                   (int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
+                   SUB84(180 *
                          (double)(pCVar4->base_character).base_actor.orient.pitch * 0.31830988619288902,
                          0));
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
@@ -279,7 +279,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         if ((float *)this_ptr->field102_0x9bc != (float *)0x0) {
           crt_stdio_c_sprintf_FUN_005fdbd0
                     (local_3dc,"Fudge: %g,%g,%g",
-                     SUB84 /* extract 2-byte value */((double)*(float *)this_ptr->field102_0x9bc,0));
+                     SUB84((double)*(float *)this_ptr->field102_0x9bc,0));
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0

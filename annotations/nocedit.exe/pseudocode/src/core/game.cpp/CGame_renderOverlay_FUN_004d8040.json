@@ -92,14 +92,15 @@
   },
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 181,
+    "complexity_score": 196,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 18,
     "pseudocode_lines": 146,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "undefined_data"
     ],
     "total_lines": 551
   },
@@ -570,6 +571,13 @@
       "match": "ROUND",
       "text": "local_18 = (CGame *)(int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_02d830a8",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_164,\"%d - %s\",g_CurrentDisplayText,&DAT_02d830a8);",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

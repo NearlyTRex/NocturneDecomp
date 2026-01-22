@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 133,
+    "complexity_score": 158,
     "cross_reference_count": 23,
     "function_call_count": 6,
     "global_count": 0,
     "pseudocode_lines": 103,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "special_crt_function"
     ],
     "total_lines": 342
@@ -287,10 +288,24 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_var",
+      "text": "ushort extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 81,
+      "match": "extraout_var",
+      "text": "if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "CONCAT22",
-      "text": "if ((CONCAT22 /* combine 2-byte values */(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
+      "text": "if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
       "type": "decompiler_intrinsic"
     },
     {

@@ -30,7 +30,7 @@ shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
   bVar7 = 0;
   local_18 = shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500
                        ((CVector3d *)&stack0xffffff90,plane_point,plane_normal,
-                        SUB84 /* extract 2-byte value */(-plane_normal->x,0));
+                        SUB84(-plane_normal->x,0));
   dVar1 = -plane_normal->x;
   dVar2 = -plane_normal->y;
   dVar3 = -plane_normal->z;

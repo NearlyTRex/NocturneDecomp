@@ -62,13 +62,15 @@
   },
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 141,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
     "pseudocode_lines": 141,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 437
   },
   "cross_references": [
@@ -352,5 +354,55 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_0067e728",
+      "text": "local_38 = *(int *)(&DAT_0067e728 + local_4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_0067e728",
+      "text": "iVar8 = *(int *)(&DAT_0067e728 + local_4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 91,
+      "match": "DAT_0067e72c",
+      "text": "piVar1 = (int *)(&DAT_0067e72c + local_4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_0067e730",
+      "text": "iVar8 = *(int *)(&DAT_0067e730 + local_4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_0067e734",
+      "text": "local_34 = *(int *)(&DAT_0067e734 + local_4c) - iVar8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 137,
+      "match": "DAT_0067e728",
+      "text": "iVar8 = *(int *)(&DAT_0067e728 + local_50);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 138,
+      "match": "DAT_0067e72c",
+      "text": "piVar1 = (int *)(&DAT_0067e72c + local_50);",
+      "type": "undefined_data"
+    }
+  ]
 }

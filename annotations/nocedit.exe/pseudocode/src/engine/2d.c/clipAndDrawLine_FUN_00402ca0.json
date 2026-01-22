@@ -39,7 +39,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 51,
+        "column": 23,
         "line": 31,
         "message": "'extraout_var' was not declared in this scope"
       },
@@ -63,7 +63,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 51,
+        "column": 23,
         "line": 33,
         "message": "'extraout_var_00' was not declared in this scope"
       },
@@ -153,7 +153,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 55,
+        "column": 27,
         "line": 92,
         "message": "'extraout_var_02' was not declared in this scope"
       },
@@ -171,7 +171,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 55,
+        "column": 27,
         "line": 99,
         "message": "'extraout_var_01' was not declared in this scope"
       },
@@ -272,14 +272,15 @@
   },
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 420,
+    "complexity_score": 505,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 105,
-    "suspect_count": 29,
+    "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "unaffected_reg",
@@ -505,11 +506,25 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved type",
       "line": 10,
       "match": "undefined3 extraout_var_00",
       "text": "undefined3 extraout_var_00;",
       "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_var_00",
+      "text": "undefined3 extraout_var_00;",
+      "type": "extra_output"
     },
     {
       "description": "Unresolved type",
@@ -519,11 +534,25 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_var_01",
+      "text": "undefined3 extraout_var_01;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved type",
       "line": 13,
       "match": "undefined3 extraout_var_02",
       "text": "undefined3 extraout_var_02;",
       "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_var_02",
+      "text": "undefined3 extraout_var_02;",
+      "type": "extra_output"
     },
     {
       "description": "Unaffected register variable",
@@ -540,17 +569,31 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_var",
+      "text": "local_14 = CONCAT31(extraout_var,bVar2);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "CONCAT31",
-      "text": "local_14 = CONCAT31 /* combine 2-byte values */(extraout_var,bVar2);",
+      "text": "local_14 = CONCAT31(extraout_var,bVar2);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_var_00",
+      "text": "local_18 = CONCAT31(extraout_var_00,bVar2);",
+      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "CONCAT31",
-      "text": "local_18 = CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2);",
+      "text": "local_18 = CONCAT31(extraout_var_00,bVar2);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -638,10 +681,17 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 85,
+      "match": "extraout_var_02",
+      "text": "local_18 = CONCAT31(extraout_var_02,bVar2);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "CONCAT31",
-      "text": "local_18 = CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar2);",
+      "text": "local_18 = CONCAT31(extraout_var_02,bVar2);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -673,10 +723,17 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 92,
+      "match": "extraout_var_01",
+      "text": "local_14 = CONCAT31(extraout_var_01,bVar2);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "CONCAT31",
-      "text": "local_14 = CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar2);",
+      "text": "local_14 = CONCAT31(extraout_var_01,bVar2);",
       "type": "decompiler_intrinsic"
     },
     {

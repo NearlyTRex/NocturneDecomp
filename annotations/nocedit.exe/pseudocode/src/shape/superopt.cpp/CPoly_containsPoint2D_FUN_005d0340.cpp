@@ -117,7 +117,7 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
   else {
     dVar3 = (this_ptr->normal).y;
   }
-  p3 = SUB84 /* extract 2-byte value */(dVar3,0);
+  p3 = SUB84(dVar3,0);
   if ((this_ptr->normal).z < 0.0) {
     local_1b0 = -(this_ptr->normal).z;
   }

@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "other",
-        "column": 67,
+        "column": 39,
         "line": 31,
         "message": "request for member '_4_4_' in 'local_30', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
@@ -21,7 +21,7 @@
       },
       {
         "category": "other",
-        "column": 86,
+        "column": 58,
         "line": 46,
         "message": "request for member '_4_4_' in 'local_38', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
@@ -74,12 +74,12 @@
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 226,
+    "complexity_score": 236,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 61,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -286,28 +286,35 @@
       "description": "Unknown/mangled field access",
       "line": 24,
       "match": "._4_4_",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_30._4_4_,(uint)local_30);",
+      "text": "dVar2 = (double)CONCAT44(local_30._4_4_,(uint)local_30);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_30._4_4_,(uint)local_30);",
+      "text": "dVar2 = (double)CONCAT44(local_30._4_4_,(uint)local_30);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "fcos",
+      "text": "fVar6 = (float10)fcos((float10)iVar4 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 39,
       "match": "._4_4_",
-      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_30,local_38._4_4_);",
+      "text": "dVar1 = (double)CONCAT44((uint)local_30,local_38._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CONCAT44",
-      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_30,local_38._4_4_);",
+      "text": "dVar1 = (double)CONCAT44((uint)local_30,local_38._4_4_);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -321,7 +328,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "CONCAT44",
-      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_38,puVar7);",
+      "text": "dVar1 = (double)CONCAT44((uint)local_38,puVar7);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -342,14 +349,14 @@
       "description": "Unknown/mangled field access",
       "line": 53,
       "match": "._0_4_",
-      "text": "local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "local_30._0_4_ = SUB84(dVar2,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "SUB84",
-      "text": "local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "local_30._0_4_ = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -500,12 +500,12 @@
   },
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1071,
+    "complexity_score": 1096,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "pseudocode_lines": 536,
-    "suspect_count": 50,
+    "suspect_count": 52,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -513,6 +513,7 @@
       "pointer_cast",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 1661
@@ -1554,6 +1555,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 244,
+      "match": "DAT_00000008",
+      "text": "header_out = (SMpegFrameHeader *)&DAT_00000008;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 260,
       "match": "in_stack_00000008",
@@ -1601,6 +1609,13 @@
       "match": "in_stack_00000008",
       "text": "puVar10 = in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 305,
+      "match": "DAT_00000008",
+      "text": "header_out = (SMpegFrameHeader *)&DAT_00000008;",
+      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",

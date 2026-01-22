@@ -272,14 +272,15 @@
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 237,
+    "complexity_score": 302,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 38,
     "pseudocode_lines": 87,
-    "suspect_count": 14,
+    "suspect_count": 20,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 251
@@ -614,6 +615,34 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_02db8970",
+      "text": "DAT_02db8970 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 head\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_02db89a4",
+      "text": "DAT_02db89a4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 L Hand\")",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_02db89a8",
+      "text": "DAT_02db89a8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 R Hand\")",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_02db89b0",
+      "text": "DAT_02db89b0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 Spine1\")",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000004",
@@ -642,11 +671,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_02db89a4",
+      "text": "*(int *)(in_stack_00000004->base_character).carry_hands[0].field0_0x0 = DAT_02db89a4;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 69,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004->base_character).carry_hands[1].field0_0x0 = DAT_02db89a8;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_02db89a8",
+      "text": "*(int *)(in_stack_00000004->base_character).carry_hands[1].field0_0x0 = DAT_02db89a8;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

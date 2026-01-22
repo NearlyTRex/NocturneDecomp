@@ -158,15 +158,16 @@
   },
   "complexity": {
     "assembly_lines": 356,
-    "complexity_score": 284,
+    "complexity_score": 309,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 16,
     "pseudocode_lines": 154,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 510
   },
@@ -613,6 +614,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_0365a3e8",
+      "text": "dest = &DAT_0365a3e8;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(uint *)((int)",
@@ -632,6 +640,13 @@
       "match": "in_stack_00000004",
       "text": "local_20 = (byte *)(local_30 + *(int *)(in_stack_00000004 + 0x40));",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_0365a3e8",
+      "text": "(\"vertex %d is influenced by bone %s, but this bone isn't in the .BON file!\",local_2c,&DAT_0365a3e8 + iVar5 * 0x32);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -92,13 +92,14 @@
   },
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 630,
+    "complexity_score": 645,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 9,
     "pseudocode_lines": 95,
-    "suspect_count": 53,
+    "suspect_count": 54,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 372
@@ -303,6 +304,13 @@
       "match": "in_stack_00000008",
       "text": "if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "NAN",
+      "text": "if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

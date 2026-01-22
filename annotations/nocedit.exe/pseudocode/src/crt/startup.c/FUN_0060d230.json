@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 77,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "pseudocode_lines": 62,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "undefined_data"
     ],
     "total_lines": 214
   },
@@ -171,6 +172,27 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_03f9c030",
+      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_03f9c030,0,0x101);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_03f9c030",
+      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_03f9c030,0,0x101);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_03f9c030",
+      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_03f9c030,0,0x101);",
+      "type": "undefined_data"
+    },
     {
       "address": "0060d230",
       "crt_type": "runtime support",

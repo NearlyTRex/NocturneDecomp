@@ -602,12 +602,12 @@
   },
   "complexity": {
     "assembly_lines": 723,
-    "complexity_score": 720,
+    "complexity_score": 730,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "pseudocode_lines": 365,
-    "suspect_count": 34,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -1235,6 +1235,13 @@
   },
   "suspects": [
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "fcos",
+      "text": "fVar20 = (float10)fcos((float10)angle_threshold_radians);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(uchar *)((int)",
@@ -1315,7 +1322,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 204,
       "match": "SUB84",
-      "text": "local_108 = SUB84 /* extract 2-byte value */(dVar21,0);",
+      "text": "local_108 = SUB84(dVar21,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1385,21 +1392,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 247,
       "match": "SUB84",
-      "text": "uStack_104 = SUB84 /* extract 2-byte value */(dVar21,0);",
+      "text": "uStack_104 = SUB84(dVar21,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 261,
       "match": "CONCAT44",
-      "text": "dVar21 = (double)CONCAT44 /* combine 2-byte values */(uStack_104,local_108) +",
+      "text": "dVar21 = (double)CONCAT44(uStack_104,local_108) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 262,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_fc,local_100);",
+      "text": "(double)CONCAT44(uStack_fc,local_100);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -62,13 +62,15 @@
   },
   "complexity": {
     "assembly_lines": 260,
-    "complexity_score": 81,
+    "complexity_score": 96,
     "cross_reference_count": 8,
     "function_call_count": 13,
     "global_count": 23,
     "pseudocode_lines": 81,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 341
   },
   "cross_references": [
@@ -397,5 +399,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_02cf2a78",
+      "text": "g_WindowStack[iVar2].bottom + -2,DAT_02cf2a78,g_WindowBorderColor1);",
+      "type": "undefined_data"
+    }
+  ]
 }

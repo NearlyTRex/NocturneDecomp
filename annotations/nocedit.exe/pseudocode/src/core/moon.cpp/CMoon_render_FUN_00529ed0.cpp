@@ -109,13 +109,13 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
     uVar3 = 0;
     puVar5 = local_20;
     do {
-      uVar6 = paddusb(*puVar5,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette
+      uVar6 = paddusb(*puVar5,CONCAT44(g_Hardware32BitPalette
                                        [(byte)pcVar2[((uVar3 >> 1) + local_30 & 0xff) * 0x100 +
                                                      ((local_28 >> 1) + local_24 & 0xff)] >> 2],
                                        g_Hardware32BitPalette
                                        [(byte)pcVar2[((uVar3 >> 1) + local_30 & 0xff) * 0x100 +
                                                      ((local_28 >> 1) + local_24 & 0xff)] >> 2]));
-      uVar6 = paddusb(uVar6,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette
+      uVar6 = paddusb(uVar6,CONCAT44(g_Hardware32BitPalette
                                      [(byte)pcVar2[((uVar3 >> 2) + local_30 & 0xff) * 0x100 +
                                                    ((local_28 >> 2) + local_24 & 0xff)] >> 2],
                                      g_Hardware32BitPalette

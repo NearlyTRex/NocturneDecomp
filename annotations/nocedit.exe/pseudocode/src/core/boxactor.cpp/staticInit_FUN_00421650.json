@@ -38,13 +38,15 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 14,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 10,
     "pseudocode_lines": 14,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 44
   },
   "cross_references": [],
@@ -174,5 +176,13 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0066e5cc",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_0066e5cc);",
+      "type": "undefined_data"
+    }
+  ]
 }

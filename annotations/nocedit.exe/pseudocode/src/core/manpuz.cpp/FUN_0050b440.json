@@ -320,15 +320,16 @@
   },
   "complexity": {
     "assembly_lines": 297,
-    "complexity_score": 1443,
+    "complexity_score": 1498,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 148,
-    "suspect_count": 128,
+    "suspect_count": 133,
     "suspect_types": [
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 445
@@ -451,6 +452,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_02f0cb1c",
+      "text": "if (DAT_02f0cb1c == 1) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000004",
@@ -570,6 +578,13 @@
       "type": "unknown_field"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_02f0cb1c",
+      "text": "else if (DAT_02f0cb1c == 2) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
@@ -680,6 +695,13 @@
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[4].create_event + 8) = fStack_c;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_02f0cb1c",
+      "text": "else if (DAT_02f0cb1c == 3) {",
+      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
@@ -941,6 +963,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 97,
+      "match": "DAT_02f0cb1c",
+      "text": "else if (DAT_02f0cb1c == 4) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 99,
       "match": "in_stack_00000004",
@@ -1191,6 +1220,13 @@
       "match": "in_stack_00000004",
       "text": "*(uint *)in_stack_00000004[0xe].create_event = uVar1;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 129,
+      "match": "DAT_02f0cb1c",
+      "text": "DAT_02f0cb1c = 0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

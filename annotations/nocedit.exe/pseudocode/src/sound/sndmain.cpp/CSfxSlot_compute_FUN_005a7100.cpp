@@ -78,7 +78,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
       dVar6 = (this_ptr->options).position.z - g_Cached3DListenerPos.z;
       dVar4 = SQRT(dVar6 * dVar6 + dVar5 * dVar5 + dVar7 * dVar7);
       if (this_ptr->is_active == 1) {
-        local_38 = SUB84 /* extract 2-byte value */(dVar4,0);
+        local_38 = SUB84(dVar4,0);
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  distToEar = %7.2fs\n",local_38);
       }
@@ -96,12 +96,12 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  doppler = %5.2f\n",(uint)local_60);
       }
-      dVar4 = 1.0 / (double)CONCAT44 /* combine 2-byte values */(4._4_4_,4._0_4_);
+      dVar4 = 1.0 / (double)CONCAT44(4._4_4_,4._0_4_);
       if (local_60 < dVar4) {
         local_60 = dVar4;
       }
-      if ((double)CONCAT44 /* combine 2-byte values */(4._4_4_,4._0_4_) < local_60) {
-        local_60 = (double)CONCAT44 /* combine 2-byte values */(4._4_4_,4._0_4_);
+      if ((double)CONCAT44(4._4_4_,4._0_4_) < local_60) {
+        local_60 = (double)CONCAT44(4._4_4_,4._0_4_);
       }
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890

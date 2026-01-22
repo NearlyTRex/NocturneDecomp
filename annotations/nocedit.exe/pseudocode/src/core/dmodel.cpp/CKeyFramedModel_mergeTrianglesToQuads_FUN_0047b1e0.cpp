@@ -208,7 +208,7 @@ core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
                           local_24 = this_ptr->vertex_list + local_38 * this_ptr->vertex_count * 3;
                           do {
                             uStack_104 = (uint)((ulonglong)dVar21 >> 0x20);
-                            local_108 = SUB84 /* extract 2-byte value */(dVar21,0);
+                            local_108 = SUB84(dVar21,0);
                             local_90 = local_24 + *(int *)((int)&stack0xffffff10 + local_20) * 3;
                             ppCVar13 = local_24 +
                                        *(int *)((int)&stack0xffffff10 + ((iVar14 + 1) % 4) * 0xc) *
@@ -251,7 +251,7 @@ core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
                             if (dVar21 < 1.0) {
                               if (-1 < dVar21) {
                                 dVar21 = crt_math_c_acos_FUN_00600162(dVar21);
-                                uStack_104 = SUB84 /* extract 2-byte value */(dVar21,0);
+                                uStack_104 = SUB84(dVar21,0);
                                 local_100 = (uint)((ulonglong)dVar21 >> 0x20);
                               }
                               else {
@@ -265,8 +265,8 @@ core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
                             }
                             iVar9 = iVar9 + 1;
                             iVar14 = iVar14 + 1;
-                            dVar21 = (double)CONCAT44 /* combine 2-byte values */(uStack_104,local_108) +
-                                     (double)CONCAT44 /* combine 2-byte values */(uStack_fc,local_100);
+                            dVar21 = (double)CONCAT44(uStack_104,local_108) +
+                                     (double)CONCAT44(uStack_fc,local_100);
                             local_20 = local_20 + 0xc;
                           } while (iVar14 < 4);
                           if ((dVar21 < 6.2744586607402804) || (6.2919119532597199 < dVar21))

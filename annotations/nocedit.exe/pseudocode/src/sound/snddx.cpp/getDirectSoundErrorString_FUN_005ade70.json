@@ -133,13 +133,15 @@
   },
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 73,
+    "complexity_score": 128,
     "cross_reference_count": 19,
     "function_call_count": 0,
     "global_count": 16,
     "pseudocode_lines": 73,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 5,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
     "total_lines": 201
   },
   "cross_references": [
@@ -407,5 +409,41 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
+      "match": "code",
+      "text": "return \"DSERR_ELIFINO: Unknown error status code.\";",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 22,
+      "match": "code",
+      "text": "return \"DSERR_ELIFINO: Unknown error status code.\";",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
+      "match": "code",
+      "text": "return \"DSERR_ELIFINO: Unknown error status code.\";",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code",
+      "text": "return \"DSERR_ELIFINO: Unknown error status code.\";",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 74,
+      "match": "code",
+      "text": "return \"DSERR_ELIFINO: Unknown error status code.\";",
+      "type": "unresolved_funcptr"
+    }
+  ]
 }

@@ -578,15 +578,16 @@
   },
   "complexity": {
     "assembly_lines": 1095,
-    "complexity_score": 1210,
+    "complexity_score": 1245,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 97,
     "pseudocode_lines": 420,
-    "suspect_count": 78,
+    "suspect_count": 81,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 1515
   },
@@ -1529,6 +1530,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_02d830a8",
+      "text": "DAT_02d830a8 = 0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 88,
       "match": "&stack0xfffff914",
@@ -2031,6 +2039,20 @@
       "match": "in_stack_fffff924",
       "text": "(uint)in_stack_fffff91c,(uint)in_stack_fffff920,in_stack_fffff924);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 377,
+      "match": "DAT_02d830a8",
+      "text": "pcVar4 = &DAT_02d830a8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 379,
+      "match": "DAT_0067b854",
+      "text": "g_CurrentDisplayText = *(char **)(&DAT_0067b854 + iVar3 * 4);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -283,98 +283,98 @@ int __cdecl shape_superopt_cpp_CPoly_hasEdgeIntersection_FUN_005d1390(CPoly *thi
     local_98 = local_1a0.x._0_4_;
     local_94 = local_1a0.x._4_4_;
   }
-  if ((((((((double)CONCAT44 /* combine 2-byte values */(local_180.x._4_4_,local_180.x._0_4_) ==
-            (double)CONCAT44 /* combine 2-byte values */(local_170.x._4_4_,local_170.x._0_4_)) &&
-          ((double)CONCAT44 /* combine 2-byte values */(local_180.y._4_4_,local_180.y._0_4_) ==
-           (double)CONCAT44 /* combine 2-byte values */(local_170.y._4_4_,local_170.y._0_4_))) ||
-         (((double)CONCAT44 /* combine 2-byte values */(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
-           (double)CONCAT44 /* combine 2-byte values */(local_150.x._4_4_,local_150.x._0_4_) &&
-          ((double)CONCAT44 /* combine 2-byte values */(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
-           (double)CONCAT44 /* combine 2-byte values */(local_150.y._4_4_,local_150.y._0_4_))))) ||
+  if ((((((((double)CONCAT44(local_180.x._4_4_,local_180.x._0_4_) ==
+            (double)CONCAT44(local_170.x._4_4_,local_170.x._0_4_)) &&
+          ((double)CONCAT44(local_180.y._4_4_,local_180.y._0_4_) ==
+           (double)CONCAT44(local_170.y._4_4_,local_170.y._0_4_))) ||
+         (((double)CONCAT44(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
+           (double)CONCAT44(local_150.x._4_4_,local_150.x._0_4_) &&
+          ((double)CONCAT44(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
+           (double)CONCAT44(local_150.y._4_4_,local_150.y._0_4_))))) ||
         (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                            (&local_180,&local_1a0,&local_150,&local_170), iVar4 == 0)) &&
-       ((((double)CONCAT44 /* combine 2-byte values */(local_180.x._4_4_,local_180.x._0_4_) ==
-          (double)CONCAT44 /* combine 2-byte values */(local_160._4_4_,local_160._0_4_) &&
-         ((double)CONCAT44 /* combine 2-byte values */(local_180.y._4_4_,local_180.y._0_4_) ==
-          (double)CONCAT44 /* combine 2-byte values */(local_154,local_158))) ||
-        ((((double)CONCAT44 /* combine 2-byte values */(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
-           (double)CONCAT44 /* combine 2-byte values */(local_170.x._4_4_,local_170.x._0_4_) &&
-          ((double)CONCAT44 /* combine 2-byte values */(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
-           (double)CONCAT44 /* combine 2-byte values */(local_170.y._4_4_,local_170.y._0_4_))) ||
+       ((((double)CONCAT44(local_180.x._4_4_,local_180.x._0_4_) ==
+          (double)CONCAT44(local_160._4_4_,local_160._0_4_) &&
+         ((double)CONCAT44(local_180.y._4_4_,local_180.y._0_4_) ==
+          (double)CONCAT44(local_154,local_158))) ||
+        ((((double)CONCAT44(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
+           (double)CONCAT44(local_170.x._4_4_,local_170.x._0_4_) &&
+          ((double)CONCAT44(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
+           (double)CONCAT44(local_170.y._4_4_,local_170.y._0_4_))) ||
          (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                             (&local_180,&local_1a0,&local_170,(CVector2d *)local_160), iVar4 == 0)))
-        ))) && (((((((double)CONCAT44 /* combine 2-byte values */(local_180.x._4_4_,local_180.x._0_4_) ==
-                     (double)CONCAT44 /* combine 2-byte values */(local_150.x._4_4_,local_150.x._0_4_) &&
-                    ((double)CONCAT44 /* combine 2-byte values */(local_180.y._4_4_,local_180.y._0_4_) ==
-                     (double)CONCAT44 /* combine 2-byte values */(local_150.y._4_4_,local_150.y._0_4_))) ||
-                   (((double)CONCAT44 /* combine 2-byte values */(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
-                     (double)CONCAT44 /* combine 2-byte values */(local_160._4_4_,local_160._0_4_) &&
-                    ((double)CONCAT44 /* combine 2-byte values */(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
-                     (double)CONCAT44 /* combine 2-byte values */(local_154,local_158))))) ||
+        ))) && (((((((double)CONCAT44(local_180.x._4_4_,local_180.x._0_4_) ==
+                     (double)CONCAT44(local_150.x._4_4_,local_150.x._0_4_) &&
+                    ((double)CONCAT44(local_180.y._4_4_,local_180.y._0_4_) ==
+                     (double)CONCAT44(local_150.y._4_4_,local_150.y._0_4_))) ||
+                   (((double)CONCAT44(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
+                     (double)CONCAT44(local_160._4_4_,local_160._0_4_) &&
+                    ((double)CONCAT44(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
+                     (double)CONCAT44(local_154,local_158))))) ||
                   (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                                      (&local_180,&local_1a0,(CVector2d *)local_160,&local_150),
                   iVar4 == 0)) &&
-                 (((((double)CONCAT44 /* combine 2-byte values */(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
-                     (double)CONCAT44 /* combine 2-byte values */(local_160._4_4_,local_160._0_4_) &&
-                    ((double)CONCAT44 /* combine 2-byte values */(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
-                     (double)CONCAT44 /* combine 2-byte values */(local_154,local_158))) ||
-                   ((((double)CONCAT44 /* combine 2-byte values */(local_18c,local_190) ==
-                      (double)CONCAT44 /* combine 2-byte values */(local_170.x._4_4_,local_170.x._0_4_) &&
-                     ((double)CONCAT44 /* combine 2-byte values */(local_184,local_188) ==
-                      (double)CONCAT44 /* combine 2-byte values */(local_170.y._4_4_,local_170.y._0_4_))) ||
+                 (((((double)CONCAT44(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
+                     (double)CONCAT44(local_160._4_4_,local_160._0_4_) &&
+                    ((double)CONCAT44(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
+                     (double)CONCAT44(local_154,local_158))) ||
+                   ((((double)CONCAT44(local_18c,local_190) ==
+                      (double)CONCAT44(local_170.x._4_4_,local_170.x._0_4_) &&
+                     ((double)CONCAT44(local_184,local_188) ==
+                      (double)CONCAT44(local_170.y._4_4_,local_170.y._0_4_))) ||
                     (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                                        (&local_1a0,(CVector2d *)&local_190,&local_170,
                                         (CVector2d *)local_160), iVar4 == 0)))) &&
-                  ((((((double)CONCAT44 /* combine 2-byte values */(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
-                       (double)CONCAT44 /* combine 2-byte values */(local_150.x._4_4_,local_150.x._0_4_) &&
-                      ((double)CONCAT44 /* combine 2-byte values */(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
-                       (double)CONCAT44 /* combine 2-byte values */(local_150.y._4_4_,local_150.y._0_4_))) ||
-                     (((double)CONCAT44 /* combine 2-byte values */(local_18c,local_190) ==
-                       (double)CONCAT44 /* combine 2-byte values */(local_160._4_4_,local_160._0_4_) &&
-                      ((double)CONCAT44 /* combine 2-byte values */(local_184,local_188) ==
-                       (double)CONCAT44 /* combine 2-byte values */(local_154,local_158))))) ||
+                  ((((((double)CONCAT44(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
+                       (double)CONCAT44(local_150.x._4_4_,local_150.x._0_4_) &&
+                      ((double)CONCAT44(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
+                       (double)CONCAT44(local_150.y._4_4_,local_150.y._0_4_))) ||
+                     (((double)CONCAT44(local_18c,local_190) ==
+                       (double)CONCAT44(local_160._4_4_,local_160._0_4_) &&
+                      ((double)CONCAT44(local_184,local_188) ==
+                       (double)CONCAT44(local_154,local_158))))) ||
                     (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                                        (&local_1a0,(CVector2d *)&local_190,(CVector2d *)local_160,
                                         &local_150), iVar4 == 0)) &&
-                   ((((((double)CONCAT44 /* combine 2-byte values */(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
-                        (double)CONCAT44 /* combine 2-byte values */(local_170.x._4_4_,local_170.x._0_4_) &&
-                       ((double)CONCAT44 /* combine 2-byte values */(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
-                        (double)CONCAT44 /* combine 2-byte values */(local_170.y._4_4_,local_170.y._0_4_))) ||
-                      (((double)CONCAT44 /* combine 2-byte values */(local_18c,local_190) ==
-                        (double)CONCAT44 /* combine 2-byte values */(local_150.x._4_4_,local_150.x._0_4_) &&
-                       ((double)CONCAT44 /* combine 2-byte values */(local_184,local_188) ==
-                        (double)CONCAT44 /* combine 2-byte values */(local_150.y._4_4_,local_150.y._0_4_))))) ||
+                   ((((((double)CONCAT44(local_1a0.x._4_4_,local_1a0.x._0_4_) ==
+                        (double)CONCAT44(local_170.x._4_4_,local_170.x._0_4_) &&
+                       ((double)CONCAT44(local_1a0.y._4_4_,local_1a0.y._0_4_) ==
+                        (double)CONCAT44(local_170.y._4_4_,local_170.y._0_4_))) ||
+                      (((double)CONCAT44(local_18c,local_190) ==
+                        (double)CONCAT44(local_150.x._4_4_,local_150.x._0_4_) &&
+                       ((double)CONCAT44(local_184,local_188) ==
+                        (double)CONCAT44(local_150.y._4_4_,local_150.y._0_4_))))) ||
                      (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                                         (&local_1a0,(CVector2d *)&local_190,&local_150,&local_170),
                      iVar4 == 0)) &&
-                    (((((double)CONCAT44 /* combine 2-byte values */(local_18c,local_190) ==
-                        (double)CONCAT44 /* combine 2-byte values */(local_150.x._4_4_,local_150.x._0_4_) &&
-                       ((double)CONCAT44 /* combine 2-byte values */(local_184,local_188) ==
-                        (double)CONCAT44 /* combine 2-byte values */(local_150.y._4_4_,local_150.y._0_4_))) ||
-                      (((double)CONCAT44 /* combine 2-byte values */(local_180.x._4_4_,local_180.x._0_4_) ==
-                        (double)CONCAT44 /* combine 2-byte values */(local_160._4_4_,local_160._0_4_) &&
-                       ((double)CONCAT44 /* combine 2-byte values */(local_180.y._4_4_,local_180.y._0_4_) ==
-                        (double)CONCAT44 /* combine 2-byte values */(local_154,local_158))))) ||
+                    (((((double)CONCAT44(local_18c,local_190) ==
+                        (double)CONCAT44(local_150.x._4_4_,local_150.x._0_4_) &&
+                       ((double)CONCAT44(local_184,local_188) ==
+                        (double)CONCAT44(local_150.y._4_4_,local_150.y._0_4_))) ||
+                      (((double)CONCAT44(local_180.x._4_4_,local_180.x._0_4_) ==
+                        (double)CONCAT44(local_160._4_4_,local_160._0_4_) &&
+                       ((double)CONCAT44(local_180.y._4_4_,local_180.y._0_4_) ==
+                        (double)CONCAT44(local_154,local_158))))) ||
                      (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                                         ((CVector2d *)&local_190,&local_180,(CVector2d *)local_160,
                                          &local_150), iVar4 == 0)))))))))) &&
-                ((((double)CONCAT44 /* combine 2-byte values */(local_18c,local_190) ==
-                   (double)CONCAT44 /* combine 2-byte values */(local_170.x._4_4_,local_170.x._0_4_) &&
-                  ((double)CONCAT44 /* combine 2-byte values */(local_184,local_188) ==
-                   (double)CONCAT44 /* combine 2-byte values */(local_170.y._4_4_,local_170.y._0_4_))) ||
-                 ((((double)CONCAT44 /* combine 2-byte values */(local_180.x._4_4_,local_180.x._0_4_) ==
-                    (double)CONCAT44 /* combine 2-byte values */(local_150.x._4_4_,local_150.x._0_4_) &&
-                   ((double)CONCAT44 /* combine 2-byte values */(local_180.y._4_4_,local_180.y._0_4_) ==
-                    (double)CONCAT44 /* combine 2-byte values */(local_150.y._4_4_,local_150.y._0_4_))) ||
+                ((((double)CONCAT44(local_18c,local_190) ==
+                   (double)CONCAT44(local_170.x._4_4_,local_170.x._0_4_) &&
+                  ((double)CONCAT44(local_184,local_188) ==
+                   (double)CONCAT44(local_170.y._4_4_,local_170.y._0_4_))) ||
+                 ((((double)CONCAT44(local_180.x._4_4_,local_180.x._0_4_) ==
+                    (double)CONCAT44(local_150.x._4_4_,local_150.x._0_4_) &&
+                   ((double)CONCAT44(local_180.y._4_4_,local_180.y._0_4_) ==
+                    (double)CONCAT44(local_150.y._4_4_,local_150.y._0_4_))) ||
                   (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                                      ((CVector2d *)&local_190,&local_180,&local_150,&local_170),
                   iVar4 == 0)))))))) &&
-     (((((double)CONCAT44 /* combine 2-byte values */(local_18c,local_190) == (double)CONCAT44 /* combine 2-byte values */(local_160._4_4_,local_160._0_4_)
-        && ((double)CONCAT44 /* combine 2-byte values */(local_184,local_188) == (double)CONCAT44 /* combine 2-byte values */(local_154,local_158))) ||
-       (((double)CONCAT44 /* combine 2-byte values */(local_180.x._4_4_,local_180.x._0_4_) ==
-         (double)CONCAT44 /* combine 2-byte values */(local_170.x._4_4_,local_170.x._0_4_) &&
-        ((double)CONCAT44 /* combine 2-byte values */(local_180.y._4_4_,local_180.y._0_4_) ==
-         (double)CONCAT44 /* combine 2-byte values */(local_170.y._4_4_,local_170.y._0_4_))))) ||
+     (((((double)CONCAT44(local_18c,local_190) == (double)CONCAT44(local_160._4_4_,local_160._0_4_)
+        && ((double)CONCAT44(local_184,local_188) == (double)CONCAT44(local_154,local_158))) ||
+       (((double)CONCAT44(local_180.x._4_4_,local_180.x._0_4_) ==
+         (double)CONCAT44(local_170.x._4_4_,local_170.x._0_4_) &&
+        ((double)CONCAT44(local_180.y._4_4_,local_180.y._0_4_) ==
+         (double)CONCAT44(local_170.y._4_4_,local_170.y._0_4_))))) ||
       (iVar4 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
                          ((CVector2d *)&local_190,&local_180,&local_170,(CVector2d *)local_160),
       iVar4 == 0)))) {

@@ -26,13 +26,15 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 27,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
     "pseudocode_lines": 27,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 87
   },
   "cross_references": [
@@ -205,5 +207,34 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "fsin",
+      "text": "fVar1 = (float10)fsin((float10)longitude_degrees * (float10)0.0055555555555555497 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "fcos",
+      "text": "fVar2 = (float10)fcos((float10)longitude_degrees * (float10)0.0055555555555555497 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos((float10)latitude_degrees * (float10)0.0055555555555555497 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "fsin",
+      "text": "fVar4 = (float10)fsin((float10)latitude_degrees * (float10)0.0055555555555555497 *",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

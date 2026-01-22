@@ -44,14 +44,15 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 124,
+    "complexity_score": 179,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 20,
     "pseudocode_lines": 24,
-    "suspect_count": 9,
+    "suspect_count": 14,
     "suspect_types": [
       "suspect_float",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 65
@@ -249,6 +250,13 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.base.count = 4;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 13,
       "match": "7.34684e-40",
@@ -303,6 +311,34 @@
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.A = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.C = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.D = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.B = 0xffff;",
+      "type": "undefined_data"
     }
   ]
 }

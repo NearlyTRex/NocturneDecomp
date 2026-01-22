@@ -18,9 +18,9 @@ ushort crt_unknown_c_FUN_0060b190(void)
   fVar3 = -fVar4;
   bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |
           (byte)((ushort)((ushort)(fVar3 == fVar4) << 0xe) >> 8);
-  uVar1 = CONCAT11 /* combine 2-byte values */(bVar2,2);
+  uVar1 = CONCAT11(bVar2,2);
   if ((uVar1 & 0x4000) == 0) {
-    uVar1 = CONCAT11 /* combine 2-byte values */(bVar2,3);
+    uVar1 = CONCAT11(bVar2,3);
   }
   LOCK();
   UNLOCK();

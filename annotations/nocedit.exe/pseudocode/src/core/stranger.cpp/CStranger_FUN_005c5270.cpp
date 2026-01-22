@@ -175,7 +175,7 @@ switchD_005c56f5_caseD_8:
         fVar1 = *(float *)(in_stack_00000004->field13_0x2620 + 0x470);
         if (fVar3 < fVar1 || (fVar3 == fVar1) != 0) {
           core_dynamite_cpp_FUN_0049cf20
-                    (CONCAT22 /* combine 2-byte values */((short)((ulonglong)lVar2 >> 0x10),
+                    (CONCAT22((short)((ulonglong)lVar2 >> 0x10),
                               (ushort)(fVar3 < fVar1) << 8 |
                               (ushort)(NAN(fVar3) || NAN(fVar1)) << 10 |
                               (ushort)(fVar3 == fVar1) << 0xe),

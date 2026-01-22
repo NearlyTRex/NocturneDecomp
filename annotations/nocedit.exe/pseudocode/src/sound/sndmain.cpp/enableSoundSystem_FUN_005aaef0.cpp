@@ -45,33 +45,33 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
     g_MixBufferWriteIndex = 0;
     (*g_CSoundDevicePtr->vtable->set3DListenerPos)
               (g_CSoundDevicePtr,
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));
+               (double)CONCAT44(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),
+               (double)CONCAT44(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),
+               (double)CONCAT44(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));
     (*g_CSoundDevicePtr->vtable->set3DListenerOrient)
               (g_CSoundDevicePtr,
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,
+               (double)CONCAT44(g_Cached3DListenerOrientFront.x._4_4_,
                                 g_Cached3DListenerOrientFront.x._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.y._4_4_,
+               (double)CONCAT44(g_Cached3DListenerOrientFront.y._4_4_,
                                 g_Cached3DListenerOrientFront.y._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.z._4_4_,
+               (double)CONCAT44(g_Cached3DListenerOrientFront.z._4_4_,
                                 g_Cached3DListenerOrientFront.z._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.x._4_4_,
+               (double)CONCAT44(g_Cached3DListenerOrientUp.x._4_4_,
                                 g_Cached3DListenerOrientUp.x._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.y._4_4_,
+               (double)CONCAT44(g_Cached3DListenerOrientUp.y._4_4_,
                                 g_Cached3DListenerOrientUp.y._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.z._4_4_,
+               (double)CONCAT44(g_Cached3DListenerOrientUp.z._4_4_,
                                 g_Cached3DListenerOrientUp.z._0_4_));
     (*g_CSoundDevicePtr->vtable->set3DListenerVelocity)
               (g_CSoundDevicePtr,
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.x._4_4_,
+               (double)CONCAT44(g_Cached3DListenerVelocity.x._4_4_,
                                 g_Cached3DListenerVelocity.x._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.y._4_4_,
+               (double)CONCAT44(g_Cached3DListenerVelocity.y._4_4_,
                                 g_Cached3DListenerVelocity.y._0_4_),
-               (double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.z._4_4_,
+               (double)CONCAT44(g_Cached3DListenerVelocity.z._4_4_,
                                 g_Cached3DListenerVelocity.z._0_4_));
     (*g_CSoundDevicePtr->vtable->set3DListenerDistanceFactor)
-              (g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(DOUBLE_00681b30._4_4_,DOUBLE_00681b30._0_4_));
+              (g_CSoundDevicePtr,(double)CONCAT44(DOUBLE_00681b30._4_4_,DOUBLE_00681b30._0_4_));
     (*g_CSoundDevicePtr->vtable->commitDeferredSettings)(g_CSoundDevicePtr);
     g_SoundStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     iVar3 = (*g_CSoundDevicePtr->vtable->start)(g_CSoundDevicePtr);

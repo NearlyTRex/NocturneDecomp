@@ -80,14 +80,15 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 62,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "pseudocode_lines": 47,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 162
   },
@@ -243,6 +244,13 @@
       "match": "&stack0xffffffe4",
       "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_02f43978",
+      "text": "if (DAT_02f43978 != 0) {",
+      "type": "undefined_data"
     }
   ],
   "vtable_info": {

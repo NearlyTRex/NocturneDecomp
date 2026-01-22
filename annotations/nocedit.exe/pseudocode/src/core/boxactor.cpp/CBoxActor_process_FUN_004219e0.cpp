@@ -46,7 +46,7 @@ void core_boxactor_cpp_CBoxActor_process_FUN_004219e0(void)
   dVar8 = crt_math_c_round_FUN_005fe6b0(local_2c);
   iStack_24 = (int)ROUND(dVar8);
   fVar5 = (float)this_ptr[2].runtime_state - (float)iStack_24;
-  local_2c = (double)CONCAT44 /* combine 2-byte values */(fVar5,(uint)local_2c);
+  local_2c = (double)CONCAT44(fVar5,(uint)local_2c);
   if (iStack_24 < 0) {
     iStack_24 = iVar9 - -iStack_24 % iVar9;
   }

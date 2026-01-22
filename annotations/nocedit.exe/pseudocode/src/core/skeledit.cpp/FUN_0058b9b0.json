@@ -164,19 +164,20 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 457,
+    "complexity_score": 472,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 3,
     "pseudocode_lines": 117,
-    "suspect_count": 31,
+    "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "stack_param",
       "suspect_float",
-      "unaffected_reg"
+      "unaffected_reg",
+      "warning_type_propagation"
     ],
     "total_lines": 360
   },
@@ -430,6 +431,13 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 9,
       "match": "extraout_ECX",
@@ -510,14 +518,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "SUB84",
-      "text": "local_34 = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "local_34 = SUB84(dVar8,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "SUB84",
-      "text": "local_38 = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "local_38 = SUB84(dVar8,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -615,14 +623,14 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 110,
       "match": "extraout_ECX",
-      "text": "*(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_20,0);",
+      "text": "*(short *)(extraout_ECX + 6) = SUB42(local_20,0);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 110,
       "match": "SUB42",
-      "text": "*(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_20,0);",
+      "text": "*(short *)(extraout_ECX + 6) = SUB42(local_20,0);",
       "type": "decompiler_intrinsic"
     },
     {

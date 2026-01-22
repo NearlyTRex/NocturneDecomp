@@ -37,10 +37,10 @@ LAB_0060c06b:
     errorFlags = in_stack_0000000c | 0x2040;
   }
   dVar1 = crt_math_c_set_math_errno_FUN_0060befa(errorFlags,&stack0x00000004);
-  local_10 = SUB84 /* extract 2-byte value */(dVar1,0);
+  local_10 = SUB84(dVar1,0);
   local_18 = local_10;
   local_c = (uint)((ulonglong)dVar1 >> 0x20);
   local_14 = local_c;
 LAB_0060c0a7:
-  return (double)CONCAT44 /* combine 2-byte values */(local_14,local_18);
+  return (double)CONCAT44(local_14,local_18);
 }

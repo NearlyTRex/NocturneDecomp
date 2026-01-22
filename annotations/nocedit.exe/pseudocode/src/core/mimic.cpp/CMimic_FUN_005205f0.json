@@ -80,15 +80,16 @@
   },
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 133,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
     "pseudocode_lines": 93,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 318
   },
@@ -492,6 +493,13 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_02f33378",
+      "text": "[DAT_02f33378].m,(CMatrix3x4f *)&stack0xffffff0c);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 59,
       "match": "&stack0xffffff0c",
@@ -504,6 +512,13 @@
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_02f43978",
+      "text": "if ((DAT_02f43978 != 0) &&",
+      "type": "undefined_data"
     }
   ]
 }

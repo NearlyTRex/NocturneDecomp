@@ -213,13 +213,13 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           uVar5 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
           shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
-                    (g_CEditorToolsPtr,2.0,CONCAT31 /* combine 2-byte values */(extraout_var,uVar5));
+                    (g_CEditorToolsPtr,2.0,CONCAT31(extraout_var,uVar5));
           local_128.x = -pCVar1->x;
           local_128.y = -pCVar6[1].y;
           local_128.z = -pCVar6[1].z;
           pCStack_27c = (CVector3f *)0x583576;
           shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
-                    (g_CEditorToolsPtr,&local_128,pCVar1,CONCAT31 /* combine 2-byte values */(extraout_var,uVar5));
+                    (g_CEditorToolsPtr,&local_128,pCVar1,CONCAT31(extraout_var,uVar5));
         }
         else {
           do {

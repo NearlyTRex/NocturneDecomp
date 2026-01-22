@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 360,
+    "complexity_score": 370,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 25,
-    "suspect_count": 31,
+    "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -274,6 +274,13 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "CARRY4",
+      "text": "bVar2 = CARRY4(param_2,param_2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_2",
@@ -291,14 +298,14 @@
       "description": "Unnamed function parameter",
       "line": 27,
       "match": "param_2",
-      "text": "return CONCAT44 /* combine 2-byte values */(param_2,iVar1);",
+      "text": "return CONCAT44(param_2,iVar1);",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "CONCAT44",
-      "text": "return CONCAT44 /* combine 2-byte values */(param_2,iVar1);",
+      "text": "return CONCAT44(param_2,iVar1);",
       "type": "decompiler_intrinsic"
     },
     {

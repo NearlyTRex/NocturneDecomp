@@ -26,7 +26,7 @@ core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370
   fVar4 = (float10)bias_offset->y * (float10)256;
   crt_math_c_round_FUN_005fe6b0(dVar5);
   dVar5 = crt_math_c_floor_FUN_005feb90((double)(fVar4 + (float10)0.5));
-  iVar7 = SUB84 /* extract 2-byte value */(dVar5,0);
+  iVar7 = SUB84(dVar5,0);
   fVar4 = (float10)bias_offset->z * (float10)256;
   crt_math_c_round_FUN_005fe6b0(dVar5);
   dVar5 = crt_math_c_floor_FUN_005feb90((double)(fVar4 + (float10)0.5));

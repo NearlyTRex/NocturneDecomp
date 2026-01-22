@@ -59,24 +59,24 @@ shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60
         local_40 = uVar2;
         uStack_3c = uVar3;
       }
-      if ((((double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50) <= test_point->y) &&
-          (test_point->y <= (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40))) &&
-         ((test_point->y != (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50) ||
-          (test_point->y != (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40))))) {
-        if ((test_point->x < (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58)) ||
-           (test_point->x < (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48))) {
-          dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) - (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58);
-          dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40) - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50);
-          local_38 = SUB84 /* extract 2-byte value */(dVar4,0);
-          local_30 = SUB84 /* extract 2-byte value */(dVar5,0);
+      if ((((double)CONCAT44(uStack_4c,local_50) <= test_point->y) &&
+          (test_point->y <= (double)CONCAT44(uStack_3c,local_40))) &&
+         ((test_point->y != (double)CONCAT44(uStack_4c,local_50) ||
+          (test_point->y != (double)CONCAT44(uStack_3c,local_40))))) {
+        if ((test_point->x < (double)CONCAT44(uStack_54,local_58)) ||
+           (test_point->x < (double)CONCAT44(uStack_44,local_48))) {
+          dVar4 = (double)CONCAT44(uStack_44,local_48) - (double)CONCAT44(uStack_54,local_58);
+          dVar5 = (double)CONCAT44(uStack_3c,local_40) - (double)CONCAT44(uStack_4c,local_50);
+          local_38 = SUB84(dVar4,0);
+          local_30 = SUB84(dVar5,0);
           local_60 = 0.0;
           if (((((ulonglong)dVar4 & 0x7fffffff00000000) != 0) || (local_38 != 0)) &&
              ((((ulonglong)dVar5 & 0x7fffffff00000000) != 0 || (local_30 != 0)))) {
             local_60 = dVar4 / dVar5;
           }
           if (test_point->x <=
-              (test_point->y - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50)) * local_60 +
-              (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58)) goto LAB_005d5ef4;
+              (test_point->y - (double)CONCAT44(uStack_4c,local_50)) * local_60 +
+              (double)CONCAT44(uStack_54,local_58)) goto LAB_005d5ef4;
         }
         bVar7 = bVar7 ^ 1;
       }

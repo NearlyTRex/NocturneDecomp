@@ -194,15 +194,17 @@
   },
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 289,
+    "complexity_score": 379,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
     "pseudocode_lines": 199,
-    "suspect_count": 8,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
-      "unresolved_funcptr"
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_type_propagation"
     ],
     "total_lines": 703
   },
@@ -723,6 +725,27 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_03f6bb24",
+      "text": "if ((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_03f6bacc",
+      "text": "DAT_03f6bacc,&local_22c);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(CMatrix3x4f *)((int)",
@@ -735,6 +758,13 @@
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_03f6bb24",
+      "text": "((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] == 0))",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -765,6 +795,27 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 149,
+      "match": "DAT_03f6bb24",
+      "text": "((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] != 0)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 164,
+      "match": "DAT_03f6bacc",
+      "text": "DAT_03f6bacc,&local_10c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 179,
+      "match": "DAT_03f6bb04",
+      "text": "DAT_03f6bb04,&local_19c);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 185,
       "match": "(CMatrix3x4f *)((int)",
@@ -777,6 +828,13 @@
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 197,
+      "match": "DAT_03f6bb24",
+      "text": "if ((((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] == 0) &&",
+      "type": "undefined_data"
     }
   ],
   "vtable_info": {

@@ -15,13 +15,13 @@ ulonglong engine_colquant_c_FUN_00441790(void)
   uint in_stack_00000010;
   uint local_18;
   
-  if ((double)CONCAT44 /* combine 2-byte values */(in_stack_00000008,in_stack_00000004) <=
-      (double)CONCAT44 /* combine 2-byte values */(in_stack_00000010,in_stack_0000000c)) {
+  if ((double)CONCAT44(in_stack_00000008,in_stack_00000004) <=
+      (double)CONCAT44(in_stack_00000010,in_stack_0000000c)) {
     local_18 = in_stack_0000000c;
     in_stack_00000008 = in_stack_00000010;
   }
   else {
     local_18 = in_stack_00000004;
   }
-  return CONCAT44 /* combine 2-byte values */(in_stack_00000008,local_18);
+  return CONCAT44(in_stack_00000008,local_18);
 }

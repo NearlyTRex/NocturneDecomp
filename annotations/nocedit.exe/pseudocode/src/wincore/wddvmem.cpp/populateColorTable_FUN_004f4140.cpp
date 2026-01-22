@@ -32,5 +32,5 @@ ulonglong __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void)
     *(uint *)((int)g_ColorTable32 + iVar3) = uVar2;
     iVar3 = iVar4;
   } while (iVar4 != 0x400);
-  return CONCAT44 /* combine 2-byte values */(0x400,iVar1);
+  return CONCAT44(0x400,iVar1);
 }

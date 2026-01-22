@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 20,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 5,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
+      "fpu_register_input",
       "special_crt_function"
     ],
     "total_lines": 9
@@ -61,6 +62,27 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 5,
+      "match": "in_ST0",
+      "text": "float10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 7,
+      "match": "in_ST0",
+      "text": "return in_ST0 / in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 7,
+      "match": "in_ST0",
+      "text": "return in_ST0 / in_ST0;",
+      "type": "fpu_register_input"
+    },
     {
       "address": "00606a97",
       "crt_type": "runtime support",

@@ -98,15 +98,16 @@
   },
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 189,
+    "complexity_score": 344,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 14,
     "pseudocode_lines": 59,
-    "suspect_count": 12,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 205
   },
@@ -311,6 +312,90 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_02f98ad0",
+      "text": "if (0x31 < DAT_02f98ad0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02f98ad0",
+      "text": "iVar4 = DAT_02f98ad0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02f98ad0",
+      "text": "iVar1 = DAT_02f98ad0 * 0x114;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_02f98ad4",
+      "text": "puVar7 = &DAT_02f98ad4 + DAT_02f98ad0 * 0x45;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_02f98ad0",
+      "text": "puVar7 = &DAT_02f98ad4 + DAT_02f98ad0 * 0x45;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_02f98ad0",
+      "text": "DAT_02f98ad0 = DAT_02f98ad0 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_02f98ad0",
+      "text": "DAT_02f98ad0 = DAT_02f98ad0 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_02f9c0bc",
+      "text": "DAT_02f9c0bc = DAT_02f9c0bc + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_02f9c0bc",
+      "text": "DAT_02f9c0bc = DAT_02f9c0bc + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_02f98ad8",
+      "text": "(&DAT_02f98ad8)[iVar4 * 0x45] = DAT_02f9c0bc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_02f9c0bc",
+      "text": "(&DAT_02f98ad8)[iVar4 * 0x45] = DAT_02f9c0bc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_02f98adc",
+      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_02f98adc + iVar1,1,2);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_0000000c",
@@ -360,6 +445,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_02f98ae0",
+      "text": "*(uint *)(&DAT_02f98ae0 + in_stack_0000000c * 4 + iVar1) = g_CurrentGameTime - 0x3c0000;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_00000004",
@@ -367,11 +459,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_02f98ae8",
+      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_02f98ae8 + iVar1,0,0x100);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 59,
       "match": "in_stack_00000008",
       "text": "crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_02f98ae8",
+      "text": "crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
+      "type": "undefined_data"
     }
   ]
 }

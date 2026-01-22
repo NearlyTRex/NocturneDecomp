@@ -194,15 +194,17 @@
   },
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 225,
+    "complexity_score": 285,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 37,
     "pseudocode_lines": 145,
-    "suspect_count": 7,
+    "suspect_count": 12,
     "suspect_types": [
       "format_string_mismatch",
-      "stack_param"
+      "nonstandard_int",
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 496
   },
@@ -656,11 +658,39 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_03653cc0",
+      "text": "crt_stdio_c_fread_FUN_005fd990(&DAT_03653cc0,0x300,1,file);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 77,
       "match": "in_stack_0000000c",
       "text": "local_30 = in_stack_0000000c * 0x3000;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_03365cc0",
+      "text": "*(uint *)(&DAT_03365cc0 + iVar5) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 89,
+      "match": "uint3",
+      "text": "(uint)*(uint3 *)(&DAT_03653cc0 +",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_03653cc0",
+      "text": "(uint)*(uint3 *)(&DAT_03653cc0 +",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -675,6 +705,13 @@
       "match": "in_stack_0000000c",
       "text": "iVar6 = iVar5 * 0x100 + in_stack_0000000c * 0x3000;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_03365cc0",
+      "text": "*(uint *)(&DAT_03365cc0 + iVar6) = 0xff00ff;",
+      "type": "undefined_data"
     },
     {
       "actual_args": 0,

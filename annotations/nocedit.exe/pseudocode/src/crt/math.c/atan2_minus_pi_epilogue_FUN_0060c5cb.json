@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 20,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 5,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "fpu_register_input",
       "special_math_intrinsic"
     ],
     "total_lines": 15
@@ -69,6 +70,20 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 5,
+      "match": "in_ST0",
+      "text": "float10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 7,
+      "match": "in_ST0",
+      "text": "return -(3.1415927f - in_ST0);",
+      "type": "fpu_register_input"
+    },
     {
       "address": "0060c5cb",
       "description": "Math library function with FPU stack or unusual patterns",

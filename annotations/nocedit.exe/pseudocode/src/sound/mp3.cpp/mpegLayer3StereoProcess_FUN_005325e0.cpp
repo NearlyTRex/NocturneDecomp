@@ -169,7 +169,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
                 else {
                   sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
                             (*(int *)((int)&uStack_57a + iVar11) >> 0x10,
-                             (double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14);
+                             (double)CONCAT44(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14);
                 }
               }
               iVar11 = iVar11 + 2;
@@ -255,7 +255,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
                     else {
                       sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
                                 (*(int *)((int)&uStack_57a + iVar11) >> 0x10,
-                                 (double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14)
+                                 (double)CONCAT44(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14)
                       ;
                     }
                   }
@@ -347,7 +347,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
                   else {
                     sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
                               (*(int *)((int)&uStack_57a + iVar11) >> 0x10,
-                               (double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14);
+                               (double)CONCAT44(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14);
                   }
                 }
                 iVar11 = iVar11 + 2;
@@ -430,7 +430,7 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
                     else {
                       sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
                                 (*(int *)((int)&uStack_57a + iVar11) >> 0x10,
-                                 (double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14)
+                                 (double)CONCAT44(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14)
                       ;
                     }
                   }

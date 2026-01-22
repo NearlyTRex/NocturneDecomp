@@ -62,13 +62,14 @@
   },
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 7,
     "pseudocode_lines": 36,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "builtin_function",
       "unaffected_reg"
     ],
     "total_lines": 155
@@ -311,6 +312,13 @@
       "match": "unaff_EBX",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra builtin function",
+      "line": 19,
+      "match": "builtin_strncpy",
+      "text": "builtin_strncpy(local_170,\"/\\x1aU\",4);",
+      "type": "builtin_function"
     },
     {
       "description": "Unaffected register variable",

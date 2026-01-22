@@ -162,7 +162,7 @@ void __cdecl shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0(CPoly *this_ptr
   if (local_2e8 < 0.0) {
     local_2e8 = -local_2e8;
   }
-  if (local_2e8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {
+  if (local_2e8 < (double)CONCAT44(uStack_2ec,local_2f0)) {
     local_2f0 = (uint)local_2e8;
     uStack_2ec = local_2e8._4_4_;
     local_b0 = local_f0 * local_118 - local_e8 * local_120;
@@ -204,7 +204,7 @@ void __cdecl shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0(CPoly *this_ptr
   if (local_2a8 < 0.0) {
     local_2a8 = -local_2a8;
   }
-  if (local_2a8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {
+  if (local_2a8 < (double)CONCAT44(uStack_2ec,local_2f0)) {
     (this_ptr->normal).x = local_210 * dVar5 - local_208 * dVar4;
     (this_ptr->normal).y = local_208 * dVar3 - local_218 * dVar5;
     (this_ptr->normal).z = local_218 * dVar4 - local_210 * dVar3;

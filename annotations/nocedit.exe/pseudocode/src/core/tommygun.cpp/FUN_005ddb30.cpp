@@ -112,7 +112,7 @@ uint core_tommygun_cpp_FUN_005ddb30(void)
     pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((pCVar5 != (CDemonActor *)0x0) &&
-       (iVar4 = (*pCVar5->vtable[1].hasCollision)(pCVar5,SUB84 /* extract 2-byte value */(dVar8,0)), 0 < iVar4)) {
+       (iVar4 = (*pCVar5->vtable[1].hasCollision)(pCVar5,SUB84(dVar8,0)), 0 < iVar4)) {
       pCVar5 = (CDemonActor *)0x0;
     }
     pCStack_18 = (CGlass *)
@@ -141,7 +141,7 @@ uint core_tommygun_cpp_FUN_005ddb30(void)
         }
         else {
           core_trigger_cpp_FUN_005e0aa0();
-          pCVar9 = SUB84 /* extract 2-byte value */(dVar8,0);
+          pCVar9 = SUB84(dVar8,0);
           iVar4 = core_trigger_cpp_FUN_005e0ac0();
           if (iVar4 != 0) {
             (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,pCVar9);

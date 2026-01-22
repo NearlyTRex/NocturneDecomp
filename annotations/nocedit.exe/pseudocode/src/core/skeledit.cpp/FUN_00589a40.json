@@ -85,14 +85,15 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 71,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 15,
     "pseudocode_lines": 21,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
       "unaffected_reg",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 93
@@ -289,6 +290,27 @@
       "match": "unaff_EBX",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"// version\\n\",unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_03670848",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"\\\"%s\\\"\\n\",&DAT_03670848);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_03670950",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"\\\"%s\\\"\\n\",&DAT_03670950);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_03670a58",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"\\\"%s\\\"\\n\",&DAT_03670a58);",
+      "type": "undefined_data"
     }
   ]
 }

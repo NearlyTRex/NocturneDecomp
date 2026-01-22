@@ -15,7 +15,7 @@ HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_se
   int extraout_EAX;
   
   iVar2 = sound_sndmain_cpp_killSoundThread_FUN_005abcb0();
-  dVar1 = (double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);
+  dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);
   if (iVar2 != 0) {
     if (latency_seconds < 0.002) {
       latency_seconds = 0.002;
@@ -39,12 +39,12 @@ HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_se
           dVar1 = g_AudioLatencySeconds;
         } while (iVar2 < 100);
         g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
-        g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);
+        g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);
         return (HANDLE)g_AudioThreadRunning;
       }
     }
   }
   g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
-  g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);
+  g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);
   return (HANDLE)0x0;
 }

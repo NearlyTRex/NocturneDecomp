@@ -68,7 +68,7 @@ void crt_unknown_c_FUN_00603dc8(void)
     local_24 = 0;
     break;
   case 1:
-    iVar10 = (CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44) - 0x3ffe) * 0x7597;
+    iVar10 = (CONCAT11(bStack_43,uStack_44) - 0x3ffe) * 0x7597;
     uVar9 = 100000;
     iVar4 = iVar10 % 100000;
     local_24 = iVar10 / 100000 - 4;
@@ -82,31 +82,31 @@ LAB_00603fc8:
         crt_unknown_c_FUN_00603d60(&local_4c,iVar4,uVar9,uVar6,&local_4c,uVar3);
       }
       else {
-        uVar1 = CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44);
-        iVar4 = CONCAT22 /* combine 2-byte values */(uStack_42,uVar1);
+        uVar1 = CONCAT11(bStack_43,uStack_44);
+        iVar4 = CONCAT22(uStack_42,uVar1);
         if ((uVar1 < 0x4019) || ((uVar1 == 0x4019 && (uStack_48 < 3200000000)))) {
           local_24 = 0;
         }
         else {
-          uVar1 = CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44);
+          uVar1 = CONCAT11(bStack_43,uStack_44);
           if ((0x4033 < uVar1) &&
-             ((uVar6 = CONCAT22 /* combine 2-byte values */(uStack_42,uVar1), uVar1 != 0x4034 ||
+             ((uVar6 = CONCAT22(uStack_42,uVar1), uVar1 != 0x4034 ||
               ((0x8e1bc9be < uStack_48 &&
                ((uVar6 = uStack_48, uStack_48 != 0x8e1bc9bf || (0x3ffffff < local_4c)))))))) {
             local_24 = local_24 & 0xfffffffc;
             uVar3 = -local_24;
             goto LAB_00603fc8;
           }
-          _local_40 = (float10)CONCAT28 /* combine 2-byte values */(0x4019,0xbebc200000000000);
+          _local_40 = (float10)CONCAT28(0x4019,0xbebc200000000000);
           _local_40 = (float10)((unkuint10)stack0xffffffc4 << 0x20);
-          iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,
-                                                CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) /
+          iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,
+                                                CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) /
                               _local_40);
           local_34 = (float10)iVar11;
           _local_40 = _local_40 * (float10)iVar11;
-          fVar12 = (float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -
+          fVar12 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -
                    _local_40;
-          local_4c = SUB104 /* extract 3-byte value */(fVar12,0);
+          local_4c = SUB104(fVar12,0);
           uStack_48 = (uint)((unkuint10)fVar12 >> 0x20);
           uStack_44 = (byte)((unkuint10)fVar12 >> 0x40);
           bStack_43 = (byte)((unkuint10)fVar12 >> 0x48);
@@ -161,19 +161,19 @@ LAB_006040c9:
       crt_unknown_c_FUN_0060411c();
       return;
     }
-    if ((CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44) & 0x7fff) != 0) {
-      iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,
-                                            CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))));
+    if ((CONCAT11(bStack_43,uStack_44) & 0x7fff) != 0) {
+      iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,
+                                            CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))));
       puVar8 = local_1c;
       if (0 < (int)local_1c) {
         puVar8 = auStack_58;
-        _auStack_58 = (float10)CONCAT28 /* combine 2-byte values */(0x4019,0xbebc200000000000);
+        _auStack_58 = (float10)CONCAT28(0x4019,0xbebc200000000000);
         puVar7 = (byte *)0x0;
         _auStack_58 = (float10)((unkuint10)stack0xffffffac << 0x20);
         fVar12 = _auStack_58 *
-                 ((float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -
+                 ((float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -
                  (float10)iVar11);
-        local_4c = SUB104 /* extract 3-byte value */(fVar12,0);
+        local_4c = SUB104(fVar12,0);
         uStack_48 = (uint)((unkuint10)fVar12 >> 0x20);
         uStack_44 = (byte)((unkuint10)fVar12 >> 0x40);
         bStack_43 = (byte)((unkuint10)fVar12 >> 0x48);

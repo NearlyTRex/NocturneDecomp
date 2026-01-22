@@ -1745,7 +1745,7 @@ LAB_00595723:
               iVar13 = (int)local_cc - (int)local_94;
               bVar25 = local_cc == local_94;
               fVar16 = local_cc;
-              while (bVar25 || SBORROW /* signed borrow */4((int)fVar16,(int)local_94) != iVar13 < 0) {
+              while (bVar25 || SBORROW4((int)fVar16,(int)local_94) != iVar13 < 0) {
                 iVar13 = local_ec->frame_start + (int)fVar16;
                 pCVar8 = in_stack_00000004->frame_positions_2;
                 pCVar8[iVar13].x = pCVar8[iVar13].x + local_1ec;

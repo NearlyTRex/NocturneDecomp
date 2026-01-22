@@ -85,7 +85,7 @@ shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50
                                          (uint)*(byte *)(iVar8 + (int)pvVar3) *
                                          (uint)*(byte *)(iVar8 + (int)pvVar3))) * 0.57735027000000005);
         local_2c = (int)ROUND(dVar11);
-        local_1c = CONCAT31 /* combine 2-byte values */(local_1c._1_3_,(byte)local_2c);
+        local_1c = CONCAT31(local_1c._1_3_,(byte)local_2c);
         *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = local_18;
         *(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) =
              (char)((ushort)extraout_CX >> 8);

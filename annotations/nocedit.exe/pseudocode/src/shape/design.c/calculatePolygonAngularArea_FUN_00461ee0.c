@@ -79,11 +79,11 @@ shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon *pol
     shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_94);
     shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_7c);
     dVar5 = shape_design_c_clampedArccos_FUN_00461c50
-                      ((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff64,
+                      ((double)CONCAT44(in_stack_ffffff64,
                                         (int)((ulonglong)
                                               (local_84 * local_6c +
                                               local_94 * local_7c + local_8c * local_74) >> 0x20)));
-    in_stack_ffffff64 = SUB84 /* extract 2-byte value */(dVar5,0);
+    in_stack_ffffff64 = SUB84(dVar5,0);
     uStack_98 = (uint)((ulonglong)dVar5 >> 0x20);
     local_28 = dVar5 + local_28;
   }

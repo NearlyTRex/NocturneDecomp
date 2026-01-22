@@ -182,12 +182,12 @@
   },
   "complexity": {
     "assembly_lines": 714,
-    "complexity_score": 993,
+    "complexity_score": 1023,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 22,
     "pseudocode_lines": 303,
-    "suspect_count": 65,
+    "suspect_count": 68,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -885,11 +885,32 @@
       "type": "suspect_float"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "NAN",
+      "text": "local_a4.y = -NAN;",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 76,
       "match": "5.60519e-45",
       "text": "local_a4.y = 5.60519e-45;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "NAN",
+      "text": "local_a4.y = -NAN;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 84,
+      "match": "NAN",
+      "text": "local_a4.y = -NAN;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",

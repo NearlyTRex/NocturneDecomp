@@ -218,14 +218,15 @@
   },
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 321,
+    "complexity_score": 366,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 39,
     "pseudocode_lines": 101,
-    "suspect_count": 21,
+    "suspect_count": 25,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 343
@@ -635,6 +636,34 @@
       "match": "in_stack_00000004",
       "text": "pCVar1 = &(in_stack_00000004->base_character).model;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_02c6d0a0",
+      "text": "DAT_02c6d0a0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 Head\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_02c6d0a8",
+      "text": "DAT_02c6d0a8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 R Hand\")",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_02c6d0b4",
+      "text": "DAT_02c6d0b4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 Spine\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_02c6d0bc",
+      "text": "DAT_02c6d0bc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,\"Bip01 Spine2\")",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

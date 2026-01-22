@@ -18,7 +18,7 @@ double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
   ushort uStack_1a;
   uint uStack_18;
   
-  local_20 = SUB82 /* extract 2-byte value */(x,0);
+  local_20 = SUB82(x,0);
   uStack_1e = (ushort)((ulonglong)x >> 0x10);
   if ((((ulonglong)x & 0x7fffffff) != 0) || (in_stack_00000004 != 0)) {
     if ((longlong)x < 0x3e8100000000) {
@@ -39,8 +39,8 @@ double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
     if (0x7fe < iVar2) {
       crt_math_c_set_range_error_errno_FUN_006027ac();
       if ((short)uStack_1e < 1) {
-        dVar1 = -(double)CONCAT44 /* combine 2-byte values */(INFINITY._4_4_,INFINITY._0_4_);
-        local_1c = SUB82 /* extract 2-byte value */(dVar1,0);
+        dVar1 = -(double)CONCAT44(INFINITY._4_4_,INFINITY._0_4_);
+        local_1c = SUB82(dVar1,0);
         uStack_1a = (ushort)((ulonglong)dVar1 >> 0x10);
         uStack_18 = (uint)((ulonglong)dVar1 >> 0x20);
       }
@@ -55,7 +55,7 @@ double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
   }
   local_1c = (ushort)in_stack_00000004;
   uStack_1a = (ushort)((uint)in_stack_00000004 >> 0x10);
-  uStack_18 = CONCAT22 /* combine 2-byte values */(uStack_1e,local_20);
+  uStack_18 = CONCAT22(uStack_1e,local_20);
 LAB_006000b6:
-  return (double)CONCAT44 /* combine 2-byte values */(uStack_18,CONCAT22 /* combine 2-byte values */(uStack_1a,local_1c));
+  return (double)CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c));
 }

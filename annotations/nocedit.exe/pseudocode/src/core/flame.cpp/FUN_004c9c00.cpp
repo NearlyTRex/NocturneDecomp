@@ -84,7 +84,7 @@ void core_flame_cpp_FUN_004c9c00(void)
       if (extraout_EAX == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  ((char *)((int)&uStack_fc + 4),"torch.wav * %f",SUB84 /* extract 2-byte value */((double)local_14,0),
+                  ((char *)((int)&uStack_fc + 4),"torch.wav * %f",SUB84((double)local_14,0),
                    (int)((ulonglong)(double)local_14 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         iVar2 = 2;

@@ -41,18 +41,18 @@ float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
       }
       exponent = (ushort)bVar2 << 8;
 LAB_005ffe01:
-      uVar7 = SUB86 /* extract 2-byte value */((double)exp,0);
+      uVar7 = SUB86((double)exp,0);
       if (0xff < (ushort)(((ushort)((ulonglong)(double)exp >> 0x30) & 0x7ff0) + 0xc010))
       goto LAB_005ffe88;
       uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);
       if (uStack_6 == 0) {
-        fVar3 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar7,uVar6),exponent);
+        fVar3 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64(uVar7,uVar6),exponent);
         fVar4 = exp;
       }
       else {
         if ((uStack_6 != -1) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))
         goto LAB_005ffe88;
-        fVar4 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar7,uVar6),exponent);
+        fVar4 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64(uVar7,uVar6),exponent);
         if (((byte)g_UseSoftwareMath & 1) == 0) {
           fVar3 = (float10)1 / fVar4;
           fVar4 = exp;
@@ -65,7 +65,7 @@ LAB_005ffe01:
       dVar1 = (double)fVar3;
       sStack_a = (short)((ulonglong)dVar1 >> 0x10);
       sStack_8 = (short)((ulonglong)dVar1 >> 0x20);
-      if (((SUB82 /* extract 2-byte value */(dVar1,0) != 0 || sStack_a != 0) || sStack_8 != 0) ||
+      if (((SUB82(dVar1,0) != 0 || sStack_a != 0) || sStack_8 != 0) ||
          (uStack_6 = (ushort)((ulonglong)dVar1 >> 0x30), exp = fVar4, (uStack_6 & 0x7fff) != 0x7ff0)
          ) goto LAB_005ffea7;
     }

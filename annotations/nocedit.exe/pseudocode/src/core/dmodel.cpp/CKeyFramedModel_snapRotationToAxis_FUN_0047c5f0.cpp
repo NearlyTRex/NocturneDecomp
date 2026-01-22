@@ -56,7 +56,7 @@ core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   crt_math_c_round_FUN_005fe6b0((double)((float10)rotation_angles->x * fVar10 * fVar11));
   uVar19 = 0x47c65d;
   crt_math_c_round_FUN_005fe6b0((double)fVar12);
-  uVar18 = CONCAT44 /* combine 2-byte values */(uVar19,0x47c678);
+  uVar18 = CONCAT44(uVar19,0x47c678);
   dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
   fVar5 = (float)((int)ROUND(dVar16) + 0x2000U & 0xc000);
   fVar10 = (float10)3.0517578125e-05;
@@ -81,7 +81,7 @@ core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   iVar6 = 0;
   local_48 = (float)(fVar12 * (float10)fVar2 + -(float10)fVar4 * (float10)fVar3);
   while( true ) {
-    fVar21 = SUB84 /* extract 2-byte value */(value,0);
+    fVar21 = SUB84(value,0);
     if (this_ptr->vertex_count * this_ptr->frame_count < 1) break;
     piVar7 = (int *)((int)this_ptr->vertex_list + iVar6);
     piVar8 = piVar7 + (uint)bVar9 * -2 + 1;
@@ -109,7 +109,7 @@ core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
     *(int *)(extraout_EAX_00 + extraout_EBX_00 + 4) = (int)ROUND(dVar17);
     dVar16 = crt_math_c_floor_FUN_005feb90((double)(fVar15 + fVar10 + (float10)0.5));
     iVar6 = extraout_EBX_01 + 0xc;
-    uVar18 = CONCAT44 /* combine 2-byte values */(uVar19,0x47c90a);
+    uVar18 = CONCAT44(uVar19,0x47c90a);
     dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
     local_44 = (float)(int)ROUND(dVar16);
     local_48 = (float)((int)local_48 + 1);

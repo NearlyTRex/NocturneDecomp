@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 951,
+    "complexity_score": 1036,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 246,
-    "suspect_count": 69,
+    "suspect_count": 77,
     "suspect_types": [
       "decompiler_intrinsic",
       "special_crt_function",
-      "stack_param"
+      "stack_param",
+      "unknown_type"
     ],
     "total_lines": 492
   },
@@ -314,99 +315,127 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "CONCAT11",
-      "text": "iVar10 = (CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44) - 0x3ffe) * 0x7597;",
+      "text": "iVar10 = (CONCAT11(bStack_43,uStack_44) - 0x3ffe) * 0x7597;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44);",
+      "text": "uVar1 = CONCAT11(bStack_43,uStack_44);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "CONCAT22",
-      "text": "iVar4 = CONCAT22 /* combine 2-byte values */(uStack_42,uVar1);",
+      "text": "iVar4 = CONCAT22(uStack_42,uVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44);",
+      "text": "uVar1 = CONCAT11(bStack_43,uStack_44);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "CONCAT22",
-      "text": "((uVar6 = CONCAT22 /* combine 2-byte values */(uStack_42,uVar1), uVar1 != 0x4034 ||",
+      "text": "((uVar6 = CONCAT22(uStack_42,uVar1), uVar1 != 0x4034 ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "CONCAT28",
-      "text": "_local_40 = (float10)CONCAT28 /* combine 2-byte values */(0x4019,0xbebc200000000000);",
+      "text": "_local_40 = (float10)CONCAT28(0x4019,0xbebc200000000000);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 94,
+      "match": "unkuint10",
+      "text": "_local_40 = (float10)((unkuint10)stack0xffffffc4 << 0x20);",
+      "type": "unknown_type"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 95,
       "match": "ROUND",
-      "text": "iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,",
+      "text": "iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 95,
       "match": "CONCAT19",
-      "text": "iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,",
+      "text": "iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "CONCAT18",
-      "text": "CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) /",
+      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "CONCAT44",
-      "text": "CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) /",
+      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 100,
       "match": "CONCAT19",
-      "text": "fVar12 = (float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
+      "text": "fVar12 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 100,
       "match": "CONCAT18",
-      "text": "fVar12 = (float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
+      "text": "fVar12 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 100,
       "match": "CONCAT44",
-      "text": "fVar12 = (float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
+      "text": "fVar12 = (float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "SUB104",
-      "text": "local_4c = SUB104 /* extract 3-byte value */(fVar12,0);",
+      "text": "local_4c = SUB104(fVar12,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 103,
+      "match": "unkuint10",
+      "text": "uStack_48 = (uint)((unkuint10)fVar12 >> 0x20);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 104,
+      "match": "unkuint10",
+      "text": "uStack_44 = (byte)((unkuint10)fVar12 >> 0x40);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 105,
+      "match": "unkuint10",
+      "text": "bStack_43 = (byte)((unkuint10)fVar12 >> 0x48);",
+      "type": "unknown_type"
     },
     {
       "description": "Unresolved stack parameter",
@@ -517,71 +546,99 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 157,
       "match": "CONCAT11",
-      "text": "if ((CONCAT11 /* combine 2-byte values */(bStack_43,uStack_44) & 0x7fff) != 0) {",
+      "text": "if ((CONCAT11(bStack_43,uStack_44) & 0x7fff) != 0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 158,
       "match": "ROUND",
-      "text": "iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,",
+      "text": "iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 158,
       "match": "CONCAT19",
-      "text": "iVar11 = (int)ROUND((float10)CONCAT19 /* combine 2-byte values */(bStack_43,",
+      "text": "iVar11 = (int)ROUND((float10)CONCAT19(bStack_43,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "CONCAT18",
-      "text": "CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))));",
+      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "CONCAT44",
-      "text": "CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))));",
+      "text": "CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 163,
       "match": "CONCAT28",
-      "text": "_auStack_58 = (float10)CONCAT28 /* combine 2-byte values */(0x4019,0xbebc200000000000);",
+      "text": "_auStack_58 = (float10)CONCAT28(0x4019,0xbebc200000000000);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 165,
+      "match": "unkuint10",
+      "text": "_auStack_58 = (float10)((unkuint10)stack0xffffffac << 0x20);",
+      "type": "unknown_type"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 167,
       "match": "CONCAT19",
-      "text": "((float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
+      "text": "((float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 167,
       "match": "CONCAT18",
-      "text": "((float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
+      "text": "((float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 167,
       "match": "CONCAT44",
-      "text": "((float10)CONCAT19 /* combine 2-byte values */(bStack_43,CONCAT18 /* combine 2-byte values */(uStack_44,CONCAT44 /* combine 2-byte values */(uStack_48,local_4c))) -",
+      "text": "((float10)CONCAT19(bStack_43,CONCAT18(uStack_44,CONCAT44(uStack_48,local_4c))) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 169,
       "match": "SUB104",
-      "text": "local_4c = SUB104 /* extract 3-byte value */(fVar12,0);",
+      "text": "local_4c = SUB104(fVar12,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 170,
+      "match": "unkuint10",
+      "text": "uStack_48 = (uint)((unkuint10)fVar12 >> 0x20);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 171,
+      "match": "unkuint10",
+      "text": "uStack_44 = (byte)((unkuint10)fVar12 >> 0x40);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 172,
+      "match": "unkuint10",
+      "text": "bStack_43 = (byte)((unkuint10)fVar12 >> 0x48);",
+      "type": "unknown_type"
     },
     {
       "description": "Unresolved stack parameter",

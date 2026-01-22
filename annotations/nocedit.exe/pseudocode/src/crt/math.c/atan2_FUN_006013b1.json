@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 26,
+    "complexity_score": 41,
     "cross_reference_count": 12,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 11,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "decompiler_intrinsic",
       "special_math_intrinsic"
     ],
     "total_lines": 24
@@ -144,6 +145,13 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 8,
+      "match": "fpatan",
+      "text": "fVar1 = (float10)fpatan(y,x);",
+      "type": "decompiler_intrinsic"
+    },
     {
       "address": "006013b1",
       "description": "Math library function with FPU stack or unusual patterns",

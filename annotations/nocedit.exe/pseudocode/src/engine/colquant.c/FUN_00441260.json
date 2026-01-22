@@ -84,7 +84,7 @@
       },
       {
         "category": "other",
-        "column": 99,
+        "column": 71,
         "line": 66,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -96,7 +96,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 54,
         "line": 70,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -162,7 +162,7 @@
       },
       {
         "category": "other",
-        "column": 85,
+        "column": 57,
         "line": 86,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -761,21 +761,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "SUB84",
-      "text": "local_70 = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "text": "local_70 = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "SUB84",
-      "text": "local_50 = SUB84 /* extract 2-byte value */(dVar11,0);",
+      "text": "local_50 = SUB84(dVar11,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "SUB84",
-      "text": "local_78 = SUB84 /* extract 2-byte value */(dVar12,0);",
+      "text": "local_78 = SUB84(dVar12,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -803,7 +803,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 59,
       "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74) / (double)*(uint *)(iVar8 + 0x4044));",
+      "text": "((double)CONCAT44(local_70,uStack_74) / (double)*(uint *)(iVar8 + 0x4044));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -817,35 +817,35 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58) /",
+      "text": "((double)CONCAT44(uStack_54,local_58) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 63,
       "match": "extraout_ECX",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX,*(uint *)(iVar8 + 0x4044)));",
+      "text": "(double)CONCAT44(extraout_ECX,*(uint *)(iVar8 + 0x4044)));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX,*(uint *)(iVar8 + 0x4044)));",
+      "text": "(double)CONCAT44(extraout_ECX,*(uint *)(iVar8 + 0x4044)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 64,
       "match": "extraout_ECX_00",
-      "text": "dVar11 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,local_78);",
+      "text": "dVar11 = (double)CONCAT44(extraout_ECX_00,local_78);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "CONCAT44",
-      "text": "dVar11 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,local_78);",
+      "text": "dVar11 = (double)CONCAT44(extraout_ECX_00,local_78);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -915,21 +915,21 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 74,
       "match": "extraout_ECX_00",
-      "text": "local_68 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,extraout_ECX_00);",
+      "text": "local_68 = (double)CONCAT44(extraout_ECX_00,extraout_ECX_00);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 74,
       "match": "extraout_ECX_00",
-      "text": "local_68 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,extraout_ECX_00);",
+      "text": "local_68 = (double)CONCAT44(extraout_ECX_00,extraout_ECX_00);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "CONCAT44",
-      "text": "local_68 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,extraout_ECX_00);",
+      "text": "local_68 = (double)CONCAT44(extraout_ECX_00,extraout_ECX_00);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -943,35 +943,35 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 76,
       "match": "extraout_ECX_00",
-      "text": "uStack_a0 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,0x441433);",
+      "text": "uStack_a0 = (double)CONCAT44(extraout_ECX_00,0x441433);",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "CONCAT44",
-      "text": "uStack_a0 = (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,0x441433);",
+      "text": "uStack_a0 = (double)CONCAT44(extraout_ECX_00,0x441433);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_50,uStack_54) /",
+      "text": "((double)CONCAT44(local_50,uStack_54) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 79,
       "match": "extraout_ECX_00",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,*(uint *)(iVar8 + 0x4044)));",
+      "text": "(double)CONCAT44(extraout_ECX_00,*(uint *)(iVar8 + 0x4044)));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,*(uint *)(iVar8 + 0x4044)));",
+      "text": "(double)CONCAT44(extraout_ECX_00,*(uint *)(iVar8 + 0x4044)));",
       "type": "decompiler_intrinsic"
     },
     {

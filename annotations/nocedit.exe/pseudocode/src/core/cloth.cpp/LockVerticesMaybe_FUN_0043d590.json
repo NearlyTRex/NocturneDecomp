@@ -93,7 +93,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 66,
+        "column": 38,
         "line": 280,
         "message": "'extraout_var' was not declared in this scope"
       },
@@ -524,14 +524,15 @@
   },
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 955,
+    "complexity_score": 980,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 31,
     "pseudocode_lines": 305,
-    "suspect_count": 62,
+    "suspect_count": 64,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
@@ -1122,6 +1123,13 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
@@ -1535,10 +1543,17 @@
       "type": "stack_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 273,
+      "match": "extraout_var",
+      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar4);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 273,
       "match": "CONCAT31",
-      "text": "g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar4);",
+      "text": "g_ActiveRenderColor = CONCAT31(extraout_var,uVar4);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -35,7 +35,7 @@ ulonglong crt_math_c_udivmod64_FUN_0060d3ed(ulonglong dividend,ulonglong divisor
         uVar1 = (uint)((ulonglong)uVar5 / (divisor & 0xffffffff));
         uVar5 = (uint)((ulonglong)uVar5 % (divisor & 0xffffffff));
       }
-      dividend = CONCAT44 /* combine 2-byte values */(uVar1,(int)(CONCAT44 /* combine 2-byte values */(uVar5,(uint)dividend) / (divisor & 0xffffffff)));
+      dividend = CONCAT44(uVar1,(int)(CONCAT44(uVar5,(uint)dividend) / (divisor & 0xffffffff)));
     }
     return dividend;
   }
@@ -53,11 +53,11 @@ ulonglong crt_math_c_udivmod64_FUN_0060d3ed(ulonglong dividend,ulonglong divisor
     uVar8 = (uint)divisor;
     uVar9 = uVar8 * 2;
     uVar4 = uVar3 * 2 + (uint)CARRY4(uVar8,uVar8);
-    divisor = CONCAT44 /* combine 2-byte values */(uVar4,uVar9);
+    divisor = CONCAT44(uVar4,uVar9);
     bVar12 = true;
     if (CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)CARRY4(uVar8,uVar8))) goto LAB_0060d44d;
     iVar10 = iVar10 + 1;
-  } while (CONCAT44 /* combine 2-byte values */(uVar4,uVar9) <= dividend);
+  } while (CONCAT44(uVar4,uVar9) <= dividend);
   bVar12 = false;
   while( true ) {
     bVar13 = CARRY4(uVar11,uVar11);
@@ -77,7 +77,7 @@ LAB_0060d44d:
     uVar3 = (uint)((uint)dividend < uVar9);
     uVar8 = uVar6 - uVar4;
     uVar7 = uVar8 - uVar3;
-    dividend = CONCAT44 /* combine 2-byte values */(uVar7,uVar2);
+    dividend = CONCAT44(uVar7,uVar2);
     bVar12 = true;
     if (uVar6 < uVar4 || uVar8 < uVar3) {
       do {
@@ -96,10 +96,10 @@ LAB_0060d44d:
         uVar8 = uVar7 + uVar4;
         bVar12 = bVar13 || CARRY4(uVar8,uVar3);
         uVar7 = uVar8 + uVar3;
-        dividend = CONCAT44 /* combine 2-byte values */(uVar7,uVar2);
+        dividend = CONCAT44(uVar7,uVar2);
       } while (!bVar13 && !CARRY4(uVar8,uVar3));
     }
   }
 LAB_0060d46f:
-  return CONCAT44 /* combine 2-byte values */(uVar5,uVar11);
+  return CONCAT44(uVar5,uVar11);
 }

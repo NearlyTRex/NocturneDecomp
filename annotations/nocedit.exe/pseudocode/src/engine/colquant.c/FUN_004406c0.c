@@ -182,7 +182,7 @@ int * engine_colquant_c_FUN_004406c0(void)
       piVar5 = in_stack_00000004;
       if (0 < (int)uVar8) {
         do {
-          if ((double)CONCAT44 /* combine 2-byte values */(iStack_15c,local_160) < *(double *)(piVar5 + 0x1014)) {
+          if ((double)CONCAT44(iStack_15c,local_160) < *(double *)(piVar5 + 0x1014)) {
             local_160 = piVar5[0x1014];
             iStack_15c = piVar5[0x1015];
             local_158 = piVar5[0x101e];
@@ -193,23 +193,23 @@ int * engine_colquant_c_FUN_004406c0(void)
           piVar5 = piVar5 + 0x10;
         } while (iVar4 <= (int)uVar8);
       }
-      if ((double)CONCAT44 /* combine 2-byte values */(iStack_154,local_158) !=
+      if ((double)CONCAT44(iStack_154,local_158) !=
           *(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x1006)) break;
       engine_colquant_c_FUN_00440b40();
 LAB_0044091a:
       uVar8 = uVar8 + 1;
     }
-    if ((double)CONCAT44 /* combine 2-byte values */(iStack_154,local_158) ==
+    if ((double)CONCAT44(iStack_154,local_158) ==
         *(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x1008)) {
       engine_colquant_c_FUN_00440c80();
       goto LAB_0044091a;
     }
-    if ((double)CONCAT44 /* combine 2-byte values */(iStack_154,local_158) ==
+    if ((double)CONCAT44(iStack_154,local_158) ==
         *(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x100a)) {
       engine_colquant_c_FUN_00440dc0();
       goto LAB_0044091a;
     }
-    if ((double)CONCAT44 /* combine 2-byte values */(iStack_154,local_158) !=
+    if ((double)CONCAT44(iStack_154,local_158) !=
         *(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x100c)) goto LAB_0044091a;
     engine_colquant_c_FUN_00440f00();
     uVar8 = uVar8 + 1;

@@ -104,14 +104,15 @@
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 200,
+    "complexity_score": 295,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 23,
     "pseudocode_lines": 75,
-    "suspect_count": 12,
+    "suspect_count": 21,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 258
   },
@@ -381,6 +382,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0310f4ac",
+      "text": "DAT_0310f4ac = 0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
@@ -393,6 +401,13 @@
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\\0')) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_0310eca0",
+      "text": "pcVar4 = &DAT_0310eca0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -402,11 +417,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_0310f4ac",
+      "text": "DAT_0310f4ac = 1;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000004",
       "text": "(&DAT_0310eca0,\"Actor variable %s not defined, or doesn't reference an existing actor\",in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_0310eca0",
+      "text": "(&DAT_0310eca0,\"Actor variable %s not defined, or doesn't reference an existing actor\",in_stack_00000004);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -416,11 +445,39 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_0310eca0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,\"Can't use '$' actor specifier in multi-player\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_0310f4ac",
+      "text": "DAT_0310f4ac = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_0310eca0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,\"Hero doesn't exist!!?!\");",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 65,
       "match": "in_stack_00000004",
       "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" does not exist.\",in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_0310eca0",
+      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" does not exist.\",in_stack_00000004);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -435,6 +492,13 @@
       "match": "in_stack_00000004",
       "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",in_stack_00000004,pcVar3,",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_0310eca0",
+      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",in_stack_00000004,pcVar3,",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

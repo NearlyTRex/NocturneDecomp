@@ -146,12 +146,12 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 347,
+    "complexity_score": 362,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 62,
-    "suspect_count": 24,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -159,6 +159,7 @@
       "register_param",
       "stack_param",
       "unaffected_reg",
+      "undefined_data",
       "unresolved_funcptr",
       "warning_indirect_jump",
       "warning_jumptable"
@@ -476,6 +477,13 @@
       "match": "code *",
       "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_00679d50",
+      "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))(uVar3,uVar2,unaff_EBX);",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 4,

@@ -134,7 +134,7 @@ shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0
           (((double)point_count * local_e8 * local_e8 -
            local_e8 * 2 * local_e0 * local_f0) -
           local_d0 * (double)point_count * local_c0);
-  local_a0 = SUB84 /* extract 2-byte value */(dVar4,0);
+  local_a0 = SUB84(dVar4,0);
   if ((((ulonglong)dVar4 & 0x7fffffff00000000) == 0) && (local_a0 == 0)) {
     out_gradient->z = 0.0;
     out_gradient->y = out_gradient->z;

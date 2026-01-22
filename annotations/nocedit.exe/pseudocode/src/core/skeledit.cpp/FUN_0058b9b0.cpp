@@ -71,12 +71,12 @@ uint core_skeledit_cpp_FUN_0058b9b0(void)
         iVar2 = iVar2 + 4;
       } while (iVar2 != 0xc);
       dVar8 = crt_math_c_floor_FUN_005feb90((double)((local_24 + 4.0) * (float)0.00390625));
-      local_34 = SUB84 /* extract 2-byte value */(dVar8,0);
+      local_34 = SUB84(dVar8,0);
       local_30 = (int)((ulonglong)dVar8 >> 0x20);
       local_28 = (float)((float10)dVar8 * (float10)256);
       dVar8 = crt_math_c_floor_FUN_005feb90
                         ((double)((local_1c + local_20) * (float)0.00390625));
-      local_38 = SUB84 /* extract 2-byte value */(dVar8,0);
+      local_38 = SUB84(dVar8,0);
       local_34 = (uint)((ulonglong)dVar8 >> 0x20);
       local_20 = (float)((float10)dVar8 * (float10)256);
       if (local_30 < 0) {
@@ -114,7 +114,7 @@ uint core_skeledit_cpp_FUN_0058b9b0(void)
           local_14 = 0xffff;
         }
         puVar3 = (ushort *)(extraout_ECX + 2);
-        *(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_20,0);
+        *(short *)(extraout_ECX + 6) = SUB42(local_20,0);
         iVar2 = extraout_EDX + 4;
         *(short *)(extraout_ECX + 0xc) = (short)local_14;
       } while (iVar2 != 0xc);

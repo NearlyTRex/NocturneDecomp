@@ -404,17 +404,19 @@
   },
   "complexity": {
     "assembly_lines": 637,
-    "complexity_score": 1718,
+    "complexity_score": 1808,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 17,
     "pseudocode_lines": 368,
-    "suspect_count": 132,
+    "suspect_count": 140,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
       "stack_ref",
+      "undefined_data",
+      "unknown_type",
       "unresolved_funcptr",
       "warning_unreachable"
     ],
@@ -1172,6 +1174,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Unknown/unresolved type",
+      "line": 29,
+      "match": "unkbyte10",
+      "text": "unkbyte10 extraout_ST3;",
+      "type": "unknown_type"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
@@ -1278,6 +1287,20 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 109,
+      "match": "fsin",
+      "text": "fsin((float10)-0.52359877558333301);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 110,
+      "match": "fptan",
+      "text": "fptan((float10)0.52359877558333301);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 114,
       "match": "SQRT",
       "text": "fVar3 = SQRT(local_ec * local_ec + local_e4 * local_e4);",
@@ -1289,6 +1312,27 @@
       "match": "extraout_ST3",
       "text": "fVar12 = (float10)fcos(extraout_ST3);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 115,
+      "match": "fcos",
+      "text": "fVar12 = (float10)fcos(extraout_ST3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "fsin",
+      "text": "fVar13 = (float10)fsin(fVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "fcos",
+      "text": "fVar14 = (float10)fcos(fVar14);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1422,6 +1466,13 @@
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_character).base_actor.location.position.z;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 179,
+      "match": "DAT_02d7a7b8",
+      "text": "local_2c = (float)(((int)local_54 >> 1) + DAT_02d7a7b8);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1583,6 +1634,13 @@
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_character).base_actor.location.position.z;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 235,
+      "match": "DAT_02d7a7b8",
+      "text": "local_40 = (float)(((int)local_44 >> 1) + DAT_02d7a7b8);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

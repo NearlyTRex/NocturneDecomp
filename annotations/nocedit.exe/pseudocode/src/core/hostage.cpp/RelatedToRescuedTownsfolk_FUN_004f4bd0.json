@@ -464,16 +464,17 @@
   },
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 4315,
+    "complexity_score": 4350,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
     "pseudocode_lines": 775,
-    "suspect_count": 352,
+    "suspect_count": 355,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "suspect_float",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 2431
@@ -3719,6 +3720,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 708,
+      "match": "DAT_02db8888",
+      "text": "(&pCVar2->motion_controller,DAT_02db8888,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 709,
       "match": "in_stack_00000004",
@@ -3733,6 +3741,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 713,
+      "match": "DAT_02db8888",
+      "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(in_stack_00000004[2].cloth_data + 0x5404),",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 714,
       "match": "in_stack_00000004",
@@ -3745,6 +3760,13 @@
       "match": "in_stack_00000004",
       "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(in_stack_00000004[2].cloth_data + 0x5404),",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 717,
+      "match": "DAT_02db8888",
+      "text": "(pCVar2,DAT_02db8888,local_58,*(float *)(in_stack_00000004[2].cloth_data + 0x5404),",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

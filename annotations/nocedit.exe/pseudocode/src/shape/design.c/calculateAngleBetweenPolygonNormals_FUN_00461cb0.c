@@ -16,7 +16,7 @@ shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0
   uint in_stack_ffffffe0;
   
   dVar1 = shape_design_c_clampedArccos_FUN_00461c50
-                    ((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffffe0,
+                    ((double)CONCAT44(in_stack_ffffffe0,
                                       (int)((ulonglong)
                                             (double)(*(float *)(in_stack_00000004 + 0xb0) *
                                                      (normal1_ptr->normal).z +

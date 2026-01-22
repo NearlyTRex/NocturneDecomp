@@ -36,7 +36,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSl
         dVar5 = crt_math_c_round_FUN_005fe6b0
                           ((double)(pCVar3->distance_to_speakers[0] * (float)local_20));
         iVar4 = (int)ROUND(dVar5);
-        local_20 = (double)CONCAT44 /* combine 2-byte values */(iVar4,0x5a6eb0);
+        local_20 = (double)CONCAT44(iVar4,0x5a6eb0);
         *(int *)(extraout_EDX + 0xc0) = iVar4;
         if (iVar4 < iVar2) {
           iVar2 = iVar4;

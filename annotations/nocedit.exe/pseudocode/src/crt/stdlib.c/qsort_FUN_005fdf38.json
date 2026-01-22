@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 533,
-    "complexity_score": 705,
+    "complexity_score": 730,
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 290,
-    "suspect_count": 38,
+    "suspect_count": 40,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "register_param",
+      "segment_register",
       "special_crt_function",
       "unknown_field",
       "warning_unreachable"
@@ -345,25 +346,39 @@
       "type": "register_param"
     },
     {
+      "description": "Segment register input (TLS or unusual code)",
+      "line": 26,
+      "match": "in_GS",
+      "text": "ushort in_GS;",
+      "type": "segment_register"
+    },
+    {
       "description": "Inferred register parameter",
       "line": 53,
       "match": "in_GS",
-      "text": "puStack_18 = (uint *)CONCAT22 /* combine 2-byte values */(puStack_18._2_2_,in_GS);",
+      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
       "type": "register_param"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 53,
       "match": "._2_2_",
-      "text": "puStack_18 = (uint *)CONCAT22 /* combine 2-byte values */(puStack_18._2_2_,in_GS);",
+      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "CONCAT22",
-      "text": "puStack_18 = (uint *)CONCAT22 /* combine 2-byte values */(puStack_18._2_2_,in_GS);",
+      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Segment register input (TLS or unusual code)",
+      "line": 53,
+      "match": "in_GS",
+      "text": "puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);",
+      "type": "segment_register"
     },
     {
       "description": "Complex pointer cast",

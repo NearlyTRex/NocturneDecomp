@@ -104,16 +104,17 @@
   },
   "complexity": {
     "assembly_lines": 408,
-    "complexity_score": 355,
+    "complexity_score": 370,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 15,
     "pseudocode_lines": 175,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
+      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 583
@@ -461,6 +462,13 @@
       "match": "(float *)((int)",
       "text": "pfVar5 = (float *)((int)local_24 + 0x20);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_0066e740",
+      "text": "CStack_78.y = fStack_1c + *(float *)(&DAT_0066e740 + uVar6 * 4);",
+      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",

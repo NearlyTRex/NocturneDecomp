@@ -3,13 +3,13 @@
     "errors": [
       {
         "category": "other",
-        "column": 78,
+        "column": 50,
         "line": 18,
         "message": "request for member '_4_4_' in 'g_AudioLatencySeconds', which is of non-class type 'double'"
       },
       {
         "category": "other",
-        "column": 106,
+        "column": 78,
         "line": 18,
         "message": "request for member '_0_4_' in 'g_AudioLatencySeconds', which is of non-class type 'double'"
       },
@@ -253,21 +253,21 @@
       "description": "Unknown/mangled field access",
       "line": 11,
       "match": "._4_4_",
-      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
+      "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 11,
       "match": "._0_4_",
-      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
+      "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "CONCAT44",
-      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
+      "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -288,14 +288,14 @@
       "description": "Unknown/mangled field access",
       "line": 35,
       "match": "._0_4_",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "SUB84",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -309,14 +309,14 @@
       "description": "Unknown/mangled field access",
       "line": 41,
       "match": "._0_4_",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "SUB84",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     }
   ]

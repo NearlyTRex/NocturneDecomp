@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 20,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 5,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "undefined_data"
     ],
     "total_lines": 8
   },
@@ -66,6 +67,20 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_03f9b874",
+      "text": "DAT_03f9b874 = DAT_03f9b874 | 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_03f9b874",
+      "text": "DAT_03f9b874 = DAT_03f9b874 | 2;",
+      "type": "undefined_data"
+    },
     {
       "address": "0060240e",
       "crt_type": "runtime support",

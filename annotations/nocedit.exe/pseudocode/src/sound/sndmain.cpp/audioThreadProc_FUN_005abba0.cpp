@@ -18,7 +18,7 @@ DWORD __cdecl sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadPara
     sound_sndmain_cpp_processAudio_FUN_005abe20();
     if (g_AudioThreadShutdownFlag != 0) break;
     wincore_winrun_cpp_sleep_FUN_005f40e0
-              ((double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));
+              ((double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));
   }
   g_AudioThreadRunning = 0;
   return 0;

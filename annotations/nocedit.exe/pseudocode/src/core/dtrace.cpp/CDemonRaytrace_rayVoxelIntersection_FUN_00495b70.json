@@ -81,31 +81,31 @@
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 48,
         "line": 192,
         "message": "request for member '_4_4_' in 'local_84', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
-        "column": 68,
+        "column": 40,
         "line": 194,
         "message": "request for member '_4_4_' in 'local_7c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
-        "column": 68,
+        "column": 40,
         "line": 198,
         "message": "request for member '_4_4_' in 'local_7c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 48,
         "line": 203,
         "message": "request for member '_4_4_' in 'local_84', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
-        "column": 68,
+        "column": 40,
         "line": 204,
         "message": "request for member '_4_4_' in 'local_7c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       }
@@ -621,14 +621,14 @@
       "description": "Unknown/mangled field access",
       "line": 71,
       "match": "._0_4_",
-      "text": "local_7c._0_4_ = SUB84 /* extract 2-byte value */(dVar12,0);",
+      "text": "local_7c._0_4_ = SUB84(dVar12,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "SUB84",
-      "text": "local_7c._0_4_ = SUB84 /* extract 2-byte value */(dVar12,0);",
+      "text": "local_7c._0_4_ = SUB84(dVar12,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -663,7 +663,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 101,
       "match": "SUB84",
-      "text": "local_94 = SUB84 /* extract 2-byte value */(dVar13,0);",
+      "text": "local_94 = SUB84(dVar13,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -698,14 +698,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "CONCAT44",
-      "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(dVar14),(int)local_84);",
+      "text": "local_84 = (double)CONCAT44((int)ROUND(dVar14),(int)local_84);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "ROUND",
-      "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(dVar14),(int)local_84);",
+      "text": "local_84 = (double)CONCAT44((int)ROUND(dVar14),(int)local_84);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -726,7 +726,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 125,
       "match": "SUB84",
-      "text": "local_9c = SUB84 /* extract 2-byte value */(dVar12,0);",
+      "text": "local_9c = SUB84(dVar12,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -775,7 +775,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 157,
       "match": "CONCAT44",
-      "text": "local_7c = CONCAT44 /* combine 2-byte values */(iVar1,(float)local_7c);",
+      "text": "local_7c = CONCAT44(iVar1,(float)local_7c);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -852,70 +852,70 @@
       "description": "Unknown/mangled field access",
       "line": 185,
       "match": "._4_4_",
-      "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */(local_84._4_4_ + local_68,(int)local_84);",
+      "text": "local_84 = (double)CONCAT44(local_84._4_4_ + local_68,(int)local_84);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 185,
       "match": "CONCAT44",
-      "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */(local_84._4_4_ + local_68,(int)local_84);",
+      "text": "local_84 = (double)CONCAT44(local_84._4_4_ + local_68,(int)local_84);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 187,
       "match": "._4_4_",
-      "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_ + local_64,(float)local_7c);",
+      "text": "local_7c = CONCAT44(local_7c._4_4_ + local_64,(float)local_7c);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 187,
       "match": "CONCAT44",
-      "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_ + local_64,(float)local_7c);",
+      "text": "local_7c = CONCAT44(local_7c._4_4_ + local_64,(float)local_7c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 191,
       "match": "._4_4_",
-      "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_,(int)(float)local_7c + local_94);",
+      "text": "local_7c = CONCAT44(local_7c._4_4_,(int)(float)local_7c + local_94);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "CONCAT44",
-      "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_,(int)(float)local_7c + local_94);",
+      "text": "local_7c = CONCAT44(local_7c._4_4_,(int)(float)local_7c + local_94);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 196,
       "match": "._4_4_",
-      "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */(local_84._4_4_,(int)local_84 + local_98);",
+      "text": "local_84 = (double)CONCAT44(local_84._4_4_,(int)local_84 + local_98);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 196,
       "match": "CONCAT44",
-      "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */(local_84._4_4_,(int)local_84 + local_98);",
+      "text": "local_84 = (double)CONCAT44(local_84._4_4_,(int)local_84 + local_98);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 197,
       "match": "._4_4_",
-      "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_ - local_90,(float)local_7c);",
+      "text": "local_7c = CONCAT44(local_7c._4_4_ - local_90,(float)local_7c);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 197,
       "match": "CONCAT44",
-      "text": "local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_ - local_90,(float)local_7c);",
+      "text": "local_7c = CONCAT44(local_7c._4_4_ - local_90,(float)local_7c);",
       "type": "decompiler_intrinsic"
     }
   ]

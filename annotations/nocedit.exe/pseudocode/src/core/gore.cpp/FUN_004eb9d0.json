@@ -134,17 +134,18 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 179,
+    "complexity_score": 254,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 19,
     "pseudocode_lines": 64,
-    "suspect_count": 9,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
       "stack_ref",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 131
@@ -417,11 +418,60 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.base.count = 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.A = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.B = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.C = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_02d83368",
+      "text": "DAT_02d83368.surface_normal.D = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_02d83394",
+      "text": "*(uint *)(&DAT_02d83394 + (uint)bVar5 * -8) =",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_18 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_02d83398",
+      "text": "*(uint *)(&DAT_02d83398 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

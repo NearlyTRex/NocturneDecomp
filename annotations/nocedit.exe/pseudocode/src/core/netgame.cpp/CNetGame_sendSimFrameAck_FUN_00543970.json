@@ -68,14 +68,15 @@
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 116,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "pseudocode_lines": 41,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 142
   },
@@ -302,6 +303,13 @@
       "match": "in_stack_00000004",
       "text": "piVar2 = in_stack_00000004 + in_stack_00000004[0x45] * 0x1e + 0x1b;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_02f7c8c8",
+      "text": "DAT_02f7c8c8 = g_CurrentGameTime;",
+      "type": "undefined_data"
     }
   ]
 }

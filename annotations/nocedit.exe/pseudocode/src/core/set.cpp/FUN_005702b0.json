@@ -416,17 +416,18 @@
   },
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 678,
+    "complexity_score": 723,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "pseudocode_lines": 168,
-    "suspect_count": 49,
+    "suspect_count": 53,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 508
   },
@@ -914,6 +915,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_006813e4",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_006813e4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000010",
@@ -1061,6 +1069,13 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_032c1c68",
+      "text": "local_50.x = (int)ROUND(DAT_032c1c68 * 256.0f) -",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 101,
       "match": "ROUND",
@@ -1068,11 +1083,25 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_032c1c6c",
+      "text": "local_50.y = (int)ROUND(DAT_032c1c6c * 256.0f) -",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
       "text": "local_50.z = (int)ROUND(DAT_032c1c70 * 256.0f) -",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_032c1c70",
+      "text": "local_50.z = (int)ROUND(DAT_032c1c70 * 256.0f) -",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

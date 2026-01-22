@@ -110,14 +110,15 @@
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 94,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 49,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output"
+      "extra_output",
+      "undefined_data"
     ],
     "total_lines": 77
   },
@@ -242,6 +243,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_02d141dc",
+      "text": "iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(&DAT_02d141dc + iVar3));",
+      "type": "undefined_data"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 38,
       "match": "extraout_EAX",
@@ -249,11 +257,25 @@
       "type": "extra_output"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_02d141dc",
+      "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 45,
       "match": "extraout_EAX_00",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;",
       "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_02d141dc",
+      "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;",
+      "type": "undefined_data"
     }
   ],
   "vtable_info": {

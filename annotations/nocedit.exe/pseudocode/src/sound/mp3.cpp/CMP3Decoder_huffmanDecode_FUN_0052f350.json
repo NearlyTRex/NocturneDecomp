@@ -25,14 +25,15 @@
   },
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 217,
+    "complexity_score": 232,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 92,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
-      "extra_output"
+      "extra_output",
+      "unresolved_funcptr"
     ],
     "total_lines": 347
   },
@@ -250,6 +251,13 @@
       "match": "extraout_EAX_03",
       "text": "if (extraout_EAX_03 == 0) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 55,
+      "match": "code",
+      "text": "(\"Illegal Huffman code in data.  File: %s\",g_CurrentMp3Filename);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

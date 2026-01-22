@@ -27,9 +27,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
   (this_ptr->options).trigger_time = dVar2;
   dVar2 = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
                     (*(CSampleInfo **)&(this_ptr->options).trigger_time,
-                     (double)CONCAT44 /* combine 2-byte values */((this_ptr->options).trigger_id,
+                     (double)CONCAT44((this_ptr->options).trigger_id,
                                       *(uint *)((int)&(this_ptr->options).trigger_time + 4)),
-                     SUB84 /* extract 2-byte value */(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
+                     SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
   pCVar1 = this_ptr->sample;
   (this_ptr->options).trigger_time = dVar2;
   if (pCVar1->streaming_slot_index < 0) {

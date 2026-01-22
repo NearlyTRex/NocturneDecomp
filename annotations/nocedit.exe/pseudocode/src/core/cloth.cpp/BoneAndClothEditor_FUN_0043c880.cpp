@@ -169,7 +169,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     if (local_3c != (float *)0x0) {
       uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
       ;
-      g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);
+      g_ActiveRenderColor = CONCAT31(extraout_var,uVar2);
       unaff_EBP = (char *)0x0;
       iVar4 = iVar1;
       if (0 < *(int *)(iVar1 + 0x3f028)) {
@@ -192,7 +192,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
           uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                    (g_CDemonRendererPtr2,CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar2));
+                    (g_CDemonRendererPtr2,CONCAT31(extraout_var_00,uVar2));
         }
         else {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
@@ -256,7 +256,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     if ((iVar4 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {
       unaff_ESI = 0;
     }
-    in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(0x43ceb4,pCVar9);
+    in_stack_fffffabc = CONCAT44(0x43ceb4,pCVar9);
     in_stack_fffffac4 = (char *)g_CKeysPtr;
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,3);
     if (iVar4 != 0) {
@@ -321,7 +321,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
           *(float *)(iVar7 + 0x30) = local_38;
         }
       }
-      in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(0x43d213,uVar10);
+      in_stack_fffffabc = CONCAT44(0x43d213,uVar10);
       in_stack_fffffac4 = (char *)g_CKeysPtr;
       iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
       if ((iVar4 != 0) &&
@@ -342,7 +342,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
         in_stack_fffffacc = (char *)0x1;
         in_stack_fffffac8 = (CEditorTools *)(iVar7 + 0x14);
         in_stack_fffffac4 = "Enter X radius";
-        in_stack_fffffabc = CONCAT44 /* combine 2-byte values */(g_CEditorToolsPtr,0x43d2a9);
+        in_stack_fffffabc = CONCAT44(g_CEditorToolsPtr,0x43d2a9);
         shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                   (g_CEditorToolsPtr,"Enter X radius",(float *)in_stack_fffffac8,1,0.0,
                    9999.0,1);

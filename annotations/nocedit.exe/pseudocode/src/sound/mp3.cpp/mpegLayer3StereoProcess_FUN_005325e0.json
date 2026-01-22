@@ -93,7 +93,7 @@
       },
       {
         "category": "other",
-        "column": 101,
+        "column": 73,
         "line": 172,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
@@ -201,7 +201,7 @@
       },
       {
         "category": "other",
-        "column": 105,
+        "column": 77,
         "line": 258,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
@@ -309,7 +309,7 @@
       },
       {
         "category": "other",
-        "column": 103,
+        "column": 75,
         "line": 350,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
@@ -423,7 +423,7 @@
       },
       {
         "category": "other",
-        "column": 105,
+        "column": 77,
         "line": 433,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
@@ -740,15 +740,16 @@
   },
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 972,
+    "complexity_score": 1277,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
     "pseudocode_lines": 532,
-    "suspect_count": 43,
+    "suspect_count": 73,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "undefined_data"
     ],
     "total_lines": 1563
   },
@@ -1449,6 +1450,41 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 135,
+      "match": "DAT_0067e6c8",
+      "text": "iVar6 = *(int *)(&DAT_0067e6c8 + iVar11);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 138,
+      "match": "DAT_0067e6cc",
+      "text": "piVar1 = (int *)(&DAT_0067e6cc + iVar11);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_0067e6c8",
+      "text": "iVar9 = *(int *)(&DAT_0067e6c8 + iVar11);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 148,
+      "match": "DAT_0067e6cc",
+      "text": "iVar6 = *(int *)(&DAT_0067e6cc + local_8c) - *(int *)(&DAT_0067e6c8 + local_8c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 148,
+      "match": "DAT_0067e6c8",
+      "text": "iVar6 = *(int *)(&DAT_0067e6cc + local_8c) - *(int *)(&DAT_0067e6c8 + local_8c);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(short *)((int)",
@@ -1461,6 +1497,13 @@
       "match": "(short *)((int)",
       "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 158,
+      "match": "fptan",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1480,8 +1523,22 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 165,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14);",
+      "text": "(double)CONCAT44(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 179,
+      "match": "DAT_0067e71c",
+      "text": "iVar11 = 0x240 - *(int *)(&DAT_0067e71c + local_94);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 180,
+      "match": "DAT_0067e718",
+      "text": "iVar6 = *(int *)(&DAT_0067e718 + local_94);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -1519,11 +1576,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 214,
+      "match": "DAT_0067e728",
+      "text": "iVar11 = *(int *)(&DAT_0067e728 + iVar11) - iVar6;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 219,
       "match": "ABS",
       "text": "if (ABS(input_lr_samples->channels[1].samples[iVar6 / 0x12][iVar6 % 0x12]) != 0.0) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 233,
+      "match": "DAT_0067e728",
+      "text": "iVar9 = *(int *)(&DAT_0067e728 + local_7c) - *(int *)(local_7c + 0x67e724);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -1538,6 +1609,13 @@
       "match": "(short *)((int)",
       "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 244,
+      "match": "fptan",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1557,8 +1635,43 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 251,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14)",
+      "text": "(double)CONCAT44(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14)",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 266,
+      "match": "DAT_0067e758",
+      "text": "iVar6 = *(int *)(&DAT_0067e758 + local_9c) - *(int *)(&DAT_0067e754 + local_9c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 266,
+      "match": "DAT_0067e754",
+      "text": "iVar6 = *(int *)(&DAT_0067e758 + local_9c) - *(int *)(&DAT_0067e754 + local_9c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 267,
+      "match": "DAT_0067e750",
+      "text": "local_28 = *(int *)(&DAT_0067e750 + local_9c) * 3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 269,
+      "match": "DAT_0067e754",
+      "text": "(*(int *)(&DAT_0067e754 + local_9c) - *(int *)(&DAT_0067e750 + local_9c)) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 269,
+      "match": "DAT_0067e750",
+      "text": "(*(int *)(&DAT_0067e754 + local_9c) - *(int *)(&DAT_0067e750 + local_9c)) +",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -1596,11 +1709,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 305,
+      "match": "DAT_0067e728",
+      "text": "iVar11 = *(int *)(&DAT_0067e728 + iVar11) - iVar6;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 310,
       "match": "ABS",
       "text": "if (ABS(input_lr_samples->channels[1].samples[iVar6 / 0x12][iVar6 % 0x12]) != 0.0) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 325,
+      "match": "DAT_0067e728",
+      "text": "iVar9 = *(int *)(&DAT_0067e728 + local_6c) - *(int *)(local_6c + 0x67e724);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -1615,6 +1742,13 @@
       "match": "(short *)((int)",
       "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 336,
+      "match": "fptan",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1634,8 +1768,43 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 343,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14);",
+      "text": "(double)CONCAT44(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 354,
+      "match": "DAT_0067e758",
+      "text": "iVar6 = *(int *)(&DAT_0067e758 + local_98) - *(int *)(&DAT_0067e754 + local_98);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 354,
+      "match": "DAT_0067e754",
+      "text": "iVar6 = *(int *)(&DAT_0067e758 + local_98) - *(int *)(&DAT_0067e754 + local_98);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 355,
+      "match": "DAT_0067e750",
+      "text": "local_2c = *(int *)(&DAT_0067e750 + local_98) * 3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 357,
+      "match": "DAT_0067e754",
+      "text": "(*(int *)(&DAT_0067e754 + local_98) - *(int *)(&DAT_0067e750 + local_98)) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 357,
+      "match": "DAT_0067e750",
+      "text": "(*(int *)(&DAT_0067e754 + local_98) - *(int *)(&DAT_0067e750 + local_98)) +",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -1680,6 +1849,41 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 398,
+      "match": "DAT_0067e6c8",
+      "text": "iVar9 = *(int *)(&DAT_0067e6c8 + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 401,
+      "match": "DAT_0067e6cc",
+      "text": "piVar1 = (int *)(&DAT_0067e6cc + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 405,
+      "match": "DAT_0067e6c8",
+      "text": "iVar9 = *(int *)(&DAT_0067e6c8 + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 409,
+      "match": "DAT_0067e6cc",
+      "text": "iVar6 = *(int *)(&DAT_0067e6cc + local_60) - *(int *)(&DAT_0067e6c8 + local_60);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 409,
+      "match": "DAT_0067e6c8",
+      "text": "iVar6 = *(int *)(&DAT_0067e6cc + local_60) - *(int *)(&DAT_0067e6c8 + local_60);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 416,
       "match": "(short *)((int)",
@@ -1692,6 +1896,13 @@
       "match": "(short *)((int)",
       "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 419,
+      "match": "fptan",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1711,7 +1922,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 426,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14)",
+      "text": "(double)CONCAT44(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14)",
       "type": "decompiler_intrinsic"
     },
     {

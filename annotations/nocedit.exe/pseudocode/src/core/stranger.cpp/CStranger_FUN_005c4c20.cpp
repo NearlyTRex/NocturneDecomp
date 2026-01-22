@@ -65,7 +65,7 @@ LAB_005c4c51:
            (iVar2 = (*this_ptr->vtable[1].hasCollision)
                               (this_ptr,(SCollisionInfo *)in_stack_fffffef0), iVar2 == 0)))))) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)auStack_dc);
-        in_stack_fffffef0 = CONCAT44 /* combine 2-byte values */((SCollisionInfo *)auStack_dc,this_ptr);
+        in_stack_fffffef0 = CONCAT44((SCollisionInfo *)auStack_dc,this_ptr);
         iVar2 = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)auStack_dc);
         if ((iVar2 == 2) &&
            (fStack_e0 = 1.0 - ((local_50.x - (float)pvStack_b8) + (float)-1.5) *

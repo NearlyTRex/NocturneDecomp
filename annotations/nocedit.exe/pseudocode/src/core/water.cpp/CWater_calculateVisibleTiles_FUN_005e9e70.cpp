@@ -79,7 +79,7 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
     g_VisibleWaterTileCount = 0;
     iVar7 = -(int)local_20;
     local_1c = (int)local_20;
-    if (SBORROW /* signed borrow */4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {
+    if (SBORROW4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {
       do {
         iVar5 = -local_1c;
         if (iVar5 < local_1c) {

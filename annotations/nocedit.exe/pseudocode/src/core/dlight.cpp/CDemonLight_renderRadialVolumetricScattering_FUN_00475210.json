@@ -74,18 +74,19 @@
   },
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 593,
+    "complexity_score": 668,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 13,
     "pseudocode_lines": 183,
-    "suspect_count": 38,
+    "suspect_count": 45,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_ref",
       "suspect_float",
       "unknown_field",
+      "unknown_type",
       "warning_unreachable"
     ],
     "total_lines": 638
@@ -651,6 +652,55 @@
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 15,
+      "match": "unkbyte10",
+      "text": "unkbyte10 Var6;",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "fpatan",
+      "text": "Var6 = fpatan(fVar2,(float10)1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "fcos",
+      "text": "fVar2 = (float10)fcos(Var6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "fsin",
+      "text": "fVar3 = (float10)fsin(fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "fsin",
+      "text": "fVar4 = (float10)fsin(fVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "fcos",
+      "text": "fVar2 = (float10)fcos(fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "fcos",
+      "text": "fVar7 = (float10)fcos(fVar7);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

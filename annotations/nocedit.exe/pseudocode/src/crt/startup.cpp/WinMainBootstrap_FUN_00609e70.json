@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 169,
+    "complexity_score": 184,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "pseudocode_lines": 74,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
-      "stack_ref"
+      "stack_ref",
+      "warning_spacebase"
     ],
     "total_lines": 145
   },
@@ -184,6 +185,13 @@
     "severity": "high"
   },
   "suspects": [
+    {
+      "description": "Stack frame tracking failed",
+      "line": 2,
+      "match": "WARNING: Unable to track spacebase fully for stack",
+      "text": "/* WARNING: Unable to track spacebase fully for stack */",
+      "type": "warning_spacebase"
+    },
     {
       "description": "Complex pointer cast",
       "line": 26,

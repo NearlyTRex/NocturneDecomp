@@ -164,17 +164,18 @@
   },
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 492,
+    "complexity_score": 647,
     "cross_reference_count": 2,
     "function_call_count": 20,
     "global_count": 26,
     "pseudocode_lines": 132,
-    "suspect_count": 34,
+    "suspect_count": 49,
     "suspect_types": [
       "format_string_mismatch",
       "stack_param",
       "stack_ref",
-      "unaffected_reg"
+      "unaffected_reg",
+      "undefined_data"
     ],
     "total_lines": 485
   },
@@ -587,6 +588,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_03654368",
+      "text": "DAT_03654368 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_03654368",
+      "text": "if (DAT_03654368 < 1) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 30,
       "match": "&stack0xfffff424",
@@ -608,11 +623,39 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_03654368",
+      "text": "if (0 < DAT_03654368) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_03654370",
+      "text": "puVar4 = &DAT_03654370;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_03659190",
+      "text": "((uint)(byte)(&DAT_03659190)[iVar3]);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 45,
       "match": "&stack0xfffff424",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff424,local_2fc);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_03654368",
+      "text": "} while (iVar3 < DAT_03654368);",
+      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
@@ -634,6 +677,34 @@
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,(char *)0x0,\"wt\",\"..\\\\core\\\\setedit.cpp\",",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_03654368",
+      "text": "if (0 < DAT_03654368) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_03654370",
+      "text": "puVar4 = &DAT_03654370;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_03659190",
+      "text": "((uint)(byte)(&DAT_03659190)[iVar3]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_03654368",
+      "text": "} while (iVar3 < DAT_03654368);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -755,6 +826,27 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_03654368",
+      "text": "if (0 < DAT_03654368) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_03654370",
+      "text": "pcVar1 = &DAT_03654370;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_03654368",
+      "text": "} while (iVar3 < DAT_03654368);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 121,
       "match": "&stack0xfffff424",
@@ -774,6 +866,20 @@
       "match": "&stack0xfffff424",
       "text": "((CPickList *)&stack0xfffff424,local_48c,(uint)(byte)(&DAT_03659190)[iVar3],0)",
       "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 129,
+      "match": "DAT_03659190",
+      "text": "((CPickList *)&stack0xfffff424,local_48c,(uint)(byte)(&DAT_03659190)[iVar3],0)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 132,
+      "match": "DAT_03659190",
+      "text": "(&DAT_03659190)[iVar3] = (char)iVar2;",
+      "type": "undefined_data"
     },
     {
       "actual_args": 0,

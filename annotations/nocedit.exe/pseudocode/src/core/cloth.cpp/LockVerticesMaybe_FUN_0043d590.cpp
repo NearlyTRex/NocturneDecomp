@@ -277,7 +277,7 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
       uVar4 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
       ;
       iVar9 = local_20;
-      g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar4);
+      g_ActiveRenderColor = CONCAT31(extraout_var,uVar4);
       engine_2d_c_drawLine_FUN_004011b0(local_24,local_2c,local_24,local_20);
       x2 = local_28;
       iVar7 = local_2c;

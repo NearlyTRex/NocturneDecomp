@@ -29,7 +29,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneSt
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("CBoneStructure::fixupMatrices - %s is mirrored.",piVar1 + iVar2 * 0x21 + 1);
       }
-      local_28 = SUB84 /* extract 2-byte value */(dVar3,0);
+      local_28 = SUB84(dVar3,0);
       if ((((ulonglong)dVar3 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
         g_CurrentLineNumber = 0x3b6;
         g_CurrentFilename = "..\\core\\skeledit.cpp";

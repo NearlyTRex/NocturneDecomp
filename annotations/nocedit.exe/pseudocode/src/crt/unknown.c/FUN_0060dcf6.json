@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 901,
+    "complexity_score": 1046,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 181,
-    "suspect_count": 70,
+    "suspect_count": 84,
     "suspect_types": [
       "decompiler_intrinsic",
       "special_crt_function",
       "unaffected_reg",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 445
@@ -243,6 +244,13 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "CARRY4",
+      "text": "param_4 = param_4 & 0x7fffffff | (uint)CARRY4(param_4,param_4) << 0x1f;",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 35,
       "match": "param_1",
@@ -283,6 +291,20 @@
       "match": "param_2",
       "text": "param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "CARRY4",
+      "text": "param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_00684acd",
+      "text": "if (DAT_00684acd == '\\0') {",
+      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -332,6 +354,13 @@
       "match": "param_1",
       "text": "bVar17 = CARRY4(param_1,param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "CARRY4",
+      "text": "bVar17 = CARRY4(param_1,param_1);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unnamed function parameter",
@@ -404,6 +433,13 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "CARRY4",
+      "text": "bVar17 = CARRY4(unaff_EBX,unaff_EBX);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 62,
       "match": "unaff_EBX",
@@ -421,7 +457,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "CONCAT22",
-      "text": "uVar7 = CONCAT22 /* combine 2-byte values */((short)(uVar7 >> 0x10),(short)uVar7 + -1);",
+      "text": "uVar7 = CONCAT22((short)(uVar7 >> 0x10),(short)uVar7 + -1);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -477,14 +513,14 @@
       "description": "Unnamed function parameter",
       "line": 86,
       "match": "param_1",
-      "text": "uVar1 = CONCAT44 /* combine 2-byte values */(uVar4,param_1) / (ulonglong)uVar10;",
+      "text": "uVar1 = CONCAT44(uVar4,param_1) / (ulonglong)uVar10;",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "CONCAT44",
-      "text": "uVar1 = CONCAT44 /* combine 2-byte values */(uVar4,param_1) / (ulonglong)uVar10;",
+      "text": "uVar1 = CONCAT44(uVar4,param_1) / (ulonglong)uVar10;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -498,14 +534,14 @@
       "description": "Unaffected register variable",
       "line": 92,
       "match": "unaff_EBX",
-      "text": "lVar3 = lVar3 + CONCAT44 /* combine 2-byte values */(uVar10,unaff_EBX);",
+      "text": "lVar3 = lVar3 + CONCAT44(uVar10,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "CONCAT44",
-      "text": "lVar3 = lVar3 + CONCAT44 /* combine 2-byte values */(uVar10,unaff_EBX);",
+      "text": "lVar3 = lVar3 + CONCAT44(uVar10,unaff_EBX);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -523,11 +559,25 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 100,
+      "match": "CARRY4",
+      "text": "iVar5 = iVar5 + (uint)(bVar19 || CARRY4(uVar4,(uint)bVar18))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 104,
       "match": "unaff_EBX",
       "text": "bVar18 = CARRY4(uVar8,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 104,
+      "match": "CARRY4",
+      "text": "bVar18 = CARRY4(uVar8,unaff_EBX);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
@@ -538,9 +588,16 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 106,
+      "match": "CARRY4",
+      "text": "bVar19 = CARRY4(uVar11,uVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "CONCAT44",
-      "text": "uVar1 = CONCAT44 /* combine 2-byte values */(uVar11,uVar8) / (ulonglong)uVar10;",
+      "text": "uVar1 = CONCAT44(uVar11,uVar8) / (ulonglong)uVar10;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -551,11 +608,25 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 129,
+      "match": "CARRY4",
+      "text": "iVar5 = iVar5 + (uint)(bVar19 || CARRY4(uVar4,(uint)bVar18))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 135,
       "match": "unaff_EBX",
       "text": "bVar18 = CARRY4(uVar9,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 135,
+      "match": "CARRY4",
+      "text": "bVar18 = CARRY4(uVar9,unaff_EBX);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
@@ -565,94 +636,122 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 137,
+      "match": "CARRY4",
+      "text": "bVar19 = CARRY4(uVar12,uVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 152,
+      "match": "CARRY4",
+      "text": "uVar4 = (uint)CARRY4(uVar4,uVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 154,
+      "match": "CARRY4",
+      "text": "uVar4 = (uint)CARRY4(uVar7,uVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 155,
+      "match": "CARRY4",
+      "text": "sVar14 = uVar16 + CARRY4(uVar9,uVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 171,
       "match": "param_2",
-      "text": "fVar20 = (float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1) /",
+      "text": "fVar20 = (float10)(double)CONCAT44(param_2,param_1) /",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 171,
       "match": "param_1",
-      "text": "fVar20 = (float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1) /",
+      "text": "fVar20 = (float10)(double)CONCAT44(param_2,param_1) /",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 171,
       "match": "CONCAT44",
-      "text": "fVar20 = (float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1) /",
+      "text": "fVar20 = (float10)(double)CONCAT44(param_2,param_1) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
       "line": 172,
       "match": "unaff_EBX",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX);",
+      "text": "(float10)(double)CONCAT44(param_4,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 172,
       "match": "param_4",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX);",
+      "text": "(float10)(double)CONCAT44(param_4,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 172,
       "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX);",
+      "text": "(float10)(double)CONCAT44(param_4,unaff_EBX);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unnamed function parameter",
       "line": 176,
       "match": "param_2",
-      "text": "((float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1),",
+      "text": "((float10)(double)CONCAT44(param_2,param_1),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 176,
       "match": "param_1",
-      "text": "((float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1),",
+      "text": "((float10)(double)CONCAT44(param_2,param_1),",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 176,
       "match": "CONCAT44",
-      "text": "((float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1),",
+      "text": "((float10)(double)CONCAT44(param_2,param_1),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
       "line": 177,
       "match": "unaff_EBX",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX));",
+      "text": "(double)CONCAT44(param_4,unaff_EBX));",
       "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 177,
       "match": "param_4",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX));",
+      "text": "(double)CONCAT44(param_4,unaff_EBX));",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 177,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX));",
+      "text": "(double)CONCAT44(param_4,unaff_EBX));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 179,
       "match": "SUB84",
-      "text": "uVar4 = SUB84 /* extract 2-byte value */((double)fVar20,0);",
+      "text": "uVar4 = SUB84((double)fVar20,0);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -151,7 +151,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
                       (in_stack_00000004,&local_a8,(int)output_filename,local_1c,
                        (CMatrix3x4f *)lod_level);
             crt_stdio_c_sprintf_FUN_005fdbd0
-                      (&stack0xfffffcc0,"%g,%g,%g",SUB84 /* extract 2-byte value */((double)local_a8.x,0),
+                      (&stack0xfffffcc0,"%g,%g,%g",SUB84((double)local_a8.x,0),
                        (int)((ulonglong)(double)local_a8.x >> 0x20),(double)local_a8.y,
                        (double)local_a8.z);
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_b8,&stack0xfffffcc0);
@@ -173,7 +173,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
                     (*(int *)((int)in_stack_00000004->index_data_ptr + local_50) + local_28),
                    dest[*puVar2],(double)local_14 * 0.00390625,
                    (double)puVar2[6] * 0.00390625,dest[puVar2[1]],
-                   (double)puVar2[4] * 0.00390625,SUB84 /* extract 2-byte value */((double)puVar2[7] * 0.00390625,0),
+                   (double)puVar2[4] * 0.00390625,SUB84((double)puVar2[7] * 0.00390625,0),
                    (int)((ulonglong)((double)puVar2[7] * 0.00390625) >> 0x20),dest[puVar2[2]],
                    (double)puVar2[5] * 0.00390625,(double)puVar2[8] * 0.00390625);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,&stack0xfffffcc0);
@@ -201,7 +201,7 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
                      dest[*puVar2],(double)local_14 * 0.00390625,
                      (double)puVar2[6] * 0.00390625,dest[puVar2[1]],
                      (double)puVar2[4] * 0.00390625,
-                     SUB84 /* extract 2-byte value */((double)puVar2[7] * 0.00390625,0),
+                     SUB84((double)puVar2[7] * 0.00390625,0),
                      (int)((ulonglong)((double)puVar2[7] * 0.00390625) >> 0x20),dest[puVar2[2]]
                      ,(double)puVar2[5] * 0.00390625,(double)puVar2[8] * 0.00390625);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,&stack0xfffffcc0);

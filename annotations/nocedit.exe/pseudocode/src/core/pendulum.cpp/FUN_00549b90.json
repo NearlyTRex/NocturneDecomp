@@ -176,12 +176,12 @@
   },
   "complexity": {
     "assembly_lines": 553,
-    "complexity_score": 415,
+    "complexity_score": 425,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 12,
     "pseudocode_lines": 180,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -555,14 +555,14 @@
       "description": "Unknown/mangled field access",
       "line": 35,
       "match": "._4_4_",
-      "text": "local_24._4_4_ = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "local_24._4_4_ = SUB84(dVar8,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "SUB84",
-      "text": "local_24._4_4_ = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "local_24._4_4_ = SUB84(dVar8,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -632,14 +632,14 @@
       "description": "Unknown/mangled field access",
       "line": 43,
       "match": "._0_4_",
-      "text": "local_24._0_4_ = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "local_24._0_4_ = SUB84(dVar8,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "SUB84",
-      "text": "local_24._0_4_ = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "local_24._0_4_ = SUB84(dVar8,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -648,6 +648,13 @@
       "match": "._4_4_",
       "text": "local_24._4_4_ = (uint)((ulonglong)dVar8 >> 0x20);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "fsin",
+      "text": "fVar5 = (float10)fsin(fVar4 * (float10)2 * (float10)3.1415926535000001);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

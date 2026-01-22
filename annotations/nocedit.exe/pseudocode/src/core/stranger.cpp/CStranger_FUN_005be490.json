@@ -32,14 +32,15 @@
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 131,
+    "complexity_score": 156,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 31,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 85
@@ -190,11 +191,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_03f6bb04",
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 0x158),local_30,DAT_03f6bb04)",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000004",
       "text": "((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_18,DAT_03f6bb00",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_03f6bb00",
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_18,DAT_03f6bb00",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

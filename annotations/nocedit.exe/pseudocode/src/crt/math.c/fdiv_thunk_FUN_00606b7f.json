@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 83,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 5,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
+      "fpu_register_input",
       "special_crt_function",
       "stack_param",
-      "undefined_type"
+      "undefined_type",
+      "unknown_type"
     ],
     "total_lines": 26
   },
@@ -81,6 +83,34 @@
   },
   "suspects": [
     {
+      "description": "Unknown/unresolved type",
+      "line": 5,
+      "match": "unkbyte10",
+      "text": "unkbyte10 in_ST0;",
+      "type": "unknown_type"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 5,
+      "match": "in_ST0",
+      "text": "unkbyte10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 6,
+      "match": "in_ST1",
+      "text": "float10 in_ST1;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 7,
+      "match": "in_ST3",
+      "text": "float10 in_ST3;",
+      "type": "fpu_register_input"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_0000001c",
@@ -95,17 +125,52 @@
       "type": "undefined_type"
     },
     {
+      "description": "FPU register input (calling convention issue)",
+      "line": 12,
+      "match": "in_ST0",
+      "text": "uStack00000020 = (undefined6)in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 13,
+      "match": "unkuint10",
+      "text": "uStack00000026 = (uint)((unkuint10)in_ST0 >> 0x30);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 13,
+      "match": "in_ST0",
+      "text": "uStack00000026 = (uint)((unkuint10)in_ST0 >> 0x30);",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 14,
+      "match": "in_ST1",
+      "text": "crt_math_c_fdiv_FUN_00606960(in_ST1,in_ST3);",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 14,
+      "match": "in_ST3",
+      "text": "crt_math_c_fdiv_FUN_00606960(in_ST1,in_ST3);",
+      "type": "fpu_register_input"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_0000001c",
-      "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_0000001c);",
+      "text": "return (float10)CONCAT64(uStack00000020,in_stack_0000001c);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "CONCAT64",
-      "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_0000001c);",
+      "text": "return (float10)CONCAT64(uStack00000020,in_stack_0000001c);",
       "type": "decompiler_intrinsic"
     },
     {

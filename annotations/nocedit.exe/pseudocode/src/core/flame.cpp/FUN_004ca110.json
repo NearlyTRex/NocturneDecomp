@@ -188,18 +188,19 @@
   },
   "complexity": {
     "assembly_lines": 451,
-    "complexity_score": 1378,
+    "complexity_score": 1403,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 39,
     "pseudocode_lines": 288,
-    "suspect_count": 106,
+    "suspect_count": 108,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "suspect_float",
       "unaffected_reg",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 739
@@ -1140,6 +1141,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 183,
+      "match": "DAT_0067b100",
+      "text": "&DAT_0067b100 +",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 184,
       "match": "in_stack_00000004",
@@ -1376,6 +1384,13 @@
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 282,
+      "match": "DAT_0067b0c8",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_0067b0c8);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

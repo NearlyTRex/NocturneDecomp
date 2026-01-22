@@ -74,16 +74,17 @@
   },
   "complexity": {
     "assembly_lines": 241,
-    "complexity_score": 288,
+    "complexity_score": 303,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "pseudocode_lines": 108,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "suspect_float",
+      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 349
@@ -401,6 +402,13 @@
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].orient_matrix.m[0].z != 0.0) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0067d150",
+      "text": "(g_CDemonRendererPtr2,&DAT_0067d150);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

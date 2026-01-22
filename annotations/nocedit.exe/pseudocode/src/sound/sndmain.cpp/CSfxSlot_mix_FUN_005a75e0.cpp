@@ -126,7 +126,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
         local_68 = (float *)(int)ROUND(dVar12);
         if ((int)local_68 < iVar8) {
           uVar5 = (ulonglong)local_b0 >> 0x20;
-          local_b0 = (double)CONCAT44 /* combine 2-byte values */((int)uVar5,local_68);
+          local_b0 = (double)CONCAT44((int)uVar5,local_68);
           local_58 = 1;
         }
       }
@@ -138,25 +138,25 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       uStack_88 = crt_math_c_floor_FUN_005feb90(dVar12);
       uVar14 = 0x5a789d;
       dVar13 = crt_math_c_round_FUN_005fe6b0(uStack_88);
-      dVar12 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14);
+      dVar12 = (double)CONCAT44(uVar15,uVar14);
       local_50 = (int)ROUND(dVar13);
       if (local_50 < 1) {
-        dVar12 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) - local_b8;
+        dVar12 = (double)CONCAT44(uVar15,uVar14) - local_b8;
         if (dVar12 < 0.0) {
           dVar12 = 0.0;
         }
         dVar13 = (local_b8 - dVar12) / local_c0;
         sample_data = (short *)((ulonglong)dVar13 >> 0x20);
         dVar13 = crt_math_c_floor_FUN_005feb90(dVar13);
-        afStack_90[0] = SUB84 /* extract 2-byte value */(dVar13,0);
+        afStack_90[0] = SUB84(dVar13,0);
         afStack_90[1] = (float)((ulonglong)dVar13 >> 0x20);
         in_stack_ffffff30 = 0x5a78f1;
         dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
         local_58 = (uint)ROUND(dVar13);
       }
-      dVar13 = (double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_ffffff30);
+      dVar13 = (double)CONCAT44(sample_data,in_stack_ffffff30);
       channel_gains = (SStereoGains *)((ulonglong)dVar12 >> 0x20);
-      channel_buffers = SUB84 /* extract 2-byte value */(dVar12,0);
+      channel_buffers = SUB84(dVar12,0);
       if ((int)local_58 < (int)local_b8._0_4_) {
         local_b8 = (double)(ulonglong)local_58;
         local_60 = 0;
@@ -179,7 +179,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
                 dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
                 local_28 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13) * 2 + 1
                                     ) - 0x80;
-                uStack_88 = (double)CONCAT44 /* combine 2-byte values */((float)local_28,
+                uStack_88 = (double)CONCAT44((float)local_28,
                                              (float)(int)(*(byte *)(*(int *)(extraout_EDX + 0x120) +
                                                                    (int)ROUND(dVar13) * 2) - 0x80));
                 uVar6 = 0;
@@ -195,7 +195,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
                     pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
                   } while ((int)uVar6 < mix_buffer.num_channels);
                 }
-                dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);
+                dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);
                 local_34 = local_34 + 4;
               } while (local_34 < local_54);
             }
@@ -220,7 +220,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
                   pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
                 } while (iVar10 < mix_buffer.num_channels);
               }
-              dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);
+              dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);
               iVar11 = iVar11 + 4;
             } while (iVar11 < local_50);
           }
@@ -229,9 +229,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
           if (mix_buffer.num_channels == 2) {
             dVar12 = sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0
                                (sample_data,channel_buffers,channel_gains,
-                                (double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff30,local_b8._0_4_),
-                                (double)CONCAT44 /* combine 2-byte values */(channel_buffers,sample_data),(int)channel_gains);
-            uStack_94 = SUB84 /* extract 2-byte value */(dVar12,0);
+                                (double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),
+                                (double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);
+            uStack_94 = SUB84(dVar12,0);
             afStack_90[0] = (float)((ulonglong)dVar12 >> 0x20);
           }
           else if (0 < (int)local_b8._0_4_) {
@@ -258,7 +258,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
                   pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
                 } while ((int)uVar6 < mix_buffer.num_channels);
               }
-              dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);
+              dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);
               local_38 = local_38 + 4;
             } while (local_38 < local_4c);
           }
@@ -266,9 +266,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
         else if (mix_buffer.num_channels == 2) {
           dVar12 = sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70
                              (sample_data,channel_buffers,channel_gains,
-                              (double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff30,local_b8._0_4_),
-                              (double)CONCAT44 /* combine 2-byte values */(channel_buffers,sample_data),(int)channel_gains);
-          uStack_94 = SUB84 /* extract 2-byte value */(dVar12,0);
+                              (double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),
+                              (double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);
+          uStack_94 = SUB84(dVar12,0);
           afStack_90[0] = (float)((ulonglong)dVar12 >> 0x20);
         }
         else if (0 < (int)local_b8._0_4_) {
@@ -291,7 +291,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
                 pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
               } while (iVar10 < mix_buffer.num_channels);
             }
-            dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);
+            dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);
             iVar11 = iVar11 + 4;
           } while (iVar11 < local_48);
         }

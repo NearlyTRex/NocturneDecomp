@@ -80,15 +80,16 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 212,
+    "complexity_score": 277,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 24,
     "pseudocode_lines": 42,
-    "suspect_count": 16,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 154
   },
@@ -345,6 +346,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_02da8720",
+      "text": "if (0 < DAT_02da8720) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_02da8724",
+      "text": "pCVar1 = DAT_02da8724;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
@@ -394,6 +409,27 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_02da8720",
+      "text": "} while (iVar3 < DAT_02da8720);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_02d873d8",
+      "text": "if (0 < DAT_02d873d8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_02d873dc",
+      "text": "pCVar2 = DAT_02d873dc;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000008",
@@ -441,6 +477,13 @@
       "match": "in_stack_0000000c",
       "text": "*in_stack_0000000c = *(uint *)(pCVar2->field0_0x0 + 0x14);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_02d873d8",
+      "text": "} while (iVar3 < DAT_02d873d8);",
+      "type": "undefined_data"
     }
   ]
 }

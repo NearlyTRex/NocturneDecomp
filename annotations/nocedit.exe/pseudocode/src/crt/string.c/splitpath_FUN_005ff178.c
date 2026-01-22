@@ -39,7 +39,7 @@ crt_string_c_splitpath_FUN_005ff178(char *path,char *drive,char *dir,char *fname
   src = path;
   while (cVar1 != '\0') {
     wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(str);
-    iVar3 = CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);
+    iVar3 = CONCAT22(extraout_var,wVar2);
     if (iVar3 == 0x2e) {
       pcVar4 = str + 1;
       src_00 = str;

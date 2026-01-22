@@ -20,14 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 40,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "pseudocode_lines": 15,
-    "suspect_count": 2,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 43
   },
@@ -159,11 +160,60 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_0327785c",
+      "text": "if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) && (DAT_0327785c < 100)) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
       "text": "(&DAT_03277860)[DAT_0327785c] = in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_03277860",
+      "text": "(&DAT_03277860)[DAT_0327785c] = in_stack_00000008;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0327785c",
+      "text": "(&DAT_03277860)[DAT_0327785c] = in_stack_00000008;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_032779f0",
+      "text": "(&DAT_032779f0)[DAT_0327785c] = iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0327785c",
+      "text": "(&DAT_032779f0)[DAT_0327785c] = iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_0327785c",
+      "text": "DAT_0327785c = DAT_0327785c + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_0327785c",
+      "text": "DAT_0327785c = DAT_0327785c + 1;",
+      "type": "undefined_data"
     }
   ]
 }

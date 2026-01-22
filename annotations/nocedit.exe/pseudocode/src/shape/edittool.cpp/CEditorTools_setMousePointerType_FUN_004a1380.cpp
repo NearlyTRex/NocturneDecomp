@@ -19,7 +19,7 @@ shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380
   int iVar5;
   
   uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(this_ptr);
-  g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar1);
+  g_ActiveRenderColor = CONCAT31(extraout_var,uVar1);
   if (g_MouseCursorType == 0) {
     if ((((-1 < g_MouseX) && (-1 < g_MouseY)) &&
         ((g_MouseX < g_WindowWidth && (g_MouseY < g_WindowHeight)))) &&

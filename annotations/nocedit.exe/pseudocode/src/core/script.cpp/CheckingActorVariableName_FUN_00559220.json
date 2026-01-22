@@ -56,14 +56,15 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 105,
+    "complexity_score": 140,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "pseudocode_lines": 40,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 122
   },
@@ -207,11 +208,32 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_0310eca0",
+      "text": "(&DAT_0310eca0,\"Actor variable name \\\"%s\\\" is not valid\",in_stack_00000004);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000004",
       "text": "(&DAT_0310eca0,\"Actor variable name \\\"%s\\\" is too long\",in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_0310eca0",
+      "text": "(&DAT_0310eca0,\"Actor variable name \\\"%s\\\" is too long\",in_stack_00000004);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_0310eca0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,\"Actor variable name must begin with '@'\");",
+      "type": "undefined_data"
     }
   ]
 }

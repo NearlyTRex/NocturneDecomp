@@ -75,7 +75,7 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
   fVar17 = 6.737184e-39;
   dVar14 = crt_math_c_round_FUN_005fe6b0(dVar13);
   iVar1 = (int)ROUND(dVar14);
-  local_7c._0_4_ = SUB84 /* extract 2-byte value */(dVar12,0);
+  local_7c._0_4_ = SUB84(dVar12,0);
   dVar14 = (double)fVar17;
   dVar12 = crt_math_c_floor_FUN_005feb90(dVar14);
   fVar16 = (float)((ulonglong)dVar14 >> 0x20);
@@ -105,7 +105,7 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
       iVar7 = 1;
       fVar4 = ray_end->z - ray_start->z;
       uVar21 = (ulonglong)(uint)fVar4;
-      local_94 = SUB84 /* extract 2-byte value */(dVar13,0);
+      local_94 = SUB84(dVar13,0);
       local_98 = (int)((ulonglong)dVar12 >> 0x20);
       if ((local_68 != iVar5) || ((iStack_6c != local_90 || (local_64 != local_8c)))) {
         fVar2 = SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3);
@@ -120,7 +120,7 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
         crt_math_c_round_FUN_005fe6b0((double)fVar9);
         fVar8 = (float10)0;
         dVar14 = crt_math_c_round_FUN_005fe6b0((double)fVar11);
-        local_84 = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(dVar14),(int)local_84);
+        local_84 = (double)CONCAT44((int)ROUND(dVar14),(int)local_84);
         if (fVar10 < fVar8) {
           iVar5 = iStack_74 - local_94;
           fVar6 = 6.737663e-39 - (float)iStack_74;
@@ -129,7 +129,7 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
           iVar5 = local_94 - iStack_74;
           fVar6 = (float)(iStack_74 + 1) - 6.737663e-39;
         }
-        local_9c = SUB84 /* extract 2-byte value */(dVar12,0);
+        local_9c = SUB84(dVar12,0);
         if (fVar20 < 0.0) {
           local_8c = -1;
           local_9c = iVar1 - local_9c;
@@ -161,7 +161,7 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
         dVar14 = crt_math_c_round_FUN_005fe6b0((double)(fVar9 - fVar11));
         local_70 = (int)ROUND(dVar14);
       }
-      local_7c = CONCAT44 /* combine 2-byte values */(iVar1,(float)local_7c);
+      local_7c = CONCAT44(iVar1,(float)local_7c);
       fVar17 = 1.0001;
       while( true ) {
         this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
@@ -189,19 +189,19 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
         if (iVar7 < 1) break;
         if (local_7c < 0) {
           if (-1 < local_70) goto LAB_004961a7;
-          local_84 = (double)CONCAT44 /* combine 2-byte values */(local_84._4_4_ + local_68,(int)local_84);
+          local_84 = (double)CONCAT44(local_84._4_4_ + local_68,(int)local_84);
           local_70 = local_70 + local_8c;
-          local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_ + local_64,(float)local_7c);
+          local_7c = CONCAT44(local_7c._4_4_ + local_64,(float)local_7c);
         }
         else if (iStack_74 < 0) {
 LAB_004961a7:
-          local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_,(int)(float)local_7c + local_94);
+          local_7c = CONCAT44(local_7c._4_4_,(int)(float)local_7c + local_94);
           iStack_74 = iStack_74 + local_64;
           local_70 = local_70 - local_90;
         }
         else {
-          local_84 = (double)CONCAT44 /* combine 2-byte values */(local_84._4_4_,(int)local_84 + local_98);
-          local_7c = CONCAT44 /* combine 2-byte values */(local_7c._4_4_ - local_90,(float)local_7c);
+          local_84 = (double)CONCAT44(local_84._4_4_,(int)local_84 + local_98);
+          local_7c = CONCAT44(local_7c._4_4_ - local_90,(float)local_7c);
           iStack_74 = iStack_74 - local_8c;
         }
       }

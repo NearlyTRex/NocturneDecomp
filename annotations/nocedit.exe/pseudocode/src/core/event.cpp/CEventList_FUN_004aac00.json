@@ -19,15 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 131,
+    "complexity_score": 156,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 41,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 137
   },
@@ -238,6 +239,20 @@
       "match": "in_stack_00000008",
       "text": "while ((in_stack_00000008 = pcVar4 + 1, local_6c < pcVar2 &&",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_02d0a45c",
+      "text": "if (DAT_02d0a45c != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_02d0a460",
+      "text": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s\\n\",&DAT_02d0a460);",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 2,

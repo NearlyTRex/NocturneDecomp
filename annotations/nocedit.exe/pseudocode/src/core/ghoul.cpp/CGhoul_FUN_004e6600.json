@@ -1064,17 +1064,19 @@
   },
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 5050,
+    "complexity_score": 5190,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 71,
     "pseudocode_lines": 1055,
-    "suspect_count": 396,
+    "suspect_count": 409,
     "suspect_types": [
+      "builtin_function",
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -3005,6 +3007,20 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 240,
+      "match": "DAT_02d83300",
+      "text": "iVar12 = DAT_02d83300;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 242,
+      "match": "DAT_02d83304",
+      "text": "iVar12 = DAT_02d83304;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 247,
       "match": "in_stack_00000004",
@@ -3033,6 +3049,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 258,
+      "match": "DAT_02d832fc",
+      "text": "(pCVar1,&local_1b0,DAT_02d832fc);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 260,
       "match": "in_stack_00000004",
@@ -3059,6 +3082,13 @@
       "match": "in_stack_00000004",
       "text": "((CDemonActor *)in_stack_00000004,\"ghoul-eat-?.wav @1.3\");",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 275,
+      "match": "DAT_02d832fc",
+      "text": "(pCVar1,&local_1ec,DAT_02d832fc);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3726,6 +3756,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Ghidra builtin function",
+      "line": 496,
+      "match": "builtin_strncpy",
+      "text": "builtin_strncpy(in_stack_00000004->field6_0xbe38,\"333?\",4);",
+      "type": "builtin_function"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 501,
       "match": "code *",
@@ -3964,11 +4001,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 623,
+      "match": "DAT_02d832b4",
+      "text": "(&local_114,(CVector3f *)&DAT_02d832b4,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 625,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_character).model.bone_transform.",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 626,
+      "match": "DAT_02d83304",
+      "text": "bone_world_matrices[DAT_02d83304].m);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -4174,6 +4225,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 700,
+      "match": "DAT_02d7a7b8",
+      "text": "local_78 = (float)(((int)local_7c >> 1) + DAT_02d7a7b8);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 705,
       "match": "in_stack_00000004",
@@ -4221,6 +4279,20 @@
       "match": "in_stack_00000004",
       "text": "(g_CDemonSetPtr,(CDemonActor *)in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 726,
+      "match": "fcos",
+      "text": "fVar21 = (float10)fcos((float10)local_68);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 727,
+      "match": "fsin",
+      "text": "fVar22 = (float10)fsin((float10)local_68);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -4454,11 +4526,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 829,
+      "match": "DAT_02d832a8",
+      "text": "(local_210,(CVector3f *)&DAT_02d832a8,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 831,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_character).model.bone_transform.",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 832,
+      "match": "DAT_02d83300",
+      "text": "bone_world_matrices[DAT_02d83300].m);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -4991,6 +5077,13 @@
       "match": "in_stack_00000004",
       "text": "(pCVar1,(int)in_stack_00000004[1].base_character.base_actor.location.position.x,",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 977,
+      "match": "DAT_02d83320",
+      "text": "local_60,local_5c,DAT_02d83320,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

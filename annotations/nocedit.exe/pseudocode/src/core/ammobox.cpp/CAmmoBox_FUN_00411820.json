@@ -26,13 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 38,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_ref"
     ],
     "total_lines": 89
@@ -151,6 +152,13 @@
       "match": "&stack0xffffffd4",
       "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd4);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "NAN",
+      "text": "render_flags = -NAN;",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -1184,17 +1184,18 @@
   },
   "complexity": {
     "assembly_lines": 1324,
-    "complexity_score": 2027,
+    "complexity_score": 2422,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
     "pseudocode_lines": 642,
-    "suspect_count": 135,
+    "suspect_count": 174,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -2631,6 +2632,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 167,
+      "match": "DAT_03f6badc",
+      "text": "(pCVar15,&local_184,(int)DAT_03f6badc);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 172,
       "match": "in_stack_00000004",
@@ -2666,6 +2674,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 195,
+      "match": "DAT_03f6bb10",
+      "text": "(local_18,(CQuaternion4f *)local_360,(float)local_1ee0,DAT_03f6bb10,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 203,
+      "match": "DAT_03f6badc",
+      "text": "pcVar17 = DAT_03f6badc;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 205,
       "match": "(uint *)((int)",
@@ -2692,6 +2714,13 @@
       "match": "in_stack_00000004",
       "text": "local_e0.x = *(float *)(in_stack_00000004[0x17a].create_event + 0x38);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 220,
+      "match": "DAT_03f6badc",
+      "text": "(pCVar15,&local_b8,(int)DAT_03f6badc);",
+      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -2743,6 +2772,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 252,
+      "match": "DAT_03f6badc",
+      "text": "(int)DAT_03f6badc,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 255,
       "match": "(float *)((int)",
@@ -2755,6 +2791,13 @@
       "match": "(float *)((int)",
       "text": "afStack_1dc[(uint)bVar12 * -2] = *(float *)((int)&local_240 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 263,
+      "match": "DAT_03f6badc",
+      "text": "pcVar17 = DAT_03f6badc;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2813,6 +2856,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 287,
+      "match": "DAT_03f6baa8",
+      "text": "DAT_03f6baa8 = in_stack_00000004[0x179].scale.z;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 289,
       "match": "in_stack_00000004",
@@ -2839,6 +2889,13 @@
       "match": "in_stack_00000004",
       "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),(CVector3f *)local_94,",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 294,
+      "match": "DAT_03f6badc",
+      "text": "(int)DAT_03f6badc);",
+      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -2911,6 +2968,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 318,
+      "match": "DAT_03f6badc",
+      "text": "(float)local_1f08,(int)DAT_03f6badc,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 322,
       "match": "._12_4_",
@@ -2930,6 +2994,13 @@
       "match": "(float *)((int)",
       "text": "*(float *)((int)&CStack_1c4 + (uint)bVar12 * -8 + 4) = local_2b0[(uint)bVar12 * -2];",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 329,
+      "match": "DAT_03f6bae4",
+      "text": "(local_1c,&CStack_1c4,(float)local_1f08,DAT_03f6bae4,",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -2967,11 +3038,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 342,
+      "match": "DAT_03f6badc",
+      "text": "(local_1c,&CStack_3b4,(float)local_1f08,(int)DAT_03f6badc,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 344,
       "match": "._0_4_",
       "text": "core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((float)local_148._0_4_,&CStack_3a4);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 350,
+      "match": "DAT_03f6badc",
+      "text": "local_1f0c = DAT_03f6badc;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2986,6 +3071,13 @@
       "match": "in_stack_00000004",
       "text": "fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event + 0x48) /",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 358,
+      "match": "fpatan",
+      "text": "fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event + 0x48) /",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -3016,6 +3108,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 374,
+      "match": "DAT_03f6badc",
+      "text": "(local_18,&local_330,(float)local_1ef8,(int)DAT_03f6badc,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 382,
+      "match": "DAT_03f6bad8",
+      "text": "pcVar17 = DAT_03f6bad8;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 388,
       "match": "in_stack_00000004",
@@ -3028,6 +3134,13 @@
       "match": "in_stack_00000004",
       "text": "fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event +",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 396,
+      "match": "fpatan",
+      "text": "fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -3065,6 +3178,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 413,
+      "match": "DAT_03f6badc",
+      "text": "(float)local_1f0c,(int)DAT_03f6badc,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 416,
       "match": "._0_4_",
@@ -3086,11 +3206,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 427,
+      "match": "DAT_03f6bad8",
+      "text": "pcVar17 = DAT_03f6bad8;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 431,
       "match": "in_stack_00000004",
       "text": "local_18 = (CDeformableModelInstance *)(in_stack_00000004 + 1);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 433,
+      "match": "DAT_03f6badc",
+      "text": "(local_18,&local_16c,(int)DAT_03f6badc);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3121,11 +3255,32 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 448,
+      "match": "DAT_03f6badc",
+      "text": "(int)DAT_03f6badc,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 451,
+      "match": "DAT_03f6bad8",
+      "text": "(int)DAT_03f6bad8,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 452,
       "match": "in_stack_00000004",
       "text": "fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event +",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 452,
+      "match": "fpatan",
+      "text": "fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -3142,6 +3297,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 466,
+      "match": "DAT_03f6badc",
+      "text": "(int)DAT_03f6badc,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 470,
       "match": "._12_4_",
@@ -3154,6 +3316,13 @@
       "match": "._12_4_",
       "text": "local_220._12_4_ = local_360._12_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 480,
+      "match": "DAT_03f6bad8",
+      "text": "local_1f0c = DAT_03f6bad8;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3161,6 +3330,13 @@
       "match": "in_stack_00000004",
       "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&local_c4,(int)DAT_03f6badc);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 485,
+      "match": "DAT_03f6badc",
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&local_c4,(int)DAT_03f6badc);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3219,11 +3395,32 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 507,
+      "match": "DAT_03f6badc",
+      "text": "(int)DAT_03f6badc,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 509,
+      "match": "DAT_03f6bad8",
+      "text": "(local_1c,&local_294,(float)local_1ee0,(int)DAT_03f6bad8,",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 511,
       "match": "in_stack_00000004",
       "text": "fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event + 0x48) /",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 511,
+      "match": "fpatan",
+      "text": "fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event + 0x48) /",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -3247,11 +3444,46 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 523,
+      "match": "DAT_03f6badc",
+      "text": "(local_1c,&local_1a4,(float)local_1ee0,(int)DAT_03f6badc,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 532,
+      "match": "DAT_03f6bad8",
+      "text": "local_1f0c = DAT_03f6bad8;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 538,
       "match": "in_stack_00000004",
       "text": "(CVector3f *)&in_stack_00000004[0x179].previous_transform_state.position.y);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 539,
+      "match": "DAT_03f6baac",
+      "text": "if ((DAT_03f6baac & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 540,
+      "match": "DAT_03f6baac",
+      "text": "DAT_03f6baac = DAT_03f6baac | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 540,
+      "match": "DAT_03f6baac",
+      "text": "DAT_03f6baac = DAT_03f6baac | 1;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3280,6 +3512,13 @@
       "match": "&stack0x00000000",
       "text": "if (&stack0x00000000 != (byte *)0x3f6bc18) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 559,
+      "match": "DAT_03f6ba9c",
+      "text": "(CVector3f *)&DAT_03f6ba9c);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3322,6 +3561,13 @@
       "match": "in_stack_00000004",
       "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&local_e0,(int)DAT_03f6badc);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 566,
+      "match": "DAT_03f6badc",
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&local_e0,(int)DAT_03f6badc);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -3373,11 +3619,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 593,
+      "match": "DAT_03f6bb10",
+      "text": "DAT_03f6bb10,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 596,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)&CStack_374 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 604,
+      "match": "DAT_03f6badc",
+      "text": "local_1f0c = DAT_03f6badc;",
+      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
@@ -3413,6 +3673,13 @@
       "match": "._8_4_",
       "text": "local_94._8_4_ = *(uint *)in_stack_00000004[0x17a].actor_name;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 620,
+      "match": "DAT_03f6bacc",
+      "text": "iVar5 = DAT_03f6bacc;",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -3469,6 +3736,13 @@
       "match": "in_stack_00000004",
       "text": "(pCVar15,iVar5,local_2c,in_stack_00000004[0x17a].orient_matrix.m[2].x,DAT_03f6bb0c,",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 643,
+      "match": "DAT_03f6bb0c",
+      "text": "(pCVar15,iVar5,local_2c,in_stack_00000004[0x17a].orient_matrix.m[2].x,DAT_03f6bb0c,",
+      "type": "undefined_data"
     }
   ]
 }

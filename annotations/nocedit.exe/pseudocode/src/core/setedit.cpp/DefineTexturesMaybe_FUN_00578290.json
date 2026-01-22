@@ -68,14 +68,15 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 130,
+    "complexity_score": 255,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 16,
     "pseudocode_lines": 75,
-    "suspect_count": 5,
+    "suspect_count": 17,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 225
   },
@@ -298,11 +299,46 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_03654368",
+      "text": "if (0 < DAT_03654368) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_03654370",
+      "text": "pcVar5 = &DAT_03654370;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_03659190",
+      "text": "if ((byte)(&DAT_03659190)[iVar4] != _uStack00000008) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
       "text": "(\"Tried to define texture %s as ground type %d, but it was already defined as %d\",in_stack_00000004,_uStack00000008,",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_03659190",
+      "text": "(uint)(byte)(&DAT_03659190)[iVar4]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_03654368",
+      "text": "} while (iVar4 < DAT_03654368);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -312,11 +348,60 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_03654368",
+      "text": "if (499 < DAT_03654368) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 62,
       "match": "in_stack_00000004",
       "text": "(\"Texture filename %s is too long to add to CGroundTypeList!\",in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_03654370",
+      "text": "pcVar6 = &DAT_03654370 + DAT_03654368 * 0x28;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_03654368",
+      "text": "pcVar6 = &DAT_03654370 + DAT_03654368 * 0x28;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_03659190",
+      "text": "(&DAT_03659190)[DAT_03654368] = uStack00000008;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_03654368",
+      "text": "(&DAT_03659190)[DAT_03654368] = uStack00000008;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_03654368",
+      "text": "DAT_03654368 = DAT_03654368 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_03654368",
+      "text": "DAT_03654368 = DAT_03654368 + 1;",
+      "type": "undefined_data"
     }
   ]
 }

@@ -38,16 +38,17 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 98,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 43,
-    "suspect_count": 4,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "param_count_too_few"
+      "param_count_too_few",
+      "undefined_data"
     ],
     "total_lines": 139
   },
@@ -224,6 +225,48 @@
       "type": "extra_output"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_02d831ec",
+      "text": "if (DAT_02d831ec != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_02d831ec",
+      "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_02d831ec",
+      "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_02d831f0",
+      "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_02d831f0",
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)(DAT_02d831f0 * DAT_02d831f0));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_02d831f0",
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)(DAT_02d831f0 * DAT_02d831f0));",
+      "type": "undefined_data"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 20,
       "match": "extraout_EAX",
@@ -236,6 +279,34 @@
       "match": "ROUND",
       "text": "if ((int)ROUND(dVar5) <",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_02d831f8",
+      "text": "(DAT_02d831f8 - iVar4) * (DAT_02d831f8 - iVar4) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_02d831f8",
+      "text": "(DAT_02d831f8 - iVar4) * (DAT_02d831f8 - iVar4) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_02d831f4",
+      "text": "(DAT_02d831f4 - iVar1) * (DAT_02d831f4 - iVar1)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_02d831f4",
+      "text": "(DAT_02d831f4 - iVar1) * (DAT_02d831f4 - iVar1)) {",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 1,

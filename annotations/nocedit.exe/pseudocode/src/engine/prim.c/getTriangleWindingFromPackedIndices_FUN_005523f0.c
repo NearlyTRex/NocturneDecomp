@@ -50,5 +50,5 @@ engine_prim_c_getTriangleWindingFromPackedIndices_FUN_005523f0(STrianglePackedIn
   uVar4 = (uint)((uint)((longlong)local_20 * (longlong)local_1c) <
                 (uint)((longlong)local_24 * (longlong)local_18));
   iVar5 = iVar7 - iVar6;
-  return (uint)((SBORROW /* signed borrow */4(iVar7,iVar6) != SBORROW /* signed borrow */4(iVar5,uVar4)) != (int)(iVar5 - uVar4) < 0);
+  return (uint)((SBORROW4(iVar7,iVar6) != SBORROW4(iVar5,uVar4)) != (int)(iVar5 - uVar4) < 0);
 }

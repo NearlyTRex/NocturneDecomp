@@ -19,5 +19,5 @@ ulonglong core_backgnd_cpp_FUN_00412810(void)
   fVar1 = in_stack_00000004[2].location.position.y;
   uVar2 = (uint)(fVar1 == 0.0);
   in_stack_00000004->field16_0x100 = uVar2;
-  return CONCAT44 /* combine 2-byte values */(fVar1,uVar2);
+  return CONCAT44(fVar1,uVar2);
 }

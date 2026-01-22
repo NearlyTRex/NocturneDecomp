@@ -374,16 +374,17 @@
   },
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 615,
+    "complexity_score": 660,
     "cross_reference_count": 7,
     "function_call_count": 9,
     "global_count": 16,
     "pseudocode_lines": 150,
-    "suspect_count": 45,
+    "suspect_count": 49,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 545
   },
@@ -960,6 +961,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_00827500",
+      "text": "local_18 = &DAT_00827500;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 117,
       "match": "in_stack_00000004",
@@ -986,6 +994,27 @@
       "match": "in_stack_00000004",
       "text": "(SInputFace *)&DAT_00827500,*(int *)(in_stack_00000004 + 0x10c),4,0);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_00827500",
+      "text": "(SInputFace *)&DAT_00827500,*(int *)(in_stack_00000004 + 0x10c),4,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_00827500",
+      "text": "pSVar4 = (SMRGLPrimitiveQuad *)&DAT_00827500;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 145,
+      "match": "DAT_00827500",
+      "text": "pSVar4 = (SMRGLPrimitiveQuad *)&DAT_00827500;",
+      "type": "undefined_data"
     }
   ]
 }

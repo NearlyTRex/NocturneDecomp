@@ -74,12 +74,12 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 233,
+    "complexity_score": 273,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "pseudocode_lines": 78,
-    "suspect_count": 14,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
@@ -302,6 +302,20 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "fsin",
+      "text": "fVar6 = (float10)fsin(fVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "fcos",
+      "text": "fVar5 = (float10)fcos(fVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "ROUND",
       "text": "CStack_40.x = (int)ROUND(fVar1 * _DAT_00664cb0);",
@@ -340,6 +354,20 @@
       "line": 55,
       "match": "ROUND",
       "text": "CStack_28.z = (int)ROUND(fVar2 * _DAT_00664cb0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "fsin",
+      "text": "fVar6 = (float10)fsin(fVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "fcos",
+      "text": "fVar5 = (float10)fcos(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {

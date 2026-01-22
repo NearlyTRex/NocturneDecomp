@@ -89,7 +89,7 @@ uint core_gun_cpp_FUN_004f0350(void)
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((pCVar3 != (CDemonActor *)0x0) &&
-       (iVar2 = (*pCVar3->vtable[1].hasCollision)(pCVar3,SUB84 /* extract 2-byte value */(dVar6,0)), 0 < iVar2)) {
+       (iVar2 = (*pCVar3->vtable[1].hasCollision)(pCVar3,SUB84(dVar6,0)), 0 < iVar2)) {
       pCVar3 = (CDemonActor *)0x0;
     }
     pCStack_18 = (CGlass *)
@@ -118,7 +118,7 @@ uint core_gun_cpp_FUN_004f0350(void)
         }
         else {
           core_trigger_cpp_FUN_005e0aa0();
-          pCVar7 = SUB84 /* extract 2-byte value */(dVar6,0);
+          pCVar7 = SUB84(dVar6,0);
           iVar2 = core_trigger_cpp_FUN_005e0ac0();
           if (iVar2 != 0) {
             (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,pCVar7);

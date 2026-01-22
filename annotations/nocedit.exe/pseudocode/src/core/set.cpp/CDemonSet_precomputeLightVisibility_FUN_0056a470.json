@@ -152,17 +152,18 @@
   },
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 383,
+    "complexity_score": 398,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
     "pseudocode_lines": 193,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 591
   },
@@ -626,6 +627,13 @@
       "match": "in_stack_fffffe8c",
       "text": "CBoundingBox3D *in_stack_fffffe8c;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_03277d80",
+      "text": "DAT_03277d80 = 0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

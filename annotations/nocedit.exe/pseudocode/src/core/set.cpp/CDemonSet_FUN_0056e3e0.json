@@ -86,17 +86,18 @@
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 267,
+    "complexity_score": 342,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 9,
     "pseudocode_lines": 67,
-    "suspect_count": 18,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 227
   },
@@ -388,6 +389,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_02d7a7b8",
+      "text": "iVar4 = DAT_02d7a7b8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_03277d80",
+      "text": "if (0 < DAT_03277d80) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(int *)((int)",
@@ -395,6 +410,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_03277d84",
+      "text": "iVar1 = *(int *)((int)&DAT_03277d84 + iVar6);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000008",
@@ -435,6 +457,27 @@
       "match": "in_stack_0000000c",
       "text": "fVar3 = *(float *)(iVar1 + 0x10c) - (in_stack_00000008[2] + in_stack_0000000c[2]);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_02d7a7b8",
+      "text": "fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) + DAT_02d7a7b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_03277d80",
+      "text": "} while (iVar6 < DAT_03277d80 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_03277d80",
+      "text": "if (DAT_03277d80 == 0) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -477,6 +520,13 @@
       "match": "ROUND",
       "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar9) << 8);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_02d7a7b8",
+      "text": "DAT_02d7a7b8 = iVar4;",
+      "type": "undefined_data"
     }
   ]
 }

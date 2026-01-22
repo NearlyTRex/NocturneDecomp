@@ -50,5 +50,5 @@ ulonglong crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)
       param_2 = param_2 >> 1 | 0x80000000;
     }
   }
-  return CONCAT44 /* combine 2-byte values */(param_2,param_1);
+  return CONCAT44(param_2,param_1);
 }

@@ -31,5 +31,5 @@ ulonglong crt_unknown_c_FUN_0060e256(uint param_1,uint param_2,uint unaff_EBX,ui
   param_2 = param_2 * 2;
   iVar1 = (uint)bVar2 * -2 + 1;
 LAB_0060e28a:
-  return CONCAT44 /* combine 2-byte values */(param_2,iVar1);
+  return CONCAT44(param_2,iVar1);
 }

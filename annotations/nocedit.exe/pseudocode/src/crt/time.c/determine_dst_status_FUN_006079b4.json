@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 171,
+    "complexity_score": 186,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 19,
     "pseudocode_lines": 121,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function"
+      "special_crt_function",
+      "undefined_data"
     ],
     "total_lines": 441
   },
@@ -282,6 +283,13 @@
       "match": "(int *)((int)",
       "text": "iVar4 = *(int *)((int)&INFINITY + iVar5 * 2 + 6);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_00665f50",
+      "text": "iVar4 = *(int *)(&DAT_00665f50 + iVar5 * 2);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

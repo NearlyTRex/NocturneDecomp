@@ -92,13 +92,13 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
         if (0 < (int)ROUND(dVar6)) {
           uVar8 = 0x4a07b4;
           dVar7 = crt_math_c_round_FUN_005fe6b0
-                            ((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar5,0),uVar9) + 0.5);
+                            ((double)CONCAT44(SUB84(dVar5,0),uVar9) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
                     (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipBottom - g_FontCharacterWidth,
                      g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
                      (int)ROUND(dVar7) / 0x3c,(int)ROUND(dVar7) % 0x3c,(int)ROUND(dVar6) / 0x3c,
-                     extraout_EDX,uVar8,uVar9,SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
+                     extraout_EDX,uVar8,uVar9,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
         }
       }
     }

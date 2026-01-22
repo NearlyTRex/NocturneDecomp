@@ -334,9 +334,6 @@ def apply_all_transforms(code, transforms=None):
     default_transforms = [
         ('undefined_ptr_cast', transform_undefined_pointer_casts),
         ('undefined_type', transform_undefined_types),
-        ('concat_artifact', transform_concat_artifacts),
-        ('sub_artifact', transform_sub_artifacts),
-        ('sborrow_artifact', transform_sborrow_artifacts),
     ]
 
     if transforms is None:

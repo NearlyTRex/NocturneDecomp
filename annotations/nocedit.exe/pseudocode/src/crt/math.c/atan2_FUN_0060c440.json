@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 132,
+    "complexity_score": 227,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "pseudocode_lines": 32,
-    "suspect_count": 7,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
       "special_math_intrinsic",
+      "unknown_type",
       "warning_indirect_jump",
       "warning_jumptable",
       "warning_overlapping_globals"
@@ -224,6 +225,48 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unknown/unresolved type",
+      "line": 15,
+      "match": "unkuint10",
+      "text": "uStack_20 = (uint)((unkuint10)y >> 0x20);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 16,
+      "match": "unkuint10",
+      "text": "uStack_1c = (ushort)((unkuint10)y >> 0x40);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 17,
+      "match": "unkuint10",
+      "text": "uStack_2c = (uint)((unkuint10)x >> 0x20);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 18,
+      "match": "unkuint10",
+      "text": "uStack_28 = (ushort)((unkuint10)x >> 0x40);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "CARRY4",
+      "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "CARRY4",
+      "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ABS",
@@ -250,6 +293,27 @@
       "match": "WARNING: Treating indirect jump as call",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "CARRY4",
+      "text": "[(uVar2 * 2 + (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "CARRY4",
+      "text": "* 2 + (uint)CARRY4(uVar1,uVar1)])((uint)uStack_28 << 0x11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "fpatan",
+      "text": "fVar3 = (float10)fpatan(x,y);",
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

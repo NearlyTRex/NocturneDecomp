@@ -9,7 +9,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 103,
+        "column": 75,
         "line": 23,
         "message": "'ROUND' was not declared in this scope"
       },
@@ -171,21 +171,21 @@
       "description": "Unaffected register variable",
       "line": 16,
       "match": "unaff_EBX",
-      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
+      "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT44",
-      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
+      "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "ROUND",
-      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
+      "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
       "type": "decompiler_intrinsic"
     },
     {

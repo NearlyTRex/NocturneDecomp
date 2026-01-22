@@ -119,7 +119,7 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220
       iStack_74 = 1;
       fVar1 = (float)(local_5c + 1) - local_7c;
     }
-    uStack_9c = (double)CONCAT44 /* combine 2-byte values */(uStack_9c._4_4_,fVar1);
+    uStack_9c = (double)CONCAT44(uStack_9c._4_4_,fVar1);
     if (fVar12 < 0.0) {
       iVar5 = local_60 - uStack_9c._4_4_;
       iStack_78 = -1;
@@ -141,7 +141,7 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220
       fVar2 = (float)((int)local_58 + 1) - local_8c._4_4_;
     }
     iVar6 = iVar4 + 1 + iVar5 + iVar6;
-    local_94 = (double)CONCAT44 /* combine 2-byte values */(local_94._4_4_,fVar2);
+    local_94 = (double)CONCAT44(local_94._4_4_,fVar2);
     fVar7 = (float10)local_6c * (float10)fVar2;
     fVar8 = (float10)local_64 * (float10)fVar1;
     fVar9 = (float10)local_64 * (float10)fStack_84;

@@ -68,15 +68,16 @@
   },
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 344,
+    "complexity_score": 379,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 9,
     "pseudocode_lines": 64,
-    "suspect_count": 27,
+    "suspect_count": 30,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 208
   },
@@ -392,6 +393,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_0366b650",
+      "text": "(&DAT_0366b650,\"Heirarchy for %s\\r\\n\\r\\n\",in_stack_00000008);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_0366b650",
+      "text": "pcVar2 = &DAT_0366b650 + iVar3;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_00000004",
@@ -411,6 +426,13 @@
       "match": "in_stack_00000004",
       "text": "} while (iVar4 < *in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_0366b650",
+      "text": "shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(g_CEditorToolsPtr,&DAT_0366b650);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -20,13 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 6,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 6,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 18
   },
   "cross_references": [],
@@ -109,5 +111,13 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_03f95df8",
+      "text": "crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_03f95df8,200,&g_CVectorTypeInfo);",
+      "type": "undefined_data"
+    }
+  ]
 }

@@ -28,9 +28,9 @@ engine_2d_c_clipAndDrawLine_FUN_00402ca0
   uint local_14;
   
   bVar2 = engine_2d_c_computeOutcode_FUN_00402c10((int)x1,(int)y1,x_min,y_min,x_max,y_max);
-  local_14 = CONCAT31 /* combine 2-byte values */(extraout_var,bVar2);
+  local_14 = CONCAT31(extraout_var,bVar2);
   bVar2 = engine_2d_c_computeOutcode_FUN_00402c10((int)x2,(int)y2,x_min,y_min,x_max,y_max);
-  local_18 = CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2);
+  local_18 = CONCAT31(extraout_var_00,bVar2);
   local_1c = 0;
   do {
     iVar5 = (int)y2 - (int)y1;
@@ -89,14 +89,14 @@ engine_2d_c_clipAndDrawLine_FUN_00402ca0
     if (local_14 == 0) {
       bVar2 = engine_2d_c_computeOutcode_FUN_00402c10
                         ((int)unaff_EBX,(int)unaff_EDI,x_min,y_min,x_max,y_max);
-      local_18 = CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar2);
+      local_18 = CONCAT31(extraout_var_02,bVar2);
       x2 = unaff_EBX;
       y2 = unaff_EDI;
     }
     else {
       bVar2 = engine_2d_c_computeOutcode_FUN_00402c10
                         ((int)unaff_EBX,(int)unaff_EDI,x_min,y_min,x_max,y_max);
-      local_14 = CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar2);
+      local_14 = CONCAT31(extraout_var_01,bVar2);
       y1 = unaff_EDI;
       x1 = unaff_EBX;
     }

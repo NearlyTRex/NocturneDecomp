@@ -542,17 +542,18 @@
   },
   "complexity": {
     "assembly_lines": 1250,
-    "complexity_score": 1105,
+    "complexity_score": 1180,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 22,
     "pseudocode_lines": 525,
-    "suspect_count": 56,
+    "suspect_count": 63,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "suspect_float"
+      "suspect_float",
+      "undefined_data"
     ],
     "total_lines": 1775
   },
@@ -2106,6 +2107,13 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 185,
+      "match": "fcos",
+      "text": "fVar11 = (float10)fcos((float10)*(float *)(this_ptr->field0_0x0 + 0x3c));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 186,
       "match": "SQRT",
       "text": "local_4c = fVar1 / (SQRT(local_1d8 * local_1d8 + local_1e0 * local_1e0 + local_1dc * local_1dc",
@@ -2116,6 +2124,13 @@
       "line": 187,
       "match": "SQRT",
       "text": ") * SQRT(local_118 * local_118 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 193,
+      "match": "fptan",
+      "text": "fVar11 = (float10)fptan((float10)*(float *)(this_ptr->field0_0x0 + 0x3c));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2273,11 +2288,32 @@
       "type": "suspect_float"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 315,
+      "match": "fptan",
+      "text": "fVar11 = (float10)fptan((float10)fVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 316,
       "match": "2.24208e-44",
       "text": "local_24 = 2.24208e-44;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 334,
+      "match": "fsin",
+      "text": "fVar12 = (float10)fsin(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 335,
+      "match": "fcos",
+      "text": "fVar11 = (float10)fcos(fVar11);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -2369,6 +2405,20 @@
       "match": "extraout_EDX",
       "text": "local_2b0 = ((extraout_EDX << 8) / (int)local_28 + DAT_02d13564) * 0x10000;",
       "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 382,
+      "match": "DAT_02d13564",
+      "text": "local_2b0 = ((extraout_EDX << 8) / (int)local_28 + DAT_02d13564) * 0x10000;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 384,
+      "match": "DAT_02d13564",
+      "text": "local_298 = ((int)local_34 / (int)local_28 + DAT_02d13564) * 0x10000;",
+      "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",

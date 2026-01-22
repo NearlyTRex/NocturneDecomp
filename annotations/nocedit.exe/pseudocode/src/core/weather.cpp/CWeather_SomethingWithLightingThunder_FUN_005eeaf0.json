@@ -146,17 +146,18 @@
   },
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 533,
+    "complexity_score": 628,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 25,
     "pseudocode_lines": 128,
-    "suspect_count": 38,
+    "suspect_count": 47,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 410
@@ -650,6 +651,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_03f96b40",
+      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(DAT_03f96b40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_03f96a78",
+      "text": "(&DAT_03f96a78)[iVar5] = 0;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_00000004",
@@ -662,6 +677,13 @@
       "match": "(float *)((int)",
       "text": "fVar3 = *(float *)((int)&DAT_03f95df8[0].y + iVar4) - (float)in_stack_00000004[1] * fVar1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_03f95df8",
+      "text": "fVar3 = *(float *)((int)&DAT_03f95df8[0].y + iVar4) - (float)in_stack_00000004[1] * fVar1;",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -671,6 +693,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_03f95df8",
+      "text": "*(float *)((int)&DAT_03f95df8[0].y + iVar4) = fVar3;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(float *)((int)",
@@ -678,11 +707,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_03f96758",
+      "text": "if ((fVar3 < *(float *)((int)&DAT_03f96758 + iVar6)) &&",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(float *)((int)",
       "text": "(*(float *)((int)&DAT_03f95df8[0].y + iVar4) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_03f95df8",
+      "text": "(*(float *)((int)&DAT_03f95df8[0].y + iVar4) =",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -697,6 +740,13 @@
       "match": "(float *)((int)",
       "text": "*(float *)((int)&DAT_03f95df8[0].y + iVar4) + _DAT_00657bd4, *in_stack_00000004 == 1))",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_03f95df8",
+      "text": "*(float *)((int)&DAT_03f95df8[0].y + iVar4) + _DAT_00657bd4, *in_stack_00000004 == 1))",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -797,6 +847,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 123,
+      "match": "DAT_03f96b40",
+      "text": "iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_03f96b40);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 126,
       "match": "in_stack_00000004",
@@ -809,6 +866,13 @@
       "match": "extraout_EAX",
       "text": "DAT_03f96b40 = extraout_EAX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 127,
+      "match": "DAT_03f96b40",
+      "text": "DAT_03f96b40 = extraout_EAX;",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 1,

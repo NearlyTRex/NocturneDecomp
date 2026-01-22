@@ -146,7 +146,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
                 (*this_ptr->vtable->fillAttackDamageInfo)
                           (this_ptr,hit_type,(SDamageInfo *)in_stack_fffffd6c,(CDemonActor *)pCVar5)
                 ;
-                in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */((SDamageInfo *)(auStack_240 + 0x10),hit_type);
+                in_stack_fffffd78 = CONCAT44((SDamageInfo *)(auStack_240 + 0x10),hit_type);
                 in_stack_fffffd70 = (CDemonActor *)0x40a6a6;
                 (*this_ptr->vtable->playAttackHitEffects)
                           (this_ptr,hit_type,(SDamageInfo *)(auStack_240 + 0x10),
@@ -175,7 +175,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
                           (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr,
                            (double)fStack_268,pCVar4);
                 core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
-                in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */((SDamageInfo *)&stack0xfffffd94,hit_type);
+                in_stack_fffffd78 = CONCAT44((SDamageInfo *)&stack0xfffffd94,hit_type);
                 in_stack_fffffd70 = (CDemonActor *)0x40a607;
                 (*this_ptr->vtable->playAttackHitEffects)
                           (this_ptr,hit_type,(SDamageInfo *)&stack0xfffffd94,pCVar4);
@@ -206,7 +206,7 @@ core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,in
           if (0.0 < (double)fStack_178) {
             crt_math_c_round_FUN_005fe6b0((double)fStack_178 * 0.5 + 1.0);
             core_gore_cpp_FUN_004edbb0();
-            in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(this_ptr_00,(SDamageInfo *)(auStack_194 + 0x14));
+            in_stack_fffffd78 = CONCAT44(this_ptr_00,(SDamageInfo *)(auStack_194 + 0x14));
             in_stack_fffffd6c = (char *)0x40a528;
             in_stack_fffffd70 = this_ptr;
             (*this_ptr->vtable->playAttackHitEffects)
@@ -235,7 +235,7 @@ LAB_0040a3e0:
       pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
       if ((pCVar4 != (CDemonActor *)0x0) &&
-         (iVar3 = (*pCVar4->vtable[1].hasCollision)(pCVar4,SUB84 /* extract 2-byte value */(dVar8,0)), 0 < iVar3)) {
+         (iVar3 = (*pCVar4->vtable[1].hasCollision)(pCVar4,SUB84(dVar8,0)), 0 < iVar3)) {
         pCVar4 = (CDemonActor *)0x0;
       }
       pCVar5 = (CGlass *)
@@ -273,10 +273,10 @@ LAB_0040a3e0:
                         (this_ptr,hit_type,(SDamageInfo *)auStack_158,victim);
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr,
-                         SUB84 /* extract 2-byte value */((double)fStack_144,0),(int)((ulonglong)(double)fStack_144 >> 0x20),
+                         SUB84((double)fStack_144,0),(int)((ulonglong)(double)fStack_144 >> 0x20),
                          victim);
               core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
-              in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(uVar10,unaff_retaddr);
+              in_stack_fffffd78 = CONCAT44(uVar10,unaff_retaddr);
               (*this_ptr->vtable->playAttackHitEffects)
                         (this_ptr,hit_type,(SDamageInfo *)(auStack_158 + 0x10),unaff_retaddr);
             }
@@ -288,7 +288,7 @@ LAB_0040a3e0:
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_1d0);
           (*this_ptr->vtable->fillAttackDamageInfo)
                     (this_ptr,hit_type,(SDamageInfo *)auStack_1d0,(CDemonActor *)pCVar5);
-          in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(fVar6,pCVar5);
+          in_stack_fffffd78 = CONCAT44(fVar6,pCVar5);
           (*this_ptr->vtable->playAttackHitEffects)
                     (this_ptr,hit_type,(SDamageInfo *)(auStack_1d0 + 0x10),(CDemonActor *)pCVar5);
           core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCVar5);
@@ -338,7 +338,7 @@ LAB_0040a3e0:
           CStack_1e0.z = pCVar2->z;
         }
         (*pCVar4->vtable[1].playAmbientSoundWithVolume)(pCVar4,auStack_20c + 0x10,fVar6);
-        in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(hit_type,this_ptr);
+        in_stack_fffffd78 = CONCAT44(hit_type,this_ptr);
         (*this_ptr->vtable->playAttackHitEffects)
                   (this_ptr,hit_type,(SDamageInfo *)(auStack_20c + 0x1c),pCVar4);
         core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0

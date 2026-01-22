@@ -46,12 +46,12 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_centerModel_FUN_0048fa50(CDSEModel *th
     if (dVar2 < dVar8) {
       dVar8 = dVar2;
     }
-    local_34 = SUB84 /* extract 2-byte value */(dVar3,0);
+    local_34 = SUB84(dVar3,0);
     uStack_30 = (uint)((ulonglong)dVar3 >> 0x20);
     if (dVar6 < dVar3) {
       dVar6 = dVar3;
     }
-    if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)) {
+    if (dVar3 < (double)CONCAT44(uStack_48,local_4c)) {
       local_4c = local_34;
       uStack_48 = uStack_30;
     }
@@ -67,8 +67,8 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_centerModel_FUN_0048fa50(CDSEModel *th
                 ((dVar5 - dVar8) * 0.5 + dVar8));
     this_ptr->vertices[local_14].vertex.z =
          (float)((double)this_ptr->vertices[local_14].vertex.z -
-                ((dVar6 - (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)) * 0.5 +
-                (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)));
+                ((dVar6 - (double)CONCAT44(uStack_48,local_4c)) * 0.5 +
+                (double)CONCAT44(uStack_48,local_4c)));
   }
   return;
 }

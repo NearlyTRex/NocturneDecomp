@@ -56,16 +56,17 @@
   },
   "complexity": {
     "assembly_lines": 341,
-    "complexity_score": 561,
+    "complexity_score": 636,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 11,
     "pseudocode_lines": 161,
-    "suspect_count": 38,
+    "suspect_count": 45,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "suspect_float",
+      "unknown_type",
       "unnamed_param"
     ],
     "total_lines": 502
@@ -587,11 +588,60 @@
       "type": "extra_output"
     },
     {
+      "description": "Unknown/unresolved type",
+      "line": 16,
+      "match": "unkbyte10",
+      "text": "unkbyte10 Var7;",
+      "type": "unknown_type"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_3",
       "text": "local_c0.base.count = (int)param_3;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "fpatan",
+      "text": "Var7 = fpatan(fVar3,(float10)1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos(Var7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "fsin",
+      "text": "fVar4 = (float10)fsin(fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 73,
+      "match": "fsin",
+      "text": "fVar5 = (float10)fsin(fVar8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos(fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "fcos",
+      "text": "fVar8 = (float10)fcos(fVar8);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

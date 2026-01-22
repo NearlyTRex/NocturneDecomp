@@ -71,7 +71,7 @@ LAB_0051d5ec:
     if (DAT_02f313e8 != (CQuaternion4f *)0x0) {
       uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
       ;
-      g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar1);
+      g_ActiveRenderColor = CONCAT31(extraout_var,uVar1);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
                 (g_CEditorToolsPtr,DAT_02f313e8,4);
     }

@@ -47,20 +47,20 @@ core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0
   }
   while (3 < iVar7) {
     uVar1 = *(uint *)pbVar5;
-    uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>
-                                                   0x28),CONCAT14 /* combine 2-byte values */((char)((uint)uVar1 >> 0x10),uVar1)
+    uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>
+                                                   0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)
                                            ) >> 0x20),uVar1) >> 0x18);
     uVar13 = (uint5)uVar4 & 0xffffffff00;
     uVar10 = (ushort)(((ushort)uVar1 & 0xff) * (ushort)(byte)uVar8) >> 6;
-    uVar12 = (ushort)(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)((uint)uVar1 >> 8),(ushort)uVar1)) >>
+    uVar12 = (ushort)(((ushort)(CONCAT43(uVar4,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >>
                                0x10) & 0xff) * (ushort)(byte)(uVar16 >> 8)) >> 6;
-    uVar14 = (ushort)((short)(uVar13 >> 8) * (short)CONCAT21 /* combine 2-byte values */(uVar3,(char)(uVar16 >> 0x10))) >> 6;
+    uVar14 = (ushort)((short)(uVar13 >> 8) * (short)CONCAT21(uVar3,(char)(uVar16 >> 0x10))) >> 6;
     uVar15 = (ushort)((short)(uVar13 >> 0x18) * (uVar3 >> 8)) >> 6;
-    sVar11 = CONCAT11 /* combine 2-byte values */((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
+    sVar11 = CONCAT11((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
                       (uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10));
     *(uint *)pcVar9 =
-         CONCAT22 /* combine 2-byte values */((short)(CONCAT13 /* combine 2-byte values */((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15)
-                                   ,CONCAT12 /* combine 2-byte values */((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 -
+         CONCAT22((short)(CONCAT13((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15)
+                                   ,CONCAT12((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 -
                                              (0xff < uVar14),sVar11)) >> 0x10) +
                   (short)((uint)*(uint *)pcVar9 >> 0x10),sVar11 + (short)*(uint *)pcVar9
                  );

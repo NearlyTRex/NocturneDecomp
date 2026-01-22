@@ -59,7 +59,7 @@ shape_superopt_cpp_CObj_weldVertices_FUN_005d4160
       pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_1c);
       pdStack_14 = pdVar4;
       if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {
-        dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_fc,iStack_100);
+        dVar2 = (double)CONCAT44(uStack_fc,iStack_100);
         dStack_54 = *pdVar4 - dVar2;
         dStack_4c = pdVar4[1] - dVar2;
         dStack_44 = pdVar4[2] - dVar2;
@@ -120,7 +120,7 @@ LAB_005d43a8:
                       (SQRT((pdVar4[2] - pdStack_14[2]) * (pdVar4[2] - pdStack_14[2]) +
                             (pdVar4[1] - pdStack_14[1]) * (pdVar4[1] - pdStack_14[1]) +
                             (*pdVar4 - *pdStack_14) * (*pdVar4 - *pdStack_14)) <=
-                       (double)CONCAT44 /* combine 2-byte values */(uStack_fc,iStack_100))) goto LAB_005d43a8;
+                       (double)CONCAT44(uStack_fc,iStack_100))) goto LAB_005d43a8;
             }
             iStack_24 = iStack_24 + 0x38;
             uVar5 = uVar5 + 1;

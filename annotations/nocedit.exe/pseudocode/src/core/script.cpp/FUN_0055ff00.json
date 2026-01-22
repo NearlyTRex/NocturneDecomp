@@ -206,16 +206,17 @@
   },
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 555,
+    "complexity_score": 610,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "pseudocode_lines": 85,
-    "suspect_count": 45,
+    "suspect_count": 50,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "stack_param",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 270
@@ -511,6 +512,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_006431a0",
+      "text": "iVar2 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,&DAT_006431a0,&local_28);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_0000000c",
@@ -525,11 +533,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0310f4b0",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&DAT_0310f4b0,in_stack_0000000c);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000010",
       "text": "pcVar4 = in_stack_00000010;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_0310ec9c",
+      "text": "if (DAT_0310ec9c == 0) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -560,6 +582,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_0310f4ac",
+      "text": "if (DAT_0310f4ac != 0) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000004",
@@ -656,6 +685,13 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)in_stack_00000004 + 0xc) = *(uint *)((int)in_stack_00000004 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_0310ec9c",
+      "text": "if (DAT_0310ec9c == 0) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

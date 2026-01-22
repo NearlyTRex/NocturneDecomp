@@ -19,5 +19,5 @@ float10 __fpu_thunk crt_math_c_fdiv_thunk_FUN_00606e0f(void)
   uStack00000020 = (undefined6)in_ST0;
   uStack00000026 = (uint)((unkuint10)in_ST0 >> 0x30);
   crt_math_c_fdiv_FUN_00606960(in_ST2,in_ST3);
-  return (float10)CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_0000001c);
+  return (float10)CONCAT64(uStack00000020,in_stack_0000001c);
 }

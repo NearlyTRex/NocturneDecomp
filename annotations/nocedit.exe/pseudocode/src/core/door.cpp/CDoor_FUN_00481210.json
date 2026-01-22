@@ -20,13 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 11,
+    "complexity_score": 36,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 11,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 34
   },
   "cross_references": [
@@ -108,5 +110,20 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_02c14cd8",
+      "text": "iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_02c14cd8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02c14cd8",
+      "text": "DAT_02c14cd8 = (*((this_ptr->base_actor).vtable)->playSound)",
+      "type": "undefined_data"
+    }
+  ]
 }

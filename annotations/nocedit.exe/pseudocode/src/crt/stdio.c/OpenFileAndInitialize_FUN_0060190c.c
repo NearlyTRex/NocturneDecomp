@@ -43,10 +43,10 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
       bVar1 = bVar1 | 0x10;
     }
     if ((parsed_mode_flags & 0x40U) == 0) {
-      uVar2 = CONCAT11 /* combine 2-byte values */(1,bVar1);
+      uVar2 = CONCAT11(1,bVar1);
     }
     else {
-      uVar2 = CONCAT11 /* combine 2-byte values */(2,bVar1);
+      uVar2 = CONCAT11(2,bVar1);
     }
     uVar4 = (uint)uVar2;
     uVar5 = 0x180;

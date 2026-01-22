@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 180,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "pseudocode_lines": 40,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
       "stack_ref",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_spacebase"
     ],
     "total_lines": 107
   },
@@ -185,6 +186,13 @@
     "severity": "high"
   },
   "suspects": [
+    {
+      "description": "Stack frame tracking failed",
+      "line": 2,
+      "match": "WARNING: Unable to track spacebase fully for stack",
+      "text": "/* WARNING: Unable to track spacebase fully for stack */",
+      "type": "warning_spacebase"
+    },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 13,

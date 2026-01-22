@@ -182,18 +182,19 @@
   },
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 692,
+    "complexity_score": 707,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 127,
-    "suspect_count": 54,
+    "suspect_count": 55,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "stack_param",
-      "unknown_field"
+      "unknown_field",
+      "warning_type_propagation"
     ],
     "total_lines": 421
   },
@@ -398,6 +399,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 19,

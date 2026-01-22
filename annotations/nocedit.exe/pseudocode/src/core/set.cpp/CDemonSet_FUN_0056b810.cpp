@@ -63,7 +63,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   collision_info = (CDemonActor *)g_CGamePtr->delta_time_float;
   g_CoronaGlobeCount = 0;
   pCVar6 = (CDemonSet *)
-           CONCAT22 /* combine 2-byte values */((short)((uint)collision_info >> 0x10),
+           CONCAT22((short)((uint)collision_info >> 0x10),
                     (ushort)(0.0 < (float)collision_info) << 8 |
                     (ushort)NAN((float)collision_info) << 10 |
                     (ushort)((float)collision_info == 0.0) << 0xe);

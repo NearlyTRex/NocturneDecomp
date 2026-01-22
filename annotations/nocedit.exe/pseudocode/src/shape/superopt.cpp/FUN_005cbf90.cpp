@@ -215,22 +215,22 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
               local_38 = local_f0;
               local_34 = uStack_ec;
             }
-            if ((((double)CONCAT44 /* combine 2-byte values */(uStack_f4,local_f8) !=
-                  (double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_)) ||
-                ((double)CONCAT44 /* combine 2-byte values */(uStack_ec,local_f0) !=
-                 (double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))) &&
-               (((double)CONCAT44 /* combine 2-byte values */(local_e8.x._4_4_,local_e8.x._0_4_) !=
-                 (double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_) ||
-                ((double)CONCAT44 /* combine 2-byte values */(local_e8.y._4_4_,local_e8.y._0_4_) !=
-                 (double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))))) {
+            if ((((double)CONCAT44(uStack_f4,local_f8) !=
+                  (double)CONCAT44(local_d8.x._4_4_,local_d8.x._0_4_)) ||
+                ((double)CONCAT44(uStack_ec,local_f0) !=
+                 (double)CONCAT44(local_d8.y._4_4_,local_d8.y._0_4_))) &&
+               (((double)CONCAT44(local_e8.x._4_4_,local_e8.x._0_4_) !=
+                 (double)CONCAT44(local_d8.x._4_4_,local_d8.x._0_4_) ||
+                ((double)CONCAT44(local_e8.y._4_4_,local_e8.y._0_4_) !=
+                 (double)CONCAT44(local_d8.y._4_4_,local_d8.y._0_4_))))) {
               local_a0 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                                   (&local_e8,&local_d8,SUB84 /* extract 2-byte value */(dVar4,0));
+                                   (&local_e8,&local_d8,SUB84(dVar4,0));
               uStack_12c = (uint)((ulonglong)local_a0 >> 0x20);
-              local_130 = SUB84 /* extract 2-byte value */(local_a0,0);
+              local_130 = SUB84(local_a0,0);
               if ((((ulonglong)local_a0 & 0x7fffffff00000000) != 0) || (local_130 != 0)) {
                 if (bVar1) {
-                  if ((((double)CONCAT44 /* combine 2-byte values */(uStack_114,local_118) < 0.0) && (0.0 < local_a0)) ||
-                     ((0.0 < (double)CONCAT44 /* combine 2-byte values */(uStack_114,local_118) && (local_a0 < 0.0)))) break;
+                  if ((((double)CONCAT44(uStack_114,local_118) < 0.0) && (0.0 < local_a0)) ||
+                     ((0.0 < (double)CONCAT44(uStack_114,local_118) && (local_a0 < 0.0)))) break;
                 }
                 else {
                   local_118 = local_130;

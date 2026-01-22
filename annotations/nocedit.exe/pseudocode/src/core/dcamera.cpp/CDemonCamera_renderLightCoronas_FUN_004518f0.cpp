@@ -236,7 +236,7 @@ LAB_00451d8b:
           local_38 = g_ZBufferScanlineArray[local_64 << ((byte)g_CameraDownscaleIterations & 0x1f)]
                      + (local_28 << ((byte)g_CameraDownscaleIterations & 0x1f));
           iVar3 = local_28 - iVar5;
-          while (SBORROW /* signed borrow */4(local_28,iVar5) != iVar3 < 0) {
+          while (SBORROW4(local_28,iVar5) != iVar3 < 0) {
             if ((((*local_38 < (uint)*local_34) &&
                  (uVar4 = pCVar9->x - (g_CurrentGlobe->color).r,
                  (int)((uVar4 ^ (int)uVar4 >> 0x1f) - ((int)uVar4 >> 0x1f)) <

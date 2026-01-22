@@ -73,7 +73,7 @@ uint core_turret_cpp_FUN_005e3750(void)
     if ((dVar6 < 0.0) || (1.0 < dVar6)) break;
     this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                          (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
-    collision_info = SUB84 /* extract 2-byte value */(dVar6,0);
+    collision_info = SUB84(dVar6,0);
     if ((this_ptr != (CDemonActor *)0x0) &&
        (iVar3 = (*this_ptr->vtable[1].hasCollision)(this_ptr,collision_info), 0 < iVar3)) {
       this_ptr = (CDemonActor *)0x0;

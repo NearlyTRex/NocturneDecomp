@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 169,
+    "complexity_score": 194,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
     "pseudocode_lines": 24,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "param_count_too_few",
       "special_crt_function",
       "stack_param",
@@ -141,6 +142,13 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_var",
+      "text": "ushort extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
@@ -165,14 +173,21 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_fffffff4",
-      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar1),in_stack_fffffff4);",
+      "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_var",
+      "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
+      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT22",
-      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar1),in_stack_fffffff4);",
+      "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -123,13 +123,13 @@
       },
       {
         "category": "other",
-        "column": 105,
+        "column": 77,
         "line": 232,
         "message": "request for member '_0_4_' in 'local_b8', which is of non-class type 'double'"
       },
       {
         "category": "other",
-        "column": 107,
+        "column": 79,
         "line": 233,
         "message": "cast from 'SStereoGains*' to 'int' loses precision [-fpermissive]"
       },
@@ -159,13 +159,13 @@
       },
       {
         "category": "other",
-        "column": 103,
+        "column": 75,
         "line": 269,
         "message": "request for member '_0_4_' in 'local_b8', which is of non-class type 'double'"
       },
       {
         "category": "other",
-        "column": 105,
+        "column": 77,
         "line": 270,
         "message": "cast from 'SStereoGains*' to 'int' loses precision [-fpermissive]"
       },
@@ -916,14 +916,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 122,
       "match": "CONCAT44",
-      "text": "local_b0 = (double)CONCAT44 /* combine 2-byte values */((int)uVar5,local_68);",
+      "text": "local_b0 = (double)CONCAT44((int)uVar5,local_68);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 134,
       "match": "CONCAT44",
-      "text": "dVar12 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14);",
+      "text": "dVar12 = (double)CONCAT44(uVar15,uVar14);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -937,14 +937,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 137,
       "match": "CONCAT44",
-      "text": "dVar12 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) - local_b8;",
+      "text": "dVar12 = (double)CONCAT44(uVar15,uVar14) - local_b8;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 144,
       "match": "SUB84",
-      "text": "afStack_90[0] = SUB84 /* extract 2-byte value */(dVar13,0);",
+      "text": "afStack_90[0] = SUB84(dVar13,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -965,21 +965,21 @@
       "description": "Unresolved stack parameter",
       "line": 150,
       "match": "in_stack_ffffff30",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_ffffff30);",
+      "text": "dVar13 = (double)CONCAT44(sample_data,in_stack_ffffff30);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 150,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_ffffff30);",
+      "text": "dVar13 = (double)CONCAT44(sample_data,in_stack_ffffff30);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 152,
       "match": "SUB84",
-      "text": "channel_buffers = SUB84 /* extract 2-byte value */(dVar12,0);",
+      "text": "channel_buffers = SUB84(dVar12,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1028,7 +1028,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 175,
       "match": "CONCAT44",
-      "text": "uStack_88 = (double)CONCAT44 /* combine 2-byte values */((float)local_28,",
+      "text": "uStack_88 = (double)CONCAT44((float)local_28,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1070,21 +1070,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "SUB84",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1126,56 +1126,56 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 216,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 216,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 216,
       "match": "SUB84",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 225,
       "match": "in_stack_ffffff30",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff30,local_b8._0_4_),",
+      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 225,
       "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff30,local_b8._0_4_),",
+      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 225,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff30,local_b8._0_4_),",
+      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 226,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(channel_buffers,sample_data),(int)channel_gains);",
+      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 227,
       "match": "SUB84",
-      "text": "uStack_94 = SUB84 /* extract 2-byte value */(dVar12,0);",
+      "text": "uStack_94 = SUB84(dVar12,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1224,56 +1224,56 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 254,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 254,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 254,
       "match": "SUB84",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 262,
       "match": "in_stack_ffffff30",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff30,local_b8._0_4_),",
+      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 262,
       "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff30,local_b8._0_4_),",
+      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 262,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff30,local_b8._0_4_),",
+      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 263,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(channel_buffers,sample_data),(int)channel_gains);",
+      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 264,
       "match": "SUB84",
-      "text": "uStack_94 = SUB84 /* extract 2-byte value */(dVar12,0);",
+      "text": "uStack_94 = SUB84(dVar12,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1322,21 +1322,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 287,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 287,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 287,
       "match": "SUB84",
-      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar15,uVar14) + (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar12,0),uVar15);",
+      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
       "type": "decompiler_intrinsic"
     },
     {

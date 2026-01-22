@@ -110,7 +110,7 @@ void core_procedur_cpp_CreateProceduralWaterFrame_FUN_005542b0(void)
       do {
         bVar1 = *(byte *)(iVar9 + 8);
         iVar9 = iVar9 + 1;
-        *piVar4 = (uint)bVar1 * 0x10000 + (uint)CONCAT11 /* combine 2-byte values */(bVar1,bVar1);
+        *piVar4 = (uint)bVar1 * 0x10000 + (uint)CONCAT11(bVar1,bVar1);
         piVar4 = piVar4 + 1;
       } while (iVar9 != local_18);
       iVar6 = iVar6 + 4;

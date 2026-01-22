@@ -10,14 +10,14 @@ Failed: 4088
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          11915
+  other                          11913
   missing_member                  8434
   undeclared_identifier           4148
   incompatible_types              1507
-  syntax_error                     562
+  syntax_error                     548
 
 ====================================================================================================
-CATEGORY: other (11915 errors)
+CATEGORY: other (11913 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_FUN_0054c7a0
@@ -45,7 +45,7 @@ CATEGORY: other (11915 errors)
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
     Line 19: cast from 'void*' to 'int' loses precision [-fpermissive]...
 
-  ... and 11885 more errors
+  ... and 11883 more errors
 
 ====================================================================================================
 CATEGORY: missing_member (8434 errors)
@@ -179,7 +179,7 @@ CATEGORY: incompatible_types (1507 errors)
   ... and 1477 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (562 errors)
+CATEGORY: syntax_error (548 errors)
 ====================================================================================================
 
   engine_dosio.c_findFile_FUN_00481760
@@ -188,16 +188,6 @@ CATEGORY: syntax_error (562 errors)
     Line 17: expected ';' before 'extraout_var_00'...
   engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
     Line 28: expected ';' before 'uVar15'...
-  engine_prim.c_getTriangleWindingFromIndices_FUN_00552210
-    Line 49: expected ')' before numeric constant...
-  engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-    Line 40: expected ')' before numeric constant...
-  engine_prim.c_getTriangleWindingFromIndices_FUN_00552300
-    Line 50: expected ')' before numeric constant...
-  engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
-    Line 53: expected ')' before numeric constant...
-  engine_3d.c_isVisiblePlane_FUN_00403950
-    Line 27: expected ')' before numeric constant...
   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
     Line 134: expected primary-expression before ')' token...
   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0
@@ -210,15 +200,31 @@ CATEGORY: syntax_error (562 errors)
     Line 124: expected primary-expression before ')' token...
   core_trap.cpp_CTrap_process_FUN_005de770
     Line 29: expected primary-expression before ')' token...
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
+    Line 79: expected primary-expression before ')' token...
+  core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
+    Line 50: expected primary-expression before ')' token...
+  core_dog.cpp_CZombieDog_process_FUN_0047f140
+    Line 161: expected primary-expression before ')' token...
+  core_drip.cpp_FUN_0048e2a0
+    Line 117: expected primary-expression before ')' token...
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    Line 211: expected primary-expression before ')' token...
+  core_dracbrid.cpp_FUN_00484410
+    Line 412: expected primary-expression before ')' token...
+  core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
+    Line 21: expected ';' before 'extraout_var_00'...
+  core_drone.cpp_FUN_0048f360
+    Line 30: expected primary-expression before ')' token...
 
-  ... and 532 more errors
+  ... and 518 more errors
 
 ====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 0.82
-Average suspects in failed compilations: 11.78
+Average suspects in successfully compiled functions: 0.87
+Average suspects in failed compilations: 12.64
 
-Functions that compile but have suspect patterns: 486
+Functions that compile but have suspect patterns: 511
 (These may have runtime issues even though syntax is valid)

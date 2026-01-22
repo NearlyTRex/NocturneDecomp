@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 229,
+    "complexity_score": 264,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 8,
     "pseudocode_lines": 114,
-    "suspect_count": 9,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "special_crt_function",
       "stack_ref",
       "unaffected_reg",
+      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 372
@@ -289,6 +290,20 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0068528c",
+      "text": "if ((DAT_0068528c == (code *)0x0) ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_006854ec",
+      "text": "extra_parameter = uVar4 & ~DAT_006854ec;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 53,
       "match": "unaff_EBX",
@@ -322,6 +337,13 @@
       "match": "unaff_EBX",
       "text": "unaff_EBX,dwFlagsAndAttributes,(HANDLE)0x0);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 95,
+      "match": "DAT_0068528c",
+      "text": "(*DAT_0068528c)();",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 1,

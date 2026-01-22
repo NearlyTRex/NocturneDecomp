@@ -20,13 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 38,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 4,
     "pseudocode_lines": 38,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 117
   },
   "cross_references": [
@@ -134,5 +136,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_80000010",
+      "text": "point->screen_x = (int)&DAT_80000010;",
+      "type": "undefined_data"
+    }
+  ]
 }

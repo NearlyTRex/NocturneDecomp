@@ -57,7 +57,7 @@ crt_stdlib_c_qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARAT
   uint *puStack_18;
   
   bVar11 = 0;
-  puStack_18 = (uint *)CONCAT22 /* combine 2-byte values */(puStack_18._2_2_,in_GS);
+  puStack_18 = (uint *)CONCAT22(puStack_18._2_2_,in_GS);
   local_48 = base;
   local_3c = compar;
   if ((((uint)base | size) & 3) == 0) {

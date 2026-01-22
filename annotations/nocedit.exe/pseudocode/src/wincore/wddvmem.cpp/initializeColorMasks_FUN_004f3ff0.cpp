@@ -47,5 +47,5 @@ ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
   g_TotalColorBits._0_4_ = g_RedBitCount + g_GreenBitCount + g_BlueBitCount;
   g_BlueBitShift._0_4_ = g_BlueBitCount;
   g_GreenBlueBits._0_4_ = g_GreenBitCount + g_BlueBitCount;
-  return CONCAT44 /* combine 2-byte values */(g_GreenBitCount,g_GreenBitCount + g_BlueBitCount);
+  return CONCAT44(g_GreenBitCount,g_GreenBitCount + g_BlueBitCount);
 }

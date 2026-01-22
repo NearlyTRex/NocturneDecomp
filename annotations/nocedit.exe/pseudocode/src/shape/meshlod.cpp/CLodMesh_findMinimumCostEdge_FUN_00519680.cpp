@@ -29,7 +29,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(CLodMesh
         }
         pCVar1 = this_ptr->edges_ptr;
         if (*(double *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20) <
-            (double)CONCAT44 /* combine 2-byte values */(uStack_1c,local_20)) {
+            (double)CONCAT44(uStack_1c,local_20)) {
           local_20 = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20);
           uStack_1c = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x1c);
           local_18 = edge_index;

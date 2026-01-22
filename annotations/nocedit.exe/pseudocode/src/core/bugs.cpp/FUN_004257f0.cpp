@@ -89,7 +89,7 @@ void core_bugs_cpp_FUN_004257f0(void)
       puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);
     }
     local_5c.y = *(float *)((int)local_c + 0x24);
-    uVar13 = CONCAT44 /* combine 2-byte values */(local_5c.y,
+    uVar13 = CONCAT44(local_5c.y,
                       *(float *)((int)local_c + 0x20) + *(float *)((int)local_c + 0x199ec));
     uVar14 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))
     ;

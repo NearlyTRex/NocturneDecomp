@@ -276,7 +276,7 @@
       },
       {
         "category": "other",
-        "column": 76,
+        "column": 48,
         "line": 96,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -338,17 +338,18 @@
   },
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 575,
+    "complexity_score": 680,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "pseudocode_lines": 105,
-    "suspect_count": 45,
+    "suspect_count": 55,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 343
   },
@@ -709,6 +710,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_00822f48",
+      "text": "*(int *)((int)&DAT_00822f48 + iVar7) = iVar5;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_00000004",
@@ -730,11 +738,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_00822f4c",
+      "text": "if (*(int *)(*(int *)((int)&DAT_00822f4c + iVar7) * 0xc + 4 + iVar1) <",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(int *)((int)",
       "text": "*(int *)(*(int *)((int)&DAT_00822f48 + iVar7) * 0xc + 4 + iVar1)) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_00822f48",
+      "text": "*(int *)(*(int *)((int)&DAT_00822f48 + iVar7) * 0xc + 4 + iVar1)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -744,11 +766,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_00822f48",
+      "text": "uVar2 = *(uint *)((int)&DAT_00822f48 + iVar7);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_00822f48 + iVar7) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_00822f48",
+      "text": "*(uint *)((int)&DAT_00822f48 + iVar7) =",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -758,11 +794,32 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_00822f4c",
+      "text": "*(uint *)((int)&DAT_00822f4c + iVar7);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 72,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_00822f4c + iVar7) = uVar2;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_00822f4c",
+      "text": "*(uint *)((int)&DAT_00822f4c + iVar7) = uVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 78,
+      "match": "DAT_00822f48",
+      "text": "iVar5 = *(int *)(iVar1 + 4 + DAT_00822f48 * 0xc);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -779,17 +836,24 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_00822f48",
+      "text": "*(int *)(iVar7 + 0xbef4) = (&DAT_00822f48)[iVar9];",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 89,
       "match": "in_stack_00000004",
-      "text": "(0,(int)(CONCAT44 /* combine 2-byte values */(*(int *)(in_stack_00000004 + 0x12b34) >> 0x1f,",
+      "text": "(0,(int)(CONCAT44(*(int *)(in_stack_00000004 + 0x12b34) >> 0x1f,",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "CONCAT44",
-      "text": "(0,(int)(CONCAT44 /* combine 2-byte values */(*(int *)(in_stack_00000004 + 0x12b34) >> 0x1f,",
+      "text": "(0,(int)(CONCAT44(*(int *)(in_stack_00000004 + 0x12b34) >> 0x1f,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -805,6 +869,13 @@
       "match": "in_stack_00000004",
       "text": "if ((*(int *)(in_stack_00000004 + 0x12b34) <= iVar9) ||",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 94,
+      "match": "DAT_00822f48",
+      "text": "(iVar5 + 0x2a < *(int *)(iVar1 + 4 + (&DAT_00822f48)[iVar9] * 0xc))) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

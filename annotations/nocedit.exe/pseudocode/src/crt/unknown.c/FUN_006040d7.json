@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 255,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 25,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
+      "nonstandard_int",
       "special_crt_function",
       "unaffected_reg",
       "unnamed_param"
@@ -159,22 +160,29 @@
       "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_1",
-      "text": "uVar1 = (ushort)CONCAT31 /* combine 2-byte values */((int3)param_1,(char)(param_1 >> 8));",
+      "text": "uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_1",
-      "text": "uVar1 = (ushort)CONCAT31 /* combine 2-byte values */((int3)param_1,(char)(param_1 >> 8));",
+      "text": "uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "CONCAT31",
-      "text": "uVar1 = (ushort)CONCAT31 /* combine 2-byte values */((int3)param_1,(char)(param_1 >> 8));",
+      "text": "uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 22,
+      "match": "int3",
+      "text": "uVar1 = (ushort)CONCAT31((int3)param_1,(char)(param_1 >> 8));",
+      "type": "nonstandard_int"
     },
     {
       "description": "Unnamed function parameter",
@@ -187,21 +195,21 @@
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_1",
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
+      "text": "uVar1 = CONCAT11((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_1",
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
+      "text": "uVar1 = CONCAT11((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
       "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
+      "text": "uVar1 = CONCAT11((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
       "type": "decompiler_intrinsic"
     },
     {

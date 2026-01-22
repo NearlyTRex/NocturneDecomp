@@ -51,7 +51,7 @@ sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
   int local_2c;
   float local_1c;
   
-  dVar3 = (double)CONCAT44 /* combine 2-byte values */(iStack_48,local_4c);
+  dVar3 = (double)CONCAT44(iStack_48,local_4c);
   if ((((g_ChannelPrimaryBuffers[channel] == (void *)0x0) ||
        (g_ChannelSecondaryBuffersA[channel] == (float *)0x0)) ||
       (g_ChannelSecondaryBuffersB[channel] == (float *)0x0)) || (g_MixBufferSize < 1)) {
@@ -109,18 +109,18 @@ sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
               pfVar14 = pfVar15 + iVar10 + (int)local_1c;
               pfVar17 = pfVar18 + (int)local_1c;
               pfVar19 = pfVar18 + iVar10 + (int)local_1c;
-              local_8c = SUB84 /* extract 2-byte value */(dVar28,0);
+              local_8c = SUB84(dVar28,0);
               dVar5 = (double)fVar23;
               dVar8 = (double)fVar25;
               dVar9 = dVar3;
               do {
                 dVar7 = dVar5;
-                fVar22 = fVar26 * (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_88,local_8c) - (float10)dVar9;
+                fVar22 = fVar26 * (float10)(double)CONCAT44(uStack_88,local_8c) - (float10)dVar9;
                 dVar4 = (double)fVar22;
                 fVar27 = fVar26 * (float10)dVar7 - (float10)dVar8;
                 dVar5 = (double)fVar27;
-                dVar9 = (double)CONCAT44 /* combine 2-byte values */(uStack_88,local_8c);
-                local_94 = SUB84 /* extract 2-byte value */(dVar4,0);
+                dVar9 = (double)CONCAT44(uStack_88,local_8c);
+                local_94 = SUB84(dVar4,0);
                 local_8c = local_94;
                 uStack_90 = (uint)((ulonglong)dVar4 >> 0x20);
                 uStack_88 = uStack_90;

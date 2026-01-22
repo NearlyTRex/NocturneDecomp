@@ -44,7 +44,7 @@ shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
             dVar7 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
                               (local_1c,(SLodSamplePoint *)(this_ptr->tri_data + iVar2),face);
             if (dVar7 < *(double *)((int)g_SampleDistances + iVar5)) {
-              face = SUB84 /* extract 2-byte value */(dVar7,0);
+              face = SUB84(dVar7,0);
               *(CLodFace **)((int)g_SampleDistances + iVar5) = face;
               uStack_34 = (uint)((ulonglong)dVar7 >> 0x20);
               *(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_34;

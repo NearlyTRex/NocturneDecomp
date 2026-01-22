@@ -83,7 +83,7 @@ void core_course_cpp_FUN_00443bc0(void)
     }
     uVar1 = local_24;
     local_18 = local_1c;
-    uStack_148 = (double)CONCAT44 /* combine 2-byte values */(0x443c8b,(uint)uStack_148);
+    uStack_148 = (double)CONCAT44(0x443c8b,(uint)uStack_148);
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
     if (uVar1 != 0) {
       if ((CVector3f *)local_cc != &local_80) {
@@ -115,13 +115,13 @@ void core_course_cpp_FUN_00443bc0(void)
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,local_b0);
     local_14 = in_stack_00000004->len + -1;
-    uStack_148 = (double)CONCAT44 /* combine 2-byte values */(0x443d61,(uint)uStack_148);
+    uStack_148 = (double)CONCAT44(0x443d61,(uint)uStack_148);
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
     g_ActiveRenderColor = 0xfa;
     local_34 = 0;
     while (local_34 < in_stack_00000004->len) {
       local_14 = local_34;
-      uStack_148 = (double)CONCAT44 /* combine 2-byte values */(0x443da7,(uint)uStack_148);
+      uStack_148 = (double)CONCAT44(0x443da7,(uint)uStack_148);
       core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
       local_5c.x = (int)ROUND(local_8c * 256.0f);
       local_5c.y = (int)ROUND(local_88 * 256.0f);
@@ -164,7 +164,7 @@ void core_course_cpp_FUN_00443bc0(void)
                 (g_CDemonRendererPtr2,&local_80);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_98,(CVector3i *)0x0);
-      uStack_148 = (double)CONCAT44 /* combine 2-byte values */(0x443f1d,(uint)uStack_148);
+      uStack_148 = (double)CONCAT44(0x443f1d,(uint)uStack_148);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (in_stack_00000008,(CKeyFramedModelInstance *)0x0,0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

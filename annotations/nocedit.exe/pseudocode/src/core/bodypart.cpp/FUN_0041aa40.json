@@ -80,12 +80,12 @@
   },
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 496,
+    "complexity_score": 511,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 161,
-    "suspect_count": 30,
+    "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -93,6 +93,7 @@
       "pointer_cast",
       "stack_param",
       "suspect_float",
+      "warning_type_propagation",
       "warning_unreachable"
     ],
     "total_lines": 449
@@ -520,6 +521,13 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0041ad97) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "Type propagation did not converge",
+      "line": 4,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

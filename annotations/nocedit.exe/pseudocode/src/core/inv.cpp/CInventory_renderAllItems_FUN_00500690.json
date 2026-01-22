@@ -284,15 +284,16 @@
   },
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 530,
+    "complexity_score": 595,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 53,
     "pseudocode_lines": 380,
-    "suspect_count": 14,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
-      "format_string_mismatch"
+      "format_string_mismatch",
+      "undefined_data"
     ],
     "total_lines": 1458
   },
@@ -1097,22 +1098,50 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 185,
       "match": "CONCAT44",
-      "text": "uVar14 = CONCAT44 /* combine 2-byte values */(pcVar6,pcVar4);",
+      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "CONCAT44",
-      "text": "uVar14 = CONCAT44 /* combine 2-byte values */(pcVar6,pcVar4);",
+      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 219,
       "match": "CONCAT44",
-      "text": "uVar14 = CONCAT44 /* combine 2-byte values */(pcVar6,pcVar4);",
+      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 226,
+      "match": "DAT_02db8c70",
+      "text": "((CBitFont *)local_48,acStack_17c,DAT_02db8c70,10,0x100,local_54 - local_5c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 233,
+      "match": "DAT_02db8c70",
+      "text": "pcVar6 = DAT_02db8c70;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 282,
+      "match": "DAT_02db9670",
+      "text": "((CBitFont *)local_48,acStack_57c,DAT_02db9670,10,0x100,iVar7 - local_60)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 290,
+      "match": "DAT_02db9670",
+      "text": "pcVar6 = DAT_02db9670;",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -1141,6 +1170,20 @@
       "match": "ROUND",
       "text": "local_68 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 366,
+      "match": "DAT_02dba070",
+      "text": "(local_1c,this_ptr->message_text,DAT_02dba070,10,0x100,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 372,
+      "match": "DAT_02dba070",
+      "text": "pcVar6 = DAT_02dba070;",
+      "type": "undefined_data"
     },
     {
       "actual_args": 0,

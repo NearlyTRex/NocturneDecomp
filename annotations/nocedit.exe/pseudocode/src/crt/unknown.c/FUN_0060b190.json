@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 58,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "special_crt_function"
@@ -81,16 +81,30 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "NAN",
+      "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "NAN",
+      "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */(bVar2,2);",
+      "text": "uVar1 = CONCAT11(bVar2,2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */(bVar2,3);",
+      "text": "uVar1 = CONCAT11(bVar2,3);",
       "type": "decompiler_intrinsic"
     },
     {

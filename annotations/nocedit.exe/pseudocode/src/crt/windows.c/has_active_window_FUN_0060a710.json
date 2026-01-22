@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 46,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 16,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
-      "special_crt_function"
+      "special_crt_function",
+      "warning_max_restarts"
     ],
     "total_lines": 39
   },
@@ -118,6 +119,13 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Decompiler iteration limit exceeded",
+      "line": 2,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
+    },
     {
       "call_site_count": 1,
       "declared_params": 0,

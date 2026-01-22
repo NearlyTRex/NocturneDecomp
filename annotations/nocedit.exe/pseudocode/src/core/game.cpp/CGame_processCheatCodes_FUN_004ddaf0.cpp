@@ -250,7 +250,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         iVar13 = iVar10;
         iVar18 = iVar17 + -1;
         g_InputHistory[iVar17 + 1] = g_InputHistory[iVar17];
-        iVar10 = CONCAT31 /* combine 2-byte values */((int3)((uint)iVar13 >> 8),g_InputHistory[iVar17]);
+        iVar10 = CONCAT31((int3)((uint)iVar13 >> 8),g_InputHistory[iVar17]);
         iVar17 = iVar18;
       } while (0 < iVar18);
       g_InputHistory[1] = (char)((uint)iVar13 >> 8);
@@ -331,7 +331,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           dVar7 = (double)this_ptr->frame_counter / (dVar7 * 1.52587890625e-05);
           local_2ac._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);
           uVar8 = local_2ac._4_4_;
-          local_2ac._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);
+          local_2ac._0_4_ = SUB84(dVar7,0);
           uVar9 = (uint)local_2ac;
           local_2ac = dVar7;
           crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffba8,"FPS: %3.2lf",uVar9,uVar8);

@@ -24,11 +24,11 @@ ulonglong core_skeledit_cpp_FUN_0058f790(void)
   do {
     cVar1 = *pcVar5;
     uVar3 = (undefined3)((uint)piVar2 >> 8);
-    piVar2 = (int *)CONCAT31 /* combine 2-byte values */(uVar3,cVar1);
+    piVar2 = (int *)CONCAT31(uVar3,cVar1);
     *(char *)piVar6 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar5[1];
-    piVar2 = (int *)CONCAT31 /* combine 2-byte values */(uVar3,cVar1);
+    piVar2 = (int *)CONCAT31(uVar3,cVar1);
     pcVar5 = pcVar5 + 2;
     *(char *)((int)piVar6 + 1) = cVar1;
     piVar6 = (int *)((int)piVar6 + 2);
@@ -45,5 +45,5 @@ ulonglong core_skeledit_cpp_FUN_0058f790(void)
     } while (iVar4 < *in_stack_00000004);
   }
   in_stack_00000004[0x1c63] = 0;
-  return CONCAT44 /* combine 2-byte values */(iVar4,piVar2);
+  return CONCAT44(iVar4,piVar2);
 }

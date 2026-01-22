@@ -470,16 +470,17 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 300,
+    "complexity_score": 365,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "pseudocode_lines": 160,
-    "suspect_count": 12,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
+      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 256
@@ -765,11 +766,25 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_02cf2bf4",
+      "text": "*(int *)((int)&DAT_02cf2bf4 + local_20) = iVar8;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 76,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_02cf4b34",
+      "text": "*(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -779,6 +794,13 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 96,
+      "match": "DAT_02cf4b34",
+      "text": "if (*(float *)((int)&DAT_02cf4b34 + iVar6) < local_18) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 97,
       "match": "(float *)((int)",
@@ -786,11 +808,32 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 97,
+      "match": "DAT_02cf4b34",
+      "text": "local_18 = *(float *)((int)&DAT_02cf4b34 + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_02cf2bf4",
+      "text": "local_1c = (&DAT_02cf2bf4)[iVar8];",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 117,
       "match": "code *",
       "text": "(this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(local_1c + 0x154) + 0xbc))(),",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 125,
+      "match": "DAT_02cf4b34",
+      "text": "(&DAT_02cf4b34)[iVar8] = 0x7149f2ca;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

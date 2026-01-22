@@ -34,7 +34,7 @@ shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
                           (this_ptr_00,sample_point,face);
         local_28 = dVar2;
         if (dVar2 < *(double *)&this_ptr_00->submesh_count) {
-          face = SUB84 /* extract 2-byte value */(dVar2,0);
+          face = SUB84(dVar2,0);
           this_ptr_00->tri_data = pCVar1;
           this_ptr_00->submesh_count = (int)face;
           pSStack_24 = (SLodSubmesh *)((ulonglong)dVar2 >> 0x20);

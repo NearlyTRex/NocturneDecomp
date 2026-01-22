@@ -368,16 +368,17 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 650,
+    "complexity_score": 715,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 19,
     "pseudocode_lines": 260,
-    "suspect_count": 37,
+    "suspect_count": 43,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "suspect_float",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 807
@@ -1000,6 +1001,20 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_00823a80",
+      "text": "pcVar10 = &DAT_00823a80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_00823a78",
+      "text": "(g_CDemonRendererPtr2,(SMRGLTextureBasic *)&DAT_00823a78);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(uint *)((int)",
@@ -1095,6 +1110,20 @@
       "line": 141,
       "match": "ROUND",
       "text": "local_6c.z = (int)ROUND(local_84.z * _DAT_0065b810);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 171,
+      "match": "fsin",
+      "text": "fVar13 = (float10)fsin(fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 172,
+      "match": "fcos",
+      "text": "fVar12 = (float10)fcos(fVar12);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1208,6 +1237,20 @@
       "match": "9.18341e-41",
       "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->light = 9.18341e-41;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 231,
+      "match": "fsin",
+      "text": "fVar13 = (float10)fsin(fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 232,
+      "match": "fcos",
+      "text": "fVar12 = (float10)fcos(fVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

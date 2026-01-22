@@ -116,15 +116,16 @@
   },
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 381,
+    "complexity_score": 396,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "pseudocode_lines": 71,
-    "suspect_count": 30,
+    "suspect_count": 31,
     "suspect_types": [
       "stack_param",
-      "suspect_float"
+      "suspect_float",
+      "undefined_data"
     ],
     "total_lines": 236
   },
@@ -506,6 +507,13 @@
       "match": "1.4013e-45",
       "text": "if (fVar2 == 1.4013e-45) {",
       "type": "suspect_float"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_02db8888",
+      "text": "DAT_02db8888 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

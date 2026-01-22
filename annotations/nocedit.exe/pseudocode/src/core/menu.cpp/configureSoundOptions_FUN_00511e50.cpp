@@ -67,7 +67,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
   
   bVar18 = 0;
   n2 = (CGame *)((ulonglong)in_stack_fffff5b4 >> 0x20);
-  uVar21 = CONCAT44 /* combine 2-byte values */(n2,g_CGamePtr);
+  uVar21 = CONCAT44(n2,g_CGamePtr);
   local_3c = 0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,n2);
   pacVar10 = g_SoundMenuTextBuffers;
@@ -137,7 +137,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound effects : ");
       crt_stdio_c_sprintf_FUN_005fdbd0(*pacVar10,pcVar4);
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
-      uVar21 = CONCAT44 /* combine 2-byte values */(uVar23,0x511fbd);
+      uVar21 = CONCAT44(uVar23,0x511fbd);
       dVar20 = crt_math_c_round_FUN_005fe6b0
                          ((double)((local_14 * 100.0f) / 0.25f +
                                   (float)0.001));
@@ -208,7 +208,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
         pcVar14 = pcVar14 + 2;
       } while (cVar1 != '\0');
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(2);
-      uVar21 = CONCAT44 /* combine 2-byte values */(uVar23,0x5120c3);
+      uVar21 = CONCAT44(uVar23,0x5120c3);
       dVar20 = crt_math_c_round_FUN_005fe6b0
                          ((double)((local_14 * 100.0f) / 1.0f +
                                   (float)0.001));
@@ -260,7 +260,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     }
     iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(1);
     pcVar4 = g_SoundMenuTextBuffers[iVar9];
-    uStack_44 = (double)CONCAT44 /* combine 2-byte values */(iVar9 + 1,(float)uStack_44);
+    uStack_44 = (double)CONCAT44(iVar9 + 1,(float)uStack_44);
     if (iVar3 == 0) {
       pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Music Vol : Off");
       local_24 = iVar9 + 1;
@@ -279,7 +279,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
         pcVar14 = pcVar14 + 2;
       } while (cVar1 != '\0');
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(1);
-      uVar21 = CONCAT44 /* combine 2-byte values */(uVar23,0x5121c7);
+      uVar21 = CONCAT44(uVar23,0x5121c7);
       dVar20 = crt_math_c_round_FUN_005fe6b0
                          ((double)((local_14 * 100.0f) / 0.25f +
                                   (float)0.001));
@@ -550,9 +550,9 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
             uVar23 = 0;
             uStack_44._0_4_ = (float)0x40690000;
             do {
-              fVar19 = (float10)(double)CONCAT44 /* combine 2-byte values */(in_stack_fffff5c8,(float)uStack_44) *
-                       (float10)(double)CONCAT44 /* combine 2-byte values */(uVar23,in_stack_fffff5bc);
-              dVar20 = (double)CONCAT44 /* combine 2-byte values */(in_stack_fffff5c8,(float)uStack_44);
+              fVar19 = (float10)(double)CONCAT44(in_stack_fffff5c8,(float)uStack_44) *
+                       (float10)(double)CONCAT44(uVar23,in_stack_fffff5bc);
+              dVar20 = (double)CONCAT44(in_stack_fffff5c8,(float)uStack_44);
               uStack_44 = (double)fVar19;
               fVar8 = (float)sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
                                        (iVar9,(float)dVar20,(float)fVar19);
@@ -562,7 +562,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
                                           fVar8 * (float)g_WindowHeight * 0.25f));
               local_14 = (float)(int)ROUND(dVar20);
               height_half = (extraout_EDX - (int)local_14) + 1;
-              dVar20 = (double)CONCAT44 /* combine 2-byte values */(uVar24,height_half);
+              dVar20 = (double)CONCAT44(uVar24,height_half);
               core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(iVar3,y_top,height_half);
               iVar3 = iVar3 + 4;
               in_stack_fffff5c0 = local_48;
@@ -675,7 +675,7 @@ LAB_00512966:
           local_a28 = local_a28 + -0.2f;
           if (local_a28 < (float)0.01) {
 LAB_00512a67:
-            uVar6 = SUB84 /* extract 2-byte value */(dVar20,0);
+            uVar6 = SUB84(dVar20,0);
             local_a28 = 0.0;
             sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(1,0);
             dVar20 = (double)(ulonglong)uVar6;
@@ -699,7 +699,7 @@ LAB_00512a67:
           }
         }
       }
-      in_stack_fffff5c8 = SUB84 /* extract 2-byte value */(dVar20,0);
+      in_stack_fffff5c8 = SUB84(dVar20,0);
       sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(1,local_a28 * 0.25f);
       break;
     case 4:
@@ -768,7 +768,7 @@ LAB_00512b46:
       }
       break;
     case 7:
-      uVar21 = CONCAT44 /* combine 2-byte values */(uVar23,&local_a20);
+      uVar21 = CONCAT44(uVar23,&local_a20);
       iVar3 = 0;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_a20);
       while( true ) {
@@ -776,7 +776,7 @@ LAB_00512b46:
         iVar9 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0();
         if (iVar9 <= iVar3) break;
         sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar3,&local_560);
-        uVar21 = CONCAT44 /* combine 2-byte values */(uVar23,&local_560);
+        uVar21 = CONCAT44(uVar23,&local_560);
         iVar3 = iVar3 + 1;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_a20.base_strlist,local_560.device_name);
       }
@@ -807,7 +807,7 @@ LAB_00512b46:
 LAB_005126f5:
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-    uVar21 = CONCAT44 /* combine 2-byte values */(uVar23,1);
+    uVar21 = CONCAT44(uVar23,1);
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar3 != 0) {
       return;

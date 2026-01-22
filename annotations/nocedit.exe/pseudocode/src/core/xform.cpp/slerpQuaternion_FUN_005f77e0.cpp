@@ -52,7 +52,7 @@ core_xform_cpp_slerpQuaternion_FUN_005f77e0
     dVar2 = (double)(quat1_in->w * quat2_in->w +
                     quat1_in->z * quat2_in->z +
                     quat1_in->y * quat2_in->y + quat1_in->x * quat2_in->x);
-    afStack_1830[0x5ec] = SUB84 /* extract 2-byte value */(dVar2,0);
+    afStack_1830[0x5ec] = SUB84(dVar2,0);
     uStack_7c = (uint)((ulonglong)dVar2 >> 0x20);
     if (dVar2 < 0.0) {
       local_5c = -local_5c;
@@ -61,33 +61,33 @@ core_xform_cpp_slerpQuaternion_FUN_005f77e0
       local_60 = -local_60;
       uStack_7c = uStack_7c ^ 0x80000000;
     }
-    if ((double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]) <= 0.99999000000000005) {
-      fVar8 = (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]);
+    if ((double)CONCAT44(uStack_7c,afStack_1830[0x5ec]) <= 0.99999000000000005) {
+      fVar8 = (float10)(double)CONCAT44(uStack_7c,afStack_1830[0x5ec]);
       fVar8 = crt_math_c_atan2_FUN_006013b1(SQRT((float10)1 - fVar8 * fVar8),fVar8);
       fVar9 = (float10)fsin(((float10)1 - (float10)t) * fVar8);
       fVar8 = (float10)fsin((float10)t * fVar8);
       dVar2 = (double)(fVar9 * ((float10)1 / extraout_ST1));
-      uStack_74 = SUB84 /* extract 2-byte value */(dVar2,0);
+      uStack_74 = SUB84(dVar2,0);
       local_70 = (uint)((ulonglong)dVar2 >> 0x20);
       dVar2 = (double)(fVar8 * ((float10)1 / extraout_ST1));
-      uStack_7c = SUB84 /* extract 2-byte value */(dVar2,0);
+      uStack_7c = SUB84(dVar2,0);
       local_78 = (uint)((ulonglong)dVar2 >> 0x20);
-      local_18 = (double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78);
+      local_18 = (double)CONCAT44(uStack_74,local_78);
     }
     else {
       local_18 = (double)t;
-      local_70 = SUB84 /* extract 2-byte value */(1.0 - local_18,0);
+      local_70 = SUB84(1.0 - local_18,0);
     }
     uStack_74 = (uint)((ulonglong)local_18 >> 0x20);
-    local_78 = SUB84 /* extract 2-byte value */(local_18,0);
-    fVar3 = (float)(double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74);
+    local_78 = SUB84(local_18,0);
+    fVar3 = (float)(double)CONCAT44(local_70,uStack_74);
     fStack_64 = (float)((ulonglong)dVar1 >> 0x20);
     pfVar6 = &local_54;
     quat2_in = aCStack_44;
-    aCStack_44[0].y = fStack_64 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_in->y * fVar3;
-    aCStack_44[0].z = local_58 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_in->z * fVar3;
-    aCStack_44[0].w = local_60 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_in->w * fVar3;
-    aCStack_44[0].x = local_5c * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_in->x * fVar3;
+    aCStack_44[0].y = fStack_64 * (float)(double)CONCAT44(local_78,uStack_7c) + quat1_in->y * fVar3;
+    aCStack_44[0].z = local_58 * (float)(double)CONCAT44(local_78,uStack_7c) + quat1_in->z * fVar3;
+    aCStack_44[0].w = local_60 * (float)(double)CONCAT44(local_78,uStack_7c) + quat1_in->w * fVar3;
+    aCStack_44[0].x = local_5c * (float)(double)CONCAT44(local_78,uStack_7c) + quat1_in->x * fVar3;
   }
   pfVar5 = pfVar6 + (uint)bVar7 * -2 + 1;
   pfVar4 = (float *)((int)quat2_in + (uint)bVar7 * -8 + 4);

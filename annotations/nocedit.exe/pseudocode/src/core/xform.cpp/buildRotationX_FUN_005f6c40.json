@@ -26,13 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 57,
+    "complexity_score": 82,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 42,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few"
     ],
     "total_lines": 82
@@ -270,6 +271,20 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "fsin",
+      "text": "fVar4 = (float10)fsin((float10)angle_radians);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "fcos",
+      "text": "fVar5 = (float10)fcos((float10)angle_radians);",
+      "type": "decompiler_intrinsic"
+    },
     {
       "call_site_count": 3,
       "declared_params": 2,

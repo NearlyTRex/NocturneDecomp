@@ -374,17 +374,18 @@
   },
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 526,
+    "complexity_score": 541,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 22,
     "pseudocode_lines": 286,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -1009,6 +1010,13 @@
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 96,
+      "match": "DAT_02d7a7b8",
+      "text": "local_18 = (float)(((int)local_24 >> 1) + DAT_02d7a7b8);",
+      "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

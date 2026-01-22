@@ -152,15 +152,16 @@
   },
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 495,
+    "complexity_score": 540,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 17,
     "pseudocode_lines": 105,
-    "suspect_count": 38,
+    "suspect_count": 42,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 376
   },
@@ -533,6 +534,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_00680660",
+      "text": "(g_CEditorToolsPtr,\"Hide actors by name using wildcard\",&DAT_00680660,100,1",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 68,
       "match": "in_stack_00000004",
@@ -540,11 +548,32 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_00680660",
+      "text": "(&DAT_00680660,pCVar1->actor_name,0), iVar3 != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 82,
+      "match": "DAT_006806c8",
+      "text": "(g_CEditorToolsPtr,\"Hide actors by type\",&DAT_006806c8,100,1),",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 85,
       "match": "in_stack_00000004",
       "text": "for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_006806c8",
+      "text": "(iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar1,&DAT_006806c8), iVar3 != 0)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

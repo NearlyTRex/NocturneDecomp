@@ -63,7 +63,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 105,
+        "column": 77,
         "line": 72,
         "message": "'extraout_var' was not declared in this scope"
       },
@@ -86,15 +86,17 @@
   },
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 239,
+    "complexity_score": 319,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 15,
     "pseudocode_lines": 69,
-    "suspect_count": 15,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "stack_param",
+      "undefined_data",
       "undefined_type",
       "unknown_field"
     ],
@@ -632,6 +634,13 @@
       "type": "undefined_type"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
@@ -716,6 +725,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_02cf2b5c",
+      "text": "if ((((*(int *)in_stack_00000004[1].actor_name == 3) && (DAT_02cf2b5c != 0)) &&",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_00000004",
@@ -723,10 +739,45 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_02cf2b78",
+      "text": "(in_stack_00000004 == DAT_02cf2b78)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_02cf2b78",
+      "text": "(DAT_02cf2b78 == *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_02cf2b6c",
+      "text": "param5 = &DAT_02cf2b6c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_02cf2b60",
+      "text": "label_offset = (CQuaternion4f *)&DAT_02cf2b60;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 65,
+      "match": "extraout_var",
+      "text": "(g_CEditorToolsPtr,0x3f800000,(CQuaternion4f *)CONCAT31(extraout_var,uVar1),",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "CONCAT31",
-      "text": "(g_CEditorToolsPtr,0x3f800000,(CQuaternion4f *)CONCAT31 /* combine 2-byte values */(extraout_var,uVar1),",
+      "text": "(g_CEditorToolsPtr,0x3f800000,(CQuaternion4f *)CONCAT31(extraout_var,uVar1),",
       "type": "decompiler_intrinsic"
     }
   ],

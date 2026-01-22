@@ -66,7 +66,7 @@ LAB_004623f2:
         local_1e8.vertex_indices[local_28[3]] = local_3c[local_28[3]];
       }
       dVar9 = shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(&local_1e8);
-      uVar4 = CONCAT22 /* combine 2-byte values */((short)((ulonglong)dVar9 >> 0x10),
+      uVar4 = CONCAT22((short)((ulonglong)dVar9 >> 0x10),
                        (ushort)(dVar9 < 359.5) << 8 |
                        (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |
                        (ushort)(dVar9 == 359.5) << 0xe);

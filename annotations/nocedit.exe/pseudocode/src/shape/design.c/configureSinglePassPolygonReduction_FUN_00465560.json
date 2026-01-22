@@ -50,13 +50,14 @@
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 140,
+    "complexity_score": 155,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 14,
     "pseudocode_lines": 115,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 400
@@ -374,6 +375,13 @@
       "match": "in_stack_ffffff84",
       "text": "dVar8 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff84);",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "fcos",
+      "text": "fVar7 = (float10)fcos((float10)local_14 * (float10)0.01745329252);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

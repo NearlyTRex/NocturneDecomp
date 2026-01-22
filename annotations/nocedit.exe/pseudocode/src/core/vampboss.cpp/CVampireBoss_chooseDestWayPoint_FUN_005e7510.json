@@ -110,15 +110,16 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 136,
+    "complexity_score": 151,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 46,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "stack_param",
-      "unnamed_param"
+      "unnamed_param",
+      "warning_type_propagation"
     ],
     "total_lines": 127
   },
@@ -249,6 +250,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
     {
       "description": "Unnamed function parameter",
       "line": 4,

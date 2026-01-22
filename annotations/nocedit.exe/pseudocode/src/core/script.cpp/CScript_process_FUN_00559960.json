@@ -62,13 +62,14 @@
   },
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 75,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "pseudocode_lines": 60,
-    "suspect_count": 1,
+    "suspect_count": 8,
     "suspect_types": [
+      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 205
@@ -292,6 +293,55 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_0310ec9c",
+      "text": "DAT_0310ec9c = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_0310f4a4",
+      "text": "DAT_0310f4a4 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0310eca0",
+      "text": "&DAT_0310eca0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_0310f4a8",
+      "text": "if (DAT_0310f4a8 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_0310f4a8",
+      "text": "DAT_0310f4a8 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_0310f4a4",
+      "text": "if (DAT_0310f4a4 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_0310f4a4",
+      "text": "DAT_0310f4a4 = 0;",
+      "type": "undefined_data"
+    },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 55,

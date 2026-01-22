@@ -72,7 +72,7 @@ int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
       if (iVar3 != -2) {
         dVar6 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffff6c);
         local_20 = (float)dVar6;
-        iVar2 = SUB84 /* extract 2-byte value */(dVar6,0);
+        iVar2 = SUB84(dVar6,0);
         for (local_14 = 0; local_14 < 8; local_14 = local_14 + 1) {
           for (local_2c = 0; local_2c <= local_34; local_2c = local_2c + 1) {
             for (local_30 = 0; local_30 < local_38; local_30 = local_30 + 1) {

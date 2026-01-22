@@ -200,15 +200,16 @@
   },
   "complexity": {
     "assembly_lines": 507,
-    "complexity_score": 227,
+    "complexity_score": 322,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 49,
     "pseudocode_lines": 177,
-    "suspect_count": 4,
+    "suspect_count": 13,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 684
   },
@@ -718,6 +719,48 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_03670848",
+      "text": "DAT_03670848 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_03670848",
+      "text": "puVar5 = &DAT_03670848;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 79,
+      "match": "DAT_03670950",
+      "text": "DAT_03670950 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_03670950",
+      "text": "puVar5 = &DAT_03670950;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_03670a58",
+      "text": "DAT_03670a58 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_03670a58",
+      "text": "puVar5 = &DAT_03670a58;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 141,
       "match": "&stack0xfffffee8",
@@ -737,6 +780,27 @@
       "match": "in_stack_fffffee8",
       "text": "core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_fffffee8);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 171,
+      "match": "DAT_03670848",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,\"\\\"%s\\\"\\n\",&DAT_03670848);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 173,
+      "match": "DAT_03670950",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,\"\\\"%s\\\"\\n\",&DAT_03670950);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 175,
+      "match": "DAT_03670a58",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,\"\\\"%s\\\"\\n\",&DAT_03670a58);",
+      "type": "undefined_data"
     }
   ]
 }

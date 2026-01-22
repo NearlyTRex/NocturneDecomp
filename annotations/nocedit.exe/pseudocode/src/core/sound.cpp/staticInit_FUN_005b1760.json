@@ -13,13 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 9,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
     "total_lines": 29
   },
   "cross_references": [],
@@ -124,5 +126,13 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_00681ed0",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_00681ed0);",
+      "type": "undefined_data"
+    }
+  ]
 }

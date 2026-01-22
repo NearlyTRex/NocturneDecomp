@@ -50,13 +50,15 @@
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 29,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "pseudocode_lines": 29,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 129
   },
   "cross_references": [
@@ -230,5 +232,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "fpatan",
+      "text": "fVar2 = (float10)fpatan((float10)18 / (float10)this_ptr->projection_scale,",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

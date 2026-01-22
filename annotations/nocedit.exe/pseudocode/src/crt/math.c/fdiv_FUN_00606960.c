@@ -18,9 +18,9 @@ float10 __fpustack_safe crt_math_c_fdiv_FUN_00606960(float10 dividend,float10 di
   uint in_stack_00000014;
   ushort in_stack_00000018;
   
-  fVar1 = (float10)CONCAT28 /* combine 2-byte values */(in_stack_0000000c,CONCAT44 /* combine 2-byte values */(in_stack_00000008,in_stack_00000004));
+  fVar1 = (float10)CONCAT28(in_stack_0000000c,CONCAT44(in_stack_00000008,in_stack_00000004));
   while( true ) {
-    fVar2 = (float10)CONCAT28 /* combine 2-byte values */(in_stack_00000018,CONCAT44 /* combine 2-byte values */(in_stack_00000014,in_stack_00000010));
+    fVar2 = (float10)CONCAT28(in_stack_00000018,CONCAT44(in_stack_00000014,in_stack_00000010));
     if (CARRY4(in_stack_00000008,in_stack_00000008)) break;
     if ((in_stack_00000004 == 0 && in_stack_00000008 == 0) || ((in_stack_0000000c & 0x7fff) != 0))
     goto LAB_00606a04;
@@ -33,7 +33,7 @@ LAB_00606a70:
       return fVar2 / fVar1;
     }
     fVar2 = fVar1 * (float10)9.223372e+18f;
-    in_stack_00000004 = SUB104 /* extract 3-byte value */(fVar2,0);
+    in_stack_00000004 = SUB104(fVar2,0);
     in_stack_00000008 = (uint)((unkuint10)fVar2 >> 0x20);
     in_stack_0000000c = (ushort)((unkuint10)fVar2 >> 0x40);
   }

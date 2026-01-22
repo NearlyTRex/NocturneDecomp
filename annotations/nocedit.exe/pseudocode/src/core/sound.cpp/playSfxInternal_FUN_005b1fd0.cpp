@@ -163,7 +163,7 @@ LAB_005b20b2:
             while (cVar5 != '\0') {
               cVar5 = *pcVar7;
               if (cVar5 == '!') {
-                cVar5 = SUB41 /* extract 2-byte value */(fVar4,0) + '0';
+                cVar5 = SUB41(fVar4,0) + '0';
               }
               *pcVar6 = cVar5;
               pcVar6 = pcVar6 + 1;

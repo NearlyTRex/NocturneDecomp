@@ -362,16 +362,17 @@
   },
   "complexity": {
     "assembly_lines": 661,
-    "complexity_score": 1777,
+    "complexity_score": 1792,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 15,
     "pseudocode_lines": 322,
-    "suspect_count": 143,
+    "suspect_count": 144,
     "suspect_types": [
       "stack_param",
       "suspect_float",
       "unaffected_reg",
+      "undefined_data",
       "unknown_field",
       "unresolved_funcptr"
     ],
@@ -1750,6 +1751,13 @@
       "match": "in_stack_00000004",
       "text": "fVar12 = *(float *)(in_stack_00000004[2].cloth_data + 0x5504);",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 305,
+      "match": "DAT_0310615c",
+      "text": "iVar10 = DAT_0310615c;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

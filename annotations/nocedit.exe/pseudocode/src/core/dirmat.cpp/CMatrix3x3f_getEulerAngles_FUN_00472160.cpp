@@ -37,22 +37,22 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
     fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);
     euler_angles->x = (float)fVar4;
     dVar6 = (double)fVar5;
-    uStack_94 = SUB84 /* extract 2-byte value */(dVar6,0);
+    uStack_94 = SUB84(dVar6,0);
     if (0.0 < dVar6) {
       fVar3 = 1.0 / (float)fVar5;
       fVar2 = this_ptr->m[0].z * fVar3;
       dVar6 = (double)fVar2;
-      uStack_84 = SUB84 /* extract 2-byte value */(dVar6,0);
+      uStack_84 = SUB84(dVar6,0);
       local_80 = (uint)((ulonglong)dVar6 >> 0x20);
       dVar1 = (double)(this_ptr->m[2].z * fVar3);
-      uStack_5c = SUB84 /* extract 2-byte value */(dVar1,0);
+      uStack_5c = SUB84(dVar1,0);
       if ((0.70699999999999996 <= dVar6) || (dVar6 <= -0.70699999999999996)) {
         if ((-1 < dVar1) && (dVar1 < 1.0)) {
           local_98 = 0x4724df;
           dVar6 = crt_math_c_acos_FUN_00600162(dVar1);
           local_20 = (float)dVar6;
         }
-        if ((double)CONCAT44 /* combine 2-byte values */(uStack_84,local_68) < 0.0) {
+        if ((double)CONCAT44(uStack_84,local_68) < 0.0) {
           local_20 = -local_20;
         }
       }
@@ -60,7 +60,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
         local_98 = 0x47230f;
         fVar4 = crt_math_c_asin_FUN_00600b94((float10)fVar2);
         local_20 = (float)fVar4;
-        if ((double)CONCAT44 /* combine 2-byte values */(uStack_5c,local_80) < 0.0) {
+        if ((double)CONCAT44(uStack_5c,local_80) < 0.0) {
           local_20 = (float)3.1415926535900001 - local_20;
         }
       }
@@ -71,7 +71,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
         local_20 = local_20 + -6.283185f;
       }
       euler_angles->y = local_20;
-      fVar3 = 1.0 / (float)(double)CONCAT44 /* combine 2-byte values */(uStack_94,local_98);
+      fVar3 = 1.0 / (float)(double)CONCAT44(uStack_94,local_98);
       fVar2 = this_ptr->m[1].x * fVar3;
       dVar6 = (double)fVar2;
       dVar1 = (double)(this_ptr->m[1].y * fVar3);

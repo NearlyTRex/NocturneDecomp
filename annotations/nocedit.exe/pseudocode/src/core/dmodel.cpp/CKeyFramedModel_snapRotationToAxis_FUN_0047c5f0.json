@@ -104,12 +104,12 @@
   },
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 369,
+    "complexity_score": 429,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
     "pseudocode_lines": 109,
-    "suspect_count": 24,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -552,7 +552,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "CONCAT44",
-      "text": "uVar18 = CONCAT44 /* combine 2-byte values */(uVar19,0x47c678);",
+      "text": "uVar18 = CONCAT44(uVar19,0x47c678);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -560,6 +560,20 @@
       "line": 54,
       "match": "ROUND",
       "text": "fVar5 = (float)((int)ROUND(dVar16) + 0x2000U & 0xc000);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "fsin",
+      "text": "fVar15 = (float10)fsin(fVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "fcos",
+      "text": "fVar12 = (float10)fcos(fVar12);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -571,9 +585,37 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "fsin",
+      "text": "fVar14 = (float10)fsin(fVar13);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "fcos",
+      "text": "fVar13 = (float10)fcos(fVar13);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "fsin",
+      "text": "fVar10 = (float10)fsin(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "fcos",
+      "text": "fVar11 = (float10)fcos(fVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "SUB84",
-      "text": "fVar21 = SUB84 /* extract 2-byte value */(value,0);",
+      "text": "fVar21 = SUB84(value,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -657,7 +699,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "CONCAT44",
-      "text": "uVar18 = CONCAT44 /* combine 2-byte values */(uVar19,0x47c90a);",
+      "text": "uVar18 = CONCAT44(uVar19,0x47c90a);",
       "type": "decompiler_intrinsic"
     },
     {

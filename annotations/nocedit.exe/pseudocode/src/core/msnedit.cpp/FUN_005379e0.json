@@ -476,16 +476,17 @@
   },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 786,
+    "complexity_score": 841,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 20,
     "pseudocode_lines": 161,
-    "suspect_count": 61,
+    "suspect_count": 66,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 494
   },
@@ -921,6 +922,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_00680580",
+      "text": "(g_CEditorToolsPtr,\"Enter actor name wildcard\",&DAT_00680580,200,1);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 77,
       "match": "in_stack_fffff2fc",
@@ -1026,6 +1034,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_02f797e0",
+      "text": "(&CStack_958,\"Randomize speeds\",DAT_02f797e0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_02f797e0",
+      "text": "DAT_02f797e0 = iVar4;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 112,
       "match": "&stack0xfffff300",
@@ -1038,6 +1060,20 @@
       "match": "in_stack_00000004",
       "text": "for (pCVar1 = *(CDemonActor **)(in_stack_00000004 + 0x548); pCVar1 != (CDemonActor *)0x0",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_02f797e0",
+      "text": "(((DAT_02f797e0 != 0 || (*(int *)(pCVar3[0x8d].create_event + 0x3c) != 0)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
+      "match": "DAT_00680580",
+      "text": "(&DAT_00680580,pCVar3->actor_name,0), iVar4 != 0)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

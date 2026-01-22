@@ -20,14 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 179,
+    "complexity_score": 294,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 8,
     "pseudocode_lines": 19,
-    "suspect_count": 15,
+    "suspect_count": 26,
     "suspect_types": [
       "stack_param",
+      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 78
@@ -202,6 +203,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_031141e4",
+      "text": "iVar1 = DAT_031141e4;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
@@ -216,6 +224,20 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_031141e0",
+      "text": "if ((((DAT_031141e0 <= in_stack_00000008) && (DAT_031141e4 <= in_stack_0000000c)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_031141e4",
+      "text": "if ((((DAT_031141e0 <= in_stack_00000008) && (DAT_031141e4 <= in_stack_0000000c)) &&",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
@@ -228,6 +250,20 @@
       "match": "in_stack_0000000c",
       "text": "(in_stack_00000008 < DAT_031141e8)) && (in_stack_0000000c < DAT_031141ec)) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_031141e8",
+      "text": "(in_stack_00000008 < DAT_031141e8)) && (in_stack_0000000c < DAT_031141ec)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_031141ec",
+      "text": "(in_stack_00000008 < DAT_031141e8)) && (in_stack_0000000c < DAT_031141ec)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -244,6 +280,34 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_031141e0",
+      "text": "((in_stack_00000008 - DAT_031141e0) + DAT_03114204 / 2) / DAT_03114204 + DAT_0310fd0c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_03114204",
+      "text": "((in_stack_00000008 - DAT_031141e0) + DAT_03114204 / 2) / DAT_03114204 + DAT_0310fd0c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_03114204",
+      "text": "((in_stack_00000008 - DAT_031141e0) + DAT_03114204 / 2) / DAT_03114204 + DAT_0310fd0c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_0310fd0c",
+      "text": "((in_stack_00000008 - DAT_031141e0) + DAT_03114204 / 2) / DAT_03114204 + DAT_0310fd0c;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000014",
@@ -256,6 +320,20 @@
       "match": "in_stack_0000000c",
       "text": "*in_stack_00000014 = (in_stack_0000000c - iVar1) / DAT_03114208 + DAT_0310fcd8;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_03114208",
+      "text": "*in_stack_00000014 = (in_stack_0000000c - iVar1) / DAT_03114208 + DAT_0310fcd8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_0310fcd8",
+      "text": "*in_stack_00000014 = (in_stack_0000000c - iVar1) / DAT_03114208 + DAT_0310fcd8;",
+      "type": "undefined_data"
     }
   ]
 }

@@ -92,16 +92,17 @@
   },
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 278,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
     "pseudocode_lines": 138,
-    "suspect_count": 12,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "suspect_float",
+      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 416
@@ -530,6 +531,20 @@
       "type": "unknown_field"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "fcos",
+      "text": "fVar8 = (float10)fcos(fVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "fsin",
+      "text": "fVar7 = (float10)fsin(fVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 51,
       "match": "._0_4_",
@@ -579,6 +594,13 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_026a72d8",
+      "text": "local_7c.x = (int)ROUND(DAT_026a72d8 * 256.0f);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "ROUND",
@@ -586,11 +608,25 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_026a72dc",
+      "text": "local_7c.y = (int)ROUND(DAT_026a72dc * 256.0f);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
       "text": "local_7c.z = (int)ROUND(DAT_026a72e0 * 256.0f);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_026a72e0",
+      "text": "local_7c.z = (int)ROUND(DAT_026a72e0 * 256.0f);",
+      "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",

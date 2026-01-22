@@ -308,15 +308,16 @@
   },
   "complexity": {
     "assembly_lines": 1273,
-    "complexity_score": 940,
+    "complexity_score": 965,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 75,
     "pseudocode_lines": 450,
-    "suspect_count": 48,
+    "suspect_count": 50,
     "suspect_types": [
       "decompiler_intrinsic",
-      "format_string_mismatch"
+      "format_string_mismatch",
+      "unresolved_funcptr"
     ],
     "total_lines": 1723
   },
@@ -1227,6 +1228,20 @@
   },
   "suspects": [
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 55,
+      "match": "code",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,\"code\\tsegment\\n\");",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 56,
+      "match": "code",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,\"\\tASSUME\\tcs:code\\n\\n\");",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "ABS",
@@ -1363,7 +1378,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 120,
       "match": "CONCAT44",
-      "text": "dVar6 = crt_math_c_ldexp_FUN_00600002((double)CONCAT44 /* combine 2-byte values */(local_18,0x3ff00000),iVar11);",
+      "text": "dVar6 = crt_math_c_ldexp_FUN_00600002((double)CONCAT44(local_18,0x3ff00000),iVar11);",
       "type": "decompiler_intrinsic"
     },
     {

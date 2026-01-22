@@ -75,7 +75,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 90,
+        "column": 62,
         "line": 178,
         "message": "'stack0xfffffd94' was not declared in this scope"
       },
@@ -835,14 +835,14 @@
       "description": "Unresolved stack parameter",
       "line": 142,
       "match": "in_stack_fffffd78",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */((SDamageInfo *)(auStack_240 + 0x10),hit_type);",
+      "text": "in_stack_fffffd78 = CONCAT44((SDamageInfo *)(auStack_240 + 0x10),hit_type);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 142,
       "match": "CONCAT44",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */((SDamageInfo *)(auStack_240 + 0x10),hit_type);",
+      "text": "in_stack_fffffd78 = CONCAT44((SDamageInfo *)(auStack_240 + 0x10),hit_type);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -898,21 +898,21 @@
       "description": "Unresolved stack parameter",
       "line": 171,
       "match": "in_stack_fffffd78",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */((SDamageInfo *)&stack0xfffffd94,hit_type);",
+      "text": "in_stack_fffffd78 = CONCAT44((SDamageInfo *)&stack0xfffffd94,hit_type);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 171,
       "match": "&stack0xfffffd94",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */((SDamageInfo *)&stack0xfffffd94,hit_type);",
+      "text": "in_stack_fffffd78 = CONCAT44((SDamageInfo *)&stack0xfffffd94,hit_type);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 171,
       "match": "CONCAT44",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */((SDamageInfo *)&stack0xfffffd94,hit_type);",
+      "text": "in_stack_fffffd78 = CONCAT44((SDamageInfo *)&stack0xfffffd94,hit_type);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -996,14 +996,14 @@
       "description": "Unresolved stack parameter",
       "line": 202,
       "match": "in_stack_fffffd78",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(this_ptr_00,(SDamageInfo *)(auStack_194 + 0x14));",
+      "text": "in_stack_fffffd78 = CONCAT44(this_ptr_00,(SDamageInfo *)(auStack_194 + 0x14));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 202,
       "match": "CONCAT44",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(this_ptr_00,(SDamageInfo *)(auStack_194 + 0x14));",
+      "text": "in_stack_fffffd78 = CONCAT44(this_ptr_00,(SDamageInfo *)(auStack_194 + 0x14));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1031,7 +1031,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 231,
       "match": "SUB84",
-      "text": "(iVar3 = (*pCVar4->vtable[1].hasCollision)(pCVar4,SUB84 /* extract 2-byte value */(dVar8,0)), 0 < iVar3)) {",
+      "text": "(iVar3 = (*pCVar4->vtable[1].hasCollision)(pCVar4,SUB84(dVar8,0)), 0 < iVar3)) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1052,35 +1052,35 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 269,
       "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)fStack_144,0),(int)((ulonglong)(double)fStack_144 >> 0x20),",
+      "text": "SUB84((double)fStack_144,0),(int)((ulonglong)(double)fStack_144 >> 0x20),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 272,
       "match": "in_stack_fffffd78",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(uVar10,unaff_retaddr);",
+      "text": "in_stack_fffffd78 = CONCAT44(uVar10,unaff_retaddr);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 272,
       "match": "CONCAT44",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(uVar10,unaff_retaddr);",
+      "text": "in_stack_fffffd78 = CONCAT44(uVar10,unaff_retaddr);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 284,
       "match": "in_stack_fffffd78",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(fVar6,pCVar5);",
+      "text": "in_stack_fffffd78 = CONCAT44(fVar6,pCVar5);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 284,
       "match": "CONCAT44",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(fVar6,pCVar5);",
+      "text": "in_stack_fffffd78 = CONCAT44(fVar6,pCVar5);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1157,14 +1157,14 @@
       "description": "Unresolved stack parameter",
       "line": 334,
       "match": "in_stack_fffffd78",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(hit_type,this_ptr);",
+      "text": "in_stack_fffffd78 = CONCAT44(hit_type,this_ptr);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 334,
       "match": "CONCAT44",
-      "text": "in_stack_fffffd78 = CONCAT44 /* combine 2-byte values */(hit_type,this_ptr);",
+      "text": "in_stack_fffffd78 = CONCAT44(hit_type,this_ptr);",
       "type": "decompiler_intrinsic"
     }
   ],

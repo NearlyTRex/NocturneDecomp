@@ -20,7 +20,7 @@ _SUSPECT_PATTERN_DEFS = [
     # Negative array indexing like pCVar[-10].x - usually wrong base type
     (r'\w+\[-\d+\]\.', 'negative_offset', 'Negative struct offset (wrong base type)'),
     # extraout_* - Extra output parameters Ghidra inferred (wrong calling convention)
-    (r'\bextraout_[A-Z0-9_]+\b', 'extra_output', 'Inferred extra output (wrong calling convention)'),
+    (r'\bextraout_[A-Za-z0-9_]+\b', 'extra_output', 'Inferred extra output (wrong calling convention)'),
     # in_* register parameters that look suspicious
     (r'\bin_[A-Z]{2,3}\b', 'register_param', 'Inferred register parameter'),
     # unaff_* - Unaffected register variables
@@ -31,8 +31,8 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\(\w+\s*\*\s*\)\s*\(\s*\(int\)', 'pointer_cast', 'Complex pointer cast'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
-    # code * - Unresolved function pointer (failed vtable lookup)
-    (r'\bcode\s*\*', 'unresolved_funcptr', 'Unresolved function pointer (vtable lookup failed)'),
+    # code / code * - Unresolved function pointer (failed vtable lookup)
+    (r'\bcode\s*\*|\bcode\b', 'unresolved_funcptr', 'Unresolved function pointer (vtable lookup failed)'),
     # WARNING: Removing unreachable block
     (r'WARNING:\s*Removing unreachable block', 'warning_unreachable', 'Unreachable code block removed'),
     # WARNING: Could not recover jumptable
@@ -43,6 +43,18 @@ _SUSPECT_PATTERN_DEFS = [
     (r'WARNING:\s*Subroutine does not return', 'warning_noreturn', 'Subroutine marked as non-returning'),
     # WARNING: Globals starting with '_' overlap
     (r'WARNING:\s*Globals starting with', 'warning_overlapping_globals', 'Overlapping global symbols'),
+    # WARNING: Type propagation algorithm not settling
+    (r'WARNING:\s*Type propagation algorithm not settling', 'warning_type_propagation', 'Type propagation did not converge'),
+    # WARNING: Unable to track spacebase fully for stack
+    (r'WARNING:\s*Unable to track spacebase fully for stack', 'warning_spacebase', 'Stack frame tracking failed'),
+    # WARNING: Exceeded maximum restarts with more pending
+    (r'WARNING:\s*Exceeded maximum restarts with more pending', 'warning_max_restarts', 'Decompiler iteration limit exceeded'),
+    # WARNING: Restarted to delay deadcode elimination for space:
+    (r'WARNING:\s*Restarted to delay deadcode elimination', 'warning_deadcode_restart', 'Deadcode elimination delayed'),
+    # WARNING: Instruction at ... overlaps instruction at
+    (r'WARNING:\s*Instruction at .* overlaps instruction at', 'warning_overlapping_instructions', 'Overlapping instructions detected'),
+    # WARNING: Struct "...": ignoring multiple overlapping fields
+    (r'WARNING:\s*Struct .* ignoring multiple overlapping fields', 'warning_struct_overlap', 'Struct has overlapping fields'),
     # uRamXXXX - Undefined RAM references (Ghidra couldn't resolve memory location)
     (r'\b[pu]?uRam[0-9a-fA-F]+\b', 'undefined_ram', 'Undefined RAM reference'),
     # param_N - Unnamed function parameters (need meaningful names)
@@ -50,10 +62,22 @@ _SUSPECT_PATTERN_DEFS = [
     # local_XX - Unnamed local variables (need meaningful names)
     (r'\blocal_[0-9a-fA-F]+\b', 'unnamed_local', 'Unnamed local variable'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
-    # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, etc.
-    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY|SCARRY|SBORROW|CONCAT\d+|SUB\d+)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
-    # float10 - Extended precision float type (x87 FPU artifact)
-    (r'\bfloat10\b', 'float10_type', 'Extended precision float (x87 FPU artifact)'),
+    # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, CARRY4, NAN(), fsin, fcos, fptan, etc.
+    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY\d*|SCARRY\d*|SBORROW\d*|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
+    # builtin_* - Ghidra builtin functions
+    (r'\bbuiltin_\w+\b', 'builtin_function', 'Ghidra builtin function'),
+    # Non-standard integer sizes (int3, uint5, uint7, byte3, etc.) - unusual bit manipulation
+    (r'\b(u?int[3567]|byte[23])\b', 'nonstandard_int', 'Non-standard integer size (decompiler artifact)'),
+    # Unknown sized types (unkbyte10, unkuint10, etc.)
+    (r'\bunk(byte|u?int)\d*\b', 'unknown_type', 'Unknown/unresolved type'),
+    # Segment register inputs (in_FS, in_GS) - unusual code patterns, TLS access
+    (r'\bin_(FS|GS)\b', 'segment_register', 'Segment register input (TLS or unusual code)'),
+    # FPU register inputs (in_ST0-7) - FPU calling convention issues
+    (r'\bin_ST[0-7]\b', 'fpu_register_input', 'FPU register input (calling convention issue)'),
+    # DAT_XXXXXXXX - Undefined global data references
+    (r'\bDAT_[0-9a-fA-F]{8}\b', 'undefined_data', 'Undefined global data reference'),
+    # field_0xNN - Auto-generated struct field names (unnamed fields)
+    (r'\bfield_0x[0-9a-fA-F]+\b', 'unnamed_field', 'Auto-generated struct field name'),
 ]
 
 # Pre-compiled patterns for performance (compiled once at module load)

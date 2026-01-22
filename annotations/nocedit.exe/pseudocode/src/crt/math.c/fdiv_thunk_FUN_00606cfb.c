@@ -24,5 +24,5 @@ float10 __fpu_thunk crt_math_c_fdiv_thunk_FUN_00606cfb(void)
   local_res0 = (ulonglong)in_ST4;
   uStack00000008 = (ushort)((unkuint10)in_ST4 >> 0x40);
   crt_math_c_fdiv_FUN_00606960(in_ST2,in_ST3);
-  return (float10)CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(in_stack_0000000a,uStack00000008));
+  return (float10)CONCAT64(uStack0000000c,CONCAT22(in_stack_0000000a,uStack00000008));
 }

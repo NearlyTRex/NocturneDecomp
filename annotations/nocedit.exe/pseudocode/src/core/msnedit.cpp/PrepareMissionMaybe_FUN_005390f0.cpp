@@ -424,7 +424,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
                             (g_CEditorToolsPtr);
           core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940
                     (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x20),
-                     CONCAT31 /* combine 2-byte values */(extraout_var_01,uVar2));
+                     CONCAT31(extraout_var_01,uVar2));
         }
       }
       else {
@@ -438,7 +438,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
                           (g_CEditorToolsPtr);
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940
                   (*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),
-                   CONCAT31 /* combine 2-byte values */(extraout_var,uVar2));
+                   CONCAT31(extraout_var,uVar2));
         pfVar3 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) +
                                                0x154) + 0x14))();
         local_c4 = pfVar3[3] - *pfVar3;
@@ -454,7 +454,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
         uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                           (g_CEditorToolsPtr);
         shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
-                  (g_CEditorToolsPtr,(int)local_40,(CQuaternion4f *)CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar2),
+                  (g_CEditorToolsPtr,(int)local_40,(CQuaternion4f *)CONCAT31(extraout_var_00,uVar2),
                    label_offset,param5);
       }
       core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);

@@ -332,17 +332,18 @@
   },
   "complexity": {
     "assembly_lines": 837,
-    "complexity_score": 1023,
+    "complexity_score": 1088,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 64,
     "pseudocode_lines": 298,
-    "suspect_count": 70,
+    "suspect_count": 76,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 1135
@@ -1148,6 +1149,13 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_02f7c8c4",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffed0,\"MyGameSettigsId: %d\",DAT_02f7c8c4);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 53,
       "match": "&stack0xfffffed0",
@@ -1330,6 +1338,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 171,
+      "match": "DAT_02f7c8c4",
+      "text": "in_stack_00000004->players[in_stack_00000004->local_player_index].player_id = DAT_02f7c8c4;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 174,
       "match": "in_stack_00000004",
@@ -1342,6 +1357,13 @@
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->player_count) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 180,
+      "match": "DAT_02f7c8c4",
+      "text": "if (DAT_02f7c8c4 != pCVar6->players[0].player_id) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1449,6 +1471,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 245,
+      "match": "DAT_02f7c8c8",
+      "text": "DAT_02f7c8c8 = g_CurrentGameTime - 0x1e0000;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 249,
       "match": "in_stack_00000004",
@@ -1461,6 +1490,13 @@
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004->connection_type == 2) && (DAT_00680a04 != 0)) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 252,
+      "match": "DAT_00680a04",
+      "text": "if ((in_stack_00000004->connection_type == 2) && (DAT_00680a04 != 0)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -1510,6 +1546,13 @@
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004->connection_type == 1) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 285,
+      "match": "DAT_02f7c640",
+      "text": "(g_CEditorToolsPtr,\"Send chat\",&DAT_02f7c640,0x100,1),",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

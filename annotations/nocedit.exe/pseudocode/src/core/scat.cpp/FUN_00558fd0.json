@@ -128,16 +128,17 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 208,
+    "complexity_score": 223,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 58,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
+      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 168
@@ -384,6 +385,13 @@
       "match": "in_stack_00000004",
       "text": "(&local_130,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + DAT_03106194 * 0x30),&local_d0",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_03106194",
+      "text": "(&local_130,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + DAT_03106194 * 0x30),&local_d0",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

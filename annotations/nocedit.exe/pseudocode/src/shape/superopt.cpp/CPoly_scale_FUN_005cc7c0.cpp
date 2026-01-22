@@ -110,9 +110,9 @@ shape_superopt_cpp_CPoly_scale_FUN_005cc7c0(CPoly *this_ptr,CVector3d *scale,CVe
     pdVar6 = (double *)((int)pdVar6 + 4);
     pdVar7 = (double *)((int)pdVar7 + 4);
   }
-  local_60 = local_210 * (double)CONCAT44 /* combine 2-byte values */(uStack_bc,local_c0);
-  local_58 = local_208 * (double)CONCAT44 /* combine 2-byte values */(uStack_b4,local_b8);
-  local_50 = local_200 * (double)CONCAT44 /* combine 2-byte values */(uStack_ac,local_b0);
+  local_60 = local_210 * (double)CONCAT44(uStack_bc,local_c0);
+  local_58 = local_208 * (double)CONCAT44(uStack_b4,local_b8);
+  local_50 = local_200 * (double)CONCAT44(uStack_ac,local_b0);
   pdVar6 = &local_60;
   pdVar7 = &local_a8;
   for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {

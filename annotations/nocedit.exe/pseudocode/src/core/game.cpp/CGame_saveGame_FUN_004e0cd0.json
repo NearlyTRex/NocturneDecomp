@@ -212,16 +212,17 @@
   },
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 530,
+    "complexity_score": 585,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 53,
     "pseudocode_lines": 185,
-    "suspect_count": 33,
+    "suspect_count": 38,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 725
   },
@@ -1023,11 +1024,46 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_02d82d84",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\",DAT_02d82d84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_02d82d84",
+      "text": "if (0 < DAT_02d82d84) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 119,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)&DAT_02d82d84 + iVar4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
+      "match": "DAT_02d82d84",
+      "text": "puVar1 = (uint *)((int)&DAT_02d82d84 + iVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 123,
+      "match": "DAT_02d82d84",
+      "text": "} while (iVar3 <= DAT_02d82d84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 133,
+      "match": "DAT_0062ca5b",
+      "text": "local_18 = engine_dosio_c_getFileSize_FUN_00481880(&DAT_0062ca5b,\"save\\\\$$SAVE$$.TMP\");",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

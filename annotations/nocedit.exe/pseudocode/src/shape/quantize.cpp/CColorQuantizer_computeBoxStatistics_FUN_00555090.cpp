@@ -59,7 +59,7 @@ shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar15);
   dVar15 = crt_math_c_round_FUN_005fe6b0
                      ((double)(local_44 /
-                              (float)CONCAT44 /* combine 2-byte values */(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))
+                              (float)CONCAT44(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))
   ;
   this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar15);
   iVar13 = this_ptr->boxes[box_index].pixel_count;
@@ -69,7 +69,7 @@ shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   this_ptr->boxes[box_index].intensity_variance = extraout_ECX_00;
   this_ptr->boxes[box_index].weighted_variance = extraout_ECX_00;
   dVar15 = crt_math_c_round_FUN_005fe6b0
-                     ((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar13)));
+                     ((double)(local_44 / (float)CONCAT44(extraout_ECX_00,iVar13)));
   this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar15);
   for (iVar13 = this_ptr->boxes[box_index].start_index * 4; iVar13 < extraout_EDX;
       iVar13 = iVar13 + 4) {

@@ -86,7 +86,7 @@ uint core_lightgun_cpp_FUN_00505c70(void)
     in_stack_00000004[4].location.area_id = (int)(in_stack_00000004[2].orient.heading * fVar2);
     pCStack_18 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
-    collision_info = SUB84 /* extract 2-byte value */(dVar7,0);
+    collision_info = SUB84(dVar7,0);
     if (pCStack_18 != (CDemonActor *)0x0) {
       (*pCStack_18->vtable[1].hasCollision)(pCStack_18,collision_info);
     }

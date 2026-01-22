@@ -27,7 +27,7 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0db0(CEventList *this_ptr)
     local_18 = this_ptr[1].field2_0x68 + 0xbc;
     do {
       dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(1,in_stack_fffffe90);
-      local_20 = SUB84 /* extract 2-byte value */(dVar5,0);
+      local_20 = SUB84(dVar5,0);
       *(uint *)(dest + 0x118) = local_20;
       local_1c = (uint)((ulonglong)dVar5 >> 0x20);
       *(uint *)(dest + 0x11c) = local_1c;

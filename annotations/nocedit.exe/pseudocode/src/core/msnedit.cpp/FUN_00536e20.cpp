@@ -62,7 +62,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
       DAT_02f7c52c = -1;
     }
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (local_f4,"%6.2f",SUB84 /* extract 2-byte value */((double)local_f8,0),
+              (local_f4,"%6.2f",SUB84((double)local_f8,0),
                (int)((ulonglong)(double)local_f8 >> 0x20));
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
@@ -80,7 +80,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       dVar3 = crt_math_c_ceil_FUN_006001b2((double)local_f8);
-      uStack_30 = SUB84 /* extract 2-byte value */(dVar3,0);
+      uStack_30 = SUB84(dVar3,0);
       local_2c = (uint)((ulonglong)dVar3 >> 0x20);
       frame_number = (float)((float10)dVar3 + (float10)_DAT_0063b73c);
       if ((float10)dVar3 + (float10)_DAT_0063b73c < (float10)0) {
@@ -104,7 +104,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
       dVar3 = crt_math_c_floor_FUN_005feb90((double)frame_number);
-      uStack_34 = SUB84 /* extract 2-byte value */(dVar3,0);
+      uStack_34 = SUB84(dVar3,0);
       uStack_30 = (uint)((ulonglong)dVar3 >> 0x20);
       DAT_02f7c530 = 0;
     }

@@ -698,15 +698,16 @@
   },
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 903,
+    "complexity_score": 1078,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 19,
     "pseudocode_lines": 273,
-    "suspect_count": 61,
+    "suspect_count": 78,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
+      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -1127,11 +1128,130 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879bc = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_008879bc",
+      "text": "for (iStack_20 = 0; iVar3 = DAT_008879bc, iStack_20 < g_CDemonSetPtr->damage_listener_count;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_00887e70",
+      "text": "pSVar7 = DAT_00887e70 + DAT_008879bc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_008879bc",
+      "text": "pSVar7 = DAT_00887e70 + DAT_008879bc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_008879c0",
+      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar6 + 0x20)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_008879bc",
+      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar6 + 0x20)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar6 + 0x20))->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar6 + 0x20))->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[iVar3].y = *(float *)(iVar6 + 0x24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 112,
+      "match": "DAT_008879c0",
+      "text": "DAT_008879c0[iVar3].z = *(float *)(iVar6 + 0x28);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 115,
       "match": "code *",
       "text": "iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x34))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_00887e70",
+      "text": "((local_a8 <= *(float *)(iVar6 + 0x24) + DAT_00887e70[iVar3].cylinder_top_y &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_00887e70",
+      "text": "((((local_ac <= *(float *)(iVar6 + 0x20) + DAT_00887e70[iVar3].cylinder_radius &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
+      "match": "DAT_00887e70",
+      "text": "(*(float *)(iVar6 + 0x20) - DAT_00887e70[iVar3].cylinder_radius <= local_7c)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 120,
+      "match": "DAT_00887e70",
+      "text": "(local_a4 <= *(float *)(iVar6 + 0x28) + DAT_00887e70[iVar3].cylinder_radius)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_00887e70",
+      "text": "(*(float *)(iVar6 + 0x28) - DAT_00887e70[iVar3].cylinder_radius <= local_74)))))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879bc = DAT_008879bc + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
+      "match": "DAT_008879bc",
+      "text": "DAT_008879bc = DAT_008879bc + 1;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

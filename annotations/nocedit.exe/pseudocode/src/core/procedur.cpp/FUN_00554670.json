@@ -62,17 +62,18 @@
   },
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 343,
+    "complexity_score": 388,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 8,
     "pseudocode_lines": 83,
-    "suspect_count": 24,
+    "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
-      "stack_param"
+      "stack_param",
+      "undefined_data"
     ],
     "total_lines": 277
   },
@@ -382,6 +383,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_030f6158",
+      "text": "crt_memory_c_memset_FUN_005fde40(&DAT_030f6158,0,0x10000);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000010",
@@ -401,6 +409,13 @@
       "match": "in_stack_00000010",
       "text": "fVar6 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "fsin",
+      "text": "fVar6 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -429,6 +444,13 @@
       "match": "extraout_ECX_00",
       "text": "(&DAT_030f6158)[extraout_ECX_00] = local_18;",
       "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_030f6158",
+      "text": "(&DAT_030f6158)[extraout_ECX_00] = local_18;",
+      "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -464,6 +486,13 @@
       "match": "ROUND",
       "text": "local_28 = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_030f6158",
+      "text": "uVar3 = (uint)*(byte *)(iVar5 + 8) + (uint)(byte)(&DAT_030f6158)[local_28 * 0x100 + iStack_24]",
+      "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

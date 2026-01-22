@@ -128,17 +128,18 @@
   },
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 268,
+    "complexity_score": 463,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
     "pseudocode_lines": 68,
-    "suspect_count": 18,
+    "suspect_count": 37,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 200
   },
@@ -390,11 +391,60 @@
       "type": "stack_param"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_030c3ab0",
+      "text": "if ((DAT_030c3ab0 & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_030c3ab0",
+      "text": "DAT_030c3ab0 = DAT_030c3ab0 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_030c3ab0",
+      "text": "DAT_030c3ab0 = DAT_030c3ab0 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02fd9060",
+      "text": "crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(DAT_02fd9060,0xc,&g_CPathMapTypeInfo)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_00680bc8",
+      "text": "crt_stdlib_c_atexit_FUN_005ff060(&DAT_00680bc8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_00680bd8",
+      "text": "if (DAT_00680bd8 < 0) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00680bd8",
+      "text": "*(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -432,11 +482,25 @@
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_02fd9060",
+      "text": "if (((local_1c == *(CVector3i **)((int)&DAT_02fd9060[0].cached_voxel_coords.x + iVar3)) &&",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(int *)((int)",
       "text": "(local_18[0] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.y + iVar3))) &&",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_02fd9060",
+      "text": "(local_18[0] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.y + iVar3))) &&",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -446,11 +510,32 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_02fd9060",
+      "text": "(iVar5 = iVar2, local_18[1] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.z + iVar3))",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(int *)((int)",
       "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_00680bd8",
+      "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_00680bd8",
+      "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -460,6 +545,20 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00680bd8",
+      "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00680bd8",
+      "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
+      "type": "undefined_data"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(int *)((int)",
@@ -472,6 +571,27 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_00680bd8",
+      "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_00680bd8",
+      "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_00680bd8",
+      "text": "(&DAT_00680bd8)[iVar5] = 0;",
+      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -493,6 +613,20 @@
       "match": "in_stack_00000004",
       "text": "local_28.z = in_stack_00000004->z;",
       "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_02fd9060",
+      "text": "core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(DAT_02fd9060 + iVar5,&local_28,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_02fd9060",
+      "text": "return DAT_02fd9060 + iVar5;",
+      "type": "undefined_data"
     },
     {
       "call_site_count": 1,

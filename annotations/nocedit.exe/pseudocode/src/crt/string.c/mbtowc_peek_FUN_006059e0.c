@@ -10,7 +10,7 @@ wchar_t __watcallStack crt_string_c_mbtowc_peek_FUN_006059e0(char *str)
 
 {
   if ((g_MultibyteLocaleActive != 0) && ((g_LeadByteTable[(byte)*str] & 1U) != 0)) {
-    return CONCAT11 /* combine 2-byte values */(*str,str[1]);
+    return CONCAT11(*str,str[1]);
   }
   return (wchar_t)(byte)*str;
 }

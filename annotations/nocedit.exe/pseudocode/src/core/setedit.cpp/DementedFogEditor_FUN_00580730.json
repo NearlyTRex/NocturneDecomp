@@ -890,17 +890,18 @@
   },
   "complexity": {
     "assembly_lines": 1019,
-    "complexity_score": 1239,
+    "complexity_score": 1254,
     "cross_reference_count": 1,
     "function_call_count": 36,
     "global_count": 55,
     "pseudocode_lines": 389,
-    "suspect_count": 83,
+    "suspect_count": 84,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "undefined_data"
     ],
     "total_lines": 1408
   },
@@ -1796,6 +1797,13 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_03659388 + iVar6) = *(uint *)((int)pvVar3 + 0x154);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_03659388",
+      "text": "*(uint *)((int)&DAT_03659388 + iVar6) = *(uint *)((int)pvVar3 + 0x154);",
+      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

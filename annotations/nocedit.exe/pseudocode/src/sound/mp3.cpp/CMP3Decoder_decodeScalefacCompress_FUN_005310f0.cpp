@@ -61,7 +61,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       local_34[2] = local_34[4] & 3;
       local_34[1] = (local_34[4] >> 2) % 5;
       local_34[3] = 0;
-      local_1a = CONCAT22 /* combine 2-byte values */(1,(ushort)local_1a);
+      local_1a = CONCAT22(1,(ushort)local_1a);
       pcVar1 = granule_info[granule].field17_0x60 + iVar5 + -0xc;
       pcVar1[0] = '\0';
       pcVar1[1] = '\0';
@@ -75,7 +75,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       local_34[1] = (uVar3 - 500) % 3;
       local_34[2] = 0;
       local_34[3] = 0;
-      local_1a = CONCAT22 /* combine 2-byte values */(2,(ushort)local_1a);
+      local_1a = CONCAT22(2,(ushort)local_1a);
       pcVar1 = granule_info[granule].field17_0x60 + iVar5 + -0xc;
       pcVar1[0] = '\x01';
       pcVar1[1] = '\0';
@@ -97,7 +97,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
       pcVar1[3] = '\0';
-      local_1a = CONCAT22 /* combine 2-byte values */(3,(ushort)local_1a);
+      local_1a = CONCAT22(3,(ushort)local_1a);
     }
     else if (uVar3 < 0xf4) {
       uVar3 = uVar3 - 0xb4;
@@ -110,7 +110,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
       pcVar1[3] = '\0';
-      local_1a = CONCAT22 /* combine 2-byte values */(4,(ushort)local_1a);
+      local_1a = CONCAT22(4,(ushort)local_1a);
     }
     else if (uVar3 < 0xff) {
       local_34[0] = (uVar3 - 0xf4) / 3;
@@ -122,7 +122,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       pcVar1[1] = '\0';
       pcVar1[2] = '\0';
       pcVar1[3] = '\0';
-      local_1a = CONCAT22 /* combine 2-byte values */(5,(ushort)local_1a);
+      local_1a = CONCAT22(5,(ushort)local_1a);
     }
   }
   for (sVar4 = 0; sVar4 < 0x2d; sVar4 = sVar4 + 1) {
@@ -145,7 +145,7 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
       }
       sVar4 = sVar4 + 1;
     }
-    local_16 = CONCAT22 /* combine 2-byte values */(local_16._2_2_ + 1,(ushort)local_16);
+    local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);
   }
   return;
 }

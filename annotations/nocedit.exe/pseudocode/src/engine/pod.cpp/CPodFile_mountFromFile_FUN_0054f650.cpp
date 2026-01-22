@@ -164,7 +164,7 @@ LAB_0054f6fe:
         local_18 = local_18 + 0x14;
       } while (local_28 < this_ptr->file_count);
     }
-    bVar11 = SBORROW /* signed borrow */4(size,local_2c);
+    bVar11 = SBORROW4(size,local_2c);
     iVar2 = size - local_2c;
   }
   else {
@@ -353,7 +353,7 @@ LAB_0054f6fe:
         local_14 = iVar2;
       } while (local_24 < this_ptr->file_count);
     }
-    bVar11 = SBORROW /* signed borrow */4(size,local_1c);
+    bVar11 = SBORROW4(size,local_1c);
     iVar2 = size - local_1c;
   }
   if (bVar11 != iVar2 < 0) {

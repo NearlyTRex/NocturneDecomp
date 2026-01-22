@@ -88,7 +88,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448f20(CCrossbow *this_ptr)
     pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((pCVar6 != (CDemonActor *)0x0) &&
-       (iVar2 = (*pCVar6->vtable[1].hasCollision)(pCVar6,SUB84 /* extract 2-byte value */(dVar4,0)), 0 < iVar2)) {
+       (iVar2 = (*pCVar6->vtable[1].hasCollision)(pCVar6,SUB84(dVar4,0)), 0 < iVar2)) {
       pCVar6 = (CDemonActor *)0x0;
     }
     pCStack_14 = (CGlass *)
@@ -107,7 +107,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448f20(CCrossbow *this_ptr)
           break;
         }
         core_trigger_cpp_FUN_005e0aa0();
-        pCVar5 = SUB84 /* extract 2-byte value */(dVar4,0);
+        pCVar5 = SUB84(dVar4,0);
         iVar2 = core_trigger_cpp_FUN_005e0ac0();
         if (iVar2 != 0) {
           (*(this_ptr->base_weapon).base_actor.vtable[1].getBoundingBox)

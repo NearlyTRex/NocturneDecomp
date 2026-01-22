@@ -27,7 +27,7 @@
       },
       {
         "category": "other",
-        "column": 59,
+        "column": 32,
         "line": 64,
         "message": "invalid cast from type 'CDemonActor*' to type 'float'"
       },
@@ -236,18 +236,19 @@
   },
   "complexity": {
     "assembly_lines": 364,
-    "complexity_score": 667,
+    "complexity_score": 682,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 20,
     "pseudocode_lines": 137,
-    "suspect_count": 50,
+    "suspect_count": 51,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
       "stack_ref",
+      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 501
@@ -662,28 +663,35 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 57,
       "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)(float)pCVar4[0x1a].next_actor,0),",
+      "text": "SUB84((double)(float)pCVar4[0x1a].next_actor,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 59,
       "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)fVar6,0),(int)((ulonglong)(double)fVar6 >> 0x20));",
+      "text": "SUB84((double)fVar6,0),(int)((ulonglong)(double)fVar6 >> 0x20));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_0063cbe7",
+      "text": "(local_224,\"%s\\t%s\\t%s\\t%d\",pCVar4,&pCVar4[2].location.position.y,&DAT_0063cbe7,",
+      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "SUB84",
-      "text": "(local_224,\"%s\\t%g hp\\tx\\t%d uses\\t=\\t%g hp\",pCVar4,SUB84 /* extract 2-byte value */(dVar1,0),",
+      "text": "(local_224,\"%s\\t%g hp\\tx\\t%d uses\\t=\\t%g hp\",pCVar4,SUB84(dVar1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "SUB84",
-      "text": "(int)((ulonglong)dVar1 >> 0x20),pCVar4[2].location.position.y,SUB84 /* extract 2-byte value */(dVar7,0),",
+      "text": "(int)((ulonglong)dVar1 >> 0x20),pCVar4[2].location.position.y,SUB84(dVar7,0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -711,14 +719,14 @@
       "description": "Unknown/mangled field access",
       "line": 89,
       "match": "._0_4_",
-      "text": "local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);",
+      "text": "local_30._0_4_ = SUB84(dVar7,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "SUB84",
-      "text": "local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);",
+      "text": "local_30._0_4_ = SUB84(dVar7,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -739,14 +747,14 @@
       "description": "Unknown/mangled field access",
       "line": 103,
       "match": "._0_4_",
-      "text": "local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);",
+      "text": "local_30._0_4_ = SUB84(dVar7,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "SUB84",
-      "text": "local_30._0_4_ = SUB84 /* extract 2-byte value */(dVar7,0);",
+      "text": "local_30._0_4_ = SUB84(dVar7,0);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -74,18 +74,18 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
   }
   else {
     dVar11 = (double)in_stack_00000008;
-    local_88 = SUB84 /* extract 2-byte value */(dVar11,0);
+    local_88 = SUB84(dVar11,0);
     fStack_84 = (float)((ulonglong)dVar11 >> 0x20);
     if (0.0 <= dVar11) {
       local_28 = crt_math_c_floor_FUN_005feb90
                            ((double)(in_stack_00000008 / (float)*in_stack_00000004));
-      local_80 = (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c) - (float)local_28 * fStack_84;
+      local_80 = (float)(double)CONCAT44(local_88,uStack_8c) - (float)local_28 * fStack_84;
       in_stack_0000000c = extraout_EBX_00;
     }
     else {
       local_28 = crt_math_c_floor_FUN_005feb90
                            ((double)(-in_stack_00000008 / (float)*in_stack_00000004));
-      local_80 = (float)local_28 * fStack_84 + (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c);
+      local_80 = (float)local_28 * fStack_84 + (float)(double)CONCAT44(local_88,uStack_8c);
       in_stack_0000000c = extraout_EBX;
       if (local_80 < 0.0) {
         local_80 = local_80 + fStack_84;

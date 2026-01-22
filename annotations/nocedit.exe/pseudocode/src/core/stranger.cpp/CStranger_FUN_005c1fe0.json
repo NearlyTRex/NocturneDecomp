@@ -194,12 +194,12 @@
   },
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 636,
+    "complexity_score": 646,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "pseudocode_lines": 146,
-    "suspect_count": 47,
+    "suspect_count": 48,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
@@ -624,6 +624,13 @@
       "match": "._4_4_",
       "text": "local_a4._4_4_ = (in_stack_00000004->orient_matrix).m[2].z;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos((float10)0.261799387791667);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",

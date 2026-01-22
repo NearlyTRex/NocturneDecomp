@@ -89,7 +89,7 @@ void core_cloth_cpp_FUN_0043b7e0(void)
     uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
               (g_CEditorToolsPtr,*(float *)(iVar2 + 0x14) + *(float *)(iVar2 + 0x18),
-               CONCAT31 /* combine 2-byte values */(extraout_var,uVar1));
+               CONCAT31(extraout_var,uVar1));
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return;

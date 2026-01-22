@@ -92,16 +92,17 @@
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 207,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 72,
-    "suspect_count": 12,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "stack_param"
+      "stack_param",
+      "unknown_type"
     ],
     "total_lines": 112
   },
@@ -346,6 +347,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Unknown/unresolved type",
+      "line": 15,
+      "match": "unkbyte10",
+      "text": "unkbyte10 extraout_ST3;",
+      "type": "unknown_type"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
@@ -375,6 +383,20 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "fsin",
+      "text": "fsin((float10)-1.30899693895833);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "fptan",
+      "text": "fptan((float10)1.30899693895833);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "SQRT",
       "text": "fVar1 = SQRT(local_70 * local_70 + local_68 * local_68);",
@@ -386,6 +408,27 @@
       "match": "extraout_ST3",
       "text": "fVar4 = (float10)fcos(extraout_ST3);",
       "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "fcos",
+      "text": "fVar4 = (float10)fcos(extraout_ST3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "fsin",
+      "text": "fVar5 = (float10)fsin(fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "fcos",
+      "text": "fVar3 = (float10)fcos(fVar3);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
