@@ -2,22 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 60,
-        "message": "'stack0xffffff54' was not declared in this scope; did you mean 'in_stack_ffffff54'?"
+        "category": "other",
+        "column": 34,
+        "line": 63,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 65,
+        "line": 64,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 92,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -31,30 +37,39 @@
       {
         "category": "other",
         "column": 18,
-        "line": 65,
+        "line": 63,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 64,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 68,
+        "line": 67,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 92,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 195,
+    "complexity_score": 130,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 85,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "pointer_cast"
     ],
     "total_lines": 230
   },
@@ -104,9 +119,9 @@
         "0059fa1c"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820",
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)"
+    "signature": "CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)"
   },
   "function_calls": [
     {
@@ -166,10 +181,10 @@
     "pcode_op_count": 838
   },
   "stack_frame": {
-    "frame_size": 188,
+    "frame_size": 184,
     "local_size": 176,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -311,79 +326,37 @@
         "offset": 8,
         "size": 4,
         "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "out_matrix",
-        "offset": 12,
-        "size": 4,
-        "type": "CMatrix3x4f *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_ffffff54",
-      "text": "CMatrix3x4f *in_stack_ffffff54;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_ffffff54",
-      "text": "(this_ptr,iVar2,in_stack_ffffff54);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xffffff54",
-      "text": "pfVar3 = (float *)&stack0xffffff54;",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 57,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(CVector3f *)((int)",
       "text": "(&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 83,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = *piVar4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 85,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 85,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
-      "type": "unaffected_reg"
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

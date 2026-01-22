@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_out)
+; __stack_esi CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
 ;
 ; Parameters:
-; CMatrix3x3f *    Stack[0x4]:4   matrix_ptr
+; CMatrix3x3f *    Stack[0x4]:4   matrix_in
 ; Local Variables:
 ; undefined8       Stack[-0x50]:8  local_50
 ; undefined4       Stack[-0x48]:4  local_48

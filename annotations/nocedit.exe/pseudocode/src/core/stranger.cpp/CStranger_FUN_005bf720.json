@@ -22,25 +22,25 @@
       {
         "category": "other",
         "column": 21,
-        "line": 45,
+        "line": 44,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 46,
+        "line": 45,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 47,
+        "line": 46,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 48,
+        "line": 47,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -55,25 +55,31 @@
       {
         "category": "other",
         "column": 14,
-        "line": 32,
+        "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 35,
+        "line": 34,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 36,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 38,
+        "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 44,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -84,31 +90,25 @@
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 4,
         "line": 46,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 47,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 9,
-        "line": 48,
+        "line": 47,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 196,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 45,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
@@ -116,7 +116,7 @@
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 120
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -291,63 +291,63 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "(this_ptr,*(int *)(in_stack_00000004 + 0x1fc84),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0x1fc54) * (float)40,-1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000004",
-      "text": "(&local_1c,(CQuaternion4f *)(DAT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));",
+      "text": "(&local_1c,(CVector3f *)(DAT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 46,
       "match": "in_stack_00000008",
       "text": "(this_ptr,in_stack_00000008);",
       "type": "stack_param"

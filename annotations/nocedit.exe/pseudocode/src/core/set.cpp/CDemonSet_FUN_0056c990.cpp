@@ -14,7 +14,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   CHero *this_ptr_00;
   int iVar1;
   int iVar2;
-  CVector3f *euler_out;
+  CMatrix3x4f *matrix;
   CDemonLight *this_ptr_01;
   CSkeleton *this_ptr_02;
   int iVar3;
@@ -24,7 +24,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   CVector3i local_5c;
   CVector3f local_50;
   CVector3f local_44;
-  CMatrix3x3f local_38;
+  CVector3f local_38;
+  CVector3f local_2c;
+  CVector3f local_20;
   CDemonLight *local_14;
   
   this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
@@ -32,36 +34,34 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                           (&(this_ptr_00->base_character).model);
   iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_02,"Bip01 Head");
-  euler_out = (CVector3f *)
-              ((this_ptr_00->base_character).model.bone_transform.bone_world_matrices + iVar3);
+  matrix = (this_ptr_00->base_character).model.bone_transform.bone_world_matrices + iVar3;
   local_44.y = 0.338;
   local_44.x = 0.0;
   local_44.z = 0.75;
-  input_local_point =
-       core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_50,&local_44,(CMatrix3x4f *)euler_out);
+  input_local_point = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_50,&local_44,matrix);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            ((CDemonActor *)this_ptr_00,local_38.m + 1,input_local_point);
-  core_xform_cpp_matrixToEulerAngles_FUN_005f5690(euler_out,&local_38);
-  local_38.m[2].z = 0.0;
-  local_38.m[2].x = local_38.m[0].x + (float)0.261799387791667;
+            ((CDemonActor *)this_ptr_00,&local_2c,input_local_point);
+  core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)matrix,&local_38);
+  local_20.z = 0.0;
+  local_20.x = local_38.x + (float)0.261799387791667;
   g_CDemonLightInstance.field17_0x1cbc = 0;
-  local_38.m[2].y = local_38.m[0].y + (this_ptr_00->base_character).base_actor.orient.bank;
+  local_20.y = local_38.y + (this_ptr_00->base_character).base_actor.orient.bank;
   if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {
-    g_CDemonLightInstance.base.base.position.x = (int)local_38.m[1].x;
-    g_CDemonLightInstance.base.base.position.y = (int)local_38.m[1].y;
-    g_CDemonLightInstance.base.base.position.z = (int)local_38.m[1].z;
+    g_CDemonLightInstance.base.base.position.x = (int)local_2c.x;
+    g_CDemonLightInstance.base.base.position.y = (int)local_2c.y;
+    g_CDemonLightInstance.base.base.position.z = (int)local_2c.z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&(local_14->base).base.rotation_matrix,local_38.m + 2);
+            ((CMatrix3x3f *)&(local_14->base).base.rotation_matrix,&local_20);
   (local_14->base).max_distance = 32.0;
   (local_14->base).base.projection_scale = 32.0;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(local_14,1.0);
   this_ptr_01 = local_14;
   iVar3 = g_UseExternalRenderer;
   if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {
-    g_CDemonCameraInstance.base.position.x = (int)local_38.m[1].x;
-    g_CDemonCameraInstance.base.position.y = (int)local_38.m[1].y;
-    g_CDemonCameraInstance.base.position.z = (int)local_38.m[1].z;
+    g_CDemonCameraInstance.base.position.x = (int)local_2c.x;
+    g_CDemonCameraInstance.base.position.y = (int)local_2c.y;
+    g_CDemonCameraInstance.base.position.z = (int)local_2c.z;
   }
   if (g_CGamePtr->field71_0x218 == 0) {
     core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(local_14,0);
@@ -86,9 +86,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
     core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
     core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(local_14);
-    local_5c.x = (int)ROUND(local_38.m[1].x * 256.0f);
-    local_5c.y = (int)ROUND(local_38.m[1].y * 256.0f);
-    local_5c.z = (int)ROUND(local_38.m[1].z * 256.0f);
+    local_5c.x = (int)ROUND(local_2c.x * 256.0f);
+    local_5c.y = (int)ROUND(local_2c.y * 256.0f);
+    local_5c.z = (int)ROUND(local_2c.z * 256.0f);
     core_set_cpp_CDemonSet_FUN_0056d380(this_ptr);
     iVar3 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                       (this_ptr,&local_5c,(CVector3i *)0x0);
@@ -113,7 +113,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   }
   g_UseExternalRenderer = 0;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr2,(CVector3i *)(local_38.m + 1));
+            (g_CDemonRendererPtr2,(CVector3i *)&local_2c);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,32.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
   g_CDemonRaytraceInstance.rendering_mode = 1;

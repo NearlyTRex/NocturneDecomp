@@ -35,11 +35,11 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   CBoneGuy *in_stack_00000004;
   float in_stack_00000008;
   int aiStackY_1908 [1484];
-  CQuaternion4f *quat_ptr;
+  CQuaternion4f *quat_in;
   int iStack_1b4;
   SDamageInfo local_180;
   CBoundingBox3D local_144;
-  CQuaternion4f local_12c;
+  CVector3f local_12c;
   CQuaternion4f local_11c;
   float local_10c;
   float local_108;
@@ -62,8 +62,7 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   float local_a4;
   CVector3f local_a0;
   CVector3f local_94;
-  CVector3f local_88;
-  float local_7c;
+  CQuaternion4f local_88;
   float local_78;
   float local_74;
   float local_70;
@@ -136,34 +135,34 @@ void core_boneguy_cpp_FUN_0041bf90(void)
         local_a4 = local_18->z + local_b0;
         core_xform_cpp_slerpQuaternion_FUN_005f77e0
                   (local_28,local_20,in_stack_00000004->param,&local_11c);
-        quat_ptr = &local_12c;
-        pCVar13 = &local_88;
-        local_12c.w = local_11c.w;
+        pCVar13 = &local_12c;
+        quat_in = &local_88;
+        local_12c.x = local_11c.w;
         puVar15 = (uint *)((int)&local_12c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
         puVar14 = (uint *)((int)&local_11c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
         *(uint *)((int)&local_12c + (uint)bVar16 * -8 + 4) =
              *(uint *)((int)&local_11c + (uint)bVar16 * -8 + 4);
         *puVar15 = *puVar14;
         puVar15[(uint)bVar16 * -2 + 1] = puVar14[(uint)bVar16 * -2 + 1];
-        core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(pCVar13,quat_ptr);
-        local_88.x = in_stack_00000004->param * (float)6.2831853070000001 + local_88.x;
+        core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(quat_in,pCVar13);
+        local_88.w = in_stack_00000004->param * (float)6.2831853070000001 + local_88.w;
         *(float *)(local_44 + 0x20) = local_ac;
         *(float *)(local_44 + 0x24) = local_a8;
         *(float *)(local_44 + 0x28) = local_a4;
-        if ((CVector3f *)(local_44 + 0x30) != &local_88) {
-          ((CVector3f *)(local_44 + 0x30))->x = local_88.x;
-          *(float *)(local_44 + 0x34) = local_88.y;
-          *(float *)(local_44 + 0x38) = local_88.z;
+        if ((CQuaternion4f *)(local_44 + 0x30) != &local_88) {
+          ((CQuaternion4f *)(local_44 + 0x30))->w = local_88.w;
+          *(float *)(local_44 + 0x34) = local_88.x;
+          *(float *)(local_44 + 0x38) = local_88.y;
         }
         if ((float *)(local_44 + 0xccc) != &local_ac) {
           *(float *)(local_44 + 0xccc) = local_ac;
           *(float *)(local_44 + 0xcd0) = local_a8;
           *(float *)(local_44 + 0xcd4) = local_a4;
         }
-        if ((CVector3f *)(local_44 + 0xcd8) != &local_88) {
-          ((CVector3f *)(local_44 + 0xcd8))->x = local_88.x;
-          *(float *)(local_44 + 0xcdc) = local_88.y;
-          *(float *)(local_44 + 0xce0) = local_88.z;
+        if ((CQuaternion4f *)(local_44 + 0xcd8) != &local_88) {
+          ((CQuaternion4f *)(local_44 + 0xcd8))->w = local_88.w;
+          *(float *)(local_44 + 0xcdc) = local_88.x;
+          *(float *)(local_44 + 0xce0) = local_88.y;
         }
         local_28 = (CQuaternion4f *)&local_28[4].y;
         local_20 = (CQuaternion4f *)&local_20[4].y;
@@ -424,12 +423,12 @@ LAB_0041c60c:
     local_5c = in_stack_00000008 *
                *(float *)((in_stack_00000004->base_enemy).base_character.field2_0x240c + 0x24);
     pCVar13 = &(in_stack_00000004->base_enemy).base_character.model.accumulated_root_motion;
-    local_7c = local_64 + *(float *)pcVar2;
+    local_88.z = local_64 + *(float *)pcVar2;
     local_78 = local_60 +
                *(float *)((in_stack_00000004->base_enemy).base_character.field2_0x240c + 0x14);
     local_74 = local_5c +
                *(float *)((in_stack_00000004->base_enemy).base_character.field2_0x240c + 0x18);
-    local_dc = local_7c + pCVar13->x;
+    local_dc = local_88.z + pCVar13->x;
     local_d8 = local_78 +
                (in_stack_00000004->base_enemy).base_character.model.accumulated_root_motion.y;
     local_d4 = local_74 +

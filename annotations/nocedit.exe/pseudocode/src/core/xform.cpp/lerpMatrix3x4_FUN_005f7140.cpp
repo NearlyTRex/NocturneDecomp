@@ -2,13 +2,13 @@
 // Address: 005f7140
 // Address Range: [[005f7140, 005f727d]]
 // Convention: __stack3_esi
-// Signature: void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+// Signature: CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
 
 #include "nocturne.h"
 
-void __stack3_esi
+CMatrix3x4f * __stack3_esi
 core_xform_cpp_lerpMatrix3x4_FUN_005f7140
-          (CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,float t,CMatrix3x4f *output)
+          (CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,float t,CMatrix3x4f *matrix_out)
 
 {
   float fVar1;
@@ -79,10 +79,11 @@ core_xform_cpp_lerpMatrix3x4_FUN_005f7140
     pfVar4 = pfVar4 + (uint)bVar7 * -2 + 1;
   }
   pfVar4 = local_a0;
+  pCVar3 = matrix_out;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    output->m[0].w = *pfVar4;
+    pCVar3->m[0].w = *pfVar4;
     pfVar4 = pfVar4 + (uint)bVar7 * -2 + 1;
-    output = (CMatrix3x4f *)((int)output + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
   }
-  return;
+  return matrix_out;
 }

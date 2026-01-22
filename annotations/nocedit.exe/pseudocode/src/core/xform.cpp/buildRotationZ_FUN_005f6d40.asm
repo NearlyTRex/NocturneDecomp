@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi void core_xform.cpp_buildRotationZ_FUN_005f6d40(CMatrix3x4f * output_matrix, float angle_radians)
+; __stack_esi CMatrix3x4f * core_xform.cpp_buildRotationZ_FUN_005f6d40(float angle_radians, CMatrix3x4f * matrix_out)
 ;
 ; Parameters:
-; CMatrix3x4f *    Stack[0x4]:4   output_matrix
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44

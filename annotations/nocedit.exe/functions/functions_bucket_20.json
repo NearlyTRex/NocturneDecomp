@@ -65786,10 +65786,10 @@
         "start":"0059f820"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -66117,20 +66117,29 @@
         {
           "name":"out_matrix",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -84943,7 +84952,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -85141,7 +85150,7 @@
       ],
       "params":[
         {
-          "name":"output_matrix",
+          "name":"scale_factor",
           "storage":{
             "offset":4,
             "size":4,
@@ -85154,10 +85163,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"float"
         },
         {
-          "name":"scale_factor",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -85169,9 +85178,19 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -85384,7 +85403,7 @@
       ],
       "params":[
         {
-          "name":"matrix_out",
+          "name":"z_offset",
           "storage":{
             "offset":4,
             "size":4,
@@ -85397,10 +85416,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"float"
         },
         {
-          "name":"z_offset",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -85412,7 +85431,7 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CMatrix3x4f*"
         }
       ],
       "ret_storage":{
@@ -85541,7 +85560,7 @@
       ],
       "params":[
         {
-          "name":"matrix_ptr",
+          "name":"matrix_in",
           "storage":{
             "offset":4,
             "size":4,

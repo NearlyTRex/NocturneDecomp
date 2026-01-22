@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * euler_out, CQuaternion4f * quat_ptr)
+; __cdecl CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   euler_out
-; CQuaternion4f *  Stack[0x8]:4   quat_ptr
+; CQuaternion4f *  Stack[0x4]:4   quat_in
+; CVector3f *      Stack[0x8]:4   vector_out
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34
 ;
@@ -35,13 +35,13 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005f7acd
     PUSH EAX                            ; 005f7ad1
     CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005f7ad2
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
     ADD ESP,0x8                         ; 005f7ad7
     PUSH EBX                            ; 005f7ada
     LEA EAX,[ESP + 0x4]                 ; 005f7adb
     PUSH EAX                            ; 005f7adf
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005f7ae0
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 005f7ae5
     MOV EAX,EBX                         ; 005f7ae8
     ADD ESP,0x30                        ; 005f7aea

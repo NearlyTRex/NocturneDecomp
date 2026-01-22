@@ -37,8 +37,9 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   CQuaternion4f local_64;
   CQuaternion4f local_54;
   CVector3f local_44;
-  CVector3f local_38;
-  CVector3f local_2c;
+  byte local_38 [16];
+  float local_28;
+  float local_24;
   float local_20;
   uint local_1c;
   int local_18;
@@ -197,11 +198,12 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
       }
       else {
         iVar5 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
-                          (g_CEditorToolsPtr,"Enter local P,B,H to apply:",&local_2c,0);
+                          (g_CEditorToolsPtr,"Enter local P,B,H to apply:",
+                           (CVector3f *)(local_38 + 0xc),0);
         if (iVar5 != 0) {
-          local_44.x = local_2c.x;
-          local_44.z = local_2c.y;
-          local_44.y = local_2c.z;
+          local_44.x = (float)local_38._12_4_;
+          local_44.z = local_28;
+          local_44.y = local_24;
           core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_44,&local_84);
           local_74.w = local_84.w;
           puVar9 = (uint *)((int)&local_74 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
@@ -271,10 +273,10 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           iVar5 = 0;
           do {
             core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                      (&local_38,
-                       (CQuaternion4f *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5));
-            local_38.z = 0.0;
-            core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_38,&local_64);
+                      ((CQuaternion4f *)local_38,
+                       (CVector3f *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5));
+            local_38._8_4_ = 0.0;
+            core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)local_38,&local_64);
             pfVar6 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5);
             iVar5 = iVar5 + 0x1c;
             pfVar10 = pfVar6 + (uint)bVar13 * -2 + 1;

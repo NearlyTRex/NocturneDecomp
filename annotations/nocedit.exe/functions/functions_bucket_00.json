@@ -73353,7 +73353,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildScaleMatrix_FUN_005f6e80",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -73551,7 +73551,7 @@
       ],
       "params":[
         {
-          "name":"output_matrix",
+          "name":"scale_vector",
           "storage":{
             "offset":4,
             "size":4,
@@ -73564,10 +73564,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"CVector3f*"
         },
         {
-          "name":"scale_vector",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -73579,9 +73579,19 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -73810,7 +73820,7 @@
       ],
       "params":[
         {
-          "name":"matrix_out",
+          "name":"axis_vector",
           "storage":{
             "offset":4,
             "size":4,
@@ -73823,10 +73833,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"CVector3f*"
         },
         {
-          "name":"axis_vector",
+          "name":"distance",
           "storage":{
             "offset":8,
             "size":4,
@@ -73839,10 +73849,10 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"float"
         },
         {
-          "name":"distance",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -73854,7 +73864,7 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CMatrix3x4f*"
         }
       ],
       "ret_storage":{
@@ -73881,7 +73891,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280",
-    "ret":"void",
+    "ret":"CQuaternion4f*",
     "vars":{
       "locals":[
         {
@@ -74095,7 +74105,7 @@
       ],
       "params":[
         {
-          "name":"matrix_ptr",
+          "name":"matrix_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -74111,7 +74121,7 @@
           "type":"CMatrix3x3f*"
         },
         {
-          "name":"quat_ptr",
+          "name":"quat_out",
           "storage":{
             "offset":8,
             "size":4,
@@ -74126,7 +74136,17 @@
           },
           "type":"CQuaternion4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

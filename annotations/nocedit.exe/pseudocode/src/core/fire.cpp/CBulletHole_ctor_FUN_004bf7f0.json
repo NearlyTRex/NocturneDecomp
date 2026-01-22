@@ -2,76 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 12,
-        "line": 36,
-        "message": "request for member '_0_4_' in 'local_48', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 37,
-        "message": "request for member '_4_4_' in 'local_48', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 38,
-        "message": "request for member '_20_4_' in 'local_48', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 39,
-        "message": "request for member '_24_4_' in 'local_48', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 39,
-        "message": "request for member '_0_4_' in 'local_48', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 40,
-        "message": "request for member '_4_4_' in 'local_48', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 42,
-        "message": "request for member '_20_4_' in 'local_48', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 43,
-        "message": "request for member '_24_4_' in 'local_48', which is of non-class type 'byte [28]' {aka 'unsigned char [28]'}"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 49,
+        "line": 51,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 71,
+        "line": 73,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 72,
-        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 81,
-        "message": "'stack0xffffffdc' was not declared in this scope"
+        "column": 32,
+        "line": 74,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -85,34 +31,31 @@
       {
         "category": "other",
         "column": 16,
-        "line": 71,
+        "line": 73,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 72,
+        "line": 74,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 307,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 1,
-    "pseudocode_lines": 87,
-    "suspect_count": 19,
+    "pseudocode_lines": 88,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
-      "stack_ref",
-      "suspect_float",
-      "unknown_field"
+      "suspect_float"
     ],
-    "total_lines": 265
+    "total_lines": 266
   },
   "cross_references": [
     {
@@ -398,137 +341,39 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "float *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._0_4_",
-      "text": "local_48._0_4_ = surface_normal->y * 0.1f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._4_4_",
-      "text": "local_48._4_4_ = 0.1f * surface_normal->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 31,
-      "match": "._20_4_",
-      "text": "local_48._20_4_ = (this_ptr->position).x + local_4c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._24_4_",
-      "text": "local_48._24_4_ = (this_ptr->position).y + (float)local_48._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._0_4_",
-      "text": "local_48._24_4_ = (this_ptr->position).y + (float)local_48._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._4_4_",
-      "text": "local_2c = (this_ptr->position).z + (float)local_48._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._20_4_",
-      "text": "(this_ptr->position).x = (float)local_48._20_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 36,
-      "match": "._24_4_",
-      "text": "(this_ptr->position).y = (float)local_48._24_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 39,
+      "line": 41,
       "match": "6.976873e-39",
       "text": "local_114.m[0].x = 6.976873e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 44,
       "match": "SQRT",
       "text": "SQRT((float10)surface_normal->x * (float10)surface_normal->x +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 46,
+      "line": 48,
       "match": "6.976905e-39",
       "text": "local_114.m[0].w = 6.976905e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 66,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar2 = (CVector3f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "line": 67,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 68,
-      "match": "extraout_EAX",
-      "text": "if (&this_ptr->transformed_pos != (CVector3f *)extraout_EAX) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 69,
-      "match": "extraout_EAX",
-      "text": "(this_ptr->transformed_pos).x = *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 70,
-      "match": "extraout_EAX",
-      "text": "(this_ptr->transformed_pos).y = extraout_EAX[1];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
-      "match": "extraout_EAX",
-      "text": "(this_ptr->transformed_pos).z = extraout_EAX[2];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 74,
-      "match": "&stack0xffffffdc",
-      "text": "(local_b4,(CMatrix3x3f *)&stack0xffffffdc);",
-      "type": "stack_ref"
     }
   ]
 }

@@ -51,7 +51,7 @@ section .text
     PUSH EAX                            ; 005dba0c
     LEA ESI,[ESP + 0x14]                ; 005dba0d
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dba11
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     ADD ESP,0xc                         ; 005dba16
     LEA EAX,[EBX + 0x30]                ; 005dba19
     LEA EDI,[ESP + 0x68]                ; 005dba1c
@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 005dbad1
     MOVSD.REP ES:EDI,ESI                ; 005dbad2
     CALL core_xform.cpp_getTranslation_FUN_005f6110 ; 005dbad4
-        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_getTranslation_FUN_005f6110(CVector3f * output_vector, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005f6110(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     MOV EDX,dword ptr [EBX + 0xbe3c]    ; 005dbad9
     FLD float ptr [EAX]                 ; 005dbadf
     ADD ESP,0x8                         ; 005dbae1
@@ -118,7 +118,7 @@ section .text
     PUSH EAX                            ; 005dbaff
     FSTP float ptr [EDX + 0x28]         ; 005dbb00
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005dbb03
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 005dbb08
     PUSH EAX                            ; 005dbb0b
     MOV ECX,dword ptr [EBX + 0xbe3c]    ; 005dbb0c

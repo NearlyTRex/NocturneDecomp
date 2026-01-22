@@ -42,6 +42,7 @@
 #define __stack2_esi_edi
 #define __syscall
 #define __fpustack
+#define __fpustack_safe
 #define __mathinternal
 #define __crtmath
 #define __fpureg

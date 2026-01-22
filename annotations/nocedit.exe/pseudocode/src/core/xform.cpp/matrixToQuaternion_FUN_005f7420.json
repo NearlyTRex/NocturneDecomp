@@ -98,7 +98,7 @@
     "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420",
-    "signature": "CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_out)"
+    "signature": "CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)"
   },
   "function_calls": [],
   "globals": [
@@ -197,7 +197,7 @@
       },
       {
         "is_param": true,
-        "name": "matrix_ptr",
+        "name": "matrix_in",
         "offset": 4,
         "size": 4,
         "type": "CMatrix3x3f *"
@@ -233,21 +233,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "SQRT",
-      "text": "fVar5 = SQRT((matrix_ptr->m[1].z - (matrix_ptr[1].m[0].y + matrix_ptr->m[0].x)) + 1.0);",
+      "text": "fVar5 = SQRT((matrix_in->m[1].z - (matrix_in[1].m[0].y + matrix_in->m[0].x)) + 1.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "SQRT",
-      "text": "local_44 = SQRT((matrix_ptr->m[0].x - (matrix_ptr->m[1].z + matrix_ptr[1].m[0].y)) + 1.0);",
+      "text": "local_44 = SQRT((matrix_in->m[0].x - (matrix_in->m[1].z + matrix_in[1].m[0].y)) + 1.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 57,
       "match": "SQRT",
-      "text": "fVar5 = SQRT((matrix_ptr[1].m[0].y - fVar1) + 1.0);",
+      "text": "fVar5 = SQRT((matrix_in[1].m[0].y - fVar1) + 1.0);",
       "type": "decompiler_intrinsic"
     }
   ]

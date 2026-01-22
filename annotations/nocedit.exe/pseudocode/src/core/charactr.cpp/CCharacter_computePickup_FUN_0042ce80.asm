@@ -112,7 +112,7 @@ section .text
     PUSH EAX                            ; 0042cf5e
     LEA ESI,[ESP + 0xc]                 ; 0042cf5f
     CALL core_xform.cpp_inverse_FUN_005f6210 ; 0042cf63
-        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     FLDZ                                ; 0042cf68
     MOV ECX,0xc                         ; 0042cf6a
     LEA ESI,[ESP + 0xc]                 ; 0042cf6f

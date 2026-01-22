@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel * model_ptr, int bone_index, CVector3f * reference_position)
+; __cdecl int core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel * this_ptr, int bone_index, CVector3f * reference_position)
 ;
 ; Parameters:
-; CDeformableModel * Stack[0x4]:4   model_ptr
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bone_index
 ; CVector3f *      Stack[0xc]:4   reference_position
 ; Local Variables:

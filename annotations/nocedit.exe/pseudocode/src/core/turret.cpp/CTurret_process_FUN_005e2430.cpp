@@ -21,18 +21,17 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
   byte bVar10;
   float in_stack_00000008;
   uint auStackY_186c [1497];
+  CQuaternion4f *quat_in;
   char *sound_name;
-  CQuaternion4f *quat_ptr;
   float in_stack_ffffff08;
   char local_f4 [100];
   CQuaternion4f local_90;
-  CQuaternion4f local_80;
+  CVector3f local_80;
   CQuaternion4f local_70;
   CQuaternion4f local_60;
   CQuaternion4f local_50;
   CQuaternion4f local_40;
-  CVector3f local_30;
-  double local_24;
+  byte local_30 [20];
   CVector3f *local_1c;
   CVector3f *local_18;
   float local_14;
@@ -146,12 +145,14 @@ LAB_005e24c7:
     if (0.0 < this_ptr->timer) {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_18,&local_40);
       local_90.w = local_40.w;
-      puVar9 = (uint *)((int)&local_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      puVar8 = (uint *)((int)&local_40 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&local_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       *(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) =
-           *(uint *)((int)&local_40 + (uint)bVar10 * -8 + 4);
-      *puVar9 = *puVar8;
-      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
+           *(uint *)(local_30 + (uint)bVar10 * -8 + -0xc);
+      *puVar8 = *(uint *)(local_30 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -8);
+      puVar8[(uint)bVar10 * -2 + 1] =
+           *(uint *)
+            ((int)(local_30 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -8) +
+            ((uint)bVar10 * -2 + 1) * 4);
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_1c,&local_70);
       local_50.w = local_70.w;
       puVar9 = (uint *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -164,16 +165,16 @@ LAB_005e24c7:
                 (&local_90,&local_50,
                  (in_stack_00000008 / (this_ptr->timer + in_stack_00000008)) *
                  (float)2,&local_60);
-      quat_ptr = &local_80;
-      pCVar6 = &local_30;
-      local_80.w = local_60.w;
+      pCVar6 = &local_80;
+      quat_in = (CQuaternion4f *)local_30;
+      local_80.x = local_60.w;
       puVar9 = (uint *)((int)&local_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       puVar8 = (uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
       *(uint *)((int)&local_80 + (uint)bVar10 * -8 + 4) =
            *(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4);
       *puVar9 = *puVar8;
       puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
-      pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(pCVar6,quat_ptr);
+      pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(quat_in,pCVar6);
       if (pCVar6 != local_18) {
         local_18->x = pCVar6->x;
         local_18->y = pCVar6->y;
@@ -220,8 +221,9 @@ LAB_005e24c7:
     }
   }
   else {
-    local_24 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_ffffff08);
-    if (0.0 <= local_24) {
+    local_30._12_8_ =
+         sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_ffffff08);
+    if (0.0 <= (double)local_30._12_8_) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field12_0x85c + 0x58));
       (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");

@@ -15,15 +15,9 @@
       },
       {
         "category": "other",
-        "column": 28,
+        "column": 30,
         "line": 47,
-        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 56,
-        "message": "'stack0xfffffff0' was not declared in this scope"
+        "message": "cast from 'CMatrix3x3f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -62,19 +56,18 @@
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 263,
+    "complexity_score": 247,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 53,
-    "suspect_count": 19,
+    "pseudocode_lines": 52,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 137
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -254,7 +247,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
@@ -305,28 +298,28 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar2 = (CVector3f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);",
+      "match": "(CMatrix3x3f *)((int)",
+      "text": "pCVar5 = (CMatrix3x3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.x = local_70;",
+      "text": "(in_stack_00000004->location).position.x = local_7c.m[1].x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.y = local_60;",
+      "text": "(in_stack_00000004->location).position.y = local_7c.m[2].y;",
       "type": "stack_param"
     },
     {
@@ -337,43 +330,36 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xfffffff0",
-      "text": "(&local_7c,(CMatrix3x3f *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 49,
       "match": "in_stack_00000004",
       "text": "if (&in_stack_00000004->orient != (COrientation *)pCVar2) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).pitch = pCVar2->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).bank = pCVar2->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->orient).heading = pCVar2->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);",
       "type": "stack_param"

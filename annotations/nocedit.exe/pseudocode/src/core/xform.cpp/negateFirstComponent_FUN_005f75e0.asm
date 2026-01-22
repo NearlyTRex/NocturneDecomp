@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
+; __stack_esi CQuaternion4f * core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * vector_in, CQuaternion4f * vector_out)
 ;
 ; Parameters:
-; CQuaternion4f *  Stack[0x4]:4   output_vector
+; CQuaternion4f *  Stack[0x4]:4   vector_in
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

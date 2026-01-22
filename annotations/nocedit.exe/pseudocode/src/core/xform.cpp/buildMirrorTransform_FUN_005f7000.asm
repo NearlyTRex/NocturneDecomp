@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack2_esi CMatrix3x4f * core_xform.cpp_buildMirrorTransform_FUN_005f7000(CMatrix3x4f * matrix_out, CVector3f * axis_vector, float distance)
+; __stack2_esi CMatrix3x4f * core_xform.cpp_buildMirrorTransform_FUN_005f7000(CVector3f * axis_vector, float distance, CMatrix3x4f * matrix_out)
 ;
 ; Parameters:
-; CMatrix3x4f *    Stack[0x4]:4   matrix_out
-; CVector3f *      Stack[0x8]:4   axis_vector
+; CVector3f *      Stack[0x4]:4   axis_vector
+; float            Stack[0x8]:4   distance
 ; Local Variables:
 ; undefined        Stack[-0x1a4]:1  local_1a4
 ; undefined        Stack[-0x174]:1  local_174
@@ -77,7 +77,7 @@ section .text
     LEA ESI,[ESP + 0x154]               ; 005f7097
     LEA EDI,[ESP + 0xf4]                ; 005f709e
     CALL core_xform.cpp_inverse_FUN_005f6210 ; 005f70a5
-        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005f70aa
     ADD ESP,0x4                         ; 005f70af
     LEA EAX,[ESP + 0xf0]                ; 005f70b2
@@ -88,7 +88,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 005f70c5
     LEA EDI,[ESP + 0x98]                ; 005f70c9
     CALL core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0 ; 005f70d0
-        ;   XREF to: 005f6fa0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0(CMatrix3x4f * matrix_out, float z_offset)
+        ;   XREF to: 005f6fa0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0(float z_offset, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005f70d5
     ADD ESP,0x4                         ; 005f70da
     LEA EAX,[ESP + 0x94]                ; 005f70dd

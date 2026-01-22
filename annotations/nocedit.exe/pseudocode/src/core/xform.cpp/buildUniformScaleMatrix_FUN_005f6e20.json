@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 6,
-        "line": 37,
-        "message": "invalid cast from type 'float' to type 'CMatrix3x4f**'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,14 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 32,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 34,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 59
+    "total_lines": 61
   },
   "cross_references": [],
   "function": {
@@ -40,7 +33,7 @@
     ],
     "convention": "__stack_esi",
     "name": "core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20",
-    "signature": "void core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20(CMatrix3x4f * output_matrix, float scale_factor)"
+    "signature": "CMatrix3x4f * core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20(float scale_factor, CMatrix3x4f * matrix_out)"
   },
   "function_calls": [],
   "globals": [],
@@ -170,10 +163,10 @@
       },
       {
         "is_param": true,
-        "name": "output_matrix",
+        "name": "scale_factor",
         "offset": 4,
         "size": 4,
-        "type": "CMatrix3x4f *"
+        "type": "float"
       }
     ]
   },

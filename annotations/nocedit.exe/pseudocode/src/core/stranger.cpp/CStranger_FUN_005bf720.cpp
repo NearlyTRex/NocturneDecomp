@@ -25,8 +25,7 @@ void core_stranger_cpp_CStranger_FUN_005bf720(void)
   SBoneTransformData SStack_1ad8;
   CQuaternion4f local_3c;
   CQuaternion4f local_2c;
-  CVector3f local_1c;
-  float local_10;
+  CQuaternion4f local_1c;
   
   bVar4 = 0;
   this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
@@ -35,12 +34,12 @@ void core_stranger_cpp_CStranger_FUN_005bf720(void)
             (this_ptr,*(int *)(in_stack_00000004 + 0x1fc84),
              *(float *)(in_stack_00000004 + 0x1fc54) * (float)40,-1);
   pCVar1 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                     (&local_1c,(CQuaternion4f *)(DAT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));
+                     (&local_1c,(CVector3f *)(DAT_03f6bacc * 0x10 + in_stack_00000004 + 0x808));
   blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
   bone_index = -1;
-  local_10 = -pCVar1->y;
+  local_1c.z = -pCVar1->y;
   blend_weight = 1.0;
-  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_10,&local_2c);
+  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_1c.z,&local_2c);
   local_3c.w = local_2c.w;
   puVar3 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);

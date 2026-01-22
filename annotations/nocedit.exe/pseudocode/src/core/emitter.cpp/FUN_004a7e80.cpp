@@ -13,12 +13,13 @@ void core_emitter_cpp_FUN_004a7e80(void)
 {
   float fVar1;
   int iVar2;
-  unkbyte10 Var3;
+  float10 fVar3;
   float10 fVar4;
   float10 fVar5;
+  float10 extraout_ST1;
+  float10 extraout_ST2;
   float10 fVar6;
-  float10 fVar7;
-  float10 fVar8;
+  unkbyte10 extraout_ST3;
   int in_stack_00000004;
   float local_70;
   float local_6c;
@@ -50,23 +51,24 @@ void core_emitter_cpp_FUN_004a7e80(void)
   local_10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-8.0,8.0);
   local_6c = local_10 + local_6c;
   local_10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-8.0,8.0);
-  Var3 = fsin((float10)-1.30899693895833);
-  fVar4 = (float10)fptan((float10)1.30899693895833);
-  fVar5 = (float10)local_10 + (float10)local_64;
-  local_64 = (float)fVar5;
-  fVar6 = crt_math_c_atan2_FUN_006013b1((float10)local_6c,fVar5);
+  fsin((float10)-1.30899693895833);
+  fptan((float10)1.30899693895833);
+  fVar3 = (float10)local_64;
+  local_64 = (float)((float10)local_10 + fVar3);
+  fVar3 = crt_math_c_atan2_FUN_006013b1((float10)local_6c,(float10)local_10 + fVar3);
   fVar1 = SQRT(local_70 * local_70 + local_68 * local_68);
-  fVar7 = (float10)fcos(Var3);
-  fVar8 = (float10)fsin(fVar6);
-  fVar6 = (float10)fcos(fVar6);
+  fVar4 = (float10)fcos(extraout_ST3);
+  fVar5 = (float10)fsin(fVar3);
+  fVar3 = (float10)fcos(fVar3);
   local_40 = (double)fVar1;
   local_1c = fVar1 * (float)32 * fVar1;
-  fVar5 = fVar7 * (float10)2.0f * fVar7 * (fVar5 * (float10)fVar1 - (float10)local_6c);
-  local_48 = (float)-fVar4;
-  local_4c = (float)(fVar8 * fVar7);
-  local_44 = (float)(fVar6 * fVar7);
-  if ((float10)0 < fVar5) {
-    local_18 = SQRT(local_1c / (float)fVar5);
+  fVar6 = fVar4 * (float10)2.0f * fVar4 *
+          (extraout_ST1 * (float10)fVar1 - (float10)local_6c);
+  local_48 = (float)-extraout_ST2;
+  local_4c = (float)(fVar5 * fVar4);
+  local_44 = (float)(fVar3 * fVar4);
+  if ((float10)0 < fVar6) {
+    local_18 = SQRT(local_1c / (float)fVar6);
     local_58 = local_4c * local_18;
     local_54 = local_48 * local_18;
     local_50 = local_44 * local_18;

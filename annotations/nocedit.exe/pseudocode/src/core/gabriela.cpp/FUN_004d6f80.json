@@ -9,15 +9,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 52,
+        "column": 36,
         "line": 48,
         "message": "'_DAT_0065e7c8' was not declared in this scope; did you mean 'DAT_0065e7c4'?"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 49,
-        "message": "invalid cast from type 'CMatrix3x4f*' to type 'float'"
       },
       {
         "category": "incompatible_types",
@@ -28,20 +22,14 @@
       {
         "category": "other",
         "column": 32,
-        "line": 67,
+        "line": 66,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 76,
-        "message": "invalid cast from type 'float' to type 'CMatrix3x4f*'"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 82,
-        "message": "invalid cast from type 'CMatrix3x4f*' to type 'float'"
+        "column": 32,
+        "line": 67,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -55,6 +43,12 @@
       {
         "category": "other",
         "column": 16,
+        "line": 66,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
         "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -62,12 +56,12 @@
   },
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 389,
+    "complexity_score": 399,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "pseudocode_lines": 74,
-    "suspect_count": 29,
+    "suspect_count": 30,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -471,7 +465,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000008",
-      "text": "out_matrix = (CMatrix3x4f *)(in_stack_00000008 / _DAT_0065e7c8 + local_18);",
+      "text": "local_1b48 = in_stack_00000008 / _DAT_0065e7c8 + local_18;",
       "type": "stack_param"
     },
     {
@@ -499,8 +493,15 @@
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_00000010",
-      "text": "(this_ptr,in_stack_00000010,out_matrix);",
+      "text": "(this_ptr,in_stack_00000010,&local_78);",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -527,7 +528,7 @@
       "description": "Unresolved stack parameter",
       "line": 69,
       "match": "in_stack_0000000c",
-      "text": "out_matrix = (CMatrix3x4f *)*in_stack_0000000c;",
+      "text": "local_1b48 = *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -541,7 +542,7 @@
       "description": "Unresolved stack parameter",
       "line": 75,
       "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = (local_18 + (float)out_matrix) * (float)0.5;",
+      "text": "*in_stack_0000000c = (local_18 + local_1b48) * (float)0.5;",
       "type": "stack_param"
     },
     {

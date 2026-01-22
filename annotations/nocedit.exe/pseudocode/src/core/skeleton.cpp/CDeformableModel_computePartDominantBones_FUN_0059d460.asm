@@ -400,7 +400,7 @@ section .text
     PUSH EBP                            ; 0059d909
     ADD ESI,0x4                         ; 0059d90a
     CALL core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 ; 0059d90d
-        ;   XREF to: 0059c2f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel * model_ptr, int bone_index, CVector3f * reference_position)
+        ;   XREF to: 0059c2f0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel * this_ptr, int bone_index, CVector3f * reference_position)
     ADD ESP,0x8                         ; 0059d912
     INC EBX                             ; 0059d915
     MOV ECX,dword ptr [ESP + 0x20c]     ; 0059d916

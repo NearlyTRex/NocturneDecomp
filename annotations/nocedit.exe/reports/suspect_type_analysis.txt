@@ -4,15 +4,15 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    31158 ( 58.7%)
-  pointer_cast                    5786 ( 10.9%)
+  stack_param                    31146 ( 58.7%)
+  pointer_cast                    5785 ( 10.9%)
   decompiler_intrinsic            4538 (  8.6%)
-  unknown_field                   1857 (  3.5%)
-  stack_ref                       1507 (  2.8%)
-  unaffected_reg                  1466 (  2.8%)
+  unknown_field                   1847 (  3.5%)
+  stack_ref                       1487 (  2.8%)
+  unaffected_reg                  1462 (  2.8%)
   unnamed_param                   1435 (  2.7%)
-  extra_output                    1282 (  2.4%)
-  suspect_float                    741 (  1.4%)
+  extra_output                    1299 (  2.5%)
+  suspect_float                    739 (  1.4%)
   param_count_too_few              635 (  1.2%)
   special_crt_function             626 (  1.2%)
   unresolved_funcptr               478 (  0.9%)
@@ -34,7 +34,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (31158 occurrences)
+TYPE: stack_param (31146 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -86,30 +86,30 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
-TYPE: pointer_cast (5786 occurrences)
+TYPE: pointer_cast (5785 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2223x  (uint *)((int)
-  1241x  (int *)((int)
-   436x  (float *)((int)
+  2217x  (uint *)((int)
+  1239x  (int *)((int)
+   424x  (float *)((int)
    277x  (SRenderVertex *)((int)
+   248x  (CMatrix3x4f *)((int)
    218x  (double *)((int)
    212x  (void *)((int)
-   207x  (CMatrix3x4f *)((int)
    200x  (byte *)((int)
    143x  (char *)((int)
     83x  (ushort *)((int)
-    66x  (CVector3f *)((int)
     54x  (short *)((int)
+    41x  (CVector3f *)((int)
     34x  (SShapeEditorPolygon *)((int)
+    23x  (CMatrix3x3f *)((int)
     21x  (SMRGLHeaderExtended *)((int)
     14x  (HGLOBAL *)((int)
-    13x  (CMatrix3x3f *)((int)
-    12x  (CQuaternion4f *)((int)
     10x  (SVoxelGrid *)((int)
      9x  (FileEmbeddedData *)((int)
      9x  (ulonglong *)((int)
+     9x  (CLodFace *)((int)
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
@@ -176,20 +176,20 @@ Example functions:
     uVar12 = SUB84 /* extract 2-byte value */(b,0);...
 
 ====================================================================================================
-TYPE: unknown_field (1857 occurrences)
+TYPE: unknown_field (1847 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   717x  ._0_4_
-   662x  ._4_4_
-   122x  ._8_4_
-    61x  ._12_4_
-    45x  ._16_4_
+   715x  ._0_4_
+   661x  ._4_4_
+   124x  ._8_4_
+    55x  ._12_4_
+    44x  ._16_4_
     34x  ._0_1_
-    32x  ._20_4_
+    30x  ._20_4_
     24x  ._2_2_
-    21x  ._24_4_
     20x  ._3_1_
+    19x  ._24_4_
     16x  ._0_2_
     16x  ._1_1_
     16x  ._2_1_
@@ -220,20 +220,20 @@ Example functions:
     if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
 
 ====================================================================================================
-TYPE: stack_ref (1507 occurrences)
+TYPE: stack_ref (1487 occurrences)
 ====================================================================================================
 
 Unique patterns:
     50x  &stack0xfffff914
-    34x  &stack0xffffffe8
     32x  &stack0xfffffc4c
+    31x  &stack0xffffffe8
     27x  &stack0xfffffc54
     26x  &stack0x00000034
     26x  &stack0xffffff24
-    24x  &stack0xfffffff0
-    22x  &stack0xffffffd4
+    23x  &stack0xfffffff0
     22x  &stack0x00000000
-    21x  &stack0xffffffe0
+    21x  &stack0xffffffd4
+    20x  &stack0xffffffe0
     20x  &stack0xffffffd8
     19x  &stack0xfffffa18
     18x  &stack0xffffff98
@@ -241,9 +241,9 @@ Unique patterns:
     17x  &stack0xffffffec
     17x  &stack0xfffffed0
     16x  &stack0xfffffff4
-    16x  &stack0xffffffdc
     16x  &stack0xfffffbb8
     16x  &stack0xffffe138
+    15x  &stack0xfffffaa8
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -276,11 +276,11 @@ Example functions:
     puVar6 = &stack0xfffffff0;...
 
 ====================================================================================================
-TYPE: unaffected_reg (1466 occurrences)
+TYPE: unaffected_reg (1462 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   512x  unaff_ESI
+   508x  unaff_ESI
    445x  unaff_EBX
    295x  unaff_EDI
    214x  unaff_EBP
@@ -345,18 +345,19 @@ Example functions:
     (uint param_1,uint param_2,byte *unaff_EBX,uint param_4,...
 
 ====================================================================================================
-TYPE: extra_output (1282 occurrences)
+TYPE: extra_output (1299 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   410x  extraout_EAX
+   386x  extraout_EAX
    194x  extraout_EDX
-   127x  extraout_EAX_00
+   124x  extraout_EAX_00
     89x  extraout_ECX
     87x  extraout_EBX
     56x  extraout_ECX_00
     54x  extraout_EAX_01
     40x  extraout_EDX_00
+    28x  extraout_ST1
     26x  extraout_EAX_02
     19x  extraout_EAX_03
     18x  extraout_EDX_01
@@ -366,9 +367,8 @@ Unique patterns:
     12x  extraout_EDX_02
      9x  extraout_EAX_05
      9x  extraout_EAX_06
+     8x  extraout_ST2
      7x  extraout_ECX_05
-     6x  extraout_AL
-     6x  extraout_EBX_01
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
@@ -387,7 +387,7 @@ Example functions:
     void *extraout_EAX;...
 
 ====================================================================================================
-TYPE: suspect_float (741 occurrences)
+TYPE: suspect_float (739 occurrences)
 ====================================================================================================
 
 Unique patterns:

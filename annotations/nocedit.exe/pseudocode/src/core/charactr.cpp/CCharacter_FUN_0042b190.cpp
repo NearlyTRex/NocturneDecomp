@@ -11,21 +11,23 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
 {
   CDemonSet *pCVar1;
   CVector3f *euler_angles;
-  CMatrix3x4f *pCVar2;
-  CMatrix3x4f *pCVar3;
-  int iVar4;
-  float *pfVar5;
+  float fVar2;
+  int iVar3;
+  CMatrix3x4f *pCVar4;
+  CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar6;
-  byte bVar7;
+  CMatrix3x4f *pCVar7;
+  float *pfVar8;
+  byte bVar9;
   CMatrix3x4f CStack_2e8;
   CMatrix3x4f CStack_2b8;
   CMatrix3x4f CStack_288;
-  float afStack_258 [12];
+  CMatrix3x4f CStack_258;
   CMatrix3x4f CStack_228;
   CMatrix3x4f CStack_1f8;
   CMatrix3x4f CStack_1c8;
   CMatrix3x4f CStack_198;
-  float afStack_168 [12];
+  CMatrix3x4f CStack_168;
   CMatrix3x4f CStack_138;
   CMatrix3x4f CStack_108;
   CMatrix3x4f CStack_d8;
@@ -41,18 +43,18 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
   int local_14;
   
   pCVar1 = g_CDemonSetPtr;
-  bVar7 = 0;
-  iVar4 = *(int *)(this_ptr->cloth_data + 0x35c);
-  if ((iVar4 < 5) && (-1 < g_CDemonSetPtr->field11_0x14d148)) {
+  bVar9 = 0;
+  iVar3 = *(int *)(this_ptr->cloth_data + 0x35c);
+  if ((iVar3 < 5) && (-1 < g_CDemonSetPtr->field11_0x14d148)) {
     *(int *)(this_ptr->cloth_data + 0x35c) = *(int *)(this_ptr->cloth_data + 0x35c) + 1;
-    local_18 = this_ptr->cloth_data + iVar4 * 0x38 + 0x360;
+    local_18 = this_ptr->cloth_data + iVar3 * 0x38 + 0x360;
     *(int *)local_18 = pCVar1->field11_0x14d148;
-    iVar4 = pCVar1->field12_0x14d14c;
-    *(int *)(local_18 + 4) = iVar4;
-    if (iVar4 < 0) {
-      iVar4 = (*(this_ptr->base_actor).vtable[1].getBlockVirtualDirectorFlag)(&this_ptr->base_actor)
+    iVar3 = pCVar1->field12_0x14d14c;
+    *(int *)(local_18 + 4) = iVar3;
+    if (iVar3 < 0) {
+      iVar3 = (*(this_ptr->base_actor).vtable[1].getBlockVirtualDirectorFlag)(&this_ptr->base_actor)
       ;
-      *(int *)(local_14 + 4) = iVar4;
+      *(int *)(local_14 + 4) = iVar3;
     }
     local_48.x = (g_CDemonSetPtr->collision_result_vec2).x -
                  (g_CDemonSetPtr->collision_result_vec1).x;
@@ -83,41 +85,41 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
                              (&CStack_3c,&local_48);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&CStack_a8,&local_24,euler_angles);
-    pCVar6 = &CStack_a8;
-    pCVar2 = (CMatrix3x4f *)core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.034906585,0.034906585);
-    core_xform_cpp_buildRotationY_FUN_005f6cc0(pCVar2,(float)afStack_258);
-    pCVar2 = &CStack_2b8;
-    pfVar5 = afStack_258;
-    pCVar3 = &CStack_2b8;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar3->m[0].w = *pfVar5;
-      pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
-      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar5 = &CStack_a8;
+    fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.034906585,0.034906585);
+    core_xform_cpp_buildRotationY_FUN_005f6cc0(fVar2,&CStack_258);
+    pCVar6 = &CStack_2b8;
+    pCVar4 = &CStack_258;
+    pCVar7 = &CStack_2b8;
+    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+      pCVar7->m[0].w = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);
+      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);
     }
-    pCVar3 = (CMatrix3x4f *)core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.034906585,0.034906585);
-    core_xform_cpp_buildRotationX_FUN_005f6c40(pCVar3,(float)afStack_168);
-    pfVar5 = afStack_168;
-    pCVar3 = &CStack_198;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar3->m[0].w = *pfVar5;
-      pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
-      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
+    fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.034906585,0.034906585);
+    core_xform_cpp_buildRotationX_FUN_005f6c40(fVar2,&CStack_168);
+    pCVar4 = &CStack_168;
+    pCVar7 = &CStack_198;
+    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+      pCVar7->m[0].w = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);
+      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_198,pCVar2,&CStack_1c8);
-    pCVar2 = &CStack_1c8;
-    pCVar3 = &CStack_138;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar3->m[0].w = pCVar2->m[0].w;
-      pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_198,pCVar6,&CStack_1c8);
+    pCVar6 = &CStack_1c8;
+    pCVar4 = &CStack_138;
+    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+      pCVar4->m[0].w = pCVar6->m[0].w;
+      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_138,pCVar6,&CStack_78);
-    pCVar2 = &CStack_78;
-    pCVar6 = &CStack_a8;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar6->m[0].w = pCVar2->m[0].w;
-      pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_138,pCVar5,&CStack_78);
+    pCVar6 = &CStack_78;
+    pCVar5 = &CStack_a8;
+    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+      pCVar5->m[0].w = pCVar6->m[0].w;
+      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);
     }
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
               (&CStack_108,&(this_ptr->base_actor).location.position,
@@ -125,29 +127,29 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b190(CCharacter *this_ptr)
     core_xform_cpp_inverse_FUN_005f6210
               ((this_ptr->model).bone_transform.bone_world_matrices + *(int *)(local_14 + 4),
                &CStack_2e8);
-    pCVar2 = &CStack_228;
-    pCVar6 = &CStack_2e8;
-    pCVar3 = &CStack_228;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar3->m[0].w = pCVar6->m[0].w;
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar6 = &CStack_228;
+    pCVar5 = &CStack_2e8;
+    pCVar4 = &CStack_228;
+    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+      pCVar4->m[0].w = pCVar5->m[0].w;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);
     }
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_a8,&CStack_108,&CStack_1f8);
-    pCVar6 = &CStack_1f8;
-    pCVar3 = &CStack_d8;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar3->m[0].w = pCVar6->m[0].w;
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar5 = &CStack_1f8;
+    pCVar4 = &CStack_d8;
+    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+      pCVar4->m[0].w = pCVar5->m[0].w;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_d8,pCVar2,&CStack_288);
-    pCVar2 = &CStack_288;
-    pfVar5 = (float *)(local_14 + 8);
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *pfVar5 = pCVar2->m[0].w;
-      pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar7 * -2 + 1) * 4);
-      pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_d8,pCVar6,&CStack_288);
+    pCVar6 = &CStack_288;
+    pfVar8 = (float *)(local_14 + 8);
+    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *pfVar8 = pCVar6->m[0].w;
+      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);
+      pfVar8 = pfVar8 + (uint)bVar9 * -2 + 1;
     }
   }
   return;

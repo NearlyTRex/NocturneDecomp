@@ -273,7 +273,7 @@ section .text
     LEA EAX,[ESP + 0x2c0]               ; 0054ec74
     PUSH EAX                            ; 0054ec7b
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0054ec7c
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * euler_out, CQuaternion4f * quat_ptr)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
     MOV EDX,EAX                         ; 0054ec81
     LEA EAX,[ESP + 0x200]               ; 0054ec83
     ADD ESP,0x8                         ; 0054ec8a
@@ -336,7 +336,7 @@ section .text
     LEA EAX,[ESP + 0x278]               ; 0054ed4e
     PUSH EAX                            ; 0054ed55
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0054ed56
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * euler_out, CQuaternion4f * quat_ptr)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
     MOV EDX,EAX                         ; 0054ed5b
     LEA EAX,[ESP + 0x21c]               ; 0054ed5d
     ADD ESP,0x8                         ; 0054ed64
@@ -398,7 +398,7 @@ section .text
     LEA EAX,[ESP + 0x2b4]               ; 0054ee20
     PUSH EAX                            ; 0054ee27
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0054ee28
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * euler_out, CQuaternion4f * quat_ptr)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 0054ee2d
     PUSH EAX                            ; 0054ee30
     LEA EAX,[EBX + 0x31c]               ; 0054ee31
@@ -426,7 +426,7 @@ section .text
     PUSH EAX                            ; 0054ee89
     MOVSD.REP ES:EDI,ESI                ; 0054ee8a
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0054ee8c
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * euler_out, CQuaternion4f * quat_ptr)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 0054ee91
     PUSH EAX                            ; 0054ee94
     LEA EAX,[EBX + 0x328]               ; 0054ee95
@@ -495,7 +495,7 @@ section .text
     PUSH EAX                            ; 0054ef7f
     LEA ESI,[ESP + 0x268]               ; 0054ef80
     CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 0054ef87
-        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_out)
+        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x268]               ; 0054ef8c
     ADD ESP,0x4                         ; 0054ef93
     LEA EAX,[ESP + 0xcc]                ; 0054ef96
@@ -537,7 +537,7 @@ section .text
     PUSH EAX                            ; 0054f033
     LEA ESI,[ESP + 0x228]               ; 0054f034
     CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 0054f03b
-        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_out)
+        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x228]               ; 0054f040
     LEA EDI,[EBX + 0x344]               ; 0054f047
     ADD ESP,0x4                         ; 0054f04d

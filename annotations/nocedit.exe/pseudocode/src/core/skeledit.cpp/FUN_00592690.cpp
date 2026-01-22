@@ -134,9 +134,19 @@ uint core_skeledit_cpp_FUN_00592690(void)
   float local_1c4;
   float local_1c0;
   CVector3f local_1bc;
-  CMatrix3x3f local_1b0;
+  CVector3f local_1b0;
+  float local_1a4;
+  float local_1a0;
+  float local_19c;
+  CVector3f local_198;
   CVector3f local_18c;
-  CMatrix3x3f local_180;
+  CVector3f local_180;
+  float local_174;
+  float local_170;
+  float local_16c;
+  float local_168;
+  float local_164;
+  float local_160;
   CVector3f local_15c;
   CVector3f local_150;
   float local_144;
@@ -1460,16 +1470,16 @@ LAB_0059518b:
                 }
                 core_skeledit_cpp_FUN_0058af40();
                 if ((float)local_b8._4_4_ != 0.0) {
-                  local_180.m[2].x = local_7434[0].m[0].z;
-                  local_180.m[2].y = local_7434[0].m[1].z;
-                  local_180.m[2].z = local_7434[0].m[2].z;
-                  if ((CVector3f *)&local_1f8 != local_180.m + 2) {
+                  local_168 = local_7434[0].m[0].z;
+                  local_164 = local_7434[0].m[1].z;
+                  local_160 = local_7434[0].m[2].z;
+                  if (&local_1f8 != &local_168) {
                     local_1f8 = local_7434[0].m[0].z;
                     local_1f4 = local_7434[0].m[1].z;
                     local_1f0 = local_7434[0].m[2].z;
                   }
                   pCVar8 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                                     ((CVector3f *)local_7434,&local_1b0);
+                                     ((CMatrix3x3f *)local_7434,&local_1b0);
                   if (&local_1bc != pCVar8) {
                     local_1bc.x = pCVar8->x;
                     local_1bc.y = pCVar8->y;
@@ -1477,21 +1487,21 @@ LAB_0059518b:
                   }
                   local_b8._4_4_ = 0.0;
                 }
-                local_1b0.m[1].x = local_7434[0].m[0].z;
-                local_180.m[1].x = local_7434[0].m[0].z - local_1f8;
-                local_180.m[1].y = local_7434[0].m[1].z - local_1f4;
-                local_180.m[1].z = local_7434[0].m[2].z - local_1f0;
-                local_1b0.m[1].y = local_7434[0].m[1].z;
-                local_1e0.x = local_180.m[1].x + local_144;
-                local_1e0.y = local_180.m[1].y + local_140;
-                local_1e0.z = local_180.m[1].z + local_13c;
-                local_1b0.m[1].z = local_7434[0].m[2].z;
+                local_1a4 = local_7434[0].m[0].z;
+                local_174 = local_7434[0].m[0].z - local_1f8;
+                local_170 = local_7434[0].m[1].z - local_1f4;
+                local_16c = local_7434[0].m[2].z - local_1f0;
+                local_1a0 = local_7434[0].m[1].z;
+                local_1e0.x = local_174 + local_144;
+                local_1e0.y = local_170 + local_140;
+                local_1e0.z = local_16c + local_13c;
+                local_19c = local_7434[0].m[2].z;
                 if (local_ec->frame_count <= (int)local_34) {
                   if (local_e4 == 0) {
-                    if (local_1b0.m + 2 != &local_1e0) {
-                      local_1b0.m[2].x = local_1e0.x;
-                      local_1b0.m[2].y = local_1e0.y;
-                      local_1b0.m[2].z = local_1e0.z;
+                    if (&local_198 != &local_1e0) {
+                      local_198.x = local_1e0.x;
+                      local_198.y = local_1e0.y;
+                      local_198.z = local_1e0.z;
                     }
                     local_b8._8_4_ = (streambuf *)0x1;
                   }
@@ -1535,21 +1545,21 @@ LAB_0059518b:
                 }
                 else {
                   core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                            ((CVector3f *)local_7434,&local_180);
+                            ((CMatrix3x3f *)local_7434,&local_180);
                   if ((local_dc & 1) != 0) {
-                    local_180.m[0].x = local_1bc.x;
+                    local_180.x = local_1bc.x;
                   }
                   if ((local_dc & 2) != 0) {
-                    local_180.m[0].y = local_1bc.y;
+                    local_180.y = local_1bc.y;
                   }
                   if ((local_dc & 4) != 0) {
-                    local_180.m[0].z = local_1bc.z;
+                    local_180.z = local_1bc.z;
                   }
                   local_150.x = 0.0;
                   local_150.y = 0.0;
                   local_150.z = 0.0;
                   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-                            (&local_3a4,&local_150,local_180.m);
+                            (&local_3a4,&local_150,&local_180);
                   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_7434,&local_3a4,&local_344);
                   pCVar20 = &local_344;
                   pCVar23 = &local_3d4;
@@ -1639,9 +1649,9 @@ LAB_00595723:
                 }
                 else {
                   pCVar8 = in_stack_00000004->frame_positions_1;
-                  local_18c.x = local_1b0.m[2].x - pCVar8[iVar3].x;
-                  local_18c.y = local_1b0.m[2].y - pCVar8[iVar3].y;
-                  fVar16 = local_1b0.m[2].z - pCVar8[iVar3].z;
+                  local_18c.x = local_198.x - pCVar8[iVar3].x;
+                  local_18c.y = local_198.y - pCVar8[iVar3].y;
+                  fVar16 = local_198.z - pCVar8[iVar3].z;
                   pCVar8 = in_stack_00000004->frame_positions_2 + iVar3;
                   local_18c.z = fVar16;
                   if (pCVar8 != &local_18c) {

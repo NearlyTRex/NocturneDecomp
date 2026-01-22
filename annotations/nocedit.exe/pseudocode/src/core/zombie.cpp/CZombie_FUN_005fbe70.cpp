@@ -11,11 +11,11 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
 {
   CVector3f *pCVar1;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
+  CMatrix3x4f *pCVar3;
+  CMatrix3x4f *pCVar4;
   byte bVar5;
-  CMatrix3x4f *in_stack_ffffff0c;
-  uint local_c4 [12];
+  CMatrix3x4f local_f4;
+  CMatrix3x4f local_c4;
   CVector3f local_94;
   CVector3f local_88;
   CVector3f local_7c;
@@ -33,33 +33,30 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
      (this_ptr->is_miner_zombie != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
               (&(this_ptr->base_enemy).base_character.model,*(int *)(this_ptr->field4_0xbf48 + 4),
-               in_stack_ffffff0c);
+               &local_c4);
     local_70.y = 0.5;
     local_70.z = 0.5;
-    puVar3 = local_c4;
-    puVar4 = (uint *)&stack0xffffff0c;
+    pCVar3 = &local_c4;
+    pCVar4 = &local_f4;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = *puVar3;
-      puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-      puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+      pCVar4->m[0].w = pCVar3->m[0].w;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
     local_70.x = 0.0;
-    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&local_94,&local_70,(CMatrix3x4f *)&stack0xffffff0c);
+    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_94,&local_70,&local_f4);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_88,pCVar1);
     local_58.x = 0.0;
     local_58.y = 0.0;
     local_58.z = 0.0;
-    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&local_40,&local_58,(CMatrix3x4f *)&stack0xffffff0c);
+    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_40,&local_58,&local_f4);
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
               ((CDemonActor *)this_ptr,&local_34,pCVar1);
     local_28.x = 0.0;
     local_28.y = 0.0;
     local_28.z = 1.0;
-    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&local_4c,&local_28,(CMatrix3x4f *)&stack0xffffff0c);
+    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_4c,&local_28,&local_f4);
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
               ((CDemonActor *)this_ptr,&local_1c,pCVar1);
     local_64.x = local_1c.x - local_34.x;

@@ -18,8 +18,8 @@ core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
   byte bVar4;
   CDeformableModel_MotionBlendWeightFunc *in_stack_00000018;
   float afStackY_1888 [1521];
-  CQuaternion4f *quat1_ptr;
-  CQuaternion4f *quat1_ptr_00;
+  CQuaternion4f *quat2_in;
+  CQuaternion4f *quat2_in_00;
   CQuaternion4f local_ac;
   CQuaternion4f local_9c;
   CQuaternion4f local_8c;
@@ -44,7 +44,7 @@ core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
   local_2c.z = target_position->z - pCVar1->z;
   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_20,&local_2c);
   core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_20.x,&local_3c);
-  quat1_ptr_00 = &local_ac;
+  quat2_in_00 = &local_ac;
   local_ac.w = local_3c.w;
   puVar3 = (uint *)((int)&local_ac + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   puVar2 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
@@ -53,7 +53,7 @@ core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_20.y,&local_6c);
-  quat1_ptr = &local_8c;
+  quat2_in = &local_8c;
   local_8c.w = local_6c.w;
   puVar3 = (uint *)((int)&local_8c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   puVar2 = (uint *)((int)&local_6c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
@@ -61,8 +61,8 @@ core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
        *(uint *)((int)&local_6c + (uint)bVar4 * -8 + 4);
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
-  core_xform_cpp_multiplyQuaternion_FUN_005f7640
-            ((CQuaternion4f *)blend_callback,quat1_ptr,&local_5c);
+  core_xform_cpp_multiplyQuaternion_FUN_005f7640((CQuaternion4f *)blend_callback,quat2_in,&local_5c)
+  ;
   local_7c.w = local_5c.w;
   puVar3 = (uint *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   puVar2 = (uint *)((int)&local_5c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
@@ -70,7 +70,7 @@ core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
        *(uint *)((int)&local_5c + (uint)bVar4 * -8 + 4);
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
-  core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_7c,quat1_ptr_00,&local_4c);
+  core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_7c,quat2_in_00,&local_4c);
   local_9c.w = local_4c.w;
   puVar3 = (uint *)((int)&local_9c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   puVar2 = (uint *)((int)&local_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);

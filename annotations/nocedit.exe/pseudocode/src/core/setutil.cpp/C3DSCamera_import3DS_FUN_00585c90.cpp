@@ -17,9 +17,9 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
   C3DSCamera *pCVar5;
   byte bVar6;
   float10 fVar7;
-  float10 fVar8;
-  double dVar9;
-  float fVar10;
+  float10 x;
+  double dVar8;
+  float fVar9;
   uint uStack_240;
   char local_23c [252];
   char acStack_140 [3];
@@ -75,9 +75,9 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
   crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",auStack_1c);
   crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&uStack_240);
   crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&this_ptr->projection_scale);
-  fVar10 = 8.115118e-39;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)uStack_240);
-  auStack_1c[0] = (uint)ROUND(dVar9);
+  fVar9 = 8.115118e-39;
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)uStack_240);
+  auStack_1c[0] = (uint)ROUND(dVar8);
   if (auStack_1c[0] < 0x2e) {
     if (auStack_1c[0] < 0x17) {
       if (9 < auStack_1c[0]) {
@@ -143,7 +143,7 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
     }
   }
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_140,"Warning! Camera %s has unknown lens : %f",this_ptr,(double)fVar10);
+            (acStack_140,"Warning! Camera %s has unknown lens : %f",this_ptr,(double)fVar9);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(acStack_140,0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -154,10 +154,9 @@ LAB_00585deb:
   fStack_3c = fStack_30 - (this_ptr->position).y;
   fStack_38 = fStack_2c - (this_ptr->position).z;
   (this_ptr->orientation).z = (float)local_20;
-  fVar7 = (float10)fStack_38;
-  fVar8 = crt_math_c_atan2_FUN_006013b1((float10)fStack_40,fVar7);
-  (this_ptr->orientation).y = (float)fVar8;
-  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_40,fVar7);
+  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_40,(float10)fStack_38);
+  (this_ptr->orientation).y = (float)fVar7;
+  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_40,x);
   (this_ptr->orientation).x = (float)-fVar7;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&this_ptr->rotation_matrix,&this_ptr->orientation);

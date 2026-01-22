@@ -23,7 +23,7 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
   int hierarchy_distance;
   float fVar7;
   int iVar8;
-  CQuaternion4f *result_out;
+  CQuaternion4f *quat1_in;
   int unaff_EBP;
   CQuaternion4f *unaff_ESI;
   CQuaternion4f *pCVar9;
@@ -93,7 +93,7 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
       local_18 = (CQuaternion4f *)0x0;
       if (0 < this_ptr_00->bone_count) {
         local_28 = this_ptr;
-        result_out = source_quaternions;
+        quat1_in = source_quaternions;
         local_30 = local_34;
         local_20 = this_ptr_00;
         do {
@@ -101,7 +101,7 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
                             (this_ptr_00,(int)local_18,bone_index);
           if (-1 < iVar8) {
             iVar8 = local_20->bone_list[0].parent_index;
-            pCVar9 = result_out;
+            pCVar9 = quat1_in;
             if (-1 < iVar8) {
               local_14 = iVar8 * 0x10;
               core_xform_cpp_negateFirstComponent_FUN_005f75e0
@@ -113,7 +113,7 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
               *pfVar13 = afStack_c4[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
               pfVar13[(uint)bVar14 * -2 + 1] =
                    (afStack_c4 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1];
-              core_xform_cpp_multiplyQuaternion_FUN_005f7640(result_out,pCVar9,local_78);
+              core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_in,pCVar9,local_78);
               local_b8.w = local_78[0].w;
               puVar11 = (uint *)((int)&local_b8 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
               puVar10 = (uint *)((int)local_78 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
@@ -142,7 +142,7 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
             *puVar12 = *puVar10;
             puVar12[(uint)bVar14 * -2 + 1] = puVar10[(uint)bVar14 * -2 + 1];
           }
-          result_out = result_out + 1;
+          quat1_in = quat1_in + 1;
           local_20 = (CSkeleton *)((local_20->motion_list).state_names[1] + 2);
           local_28 = (CDeformableModelInstance *)&(local_28->motion_controller).tween_speed;
           local_30 = local_30 + 1;

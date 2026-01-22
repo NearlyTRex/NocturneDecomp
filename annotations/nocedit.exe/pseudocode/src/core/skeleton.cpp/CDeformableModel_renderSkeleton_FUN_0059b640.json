@@ -4,38 +4,32 @@
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 44,
+        "line": 46,
         "message": "'ROUND' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 50,
+        "line": 52,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 68,
+        "line": 70,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 71,
+        "line": 73,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 72,
+        "line": 74,
         "message": "'stack0xffffff54' was not declared in this scope; did you mean 'in_stack_ffffff54'?"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 97,
-        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -49,37 +43,31 @@
       {
         "category": "other",
         "column": 20,
-        "line": 49,
+        "line": 51,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 68,
+        "line": 70,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 71,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 97,
+        "line": 73,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 237,
+    "complexity_score": 228,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 6,
-    "pseudocode_lines": 92,
-    "suspect_count": 12,
+    "pseudocode_lines": 93,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
@@ -87,7 +75,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 248
+    "total_lines": 249
   },
   "cross_references": [
     {
@@ -400,66 +388,59 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "ROUND",
-      "text": "local_4c.x = (int)ROUND(local_40.m[2].x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "ROUND",
-      "text": "local_4c.y = (int)ROUND(local_40.m[2].y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ROUND",
-      "text": "local_4c.z = (int)ROUND(local_40.m[2].z * 256.0f);",
+      "text": "local_4c.x = (int)ROUND(local_28.x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "local_4c.y = (int)ROUND(local_28.y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "local_4c.z = (int)ROUND(local_28.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 63,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 66,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 65,
+      "line": 67,
       "match": "&stack0xffffff54",
       "text": "puVar9 = (uint *)&stack0xffffff54;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 73,
       "match": "in_stack_ffffff54",
       "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff54,in_stack_ffffff58);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 73,
       "match": "in_stack_ffffff58",
       "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff54,in_stack_ffffff58);",
       "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "bone_matrices = (CMatrix3x4f *)((int)bone_matrices + 0x30);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

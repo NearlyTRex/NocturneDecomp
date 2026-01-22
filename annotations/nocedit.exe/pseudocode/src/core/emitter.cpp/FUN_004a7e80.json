@@ -10,37 +10,37 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 16,
+        "line": 22,
         "message": "'unkbyte10' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 53,
-        "message": "'Var3' was not declared in this scope; did you mean 'Var'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 53,
+        "line": 54,
         "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
-        "line": 54,
+        "column": 3,
+        "line": 55,
         "message": "'fptan' was not declared in this scope; did you mean 'tan'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 58,
+        "line": 59,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
+        "column": 25,
+        "line": 60,
+        "message": "'extraout_ST3' was not declared in this scope; did you mean 'extraout_ST2'?"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 20,
-        "line": 59,
+        "line": 60,
         "message": "'fcos' was not declared in this scope; did you mean 'cos'?"
       }
     ],
@@ -55,18 +55,6 @@
       {
         "category": "other",
         "column": 15,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
         "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -86,23 +74,36 @@
         "category": "other",
         "column": 42,
         "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 44,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 44,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 140,
+    "complexity_score": 207,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 70,
-    "suspect_count": 6,
+    "pseudocode_lines": 72,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "stack_param"
     ],
-    "total_lines": 110
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -324,45 +325,87 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_ST1",
+      "text": "float10 extraout_ST1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_ST2",
+      "text": "float10 extraout_ST2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 15,
+      "match": "extraout_ST3",
+      "text": "unkbyte10 extraout_ST3;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "local_60 = *(float *)(iVar2 + 0x20) - *(float *)(in_stack_00000004 + 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "local_5c = *(float *)(iVar2 + 0x24) - *(float *)(in_stack_00000004 + 0x24);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "local_58 = *(float *)(iVar2 + 0x28) - *(float *)(in_stack_00000004 + 0x28);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 52,
       "match": "SQRT",
       "text": "fVar1 = SQRT(local_70 * local_70 + local_68 * local_68);",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 53,
+      "match": "extraout_ST3",
+      "text": "fVar4 = (float10)fcos(extraout_ST3);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 59,
+      "match": "extraout_ST1",
+      "text": "(extraout_ST1 * (float10)fVar1 - (float10)local_6c);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 60,
+      "match": "extraout_ST2",
+      "text": "local_48 = (float)-extraout_ST2;",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 64,
       "match": "SQRT",
-      "text": "local_18 = SQRT(local_1c / (float)fVar5);",
+      "text": "local_18 = SQRT(local_1c / (float)fVar6);",
       "type": "decompiler_intrinsic"
     }
   ]

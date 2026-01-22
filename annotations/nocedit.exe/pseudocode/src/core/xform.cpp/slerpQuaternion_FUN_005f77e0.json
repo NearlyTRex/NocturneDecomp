@@ -34,13 +34,13 @@
       {
         "category": "other",
         "column": 22,
-        "line": 94,
+        "line": 93,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 100,
+        "line": 99,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -55,30 +55,31 @@
       {
         "category": "other",
         "column": 12,
-        "line": 94,
+        "line": 93,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 100,
+        "line": 99,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 268,
+    "complexity_score": 302,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 98,
-    "suspect_count": 16,
+    "pseudocode_lines": 97,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 278
+    "total_lines": 277
   },
   "cross_references": [
     {
@@ -183,7 +184,7 @@
     "convention": "__stack3_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0",
-    "signature": "CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t, CQuaternion4f * result_out)"
+    "signature": "CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, float t, CQuaternion4f * quat_out)"
   },
   "function_calls": [
     {
@@ -348,14 +349,14 @@
       },
       {
         "is_param": true,
-        "name": "quat1_ptr",
+        "name": "quat1_in",
         "offset": 4,
         "size": 4,
         "type": "CQuaternion4f *"
       },
       {
         "is_param": true,
-        "name": "quat2_ptr",
+        "name": "quat2_in",
         "offset": 8,
         "size": 4,
         "type": "CQuaternion4f *"
@@ -388,6 +389,13 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_ST1",
+      "text": "float10 extraout_ST1;",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "SUB84",
@@ -405,15 +413,22 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "CONCAT44",
-      "text": "x = (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]);",
+      "text": "fVar8 = (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 59,
       "match": "SQRT",
-      "text": "fVar8 = crt_math_c_atan2_FUN_006013b1(SQRT((float10)1 - x * x),x);",
+      "text": "fVar8 = crt_math_c_atan2_FUN_006013b1(SQRT((float10)1 - fVar8 * fVar8),fVar8);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 62,
+      "match": "extraout_ST1",
+      "text": "dVar2 = (double)(fVar9 * ((float10)1 / extraout_ST1));",
+      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -421,6 +436,13 @@
       "match": "SUB84",
       "text": "uStack_74 = SUB84 /* extract 2-byte value */(dVar2,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 65,
+      "match": "extraout_ST1",
+      "text": "dVar2 = (double)(fVar8 * ((float10)1 / extraout_ST1));",
+      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -461,42 +483,42 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 80,
       "match": "CONCAT44",
-      "text": "aCStack_44[0].y = fStack_64 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_ptr->y * fVar3",
+      "text": "aCStack_44[0].y = fStack_64 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_in->y * fVar3;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 81,
+      "match": "CONCAT44",
+      "text": "aCStack_44[0].z = local_58 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_in->z * fVar3;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "CONCAT44",
-      "text": "aCStack_44[0].z = local_58 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_ptr->z * fVar3;",
+      "text": "aCStack_44[0].w = local_60 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_in->w * fVar3;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 83,
       "match": "CONCAT44",
-      "text": "aCStack_44[0].w = local_60 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_ptr->w * fVar3;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
-      "match": "CONCAT44",
-      "text": "aCStack_44[0].x = local_5c * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_ptr->x * fVar3;",
+      "text": "aCStack_44[0].x = local_5c * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + quat1_in->x * fVar3;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 86,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)quat2_ptr + (uint)bVar7 * -8 + 4);",
+      "text": "pfVar4 = (float *)((int)quat2_in + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(float *)((int)",
-      "text": "pfVar6 = (float *)((int)result_out + (uint)bVar7 * -8 + 4);",
+      "text": "pfVar6 = (float *)((int)quat_out + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

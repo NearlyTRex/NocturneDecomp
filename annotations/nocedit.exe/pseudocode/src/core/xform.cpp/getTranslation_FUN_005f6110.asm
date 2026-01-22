@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_xform.cpp_getTranslation_FUN_005f6110(CVector3f * output_vector, CMatrix3x4f * input_matrix)
+; __cdecl CVector3f * core_xform.cpp_getTranslation_FUN_005f6110(CMatrix3x4f * matrix_in, CVector3f * vector_out)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   output_vector
-; CMatrix3x4f *    Stack[0x8]:4   input_matrix
+; CMatrix3x4f *    Stack[0x4]:4   matrix_in
+; CVector3f *      Stack[0x8]:4   vector_out
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4

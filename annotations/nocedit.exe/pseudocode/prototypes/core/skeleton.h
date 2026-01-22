@@ -157,7 +157,7 @@ int CDeformableModel::getBonePart(CDeformableModel * this_ptr, int bone_index);
 
 // Original: core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
 // Address: 0059c2f0
-int CDeformableModel::computeBoneDominantPart(CDeformableModel * model_ptr, int bone_index, CVector3f * reference_position);
+int CDeformableModel::computeBoneDominantPart(CDeformableModel * this_ptr, int bone_index, CVector3f * reference_position);
 
 // Original: core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0
 // Address: 0059c5e0
@@ -257,7 +257,7 @@ void CDeformableModelInstance::blendBoneRotations(CDeformableModelInstance * thi
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
 // Address: 0059f820
-void CDeformableModelInstance::getBoneWorldMatrix(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix);
+CMatrix3x4f * CDeformableModelInstance::getBoneWorldMatrix(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
 // Address: 0059fa20

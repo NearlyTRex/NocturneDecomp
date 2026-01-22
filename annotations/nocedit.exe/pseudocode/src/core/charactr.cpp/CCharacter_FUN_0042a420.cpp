@@ -13,14 +13,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a420(CCharacter *this_ptr)
   char *pcVar2;
   int iVar3;
   CMatrix3x4f *pCVar4;
-  CVector3f *pCVar5;
+  CMatrix3x3f *pCVar5;
   byte bVar6;
   CMatrix3x4f local_8c;
-  CVector3f local_5c;
-  int local_50;
-  int local_40;
+  CMatrix3x3f local_5c;
   int local_30;
-  CVector3i local_2c;
+  CVector3f local_2c;
   CVector3i local_20;
   CMatrix3x4f *local_14;
   
@@ -36,16 +34,16 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a420(CCharacter *this_ptr)
         pCVar4 = &local_8c;
         pCVar5 = &local_5c;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-          pCVar5->x = *(float *)pCVar4;
+          pCVar5->m[0].x = *(float *)pCVar4;
           pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
-          pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
+          pCVar5 = (CMatrix3x3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
         }
-        core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_5c,(CMatrix3x3f *)&local_2c);
-        local_20.x = local_50;
-        local_20.y = local_40;
+        core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_5c,&local_2c);
+        local_20.x = (int)local_5c.m[1].x;
+        local_20.y = (int)local_5c.m[2].y;
         local_20.z = local_30;
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr2,&local_2c,&local_20);
+                  (g_CDemonRendererPtr2,(CVector3i *)&local_2c,&local_20);
         core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                   (&DAT_00823a98,0.0,-1);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

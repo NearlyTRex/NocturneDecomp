@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 34,
+        "line": 39,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 40,
+        "line": 44,
         "message": "'SUB84' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
-        "column": 50,
-        "line": 60,
+        "column": 54,
+        "line": 65,
         "message": "'CONCAT44' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
-        "column": 42,
-        "line": 134,
+        "column": 48,
+        "line": 139,
         "message": "'CONCAT44' was not declared in this scope"
       }
     ],
@@ -38,16 +38,17 @@
   },
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 349,
+    "complexity_score": 389,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 154,
-    "suspect_count": 19,
+    "pseudocode_lines": 159,
+    "suspect_count": 22,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "extra_output"
     ],
-    "total_lines": 609
+    "total_lines": 614
   },
   "cross_references": [
     {
@@ -80,7 +81,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0",
-    "signature": "CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)"
+    "signature": "CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f * matrix_ptr, CVector3f * euler_out)"
   },
   "function_calls": [
     {
@@ -341,17 +342,17 @@
       },
       {
         "is_param": true,
-        "name": "euler_out",
+        "name": "matrix_ptr",
         "offset": 4,
         "size": 4,
-        "type": "CVector3f *"
+        "type": "CMatrix3x3f *"
       },
       {
         "is_param": true,
-        "name": "matrix_ptr",
+        "name": "euler_out",
         "offset": 8,
         "size": 4,
-        "type": "CMatrix3x3f *"
+        "type": "CVector3f *"
       }
     ]
   },
@@ -374,136 +375,157 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ST1",
+      "text": "float10 extraout_ST1;",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 32,
       "match": "SQRT",
-      "text": "dVar5 = (double)SQRT(euler_out->z * euler_out->z +",
+      "text": "dVar6 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 37,
       "match": "SUB84",
-      "text": "local_88 = SUB84 /* extract 2-byte value */(dVar5,0);",
+      "text": "local_88 = SUB84 /* extract 2-byte value */(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 41,
       "match": "SQRT",
-      "text": "dVar5 = (double)SQRT(euler_out[3].y * euler_out[3].y +",
+      "text": "dVar6 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 45,
       "match": "SUB84",
-      "text": "local_80 = SUB84 /* extract 2-byte value */(dVar5,0);",
+      "text": "local_80 = SUB84 /* extract 2-byte value */(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_ST1",
+      "text": "dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_ST1",
+      "text": "dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 51,
       "match": "SQRT",
-      "text": "dVar5 = (double)SQRT((float10)1 - fVar3 * fVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "SUB84",
-      "text": "uStack_3c = SUB84 /* extract 2-byte value */(dVar5,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
-      "match": "CONCAT44",
-      "text": "dVar1 = (double)euler_out[2].z * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar5;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "CONCAT44",
-      "text": "dVar5 = (double)euler_out[3].y * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar5;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "SUB84",
-      "text": "uStack_34 = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "text": "dVar6 = (double)SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 57,
       "match": "SUB84",
-      "text": "uStack_64 = SUB84 /* extract 2-byte value */(dVar5,0);",
+      "text": "uStack_3c = SUB84 /* extract 2-byte value */(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 58,
+      "match": "CONCAT44",
+      "text": "dVar4 = (double)matrix_ptr->m[2].z * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "CONCAT44",
+      "text": "dVar6 = (double)matrix_ptr[1].m[0].y * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "SUB84",
+      "text": "uStack_34 = SUB84 /* extract 2-byte value */(dVar4,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "SUB84",
+      "text": "uStack_64 = SUB84 /* extract 2-byte value */(dVar6,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_34,local_30) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 76,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_64,local_68) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 87,
       "match": "CONCAT44",
-      "text": "fVar2 = euler_out->y * fVar2 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40);",
+      "text": "fVar1 = matrix_ptr->m[0].y * fVar1 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 89,
       "match": "SUB84",
-      "text": "local_b0 = SUB84 /* extract 2-byte value */(dVar5,0);",
+      "text": "local_b0 = SUB84 /* extract 2-byte value */(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 90,
       "match": "CONCAT44",
-      "text": "dVar1 = (double)(euler_out[1].z * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_9c,local_a0) *",
+      "text": "dVar4 = (double)(matrix_ptr->m[1].z * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_9c,local_a0) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 91,
       "match": "CONCAT44",
       "text": "(float)(double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 97,
       "match": "CONCAT44",
-      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */((float)dVar5,local_b0);",
+      "text": "dVar6 = (double)CONCAT44 /* combine 2-byte values */((float)dVar6,local_b0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 132,
       "match": "CONCAT44",
-      "text": "fVar2 = -euler_out->z * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c);",
+      "text": "fVar1 = -matrix_ptr->m[0].z * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 134,
       "match": "CONCAT44",
-      "text": "dVar1 = (double)(euler_out->x * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c));",
+      "text": "dVar4 = (double)(matrix_ptr->m[0].x * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c));",
       "type": "decompiler_intrinsic"
     }
   ]

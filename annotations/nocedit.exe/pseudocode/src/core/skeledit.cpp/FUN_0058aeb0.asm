@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_0058aed8
     LEA ESI,[ESP + 0x10]                ; 0058aed9
     CALL core_xform.cpp_inverse_FUN_005f6210 ; 0058aedd
-        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     MOV EDI,EBX                         ; 0058aee2
     ADD ESP,0x4                         ; 0058aee4
     MOV ECX,0xc                         ; 0058aee7

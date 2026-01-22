@@ -10,43 +10,31 @@
       {
         "category": "other",
         "column": 32,
-        "line": 37,
+        "line": 39,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 47,
+        "line": 49,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 48,
-        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 78,
-        "line": 51,
-        "message": "'stack0xffffffdc' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 52,
-        "message": "'stack0xffffffe8' was not declared in this scope"
+        "column": 32,
+        "line": 50,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 53,
+        "line": 55,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 53,
+        "line": 55,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -61,81 +49,80 @@
       {
         "category": "other",
         "column": 12,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 17,
         "line": 30,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 35,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 32,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 16,
-        "line": 37,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 40,
+        "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 41,
+        "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 47,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 48,
+        "line": 50,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 50,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 50,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 210,
+    "complexity_score": 187,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 45,
-    "suspect_count": 14,
+    "pseudocode_lines": 47,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "stack_ref",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 130
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -300,84 +287,70 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(in_stack_00000004 + 0x1fc2c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "if (((iVar1 != 0) && (iVar1 != *(int *)(in_stack_00000004 + 0x24b4))) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "(iVar1 != *(int *)(in_stack_00000004 + 0x24f8))) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 32,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "(&local_84,(CVector3f *)(in_stack_00000004 + 0x20),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "(CVector3f *)(in_stack_00000004 + 0x30));",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 42,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "line": 43,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(*(int *)(in_stack_00000004 + 0x1fc2c) + 0x154);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xffffffdc",
-      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_e4,(CMatrix3x3f *)&stack0xffffffdc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffffe8",
-      "text": "core_xform_cpp_getTranslation_FUN_005f6110(local_e4,(CMatrix3x4f *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
+      "line": 48,
       "match": "code *",
       "text": "(**(code **)(iVar1 + 0x60))();",
       "type": "unresolved_funcptr"

@@ -81387,7 +81387,7 @@
       ],
       "params":[
         {
-          "name":"quat_ptr",
+          "name":"quat_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -81449,7 +81449,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionFromAngleX_FUN_005f79b0",
-    "ret":"void",
+    "ret":"CQuaternion4f*",
     "vars":{
       "locals":[
         {
@@ -81535,7 +81535,7 @@
           "type":"float"
         },
         {
-          "name":"quat_ptr",
+          "name":"quat_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -81549,7 +81549,17 @@
           },
           "type":"CQuaternion4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -81564,7 +81574,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30",
-    "ret":"void",
+    "ret":"CQuaternion4f*",
     "vars":{
       "locals":[
         {
@@ -81650,7 +81660,7 @@
           "type":"float"
         },
         {
-          "name":"quat_ptr",
+          "name":"quat_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -81664,7 +81674,17 @@
           },
           "type":"CQuaternion4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

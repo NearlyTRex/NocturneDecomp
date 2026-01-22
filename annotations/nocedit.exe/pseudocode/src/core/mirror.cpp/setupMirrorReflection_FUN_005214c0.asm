@@ -383,7 +383,7 @@ section .text
     LEA ESI,[ESP + 0x270]               ; 00521899
     MOV dword ptr [ESP + 0x1a8],EDI     ; 005218a0
     CALL core_xform.cpp_inverse_FUN_005f6210 ; 005218a7
-        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005218ac
     LEA EDI,[ESP + 0x2a0]               ; 005218b1
     ADD ESP,0x4                         ; 005218b8
@@ -395,7 +395,7 @@ section .text
     PUSH EAX                            ; 005218d3
     LEA ESI,[ESP + 0x2d4]               ; 005218d4
     CALL core_xform.cpp_inverse_FUN_005f6210 ; 005218db
-        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     ADD ESP,0x4                         ; 005218e0
     LEA EAX,[ESP + 0x120]               ; 005218e3
     LEA EDI,[ESP + 0x120]               ; 005218ea

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi void core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20(CMatrix3x4f * output_matrix, float scale_factor)
+; __stack_esi CMatrix3x4f * core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20(float scale_factor, CMatrix3x4f * matrix_out)
 ;
 ; Parameters:
-; CMatrix3x4f *    Stack[0x4]:4   output_matrix
+; float            Stack[0x4]:4   scale_factor
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30

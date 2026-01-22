@@ -48,23 +48,23 @@ void core_platfrm_cpp_FUN_0054ea00(void)
   byte auStack_94 [12];
   uint auStack_88 [5];
   CQuaternion4f CStack_74;
-  CVector3f CStack_64;
-  float fStack_58;
+  CQuaternion4f CStack_64;
   float fStack_54;
   float fStack_50;
-  CVector3f local_4c;
-  CVector3f aCStack_40 [2];
-  CVector3f CStack_28;
-  CVector3f CStack_1c;
+  CQuaternion4f local_4c;
+  float fStack_3c;
+  float fStack_38;
+  CQuaternion4f CStack_28;
+  int local_18;
   
   bVar11 = 0;
   if (in_stack_00000004[5].field7_0x6c != 4) {
     if (*(char *)&in_stack_00000004[2].orient_matrix.m[0].y == '\0') {
-      local_4c.x = (float)in_stack_00000004[2].field7_0x6c -
+      local_4c.w = (float)in_stack_00000004[2].field7_0x6c -
                    *(float *)in_stack_00000004[2].create_event;
-      local_4c.y = (float)in_stack_00000004[2].was_created -
+      local_4c.x = (float)in_stack_00000004[2].was_created -
                    *(float *)(in_stack_00000004[2].create_event + 4);
-      local_4c.z = in_stack_00000004[2].create_prob -
+      local_4c.y = in_stack_00000004[2].create_prob -
                    *(float *)(in_stack_00000004[2].create_event + 8);
       iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
       if ((iVar2 != 0) &&
@@ -113,7 +113,8 @@ void core_platfrm_cpp_FUN_0054ea00(void)
           auStack_ec._8_4_ = in_stack_00000004[2].create_prob;
         }
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                           (&CStack_1c,(CQuaternion4f *)(in_stack_00000004[2].create_event + 0xc));
+                           ((CQuaternion4f *)&CStack_28.z,
+                            (CVector3f *)(in_stack_00000004[2].create_event + 0xc));
         if ((CVector3f *)(auStack_ec + 0xc) != pCVar3) {
           auStack_ec._12_4_ = pCVar3->x;
           fStack_dc = pCVar3->y;
@@ -143,7 +144,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
           auStack_d0._8_4_ = *(uint *)(in_stack_00000004[2].create_event + 8);
         }
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                           (&CStack_64,(CQuaternion4f *)(in_stack_00000004[2].create_event + 0x1c));
+                           (&CStack_64,(CVector3f *)(in_stack_00000004[2].create_event + 0x1c));
         if ((CVector3f *)(auStack_d0 + 0xc) != pCVar3) {
           auStack_d0._12_4_ = pCVar3->x;
           fStack_c0 = pCVar3->y;
@@ -170,7 +171,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
                   (&CStack_17c,&(in_stack_00000004->location).position,
                    (CVector3f *)&in_stack_00000004->orient);
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                           (&CStack_28,(CQuaternion4f *)(in_stack_00000004[2].create_event + 0xc));
+                           (&CStack_28,(CVector3f *)(in_stack_00000004[2].create_event + 0xc));
         position = &in_stack_00000004[2].field7_0x6c;
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                   (&CStack_29c,(CVector3f *)position,pCVar3);
@@ -183,7 +184,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
           pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);
         }
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                           (&local_4c,(CQuaternion4f *)(in_stack_00000004[2].create_event + 0x1c));
+                           (&local_4c,(CVector3f *)(in_stack_00000004[2].create_event + 0x1c));
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                   (&CStack_1dc,(CVector3f *)in_stack_00000004[2].create_event,pCVar3);
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -207,10 +208,10 @@ void core_platfrm_cpp_FUN_0054ea00(void)
           pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar11 * -2 + 1) * 4);
           pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);
         }
-        aCStack_40[0].x = CStack_29c.m[0].z;
-        aCStack_40[0].y = CStack_29c.m[1].z;
-        aCStack_40[0].z = CStack_29c.m[2].z;
-        if (aCStack_40 != (CVector3f *)position) {
+        local_4c.z = CStack_29c.m[0].z;
+        fStack_3c = CStack_29c.m[1].z;
+        fStack_38 = CStack_29c.m[2].z;
+        if (&local_4c.z != (float *)position) {
           *position = (int)CStack_29c.m[0].z;
           in_stack_00000004[2].was_created = (int)CStack_29c.m[1].z;
           in_stack_00000004[2].create_prob = CStack_29c.m[2].z;
@@ -231,10 +232,10 @@ void core_platfrm_cpp_FUN_0054ea00(void)
           pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar11 * -2 + 1) * 4);
           pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);
         }
-        fStack_58 = CStack_1dc.m[0].z;
+        CStack_64.z = CStack_1dc.m[0].z;
         fStack_54 = CStack_1dc.m[1].z;
         fStack_50 = CStack_1dc.m[2].z;
-        if ((float *)in_stack_00000004[2].create_event != &fStack_58) {
+        if ((float *)in_stack_00000004[2].create_event != &CStack_64.z) {
           *(float *)in_stack_00000004[2].create_event = CStack_1dc.m[0].z;
           *(float *)(in_stack_00000004[2].create_event + 4) = CStack_1dc.m[1].z;
           *(float *)(in_stack_00000004[2].create_event + 8) = CStack_1dc.m[2].z;
@@ -250,7 +251,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
       }
     }
     else {
-      CStack_1c.y = (float)in_stack_00000004[2].runtime_state;
+      local_18 = in_stack_00000004[2].runtime_state;
     }
     (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);

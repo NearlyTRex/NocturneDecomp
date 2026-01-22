@@ -1,12 +1,12 @@
 // Name: crt_math.c_fdiv_FUN_00606960
 // Address: 00606960
 // Address Range: [[00606960, 00606a76]]
-// Convention: __fpustack
+// Convention: __fpustack_safe
 // Signature: float10 crt_math.c_fdiv_FUN_00606960(float10 dividend, float10 divisor)
 
 #include "nocturne.h"
 
-float10 __fpustack crt_math_c_fdiv_FUN_00606960(float10 dividend,float10 divisor)
+float10 __fpustack_safe crt_math_c_fdiv_FUN_00606960(float10 dividend,float10 divisor)
 
 {
   float10 fVar1;

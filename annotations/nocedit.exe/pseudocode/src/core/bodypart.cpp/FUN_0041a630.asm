@@ -233,7 +233,7 @@ section .text
     PUSH EAX                            ; 0041a8c1
     MOVSD.REP ES:EDI,ESI                ; 0041a8c2
     CALL core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 ; 0041a8c4
-        ;   XREF to: 005f5bd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f5bd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f * matrix_ptr, CVector3f * euler_out)
     ADD ESP,0x8                         ; 0041a8c9
     CMP EBX,EAX                         ; 0041a8cc
     JZ 0x0041a8e0                       ; 0041a8ce
@@ -344,7 +344,7 @@ section .text
     LEA EAX,[ESP + 0x94]                ; 0041a9e3
     PUSH EAX                            ; 0041a9ea
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 0041a9eb
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 0041a9f0
     CMP EDI,EAX                         ; 0041a9f3
     JZ 0x0041aa07                       ; 0041a9f5

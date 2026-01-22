@@ -9,9 +9,9 @@
       },
       {
         "category": "other",
-        "column": 32,
+        "column": 30,
         "line": 27,
-        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -74,7 +74,7 @@
     ],
     "convention": "__stack_esi",
     "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0",
-    "signature": "CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_ptr)"
+    "signature": "CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CQuaternion4f * quat_in, CMatrix3x4f * matrix_out)"
   },
   "function_calls": [
     {
@@ -162,10 +162,10 @@
       },
       {
         "is_param": true,
-        "name": "matrix_out",
+        "name": "quat_in",
         "offset": 4,
         "size": 4,
-        "type": "CMatrix3x4f *"
+        "type": "CQuaternion4f *"
       }
     ]
   },
@@ -180,8 +180,8 @@
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(CQuaternion4f *)((int)",
-      "text": "pCVar3 = (CQuaternion4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {

@@ -21,7 +21,6 @@ void core_manpuz_cpp_FUN_00508a70(void)
   float fVar7;
   CKeyFramedModel *pCVar8;
   CVector3f *pCVar9;
-  uint *extraout_EAX;
   CVector3f *pCVar10;
   char *pcVar11;
   int iVar12;
@@ -59,12 +58,14 @@ void core_manpuz_cpp_FUN_00508a70(void)
   CVector3f local_88;
   CVector3f local_7c;
   CVector3f local_70;
-  byte local_64 [44];
+  CVector3f local_64;
+  CVector3f local_58;
+  CVector3f local_4c;
   int local_38;
   float *local_34;
   int *local_30;
   float *local_2c;
-  char *local_28;
+  CVector3f *local_28;
   float *local_24;
   float local_20;
   float local_1c;
@@ -132,7 +133,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
   local_9c = (pCVar8->bounds_max).y;
   local_98 = (pCVar8->bounds_max).z;
   local_34 = &in_stack_00000004[7].previous_transform_state.orientation.y;
-  local_28 = in_stack_00000004[8].actor_name + 4;
+  local_28 = (CVector3f *)(in_stack_00000004[8].actor_name + 4);
   local_2c = &in_stack_00000004[7].previous_transform_state.orientation.z;
   local_30 = &in_stack_00000004[7].previous_transform_state.dirty_flags;
   local_38 = 0;
@@ -166,22 +167,20 @@ void core_manpuz_cpp_FUN_00508a70(void)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_17c,&local_1ac,&local_1dc);
     pCVar14 = &local_1dc;
     pCVar16 = &local_11c;
-    for (iVar12 = 0xc; pcVar11 = local_28, iVar12 != 0; iVar12 = iVar12 + -1) {
+    for (iVar12 = 0xc; pCVar10 = local_28, iVar12 != 0; iVar12 = iVar12 + -1) {
       pCVar16->m[0].w = pCVar14->m[0].w;
       pCVar14 = (CMatrix3x4f *)((int)pCVar14 + ((uint)bVar17 * -2 + 1) * 4);
       pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar17 * -2 + 1) * 4);
     }
-    core_xform_cpp_getTranslation_FUN_005f6110
-              ((CVector3f *)&local_11c,(CMatrix3x4f *)(local_64 + 0x18));
+    pCVar9 = core_xform_cpp_getTranslation_FUN_005f6110(&local_11c,&local_4c);
     pfVar13 = local_24;
-    if ((char *)extraout_EAX != pcVar11) {
-      *(uint *)pcVar11 = *extraout_EAX;
-      *(uint *)(pcVar11 + 4) = extraout_EAX[1];
-      *(uint *)(pcVar11 + 8) = extraout_EAX[2];
+    if (pCVar9 != pCVar10) {
+      pCVar10->x = pCVar9->x;
+      pCVar10->y = pCVar9->y;
+      pCVar10->z = pCVar9->z;
     }
     pCVar9 = (CVector3f *)(local_24 + 0xc);
-    pCVar10 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                        ((CVector3f *)&local_11c,(CMatrix3x3f *)local_64);
+    pCVar10 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_11c,&local_64);
     if (pCVar9 != pCVar10) {
       pCVar9->x = pCVar10->x;
       pfVar13[0xd] = pCVar10->y;
@@ -202,8 +201,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
       }
       local_20 = local_70.x;
       local_1c = local_70.z;
-      pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         ((CVector3f *)(local_64 + 0xc),&local_70,&local_11c);
+      pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_58,&local_70,&local_11c);
       if (pCVar10 != pCVar9) {
         pCVar10->x = pCVar9->x;
         pCVar10->y = pCVar9->y;
@@ -219,7 +217,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
     local_38 = iVar12;
     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
               ((CDemonTriangle *)(local_24 + 0x1d),&local_134,&local_128,&local_140);
-    local_28 = local_28 + 0xb8;
+    local_28 = (CVector3f *)&local_28[0xf].y;
     local_2c = local_2c + 0x2e;
   } while (iVar12 < 0xc);
   fVar18 = (float10)fcos((float10)_DAT_00660d8c);

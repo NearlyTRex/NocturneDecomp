@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+; __cdecl CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f * matrix_ptr, CVector3f * euler_out)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   euler_out
-; CMatrix3x3f *    Stack[0x8]:4   matrix_ptr
+; CMatrix3x3f *    Stack[0x4]:4   matrix_ptr
+; CVector3f *      Stack[0x8]:4   euler_out
 ; Local Variables:
 ; undefined8       Stack[-0xb0]:8  local_b0
 ; undefined8       Stack[-0xa8]:8  local_a8

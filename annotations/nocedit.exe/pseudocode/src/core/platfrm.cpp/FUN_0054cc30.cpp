@@ -25,7 +25,7 @@ void core_platfrm_cpp_FUN_0054cc30(void)
   CMatrix3x4f *pCVar10;
   char *pcVar11;
   int iVar12;
-  CVector3f *pCVar13;
+  CMatrix3x3f *pCVar13;
   bool bVar14;
   byte bVar15;
   CDemonActor *in_stack_00000004;
@@ -33,9 +33,7 @@ void core_platfrm_cpp_FUN_0054cc30(void)
   ulonglong uStack_320;
   float fStack_318;
   byte auStack_21c [56];
-  CVector3f CStack_1e4;
-  float fStack_1d8;
-  float fStack_1c8;
+  CMatrix3x3f CStack_1e4;
   float fStack_1b8;
   CMatrix3x4f CStack_1b4;
   CMatrix3x4f CStack_184;
@@ -44,7 +42,13 @@ void core_platfrm_cpp_FUN_0054cc30(void)
   CMatrix3x4f CStack_f4;
   byte auStack_c4 [40];
   CBoundingBox3D CStack_9c;
-  CMatrix3x3f CStack_84;
+  CVector3f CStack_84;
+  float fStack_78;
+  float fStack_74;
+  float fStack_70;
+  float fStack_6c;
+  float fStack_68;
+  float fStack_64;
   CVector3f CStack_60;
   CVector3f CStack_54;
   CVector3f CStack_48;
@@ -255,26 +259,26 @@ LAB_0054cd70:
             pCVar10 = &CStack_184;
             pCVar13 = &CStack_1e4;
             for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-              pCVar13->x = pCVar10->m[0].w;
+              pCVar13->m[0].x = pCVar10->m[0].w;
               pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar15 * -2 + 1) * 4);
-              pCVar13 = (CVector3f *)((int)pCVar13 + ((uint)bVar15 * -2 + 1) * 4);
+              pCVar13 = (CMatrix3x3f *)((int)pCVar13 + ((uint)bVar15 * -2 + 1) * 4);
             }
-            CStack_84.m[2].x = fStack_1d8;
-            CStack_84.m[2].y = fStack_1c8;
-            CStack_84.m[2].z = fStack_1b8;
+            fStack_6c = CStack_1e4.m[1].x;
+            fStack_68 = CStack_1e4.m[2].y;
+            fStack_64 = fStack_1b8;
             core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&CStack_1e4,&CStack_84);
-            CStack_84.m[1].x = CStack_84.m[2].x - ((CVector3f *)(iVar12 + 0x20))->x;
-            CStack_84.m[1].y = CStack_84.m[2].y - *(float *)(iVar12 + 0x24);
-            CStack_84.m[1].z = CStack_84.m[2].z - *(float *)(iVar12 + 0x28);
-            if ((CVector3f *)(iVar12 + 0xe0) != CStack_84.m + 1) {
-              *(float *)(iVar12 + 0xe0) = CStack_84.m[1].x;
-              *(float *)(iVar12 + 0xe4) = CStack_84.m[1].y;
-              *(float *)(iVar12 + 0xe8) = CStack_84.m[1].z;
+            fStack_78 = fStack_6c - ((CVector3f *)(iVar12 + 0x20))->x;
+            fStack_74 = fStack_68 - *(float *)(iVar12 + 0x24);
+            fStack_70 = fStack_64 - *(float *)(iVar12 + 0x28);
+            if ((float *)(iVar12 + 0xe0) != &fStack_78) {
+              *(float *)(iVar12 + 0xe0) = fStack_78;
+              *(float *)(iVar12 + 0xe4) = fStack_74;
+              *(float *)(iVar12 + 0xe8) = fStack_70;
             }
             *(uint *)(iVar12 + 0xec) = 0;
             *(uint *)(iVar12 + 0xf4) = 0;
             fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                              (CStack_84.m[0].y - *(float *)(iVar12 + 0x34));
+                              (CStack_84.y - *(float *)(iVar12 + 0x34));
             *(float *)(iVar12 + 0xf0) = fVar5;
           }
           iStack_14 = iStack_14 + 4;

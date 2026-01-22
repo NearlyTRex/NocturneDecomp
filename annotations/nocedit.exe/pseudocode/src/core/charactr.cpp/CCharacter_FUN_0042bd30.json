@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 38,
-        "line": 51,
+        "line": 49,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 52,
-        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
+        "column": 38,
+        "line": 50,
+        "message": "cast from 'CMatrix3x3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "missing_member",
         "column": 64,
-        "line": 81,
+        "line": 79,
         "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "missing_member",
         "column": 33,
-        "line": 87,
+        "line": 85,
         "message": "'CBodyPart' {aka 'struct CBodyPart'} has no member named 'field1_0x158'"
       }
     ],
@@ -37,30 +37,30 @@
       {
         "category": "other",
         "column": 22,
-        "line": 51,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 52,
+        "line": 50,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 221,
+    "complexity_score": 219,
     "cross_reference_count": 13,
     "function_call_count": 6,
     "global_count": 1,
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 79,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 264
+    "total_lines": 262
   },
   "cross_references": [
     {
@@ -361,70 +361,70 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_0000000c",
       "text": "((this_ptr->model).part_visibility_flags[in_stack_0000000c] != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "(&this_ptr->model,in_stack_00000008,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_stack_0000000c",
       "text": "(&this_ptr->model,in_stack_00000008,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == *(int *)pcVar1) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 42,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "line": 43,
+      "match": "(CMatrix3x3f *)((int)",
+      "text": "pCVar5 = (CMatrix3x3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 59,
       "match": "in_stack_0000000c",
       "text": "if ((in_stack_0000000c == *(int *)pcVar1) && (-1 < *(int *)(pcVar1 + 4))) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 72,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == *(int *)(pCVar3->carry_hands[0].field0_0x0 + 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 78,
       "match": "in_stack_00000008",
       "text": "*(uint *)in_stack_00000008->field1_0x158 = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 78,
       "match": "in_stack_00000010",
       "text": "*(uint *)in_stack_00000008->field1_0x158 = in_stack_00000010;",
       "type": "stack_param"

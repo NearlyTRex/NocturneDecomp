@@ -51,7 +51,7 @@ section .text
     LEA ESI,[ESP + 0x9c]                ; 005dbbb7
     LEA EDI,[ESP + 0x3c]                ; 005dbbbe
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbbc2
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005dbbc7
     LEA ESI,[ESP + 0x9c]                ; 005dbbcc
     ADD ESP,0xc                         ; 005dbbd3
@@ -72,7 +72,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005dbc07
     LEA EDI,[ESP + 0x6c]                ; 005dbc0b
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbc0f
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     ADD ESP,0xc                         ; 005dbc14
     MOV ECX,0xc                         ; 005dbc17
     LEA EAX,[ESP + 0x60]                ; 005dbc1c
@@ -85,7 +85,7 @@ section .text
     LEA ESI,[ESP + 0xcc]                ; 005dbc31
     MOV EDI,EBX                         ; 005dbc38
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbc3a
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005dbc3f
     LEA ESI,[ESP + 0xcc]                ; 005dbc44
     ADD ESP,0xc                         ; 005dbc4b

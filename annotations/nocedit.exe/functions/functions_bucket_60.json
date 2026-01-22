@@ -65794,7 +65794,7 @@
       ],
       "params":[
         {
-          "name":"matrix_out",
+          "name":"x_offset",
           "storage":{
             "offset":4,
             "size":4,
@@ -65807,10 +65807,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"float"
         },
         {
-          "name":"x_offset",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -65822,7 +65822,7 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CMatrix3x4f*"
         }
       ],
       "ret_storage":{
@@ -65871,7 +65871,7 @@
       ],
       "params":[
         {
-          "name":"matrix_out",
+          "name":"quat_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -65884,10 +65884,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"CQuaternion4f*"
         },
         {
-          "name":"quat_ptr",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -65899,7 +65899,7 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"CMatrix3x4f*"
         }
       ],
       "ret_storage":{
@@ -65926,7 +65926,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_negateFirstComponent_FUN_005f75e0",
-    "ret":"void",
+    "ret":"CQuaternion4f*",
     "vars":{
       "locals":[
         {
@@ -65996,7 +65996,7 @@
       ],
       "params":[
         {
-          "name":"output_vector",
+          "name":"vector_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -66012,7 +66012,7 @@
           "type":"CQuaternion4f*"
         },
         {
-          "name":"input_vector",
+          "name":"vector_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -66026,7 +66026,17 @@
           },
           "type":"CQuaternion4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -66271,7 +66281,7 @@
       ],
       "params":[
         {
-          "name":"quat1_ptr",
+          "name":"quat1_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -66287,7 +66297,7 @@
           "type":"CQuaternion4f*"
         },
         {
-          "name":"quat2_ptr",
+          "name":"quat2_in",
           "storage":{
             "offset":8,
             "size":4,
@@ -66319,7 +66329,7 @@
           "type":"float"
         },
         {
-          "name":"result_out",
+          "name":"quat_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -67184,7 +67194,7 @@
         "start":"00606960"
       }
     ],
-    "conv":"__fpustack",
+    "conv":"__fpustack_safe",
     "importable":true,
     "name":"crt_math.c_fdiv_FUN_00606960",
     "ret":"float10",

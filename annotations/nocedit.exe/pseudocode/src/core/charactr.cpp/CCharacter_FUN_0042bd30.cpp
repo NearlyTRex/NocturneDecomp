@@ -13,18 +13,16 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
   int iVar2;
   CCharacter *pCVar3;
   CMatrix3x4f *pCVar4;
-  CVector3f *pCVar5;
+  CMatrix3x3f *pCVar5;
   byte bVar6;
   CBodyPart *in_stack_00000008;
   int in_stack_0000000c;
   uint in_stack_00000010;
-  CVector3f local_9c;
-  uint local_90;
-  uint local_80;
+  CMatrix3x3f local_9c;
   uint local_70;
   CMatrix3x4f local_6c;
-  uint local_3c;
-  uint local_38;
+  float local_3c;
+  float local_38;
   uint local_34;
   CVector3f local_30;
   CVector3f local_24;
@@ -47,13 +45,13 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
           pCVar4 = &local_6c;
           pCVar5 = &local_9c;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            pCVar5->x = pCVar4->m[0].w;
+            pCVar5->m[0].x = pCVar4->m[0].w;
             pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
+            pCVar5 = (CMatrix3x3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
           }
-          core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_9c,(CMatrix3x3f *)&local_24);
-          local_3c = local_90;
-          local_38 = local_80;
+          core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_9c,&local_24);
+          local_3c = local_9c.m[1].x;
+          local_38 = local_9c.m[2].y;
           local_34 = local_70;
           core_bodypart_cpp_FUN_0041add0();
         }

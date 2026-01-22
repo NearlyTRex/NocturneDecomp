@@ -3,57 +3,33 @@
     "errors": [
       {
         "category": "other",
-        "column": 17,
-        "line": 39,
-        "message": "invalid cast from type 'CSkeleton*' to type 'float'"
-      },
-      {
-        "category": "other",
         "column": 18,
-        "line": 43,
+        "line": 45,
         "message": "invalid cast from type 'CQuaternion4f*' to type 'float'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 44,
+        "line": 46,
         "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 48,
-        "message": "invalid cast from type 'float' to type 'CSkeleton*'"
       },
       {
         "category": "undeclared_identifier",
         "column": 45,
-        "line": 52,
+        "line": 53,
         "message": "'ABS' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 55,
-        "message": "request for member '_4_4_' in 'local_54', which is of non-class type 'byte [36]' {aka 'unsigned char [36]'}"
+        "line": 57,
+        "message": "request for member '_4_4_' in 'local_54', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 56,
-        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 58,
-        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 61,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
+        "column": 37,
+        "line": 57,
+        "message": "request for member '_4_4_' in 'local_34', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
@@ -71,7 +47,7 @@
         "category": "other",
         "column": 12,
         "line": 85,
-        "message": "request for member '_0_4_' in 'local_54', which is of non-class type 'byte [36]' {aka 'unsigned char [36]'}"
+        "message": "request for member '_0_4_' in 'local_54', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
@@ -80,22 +56,16 @@
         "message": "request for member '_0_4_' in 'local_74', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
-        "category": "other",
-        "column": 5,
-        "line": 90,
-        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 94,
+        "line": 92,
         "message": "'stack0xffffff1c' was not declared in this scope"
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 97,
-        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+        "column": 30,
+        "line": 95,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -105,24 +75,6 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 56,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 58,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 60,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -138,32 +90,20 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 78,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 89,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 14,
-        "line": 97,
+        "line": 95,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 303,
+    "complexity_score": 281,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 1,
-    "pseudocode_lines": 93,
-    "suspect_count": 18,
+    "pseudocode_lines": 91,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -172,7 +112,7 @@
       "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 252
+    "total_lines": 250
   },
   "cross_references": [
     {
@@ -554,38 +494,31 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 46,
       "match": "ABS",
       "text": "if ((float)1.0000000000000001e-05 < ABS(fStack_e8)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 46,
+      "line": 47,
       "match": "8.265272e-39",
       "text": "fStack_e0 = 8.265272e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 50,
       "match": "._4_4_",
-      "text": "local_54._4_4_ = CStack_30.w;",
+      "text": "local_54._4_4_ = local_34._4_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(uint *)((int)",
-      "text": "puVar4 = (uint *)((int)&CStack_30 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_30 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._4_4_",
+      "text": "local_54._4_4_ = local_34._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
@@ -605,7 +538,7 @@
       "description": "Unaffected register variable",
       "line": 59,
       "match": "unaff_EDI",
-      "text": "puVar4 = (uint *)(unaff_EDI + 0x6b4 + (uint)bVar7 * -8);",
+      "text": "pfVar4 = (float *)(unaff_EDI + 0x6b4 + (uint)bVar6 * -8);",
       "type": "unaffected_reg"
     },
     {
@@ -623,13 +556,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(int *)((int)",
-      "text": "} while (iVar2 < *(int *)((int)CStack_30.z + 0x28558));",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 78,
       "match": "._0_4_",
@@ -645,21 +571,21 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 87,
+      "line": 85,
       "match": "&stack0xffffff1c",
-      "text": "pfVar6 = (float *)&stack0xffffff1c;",
+      "text": "pfVar4 = (float *)&stack0xffffff1c;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(CQuaternion4f *)((int)",
-      "text": "pCVar3 = (CQuaternion4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);",
+      "line": 88,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 94,
+      "line": 92,
       "match": "&stack0xffffff1c",
       "text": "(&(this_ptr->bone_transform).root_position,(CMatrix3x4f *)&stack0xffffff1c);",
       "type": "stack_ref"

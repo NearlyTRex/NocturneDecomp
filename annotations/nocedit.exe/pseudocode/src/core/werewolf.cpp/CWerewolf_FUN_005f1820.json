@@ -57,9 +57,9 @@
       },
       {
         "category": "other",
-        "column": 32,
+        "column": 34,
         "line": 40,
-        "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "missing_member",
@@ -298,8 +298,8 @@
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }
   ],

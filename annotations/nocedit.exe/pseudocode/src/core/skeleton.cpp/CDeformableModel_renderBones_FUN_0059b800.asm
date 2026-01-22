@@ -58,7 +58,7 @@ section .text
     PUSH EBP                            ; 0059b837
     LEA EBX,[ESP + 0x8]                 ; 0059b838
     CALL core_xform.cpp_getTranslation_FUN_005f6110 ; 0059b83c
-        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_getTranslation_FUN_005f6110(CVector3f * output_vector, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005f6110(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 0059b841
     LEA EAX,[ESP + 0xc]                 ; 0059b844
     MOV EDX,dword ptr [0x006703ec]      ; 0059b848 | g_CDemonRendererInstance | g_CDemonRendererPtr2

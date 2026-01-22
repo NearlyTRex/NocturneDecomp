@@ -16,6 +16,7 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
   float fVar3;
   float10 fVar4;
   float10 fVar5;
+  float10 extraout_ST1;
   double dVar6;
   uint local_98;
   uint uStack_94;
@@ -32,14 +33,13 @@ core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
     euler_angles->x = -1.5707964;
   }
   else if ((double)fVar2 < 1.0) {
-    fVar4 = (float10)fVar2;
-    fVar5 = crt_math_c_asin_FUN_00600b94(fVar4);
-    fVar4 = SQRT((float10)1 - fVar4 * fVar4);
-    euler_angles->x = (float)fVar5;
-    dVar6 = (double)fVar4;
+    fVar4 = crt_math_c_asin_FUN_00600b94((float10)fVar2);
+    fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);
+    euler_angles->x = (float)fVar4;
+    dVar6 = (double)fVar5;
     uStack_94 = SUB84 /* extract 2-byte value */(dVar6,0);
     if (0.0 < dVar6) {
-      fVar3 = 1.0 / (float)fVar4;
+      fVar3 = 1.0 / (float)fVar5;
       fVar2 = this_ptr->m[0].z * fVar3;
       dVar6 = (double)fVar2;
       uStack_84 = SUB84 /* extract 2-byte value */(dVar6,0);

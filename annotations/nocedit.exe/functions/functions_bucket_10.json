@@ -88061,7 +88061,7 @@
       ],
       "params":[
         {
-          "name":"euler_out",
+          "name":"matrix_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -88074,10 +88074,10 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CMatrix3x3f*"
         },
         {
-          "name":"matrix_ptr",
+          "name":"euler_out",
           "storage":{
             "offset":8,
             "size":4,
@@ -88090,7 +88090,7 @@
               }
             ]
           },
-          "type":"CMatrix3x3f*"
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -88117,7 +88117,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_xform.cpp_getTranslation_FUN_005f6110",
-    "ret":"void",
+    "ret":"CVector3f*",
     "vars":{
       "locals":[
         {
@@ -88155,7 +88155,7 @@
       ],
       "params":[
         {
-          "name":"output_vector",
+          "name":"matrix_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -88168,10 +88168,10 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CMatrix3x4f*"
         },
         {
-          "name":"input_matrix",
+          "name":"vector_out",
           "storage":{
             "offset":8,
             "size":4,
@@ -88184,9 +88184,19 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"CVector3f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -88611,7 +88621,7 @@
       ],
       "params":[
         {
-          "name":"output_matrix",
+          "name":"matrix_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -88627,7 +88637,7 @@
           "type":"CMatrix3x4f*"
         },
         {
-          "name":"input_matrix",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,

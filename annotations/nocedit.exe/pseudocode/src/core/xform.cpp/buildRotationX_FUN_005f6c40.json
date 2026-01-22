@@ -2,34 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 34,
-        "line": 27,
-        "message": "invalid cast from type 'CMatrix3x4f*' to type 'float'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 27,
+        "line": 28,
         "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 28,
-        "message": "invalid cast from type 'CMatrix3x4f*' to type 'float'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 28,
+        "line": 29,
         "message": "'fcos' was not declared in this scope; did you mean 'cos'?"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 45,
-        "message": "invalid cast from type 'float' to type 'float*'"
       }
     ],
     "success": false,
@@ -44,16 +26,16 @@
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 55,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 42,
     "suspect_count": 1,
     "suspect_types": [
       "param_count_too_few"
     ],
-    "total_lines": 80
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -79,7 +61,7 @@
     ],
     "convention": "__stack_esi",
     "name": "core_xform.cpp_buildRotationX_FUN_005f6c40",
-    "signature": "void core_xform.cpp_buildRotationX_FUN_005f6c40(CMatrix3x4f * output_matrix, float angle_radians)"
+    "signature": "CMatrix3x4f * core_xform.cpp_buildRotationX_FUN_005f6c40(float angle_radians, CMatrix3x4f * matrix_out)"
   },
   "function_calls": [],
   "globals": [],
@@ -263,10 +245,10 @@
       },
       {
         "is_param": true,
-        "name": "output_matrix",
+        "name": "angle_radians",
         "offset": 4,
         "size": 4,
-        "type": "CMatrix3x4f *"
+        "type": "float"
       }
     ]
   },

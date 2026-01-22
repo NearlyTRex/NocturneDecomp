@@ -3,63 +3,51 @@
     "errors": [
       {
         "category": "other",
-        "column": 13,
-        "line": 40,
-        "message": "invalid cast from type 'CVector3f*' to type 'float'"
-      },
-      {
-        "category": "other",
         "column": 30,
-        "line": 53,
+        "line": 48,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 54,
+        "line": 49,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 67,
+        "column": 30,
         "line": 56,
-        "message": "invalid cast from type 'float*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 62,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 69,
+        "line": 57,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 70,
+        "line": 64,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 74,
-        "message": "invalid cast from type 'float' to type 'float*'"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 77,
+        "line": 65,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 10,
-        "line": 80,
-        "message": "invalid cast from type 'float' to type 'CMatrix3x4f*'"
+        "column": 30,
+        "line": 72,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 73,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -73,53 +61,65 @@
       {
         "category": "other",
         "column": 14,
-        "line": 53,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 54,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 62,
+        "line": 56,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 69,
+        "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 70,
+        "line": 64,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 77,
+        "line": 65,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 72,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 73,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 136,
+    "complexity_score": 151,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 71,
-    "suspect_count": 6,
+    "pseudocode_lines": 66,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 159
+    "total_lines": 154
   },
   "cross_references": [],
   "function": {
@@ -132,7 +132,7 @@
     ],
     "convention": "__stack2_esi",
     "name": "core_xform.cpp_buildMirrorTransform_FUN_005f7000",
-    "signature": "CMatrix3x4f * core_xform.cpp_buildMirrorTransform_FUN_005f7000(CMatrix3x4f * matrix_out, CVector3f * axis_vector, float distance)"
+    "signature": "CMatrix3x4f * core_xform.cpp_buildMirrorTransform_FUN_005f7000(CVector3f * axis_vector, float distance, CMatrix3x4f * matrix_out)"
   },
   "function_calls": [
     {
@@ -299,61 +299,75 @@
       },
       {
         "is_param": true,
-        "name": "matrix_out",
+        "name": "axis_vector",
         "offset": 4,
         "size": 4,
-        "type": "CMatrix3x4f *"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "axis_vector",
+        "name": "distance",
         "offset": 8,
         "size": 4,
-        "type": "CVector3f *"
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 41,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 42,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 49,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 50,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 57,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 58,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }
   ]

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi void core_xform.cpp_buildScaleMatrix_FUN_005f6e80(CMatrix3x4f * output_matrix, CVector3f * scale_vector)
+; __stack_esi CMatrix3x4f * core_xform.cpp_buildScaleMatrix_FUN_005f6e80(CVector3f * scale_vector, CMatrix3x4f * matrix_out)
 ;
 ; Parameters:
-; CMatrix3x4f *    Stack[0x4]:4   output_matrix
+; CVector3f *      Stack[0x4]:4   scale_vector
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34

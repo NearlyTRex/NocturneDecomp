@@ -15,7 +15,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   bool bVar2;
   int iVar3;
   CVector3f *input;
-  CVector3f *pCVar4;
+  CVector3f *start_pos;
+  CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
   CMatrix3x4f local_22c;
@@ -23,17 +24,20 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   CMatrix3x4f local_1cc;
   CMatrix3x4f local_19c;
   CMatrix3x4f local_16c;
-  CVector3f local_13c [4];
+  CMatrix3x4f local_13c;
   CMatrix3x4f local_10c;
-  CVector3f local_dc [4];
-  byte local_ac [16];
-  float local_9c;
-  float local_98;
-  CMatrix3x3f local_94;
+  CMatrix3x4f local_dc;
+  CVector3f local_ac;
+  CVector3f local_a0;
+  CVector3f local_94;
+  CVector3f local_88;
+  CVector3f local_7c [2];
   CVector3f local_64;
   CVector3f local_58;
-  byte local_4c [12];
-  CMatrix3x3f local_40;
+  CVector3f local_4c;
+  CVector3f local_40;
+  CVector3f local_34;
+  CVector3f local_28;
   CLightGun *local_1c;
   float local_18;
   float local_14;
@@ -45,29 +49,29 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   }
   if ((this_ptr->base_hero).base_character.model.part_visibility_flags[DAT_03f6bb24] != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    local_40.m[1].y = 3.1415927;
-    local_40.m[1].x = 0.0;
-    local_40.m[1].z = 0.0;
-    local_ac._12_4_ = 0.0;
-    local_9c = 0.71933335;
-    local_98 = 0.185;
+    local_34.y = 3.1415927;
+    local_34.x = 0.0;
+    local_34.z = 0.0;
+    local_a0.x = 0.0;
+    local_a0.y = 0.71933335;
+    local_a0.z = 0.185;
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              (&local_16c,(CVector3f *)(local_ac + 0xc),local_40.m + 1);
+              (&local_16c,&local_a0,&local_34);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_16c,
                (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
                DAT_03f6bacc,&local_22c);
-    pCVar5 = &local_22c;
-    pCVar4 = local_13c;
+    pCVar4 = &local_22c;
+    pCVar5 = &local_13c;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      pCVar4->x = pCVar5->m[0].w;
+      pCVar5->m[0].w = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
       pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
-      pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
     }
-    core_xform_cpp_getTranslation_FUN_005f6110(local_13c,(CMatrix3x4f *)local_ac);
-    core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_13c,&local_94);
+    core_xform_cpp_getTranslation_FUN_005f6110(&local_13c,&local_ac);
+    core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_13c,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,(CVector3i *)&local_94,(CVector3i *)local_ac);
+              (g_CDemonRendererPtr2,(CVector3i *)&local_94,(CVector3i *)&local_ac);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               ((CKeyFramedModelInstance *)(this_ptr->field4_0x1fc3c + 0x9c),0.0,-1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
@@ -76,14 +80,14 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   local_14 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
   if ((float)0.98999999999999999 < local_14) {
     pCVar1 = (this_ptr->base_hero).base_character.carry_hands[1].carry_actor;
-    pCVar4 = (CVector3f *)0x0;
+    start_pos = (CVector3f *)0x0;
     if (pCVar1 != (CDemonActor *)0x0) {
-      pCVar4 = &(pCVar1->location).position;
+      start_pos = &(pCVar1->location).position;
     }
     if (*(int *)(this_ptr->field2_0x1fbd8 + 0x54) != 0) {
-      pCVar4 = (CVector3f *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x20);
+      start_pos = (CVector3f *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x20);
     }
-    if (pCVar4 != (CVector3f *)0x0) {
+    if (start_pos != (CVector3f *)0x0) {
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
@@ -93,9 +97,9 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
                 (g_CDemonSetPtr,(this_ptr->base_hero).base_character.carry_hands[1].carry_actor);
       input = (CVector3f *)core_stranger_cpp_CStranger_FUN_005c51c0();
       core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                ((CDemonActor *)this_ptr,local_94.m + 2,input);
+                ((CDemonActor *)this_ptr,local_7c,input);
       local_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
-                           (g_CDemonSetPtr,pCVar4,local_94.m + 2);
+                           (g_CDemonSetPtr,start_pos,local_7c);
       local_18 = local_14;
       if (local_14 < 0.0) {
         local_18 = 10.0;
@@ -153,45 +157,45 @@ LAB_005c33d7:
      (local_1c = (this_ptr->base_hero).inventory.light_gun_ptr, local_1c != (CLightGun *)0x0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     if ((this_ptr->base_hero).is_wearing_gas_mask == 2) {
-      local_94.m[1].z = 0.0;
-      local_94.m[1].x = -0.140457;
+      local_88.z = 0.0;
+      local_88.x = -0.140457;
       local_64.z = 0.537644;
-      local_94.m[1].y = -3.0786;
+      local_88.y = -3.0786;
       local_64.x = 0.00604827;
       local_64.y = 0.283614;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                (&local_1cc,&local_64,local_94.m + 1);
+                (&local_1cc,&local_64,&local_88);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1cc,
                  (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
                  DAT_03f6bacc,&local_10c);
-      pCVar5 = &local_10c;
+      pCVar4 = &local_10c;
     }
     else {
-      local_40.m[2].x = 1.16195;
-      local_40.m[2].z = 0.0489636;
-      local_40.m[2].y = 0.368073;
+      local_28.x = 1.16195;
+      local_28.z = 0.0489636;
+      local_28.y = 0.368073;
       local_58.x = 0.512623;
       local_58.y = -0.0202601;
       local_58.z = 0.130713;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                (&local_1fc,&local_58,local_40.m + 2);
+                (&local_1fc,&local_58,&local_28);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1fc,
                  (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
                  DAT_03f6bb04,&local_19c);
-      pCVar5 = &local_19c;
+      pCVar4 = &local_19c;
     }
-    pCVar4 = local_dc;
+    pCVar5 = &local_dc;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      pCVar4->x = pCVar5->m[0].w;
+      pCVar5->m[0].w = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
       pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
-      pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
     }
-    core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_dc,&local_40);
-    core_xform_cpp_getTranslation_FUN_005f6110(local_dc,(CMatrix3x4f *)local_4c);
+    core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_dc,&local_40);
+    core_xform_cpp_getTranslation_FUN_005f6110(&local_dc,&local_4c);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,(CVector3i *)&local_40,(CVector3i *)local_4c);
+              (g_CDemonRendererPtr2,(CVector3i *)&local_40,(CVector3i *)&local_4c);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&(local_1c->base_weapon).model,0.0,-1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

@@ -119,7 +119,7 @@ section .text
     LEA ESI,[ESP + 0x1ad8]              ; 004d705d
     LEA EDI,[ESP + 0x1aa8]              ; 004d7064
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 ; 004d706b
-        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
+        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 004d7070
     LEA ESI,[ESP + 0x1ad8]              ; 004d7075
     ADD ESP,0x8                         ; 004d707c

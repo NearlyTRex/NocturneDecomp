@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
+; __stack2_esi CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bone_index
-; CMatrix3x4f *    Stack[0xc]:4   out_matrix
 ; Local Variables:
 ; undefined1       Stack[-0xac]:1  local_ac
 ; int              Stack[-0x7c]:4  local_7c
@@ -76,7 +75,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 0059f87f
     LEA EDI,[ESP + 0x68]                ; 0059f883
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 ; 0059f887
-        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
+        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 0059f88c
     LEA ESI,[ESP + 0x8]                 ; 0059f891
     ADD ESP,0x8                         ; 0059f895
@@ -107,7 +106,7 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 0059f8f0
     PUSH EAX                            ; 0059f8f4
     CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 0059f8f5
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
     ADD ESP,0x8                         ; 0059f8fa
     MOV EAX,dword ptr [ESP + 0xb4]      ; 0059f8fd
     SHL EAX,0x2                         ; 0059f904

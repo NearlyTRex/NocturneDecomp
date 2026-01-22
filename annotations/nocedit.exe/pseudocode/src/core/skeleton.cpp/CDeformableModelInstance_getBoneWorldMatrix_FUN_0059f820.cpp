@@ -1,24 +1,23 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
 // Address: 0059f820
 // Address Range: [[0059f820, 0059fa1c]]
-// Convention: __cdecl
-// Signature: void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
+// Convention: __stack2_esi
+// Signature: CMatrix3x4f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
 
 #include "nocturne.h"
 
-void __cdecl
+CMatrix3x4f * __stack2_esi
 core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
           (CDeformableModelInstance *this_ptr,int bone_index,CMatrix3x4f *out_matrix)
 
 {
   CSkeleton *pCVar1;
   int iVar2;
-  int *unaff_ESI;
-  float *pfVar3;
-  int *piVar4;
+  CMatrix3x4f *pCVar3;
+  float *pfVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
-  CMatrix3x4f *in_stack_ffffff54;
+  CMatrix3x4f local_ac;
   int local_7c;
   float local_78;
   float local_74;
@@ -56,12 +55,12 @@ core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
     }
     else {
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-                (this_ptr,iVar2,in_stack_ffffff54);
-      pfVar3 = (float *)&stack0xffffff54;
+                (this_ptr,iVar2,&local_ac);
+      pCVar3 = &local_ac;
       pCVar5 = &local_4c;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-        pCVar5->m[0].w = *pfVar3;
-        pfVar3 = pfVar3 + (uint)bVar6 * -2 + 1;
+        pCVar5->m[0].w = pCVar3->m[0].w;
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
         pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
       }
       core_xform_cpp_transformVector3x4_FUN_005f4dc0
@@ -85,11 +84,12 @@ core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
       local_54 = local_54 * (this_ptr->bone_transform).current_pose_data[bone_index];
     }
   }
-  piVar4 = &local_7c;
+  pfVar4 = (float *)&local_7c;
+  pCVar3 = out_matrix;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *unaff_ESI = *piVar4;
-    piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-    unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;
+    pCVar3->m[0].w = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

@@ -299,7 +299,7 @@ section .text
     PUSH 0x3fc90fdb                     ; 005c0883
     LEA EDI,[EBP + 0xfffff41a]          ; 005c0888
     CALL core_xform.cpp_buildRotationX_FUN_005f6c40 ; 005c088e
-        ;   XREF to: 005f6c40 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildRotationX_FUN_005f6c40(CMatrix3x4f * output_matrix, float angle_radians)
+        ;   XREF to: 005f6c40 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationX_FUN_005f6c40(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c0893
     ADD ESP,0x4                         ; 005c0898
     LEA EAX,[EBP + 0xfffff41a]          ; 005c089b
@@ -310,7 +310,7 @@ section .text
     LEA ESI,[EBP + 0xfffff4da]          ; 005c08af
     LEA EDI,[EBP + 0xfffff3ea]          ; 005c08b5
     CALL core_xform.cpp_buildRotationY_FUN_005f6cc0 ; 005c08bb
-        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildRotationY_FUN_005f6cc0(CMatrix3x4f * output_matrix, float angle_radians)
+        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationY_FUN_005f6cc0(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c08c0
     LEA ESI,[EBP + 0xfffff4da]          ; 005c08c5
     LEA EAX,[EBP + 0xfffff3ea]          ; 005c08cb
@@ -419,7 +419,7 @@ section .text
     LEA ESI,[EBP + 0xfffffb6a]          ; 005c0a32
     LEA EDI,[EBP + 0xfffff5fa]          ; 005c0a38
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005c0a3e
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c0a43
     LEA ESI,[EBP + 0xfffffb6a]          ; 005c0a48
     LEA EAX,[EBP + 0xfffff5fa]          ; 005c0a4e
@@ -496,7 +496,7 @@ section .text
     LEA ESI,[EBP + 0xfffff8ca]          ; 005c0b57
     LEA EDI,[EBP + 0xfffff56a]          ; 005c0b5d
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005c0b63
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c0b68
     LEA ESI,[EBP + 0xfffff8ca]          ; 005c0b6d
     LEA EAX,[EBP + 0xfffff56a]          ; 005c0b73
@@ -573,7 +573,7 @@ section .text
     LEA ESI,[EBP + 0xfffffaaa]          ; 005c0c64
     LEA EDI,[EBP + 0xfffffa4a]          ; 005c0c6a
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005c0c70
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c0c75
     LEA ESI,[EBP + 0xfffffaaa]          ; 005c0c7a
     LEA EAX,[EBP + 0xfffffa4a]          ; 005c0c80
@@ -715,7 +715,7 @@ section .text
     LEA ESI,[EBP + 0xfffffb3a]          ; 005c0e61
     LEA EDI,[EBP + 0xfffff7da]          ; 005c0e67
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005c0e6d
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c0e72
     LEA ESI,[EBP + 0xfffffb3a]          ; 005c0e77
     LEA EAX,[EBP + 0xfffff7da]          ; 005c0e7d
@@ -745,7 +745,7 @@ section .text
     PUSH 0x3fc90fdb                     ; 005c0ed1
     LEA EDI,[EBP + 0xfffffd1a]          ; 005c0ed6
     CALL core_xform.cpp_buildRotationX_FUN_005f6c40 ; 005c0edc
-        ;   XREF to: 005f6c40 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildRotationX_FUN_005f6c40(CMatrix3x4f * output_matrix, float angle_radians)
+        ;   XREF to: 005f6c40 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationX_FUN_005f6c40(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c0ee1
     ADD ESP,0x4                         ; 005c0ee6
     LEA EAX,[EBP + 0xfffffd1a]          ; 005c0ee9
@@ -756,7 +756,7 @@ section .text
     LEA ESI,[EBP + 0xfffffa7a]          ; 005c0efd
     LEA EDI,[EBP + 0xfffff5ca]          ; 005c0f03
     CALL core_xform.cpp_buildRotationY_FUN_005f6cc0 ; 005c0f09
-        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildRotationY_FUN_005f6cc0(CMatrix3x4f * output_matrix, float angle_radians)
+        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationY_FUN_005f6cc0(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c0f0e
     LEA ESI,[EBP + 0xfffffa7a]          ; 005c0f13
     LEA EAX,[EBP + 0xfffff5ca]          ; 005c0f19
@@ -937,7 +937,7 @@ section .text
     LEA ESI,[EBP + 0xfffff83a]          ; 005c11cb
     LEA EDI,[EBP + 0xfffff6ea]          ; 005c11d1
     CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005c11d7
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c11dc
     LEA ESI,[EBP + 0xfffff83a]          ; 005c11e1
     LEA EAX,[EBP + 0xfffff6ea]          ; 005c11e7
@@ -957,7 +957,7 @@ section .text
     PUSH EAX                            ; 005c121c
     MOVSD.REP ES:EDI,ESI                ; 005c121d
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005c121f
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
     MOV ESI,EAX                         ; 005c1224
     LEA EAX,[EBP + 0x2]                 ; 005c1226
     ADD ESP,0x8                         ; 005c1229
@@ -1148,7 +1148,7 @@ section .text
     PUSH 0x40490fdb                     ; 005c146e
     LEA EDI,[EBP + 0xfffff71a]          ; 005c1473
     CALL core_xform.cpp_buildRotationY_FUN_005f6cc0 ; 005c1479
-        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildRotationY_FUN_005f6cc0(CMatrix3x4f * output_matrix, float angle_radians)
+        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationY_FUN_005f6cc0(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c147e
     LEA ESI,[EBP + 0xfffff74a]          ; 005c1483
     LEA EAX,[EBP + 0xfffff71a]          ; 005c1489
@@ -1181,7 +1181,7 @@ section .text
     LEA ESI,[EBP + 0xfffffd7a]          ; 005c14e8
     LEA EDI,[EBP + 0xfffffc2a]          ; 005c14ee
     CALL core_xform.cpp_buildRotationY_FUN_005f6cc0 ; 005c14f4
-        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildRotationY_FUN_005f6cc0(CMatrix3x4f * output_matrix, float angle_radians)
+        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationY_FUN_005f6cc0(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c14f9
     LEA ESI,[EBP + 0xfffffd7a]          ; 005c14fe
     ADD ESP,0x4                         ; 005c1504
@@ -1210,7 +1210,7 @@ section .text
     PUSH EAX                            ; 005c1551
     MOVSD.REP ES:EDI,ESI                ; 005c1552
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005c1554
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
     MOV ESI,EAX                         ; 005c1559
     LEA EAX,[EBP + 0x2]                 ; 005c155b
     ADD ESP,0x8                         ; 005c155e
@@ -1240,7 +1240,7 @@ section .text
     LEA ESI,[EBP + 0xfffffdaa]          ; 005c15a4
     LEA EDI,[EBP + 0xfffffc2a]          ; 005c15aa
     CALL core_xform.cpp_buildRotationY_FUN_005f6cc0 ; 005c15b0
-        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildRotationY_FUN_005f6cc0(CMatrix3x4f * output_matrix, float angle_radians)
+        ;   XREF to: 005f6cc0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_buildRotationY_FUN_005f6cc0(float angle_radians, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c15b5
     LEA ESI,[EBP + 0xfffffdaa]          ; 005c15ba
     JMP 0x005c1504                      ; 005c15c0

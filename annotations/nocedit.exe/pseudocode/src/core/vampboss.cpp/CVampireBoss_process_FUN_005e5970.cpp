@@ -33,6 +33,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   float10 fVar19;
   float10 fVar20;
   float10 fVar21;
+  float10 extraout_ST1;
   float in_stack_00000008;
   float fVar22;
   float fVar23;
@@ -245,13 +246,14 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
              (float10)(this_ptr->base_enemy).base_character.base_actor.location.position.z;
     CStack_d8.y = (float)fVar16;
     crt_math_c_atan2_FUN_006013b1((float10)local_dc,fVar16);
-    fVar16 = SQRT((float10)local_e0 * (float10)local_e0 +
-                  (float10)CStack_d8.x * (float10)CStack_d8.x);
-    fVar17 = crt_math_c_atan2_FUN_006013b1((float10)local_dc,fVar16);
+    fVar16 = crt_math_c_atan2_FUN_006013b1
+                       ((float10)local_dc,
+                        SQRT((float10)local_e0 * (float10)local_e0 +
+                             (float10)CStack_d8.x * (float10)CStack_d8.x));
     local_64 = 1.2;
     local_40 = 20.0;
-    local_3c = (float)fVar16;
-    local_34 = (CDeformableModelInstance *)(float)-fVar17;
+    local_3c = (float)extraout_ST1;
+    local_34 = (CDeformableModelInstance *)(float)-fVar16;
     if (*(int *)(this_ptr->field5_0xce8f4 + 0x10) == 1) {
       local_3c = -local_3c;
       local_34 = (CDeformableModelInstance *)-(float)local_34;

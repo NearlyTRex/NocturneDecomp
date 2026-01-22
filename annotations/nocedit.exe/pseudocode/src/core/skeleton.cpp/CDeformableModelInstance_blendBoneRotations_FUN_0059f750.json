@@ -9,14 +9,14 @@
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 49,
         "line": 45,
         "message": "invalid cast from type 'CSkeleton*' to type 'float'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
-        "line": 46,
+        "column": 86,
+        "line": 45,
         "message": "'stack0xffffffe8' was not declared in this scope"
       },
       {
@@ -404,14 +404,14 @@
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_0000001c",
-      "text": "(quat1_ptr,in_stack_0000001c,(float)this_ptr_00,",
+      "text": "(quat1_in,in_stack_0000001c,(float)this_ptr_00,(CQuaternion4f *)&stack0xffffffe8",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 38,
       "match": "&stack0xffffffe8",
-      "text": "(CQuaternion4f *)&stack0xffffffe8);",
+      "text": "(quat1_in,in_stack_0000001c,(float)this_ptr_00,(CQuaternion4f *)&stack0xffffffe8",
       "type": "stack_ref"
     },
     {

@@ -14,11 +14,11 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
 {
   int iVar1;
   CMatrix3x4f *pCVar2;
-  CVector3f *pCVar3;
+  CMatrix3x4f *pCVar3;
   byte bVar4;
-  CVector3f local_50 [4];
-  CVector3i local_20;
-  CVector3i local_14;
+  CMatrix3x4f local_50;
+  CVector3f local_20;
+  CVector3f local_14;
   
   bVar4 = 0;
   if ((*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 == 0) ||
@@ -33,18 +33,18 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
       pCVar2 = (this_ptr->base_enemy).base_character.model.bone_transform.bone_world_matrices +
                *(int *)(this_ptr->field4_0xbec0 + 0x10);
-      pCVar3 = local_50;
+      pCVar3 = &local_50;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        pCVar3->x = pCVar2->m[0].w;
+        pCVar3->m[0].w = pCVar2->m[0].w;
         pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-        pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
       }
-      core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_50,(CMatrix3x3f *)&local_14);
-      core_xform_cpp_getTranslation_FUN_005f6110(local_50,(CMatrix3x4f *)&local_20);
+      core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_50,&local_14);
+      core_xform_cpp_getTranslation_FUN_005f6110(&local_50,&local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,&local_20);
+                (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,(CVector3i *)&local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,&local_14,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,(CVector3i *)&local_14,(CVector3i *)0x0);
       core_werewolf_cpp_FUN_005f1230();
       core_werewolf_cpp_FUN_005f1230();
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

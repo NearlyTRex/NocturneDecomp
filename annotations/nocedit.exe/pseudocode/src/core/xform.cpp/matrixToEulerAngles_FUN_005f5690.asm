@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+; __cdecl CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   euler_out
-; CMatrix3x3f *    Stack[0x8]:4   matrix_ptr
+; CMatrix3x3f *    Stack[0x4]:4   matrix_in
+; CVector3f *      Stack[0x8]:4   euler_out
 ; Local Variables:
 ; undefined8       Stack[-0xb0]:8  local_b0
 ; undefined8       Stack[-0xa8]:8  local_a8

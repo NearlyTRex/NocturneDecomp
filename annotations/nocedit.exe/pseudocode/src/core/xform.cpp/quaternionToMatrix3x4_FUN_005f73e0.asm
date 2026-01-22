@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_ptr)
+; __stack_esi CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CQuaternion4f * quat_in, CMatrix3x4f * matrix_out)
 ;
 ; Parameters:
-; CMatrix3x4f *    Stack[0x4]:4   matrix_out
+; CQuaternion4f *  Stack[0x4]:4   quat_in
 ; Local Variables:
 ; undefined1       Stack[-0x38]:1  local_38
 ;
@@ -30,7 +30,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005f73ec
     PUSH EAX                            ; 005f73f0
     CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005f73f1
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
     ADD ESP,0x8                         ; 005f73f6
     MOV EAX,ESP                         ; 005f73f9
     PUSH EAX                            ; 005f73fb

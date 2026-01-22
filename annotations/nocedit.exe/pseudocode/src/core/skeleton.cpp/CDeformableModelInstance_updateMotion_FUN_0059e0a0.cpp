@@ -21,7 +21,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
   CDeformableModelInstance *pCVar8;
   CSkeleton *this_ptr_00;
   int iVar9;
-  CQuaternion4f *result_out;
+  CQuaternion4f *quat1_in;
   CSkeleton *pCVar10;
   int iVar11;
   CQuaternion4f *pCVar12;
@@ -209,7 +209,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
             local_80 = iVar11 * 0x10;
             core_xform_cpp_negateFirstComponent_FUN_005f75e0(local_bec + iVar11,&local_15c);
             pCVar12 = &local_20c;
-            result_out = (CQuaternion4f *)((int)&local_bec[0].w + local_68);
+            quat1_in = (CQuaternion4f *)((int)&local_bec[0].w + local_68);
             local_20c.w = local_15c.w;
             puVar14 = (uint *)((int)&local_20c + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8);
             puVar13 = (uint *)((int)&local_15c + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8);
@@ -217,7 +217,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                  *(uint *)((int)&local_15c + (uint)bVar19 * -8 + 4);
             *puVar14 = *puVar13;
             puVar14[(uint)bVar19 * -2 + 1] = puVar13[(uint)bVar19 * -2 + 1];
-            core_xform_cpp_multiplyQuaternion_FUN_005f7640(result_out,pCVar12,&local_14c);
+            core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_in,pCVar12,&local_14c);
             pCVar12 = (CQuaternion4f *)((int)&local_74->w + local_80);
             local_bc[0].w = local_14c.w;
             puVar14 = (uint *)((int)local_bc + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8);

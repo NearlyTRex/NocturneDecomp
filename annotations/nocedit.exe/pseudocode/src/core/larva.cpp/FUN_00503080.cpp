@@ -27,12 +27,13 @@ void core_larva_cpp_FUN_00503080(void)
   int extraout_EAX;
   int extraout_EAX_00;
   uint uVar11;
-  unkbyte10 Var12;
+  float10 fVar12;
   float10 fVar13;
   float10 fVar14;
+  float10 extraout_ST1;
+  float10 extraout_ST2;
   float10 fVar15;
-  float10 fVar16;
-  float10 fVar17;
+  unkbyte10 extraout_ST3;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   CVector3f local_128;
@@ -112,23 +113,23 @@ void core_larva_cpp_FUN_00503080(void)
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
       local_ec = local_14 + local_ec;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
-      Var12 = fsin((float10)-0.52359877558333301);
-      fVar17 = (float10)fptan((float10)0.52359877558333301);
-      fVar15 = (float10)local_14 + (float10)local_e4;
-      local_e4 = (float)fVar15;
-      fVar16 = crt_math_c_atan2_FUN_006013b1((float10)local_ec,fVar15);
+      fsin((float10)-0.52359877558333301);
+      fptan((float10)0.52359877558333301);
+      fVar14 = (float10)local_e4;
+      local_e4 = (float)((float10)local_14 + fVar14);
+      fVar14 = crt_math_c_atan2_FUN_006013b1((float10)local_ec,(float10)local_14 + fVar14);
       fVar3 = SQRT(local_ec * local_ec + local_e4 * local_e4);
-      fVar13 = (float10)fcos(Var12);
-      fVar14 = (float10)fsin(fVar16);
-      fVar16 = (float10)fcos(fVar16);
+      fVar12 = (float10)fcos(extraout_ST3);
+      fVar13 = (float10)fsin(fVar14);
+      fVar14 = (float10)fcos(fVar14);
       local_60 = (double)fVar3;
       local_24 = fVar3 * (float)32 * fVar3;
-      fVar15 = fVar13 * (float10)2.0f * fVar13 *
-               (fVar15 * (float10)fVar3 - (float10)local_e8);
-      local_ac = (float)-fVar17;
+      fVar15 = fVar12 * (float10)2.0f * fVar12 *
+               (extraout_ST1 * (float10)fVar3 - (float10)local_e8);
+      local_ac = (float)-extraout_ST2;
       local_20 = (float)fVar15;
-      local_b0 = (float)(fVar14 * fVar13);
-      local_a8 = (float)(fVar16 * fVar13);
+      local_b0 = (float)(fVar13 * fVar12);
+      local_a8 = (float)(fVar14 * fVar12);
       if ((float10)0 < fVar15) {
         local_1c = SQRT(local_24 / local_20);
         local_8c = local_b0 * local_1c;
@@ -310,13 +311,13 @@ LAB_00503184:
     iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10));
     if (iVar7 == 0) {
-      fVar17 = (float10)1;
-      fVar15 = (float10)1.4426950408889634 *
+      fVar14 = (float10)1;
+      fVar12 = (float10)1.4426950408889634 *
                (float10)0.6931471805599453 * (float10)(in_stack_00000004->base_character).size_scale
                * (float10)-0.20000000000000001;
-      fVar16 = (float10)f2xm1(fVar15 - (fVar15 / fVar17) * fVar17);
-      fVar17 = (float10)fscale(fVar16 + fVar17,fVar15);
-      local_68 = (double)fVar17;
+      fVar13 = (float10)f2xm1(fVar12 - (fVar12 / fVar14) * fVar14);
+      fVar14 = (float10)fscale(fVar13 + fVar14,fVar12);
+      local_68 = (double)fVar14;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.99,1.01);
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (&stack0xfffffe10,"slime.wav @%f *%f",

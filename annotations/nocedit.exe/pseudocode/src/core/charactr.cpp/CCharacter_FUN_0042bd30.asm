@@ -188,7 +188,7 @@ section .text
     PUSH EAX                            ; 0042beb3
     MOVSD.REP ES:EDI,ESI                ; 0042beb4
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 0042beb6
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 0042bebb
     PUSH EAX                            ; 0042bebe
     MOV EAX,dword ptr [EBP + -0xe]      ; 0042bebf

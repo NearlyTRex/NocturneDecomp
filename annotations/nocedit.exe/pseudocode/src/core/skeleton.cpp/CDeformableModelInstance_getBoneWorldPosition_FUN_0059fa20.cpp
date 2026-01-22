@@ -14,11 +14,11 @@ core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
   CVector3f *input_vector;
   CSkeleton *pCVar1;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
+  CMatrix3x4f *pCVar3;
+  CMatrix3x4f *pCVar4;
   byte bVar5;
-  CMatrix3x4f *in_stack_ffffff90;
-  uint local_40 [12];
+  CMatrix3x4f local_70;
+  CMatrix3x4f local_40;
   
   bVar5 = 0;
   if (bone_index < 0) {
@@ -37,15 +37,14 @@ core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
     return out_position;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-            (this_ptr,iVar2,in_stack_ffffff90);
-  puVar3 = local_40;
-  puVar4 = (uint *)&stack0xffffff90;
+            (this_ptr,iVar2,&local_40);
+  pCVar3 = &local_40;
+  pCVar4 = &local_70;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    pCVar4->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  core_xform_cpp_transformVector3x4_FUN_005f4dc0
-            (out_position,input_vector,(CMatrix3x4f *)&stack0xffffff90);
+  core_xform_cpp_transformVector3x4_FUN_005f4dc0(out_position,input_vector,&local_70);
   return out_position;
 }

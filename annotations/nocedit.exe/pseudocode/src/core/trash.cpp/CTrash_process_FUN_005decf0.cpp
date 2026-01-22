@@ -19,11 +19,12 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   CVector3f *pCVar7;
   char *pcVar8;
   CMatrix3x4f *pCVar9;
-  byte bVar10;
+  CMatrix3x3f *pCVar10;
+  byte bVar11;
   float in_stack_00000008;
   CMatrix3x4f local_1a8;
   CMatrix3x4f local_178;
-  CVector3f local_148 [4];
+  CMatrix3x3f local_148;
   CMatrix3x4f local_118;
   float local_e8;
   float local_e4;
@@ -49,7 +50,11 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   float local_94;
   float local_90;
   float local_8c;
-  CMatrix3x3f local_88;
+  CVector3f local_88;
+  float local_7c;
+  float local_78;
+  float local_74;
+  CVector3f local_70;
   float local_64;
   float local_60;
   float local_5c;
@@ -70,7 +75,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   CVector3f *local_18;
   float local_14;
   
-  bVar10 = 0;
+  bVar11 = 0;
   iVar5 = core_hero_cpp_FUN_004f2220();
   if (iVar5 == 0) {
     iVar5 = core_hero_cpp_FUN_004f2220();
@@ -170,7 +175,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   local_4c = local_dc;
   local_44 = local_d4;
   pCVar7 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                     (&this_ptr->base_actor,local_88.m + 2,pCVar7);
+                     (&this_ptr->base_actor,&local_70,pCVar7);
   local_a0 = pCVar7->x * 0.5f;
   local_9c = pCVar7->y * 0.5f;
   local_98 = 0.5f * pCVar7->z;
@@ -183,14 +188,12 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   *(float *)pcVar1 = *(float *)pcVar1 + local_a0;
   *(float *)(this_ptr->field4_0x2e0 + 0x18) = *(float *)(this_ptr->field4_0x2e0 + 0x18) + local_9c;
   *(float *)(this_ptr->field4_0x2e0 + 0x1c) = *(float *)(this_ptr->field4_0x2e0 + 0x1c) + local_98;
-  local_88.m[1].x = local_dc * in_stack_00000008;
-  local_88.m[1].y = local_d8 * in_stack_00000008;
-  local_88.m[1].z = local_d4 * in_stack_00000008;
-  *(float *)pcVar8 = *(float *)pcVar8 + local_88.m[1].x;
-  *(float *)(this_ptr->field4_0x2e0 + 0xc) =
-       *(float *)(this_ptr->field4_0x2e0 + 0xc) + local_88.m[1].y;
-  *(float *)(this_ptr->field4_0x2e0 + 0x10) =
-       *(float *)(this_ptr->field4_0x2e0 + 0x10) + local_88.m[1].z;
+  local_7c = local_dc * in_stack_00000008;
+  local_78 = local_d8 * in_stack_00000008;
+  local_74 = local_d4 * in_stack_00000008;
+  *(float *)pcVar8 = *(float *)pcVar8 + local_7c;
+  *(float *)(this_ptr->field4_0x2e0 + 0xc) = *(float *)(this_ptr->field4_0x2e0 + 0xc) + local_78;
+  *(float *)(this_ptr->field4_0x2e0 + 0x10) = *(float *)(this_ptr->field4_0x2e0 + 0x10) + local_74;
   fVar6 = SQRT(*(float *)(this_ptr->field4_0x2e0 + 0x1c) * *(float *)(this_ptr->field4_0x2e0 + 0x1c)
                + *(float *)pcVar1 * *(float *)pcVar1 +
                  *(float *)(this_ptr->field4_0x2e0 + 0x18) *
@@ -268,13 +271,13 @@ LAB_005df3d0:
             (&local_118,&g_ZeroVector,&local_34);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_118,&local_1a8,&local_178);
   pCVar9 = &local_178;
-  pCVar7 = local_148;
+  pCVar10 = &local_148;
   for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    pCVar7->x = pCVar9->m[0].w;
-    pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);
-    pCVar7 = (CVector3f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
+    pCVar10->m[0].x = pCVar9->m[0].w;
+    pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar11 * -2 + 1) * 4);
+    pCVar10 = (CMatrix3x3f *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);
   }
-  pCVar7 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_148,&local_88);
+  pCVar7 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_148,&local_88);
   if (pCVar7 != local_18) {
     local_18->x = pCVar7->x;
     local_18->y = pCVar7->y;

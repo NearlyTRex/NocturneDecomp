@@ -71445,7 +71445,7 @@
       ],
       "params":[
         {
-          "name":"model_ptr",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -85841,7 +85841,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionFromAngleY_FUN_005f79f0",
-    "ret":"void",
+    "ret":"CQuaternion4f*",
     "vars":{
       "locals":[
         {
@@ -85927,7 +85927,7 @@
           "type":"float"
         },
         {
-          "name":"quat_ptr",
+          "name":"quat_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -85941,7 +85941,17 @@
           },
           "type":"CQuaternion4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -85956,7 +85966,7 @@
     "conv":"__stack2_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70",
-    "ret":"void",
+    "ret":"CQuaternion4f*",
     "vars":{
       "locals":[
         {
@@ -86058,7 +86068,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"quat_ptr",
+          "name":"quat_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -86072,7 +86082,17 @@
           },
           "type":"CQuaternion4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -86109,7 +86129,7 @@
       ],
       "params":[
         {
-          "name":"euler_out",
+          "name":"quat_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -86122,10 +86142,10 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CQuaternion4f*"
         },
         {
-          "name":"quat_ptr",
+          "name":"vector_out",
           "storage":{
             "offset":8,
             "size":4,
@@ -86138,7 +86158,7 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{

@@ -26,8 +26,7 @@ int core_platfrm_cpp_FUN_0054d720(void)
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  CVector3f CStack_28;
-  CVector3f CStack_1c;
+  byte auStack_28 [24];
   float fStack_10;
   
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
@@ -83,7 +82,8 @@ LAB_0054d802:
     (pCVar2->location).position.y = (float)in_stack_00000004[2].was_created;
     (pCVar2->location).position.z = in_stack_00000004[2].create_prob;
     pCVar7 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                       (&CStack_28,(CQuaternion4f *)(in_stack_00000004[2].create_event + 0xc));
+                       ((CQuaternion4f *)auStack_28,
+                        (CVector3f *)(in_stack_00000004[2].create_event + 0xc));
     if (&pCVar2->orient != (COrientation *)pCVar7) {
       (pCVar2->orient).pitch = pCVar7->x;
       (pCVar2->orient).bank = pCVar7->y;
@@ -94,7 +94,8 @@ LAB_0054d802:
     (in_stack_00000004->location).position.y = *(float *)(in_stack_00000004[2].create_event + 4);
     (in_stack_00000004->location).position.z = *(float *)(in_stack_00000004[2].create_event + 8);
     pCVar7 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                       (&CStack_1c,(CQuaternion4f *)(in_stack_00000004[2].create_event + 0x1c));
+                       ((CQuaternion4f *)(auStack_28 + 0xc),
+                        (CVector3f *)(in_stack_00000004[2].create_event + 0x1c));
     if (&in_stack_00000004->orient != (COrientation *)pCVar7) {
       (in_stack_00000004->orient).pitch = pCVar7->x;
       (in_stack_00000004->orient).bank = pCVar7->y;

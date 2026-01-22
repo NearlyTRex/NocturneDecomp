@@ -2,13 +2,13 @@
 // Address: 0059c2f0
 // Address Range: [[0059c2f0, 0059c5d1]]
 // Convention: __cdecl
-// Signature: int core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel * model_ptr, int bone_index, CVector3f * reference_position)
+// Signature: int core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel * this_ptr, int bone_index, CVector3f * reference_position)
 
 #include "nocturne.h"
 
 int __cdecl
 core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
-          (CDeformableModel *model_ptr,int bone_index,CVector3f *reference_position)
+          (CDeformableModel *this_ptr,int bone_index,CVector3f *reference_position)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -42,7 +42,7 @@ core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
   local_48 = 1e+30;
   local_30 = 0;
   local_44 = 0;
-  if (1 < model_ptr->num_parts) {
+  if (1 < this_ptr->num_parts) {
     pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeleton.cpp",0x5ef);
     local_24 = (CDeformableModelInstance *)0x0;
     if (pCVar1 != (CDeformableModelInstance *)0x0) {
@@ -54,15 +54,15 @@ core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
     }
     pCVar1 = local_24;
-    core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(local_24,model_ptr);
+    core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(local_24,this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(pCVar1,0);
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
               (pCVar1,&local_6c,bone_index);
     local_38 = 0;
-    if (0 < model_ptr->num_parts) {
-      local_3c = model_ptr;
+    if (0 < this_ptr->num_parts) {
+      local_3c = this_ptr;
       do {
         local_18 = 0.0;
         local_1c = 0;
@@ -73,10 +73,10 @@ core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
         if (0 < local_3c->parts[0].tri_counts[0]) {
           do {
             puVar6 = (ushort *)
-                     ((int)&(model_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_2c);
+                     ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_2c);
             local_20 = puVar6 + 3;
             do {
-              pSVar7 = model_ptr->vertex_data_ptr[0] + *puVar6;
+              pSVar7 = this_ptr->vertex_data_ptr[0] + *puVar6;
               iVar2 = 0;
               pSVar4 = pSVar7;
               pSVar5 = pSVar7;
@@ -124,7 +124,7 @@ core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
         }
         local_3c = (CDeformableModel *)(local_3c->tri_count + 3);
         local_38 = local_38 + 1;
-      } while (local_38 < model_ptr->num_parts);
+      } while (local_38 < this_ptr->num_parts);
     }
     g_CurrentDebugLine = 0x628;
     g_CurrentDebugFilename = "..\\core\\skeleton.cpp";

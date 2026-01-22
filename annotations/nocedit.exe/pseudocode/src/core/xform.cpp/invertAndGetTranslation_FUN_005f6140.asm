@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * core_xform.cpp_invertAndGetTranslation_FUN_005f6140(CVector3f * output_vector, CMatrix3x4f * input_matrix)
+; __cdecl CVector3f * core_xform.cpp_invertAndGetTranslation_FUN_005f6140(CMatrix3x4f * matrix_in, CVector3f * vector_out)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   output_vector
-; CMatrix3x4f *    Stack[0x8]:4   input_matrix
+; CMatrix3x4f *    Stack[0x4]:4   matrix_in
+; CVector3f *      Stack[0x8]:4   vector_out
 ; Local Variables:
 ; undefined1       Stack[-0x6c]:1  local_6c
 ; undefined1       Stack[-0x3c]:1  local_3c
@@ -32,7 +32,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 005f614f
     LEA EDI,[ESP + 0x34]                ; 005f6153
     CALL core_xform.cpp_inverse_FUN_005f6210 ; 005f6157
-        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * matrix_in, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005f615c
     LEA ESI,[ESP + 0x4]                 ; 005f6161
     ADD ESP,0x4                         ; 005f6165
@@ -41,7 +41,7 @@ section .text
     LEA ESI,[ESP + 0x34]                ; 005f616b
     PUSH ESI                            ; 005f616f
     CALL core_xform.cpp_getTranslation_FUN_005f6110 ; 005f6170
-        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_getTranslation_FUN_005f6110(CVector3f * output_vector, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005f6110(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 005f6175
     MOV EAX,EBX                         ; 005f6178
     ADD ESP,0x60                        ; 005f617a

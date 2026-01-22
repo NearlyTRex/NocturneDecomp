@@ -226,14 +226,14 @@ section .text
     PUSH EAX                            ; 005207ac
     MOVSD.REP ES:EDI,ESI                ; 005207ad
     CALL core_xform.cpp_getTranslation_FUN_005f6110 ; 005207af
-        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_getTranslation_FUN_005f6110(CVector3f * output_vector, CMatrix3x4f * input_matrix)
+        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_005f6110(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 005207b4
     LEA EAX,[EBP + 0x5a]                ; 005207b7
     PUSH EAX                            ; 005207ba
     LEA EAX,[EBP + -0x6]                ; 005207bb
     PUSH EAX                            ; 005207be
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005207bf
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 005207c4
     LEA EAX,[EBP + 0x42]                ; 005207c7
     PUSH EAX                            ; 005207ca

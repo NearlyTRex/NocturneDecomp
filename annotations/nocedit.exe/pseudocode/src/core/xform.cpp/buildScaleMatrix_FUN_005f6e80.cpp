@@ -2,16 +2,17 @@
 // Address: 005f6e80
 // Address Range: [[005f6e80, 005f6ed6]]
 // Convention: __stack_esi
-// Signature: void core_xform.cpp_buildScaleMatrix_FUN_005f6e80(CMatrix3x4f * output_matrix, CVector3f * scale_vector)
+// Signature: CMatrix3x4f * core_xform.cpp_buildScaleMatrix_FUN_005f6e80(CVector3f * scale_vector, CMatrix3x4f * matrix_out)
 
 #include "nocturne.h"
 
-void __stack_esi
-core_xform_cpp_buildScaleMatrix_FUN_005f6e80(CMatrix3x4f *output_matrix,CVector3f *scale_vector)
+CMatrix3x4f * __stack_esi
+core_xform_cpp_buildScaleMatrix_FUN_005f6e80(CVector3f *scale_vector,CMatrix3x4f *matrix_out)
 
 {
   int iVar1;
   float *pfVar2;
+  float *pfVar3;
   float local_38 [6];
   uint local_20;
   uint local_1c;
@@ -20,7 +21,7 @@ core_xform_cpp_buildScaleMatrix_FUN_005f6e80(CMatrix3x4f *output_matrix,CVector3
   float local_10;
   uint local_c;
   
-  local_38[0] = output_matrix->m[0].w;
+  local_38[0] = scale_vector->x;
   local_38[1] = 0.0;
   local_38[2] = 0.0;
   local_38[3] = 0.0;
@@ -29,14 +30,15 @@ core_xform_cpp_buildScaleMatrix_FUN_005f6e80(CMatrix3x4f *output_matrix,CVector3
   local_1c = 0;
   local_18 = 0;
   local_14 = 0;
-  local_38[5] = output_matrix->m[0].x;
+  local_38[5] = scale_vector->y;
   local_c = 0;
-  local_10 = output_matrix->m[0].y;
+  local_10 = scale_vector->z;
   pfVar2 = local_38;
+  pfVar3 = (float *)matrix_out;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    scale_vector->x = *pfVar2;
+    *pfVar3 = *pfVar2;
     pfVar2 = pfVar2 + 1;
-    scale_vector = (CVector3f *)&scale_vector->y;
+    pfVar3 = pfVar3 + 1;
   }
-  return;
+  return matrix_out;
 }

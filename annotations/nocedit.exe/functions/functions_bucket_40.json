@@ -87767,7 +87767,7 @@
       ],
       "params":[
         {
-          "name":"output_vector",
+          "name":"matrix_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -87780,10 +87780,10 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CMatrix3x4f*"
         },
         {
-          "name":"input_matrix",
+          "name":"vector_out",
           "storage":{
             "offset":8,
             "size":4,
@@ -87796,7 +87796,7 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -87890,7 +87890,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildRotationX_FUN_005f6c40",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -88120,7 +88120,7 @@
       ],
       "params":[
         {
-          "name":"output_matrix",
+          "name":"angle_radians",
           "storage":{
             "offset":4,
             "size":4,
@@ -88133,10 +88133,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"float"
         },
         {
-          "name":"angle_radians",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -88148,9 +88148,19 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -88165,7 +88175,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildRotationY_FUN_005f6cc0",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -88395,7 +88405,7 @@
       ],
       "params":[
         {
-          "name":"output_matrix",
+          "name":"angle_radians",
           "storage":{
             "offset":4,
             "size":4,
@@ -88408,10 +88418,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"float"
         },
         {
-          "name":"angle_radians",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -88423,9 +88433,19 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -88440,7 +88460,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildRotationZ_FUN_005f6d40",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -88670,7 +88690,7 @@
       ],
       "params":[
         {
-          "name":"output_matrix",
+          "name":"angle_radians",
           "storage":{
             "offset":4,
             "size":4,
@@ -88683,10 +88703,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"float"
         },
         {
-          "name":"angle_radians",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -88698,9 +88718,19 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -88715,7 +88745,7 @@
     "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -88913,7 +88943,7 @@
       ],
       "params":[
         {
-          "name":"output_matrix",
+          "name":"translation",
           "storage":{
             "offset":4,
             "size":4,
@@ -88926,10 +88956,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"CVector3f*"
         },
         {
-          "name":"translation",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -88941,9 +88971,19 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -89156,7 +89196,7 @@
       ],
       "params":[
         {
-          "name":"matrix_out",
+          "name":"y_offset",
           "storage":{
             "offset":4,
             "size":4,
@@ -89169,10 +89209,10 @@
               }
             ]
           },
-          "type":"CMatrix3x4f*"
+          "type":"float"
         },
         {
-          "name":"y_offset",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -89184,7 +89224,7 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CMatrix3x4f*"
         }
       ],
       "ret_storage":{
@@ -89211,7 +89251,7 @@
     "conv":"__stack3_esi",
     "importable":true,
     "name":"core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -89457,7 +89497,7 @@
           "type":"float"
         },
         {
-          "name":"output",
+          "name":"matrix_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -89471,7 +89511,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -89556,7 +89606,7 @@
       ],
       "params":[
         {
-          "name":"result_out",
+          "name":"quat1_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -89572,7 +89622,7 @@
           "type":"CQuaternion4f*"
         },
         {
-          "name":"quat1_ptr",
+          "name":"quat2_in",
           "storage":{
             "offset":8,
             "size":4,
@@ -89588,7 +89638,7 @@
           "type":"CQuaternion4f*"
         },
         {
-          "name":"quat2_ptr",
+          "name":"quat_out",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -89649,7 +89699,7 @@
       ],
       "params":[
         {
-          "name":"euler_out",
+          "name":"quat_in",
           "storage":{
             "offset":4,
             "size":4,
@@ -89662,10 +89712,10 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CQuaternion4f*"
         },
         {
-          "name":"quat_ptr",
+          "name":"vector_out",
           "storage":{
             "offset":8,
             "size":4,
@@ -89678,7 +89728,7 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{

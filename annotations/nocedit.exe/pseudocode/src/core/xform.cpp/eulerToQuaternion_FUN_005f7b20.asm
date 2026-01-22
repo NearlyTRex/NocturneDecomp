@@ -58,7 +58,7 @@ section .text
     LEA ESI,[EBP + -0x1c]               ; 005f7b4d
     MOV EDI,EBX                         ; 005f7b50
     CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 005f7b52
-        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_out)
+        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
     LEA ESI,[EBP + -0x1c]               ; 005f7b57
     ADD ESP,0x4                         ; 005f7b5a
     MOVSD ES:EDI,ESI                    ; 005f7b5d
