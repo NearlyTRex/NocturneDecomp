@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)
+; __stack3_esi void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
-; CVector3i *      Stack[0x8]:4   output_ptr
-; int              Stack[0xc]:4   screen_x
-; int              Stack[0x10]:4   screen_y
+; int              Stack[0x8]:4   screen_x
+; int              Stack[0xc]:4   screen_y
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -25,7 +24,7 @@
 ;   core_sound.cpp_updateListeners_FUN_005b1870 at 005b1c1b
 ;
 ; Referenced Globals:
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
 

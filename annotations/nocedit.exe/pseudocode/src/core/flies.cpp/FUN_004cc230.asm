@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
-;   uint*[1024] g_ZBufferScanlineArray
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ActiveRenderColor
 ;   undefined4 DAT_02d7a800
 ;   undefined4 DAT_02d7a804

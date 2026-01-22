@@ -3,38 +3,44 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 61,
-        "line": 23,
+        "column": 54,
+        "line": 26,
         "message": "'stack0xffffffb0' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
+        "column": 71,
+        "line": 26,
+        "message": "'stack0xffffffbc' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 19,
-        "line": 24,
+        "line": 28,
         "message": "'stack0xffffffb4' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 25,
+        "line": 29,
         "message": "'stack0xffffffc0' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 26,
+        "line": 30,
         "message": "'stack0xffffffb8' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 27,
+        "line": 31,
         "message": "'stack0xffffffc4' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 34,
+        "line": 38,
         "message": "'ROUND' was not declared in this scope"
       }
     ],
@@ -50,18 +56,18 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 122,
+    "complexity_score": 136,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 27,
-    "suspect_count": 8,
+    "pseudocode_lines": 31,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 85
+    "total_lines": 89
   },
   "cross_references": [],
   "function": {
@@ -237,56 +243,63 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 16,
+      "line": 19,
       "match": "&stack0xffffffb0",
-      "text": "engine_matrix_c_transformWorldToView_FUN_0050cc40((int *)&stack0xffffffb0,(int *)0x0);",
+      "text": "engine_matrix_c_transformWorldToView_FUN_0050cc40(&stack0xffffffb0,&stack0xffffffbc);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 17,
+      "line": 19,
+      "match": "&stack0xffffffbc",
+      "text": "engine_matrix_c_transformWorldToView_FUN_0050cc40(&stack0xffffffb0,&stack0xffffffbc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 21,
       "match": "&stack0xffffffb4",
       "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar1 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 21,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar1 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 18,
+      "line": 22,
       "match": "&stack0xffffffc0",
       "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar1 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 19,
+      "line": 23,
       "match": "&stack0xffffffb8",
       "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 24,
       "match": "&stack0xffffffc4",
       "text": "*(uint *)(&stack0xffffffc4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 31,
       "match": "ROUND",
       "text": "return (int)ROUND(dVar2);",
       "type": "decompiler_intrinsic"

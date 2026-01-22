@@ -26,7 +26,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CGame* g_CGamePtr = 02d81a9c
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   CGame g_CGameInstance
 ;   undefined4 DAT_02d81c80
 ;

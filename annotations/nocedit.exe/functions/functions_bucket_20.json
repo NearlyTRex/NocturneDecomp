@@ -13165,7 +13165,7 @@
         "start":"0044d2a0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack3_esi",
     "importable":true,
     "name":"core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0",
     "ret":"void",
@@ -13238,7 +13238,7 @@
           "type":"CDemonCamera*"
         },
         {
-          "name":"output_ptr",
+          "name":"screen_x",
           "storage":{
             "offset":8,
             "size":4,
@@ -13251,10 +13251,10 @@
               }
             ]
           },
-          "type":"CVector3i*"
+          "type":"int"
         },
         {
-          "name":"screen_x",
+          "name":"screen_y",
           "storage":{
             "offset":12,
             "size":4,
@@ -13270,20 +13270,19 @@
           "type":"int"
         },
         {
-          "name":"screen_y",
+          "name":"output_ptr",
           "storage":{
-            "offset":16,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"int"
+          "type":"CVector3i*"
         }
       ]
     }
@@ -84941,7 +84940,7 @@
         "start":"005f6e20"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20",
     "ret":"void",
@@ -85160,13 +85159,12 @@
         {
           "name":"scale_factor",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -85185,7 +85183,7 @@
         "start":"005f6fa0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0",
     "ret":"CMatrix3x4f*",
@@ -85404,13 +85402,12 @@
         {
           "name":"z_offset",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -85439,7 +85436,7 @@
         "start":"005f7420"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_matrixToQuaternion_FUN_005f7420",
     "ret":"CQuaternion4f*",
@@ -85544,7 +85541,7 @@
       ],
       "params":[
         {
-          "name":"quat_out",
+          "name":"matrix_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -85557,23 +85554,22 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"CMatrix3x3f*"
         },
         {
-          "name":"matrix_ptr",
+          "name":"quat_out",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"CMatrix3x3f*"
+          "type":"CQuaternion4f*"
         }
       ],
       "ret_storage":{
@@ -85631,7 +85627,7 @@
         "start":"005f7b20"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_eulerToQuaternion_FUN_005f7b20",
     "ret":"CQuaternion4f*",
@@ -85720,7 +85716,7 @@
       ],
       "params":[
         {
-          "name":"quat_out",
+          "name":"euler_angles",
           "storage":{
             "offset":4,
             "size":4,
@@ -85733,23 +85729,22 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"CVector3f*"
         },
         {
-          "name":"euler_angles",
+          "name":"quat_out",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CQuaternion4f*"
         }
       ],
       "ret_storage":{

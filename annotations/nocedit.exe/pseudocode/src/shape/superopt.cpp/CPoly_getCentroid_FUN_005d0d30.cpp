@@ -1,19 +1,18 @@
 // Name: shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
 // Address: 005d0d30
 // Address Range: [[005d0d30, 005d0e1e]]
-// Convention: __cdecl
+// Convention: __stack_esi
 // Signature: CVector3d * shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30(CPoly * this_ptr, CVector3d * out_centroid)
 
 #include "nocturne.h"
 
-CVector3d * __cdecl
+CVector3d * __stack_esi
 shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly *this_ptr,CVector3d *out_centroid)
 
 {
   CVert *pCVar1;
   CVert *pCVar2;
   int iVar3;
-  CVector3d *unaff_ESI;
   double *pdVar4;
   double *pdVar5;
   CVector3d *pCVar6;
@@ -62,11 +61,11 @@ shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly *this_ptr,CVector3d *out
   local_68 = local_20 * 0.33333333333333298;
   local_60 = local_18 * 0.33333333333333298;
   pdVar4 = &local_70;
-  pCVar6 = unaff_ESI;
+  pCVar6 = out_centroid;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
     *(uint *)&pCVar6->x = *(uint *)pdVar4;
     pdVar4 = (double *)((int)pdVar4 + 4);
     pCVar6 = (CVector3d *)((int)&pCVar6->x + 4);
   }
-  return unaff_ESI;
+  return out_centroid;
 }

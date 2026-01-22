@@ -8,16 +8,16 @@
         "message": "ambiguating new declaration of 'void core_conveyor_cpp_FUN_00441d60()'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 40,
-        "message": "'stack0xffffffe8' was not declared in this scope; did you mean 'in_stack_ffffffe4'?"
+        "category": "other",
+        "column": 21,
+        "line": 39,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 41,
-        "message": "'stack0xffffffec' was not declared in this scope; did you mean 'in_stack_ffffffe4'?"
+        "category": "other",
+        "column": 23,
+        "line": 40,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -108,67 +108,79 @@
       },
       {
         "category": "other",
-        "column": 14,
+        "column": 49,
+        "line": 35,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
         "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 4,
         "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 38,
+        "column": 12,
+        "line": 39,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 46,
+        "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 47,
+        "line": 44,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 48,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 48,
+        "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 55,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 336,
+    "complexity_score": 293,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 46,
-    "suspect_count": 28,
+    "pseudocode_lines": 43,
+    "suspect_count": 24,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "pointer_cast",
+      "stack_param"
     ],
-    "total_lines": 107
+    "total_lines": 104
   },
   "cross_references": [],
   "function": {
@@ -252,13 +264,6 @@
       "line": 12,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_ffffffe4",
-      "text": "CVector3f *in_stack_ffffffe4;",
       "type": "stack_param"
     },
     {
@@ -354,91 +359,70 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000004",
-      "text": "((CQuaternion4f *)(in_stack_00000004 + 0x30),in_stack_ffffffe4);",
+      "text": "core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(in_stack_00000004 + 0x30),&local_1c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
-      "match": "in_stack_ffffffe4",
-      "text": "((CQuaternion4f *)(in_stack_00000004 + 0x30),in_stack_ffffffe4);",
+      "match": "in_stack_00000004",
+      "text": "puVar2 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
-      "text": "puVar1 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);",
+      "text": "*(float *)(in_stack_00000004 + 0x344) = local_1c.w;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "*(CVector3f **)(in_stack_00000004 + 0x344) = in_stack_ffffffe4;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)&local_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_ffffffe4",
-      "text": "*(CVector3f **)(in_stack_00000004 + 0x344) = in_stack_ffffffe4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 33,
-      "match": "&stack0xffffffe8",
-      "text": "*puVar1 = *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0xffffffec",
-      "text": "*puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffffec",
-      "text": "((int)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "*puVar2 = *(uint *)((int)&local_1c + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "puVar3 = (uint *)(in_stack_00000004 + 0x338 + (uint)bVar5 * -8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "puVar1 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x334) = *(uint *)(in_stack_00000004 + 0x344);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x334) = *(uint *)(in_stack_00000004 + 0x344);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0xfc) = 1;",
       "type": "stack_param"

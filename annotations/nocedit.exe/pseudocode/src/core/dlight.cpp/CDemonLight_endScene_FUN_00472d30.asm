@@ -20,7 +20,7 @@
 ;   double g_ShadowDepthToDistanceScale = 0.00390625
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

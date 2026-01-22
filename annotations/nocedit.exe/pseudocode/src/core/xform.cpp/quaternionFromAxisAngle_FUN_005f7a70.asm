@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70(CQuaternion4f * quat_ptr, float angle_radians, CVector3f * axis_ptr)
+; __stack2_esi void core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70(float angle_radians, CVector3f * axis_ptr, CQuaternion4f * quat_ptr)
 ;
 ; Parameters:
-; CQuaternion4f *  Stack[0x4]:4   quat_ptr
-; float            Stack[0x8]:4   angle_radians
-; CVector3f *      Stack[0xc]:4   axis_ptr
+; float            Stack[0x4]:4   angle_radians
+; CVector3f *      Stack[0x8]:4   axis_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

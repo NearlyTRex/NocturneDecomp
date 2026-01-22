@@ -4,31 +4,31 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 49,
+        "line": 37,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 52,
+        "line": 40,
         "message": "'SUB84' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 73,
+        "line": 55,
         "message": "'CONCAT44' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 83,
+        "line": 63,
         "message": "'CONCAT44' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 94,
+        "line": 74,
         "message": "'CONCAT44' was not declared in this scope"
       }
     ],
@@ -44,17 +44,16 @@
   },
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 515,
+    "complexity_score": 206,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 155,
-    "suspect_count": 35,
+    "pseudocode_lines": 131,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 521
+    "total_lines": 497
   },
   "cross_references": [
     {
@@ -413,249 +412,53 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_ECX",
-      "text": "CMatrix3x3f *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX_00",
-      "text": "CMatrix3x3f *extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_ECX_01",
-      "text": "CMatrix3x3f *extraout_ECX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EDX",
-      "text": "CVector3f *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_EDX_00",
-      "text": "CVector3f *extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EDX_01",
-      "text": "CVector3f *extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EDX_02",
-      "text": "CVector3f *extraout_EDX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EDX_03",
-      "text": "CVector3f *extraout_EDX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX_04",
-      "text": "CVector3f *extraout_EDX_04;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EDX_05",
-      "text": "CVector3f *extraout_EDX_05;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_ST1",
-      "text": "float10 extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 42,
-      "match": "extraout_ST1",
-      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 42,
-      "match": "extraout_ST1",
-      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 30,
       "match": "SQRT",
-      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
+      "text": "fVar4 = SQRT((float10)1 - fVar4 * fVar4);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_EDX_00",
-      "text": "extraout_EDX_00->x = (float)fVar6;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 33,
       "match": "SUB84",
-      "text": "uStack_94 = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "uStack_94 = SUB84 /* extract 2-byte value */(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
-      "match": "extraout_ECX",
-      "text": "this_ptr = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 47,
-      "match": "extraout_EDX_00",
-      "text": "euler_angles = extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 50,
-      "match": "extraout_ECX",
-      "text": "fVar2 = extraout_ECX->m[0].z * fVar3;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 38,
       "match": "SUB84",
-      "text": "uStack_84 = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "uStack_84 = SUB84 /* extract 2-byte value */(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 54,
-      "match": "extraout_ECX",
-      "text": "dVar1 = (double)(extraout_ECX->m[2].z * fVar3);",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 41,
       "match": "SUB84",
       "text": "uStack_5c = SUB84 /* extract 2-byte value */(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
-      "match": "extraout_ECX",
-      "text": "pCVar4 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
-      "match": "extraout_EDX_00",
-      "text": "pCVar5 = extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
-      "match": "extraout_ECX_01",
-      "text": "pCVar4 = extraout_ECX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 64,
-      "match": "extraout_EDX_04",
-      "text": "pCVar5 = extraout_EDX_04;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 48,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_84,local_68) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 74,
-      "match": "extraout_ECX_00",
-      "text": "pCVar4 = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_EDX_01",
-      "text": "pCVar5 = extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 56,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_5c,local_80) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 67,
       "match": "CONCAT44",
       "text": "fVar3 = 1.0 / (float)(double)CONCAT44 /* combine 2-byte values */(uStack_94,local_98);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 95,
-      "match": "extraout_EDX_05",
-      "text": "pCVar5 = extraout_EDX_05;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 110,
-      "match": "extraout_EDX_02",
-      "text": "pCVar5 = extraout_EDX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 133,
-      "match": "extraout_EDX_03",
-      "text": "euler_angles = extraout_EDX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 148,
-      "match": "extraout_EDX",
-      "text": "euler_angles = extraout_EDX;",
-      "type": "extra_output"
     }
   ]
 }

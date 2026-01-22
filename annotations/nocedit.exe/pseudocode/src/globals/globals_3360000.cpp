@@ -12,8 +12,8 @@ int g_VDIsActorAreaInvalid = {};
 // int[250]
 int g_VDCameraSortIndices[250] = {};
 
-// uint*[1024]
-uint* g_ZBufferScanlineArrayBackup[1024] = {};
+// uint*[1200]
+uint* g_ZBufferScanlineArrayBackup[1200] = {};
 
 // undefined1
 undefined1 DAT_03364d14 = {};

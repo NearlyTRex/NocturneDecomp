@@ -2125,21 +2125,28 @@ def extract_all_function_prototypes(currentProgram):
         currentProgram: The Ghidra program
 
     Returns:
-        List of function entries with name, address, signature, c_name
+        List of function entries with name, address, signature, c_name, convention
     """
     from ghidra_annotations.annotations import is_function_external
 
+    # Iterate through all the functions to build prototype list
     functions_list = []
     function_manager = currentProgram.getFunctionManager()
-
     for func in function_manager.getFunctions(True):
+
         # Skip external/imported functions
         if is_function_external(currentProgram, func):
             continue
 
+        # Get function info
         func_name = func.getName()
         func_addr = str(func.getEntryPoint())
         func_signature = func.getPrototypeString(True, False)
+
+        # Get calling convention
+        calling_convention = func.getCallingConventionName()
+        if calling_convention and not calling_convention.startswith("__"):
+            calling_convention = "__" + calling_convention
 
         # Generate the C-compatible name (dots replaced with underscores)
         c_name = func_name.replace('.', '_')
@@ -2150,15 +2157,70 @@ def extract_all_function_prototypes(currentProgram):
         else:
             c_signature = "void %s(void)" % c_name
 
+        # Insert calling convention into signature after return type
+        # Signature format: "return_type function_name(params)"
+        # Target format: "return_type __convention function_name(params)"
+        if calling_convention and c_signature:
+            c_signature = insert_calling_convention(c_signature, calling_convention)
+
+        # Add extracted function
         functions_list.append({
             'name': func_name,
             'c_name': c_name,
             'address': func_addr,
-            'signature': c_signature
+            'signature': c_signature,
+            'convention': calling_convention
         })
-
     log_info("Extracted %d function prototypes" % len(functions_list))
     return functions_list
+
+
+def insert_calling_convention(signature, convention):
+    """Insert calling convention into a function signature.
+
+    Takes a signature like "void funcname(int x)" and returns
+    "void __convention funcname(int x)".
+
+    Args:
+        signature: The function signature string
+        convention: The calling convention name (e.g., "__watcallRegister")
+
+    Returns:
+        Signature with calling convention inserted after return type
+    """
+    if not convention or not signature:
+        return signature
+
+    # The signature format is: "return_type [modifiers] func_name(params)"
+    # We need to find where the function name starts (last word before '(')
+    # and insert the convention before it
+
+    # Find the opening parenthesis
+    paren_idx = signature.find('(')
+    if paren_idx == -1:
+        return signature
+
+    # Get the part before the parenthesis
+    prefix = signature[:paren_idx].rstrip()
+    params = signature[paren_idx:]
+
+    # Find the last space - the function name is after it
+    last_space_idx = prefix.rfind(' ')
+    if last_space_idx == -1:
+        # No space found, signature might just be "funcname()"
+        return convention + " " + signature
+
+    # Split into return type part and function name
+    return_type_part = prefix[:last_space_idx + 1]  # Include trailing space
+    func_name = prefix[last_space_idx + 1:]
+
+    # Check if calling convention is already in the signature
+    # (some signatures may already include it)
+    if convention in return_type_part:
+        return signature
+
+    # Insert calling convention between return type and function name
+    return return_type_part + convention + " " + func_name + params
 
 
 def extract_types_from_signature(signature):
@@ -2180,7 +2242,6 @@ def extract_types_from_signature(signature):
         'void', 'int', 'char', 'short', 'long', 'float', 'double',
         'signed', 'unsigned', 'const', 'volatile', 'static', 'extern',
         'bool', 'size_t', 'ssize_t', 'ptrdiff_t', 'wchar_t',
-        '__cdecl', '__stdcall', '__fastcall', '__thiscall',
     }
 
     # Extract all potential type identifiers (words that aren't primitives)
@@ -2190,6 +2251,9 @@ def extract_types_from_signature(signature):
     for word in words:
         # Skip primitives and common modifiers
         if word.lower() in primitives or word in primitives:
+            continue
+        # Skip calling conventions (anything starting with double underscore)
+        if word.startswith('__'):
             continue
         # Skip parameter names (heuristic: lowercase single words after type)
         # Skip function names (contain FUN_ or are the declared name)

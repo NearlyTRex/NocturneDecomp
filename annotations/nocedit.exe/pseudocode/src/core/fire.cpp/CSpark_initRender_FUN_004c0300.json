@@ -4,25 +4,37 @@
       {
         "category": "other",
         "column": 13,
-        "line": 52,
+        "line": 50,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 51,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 53,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 61,
+        "line": 59,
         "message": "cast from 'CMatrix3x3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 65,
-        "message": "'stack0xffffff98' was not declared in this scope; did you mean 'in_stack_ffffff98'?"
+        "line": 63,
+        "message": "'stack0xffffff98' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 79,
+        "line": 77,
         "message": "'ROUND' was not declared in this scope"
       }
     ],
@@ -37,40 +49,51 @@
       {
         "category": "other",
         "column": 4,
-        "line": 52,
+        "line": 50,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 51,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 54,
+        "line": 52,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 61,
+        "line": 59,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 283,
+    "complexity_score": 276,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 28,
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 71,
     "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "stack_param",
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 150
+    "total_lines": 148
   },
   "cross_references": [
     {
@@ -382,120 +405,120 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffff98",
-      "text": "CVector3i *in_stack_ffffff98;",
-      "type": "stack_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 32,
+      "line": 30,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 33,
+      "line": 31,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 34,
+      "line": 32,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 35,
+      "line": 33,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 36,
+      "line": 34,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 37,
+      "line": 35,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 38,
+      "line": 36,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 39,
+      "line": 37,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_ffffff98",
-      "text": "(g_CDemonRendererPtr2,in_stack_ffffff98);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 44,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
       "match": "(CMatrix3x3i *)((int)",
       "text": "pCVar2 = (CMatrix3x3i *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 56,
       "match": "&stack0xffffff98",
       "text": "piVar4 = (int *)&stack0xffffff98;",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 70,
       "match": "ROUND",
       "text": "g_BillboardCameraUp.x = (int)ROUND(fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 71,
       "match": "ROUND",
       "text": "g_BillboardCameraUp.y = (int)ROUND(fVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 72,
       "match": "ROUND",
       "text": "g_BillboardCameraUp.z = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
+      "line": 73,
       "match": "extraout_EAX",
       "text": "return extraout_EAX;",
       "type": "extra_output"

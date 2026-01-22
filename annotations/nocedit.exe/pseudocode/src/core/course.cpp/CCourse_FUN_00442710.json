@@ -2,9 +2,21 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 24,
+        "message": "'stack0xffffffe8' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 30,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "other",
         "column": 28,
-        "line": 30,
+        "line": 31,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -21,22 +33,29 @@
         "column": 14,
         "line": 30,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 100,
+    "complexity_score": 126,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 30,
-    "suspect_count": 6,
+    "pseudocode_lines": 31,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 83
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -204,36 +223,50 @@
       "type": "stack_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xffffffe8",
+      "text": "matrix_ptr = (CMatrix3x3f *)&stack0xffffffe8;",
+      "type": "stack_ref"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 23,
+      "match": "(CQuaternion4f *)((int)",
+      "text": "pCVar3 = (CQuaternion4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
       "match": "(CVector3f *)((int)",
       "text": "pCVar1 = (CVector3f *)((int)pCVar1 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 27,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 == pCVar1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 30,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010->x = pCVar1->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 31,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010->y = pCVar1->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 32,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010->z = pCVar1->z;",
       "type": "stack_param"

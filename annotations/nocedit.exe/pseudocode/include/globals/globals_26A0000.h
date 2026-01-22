@@ -32,6 +32,6 @@ extern undefined4 DAT_026a72d8;
 extern undefined4 DAT_026a72dc;
 extern undefined4 DAT_026a72e0;
 
-// void*[1024]
-extern void* g_SavedScreenBufferArray[1024];
+// void*[1200]
+extern void* g_SavedScreenBufferArray[1200];
 

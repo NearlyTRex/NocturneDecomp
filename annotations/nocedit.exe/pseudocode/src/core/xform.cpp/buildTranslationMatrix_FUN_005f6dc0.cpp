@@ -1,18 +1,17 @@
 // Name: core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0
 // Address: 005f6dc0
 // Address Range: [[005f6dc0, 005f6e1b]]
-// Convention: __cdecl
+// Convention: __stack_esi
 // Signature: void core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0(CMatrix3x4f * output_matrix, CVector3f * translation)
 
 #include "nocturne.h"
 
-void __cdecl
+void __stack_esi
 core_xform_cpp_buildTranslationMatrix_FUN_005f6dc0
           (CMatrix3x4f *output_matrix,CVector3f *translation)
 
 {
   int iVar1;
-  uint *unaff_ESI;
   float *pfVar2;
   float local_38 [4];
   uint local_28;
@@ -38,9 +37,9 @@ core_xform_cpp_buildTranslationMatrix_FUN_005f6dc0
   local_c = output_matrix->m[0].y;
   pfVar2 = local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *pfVar2;
+    translation->x = *pfVar2;
     pfVar2 = pfVar2 + 1;
-    unaff_ESI = unaff_ESI + 1;
+    translation = (CVector3f *)&translation->y;
   }
   return;
 }

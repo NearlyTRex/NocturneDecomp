@@ -14,8 +14,8 @@ void core_gore_cpp_FUN_004edbb0(void)
 {
   float fVar1;
   int iVar2;
+  float10 x;
   float10 fVar3;
-  float10 extraout_ST1;
   float *in_stack_0000000c;
   int in_stack_00000010;
   float in_stack_00000014;
@@ -69,10 +69,11 @@ void core_gore_cpp_FUN_004edbb0(void)
                 ((float10)local_3c.x,
                  SQRT((float10)local_40 * (float10)local_40 +
                       (float10)local_3c.y * (float10)local_3c.y));
+      x = (float10)local_3c.x;
       local_24 = 0.0;
-      fVar3 = crt_math_c_atan2_FUN_006013b1((float10)local_44,(float10)local_3c.x);
+      fVar3 = crt_math_c_atan2_FUN_006013b1((float10)local_44,x);
       iVar2 = 0;
-      local_30 = (float)-extraout_ST1;
+      local_30 = (float)-x;
       local_2c = (float)fVar3;
       if (0 < in_stack_00000010) {
         do {

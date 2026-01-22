@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 25,
+        "line": 26,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 26,
+        "line": 27,
         "message": "'SUB84' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
-        "column": 23,
-        "line": 38,
+        "column": 27,
+        "line": 39,
         "message": "'ROUND' was not declared in this scope"
       }
     ],
@@ -32,17 +32,16 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 142,
+    "complexity_score": 88,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 32,
-    "suspect_count": 10,
+    "pseudocode_lines": 33,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unaffected_reg"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 119
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -78,10 +77,10 @@
         "0050dac0"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0",
-    "signature": "CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)"
+    "signature": "CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * input_vector, CVector3i * output_vector)"
   },
   "function_calls": [],
   "globals": [
@@ -197,7 +196,7 @@
       },
       {
         "is_param": true,
-        "name": "inputVector",
+        "name": "input_vector",
         "offset": 4,
         "size": 4,
         "type": "CVector3i *"
@@ -206,74 +205,39 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "text": "CVector3i *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 19,
       "match": "SQRT",
       "text": "dVar4 = SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 20,
       "match": "SUB84",
       "text": "local_38 = SUB84 /* extract 2-byte value */(dVar4,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->x = (int)ROUND(local_30);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
-      "match": "ROUND",
-      "text": "unaff_ESI->x = (int)ROUND(local_30);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->y = (int)ROUND(local_28);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
-      "text": "unaff_ESI->y = (int)ROUND(local_28);",
+      "text": "output_vector->x = (int)ROUND(local_30);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->z = (int)ROUND(local_20);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
-      "text": "unaff_ESI->z = (int)ROUND(local_20);",
+      "text": "output_vector->y = (int)ROUND(local_28);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 34,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
+      "match": "ROUND",
+      "text": "output_vector->z = (int)ROUND(local_20);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

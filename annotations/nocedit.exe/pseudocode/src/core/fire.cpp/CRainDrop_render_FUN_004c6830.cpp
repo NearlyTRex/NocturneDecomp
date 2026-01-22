@@ -12,10 +12,9 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   SRenderVertex *vertex_ptr;
   int iVar1;
   float extraout_EDX;
-  CVector3i *unaff_EDI;
   byte bVar2;
   double dVar3;
-  float afStackY_1020 [983];
+  int aiStackY_1020 [983];
   CVector3i *rotation;
   int iStack_a8;
   int iStack_a4;
@@ -37,8 +36,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   byte local_38 [12];
   int iStack_2c;
   int iStack_28;
-  int local_20;
-  float afStack_1c [2];
+  CVector3i local_20;
   int iStack_14;
   int iStack_10;
   
@@ -55,12 +53,13 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-            (g_CDemonRendererPtr2,unaff_EDI);
+            (g_CDemonRendererPtr2,&local_20);
   rotation = (CVector3i *)0x0;
-  local_38._0_4_ = local_20;
-  *(float *)(local_38 + (uint)bVar2 * -8 + 4) = afStack_1c[(uint)bVar2 * -2];
-  *(float *)(local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       afStack_1c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+  local_38._0_4_ = local_20.x;
+  *(uint *)(local_38 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&local_20 + (uint)bVar2 * -8 + 4);
+  *(uint *)(local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&local_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
             (g_CDemonRendererPtr2,(CVector3i *)local_38,rotation);
   local_5c = 0xbe000000;
@@ -118,7 +117,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[3].v = extraout_EDX;
   g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
-  afStack_1c[1] = g_RenderVertexBuffer[0].w_recip;
+  local_20.z = (int)g_RenderVertexBuffer[0].w_recip;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
             (g_CDemonSetPtr,(CVector3i *)(local_38 + 8),&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);

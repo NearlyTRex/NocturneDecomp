@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 82,
+        "line": 80,
         "message": "'ROUND' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 158,
+        "line": 156,
         "message": "invalid cast from type 'C3DSCamera*' to type 'float'"
       }
     ],
@@ -25,7 +25,19 @@
       {
         "category": "other",
         "column": 26,
+        "line": 72,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 47,
         "line": 74,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 75,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -42,62 +54,25 @@
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 78,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 79,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 26,
-        "line": 148,
+        "line": 146,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 160,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 162,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 164,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 164,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 251,
+    "complexity_score": 185,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 156,
-    "suspect_count": 8,
+    "pseudocode_lines": 155,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "suspect_float"
     ],
-    "total_lines": 224
+    "total_lines": 223
   },
   "cross_references": [],
   "function": {
@@ -220,60 +195,18 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_ECX_00",
-      "text": "int extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 73,
+      "line": 71,
       "match": "8.115118e-39",
-      "text": "fVar9 = 8.115118e-39;",
+      "text": "fVar10 = 8.115118e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 73,
       "match": "ROUND",
-      "text": "auStack_1c[0] = (uint)ROUND(dVar8);",
+      "text": "auStack_1c[0] = (uint)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 153,
-      "match": "extraout_ECX",
-      "text": "*(float *)(extraout_ECX + 0x110) = (float)fVar7;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 155,
-      "match": "extraout_ECX_00",
-      "text": "*(float *)(extraout_ECX_00 + 0x10c) = (float)-fVar7;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 157,
-      "match": "extraout_ECX_00",
-      "text": "((CMatrix3x3f *)(extraout_ECX_00 + 0x118),(CVector3f *)(extraout_ECX_00 + 0x10c));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 157,
-      "match": "extraout_ECX_00",
-      "text": "((CMatrix3x3f *)(extraout_ECX_00 + 0x118),(CVector3f *)(extraout_ECX_00 + 0x10c));",
-      "type": "extra_output"
     }
   ]
 }

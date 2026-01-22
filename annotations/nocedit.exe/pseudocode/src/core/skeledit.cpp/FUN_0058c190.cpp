@@ -28,13 +28,15 @@ uint core_skeledit_cpp_FUN_0058c190(void)
   ushort *puVar13;
   int iVar14;
   uint *puVar15;
-  char *pcVar16;
-  ushort *puVar17;
-  STextureSet *pSVar18;
-  char *pcVar19;
+  CMatrix3x4f *pCVar16;
+  char *pcVar17;
+  ushort *puVar18;
+  STextureSet *pSVar19;
   char *pcVar20;
-  SLodSubmesh *pSVar21;
-  byte bVar22;
+  float *pfVar21;
+  char *pcVar22;
+  SLodSubmesh *pSVar23;
+  byte bVar24;
   CDeformableModel *in_stack_00000004;
   CDeformableModel *in_stack_00000008;
   CDeformableModel *in_stack_ffff5dd8;
@@ -44,7 +46,7 @@ uint core_skeledit_cpp_FUN_0058c190(void)
   uint in_stack_ffff5de8;
   float afStack_a1d0 [3279];
   int aiStack_6e94 [4701];
-  uint local_2520 [1200];
+  float local_2520 [1200];
   CPickList local_1260;
   char local_eb8 [400];
   char local_d28 [260];
@@ -62,7 +64,7 @@ uint core_skeledit_cpp_FUN_0058c190(void)
   CLodMesh local_268;
   CLodMesh local_1f4;
   char local_180 [100];
-  uint local_11c [12];
+  CMatrix3x4f local_11c;
   uint local_ec;
   int local_d8 [9];
   byte local_b4 [28];
@@ -102,7 +104,7 @@ uint core_skeledit_cpp_FUN_0058c190(void)
   char local_14 [4];
   int *piVar11;
   
-  bVar22 = 0;
+  bVar24 = 0;
   crt_stack_c_stack_probe_FUN_005ff9f3(0xa248);
   DAT_03670650 = 0;
   pCVar6 = (CBoneStructure *)
@@ -197,14 +199,14 @@ LAB_0058c613:
     local_70 = afStack_a1d0;
     iVar14 = 0;
     do {
-      core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)local_70,(CMatrix3x4f *)in_stack_ffff5dd8);
-      puVar12 = (uint *)((int)local_2520 + iVar14);
+      core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)local_70,&local_11c);
+      pfVar21 = (float *)((int)local_2520 + iVar14);
       iVar14 = iVar14 + 0x30;
-      puVar15 = local_11c;
+      pCVar16 = &local_11c;
       for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar12 = *puVar15;
-        puVar15 = puVar15 + (uint)bVar22 * -2 + 1;
-        puVar12 = puVar12 + (uint)bVar22 * -2 + 1;
+        *pfVar21 = pCVar16->m[0].w;
+        pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar24 * -2 + 1) * 4);
+        pfVar21 = pfVar21 + (uint)bVar24 * -2 + 1;
       }
       local_28 = local_28 + 1;
       local_70 = &((CMatrix3x4f *)((int)local_70 + 0x60))->m[2].x;
@@ -228,10 +230,10 @@ LAB_0058c613:
       do {
         local_98 = 0;
         if (0 < in_stack_00000004->num_textures) {
-          pcVar16 = local_6c->textures[0].texture_variants[0].texture_name;
+          pcVar17 = local_6c->textures[0].texture_variants[0].texture_name;
           do {
             crt_string_c_splitpath_FUN_005ff178
-                      (pcVar16,(char *)0x0,(char *)0x0,local_818,(char *)0x0);
+                      (pcVar17,(char *)0x0,(char *)0x0,local_818,(char *)0x0);
             crt_file_c_makepath_FUN_005febfc(local_a1c,local_18,local_518,local_818,"tga");
             crt_file_c_makepath_FUN_005febfc
                       (local_c24,(char *)0x0,"art",local_818,"tga");
@@ -239,8 +241,8 @@ LAB_0058c613:
                              (local_a1c,(char *)0x0,"rb","..\\core\\skeledit.cpp",0x6a5
                              );
             if ((file == (FILE *)0x0) &&
-               (pcVar20 = crt_string_c_strstr_FUN_005fedd0(local_818,"gore"),
-               pcVar20 != (char *)0x0)) {
+               (pcVar22 = crt_string_c_strstr_FUN_005fedd0(local_818,"gore"),
+               pcVar22 != (char *)0x0)) {
               crt_file_c_makepath_FUN_005febfc
                         (local_a1c,"t:","\\enemy",local_818,"tga");
               file = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -286,7 +288,7 @@ LAB_0058c613:
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x6be);
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\skeledit.cpp",0x6bf);
             }
-            pcVar16 = pcVar16 + 0x48;
+            pcVar17 = pcVar17 + 0x48;
             local_98 = local_98 + 1;
           } while (local_98 < in_stack_00000004->num_textures);
         }
@@ -304,22 +306,22 @@ LAB_0058c613:
     if (iVar14 == 0) {
       return 0;
     }
-    pcVar16 = "$$TEST";
+    pcVar17 = "$$TEST";
 LAB_0058c4df:
-    pcVar20 = local_b20;
+    pcVar22 = local_b20;
     do {
-      cVar1 = *pcVar16;
-      *pcVar20 = cVar1;
+      cVar1 = *pcVar17;
+      *pcVar22 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar16[1];
-      pcVar16 = pcVar16 + 2;
-      pcVar20[1] = cVar1;
-      pcVar20 = pcVar20 + 2;
+      cVar1 = pcVar17[1];
+      pcVar17 = pcVar17 + 2;
+      pcVar22[1] = cVar1;
+      pcVar22 = pcVar22 + 2;
     } while (cVar1 != '\0');
   }
   else {
     if (iVar14 == 2) {
-      pcVar16 = "$$BATCH";
+      pcVar17 = "$$BATCH";
       goto LAB_0058c4df;
     }
     iVar14 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
@@ -363,19 +365,19 @@ LAB_0058c4df:
     local_64 = 0;
     do {
       pSVar2 = in_stack_00000004->vertex_data_ptr[0];
-      pcVar20 = (local_1f4.vertex_data)->lod_workspace + local_64 + -0x10;
-      *(uint *)pcVar20 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);
-      *(uint *)(pcVar20 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);
-      *(uint *)(pcVar20 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);
-      pcVar16 = pcVar20;
+      pcVar22 = (local_1f4.vertex_data)->lod_workspace + local_64 + -0x10;
+      *(uint *)pcVar22 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);
+      *(uint *)(pcVar22 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);
+      *(uint *)(pcVar22 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);
+      pcVar17 = pcVar22;
       do {
-        pcVar19 = pcVar16 + 4;
-        pcVar16[0xc] = '\0';
-        pcVar16[0xd] = '\0';
-        pcVar16[0xe] = '\0';
-        pcVar16[0xf] = '\0';
-        pcVar16 = pcVar19;
-      } while (pcVar19 != pcVar20 + 400);
+        pcVar20 = pcVar17 + 4;
+        pcVar17[0xc] = '\0';
+        pcVar17[0xd] = '\0';
+        pcVar17[0xe] = '\0';
+        pcVar17[0xf] = '\0';
+        pcVar17 = pcVar20;
+      } while (pcVar20 != pcVar22 + 400);
       iVar7 = crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)local_24,"%d\n",&local_94);
       if (((iVar7 != 1) || (local_94 < 1)) || ((int)in_stack_ffff5dd8 < local_94)) {
 LAB_0058c601:
@@ -390,8 +392,8 @@ LAB_0058c601:
           if (iVar8 != 2) goto LAB_0058c601;
           local_90 = aiStack_6e94[local_90];
           iVar7 = iVar7 + 1;
-          *(float *)(pcVar20 + (local_90 + 3) * 4) =
-               *(float *)(pcVar20 + (local_90 + 3) * 4) + local_8c;
+          *(float *)(pcVar22 + (local_90 + 3) * 4) =
+               *(float *)(pcVar22 + (local_90 + 3) * 4) + local_8c;
         } while (iVar7 < local_94);
       }
       iVar14 = iVar14 + 1;
@@ -419,7 +421,7 @@ LAB_0058c601:
           uVar3 = *(uint *)((int)in_stack_00000004->index_data_ptr[0] + local_60);
           puVar15[2] = 0;
           puVar15[3] = 0xfffe7961;
-          puVar17 = puVar13 + 3;
+          puVar18 = puVar13 + 3;
           *puVar15 = uVar3;
           fVar4 = (float)0.00390625;
           puVar12 = puVar15;
@@ -431,7 +433,7 @@ LAB_0058c601:
             puVar13 = puVar13 + 1;
             puVar12[8] = (float)local_1c * fVar4;
             puVar12 = puVar12 + 2;
-          } while (puVar13 != puVar17);
+          } while (puVar13 != puVar18);
           iVar14 = iVar14 + 1;
           local_60 = local_60 + 4;
           local_5c = local_5c + 0x12;
@@ -464,7 +466,7 @@ LAB_0058c601:
           *puVar15 = uVar3;
           puVar15[3] = in_stack_00000004->cap_index_ptr[0][iVar14 - in_stack_00000004->tri_count[0]]
           ;
-          puVar17 = puVar13 + 3;
+          puVar18 = puVar13 + 3;
           fVar4 = (float)0.00390625;
           puVar12 = puVar15;
           do {
@@ -475,7 +477,7 @@ LAB_0058c601:
             puVar13 = puVar13 + 1;
             puVar12[8] = (float)local_1c * fVar4;
             puVar12 = puVar12 + 2;
-          } while (puVar13 != puVar17);
+          } while (puVar13 != puVar18);
           iVar14 = iVar14 + 1;
           local_50 = local_50 + 4;
           local_48 = local_48 + 0x8c;
@@ -497,12 +499,12 @@ LAB_0058c601:
   pCVar10 = in_stack_00000004;
   if (0 < in_stack_00000004->num_textures) {
     do {
-      pSVar18 = pCVar10->texture_sets;
-      pSVar21 = local_1f4.submesh_data + iVar14;
+      pSVar19 = pCVar10->texture_sets;
+      pSVar23 = local_1f4.submesh_data + iVar14;
       for (iVar7 = 0x12; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *(int *)pSVar21->field0_0x0 = pSVar18->textures[0].texture_variants[0].base.type;
-        pSVar18 = (STextureSet *)((int)pSVar18 + (uint)bVar22 * -8 + 4);
-        pSVar21 = (SLodSubmesh *)((int)pSVar21 + (uint)bVar22 * -8 + 4);
+        *(int *)pSVar23->field0_0x0 = pSVar19->textures[0].texture_variants[0].base.type;
+        pSVar19 = (STextureSet *)((int)pSVar19 + (uint)bVar24 * -8 + 4);
+        pSVar23 = (SLodSubmesh *)((int)pSVar23 + (uint)bVar24 * -8 + 4);
       }
       iVar14 = iVar14 + 1;
       pCVar10 = (CDeformableModel *)(pCVar10->vertex_data_ptr + 2);
@@ -625,21 +627,21 @@ LAB_0058c601:
           }
           iVar7 = 0;
           if (0 < local_2dc.submesh_count) {
-            pcVar16 = local_78->textures[0].texture_variants[0].texture_name;
+            pcVar17 = local_78->textures[0].texture_variants[0].texture_name;
             do {
-              pcVar19 = local_2dc.submesh_data[iVar7].texture_filename;
+              pcVar20 = local_2dc.submesh_data[iVar7].texture_filename;
               iVar7 = iVar7 + 1;
-              pcVar20 = pcVar16;
+              pcVar22 = pcVar17;
               do {
-                cVar1 = *pcVar19;
-                *pcVar20 = cVar1;
+                cVar1 = *pcVar20;
+                *pcVar22 = cVar1;
                 if (cVar1 == '\0') break;
-                cVar1 = pcVar19[1];
-                pcVar19 = pcVar19 + 2;
-                pcVar20[1] = cVar1;
+                cVar1 = pcVar20[1];
                 pcVar20 = pcVar20 + 2;
+                pcVar22[1] = cVar1;
+                pcVar22 = pcVar22 + 2;
               } while (cVar1 != '\0');
-              pcVar16 = pcVar16 + 0x48;
+              pcVar17 = pcVar17 + 0x48;
             } while (iVar7 < local_2dc.submesh_count);
           }
         }
@@ -689,21 +691,21 @@ LAB_0058c601:
         }
         local_74 = 0;
         if (0 < (int)local_b4._20_4_) {
-          pcVar16 = local_3c->textures[0].texture_variants[0].texture_name;
+          pcVar17 = local_3c->textures[0].texture_variants[0].texture_name;
           do {
-            pcVar20 = shape_design_c_getTextureName_FUN_0046e060(local_74);
-            pcVar19 = pcVar16 + 0x48;
+            pcVar22 = shape_design_c_getTextureName_FUN_0046e060(local_74);
+            pcVar20 = pcVar17 + 0x48;
             do {
-              cVar1 = *pcVar20;
-              *pcVar16 = cVar1;
+              cVar1 = *pcVar22;
+              *pcVar17 = cVar1;
               if (cVar1 == '\0') break;
-              cVar1 = pcVar20[1];
-              pcVar20 = pcVar20 + 2;
-              pcVar16[1] = cVar1;
-              pcVar16 = pcVar16 + 2;
+              cVar1 = pcVar22[1];
+              pcVar22 = pcVar22 + 2;
+              pcVar17[1] = cVar1;
+              pcVar17 = pcVar17 + 2;
             } while (cVar1 != '\0');
             local_74 = local_74 + 1;
-            pcVar16 = pcVar19;
+            pcVar17 = pcVar20;
           } while (local_74 < (int)local_b4._20_4_);
         }
         local_3c = local_3c + 1;

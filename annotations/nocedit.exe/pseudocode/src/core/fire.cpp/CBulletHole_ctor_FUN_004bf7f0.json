@@ -52,14 +52,14 @@
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 48,
+        "line": 49,
         "message": "'SQRT' was not declared in this scope"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "other",
         "column": 32,
-        "line": 61,
-        "message": "'stack0xfffffeec' was not declared in this scope"
+        "line": 71,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -85,6 +85,12 @@
       {
         "category": "other",
         "column": 16,
+        "line": 71,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
         "line": 72,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -92,17 +98,18 @@
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 292,
+    "complexity_score": 307,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 1,
     "pseudocode_lines": 87,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "stack_ref",
+      "suspect_float",
       "unknown_field"
     ],
     "total_lines": 265
@@ -454,25 +461,32 @@
       "type": "unknown_field"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 39,
+      "match": "6.976873e-39",
+      "text": "local_114.m[0].x = 6.976873e-39;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 42,
       "match": "SQRT",
       "text": "SQRT((float10)surface_normal->x * (float10)surface_normal->x +",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xfffffeec",
-      "text": "((CMatrix3x4f *)&stack0xfffffeec,&this_ptr->position,&this_ptr->euler_angles);",
-      "type": "stack_ref"
+      "description": "Likely misinterpreted integer as float",
+      "line": 46,
+      "match": "6.976905e-39",
+      "text": "local_114.m[0].w = 6.976905e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 59,
-      "match": "&stack0xfffffeec",
-      "text": "((CMatrix3x4f *)&stack0xfffffeec,&local_e4,matrix_b);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

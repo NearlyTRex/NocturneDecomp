@@ -28,7 +28,7 @@
 ;   undefined4 DAT_0151a3b4
 ;   int[256] g_ScanlineSpanRight
 ;   undefined4 DAT_0151a7b4
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;   int g_UseExternalRenderer
 ;

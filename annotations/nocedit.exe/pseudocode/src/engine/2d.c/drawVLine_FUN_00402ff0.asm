@@ -21,7 +21,7 @@
 ;   TerminatedCString s_engine_2d_c_00613203
 ;   TerminatedCString s_vLine_invalid_bitsPerPix_00613212
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   ushort[256] g_ColorTable16
 ;   uint[256] g_ColorTable32

@@ -10,85 +10,97 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 39,
+        "line": 37,
         "message": "'_DAT_02d83380' was not declared in this scope; did you mean 'DAT_02d833d0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 40,
+        "line": 38,
         "message": "'_DAT_02d83384' was not declared in this scope; did you mean 'DAT_02d833d4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 41,
+        "line": 39,
         "message": "'_DAT_02d83388' was not declared in this scope; did you mean 'DAT_02d83368'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 42,
+        "line": 40,
         "message": "'_DAT_02d8338c' was not declared in this scope; did you mean 'DAT_02d8330c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 45,
+        "line": 43,
         "message": "'_DAT_02d83390' was not declared in this scope; did you mean 'DAT_02d833d0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 46,
+        "line": 44,
         "message": "'DAT_02d83394' was not declared in this scope; did you mean 'DAT_02d833d4'?"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 45,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 47,
+        "line": 46,
         "message": "'DAT_02d83398' was not declared in this scope; did you mean 'DAT_02d83368'?"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 47,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 49,
+        "line": 48,
         "message": "'_DAT_02d83394' was not declared in this scope; did you mean 'DAT_02d833d4'?"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 54,
+        "line": 53,
         "message": "cast from 'CMatrix3x3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 58,
-        "message": "'stack0xffffff98' was not declared in this scope; did you mean 'in_stack_ffffff98'?"
+        "line": 57,
+        "message": "'stack0xffffff98' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 72,
+        "line": 71,
         "message": "'_DAT_02d8339c' was not declared in this scope; did you mean 'DAT_02d8330c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 72,
+        "line": 71,
         "message": "'ROUND' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 73,
+        "line": 72,
         "message": "'_DAT_02d833a0' was not declared in this scope; did you mean 'DAT_02d833d0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 74,
+        "line": 73,
         "message": "'_DAT_02d833a4' was not declared in this scope; did you mean 'DAT_02d833d4'?"
       }
     ],
@@ -102,29 +114,40 @@
       },
       {
         "category": "other",
+        "column": 9,
+        "line": 45,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 14,
-        "line": 54,
+        "line": 53,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 185,
+    "complexity_score": 179,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 19,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 64,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
-      "stack_param",
       "stack_ref",
       "warning_overlapping_globals"
     ],
-    "total_lines": 132
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -394,50 +417,50 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffff98",
-      "text": "CVector3i *in_stack_ffffff98;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_ffffff98",
-      "text": "(g_CDemonRendererPtr2,in_stack_ffffff98);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 40,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
       "match": "(CMatrix3x3i *)((int)",
       "text": "pCVar2 = (CMatrix3x3i *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 51,
+      "line": 50,
       "match": "&stack0xffffff98",
       "text": "piVar4 = (int *)&stack0xffffff98;",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 64,
       "match": "ROUND",
       "text": "_DAT_02d8339c = (int)ROUND(fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 65,
       "match": "ROUND",
       "text": "_DAT_02d833a0 = (int)ROUND(fVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 66,
       "match": "ROUND",
       "text": "_DAT_02d833a4 = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"

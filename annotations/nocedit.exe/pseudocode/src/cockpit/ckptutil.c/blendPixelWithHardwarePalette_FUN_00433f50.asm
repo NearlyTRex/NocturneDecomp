@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   uint[256] g_Hardware32BitPalette
 ;   ushort[256] g_Hardware16BitPalette
 ;   int g_RedBitPosition

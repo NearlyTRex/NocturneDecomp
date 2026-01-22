@@ -13,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 133,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 9,
-    "pseudocode_lines": 43,
-    "suspect_count": 8,
+    "pseudocode_lines": 42,
+    "suspect_count": 1,
     "suspect_types": [
-      "unaffected_reg",
       "warning_unreachable"
     ],
-    "total_lines": 159
+    "total_lines": 158
   },
   "cross_references": [],
   "function": {
@@ -34,10 +33,10 @@
         "0045be3d"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10",
-    "signature": "void * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)"
+    "signature": "SVertexData * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)"
   },
   "function_calls": [],
   "globals": [
@@ -134,10 +133,10 @@
     "pcode_op_count": 556
   },
   "stack_frame": {
-    "frame_size": 88,
+    "frame_size": 84,
     "local_size": 80,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -216,13 +215,6 @@
         "offset": 4,
         "size": 4,
         "type": "SScreenCoord *"
-      },
-      {
-        "is_param": true,
-        "name": "output_vertex",
-        "offset": 8,
-        "size": 4,
-        "type": "SVertexData *"
       }
     ]
   },
@@ -233,55 +225,6 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0045be1d) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = local_38;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[1] = local_34;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[2] = local_30;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 44,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[3] = fStack_2c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 45,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[4] = fStack_28;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
     }
   ]
 }

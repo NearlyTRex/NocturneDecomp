@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 21,
-        "message": "'stack0xffffffc4' was not declared in this scope; did you mean 'in_stack_ffffffc4'?"
+        "category": "other",
+        "column": 30,
+        "line": 25,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -25,6 +25,12 @@
       {
         "category": "other",
         "column": 14,
+        "line": 25,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
         "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -32,16 +38,14 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 74,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 19,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 42
   },
@@ -131,25 +135,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffffc4",
-      "text": "CMatrix3x4f *in_stack_ffffffc4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_ffffffc4",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(matrix_a,matrix_b,in_stack_ffffffc4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffc4",
-      "text": "pfVar2 = (float *)&stack0xffffffc4;",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

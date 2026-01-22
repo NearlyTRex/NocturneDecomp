@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMatrix3x4f * core_xform.cpp_buildMirrorTransform_FUN_005f7000(CMatrix3x4f * matrix_out, CVector3f * axis_vector, float distance)
+; __stack2_esi CMatrix3x4f * core_xform.cpp_buildMirrorTransform_FUN_005f7000(CMatrix3x4f * matrix_out, CVector3f * axis_vector, float distance)
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix_out
 ; CVector3f *      Stack[0x8]:4   axis_vector
-; float            Stack[0xc]:4   distance
 ; Local Variables:
 ; undefined        Stack[-0x1a4]:1  local_1a4
 ; undefined        Stack[-0x174]:1  local_174

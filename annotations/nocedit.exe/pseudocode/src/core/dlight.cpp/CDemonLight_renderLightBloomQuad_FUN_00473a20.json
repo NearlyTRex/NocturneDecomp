@@ -4,38 +4,38 @@
       {
         "category": "missing_member",
         "column": 17,
-        "line": 58,
+        "line": 53,
         "message": "'CDemonLight' {aka 'struct CDemonLight'} has no member named 'field17_0x1cbc'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 82,
-        "message": "'stack0xffffff60' was not declared in this scope"
+        "category": "other",
+        "column": 41,
+        "line": 66,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 68,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
-        "column": 11,
-        "line": 90,
+        "column": 29,
+        "line": 85,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 105,
+        "line": 100,
         "message": "'ROUND' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 120,
+        "line": 115,
         "message": "request for member '_8_4_' in 'local_34', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 179,
-        "message": "'stack0xffffff28' was not declared in this scope; did you mean 'in_stack_ffffff28'?"
       }
     ],
     "success": false,
@@ -45,26 +45,37 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 66,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 68,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 595,
+    "complexity_score": 565,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 8,
-    "pseudocode_lines": 175,
-    "suspect_count": 39,
+    "pseudocode_lines": 170,
+    "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "stack_param",
-      "stack_ref",
+      "pointer_cast",
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 540
+    "total_lines": 535
   },
   "cross_references": [
     {
@@ -639,263 +650,249 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_ffffff28",
-      "text": "CVector3i *in_stack_ffffff28;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(int *)((int)",
+      "text": "local_60[(uint)bVar3 * -2] = *(int *)((int)&local_7c + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_ffffff28",
-      "text": "(g_CDemonRendererPtr2,in_stack_ffffff28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xffffff60",
-      "text": "if (&local_58 != &stack0xffffff60) {",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 78,
       "match": "SQRT",
-      "text": "fVar2 = SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);",
+      "text": "local_d8.base.type = (int)SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 93,
       "match": "ROUND",
       "text": "local_1c = (float)(int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 99,
+      "line": 94,
       "match": "extraout_EDX",
       "text": "lVar1 = (longlong)(extraout_EDX - extraout_EAX) * (longlong)(int)local_1c;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 99,
+      "line": 94,
       "match": "extraout_EAX",
       "text": "lVar1 = (longlong)(extraout_EDX - extraout_EAX) * (longlong)(int)local_1c;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 100,
       "match": "ROUND",
       "text": "local_44.x = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 101,
       "match": "ROUND",
       "text": "local_44.y = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 102,
       "match": "ROUND",
       "text": "local_44.z = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 113,
+      "line": 108,
       "match": "._8_4_",
       "text": "local_34._8_4_ = (uint)ROUND(256.0f * -0.5);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
+      "line": 108,
       "match": "ROUND",
       "text": "local_34._8_4_ = (uint)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 109,
       "match": "ROUND",
       "text": "local_28 = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 110,
       "match": "ROUND",
       "text": "local_24 = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 122,
+      "line": 117,
       "match": "ROUND",
       "text": "local_8c.x = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 118,
       "match": "ROUND",
       "text": "local_8c.y = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 119,
       "match": "ROUND",
       "text": "local_8c.z = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
+      "line": 125,
       "match": "ROUND",
       "text": "local_98.x = (int)ROUND(256.0f * 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
+      "line": 126,
       "match": "ROUND",
       "text": "local_98.y = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 127,
       "match": "ROUND",
       "text": "local_98.z = (int)ROUND(256.0f * -0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 136,
+      "line": 131,
       "match": "2.2775203e-38",
       "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 137,
+      "line": 132,
       "match": "2.2775203e-38",
       "text": "this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 139,
+      "line": 134,
       "match": "7.34684e-40",
       "text": "this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 140,
+      "line": 135,
       "match": "2.2775203e-38",
       "text": "this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 142,
+      "line": 137,
       "match": "7.34684e-40",
       "text": "this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 143,
+      "line": 138,
       "match": "7.34684e-40",
       "text": "this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 145,
+      "line": 140,
       "match": "2.2775203e-38",
       "text": "this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 146,
+      "line": 141,
       "match": "7.34684e-40",
       "text": "this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 148,
+      "line": 143,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 150,
+      "line": 145,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 151,
+      "line": 146,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 153,
+      "line": 148,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[1].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 154,
+      "line": 149,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 156,
+      "line": 151,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[2].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 157,
+      "line": 152,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 159,
+      "line": 154,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 172,
-      "match": "&stack0xffffff28",
-      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff28);",
-      "type": "stack_ref"
     }
   ]
 }

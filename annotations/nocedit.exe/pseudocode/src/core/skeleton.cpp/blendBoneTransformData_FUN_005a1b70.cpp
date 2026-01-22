@@ -17,9 +17,10 @@ core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70
   int iVar2;
   uint *puVar3;
   uint *puVar4;
-  byte bVar5;
+  uint *puVar5;
+  byte bVar6;
   float afStackY_1830 [1524];
-  float in_stack_ffffffac;
+  CQuaternion4f local_54;
   CVector3f local_44;
   float local_38;
   float local_34;
@@ -32,7 +33,7 @@ core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70
   CQuaternion4f *local_18;
   CQuaternion4f *local_14;
   
-  bVar5 = 0;
+  bVar6 = 0;
   if (blend_weight < 0.0) {
     blend_weight = 0.0;
   }
@@ -61,17 +62,14 @@ core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70
     local_18 = bone_data_in->bone_rotations;
     pCVar1 = result_root_pos;
     do {
-      core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                (local_14,local_18,(CQuaternion4f *)blend_weight,in_stack_ffffffac);
-      puVar3 = (uint *)((int)pCVar1 + (uint)bVar5 * -8 + 0x10);
-      pCVar1[1].x = in_stack_ffffffac;
-      puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
-      *puVar3 = *(uint *)(&stack0xffffffb0 + (uint)bVar5 * -8);
-      *puVar4 = *(uint *)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      puVar4[(uint)bVar5 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
-            ((uint)bVar5 * -2 + 1) * 4);
+      core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_14,local_18,blend_weight,&local_54);
+      puVar4 = (uint *)((int)pCVar1 + (uint)bVar6 * -8 + 0x10);
+      pCVar1[1].x = local_54.w;
+      puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
+      puVar3 = (uint *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+      *puVar4 = *(uint *)((int)&local_54 + (uint)bVar6 * -8 + 4);
+      *puVar5 = *puVar3;
+      puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
       local_18 = local_18 + 1;
       iVar2 = iVar2 + 1;
       local_14 = local_14 + 1;

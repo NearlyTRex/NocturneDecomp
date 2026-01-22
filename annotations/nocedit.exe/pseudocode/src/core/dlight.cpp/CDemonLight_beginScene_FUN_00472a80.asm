@@ -19,7 +19,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_RasterizerDepthBias
 ;   CDemonRenderer g_CDemonRendererInstance
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 g_TransformMatrix[0][1]
 ;   undefined4 g_TransformMatrix[1][1]

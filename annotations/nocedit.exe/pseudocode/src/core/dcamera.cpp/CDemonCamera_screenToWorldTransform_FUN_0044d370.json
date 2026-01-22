@@ -13,15 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 89,
+    "complexity_score": 34,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 34,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 125
   },
   "cross_references": [
@@ -88,9 +86,9 @@
         "0044d472"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370",
-    "signature": "CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)"
+    "signature": "CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -130,10 +128,10 @@
     "pcode_op_count": 625
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 52,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -194,15 +192,8 @@
       },
       {
         "is_param": true,
-        "name": "output_ptr",
-        "offset": 8,
-        "size": 4,
-        "type": "CVector3i *"
-      },
-      {
-        "is_param": true,
         "name": "input_ptr",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "CVector3i *"
       }
@@ -239,41 +230,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "text": "CVector3i *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->x = (this_ptr->camera_origin).x +",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->y = iVar2 + ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->z = iVar1 + ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

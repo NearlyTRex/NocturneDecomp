@@ -1,18 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_normalizeVector3DFixed_FUN_0050d970(CVector3i vector)
+; __stack_esi CVector3i * engine_matrix.c_normalizeVector3DFixed_FUN_0050d970(CVector3i * input_vector, CVector3i * output_vector)
 ;
 ; Parameters:
-; /Nocturne/Class/Game/CVector3i
-aligned(4) pack(disabled)
-Structure CVector3i {
-   0   int   4   x   ""
-   4   int   4   y   ""
-   8   int   4   z   ""
-}
-Length: 12 Alignment: 4
- Stack[0x4]:12   vector
+; CVector3i *      Stack[0x4]:4   input_vector
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

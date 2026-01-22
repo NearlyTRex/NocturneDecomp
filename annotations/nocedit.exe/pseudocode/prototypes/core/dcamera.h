@@ -93,15 +93,15 @@ void CDemonCamera::updateTransformMatrices(CDemonCamera * this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
 // Address: 0044d2a0
-void CDemonCamera::screenToWorldCoord(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y);
+void CDemonCamera::screenToWorldCoord(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310
 // Address: 0044d310
-void CDemonCamera::worldToScreenCoord(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr);
+CVector3i * CDemonCamera::worldToScreenCoord(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
 // Address: 0044d370
-CVector3i * CDemonCamera::screenToWorldTransform(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr);
+CVector3i * CDemonCamera::screenToWorldTransform(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
 // Address: 0044d480
@@ -109,7 +109,7 @@ CVector3f * CDemonCamera::screenToWorldDirection(CDemonCamera * this_ptr, CVecto
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
 // Address: 0044d600
-CVector3i * CDemonCamera::screenToWorldWithAlpha(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr);
+CVector3i * CDemonCamera::screenToWorldWithAlpha(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
 // Address: 0044d7d0
@@ -117,11 +117,11 @@ CVector3i * CDemonCamera::worldToScreenWithFrustumCull(CDemonCamera * this_ptr, 
 
 // Original: core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90
 // Address: 0044da90
-CVector3i * CDemonCamera::worldToCameraSpace(CDemonCamera * this_ptr, CVector3i * output_vector, CVector3i * input_vector);
+CVector3i * CDemonCamera::worldToCameraSpace(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector);
 
 // Original: core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
 // Address: 0044dbd0
-void CDemonCamera::transformVectorWithAlpha(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector);
+CVector3i * CDemonCamera::transformVectorWithAlpha(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector);
 
 // Original: core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044dde0
 // Address: 0044dde0

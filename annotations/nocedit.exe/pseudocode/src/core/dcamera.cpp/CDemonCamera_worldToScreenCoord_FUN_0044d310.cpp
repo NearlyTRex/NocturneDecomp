@@ -1,14 +1,14 @@
 // Name: core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310
 // Address: 0044d310
 // Address Range: [[0044d310, 0044d36b]]
-// Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)
+// Convention: __stack2_esi
+// Signature: CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
 
 #include "nocturne.h"
 
-void __cdecl
+CVector3i * __stack2_esi
 core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310
-          (CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr)
+          (CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 {
   int iVar1;
@@ -16,16 +16,16 @@ core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310
   int iVar3;
   int iVar4;
   int iVar5;
-  uint *unaff_ESI;
   
-  iVar1 = output_ptr->z;
+  iVar1 = input_ptr->z;
   iVar2 = (this_ptr->saved_viewport_rect).top;
-  iVar3 = output_ptr->z;
-  iVar4 = output_ptr->y;
+  iVar3 = input_ptr->z;
+  iVar4 = input_ptr->y;
   iVar5 = (this_ptr->saved_viewport_rect).bottom;
-  *unaff_ESI = (int)(((longlong)(output_ptr->x - (this_ptr->saved_viewport_rect).right) *
-                     (longlong)iVar1) / (longlong)(this_ptr->saved_viewport_rect).left);
-  unaff_ESI[1] = (int)(((longlong)(iVar4 - iVar5) * (longlong)iVar3) / (longlong)iVar2);
-  unaff_ESI[2] = iVar1;
-  return;
+  output_ptr->x =
+       (int)(((longlong)(input_ptr->x - (this_ptr->saved_viewport_rect).right) * (longlong)iVar1) /
+            (longlong)(this_ptr->saved_viewport_rect).left);
+  output_ptr->y = (int)(((longlong)(iVar4 - iVar5) * (longlong)iVar3) / (longlong)iVar2);
+  output_ptr->z = iVar1;
+  return output_ptr;
 }

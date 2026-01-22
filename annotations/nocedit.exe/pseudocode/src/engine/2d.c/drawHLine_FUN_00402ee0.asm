@@ -25,7 +25,7 @@
 ;   TerminatedCString s_engine_2d_c_006131d7
 ;   TerminatedCString s_hLine_invalid_bitsPerPix_006131e6
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   ushort[256] g_ColorTable16
 ;   uint[256] g_ColorTable32
 ;   int g_ClipLeft

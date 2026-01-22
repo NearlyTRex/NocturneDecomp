@@ -17,24 +17,23 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
   CVector3f *pCVar6;
   uint uVar7;
   uint *puVar8;
-  float *pfVar9;
+  uint *puVar9;
   byte bVar10;
   float in_stack_00000008;
-  float afStackY_186c [1497];
+  uint auStackY_186c [1497];
   char *sound_name;
   CQuaternion4f *quat_ptr;
-  CVector3f *in_stack_ffffff08;
+  float in_stack_ffffff08;
   char local_f4 [100];
   CQuaternion4f local_90;
   CQuaternion4f local_80;
-  float local_70;
-  float afStack_6c [7];
+  CQuaternion4f local_70;
+  CQuaternion4f local_60;
   CQuaternion4f local_50;
-  float local_40;
-  uint auStack_3c [3];
+  CQuaternion4f local_40;
   CVector3f local_30;
   double local_24;
-  CQuaternion4f *local_1c;
+  CVector3f *local_1c;
   CVector3f *local_18;
   float local_14;
   
@@ -141,37 +140,39 @@ LAB_005e24c7:
     *(uint *)(this_ptr->field12_0x85c + 0x5c) = uVar7;
     break;
   case 4:
-    local_1c = (CQuaternion4f *)this_ptr->field1_0x578;
+    local_1c = (CVector3f *)this_ptr->field1_0x578;
     this_ptr->timer = this_ptr->timer - in_stack_00000008;
     local_18 = (CVector3f *)&(this_ptr->base_weapon).base_actor.orient;
     if (0.0 < this_ptr->timer) {
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CQuaternion4f *)local_18,in_stack_ffffff08);
-      local_90.w = local_40;
-      puVar8 = (uint *)((int)&local_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      *(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) = auStack_3c[(uint)bVar10 * -2];
-      *puVar8 = auStack_3c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-      puVar8[(uint)bVar10 * -2 + 1] =
-           (auStack_3c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_1c,in_stack_ffffff08);
-      local_50.w = local_70;
-      pfVar9 = (float *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      *(float *)((int)&local_50 + (uint)bVar10 * -8 + 4) = afStack_6c[(uint)bVar10 * -2];
-      *pfVar9 = afStack_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-      pfVar9[(uint)bVar10 * -2 + 1] =
-           (afStack_6c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_18,&local_40);
+      local_90.w = local_40.w;
+      puVar9 = (uint *)((int)&local_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&local_40 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_40 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_1c,&local_70);
+      local_50.w = local_70.w;
+      puVar9 = (uint *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&local_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&local_50 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_70 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&local_90,&local_50,
-                 (CQuaternion4f *)
-                 ((in_stack_00000008 / (this_ptr->timer + in_stack_00000008)) *
-                 (float)2),(float)in_stack_ffffff08);
+                 (in_stack_00000008 / (this_ptr->timer + in_stack_00000008)) *
+                 (float)2,&local_60);
       quat_ptr = &local_80;
       pCVar6 = &local_30;
-      local_80.w = afStack_6c[3];
-      pfVar9 = (float *)((int)&local_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      *(float *)((int)&local_80 + (uint)bVar10 * -8 + 4) = afStack_6c[(uint)bVar10 * -2 + 4];
-      *pfVar9 = afStack_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5];
-      pfVar9[(uint)bVar10 * -2 + 1] =
-           (afStack_6c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 5)[(uint)bVar10 * -2 + 1];
+      local_80.w = local_60.w;
+      puVar9 = (uint *)((int)&local_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      puVar8 = (uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&local_80 + (uint)bVar10 * -8 + 4) =
+           *(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4);
+      *puVar9 = *puVar8;
+      puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
       pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(pCVar6,quat_ptr);
       if (pCVar6 != local_18) {
         local_18->x = pCVar6->x;
@@ -183,7 +184,7 @@ LAB_005e24c7:
     else {
       this_ptr->state = 0;
       this_ptr->timer = 0.0;
-      if ((CQuaternion4f *)local_18 != local_1c) {
+      if (local_18 != local_1c) {
         ((COrientation *)local_18)->pitch = *(float *)local_1c;
         (this_ptr->base_weapon).base_actor.orient.bank = *(float *)(this_ptr->field1_0x578 + 4);
         (this_ptr->base_weapon).base_actor.orient.heading = *(float *)(this_ptr->field1_0x578 + 8);
@@ -197,7 +198,7 @@ LAB_005e24c7:
   }
   if (-1 < *(int *)(this_ptr->base_weapon).field7_0x2f4) {
     (*(this_ptr->base_weapon).base_actor.vtable[1].processFootstep)
-              ((CDemonActor *)this_ptr,(float)in_stack_ffffff08);
+              ((CDemonActor *)this_ptr,in_stack_ffffff08);
   }
   fVar4 = *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc);
   iVar5 = *(int *)(this_ptr->field12_0x85c + 0x54);

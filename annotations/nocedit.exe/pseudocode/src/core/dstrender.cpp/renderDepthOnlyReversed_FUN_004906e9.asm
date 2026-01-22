@@ -8,7 +8,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 at 0048d557
 ;
 ; Referenced Globals:
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 DAT_02d02584
 ;
 ; *****************************************************************************

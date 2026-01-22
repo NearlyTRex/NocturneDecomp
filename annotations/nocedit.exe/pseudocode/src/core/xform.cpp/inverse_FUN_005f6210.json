@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 44,
+        "line": 45,
         "message": "'SUB84' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 94,
+        "line": 95,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,37 +25,36 @@
       {
         "category": "other",
         "column": 25,
-        "line": 46,
+        "line": 47,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 48,
+        "line": 49,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 94,
+        "line": 95,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 152,
+    "complexity_score": 118,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 87,
-    "suspect_count": 5,
+    "pseudocode_lines": 88,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 290
+    "total_lines": 291
   },
   "cross_references": [
     {
@@ -145,7 +144,7 @@
         "005f6458"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_inverse_FUN_005f6210",
     "signature": "CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)"
@@ -223,10 +222,10 @@
     "pcode_op_count": 1325
   },
   "stack_frame": {
-    "frame_size": 164,
+    "frame_size": 160,
     "local_size": 156,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -389,13 +388,6 @@
         "offset": 4,
         "size": 4,
         "type": "CMatrix3x4f *"
-      },
-      {
-        "is_param": true,
-        "name": "input_matrix",
-        "offset": 8,
-        "size": 4,
-        "type": "CMatrix3x4f *"
       }
     ]
   },
@@ -418,39 +410,18 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "text": "CMatrix3x4f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 38,
       "match": "SUB84",
       "text": "local_98 = SUB84 /* extract 2-byte value */(dVar5,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 83,
-      "match": "unaff_ESI",
-      "text": "pCVar3 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 88,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 89,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
     }
   ]
 }

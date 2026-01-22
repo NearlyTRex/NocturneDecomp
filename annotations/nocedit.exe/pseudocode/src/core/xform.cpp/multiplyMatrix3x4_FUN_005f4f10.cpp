@@ -1,18 +1,17 @@
 // Name: core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 // Address: 005f4f10
 // Address Range: [[005f4f10, 005f50b8]]
-// Convention: __cdecl
+// Convention: __stack2_esi
 // Signature: CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
 
 #include "nocturne.h"
 
-CMatrix3x4f * __cdecl
+CMatrix3x4f * __stack2_esi
 core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
           (CMatrix3x4f *output_matrix,CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
 
 {
   int iVar1;
-  float *unaff_ESI;
   float *pfVar2;
   float *pfVar3;
   float local_38 [4];
@@ -53,11 +52,11 @@ core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             matrix_a->m[2].x * output_matrix->m[1].z + matrix_a->m[2].w * output_matrix->m[0].z +
             matrix_a->m[2].z;
   pfVar2 = local_38;
-  pfVar3 = unaff_ESI;
+  pfVar3 = (float *)matrix_b;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *pfVar3 = *pfVar2;
     pfVar2 = pfVar2 + 1;
     pfVar3 = pfVar3 + 1;
   }
-  return (CMatrix3x4f *)unaff_ESI;
+  return matrix_b;
 }

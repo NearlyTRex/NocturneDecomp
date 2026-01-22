@@ -1,21 +1,20 @@
 // Name: shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
 // Address: 0045bd10
 // Address Range: [[0045bd10, 0045be3d]]
-// Convention: __cdecl
-// Signature: void * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)
+// Convention: __stack_esi
+// Signature: SVertexData * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0045be1d) */
 
-void * __cdecl
+SVertexData * __stack_esi
 shape_design_c_convertWorldToScreenCoordinates_FUN_0045bd10
           (SScreenCoord *input_coords,SVertexData *output_vertex)
 
 {
   float fVar1;
   float fVar2;
-  float *unaff_ESI;
   float local_38;
   float local_34;
   float local_30;
@@ -45,10 +44,10 @@ shape_design_c_convertWorldToScreenCoordinates_FUN_0045bd10
     local_38 = fVar1;
     local_34 = fVar2;
   }
-  *unaff_ESI = local_38;
-  unaff_ESI[1] = local_34;
-  unaff_ESI[2] = local_30;
-  unaff_ESI[3] = fStack_2c;
-  unaff_ESI[4] = fStack_28;
-  return unaff_ESI;
+  (output_vertex->vertex).x = local_38;
+  (output_vertex->vertex).y = local_34;
+  (output_vertex->vertex).z = local_30;
+  output_vertex->u = fStack_2c;
+  output_vertex->v = fStack_28;
+  return output_vertex;
 }

@@ -3,57 +3,39 @@
     "errors": [
       {
         "category": "other",
-        "column": 14,
-        "line": 30,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 31,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 76,
+        "column": 15,
         "line": 34,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 14,
+        "column": 20,
+        "line": 35,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 36,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 14,
+        "column": 20,
         "line": 37,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 43,
-        "message": "'stack0xffffffd0' was not declared in this scope; did you mean 'in_stack_ffffffc0'?"
+        "category": "other",
+        "column": 47,
+        "line": 42,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 23,
+        "category": "other",
+        "column": 21,
         "line": 44,
-        "message": "'stack0xffffffc4' was not declared in this scope; did you mean 'in_stack_ffffffc0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 45,
-        "message": "'stack0xffffffd4' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 46,
-        "message": "'stack0xffffffc8' was not declared in this scope; did you mean 'in_stack_ffffffc0'?"
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -67,32 +49,55 @@
       {
         "category": "other",
         "column": 6,
-        "line": 36,
+        "line": 34,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 11,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
+        "line": 36,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 11,
         "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 42,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 44,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 327,
+    "complexity_score": 281,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 57,
-    "suspect_count": 25,
+    "pseudocode_lines": 56,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 167
+    "total_lines": 166
   },
   "cross_references": [
     {
@@ -267,168 +272,140 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000008",
-      "text": "CVector3i *in_stack_00000008;",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000010",
       "text": "int *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000014",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffffc0",
-      "text": "CVector3i *in_stack_ffffffc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000008",
-      "text": "if ((((0 < (int)in_stack_00000008) && (0 < in_stack_0000000c)) &&",
+      "text": "if ((((0 < in_stack_00000008) && (0 < in_stack_0000000c)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_0000000c",
-      "text": "if ((((0 < (int)in_stack_00000008) && (0 < in_stack_0000000c)) &&",
+      "text": "if ((((0 < in_stack_00000008) && (0 < in_stack_0000000c)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 22,
       "match": "in_stack_00000008",
-      "text": "((int)in_stack_00000008 <= g_CDemonCameraInstance.framebuffer_width + -1)) &&",
+      "text": "(in_stack_00000008 <= g_CDemonCameraInstance.framebuffer_width + -1)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_0000000c",
       "text": "(in_stack_0000000c <= g_CDemonCameraInstance.framebuffer_height + -1)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000008",
-      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,(int)in_stack_ffffffc0);",
+      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,&local_28);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_0000000c",
-      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,(int)in_stack_ffffffc0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_ffffffc0",
-      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,(int)in_stack_ffffffc0);",
+      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,&local_28);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_28 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 29,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_1c + (uint)bVar4 * -8 + 4) = aiStack_24[(uint)bVar4 * 0xfffffffe];",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 30,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
+      "text": "aiStack_30[(uint)bVar4 * -2] = *(int *)((int)&local_40 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_ffffffc0",
-      "text": "(&g_CDemonCameraInstance,&local_1c,in_stack_ffffffc0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_ffffffc0",
-      "text": "local_34 = in_stack_ffffffc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffffd0",
-      "text": "*(uint *)(&stack0xffffffd0 + (uint)bVar4 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffffc4",
-      "text": "*(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffffd4",
-      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 39,
-      "match": "&stack0xffffffc8",
-      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 42,
       "match": "in_stack_00000014",
       "text": "while ((iVar2 != in_stack_00000014 &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 45,
       "match": "in_stack_00000010",
       "text": "*in_stack_00000010 = iVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010 = in_stack_00000010 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010 = in_stack_00000010 + 1;",
       "type": "stack_param"

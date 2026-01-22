@@ -21,8 +21,8 @@
 ;   ulonglong g_TextureShift2 = 0x8
 ;   ulonglong g_TextureMask1 = 0xff
 ;   ulonglong g_TextureMask2 = 0xff00
-;   void*[1024] g_ScreenBufferArray
-;   uint*[1024] g_ZBufferScanlineArray
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   ... and 3 more
 ;
 ; *****************************************************************************

@@ -2,15 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 52,
+        "category": "other",
+        "column": 21,
         "line": 29,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 31,
         "message": "'stack0xffffffec' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
-        "column": 23,
-        "line": 31,
+        "column": 24,
+        "line": 33,
         "message": "'stack0xfffffff0' was not declared in this scope"
       }
     ],
@@ -24,75 +30,26 @@
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 26,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 27,
+        "column": 12,
+        "line": 29,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 133,
+    "complexity_score": 100,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 23,
-    "suspect_count": 9,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_ref"
     ],
-    "total_lines": 75
+    "total_lines": 77
   },
   "cross_references": [
     {
@@ -122,9 +79,9 @@
         "0050d9e5"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "engine_matrix.c_normalizeVector3DFixed_FUN_0050d970",
-    "signature": "void engine_matrix.c_normalizeVector3DFixed_FUN_0050d970(CVector3i vector)"
+    "signature": "CVector3i * engine_matrix.c_normalizeVector3DFixed_FUN_0050d970(CVector3i * input_vector, CVector3i * output_vector)"
   },
   "function_calls": [
     {
@@ -141,33 +98,45 @@
         "call_addr": "0040537a",
         "call_type": "direct",
         "caller": "engine_3d.c_renderPolygonUVTextureEnable_FUN_00405350",
-        "estimated_params": 5,
+        "estimated_params": 8,
         "instructions_analyzed": 16,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
         "stack_params": 5
       },
       {
         "call_addr": "0040545a",
         "call_type": "direct",
         "caller": "engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430",
-        "estimated_params": 5,
+        "estimated_params": 8,
         "instructions_analyzed": 16,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
         "stack_params": 5
       },
       {
         "call_addr": "004055da",
         "call_type": "direct",
         "caller": "engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0",
-        "estimated_params": 5,
+        "estimated_params": 8,
         "instructions_analyzed": 16,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
         "stack_params": 5
       }
     ],
     "confidence": "high",
-    "declared_params": 1,
-    "estimated_params": 5
+    "declared_params": 2,
+    "estimated_params": 8
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.08,
@@ -201,10 +170,10 @@
     "pcode_op_count": 254
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -230,10 +199,10 @@
       },
       {
         "is_param": true,
-        "name": "vector",
+        "name": "input_vector",
         "offset": 4,
-        "size": 12,
-        "type": "/Nocturne/Class/Game/CVector3i\naligned(4) pack(disabled)\nStructure CVector3i {\n   0   int   4   x   \"\"\n   4   int   4   y   \"\"\n   8   int   4   z   \"\"\n}\nLength: 12 Alignment: 4\n"
+        "size": 4,
+        "type": "CVector3i *"
       }
     ]
   },
@@ -256,70 +225,49 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = local_18;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xffffffec",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(int *)((int)",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
+      "match": "(uint *)((int)",
+      "text": "puVar2 = (uint *)((int)output_vector + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_ESI",
-      "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 24,
-      "match": "&stack0xfffffff0",
-      "text": "*(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "match": "&stack0xffffffec",
+      "text": "*puVar2 = *(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "match": "(uint *)((int)",
+      "text": "*puVar2 = *(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 26,
+      "match": "&stack0xfffffff0",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "pointer_cast"
     },
     {
       "call_site_count": 3,
-      "declared_params": 1,
+      "declared_params": 2,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
+      "estimated_params": 8,
       "fix_type": "add_params",
-      "match": "declared:1 vs estimated:5",
-      "param_delta": 4,
-      "text": "Function declares 1 params but call sites push 5 (4 missing)",
+      "match": "declared:2 vs estimated:8",
+      "param_delta": 6,
+      "text": "Function declares 2 params but call sites push 8 (6 missing)",
       "type": "param_count_too_few"
     }
   ]

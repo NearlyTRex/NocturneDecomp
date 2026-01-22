@@ -1,27 +1,28 @@
 // Name: core_mirror.cpp_transformMirrorVertex_FUN_005229b0
 // Address: 005229b0
 // Address Range: [[005229b0, 00522a4e]]
-// Convention: __cdecl
-// Signature: int * core_mirror.cpp_transformMirrorVertex_FUN_005229b0(SMirrorReflection * reflection, CVector3f * input_vertex, CVector3f * output_vertex)
+// Convention: __stack2_esi
+// Signature: CVector3f * core_mirror.cpp_transformMirrorVertex_FUN_005229b0(SMirrorReflection * reflection, CVector3f * input_vertex, CVector3f * output_vertex)
 
 #include "nocturne.h"
 
-int * __cdecl
+CVector3f * __stack2_esi
 core_mirror_cpp_transformMirrorVertex_FUN_005229b0
           (SMirrorReflection *reflection,CVector3f *input_vertex,CVector3f *output_vertex)
 
 {
   CVector3f *pCVar1;
-  int *unaff_ESI;
-  byte bVar2;
-  int aiStackY_100c [1009];
+  float *pfVar2;
+  byte bVar3;
+  float afStackY_100c [1009];
   CVector3f local_3c;
   CVector3f local_30;
-  int local_24;
-  int local_20 [2];
+  float local_24;
+  float local_20;
+  int local_1c;
   CVector3f local_18;
   
-  bVar2 = 0;
+  bVar3 = 0;
   local_3c.x = (float)(int)input_vertex->x * 0.00390625f;
   local_3c.y = (float)(int)input_vertex->y * 0.00390625f;
   local_3c.z = (float)(int)input_vertex->z * 0.00390625f;
@@ -31,12 +32,12 @@ core_mirror_cpp_transformMirrorVertex_FUN_005229b0
     local_30.y = pCVar1->y;
     local_30.z = pCVar1->z;
   }
-  local_24 = (int)ROUND(local_30.x * 256.0f);
-  local_20[0] = (int)ROUND(local_30.y * 256.0f);
-  local_20[1] = (int)ROUND(local_30.z * 256.0f);
-  *unaff_ESI = (int)ROUND(local_30.x * 256.0f);
-  unaff_ESI[(uint)bVar2 * -2 + 1] = local_20[(uint)bVar2 * -2];
-  (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
-       local_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  return unaff_ESI;
+  local_24 = (float)(int)ROUND(local_30.x * 256.0f);
+  local_20 = (float)(int)ROUND(local_30.y * 256.0f);
+  local_1c = (int)ROUND(local_30.z * 256.0f);
+  pfVar2 = (float *)((int)output_vertex + (uint)bVar3 * -8 + 4);
+  output_vertex->x = (float)(int)ROUND(local_30.x * 256.0f);
+  *pfVar2 = (&local_20)[(uint)bVar3 * -2];
+  pfVar2[(uint)bVar3 * -2 + 1] = (&local_20)[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  return output_vertex;
 }

@@ -4,55 +4,61 @@
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 33,
+        "line": 32,
         "message": "'PTR_core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_006622a4' was not declared in this scope; did you mean 'core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20'?"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 50,
+        "line": 49,
         "message": "cast from 'CCourseFrameList*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
+        "line": 59,
+        "message": "cast from 'CCourse*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 26,
         "line": 60,
-        "message": "cast from 'CCourse*' to 'int' loses precision [-fpermissive]"
+        "message": "invalid cast from type 'float' to type 'CCourseFrameList*'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 24,
+        "category": "other",
+        "column": 21,
+        "line": 62,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 23,
         "line": 63,
-        "message": "'stack0xfffffff0' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 64,
-        "message": "'stack0xfffffff4' was not declared in this scope"
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 69,
+        "line": 66,
         "message": "cast from 'CCourse*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 70,
+        "line": 67,
         "message": "cast from 'CCourse*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 71,
+        "line": 68,
         "message": "cast from 'CCourseFrameList*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 89,
+        "line": 86,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -67,62 +73,72 @@
       {
         "category": "other",
         "column": 67,
-        "line": 35,
+        "line": 34,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 51,
+        "line": 50,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 60,
+        "line": 59,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 69,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 70,
+        "line": 62,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 91,
+        "line": 63,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 92,
+        "line": 66,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 67,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 88,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 89,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 267,
+    "complexity_score": 224,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 2,
-    "pseudocode_lines": 87,
-    "suspect_count": 16,
+    "pseudocode_lines": 84,
+    "suspect_count": 13,
     "suspect_types": [
       "negative_offset",
-      "pointer_cast",
-      "stack_ref",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 202
+    "total_lines": 199
   },
   "cross_references": [
     {
@@ -299,113 +315,92 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "CVector3f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 35,
+      "line": 34,
       "match": "pCVar5[-5].",
       "text": "pCVar5[-5].len = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 36,
+      "line": 35,
       "match": "pCVar5[-5].",
       "text": "pCVar5[-5].loop = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 37,
+      "line": 36,
       "match": "pCVar5[-3].",
       "text": "pCVar5[-3].len = 0x40000000;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 38,
+      "line": 37,
       "match": "pCVar5[-4].",
       "text": "pCVar5[-4].loop = 0x40000000;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 39,
+      "line": 38,
       "match": "pCVar5[-5].",
       "text": "pCVar5[-5].frame_list = (CCourseFrameList *)0x0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
+      "line": 40,
       "match": "pCVar5[-3].",
       "text": "*(byte *)&pCVar5[-3].frame_list = 0;",
       "type": "negative_offset"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_ESI",
-      "text": "core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CQuaternion4f *)&pCVar5[-0x3e].loop,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(uint *)((int)",
-      "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
+      "text": "puVar8 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 56,
-      "match": "&stack0xfffffff0",
-      "text": "*puVar7 = *(uint *)(&stack0xfffffff0 + (uint)bVar11 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 57,
-      "match": "&stack0xfffffff4",
-      "text": "*puVar8 = *(uint *)(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xfffffff4",
-      "text": "((int)(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)",
+      "text": "puVar7 = (uint *)((int)&local_14 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 56,
+      "match": "(uint *)((int)",
+      "text": "*puVar8 = *(uint *)((int)&local_14 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
       "match": "(uint *)((int)",
       "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 60,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 78,
+      "line": 75,
       "match": "pCVar5[-4].",
       "text": "pCVar5[-4].len = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 79,
+      "line": 76,
       "match": "pCVar5[-4].",
       "text": "pCVar5[-4].frame_list = (CCourseFrameList *)0x0;",
       "type": "negative_offset"

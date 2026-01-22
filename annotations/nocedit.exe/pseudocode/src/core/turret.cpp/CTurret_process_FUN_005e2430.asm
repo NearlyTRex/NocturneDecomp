@@ -303,7 +303,7 @@ section .text
     LEA ESI,[ESP + 0xbc]                ; 005e2787
     LEA EDI,[ESP + 0x6c]                ; 005e278e
     CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 005e2792
-        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
+        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0xbc]                ; 005e2797
     ADD ESP,0x4                         ; 005e279e
     MOVSD ES:EDI,ESI                    ; 005e27a1
@@ -314,7 +314,7 @@ section .text
     PUSH EDI                            ; 005e27ac
     LEA ESI,[ESP + 0x8c]                ; 005e27ad
     CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 005e27b4
-        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
+        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA EDI,[ESP + 0xac]                ; 005e27b9
     LEA ESI,[ESP + 0x8c]                ; 005e27c0
     ADD ESP,0x4                         ; 005e27c7
@@ -335,7 +335,7 @@ section .text
     PUSH EAX                            ; 005e27f3
     LEA ESI,[ESP + 0xa4]                ; 005e27f4
     CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 005e27fb
-        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
+        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t, CQuaternion4f * result_out)
     ADD ESP,0xc                         ; 005e2800
     LEA EAX,[ESP + 0x78]                ; 005e2803
     LEA EDI,[ESP + 0x78]                ; 005e2807

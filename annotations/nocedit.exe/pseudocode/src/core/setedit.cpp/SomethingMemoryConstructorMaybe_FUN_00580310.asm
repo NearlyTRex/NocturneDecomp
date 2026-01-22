@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Out_of_memory_0064858f
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;   int g_CameraOriginX
 ;   int g_CameraOriginY

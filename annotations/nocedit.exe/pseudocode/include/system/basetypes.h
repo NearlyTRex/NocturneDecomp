@@ -13,7 +13,7 @@
 // =============================================================================
 // Calling Convention Macros
 // =============================================================================
-// Windows/Watcom calling conventions - define as empty for non-MSVC compilers
+// Calling conventions parsed from x86watcom.cspec - define as empty for non-MSVC compilers
 #ifndef _MSC_VER
 // Standard Windows calling conventions
 #define __cdecl
@@ -21,18 +21,9 @@
 #define __fastcall
 #define __thiscall
 #define __vectorcall
-// Watcom-specific calling conventions (from x86watcom.cspec)
+// Calling conventions from x86watcom.cspec
 #define __watcallRegister
 #define __watcallStack
-#define __syscall
-#define __fpustack
-#define __mathinternal
-#define __crtmath
-#define __fpureg
-#define __fpureg_safe
-#define __softfp_double
-#define __fpu_thunk
-// Watcom __cdecl variants with stack cleanup sizes
 #define __cdecl0
 #define __cdecl4
 #define __cdecl8
@@ -44,6 +35,21 @@
 #define __cdecl32
 #define __cdecl36
 #define __cdecl40
+#define __stack_esi
+#define __stack2_esi
+#define __stack3_esi
+#define __stack_esi_edi
+#define __stack2_esi_edi
+#define __syscall
+#define __fpustack
+#define __mathinternal
+#define __crtmath
+#define __fpureg
+#define __fpureg_safe
+#define __softfp_double
+#define __fpu_thunk
+// Unknown conventions
+#define __unknown
 #endif
 
 // =============================================================================

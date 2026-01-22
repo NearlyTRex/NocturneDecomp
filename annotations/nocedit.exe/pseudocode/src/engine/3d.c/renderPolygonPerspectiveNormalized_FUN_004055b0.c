@@ -10,22 +10,22 @@ SMRGLHeaderExtended * __cdecl
 engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *polygon_info)
 
 {
-  CVector3i vector;
   int iVar1;
   byte bVar2;
   int aiStackY_1010 [1016];
-  int local_20;
+  CVector3i local_28;
+  CVector3i local_1c;
   
   bVar2 = 0;
-  local_20 = (polygon_info->surface_normal).C;
-  vector.y = (polygon_info->surface_normal).A;
-  vector.x = (int)&stack0xffffffd8;
-  vector.z = (polygon_info->surface_normal).B;
-  engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(vector);
-  *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
-  *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  local_28.x = (polygon_info->surface_normal).A;
+  local_28.y = (polygon_info->surface_normal).B;
+  local_28.z = (polygon_info->surface_normal).C;
+  engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(&local_28,&local_1c);
+  local_28.x = local_1c.x;
+  *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
   if (iVar1 != 0) {
     if (g_MMXSupported == 0) {

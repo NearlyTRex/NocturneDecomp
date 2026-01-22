@@ -12,14 +12,20 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
   char *pcVar1;
   int iVar2;
   CCharacter *pCVar3;
-  uint *puVar4;
-  uint *puVar5;
+  CMatrix3x4f *pCVar4;
+  CVector3f *pCVar5;
   byte bVar6;
   CBodyPart *in_stack_00000008;
   int in_stack_0000000c;
   uint in_stack_00000010;
-  CMatrix3x4f *in_stack_ffffff64;
-  uint local_6c [15];
+  CVector3f local_9c;
+  uint local_90;
+  uint local_80;
+  uint local_70;
+  CMatrix3x4f local_6c;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
   CVector3f local_30;
   CVector3f local_24;
   CMatrix3x4f *local_18;
@@ -37,16 +43,18 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
       do {
         if (in_stack_0000000c == *(int *)pcVar1) {
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                    ((CMatrix3x4f *)(pcVar1 + 8),local_18 + *(int *)(pcVar1 + 4),in_stack_ffffff64);
-          puVar4 = local_6c;
-          puVar5 = (uint *)&stack0xffffff64;
+                    ((CMatrix3x4f *)(pcVar1 + 8),local_18 + *(int *)(pcVar1 + 4),&local_6c);
+          pCVar4 = &local_6c;
+          pCVar5 = &local_9c;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *puVar5 = *puVar4;
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+            pCVar5->x = pCVar4->m[0].w;
+            pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
           }
-          core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                    ((CVector3f *)&stack0xffffff64,(CMatrix3x3f *)&local_24);
+          core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_9c,(CMatrix3x3f *)&local_24);
+          local_3c = local_90;
+          local_38 = local_80;
+          local_34 = local_70;
           core_bodypart_cpp_FUN_0041add0();
         }
         pcVar1 = pcVar1 + 0x38;

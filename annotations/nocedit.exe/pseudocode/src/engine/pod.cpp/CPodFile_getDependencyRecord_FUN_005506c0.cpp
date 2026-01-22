@@ -1,24 +1,24 @@
 // Name: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
 // Address: 005506c0
 // Address Range: [[005506c0, 005507e3]]
-// Convention: __cdecl
-// Signature: void engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
+// Convention: __stack2_esi
+// Signature: CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
 
 #include "nocturne.h"
 
-void __cdecl
+CPodDependencyRecord * __stack2_esi
 engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0
           (CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record)
 
 {
   FILE *file;
   int iVar1;
-  uint *unaff_ESI;
   uint *puVar2;
-  byte bVar3;
+  CPodDependencyRecord *pCVar3;
+  byte bVar4;
   uint local_114 [66];
   
-  bVar3 = 0;
+  bVar4 = 0;
   if ((dependency_index < 0) || (this_ptr->dependency_count <= dependency_index)) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x32e;
@@ -43,10 +43,11 @@ engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",0x346);
   puVar2 = local_114;
+  pCVar3 = output_record;
   for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *puVar2;
-    puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
-    unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
+    *(uint *)pCVar3->filename = *puVar2;
+    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3 = (CPodDependencyRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
   }
-  return;
+  return output_record;
 }

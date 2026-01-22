@@ -25,7 +25,7 @@
 ;   int g_UseRGBConversion
 ;   int g_OriginalColorValue
 ;   int g_PackedPixelColor
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;

@@ -74,7 +74,7 @@
 ;   uint g_RedMask16 = 0xf800
 ;   uint g_GreenMask16 = 0x7e0
 ;   uint g_BlueMask16 = 0x1f
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   ushort[256] g_ColorTable16
 ;   uint[256] g_ColorTable32

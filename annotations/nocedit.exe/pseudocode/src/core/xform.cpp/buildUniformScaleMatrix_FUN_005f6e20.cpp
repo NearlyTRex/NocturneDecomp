@@ -1,17 +1,16 @@
 // Name: core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20
 // Address: 005f6e20
 // Address Range: [[005f6e20, 005f6e70]]
-// Convention: __cdecl
+// Convention: __stack_esi
 // Signature: void core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20(CMatrix3x4f * output_matrix, float scale_factor)
 
 #include "nocturne.h"
 
-void __cdecl
+void __stack_esi
 core_xform_cpp_buildUniformScaleMatrix_FUN_005f6e20(CMatrix3x4f *output_matrix,float scale_factor)
 
 {
   int iVar1;
-  uint *unaff_ESI;
   CMatrix3x4f **ppCVar2;
   CMatrix3x4f *local_34 [6];
   uint local_1c;
@@ -35,9 +34,9 @@ core_xform_cpp_buildUniformScaleMatrix_FUN_005f6e20(CMatrix3x4f *output_matrix,f
   local_c = output_matrix;
   ppCVar2 = local_34;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *ppCVar2;
+    *(CMatrix3x4f **)scale_factor = *ppCVar2;
     ppCVar2 = ppCVar2 + 1;
-    unaff_ESI = unaff_ESI + 1;
+    scale_factor = (float)((int)scale_factor + 4);
   }
   return;
 }

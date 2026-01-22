@@ -30,8 +30,7 @@ void core_haystack_cpp_FUN_004f0e40(void)
   CQuaternion4f *source_quaternions;
   SCollisionInfo *in_stack_ffffff7c;
   code *blend_callback;
-  float fStack_78;
-  float local_6c;
+  CQuaternion4f CStack_78;
   byte local_68 [20];
   CVector3f local_54;
   CVector3f local_48;
@@ -216,10 +215,10 @@ switchD_004f12ce_caseD_8:
       local_3c = 0.0;
       local_34 = 0.0;
     }
-    local_6c = *(float *)(in_stack_00000004->field2_0x240c + 0x1c) * in_stack_00000008;
+    CStack_78.z = *(float *)(in_stack_00000004->field2_0x240c + 0x1c) * in_stack_00000008;
     local_68._0_4_ = *(float *)(in_stack_00000004->field2_0x240c + 0x20) * in_stack_00000008;
     local_68._4_4_ = in_stack_00000008 * *(float *)(in_stack_00000004->field2_0x240c + 0x24);
-    local_3c = local_3c + local_6c;
+    local_3c = local_3c + CStack_78.z;
     local_38 = local_38 + (float)local_68._0_4_;
     local_34 = local_34 + (float)local_68._4_4_;
     core_charactr_cpp_CCharacter_FUN_00428f40(in_stack_00000004);
@@ -280,23 +279,23 @@ LAB_004f1054:
      (pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&unaff_EBP->motion_controller), pSVar7->state_index != 0x13)) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    pCVar5 = *(CVector3f **)(in_stack_00000004[2].cloth_data + 0x5508);
+    fVar6 = *(float *)(in_stack_00000004[2].cloth_data + 0x5508);
     iVar4 = DAT_02db8700;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-              ((CQuaternion4f *)(in_stack_00000004[2].cloth_data + 0x54fc),pCVar5);
+              ((CVector3f *)(in_stack_00000004[2].cloth_data + 0x54fc),&CStack_78);
     source_quaternions = (CQuaternion4f *)local_68;
-    local_68._0_4_ = fStack_78;
+    local_68._0_4_ = CStack_78.w;
     *(uint *)(local_68 + (uint)bVar10 * -8 + 4) =
-         *(uint *)(&stack0xffffff8c + (uint)bVar10 * -8);
+         *(uint *)(local_68 + (uint)bVar10 * -8 + -0xc);
     *(uint *)(local_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         *(uint *)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+         *(uint *)(local_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -8);
     *(uint *)
      ((int)(local_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) + ((uint)bVar10 * -2 + 1) * 4) =
          *(uint *)
-          ((int)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8) +
+          ((int)(local_68 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -8) +
           ((uint)bVar10 * -2 + 1) * 4);
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (unaff_EBP,source_quaternions,(float)pCVar5,iVar4,blend_callback);
+              (unaff_EBP,source_quaternions,fVar6,iVar4,blend_callback);
   }
   core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
 switchD_004f12ce_caseD_9:

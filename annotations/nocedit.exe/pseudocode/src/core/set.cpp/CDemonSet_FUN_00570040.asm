@@ -69,7 +69,7 @@ section .text
     PUSH EAX                            ; 0057008d | g_CDemonRendererInstance
     LEA ESI,[ESP + 0xd8]                ; 0057008e
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 00570095
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 0057009a
     XOR EDX,EDX                         ; 0057009d
     MOV ECX,dword ptr [ESP + 0x100]     ; 0057009f

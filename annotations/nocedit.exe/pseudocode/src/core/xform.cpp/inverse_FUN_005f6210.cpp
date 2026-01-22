@@ -1,17 +1,16 @@
 // Name: core_xform.cpp_inverse_FUN_005f6210
 // Address: 005f6210
 // Address Range: [[005f6210, 005f6458]]
-// Convention: __cdecl
+// Convention: __stack_esi
 // Signature: CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
 
 #include "nocturne.h"
 
-CMatrix3x4f * __cdecl
+CMatrix3x4f * __stack_esi
 core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *output_matrix,CMatrix3x4f *input_matrix)
 
 {
   int iVar1;
-  CMatrix3x4f *unaff_ESI;
   float *pfVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
@@ -37,8 +36,10 @@ core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *output_matrix,CMatrix3x4f *inpu
   double local_28;
   double local_20;
   double local_18;
+  CMatrix3x4f *local_10;
   
   bVar4 = 0;
+  local_10 = input_matrix;
   dVar5 = core_xform_cpp_determinant_FUN_005f61c0(output_matrix);
   local_20 = dVar5;
   local_98 = SUB84 /* extract 2-byte value */(dVar5,0);
@@ -87,11 +88,11 @@ core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *output_matrix,CMatrix3x4f *inpu
   local_64 = -(output_matrix->m[2].z * local_68 +
               output_matrix->m[1].z * local_6c + output_matrix->m[0].z * local_70);
   pfVar2 = &local_90;
-  pCVar3 = unaff_ESI;
+  pCVar3 = local_10;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     pCVar3->m[0].w = *pfVar2;
     pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  return unaff_ESI;
+  return local_10;
 }

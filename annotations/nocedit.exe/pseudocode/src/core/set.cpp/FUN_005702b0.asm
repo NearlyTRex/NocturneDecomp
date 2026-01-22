@@ -95,7 +95,7 @@ section .text
     PUSH EAX                            ; 005702f7 | g_CDemonRendererInstance
     LEA ESI,[ESP + 0xd8]                ; 005702f8
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 005702ff
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 00570304
     XOR EDX,EDX                         ; 00570307
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00570309
@@ -221,7 +221,7 @@ section .text
     LEA EDI,[ESP + 0xf0]                ; 005704aa
     MOV dword ptr [ESP + 0xd4],EDX      ; 005704b1
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 005704b8
-        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
+        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0xe4]                ; 005704bd
     ADD ESP,0x4                         ; 005704c4
     MOVSD ES:EDI,ESI                    ; 005704c7

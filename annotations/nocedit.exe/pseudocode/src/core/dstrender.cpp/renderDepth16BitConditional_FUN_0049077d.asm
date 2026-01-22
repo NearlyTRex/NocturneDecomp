@@ -8,7 +8,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950 at 0048a9df
 ;
 ; Referenced Globals:
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 DAT_02d02584
 ;
 ; *****************************************************************************

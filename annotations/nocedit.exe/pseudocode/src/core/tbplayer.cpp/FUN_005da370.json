@@ -8,10 +8,10 @@
         "message": "ambiguating new declaration of 'void core_tbplayer_cpp_FUN_005da370()'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 64,
-        "message": "'stack0xffffff40' was not declared in this scope; did you mean 'in_stack_ffffff40'?"
+        "category": "other",
+        "column": 30,
+        "line": 67,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -33,20 +33,26 @@
         "column": 24,
         "line": 63,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 67,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 206,
+    "complexity_score": 186,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 61,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
-      "stack_ref",
       "unaffected_reg"
     ],
     "total_lines": 169
@@ -269,7 +275,7 @@
       "description": "Unaffected register variable",
       "line": 6,
       "match": "unaff_ESI",
-      "text": "uint *unaff_ESI;",
+      "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
@@ -284,13 +290,6 @@
       "line": 10,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffff40",
-      "text": "CMatrix3x4f *in_stack_ffffff40;",
       "type": "stack_param"
     },
     {
@@ -318,29 +317,22 @@
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_00000004",
-      "text": "(&local_90,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff40);",
+      "text": "(&local_90,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),&local_c0);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_ffffff40",
-      "text": "(&local_90,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff40);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 57,
-      "match": "&stack0xffffff40",
-      "text": "puVar2 = (uint *)&stack0xffffff40;",
-      "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
       "line": 59,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = *puVar2;",
+      "text": "*unaff_ESI = pCVar2->m[0].w;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",

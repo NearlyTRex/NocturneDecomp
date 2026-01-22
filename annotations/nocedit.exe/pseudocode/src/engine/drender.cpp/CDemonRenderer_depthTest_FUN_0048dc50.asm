@@ -16,8 +16,8 @@
 ;   core_weather.cpp_CWeather_FUN_005ef190 at 005ef33c
 ;
 ; Referenced Globals:
-;   void*[1024] g_ScreenBufferArray
-;   uint*[1024] g_ZBufferScanlineArray
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; Called Functions:
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110

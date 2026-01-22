@@ -4,61 +4,79 @@
       {
         "category": "missing_member",
         "column": 36,
-        "line": 75,
+        "line": 74,
         "message": "'CNetGame' {aka 'struct CNetGame'} has no member named 'field7_0x118'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 96,
+        "line": 95,
         "message": "request for member '_0_4_' in 'local_b0', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 97,
+        "line": 96,
         "message": "request for member '_4_4_' in 'local_b0', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 98,
+        "line": 97,
         "message": "request for member '_8_4_' in 'local_b0', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 103,
+        "line": 102,
         "message": "request for member '_12_4_' in 'local_b0', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "other",
-        "column": 75,
-        "line": 114,
+        "column": 19,
+        "line": 116,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 18,
+        "column": 24,
         "line": 117,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 18,
+        "column": 19,
+        "line": 118,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 24,
         "line": 119,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 18,
+        "column": 19,
+        "line": 123,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 24,
         "line": 124,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 18,
+        "column": 19,
         "line": 125,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 126,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
@@ -179,7 +197,7 @@
         "category": "undeclared_identifier",
         "column": 73,
         "line": 313,
-        "message": "'stack0xfffff9d4' was not declared in this scope; did you mean 'in_stack_fffff9e4'?"
+        "message": "'stack0xfffff9d4' was not declared in this scope"
       }
     ],
     "success": false,
@@ -192,25 +210,37 @@
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 114,
+        "column": 10,
+        "line": 116,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 10,
+        "column": 15,
         "line": 117,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
+        "line": 118,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 119,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
+        "line": 123,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 15,
         "line": 124,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -218,6 +248,12 @@
         "category": "other",
         "column": 10,
         "line": 125,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 126,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -314,17 +350,16 @@
   },
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 758,
+    "complexity_score": 763,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "pseudocode_lines": 373,
-    "suspect_count": 35,
+    "suspect_count": 36,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
-      "stack_param",
       "stack_ref",
       "unknown_field",
       "warning_overlapping_globals"
@@ -893,7 +928,7 @@
     {
       "addr": "02cf6a9c",
       "name": "g_ScreenBufferArray",
-      "type": "void*[1024]",
+      "type": "void*[1200]",
       "value": null
     },
     {
@@ -1440,80 +1475,87 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_fffff9e4",
-      "text": "CVector3i *in_stack_fffff9e4;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 89,
+      "line": 88,
       "match": "._0_4_",
       "text": "local_b0._0_4_ = (pCVar9->position).x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 90,
+      "line": 89,
       "match": "._4_4_",
       "text": "local_b0._4_4_ = (pCVar4->base_character).base_actor.location.position.y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 91,
+      "line": 90,
       "match": "._8_4_",
       "text": "local_b0._8_4_ = (pCVar4->base_character).base_actor.location.position.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 96,
+      "line": 95,
       "match": "._12_4_",
       "text": "local_b0._12_4_ = pCVar10->pitch;",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_fffff9e4",
-      "text": "(&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_fffff9e4);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 110,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) =",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_88 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 112,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_88 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 115,
-      "match": "in_stack_fffff9e4",
-      "text": "(&g_CDemonCameraInstance,output_ptr,in_stack_fffff9e4);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 116,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 117,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar15 * -2];",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_94 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 118,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_94 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
       "type": "pointer_cast"
     },
     {

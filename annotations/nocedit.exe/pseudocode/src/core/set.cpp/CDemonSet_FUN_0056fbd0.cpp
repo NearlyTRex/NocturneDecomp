@@ -23,11 +23,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr)
   int iVar11;
   CDemonSet *pCVar12;
   uint in_stack_00000008;
-  CVector3i *in_stack_ffffff78;
   float local_70 [2];
   float fStack_68;
-  float local_64;
-  float fStack_60;
+  CVector3i local_64;
   CVector3f CStack_50;
   float fStack_44;
   float fStack_40;
@@ -43,7 +41,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr)
   }
   DAT_03342b4c = 0;
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-            (g_CDemonRendererPtr2,in_stack_ffffff78);
+            (g_CDemonRendererPtr2,&local_64);
   engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
             (g_CDemonRendererPtr2,local_70);
   local_28 = 0xc;
@@ -123,8 +121,8 @@ joined_r0x0056fede:
         (&g_VertexNormalArray[20000].y)[DAT_03342b4c * 2] = (float)this_ptr_00;
         DAT_03342b4c = SVar10;
         (&DAT_03342b4c)[SVar10 * 2] =
-             (SIZE_T)((fStack_60 - CStack_38.z) * (fStack_60 - CStack_38.z) +
-                     (local_64 - CStack_38.y) * (local_64 - CStack_38.y) +
+             (SIZE_T)(((float)local_64.y - CStack_38.z) * ((float)local_64.y - CStack_38.z) +
+                     ((float)local_64.x - CStack_38.y) * ((float)local_64.x - CStack_38.y) +
                      (fStack_68 - CStack_38.x) * (fStack_68 - CStack_38.x));
       }
 LAB_0056fc73:

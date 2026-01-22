@@ -400,7 +400,7 @@ section .text
     LEA ESI,[ESP + 0x47c]               ; 004433b1
     LEA EDI,[ESP + 0x48c]               ; 004433b8
     CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 004433bf
-        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
+        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x47c]               ; 004433c4
     ADD ESP,0x4                         ; 004433cb
     MOVSD ES:EDI,ESI                    ; 004433ce
@@ -558,7 +558,7 @@ section .text
     PUSH EAX                            ; 0044357d
     LEA ESI,[ESP + 0x49c]               ; 0044357e
     CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 00443585
-        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
+        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CVector3f * euler_angles, CQuaternion4f * quat_out)
     MOV EAX,dword ptr [EBP + 0x4]       ; 0044358a
     LEA ESI,[ESP + 0x49c]               ; 0044358d
     ADD ESP,0x4                         ; 00443594

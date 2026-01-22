@@ -1,12 +1,13 @@
 // Name: engine_matrix.c_transformWorldToView_FUN_0050cc40
 // Address: 0050cc40
 // Address Range: [[0050cc40, 0050cd0c]]
-// Convention: __cdecl
+// Convention: __stack_esi
 // Signature: void engine_matrix.c_transformWorldToView_FUN_0050cc40(int * input_coords, int * output_coords)
 
 #include "nocturne.h"
 
-void __cdecl engine_matrix_c_transformWorldToView_FUN_0050cc40(int *input_coords,int *output_coords)
+void __stack_esi
+engine_matrix_c_transformWorldToView_FUN_0050cc40(int *input_coords,int *output_coords)
 
 {
   longlong lVar1;
@@ -17,7 +18,6 @@ void __cdecl engine_matrix_c_transformWorldToView_FUN_0050cc40(int *input_coords
   longlong lVar6;
   int iVar7;
   int iVar8;
-  int *unaff_ESI;
   int iVar9;
   
   iVar9 = *input_coords - g_RelativeX;
@@ -29,23 +29,20 @@ void __cdecl engine_matrix_c_transformWorldToView_FUN_0050cc40(int *input_coords
   lVar4 = (longlong)g_TransformMatrix.m[0].z;
   lVar5 = (longlong)g_TransformMatrix.m[1].z;
   lVar6 = (longlong)g_TransformMatrix.m[2].z;
-  *unaff_ESI = ((uint)((longlong)g_TransformMatrix.m[0].x * (longlong)iVar9) >> 0x10 |
-               (int)((ulonglong)((longlong)g_TransformMatrix.m[0].x * (longlong)iVar9) >> 0x20) <<
-               0x10) + ((uint)((longlong)g_TransformMatrix.m[1].x * (longlong)iVar7) >> 0x10 |
-                       (int)((ulonglong)((longlong)g_TransformMatrix.m[1].x * (longlong)iVar7) >>
-                            0x20) << 0x10) +
-               ((uint)((longlong)g_TransformMatrix.m[2].x * (longlong)iVar8) >> 0x10 |
-               (int)((ulonglong)((longlong)g_TransformMatrix.m[2].x * (longlong)iVar8) >> 0x20) <<
-               0x10);
-  unaff_ESI[1] = ((uint)(lVar1 * iVar9) >> 0x10 | (int)((ulonglong)(lVar1 * iVar9) >> 0x20) << 0x10)
-                 + ((uint)(lVar2 * iVar7) >> 0x10 |
-                   (int)((ulonglong)(lVar2 * iVar7) >> 0x20) << 0x10) +
-                 ((uint)(lVar3 * iVar8) >> 0x10 | (int)((ulonglong)(lVar3 * iVar8) >> 0x20) << 0x10)
-  ;
-  unaff_ESI[2] = ((uint)(lVar4 * iVar9) >> 0x10 | (int)((ulonglong)(lVar4 * iVar9) >> 0x20) << 0x10)
-                 + ((uint)(lVar5 * iVar7) >> 0x10 |
-                   (int)((ulonglong)(lVar5 * iVar7) >> 0x20) << 0x10) +
-                 ((uint)(lVar6 * iVar8) >> 0x10 | (int)((ulonglong)(lVar6 * iVar8) >> 0x20) << 0x10)
-  ;
+  *output_coords =
+       ((uint)((longlong)g_TransformMatrix.m[0].x * (longlong)iVar9) >> 0x10 |
+       (int)((ulonglong)((longlong)g_TransformMatrix.m[0].x * (longlong)iVar9) >> 0x20) << 0x10) +
+       ((uint)((longlong)g_TransformMatrix.m[1].x * (longlong)iVar7) >> 0x10 |
+       (int)((ulonglong)((longlong)g_TransformMatrix.m[1].x * (longlong)iVar7) >> 0x20) << 0x10) +
+       ((uint)((longlong)g_TransformMatrix.m[2].x * (longlong)iVar8) >> 0x10 |
+       (int)((ulonglong)((longlong)g_TransformMatrix.m[2].x * (longlong)iVar8) >> 0x20) << 0x10);
+  output_coords[1] =
+       ((uint)(lVar1 * iVar9) >> 0x10 | (int)((ulonglong)(lVar1 * iVar9) >> 0x20) << 0x10) +
+       ((uint)(lVar2 * iVar7) >> 0x10 | (int)((ulonglong)(lVar2 * iVar7) >> 0x20) << 0x10) +
+       ((uint)(lVar3 * iVar8) >> 0x10 | (int)((ulonglong)(lVar3 * iVar8) >> 0x20) << 0x10);
+  output_coords[2] =
+       ((uint)(lVar4 * iVar9) >> 0x10 | (int)((ulonglong)(lVar4 * iVar9) >> 0x20) << 0x10) +
+       ((uint)(lVar5 * iVar7) >> 0x10 | (int)((ulonglong)(lVar5 * iVar7) >> 0x20) << 0x10) +
+       ((uint)(lVar6 * iVar8) >> 0x10 | (int)((ulonglong)(lVar6 * iVar8) >> 0x20) << 0x10);
   return;
 }

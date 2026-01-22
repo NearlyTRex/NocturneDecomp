@@ -30,7 +30,7 @@
 ;   undefined4 g_CoronaCameraRotationMatrix.m[2].z
 ;   int g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0

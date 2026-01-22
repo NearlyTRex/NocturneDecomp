@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 39,
+        "line": 35,
         "message": "'SQRT' was not declared in this scope"
       }
     ],
@@ -20,17 +20,16 @@
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 100,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 40,
-    "suspect_count": 5,
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 124
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -191,36 +190,8 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX",
-      "text": "CQuaternion4f *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "text": "CVector3f *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_ECX",
-      "text": "quat_ptr = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX",
-      "text": "axis_out = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 28,
       "match": "SQRT",
       "text": "fVar1 = 1.0 / SQRT(fVar1);",
       "type": "decompiler_intrinsic"

@@ -8,10 +8,10 @@
         "message": "ambiguating new declaration of 'void core_mobster_cpp_FUN_00526b20()'"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "other",
         "column": 30,
-        "line": 96,
-        "message": "'stack0xffffff28' was not declared in this scope; did you mean 'in_stack_ffffff28'?"
+        "line": 101,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -36,27 +36,33 @@
       },
       {
         "category": "other",
+        "column": 24,
+        "line": 97,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 14,
-        "line": 99,
+        "line": 101,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 266,
+    "complexity_score": 234,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 96,
-    "suspect_count": 15,
+    "pseudocode_lines": 94,
+    "suspect_count": 12,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
-      "stack_ref",
       "unaffected_reg",
       "unnamed_param"
     ],
-    "total_lines": 255
+    "total_lines": 253
   },
   "cross_references": [],
   "function": {
@@ -337,7 +343,7 @@
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_ESI",
-      "text": "uint *unaff_ESI;",
+      "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
@@ -352,13 +358,6 @@
       "line": 15,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffff28",
-      "text": "CMatrix3x4f *in_stack_ffffff28;",
       "type": "stack_param"
     },
     {
@@ -383,50 +382,36 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 89,
-      "match": "&stack0xffffff28",
-      "text": "((CMatrix3x4f *)&stack0xffffff28,&local_60,&local_30);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 91,
-      "match": "&stack0xffffff28",
-      "text": "((CMatrix3x4f *)&stack0xffffff28,",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 90,
       "match": "in_stack_00000004",
-      "text": "(CMatrix3x4f *)(iVar3 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff28);",
+      "text": "(&local_d8,(CMatrix3x4f *)(iVar3 * 0x30 + in_stack_00000004 + 0xfd8),&local_a8);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 92,
-      "match": "in_stack_ffffff28",
-      "text": "(CMatrix3x4f *)(iVar3 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff28);",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 93,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = pCVar4->m[0].w;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
       "line": 95,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = *puVar4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 97,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 97,
+      "line": 95,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar5 * -2 + 1;",
       "type": "unaffected_reg"

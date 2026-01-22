@@ -11,7 +11,7 @@
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 at 00574a31
 ;
 ; Referenced Globals:
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;
 ; *****************************************************************************

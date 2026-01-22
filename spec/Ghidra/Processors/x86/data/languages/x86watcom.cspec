@@ -470,6 +470,8 @@
             <register name="EDX" />
         </killedbycall>
     </prototype>
+    <!-- __fpustack: For complex FPU functions (atan2, pow, asin, acos, etc.) that use many FPU registers.
+         All ST registers are killed. Callers should use FNSAVE/FRSTOR if they have values in ST1-ST7. -->
     <prototype name="__fpustack" extrapop="4" stackshift="0">
         <input>
             <pentry minsize="10" maxsize="10" metatype="float"><addr offset="4" space="stack" /></pentry>
@@ -487,8 +489,6 @@
         </unaffected>
         <killedbycall>
             <register name="EAX" />
-            <register name="ECX" />
-            <register name="EDX" />
             <register name="ST0" />
             <register name="ST1" />
             <register name="ST2" />
@@ -499,6 +499,30 @@
             <register name="ST7" />
         </killedbycall>
     </prototype>
+    <!-- __fpustack_safe: For simple FPU functions (fdiv, fmul, etc.) that preserve caller's FPU stack.
+         Only ST0 is killed (return value). ST1-ST7 are preserved (shifted during call, restored after).
+         Use this when callers do FXCH STn after the call, indicating they expect STn to be valid. -->
+    <prototype name="__fpustack_safe" extrapop="4" stackshift="0">
+        <input>
+            <pentry minsize="10" maxsize="10" metatype="float"><addr offset="4" space="stack" /></pentry>
+            <pentry minsize="10" maxsize="10" metatype="float"><addr offset="14" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="10" maxsize="10" metatype="float" extension="float"><register name="ST0" /></pentry>
+        </output>
+        <unaffected>
+            <register name="ESP" />
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ST0" />
+        </killedbycall>
+    </prototype>
+    <!-- ECX and EDX are preserved by both __fpustack variants -->
     <prototype name="__mathinternal" extrapop="0" stackshift="4">
         <input>
             <!-- No parameters -->

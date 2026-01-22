@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 126,
+    "complexity_score": 60,
     "cross_reference_count": 11,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 61,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 136
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -100,7 +98,7 @@
         "005f76f1"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_xform.cpp_multiplyQuaternion_FUN_005f7640",
     "signature": "CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)"
   },
@@ -134,10 +132,10 @@
     "pcode_op_count": 565
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 32,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -181,13 +179,6 @@
         "offset": 8,
         "size": 4,
         "type": "CQuaternion4f *"
-      },
-      {
-        "is_param": true,
-        "name": "quat2_ptr",
-        "offset": 12,
-        "size": 4,
-        "type": "CQuaternion4f *"
       }
     ]
   },
@@ -208,48 +199,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_ESI",
-      "text": "CQuaternion4f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->w = quat1_ptr->w * result_out->w -",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->x = (fVar13 * fVar14 + fVar7 * fVar8 + fVar1 * fVar2) - fVar17 * fVar18;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->y = (fVar15 * fVar16 + fVar9 * fVar10 + fVar3 * fVar4) - fVar21 * fVar22;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->z = (fVar19 * fVar20 + fVar11 * fVar12 + fVar5 * fVar6) - fVar23 * fVar24;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 63,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

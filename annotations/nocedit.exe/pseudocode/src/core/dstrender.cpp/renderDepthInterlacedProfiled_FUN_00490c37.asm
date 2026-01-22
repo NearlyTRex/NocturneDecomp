@@ -11,7 +11,7 @@
 ;   int g_RenderPixelBudget = 0x1
 ;   int g_RenderPixelCounter
 ;   int g_RenderAbortFlag
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************

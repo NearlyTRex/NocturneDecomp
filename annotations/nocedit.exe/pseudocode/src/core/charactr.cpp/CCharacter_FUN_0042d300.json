@@ -14,10 +14,10 @@
         "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 24,
-        "message": "'stack0xffffffc8' was not declared in this scope; did you mean 'in_stack_ffffffc8'?"
+        "category": "other",
+        "column": 30,
+        "line": 27,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -27,20 +27,26 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 27,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 136,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 21,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
-      "stack_ref",
       "unaffected_reg"
     ],
     "total_lines": 57
@@ -149,7 +155,7 @@
       "description": "Unaffected register variable",
       "line": 6,
       "match": "unaff_ESI",
-      "text": "uint *unaff_ESI;",
+      "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
@@ -157,13 +163,6 @@
       "line": 9,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffffc8",
-      "text": "CMatrix3x4f *in_stack_ffffffc8;",
       "type": "stack_param"
     },
     {
@@ -177,29 +176,22 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
-      "text": "*(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0,in_stack_ffffffc8);",
+      "text": "*(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0,&local_38);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffffc8",
-      "text": "*(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0,in_stack_ffffffc8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffffc8",
-      "text": "puVar2 = (uint *)&stack0xffffffc8;",
-      "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
       "line": 19,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = *puVar2;",
+      "text": "*unaff_ESI = pCVar2->m[0].w;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",

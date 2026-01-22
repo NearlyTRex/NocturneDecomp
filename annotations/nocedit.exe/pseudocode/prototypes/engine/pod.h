@@ -57,7 +57,7 @@ void CPodFile::getAuditRecord(CPodFile * this_ptr, int record_index, void * outp
 
 // Original: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
 // Address: 005506c0
-void CPodFile::getDependencyRecord(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record);
+CPodDependencyRecord * CPodFile::getDependencyRecord(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record);
 
 // Original: engine_pod.cpp_CPodFile_computeFileCRC_FUN_005507f0
 // Address: 005507f0

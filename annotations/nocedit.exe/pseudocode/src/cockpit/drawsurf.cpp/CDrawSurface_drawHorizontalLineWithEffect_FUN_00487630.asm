@@ -17,7 +17,7 @@
 ;   int g_OriginalColorValue
 ;   int g_PackedPixelColor
 ;   int g_DuplicatedPixelColor
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;
 ; *****************************************************************************
 

@@ -10,7 +10,7 @@
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b3c8
 ;
 ; Referenced Globals:
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;
 ; Called Functions:

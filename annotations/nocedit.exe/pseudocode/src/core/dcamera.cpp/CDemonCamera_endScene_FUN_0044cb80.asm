@@ -25,7 +25,7 @@
 ;   TerminatedCString s_CDemonCamera_endScene_Sc_0061a027
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename

@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "other",
-        "column": 43,
+        "column": 23,
         "line": 26,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
@@ -14,10 +14,10 @@
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
+        "category": "other",
+        "column": 18,
         "line": 29,
-        "message": "'stack0xffffffd0' was not declared in this scope; did you mean 'in_stack_ffffffc0'?"
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -26,34 +26,34 @@
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
+        "category": "other",
+        "column": 18,
         "line": 31,
-        "message": "'stack0xffffffd4' was not declared in this scope"
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
         "line": 34,
-        "message": "'stack0xffffffc4' was not declared in this scope; did you mean 'in_stack_ffffffc0'?"
+        "message": "'stack0xffffffc4' was not declared in this scope"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
+        "category": "other",
+        "column": 18,
         "line": 35,
-        "message": "'stack0xffffffdc' was not declared in this scope"
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
         "line": 36,
-        "message": "'stack0xffffffc8' was not declared in this scope; did you mean 'in_stack_ffffffc0'?"
+        "message": "'stack0xffffffc8' was not declared in this scope"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
+        "category": "other",
+        "column": 18,
         "line": 37,
-        "message": "'stack0xffffffe0' was not declared in this scope; did you mean 'in_stack_ffffffc0'?"
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -72,23 +72,46 @@
       },
       {
         "category": "other",
+        "column": 9,
+        "line": 29,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 4,
         "line": 30,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 35,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 178,
+    "complexity_score": 143,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 33,
-    "suspect_count": 13,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
       "stack_ref"
     ],
     "total_lines": 91
@@ -248,20 +271,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffffc0",
-      "text": "CVector3i *in_stack_ffffffc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffffc0",
-      "text": "(this_ptr,screen_coords,depth,(int)in_stack_ffffffc0);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(uint *)((int)",
@@ -269,11 +278,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 22,
-      "match": "&stack0xffffffd0",
-      "text": "*(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -283,18 +292,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 24,
-      "match": "&stack0xffffffd4",
-      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_ffffffc0",
-      "text": "(this_ptr,&local_1c,in_stack_ffffffc0);",
-      "type": "stack_param"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -311,11 +313,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "&stack0xffffffdc",
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -332,11 +334,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 30,
-      "match": "&stack0xffffffe0",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ]
 }

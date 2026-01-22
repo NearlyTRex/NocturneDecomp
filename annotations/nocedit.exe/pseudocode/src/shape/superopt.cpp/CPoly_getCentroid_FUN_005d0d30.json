@@ -4,13 +4,19 @@
       {
         "category": "other",
         "column": 25,
+        "line": 47,
+        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 25,
         "line": 48,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 49,
+        "line": 57,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       },
       {
@@ -22,19 +28,13 @@
       {
         "category": "other",
         "column": 25,
-        "line": 59,
-        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 69,
+        "line": 68,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -49,13 +49,19 @@
       {
         "category": "other",
         "column": 14,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
         "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 49,
+        "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -67,7 +73,7 @@
       {
         "category": "other",
         "column": 14,
-        "line": 59,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -75,28 +81,21 @@
         "column": 14,
         "line": 68,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 69,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 162,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 62,
-    "suspect_count": 9,
+    "pseudocode_lines": 61,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 147
+    "total_lines": 146
   },
   "cross_references": [],
   "function": {
@@ -107,7 +106,7 @@
         "005d0e1e"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30",
     "signature": "CVector3d * shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30(CPoly * this_ptr, CVector3d * out_centroid)"
@@ -185,10 +184,10 @@
     "vtable_offset": 108
   },
   "stack_frame": {
-    "frame_size": 148,
+    "frame_size": 144,
     "local_size": 140,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -309,13 +308,6 @@
         "offset": 4,
         "size": 4,
         "type": "CPoly *"
-      },
-      {
-        "is_param": true,
-        "name": "out_centroid",
-        "offset": 8,
-        "size": 4,
-        "type": "CVector3d *"
       }
     ]
   },
@@ -346,67 +338,46 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "text": "CVector3d *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(double *)((int)",
       "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 41,
       "match": "(double *)((int)",
       "text": "pdVar5 = (double *)((int)pdVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(double *)((int)",
+      "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(double *)((int)",
-      "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(double *)((int)",
       "text": "pdVar5 = (double *)((int)pdVar5 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 58,
-      "match": "unaff_ESI",
-      "text": "pCVar6 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(double *)((int)",
       "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 61,
       "match": "(CVector3d *)((int)",
       "text": "pCVar6 = (CVector3d *)((int)&pCVar6->x + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
     }
   ],
   "vtable_info": {

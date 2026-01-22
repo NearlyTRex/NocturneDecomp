@@ -29,19 +29,19 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   CVector3f *pCVar13;
   int extraout_EAX;
   int extraout_EAX_00;
-  float *pfVar14;
-  byte bVar15;
+  uint *puVar14;
+  uint *puVar15;
+  byte bVar16;
   CBoneGuy *in_stack_00000004;
   float in_stack_00000008;
-  float afStackY_1908 [1484];
+  int aiStackY_1908 [1484];
   CQuaternion4f *quat_ptr;
-  float in_stack_fffffe44;
   int iStack_1b4;
   SDamageInfo local_180;
   CBoundingBox3D local_144;
   CQuaternion4f local_12c;
-  float local_11c;
-  float afStack_118 [4];
+  CQuaternion4f local_11c;
+  float local_10c;
   float local_108;
   float local_104;
   CVector3f local_100;
@@ -85,7 +85,7 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   CVector3f *local_18;
   float local_14;
   
-  bVar15 = 0;
+  bVar16 = 0;
   iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,in_stack_00000004->field1_0xbeb4 + 0x1c);
   if (iVar8 != 0) {
@@ -135,15 +135,16 @@ void core_boneguy_cpp_FUN_0041bf90(void)
         local_a8 = local_18->y + local_b4;
         local_a4 = local_18->z + local_b0;
         core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                  (local_28,local_20,(CQuaternion4f *)in_stack_00000004->param,in_stack_fffffe44);
+                  (local_28,local_20,in_stack_00000004->param,&local_11c);
         quat_ptr = &local_12c;
         pCVar13 = &local_88;
-        local_12c.w = local_11c;
-        pfVar14 = (float *)((int)&local_12c + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
-        *(float *)((int)&local_12c + (uint)bVar15 * -8 + 4) = afStack_118[(uint)bVar15 * -2];
-        *pfVar14 = afStack_118[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
-        pfVar14[(uint)bVar15 * -2 + 1] =
-             (afStack_118 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1];
+        local_12c.w = local_11c.w;
+        puVar15 = (uint *)((int)&local_12c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+        puVar14 = (uint *)((int)&local_11c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+        *(uint *)((int)&local_12c + (uint)bVar16 * -8 + 4) =
+             *(uint *)((int)&local_11c + (uint)bVar16 * -8 + 4);
+        *puVar15 = *puVar14;
+        puVar15[(uint)bVar16 * -2 + 1] = puVar14[(uint)bVar16 * -2 + 1];
         core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(pCVar13,quat_ptr);
         local_88.x = in_stack_00000004->param * (float)6.2831853070000001 + local_88.x;
         *(float *)(local_44 + 0x20) = local_ac;
@@ -332,8 +333,8 @@ void core_boneguy_cpp_FUN_0041bf90(void)
       this_ptr = (in_stack_00000004->base_enemy).base_character.carry_hands[1].carry_actor;
       if (this_ptr != (CDemonActor *)0x0) {
         (*this_ptr->vtable->getBoundingBox)(this_ptr,&local_144);
-        afStack_118[3] = local_144.min.x + local_144.max.x;
-        local_c4.x = afStack_118[3] * 0.5f;
+        local_10c = local_144.min.x + local_144.max.x;
+        local_c4.x = local_10c * 0.5f;
         local_108 = local_144.min.y + local_144.max.y;
         local_104 = local_144.min.z + local_144.max.z;
         local_c4.y = local_108 * 0.5f;

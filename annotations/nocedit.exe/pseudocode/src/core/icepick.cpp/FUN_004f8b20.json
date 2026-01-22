@@ -8,10 +8,10 @@
         "message": "ambiguating new declaration of 'void core_icepick_cpp_FUN_004f8b20()'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 56,
-        "message": "'stack0xffffff58' was not declared in this scope; did you mean 'in_stack_ffffff58'?"
+        "category": "other",
+        "column": 30,
+        "line": 59,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -45,20 +45,26 @@
         "column": 24,
         "line": 55,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 59,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 197,
+    "complexity_score": 177,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 52,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
-      "stack_ref",
       "unaffected_reg"
     ],
     "total_lines": 147
@@ -288,13 +294,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_ffffff58",
-      "text": "CMatrix3x4f *in_stack_ffffff58;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
       "text": "iVar1 = *(int *)(in_stack_00000008 * 0x44 + in_stack_00000004 + 0x24ac);",
@@ -318,29 +317,22 @@
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000004",
-      "text": "(&local_78,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff58);",
+      "text": "(&local_78,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),&local_a8);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_ffffff58",
-      "text": "(&local_78,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff58);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xffffff58",
-      "text": "puVar2 = (uint *)&stack0xffffff58;",
-      "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
       "line": 51,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = *puVar2;",
+      "text": "*unaff_ESI = *(uint *)pCVar2;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",

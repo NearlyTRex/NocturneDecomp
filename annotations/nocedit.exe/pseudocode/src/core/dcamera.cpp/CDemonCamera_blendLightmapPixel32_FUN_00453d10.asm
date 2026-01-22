@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   char[241][320] g_CoronaBlurWorkBuffer
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
+; __stack_esi CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * input_vector, CVector3i * output_vector)
 ;
 ; Parameters:
-; CVector3i *      Stack[0x4]:4   inputVector
+; CVector3i *      Stack[0x4]:4   input_vector
 ; Local Variables:
 ; undefined1       Stack[-0x50]:1  local_50
 ; undefined4       Stack[-0x44]:4  local_44

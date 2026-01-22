@@ -38,10 +38,10 @@
         "message": "'SCarryHand' {aka 'struct SCarryHand'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 119,
-        "message": "'stack0xfffffd6c' was not declared in this scope; did you mean 'in_stack_fffffd6c'?"
+        "category": "other",
+        "column": 30,
+        "line": 122,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -57,20 +57,26 @@
         "column": 38,
         "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 122,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 341,
+    "complexity_score": 291,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 121,
-    "suspect_count": 20,
+    "suspect_count": 15,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
-      "stack_ref",
       "unaffected_reg",
       "warning_unreachable"
     ],
@@ -606,13 +612,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_fffffd6c",
-      "text": "CMatrix3x4f *in_stack_fffffd6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000008",
       "text": "((this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].",
@@ -627,23 +626,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_fffffd6c",
-      "text": ",in_stack_fffffd6c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 78,
       "match": "in_stack_00000008",
       "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_fffffd6c",
-      "text": ",in_stack_fffffd6c);",
       "type": "stack_param"
     },
     {
@@ -654,31 +639,17 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_fffffd6c",
-      "text": ",in_stack_fffffd6c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 112,
-      "match": "&stack0xfffffd6c",
-      "text": "puVar3 = (uint *)&stack0xfffffd6c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 118,
-      "match": "&stack0xfffffd6c",
-      "text": "puVar2 = (uint *)&stack0xfffffd6c;",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
       "line": 120,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = *puVar2;",
+      "text": "*unaff_ESI = *pfVar3;",
       "type": "unaffected_reg"
     },
     {

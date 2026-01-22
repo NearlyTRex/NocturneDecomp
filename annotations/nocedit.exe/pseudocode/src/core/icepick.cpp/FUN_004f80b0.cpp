@@ -31,7 +31,7 @@ void core_icepick_cpp_FUN_004f80b0(void)
   float afStackY_1864 [1520];
   CDeformableModelInstance *in_stack_ffffff6c;
   code *blend_callback;
-  float fStack_88;
+  CQuaternion4f CStack_88;
   byte auStack_78 [20];
   CVector3f CStack_64;
   float local_58;
@@ -319,22 +319,22 @@ LAB_004f82f8:
                     (&in_stack_00000004->base_actor,(SCollisionInfo *)in_stack_ffffff6c);
   if (iVar5 == 0) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    pCVar6 = *(CVector3f **)(in_stack_00000004[2].cloth_data + 0x5510);
+    fVar7 = *(float *)(in_stack_00000004[2].cloth_data + 0x5510);
     iVar5 = DAT_02db8970;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-              ((CQuaternion4f *)(in_stack_00000004[2].cloth_data + 0x5504),pCVar6);
-    auStack_78._0_4_ = fStack_88;
+              ((CVector3f *)(in_stack_00000004[2].cloth_data + 0x5504),&CStack_88);
+    auStack_78._0_4_ = CStack_88.w;
     *(uint *)(auStack_78 + (uint)bVar13 * -8 + 4) =
-         *(uint *)(&stack0xffffff7c + (uint)bVar13 * -8);
+         *(uint *)(auStack_78 + (uint)bVar13 * -8 + -0xc);
     *(uint *)(auStack_78 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =
-         *(uint *)(&stack0xffffff80 + (uint)bVar13 * -8 + (uint)bVar13 * -8);
+         *(uint *)(auStack_78 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + -8);
     *(uint *)
      ((int)(auStack_78 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) + ((uint)bVar13 * -2 + 1) * 4) =
          *(uint *)
-          ((int)(&stack0xffffff80 + (uint)bVar13 * -8 + (uint)bVar13 * -8) +
+          ((int)(auStack_78 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + -8) +
           ((uint)bVar13 * -2 + 1) * 4);
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (local_14,(CQuaternion4f *)auStack_78,(float)pCVar6,iVar5,blend_callback);
+              (local_14,(CQuaternion4f *)auStack_78,fVar7,iVar5,blend_callback);
   }
   core_icepick_cpp_FUN_004f8810();
   core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);

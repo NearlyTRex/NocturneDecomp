@@ -14130,10 +14130,10 @@
         "start":"0044d310"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310",
-    "ret":"void",
+    "ret":"CVector3i*",
     "vars":{
       "locals":[
         {
@@ -14203,7 +14203,7 @@
           "type":"CDemonCamera*"
         },
         {
-          "name":"output_ptr",
+          "name":"input_ptr",
           "storage":{
             "offset":8,
             "size":4,
@@ -14219,22 +14219,31 @@
           "type":"CVector3i*"
         },
         {
-          "name":"input_ptr",
+          "name":"output_ptr",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"CVector3i*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -14246,7 +14255,7 @@
         "start":"0044da90"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90",
     "ret":"CVector3i*",
@@ -14383,7 +14392,7 @@
           "type":"CDemonCamera*"
         },
         {
-          "name":"output_vector",
+          "name":"input_vector",
           "storage":{
             "offset":8,
             "size":4,
@@ -14399,15 +14408,14 @@
           "type":"CVector3i*"
         },
         {
-          "name":"input_vector",
+          "name":"output_vector",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -16304,10 +16312,10 @@
         "start":"0045bd10"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10",
-    "ret":"void*",
+    "ret":"SVertexData*",
     "vars":{
       "locals":[
         {
@@ -16491,13 +16499,12 @@
         {
           "name":"output_vertex",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -87242,7 +87249,7 @@
         "start":"005f4f10"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10",
     "ret":"CMatrix3x4f*",
@@ -87477,13 +87484,12 @@
         {
           "name":"matrix_b",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -88244,7 +88250,7 @@
         "start":"005f6210"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_inverse_FUN_005f6210",
     "ret":"CMatrix3x4f*",
@@ -88623,13 +88629,12 @@
         {
           "name":"input_matrix",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]

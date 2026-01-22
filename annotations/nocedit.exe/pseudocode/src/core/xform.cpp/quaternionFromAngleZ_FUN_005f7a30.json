@@ -2,27 +2,15 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 34,
-        "line": 17,
-        "message": "invalid cast from type 'CQuaternion4f*' to type 'float'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 17,
+        "line": 16,
         "message": "'fcos' was not declared in this scope; did you mean 'cos'?"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 18,
-        "message": "invalid cast from type 'CQuaternion4f*' to type 'float'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 18,
+        "line": 17,
         "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
       }
     ],
@@ -38,17 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 84,
+    "complexity_score": 13,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 14,
-    "suspect_count": 6,
-    "suspect_types": [
-      "param_count_too_many",
-      "unaffected_reg"
-    ],
-    "total_lines": 40
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
   },
   "cross_references": [
     {
@@ -78,9 +63,9 @@
         "005f7a69"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30",
-    "signature": "void core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30(CQuaternion4f * quat_ptr, float angle_radians)"
+    "signature": "void core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30(float angle_radians, CQuaternion4f * quat_ptr)"
   },
   "function_calls": [],
   "globals": [
@@ -98,51 +83,61 @@
         "call_addr": "00558585",
         "call_type": "direct",
         "caller": "core_scat.cpp_FUN_005584a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 10,
-        "reg_params": [],
+        "reg_params": [
+          "EDX"
+        ],
         "stack_params": 1
       },
       {
         "call_addr": "00558509",
         "call_type": "direct",
         "caller": "core_scat.cpp_FUN_005584a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 10,
-        "reg_params": [],
+        "reg_params": [
+          "EDX"
+        ],
         "stack_params": 1
       },
       {
         "call_addr": "004d522f",
         "call_type": "direct",
         "caller": "core_gabriela.cpp_FUN_004d4d80",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 7,
-        "reg_params": [],
+        "reg_params": [
+          "EDX"
+        ],
         "stack_params": 1
       },
       {
         "call_addr": "005c0311",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c02b0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 10,
-        "reg_params": [],
+        "reg_params": [
+          "EDX"
+        ],
         "stack_params": 1
       },
       {
         "call_addr": "005c05f5",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c02b0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 10,
-        "reg_params": [],
+        "reg_params": [
+          "EDX"
+        ],
         "stack_params": 1
       }
     ],
     "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 1
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.28,
@@ -172,10 +167,10 @@
     "pcode_op_count": 157
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 36,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -208,15 +203,8 @@
       },
       {
         "is_param": true,
-        "name": "quat_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CQuaternion4f *"
-      },
-      {
-        "is_param": true,
         "name": "angle_radians",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "float"
       }
@@ -239,52 +227,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = (float)fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[1] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[2] = 0.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[3] = (float)fVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 5,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

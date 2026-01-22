@@ -8,10 +8,10 @@
         "message": "ambiguating new declaration of 'void core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0()'"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "other",
         "column": 40,
-        "line": 41,
-        "message": "'stack0xffffff60' was not declared in this scope; did you mean 'in_stack_ffffff60'?"
+        "line": 52,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -36,7 +36,7 @@
       },
       {
         "category": "other",
-        "column": 56,
+        "column": 34,
         "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -67,49 +67,55 @@
       {
         "category": "other",
         "column": 22,
-        "line": 50,
+        "line": 49,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 60,
+        "line": 59,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 63,
+        "line": 62,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 65,
+        "line": 64,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 68,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 257,
+    "complexity_score": 226,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 62,
-    "suspect_count": 18,
+    "pseudocode_lines": 61,
+    "suspect_count": 15,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
-      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 164
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -261,13 +267,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffff60",
-      "text": "CMatrix3x4f *in_stack_ffffff60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != 0) {",
@@ -312,15 +311,8 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000008",
-      "text": "((CMatrix3x4f *)&stack0xffffff60,(CVector3f *)(in_stack_00000008 + 0x20),",
+      "text": "(&local_a0,(CVector3f *)(in_stack_00000008 + 0x20),",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0xffffff60",
-      "text": "((CMatrix3x4f *)&stack0xffffff60,(CVector3f *)(in_stack_00000008 + 0x20),",
-      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
@@ -351,18 +343,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_ffffff60",
-      "text": "((CMatrix3x4f *)&stack0xffffff60,&local_40,in_stack_ffffff60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffff60",
-      "text": "((CMatrix3x4f *)&stack0xffffff60,&local_40,in_stack_ffffff60);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

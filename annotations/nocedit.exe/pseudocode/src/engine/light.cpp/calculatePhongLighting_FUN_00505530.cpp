@@ -17,7 +17,7 @@ engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int
   uint uVar5;
   byte bVar6;
   int aiStackY_100c [1017];
-  int local_24;
+  CVector3i local_24;
   int local_18;
   int local_14;
   
@@ -63,12 +63,12 @@ engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int
     g_CachedViewPosition.x = g_RelativeX;
     g_CachedViewPosition.y = g_RelativeY;
     g_CachedViewPosition.z = g_RelativeZ;
-    engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&g_CachedViewPosition);
-    g_NormalizedViewVector.x = local_24;
+    engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&g_CachedViewPosition,&local_24);
+    g_NormalizedViewVector.x = local_24.x;
     *(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) =
-         *(uint *)(&stack0xffffffe0 + (uint)bVar6 * -8);
+         *(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);
     *(uint *)((uint)bVar6 * -8 + 0x2dd30b4 + (uint)bVar6 * -8) =
-         *(uint *)(&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+         *(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   }
   lVar1 = (longlong)iVar4 * (longlong)g_NormalizedViewVector.x;
   iVar3 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +

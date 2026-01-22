@@ -3,14 +3,20 @@
     "errors": [
       {
         "category": "other",
-        "column": 46,
-        "line": 22,
+        "column": 21,
+        "line": 21,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 17,
-        "line": 24,
+        "column": 23,
+        "line": 23,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 25,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -24,31 +30,36 @@
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 22,
+        "column": 12,
+        "line": 21,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 23,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 24,
+        "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 86,
+    "complexity_score": 52,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "pseudocode_lines": 17,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 34
+    "total_lines": 35
   },
   "cross_references": [
     {
@@ -114,9 +125,9 @@
         "0048c77c"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760",
-    "signature": "void engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)"
+    "signature": "CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)"
   },
   "function_calls": [
     {
@@ -151,10 +162,10 @@
     "pcode_op_count": 82
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -163,13 +174,6 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonRenderer *"
-      },
-      {
-        "is_param": true,
-        "name": "output",
-        "offset": 8,
-        "size": 4,
-        "type": "CVector3i *"
       }
     ]
   },
@@ -199,45 +203,24 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = CStack_14.x;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = *(int *)((int)&CStack_14 + (uint)bVar1 * -8 + 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(int *)((int)",
-      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = *(int *)((int)&CStack_14 + (uint)bVar1 * -8 + 4);",
+      "line": 14,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)output + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 16,
-      "match": "unaff_ESI",
-      "text": "(unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
-      "type": "unaffected_reg"
+      "match": "(uint *)((int)",
+      "text": "*puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&CStack_14 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"
     }
   ]

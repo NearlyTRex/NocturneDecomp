@@ -72,7 +72,7 @@ section .text
     FSTP float ptr [ESP + 0x1ad4]       ; 005bf79f
     PUSH dword ptr [ESP + 0x1ad4]       ; 005bf7a6
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005f79f0 ; 005bf7ad
-        ;   XREF to: 005f79f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionFromAngleY_FUN_005f79f0(CQuaternion4f * quat_ptr, float angle_radians)
+        ;   XREF to: 005f79f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionFromAngleY_FUN_005f79f0(float angle_radians, CQuaternion4f * quat_ptr)
     ADD ESP,0x4                         ; 005bf7b2
     LEA EAX,[ESP + 0x1aa8]              ; 005bf7b5
     PUSH EAX                            ; 005bf7bc

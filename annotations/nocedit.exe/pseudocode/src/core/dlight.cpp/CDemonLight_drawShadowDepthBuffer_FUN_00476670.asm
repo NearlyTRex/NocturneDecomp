@@ -33,7 +33,7 @@
 ;   int g_NoiseTableIndex
 ;   int[100] g_NoiseTable
 ;   undefined4 DAT_026a72ec
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_RedBitPosition
 ;   int g_RedScaleFactor

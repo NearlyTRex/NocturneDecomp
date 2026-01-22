@@ -14,10 +14,10 @@
         "message": "'SQRT' was not declared in this scope"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "other",
         "column": 30,
-        "line": 73,
-        "message": "'stack0xffffff6c' was not declared in this scope; did you mean 'in_stack_ffffff6c'?"
+        "line": 80,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -45,24 +45,30 @@
         "column": 50,
         "line": 63,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 80,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 240,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
-    "pseudocode_lines": 80,
-    "suspect_count": 14,
+    "pseudocode_lines": 79,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
+      "pointer_cast",
       "stack_param",
-      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 244
+    "total_lines": 243
   },
   "cross_references": [
     {
@@ -296,13 +302,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffff6c",
-      "text": "CMatrix3x4f *in_stack_ffffff6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_0000000c",
       "text": "(in_stack_0000000c);",
@@ -344,25 +343,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xffffff6c",
-      "text": "((CMatrix3x4f *)&stack0xffffff6c,(CVector3f *)(bone_name + 0x1c),",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_ffffff6c",
-      "text": "((CMatrix3x4f *)(bone_name + 0x48),(CMatrix3x4f *)&stack0xffffff6c,in_stack_ffffff6c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 69,
-      "match": "&stack0xffffff6c",
-      "text": "((CMatrix3x4f *)(bone_name + 0x48),(CMatrix3x4f *)&stack0xffffff6c,in_stack_ffffff6c);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

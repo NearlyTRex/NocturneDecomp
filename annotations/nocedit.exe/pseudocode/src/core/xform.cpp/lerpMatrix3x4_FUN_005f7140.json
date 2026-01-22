@@ -2,57 +2,87 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 64,
+        "category": "other",
+        "column": 23,
         "line": 40,
-        "message": "'SUB84' was not declared in this scope"
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 42,
+        "line": 41,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 15,
+        "line": 42,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 20,
         "line": 43,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 24,
+        "column": 23,
+        "line": 48,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 23,
         "line": 49,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 16,
+        "column": 15,
         "line": 50,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 55,
-        "message": "invalid cast from type 'float' to type 'CQuaternion4f*'"
+        "column": 20,
+        "line": 51,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 24,
+        "column": 23,
+        "line": 56,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 23,
         "line": 57,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 16,
+        "column": 15,
         "line": 58,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 59,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 30,
         "line": 78,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 85,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -67,13 +97,31 @@
       {
         "category": "other",
         "column": 14,
-        "line": 42,
+        "line": 40,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
+        "line": 42,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 11,
         "line": 43,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -90,6 +138,18 @@
       },
       {
         "category": "other",
+        "column": 11,
+        "line": 51,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 56,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 14,
         "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -102,25 +162,34 @@
       },
       {
         "category": "other",
+        "column": 11,
+        "line": 59,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 14,
         "line": 78,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 85,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 248,
+    "complexity_score": 223,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 78,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "param_count_too_many",
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
     "total_lines": 199
   },
@@ -158,10 +227,10 @@
         "005f727d"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack3_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
-    "signature": "void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)"
+    "signature": "void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * output)"
   },
   "function_calls": [
     {
@@ -188,96 +257,129 @@
         "call_addr": "005dbbc2",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_FUN_005dbb70",
-        "estimated_params": 6,
+        "estimated_params": 9,
         "instructions_analyzed": 22,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
         "stack_params": 6
       },
       {
         "call_addr": "005c0b63",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c07b0",
-        "estimated_params": 2,
+        "estimated_params": 4,
         "instructions_analyzed": 14,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
         "stack_params": 2
       },
       {
         "call_addr": "0042d2ac",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_FUN_0042d090",
-        "estimated_params": 3,
+        "estimated_params": 6,
         "instructions_analyzed": 12,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
         "stack_params": 3
       },
       {
         "call_addr": "005c0e6d",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c07b0",
-        "estimated_params": 2,
+        "estimated_params": 4,
         "instructions_analyzed": 14,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
         "stack_params": 2
       },
       {
         "call_addr": "005dbc0f",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_FUN_005dbb70",
-        "estimated_params": 3,
+        "estimated_params": 6,
         "instructions_analyzed": 20,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
         "stack_params": 3
       },
       {
         "call_addr": "005c0c70",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c07b0",
-        "estimated_params": 2,
+        "estimated_params": 4,
         "instructions_analyzed": 14,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
         "stack_params": 2
       },
       {
         "call_addr": "005dba11",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_FUN_005db9d0",
-        "estimated_params": 5,
+        "estimated_params": 6,
         "instructions_analyzed": 9,
-        "reg_params": [],
+        "reg_params": [
+          "EAX"
+        ],
         "stack_params": 5
       },
       {
         "call_addr": "005c11d7",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c07b0",
-        "estimated_params": 2,
+        "estimated_params": 4,
         "instructions_analyzed": 14,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
         "stack_params": 2
       },
       {
         "call_addr": "005dbc3a",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_FUN_005dbb70",
-        "estimated_params": 3,
+        "estimated_params": 6,
         "instructions_analyzed": 12,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
         "stack_params": 3
       },
       {
         "call_addr": "005c0a3e",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c07b0",
-        "estimated_params": 2,
+        "estimated_params": 4,
         "instructions_analyzed": 14,
-        "reg_params": [],
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 3,
-    "estimated_params": 2
+    "confidence": "medium",
+    "declared_params": 4,
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.192660550458716,
@@ -451,113 +553,102 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&local_70 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "SUB84",
-      "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_a->m,SUB84 /* extract 2-byte value */(dVar7,0));",
-      "type": "decompiler_intrinsic"
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)&local_20 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(uint *)((int)",
-      "text": "puVar5 = (uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar7 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4) = auStack_1c[(uint)bVar6 * -2];",
+      "text": "*(uint *)((int)&local_20 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "SUB84",
-      "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_b->m,SUB84 /* extract 2-byte value */(dVar7,0));",
-      "type": "decompiler_intrinsic"
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&local_40 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&local_40 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)&local_60 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_40 + (uint)bVar6 * -8 + 4) = afStack_5c[(uint)bVar6 * -2];",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_40 + (uint)bVar7 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "SUB84",
-      "text": "(&local_70,&local_40,(CQuaternion4f *)t,SUB84 /* extract 2-byte value */(dVar7,0));",
-      "type": "decompiler_intrinsic"
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)&local_30 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 50,
-      "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)&local_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 51,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_30 + (uint)bVar6 * -8 + 4) = afStack_5c[(uint)bVar6 * -2 + 4];",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar7 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_50 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 76,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = *pfVar4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 78,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 10,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "output = (CMatrix3x4f *)((int)output + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

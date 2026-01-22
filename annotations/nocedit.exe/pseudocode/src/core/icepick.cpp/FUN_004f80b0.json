@@ -194,18 +194,6 @@
         "message": "request for member '_0_4_' in 'auStack_78', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 328,
-        "message": "'stack0xffffff7c' was not declared in this scope; did you mean 'in_stack_ffffff6c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 330,
-        "message": "'stack0xffffff80' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 7,
         "line": 332,
@@ -213,9 +201,9 @@
       },
       {
         "category": "other",
-        "column": 53,
-        "line": 337,
-        "message": "invalid cast from type 'CVector3f*' to type 'float'"
+        "column": 12,
+        "line": 334,
+        "message": "cast from 'byte*' {aka 'unsigned char*'} to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -243,20 +231,25 @@
         "column": 6,
         "line": 331,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 11,
+        "line": 333,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 1611,
+    "complexity_score": 1576,
     "cross_reference_count": 0,
     "function_call_count": 30,
     "global_count": 14,
     "pseudocode_lines": 331,
-    "suspect_count": 125,
+    "suspect_count": 122,
     "suspect_types": [
       "stack_param",
-      "stack_ref",
       "unknown_field",
       "unnamed_param",
       "unresolved_funcptr",
@@ -1542,43 +1535,22 @@
       "description": "Unresolved stack parameter",
       "line": 315,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = *(CVector3f **)(in_stack_00000004[2].cloth_data + 0x5510);",
+      "text": "fVar7 = *(float *)(in_stack_00000004[2].cloth_data + 0x5510);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 318,
       "match": "in_stack_00000004",
-      "text": "((CQuaternion4f *)(in_stack_00000004[2].cloth_data + 0x5504),pCVar6);",
+      "text": "((CVector3f *)(in_stack_00000004[2].cloth_data + 0x5504),&CStack_88);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 319,
       "match": "._0_4_",
-      "text": "auStack_78._0_4_ = fStack_88;",
+      "text": "auStack_78._0_4_ = CStack_88.w;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 321,
-      "match": "&stack0xffffff7c",
-      "text": "*(uint *)(&stack0xffffff7c + (uint)bVar13 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 323,
-      "match": "&stack0xffffff80",
-      "text": "*(uint *)(&stack0xffffff80 + (uint)bVar13 * -8 + (uint)bVar13 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 327,
-      "match": "&stack0xffffff80",
-      "text": "((int)(&stack0xffffff80 + (uint)bVar13 * -8 + (uint)bVar13 * -8) +",
-      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",

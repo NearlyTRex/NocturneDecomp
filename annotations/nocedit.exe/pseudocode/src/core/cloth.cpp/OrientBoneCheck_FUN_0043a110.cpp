@@ -16,14 +16,14 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   int iVar1;
   char *bone_name;
   CVector3f *pCVar2;
-  uint *puVar3;
-  char *pcVar4;
+  CMatrix3x4f *pCVar3;
+  float *pfVar4;
   byte bVar5;
   int in_stack_00000004;
   int in_stack_00000008;
   CDeformableModelInstance *in_stack_0000000c;
-  CMatrix3x4f *in_stack_ffffff6c;
-  uint local_64 [12];
+  CMatrix3x4f local_94;
+  CMatrix3x4f local_64;
   CVector3f local_34;
   CVector3f local_28;
   CSkeleton *local_1c;
@@ -70,16 +70,15 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             ((CMatrix3x4f *)(bone_name + 0x48),&local_28,&local_34);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            ((CMatrix3x4f *)&stack0xffffff6c,(CVector3f *)(bone_name + 0x1c),
-             (CVector3f *)(bone_name + 0x28));
+            (&local_94,(CVector3f *)(bone_name + 0x1c),(CVector3f *)(bone_name + 0x28));
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)(bone_name + 0x48),(CMatrix3x4f *)&stack0xffffff6c,in_stack_ffffff6c);
-  puVar3 = local_64;
-  pcVar4 = bone_name + 0x48;
+            ((CMatrix3x4f *)(bone_name + 0x48),&local_94,&local_64);
+  pCVar3 = &local_64;
+  pfVar4 = (float *)(bone_name + 0x48);
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pcVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    pcVar4 = pcVar4 + (uint)bVar5 * -8 + 4;
+    *pfVar4 = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
   }
   *(float *)(bone_name + 0x38) = 1.0 / *(float *)(bone_name + 0x14);
   *(float *)(bone_name + 0x3c) = 1.0 / *(float *)(bone_name + 0x18);

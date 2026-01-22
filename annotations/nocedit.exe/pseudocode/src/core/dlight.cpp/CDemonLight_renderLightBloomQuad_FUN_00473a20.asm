@@ -128,7 +128,7 @@ section .text
     LEA ESI,[ESP + 0x60]                ; 00473a8b
     LEA EDI,[ESP + 0x78]                ; 00473a8f
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 00473a93
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x60]                ; 00473a98
     ADD ESP,0x4                         ; 00473a9c
     MOVSD ES:EDI,ESI                    ; 00473a9f

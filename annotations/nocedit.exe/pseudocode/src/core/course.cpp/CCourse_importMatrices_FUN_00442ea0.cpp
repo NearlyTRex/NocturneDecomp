@@ -13,24 +13,25 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
   int iVar2;
   CCourseFrame *pCVar3;
   int iVar4;
-  CMatrix3x3f *unaff_ESI;
+  uint unaff_ESI;
+  uint *puVar5;
   uint unaff_EDI;
-  float *pfVar5;
-  float *pfVar6;
-  byte bVar7;
+  uint *puVar6;
+  uint *puVar7;
+  byte bVar8;
   FILE *in_stack_00000008;
-  float afStackY_1804 [1508];
+  uint auStackY_1804 [1508];
   CMatrix3x3f local_58;
   byte local_34 [4];
   byte local_30 [4];
   float local_2c;
-  float local_28;
-  float afStack_24 [4];
+  CQuaternion4f local_28;
+  float local_18;
   float local_14;
   float local_10;
   int local_c;
   
-  bVar7 = 0;
+  bVar8 = 0;
   iVar4 = 0;
   core_course_cpp_CCourse_allocMemory_FUN_00442500(this_ptr);
   if (this_ptr->len < 1) {
@@ -64,25 +65,25 @@ LAB_00442f35:
                          &local_2c);
     } while (iVar2 != 3);
     core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690(&local_58,0);
-    afStack_24[3] = local_58.m[1].x;
+    local_18 = local_58.m[1].x;
     local_14 = local_58.m[2].y;
     local_10 = local_2c;
     pCVar3 = &this_ptr->frame_list->frame1 + iVar4;
-    if (pCVar3 != (CCourseFrame *)(afStack_24 + 3)) {
+    if (pCVar3 != (CCourseFrame *)&local_18) {
       (pCVar3->pos).x = local_58.m[1].x;
       (pCVar3->pos).y = local_58.m[2].y;
       (pCVar3->pos).z = local_2c;
     }
-    core_xform_cpp_matrixToQuaternion_FUN_005f7420((CQuaternion4f *)&local_58,unaff_ESI);
+    core_xform_cpp_matrixToQuaternion_FUN_005f7420(&local_58,&local_28);
     pCVar1 = &(&this_ptr->frame_list->frame1)[iVar4].orient;
     iVar4 = iVar4 + 1;
-    pfVar5 = (float *)((int)pCVar1 + ((uint)bVar7 * -2 + 1) * 4);
-    pCVar1->w = local_28;
-    pfVar6 = pfVar5 + (uint)bVar7 * -2 + 1;
-    *pfVar5 = afStack_24[(uint)bVar7 * -2];
-    *pfVar6 = afStack_24[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-    pfVar6[(uint)bVar7 * -2 + 1] =
-         (afStack_24 + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
+    puVar6 = (uint *)((int)pCVar1 + ((uint)bVar8 * -2 + 1) * 4);
+    pCVar1->w = local_28.w;
+    puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
+    puVar5 = (uint *)((int)&local_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+    *puVar6 = *(uint *)((int)&local_28 + (uint)bVar8 * -8 + 4);
+    *puVar7 = *puVar5;
+    puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
   } while (iVar4 < this_ptr->len);
   return;
 }

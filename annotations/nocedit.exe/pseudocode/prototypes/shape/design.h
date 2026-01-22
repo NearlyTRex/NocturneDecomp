@@ -93,7 +93,7 @@ void drawMouseCoordinatesAndReferenceLine(void);
 
 // Original: shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
 // Address: 0045bd10
-void * convertWorldToScreenCoordinates(SScreenCoord * input_coords, SVertexData * output_vertex);
+SVertexData * convertWorldToScreenCoordinates(SScreenCoord * input_coords, SVertexData * output_vertex);
 
 // Original: shape_design.c_calculateVertexNormals_FUN_0045be40
 // Address: 0045be40

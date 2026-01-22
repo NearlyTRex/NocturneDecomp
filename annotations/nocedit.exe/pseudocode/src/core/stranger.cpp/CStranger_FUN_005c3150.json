@@ -8,10 +8,10 @@
         "message": "request for member '_12_4_' in 'local_ac', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 60,
-        "message": "'stack0xfffffdd4' was not declared in this scope; did you mean 'in_stack_fffffdd4'?"
+        "category": "other",
+        "column": 32,
+        "line": 64,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -141,6 +141,12 @@
       },
       {
         "category": "other",
+        "column": 32,
+        "line": 188,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
         "column": 30,
         "line": 189,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
@@ -153,6 +159,12 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 64,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -175,6 +187,12 @@
       {
         "category": "other",
         "column": 16,
+        "line": 188,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
         "line": 189,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
@@ -182,16 +200,14 @@
   },
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 340,
+    "complexity_score": 300,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
     "pseudocode_lines": 195,
-    "suspect_count": 12,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
       "unknown_field",
       "unresolved_funcptr"
     ],
@@ -714,13 +730,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_fffffdd4",
-      "text": "CMatrix3x4f *in_stack_fffffdd4;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 44,
       "match": "._12_4_",
@@ -728,18 +737,11 @@
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_fffffdd4",
-      "text": "DAT_03f6bacc,in_stack_fffffdd4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xfffffdd4",
-      "text": "pfVar5 = (float *)&stack0xfffffdd4;",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -777,18 +779,11 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 160,
-      "match": "in_stack_fffffdd4",
-      "text": "DAT_03f6bacc,in_stack_fffffdd4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 175,
-      "match": "in_stack_fffffdd4",
-      "text": "DAT_03f6bb04,in_stack_fffffdd4);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 181,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

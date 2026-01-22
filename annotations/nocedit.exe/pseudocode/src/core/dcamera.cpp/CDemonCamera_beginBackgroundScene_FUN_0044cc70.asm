@@ -19,7 +19,7 @@
 ;   int g_BackgroundSceneDepth
 ;   int g_BackgroundSavedBitsPerPixel
 ;   int g_BackgroundSavedUseExternalRenderer
-;   void*[1024] g_BackgroundSavedScreenBufferArray
+;   void*[1200] g_BackgroundSavedScreenBufferArray
 ;   undefined4 DAT_0151abc0
 ;   int g_BackgroundSavedRedBitPosition
 ;   int g_BackgroundSavedGreenBitPosition

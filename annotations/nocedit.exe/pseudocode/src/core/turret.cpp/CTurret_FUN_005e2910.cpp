@@ -15,16 +15,14 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   CVector3f *pCVar2;
   int iVar3;
   uint corner_index;
-  CMatrix3x4f *unaff_ESI;
-  uint *puVar4;
-  uint *puVar5;
+  CMatrix3x4f *pCVar4;
+  float *pfVar5;
   byte bVar6;
   double dVar7;
   CBoundingBox3D *in_stack_00000008;
-  CMatrix3x4f *matrix;
   byte auStack_104 [48];
-  uint auStack_d4 [12];
-  uint auStack_a4 [12];
+  float afStack_d4 [12];
+  CMatrix3x4f CStack_a4;
   byte auStack_74 [48];
   float fStack_44;
   float local_40;
@@ -62,13 +60,13 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
             ((CMatrix3x4f *)auStack_104,&g_ZeroVector,
              (CVector3f *)&(this_ptr->base_weapon).base_actor.orient);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)auStack_74,(CMatrix3x4f *)auStack_104,unaff_ESI);
-  puVar4 = auStack_a4;
-  puVar5 = auStack_d4;
+            ((CMatrix3x4f *)auStack_74,(CMatrix3x4f *)auStack_104,&CStack_a4);
+  pCVar4 = &CStack_a4;
+  pfVar5 = afStack_d4;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+    *pfVar5 = pCVar4->m[0].w;
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+    pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
   }
   local_10 = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
   this_ptr_00 = pCStack_14;
@@ -84,10 +82,10 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   local_34 = pCVar2[1].z;
   corner_index = 0;
   do {
-    matrix = (CMatrix3x4f *)(auStack_104 + 0x2c);
+    pCVar4 = (CMatrix3x4f *)(auStack_104 + 0x2c);
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        ((CBoundingBox3D *)(auStack_74 + 0x2c),&CStack_24,corner_index);
-    pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_30,pCVar2,matrix);
+    pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_30,pCVar2,pCVar4);
     corner_index = corner_index + 1;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(in_stack_00000008,pCVar2);
   } while ((int)corner_index < 8);

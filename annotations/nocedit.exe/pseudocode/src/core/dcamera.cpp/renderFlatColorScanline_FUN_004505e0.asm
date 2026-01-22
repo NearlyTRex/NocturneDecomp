@@ -25,7 +25,7 @@
 ;   undefined4 DAT_013fff78
 ;   int g_ImageBytesPerPixel
 ;   int g_FlatShadingLightLevel
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;

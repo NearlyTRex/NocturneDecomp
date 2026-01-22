@@ -13,13 +13,12 @@ void core_skeledit_cpp_FUN_0058af40(void)
 {
   int iVar1;
   float *matrix_a;
-  CMatrix3x4f *unaff_ESI;
-  int *piVar2;
-  int *piVar3;
+  CMatrix3x4f *pCVar2;
+  float *pfVar3;
   byte bVar4;
   int *in_stack_00000004;
   CMatrix3x4f *in_stack_00000008;
-  int local_40 [12];
+  CMatrix3x4f local_40;
   int local_10;
   int *local_c;
   
@@ -31,13 +30,13 @@ void core_skeledit_cpp_FUN_0058af40(void)
     matrix_a = (float *)(in_stack_00000004 + 0x16);
     do {
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                (in_stack_00000008,(CMatrix3x4f *)matrix_a,unaff_ESI);
-      piVar2 = local_40;
-      piVar3 = local_c + 0x16;
+                (in_stack_00000008,(CMatrix3x4f *)matrix_a,&local_40);
+      pCVar2 = &local_40;
+      pfVar3 = (float *)(local_c + 0x16);
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *piVar3 = *piVar2;
-        piVar2 = piVar2 + (uint)bVar4 * -2 + 1;
-        piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
+        *pfVar3 = pCVar2->m[0].w;
+        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+        pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
       }
       local_c = local_c + 0x21;
       local_10 = local_10 + 1;

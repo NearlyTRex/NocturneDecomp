@@ -2,39 +2,27 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 38,
-        "message": "'SUB84' was not declared in this scope"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 41,
-        "message": "invalid cast from type 'float' to type 'CQuaternion4f*'"
-      },
-      {
         "category": "other",
         "column": 21,
-        "line": 44,
+        "line": 40,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 47,
+        "line": 43,
         "message": "'stack0xffffffd4' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 48,
+        "line": 44,
         "message": "'stack0xffffffd8' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 52,
+        "line": 48,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -49,32 +37,31 @@
       {
         "category": "other",
         "column": 12,
-        "line": 44,
+        "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 52,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 202,
+    "complexity_score": 183,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 52,
-    "suspect_count": 13,
+    "pseudocode_lines": 48,
+    "suspect_count": 12,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 133
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -243,91 +230,84 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 11,
       "match": "unaff_ESI",
       "text": "CQuaternion4f *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
-      "match": "SUB84",
-      "text": "t = SUB84 /* extract 2-byte value */(dVar5,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 33,
       "match": "(uint *)((int)",
-      "text": "puVar2 = (uint *)((int)pCVar1 + (uint)bVar4 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 40,
+      "line": 36,
       "match": "&stack0xffffffd4",
-      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8) = *puVar2;",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar3;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 41,
+      "line": 37,
       "match": "&stack0xffffffd8",
-      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) = *puVar3;",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) = *puVar4;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 39,
       "match": "&stack0xffffffd8",
-      "text": "((int)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) + ((uint)bVar4 * -2 + 1) * 4) =",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 41,
       "match": "unaff_ESI",
-      "text": "puVar2 = (uint *)((int)unaff_ESI + (uint)bVar4 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 41,
       "match": "(uint *)((int)",
-      "text": "puVar2 = (uint *)((int)unaff_ESI + (uint)bVar4 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 42,
       "match": "unaff_ESI",
-      "text": "unaff_ESI->w = local_30;",
+      "text": "unaff_ESI->w = fVar1;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xffffffd4",
+      "text": "*puVar3 = *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 45,
+      "match": "&stack0xffffffd8",
+      "text": "*puVar4 = *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 48,
-      "match": "&stack0xffffffd4",
-      "text": "*puVar2 = *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 49,
       "match": "&stack0xffffffd8",
-      "text": "*puVar3 = *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xffffffd8",
-      "text": "((int)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) + ((uint)bVar4 * -2 + 1) * 4)",
+      "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 50,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

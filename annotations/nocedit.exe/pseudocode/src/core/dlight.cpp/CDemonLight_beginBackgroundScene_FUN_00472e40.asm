@@ -16,11 +16,11 @@
 ;   TerminatedCString s_CDemonLight_beginBackgro_0061f0a4
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_BackgroundSceneNestingCount
-;   void*[1024] g_SavedScreenBufferArray
+;   void*[1200] g_SavedScreenBufferArray
 ;   undefined4 DAT_026a5818
 ;   undefined4 DAT_026a5819
 ;   CDemonRenderer g_CDemonRendererInstance
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 g_ScreenBufferArray[1]+1
 ;   char* g_CurrentFilename

@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   ushort[256] g_ColorTable16
 ;   char[768] g_SourcePaletteData
 ;   int g_UseExternalRenderer

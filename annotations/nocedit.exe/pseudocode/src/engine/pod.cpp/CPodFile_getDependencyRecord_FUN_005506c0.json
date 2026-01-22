@@ -6,6 +6,12 @@
         "column": 14,
         "line": 38,
         "message": "'FILE' {aka 'struct FILE'} has no member named '_flag'; did you mean 'flag'?"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 50,
+        "message": "cast from 'CPodDependencyRecord*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -69,21 +75,27 @@
         "column": 48,
         "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 50,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 87,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 42,
-    "suspect_count": 4,
+    "pseudocode_lines": 43,
+    "suspect_count": 1,
     "suspect_types": [
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 144
+    "total_lines": 145
   },
   "cross_references": [
     {
@@ -101,9 +113,9 @@
         "005507e3"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0",
-    "signature": "void engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)"
+    "signature": "CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)"
   },
   "function_calls": [
     {
@@ -232,10 +244,10 @@
     "pcode_op_count": 391
   },
   "stack_frame": {
-    "frame_size": 292,
+    "frame_size": 288,
     "local_size": 280,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -258,44 +270,16 @@
         "offset": 8,
         "size": 4,
         "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "output_record",
-        "offset": 12,
-        "size": 4,
-        "type": "CPodDependencyRecord *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(CPodDependencyRecord *)((int)",
+      "text": "pCVar3 = (CPodDependencyRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

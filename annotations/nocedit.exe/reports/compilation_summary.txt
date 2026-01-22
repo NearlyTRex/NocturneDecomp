@@ -5,19 +5,19 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6503
-Successful: 2410 (37.1%)
-Failed: 4093
+Successful: 2411 (37.1%)
+Failed: 4092
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          11672
-  missing_member                  8405
-  undeclared_identifier           4319
-  incompatible_types              1515
+  other                          11959
+  missing_member                  8432
+  undeclared_identifier           4162
+  incompatible_types              1507
   syntax_error                     562
 
 ====================================================================================================
-CATEGORY: other (11672 errors)
+CATEGORY: other (11959 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_FUN_0054c7a0
@@ -45,10 +45,10 @@ CATEGORY: other (11672 errors)
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
     Line 19: cast from 'void*' to 'int' loses precision [-fpermissive]...
 
-  ... and 11642 more errors
+  ... and 11929 more errors
 
 ====================================================================================================
-CATEGORY: missing_member (8405 errors)
+CATEGORY: missing_member (8432 errors)
 ====================================================================================================
 
   cockpit_pkbitmap.cpp_FUN_0054b930
@@ -70,10 +70,10 @@ CATEGORY: missing_member (8405 errors)
   engine_pcx.c_writePCXScanline_FUN_00548c50
     Line 22: 'FILE' {aka 'struct FILE'} has no member named '_flag'; did you mean 'flag'?...
 
-  ... and 8375 more errors
+  ... and 8402 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (4319 errors)
+CATEGORY: undeclared_identifier (4162 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -125,10 +125,10 @@ CATEGORY: undeclared_identifier (4319 errors)
   support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
     Line 18: 'crt_wsock32_c_closesocket' was not declared in this scope...
 
-  ... and 4289 more errors
+  ... and 4132 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1515 errors)
+CATEGORY: incompatible_types (1507 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
@@ -176,7 +176,7 @@ CATEGORY: incompatible_types (1515 errors)
   support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80
     Line 23: invalid conversion from 'void*' to 'FILE*' [-fpermissive]...
 
-  ... and 1485 more errors
+  ... and 1477 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (562 errors)
@@ -217,8 +217,8 @@ CATEGORY: syntax_error (562 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 0.84
-Average suspects in failed compilations: 11.87
+Average suspects in successfully compiled functions: 0.82
+Average suspects in failed compilations: 11.78
 
-Functions that compile but have suspect patterns: 492
+Functions that compile but have suspect patterns: 484
 (These may have runtime issues even though syntax is valid)

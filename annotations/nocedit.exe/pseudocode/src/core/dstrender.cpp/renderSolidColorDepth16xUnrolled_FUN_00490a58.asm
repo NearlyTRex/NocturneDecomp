@@ -9,8 +9,8 @@
 ;   engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 at 0048a882
 ;
 ; Referenced Globals:
-;   void*[1024] g_ScreenBufferArray
-;   uint*[1024] g_ZBufferScanlineArray
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ActiveRenderColor
 ;   uint[1600] g_ReciprocalLookupTable
 ;

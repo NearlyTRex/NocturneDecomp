@@ -17,9 +17,10 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
   CVector3f *pCVar4;
   uint *puVar5;
   uint *puVar6;
-  byte bVar7;
+  uint *puVar7;
+  byte bVar8;
   float afStackY_1824 [1523];
-  CVector3f *in_stack_ffffffb8;
+  CQuaternion4f local_48;
   float local_38;
   float local_34;
   float local_30;
@@ -31,7 +32,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
   int local_18;
   float local_14;
   
-  bVar7 = 0;
+  bVar8 = 0;
   core_charactr_cpp_CCharacter_FUN_0042d060((CCharacter *)this_ptr);
   this_ptr->blown_up = 1;
   this_ptr->param = 0.0;
@@ -75,19 +76,16 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
         pCVar4->z = *(float *)(iVar1 + 0x38);
       }
       pCVar4 = pCVar4 + 6;
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                ((CQuaternion4f *)(iVar1 + 0x30),in_stack_ffffffb8);
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(iVar1 + 0x30),&local_48);
       pCVar3 = (CBoneGuy *)((local_1c->base_enemy).base_character.base_actor.orient_matrix.m + 1);
       local_18 = local_18 + 1;
-      puVar5 = (uint *)((int)local_1c + (uint)bVar7 * -8 + 49000);
-      (local_1c->box_list_start_orient).w = (float)in_stack_ffffffb8;
-      puVar6 = puVar5 + (uint)bVar7 * -2 + 1;
-      *puVar5 = *(uint *)(&stack0xffffffbc + (uint)bVar7 * -8);
-      *puVar6 = *(uint *)(&stack0xffffffbc + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4);
-      puVar6[(uint)bVar7 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffbc + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4) +
-            ((uint)bVar7 * -2 + 1) * 4);
+      puVar6 = (uint *)((int)local_1c + (uint)bVar8 * -8 + 49000);
+      (local_1c->box_list_start_orient).w = local_48.w;
+      puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
+      puVar5 = (uint *)((int)&local_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+      *puVar6 = *(uint *)((int)&local_48 + (uint)bVar8 * -8 + 4);
+      *puVar7 = *puVar5;
+      puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
       local_1c = pCVar3;
     } while (local_18 < local_24->num_parts);
   }

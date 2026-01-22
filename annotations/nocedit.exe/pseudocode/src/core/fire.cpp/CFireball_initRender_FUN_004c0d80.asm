@@ -65,7 +65,7 @@ section .text
     MOV dword ptr [0x02d12dec],EDX      ; 004c0dd5 | g_BillboardPrimitive.vertices[2]
     MOV dword ptr [0x02d12df0],ECX      ; 004c0ddb | g_BillboardPrimitive.vertices[3]
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 ; 004c0de1
-        ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004c0de6
     ADD ESP,0x4                         ; 004c0dea
     MOVSD ES:EDI,ESI                    ; 004c0ded | g_BillboardCameraRight

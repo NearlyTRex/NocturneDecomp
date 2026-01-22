@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)
+; __stack_esi SVertexData * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)
 ;
 ; Parameters:
 ; SScreenCoord *   Stack[0x4]:4   input_coords
-; SVertexData *    Stack[0x8]:4   output_vertex
 ; Local Variables:
 ; undefined        Stack[-0x4c]:1  local_4c
 ; undefined4       Stack[-0x38]:4  local_38

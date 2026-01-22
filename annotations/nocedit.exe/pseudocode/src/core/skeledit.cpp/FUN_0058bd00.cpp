@@ -16,17 +16,17 @@ void core_skeledit_cpp_FUN_0058bd00(void)
   byte *dest;
   CVector3f *pCVar4;
   int iVar5;
-  float *pfVar6;
+  CMatrix3x4f *pCVar6;
   int iVar7;
   CMatrix3x4f *pCVar8;
   byte bVar9;
   int in_stack_00000004;
   char *in_stack_00000008;
   int in_stack_0000000c;
-  CMatrix3x4f *in_stack_fffffbd0;
+  int aiStack_430 [200];
   byte local_110 [2];
   int local_10e;
-  float local_d8 [12];
+  CMatrix3x4f local_d8;
   CMatrix3x4f local_a8;
   int local_78 [4];
   int local_68;
@@ -75,7 +75,7 @@ void core_skeledit_cpp_FUN_0058bd00(void)
       crt_memory_c_memset_FUN_005fde40(dest,0,0x32);
       crt_stdio_c_fread_FUN_005fd990(dest,local_14,1,local_28);
       uVar2 = core_skeledit_cpp_FUN_0058ac30();
-      *(uint *)(&stack0xfffffbd0 + iVar7) = uVar2;
+      *(uint *)((int)aiStack_430 + iVar7) = uVar2;
       iVar7 = iVar7 + 4;
       crt_stdio_c_fseek_FUN_005ffacc(local_28,0x102,1);
       iVar5 = iVar5 + 1;
@@ -103,7 +103,7 @@ void core_skeledit_cpp_FUN_0058bd00(void)
         if (local_68 < 0) {
           iVar5 = local_78[0];
         }
-        iVar7 = *(int *)(&stack0xfffffbd0 + iVar5 * 4);
+        iVar7 = aiStack_430[iVar5];
         if (iVar7 < 0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0x5cc;
@@ -136,12 +136,12 @@ void core_skeledit_cpp_FUN_0058bd00(void)
       local_1c = local_20;
       for (local_18 = 0; local_18 < (int)(uint)*local_20; local_18 = local_18 + 1) {
         core_xform_cpp_inverse_FUN_005f6210
-                  ((CMatrix3x4f *)((uint)local_1c[1] * 0x84 + local_24 + 0x54),in_stack_fffffbd0);
-        pfVar6 = local_d8;
+                  ((CMatrix3x4f *)((uint)local_1c[1] * 0x84 + local_24 + 0x54),&local_d8);
+        pCVar6 = &local_d8;
         pCVar8 = &local_a8;
         for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-          pCVar8->m[0].w = *pfVar6;
-          pfVar6 = pfVar6 + (uint)bVar9 * -2 + 1;
+          pCVar8->m[0].w = pCVar6->m[0].w;
+          pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);
           pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);
         }
         pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_4c,&local_58,&local_a8);

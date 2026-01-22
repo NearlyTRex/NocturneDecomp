@@ -40,6 +40,6 @@ extern int g_BackgroundSavedBlueBitPosition;
 extern int g_ScanlineSpanLeft[256];
 extern int g_ScanlineSpanRight[256];
 
-// void*[1024]
-extern void* g_BackgroundSavedScreenBufferArray[1024];
+// void*[1200]
+extern void* g_BackgroundSavedScreenBufferArray[1200];
 

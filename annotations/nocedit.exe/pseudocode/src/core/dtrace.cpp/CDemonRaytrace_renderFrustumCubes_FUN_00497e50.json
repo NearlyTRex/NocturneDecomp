@@ -2,6 +2,18 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 42,
+        "line": 131,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 133,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 20,
         "line": 142,
@@ -9,44 +21,44 @@
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 271,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 32,
+        "column": 53,
         "line": 273,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 67,
-        "line": 276,
+        "column": 32,
+        "line": 275,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 278,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 281,
+        "line": 283,
         "message": "request for member '_4_4_' in 'dStack_1c0', which is of non-class type 'double'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 281,
+        "line": 283,
         "message": "'CONCAT44' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 434,
+        "line": 436,
         "message": "'SBORROW' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 564,
+        "line": 566,
         "message": "'SBORROW' was not declared in this scope"
       }
     ],
@@ -60,40 +72,51 @@
       },
       {
         "category": "other",
-        "column": 24,
-        "line": 271,
+        "column": 34,
+        "line": 131,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 24,
+        "column": 9,
+        "line": 133,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 45,
         "line": 273,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 59,
-        "line": 276,
+        "column": 24,
+        "line": 275,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 278,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 1395,
-    "complexity_score": 1053,
+    "complexity_score": 1050,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
-    "pseudocode_lines": 728,
+    "pseudocode_lines": 730,
     "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
-      "stack_param",
       "unknown_field"
     ],
-    "total_lines": 2123
+    "total_lines": 2125
   },
   "cross_references": [
     {
@@ -1048,18 +1071,18 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_fffffe50",
-      "text": "CVector3i *in_stack_fffffe50;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(int *)((int)",
+      "text": "local_134[(uint)bVar7 * -2] = *(int *)((int)&local_150 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 122,
-      "match": "in_stack_fffffe50",
-      "text": "(g_CDemonRendererPtr1,in_stack_fffffe50);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_150 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -1079,14 +1102,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 143,
       "match": "ROUND",
-      "text": "local_150 = (int)ROUND(dVar12);",
+      "text": "local_150.x = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 147,
       "match": "ROUND",
-      "text": "aiStack_14c[3] = (int)ROUND(dVar12);",
+      "text": "local_140 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1119,112 +1142,112 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 264,
+      "line": 266,
       "match": "(int *)((int)",
-      "text": "(float10)*(int *)((int)local_1a8 + iVar3 + 4) / (float10)dVar2;",
+      "text": "fVar10 = (float10)local_144 + (float10)*(int *)((int)local_1a8 + iVar3 + 4) / (float10)dVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 266,
+      "line": 268,
       "match": "(int *)((int)",
       "text": "(float10)*(int *)((int)local_1a8 + iVar3 + 8) / (float10)dStack_1c0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 269,
+      "line": 271,
       "match": "(int *)((int)",
-      "text": "((double)aiStack_14c[1] + (double)*(int *)((int)local_1a8 + iVar3) / dVar12);",
+      "text": "((double)local_150.z + (double)*(int *)((int)local_1a8 + iVar3) / dVar12);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 274,
+      "line": 276,
       "match": "._4_4_",
       "text": "dStack_1c0 = (double)CONCAT44 /* combine 2-byte values */(dStack_1c0._4_4_,0x4982ca);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 274,
+      "line": 276,
       "match": "CONCAT44",
       "text": "dStack_1c0 = (double)CONCAT44 /* combine 2-byte values */(dStack_1c0._4_4_,0x4982ca);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 276,
+      "line": 278,
       "match": "ROUND",
       "text": "local_134[1] = (int)ROUND(fVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 277,
+      "line": 279,
       "match": "ROUND",
       "text": "local_134[2] = (int)ROUND(fVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 278,
+      "line": 280,
       "match": "ROUND",
       "text": "local_134[3] = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 288,
+      "line": 290,
       "match": "extraout_ECX",
       "text": "iVar4 = extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 289,
+      "line": 291,
       "match": "extraout_ECX",
       "text": "if (extraout_ECX < local_134[1]) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 292,
+      "line": 294,
       "match": "extraout_EDX_00",
       "text": "iVar5 = extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 293,
+      "line": 295,
       "match": "extraout_EDX_00",
       "text": "if (extraout_EDX_00 < local_134[2]) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 427,
+      "line": 429,
       "match": "SBORROW",
       "text": "bVar8 = SBORROW /* signed borrow */4(local_ac,iVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 435,
+      "line": 437,
       "match": "SBORROW",
       "text": "bVar8 = SBORROW /* signed borrow */4(iVar5,iVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 557,
+      "line": 559,
       "match": "SBORROW",
       "text": "bVar8 = SBORROW /* signed borrow */4(local_9c,iVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 565,
+      "line": 567,
       "match": "SBORROW",
       "text": "bVar8 = SBORROW /* signed borrow */4(iVar5,iVar3);",
       "type": "decompiler_intrinsic"

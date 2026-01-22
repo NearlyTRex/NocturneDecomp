@@ -18,13 +18,11 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   float fVar6;
   CVector3f *pCVar7;
   char *pcVar8;
-  float *pfVar9;
+  CMatrix3x4f *pCVar9;
   byte bVar10;
   float in_stack_00000008;
-  CMatrix3x4f *matrix_b;
-  double dVar11;
   CMatrix3x4f local_1a8;
-  float local_178 [12];
+  CMatrix3x4f local_178;
   CVector3f local_148 [4];
   CMatrix3x4f local_118;
   float local_e8;
@@ -215,8 +213,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
                         *(float *)(this_ptr->field4_0x2e0 + 0x30),*(void **)this_ptr->field4_0x2e0,
                         *(void **)(this_ptr->field4_0x2e0 + 4));
   bVar3 = false;
-  dVar11 = (double)local_14;
-  if ((0.0 <= dVar11) && (dVar11 < 1.0)) {
+  if ((0.0 <= local_14) && (local_14 < 1.0)) {
     local_58 = local_58 * local_14;
     local_54 = local_54 * local_14;
     local_50 = local_50 * local_14;
@@ -231,7 +228,6 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   local_1c = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                        (g_CDemonSetPtr,&position->position,
                         *(float *)(this_ptr->field4_0x2e0 + 0x30) * (float)0.90000000000000002);
-  matrix_b = SUB84 /* extract 2-byte value */(dVar11,0);
   if (local_1c <= (this_ptr->base_actor).location.position.y) {
     if (!bVar3) goto LAB_005df3d0;
   }
@@ -270,12 +266,12 @@ LAB_005df3d0:
             (&local_1a8,&g_ZeroVector,local_18);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_118,&g_ZeroVector,&local_34);
-  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_118,&local_1a8,matrix_b);
-  pfVar9 = local_178;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_118,&local_1a8,&local_178);
+  pCVar9 = &local_178;
   pCVar7 = local_148;
   for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    pCVar7->x = *pfVar9;
-    pfVar9 = pfVar9 + (uint)bVar10 * -2 + 1;
+    pCVar7->x = pCVar9->m[0].w;
+    pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);
     pCVar7 = (CVector3f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
   }
   pCVar7 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_148,&local_88);

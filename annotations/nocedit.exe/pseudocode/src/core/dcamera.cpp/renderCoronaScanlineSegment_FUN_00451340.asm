@@ -18,7 +18,7 @@
 ;   int g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer
 ;   CDemonGlobe* g_CurrentGlobe
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
 

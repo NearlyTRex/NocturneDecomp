@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
+; __stack3_esi CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t, CQuaternion4f * result_out)
 ;
 ; Parameters:
-; CQuaternion4f *  Stack[0x4]:4   result_out
-; CQuaternion4f *  Stack[0x8]:4   quat1_ptr
-; CQuaternion4f *  Stack[0xc]:4   quat2_ptr
-; float            Stack[0x10]:4   t
+; CQuaternion4f *  Stack[0x4]:4   quat1_ptr
+; CQuaternion4f *  Stack[0x8]:4   quat2_ptr
+; float            Stack[0xc]:4   t
 ; Local Variables:
 ; undefined8       Stack[-0x80]:8  local_80
 ; undefined8       Stack[-0x78]:8  local_78

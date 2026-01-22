@@ -19,30 +19,29 @@ float * core_msnedit_cpp_FUN_00535c60(void)
   float fVar4;
   byte bVar5;
   float *in_stack_00000004;
-  CVector3i *in_stack_00000008;
+  int in_stack_00000008;
   int in_stack_0000000c;
   float afStackY_1044 [1015];
-  CVector3i *output_ptr;
-  CVector3i *in_stack_ffffffa4;
+  CVector3i *input_ptr;
+  CVector3i local_5c [3];
   CVector3i local_38;
   float local_2c [3];
-  int local_20;
-  float afStack_1c [3];
+  CVector3i local_20;
   
   bVar5 = 0;
   core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-            (&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,(int)in_stack_ffffffa4);
-  output_ptr = &local_38;
-  local_38.x = (int)in_stack_ffffffa4;
-  local_2c[(uint)bVar5 * -2 + -2] = *(float *)(&stack0xffffffa8 + (uint)bVar5 * -8);
+            (&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,local_5c);
+  input_ptr = &local_38;
+  local_38.x = local_5c[0].x;
+  local_2c[(uint)bVar5 * -2 + -2] = *(float *)((int)local_5c + (uint)bVar5 * -8 + 4);
   local_2c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -1] =
-       *(float *)(&stack0xffffffac + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+       *(float *)((int)local_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-            (&g_CDemonCameraInstance,output_ptr,in_stack_ffffffa4);
-  local_38.x = local_20;
-  local_2c[(uint)bVar5 * -2 + -2] = afStack_1c[(uint)bVar5 * -2];
+            (&g_CDemonCameraInstance,input_ptr,&local_20);
+  local_38.x = local_20.x;
+  local_2c[(uint)bVar5 * -2 + -2] = *(float *)((int)&local_20 + (uint)bVar5 * -8 + 4);
   local_2c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -1] =
-       afStack_1c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+       *(float *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   *in_stack_00000004 = (float)local_38.x * _DAT_00661c30;
   in_stack_00000004[1] = (float)local_38.y * _DAT_00661c30;
   in_stack_00000004[2] = (float)local_38.z * _DAT_00661c30;

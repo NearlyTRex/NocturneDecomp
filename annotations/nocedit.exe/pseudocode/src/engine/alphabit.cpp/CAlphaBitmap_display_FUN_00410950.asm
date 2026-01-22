@@ -34,7 +34,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0

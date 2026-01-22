@@ -39,7 +39,7 @@
 ;   int g_MoonBatsEnabled = 0x1
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   uint[256] g_Hardware32BitPalette
 ;   CAlphaBitmap g_MoonCloudTexture
 ;   CAlphaBitmap[30] g_MoonAnimTextures

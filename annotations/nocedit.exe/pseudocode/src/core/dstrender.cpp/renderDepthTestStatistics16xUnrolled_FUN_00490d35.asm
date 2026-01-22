@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   int g_RenderPixelCounter
-;   void*[1024] g_ScreenBufferArray
-;   uint*[1024] g_ZBufferScanlineArray
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************

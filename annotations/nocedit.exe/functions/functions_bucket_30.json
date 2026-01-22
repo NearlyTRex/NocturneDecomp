@@ -45340,10 +45340,10 @@
         "start":"005229b0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_mirror.cpp_transformMirrorVertex_FUN_005229b0",
-    "ret":"int*",
+    "ret":"CVector3f*",
     "vars":{
       "locals":[
         {
@@ -45543,13 +45543,12 @@
         {
           "name":"output_vertex",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -73654,7 +73653,7 @@
         "start":"005d0d30"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30",
     "ret":"CVector3d*",
@@ -73937,13 +73936,12 @@
         {
           "name":"out_centroid",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -81448,7 +81446,7 @@
         "start":"005f79b0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionFromAngleX_FUN_005f79b0",
     "ret":"void",
@@ -81521,7 +81519,7 @@
       ],
       "params":[
         {
-          "name":"quat_ptr",
+          "name":"angle_radians",
           "storage":{
             "offset":4,
             "size":4,
@@ -81534,23 +81532,22 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"float"
         },
         {
-          "name":"angle_radians",
+          "name":"quat_ptr",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"float"
+          "type":"CQuaternion4f*"
         }
       ]
     }
@@ -81564,7 +81561,7 @@
         "start":"005f7a30"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30",
     "ret":"void",
@@ -81637,7 +81634,7 @@
       ],
       "params":[
         {
-          "name":"quat_ptr",
+          "name":"angle_radians",
           "storage":{
             "offset":4,
             "size":4,
@@ -81650,23 +81647,22 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"float"
         },
         {
-          "name":"angle_radians",
+          "name":"quat_ptr",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"float"
+          "type":"CQuaternion4f*"
         }
       ]
     }

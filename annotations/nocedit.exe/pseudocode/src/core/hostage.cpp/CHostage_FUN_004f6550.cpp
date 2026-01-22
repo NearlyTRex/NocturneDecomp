@@ -18,16 +18,16 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
 {
   int iVar1;
   uint *unaff_ESI;
-  uint *puVar2;
-  uint *puVar3;
+  CMatrix3x4f *pCVar2;
+  float *pfVar3;
   byte bVar4;
   int in_stack_00000008;
-  CMatrix3x4f *in_stack_fffffd6c;
-  uint local_264 [24];
+  float local_294 [12];
+  CMatrix3x4f local_264 [2];
   CMatrix3x4f local_204;
-  uint local_1d4 [24];
-  uint local_174 [12];
-  uint local_144 [12];
+  CMatrix3x4f local_1d4 [2];
+  CMatrix3x4f local_174;
+  CMatrix3x4f local_144;
   CMatrix3x4f local_114;
   CMatrix3x4f local_e4;
   CVector3f local_a8;
@@ -58,8 +58,8 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
               (&local_204,
                (this_ptr->base_npc).base_character.model.bone_transform.bone_world_matrices +
                *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0
-               ,in_stack_fffffd6c);
-    puVar2 = local_1d4;
+               ,local_1d4);
+    pCVar2 = local_1d4;
   }
   else if (*(int *)this_ptr->field4_0x1fab8 == 3) {
     local_3c.x = 0.265971;
@@ -83,8 +83,8 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
               (&local_e4,
                (this_ptr->base_npc).base_character.model.bone_transform.bone_world_matrices +
                *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0
-               ,in_stack_fffffd6c);
-    puVar2 = local_264;
+               ,local_264);
+    pCVar2 = local_264;
   }
   else if (*(int *)this_ptr->field4_0x1fab8 == 5) {
     local_78[0].x = 0.265971;
@@ -109,23 +109,23 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6550(CHostage *this_ptr)
               (&local_114,
                (this_ptr->base_npc).base_character.model.bone_transform.bone_world_matrices +
                *(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0
-               ,in_stack_fffffd6c);
-    puVar2 = local_174;
+               ,&local_174);
+    pCVar2 = &local_174;
   }
   else {
     core_charactr_cpp_CCharacter_FUN_0042d300((CCharacter *)this_ptr);
-    puVar2 = local_144;
+    pCVar2 = &local_144;
   }
-  puVar3 = (uint *)&stack0xfffffd6c;
+  pfVar3 = local_294;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *pfVar3 = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
   }
-  puVar2 = (uint *)&stack0xfffffd6c;
+  pfVar3 = local_294;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+    *unaff_ESI = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
     unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;
   }
   return;

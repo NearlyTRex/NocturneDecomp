@@ -12,8 +12,7 @@ void core_boxactor_cpp_FUN_00422a50(void)
   CDemonSet *this_ptr;
   uint uVar1;
   int iVar2;
-  CMatrix3x4f *unaff_ESI;
-  float *pfVar3;
+  CMatrix3x4f *pCVar3;
   CVector3f *pCVar4;
   byte bVar5;
   CDemonActor *in_stack_00000004;
@@ -21,7 +20,7 @@ void core_boxactor_cpp_FUN_00422a50(void)
   int filter_index;
   int filter_pos_x;
   int filter_pos_y;
-  float local_e4 [12];
+  CMatrix3x4f local_e4;
   CMatrix3x4f local_b4;
   CVector3f local_84 [4];
   CMatrix3x4f local_54;
@@ -60,12 +59,12 @@ void core_boxactor_cpp_FUN_00422a50(void)
               (&local_54,&g_ZeroVector,(CVector3f *)&in_stack_00000004[0x28].field6_0x68);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_b4,&g_ZeroVector,(CVector3f *)&in_stack_00000004->orient);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_54,&local_b4,unaff_ESI);
-    pfVar3 = local_e4;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_54,&local_b4,&local_e4);
+    pCVar3 = &local_e4;
     pCVar4 = local_84;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar4->x = *pfVar3;
-      pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+      pCVar4->x = *(float *)pCVar3;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
       pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_84,(CMatrix3x3f *)&local_24);

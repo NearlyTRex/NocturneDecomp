@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_006007a0

@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)
+; __stack2_esi CVector3i * core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   input_vector
-; CVector3i *      Stack[0xc]:4   output_vector
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

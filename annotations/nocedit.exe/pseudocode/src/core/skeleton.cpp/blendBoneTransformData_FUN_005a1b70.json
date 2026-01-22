@@ -3,27 +3,21 @@
     "errors": [
       {
         "category": "other",
-        "column": 36,
-        "line": 65,
-        "message": "invalid cast from type 'float' to type 'CQuaternion4f*'"
-      },
-      {
-        "category": "other",
         "column": 25,
         "line": 66,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 28,
+        "category": "other",
+        "column": 25,
         "line": 69,
-        "message": "'stack0xffffffb0' was not declared in this scope"
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 28,
+        "category": "other",
+        "column": 27,
         "line": 70,
-        "message": "'stack0xffffffb4' was not declared in this scope"
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -39,23 +33,33 @@
         "column": 16,
         "line": 66,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 69,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 70,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 159,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 74,
-    "suspect_count": 7,
+    "pseudocode_lines": 72,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 213
+    "total_lines": 211
   },
   "cross_references": [],
   "function": {
@@ -279,53 +283,25 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_ffffffac",
-      "text": "float in_stack_ffffffac;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_ffffffac",
-      "text": "(local_14,local_18,(CQuaternion4f *)blend_weight,in_stack_ffffffac);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(uint *)((int)",
-      "text": "puVar3 = (uint *)((int)pCVar1 + (uint)bVar5 * -8 + 0x10);",
+      "text": "puVar4 = (uint *)((int)pCVar1 + (uint)bVar6 * -8 + 0x10);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_ffffffac",
-      "text": "pCVar1[1].x = in_stack_ffffffac;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 62,
-      "match": "&stack0xffffffb0",
-      "text": "*puVar3 = *(uint *)(&stack0xffffffb0 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 63,
-      "match": "&stack0xffffffb4",
-      "text": "*puVar4 = *(uint *)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xffffffb4",
-      "text": "((int)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "*puVar4 = *(uint *)((int)&local_54 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

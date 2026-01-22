@@ -14,11 +14,12 @@ void core_platfrm_cpp_FUN_0054cab0(void)
   float *pfVar1;
   CVector3f *pCVar2;
   uint *puVar3;
-  byte bVar4;
+  uint *puVar4;
+  byte bVar5;
   int in_stack_00000004;
   float afStackY_1844 [1523];
   CQuaternion4f *quat_ptr;
-  float in_stack_ffffff98;
+  CQuaternion4f local_68;
   CQuaternion4f local_58;
   float local_48;
   float local_44;
@@ -33,7 +34,7 @@ void core_platfrm_cpp_FUN_0054cab0(void)
   float local_18;
   int local_14;
   
-  bVar4 = 0;
+  bVar5 = 0;
   if (*(float *)(in_stack_00000004 + 0x2dc) < 0.0) {
     *(uint *)(in_stack_00000004 + 0x2dc) = 0;
   }
@@ -57,19 +58,17 @@ void core_platfrm_cpp_FUN_0054cab0(void)
     *(float *)(in_stack_00000004 + 0x28) = local_34;
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
               ((CQuaternion4f *)(in_stack_00000004 + 0x334),
-               (CQuaternion4f *)(in_stack_00000004 + 0x344),
-               *(CQuaternion4f **)(in_stack_00000004 + 0x2dc),in_stack_ffffff98);
+               (CQuaternion4f *)(in_stack_00000004 + 0x344),*(float *)(in_stack_00000004 + 0x2dc),
+               &local_68);
     quat_ptr = &local_58;
     pCVar2 = &local_30;
-    local_58.w = in_stack_ffffff98;
-    puVar3 = (uint *)((int)&local_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    *(uint *)((int)&local_58 + (uint)bVar4 * -8 + 4) =
-         *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8);
-    *puVar3 = *(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    puVar3[(uint)bVar4 * -2 + 1] =
-         *(uint *)
-          ((int)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) +
-          ((uint)bVar4 * -2 + 1) * 4);
+    local_58.w = local_68.w;
+    puVar4 = (uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    puVar3 = (uint *)((int)&local_68 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+    *(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4) =
+         *(uint *)((int)&local_68 + (uint)bVar5 * -8 + 4);
+    *puVar4 = *puVar3;
+    puVar4[(uint)bVar5 * -2 + 1] = puVar3[(uint)bVar5 * -2 + 1];
     pCVar2 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(pCVar2,quat_ptr);
     if ((CVector3f *)(in_stack_00000004 + 0x30) != pCVar2) {
       ((CVector3f *)(in_stack_00000004 + 0x30))->x = pCVar2->x;

@@ -132,7 +132,7 @@ section .text
     MOV EDI,0x2dd30ac                   ; 00505645 | g_NormalizedViewVector
     MOV [0x02dd30a8],EAX                ; 0050564a | g_CachedViewPosition.z
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 0050564f
-        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
+        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x4]                 ; 00505654
     ADD ESP,0x4                         ; 00505658
     MOVSD ES:EDI,ESI                    ; 0050565b | g_NormalizedViewVector

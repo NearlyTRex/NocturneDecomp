@@ -14838,7 +14838,7 @@
         "start":"0044d370"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370",
     "ret":"CVector3i*",
@@ -14975,7 +14975,7 @@
           "type":"CDemonCamera*"
         },
         {
-          "name":"output_ptr",
+          "name":"input_ptr",
           "storage":{
             "offset":8,
             "size":4,
@@ -14991,15 +14991,14 @@
           "type":"CVector3i*"
         },
         {
-          "name":"input_ptr",
+          "name":"output_ptr",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -48179,10 +48178,10 @@
         "start":"0050d970"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"engine_matrix.c_normalizeVector3DFixed_FUN_0050d970",
-    "ret":"void",
+    "ret":"CVector3i*",
     "vars":{
       "locals":[
         {
@@ -48236,22 +48235,47 @@
       ],
       "params":[
         {
-          "name":"vector",
+          "name":"input_vector",
           "storage":{
             "offset":4,
-            "size":12,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
-                "size":12
+                "size":4
               }
             ]
           },
-          "type":"CVector3i"
+          "type":"CVector3i*"
+        },
+        {
+          "name":"output_vector",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -48263,7 +48287,7 @@
         "start":"0050d9f0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0",
     "ret":"CVector3i*",
@@ -48416,7 +48440,7 @@
       ],
       "params":[
         {
-          "name":"inputVector",
+          "name":"input_vector",
           "storage":{
             "offset":4,
             "size":4,
@@ -48425,6 +48449,21 @@
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"output_vector",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -85799,7 +85838,7 @@
         "start":"005f79f0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionFromAngleY_FUN_005f79f0",
     "ret":"void",
@@ -85872,7 +85911,7 @@
       ],
       "params":[
         {
-          "name":"quat_ptr",
+          "name":"angle_radians",
           "storage":{
             "offset":4,
             "size":4,
@@ -85885,23 +85924,22 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"float"
         },
         {
-          "name":"angle_radians",
+          "name":"quat_ptr",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"float"
+          "type":"CQuaternion4f*"
         }
       ]
     }
@@ -85915,7 +85953,7 @@
         "start":"005f7a70"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70",
     "ret":"void",
@@ -85988,7 +86026,7 @@
       ],
       "params":[
         {
-          "name":"quat_ptr",
+          "name":"angle_radians",
           "storage":{
             "offset":4,
             "size":4,
@@ -86001,10 +86039,10 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"float"
         },
         {
-          "name":"angle_radians",
+          "name":"axis_ptr",
           "storage":{
             "offset":8,
             "size":4,
@@ -86017,23 +86055,22 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CVector3f*"
         },
         {
-          "name":"axis_ptr",
+          "name":"quat_ptr",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CQuaternion4f*"
         }
       ]
     }
@@ -86125,7 +86162,7 @@
         "start":"005f7b70"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70",
     "ret":"CQuaternion4f*",
@@ -86214,7 +86251,7 @@
       ],
       "params":[
         {
-          "name":"quat_out",
+          "name":"euler_angles",
           "storage":{
             "offset":4,
             "size":4,
@@ -86227,23 +86264,22 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"CVector3f*"
         },
         {
-          "name":"euler_angles",
+          "name":"quat_out",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CQuaternion4f*"
         }
       ],
       "ret_storage":{

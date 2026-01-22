@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   double g_SelectedClearColor = 0.0
 ;   double g_ClearColor = 0.0
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_UseExternalRenderer
 ;
 ; Called Functions:

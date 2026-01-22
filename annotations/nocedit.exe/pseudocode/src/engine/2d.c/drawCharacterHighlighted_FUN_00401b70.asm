@@ -20,7 +20,7 @@
 ;   undefined4 DAT_00666042
 ;   undefined4 g_FontTable[0].bitmap[0][2]
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 g_ColorTable16[255]
 ;   int g_ClipLeft

@@ -63,7 +63,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   engine/light.cpp (1 remaining of 10)
     - engine_light.cpp_calculatePhongLighting_FUN_00505530
-      Suspects: pointer_cast, stack_ref, stack_ref, param_count_too_few
+      Suspects: pointer_cast, pointer_cast, pointer_cast, param_count_too_few
 
   core/dcube.cpp/CDemonCube (1 remaining of 1)
     - core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData
@@ -194,7 +194,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
     ... and 287 more
 
-  [param_count_too_few] - 138 functions
+  [param_count_too_few] - 142 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
@@ -205,9 +205,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_water.cpp_CWater_process_FUN_005e9ed0              (  4 lines)
     support_newmsg.cpp_freeSkullBitmaps_FUN_00544750        (  5 lines)
     support_newmsg.cpp_freeBitmap_FUN_00544730              (  5 lines)
-    ... and 128 more
+    ... and 132 more
 
-  [pointer_cast] - 64 functions
+  [pointer_cast] - 65 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
     core_dracbrid.cpp_ctor_FUN_00486d30                     (  7 lines)
@@ -218,7 +218,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  7 lines)
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  7 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  7 lines)
-    ... and 54 more
+    ... and 55 more
 
   [stack_ref] - 43 functions
     engine_font.cpp_CBitFont_printfCenterInClip_FUN_004ce05 (  9 lines)
@@ -259,7 +259,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_edittool.cpp_CEditorTools_showCheatInputDialog_FU ( 10 lines)
     ... and 16 more
 
-  [decompiler_intrinsic] - 25 functions
+  [decompiler_intrinsic] - 26 functions
     shape_design.c_floatEpsilonCompare_FUN_004676b0         (  6 lines)
     engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00 (  9 lines)
     engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN (  9 lines)
@@ -270,7 +270,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0       ( 18 lines)
     core_dmodel.cpp_CKeyFramedModelInstance_prepareForRende ( 19 lines)
     engine_drender.cpp_CDemonRenderer_setCameraOriginFromSc ( 20 lines)
-    ... and 15 more
+    ... and 16 more
 
   [negative_offset] - 22 functions
     core_fire.cpp_CStake_dtor_FUN_004c9760                  (  6 lines)
@@ -316,17 +316,18 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_charactr.cpp_CCharacter_FUN_0042b110               ( 23 lines)
     core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00        ( 40 lines)
 
+  [warning_unreachable] - 5 functions
+    core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554 ( 20 lines)
+    engine_font.cpp_setShadowColor_FUN_004ce0f0             ( 26 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487 ( 39 lines)
+    shape_design.c_convertWorldToScreenCoordinates_FUN_0045 ( 42 lines)
+    shape_design.c_setupViewMatrix_FUN_0045ba60             ( 42 lines)
+
   [unknown_field] - 4 functions
     core_fire.cpp_CFireEffect_FUN_004c93d0                  ( 16 lines)
     engine_2d.c_getInputWithPrompt_FUN_004032c0             ( 40 lines)
     core_actor.cpp_CDemonActor_testLineIntersection_FUN_004 ( 42 lines)
     wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80       ( 43 lines)
-
-  [warning_unreachable] - 4 functions
-    core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554 ( 20 lines)
-    engine_font.cpp_setShadowColor_FUN_004ce0f0             ( 26 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487 ( 39 lines)
-    shape_design.c_setupViewMatrix_FUN_0045ba60             ( 42 lines)
 
   [stack_param] - 2 functions
     engine_matrix.c_interpolatedCos_FUN_0050c600            ( 11 lines)
@@ -345,4 +346,4 @@ PRIORITY 3: Files at 90%+ (finish them off!)
   engine/light.cpp (90.0% complete)
     1 functions remaining:
       engine_light.cpp_calculatePhongLighting_FUN_005055 (98 lines)
-        Types: ['param_count_too_few', 'pointer_cast', 'stack_ref']
+        Types: ['param_count_too_few', 'pointer_cast']

@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 34,
+        "line": 35,
         "message": "'ROUND' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 36,
+        "line": 37,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,26 +25,26 @@
       {
         "category": "other",
         "column": 6,
-        "line": 36,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 184,
+    "complexity_score": 125,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 34,
-    "suspect_count": 13,
+    "pseudocode_lines": 35,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 98
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -260,71 +260,29 @@
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_ST1",
-      "text": "float10 extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_ST2",
-      "text": "float10 extraout_ST2;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_ST3",
-      "text": "float10 extraout_ST3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_ST1",
-      "text": "fVar3 = extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_ST2",
-      "text": "exp = extraout_ST2;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_ST3",
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar4 * extraout_ST3));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 28,
       "match": "ROUND",
-      "text": "uVar1 = (uint)ROUND(dVar5);",
+      "text": "uVar1 = (uint)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 29,
       "match": "extraout_EDX",
       "text": "iVar2 = extraout_EDX + 1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
+      "line": 30,
       "match": "extraout_ECX",
       "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) =",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) =",
       "type": "pointer_cast"

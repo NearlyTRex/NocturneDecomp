@@ -1,14 +1,14 @@
 // Name: core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
 // Address: 0044d600
 // Address Range: [[0044d600, 0044d7c6]]
-// Convention: __cdecl
-// Signature: CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)
+// Convention: __stack2_esi
+// Signature: CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
 
 #include "nocturne.h"
 
-CVector3i * __cdecl
+CVector3i * __stack2_esi
 core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
-          (CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr)
+          (CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 {
   longlong lVar1;
@@ -16,7 +16,6 @@ core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
   longlong lVar3;
   int iVar4;
   uint uVar5;
-  CVector3i *unaff_ESI;
   uint *puVar6;
   byte bVar7;
   int aiStackY_1004 [1014];
@@ -26,11 +25,13 @@ core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
   int local_1c;
   int local_18;
   int local_14;
+  CVector3i *local_10;
   
   bVar7 = 0;
-  local_20 = output_ptr->z;
-  local_28 = output_ptr->x;
-  local_24 = output_ptr->y;
+  local_20 = input_ptr->z;
+  local_28 = input_ptr->x;
+  local_24 = input_ptr->y;
+  local_10 = output_ptr;
   iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar4 == 0) {
     lVar1 = (longlong)local_24 * (longlong)(this_ptr->inverted_matrix).m[1].x +
@@ -79,10 +80,10 @@ core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
   }
   local_14 = iVar4 + uVar5;
-  puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);
-  unaff_ESI->x = local_1c;
+  puVar6 = (uint *)((int)local_10 + (uint)bVar7 * -8 + 4);
+  local_10->x = local_1c;
   *puVar6 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar7 * -8);
   puVar6[(uint)bVar7 * -2 + 1] =
        *(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-  return unaff_ESI;
+  return local_10;
 }

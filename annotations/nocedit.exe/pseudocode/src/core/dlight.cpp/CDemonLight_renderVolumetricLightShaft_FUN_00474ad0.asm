@@ -211,7 +211,7 @@ section .text
     LEA ESI,[ESP + 0x68]                ; 00474c2f
     FSTP float ptr [ESP + 0xc]          ; 00474c33
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 00474c37
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x68]                ; 00474c3c
     ADD ESP,0x4                         ; 00474c40
     LEA EAX,[ESP + 0xdc]                ; 00474c43

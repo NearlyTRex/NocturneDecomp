@@ -308,7 +308,7 @@ section .text
     LEA ESI,[ESP + 0x14]                ; 004f8386
     LEA EDI,[ESP + 0x24]                ; 004f838a
     CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 004f838e
-        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
+        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CVector3f * euler_angles, CQuaternion4f * quat_out)
     LEA ESI,[ESP + 0x14]                ; 004f8393
     ADD ESP,0x4                         ; 004f8397
     LEA EAX,[ESP + 0x20]                ; 004f839a

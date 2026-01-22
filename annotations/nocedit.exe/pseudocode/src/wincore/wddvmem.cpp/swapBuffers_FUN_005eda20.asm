@@ -33,7 +33,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int g_WindowActive = -0x1
 ;   void* g_BackBuffer
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename

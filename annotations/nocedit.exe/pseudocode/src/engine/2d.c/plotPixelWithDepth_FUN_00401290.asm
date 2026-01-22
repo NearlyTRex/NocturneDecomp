@@ -15,8 +15,8 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
-;   uint*[1024] g_ZBufferScanlineArray
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   ushort[256] g_ColorTable16
 ;   uint[256] g_ColorTable32
 ;   int g_ActiveRenderColor

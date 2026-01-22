@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 27,
+        "line": 26,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 42,
+        "line": 41,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 57,
+        "line": 56,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 65,
+        "line": 64,
         "message": "'SQRT' was not declared in this scope"
       }
     ],
@@ -38,17 +38,16 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 277,
+    "complexity_score": 111,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 67,
-    "suspect_count": 20,
+    "pseudocode_lines": 66,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unaffected_reg"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 258
+    "total_lines": 257
   },
   "cross_references": [
     {
@@ -96,10 +95,10 @@
         "005f75d5"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420",
-    "signature": "CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)"
+    "signature": "CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_out)"
   },
   "function_calls": [],
   "globals": [
@@ -148,10 +147,10 @@
     "pcode_op_count": 1330
   },
   "stack_frame": {
-    "frame_size": 92,
+    "frame_size": 88,
     "local_size": 84,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -198,15 +197,8 @@
       },
       {
         "is_param": true,
-        "name": "quat_out",
-        "offset": 4,
-        "size": 4,
-        "type": "CQuaternion4f *"
-      },
-      {
-        "is_param": true,
         "name": "matrix_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CMatrix3x3f *"
       }
@@ -231,144 +223,32 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "text": "CQuaternion4f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 19,
       "match": "SQRT",
       "text": "local_48 = SQRT(fVar2 + 1.0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->w = local_48;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->x = local_44;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->y = fVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->z = fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 34,
       "match": "SQRT",
-      "text": "fVar5 = SQRT((quat_out[1].x - (quat_out[2].y + quat_out->w)) + 1.0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->w = (quat_out->y - quat_out[2].w) * fVar6;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->x = (fVar1 + fVar4) * fVar6;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 44,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->y = fVar5 * fVar7;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 45,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->z = (fVar2 + fVar3) * fVar6;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "SQRT",
-      "text": "local_44 = SQRT((quat_out->w - (quat_out[1].x + quat_out[2].y)) + 1.0);",
+      "text": "fVar5 = SQRT((matrix_ptr->m[1].z - (matrix_ptr[1].m[0].y + matrix_ptr->m[0].x)) + 1.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 49,
       "match": "SQRT",
-      "text": "fVar5 = SQRT((quat_out[2].y - fVar1) + 1.0);",
+      "text": "local_44 = SQRT((matrix_ptr->m[0].x - (matrix_ptr->m[1].z + matrix_ptr[1].m[0].y)) + 1.0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 65,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->w = (quat_out[1].w - quat_out->x) * fVar6;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 66,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->x = (fVar2 + fVar3) * fVar6;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 67,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->y = (fVar1 + fVar4) * fVar6;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 68,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->z = fVar5 * fVar7;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 69,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT((matrix_ptr[1].m[0].y - fVar1) + 1.0);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

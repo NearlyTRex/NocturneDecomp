@@ -155,7 +155,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005e1be6: MOV EDI,ESP
 
   engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    File: engine/matrix.c, Suspects: 9
+    File: engine/matrix.c, Suspects: 6
     - [alt_frame_pointer] at 0050d9d4: MOV ESI,ESP
 
   engine_matrix.c_getCameraOrigin_FUN_0050e2c0
@@ -171,12 +171,12 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0050c536: AND ESP,0xfffffff8
 
   engine_matrix.c_projectToScreen_FUN_0050e5b0
-    File: engine/matrix.c, Suspects: 8
+    File: engine/matrix.c, Suspects: 9
     - [stack_alignment] at 0050e5b9: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 0050e5c3: MOV EDI,ESP
 
   engine_matrix.c_transformWorldToView_FUN_0050cc40
-    File: engine/matrix.c, Suspects: 5
+    File: engine/matrix.c, Suspects: 1
     - [alt_frame_pointer] at 0050ccff: MOV ESI,ESP
 
   engine_matrix.c_invertTransformMatrix_FUN_0050c640
@@ -277,7 +277,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00501f39: AND ESP,0xfffffff8
 
   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-    File: engine/drender.cpp, Suspects: 6
+    File: engine/drender.cpp, Suspects: 3
     - [alt_frame_pointer] at 0048c767: MOV ESI,ESP
     - [alt_frame_pointer] at 0048c770: MOV ESI,ESP
 
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 23.7 suspects/function
-  Without stack patterns: avg 5.7 suspects/function
+  With stack patterns:    avg 23.3 suspects/function
+  Without stack patterns: avg 5.6 suspects/function

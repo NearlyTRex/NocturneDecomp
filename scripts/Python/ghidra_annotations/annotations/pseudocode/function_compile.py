@@ -421,7 +421,8 @@ def compile_all_functions(src_dir, include_dir, compiler='g++', num_threads=8,
                                      compiler, 60, repo_dir)
             future_to_func[future] = func_info
 
-        # Collect results and update JSON files
+        # Collect results first (don't update JSON yet - that's a bottleneck)
+        pending_json_updates = []
         for future in as_completed(future_to_func):
             func_info = future_to_func[future]
             func_name = func_info['name']
@@ -453,8 +454,8 @@ def compile_all_functions(src_dir, include_dir, compiler='g++', num_threads=8,
                 'json_path': func_info['json_path'],
             }
 
-            # Update JSON file with compilation status
-            update_function_json_with_compilation(func_info['json_path'], compilation_status)
+            # Queue JSON update for later (avoid I/O bottleneck in completion loop)
+            pending_json_updates.append((func_info['json_path'], compilation_status))
 
             completed += 1
             if progress_callback:
@@ -463,6 +464,21 @@ def compile_all_functions(src_dir, include_dir, compiler='g++', num_threads=8,
             # Progress logging
             if completed % 100 == 0:
                 log_info("  Compiled %d/%d functions..." % (completed, total))
+
+    # Batch update JSON files in parallel after all compilations complete
+    if pending_json_updates:
+        log_info("  Updating %d JSON files with compilation status..." % len(pending_json_updates))
+        with ThreadPoolExecutor(max_workers=num_threads) as json_executor:
+            json_futures = [
+                json_executor.submit(update_function_json_with_compilation, json_path, status)
+                for json_path, status in pending_json_updates
+            ]
+            # Wait for all JSON updates to complete
+            for future in as_completed(json_futures):
+                try:
+                    future.result()
+                except Exception:
+                    pass  # Errors already logged in update function
 
     return results
 

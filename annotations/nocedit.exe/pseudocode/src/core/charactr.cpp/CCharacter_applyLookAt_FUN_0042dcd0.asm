@@ -55,7 +55,7 @@ section .text
     LEA ESI,[ESP + 0x5c]                ; 0042dd00
     LEA EDI,[ESP + 0x3c]                ; 0042dd04
     CALL core_xform.cpp_quaternionFromAngleX_FUN_005f79b0 ; 0042dd08
-        ;   XREF to: 005f79b0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionFromAngleX_FUN_005f79b0(CQuaternion4f * quat_ptr, float angle_radians)
+        ;   XREF to: 005f79b0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionFromAngleX_FUN_005f79b0(float angle_radians, CQuaternion4f * quat_ptr)
     LEA ESI,[ESP + 0x5c]                ; 0042dd0d
     ADD ESP,0x4                         ; 0042dd11
     MOVSD ES:EDI,ESI                    ; 0042dd14
@@ -68,7 +68,7 @@ section .text
     LEA ESI,[ESP + 0x70]                ; 0042dd23
     LEA EDI,[ESP + 0x30]                ; 0042dd27
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005f79f0 ; 0042dd2b
-        ;   XREF to: 005f79f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionFromAngleY_FUN_005f79f0(CQuaternion4f * quat_ptr, float angle_radians)
+        ;   XREF to: 005f79f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionFromAngleY_FUN_005f79f0(float angle_radians, CQuaternion4f * quat_ptr)
     LEA ESI,[ESP + 0x70]                ; 0042dd30
     ADD ESP,0x4                         ; 0042dd34
     MOVSD ES:EDI,ESI                    ; 0042dd37
@@ -97,7 +97,7 @@ section .text
     PUSH ESI                            ; 0042dd74
     LEA ESI,[ESP + 0x54]                ; 0042dd75
     CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 0042dd79
-        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
+        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t, CQuaternion4f * result_out)
     MOV ESI,dword ptr [EBX + 0x25e4]    ; 0042dd7e
     SHL ESI,0x4                         ; 0042dd84
     LEA EDI,[ESI + EBX*0x1 + 0x808]     ; 0042dd87

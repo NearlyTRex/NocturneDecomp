@@ -154,7 +154,7 @@ section .text
     PUSH EDI                            ; 004ca211 | g_CDemonRendererInstance
     LEA ESI,[ESP + 0xe8]                ; 004ca212
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 ; 004ca219
-        ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA EDI,[ESP + 0xf4]                ; 004ca21e
     LEA ESI,[ESP + 0xe8]                ; 004ca225
     ADD ESP,0x4                         ; 004ca22c
@@ -182,7 +182,7 @@ section .text
     LEA ESI,[ESP + 0xac]                ; 004ca27d
     LEA EDI,[ESP + 0xf4]                ; 004ca284
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 ; 004ca28b
-        ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0xac]                ; 004ca290
     MOV dword ptr [ESP + 0x134],EBX     ; 004ca297
     ADD ESP,0x4                         ; 004ca29e

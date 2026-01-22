@@ -16,29 +16,28 @@ void core_boneguy_cpp_FUN_0041d8a0(void)
   uint *puVar3;
   uint *puVar4;
   uint *puVar5;
-  byte bVar6;
+  uint *puVar6;
+  byte bVar7;
   int in_stack_00000004;
-  int aiStackY_1800 [1526];
-  CVector3f *in_stack_ffffffdc;
+  float afStackY_1800 [1526];
+  CQuaternion4f local_24;
   int local_14;
   
-  bVar6 = 0;
+  bVar7 = 0;
   local_14 = 0;
   if (0 < *(int *)(in_stack_00000004 + 0xbf38)) {
     puVar3 = (uint *)(in_stack_00000004 + 0xbf74);
     iVar2 = in_stack_00000004;
     do {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                ((CQuaternion4f *)(*(int *)(iVar2 + 0xbf80) + 0x30),in_stack_ffffffdc);
-      puVar4 = (uint *)(iVar2 + 0xbf58 + (uint)bVar6 * -8);
-      *(CVector3f **)(iVar2 + 0xbf54) = in_stack_ffffffdc;
-      puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
-      *puVar4 = *(uint *)(&stack0xffffffe0 + (uint)bVar6 * -8);
-      *puVar5 = *(uint *)(&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-      puVar5[(uint)bVar6 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
-            ((uint)bVar6 * -2 + 1) * 4);
+                ((CVector3f *)(*(int *)(iVar2 + 0xbf80) + 0x30),&local_24);
+      puVar5 = (uint *)(iVar2 + 0xbf58 + (uint)bVar7 * -8);
+      *(float *)(iVar2 + 0xbf54) = local_24.w;
+      puVar6 = puVar5 + (uint)bVar7 * -2 + 1;
+      puVar4 = (uint *)((int)&local_24 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+      *puVar5 = *(uint *)((int)&local_24 + (uint)bVar7 * -8 + 4);
+      *puVar6 = *puVar4;
+      puVar6[(uint)bVar7 * -2 + 1] = puVar4[(uint)bVar7 * -2 + 1];
       *(uint *)(*(int *)(iVar2 + 0xbf80) + 0xf20) = 0;
       iVar1 = *(int *)(iVar2 + 0xbf80);
       if (puVar3 != (uint *)(iVar1 + 0x20)) {

@@ -34,6 +34,6 @@ int g_BackgroundSavedBlueBitPosition = {};
 int g_ScanlineSpanLeft[256] = {};
 int g_ScanlineSpanRight[256] = {};
 
-// void*[1024]
-void* g_BackgroundSavedScreenBufferArray[1024] = {};
+// void*[1200]
+void* g_BackgroundSavedScreenBufferArray[1200] = {};
 

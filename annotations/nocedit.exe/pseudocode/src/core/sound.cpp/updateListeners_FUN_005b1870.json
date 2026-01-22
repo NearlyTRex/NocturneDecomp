@@ -4,37 +4,55 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 73,
+        "line": 70,
         "message": "'SQRT' was not declared in this scope"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 149,
-        "message": "'SUB84' was not declared in this scope"
-      },
-      {
         "category": "other",
-        "column": 22,
-        "line": 151,
+        "column": 21,
+        "line": 147,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 152,
+        "column": 26,
+        "line": 148,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 149,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 150,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 160,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 162,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 173,
+        "line": 170,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 8,
-        "line": 210,
+        "line": 206,
         "message": "'stack0x00000000' was not declared in this scope"
       }
     ],
@@ -49,44 +67,61 @@
       {
         "category": "other",
         "column": 58,
-        "line": 134,
+        "line": 131,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 22,
-        "line": 145,
+        "column": 12,
+        "line": 147,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 148,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 151,
+        "line": 149,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 12,
-        "line": 152,
+        "column": 17,
+        "line": 150,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 160,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 162,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 337,
+    "complexity_score": 308,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 34,
-    "pseudocode_lines": 207,
-    "suspect_count": 11,
+    "pseudocode_lines": 203,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 624
+    "total_lines": 620
   },
   "cross_references": [
     {
@@ -884,78 +919,64 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffffe90",
-      "text": "double in_stack_fffffe90;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 63,
       "match": "SQRT",
       "text": "if (SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68) <",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 142,
-      "match": "in_stack_fffffe90",
-      "text": "(uint)(iVar5 << 4 < 0)) >> 5,SUB84 /* extract 2-byte value */(in_stack_fffffe90,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
-      "match": "SUB84",
-      "text": "(uint)(iVar5 << 4 < 0)) >> 5,SUB84 /* extract 2-byte value */(in_stack_fffffe90,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_e4 + (uint)bVar9 * -8 + 4) = afStack_38[(uint)bVar9 * -2];",
+      "line": 140,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_e4 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_e4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "line": 141,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_3c + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 154,
-      "match": "in_stack_fffffe90",
-      "text": "(&g_CDemonCameraInstance,&local_e4,SUB84 /* extract 2-byte value */(in_stack_fffffe90,0));",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_e4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 143,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_3c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(int *)((int)",
+      "text": "local_8c[(uint)bVar9 * -2] = *(int *)((int)&local_54 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_54 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
-      "match": "SUB84",
-      "text": "(&g_CDemonCameraInstance,&local_e4,SUB84 /* extract 2-byte value */(in_stack_fffffe90,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
+      "line": 163,
       "match": "SQRT",
       "text": "fVar1 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 167,
-      "match": "in_stack_fffffe90",
-      "text": "in_stack_fffffe90 = (double)fVar1;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 203,
+      "line": 199,
       "match": "&stack0x00000000",
       "text": "if (&stack0x00000000 == (byte *)0x3f6b03c) {",
       "type": "stack_ref"

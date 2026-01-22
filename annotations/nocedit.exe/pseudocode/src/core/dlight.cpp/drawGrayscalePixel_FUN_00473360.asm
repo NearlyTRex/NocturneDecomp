@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   grayscale_value
 ;
 ; Referenced Globals:
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;
 ; *****************************************************************************
 

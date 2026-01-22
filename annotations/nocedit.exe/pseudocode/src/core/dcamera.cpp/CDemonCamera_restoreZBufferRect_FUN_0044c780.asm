@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;   int g_UseExternalRenderer
 ;

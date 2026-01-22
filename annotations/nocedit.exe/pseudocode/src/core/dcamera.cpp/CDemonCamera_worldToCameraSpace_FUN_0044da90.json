@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 108,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 53,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 162
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 161
   },
   "cross_references": [],
   "function": {
@@ -33,9 +31,9 @@
         "0044dbc7"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90",
-    "signature": "CVector3i * core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90(CDemonCamera * this_ptr, CVector3i * output_vector, CVector3i * input_vector)"
+    "signature": "CVector3i * core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)"
   },
   "function_calls": [],
   "globals": [
@@ -101,10 +99,10 @@
     "pcode_op_count": 838
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 60,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -165,15 +163,8 @@
       },
       {
         "is_param": true,
-        "name": "output_vector",
-        "offset": 8,
-        "size": 4,
-        "type": "CVector3i *"
-      },
-      {
-        "is_param": true,
         "name": "input_vector",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "CVector3i *"
       }
@@ -196,41 +187,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "CVector3i *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->x = pCVar5->x;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->y = iStack_20;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 54,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->z = iVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 55,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

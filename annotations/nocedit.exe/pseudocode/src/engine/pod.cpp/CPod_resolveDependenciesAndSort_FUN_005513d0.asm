@@ -161,7 +161,7 @@ section .text
     LEA ESI,[ESP + 0x648]               ; 00551515
     LEA EDI,[ESP + 0x960]               ; 0055151c
     CALL engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 ; 00551523
-        ;   XREF to: 005506c0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
+        ;   XREF to: 005506c0 (UNCONDITIONAL_CALL)  ; CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
     MOV ECX,0x42                        ; 00551528
     LEA ESI,[ESP + 0x648]               ; 0055152d
     ADD ESP,0x8                         ; 00551534
@@ -184,7 +184,7 @@ section .text
     LEA ESI,[ESP + 0x858]               ; 0055155f
     LEA EDI,[ESP + 0x750]               ; 00551566
     CALL engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 ; 0055156d
-        ;   XREF to: 005506c0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
+        ;   XREF to: 005506c0 (UNCONDITIONAL_CALL)  ; CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
     MOV ECX,0x42                        ; 00551572
     LEA ESI,[ESP + 0x858]               ; 00551577
     ADD ESP,0x8                         ; 0055157e

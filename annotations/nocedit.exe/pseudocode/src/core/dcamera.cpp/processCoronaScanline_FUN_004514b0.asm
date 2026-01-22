@@ -31,7 +31,7 @@
 ;   int g_CoronaTargetX
 ;   int g_CoronaTargetY
 ;   int g_CoronaTargetDepth
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
 

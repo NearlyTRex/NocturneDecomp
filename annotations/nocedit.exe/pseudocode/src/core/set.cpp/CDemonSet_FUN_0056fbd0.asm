@@ -70,7 +70,7 @@ section .text
     LEA ESI,[ESP + 0x28]                ; 0056fbf2
     MOV dword ptr [0x03342b4c],ECX      ; 0056fbf6 | DAT_03342b4c
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 0056fbfc
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 0056fc01
     LEA EAX,[ESP + 0x18]                ; 0056fc04
     PUSH EAX                            ; 0056fc08

@@ -20,11 +20,10 @@ float core_flame_cpp_FUN_004ca110(void)
   float fVar4;
   SProjectedVertex *point;
   int unaff_EBP;
-  CVector3i *unaff_ESI;
   byte bVar5;
   double dVar6;
   CDemonActor *in_stack_00000004;
-  int aiStackY_1080 [973];
+  uint auStackY_1080 [973];
   SMRGLHeaderPrimitive SStack_13c;
   uint uStack_124;
   uint uStack_120;
@@ -39,16 +38,14 @@ float core_flame_cpp_FUN_004ca110(void)
   CVector3i CStack_bc;
   CVector3i CStack_b0;
   CVector3i CStack_a4;
-  int iStack_98;
-  int aiStack_94 [2];
+  CVector3i CStack_98;
   CVector3i CStack_8c;
   CVector3i CStack_80;
   float fStack_74;
   float fStack_70;
   float fStack_6c;
   CVector3i CStack_68;
-  int iStack_5c;
-  int aiStack_58 [2];
+  CVector3i CStack_5c;
   CVector3i CStack_50;
   float fStack_44;
   float fStack_40;
@@ -89,11 +86,12 @@ float core_flame_cpp_FUN_004ca110(void)
     if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&
        (in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-                (g_CDemonRendererPtr2,unaff_ESI);
-      CStack_50.x = iStack_5c;
-      *(int *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = aiStack_58[(uint)bVar5 * -2];
-      *(int *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-           aiStack_58[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+                (g_CDemonRendererPtr2,&CStack_5c);
+      CStack_50.x = CStack_5c.x;
+      *(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) =
+           *(uint *)((int)&CStack_5c + (uint)bVar5 * -8 + 4);
+      *(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+           *(uint *)((int)&CStack_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       CStack_50.x = 0;
       CStack_50.y = 0;
       engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
@@ -102,12 +100,13 @@ float core_flame_cpp_FUN_004ca110(void)
       CStack_a4.y = 0;
       CStack_a4.z = 0;
       engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-                (g_CDemonRendererPtr2,unaff_ESI);
+                (g_CDemonRendererPtr2,&CStack_98);
       iStack_10 = 1;
-      CStack_50.x = iStack_98;
-      *(int *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = aiStack_94[(uint)bVar5 * -2];
-      *(int *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-           aiStack_94[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      CStack_50.x = CStack_98.x;
+      *(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) =
+           *(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + 4);
+      *(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+           *(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       if ((0x2000 < CStack_50.x) || (CStack_50.x < -0x2000)) {
         iStack_10 = 3;
       }

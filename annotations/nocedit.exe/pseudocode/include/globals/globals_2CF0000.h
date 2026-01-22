@@ -98,8 +98,8 @@ extern int g_MouseButtonFlags;
 // uchar[32768]
 extern uchar g_ColorCubeLookup[32768];
 
-// uint*[1024]
-extern uint* g_ZBufferScanlineArray[1024];
+// uint*[1200]
+extern uint* g_ZBufferScanlineArray[1200];
 
 // undefined4
 extern undefined4 DAT_02cf2a78;
@@ -118,6 +118,6 @@ extern undefined4 DAT_02cf4b30;
 extern undefined4 DAT_02cf4b34;
 extern undefined4 DAT_02cf4b38;
 
-// void*[1024]
-extern void* g_ScreenBufferArray[1024];
+// void*[1200]
+extern void* g_ScreenBufferArray[1200];
 

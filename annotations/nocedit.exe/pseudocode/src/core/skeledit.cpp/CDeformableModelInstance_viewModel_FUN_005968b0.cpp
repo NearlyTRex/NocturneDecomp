@@ -29,7 +29,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   CDeformableModelInstance *pCVar12;
   int iVar13;
   CDeformableModelInstance *pCVar14;
-  float *pfVar15;
+  CMatrix3x4f *pCVar15;
   SBone *string_data;
   char *pcVar16;
   int x_pos;
@@ -38,10 +38,8 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   double dVar19;
   CDeformableModelInstance *in_stack_00000004;
   CGame *in_stack_ffffcc64;
-  CMatrix3x4f *in_stack_ffffcca0;
   CDeformableModel *in_stack_ffffccac;
   char *in_stack_ffffccb0;
-  CMatrix3x4f *in_stack_ffffccb4;
   float fVar20;
   int *in_stack_ffffcd24;
   CKeys *in_stack_ffffcd28;
@@ -87,10 +85,10 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   uint local_360;
   byte local_35c [20];
   float local_348;
-  float local_320 [12];
+  CMatrix3x4f local_320;
   CVector3f local_2f0 [4];
   CMatrix3x4f local_2c0;
-  float local_290 [12];
+  CMatrix3x4f local_290;
   CVector3f local_260 [4];
   CMatrix3x4f local_230;
   byte local_200 [16];
@@ -510,12 +508,12 @@ LAB_0059722b:
     if (0 < DAT_03665f74.poly_count) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_2c0,local_190.m + 1,&local_19c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2c0,local_54 + iVar6,in_stack_ffffcca0);
-      pfVar15 = local_320;
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2c0,local_54 + iVar6,&local_320);
+      pCVar15 = &local_320;
       pCVar10 = local_2f0;
       for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-        pCVar10->x = *pfVar15;
-        pfVar15 = pfVar15 + (uint)bVar18 * -2 + 1;
+        pCVar10->x = pCVar15->m[0].w;
+        pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar18 * -2 + 1) * 4);
         pCVar10 = (CVector3f *)((int)pCVar10 + ((uint)bVar18 * -2 + 1) * 4);
       }
       core_xform_cpp_getTranslation_FUN_005f6110(local_2f0,(CMatrix3x4f *)local_16c);
@@ -668,7 +666,6 @@ LAB_005975b4:
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    in_stack_ffffcca0 = (CMatrix3x4f *)0x1;
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar6 != 0) break;
     iVar6 = 0;
@@ -686,8 +683,9 @@ LAB_005975b4:
         pCVar11 = pCVar11 + 1;
       } while (iVar6 < local_bc->bone_count);
     }
-    if (DAT_03665f74.poly_count < 1) {
-LAB_00597a90:
+    if (((DAT_03665f74.poly_count < 1) ||
+        (iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar6 == 0)) ||
+       (local_a0 == 0)) {
       if (local_98 == 0) {
         shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)local_35c);
       }
@@ -698,7 +696,6 @@ LAB_00597a90:
         if (iVar6 != 0) {
           local_50 = local_50 * 3.0f;
         }
-        in_stack_ffffccb4 = (CMatrix3x4f *)g_CKeysPtr;
         iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
         if (iVar6 != 0) {
           local_50 = local_50 * 0.05f;
@@ -737,19 +734,15 @@ LAB_00597a90:
       }
     }
     else {
-      in_stack_ffffcca0 = (CMatrix3x4f *)0x59801b;
-      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-      if ((iVar6 == 0) || (local_a0 == 0)) goto LAB_00597a90;
       core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_200);
       core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                 (&local_230,(CVector3f *)local_200,(CVector3f *)(local_200 + 0xc));
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                (local_54 + local_64,&local_230,in_stack_ffffccb4);
-      pfVar15 = local_290;
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_54 + local_64,&local_230,&local_290);
+      pCVar15 = &local_290;
       pCVar10 = local_260;
       for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-        pCVar10->x = *pfVar15;
-        pfVar15 = pfVar15 + (uint)bVar18 * -2 + 1;
+        pCVar10->x = pCVar15->m[0].w;
+        pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar18 * -2 + 1) * 4);
         pCVar10 = (CVector3f *)((int)pCVar10 + ((uint)bVar18 * -2 + 1) * 4);
       }
       pCVar10 = core_xform_cpp_invertAndGetTranslation_FUN_005f6140
@@ -771,7 +764,6 @@ LAB_00597a90:
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x30);
     if (iVar6 != 0) {
       in_stack_ffffccb0 = (char *)0x597c43;
-      in_stack_ffffccb4 = (CMatrix3x4f *)g_CKeysPtr;
       iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar6 == 0) {
         iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
@@ -787,7 +779,6 @@ LAB_00597a90:
       }
       else {
         in_stack_ffffccb0 = (char *)0x597c68;
-        in_stack_ffffccb4 = (CMatrix3x4f *)g_CEditorToolsPtr;
         iVar6 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                           (g_CEditorToolsPtr,"Bias model x,y,z",local_148.m + 1,0);
         if ((iVar6 != 0) &&

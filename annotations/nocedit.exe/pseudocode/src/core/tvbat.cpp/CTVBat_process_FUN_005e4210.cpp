@@ -29,7 +29,6 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
   float10 fVar18;
   float10 fVar19;
   float10 fVar20;
-  float10 extraout_ST1;
   float in_stack_00000008;
   float local_178;
   float local_170;
@@ -235,12 +234,10 @@ LAB_005e4342:
     local_80 = local_68;
   }
   crt_math_c_atan2_FUN_006013b1((float10)local_88,(float10)local_80);
-  fVar17 = crt_math_c_atan2_FUN_006013b1
-                     ((float10)local_88,
-                      SQRT((float10)local_8c * (float10)local_8c +
-                           (float10)local_84 * (float10)local_84));
-  local_24 = (float)extraout_ST1;
-  local_28 = (float)-fVar17;
+  fVar17 = SQRT((float10)local_8c * (float10)local_8c + (float10)local_84 * (float10)local_84);
+  fVar18 = crt_math_c_atan2_FUN_006013b1((float10)local_88,fVar17);
+  local_24 = (float)fVar17;
+  local_28 = (float)-fVar18;
   if ((*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) != 0) && (this_ptr->follow_orders != 0)) {
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_130);
     (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0x34))();

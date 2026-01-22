@@ -1,17 +1,16 @@
 // Name: core_xform.cpp_buildRotationZ_FUN_005f6d40
 // Address: 005f6d40
 // Address Range: [[005f6d40, 005f6db7]]
-// Convention: __cdecl
+// Convention: __stack_esi
 // Signature: void core_xform.cpp_buildRotationZ_FUN_005f6d40(CMatrix3x4f * output_matrix, float angle_radians)
 
 #include "nocturne.h"
 
-void __cdecl
+void __stack_esi
 core_xform_cpp_buildRotationZ_FUN_005f6d40(CMatrix3x4f *output_matrix,float angle_radians)
 
 {
   int iVar1;
-  uint *unaff_ESI;
   float *pfVar2;
   float10 fVar3;
   float10 fVar4;
@@ -44,9 +43,9 @@ core_xform_cpp_buildRotationZ_FUN_005f6d40(CMatrix3x4f *output_matrix,float angl
   local_48[1] = -local_c;
   pfVar2 = local_48;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *pfVar2;
+    *(float *)angle_radians = *pfVar2;
     pfVar2 = pfVar2 + 1;
-    unaff_ESI = unaff_ESI + 1;
+    angle_radians = (float)((int)angle_radians + 4);
   }
   return;
 }

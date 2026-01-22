@@ -17,7 +17,7 @@ core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,FILE *file
   char *pcVar5;
   byte bVar6;
   float10 fVar7;
-  float10 x;
+  float10 fVar8;
   char local_188 [255];
   byte uStack_89;
   char acStack_88 [80];
@@ -84,9 +84,10 @@ core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,FILE *file
   fStack_28 = fStack_34 - (this_ptr->pos).y;
   fStack_24 = fStack_30 - (this_ptr->pos).z;
   (this_ptr->orient).z = afStack_20[0];
-  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_2c,(float10)fStack_24);
-  (this_ptr->orient).y = (float)fVar7;
-  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_2c,x);
+  fVar7 = (float10)fStack_24;
+  fVar8 = crt_math_c_atan2_FUN_006013b1((float10)fStack_2c,fVar7);
+  (this_ptr->orient).y = (float)fVar8;
+  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_2c,fVar7);
   (this_ptr->orient).x = (float)-fVar7;
   return;
 }

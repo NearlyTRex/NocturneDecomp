@@ -21,7 +21,7 @@
 ;   TerminatedCString s_wincore_wddvmem_cpp_0065789f
 ;   TerminatedCString s_openScreenDevice_Unable__006578b6
 ;   int g_WindowHeight = 0xc8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename

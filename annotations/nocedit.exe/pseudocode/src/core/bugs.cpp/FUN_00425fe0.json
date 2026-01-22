@@ -69,9 +69,9 @@
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 130,
-        "message": "invalid cast from type 'CMatrix3x4f*' to type 'float'"
+        "column": 32,
+        "line": 143,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -121,24 +121,30 @@
       {
         "category": "other",
         "column": 27,
+        "line": 133,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 16,
         "line": 134,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 135,
+        "line": 143,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 867,
+    "complexity_score": 866,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 5,
-    "pseudocode_lines": 172,
+    "pseudocode_lines": 171,
     "suspect_count": 66,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -149,7 +155,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 511
+    "total_lines": 510
   },
   "cross_references": [
     {
@@ -463,7 +469,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_fffffe78",
-      "text": "CMatrix3x4f *in_stack_fffffe78;",
+      "text": "float in_stack_fffffe78;",
       "type": "stack_param"
     },
     {
@@ -692,168 +698,175 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 123,
+      "line": 122,
       "match": "in_stack_fffffe78",
-      "text": "(pCVar2,&stack0xfffffe78,(float)in_stack_fffffe78);",
+      "text": "(*pCVar2->vtable[1].playAmbientSoundWithVolume)(pCVar2,&stack0xfffffe78,in_stack_fffffe78);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 123,
+      "line": 122,
       "match": "&stack0xfffffe78",
-      "text": "(pCVar2,&stack0xfffffe78,(float)in_stack_fffffe78);",
+      "text": "(*pCVar2->vtable[1].playAmbientSoundWithVolume)(pCVar2,&stack0xfffffe78,in_stack_fffffe78);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 127,
+      "line": 126,
       "match": "in_stack_00000004",
       "text": "(&local_11c,(CVector3f *)(*(int *)(in_stack_00000004[1].cloth_data + 0x423c) + 0x20),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 128,
+      "line": 127,
       "match": "in_stack_00000004",
       "text": "(CVector3f *)(*(int *)(in_stack_00000004[1].cloth_data + 0x423c) + 0x30));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 129,
       "match": "in_stack_00000004",
       "text": "(&CStack_14c,&(in_stack_00000004->base_actor).location.position,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 130,
       "match": "in_stack_00000004",
       "text": "(CVector3f *)&(in_stack_00000004->base_actor).orient);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
-      "match": "in_stack_fffffe78",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_11c,&CStack_14c,in_stack_fffffe78);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_00000004",
       "text": "pcVar6 = in_stack_00000004[1].cloth_data + 0x4244;",
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 139,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[1].cloth_data + 0x4274) !=",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 140,
       "match": "in_stack_00000004",
       "text": "(*(CDeformableModelInstance **)(in_stack_00000004[1].cloth_data + 0x4240))->",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 143,
       "match": "in_stack_00000004",
       "text": "(*(CDeformableModelInstance **)(in_stack_00000004[1].cloth_data + 0x4240),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 145,
+      "line": 144,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004[1].cloth_data + 0x4274));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 148,
+      "line": 147,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 152,
+      "line": 151,
       "match": "in_stack_00000004",
       "text": "} while (iVar1 < *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 154,
       "match": "in_stack_00000004",
       "text": "fStack_58 = in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x48].m[2].z +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 156,
+      "line": 155,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 157,
+      "line": 156,
       "match": "in_stack_00000004",
       "text": "fStack_54 = in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].w +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 158,
+      "line": 157,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 160,
+      "line": 159,
       "match": "in_stack_00000004",
       "text": "fStack_50 = in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[0].x +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 160,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x49].m[1].w;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 163,
       "match": "in_stack_00000004",
       "text": "fStack_34 = (in_stack_00000004->base_actor).location.position.x + fStack_88;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 165,
+      "line": 164,
       "match": "in_stack_00000004",
       "text": "fStack_30 = (in_stack_00000004->base_actor).location.position.y + fStack_84;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 166,
+      "line": 165,
       "match": "in_stack_00000004",
       "text": "fStack_2c = (in_stack_00000004->base_actor).location.position.z + fStack_80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 170,
+      "line": 169,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 169,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = in_stack_00000004 + 1;",
       "type": "stack_param"
@@ -861,34 +874,27 @@
     {
       "description": "Unresolved stack parameter",
       "line": 170,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 171,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).create_event[0x20] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 172,
+      "line": 171,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).create_event[0x21] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 173,
+      "line": 172,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).create_event[0x22] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 173,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).create_event[0x23] = '\\0';",
       "type": "stack_param"

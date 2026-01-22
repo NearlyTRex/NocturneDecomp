@@ -22,7 +22,7 @@
 ;   ulonglong g_TextureShift2 = 0x8
 ;   ulonglong g_TextureMask1 = 0xff
 ;   ulonglong g_TextureMask2 = 0xff00
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 DAT_02d02584
 ;   void* g_CurrentTextureData
 ;

@@ -26,7 +26,7 @@
 ;   undefined4 g_DitherPatternTable[1]
 ;   int g_CameraDownscaleIterations
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;

@@ -18,7 +18,7 @@
 ;   ... and 10 more
 ;
 ; Referenced Globals:
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 DAT_02d02584
 ;
 ; *****************************************************************************

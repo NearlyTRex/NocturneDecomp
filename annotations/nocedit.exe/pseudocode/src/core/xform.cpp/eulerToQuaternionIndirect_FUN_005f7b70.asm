@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CQuaternion4f * core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70(CQuaternion4f * quat_out, CVector3f * euler_angles)
+; __stack_esi CQuaternion4f * core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70(CVector3f * euler_angles, CQuaternion4f * quat_out)
 ;
 ; Parameters:
-; CQuaternion4f *  Stack[0x4]:4   quat_out
-; CVector3f *      Stack[0x8]:4   euler_angles
+; CVector3f *      Stack[0x4]:4   euler_angles
 ; Local Variables:
 ; undefined        Stack[-0x58]:1  local_58
 ; undefined        Stack[-0x28]:1  local_28
@@ -46,7 +45,7 @@ section .text
     LEA ESI,[EBP + -0x1c]               ; 005f7b9d
     MOV EDI,EBX                         ; 005f7ba0
     CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 005f7ba2
-        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_out)
     LEA ESI,[EBP + -0x1c]               ; 005f7ba7
     ADD ESP,0x4                         ; 005f7baa
     MOVSD ES:EDI,ESI                    ; 005f7bad

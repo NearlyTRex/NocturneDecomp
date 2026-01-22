@@ -2,45 +2,57 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 23,
+        "line": 55,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "undeclared_identifier",
-        "column": 55,
-        "line": 56,
+        "column": 31,
+        "line": 57,
         "message": "'stack0xffffffec' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 58,
+        "line": 59,
         "message": "'stack0xfffffff0' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 64,
+        "line": 65,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 72,
+        "line": 73,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 80,
+        "line": 81,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 86,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
-        "column": 53,
-        "line": 86,
+        "column": 29,
+        "line": 88,
         "message": "'stack0xffffffec' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 88,
+        "line": 90,
         "message": "'stack0xfffffff0' was not declared in this scope"
       }
     ],
@@ -54,38 +66,49 @@
       },
       {
         "category": "other",
-        "column": 12,
-        "line": 64,
+        "column": 14,
+        "line": 55,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 72,
+        "line": 65,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 80,
+        "line": 73,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 81,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 86,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 275,
+    "complexity_score": 222,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 11,
-    "pseudocode_lines": 80,
-    "suspect_count": 18,
+    "pseudocode_lines": 82,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_ref"
     ],
-    "total_lines": 267
+    "total_lines": 269
   },
   "cross_references": [],
   "function": {
@@ -96,9 +119,9 @@
         "0044dddc"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0",
-    "signature": "void core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)"
+    "signature": "CVector3i * core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)"
   },
   "function_calls": [
     {
@@ -218,10 +241,10 @@
     "pcode_op_count": 1638
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -279,13 +302,6 @@
         "offset": 8,
         "size": 4,
         "type": "CVector3i *"
-      },
-      {
-        "is_param": true,
-        "name": "output_vector",
-        "offset": 12,
-        "size": 4,
-        "type": "CVector3i *"
       }
     ]
   },
@@ -322,129 +338,94 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 48,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = local_18;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xffffffec",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
       "match": "(uint *)((int)",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "text": "puVar5 = (uint *)((int)output_vector + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Direct stack address reference",
       "line": 50,
-      "match": "unaff_ESI",
-      "text": "(unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 51,
-      "match": "&stack0xfffffff0",
-      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "match": "&stack0xffffffec",
+      "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xfffffff0",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 58,
       "match": "(int *)((int)",
       "text": "*(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + iVar4 * 4) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 66,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x58) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 74,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x38) *",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = local_18;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xffffffec",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 79,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(uint *)((int)",
-      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "text": "puVar5 = (uint *)((int)output_vector + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 80,
-      "match": "unaff_ESI",
-      "text": "(unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 81,
-      "match": "&stack0xfffffff0",
-      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "match": "&stack0xffffffec",
+      "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
+      "match": "&stack0xfffffff0",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     }
   ]

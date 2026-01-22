@@ -4,37 +4,49 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 47,
+        "line": 45,
         "message": "'ROUND' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 60,
+        "line": 58,
         "message": "request for member '_0_4_' in 'local_38', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
+        "column": 18,
+        "line": 60,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 62,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
         "column": 4,
-        "line": 100,
+        "line": 99,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 108,
+        "line": 107,
         "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 114,
+        "line": 113,
         "message": "request for member '_8_4_' in 'local_38', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 60,
-        "line": 135,
+        "line": 134,
         "message": "'stack0xffffff54' was not declared in this scope"
       }
     ],
@@ -45,26 +57,38 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 60,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 62,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 479,
+    "complexity_score": 478,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 26,
-    "pseudocode_lines": 129,
+    "pseudocode_lines": 128,
     "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
+      "pointer_cast",
       "stack_ref",
       "suspect_float",
-      "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 395
+    "total_lines": 394
   },
   "cross_references": [],
   "function": {
@@ -504,218 +528,218 @@
       "type": "extra_output"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EDI",
-      "text": "CVector3i *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 38,
       "match": "ROUND",
       "text": "local_68.x = (int)ROUND((this_ptr->base).position.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 39,
       "match": "ROUND",
       "text": "local_68.y = (int)ROUND((this_ptr->base).position.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 40,
       "match": "ROUND",
       "text": "local_68.z = (int)ROUND((this_ptr->base).position.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_EDI",
-      "text": "(g_CDemonRendererPtr2,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 53,
+      "line": 51,
       "match": "._0_4_",
-      "text": "local_38._0_4_ = local_20;",
+      "text": "local_38._0_4_ = local_20.x;",
       "type": "unknown_field"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_20 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 61,
       "match": "ROUND",
       "text": "local_50.x = (int)ROUND(256.0f * -0.125);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 62,
       "match": "ROUND",
       "text": "local_50.y = (int)ROUND(256.0f * -0.125);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 63,
       "match": "ROUND",
       "text": "local_50.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 69,
       "match": "ROUND",
       "text": "local_80.x = (int)ROUND(256.0f * 0.125);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 70,
       "match": "ROUND",
       "text": "local_80.y = (int)ROUND(256.0f * -0.125);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 71,
       "match": "ROUND",
       "text": "local_80.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 77,
       "match": "ROUND",
       "text": "local_74.x = (int)ROUND(256.0f * 0.125);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
       "match": "ROUND",
       "text": "local_74.y = (int)ROUND(256.0f * 0.125);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 79,
       "match": "ROUND",
       "text": "local_74.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 85,
       "match": "ROUND",
       "text": "local_44.x = (int)ROUND(256.0f * -0.125);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 86,
       "match": "ROUND",
       "text": "local_44.y = (int)ROUND(256.0f * 0.125);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "ROUND",
       "text": "local_44.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 95,
+      "line": 94,
       "match": "1.9101783e-38",
       "text": "g_RenderVertexBuffer[1].u = 1.9101783e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 96,
+      "line": 95,
       "match": "1.1754944e-38",
       "text": "g_RenderVertexBuffer[0].u = 1.1754944e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 97,
+      "line": 96,
       "match": "2.0203809e-38",
       "text": "g_RenderVertexBuffer[0].v = 2.0203809e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 98,
+      "line": 97,
       "match": "2.0203809e-38",
       "text": "g_RenderVertexBuffer[1].v = 2.0203809e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 99,
+      "line": 98,
       "match": "1.1754944e-38",
       "text": "g_RenderVertexBuffer[2].u = 1.1754944e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 100,
+      "line": 99,
       "match": "1.1754944e-38",
       "text": "g_RenderVertexBuffer[3].u = 1.1754944e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 105,
       "match": "ROUND",
       "text": "g_RenderVertexBuffer[0].w_recip = (float)(int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 107,
+      "line": 106,
       "match": "._8_4_",
       "text": "local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 106,
       "match": "ROUND",
       "text": "local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 107,
       "match": "ROUND",
       "text": "iStack_2c = (int)ROUND((this_ptr->base).position.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 108,
       "match": "ROUND",
       "text": "iStack_28 = (int)ROUND((this_ptr->base).position.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 112,
+      "line": 111,
       "match": "extraout_EDX",
       "text": "g_RenderVertexBuffer[3].v = extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 127,
       "match": "&stack0xffffff54",
       "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff54);",
       "type": "stack_ref"

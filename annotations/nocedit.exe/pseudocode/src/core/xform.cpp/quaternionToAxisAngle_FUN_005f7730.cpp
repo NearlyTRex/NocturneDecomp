@@ -12,8 +12,6 @@ core_xform_cpp_quaternionToAxisAngle_FUN_005f7730
 
 {
   float fVar1;
-  CQuaternion4f *extraout_ECX;
-  CVector3f *extraout_EDX;
   double dVar2;
   
   if (angle_out != (float *)0x0) {
@@ -22,8 +20,6 @@ core_xform_cpp_quaternionToAxisAngle_FUN_005f7730
       if (dVar2 < 1.0) {
         dVar2 = crt_math_c_acos_FUN_00600162(dVar2);
         *angle_out = (float)((float10)dVar2 * (float10)2);
-        quat_ptr = extraout_ECX;
-        axis_out = extraout_EDX;
       }
       else {
         *angle_out = 0.0;

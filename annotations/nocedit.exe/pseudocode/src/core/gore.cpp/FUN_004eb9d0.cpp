@@ -21,14 +21,12 @@ void core_gore_cpp_FUN_004eb9d0(void)
   float10 fVar7;
   float10 fVar8;
   double dVar9;
-  float afStackY_1000 [997];
-  CVector3i *in_stack_ffffff98;
+  int aiStackY_1000 [997];
   float local_60;
   float local_54;
   float local_48;
   int local_40 [10];
-  uint local_18;
-  uint auStack_14 [2];
+  CVector3i local_18;
   
   bVar5 = 0;
   DAT_02d83368.base.count = 4;
@@ -41,11 +39,12 @@ void core_gore_cpp_FUN_004eb9d0(void)
   _DAT_02d83388 = 2;
   _DAT_02d8338c = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-            (g_CDemonRendererPtr2,in_stack_ffffff98);
-  _DAT_02d83390 = local_18;
-  *(uint *)(&DAT_02d83394 + (uint)bVar5 * -8) = auStack_14[(uint)bVar5 * -2];
+            (g_CDemonRendererPtr2,&local_18);
+  _DAT_02d83390 = local_18.x;
+  *(uint *)(&DAT_02d83394 + (uint)bVar5 * -8) =
+       *(uint *)((int)&local_18 + (uint)bVar5 * -8 + 4);
   *(uint *)(&DAT_02d83398 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-       auStack_14[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+       *(uint *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   _DAT_02d83394 = 0;
   pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
   piVar3 = local_40;

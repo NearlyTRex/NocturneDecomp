@@ -30,7 +30,7 @@
 ;   TerminatedCString s_engine_pcx_c_0063ebfc
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   ... and 8 more
 ;

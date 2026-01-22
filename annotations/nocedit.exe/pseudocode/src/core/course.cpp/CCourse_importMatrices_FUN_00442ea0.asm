@@ -191,7 +191,7 @@ section .text
     PUSH EAX                            ; 00443001
     LEA ESI,[ESP + 0x3c]                ; 00443002
     CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 00443006
-        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)
+        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_out)
     LEA EAX,[EBX*0x4 + 0x0]             ; 0044300b
     MOV EDX,EAX                         ; 00443012
     SHL EAX,0x3                         ; 00443014

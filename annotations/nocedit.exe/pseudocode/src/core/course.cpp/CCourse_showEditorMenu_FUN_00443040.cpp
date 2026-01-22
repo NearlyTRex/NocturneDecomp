@@ -15,16 +15,16 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   uint uVar4;
   CVector3f *point;
   int iVar5;
-  uint *puVar6;
-  char *pcVar7;
-  uint *puVar8;
-  float *pfVar9;
+  float *pfVar6;
+  uint *puVar7;
+  char *pcVar8;
+  uint *puVar9;
   float *pfVar10;
   int iVar11;
   char *pcVar12;
   byte bVar13;
   float afStackY_1860 [1234];
-  CQuaternion4f *in_stack_fffffb04;
+  char local_4fc [260];
   char local_3f8 [260];
   char local_2f4 [260];
   char local_1f0 [260];
@@ -32,27 +32,24 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   byte local_9c [16];
   float local_8c;
   float local_88;
-  float local_84;
-  float afStack_80 [3];
+  CQuaternion4f local_84;
   CQuaternion4f local_74;
-  float local_64;
-  float afStack_60 [4];
-  float afStack_50 [3];
-  byte local_44 [12];
-  byte local_38 [16];
-  float local_28;
-  float local_24;
+  CQuaternion4f local_64;
+  CQuaternion4f local_54;
+  CVector3f local_44;
+  CVector3f local_38;
+  CVector3f local_2c;
   float local_20;
   uint local_1c;
   int local_18;
   int local_14;
   
   bVar13 = 0;
-  puVar6 = &DAT_0066e940;
+  puVar7 = &DAT_0066e940;
   pcVar3 = local_1f0;
   for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(uint *)pcVar3 = *puVar6;
-    puVar6 = puVar6 + 1;
+    *(uint *)pcVar3 = *puVar7;
+    puVar7 = puVar7 + 1;
     pcVar3 = pcVar3 + 4;
   }
   do {
@@ -102,23 +99,22 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         }
       }
       else if (local_1c < 0x34) {
-        puVar6 = &DAT_0066ea48;
-        puVar8 = (uint *)&stack0xfffffb04;
+        puVar7 = &DAT_0066ea48;
+        pcVar3 = local_4fc;
         for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar8 = *puVar6;
-          puVar6 = puVar6 + (uint)bVar13 * -2 + 1;
-          puVar8 = puVar8 + (uint)bVar13 * -2 + 1;
+          *(uint *)pcVar3 = *puVar7;
+          puVar7 = puVar7 + (uint)bVar13 * -2 + 1;
+          pcVar3 = (char *)((int)pcVar3 + ((uint)bVar13 * -2 + 1) * 4);
         }
         do {
           iVar5 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                            (g_CEditorToolsPtr,"Import .CRS file",0x6192f4,&stack0xfffffb04)
-          ;
+                            (g_CEditorToolsPtr,"Import .CRS file",0x6192f4,local_4fc);
           if (iVar5 == 0) goto LAB_004431bd;
           iVar5 = core_course_cpp_OpeningCourseFile2_FUN_00442d70();
         } while (iVar5 == 0);
-        crt_string_c_splitpath_FUN_005ff178
-                  (&stack0xfffffb04,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0);
-        pcVar7 = ".pth";
+        crt_string_c_splitpath_FUN_005ff178(local_4fc,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
+        ;
+        pcVar8 = ".pth";
         iVar5 = -1;
         pcVar3 = local_1f0;
         do {
@@ -131,21 +127,21 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         } while (cVar1 != '\0');
         pcVar12 = pcVar12 + -1;
         do {
-          cVar1 = *pcVar7;
+          cVar1 = *pcVar8;
           *pcVar12 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar7[1];
-          pcVar7 = pcVar7 + 2;
+          cVar1 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
           pcVar12[1] = cVar1;
           pcVar12 = pcVar12 + 2;
         } while (cVar1 != '\0');
       }
       else {
-        puVar6 = &DAT_0066eb50;
+        puVar7 = &DAT_0066eb50;
         pcVar3 = local_3f8;
         for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(uint *)pcVar3 = *puVar6;
-          puVar6 = puVar6 + (uint)bVar13 * -2 + 1;
+          *(uint *)pcVar3 = *puVar7;
+          puVar7 = puVar7 + (uint)bVar13 * -2 + 1;
           pcVar3 = pcVar3 + ((uint)bVar13 * -2 + 1) * 4;
         }
         do {
@@ -156,7 +152,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         } while (iVar5 == 0);
         crt_string_c_splitpath_FUN_005ff178(local_3f8,(char *)0x0,(char *)0x0,local_1f0,(char *)0x0)
         ;
-        pcVar7 = ".pth";
+        pcVar8 = ".pth";
         iVar5 = -1;
         pcVar3 = local_1f0;
         do {
@@ -169,11 +165,11 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         } while (cVar1 != '\0');
         pcVar12 = pcVar12 + -1;
         do {
-          cVar1 = *pcVar7;
+          cVar1 = *pcVar8;
           *pcVar12 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar7[1];
-          pcVar7 = pcVar7 + 2;
+          cVar1 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
           pcVar12[1] = cVar1;
           pcVar12 = pcVar12 + 2;
         } while (cVar1 != '\0');
@@ -201,35 +197,33 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
       }
       else {
         iVar5 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
-                          (g_CEditorToolsPtr,"Enter local P,B,H to apply:",
-                           (CVector3f *)(local_38 + 0xc),0);
+                          (g_CEditorToolsPtr,"Enter local P,B,H to apply:",&local_2c,0);
         if (iVar5 != 0) {
-          local_44._0_4_ = local_38._12_4_;
-          local_44._8_4_ = local_28;
-          local_44._4_4_ = local_24;
-          core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                    ((CQuaternion4f *)local_44,(CVector3f *)in_stack_fffffb04);
-          local_74.w = local_84;
-          pfVar9 = (float *)((int)&local_74 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-          *(float *)((int)&local_74 + (uint)bVar13 * -8 + 4) = afStack_80[(uint)bVar13 * -2];
-          *pfVar9 = afStack_80[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
-          pfVar9[(uint)bVar13 * -2 + 1] =
-               (afStack_80 + (uint)bVar13 * -2 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1];
+          local_44.x = local_2c.x;
+          local_44.z = local_2c.y;
+          local_44.y = local_2c.z;
+          core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_44,&local_84);
+          local_74.w = local_84.w;
+          puVar9 = (uint *)((int)&local_74 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+          puVar7 = (uint *)((int)&local_84 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+          *(uint *)((int)&local_74 + (uint)bVar13 * -8 + 4) =
+               *(uint *)((int)&local_84 + (uint)bVar13 * -8 + 4);
+          *puVar9 = *puVar7;
+          puVar9[(uint)bVar13 * -2 + 1] = puVar7[(uint)bVar13 * -2 + 1];
           iVar5 = 0;
           for (local_14 = 0; local_14 < this_ptr->len; local_14 = local_14 + 1) {
             core_xform_cpp_multiplyQuaternion_FUN_005f7640
                       (&local_74,
                        (CQuaternion4f *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5),
-                       in_stack_fffffb04);
-            pfVar9 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5);
-            pfVar10 = pfVar9 + (uint)bVar13 * -2 + 1;
-            *pfVar9 = afStack_60[3];
-            *pfVar10 = *(float *)(local_44 + (uint)bVar13 * -8 + -0xc);
-            pfVar10[(uint)bVar13 * -2 + 1] =
-                 *(float *)(local_44 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + -8);
-            (pfVar10 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1] =
-                 *(float *)((int)(local_44 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + -8) +
-                           ((uint)bVar13 * -2 + 1) * 4);
+                       &local_54);
+            pfVar6 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5);
+            pfVar10 = pfVar6 + (uint)bVar13 * -2 + 1;
+            *pfVar6 = local_54.w;
+            pfVar6 = (float *)((int)&local_54 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+            *pfVar10 = *(float *)((int)&local_54 + (uint)bVar13 * -8 + 4);
+            pfVar10[(uint)bVar13 * -2 + 1] = *pfVar6;
+            (pfVar10 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1] = pfVar6[(uint)bVar13 * -2 + 1]
+            ;
             iVar5 = iVar5 + 0x1c;
           }
         }
@@ -277,19 +271,19 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           iVar5 = 0;
           do {
             core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                      ((CVector3f *)local_38,
+                      (&local_38,
                        (CQuaternion4f *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5));
-            local_38._8_4_ = 0.0;
-            core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                      ((CQuaternion4f *)local_38,(CVector3f *)in_stack_fffffb04);
-            pfVar9 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5);
+            local_38.z = 0.0;
+            core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_38,&local_64);
+            pfVar6 = (float *)((int)&(this_ptr->frame_list->frame1).orient.w + iVar5);
             iVar5 = iVar5 + 0x1c;
-            pfVar10 = pfVar9 + (uint)bVar13 * -2 + 1;
-            *pfVar9 = local_64;
-            *pfVar10 = afStack_60[(uint)bVar13 * -2];
-            pfVar10[(uint)bVar13 * -2 + 1] = afStack_60[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
-            (pfVar10 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1] =
-                 (afStack_60 + (uint)bVar13 * -2 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1];
+            pfVar10 = pfVar6 + (uint)bVar13 * -2 + 1;
+            *pfVar6 = local_64.w;
+            pfVar6 = (float *)((int)&local_64 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+            *pfVar10 = *(float *)((int)&local_64 + (uint)bVar13 * -8 + 4);
+            pfVar10[(uint)bVar13 * -2 + 1] = *pfVar6;
+            (pfVar10 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1] = pfVar6[(uint)bVar13 * -2 + 1]
+            ;
             local_18 = local_18 + 1;
           } while (local_18 < this_ptr->len);
         }

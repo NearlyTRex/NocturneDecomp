@@ -2,34 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 34,
-        "line": 21,
-        "message": "invalid cast from type 'CQuaternion4f*' to type 'float'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 21,
+        "line": 20,
         "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 22,
-        "message": "invalid cast from type 'CQuaternion4f*' to type 'float'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 22,
+        "line": 21,
         "message": "'fcos' was not declared in this scope; did you mean 'cos'?"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 23,
-        "message": "invalid cast from type 'float' to type 'float*'"
       }
     ],
     "success": false,
@@ -39,34 +21,19 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 24,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 101,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 21,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast",
-      "unaffected_reg"
-    ],
-    "total_lines": 53
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
   },
   "cross_references": [
     {
@@ -84,9 +51,9 @@
         "005f7ab9"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70",
-    "signature": "void core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70(CQuaternion4f * quat_ptr, float angle_radians, CVector3f * axis_ptr)"
+    "signature": "void core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70(float angle_radians, CVector3f * axis_ptr, CQuaternion4f * quat_ptr)"
   },
   "function_calls": [],
   "globals": [
@@ -124,10 +91,10 @@
     "pcode_op_count": 218
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -160,22 +127,15 @@
       },
       {
         "is_param": true,
-        "name": "quat_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CQuaternion4f *"
-      },
-      {
-        "is_param": true,
         "name": "angle_radians",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": true,
         "name": "axis_ptr",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "CVector3f *"
       }
@@ -198,55 +158,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(float *)((int)",
-      "text": "fVar2 = *(float *)((int)angle_radians + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(float *)((int)",
-      "text": "fVar3 = *(float *)((int)angle_radians + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = (float)fVar5;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[1] = (float)((float10)fVar1 * fVar4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[2] = (float)((float10)fVar2 * fVar4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[3] = (float)((float10)fVar3 * fVar4);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

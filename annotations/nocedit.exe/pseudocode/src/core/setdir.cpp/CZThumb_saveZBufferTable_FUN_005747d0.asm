@@ -10,11 +10,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_006463fe
 ;   TerminatedCString s_saveZBufferTable_already_00646411
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   uint*[1024] g_ZBufferScanlineArrayBackup
+;   uint*[1200] g_ZBufferScanlineArrayBackup
 ;   undefined4 DAT_03363630
 ;
 ; Called Functions:

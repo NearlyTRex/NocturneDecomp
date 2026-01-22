@@ -28,6 +28,6 @@ undefined4 DAT_026a72d8 = {};
 undefined4 DAT_026a72dc = {};
 undefined4 DAT_026a72e0 = {};
 
-// void*[1024]
-void* g_SavedScreenBufferArray[1024] = {};
+// void*[1200]
+void* g_SavedScreenBufferArray[1200] = {};
 

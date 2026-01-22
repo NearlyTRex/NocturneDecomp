@@ -1,19 +1,18 @@
 // Name: core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0
 // Address: 005f6ee0
 // Address Range: [[005f6ee0, 005f6f3a]]
-// Convention: __cdecl
+// Convention: __stack_esi
 // Signature: CMatrix3x4f * core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0(CMatrix3x4f * matrix_out, float x_offset)
 
 #include "nocturne.h"
 
-CMatrix3x4f * __cdecl
+CMatrix3x4f * __stack_esi
 core_xform_cpp_buildXFlipMatrix_FUN_005f6ee0(CMatrix3x4f *matrix_out,float x_offset)
 
 {
   int iVar1;
-  float *unaff_ESI;
   float *pfVar2;
-  float *pfVar3;
+  uint *puVar3;
   float local_34 [4];
   uint local_24;
   uint local_20;
@@ -37,11 +36,11 @@ core_xform_cpp_buildXFlipMatrix_FUN_005f6ee0(CMatrix3x4f *matrix_out,float x_off
   local_8 = 0;
   local_34[3] = (float)matrix_out * (float)2;
   pfVar2 = local_34;
-  pfVar3 = unaff_ESI;
+  puVar3 = (uint *)x_offset;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar3 = *pfVar2;
+    *puVar3 = *pfVar2;
     pfVar2 = pfVar2 + 1;
-    pfVar3 = pfVar3 + 1;
+    puVar3 = puVar3 + 1;
   }
-  return (CMatrix3x4f *)unaff_ESI;
+  return (CMatrix3x4f *)x_offset;
 }

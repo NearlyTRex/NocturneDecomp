@@ -18,15 +18,15 @@
 ;   int g_BackgroundSceneDepth
 ;   int g_BackgroundSavedBitsPerPixel
 ;   int g_BackgroundSavedUseExternalRenderer
-;   void*[1024] g_BackgroundSavedScreenBufferArray
+;   void*[1200] g_BackgroundSavedScreenBufferArray
 ;   undefined4 DAT_0151abc0
 ;   int g_BackgroundSavedRedBitPosition
 ;   int g_BackgroundSavedGreenBitPosition
 ;   int g_BackgroundSavedBlueBitPosition
 ;   CDemonRenderer g_CDemonRendererInstance
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
-;   uint*[1024] g_ZBufferScanlineArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   ... and 9 more
 ;
 ; Called Functions:

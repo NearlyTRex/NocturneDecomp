@@ -33,7 +33,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int g_MouseX
 ;   int g_MouseY
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   uchar[32768] g_ColorCubeLookup
 ;   int g_RedBitPosition

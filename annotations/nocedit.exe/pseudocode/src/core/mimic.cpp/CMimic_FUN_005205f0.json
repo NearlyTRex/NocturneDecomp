@@ -4,79 +4,79 @@
       {
         "category": "missing_member",
         "column": 26,
-        "line": 28,
+        "line": 27,
         "message": "'CMimic' {aka 'struct CMimic'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "missing_member",
         "column": 33,
-        "line": 30,
+        "line": 29,
         "message": "'CMimic' {aka 'struct CMimic'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "missing_member",
         "column": 32,
-        "line": 34,
+        "line": 33,
         "message": "'CMimic' {aka 'struct CMimic'} has no member named 'field3_0x4bdf8'"
       },
       {
         "category": "missing_member",
         "column": 32,
-        "line": 45,
+        "line": 44,
         "message": "'CMimic' {aka 'struct CMimic'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 48,
+        "line": 47,
         "message": "invalid cast from type 'CDemonActor*' to type 'float'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 51,
+        "line": 50,
         "message": "invalid cast from type 'float' to type 'CDemonActor*'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 55,
+        "line": 54,
         "message": "request for member '_12_4_' in 'local_4c', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
       },
       {
         "category": "missing_member",
         "column": 33,
-        "line": 63,
+        "line": 62,
         "message": "'CMimic' {aka 'struct CMimic'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 30,
-        "line": 65,
+        "column": 55,
+        "line": 63,
         "message": "'stack0xffffff0c' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 70,
+        "line": 69,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "missing_member",
         "column": 75,
-        "line": 78,
+        "line": 77,
         "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field12_0xe0'"
       },
       {
         "category": "missing_member",
         "column": 37,
-        "line": 85,
+        "line": 84,
         "message": "'CMimic' {aka 'struct CMimic'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "missing_member",
         "column": 75,
-        "line": 96,
+        "line": 95,
         "message": "'CMimic' {aka 'struct CMimic'} has no member named 'field3_0x4bdf8'"
       }
     ],
@@ -91,32 +91,31 @@
       {
         "category": "other",
         "column": 22,
-        "line": 70,
+        "line": 69,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 78,
+        "line": 77,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 173,
+    "complexity_score": 157,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
-    "pseudocode_lines": 93,
-    "suspect_count": 6,
+    "pseudocode_lines": 92,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 318
+    "total_lines": 317
   },
   "cross_references": [
     {
@@ -511,43 +510,36 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffff14",
-      "text": "CMatrix3x4f *in_stack_ffffff14;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 47,
       "match": "._12_4_",
       "text": "local_4c._12_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_ffffff14",
-      "text": "[DAT_02f33378].m,in_stack_ffffff14);",
-      "type": "stack_param"
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xffffff0c",
+      "text": "[DAT_02f33378].m,(CMatrix3x4f *)&stack0xffffff0c);",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 57,
       "match": "&stack0xffffff0c",
       "text": "pfVar2 = (float *)&stack0xffffff0c;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 62,
       "match": "(CVector3f *)((int)",
       "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(CDemonActor *)((int)",
       "text": "&(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field12_0xe0).z,0.0,-1);",
       "type": "pointer_cast"

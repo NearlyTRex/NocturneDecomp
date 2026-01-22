@@ -18,7 +18,7 @@ void core_bodypart_cpp_FUN_0041a630(void)
   CVector3f *pCVar6;
   int extraout_ECX;
   int iVar7;
-  float *pfVar8;
+  CMatrix3x4f *pCVar8;
   int iVar9;
   CVector3f *euler_angles_00;
   byte bVar10;
@@ -32,12 +32,18 @@ void core_bodypart_cpp_FUN_0041a630(void)
   double dVar18;
   CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
-  CMatrix3x4f *matrix_b;
+  float fStack_1e8;
+  float fStack_1e4;
+  float fStack_1e0;
+  float fStack_1dc;
+  float fStack_1d8;
+  float fStack_1d4;
+  float fStack_1d0;
   CMatrix3x4f CStack_1b8;
   CMatrix3x4f CStack_188;
   CMatrix3x4f CStack_158;
   CVector3f aCStack_128 [4];
-  float afStack_f8 [12];
+  CMatrix3x4f CStack_f8;
   CMatrix3x3f CStack_c8;
   byte local_a4 [8];
   float local_9c;
@@ -56,6 +62,7 @@ void core_bodypart_cpp_FUN_0041a630(void)
   CVector3f *local_1c;
   
   bVar10 = 0;
+  fStack_1d0 = 6.028977e-39;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)local_a4,in_stack_00000008);
   fVar11 = (float10)(float)local_a4._4_4_ * (float10)65536.0f;
@@ -71,19 +78,25 @@ void core_bodypart_cpp_FUN_0041a630(void)
   local_30 = (int)ROUND(dVar18);
   fVar11 = (float10)local_94.z * (float10)65536.0f;
   iVar9 = 0;
+  fStack_1d0 = 6.029206e-39;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
   fVar12 = (float10)dVar18;
+  fStack_1d4 = 6.029216e-39;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar13);
   fVar13 = (float10)dVar18;
+  fStack_1d8 = 6.029225e-39;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
   fVar14 = (float10)dVar18;
+  fStack_1dc = 6.029235e-39;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
   fVar15 = (float10)dVar18;
+  fStack_1e0 = 6.029245e-39;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar16);
   fVar16 = (float10)dVar18;
+  fStack_1e4 = 6.029255e-39;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
   fVar17 = (float10)dVar18;
-  matrix_b = (CMatrix3x4f *)0x41a723;
+  fStack_1e8 = 6.029265e-39;
   dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar11);
   iStack_48 = (int)ROUND(fVar12);
   local_70.m[1].z = (float)(int)ROUND(fVar13);
@@ -127,12 +140,12 @@ void core_bodypart_cpp_FUN_0041a630(void)
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             (&CStack_188,&g_ZeroVector,(CVector3f *)euler_angles);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(&CStack_158,&g_ZeroVector,local_1c);
-  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_188,&CStack_158,matrix_b);
-  pfVar8 = afStack_f8;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_188,&CStack_158,&CStack_f8);
+  pCVar8 = &CStack_f8;
   pCVar5 = aCStack_128;
   for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {
-    pCVar5->x = *pfVar8;
-    pfVar8 = pfVar8 + (uint)bVar10 * -2 + 1;
+    pCVar5->x = pCVar8->m[0].w;
+    pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
     pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);
   }
   pCVar5 = core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(aCStack_128,&local_70);
@@ -176,7 +189,8 @@ void core_bodypart_cpp_FUN_0041a630(void)
       euler_angles_00 = pCVar5 + 1;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&CStack_1b8,&g_ZeroVector,euler_angles_00);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_1b8,&CStack_158,matrix_b);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
+                (&CStack_1b8,&CStack_158,(CMatrix3x4f *)&fStack_1e8);
       pCVar6 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
                          ((CVector3f *)&CStack_158,(CMatrix3x3f *)(local_a4 + 4));
       if (euler_angles_00 != pCVar6) {

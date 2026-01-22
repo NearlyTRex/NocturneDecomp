@@ -26,14 +26,15 @@ void core_manpuz_cpp_FUN_00508a70(void)
   char *pcVar11;
   int iVar12;
   float *pfVar13;
-  uint uVar14;
-  CMatrix3x4f *pCVar15;
-  byte bVar16;
-  float10 fVar17;
+  CMatrix3x4f *pCVar14;
+  uint uVar15;
+  CMatrix3x4f *pCVar16;
+  byte bVar17;
   float10 fVar18;
   float10 fVar19;
+  float10 fVar20;
   CDemonActor *in_stack_00000004;
-  CMatrix3x4f *in_stack_fffffe24;
+  CMatrix3x4f local_1dc;
   CMatrix3x4f local_1ac;
   CMatrix3x4f local_17c;
   CVector3f local_14c;
@@ -70,7 +71,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
   float local_18;
   int local_14;
   
-  bVar16 = 0;
+  bVar17 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
@@ -90,12 +91,12 @@ void core_manpuz_cpp_FUN_00508a70(void)
   local_b4 = (pCVar8->bounds_max).y;
   local_b0 = (pCVar8->bounds_max).z;
   in_stack_00000004[0xf].field12_0xe0.y = 12.1391;
-  fVar17 = (float10)fcos((float10)_DAT_00660d8c * (float10)0.5);
+  fVar18 = (float10)fcos((float10)_DAT_00660d8c * (float10)0.5);
   fVar1 = *(float *)(in_stack_00000004[4].create_event + 0x10);
   fVar2 = *(float *)(in_stack_00000004[4].create_event + 0xc);
   fVar3 = *(float *)(in_stack_00000004[4].create_event + 0x14);
   in_stack_00000004[0xf].field12_0xe0.x =
-       (float)(((float10)in_stack_00000004[0xf].field12_0xe0.y + (float10)local_b0) / fVar17);
+       (float)(((float10)in_stack_00000004[0xf].field12_0xe0.y + (float10)local_b0) / fVar18);
   in_stack_00000004[0xf].field12_0xe0.z = local_b4 - local_c0;
   if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {
     fVar1 = in_stack_00000004[0xf].field12_0xe0.z;
@@ -162,13 +163,13 @@ void core_manpuz_cpp_FUN_00508a70(void)
     pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_ec,&local_7c,&local_88)
     ;
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_1ac,pCVar9,pCVar10);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_17c,&local_1ac,in_stack_fffffe24);
-    pfVar13 = (float *)&stack0xfffffe24;
-    pCVar15 = &local_11c;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_17c,&local_1ac,&local_1dc);
+    pCVar14 = &local_1dc;
+    pCVar16 = &local_11c;
     for (iVar12 = 0xc; pcVar11 = local_28, iVar12 != 0; iVar12 = iVar12 + -1) {
-      pCVar15->m[0].w = *pfVar13;
-      pfVar13 = pfVar13 + (uint)bVar16 * -2 + 1;
-      pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar16 * -2 + 1) * 4);
+      pCVar16->m[0].w = pCVar14->m[0].w;
+      pCVar14 = (CMatrix3x4f *)((int)pCVar14 + ((uint)bVar17 * -2 + 1) * 4);
+      pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar17 * -2 + 1) * 4);
     }
     core_xform_cpp_getTranslation_FUN_005f6110
               ((CVector3f *)&local_11c,(CMatrix3x4f *)(local_64 + 0x18));
@@ -187,16 +188,16 @@ void core_manpuz_cpp_FUN_00508a70(void)
       pfVar13[0xe] = pCVar10->z;
     }
     pCVar10 = &local_14c;
-    uVar14 = 0;
+    uVar15 = 0;
     crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_14c,4,&g_CVectorTypeInfo);
     do {
       local_70.y = 0.0;
       local_70.x = local_ac;
-      if ((uVar14 & 1) != 0) {
+      if ((uVar15 & 1) != 0) {
         local_70.x = local_a0;
       }
       local_70.z = local_a4;
-      if ((uVar14 & 2) != 0) {
+      if ((uVar15 & 2) != 0) {
         local_70.z = local_98;
       }
       local_20 = local_70.x;
@@ -208,9 +209,9 @@ void core_manpuz_cpp_FUN_00508a70(void)
         pCVar10->y = pCVar9->y;
         pCVar10->z = pCVar9->z;
       }
-      uVar14 = uVar14 + 1;
+      uVar15 = uVar15 + 1;
       pCVar10 = pCVar10 + 1;
-    } while ((int)uVar14 < 4);
+    } while ((int)uVar15 < 4);
     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
               ((CDemonTriangle *)(local_24 + 0xf),&local_134,&local_140,&local_14c);
     local_30 = local_30 + 0x2e;
@@ -221,18 +222,18 @@ void core_manpuz_cpp_FUN_00508a70(void)
     local_28 = local_28 + 0xb8;
     local_2c = local_2c + 0x2e;
   } while (iVar12 < 0xc);
-  fVar17 = (float10)fcos((float10)_DAT_00660d8c);
-  fVar18 = (float10)fsin((float10)_DAT_00660d8c);
+  fVar18 = (float10)fcos((float10)_DAT_00660d8c);
+  fVar19 = (float10)fsin((float10)_DAT_00660d8c);
   fVar1 = (float)in_stack_00000004[4].was_created;
   fVar7 = (float)0.75;
-  fVar19 = (float10)0.5;
+  fVar20 = (float10)0.5;
   fVar2 = in_stack_00000004[0xf].field12_0xe0.y;
   pcVar11 = in_stack_00000004[0xe].create_event + 4;
   fVar3 = *(float *)(in_stack_00000004[4].create_event + 0x10);
   fVar5 = (float)0.25;
   *(float *)(in_stack_00000004[0xe].create_event + 0xc) =
-       (float)(fVar17 * (float10)in_stack_00000004[0xf].field12_0xe0.y * fVar19);
-  *(float *)pcVar11 = (float)((float10)fVar2 * fVar18 * fVar19);
+       (float)(fVar18 * (float10)in_stack_00000004[0xf].field12_0xe0.y * fVar20);
+  *(float *)pcVar11 = (float)((float10)fVar2 * fVar19 * fVar20);
   *(float *)(in_stack_00000004[0xe].create_event + 8) = fVar3 * fVar5 + fVar1 * fVar7;
   if (&in_stack_00000004[0xe].was_created != (int *)pcVar11) {
     in_stack_00000004[0xe].was_created = (int)*(float *)pcVar11;

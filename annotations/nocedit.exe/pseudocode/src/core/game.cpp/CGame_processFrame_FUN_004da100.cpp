@@ -27,9 +27,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int iVar13;
   char *pcVar14;
   byte bVar15;
-  int aiStackY_107c [651];
-  CVector3i *output_ptr;
-  CVector3i *in_stack_fffff9e4;
+  uint auStackY_107c [651];
+  CVector3i *input_ptr;
   SCollisionInfo *collision_info;
   ulonglong uVar16;
   char local_4dc [256];
@@ -40,8 +39,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   byte local_b0 [16];
   float local_a0;
   float local_9c;
-  int local_94;
-  int aiStack_90 [5];
+  CVector3i local_94;
+  CVector3i local_88;
   CVector3f local_7c;
   CVector3i local_70;
   int local_5c;
@@ -111,19 +110,20 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                  (CVector3f *)(local_b0 + 0xc));
       if (((byte)g_MouseButtonFlags & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_fffff9e4);
-        output_ptr = &local_70;
-        local_70.x = aiStack_90[2];
-        *(int *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) =
-             aiStack_90[(uint)bVar15 * -2 + 3];
-        *(int *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =
-             aiStack_90[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
+                  (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&local_88);
+        input_ptr = &local_70;
+        local_70.x = local_88.x;
+        *(uint *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) =
+             *(uint *)((int)&local_88 + (uint)bVar15 * -8 + 4);
+        *(uint *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =
+             *(uint *)((int)&local_88 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,output_ptr,in_stack_fffff9e4);
-        local_70.x = local_94;
-        *(int *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar15 * -2];
-        *(int *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =
-             aiStack_90[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
+                  (&g_CDemonCameraInstance,input_ptr,&local_94);
+        local_70.x = local_94.x;
+        *(uint *)((int)&local_70 + ((uint)bVar15 * -2 + -1) * 4 + 8) =
+             *(uint *)((int)&local_94 + (uint)bVar15 * -8 + 4);
+        *(uint *)((int)&local_70 + ((uint)bVar15 * -2 + (uint)bVar15 * -2) * 4 + 8) =
+             *(uint *)((int)&local_94 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
         local_7c.x = (float)local_70.x * 0.00390625f;
         local_7c.y = (float)local_70.y * 0.00390625f;
         local_7c.z = (float)local_70.z * 0.00390625f;

@@ -13,7 +13,6 @@ void core_stranger_cpp_CStranger_FUN_005c06b0(void)
 
 {
   int iVar1;
-  CMatrix3x4f *unaff_ESI;
   float *pfVar2;
   CMatrix3x4f *pCVar3;
   CVector3f *pCVar4;
@@ -23,7 +22,7 @@ void core_stranger_cpp_CStranger_FUN_005c06b0(void)
   CVector3f local_e4 [4];
   CMatrix3x4f local_b4;
   CMatrix3x4f local_84;
-  float local_54 [18];
+  CMatrix3x4f local_54;
   
   bVar5 = 0;
   iVar1 = *(int *)(in_stack_00000004 + 0x1fc2c);
@@ -40,17 +39,17 @@ void core_stranger_cpp_CStranger_FUN_005c06b0(void)
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_84,(CVector3f *)(in_stack_00000004 + 0x20),
                (CVector3f *)(in_stack_00000004 + 0x30));
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b4,&local_84,unaff_ESI);
-    pfVar2 = local_54;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b4,&local_84,&local_54);
+    pCVar3 = &local_54;
     pCVar4 = local_e4;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      pCVar4->x = *pfVar2;
-      pfVar2 = pfVar2 + (uint)bVar5 * -2 + 1;
+      pCVar4->x = pCVar3->m[0].w;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
       pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
     iVar1 = *(int *)(*(int *)(in_stack_00000004 + 0x1fc2c) + 0x154);
-    core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_e4,(CMatrix3x3f *)(local_54 + 0xc));
-    core_xform_cpp_getTranslation_FUN_005f6110(local_e4,(CMatrix3x4f *)(local_54 + 0xf));
+    core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_e4,(CMatrix3x3f *)&stack0xffffffdc);
+    core_xform_cpp_getTranslation_FUN_005f6110(local_e4,(CMatrix3x4f *)&stack0xffffffe8);
     (**(code **)(iVar1 + 0x60))();
   }
   return;

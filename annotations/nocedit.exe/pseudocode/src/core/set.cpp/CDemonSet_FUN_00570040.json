@@ -8,10 +8,10 @@
         "message": "'CGame' {aka 'struct CGame'} has no member named 'field62_0x1f4'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 55,
-        "message": "'stack0xffffff0c' was not declared in this scope; did you mean 'in_stack_ffffff0c'?"
+        "category": "other",
+        "column": 43,
+        "line": 59,
+        "message": "cast from 'SMRGLHeaderPrimitive*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -138,6 +138,12 @@
       },
       {
         "category": "other",
+        "column": 18,
+        "line": 59,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 20,
         "line": 66,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
@@ -248,18 +254,17 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 558,
+    "complexity_score": 513,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
     "pseudocode_lines": 113,
-    "suspect_count": 42,
+    "suspect_count": 38,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
     "total_lines": 312
   },
@@ -568,13 +573,6 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffff0c",
-      "text": "CVector3i *in_stack_ffffff0c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010 = g_CurrentAlphaValue << 8;",
@@ -585,13 +583,6 @@
       "line": 37,
       "match": "in_stack_00000010",
       "text": "lVar4 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_ffffff0c",
-      "text": "(g_CDemonRendererPtr2,in_stack_ffffff0c);",
       "type": "stack_param"
     },
     {
@@ -609,11 +600,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xffffff0c",
-      "text": "puVar9 = (uint *)&stack0xffffff0c;",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(SMRGLHeaderPrimitive *)((int)",
+      "text": "pSVar9 = (SMRGLHeaderPrimitive *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -775,20 +766,6 @@
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 < 0xfde9) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 105,
-      "match": "&stack0xffffff0c",
-      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff0c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 109,
-      "match": "&stack0xffffff0c",
-      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff0c);",
-      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",

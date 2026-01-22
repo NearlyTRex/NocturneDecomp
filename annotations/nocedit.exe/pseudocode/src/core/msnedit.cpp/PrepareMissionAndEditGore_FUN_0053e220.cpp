@@ -23,7 +23,6 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   CDemonMission *in_stack_00000004;
   float afStackY_1030 [982];
   CGame *in_stack_ffffff30;
-  CVector3i *output_ptr;
   CVector3i *input_ptr;
   float in_stack_ffffff4c;
   CKeys *in_stack_ffffff50;
@@ -42,15 +41,14 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   float fStack_5c;
   float fStack_58;
   CVector3f CStack_54;
-  float fStack_48;
-  float afStack_44 [8];
+  CVector3i CStack_48;
+  CVector3i aCStack_3c [2];
   CVector3i CStack_24;
   CBoxActor *pCStack_18;
   CDemonActor *pCStack_14;
   
   this_ptr = g_CGamePtr;
   bVar6 = 0;
-  input_ptr = (CVector3i *)0x0;
   DAT_02f7c634 = 0;
   in_stack_00000004->field0_0x0[4] = '\x01';
   in_stack_00000004->field0_0x0[5] = '\0';
@@ -154,18 +152,20 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       if ((((0 < g_MouseX) && (g_MouseX < g_WindowWidth + -2)) && (0 < g_MouseY)) &&
          (g_MouseY < g_WindowHeight + -2)) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)input_ptr);
-        output_ptr = &CStack_24;
-        CStack_24.x = (int)afStack_44[2];
-        *(float *)((int)&CStack_24 + (uint)bVar6 * -8 + 4) = afStack_44[(uint)bVar6 * -2 + 3];
-        *(float *)((int)&CStack_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-             afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+                  (&g_CDemonCameraInstance,g_MouseX,g_MouseY,aCStack_3c);
+        input_ptr = &CStack_24;
+        CStack_24.x = aCStack_3c[0].x;
+        *(uint *)((int)&CStack_24 + (uint)bVar6 * -8 + 4) =
+             *(uint *)((int)aCStack_3c + (uint)bVar6 * -8 + 4);
+        *(uint *)((int)&CStack_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+             *(uint *)((int)aCStack_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,output_ptr,input_ptr);
-        CStack_24.x = (int)fStack_48;
-        *(float *)((int)&CStack_24 + (uint)bVar6 * -8 + 4) = afStack_44[(uint)bVar6 * -2];
-        *(float *)((int)&CStack_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-             afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+                  (&g_CDemonCameraInstance,input_ptr,&CStack_48);
+        CStack_24.x = CStack_48.x;
+        *(uint *)((int)&CStack_24 + (uint)bVar6 * -8 + 4) =
+             *(uint *)((int)aCStack_3c + (uint)bVar6 * -8 + -8);
+        *(uint *)((int)&CStack_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+             *(uint *)((int)aCStack_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + -4);
         fStack_84 = (float)CStack_24.x * _DAT_00661c30;
         fStack_80 = (float)CStack_24.y * _DAT_00661c30;
         fStack_7c = (float)CStack_24.z * _DAT_00661c30;
@@ -179,7 +179,6 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     if ((iVar5 != 0) && ((float)in_stack_ffffff50 - g_CGamePtr->delta_time_float < 0.0)) {
       core_gore_cpp_FUN_004edaa0();
     }
-    input_ptr = (CVector3i *)g_CKeysPtr;
     iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1c);
     if (iVar5 == 0) {
       fStack_a0 = 0.0;
@@ -187,12 +186,14 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     else {
       fStack_a0 = fStack_a0 - g_CGamePtr->delta_time_float;
       if (fStack_a0 < 0.0) {
-        afStack_44[2] = (float)10;
-        afStack_44[0] = *(float *)(in_stack_00000004->field2_0xc + 0x38) * afStack_44[2];
-        afStack_44[1] = *(float *)(in_stack_00000004->field2_0xc + 0x44) * afStack_44[2];
-        afStack_44[2] = afStack_44[2] * *(float *)(in_stack_00000004->field2_0xc + 0x50);
+        aCStack_3c[0].x = (int)(float)10;
+        CStack_48.y = (int)(*(float *)(in_stack_00000004->field2_0xc + 0x38) *
+                           (float)aCStack_3c[0].x);
+        CStack_48.z = (int)(*(float *)(in_stack_00000004->field2_0xc + 0x44) *
+                           (float)aCStack_3c[0].x);
+        aCStack_3c[0].x =
+             (int)((float)aCStack_3c[0].x * *(float *)(in_stack_00000004->field2_0xc + 0x50));
         fStack_a0 = fStack_a0 + 0.1f;
-        input_ptr = (CVector3i *)g_CGorePtr;
         core_gore_cpp_FUN_004edaa0();
       }
     }
@@ -210,13 +211,13 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       in_stack_ffffff58 = (double)fStack_9c;
       if ((0.0 < in_stack_ffffff58) && (in_stack_ffffff58 < 1.0)) {
         pCStack_18 = (CBoxActor *)(aCStack_78[0].x - CStack_54.x);
-        fStack_48 = (float)pCStack_18 * fStack_9c;
+        CStack_48.x = (int)((float)pCStack_18 * fStack_9c);
         pCStack_14 = (CDemonActor *)(aCStack_78[0].y - CStack_54.y);
-        afStack_44[0] = (float)pCStack_14 * fStack_9c;
-        afStack_44[1] = (aCStack_78[0].z - CStack_54.z) * fStack_9c;
-        fStack_60 = CStack_54.x + fStack_48;
-        fStack_5c = CStack_54.y + afStack_44[0];
-        fStack_58 = CStack_54.z + afStack_44[1];
+        CStack_48.y = (int)((float)pCStack_14 * fStack_9c);
+        CStack_48.z = (int)((aCStack_78[0].z - CStack_54.z) * fStack_9c);
+        fStack_60 = CStack_54.x + (float)CStack_48.x;
+        fStack_5c = CStack_54.y + (float)CStack_48.y;
+        fStack_58 = CStack_54.z + (float)CStack_48.z;
         core_gore_cpp_FUN_004ede30();
       }
     }

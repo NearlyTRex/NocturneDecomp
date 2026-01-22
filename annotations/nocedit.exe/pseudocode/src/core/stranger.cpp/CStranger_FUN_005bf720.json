@@ -10,20 +10,14 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 23,
+        "line": 24,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 23,
+        "line": 24,
         "message": "'blend_callback' was not declared in this scope"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 41,
-        "message": "invalid cast from type 'float' to type 'CQuaternion4f*'"
       },
       {
         "category": "other",
@@ -33,8 +27,20 @@
       },
       {
         "category": "other",
-        "column": 13,
+        "column": 21,
         "line": 46,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 47,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 48,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -78,27 +84,39 @@
       },
       {
         "category": "other",
-        "column": 4,
+        "column": 12,
         "line": 46,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 175,
+    "complexity_score": 196,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
-    "pseudocode_lines": 45,
-    "suspect_count": 11,
+    "pseudocode_lines": 46,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 119
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -252,21 +270,21 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "SBoneTransformData *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 17,
       "match": "code *",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
@@ -303,19 +321,33 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
-      "text": "puVar2 = (uint *)((int)&local_3c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_3c + (uint)bVar3 * -8 + 4) = auStack_28[(uint)bVar3 * -2];",
+      "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 47,
       "match": "in_stack_00000008",
       "text": "(this_ptr,in_stack_00000008);",
       "type": "stack_param"

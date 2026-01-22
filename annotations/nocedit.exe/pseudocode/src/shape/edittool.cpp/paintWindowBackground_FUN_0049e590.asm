@@ -22,7 +22,7 @@
 ;   undefined4 DAT_02cf1eb0
 ;   undefined4 DAT_02cf1eb4
 ;   undefined4 DAT_02cf1eb8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;

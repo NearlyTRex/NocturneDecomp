@@ -8,8 +8,8 @@
 ;   engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950 at 0048aa31
 ;
 ; Referenced Globals:
-;   void*[1024] g_ScreenBufferArray
-;   uint*[1024] g_ZBufferScanlineArray
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   uint[256] g_Hardware32BitPalette
 ;   int g_ActiveRenderColor
 ;   uint[1600] g_ReciprocalLookupTable

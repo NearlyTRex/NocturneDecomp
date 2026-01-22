@@ -19,16 +19,16 @@ void core_bugs_cpp_FUN_00425fe0(void)
   CDemonActor *pCVar2;
   CPathMap *this_ptr;
   CCharacter *pCVar3;
-  uint *puVar4;
+  CMatrix3x4f *pCVar4;
   float *pfVar5;
   char *pcVar6;
   byte bVar7;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  CMatrix3x4f *in_stack_fffffe78;
+  float in_stack_fffffe78;
   CMatrix3x4f CStack_14c;
   CMatrix3x4f local_11c;
-  uint auStack_ec [12];
+  CMatrix3x4f CStack_ec;
   CMatrix3x3f CStack_bc;
   CVector3f CStack_94;
   float fStack_88;
@@ -126,8 +126,7 @@ void core_bugs_cpp_FUN_00425fe0(void)
       if (pCVar2 != (CDemonActor *)0x0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);
         local_18 = pfVar5;
-        (*pCVar2->vtable[1].playAmbientSoundWithVolume)
-                  (pCVar2,&stack0xfffffe78,(float)in_stack_fffffe78);
+        (*pCVar2->vtable[1].playAmbientSoundWithVolume)(pCVar2,&stack0xfffffe78,in_stack_fffffe78);
       }
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
@@ -136,12 +135,12 @@ void core_bugs_cpp_FUN_00425fe0(void)
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
               (&CStack_14c,&(in_stack_00000004->base_actor).location.position,
                (CVector3f *)&(in_stack_00000004->base_actor).orient);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_11c,&CStack_14c,in_stack_fffffe78);
-    puVar4 = auStack_ec;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_11c,&CStack_14c,&CStack_ec);
+    pCVar4 = &CStack_ec;
     pcVar6 = in_stack_00000004[1].cloth_data + 0x4244;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(uint *)pcVar6 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
+      *(float *)pcVar6 = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);
       pcVar6 = pcVar6 + (uint)bVar7 * -8 + 4;
     }
     if (*(int *)(in_stack_00000004[1].cloth_data + 0x4274) !=

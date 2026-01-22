@@ -50400,7 +50400,7 @@
         "start":"0050cc40"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"engine_matrix.c_transformWorldToView_FUN_0050cc40",
     "ret":"void",
@@ -50475,13 +50475,12 @@
         {
           "name":"output_coords",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -62264,10 +62263,10 @@
         "start":"005506c0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0",
-    "ret":"void",
+    "ret":"CPodDependencyRecord*",
     "vars":{
       "locals":[
         {
@@ -62323,20 +62322,29 @@
         {
           "name":"output_record",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"CPodDependencyRecord*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -87879,7 +87887,7 @@
         "start":"005f6c40"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildRotationX_FUN_005f6c40",
     "ret":"void",
@@ -88130,13 +88138,12 @@
         {
           "name":"angle_radians",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -88155,7 +88162,7 @@
         "start":"005f6cc0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildRotationY_FUN_005f6cc0",
     "ret":"void",
@@ -88406,13 +88413,12 @@
         {
           "name":"angle_radians",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -88431,7 +88437,7 @@
         "start":"005f6d40"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildRotationZ_FUN_005f6d40",
     "ret":"void",
@@ -88682,13 +88688,12 @@
         {
           "name":"angle_radians",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -88707,7 +88712,7 @@
         "start":"005f6dc0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0",
     "ret":"void",
@@ -88926,13 +88931,12 @@
         {
           "name":"translation",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -88951,7 +88955,7 @@
         "start":"005f6f40"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildYFlipMatrix_FUN_005f6f40",
     "ret":"CMatrix3x4f*",
@@ -89170,13 +89174,12 @@
         {
           "name":"y_offset",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -89205,7 +89208,7 @@
         "start":"005f7140"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack3_esi",
     "importable":true,
     "name":"core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
     "ret":"void",
@@ -89452,6 +89455,21 @@
             ]
           },
           "type":"float"
+        },
+        {
+          "name":"output",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x4f*"
         }
       ]
     }
@@ -89465,7 +89483,7 @@
         "start":"005f7640"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_xform.cpp_multiplyQuaternion_FUN_005f7640",
     "ret":"CQuaternion4f*",
@@ -89572,13 +89590,12 @@
         {
           "name":"quat2_ptr",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]

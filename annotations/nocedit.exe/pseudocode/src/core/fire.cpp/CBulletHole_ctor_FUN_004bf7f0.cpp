@@ -15,13 +15,13 @@ core_fire_cpp_CBulletHole_ctor_FUN_004bf7f0
   int iVar1;
   float *extraout_EAX;
   CVector3f *pCVar2;
-  float *pfVar3;
+  CMatrix3x4f *pCVar3;
   byte bVar4;
   float10 fVar5;
-  CMatrix3x4f *matrix_b;
+  CMatrix3x4f local_114;
   CMatrix3x4f local_e4;
   CVector3f local_b4 [4];
-  float local_84 [14];
+  CMatrix3x4f local_84;
   float local_4c;
   byte local_48 [28];
   float local_2c;
@@ -43,13 +43,14 @@ core_fire_cpp_CBulletHole_ctor_FUN_004bf7f0
     (this_ptr->position).y = (float)local_48._24_4_;
     (this_ptr->position).z = local_2c;
   }
+  local_114.m[0].x = 6.976873e-39;
   fVar5 = crt_math_c_atan2_FUN_006013b1
                     ((float10)surface_normal->y,
                      SQRT((float10)surface_normal->x * (float10)surface_normal->x +
                           (float10)surface_normal->z * (float10)surface_normal->z));
   (this_ptr->euler_angles).z = 0.0;
   (this_ptr->euler_angles).x = (float)-fVar5;
-  matrix_b = (CMatrix3x4f *)0x4bf8c6;
+  local_114.m[0].w = 6.976905e-39;
   fVar5 = crt_math_c_atan2_FUN_006013b1((float10)surface_normal->x,(float10)surface_normal->z);
   (this_ptr->euler_angles).y = (float)fVar5;
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
@@ -58,17 +59,16 @@ core_fire_cpp_CBulletHole_ctor_FUN_004bf7f0
   this_ptr->actor_ptr = (CDemonActor *)hit_position;
   if (hit_position != (CVector3f *)0x0) {
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              ((CMatrix3x4f *)&stack0xfffffeec,&this_ptr->position,&this_ptr->euler_angles);
+              (&local_114,&this_ptr->position,&this_ptr->euler_angles);
     core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
               (&local_e4,&(this_ptr->actor_ptr->location).position,
                (CVector3f *)&this_ptr->actor_ptr->orient);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-              ((CMatrix3x4f *)&stack0xfffffeec,&local_e4,matrix_b);
-    pfVar3 = local_84;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_114,&local_e4,&local_84);
+    pCVar3 = &local_84;
     pCVar2 = local_b4;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      pCVar2->x = *pfVar3;
-      pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
+      pCVar2->x = pCVar3->m[0].w;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
       pCVar2 = (CVector3f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
     }
     core_xform_cpp_getTranslation_FUN_005f6110(local_b4,(CMatrix3x4f *)local_48);

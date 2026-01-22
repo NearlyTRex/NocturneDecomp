@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
+; __stack2_esi CPodDependencyRecord * engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile * this_ptr, int dependency_index, CPodDependencyRecord * output_record)
 ;
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   dependency_index
-; CPodDependencyRecord * Stack[0xc]:4   output_record
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114
 ;

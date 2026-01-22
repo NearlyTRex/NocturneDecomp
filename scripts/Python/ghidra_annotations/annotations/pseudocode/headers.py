@@ -20,6 +20,80 @@ from ghidra_annotations.util.string import sanitize_c_identifier
 from ghidra_annotations.annotations.pseudocode.strings import sanitize_string
 
 
+# Default path to the cspec file (relative to project root)
+DEFAULT_CSPEC_PATH = "spec/Ghidra/Processors/x86/data/languages/x86watcom.cspec"
+
+
+def parse_cspec_calling_conventions(cspec_path=None):
+    """Parse calling conventions from the Ghidra cspec XML file.
+
+    Args:
+        cspec_path: Path to the .cspec file. If None, uses DEFAULT_CSPEC_PATH.
+
+    Returns:
+        List of calling convention names found in the cspec file.
+    """
+    import xml.etree.ElementTree as ET
+
+    # Try to find cspec file
+    if cspec_path is None:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(
+            os.path.dirname(os.path.dirname(script_dir)))))
+        cspec_path = os.path.join(project_root, DEFAULT_CSPEC_PATH)
+    if not os.path.exists(cspec_path):
+        log_info("Warning: cspec file not found at %s, using fallback conventions" % cspec_path)
+        return get_fallback_calling_conventions()
+
+    # Gather calling conventions
+    conventions = []
+    try:
+        tree = ET.parse(cspec_path)
+        root = tree.getroot()
+
+        # Find default_proto/prototype (the default calling convention)
+        default_proto = root.find("default_proto")
+        if default_proto is not None:
+            proto = default_proto.find("prototype")
+            if proto is not None:
+                name = proto.get("name")
+                if name:
+                    conventions.append(name)
+
+        # Find all top-level prototype elements (non-default conventions)
+        for proto in root.findall("prototype"):
+            name = proto.get("name")
+            if name and name not in conventions:
+                conventions.append(name)
+        log_info("Parsed %d calling conventions from %s" % (len(conventions), cspec_path))
+
+    except Exception as e:
+        log_info("Error parsing cspec file %s: %s, using fallback conventions" % (cspec_path, str(e)))
+        return get_fallback_calling_conventions()
+    return conventions
+
+
+def get_fallback_calling_conventions():
+    """Return fallback list of calling conventions if cspec parsing fails.
+
+    This matches the previously hardcoded list for backwards compatibility.
+    """
+    return [
+        # Standard Windows calling conventions
+        "__cdecl", "__stdcall", "__fastcall", "__thiscall", "__vectorcall",
+        # Watcom-specific calling conventions
+        "__watcallRegister", "__watcallStack", "__syscall", "__fpustack",
+        "__fpustack_safe", "__mathinternal", "__crtmath", "__fpureg",
+        "__fpureg_safe", "__softfp_double", "__fpu_thunk",
+        # Watcom __cdecl variants with stack cleanup sizes
+        "__cdecl0", "__cdecl4", "__cdecl8", "__cdecl12", "__cdecl16",
+        "__cdecl20", "__cdecl24", "__cdecl28", "__cdecl32", "__cdecl36", "__cdecl40",
+        # Hybrid conventions
+        "__stack_esi", "__stack2_esi", "__stack3_esi",
+        "__stack_esi_edi", "__stack2_esi_edi",
+    ]
+
+
 def resolve_data_type_name_for_headers(currentProgram, type_obj, seen=None, preserve_typedefs=True):
     """Resolve data type name with struct/union prefix for C header generation.
 
@@ -1443,37 +1517,34 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// =============================================================================")
     content.append("// Calling Convention Macros")
     content.append("// =============================================================================")
-    content.append("// Windows/Watcom calling conventions - define as empty for non-MSVC compilers")
+    content.append("// Calling conventions parsed from x86watcom.cspec - define as empty for non-MSVC compilers")
     content.append("#ifndef _MSC_VER")
+
+    # Parse calling conventions from cspec file
+    cspec_conventions = parse_cspec_calling_conventions()
+
+    # Standard Windows conventions that should always be included
+    standard_conventions = ["__cdecl", "__stdcall", "__fastcall", "__thiscall", "__vectorcall"]
+
+    # Unknown conventions
+    unknown_conventions = ["__unknown"]
+
+    # Add standard conventions first
     content.append("// Standard Windows calling conventions")
-    content.append("#define __cdecl")
-    content.append("#define __stdcall")
-    content.append("#define __fastcall")
-    content.append("#define __thiscall")
-    content.append("#define __vectorcall")
-    content.append("// Watcom-specific calling conventions (from x86watcom.cspec)")
-    content.append("#define __watcallRegister")
-    content.append("#define __watcallStack")
-    content.append("#define __syscall")
-    content.append("#define __fpustack")
-    content.append("#define __mathinternal")
-    content.append("#define __crtmath")
-    content.append("#define __fpureg")
-    content.append("#define __fpureg_safe")
-    content.append("#define __softfp_double")
-    content.append("#define __fpu_thunk")
-    content.append("// Watcom __cdecl variants with stack cleanup sizes")
-    content.append("#define __cdecl0")
-    content.append("#define __cdecl4")
-    content.append("#define __cdecl8")
-    content.append("#define __cdecl12")
-    content.append("#define __cdecl16")
-    content.append("#define __cdecl20")
-    content.append("#define __cdecl24")
-    content.append("#define __cdecl28")
-    content.append("#define __cdecl32")
-    content.append("#define __cdecl36")
-    content.append("#define __cdecl40")
+    for conv in standard_conventions:
+        content.append("#define %s" % conv)
+
+    # Add cspec-parsed conventions (excluding standard ones already added)
+    content.append("// Calling conventions from x86watcom.cspec")
+    for conv in cspec_conventions:
+        if conv not in standard_conventions:
+            content.append("#define %s" % conv)
+
+    # Add unknown conventions
+    content.append("// Unknown conventions")
+    for conv in unknown_conventions:
+        content.append("#define %s" % conv)
+
     content.append("#endif")
     content.append("")
     content.append("// =============================================================================")

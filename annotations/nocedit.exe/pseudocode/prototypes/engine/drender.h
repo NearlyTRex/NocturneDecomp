@@ -197,7 +197,7 @@ void calculateVertexLight(int vertex_index, CVector3i * vertex_position);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
 // Address: 0048c760
-void CDemonRenderer::getCameraOriginToBuffer(CDemonRenderer * this_ptr, CVector3i * output);
+CVector3i * CDemonRenderer::getCameraOriginToBuffer(CDemonRenderer * this_ptr, CVector3i * output);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
 // Address: 0048c780
@@ -205,7 +205,7 @@ float * CDemonRenderer::getCameraOriginScaled(CDemonRenderer * this_ptr, float *
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
 // Address: 0048c7e0
-void CDemonRenderer::getCameraRotationToBuffer(CDemonRenderer * this_ptr, CVector3i * output);
+CVector3i * CDemonRenderer::getCameraRotationToBuffer(CDemonRenderer * this_ptr, CVector3i * output);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
 // Address: 0048c800

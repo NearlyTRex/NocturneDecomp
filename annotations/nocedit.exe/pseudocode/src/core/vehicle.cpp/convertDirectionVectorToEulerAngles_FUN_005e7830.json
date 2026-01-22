@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 8,
-        "line": 21,
+        "line": 18,
         "message": "'ABS' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 29,
+        "line": 26,
         "message": "'CONCAT44' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 37,
+        "line": 34,
         "message": "'SQRT' was not declared in this scope"
       }
     ],
@@ -27,28 +27,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 34,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 191,
+    "complexity_score": 73,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 31,
-    "suspect_count": 15,
+    "pseudocode_lines": 28,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 97
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -603,109 +596,32 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX_00",
-      "text": "CVector3f *extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "text": "float *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 11,
       "match": "ABS",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 11,
       "match": "ABS",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 19,
       "match": "CONCAT44",
       "text": "out_euler_angles->x = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_14,0x54411744);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_ECX",
-      "text": "*(float *)(extraout_ECX + 4) = (float)fVar1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EDX",
-      "text": "((float10)extraout_EDX[1],",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EDX",
-      "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EDX",
-      "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 27,
       "match": "SQRT",
-      "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +",
+      "text": "SQRT((float10)in_direction_vector->x * (float10)in_direction_vector->x +",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
-      "match": "extraout_EDX",
-      "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
-      "match": "extraout_EDX",
-      "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
-      "match": "extraout_ECX_00",
-      "text": "extraout_ECX_00->x = (float)-fVar1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 33,
-      "match": "extraout_ECX_00",
-      "text": "return extraout_ECX_00;",
-      "type": "extra_output"
     }
   ]
 }

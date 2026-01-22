@@ -10,56 +10,68 @@
       {
         "category": "missing_member",
         "column": 19,
-        "line": 87,
+        "line": 82,
         "message": "'CDemonLight' {aka 'struct CDemonLight'} has no member named 'field17_0x1cbc'"
       },
       {
         "category": "missing_member",
         "column": 65,
-        "line": 88,
+        "line": 83,
         "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
+      },
+      {
+        "category": "other",
+        "column": 43,
+        "line": 88,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 90,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 102,
+        "line": 97,
         "message": "'SQRT' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 145,
+        "line": 139,
         "message": "'Var10' was not declared in this scope; did you mean 'dVar12'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 145,
+        "line": 139,
         "message": "'fpatan' was not declared in this scope; did you mean 'atan'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 146,
+        "line": 140,
         "message": "'fcos' was not declared in this scope; did you mean 'cos'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 153,
+        "line": 147,
         "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 165,
+        "line": 159,
         "message": "'ROUND' was not declared in this scope"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 251,
-        "message": "'stack0xfffffea0' was not declared in this scope; did you mean 'in_stack_fffffea0'?"
+        "category": "incompatible_types",
+        "column": 26,
+        "line": 247,
+        "message": "cannot convert 'void (*)(SEdgeData*, SEdgeData*, int)' to 'void (**)(void*, void*, int)'"
       }
     ],
     "success": false,
@@ -69,24 +81,35 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 88,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 11,
+        "line": 90,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 589,
-    "complexity_score": 494,
+    "complexity_score": 474,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 19,
-    "pseudocode_lines": 254,
-    "suspect_count": 22,
+    "pseudocode_lines": 249,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 843
+    "total_lines": 838
   },
   "cross_references": [],
   "function": {
@@ -845,151 +868,144 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_fffffea0",
-      "text": "CVector3i *in_stack_fffffea0;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)",
+      "text": "local_98[(uint)bVar5 * -2] = *(int *)((int)&local_f0 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_fffffea0",
-      "text": "(g_CDemonRendererPtr2,in_stack_fffffea0);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 90,
       "match": "SQRT",
-      "text": "local_54 = SQRT(local_dc * local_dc +",
+      "text": "local_54 = SQRT(local_dc * local_dc + local_e4 * local_e4 + local_e0 * local_e0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
+      "line": 152,
       "match": "ROUND",
       "text": "local_78 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 163,
+      "line": 158,
       "match": "ROUND",
       "text": "local_70 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 164,
+      "line": 159,
       "match": "extraout_EAX",
       "text": "local_2c = (float)this_ptr->shadow_depth_buffer[extraout_EAX + local_70] *",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 181,
+      "line": 176,
       "match": "ROUND",
       "text": "local_68 = (float)(int)ROUND(local_60);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
+      "line": 177,
       "match": "ROUND",
       "text": "local_64 = (float)(int)ROUND(local_5c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
+      "line": 184,
       "match": "ROUND",
       "text": "local_12c.x = (int)ROUND(local_fc * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
+      "line": 185,
       "match": "ROUND",
       "text": "local_12c.y = (int)ROUND(local_f8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 191,
+      "line": 186,
       "match": "ROUND",
       "text": "local_12c.z = (int)ROUND(local_f4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 200,
+      "line": 195,
       "match": "ROUND",
       "text": "local_a8.x = (int)ROUND(local_fc * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 201,
+      "line": 196,
       "match": "ROUND",
       "text": "local_a8.y = (int)ROUND(local_f8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 202,
+      "line": 197,
       "match": "ROUND",
       "text": "local_a8.z = (int)ROUND(local_f4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
+      "line": 206,
       "match": "ROUND",
       "text": "local_d8.x = (int)ROUND(local_fc * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 212,
+      "line": 207,
       "match": "ROUND",
       "text": "local_d8.y = (int)ROUND(local_f8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 213,
+      "line": 208,
       "match": "ROUND",
       "text": "local_d8.z = (int)ROUND(local_f4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 222,
+      "line": 217,
       "match": "ROUND",
       "text": "local_c0.x = (int)ROUND(local_fc * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 223,
+      "line": 218,
       "match": "ROUND",
       "text": "local_c0.y = (int)ROUND(local_f8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 224,
+      "line": 219,
       "match": "ROUND",
       "text": "local_c0.z = (int)ROUND(local_f4 * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 244,
-      "match": "&stack0xfffffea0",
-      "text": "(this_ptr_00,(SMRGLHeaderPrimitive *)&stack0xfffffea0,",
-      "type": "stack_ref"
     }
   ]
 }

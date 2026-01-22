@@ -9,20 +9,26 @@
       },
       {
         "category": "other",
-        "column": 80,
+        "column": 50,
         "line": 45,
-        "message": "invalid cast from type 'CDeformableModelInstance*' to type 'float'"
+        "message": "invalid cast from type 'CSkeleton*' to type 'float'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 32,
-        "line": 49,
-        "message": "'stack0xffffffec' was not declared in this scope"
+        "column": 40,
+        "line": 46,
+        "message": "'stack0xffffffe8' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
         "line": 50,
+        "message": "'stack0xffffffec' was not declared in this scope"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 51,
         "message": "'stack0xfffffff0' was not declared in this scope"
       }
     ],
@@ -37,32 +43,32 @@
       {
         "category": "other",
         "column": 20,
-        "line": 46,
+        "line": 47,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 47,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 163,
+    "complexity_score": 174,
     "cross_reference_count": 11,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 53,
-    "suspect_count": 9,
+    "pseudocode_lines": 54,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_many",
       "stack_param",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 143
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -398,40 +404,47 @@
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_0000001c",
-      "text": "(result_out,in_stack_0000001c,(CQuaternion4f *)this_ptr_00,(float)t);",
+      "text": "(quat1_ptr,in_stack_0000001c,(float)this_ptr_00,",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Direct stack address reference",
       "line": 39,
+      "match": "&stack0xffffffe8",
+      "text": "(CQuaternion4f *)&stack0xffffffe8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
       "match": "unaff_EBX",
       "text": "puVar1 = (uint *)(unaff_EBX + 0x6b4 + (uint)bVar3 * -8);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 41,
       "match": "unaff_EBX",
-      "text": "*(CDeformableModelInstance **)(unaff_EBX + 0x6b0) = t;",
+      "text": "*(CDeformableModelInstance **)(unaff_EBX + 0x6b0) = local_18;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 43,
       "match": "&stack0xffffffec",
       "text": "*puVar1 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 44,
       "match": "&stack0xfffffff0",
       "text": "*puVar2 = *(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
+      "line": 47,
       "match": "&stack0xfffffff0",
       "text": "((int)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +",
       "type": "stack_ref"

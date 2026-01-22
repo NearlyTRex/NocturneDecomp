@@ -16,15 +16,15 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   int iVar3;
   CVector3f *input;
   CVector3f *pCVar4;
-  float *pfVar5;
+  CMatrix3x4f *pCVar5;
   byte bVar6;
-  CMatrix3x4f *in_stack_fffffdd4;
+  CMatrix3x4f local_22c;
   CMatrix3x4f local_1fc;
   CMatrix3x4f local_1cc;
-  float local_19c [12];
+  CMatrix3x4f local_19c;
   CMatrix3x4f local_16c;
   CVector3f local_13c [4];
-  float local_10c [12];
+  CMatrix3x4f local_10c;
   CVector3f local_dc [4];
   byte local_ac [16];
   float local_9c;
@@ -56,12 +56,12 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_16c,
                (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
-               DAT_03f6bacc,in_stack_fffffdd4);
-    pfVar5 = (float *)&stack0xfffffdd4;
+               DAT_03f6bacc,&local_22c);
+    pCVar5 = &local_22c;
     pCVar4 = local_13c;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      pCVar4->x = *pfVar5;
-      pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
+      pCVar4->x = pCVar5->m[0].w;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
       pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
     }
     core_xform_cpp_getTranslation_FUN_005f6110(local_13c,(CMatrix3x4f *)local_ac);
@@ -164,8 +164,8 @@ LAB_005c33d7:
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1cc,
                  (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
-                 DAT_03f6bacc,in_stack_fffffdd4);
-      pfVar5 = local_10c;
+                 DAT_03f6bacc,&local_10c);
+      pCVar5 = &local_10c;
     }
     else {
       local_40.m[2].x = 1.16195;
@@ -179,13 +179,13 @@ LAB_005c33d7:
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1fc,
                  (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices +
-                 DAT_03f6bb04,in_stack_fffffdd4);
-      pfVar5 = local_19c;
+                 DAT_03f6bb04,&local_19c);
+      pCVar5 = &local_19c;
     }
     pCVar4 = local_dc;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      pCVar4->x = *pfVar5;
-      pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
+      pCVar4->x = pCVar5->m[0].w;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
       pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
     }
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_dc,&local_40);

@@ -19,7 +19,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentDrawColor
 ;   int g_UseRGBConversion
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;

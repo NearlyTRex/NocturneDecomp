@@ -14685,10 +14685,10 @@
         "start":"0044dbd0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0",
-    "ret":"void",
+    "ret":"CVector3i*",
     "vars":{
       "locals":[
         {
@@ -14824,20 +14824,29 @@
         {
           "name":"output_vector",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"CVector3i*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -53016,7 +53025,7 @@
         "start":"00522a50"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack3_esi",
     "importable":true,
     "name":"core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50",
     "ret":"CVector3i*",
@@ -53297,7 +53306,7 @@
       ],
       "params":[
         {
-          "name":"output",
+          "name":"reflection",
           "storage":{
             "offset":4,
             "size":4,
@@ -53310,10 +53319,10 @@
               }
             ]
           },
-          "type":"CVector3i*"
+          "type":"SMirrorReflection*"
         },
         {
-          "name":"reflection",
+          "name":"point_a",
           "storage":{
             "offset":8,
             "size":4,
@@ -53326,10 +53335,10 @@
               }
             ]
           },
-          "type":"SMirrorReflection*"
+          "type":"CVector3i*"
         },
         {
-          "name":"point_a",
+          "name":"point_b",
           "storage":{
             "offset":12,
             "size":4,
@@ -53345,15 +53354,14 @@
           "type":"CVector3i*"
         },
         {
-          "name":"point_b",
+          "name":"output",
           "storage":{
-            "offset":16,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]

@@ -1,26 +1,27 @@
 // Name: engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
 // Address: 0048c7e0
 // Address Range: [[0048c7e0, 0048c7fc]]
-// Convention: __cdecl
-// Signature: void engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
+// Convention: __stack_esi
+// Signature: CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
 
 #include "nocturne.h"
 
-void __cdecl
+CVector3i * __stack_esi
 engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
           (CDemonRenderer *this_ptr,CVector3i *output)
 
 {
-  int *unaff_ESI;
-  byte bVar1;
+  uint *puVar1;
+  byte bVar2;
   int aiStack_ffc [1018];
   CVector3i CStack_14;
   
-  bVar1 = 0;
+  bVar2 = 0;
   engine_matrix_c_getCameraRotation_FUN_0050e2f0(&CStack_14);
-  *unaff_ESI = CStack_14.x;
-  unaff_ESI[(uint)bVar1 * -2 + 1] = *(int *)((int)&CStack_14 + (uint)bVar1 * -8 + 4);
-  (unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       *(int *)((int)&CStack_14 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
-  return;
+  puVar1 = (uint *)((int)output + (uint)bVar2 * -8 + 4);
+  output->x = CStack_14.x;
+  *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  puVar1[(uint)bVar2 * -2 + 1] =
+       *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+  return output;
 }

@@ -17,13 +17,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   int extraout_EDX;
   byte bVar3;
   double dVar4;
-  float afStackY_1064 [992];
-  CVector3i *in_stack_ffffff28;
-  int local_d4;
-  int local_d0;
-  int local_cc;
-  int local_c8;
-  int local_c4;
+  int aiStackY_1064 [992];
+  SMRGLHeaderPrimitive local_d8;
   uint local_c0;
   uint local_bc;
   uint local_b8;
@@ -35,12 +30,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   float local_9c;
   CVector3i local_98;
   CVector3i local_8c;
-  int local_7c;
-  float afStack_78 [4];
+  CVector3i local_7c;
+  float local_70;
+  float local_6c;
   float local_68;
   int local_64;
-  float local_60;
-  int local_5c;
+  int local_60 [2];
   float local_58;
   float local_54;
   float local_50;
@@ -66,20 +61,20 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)local_34,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-            (g_CDemonRendererPtr2,in_stack_ffffff28);
-  local_64 = local_7c;
-  (&local_60)[(uint)bVar3 * -2] = afStack_78[(uint)bVar3 * -2];
-  (&local_60)[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-       afStack_78[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+            (g_CDemonRendererPtr2,&local_7c);
+  local_64 = local_7c.x;
+  local_60[(uint)bVar3 * -2] = *(int *)((int)&local_7c + (uint)bVar3 * -8 + 4);
+  local_60[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+       *(int *)((int)&local_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   local_68 = (float)0.00390625;
-  afStack_78[2] = (float)local_64 * local_68;
-  local_14 = local_5c;
-  afStack_78[3] = (float)(int)local_60 * local_68;
-  local_68 = (float)local_5c * local_68;
-  local_a0 = (float)world_position->x - afStack_78[2];
-  local_9c = (float)(this_ptr->base).base.position.y - afStack_78[3];
+  local_70 = (float)local_64 * local_68;
+  local_14 = local_60[1];
+  local_6c = (float)local_60[0] * local_68;
+  local_68 = (float)local_60[1] * local_68;
+  local_a0 = (float)world_position->x - local_70;
+  local_9c = (float)(this_ptr->base).base.position.y - local_6c;
   local_98.x = (int)((float)(this_ptr->base).base.position.z - local_68);
-  if (&local_58 != &stack0xffffff60) {
+  if (&local_58 != &local_a0) {
     local_58 = local_a0;
     local_54 = local_9c;
     local_50 = (float)local_98.x;
@@ -87,14 +82,14 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   local_4c = (float)(this_ptr->base).base.rotation_matrix.m[0].z;
   local_48 = (float)(this_ptr->base).base.rotation_matrix.m[1].z;
   local_44.x = (this_ptr->base).base.rotation_matrix.m[2].z;
-  fVar2 = SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);
-  if (fVar2 <= 0.0) {
+  local_d8.base.type = (int)SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);
+  if ((float)local_d8.base.type <= 0.0) {
     local_54 = 0.0;
     local_58 = 0.0;
     local_50 = 0.0;
   }
   else {
-    fVar2 = 1.0 / fVar2;
+    fVar2 = 1.0 / (float)local_d8.base.type;
     local_58 = local_58 * fVar2;
     local_54 = local_54 * fVar2;
     local_50 = local_50 * fVar2;
@@ -166,17 +161,17 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_00,g_LightTextures + 1);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-    local_d4 = 4;
-    local_d0 = 0;
-    local_cc = 0;
-    local_c8 = -0xffff;
-    local_c4 = -0x7fff;
+    local_d8.base.count = 4;
+    local_d8.surface_normal.A = 0;
+    local_d8.surface_normal.B = 0;
+    local_d8.surface_normal.C = -0xffff;
+    local_d8.surface_normal.D = -0x7fff;
     local_c0 = 0;
     local_b4 = 3;
     local_bc = 1;
     local_b8 = 2;
     engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-              (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff28);
+              (g_CDemonRendererPtr2,&local_d8);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

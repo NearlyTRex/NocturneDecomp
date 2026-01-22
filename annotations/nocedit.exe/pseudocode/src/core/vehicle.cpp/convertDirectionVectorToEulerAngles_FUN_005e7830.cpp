@@ -11,9 +11,6 @@ core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
           (CVector3f *out_euler_angles,CVector3f *in_direction_vector)
 
 {
-  int extraout_ECX;
-  CVector3f *extraout_ECX_00;
-  float *extraout_EDX;
   float10 fVar1;
   uint uStack_14;
   
@@ -31,11 +28,11 @@ core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
   }
   fVar1 = crt_math_c_atan2_FUN_006013b1
                     ((float10)in_direction_vector->x,(float10)in_direction_vector->z);
-  *(float *)(extraout_ECX + 4) = (float)fVar1;
+  out_euler_angles->y = (float)fVar1;
   fVar1 = crt_math_c_atan2_FUN_006013b1
-                    ((float10)extraout_EDX[1],
-                     SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +
-                          (float10)extraout_EDX[2] * (float10)extraout_EDX[2]));
-  extraout_ECX_00->x = (float)-fVar1;
-  return extraout_ECX_00;
+                    ((float10)in_direction_vector->y,
+                     SQRT((float10)in_direction_vector->x * (float10)in_direction_vector->x +
+                          (float10)in_direction_vector->z * (float10)in_direction_vector->z));
+  out_euler_angles->x = (float)-fVar1;
+  return out_euler_angles;
 }

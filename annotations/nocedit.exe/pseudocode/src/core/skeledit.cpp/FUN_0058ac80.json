@@ -10,14 +10,20 @@
       {
         "category": "other",
         "column": 36,
-        "line": 46,
+        "line": 44,
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 52,
-        "message": "'stack0xffffff5c' was not declared in this scope; did you mean 'in_stack_ffffff5c'?"
+        "category": "other",
+        "column": 36,
+        "line": 45,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 55,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -31,25 +37,36 @@
       {
         "category": "other",
         "column": 20,
-        "line": 46,
+        "line": 44,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 45,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 55,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 159,
+    "complexity_score": 133,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 54,
-    "suspect_count": 9,
+    "pseudocode_lines": 53,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 121
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -184,63 +201,49 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_ffffff5c",
-      "text": "CMatrix3x4f *in_stack_ffffff5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "piVar2 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_ffffff5c",
-      "text": "((CMatrix3x4f *)(local_14 + piVar2[8] * 0x21 + 0x15),in_stack_ffffff5c);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_ffffff5c",
-      "text": "((CMatrix3x4f *)(piVar2 + 0x15),&local_74,in_stack_ffffff5c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffff5c",
-      "text": "piVar4 = (int *)&stack0xffffff5c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "} while (iVar3 < *in_stack_00000004);",
       "type": "stack_param"

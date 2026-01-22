@@ -16,15 +16,14 @@ void __cdecl engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0(CPod *t
   uint uVar3;
   int iVar4;
   int iVar5;
-  uint *puVar6;
+  CPodDependencyRecord *pCVar6;
   char *pcVar7;
   byte bVar8;
-  CPodDependencyRecord *in_stack_fffff550;
-  uint auStack_aac [399];
-  uint local_470 [66];
+  int local_ab0 [400];
+  CPodDependencyRecord local_470;
   char local_368 [260];
   int local_264;
-  uint local_260 [66];
+  CPodDependencyRecord local_260;
   char local_158 [256];
   int local_58;
   CPod *local_50;
@@ -54,13 +53,12 @@ void __cdecl engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0(CPod *t
         local_18 = local_3c->pod_files[0];
         local_40 = 0;
         for (iVar5 = 0; iVar5 < local_18->dependency_count; iVar5 = iVar5 + 1) {
-          engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0(local_18,iVar5,in_stack_fffff550)
-          ;
-          puVar6 = local_260;
+          engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0(local_18,iVar5,&local_260);
+          pCVar6 = &local_260;
           pcVar7 = local_368;
           for (iVar4 = 0x42; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *(uint *)pcVar7 = *puVar6;
-            puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+            *(uint *)pcVar7 = *(uint *)pCVar6->filename;
+            pCVar6 = (CPodDependencyRecord *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);
             pcVar7 = pcVar7 + ((uint)bVar8 * -2 + 1) * 4;
           }
           if ((local_264 != 0) &&
@@ -104,13 +102,12 @@ LAB_0055143e:
       local_2c = local_4c->pod_files[0];
       iVar5 = local_24 << 3;
       while (local_30 < local_2c->dependency_count) {
-        engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0
-                  (local_2c,local_30,in_stack_fffff550);
-        puVar6 = local_470;
+        engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0(local_2c,local_30,&local_470);
+        pCVar6 = &local_470;
         pcVar7 = local_158;
         for (iVar4 = 0x42; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *(uint *)pcVar7 = *puVar6;
-          puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+          *(uint *)pcVar7 = *(uint *)pCVar6->filename;
+          pCVar6 = (CPodDependencyRecord *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);
           pcVar7 = pcVar7 + ((uint)bVar8 * -2 + 1) * 4;
         }
         if ((local_58 == 0) ||
@@ -125,14 +122,14 @@ LAB_0055143e:
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many POD dependency ordering rules");
           }
           if (local_58 < 0) {
-            *(CPodFile **)((int)auStack_aac + iVar5 + -4) = local_2c;
+            *(CPodFile **)((int)local_ab0 + iVar5) = local_2c;
             pCVar2 = this_ptr->pod_files[iVar4];
           }
           else {
-            *(CPodFile **)((int)auStack_aac + iVar5 + -4) = this_ptr->pod_files[iVar4];
+            *(CPodFile **)((int)local_ab0 + iVar5) = this_ptr->pod_files[iVar4];
             pCVar2 = local_2c;
           }
-          *(CPodFile **)((int)auStack_aac + iVar5) = pCVar2;
+          *(CPodFile **)((int)local_ab0 + iVar5 + 4) = pCVar2;
           iVar5 = iVar5 + 8;
           local_24 = local_24 + 1;
           local_30 = local_30 + 1;
@@ -156,13 +153,13 @@ LAB_0055143e:
             iVar4 = 0;
             local_1c = local_24 * 8;
             do {
-              if (*(CPodFile **)((int)auStack_aac + iVar4) == local_38[1]) {
-                uVar3 = (uint)*(CPodFile **)((int)auStack_aac + iVar4) ^ (uint)local_38[1];
+              pCVar2 = *(CPodFile **)((int)local_ab0 + iVar4 + 4);
+              if (pCVar2 == local_38[1]) {
+                uVar3 = (uint)pCVar2 ^ (uint)local_38[1];
                 pCVar1 = this_ptr;
                 if (0 < iVar5) {
                   do {
-                    if (pCVar1->pod_files[0] == *(CPodFile **)((int)auStack_aac + iVar4 + -4))
-                    break;
+                    if (pCVar1->pod_files[0] == *(CPodFile **)((int)local_ab0 + iVar4)) break;
                     uVar3 = uVar3 + 1;
                     pCVar1 = (CPod *)pCVar1->pod_files;
                   } while ((int)uVar3 < iVar5);

@@ -148,7 +148,7 @@ section .text
     LEA ESI,[EBP + -0x62]               ; 0047591e
     LEA EDI,[EBP + -0xe]                ; 00475921
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 00475924
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[EBP + -0x62]               ; 00475929
     LEA EAX,[EBP + -0xe]                ; 0047592c
     LEA EBX,[EBP + 0xffffff7a]          ; 0047592f

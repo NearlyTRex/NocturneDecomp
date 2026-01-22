@@ -1,12 +1,12 @@
 // Name: core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
 // Address: 0044dbd0
 // Address Range: [[0044dbd0, 0044dddc]]
-// Convention: __cdecl
-// Signature: void core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)
+// Convention: __stack2_esi
+// Signature: CVector3i * core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0(CDemonCamera * this_ptr, CVector3i * input_vector, CVector3i * output_vector)
 
 #include "nocturne.h"
 
-void __cdecl
+CVector3i * __stack2_esi
 core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
           (CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 
@@ -15,8 +15,8 @@ core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
   longlong lVar2;
   longlong lVar3;
   int iVar4;
-  uint *unaff_ESI;
-  byte bVar5;
+  uint *puVar5;
+  byte bVar6;
   uint auStackY_1000 [1014];
   uint local_24;
   uint local_20;
@@ -25,7 +25,7 @@ core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
   uint local_14;
   uint local_10;
   
-  bVar5 = 0;
+  bVar6 = 0;
   lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1].x +
           (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0].x +
           (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2].x;
@@ -52,11 +52,12 @@ core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
             (longlong)(int)local_24 * (longlong)(this_ptr->inverted_matrix).m[0].z +
             (longlong)(int)local_1c * (longlong)(this_ptr->inverted_matrix).m[2].z;
     local_10 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *unaff_ESI = local_18;
-    unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);
-    (unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =
-         *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-    return;
+    puVar5 = (uint *)((int)output_vector + (uint)bVar6 * -8 + 4);
+    output_vector->x = local_18;
+    *puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);
+    puVar5[(uint)bVar6 * -2 + 1] =
+         *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+    return output_vector;
   }
   lVar1 = (longlong)this_ptr->alpha_transform_matrices[9][iVar4] * (longlong)(int)local_24;
   lVar2 = (longlong)this_ptr->alpha_transform_matrices[0xc][iVar4] * (longlong)(int)local_20;
@@ -82,9 +83,10 @@ core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
   local_10 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-  *unaff_ESI = local_18;
-  unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);
-  (unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =
-       *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-  return;
+  puVar5 = (uint *)((int)output_vector + (uint)bVar6 * -8 + 4);
+  output_vector->x = local_18;
+  *puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);
+  puVar5[(uint)bVar6 * -2 + 1] =
+       *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  return output_vector;
 }

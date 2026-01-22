@@ -24,7 +24,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   int g_RedBitPosition
 ;   int g_RedBitCount
 ;   int g_GreenBitPosition

@@ -19,7 +19,7 @@
 ;   int g_StoredBitsPerPixel
 ;   void* g_StoredMappedFrameBuffer
 ;   int g_ScreenBufferStride
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   ... and 7 more
 ;
 ; Called Functions:

@@ -1,12 +1,12 @@
 // Name: core_xform.cpp_multiplyQuaternion_FUN_005f7640
 // Address: 005f7640
 // Address Range: [[005f7640, 005f76f1]]
-// Convention: __cdecl
+// Convention: __stack2_esi
 // Signature: CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
 
 #include "nocturne.h"
 
-CQuaternion4f * __cdecl
+CQuaternion4f * __stack2_esi
 core_xform_cpp_multiplyQuaternion_FUN_005f7640
           (CQuaternion4f *result_out,CQuaternion4f *quat1_ptr,CQuaternion4f *quat2_ptr)
 
@@ -35,7 +35,6 @@ core_xform_cpp_multiplyQuaternion_FUN_005f7640
   float fVar22;
   float fVar23;
   float fVar24;
-  CQuaternion4f *unaff_ESI;
   
   fVar1 = quat1_ptr->w;
   fVar2 = result_out->x;
@@ -61,11 +60,11 @@ core_xform_cpp_multiplyQuaternion_FUN_005f7640
   fVar22 = result_out->z;
   fVar23 = quat1_ptr->y;
   fVar24 = result_out->x;
-  unaff_ESI->w = quat1_ptr->w * result_out->w -
+  quat2_ptr->w = quat1_ptr->w * result_out->w -
                  (quat1_ptr->z * result_out->z +
                  quat1_ptr->y * result_out->y + quat1_ptr->x * result_out->x);
-  unaff_ESI->x = (fVar13 * fVar14 + fVar7 * fVar8 + fVar1 * fVar2) - fVar17 * fVar18;
-  unaff_ESI->y = (fVar15 * fVar16 + fVar9 * fVar10 + fVar3 * fVar4) - fVar21 * fVar22;
-  unaff_ESI->z = (fVar19 * fVar20 + fVar11 * fVar12 + fVar5 * fVar6) - fVar23 * fVar24;
-  return unaff_ESI;
+  quat2_ptr->x = (fVar13 * fVar14 + fVar7 * fVar8 + fVar1 * fVar2) - fVar17 * fVar18;
+  quat2_ptr->y = (fVar15 * fVar16 + fVar9 * fVar10 + fVar3 * fVar4) - fVar21 * fVar22;
+  quat2_ptr->z = (fVar19 * fVar20 + fVar11 * fVar12 + fVar5 * fVar6) - fVar23 * fVar24;
+  return quat2_ptr;
 }

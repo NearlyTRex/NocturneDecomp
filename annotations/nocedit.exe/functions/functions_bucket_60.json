@@ -24838,10 +24838,10 @@
         "start":"0048c760"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760",
-    "ret":"void",
+    "ret":"CVector3i*",
     "vars":{
       "params":[
         {
@@ -24863,20 +24863,29 @@
         {
           "name":"output",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"CVector3i*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -24888,10 +24897,10 @@
         "start":"0048c7e0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0",
-    "ret":"void",
+    "ret":"CVector3i*",
     "vars":{
       "params":[
         {
@@ -24913,20 +24922,29 @@
         {
           "name":"output",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"CVector3i*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -65575,7 +65593,7 @@
         "start":"005f6ee0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0",
     "ret":"CMatrix3x4f*",
@@ -65794,13 +65812,12 @@
         {
           "name":"x_offset",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -65829,7 +65846,7 @@
         "start":"005f73e0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0",
     "ret":"CMatrix3x4f*",
@@ -65872,13 +65889,12 @@
         {
           "name":"quat_ptr",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -65907,7 +65923,7 @@
         "start":"005f75e0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_xform.cpp_negateFirstComponent_FUN_005f75e0",
     "ret":"void",
@@ -65998,13 +66014,12 @@
         {
           "name":"input_vector",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -66023,7 +66038,7 @@
         "start":"005f77e0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack3_esi",
     "importable":true,
     "name":"core_xform.cpp_slerpQuaternion_FUN_005f77e0",
     "ret":"CQuaternion4f*",
@@ -66256,7 +66271,7 @@
       ],
       "params":[
         {
-          "name":"result_out",
+          "name":"quat1_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -66272,7 +66287,7 @@
           "type":"CQuaternion4f*"
         },
         {
-          "name":"quat1_ptr",
+          "name":"quat2_ptr",
           "storage":{
             "offset":8,
             "size":4,
@@ -66288,7 +66303,7 @@
           "type":"CQuaternion4f*"
         },
         {
-          "name":"quat2_ptr",
+          "name":"t",
           "storage":{
             "offset":12,
             "size":4,
@@ -66301,23 +66316,22 @@
               }
             ]
           },
-          "type":"CQuaternion4f*"
+          "type":"float"
         },
         {
-          "name":"t",
+          "name":"result_out",
           "storage":{
-            "offset":16,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
-          "type":"float"
+          "type":"CQuaternion4f*"
         }
       ],
       "ret_storage":{

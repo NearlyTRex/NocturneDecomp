@@ -17,8 +17,8 @@ void core_conveyor_cpp_FUN_00441d60(void)
   uint *puVar4;
   byte bVar5;
   int in_stack_00000004;
-  uint auStackY_17f8 [1526];
-  CVector3f *in_stack_ffffffe4;
+  float afStackY_17f8 [1526];
+  CQuaternion4f local_1c;
   
   bVar5 = 0;
   puVar1 = (uint *)(in_stack_00000004 + 0x328);
@@ -32,17 +32,14 @@ void core_conveyor_cpp_FUN_00441d60(void)
     *(uint *)(in_stack_00000004 + 800) = *(uint *)(in_stack_00000004 + 0x32c);
     *(uint *)(in_stack_00000004 + 0x324) = *(uint *)(in_stack_00000004 + 0x330);
   }
-  core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-            ((CQuaternion4f *)(in_stack_00000004 + 0x30),in_stack_ffffffe4);
-  puVar1 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);
-  *(CVector3f **)(in_stack_00000004 + 0x344) = in_stack_ffffffe4;
-  puVar2 = puVar1 + (uint)bVar5 * -2 + 1;
-  *puVar1 = *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);
-  *puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-  puVar2[(uint)bVar5 * -2 + 1] =
-       *(uint *)
-        ((int)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)
-  ;
+  core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(in_stack_00000004 + 0x30),&local_1c);
+  puVar2 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);
+  *(float *)(in_stack_00000004 + 0x344) = local_1c.w;
+  puVar3 = puVar2 + (uint)bVar5 * -2 + 1;
+  puVar1 = (uint *)((int)&local_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  *puVar2 = *(uint *)((int)&local_1c + (uint)bVar5 * -8 + 4);
+  *puVar3 = *puVar1;
+  puVar3[(uint)bVar5 * -2 + 1] = puVar1[(uint)bVar5 * -2 + 1];
   puVar3 = (uint *)(in_stack_00000004 + 0x338 + (uint)bVar5 * -8);
   puVar1 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);
   *(uint *)(in_stack_00000004 + 0x334) = *(uint *)(in_stack_00000004 + 0x344);

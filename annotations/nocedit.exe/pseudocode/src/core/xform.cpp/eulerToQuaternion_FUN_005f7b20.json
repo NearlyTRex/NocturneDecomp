@@ -2,28 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 27,
-        "message": "'stack0xffffffa8' was not declared in this scope; did you mean 'in_stack_ffffffa8'?"
+        "category": "other",
+        "column": 21,
+        "line": 29,
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 30,
+        "line": 32,
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 24,
+        "category": "other",
+        "column": 23,
         "line": 33,
-        "message": "'stack0xffffffdc' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 34,
-        "message": "'stack0xffffffe0' was not declared in this scope"
+        "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -37,26 +31,35 @@
       {
         "category": "other",
         "column": 12,
-        "line": 30,
+        "line": 29,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 32,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 170,
+    "complexity_score": 62,
     "cross_reference_count": 14,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 30,
-    "suspect_count": 12,
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 68
+    "total_lines": 65
   },
   "cross_references": [
     {
@@ -152,10 +155,10 @@
         "005f7b68"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "is_ebp_frame": true,
     "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20",
-    "signature": "CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)"
+    "signature": "CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CVector3f * euler_angles, CQuaternion4f * quat_out)"
   },
   "function_calls": [
     {
@@ -196,10 +199,10 @@
     "pcode_op_count": 157
   },
   "stack_frame": {
-    "frame_size": 100,
+    "frame_size": 96,
     "local_size": 92,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -239,15 +242,8 @@
       },
       {
         "is_param": true,
-        "name": "quat_out",
-        "offset": 4,
-        "size": 4,
-        "type": "CQuaternion4f *"
-      },
-      {
-        "is_param": true,
         "name": "euler_angles",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CVector3f *"
       }
@@ -255,88 +251,25 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "text": "CQuaternion4f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffffa8",
-      "text": "CMatrix3x3f *in_stack_ffffffa8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffffa8",
-      "text": "((CMatrix3x4f *)&stack0xffffffa8,&local_18,(CVector3f *)quat_out);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_ffffffa8",
-      "text": "((CQuaternion4f *)&stack0xffffffa8,in_stack_ffffffa8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xffffffa8",
-      "text": "((CQuaternion4f *)&stack0xffffffa8,in_stack_ffffffa8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_ESI",
-      "text": "puVar1 = (uint *)((int)unaff_ESI + (uint)bVar3 * -8 + 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 22,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)unaff_ESI + (uint)bVar3 * -8 + 4);",
+      "text": "puVar2 = (uint *)((int)quat_out + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI->w = local_28;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)&local_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 26,
-      "match": "&stack0xffffffdc",
-      "text": "*puVar1 = *(uint *)(&stack0xffffffdc + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xffffffe0",
-      "text": "*puVar2 = *(uint *)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xffffffe0",
-      "text": "((int)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
+      "match": "(uint *)((int)",
+      "text": "*puVar2 = *(uint *)((int)&local_28 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

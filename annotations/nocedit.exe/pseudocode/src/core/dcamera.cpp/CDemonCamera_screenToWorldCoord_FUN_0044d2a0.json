@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 44,
-        "line": 17,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 19,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 24,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -32,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 93,
+    "complexity_score": 17,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 18,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 65
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -107,16 +86,16 @@
         "0044d30b"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack3_esi",
     "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0",
-    "signature": "void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)"
+    "signature": "void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "02cf7d5c",
       "name": "g_ZBufferScanlineArray",
-      "type": "uint*[1024]",
+      "type": "uint*[1200]",
       "value": null
     }
   ],
@@ -155,10 +134,10 @@
     "pcode_op_count": 303
   },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 36,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -191,22 +170,15 @@
       },
       {
         "is_param": true,
-        "name": "output_ptr",
-        "offset": 8,
-        "size": 4,
-        "type": "CVector3i *"
-      },
-      {
-        "is_param": true,
         "name": "screen_x",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "screen_y",
-        "offset": 16,
+        "offset": 12,
         "size": 4,
         "type": "int"
       }
@@ -236,55 +208,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = (int)output_ptr << 0x10;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[1] = screen_x << 0x10;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[2] = 0x7fffffff;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = (int)output_ptr << 0x10;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[1] = screen_x << 0x10;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[2] = (int)(0x7fffffff / (longlong)(int)uVar1);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3d * shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30(CPoly * this_ptr, CVector3d * out_centroid)
+; __stack_esi CVector3d * shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30(CPoly * this_ptr, CVector3d * out_centroid)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr
-; CVector3d *      Stack[0x8]:4   out_centroid
 ; Local Variables:
 ; undefined8       Stack[-0x88]:8  local_88
 ; undefined8       Stack[-0x80]:8  local_80

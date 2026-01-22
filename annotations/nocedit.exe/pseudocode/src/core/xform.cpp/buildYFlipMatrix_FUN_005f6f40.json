@@ -4,8 +4,20 @@
       {
         "category": "other",
         "column": 17,
-        "line": 34,
+        "line": 33,
         "message": "invalid cast from type 'CMatrix3x4f*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 35,
+        "message": "invalid cast from type 'float' to type 'uint*' {aka 'unsigned int*'}"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 41,
+        "message": "invalid cast from type 'float' to type 'CMatrix3x4f*'"
       }
     ],
     "success": false,
@@ -20,16 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 68,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 33,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 63
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 62
   },
   "cross_references": [],
   "function": {
@@ -40,7 +50,7 @@
         "005f6f9c"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_xform.cpp_buildYFlipMatrix_FUN_005f6f40",
     "signature": "CMatrix3x4f * core_xform.cpp_buildYFlipMatrix_FUN_005f6f40(CMatrix3x4f * matrix_out, float y_offset)"
   },
@@ -89,10 +99,10 @@
     "pcode_op_count": 126
   },
   "stack_frame": {
-    "frame_size": 68,
+    "frame_size": 64,
     "local_size": 60,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -185,13 +195,6 @@
         "offset": 4,
         "size": 4,
         "type": "CMatrix3x4f *"
-      },
-      {
-        "is_param": true,
-        "name": "y_offset",
-        "offset": 8,
-        "size": 4,
-        "type": "float"
       }
     ]
   },
@@ -212,27 +215,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_ESI",
-      "text": "pfVar3 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_ESI",
-      "text": "return (CMatrix3x4f *)unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

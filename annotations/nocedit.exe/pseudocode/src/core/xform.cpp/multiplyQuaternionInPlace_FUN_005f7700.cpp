@@ -13,20 +13,19 @@ core_xform_cpp_multiplyQuaternionInPlace_FUN_005f7700
 {
   uint *puVar1;
   uint *puVar2;
-  byte bVar3;
-  uint auStackY_17f8 [1525];
-  CQuaternion4f *in_stack_ffffffe4;
+  uint *puVar3;
+  byte bVar4;
+  float afStackY_17f8 [1525];
+  CQuaternion4f local_1c;
   
-  bVar3 = 0;
-  core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_inout,quat2_ptr,in_stack_ffffffe4);
-  puVar1 = (uint *)((int)quat1_inout + (uint)bVar3 * -8 + 4);
-  quat1_inout->w = (float)in_stack_ffffffe4;
-  puVar2 = puVar1 + (uint)bVar3 * -2 + 1;
-  *puVar1 = *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
-  *puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  puVar2[(uint)bVar3 * -2 + 1] =
-       *(uint *)
-        ((int)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)
-  ;
+  bVar4 = 0;
+  core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_inout,quat2_ptr,&local_1c);
+  puVar2 = (uint *)((int)quat1_inout + (uint)bVar4 * -8 + 4);
+  quat1_inout->w = local_1c.w;
+  puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
+  puVar1 = (uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  *puVar2 = *(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4);
+  *puVar3 = *puVar1;
+  puVar3[(uint)bVar4 * -2 + 1] = puVar1[(uint)bVar4 * -2 + 1];
   return quat1_inout;
 }

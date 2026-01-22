@@ -15,7 +15,7 @@
 ;   undefined4 DAT_0067b664
 ;   undefined4 DAT_0067b668
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   void*[1024] g_ScreenBufferArray
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_CheatFlags
 ;   int g_DebugRecording
