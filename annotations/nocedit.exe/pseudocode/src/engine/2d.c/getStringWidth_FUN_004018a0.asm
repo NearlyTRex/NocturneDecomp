@@ -20,7 +20,7 @@
 ;   ... and 5 more
 ;
 ; Referenced Globals:
-;   undefined4 g_FontTable
+;   SFontGlyph[224] g_FontTable
 ;
 ; *****************************************************************************
 

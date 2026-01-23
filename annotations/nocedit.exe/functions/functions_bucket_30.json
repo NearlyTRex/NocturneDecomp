@@ -575,7 +575,7 @@
     "vars":{
       "params":[
         {
-          "name":"text",
+          "name":"center_x",
           "storage":{
             "offset":4,
             "size":4,
@@ -588,10 +588,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"center_x",
+          "name":"y_pos",
           "storage":{
             "offset":8,
             "size":4,
@@ -607,7 +607,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"text",
           "storage":{
             "offset":12,
             "size":4,
@@ -620,7 +620,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -676,7 +676,7 @@
       ],
       "params":[
         {
-          "name":"format_string",
+          "name":"left_x",
           "storage":{
             "offset":4,
             "size":4,
@@ -689,10 +689,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"left_x",
+          "name":"right_x",
           "storage":{
             "offset":8,
             "size":4,
@@ -708,7 +708,7 @@
           "type":"int"
         },
         {
-          "name":"right_x",
+          "name":"y_pos",
           "storage":{
             "offset":12,
             "size":4,
@@ -724,7 +724,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"format_string",
           "storage":{
             "offset":16,
             "size":4,
@@ -737,7 +737,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -17898,7 +17898,7 @@
     "vars":{
       "params":[
         {
-          "name":"matrix",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -81854,7 +81854,7 @@
         "start":"005fe6b0"
       }
     ],
-    "conv":"__fpureg",
+    "conv":"__fpureg_safe",
     "importable":true,
     "name":"crt_math.c_round_FUN_005fe6b0",
     "ret":"double",

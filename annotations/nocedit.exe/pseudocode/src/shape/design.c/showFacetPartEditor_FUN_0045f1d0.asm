@@ -252,7 +252,7 @@ section .text
     PUSH 0x0                            ; 0045f435
     PUSH 0x0                            ; 0045f437
     CALL engine_matrix.c_setCameraRotation_FUN_0050e290 ; 0045f439
-        ;   XREF to: 0050e290 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_setCameraRotation_FUN_0050e290(ushort pitch, ushort yaw, ushort roll)
+        ;   XREF to: 0050e290 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_setCameraRotation_FUN_0050e290(int pitch, int yaw, int roll)
     ADD ESP,0xc                         ; 0045f43e
     MOV EAX,dword ptr [EBP + -0x30]     ; 0045f441
     PUSH EAX                            ; 0045f444
@@ -281,7 +281,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x48]     ; 0045f484
     PUSH EAX                            ; 0045f487
     CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 0045f488
-        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, ...)
+        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 0045f48d
     CMP dword ptr [0x015c4834],0x0      ; 0045f490 | g_WireframeMode
     JZ 0x0045f543                       ; 0045f497

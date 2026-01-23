@@ -11,29 +11,27 @@ core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe *this
 
 {
   float fVar1;
-  int extraout_EDX;
-  int extraout_EDX_00;
-  float10 fVar2;
-  float10 fVar3;
+  float fVar2;
+  double dVar3;
   double dVar4;
   float unaff_retaddr;
   
-  fVar1 = radius * 256.0f;
-  fVar2 = (float10)radius * (float10)radius * (float10)65536;
+  fVar2 = radius * 256.0f;
+  fVar1 = (float)65536;
   this_ptr->radius = radius;
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
-  fVar3 = (float10)dVar4;
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
-  *(int *)(extraout_EDX + 0x10) = (int)ROUND(dVar4);
-  *(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar3);
-  if (*(int *)(extraout_EDX + 0x10) < 0x10000) {
-    *(uint *)(extraout_EDX + 0x10) = 0x10000;
+  dVar3 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)(radius * radius * fVar1));
+  this_ptr->quadratic_radius_scaled = (int)ROUND(dVar4);
+  this_ptr->linear_radius_scaled = (int)ROUND(dVar3);
+  if (this_ptr->quadratic_radius_scaled < 0x10000) {
+    this_ptr->quadratic_radius_scaled = 0x10000;
   }
-  *(float *)(extraout_EDX + 0x18) = unaff_retaddr * unaff_retaddr;
-  dVar4 = (double)*(byte *)(extraout_EDX + 0x1c) * 65536;
-  *(float *)(extraout_EDX + 0x34) = 1.0 / unaff_retaddr;
-  *(float *)(extraout_EDX + 0x38) = 1.0 / (unaff_retaddr * unaff_retaddr);
-  dVar4 = crt_math_c_round_FUN_005fe6b0(dVar4 / (double)(*(int *)(extraout_EDX + 0x10) >> 0x10));
-  *(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(dVar4);
+  this_ptr->radius_squared = unaff_retaddr * unaff_retaddr;
+  dVar3 = (double)(byte)this_ptr->intensity * 65536;
+  this_ptr->inverse_radius = 1.0 / unaff_retaddr;
+  this_ptr->inverse_radius_squared = 1.0 / (unaff_retaddr * unaff_retaddr);
+  dVar3 = crt_math_c_round_FUN_005fe6b0(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10))
+  ;
+  this_ptr->falloff_value = (int)ROUND(dVar3);
   return;
 }

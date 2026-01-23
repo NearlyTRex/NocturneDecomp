@@ -13,10 +13,6 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
           byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out)
 
 {
-  int *extraout_EAX;
-  int *extraout_EAX_00;
-  int *extraout_EAX_01;
-  int *extraout_EAX_02;
   double dVar1;
   double dVar2;
   uint uVar3;
@@ -75,12 +71,12 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
     local_34 = local_34 / local_2c;
   }
   dVar1 = crt_math_c_round_FUN_005fe6b0(local_4c + 0.5);
-  *extraout_EAX = (int)ROUND(dVar1);
+  *(int *)atlas_width = (int)ROUND(dVar1);
   dVar1 = crt_math_c_round_FUN_005fe6b0(local_44 + 0.5);
-  *extraout_EAX_00 = (int)ROUND(dVar1);
+  *(int *)atlas_height = (int)ROUND(dVar1);
   dVar1 = crt_math_c_round_FUN_005fe6b0(local_3c + 0.5);
-  *extraout_EAX_01 = (int)ROUND(dVar1);
+  *(int *)red_out = (int)ROUND(dVar1);
   dVar1 = crt_math_c_round_FUN_005fe6b0(local_34 + 0.5);
-  *extraout_EAX_02 = (int)ROUND(dVar1);
+  *(int *)green_out = (int)ROUND(dVar1);
   return;
 }

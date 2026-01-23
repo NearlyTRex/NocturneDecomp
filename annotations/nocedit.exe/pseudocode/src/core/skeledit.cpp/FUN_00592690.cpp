@@ -17,7 +17,6 @@ uint core_skeledit_cpp_FUN_00592690(void)
   FILE *pFVar2;
   int iVar3;
   int iVar4;
-  int extraout_EAX;
   byte *pbVar5;
   uint uVar6;
   CBoneStructure *pCVar7;
@@ -855,6 +854,7 @@ LAB_00592a67:
                                   local_64 = -1;
                                   crt_stdio_c_sscanf_FUN_0060013c(pcVar18,"%*s%f%n",local_8c)
                                   ;
+                                  pSVar14 = local_ec;
                                   if (local_64 < 0) {
                                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                               (g_CEditorToolsPtr,"Can't parse tween time for \"->\" statement for animation %s in %s:\n%s"
@@ -888,8 +888,8 @@ LAB_00592a67:
                                                        ((double)((float)local_ec->frame_count -
                                                                 local_ec->exit_forward_tween_time *
                                                                 local_ec->fps));
-                                    *(int *)(extraout_EAX + 0x28) = (int)ROUND(dVar27);
-                                    if (*(int *)(extraout_EAX + 0x28) < 0) {
+                                    pSVar14->exit_forward_from_frame = (int)ROUND(dVar27);
+                                    if (pSVar14->exit_forward_from_frame < 0) {
                                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                                 (g_CEditorToolsPtr,
                                                  "Tween time for \"->\" statement is longer than animation time in animation %s in %s:\n%s",local_ec,

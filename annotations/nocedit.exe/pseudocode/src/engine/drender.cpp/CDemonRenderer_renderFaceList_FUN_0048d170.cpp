@@ -13,9 +13,7 @@ engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170
 {
   int iVar1;
   int iVar2;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
+  CVector3i local_24;
   int local_18;
   int local_14;
   
@@ -36,19 +34,19 @@ engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170
         g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
         if (g_UseExternalRenderer == 0) {
           for (; 0 < face_count; face_count = face_count + -1) {
-            local_24 = (uint)(face_array->vertex_indices).vertex_index_0;
-            local_20 = (uint)(face_array->vertex_indices).vertex_index_1;
-            local_1c = (uint)(face_array->vertex_indices).vertex_index_2;
+            local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
+            local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
+            local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             if (this_ptr->field8_0x20 == 0) {
-              this_ptr->vertex_buffer_ptr[local_24].u = (float)((uint)face_array->u_coord_0 << 8);
-              this_ptr->vertex_buffer_ptr[local_24].v = (float)((uint)face_array->v_coord_0 << 8);
-              this_ptr->vertex_buffer_ptr[local_20].u = (float)((uint)face_array->u_coord_1 << 8);
-              this_ptr->vertex_buffer_ptr[local_20].v = (float)((uint)face_array->v_coord_1 << 8);
-              this_ptr->vertex_buffer_ptr[local_1c].u = (float)((uint)face_array->u_coord_2 << 8);
-              this_ptr->vertex_buffer_ptr[local_1c].v = (float)((uint)face_array->v_coord_2 << 8);
+              this_ptr->vertex_buffer_ptr[local_24.x].u = (float)((uint)face_array->u_coord_0 << 8);
+              this_ptr->vertex_buffer_ptr[local_24.x].v = (float)((uint)face_array->v_coord_0 << 8);
+              this_ptr->vertex_buffer_ptr[local_24.y].u = (float)((uint)face_array->u_coord_1 << 8);
+              this_ptr->vertex_buffer_ptr[local_24.y].v = (float)((uint)face_array->v_coord_1 << 8);
+              this_ptr->vertex_buffer_ptr[local_24.z].u = (float)((uint)face_array->u_coord_2 << 8);
+              this_ptr->vertex_buffer_ptr[local_24.z].v = (float)((uint)face_array->v_coord_2 << 8);
             }
             face_array = face_array + 1;
-            engine_drender_cpp_renderTriangleTextured_FUN_00483370((int *)&local_24,3);
+            engine_drender_cpp_renderTriangleTextured_FUN_00483370(&local_24.x,3);
           }
         }
         else {
@@ -92,12 +90,12 @@ engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170
           do {
             g_RenderStateFlag2 = iVar1;
             g_RenderStateFlags = iVar2;
-            local_24 = (uint)(face_array->vertex_indices).vertex_index_0;
-            local_20 = (uint)(face_array->vertex_indices).vertex_index_1;
-            local_1c = (uint)(face_array->vertex_indices).vertex_index_2;
+            local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
+            local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
+            local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             face_count = face_count + -1;
             face_array = face_array + 1;
-            engine_drender_cpp_renderTriangleSimple_FUN_004839f0((int *)&local_24,3);
+            engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_24,3);
             iVar2 = g_RenderStateFlags;
             iVar1 = g_RenderStateFlag2;
           } while (0 < face_count);

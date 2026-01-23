@@ -1,48 +1,28 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 26,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 88,
-        "line": 29,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 76,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 26,
-    "suspect_count": 4,
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 100
+    "total_lines": 97
   },
   "cross_references": [],
   "function": {
@@ -207,31 +187,17 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "SQRT",
       "text": "((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EDX",
-      "text": "(&g_CameraFogGrid,(CVector3i *)(extraout_EDX + 0x16c),end_pos,(int)ROUND(dVar5))",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 20,
       "match": "ROUND",
-      "text": "(&g_CameraFogGrid,(CVector3i *)(extraout_EDX + 0x16c),end_pos,(int)ROUND(dVar5))",
+      "text": "(&g_CameraFogGrid,&this_ptr->camera_origin,world_position,(int)ROUND(dVar5));",
       "type": "decompiler_intrinsic"
     }
   ],

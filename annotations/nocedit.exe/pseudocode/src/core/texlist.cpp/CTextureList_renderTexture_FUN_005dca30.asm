@@ -48,7 +48,7 @@ section .text
     PUSH EAX                            ; 005dca74
     PUSH ECX                            ; 005dca75
     CALL engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580 ; 005dca76
-        ;   XREF to: 00402580 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580(char * format_string, int y_pos, int right_x)
+        ;   XREF to: 00402580 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580(int y_pos, int right_x, char * format_string)
     ADD ESP,0x14                        ; 005dca7b
     POP EDI                             ; 005dca7e
         ;   Label: LAB_005dca7e
@@ -68,7 +68,7 @@ section .text
     PUSH EAX                            ; 005dca9e
     PUSH ECX                            ; 005dca9f
     CALL engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580 ; 005dcaa0
-        ;   XREF to: 00402580 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580(char * format_string, int y_pos, int right_x)
+        ;   XREF to: 00402580 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580(int y_pos, int right_x, char * format_string)
     ADD ESP,0x14                        ; 005dcaa5
     POP ESI                             ; 005dcaa8
     POP EDI                             ; 005dcaa9

@@ -9,7 +9,7 @@
 int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y_pos,int color)
 
 {
-  char *pcVar1;
+  uchar *puVar1;
   int iVar2;
   int iVar3;
   uint *puVar4;
@@ -18,15 +18,14 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y
   byte *puVar7;
   ushort *puVar8;
   
-  iVar3 = (char_code + -0x20) * 0x91;
-  uVar5 = (uint)(byte)(&g_FontTable)[iVar3];
+  uVar5 = (uint)g_FontTable[char_code + -0x20].width;
   if ((((x_pos < g_ClipLeft) || (y_pos < g_ClipTop)) || ((int)((g_ClipRight + 1) - uVar5) < x_pos))
      || (g_ClipBottom + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
     iVar6 = y_pos * 4;
-    pcVar1 = &DAT_00666041 + iVar3;
+    puVar1 = g_FontTable[char_code + -0x20].bitmap;
     iVar3 = iVar6 + 0x2c;
     if (g_BitsPerPixel == 8) {
       do {
@@ -34,10 +33,10 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y
         iVar2 = 0;
         if (uVar5 != 0) {
           do {
-            if (*pcVar1 != '\0') {
+            if (*puVar1 != '\0') {
               *puVar7 = (byte)color;
             }
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar7 = puVar7 + 1;
           } while (iVar2 < (int)uVar5);
@@ -51,10 +50,10 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y
         iVar2 = 0;
         if (uVar5 != 0) {
           do {
-            if (*pcVar1 != '\0') {
+            if (*puVar1 != '\0') {
               *puVar8 = g_ColorTable16[color];
             }
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar8 = puVar8 + 1;
           } while (iVar2 < (int)uVar5);
@@ -68,10 +67,10 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y
         puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos * 4);
         if (uVar5 != 0) {
           do {
-            if (*pcVar1 != '\0') {
+            if (*puVar1 != '\0') {
               *puVar4 = g_ColorTable32[color];
             }
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar4 = puVar4 + 1;
           } while (iVar2 < (int)uVar5);

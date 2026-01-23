@@ -241,7 +241,7 @@ void core_cloth_cpp_BoneAndClothEditor_FUN_0043c880(void)
     crt_stdio_c_sprintf_FUN_005fdbd0
               (acStack_190,"%f",(double)(1.0 / (float)in_stack_fffffac4));
     engine_2d_c_drawTextRightAligned_FUN_004021c0
-              (acStack_190,g_WindowWidth + -2,g_WindowHeight + -0xd);
+              (acStack_190,g_WindowHeight + -0xd,g_WindowWidth + -2);
     engine_2d_c_drawText_FUN_00401fd0("1. Toggle bone drawing/editing",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("2. Add bone",0,0x21);
     engine_2d_c_drawText_FUN_00401fd0("C. Toggle cloth render",0,0x37);

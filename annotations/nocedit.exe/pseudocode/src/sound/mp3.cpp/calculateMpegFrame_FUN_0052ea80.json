@@ -2,21 +2,15 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 32,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 22,
-        "line": 59,
+        "line": 58,
         "message": "cast from 'SMpegFrame*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 76,
+        "line": 75,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -31,48 +25,47 @@
       {
         "category": "other",
         "column": 19,
-        "line": 53,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 54,
+        "line": 53,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 57,
+        "line": 56,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 71,
+        "line": 70,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 74,
+        "line": 73,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 148,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
-    "pseudocode_lines": 68,
-    "suspect_count": 7,
+    "pseudocode_lines": 67,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 244
+    "total_lines": 243
   },
   "cross_references": [],
   "function": {
@@ -262,53 +255,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ROUND",
-      "text": "iVar4 = (int)ROUND(dVar5);",
+      "text": "iVar5 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EDX",
-      "text": "if (((iVar4 == 0x30) && (0x37 < extraout_EDX)) ||",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EDX",
-      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EDX",
-      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
-      "match": "extraout_EDX",
-      "text": "else if ((iVar4 == 0x30) || (extraout_EDX < 0x60)) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
-      "match": "extraout_EDX",
-      "text": "if ((iVar4 == 0x20) || (0x30 < extraout_EDX)) {",
-      "type": "extra_output"
     }
   ]
 }

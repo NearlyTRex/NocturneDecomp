@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 34,
-        "message": "'SQRT' was not declared in this scope"
+        "category": "other",
+        "column": 30,
+        "line": 37,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -14,10 +14,10 @@
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 34,
-        "message": "'ABS' was not declared in this scope"
+        "category": "other",
+        "column": 30,
+        "line": 37,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -33,21 +33,32 @@
         "column": 20,
         "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 118,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
     "pseudocode_lines": 43,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
     "total_lines": 159
   },
@@ -288,13 +299,6 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ABS",
@@ -314,20 +318,6 @@
       "match": "(float *)((int)",
       "text": "*(float *)((int)g_PaletteLuminanceCache + iVar7));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = start_index;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 45,
-      "match": "unaff_EDI",
-      "text": "return unaff_EDI;",
-      "type": "unaffected_reg"
     }
   ]
 }

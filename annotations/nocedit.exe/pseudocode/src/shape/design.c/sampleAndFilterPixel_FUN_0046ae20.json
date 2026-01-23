@@ -2,22 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 42,
-        "message": "'ROUND' was not declared in this scope"
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 55,
-        "message": "'SUB84' was not declared in this scope"
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 55,
-        "message": "'CONCAT44' was not declared in this scope"
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
       }
     ],
     "success": false,
@@ -27,23 +33,34 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 74,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 76,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 361,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 76,
-    "suspect_count": 27,
+    "pseudocode_lines": 72,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_many"
     ],
-    "total_lines": 280
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -386,185 +403,129 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "int *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX_00",
-      "text": "int *extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX_01",
-      "text": "int *extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX_02",
-      "text": "int *extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 31,
       "match": "ROUND",
       "text": "local_24 = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 34,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 37,
       "match": "ROUND",
       "text": "local_1c = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 41,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 44,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 44,
       "match": "SUB84",
       "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 46,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(SUB84(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 46,
       "match": "SUB84",
       "text": "(double)CONCAT44(SUB84(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 47,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uVar3,(int)((ulonglong)coord_y2 >> 0x20)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 50,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(SUB84(coord_x1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 50,
       "match": "SUB84",
       "text": "((double)CONCAT44(SUB84(coord_x1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 52,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(SUB84(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 52,
       "match": "SUB84",
       "text": "(double)CONCAT44(SUB84(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 53,
       "match": "CONCAT44",
       "text": "(double)CONCAT44(uVar3,(int)((ulonglong)coord_x2 >> 0x20)));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "*(int *)atlas_width = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ROUND",
+      "text": "*(int *)atlas_height = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 71,
-      "match": "extraout_EAX",
-      "text": "*extraout_EAX = (int)ROUND(dVar1);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
       "match": "ROUND",
-      "text": "*extraout_EAX = (int)ROUND(dVar1);",
+      "text": "*(int *)red_out = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
-      "match": "extraout_EAX_00",
-      "text": "*extraout_EAX_00 = (int)ROUND(dVar1);",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "ROUND",
-      "text": "*extraout_EAX_00 = (int)ROUND(dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_EAX_01",
-      "text": "*extraout_EAX_01 = (int)ROUND(dVar1);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
-      "match": "ROUND",
-      "text": "*extraout_EAX_01 = (int)ROUND(dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
-      "match": "extraout_EAX_02",
-      "text": "*extraout_EAX_02 = (int)ROUND(dVar1);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "ROUND",
-      "text": "*extraout_EAX_02 = (int)ROUND(dVar1);",
+      "text": "*(int *)green_out = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {

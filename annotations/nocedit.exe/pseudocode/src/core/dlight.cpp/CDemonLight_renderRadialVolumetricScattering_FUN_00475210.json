@@ -4,61 +4,37 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 22,
+        "line": 24,
         "message": "'unkbyte10' was not declared in this scope"
       },
       {
         "category": "missing_member",
         "column": 17,
-        "line": 54,
+        "line": 57,
         "message": "'CDemonLight' {aka 'struct CDemonLight'} has no member named 'field17_0x1cbc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 71,
-        "message": "'Var6' was not declared in this scope; did you mean 'Var'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 71,
-        "message": "'fpatan' was not declared in this scope; did you mean 'atan'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 72,
-        "message": "'fcos' was not declared in this scope; did you mean 'cos'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 78,
-        "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 89,
-        "message": "'ROUND' was not declared in this scope"
+        "line": 74,
+        "message": "'Var9' was not declared in this scope; did you mean 'Var'?"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 155,
+        "line": 158,
         "message": "request for member '_0_4_' in 'local_98', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 156,
+        "line": 159,
         "message": "request for member '_4_4_' in 'local_98', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 57,
-        "line": 189,
+        "line": 192,
         "message": "'stack0xffffff10' was not declared in this scope"
       }
     ],
@@ -74,22 +50,21 @@
   },
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 668,
+    "complexity_score": 646,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 13,
-    "pseudocode_lines": 183,
-    "suspect_count": 45,
+    "pseudocode_lines": 186,
+    "suspect_count": 43,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_ref",
       "suspect_float",
       "unknown_field",
       "unknown_type",
       "warning_unreachable"
     ],
-    "total_lines": 638
+    "total_lines": 641
   },
   "cross_references": [],
   "function": {
@@ -647,309 +622,295 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/unresolved type",
-      "line": 15,
+      "line": 17,
       "match": "unkbyte10",
-      "text": "unkbyte10 Var6;",
+      "text": "unkbyte10 Var9;",
       "type": "unknown_type"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 67,
       "match": "fpatan",
-      "text": "Var6 = fpatan(fVar2,(float10)1);",
+      "text": "Var9 = fpatan(fVar5,(float10)1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 68,
       "match": "fcos",
-      "text": "fVar2 = (float10)fcos(Var6);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "fsin",
-      "text": "fVar3 = (float10)fsin(fVar2);",
+      "text": "fVar5 = (float10)fcos(Var9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "fsin",
-      "text": "fVar4 = (float10)fsin(fVar7);",
+      "text": "fVar6 = (float10)fsin(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 77,
+      "match": "fsin",
+      "text": "fVar7 = (float10)fsin(fVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
       "match": "fcos",
-      "text": "fVar2 = (float10)fcos(fVar2);",
+      "text": "fVar5 = (float10)fcos(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 79,
       "match": "fcos",
-      "text": "fVar7 = (float10)fcos(fVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
-      "match": "ROUND",
-      "text": "iStack_64 = (int)ROUND(dVar8);",
+      "text": "fVar10 = (float10)fcos(fVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 87,
       "match": "ROUND",
-      "text": "local_60 = (int)ROUND(dVar8);",
+      "text": "iStack_64 = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 88,
-      "match": "extraout_EAX",
-      "text": "local_34 = (float)this_ptr->shadow_depth_buffer[extraout_EAX + local_60] *",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 93,
       "match": "ROUND",
-      "text": "local_44 = (float)(int)ROUND(fVar3);",
+      "text": "local_60 = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 110,
       "match": "ROUND",
-      "text": "local_40 = (float)(int)ROUND(dVar8);",
+      "text": "local_44 = (float)(int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 111,
+      "match": "ROUND",
+      "text": "local_40 = (float)(int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 118,
       "match": "ROUND",
       "text": "local_c8.x = (int)ROUND(local_b0 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 119,
       "match": "ROUND",
       "text": "local_c8.y = (int)ROUND(local_ac * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 117,
+      "line": 120,
       "match": "ROUND",
       "text": "local_c8.z = (int)ROUND(local_a8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 129,
       "match": "ROUND",
       "text": "local_bc.x = (int)ROUND(local_b0 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 130,
       "match": "ROUND",
       "text": "local_bc.y = (int)ROUND(local_ac * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
+      "line": 131,
       "match": "ROUND",
       "text": "local_bc.z = (int)ROUND(local_a8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 140,
       "match": "ROUND",
       "text": "aCStack_8c[0].x = (int)ROUND(local_b0 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 141,
       "match": "ROUND",
       "text": "aCStack_8c[0].y = (int)ROUND(local_ac * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 139,
+      "line": 142,
       "match": "ROUND",
       "text": "aCStack_8c[0].z = (int)ROUND(local_a8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 148,
+      "line": 151,
       "match": "._0_4_",
       "text": "local_98._0_4_ = (uint)ROUND(local_b0 * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 151,
       "match": "ROUND",
       "text": "local_98._0_4_ = (uint)ROUND(local_b0 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 152,
       "match": "._4_4_",
       "text": "local_98._4_4_ = (uint)ROUND(local_ac * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 152,
       "match": "ROUND",
       "text": "local_98._4_4_ = (uint)ROUND(local_ac * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 153,
       "match": "ROUND",
       "text": "iStack_90 = (int)ROUND(local_a8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 156,
+      "line": 159,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 158,
+      "line": 161,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 159,
+      "line": 162,
       "match": "2.2775203e-38",
       "text": "this_ptr_00->vertex_buffer_ptr->u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 160,
+      "line": 163,
       "match": "2.2775203e-38",
       "text": "this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 162,
+      "line": 165,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[1].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 164,
+      "line": 167,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 165,
+      "line": 168,
       "match": "7.34684e-40",
       "text": "this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 166,
+      "line": 169,
       "match": "2.2775203e-38",
       "text": "this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 168,
+      "line": 171,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[2].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 170,
+      "line": 173,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 171,
+      "line": 174,
       "match": "7.34684e-40",
       "text": "this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 172,
+      "line": 175,
       "match": "7.34684e-40",
       "text": "this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 174,
+      "line": 177,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 176,
+      "line": 179,
       "match": "9.18341e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 177,
+      "line": 180,
       "match": "2.2775203e-38",
       "text": "this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 179,
+      "line": 182,
       "match": "7.34684e-40",
       "text": "this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 182,
+      "line": 185,
       "match": "&stack0xffffff10",
       "text": "(this_ptr_00,(SMRGLHeaderPrimitive *)&stack0xffffff10);",
       "type": "stack_ref"

@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 17,
-        "message": "'_angle' was not declared in this scope; did you mean 'angle'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 30
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
   },
   "cross_references": [
     {
@@ -73,7 +64,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_matrix.c_interpolatedCos_FUN_0050c600",
-    "signature": "int engine_matrix.c_interpolatedCos_FUN_0050c600(ushort angle)"
+    "signature": "int engine_matrix.c_interpolatedCos_FUN_0050c600(int angle)"
   },
   "function_calls": [],
   "globals": [
@@ -222,28 +213,20 @@
     "pcode_op_count": 221
   },
   "stack_frame": {
-    "frame_size": 6,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 2,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "angle",
         "offset": 4,
-        "size": 2,
-        "type": "ushort"
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000006",
-      "text": "ushort in_stack_00000006;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

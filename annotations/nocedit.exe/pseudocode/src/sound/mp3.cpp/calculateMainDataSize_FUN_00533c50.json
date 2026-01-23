@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 22,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -19,37 +12,36 @@
       {
         "category": "other",
         "column": 32,
-        "line": 18,
+        "line": 17,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 37,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 40,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 89,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 34,
-    "suspect_count": 4,
+    "pseudocode_lines": 33,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_many"
     ],
-    "total_lines": 126
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -186,25 +178,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "text": "int *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 14,
       "match": "ROUND",
       "text": "iStack_14 = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EAX",
-      "text": "if (*extraout_EAX == 0) {",
-      "type": "extra_output"
     },
     {
       "call_site_count": 2,

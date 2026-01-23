@@ -46,8 +46,8 @@ core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
     INT_02dcd794 = INT_02dcd794 +
                    ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
                          (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
-    iVar11 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((ushort)INT_02dcd794);
-    iVar12 = engine_matrix_c_interpolatedCos_FUN_0050c600((ushort)INT_02dcd794);
+    iVar11 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(INT_02dcd794);
+    iVar12 = engine_matrix_c_interpolatedCos_FUN_0050c600(INT_02dcd794);
     (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar11 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar11 * 0x482b) >> 0x20) << 0x10;

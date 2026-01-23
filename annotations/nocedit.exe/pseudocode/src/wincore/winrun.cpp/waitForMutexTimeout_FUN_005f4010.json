@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 22,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 45,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 14,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many"
     ],
-    "total_lines": 39
+    "total_lines": 38
   },
   "cross_references": [
     {
@@ -158,7 +151,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 14,
       "match": "ROUND",
       "text": "uStack_c = (DWORD)(longlong)ROUND(dVar2);",
       "type": "decompiler_intrinsic"

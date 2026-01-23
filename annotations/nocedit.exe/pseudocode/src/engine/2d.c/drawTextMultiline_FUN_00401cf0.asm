@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int y_max)
+; __cdecl void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int x_max, int y_max)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
 ; int              Stack[0x8]:4   x_start
 ; int              Stack[0xc]:4   y_start
-; int              Stack[0x10]:4   y_max
+; int              Stack[0x10]:4   x_max
+; int              Stack[0x14]:4   y_max
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -15,7 +16,7 @@
 ;   engine_2d.c_drawText_FUN_00401fd0 at 00402018
 ;
 ; Referenced Globals:
-;   undefined4 g_FontTable
+;   SFontGlyph[224] g_FontTable
 ;
 ; Called Functions:
 ;   engine_2d.c_drawCharacter_FUN_00401610

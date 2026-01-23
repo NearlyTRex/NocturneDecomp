@@ -4,32 +4,20 @@
       {
         "category": "missing_member",
         "column": 17,
-        "line": 53,
+        "line": 52,
         "message": "'CDemonLight' {aka 'struct CDemonLight'} has no member named 'field17_0x1cbc'"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 66,
+        "line": 65,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 85,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 100,
-        "message": "'ROUND' was not declared in this scope"
       },
       {
         "category": "other",
@@ -49,28 +37,27 @@
       {
         "category": "other",
         "column": 33,
-        "line": 66,
+        "line": 65,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 68,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 565,
+    "complexity_score": 520,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 8,
     "pseudocode_lines": 170,
-    "suspect_count": 37,
+    "suspect_count": 33,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "suspect_float",
       "unknown_field"
@@ -636,36 +623,22 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(int *)((int)",
-      "text": "local_60[(uint)bVar3 * -2] = *(int *)((int)&local_7c + (uint)bVar3 * -8 + 4);",
+      "text": "local_60[(uint)bVar4 * -2] = *(int *)((int)&local_7c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "text": "*(int *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 77,
       "match": "SQRT",
       "text": "local_d8.base.type = (int)SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);",
       "type": "decompiler_intrinsic"
@@ -674,22 +647,8 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "ROUND",
-      "text": "local_1c = (float)(int)ROUND(dVar4);",
+      "text": "local_1c = (float)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 94,
-      "match": "extraout_EDX",
-      "text": "lVar1 = (longlong)(extraout_EDX - extraout_EAX) * (longlong)(int)local_1c;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 94,
-      "match": "extraout_EAX",
-      "text": "lVar1 = (longlong)(extraout_EDX - extraout_EAX) * (longlong)(int)local_1c;",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

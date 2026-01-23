@@ -2,12 +2,12 @@
 // Address: 00401cf0
 // Address Range: [[00401cf0, 00401d7a]]
 // Convention: __cdecl
-// Signature: void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int y_max)
+// Signature: void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int x_max, int y_max)
 
 #include "nocturne.h"
 
 void __cdecl
-engine_2d_c_drawTextMultiline_FUN_00401cf0(char *text,int x_start,int y_start,int y_max)
+engine_2d_c_drawTextMultiline_FUN_00401cf0(char *text,int x_start,int y_start,int x_max,int y_max)
 
 {
   char cVar1;
@@ -16,7 +16,6 @@ engine_2d_c_drawTextMultiline_FUN_00401cf0(char *text,int x_start,int y_start,in
   int x_pos;
   char *pcVar3;
   int iVar4;
-  int in_stack_00000014;
   
   uVar2 = 0xffffffff;
   pcVar3 = text;
@@ -30,14 +29,13 @@ engine_2d_c_drawTextMultiline_FUN_00401cf0(char *text,int x_start,int y_start,in
   x_pos = x_start;
   if (0 < (int)(~uVar2 - 1)) {
     do {
-      if ((*text == 10) && (y_start = y_start + 0xb, x_pos = x_start, in_stack_00000014 < y_start))
-      {
+      if ((*text == 10) && (y_start = y_start + 0xb, x_pos = x_start, y_max < y_start)) {
         return;
       }
       char_code = (uint)(byte)*text;
       if ((0x1f < (byte)*text) && (char_code < 0x100)) {
         engine_2d_c_drawCharacter_FUN_00401610(char_code,x_pos,y_start);
-        x_pos = x_pos + (byte)(&g_FontTable)[(char_code - 0x20) * 0x91] + 1;
+        x_pos = x_pos + g_FontTable[char_code - 0x20].width + 1;
       }
       iVar4 = iVar4 + 1;
       text = (char *)((byte *)text + 1);

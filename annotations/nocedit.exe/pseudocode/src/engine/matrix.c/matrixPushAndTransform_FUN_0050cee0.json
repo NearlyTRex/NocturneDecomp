@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 55,
-        "message": "'_rotY' was not declared in this scope; did you mean 'rotY'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 56,
-        "message": "'_rotZ' was not declared in this scope; did you mean 'rotZ'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 57,
-        "message": "'_rotX' was not declared in this scope; did you mean 'rotX'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -31,29 +12,27 @@
       {
         "category": "other",
         "column": 25,
-        "line": 248,
+        "line": 245,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 250,
+        "line": 247,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 510,
-    "complexity_score": 279,
+    "complexity_score": 241,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 38,
-    "pseudocode_lines": 244,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 754
+    "pseudocode_lines": 241,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 751
   },
   "cross_references": [
     {
@@ -91,7 +70,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_matrix.c_matrixPushAndTransform_FUN_0050cee0",
-    "signature": "void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, int translateY, int translateZ)"
+    "signature": "void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(int rot_x, int rot_y, int rot_z, int translate_x, int translate_y, int translate_z)"
   },
   "function_calls": [
     {
@@ -468,69 +447,47 @@
       },
       {
         "is_param": true,
-        "name": "rotX",
+        "name": "rot_x",
         "offset": 4,
-        "size": 2,
-        "type": "ushort"
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "rotY",
+        "name": "rot_y",
         "offset": 8,
-        "size": 2,
-        "type": "ushort"
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "rotZ",
+        "name": "rot_z",
         "offset": 12,
-        "size": 2,
-        "type": "ushort"
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "translateX",
+        "name": "translate_x",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "translateY",
+        "name": "translate_y",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "translateZ",
+        "name": "translate_z",
         "offset": 24,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000006",
-      "text": "ushort in_stack_00000006;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000000a",
-      "text": "ushort in_stack_0000000a;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_0000000e",
-      "text": "ushort in_stack_0000000e;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

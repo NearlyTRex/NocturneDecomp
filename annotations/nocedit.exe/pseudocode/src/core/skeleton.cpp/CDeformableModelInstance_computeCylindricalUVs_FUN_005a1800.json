@@ -4,25 +4,19 @@
       {
         "category": "other",
         "column": 24,
-        "line": 64,
+        "line": 62,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 72,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
-        "column": 16,
-        "line": 77,
+        "column": 18,
+        "line": 73,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 79,
+        "line": 75,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -37,51 +31,50 @@
       {
         "category": "other",
         "column": 25,
-        "line": 33,
+        "line": 31,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 35,
+        "line": 33,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 64,
+        "line": 62,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 77,
+        "line": 73,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 79,
+        "line": 75,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 251,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 76,
-    "suspect_count": 15,
+    "pseudocode_lines": 73,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 207
+    "total_lines": 204
   },
   "cross_references": [
     {
@@ -272,101 +265,52 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EDX",
-      "text": "int *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 20,
       "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
+      "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(int *)((int)",
-      "text": "piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);",
+      "text": "piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 58,
       "match": "in_stack_00000008",
-      "text": "iVar6 = in_stack_00000008;",
+      "text": "pcVar8 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 65,
-      "match": "extraout_EAX",
-      "text": "iVar6 = extraout_EAX + (int)ROUND(dVar12);",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 63,
       "match": "ROUND",
-      "text": "iVar6 = extraout_EAX + (int)ROUND(dVar12);",
+      "text": "pcVar8 = (this_ptr->motion_controller).current_motion_name + (int)ROUND(dVar13) + -0x30;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 67,
-      "match": "extraout_ECX",
-      "text": "iVar5 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Complex pointer cast",
       "line": 68,
-      "match": "extraout_EDX",
-      "text": "piVar7 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&pSVar4->u + iVar5) = iVar6;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =",
+      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar6) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 69,
       "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c + (int)(((longlong)(piVar7[1] - iVar9) * 0x1000000) / (longlong)iVar8);",
+      "text": "in_stack_0000000c + (int)(((longlong)(piVar7[1] - iVar10) * 0x1000000) / (longlong)iVar9)",
       "type": "stack_param"
     },
     {

@@ -32,12 +32,6 @@
         "message": "cast from 'SMRGLPrimitiveQuad**' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 150,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 16,
         "line": 161,
@@ -128,6 +122,12 @@
         "category": "other",
         "column": 31,
         "line": 133,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 150,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -553,7 +553,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 143,
       "match": "ROUND",
-      "text": "local_3c = (SMRGLTextureExtended *)(int)ROUND(dVar10);",
+      "text": "local_3c = (SMRGLTextureExtended *)(int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {

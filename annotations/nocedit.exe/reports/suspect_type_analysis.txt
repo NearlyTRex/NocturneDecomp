@@ -4,29 +4,29 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    31146 ( 54.4%)
-  pointer_cast                    5785 ( 10.1%)
-  decompiler_intrinsic            4981 (  8.7%)
-  undefined_data                  2973 (  5.2%)
-  unknown_field                   1847 (  3.2%)
-  stack_ref                       1487 (  2.6%)
-  unaffected_reg                  1462 (  2.6%)
-  unnamed_param                   1435 (  2.5%)
-  extra_output                    1349 (  2.4%)
-  suspect_float                    739 (  1.3%)
-  param_count_too_few              635 (  1.1%)
+  stack_param                    30793 ( 54.8%)
+  pointer_cast                    5797 ( 10.3%)
+  decompiler_intrinsic            4990 (  8.9%)
+  undefined_data                  2969 (  5.3%)
+  unknown_field                   1856 (  3.3%)
+  unnamed_param                   1713 (  3.0%)
+  stack_ref                       1474 (  2.6%)
+  unaffected_reg                  1230 (  2.2%)
+  suspect_float                    744 (  1.3%)
+  param_count_too_few              633 (  1.1%)
   special_crt_function             626 (  1.1%)
-  unresolved_funcptr               511 (  0.9%)
+  extra_output                     576 (  1.0%)
+  unresolved_funcptr               510 (  0.9%)
   negative_offset                  413 (  0.7%)
-  format_string_mismatch           360 (  0.6%)
+  format_string_mismatch           361 (  0.6%)
   fpu_register_input               341 (  0.6%)
   nonstandard_int                  273 (  0.5%)
   warning_overlapping_globals      218 (  0.4%)
-  register_param                   200 (  0.3%)
+  register_param                   200 (  0.4%)
   warning_unreachable               99 (  0.2%)
   param_count_too_many              86 (  0.2%)
   unknown_type                      86 (  0.2%)
-  undefined_type                    50 (  0.1%)
+  undefined_type                    46 (  0.1%)
   mmx_assembly                      34 (  0.1%)
   warning_type_propagation          29 (  0.1%)
   undefined_ram                     27 (  0.0%)
@@ -47,16 +47,16 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (31146 occurrences)
+TYPE: stack_param (30793 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  17264x  in_stack_00000004
-  7002x  in_stack_00000008
-  1826x  in_stack_0000000c
+  17017x  in_stack_00000004
+  6982x  in_stack_00000008
+  1816x  in_stack_0000000c
    742x  in_stack_00000010
-   342x  in_stack_00000014
-   191x  in_stack_00000018
+   340x  in_stack_00000014
+   189x  in_stack_00000018
    146x  in_stack_0000001c
     69x  in_stack_fffeec08
     65x  in_stack_00000020
@@ -64,13 +64,13 @@ Unique patterns:
     59x  in_stack_fffeec10
     59x  in_stack_fffeec14
     58x  in_stack_fffeec18
-    39x  in_stack_ffffffe0
     38x  in_stack_fffffc58
     36x  in_stack_fffffc54
     31x  in_stack_000000b0
     29x  in_stack_ffffc8a8
     28x  in_stack_0000003c
     28x  in_stack_ffffc8ac
+    28x  in_stack_ffffc8b0
 
 Example functions:
   cockpit_pkbmpset.cpp_FUN_0054c7a0
@@ -99,21 +99,21 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
-TYPE: pointer_cast (5785 occurrences)
+TYPE: pointer_cast (5797 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2217x  (uint *)((int)
-  1239x  (int *)((int)
-   424x  (float *)((int)
+  2218x  (uint *)((int)
+  1244x  (int *)((int)
+   422x  (float *)((int)
    277x  (SRenderVertex *)((int)
    248x  (CMatrix3x4f *)((int)
    218x  (double *)((int)
-   212x  (void *)((int)
-   200x  (byte *)((int)
-   143x  (char *)((int)
+   210x  (void *)((int)
+   207x  (byte *)((int)
+   144x  (char *)((int)
     83x  (ushort *)((int)
-    54x  (short *)((int)
+    56x  (short *)((int)
     41x  (CVector3f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     23x  (CMatrix3x3f *)((int)
@@ -137,15 +137,15 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (4981 occurrences)
+TYPE: decompiler_intrinsic (4990 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1840x  ROUND
-   619x  CONCAT44
+  1860x  ROUND
+   612x  CONCAT44
    419x  SQRT
    293x  ABS
-   193x  SUB84
+   192x  SUB84
    162x  CARRY4
    150x  CONCAT11
    110x  CONCAT22
@@ -159,12 +159,12 @@ Unique patterns:
     63x  CONCAT24
     55x  CONCAT25
     53x  CONCAT41
-    52x  CONCAT31
     50x  CONCAT34
+    48x  CONCAT31
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
-    g_DashLength = (int)ROUND(dVar2);...
+    g_DashLength = (int)ROUND(dVar3);...
   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
     iVar2 = (int)ROUND(dVar3);...
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
@@ -174,9 +174,9 @@ Example functions:
   cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
     (longlong)ROUND((float10)*(longlong *)(iVar7 + -0x18 + (int)src_buffer));...
   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    local_34 = (uint)(longlong)ROUND(fVar13);...
+    local_34 = (uint)(longlong)ROUND(dVar15);...
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    local_3c = (uint)(longlong)ROUND(fVar9);...
+    local_3c = (uint)(longlong)ROUND(dVar12);...
   crt_fpemu.c_staticInit_FUN_0060be80
     cVar3 = SBORROW1(DAT_00684acd,'\x03');...
   crt_stdlib.c_i64toa_FUN_0060ad40
@@ -189,7 +189,7 @@ Example functions:
     uVar12 = SUB84(b,0);...
 
 ====================================================================================================
-TYPE: undefined_data (2973 occurrences)
+TYPE: undefined_data (2969 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -257,12 +257,12 @@ Example functions:
     *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
 
 ====================================================================================================
-TYPE: unknown_field (1847 occurrences)
+TYPE: unknown_field (1856 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   715x  ._0_4_
-   661x  ._4_4_
+   720x  ._0_4_
+   665x  ._4_4_
    124x  ._8_4_
     55x  ._12_4_
     44x  ._16_4_
@@ -301,7 +301,36 @@ Example functions:
     if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
 
 ====================================================================================================
-TYPE: stack_ref (1487 occurrences)
+TYPE: unnamed_param (1713 occurrences)
+====================================================================================================
+
+Unique patterns:
+   566x  param_5
+   495x  param_2
+   162x  param_3
+   153x  param_4
+   146x  param_1
+   140x  param_6
+    21x  param_7
+    14x  param_8
+     7x  param_10
+     4x  param_9
+     2x  param_11
+     2x  param_13
+     1x  param_12
+
+Example functions:
+  cockpit_pkbitmap.cpp_FUN_0054b930
+    (uint param_1,uint param_2,uint unaff_EBX,uint param_4,...
+  crt_time.c_gmtime_r_FUN_00607690
+    crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,uint ...
+  crt_unknown.c_FUN_0060ced8
+    (uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5...
+  crt_unknown.c_FUN_0060411c
+    (uint param_1,uint param_2,byte *unaff_EBX,uint param_4,...
+
+====================================================================================================
+TYPE: stack_ref (1474 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -317,11 +346,11 @@ Unique patterns:
     20x  &stack0xffffffe0
     20x  &stack0xffffffd8
     19x  &stack0xfffffa18
-    18x  &stack0xffffff98
     18x  &stack0xffffedf8
     17x  &stack0xffffffec
     17x  &stack0xfffffed0
     16x  &stack0xfffffff4
+    16x  &stack0xffffff98
     16x  &stack0xfffffbb8
     16x  &stack0xffffe138
     15x  &stack0xfffffaa8
@@ -357,14 +386,14 @@ Example functions:
     puVar6 = &stack0xfffffff0;...
 
 ====================================================================================================
-TYPE: unaffected_reg (1462 occurrences)
+TYPE: unaffected_reg (1230 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   508x  unaff_ESI
-   445x  unaff_EBX
-   295x  unaff_EDI
-   214x  unaff_EBP
+   436x  unaff_EBX
+   366x  unaff_ESI
+   220x  unaff_EDI
+   208x  unaff_EBP
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
@@ -397,78 +426,7 @@ Example functions:
     int unaff_EBP;...
 
 ====================================================================================================
-TYPE: unnamed_param (1435 occurrences)
-====================================================================================================
-
-Unique patterns:
-   491x  param_2
-   312x  param_5
-   161x  param_3
-   149x  param_4
-   146x  param_1
-   125x  param_6
-    21x  param_7
-    14x  param_8
-     7x  param_10
-     4x  param_9
-     2x  param_11
-     2x  param_13
-     1x  param_12
-
-Example functions:
-  cockpit_pkbitmap.cpp_FUN_0054b930
-    (uint param_1,uint param_2,uint unaff_EBX,uint param_4,...
-  crt_time.c_gmtime_r_FUN_00607690
-    crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,uint ...
-  crt_unknown.c_FUN_0060ced8
-    (uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5...
-  crt_unknown.c_FUN_0060411c
-    (uint param_1,uint param_2,byte *unaff_EBX,uint param_4,...
-
-====================================================================================================
-TYPE: extra_output (1349 occurrences)
-====================================================================================================
-
-Unique patterns:
-   386x  extraout_EAX
-   194x  extraout_EDX
-   124x  extraout_EAX_00
-    89x  extraout_ECX
-    87x  extraout_EBX
-    56x  extraout_ECX_00
-    54x  extraout_EAX_01
-    40x  extraout_EDX_00
-    36x  extraout_var
-    28x  extraout_ST1
-    26x  extraout_EAX_02
-    19x  extraout_EAX_03
-    18x  extraout_EDX_01
-    17x  extraout_EAX_04
-    13x  extraout_EBX_00
-    12x  extraout_ECX_01
-    12x  extraout_EDX_02
-     9x  extraout_EAX_05
-     9x  extraout_EAX_06
-     8x  extraout_var_00
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
-    float extraout_EAX;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
-    int extraout_EDX;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
-    int extraout_ECX;...
-  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    int extraout_EAX;...
-  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    uint extraout_EAX;...
-  crt_process.c_spawnvp_FUN_0060f39c
-    char *extraout_EAX;...
-  crt_stdlib.c_qsort_FUN_005fdf38
-    void *extraout_EAX;...
-
-====================================================================================================
-TYPE: suspect_float (739 occurrences)
+TYPE: suspect_float (744 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -480,13 +438,13 @@ Unique patterns:
     19x  4.2039e-45
     14x  5.60519e-45
     12x  1.14794e-41
-     9x  1.83671e-40
+    10x  1.83671e-40
      8x  9.18355e-41
      8x  2.86846e-42
      8x  1.1754944e-38
+     8x  2.3326216e-38
      8x  2.29589e-41
      8x  4.59163e-41
-     7x  2.3326216e-38
      6x  2.341805e-38
      6x  2.3509887e-38
      6x  1.12104e-44
@@ -497,7 +455,7 @@ Example functions:
   crt_stdio.c_scanf_float_FUN_00605178
     local_20 = 1.4013e-44;...
   engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    fVar20 = (float10)uStack_54 * (float10)7.418788e-39;...
+    fVar19 = (float10)uStack_54 * (float10)7.418788e-39;...
   engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
     g_QuadVertex0.fog = 9.18341e-41;...
   engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
@@ -506,11 +464,11 @@ Example functions:
     fVar3 = 9.18355e-41;...
   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
     fVar3 = 3.67342e-40;...
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    local_1c = 1.4013e-45;...
+  engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+    CStack_18.x = 6.68261e-39;...
 
 ====================================================================================================
-TYPE: param_count_too_few (635 occurrences)
+TYPE: param_count_too_few (633 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -526,12 +484,12 @@ Unique patterns:
     15x  declared:2 vs estimated:3
     15x  declared:0 vs estimated:6
     14x  declared:1 vs estimated:4
-    10x  declared:5 vs estimated:6
+     9x  declared:5 vs estimated:6
      9x  declared:2 vs estimated:6
      8x  declared:0 vs estimated:7
      8x  declared:0 vs estimated:9
-     7x  declared:4 vs estimated:5
      7x  declared:2 vs estimated:5
+     6x  declared:4 vs estimated:5
      6x  declared:3 vs estimated:5
      6x  declared:2 vs estimated:4
 
@@ -667,11 +625,63 @@ Example functions:
     CRT function (runtime support) at 00609afc...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (511 occurrences)
+TYPE: extra_output (576 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   478x  code *
+   227x  extraout_EAX
+    87x  extraout_EBX
+    67x  extraout_EAX_00
+    34x  extraout_var
+    28x  extraout_ST1
+    22x  extraout_EAX_01
+    14x  extraout_EAX_02
+    13x  extraout_EBX_00
+    11x  extraout_EDX
+    11x  extraout_EDI
+     8x  extraout_ST2
+     8x  extraout_EAX_03
+     8x  extraout_EAX_04
+     6x  extraout_AL
+     6x  extraout_ST3
+     6x  extraout_var_00
+     6x  extraout_EBX_01
+     2x  extraout_ST0
+     2x  extraout_ESI
+     2x  extraout_ST1_00
+
+Example functions:
+  crt_process.c_spawnvp_FUN_0060f39c
+    char *extraout_EAX;...
+  crt_stdlib.c_qsort_FUN_005fdf38
+    void *extraout_EAX;...
+  crt_fstream.cpp_ofstream_constructor_FUN_005ff710
+    int extraout_EAX;...
+  crt_fstream.cpp_ifstream_constructor_FUN_005ff664
+    int extraout_EAX;...
+  crt_memory.c_OptimizedMemFill_FUN_00603b00
+    byte *extraout_EAX;...
+  crt_math.c_asin_FUN_00600b94
+    char extraout_AL;...
+  crt_math.c_acos_FUN_00600162
+    char extraout_AL;...
+  crt_math.c_pow_FUN_005ffd76
+    char extraout_AL;...
+  crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388
+    BOOL extraout_EAX;...
+  crt_time.c_time_with_rounding_FUN_006001f0
+    int extraout_EAX;...
+  crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0
+    ushort extraout_var;...
+  crt_unknown.c_FUN_0060af5d
+    int extraout_EDX;...
+
+====================================================================================================
+TYPE: unresolved_funcptr (510 occurrences)
+====================================================================================================
+
+Unique patterns:
+   477x  code *
     33x  code
 
 Example functions:
@@ -771,7 +781,7 @@ Example functions:
     ((istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,unaff_...
 
 ====================================================================================================
-TYPE: format_string_mismatch (360 occurrences)
+TYPE: format_string_mismatch (361 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1174,21 +1184,20 @@ Example functions:
     unkbyte10 in_ST0;...
 
 ====================================================================================================
-TYPE: undefined_type (50 occurrences)
+TYPE: undefined_type (46 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    13x  undefined3 extraout_var
+    12x  undefined3 extraout_var
      7x  undefined6 uStack00000020
      7x  undefined6 uStack00000050
      7x  undefined6 uStack0000000c
-     4x  undefined3 extraout_var_00
+     3x  undefined3 extraout_var_00
      2x  undefined6 uVar7
-     2x  undefined3 extraout_var_01
      1x  undefined3 in_stack_00000019
      1x  undefined3 in_stack_00000005
      1x  undefined3 in_stack_0000000d
-     1x  undefined3 extraout_var_02
+     1x  undefined3 extraout_var_01
      1x  undefined3 uVar3
      1x  undefined5 uVar8
      1x  undefined7 uVar5
@@ -1245,9 +1254,13 @@ Example functions:
     undefined6 uStack0000000c;...
   engine_dosio.c_reopenFileStream_FUN_00481b50
     undefined3 in_stack_0000000d;...
-  engine_2d.c_clipAndDrawLine_FUN_00402ca0
-    undefined3 extraout_var;...
   core_cloth.cpp_FUN_0043b7e0
+    undefined3 extraout_var;...
+  core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
+    undefined3 extraout_var;...
+  core_cloth.cpp_LockVerticesMaybe_FUN_0043d590
+    undefined3 extraout_var;...
+  core_setedit.cpp_CDemonSet_FUN_00583170
     undefined3 extraout_var;...
 
 ====================================================================================================

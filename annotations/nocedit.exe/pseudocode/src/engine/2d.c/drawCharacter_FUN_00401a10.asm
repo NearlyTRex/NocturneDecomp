@@ -20,7 +20,7 @@
 ;   engine_2d.c_drawTextWrappedColor_FUN_00401eb0 at 00401f06
 ;
 ; Referenced Globals:
-;   undefined4 g_FontTable
+;   SFontGlyph[224] g_FontTable
 ;   undefined4 DAT_00666041
 ;   undefined4 DAT_00666042
 ;   undefined4 g_FontTable[0].bitmap[0][2]

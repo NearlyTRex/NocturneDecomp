@@ -11,32 +11,36 @@ core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
           (CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
 
 {
+  float fVar1;
+  float fVar2;
+  float fVar3;
   uint *extraout_EBX;
-  byte bVar1;
-  float10 fVar2;
-  double dVar3;
+  byte bVar4;
+  double dVar5;
   double value;
   uint auStackY_1018 [1017];
-  uint uVar4;
+  uint uVar6;
   
-  bVar1 = 0;
-  dVar3 = crt_math_c_floor_FUN_005feb90
+  bVar4 = 0;
+  dVar5 = crt_math_c_floor_FUN_005feb90
                     ((double)((world_position->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x
                              ));
-  fVar2 = ((float10)world_position->y - (float10)(this_ptr->bbox_min).y) /
-          (float10)(this_ptr->cell_size).y;
-  crt_math_c_round_FUN_005fe6b0(dVar3);
-  dVar3 = crt_math_c_floor_FUN_005feb90((double)fVar2);
-  fVar2 = ((float10)world_position->z - (float10)(this_ptr->bbox_min).z) /
-          (float10)(this_ptr->cell_size).z;
-  crt_math_c_round_FUN_005fe6b0(dVar3);
-  dVar3 = (double)fVar2;
-  value = crt_math_c_floor_FUN_005feb90(dVar3);
-  uVar4 = (uint)((ulonglong)dVar3 >> 0x20);
+  fVar1 = world_position->y;
+  fVar2 = (this_ptr->bbox_min).y;
+  fVar3 = (this_ptr->cell_size).y;
+  crt_math_c_round_FUN_005fe6b0(dVar5);
+  dVar5 = crt_math_c_floor_FUN_005feb90((double)((fVar1 - fVar2) / fVar3));
+  fVar1 = world_position->z;
+  fVar2 = (this_ptr->bbox_min).z;
+  fVar3 = (this_ptr->cell_size).z;
+  crt_math_c_round_FUN_005fe6b0(dVar5);
+  dVar5 = (double)((fVar1 - fVar2) / fVar3);
+  value = crt_math_c_floor_FUN_005feb90(dVar5);
+  uVar6 = (uint)((ulonglong)dVar5 >> 0x20);
   crt_math_c_round_FUN_005fe6b0(value);
-  *extraout_EBX = uVar4;
-  extraout_EBX[(uint)bVar1 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar1 * -8);
-  (extraout_EBX + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       *(uint *)(&stack0xffffffd8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+  *extraout_EBX = uVar6;
+  extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8);
+  (extraout_EBX + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
+       *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   return;
 }

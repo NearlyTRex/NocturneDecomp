@@ -15,10 +15,9 @@ sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
   bool bVar1;
   bool bVar2;
   int iVar3;
-  int extraout_EAX;
-  SIZE_T SVar4;
+  int iVar4;
   SIZE_T SVar5;
-  int iVar6;
+  SIZE_T SVar6;
   SIZE_T size;
   ulong count;
   uint uVar7;
@@ -84,15 +83,16 @@ sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
         iVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
         iVar3 = (int)(0x3c00 / (longlong)iVar3);
       }
+      iVar4 = this_ptr->streaming_buffer_size + -1;
       dVar12 = crt_math_c_round_FUN_005fe6b0
                          ((double)((float)(this_ptr->sample_info).sample_rate * (float)this_ptr));
       iVar13 = (int)ROUND(dVar12);
-      if (extraout_EAX < iVar13) {
-        iVar13 = extraout_EAX;
+      if (iVar4 < (int)ROUND(dVar12)) {
+        iVar13 = iVar4;
       }
-      SVar4 = iVar13 - iVar15;
+      SVar5 = iVar13 - iVar15;
       while( true ) {
-        if ((int)SVar4 < 1) {
+        if ((int)SVar5 < 1) {
           return 1;
         }
         if ((this_ptr->stream_write_position < 0) ||
@@ -104,8 +104,8 @@ sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
                      this_ptr->streaming_buffer_size,iVar13,uVar14,iVar15,SVar8,iVar3);
         }
         lock_length = this_ptr->streaming_buffer_size - this_ptr->stream_write_position;
-        if ((int)SVar4 < (int)lock_length) {
-          lock_length = SVar4;
+        if ((int)SVar5 < (int)lock_length) {
+          lock_length = SVar5;
         }
         if ((int)SVar8 < (int)lock_length) {
           lock_length = SVar8;
@@ -114,9 +114,9 @@ sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730
         bVar1 = false;
         if (-1 < iVar3) {
           if (this_ptr->stream_read_position < iVar3) {
-            SVar5 = iVar3 - this_ptr->stream_read_position;
-            if ((int)SVar5 < (int)lock_length) {
-              lock_length = SVar5;
+            SVar6 = iVar3 - this_ptr->stream_read_position;
+            if ((int)SVar6 < (int)lock_length) {
+              lock_length = SVar6;
             }
           }
           else {
@@ -165,9 +165,9 @@ LAB_005a6adf:
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't stream unless we have mp3 decoder or open wav file!");
           }
           file = this_ptr->file_handle;
-          SVar5 = lock_length;
+          SVar6 = lock_length;
           size = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
-          local_20 = crt_stdio_c_fread_FUN_005fd990(pcVar9,size,SVar5,file);
+          local_20 = crt_stdio_c_fread_FUN_005fd990(pcVar9,size,SVar6,file);
           if ((this_ptr->file_handle->_flag & 0x20) != 0) {
             sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(this_ptr);
             pcVar9 = "Error reading %s while streaming\n";
@@ -188,14 +188,14 @@ LAB_005a6adf:
             pcVar9 = "Error locking %s while streaming\n";
             goto LAB_005a69da;
           }
-          iVar6 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
+          iVar4 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
           pcVar10 = g_SfxStreamReadBuffer;
-          for (uVar7 = local_20 * iVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+          for (uVar7 = local_20 * iVar4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
             *(uint *)pcVar9 = *(uint *)pcVar10;
             pcVar10 = pcVar10 + ((uint)bVar11 * -2 + 1) * 4;
             pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
           }
-          for (uVar7 = local_20 * iVar6 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+          for (uVar7 = local_20 * iVar4 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
             *pcVar9 = *pcVar10;
             pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
             pcVar9 = pcVar9 + (uint)bVar11 * -2 + 1;
@@ -212,11 +212,11 @@ LAB_005a6b5d:
         if (lock_length != local_20) {
           (this_ptr->sample_info).sample_count = this_ptr->stream_read_position + local_20;
         }
-        SVar4 = SVar4 - local_20;
-        iVar6 = this_ptr->stream_write_position + local_20;
+        SVar5 = SVar5 - local_20;
+        iVar4 = this_ptr->stream_write_position + local_20;
         this_ptr->stream_read_position = this_ptr->stream_read_position + local_20;
-        this_ptr->stream_write_position = iVar6;
-        if (this_ptr->streaming_buffer_size <= iVar6) {
+        this_ptr->stream_write_position = iVar4;
+        if (this_ptr->streaming_buffer_size <= iVar4) {
           this_ptr->stream_write_position = 0;
         }
       }

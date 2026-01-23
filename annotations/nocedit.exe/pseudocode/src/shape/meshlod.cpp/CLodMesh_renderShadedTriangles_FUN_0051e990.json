@@ -27,27 +27,21 @@
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 30,
         "line": 48,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 50,
+        "line": 49,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 53,
+        "line": 52,
         "message": "cast from 'CVector3f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 57,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -84,37 +78,37 @@
       },
       {
         "category": "other",
-        "column": 29,
+        "column": 20,
         "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 50,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 53,
+        "line": 52,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 178,
+    "complexity_score": 186,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 68,
-    "suspect_count": 10,
+    "pseudocode_lines": 66,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 195
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -320,70 +314,77 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x14) == 0) {",
+      "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(uint *)((int)",
-      "text": "local_48 = *(uint *)((int)(pCVar1->uv_coords + -2) + iVar3 + 4);",
+      "text": "local_48 = *(uint *)((int)(pCVar2->uv_coords + -2) + iVar4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(uint *)((int)",
-      "text": "local_3c = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3);",
+      "text": "local_3c = *(uint *)((int)(pCVar2->uv_coords + -1) + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
-      "text": "local_30 = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3 + 4);",
+      "text": "local_30 = *(uint *)((int)(pCVar2->uv_coords + -1) + iVar4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(float *)((int)",
-      "text": "fVar5 = (float10)*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) * fVar4 +",
+      "text": "fVar1 = *(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(float *)((int)",
-      "text": "fVar6 = (float10)*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) * fVar4 +",
+      "text": "fVar6 = (float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x10) * fVar5 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(float *)((int)",
-      "text": "((double)((float10)*(float *)((int)pCVar1->edge_perpendiculars +",
+      "text": "((double)((float10)*(float *)((int)pCVar2->edge_perpendiculars +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "ROUND",
+      "text": "iStack_20 = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "ROUND",
-      "text": "iStack_20 = (int)ROUND(fVar4);",
+      "text": "iStack_1c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 52,
       "match": "ROUND",
-      "text": "iStack_1c = (int)ROUND(dVar7);",
+      "text": "iStack_20 = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "ROUND",
-      "text": "iStack_20 = (int)ROUND(dVar7);",
+      "text": "(g_CDemonRendererPtr2,iStack_20,(int)ROUND(dVar8),blue_component);",
       "type": "decompiler_intrinsic"
     }
   ]

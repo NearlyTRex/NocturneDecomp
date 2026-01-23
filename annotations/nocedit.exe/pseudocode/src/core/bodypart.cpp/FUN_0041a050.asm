@@ -492,7 +492,7 @@ section .text
     LEA EAX,[EDI + 0xce4]               ; 0041a573
     PUSH EAX                            ; 0041a579
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 0041a57a
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EDI + 0xd18]               ; 0041a57f
     ADD ESP,0xc                         ; 0041a585
     CMP EDX,EAX                         ; 0041a588

@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 29,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -19,62 +12,61 @@
       {
         "category": "other",
         "column": 12,
-        "line": 34,
+        "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 37,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 37,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 41,
+        "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 44,
+        "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 44,
+        "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 49,
+        "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 215,
+    "complexity_score": 169,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
-    "pseudocode_lines": 45,
-    "suspect_count": 15,
+    "pseudocode_lines": 44,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 150
+    "total_lines": 149
   },
   "cross_references": [
     {
@@ -257,13 +249,6 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
@@ -279,77 +264,56 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "((double)(in_stack_00000008 * (float)65535 *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "(2.0f - in_stack_00000008)));",
       "type": "stack_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EAX",
-      "text": "(uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x10 |",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 21,
       "match": "ROUND",
-      "text": "(uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x10 |",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EAX",
-      "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x20) <<",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "ROUND",
-      "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x20) <<",
+      "text": "lVar2 = (longlong)iVar3 * (longlong)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004 + 0x5c)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000004",
-      "text": "iVar1 = *(int *)(iVar2 + *(int *)(in_stack_00000004 + 0x60));",
+      "text": "iVar1 = *(int *)(iVar4 + *(int *)(in_stack_00000004 + 0x60));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 33,
       "match": "in_stack_00000004",
       "text": "(SMRGLTextureBasic *)(iVar1 * 0x48 + in_stack_00000004 + 0x68));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000004",
-      "text": "polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar2);",
+      "text": "polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x5c));",
       "type": "stack_param"

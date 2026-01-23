@@ -2,81 +2,57 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 65,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 93,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 99,
-        "message": "'ABS' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 44,
-        "line": 122,
+        "line": 121,
         "message": "request for member '_4_4_' in 'uStack_9c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 122,
-        "message": "'CONCAT44' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 124,
+        "line": 123,
         "message": "request for member '_4_4_' in 'uStack_9c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 129,
+        "line": 128,
         "message": "request for member '_4_4_' in 'uStack_9c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 134,
+        "line": 133,
         "message": "request for member '_4_4_' in 'local_94', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 136,
+        "line": 135,
         "message": "request for member '_4_4_' in 'local_8c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 139,
+        "line": 138,
         "message": "request for member '_4_4_' in 'local_94', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 141,
+        "line": 140,
         "message": "request for member '_4_4_' in 'local_8c', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 144,
+        "line": 143,
         "message": "request for member '_4_4_' in 'local_94', which is of non-class type 'ulonglong' {aka 'long long unsigned int'}"
       },
       {
         "category": "undeclared_identifier",
         "column": 81,
-        "line": 166,
+        "line": 165,
         "message": "'stack0xffffff3c' was not declared in this scope"
       }
     ],
@@ -92,21 +68,20 @@
   },
   "complexity": {
     "assembly_lines": 402,
-    "complexity_score": 573,
+    "complexity_score": 527,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 183,
-    "suspect_count": 36,
+    "pseudocode_lines": 182,
+    "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "stack_ref",
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 585
+    "total_lines": 584
   },
   "cross_references": [
     {
@@ -487,36 +462,29 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "float *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
-      "match": "ROUND",
-      "text": "local_38 = (int)ROUND(fVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
-      "match": "ROUND",
-      "text": "local_30 = (int)ROUND(dVar11);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 56,
       "match": "ROUND",
       "text": "local_38 = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 57,
+      "match": "ROUND",
+      "text": "local_30 = (int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "text": "local_38 = (int)ROUND(dVar11);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
       "match": "ROUND",
       "text": "local_70 = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
@@ -536,13 +504,6 @@
       "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 80,
-      "match": "extraout_EAX",
-      "text": "fVar1 = *extraout_EAX - start_pos->x;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "ROUND",
@@ -550,183 +511,169 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 82,
-      "match": "extraout_EAX",
-      "text": "fVar2 = extraout_EAX[1] - start_pos->y;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 83,
-      "match": "extraout_EAX",
-      "text": "fVar3 = extraout_EAX[2] - start_pos->z;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "SQRT",
-      "text": "fVar13 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);",
+      "text": "fVar14 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 91,
+      "match": "ABS",
+      "text": "fVar8 = ABS((float10)fVar2) * fVar7;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "ABS",
-      "text": "fVar9 = ABS((float10)fVar2) * fVar7;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
-      "match": "ABS",
-      "text": "fVar10 = ABS((float10)fVar3) * fVar7;",
+      "text": "fVar9 = ABS((float10)fVar3) * fVar7;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 94,
+      "line": 93,
       "match": "6.739757e-39",
       "text": "CStack_d0.z = 6.739757e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 94,
       "match": "ABS",
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)(ABS(fVar8) * fVar7));",
+      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)(ABS((float10)fVar1) * fVar7));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 95,
       "match": "ROUND",
       "text": "local_60 = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 98,
+      "line": 97,
       "match": "6.739775e-39",
       "text": "CStack_d0.y = 6.739775e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 101,
+      "line": 100,
       "match": "6.739785e-39",
       "text": "CStack_d0.x = 6.739785e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 102,
       "match": "ROUND",
-      "text": "local_6c = (int)ROUND(fVar9);",
+      "text": "local_6c = (int)ROUND(fVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 103,
       "match": "ROUND",
       "text": "local_64 = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 115,
+      "line": 114,
       "match": "._4_4_",
       "text": "uStack_9c = (double)CONCAT44(uStack_9c._4_4_,fVar1);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 114,
       "match": "CONCAT44",
       "text": "uStack_9c = (double)CONCAT44(uStack_9c._4_4_,fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 117,
+      "line": 116,
       "match": "._4_4_",
       "text": "iVar5 = local_60 - uStack_9c._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 122,
+      "line": 121,
       "match": "._4_4_",
       "text": "iVar5 = uStack_9c._4_4_ - local_60;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 127,
+      "line": 126,
       "match": "._4_4_",
       "text": "iVar6 = (int)local_58 - local_94._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 129,
+      "line": 128,
       "match": "._4_4_",
       "text": "fVar2 = local_8c._4_4_ - (float)(int)local_58;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 132,
+      "line": 131,
       "match": "._4_4_",
       "text": "iVar6 = local_94._4_4_ - (int)local_58;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 134,
+      "line": 133,
       "match": "._4_4_",
       "text": "fVar2 = (float)((int)local_58 + 1) - local_8c._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 136,
       "match": "._4_4_",
       "text": "local_94 = (double)CONCAT44(local_94._4_4_,fVar2);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 136,
       "match": "CONCAT44",
       "text": "local_94 = (double)CONCAT44(local_94._4_4_,fVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 145,
       "match": "ROUND",
       "text": "local_58 = (float)(int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 147,
       "match": "ROUND",
       "text": "local_58 = (float)(int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 151,
       "match": "ROUND",
-      "text": "fVar13 = (float)(int)ROUND(dVar11);",
+      "text": "fVar14 = (float)(int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 159,
+      "line": 158,
       "match": "&stack0xffffff3c",
       "text": "(this_ptr_00,start_pos,&CStack_d0,(CVector3f *)&stack0xffffff3c,",
       "type": "stack_ref"

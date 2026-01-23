@@ -257,7 +257,7 @@
           "type":"int"
         },
         {
-          "name":"y_max",
+          "name":"x_max",
           "storage":{
             "offset":16,
             "size":4,
@@ -266,6 +266,22 @@
               {
                 "addr":"Stack[0x10]",
                 "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"y_max",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
                 "size":4
               }
             ]
@@ -291,7 +307,7 @@
     "vars":{
       "params":[
         {
-          "name":"text",
+          "name":"x_pos",
           "storage":{
             "offset":4,
             "size":4,
@@ -304,7 +320,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
           "name":"y_pos",
@@ -323,7 +339,7 @@
           "type":"int"
         },
         {
-          "name":"right_x",
+          "name":"text",
           "storage":{
             "offset":12,
             "size":4,
@@ -336,7 +352,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -25224,7 +25240,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"int"
         },
         {
           "name":"local_20",
@@ -25354,7 +25370,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"CVector3i*"
         },
         {
           "name":"vertex_count",

@@ -15,7 +15,7 @@
 ;   engine_2d.c_drawStringHighlighted_FUN_004020e0 at 00402117
 ;
 ; Referenced Globals:
-;   undefined4 g_FontTable
+;   SFontGlyph[224] g_FontTable
 ;   undefined4 DAT_00666041
 ;   undefined4 DAT_00666042
 ;   undefined4 g_FontTable[0].bitmap[0][2]

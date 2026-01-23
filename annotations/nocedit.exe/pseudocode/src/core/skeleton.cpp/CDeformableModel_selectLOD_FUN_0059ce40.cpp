@@ -13,28 +13,29 @@ core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40
 {
   int iVar1;
   float fVar2;
-  int extraout_ECX;
-  int *piVar3;
-  double dVar4;
+  int iVar3;
+  int *piVar4;
+  double dVar5;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
     iVar1 = 0;
     if (1 < this_ptr->num_lods) {
       fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(bounding_box);
-      dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
-      iVar1 = extraout_ECX + -1;
-      if (0 < iVar1) {
-        piVar3 = &this_ptr->lod_info[extraout_ECX + -2].shadow_only_flag;
+      iVar1 = this_ptr->num_lods;
+      dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+      iVar3 = iVar1 + -1;
+      if (0 < iVar3) {
+        piVar4 = &this_ptr->lod_info[iVar1 + -2].shadow_only_flag;
         do {
-          if ((piVar3[2] == 0) && ((int)ROUND(dVar4) < piVar3[1])) {
-            return iVar1;
+          if ((piVar4[2] == 0) && ((int)ROUND(dVar5) < piVar4[1])) {
+            return iVar3;
           }
-          iVar1 = iVar1 + -1;
-          piVar3 = piVar3 + -2;
-        } while (0 < iVar1);
+          iVar3 = iVar3 + -1;
+          piVar4 = piVar4 + -2;
+        } while (0 < iVar3);
       }
-      return iVar1;
+      return iVar3;
     }
   }
   else {

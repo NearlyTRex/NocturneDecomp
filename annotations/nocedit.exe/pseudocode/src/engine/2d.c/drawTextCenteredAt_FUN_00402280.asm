@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextCenteredAt_FUN_00402280(char * text, int center_x, int y_pos)
+; __cdecl void engine_2d.c_drawTextCenteredAt_FUN_00402280(char * text, int x_pos, int y_pos)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   center_x
+; int              Stack[0x8]:4   x_pos
 ; int              Stack[0xc]:4   y_pos
 ;
 ; XREF[2]:

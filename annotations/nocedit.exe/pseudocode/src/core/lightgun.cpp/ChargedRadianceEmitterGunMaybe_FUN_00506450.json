@@ -9,12 +9,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
-        "line": 39,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 14,
         "line": 41,
         "message": "'_DAT_00660a4c' was not declared in this scope; did you mean 'DAT_0066ea4c'?"
@@ -56,15 +50,14 @@
   },
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 458,
+    "complexity_score": 443,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 18,
     "pseudocode_lines": 78,
-    "suspect_count": 35,
+    "suspect_count": 34,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_param",
       "unaffected_reg",
       "unnamed_param",
@@ -388,80 +381,80 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 14,
       "match": "unaff_ESI",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "CWeapon *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000008",
       "text": "fVar1 = (0x41F00000 / fVar1) * in_stack_00000008 +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = 0x41F00000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / 0x41F00000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = in_stack_00000004->weapon_state;",
       "type": "stack_param"
     },
     {
@@ -477,13 +470,6 @@
       "match": "ROUND",
       "text": "in_stack_00000004->ammo_count = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 33,
-      "match": "extraout_EDX",
-      "text": "if (extraout_EDX == 2) {",
-      "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",

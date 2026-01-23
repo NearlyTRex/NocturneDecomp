@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 64,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -452,28 +445,28 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 56,
       "match": "ROUND",
-      "text": "g_InverseMatrix.m[0].x = (int)ROUND(dVar21);",
+      "text": "g_InverseMatrix.m[0].x = (int)ROUND(dVar20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 58,
+      "line": 57,
       "match": "7.418788e-39",
-      "text": "fVar20 = (float10)uStack_54 * (float10)7.418788e-39;",
+      "text": "fVar19 = (float10)uStack_54 * (float10)7.418788e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 59,
       "match": "ROUND",
-      "text": "g_InverseMatrix.m[0].y = (int)ROUND(dVar21);",
+      "text": "g_InverseMatrix.m[0].y = (int)ROUND(dVar20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 62,
+      "line": 61,
       "match": "7.418816e-39",
       "text": "(float10)7.418816e-39;",
       "type": "suspect_float"
@@ -496,28 +489,28 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "ROUND",
-      "text": "g_InverseMatrix.m[1].y = (int)ROUND(fVar17);",
+      "text": "g_InverseMatrix.m[1].y = (int)ROUND(dVar20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "ROUND",
-      "text": "g_InverseMatrix.m[1].z = (int)ROUND(fVar18);",
+      "text": "g_InverseMatrix.m[1].z = (int)ROUND(fVar17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 80,
       "match": "ROUND",
-      "text": "g_InverseMatrix.m[2].x = (int)ROUND(fVar19);",
+      "text": "g_InverseMatrix.m[2].x = (int)ROUND(fVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "ROUND",
-      "text": "g_InverseMatrix.m[2].y = (int)ROUND(fVar20);",
+      "text": "g_InverseMatrix.m[2].y = (int)ROUND(fVar19);",
       "type": "decompiler_intrinsic"
     },
     {

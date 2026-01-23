@@ -29,12 +29,12 @@ core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330
   float fVar5;
   float fVar6;
   float fVar7;
-  int iVar8;
-  CDemonCube *pCVar9;
-  float fVar10;
-  int iVar11;
-  float10 fVar12;
-  float10 fVar13;
+  float fVar8;
+  float fVar9;
+  int iVar10;
+  CDemonCube *pCVar11;
+  float fVar12;
+  int iVar13;
   float10 fVar14;
   float10 fVar15;
   float10 fVar16;
@@ -42,6 +42,8 @@ core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330
   float10 fVar18;
   double dVar19;
   double dVar20;
+  double dVar21;
+  double dVar22;
   int iStack_74;
   float local_6c;
   int local_68;
@@ -52,78 +54,76 @@ core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330
   float local_50;
   float local_4c;
   
-  fVar12 = (float10)0.125f;
-  fVar14 = (float10)1 / ((float10)(this_ptr->cell_size).x * fVar12);
+  fVar14 = (float10)0.125f;
+  fVar15 = (float10)1 / ((float10)(this_ptr->cell_size).x * fVar14);
   fVar1 = start_position->y;
-  fVar10 = (this_ptr->bbox_min).y;
-  fVar15 = (float10)1 / ((float10)(this_ptr->cell_size).y * fVar12);
+  fVar12 = (this_ptr->bbox_min).y;
+  fVar16 = (float10)1 / ((float10)(this_ptr->cell_size).y * fVar14);
   fVar2 = start_position->z;
   fVar3 = (this_ptr->bbox_min).z;
-  fVar18 = (float10)1 / ((float10)(this_ptr->cell_size).z * fVar12);
-  local_60 = (float)(((float10)start_position->x - (float10)(this_ptr->bbox_min).x) * fVar14);
-  fVar16 = fVar15 * ((float10)end_position->y - (float10)(this_ptr->bbox_min).y);
-  fVar4 = end_position->x;
-  fVar5 = start_position->x;
-  fVar17 = ((float10)end_position->z - (float10)(this_ptr->bbox_min).z) * fVar18;
-  fVar6 = end_position->z;
-  fVar7 = start_position->z;
-  iVar11 = 1;
+  fVar18 = (float10)1 / ((float10)(this_ptr->cell_size).z * fVar14);
+  local_60 = (float)(((float10)start_position->x - (float10)(this_ptr->bbox_min).x) * fVar15);
+  fVar17 = fVar16 * ((float10)end_position->y - (float10)(this_ptr->bbox_min).y);
+  fVar4 = end_position->z;
+  fVar5 = end_position->x;
+  fVar6 = start_position->x;
+  fVar7 = (this_ptr->bbox_min).z;
+  fVar8 = end_position->z;
+  fVar9 = start_position->z;
+  iVar13 = 1;
   dVar19 = crt_math_c_round_FUN_005fe6b0
-                     ((double)(((float10)end_position->x - (float10)(this_ptr->bbox_min).x) * fVar14
+                     ((double)(((float10)end_position->x - (float10)(this_ptr->bbox_min).x) * fVar15
                               ));
-  fVar12 = (float10)dVar19;
-  dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar16);
   fVar14 = (float10)dVar19;
   dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
-  fVar17 = (float10)local_5c;
-  fVar16 = (float10)local_58;
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)local_6c);
-  fVar13 = (float10)dVar20;
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
-  fVar17 = (float10)dVar20;
-  dVar20 = crt_math_c_round_FUN_005fe6b0((double)fVar16);
-  if ((((float)(int)ROUND(fVar13) == fVar6 - fVar7) && ((float)(int)ROUND(fVar17) == fVar4 - fVar5))
-     && (iVar8 = local_54, fVar1 = (float)(((float10)fVar1 - (float10)fVar10) * fVar15),
-        fVar10 = (float)(((float10)fVar2 - (float10)fVar3) * fVar18),
-        (int)ROUND(dVar20) == (int)ROUND(fVar12))) {
+  dVar20 = crt_math_c_round_FUN_005fe6b0((double)(((float10)fVar4 - (float10)fVar7) * fVar18));
+  fVar15 = (float10)local_58;
+  dVar21 = crt_math_c_round_FUN_005fe6b0((double)local_6c);
+  dVar22 = crt_math_c_round_FUN_005fe6b0((double)local_5c);
+  fVar17 = (float10)dVar22;
+  dVar22 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
+  if ((((float)(int)ROUND(dVar21) == fVar8 - fVar9) && ((float)(int)ROUND(fVar17) == fVar5 - fVar6))
+     && (iVar10 = local_54, fVar1 = (float)(((float10)fVar1 - (float10)fVar12) * fVar16),
+        fVar12 = (float)(((float10)fVar2 - (float10)fVar3) * fVar18),
+        (int)ROUND(dVar22) == (int)ROUND(fVar14))) {
     while( true ) {
-      local_4c = fVar10;
+      local_4c = fVar12;
       local_50 = fVar1;
-      local_54 = iVar8;
-      pCVar9 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                         (this_ptr,(int)(((int)local_60 + ((int)local_60 >> 0x1f) * -8) -
-                                        (uint)(((int)local_60 >> 0x1f) << 2 < 0)) >> 3,
-                          (int)(((int)local_5c + ((int)local_5c >> 0x1f) * -8) -
-                               (uint)(((int)local_5c >> 0x1f) << 2 < 0)) >> 3,
-                          (int)((local_54 + (local_54 >> 0x1f) * -8) -
-                               (uint)((local_54 >> 0x1f) << 2 < 0)) >> 3);
-      if (pCVar9 != (CDemonCube *)0x0) {
-        if ((pCVar9->voxel_buffer1 != (SVoxelGrid *)0x0) &&
-           ((pCVar9->voxel_buffer1->voxels[local_54 % 8][(int)local_5c % 8] &
+      local_54 = iVar10;
+      pCVar11 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
+                          (this_ptr,(int)(((int)local_60 + ((int)local_60 >> 0x1f) * -8) -
+                                         (uint)(((int)local_60 >> 0x1f) << 2 < 0)) >> 3,
+                           (int)(((int)local_5c + ((int)local_5c >> 0x1f) * -8) -
+                                (uint)(((int)local_5c >> 0x1f) << 2 < 0)) >> 3,
+                           (int)((local_54 + (local_54 >> 0x1f) * -8) -
+                                (uint)((local_54 >> 0x1f) << 2 < 0)) >> 3);
+      if (pCVar11 != (CDemonCube *)0x0) {
+        if ((pCVar11->voxel_buffer1 != (SVoxelGrid *)0x0) &&
+           ((pCVar11->voxel_buffer1->voxels[local_54 % 8][(int)local_5c % 8] &
             g_VoxelYBitMasks[(int)local_60 % 8]) != 0)) {
           return 1;
         }
       }
-      iVar11 = iVar11 + -1;
-      if (iVar11 < 1) break;
-      fVar10 = (float)((int)local_4c - (int)ROUND(dVar19));
-      iVar8 = local_54 + iStack_74;
+      iVar13 = iVar13 + -1;
+      if (iVar13 < 1) break;
+      fVar12 = (float)((int)local_4c - (int)ROUND(dVar20));
+      iVar10 = local_54 + iStack_74;
       fVar1 = (float)((int)local_50 + local_68);
       if ((int)local_58 < 0) {
         if ((int)local_4c < 0) {
-          local_60 = (float)((int)local_60 + (int)ROUND(fVar12));
+          local_60 = (float)((int)local_60 + (int)ROUND(fVar14));
           local_58 = (float)((int)local_58 + local_68);
-          iVar8 = local_54;
+          iVar10 = local_54;
           fVar1 = local_50;
-          fVar10 = (float)((int)local_4c + (int)local_6c);
+          fVar12 = (float)((int)local_4c + (int)local_6c);
         }
       }
       else if (-1 < (int)local_50) {
-        local_5c = (float)((int)local_5c + (int)ROUND(fVar14));
-        local_58 = (float)((int)local_58 - (int)ROUND(dVar19));
-        iVar8 = local_54;
+        local_5c = (float)((int)local_5c + (int)ROUND(dVar19));
+        local_58 = (float)((int)local_58 - (int)ROUND(dVar20));
+        iVar10 = local_54;
         fVar1 = (float)((int)local_50 - (int)local_6c);
-        fVar10 = local_4c;
+        fVar12 = local_4c;
       }
     }
   }

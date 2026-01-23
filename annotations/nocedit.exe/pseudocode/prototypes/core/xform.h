@@ -17,7 +17,7 @@ CVector3f * transformVector3x3(CMatrix3x3f * matrix, CVector3f * output_vector, 
 
 // Original: core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 // Address: 005f4f10
-CMatrix3x4f * multiplyMatrix3x4(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b);
+CMatrix3x4f * multiplyMatrix3x4(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out);
 
 // Original: core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005f50c0
 // Address: 005f50c0
@@ -141,7 +141,7 @@ CMatrix3x4f * lerpMatrix3x4(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, floa
 
 // Original: core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280
 // Address: 005f7280
-CQuaternion4f * quaternionToMatrix3x3(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out);
+CQuaternion4f * quaternionToMatrix3x3(CMatrix3x3f * matrix_out, CQuaternion4f * quat_in);
 
 // Original: core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0
 // Address: 005f73e0

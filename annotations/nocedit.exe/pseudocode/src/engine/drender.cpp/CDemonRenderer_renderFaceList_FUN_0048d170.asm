@@ -238,7 +238,7 @@ section .text
     DEC EDI                             ; 0048d34e
     ADD EBX,0x12                        ; 0048d34f
     CALL engine_drender.cpp_renderTriangleSimple_FUN_004839f0 ; 0048d352
-        ;   XREF to: 004839f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(int * vertex_indices, int vertex_count)
+        ;   XREF to: 004839f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0048d357
     TEST EDI,EDI                        ; 0048d35a
     JG 0x0048d32b                       ; 0048d35c

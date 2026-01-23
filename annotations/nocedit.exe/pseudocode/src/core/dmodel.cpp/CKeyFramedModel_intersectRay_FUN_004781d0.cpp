@@ -14,7 +14,7 @@ core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
 {
   CVector3i *pCVar1;
   CVector3f *pCVar2;
-  CMatrix3x3f *matrix;
+  CMatrix3x3f *this_ptr_00;
   CDemonTriangle *triangle;
   int iVar3;
   CDemonTriangle local_d0;
@@ -104,15 +104,15 @@ core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
       }
     }
     else {
-      matrix = &this_ptr->rotation_matrix_workspace;
-      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(matrix,&local_80,ray_origin)
-      ;
+      this_ptr_00 = &this_ptr->rotation_matrix_workspace;
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                (matrix,&local_50,ray_direction);
+                (this_ptr_00,&local_80,ray_origin);
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                (this_ptr_00,&local_50,ray_direction);
       triangle = this_ptr->collision_triangle_list +
                  frame_index * this_ptr->collision_triangle_count;
       iVar3 = 0;
-      local_30 = matrix;
+      local_30 = this_ptr_00;
       if (0 < this_ptr->collision_triangle_count) {
         do {
           local_18 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800

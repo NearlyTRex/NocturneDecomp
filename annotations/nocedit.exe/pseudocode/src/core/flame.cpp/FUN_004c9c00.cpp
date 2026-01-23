@@ -18,8 +18,7 @@ void core_flame_cpp_FUN_004c9c00(void)
   int iVar2;
   int extraout_EAX;
   uint uVar3;
-  float10 fVar4;
-  double dVar5;
+  double dVar4;
   int in_stack_00000004;
   float in_stack_00000008;
   ulonglong uStack_fc;
@@ -108,11 +107,11 @@ void core_flame_cpp_FUN_004c9c00(void)
         fStack_34 = (this_ptr->base_character).base_actor.location.position.z -
                     *(float *)(in_stack_00000004 + 0x28);
         if (((float)-0.5 < fStack_38) && (fStack_38 < (float)local_94.result_ptr)) {
-          dVar5 = crt_math_c_round_FUN_005fe6b0
+          dVar4 = crt_math_c_round_FUN_005fe6b0
                             ((double)((*(float *)(in_stack_00000004 + 0x158) +
                                       *(float *)(in_stack_00000004 + 0x160)) *
                                      (float)0.25));
-          local_14 = (float)(int)ROUND(dVar5);
+          local_14 = (float)(int)ROUND(dVar4);
           fStack_18 = (float)(int)local_14;
           if ((ABS(fStack_40) < (float)local_94.result_ptr + fStack_18) &&
              (ABS(fStack_38) < (float)local_94.result_ptr + fStack_18)) {
@@ -139,17 +138,17 @@ void core_flame_cpp_FUN_004c9c00(void)
         if (iVar2 == 2) {
           fStack_30 = (this_ptr_00->base_actor).location.position.x -
                       *(float *)(in_stack_00000004 + 0x20);
-          fStack_2c = (this_ptr_00->base_actor).location.position.y -
-                      *(float *)(in_stack_00000004 + 0x24);
+          fVar1 = (this_ptr_00->base_actor).location.position.y -
+                  *(float *)(in_stack_00000004 + 0x24);
           fStack_28 = (this_ptr_00->base_actor).location.position.z -
                       *(float *)(in_stack_00000004 + 0x28);
-          fVar4 = (float10)fStack_2c;
-          dVar5 = crt_math_c_round_FUN_005fe6b0
+          fStack_2c = fVar1;
+          dVar4 = crt_math_c_round_FUN_005fe6b0
                             ((double)((*(float *)(in_stack_00000004 + 0x158) +
                                       *(float *)(in_stack_00000004 + 0x160)) *
                                      (float)0.25));
-          iStack_1c = (int)ROUND(dVar5);
-          if (((float10)-0.5 < fVar4) && (fStack_30 < SStack_6c.cylinder_radius)) {
+          iStack_1c = (int)ROUND(dVar4);
+          if (((float)-0.5 < fVar1) && (fStack_30 < SStack_6c.cylinder_radius)) {
             fStack_20 = (float)iStack_1c;
             fVar1 = (float)SStack_6c.result_ptr + fStack_20;
             uStack_fc = (double)fVar1;

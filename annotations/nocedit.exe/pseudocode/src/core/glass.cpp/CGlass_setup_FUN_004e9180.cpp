@@ -11,11 +11,8 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
 {
   char cVar1;
   int iVar2;
-  SMRGLPrimitiveQuad *pSVar3;
-  int extraout_ECX;
-  int extraout_ECX_00;
-  int extraout_EDX;
-  CVector3f *pCVar4;
+  CVector3f *pCVar3;
+  SMRGLPrimitiveQuad *pSVar4;
   int iVar5;
   char *pcVar6;
   char *pcVar7;
@@ -52,44 +49,44 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
     local_84.z = 0.0;
     local_84.y = 0.0;
     local_84.x = (this_ptr->glass_size).x * 0.5f;
-    pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_a8,&local_84);
-    local_78.x = (this_ptr->base).location.position.x + pCVar4->x;
-    local_78.y = (this_ptr->base).location.position.y + pCVar4->y;
-    local_78.z = (this_ptr->base).location.position.z + pCVar4->z;
+    local_78.x = (this_ptr->base).location.position.x + pCVar3->x;
+    local_78.y = (this_ptr->base).location.position.y + pCVar3->y;
+    local_78.z = (this_ptr->base).location.position.z + pCVar3->z;
     if (&local_48 != &local_78) {
       local_48.x = local_78.x;
       local_48.y = local_78.y;
       local_48.z = local_78.z;
     }
     local_84.x = -local_84.x;
-    pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_54,&local_84);
-    local_3c.x = (this_ptr->base).location.position.x + pCVar4->x;
-    local_3c.y = (this_ptr->base).location.position.y + pCVar4->y;
-    local_3c.z = (this_ptr->base).location.position.z + pCVar4->z;
+    local_3c.x = (this_ptr->base).location.position.x + pCVar3->x;
+    local_3c.y = (this_ptr->base).location.position.y + pCVar3->y;
+    local_3c.z = (this_ptr->base).location.position.z + pCVar3->z;
     if (&local_60 != &local_3c) {
       local_60.x = local_3c.x;
       local_60.y = local_3c.y;
       local_60.z = local_3c.z;
     }
     local_84.y = (this_ptr->glass_size).y;
-    pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_6c,&local_84);
-    local_cc.x = (this_ptr->base).location.position.x + pCVar4->x;
-    local_cc.y = (this_ptr->base).location.position.y + pCVar4->y;
-    local_cc.z = (this_ptr->base).location.position.z + pCVar4->z;
+    local_cc.x = (this_ptr->base).location.position.x + pCVar3->x;
+    local_cc.y = (this_ptr->base).location.position.y + pCVar3->y;
+    local_cc.z = (this_ptr->base).location.position.z + pCVar3->z;
     if (&local_c0 != &local_cc) {
       local_c0.x = local_cc.x;
       local_c0.y = local_cc.y;
       local_c0.z = local_cc.z;
     }
     local_84.x = -local_84.x;
-    pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_9c,&local_84);
-    local_90.x = (this_ptr->base).location.position.x + pCVar4->x;
-    local_90.y = (this_ptr->base).location.position.y + pCVar4->y;
-    local_90.z = (this_ptr->base).location.position.z + pCVar4->z;
+    local_90.x = (this_ptr->base).location.position.x + pCVar3->x;
+    local_90.y = (this_ptr->base).location.position.y + pCVar3->y;
+    local_90.z = (this_ptr->base).location.position.z + pCVar3->z;
     if (&local_b4 != &local_90) {
       local_b4.x = local_90.x;
       local_b4.y = local_90.y;
@@ -129,12 +126,13 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
   local_30 = this_ptr->broken_vertices;
   for (local_28 = 0; local_28 < this_ptr->field15_0xb30 + 1; local_28 = local_28 + 1) {
     fVar11 = -(this_ptr->glass_size).x * (float)0.5;
-    pCVar4 = local_30 + iVar2;
+    pCVar3 = local_30 + iVar2;
+    pcVar7 = (this_ptr->base).actor_name + iVar2 * 4;
     for (iVar5 = 0; iVar5 < this_ptr->field14_0xb2c + 1; iVar5 = iVar5 + 1) {
-      if (pCVar4 != (CVector3f *)&stack0xffffff20) {
-        pCVar4->x = fVar11;
-        pCVar4->y = fVar12;
-        pCVar4->z = 0.0;
+      if (pCVar3 != (CVector3f *)&stack0xffffff20) {
+        pCVar3->x = fVar11;
+        pCVar3->y = fVar12;
+        pCVar3->z = 0.0;
       }
       fVar8 = (float10)16515072;
       fVar9 = (float10)131072;
@@ -142,17 +140,18 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
       dVar10 = crt_math_c_round_FUN_005fe6b0
                          ((double)(((float10)iVar5 / (float10)this_ptr->field14_0xb2c) * fVar8 +
                                   fVar9));
-      *(int *)(extraout_ECX + 0x5e4) = (int)ROUND(dVar10);
+      *(int *)(pcVar7 + 0x5e4) = (int)ROUND(dVar10);
       local_20 = this_ptr->field15_0xb30 - (int)local_2c;
       fVar11 = 7.216921e-39;
       dVar10 = crt_math_c_round_FUN_005fe6b0
                          ((double)(fVar9 + ((float10)local_20 / (float10)this_ptr->field15_0xb30) *
                                            fVar8));
       local_24 = (int)ROUND(dVar10);
-      pCVar4 = (CVector3f *)(extraout_EDX + 0xc);
-      *(int *)(extraout_ECX_00 + 0x644) = local_24;
+      pCVar3 = pCVar3 + 1;
+      *(int *)(pcVar7 + 0x648) = local_24;
       iVar2 = iVar2 + 1;
       fVar11 = fVar11 + local_3c.z;
+      pcVar7 = pcVar7 + 4;
     }
     fVar12 = fVar12 + local_3c.y;
   }
@@ -163,38 +162,38 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
     do {
       iVar2 = 0;
       if (0 < this_ptr->field14_0xb2c) {
-        pSVar3 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);
+        pSVar4 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);
         do {
-          (pSVar3->base).base.count = 4;
-          (pSVar3->base).surface_normal.D = 0;
-          iVar5 = (pSVar3->base).surface_normal.D;
-          (pSVar3->base).surface_normal.C = iVar5;
-          (pSVar3->base).surface_normal.B = iVar5;
-          (pSVar3->base).surface_normal.A = iVar5;
+          (pSVar4->base).base.count = 4;
+          (pSVar4->base).surface_normal.D = 0;
+          iVar5 = (pSVar4->base).surface_normal.D;
+          (pSVar4->base).surface_normal.C = iVar5;
+          (pSVar4->base).surface_normal.B = iVar5;
+          (pSVar4->base).surface_normal.A = iVar5;
           iVar5 = (this_ptr->field14_0xb2c + 1) * local_24 + iVar2;
-          pSVar3->vertices[0].vertex_index = iVar5;
-          pSVar3->vertices[0].texture_u = *(int *)(this_ptr->field12_0x4b8 + iVar5 * 4 + 300);
-          pSVar3->vertices[0].texture_v =
+          pSVar4->vertices[0].vertex_index = iVar5;
+          pSVar4->vertices[0].texture_u = *(int *)(this_ptr->field12_0x4b8 + iVar5 * 4 + 300);
+          pSVar4->vertices[0].texture_v =
                *(int *)((int)this_ptr->broken_quads[0].vertices + iVar5 * 4 + -0x7c);
-          pSVar3->vertices[1].vertex_index = iVar5 + 1;
-          pSVar3->vertices[1].texture_u = *(int *)(this_ptr->field12_0x4b8 + iVar5 * 4 + 0x130);
-          pSVar3->vertices[1].texture_v =
+          pSVar4->vertices[1].vertex_index = iVar5 + 1;
+          pSVar4->vertices[1].texture_u = *(int *)(this_ptr->field12_0x4b8 + iVar5 * 4 + 0x130);
+          pSVar4->vertices[1].texture_v =
                *(int *)((int)(this_ptr->broken_quads[0].vertices + -10) + iVar5 * 4);
-          pSVar3->vertices[2].vertex_index = this_ptr->field14_0xb2c + iVar5 + 2;
-          pSVar3->vertices[2].texture_u =
+          pSVar4->vertices[2].vertex_index = this_ptr->field14_0xb2c + iVar5 + 2;
+          pSVar4->vertices[2].texture_u =
                *(int *)(this_ptr->field12_0x4b8 + (this_ptr->field14_0xb2c + iVar5) * 4 + 0x134);
-          pSVar3->vertices[2].texture_v =
+          pSVar4->vertices[2].texture_v =
                *(int *)((int)this_ptr->broken_quads[0].vertices +
                        (this_ptr->field14_0xb2c + iVar5) * 4 + -0x74);
-          pSVar3->vertices[3].vertex_index = this_ptr->field14_0xb2c + iVar5 + 1;
-          pSVar3->vertices[3].texture_u =
+          pSVar4->vertices[3].vertex_index = this_ptr->field14_0xb2c + iVar5 + 1;
+          pSVar4->vertices[3].texture_u =
                *(int *)(this_ptr->field12_0x4b8 + (this_ptr->field14_0xb2c + iVar5) * 4 + 0x130);
-          pSVar3->vertices[3].texture_v =
+          pSVar4->vertices[3].texture_v =
                *(int *)((int)(this_ptr->broken_quads[0].vertices + -10) +
                        (iVar5 + this_ptr->field14_0xb2c) * 4);
           iVar2 = iVar2 + 1;
           local_20 = local_20 + 1;
-          pSVar3 = pSVar3 + 1;
+          pSVar4 = pSVar4 + 1;
         } while (iVar2 < this_ptr->field14_0xb2c);
       }
       local_24 = local_24 + 1;

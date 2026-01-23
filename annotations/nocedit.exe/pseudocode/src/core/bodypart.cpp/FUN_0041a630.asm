@@ -223,7 +223,7 @@ section .text
     LEA ESI,[ESP + 0xf8]                ; 0041a890
     LEA EDI,[ESP + 0xc8]                ; 0041a897
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 0041a89e
-        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
+        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 0041a8a3
     LEA EAX,[ESP + 0x178]               ; 0041a8a6
     MOV ECX,0xc                         ; 0041a8ad
@@ -263,7 +263,7 @@ section .text
     PUSH EAX                            ; 0041a90b
     MOV ESI,EBX                         ; 0041a90c
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 0041a90e
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0041a913
     CMP EBX,EAX                         ; 0041a916
     JZ 0x0041a92a                       ; 0041a918
@@ -311,7 +311,7 @@ section .text
     PUSH EAX                            ; 0041a98d
     MOV EDI,EBX                         ; 0041a98e
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 0041a990
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0041a995
     CMP EBX,EAX                         ; 0041a998
     JZ 0x0041a9ac                       ; 0041a99a
@@ -337,7 +337,7 @@ section .text
     PUSH EAX                            ; 0041a9ce
     LEA ESI,[ESP + 0x8]                 ; 0041a9cf
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 0041a9d3
-        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
+        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 0041a9d8
     LEA EAX,[ESP + 0x148]               ; 0041a9db
     PUSH EAX                            ; 0041a9e2

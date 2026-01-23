@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 34,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 15,
-        "line": 36,
+        "line": 34,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,19 +19,19 @@
       {
         "category": "other",
         "column": 6,
-        "line": 36,
+        "line": 34,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 184,
+    "complexity_score": 144,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 34,
-    "suspect_count": 13,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -247,87 +241,59 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 12,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 13,
       "match": "extraout_ST2",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 14,
       "match": "extraout_ST3",
       "text": "float10 extraout_ST3;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_ST1",
-      "text": "fVar3 = extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
+      "line": 23,
       "match": "extraout_ST2",
       "text": "exp = extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
+      "line": 24,
       "match": "extraout_ST3",
       "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar4 * extraout_ST3));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 25,
       "match": "ROUND",
       "text": "uVar1 = (uint)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EDX",
-      "text": "iVar2 = extraout_EDX + 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_ECX",
-      "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) =",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) =",
+      "text": "*(uint *)((int)g_LightmapTexturePalette + iVar2) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_ST1",
+      "text": "fVar4 = extraout_ST1;",
+      "type": "extra_output"
     },
     {
       "call_site_count": 2,

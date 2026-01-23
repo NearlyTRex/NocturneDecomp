@@ -13,8 +13,6 @@ core_path_cpp_CPathMap_findPathToDestination_FUN_00547320
 
 {
   CVector3f *pCVar1;
-  float *extraout_EAX;
-  int extraout_EAX_00;
   int iVar2;
   int iVar3;
   uint uVar4;
@@ -24,6 +22,7 @@ core_path_cpp_CPathMap_findPathToDestination_FUN_00547320
   float *pfVar6;
   byte bVar7;
   double dVar8;
+  int unaff_retaddr;
   float afStackY_1040 [959];
   CVector3f *in_stack_fffffed0;
   CVector3f *in_stack_fffffed4;
@@ -157,12 +156,12 @@ LAB_005473e0:
   }
   dVar8 = crt_math_c_round_FUN_005fe6b0((double)(this_ptr->current_position).x);
   local_18 = (int)ROUND(dVar8);
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)*extraout_EAX);
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)dest_position->x);
   local_1c = (int)ROUND(dVar8);
   dVar8 = crt_math_c_round_FUN_005fe6b0((double)(this_ptr->current_position).z);
   iStack_20 = (int)ROUND(dVar8);
   fVar9 = 7.7566e-39;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EAX_00 + 8));
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(unaff_retaddr + 8));
   iStack_24 = (int)ROUND(dVar8);
   iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                     (this_ptr,g_PathfindingCurrentZ,g_PathfindingCurrentX,this_ptr->field3_0x1c);

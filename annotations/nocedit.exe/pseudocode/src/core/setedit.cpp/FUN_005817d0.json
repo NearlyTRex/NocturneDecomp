@@ -4,14 +4,14 @@
       {
         "category": "undeclared_identifier",
         "column": 70,
-        "line": 42,
+        "line": 39,
         "message": "'_DAT_00648b39' was not declared in this scope; did you mean 'DAT_00684f38'?"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "other",
         "column": 19,
-        "line": 43,
-        "message": "'ROUND' was not declared in this scope"
+        "line": 77,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -27,7 +27,7 @@
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 16,
         "line": 82,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
@@ -61,7 +61,7 @@
       {
         "category": "other",
         "column": 18,
-        "line": 78,
+        "line": 76,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -104,15 +104,14 @@
   },
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 456,
+    "complexity_score": 431,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 126,
-    "suspect_count": 30,
+    "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_param",
       "undefined_data",
@@ -413,199 +412,185 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "int *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "float *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "float *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_0000000c",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000014",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000018",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 32,
       "match": "in_stack_0000000c",
-      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)(in_stack_0000000c * _DAT_00648b39));",
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)(in_stack_0000000c * _DAT_00648b39));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 33,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar4);",
+      "text": "local_18 = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 40,
       "match": "in_stack_00000010",
       "text": "local_24 = in_stack_00000010 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 41,
       "match": "in_stack_00000014",
       "text": "local_20 = in_stack_00000014 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 42,
       "match": "in_stack_00000018",
       "text": "local_1c = in_stack_00000018 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 45,
       "match": "in_stack_00000008",
       "text": "SStack_64.base.type = (int)*in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 50,
       "match": "ROUND",
-      "text": "local_34 = (int)ROUND(dVar4);",
+      "text": "local_38.y = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 51,
       "match": "in_stack_00000008",
-      "text": "pfVar1 = in_stack_00000008;",
+      "text": "pfVar2 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 53,
       "match": "in_stack_00000004",
-      "text": "pfVar1 = in_stack_00000004;",
+      "text": "pfVar2 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "ROUND",
-      "text": "local_34 = (int)ROUND(dVar4);",
+      "text": "local_38.y = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000008",
+      "text": "pfVar2 = in_stack_00000008;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 62,
-      "match": "in_stack_00000008",
-      "text": "pfVar1 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
       "match": "in_stack_00000004",
-      "text": "pfVar1 = in_stack_00000004;",
+      "text": "pfVar2 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "ROUND",
-      "text": "local_34 = (int)ROUND(dVar4);",
+      "text": "local_38.y = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
-      "match": "extraout_EAX",
-      "text": "((SProjectedVertex *)(*extraout_EAX + iVar2),input);",
-      "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar2) = 0x80000;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar3) = 0x80000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 74,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x80000;",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar3) = 0x80000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr->vertex_buffer_ptr->light + iVar2) = local_30;",
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->light + iVar3) = local_38.z;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 76,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr->vertex_buffer_ptr->color + iVar2) = local_2c;",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = local_2c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 77,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr->vertex_buffer_ptr->fog + iVar2) = local_28;",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = local_28;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&this_ptr->vertex_buffer_ptr->w_recip + iVar2) = local_24;",
+      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar3) = local_24;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
       "line": 81,
       "match": "DAT_006816c0",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_006816c0);",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar1,&DAT_006816c0);",
       "type": "undefined_data"
     },
     {

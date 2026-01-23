@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 46,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 69,
-        "line": 60,
+        "line": 57,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -25,23 +19,23 @@
       {
         "category": "other",
         "column": 10,
-        "line": 60,
+        "line": 57,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 82,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 54,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 178
+    "total_lines": 175
   },
   "cross_references": [],
   "function": {
@@ -210,14 +204,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 36,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(fVar6);",
+      "text": "local_20 = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 37,
       "match": "ROUND",
       "text": "local_1c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"

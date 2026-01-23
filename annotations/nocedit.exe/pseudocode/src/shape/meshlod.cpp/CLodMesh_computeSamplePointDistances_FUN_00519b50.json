@@ -4,14 +4,20 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 56,
+        "line": 54,
         "message": "'stack0x00000000' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 61,
+        "line": 59,
         "message": "'stack0x00000000' was not declared in this scope"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 69,
+        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -20,40 +26,22 @@
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 17,
-        "line": 73,
-        "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 100,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 150,
+        "line": 146,
         "message": "'stack0x00000000' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 153,
+        "line": 149,
         "message": "'stack0x00000000' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 163,
+        "line": 159,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 163,
-        "message": "'SQRT' was not declared in this scope"
       }
     ],
     "success": false,
@@ -67,14 +55,20 @@
       {
         "category": "other",
         "column": 25,
-        "line": 52,
+        "line": 50,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 54,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 69,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -84,34 +78,27 @@
       },
       {
         "category": "other",
-        "column": 8,
-        "line": 73,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 33,
-        "line": 163,
+        "line": 159,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 446,
-    "complexity_score": 628,
+    "complexity_score": 445,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 18,
-    "pseudocode_lines": 223,
-    "suspect_count": 38,
+    "pseudocode_lines": 225,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 669
+    "total_lines": 671
   },
   "cross_references": [
     {
@@ -562,270 +549,144 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX_01",
-      "text": "int extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX_02",
-      "text": "int extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX_03",
-      "text": "int extraout_EAX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EAX_04",
-      "text": "int extraout_EAX_04;",
-      "type": "extra_output"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 49,
+      "line": 47,
       "match": "&stack0x00000000",
       "text": "if ((CVector3f *)&stack0x00000000 != g_SamplePointArray + 0xc) {",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 54,
+      "line": 52,
       "match": "&stack0x00000000",
       "text": "if ((CVector3f *)&stack0x00000000 != g_SamplePointArray + 0xb) {",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 62,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_SampleDistances + iVar4) = 0;",
+      "text": "*(uint *)((int)g_SampleDistances + iVar6) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 64,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_SampleDistances + iVar4 + 4) = 0x3ff00000;",
+      "text": "*(uint *)((int)g_SampleDistances + iVar6 + 4) = 0x3ff00000;",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 67,
+      "line": 65,
       "match": "7.494611e-39",
       "text": "fStack_9c = 7.494611e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 91,
+      "line": 87,
       "match": "7.494835e-39",
       "text": "fStack_9c = 7.494835e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 89,
       "match": "ROUND",
-      "text": "local_40 = (int)ROUND(fVar6);",
+      "text": "local_40 = (int)ROUND(fVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 90,
       "match": "ROUND",
-      "text": "local_44 = (int)ROUND(fVar7);",
+      "text": "local_44 = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 91,
       "match": "ROUND",
-      "text": "local_3c = (int)ROUND(dVar10);",
+      "text": "local_3c = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 143,
+      "line": 139,
       "match": "&stack0x00000000",
       "text": "if ((CVector3f *)&stack0x00000000 != g_SamplePointArray + 0xd) {",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 146,
+      "line": 142,
       "match": "&stack0x00000000",
       "text": "if ((CVector3f *)&stack0x00000000 != g_SamplePointArray + 0xc) {",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 152,
       "match": "(double *)((int)",
-      "text": "local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar4));",
+      "text": "local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
+      "line": 152,
       "match": "SQRT",
-      "text": "local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar4));",
+      "text": "local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
+      "line": 172,
       "match": "ROUND",
-      "text": "local_54.z = (float)(int)ROUND(dVar10);",
+      "text": "local_54.z = (float)(int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 175,
-      "match": "extraout_EAX",
-      "text": "uVar2 = extraout_EAX - (int)local_54.z >> 0x1f;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 176,
-      "match": "extraout_EAX",
-      "text": "iVar4 = (extraout_EAX - (int)local_54.z ^ uVar2) - uVar2;",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 183,
+      "line": 182,
       "match": "ROUND",
-      "text": "local_54.y = (float)(int)ROUND(dVar10);",
+      "text": "local_54.y = (float)(int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 184,
-      "match": "extraout_EAX_00",
-      "text": "uVar2 = extraout_EAX_00 - (int)local_54.y >> 0x1f;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 185,
-      "match": "extraout_EAX_00",
-      "text": "iVar4 = (extraout_EAX_00 - (int)local_54.y ^ uVar2) - uVar2;",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "ROUND",
-      "text": "local_54.x = (float)(int)ROUND(dVar10);",
+      "text": "local_54.x = (float)(int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 192,
-      "match": "extraout_EAX_01",
-      "text": "uVar2 = extraout_EAX_01 - (int)local_54.x >> 0x1f;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 193,
-      "match": "extraout_EAX_01",
-      "text": "iVar4 = (extraout_EAX_01 - (int)local_54.x ^ uVar2) - uVar2;",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 199,
-      "match": "ROUND",
-      "text": "local_58 = (int)ROUND(dVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
       "line": 200,
-      "match": "extraout_EAX_02",
-      "text": "uVar2 = extraout_EAX_02 - local_58 >> 0x1f;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 201,
-      "match": "extraout_EAX_02",
-      "text": "iVar4 = (extraout_EAX_02 - local_58 ^ uVar2) - uVar2;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
       "match": "ROUND",
-      "text": "local_5c = (int)ROUND(dVar10);",
+      "text": "local_58 = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 208,
-      "match": "extraout_EAX_03",
-      "text": "uVar2 = extraout_EAX_03 - local_5c >> 0x1f;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 209,
-      "match": "extraout_EAX_03",
-      "text": "iVar4 = (extraout_EAX_03 - local_5c ^ uVar2) - uVar2;",
-      "type": "extra_output"
+      "match": "ROUND",
+      "text": "local_5c = (int)ROUND(dVar13);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 214,
+      "line": 216,
       "match": "7.495882e-39",
       "text": "fStack_9c = 7.495882e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 216,
-      "match": "ROUND",
-      "text": "local_60 = (int)ROUND(dVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 217,
-      "match": "extraout_EAX_04",
-      "text": "uVar2 = extraout_EAX_04 - local_60 >> 0x1f;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
       "line": 218,
-      "match": "extraout_EAX_04",
-      "text": "iVar4 = (extraout_EAX_04 - local_60 ^ uVar2) - uVar2;",
-      "type": "extra_output"
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(dVar13);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -14,6 +14,7 @@
 #include "system/dos.h"
 #include "system/dsound.h"
 #include "system/fstream.h"
+#include "system/intrinsics.h"
 #include "system/iostream.h"
 #include "system/kernel32.h"
 #include "system/ksproxy.h"

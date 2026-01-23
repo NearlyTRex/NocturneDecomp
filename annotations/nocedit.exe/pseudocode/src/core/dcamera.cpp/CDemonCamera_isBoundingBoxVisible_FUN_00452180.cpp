@@ -12,15 +12,15 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
 
 {
   uint *puVar1;
-  int extraout_EAX;
-  int extraout_EAX_00;
-  int extraout_EAX_01;
-  int iVar2;
-  uint uVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
-  double dVar7;
+  float fVar2;
+  float fVar3;
+  int iVar4;
+  int iVar5;
+  uint uVar6;
+  float10 fVar7;
+  float10 fVar8;
+  double dVar9;
+  double dVar10;
   float *in_stack_00000014;
   CVector3i *position_00;
   CVector3i *rotation;
@@ -84,33 +84,36 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   CStack_13c.z = (int)g_CDemonRendererPtr2;
   CStack_13c.y = 0x4521b2;
   engine_drender_cpp_CDemonRenderer_matrixPush_FUN_0050d620();
-  fVar4 = (float10)256;
-  fVar5 = ((float10)(float)(this_ptr->base).position.y - (float10)position->y) * fVar4;
-  fVar6 = ((float10)(float)(this_ptr->base).position.z - (float10)position->z) * fVar4;
+  fVar7 = (float10)256;
+  fVar2 = (float)(this_ptr->base).position.y;
+  fVar3 = position->y;
+  fVar8 = ((float10)(float)(this_ptr->base).position.z - (float10)position->z) * fVar7;
   g_TransformMatrix.m[0].x = (this_ptr->source_matrix).m[0].x;
   g_TransformMatrix.m[0].y = (this_ptr->source_matrix).m[0].y;
   CStack_13c.z = 0;
   g_TransformMatrix.m[0].z = (this_ptr->source_matrix).m[0].z;
   g_TransformMatrix.m[1].x = (this_ptr->source_matrix).m[1].x;
   CStack_13c.y = (int)min_corner;
+  iVar5 = (this_ptr->source_matrix).m[1].y;
   CStack_13c.x = 0x45221e;
-  dVar7 = crt_math_c_round_FUN_005fe6b0
+  dVar9 = crt_math_c_round_FUN_005fe6b0
                     ((double)(((float10)(float)(this_ptr->base).position.x - (float10)position->x) *
-                             fVar4));
-  fVar4 = (float10)dVar7;
+                             fVar7));
+  iVar4 = (this_ptr->source_matrix).m[1].z;
   rotation = (CVector3i *)0x452230;
-  g_TransformMatrix.m[1].y = extraout_EAX;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
-  fVar5 = (float10)dVar7;
+  g_TransformMatrix.m[1].y = iVar5;
+  dVar10 = crt_math_c_round_FUN_005fe6b0((double)(((float10)fVar2 - (float10)fVar3) * fVar7));
+  fVar7 = (float10)dVar10;
+  iVar5 = (this_ptr->source_matrix).m[2].x;
   position_00 = (CVector3i *)0x452242;
-  g_TransformMatrix.m[1].z = extraout_EAX_00;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
+  g_TransformMatrix.m[1].z = iVar4;
+  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
   g_TransformMatrix.m[2].y = (this_ptr->source_matrix).m[2].y;
-  g_RelativeX = (int)ROUND(fVar4);
+  g_RelativeX = (int)ROUND(dVar9);
   g_TransformMatrix.m[2].z = (this_ptr->source_matrix).m[2].z;
-  g_RelativeY = (int)ROUND(fVar5);
-  g_RelativeZ = (int)ROUND(dVar7);
-  g_TransformMatrix.m[2].x = extraout_EAX_01;
+  g_RelativeY = (int)ROUND(fVar7);
+  g_RelativeZ = (int)ROUND(dVar10);
+  g_TransformMatrix.m[2].x = iVar5;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,position_00,rotation);
   local_124 = *in_stack_00000014;
@@ -201,19 +204,19 @@ core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   local_38 = local_c8;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_c4);
-  uVar3 = 0xffffffff;
-  iVar2 = 0xea480;
+  uVar6 = 0xffffffff;
+  iVar5 = 0xea480;
   do {
     puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
-                     iVar2);
-    iVar2 = iVar2 + 0x30;
-    uVar3 = uVar3 & *puVar1;
-  } while (iVar2 != 960000);
-  iVar2 = 1;
-  if (((uVar3 & 0x80000000) != 0) && ((char)uVar3 != '\0')) {
-    iVar2 = 0;
+                     iVar5);
+    iVar5 = iVar5 + 0x30;
+    uVar6 = uVar6 & *puVar1;
+  } while (iVar5 != 960000);
+  iVar5 = 1;
+  if (((uVar6 & 0x80000000) != 0) && ((char)uVar6 != '\0')) {
+    iVar5 = 0;
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  return iVar2;
+  return iVar5;
 }

@@ -14,33 +14,27 @@
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 69,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 20,
-        "line": 70,
+        "line": 69,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 72,
+        "line": 71,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 79,
+        "line": 78,
         "message": "'stack0xffffff80' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 106,
+        "line": 105,
         "message": "'stack0xffffff80' was not declared in this scope"
       }
     ],
@@ -67,46 +61,45 @@
       {
         "category": "other",
         "column": 12,
-        "line": 70,
+        "line": 69,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 72,
+        "line": 71,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 85,
+        "line": 84,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 84,
+        "line": 83,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 264,
+    "complexity_score": 238,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 8,
-    "pseudocode_lines": 104,
-    "suspect_count": 13,
+    "pseudocode_lines": 103,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_many",
       "pointer_cast",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 308
+    "total_lines": 307
   },
   "cross_references": [
     {
@@ -425,15 +418,8 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX",
-      "text": "float *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 13,
       "match": "unaff_EBX",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
@@ -449,61 +435,54 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_60 + iVar2) = pfVar4[4];",
+      "text": "*(float *)((int)afStack_60 + iVar4) = pfVar6[4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "text": "local_30 = (float)(int)ROUND(dVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)afStack_60 + iVar4 + -4) = (int)ROUND(dVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ROUND",
-      "text": "local_30 = (float)(int)ROUND(dVar9);",
+      "text": "*(int *)((int)afStack_60 + iVar4 + -4) = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)afStack_60 + iVar2 + -4) = (int)ROUND(fVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
-      "match": "ROUND",
-      "text": "*(int *)((int)afStack_60 + iVar2 + -4) = (int)ROUND(fVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
+      "line": 64,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_60 + iVar2) = local_30;",
+      "text": "*(float *)((int)afStack_60 + iVar4) = local_30;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 67,
-      "match": "extraout_ECX",
-      "text": "} while (pfVar4 != extraout_ECX);",
-      "type": "extra_output"
     },
     {
       "description": "Direct stack address reference",
-      "line": 72,
+      "line": 71,
       "match": "&stack0xffffff80",
       "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff80);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 78,
+      "line": 77,
       "match": "unaff_EBX",
       "text": "((int)atlas_texture_index * 0x48 + *(int *)(unaff_EBX + 0x14));",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 99,
+      "line": 98,
       "match": "&stack0xffffff80",
       "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff80);",
       "type": "stack_ref"

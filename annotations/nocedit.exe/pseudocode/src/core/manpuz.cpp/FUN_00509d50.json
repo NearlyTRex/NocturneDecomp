@@ -15,14 +15,8 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 56,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 29,
-        "line": 71,
+        "line": 70,
         "message": "'_DAT_00660d70' was not declared in this scope; did you mean 'DAT_00680d60'?"
       },
       {
@@ -49,13 +43,7 @@
       {
         "category": "other",
         "column": 14,
-        "line": 62,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 103,
+        "line": 61,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -68,15 +56,14 @@
   },
   "complexity": {
     "assembly_lines": 348,
-    "complexity_score": 515,
+    "complexity_score": 490,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 13,
     "pseudocode_lines": 120,
-    "suspect_count": 35,
+    "suspect_count": 33,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "stack_param",
       "stack_ref",
@@ -569,13 +556,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EDX",
-      "text": "int *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
@@ -593,14 +573,14 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
-      "text": "pfVar3 = (float *)(in_stack_00000004 + 0xaa0 + in_stack_00000008 * 0xb8);",
+      "text": "pfVar4 = (float *)(in_stack_00000004 + 0xaa0 + in_stack_00000008 * 0xb8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000008",
-      "text": "pfVar3 = (float *)(in_stack_00000004 + 0xaa0 + in_stack_00000008 * 0xb8);",
+      "text": "pfVar4 = (float *)(in_stack_00000004 + 0xaa0 + in_stack_00000008 * 0xb8);",
       "type": "stack_param"
     },
     {
@@ -612,112 +592,112 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "ROUND",
-      "text": "local_2c = (int)ROUND(fVar4);",
+      "text": "local_1c = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "ROUND",
-      "text": "local_1c = (int)ROUND(dVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 51,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x2d4),0.0,-1);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 63,
       "match": "ROUND",
       "text": "local_60.x = (int)ROUND(_DAT_00660d70 * -1.4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 64,
       "match": "ROUND",
       "text": "local_60.y = (int)ROUND(_DAT_00660d70 * 0.2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 65,
       "match": "ROUND",
       "text": "local_60.z = (int)ROUND(_DAT_00660d70 * -1.4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 69,
       "match": "ROUND",
       "text": "local_6c.x = (int)ROUND(local_54 * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 70,
       "match": "ROUND",
       "text": "local_6c.y = (int)ROUND(local_50 * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 71,
       "match": "ROUND",
       "text": "local_6c.z = (int)ROUND(local_4c * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 75,
       "match": "ROUND",
       "text": "local_48.x = (int)ROUND(local_54 * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 76,
       "match": "ROUND",
       "text": "local_48.y = (int)ROUND(local_50 * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 77,
       "match": "ROUND",
       "text": "local_48.z = (int)ROUND(local_4c * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 81,
       "match": "ROUND",
       "text": "local_3c.x = (int)ROUND(local_54 * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 82,
       "match": "ROUND",
       "text": "local_3c.y = (int)ROUND(local_50 * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 83,
       "match": "ROUND",
       "text": "local_3c.z = (int)ROUND(local_4c * _DAT_00660d70);",
       "type": "decompiler_intrinsic"
@@ -735,13 +715,6 @@
       "match": "ROUND",
       "text": "local_30 = (float)(int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 96,
-      "match": "extraout_EDX",
-      "text": "*(float *)(*extraout_EDX + 0x24) = local_30;",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

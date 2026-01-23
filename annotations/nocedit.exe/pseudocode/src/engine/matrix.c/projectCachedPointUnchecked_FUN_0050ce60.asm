@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cacheIndex)
+; __cdecl void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   cacheIndex
+; int              Stack[0x4]:4   cache_index
 ;
 ; XREF[3]:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70 at 00407fa5

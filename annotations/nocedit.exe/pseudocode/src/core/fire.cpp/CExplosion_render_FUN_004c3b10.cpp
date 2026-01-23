@@ -9,11 +9,12 @@
 void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
 
 {
+  int iVar1;
+  float fVar2;
+  float fVar3;
   CDemonRenderer *this_ptr_00;
-  int extraout_EAX;
-  float10 fVar1;
-  float10 fVar2;
-  double dVar3;
+  double dVar4;
+  double dVar5;
   int iStack_98;
   CVector3i local_70;
   byte local_5c [8];
@@ -33,10 +34,10 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
     return;
   }
   iStack_98 = 0x4c3b45;
-  dVar3 = crt_math_c_round_FUN_005fe6b0
+  dVar4 = crt_math_c_round_FUN_005fe6b0
                     ((double)((1.0 - *(float *)(this_ptr->field0_0x0 + 0xc)) *
                              (float)27));
-  local_20 = (int)ROUND(dVar3);
+  local_20 = (int)ROUND(dVar4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_FireEffectExplosionTextures + local_20 * 2);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -45,16 +46,16 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
             (g_CDemonRendererPtr2,(float *)local_5c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)local_5c,(CVector3i *)0x0);
-  fVar2 = -(float10)*(float *)(this_ptr->field0_0x0 + 0x10) * (float10)108.0f *
-          (float10)0.00390625;
-  dVar3 = crt_math_c_round_FUN_005fe6b0
-                    ((double)((float10)*(float *)(this_ptr->field0_0x0 + 0x10) *
-                              (float10)148 * (float10)0.00390625));
-  fVar1 = (float10)dVar3;
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
-  local_1c = (int)ROUND(fVar1);
-  local_20 = (int)ROUND(dVar3);
-  if (extraout_EAX != 0) {
+  fVar3 = -*(float *)(this_ptr->field0_0x0 + 0x10) * 108.0f;
+  fVar2 = (float)0.00390625;
+  iVar1 = *(int *)(this_ptr->field0_0x0 + 0x18);
+  dVar4 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(*(float *)(this_ptr->field0_0x0 + 0x10) * (float)148 *
+                             fVar2));
+  dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar3 * fVar2));
+  local_1c = (int)ROUND(dVar4);
+  local_20 = (int)ROUND(dVar5);
+  if (iVar1 != 0) {
     local_1c = -local_1c;
     local_20 = -local_20;
   }

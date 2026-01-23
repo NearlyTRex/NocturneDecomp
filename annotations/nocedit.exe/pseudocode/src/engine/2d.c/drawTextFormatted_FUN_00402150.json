@@ -6,12 +6,6 @@
         "column": 14,
         "line": 15,
         "message": "'stack0x00000010' was not declared in this scope"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 18,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -21,12 +15,6 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 16,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
@@ -54,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_drawTextFormatted_FUN_00402150",
-    "signature": "void engine_2d.c_drawTextFormatted_FUN_00402150(char * format_string, int x_pos, int y_pos, ...)"
+    "signature": "void engine_2d.c_drawTextFormatted_FUN_00402150(int x_pos, int y_pos, char * format_string, ...)"
   },
   "function_calls": [
     {
@@ -122,24 +110,24 @@
       },
       {
         "is_param": true,
-        "name": "format_string",
-        "offset": 4,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
         "name": "x_pos",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "y_pos",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "format_string",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },

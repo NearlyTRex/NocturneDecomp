@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextColorWrapper_FUN_004024a0(char * text, int x_pos, int y_pos)
+; __cdecl void engine_2d.c_drawTextColorWrapper_FUN_004024a0(int x_pos, int y_pos, char * text)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   x_pos
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0x4]:4   x_pos
+; int              Stack[0x8]:4   y_pos
+; char *           Stack[0xc]:4   text
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextColor_FUN_00402430

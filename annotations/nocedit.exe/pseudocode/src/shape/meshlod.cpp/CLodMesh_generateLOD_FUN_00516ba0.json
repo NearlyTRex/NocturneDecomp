@@ -1,32 +1,13 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 36,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 37,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -44,16 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 148,
+    "complexity_score": 108,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 8,
     "pseudocode_lines": 68,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "pointer_cast",
       "suspect_float"
     ],
     "total_lines": 255
@@ -320,45 +299,24 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
       "line": 27,
       "match": "7.477411e-39",
-      "text": "fVar6 = 7.477411e-39;",
+      "text": "fVar7 = 7.477411e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "ROUND",
-      "text": "iVar2 = (int)ROUND(dVar4);",
+      "text": "iVar1 = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EAX",
-      "text": "edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(CLodEdge *)((int)",
-      "text": "edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);",
-      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar4);",
+      "text": "iVar2 = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     }
   ]

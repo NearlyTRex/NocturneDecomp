@@ -17,7 +17,6 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
   int iVar5;
   int iVar6;
   int iVar7;
-  ushort angle;
   SMRGLHeaderPrimitive local_88;
   uint local_70;
   uint local_6c;
@@ -59,14 +58,14 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&local_24);
     g_CDemonSetPtr->rendering_mode = 1;
-    angle = 0x8000 - (short)((this_ptr->current_frame << 0xf) / this_ptr->total_frames);
-    iVar3 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(angle);
+    iVar7 = 0x8000 - (this_ptr->current_frame << 0xf) / this_ptr->total_frames;
+    iVar3 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(iVar7);
     pCVar2 = g_CDemonSetPtr;
     (g_CDemonSetPtr->light_direction).y = -37000;
     (pCVar2->light_direction).x =
          (uint)((longlong)iVar3 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
-    iVar3 = engine_matrix_c_interpolatedCos_FUN_0050c600(angle);
+    iVar3 = engine_matrix_c_interpolatedCos_FUN_0050c600(iVar7);
     pCVar2 = g_CDemonSetPtr;
     g_CDemonSetPtr->ambient_base_quick = 0x280;
     (pCVar2->light_direction).z =
@@ -123,10 +122,10 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
       *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar3) =
            (this_ptr->color).r << 8;
       *(int *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = (this_ptr->color).g << 8;
-      iVar5 = iVar3 + 0x30;
+      iVar7 = iVar3 + 0x30;
       *(int *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = (this_ptr->color).b << 8;
-      iVar3 = iVar5;
-    } while (iVar5 != 0xc0);
+      iVar3 = iVar7;
+    } while (iVar7 != 0xc0);
     local_88.surface_normal.D = 0;
     local_88.surface_normal.C = 0;
     local_88.surface_normal.B = 0;
@@ -150,22 +149,22 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     g_CDemonSetPtr->rendering_mode = 0;
     local_10 = g_ThemeFont;
     iVar3 = (g_WindowWidth * 0x240) / 0x280;
-    iVar5 = (g_WindowHeight * 0x18) / 0x1e0;
-    iVar6 = (g_WindowWidth << 5) / 0x280;
+    iVar7 = (g_WindowHeight * 0x18) / 0x1e0;
+    iVar5 = (g_WindowWidth << 5) / 0x280;
     local_14 = (g_WindowHeight * 0x1c0) / 0x1e0;
-    iVar7 = this_ptr->current_frame + 1;
-    this_ptr->current_frame = iVar7;
-    if (this_ptr->total_frames < iVar7) {
+    iVar6 = this_ptr->current_frame + 1;
+    this_ptr->current_frame = iVar6;
+    if (this_ptr->total_frames < iVar6) {
       this_ptr->current_frame = this_ptr->total_frames;
     }
     if (this_ptr->use_custom_viewport == 0) {
       engine_2d_c_fillRectColor_FUN_00403170
-                (iVar6 + -1,local_14 + -1,iVar3 + 1 + iVar6,local_14 + iVar5 + 1,0);
+                (iVar5 + -1,local_14 + -1,iVar3 + 1 + iVar5,local_14 + iVar7 + 1,0);
       if (text != (char *)0x0) {
-        iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_10,text);
+        iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_10,text);
         engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                  (local_10,text,(iVar6 + iVar3 / 2) - iVar7 / 2,
-                   (local_14 + iVar5 / 2) - local_10->max_char_width / 2,0xf8,-1);
+                  (local_10,text,(iVar5 + iVar3 / 2) - iVar6 / 2,
+                   (local_14 + iVar7 / 2) - local_10->max_char_width / 2,0xf8,-1);
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

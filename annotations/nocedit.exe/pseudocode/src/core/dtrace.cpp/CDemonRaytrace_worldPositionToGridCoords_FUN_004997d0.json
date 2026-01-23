@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 38,
+        "line": 42,
         "message": "'stack0xffffffd4' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 40,
+        "line": 44,
         "message": "'stack0xffffffd8' was not declared in this scope"
       }
     ],
@@ -26,18 +26,18 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 117,
+    "complexity_score": 121,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 36,
     "suspect_count": 7,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
       "stack_ref"
     ],
-    "total_lines": 91
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -201,44 +201,44 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
+      "line": 10,
       "match": "extraout_EBX",
       "text": "uint *extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
+      "line": 34,
       "match": "extraout_EBX",
-      "text": "*extraout_EBX = uVar4;",
+      "text": "*extraout_EBX = uVar6;",
       "type": "extra_output"
     },
     {
       "description": "Direct stack address reference",
-      "line": 31,
+      "line": 35,
       "match": "&stack0xffffffd4",
-      "text": "extraout_EBX[(uint)bVar1 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar1 * -8);",
+      "text": "extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
+      "line": 35,
       "match": "extraout_EBX",
-      "text": "extraout_EBX[(uint)bVar1 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar1 * -8);",
+      "text": "extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
+      "line": 36,
       "match": "extraout_EBX",
-      "text": "(extraout_EBX + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "text": "(extraout_EBX + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
       "type": "extra_output"
     },
     {
       "description": "Direct stack address reference",
-      "line": 33,
+      "line": 37,
       "match": "&stack0xffffffd8",
-      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {

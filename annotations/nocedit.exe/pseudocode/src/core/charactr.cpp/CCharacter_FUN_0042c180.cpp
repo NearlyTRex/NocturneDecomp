@@ -12,9 +12,6 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
   float fVar1;
   int iVar2;
   CVector3f *pCVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   char *in_stack_00000010;
@@ -55,22 +52,19 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
     }
     if (0.0 < (double)*(float *)(in_stack_00000010 + 4)) {
       fStack_68 = in_stack_0000000c->x - in_stack_00000008->x;
-      fVar4 = (float10)in_stack_0000000c->y - (float10)in_stack_00000008->y;
-      fStack_64 = (float)fVar4;
-      fVar5 = (float10)fStack_68;
-      fVar6 = (float10)in_stack_0000000c->z - (float10)in_stack_00000008->z;
-      local_60._0_4_ = (uint)fVar6;
-      fVar4 = SQRT(fVar6 * (float10)(float)local_60._0_4_ +
-                   fVar5 * fVar5 + fVar4 * (float10)fStack_64);
+      fStack_64 = in_stack_0000000c->y - in_stack_00000008->y;
+      local_60._0_4_ = in_stack_0000000c->z - in_stack_00000008->z;
+      fVar1 = SQRT((float)local_60._0_4_ * (float)local_60._0_4_ +
+                   fStack_68 * fStack_68 + fStack_64 * fStack_64);
       in_stack_ffffff7c = (CVector3f *)0x42c23f;
       crt_math_c_round_FUN_005fe6b0((double)*(float *)(in_stack_00000010 + 4) * 0.40000000000000002);
-      if (fVar4 <= (float10)0) {
+      if (fVar1 <= 0.0) {
         fStack_68 = 0.0;
         fStack_6c = 0.0;
         fStack_64 = 0.0;
       }
       else {
-        fVar1 = 1.0 / (float)fVar4;
+        fVar1 = 1.0 / fVar1;
         fStack_6c = fStack_6c * fVar1;
         fStack_68 = fStack_68 * fVar1;
         fStack_64 = fStack_64 * fVar1;

@@ -4,44 +4,32 @@
       {
         "category": "other",
         "column": 34,
-        "line": 25,
+        "line": 24,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 31,
+        "line": 30,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 30,
-        "message": "'CONCAT44' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 32,
-        "message": "'SUB84' was not declared in this scope"
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 38,
+        "line": 37,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 39,
+        "line": 38,
         "message": "cast from 'double*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 44,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -55,55 +43,55 @@
       {
         "category": "other",
         "column": 25,
-        "line": 19,
+        "line": 18,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 21,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 25,
+        "line": 24,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 31,
+        "line": 30,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 38,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 39,
+        "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 142,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 36,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 124
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -239,65 +227,65 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_ffffffe4",
       "text": "uint in_stack_ffffffe4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_ffffffe4",
       "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe4);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 17,
       "match": "(double *)((int)",
       "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 22,
       "match": "CONCAT44",
       "text": "(double)CONCAT44((this_ptr->options).trigger_id,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4)),",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 24,
       "match": "SUB84",
-      "text": "SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));",
+      "text": "SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 36,
       "match": "ROUND",
-      "text": "sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(this_ptr_00,(int)ROUND(dVar2),dest_buffer_offset);",
+      "text": "sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(this_ptr_00,(int)ROUND(dVar1),dest_buffer_offset);",
       "type": "decompiler_intrinsic"
     }
   ]

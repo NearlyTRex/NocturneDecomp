@@ -11,13 +11,11 @@
 void core_setedit_cpp_FUN_005817d0(void *unk)
 
 {
-  CDemonRenderer *this_ptr;
-  float *pfVar1;
-  int *extraout_EAX;
-  CVector3i *input;
-  int iVar2;
-  uint uVar3;
-  double dVar4;
+  CDemonRenderer *pCVar1;
+  float *pfVar2;
+  int iVar3;
+  uint uVar4;
+  double dVar5;
   float *in_stack_00000004;
   float *in_stack_00000008;
   float in_stack_0000000c;
@@ -29,8 +27,7 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   uint local_48;
   uint local_44;
   uint local_40;
-  int local_34;
-  uint local_30;
+  CVector3i local_38;
   uint local_2c;
   uint local_28;
   int local_24;
@@ -39,8 +36,8 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   int local_18;
   
   SStack_64.base.type = 0x5817ea;
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)(in_stack_0000000c * _DAT_00648b39));
-  local_18 = (int)ROUND(dVar4);
+  dVar5 = crt_math_c_round_FUN_005fe6b0((double)(in_stack_0000000c * _DAT_00648b39));
+  local_18 = (int)ROUND(dVar5);
   if (local_18 < 0) {
     local_18 = 0;
   }
@@ -50,42 +47,45 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   local_24 = in_stack_00000010 << 8;
   local_20 = in_stack_00000014 << 8;
   local_1c = in_stack_00000018 << 8;
-  uVar3 = 0;
+  uVar4 = 0;
   do {
     SStack_64.base.type = (int)*in_stack_00000008;
-    iVar2 = uVar3 * 0x30;
+    iVar3 = uVar4 * 0x30;
     while( true ) {
-      dVar4 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)((float)SStack_64.base.type * (float)256));
-      local_34 = (int)ROUND(dVar4);
-      pfVar1 = in_stack_00000008;
-      if ((uVar3 & 2) != 0) {
-        pfVar1 = in_stack_00000004;
+      local_38.y = (int)ROUND(dVar5);
+      pfVar2 = in_stack_00000008;
+      if ((uVar4 & 2) != 0) {
+        pfVar2 = in_stack_00000004;
       }
-      SStack_64.base.type = (int)pfVar1[1];
-      dVar4 = crt_math_c_round_FUN_005fe6b0
+      SStack_64.base.type = (int)pfVar2[1];
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)((float)SStack_64.base.type * (float)256));
-      local_34 = (int)ROUND(dVar4);
-      pfVar1 = in_stack_00000008;
-      if ((uVar3 & 4) != 0) {
-        pfVar1 = in_stack_00000004;
+      pCVar1 = g_CDemonRendererPtr2;
+      local_38.y = (int)ROUND(dVar5);
+      pfVar2 = in_stack_00000008;
+      if ((uVar4 & 4) != 0) {
+        pfVar2 = in_stack_00000004;
       }
-      SStack_64.base.type = (int)pfVar1[2];
-      dVar4 = crt_math_c_round_FUN_005fe6b0
+      SStack_64.base.type = (int)pfVar2[2];
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)((float)SStack_64.base.type * (float)256));
-      local_34 = (int)ROUND(dVar4);
+      local_38.y = (int)ROUND(dVar5);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                ((SProjectedVertex *)(*extraout_EAX + iVar2),input);
-      this_ptr = g_CDemonRendererPtr2;
-      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar2) = 0x80000;
-      *(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x80000;
-      *(uint *)((int)&this_ptr->vertex_buffer_ptr->light + iVar2) = local_30;
-      *(uint *)((int)&this_ptr->vertex_buffer_ptr->color + iVar2) = local_2c;
-      *(uint *)((int)&this_ptr->vertex_buffer_ptr->fog + iVar2) = local_28;
-      uVar3 = uVar3 + 1;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->w_recip + iVar2) = local_24;
-      if (7 < (int)uVar3) {
-        engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_006816c0);
+                ((SProjectedVertex *)
+                 ((int)&(pCVar1->vertex_buffer_ptr->projected_vertex).transformed_x + iVar3),
+                 &local_38);
+      pCVar1 = g_CDemonRendererPtr2;
+      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar3) = 0x80000;
+      *(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar3) = 0x80000;
+      *(int *)((int)&pCVar1->vertex_buffer_ptr->light + iVar3) = local_38.z;
+      *(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = local_2c;
+      *(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = local_28;
+      uVar4 = uVar4 + 1;
+      *(int *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar3) = local_24;
+      if (7 < (int)uVar4) {
+        engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar1,&DAT_006816c0);
         SStack_64.surface_normal.D = 0;
         SStack_64.surface_normal.C = 0;
         SStack_64.surface_normal.B = 0;
@@ -129,9 +129,9 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
                   (g_CDemonRendererPtr2,&SStack_64);
         return;
       }
-      if ((uVar3 & 1) == 0) break;
+      if ((uVar4 & 1) == 0) break;
       SStack_64.base.type = (int)*in_stack_00000004;
-      iVar2 = iVar2 + 0x30;
+      iVar3 = iVar3 + 0x30;
     }
   } while( true );
 }

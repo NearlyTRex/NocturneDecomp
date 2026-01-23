@@ -2,21 +2,15 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 30,
-        "message": "'ABS' was not declared in this scope"
-      },
-      {
         "category": "missing_member",
         "column": 31,
-        "line": 32,
+        "line": 33,
         "message": "'SRoom' {aka 'struct SRoom'} has no member named 'field4_0x40'; did you mean 'field_64'?"
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 35,
+        "column": 37,
+        "line": 36,
         "message": "cast from 'CMatrix3x3f*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -30,26 +24,26 @@
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 35,
+        "column": 21,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 124,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 30,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 117
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -231,14 +225,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "ABS",
-      "text": "if (((ABS(local_30.x) <= (pSVar1->extents).x) && (ABS(local_30.y) <= (pSVar1->extents).y)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 24,
       "match": "ABS",
       "text": "if (((ABS(local_30.x) <= (pSVar1->extents).x) && (ABS(local_30.y) <= (pSVar1->extents).y)) &&",
       "type": "decompiler_intrinsic"
@@ -247,14 +234,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ABS",
+      "text": "if (((ABS(local_30.x) <= (pSVar1->extents).x) && (ABS(local_30.y) <= (pSVar1->extents).y)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ABS",
       "text": "(ABS(local_30.z) <= (pSVar1->extents).z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 29,
       "match": "(CMatrix3x3f *)((int)",
-      "text": "matrix = (CMatrix3x3f *)((int)(matrix + 1) + 0x20);",
+      "text": "this_ptr_00 = (CMatrix3x3f *)((int)(this_ptr_00 + 1) + 0x20);",
       "type": "pointer_cast"
     }
   ]

@@ -13,26 +13,25 @@
 uint core_bugs_cpp_FUN_00425b70(void)
 
 {
-  uint uVar1;
-  float10 fVar2;
-  double dVar3;
+  float fVar1;
+  float fVar2;
+  uint uVar3;
+  double dVar4;
   int in_stack_00000004;
   float in_stack_00000008;
   float in_stack_0000000c;
   
-  fVar2 = ((float10)in_stack_0000000c - (float10)*(float *)(in_stack_00000004 + 0x199f0)) *
-          ((float10)1 / (float10)_DAT_0065b5c8);
+  fVar2 = 1.0 / _DAT_0065b5c8;
+  fVar1 = *(float *)(in_stack_00000004 + 0x199f0);
   crt_math_c_round_FUN_005fe6b0
-            ((double)(float)(((float10)in_stack_00000008 -
-                             (float10)*(float *)(in_stack_00000004 + 0x199ec)) *
-                            ((float10)1 / (float10)_DAT_0065b5c8)));
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
-  if ((-1 < (int)ROUND(dVar3)) && ((int)ROUND(dVar3) < 0xb)) {
+            ((double)((in_stack_00000008 - *(float *)(in_stack_00000004 + 0x199ec)) * fVar2));
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)((in_stack_0000000c - fVar1) * fVar2));
+  if ((-1 < (int)ROUND(dVar4)) && ((int)ROUND(dVar4) < 0xb)) {
     core_bugs_cpp_FUN_00427ba0();
     core_bugs_cpp_FUN_00427ba0();
-    uVar1 = core_bugs_cpp_FUN_00427ba0();
-    return uVar1;
+    uVar3 = core_bugs_cpp_FUN_00427ba0();
+    return uVar3;
   }
-  uVar1 = core_bugs_cpp_FUN_00427ba0();
-  return uVar1;
+  uVar3 = core_bugs_cpp_FUN_00427ba0();
+  return uVar3;
 }

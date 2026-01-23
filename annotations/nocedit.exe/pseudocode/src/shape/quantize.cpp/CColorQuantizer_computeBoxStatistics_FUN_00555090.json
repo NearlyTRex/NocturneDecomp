@@ -4,85 +4,73 @@
       {
         "category": "other",
         "column": 37,
-        "line": 45,
+        "line": 43,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 55,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 62,
-        "message": "'CONCAT44' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 76,
+        "line": 71,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 39,
+        "line": 72,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 11,
+        "line": 75,
+        "message": "request for member '_0_2_' in 'iVar3', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 11,
+        "line": 76,
+        "message": "request for member '_2_2_' in 'iVar3', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 61,
         "line": 77,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 12,
+        "column": 11,
+        "line": 79,
+        "message": "request for member '_0_2_' in 'iVar4', which is of non-class type 'int'"
+      },
+      {
+        "category": "other",
+        "column": 11,
         "line": 80,
-        "message": "request for member '_0_2_' in 'iVar10', which is of non-class type 'int'"
+        "message": "request for member '_2_2_' in 'iVar4', which is of non-class type 'int'"
       },
       {
         "category": "other",
-        "column": 12,
-        "line": 81,
-        "message": "request for member '_2_2_' in 'iVar10', which is of non-class type 'int'"
-      },
-      {
-        "category": "other",
-        "column": 62,
+        "column": 61,
         "line": 82,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 84,
-        "message": "request for member '_0_2_' in 'iVar3', which is of non-class type 'int'"
+        "line": 85,
+        "message": "request for member '_0_2_' in 'iVar5', which is of non-class type 'int'"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 85,
-        "message": "request for member '_2_2_' in 'iVar3', which is of non-class type 'int'"
+        "line": 86,
+        "message": "request for member '_2_2_' in 'iVar5', which is of non-class type 'int'"
       },
       {
         "category": "other",
         "column": 61,
         "line": 87,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 90,
-        "message": "request for member '_0_2_' in 'iVar4', which is of non-class type 'int'"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 91,
-        "message": "request for member '_2_2_' in 'iVar4', which is of non-class type 'int'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 92,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -97,24 +85,30 @@
       {
         "category": "other",
         "column": 15,
-        "line": 45,
+        "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 76,
+        "line": 71,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 21,
+        "line": 72,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 39,
         "line": 77,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 40,
+        "column": 39,
         "line": 82,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -123,30 +117,23 @@
         "column": 39,
         "line": 87,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 92,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 380,
+    "complexity_score": 240,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 120,
-    "suspect_count": 24,
+    "pseudocode_lines": 115,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 442
+    "total_lines": 437
   },
   "cross_references": [
     {
@@ -408,171 +395,80 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_ECX",
-      "text": "uint extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_ECX_00",
-      "text": "float extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 46,
       "match": "ROUND",
-      "text": "this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar15);",
+      "text": "this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 50,
       "match": "ROUND",
-      "text": "this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 55,
-      "match": "extraout_ECX",
-      "text": "(float)CONCAT44(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "CONCAT44",
-      "text": "(float)CONCAT44(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))",
+      "text": "this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 53,
       "match": "ROUND",
-      "text": "this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar15);",
+      "text": "this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 59,
-      "match": "extraout_ECX_00",
-      "text": "this_ptr->boxes[box_index].red_variance = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
-      "match": "extraout_ECX_00",
-      "text": "this_ptr->boxes[box_index].green_variance = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 61,
-      "match": "extraout_ECX_00",
-      "text": "this_ptr->boxes[box_index].blue_variance = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 62,
-      "match": "extraout_ECX_00",
-      "text": "this_ptr->boxes[box_index].intensity_variance = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
-      "match": "extraout_ECX_00",
-      "text": "this_ptr->boxes[box_index].weighted_variance = extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 65,
-      "match": "extraout_ECX_00",
-      "text": "((double)(local_44 / (float)CONCAT44(extraout_ECX_00,iVar13)));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "CONCAT44",
-      "text": "((double)(local_44 / (float)CONCAT44(extraout_ECX_00,iVar13)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
       "match": "ROUND",
-      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar15);",
+      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 67,
-      "match": "extraout_EDX",
-      "text": "for (iVar13 = this_ptr->boxes[box_index].start_index * 4; iVar13 < extraout_EDX;",
-      "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 64,
       "match": "(int *)((int)",
-      "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
+      "text": "uVar12 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 68,
       "match": "._0_2_",
-      "text": "iVar10._0_2_ = this_ptr->boxes[box_index].avg_red;",
+      "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_red;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 69,
       "match": "._2_2_",
-      "text": "iVar10._2_2_ = this_ptr->boxes[box_index].avg_green;",
+      "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 77,
+      "line": 72,
       "match": "._0_2_",
-      "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_green;",
+      "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._2_2_",
+      "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 78,
-      "match": "._2_2_",
-      "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_blue;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 83,
       "match": "._0_2_",
-      "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_blue;",
+      "text": "iVar5._0_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 84,
+      "line": 79,
       "match": "._2_2_",
-      "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_intensity;",
+      "text": "iVar5._2_2_ = this_ptr->boxes[box_index].avg_intensity;",
       "type": "unknown_field"
     }
   ]

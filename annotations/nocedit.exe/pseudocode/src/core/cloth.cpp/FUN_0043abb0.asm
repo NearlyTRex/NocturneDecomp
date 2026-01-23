@@ -443,7 +443,7 @@ section .text
     PUSH EAX                            ; 0043b027
     FSTP float ptr [ESP + 0x11c]        ; 0043b028
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 0043b02f
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [EAX]                 ; 0043b034
     FADD float ptr [EBX]                ; 0043b036
     ADD ESP,0xc                         ; 0043b038
@@ -487,7 +487,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0043b0b7
     PUSH EAX                            ; 0043b0bb
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 0043b0bc
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0043b0c1
     FLD1                                ; 0043b0c4
     FLD float ptr [ESP + 0x84]          ; 0043b0c6
@@ -615,7 +615,7 @@ section .text
     MOV dword ptr [ESP + 0xb4],EBX      ; 0043b2a5
     MOV dword ptr [ESP + 0xbc],EBX      ; 0043b2ac
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 0043b2b3
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [EDI + 0x3ce58]       ; 0043b2b8
     FDIV float ptr [EDI + 0x3ce5c]      ; 0043b2be
     ADD ESP,0xc                         ; 0043b2c4

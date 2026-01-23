@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 76,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 41,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 162
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 161
   },
   "cross_references": [],
   "function": {
@@ -33,9 +31,9 @@
         "00472674"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540",
-    "signature": "CMatrix3x3f * core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540(CMatrix3x3f * this_ptr, CMatrix3x3f * matrix_a, CMatrix3x3f * matrix_b)"
+    "signature": "CMatrix3x3f * core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540(CMatrix3x3f * matrix_a, CMatrix3x3f * matrix_b, CMatrix3x3f * matrix_out)"
   },
   "function_calls": [],
   "globals": [],
@@ -75,10 +73,10 @@
     "pcode_op_count": 899
   },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 60,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -146,22 +144,15 @@
       },
       {
         "is_param": true,
-        "name": "this_ptr",
+        "name": "matrix_a",
         "offset": 4,
         "size": 4,
         "type": "CMatrix3x3f *"
       },
       {
         "is_param": true,
-        "name": "matrix_a",
-        "offset": 8,
-        "size": 4,
-        "type": "CMatrix3x3f *"
-      },
-      {
-        "is_param": true,
         "name": "matrix_b",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "CMatrix3x3f *"
       }
@@ -184,27 +175,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_ESI",
-      "text": "pfVar3 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_ESI",
-      "text": "return (CMatrix3x3f *)unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

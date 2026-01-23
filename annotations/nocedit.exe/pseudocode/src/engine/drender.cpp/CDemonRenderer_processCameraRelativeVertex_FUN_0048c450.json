@@ -8,33 +8,22 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 21,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 60,
-        "line": 22,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 60,
+    "complexity_score": 79,
     "cross_reference_count": 77,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 15,
-    "suspect_count": 4,
+    "pseudocode_lines": 19,
+    "suspect_count": 5,
     "suspect_types": [
-      "extra_output"
+      "decompiler_intrinsic",
+      "suspect_float"
     ],
-    "total_lines": 40
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -604,32 +593,39 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
+      "description": "Likely misinterpreted integer as float",
+      "line": 12,
+      "match": "6.68261e-39",
+      "text": "CStack_18.x = 6.68261e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "extraout_EAX",
-      "text": "crt_math_c_round_FUN_005fe6b0((double)((float10)*(float *)(extraout_EAX + 4) * fVar1));",
-      "type": "extra_output"
+      "match": "ROUND",
+      "text": "CStack_18.y = (float)(int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Likely misinterpreted integer as float",
       "line": 15,
-      "match": "extraout_EAX_00",
-      "text": "crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float10)*(float *)(extraout_EAX_00 + 8)));",
-      "type": "extra_output"
+      "match": "6.68263e-39",
+      "text": "CStack_18.w = 6.68263e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "CStack_18.y = (float)(int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "CStack_18.y = (float)(int)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

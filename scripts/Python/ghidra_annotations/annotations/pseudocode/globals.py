@@ -749,6 +749,12 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_des
             # Check if this field is a char array (string) - but NOT wchar
             is_char_array = (comp_type and "Array" in comp_type.__class__.__name__ and
                            'char' in comp_type_name.lower() and not is_wchar_array)
+            # Detect if it's an unsigned char array (uchar, unsigned char, uint8_t, byte, etc.)
+            is_unsigned_char_array = (is_char_array and
+                                     ('uchar' in comp_type_name.lower() or
+                                      'unsigned' in comp_type_name.lower() or
+                                      'uint8' in comp_type_name.lower() or
+                                      'byte' in comp_type_name.lower()))
 
             # Check if this field is a nested struct (but NOT a union - unions need different handling)
             # Unions in Ghidra have class name containing "Union"
@@ -813,13 +819,17 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_des
                         # Odd byte at the end
                         word_values.append("0x%04X" % field_bytes[i])
                 append_field("{%s}" % ", ".join(word_values))
+            elif is_unsigned_char_array:
+                # Unsigned char array - always use hex values (0x00-0xFF), never string literals
+                byte_vals = ["0x%02X" % b for b in field_bytes]
+                append_field("{%s}" % ", ".join(byte_vals))
             elif is_char_array:
-                # Format char array as string literal
+                # Signed char array - try string literal first
                 string_val = format_char_bytes_as_string(field_bytes)
                 if string_val:
                     append_field(string_val)
                 else:
-                    # Fallback to byte array - convert values > 127 to signed to avoid narrowing
+                    # Fallback: convert values > 127 to signed to avoid narrowing
                     byte_vals = []
                     for b in field_bytes:
                         if b > 127:

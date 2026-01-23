@@ -74,7 +74,7 @@ section .text
     PUSH EAX                            ; 00402484
     PUSH EDX                            ; 00402485
     CALL engine_2d.c_drawTextMultilineColor_FUN_00401f40 ; 00402486
-        ;   XREF to: 00401f40 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int y_max, ...)
+        ;   XREF to: 00401f40 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int x_max, ...)
     ADD ESP,0x18                        ; 0040248b
     POP EBP                             ; 0040248e
     POP EDI                             ; 0040248f

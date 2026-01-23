@@ -2,39 +2,27 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 25,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 28,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "missing_member",
         "column": 22,
-        "line": 29,
+        "line": 32,
         "message": "'CRock' {aka 'struct CRock'} has no member named 'field1_0x38'"
       },
       {
         "category": "missing_member",
         "column": 26,
-        "line": 30,
-        "message": "'CRock' {aka 'struct CRock'} has no member named 'field1_0x38'"
-      },
-      {
-        "category": "missing_member",
-        "column": 23,
         "line": 33,
         "message": "'CRock' {aka 'struct CRock'} has no member named 'field1_0x38'"
       },
       {
         "category": "missing_member",
+        "column": 23,
+        "line": 36,
+        "message": "'CRock' {aka 'struct CRock'} has no member named 'field1_0x38'"
+      },
+      {
+        "category": "missing_member",
         "column": 27,
-        "line": 34,
+        "line": 37,
         "message": "'CRock' {aka 'struct CRock'} has no member named 'field1_0x38'"
       }
     ],
@@ -50,17 +38,16 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 87,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "pseudocode_lines": 30,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 73
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -174,38 +161,24 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 21,
       "match": "SQRT",
       "text": "((double)(SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) *",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EAX",
-      "text": "lVar4 = (longlong)extraout_EAX * (longlong)(int)ROUND(dVar6);",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 24,
       "match": "ROUND",
-      "text": "lVar4 = (longlong)extraout_EAX * (longlong)(int)ROUND(dVar6);",
+      "text": "lVar5 = (longlong)((int)(iVar4 - (uint)(iVar7 << 1 < 0)) >> 2) * (longlong)(int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 28,
       "match": "ROUND",
-      "text": "lVar4 = (longlong)(iVar5 / 2) * (longlong)(int)ROUND(dVar6);",
+      "text": "lVar5 = (longlong)(iVar6 / 2) * (longlong)(int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     }
   ],

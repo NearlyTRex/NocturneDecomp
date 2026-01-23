@@ -197,7 +197,7 @@
           "type":"int"
         },
         {
-          "name":"y_max",
+          "name":"x_max",
           "storage":{
             "offset":16,
             "size":4,
@@ -213,7 +213,7 @@
           "type":"int"
         },
         {
-          "name":"color",
+          "name":"y_max",
           "storage":{
             "offset":20,
             "size":4,
@@ -222,6 +222,22 @@
               {
                 "addr":"Stack[0x14]",
                 "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"color",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
                 "size":4
               }
             ]
@@ -263,6 +279,22 @@
           "type":"char*"
         },
         {
+          "name":"x_pos",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
           "name":"y_pos",
           "storage":{
             "offset":8,
@@ -272,22 +304,6 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"right_x",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
                 "size":4
               }
             ]
@@ -313,7 +329,7 @@
     "vars":{
       "params":[
         {
-          "name":"text",
+          "name":"x_pos",
           "storage":{
             "offset":4,
             "size":4,
@@ -326,10 +342,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"center_x",
+          "name":"y_pos",
           "storage":{
             "offset":8,
             "size":4,
@@ -345,7 +361,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"text",
           "storage":{
             "offset":12,
             "size":4,
@@ -358,7 +374,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -414,7 +430,7 @@
       ],
       "params":[
         {
-          "name":"format_string",
+          "name":"left_x",
           "storage":{
             "offset":4,
             "size":4,
@@ -427,10 +443,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"left_x",
+          "name":"right_x",
           "storage":{
             "offset":8,
             "size":4,
@@ -446,7 +462,7 @@
           "type":"int"
         },
         {
-          "name":"right_x",
+          "name":"y_pos",
           "storage":{
             "offset":12,
             "size":4,
@@ -462,7 +478,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"format_string",
           "storage":{
             "offset":16,
             "size":4,
@@ -475,7 +491,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -531,7 +547,7 @@
       ],
       "params":[
         {
-          "name":"format_string",
+          "name":"x_pos",
           "storage":{
             "offset":4,
             "size":4,
@@ -544,10 +560,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"x_pos",
+          "name":"y_pos",
           "storage":{
             "offset":8,
             "size":4,
@@ -563,7 +579,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"format_string",
           "storage":{
             "offset":12,
             "size":4,
@@ -576,7 +592,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -850,7 +866,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_oldFunc_FUN_00403740",
+    "name":"engine_3d.c_oldFunction_FUN_00403740",
     "ret":"void*",
     "vars":{
       "locals":[
@@ -21190,7 +21206,7 @@
         "start":"00472540"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540",
     "ret":"CMatrix3x3f*",
@@ -21343,7 +21359,7 @@
       ],
       "params":[
         {
-          "name":"this_ptr",
+          "name":"matrix_a",
           "storage":{
             "offset":4,
             "size":4,
@@ -21359,7 +21375,7 @@
           "type":"CMatrix3x3f*"
         },
         {
-          "name":"matrix_a",
+          "name":"matrix_b",
           "storage":{
             "offset":8,
             "size":4,
@@ -21375,15 +21391,14 @@
           "type":"CMatrix3x3f*"
         },
         {
-          "name":"matrix_b",
+          "name":"matrix_out",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -50060,17 +50075,17 @@
           "name":"angle",
           "storage":{
             "offset":4,
-            "size":2,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
-                "size":2
+                "size":4
               }
             ]
           },
-          "type":"ushort"
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -50470,7 +50485,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"CVector3i*"
         },
         {
           "name":"output_coords",
@@ -50485,7 +50500,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"CVector3i*"
         }
       ]
     }
@@ -90064,6 +90079,21 @@
     "ret":"void",
     "vars":{
       "locals":[
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":504
+        },
         {
           "name":"local_14",
           "storage":{

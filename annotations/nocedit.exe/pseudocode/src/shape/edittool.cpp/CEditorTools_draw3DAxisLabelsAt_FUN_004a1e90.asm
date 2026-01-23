@@ -77,7 +77,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 004a1f05
     PUSH EBX                            ; 004a1f09
     CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 004a1f0a
-        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, ...)
+        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 004a1f0f
     MOV ESI,dword ptr [ESP + 0x34]      ; 004a1f12
     PUSH ESI                            ; 004a1f16

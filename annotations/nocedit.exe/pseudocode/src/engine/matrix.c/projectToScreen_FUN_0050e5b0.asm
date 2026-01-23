@@ -44,7 +44,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EDX       ; 0050e5ce
     MOV dword ptr [ESP + 0xc],EDX       ; 0050e5d2
     CALL engine_matrix.c_transformWorldToView_FUN_0050cc40 ; 0050e5d6
-        ;   XREF to: 0050cc40 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformWorldToView_FUN_0050cc40(int * input_coords, int * output_coords)
+        ;   XREF to: 0050cc40 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformWorldToView_FUN_0050cc40(CVector3i * input_coords, CVector3i * output_coords)
     LEA ESI,[ESP + 0x10]                ; 0050e5db
     ADD ESP,0x4                         ; 0050e5df
     MOVSD ES:EDI,ESI                    ; 0050e5e2

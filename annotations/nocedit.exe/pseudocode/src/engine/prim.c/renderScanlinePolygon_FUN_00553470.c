@@ -12,65 +12,61 @@ engine_prim_c_renderScanlinePolygon_FUN_00553470(SRenderVertex *vertices,int ver
 {
   longlong lVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
-  SSoftwareEdge *pSVar5;
-  int iVar6;
-  SRenderVertex *pSVar7;
-  uint uVar8;
-  SRenderVertex *pSVar9;
-  SRenderVertex *pSVar10;
-  void *pvVar11;
-  int unaff_ESI;
-  int iVar12;
-  uint uVar13;
-  void *in_stack_ffffffdc;
-  void *in_stack_ffffffe0;
+  SSoftwareEdge *right_data;
+  SRenderVertex *pSVar3;
+  uint uVar4;
+  SRenderVertex *pSVar5;
+  SRenderVertex *pSVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
+  uint uVar10;
+  int local_1c;
   SSoftwareEdge *local_14;
   
-  if ((g_VertexProcessingEnabled != 0) && (iVar12 = 0, pSVar7 = vertices, 0 < vertex_count)) {
+  if ((g_VertexProcessingEnabled != 0) && (iVar8 = 0, pSVar3 = vertices, 0 < vertex_count)) {
     do {
-      if ((int)((pSVar7->projected_vertex).screen_x & -0x80000000) != 0) {
-        (pSVar7->projected_vertex).inv_z =
-             (int)(0x7fffffff / (longlong)(pSVar7->projected_vertex).transformed_z);
-        (pSVar7->projected_vertex).screen_x =
-             (int)(((longlong)(pSVar7->projected_vertex).transformed_x *
+      if ((int)((pSVar3->projected_vertex).screen_x & -0x80000000) != 0) {
+        (pSVar3->projected_vertex).inv_z =
+             (int)(0x7fffffff / (longlong)(pSVar3->projected_vertex).transformed_z);
+        (pSVar3->projected_vertex).screen_x =
+             (int)(((longlong)(pSVar3->projected_vertex).transformed_x *
                    (longlong)g_ViewportCenterXFixed) /
-                  (longlong)(pSVar7->projected_vertex).transformed_z) + g_ViewportRightFixed;
-        (pSVar7->projected_vertex).screen_y =
-             (int)(((longlong)(pSVar7->projected_vertex).transformed_y *
+                  (longlong)(pSVar3->projected_vertex).transformed_z) + g_ViewportRightFixed;
+        (pSVar3->projected_vertex).screen_y =
+             (int)(((longlong)(pSVar3->projected_vertex).transformed_y *
                    (longlong)g_ViewportCenterYFixed) /
-                  (longlong)(pSVar7->projected_vertex).transformed_z) + g_ViewportBottomFixed;
+                  (longlong)(pSVar3->projected_vertex).transformed_z) + g_ViewportBottomFixed;
       }
-      iVar12 = iVar12 + 1;
-      pSVar7 = pSVar7 + 1;
-    } while (iVar12 < vertex_count);
+      iVar8 = iVar8 + 1;
+      pSVar3 = pSVar3 + 1;
+    } while (iVar8 < vertex_count);
   }
   if (g_CullingMode != 0) {
-    pSVar7 = vertices + 1;
-    pSVar9 = vertices + 2;
+    pSVar3 = vertices + 1;
+    pSVar5 = vertices + 2;
     if (vertex_count < 4) {
-      iVar12 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(vertices,pSVar7,pSVar9);
-      if (iVar12 == 0) {
+      iVar8 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(vertices,pSVar3,pSVar5);
+      if (iVar8 == 0) {
         return;
       }
     }
     else {
-      in_stack_ffffffe0 = (void *)(vertex_count + -2);
-      iVar12 = 0;
-      pvVar11 = (void *)0x0;
-      if (0 < (int)in_stack_ffffffe0) {
+      iVar8 = vertex_count + -2;
+      iVar9 = 0;
+      iVar7 = 0;
+      if (0 < iVar8) {
         do {
-          iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(vertices,pSVar7,pSVar9);
+          iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(vertices,pSVar3,pSVar5);
           if (iVar2 == 0) {
-            pvVar11 = (void *)((int)pvVar11 + 1);
+            iVar7 = iVar7 + 1;
           }
-          pSVar7 = pSVar7 + 1;
-          iVar12 = iVar12 + 1;
-          pSVar9 = pSVar9 + 1;
-        } while (iVar12 < (int)in_stack_ffffffe0);
+          pSVar3 = pSVar3 + 1;
+          iVar9 = iVar9 + 1;
+          pSVar5 = pSVar5 + 1;
+        } while (iVar9 < iVar8);
       }
-      if (pvVar11 == in_stack_ffffffe0) {
+      if (iVar7 == iVar8) {
         return;
       }
     }
@@ -99,162 +95,162 @@ engine_prim_c_renderScanlinePolygon_FUN_00553470(SRenderVertex *vertices,int ver
   }
   g_MaxScanline = 0;
   g_ActiveEdgeCount = 0;
-  iVar12 = 0;
+  local_1c = 0;
   g_MinScanline = 0x4b0;
   if (0 < vertex_count) {
     do {
-      iVar2 = g_ActiveEdgeCount;
-      iVar3 = iVar12 + 1;
-      if (vertex_count <= iVar3) {
-        iVar3 = 0;
+      iVar8 = g_ActiveEdgeCount;
+      iVar7 = local_1c + 1;
+      if (vertex_count <= iVar7) {
+        iVar7 = 0;
       }
-      pSVar7 = vertices + iVar3;
-      pSVar9 = vertices + iVar12;
-      iVar3 = (pSVar9->projected_vertex).screen_y >> 0x10;
-      iVar4 = (pSVar7->projected_vertex).screen_y >> 0x10;
-      if (iVar3 != iVar4) {
-        iVar6 = iVar4;
-        pSVar10 = pSVar9;
-        if ((pSVar7->projected_vertex).screen_y < (pSVar9->projected_vertex).screen_y) {
-          iVar6 = iVar3;
-          iVar3 = iVar4;
-          pSVar10 = pSVar7;
-          pSVar7 = pSVar9;
+      pSVar3 = vertices + iVar7;
+      pSVar5 = vertices + local_1c;
+      iVar7 = (pSVar5->projected_vertex).screen_y >> 0x10;
+      iVar9 = (pSVar3->projected_vertex).screen_y >> 0x10;
+      if (iVar7 != iVar9) {
+        iVar2 = iVar9;
+        pSVar6 = pSVar5;
+        if ((pSVar3->projected_vertex).screen_y < (pSVar5->projected_vertex).screen_y) {
+          iVar2 = iVar7;
+          iVar7 = iVar9;
+          pSVar6 = pSVar3;
+          pSVar3 = pSVar5;
         }
-        g_SoftwareEdgeTable[g_ActiveEdgeCount].y_min = iVar3;
-        iVar4 = g_MinScanline;
-        g_SoftwareEdgeTable[iVar2].y_max = iVar6;
-        if (iVar3 < iVar4) {
-          g_MinScanline = iVar3;
+        g_SoftwareEdgeTable[g_ActiveEdgeCount].y_min = iVar7;
+        iVar9 = g_MinScanline;
+        g_SoftwareEdgeTable[iVar8].y_max = iVar2;
+        if (iVar7 < iVar9) {
+          g_MinScanline = iVar7;
         }
-        if (g_MaxScanline < iVar6) {
-          g_MaxScanline = iVar6;
+        if (g_MaxScanline < iVar2) {
+          g_MaxScanline = iVar2;
         }
-        uVar8 = (pSVar7->projected_vertex).screen_y - (pSVar10->projected_vertex).screen_y;
-        if (uVar8 < 0x10000) {
-          iVar3 = 0;
+        uVar4 = (pSVar3->projected_vertex).screen_y - (pSVar6->projected_vertex).screen_y;
+        if (uVar4 < 0x10000) {
+          iVar7 = 0;
         }
         else {
-          iVar3 = (int)(0xffffffff / (ulonglong)uVar8);
+          iVar7 = (int)(0xffffffff / (ulonglong)uVar4);
         }
-        uVar13 = (uint)(ushort)((ushort)(pSVar10->projected_vertex).screen_y ^ 0xffff);
-        lVar1 = (longlong)iVar3 *
+        uVar10 = (uint)(ushort)((ushort)(pSVar6->projected_vertex).screen_y ^ 0xffff);
+        lVar1 = (longlong)iVar7 *
                 (longlong)
-                ((pSVar7->projected_vertex).screen_x - (pSVar10->projected_vertex).screen_x);
-        uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeTable[iVar2].x_gradient = uVar8;
-        lVar1 = (longlong)(int)uVar13 * (longlong)(int)uVar8;
-        g_SoftwareEdgeTable[iVar2].x_current =
-             (pSVar10->projected_vertex).screen_x +
+                ((pSVar3->projected_vertex).screen_x - (pSVar6->projected_vertex).screen_x);
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+        g_SoftwareEdgeTable[iVar8].x_gradient = uVar4;
+        lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
+        g_SoftwareEdgeTable[iVar8].x_current =
+             (pSVar6->projected_vertex).screen_x +
              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar3 * (longlong)((int)pSVar7->u - (int)pSVar10->u);
-        uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeTable[iVar2].u_gradient = uVar8;
-        lVar1 = (longlong)(int)uVar13 * (longlong)(int)uVar8;
-        g_SoftwareEdgeTable[iVar2].u_current =
-             (int)pSVar10->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar3 * (longlong)((int)pSVar7->v - (int)pSVar10->v);
-        uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeTable[iVar2].v_gradient = uVar8;
-        lVar1 = (longlong)(int)uVar13 * (longlong)(int)uVar8;
-        g_SoftwareEdgeTable[iVar2].v_current =
-             (int)pSVar10->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar3 * (longlong)((int)pSVar7->light - (int)pSVar10->light);
-        uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeTable[iVar2].z_gradient = uVar8;
-        lVar1 = (longlong)(int)uVar13 * (longlong)(int)uVar8;
-        g_SoftwareEdgeTable[iVar2].z_current =
-             (int)pSVar10->light + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar3 * (longlong)((int)pSVar7->w_recip - (int)pSVar10->w_recip);
-        uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeTable[iVar2].fog_gradient = uVar8;
-        lVar1 = (longlong)(int)uVar13 * (longlong)(int)uVar8;
-        g_SoftwareEdgeTable[iVar2].fog_current =
-             (int)pSVar10->w_recip + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10)
-        ;
-        lVar1 = (longlong)iVar3 *
+        lVar1 = (longlong)iVar7 * (longlong)((int)pSVar3->u - (int)pSVar6->u);
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+        g_SoftwareEdgeTable[iVar8].u_gradient = uVar4;
+        lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
+        g_SoftwareEdgeTable[iVar8].u_current =
+             (int)pSVar6->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        lVar1 = (longlong)iVar7 * (longlong)((int)pSVar3->v - (int)pSVar6->v);
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+        g_SoftwareEdgeTable[iVar8].v_gradient = uVar4;
+        lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
+        g_SoftwareEdgeTable[iVar8].v_current =
+             (int)pSVar6->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        lVar1 = (longlong)iVar7 * (longlong)((int)pSVar3->light - (int)pSVar6->light);
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+        g_SoftwareEdgeTable[iVar8].z_gradient = uVar4;
+        lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
+        g_SoftwareEdgeTable[iVar8].z_current =
+             (int)pSVar6->light + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        lVar1 = (longlong)iVar7 * (longlong)((int)pSVar3->w_recip - (int)pSVar6->w_recip);
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+        g_SoftwareEdgeTable[iVar8].fog_gradient = uVar4;
+        lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
+        g_SoftwareEdgeTable[iVar8].fog_current =
+             (int)pSVar6->w_recip + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        lVar1 = (longlong)iVar7 *
                 (longlong)
-                ((pSVar7->projected_vertex).transformed_z -
-                (pSVar10->projected_vertex).transformed_z);
-        uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeTable[iVar2].w_gradient = uVar8;
-        lVar1 = (longlong)(int)uVar13 * (longlong)(int)uVar8;
-        g_SoftwareEdgeTable[iVar2].w_current =
-             (pSVar10->projected_vertex).transformed_z +
+                ((pSVar3->projected_vertex).transformed_z - (pSVar6->projected_vertex).transformed_z
+                );
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+        g_SoftwareEdgeTable[iVar8].w_gradient = uVar4;
+        lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
+        g_SoftwareEdgeTable[iVar8].w_current =
+             (pSVar6->projected_vertex).transformed_z +
              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)iVar3 * (longlong)(pSVar7->color - pSVar10->color);
-        uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeTable[iVar2].r_gradient = uVar8;
-        lVar1 = (longlong)(int)uVar13 * (longlong)(int)uVar8;
-        in_stack_ffffffdc = (void *)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        g_SoftwareEdgeTable[iVar2].r_current = pSVar10->color + (int)in_stack_ffffffdc;
-        lVar1 = (longlong)iVar3 * (longlong)((int)pSVar7->fog - (int)pSVar10->fog);
-        uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeTable[iVar2].g_gradient = uVar8;
-        lVar1 = (longlong)(int)uVar13 * (longlong)(int)uVar8;
-        g_SoftwareEdgeTable[iVar2].g_current =
-             (int)pSVar10->fog + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        lVar1 = (longlong)iVar7 * (longlong)(pSVar3->color - pSVar6->color);
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+        g_SoftwareEdgeTable[iVar8].r_gradient = uVar4;
+        lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
+        g_SoftwareEdgeTable[iVar8].r_current =
+             pSVar6->color + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        lVar1 = (longlong)iVar7 * (longlong)((int)pSVar3->fog - (int)pSVar6->fog);
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+        g_SoftwareEdgeTable[iVar8].g_gradient = uVar4;
+        lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
+        g_SoftwareEdgeTable[iVar8].g_current =
+             (int)pSVar6->fog + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         g_ActiveEdgeCount = g_ActiveEdgeCount + 1;
       }
-      iVar12 = iVar12 + 1;
-    } while (iVar12 < vertex_count);
+      local_1c = local_1c + 1;
+    } while (local_1c < vertex_count);
   }
-  iVar2 = g_MinScanline;
-  pSVar5 = g_SoftwareEdgeTable;
-  iVar3 = 0;
+  iVar8 = g_MinScanline;
+  right_data = g_SoftwareEdgeTable;
+  iVar7 = 0;
   if (0 < g_ActiveEdgeCount) {
     do {
-      if ((g_MinScanline == pSVar5->y_min) && (pSVar5 != (SSoftwareEdge *)0x0)) goto LAB_0055361f;
-      iVar3 = iVar3 + 1;
-      pSVar5 = pSVar5 + 1;
-    } while (iVar3 < g_ActiveEdgeCount);
+      if ((g_MinScanline == right_data->y_min) && (right_data != (SSoftwareEdge *)0x0))
+      goto LAB_0055361f;
+      iVar7 = iVar7 + 1;
+      right_data = right_data + 1;
+    } while (iVar7 < g_ActiveEdgeCount);
   }
-  pSVar5 = (SSoftwareEdge *)0x0;
+  right_data = (SSoftwareEdge *)0x0;
 LAB_0055361f:
-  if (pSVar5 != (SSoftwareEdge *)0x0) {
-    iVar3 = 0;
+  if (right_data != (SSoftwareEdge *)0x0) {
+    iVar7 = 0;
     local_14 = g_SoftwareEdgeTable;
     if (0 < g_ActiveEdgeCount) {
       do {
-        if ((g_MinScanline == local_14->y_min) && (local_14 != pSVar5)) goto LAB_0055365c;
-        iVar3 = iVar3 + 1;
+        if ((g_MinScanline == local_14->y_min) && (local_14 != right_data)) goto LAB_0055365c;
+        iVar7 = iVar7 + 1;
         local_14 = local_14 + 1;
-      } while (iVar3 < g_ActiveEdgeCount);
+      } while (iVar7 < g_ActiveEdgeCount);
     }
     local_14 = (SSoftwareEdge *)0x0;
 LAB_0055365c:
     if (local_14 != (SSoftwareEdge *)0x0) {
       do {
-        iVar3 = g_ActiveEdgeCount;
-        if (pSVar5->y_max <= iVar2) {
-          pSVar5->y_min = -1;
-          iVar4 = 0;
-          pSVar5 = g_SoftwareEdgeTable;
-          if (0 < iVar3) {
+        iVar7 = g_ActiveEdgeCount;
+        if (right_data->y_max <= iVar8) {
+          right_data->y_min = -1;
+          iVar9 = 0;
+          right_data = g_SoftwareEdgeTable;
+          if (0 < iVar7) {
             do {
-              if ((iVar2 == pSVar5->y_min) && (pSVar5 != local_14)) goto LAB_005536b2;
-              iVar4 = iVar4 + 1;
-              pSVar5 = pSVar5 + 1;
-            } while (iVar4 < g_ActiveEdgeCount);
+              if ((iVar8 == right_data->y_min) && (right_data != local_14)) goto LAB_005536b2;
+              iVar9 = iVar9 + 1;
+              right_data = right_data + 1;
+            } while (iVar9 < g_ActiveEdgeCount);
           }
-          pSVar5 = (SSoftwareEdge *)0x0;
+          right_data = (SSoftwareEdge *)0x0;
 LAB_005536b2:
-          if (pSVar5 == (SSoftwareEdge *)0x0) {
+          if (right_data == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        iVar3 = g_ActiveEdgeCount;
-        if (local_14->y_max <= iVar2) {
+        iVar7 = g_ActiveEdgeCount;
+        if (local_14->y_max <= iVar8) {
           local_14->y_min = -1;
           local_14 = g_SoftwareEdgeTable;
-          iVar4 = 0;
-          if (iVar3 < 1) {
+          iVar9 = 0;
+          if (iVar7 < 1) {
             return;
           }
-          while ((iVar2 != local_14->y_min || (local_14 == pSVar5))) {
-            iVar4 = iVar4 + 1;
+          while ((iVar8 != local_14->y_min || (local_14 == right_data))) {
+            iVar9 = iVar9 + 1;
             local_14 = local_14 + 1;
-            if (g_ActiveEdgeCount <= iVar4) {
+            if (g_ActiveEdgeCount <= iVar9) {
               return;
             }
           }
@@ -262,23 +258,23 @@ LAB_005536b2:
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_005b5710(in_stack_ffffffdc,in_stack_ffffffe0,iVar12);
-        pSVar5->x_current = pSVar5->x_current + pSVar5->x_gradient;
-        pSVar5->u_current = pSVar5->u_current + pSVar5->u_gradient;
-        pSVar5->v_current = pSVar5->v_current + pSVar5->v_gradient;
-        pSVar5->w_current = pSVar5->w_current + pSVar5->w_gradient;
-        pSVar5->z_current = pSVar5->z_current + pSVar5->z_gradient;
-        pSVar5->r_current = pSVar5->r_current + pSVar5->r_gradient;
-        pSVar5->g_current = pSVar5->g_current + pSVar5->g_gradient;
-        pSVar5->fog_current = pSVar5->fog_current + pSVar5->fog_gradient;
-        *(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);
-        *(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);
-        *(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);
-        *(int *)(unaff_ESI + 0x28) = *(int *)(unaff_ESI + 0x28) + *(int *)(unaff_ESI + 0x2c);
-        *(int *)(unaff_ESI + 0x10) = *(int *)(unaff_ESI + 0x10) + *(int *)(unaff_ESI + 0x14);
-        *(int *)(unaff_ESI + 0x38) = *(int *)(unaff_ESI + 0x38) + *(int *)(unaff_ESI + 0x3c);
-        *(int *)(unaff_ESI + 0x40) = *(int *)(unaff_ESI + 0x40) + *(int *)(unaff_ESI + 0x44);
-        *(int *)(unaff_ESI + 0x30) = *(int *)(unaff_ESI + 0x30) + *(int *)(unaff_ESI + 0x34);
+        wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,right_data,iVar8);
+        right_data->x_current = right_data->x_current + right_data->x_gradient;
+        right_data->u_current = right_data->u_current + right_data->u_gradient;
+        right_data->v_current = right_data->v_current + right_data->v_gradient;
+        right_data->w_current = right_data->w_current + right_data->w_gradient;
+        right_data->z_current = right_data->z_current + right_data->z_gradient;
+        right_data->r_current = right_data->r_current + right_data->r_gradient;
+        right_data->g_current = right_data->g_current + right_data->g_gradient;
+        right_data->fog_current = right_data->fog_current + right_data->fog_gradient;
+        *(int *)(iVar8 + 8) = *(int *)(iVar8 + 8) + *(int *)(iVar8 + 0xc);
+        *(int *)(iVar8 + 0x18) = *(int *)(iVar8 + 0x18) + *(int *)(iVar8 + 0x1c);
+        *(int *)(iVar8 + 0x20) = *(int *)(iVar8 + 0x20) + *(int *)(iVar8 + 0x24);
+        *(int *)(iVar8 + 0x28) = *(int *)(iVar8 + 0x28) + *(int *)(iVar8 + 0x2c);
+        *(int *)(iVar8 + 0x10) = *(int *)(iVar8 + 0x10) + *(int *)(iVar8 + 0x14);
+        *(int *)(iVar8 + 0x38) = *(int *)(iVar8 + 0x38) + *(int *)(iVar8 + 0x3c);
+        *(int *)(iVar8 + 0x40) = *(int *)(iVar8 + 0x40) + *(int *)(iVar8 + 0x44);
+        *(int *)(iVar8 + 0x30) = *(int *)(iVar8 + 0x30) + *(int *)(iVar8 + 0x34);
       } while( true );
     }
   }

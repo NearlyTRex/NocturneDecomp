@@ -20,7 +20,6 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
   SRenderVertex *pSVar6;
   float *pfVar7;
   SRenderVertex *pSVar8;
-  int green_component;
   int iVar9;
   ushort *puVar10;
   int iVar11;
@@ -29,6 +28,7 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
   float10 fVar14;
   float10 fVar15;
   double dVar16;
+  double dVar17;
   SMRGLHeaderPrimitive local_12c;
   uint local_114;
   uint local_108;
@@ -147,21 +147,21 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
               local_28 = (float)((float10)fVar2 * fVar12);
               local_30 = (float)((float10)fVar3 * fVar12);
               local_2c = (float)((float10)fVar5 * fVar12);
-              fVar13 = (float10)127.0f;
-              fVar14 = (float10)local_30 + fVar13;
-              fVar15 = (float10)local_28 + fVar13;
+              fVar13 = (float10)local_28;
+              fVar14 = (float10)127.0f;
+              fVar15 = (float10)local_30 + fVar14;
               local_12c.base.count = 0x59b303;
-              dVar16 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar5 * fVar12 + fVar13));
+              dVar16 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar5 * fVar12 + fVar14));
               fVar12 = (float10)dVar16;
               local_12c.base.type = 0x59b30a;
-              dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
-              local_28 = (float)(int)ROUND(fVar12);
-              local_2c = (float)(int)ROUND(dVar16);
-              iVar9 = 0x59b330;
               dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
-              local_30 = (float)(int)ROUND(dVar16);
+              local_28 = (float)(int)ROUND(fVar12);
+              iVar9 = 0x59b330;
+              local_2c = (float)(int)ROUND(dVar16);
+              dVar17 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 + fVar14));
+              local_30 = (float)(int)ROUND(dVar17);
               engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-                        (g_CDemonRendererPtr2,(int)local_30,green_component,iVar9);
+                        (g_CDemonRendererPtr2,(int)local_30,(int)ROUND(dVar16),iVar9);
               local_12c.base.count = 3;
               local_114 = (uint)*puVar10;
               local_108 = (uint)puVar10[1];

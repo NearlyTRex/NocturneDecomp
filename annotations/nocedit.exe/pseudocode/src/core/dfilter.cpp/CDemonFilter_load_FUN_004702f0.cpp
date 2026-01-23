@@ -12,7 +12,6 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   char cVar1;
   FILE *pFVar2;
   int iVar3;
-  int extraout_EDX;
   char *pcVar4;
   double dVar5;
   uint uVar6;
@@ -28,7 +27,7 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   uVar6 = 0x47034c;
   dVar5 = crt_math_c_round_FUN_005fe6b0(SQRT((double)iVar3));
   this_ptr->size = (int)ROUND(dVar5);
-  this_ptr->count = extraout_EDX / this_ptr->size;
+  this_ptr->count = iVar3 / this_ptr->size;
   if (this_ptr->size != this_ptr->count) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xb7;

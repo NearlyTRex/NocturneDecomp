@@ -10,7 +10,6 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
 
 {
   CKeyFramedModelInstance *this_ptr_00;
-  CKeyFramedModelInstance *this_ptr_01;
   CKeyFramedModel *pCVar1;
   CVector3f *pCVar2;
   int iVar3;
@@ -41,7 +40,8 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   auStack_104._0_4_ = 8.647348e-39;
   dVar7 = crt_math_c_round_FUN_005fe6b0((double)local_c);
   local_10 = (float)(int)ROUND(dVar7);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_01);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+                     (&(this_ptr->base_weapon).model);
   pCVar2 = pCVar1->frame_bounds + (int)local_10 * 2;
   (in_stack_00000008->min).x = pCVar2->x;
   (in_stack_00000008->min).y = pCVar2->y;

@@ -58,25 +58,19 @@
       {
         "category": "other",
         "column": 26,
-        "line": 101,
+        "line": 100,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 34,
+        "category": "other",
+        "column": 26,
         "line": 102,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 103,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 105,
+        "line": 104,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -151,36 +145,36 @@
       {
         "category": "other",
         "column": 18,
-        "line": 101,
+        "line": 100,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 103,
+        "line": 102,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 105,
+        "line": 104,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 276,
+    "complexity_score": 275,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 18,
-    "pseudocode_lines": 116,
+    "pseudocode_lines": 115,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 401
+    "total_lines": 400
   },
   "cross_references": [
     {
@@ -507,42 +501,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 93,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 94,
       "match": "ROUND",
-      "text": "*piVar1 = *piVar1 - (int)ROUND(fVar8);",
+      "text": "*piVar1 = *piVar1 - (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 95,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 96,
       "match": "ROUND",
-      "text": "*piVar1 = *piVar1 - (int)ROUND(fVar9);",
+      "text": "*piVar1 = *piVar1 - (int)ROUND(fVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 97,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 98,
       "match": "ROUND",
       "text": "*piVar1 = *piVar1 - (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"

@@ -11,15 +11,19 @@ engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
           (CDemonRenderer *this_ptr,CVector3f *world_position)
 
 {
-  int extraout_EAX;
-  int extraout_EAX_00;
-  CQuaternion4f *input_point;
-  float10 fVar1;
+  double dVar1;
+  double dVar2;
+  CQuaternion4f CStack_18;
   
-  fVar1 = (float10)256;
-  crt_math_c_round_FUN_005fe6b0((double)((float10)world_position->x * fVar1));
-  crt_math_c_round_FUN_005fe6b0((double)((float10)*(float *)(extraout_EAX + 4) * fVar1));
-  crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float10)*(float *)(extraout_EAX_00 + 8)));
-  engine_3d_c_processCameraRelativePoint_FUN_004037e0(input_point);
+  dVar2 = 256;
+  CStack_18.x = 6.68261e-39;
+  dVar1 = crt_math_c_round_FUN_005fe6b0((double)world_position->x * 256);
+  CStack_18.y = (float)(int)ROUND(dVar1);
+  CStack_18.w = 6.68263e-39;
+  dVar1 = crt_math_c_round_FUN_005fe6b0((double)world_position->y * dVar2);
+  CStack_18.y = (float)(int)ROUND(dVar1);
+  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2 * (double)world_position->z);
+  CStack_18.y = (float)(int)ROUND(dVar2);
+  engine_3d_c_processCameraRelativePoint_FUN_004037e0(&CStack_18);
   return;
 }

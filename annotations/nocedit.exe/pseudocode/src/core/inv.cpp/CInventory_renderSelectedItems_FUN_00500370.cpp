@@ -14,8 +14,6 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
   int iVar3;
   int iVar4;
   int iVar5;
-  int extraout_ECX;
-  int extraout_ECX_00;
   int iVar6;
   double dVar7;
   int iStack_40;
@@ -42,7 +40,6 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
         dVar7 = crt_math_c_round_FUN_005fe6b0
                           ((double)(this_ptr->weapon_highlight_timer * 65535.0f));
         local_20 = (int)ROUND(dVar7);
-        iVar5 = extraout_ECX;
       }
       iVar1 = (local_20 * 2) / 3;
       if (this_ptr->render_mode_flag == 0) {
@@ -74,7 +71,6 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
       iVar3 = g_WindowHeight - iVar1;
       if (this_ptr->item_highlight_timer < 1.0) {
         crt_math_c_round_FUN_005fe6b0((double)(this_ptr->item_highlight_timer * 65535.0f));
-        iVar5 = extraout_ECX_00;
       }
       if (this_ptr->render_mode_flag == 0) {
         core_inv_cpp_drawWeaponIconBackground_FUN_00500050

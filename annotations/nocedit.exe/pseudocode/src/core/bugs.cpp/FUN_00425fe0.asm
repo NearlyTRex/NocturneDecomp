@@ -149,7 +149,7 @@ section .text
     PUSH EAX                            ; 004260f1
     LEA ESI,[ESP + 0xa4]                ; 004260f2
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 004260f9
-        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
+        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004260fe
     LEA ESI,[ESP + 0xa4]                ; 00426103
     LEA EDI,[EBX + 0x12b00]             ; 0042610a

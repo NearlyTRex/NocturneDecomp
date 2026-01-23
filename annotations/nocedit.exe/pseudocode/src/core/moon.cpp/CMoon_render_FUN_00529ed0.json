@@ -4,14 +4,20 @@
       {
         "category": "other",
         "column": 29,
-        "line": 64,
+        "line": 63,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 66,
+        "line": 65,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 66,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -27,21 +33,9 @@
       },
       {
         "category": "other",
-        "column": 46,
-        "line": 69,
-        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 47,
-        "line": 77,
+        "line": 76,
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 78,
-        "message": "'ROUND' was not declared in this scope"
       },
       {
         "category": "other",
@@ -62,28 +56,16 @@
         "message": "cast from 'CKeyFramedModelInstance*' to 'int' loses precision [-fpermissive]"
       },
       {
+        "category": "other",
+        "column": 38,
+        "line": 95,
+        "message": "cast from 'CKeyFramedModelInstance*' to 'int' loses precision [-fpermissive]"
+      },
+      {
         "category": "incompatible_types",
         "column": 44,
         "line": 108,
         "message": "invalid conversion from 'void*' to 'ulonglong*' {aka 'long long unsigned int*'} [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 112,
-        "message": "'CONCAT44' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 112,
-        "message": "'paddusb' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 132,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -97,12 +79,18 @@
       {
         "category": "other",
         "column": 19,
-        "line": 64,
+        "line": 63,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 40,
+        "line": 65,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 36,
         "line": 66,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -120,13 +108,13 @@
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 69,
+        "column": 37,
+        "line": 76,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 37,
+        "column": 20,
         "line": 77,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -150,23 +138,22 @@
       },
       {
         "category": "other",
-        "column": 10,
-        "line": 95,
+        "column": 20,
+        "line": 94,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 324,
+    "complexity_score": 299,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 35,
     "pseudocode_lines": 129,
-    "suspect_count": 17,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "mmx_assembly",
       "pointer_cast",
       "suspect_float"
@@ -751,57 +738,50 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(float *)((int)",
       "text": "if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(int *)((int)",
       "text": "(g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(float *)((int)",
       "text": "local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(float *)((int)",
       "text": "local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 61,
       "match": "(float *)((int)",
       "text": "local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(float *)((int)",
       "text": "((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar4));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 70,
       "match": "ROUND",
       "text": "local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
@@ -833,13 +813,6 @@
       "match": "ROUND",
       "text": "local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 88,
-      "match": "extraout_EDX",
-      "text": "*(CKeyFramedModelInstance **)(extraout_EDX + 0x15ae80) = local_14;",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

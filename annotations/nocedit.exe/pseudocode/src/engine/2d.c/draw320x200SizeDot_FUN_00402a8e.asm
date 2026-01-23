@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined engine_2d.c_draw320x200SizeDot_FUN_00402a8e()
+; __cdecl void engine_2d.c_draw320x200SizeDot_FUN_00402a8e(int x_3d, int y_3d, int z_depth)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x_3d
+; int              Stack[0x8]:4   y_3d
+; int              Stack[0xc]:4   z_depth
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_00613164

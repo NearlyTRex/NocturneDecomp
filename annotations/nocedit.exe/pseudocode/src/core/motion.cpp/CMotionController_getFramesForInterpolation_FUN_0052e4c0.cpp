@@ -15,11 +15,7 @@ core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
   CMotionList *pCVar1;
   int iVar2;
   float fVar3;
-  int *extraout_ECX;
-  int *extraout_ECX_00;
-  int extraout_EDX;
-  float10 fVar4;
-  double dVar5;
+  double dVar4;
   
   pCVar1 = this_ptr->motion_list_ptr;
   if (frame_number <= 0.0) {
@@ -30,11 +26,11 @@ core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
   }
   else {
     if (frame_number < (float)(pCVar1->motions[motion_index].frame_count + -1)) {
-      fVar4 = (float10)pCVar1->motions[motion_index].frame_start + (float10)frame_number;
-      dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
-      *extraout_ECX_00 = (int)ROUND(dVar5);
-      *out_frame2 = *extraout_ECX_00 + 1;
-      *out_blend_weight = (float)(fVar4 - (float10)*extraout_ECX_00);
+      fVar3 = (float)pCVar1->motions[motion_index].frame_start + frame_number;
+      dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+      *out_frame1 = (int)ROUND(dVar4);
+      *out_frame2 = *out_frame1 + 1;
+      *out_blend_weight = fVar3 - (float)*out_frame1;
       return;
     }
     *out_frame1 = pCVar1->motions[motion_index].frame_start +
@@ -46,16 +42,16 @@ core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
       *out_blend_weight = 0.0;
       return;
     }
-    dVar5 = crt_math_c_round_FUN_005fe6b0
+    dVar4 = crt_math_c_round_FUN_005fe6b0
                       ((double)((float)this_ptr->motion_list_ptr->motions
                                        [pCVar1->motions[motion_index].exit_forward_to_motion].
                                        frame_start +
                                pCVar1->motions[motion_index].exit_forward_to_frame));
-    *out_frame2 = (int)ROUND(dVar5);
-    fVar3 = (float)motion_index - (float)(*(int *)(extraout_EDX + 100) + -1);
+    *out_frame2 = (int)ROUND(dVar4);
+    fVar3 = (float)motion_index - (float)(pCVar1->motions[motion_index].frame_count + -1);
     *out_blend_weight = fVar3;
     if (1.0 <= fVar3) {
-      *extraout_ECX = *out_frame2;
+      *out_frame1 = *out_frame2;
       *out_blend_weight = 0.0;
     }
   }

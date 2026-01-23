@@ -12,7 +12,7 @@ void core_skeledit_cpp_FUN_0058af40(void)
 
 {
   int iVar1;
-  float *matrix_a;
+  float *matrix_b;
   CMatrix3x4f *pCVar2;
   float *pfVar3;
   byte bVar4;
@@ -27,10 +27,10 @@ void core_skeledit_cpp_FUN_0058af40(void)
   local_10 = 0;
   if (0 < *in_stack_00000004) {
     local_c = in_stack_00000004;
-    matrix_a = (float *)(in_stack_00000004 + 0x16);
+    matrix_b = (float *)(in_stack_00000004 + 0x16);
     do {
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                (in_stack_00000008,(CMatrix3x4f *)matrix_a,&local_40);
+                (in_stack_00000008,(CMatrix3x4f *)matrix_b,&local_40);
       pCVar2 = &local_40;
       pfVar3 = (float *)(local_c + 0x16);
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -40,7 +40,7 @@ void core_skeledit_cpp_FUN_0058af40(void)
       }
       local_c = local_c + 0x21;
       local_10 = local_10 + 1;
-      matrix_a = matrix_a + 0x21;
+      matrix_b = matrix_b + 0x21;
       in_stack_00000008 = in_stack_00000008 + 1;
     } while (local_10 < *in_stack_00000004);
   }

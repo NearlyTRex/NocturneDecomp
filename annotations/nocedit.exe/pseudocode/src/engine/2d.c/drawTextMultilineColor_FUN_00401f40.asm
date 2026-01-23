@@ -1,14 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int y_max, int color)
+; __cdecl void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int x_max, int y_max, int color)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
 ; int              Stack[0x8]:4   x_start
 ; int              Stack[0xc]:4   y_start
-; int              Stack[0x10]:4   y_max
-; int              Stack[0x14]:4   color
+; int              Stack[0x10]:4   x_max
+; int              Stack[0x14]:4   y_max
+; int              Stack[0x18]:4   color
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -16,7 +17,7 @@
 ;   engine_2d.c_drawTextColor_FUN_00402430 at 00402486
 ;
 ; Referenced Globals:
-;   undefined4 g_FontTable
+;   SFontGlyph[224] g_FontTable
 ;
 ; Called Functions:
 ;   engine_2d.c_drawCharacter_FUN_00401a10

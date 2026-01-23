@@ -2,11 +2,11 @@
 // Address: 0050c920
 // Address Range: [[0050c920, 0050cc34]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_buildRotationMatrix_FUN_0050c920(ushort pitch, ushort yaw, ushort roll)
+// Signature: void engine_matrix.c_buildRotationMatrix_FUN_0050c920(int pitch, int yaw, int roll)
 
 #include "nocturne.h"
 
-void __cdecl engine_matrix_c_buildRotationMatrix_FUN_0050c920(ushort pitch,ushort yaw,ushort roll)
+void __cdecl engine_matrix_c_buildRotationMatrix_FUN_0050c920(int pitch,int yaw,int roll)
 
 {
   longlong lVar1;

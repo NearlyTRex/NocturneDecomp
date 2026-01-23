@@ -20,7 +20,6 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
   int y_top;
   int iVar9;
   char (*pacVar10) [256];
-  int extraout_EDX;
   int height_half;
   DWORD *pDVar11;
   SSoundDeviceInfo *pSVar12;
@@ -556,12 +555,13 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
               uStack_44 = (double)fVar19;
               fVar8 = (float)sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
                                        (iVar9,(float)dVar20,(float)fVar19);
+              y_top = g_WindowHeight + -1;
               uVar24 = 0x512634;
               dVar20 = crt_math_c_round_FUN_005fe6b0
                                  ((double)((float)g_WindowHeight -
                                           fVar8 * (float)g_WindowHeight * 0.25f));
               local_14 = (float)(int)ROUND(dVar20);
-              height_half = (extraout_EDX - (int)local_14) + 1;
+              height_half = (y_top - (int)local_14) + 1;
               dVar20 = (double)CONCAT44(uVar24,height_half);
               core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(iVar3,y_top,height_half);
               iVar3 = iVar3 + 4;

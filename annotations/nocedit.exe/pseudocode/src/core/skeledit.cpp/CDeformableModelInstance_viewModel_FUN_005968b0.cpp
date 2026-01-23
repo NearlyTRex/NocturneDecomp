@@ -23,7 +23,6 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   SMotion *pSVar8;
   CMotionList *pCVar9;
   CVector3f *pCVar10;
-  int extraout_EAX;
   CVector3f *pCVar11;
   CDeformableModelInstance *pCVar12;
   int iVar13;
@@ -899,7 +898,7 @@ LAB_005975b4:
                          (&in_stack_00000004->motion_controller);
       dVar20 = crt_math_c_round_FUN_005fe6b0((double)pSVar8->exit_forward_to_frame);
       local_38 = (float)(int)ROUND(dVar20);
-      iVar6 = *(int *)(extraout_EAX + 0x34);
+      iVar6 = pSVar8->exit_forward_to_motion;
       pCVar9 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                          (&in_stack_00000004->motion_controller);
       iVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
@@ -907,7 +906,7 @@ LAB_005975b4:
                          pCVar9->motions[iVar6].frame_count + -1,1);
       if (iVar6 != 0) {
         local_18 = local_38;
-        *(float *)(extraout_EAX + 0x38) = (float)(int)local_38;
+        pSVar8->exit_forward_to_frame = (float)(int)local_38;
       }
     }
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2d);

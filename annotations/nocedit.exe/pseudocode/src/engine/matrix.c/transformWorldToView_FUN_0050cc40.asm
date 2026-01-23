@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi void engine_matrix.c_transformWorldToView_FUN_0050cc40(int * input_coords, int * output_coords)
+; __stack_esi void engine_matrix.c_transformWorldToView_FUN_0050cc40(CVector3i * input_coords, CVector3i * output_coords)
 ;
 ; Parameters:
-; int *            Stack[0x4]:4   input_coords
+; CVector3i *      Stack[0x4]:4   input_coords
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

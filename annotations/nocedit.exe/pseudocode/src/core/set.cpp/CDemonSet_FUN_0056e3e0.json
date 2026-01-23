@@ -4,14 +4,8 @@
       {
         "category": "other",
         "column": 24,
-        "line": 37,
+        "line": 35,
         "message": "cast from 'undefined4*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 74,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -25,12 +19,24 @@
       {
         "category": "other",
         "column": 16,
-        "line": 37,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 13,
+        "line": 36,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 37,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 18,
         "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -42,14 +48,14 @@
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 40,
+        "column": 23,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 41,
+        "column": 34,
+        "line": 42,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -60,7 +66,7 @@
       },
       {
         "category": "other",
-        "column": 34,
+        "column": 23,
         "line": 44,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -69,37 +75,24 @@
         "column": 23,
         "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 46,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 47,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 342,
+    "complexity_score": 314,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 9,
-    "pseudocode_lines": 67,
-    "suspect_count": 25,
+    "pseudocode_lines": 64,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 227
+    "total_lines": 224
   },
   "cross_references": [
     {
@@ -354,176 +347,162 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "float *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_0000000c",
       "text": "float *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 21,
       "match": "DAT_02d7a7b8",
       "text": "iVar4 = DAT_02d7a7b8;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 26,
       "match": "DAT_03277d80",
       "text": "if (0 < DAT_03277d80) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)&DAT_03277d84 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 28,
       "match": "DAT_03277d84",
       "text": "iVar1 = *(int *)((int)&DAT_03277d84 + iVar6);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_00000008",
       "text": "fVar5 = *(float *)(iVar1 + 0x104) - (*in_stack_00000008 + *in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_0000000c",
       "text": "fVar5 = *(float *)(iVar1 + 0x104) - (*in_stack_00000008 + *in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_00000008",
       "text": "fVar2 = *(float *)(iVar1 + 0x108) - (in_stack_00000008[1] + in_stack_0000000c[1]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_0000000c",
       "text": "fVar2 = *(float *)(iVar1 + 0x108) - (in_stack_00000008[1] + in_stack_0000000c[1]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_00000008",
       "text": "fVar3 = *(float *)(iVar1 + 0x10c) - (in_stack_00000008[2] + in_stack_0000000c[2]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_0000000c",
       "text": "fVar3 = *(float *)(iVar1 + 0x10c) - (in_stack_00000008[2] + in_stack_0000000c[2]);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 33,
       "match": "DAT_02d7a7b8",
       "text": "fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) + DAT_02d7a7b8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 42,
       "match": "DAT_03277d80",
       "text": "} while (iVar6 < DAT_03277d80 * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 44,
       "match": "DAT_03277d80",
       "text": "if (DAT_03277d80 == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 61,
       "match": "in_stack_00000010",
-      "text": "g_RenderVertexBuffer[in_stack_00000010].light = (float)(extraout_EAX << 8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 64,
-      "match": "extraout_EAX",
-      "text": "g_RenderVertexBuffer[in_stack_00000010].light = (float)(extraout_EAX << 8);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000010",
-      "text": "g_RenderVertexBuffer[in_stack_00000010].color = extraout_EAX_00 << 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 66,
-      "match": "extraout_EAX_00",
-      "text": "g_RenderVertexBuffer[in_stack_00000010].color = extraout_EAX_00 << 8;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000010",
-      "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar9) << 8);",
+      "text": "g_RenderVertexBuffer[in_stack_00000010].light = (float)((int)ROUND(dVar8) << 8);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 61,
       "match": "ROUND",
-      "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar9) << 8);",
+      "text": "g_RenderVertexBuffer[in_stack_00000010].light = (float)((int)ROUND(dVar8) << 8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000010",
+      "text": "g_RenderVertexBuffer[in_stack_00000010].color = (int)ROUND(dVar9) << 8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ROUND",
+      "text": "g_RenderVertexBuffer[in_stack_00000010].color = (int)ROUND(dVar9) << 8;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000010",
+      "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar8) << 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ROUND",
+      "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar8) << 8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 65,
       "match": "DAT_02d7a7b8",
       "text": "DAT_02d7a7b8 = iVar4;",
       "type": "undefined_data"

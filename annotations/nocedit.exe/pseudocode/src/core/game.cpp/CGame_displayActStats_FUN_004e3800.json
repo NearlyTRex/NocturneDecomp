@@ -3,20 +3,14 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 54,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 13,
-        "line": 73,
+        "line": 72,
         "message": "'stack0xfffffaa8' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 210,
+        "line": 209,
         "message": "'DAT_02d7c2f0' was not declared in this scope; did you mean 'DAT_02d7c2e8'?"
       }
     ],
@@ -31,93 +25,68 @@
       {
         "category": "other",
         "column": 50,
-        "line": 47,
+        "line": 44,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 60,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 12,
-        "line": 64,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 65,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 67,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 83,
+        "line": 82,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 106,
+        "line": 105,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 143,
+        "line": 142,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 164,
+        "line": 163,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 185,
+        "line": 184,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 185,
+        "line": 184,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 225,
+        "line": 224,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 483,
+    "complexity_score": 397,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 19,
-    "pseudocode_lines": 218,
-    "suspect_count": 24,
+    "pseudocode_lines": 217,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_ref",
       "unaffected_reg",
       "undefined_data"
     ],
-    "total_lines": 544
+    "total_lines": 543
   },
   "cross_references": [
     {
@@ -526,169 +495,113 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_ECX_00",
-      "text": "int extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EDX",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 17,
+      "line": 15,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 46,
       "match": "ROUND",
       "text": "local_24 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 50,
       "match": "ROUND",
       "text": "iStack_34 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 53,
-      "match": "extraout_ECX",
-      "text": "*(float *)(extraout_ECX + 0x250) = (float)fVar11;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 55,
       "match": "ROUND",
       "text": "iStack_34 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
-      "match": "extraout_ECX_00",
-      "text": "fVar2 = *(float *)(extraout_ECX_00 + 0x250) - (float)iStack_34;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
-      "match": "extraout_ECX_00",
-      "text": "*(float *)(extraout_ECX_00 + 0x250) = fVar2;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
-      "match": "extraout_ECX_00",
-      "text": "*(uint *)(extraout_ECX_00 + 0x254) = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
-      "match": "extraout_EDX",
-      "text": "*(uint *)(extraout_ECX_00 + 0x254) = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 63,
       "match": "ROUND",
       "text": "iStack_34 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 66,
+      "line": 65,
       "match": "&stack0xfffffaa8",
-      "text": "pcVar8 = &stack0xfffffaa8;",
+      "text": "pcVar9 = &stack0xfffffaa8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 78,
+      "line": 77,
       "match": "&stack0xfffffaa8",
       "text": "pcVar13 = &stack0xfffffaa8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 117,
+      "line": 116,
       "match": "&stack0xfffffaa8",
-      "text": "pcVar8 = &stack0xfffffaa8;",
+      "text": "pcVar9 = &stack0xfffffaa8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 138,
+      "line": 137,
       "match": "&stack0xfffffaa8",
       "text": "pcVar13 = &stack0xfffffaa8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 159,
+      "line": 158,
       "match": "&stack0xfffffaa8",
       "text": "pcVar13 = &stack0xfffffaa8;",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 178,
+      "line": 177,
       "match": "unaff_EDI",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_158,\"%d\\n\\n\",*(uint *)(unaff_EDI + 0x24c));",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 182,
+      "line": 181,
       "match": "&stack0xfffffaa8",
-      "text": "pcVar8 = &stack0xfffffaa8;",
+      "text": "pcVar9 = &stack0xfffffaa8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 203,
+      "line": 202,
       "match": "&stack0xfffffaa8",
       "text": "(this_ptr_00,&stack0xfffffaa8,&DAT_02d7c2f0,0x14,0x100,0xc0);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 202,
       "match": "DAT_02d7c2f0",
       "text": "(this_ptr_00,&stack0xfffffaa8,&DAT_02d7c2f0,0x14,0x100,0xc0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 209,
+      "line": 208,
       "match": "DAT_02d7c2f0",
       "text": "pcVar13 = &DAT_02d7c2f0;",
       "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
-      "line": 218,
+      "line": 217,
       "match": "unaff_EDI",
       "text": "*(uint *)(unaff_EDI + 0x250) = 0;",
       "type": "unaffected_reg"

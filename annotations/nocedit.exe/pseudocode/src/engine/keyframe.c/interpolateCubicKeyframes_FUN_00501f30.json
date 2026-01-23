@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 99,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "missing_member",
         "column": 41,
-        "line": 171,
+        "line": 180,
         "message": "'SSurfaceNormal' {aka 'struct SSurfaceNormal'} has no member named 'field7_0x1c'"
       }
     ],
@@ -25,84 +19,101 @@
       {
         "category": "other",
         "column": 8,
-        "line": 76,
+        "line": 81,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 77,
+        "line": 82,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 79,
+        "line": 84,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 91,
+        "line": 98,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 92,
+        "line": 99,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 93,
+        "line": 100,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 101,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 102,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 108,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 149,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 152,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 155,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 17,
         "line": 158,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 25,
+        "line": 161,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 164,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 167,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 51,
-        "line": 173,
+        "line": 182,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 265,
+    "complexity_score": 219,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 165,
-    "suspect_count": 9,
+    "pseudocode_lines": 174,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 526
+    "total_lines": 535
   },
   "cross_references": [],
   "function": {
@@ -399,67 +410,32 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_ECX",
-      "text": "int *extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
-      "match": "ROUND",
-      "text": "local_28 = (int *)(int)ROUND(dVar21);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 101,
       "match": "ROUND",
-      "text": "iVar15 = (int)ROUND(fVar17);",
+      "text": "local_28 = (int *)(int)ROUND(dVar26);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 111,
       "match": "ROUND",
-      "text": "iVar11 = (int)ROUND(fVar18);",
+      "text": "iVar20 = (int)ROUND(fVar24);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 112,
       "match": "ROUND",
-      "text": "iVar4 = (int)ROUND(dVar21);",
+      "text": "iVar16 = (int)ROUND(dVar26);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 104,
-      "match": "extraout_ECX",
-      "text": "piVar8 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 105,
-      "match": "extraout_ECX",
-      "text": "piVar9 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 106,
-      "match": "extraout_EDX",
-      "text": "if (0 < extraout_EDX) {",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 113,
+      "match": "ROUND",
+      "text": "iVar4 = (int)ROUND(dVar27);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

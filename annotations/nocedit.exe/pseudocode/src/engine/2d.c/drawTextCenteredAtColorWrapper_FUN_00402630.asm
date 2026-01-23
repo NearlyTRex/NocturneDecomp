@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextCenteredAtColorWrapper_FUN_00402630(char * text, int center_x, int y_pos)
+; __cdecl void engine_2d.c_drawTextCenteredAtColorWrapper_FUN_00402630(int center_x, int y_pos, char * text)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   center_x
-; int              Stack[0xc]:4   y_pos
+; int              Stack[0x4]:4   center_x
+; int              Stack[0x8]:4   y_pos
+; char *           Stack[0xc]:4   text
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextCenteredAtColor_FUN_004025f0

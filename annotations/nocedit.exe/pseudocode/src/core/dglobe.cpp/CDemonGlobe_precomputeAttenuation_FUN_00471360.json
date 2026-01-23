@@ -1,96 +1,28 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 27,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 27,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 30,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 33,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 34,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 35,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 36,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 189,
+    "complexity_score": 62,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 29,
-    "suspect_count": 15,
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 85
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -299,108 +231,24 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EDX_00",
-      "text": "int extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EDX",
-      "text": "*(int *)(extraout_EDX + 0x10) = (int)ROUND(dVar4);",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 17,
       "match": "ROUND",
-      "text": "*(int *)(extraout_EDX + 0x10) = (int)ROUND(dVar4);",
+      "text": "this_ptr->quadratic_radius_scaled = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EDX",
-      "text": "*(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar3);",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 18,
       "match": "ROUND",
-      "text": "*(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar3);",
+      "text": "this_ptr->linear_radius_scaled = (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EDX",
-      "text": "if (*(int *)(extraout_EDX + 0x10) < 0x10000) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EDX",
-      "text": "*(uint *)(extraout_EDX + 0x10) = 0x10000;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EDX",
-      "text": "*(float *)(extraout_EDX + 0x18) = unaff_retaddr * unaff_retaddr;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EDX",
-      "text": "dVar4 = (double)*(byte *)(extraout_EDX + 0x1c) * 65536;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EDX",
-      "text": "*(float *)(extraout_EDX + 0x34) = 1.0 / unaff_retaddr;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 28,
-      "match": "extraout_EDX",
-      "text": "*(float *)(extraout_EDX + 0x38) = 1.0 / (unaff_retaddr * unaff_retaddr);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EDX",
-      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0(dVar4 / (double)(*(int *)(extraout_EDX + 0x10) >> 0x10));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EDX_00",
-      "text": "*(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(dVar4);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
       "match": "ROUND",
-      "text": "*(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(dVar4);",
+      "text": "this_ptr->falloff_value = (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     }
   ]

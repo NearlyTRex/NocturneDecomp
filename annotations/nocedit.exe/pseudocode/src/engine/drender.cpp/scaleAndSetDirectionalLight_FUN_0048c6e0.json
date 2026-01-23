@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 27,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 79,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 19,
-    "suspect_count": 5,
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 54
+    "total_lines": 55
   },
   "cross_references": [],
   "function": {
@@ -140,28 +133,35 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "fVar2 = (float10)in_stack_00000008[1] * fVar1;",
+      "text": "fVar1 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
-      "text": "fVar3 = (float10)*in_stack_00000008 * fVar1;",
+      "text": "fVar3 = (float10)*in_stack_00000008 * fVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
-      "text": "crt_math_c_round_FUN_005fe6b0((double)((float10)in_stack_00000008[2] * fVar1));",
+      "text": "crt_math_c_round_FUN_005fe6b0((double)((float10)in_stack_00000008[2] * fVar2));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "ROUND",
-      "text": "engine_light_cpp_setDirectionalLightVector_FUN_005054d0((int)ROUND(dVar4),dir_y,dir_z);",
+      "text": "engine_light_cpp_setDirectionalLightVector_FUN_005054d0((int)ROUND(dVar5),(int)ROUND(dVar4),dir_z)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "engine_light_cpp_setDirectionalLightVector_FUN_005054d0((int)ROUND(dVar5),(int)ROUND(dVar4),dir_z)",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 68,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,19 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 459,
+    "complexity_score": 433,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 119,
-    "suspect_count": 32,
+    "pseudocode_lines": 118,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 340
+    "total_lines": 339
   },
   "cross_references": [
     {
@@ -324,60 +316,46 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 11,
       "match": "unaff_EBX",
       "text": "CVector3f *unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 14,
+      "line": 13,
       "match": "unaff_ESI",
       "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 15,
       "match": "unaff_EDI",
       "text": "float unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 56,
+      "line": 55,
       "match": "6.742069e-39",
       "text": "CStack_70.z = 6.742069e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 59,
+      "line": 58,
       "match": "6.742079e-39",
       "text": "CStack_70.y = 6.742079e-39;",
       "type": "suspect_float"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
+      "description": "Likely misinterpreted integer as float",
       "line": 61,
-      "match": "ROUND",
-      "text": "local_20 = (int)ROUND(fVar9);",
-      "type": "decompiler_intrinsic"
+      "match": "6.742122e-39",
+      "text": "CStack_70.x = 6.742122e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -387,64 +365,71 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 63,
-      "match": "6.742122e-39",
-      "text": "CStack_70.x = 6.742122e-39;",
-      "type": "suspect_float"
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(fVar9);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ROUND",
+      "text": "iStack_58 = (int)ROUND(dVar11);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "ROUND",
-      "text": "iStack_58 = (int)ROUND(fVar4);",
+      "text": "local_34 = (float)(int)ROUND(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "ROUND",
-      "text": "local_34 = (float)(int)ROUND(fVar6);",
+      "text": "local_38 = (float)(int)ROUND(fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "ROUND",
-      "text": "local_38 = (float)(int)ROUND(fVar5);",
+      "text": "local_2c = (float)(int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "ROUND",
-      "text": "local_2c = (float)(int)ROUND(dVar10);",
+      "text": "if ((int)ROUND(dVar10) <= (int)ROUND(fVar9)) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_ECX",
-      "text": "if (extraout_ECX <= extraout_EAX) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_EAX",
-      "text": "if (extraout_ECX <= extraout_EAX) {",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "ROUND",
+      "text": "if ((int)ROUND(dVar10) <= (int)ROUND(fVar9)) {",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 87,
+      "line": 86,
       "match": "unaff_EDI",
       "text": "(this_ptr_00,&local_64,unaff_EDI,&local_54,&CStack_70,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 99,
+      "match": "unaff_EBX",
+      "text": "if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 99,
       "match": "unaff_EBX",
       "text": "if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {",
       "type": "unaffected_reg"
@@ -452,97 +437,90 @@
     {
       "description": "Unaffected register variable",
       "line": 100,
-      "match": "unaff_EBX",
-      "text": "if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 101,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = CStack_70.x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 102,
+      "line": 101,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = CStack_70.y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 103,
+      "line": 102,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = CStack_70.z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 105,
+      "line": 104,
       "match": "unaff_ESI",
       "text": "if (unaff_ESI != (float *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 106,
+      "line": 105,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = local_48;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 113,
+      "line": 112,
       "match": "unaff_ESI",
       "text": "if (unaff_ESI != (float *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 114,
+      "line": 113,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = 1.4013e-45;",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 114,
+      "line": 113,
       "match": "1.4013e-45",
       "text": "*unaff_ESI = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 116,
+      "line": 115,
       "match": "unaff_EBX",
       "text": "if (unaff_EBX != (CVector3f *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 117,
+      "line": 116,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = 1.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 118,
+      "line": 117,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 119,
+      "line": 118,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 121,
+      "line": 120,
       "match": "6.742142e-39",
       "text": "return 6.742142e-39;",
       "type": "suspect_float"

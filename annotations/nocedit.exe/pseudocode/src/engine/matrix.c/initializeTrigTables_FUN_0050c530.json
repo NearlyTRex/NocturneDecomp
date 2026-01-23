@@ -2,28 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 29,
-        "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 30,
-        "message": "'fcos' was not declared in this scope; did you mean 'cos'?"
+        "category": "other",
+        "column": 15,
+        "line": 33,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 40,
+        "line": 35,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 40,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -37,25 +25,30 @@
       {
         "category": "other",
         "column": 6,
-        "line": 40,
+        "line": 33,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 138,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "pseudocode_lines": 33,
-    "suspect_count": 9,
+    "pseudocode_lines": 29,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 79
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -199,66 +192,38 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 21,
       "match": "fsin",
       "text": "fVar7 = (float10)fsin(fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 22,
       "match": "fcos",
       "text": "fVar6 = (float10)fcos(fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EDX",
-      "text": "pcVar1 = g_CMarqueeClassInfo.class_name + extraout_EDX + 0x38;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
-      "match": "extraout_ECX",
-      "text": "iVar2 = extraout_ECX + 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 33,
-      "match": "extraout_EDX",
-      "text": "*(int *)((int)g_SinTable + extraout_EDX + 0x400) = (int)ROUND(dVar8);",
-      "type": "extra_output"
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_SinTable + iVar2) = 0x50c57e;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 28,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)g_SinTable + extraout_EDX + 0x400) = (int)ROUND(dVar8);",
+      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 28,
       "match": "ROUND",
-      "text": "*(int *)((int)g_SinTable + extraout_EDX + 0x400) = (int)ROUND(dVar8);",
+      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     }
   ]

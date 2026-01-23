@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 40,
-        "message": "'g_FontTable' was not declared in this scope; did you mean 'g_CFontVTable'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,17 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 77,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 37,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 110
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 109
   },
   "cross_references": [
     {
@@ -50,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_drawTextMultilineColor_FUN_00401f40",
-    "signature": "void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int y_max, int color)"
+    "signature": "void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int x_max, int y_max, int color)"
   },
   "function_calls": [
     {
@@ -63,7 +53,7 @@
     {
       "addr": "00666040",
       "name": "g_FontTable",
-      "type": "undefined4",
+      "type": "SFontGlyph[224]",
       "value": null
     }
   ],
@@ -80,8 +70,8 @@
         "stack_params": 6
       }
     ],
-    "confidence": "low",
-    "declared_params": 5,
+    "confidence": "medium",
+    "declared_params": 6,
     "estimated_params": 6
   },
   "pcode_summary": {
@@ -119,10 +109,10 @@
     "pcode_op_count": 325
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 48,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -155,45 +145,26 @@
       },
       {
         "is_param": true,
-        "name": "y_max",
+        "name": "x_max",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "color",
+        "name": "y_max",
         "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 24,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000018",
-      "text": "engine_2d_c_drawCharacter_FUN_00401a10(char_code,x_pos,y_start,in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 5,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:5 vs estimated:6",
-      "param_delta": 1,
-      "text": "Function declares 5 params but call sites push 6 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

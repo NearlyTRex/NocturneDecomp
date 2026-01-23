@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580(char * format_string, int y_pos, int right_x, ...)
+; __cdecl void engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580(int y_pos, int right_x, char * format_string, ...)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   format_string
-; int              Stack[0x8]:4   y_pos
-; int              Stack[0xc]:4   right_x
+; int              Stack[0x4]:4   y_pos
+; int              Stack[0x8]:4   right_x
+; char *           Stack[0xc]:4   format_string
 ; Local Variables:
 ; undefined        Stack[-0x100c]:1  local_100c
 ; undefined4       Stack[-0xc]:4  local_c

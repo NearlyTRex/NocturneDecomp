@@ -95,7 +95,7 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char * directory_path, c
 CVector3f * __cdecl core_xform_cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix);
 CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20(CVector3f * input_output_vector, CMatrix3x4f * matrix);
 CVector3f * __cdecl core_xform_cpp_transformVector3x3_FUN_005f4eb0(CMatrix3x3f * matrix, CVector3f * output_vector, CVector3f * input_vector);
-CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b);
+CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out);
 CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005f50c0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b);
 void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(CMatrix3x4f * matrix);
 void __cdecl core_xform_cpp_somebodyWriteMe_FUN_005f5160(void);
@@ -126,7 +126,7 @@ CMatrix3x4f * __stack_esi core_xform_cpp_buildYFlipMatrix_FUN_005f6f40(float y_o
 CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_005f6fa0(float z_offset, CMatrix3x4f * matrix_out);
 CMatrix3x4f * __stack2_esi core_xform_cpp_buildMirrorTransform_FUN_005f7000(CVector3f * axis_vector, float distance, CMatrix3x4f * matrix_out);
 CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t, CMatrix3x4f * matrix_out);
-CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out);
+CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_out, CQuaternion4f * quat_in);
 CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(CQuaternion4f * quat_in, CMatrix3x4f * matrix_out);
 CQuaternion4f * __stack_esi core_xform_cpp_matrixToQuaternion_FUN_005f7420(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out);
 CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * vector_in, CQuaternion4f * vector_out);
@@ -206,7 +206,7 @@ void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T
 void * __cdecl crt_memory_c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info);
 void __cdecl crt_memory_c_free_FUN_005fe659(void * ptr);
 void * __cdecl crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info);
-double __fpureg crt_math_c_round_FUN_005fe6b0(double value);
+double __fpureg_safe crt_math_c_round_FUN_005fe6b0(double value);
 int __cdecl crt_stdio_c_fprintf_FUN_005fe6d0(FILE * file, char * format, ...);
 int __cdecl crt_stdio_c_getc_helper_FUN_005fe700(scanf_state_t * state);
 int __watcallStack crt_stdio_c_ungetc_helper_FUN_005fe720(int character, scanf_state_t * state);

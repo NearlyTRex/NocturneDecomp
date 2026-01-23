@@ -2,22 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 53,
-        "message": "'ROUND' was not declared in this scope"
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 95,
-        "message": "'SUB84' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 95,
-        "message": "'CONCAT44' was not declared in this scope"
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
       }
     ],
     "success": false,
@@ -31,30 +25,35 @@
       {
         "category": "other",
         "column": 25,
-        "line": 34,
+        "line": 32,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 36,
+        "line": 34,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 57,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 231,
+    "complexity_score": 195,
     "cross_reference_count": 25,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 101,
-    "suspect_count": 12,
+    "pseudocode_lines": 100,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 404
+    "total_lines": 403
   },
   "cross_references": [
     {
@@ -610,87 +609,66 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EDX",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 44,
       "match": "ROUND",
       "text": "if (((int)ROUND(dVar5) != g_WindowStack[g_WindowStackCount + -1].progress_percentage) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 50,
       "match": "ROUND",
-      "text": "\"%d%% complete\",(int)ROUND(dVar5),uVar9);",
+      "text": "\"%d%% complete\",(int)ROUND(dVar5),uVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "ROUND",
       "text": "iVar4 = (int)ROUND(dVar5) + x1_00;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 83,
       "match": "ROUND",
-      "text": "if (0 < (int)ROUND(dVar6)) {",
+      "text": "iVar3 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "CONCAT44",
-      "text": "((double)CONCAT44(SUB84(dVar5,0),uVar9) + 0.5);",
+      "text": "((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "SUB84",
-      "text": "((double)CONCAT44(SUB84(dVar5,0),uVar9) + 0.5);",
+      "text": "((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 92,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar3 / 0x3c,iVar3 % 0x3c,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 92,
+      "match": "ROUND",
+      "text": "(int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar3 / 0x3c,iVar3 % 0x3c,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
-      "match": "ROUND",
-      "text": "(int)ROUND(dVar7) / 0x3c,(int)ROUND(dVar7) % 0x3c,(int)ROUND(dVar6) / 0x3c,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
-      "match": "ROUND",
-      "text": "(int)ROUND(dVar7) / 0x3c,(int)ROUND(dVar7) % 0x3c,(int)ROUND(dVar6) / 0x3c,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
-      "match": "ROUND",
-      "text": "(int)ROUND(dVar7) / 0x3c,(int)ROUND(dVar7) % 0x3c,(int)ROUND(dVar6) / 0x3c,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 94,
-      "match": "extraout_EDX",
-      "text": "extraout_EDX,uVar8,uVar9,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
       "match": "SUB84",
-      "text": "extraout_EDX,uVar8,uVar9,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
+      "text": "uVar7,uVar8,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
       "type": "decompiler_intrinsic"
     }
   ]

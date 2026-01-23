@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * engine_3d.c_oldFunc_FUN_00403740(SMRGLHeaderPrimitive * primitive)
+; __cdecl void * engine_3d.c_oldFunction_FUN_00403740(SMRGLHeaderPrimitive * primitive)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
@@ -24,7 +24,7 @@
 section .text
 
     PUSH EBX                            ; 00403740
-        ;   Label: engine_3d.c_oldFunc_FUN_00403740
+        ;   Label: engine_3d.c_oldFunction_FUN_00403740
     SUB ESP,0x50                        ; 00403741
     MOV EAX,dword ptr [ESP + 0x58]      ; 00403744
     MOV EDX,dword ptr [EAX]             ; 00403748

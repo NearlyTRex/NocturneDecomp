@@ -12,124 +12,117 @@ void engine_colquant_c_FUN_00441260(void)
   double dVar1;
   double dVar2;
   double dVar3;
-  double dVar4;
-  int extraout_ECX;
-  uint extraout_ECX_00;
-  uint extraout_ECX_01;
+  uint uVar4;
   uint uVar5;
-  uint uVar6;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  byte *pbVar9;
-  ulonglong uVar10;
+  byte *pbVar8;
+  ulonglong uVar9;
+  double dVar10;
   double dVar11;
   double dVar12;
   int in_stack_00000004;
   int in_stack_00000008;
-  ulonglong uStack_a0;
-  uint local_78;
+  double dStack_a0;
   uint uStack_74;
   uint local_70;
-  ulonglong local_68;
+  double local_68;
   uint local_58;
   uint uStack_54;
   uint local_50;
   
   local_70 = 0;
-  dVar1 = 0.0;
-  dVar11 = 0.0;
-  iVar7 = in_stack_00000008 * 0x40;
   dVar12 = 0.0;
-  iVar8 = *(int *)(in_stack_00000004 + 0x4040 + iVar7);
-  iVar7 = *(int *)(in_stack_00000004 + 0x4040 + iVar7) +
-          *(int *)(in_stack_00000004 + 0x4044 + iVar7);
-  if (iVar8 < iVar7) {
+  dVar11 = 0.0;
+  iVar6 = in_stack_00000008 * 0x40;
+  dVar10 = 0.0;
+  iVar7 = *(int *)(in_stack_00000004 + 0x4040 + iVar6);
+  iVar6 = *(int *)(in_stack_00000004 + 0x4040 + iVar6) +
+          *(int *)(in_stack_00000004 + 0x4044 + iVar6);
+  if (iVar7 < iVar6) {
     dVar11 = 0.0;
-    dVar12 = 0.0;
-    pbVar9 = (byte *)(iVar8 * 4 + *(int *)(in_stack_00000004 + 0x2004));
+    dVar10 = 0.0;
+    pbVar8 = (byte *)(iVar7 * 4 + *(int *)(in_stack_00000004 + 0x2004));
     do {
-      iVar8 = iVar8 + 1;
-      dVar12 = (double)*pbVar9 + dVar12;
-      dVar1 = (double)pbVar9[1] + dVar1;
-      dVar11 = (double)pbVar9[2] + dVar11;
-      local_70 = SUB84(dVar1,0);
-      pbVar9 = pbVar9 + 4;
-    } while (iVar8 < iVar7);
+      iVar7 = iVar7 + 1;
+      dVar10 = (double)*pbVar8 + dVar10;
+      dVar12 = (double)pbVar8[1] + dVar12;
+      dVar11 = (double)pbVar8[2] + dVar11;
+      local_70 = SUB84(dVar12,0);
+      pbVar8 = pbVar8 + 4;
+    } while (iVar7 < iVar6);
   }
   local_50 = SUB84(dVar11,0);
-  uStack_74 = (uint)((ulonglong)dVar12 >> 0x20);
-  local_78 = SUB84(dVar12,0);
-  iVar8 = in_stack_00000004 + in_stack_00000008 * 0x40;
-  dVar11 = crt_math_c_round_FUN_005fe6b0(dVar12 / (double)*(uint *)(iVar8 + 0x4044));
-  *(short *)(iVar8 + 0x4008) = (short)(int)ROUND(dVar11);
+  uStack_74 = (uint)((ulonglong)dVar10 >> 0x20);
+  iVar7 = in_stack_00000004 + in_stack_00000008 * 0x40;
+  dVar11 = crt_math_c_round_FUN_005fe6b0(dVar10 / (double)*(uint *)(iVar7 + 0x4044));
+  *(short *)(iVar7 + 0x4008) = (short)(int)ROUND(dVar11);
   dVar11 = crt_math_c_round_FUN_005fe6b0
-                     ((double)CONCAT44(local_70,uStack_74) / (double)*(uint *)(iVar8 + 0x4044));
-  *(short *)(iVar8 + 0x400a) = (short)(int)ROUND(dVar11);
+                     ((double)CONCAT44(local_70,uStack_74) / (double)*(uint *)(iVar7 + 0x4044));
+  *(short *)(iVar7 + 0x400a) = (short)(int)ROUND(dVar11);
+  dVar11 = crt_math_c_round_FUN_005fe6b0
+                     ((double)CONCAT44(uStack_54,local_58) / (double)*(uint *)(iVar7 + 0x4044));
+  *(short *)(iVar7 + 0x400c) = (short)(int)ROUND(dVar11);
+  *(uint *)(iVar7 + 0x4018) = 0;
+  dVar10 = (double)((ulonglong)dVar10 & 0xffffffff);
+  *(uint *)(iVar7 + 0x401c) = 0;
+  *(uint *)(iVar7 + 0x4020) = 0;
+  *(uint *)(iVar7 + 0x4024) = 0;
+  *(uint *)(iVar7 + 0x4028) = 0;
+  *(uint *)(iVar7 + 0x402c) = 0;
+  *(uint *)(iVar7 + 0x4030) = 0;
+  dVar11 = 0.0;
+  *(uint *)(iVar7 + 0x4034) = 0;
+  local_68 = 0.0;
+  *(uint *)(iVar7 + 0x4010) = 0;
+  dStack_a0 = 2.20433267273258e-317;
   dVar12 = crt_math_c_round_FUN_005fe6b0
-                     ((double)CONCAT44(uStack_54,local_58) /
-                      (double)CONCAT44(extraout_ECX,*(uint *)(iVar8 + 0x4044)));
-  dVar11 = (double)CONCAT44(extraout_ECX_00,local_78);
-  *(short *)(iVar8 + 0x400c) = (short)(int)ROUND(dVar12);
-  *(uint *)(iVar8 + 0x4018) = extraout_ECX_00;
-  *(uint *)(iVar8 + 0x401c) = extraout_ECX_00;
-  *(uint *)(iVar8 + 0x4020) = extraout_ECX_00;
-  *(uint *)(iVar8 + 0x4024) = extraout_ECX_00;
-  *(uint *)(iVar8 + 0x4028) = extraout_ECX_00;
-  *(uint *)(iVar8 + 0x402c) = extraout_ECX_00;
-  *(uint *)(iVar8 + 0x4030) = extraout_ECX_00;
-  *(uint *)(iVar8 + 0x4034) = extraout_ECX_00;
-  local_68 = (double)CONCAT44(extraout_ECX_00,extraout_ECX_00);
-  *(uint *)(iVar8 + 0x4010) = extraout_ECX_00;
-  uStack_a0 = (double)CONCAT44(extraout_ECX_00,0x441433);
-  dVar12 = crt_math_c_round_FUN_005fe6b0
-                     ((double)CONCAT44(local_50,uStack_54) /
-                      (double)CONCAT44(extraout_ECX_00,*(uint *)(iVar8 + 0x4044)));
-  *(short *)(iVar8 + 0x400e) = (short)(int)ROUND(dVar12);
-  *(uint *)(iVar8 + 0x4014) = extraout_ECX_01;
-  dVar12 = dVar11;
-  for (iVar8 = *(int *)(iVar8 + 0x4040) * 4; iVar7 = in_stack_00000008 * 0x40 + in_stack_00000004,
-      iVar8 < extraout_ECX; iVar8 = iVar8 + 4) {
-    uVar5 = (*(int *)(iVar7 + 0x4006) >> 0x10) -
-            (uint)*(byte *)(iVar8 + *(int *)(in_stack_00000004 + 0x2004));
-    uVar6 = (int)uVar5 >> 0x1f;
-    dVar1 = (double)(int)((uVar5 ^ uVar6) - uVar6);
-    uVar5 = (*(int *)(iVar7 + 0x4008) >> 0x10) -
-            (uint)*(byte *)(iVar8 + 1 + *(int *)(in_stack_00000004 + 0x2004));
-    uVar6 = (int)uVar5 >> 0x1f;
-    dVar2 = (double)(int)((uVar5 ^ uVar6) - uVar6);
-    uVar5 = (*(int *)(iVar7 + 0x400a) >> 0x10) -
-            (uint)*(byte *)(iVar8 + 2 + *(int *)(in_stack_00000004 + 0x2004));
-    uVar6 = (int)uVar5 >> 0x1f;
-    dVar3 = (double)(int)((uVar5 ^ uVar6) - uVar6);
-    uVar5 = (*(int *)(iVar7 + 0x400c) >> 0x10) -
-            (uint)*(byte *)(iVar8 + 3 + *(int *)(in_stack_00000004 + 0x2004));
-    uVar6 = (int)uVar5 >> 0x1f;
-    dVar4 = (double)(int)((uVar5 ^ uVar6) - uVar6);
-    *(double *)(iVar7 + 0x4018) = *(double *)(iVar7 + 0x4018) + dVar1;
-    *(double *)(iVar7 + 0x4020) = *(double *)(iVar7 + 0x4020) + dVar2;
-    *(double *)(iVar7 + 0x4028) = *(double *)(iVar7 + 0x4028) + dVar3;
-    *(double *)(iVar7 + 0x4030) = *(double *)(iVar7 + 0x4030) + dVar4;
-    dVar11 = (double)engine_colquant_c_FUN_00441790();
+                     ((double)CONCAT44(local_50,uStack_54) / (double)*(uint *)(iVar7 + 0x4044));
+  *(short *)(iVar7 + 0x400e) = (short)(int)ROUND(dVar12);
+  *(uint *)(iVar7 + 0x4014) = 0;
+  for (iVar7 = *(int *)(iVar7 + 0x4040) * 4; iVar6 = in_stack_00000008 * 0x40 + in_stack_00000004,
+      iVar7 < 0; iVar7 = iVar7 + 4) {
+    uVar4 = (*(int *)(iVar6 + 0x4006) >> 0x10) -
+            (uint)*(byte *)(iVar7 + *(int *)(in_stack_00000004 + 0x2004));
+    uVar5 = (int)uVar4 >> 0x1f;
+    dVar12 = (double)(int)((uVar4 ^ uVar5) - uVar5);
+    uVar4 = (*(int *)(iVar6 + 0x4008) >> 0x10) -
+            (uint)*(byte *)(iVar7 + 1 + *(int *)(in_stack_00000004 + 0x2004));
+    uVar5 = (int)uVar4 >> 0x1f;
+    dVar1 = (double)(int)((uVar4 ^ uVar5) - uVar5);
+    uVar4 = (*(int *)(iVar6 + 0x400a) >> 0x10) -
+            (uint)*(byte *)(iVar7 + 2 + *(int *)(in_stack_00000004 + 0x2004));
+    uVar5 = (int)uVar4 >> 0x1f;
+    dVar2 = (double)(int)((uVar4 ^ uVar5) - uVar5);
+    uVar4 = (*(int *)(iVar6 + 0x400c) >> 0x10) -
+            (uint)*(byte *)(iVar7 + 3 + *(int *)(in_stack_00000004 + 0x2004));
+    uVar5 = (int)uVar4 >> 0x1f;
+    dVar3 = (double)(int)((uVar4 ^ uVar5) - uVar5);
+    *(double *)(iVar6 + 0x4018) = *(double *)(iVar6 + 0x4018) + dVar12;
+    *(double *)(iVar6 + 0x4020) = *(double *)(iVar6 + 0x4020) + dVar1;
+    *(double *)(iVar6 + 0x4028) = *(double *)(iVar6 + 0x4028) + dVar2;
+    *(double *)(iVar6 + 0x4030) = *(double *)(iVar6 + 0x4030) + dVar3;
+    dVar10 = (double)engine_colquant_c_FUN_00441790();
     local_68 = (double)engine_colquant_c_FUN_00441790();
-    uStack_a0 = (double)engine_colquant_c_FUN_00441790();
-    dVar12 = (double)engine_colquant_c_FUN_00441790();
-    *(double *)(iVar7 + 0x4010) =
-         dVar3 * dVar3 * 0.11 +
-         dVar2 * dVar2 * 0.58999999999999997 + dVar1 * dVar1 * 0.29999999999999999 +
-         dVar4 * dVar4 * 0.69999999999999996 + *(double *)(iVar7 + 0x4010);
+    dStack_a0 = (double)engine_colquant_c_FUN_00441790();
+    dVar11 = (double)engine_colquant_c_FUN_00441790();
+    *(double *)(iVar6 + 0x4010) =
+         dVar2 * dVar2 * 0.11 +
+         dVar1 * dVar1 * 0.58999999999999997 + dVar12 * dVar12 * 0.29999999999999999 +
+         dVar3 * dVar3 * 0.69999999999999996 + *(double *)(iVar6 + 0x4010);
   }
-  dVar1 = *(double *)(iVar7 + 0x4018) * 0.33000000000000002;
-  dVar2 = *(double *)(iVar7 + 0x4028) * 0.11;
-  dVar3 = *(double *)(iVar7 + 0x4030) * 0.69999999999999996;
-  *(double *)(iVar7 + 0x4020) = *(double *)(iVar7 + 0x4020) * 0.58999999999999997 * local_68;
-  *(double *)(iVar7 + 0x4018) = dVar1 * dVar11;
-  *(double *)(iVar7 + 0x4028) = dVar2 * uStack_a0;
-  *(double *)(iVar7 + 0x4030) = dVar3 * dVar12;
-  uVar10 = engine_colquant_c_FUN_00441790();
-  *(ulonglong *)(iVar7 + 0x4038) = uVar10;
-  uVar10 = engine_colquant_c_FUN_00441790();
-  *(ulonglong *)(iVar7 + 0x4038) = uVar10;
-  uVar10 = engine_colquant_c_FUN_00441790();
-  *(ulonglong *)(iVar7 + 0x4038) = uVar10;
+  dVar12 = *(double *)(iVar6 + 0x4018) * 0.33000000000000002;
+  dVar1 = *(double *)(iVar6 + 0x4028) * 0.11;
+  dVar2 = *(double *)(iVar6 + 0x4030) * 0.69999999999999996;
+  *(double *)(iVar6 + 0x4020) = *(double *)(iVar6 + 0x4020) * 0.58999999999999997 * local_68;
+  *(double *)(iVar6 + 0x4018) = dVar12 * dVar10;
+  *(double *)(iVar6 + 0x4028) = dVar1 * dStack_a0;
+  *(double *)(iVar6 + 0x4030) = dVar2 * dVar11;
+  uVar9 = engine_colquant_c_FUN_00441790();
+  *(ulonglong *)(iVar6 + 0x4038) = uVar9;
+  uVar9 = engine_colquant_c_FUN_00441790();
+  *(ulonglong *)(iVar6 + 0x4038) = uVar9;
+  uVar9 = engine_colquant_c_FUN_00441790();
+  *(ulonglong *)(iVar6 + 0x4038) = uVar9;
   return;
 }

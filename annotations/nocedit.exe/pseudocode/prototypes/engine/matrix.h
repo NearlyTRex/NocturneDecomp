@@ -13,11 +13,11 @@ void doNothing(void);
 
 // Original: engine_matrix.c_interpolatedSin_FUN_0050c5c0
 // Address: 0050c5c0
-int interpolatedSin(ushort angle);
+int interpolatedSin(int angle);
 
 // Original: engine_matrix.c_interpolatedCos_FUN_0050c600
 // Address: 0050c600
-int interpolatedCos(ushort angle);
+int interpolatedCos(int angle);
 
 // Original: engine_matrix.c_invertTransformMatrix_FUN_0050c640
 // Address: 0050c640
@@ -25,11 +25,11 @@ void invertTransformMatrix(void);
 
 // Original: engine_matrix.c_buildRotationMatrix_FUN_0050c920
 // Address: 0050c920
-void buildRotationMatrix(ushort pitch, ushort yaw, ushort roll);
+void buildRotationMatrix(int pitch, int yaw, int roll);
 
 // Original: engine_matrix.c_transformWorldToView_FUN_0050cc40
 // Address: 0050cc40
-void transformWorldToView(int * input_coords, int * output_coords);
+void transformWorldToView(CVector3i * input_coords, CVector3i * output_coords);
 
 // Original: engine_matrix.c_calculateTransformedZ_FUN_0050cd10
 // Address: 0050cd10
@@ -49,11 +49,11 @@ void projectTransformedPoint(SProjectedVertex * point);
 
 // Original: engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60
 // Address: 0050ce60
-void projectCachedPointUnchecked(int cacheIndex);
+void projectCachedPointUnchecked(int cache_index);
 
 // Original: engine_matrix.c_matrixPushAndTransform_FUN_0050cee0
 // Address: 0050cee0
-void matrixPushAndTransform(ushort rotX, ushort rotY, ushort rotZ, int translateX, int translateY, int translateZ);
+void matrixPushAndTransform(int rot_x, int rot_y, int rot_z, int translate_x, int translate_y, int translate_z);
 
 // Original: engine_matrix.c_matrixPush_FUN_0050d620
 // Address: 0050d620
@@ -93,7 +93,7 @@ void setCameraOrigin(int x, int y, int z);
 
 // Original: engine_matrix.c_setCameraRotation_FUN_0050e290
 // Address: 0050e290
-void setCameraRotation(ushort pitch, ushort yaw, ushort roll);
+void setCameraRotation(int pitch, int yaw, int roll);
 
 // Original: engine_matrix.c_getCameraOrigin_FUN_0050e2c0
 // Address: 0050e2c0

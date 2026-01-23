@@ -2,33 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 22,
-        "message": "'g_FontTable' was not declared in this scope; did you mean 'g_CFontVTable'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 29,
-        "message": "'DAT_00666041' was not declared in this scope; did you mean 'DAT_0068104C'?"
-      },
-      {
         "category": "other",
         "column": 36,
-        "line": 33,
+        "line": 32,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 50,
+        "line": 49,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 68,
+        "line": 67,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -43,54 +31,53 @@
       {
         "category": "other",
         "column": 28,
-        "line": 33,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 33,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 50,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 50,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 68,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 68,
+        "line": 67,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 125,
+    "complexity_score": 109,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 13,
-    "pseudocode_lines": 75,
-    "suspect_count": 4,
+    "pseudocode_lines": 74,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 237
+    "total_lines": 236
   },
   "cross_references": [
     {
@@ -129,7 +116,7 @@
     {
       "addr": "00666040",
       "name": "g_FontTable",
-      "type": "undefined4",
+      "type": "SFontGlyph[224]",
       "value": null
     },
     {
@@ -303,29 +290,22 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00666041",
-      "text": "pcVar1 = &DAT_00666041 + iVar3;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(int *)((int)",
       "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(int *)((int)",
       "text": "puVar8 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(int *)((int)",
       "text": "puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos * 4);",
       "type": "pointer_cast"

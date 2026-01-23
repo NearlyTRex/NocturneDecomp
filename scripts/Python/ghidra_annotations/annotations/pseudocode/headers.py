@@ -15,6 +15,7 @@ from ghidra_annotations.util import make_dirs
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
 from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes
+from ghidra_annotations.annotations.pseudocode.intrinsics import write_intrinsics_header
 from ghidra_annotations.annotations import is_standard_ghidra_category, get_primitive_data_types
 from ghidra_annotations.util.string import sanitize_c_identifier
 from ghidra_annotations.annotations.pseudocode.strings import sanitize_string
@@ -2270,6 +2271,9 @@ def export_header_files(currentProgram, pseudocode_dir):
 
     # Export grouped files for system types (as single files, not subfolders)
     export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_types, type_to_path_map)
+
+    # Generate intrinsics header (must be before system aggregate so it gets included)
+    write_intrinsics_header(pseudocode_dir)
 
     # Generate aggregate headers
     generate_system_aggregate(pseudocode_dir)

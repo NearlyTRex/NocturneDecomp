@@ -19,8 +19,7 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
   uint *puVar7;
   int iVar8;
   byte bVar9;
-  float10 fVar10;
-  double dVar11;
+  double dVar10;
   int *in_stack_00000004;
   float in_stack_00000008;
   float *in_stack_0000000c;
@@ -58,12 +57,11 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
       iVar8 = *in_stack_00000004 + -1;
       local_14 = iVar8;
       if (in_stack_00000008 < (float)iVar8) {
-        fVar10 = (float10)in_stack_00000008;
-        dVar11 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000008);
-        local_1c = (int)ROUND(dVar11);
+        dVar10 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000008);
+        local_1c = (int)ROUND(dVar10);
         local_18 = local_1c;
+        local_7c = in_stack_00000008 - (float)local_1c;
         iVar8 = local_1c + 1;
-        local_7c = (float)(fVar10 - (float10)local_1c);
       }
       else {
         local_18 = iVar8;
@@ -73,10 +71,10 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
     local_18 = in_stack_00000004[2];
   }
   else {
-    dVar11 = (double)in_stack_00000008;
-    local_88 = SUB84(dVar11,0);
-    fStack_84 = (float)((ulonglong)dVar11 >> 0x20);
-    if (0.0 <= dVar11) {
+    dVar10 = (double)in_stack_00000008;
+    local_88 = SUB84(dVar10,0);
+    fStack_84 = (float)((ulonglong)dVar10 >> 0x20);
+    if (0.0 <= dVar10) {
       local_28 = crt_math_c_floor_FUN_005feb90
                            ((double)(in_stack_00000008 / (float)*in_stack_00000004));
       local_80 = (float)(double)CONCAT44(local_88,uStack_8c) - (float)local_28 * fStack_84;
@@ -91,8 +89,8 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
         local_80 = local_80 + fStack_84;
       }
     }
-    dVar11 = crt_math_c_round_FUN_005fe6b0((double)local_80);
-    fStack_20 = (float)(int)ROUND(dVar11);
+    dVar10 = crt_math_c_round_FUN_005fe6b0((double)local_80);
+    fStack_20 = (float)(int)ROUND(dVar10);
     local_1c = (int)fStack_20;
     iVar8 = (int)fStack_20 + 1;
     if (iVar8 < *in_stack_00000004) goto LAB_004427da;

@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 43,
-        "message": "'ROUND' was not declared in this scope"
+        "category": "other",
+        "column": 21,
+        "line": 84,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -17,12 +17,6 @@
         "category": "other",
         "column": 21,
         "line": 88,
-        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 90,
         "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -38,18 +32,17 @@
   },
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 275,
+    "complexity_score": 228,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 20,
-    "pseudocode_lines": 90,
-    "suspect_count": 17,
+    "pseudocode_lines": 88,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_many"
     ],
-    "total_lines": 251
+    "total_lines": 249
   },
   "cross_references": [
     {
@@ -397,116 +390,88 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[0].x = (int)ROUND(dVar13);",
+      "text": "g_TransformMatrix.m[0].x = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[0].y = (int)ROUND(dVar13);",
+      "text": "g_TransformMatrix.m[0].y = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[0].z = (int)ROUND(dVar13);",
+      "text": "g_TransformMatrix.m[0].z = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[1].x = (int)ROUND(dVar13);",
+      "text": "g_TransformMatrix.m[1].x = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[1].y = (int)ROUND(dVar13);",
+      "text": "g_TransformMatrix.m[1].y = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[1].z = (int)ROUND(fVar6);",
+      "text": "g_TransformMatrix.m[1].z = (int)ROUND(fVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 59,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[2].x = (int)ROUND(fVar7);",
+      "text": "g_TransformMatrix.m[2].x = (int)ROUND(fVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[2].y = (int)ROUND(fVar8);",
+      "text": "g_TransformMatrix.m[2].y = (int)ROUND(fVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "ROUND",
-      "text": "g_TransformMatrix.m[2].z = (int)ROUND(dVar13);",
+      "text": "g_TransformMatrix.m[2].z = (int)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ROUND",
+      "text": "g_CameraRotationPitch = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
-      "text": "g_CameraRotationPitch = (int)ROUND(fVar6);",
+      "text": "g_CameraRotationYaw = (int)ROUND(fVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 70,
       "match": "ROUND",
-      "text": "g_CameraRotationYaw = (int)ROUND(fVar7);",
+      "text": "g_CameraRotationRoll = (int)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "ROUND",
-      "text": "g_CameraRotationRoll = (int)ROUND(dVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 74,
-      "match": "extraout_EAX",
-      "text": "(SRenderVertex *)(((longlong)extraout_EAX * (longlong)extraout_EDX) / (longlong)iVar2);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 74,
-      "match": "extraout_EDX",
-      "text": "(SRenderVertex *)(((longlong)extraout_EAX * (longlong)extraout_EDX) / (longlong)iVar2);",
-      "type": "extra_output"
     },
     {
       "call_site_count": 5,

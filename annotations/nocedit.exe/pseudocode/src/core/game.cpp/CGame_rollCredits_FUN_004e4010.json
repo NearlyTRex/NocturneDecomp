@@ -26,21 +26,15 @@
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 112,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 31,
-        "line": 121,
+        "line": 122,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 152,
+        "line": 153,
         "message": "cast from 'uint*' {aka 'unsigned int*'} to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -133,39 +127,38 @@
       {
         "category": "other",
         "column": 21,
-        "line": 121,
+        "line": 122,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 152,
+        "line": 153,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 152,
+        "line": 153,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 272,
+    "complexity_score": 258,
     "cross_reference_count": 2,
     "function_call_count": 30,
     "global_count": 18,
-    "pseudocode_lines": 157,
-    "suspect_count": 9,
+    "pseudocode_lines": 158,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 522
+    "total_lines": 523
   },
   "cross_references": [
     {
@@ -608,13 +601,6 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX",
-      "text": "float extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 16,
       "match": "unaff_ESI",
@@ -632,8 +618,15 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_1134 + iVar6) = 0;",
+      "text": "*(uint *)((int)local_1134 + iVar7) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 99,
+      "match": "NAN",
+      "text": "local_1c = -NAN;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
@@ -644,28 +637,21 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 106,
       "match": "ROUND",
-      "text": "local_14 = (float)(int)ROUND(dVar10);",
+      "text": "local_14 = (float)(int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 106,
-      "match": "extraout_EDX",
-      "text": "if (local_14 != extraout_EDX) {",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 157,
+      "line": 158,
       "match": "in_stack_00000008",
       "text": "core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 158,
+      "line": 159,
       "match": "in_stack_00000008",
       "text": "local_14 = local_14 - in_stack_00000008->delta_time_float * 32.0f;",
       "type": "stack_param"

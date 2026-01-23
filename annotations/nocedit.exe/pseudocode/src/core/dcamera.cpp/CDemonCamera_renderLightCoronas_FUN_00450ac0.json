@@ -20,14 +20,14 @@
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 75,
-        "message": "'ROUND' was not declared in this scope"
+        "category": "other",
+        "column": 47,
+        "line": 85,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 47,
+        "column": 29,
         "line": 86,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
@@ -38,39 +38,27 @@
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 29,
-        "line": 88,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 96,
-        "message": "'SBORROW4' was not declared in this scope"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 105,
+        "line": 104,
         "message": "'stack0xffffff9c' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 107,
+        "line": 106,
         "message": "'stack0xffffffa0' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 111,
+        "line": 110,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 121,
+        "line": 120,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -103,6 +91,12 @@
       {
         "category": "other",
         "column": 39,
+        "line": 85,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 21,
         "line": 86,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -111,30 +105,23 @@
         "column": 21,
         "line": 87,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 88,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 297,
+    "complexity_score": 271,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
-    "pseudocode_lines": 137,
-    "suspect_count": 14,
+    "pseudocode_lines": 136,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 409
+    "total_lines": 408
   },
   "cross_references": [
     {
@@ -589,101 +576,87 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_DitherPatternTable + iVar2) = uVar1 & 0xff;",
+      "text": "*(uint *)((int)g_DitherPatternTable + iVar4) = uVar3 & 0xff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)g_CoronaLeftExtent + iVar2) = this_ptr->display_width;",
+      "text": "*(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->display_width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_CoronaRightExtent + iVar2) = 0;",
+      "text": "*(uint *)((int)g_CoronaRightExtent + iVar4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
-      "text": "g_CoronaDepthShift = (int)ROUND(dVar11);",
+      "text": "g_CoronaDepthShift = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
-      "text": "g_CoronaMaxDepth = (int)ROUND(fVar9);",
+      "text": "g_CoronaMaxDepth = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
-      "match": "extraout_EAX",
-      "text": "local_38 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(int *)((int)",
       "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_34)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(int *)((int)",
       "text": "local_20 = *(int *)((int)g_CoronaLeftExtent + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(int *)((int)",
       "text": "local_30 = *(int *)((int)g_CoronaRightExtent + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 88,
       "match": "SBORROW4",
-      "text": "bVar8 = SBORROW4(local_20,local_30);",
+      "text": "bVar10 = SBORROW4(local_20,local_30);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
+      "line": 97,
       "match": "&stack0xffffff9c",
-      "text": "aiStack_58[(uint)bVar7 * -2] = *(int *)(&stack0xffffff9c + (uint)bVar7 * -8);",
+      "text": "aiStack_58[(uint)bVar9 * -2] = *(int *)(&stack0xffffff9c + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 99,
       "match": "&stack0xffffffa0",
-      "text": "*(int *)(&stack0xffffffa0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "text": "*(int *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 126,
       "match": "SBORROW4",
-      "text": "bVar8 = SBORROW4(local_20,local_30);",
+      "text": "bVar10 = SBORROW4(local_20,local_30);",
       "type": "decompiler_intrinsic"
     }
   ]

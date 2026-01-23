@@ -275,11 +275,11 @@ section .text
     PUSH 0x4e1e                         ; 004082a8
     MOVSD.REP ES:EDI,ESI                ; 004082ad | g_QuadVertex3 | g_QuadVertex3_Y
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60 ; 004082af
-        ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cacheIndex)
+        ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index)
     ADD ESP,0x4                         ; 004082b4
     PUSH 0x4e1f                         ; 004082b7
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60 ; 004082bc
-        ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cacheIndex)
+        ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index)
     ADD ESP,0x4                         ; 004082c1
     MOV EAX,0x688014                    ; 004082c4 | g_RenderVertexBuffer
     PUSH 0x2                            ; 004082c9

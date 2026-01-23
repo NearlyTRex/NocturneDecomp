@@ -1,12 +1,12 @@
-// Name: engine_3d.c_oldFunc_FUN_00403740
+// Name: engine_3d.c_oldFunction_FUN_00403740
 // Address: 00403740
 // Address Range: [[00403740, 00403787]]
 // Convention: __cdecl
-// Signature: void * engine_3d.c_oldFunc_FUN_00403740(SMRGLHeaderPrimitive * primitive)
+// Signature: void * engine_3d.c_oldFunction_FUN_00403740(SMRGLHeaderPrimitive * primitive)
 
 #include "nocturne.h"
 
-void * __cdecl engine_3d_c_oldFunc_FUN_00403740(SMRGLHeaderPrimitive *primitive)
+void * __cdecl engine_3d_c_oldFunction_FUN_00403740(SMRGLHeaderPrimitive *primitive)
 
 {
   char local_54 [80];

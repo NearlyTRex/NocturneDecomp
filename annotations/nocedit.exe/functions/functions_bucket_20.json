@@ -321,7 +321,7 @@
     "vars":{
       "params":[
         {
-          "name":"text",
+          "name":"x_pos",
           "storage":{
             "offset":4,
             "size":4,
@@ -334,10 +334,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"x_pos",
+          "name":"y_pos",
           "storage":{
             "offset":8,
             "size":4,
@@ -353,7 +353,7 @@
           "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"text",
           "storage":{
             "offset":12,
             "size":4,
@@ -366,7 +366,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -480,6 +480,38 @@
     "vars":{
       "locals":[
         {
+          "name":"new_x",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined4",
+          "use":-1
+        },
+        {
+          "name":"new_y",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined4",
+          "use":-1
+        },
+        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -559,7 +591,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"int"
         },
         {
           "name":"y1",
@@ -575,7 +607,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"int"
         },
         {
           "name":"x2",
@@ -591,7 +623,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"int"
         },
         {
           "name":"y2",
@@ -607,7 +639,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"int"
         },
         {
           "name":"x_min",
@@ -44376,49 +44408,49 @@
           "name":"pitch",
           "storage":{
             "offset":4,
-            "size":2,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
-                "size":2
+                "size":4
               }
             ]
           },
-          "type":"ushort"
+          "type":"int"
         },
         {
           "name":"yaw",
           "storage":{
             "offset":8,
-            "size":2,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
-                "size":2
+                "size":4
               }
             ]
           },
-          "type":"ushort"
+          "type":"int"
         },
         {
           "name":"roll",
           "storage":{
             "offset":12,
-            "size":2,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":2
+                "size":4
               }
             ]
           },
-          "type":"ushort"
+          "type":"int"
         }
       ]
     }

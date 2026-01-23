@@ -14,7 +14,6 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   int iVar3;
   char *pcVar4;
   int iVar5;
-  int alpha;
   char *pcVar6;
   int iVar7;
   CAlphaBitmap *this_ptr_00;
@@ -346,13 +345,14 @@ LAB_005009c0:
       iVar7 = 0xd;
     }
     local_78 = (g_WindowWidth + -4) - iVar7;
-    iVar12 = 0x500e4e;
+    iVar12 = local_68 / 2;
+    iVar3 = 0x500e4e;
     dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float)local_18 - (float)local_18 * fStack_684))
     ;
     local_78 = (int)ROUND(dVar10);
     engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00
-              (&g_HealthBar1Bitmap,iStack_7c,local_78 + 4,0,local_78,iVar7 + -1,iVar12);
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_HealthBar2Bitmap,iStack_7c,4,alpha);
+              (&g_HealthBar1Bitmap,iStack_7c,local_78 + 4,0,local_78,iVar7 + -1,iVar3);
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_HealthBar2Bitmap,iStack_7c,4,iVar12);
   }
   dVar10 = (double)this_ptr->message_display_timer;
   if (0.0 < dVar10) {

@@ -21,13 +21,10 @@ void core_bugs_cpp_FUN_004257f0(void)
   uint *puVar6;
   float fVar7;
   byte bVar8;
-  float10 fVar9;
-  float10 fVar10;
-  float10 fVar11;
-  double dVar12;
+  double dVar9;
   int in_stack_00000004;
-  ulonglong uVar13;
-  ulonglong uVar14;
+  ulonglong uVar10;
+  ulonglong uVar11;
   CVector3f local_5c;
   float local_50;
   ulonglong local_4c;
@@ -56,20 +53,17 @@ void core_bugs_cpp_FUN_004257f0(void)
   local_44 = crt_math_c_floor_FUN_005feb90
                        ((double)((*(float *)(in_stack_00000004 + 0x20) + local_5c.y * 0.5f
                                  ) * local_c));
-  fVar9 = (float10)(fVar5 + fVar7) * (float10)local_10;
-  dVar12 = crt_math_c_round_FUN_005fe6b0(local_44);
-  iStack_3c = (int)ROUND(dVar12);
-  local_4c = crt_math_c_floor_FUN_005feb90((double)fVar9);
+  dVar9 = crt_math_c_round_FUN_005fe6b0(local_44);
+  iStack_3c = (int)ROUND(dVar9);
+  local_4c = crt_math_c_floor_FUN_005feb90((double)((fVar5 + fVar7) * local_10));
   local_18 = local_44._4_4_;
-  fVar10 = (float10)local_44._4_4_ * (float10)_DAT_0065b5c8;
-  dVar12 = crt_math_c_round_FUN_005fe6b0(local_4c);
-  local_20 = (int)ROUND(dVar12);
-  fVar9 = (float10)_DAT_0065b5c8;
-  fVar11 = (float10)_DAT_0065b5c8 * (float10)11.0f * (float10)0.5;
-  *(float *)(extraout_EBX + 0x199ec) =
-       (float)((fVar10 - (float10)*(float *)(extraout_EBX + 0x20)) - fVar11);
-  *(float *)(extraout_EBX + 0x199f0) =
-       (float)(((float10)local_20 * fVar9 - (float10)*(float *)(extraout_EBX + 0x28)) - fVar11);
+  fVar5 = (float)local_44._4_4_ * _DAT_0065b5c8;
+  dVar9 = crt_math_c_round_FUN_005fe6b0(local_4c);
+  local_20 = (int)ROUND(dVar9);
+  fVar1 = (float)local_20 * _DAT_0065b5c8;
+  fVar7 = _DAT_0065b5c8 * 11.0f * (float)0.5;
+  *(float *)(extraout_EBX + 0x199ec) = (fVar5 - *(float *)(extraout_EBX + 0x20)) - fVar7;
+  *(float *)(extraout_EBX + 0x199f0) = (fVar1 - *(float *)(extraout_EBX + 0x28)) - fVar7;
   if (((int)local_44 != *(int *)(extraout_EBX + 0x199e4)) ||
      (local_20 != *(int *)(extraout_EBX + 0x199e8))) {
     local_28 = *(int *)((int)local_c + 0x199e4) - (int)local_44;
@@ -89,9 +83,9 @@ void core_bugs_cpp_FUN_004257f0(void)
       puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);
     }
     local_5c.y = *(float *)((int)local_c + 0x24);
-    uVar13 = CONCAT44(local_5c.y,
+    uVar10 = CONCAT44(local_5c.y,
                       *(float *)((int)local_c + 0x20) + *(float *)((int)local_c + 0x199ec));
-    uVar14 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))
+    uVar11 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))
     ;
     local_38 = local_c;
     iStack_3c = local_28 * -0x30;
@@ -99,12 +93,12 @@ void core_bugs_cpp_FUN_004257f0(void)
     local_24 = 0;
     do {
       iVar2 = 0;
-      local_5c.x = (float)local_24 * _DAT_0065b5c8 + (float)uVar13;
+      local_5c.x = (float)local_24 * _DAT_0065b5c8 + (float)uVar10;
       iVar3 = iStack_3c - local_44._4_4_;
       fVar5 = local_38;
       fVar7 = local_38;
       do {
-        local_5c.z = (float)iVar2 * _DAT_0065b5c8 + (float)uVar14;
+        local_5c.z = (float)iVar2 * _DAT_0065b5c8 + (float)uVar11;
         if ((((local_24 < local_28) || (local_34 < local_24)) || (iVar2 < local_2c)) ||
            (local_30 < iVar2)) {
           local_1c = iVar2;

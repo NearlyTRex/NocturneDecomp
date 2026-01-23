@@ -361,7 +361,7 @@ section .text
     LEA ESI,[EBP + -0x7e]               ; 005c348c
     LEA EDI,[EBP + -0x4e]               ; 005c348f
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 005c3492
-        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
+        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c3497
     LEA ESI,[EBP + -0x7e]               ; 005c349c
     ADD ESP,0x8                         ; 005c349f
@@ -474,7 +474,7 @@ section .text
     LEA ESI,[EBP + 0xfffffe62]          ; 005c35b6
     LEA EDI,[EBP + 0xffffff52]          ; 005c35bc
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 005c35c2
-        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
+        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 005c35c7
     LEA EAX,[EBP + -0x1e]               ; 005c35ca
     MOV ECX,0xc                         ; 005c35cd
@@ -579,7 +579,7 @@ section .text
     LEA ESI,[EBP + 0xfffffef2]          ; 005c36e3
     LEA EDI,[EBP + -0x4e]               ; 005c36e9
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 005c36ec
-        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
+        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005c36f1
     LEA ESI,[EBP + 0xfffffef2]          ; 005c36f6
     JMP 0x005c349f                      ; 005c36fc

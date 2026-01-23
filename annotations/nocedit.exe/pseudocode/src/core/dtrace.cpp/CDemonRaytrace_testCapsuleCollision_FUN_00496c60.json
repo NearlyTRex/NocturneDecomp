@@ -3,14 +3,14 @@
     "errors": [
       {
         "category": "other",
-        "column": 21,
-        "line": 53,
+        "column": 24,
+        "line": 61,
         "message": "invalid cast from type 'void*' to type 'float'"
       },
       {
         "category": "other",
-        "column": 33,
-        "line": 57,
+        "column": 43,
+        "line": 62,
         "message": "invalid cast from type 'void*' to type 'float'"
       }
     ],
@@ -24,67 +24,67 @@
       },
       {
         "category": "other",
-        "column": 34,
-        "line": 52,
+        "column": 18,
+        "line": 56,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 65,
-        "line": 53,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 33,
+        "column": 12,
         "line": 58,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 23,
-        "line": 62,
+        "column": 59,
+        "line": 61,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 63,
+        "column": 63,
+        "line": 64,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 57,
-        "line": 67,
+        "column": 14,
+        "line": 66,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 69,
+        "column": 39,
+        "line": 70,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 31,
-        "line": 72,
+        "column": 14,
+        "line": 71,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 74,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 245,
+    "complexity_score": 248,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 68,
     "suspect_count": 17,
     "suspect_types": [
       "unaffected_reg",
       "warning_unreachable"
     ],
-    "total_lines": 267
+    "total_lines": 270
   },
   "cross_references": [
     {
@@ -356,72 +356,72 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 21,
       "match": "unaff_EBX",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 22,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 49,
       "match": "unaff_EBX",
-      "text": "fVar2 = (float10)1 / (float10)*(float *)(unaff_EBX + 0x2c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EBX",
-      "text": "fVar3 = ((float10)(float)capsule_data->user_data1 - (float10)*(float *)(unaff_EBX + 0x14)) * fVar2",
+      "text": "fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 51,
       "match": "unaff_EBX",
-      "text": "(float10)*(float *)(unaff_EBX + 0x14)) * fVar2));",
+      "text": "fVar1 = *(float *)(unaff_EBX + 0x14);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
-      "match": "unaff_EDI",
-      "text": "(float10)*(float *)(unaff_EDI + 0x18)) - (float10)capsule_data->radius;",
+      "line": 54,
+      "match": "unaff_EBX",
+      "text": "((double)(((float)capsule_data->user_data2 - *(float *)(unaff_EBX + 0x14)) * fVar5));",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 56,
+      "line": 57,
       "match": "unaff_EDI",
-      "text": "fVar2 = (float10)1 / (float10)*(float *)(unaff_EDI + 0x30);",
+      "text": "fVar6 = ((capsule_data->start_z + capsule_data->dir_z) - *(float *)(unaff_EDI + 0x18)) -",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 60,
+      "line": 59,
       "match": "unaff_EDI",
-      "text": "fVar1 = ((float10)capsule_data->start_z - (float10)*(float *)(unaff_EDI + 0x18)) -",
+      "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 62,
+      "line": 63,
       "match": "unaff_EDI",
-      "text": "fVar2 = (float10)1 / (float10)*(float *)(unaff_EDI + 0x30);",
+      "text": "fVar6 = (capsule_data->start_z - *(float *)(unaff_EDI + 0x18)) - capsule_data->radius;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 64,
       "match": "unaff_EDI",
-      "text": "fVar3 = ((fVar3 - (float10)*(float *)(unaff_EDI + 0x18)) + (float10)capsule_data->radius) * fVar2;",
+      "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 67,
+      "match": "unaff_EDI",
+      "text": "fVar2 = *(float *)(unaff_EDI + 0x18);",
       "type": "unaffected_reg"
     }
   ]

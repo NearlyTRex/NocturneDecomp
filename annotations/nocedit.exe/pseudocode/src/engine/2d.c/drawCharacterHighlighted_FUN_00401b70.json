@@ -2,27 +2,15 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 21,
-        "message": "'g_FontTable' was not declared in this scope; did you mean 'g_CFontVTable'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 28,
-        "message": "'DAT_00666041' was not declared in this scope; did you mean 'DAT_0068104C'?"
-      },
-      {
         "category": "other",
         "column": 36,
-        "line": 33,
+        "line": 32,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 50,
+        "line": 49,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -37,42 +25,41 @@
       {
         "category": "other",
         "column": 28,
-        "line": 33,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 33,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 50,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 50,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 97,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
-    "pseudocode_lines": 57,
-    "suspect_count": 3,
+    "pseudocode_lines": 56,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 172
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -99,7 +86,7 @@
     {
       "addr": "00666040",
       "name": "g_FontTable",
-      "type": "undefined4",
+      "type": "SFontGlyph[224]",
       "value": null
     },
     {
@@ -247,22 +234,15 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00666041",
-      "text": "pcVar1 = &DAT_00666041 + iVar5;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(int *)((int)",
       "text": "puVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(int *)((int)",
       "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos * 2);",
       "type": "pointer_cast"

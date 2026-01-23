@@ -17,14 +17,11 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   uint uVar7;
   CMP3Decoder *this_ptr;
   CMP3Decoder *pCVar8;
-  int extraout_EAX;
   FILE *pFVar9;
   long lVar10;
-  int extraout_EAX_00;
   CSfxSample *pCVar11;
   uint uVar12;
-  CSfxSample *this_ptr_00;
-  CSfxSlot *this_ptr_01;
+  CSfxSlot *this_ptr_00;
   CSfxOptions *pCVar13;
   char *pcVar14;
   char *pcVar15;
@@ -94,9 +91,9 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
     return 0;
   }
-  this_ptr_01 = g_SfxSlots + uVar12;
+  this_ptr_00 = g_SfxSlots + uVar12;
   pCVar13 = &local_90;
-  pCVar4 = this_ptr_01;
+  pCVar4 = this_ptr_00;
   for (iVar3 = 0x1c; iVar3 != 0; iVar3 = iVar3 + -1) {
     (pCVar4->options).channel_index = pCVar13->channel_index;
     pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar18 * -2 + 1) * 4);
@@ -172,6 +169,7 @@ LAB_005a900a:
           (local_14->sample_info).sample_count = -1;
           (local_14->sample_info).sample_rate = iVar3;
           sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(local_14);
+          uVar7 = local_20;
           pCVar11->taken = 0;
           pCVar11->ref_count = 0;
           iVar3 = (pCVar11->sample_info).sample_rate;
@@ -182,7 +180,7 @@ LAB_005a900a:
           pCVar20 = (CSfxSample *)0x5a93a9;
           dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
           pCVar11->streaming_buffer_size = (int)ROUND(dVar19);
-          pCVar11->streaming_slot_index = extraout_EAX;
+          pCVar11->streaming_slot_index = uVar7;
           iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar20);
           pCVar11 = local_18;
 joined_r0x005a94f6:
@@ -215,17 +213,18 @@ joined_r0x005a94f6:
                             (pCVar11->file_handle,&pCVar11->file_offset,pCVar11);
           if (iVar3 != 0) {
             sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(local_18);
+            pCVar11 = local_18;
             iVar3 = (local_18->sample_info).sample_rate;
             local_18->taken = 0;
             fVar1 = (float)iVar3 * 2.0f;
             local_18->ref_count = 0;
             local_18->buffer_id = 0;
             dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
-            *(int *)(extraout_EAX_00 + 0x160) = (int)ROUND(dVar19);
-            this_ptr_00->stream_read_position = 0;
-            this_ptr_00->stream_write_position = 0;
-            this_ptr_00->streaming_slot_index = local_90.field14_0x6c;
-            iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(this_ptr_00);
+            pCVar11->streaming_buffer_size = (int)ROUND(dVar19);
+            pCVar11->stream_read_position = 0;
+            pCVar11->stream_write_position = 0;
+            pCVar11->streaming_slot_index = local_90.field14_0x6c;
+            iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar11);
             pCVar11 = local_18;
             goto joined_r0x005a94f6;
           }
@@ -244,13 +243,13 @@ LAB_005a9026:
   }
   else {
     pCVar11->ref_count = pCVar11->ref_count + 1;
-    sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(this_ptr_01);
+    sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(this_ptr_00);
     g_SfxSlots[uVar12].is_active = 0;
     fVar1 = g_SfxSlots[uVar12].options.current_volume;
     g_SfxSlots[uVar12].fade_time_remaining = -1.0;
     g_SfxSlots[uVar12].stop_after_fade = 0;
     g_SfxSlots[uVar12].fade_target_volume = fVar1;
-    pCVar4 = this_ptr_01;
+    pCVar4 = this_ptr_00;
     do {
       pCVar5 = &(pCVar4->options).position;
       pCVar4->channel_current_buffer_offsets[0] = -1;
@@ -272,14 +271,14 @@ LAB_005a9026:
     g_SfxSlots[uVar12].playback_state = g_SfxPlaybackStateCounter;
     iVar6 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(pCVar11,999.0,999.0);
     if (iVar6 != 0) {
-      sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr_01,0.0);
+      sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr_00,0.0);
       uVar7 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();
       if (uVar7 != 0) {
         iVar6 = (*g_CSoundDevicePtr->vtable->allocateSfx)
                           (g_CSoundDevicePtr,(g_SfxSlots[uVar12].sample)->buffer_id);
         g_SfxSlots[uVar12].hardware_buffer_handle = iVar6;
         if ((iVar6 == 0) ||
-           (iVar6 = (*g_CSoundDevicePtr->vtable->startSfx)(g_CSoundDevicePtr,this_ptr_01),
+           (iVar6 = (*g_CSoundDevicePtr->vtable->startSfx)(g_CSoundDevicePtr,this_ptr_00),
            iVar6 == 0)) goto LAB_005a9523;
       }
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
@@ -287,7 +286,7 @@ LAB_005a9026:
     }
   }
 LAB_005a9523:
-  sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr_01);
+  sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr_00);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 0;
 }

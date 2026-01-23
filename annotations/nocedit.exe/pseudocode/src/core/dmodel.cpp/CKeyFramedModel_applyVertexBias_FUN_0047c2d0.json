@@ -4,20 +4,14 @@
       {
         "category": "other",
         "column": 26,
-        "line": 29,
+        "line": 26,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 30,
+        "line": 27,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 30,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -31,30 +25,29 @@
       {
         "category": "other",
         "column": 6,
-        "line": 29,
+        "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 30,
+        "line": 27,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 85,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 25,
-    "suspect_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 82
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -205,36 +198,8 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_EDX",
-      "text": "iVar2 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_ECX",
-      "text": "for (iVar1 = extraout_ECX; iVar1 < model_ptr->frame_count * model_ptr->vertex_count;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "ROUND",
       "text": "*(int *)(iVar2 + 4 + (int)model_ptr->vertex_list) + (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"

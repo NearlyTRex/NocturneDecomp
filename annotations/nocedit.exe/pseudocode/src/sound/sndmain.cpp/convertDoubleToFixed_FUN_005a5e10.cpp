@@ -11,7 +11,6 @@ sound_sndmain_cpp_convertDoubleToFixed_FUN_005a5e10
           (double input,int *out_integer_part,int *out_fractional_part)
 
 {
-  uint *extraout_EDX;
   uint unaff_EBX;
   double dVar1;
   double dVar2;
@@ -25,6 +24,6 @@ sound_sndmain_cpp_convertDoubleToFixed_FUN_005a5e10
   *input._0_4_ = (int)(longlong)ROUND(dVar2);
   dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
   uStackY_18 = (uint)(longlong)ROUND(dVar1);
-  *extraout_EDX = uStackY_18;
+  *input._4_4_ = uStackY_18;
   return;
 }

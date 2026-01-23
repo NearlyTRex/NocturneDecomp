@@ -6,12 +6,6 @@
         "column": 9,
         "line": 12,
         "message": "ambiguating new declaration of 'float* core_frankgen_cpp_FUN_004d20f0()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 24,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -25,19 +19,25 @@
       {
         "category": "other",
         "column": 50,
-        "line": 22,
+        "line": 21,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 23,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 156,
+    "complexity_score": 166,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 21,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
@@ -135,23 +135,30 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "float *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(in_stack_00000004 + 0x180));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x184));",
       "type": "stack_param"
     },
     {

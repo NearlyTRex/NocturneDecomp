@@ -21,13 +21,11 @@ engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00
   float fVar8;
   float fVar9;
   float fVar10;
-  int extraout_EDX;
-  int extraout_EDX_00;
   float10 fVar11;
   float10 fVar12;
   float10 fVar13;
   float10 fVar14;
-  float10 fVar15;
+  double dVar15;
   double dVar16;
   float local_30;
   
@@ -53,20 +51,18 @@ engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00
   fVar6 = fVar7 * local_30 * fVar8;
   fVar5 = fVar5 * local_30 * fVar8;
   fVar8 = fVar4 * local_30 * fVar8;
-  fVar15 = (float10)vertex_data[iVar2].x * (float10)fVar6 +
+  fVar14 = (float10)vertex_data[iVar2].x * (float10)fVar6 +
            (float10)vertex_data[iVar2].y * (float10)fVar5;
   fVar11 = (float10)vertex_data[iVar2].z * (float10)fVar8;
-  fVar12 = (float10)fVar5;
-  fVar13 = (float10)fVar8;
-  dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
-  fVar14 = (float10)dVar16;
+  fVar12 = (float10)fVar8;
+  dVar15 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
+  dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
+  fVar13 = (float10)dVar16;
   dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
-  fVar12 = (float10)dVar16;
-  dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar13);
-  *(int *)(extraout_EDX + 8) = (int)ROUND(fVar14);
-  *(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar12);
-  *(int *)(extraout_EDX + 0x10) = (int)ROUND(dVar16);
-  dVar16 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 + fVar15));
-  *(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(dVar16);
+  data->normal_x = (int)ROUND(dVar15);
+  data->normal_y = (int)ROUND(fVar13);
+  data->normal_z = (int)ROUND(dVar16);
+  dVar15 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 + fVar14));
+  data->dot_product = (int)ROUND(dVar15);
   return;
 }

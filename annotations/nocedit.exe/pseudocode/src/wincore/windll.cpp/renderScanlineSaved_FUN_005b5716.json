@@ -1,29 +1,48 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 67,
+        "line": 23,
+        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 23,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 23,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 168,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 5,
-    "pseudocode_lines": 18,
-    "suspect_count": 14,
+    "pseudocode_lines": 15,
+    "suspect_count": 8,
     "suspect_types": [
       "register_param",
       "unaffected_reg"
     ],
-    "total_lines": 39
+    "total_lines": 36
   },
   "cross_references": [],
   "function": {
@@ -153,74 +172,32 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "text": "void *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EDI",
-      "text": "void *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Inferred register parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_EAX",
       "text": "g_SavedRegisterEAX = in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 13,
       "match": "unaff_EBX",
       "text": "g_SavedRegisterEBX = unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Inferred register parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_ECX",
       "text": "g_SavedRegisterECX = in_ECX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 18,
+      "line": 15,
       "match": "in_EDX",
       "text": "g_SavedRegisterEDX = in_EDX;",
       "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EDI",
-      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
-      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EBP",
-      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);",
-      "type": "unaffected_reg"
     }
   ]
 }

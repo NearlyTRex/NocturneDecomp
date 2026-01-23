@@ -15,12 +15,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
   CSfxSample *pCVar4;
   ulonglong uVar5;
   uint uVar6;
-  int extraout_EAX;
   CSfxSlot *pCVar7;
   int iVar8;
   uint uVar9;
-  int extraout_EDX;
-  int extraout_EDX_00;
   int iVar10;
   int iVar11;
   double dVar12;
@@ -175,12 +172,13 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
               local_50 = iVar10;
               do {
                 uVar15 = (uint)((ulonglong)dVar13 >> 0x20);
+                pCVar4 = this_ptr->sample;
                 uVar14 = 0x5a7a4a;
                 dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
                 local_28 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13) * 2 + 1
                                     ) - 0x80;
                 uStack_88 = (double)CONCAT44((float)local_28,
-                                             (float)(int)(*(byte *)(*(int *)(extraout_EDX + 0x120) +
+                                             (float)(int)(*(byte *)((int)pCVar4->sample_data +
                                                                    (int)ROUND(dVar13) * 2) - 0x80));
                 uVar6 = 0;
                 pCVar7 = this_ptr;
@@ -239,10 +237,11 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
             local_48 = iVar10;
             do {
               uVar15 = (uint)((ulonglong)dVar13 >> 0x20);
+              pCVar4 = this_ptr->sample;
               uVar14 = 0x5a7bf3;
               dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
               local_28 = (int)ROUND(dVar13);
-              afStack_90[0] = (float)*(short *)(*(int *)(extraout_EDX_00 + 0x120) + local_28 * 4);
+              afStack_90[0] = (float)*(short *)((int)pCVar4->sample_data + local_28 * 4);
               afStack_90[1] =
                    (float)*(short *)((int)this_ptr->sample->sample_data + local_28 * 4 + 2);
               uVar6 = 0;
@@ -276,10 +275,11 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
           local_44 = iVar10;
           do {
             uVar15 = (uint)((ulonglong)dVar13 >> 0x20);
+            pCVar4 = this_ptr->sample;
             uVar14 = 0x5a7cef;
             dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
             local_28 = (int)ROUND(dVar13);
-            local_30 = (float)*(short *)(*(int *)(extraout_EAX + 0x120) + (int)ROUND(dVar13) * 2);
+            local_30 = (float)*(short *)((int)pCVar4->sample_data + (int)ROUND(dVar13) * 2);
             iVar10 = 0;
             pCVar7 = this_ptr;
             if (0 < mix_buffer.num_channels) {

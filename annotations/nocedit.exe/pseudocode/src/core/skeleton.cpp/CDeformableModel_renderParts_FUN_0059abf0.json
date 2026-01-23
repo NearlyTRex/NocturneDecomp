@@ -32,18 +32,6 @@
         "message": "invalid cast from type 'byte*' {aka 'unsigned char*'} to type 'float'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 144,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 158,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 16,
         "line": 221,
@@ -122,12 +110,12 @@
   },
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 346,
+    "complexity_score": 356,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
     "pseudocode_lines": 251,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
@@ -816,7 +804,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 153,
       "match": "ROUND",
       "text": "local_2c = (float)(int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
@@ -825,7 +813,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 155,
       "match": "ROUND",
-      "text": "local_30 = (float)(int)ROUND(dVar16);",
+      "text": "local_30 = (float)(int)ROUND(dVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 157,
+      "match": "ROUND",
+      "text": "(g_CDemonRendererPtr2,(int)local_30,(int)ROUND(dVar16),iVar9);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -3505,6 +3505,10 @@
       "type":"struct"
     },
     {
+      "name":"SFontGlyph",
+      "type":"struct"
+    },
+    {
       "name":"SFoundFileInfo",
       "type":"struct"
     },
@@ -16760,7 +16764,7 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"__cdecl",
+      "calling_convention":"__edi_esi_ebx",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
       "name":"RenderScanlineFunc",
@@ -45087,6 +45091,30 @@
       "importable":true,
       "len":76800,
       "name":"SFogImagePlane",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":1,
+          "name":"width",
+          "offset":0,
+          "type":"uchar"
+        },
+        {
+          "len":144,
+          "name":"bitmap",
+          "offset":1,
+          "type":"uchar[144]"
+        }
+      ],
+      "importable":true,
+      "len":145,
+      "name":"SFontGlyph",
       "pack":false,
       "type":"struct"
     },

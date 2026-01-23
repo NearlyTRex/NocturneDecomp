@@ -2,16 +2,34 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 33,
-        "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
+        "category": "other",
+        "column": 41,
+        "line": 47,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 37,
-        "message": "'fcos' was not declared in this scope; did you mean 'cos'?"
+        "category": "other",
+        "column": 24,
+        "line": 49,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 50,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 51,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 52,
+        "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -21,28 +39,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 48,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 175,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 13,
-    "pseudocode_lines": 45,
-    "suspect_count": 12,
+    "pseudocode_lines": 44,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 154
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -323,88 +334,32 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "text": "int *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "fsin",
-      "text": "fVar2 = (float10)fsin((float10)local_48);",
+      "text": "fVar3 = (float10)fsin((float10)local_48);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "fsin",
-      "text": "fVar4 = (float10)fsin(fVar3);",
+      "text": "fVar5 = (float10)fsin(fVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "fcos",
-      "text": "fVar5 = (float10)fcos((float10)local_48);",
+      "text": "fVar6 = (float10)fcos((float10)local_48);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "fcos",
-      "text": "fVar3 = (float10)fcos(fVar3);",
+      "text": "fVar4 = (float10)fcos(fVar4);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 41,
-      "match": "extraout_EDX",
-      "text": "((SProjectedVertex *)(*extraout_EDX + extraout_EAX * 0x10),input);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 41,
-      "match": "extraout_EAX",
-      "text": "((SProjectedVertex *)(*extraout_EDX + extraout_EAX * 0x10),input);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_EAX",
-      "text": "(&g_RenderVertexBuffer[0].light)[extraout_EAX * 4] = fVar1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 44,
-      "match": "extraout_EAX",
-      "text": "(&g_RenderVertexBuffer[0].color)[extraout_EAX * 4] = (int)fVar1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
-      "match": "extraout_EAX",
-      "text": "(&g_RenderVertexBuffer[0].fog)[extraout_EAX * 4] = fVar1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
-      "match": "extraout_EAX",
-      "text": "(&g_RenderVertexBuffer[0].w_recip)[extraout_EAX * 4] = 0.0;",
-      "type": "extra_output"
     }
   ]
 }

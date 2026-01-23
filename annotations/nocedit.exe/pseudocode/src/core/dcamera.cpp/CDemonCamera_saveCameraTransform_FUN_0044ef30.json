@@ -1,144 +1,28 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 63,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 80,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 82,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 83,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 88,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 90,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 91,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 103,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 105,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 106,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 111,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 113,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 114,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 126,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 128,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 129,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 133,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 135,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 136,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 579,
+    "complexity_score": 240,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 129,
-    "suspect_count": 44,
+    "pseudocode_lines": 115,
+    "suspect_count": 12,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 326
+    "total_lines": 312
   },
   "cross_references": [],
   "function": {
@@ -279,309 +163,85 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EAX_01",
-      "text": "float *extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EAX_02",
-      "text": "int extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_EAX_03",
-      "text": "int extraout_EAX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
-      "match": "extraout_EAX_04",
-      "text": "float *extraout_EAX_04;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EAX_05",
-      "text": "int extraout_EAX_05;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EAX_06",
-      "text": "int extraout_EAX_06;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 48,
       "match": "ROUND",
       "text": "(int)ROUND((float)(this_ptr->base).position.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 50,
       "match": "ROUND",
       "text": "(int)ROUND((float)(this_ptr->base).position.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 52,
       "match": "ROUND",
       "text": "(int)ROUND((float)(this_ptr->base).position.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 61,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[0].x = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
-      "match": "extraout_EAX",
-      "text": "(float10)*(float *)(extraout_EAX + 0x1c) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_EAX",
-      "text": "(float10)*(float *)(extraout_EAX + 0x10) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 76,
-      "match": "extraout_EAX",
-      "text": "fVar4 * (float10)*(float *)(extraout_EAX + 4)));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 68,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[0].y = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 81,
-      "match": "extraout_EAX_00",
-      "text": "(float10)*(float *)(extraout_EAX_00 + 0x20) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 83,
-      "match": "extraout_EAX_00",
-      "text": "(float10)*(float *)(extraout_EAX_00 + 0x14) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 84,
-      "match": "extraout_EAX_00",
-      "text": "fVar5 * (float10)*(float *)(extraout_EAX_00 + 8)));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 75,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[0].z = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 89,
-      "match": "extraout_EAX_01",
-      "text": "(float10)extraout_EAX_01[6] +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 91,
-      "match": "extraout_EAX_01",
-      "text": "(float10)*extraout_EAX_01 + fVar4 * (float10)extraout_EAX_01[3]));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 91,
-      "match": "extraout_EAX_01",
-      "text": "(float10)*extraout_EAX_01 + fVar4 * (float10)extraout_EAX_01[3]));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 82,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[1].x = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 96,
-      "match": "extraout_EAX_02",
-      "text": "(float10)*(float *)(extraout_EAX_02 + 0x1c) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 98,
-      "match": "extraout_EAX_02",
-      "text": "(float10)*(float *)(extraout_EAX_02 + 0x10) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 99,
-      "match": "extraout_EAX_02",
-      "text": "fVar5 * (float10)*(float *)(extraout_EAX_02 + 4)));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 89,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[1].y = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 104,
-      "match": "extraout_EAX_03",
-      "text": "(float10)*(float *)(extraout_EAX_03 + 0x20) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 106,
-      "match": "extraout_EAX_03",
-      "text": "(float10)*(float *)(extraout_EAX_03 + 0x14) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 107,
-      "match": "extraout_EAX_03",
-      "text": "fVar4 * (float10)*(float *)(extraout_EAX_03 + 8)));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 96,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[1].z = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 112,
-      "match": "extraout_EAX_04",
-      "text": "(float10)extraout_EAX_04[6] +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 114,
-      "match": "extraout_EAX_04",
-      "text": "(float10)*extraout_EAX_04 + fVar5 * (float10)extraout_EAX_04[3]));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 114,
-      "match": "extraout_EAX_04",
-      "text": "(float10)*extraout_EAX_04 + fVar5 * (float10)extraout_EAX_04[3]));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 103,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[2].x = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 119,
-      "match": "extraout_EAX_05",
-      "text": "(float10)*(float *)(extraout_EAX_05 + 0x1c) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 121,
-      "match": "extraout_EAX_05",
-      "text": "(float10)*(float *)(extraout_EAX_05 + 0x10) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 122,
-      "match": "extraout_EAX_05",
-      "text": "fVar4 * (float10)*(float *)(extraout_EAX_05 + 4)));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 110,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[2].y = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 126,
-      "match": "extraout_EAX_06",
-      "text": "(float10)*(float *)(extraout_EAX_06 + 0x20) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 128,
-      "match": "extraout_EAX_06",
-      "text": "(float10)*(float *)(extraout_EAX_06 + 0x14) +",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 129,
-      "match": "extraout_EAX_06",
-      "text": "fVar5 * (float10)*(float *)(extraout_EAX_06 + 8)));",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
+      "line": 116,
       "match": "ROUND",
       "text": "(this_ptr->source_matrix).m[2].z = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"

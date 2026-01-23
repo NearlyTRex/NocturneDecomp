@@ -2,39 +2,33 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 39,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 22,
-        "line": 50,
+        "line": 49,
         "message": "cast from 'CDrawSurface*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 50,
+        "line": 49,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 52,
+        "line": 51,
         "message": "cast from 'CDrawSurface*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 62,
+        "line": 61,
         "message": "cast from 'CDrawSurface*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 70,
+        "line": 69,
         "message": "cast from 'CDrawSurface*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -49,31 +43,30 @@
       {
         "category": "other",
         "column": 16,
-        "line": 42,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 50,
+        "line": 49,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 130,
+    "complexity_score": 94,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 65,
-    "suspect_count": 5,
+    "pseudocode_lines": 64,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 264
+    "total_lines": 263
   },
   "cross_references": [
     {
@@ -282,36 +275,15 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 31,
       "match": "ROUND",
       "text": "iVar2 = (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
-      "match": "extraout_EDX",
-      "text": "if (x2 < extraout_EDX) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 36,
-      "match": "extraout_EDX",
-      "text": "x_00 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(CDrawSurface *)((int)",
       "text": "for (; iVar1 = y1, (int)x < x_00; x = (CDrawSurface *)((int)&x->width + 1)) {",
       "type": "pointer_cast"

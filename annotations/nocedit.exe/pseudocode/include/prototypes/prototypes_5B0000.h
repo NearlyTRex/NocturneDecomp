@@ -125,7 +125,7 @@ void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(
 void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(STexturedVertex * left_vertex, STexturedVertex * right_vertex, int scanline_y);
 void __cdecl wincore_windll_cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, int pixelCount);
 void __cdecl wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, int pixelCount);
-void __cdecl wincore_windll_cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y);
+void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y);
 void __cdecl wincore_windll_cpp_renderScanlineSaved_FUN_005b5716(void * scanline_data, int scanline_y, int render_flags);
 void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input);
 int __cdecl wincore_windll_cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input);

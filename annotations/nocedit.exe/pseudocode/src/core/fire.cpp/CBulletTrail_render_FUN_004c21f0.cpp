@@ -11,7 +11,6 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
 {
   int iVar1;
   float fVar2;
-  int extraout_EDX;
   int iVar3;
   double dVar4;
   CVector3f local_7c;
@@ -46,9 +45,11 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
     if (0.0 < *(float *)(this_ptr->field0_0x0 + 0x1c)) {
       dVar4 = crt_math_c_round_FUN_005fe6b0
                         ((double)(local_7c.x / *(float *)(this_ptr->field0_0x0 + 0x1c)));
-      iVar3 = (int)ROUND(dVar4);
-      local_24 = extraout_EDX;
-      if ((extraout_EDX <= iVar3) && (local_24 = iVar3, 100 < iVar3)) {
+      local_24 = (int)ROUND(dVar4);
+      if (local_24 < 2) {
+        local_24 = 2;
+      }
+      else if (100 < local_24) {
         local_24 = 100;
       }
     }

@@ -103,7 +103,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x10]     ; 0045bb50
     PUSH EAX                            ; 0045bb53
     CALL engine_matrix.c_buildRotationMatrix_FUN_0050c920 ; 0045bb54
-        ;   XREF to: 0050c920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_buildRotationMatrix_FUN_0050c920(ushort pitch, ushort yaw, ushort roll)
+        ;   XREF to: 0050c920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_buildRotationMatrix_FUN_0050c920(int pitch, int yaw, int roll)
     ADD ESP,0xc                         ; 0045bb59
     MOV EAX,[0x02d052f0]                ; 0045bb5c | g_TransformMatrix[0][2]
     MOV EDX,dword ptr [0x02d052f0]      ; 0045bb61 | g_TransformMatrix[0][2]

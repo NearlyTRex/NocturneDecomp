@@ -14,7 +14,6 @@ cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
   CDrawSurface *x;
   int iVar1;
   CDrawSurface *this_ptr_00;
-  int extraout_EDX;
   int iVar2;
   int x_00;
   double dVar3;
@@ -38,9 +37,9 @@ cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
   dVar3 = crt_math_c_round_FUN_005fe6b0((double)g_DashOffsetCounter);
   iVar2 = (int)ROUND(dVar3);
   x_00 = x2;
-  if (x2 < extraout_EDX) {
+  if (x2 < x1) {
     this_ptr = (CDrawSurface *)x2;
-    x_00 = extraout_EDX;
+    x_00 = x1;
   }
   x = this_ptr;
   if (x2 < y1) {

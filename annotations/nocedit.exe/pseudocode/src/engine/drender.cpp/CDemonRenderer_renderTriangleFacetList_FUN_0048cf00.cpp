@@ -19,9 +19,7 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
   int extraout_EAX_01;
   int iVar2;
   int iVar3;
-  int local_28;
-  int local_24;
-  int local_20;
+  CVector3i local_28;
   int local_1c;
   int local_18;
   int local_14;
@@ -40,26 +38,26 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
       g_RenderStateFlag2 = 6;
       if (g_UseExternalRenderer == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
-          local_28 = primitive_array[1].base.type;
-          local_24 = primitive_array[1].surface_normal.B;
-          local_20 = primitive_array[2].base.type;
+          local_28.x = primitive_array[1].base.type;
+          local_28.y = primitive_array[1].surface_normal.B;
+          local_28.z = primitive_array[2].base.type;
           if ((primitive_array->base).count == 4) {
             local_1c = primitive_array[2].surface_normal.B;
           }
           if (this_ptr->field8_0x20 == 0) {
-            this_ptr->vertex_buffer_ptr[local_28].u = (float)primitive_array[1].base.count;
-            this_ptr->vertex_buffer_ptr[local_28].v = (float)primitive_array[1].surface_normal.A;
-            this_ptr->vertex_buffer_ptr[local_24].u = (float)primitive_array[1].surface_normal.C;
-            this_ptr->vertex_buffer_ptr[local_24].v = (float)primitive_array[1].surface_normal.D;
-            this_ptr->vertex_buffer_ptr[local_20].u = (float)primitive_array[2].base.count;
-            this_ptr->vertex_buffer_ptr[local_20].v = (float)primitive_array[2].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[local_28.x].u = (float)primitive_array[1].base.count;
+            this_ptr->vertex_buffer_ptr[local_28.x].v = (float)primitive_array[1].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[local_28.y].u = (float)primitive_array[1].surface_normal.C;
+            this_ptr->vertex_buffer_ptr[local_28.y].v = (float)primitive_array[1].surface_normal.D;
+            this_ptr->vertex_buffer_ptr[local_28.z].u = (float)primitive_array[2].base.count;
+            this_ptr->vertex_buffer_ptr[local_28.z].v = (float)primitive_array[2].surface_normal.A;
             if ((primitive_array->base).count == 4) {
               this_ptr->vertex_buffer_ptr[local_1c].u = (float)primitive_array[2].surface_normal.C;
               this_ptr->vertex_buffer_ptr[local_1c].v = (float)primitive_array[2].surface_normal.D;
             }
           }
           engine_drender_cpp_renderTriangleTextured_FUN_00483370
-                    (&local_28,(primitive_array->base).count);
+                    (&local_28.x,(primitive_array->base).count);
           primitive_array =
                (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);
           in_EAX = extraout_EAX_01;
@@ -105,9 +103,9 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
       g_RenderStateFlags = 0;
       g_RenderStateFlag2 = g_RenderStateFlags;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
-        local_28 = primitive_array[1].base.type;
-        local_24 = primitive_array[1].surface_normal.B;
-        local_20 = primitive_array[2].base.type;
+        local_28.x = primitive_array[1].base.type;
+        local_28.y = primitive_array[1].surface_normal.B;
+        local_28.z = primitive_array[2].base.type;
         if ((primitive_array->base).count == 4) {
           local_1c = primitive_array[2].surface_normal.B;
         }

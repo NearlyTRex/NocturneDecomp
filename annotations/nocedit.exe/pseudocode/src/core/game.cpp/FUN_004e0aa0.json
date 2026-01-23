@@ -12,12 +12,6 @@
         "column": 33,
         "line": 30,
         "message": "cast from 'void**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 34,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -38,15 +32,14 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 203,
+    "complexity_score": 178,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 43,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "undefined_data"
     ],
@@ -218,36 +211,29 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_02d831ec",
       "text": "if (DAT_02d831ec != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_02d831ec",
       "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_02d831ec",
       "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_02d831f0",
       "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
       "type": "undefined_data"
@@ -265,13 +251,6 @@
       "match": "DAT_02d831f0",
       "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)(DAT_02d831f0 * DAT_02d831f0));",
       "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
-      "match": "extraout_EAX",
-      "text": "if (0 < extraout_EAX) {",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

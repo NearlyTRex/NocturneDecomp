@@ -55,7 +55,7 @@ section .text
     PUSH EAX                            ; 005762ea
     FSTP float ptr [ESP + 0x20]         ; 005762eb
     CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 005762ef
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 005762f4
     FLD float ptr [EBX + 0xc]           ; 005762f7
     FLD float ptr [ESP]                 ; 005762fa

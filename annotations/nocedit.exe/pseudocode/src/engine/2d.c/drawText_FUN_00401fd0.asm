@@ -69,7 +69,7 @@ section .text
     PUSH ECX                            ; 00402016
     PUSH EAX                            ; 00402017
     CALL engine_2d.c_drawTextMultiline_FUN_00401cf0 ; 00402018
-        ;   XREF to: 00401cf0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int y_max)
+        ;   XREF to: 00401cf0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int x_max, ...)
     ADD ESP,0x14                        ; 0040201d
     POP EBP                             ; 00402020
     POP EDI                             ; 00402021

@@ -12,11 +12,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   CVector3i *world_position;
   longlong lVar1;
   CDemonRenderer *this_ptr_00;
-  int extraout_EAX;
-  float fVar2;
-  int extraout_EDX;
-  byte bVar3;
-  double dVar4;
+  int iVar2;
+  float fVar3;
+  byte bVar4;
+  double dVar5;
   int aiStackY_1064 [992];
   SMRGLHeaderPrimitive local_d8;
   uint local_c0;
@@ -49,7 +48,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   float local_1c;
   int local_14;
   
-  bVar3 = 0;
+  bVar4 = 0;
   if (this_ptr->field17_0x1cbc == 0) {
     return;
   }
@@ -63,9 +62,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
             (g_CDemonRendererPtr2,&local_7c);
   local_64 = local_7c.x;
-  local_60[(uint)bVar3 * -2] = *(int *)((int)&local_7c + (uint)bVar3 * -8 + 4);
-  local_60[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-       *(int *)((int)&local_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  local_60[(uint)bVar4 * -2] = *(int *)((int)&local_7c + (uint)bVar4 * -8 + 4);
+  local_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+       *(int *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   local_68 = (float)0.00390625;
   local_70 = (float)local_64 * local_68;
   local_14 = local_60[1];
@@ -89,17 +88,18 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     local_50 = 0.0;
   }
   else {
-    fVar2 = 1.0 / (float)local_d8.base.type;
-    local_58 = local_58 * fVar2;
-    local_54 = local_54 * fVar2;
-    local_50 = local_50 * fVar2;
+    fVar3 = 1.0 / (float)local_d8.base.type;
+    local_58 = local_58 * fVar3;
+    local_54 = local_54 * fVar3;
+    local_50 = local_50 * fVar3;
   }
+  iVar2 = (int)g_PerspectiveReciprocal / 2;
   local_1c = -(local_50 * (float)local_44.x + local_58 * local_4c + local_54 * local_48);
-  dVar4 = crt_math_c_round_FUN_005fe6b0
+  dVar5 = crt_math_c_round_FUN_005fe6b0
                     ((double)(local_1c * local_1c * local_1c * local_1c * (float)65536));
-  local_1c = (float)(int)ROUND(dVar4);
-  lVar1 = (longlong)(extraout_EDX - extraout_EAX) * (longlong)(int)local_1c;
-  fVar2 = (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+  local_1c = (float)(int)ROUND(dVar5);
+  lVar1 = (longlong)(0xffff - iVar2) * (longlong)(int)local_1c;
+  fVar3 = (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   if (0.0 < local_20) {
     local_b0 = 0x3f000000;
     local_ac = 0x3f000000;
@@ -137,16 +137,16 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     this_ptr_00 = g_CDemonRendererPtr2;
     g_CDemonRendererPtr2->vertex_buffer_ptr->u = 2.2775203e-38;
     this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;
-    this_ptr_00->vertex_buffer_ptr->w_recip = fVar2;
+    this_ptr_00->vertex_buffer_ptr->w_recip = fVar3;
     this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;
     this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;
-    this_ptr_00->vertex_buffer_ptr[1].w_recip = fVar2;
+    this_ptr_00->vertex_buffer_ptr[1].w_recip = fVar3;
     this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;
     this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;
-    this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar2;
+    this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar3;
     this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;
     this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;
-    this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar2;
+    this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar3;
     this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;
     this_ptr_00->vertex_buffer_ptr->color = 0xffff;
     this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;

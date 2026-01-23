@@ -9,32 +9,20 @@
       },
       {
         "category": "other",
-        "column": 33,
+        "column": 34,
         "line": 45,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 74,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 17,
-        "line": 77,
+        "line": 75,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 89,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 17,
-        "line": 92,
+        "line": 88,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -54,38 +42,37 @@
       },
       {
         "category": "other",
-        "column": 16,
+        "column": 17,
         "line": 45,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 77,
+        "line": 75,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 92,
+        "line": 88,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 274,
+    "complexity_score": 184,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
-    "pseudocode_lines": 89,
-    "suspect_count": 17,
+    "pseudocode_lines": 84,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 366
+    "total_lines": 361
   },
   "cross_references": [
     {
@@ -352,34 +339,6 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX_00",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_CL",
-      "text": "byte extraout_CL;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_CL_00",
-      "text": "byte extraout_CL_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(ushort *)((int)",
@@ -388,87 +347,59 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ROUND",
+      "text": "local_34 = (uint)(longlong)ROUND(dVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ROUND",
+      "text": "uStack_2c = (uint)(longlong)ROUND(dVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "ROUND",
-      "text": "local_34 = (uint)(longlong)ROUND(fVar13);",
+      "text": "local_3c = (uint)(longlong)ROUND(fVar14);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
+      "description": "Complex pointer cast",
       "line": 68,
-      "match": "ROUND",
-      "text": "uStack_2c = (uint)(longlong)ROUND(dVar14);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
-      "match": "ROUND",
-      "text": "local_3c = (uint)(longlong)ROUND(fVar11);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 70,
-      "match": "extraout_EAX_00",
-      "text": "*(uint *)((int)g_ScreenBufferArray[y] + extraout_EAX_00 * 4) =",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_ScreenBufferArray[y] + extraout_EAX_00 * 4) =",
+      "text": "*(uint *)((int)g_ScreenBufferArray[y] + x * 4) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
-      "match": "extraout_CL_00",
-      "text": "local_3c << ((byte)g_GreenBitPosition & 0x1f) | local_34 << (extraout_CL_00 & 0x1f) |",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 78,
       "match": "ROUND",
-      "text": "uStack_2c = (uint)(longlong)ROUND(fVar11);",
+      "text": "uStack_2c = (uint)(longlong)ROUND(fVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 79,
       "match": "ROUND",
-      "text": "local_34 = (uint)(longlong)ROUND(dVar14);",
+      "text": "local_34 = (uint)(longlong)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 80,
       "match": "ROUND",
-      "text": "local_3c = (uint)(longlong)ROUND(fVar13);",
+      "text": "local_3c = (uint)(longlong)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 85,
-      "match": "extraout_EAX",
-      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + extraout_EAX * 2) =",
-      "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 81,
       "match": "(ushort *)((int)",
-      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + extraout_EAX * 2) =",
+      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 87,
-      "match": "extraout_CL",
-      "text": ") | (ushort)((local_3c >> (extraout_CL & 0x1f)) << ((byte)g_RedBitPosition & 0x1f))",
-      "type": "extra_output"
     }
   ]
 }

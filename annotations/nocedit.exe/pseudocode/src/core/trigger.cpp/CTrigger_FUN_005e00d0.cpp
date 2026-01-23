@@ -15,8 +15,6 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
   CDemonRenderer *pCVar2;
   int iVar3;
   CBoundingBox3D *this_ptr_00;
-  int extraout_ECX;
-  CDemonRenderer *this_ptr_01;
   int iVar4;
   SRenderVertex *pSVar5;
   int iVar6;
@@ -109,19 +107,21 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
           fStack_cc = 5.60519e-44;
         }
         (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_88);
+        pCVar2 = g_CDemonRendererPtr2;
         fVar1 = *(float *)(this_ptr->field1_0x158 + 8) * (float)0.5;
         fStack_5c = 0.0;
         CStack_54.x = 0;
         fStack_58 = CStack_88.max.x;
+        pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * 256.0f));
         fStack_20 = (float)(int)ROUND(dVar12);
-        *(float *)(extraout_ECX + 0x20) = fStack_20;
-        this_ptr_01->vertex_buffer_ptr->color = iVar3 << 8;
-        this_ptr_01->vertex_buffer_ptr->fog = (float)(iVar4 << 8);
-        this_ptr_01->vertex_buffer_ptr->w_recip = (float)(iVar6 << 8);
-        this_ptr_01->vertex_buffer_ptr->u = 1.1754944e-38;
-        this_ptr_01->vertex_buffer_ptr->v = 1.1754944e-38;
-        engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_01,&DAT_0068434c);
+        pSVar5->light = fStack_20;
+        pCVar2->vertex_buffer_ptr->color = iVar3 << 8;
+        pCVar2->vertex_buffer_ptr->fog = (float)(iVar4 << 8);
+        pCVar2->vertex_buffer_ptr->w_recip = (float)(iVar6 << 8);
+        pCVar2->vertex_buffer_ptr->u = 1.1754944e-38;
+        pCVar2->vertex_buffer_ptr->v = 1.1754944e-38;
+        engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar2,&DAT_0068434c);
         CStack_48.x = (int)ROUND(fStack_60 * _DAT_00664a00);
         CStack_48.y = (int)ROUND(fStack_5c * _DAT_00664a00);
         CStack_48.z = (int)ROUND(fStack_58 * _DAT_00664a00);

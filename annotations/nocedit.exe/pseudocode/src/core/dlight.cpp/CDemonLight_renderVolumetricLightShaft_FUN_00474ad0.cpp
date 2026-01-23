@@ -12,8 +12,8 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
 {
   SRenderVertex *pSVar1;
   float fVar2;
-  CVector3f *pCVar3;
   CDemonRenderer *this_ptr_00;
+  CVector3f *pCVar3;
   int iVar4;
   byte bVar5;
   double dVar6;
@@ -161,6 +161,7 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
                       (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c8);
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                       (g_CDemonRendererPtr2,g_LightTextures + 1);
+            this_ptr_00 = g_CDemonRendererPtr2;
             local_130.surface_normal.A = 4;
             local_118 = 0;
             local_130.surface_normal.D = 0;

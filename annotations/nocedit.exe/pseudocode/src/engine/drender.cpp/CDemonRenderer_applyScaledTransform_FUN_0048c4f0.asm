@@ -85,7 +85,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0048c559
     PUSH EBX                            ; 0048c55d
     CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 0048c55e
-        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, ...)
+        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 0048c563
     ADD ESP,0xc                         ; 0048c566
     POP EBP                             ; 0048c569
@@ -157,7 +157,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x24]      ; 0048c60d
     PUSH EAX                            ; 0048c611
     CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 0048c612
-        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, ...)
+        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 0048c617
     POP ESI                             ; 0048c61a
     POP EDI                             ; 0048c61b

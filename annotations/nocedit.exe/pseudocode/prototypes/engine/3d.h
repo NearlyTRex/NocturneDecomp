@@ -3,9 +3,9 @@
 // Function prototypes for engine/3d.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_3d.c_oldFunc_FUN_00403740
+// Original: engine_3d.c_oldFunction_FUN_00403740
 // Address: 00403740
-void * oldFunc(SMRGLHeaderPrimitive * primitive);
+void * oldFunction(SMRGLHeaderPrimitive * primitive);
 
 // Original: engine_3d.c_badMRGLStruct_FUN_004037b0
 // Address: 004037b0

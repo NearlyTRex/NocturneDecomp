@@ -1,12 +1,8 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void wincore_windll.cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y)
+; __edi_esi_ebx void wincore_windll.cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y)
 ;
-; Parameters:
-; void *           Stack[0x4]:4   left_data
-; void *           Stack[0x8]:4   right_data
-; int              Stack[0xc]:4   scanline_y
 ;
 ; XREF[8]:
 ;   engine_3d.c_rasterizePolygon_FUN_004d1340 at 004d163f

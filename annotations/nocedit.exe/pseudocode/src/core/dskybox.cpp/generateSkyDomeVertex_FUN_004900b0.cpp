@@ -12,17 +12,17 @@ core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0
 
 {
   float fVar1;
-  int extraout_EAX;
-  int *extraout_EDX;
-  float10 fVar2;
+  CDemonRenderer *pCVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
+  float10 fVar8;
   CVector3i *input;
   float local_48;
   
+  pCVar2 = g_CDemonRendererPtr2;
   if (v_coord == 0) {
     local_48 = 0.019634955;
   }
@@ -30,26 +30,25 @@ core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0
     local_48 = (float)v_coord * 0.25f * (float)3.1415926535000001 *
                (float)0.5;
   }
-  fVar2 = (float10)fsin((float10)local_48);
-  fVar3 = (float10)((float)u_coord * 0.0625f * (float)3.1415926535000001 *
+  fVar3 = (float10)fsin((float10)local_48);
+  fVar4 = (float10)((float)u_coord * 0.0625f * (float)3.1415926535000001 *
                    (float)2) + (float10)light_color[7];
-  fVar4 = (float10)fsin(fVar3);
-  fVar5 = (float10)fcos((float10)local_48);
-  fVar3 = (float10)fcos(fVar3);
-  fVar6 = (float10)g_SkyDomeVertexScale;
-  fVar7 = (float10)256;
-  fVar4 = fVar4 * fVar6 * (float10)(double)fVar5 * fVar7;
-  fVar3 = fVar3 * fVar6 * (float10)(double)fVar5 * fVar7;
-  crt_math_c_round_FUN_005fe6b0((double)(fVar2 * fVar6 * fVar7));
-  crt_math_c_round_FUN_005fe6b0((double)fVar4);
+  fVar5 = (float10)fsin(fVar4);
+  fVar6 = (float10)fcos((float10)local_48);
+  fVar4 = (float10)fcos(fVar4);
+  fVar7 = (float10)g_SkyDomeVertexScale;
+  fVar8 = (float10)256;
+  fVar5 = fVar5 * fVar7 * (float10)(double)fVar6 * fVar8;
+  crt_math_c_round_FUN_005fe6b0((double)(fVar3 * fVar7 * fVar8));
+  crt_math_c_round_FUN_005fe6b0((double)fVar5);
   input = (CVector3i *)0x49018a;
-  crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  crt_math_c_round_FUN_005fe6b0((double)(fVar4 * fVar7 * (float10)(double)fVar6 * fVar8));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            ((SProjectedVertex *)(*extraout_EDX + extraout_EAX * 0x10),input);
+            (&pCVar2->vertex_buffer_ptr[(int)uv_offset].projected_vertex,input);
   fVar1 = *light_color;
-  (&g_RenderVertexBuffer[0].light)[extraout_EAX * 4] = fVar1;
-  (&g_RenderVertexBuffer[0].color)[extraout_EAX * 4] = (int)fVar1;
-  (&g_RenderVertexBuffer[0].fog)[extraout_EAX * 4] = fVar1;
-  (&g_RenderVertexBuffer[0].w_recip)[extraout_EAX * 4] = 0.0;
+  g_RenderVertexBuffer[(int)uv_offset].light = fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].color = (int)fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].fog = fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].w_recip = 0.0;
   return;
 }

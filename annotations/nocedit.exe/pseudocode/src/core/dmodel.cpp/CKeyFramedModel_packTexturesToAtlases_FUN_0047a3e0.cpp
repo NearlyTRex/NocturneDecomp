@@ -20,7 +20,7 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
   int iVar7;
   int max_u;
   char *pcVar8;
-  float10 fVar9;
+  double dVar9;
   double dVar10;
   float fVar11;
   float fStack_b4;
@@ -144,12 +144,12 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
             fStack_b4 = 255.999;
           }
           shape_design_c_fixupCramUV_FUN_0046e090(local_1c,afStack_b0,&fStack_b4);
-          fVar9 = (float10)65536;
+          dVar10 = 65536;
           fVar11 = 6.580217e-39;
-          dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)afStack_b0[0] * fVar9));
-          local_3c = (SMRGLTextureExtended *)(int)ROUND(dVar10);
+          dVar9 = crt_math_c_round_FUN_005fe6b0((double)afStack_b0[0] * 65536);
+          local_3c = (SMRGLTextureExtended *)(int)ROUND(dVar9);
           *(SMRGLTextureExtended **)(iVar4 + 0x1c) = local_3c;
-          dVar10 = crt_math_c_round_FUN_005fe6b0((double)(fVar9 * (float10)fVar11));
+          dVar10 = crt_math_c_round_FUN_005fe6b0(dVar10 * (double)fVar11);
           iStack_40 = (int)ROUND(dVar10);
           *(int *)(iVar4 + 0x20) = iStack_40;
           iVar7 = iVar7 + 1;

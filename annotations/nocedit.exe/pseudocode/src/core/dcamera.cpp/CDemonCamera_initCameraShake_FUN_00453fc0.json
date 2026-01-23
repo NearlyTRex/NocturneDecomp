@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 34,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 109,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "pseudocode_lines": 39,
-    "suspect_count": 6,
+    "pseudocode_lines": 38,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 91
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -203,46 +195,32 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 26,
       "match": "ROUND",
       "text": "g_CameraShakeSustainValue = (int)ROUND(fVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 27,
       "match": "ROUND",
       "text": "g_CameraShakeAttackTime = (int)ROUND(fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 28,
       "match": "ROUND",
-      "text": "g_CameraShakeDecayDuration = (int)ROUND(dVar5);",
+      "text": "g_CameraShakeDecayDuration = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 29,
       "match": "ROUND",
-      "text": "g_CameraShakePeakValue = (int)ROUND(fVar1);",
+      "text": "g_CameraShakePeakValue = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
-      "match": "extraout_EDX",
-      "text": "g_CameraShakeState = extraout_EDX;",
-      "type": "extra_output"
     }
   ]
 }

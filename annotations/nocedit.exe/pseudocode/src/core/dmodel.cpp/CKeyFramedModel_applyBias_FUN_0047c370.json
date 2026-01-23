@@ -2,40 +2,34 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 29,
-        "message": "'SUB84' was not declared in this scope"
+        "category": "incompatible_types",
+        "column": 42,
+        "line": 127,
+        "message": "invalid operands of types 'double' and 'int' to binary 'operator>>'"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 38,
+        "line": 39,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 40,
+        "line": 41,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 42,
+        "line": 43,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 43,
+        "line": 44,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 43,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -49,42 +43,41 @@
       {
         "category": "other",
         "column": 14,
-        "line": 38,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 40,
+        "line": 41,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 42,
+        "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 43,
+        "line": 44,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 88,
+    "complexity_score": 64,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 38,
-    "suspect_count": 4,
+    "pseudocode_lines": 39,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 121
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -237,31 +230,17 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 24,
       "match": "SUB84",
-      "text": "iVar7 = SUB84(dVar5,0);",
+      "text": "iVar8 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_ECX",
-      "text": "for (iVar2 = extraout_ECX; iVar2 < model_ptr->frame_count * model_ptr->vertex_count;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 37,
       "match": "ROUND",
-      "text": "*(int *)(iVar3 + 8 + (int)model_ptr->vertex_list) + (int)ROUND(dVar5);",
+      "text": "*(int *)(iVar5 + 8 + (int)model_ptr->vertex_list) + (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     }
   ]

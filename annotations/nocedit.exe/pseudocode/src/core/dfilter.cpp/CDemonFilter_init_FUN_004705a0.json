@@ -2,27 +2,15 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 35,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 38,
-        "line": 44,
+        "line": 43,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 48,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
-        "column": 61,
-        "line": 52,
+        "column": 54,
+        "line": 51,
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -37,31 +25,30 @@
       {
         "category": "other",
         "column": 29,
-        "line": 44,
+        "line": 43,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 52,
+        "line": 51,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 125,
+    "complexity_score": 89,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 50,
-    "suspect_count": 6,
+    "pseudocode_lines": 49,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 179
+    "total_lines": 178
   },
   "cross_references": [
     {
@@ -233,46 +220,25 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 27,
       "match": "SQRT",
       "text": "local_28 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) / (float)iVar3;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(byte *)((int)",
       "text": "fVar1 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 40,
       "match": "ROUND",
       "text": "bStack_20 = (byte)(int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
-      "match": "extraout_ECX",
-      "text": "*(byte *)(this_ptr->size * iVar5 + extraout_ECX + (int)this_ptr->data_buffer) = bStack_20;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
-      "match": "extraout_ECX",
-      "text": "iVar4 = extraout_ECX + 1;",
-      "type": "extra_output"
     }
   ]
 }

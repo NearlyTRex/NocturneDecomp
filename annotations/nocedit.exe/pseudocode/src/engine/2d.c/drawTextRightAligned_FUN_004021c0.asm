@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextRightAligned_FUN_004021c0(char * text, int y_pos, int right_x)
+; __cdecl void engine_2d.c_drawTextRightAligned_FUN_004021c0(char * text, int x_pos, int y_pos)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
 ; int              Stack[0x8]:4   y_pos
-; int              Stack[0xc]:4   right_x
+; int              Stack[0xc]:4   x_pos
 ;
 ; XREF[2]:
 ;   engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210 at 00402261

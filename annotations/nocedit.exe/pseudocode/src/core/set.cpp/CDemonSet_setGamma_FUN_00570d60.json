@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 28,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 14,
         "line": 33,
@@ -32,19 +26,18 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 116,
+    "complexity_score": 72,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "suspect_float"
     ],
-    "total_lines": 77
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -216,20 +209,6 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
       "line": 19,
       "match": "7.994614e-39",
@@ -240,28 +219,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "ROUND",
-      "text": "iVar4 = (int)ROUND(dVar3);",
+      "text": "iVar5 = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EDX",
-      "text": "iVar1 = extraout_EDX + 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_ECX",
-      "text": "*(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = iVar4;",
-      "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = iVar4;",
+      "text": "*(int *)((int)g_IntensityToValueLookupTable + iVar1) = iVar5;",
       "type": "pointer_cast"
     }
   ]

@@ -11,8 +11,6 @@ void core_course_cpp_FUN_00443760(void)
 {
   SRenderVertex *pSVar1;
   CDemonRenderer *this_ptr;
-  int extraout_EAX;
-  int extraout_EAX_00;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -46,15 +44,19 @@ void core_course_cpp_FUN_00443760(void)
   uStack_a4 = 0x443794;
   dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->x);
   local_20 = (int)ROUND(dVar6);
+  iVar2 = local_20 >> 0x1f;
+  iVar5 = local_20 + iVar2 * -0x10;
   SStack_ac.vertex_count = 0x4437b7;
   dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->y);
-  local_20 = extraout_EAX << 4;
+  local_20 = ((int)(iVar5 - (uint)(iVar2 << 3 < 0)) >> 4) << 4;
   local_24 = (int)ROUND(dVar6);
+  iVar2 = local_24 >> 0x1f;
+  iVar5 = local_24 + iVar2 * -0x10;
   SStack_ac.primitive_type = 0x4437e4;
   dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->z);
   local_20 = (int)ROUND(dVar6);
   in_stack_00000004->x = (float)local_24;
-  in_stack_00000004->y = (float)(extraout_EAX_00 << 4);
+  in_stack_00000004->y = (float)(((int)(iVar5 - (uint)(iVar2 << 3 < 0)) >> 4) << 4);
   this_ptr = g_CDemonRendererPtr1;
   local_3c.surface_normal.D =
        ((int)((local_20 + (local_20 >> 0x1f) * -0x10) - (uint)((local_20 >> 0x1f) << 3 < 0)) >> 4)
@@ -68,34 +70,34 @@ void core_course_cpp_FUN_00443760(void)
     local_3c.surface_normal.C = local_3c.surface_normal.A;
     do {
       iVar5 = local_3c.surface_normal.B;
-      iVar4 = -0x80;
+      iVar2 = -0x80;
       do {
         local_24 = iVar5;
         local_3c.surface_normal.D = local_3c.surface_normal.C;
         local_9c = (float)local_3c.surface_normal.C + in_stack_00000004->x;
         local_98 = (float)iVar5 + in_stack_00000004->y;
-        local_94 = (float)iVar4 + in_stack_00000004->z;
+        local_94 = (float)iVar2 + in_stack_00000004->z;
         local_48.x = (float)(int)ROUND(local_9c * 256.0f);
         local_48.y = (float)(int)ROUND(local_98 * 256.0f);
         local_48.z = (float)(int)ROUND(local_94 * 256.0f);
-        local_20 = iVar4;
+        local_20 = iVar2;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_48
                   );
         pSVar1 = g_CDemonRendererPtr1->vertex_buffer_ptr;
         if ((int)((pSVar1->projected_vertex).screen_x & -0x80000000) == 0) {
-          iVar3 = (pSVar1->projected_vertex).transformed_z;
-          iVar2 = iVar3 >> 0x1f;
-          iVar3 = 0xff - ((int)((iVar3 + iVar2 * -0x80) - (uint)(iVar2 << 6 < 0)) >> 7);
-          if (iVar3 < 0) {
-            iVar3 = 0;
+          iVar4 = (pSVar1->projected_vertex).transformed_z;
+          iVar3 = iVar4 >> 0x1f;
+          iVar4 = 0xff - ((int)((iVar4 + iVar3 * -0x80) - (uint)(iVar3 << 6 < 0)) >> 7);
+          if (iVar4 < 0) {
+            iVar4 = 0;
           }
-          else if (0xff < iVar3) {
-            iVar3 = 0xff;
+          else if (0xff < iVar4) {
+            iVar4 = 0xff;
           }
           g_ActiveRenderColor =
                (int)g_ColorCubeLookup
-                    [((int)((iVar3 + (iVar3 >> 0x1f) * -8) - (uint)((iVar3 >> 0x1f) << 2 < 0)) >> 3)
+                    [((int)((iVar4 + (iVar4 >> 0x1f) * -8) - (uint)((iVar4 >> 0x1f) << 2 < 0)) >> 3)
                      * 0x421];
           engine_prim_c_replaceWWithDepth_FUN_00552110(pSVar1,1);
           engine_2d_c_plotPixelWithDepth_FUN_00401290
@@ -103,8 +105,8 @@ void core_course_cpp_FUN_00443760(void)
                      (pSVar1->projected_vertex).screen_y >> 0x10,
                      (pSVar1->projected_vertex).transformed_z);
         }
-        iVar4 = iVar4 + 0x10;
-      } while (iVar4 != 0x90);
+        iVar2 = iVar2 + 0x10;
+      } while (iVar2 != 0x90);
       local_3c.surface_normal.B = local_3c.surface_normal.B + 0x10;
     } while (local_3c.surface_normal.B != 0x90);
     local_3c.surface_normal.A = local_3c.surface_normal.A + 0x10;

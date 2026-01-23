@@ -22,11 +22,10 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   char *pcVar9;
   int iVar10;
   byte bVar11;
-  float10 fVar12;
-  double dVar13;
+  double dVar12;
   CGame *in_stack_00000004;
   CGame *in_stack_fffffab0;
-  float fVar14;
+  float fVar13;
   char acStack_15c [256];
   byte auStack_5c [28];
   uint uStack_40;
@@ -49,7 +48,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
     }
     iVar2 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar8,0x58);
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_00000004,in_stack_fffffab0);
-    for (fVar14 = 5.0; 0.0 < fVar14; fVar14 = fVar14 - in_stack_00000004->delta_time_float) {
+    for (fVar13 = 5.0; 0.0 < fVar13; fVar13 = fVar13 - in_stack_00000004->delta_time_float) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("To be continued...");
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
@@ -71,25 +70,25 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
             ((CAlphaBitmap *)(auStack_5c + 0x10),0,0,0xffff);
-  fVar12 = (float10)in_stack_00000004->player_pos_y;
-  dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 * (float10)0.00027777777777777799));
-  local_2c = (CBitFont *)(int)ROUND(dVar13);
-  fVar12 = fVar12 - (float10)(int)local_2c * (float10)3600;
-  in_stack_00000004->player_pos_y = (float)fVar12;
+  fVar13 = in_stack_00000004->player_pos_y;
+  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 * (float)0.00027777777777777799));
+  local_2c = (CBitFont *)(int)ROUND(dVar12);
+  fVar13 = fVar13 - (float)(int)local_2c * (float)3600;
+  in_stack_00000004->player_pos_y = fVar13;
   local_18 = (int)local_2c;
-  dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 * (float10)0.016666666666666701));
-  iStack_38 = (int)ROUND(dVar13);
-  fVar12 = fVar12 - (float10)iStack_38 * (float10)60;
-  in_stack_00000004->player_pos_y = (float)fVar12;
+  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 * (float)0.016666666666666701));
+  iStack_38 = (int)ROUND(dVar12);
+  fVar13 = fVar13 - (float)iStack_38 * (float)60;
+  in_stack_00000004->player_pos_y = fVar13;
   local_1c = iStack_38;
-  dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
-  local_24 = (int)ROUND(dVar13);
-  fVar14 = in_stack_00000004->player_pos_y - (float)local_24;
-  in_stack_00000004->player_pos_y = fVar14;
+  dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar13);
+  local_24 = (int)ROUND(dVar12);
+  fVar13 = in_stack_00000004->player_pos_y - (float)local_24;
+  in_stack_00000004->player_pos_y = fVar13;
   pcVar3 = (char *)0x4e3d9f;
   local_20 = local_24;
-  dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar14 * (float)100));
-  iStack_3c = (int)ROUND(dVar13);
+  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 * (float)100));
+  iStack_3c = (int)ROUND(dVar12);
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3);
   pcVar3 = &stack0xfffffaa4;
   do {

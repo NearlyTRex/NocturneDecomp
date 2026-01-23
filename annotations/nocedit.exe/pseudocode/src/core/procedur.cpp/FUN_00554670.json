@@ -10,32 +10,8 @@
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 38,
+        "line": 37,
         "message": "'DAT_030f6158' was not declared in this scope; did you mean 'DAT_030f6159'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 70,
-        "line": 46,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 46,
-        "message": "'fsin' was not declared in this scope; did you mean 'sin'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 51,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 68,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -49,33 +25,32 @@
       {
         "category": "other",
         "column": 22,
-        "line": 81,
+        "line": 82,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 8,
-        "line": 88,
+        "line": 89,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 388,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 83,
-    "suspect_count": 28,
+    "pseudocode_lines": 85,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 277
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -320,71 +295,43 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_ECX_00",
-      "text": "int extraout_ECX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX_00",
-      "text": "int extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_0000000c",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000010",
       "text": "float in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_00000010",
       "text": "local_40 = in_stack_00000010 + -32.0f;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_030f6158",
       "text": "crt_memory_c_memset_FUN_005fde40(&DAT_030f6158,0,0x10000);",
       "type": "undefined_data"
@@ -407,21 +354,21 @@
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000010",
-      "text": "fVar6 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
+      "text": "fVar8 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "fsin",
-      "text": "fVar6 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
+      "text": "fVar8 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "SQRT",
-      "text": "fVar6 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
+      "text": "fVar8 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -435,78 +382,50 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "ROUND",
-      "text": "local_18 = (byte)(int)ROUND(dVar7);",
+      "text": "local_18 = (byte)(int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
-      "match": "extraout_ECX_00",
-      "text": "(&DAT_030f6158)[extraout_ECX_00] = local_18;",
-      "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
       "line": 45,
       "match": "DAT_030f6158",
-      "text": "(&DAT_030f6158)[extraout_ECX_00] = local_18;",
+      "text": "(&DAT_030f6158)[iVar4] = local_18;",
       "type": "undefined_data"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
-      "match": "extraout_EDX_00",
-      "text": "iVar4 = extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "local_30 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 60,
       "match": "in_stack_00000008",
       "text": "crt_math_c_round_FUN_005fe6b0((double)((float)iVar4 - in_stack_00000008));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 61,
       "match": "in_stack_0000000c",
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)(fVar6 - (float10)in_stack_0000000c));",
+      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float)local_28 - in_stack_0000000c));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 62,
       "match": "ROUND",
-      "text": "local_28 = (int)ROUND(dVar7);",
+      "text": "local_28 = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 75,
       "match": "DAT_030f6158",
-      "text": "uVar3 = (uint)*(byte *)(iVar5 + 8) + (uint)(byte)(&DAT_030f6158)[local_28 * 0x100 + iStack_24]",
+      "text": "uVar3 = (uint)*(byte *)(iVar7 + 8) + (uint)(byte)(&DAT_030f6158)[local_28 * 0x100 + iStack_24]",
       "type": "undefined_data"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 80,
-      "match": "extraout_EDX",
-      "text": "iVar4 = extraout_EDX + 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 81,
-      "match": "extraout_ECX",
-      "text": "*(char *)(extraout_ECX + 8) = (char)uVar3;",
-      "type": "extra_output"
     },
     {
       "call_site_count": 1,

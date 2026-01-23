@@ -4,61 +4,61 @@
       {
         "category": "incompatible_types",
         "column": 32,
-        "line": 33,
+        "line": 31,
         "message": "cannot convert 'void(STexturedVertex*, STexturedVertex*, int)' to 'void (**)(void*, void*, int)' in assignment"
       },
       {
         "category": "incompatible_types",
         "column": 32,
-        "line": 36,
+        "line": 34,
         "message": "cannot convert 'void(STexturedVertex*, STexturedVertex*, int)' to 'void (**)(void*, void*, int)' in assignment"
       },
       {
         "category": "missing_member",
         "column": 25,
-        "line": 49,
+        "line": 47,
         "message": "'CDemonRenderer' {aka 'struct CDemonRenderer'} has no member named 'field8_0x20'; did you mean 'field_32'?"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 64,
+        "line": 62,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 79,
+        "line": 77,
         "message": "cast from 'SInputFace**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "missing_member",
         "column": 58,
-        "line": 91,
+        "line": 89,
         "message": "'STriangleIndices' {aka 'struct STriangleIndices'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "incompatible_types",
         "column": 58,
-        "line": 97,
+        "line": 95,
         "message": "invalid conversion from 'SInputFace**' to 'void**' [-fpermissive]"
       },
       {
         "category": "incompatible_types",
         "column": 30,
-        "line": 104,
+        "line": 102,
         "message": "cannot convert 'void(SEdgeData*, SEdgeData*, int)' to 'void (**)(void*, void*, int)' in assignment"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 116,
+        "line": 114,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 130,
+        "line": 128,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -73,55 +73,55 @@
       {
         "category": "other",
         "column": 16,
-        "line": 64,
+        "line": 62,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 79,
+        "line": 77,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 82,
+        "line": 80,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 85,
+        "line": 83,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 116,
+        "line": 114,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 130,
+        "line": 128,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 301,
+    "complexity_score": 299,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
-    "pseudocode_lines": 126,
+    "pseudocode_lines": 124,
     "suspect_count": 16,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "register_param"
     ],
-    "total_lines": 371
+    "total_lines": 369
   },
   "cross_references": [
     {
@@ -424,84 +424,84 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_EAX",
       "text": "in_EAX = 6;",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
+      "line": 56,
       "match": "extraout_EAX_01",
       "text": "in_EAX = extraout_EAX_01;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 58,
+      "line": 56,
       "match": "in_EAX",
       "text": "in_EAX = extraout_EAX_01;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 85,
+      "line": 83,
       "match": "in_EAX",
       "text": "in_EAX = render_flags;",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 107,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 111,
+      "line": 109,
       "match": "extraout_EAX_00",
       "text": "in_EAX = extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 111,
+      "line": 109,
       "match": "in_EAX",
       "text": "in_EAX = extraout_EAX_00;",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 121,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 124,
+      "line": 122,
       "match": "extraout_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 124,
+      "line": 122,
       "match": "in_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 128,
+      "line": 126,
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"

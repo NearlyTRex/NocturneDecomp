@@ -10,8 +10,6 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
 
 {
   char cVar1;
-  int extraout_EAX;
-  int extraout_EAX_00;
   char (*pacVar2) [40];
   char (*pacVar3) [40];
   C3DSLight *pCVar4;
@@ -243,8 +241,9 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
         dStack_58 = crt_math_c_floor_FUN_005feb90
                               ((double)(in_stack_fffff758 * (float)256 +
                                        (float)0.5));
+        iVar7 = local_1c;
         dVar9 = crt_math_c_round_FUN_005fe6b0(dStack_58);
-        *(int *)(extraout_EAX + 0x17f8) = (int)ROUND(dVar9);
+        *(int *)(iVar7 + 0x17f8) = (int)ROUND(dVar9);
       }
       break;
     case 0x49:
@@ -256,8 +255,9 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
         dStack_58 = crt_math_c_floor_FUN_005feb90
                               ((double)(in_stack_fffff758 * (float)256 +
                                        (float)0.5));
+        iVar7 = local_1c;
         dVar9 = crt_math_c_round_FUN_005fe6b0(dStack_58);
-        *(int *)(extraout_EAX_00 + 0x17fc) = (int)ROUND(dVar9);
+        *(int *)(iVar7 + 0x17fc) = (int)ROUND(dVar9);
       }
       break;
     case 0x4a:

@@ -2,13 +2,13 @@
 // Address: 005f4f10
 // Address Range: [[005f4f10, 005f50b8]]
 // Convention: __stack2_esi
-// Signature: CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
+// Signature: CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
 
 #include "nocturne.h"
 
 CMatrix3x4f * __stack2_esi
 core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-          (CMatrix3x4f *output_matrix,CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
+          (CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out)
 
 {
   int iVar1;
@@ -24,39 +24,39 @@ core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
   float local_10;
   float local_c;
   
-  local_38[0] = matrix_a->m[0].y * output_matrix->m[2].w +
-                matrix_a->m[0].w * output_matrix->m[0].w + matrix_a->m[0].x * output_matrix->m[1].w;
-  local_38[1] = matrix_a->m[0].y * output_matrix->m[2].x +
-                matrix_a->m[0].w * output_matrix->m[0].x + matrix_a->m[0].x * output_matrix->m[1].x;
-  local_38[2] = matrix_a->m[0].y * output_matrix->m[2].y +
-                matrix_a->m[0].w * output_matrix->m[0].y + matrix_a->m[0].x * output_matrix->m[1].y;
-  local_28 = matrix_a->m[1].y * output_matrix->m[2].w +
-             matrix_a->m[1].w * output_matrix->m[0].w + matrix_a->m[1].x * output_matrix->m[1].w;
-  local_24 = matrix_a->m[1].y * output_matrix->m[2].x +
-             matrix_a->m[1].x * output_matrix->m[1].x + matrix_a->m[1].w * output_matrix->m[0].x;
-  local_20 = matrix_a->m[1].y * output_matrix->m[2].y +
-             matrix_a->m[1].x * output_matrix->m[1].y + matrix_a->m[1].w * output_matrix->m[0].y;
-  local_18 = matrix_a->m[2].y * output_matrix->m[2].w +
-             matrix_a->m[2].w * output_matrix->m[0].w + matrix_a->m[2].x * output_matrix->m[1].w;
-  local_14 = matrix_a->m[2].y * output_matrix->m[2].x +
-             matrix_a->m[2].x * output_matrix->m[1].x + matrix_a->m[2].w * output_matrix->m[0].x;
-  local_10 = matrix_a->m[2].y * output_matrix->m[2].y +
-             matrix_a->m[2].x * output_matrix->m[1].y + matrix_a->m[2].w * output_matrix->m[0].y;
-  local_38[3] = matrix_a->m[0].y * output_matrix->m[2].z +
-                matrix_a->m[0].w * output_matrix->m[0].z + matrix_a->m[0].x * output_matrix->m[1].z
-                + matrix_a->m[0].z;
-  local_1c = matrix_a->m[1].y * output_matrix->m[2].z +
-             matrix_a->m[1].x * output_matrix->m[1].z + matrix_a->m[1].w * output_matrix->m[0].z +
-             matrix_a->m[1].z;
-  local_c = matrix_a->m[2].y * output_matrix->m[2].z +
-            matrix_a->m[2].x * output_matrix->m[1].z + matrix_a->m[2].w * output_matrix->m[0].z +
-            matrix_a->m[2].z;
+  local_38[0] = matrix_b->m[0].y * matrix_a->m[2].w +
+                matrix_b->m[0].w * matrix_a->m[0].w + matrix_b->m[0].x * matrix_a->m[1].w;
+  local_38[1] = matrix_b->m[0].y * matrix_a->m[2].x +
+                matrix_b->m[0].w * matrix_a->m[0].x + matrix_b->m[0].x * matrix_a->m[1].x;
+  local_38[2] = matrix_b->m[0].y * matrix_a->m[2].y +
+                matrix_b->m[0].w * matrix_a->m[0].y + matrix_b->m[0].x * matrix_a->m[1].y;
+  local_28 = matrix_b->m[1].y * matrix_a->m[2].w +
+             matrix_b->m[1].w * matrix_a->m[0].w + matrix_b->m[1].x * matrix_a->m[1].w;
+  local_24 = matrix_b->m[1].y * matrix_a->m[2].x +
+             matrix_b->m[1].x * matrix_a->m[1].x + matrix_b->m[1].w * matrix_a->m[0].x;
+  local_20 = matrix_b->m[1].y * matrix_a->m[2].y +
+             matrix_b->m[1].x * matrix_a->m[1].y + matrix_b->m[1].w * matrix_a->m[0].y;
+  local_18 = matrix_b->m[2].y * matrix_a->m[2].w +
+             matrix_b->m[2].w * matrix_a->m[0].w + matrix_b->m[2].x * matrix_a->m[1].w;
+  local_14 = matrix_b->m[2].y * matrix_a->m[2].x +
+             matrix_b->m[2].x * matrix_a->m[1].x + matrix_b->m[2].w * matrix_a->m[0].x;
+  local_10 = matrix_b->m[2].y * matrix_a->m[2].y +
+             matrix_b->m[2].x * matrix_a->m[1].y + matrix_b->m[2].w * matrix_a->m[0].y;
+  local_38[3] = matrix_b->m[0].y * matrix_a->m[2].z +
+                matrix_b->m[0].w * matrix_a->m[0].z + matrix_b->m[0].x * matrix_a->m[1].z +
+                matrix_b->m[0].z;
+  local_1c = matrix_b->m[1].y * matrix_a->m[2].z +
+             matrix_b->m[1].x * matrix_a->m[1].z + matrix_b->m[1].w * matrix_a->m[0].z +
+             matrix_b->m[1].z;
+  local_c = matrix_b->m[2].y * matrix_a->m[2].z +
+            matrix_b->m[2].x * matrix_a->m[1].z + matrix_b->m[2].w * matrix_a->m[0].z +
+            matrix_b->m[2].z;
   pfVar2 = local_38;
-  pfVar3 = (float *)matrix_b;
+  pfVar3 = (float *)matrix_out;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *pfVar3 = *pfVar2;
     pfVar2 = pfVar2 + 1;
     pfVar3 = pfVar3 + 1;
   }
-  return matrix_b;
+  return matrix_out;
 }

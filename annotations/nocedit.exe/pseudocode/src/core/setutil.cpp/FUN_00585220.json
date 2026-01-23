@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 17,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -26,7 +19,7 @@
   },
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 74,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
@@ -34,7 +27,6 @@
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_param"
     ],
     "total_lines": 17
@@ -102,11 +94,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
@@ -123,17 +115,17 @@
       "type": "stack_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "extraout_EAX",
-      "text": "*(int *)(extraout_EAX + 0x2fa4) = (int)ROUND(dVar1);",
-      "type": "extra_output"
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0x2fa4) = (int)ROUND(dVar1);",
+      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "ROUND",
-      "text": "*(int *)(extraout_EAX + 0x2fa4) = (int)ROUND(dVar1);",
+      "text": "*(int *)(in_stack_00000004 + 0x2fa4) = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -13,12 +13,10 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056e3e0(CDemonSet *this_ptr)
   float fVar2;
   float fVar3;
   int iVar4;
-  int extraout_EAX;
-  int extraout_EAX_00;
   float fVar5;
   int iVar6;
   float10 fVar7;
-  float10 fVar8;
+  double dVar8;
   double dVar9;
   float *in_stack_00000008;
   float *in_stack_0000000c;
@@ -64,14 +62,13 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056e3e0(CDemonSet *this_ptr)
   if ((float)255 < local_38) {
     local_38 = 255.0;
   }
-  fVar7 = (float10)local_40;
-  fVar8 = (float10)local_38;
-  crt_math_c_round_FUN_005fe6b0((double)local_3c);
-  crt_math_c_round_FUN_005fe6b0((double)fVar7);
-  g_RenderVertexBuffer[in_stack_00000010].light = (float)(extraout_EAX << 8);
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
-  g_RenderVertexBuffer[in_stack_00000010].color = extraout_EAX_00 << 8;
-  g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar9) << 8);
+  fVar7 = (float10)local_38;
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)local_3c);
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)local_40);
+  g_RenderVertexBuffer[in_stack_00000010].light = (float)((int)ROUND(dVar8) << 8);
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
+  g_RenderVertexBuffer[in_stack_00000010].color = (int)ROUND(dVar9) << 8;
+  g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar8) << 8);
   DAT_02d7a7b8 = iVar4;
   return;
 }

@@ -13,10 +13,8 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
   int *piVar1;
   uint uVar2;
   uint uVar3;
-  int extraout_EAX;
   SMRGLHeaderExtended *header_00;
   int iVar4;
-  int extraout_ECX;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -140,9 +138,8 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
     local_9c = uVar2;
     dVar13 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (1.0 / (float)header[1].base.count)))
     ;
-    local_94 = (uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar13)) >> 0x10 |
-               (int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar13)) >> 0x20) <<
-               0x10;
+    local_94 = (uint)((longlong)iVar5 * (longlong)(int)ROUND(dVar13)) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)(int)ROUND(dVar13)) >> 0x20) << 0x10;
     dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_1c);
     local_94 = (uint)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar13)) >> 0x10 |
                (int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar13)) >> 0x20) <<
@@ -166,12 +163,12 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
     if (local_84 < (int)((uStack_ac ^ uVar2) - uVar2)) {
       local_84 = (uStack_ac ^ uVar2) - uVar2;
     }
+    iVar5 = 0xd;
     dVar13 = crt_math_c_round_FUN_005fe6b0
                        (SQRT((double)local_84 * (double)local_84 +
                              (double)local_88 * (double)local_88 +
                              (double)local_8c * (double)local_8c));
     local_94 = (int)ROUND(dVar13);
-    iVar5 = extraout_ECX;
     puVar9 = &uStack_b4;
     puVar10 = auStack_11c;
   }

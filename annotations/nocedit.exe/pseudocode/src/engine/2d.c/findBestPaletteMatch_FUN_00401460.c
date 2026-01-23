@@ -18,7 +18,7 @@ engine_2d_c_findBestPaletteMatch_FUN_00401460
   byte *pbVar5;
   uint uVar6;
   int iVar7;
-  int unaff_EDI;
+  int best_index;
   float local_20;
   
   pbVar5 = (byte *)(g_SourcePaletteData + start_index * 3);
@@ -41,7 +41,7 @@ engine_2d_c_findBestPaletteMatch_FUN_00401460
               fVar2 * fVar2 * (float)0.58999999999999997 +
               fVar1 * fVar1 * (float)0.29999999999999999;
       if (fVar1 < local_20) {
-        unaff_EDI = start_index;
+        best_index = start_index;
         local_20 = fVar1;
       }
       pbVar5 = pbVar5 + 3;
@@ -49,5 +49,5 @@ engine_2d_c_findBestPaletteMatch_FUN_00401460
       iVar7 = iVar7 + 4;
     } while (start_index <= end_index);
   }
-  return unaff_EDI;
+  return best_index;
 }

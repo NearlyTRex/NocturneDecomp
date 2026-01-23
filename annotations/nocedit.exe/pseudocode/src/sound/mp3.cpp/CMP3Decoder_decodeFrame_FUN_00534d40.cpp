@@ -13,7 +13,6 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   SMpegFrame frame_info_00;
   CFileBitStream *pCVar1;
   uint uVar2;
-  int extraout_EAX;
   int iVar3;
   float *pfVar4;
   CMP3Decoder *num_bits;
@@ -146,18 +145,18 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         local_98 = 1;
         local_94 = *(uint *)(auStack_e4._4_4_ + 0xc);
         local_14 = local_8c * 0xb4 + 0x3c;
+        iVar3 = g_MpegBitrateTable[local_8c][1][local_94] / local_d0;
         header_out = (SMpegFrameHeader *)0x534f33;
         local_a0 = auStack_e4 + 4;
         dVar16 = crt_math_c_round_FUN_005fe6b0
                            (g_MpegSampleRateTable[local_8c][*(uint *)(auStack_e4._4_4_ + 0x10)]);
         local_94 = (uint)ROUND(dVar16);
         if (local_90 == 1) {
-          if (((local_94 == 0x30) && (0x37 < extraout_EAX)) ||
-             ((0x37 < extraout_EAX && (extraout_EAX < 0x51)))) {
+          if (((local_94 == 0x30) && (0x37 < iVar3)) || ((0x37 < iVar3 && (iVar3 < 0x51)))) {
             iVar3 = 0;
           }
-          else if ((local_94 == 0x30) || (extraout_EAX < 0x60)) {
-            if ((local_94 == 0x20) || (0x30 < extraout_EAX)) {
+          else if ((local_94 == 0x30) || (iVar3 < 0x60)) {
+            if ((local_94 == 0x20) || (0x30 < iVar3)) {
               iVar3 = 3;
             }
             else {

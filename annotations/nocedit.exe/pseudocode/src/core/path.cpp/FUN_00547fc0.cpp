@@ -11,27 +11,22 @@
 void core_path_cpp_FUN_00547fc0(void)
 
 {
-  CDemonRenderer *this_ptr;
-  int iVar1;
-  int *extraout_EAX;
-  uint *extraout_EDX;
-  int *extraout_EDX_00;
-  int *extraout_EDX_01;
-  CVector3i *input;
-  byte bVar2;
-  float10 fVar3;
+  CDemonRenderer *pCVar1;
+  int iVar2;
+  byte bVar3;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
-  double dVar7;
+  float10 fVar7;
+  double dVar8;
   int in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
   int in_stack_00000010;
   int in_stack_00000014;
   int aiStackY_1040 [1004];
-  byte *puVar8;
-  CVector3i *pCVar9;
+  byte *puVar9;
+  CVector3i *pCVar10;
   int iStack_7c;
   CVector3f local_64;
   float local_58;
@@ -52,9 +47,9 @@ void core_path_cpp_FUN_00547fc0(void)
   int local_18;
   int local_14;
   
-  bVar2 = 0;
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  if (iVar1 != 0) {
+  bVar3 = 0;
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  if (iVar2 != 0) {
     return;
   }
   local_64.x = (float)*(int *)(in_stack_00000004 + 0x24) * g_CDemonRaytraceInstance.adjusted_size.x
@@ -96,18 +91,19 @@ void core_path_cpp_FUN_00547fc0(void)
     local_50 = 0;
     local_18 = local_2c + in_stack_00000004;
     do {
+      pCVar1 = g_CDemonRendererPtr2;
       if ((-1000 < *(int *)(local_18 + 0x9c70)) && (*(int *)(local_18 + 0x9c70) < 1000)) {
         local_54 = *(float *)(local_18 + 0x30);
-        fVar3 = (float10)256;
-        fVar4 = (float10)g_CDemonRaytraceInstance.bbox_min.y * fVar3;
+        fVar4 = (float10)256;
+        fVar5 = (float10)g_CDemonRaytraceInstance.bbox_min.y * fVar4;
         local_4c = local_58;
-        (&local_48)[(uint)bVar2 * -2] = (&local_54)[(uint)bVar2 * -2];
-        (&local_44)[(uint)bVar2 * -2 + (uint)bVar2 * -2] =
-             (&local_50)[(uint)bVar2 * -2 + (uint)bVar2 * -2];
-        fVar5 = (float10)(int)local_48 *
+        (&local_48)[(uint)bVar3 * -2] = (&local_54)[(uint)bVar3 * -2];
+        (&local_44)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
+             (&local_50)[(uint)bVar3 * -2 + (uint)bVar3 * -2];
+        fVar6 = (float10)(int)local_48 *
                 (float10)(g_CDemonRaytraceInstance.adjusted_size.y * 256.0f);
         local_14 = local_44;
-        fVar6 = (float10)local_44 *
+        fVar7 = (float10)local_44 *
                 (float10)(g_CDemonRaytraceInstance.adjusted_size.z * 256.0f);
         local_40 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
         local_3c = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
@@ -115,49 +111,52 @@ void core_path_cpp_FUN_00547fc0(void)
         crt_math_c_round_FUN_005fe6b0
                   ((double)((float)(int)local_4c *
                            g_CDemonRaytraceInstance.adjusted_size.x * 256.0f));
-        fVar4 = fVar4 + fVar5;
+        fVar5 = fVar5 + fVar6;
         iStack_7c = 0x548213;
-        crt_math_c_round_FUN_005fe6b0((double)fVar6);
-        pCVar9 = (CVector3i *)0x548222;
-        dVar7 = crt_math_c_round_FUN_005fe6b0((double)(fVar4 + fVar3));
-        iVar1 = (int)ROUND(dVar7);
+        crt_math_c_round_FUN_005fe6b0((double)fVar7);
+        pCVar10 = (CVector3i *)0x548222;
+        dVar8 = crt_math_c_round_FUN_005fe6b0((double)(fVar5 + fVar4));
+        iVar2 = (int)ROUND(dVar8);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  ((SProjectedVertex *)*extraout_EDX,pCVar9);
+                  (&pCVar1->vertex_buffer_ptr->projected_vertex,pCVar10);
+        pCVar1 = g_CDemonRendererPtr2;
         local_20 = iStack_7c;
-        pCVar9 = (CVector3i *)0x548252;
+        pCVar10 = (CVector3i *)0x548252;
         crt_math_c_round_FUN_005fe6b0((double)((float)iStack_7c + local_4c));
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  ((SProjectedVertex *)(*extraout_EDX_00 + 0x30),pCVar9);
-        puVar8 = &stack0xffffff80;
-        pCVar9 = (CVector3i *)0x548286;
-        local_24 = iVar1;
-        dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar1 + local_48));
-        iStack_7c = (int)ROUND(dVar7);
+                  (&pCVar1->vertex_buffer_ptr[1].projected_vertex,pCVar10);
+        pCVar1 = g_CDemonRendererPtr2;
+        puVar9 = &stack0xffffff80;
+        pCVar10 = (CVector3i *)0x548286;
+        local_24 = iVar2;
+        dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float)iVar2 + local_48));
+        iStack_7c = (int)ROUND(dVar8);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  ((SProjectedVertex *)(*extraout_EDX_01 + 0x60),pCVar9);
-        local_28 = puVar8;
-        crt_math_c_round_FUN_005fe6b0((double)((float)(int)puVar8 - local_54));
+                  (&pCVar1->vertex_buffer_ptr[2].projected_vertex,pCVar10);
+        pCVar1 = g_CDemonRendererPtr2;
+        local_28 = puVar9;
+        crt_math_c_round_FUN_005fe6b0((double)((float)(int)puVar9 - local_54));
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  ((SProjectedVertex *)(*extraout_EAX + 0x90),input);
-        this_ptr = g_CDemonRendererPtr2;
+                  (&pCVar1->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0xffffff7c);
+        pCVar1 = g_CDemonRendererPtr2;
         g_CDemonRendererPtr2->vertex_buffer_ptr->light = local_38;
-        this_ptr->vertex_buffer_ptr->color = (int)local_40;
-        this_ptr->vertex_buffer_ptr->fog = local_3c;
-        this_ptr->vertex_buffer_ptr->w_recip = fStack_34;
-        this_ptr->vertex_buffer_ptr[1].light = local_38;
-        this_ptr->vertex_buffer_ptr[1].color = (int)local_40;
-        this_ptr->vertex_buffer_ptr[1].fog = local_3c;
-        this_ptr->vertex_buffer_ptr[1].w_recip = fStack_34;
-        this_ptr->vertex_buffer_ptr[2].light = local_38;
-        this_ptr->vertex_buffer_ptr[2].color = (int)local_40;
-        this_ptr->vertex_buffer_ptr[2].fog = local_3c;
-        this_ptr->vertex_buffer_ptr[2].w_recip = fStack_34;
-        this_ptr->vertex_buffer_ptr[3].light = local_38;
-        this_ptr->vertex_buffer_ptr[3].color = (int)local_40;
-        this_ptr->vertex_buffer_ptr[3].fog = local_3c;
-        this_ptr->vertex_buffer_ptr[3].w_recip = fStack_34;
+        pCVar1->vertex_buffer_ptr->color = (int)local_40;
+        pCVar1->vertex_buffer_ptr->fog = local_3c;
+        pCVar1->vertex_buffer_ptr->w_recip = fStack_34;
+        pCVar1->vertex_buffer_ptr[1].light = local_38;
+        pCVar1->vertex_buffer_ptr[1].color = (int)local_40;
+        pCVar1->vertex_buffer_ptr[1].fog = local_3c;
+        pCVar1->vertex_buffer_ptr[1].w_recip = fStack_34;
+        pCVar1->vertex_buffer_ptr[2].light = local_38;
+        pCVar1->vertex_buffer_ptr[2].color = (int)local_40;
+        pCVar1->vertex_buffer_ptr[2].fog = local_3c;
+        pCVar1->vertex_buffer_ptr[2].w_recip = fStack_34;
+        pCVar1->vertex_buffer_ptr[3].light = local_38;
+        pCVar1->vertex_buffer_ptr[3].color = (int)local_40;
+        pCVar1->vertex_buffer_ptr[3].fog = local_3c;
+        pCVar1->vertex_buffer_ptr[3].w_recip = fStack_34;
         engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-                  (this_ptr,&DAT_030d4fd0);
+                  (pCVar1,&DAT_030d4fd0);
       }
       local_50 = local_50 + 1;
       local_18 = local_18 + 400;

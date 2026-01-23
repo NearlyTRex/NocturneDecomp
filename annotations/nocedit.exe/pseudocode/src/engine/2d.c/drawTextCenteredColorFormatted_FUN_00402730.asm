@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730(char * format_string, int left_x, int right_x, int y_pos, ...)
+; __cdecl void engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730(int left_x, int right_x, int y_pos, char * format_string, ...)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   format_string
-; int              Stack[0x8]:4   left_x
-; int              Stack[0xc]:4   right_x
-; int              Stack[0x10]:4   y_pos
+; int              Stack[0x4]:4   left_x
+; int              Stack[0x8]:4   right_x
+; int              Stack[0xc]:4   y_pos
+; char *           Stack[0x10]:4   format_string
 ; Local Variables:
 ; undefined        Stack[-0x1010]:1  local_1010
 ; undefined4       Stack[-0x10]:4  local_10

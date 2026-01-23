@@ -301,11 +301,11 @@ section .text
     PUSH 0x4e1e                         ; 0048cd7b
     MOVSD.REP ES:EDI,ESI                ; 0048cd80
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60 ; 0048cd82
-        ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cacheIndex)
+        ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index)
     ADD ESP,0x4                         ; 0048cd87
     PUSH 0x4e1f                         ; 0048cd8a
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60 ; 0048cd8f
-        ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cacheIndex)
+        ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index)
     ADD ESP,0x4                         ; 0048cd94
     MOV EAX,dword ptr [EBP]             ; 0048cd97
     PUSH 0x2                            ; 0048cd9a

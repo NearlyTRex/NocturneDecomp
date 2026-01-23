@@ -15,8 +15,6 @@ core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700
   float fVar2;
   float fVar3;
   uint uVar4;
-  CVector3i *end_pos;
-  int extraout_EDX;
   double dVar5;
   
   fVar1 = (float)(world_position->x - (this_ptr->camera_origin).x) * 0.00390625f;
@@ -26,8 +24,7 @@ core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700
                     ((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *
                              (float)256));
   uVar4 = core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0
-                    (&g_CameraFogGrid,(CVector3i *)(extraout_EDX + 0x16c),end_pos,(int)ROUND(dVar5))
-  ;
+                    (&g_CameraFogGrid,&this_ptr->camera_origin,world_position,(int)ROUND(dVar5));
   uVar4 = uVar4 * 0xff >> 0xe;
   if (0xff < uVar4) {
     return 0xffff;

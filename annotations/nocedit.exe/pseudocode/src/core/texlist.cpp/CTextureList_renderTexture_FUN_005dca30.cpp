@@ -12,13 +12,13 @@ void __cdecl core_texlist_cpp_CTextureList_renderTexture_FUN_005dca30(CTextureLi
   if (g_TexturePreviewEnabled != 0) {
     if (g_TexturePreviewFullscreen != 0) {
       engine_2d_c_drawTextRightAlignedColorFormatted_FUN_00402580
-                ((char *)(g_WindowWidth + -7),g_WindowHeight + -0xb,0x65513b,
+                (g_WindowWidth + -7,g_WindowHeight + -0xb,"%s  %d",
                  this_ptr->master_texture_names + this_ptr->current_master_selection,
                  this_ptr->current_master_selection);
       return;
     }
     engine_2d_c_drawTextRightAlignedColorFormatted_FUN_00402580
-              ((char *)(g_WindowWidth + -7),g_TexturePreviewY + -0xb,0x655134,
+              (g_WindowWidth + -7,g_TexturePreviewY + -0xb,"%s  %d",
                this_ptr->master_texture_names + this_ptr->current_master_selection,
                this_ptr->current_master_selection);
   }

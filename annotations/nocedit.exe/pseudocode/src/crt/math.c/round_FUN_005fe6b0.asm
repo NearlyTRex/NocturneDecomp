@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpureg double crt_math.c_round_FUN_005fe6b0(double value)
+; __fpureg_safe double crt_math.c_round_FUN_005fe6b0(double value)
 ;
 ; Parameters:
 ; undefined1       Stack[0x0]:1   local_res0

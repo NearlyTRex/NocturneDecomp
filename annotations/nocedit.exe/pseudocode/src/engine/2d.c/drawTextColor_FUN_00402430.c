@@ -14,6 +14,7 @@ void __cdecl engine_2d_c_drawTextColor_FUN_00402430(char *text,int x_pos,int y_p
               (text,x_pos,y_pos,g_ClipRight,g_ClipBottom,g_CurrentTextColor);
     return;
   }
-  engine_2d_c_drawTextMultilineColor_FUN_00401f40(text,x_pos,y_pos,g_ClipRight,g_ClipBottom);
+  engine_2d_c_drawTextMultilineColor_FUN_00401f40
+            (text,x_pos,y_pos,g_ClipRight,g_ClipBottom,g_CurrentTextColor);
   return;
 }

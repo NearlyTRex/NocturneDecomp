@@ -12,22 +12,19 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
 
 {
   float fVar1;
-  int extraout_EAX;
-  int extraout_EAX_00;
-  int extraout_EAX_01;
-  int extraout_EAX_02;
-  int extraout_EAX_03;
-  int extraout_EAX_04;
-  uint uVar2;
-  CVector3f *pCVar3;
-  int grid_y;
-  int iVar4;
+  float fVar2;
+  uint uVar3;
+  CVector3f *pCVar4;
   int iVar5;
-  float10 fVar6;
-  float10 fVar7;
+  int iVar6;
+  int iVar7;
   float10 fVar8;
   float10 fVar9;
-  double dVar10;
+  float10 fVar10;
+  float10 fVar11;
+  float10 fVar12;
+  double dVar13;
+  double dVar14;
   float fStack_9c;
   CBoundingBox3D local_90;
   float local_78;
@@ -38,6 +35,7 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   int local_5c;
   int local_58;
   CVector3f local_54;
+  int local_48;
   int local_44;
   int local_40;
   int local_3c;
@@ -63,43 +61,41 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     local_90.max.y = g_SamplePointArray[0].y;
     local_90.max.z = g_SamplePointArray[0].z;
   }
-  iVar5 = 0;
+  iVar7 = 0;
   if (0 < g_SamplePointCount) {
-    iVar4 = 0;
-    pCVar3 = g_SamplePointArray;
+    iVar6 = 0;
+    pCVar4 = g_SamplePointArray;
     do {
-      *(uint *)((int)g_SampleDistances + iVar4) = 0;
-      iVar5 = iVar5 + 1;
-      *(uint *)((int)g_SampleDistances + iVar4 + 4) = 0x3ff00000;
+      *(uint *)((int)g_SampleDistances + iVar6) = 0;
+      iVar7 = iVar7 + 1;
+      *(uint *)((int)g_SampleDistances + iVar6 + 4) = 0x3ff00000;
       fStack_9c = 7.494611e-39;
-      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_90,pCVar3);
-      iVar4 = iVar4 + 8;
-      pCVar3 = pCVar3 + 1;
-    } while (iVar5 < g_SamplePointCount);
+      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_90,pCVar4);
+      iVar6 = iVar6 + 8;
+      pCVar4 = pCVar4 + 1;
+    } while (iVar7 < g_SamplePointCount);
   }
   local_54.x = (float)((float10)local_90.min.x + (float10)local_90.max.x);
-  fVar6 = (float10)0.5f;
+  fVar8 = (float10)0.5f;
   local_54.y = (float)((float10)local_90.min.y + (float10)local_90.max.y);
-  fVar7 = ((float10)local_90.min.y + (float10)local_90.max.y) * fVar6;
+  fVar9 = ((float10)local_90.min.y + (float10)local_90.max.y) * fVar8;
   local_54.z = (float)((float10)local_90.min.z + (float10)local_90.max.z);
-  fVar9 = ((float10)local_90.min.z + (float10)local_90.max.z) * fVar6;
-  local_78 = (float)(((float10)local_90.min.x + (float10)local_90.max.x) * fVar6);
-  local_74 = (float)fVar7;
-  fVar6 = (float10)0.5;
-  fVar8 = (float10)16;
-  fVar7 = (fVar7 + fVar6) * fVar8;
-  local_70 = (float)fVar9;
+  fVar12 = ((float10)local_90.min.z + (float10)local_90.max.z) * fVar8;
+  local_78 = (float)(((float10)local_90.min.x + (float10)local_90.max.x) * fVar8);
+  local_74 = (float)fVar9;
+  fVar8 = (float10)0.5;
+  fVar10 = (float10)16;
+  fVar9 = (fVar9 + fVar8) * fVar10;
+  local_70 = (float)fVar12;
   g_LodGenerationStamp = g_LodGenerationStamp + 1;
-  fVar9 = fVar8 * (fVar9 + fVar6);
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)(((float10)local_78 + fVar6) * fVar8));
-  fVar6 = (float10)dVar10;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
-  fVar7 = (float10)dVar10;
+  dVar13 = crt_math_c_round_FUN_005fe6b0((double)(((float10)local_78 + fVar8) * fVar10));
+  fVar11 = (float10)dVar13;
+  dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
   fStack_9c = 7.494835e-39;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
-  local_40 = (int)ROUND(fVar6);
-  local_44 = (int)ROUND(fVar7);
-  local_3c = (int)ROUND(dVar10);
+  dVar14 = crt_math_c_round_FUN_005fe6b0((double)(fVar10 * (fVar12 + fVar8)));
+  local_40 = (int)ROUND(fVar11);
+  local_44 = (int)ROUND(dVar13);
+  local_3c = (int)ROUND(dVar14);
   if ((((-1 < local_40) && (local_40 < 0x10)) && (-1 < local_44)) &&
      (((local_44 < 0x10 && (-1 < local_3c)) && (local_3c < 0x10)))) {
     shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(this_ptr,local_40,local_44,local_3c);
@@ -126,23 +122,23 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     if (local_28 < 0) {
       local_28 = 0;
     }
-    iVar5 = local_3c + local_38;
-    if (0xf < iVar5) {
-      iVar5 = 0xf;
+    iVar7 = local_3c + local_38;
+    if (0xf < iVar7) {
+      iVar7 = 0xf;
     }
     if (local_24 <= local_34) {
       do {
-        iVar4 = local_28;
-        grid_y = local_30;
+        iVar6 = local_28;
+        iVar5 = local_30;
         if (local_30 <= local_2c) {
           do {
-            for (; iVar4 <= iVar5; iVar4 = iVar4 + 1) {
-              shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
-                        (this_ptr,local_24,grid_y,iVar4);
+            for (; iVar6 <= iVar7; iVar6 = iVar6 + 1) {
+              shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(this_ptr,local_24,iVar5,iVar6)
+              ;
             }
-            grid_y = grid_y + 1;
-            iVar4 = local_28;
-          } while (grid_y <= local_2c);
+            iVar5 = iVar5 + 1;
+            iVar6 = local_28;
+          } while (iVar5 <= local_2c);
         }
         local_24 = local_24 + 1;
       } while (local_24 <= local_34);
@@ -155,78 +151,84 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
       local_90.min.y = g_SamplePointArray[0].y;
       local_90.min.z = g_SamplePointArray[0].z;
     }
-    iVar5 = 0;
+    iVar7 = 0;
     if (0 < g_SamplePointCount) {
-      iVar4 = 0;
-      pCVar3 = g_SamplePointArray;
+      iVar6 = 0;
+      pCVar4 = g_SamplePointArray;
       do {
-        local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar4));
-        iVar4 = iVar4 + 8;
-        iVar5 = iVar5 + 1;
-        local_54.x = pCVar3->x - local_78;
-        local_54.y = pCVar3->y - local_78;
-        local_54.z = pCVar3->z - local_78;
+        local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));
+        iVar6 = iVar6 + 8;
+        iVar7 = iVar7 + 1;
+        local_54.x = pCVar4->x - local_78;
+        local_54.y = pCVar4->y - local_78;
+        local_54.z = pCVar4->z - local_78;
         local_74 = local_78;
         local_70 = local_78;
         core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&fStack_9c,&local_54);
-        local_6c.x = pCVar3->x + local_78;
-        local_6c.y = pCVar3->y + local_74;
-        local_6c.z = pCVar3->z + local_70;
+        local_6c.x = pCVar4->x + local_78;
+        local_6c.y = pCVar4->y + local_74;
+        local_6c.z = pCVar4->z + local_70;
         core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&fStack_9c,&local_6c);
-        pCVar3 = pCVar3 + 1;
-      } while (iVar5 < g_SamplePointCount);
+        pCVar4 = pCVar4 + 1;
+      } while (iVar7 < g_SamplePointCount);
     }
-    dVar10 = crt_math_c_round_FUN_005fe6b0
+    iVar6 = local_40;
+    dVar13 = crt_math_c_round_FUN_005fe6b0
                        ((double)((fStack_9c + (float)0.5) * (float)16));
-    local_54.z = (float)(int)ROUND(dVar10);
-    uVar2 = extraout_EAX - (int)local_54.z >> 0x1f;
-    iVar4 = (extraout_EAX - (int)local_54.z ^ uVar2) - uVar2;
-    iVar5 = -1;
-    if (-1 < iVar4) {
-      iVar5 = iVar4;
+    iVar7 = local_48;
+    local_54.z = (float)(int)ROUND(dVar13);
+    uVar3 = iVar6 - (int)local_54.z >> 0x1f;
+    iVar5 = (iVar6 - (int)local_54.z ^ uVar3) - uVar3;
+    iVar6 = -1;
+    if (-1 < iVar5) {
+      iVar6 = iVar5;
     }
-    dVar10 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = crt_math_c_round_FUN_005fe6b0
                        ((double)((fStack_9c + (float)0.5) * (float)16));
-    local_54.y = (float)(int)ROUND(dVar10);
-    uVar2 = extraout_EAX_00 - (int)local_54.y >> 0x1f;
-    iVar4 = (extraout_EAX_00 - (int)local_54.y ^ uVar2) - uVar2;
-    if (iVar5 < iVar4) {
-      iVar5 = iVar4;
+    iVar5 = local_44;
+    local_54.y = (float)(int)ROUND(dVar13);
+    uVar3 = iVar7 - (int)local_54.y >> 0x1f;
+    iVar7 = (iVar7 - (int)local_54.y ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    dVar10 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = crt_math_c_round_FUN_005fe6b0
                        ((double)((fStack_9c + (float)0.5) * (float)16));
-    local_54.x = (float)(int)ROUND(dVar10);
-    uVar2 = extraout_EAX_01 - (int)local_54.x >> 0x1f;
-    iVar4 = (extraout_EAX_01 - (int)local_54.x ^ uVar2) - uVar2;
-    if (iVar5 < iVar4) {
-      iVar5 = iVar4;
+    fVar2 = local_54.z;
+    local_54.x = (float)(int)ROUND(dVar13);
+    uVar3 = iVar5 - (int)local_54.x >> 0x1f;
+    iVar7 = (iVar5 - (int)local_54.x ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    dVar10 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = crt_math_c_round_FUN_005fe6b0
                        ((double)((fStack_9c + (float)0.5) * (float)16));
-    local_58 = (int)ROUND(dVar10);
-    uVar2 = extraout_EAX_02 - local_58 >> 0x1f;
-    iVar4 = (extraout_EAX_02 - local_58 ^ uVar2) - uVar2;
-    if (iVar5 < iVar4) {
-      iVar5 = iVar4;
+    fVar1 = local_54.x;
+    local_58 = (int)ROUND(dVar13);
+    uVar3 = (int)fVar2 - local_58 >> 0x1f;
+    iVar7 = ((int)fVar2 - local_58 ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    dVar10 = crt_math_c_round_FUN_005fe6b0
+    dVar13 = crt_math_c_round_FUN_005fe6b0
                        ((double)((fStack_9c + (float)0.5) * (float)16));
-    local_5c = (int)ROUND(dVar10);
-    uVar2 = extraout_EAX_03 - local_5c >> 0x1f;
-    iVar4 = (extraout_EAX_03 - local_5c ^ uVar2) - uVar2;
-    if (iVar5 < iVar4) {
-      iVar5 = iVar4;
+    fVar2 = local_54.y;
+    local_5c = (int)ROUND(dVar13);
+    uVar3 = (int)fVar1 - local_5c >> 0x1f;
+    iVar7 = ((int)fVar1 - local_5c ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
     fVar1 = fStack_9c + (float)0.5;
     fStack_9c = 7.495882e-39;
-    dVar10 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)16));
-    local_60 = (int)ROUND(dVar10);
-    uVar2 = extraout_EAX_04 - local_60 >> 0x1f;
-    iVar4 = (extraout_EAX_04 - local_60 ^ uVar2) - uVar2;
-    if (iVar5 < iVar4) {
-      iVar5 = iVar4;
+    dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)16));
+    local_60 = (int)ROUND(dVar13);
+    uVar3 = (int)fVar2 - local_60 >> 0x1f;
+    iVar7 = ((int)fVar2 - local_60 ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    if (iVar5 + 1 < (int)local_54.y) break;
+    if (iVar6 + 1 < (int)local_54.y) break;
     local_54.y = (float)((int)local_54.y + 1);
   }
   return;

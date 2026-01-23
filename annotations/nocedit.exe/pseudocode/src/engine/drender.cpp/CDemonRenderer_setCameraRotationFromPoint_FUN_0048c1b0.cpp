@@ -11,7 +11,6 @@ engine_drender_cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0
           (CDemonRenderer *this_ptr,CVector3i *rotation)
 
 {
-  engine_matrix_c_setCameraRotation_FUN_0050e290
-            ((ushort)rotation->x,(ushort)rotation->y,(ushort)rotation->z);
+  engine_matrix_c_setCameraRotation_FUN_0050e290(rotation->x,rotation->y,rotation->z);
   return;
 }

@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 38,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 49,
-        "line": 63,
+        "line": 76,
         "message": "request for member '_0_1_' in 'g_PrecomputedSurfaceNormals[25564].CVector3f::x', which is of non-class type 'float'"
       }
     ],
@@ -21,35 +15,22 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 46,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 231,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 66,
-    "suspect_count": 15,
+    "pseudocode_lines": 79,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "unknown_field"
     ],
-    "total_lines": 232
+    "total_lines": 245
   },
   "cross_references": [
     {
@@ -233,106 +214,43 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EDX",
-      "text": "float *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EDX_00",
-      "text": "int extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EDX_01",
-      "text": "int extraout_EDX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX_02",
-      "text": "int extraout_EDX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EDX",
-      "text": "fVar6 = ((float10)*extraout_EDX -",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 41,
       "match": "ROUND",
-      "text": "((float10)(int)ROUND(dVar7) * (float10)(this_ptr->cell_size).x +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
-      "match": "extraout_EDX_00",
-      "text": "fVar3 = ((float10)*(float *)(extraout_EDX_00 + 4) -",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
-      "match": "ROUND",
-      "text": "((float10)(int)ROUND(dVar7) * (float10)(this_ptr->cell_size).y +",
+      "text": "((float10)(int)ROUND(dVar15) * (float10)(this_ptr->cell_size).y +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 44,
       "match": "ROUND",
-      "text": "iStack_34 = (int)ROUND(dVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 39,
-      "match": "extraout_EDX_01",
-      "text": "fVar4 = ((float10)*(float *)(extraout_EDX_01 + 8) -",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "ROUND",
-      "text": "local_30 = (int)ROUND(dVar7);",
+      "text": "iStack_34 = (int)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 51,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar7);",
+      "text": "((float10)(int)ROUND(dVar14) * (float10)fVar5 + (float10)fVar6)) /",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 47,
-      "match": "extraout_EDX_02",
-      "text": "if (((((extraout_EDX_02 < 0) || (local_30 < 0)) || (iVar1 < 0)) ||",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "local_30 = (int)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 48,
-      "match": "extraout_EDX_02",
-      "text": "((7 < extraout_EDX_02 || (7 < local_30)))) || (7 < iVar1)) {",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(dVar14);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 56,
+      "line": 69,
       "match": "._0_1_",
       "text": "g_PrecomputedSurfaceNormals[0x63dc].x._0_1_) != 0)) {",
       "type": "unknown_field"

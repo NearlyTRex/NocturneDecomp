@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_2d.c_drawTextCenteredReordered_FUN_00402390(char * text, int left_x, int right_x, int y_pos)
+; __cdecl void engine_2d.c_drawTextCenteredReordered_FUN_00402390(int left_x, int right_x, int y_pos, char * text)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   left_x
-; int              Stack[0xc]:4   right_x
-; int              Stack[0x10]:4   y_pos
+; int              Stack[0x4]:4   left_x
+; int              Stack[0x8]:4   right_x
+; int              Stack[0xc]:4   y_pos
+; char *           Stack[0x10]:4   text
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextCentered_FUN_00402350

@@ -10,9 +10,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
 
 {
   FILE *file_ptr;
-  int extraout_EAX;
-  int extraout_EAX_00;
-  CLZWCompress *this_ptr_00;
   uint uVar1;
   int iVar2;
   int iVar3;
@@ -24,7 +21,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   int iVar8;
   CVector3i *end_pos;
   char acVar9 [4];
-  float10 fVar10;
+  double dVar10;
   double dVar11;
   int *output_length;
   uint d1;
@@ -36,7 +33,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   int local_114;
   byte auStack_104 [12];
   char local_f8 [88];
-  CLZWCompress CStack_a0;
+  byte auStack_a0 [56];
   CVector3i CStack_68;
   int local_58;
   int local_54;
@@ -86,20 +83,18 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
       local_50[2] = "EFD"[2];
       local_50[3] = "EFD"[3];
       crt_stdio_c_stream_write_internal_FUN_005ffcb3(&local_130,local_50,3);
-      fVar10 = (float10)256;
+      dVar11 = 256;
       d1 = 0x452b20;
-      dVar11 = crt_math_c_round_FUN_005fe6b0
-                         ((double)((float10)(float)(this_ptr->base).position.x * fVar10));
-      CStack_68.z = (int)ROUND(dVar11);
+      dVar10 = crt_math_c_round_FUN_005fe6b0
+                         ((double)(float)(this_ptr->base).position.x * 256);
+      CStack_68.z = (int)ROUND(dVar10);
       output_length = (int *)0x452b33;
-      dVar11 = crt_math_c_round_FUN_005fe6b0
-                         ((double)((float10)*(float *)(extraout_EAX + 8) * fVar10));
+      dVar10 = crt_math_c_round_FUN_005fe6b0((double)(float)(this_ptr->base).position.y * dVar11);
+      CStack_68.z = (int)ROUND(dVar10);
+      dVar11 = crt_math_c_round_FUN_005fe6b0(dVar11 * (double)(float)(this_ptr->base).position.z);
       CStack_68.z = (int)ROUND(dVar11);
-      dVar11 = crt_math_c_round_FUN_005fe6b0
-                         ((double)(fVar10 * (float10)*(float *)(extraout_EAX_00 + 0xc)));
-      CStack_68.z = (int)ROUND(dVar11);
-      support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(this_ptr_00);
-      support_codec_cpp_CLZWCompress_init_FUN_0043f320(&CStack_a0);
+      support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0((CLZWCompress *)(auStack_a0 + 4));
+      support_codec_cpp_CLZWCompress_init_FUN_0043f320((CLZWCompress *)auStack_a0);
       local_24 = 0;
       if (0 < g_ImageBytesPerPixel) {
         local_50[0] = '\0';
@@ -200,7 +195,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
           }
           local_58 = 0x12c00;
           iVar6 = support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30
-                            (&CStack_a0.base_codec,(byte *)&g_CameraPlaneWorkBuffer,&local_58,
+                            ((CCodec *)auStack_a0,(byte *)&g_CameraPlaneWorkBuffer,&local_58,
                              local_174 + 0x38,output_length);
           if (iVar6 == 0) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
@@ -225,9 +220,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
           local_24 = local_24 + 1;
         } while (local_24 < g_ImageBytesPerPixel);
       }
-      support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(&CStack_a0,(FILE *)(local_174 + 0x38));
-      support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&CStack_a0.dictionary);
-      support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&CStack_a0.base_codec,1);
+      support_codec_cpp_CLZWCompress_finalize_FUN_0043f440
+                ((CLZWCompress *)auStack_a0,(FILE *)(local_174 + 0x38));
+      support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0((CLZWDictionary *)(auStack_a0 + 4));
+      support_codec_cpp_CCodec_dtor_FUN_0043e9b0((CCodec *)auStack_a0,1);
     }
     crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
               ((ofstream *)local_174,d1,in_stack_fffffd8c,in_stack_fffffd90,in_stack_fffffd94);

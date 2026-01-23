@@ -9,7 +9,7 @@
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *this_ptr)
 
 {
-  float10 fVar1;
+  double dVar1;
   CDemonRenderer *this_ptr_00;
   CDemonRenderer *polygon_info;
   CVector3i local_30;
@@ -31,10 +31,10 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *th
   local_24.z = (int)ROUND((this_ptr->vertex3).z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr[2].projected_vertex,&local_24);
-  fVar1 = (float10)-65536;
-  crt_math_c_round_FUN_005fe6b0((double)((float10)(this_ptr->normal).x * fVar1));
-  crt_math_c_round_FUN_005fe6b0((double)((float10)(this_ptr->normal).y * fVar1));
-  crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float10)(this_ptr->normal).z));
+  dVar1 = -65536;
+  crt_math_c_round_FUN_005fe6b0((double)(this_ptr->normal).x * -65536);
+  crt_math_c_round_FUN_005fe6b0((double)(this_ptr->normal).y * dVar1);
+  crt_math_c_round_FUN_005fe6b0(dVar1 * (double)(this_ptr->normal).z);
   this_ptr_00 = (CDemonRenderer *)0x49cd09;
   polygon_info = g_CDemonRendererPtr1;
   crt_math_c_round_FUN_005fe6b0

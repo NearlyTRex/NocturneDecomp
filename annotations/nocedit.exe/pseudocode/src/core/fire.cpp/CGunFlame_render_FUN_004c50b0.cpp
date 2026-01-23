@@ -9,12 +9,10 @@
 void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
 
 {
-  float10 fVar1;
-  CDemonRenderer *pCVar2;
-  float *pfVar3;
-  int extraout_EAX;
-  int extraout_EAX_00;
+  SRenderVertex *pSVar1;
+  float10 fVar2;
   CDemonRenderer *this_ptr_00;
+  float *pfVar3;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
@@ -23,6 +21,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   float10 fVar9;
   float10 fVar10;
   double dVar11;
+  double dVar12;
   byte auStack_dc [8];
   float fStack_d4;
   float local_d0;
@@ -121,37 +120,37 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   local_70.z = (int)ROUND(local_74 * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_70);
-  pCVar2 = g_CDemonRendererPtr2;
+  this_ptr_00 = g_CDemonRendererPtr2;
   fVar6 = (float10)local_cc;
   fVar10 = ((float10)2.0f - fVar6) * fVar6;
   fVar9 = (float10)32768.0f;
   fVar4 = (float10)200.0f;
   fVar5 = (float10)150.0f;
-  fVar1 = (float10)50.0f;
+  fVar2 = (float10)50.0f;
   g_CDemonRendererPtr2->vertex_buffer_ptr->u = 1.83671e-40;
   fVar7 = ((float10)1 - fVar10) * (float10)255.0f;
-  pCVar2->vertex_buffer_ptr->v = 1.83671e-40;
+  this_ptr_00->vertex_buffer_ptr->v = 1.83671e-40;
   fVar8 = (float10)256.0f;
   fVar4 = (fVar10 * fVar4 + fVar7) * fVar8;
-  pCVar2->vertex_buffer_ptr[1].u = 2.3326216e-38;
+  this_ptr_00->vertex_buffer_ptr[1].u = 2.3326216e-38;
   fVar5 = (fVar10 * fVar5 + fVar7) * fVar8;
-  pCVar2->vertex_buffer_ptr[1].v = 1.83671e-40;
-  fVar8 = fVar8 * (fVar10 * fVar1 + fVar7);
-  pCVar2->vertex_buffer_ptr[2].u = 2.3326216e-38;
+  this_ptr_00->vertex_buffer_ptr[1].v = 1.83671e-40;
+  this_ptr_00->vertex_buffer_ptr[2].u = 2.3326216e-38;
+  pSVar1 = this_ptr_00->vertex_buffer_ptr;
   dVar11 = crt_math_c_round_FUN_005fe6b0((double)(((float10)1 - fVar6) * fVar9));
   fVar9 = (float10)dVar11;
-  *(uint *)(extraout_EAX + 0x7c) = 0xfe0000;
+  pSVar1[2].v = 2.3326216e-38;
   dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
   fVar4 = (float10)dVar11;
+  pSVar1 = this_ptr_00->vertex_buffer_ptr;
   dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
-  fVar5 = (float10)dVar11;
-  *(uint *)(extraout_EAX_00 + 0xa8) = 0x20000;
-  dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  pSVar1[3].u = 1.83671e-40;
+  dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar8 * (fVar10 * fVar2 + fVar7)));
   fStack_34 = (float)(int)ROUND(fVar4);
   this_ptr_00->vertex_buffer_ptr[3].v = 2.3326216e-38;
-  iStack_38 = (int)ROUND(fVar5);
+  iStack_38 = (int)ROUND(dVar11);
   this_ptr_00->vertex_buffer_ptr->light = fStack_34;
-  fStack_2c = (float)(int)ROUND(dVar11);
+  fStack_2c = (float)(int)ROUND(dVar12);
   this_ptr_00->vertex_buffer_ptr->color = iStack_38;
   fStack_30 = (float)(int)ROUND(fVar9);
   this_ptr_00->vertex_buffer_ptr->fog = fStack_2c;

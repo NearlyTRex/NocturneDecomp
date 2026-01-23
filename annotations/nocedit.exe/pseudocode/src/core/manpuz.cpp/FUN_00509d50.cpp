@@ -13,15 +13,15 @@
 void core_manpuz_cpp_FUN_00509d50(void)
 
 {
-  SRenderVertex *pSVar1;
-  int iVar2;
-  int *extraout_EDX;
+  float fVar1;
+  SRenderVertex *pSVar2;
   CDemonRenderer *this_ptr;
-  float *pfVar3;
-  float10 fVar4;
+  int iVar3;
+  float *pfVar4;
   float10 fVar5;
   float10 fVar6;
   double dVar7;
+  double dVar8;
   int in_stack_00000004;
   int in_stack_00000008;
   CVector3i local_6c;
@@ -36,35 +36,34 @@ void core_manpuz_cpp_FUN_00509d50(void)
   int local_20;
   int local_1c;
   
-  pfVar3 = (float *)(in_stack_00000004 + 0xaa0 + in_stack_00000008 * 0xb8);
+  pfVar4 = (float *)(in_stack_00000004 + 0xaa0 + in_stack_00000008 * 0xb8);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)(pfVar3 + 0xc),(CVector3i *)(pfVar3 + 9));
+            (g_CDemonRendererPtr2,(CVector3i *)(pfVar4 + 0xc),(CVector3i *)(pfVar4 + 9));
   if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
-     iVar2 == 0)) {
+     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     iVar3 == 0)) {
     if (DAT_02f0cb1c == 2) {
       shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
     }
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,1.0,0xfb);
   }
-  fVar4 = (float10)256.0f;
-  fVar5 = (float10)pfVar3[1] * fVar4;
-  fVar6 = (float10)*pfVar3 * fVar4;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar3[2] * fVar4));
-  fVar4 = (float10)dVar7;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
-  local_2c = (int)ROUND(fVar4);
-  local_1c = (int)ROUND(dVar7);
+  fVar5 = (float10)256.0f;
+  fVar1 = pfVar4[1];
+  fVar6 = (float10)*pfVar4 * fVar5;
+  dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar4[2] * fVar5));
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar5));
+  local_2c = (int)ROUND(dVar7);
+  local_1c = (int)ROUND(dVar8);
   dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
   local_20 = (int)ROUND(dVar7);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x2d4),0.0,-1);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  if ((iVar2 == 0) &&
-     ((((float)0.01 < pfVar3[3] || ((float)0.01 < pfVar3[4])) ||
-      ((float)0.01 < pfVar3[5])))) {
+  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  if ((iVar3 == 0) &&
+     ((((float)0.01 < pfVar4[3] || ((float)0.01 < pfVar4[4])) ||
+      ((float)0.01 < pfVar4[5])))) {
     local_54 = -1.4;
     local_4c = -1.4;
     local_50 = 0.2;
@@ -91,16 +90,17 @@ void core_manpuz_cpp_FUN_00509d50(void)
     local_3c.z = (int)ROUND(local_4c * _DAT_00660d70);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_3c);
-    fVar4 = (float10)256.0f;
-    fVar5 = (float10)pfVar3[4] * fVar4;
-    fVar6 = (float10)pfVar3[5] * fVar4;
-    pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-    dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar3[3] * fVar4));
+    this_ptr = g_CDemonRendererPtr2;
+    fVar5 = (float10)256.0f;
+    fVar1 = pfVar4[4];
+    fVar6 = (float10)pfVar4[5] * fVar5;
+    pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+    dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar4[3] * fVar5));
     local_30 = (float)(int)ROUND(dVar7);
-    pSVar1->light = local_30;
-    dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
+    pSVar2->light = local_30;
+    dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar5));
     local_30 = (float)(int)ROUND(dVar7);
-    *(float *)(*extraout_EDX + 0x24) = local_30;
+    this_ptr->vertex_buffer_ptr->color = (int)local_30;
     dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
     local_30 = (float)(int)ROUND(dVar7);
     this_ptr->vertex_buffer_ptr->fog = local_30;

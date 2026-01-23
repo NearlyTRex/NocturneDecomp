@@ -9,19 +9,17 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramedModel *this_ptr)
 
 {
-  double dVar1;
+  int iVar1;
   double dVar2;
   CVector3i **ppCVar3;
   SSurfaceNormal *pSVar4;
   int iVar5;
-  int extraout_ECX;
   int iVar6;
   int *piVar7;
-  int *extraout_EDX;
   SSurfaceNormal *output;
   float10 fVar8;
   float10 fVar9;
-  float10 fVar10;
+  double dVar10;
   double dVar11;
   int local_18;
   int local_14;
@@ -61,23 +59,21 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
       iVar5 = 0;
       do {
         piVar7 = (int *)((int)this_ptr->vertex_normal_list + iVar5);
-        dVar11 = (double)*piVar7;
-        dVar2 = (double)piVar7[1];
-        dVar1 = (double)piVar7[2];
-        dVar11 = SQRT(dVar1 * dVar1 + dVar2 * dVar2 + dVar11 * dVar11);
-        if (0.0 < dVar11) {
-          fVar8 = (float10)65535 / (float10)dVar11;
-          fVar9 = (float10)piVar7[1] * fVar8;
-          fVar10 = (float10)piVar7[2] * fVar8;
-          dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)*piVar7 * fVar8));
+        dVar10 = (double)*piVar7;
+        iVar1 = piVar7[1];
+        dVar2 = (double)iVar1;
+        dVar11 = (double)piVar7[2];
+        dVar10 = SQRT(dVar11 * dVar11 + dVar2 * dVar2 + dVar10 * dVar10);
+        if (0.0 < dVar10) {
+          fVar8 = (float10)65535 / (float10)dVar10;
+          fVar9 = (float10)piVar7[2] * fVar8;
+          dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)*piVar7 * fVar8));
+          dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)iVar1 * fVar8));
           fVar8 = (float10)dVar11;
           dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
-          fVar9 = (float10)dVar11;
-          dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar10);
-          *extraout_EDX = (int)ROUND(fVar8);
-          extraout_EDX[1] = (int)ROUND(fVar9);
-          extraout_EDX[2] = (int)ROUND(dVar11);
-          iVar5 = extraout_ECX;
+          *piVar7 = (int)ROUND(dVar10);
+          piVar7[1] = (int)ROUND(fVar8);
+          piVar7[2] = (int)ROUND(dVar11);
         }
         else {
           piVar7[2] = 0;

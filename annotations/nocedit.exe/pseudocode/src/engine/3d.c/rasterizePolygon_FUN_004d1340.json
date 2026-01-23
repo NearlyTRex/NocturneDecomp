@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 15,
-        "line": 37,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 102,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 105,
-        "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -30,134 +11,70 @@
       },
       {
         "category": "other",
-        "column": 20,
-        "line": 102,
+        "column": 10,
+        "line": 165,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 165,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 165,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 169,
+        "line": 166,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 169,
+        "column": 35,
+        "line": 166,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 62,
-        "line": 169,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 170,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 170,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 170,
+        "column": 60,
+        "line": 166,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 171,
+        "line": 167,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 171,
+        "column": 35,
+        "line": 167,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 68,
-        "line": 171,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 172,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 172,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 172,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 173,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 173,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 173,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 174,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 174,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 68,
-        "line": 174,
+        "column": 60,
+        "line": 167,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 434,
+    "complexity_score": 165,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 13,
-    "pseudocode_lines": 169,
-    "suspect_count": 25,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "unaffected_reg"
-    ],
-    "total_lines": 502
+    "pseudocode_lines": 165,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 498
   },
   "cross_references": [
     {
@@ -368,181 +285,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffffdc",
-      "text": "SRenderVertex **in_stack_ffffffdc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 94,
-      "match": "in_stack_ffffffdc",
-      "text": "in_stack_ffffffdc = ppSVar10 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(void *)((int)",
-      "text": "right_data = (void *)((int)right_data + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_ffffffdc",
-      "text": "ppSVar10 = in_stack_ffffffdc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_ffffffdc",
-      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(in_stack_ffffffdc,right_data,iVar6);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 162,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 8) = *(int *)(unaff_EDI + 8) + *(int *)(unaff_EDI + 0xc);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 162,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 8) = *(int *)(unaff_EDI + 8) + *(int *)(unaff_EDI + 0xc);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 162,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 8) = *(int *)(unaff_EDI + 8) + *(int *)(unaff_EDI + 0xc);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 163,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x18) = *(int *)(unaff_EDI + 0x18) + *(int *)(unaff_EDI + 0x1c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 163,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x18) = *(int *)(unaff_EDI + 0x18) + *(int *)(unaff_EDI + 0x1c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 163,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x18) = *(int *)(unaff_EDI + 0x18) + *(int *)(unaff_EDI + 0x1c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 164,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x20) = *(int *)(unaff_EDI + 0x20) + *(int *)(unaff_EDI + 0x24);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 164,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x20) = *(int *)(unaff_EDI + 0x20) + *(int *)(unaff_EDI + 0x24);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 164,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x20) = *(int *)(unaff_EDI + 0x20) + *(int *)(unaff_EDI + 0x24);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 165,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 165,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 165,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 166,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 166,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 166,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 167,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 167,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 167,
-      "match": "unaff_ESI",
-      "text": "*(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

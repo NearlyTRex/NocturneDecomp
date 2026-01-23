@@ -168,7 +168,7 @@ section .text
     SUB EBX,EAX                         ; 00504259
     PUSH EBX                            ; 0050425b
     CALL engine_matrix.c_interpolatedSin_FUN_0050c5c0 ; 0050425c
-        ;   XREF to: 0050c5c0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_0050c5c0(ushort angle)
+        ;   XREF to: 0050c5c0 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedSin_FUN_0050c5c0(int angle)
     ADD ESP,0x4                         ; 00504261
     MOV EDX,EAX                         ; 00504264
     MOV EAX,0x9088                      ; 00504266
@@ -180,7 +180,7 @@ section .text
     PUSH EBX                            ; 00504282
     MOV dword ptr [EAX + 0x15ae74],EDX  ; 00504283 | DAT_0326f0ec
     CALL engine_matrix.c_interpolatedCos_FUN_0050c600 ; 00504289
-        ;   XREF to: 0050c600 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_0050c600(ushort angle)
+        ;   XREF to: 0050c600 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_0050c600(int angle)
     ADD ESP,0x4                         ; 0050428e
     MOV EDX,EAX                         ; 00504291
     MOV EAX,0x9088                      ; 00504293

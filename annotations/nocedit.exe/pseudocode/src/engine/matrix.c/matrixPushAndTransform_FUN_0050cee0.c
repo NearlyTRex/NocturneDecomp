@@ -2,13 +2,13 @@
 // Address: 0050cee0
 // Address Range: [[0050cee0, 0050d61f]]
 // Convention: __cdecl
-// Signature: void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, int translateY, int translateZ)
+// Signature: void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(int rot_x, int rot_y, int rot_z, int translate_x, int translate_y, int translate_z)
 
 #include "nocturne.h"
 
 void __cdecl
 engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-          (ushort rotX,ushort rotY,ushort rotZ,int translateX,int translateY,int translateZ)
+          (int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z)
 
 {
   longlong lVar1;
@@ -29,9 +29,6 @@ engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
   int iVar16;
   int iVar17;
   int iVar18;
-  ushort in_stack_00000006;
-  ushort in_stack_0000000a;
-  ushort in_stack_0000000e;
   
   iVar5 = g_MatrixStackIndex;
   g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
@@ -49,21 +46,21 @@ engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
   g_MatrixStack_M20[iVar5] = g_TransformMatrix.m[2].x;
   g_MatrixStack_M21[iVar5] = g_TransformMatrix.m[2].y;
   g_MatrixStack_M22[iVar5] = g_TransformMatrix.m[2].z;
-  iVar2 = g_RelativeX - translateX;
-  iVar3 = g_RelativeY - translateY;
-  iVar4 = g_RelativeZ - translateZ;
-  g_SavedRotationY = _rotY;
-  g_SavedRotationZ = _rotZ;
-  g_SavedRotationX = _rotX;
+  iVar2 = g_RelativeX - translate_x;
+  iVar3 = g_RelativeY - translate_y;
+  iVar4 = g_RelativeZ - translate_z;
+  g_SavedRotationY = rot_y;
+  g_SavedRotationZ = rot_z;
+  g_SavedRotationX = rot_x;
   iVar5 = iVar2;
   iVar6 = iVar3;
-  if ((_rotX != 0 || _rotY != 0) || _rotZ != 0) {
-    iVar5 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(rotX);
-    iVar6 = engine_matrix_c_interpolatedCos_FUN_0050c600(rotX);
-    iVar7 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(rotY);
-    iVar8 = engine_matrix_c_interpolatedCos_FUN_0050c600(rotY);
-    iVar9 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(rotZ);
-    iVar10 = engine_matrix_c_interpolatedCos_FUN_0050c600(rotZ);
+  if ((rot_x != 0 || rot_y != 0) || rot_z != 0) {
+    iVar5 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(rot_x);
+    iVar6 = engine_matrix_c_interpolatedCos_FUN_0050c600(rot_x);
+    iVar7 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(rot_y);
+    iVar8 = engine_matrix_c_interpolatedCos_FUN_0050c600(rot_y);
+    iVar9 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(rot_z);
+    iVar10 = engine_matrix_c_interpolatedCos_FUN_0050c600(rot_z);
     lVar1 = (longlong)
             (int)((uint)((longlong)iVar7 * (longlong)iVar5) >> 0x10 |
                  (int)((ulonglong)((longlong)iVar7 * (longlong)iVar5) >> 0x20) << 0x10) *

@@ -22,7 +22,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
   CMatrix3x4f *pCVar7;
   byte bVar8;
   CCharacter *in_stack_00000004;
-  CMatrix3x4f *matrix_a;
+  CMatrix3x4f *matrix_b;
   CMatrix3x4f local_3ac;
   CMatrix3x4f local_37c;
   CMatrix3x4f local_34c;
@@ -76,7 +76,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
     (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_13c,(CVector3f *)&DAT_02d7b814,&g_ZeroVector);
-    matrix_a = (in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_02d7b88c;
+    matrix_b = (in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_02d7b88c;
     pCVar6 = &local_13c;
     core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_16c);
     pCVar5 = &local_28c;
@@ -111,7 +111,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
       pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);
       pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,matrix_a,&local_7c);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,matrix_b,&local_7c);
     pcVar1 = local_14;
     pCVar6 = &local_7c;
     pCVar5 = &local_2ec;

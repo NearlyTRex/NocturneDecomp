@@ -52,6 +52,7 @@
 #include "types/structs/SFogGrid.h"
 #include "types/structs/SFogGridPlane.h"
 #include "types/structs/SFogImagePlane.h"
+#include "types/structs/SFontGlyph.h"
 #include "types/structs/SFoundFileInfo.h"
 #include "types/structs/SFreaky.h"
 #include "types/structs/SGem.h"

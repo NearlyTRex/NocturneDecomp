@@ -15,20 +15,18 @@ shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   float fVar2;
   int iVar3;
   int iVar4;
-  float fVar5;
+  int iVar5;
   float fVar6;
   float fVar7;
   float fVar8;
   float fVar9;
-  uint extraout_ECX;
-  float extraout_ECX_00;
-  int iVar10;
-  int extraout_EDX;
-  uint uVar11;
+  float fVar10;
+  int iVar11;
   uint uVar12;
-  int iVar13;
-  byte *pbVar14;
-  double dVar15;
+  uint uVar13;
+  int iVar14;
+  byte *pbVar15;
+  double dVar16;
   float local_58;
   float local_50;
   float local_44;
@@ -37,94 +35,91 @@ shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   
   local_44 = 0.0;
   local_3c = 0.0;
-  iVar13 = this_ptr->boxes[box_index].start_index;
-  iVar10 = this_ptr->boxes[box_index].start_index + this_ptr->boxes[box_index].pixel_count;
-  if (iVar13 < iVar10) {
+  iVar14 = this_ptr->boxes[box_index].start_index;
+  iVar11 = this_ptr->boxes[box_index].start_index + this_ptr->boxes[box_index].pixel_count;
+  if (iVar14 < iVar11) {
     local_3c = 0.0;
     local_44 = 0.0;
-    pbVar14 = (byte *)(iVar13 * 4 + (int)this_ptr->pixel_data);
+    pbVar15 = (byte *)(iVar14 * 4 + (int)this_ptr->pixel_data);
     do {
-      iVar13 = iVar13 + 1;
-      local_44 = (float)*pbVar14 + local_44;
-      local_3c = (float)pbVar14[2] + local_3c;
-      pbVar14 = pbVar14 + 4;
-    } while (iVar13 < iVar10);
+      iVar14 = iVar14 + 1;
+      local_44 = (float)*pbVar15 + local_44;
+      local_3c = (float)pbVar15[2] + local_3c;
+      pbVar15 = pbVar15 + 4;
+    } while (iVar14 < iVar11);
   }
-  dVar15 = crt_math_c_round_FUN_005fe6b0
+  dVar16 = crt_math_c_round_FUN_005fe6b0
                      ((double)(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
-  this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar15);
+  this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar16);
   local_58 = 0.0;
-  dVar15 = crt_math_c_round_FUN_005fe6b0
+  dVar16 = crt_math_c_round_FUN_005fe6b0
                      ((double)(local_34 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
-  this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar15);
-  dVar15 = crt_math_c_round_FUN_005fe6b0
-                     ((double)(local_44 /
-                              (float)CONCAT44(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))
-  ;
-  this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar15);
-  iVar13 = this_ptr->boxes[box_index].pixel_count;
-  this_ptr->boxes[box_index].red_variance = extraout_ECX_00;
-  this_ptr->boxes[box_index].green_variance = extraout_ECX_00;
-  this_ptr->boxes[box_index].blue_variance = extraout_ECX_00;
-  this_ptr->boxes[box_index].intensity_variance = extraout_ECX_00;
-  this_ptr->boxes[box_index].weighted_variance = extraout_ECX_00;
-  dVar15 = crt_math_c_round_FUN_005fe6b0
-                     ((double)(local_44 / (float)CONCAT44(extraout_ECX_00,iVar13)));
-  this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar15);
-  for (iVar13 = this_ptr->boxes[box_index].start_index * 4; iVar13 < extraout_EDX;
-      iVar13 = iVar13 + 4) {
-    uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -
-             (uint)*(byte *)(iVar13 + (int)this_ptr->pixel_data);
-    uVar12 = (int)uVar11 >> 0x1f;
-    fVar5 = (float)(int)((uVar11 ^ uVar12) - uVar12);
-    iVar10._0_2_ = this_ptr->boxes[box_index].avg_red;
-    iVar10._2_2_ = this_ptr->boxes[box_index].avg_green;
-    uVar11 = (iVar10 >> 0x10) - (uint)*(byte *)(iVar13 + 1 + (int)this_ptr->pixel_data);
-    uVar12 = (int)uVar11 >> 0x1f;
-    iVar3._0_2_ = this_ptr->boxes[box_index].avg_green;
-    iVar3._2_2_ = this_ptr->boxes[box_index].avg_blue;
-    fVar6 = (float)(int)((uVar11 ^ uVar12) - uVar12);
-    uVar11 = (iVar3 >> 0x10) - (uint)*(byte *)(iVar13 + 2 + (int)this_ptr->pixel_data);
-    uVar12 = (int)uVar11 >> 0x1f;
-    fVar7 = (float)(int)((uVar11 ^ uVar12) - uVar12);
-    iVar4._0_2_ = this_ptr->boxes[box_index].avg_blue;
-    iVar4._2_2_ = this_ptr->boxes[box_index].avg_intensity;
-    uVar11 = (iVar4 >> 0x10) - (uint)*(byte *)(iVar13 + 3 + (int)this_ptr->pixel_data);
-    uVar12 = (int)uVar11 >> 0x1f;
-    fVar9 = this_ptr->boxes[box_index].green_variance;
+  this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar16);
+  dVar16 = crt_math_c_round_FUN_005fe6b0
+                     ((double)(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
+  this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar16);
+  uVar12 = this_ptr->boxes[box_index].pixel_count;
+  this_ptr->boxes[box_index].red_variance = 0.0;
+  this_ptr->boxes[box_index].green_variance = 0.0;
+  this_ptr->boxes[box_index].blue_variance = 0.0;
+  this_ptr->boxes[box_index].intensity_variance = 0.0;
+  this_ptr->boxes[box_index].weighted_variance = 0.0;
+  dVar16 = crt_math_c_round_FUN_005fe6b0((double)(local_44 / (float)uVar12));
+  this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar16);
+  for (iVar14 = this_ptr->boxes[box_index].start_index * 4; iVar14 < iVar11 * 4; iVar14 = iVar14 + 4
+      ) {
+    uVar12 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -
+             (uint)*(byte *)(iVar14 + (int)this_ptr->pixel_data);
+    uVar13 = (int)uVar12 >> 0x1f;
+    fVar6 = (float)(int)((uVar12 ^ uVar13) - uVar13);
+    iVar3._0_2_ = this_ptr->boxes[box_index].avg_red;
+    iVar3._2_2_ = this_ptr->boxes[box_index].avg_green;
+    uVar12 = (iVar3 >> 0x10) - (uint)*(byte *)(iVar14 + 1 + (int)this_ptr->pixel_data);
+    uVar13 = (int)uVar12 >> 0x1f;
+    iVar4._0_2_ = this_ptr->boxes[box_index].avg_green;
+    iVar4._2_2_ = this_ptr->boxes[box_index].avg_blue;
+    fVar7 = (float)(int)((uVar12 ^ uVar13) - uVar13);
+    uVar12 = (iVar4 >> 0x10) - (uint)*(byte *)(iVar14 + 2 + (int)this_ptr->pixel_data);
+    uVar13 = (int)uVar12 >> 0x1f;
+    fVar8 = (float)(int)((uVar12 ^ uVar13) - uVar13);
+    iVar5._0_2_ = this_ptr->boxes[box_index].avg_blue;
+    iVar5._2_2_ = this_ptr->boxes[box_index].avg_intensity;
+    uVar12 = (iVar5 >> 0x10) - (uint)*(byte *)(iVar14 + 3 + (int)this_ptr->pixel_data);
+    uVar13 = (int)uVar12 >> 0x1f;
+    fVar10 = this_ptr->boxes[box_index].green_variance;
     fVar1 = this_ptr->boxes[box_index].blue_variance;
     fVar2 = this_ptr->boxes[box_index].intensity_variance;
-    fVar8 = (float)(int)((uVar11 ^ uVar12) - uVar12);
-    this_ptr->boxes[box_index].red_variance = this_ptr->boxes[box_index].red_variance + fVar5;
-    this_ptr->boxes[box_index].green_variance = fVar9 + fVar6;
-    this_ptr->boxes[box_index].blue_variance = fVar1 + fVar7;
-    this_ptr->boxes[box_index].intensity_variance = fVar2 + fVar8;
+    fVar9 = (float)(int)((uVar12 ^ uVar13) - uVar13);
+    this_ptr->boxes[box_index].red_variance = this_ptr->boxes[box_index].red_variance + fVar6;
+    this_ptr->boxes[box_index].green_variance = fVar10 + fVar7;
+    this_ptr->boxes[box_index].blue_variance = fVar1 + fVar8;
+    this_ptr->boxes[box_index].intensity_variance = fVar2 + fVar9;
     local_58 = (float)core_bugs_cpp_FUN_00427ba0();
     local_44 = (float)core_bugs_cpp_FUN_00427ba0();
     local_50 = (float)core_bugs_cpp_FUN_00427ba0();
     local_3c = (float)core_bugs_cpp_FUN_00427ba0();
     this_ptr->boxes[box_index].weighted_variance =
-         fVar8 * fVar8 * (float)0.69999999999999996 +
-         fVar7 * fVar7 * (float)0.11 +
-         fVar6 * fVar6 * (float)0.58999999999999997 + fVar5 * fVar5 * (float)0.29999999999999999 +
+         fVar9 * fVar9 * (float)0.69999999999999996 +
+         fVar8 * fVar8 * (float)0.11 +
+         fVar7 * fVar7 * (float)0.58999999999999997 + fVar6 * fVar6 * (float)0.29999999999999999 +
          this_ptr->boxes[box_index].weighted_variance;
   }
-  fVar9 = this_ptr->boxes[box_index].green_variance;
-  fVar5 = (float)0.58999999999999997;
+  fVar10 = this_ptr->boxes[box_index].green_variance;
+  fVar6 = (float)0.58999999999999997;
   fVar1 = this_ptr->boxes[box_index].blue_variance;
-  fVar6 = (float)0.11;
+  fVar7 = (float)0.11;
   fVar2 = this_ptr->boxes[box_index].intensity_variance;
-  fVar7 = (float)0.69999999999999996;
+  fVar8 = (float)0.69999999999999996;
   this_ptr->boxes[box_index].red_variance =
        this_ptr->boxes[box_index].red_variance * (float)0.33000000000000002 * local_58;
-  this_ptr->boxes[box_index].green_variance = fVar9 * fVar5 * local_44;
-  this_ptr->boxes[box_index].blue_variance = fVar1 * fVar6 * local_50;
-  this_ptr->boxes[box_index].intensity_variance = fVar2 * fVar7 * local_3c;
-  fVar9 = (float)core_bugs_cpp_FUN_00427ba0();
-  this_ptr->boxes[box_index].final_metric = fVar9;
-  fVar9 = (float)core_bugs_cpp_FUN_00427ba0();
-  this_ptr->boxes[box_index].final_metric = fVar9;
-  fVar9 = (float)core_bugs_cpp_FUN_00427ba0();
-  this_ptr->boxes[box_index].final_metric = fVar9;
+  this_ptr->boxes[box_index].green_variance = fVar10 * fVar6 * local_44;
+  this_ptr->boxes[box_index].blue_variance = fVar1 * fVar7 * local_50;
+  this_ptr->boxes[box_index].intensity_variance = fVar2 * fVar8 * local_3c;
+  fVar10 = (float)core_bugs_cpp_FUN_00427ba0();
+  this_ptr->boxes[box_index].final_metric = fVar10;
+  fVar10 = (float)core_bugs_cpp_FUN_00427ba0();
+  this_ptr->boxes[box_index].final_metric = fVar10;
+  fVar10 = (float)core_bugs_cpp_FUN_00427ba0();
+  this_ptr->boxes[box_index].final_metric = fVar10;
   return;
 }

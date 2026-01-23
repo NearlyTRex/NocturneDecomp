@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_matrix.c_setCameraRotation_FUN_0050e290(ushort pitch, ushort yaw, ushort roll)
+; __cdecl void engine_matrix.c_setCameraRotation_FUN_0050e290(int pitch, int yaw, int roll)
 ;
 ; Parameters:
-; ushort           Stack[0x4]:2   pitch
-; ushort           Stack[0x8]:2   yaw
-; ushort           Stack[0xc]:2   roll
+; int              Stack[0x4]:4   pitch
+; int              Stack[0x8]:4   yaw
+; int              Stack[0xc]:4   roll
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0 at 0048c1c0
@@ -35,7 +35,7 @@ section .text
     MOV dword ptr [0x02d052d4],ECX      ; 0050e2a4 | g_CameraRotationYaw
     MOV dword ptr [0x02d052d8],EDX      ; 0050e2aa | g_CameraRotationRoll
     CALL engine_matrix.c_buildRotationMatrix_FUN_0050c920 ; 0050e2b0
-        ;   XREF to: 0050c920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_buildRotationMatrix_FUN_0050c920(ushort pitch, ushort yaw, ushort roll)
+        ;   XREF to: 0050c920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_buildRotationMatrix_FUN_0050c920(int pitch, int yaw, int roll)
     ADD ESP,0xc                         ; 0050e2b5
     RET                                 ; 0050e2b8
 

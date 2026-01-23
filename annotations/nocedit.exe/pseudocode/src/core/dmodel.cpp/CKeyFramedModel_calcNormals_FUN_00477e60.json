@@ -4,44 +4,32 @@
       {
         "category": "other",
         "column": 37,
-        "line": 40,
+        "line": 38,
         "message": "cast from 'SMRGLPrimitiveQuad**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 38,
+        "line": 46,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 47,
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 40,
         "line": 48,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 40,
-        "line": 49,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 50,
-        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
         "column": 26,
-        "line": 63,
+        "line": 61,
         "message": "cast from 'CVector3i**' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 67,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 77,
-        "message": "'ROUND' was not declared in this scope"
       }
     ],
     "success": false,
@@ -55,61 +43,60 @@
       {
         "category": "other",
         "column": 27,
-        "line": 31,
+        "line": 29,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 33,
+        "line": 31,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 40,
+        "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 24,
+        "line": 46,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 47,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 26,
         "line": 48,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 49,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 50,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 18,
-        "line": 63,
+        "line": 61,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 248,
+    "complexity_score": 179,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 83,
-    "suspect_count": 15,
+    "pseudocode_lines": 79,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 242
+    "total_lines": 238
   },
   "cross_references": [
     {
@@ -326,109 +313,67 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_ECX",
-      "text": "int extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EDX",
-      "text": "int *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 31,
       "match": "(SSurfaceNormal *)((int)",
       "text": "output = (SSurfaceNormal *)((int)this_ptr->poly_vert_list + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(CVector3i *)((int)",
       "text": "*ppCVar3 = (CVector3i *)((int)&(*ppCVar3)->x + output->normal_x);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(CVector3i *)((int)",
       "text": "ppCVar3[1] = (CVector3i *)((int)&ppCVar3[1]->x + output->normal_y);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(CVector3i *)((int)",
       "text": "ppCVar3[2] = (CVector3i *)((int)&ppCVar3[2]->x + output->normal_z);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(int *)((int)",
       "text": "piVar7 = (int *)((int)this_ptr->vertex_normal_list + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 59,
       "match": "SQRT",
-      "text": "dVar11 = SQRT(dVar1 * dVar1 + dVar2 * dVar2 + dVar11 * dVar11);",
+      "text": "dVar10 = SQRT(dVar11 * dVar11 + dVar2 * dVar2 + dVar10 * dVar10);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 70,
-      "match": "extraout_EDX",
-      "text": "*extraout_EDX = (int)ROUND(fVar8);",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 67,
       "match": "ROUND",
-      "text": "*extraout_EDX = (int)ROUND(fVar8);",
+      "text": "*piVar7 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
-      "match": "extraout_EDX",
-      "text": "extraout_EDX[1] = (int)ROUND(fVar9);",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 68,
       "match": "ROUND",
-      "text": "extraout_EDX[1] = (int)ROUND(fVar9);",
+      "text": "piVar7[1] = (int)ROUND(fVar8);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 72,
-      "match": "extraout_EDX",
-      "text": "extraout_EDX[2] = (int)ROUND(dVar11);",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 69,
       "match": "ROUND",
-      "text": "extraout_EDX[2] = (int)ROUND(dVar11);",
+      "text": "piVar7[2] = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
-      "match": "extraout_ECX",
-      "text": "iVar5 = extraout_ECX;",
-      "type": "extra_output"
     }
   ]
 }

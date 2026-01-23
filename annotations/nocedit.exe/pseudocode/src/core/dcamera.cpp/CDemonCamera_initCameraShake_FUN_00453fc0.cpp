@@ -12,32 +12,30 @@ core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0
           float decay_time)
 
 {
-  int extraout_EDX;
-  float10 fVar1;
+  int iVar1;
   float10 fVar2;
   float10 fVar3;
   float10 fVar4;
   double dVar5;
+  double dVar6;
   
-  fVar1 = (float10)65536;
-  fVar2 = (float10)sustain_duration * fVar1;
-  fVar3 = (float10)attack_time * fVar1;
-  fVar4 = (float10)decay_time * fVar1;
+  fVar2 = (float10)65536;
+  fVar3 = (float10)attack_time * fVar2;
+  iVar1 = 0;
+  fVar4 = (float10)decay_time * fVar2;
   g_CameraShakeAttackAccum = 0;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)((float10)peak_intensity * fVar1));
-  fVar1 = (float10)dVar5;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
-  fVar2 = (float10)dVar5;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
-  fVar3 = (float10)dVar5;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
+  dVar5 = crt_math_c_round_FUN_005fe6b0((double)((float10)peak_intensity * fVar2));
+  dVar6 = crt_math_c_round_FUN_005fe6b0((double)((float10)sustain_duration * fVar2));
+  fVar2 = (float10)dVar6;
+  dVar6 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  fVar3 = (float10)dVar6;
+  dVar6 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
   g_CameraShakeSustainValue = (int)ROUND(fVar2);
   g_CameraShakeAttackTime = (int)ROUND(fVar3);
-  g_CameraShakeDecayDuration = (int)ROUND(dVar5);
-  g_CameraShakePeakValue = (int)ROUND(fVar1);
-  g_CameraShakeState = extraout_EDX;
+  g_CameraShakeDecayDuration = (int)ROUND(dVar6);
+  g_CameraShakePeakValue = (int)ROUND(dVar5);
   if (g_CameraShakeAttackTime == 0) {
-    g_CameraShakeState = 1;
+    iVar1 = 1;
     g_CameraShakeSustainTimer = g_CameraShakeSustainValue;
     if (g_CameraShakeSustainValue == 0) {
       g_CameraShakeDecayTimer = g_CameraShakeDecayDuration;
@@ -45,5 +43,6 @@ core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0
       return;
     }
   }
+  g_CameraShakeState = iVar1;
   return;
 }

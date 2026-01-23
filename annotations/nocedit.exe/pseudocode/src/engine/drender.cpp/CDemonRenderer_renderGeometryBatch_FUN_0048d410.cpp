@@ -109,7 +109,7 @@ engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
           } while (iVar3 < vertices_per_face);
         }
         if (this_ptr->face_capture_enabled == 0) {
-          engine_drender_cpp_renderTriangleSimple_FUN_004839f0((int *)&stack0xffffff98,iVar3);
+          engine_drender_cpp_renderTriangleSimple_FUN_004839f0((CVector3i *)&stack0xffffff98,iVar3);
         }
         else {
           core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff98);

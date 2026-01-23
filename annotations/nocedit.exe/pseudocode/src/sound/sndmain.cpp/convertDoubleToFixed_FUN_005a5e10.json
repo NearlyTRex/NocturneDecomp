@@ -2,22 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 23,
-        "message": "'CONCAT44' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 23,
-        "message": "'ROUND' was not declared in this scope"
+        "category": "other",
+        "column": 10,
+        "line": 24,
+        "message": "request for member '_0_4_' in 'input', which is of non-class type 'double'"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 25,
-        "message": "request for member '_0_4_' in 'input', which is of non-class type 'double'"
+        "line": 27,
+        "message": "request for member '_4_4_' in 'input', which is of non-class type 'double'"
       }
     ],
     "success": false,
@@ -32,19 +26,18 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 130,
+    "complexity_score": 114,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 20,
-    "suspect_count": 9,
+    "pseudocode_lines": 19,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 54
+    "total_lines": 53
   },
   "cross_references": [],
   "function": {
@@ -154,67 +147,60 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EDX",
-      "text": "uint *extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 7,
       "match": "unaff_EBX",
       "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 15,
       "match": "unaff_EBX",
       "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 15,
       "match": "CONCAT44",
       "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 15,
       "match": "ROUND",
       "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 18,
+      "line": 17,
       "match": "._0_4_",
       "text": "*input._0_4_ = (int)(longlong)ROUND(dVar2);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 17,
       "match": "ROUND",
       "text": "*input._0_4_ = (int)(longlong)ROUND(dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 19,
       "match": "ROUND",
       "text": "uStackY_18 = (uint)(longlong)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_EDX",
-      "text": "*extraout_EDX = uStackY_18;",
-      "type": "extra_output"
+      "description": "Unknown/mangled field access",
+      "line": 20,
+      "match": "._4_4_",
+      "text": "*input._4_4_ = uStackY_18;",
+      "type": "unknown_field"
     }
   ]
 }

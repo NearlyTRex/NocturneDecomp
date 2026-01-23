@@ -32,10 +32,10 @@
         "message": "'stack0xffffff98' was not declared in this scope"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 77,
-        "message": "'ROUND' was not declared in this scope"
+        "category": "other",
+        "column": 10,
+        "line": 78,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -80,20 +80,19 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 276,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 28,
-    "pseudocode_lines": 71,
-    "suspect_count": 18,
+    "pseudocode_lines": 69,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 148
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -398,13 +397,6 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
       "line": 30,
       "match": "7.34684e-40",
@@ -464,64 +456,57 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar5 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_18 + (uint)bVar5 * -8 + 4);",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(CMatrix3x3i *)((int)",
-      "text": "pCVar2 = (CMatrix3x3i *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
+      "text": "pCVar3 = (CMatrix3x3i *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 56,
       "match": "&stack0xffffff98",
-      "text": "piVar4 = (int *)&stack0xffffff98;",
+      "text": "piVar5 = (int *)&stack0xffffff98;",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 68,
       "match": "ROUND",
-      "text": "g_BillboardCameraUp.x = (int)ROUND(fVar6);",
+      "text": "g_BillboardCameraUp.x = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 69,
       "match": "ROUND",
       "text": "g_BillboardCameraUp.y = (int)ROUND(fVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 70,
       "match": "ROUND",
-      "text": "g_BillboardCameraUp.z = (int)ROUND(dVar9);",
+      "text": "g_BillboardCameraUp.z = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
-      "match": "extraout_EAX",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
     }
   ]
 }

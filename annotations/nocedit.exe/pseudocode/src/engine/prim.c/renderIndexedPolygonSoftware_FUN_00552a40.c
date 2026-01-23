@@ -19,18 +19,16 @@ engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int 
   uint uVar6;
   int *piVar7;
   SRenderVertex *pSVar8;
-  int unaff_ESI;
   int iVar9;
   uint uVar10;
-  int unaff_EDI;
   int iVar11;
   SRenderVertex *pSVar12;
   bool bVar13;
-  SRenderVertex *in_stack_ffffff9c;
-  void *in_stack_ffffffa0;
-  int in_stack_ffffffa4;
+  SRenderVertex *local_64 [16];
+  uint local_24;
   int *local_20;
   int local_1c;
+  int local_18;
   SSoftwareEdge *local_14;
   
   if (g_CullingMode != 0) {
@@ -142,9 +140,8 @@ engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int 
           uVar6 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           g_SoftwareEdgeBuffer[iVar3].fog_gradient = uVar6;
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar6;
-          g_SoftwareEdgeBuffer[iVar3].fog_current =
-               (int)pSVar8->w_recip +
-               ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+          local_24 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+          g_SoftwareEdgeBuffer[iVar3].fog_current = (int)pSVar8->w_recip + local_24;
           if (g_RenderStateFlag2 == 1) {
             if (g_ProcessorType == 0) {
               iVar11 = (pSVar12->projected_vertex).inv_z;
@@ -184,41 +181,42 @@ engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int 
                          (g_SoftwareMinScanline,(SSoftwareEdge *)0x0);
     if ((edge_ptr != (SSoftwareEdge *)0x0) &&
        (local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(g_SoftwareMinScanline,edge_ptr),
-       iVar3 = g_SoftwareMinScanline, local_14 != (SSoftwareEdge *)0x0)) {
-      iVar9 = g_SoftwareMinScanline - g_MaxViewportScanline;
+       local_14 != (SSoftwareEdge *)0x0)) {
+      local_18 = g_SoftwareMinScanline;
+      iVar3 = g_SoftwareMinScanline - g_MaxViewportScanline;
       bVar13 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);
-      while (bVar13 != iVar9 < 0) {
-        if (edge_ptr->y_max <= iVar3) {
+      while (bVar13 != iVar3 < 0) {
+        if (edge_ptr->y_max <= local_18) {
           edge_ptr->y_min = -1;
-          edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_00551f70(iVar3,local_14);
+          edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_00551f70(local_18,local_14);
           if (edge_ptr == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        if (local_14->y_max <= iVar3) {
+        if (local_14->y_max <= local_18) {
           local_14->y_min = -1;
-          local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(iVar3,edge_ptr);
+          local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(local_18,edge_ptr);
           if (local_14 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_005b5710
-                  (in_stack_ffffff9c,in_stack_ffffffa0,in_stack_ffffffa4);
+        local_64[0] = (SRenderVertex *)0x552cbb;
+        wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,edge_ptr,local_18);
         edge_ptr->x_current = edge_ptr->x_current + edge_ptr->x_gradient;
         edge_ptr->u_current = edge_ptr->u_current + edge_ptr->u_gradient;
         edge_ptr->v_current = edge_ptr->v_current + edge_ptr->v_gradient;
         edge_ptr->z_current = edge_ptr->z_current + edge_ptr->z_gradient;
         edge_ptr->w_current = edge_ptr->w_current + edge_ptr->w_gradient;
         edge_ptr->fog_current = edge_ptr->fog_current + edge_ptr->fog_gradient;
-        *(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);
-        *(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);
-        *(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);
-        *(int *)(unaff_ESI + 0x10) = *(int *)(unaff_ESI + 0x10) + *(int *)(unaff_ESI + 0x14);
-        *(int *)(unaff_ESI + 0x28) = *(int *)(unaff_ESI + 0x28) + *(int *)(unaff_ESI + 0x2c);
-        unaff_EDI = unaff_EDI + 1;
-        *(int *)(unaff_ESI + 0x30) = *(int *)(unaff_ESI + 0x30) + *(int *)(unaff_ESI + 0x34);
-        iVar9 = unaff_EDI - g_MaxViewportScanline;
-        bVar13 = SBORROW4(unaff_EDI,g_MaxViewportScanline);
+        *(int *)(local_18 + 8) = *(int *)(local_18 + 8) + *(int *)(local_18 + 0xc);
+        *(int *)(local_18 + 0x18) = *(int *)(local_18 + 0x18) + *(int *)(local_18 + 0x1c);
+        *(int *)(local_18 + 0x20) = *(int *)(local_18 + 0x20) + *(int *)(local_18 + 0x24);
+        *(int *)(local_18 + 0x10) = *(int *)(local_18 + 0x10) + *(int *)(local_18 + 0x14);
+        *(int *)(local_18 + 0x28) = *(int *)(local_18 + 0x28) + *(int *)(local_18 + 0x2c);
+        local_1c = local_1c + 1;
+        *(int *)(local_18 + 0x30) = *(int *)(local_18 + 0x30) + *(int *)(local_18 + 0x34);
+        iVar3 = local_1c - g_MaxViewportScanline;
+        bVar13 = SBORROW4(local_1c,g_MaxViewportScanline);
       }
     }
   }
@@ -227,14 +225,14 @@ engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int 
     if (0 < vertex_count) {
       do {
         iVar9 = *vertex_indices;
-        iVar3 = iVar3 + 1;
+        iVar11 = iVar3 + 1;
         vertex_indices = vertex_indices + 1;
-        *(SRenderVertex **)(&stack0xffffff98 + iVar3 * 4) = g_RenderVertexBuffer + iVar9;
-      } while (iVar3 < vertex_count);
+        local_64[iVar3] = g_RenderVertexBuffer + iVar9;
+        iVar3 = iVar11;
+      } while (iVar11 < vertex_count);
     }
     g_RenderedTriangleCount = g_RenderedTriangleCount + vertex_count + -2;
-    wincore_windll_cpp_drawPolygon2_FUN_005b7610
-              ((SRenderVertex **)&stack0xffffff9c,vertex_count,g_RenderStateFlags);
+    wincore_windll_cpp_drawPolygon2_FUN_005b7610(local_64,vertex_count,g_RenderStateFlags);
   }
   return;
 }

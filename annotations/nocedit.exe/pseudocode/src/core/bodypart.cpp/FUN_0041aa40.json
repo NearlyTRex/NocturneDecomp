@@ -8,12 +8,6 @@
         "message": "ambiguating new declaration of 'void core_bodypart_cpp_FUN_0041aa40()'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 74,
-        "message": "'ROUND' was not declared in this scope"
-      },
-      {
         "category": "other",
         "column": 18,
         "line": 156,
@@ -39,6 +33,12 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 85,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -80,15 +80,14 @@
   },
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 511,
+    "complexity_score": 496,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 161,
-    "suspect_count": 31,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
@@ -530,13 +529,6 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
@@ -579,24 +571,31 @@
       "type": "suspect_float"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000004",
+      "text": "iVar4 = *(int *)(in_stack_00000004 + 0x174);",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "ROUND",
-      "text": "local_60 = (int)ROUND(fVar10);",
+      "text": "local_60 = (int)ROUND(fVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "ROUND",
-      "text": "local_44 = (int)ROUND(fVar11);",
+      "text": "local_44 = (int)ROUND(fVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
-      "text": "local_58 = (int)ROUND(fVar12);",
+      "text": "local_58 = (int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -624,98 +623,91 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
-      "text": "iStack_64 = (int)ROUND(dVar16);",
+      "text": "iStack_64 = (int)ROUND(dVar17);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 99,
-      "match": "extraout_EDX",
-      "text": "if (0 < extraout_EDX) {",
-      "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 102,
       "match": "in_stack_00000004",
-      "text": "piVar4 = (int *)(*(int *)(in_stack_00000004 + 0x178) + local_40);",
+      "text": "piVar5 = (int *)(*(int *)(in_stack_00000004 + 0x178) + local_40);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
-      "text": "lVar1 = (longlong)(int)ROUND(fVar11) * (longlong)piVar4[1];",
+      "text": "lVar1 = (longlong)(int)ROUND(fVar12) * (longlong)piVar5[1];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 104,
       "match": "ROUND",
-      "text": "lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)piVar4[2];",
+      "text": "lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)piVar5[2];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 109,
       "match": "ROUND",
-      "text": "lVar1 = (longlong)(int)ROUND(fVar12) * (longlong)piVar4[1];",
+      "text": "lVar1 = (longlong)(int)ROUND(dVar16) * (longlong)piVar5[1];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 110,
       "match": "ROUND",
-      "text": "lVar2 = (longlong)(int)ROUND(fVar15) * (longlong)piVar4[2];",
+      "text": "lVar2 = (longlong)(int)ROUND(fVar15) * (longlong)piVar5[2];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 115,
       "match": "ROUND",
-      "text": "lVar1 = (longlong)(int)ROUND(fVar10) * (longlong)*piVar4;",
+      "text": "lVar1 = (longlong)(int)ROUND(fVar11) * (longlong)*piVar5;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "ROUND",
-      "text": "lVar2 = (longlong)(int)ROUND(fVar13) * (longlong)piVar4[1];",
+      "text": "lVar2 = (longlong)(int)ROUND(fVar13) * (longlong)piVar5[1];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 119,
       "match": "ROUND",
-      "text": "lVar1 = (longlong)(int)ROUND(dVar16) * (longlong)piVar4[2];",
+      "text": "lVar1 = (longlong)(int)ROUND(dVar17) * (longlong)piVar5[2];",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 141,
       "match": "in_stack_00000004",
-      "text": "} while (iVar7 < *(int *)(in_stack_00000004 + 0x174));",
+      "text": "} while (iVar8 < *(int *)(in_stack_00000004 + 0x174));",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 149,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_b8 + (uint)bVar8 * -8 + 0x14) = afStack_94[(uint)bVar8 * -2 + 5];",
+      "text": "*(float *)((int)&local_b8 + (uint)bVar9 * -8 + 0x14) = afStack_94[(uint)bVar9 * -2 + 5];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 150,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&local_b8 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 0x18) =",
+      "text": "*(float *)((int)&local_b8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 0x18) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 154,
       "match": "(float *)((int)",
-      "text": "afStack_94[(uint)bVar8 * -2 + 2] = *(float *)((int)&local_b8 + (uint)bVar8 * -8 + 0x20);",
+      "text": "afStack_94[(uint)bVar9 * -2 + 2] = *(float *)((int)&local_b8 + (uint)bVar9 * -8 + 0x20);",
       "type": "pointer_cast"
     },
     {

@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMatrix3x3f * core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540(CMatrix3x3f * this_ptr, CMatrix3x3f * matrix_a, CMatrix3x3f * matrix_b)
+; __stack2_esi CMatrix3x3f * core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540(CMatrix3x3f * matrix_a, CMatrix3x3f * matrix_b, CMatrix3x3f * matrix_out)
 ;
 ; Parameters:
-; CMatrix3x3f *    Stack[0x4]:4   this_ptr
-; CMatrix3x3f *    Stack[0x8]:4   matrix_a
-; CMatrix3x3f *    Stack[0xc]:4   matrix_b
+; CMatrix3x3f *    Stack[0x4]:4   matrix_a
+; CMatrix3x3f *    Stack[0x8]:4   matrix_b
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

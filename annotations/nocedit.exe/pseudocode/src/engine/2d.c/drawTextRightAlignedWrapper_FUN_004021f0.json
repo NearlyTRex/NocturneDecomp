@@ -1,26 +1,13 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 65,
-        "line": 12,
-        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 12,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
@@ -46,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_drawTextRightAlignedWrapper_FUN_004021f0",
-    "signature": "void engine_2d.c_drawTextRightAlignedWrapper_FUN_004021f0(char * text, int y_pos, int right_x)"
+    "signature": "void engine_2d.c_drawTextRightAlignedWrapper_FUN_004021f0(int x_pos, int y_pos, char * text)"
   },
   "function_calls": [
     {
@@ -92,10 +79,10 @@
     "variables": [
       {
         "is_param": true,
-        "name": "text",
+        "name": "x_pos",
         "offset": 4,
         "size": 4,
-        "type": "char *"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -106,10 +93,10 @@
       },
       {
         "is_param": true,
-        "name": "right_x",
+        "name": "text",
         "offset": 12,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       }
     ]
   },

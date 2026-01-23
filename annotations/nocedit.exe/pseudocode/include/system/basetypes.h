@@ -40,6 +40,7 @@
 #define __stack3_esi
 #define __stack_esi_edi
 #define __stack2_esi_edi
+#define __edi_esi_ebx
 #define __syscall
 #define __fpustack
 #define __fpustack_safe

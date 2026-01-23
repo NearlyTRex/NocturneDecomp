@@ -14,9 +14,8 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
   float fVar2;
   CDemonRenderer *this_ptr_00;
   CVector3f *pCVar3;
-  int extraout_EAX;
-  CMatrix3x3i *this_ptr_01;
   int iVar4;
+  CMatrix3x3i *this_ptr_01;
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
@@ -154,16 +153,18 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
             local_14 = this_ptr->shadow_map_height - (this_ptr->shadow_map_height >> 0x1f) >> 1;
             fVar9 = (float10)local_4c;
             local_30 = (float)(fVar6 * fVar9);
+            iVar4 = this_ptr->shadow_map_width;
             dVar12 = crt_math_c_round_FUN_005fe6b0
                                ((double)((float)local_14 - (float)local_14 * local_30));
             local_78 = (int)ROUND(dVar12);
+            iVar4 = local_78 * iVar4;
             local_34 = (float)(fVar7 * fVar9);
             fVar8 = fVar8 * fVar9;
             local_160.base.type = 0x475c38;
             dVar12 = crt_math_c_round_FUN_005fe6b0
                                ((double)((float)local_18 * local_34 + (float)local_18));
             local_70 = (int)ROUND(dVar12);
-            local_2c = (float)this_ptr->shadow_depth_buffer[extraout_EAX + local_70] *
+            local_2c = (float)this_ptr->shadow_depth_buffer[iVar4 + local_70] *
                        (float)0.00390625;
             local_24 = 0;
             local_3c = (float)fVar8;

@@ -1,72 +1,28 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 46,
-        "message": "'SQRT' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 47,
-        "message": "'ABS' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 66,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 66,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 67,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 68,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 70,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 192,
+    "complexity_score": 123,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 62,
-    "suspect_count": 12,
+    "pseudocode_lines": 58,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 214
+    "total_lines": 210
   },
   "cross_references": [
     {
@@ -276,87 +232,45 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EDX_00",
-      "text": "int extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 37,
       "match": "SQRT",
       "text": "local_30 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar7 * fVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 38,
       "match": "ABS",
       "text": "if (ABS(local_30) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ROUND",
+      "text": "data->normal_x = (int)ROUND(dVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "ROUND",
+      "text": "data->normal_y = (int)ROUND(fVar13);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "ROUND",
+      "text": "data->normal_z = (int)ROUND(dVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 59,
-      "match": "extraout_EDX",
-      "text": "*(int *)(extraout_EDX + 8) = (int)ROUND(fVar14);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
       "match": "ROUND",
-      "text": "*(int *)(extraout_EDX + 8) = (int)ROUND(fVar14);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
-      "match": "extraout_EDX",
-      "text": "*(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar12);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "text": "*(int *)(extraout_EDX + 0xc) = (int)ROUND(fVar12);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
-      "match": "extraout_EDX",
-      "text": "*(int *)(extraout_EDX + 0x10) = (int)ROUND(dVar16);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "ROUND",
-      "text": "*(int *)(extraout_EDX + 0x10) = (int)ROUND(dVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
-      "match": "extraout_EDX_00",
-      "text": "*(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(dVar16);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
-      "match": "ROUND",
-      "text": "*(int *)(extraout_EDX_00 + 0x14) = (int)ROUND(dVar16);",
+      "text": "data->dot_product = (int)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
     }
   ]

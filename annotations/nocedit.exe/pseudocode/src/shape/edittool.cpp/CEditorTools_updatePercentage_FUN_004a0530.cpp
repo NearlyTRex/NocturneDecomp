@@ -18,14 +18,12 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
   int y;
   int y2;
   int iVar4;
-  uint extraout_EDX;
   int x1_00;
   int x2;
   double dVar5;
   double dVar6;
-  double dVar7;
+  uint uVar7;
   uint uVar8;
-  uint uVar9;
   float local_38;
   float local_34;
   int local_2c;
@@ -45,7 +43,7 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
     }
     local_34 = progress_min / progress_max;
   }
-  uVar9 = 0x4a059a;
+  uVar8 = 0x4a059a;
   dVar5 = crt_math_c_round_FUN_005fe6b0
                     ((double)(local_34 * (float)100 +
                              (float)0.5));
@@ -56,7 +54,7 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
               (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipTop,g_WindowStatusTextColor,-1,
-               "%d%% complete",(int)ROUND(dVar5),uVar9);
+               "%d%% complete",(int)ROUND(dVar5),uVar8);
     iVar2 = g_ClipRight;
     x1 = g_ClipLeft;
     y = g_FontCharacterWidth * 2 + g_ClipTop;
@@ -85,20 +83,21 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
               (float)8.4771050347222196e-07;
       dVar5 = (double)fVar1;
       if ((float)5 < fVar1) {
-        uVar9 = 0x4a077d;
+        uVar8 = 0x4a077d;
         dVar6 = crt_math_c_round_FUN_005fe6b0
                           ((double)(((progress_max - progress_min) * fVar1) / progress_min +
                                    (float)0.5));
-        if (0 < (int)ROUND(dVar6)) {
-          uVar8 = 0x4a07b4;
-          dVar7 = crt_math_c_round_FUN_005fe6b0
-                            ((double)CONCAT44(SUB84(dVar5,0),uVar9) + 0.5);
+        iVar3 = (int)ROUND(dVar6);
+        if (0 < iVar3) {
+          uVar7 = 0x4a07b4;
+          dVar6 = crt_math_c_round_FUN_005fe6b0
+                            ((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
                     (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipBottom - g_FontCharacterWidth,
                      g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
-                     (int)ROUND(dVar7) / 0x3c,(int)ROUND(dVar7) % 0x3c,(int)ROUND(dVar6) / 0x3c,
-                     extraout_EDX,uVar8,uVar9,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
+                     (int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar3 / 0x3c,iVar3 % 0x3c,
+                     uVar7,uVar8,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
         }
       }
     }

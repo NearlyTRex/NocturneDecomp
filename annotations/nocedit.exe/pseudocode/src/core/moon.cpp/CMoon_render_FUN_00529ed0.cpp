@@ -12,7 +12,6 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   CDemonSet *pCVar1;
   char *pcVar2;
   uint uVar3;
-  int extraout_EDX;
   int iVar4;
   ulonglong *puVar5;
   ulonglong uVar6;
@@ -79,6 +78,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_MoonBatModel,local_14,0,render_flags);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+        pCVar1 = g_CDemonSetPtr;
         local_14 = (CKeyFramedModelInstance *)
                    g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len;
         local_18 = *(float *)((int)&g_MoonBats[0].course_position + iVar4) / (float)(int)local_14;
@@ -92,7 +92,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         local_5c.x = 7.588293e-39;
         dVar7 = crt_math_c_round_FUN_005fe6b0(dVar7);
         local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
-        *(CKeyFramedModelInstance **)(extraout_EDX + 0x15ae80) = local_14;
+        pCVar1->ambient_base_quick = (int)local_14;
       }
       iVar4 = iVar4 + 0x18;
     } while (iVar4 != 0x2d0);

@@ -449,6 +449,29 @@
             <register name="EDX" />
         </killedbycall>
     </prototype>
+    <!-- __edi_esi_ebx: Register-only convention with params in EDI, ESI, EBX. -->
+    <prototype name="__edi_esi_ebx" extrapop="0" stackshift="0">
+        <input>
+            <pentry minsize="1" maxsize="4"><register name="EDI" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="ESI" /></pentry>
+            <pentry minsize="1" maxsize="4"><register name="EBX" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="ESP" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+        </killedbycall>
+    </prototype>
     <prototype name="__syscall" extrapop="4" stackshift="4">
         <input>
             <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>

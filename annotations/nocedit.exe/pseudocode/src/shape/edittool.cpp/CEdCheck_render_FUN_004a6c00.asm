@@ -149,14 +149,14 @@ section .text
     PUSH EBP                            ; 004a6cf4
     MOV dword ptr [0x02d02570],EDX      ; 004a6cf5 | g_ActiveRenderColor
     CALL engine_2d.c_clipLineGlobal_FUN_00402c50 ; 004a6cfb
-        ;   XREF to: 00402c50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00402c50(int * x1, int * y1, int * x2, int * y2)
+        ;   XREF to: 00402c50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00402c50(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 004a6d00
     PUSH EBX                            ; 004a6d03
     PUSH EBP                            ; 004a6d04
     PUSH ESI                            ; 004a6d05
     PUSH EDI                            ; 004a6d06
     CALL engine_2d.c_clipLineGlobal_FUN_00402c50 ; 004a6d07
-        ;   XREF to: 00402c50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00402c50(int * x1, int * y1, int * x2, int * y2)
+        ;   XREF to: 00402c50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00402c50(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 004a6d0c
     ADD ESP,0x8                         ; 004a6d0f
     POP EBP                             ; 004a6d12

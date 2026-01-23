@@ -24,13 +24,14 @@ engine_matrix_c_matrixPushAndTransform_FUN_0050db00(int rotation_x,int rotation_
   uint uVar12;
   int iVar13;
   int iVar14;
-  ushort angle;
   int iVar15;
   float10 fVar16;
+  float10 fVar17;
+  float10 fVar18;
   float10 x;
   float10 extraout_ST1;
-  float10 fVar17;
-  double dVar18;
+  double dVar19;
+  double dVar20;
   int local_4c;
   int local_48;
   int local_44;
@@ -53,16 +54,16 @@ engine_matrix_c_matrixPushAndTransform_FUN_0050db00(int rotation_x,int rotation_
   g_MatrixStack_M22[iVar2] = g_TransformMatrix.m[2].z;
   crt_math_c_atan2_FUN_006013b1((float10)rotation_x,(float10)rotation_z);
   fVar16 = crt_math_c_atan2_FUN_006013b1((float10)rotation_x,x);
-  fVar17 = extraout_ST1 * (float10)0.31830988619288902 * (float10)32768;
-  crt_math_c_round_FUN_005fe6b0
-            ((double)(-fVar16 * (float10)0.31830988619288902 * (float10)32768));
-  dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
-  iVar2 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(angle);
-  iVar3 = engine_matrix_c_interpolatedCos_FUN_0050c600(0xdc06);
+  fVar17 = (float10)0.31830988619288902;
+  fVar18 = (float10)32768;
+  dVar19 = crt_math_c_round_FUN_005fe6b0((double)(-fVar16 * fVar17 * fVar18));
+  dVar20 = crt_math_c_round_FUN_005fe6b0((double)(extraout_ST1 * fVar17 * fVar18));
+  iVar2 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((int)ROUND(dVar19));
+  iVar3 = engine_matrix_c_interpolatedCos_FUN_0050c600(0x50dc06);
   iVar4 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(0);
   iVar5 = engine_matrix_c_interpolatedCos_FUN_0050c600(0);
-  iVar6 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((ushort)(int)ROUND(dVar18));
-  iVar7 = engine_matrix_c_interpolatedCos_FUN_0050c600((ushort)(int)ROUND(dVar18));
+  iVar6 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((int)ROUND(dVar20));
+  iVar7 = engine_matrix_c_interpolatedCos_FUN_0050c600((int)ROUND(dVar20));
   lVar1 = (longlong)
           (int)((uint)((longlong)iVar4 * (longlong)iVar2) >> 0x10 |
                (int)((ulonglong)((longlong)iVar4 * (longlong)iVar2) >> 0x20) << 0x10) *

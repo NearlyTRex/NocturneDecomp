@@ -18,7 +18,6 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
   int iVar2;
   CDemonFilter *filter_ptr;
   uint uVar3;
-  int extraout_EDX;
   int unaff_ESI;
   double dVar4;
   CWeapon *in_stack_00000004;
@@ -35,9 +34,10 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
   }
   fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / 0x41F00000;
   *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = fVar1;
+  iVar2 = in_stack_00000004->weapon_state;
   dVar4 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)100));
   in_stack_00000004->ammo_count = (int)ROUND(dVar4);
-  if (extraout_EDX == 2) {
+  if (iVar2 == 2) {
     fVar1 = (_DAT_00660a4c - 0x40000000) *
             *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) + 0x40000000;
     base_frequency =

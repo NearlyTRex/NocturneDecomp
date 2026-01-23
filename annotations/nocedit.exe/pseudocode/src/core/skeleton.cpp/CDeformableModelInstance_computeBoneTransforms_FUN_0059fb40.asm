@@ -76,7 +76,7 @@ section .text
     PUSH EDX                            ; 0059fba3
     MOV dword ptr [ESP + 0x1c],EAX      ; 0059fba4
     CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 0059fba8
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_in, CQuaternion4f * quat_out)
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_out, CQuaternion4f * quat_in)
     MOV ECX,dword ptr [EBX + 0xcf0]     ; 0059fbad
     ADD ESP,0x8                         ; 0059fbb3
     CMP ECX,0x3f800000                  ; 0059fbb6

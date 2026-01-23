@@ -407,7 +407,7 @@
           "type":"char*"
         },
         {
-          "name":"center_x",
+          "name":"x_pos",
           "storage":{
             "offset":8,
             "size":4,
@@ -492,7 +492,7 @@
       ],
       "params":[
         {
-          "name":"format_string",
+          "name":"y_pos",
           "storage":{
             "offset":4,
             "size":4,
@@ -505,10 +505,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"y_pos",
+          "name":"right_x",
           "storage":{
             "offset":8,
             "size":4,
@@ -524,7 +524,7 @@
           "type":"int"
         },
         {
-          "name":"right_x",
+          "name":"format_string",
           "storage":{
             "offset":12,
             "size":4,
@@ -537,7 +537,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -42790,17 +42790,17 @@
           "name":"angle",
           "storage":{
             "offset":4,
-            "size":2,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
-                "size":2
+                "size":4
               }
             ]
           },
-          "type":"ushort"
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -74105,7 +74105,7 @@
       ],
       "params":[
         {
-          "name":"matrix_in",
+          "name":"matrix_out",
           "storage":{
             "offset":4,
             "size":4,
@@ -74121,7 +74121,7 @@
           "type":"CMatrix3x3f*"
         },
         {
-          "name":"quat_out",
+          "name":"quat_in",
           "storage":{
             "offset":8,
             "size":4,

@@ -29,6 +29,7 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWeapon_vtable.h"
 #include "types/funcdefs/MRGLBlockHandlerFunc.h"
+#include "types/structs/SFontGlyph.h"
 #include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SResolutionEntry.h"
@@ -172,6 +173,9 @@ extern CWeapon_vtable DAT_006656A0;
 
 // MRGLBlockHandlerFunc*[67]
 extern MRGLBlockHandlerFunc* g_MRGLBlockHandlerTable[67];
+
+// SFontGlyph[224]
+extern SFontGlyph g_FontTable[224];
 
 // SMRGLLightPrimitive[84]
 extern SMRGLLightPrimitive g_CoronaFacePrimitives[84];

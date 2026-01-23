@@ -24,8 +24,7 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
   local_18 = (int)ROUND(*(float *)param5 * 10430.38f);
   local_14 = (int)ROUND(*(float *)((int)param5 + 8) * 10430.38f);
   local_10 = (int)ROUND(*(float *)((int)param5 + 4) * 10430.38f);
-  engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-            ((ushort)local_18,(ushort)local_14,(ushort)local_10,0,0,0);
+  engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(local_18,local_14,local_10,0,0,0);
   shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
             (this_ptr,(float)param2,(int)world_position);
   engine_matrix_c_pop_FUN_0050d720();

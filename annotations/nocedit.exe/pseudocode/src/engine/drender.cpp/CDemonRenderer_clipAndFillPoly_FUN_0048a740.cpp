@@ -24,7 +24,8 @@ engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
       engine_drender_cpp_renderTriangleTextured_FUN_00483370(vertex_indices,vertex_count);
     }
     else {
-      engine_drender_cpp_renderTriangleSimple_FUN_004839f0(vertex_indices,vertex_count);
+      engine_drender_cpp_renderTriangleSimple_FUN_004839f0((CVector3i *)vertex_indices,vertex_count)
+      ;
     }
   }
   else {

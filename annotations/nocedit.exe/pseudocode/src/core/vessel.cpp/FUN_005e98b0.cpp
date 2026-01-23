@@ -11,7 +11,6 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
 {
   char cVar1;
   CKeyFramedModel *pCVar2;
-  CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
   char *pcVar4;
   double dVar5;
@@ -43,7 +42,8 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
     uVar6 = 0x5e9a3e;
     dVar5 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->field14_0x3c0 + 0x42c));
     local_14 = (uint)ROUND(dVar5);
-    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
+    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+                       ((CKeyFramedModelInstance *)(this_ptr->field14_0x3c0 + 0x2ac));
     crt_stdio_c_sprintf_FUN_005fdbd0
               (pCVar2->texture_list[0].base.texture_name,"BWATER%d.RAW",local_14 & 0xf,
                uVar6);

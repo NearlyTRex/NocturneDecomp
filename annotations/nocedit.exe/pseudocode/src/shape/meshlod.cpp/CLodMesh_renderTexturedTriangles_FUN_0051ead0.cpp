@@ -12,17 +12,17 @@ shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
 
 {
   char cVar1;
-  int iVar2;
-  char *pcVar3;
+  float fVar2;
+  float *pfVar3;
+  int iVar4;
+  char *pcVar5;
   float atlas_texture_index;
-  float *extraout_ECX;
   int unaff_EBX;
-  float *pfVar4;
-  float *pfVar5;
-  char *pcVar6;
-  float10 fVar7;
-  float10 fVar8;
+  float *pfVar6;
+  float *pfVar7;
+  char *pcVar8;
   double dVar9;
+  double dVar10;
   int unaff_retaddr;
   SMRGLTextureBasic *texture;
   int local_64;
@@ -50,28 +50,27 @@ shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
                                 (this_ptr->submesh_data[(int)atlas_texture_index].texture_filename);
         }
         local_14 = local_18 + 3;
-        iVar2 = 0;
-        pfVar4 = local_18;
-        pfVar5 = local_18;
+        iVar4 = 0;
+        pfVar6 = local_18;
+        pfVar7 = local_18;
         do {
-          *(float *)((int)afStack_60 + iVar2) = pfVar4[4];
-          local_30 = pfVar5[7];
-          local_2c[0] = pfVar5[8];
+          *(float *)((int)afStack_60 + iVar4) = pfVar6[4];
+          local_30 = pfVar7[7];
+          local_2c[0] = pfVar7[8];
           if ((-1 < (int)atlas_texture_index) && (enable_texture_lookup != 0)) {
             shape_design_c_fixupCramUV_FUN_0046e090((int)atlas_texture_index,&local_30,local_2c);
           }
-          fVar8 = (float10)local_2c[0] * (float10)65535.0f;
-          pfVar5 = pfVar5 + 2;
-          dVar9 = crt_math_c_round_FUN_005fe6b0
-                            ((double)((float10)local_30 * (float10)65535.0f));
-          fVar7 = (float10)dVar9;
-          dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
-          local_30 = (float)(int)ROUND(dVar9);
-          *(int *)((int)afStack_60 + iVar2 + -4) = (int)ROUND(fVar7);
-          pfVar4 = pfVar4 + 1;
-          *(float *)((int)afStack_60 + iVar2) = local_30;
-          iVar2 = iVar2 + 0xc;
-        } while (pfVar4 != extraout_ECX);
+          pfVar3 = local_14;
+          fVar2 = local_2c[0] * 65535.0f;
+          pfVar7 = pfVar7 + 2;
+          dVar9 = crt_math_c_round_FUN_005fe6b0((double)(local_30 * 65535.0f));
+          dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+          local_30 = (float)(int)ROUND(dVar10);
+          *(int *)((int)afStack_60 + iVar4 + -4) = (int)ROUND(dVar9);
+          pfVar6 = pfVar6 + 1;
+          *(float *)((int)afStack_60 + iVar4) = local_30;
+          iVar4 = iVar4 + 0xc;
+        } while (pfVar6 != pfVar3);
         if ((int)atlas_texture_index < 0) {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
                     (g_CDemonRendererPtr2,-((local_24 & 0x7f) + 0x80));
@@ -85,17 +84,17 @@ shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
                         ((int)atlas_texture_index * 0x48 + *(int *)(unaff_EBX + 0x14));
             }
             else {
-              iVar2 = shape_design_c_getAtlasMapIndex_FUN_0046e030((int)atlas_texture_index);
-              pcVar3 = shape_design_c_getTextureName_FUN_0046e060(iVar2);
-              pcVar6 = g_TempTextureDescriptor.texture_name;
+              iVar4 = shape_design_c_getAtlasMapIndex_FUN_0046e030((int)atlas_texture_index);
+              pcVar5 = shape_design_c_getTextureName_FUN_0046e060(iVar4);
+              pcVar8 = g_TempTextureDescriptor.texture_name;
               do {
-                cVar1 = *pcVar3;
-                *pcVar6 = cVar1;
+                cVar1 = *pcVar5;
+                *pcVar8 = cVar1;
                 if (cVar1 == '\0') break;
-                cVar1 = pcVar3[1];
-                pcVar3 = pcVar3 + 2;
-                pcVar6[1] = cVar1;
-                pcVar6 = pcVar6 + 2;
+                cVar1 = pcVar5[1];
+                pcVar5 = pcVar5 + 2;
+                pcVar8[1] = cVar1;
+                pcVar8 = pcVar8 + 2;
               } while (cVar1 != '\0');
               texture = &g_TempTextureDescriptor;
             }

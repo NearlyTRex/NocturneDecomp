@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 23,
-        "message": "'ROUND' was not declared in this scope"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -20,17 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 56,
+    "complexity_score": 32,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 16,
-    "suspect_count": 3,
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 55
+    "total_lines": 56
   },
   "cross_references": [
     {
@@ -177,25 +169,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "text": "float extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "ROUND",
-      "text": "g_DashLength = (int)ROUND(dVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
       "line": 17,
-      "match": "extraout_EAX",
-      "text": "g_DashAnimationThreshold = extraout_EAX;",
-      "type": "extra_output"
+      "match": "ROUND",
+      "text": "g_DashLength = (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

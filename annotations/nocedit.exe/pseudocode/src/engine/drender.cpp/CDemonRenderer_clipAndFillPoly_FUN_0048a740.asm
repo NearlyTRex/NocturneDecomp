@@ -73,7 +73,7 @@ section .text
         ;   Label: LAB_0048a774
     PUSH ESI                            ; 0048a775
     CALL engine_drender.cpp_renderTriangleSimple_FUN_004839f0 ; 0048a776
-        ;   XREF to: 004839f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(int * vertex_indices, int vertex_count)
+        ;   XREF to: 004839f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0048a77b
         ;   Label: LAB_0048a77b
     POP EBP                             ; 0048a77e

@@ -12,12 +12,10 @@ engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 
 {
   if (rotation == (CVector3i *)0x0) {
-    engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-              ((ushort)position->x,(ushort)position->y,(ushort)position->z,0,0,0);
+    engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(position->x,position->y,position->z,0,0,0);
     return;
   }
   engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-            ((ushort)position->x,(ushort)position->y,(ushort)position->z,rotation->x,rotation->y,
-             rotation->z);
+            (position->x,position->y,position->z,rotation->x,rotation->y,rotation->z);
   return;
 }

@@ -17,7 +17,7 @@ CVector3f * CMatrix3x3f::transformVector(CMatrix3x3f * this_ptr, CVector3f * out
 
 // Original: core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 // Address: 00472030
-CVector3f * CMatrix3x3f::transformVectorTranspose(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input);
+CVector3f * CMatrix3x3f::transformVectorTranspose(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input);
 
 // Original: core_dirmat.cpp_atan2Custom_FUN_00472090
 // Address: 00472090
@@ -29,4 +29,4 @@ CVector3f * CMatrix3x3f::getEulerAngles(CMatrix3x3f * this_ptr, CVector3f * eule
 
 // Original: core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540
 // Address: 00472540
-CMatrix3x3f * CMatrix3x3f::multiply(CMatrix3x3f * this_ptr, CMatrix3x3f * matrix_a, CMatrix3x3f * matrix_b);
+CMatrix3x3f * CMatrix3x3f::multiply(CMatrix3x3f * matrix_a, CMatrix3x3f * matrix_b, CMatrix3x3f * matrix_out);

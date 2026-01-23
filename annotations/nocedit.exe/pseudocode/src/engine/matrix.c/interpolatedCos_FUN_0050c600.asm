@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_matrix.c_interpolatedCos_FUN_0050c600(ushort angle)
+; __cdecl int engine_matrix.c_interpolatedCos_FUN_0050c600(int angle)
 ;
 ; Parameters:
-; ushort           Stack[0x4]:2   angle
+; int              Stack[0x4]:4   angle
 ;
 ; XREF[5]:
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004fee80
