@@ -17,7 +17,7 @@
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_ladder.cpp_FUN_00502610 at 00502615
+;   core_ladder.cpp_CLadder_FUN_00502610 at 00502615
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10

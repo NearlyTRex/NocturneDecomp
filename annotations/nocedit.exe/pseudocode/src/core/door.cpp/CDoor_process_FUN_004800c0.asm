@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_door.cpp_CDoor_process_FUN_004800c0(CDoor * this_ptr)
+; __cdecl void core_door.cpp_CDoor_process_FUN_004800c0(CDoor * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0xa8]:1  local_a8
 ; undefined4       Stack[-0x78]:4  local_78

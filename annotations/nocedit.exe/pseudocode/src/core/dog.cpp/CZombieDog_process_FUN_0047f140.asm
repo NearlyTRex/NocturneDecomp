@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dog.cpp_CZombieDog_process_FUN_0047f140(CZombieDog * this_ptr)
+; __cdecl void core_dog.cpp_CZombieDog_process_FUN_0047f140(CZombieDog * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CZombieDog *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0xe0]:1  local_e0
 ; undefined4       Stack[-0xdc]:4  local_dc
@@ -50,8 +51,8 @@
 ;   double DOUBLE_00621021 = 2
 ;   double DOUBLE_00621029 = 0.5
 ;   double DOUBLE_00621031 = 32
-;   undefined4 DAT_0065ca28
-;   undefined4 DAT_0065ca34
+;   int INT_0065ca28 = 0x40400000
+;   float FLOAT_0065ca34 = 8
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGore* g_CGorePtr = 02d83364
 ;   CDemonSet* g_CDemonSetPtr = 03114278
@@ -60,7 +61,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_004297e0
 ;   core_charactr.cpp_CCharacter_FUN_00429820
@@ -275,8 +276,8 @@ section .text
     ADD ESP,0x4                         ; 0047f382
     PUSH dword ptr [EBP + 0x92]         ; 0047f385
     PUSH EBX                            ; 0047f38b
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 0047f38c
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 0047f38c
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 0047f391
     LEA ESP,[EBP + 0x7a]                ; 0047f394
         ;   Label: LAB_0047f394
@@ -473,7 +474,7 @@ section .text
     ADD EAX,EDX                         ; 0047f595
     MOV dword ptr [EBP + 0x72],EAX      ; 0047f597
     FLD float ptr [EBP + 0x72]          ; 0047f59a
-    FCOMP float ptr [0x0065ca34]        ; 0047f59d | DAT_0065ca34
+    FCOMP float ptr [0x0065ca34]        ; 0047f59d | FLOAT_0065ca34
     FNSTSW AX                           ; 0047f5a3
     SAHF                                ; 0047f5a5
     JC 0x0047f5f0                       ; 0047f5a6
@@ -538,7 +539,7 @@ section .text
     FMUL float ptr [EBP + 0x36]         ; 0047f64b
     FADDP                               ; 0047f64e
     FSQRT                               ; 0047f650
-    FCOMP float ptr [0x0065ca34]        ; 0047f652 | DAT_0065ca34
+    FCOMP float ptr [0x0065ca34]        ; 0047f652 | FLOAT_0065ca34
     FNSTSW AX                           ; 0047f658
     SAHF                                ; 0047f65a
     JBE 0x0047f66e                      ; 0047f65b
@@ -552,7 +553,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 0047f666
         ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0047f66b
-    MOV EAX,[0x0065ca28]                ; 0047f66e | DAT_0065ca28
+    MOV EAX,[0x0065ca28]                ; 0047f66e | INT_0065ca28
         ;   Label: LAB_0047f66e
     PUSH 0x3e32b8c2                     ; 0047f673
     MOV dword ptr [EBP + 0x6e],EAX      ; 0047f678

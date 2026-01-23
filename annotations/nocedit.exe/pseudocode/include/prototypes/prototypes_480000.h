@@ -44,7 +44,7 @@
 // FUNCTION PROTOTYPES - Range 0x480000
 // =============================================================================
 
-void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor * this_ptr);
+void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor * this_ptr, float delta_time);
 int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor * this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_004809e0(CDoor * this_ptr, int layer_flag);
 CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00480a50(CDoor * this_ptr, CBoundingBox3D * out_box);

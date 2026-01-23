@@ -831,7 +831,7 @@ switchD_004858cd_caseD_1:
   core_charactr_cpp_CCharacter_FUN_00429820(&param_5->base_character);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(param_5->base_character).model);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(&param_5->base_character);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&param_5->base_character);
   return;
 switchD_004858cd_caseD_10:
   param_5->pool_me = 1;

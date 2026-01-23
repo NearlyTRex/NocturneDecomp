@@ -8,7 +8,7 @@
 ;   core_werewolf.cpp_CWerewolf_FUN_005f20d0 at 005f2110
 ;
 ; Referenced Globals:
-;   undefined4 s_Train_00657e8c
+;   TerminatedCString s_Train_00657e8c
 ;   TerminatedCString s_Forest_00657e92
 ;   TerminatedCString s_Train_Alpha_00657e99
 ;   undefined4 g_CWerewolfClassInfo.name_hash
@@ -48,7 +48,7 @@ section .text
     POP ESI                             ; 005f2047
     POP EBX                             ; 005f2048
     RET                                 ; 005f2049
-    PUSH 0x657e8c                       ; 005f204a | s_Train_00657e8c
+    PUSH 0x657e8c                       ; 005f204a | = "Train"
         ;   Label: LAB_005f204a
     JMP 0x005f203e                      ; 005f204f
         ;   XREF to: 005f203e (UNCONDITIONAL_JUMP)  ; LAB_005f203e

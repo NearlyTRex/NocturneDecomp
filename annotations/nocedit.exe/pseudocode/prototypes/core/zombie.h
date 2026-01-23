@@ -41,7 +41,7 @@ void CZombie(CZombie * this_ptr);
 
 // Original: core_zombie.cpp_CZombie_process_FUN_005f9470
 // Address: 005f9470
-void CZombie::process(CZombie * this_ptr);
+void CZombie::process(CZombie * this_ptr, float delta_time);
 
 // Original: core_zombie.cpp_CZombie_FUN_005fb1f0
 // Address: 005fb1f0

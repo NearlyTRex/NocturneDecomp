@@ -23,7 +23,7 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
   CWeapon *in_stack_00000004;
   float in_stack_00000008;
   
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);
   fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
                     (&g_HeroActors[g_LocalHeroIndex]->inventory,0x41F00000);
   fVar1 = (0x41F00000 / fVar1) * in_stack_00000008 +

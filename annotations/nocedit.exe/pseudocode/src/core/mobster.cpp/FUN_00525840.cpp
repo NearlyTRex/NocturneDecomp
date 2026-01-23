@@ -653,13 +653,13 @@ switchD_0052677f_caseD_7:
                       ((in_stack_00000004->base_character).carry_hands[1].carry_actor,
                        g_CWeaponClassInfo.name_hash);
   if (pCVar12 != (CDemonActor *)0x0) {
-    (*pCVar12->vtable->process)(pCVar12);
+    (*pCVar12->vtable->process)(pCVar12,(float)in_stack_00000008);
   }
   pCVar12 = core_actor_cpp_castToClassHash_FUN_0040c790
                       ((in_stack_00000004->base_character).carry_hands[0].carry_actor,
                        g_CWeaponClassInfo.name_hash);
   if (pCVar12 != (CDemonActor *)0x0) {
-    (*pCVar12->vtable->process)(pCVar12);
+    (*pCVar12->vtable->process)(pCVar12,(float)in_stack_00000008);
   }
   core_charactr_cpp_CCharacter_FUN_00429820(&in_stack_00000004->base_character);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
@@ -669,6 +669,6 @@ switchD_0052677f_caseD_7:
   if (iVar7 == 0) {
     core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0();
   }
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character);
   return;
 }

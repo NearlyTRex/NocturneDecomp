@@ -61,4 +61,4 @@ undefined FUN_00443760();
 
 // Original: core_course.cpp_FUN_00443bc0
 // Address: 00443bc0
-undefined FUN_00443bc0();
+void FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2);

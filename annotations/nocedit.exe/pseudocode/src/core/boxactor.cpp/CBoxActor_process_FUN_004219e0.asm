@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boxactor.cpp_CBoxActor_process_FUN_004219e0()
+; __cdecl void core_boxactor.cpp_CBoxActor_process_FUN_004219e0(CBoxActor * this_ptr, float delta_time)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0xe8]:8  local_e8
 ; undefined1       Stack[-0xa0]:1  local_a0

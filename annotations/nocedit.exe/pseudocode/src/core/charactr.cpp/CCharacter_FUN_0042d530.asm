@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 at 0042dfe7
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dfe7
 ;   core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800 at 0042f82e
 ;   core_mimic.cpp_CMimic_setup2_FUN_0051f780 at 0051f8e4
 ;

@@ -315,9 +315,9 @@ void CCharacter(CCharacter * this_ptr);
 // Address: 0042df90
 void CCharacter(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+// Original: core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 // Address: 0042dfc0
-void CCharacter::ApplyGestureLookAt(CCharacter * this_ptr);
+void CCharacter::applyGestureLookAt(CCharacter * this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042e050
 // Address: 0042e050

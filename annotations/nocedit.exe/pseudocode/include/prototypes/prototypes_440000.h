@@ -13,6 +13,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonLight.h"
+#include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CRect.h"
@@ -92,7 +93,7 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse * this_
 void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse * this_ptr);
 undefined __unknown core_course_cpp_FUN_004436d0();
 undefined __unknown core_course_cpp_FUN_00443760();
-undefined __unknown core_course_cpp_FUN_00443bc0();
+void __cdecl core_course_cpp_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2);
 CDemonActorType * __cdecl core_cow_cpp_staticInit_FUN_004440d0(void);
 undefined __unknown core_cow_cpp_FUN_00444100();
 undefined __unknown core_cow_cpp_FUN_00444130();
@@ -152,7 +153,7 @@ CDemonActorType * __cdecl core_crossbow_cpp_staticInit_FUN_00448c00(void);
 undefined __unknown core_crossbow_cpp_FUN_00448c30();
 CDemonActorType * __cdecl core_crossbow_cpp_CCrossbow_getActorType_FUN_00448c60(CCrossbow * this_ptr);
 CCrossbow * __cdecl core_crossbow_cpp_FUN_00448c70(CCrossbow * this_ptr);
-void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr);
+void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr, float delta_time);
 int __cdecl core_crossbow_cpp_CCrossbow_renderOpaque_FUN_00448e00(CCrossbow * this_ptr);
 int __cdecl core_crossbow_cpp_CCrossbow_renderTransparent_FUN_00448e80(CCrossbow * this_ptr);
 int __cdecl core_crossbow_cpp_CCrossbow_FUN_00448eb0(CCrossbow * this_ptr);

@@ -39,13 +39,13 @@ CDemonActorType * CBackgroundActor::getActorType(CBackgroundActor * this_ptr);
 // Address: 004127b0
 CBackgroundActor * CBackgroundActor::ctor(CBackgroundActor * this_ptr);
 
-// Original: core_backgnd.cpp_FUN_00412810
+// Original: core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810
 // Address: 00412810
-undefined FUN_00412810();
+int CBackgroundActor::setup(CBackgroundActor * this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_process_FUN_00412850
 // Address: 00412850
-void CBackgroundActor::process(CBackgroundActor * this_ptr);
+void CBackgroundActor::process(CBackgroundActor * this_ptr, float delta_time);
 
 // Original: core_backgnd.cpp_CBackgroundActor_FUN_00412860
 // Address: 00412860

@@ -25,7 +25,7 @@ void CAnvil(CAnvil * this_ptr);
 
 // Original: core_anvil.cpp_CAnvil_process_FUN_00411d90
 // Address: 00411d90
-void CAnvil::process(CAnvil * this_ptr);
+void CAnvil::process(CAnvil * this_ptr, float delta_time);
 
 // Original: core_anvil.cpp_CAnvil_FUN_00411ec0
 // Address: 00411ec0

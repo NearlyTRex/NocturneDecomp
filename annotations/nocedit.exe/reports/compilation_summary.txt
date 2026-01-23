@@ -5,19 +5,19 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6504
-Successful: 2596 (39.9%)
-Failed: 3908
+Successful: 2610 (40.1%)
+Failed: 3894
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          12618
-  missing_member                  8563
-  undeclared_identifier           2248
-  incompatible_types              1693
-  syntax_error                     553
+  other                          12580
+  missing_member                  8560
+  undeclared_identifier           2151
+  incompatible_types              1684
+  syntax_error                     554
 
 ====================================================================================================
-CATEGORY: other (12618 errors)
+CATEGORY: other (12580 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_FUN_0054c7a0
@@ -45,10 +45,10 @@ CATEGORY: other (12618 errors)
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
     Line 19: cast from 'void*' to 'int' loses precision [-fpermissive]...
 
-  ... and 12588 more errors
+  ... and 12550 more errors
 
 ====================================================================================================
-CATEGORY: missing_member (8563 errors)
+CATEGORY: missing_member (8560 errors)
 ====================================================================================================
 
   cockpit_pkbitmap.cpp_FUN_0054b930
@@ -70,10 +70,10 @@ CATEGORY: missing_member (8563 errors)
   engine_pcx.c_writePCXScanline_FUN_00548c50
     Line 22: 'FILE' {aka 'struct FILE'} has no member named '_flag'; did you mean 'flag'?...
 
-  ... and 8533 more errors
+  ... and 8530 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (2248 errors)
+CATEGORY: undeclared_identifier (2151 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -121,10 +121,10 @@ CATEGORY: undeclared_identifier (2248 errors)
   support_trisock.cpp_connectSocket_FUN_005e1bd0
     Line 34: 'crt_wsock32_c_connect' was not declared in this scope...
 
-  ... and 2218 more errors
+  ... and 2121 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1693 errors)
+CATEGORY: incompatible_types (1684 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
@@ -172,10 +172,10 @@ CATEGORY: incompatible_types (1693 errors)
   support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80
     Line 23: invalid conversion from 'void*' to 'FILE*' [-fpermissive]...
 
-  ... and 1663 more errors
+  ... and 1654 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (553 errors)
+CATEGORY: syntax_error (554 errors)
 ====================================================================================================
 
   engine_dosio.c_findFile_FUN_00481760
@@ -199,7 +199,7 @@ CATEGORY: syntax_error (553 errors)
   core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
     Line 50: expected primary-expression before ')' token...
   core_dog.cpp_CZombieDog_process_FUN_0047f140
-    Line 161: expected primary-expression before ')' token...
+    Line 158: expected primary-expression before ')' token...
   core_drip.cpp_FUN_0048e2a0
     Line 117: expected primary-expression before ')' token...
   core_batcreat.cpp_CBatCreature_process_FUN_00415470
@@ -213,14 +213,14 @@ CATEGORY: syntax_error (553 errors)
   core_drone.cpp_FUN_0048ec70
     Line 123: expected primary-expression before ')' token...
 
-  ... and 523 more errors
+  ... and 524 more errors
 
 ====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.13
-Average suspects in failed compilations: 12.91
+Average suspects in successfully compiled functions: 1.14
+Average suspects in failed compilations: 12.80
 
-Functions that compile but have suspect patterns: 674
+Functions that compile but have suspect patterns: 680
 (These may have runtime issues even though syntax is valid)

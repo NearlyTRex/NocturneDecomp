@@ -2,13 +2,11 @@
 // Address: 005efde0
 // Address Range: [[005efde0, 005efee6] [005eff1e, 005f02e4] [005f0456, 005f0535] [005f05a4, 005f05ff] [005f0704, 005f0721] [005f07c7, 005f1095] [005f10fe, 005f1195]]
 // Convention: __cdecl
-// Signature: void core_werewolf.cpp_CWerewolf_process_FUN_005efde0(CWerewolf * this_ptr)
+// Signature: void core_werewolf.cpp_CWerewolf_process_FUN_005efde0(CWerewolf * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr)
+void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -28,7 +26,6 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   uint uVar13;
   int iVar14;
   double dVar15;
-  float in_stack_00000008;
   SCollisionInfo *in_stack_fffffce0;
   SDamageInfo local_2e4;
   SDamageInfo local_2a8;
@@ -105,14 +102,14 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
     return;
   }
   if ((this_ptr->type == 2) && (0.0 <= this_ptr->phase_timer)) {
-    this_ptr->phase_timer = this_ptr->phase_timer - in_stack_00000008;
+    this_ptr->phase_timer = this_ptr->phase_timer - delta_time;
   }
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
-  local_3c = in_stack_00000008 * (this_ptr->base_enemy).speed;
+  local_3c = delta_time * (this_ptr->base_enemy).speed;
   pCVar1 = &(this_ptr->base_enemy).base_character.model;
   while (0.0 < local_3c) {
     uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
@@ -125,7 +122,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_98,pCVar9);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
-      dVar15 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)_DAT_00657d7c));
+      dVar15 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)0.25));
       local_34 = (int)ROUND(dVar15);
       core_gore_cpp_FUN_004edbb0();
     }
@@ -137,16 +134,16 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
     }
   }
   fVar3 = (this_ptr->base_enemy).speed;
-  fVar5 = (float)_DAT_00657d4c;
+  fVar5 = (float)3.1415926535000001;
   iVar7 = this_ptr->type;
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
-       in_stack_00000008 * fVar5 * fVar3;
+       delta_time * fVar5 * fVar3;
   if (iVar7 == 2) {
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) *
-         (float)_DAT_00657d54;
+         (float)4;
   }
   pCVar1 = &(this_ptr->base_enemy).base_character.model;
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -244,8 +241,8 @@ LAB_005f094d:
         local_fc = *(float *)(iVar7 + 0x28) -
                    (this_ptr->base_enemy).base_character.base_actor.location.position.z;
         local_24 = SQRT(local_fc * local_fc + local_104 * local_104 + local_100 * local_100);
-        if (((this_ptr->base_enemy).guard_distance < local_24) || ((float)_DAT_00657d5c < local_24))
-        {
+        if (((this_ptr->base_enemy).guard_distance < local_24) ||
+           ((float)32 < local_24)) {
           (this_ptr->base_enemy).field6_0xbe38[4] = '\0';
           (this_ptr->base_enemy).field6_0xbe38[5] = '\0';
           (this_ptr->base_enemy).field6_0xbe38[6] = '\0';
@@ -311,7 +308,7 @@ LAB_005f0ae7:
             local_12c = *(float *)(iVar7 + 0x28) -
                         (this_ptr->base_enemy).base_character.base_actor.location.position.z;
             if (SQRT(local_12c * local_12c + local_134 * local_134 + local_130 * local_130) <
-                (float)_DAT_00657d64) {
+                (float)5) {
               iVar14 = this_ptr->phase + 1;
               this_ptr->phase = iVar14;
               if (3 < iVar14) {
@@ -374,7 +371,7 @@ LAB_005f0ae7:
               local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                    (local_170.y -
                                     (this_ptr->base_enemy).base_character.base_actor.orient.bank);
-              if (ABS(local_14) < (float)_DAT_00657d74) {
+              if (ABS(local_14) < (float)0.39269908168750001) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&pCVar1->motion_controller,8,1);
                 iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.85);
@@ -397,12 +394,12 @@ LAB_005f0ae7:
                     if (iVar7 == 1) {
                       (this_ptr->base_enemy).base_character.base_actor.orient.bank =
                            (this_ptr->base_enemy).base_character.base_actor.orient.bank +
-                           _DAT_00657d84;
+                           0.2617994f;
                     }
                     if (iVar7 == 2) {
                       (this_ptr->base_enemy).base_character.base_actor.orient.bank =
                            (this_ptr->base_enemy).base_character.base_actor.orient.bank +
-                           _DAT_00657d88;
+                           -0.2617994f;
                     }
                     break;
                   }
@@ -410,7 +407,7 @@ LAB_005f0ae7:
                 }
               }
             }
-            else if ((local_28 < 0x40400000 * _DAT_00657d6c) && (local_18 == 0xf)) {
+            else if ((local_28 < 0x40400000 * 2.0f) && (local_18 == 0xf)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar1->motion_controller,0,1);
             }
@@ -443,7 +440,7 @@ LAB_005f0ae7:
             }
           }
         }
-        fVar3 = *(float *)(this_ptr->field6_0xbed8 + 4) - in_stack_00000008;
+        fVar3 = *(float *)(this_ptr->field6_0xbed8 + 4) - delta_time;
         *(float *)(this_ptr->field6_0xbed8 + 4) = fVar3;
         if (fVar3 < 0.0) {
           core_werewolf_cpp_FUN_005f11e0();
@@ -578,7 +575,7 @@ LAB_005f0481:
                      (this_ptr->base_enemy).base_character.base_actor.location.position.z;
           local_2c = SQRT(local_a8 * local_a8 + local_b0 * local_b0 + local_ac * local_ac);
           if (((this_ptr->base_enemy).guard_distance < local_2c) ||
-             ((float)_DAT_00657d5c < local_2c)) {
+             ((float)32 < local_2c)) {
             (this_ptr->base_enemy).field6_0xbe38[4] = '\0';
             (this_ptr->base_enemy).field6_0xbe38[5] = '\0';
             (this_ptr->base_enemy).field6_0xbe38[6] = '\0';
@@ -669,14 +666,14 @@ LAB_005f0010:
   if (this_ptr->type == 0) {
     local_20 = 0.75;
   }
-  dVar15 = _DAT_00657d94;
+  dVar15 = 3;
   if ((local_18 != 0xe) && (local_18 != 0xf)) {
-    dVar15 = _DAT_00657d8c;
+    dVar15 = 2;
   }
   *(float *)((this_ptr->base_enemy).base_character.cloth_data + 0x348) = local_20 * (float)dVar15;
   if (0.0 < *(float *)(this_ptr->base_enemy).field6_0xbe38) {
     *(float *)(this_ptr->base_enemy).field6_0xbe38 =
-         *(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;
+         *(float *)(this_ptr->base_enemy).field6_0xbe38 - delta_time;
   }
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                       (&(this_ptr->base_enemy).base_character.model.motion_controller);
@@ -692,14 +689,11 @@ LAB_005f0010:
     }
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) =
          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) -
-         in_stack_00000008 * (float)_DAT_00657d5c;
-    local_ec = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x1c) *
-               in_stack_00000008;
-    local_e8 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) *
-               in_stack_00000008;
+         delta_time * (float)32;
+    local_ec = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x1c) * delta_time;
+    local_e8 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) * delta_time;
     pCVar9 = &(this_ptr->base_enemy).base_character.model.accumulated_root_motion;
-    local_e4 = in_stack_00000008 *
-               *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x24);
+    local_e4 = delta_time * *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x24);
     pcVar2 = (this_ptr->base_enemy).base_character.field2_0x240c + 0x10;
     local_80 = local_ec + pCVar9->x;
     local_7c = local_e8 + (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
@@ -724,9 +718,9 @@ LAB_005f0010:
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base_enemy).base_character.model);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   core_werewolf_cpp_FUN_005f1e40();
   this_ptr->field11_0xbf00 =
-       (int)(in_stack_00000008 * (float)_DAT_00657d9c + (float)this_ptr->field11_0xbf00);
+       (int)(delta_time * (float)0.5 + (float)this_ptr->field11_0xbf00);
   return;
 }

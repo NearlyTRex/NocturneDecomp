@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_zombie.cpp_CZombie_PickupSomethingPossibly(CZombie* param_1,
    uint param_2) */
 
@@ -115,9 +114,9 @@ uint core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
           fStack_70 = (pCVar2->location).position.z - unaff_ESI[2];
           fStack_74 = fStack_74 * fStack_74;
           fVar12 = SQRT(fStack_70 * fStack_70 + CStack_80.z * CStack_80.z + fStack_74 * fStack_74);
-          if (((float)_DAT_00658905 <= fVar12) &&
+          if (((float)5 <= fVar12) &&
              (fVar12 <= *(float *)(in_stack_00000004[1].base_actor.create_event + 0x20) *
-                        _DAT_00658915)) {
+                        15.0f)) {
             *(float *)((int)afStack_124 + iVar8) = local_14;
             iVar11 = iVar8 + 4;
             *(CDemonActor **)((int)auStack_14c + iVar8) = pCVar2;
@@ -150,7 +149,7 @@ uint core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
   iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x8c))();
   if (iVar8 != 0) {
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,in_stack_00000004,
+              (g_CConsolePtr,"%s can't pick up %s, sombody else beat me to it!\n",in_stack_00000004,
                *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x30));
     pCVar6 = in_stack_00000004 + 1;
     (pCVar6->base_actor).create_event[0x30] = '\0';
@@ -168,7 +167,7 @@ uint core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
   iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x30);
   fVar12 = (pCVar1->position).x - *(float *)(iVar8 + 0x20);
   fVar5 = (in_stack_00000004->base_actor).location.position.z - *(float *)(iVar8 + 0x28);
-  fVar12 = (float)_DAT_00658905 - SQRT(fVar5 * fVar5 + fVar12 * fVar12) * (float)_DAT_006588fd;
+  fVar12 = (float)5 - SQRT(fVar5 * fVar5 + fVar12 * fVar12) * (float)0.33333333333333298;
   if (fVar12 < 1.0) {
     fVar12 = 1.0;
   }
@@ -189,7 +188,7 @@ LAB_005fb750:
         uStack_2c = 0x3f000000;
         core_bodypart_cpp_FUN_0041b540();
         core_bodypart_cpp_FUN_0041b4e0();
-        CStack_80.z = CStack_e8.max.y + (float)_DAT_0065890d;
+        CStack_80.z = CStack_e8.max.y + (float)0.40000000000000002;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar2,&CStack_44,&CStack_80);
         if (&CStack_a4 != &CStack_44) {
           CStack_a4.x = CStack_44.x;
@@ -217,7 +216,7 @@ LAB_005fba18:
       uStack_30 = 0x3f000000;
       core_bodypart_cpp_FUN_0041b540();
       core_bodypart_cpp_FUN_0041b4e0();
-      CStack_bc.z = fStack_f0 + (float)_DAT_0065890d;
+      CStack_bc.z = fStack_f0 + (float)0.40000000000000002;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar2,&CStack_50,&CStack_bc);
       if (&CStack_a4 != &CStack_50) {
         CStack_a4.x = CStack_50.x;

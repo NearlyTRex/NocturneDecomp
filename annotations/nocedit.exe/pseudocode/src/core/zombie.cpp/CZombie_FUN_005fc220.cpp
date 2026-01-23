@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_zombie.cpp_CZombie_FUN_005fc220(CZombie* param_1, uint
    param_2) */
 
@@ -92,7 +91,7 @@ switchD_005fc256_default:
           [(int)in_stack_00000004[1].model.motion_controller.tween_progress] == 0) {
         in_stack_00000008[1] = 9999.0;
       }
-      in_stack_00000008[2] = in_stack_00000008[2] * (float)_DAT_006589c5;
+      in_stack_00000008[2] = in_stack_00000008[2] * (float)7;
       if (in_stack_00000004[1].model.motion_controller.tween_type < 0) {
         in_stack_00000008[1] = 999.0;
       }
@@ -100,12 +99,12 @@ switchD_005fc256_default:
   }
   fVar1 = *in_stack_00000008;
   if (fVar1 == in_stack_00000004[1].model.motion_controller.tween_progress) {
-    in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589d5;
+    in_stack_00000008[1] = in_stack_00000008[1] * (float)2.5;
     return;
   }
   if ((fVar1 != (float)in_stack_00000004[1].model.motion_controller.tween_type) &&
      (fVar1 != in_stack_00000004[1].model.motion_controller.tween_speed)) {
-    in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589cd;
+    in_stack_00000008[1] = in_stack_00000008[1] * (float)0.5;
     return;
   }
   in_stack_00000008[1] = in_stack_00000008[1];

@@ -29,7 +29,7 @@ void CMoloch::setup(CMoloch * this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_process_FUN_00528d20
 // Address: 00528d20
-void CMoloch::process(CMoloch * this_ptr);
+void CMoloch::process(CMoloch * this_ptr, float delta_time);
 
 // Original: core_moloch.cpp_FUN_005293b0
 // Address: 005293b0

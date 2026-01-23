@@ -29,7 +29,7 @@ void CBaron(CBaron * this_ptr);
 
 // Original: core_baron.cpp_CBaron_process_FUN_00412e80
 // Address: 00412e80
-void CBaron::process(CBaron * this_ptr);
+void CBaron::process(CBaron * this_ptr, float delta_time);
 
 // Original: core_baron.cpp_FUN_00413470
 // Address: 00413470
@@ -89,7 +89,7 @@ void CBaronWeapon(CBaronWeapon * this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_process_FUN_00413dc0
 // Address: 00413dc0
-void CBaronWeapon::process(CBaronWeapon * this_ptr);
+void CBaronWeapon::process(CBaronWeapon * this_ptr, float delta_time);
 
 // Original: core_baron.cpp_FUN_CBaronWeapon_00413de0
 // Address: 00413de0

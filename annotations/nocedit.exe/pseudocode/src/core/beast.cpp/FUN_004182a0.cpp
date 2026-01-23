@@ -32,7 +32,7 @@ void core_beast_cpp_FUN_004182a0(void)
     core_charactr_cpp_CCharacter_FUN_00429820(in_stack_00000004);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
               (&in_stack_00000004->model);
-    core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
+    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
   }
   return;
 }

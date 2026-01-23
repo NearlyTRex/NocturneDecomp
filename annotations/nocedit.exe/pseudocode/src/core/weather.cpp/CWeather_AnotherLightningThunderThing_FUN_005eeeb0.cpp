@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_weather.cpp_CWeather_AnotherLightningThunderThing(CWeather* param_1,
    uint param_2, uint param_3) */
 
@@ -46,7 +45,7 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0(void)
   (in_stack_00000004->location).area_id = (int)local_14;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(&g_CDemonRaytraceInstance,&local_30);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(&g_CDemonRaytraceInstance,&local_54);
-  local_20 = (float)_DAT_00657bf4;
+  local_20 = (float)0.5;
   local_60 = (local_30.x + local_54.x) * local_20;
   local_58 = (local_30.z + local_54.z) * local_20;
   local_20 = (local_54.x - local_30.x) * local_20;
@@ -59,7 +58,7 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0(void)
   if (local_18 < local_24) {
     local_18 = local_24;
   }
-  local_1c = (local_54.z - local_30.z) * (float)_DAT_00657bf4;
+  local_1c = (local_54.z - local_30.z) * (float)0.5;
   if (local_18 < local_1c) {
     local_18 = local_1c;
   }
@@ -83,12 +82,12 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0(void)
   this_ptr = g_CEventListPtr;
   local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
   fVar2 = (float)g_CDemonCameraInstance.corona_blend_factor;
-  fVar1 = (float)_DAT_00657bfc;
+  fVar1 = (float)1.5259021896696401e-05;
   (in_stack_00000004->orient).pitch = fVar2 * fVar1;
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                    (this_ptr,"BnoLightningFlash" + 1);
+                    (this_ptr,"noLightningFlash");
   if (iVar4 == 0) {
-    local_98 = fVar2 * fVar1 + _DAT_00657c04;
+    local_98 = fVar2 * fVar1 + 0.65f;
     if (1.0 < local_98) {
       local_98 = 1.0;
     }

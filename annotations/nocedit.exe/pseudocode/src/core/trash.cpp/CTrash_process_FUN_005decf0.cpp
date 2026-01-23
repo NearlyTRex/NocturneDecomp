@@ -2,11 +2,11 @@
 // Address: 005decf0
 // Address Range: [[005decf0, 005ded29] [005df4fe, 005df533]]
 // Convention: __cdecl
-// Signature: void core_trash.cpp_CTrash_process_FUN_005decf0(CTrash * this_ptr)
+// Signature: void core_trash.cpp_CTrash_process_FUN_005decf0(CTrash * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
+void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float delta_time)
 
 {
   CLocation *position;
@@ -21,7 +21,6 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   CMatrix3x4f *pCVar9;
   CMatrix3x3f *pCVar10;
   byte bVar11;
-  float in_stack_00000008;
   CMatrix3x4f local_1a8;
   CMatrix3x4f local_178;
   CMatrix3x3f local_148;
@@ -112,7 +111,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
     pCVar4->field19_0x14f0a0[0xbbca] = '\0';
     pCVar4->field19_0x14f0a0[0xbbcb] = '\0';
   }
-  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x34) - in_stack_00000008;
+  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x34) - delta_time;
   *(float *)(this_ptr->field4_0x2e0 + 0x34) = fVar6;
   pCVar4 = g_CDemonSetPtr;
   if (fVar6 <= 0.0) {
@@ -188,9 +187,9 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   *(float *)pcVar1 = *(float *)pcVar1 + local_a0;
   *(float *)(this_ptr->field4_0x2e0 + 0x18) = *(float *)(this_ptr->field4_0x2e0 + 0x18) + local_9c;
   *(float *)(this_ptr->field4_0x2e0 + 0x1c) = *(float *)(this_ptr->field4_0x2e0 + 0x1c) + local_98;
-  local_7c = local_dc * in_stack_00000008;
-  local_78 = local_d8 * in_stack_00000008;
-  local_74 = local_d4 * in_stack_00000008;
+  local_7c = local_dc * delta_time;
+  local_78 = local_d8 * delta_time;
+  local_74 = local_d4 * delta_time;
   *(float *)pcVar8 = *(float *)pcVar8 + local_7c;
   *(float *)(this_ptr->field4_0x2e0 + 0xc) = *(float *)(this_ptr->field4_0x2e0 + 0xc) + local_78;
   *(float *)(this_ptr->field4_0x2e0 + 0x10) = *(float *)(this_ptr->field4_0x2e0 + 0x10) + local_74;
@@ -204,12 +203,12 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
     *(float *)(this_ptr->field4_0x2e0 + 0x18) = *(float *)(this_ptr->field4_0x2e0 + 0x18) * fVar6;
     *(float *)(this_ptr->field4_0x2e0 + 0x1c) = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * fVar6;
   }
-  local_58 = *(float *)(this_ptr->field4_0x2e0 + 8) * in_stack_00000008;
-  local_54 = *(float *)(this_ptr->field4_0x2e0 + 0xc) * in_stack_00000008;
-  local_50 = *(float *)(this_ptr->field4_0x2e0 + 0x10) * in_stack_00000008;
-  local_34.x = *(float *)(this_ptr->field4_0x2e0 + 0x14) * in_stack_00000008;
-  local_34.y = *(float *)(this_ptr->field4_0x2e0 + 0x18) * in_stack_00000008;
-  local_34.z = in_stack_00000008 * *(float *)(this_ptr->field4_0x2e0 + 0x1c);
+  local_58 = *(float *)(this_ptr->field4_0x2e0 + 8) * delta_time;
+  local_54 = *(float *)(this_ptr->field4_0x2e0 + 0xc) * delta_time;
+  local_50 = *(float *)(this_ptr->field4_0x2e0 + 0x10) * delta_time;
+  local_34.x = *(float *)(this_ptr->field4_0x2e0 + 0x14) * delta_time;
+  local_34.y = *(float *)(this_ptr->field4_0x2e0 + 0x18) * delta_time;
+  local_34.z = delta_time * *(float *)(this_ptr->field4_0x2e0 + 0x1c);
   local_14 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
                        (g_CDemonSetPtr,(this_ptr->base_actor).location.position.x,
                         (this_ptr->base_actor).location.position.z,local_58,local_50,
@@ -253,7 +252,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
 LAB_005df3d0:
   local_64 = (this_ptr->base_actor).location.position.x - local_c4;
   local_60 = (this_ptr->base_actor).location.position.y - local_c0;
-  local_b0 = 1.0 / in_stack_00000008;
+  local_b0 = 1.0 / delta_time;
   local_b8 = local_64 * local_b0;
   local_5c = (this_ptr->base_actor).location.position.z - local_bc;
   local_b4 = local_60 * local_b0;

@@ -39,7 +39,7 @@ section .text
     PUSH dword ptr [EBP + 0x14]         ; 0049cfbe
     PUSH EBX                            ; 0049cfc1
     CALL core_weapon.cpp_CWeapon_process_FUN_005ee110 ; 0049cfc2
-        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
+        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr, float delta_time)
     FLD float ptr [EBX + 0x578]         ; 0049cfc7
     FLDZ                                ; 0049cfcd
     ADD ESP,0x8                         ; 0049cfcf

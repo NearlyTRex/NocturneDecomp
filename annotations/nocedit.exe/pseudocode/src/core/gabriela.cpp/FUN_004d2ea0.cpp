@@ -670,7 +670,7 @@ LAB_004d344b:
   }
   core_gabriela_cpp_FUN_004d4d80();
   core_gabriela_cpp_FUN_004d6d40();
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
   local_14 = (CDemonActor_vtable *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                        (&(in_stack_00000004->model).motion_controller,0xd);

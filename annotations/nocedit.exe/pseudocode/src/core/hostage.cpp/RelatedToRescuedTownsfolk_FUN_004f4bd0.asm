@@ -100,7 +100,7 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_00429820
@@ -599,8 +599,8 @@ section .text
     ADD ESP,0xc                         ; 004f51c0
     PUSH dword ptr [EBP + 0x18]         ; 004f51c3
     PUSH EBX                            ; 004f51c6
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 004f51c7
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 004f51c7
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     FLD float ptr [EBX + 0x1fae0]       ; 004f51cc
     FLD1                                ; 004f51d2
     ADD ESP,0x8                         ; 004f51d4

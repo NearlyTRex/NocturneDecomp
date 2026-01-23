@@ -4,79 +4,61 @@
       {
         "category": "missing_member",
         "column": 33,
-        "line": 30,
+        "line": 28,
         "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
       },
       {
         "category": "missing_member",
         "column": 73,
-        "line": 40,
+        "line": 38,
         "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
       },
       {
         "category": "missing_member",
         "column": 31,
-        "line": 43,
+        "line": 41,
         "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
       },
       {
         "category": "missing_member",
         "column": 41,
-        "line": 44,
+        "line": 42,
         "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 54,
-        "message": "'_DAT_00658a35' was not declared in this scope; did you mean 'DAT_00678a74'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 78,
-        "line": 54,
-        "message": "'_DAT_00658a2d' was not declared in this scope; did you mean 'DAT_0065ea2c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 55,
-        "message": "'_DAT_00658a25' was not declared in this scope; did you mean 'DAT_0065ea2c'?"
       },
       {
         "category": "missing_member",
         "column": 31,
-        "line": 68,
+        "line": 66,
         "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
       },
       {
         "category": "missing_member",
         "column": 41,
-        "line": 69,
+        "line": 67,
         "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
       },
       {
         "category": "missing_member",
         "column": 31,
+        "line": 74,
+        "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
+      },
+      {
+        "category": "missing_member",
+        "column": 70,
         "line": 76,
         "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
       },
       {
         "category": "missing_member",
-        "column": 70,
-        "line": 78,
-        "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
-      },
-      {
-        "category": "missing_member",
         "column": 31,
-        "line": 90,
+        "line": 88,
         "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
       },
       {
         "category": "missing_member",
         "column": 70,
-        "line": 92,
+        "line": 90,
         "message": "'CZombie' {aka 'struct CZombie'} has no member named 'field4_0xbf48'"
       }
     ],
@@ -92,17 +74,16 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 196,
+    "complexity_score": 180,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 96,
-    "suspect_count": 9,
+    "pseudocode_lines": 95,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param",
-      "warning_overlapping_globals"
+      "stack_param"
     ],
-    "total_lines": 277
+    "total_lines": 276
   },
   "cross_references": [],
   "function": {
@@ -134,21 +115,21 @@
     },
     {
       "addr": "00658a25",
-      "name": "DAT_00658a25",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00658a25",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "00658a2d",
-      "name": "DAT_00658a2d",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00658a2d",
+      "type": "double",
+      "value": "0.700000000000000"
     },
     {
       "addr": "00658a35",
-      "name": "DAT_00658a35",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00658a35",
+      "type": "double",
+      "value": "0.300000000000000"
     }
   ],
   "param_estimates": {
@@ -311,64 +292,57 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 22,
       "match": "in_stack_00000008",
       "text": "if (&local_30 != in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->x = local_30.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->y = local_30.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008->z = local_30.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_00000008",
       "text": "pCVar1 = in_stack_00000008 + iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 70,
       "match": "in_stack_00000008",
       "text": "pCVar2 = in_stack_00000008 + iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 84,
       "match": "in_stack_00000008",
       "text": "pCVar2 = in_stack_00000008 + iVar3;",
       "type": "stack_param"

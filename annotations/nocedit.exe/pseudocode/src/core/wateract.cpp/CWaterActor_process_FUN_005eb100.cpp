@@ -2,11 +2,12 @@
 // Address: 005eb100
 // Address Range: [[005eb100, 005eb276]]
 // Convention: __cdecl
-// Signature: void core_wateract.cpp_CWaterActor_process_FUN_005eb100(CWaterActor * this_ptr)
+// Signature: void core_wateract.cpp_CWaterActor_process_FUN_005eb100(CWaterActor * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr)
+void __cdecl
+core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr,float delta_time)
 
 {
   float fVar1;
@@ -14,11 +15,10 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   int iVar2;
   int iVar3;
   double dVar4;
-  float in_stack_00000008;
   
   iVar2 = *(int *)(this_ptr->field21_0x298 + 0x2af94);
   dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)(in_stack_00000008 * (float)65536 * (float)8));
+                    ((double)(delta_time * (float)65536 * (float)8));
   iVar2 = iVar2 + (int)ROUND(dVar4);
   *(int *)(this_ptr->field21_0x298 + 0x2af94) = iVar2;
   if (0x10000 < iVar2) {

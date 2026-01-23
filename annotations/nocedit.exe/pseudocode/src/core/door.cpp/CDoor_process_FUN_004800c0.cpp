@@ -2,11 +2,11 @@
 // Address: 004800c0
 // Address Range: [[004800c0, 004807c0]]
 // Convention: __cdecl
-// Signature: void core_door.cpp_CDoor_process_FUN_004800c0(CDoor * this_ptr)
+// Signature: void core_door.cpp_CDoor_process_FUN_004800c0(CDoor * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
+void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delta_time)
 
 {
   char cVar1;
@@ -15,7 +15,6 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
   int iVar4;
   CVector3f *pCVar5;
   int iVar6;
-  float in_stack_00000008;
   byte auStack_c8 [40];
   float fStack_a0;
   float fStack_9c;
@@ -70,7 +69,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
     this_ptr->param = 0.0;
     break;
   case 1:
-    this_ptr->param = (in_stack_00000008 * this_ptr->max_param) / this_ptr->open_speed + local_50;
+    this_ptr->param = (delta_time * this_ptr->max_param) / this_ptr->open_speed + local_50;
     if (this_ptr->max_param <= 0.0) {
       if (this_ptr->param < this_ptr->max_param) {
         this_ptr->door_state = 2;
@@ -99,7 +98,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
     this_ptr->param = this_ptr->max_param;
     break;
   case 3:
-    this_ptr->param = local_50 - (in_stack_00000008 * this_ptr->max_param) / this_ptr->close_speed;
+    this_ptr->param = local_50 - (delta_time * this_ptr->max_param) / this_ptr->close_speed;
     if (this_ptr->max_param <= 0.0) {
       if (0.0 < this_ptr->param) {
         this_ptr->door_state = 0;

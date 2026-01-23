@@ -308,6 +308,7 @@ extern char g_AsteriskChar;
 
 // int
 extern int g_CramInvalidMarker;
+extern int INT_0065ca28;
 
 // undefined1
 extern undefined1 DAT_006597a1;

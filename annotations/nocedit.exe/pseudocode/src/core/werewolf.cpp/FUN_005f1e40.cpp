@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_werewolf.cpp_FUN_005f1e40(uint param_1) */
 
 void core_werewolf_cpp_FUN_005f1e40(void)
@@ -45,7 +44,7 @@ void core_werewolf_cpp_FUN_005f1e40(void)
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               (&in_stack_00000004->base_actor,&local_68,
                (CVector3f *)(*(int *)(in_stack_00000004[1].base_actor.create_event + 0x4c) + 0x20));
-    if (local_68.y < (float)_DAT_00657e84) {
+    if (local_68.y < (float)2) {
       local_44 = local_68.x;
       local_3c = local_68.z;
       local_40 = 0;

@@ -10,9 +10,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_werewolf_die_wav_00657e2f
 ;   TerminatedCString s_werewolf_hurt_wav_00657e41
-;   undefined4 DAT_00657e54
-;   undefined4 DAT_00657e5c
-;   undefined4 DAT_00657e64
+;   double DOUBLE_00657e54 = 2
+;   double DOUBLE_00657e5c = 5
+;   double DOUBLE_00657e64 = -5
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CFireEffect g_CFireEffectInstance
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 005f1b8b (CONDITIONAL_JUMP)  ; LAB_005f1b8b
     FLD float ptr [ESI + 0x20]          ; 005f1b6f
     FST double ptr [ESP]                ; 005f1b72
-    FCOMP double ptr [0x00657e5c]       ; 005f1b75 | DAT_00657e5c
+    FCOMP double ptr [0x00657e5c]       ; 005f1b75 | DOUBLE_00657e5c
     FNSTSW AX                           ; 005f1b7b
     SAHF                                ; 005f1b7d
     JBE 0x005f1c5c                      ; 005f1b7e
@@ -160,7 +160,7 @@ section .text
         ;   Label: LAB_005f1c07
     LEA EAX,[EDI + 0x1c]                ; 005f1c0a
     FLD ST0                             ; 005f1c0d
-    FMUL double ptr [0x00657e54]        ; 005f1c0f | DAT_00657e54
+    FMUL double ptr [0x00657e54]        ; 005f1c0f | DOUBLE_00657e54
     PUSH EAX                            ; 005f1c15
     LEA EAX,[ESP + 0xc]                 ; 005f1c16
     XOR EBX,EBX                         ; 005f1c1a
@@ -192,7 +192,7 @@ section .text
         ;   XREF to: 005f1b00 (UNCONDITIONAL_JUMP)  ; LAB_005f1b00
     FLD double ptr [ESP]                ; 005f1c5c
         ;   Label: LAB_005f1c5c
-    FCOMP double ptr [0x00657e64]       ; 005f1c5f | DAT_00657e64
+    FCOMP double ptr [0x00657e64]       ; 005f1c5f | DOUBLE_00657e64
     FNSTSW AX                           ; 005f1c65
     SAHF                                ; 005f1c67
     JNC 0x005f1b8b                      ; 005f1c68

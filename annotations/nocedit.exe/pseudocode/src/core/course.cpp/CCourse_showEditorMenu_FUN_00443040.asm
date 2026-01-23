@@ -361,7 +361,7 @@ section .text
     PUSH EAX                            ; 00443330
     PUSH EBP                            ; 00443331
     CALL core_course.cpp_FUN_00443bc0   ; 00443332
-        ;   XREF to: 00443bc0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00443bc0()
+        ;   XREF to: 00443bc0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2)
     JMP 0x004431ba                      ; 00443337
         ;   XREF to: 004431ba (UNCONDITIONAL_JUMP)  ; LAB_004431ba
     MOV EAX,dword ptr [EBP]             ; 0044333c

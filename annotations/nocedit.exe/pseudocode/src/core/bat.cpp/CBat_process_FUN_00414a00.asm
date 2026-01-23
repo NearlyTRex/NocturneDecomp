@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_bat.cpp_CBat_process_FUN_00414a00(CBat * this_ptr)
+; __cdecl void core_bat.cpp_CBat_process_FUN_00414a00(CBat * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CBat *           Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58
 ; undefined8       Stack[-0x50]:8  local_50

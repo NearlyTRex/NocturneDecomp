@@ -10,14 +10,14 @@
       {
         "category": "missing_member",
         "column": 27,
-        "line": 27,
+        "line": 28,
         "message": "'CDemonLight' {aka 'struct CDemonLight'} has no member named 'field17_0x1cbc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 28,
-        "message": "'stack0x00000000' was not declared in this scope; did you mean 'in_stack_00000004'?"
+        "line": 29,
+        "message": "'stack0x00000000' was not declared in this scope; did you mean 'in_stack_0000000c'?"
       }
     ],
     "success": false,
@@ -31,25 +31,25 @@
       {
         "category": "other",
         "column": 10,
-        "line": 23,
+        "line": 24,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 164,
+    "complexity_score": 185,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 39,
-    "suspect_count": 11,
+    "pseudocode_lines": 40,
+    "suspect_count": 13,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 116
+    "total_lines": 117
   },
   "cross_references": [],
   "function": {
@@ -233,65 +233,79 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 4) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "(*(in_stack_00000004->base_actor).vtable[1].renderOpaque)(&in_stack_00000004->base_actor);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "(*(in_stack_00000004->base_actor).vtable[1].renderOpaque)(&in_stack_00000004->base_actor);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->base_actor,&CStack_1c,input_local_point);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 21,
+      "line": 22,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 29,
       "match": "in_stack_00000004",
       "text": "(CVector3f *)&(in_stack_00000004->base_actor).orient);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "pCVar1 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 42,
       "match": "in_stack_00000004",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_0000000c",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_0000000c);",
       "type": "stack_param"
     }
   ],

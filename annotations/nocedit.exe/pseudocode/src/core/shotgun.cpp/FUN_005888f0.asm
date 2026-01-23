@@ -7,7 +7,7 @@
 ; undefined1       Stack[-0x44]:1  local_44
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00649b6f
+;   double DOUBLE_00649b6f = 3.14159265350000
 ;   double DOUBLE_00649b77 = 0.00555555555555555
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
@@ -144,7 +144,7 @@ section .text
     FSTP float ptr [ESP + 0x30]         ; 00588a29
     FLD float ptr [EBX + 0x578]         ; 00588a2d
         ;   Label: LAB_00588a2d
-    FMUL double ptr [0x00649b6f]        ; 00588a33 | DAT_00649b6f
+    FMUL double ptr [0x00649b6f]        ; 00588a33 | DOUBLE_00649b6f
     FMUL double ptr [0x00649b77]        ; 00588a39 | DOUBLE_00649b77
     SUB ESP,0x4                         ; 00588a3f
     FSTP float ptr [ESP]                ; 00588a42

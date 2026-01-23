@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_anvil.cpp_CAnvil_process_FUN_00411d90(CAnvil * this_ptr)
+; __cdecl void core_anvil.cpp_CAnvil_process_FUN_00411d90(CAnvil * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CAnvil *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0x48]:1  local_48
 ; undefined4       Stack[-0x44]:4  local_44

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_werewolf.cpp_FUN_005f1ac0(uint param_1, uint
    param_2) */
 
@@ -33,7 +32,7 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
   }
   if (*(int *)(in_stack_00000008 + 0x28) == 3) {
     iVar5 = 0;
-    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)_DAT_00657e54;
+    *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (in_stack_00000004,local_28,(CVector3f *)(in_stack_00000008 + 0x1c));
     do {
@@ -55,8 +54,8 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
       if ((in_stack_00000004[0x8d].field25_0x144 == 0) &&
          (g_CDemonSetPtr->last_switch_area_invalid != 0)) {
         fVar1 = (in_stack_00000004->location).position.x;
-        if (fVar1 <= (float)_DAT_00657e5c) {
-          if ((double)fVar1 < _DAT_00657e64) {
+        if (fVar1 <= (float)5) {
+          if ((double)fVar1 < -5) {
             (in_stack_00000004->orient).bank = 1.5707964;
           }
         }

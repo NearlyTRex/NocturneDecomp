@@ -1356,6 +1356,22 @@
             ]
           },
           "type":"CDemonActor*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -2726,6 +2742,22 @@
             ]
           },
           "type":"CAmmoBox*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -3513,6 +3545,22 @@
             ]
           },
           "type":"CBaron*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -3890,6 +3938,22 @@
             ]
           },
           "type":"CBat*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -14413,49 +14477,81 @@
           "name":"local_48",
           "storage":{
             "offset":-72,
-            "size":1,
+            "size":48,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x48]",
                 "offset":-72,
-                "size":1
+                "size":48
               }
             ]
           },
-          "type":"undefined1"
+          "type":"SRenderVertex"
         },
         {
           "name":"local_78",
           "storage":{
             "offset":-120,
-            "size":1,
+            "size":48,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x78]",
                 "offset":-120,
-                "size":1
+                "size":48
               }
             ]
           },
-          "type":"undefined1"
+          "type":"SRenderVertex"
         },
         {
           "name":"local_a8",
           "storage":{
             "offset":-168,
-            "size":1,
+            "size":48,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xa8]",
                 "offset":-168,
-                "size":1
+                "size":48
               }
             ]
           },
-          "type":"undefined1"
+          "type":"SRenderVertex"
+        },
+        {
+          "name":"local_d8",
+          "storage":{
+            "offset":-216,
+            "size":48,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0xd8]",
+                "offset":-216,
+                "size":48
+              }
+            ]
+          },
+          "type":"SRenderVertex"
+        },
+        {
+          "name":"local_108",
+          "storage":{
+            "offset":-264,
+            "size":48,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x108]",
+                "offset":-264,
+                "size":48
+              }
+            ]
+          },
+          "type":"SRenderVertex"
         }
       ],
       "params":[
@@ -26893,14 +26989,45 @@
         "start":"004be800"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_filmreel.cpp_FUN_004be800()",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_filmreel.cpp_process_FUN_004be800",
-    "ret":"undefined1",
+    "name":"core_filmreel.cpp_CFilmReel_process_FUN_004be800",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CFilmReel*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -41001,14 +41128,29 @@
         "start":"00502d00"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_ladder.cpp_FUN_00502d00(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_ladder.cpp_FUN_00502d00",
-    "ret":"undefined1",
+    "name":"core_ladder.cpp_CLadder_FUN_00502d00",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLadder*"
+        }
+      ]
     }
   },
   {
@@ -42679,7 +42821,6 @@
         "start":"0050b180"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_manpuz.cpp_FUN_0050b180(undefined4 param_1)",
     "importable":true,
     "name":"core_manpuz.cpp_FUN_0050b180",
     "ret":"undefined1",
@@ -71891,6 +72032,22 @@
             ]
           },
           "type":"CVehicle*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -72142,6 +72299,22 @@
             ]
           },
           "type":"CWaterActor*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }

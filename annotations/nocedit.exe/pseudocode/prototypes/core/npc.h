@@ -29,7 +29,7 @@ void CNPC(CNPC * this_ptr);
 
 // Original: core_npc.cpp_CNPC_process_FUN_005448b0
 // Address: 005448b0
-void CNPC::process(CNPC * this_ptr);
+void CNPC::process(CNPC * this_ptr, float delta_time);
 
 // Original: core_npc.cpp_CNPC_FUN_00544b70
 // Address: 00544b70

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_tvbat.cpp_CTVBat_process_FUN_005e4210(CTVBat * this_ptr)
+; __cdecl void core_tvbat.cpp_CTVBat_process_FUN_005e4210(CTVBat * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x17c]:4  local_17c
 ; undefined8       Stack[-0x178]:8  local_178

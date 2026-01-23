@@ -2,11 +2,11 @@
 // Address: 005e7e80
 // Address Range: [[005e7e80, 005e86cc]]
 // Convention: __cdecl
-// Signature: void core_vehicle.cpp_CVehicle_process_FUN_005e7e80(CVehicle * this_ptr)
+// Signature: void core_vehicle.cpp_CVehicle_process_FUN_005e7e80(CVehicle * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
+void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,float delta_time)
 
 {
   COrientation *pCVar1;
@@ -25,7 +25,6 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   CDemonActor *pCVar11;
   int iVar12;
   int iVar13;
-  float in_stack_00000008;
   char *model_name;
   float fVar14;
   byte auStack_f4 [84];
@@ -52,7 +51,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   local_14 = ((CCourse *)(this_ptr->field3_0x93c + 0x6e4))->len;
   local_28 = (this_ptr->cur_time / this_ptr->total_time) * (float)local_14;
   core_course_cpp_CCourse_FUN_00442710((CCourse *)(this_ptr->field3_0x93c + 0x6e4));
-  fVar14 = this_ptr->cur_time + in_stack_00000008;
+  fVar14 = this_ptr->cur_time + delta_time;
   this_ptr->cur_time = fVar14;
   if (this_ptr->total_time < fVar14) {
     this_ptr->cur_time = this_ptr->cur_time - this_ptr->total_time;
@@ -65,7 +64,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   local_24 = 0.0;
   local_80 = (this_ptr->base_actor).location.position.z - local_68;
   pCVar6 = (CVector3f *)(this_ptr->field1_0x158 + 0x76c);
-  if (in_stack_00000008 <= 0.0) {
+  if (delta_time <= 0.0) {
     if (pCVar6 != &g_ZeroVector) {
       pCVar6->x = g_ZeroVector.x;
       *(float *)(this_ptr->field1_0x158 + 0x770) = g_ZeroVector.y;
@@ -73,7 +72,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
     }
   }
   else {
-    local_50 = 1.0 / in_stack_00000008;
+    local_50 = 1.0 / delta_time;
     local_58._0_4_ = local_88 * local_50;
     local_58._4_4_ = local_84 * local_50;
     local_50 = local_80 * local_50;

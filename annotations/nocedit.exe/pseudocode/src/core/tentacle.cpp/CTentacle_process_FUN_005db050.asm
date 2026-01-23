@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_tentacle.cpp_CTentacle_process_FUN_005db050(CTentacle * this_ptr)
+; __cdecl void core_tentacle.cpp_CTentacle_process_FUN_005db050(CTentacle * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CTentacle *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x258]:4  local_258
 ; undefined4       Stack[-0x28]:4  local_28
@@ -31,7 +32,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00429820
 ;   core_charactr.cpp_CCharacter_FUN_00429870
 ;   core_grave.cpp_FUN_004ee790
@@ -166,8 +167,8 @@ section .text
     ADD ESP,0x4                         ; 005db1ac
     PUSH dword ptr [EBP + 0x18]         ; 005db1af
     PUSH EBX                            ; 005db1b2
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 005db1b3
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 005db1b3
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 005db1b8
     MOV ESP,EBP                         ; 005db1bb
         ;   Label: LAB_005db1bb

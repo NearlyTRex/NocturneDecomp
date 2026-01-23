@@ -15,7 +15,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 at 0042dfcf
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dfcf
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0061746e

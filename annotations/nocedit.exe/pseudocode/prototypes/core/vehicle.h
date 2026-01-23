@@ -33,7 +33,7 @@ void CVehicle(CVehicle * this_ptr);
 
 // Original: core_vehicle.cpp_CVehicle_process_FUN_005e7e80
 // Address: 005e7e80
-void CVehicle::process(CVehicle * this_ptr);
+void CVehicle::process(CVehicle * this_ptr, float delta_time);
 
 // Original: core_vehicle.cpp_CVehicle_FUN_005e86d0
 // Address: 005e86d0

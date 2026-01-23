@@ -7,6 +7,8 @@
 ; CBoundingBox3D * Stack[0x4]:4   bbox
 ; int              Stack[0x8]:4   line_color
 ; Local Variables:
+; SRenderVertex    Stack[-0x190]:48  local_190
+; SRenderVertex    Stack[-0x160]:48  local_160
 ; undefined        Stack[-0x130]:1  local_130
 ; undefined4       Stack[-0x124]:4  local_124
 ; undefined4       Stack[-0x120]:4  local_120

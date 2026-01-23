@@ -6,6 +6,9 @@
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_84 */
+/* WARNING: Variable defined which should be unmapped: local_b4 */
+
 void __cdecl
 core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
 
@@ -14,14 +17,10 @@ core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *
   int iVar1;
   SRenderVertex *pSVar2;
   SRenderVertex *pSVar3;
-  int *piVar4;
+  SRenderVertex *pSVar4;
   byte bVar5;
-  SRenderVertex in_stack_ffffff4c;
-  byte auVar6 [24];
-  byte in_stack_ffffff7c [36];
-  uint uVar7;
-  SRenderVertex *output;
-  CVector3i *input;
+  SRenderVertex local_b4;
+  SRenderVertex local_84;
   CVector3i local_54;
   float local_48;
   float local_44;
@@ -38,6 +37,7 @@ core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *
   float local_10;
   
   bVar5 = 0;
+  local_84.w_recip = (float)&local_54;
   local_24 = (float)start_point->x;
   local_20 = (float)start_point->y;
   local_1c = (float)start_point->z;
@@ -53,42 +53,39 @@ core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *
   local_54.x = (int)ROUND(local_24 * 256.0f);
   local_54.y = (int)ROUND(local_20 * 256.0f);
   local_54.z = (int)ROUND(local_1c * 256.0f);
+  local_84.fog = (float)g_CDemonRendererPtr1->vertex_buffer_ptr;
+  local_84.color = 0x40d3f1;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_54);
+            ((SProjectedVertex *)local_84.fog,&local_54);
   local_30.x = (int)ROUND(local_3c * 256.0f);
   local_30.y = (int)ROUND(local_38 * 256.0f);
   local_30.z = (int)ROUND(local_34 * 256.0f);
-  input = &local_30;
-  output = g_CDemonRendererPtr1->vertex_buffer_ptr + 1;
-  uVar7 = 0x40d434;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&output->projected_vertex,input);
+  local_84.w_recip = (float)&local_30;
+  local_84.fog = (float)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+  local_84.color = 0x40d434;
+  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+            ((SProjectedVertex *)local_84.fog,(CVector3i *)local_84.w_recip);
   pSVar3 = g_CDemonRendererPtr1->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 1;
-  piVar4 = (int *)&stack0xffffff7c;
+  pSVar4 = &local_84;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar4 = (pSVar2->projected_vertex).transformed_x;
+    *(int *)pSVar4 = (pSVar2->projected_vertex).transformed_x;
     pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);
-    piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
+    pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  piVar4 = (int *)&stack0xffffff4c;
+  pSVar2 = &local_b4;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar4 = (pSVar3->projected_vertex).transformed_x;
+    *(int *)pSVar2 = (pSVar3->projected_vertex).transformed_x;
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
-    piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
+    pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  vertex2.color = uVar7;
-  auVar6 = in_stack_ffffff7c._0_24_;
-  vertex2.projected_vertex.transformed_x = auVar6._0_4_;
-  vertex2.projected_vertex.transformed_y = auVar6._4_4_;
-  vertex2.projected_vertex.transformed_z = auVar6._8_4_;
-  vertex2.projected_vertex.inv_z = auVar6._12_4_;
-  vertex2.projected_vertex.screen_x = auVar6._16_4_;
-  vertex2.projected_vertex.screen_y = auVar6._20_4_;
-  vertex2.u = (float)in_stack_ffffff7c._24_4_;
-  vertex2.v = (float)in_stack_ffffff7c._28_4_;
-  vertex2.light = (float)in_stack_ffffff7c._32_4_;
-  vertex2.fog = (float)output;
-  vertex2.w_recip = (float)input;
-  engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff4c,vertex2);
+  vertex2.color = local_84.color;
+  vertex2.projected_vertex = local_84.projected_vertex;
+  vertex2.u = local_84.u;
+  vertex2.v = local_84.v;
+  vertex2.light = local_84.light;
+  vertex2.fog = local_84.fog;
+  vertex2.w_recip = local_84.w_recip;
+  engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_b4,vertex2);
   return;
 }

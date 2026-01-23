@@ -2,11 +2,11 @@
 // Address: 00588f20
 // Address Range: [[00588f20, 005890e6]]
 // Convention: __cdecl
-// Signature: void core_simbox.cpp_CSimBox_process_FUN_00588f20(CSimBox * this_ptr)
+// Signature: void core_simbox.cpp_CSimBox_process_FUN_00588f20(CSimBox * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
+void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr,float delta_time)
 
 {
   COrientation *pCVar1;

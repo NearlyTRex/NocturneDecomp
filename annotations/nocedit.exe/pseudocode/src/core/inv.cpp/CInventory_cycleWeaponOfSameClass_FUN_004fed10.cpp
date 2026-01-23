@@ -16,8 +16,8 @@ core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr
   char *str1;
   int iVar1;
   int iVar2;
-  CWeapon *unaff_EBP;
   int iVar3;
+  CWeapon *unaff_EDI;
   CInventory *pCVar4;
   
   core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(this_ptr,1);
@@ -57,9 +57,9 @@ core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr
             return;
           }
           if (this_ptr_00 != (CWeapon *)0x0) {
-            (*((this_ptr_00->base_actor).vtable)->process)(&this_ptr_00->base_actor);
+            (*((this_ptr_00->base_actor).vtable)->process)(&this_ptr_00->base_actor,0.1);
           }
-          this_ptr->selected_weapon = unaff_EBP;
+          this_ptr->selected_weapon = unaff_EDI;
           core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);
           return;
         }

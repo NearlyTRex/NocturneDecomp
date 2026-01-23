@@ -2,11 +2,11 @@
 // Address: 005448b0
 // Address Range: [[005448b0, 00544b6d]]
 // Convention: __cdecl
-// Signature: void core_npc.cpp_CNPC_process_FUN_005448b0(CNPC * this_ptr)
+// Signature: void core_npc.cpp_CNPC_process_FUN_005448b0(CNPC * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
+void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_time)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -16,7 +16,6 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   int iVar5;
   CVector3f *input_local_point;
   CMotionList *this_ptr_00;
-  SCollisionInfo *in_stack_00000008;
   SCollisionInfo *collision_info;
   char *pcVar6;
   CVector3f CStack_40;
@@ -39,7 +38,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   (this_ptr->base_character).model.accumulated_root_motion.x =
        (this_ptr->base_character).model.accumulated_root_motion.y;
   pCVar1 = &(this_ptr->base_character).model;
-  collision_info = in_stack_00000008;
+  collision_info = (SCollisionInfo *)delta_time;
   while (0.0 < (float)collision_info) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
     core_charactr_cpp_CCharacter_FUN_0042ec40(&this_ptr->base_character);
@@ -60,8 +59,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   fVar3 = (float)0.5;
   *(float *)((this_ptr->base_character).field2_0x240c + 0x28) =
        (this_ptr->base_character).model.accumulated_root_motion.z;
-  *(float *)((this_ptr->base_character).field2_0x240c + 0x2c) =
-       (float)in_stack_00000008 * fVar4 * fVar3;
+  *(float *)((this_ptr->base_character).field2_0x240c + 0x2c) = delta_time * fVar4 * fVar3;
   iVar5 = core_charactr_cpp_CCharacter_FUN_0042ca70(&this_ptr->base_character);
   if (iVar5 == 0) goto LAB_00544a0c;
   uVar2 = *(uint *)((this_ptr->base_character).field11_0x25a0 + 0x10);
@@ -103,14 +101,11 @@ LAB_00544b62:
 LAB_00544a0c:
   *(float *)((this_ptr->base_character).field2_0x240c + 0x20) =
        *(float *)((this_ptr->base_character).field2_0x240c + 0x20) -
-       (float)in_stack_00000008 * (float)32;
-  fStack_34 = *(float *)((this_ptr->base_character).field2_0x240c + 0x1c) * (float)in_stack_00000008
-  ;
-  fStack_30 = *(float *)((this_ptr->base_character).field2_0x240c + 0x20) * (float)in_stack_00000008
-  ;
+       delta_time * (float)32;
+  fStack_34 = *(float *)((this_ptr->base_character).field2_0x240c + 0x1c) * delta_time;
+  fStack_30 = *(float *)((this_ptr->base_character).field2_0x240c + 0x20) * delta_time;
   pcVar6 = (this_ptr->base_character).field2_0x240c + 0x10;
-  fStack_2c = *(float *)((this_ptr->base_character).field2_0x240c + 0x24) * (float)in_stack_00000008
-  ;
+  fStack_2c = *(float *)((this_ptr->base_character).field2_0x240c + 0x24) * delta_time;
   fStack_1c = fStack_34 + *(float *)pcVar6;
   fStack_18 = fStack_30 + *(float *)((this_ptr->base_character).field2_0x240c + 0x14);
   fStack_14 = fStack_2c + *(float *)((this_ptr->base_character).field2_0x240c + 0x18);
@@ -130,6 +125,6 @@ LAB_00544a0c:
   core_charactr_cpp_CCharacter_FUN_00429820(&this_ptr->base_character);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base_character).model);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(&this_ptr->base_character);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&this_ptr->base_character);
   return;
 }

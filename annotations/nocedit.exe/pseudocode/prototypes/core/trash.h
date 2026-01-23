@@ -33,7 +33,7 @@ undefined FUN_005decc0();
 
 // Original: core_trash.cpp_CTrash_process_FUN_005decf0
 // Address: 005decf0
-void CTrash::process(CTrash * this_ptr);
+void CTrash::process(CTrash * this_ptr, float delta_time);
 
 // Original: core_trash.cpp_CTrash_FUN_005df550
 // Address: 005df550

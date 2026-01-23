@@ -2,24 +2,23 @@
 // Address: 00414a00
 // Address Range: [[00414a00, 00414bce]]
 // Convention: __cdecl
-// Signature: void core_bat.cpp_CBat_process_FUN_00414a00(CBat * this_ptr)
+// Signature: void core_bat.cpp_CBat_process_FUN_00414a00(CBat * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
+void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr,float delta_time)
 
 {
   CKeyFramedModel *pCVar1;
   int iVar2;
   uint uVar3;
-  float in_stack_00000008;
   float fVar4;
   
   fVar4 = (this_ptr->base_actor).location.position.y;
-  this_ptr->param = this_ptr->course_speed * in_stack_00000008 + this_ptr->param;
+  this_ptr->param = this_ptr->course_speed * delta_time + this_ptr->param;
   core_bat_cpp_FUN_00414ce0();
   fVar4 = (((this_ptr->base_actor).location.position.y - fVar4) * (float)4) /
-          in_stack_00000008 + (float)35;
+          delta_time + (float)35;
   if (fVar4 < (float)10) {
     fVar4 = 10.0;
   }
@@ -30,7 +29,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
        (fVar4 - *(float *)this_ptr->field6_0x310) * (float)0.69999999999999996 +
        *(float *)this_ptr->field6_0x310;
   *(float *)(this_ptr->course_filename + 0x2c) =
-       in_stack_00000008 * *(float *)this_ptr->field6_0x310 * this_ptr->speed +
+       delta_time * *(float *)this_ptr->field6_0x310 * this_ptr->speed +
        *(float *)(this_ptr->course_filename + 0x2c);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)this_ptr->model_name);
@@ -46,7 +45,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
     this_ptr->course_filename[0x2f] = '\0';
   }
   if ((this_ptr->unused[0] != '\0') &&
-     (fVar4 = *(float *)(this_ptr->field10_0x380 + 4) - in_stack_00000008,
+     (fVar4 = *(float *)(this_ptr->field10_0x380 + 4) - delta_time,
      *(float *)(this_ptr->field10_0x380 + 4) = fVar4, fVar4 <= 0.0)) {
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->field10_0x380);
     if (iVar2 == 0) {

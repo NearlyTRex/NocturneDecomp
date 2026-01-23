@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_zombie.cpp_CZombie_FUN_005fc120(CZombie* param_1, uint
    param_2) */
 
@@ -38,10 +37,10 @@ uint core_zombie_cpp_CZombie_FUN_005fc120(void)
             (this_ptr,&local_4c,*(int *)(in_stack_00000004[0x8e].create_event + 0xc));
   local_1c = local_34.x + local_4c.x;
   local_18 = local_34.y + local_4c.y;
-  local_28.x = local_1c * _DAT_006589b5;
-  local_28.y = local_18 * _DAT_006589b5;
+  local_28.x = local_1c * 0.5f;
+  local_28.y = local_18 * 0.5f;
   local_14 = local_34.z + local_4c.z;
-  local_28.z = local_14 * _DAT_006589b5;
+  local_28.z = local_14 * 0.5f;
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (in_stack_00000004,&local_40,&local_28);
   if (in_stack_00000008 != pCVar1) {

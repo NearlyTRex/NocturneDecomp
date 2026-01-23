@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_bodypart.cpp_CBodyPart_process_FUN_00419be0(CBodyPart * this_ptr)
+; __cdecl void core_bodypart.cpp_CBodyPart_process_FUN_00419be0(CBodyPart * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0x54]:1  local_54
 ; undefined4       Stack[-0x50]:4  local_50

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_crossbow.cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr)
+; __cdecl void core_crossbow.cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0x10]:1  local_10
 ;
@@ -25,7 +26,7 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 00448d38
     PUSH EBX                            ; 00448d3c
     CALL core_weapon.cpp_CWeapon_process_FUN_005ee110 ; 00448d3d
-        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
+        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00448d42
     LEA EDX,[ESP + 0xc]                 ; 00448d45
     PUSH EDX                            ; 00448d49

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * core_zombie_cpp_FUN_005f8d30(void)
 
 {
@@ -21,9 +19,9 @@ float * core_zombie_cpp_FUN_005f8d30(void)
   float fStack_20;
   
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();
-  fVar1 = _DAT_0065843d;
-  *in_stack_00000004 = (fStack_30 + fStack_24) * _DAT_0065843d;
+  fVar1 = 0.5f;
+  *in_stack_00000004 = (fStack_30 + fStack_24) * 0.5f;
   in_stack_00000004[1] = fVar1 * (fStack_2c + fStack_20);
-  in_stack_00000004[2] = fStack_28 + (float)_DAT_00658445;
+  in_stack_00000004[2] = fStack_28 + (float)0.40000000000000002;
   return in_stack_00000004;
 }

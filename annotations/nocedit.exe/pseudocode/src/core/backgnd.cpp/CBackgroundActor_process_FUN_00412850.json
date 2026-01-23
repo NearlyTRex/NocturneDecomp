@@ -13,14 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 2,
-    "complexity_score": 4,
+    "complexity_score": 5,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 4,
+    "pseudocode_lines": 5,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 6
+    "total_lines": 7
   },
   "cross_references": [],
   "function": {
@@ -33,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_backgnd.cpp_CBackgroundActor_process_FUN_00412850",
-    "signature": "void core_backgnd.cpp_CBackgroundActor_process_FUN_00412850(CBackgroundActor * this_ptr)"
+    "signature": "void core_backgnd.cpp_CBackgroundActor_process_FUN_00412850(CBackgroundActor * this_ptr, float delta_time)"
   },
   "function_calls": [],
   "globals": [],
@@ -41,8 +41,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.0,
@@ -55,10 +55,10 @@
     "pcode_op_count": 3
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -67,6 +67,13 @@
         "offset": 4,
         "size": 4,
         "type": "CBackgroundActor *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -74,7 +81,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBackgroundActor",
         "offset": 4,
         "vtable_addr": "00659f44"
       }

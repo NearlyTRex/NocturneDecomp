@@ -32,7 +32,7 @@ section .text
     PUSH dword ptr [EBP + 0x14]         ; 004cb9be
     PUSH EBX                            ; 004cb9c1
     CALL core_weapon.cpp_CWeapon_process_FUN_005ee110 ; 004cb9c2
-        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
+        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x578]     ; 004cb9c7
     ADD ESP,0x8                         ; 004cb9cd
     TEST EDX,EDX                        ; 004cb9d0

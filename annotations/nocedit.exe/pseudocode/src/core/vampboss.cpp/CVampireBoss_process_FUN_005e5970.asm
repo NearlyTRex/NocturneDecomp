@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_vampboss.cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss * this_ptr)
+; __cdecl void core_vampboss.cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x260]:4  local_260
 ; undefined4       Stack[-0x25c]:4  local_25c
@@ -99,7 +100,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_00429820
 ;   core_charactr.cpp_CCharacter_FUN_00429870
@@ -1170,8 +1171,8 @@ section .text
     ADD ESP,0x4                         ; 005e6628
     PUSH dword ptr [EBP + 0x18]         ; 005e662b
     PUSH EBX                            ; 005e662e
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 005e662f
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 005e662f
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 005e6634
     PUSH ESI                            ; 005e6637
     PUSH dword ptr [EBX + 0x2414]       ; 005e6638

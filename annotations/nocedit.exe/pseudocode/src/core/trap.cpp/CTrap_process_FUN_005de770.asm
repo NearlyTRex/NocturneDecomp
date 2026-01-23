@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_trap.cpp_CTrap_process_FUN_005de770(CTrap * this_ptr)
+; __cdecl void core_trap.cpp_CTrap_process_FUN_005de770(CTrap * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CTrap *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34
 ;

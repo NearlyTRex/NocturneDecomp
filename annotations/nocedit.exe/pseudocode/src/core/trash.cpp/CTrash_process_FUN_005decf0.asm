@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_trash.cpp_CTrash_process_FUN_005decf0(CTrash * this_ptr)
+; __cdecl void core_trash.cpp_CTrash_process_FUN_005decf0(CTrash * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CTrash *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x1bc]:4  local_1bc
 ; undefined8       Stack[-0x1b8]:8  local_1b8

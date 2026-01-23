@@ -55,8 +55,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_new_0065881d
-;   undefined4 DAT_00658821
-;   undefined4 DAT_00658825
+;   float FLOAT_00658821 = 0.5
+;   double DOUBLE_00658825 = 0.400000000000000
 ;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
@@ -150,7 +150,7 @@ section .text
     FSTP float ptr [EBP + 0x72]         ; 005fb2d2
     CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 005fb2d5
         ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
-    FLD float ptr [0x00658821]          ; 005fb2da | DAT_00658821
+    FLD float ptr [0x00658821]          ; 005fb2da | FLOAT_00658821
     FLD float ptr [EBP + 0x6a]          ; 005fb2e0
     FMUL ST1                            ; 005fb2e3
     FLD float ptr [EBP + 0x6e]          ; 005fb2e5
@@ -159,7 +159,7 @@ section .text
     LEA EAX,[EBP + 0xa]                 ; 005fb2ed
     LEA EDX,[EBP + 0x22]                ; 005fb2f0
     ADD ESP,0x4                         ; 005fb2f3
-    FADD double ptr [0x00658825]        ; 005fb2f6 | DAT_00658825
+    FADD double ptr [0x00658825]        ; 005fb2f6 | DOUBLE_00658825
     FXCH                                ; 005fb2fc
     FSTP float ptr [EBP + 0xa]          ; 005fb2fe
     FXCH                                ; 005fb301
@@ -302,7 +302,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 005fb480
     FADD float ptr [EDX + 0x4]          ; 005fb483
     FXCH                                ; 005fb486
-    FLD float ptr [0x00658821]          ; 005fb488 | DAT_00658821
+    FLD float ptr [0x00658821]          ; 005fb488 | FLOAT_00658821
     FXCH                                ; 005fb48e
     FMUL ST1                            ; 005fb490
     FXCH ST2                            ; 005fb492

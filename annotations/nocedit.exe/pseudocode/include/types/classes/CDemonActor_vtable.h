@@ -49,7 +49,7 @@
 #include "types/funcdefs/CDemonActor_process.h"
 #include "types/funcdefs/CDemonActor_processActionButton.h"
 #include "types/funcdefs/CDemonActor_processFootstep.h"
-#include "types/funcdefs/CDemonActor_processFootstepAtOffset.h"
+#include "types/funcdefs/CDemonActor_processFootstepAt.h"
 #include "types/funcdefs/CDemonActor_processInEditor.h"
 #include "types/funcdefs/CDemonActor_processMeleeHit.h"
 #include "types/funcdefs/CDemonActor_renderBackground.h"
@@ -87,7 +87,7 @@ typedef struct CDemonActor_vtable {
     CDemonActor_renderBackground* renderBackground; // 0x10
     CDemonActor_getBoundingBox* getBoundingBox; // 0x14
     CDemonActor_processFootstep* processFootstep; // 0x18
-    CDemonActor_processFootstepAtOffset* processFootstepAtOffset; // 0x1c
+    CDemonActor_processFootstepAt* processFootstepAtOffset; // 0x1c
     CDemonActor_handleFootstep* handleFootstep; // 0x20
     CDemonActor_playSound* playSound; // 0x24
     CDemonActor_playAmbientSound* playAmbientSound; // 0x28

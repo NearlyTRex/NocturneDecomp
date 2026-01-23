@@ -9,7 +9,7 @@
 ;
 ; XREF[37]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 at 00408de9
-;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0 at 0040c96b
+;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0 at 0040c96b
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830 at 0040c899
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040aa4d
 ;   core_boneguy.cpp_FUN_0041bf90 at 0041c452

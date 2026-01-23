@@ -27,7 +27,7 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
   CVector3f CStack_20;
   float fStack_14;
   
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);
   if (0.0 <= *(float *)in_stack_00000004[1].base_actor.actor_name) {
     fVar1 = *(float *)in_stack_00000004[1].base_actor.actor_name - in_stack_00000008;
     *(float *)in_stack_00000004[1].base_actor.actor_name = fVar1;

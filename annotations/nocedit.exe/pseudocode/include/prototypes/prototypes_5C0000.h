@@ -63,7 +63,7 @@ undefined __unknown core_succubus_cpp_FUN_005c6a40();
 CDemonActorType * __cdecl core_succubus_cpp_CSuccubus_getActorType_FUN_005c6a70(CSuccubus * this_ptr);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus * this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus * this_ptr);
-void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus * this_ptr);
+void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus * this_ptr, float delta_time);
 int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus * this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_serialize_FUN_005c7710(CSuccubus * this_ptr);
 undefined __unknown core_succubus_cpp_FUN_005c7760();

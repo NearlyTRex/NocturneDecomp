@@ -96,7 +96,7 @@ undefined __unknown core_npc_cpp_FUN_005447a0();
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_005447d0(CNPC * this_ptr);
 CNPC * __cdecl core_npc_cpp_FUN_005447e0(CNPC * this_ptr);
 void __cdecl core_npc_cpp_CNPC_FUN_00544870(CNPC * this_ptr);
-void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC * this_ptr);
+void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC * this_ptr, float delta_time);
 void __cdecl core_npc_cpp_CNPC_FUN_00544b70(CNPC * this_ptr);
 void __cdecl core_npc_cpp_CNPC_serialize_FUN_00544ba0(CNPC * this_ptr);
 undefined __unknown core_npc_cpp_FUN_00544c50();

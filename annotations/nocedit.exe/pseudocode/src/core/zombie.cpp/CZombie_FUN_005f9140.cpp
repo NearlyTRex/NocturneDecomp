@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
 
@@ -105,7 +104,7 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie *this_ptr)
   if ((-1 < *(int *)(this_ptr->field4_0xbf48 + 0x40)) &&
      (*(float *)((this_ptr->base_enemy).base_character.cloth_data + 0x358) < 0.0)) {
     *(float *)((this_ptr->base_enemy).base_character.cloth_data + 0x358) =
-         (this_ptr->base_enemy).base_character.model.bounding_box.max.y + (float)_DAT_006585a5;
+         (this_ptr->base_enemy).base_character.model.bounding_box.max.y + (float)-0.75;
   }
   str1 = (this_ptr->base_enemy).base_character.model.model_name;
   this_ptr->field4_0xbf48[0x50] = '\0';

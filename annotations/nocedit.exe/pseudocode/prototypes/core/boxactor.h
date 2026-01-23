@@ -29,7 +29,7 @@ undefined FUN_004218d0();
 
 // Original: core_boxactor.cpp_CBoxActor_process_FUN_004219e0
 // Address: 004219e0
-undefined CBoxActor::process();
+void CBoxActor::process(CBoxActor * this_ptr, float delta_time);
 
 // Original: core_boxactor.cpp_FUN_00421e00
 // Address: 00421e00

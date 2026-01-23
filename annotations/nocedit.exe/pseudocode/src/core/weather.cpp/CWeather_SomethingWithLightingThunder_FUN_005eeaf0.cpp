@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_weather.cpp_CWeather_SomethingWithLightingThunder(CWeather* param_1)
     */
 
@@ -36,7 +35,8 @@ void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
       iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,"noLightningFlash");
       if (iVar4 == 0) {
-        local_18 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bb4 - fVar1;
+        local_18 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 -
+                   fVar1;
         if (local_18 < (float)in_stack_00000004[0xc]) {
           local_18 = (float)in_stack_00000004[0xc];
           in_stack_00000004[9] = 0;
@@ -66,7 +66,7 @@ LAB_005eeb1c:
     *(float *)((int)&DAT_03f95df8[0].y + iVar4) = fVar3;
     if ((fVar3 < *(float *)((int)&DAT_03f96758 + iVar6)) &&
        (*(float *)((int)&DAT_03f95df8[0].y + iVar4) =
-             *(float *)((int)&DAT_03f95df8[0].y + iVar4) + _DAT_00657bd4, *in_stack_00000004 == 1))
+             *(float *)((int)&DAT_03f95df8[0].y + iVar4) + 100.0f, *in_stack_00000004 == 1))
     {
       core_fire_cpp_CFireEffect_FUN_004c9290(g_CFireEffectPtr);
       core_fire_cpp_CFireEffect_FUN_004c9290(g_CFireEffectPtr);
@@ -101,27 +101,28 @@ LAB_005eeb1c:
         if (iVar4 == 0) {
           in_stack_00000004[9] = 1;
           fVar2 = (float)g_CDemonCameraInstance.corona_blend_factor;
-          fVar3 = (float)_DAT_00657bb4;
+          fVar3 = (float)1.5259021896696401e-05;
           in_stack_00000004[0xc] = (int)(fVar2 * fVar3);
           local_2c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.3);
           local_2c = local_2c + fVar2 * fVar3;
           if (1.0 < local_2c) {
             local_2c = 1.0;
           }
-          fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.01,local_2c * (float)_DAT_00657bbc);
+          fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.01,local_2c * (float)0.59999999999999998)
+          ;
           in_stack_00000004[10] = (int)fVar3;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
                     (&g_CDemonCameraInstance,local_2c);
         }
       }
     }
-    if ((float)_DAT_00657bc4 <= (float)in_stack_00000004[0xd]) {
+    if ((float)15 <= (float)in_stack_00000004[0xd]) {
       in_stack_00000004[0xd] = 0x41700000;
     }
     else {
       fVar9 = (float10)1;
       fVar7 = (float10)1.4426950408889634 *
-              ((float10)fVar1 * (float10)_DAT_00657bcc +
+              ((float10)fVar1 * (float10)0.10000000000000001 +
               (float10)0.6931471805599453 * (float10)(float)in_stack_00000004[0xd]);
       fVar8 = (float10)f2xm1(fVar7 - (fVar7 / fVar9) * fVar9);
       fVar9 = (float10)fscale(fVar8 + fVar9,fVar7);

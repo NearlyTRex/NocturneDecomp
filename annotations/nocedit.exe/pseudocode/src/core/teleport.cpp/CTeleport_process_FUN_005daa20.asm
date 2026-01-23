@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_teleport.cpp_CTeleport_process_FUN_005daa20(CTeleport * this_ptr)
+; __cdecl void core_teleport.cpp_CTeleport_process_FUN_005daa20(CTeleport * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14
 ;

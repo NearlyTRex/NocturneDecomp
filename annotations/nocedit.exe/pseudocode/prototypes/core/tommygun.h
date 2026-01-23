@@ -29,7 +29,7 @@ undefined FUN_005de330();
 
 // Original: core_tommygun.cpp_CTommyGun_process_FUN_005de360
 // Address: 005de360
-void CTommyGun::process(CTommyGun * this_ptr);
+void CTommyGun::process(CTommyGun * this_ptr, float delta_time);
 
 // Original: core_tommygun.cpp_FUN_005de5a0
 // Address: 005de5a0

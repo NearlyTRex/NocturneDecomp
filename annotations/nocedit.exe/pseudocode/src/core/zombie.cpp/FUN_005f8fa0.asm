@@ -8,7 +8,7 @@
 ;   core_zombie.cpp_staticInit_FUN_005f8c90 at 005f8c9c
 ;
 ; Referenced Globals:
-;   undefined4 s_..\\core\\zombie.cpp_00658475
+;   TerminatedCString s_core_zombie_cpp_00658475
 ;
 ; Called Functions:
 ;   core_zombie.cpp_CZombie_ctor_FUN_005f8fe0
@@ -20,7 +20,7 @@ section .text
 
     PUSH 0xc8                           ; 005f8fa0
         ;   Label: core_zombie.cpp_FUN_005f8fa0
-    PUSH 0x658475                       ; 005f8fa5 | s_..\core\zombie.cpp_00658475
+    PUSH 0x658475                       ; 005f8fa5 | = "..\\core\\zombie.cpp"
     PUSH 0xbfac                         ; 005f8faa
     CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005f8faf
         ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)

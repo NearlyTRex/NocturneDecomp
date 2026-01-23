@@ -29,7 +29,7 @@ int * CWeapon(CWeapon * this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_process_FUN_005ee110
 // Address: 005ee110
-void CWeapon::process(CWeapon * this_ptr);
+void CWeapon::process(CWeapon * this_ptr, float delta_time);
 
 // Original: core_weapon.cpp_CWeapon_serialize_FUN_005ee250
 // Address: 005ee250

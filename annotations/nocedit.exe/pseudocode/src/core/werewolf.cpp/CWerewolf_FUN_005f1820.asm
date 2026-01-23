@@ -11,7 +11,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00657db0
+;   float FLOAT_00657db0 = -1
 ;   double DOUBLE_00657db4 = 0.800000000000000
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -146,7 +146,7 @@ section .text
     RET                                 ; 005f194f
     FLD float ptr [EBX + 0xbf00]        ; 005f1950
         ;   Label: LAB_005f1950
-    FADD float ptr [0x00657db0]         ; 005f1956 | DAT_00657db0
+    FADD float ptr [0x00657db0]         ; 005f1956 | FLOAT_00657db0
     FSTP float ptr [EBX + 0xbf00]       ; 005f195c
     JMP 0x005f1856                      ; 005f1962
         ;   XREF to: 005f1856 (UNCONDITIONAL_JUMP)  ; LAB_005f1856

@@ -33,7 +33,7 @@ void CBat::serialize(CBat * this_ptr);
 
 // Original: core_bat.cpp_CBat_process_FUN_00414a00
 // Address: 00414a00
-void CBat::process(CBat * this_ptr);
+void CBat::process(CBat * this_ptr, float delta_time);
 
 // Original: core_bat.cpp_CBat_FUN_00414bf0
 // Address: 00414bf0

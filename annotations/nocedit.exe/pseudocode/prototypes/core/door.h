@@ -33,7 +33,7 @@ void CDoor::reposition(CDoor * this_ptr);
 
 // Original: core_door.cpp_CDoor_process_FUN_004800c0
 // Address: 004800c0
-void CDoor::process(CDoor * this_ptr);
+void CDoor::process(CDoor * this_ptr, float delta_time);
 
 // Original: core_door.cpp_CDoor_renderOpaque_FUN_004807d0
 // Address: 004807d0

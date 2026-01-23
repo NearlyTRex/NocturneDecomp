@@ -747,7 +747,7 @@ LAB_004f50f1:
     }
   }
   core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(in_stack_00000004);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
   if ((1.0 <= *(float *)(in_stack_00000004[2].cloth_data + 0x5400)) &&
      (pCVar14 = core_actor_cpp_castToClassHash_FUN_0040c790
                           (in_stack_00000004->carry_hands[1].carry_actor,

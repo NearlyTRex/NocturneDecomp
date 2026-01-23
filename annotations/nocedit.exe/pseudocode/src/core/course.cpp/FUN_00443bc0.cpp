@@ -1,12 +1,12 @@
 // Name: core_course.cpp_FUN_00443bc0
 // Address: 00443bc0
 // Address Range: [[00443bc0, 00443f2b] [00443f2f, 004440c9]]
-// Convention: unknown
-// Signature: undefined core_course.cpp_FUN_00443bc0()
+// Convention: __cdecl
+// Signature: void core_course.cpp_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2)
 
 #include "nocturne.h"
 
-void core_course_cpp_FUN_00443bc0(void)
+void __cdecl core_course_cpp_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *param_2)
 
 {
   SRenderVertex vertex1;
@@ -17,8 +17,6 @@ void core_course_cpp_FUN_00443bc0(void)
   SRenderVertex *pSVar4;
   int *piVar5;
   byte bVar6;
-  CCourse *in_stack_00000004;
-  CKeyFramedModel *in_stack_00000008;
   byte auVar7 [24];
   byte in_stack_fffffe70 [28];
   uint in_stack_fffffe8c;
@@ -78,7 +76,7 @@ void core_course_cpp_FUN_00443bc0(void)
     local_b0[0].x = 0.0;
     local_b0[0].y = 0.0;
     local_b0[0].z = 0.0;
-    local_14 = in_stack_00000004->len;
+    local_14 = this_ptr->len;
     local_3c = (double)local_18;
     local_20 = (float)local_14;
     if (local_3c < 0.0) {
@@ -94,7 +92,7 @@ void core_course_cpp_FUN_00443bc0(void)
     }
     uVar1 = local_24;
     local_18 = local_1c;
-    core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
+    core_course_cpp_CCourse_FUN_00442710(this_ptr);
     if (uVar1 != 0) {
       if ((CVector3f *)local_cc != &local_80) {
         local_cc._0_4_ = local_80.x;
@@ -124,15 +122,15 @@ void core_course_cpp_FUN_00443bc0(void)
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,local_b0);
-    local_14 = in_stack_00000004->len + -1;
-    core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
+    local_14 = this_ptr->len + -1;
+    core_course_cpp_CCourse_FUN_00442710(this_ptr);
     g_ActiveRenderColor = 0xfa;
     local_34 = 0;
-    while (local_34 < in_stack_00000004->len) {
+    while (local_34 < this_ptr->len) {
       local_14 = local_34;
       uVar9 = 0x443da7;
-      pCVar10 = in_stack_00000004;
-      core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
+      pCVar10 = this_ptr;
+      core_course_cpp_CCourse_FUN_00442710(this_ptr);
       local_5c.x = (int)ROUND(local_8c * 256.0f);
       local_5c.y = (int)ROUND(local_88 * 256.0f);
       local_5c.z = (int)ROUND(local_84 * 256.0f);
@@ -198,7 +196,7 @@ void core_course_cpp_FUN_00443bc0(void)
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_98,(CVector3i *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                (in_stack_00000008,(CKeyFramedModelInstance *)0x0,0,-1);
+                (param_2,(CKeyFramedModelInstance *)0x0,0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
     dVar8 = (double)(float)local_98.x;

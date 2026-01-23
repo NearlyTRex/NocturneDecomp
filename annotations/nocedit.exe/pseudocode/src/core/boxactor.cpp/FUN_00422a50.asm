@@ -48,7 +48,7 @@ section .text
     PUSH dword ptr [ESP + 0xec]         ; 00422a5f
     PUSH EBX                            ; 00422a66
     CALL core_boxactor.cpp_CBoxActor_process_FUN_004219e0 ; 00422a67
-        ;   XREF to: 004219e0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_CBoxActor_process_FUN_004219e0()
+        ;   XREF to: 004219e0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_process_FUN_004219e0(CBoxActor * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x66c]     ; 00422a6c
     ADD ESP,0x8                         ; 00422a72
     CMP EDX,0x2                         ; 00422a75

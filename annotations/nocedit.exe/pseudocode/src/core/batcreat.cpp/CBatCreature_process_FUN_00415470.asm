@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_batcreat.cpp_CBatCreature_process_FUN_00415470(CBatCreature * this_ptr)
+; __cdecl void core_batcreat.cpp_CBatCreature_process_FUN_00415470(CBatCreature * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0x13c]:1  local_13c
 ; undefined4       Stack[-0x138]:4  local_138
@@ -81,7 +82,7 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_004297e0
 ;   core_charactr.cpp_CCharacter_FUN_00429820
@@ -267,8 +268,8 @@ section .text
     ADD ESP,0x4                         ; 0041566a
     PUSH dword ptr [EBP + 0x92]         ; 0041566d
     PUSH EBX                            ; 00415673
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 00415674
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 00415674
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00415679
     LEA ESP,[EBP + 0x7a]                ; 0041567c
         ;   Label: LAB_0041567c

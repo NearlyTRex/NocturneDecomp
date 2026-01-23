@@ -2,11 +2,11 @@
 // Address: 005de360
 // Address Range: [[005de360, 005de3a3] [005de436, 005de595]]
 // Convention: __cdecl
-// Signature: void core_tommygun.cpp_CTommyGun_process_FUN_005de360(CTommyGun * this_ptr)
+// Signature: void core_tommygun.cpp_CTommyGun_process_FUN_005de360(CTommyGun * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr)
+void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr,float delta_time)
 
 {
   float base_frequency;
@@ -25,7 +25,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   int iStack_1c;
   float local_18;
   
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon,delta_time);
   if (*(int *)this_ptr->field1_0x578 < 1) {
     dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);
     local_20 = SUB84(dVar3,0);

@@ -3,12 +3,13 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CAmmoBox
 // Ghidra size: 0x4a4 (1188 bytes)
 typedef struct CAmmoBox {
     CDemonActor base_actor; // 0x0
-    char model_name[380]; // 0x158
+    CKeyFramedModelInstance model; // 0x158
     char weapon_class_name[64]; // 0x2d4
     int ammo_count; // 0x314
     int ammo_type; // 0x318

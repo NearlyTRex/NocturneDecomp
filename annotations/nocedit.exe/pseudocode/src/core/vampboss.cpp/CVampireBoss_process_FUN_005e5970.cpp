@@ -2,13 +2,14 @@
 // Address: 005e5970
 // Address Range: [[005e5970, 005e6b7b]]
 // Convention: __cdecl
-// Signature: void core_vampboss.cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss * this_ptr)
+// Signature: void core_vampboss.cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr)
+void __cdecl
+core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float delta_time)
 
 {
   char *pcVar1;
@@ -34,7 +35,6 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   float10 fVar20;
   float10 fVar21;
   float10 extraout_ST1;
-  float in_stack_00000008;
   float fVar22;
   float fVar23;
   SDamageInfo local_244;
@@ -62,6 +62,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   float fStack_ac;
   float fStack_a8;
   float fStack_a4;
+  float local_78;
   float fStack_74;
   float local_64;
   float local_60;
@@ -160,7 +161,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
         this_ptr->field5_0xce8f4[0x13] = '\0';
       }
       if ((*(int *)(this_ptr->field5_0xce8f4 + 0x10) == 0) &&
-         (fVar22 = *(float *)this_ptr->field5_0xce8f4 - in_stack_00000008,
+         (fVar22 = *(float *)this_ptr->field5_0xce8f4 - delta_time,
          *(float *)this_ptr->field5_0xce8f4 = fVar22, fVar22 < 0.0)) {
         this_ptr->field5_0xce8f4[0x10] = '\x01';
         this_ptr->field5_0xce8f4[0x11] = '\0';
@@ -200,7 +201,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     }
     if (*(int *)(this_ptr->field5_0xce8f4 + 0x10) == 2) {
       *(float *)(this_ptr->field5_0xce8f4 + 4) =
-           *(float *)(this_ptr->field5_0xce8f4 + 4) - in_stack_00000008;
+           *(float *)(this_ptr->field5_0xce8f4 + 4) - delta_time;
       iVar8 = *(int *)((int)this_ptr + (4 - *(int *)(this_ptr->field5_0xce8f4 + 0x14)) * 4 + 0xce908
                       );
       if (&fStack_ac != (float *)(iVar8 + 0x20)) {
@@ -230,7 +231,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
         fStack_a8 = *(float *)(iVar8 + 0x24);
         fStack_a4 = *(float *)(iVar8 + 0x28);
       }
-      fVar22 = *(float *)(this_ptr->field5_0xce8f4 + 4) - in_stack_00000008;
+      fVar22 = *(float *)(this_ptr->field5_0xce8f4 + 4) - delta_time;
       *(float *)(this_ptr->field5_0xce8f4 + 4) = fVar22;
       if ((fVar22 <= 0.0) ||
          (fVar22 = fStack_ac - (this_ptr->base_enemy).base_character.base_actor.location.position.x,
@@ -262,7 +263,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
                  core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                            (local_3c - (this_ptr->base_enemy).base_character.base_actor.orient.bank)
     ;
-    local_244.field0_0x0 = (int)((float)pCStack_14 * in_stack_00000008 * local_64);
+    local_244.field0_0x0 = (int)((float)pCStack_14 * delta_time * local_64);
     if (ABS((float)local_244.field0_0x0) <= ABS((float)pCStack_14)) {
       (this_ptr->base_enemy).base_character.base_actor.orient.bank =
            (this_ptr->base_enemy).base_character.base_actor.orient.bank +
@@ -279,7 +280,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     local_54 = -0.3926991;
     local_20 = 0.3926991;
     (this_ptr->base_enemy).base_character.base_actor.orient.pitch =
-         (float)local_34 * in_stack_00000008 * local_64 +
+         (float)local_34 * delta_time * local_64 +
          (this_ptr->base_enemy).base_character.base_actor.orient.pitch;
     if ((fVar22 < (float)25) && (*(int *)(this_ptr->field5_0xce8f4 + 0x10) == 0)) {
       local_20 = 1.5707964;
@@ -298,7 +299,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     fVar16 = (float10)fcos(fVar16);
     fVar18 = (float10)fcos(fVar18);
     fVar20 = (float10)local_40;
-    fVar21 = (float10)in_stack_00000008;
+    fVar21 = (float10)delta_time;
     fVar17 = -fVar17 * fVar20 * fVar21 +
              (float10)(this_ptr->base_enemy).base_character.base_actor.location.position.y;
     (this_ptr->base_enemy).base_character.base_actor.location.position.y = (float)fVar17;
@@ -331,7 +332,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     goto LAB_005e5f5f;
   }
   if (iVar8 == 1) {
-    fVar22 = in_stack_00000008 / _DAT_00664e7c + this_ptr->morph_t;
+    fVar22 = delta_time / _DAT_00664e7c + this_ptr->morph_t;
     this_ptr->morph_t = fVar22;
     pCVar6 = g_CEventListPtr;
     if (1.0 <= fVar22) {
@@ -343,7 +344,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
               ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
     core_cloth_cpp_FUN_0043ab80();
     pCVar3 = &(this_ptr->base_enemy).base_character.model;
-    local_20 = in_stack_00000008;
+    local_20 = delta_time;
     while (0.0 < local_20) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar3->motion_controller);
     }
@@ -372,11 +373,11 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar2,(CVector3f *)(auStack_198 + 0x14));
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar2,&local_184.max);
     (this_ptr->base_enemy).base_character.base_actor.location.position.y =
-         (this_ptr->base_enemy).base_character.base_actor.location.position.y + in_stack_00000008;
+         (this_ptr->base_enemy).base_character.base_actor.location.position.y + delta_time;
     goto LAB_005e5f5f;
   }
   if (iVar8 == 3) {
-    local_64 = in_stack_00000008 / _DAT_00664e7c;
+    local_64 = delta_time / _DAT_00664e7c;
     local_60 = this_ptr->morph_t;
     this_ptr->morph_t = local_60 - local_64;
     pCVar6 = g_CEventListPtr;
@@ -398,7 +399,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
               ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
     core_cloth_cpp_FUN_0043ab80();
     pCVar3 = &(this_ptr->base_enemy).base_character.model;
-    local_1c = in_stack_00000008;
+    local_1c = delta_time;
     while (0.0 < local_1c) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar3->motion_controller);
     }
@@ -429,7 +430,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     goto LAB_005e5f5f;
   }
   local_30 = &(this_ptr->base_enemy).base_character.model;
-  fVar22 = in_stack_00000008;
+  local_78 = delta_time;
+  fVar22 = delta_time;
   while (0.0 < fVar22) {
     uVar11 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_2c->motion_controller);
     fVar22 = fStack_74;
@@ -504,16 +506,16 @@ LAB_005e648e:
   switch(iVar8) {
   case 0:
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
-         _DAT_00664e84 * in_stack_00000008;
+         _DAT_00664e84 * delta_time;
     pCVar6 = g_CEventListPtr;
     if (pCVar7->letterbox_mode == 0) {
       *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
-           _DAT_00664e80 * in_stack_00000008;
+           _DAT_00664e80 * delta_time;
       core_charactr_cpp_CCharacter_FUN_0042c5f0((CCharacter *)this_ptr);
       switch(*(uint *)(this_ptr->field5_0xce8f4 + 0x28)) {
       default:
-        fVar22 = ((this_ptr->base_enemy).base_character.max_hit_points * in_stack_00000008) /
-                 _DAT_00664e88 + (this_ptr->base_enemy).base_character.hit_points;
+        fVar22 = ((this_ptr->base_enemy).base_character.max_hit_points * delta_time) / _DAT_00664e88
+                 + (this_ptr->base_enemy).base_character.hit_points;
         (this_ptr->base_enemy).base_character.hit_points = fVar22;
         if ((float)50 < fVar22) goto LAB_005e6560;
         iVar13 = core_hero_cpp_FUN_004f2220();
@@ -546,7 +548,7 @@ LAB_005e648e:
              (local_48 = local_38, (float)local_44 < (float)local_38)) {
             local_48 = local_44;
           }
-          fVar22 = *(float *)this_ptr->field5_0xce8f4 - in_stack_00000008;
+          fVar22 = *(float *)this_ptr->field5_0xce8f4 - delta_time;
           *(CDeformableModelInstance **)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc)
                = local_48;
           *(float *)this_ptr->field5_0xce8f4 = fVar22;
@@ -645,7 +647,7 @@ LAB_005e6560:
                (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
     local_f8 = (*(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14) +
                (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y) -
-               in_stack_00000008 * (float)3;
+               delta_time * (float)3;
     core_charactr_cpp_CCharacter_FUN_00428f40((CCharacter *)this_ptr);
   }
   pCVar5 = &this_ptr->base_enemy;
@@ -665,7 +667,7 @@ LAB_005e6560:
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base_enemy).base_character.model);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   pCStack_14 = (CDeformableModelInstance *)&(this_ptr->base_enemy).base_character.base_actor.orient;
   core_cloth_cpp_FUN_0043ab80();
   core_cloth_cpp_FUN_0043ab80();

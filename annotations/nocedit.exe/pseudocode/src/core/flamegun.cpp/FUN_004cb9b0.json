@@ -38,12 +38,12 @@
   },
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 369,
+    "complexity_score": 379,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 54,
-    "suspect_count": 30,
+    "suspect_count": 31,
     "suspect_types": [
       "extra_output",
       "stack_param",
@@ -220,7 +220,14 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     },
     {

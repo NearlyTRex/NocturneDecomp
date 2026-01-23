@@ -25,7 +25,7 @@ void CSuccubus(CSuccubus * this_ptr);
 
 // Original: core_succubus.cpp_CSuccubus_process_FUN_005c6e90
 // Address: 005c6e90
-void CSuccubus::process(CSuccubus * this_ptr);
+void CSuccubus::process(CSuccubus * this_ptr, float delta_time);
 
 // Original: core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590
 // Address: 005c7590

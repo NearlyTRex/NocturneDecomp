@@ -29,7 +29,7 @@ undefined FUN_004167f0();
 
 // Original: core_batman.cpp_CBatman_process_FUN_00416870
 // Address: 00416870
-void CBatman::process(CBatman * this_ptr);
+void CBatman::process(CBatman * this_ptr, float delta_time);
 
 // Original: core_batman.cpp_CBatman_renderOpaque_FUN_004173b0
 // Address: 004173b0

@@ -25,7 +25,7 @@ void CSimBox(CSimBox * this_ptr);
 
 // Original: core_simbox.cpp_CSimBox_process_FUN_00588f20
 // Address: 00588f20
-void CSimBox::process(CSimBox * this_ptr);
+void CSimBox::process(CSimBox * this_ptr, float delta_time);
 
 // Original: core_simbox.cpp_CSimBox_FUN_005890f0
 // Address: 005890f0

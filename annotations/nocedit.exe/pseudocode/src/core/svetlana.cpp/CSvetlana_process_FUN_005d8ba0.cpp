@@ -2,11 +2,11 @@
 // Address: 005d8ba0
 // Address Range: [[005d8ba0, 005d9256]]
 // Convention: __cdecl
-// Signature: void core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana * this_ptr)
+// Signature: void core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_ptr)
+void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_ptr,float delta_time)
 
 {
   CDemonActor *pCVar1;
@@ -20,7 +20,6 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   int iVar9;
   CDeformableModelInstance *unaff_ESI;
   byte bVar10;
-  float in_stack_00000008;
   float afStackY_185c [1518];
   SCollisionInfo *in_stack_ffffff74;
   code *blend_callback;
@@ -41,7 +40,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   
   bVar10 = 0;
   if (((this_ptr->base_hero).base_character.hit_points < (float)100) &&
-     (fVar7 = (this_ptr->base_hero).base_character.hit_points + in_stack_00000008,
+     (fVar7 = (this_ptr->base_hero).base_character.hit_points + delta_time,
      (this_ptr->base_hero).base_character.hit_points = fVar7, (float)100 < fVar7)) {
     (this_ptr->base_hero).base_character.hit_points = 100.0;
   }
@@ -51,10 +50,10 @@ switchD_005d8f77_caseD_9:
     return;
   }
   core_charactr_cpp_CCharacter_FUN_0042ea40((CCharacter *)this_ptr);
-  fVar7 = (float)(this_ptr->base_hero).field1_0xbe24 - in_stack_00000008;
+  fVar7 = (float)(this_ptr->base_hero).field1_0xbe24 - delta_time;
   fVar3 = (float)12.566370614;
   (this_ptr->base_hero).field1_0xbe24 = (int)fVar7;
-  *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c) = in_stack_00000008 * fVar3;
+  *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c) = delta_time * fVar3;
   if (fVar7 < 0.0) {
     (this_ptr->base_hero).field1_0xbe24 = 0;
   }
@@ -205,14 +204,11 @@ switchD_005d8f77_caseD_8:
     if (pSVar5->state_index != 0x1a) {
       *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) =
            *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) -
-           in_stack_00000008 * (float)32;
+           delta_time * (float)32;
     }
-    local_44 = *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x1c) *
-               in_stack_00000008;
-    local_40 = *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) *
-               in_stack_00000008;
-    local_3c = in_stack_00000008 *
-               *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x24);
+    local_44 = *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x1c) * delta_time;
+    local_40 = *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) * delta_time;
+    local_3c = delta_time * *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x24);
     CStack_80.z = local_44 + *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x10);
     local_70._0_4_ =
          local_40 + *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x14);
@@ -232,7 +228,7 @@ switchD_005d8f77_caseD_8:
                        (&(this_ptr->base_hero).base_character.model.motion_controller);
     if (pSVar5->state_index == 0x1a) {
       (this_ptr->base_hero).base_character.base_actor.location.position.y =
-           in_stack_00000008 * (float)3 +
+           delta_time * (float)3 +
            (this_ptr->base_hero).base_character.base_actor.location.position.y;
     }
     goto LAB_005d8e27;
@@ -250,7 +246,7 @@ switchD_005d8f77_caseD_8:
     if ((float)1.57079632675 < fVar7) {
       fVar7 = fVar7 + -3.141593f;
     }
-    local_18 = in_stack_00000008 * (float)3.1415926535000001;
+    local_18 = delta_time * (float)3.1415926535000001;
     local_20 = -local_18;
     if (fVar7 < local_20) {
       fVar7 = local_20;
@@ -304,7 +300,7 @@ LAB_005d8e27:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (unaff_ESI,&CStack_80,fVar7,iVar4,blend_callback);
   }
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   core_cloth_cpp_FUN_0043ab80();
   core_cloth_cpp_FUN_0043ab80();
   return;

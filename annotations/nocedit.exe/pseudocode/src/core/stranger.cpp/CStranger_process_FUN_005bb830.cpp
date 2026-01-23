@@ -2,14 +2,14 @@
 // Address: 005bb830
 // Address Range: [[005bb830, 005bb8ff]]
 // Convention: __cdecl
-// Signature: void core_stranger.cpp_CStranger_process_FUN_005bb830(CStranger * this_ptr)
+// Signature: void core_stranger.cpp_CStranger_process_FUN_005bb830(CStranger * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_ptr)
+void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_ptr,float delta_time)
 
 {
-  float delta_time;
+  float delta_time_00;
   bool bVar1;
   int iVar2;
   SMotion *pSVar3;
@@ -18,7 +18,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
   if (iVar2 == 0) {
     return;
   }
-  delta_time = g_CGamePtr->delta_time_float;
+  delta_time_00 = g_CGamePtr->delta_time_float;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&(this_ptr->base_hero).base_character.model.motion_controller);
   bVar1 = false;
@@ -50,6 +50,6 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_pt
     core_stranger_cpp_CStranger_FUN_005bb960();
   }
   core_stranger_cpp_CStranger_FUN_005bb960();
-  core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,delta_time);
+  core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,delta_time_00);
   return;
 }

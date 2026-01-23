@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_turret.cpp_CTurret_process_FUN_005e2430(CTurret * this_ptr)
+; __cdecl void core_turret.cpp_CTurret_process_FUN_005e2430(CTurret * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100
 ; undefined4       Stack[-0xf8]:4  local_f8

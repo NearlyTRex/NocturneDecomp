@@ -4,50 +4,50 @@
       {
         "category": "missing_member",
         "column": 54,
-        "line": 24,
+        "line": 23,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
       },
       {
         "category": "missing_member",
         "column": 30,
-        "line": 28,
+        "line": 27,
         "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field11_0xbf00'"
       },
       {
         "category": "missing_member",
         "column": 15,
-        "line": 29,
+        "line": 28,
         "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field11_0xbf00'"
       },
       {
         "category": "missing_member",
         "column": 55,
-        "line": 29,
+        "line": 28,
         "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field11_0xbf00'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 72,
-        "line": 29,
-        "message": "'_DAT_00657db0' was not declared in this scope; did you mean 'DAT_00677db0'?"
       },
       {
         "category": "missing_member",
         "column": 24,
-        "line": 31,
+        "line": 30,
         "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field11_0xbf00'"
       },
       {
         "category": "missing_member",
         "column": 55,
-        "line": 32,
+        "line": 31,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
       },
       {
         "category": "missing_member",
         "column": 35,
-        "line": 35,
+        "line": 34,
         "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field4_0xbec0'"
+      },
+      {
+        "category": "other",
+        "column": 34,
+        "line": 38,
+        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
@@ -56,15 +56,9 @@
         "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 40,
-        "message": "cast from 'CMatrix3x4f*' to 'int' loses precision [-fpermissive]"
-      },
-      {
         "category": "missing_member",
         "column": 58,
-        "line": 55,
+        "line": 54,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
       }
     ],
@@ -79,31 +73,30 @@
       {
         "category": "other",
         "column": 18,
-        "line": 39,
+        "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 40,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 103,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "pseudocode_lines": 48,
-    "suspect_count": 4,
+    "pseudocode_lines": 47,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 175
+    "total_lines": 174
   },
   "cross_references": [],
   "function": {
@@ -158,9 +151,9 @@
   "globals": [
     {
       "addr": "00657db0",
-      "name": "DAT_00657db0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00657db0",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "00657db4",
@@ -290,22 +283,15 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"

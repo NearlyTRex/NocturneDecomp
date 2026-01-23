@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 798
+Parameter mismatches detected: 797
 Signature accuracy rate: 57.1%
 
 Mismatches by confidence:
   High confidence:   76 (multiple call sites agree)
   Medium confidence: 104 (some agreement)
-  Low confidence:    618 (limited data)
+  Low confidence:    617 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -305,7 +305,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_pendulum.cpp_FUN_0054a5f0 at 0054a762: 0 reg [], 3 stack
       core_stairs.cpp_FUN_005ba840 at 005ba8eb: 0 reg [], 3 stack
-      core_ladder.cpp_FUN_00502ca0 at 00502cf3: 0 reg [], 3 stack
+      core_ladder.cpp_CLadder_FUN_00 at 00502cf3: 0 reg [], 3 stack
 
   core_actor.cpp_CActorPropertyList_FUN_0040e480
     Declared: 1 params, Estimated: 3 params (+2)
@@ -848,7 +848,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  618 functions with low-confidence mismatches
+  617 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -868,7 +868,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 93
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 705
+Functions where declaration has FEWER params than estimated: 704
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -879,11 +879,11 @@ Distribution of differences (estimated - declared):
   -3 params: 11 functions
   -2 params: 18 functions
   -1 params: 57 functions
-  +1 params: 254 functions
-  +2 params: 156 functions
+  +1 params: 255 functions
+  +2 params: 155 functions
   +3 params: 102 functions
   +4 params: 112 functions
-  +5 params: 26 functions
+  +5 params: 25 functions
   +6 params: 24 functions
   +7 params: 11 functions
   +8 params: 2 functions

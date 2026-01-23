@@ -1,9 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_stairs.cpp_FUN_005b9c10()
+; __cdecl int core_stairs.cpp_FUN_005b9c10(CDemonActor * param_1, undefined4 param_2, CDemonActor * param_3)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   param_1
+; undefined4       Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0xc]:4   param_3
 ; Local Variables:
+; SRenderVertex    Stack[-0x144]:48  local_144
+; SRenderVertex    Stack[-0x114]:48  local_114
 ; undefined1       Stack[-0xbc]:1  local_bc
 ;
 ; Referenced Globals:

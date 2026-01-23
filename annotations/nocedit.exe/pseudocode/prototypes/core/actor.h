@@ -33,7 +33,7 @@ CDemonActor * CDemonActor::dtor(CDemonActor * this_ptr, uint d1);
 
 // Original: core_actor.cpp_CDemonActor_process_FUN_00408a80
 // Address: 00408a80
-void CDemonActor::process(CDemonActor * this_ptr);
+void CDemonActor::process(CDemonActor * this_ptr, float delta_time);
 
 // Original: core_actor.cpp_CDemonActor_renderOpaque_FUN_00408aa0
 // Address: 00408aa0
@@ -435,13 +435,13 @@ void resetActorTypeInfo(void);
 // Address: 0040c830
 int CDemonActor::processFootstep(CDemonActor * this_ptr, float volume);
 
-// Original: core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c8f0
+// Original: core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0
 // Address: 0040c8f0
-int CDemonActor::processFootstepAtOffset(CDemonActor * this_ptr, CVector3f * u1, float offset);
+int CDemonActor::processFootstepAt(CDemonActor * this_ptr, CVector3f * location, float volume);
 
 // Original: core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10
 // Address: 0040ca10
-int CDemonActor::handleFootstep(CDemonActor * this_ptr, CVector3f * position, int surface_type, float unknown);
+int CDemonActor::handleFootstep(CDemonActor * this_ptr, CVector3f * position, int surface_type, float volume);
 
 // Original: core_actor.cpp_setRandomSeed_FUN_0040cb90
 // Address: 0040cb90

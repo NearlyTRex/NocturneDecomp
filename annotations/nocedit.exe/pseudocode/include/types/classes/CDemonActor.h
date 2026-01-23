@@ -53,7 +53,7 @@
 #include "types/funcdefs/CDemonActor_process.h"
 #include "types/funcdefs/CDemonActor_processActionButton.h"
 #include "types/funcdefs/CDemonActor_processFootstep.h"
-#include "types/funcdefs/CDemonActor_processFootstepAtOffset.h"
+#include "types/funcdefs/CDemonActor_processFootstepAt.h"
 #include "types/funcdefs/CDemonActor_processInEditor.h"
 #include "types/funcdefs/CDemonActor_processMeleeHit.h"
 #include "types/funcdefs/CDemonActor_renderBackground.h"

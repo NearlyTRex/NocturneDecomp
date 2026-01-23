@@ -2,13 +2,14 @@
 // Address: 005e91a0
 // Address Range: [[005e91a0, 005e974d]]
 // Convention: __cdecl
-// Signature: void core_vessel.cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel * this_ptr)
+// Signature: void core_vessel.cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr)
+void __cdecl
+core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float delta_time)
 
 {
   COrientation *pCVar1;
@@ -21,7 +22,6 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
   float fVar8;
   float fVar9;
   int iVar10;
-  float in_stack_00000008;
   float local_18;
   float local_14;
   
@@ -42,11 +42,10 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
   }
   else if (this_ptr->visual_type == 0) {
     *(float *)(this_ptr->field14_0x3c0 + 0x2a8) =
-         in_stack_00000008 * (float)3.1415926535000001 + *(float *)(this_ptr->field14_0x3c0 + 0x2a8);
+         delta_time * (float)3.1415926535000001 + *(float *)(this_ptr->field14_0x3c0 + 0x2a8);
   }
   else {
-    fVar4 = in_stack_00000008 * (float)8 + *(float *)(this_ptr->field14_0x3c0 + 0x42c)
-    ;
+    fVar4 = delta_time * (float)8 + *(float *)(this_ptr->field14_0x3c0 + 0x42c);
     *(float *)(this_ptr->field14_0x3c0 + 0x42c) = fVar4;
     if ((float)16 <= fVar4) {
       *(float *)(this_ptr->field14_0x3c0 + 0x42c) =
@@ -65,7 +64,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
     iVar10 = this_ptr->state;
     pCVar2 = &(this_ptr->base_actor).location;
     if (iVar10 == 1) {
-      fVar4 = this_ptr->timer + in_stack_00000008;
+      fVar4 = this_ptr->timer + delta_time;
       this_ptr->timer = fVar4;
       if (fVar4 <= 1.0) {
         return;
@@ -115,7 +114,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
       }
     }
     else if (iVar10 == 2) {
-      fVar4 = this_ptr->timer - in_stack_00000008;
+      fVar4 = this_ptr->timer - delta_time;
       this_ptr->timer = fVar4;
       if (0.0 <= fVar4) {
         return;
@@ -126,7 +125,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
     else if (iVar10 == 3) {
       if ((*(int *)(*(int *)this_ptr->start_loc + 0x184) == 0) &&
          (*(int *)(*(int *)this_ptr->end_loc + 0x184) == 0)) {
-        fVar4 = this_ptr->timer - in_stack_00000008;
+        fVar4 = this_ptr->timer - delta_time;
         this_ptr->timer = fVar4;
         if (0.0 <= fVar4) {
           return;

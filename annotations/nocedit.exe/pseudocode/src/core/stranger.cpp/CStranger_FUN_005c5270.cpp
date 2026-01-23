@@ -321,7 +321,7 @@ LAB_005c53f2:
           if ((iVar4 == iVar6) &&
              (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c) = local_18,
              local_18 != (CDemonActor *)0x0)) {
-            (*local_18->vtable[1].process)(local_18);
+            (*local_18->vtable[1].process)(local_18,2.8026e-45);
           }
         }
       }

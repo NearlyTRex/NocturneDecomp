@@ -10,7 +10,7 @@
 ; XREF[65]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a86a
 ;   core_ammo.cpp_CAmmo_canPickup_FUN_004111c0 at 004111ca
-;   core_ammobox.cpp_CAmmoBox_FUN_004119f0 at 00411a0a
+;   core_ammobox.cpp_CAmmoBox_canPickup_FUN_004119f0 at 00411a0a
 ;   core_barrier.cpp_CBarrier_FUN_004143a0 at 004143cf
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 004170c6
 ;   core_battery.cpp_FUN_00417f20 at 00417f2a

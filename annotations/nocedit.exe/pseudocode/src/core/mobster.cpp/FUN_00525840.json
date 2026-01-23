@@ -480,6 +480,18 @@
         "column": 73,
         "line": 641,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 656,
+        "message": "invalid cast from type 'CEnemy*' to type 'float'"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 662,
+        "message": "invalid cast from type 'CEnemy*' to type 'float'"
       }
     ],
     "success": false,
@@ -590,12 +602,12 @@
   },
   "complexity": {
     "assembly_lines": 1369,
-    "complexity_score": 3593,
+    "complexity_score": 3613,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 26,
     "pseudocode_lines": 663,
-    "suspect_count": 288,
+    "suspect_count": 290,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -653,7 +665,7 @@
     {
       "addr": "0042dfc0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0"
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0"
     },
     {
       "addr": "00428f40",
@@ -3432,9 +3444,23 @@
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 649,
+      "match": "in_stack_00000008",
+      "text": "(*pCVar12->vtable->process)(pCVar12,(float)in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 652,
       "match": "in_stack_00000004",
       "text": "((in_stack_00000004->base_character).carry_hands[0].carry_actor,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 655,
+      "match": "in_stack_00000008",
+      "text": "(*pCVar12->vtable->process)(pCVar12,(float)in_stack_00000008);",
       "type": "stack_param"
     },
     {
@@ -3476,7 +3502,7 @@
       "description": "Unresolved stack parameter",
       "line": 665,
       "match": "in_stack_00000004",
-      "text": "core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character);",
+      "text": "core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character);",
       "type": "stack_param"
     }
   ],

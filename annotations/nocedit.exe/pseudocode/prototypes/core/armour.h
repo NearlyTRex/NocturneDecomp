@@ -25,7 +25,7 @@ void CArmour(CArmour * this_ptr);
 
 // Original: core_armour.cpp_CArmour_process_FUN_00412260
 // Address: 00412260
-void CArmour::process(CArmour * this_ptr);
+void CArmour::process(CArmour * this_ptr, float delta_time);
 
 // Original: core_armour.cpp_CArmour_serialize_FUN_004123a0
 // Address: 004123a0

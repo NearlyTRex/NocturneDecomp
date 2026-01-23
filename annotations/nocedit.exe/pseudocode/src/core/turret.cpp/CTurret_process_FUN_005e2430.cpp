@@ -2,11 +2,11 @@
 // Address: 005e2430
 // Address Range: [[005e2430, 005e290c]]
 // Convention: __cdecl
-// Signature: void core_turret.cpp_CTurret_process_FUN_005e2430(CTurret * this_ptr)
+// Signature: void core_turret.cpp_CTurret_process_FUN_005e2430(CTurret * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
+void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,float delta_time)
 
 {
   COrientation *pCVar1;
@@ -19,7 +19,6 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
   uint *puVar8;
   uint *puVar9;
   byte bVar10;
-  float in_stack_00000008;
   uint auStackY_186c [1497];
   CQuaternion4f *quat_in;
   char *sound_name;
@@ -63,7 +62,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     sound_name = "turret-ani?.wav";
     goto LAB_005e24c7;
   case 1:
-    fVar4 = this_ptr->timer - in_stack_00000008;
+    fVar4 = this_ptr->timer - delta_time;
     this_ptr->timer = fVar4;
     if (fVar4 <= 0.0) {
       this_ptr->timer = 0.0;
@@ -122,7 +121,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
       (this_ptr->base_weapon).field7_0x2f4[0xf] = '\0';
       break;
     }
-    fVar4 = this_ptr->timer - in_stack_00000008;
+    fVar4 = this_ptr->timer - delta_time;
     this_ptr->timer = fVar4;
     if (0.0 < fVar4) {
       core_turret_cpp_FUN_005e3560();
@@ -140,7 +139,7 @@ LAB_005e24c7:
     break;
   case 4:
     local_1c = (CVector3f *)this_ptr->field1_0x578;
-    this_ptr->timer = this_ptr->timer - in_stack_00000008;
+    this_ptr->timer = this_ptr->timer - delta_time;
     local_18 = (CVector3f *)&(this_ptr->base_weapon).base_actor.orient;
     if (0.0 < this_ptr->timer) {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_18,&local_40);
@@ -163,8 +162,7 @@ LAB_005e24c7:
       puVar9[(uint)bVar10 * -2 + 1] = puVar8[(uint)bVar10 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&local_90,&local_50,
-                 (in_stack_00000008 / (this_ptr->timer + in_stack_00000008)) *
-                 (float)2,&local_60);
+                 (delta_time / (this_ptr->timer + delta_time)) * (float)2,&local_60);
       pCVar6 = &local_80;
       quat_in = (CQuaternion4f *)local_30;
       local_80.x = local_60.w;
@@ -204,8 +202,8 @@ LAB_005e24c7:
   fVar4 = *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc);
   iVar5 = *(int *)(this_ptr->field12_0x85c + 0x54);
   *(float *)(this_ptr->field12_0x85c + 0x10) =
-       *(float *)(this_ptr->field12_0x85c + 0x10) - in_stack_00000008;
-  *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc) = fVar4 - in_stack_00000008;
+       *(float *)(this_ptr->field12_0x85c + 0x10) - delta_time;
+  *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc) = fVar4 - delta_time;
   if ((0 < iVar5) || (0.0 < *(float *)(this_ptr->field12_0x85c + 0x10))) {
     *(int *)(this_ptr->field12_0x85c + 0x54) = *(int *)(this_ptr->field12_0x85c + 0x54) + -1;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);

@@ -25,7 +25,7 @@ void CTrigger(CTrigger * this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_process_FUN_005dfac0
 // Address: 005dfac0
-void CTrigger::process(CTrigger * this_ptr);
+void CTrigger::process(CTrigger * this_ptr, float delta_time);
 
 // Original: core_trigger.cpp_CTrigger_FUN_005e00d0
 // Address: 005e00d0

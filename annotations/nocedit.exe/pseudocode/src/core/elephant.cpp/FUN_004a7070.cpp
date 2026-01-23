@@ -12,6 +12,7 @@ void core_elephant_cpp_FUN_004a7070(void)
   CWeapon *pCVar1;
   CVector3f *input_local_point;
   CWeapon *in_stack_00000004;
+  float in_stack_0000000c;
   CVector3f CStack_1c;
   
   if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 4) != 0) {
@@ -42,6 +43,6 @@ void core_elephant_cpp_FUN_004a7070(void)
   (pCVar1->base_actor).actor_name[5] = '\0';
   (pCVar1->base_actor).actor_name[6] = '\0';
   (pCVar1->base_actor).actor_name[7] = '\0';
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_0000000c);
   return;
 }

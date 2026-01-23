@@ -308,12 +308,12 @@
   },
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 1905,
+    "complexity_score": 1915,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
     "pseudocode_lines": 395,
-    "suspect_count": 148,
+    "suspect_count": 149,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
@@ -1435,6 +1435,13 @@
       "match": "in_stack_00000004",
       "text": "(*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c) = local_18,",
       "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 317,
+      "match": "2.8026e-45",
+      "text": "(*local_18->vtable[1].process)(local_18,2.8026e-45);",
+      "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",

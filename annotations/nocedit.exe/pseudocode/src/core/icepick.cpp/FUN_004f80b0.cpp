@@ -306,7 +306,7 @@ LAB_004f82f8:
   pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004->carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash);
   if (pCVar8 != (CDemonActor *)0x0) {
-    (*pCVar8->vtable->process)(pCVar8);
+    (*pCVar8->vtable->process)(pCVar8,in_stack_00000008);
     pCVar8[4].actor_name[8] = 'd';
     pCVar8[4].actor_name[9] = '\0';
     pCVar8[4].actor_name[10] = '\0';
@@ -337,6 +337,6 @@ LAB_004f82f8:
               (local_14,(CQuaternion4f *)auStack_78,fVar7,iVar5,blend_callback);
   }
   core_icepick_cpp_FUN_004f8810();
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
   return;
 }

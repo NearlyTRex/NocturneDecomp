@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00658435
+;   double DOUBLE_00658435 = 0.5
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     FLD float ptr [EDX + 0x8]           ; 005f8d05
     FSUB float ptr [EAX + 0x8]          ; 005f8d08
     FST float ptr [ESP + 0x20]          ; 005f8d0b
-    FMUL double ptr [0x00658435]        ; 005f8d0f | DAT_00658435
+    FMUL double ptr [0x00658435]        ; 005f8d0f | DOUBLE_00658435
     FLD1                                ; 005f8d15
     FADDP                               ; 005f8d17
     FSTP float ptr [ESP + 0x24]         ; 005f8d19

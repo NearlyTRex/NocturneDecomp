@@ -2,13 +2,13 @@
 // Address: 005c6e90
 // Address Range: [[005c6e90, 005c7552]]
 // Convention: __cdecl
-// Signature: void core_succubus.cpp_CSuccubus_process_FUN_005c6e90(CSuccubus * this_ptr)
+// Signature: void core_succubus.cpp_CSuccubus_process_FUN_005c6e90(CSuccubus * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005c7515) */
 
-void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_ptr)
+void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_ptr,float delta_time)
 
 {
   COrientation *pCVar1;
@@ -31,7 +31,6 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   char *pcVar14;
   CDeformableModelInstance *pCVar15;
   char *pcVar16;
-  float in_stack_00000008;
   
   iVar9 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if (iVar9 == 0) {
@@ -43,7 +42,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
   fVar11 = (this_ptr->base_enemy).speed;
-  while (0.0 < in_stack_00000008 * fVar11) {
+  while (0.0 < delta_time * fVar11) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
               (&(this_ptr->base_enemy).base_character.model.motion_controller);
     core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
@@ -57,7 +56,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   *(uint *)(this_ptr->field1_0xbeb4 + 0x225c) =
        *(uint *)(this_ptr->field1_0xbeb4 + 0x2260);
   fVar11 = (this_ptr->base_enemy).speed;
-  while (0.0 < in_stack_00000008 * fVar11) {
+  while (0.0 < delta_time * fVar11) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
               ((CMotionController *)(this_ptr->field1_0xbeb4 + 8));
   }
@@ -67,7 +66,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
-       in_stack_00000008 * fVar5 * fVar11;
+       delta_time * fVar5 * fVar11;
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                       (&pCVar15->motion_controller);
   uVar3 = pSVar10->state_index;
@@ -181,13 +180,13 @@ LAB_005c731a:
 LAB_005c6fd0:
   if (0.0 < *(float *)(this_ptr->base_enemy).field6_0xbe38) {
     *(float *)(this_ptr->base_enemy).field6_0xbe38 =
-         *(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;
+         *(float *)(this_ptr->base_enemy).field6_0xbe38 - delta_time;
   }
   iVar9 = core_charactr_cpp_CCharacter_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar9 != 0) {
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) =
          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) -
-         in_stack_00000008 * (float)32;
+         delta_time * (float)32;
     pCVar7 = &this_ptr->base_enemy;
     (pCVar7->base_character).field2_0x240c[0x18] = '\0';
     (pCVar7->base_character).field2_0x240c[0x19] = '\0';
@@ -207,7 +206,7 @@ LAB_005c6fd0:
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
   pCVar15 = &(this_ptr->base_enemy).base_character.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar15);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                       (&pCVar15->motion_controller);
   fVar11 = (this_ptr->base_enemy).base_character.model.motion_controller.current_frame_number;
@@ -216,7 +215,7 @@ LAB_005c6fd0:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
             ((CDeformableModelInstance *)(this_ptr->field1_0xbeb4 + 8));
   if ((*(int *)(this_ptr->field1_0xbeb4 + 0x2480) != 0) &&
-     (fVar5 = *(float *)(this_ptr->field1_0xbeb4 + 0x2484) + in_stack_00000008,
+     (fVar5 = *(float *)(this_ptr->field1_0xbeb4 + 0x2484) + delta_time,
      *(float *)(this_ptr->field1_0xbeb4 + 0x2484) = fVar5, 4.0f < fVar5)) {
     this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                             (0xbef0,"..\\core\\succubus.cpp",0x16c);
@@ -286,7 +285,7 @@ LAB_005c6fd0:
     iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->field1_0xbeb4 + 0x2478))
     ;
     if ((iVar9 == 0) &&
-       (fVar11 = *(float *)(this_ptr->field1_0xbeb4 + 0x247c) - in_stack_00000008,
+       (fVar11 = *(float *)(this_ptr->field1_0xbeb4 + 0x247c) - delta_time,
        *(float *)(this_ptr->field1_0xbeb4 + 0x247c) = fVar11, fVar11 < 0.0)) {
       fVar11 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
       pCVar4 = (this_ptr->base_enemy).base_character.base_actor.vtable;

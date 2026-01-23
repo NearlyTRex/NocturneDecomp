@@ -2,13 +2,11 @@
 // Address: 0047f140
 // Address Range: [[0047f140, 0047f7a9]]
 // Convention: __cdecl
-// Signature: void core_dog.cpp_CZombieDog_process_FUN_0047f140(CZombieDog * this_ptr)
+// Signature: void core_dog.cpp_CZombieDog_process_FUN_0047f140(CZombieDog * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
+void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,float delta_time)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -27,7 +25,6 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
   int extraout_EAX_00;
   int extraout_EAX_01;
   int extraout_EAX_02;
-  float in_stack_00000008;
   CVector3f local_98;
   CVector3f local_8c;
   float local_80;
@@ -49,7 +46,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
   float local_30;
   float local_24;
   float local_20;
-  uint local_1c;
+  int local_1c;
   float local_18;
   float local_14;
   
@@ -62,7 +59,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
-  local_20 = in_stack_00000008 * (this_ptr->base_enemy).speed;
+  local_20 = delta_time * (this_ptr->base_enemy).speed;
   pCVar1 = &(this_ptr->base_enemy).base_character.model;
   while (0.0 < local_20) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
@@ -76,7 +73,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
-       in_stack_00000008 * fVar5 * fVar3;
+       delta_time * fVar5 * fVar3;
   if (iVar7 == 2) {
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) *
@@ -101,7 +98,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
                      (this_ptr->base_enemy).base_character.base_actor.location.position.z;
           local_24 = local_6c * local_6c + local_74 * local_74 + local_70 * local_70;
           local_18 = (float)(((int)local_24 >> 1) + DAT_02d7a7b8);
-          if (local_18 < _DAT_0065ca34) {
+          if (local_18 < 8.0f) {
             iVar7 = 1;
           }
           else {
@@ -147,12 +144,12 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
                    *(float *)(iVar9 + 0x24);
         local_54 = (this_ptr->base_enemy).base_character.base_actor.location.position.z -
                    *(float *)(iVar9 + 0x28);
-        if ((_DAT_0065ca34 < SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58))
+        if ((8.0f < SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58))
            && (iVar7 == 1)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,2,1);
         }
-        local_1c = 0x40400000;
+        local_1c = INT_0065ca28;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
              (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
@@ -247,7 +244,7 @@ LAB_0047f3ed:
 switchD_0047f7a3_caseD_5:
   if (0.0 < *(float *)(this_ptr->base_enemy).field6_0xbe38) {
     *(float *)(this_ptr->base_enemy).field6_0xbe38 =
-         *(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;
+         *(float *)(this_ptr->base_enemy).field6_0xbe38 - delta_time;
   }
   iVar7 = core_charactr_cpp_CCharacter_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar7 != 0) {
@@ -260,14 +257,11 @@ switchD_0047f7a3_caseD_5:
     }
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) =
          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) -
-         in_stack_00000008 * (float)32;
-    local_68 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x1c) *
-               in_stack_00000008;
-    local_64 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) *
-               in_stack_00000008;
+         delta_time * (float)32;
+    local_68 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x1c) * delta_time;
+    local_64 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) * delta_time;
     pcVar2 = (this_ptr->base_enemy).base_character.field2_0x240c + 0x10;
-    local_60 = in_stack_00000008 *
-               *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x24);
+    local_60 = delta_time * *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x24);
     pCVar12 = &(this_ptr->base_enemy).base_character.model.accumulated_root_motion;
     local_38 = local_68 + *(float *)pcVar2;
     local_34 = local_64 + *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14);
@@ -292,6 +286,6 @@ switchD_0047f7a3_caseD_5:
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base_enemy).base_character.model);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   return;
 }

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_zombie.cpp_CZombie_FUN_005fb1f0(CZombie* param_1, uint
    param_2) */
 
@@ -62,10 +61,10 @@ void core_zombie_cpp_CZombie_FUN_005fb1f0(void)
     pfVar4 = (float *)(**(code **)(*(int *)(iVar5 + 0x154) + 0x14))();
     local_34 = *pfVar4 + pfVar4[3];
     local_30 = pfVar4[1] + pfVar4[4];
-    local_4c.x = local_34 * _DAT_00658821;
+    local_4c.x = local_34 * 0.5f;
     local_2c = pfVar4[2] + pfVar4[5];
-    local_4c.y = local_30 * _DAT_00658821;
-    local_4c.z = local_2c * _DAT_00658821;
+    local_4c.y = local_30 * 0.5f;
+    local_4c.z = local_2c * 0.5f;
     if (&local_64 != &local_4c) {
       local_64.x = local_4c.x;
       local_64.y = local_4c.y;
@@ -100,9 +99,9 @@ void core_zombie_cpp_CZombie_FUN_005fb1f0(void)
     local_1c.y = local_d8 + local_cc;
     local_1c.z = local_d4 + local_c8;
     core_actor_cpp_CVector_ctor_FUN_00410340(&local_7c);
-    local_7c.x = local_1c.x * _DAT_00658821;
-    local_7c.y = local_1c.y * _DAT_00658821;
-    local_7c.z = local_d4 + (float)_DAT_00658825;
+    local_7c.x = local_1c.x * 0.5f;
+    local_7c.y = local_1c.y * 0.5f;
+    local_7c.z = local_d4 + (float)0.40000000000000002;
     if (&local_64 != &local_7c) {
       local_64.x = local_7c.x;
       local_64.y = local_7c.y;

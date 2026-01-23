@@ -2,11 +2,11 @@
 // Address: 00528d20
 // Address Range: [[00528d20, 005293a1]]
 // Convention: __cdecl
-// Signature: void core_moloch.cpp_CMoloch_process_FUN_00528d20(CMoloch * this_ptr)
+// Signature: void core_moloch.cpp_CMoloch_process_FUN_00528d20(CMoloch * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
+void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,float delta_time)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -19,7 +19,6 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
   float fVar7;
   SMotion *pSVar8;
   char *pcVar9;
-  float in_stack_00000008;
   uint uVar10;
   SCollisionInfo *in_stack_ffffe4f4;
   SBoneTransformData SStack_1afc;
@@ -42,7 +41,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
   if (iVar5 == 0) {
     return;
   }
-  fVar7 = (float)(this_ptr->base_hero).field1_0xbe24 - in_stack_00000008;
+  fVar7 = (float)(this_ptr->base_hero).field1_0xbe24 - delta_time;
   (this_ptr->base_hero).field1_0xbe24 = (int)fVar7;
   if (fVar7 < 0.0) {
     (this_ptr->base_hero).field1_0xbe24 = 0;
@@ -52,7 +51,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
        (this_ptr->base_hero).base_character.model.accumulated_root_motion.z;
   (this_ptr->base_hero).base_character.model.accumulated_root_motion.x =
        (this_ptr->base_hero).base_character.model.accumulated_root_motion.y;
-  fVar7 = in_stack_00000008;
+  fVar7 = delta_time;
   while (pCVar4 = g_CGamePtr, 0.0 < fVar7) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
               (&(this_ptr->base_hero).base_character.model.motion_controller);
@@ -61,7 +60,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
   fVar7 = (float)12.566370614;
   *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x28) =
        (this_ptr->base_hero).base_character.model.accumulated_root_motion.z;
-  *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c) = in_stack_00000008 * fVar7;
+  *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c) = delta_time * fVar7;
   if (pCVar4->letterbox_mode != 0) {
     *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c) =
          *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x2c) *
@@ -128,14 +127,11 @@ LAB_00528e3a:
   if (pCVar2 == (CDemonActor *)0x0) {
     *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) =
          *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) -
-         in_stack_00000008 * (float)32;
-    local_38 = *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x1c) *
-               in_stack_00000008;
-    local_34 = *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) *
-               in_stack_00000008;
+         delta_time * (float)32;
+    local_38 = *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x1c) * delta_time;
+    local_34 = *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x20) * delta_time;
     pCVar6 = &(this_ptr->base_hero).base_character.model.accumulated_root_motion;
-    local_30 = in_stack_00000008 *
-               *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x24);
+    local_30 = delta_time * *(float *)((this_ptr->base_hero).base_character.field2_0x240c + 0x24);
     pcVar9 = (this_ptr->base_hero).base_character.field2_0x240c + 0x10;
     SStack_1afc.bone_world_matrices[99].m[1].z = pCVar6->x + *(float *)pcVar9;
     SStack_1afc.bone_world_matrices[99].m[2].w =
@@ -176,7 +172,7 @@ LAB_00528e3a:
       if ((float)1.57079632675 < fVar7) {
         fVar7 = fVar7 + -3.141593f;
       }
-      local_18 = in_stack_00000008 * (float)3.1415926535000001;
+      local_18 = delta_time * (float)3.1415926535000001;
       local_1c = -local_18;
       if (fVar7 < local_1c) {
         fVar7 = local_1c;
@@ -207,7 +203,7 @@ LAB_00528f8e:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar1);
   (*(this_ptr->base_hero).base_character.base_actor.vtable[1].hasCollision)
             ((CDemonActor *)this_ptr,in_stack_ffffe4f4);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   if (this_ptr->morphing == 0) {
     if (this_ptr->in_human_form == 0) {
       iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -234,7 +230,7 @@ LAB_00528f8e:
                (this_ptr->base_hero).base_character.model.motion_controller.current_frame_number);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               ((CDeformableModelInstance *)this_ptr->field1_0x1fbd4);
-    fVar7 = this_ptr->morph_timer + in_stack_00000008;
+    fVar7 = this_ptr->morph_timer + delta_time;
     this_ptr->morph_timer = fVar7;
     if (2.0f < fVar7) {
       if (this_ptr->in_human_form == 0) {

@@ -25,7 +25,7 @@ void CTentacle(CTentacle * this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_process_FUN_005db050
 // Address: 005db050
-void CTentacle::process(CTentacle * this_ptr);
+void CTentacle::process(CTentacle * this_ptr, float delta_time);
 
 // Original: core_tentacle.cpp_CTentacle_FUN_005db840
 // Address: 005db840

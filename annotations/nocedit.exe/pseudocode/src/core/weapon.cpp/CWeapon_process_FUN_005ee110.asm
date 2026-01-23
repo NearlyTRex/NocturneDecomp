@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
+; __cdecl void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaronWeapon_process_FUN_00413dc0 at 00413dd6

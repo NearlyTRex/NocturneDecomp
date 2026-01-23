@@ -25,7 +25,7 @@
 ;
 ; XREF[79]:
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80 at 00410ea3
-;   core_ammobox.cpp_CAmmoBox_FUN_00411820 at 00411847
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820 at 00411847
 ;   core_anvil.cpp_CAnvil_FUN_00411ec0 at 00411f15
 ;   core_backgnd.cpp_CBackgroundActor_FUN_00412860 at 00412899
 ;   core_backgnd.cpp_CBackgroundActor_FUN_004128d0 at 00412907

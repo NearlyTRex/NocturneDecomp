@@ -25,7 +25,7 @@ void CAmmo::setup(CAmmo * this_ptr);
 
 // Original: core_ammo.cpp_CAmmo_process_FUN_00410e70
 // Address: 00410e70
-void CAmmo::process(CAmmo * this_ptr);
+void CAmmo::process(CAmmo * this_ptr, float delta_time);
 
 // Original: core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80
 // Address: 00410e80

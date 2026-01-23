@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_tommygun.cpp_CTommyGun_process_FUN_005de360(CTommyGun * this_ptr)
+; __cdecl void core_tommygun.cpp_CTommyGun_process_FUN_005de360(CTommyGun * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CTommyGun *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x1f8]:8  local_1f8
 ; undefined8       Stack[-0x1f0]:8  local_1f0
@@ -54,7 +55,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005de372
     PUSH EBX                            ; 005de375
     CALL core_weapon.cpp_CWeapon_process_FUN_005ee110 ; 005de376
-        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
+        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x578]     ; 005de37b
     ADD ESP,0x8                         ; 005de381
     TEST EDX,EDX                        ; 005de384

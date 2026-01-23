@@ -17,7 +17,7 @@
 ;   core_frankgen.cpp_FUN_004d2740 at 004d274b
 ;   core_glass.cpp_CGlass_showEditorHelp_FUN_004eb600 at 004eb60d
 ;   core_grave.cpp_FUN_004eead0 at 004eeadd
-;   core_ladder.cpp_FUN_00502e50 at 00502e5d
+;   core_ladder.cpp_CLadder_FUN_00502e50 at 00502e5d
 ;   ... and 7 more
 ;
 ; Referenced Globals:

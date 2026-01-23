@@ -32,7 +32,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee3f0(CWeapon *this_ptr)
       *(float *)(this_ptr->field9_0x305 + 0x4b) = in_stack_00000008->z;
     }
   }
-  (*(this_ptr->base_actor).vtable[1].process)(&this_ptr->base_actor);
+  (*(this_ptr->base_actor).vtable[1].process)(&this_ptr->base_actor,0.0);
   this_ptr->sim_timer = 5.0;
   return;
 }

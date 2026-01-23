@@ -37,7 +37,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_ammobox.cpp_LogConsoleOpenPCTFile_FUN_00411690
 ;   core_boxactor.cpp_FUN_00422390
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_00429820
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70
@@ -882,8 +882,8 @@ section .text
     ADD ESP,0x4                         ; 005bc3b4
     PUSH dword ptr [EBP + 0x18]         ; 005bc3b7
     PUSH EBX                            ; 005bc3ba
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 005bc3bb
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 005bc3bb
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 005bc3c0
     PUSH 0x6                            ; 005bc3c3
     LEA ESI,[EBX + 0x158]               ; 005bc3c5

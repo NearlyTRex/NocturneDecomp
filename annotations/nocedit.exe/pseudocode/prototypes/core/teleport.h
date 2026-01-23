@@ -57,7 +57,7 @@ CTeleport * CTeleport::ctor(CTeleport * this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_process_FUN_005daa20
 // Address: 005daa20
-void CTeleport::process(CTeleport * this_ptr);
+void CTeleport::process(CTeleport * this_ptr, float delta_time);
 
 // Original: core_teleport.cpp_CTeleport_FUN_005daad0
 // Address: 005daad0

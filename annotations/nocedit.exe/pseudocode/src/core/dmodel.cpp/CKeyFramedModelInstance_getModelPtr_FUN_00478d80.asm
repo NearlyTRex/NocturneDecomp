@@ -9,8 +9,8 @@
 ; XREF[84]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 0040972a
 ;   core_ammo.cpp_CAmmo_getBoundingBox_FUN_00410ef0 at 00410eff
-;   core_ammobox.cpp_CAmmoBox_FUN_00411820 at 00411870
-;   core_ammobox.cpp_CAmmoBox_FUN_004118b0 at 004118bf
+;   core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_004118b0 at 004118bf
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820 at 00411870
 ;   core_anvil.cpp_CAnvil_FUN_00411fe0 at 00411fef
 ;   core_anvil.cpp_CAnvil_FUN_00412090 at 004120c6
 ;   core_backgnd.cpp_CBackgroundActor_FUN_00412940 at 0041294f

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_zombie_cpp_CZombie_FUN_005fc720(CZombie *this_ptr)
 
 {
@@ -51,8 +49,8 @@ LAB_005fc7ac:
           local_48.y = pCVar1->y;
           local_48.z = pCVar1->z;
         }
-        local_48.y = local_30.y * (float)_DAT_00658a35 + local_48.y * (float)_DAT_00658a2d;
-        local_48.x = local_30.x * (float)_DAT_00658a25 + local_48.x * (float)_DAT_00658a25;
+        local_48.y = local_30.y * (float)0.29999999999999999 + local_48.y * (float)0.69999999999999996;
+        local_48.x = local_30.x * (float)0.5 + local_48.x * (float)0.5;
         pCVar1 = in_stack_00000008 + iVar3;
         if (pCVar1 != &local_48) {
           pCVar1->x = local_48.x;

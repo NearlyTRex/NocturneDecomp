@@ -374,7 +374,7 @@ void core_bride_cpp_FUN_00423a30(void)
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
               (&(in_stack_00000004->base_character).model);
-    core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character)
+    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character)
     ;
     if (in_stack_00000004->pool_me == 0) {
       core_charactr_cpp_CCharacter_FUN_0042b760(&in_stack_00000004->base_character);

@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_processFootstep
-typedef int (*CDemonActor_processFootstep)(struct CDemonActor* this_ptr, float param);
+typedef int (*CDemonActor_processFootstep)(struct CDemonActor* this_ptr, float volume);
 

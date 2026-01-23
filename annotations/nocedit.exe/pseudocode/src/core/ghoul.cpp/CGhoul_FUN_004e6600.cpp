@@ -993,7 +993,7 @@ LAB_004e6754:
       (pCVar8->base_actor).actor_name[0x1f] = '\0';
     }
   }
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character);
   if (((float)0.01 <
        ABS(*(float *)((in_stack_00000004->base_character).field2_0x240c + 0xc))) ||
      (fVar15 = *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x14),

@@ -2,11 +2,11 @@
 // Address: 00411d90
 // Address Range: [[00411d90, 00411eb4]]
 // Convention: __cdecl
-// Signature: void core_anvil.cpp_CAnvil_process_FUN_00411d90(CAnvil * this_ptr)
+// Signature: void core_anvil.cpp_CAnvil_process_FUN_00411d90(CAnvil * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
+void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float delta_time)
 
 {
   CHero *pCVar1;
@@ -14,7 +14,6 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
   int iVar3;
   int iVar4;
   float unaff_ESI;
-  float in_stack_00000008;
   SDamageInfo local_48;
   
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -34,7 +33,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
          this_ptr->drop_height + (this_ptr->base_actor).location.position.y;
   }
   if (this_ptr->triggered != 0) {
-    fVar2 = this_ptr->yvel - in_stack_00000008 * (float)32;
+    fVar2 = this_ptr->yvel - delta_time * (float)32;
     this_ptr->yvel = fVar2;
     iVar3 = g_LocalHeroIndex;
     (this_ptr->base_actor).location.position.y = fVar2 + (this_ptr->base_actor).location.position.y;

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_baron.cpp_CBaron_process_FUN_00412e80(CBaron * this_ptr)
+; __cdecl void core_baron.cpp_CBaron_process_FUN_00412e80(CBaron * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0xa4]:1  local_a4
 ; undefined1       Stack[-0x94]:1  local_94
@@ -52,7 +53,7 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_baron.cpp_FUN_004135e0
 ;   core_baron.cpp_FUN_00413a00
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00429820
 ;   core_charactr.cpp_CCharacter_FUN_00429870
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70
@@ -289,8 +290,8 @@ section .text
     PUSH EBP                            ; 00413122
     MOV EDI,0x40000000                  ; 00413123
     XOR EBX,EBX                         ; 00413128
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 0041312a
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 0041312a
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 0041312f
     LEA ESI,[EBP + 0x20]                ; 00413132
     PUSH 0x40000000                     ; 00413135

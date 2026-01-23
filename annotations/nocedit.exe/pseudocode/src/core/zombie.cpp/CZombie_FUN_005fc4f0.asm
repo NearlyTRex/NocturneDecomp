@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 s_lookForHead_006589dd
+;   TerminatedCString s_lookForHead_006589dd
 ;   TerminatedCString s_f_zombie_die_wav_006589e9
 ;   TerminatedCString s_zom_d0_wav_006589fb
 ;   TerminatedCString s_f_zombie_hit_wav_00658a07
@@ -137,7 +137,7 @@ section .text
         ;   XREF to: 005fc5a0 (CONDITIONAL_JUMP)  ; LAB_005fc5a0
     PUSH 0x0                            ; 005fc636
         ;   Label: LAB_005fc636
-    PUSH 0x6589dd                       ; 005fc638 | s_lookForHead_006589dd
+    PUSH 0x6589dd                       ; 005fc638 | = "lookForHead"
     LEA EAX,[EBX + 0x158]               ; 005fc63d
     PUSH EAX                            ; 005fc643
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 005fc644

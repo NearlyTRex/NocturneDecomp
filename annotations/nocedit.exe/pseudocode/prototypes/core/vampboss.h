@@ -29,7 +29,7 @@ undefined FUN_005e58d0();
 
 // Original: core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
 // Address: 005e5970
-void CVampireBoss::process(CVampireBoss * this_ptr);
+void CVampireBoss::process(CVampireBoss * this_ptr, float delta_time);
 
 // Original: core_vampboss.cpp_FUN_005e6b80
 // Address: 005e6b80

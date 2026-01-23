@@ -33,7 +33,7 @@ void CTVBat::serialize(CTVBat * this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_process_FUN_005e4210
 // Address: 005e4210
-void CTVBat::process(CTVBat * this_ptr);
+void CTVBat::process(CTVBat * this_ptr, float delta_time);
 
 // Original: core_tvbat.cpp_FUN_005e4d70
 // Address: 005e4d70

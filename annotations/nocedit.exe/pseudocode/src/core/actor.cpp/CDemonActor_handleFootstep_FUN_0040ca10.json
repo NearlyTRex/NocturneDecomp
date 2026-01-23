@@ -72,7 +72,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10",
-    "signature": "int core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor * this_ptr, CVector3f * position, int surface_type, float unknown)"
+    "signature": "int core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor * this_ptr, CVector3f * position, int surface_type, float volume)"
   },
   "function_calls": [
     {
@@ -226,7 +226,7 @@
       "call_site_count": 2,
       "caller_details": [
         {
-          "caller": "CDemonActor_processFootstepAtOffset_FUN_0040c8f0",
+          "caller": "CDemonActor_processFootstepAt_FUN_0040c8f0",
           "estimated_params": 4
         },
         {
@@ -240,7 +240,7 @@
       ]
     },
     "possible_callers": [
-      "CDemonActor_processFootstepAtOffset_FUN_0040c8f0",
+      "CDemonActor_processFootstepAt_FUN_0040c8f0",
       "CDemonActor_processFootstep_FUN_0040c830"
     ],
     "vtable_offset": 32
@@ -310,7 +310,7 @@
       },
       {
         "is_param": true,
-        "name": "unknown",
+        "name": "volume",
         "offset": 16,
         "size": 4,
         "type": "float"

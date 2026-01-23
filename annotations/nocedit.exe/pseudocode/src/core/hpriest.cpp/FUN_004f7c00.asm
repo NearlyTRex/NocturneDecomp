@@ -23,7 +23,7 @@ section .text
     PUSH dword ptr [ESP + 0xc]          ; 004f7c05
     PUSH EBX                            ; 004f7c09
     CALL core_npc.cpp_CNPC_process_FUN_005448b0 ; 004f7c0a
-        ;   XREF to: 005448b0 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_process_FUN_005448b0(CNPC * this_ptr)
+        ;   XREF to: 005448b0 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_process_FUN_005448b0(CNPC * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f7c0f
     LEA EAX,[EBX + 0x1f708]             ; 004f7c12
     PUSH EAX                            ; 004f7c18

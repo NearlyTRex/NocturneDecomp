@@ -6,6 +6,9 @@
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_160 */
+/* WARNING: Variable defined which should be unmapped: local_190 */
+
 void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color)
 
 {
@@ -15,18 +18,13 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
   CVector3f *pCVar1;
   CVector3f *pCVar2;
   int iVar3;
-  uint corner_index;
+  float corner_index;
   SRenderVertex *pSVar4;
   SRenderVertex *pSVar5;
-  int *piVar6;
+  SRenderVertex *pSVar6;
   byte bVar7;
-  SRenderVertex in_stack_fffffe70;
-  byte auVar8 [24];
-  byte in_stack_fffffea0 [32];
-  uint uVar9;
-  uint uVar10;
-  SRenderVertex *pSVar11;
-  CVector3i *pCVar12;
+  SRenderVertex local_190;
+  SRenderVertex local_160;
   CVector3f local_130;
   CVector3i local_124;
   CVector3i local_118;
@@ -77,12 +75,21 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
   CVector3i local_1c;
   
   bVar7 = 0;
-  corner_index = 0;
+  corner_index = 0.0;
   g_ActiveRenderColor = line_color;
   do {
-    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bbox,&local_d0,corner_index ^ 1);
-    uVar9 = 0x40d4b7;
-    pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bbox,&local_dc,corner_index);
+    local_160.w_recip = (float)((uint)corner_index ^ 1);
+    local_160.fog = (float)&local_d0;
+    local_160.color = (int)bbox;
+    local_160.light = 5.953746e-39;
+    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                       (bbox,(CVector3f *)local_160.fog,(uint)local_160.w_recip);
+    local_160.fog = (float)&local_dc;
+    local_160.color = (int)bbox;
+    local_160.light = 5.95378e-39;
+    local_160.w_recip = corner_index;
+    pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                       (bbox,(CVector3f *)local_160.fog,(uint)corner_index);
     local_64 = pCVar2->x;
     local_60 = pCVar2->y;
     local_5c = pCVar2->z;
@@ -98,46 +105,53 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_1c.x = (int)ROUND(local_64 * 256.0f);
     local_1c.y = (int)ROUND(local_60 * 256.0f);
     local_1c.z = (int)ROUND(local_5c * 256.0f);
+    local_160.w_recip = (float)&local_1c;
+    local_160.fog = (float)g_CDemonRendererPtr1->vertex_buffer_ptr;
+    local_160.color = 0x40d594;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_1c);
+              ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
     local_124.x = (int)ROUND(local_e8 * 256.0f);
     local_124.y = (int)ROUND(local_e4 * 256.0f);
     local_124.z = (int)ROUND(local_e0 * 256.0f);
-    pCVar12 = &local_124;
-    pSVar11 = g_CDemonRendererPtr1->vertex_buffer_ptr + 1;
-    uVar10 = 0x40d5d7;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&pSVar11->projected_vertex,pCVar12);
+    local_160.w_recip = (float)&local_124;
+    local_160.fog = (float)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+    local_160.color = 0x40d5d7;
+    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+              ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
     pSVar5 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     pSVar4 = pSVar5 + 1;
-    piVar6 = (int *)&stack0xfffffea0;
+    pSVar6 = &local_160;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = (pSVar4->projected_vertex).transformed_x;
+      *(int *)pSVar6 = (pSVar4->projected_vertex).transformed_x;
       pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);
     }
-    piVar6 = (int *)&stack0xfffffe70;
+    pSVar4 = &local_190;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = (pSVar5->projected_vertex).transformed_x;
+      *(int *)pSVar4 = (pSVar5->projected_vertex).transformed_x;
       pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
     }
-    vertex2.light = (float)uVar9;
-    auVar8 = in_stack_fffffea0._0_24_;
-    vertex2.projected_vertex.transformed_x = auVar8._0_4_;
-    vertex2.projected_vertex.transformed_y = auVar8._4_4_;
-    vertex2.projected_vertex.transformed_z = auVar8._8_4_;
-    vertex2.projected_vertex.inv_z = auVar8._12_4_;
-    vertex2.projected_vertex.screen_x = auVar8._16_4_;
-    vertex2.projected_vertex.screen_y = auVar8._20_4_;
-    vertex2.u = (float)in_stack_fffffea0._24_4_;
-    vertex2.v = (float)in_stack_fffffea0._28_4_;
-    vertex2.color = uVar10;
-    vertex2.fog = (float)pSVar11;
-    vertex2.w_recip = (float)pCVar12;
-    engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe70,vertex2);
-    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bbox,&local_130,corner_index ^ 2);
-    uVar9 = 0x40d635;
-    pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bbox,&local_c4,corner_index);
+    vertex2.light = local_160.light;
+    vertex2.projected_vertex = local_160.projected_vertex;
+    vertex2.u = local_160.u;
+    vertex2.v = local_160.v;
+    vertex2.color = local_160.color;
+    vertex2.fog = local_160.fog;
+    vertex2.w_recip = local_160.w_recip;
+    engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_190,vertex2);
+    local_160.w_recip = (float)((uint)corner_index ^ 2);
+    local_160.color = (int)bbox;
+    local_160.light = 5.954281e-39;
+    local_160.fog = (float)&local_130;
+    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                       (bbox,&local_130,(uint)local_160.w_recip);
+    local_160.fog = (float)&local_c4;
+    local_160.color = (int)bbox;
+    local_160.light = 5.954315e-39;
+    local_160.w_recip = corner_index;
+    pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                       (bbox,(CVector3f *)local_160.fog,(uint)corner_index);
     local_7c = pCVar2->x;
     local_78 = pCVar2->y;
     local_74 = pCVar2->z;
@@ -153,46 +167,53 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_28.x = (int)ROUND(local_7c * 256.0f);
     local_28.y = (int)ROUND(local_78 * 256.0f);
     local_28.z = (int)ROUND(local_74 * 256.0f);
+    local_160.w_recip = (float)&local_28;
+    local_160.fog = (float)g_CDemonRendererPtr1->vertex_buffer_ptr;
+    local_160.color = 0x40d71b;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_28);
+              ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
     local_b8.x = (int)ROUND(local_70 * 256.0f);
     local_b8.y = (int)ROUND(local_6c * 256.0f);
     local_b8.z = (int)ROUND(local_68 * 256.0f);
-    pCVar12 = &local_b8;
-    pSVar11 = g_CDemonRendererPtr1->vertex_buffer_ptr + 1;
-    uVar10 = 0x40d764;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&pSVar11->projected_vertex,pCVar12);
+    local_160.w_recip = (float)&local_b8;
+    local_160.fog = (float)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+    local_160.color = 0x40d764;
+    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+              ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
     pSVar5 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     pSVar4 = pSVar5 + 1;
-    piVar6 = (int *)&stack0xfffffea0;
+    pSVar6 = &local_160;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = (pSVar4->projected_vertex).transformed_x;
+      *(int *)pSVar6 = (pSVar4->projected_vertex).transformed_x;
       pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);
     }
-    piVar6 = (int *)&stack0xfffffe70;
+    pSVar4 = &local_190;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = (pSVar5->projected_vertex).transformed_x;
+      *(int *)pSVar4 = (pSVar5->projected_vertex).transformed_x;
       pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
     }
-    vertex2_00.light = (float)uVar9;
-    auVar8 = in_stack_fffffea0._0_24_;
-    vertex2_00.projected_vertex.transformed_x = auVar8._0_4_;
-    vertex2_00.projected_vertex.transformed_y = auVar8._4_4_;
-    vertex2_00.projected_vertex.transformed_z = auVar8._8_4_;
-    vertex2_00.projected_vertex.inv_z = auVar8._12_4_;
-    vertex2_00.projected_vertex.screen_x = auVar8._16_4_;
-    vertex2_00.projected_vertex.screen_y = auVar8._20_4_;
-    vertex2_00.u = (float)in_stack_fffffea0._24_4_;
-    vertex2_00.v = (float)in_stack_fffffea0._28_4_;
-    vertex2_00.color = uVar10;
-    vertex2_00.fog = (float)pSVar11;
-    vertex2_00.w_recip = (float)pCVar12;
-    engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe70,vertex2_00);
-    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bbox,&local_a0,corner_index ^ 4);
-    uVar9 = 0x40d7c1;
-    pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bbox,&local_ac,corner_index);
+    vertex2_00.light = local_160.light;
+    vertex2_00.projected_vertex = local_160.projected_vertex;
+    vertex2_00.u = local_160.u;
+    vertex2_00.v = local_160.v;
+    vertex2_00.color = local_160.color;
+    vertex2_00.fog = local_160.fog;
+    vertex2_00.w_recip = local_160.w_recip;
+    engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_190,vertex2_00);
+    local_160.w_recip = (float)((uint)corner_index ^ 4);
+    local_160.fog = (float)&local_a0;
+    local_160.color = (int)bbox;
+    local_160.light = 5.954842e-39;
+    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                       (bbox,(CVector3f *)local_160.fog,(uint)local_160.w_recip);
+    local_160.fog = (float)&local_ac;
+    local_160.color = (int)bbox;
+    local_160.light = 5.95487e-39;
+    local_160.w_recip = corner_index;
+    pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                       (bbox,(CVector3f *)local_160.fog,(uint)corner_index);
     local_58 = pCVar2->x;
     local_54 = pCVar2->y;
     local_50 = pCVar2->z;
@@ -208,44 +229,42 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     local_94.x = (int)ROUND(local_58 * 256.0f);
     local_94.y = (int)ROUND(local_54 * 256.0f);
     local_94.z = (int)ROUND(local_50 * 256.0f);
+    local_160.w_recip = (float)&local_94;
+    local_160.fog = (float)g_CDemonRendererPtr1->vertex_buffer_ptr;
+    local_160.color = 0x40d8b0;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_94);
+              ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
     local_118.x = (int)ROUND(local_f4 * 256.0f);
     local_118.y = (int)ROUND(local_f0 * 256.0f);
     local_118.z = (int)ROUND(local_ec * 256.0f);
-    pCVar12 = &local_118;
-    pSVar11 = g_CDemonRendererPtr1->vertex_buffer_ptr + 1;
-    uVar10 = 0x40d8f3;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&pSVar11->projected_vertex,pCVar12);
+    local_160.w_recip = (float)&local_118;
+    local_160.fog = (float)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+    local_160.color = 0x40d8f3;
+    wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+              ((SProjectedVertex *)local_160.fog,(CVector3i *)local_160.w_recip);
     pSVar5 = g_CDemonRendererPtr1->vertex_buffer_ptr;
     pSVar4 = pSVar5 + 1;
-    piVar6 = (int *)&stack0xfffffea0;
+    pSVar6 = &local_160;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = (pSVar4->projected_vertex).transformed_x;
+      *(int *)pSVar6 = (pSVar4->projected_vertex).transformed_x;
       pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);
     }
-    corner_index = corner_index + 1;
-    piVar6 = (int *)&stack0xfffffe70;
+    corner_index = (float)((int)corner_index + 1);
+    pSVar4 = &local_190;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = (pSVar5->projected_vertex).transformed_x;
+      *(int *)pSVar4 = (pSVar5->projected_vertex).transformed_x;
       pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
     }
-    vertex2_01.light = (float)uVar9;
-    auVar8 = in_stack_fffffea0._0_24_;
-    vertex2_01.projected_vertex.transformed_x = auVar8._0_4_;
-    vertex2_01.projected_vertex.transformed_y = auVar8._4_4_;
-    vertex2_01.projected_vertex.transformed_z = auVar8._8_4_;
-    vertex2_01.projected_vertex.inv_z = auVar8._12_4_;
-    vertex2_01.projected_vertex.screen_x = auVar8._16_4_;
-    vertex2_01.projected_vertex.screen_y = auVar8._20_4_;
-    vertex2_01.u = (float)in_stack_fffffea0._24_4_;
-    vertex2_01.v = (float)in_stack_fffffea0._28_4_;
-    vertex2_01.color = uVar10;
-    vertex2_01.fog = (float)pSVar11;
-    vertex2_01.w_recip = (float)pCVar12;
-    engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe70,vertex2_01);
+    vertex2_01.light = local_160.light;
+    vertex2_01.projected_vertex = local_160.projected_vertex;
+    vertex2_01.u = local_160.u;
+    vertex2_01.v = local_160.v;
+    vertex2_01.color = local_160.color;
+    vertex2_01.fog = local_160.fog;
+    vertex2_01.w_recip = local_160.w_recip;
+    engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_190,vertex2_01);
   } while ((int)corner_index < 8);
   return;
 }

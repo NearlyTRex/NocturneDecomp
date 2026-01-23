@@ -25,7 +25,7 @@ void CWerewolf(CWerewolf * this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_process_FUN_005efde0
 // Address: 005efde0
-void CWerewolf::process(CWerewolf * this_ptr);
+void CWerewolf::process(CWerewolf * this_ptr, float delta_time);
 
 // Original: core_werewolf.cpp_FUN_005f11a0
 // Address: 005f11a0

@@ -2,13 +2,13 @@
 // Address: 00412e80
 // Address Range: [[00412e80, 00413463]]
 // Convention: __cdecl
-// Signature: void core_baron.cpp_CBaron_process_FUN_00412e80(CBaron * this_ptr)
+// Signature: void core_baron.cpp_CBaron_process_FUN_00412e80(CBaron * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
+void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float delta_time)
 
 {
   uint uVar1;
@@ -19,7 +19,6 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
   uint *puVar6;
   uint *puVar7;
   byte bVar8;
-  float in_stack_00000008;
   CVector3f *apCStackY_1880 [1519];
   CVector3f *pCStack_c0;
   CDeformableModelInstance *pCVar9;
@@ -79,13 +78,13 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr)
   }
   pCVar2 = g_CGamePtr;
   *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x2c) =
-       in_stack_00000008 * (float)12.566370614;
+       delta_time * (float)12.566370614;
   if (pCVar2->letterbox_mode != 0) {
     *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x2c) =
          *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x2c) *
          (float)0.33333333333333298;
   }
-  fVar10 = (float)(this_ptr->field0_0x0).field1_0xbe24 - in_stack_00000008;
+  fVar10 = (float)(this_ptr->field0_0x0).field1_0xbe24 - delta_time;
   (this_ptr->field0_0x0).field1_0xbe24 = (int)fVar10;
   if (fVar10 < 0.0) {
     (this_ptr->field0_0x0).field1_0xbe24 = 0;
@@ -218,14 +217,10 @@ switchD_0041345d_default:
        (this_ptr->field0_0x0).base_character.model.accumulated_root_motion.z;
   pCVar4->x = (this_ptr->field0_0x0).base_character.model.accumulated_root_motion.y;
   *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x20) =
-       *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x20) -
-       in_stack_00000008 * fVar10;
-  local_3c = *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x1c) *
-             in_stack_00000008;
-  local_38 = *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x20) *
-             in_stack_00000008;
-  local_34 = *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x24) *
-             in_stack_00000008;
+       *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x20) - delta_time * fVar10;
+  local_3c = *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x1c) * delta_time;
+  local_38 = *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x20) * delta_time;
+  local_34 = *(float *)((this_ptr->field0_0x0).base_character.field2_0x240c + 0x24) * delta_time;
   local_6c = local_6c + local_3c;
   local_68 = local_68 + local_38;
   local_64 = local_64 + local_34;
@@ -249,7 +244,7 @@ switchD_0041345d_default:
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
             (pCVar9,source_quaternions,fVar10,iVar3,blend_callback);
   iVar3 = 0;
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   do {
     local_60.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
     iVar3 = iVar3 + 1;
@@ -263,6 +258,6 @@ switchD_0041345d_default:
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
               (g_CFireEffectPtr,&local_60,2.0,(CVector3f *)0x0,0xffff);
   } while (iVar3 < 2);
-  DAT_008224dc = DAT_008224dc + in_stack_00000008;
+  DAT_008224dc = DAT_008224dc + delta_time;
   return;
 }

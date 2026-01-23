@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_weapon_shotgun.cpp_FUN_00588060(uint param_1) */
 
 uint core_shotgun_cpp_FUN_00588060(void)
@@ -92,7 +91,7 @@ uint core_shotgun_cpp_FUN_00588060(void)
       CStack_70.x = CStack_b8.x + CStack_ac.x;
       CStack_70.y = CStack_b8.y + CStack_ac.y;
       CStack_70.z = CStack_b8.z + CStack_ac.z;
-      pCStack_38 = (CDemonActor *)((float)_DAT_00649b3f / in_stack_00000004[2].orient.heading);
+      pCStack_38 = (CDemonActor *)((float)1.5 / in_stack_00000004[2].orient.heading);
       fStack_a0 = CStack_ac.x * (float)pCStack_38;
       fStack_9c = CStack_ac.y * (float)pCStack_38;
       fStack_98 = CStack_ac.z * (float)pCStack_38;
@@ -184,7 +183,7 @@ uint core_shotgun_cpp_FUN_00588060(void)
           fStack_9c = (g_CDemonSetPtr->collision_result_vec2).z -
                       (g_CDemonSetPtr->collision_result_vec1).z;
           pCStack_28 = (CDemonActor *)
-                       ((float)_DAT_00649b47 /
+                       ((float)10 /
                        SQRT(fStack_9c * fStack_9c +
                             CStack_ac.z * CStack_ac.z + fStack_a0 * fStack_a0));
           pCStack_ec = (CDemonActor *)(CStack_ac.z * (float)pCStack_28);

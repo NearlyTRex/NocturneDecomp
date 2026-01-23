@@ -7,6 +7,8 @@
 ; CVector3i *      Stack[0x4]:4   start_point
 ; CVector3f *      Stack[0x8]:4   direction_offset
 ; Local Variables:
+; SRenderVertex    Stack[-0xb4]:48  local_b4
+; SRenderVertex    Stack[-0x84]:48  local_84
 ; undefined4       Stack[-0x54]:4  local_54
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c

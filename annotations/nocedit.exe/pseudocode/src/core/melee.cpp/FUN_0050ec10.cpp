@@ -19,7 +19,7 @@ void core_melee_cpp_FUN_0050ec10(void)
   float in_stack_00000008;
   CVector3f CStack_14;
   
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);
   if ((0 < *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18)) &&
      (in_stack_00000008 =
            *(float *)(in_stack_00000004[1].base_actor.actor_name + 0x1c) - in_stack_00000008,

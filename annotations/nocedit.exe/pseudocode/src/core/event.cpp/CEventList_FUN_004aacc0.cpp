@@ -94,8 +94,10 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   int local_a8;
   int local_a4;
   byte *local_a0;
-  float local_9c [2];
-  int local_94 [2];
+  float local_9c;
+  float local_98;
+  int local_94;
+  float local_90;
   int local_8c;
   float local_88;
   int local_84;
@@ -711,13 +713,13 @@ LAB_004aaf38:
                               }
                               local_a0 = local_110;
                               local_a4 = -1;
-                              local_9c[0] = 0.0;
+                              local_9c = 0.0;
                               crt_stdio_c_sscanf_FUN_0060013c
                                         ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",local_153d + 1,
-                                         local_219 + 1,local_110,local_10c,local_108,local_9c);
-                              local_9c[0] = local_9c[0] * (float)0.017453292519444399;
+                                         local_219 + 1,local_110,local_10c,local_108,&local_9c);
+                              local_9c = local_9c * (float)0.017453292519444399;
                               if (local_a4 < 0) {
-                                local_9c[0] = -1.0;
+                                local_9c = -1.0;
                                 crt_stdio_c_sscanf_FUN_0060013c
                                           ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f )%n",local_153d + 1,
                                            local_219 + 1,local_110,local_10c,local_108);
@@ -800,7 +802,7 @@ LAB_004aaf38:
                                 return pCVar7;
                               }
                               if (local_f0 != 0) {
-                                (*pCVar7->vtable[1].process)(pCVar7);
+                                (*pCVar7->vtable[1].process)(pCVar7,local_98);
                               }
                             }
                             else {
@@ -818,14 +820,14 @@ LAB_004aaf38:
                                   pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                                   return pCVar7;
                                 }
-                                local_94[0] = -1;
+                                local_94 = -1;
                                 crt_stdio_c_sscanf_FUN_0060013c
-                                          ((char *)local_ec," ( %[^)])%n",local_27c,local_94);
-                                if (local_94[0] < 2) {
+                                          ((char *)local_ec," ( %[^)])%n",local_27c,&local_94);
+                                if (local_94 < 2) {
                                   pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                                   return pCVar7;
                                 }
-                                local_ec = local_ec + local_94[0];
+                                local_ec = local_ec + local_94;
                                 while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)]
                                        & 2U) != 0) {
                                   local_ec = local_ec + 1;
@@ -839,7 +841,7 @@ LAB_004aaf38:
                                    (this_ptr_00 = g_HeroActors[g_LocalHeroIndex],
                                    this_ptr_00 != (CHero *)0x0)) {
                                   (*(this_ptr_00->base_character).base_actor.vtable[1].process)
-                                            ((CDemonActor *)this_ptr_00);
+                                            ((CDemonActor *)this_ptr_00,local_90);
                                 }
                               }
                               else {

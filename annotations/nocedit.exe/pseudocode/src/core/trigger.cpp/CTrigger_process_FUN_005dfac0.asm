@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_trigger.cpp_CTrigger_process_FUN_005dfac0(CTrigger * this_ptr)
+; __cdecl void core_trigger.cpp_CTrigger_process_FUN_005dfac0(CTrigger * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0xb8]:1  local_b8
 ; undefined1       Stack[-0xa0]:1  local_a0

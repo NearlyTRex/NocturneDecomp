@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_weather.cpp_CWeather_FUN_005ef940(CWeather* param_1, uint
    param_2, uint param_3) */
 
@@ -45,8 +44,8 @@ void core_weather_cpp_CWeather_FUN_005ef940(void)
       local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,50.0);
       local_14 = local_18;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
-                           ((float)in_stack_0000000c[1] + (float)_DAT_00657c24,
-                            (float)in_stack_0000000c[1] + (float)_DAT_00657c1c);
+                           ((float)in_stack_0000000c[1] + (float)-0.78539816337500001,
+                            (float)in_stack_0000000c[1] + (float)0.78539816337500001);
       fVar4 = (float10)fsin((float10)local_14);
       fVar5 = (float10)fcos((float10)local_14);
       local_38.x = (float)(fVar4 * (float10)local_18 + (float10)*in_stack_00000008);
@@ -62,8 +61,8 @@ void core_weather_cpp_CWeather_FUN_005ef940(void)
         local_44.y = local_38.y;
         local_44.z = local_38.z;
       }
-      local_50.y = local_50.y + _DAT_00657c2c;
-      local_44.y = local_44.y + _DAT_00657c30;
+      local_50.y = local_50.y + 50.0f;
+      local_44.y = local_44.y + -50.0f;
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
       local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
@@ -72,7 +71,7 @@ void core_weather_cpp_CWeather_FUN_005ef940(void)
       *(float *)((int)&DAT_03f96758 + iVar3) = fVar1;
       local_24 = (double)fVar1;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-      local_38.y = local_14 * (float)_DAT_00657c14 + (float)local_24;
+      local_38.y = local_14 * (float)100 + (float)local_24;
       if (pCVar2 != &local_38) {
         pCVar2->x = local_38.x;
         pCVar2->y = local_38.y;

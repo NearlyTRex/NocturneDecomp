@@ -21,7 +21,7 @@ CCrossbow * FUN_00448c70(CCrossbow * this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_process_FUN_00448d30
 // Address: 00448d30
-void CCrossbow::process(CCrossbow * this_ptr);
+void CCrossbow::process(CCrossbow * this_ptr, float delta_time);
 
 // Original: core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00
 // Address: 00448e00

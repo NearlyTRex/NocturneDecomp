@@ -174,7 +174,7 @@ undefined __unknown core_moloch_cpp_FUN_00528b20();
 CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00528b30(CMoloch * this_ptr);
 CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch * this_ptr, uint d1, uint d2, uint d3, uint d4);
 void __cdecl core_moloch_cpp_CMoloch_setup_FUN_00528c70(CMoloch * this_ptr);
-void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch * this_ptr);
+void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch * this_ptr, float delta_time);
 undefined __unknown core_moloch_cpp_FUN_005293b0();
 int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch * this_ptr);
 undefined __unknown core_moloch_cpp_CMoloch_load_FUN_00529880();

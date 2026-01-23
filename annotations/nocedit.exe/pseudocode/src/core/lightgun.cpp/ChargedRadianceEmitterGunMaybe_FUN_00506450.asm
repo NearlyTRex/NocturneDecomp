@@ -56,7 +56,7 @@ section .text
     PUSH dword ptr [ESP + 0x1c]         ; 00506459
     PUSH EBX                            ; 0050645d
     CALL core_weapon.cpp_CWeapon_process_FUN_005ee110 ; 0050645e
-        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
+        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr, float delta_time)
     MOV EAX,[0x02db87d0]                ; 00506463 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x2db87c0] ; 00506468 | g_HeroActors
     ADD ESP,0x8                         ; 0050646f

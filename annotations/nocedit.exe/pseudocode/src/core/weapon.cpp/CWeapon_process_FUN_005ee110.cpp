@@ -2,11 +2,11 @@
 // Address: 005ee110
 // Address Range: [[005ee110, 005ee24a]]
 // Convention: __cdecl
-// Signature: void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
+// Signature: void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr)
+void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,float delta_time)
 
 {
   COrientation *pCVar1;
@@ -14,10 +14,9 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr)
   float fVar3;
   float unaff_EBX;
   CVector3f *unaff_ESI;
-  float in_stack_00000008;
   
   if ((0.0 < *(float *)(this_ptr->field7_0x2f4 + 0xc)) &&
-     (fVar3 = *(float *)(this_ptr->field7_0x2f4 + 0xc) - in_stack_00000008,
+     (fVar3 = *(float *)(this_ptr->field7_0x2f4 + 0xc) - delta_time,
      *(float *)(this_ptr->field7_0x2f4 + 0xc) = fVar3, fVar3 < 0.0)) {
     this_ptr->field7_0x2f4[0xc] = '\0';
     this_ptr->field7_0x2f4[0xd] = '\0';
@@ -29,12 +28,12 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr)
   iVar2._2_1_ = this_ptr->field9_0x305[1];
   iVar2._3_1_ = this_ptr->field9_0x305[2];
   if (((iVar2 == 0) && (this_ptr->weapon_state == 0)) && (0.0 < this_ptr->sim_timer)) {
-    fVar3 = this_ptr->sim_timer - in_stack_00000008;
+    fVar3 = this_ptr->sim_timer - delta_time;
     this_ptr->sim_timer = fVar3;
     if (fVar3 < 0.0) {
       this_ptr->sim_timer = 0.0;
     }
-    core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)(this_ptr->field9_0x305 + 3),in_stack_00000008);
+    core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)(this_ptr->field9_0x305 + 3),delta_time);
     (this_ptr->base_actor).location.position.x =
          (((CBox *)(this_ptr->field9_0x305 + 3))->position).x;
     (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field9_0x305 + 7);

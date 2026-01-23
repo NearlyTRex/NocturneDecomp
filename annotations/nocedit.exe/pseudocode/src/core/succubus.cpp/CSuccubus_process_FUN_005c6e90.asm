@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_succubus.cpp_CSuccubus_process_FUN_005c6e90(CSuccubus * this_ptr)
+; __cdecl void core_succubus.cpp_CSuccubus_process_FUN_005c6e90(CSuccubus * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CSuccubus *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70
@@ -50,7 +51,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_004297e0
 ;   core_charactr.cpp_CCharacter_FUN_00429820
@@ -279,8 +280,8 @@ section .text
     ADD ESP,0x4                         ; 005c70c9
     PUSH dword ptr [EBP + 0x18]         ; 005c70cc
     PUSH EBX                            ; 005c70cf
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 005c70d0
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 005c70d0
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 005c70d5
     PUSH ESI                            ; 005c70d8
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 005c70d9

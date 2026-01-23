@@ -45,7 +45,7 @@ undefined FUN_005e9180();
 
 // Original: core_vessel.cpp_CCryptVessel_process_FUN_005e91a0
 // Address: 005e91a0
-void CCryptVessel::process(CCryptVessel * this_ptr);
+void CCryptVessel::process(CCryptVessel * this_ptr, float delta_time);
 
 // Original: core_vessel.cpp_CCryptVessel_FUN_005e9750
 // Address: 005e9750

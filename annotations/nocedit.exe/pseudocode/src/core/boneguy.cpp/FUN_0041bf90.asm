@@ -97,7 +97,7 @@
 ;   core_boneguy.cpp_CBoneGuy_FUN_0041d680
 ;   core_boneguy.cpp_FUN_0041cc40
 ;   core_boneguy.cpp_FUN_0041d8a0
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_FUN_004297e0
 ;   core_charactr.cpp_CCharacter_FUN_00429820
@@ -610,8 +610,8 @@ section .text
     ADD ESP,0x4                         ; 0041c527
     PUSH dword ptr [EBP + 0x92]         ; 0041c52a
     PUSH EBX                            ; 0041c530
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 0041c531
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 0041c531
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     MOV ECX,dword ptr [EBP + 0x56]      ; 0041c536
     ADD ESP,0x8                         ; 0041c539
     CMP ECX,0x1                         ; 0041c53c

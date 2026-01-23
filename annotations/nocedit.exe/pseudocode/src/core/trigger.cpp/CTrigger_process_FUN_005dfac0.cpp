@@ -2,13 +2,13 @@
 // Address: 005dfac0
 // Address Range: [[005dfac0, 005e00a3]]
 // Convention: __cdecl
-// Signature: void core_trigger.cpp_CTrigger_process_FUN_005dfac0(CTrigger * this_ptr)
+// Signature: void core_trigger.cpp_CTrigger_process_FUN_005dfac0(CTrigger * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
+void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,float delta_time)
 
 {
   CTrigger *actor_ptr;
@@ -22,7 +22,6 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
   int iVar8;
   int iVar9;
   int iVar10;
-  float in_stack_00000008;
   double local_b8 [3];
   CBoundingBox3D local_a0;
   float fStack_80;
@@ -141,7 +140,7 @@ LAB_005dfb52:
     }
     break;
   case 7:
-    fVar1 = *(float *)(this_ptr->field1_0x158 + 0x214) - in_stack_00000008;
+    fVar1 = *(float *)(this_ptr->field1_0x158 + 0x214) - delta_time;
     *(float *)(this_ptr->field1_0x158 + 0x214) = fVar1;
     if (fVar1 < 0.0) {
       this_ptr->field1_0x158[0x214] = '\0';

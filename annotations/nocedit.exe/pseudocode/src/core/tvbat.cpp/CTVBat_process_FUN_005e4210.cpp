@@ -2,11 +2,11 @@
 // Address: 005e4210
 // Address Range: [[005e4210, 005e4d46]]
 // Convention: __cdecl
-// Signature: void core_tvbat.cpp_CTVBat_process_FUN_005e4210(CTVBat * this_ptr)
+// Signature: void core_tvbat.cpp_CTVBat_process_FUN_005e4210(CTVBat * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
+void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float delta_time)
 
 {
   float *pfVar1;
@@ -30,7 +30,6 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
   float10 fVar19;
   float10 fVar20;
   float10 extraout_ST1;
-  float in_stack_00000008;
   float local_178;
   float local_170;
   SDamageInfo local_16c;
@@ -109,17 +108,17 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
     local_dc.y = *pfVar2;
     local_dc.z = *pfVar1;
     *(float *)(this_ptr->field11_0xc068 + 8) =
-         in_stack_00000008 * (float)-32 + *(float *)(this_ptr->field11_0xc068 + 8);
-    local_94 = *(float *)(this_ptr->field11_0xc068 + 4) * in_stack_00000008;
-    local_90 = *(float *)(this_ptr->field11_0xc068 + 8) * in_stack_00000008;
-    local_8c = *(float *)(this_ptr->field11_0xc068 + 0xc) * in_stack_00000008;
+         delta_time * (float)-32 + *(float *)(this_ptr->field11_0xc068 + 8);
+    local_94 = *(float *)(this_ptr->field11_0xc068 + 4) * delta_time;
+    local_90 = *(float *)(this_ptr->field11_0xc068 + 8) * delta_time;
+    local_8c = *(float *)(this_ptr->field11_0xc068 + 0xc) * delta_time;
     fVar13 = (this_ptr->base_enemy).base_character.base_actor.location.position.y;
     (pCVar15->position).x = (pCVar15->position).x + local_94;
     fVar3 = (this_ptr->base_enemy).base_character.base_actor.location.position.z;
     (this_ptr->base_enemy).base_character.base_actor.location.position.y = fVar13 + local_90;
     (this_ptr->base_enemy).base_character.base_actor.location.position.z = fVar3 + local_8c;
     (this_ptr->base_enemy).base_character.base_actor.orient.heading =
-         in_stack_00000008 * this_ptr->rot_speed * 2.0f +
+         delta_time * this_ptr->rot_speed * 2.0f +
          (this_ptr->base_enemy).base_character.base_actor.orient.heading;
     fVar13 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                        (&g_CDemonRaytraceInstance,&local_dc,&pCVar15->position,&local_a0,(int *)0x0)
@@ -203,7 +202,7 @@ LAB_005e4342:
     local_50 = (this_ptr->home_pos).z;
   }
   if (0.0 < *(float *)this_ptr->field11_0xc068) {
-    fVar13 = *(float *)this_ptr->field11_0xc068 - in_stack_00000008;
+    fVar13 = *(float *)this_ptr->field11_0xc068 - delta_time;
     *(float *)this_ptr->field11_0xc068 = fVar13;
     if (fVar13 < 0.0) {
       this_ptr->field11_0xc068[0] = '\0';
@@ -281,7 +280,7 @@ LAB_005e4342:
                        (local_24 - (this_ptr->base_enemy).base_character.base_actor.orient.bank);
   fVar13 = (this_ptr->base_enemy).base_character.base_actor.orient.pitch;
   (this_ptr->base_enemy).base_character.base_actor.orient.bank =
-       local_24 * in_stack_00000008 * this_ptr->rot_speed +
+       local_24 * delta_time * this_ptr->rot_speed +
        (this_ptr->base_enemy).base_character.base_actor.orient.bank;
   local_20 = local_24;
   local_28 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_28 - fVar13);
@@ -300,18 +299,18 @@ LAB_005e4342:
   fVar7 = (this_ptr->base_enemy).base_character.base_actor.location.position.z;
   fVar8 = (this_ptr->base_enemy).base_character.base_actor.orient.pitch;
   (this_ptr->base_enemy).base_character.base_actor.location.position.x =
-       local_3c * fVar3 * in_stack_00000008 +
+       local_3c * fVar3 * delta_time +
        (this_ptr->base_enemy).base_character.base_actor.location.position.x;
   (this_ptr->base_enemy).base_character.base_actor.location.position.y =
-       fStack_38 * fVar4 * in_stack_00000008 + fVar13;
+       fStack_38 * fVar4 * delta_time + fVar13;
   (this_ptr->base_enemy).base_character.base_actor.location.position.z =
-       fStack_44 * fVar5 * in_stack_00000008 + fVar7;
+       fStack_44 * fVar5 * delta_time + fVar7;
   (this_ptr->base_enemy).base_character.base_actor.orient.pitch =
-       local_28 * in_stack_00000008 * fVar6 + fVar8;
+       local_28 * delta_time * fVar6 + fVar8;
   local_cc = (this_ptr->base_enemy).base_character.base_actor.location.position.x - local_84;
   local_c8 = (this_ptr->base_enemy).base_character.base_actor.location.position.y - local_80;
   fStack_c4 = (this_ptr->base_enemy).base_character.base_actor.location.position.z - local_7c;
-  local_170 = (local_c8 * (float)4) / in_stack_00000008 + (float)35;
+  local_170 = (local_c8 * (float)4) / delta_time + (float)35;
   if (local_170 < (float)10) {
     local_170 = 10.0;
   }
@@ -322,7 +321,7 @@ LAB_005e4342:
        (local_170 - *(float *)this_ptr->field3_0xc040) * (float)0.69999999999999996 +
        *(float *)this_ptr->field3_0xc040;
   *(float *)(this_ptr->field1_0xbeb4 + 8) =
-       in_stack_00000008 * *(float *)this_ptr->field3_0xc040 * this_ptr->speed +
+       delta_time * *(float *)this_ptr->field3_0xc040 * this_ptr->speed +
        *(float *)(this_ptr->field1_0xbeb4 + 8);
   local_20 = local_28;
   pCVar11 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
@@ -341,7 +340,7 @@ LAB_005e4342:
     this_ptr->field1_0xbeb4[0xb] = '\0';
   }
   if ((this_ptr->field13_0xc07c[0] != '\0') &&
-     (fVar13 = *(float *)(this_ptr->field16_0xc0e8 + 4) - in_stack_00000008,
+     (fVar13 = *(float *)(this_ptr->field16_0xc0e8 + 4) - delta_time,
      *(float *)(this_ptr->field16_0xc0e8 + 4) = fVar13, fVar13 <= 0.0)) {
     iVar14 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->field16_0xc0e8);
     if ((iVar14 == 0) &&

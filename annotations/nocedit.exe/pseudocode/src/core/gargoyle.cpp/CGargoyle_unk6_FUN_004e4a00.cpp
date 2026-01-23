@@ -372,7 +372,7 @@ switchD_004e531f_caseD_4:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(in_stack_00000004->base_character).model);
   iVar5 = local_28;
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&in_stack_00000004->base_character);
   if (iVar5 == 5) {
     in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].z =
          (float)((int)in_stack_00000004[1].base_character.base_actor.orient.heading << 8);

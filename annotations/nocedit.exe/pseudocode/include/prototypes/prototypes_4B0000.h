@@ -160,7 +160,7 @@ undefined __unknown core_filmreel_cpp_FUN_004be7b0();
 undefined __unknown core_filmreel_cpp_FUN_004be7d0();
 undefined __unknown core_filmreel_cpp_FUN_004be7e0();
 undefined __unknown core_filmreel_cpp_FUN_004be7f0();
-undefined __unknown core_filmreel_cpp_process_FUN_004be800();
+void __cdecl core_filmreel_cpp_CFilmReel_process_FUN_004be800(CFilmReel * this_ptr, float delta_time);
 undefined __unknown core_filmreel_cpp_FUN_004be810();
 undefined __unknown core_filmreel_cpp_FUN_004be880();
 undefined __unknown core_filmreel_cpp_FUN_004be8a0();

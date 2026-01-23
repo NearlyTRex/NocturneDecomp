@@ -21,10 +21,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_noLightningFlash_00657b84
 ;   TerminatedCString s_rain_wav_1_00657ba6
-;   undefined4 DAT_00657bb4
-;   undefined4 DAT_00657bc4
-;   undefined4 DAT_00657bcc
-;   undefined4 DAT_00657bd4
+;   double DOUBLE_00657bb4 = 0.0000152590218966964
+;   double DOUBLE_00657bc4 = 15
+;   double DOUBLE_00657bcc = 0.100000000000000
+;   float FLOAT_00657bd4 = 100
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CGame* g_CGamePtr = 02d81a9c
@@ -90,7 +90,7 @@ section .text
     JNC 0x005eebf9                      ; 005eeb55
         ;   XREF to: 005eebf9 (CONDITIONAL_JUMP)  ; LAB_005eebf9
     FLD float ptr [EBX + 0x3f95dfc]     ; 005eeb5b | DAT_03f95dfc | DAT_03f95e08
-    FADD float ptr [0x00657bd4]         ; 005eeb61 | DAT_00657bd4
+    FADD float ptr [0x00657bd4]         ; 005eeb61 | FLOAT_00657bd4
     MOV EAX,dword ptr [EBP + 0x14]      ; 005eeb67
     FSTP float ptr [EBX + 0x3f95dfc]    ; 005eeb6a | DAT_03f95dfc | DAT_03f95e08
     CMP dword ptr [EAX],0x1             ; 005eeb70
@@ -180,7 +180,7 @@ section .text
         ;   Label: LAB_005eec84
     FLD float ptr [EAX + 0x34]          ; 005eec87
     FST double ptr [ESP]                ; 005eec8a
-    FCOMP double ptr [0x00657bc4]       ; 005eec8d | DAT_00657bc4
+    FCOMP double ptr [0x00657bc4]       ; 005eec8d | DOUBLE_00657bc4
     FNSTSW AX                           ; 005eec93
     SAHF                                ; 005eec95
     JNC 0x005eee7c                      ; 005eec96
@@ -190,7 +190,7 @@ section .text
     FXCH                                ; 005eeca1
     FYL2X                               ; 005eeca3
     FLD float ptr [ESP + 0x8]           ; 005eeca5
-    FMUL double ptr [0x00657bcc]        ; 005eeca9 | DAT_00657bcc
+    FMUL double ptr [0x00657bcc]        ; 005eeca9 | DOUBLE_00657bcc
     FADDP                               ; 005eecaf
     FLD1                                ; 005eecb1
     FLDL2E                              ; 005eecb3
@@ -241,7 +241,7 @@ section .text
     MOV EAX,[0x03276acc]                ; 005eed12 | g_CDemonCameraInstance.corona_blend_factor
     MOV dword ptr [ESP + 0x24],EAX      ; 005eed17
     FILD dword ptr [ESP + 0x24]         ; 005eed1b
-    FMUL double ptr [0x00657bb4]        ; 005eed1f | DAT_00657bb4
+    FMUL double ptr [0x00657bb4]        ; 005eed1f | DOUBLE_00657bb4
     FSUB float ptr [ESP + 0x1c]         ; 005eed25
     MOV EAX,dword ptr [EBP + 0x14]      ; 005eed29
     FST float ptr [ESP + 0x20]          ; 005eed2c

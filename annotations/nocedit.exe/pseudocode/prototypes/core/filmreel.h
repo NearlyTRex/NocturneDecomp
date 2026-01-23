@@ -39,9 +39,9 @@ undefined FUN_004be7e0();
 // Address: 004be7f0
 undefined FUN_004be7f0();
 
-// Original: core_filmreel.cpp_process_FUN_004be800
+// Original: core_filmreel.cpp_CFilmReel_process_FUN_004be800
 // Address: 004be800
-undefined process();
+void CFilmReel::process(CFilmReel * this_ptr, float delta_time);
 
 // Original: core_filmreel.cpp_FUN_004be810
 // Address: 004be810

@@ -2,13 +2,14 @@
 // Address: 00415470
 // Address Range: [[00415470, 00415d68]]
 // Convention: __cdecl
-// Signature: void core_batcreat.cpp_CBatCreature_process_FUN_00415470(CBatCreature * this_ptr)
+// Signature: void core_batcreat.cpp_CBatCreature_process_FUN_00415470(CBatCreature * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *this_ptr)
+void __cdecl
+core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *this_ptr,float delta_time)
 
 {
   CLocation *pCVar1;
@@ -25,7 +26,6 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   int extraout_EAX;
   int extraout_EAX_00;
   uint uVar11;
-  float in_stack_00000008;
   CVector3f local_100;
   CVector3f local_f4;
   CVector3f local_e8;
@@ -70,7 +70,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.x =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y;
-  local_2c = in_stack_00000008 * (this_ptr->base_enemy).speed;
+  local_2c = delta_time * (this_ptr->base_enemy).speed;
   while (0.0 < local_2c) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
               (&(this_ptr->base_enemy).base_character.model.motion_controller);
@@ -82,7 +82,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x28) =
        (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
   *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x2c) =
-       in_stack_00000008 * fVar5 * fVar3;
+       delta_time * fVar5 * fVar3;
   pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&this_ptr_00->motion_controller);
   iVar7 = pSVar8->state_index;
@@ -347,20 +347,17 @@ LAB_004156d6:
 switchD_00415d62_caseD_2:
   if (0.0 < *(float *)(this_ptr->base_enemy).field6_0xbe38) {
     *(float *)(this_ptr->base_enemy).field6_0xbe38 =
-         *(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;
+         *(float *)(this_ptr->base_enemy).field6_0xbe38 - delta_time;
   }
   iVar7 = core_charactr_cpp_CCharacter_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar7 != 0) {
     *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) =
          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) -
-         in_stack_00000008 * (float)32;
-    local_c4 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x1c) *
-               in_stack_00000008;
-    local_c0 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) *
-               in_stack_00000008;
+         delta_time * (float)32;
+    local_c4 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x1c) * delta_time;
+    local_c0 = *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x20) * delta_time;
     pcVar2 = (this_ptr->base_enemy).base_character.field2_0x240c + 0x10;
-    local_bc = in_stack_00000008 *
-               *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x24);
+    local_bc = delta_time * *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x24);
     pCVar10 = &(this_ptr->base_enemy).base_character.model.accumulated_root_motion;
     local_58 = local_c4 + *(float *)pcVar2;
     local_54 = local_c0 + *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0x14);
@@ -385,6 +382,6 @@ switchD_00415d62_caseD_2:
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base_enemy).base_character.model);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr);
   return;
 }

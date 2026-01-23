@@ -45,7 +45,7 @@ int CTrap(CTrap * this_ptr);
 
 // Original: core_trap.cpp_CTrap_process_FUN_005de770
 // Address: 005de770
-void CTrap::process(CTrap * this_ptr);
+void CTrap::process(CTrap * this_ptr, float delta_time);
 
 // Original: core_trap.cpp_CTrap_FUN_005de920
 // Address: 005de920

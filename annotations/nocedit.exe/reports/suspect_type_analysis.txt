@@ -4,25 +4,25 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    30996 ( 54.5%)
-  pointer_cast                    5815 ( 10.2%)
-  decompiler_intrinsic            4988 (  8.8%)
-  undefined_data                  2970 (  5.2%)
-  unknown_field                   2273 (  4.0%)
-  unnamed_param                   1713 (  3.0%)
-  stack_ref                       1513 (  2.7%)
+  stack_param                    30554 ( 54.3%)
+  pointer_cast                    5855 ( 10.4%)
+  decompiler_intrinsic            4985 (  8.9%)
+  undefined_data                  2970 (  5.3%)
+  unknown_field                   2069 (  3.7%)
+  unnamed_param                   1742 (  3.1%)
+  stack_ref                       1459 (  2.6%)
   unaffected_reg                  1230 (  2.2%)
-  suspect_float                    746 (  1.3%)
-  param_count_too_few              633 (  1.1%)
+  suspect_float                    815 (  1.4%)
+  param_count_too_few              632 (  1.1%)
   special_crt_function             626 (  1.1%)
   extra_output                     576 (  1.0%)
-  unresolved_funcptr               510 (  0.9%)
+  unresolved_funcptr               511 (  0.9%)
   negative_offset                  413 (  0.7%)
   format_string_mismatch           361 (  0.6%)
   fpu_register_input               341 (  0.6%)
   nonstandard_int                  273 (  0.5%)
-  warning_overlapping_globals      216 (  0.4%)
   register_param                   200 (  0.4%)
+  warning_overlapping_globals      194 (  0.3%)
   warning_unreachable               99 (  0.2%)
   param_count_too_many              86 (  0.2%)
   unknown_type                      86 (  0.2%)
@@ -47,13 +47,13 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (30996 occurrences)
+TYPE: stack_param (30554 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  17020x  in_stack_00000004
-  6982x  in_stack_00000008
-  1802x  in_stack_0000000c
+  16932x  in_stack_00000004
+  6794x  in_stack_00000008
+  1785x  in_stack_0000000c
    742x  in_stack_00000010
    337x  in_stack_00000014
    189x  in_stack_00000018
@@ -68,9 +68,9 @@ Unique patterns:
     48x  in_stack_ffffff54
     38x  in_stack_fffffc58
     36x  in_stack_fffffc54
-    34x  in_stack_fffffec0
-    31x  in_stack_ffffffe0
     31x  in_stack_000000b0
+    29x  in_stack_ffffc8a8
+    28x  in_stack_ffffc8ac
 
 Example functions:
   cockpit_pkbmpset.cpp_FUN_0054c7a0
@@ -99,14 +99,14 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
-TYPE: pointer_cast (5815 occurrences)
+TYPE: pointer_cast (5855 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2218x  (uint *)((int)
-  1244x  (int *)((int)
+  2215x  (uint *)((int)
+  1247x  (int *)((int)
    422x  (float *)((int)
-   296x  (SRenderVertex *)((int)
+   336x  (SRenderVertex *)((int)
    248x  (CMatrix3x4f *)((int)
    217x  (double *)((int)
    210x  (void *)((int)
@@ -137,12 +137,12 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (4988 occurrences)
+TYPE: decompiler_intrinsic (4985 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1860x  ROUND
-   608x  CONCAT44
+  1858x  ROUND
+   607x  CONCAT44
    419x  SQRT
    293x  ABS
    194x  SUB84
@@ -257,30 +257,30 @@ Example functions:
     *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
 
 ====================================================================================================
-TYPE: unknown_field (2273 occurrences)
+TYPE: unknown_field (2069 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   774x  ._0_4_
-   719x  ._4_4_
-   178x  ._8_4_
-   109x  ._12_4_
-    97x  ._16_4_
-    68x  ._20_4_
-    57x  ._24_4_
-    38x  ._0_24_
-    37x  ._28_4_
+   749x  ._0_4_
+   694x  ._4_4_
+   153x  ._8_4_
+    84x  ._12_4_
+    73x  ._16_4_
+    47x  ._20_4_
+    36x  ._24_4_
     34x  ._0_1_
+    26x  ._28_4_
     24x  ._2_2_
     20x  ._3_1_
+    17x  ._0_24_
     16x  ._0_2_
     16x  ._1_1_
     16x  ._2_1_
-    11x  ._32_4_
      7x  ._4_8_
-     7x  ._36_4_
+     7x  ._32_4_
      6x  ._8_8_
      6x  ._44_4_
+     5x  ._48_4_
 
 Example functions:
   crt_fpemu.c_staticInit_FUN_0060be80
@@ -301,15 +301,15 @@ Example functions:
     if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
 
 ====================================================================================================
-TYPE: unnamed_param (1713 occurrences)
+TYPE: unnamed_param (1742 occurrences)
 ====================================================================================================
 
 Unique patterns:
    566x  param_5
-   495x  param_2
-   162x  param_3
+   491x  param_2
+   183x  param_3
+   158x  param_1
    153x  param_4
-   146x  param_1
    140x  param_6
     21x  param_7
     14x  param_8
@@ -330,13 +330,13 @@ Example functions:
     (uint param_1,uint param_2,byte *unaff_EBX,uint param_4,...
 
 ====================================================================================================
-TYPE: stack_ref (1513 occurrences)
+TYPE: stack_ref (1459 occurrences)
 ====================================================================================================
 
 Unique patterns:
     50x  &stack0xfffff914
     32x  &stack0xfffffc4c
-    31x  &stack0xffffffe8
+    30x  &stack0xffffffe8
     27x  &stack0xfffffc54
     26x  &stack0xffffff24
     23x  &stack0xfffffff0
@@ -345,12 +345,12 @@ Unique patterns:
     21x  &stack0xffffffd4
     20x  &stack0xffffffe0
     20x  &stack0xffffffd8
-    19x  &stack0xffffff98
     19x  &stack0xfffffa18
     18x  &stack0xffffedf8
     17x  &stack0xffffffec
     17x  &stack0xfffffed0
     16x  &stack0xfffffff4
+    16x  &stack0xffffff98
     16x  &stack0xfffffbb8
     16x  &stack0xffffe138
     15x  &stack0xfffffaa8
@@ -392,8 +392,8 @@ TYPE: unaffected_reg (1230 occurrences)
 Unique patterns:
    436x  unaff_EBX
    366x  unaff_ESI
-   220x  unaff_EDI
-   208x  unaff_EBP
+   224x  unaff_EDI
+   204x  unaff_EBP
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
@@ -426,15 +426,15 @@ Example functions:
     int unaff_EBP;...
 
 ====================================================================================================
-TYPE: suspect_float (746 occurrences)
+TYPE: suspect_float (815 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   131x  9.18341e-41
+   132x  9.18341e-41
    108x  7.34684e-40
    104x  2.2775203e-38
-    79x  1.4013e-45
-    36x  2.8026e-45
+    83x  1.4013e-45
+    37x  2.8026e-45
     19x  4.2039e-45
     14x  5.60519e-45
     12x  1.14794e-41
@@ -445,11 +445,11 @@ Unique patterns:
      8x  2.3326216e-38
      8x  2.29589e-41
      8x  4.59163e-41
+     7x  1.12104e-44
+     7x  8.413128e-39
      6x  2.341805e-38
      6x  2.3509887e-38
-     6x  1.12104e-44
      5x  8.40779e-45
-     4x  3.67342e-40
 
 Example functions:
   crt_stdio.c_scanf_float_FUN_00605178
@@ -468,12 +468,12 @@ Example functions:
     fVar3 = 3.67342e-40;...
 
 ====================================================================================================
-TYPE: param_count_too_few (633 occurrences)
+TYPE: param_count_too_few (632 occurrences)
 ====================================================================================================
 
 Unique patterns:
     93x  declared:1 vs estimated:2
-    88x  declared:0 vs estimated:2
+    87x  declared:0 vs estimated:2
     79x  declared:0 vs estimated:1
     58x  declared:0 vs estimated:3
     55x  declared:0 vs estimated:4
@@ -677,11 +677,11 @@ Example functions:
     int extraout_EDX;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (510 occurrences)
+TYPE: unresolved_funcptr (511 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   477x  code *
+   478x  code *
     33x  code
 
 Example functions:
@@ -898,75 +898,6 @@ Example functions:
     uint5 uVar12;...
 
 ====================================================================================================
-TYPE: warning_overlapping_globals (216 occurrences)
-====================================================================================================
-
-Unique patterns:
-   216x  WARNING: Globals starting with
-
-Example functions:
-  crt_math.c_atan2_FUN_0060c440
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  crt_unknown.c_FUN_00600990
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  crt_unknown.c_FUN_00600a64
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_netgame.cpp_FUN_00541390
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dog.cpp_CZombieDog_ctor_FUN_0047f050
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dog.cpp_CZombieDog_process_FUN_0047f140
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_batcreat.cpp_CBatCreature_ctor_FUN_004150f0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_batcreat.cpp_CBatCreature_FUN_00415150
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dracbrid.cpp_FUN_00484410
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dracbrid.cpp_FUN_004869a0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dracbrid.cpp_staticInit_FUN_00483ef0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dracbrid.cpp_ctor_FUN_00483fc0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_cloth.cpp_FUN_0043b7e0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_cloth.cpp_FUN_00439710
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_cloth.cpp_CCloth_load_FUN_00438cf0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_cloth.cpp_FUN_0043c820
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_cloth.cpp_FUN_0043abb0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_cloth.cpp_FUN_0043dcc0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_drone.cpp_ctor_FUN_0048eb50
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_zombie.cpp_FUN_005f8da0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_zombie.cpp_CZombie_FUN_005fb1f0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_zombie.cpp_FUN_005f8cc0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_zombie.cpp_CZombie_FUN_005f9140
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-
-====================================================================================================
 TYPE: register_param (200 occurrences)
 ====================================================================================================
 
@@ -1003,6 +934,75 @@ Example functions:
     ushort in_DS;...
   crt_memory.c_BulkDwordFill_FUN_00603b37
     uint in_ECX;...
+
+====================================================================================================
+TYPE: warning_overlapping_globals (194 occurrences)
+====================================================================================================
+
+Unique patterns:
+   194x  WARNING: Globals starting with
+
+Example functions:
+  crt_math.c_atan2_FUN_0060c440
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  crt_unknown.c_FUN_00600990
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  crt_unknown.c_FUN_00600a64
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_netgame.cpp_FUN_00541390
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_batcreat.cpp_CBatCreature_ctor_FUN_004150f0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_batcreat.cpp_CBatCreature_FUN_00415150
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_dracbrid.cpp_FUN_00484410
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_dracbrid.cpp_FUN_004869a0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_dracbrid.cpp_staticInit_FUN_00483ef0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_dracbrid.cpp_ctor_FUN_00483fc0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_cloth.cpp_FUN_0043b7e0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_cloth.cpp_FUN_00439710
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_cloth.cpp_CCloth_load_FUN_00438cf0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_cloth.cpp_FUN_0043c820
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_cloth.cpp_FUN_0043abb0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_cloth.cpp_FUN_0043dcc0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_drone.cpp_ctor_FUN_0048eb50
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_zombie.cpp_CZombie_ctor_FUN_005f8fe0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_icepick.cpp_FUN_004f7e80
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_bugs.cpp_FUN_00425340
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_bugs.cpp_FUN_004268e0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_bugs.cpp_FUN_00427ad0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_bugs.cpp_FUN_004257f0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_bugs.cpp_FUN_00425fe0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
 
 ====================================================================================================
 TYPE: warning_unreachable (99 occurrences)

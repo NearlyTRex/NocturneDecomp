@@ -2,17 +2,17 @@
 // Address: 00448d30
 // Address Range: [[00448d30, 00448df3]]
 // Convention: __cdecl
-// Signature: void core_crossbow.cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr)
+// Signature: void core_crossbow.cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_ptr)
+void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_ptr,float delta_time)
 
 {
   CVector3f *pCVar1;
   CVector3f CStack_18;
   
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon,delta_time);
   pCVar1 = (CVector3f *)
            (*(this_ptr->base_weapon).base_actor.vtable[1].renderOpaque)((CDemonActor *)this_ptr);
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

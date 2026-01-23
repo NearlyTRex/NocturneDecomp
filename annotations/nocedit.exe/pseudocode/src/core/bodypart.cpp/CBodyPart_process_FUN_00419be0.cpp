@@ -2,11 +2,11 @@
 // Address: 00419be0
 // Address Range: [[00419be0, 00419db9]]
 // Convention: __cdecl
-// Signature: void core_bodypart.cpp_CBodyPart_process_FUN_00419be0(CBodyPart * this_ptr)
+// Signature: void core_bodypart.cpp_CBodyPart_process_FUN_00419be0(CBodyPart * this_ptr, float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_ptr)
+void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_ptr,float delta_time)
 
 {
   CLocation *pCVar1;
@@ -14,7 +14,6 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
   CVector3f *pCVar3;
   float fVar4;
   int iVar5;
-  float in_stack_00000008;
   SDamageInfo local_54;
   float local_18;
   float local_14;
@@ -49,15 +48,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
       core_bodypart_cpp_FUN_0041b1b0();
     }
     if (*(int *)(this_ptr->field1_0x158 + 0xdd0) == 0) {
-      fVar4 = *(float *)(this_ptr->field1_0x158 + 0xb64) - in_stack_00000008;
+      fVar4 = *(float *)(this_ptr->field1_0x158 + 0xb64) - delta_time;
       *(float *)(this_ptr->field1_0x158 + 0xb64) = fVar4;
       if (0.0 <= fVar4) {
         pCVar1 = &(this_ptr->base_actor).location;
         local_18 = (pCVar1->position).x;
         local_14 = (this_ptr->base_actor).location.position.y;
         local_10 = (this_ptr->base_actor).location.position.z;
-        core_box_cpp_CBox_process_FUN_0041e2f0
-                  ((CBox *)(this_ptr->field1_0x158 + 0xb74),in_stack_00000008);
+        core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)(this_ptr->field1_0x158 + 0xb74),delta_time);
         (pCVar1->position).x = (((CBox *)(this_ptr->field1_0x158 + 0xb74))->position).x;
         (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field1_0x158 + 0xb78);
         (this_ptr->base_actor).location.position.z = *(float *)(this_ptr->field1_0x158 + 0xb7c);

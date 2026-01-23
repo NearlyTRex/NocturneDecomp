@@ -35,7 +35,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chain_stretched_to_f_00657e6c
-;   undefined4 DAT_00657e84
+;   double DOUBLE_00657e84 = 2
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_ConsolePtr
 ;
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     FLD float ptr [EBP + -0x54]         ; 005f1eb4
     ADD ESP,0xc                         ; 005f1eb7
-    FCOMP double ptr [0x00657e84]       ; 005f1eba | DAT_00657e84
+    FCOMP double ptr [0x00657e84]       ; 005f1eba | DOUBLE_00657e84
     FNSTSW AX                           ; 005f1ec0
     SAHF                                ; 005f1ec2
     JC 0x005f1fdb                       ; 005f1ec3

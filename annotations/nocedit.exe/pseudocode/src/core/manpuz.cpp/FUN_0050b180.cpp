@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_other_manpuz.cpp_FUN_0050b180(uint param_1) */
-
 uint core_manpuz_cpp_FUN_0050b180(void)
 
 {

@@ -14,8 +14,9 @@ void core_hpriest_cpp_FUN_004f7c00(void)
 {
   int iVar1;
   CNPC *in_stack_00000004;
+  float in_stack_00000008;
   
-  core_npc_cpp_CNPC_process_FUN_005448b0(in_stack_00000004);
+  core_npc_cpp_CNPC_process_FUN_005448b0(in_stack_00000004,in_stack_00000008);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,(char *)(in_stack_00000004 + 1));
   if (iVar1 == 0) {

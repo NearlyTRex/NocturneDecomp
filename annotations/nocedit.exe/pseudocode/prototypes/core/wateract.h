@@ -33,7 +33,7 @@ undefined FUN_005eb040();
 
 // Original: core_wateract.cpp_CWaterActor_process_FUN_005eb100
 // Address: 005eb100
-void CWaterActor::process(CWaterActor * this_ptr);
+void CWaterActor::process(CWaterActor * this_ptr, float delta_time);
 
 // Original: core_wateract.cpp_CWaterActor_FUN_005eb280
 // Address: 005eb280

@@ -297,7 +297,7 @@ LAB_004f1054:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (unaff_EBP,source_quaternions,fVar6,iVar4,blend_callback);
   }
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
 switchD_004f12ce_caseD_9:
   return;
 }

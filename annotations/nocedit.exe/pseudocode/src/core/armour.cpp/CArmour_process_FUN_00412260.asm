@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_armour.cpp_CArmour_process_FUN_00412260(CArmour * this_ptr)
+; __cdecl void core_armour.cpp_CArmour_process_FUN_00412260(CArmour * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CArmour *        Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ;
@@ -15,7 +16,7 @@
 ;   CEventList g_CEventListInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_FUN_00429870
 ;   core_charactr.cpp_CCharacter_FUN_0042b9e0
 ;   core_charactr.cpp_CCharacter_FUN_0042ca70
@@ -96,8 +97,8 @@ section .text
     ADD ESP,0x4                         ; 0041231d
     PUSH dword ptr [EBP + 0x18]         ; 00412320
     PUSH ESI                            ; 00412323
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 00412324
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 00412324
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00412329
     LEA EAX,[ESI + 0xbebc]              ; 0041232c
     PUSH EAX                            ; 00412332

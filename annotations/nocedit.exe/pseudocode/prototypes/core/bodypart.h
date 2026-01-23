@@ -57,7 +57,7 @@ void CBodyPart::serialize(CBodyPart * this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_process_FUN_00419be0
 // Address: 00419be0
-void CBodyPart::process(CBodyPart * this_ptr);
+void CBodyPart::process(CBodyPart * this_ptr, float delta_time);
 
 // Original: core_bodypart.cpp_FUN_00419e10
 // Address: 00419e10

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_weapon_shotgun.cpp_FUN_005888f0(uint param_1) */
 
 void core_shotgun_cpp_FUN_005888f0(void)

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 at 0042e03d
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042e03d
 ;   core_succubus.cpp_CSuccubus_FUN_005c6b60 at 005c6c11
 ;   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 at 005c7291
 ;

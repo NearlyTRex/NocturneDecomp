@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_course.cpp_FUN_00443bc0()
+; __cdecl void core_course.cpp_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2)
 ;
+; Parameters:
+; CCourse *        Stack[0x4]:4   this_ptr
+; CKeyFramedModel * Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined1       Stack[-0x130]:1  local_130
 ; undefined4       Stack[-0xcc]:4  local_cc

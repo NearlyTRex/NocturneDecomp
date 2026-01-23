@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_wateract.cpp_CWaterActor_process_FUN_005eb100(CWaterActor * this_ptr)
+; __cdecl void core_wateract.cpp_CWaterActor_process_FUN_005eb100(CWaterActor * this_ptr, float delta_time)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

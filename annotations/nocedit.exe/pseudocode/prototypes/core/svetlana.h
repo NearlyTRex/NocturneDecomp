@@ -25,7 +25,7 @@ void CSvetlana(CSvetlana * this_ptr);
 
 // Original: core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
 // Address: 005d8ba0
-void CSvetlana::process(CSvetlana * this_ptr);
+void CSvetlana::process(CSvetlana * this_ptr, float delta_time);
 
 // Original: core_svetlana.cpp_FUN_005d9260
 // Address: 005d9260

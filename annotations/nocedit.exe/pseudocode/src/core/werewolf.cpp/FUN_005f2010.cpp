@@ -17,7 +17,7 @@ void core_werewolf_cpp_FUN_005f2010(void)
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CWerewolfClassInfo.name_hash);
   if (pCVar1[0x8d].field25_0x144 == 0) {
-    format = "@Train" + 1;
+    format = "Train";
   }
   else {
     if (pCVar1[0x8d].field25_0x144 != 1) {

@@ -147,17 +147,17 @@ undefined FUN_0050b100();
 // Address: 0050b110
 CMirrorHack * FUN_0050b110(CMirrorHack * this_ptr);
 
-// Original: core_manpuz.cpp_FUN_0050b160
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_0050b160
 // Address: 0050b160
-undefined FUN_0050b160();
+void CMansionPuzzleCircle::setup(CMansionPuzzleCircle * this_ptr);
 
 // Original: core_manpuz.cpp_FUN_0050b180
 // Address: 0050b180
 undefined FUN_0050b180();
 
-// Original: core_manpuz.cpp_FUN_0050b1d0
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_0050b1d0
 // Address: 0050b1d0
-undefined FUN_0050b1d0();
+void CMansionPuzzleCircle::process(CMansionPuzzleCircle * this_ptr, float delta_time);
 
 // Original: core_manpuz.cpp_FUN_0050b260
 // Address: 0050b260

@@ -69,7 +69,7 @@ void CStranger(CStranger * this_ptr);
 
 // Original: core_stranger.cpp_CStranger_process_FUN_005bb830
 // Address: 005bb830
-void CStranger::process(CStranger * this_ptr);
+void CStranger::process(CStranger * this_ptr, float delta_time);
 
 // Original: core_stranger.cpp_CStranger_FUN_005bb960
 // Address: 005bb960

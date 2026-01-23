@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dog_dfm_00620f9c
-;   undefined4 DAT_0065ca2c
-;   undefined4 PTR_core_bride.cpp_FUN_0065ca2d+3
+;   float DAT_0065ca2c = 50
+;   float PTR_core_bride.cpp_FUN_0065ca2d+3 = 100
 ;   CDemonActor_vtable PTR_core_dog.cpp_FUN_0065ca44
 ;
 ; Called Functions:

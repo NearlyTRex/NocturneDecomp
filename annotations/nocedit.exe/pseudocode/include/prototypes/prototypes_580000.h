@@ -106,7 +106,7 @@ void __cdecl core_simbox_cpp_CSimBox_FUN_00588d00(CSimBox * this_ptr);
 CDemonActorType * __cdecl core_simbox_cpp_CSimBox_getActorType_FUN_00588d30(CSimBox * this_ptr);
 CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_00588d40(CSimBox * this_ptr);
 void __cdecl core_simbox_cpp_CSimBox_FUN_00588e00(CSimBox * this_ptr);
-void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox * this_ptr);
+void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox * this_ptr, float delta_time);
 int __cdecl core_simbox_cpp_CSimBox_FUN_005890f0(CSimBox * this_ptr);
 float * __cdecl core_simbox_cpp_CSimBox_FUN_00589160(CSimBox * this_ptr);
 void __cdecl core_simbox_cpp_CSimBox_FUN_005891b0(CSimBox * this_ptr);

@@ -22,7 +22,7 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
   CWeapon *in_stack_00000004;
   float in_stack_00000008;
   
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);
   if (*(int *)in_stack_00000004[1].base_actor.actor_name == 0) {
     sfx_handle = *(uint *)(in_stack_00000004[1].base_actor.actor_name + 4);
     if (sfx_handle != 0) {

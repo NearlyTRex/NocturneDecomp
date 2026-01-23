@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
 
@@ -26,7 +25,7 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
     return 0;
   }
   if (1.0 < (float)this_ptr->field11_0xbf00) {
-    this_ptr->field11_0xbf00 = (int)((float)this_ptr->field11_0xbf00 + _DAT_00657db0);
+    this_ptr->field11_0xbf00 = (int)((float)this_ptr->field11_0xbf00 + -1.0f);
   }
   if ((float)this_ptr->field11_0xbf00 <= (float)0.80000000000000004) {
     if (*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) {

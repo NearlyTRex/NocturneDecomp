@@ -162,7 +162,7 @@ undefined __unknown core_zombie_cpp_FUN_005f8fa0();
 CDemonActorType * __cdecl core_zombie_cpp_CZombie_getActorType_FUN_005f8fd0(CZombie * this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie * this_ptr);
 void __cdecl core_zombie_cpp_CZombie_FUN_005f9140(CZombie * this_ptr);
-void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie * this_ptr);
+void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie * this_ptr, float delta_time);
 undefined __unknown core_zombie_cpp_CZombie_FUN_005fb1f0();
 undefined __unknown core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530();
 undefined __unknown core_zombie_cpp_CZombie_FUN_005fbd00();

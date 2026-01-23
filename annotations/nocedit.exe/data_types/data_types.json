@@ -465,7 +465,7 @@
       "type":"function_definition"
     },
     {
-      "name":"CDemonActor_processFootstepAtOffset",
+      "name":"CDemonActor_processFootstepAt",
       "type":"function_definition"
     },
     {
@@ -1642,10 +1642,6 @@
     },
     {
       "name":"CActorDestination",
-      "type":"struct"
-    },
-    {
-      "name":"CAmmoBox",
       "type":"struct"
     },
     {
@@ -3678,6 +3674,10 @@
     },
     {
       "name":"CAmmo",
+      "type":"struct"
+    },
+    {
+      "name":"CAmmoBox",
       "type":"struct"
     },
     {
@@ -7924,6 +7924,10 @@
         {
           "name":"this_ptr",
           "type":"CDemonActor*"
+        },
+        {
+          "name":"delta_time",
+          "type":"float"
         }
       ],
       "return_type":"void",
@@ -7954,7 +7958,7 @@
           "type":"CDemonActor*"
         },
         {
-          "name":"param1",
+          "name":"volume",
           "type":"float"
         }
       ],
@@ -7965,18 +7969,18 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CDemonActor_processFootstepAtOffset",
+      "name":"CDemonActor_processFootstepAt",
       "parameters":[
         {
           "name":"this_ptr",
           "type":"CDemonActor*"
         },
         {
-          "name":"param1",
+          "name":"location",
           "type":"CVector3f*"
         },
         {
-          "name":"param2",
+          "name":"volume",
           "type":"float"
         }
       ],
@@ -20134,9 +20138,9 @@
         },
         {
           "len":380,
-          "name":"model_name",
+          "name":"model",
           "offset":344,
-          "type":"char[380]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":64,
@@ -23453,7 +23457,7 @@
           "len":4,
           "name":"processFootstepAtOffset",
           "offset":28,
-          "type":"CDemonActor_processFootstepAtOffset*"
+          "type":"CDemonActor_processFootstepAt*"
         },
         {
           "len":4,

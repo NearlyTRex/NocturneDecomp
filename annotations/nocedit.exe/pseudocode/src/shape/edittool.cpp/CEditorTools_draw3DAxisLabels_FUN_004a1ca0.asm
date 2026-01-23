@@ -8,6 +8,8 @@
 ; float            Stack[0x8]:4   scale_factor
 ; int              Stack[0xc]:4   text_color
 ; Local Variables:
+; SRenderVertex    Stack[-0x94]:48  local_94
+; SRenderVertex    Stack[-0x64]:48  local_64
 ; undefined1       Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c

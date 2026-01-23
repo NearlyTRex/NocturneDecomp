@@ -29,7 +29,7 @@ undefined FUN_005b9c00();
 
 // Original: core_stairs.cpp_FUN_005b9c10
 // Address: 005b9c10
-undefined FUN_005b9c10();
+int FUN_005b9c10(CDemonActor * param_1, undefined4 param_2, CDemonActor * param_3);
 
 // Original: core_stairs.cpp_FUN_005ba490
 // Address: 005ba490

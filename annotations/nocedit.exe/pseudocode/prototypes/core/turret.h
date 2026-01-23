@@ -29,7 +29,7 @@ int CTurret(CTurret * this_ptr);
 
 // Original: core_turret.cpp_CTurret_process_FUN_005e2430
 // Address: 005e2430
-void CTurret::process(CTurret * this_ptr);
+void CTurret::process(CTurret * this_ptr, float delta_time);
 
 // Original: core_turret.cpp_CTurret_FUN_005e2910
 // Address: 005e2910

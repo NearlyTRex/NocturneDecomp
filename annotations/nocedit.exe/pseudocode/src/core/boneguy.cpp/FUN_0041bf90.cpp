@@ -451,7 +451,7 @@ LAB_0041c60c:
   core_charactr_cpp_CCharacter_FUN_00429820((CCharacter *)in_stack_00000004);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(in_stack_00000004->base_enemy).base_character.model);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0((CCharacter *)in_stack_00000004);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)in_stack_00000004);
   if ((local_34 == 1) &&
      (iVar8 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
                         ((double)(in_stack_00000004->base_enemy).base_character.base_actor.location.

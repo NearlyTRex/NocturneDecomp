@@ -1230,7 +1230,7 @@ LAB_005bc1a6:
   }
   core_stranger_cpp_CStranger_FUN_005c4c20();
   core_stranger_cpp_CStranger_FUN_005c6220();
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
   fVar16 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                      (&(in_stack_00000004->model).motion_controller,6);
   if (fVar16 <= 0.0) {

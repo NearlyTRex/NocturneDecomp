@@ -2,13 +2,13 @@
 // Address: 0040ca10
 // Address Range: [[0040ca10, 0040cb82]]
 // Convention: __cdecl
-// Signature: int core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor * this_ptr, CVector3f * position, int surface_type, float unknown)
+// Signature: int core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor * this_ptr, CVector3f * position, int surface_type, float volume)
 
 #include "nocturne.h"
 
 int __cdecl
 core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
-          (CDemonActor *this_ptr,CVector3f *position,int surface_type,float unknown)
+          (CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)
 
 {
   float fVar1;
@@ -55,7 +55,7 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
     this_ptr->field19_0x114 = 0;
   }
 LAB_0040cb07:
-  dVar6 = (double)unknown;
+  dVar6 = (double)volume;
   pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(surface_type);
   crt_stdio_c_sprintf_FUN_005fdbd0
             (local_8c,"footstep-%s-!-%s-?.wav @ %f",&this_ptr->field21_0x11c,pcVar5,dVar6);
