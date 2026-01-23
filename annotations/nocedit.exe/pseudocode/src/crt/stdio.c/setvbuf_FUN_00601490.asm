@@ -7,7 +7,7 @@
 ; FILE *           Stack[0x4]:4   stream_ptr
 ; char *           Stack[0x8]:4   buffer_ptr
 ; int              Stack[0xc]:4   buffer_mode
-; typedef SIZE_T ULONG_PTR Stack[0x10]:4   buffer_size
+; SIZE_T           Stack[0x10]:4   buffer_size
 ;
 ; XREF[10]:
 ;   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 at 004b3abe

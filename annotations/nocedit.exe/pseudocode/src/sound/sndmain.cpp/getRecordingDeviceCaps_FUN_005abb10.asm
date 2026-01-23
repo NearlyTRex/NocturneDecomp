@@ -4,7 +4,7 @@
 ; __cdecl HRESULT sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps)
 ;
 ; Parameters:
-; typedef LPDSCCAPS DSCCAPS * Stack[0x8]:4   pDSCCaps
+; LPDSCCAPS        Stack[0x8]:4   pDSCCaps
 ;
 ; Referenced Globals:
 ;   IDirectSoundCapture* g_RecordingDeviceInterface

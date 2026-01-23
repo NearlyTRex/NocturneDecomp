@@ -113,7 +113,7 @@ section .text
     MOV EDI,ESP                         ; 004a1d4a
     MOVSD.REP ES:EDI,ESI                ; 004a1d4c | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a1d4e
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004a1d53
     MOV EAX,dword ptr [ESP + 0x20]      ; 004a1d56
     MOV dword ptr [ESP + 0x18],EAX      ; 004a1d5a
@@ -137,7 +137,7 @@ section .text
     MOV EDI,ESP                         ; 004a1d95
     MOVSD.REP ES:EDI,ESI                ; 004a1d97 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a1d99
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004a1d9e
     MOV EAX,dword ptr [ESP + 0x20]      ; 004a1da1
     MOV dword ptr [ESP + 0x1c],EAX      ; 004a1da5
@@ -164,7 +164,7 @@ section .text
     ADD EBX,0x30                        ; 004a1de9 | DAT_00688044
     MOVSD.REP ES:EDI,ESI                ; 004a1dec | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a1dee
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004a1df3
     XOR ESI,ESI                         ; 004a1df6
     TEST byte ptr [EBX + 0x13],0x80     ; 004a1df8 | DAT_00688054+3 | DAT_00688084+3

@@ -4,7 +4,7 @@
 ; __cdecl int crt_io.c_findCloseWrapper_FUN_00602380(HANDLE find_handle)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   find_handle
+; HANDLE           Stack[0x4]:4   find_handle
 ;
 ; XREF[1]:
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc44d

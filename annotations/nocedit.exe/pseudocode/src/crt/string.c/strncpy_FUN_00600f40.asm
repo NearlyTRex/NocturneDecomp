@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   dest
 ; char *           Stack[0x8]:4   src
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   count
+; SIZE_T           Stack[0xc]:4   count
 ;
 ; XREF[11]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990 at 0054a99c

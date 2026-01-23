@@ -10,11 +10,11 @@
 ; va_list_t *      Stack[0x10]:4   extra_args
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
-; typedef DWORD ulong Stack[-0x24]:4  creation_disposition
-; typedef DWORD ulong Stack[-0x20]:4  flags_and_attributes
-; typedef DWORD ulong Stack[-0x1c]:4  share_mode_windows
-; typedef DWORD ulong Stack[-0x18]:4  desired_access
-; typedef DWORD ulong Stack[-0x14]:4  extra_parameter
+; DWORD            Stack[-0x24]:4  creation_disposition
+; DWORD            Stack[-0x20]:4  flags_and_attributes
+; DWORD            Stack[-0x1c]:4  share_mode_windows
+; DWORD            Stack[-0x18]:4  desired_access
+; DWORD            Stack[-0x14]:4  extra_parameter
 ;
 ; XREF[1]:
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074 at 00609091

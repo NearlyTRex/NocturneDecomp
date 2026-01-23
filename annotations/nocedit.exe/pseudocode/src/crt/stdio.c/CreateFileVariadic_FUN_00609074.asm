@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   access_mode
 ; int              Stack[0xc]:4   share_mode
 ; Local Variables:
-; typedef va_list_t char * Stack[-0x8]:4  variadic_args
+; va_list_t        Stack[-0x8]:4  variadic_args
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340 at 0060c424

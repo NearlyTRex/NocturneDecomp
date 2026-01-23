@@ -4,19 +4,7 @@
 ; __cdecl int sound_mp3.cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)
 ;
 ; Parameters:
-; /Nocturne/Struct/Game/SMpegFrame
-aligned(1) pack(disabled)
-Structure SMpegFrame {
-   0   SMpegFrameHeader *   4   header   ""
-   4   int   4   channel_mode   ""
-   8   SBitAllocationTable *   4   allocation_table   ""
-   12   int   4   table_index   ""
-   16   int   4   samples_per_granule   ""
-   20   int   4   js_bound   ""
-   24   int   4   sblimit   ""
-}
-Length: 28 Alignment: 1
- Stack[0x4]:28   frame_info
+; SMpegFrame       Stack[0x4]:28   frame_info
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

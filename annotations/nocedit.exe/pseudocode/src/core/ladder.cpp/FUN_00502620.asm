@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00630e18 = 0.5
 ;   double DOUBLE_00630e20 = 0.00100000000000000
-;   undefined4 DAT_006605d0
+;   float FLOAT_006605d0 = 256
 ;   undefined4 DAT_006605e8
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
@@ -114,13 +114,13 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 00502710
     FSTP float ptr [ESP + 0x54]         ; 00502714
     FLD float ptr [EAX]                 ; 00502718
-    FMUL float ptr [0x006605d0]         ; 0050271a | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 0050271a | FLOAT_006605d0
     FISTP dword ptr [EBX]               ; 00502720
     FLD float ptr [EAX + 0x4]           ; 00502722
-    FMUL float ptr [0x006605d0]         ; 00502725 | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 00502725 | FLOAT_006605d0
     FISTP dword ptr [EBX + 0x4]         ; 0050272b
     FLD float ptr [EAX + 0x8]           ; 0050272e
-    FMUL float ptr [0x006605d0]         ; 00502731 | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 00502731 | FLOAT_006605d0
     FISTP dword ptr [EBX + 0x8]         ; 00502737
     LEA EAX,[ESP + 0x48]                ; 0050273a
     PUSH EAX                            ; 0050273e
@@ -133,13 +133,13 @@ section .text
     LEA EAX,[ESP + 0x54]                ; 0050274e
     MOV EDI,dword ptr [0x006703ec]      ; 00502752 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 00502758
-    FMUL float ptr [0x006605d0]         ; 0050275a | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 0050275a | FLOAT_006605d0
     FISTP dword ptr [EBX]               ; 00502760
     FLD float ptr [EAX + 0x4]           ; 00502762
-    FMUL float ptr [0x006605d0]         ; 00502765 | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 00502765 | FLOAT_006605d0
     FISTP dword ptr [EBX + 0x4]         ; 0050276b
     FLD float ptr [EAX + 0x8]           ; 0050276e
-    FMUL float ptr [0x006605d0]         ; 00502771 | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 00502771 | FLOAT_006605d0
     FISTP dword ptr [EBX + 0x8]         ; 00502777
     LEA EAX,[ESP + 0x24]                ; 0050277a
     PUSH EAX                            ; 0050277e
@@ -162,7 +162,7 @@ section .text
     MOV ESI,EAX                         ; 005027ad
     MOVSD.REP ES:EDI,ESI                ; 005027af
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 005027b1
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 005027b6
     FLD float ptr [ESP + 0x8]           ; 005027b9
     FADD float ptr [0x006605e8]         ; 005027bd | DAT_006605e8
@@ -179,13 +179,13 @@ section .text
     LEA EAX,[ESP + 0x60]                ; 005027e4
     MOV dword ptr [ESP + 0x68],EDX      ; 005027e8
     FLD float ptr [EAX]                 ; 005027ec
-    FMUL float ptr [0x006605d0]         ; 005027ee | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 005027ee | FLOAT_006605d0
     FISTP dword ptr [EBX]               ; 005027f4
     FLD float ptr [EAX + 0x4]           ; 005027f6
-    FMUL float ptr [0x006605d0]         ; 005027f9 | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 005027f9 | FLOAT_006605d0
     FISTP dword ptr [EBX + 0x4]         ; 005027ff
     FLD float ptr [EAX + 0x8]           ; 00502802
-    FMUL float ptr [0x006605d0]         ; 00502805 | DAT_006605d0
+    FMUL float ptr [0x006605d0]         ; 00502805 | FLOAT_006605d0
     FISTP dword ptr [EBX + 0x8]         ; 0050280b
     LEA EAX,[ESP + 0x30]                ; 0050280e
     PUSH EAX                            ; 00502812
@@ -208,7 +208,7 @@ section .text
     MOV ESI,EAX                         ; 00502841
     MOVSD.REP ES:EDI,ESI                ; 00502843
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 00502845
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0050284a
     MOV EAX,[0x006703ec]                ; 0050284d | g_CDemonRendererPtr2
     SUB ESP,0x30                        ; 00502852
@@ -223,7 +223,7 @@ section .text
     LEA ESI,[EAX + 0x30]                ; 0050286d
     MOVSD.REP ES:EDI,ESI                ; 00502870
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 00502872
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00502877
     JMP 0x005026ca                      ; 0050287a
         ;   XREF to: 005026ca (UNCONDITIONAL_JUMP)  ; LAB_005026ca

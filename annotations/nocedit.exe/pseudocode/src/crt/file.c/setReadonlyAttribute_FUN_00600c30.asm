@@ -5,7 +5,7 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; typedef DWORD ulong Stack[0x8]:4   file_attributes
+; DWORD            Stack[0x8]:4   file_attributes
 ;
 ; XREF[3]:
 ;   core_inivar.cpp_readIniData_FUN_004fbd90 at 004fbda3

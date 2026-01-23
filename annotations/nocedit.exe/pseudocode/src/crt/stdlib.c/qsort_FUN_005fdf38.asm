@@ -5,13 +5,13 @@
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   base
-; typedef SIZE_T ULONG_PTR Stack[0x8]:4   num
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   size
-; typedef QSORT_COMPARATOR QSORT_COMPARATOR_FUNC * Stack[0x10]:4   compar
+; SIZE_T           Stack[0x8]:4   num
+; SIZE_T           Stack[0xc]:4   size
+; QSORT_COMPARATOR Stack[0x10]:4   compar
 ; Local Variables:
 ; int              Stack[-0x6c]:4  local_6c
 ; int              Stack[-0x68]:4  local_68
-; typedef SIZE_T ULONG_PTR Stack[-0x64]:4  local_64
+; SIZE_T           Stack[-0x64]:4  local_64
 ; int              Stack[-0x60]:4  local_60
 ; void *           Stack[-0x5c]:4  local_5c
 ; int              Stack[-0x58]:4  local_58
@@ -20,13 +20,13 @@
 ; void *           Stack[-0x48]:4  local_48
 ; void *           Stack[-0x44]:4  local_44
 ; int              Stack[-0x40]:4  local_40
-; typedef QSORT_COMPARATOR QSORT_COMPARATOR_FUNC * Stack[-0x3c]:4  local_3c
+; QSORT_COMPARATOR Stack[-0x3c]:4  local_3c
 ; int              Stack[-0x38]:4  local_38
 ; void *           Stack[-0x34]:4  local_34
 ; void *           Stack[-0x30]:4  local_30
 ; void *           Stack[-0x2c]:4  local_2c
 ; void *           Stack[-0x28]:4  local_28
-; typedef SIZE_T ULONG_PTR Stack[-0x24]:4  local_24
+; SIZE_T           Stack[-0x24]:4  local_24
 ; void *           Stack[-0x20]:4  local_20
 ;
 ; XREF[10]:

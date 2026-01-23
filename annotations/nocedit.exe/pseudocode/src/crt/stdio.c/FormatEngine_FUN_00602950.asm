@@ -6,8 +6,8 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   output_context
 ; char *           Stack[0x8]:4   format
-; typedef va_list_t char * Stack[0xc]:4   args
-; typedef OUTPUT_CALLBACK OUTPUT_CALLBACK_FUNC * Stack[0x10]:4   callback
+; va_list_t        Stack[0xc]:4   args
+; OUTPUT_CALLBACK  Stack[0x10]:4   callback
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88
 ; undefined4       Stack[-0x84]:4  local_84

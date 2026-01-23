@@ -8,15 +8,7 @@
 ; int              Stack[0x8]:4   obj_count
 ; WatcomTypeInfo * Stack[0xc]:4   type_info
 ; Local Variables:
-; /Nocturne/Struct/System/watcom.h/WatcomTypeArrayInfo
-aligned(4) pack(disabled)
-Structure WatcomTypeArrayInfo {
-   0   int   4   obj_count   ""
-   4   WatcomTypeInfo *   4   type_info   ""
-   8   void * *   4   obj_array   ""
-}
-Length: 12 Alignment: 4
- Stack[-0xc]:12  local_destroy_info
+; WatcomTypeArrayInfo Stack[-0xc]:12  local_destroy_info
 ;
 ; XREF[90]:
 ;   core_actor.cpp_freeVectors_FUN_00410500 at 0041050c

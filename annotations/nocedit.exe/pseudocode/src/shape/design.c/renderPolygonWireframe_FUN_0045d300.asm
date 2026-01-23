@@ -97,7 +97,7 @@ section .text
     LEA ESI,[EBP + 0xffffff68]          ; 0045d3c5
     MOVSD.REP ES:EDI,ESI                ; 0045d3cb
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 0045d3cd
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0045d3d2
     JMP 0x0045d33a                      ; 0045d3d5
         ;   XREF to: 0045d33a (UNCONDITIONAL_JUMP)  ; LAB_0045d33a
@@ -136,7 +136,7 @@ section .text
     LEA ESI,[EBP + 0xffffff68]          ; 0045d44c
     MOVSD.REP ES:EDI,ESI                ; 0045d452
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 0045d454
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0045d459
     MOV ESP,EBP                         ; 0045d45c
         ;   Label: LAB_0045d45c

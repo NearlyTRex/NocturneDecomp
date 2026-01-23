@@ -4,7 +4,7 @@
 ; __cdecl int crt_io.c_register_handle_wrapper_FUN_0060a144(HANDLE handle)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   handle
+; HANDLE           Stack[0x4]:4   handle
 ;
 ; XREF[1]:
 ;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 at 0060a3c2

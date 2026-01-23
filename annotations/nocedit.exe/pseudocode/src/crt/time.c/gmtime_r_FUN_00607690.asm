@@ -4,9 +4,9 @@
 ; __cdecl undefined crt_time.c_gmtime_r_FUN_00607690(time_t days, time_t seconds, time_t timezone_offset, undefined1 result)
 ;
 ; Parameters:
-; typedef time_t long Stack[0x4]:4   days
-; typedef time_t long Stack[0x8]:4   seconds
-; typedef time_t long Stack[0xc]:4   timezone_offset
+; time_t           Stack[0x4]:4   days
+; time_t           Stack[0x8]:4   seconds
+; time_t           Stack[0xc]:4   timezone_offset
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

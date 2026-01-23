@@ -4,7 +4,7 @@
 ; __watcallStack int crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0060b2e0(HANDLE hConsoleInput)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   hConsoleInput
+; HANDLE           Stack[0x4]:4   hConsoleInput
 ; Local Variables:
 ; undefined1       Stack[-0x28]:1  local_28
 ; undefined1       Stack[-0x14]:1  local_14

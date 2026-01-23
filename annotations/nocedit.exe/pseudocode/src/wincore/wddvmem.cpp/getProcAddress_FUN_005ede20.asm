@@ -4,8 +4,8 @@
 ; __cdecl FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_005ede20(HMODULE hModule, LPCSTR lpProcName)
 ;
 ; Parameters:
-; typedef HMODULE HINSTANCE Stack[0x4]:4   hModule
-; typedef LPCSTR CHAR * Stack[0x8]:4   lpProcName
+; HMODULE          Stack[0x4]:4   hModule
+; LPCSTR           Stack[0x8]:4   lpProcName
 ;
 ; XREF[2]:
 ;   wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0 at 005b5ef6

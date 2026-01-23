@@ -4,9 +4,9 @@
 ; __cdecl HANDLE crt_thread.c_create_thread_with_sync_FUN_0060f960(LPVOID thread_param, SIZE_T stack_size_hint, LPVOID sync_param, HANDLE * out_thread_handle)
 ;
 ; Parameters:
-; typedef LPVOID void * Stack[0x4]:4   thread_param
-; typedef SIZE_T ULONG_PTR Stack[0x8]:4   stack_size_hint
-; typedef LPVOID void * Stack[0xc]:4   sync_param
+; LPVOID           Stack[0x4]:4   thread_param
+; SIZE_T           Stack[0x8]:4   stack_size_hint
+; LPVOID           Stack[0xc]:4   sync_param
 ; HANDLE *         Stack[0x10]:4   out_thread_handle
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c

@@ -215,7 +215,7 @@ void __cdecl engine_3d_c_addFaceIfVisible_FUN_004079c0(SMRGLHeaderPrimitive * cu
 void __cdecl engine_3d_c_flushRenderQueue_FUN_00407a30(void);
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch * cmd);
 void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(int vertex_index1, int vertex_index2);
-void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2);
+void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2);
 void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1, int vertex_index2);
 void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00408070(SRenderVertex * vertex1, SRenderVertex * vertex2);
 void __cdecl core_actor_cpp_staticInit_FUN_00408320(void);

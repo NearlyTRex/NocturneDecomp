@@ -6,7 +6,7 @@
 ; Parameters:
 ; SNetworkAddr *   Stack[0x4]:4   dest_addr
 ; uint32_t *       Stack[0x8]:4   ip_address_ptr
-; typedef uint16_t ushort Stack[0xc]:2   port
+; uint16_t         Stack[0xc]:2   port
 ;
 ; XREF[3]:
 ;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540f66

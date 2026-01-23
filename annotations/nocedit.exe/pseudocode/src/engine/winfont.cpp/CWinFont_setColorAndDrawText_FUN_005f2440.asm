@@ -5,7 +5,7 @@
 ;
 ; Parameters:
 ; CWinFont *       Stack[0x4]:4   this_ptr
-; typedef HDC HDC__ * Stack[0x8]:4   device_context
+; HDC              Stack[0x8]:4   device_context
 ; int              Stack[0xc]:4   x_position
 ; int              Stack[0x10]:4   y_position
 ; char *           Stack[0x14]:4   text_string

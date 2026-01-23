@@ -7,7 +7,7 @@
 ; void *           Stack[0x4]:4   a
 ; void *           Stack[0x8]:4   b
 ; void *           Stack[0xc]:4   c
-; typedef QSORT_COMPARATOR QSORT_COMPARATOR_FUNC * Stack[0x10]:4   compar
+; QSORT_COMPARATOR Stack[0x10]:4   compar
 ;
 ; XREF[1]:
 ;   crt_stdlib.c_qsort_FUN_005fdf38 at 005fe202

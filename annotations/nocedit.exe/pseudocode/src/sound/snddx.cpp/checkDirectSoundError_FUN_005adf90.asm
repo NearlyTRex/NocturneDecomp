@@ -4,7 +4,7 @@
 ; __cdecl int sound_snddx.cpp_checkDirectSoundError_FUN_005adf90(HRESULT error_code, char * operation_description)
 ;
 ; Parameters:
-; typedef HRESULT long Stack[0x4]:4   error_code
+; HRESULT          Stack[0x4]:4   error_code
 ; char *           Stack[0x8]:4   operation_description
 ; Local Variables:
 ; undefined        Stack[-0x190]:1  local_190

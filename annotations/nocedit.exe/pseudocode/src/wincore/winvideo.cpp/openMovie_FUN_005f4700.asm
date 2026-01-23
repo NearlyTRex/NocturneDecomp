@@ -4,7 +4,7 @@
 ; __cdecl void wincore_winvideo.cpp_openMovie_FUN_005f4700(HWND parent_window, char * movie_filename)
 ;
 ; Parameters:
-; typedef HWND HWND__ * Stack[0x4]:4   parent_window
+; HWND             Stack[0x4]:4   parent_window
 ; char *           Stack[0x8]:4   movie_filename
 ; Local Variables:
 ; undefined        Stack[-0x1b4]:1  local_1b4

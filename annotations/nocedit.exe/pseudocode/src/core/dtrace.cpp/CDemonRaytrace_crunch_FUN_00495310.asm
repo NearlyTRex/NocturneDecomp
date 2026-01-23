@@ -88,7 +88,7 @@
 ;   core_charactr.cpp_CCharacter_setActorNameMaybe_FUN_0042fae0
 ;   core_charactr.cpp_CCharacter_setActorNameMaybe_FUN_0042faf0
 ;   core_charactr.cpp_CCharacter_setActorNameMaybe_FUN_0042fb00
-;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData
+;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
 ;   core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
 ;   core_dcube.cpp_CDemonCube_setBounds_FUN_00456a90
 ;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380
@@ -614,8 +614,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x6e]      ; 004957e0
         ;   Label: LAB_004957e0
     PUSH EDX                            ; 004957e3
-    CALL core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData ; 004957e4
-        ;   XREF to: 00456ed0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube * this_ptr)
+    CALL core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 ; 004957e4
+        ;   XREF to: 00456ed0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube * this_ptr)
     MOV ECX,dword ptr [EBP + 0x6a]      ; 004957e9
     ADD ESP,0x4                         ; 004957ec
     INC ECX                             ; 004957ef

@@ -7,7 +7,7 @@
 ; CDemonCube *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData at 00456f53
+;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 at 00456f53
 ;   core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 at 004572dc
 ;   core_dcube.cpp_CDemonCube_load_FUN_00457530 at 004575f3
 ;

@@ -4,7 +4,7 @@
 ; __cdecl void wincore_winrun.cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread, int priority_level)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   hThread
+; HANDLE           Stack[0x4]:4   hThread
 ; int              Stack[0x8]:4   priority_level
 ;
 ; XREF[1]:

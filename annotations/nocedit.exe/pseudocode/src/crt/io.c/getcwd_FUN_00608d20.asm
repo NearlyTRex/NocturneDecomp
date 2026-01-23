@@ -5,7 +5,7 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
-; typedef SIZE_T ULONG_PTR Stack[0x8]:4   size
+; SIZE_T           Stack[0x8]:4   size
 ;
 ; XREF[4]:
 ;   crt_io.c_getTempDirectory_FUN_00609afc at 00609b68

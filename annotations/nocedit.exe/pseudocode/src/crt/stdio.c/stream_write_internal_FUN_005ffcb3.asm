@@ -6,7 +6,7 @@
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream
 ; void *           Stack[0x8]:4   buffer
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   count
+; SIZE_T           Stack[0xc]:4   count
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 at 00452b01

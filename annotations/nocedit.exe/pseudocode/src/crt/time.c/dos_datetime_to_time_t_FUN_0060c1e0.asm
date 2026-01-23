@@ -4,8 +4,8 @@
 ; __cdecl time_t crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0(WORD dos_date, WORD dos_time)
 ;
 ; Parameters:
-; typedef WORD ushort Stack[0x4]:2   dos_date
-; typedef WORD ushort Stack[0x8]:2   dos_time
+; WORD             Stack[0x4]:2   dos_date
+; WORD             Stack[0x8]:2   dos_time
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

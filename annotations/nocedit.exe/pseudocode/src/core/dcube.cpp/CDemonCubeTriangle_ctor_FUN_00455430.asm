@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   vertex2
 ;
 ; XREF[2]:
-;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData at 00457031
+;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 at 00457031
 ;   core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 at 0045737a
 ;
 ; Called Functions:

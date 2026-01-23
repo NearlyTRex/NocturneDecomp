@@ -1376,7 +1376,7 @@ engine_3d.c_renderPolygonTextureWrappedLit_FUN_00406150,00406150,engine/3d.c,28,
 engine_3d.c_renderPolygonUVVertexLitNormalized_FUN_00405510,00405510,engine/3d.c,28,0,,28
 engine_3d.c_renderPolygonVertexLitNormalized_FUN_00404f80,00404f80,engine/3d.c,27,0,,27
 engine_3d.c_rasterizeTriangle_FUN_005fcfc0,005fcfc0,engine/3d.c,203,0,,203
-engine_3d.c_drawLine2DFromIndices_FUN_00407cf0,00407cf0,engine/3d.c,42,5,stack_param|stack_ref,102
+engine_3d.c_drawLine2DFromIndices_FUN_00407cf0,00407cf0,engine/3d.c,42,3,pointer_cast,77
 engine_3d.c_setProcessorType_FUN_00407870,00407870,engine/3d.c,5,0,,5
 engine_3d.c_renderPolygonUVTextureNormalized_FUN_004061f0,004061f0,engine/3d.c,27,0,,27
 engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50,00404d50,engine/3d.c,27,0,,27
@@ -1386,11 +1386,11 @@ engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80,00406c80,engine/3d.
 engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0,004060a0,engine/3d.c,29,0,,29
 engine_3d.c_oldFunction_FUN_00403ec0,00403ec0,engine/3d.c,7,0,,7
 engine_3d.c_oldFunction_FUN_00403ef0,00403ef0,engine/3d.c,7,0,,7
-engine_3d.c_drawLineStrip2D_FUN_00404570,00404570,engine/3d.c,56,7,pointer_cast|stack_param|stack_ref,141
+engine_3d.c_drawLineStrip2D_FUN_00404570,00404570,engine/3d.c,62,9,pointer_cast|suspect_float,162
 engine_3d.c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690,00405690,engine/3d.c,48,0,,48
 engine_3d.c_calculatePolygonLighting_FUN_00403a00,00403a00,engine/3d.c,8,0,,8
 engine_3d.c_isVisiblePlane_FUN_00403950,00403950,engine/3d.c,21,2,decompiler_intrinsic,46
-engine_3d.c_clipAndDrawLine2D_FUN_00407d70,00407d70,engine/3d.c,147,71,pointer_cast|stack_param|stack_ref,872
+engine_3d.c_clipAndDrawLine2D_FUN_00407d70,00407d70,engine/3d.c,139,20,pointer_cast,344
 engine_3d.c_renderPolygonExtremeQualityMode_FUN_00406b40,00406b40,engine/3d.c,28,0,,28
 engine_3d.c_setActiveRenderColor_FUN_00404540,00404540,engine/3d.c,9,0,,9
 engine_3d.c_renderPrim_FUN_00407920,00407920,engine/3d.c,22,2,extra_output,47
@@ -1984,6 +1984,7 @@ core_trap.cpp_CTrap_serialize_FUN_005de9c0,005de9c0,core/trap.cpp,9,0,,9
 core_trap.cpp_CTrap_FUN_005dea50,005dea50,core/trap.cpp,7,3,stack_param,42
 core_trap.cpp_CTrap_FUN_005de760,005de760,core/trap.cpp,4,0,,4
 core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070,00455070,core/dcube.cpp,55,0,,55
+core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0,00456ed0,core/dcube.cpp,88,13,pointer_cast,223
 core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0,004570a0,core/dcube.cpp,148,36,pointer_cast,513
 core_dcube.cpp_CDemonCube_dtor_FUN_00456790,00456790,core/dcube.cpp,5,0,,5
 core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40,00454c40,core/dcube.cpp,55,0,,55
@@ -2021,7 +2022,6 @@ core_dcube.cpp_CDemonCube_testCapsuleCollision_FUN_00457a90,00457a90,core/dcube.
 core_dcube.cpp_intersectXZCapsule_FUN_004556b0,004556b0,core/dcube.cpp,87,4,decompiler_intrinsic,132
 core_dcube.cpp_triangleCylinderCollision_FUN_00456040,00456040,core/dcube.cpp,135,1,decompiler_intrinsic,150
 core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430,00455430,core/dcube.cpp,10,0,,10
-core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData,00456ed0,core/dcube.cpp/CDemonCube,87,13,pointer_cast,222
 core_shovel.cpp_CShovel_dtor_FUN_00588c80,00588c80,core/shovel.cpp,18,2,unaffected_reg,43
 core_shovel.cpp_staticInit_FUN_00588b30,00588b30,core/shovel.cpp,8,0,,8
 core_shovel.cpp_fire_FUN_00588c20,00588c20,core/shovel.cpp,8,2,stack_param,33
@@ -2793,7 +2793,7 @@ core_setedit.cpp_FUN_0057b410,0057b410,core/setedit.cpp,39,11,stack_param,154
 core_setedit.cpp_FUN_0057b500,0057b500,core/setedit.cpp,47,19,param_count_too_few|pointer_cast|stack_param|unaffected_reg,257
 core_setedit.cpp_ImportingGroundTextures_FUN_00578420,00578420,core/setedit.cpp,88,5,format_string_mismatch|param_count_too_few|stack_param,153
 core_setedit.cpp_CDemonSet_FUN_0057ff70,0057ff70,core/setedit.cpp,61,3,pointer_cast|stack_param,101
-core_setedit.cpp_CDemonSet_FUN_00583170,00583170,core/setedit.cpp,855,141,decompiler_intrinsic|extra_output|pointer_cast|stack_param|stack_ref|suspect_float|undefined_type,2300
+core_setedit.cpp_CDemonSet_FUN_00583170,00583170,core/setedit.cpp,1017,316,decompiler_intrinsic|extra_output|pointer_cast|stack_param|stack_ref|suspect_float|undefined_type|unknown_field,4217
 core_setedit.cpp_FUN_005781a0,005781a0,core/setedit.cpp,23,5,stack_param|undefined_data,83
 core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940,0057a940,core/setedit.cpp,131,25,pointer_cast|stack_param|stack_ref|unaffected_reg,401
 core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80,00578d80,core/setedit.cpp,707,99,pointer_cast|stack_param|stack_ref|undefined_data|unnamed_param,1722
@@ -2826,7 +2826,7 @@ core_setedit.cpp_CDemonSet_FUN_00581aa0,00581aa0,core/setedit.cpp,502,103,decomp
 core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0,0057e7c0,core/setedit.cpp,690,26,decompiler_intrinsic|pointer_cast|stack_param|stack_ref,970
 core_setedit.cpp_CDemonSet_FUN_005800d0,005800d0,core/setedit.cpp,56,21,param_count_too_few|pointer_cast|stack_param,281
 core_setedit.cpp_FUN_0057b600,0057b600,core/setedit.cpp,135,17,param_count_too_few|stack_param,315
-core_setedit.cpp_FUN_00582930,00582930,core/setedit.cpp,299,91,decompiler_intrinsic|pointer_cast|stack_param|stack_ref,1229
+core_setedit.cpp_FUN_00582930,00582930,core/setedit.cpp,460,248,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|unknown_field,2965
 core_setedit.cpp_FUN_00577430,00577430,core/setedit.cpp,102,24,pointer_cast|stack_param|undefined_data|unnamed_param,362
 core_setedit.cpp_WriteActBackdrop_FUN_0057ce80,0057ce80,core/setedit.cpp,140,52,param_count_too_few|pointer_cast|stack_param|stack_ref|unnamed_param,685
 core_setedit.cpp_FUN_00581450,00581450,core/setedit.cpp,32,29,stack_param|stack_ref,332
@@ -3483,7 +3483,7 @@ core_actor.cpp_CVector_copy_FUN_004104a0,004104a0,core/actor.cpp,7,0,,7
 core_actor.cpp_crc32ProcessInt_FUN_0040cf50,0040cf50,core/actor.cpp,5,0,,5
 core_actor.cpp_matchClassExpression_FUN_0040c610,0040c610,core/actor.cpp,54,0,,54
 core_actor.cpp_CActorPropertyList_FUN_0040e260,0040e260,core/actor.cpp,11,6,stack_param,76
-core_actor.cpp_draw3DLineSegment_FUN_0040d330,0040d330,core/actor.cpp,68,13,decompiler_intrinsic|pointer_cast|stack_param|stack_ref,218
+core_actor.cpp_draw3DLineSegment_FUN_0040d330,0040d330,core/actor.cpp,84,27,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|unknown_field,379
 core_actor.cpp_CDemonActor_allowBulletHoles_FUN_004098a0,004098a0,core/actor.cpp,6,0,,6
 core_actor.cpp_crc32ProcessByte_FUN_0040ce30,0040ce30,core/actor.cpp,61,0,,61
 core_actor.cpp_castToClassHash_FUN_0040c790,0040c790,core/actor.cpp,10,0,,10
@@ -3523,7 +3523,7 @@ core_actor.cpp_checkNameHash_FUN_0040c700,0040c700,core/actor.cpp,11,0,,11
 core_actor.cpp_getRandomFloat_FUN_0040cbc0,0040cbc0,core/actor.cpp,11,0,,11
 core_actor.cpp_CDemonActor_updateCollisionData_FUN_004098c0,004098c0,core/actor.cpp,6,0,,6
 core_actor.cpp_CActorPropertyList_FUN_0040e1e0,0040e1e0,core/actor.cpp,12,6,stack_param,77
-core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940,0040d940,core/actor.cpp,177,23,pointer_cast|stack_param|stack_ref,422
+core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940,0040d940,core/actor.cpp,232,53,pointer_cast|stack_param|stack_ref|unknown_field,782
 core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20,0040ac20,core/actor.cpp,6,0,,6
 core_actor.cpp_CActorPropertyList_FUN_0040e850,0040e850,core/actor.cpp,50,13,param_count_too_few|stack_param,190
 core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0,004090c0,core/actor.cpp,23,5,stack_param,78
@@ -3621,7 +3621,7 @@ core_actor.cpp_hashClassName_FUN_0040c290,0040c290,core/actor.cpp,17,0,,17
 core_actor.cpp_serializeClothList_FUN_0040be60,0040be60,core/actor.cpp,63,0,,63
 core_actor.cpp_serializeQuaternion_FUN_0040b520,0040b520,core/actor.cpp,20,0,,20
 core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830,0040c830,core/actor.cpp,23,0,,23
-core_actor.cpp_drawBoundingBox_FUN_0040d470,0040d470,core/actor.cpp,193,35,decompiler_intrinsic|pointer_cast|stack_param|stack_ref,563
+core_actor.cpp_drawBoundingBox_FUN_0040d470,0040d470,core/actor.cpp,241,71,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|unknown_field,976
 core_actor.cpp_isOfClassHash_FUN_0040c760,0040c760,core/actor.cpp,12,0,,12
 core_actor.cpp_CDemonActor_ctor_FUN_004088b0,004088b0,core/actor.cpp,67,45,negative_offset|pointer_cast|suspect_float|undefined_data,537
 core_actor.cpp_CDemonActor_customRayIntersect_FUN_00408cc0,00408cc0,core/actor.cpp,12,0,,12
@@ -4746,7 +4746,7 @@ core_ladder.cpp_FUN_00502ed0,00502ed0,core/ladder.cpp,16,0,,16
 core_ladder.cpp_FUN_005025f0,005025f0,core/ladder.cpp,9,3,stack_param,44
 core_ladder.cpp_FUN_00502530,00502530,core/ladder.cpp,5,0,,5
 core_ladder.cpp_FUN_00502a40,00502a40,core/ladder.cpp,12,2,stack_param,37
-core_ladder.cpp_FUN_00502620,00502620,core/ladder.cpp,125,36,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|warning_overlapping_globals,510
+core_ladder.cpp_FUN_00502620,00502620,core/ladder.cpp,177,66,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|unknown_field,862
 core_ladder.cpp_FUN_00502b80,00502b80,core/ladder.cpp,52,17,param_count_too_few|pointer_cast|stack_param,237
 core_ladder.cpp_FUN_00502e50,00502e50,core/ladder.cpp,16,9,stack_param|unnamed_param,116
 core_ladder.cpp_FUN_00502500,00502500,core/ladder.cpp,10,0,,10
@@ -4871,7 +4871,7 @@ core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0,0059b8d0,core/skeleton.cpp,
 core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50,005a0f50,core/skeleton.cpp,21,0,,21
 core_skeleton.cpp_freeVectors_FUN_005a1ff0,005a1ff0,core/skeleton.cpp,5,0,,5
 core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030,005a2030,core/skeleton.cpp,5,1,param_count_too_few,20
-core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640,0059b640,core/skeleton.cpp,93,11,decompiler_intrinsic|param_count_too_many|pointer_cast|stack_param|stack_ref,228
+core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640,0059b640,core/skeleton.cpp,110,28,decompiler_intrinsic|param_count_too_many|pointer_cast|stack_param|stack_ref|unknown_field,420
 core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10,005a0d10,core/skeleton.cpp,69,7,decompiler_intrinsic|extra_output|unaffected_reg,154
 core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270,0059a270,core/skeleton.cpp,10,4,extra_output,55
 core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20,0059ff20,core/skeleton.cpp,91,16,decompiler_intrinsic|pointer_cast|stack_ref|suspect_float|unaffected_reg|unknown_field,281
@@ -5400,7 +5400,7 @@ core_stairs.cpp_FUN_005ba490,005ba490,core/stairs.cpp,20,15,stack_param|unnamed_
 core_stairs.cpp_FUN_005ba700,005ba700,core/stairs.cpp,53,12,param_count_too_few|stack_param,183
 core_stairs.cpp_FUN_005babf0,005babf0,core/stairs.cpp,9,5,stack_param|unnamed_param,69
 core_stairs.cpp_FUN_005bab90,005bab90,core/stairs.cpp,14,11,stack_param|unnamed_param,134
-core_stairs.cpp_FUN_005b9c10,005b9c10,core/stairs.cpp,330,100,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|suspect_float|undefined_data|warning_overlapping_globals,1365
+core_stairs.cpp_FUN_005b9c10,005b9c10,core/stairs.cpp,439,175,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|suspect_float|undefined_data|unknown_field,2224
 core_stairs.cpp_FUN_005b9b30,005b9b30,core/stairs.cpp,10,0,,10
 core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0,004f76c0,core/hotdemon.cpp,13,4,stack_param,58
 core_hotdemon.cpp_FUN_004f79d0,004f79d0,core/hotdemon.cpp,11,6,stack_param|unnamed_param,81
@@ -5561,7 +5561,7 @@ core_course.cpp_CCourse_dtor_FUN_004424e0,004424e0,core/course.cpp,5,0,,5
 core_course.cpp_FUN_00443760,00443760,core/course.cpp,160,34,decompiler_intrinsic|param_count_too_few|stack_param,515
 core_course.cpp_CCourse_allocMemory_FUN_00442500,00442500,core/course.cpp,24,6,param_count_too_few|stack_param|warning_unreachable,99
 core_course.cpp_CCourse_load_FUN_00442580,00442580,core/course.cpp,45,0,,45
-core_course.cpp_FUN_00443bc0,00443bc0,core/course.cpp,204,39,decompiler_intrinsic|format_string_mismatch|param_count_too_few|pointer_cast|stack_param|stack_ref|unknown_field,629
+core_course.cpp_FUN_00443bc0,00443bc0,core/course.cpp,242,75,decompiler_intrinsic|format_string_mismatch|param_count_too_few|pointer_cast|stack_param|stack_ref|unknown_field,1027
 core_course.cpp_CCourse_FUN_00442710,00442710,core/course.cpp,32,7,pointer_cast|stack_param,112
 core_course.cpp_FUN_004436d0,004436d0,core/course.cpp,28,0,,28
 core_tvbat.cpp_FUN_005e5130,005e5130,core/tvbat.cpp,19,7,stack_param,94
@@ -6392,7 +6392,7 @@ shape_meshlod.cpp_crc32UpdateByte_FUN_0051c270,0051c270,shape/meshlod.cpp,61,0,,
 shape_meshlod.cpp_CLodFace_containsEdge_FUN_005151c0,005151c0,shape/meshlod.cpp,8,0,,8
 shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400,0051a400,shape/meshlod.cpp,93,6,pointer_cast|stack_param,163
 shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520,0051d520,shape/meshlod.cpp,149,20,decompiler_intrinsic|extra_output|format_string_mismatch|stack_param|stack_ref|unaffected_reg|undefined_data|undefined_type,389
-shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770,0051e770,shape/meshlod.cpp,57,7,pointer_cast|stack_param|stack_ref,142
+shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770,0051e770,shape/meshlod.cpp,56,8,pointer_cast|stack_param|stack_ref,151
 shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0,0051c6f0,shape/meshlod.cpp,401,0,,401
 shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180,0051d180,shape/meshlod.cpp,33,0,,33
 shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490,00518490,shape/meshlod.cpp,122,6,param_count_too_few|pointer_cast,192
@@ -6475,7 +6475,7 @@ shape_meshlod.cpp_crc32UpdateDword_FUN_0051c540,0051c540,shape/meshlod.cpp,74,2,
 shape_meshlod.cpp_staticInit_FUN_00514f70,00514f70,shape/meshlod.cpp,6,0,,6
 shape_meshlod.cpp_copyFloat_FUN_0051f0a0,0051f0a0,shape/meshlod.cpp,5,0,,5
 shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20,0051ef20,shape/meshlod.cpp,44,5,pointer_cast,99
-shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830,0051e830,shape/meshlod.cpp,91,8,pointer_cast|stack_param|stack_ref,186
+shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830,0051e830,shape/meshlod.cpp,109,35,pointer_cast|stack_param|stack_ref|unknown_field,479
 shape_meshlod.cpp_copyVector_FUN_0051ee50,0051ee50,shape/meshlod.cpp,7,0,,7
 shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150,0051a150,shape/meshlod.cpp,84,27,param_count_too_many|pointer_cast|register_param,369
 shape_meshlod.cpp_skipLines_FUN_00515160,00515160,shape/meshlod.cpp,16,0,,16
@@ -6497,7 +6497,7 @@ shape_design.c_getAtlasMapIndex_FUN_0046e030,0046e030,shape/design.c,4,0,,4
 shape_design.c_triangulateDSE_FUN_0046e4d0,0046e4d0,shape/design.c,58,8,pointer_cast|stack_param,148
 shape_design.c_normalizeUVCoordinates_FUN_0046e340,0046e340,shape/design.c,38,0,,38
 shape_design.c_clearAllTextureNames_FUN_0046e6b0,0046e6b0,shape/design.c,8,0,,8
-shape_design.c_renderPolygonWireframe_FUN_0045d300,0045d300,shape/design.c,115,13,pointer_cast|stack_param|stack_ref,260
+shape_design.c_renderPolygonWireframe_FUN_0045d300,0045d300,shape/design.c,145,46,pointer_cast|stack_param|stack_ref|suspect_float|unknown_field,630
 shape_design.c_promptForModelNameAndLoad_FUN_00458a10,00458a10,shape/design.c,60,0,,60
 shape_design.c_normalizeVertex_FUN_00461e60,00461e60,shape/design.c,14,2,decompiler_intrinsic|unknown_field,44
 shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0,0045bff0,shape/design.c,75,3,decompiler_intrinsic,110
@@ -6713,7 +6713,7 @@ shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0,0049e6a0,shape/edittool
 shape_edittool.cpp_getFontCharSpacing_FUN_004a6f00,004a6f00,shape/edittool.cpp,4,0,,4
 shape_edittool.cpp_CEdScrollBar_clampToValidRange_FUN_004a63b0,004a63b0,shape/edittool.cpp,18,1,param_count_too_few,33
 shape_edittool.cpp_drawDashedLine_FUN_0049d290,0049d290,shape/edittool.cpp,61,0,,61
-shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0,004a1ca0,shape/edittool.cpp,109,21,decompiler_intrinsic|format_string_mismatch|pointer_cast|stack_param|stack_ref,344
+shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0,004a1ca0,shape/edittool.cpp,160,67,decompiler_intrinsic|format_string_mismatch|pointer_cast|stack_param|stack_ref|unknown_field,860
 shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0,0049e6f0,shape/edittool.cpp,11,1,stack_ref,26
 shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0,004a3ef0,shape/edittool.cpp,10,0,,10
 shape_edittool.cpp_CStrList_remove_FUN_004a2e00,004a2e00,shape/edittool.cpp,27,0,,27
@@ -6742,8 +6742,8 @@ shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340,004a4340,shape/editt
 shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270,004a3270,shape/edittool.cpp,53,0,,53
 shape_edittool.cpp_CEditorTools_showError_FUN_0049e740,0049e740,shape/edittool.cpp,11,1,stack_ref,26
 shape_edittool.cpp_freeVector8_FUN_004a6f50,004a6f50,shape/edittool.cpp,5,0,,5
-shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40,004a1f40,shape/edittool.cpp,46,13,decompiler_intrinsic|pointer_cast|stack_param|stack_ref,196
-shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050,004a2050,shape/edittool.cpp,188,38,decompiler_intrinsic|pointer_cast|stack_param|stack_ref,588
+shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40,004a1f40,shape/edittool.cpp,63,27,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|unknown_field,358
+shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050,004a2050,shape/edittool.cpp,242,74,decompiler_intrinsic|pointer_cast|stack_param|stack_ref|unknown_field,1007
 shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430,004a0430,shape/edittool.cpp,29,0,,29
 shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_004a6550,004a6550,shape/edittool.cpp,15,0,,15
 shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330,004a1330,shape/edittool.cpp,26,0,,26

@@ -4,7 +4,7 @@
 ; __cdecl int wincore_winrun.cpp_waitForMutex_FUN_005f3ff0(HANDLE mutex_handle)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   mutex_handle
+; HANDLE           Stack[0x4]:4   mutex_handle
 ;
 ; XREF[9]:
 ;   shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e at 0050ee84

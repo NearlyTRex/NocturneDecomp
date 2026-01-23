@@ -6,7 +6,7 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   dest
 ; void *           Stack[0x8]:4   src
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   count
+; SIZE_T           Stack[0xc]:4   count
 ;
 ; XREF[5]:
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f411

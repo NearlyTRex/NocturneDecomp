@@ -7,8 +7,10 @@
 ; int              Stack[0x4]:4   vertex_index1
 ; int              Stack[0x8]:4   vertex_index2
 ; Local Variables:
-; undefined1       Stack[-0x68]:1  local_68
-; undefined1       Stack[-0x38]:1  local_38
+; SRenderVertex    Stack[-0xc8]:48  local_c8
+; SRenderVertex    Stack[-0x98]:48  local_98
+; SRenderVertex    Stack[-0x68]:48  local_68
+; SRenderVertex    Stack[-0x38]:48  local_38
 ;
 ; XREF[1]:
 ;   core_waypoint.cpp_CWaypoint_FUN_005ebf70 at 005ec24e
@@ -55,7 +57,7 @@ section .text
     MOV EDI,ESP                         ; 00407d51
     MOVSD.REP ES:EDI,ESI                ; 00407d53
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 00407d55
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00407d5a
     ADD ESP,0x60                        ; 00407d5d
     POP EDI                             ; 00407d60

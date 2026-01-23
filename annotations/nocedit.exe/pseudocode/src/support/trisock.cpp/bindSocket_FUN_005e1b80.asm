@@ -4,7 +4,7 @@
 ; __cdecl int support_trisock.cpp_bindSocket_FUN_005e1b80(uint16_t port, SOCKET * socket_handle)
 ;
 ; Parameters:
-; typedef uint16_t ushort Stack[0x4]:2   port
+; uint16_t         Stack[0x4]:2   port
 ; SOCKET *         Stack[0x8]:4   socket_handle
 ; Local Variables:
 ; undefined2       Stack[-0x10]:2  local_10

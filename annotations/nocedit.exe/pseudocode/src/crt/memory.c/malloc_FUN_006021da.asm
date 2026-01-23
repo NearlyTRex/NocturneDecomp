@@ -4,7 +4,7 @@
 ; __cdecl void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
 ;
 ; Parameters:
-; typedef SIZE_T ULONG_PTR Stack[0x4]:4   size
+; SIZE_T           Stack[0x4]:4   size
 ;
 ; XREF[8]:
 ;   crt_strstream.cpp_strstreambuf_doallocate_FUN_0060bc22 at 0060bc72

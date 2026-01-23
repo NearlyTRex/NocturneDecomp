@@ -4,7 +4,7 @@
 ; __cdecl DWORD sound_sndmain.cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)
 ;
 ; Parameters:
-; typedef LPVOID void * Stack[0x4]:4   lpThreadParam
+; LPVOID           Stack[0x4]:4   lpThreadParam
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_startSoundThread_FUN_005abc00 at 005abc47

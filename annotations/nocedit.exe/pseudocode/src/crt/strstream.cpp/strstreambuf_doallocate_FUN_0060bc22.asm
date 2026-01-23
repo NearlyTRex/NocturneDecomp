@@ -9,8 +9,8 @@
 ; int              Stack[-0x28]:4  buffer_start_offset
 ; int              Stack[-0x24]:4  read_ptr_offset
 ; int              Stack[-0x20]:4  data_end_offset
-; typedef SIZE_T ULONG_PTR Stack[-0x1c]:4  current_buffer_size
-; typedef SIZE_T ULONG_PTR Stack[-0x18]:4  new_buffer_size
+; SIZE_T           Stack[-0x1c]:4  current_buffer_size
+; SIZE_T           Stack[-0x18]:4  new_buffer_size
 ; void *           Stack[-0x14]:4  old_buffer_start
 ;
 ; Called Functions:

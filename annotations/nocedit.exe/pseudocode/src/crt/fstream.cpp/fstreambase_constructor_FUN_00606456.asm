@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   fd
 ; int              Stack[0x10]:4   mode
 ; char *           Stack[0x14]:4   buffer
-; typedef SIZE_T ULONG_PTR Stack[0x18]:4   buffer_size
+; SIZE_T           Stack[0x18]:4   buffer_size
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_ifstream_constructor_FUN_005ff664 at 005ff684

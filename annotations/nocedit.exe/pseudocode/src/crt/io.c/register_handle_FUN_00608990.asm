@@ -4,7 +4,7 @@
 ; __cdecl int crt_io.c_register_handle_FUN_00608990(HANDLE handle)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   handle
+; HANDLE           Stack[0x4]:4   handle
 ;
 ; XREF[3]:
 ;   crt_io.c_InitializeStandardHandles_FUN_00608b20 at 00608b3a

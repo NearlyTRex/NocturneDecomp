@@ -4,7 +4,7 @@
 ; __cdecl void crt_errno.c_SetWindowsError_FUN_006027c8(DWORD windows_error_code)
 ;
 ; Parameters:
-; typedef DWORD ulong Stack[0x4]:4   windows_error_code
+; DWORD            Stack[0x4]:4   windows_error_code
 ;
 ; XREF[4]:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 at 00608396

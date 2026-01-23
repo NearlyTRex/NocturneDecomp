@@ -4,10 +4,10 @@
 ; __cdecl int sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid, LPCSTR description, LPCSTR module, LPVOID context)
 ;
 ; Parameters:
-; typedef LPGUID _GUID * Stack[0x4]:4   device_guid
-; typedef LPCSTR CHAR * Stack[0x8]:4   description
-; typedef LPCSTR CHAR * Stack[0xc]:4   module
-; typedef LPVOID void * Stack[0x10]:4   context
+; LPGUID           Stack[0x4]:4   device_guid
+; LPCSTR           Stack[0x8]:4   description
+; LPCSTR           Stack[0xc]:4   module
+; LPVOID           Stack[0x10]:4   context
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

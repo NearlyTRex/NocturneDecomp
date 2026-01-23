@@ -325,7 +325,7 @@ section .text
     LEA EBX,[EBP + -0x2]                ; 00443e46
     MOVSD.REP ES:EDI,ESI                ; 00443e49
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 00443e4b
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     LEA EAX,[EBP + 0x22]                ; 00443e50
     ADD ESP,0x60                        ; 00443e53
     CMP EBX,EAX                         ; 00443e56

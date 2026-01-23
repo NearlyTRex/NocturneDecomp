@@ -4,7 +4,7 @@
 ; __watcallStack void crt_io.c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data, find_t * dos_info)
 ;
 ; Parameters:
-; typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA * Stack[0x4]:4   win32_data
+; LPWIN32_FIND_DATAA Stack[0x4]:4   win32_data
 ; find_t *         Stack[0x8]:4   dos_info
 ;
 ; XREF[2]:

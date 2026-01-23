@@ -4,10 +4,10 @@
 ; __stdcall LRESULT wincore_winrun.cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 ;
 ; Parameters:
-; typedef HWND HWND__ * Stack[0x4]:4   hWnd
-; typedef UINT uint Stack[0x8]:4   message
-; typedef WPARAM UINT_PTR Stack[0xc]:4   wParam
-; typedef LPARAM LONG_PTR Stack[0x10]:4   lParam
+; HWND             Stack[0x4]:4   hWnd
+; UINT             Stack[0x8]:4   message
+; WPARAM           Stack[0xc]:4   wParam
+; LPARAM           Stack[0x10]:4   lParam
 ;
 ; XREF[1]:
 ;   wincore_winrun.cpp_winMain_FUN_005f3680 at 005f37eb

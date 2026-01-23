@@ -4,8 +4,8 @@
 ; __cdecl void * shape_memdbg.cpp_debugCalloc_FUN_0050f350(SIZE_T count, SIZE_T size, char * filename, int line_number)
 ;
 ; Parameters:
-; typedef SIZE_T ULONG_PTR Stack[0x4]:4   count
-; typedef SIZE_T ULONG_PTR Stack[0x8]:4   size
+; SIZE_T           Stack[0x4]:4   count
+; SIZE_T           Stack[0x8]:4   size
 ; char *           Stack[0xc]:4   filename
 ; int              Stack[0x10]:4   line_number
 ;

@@ -4,7 +4,7 @@
 ; __cdecl HMODULE wincore_wddvmem.cpp_loadLibrary_FUN_005ede10(LPCSTR lpLibFileName)
 ;
 ; Parameters:
-; typedef LPCSTR CHAR * Stack[0x4]:4   lpLibFileName
+; LPCSTR           Stack[0x4]:4   lpLibFileName
 ;
 ; XREF[2]:
 ;   wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0 at 005b5ecf

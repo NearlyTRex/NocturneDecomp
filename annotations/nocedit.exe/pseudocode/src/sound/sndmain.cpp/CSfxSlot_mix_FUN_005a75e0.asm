@@ -5,16 +5,7 @@
 ;
 ; Parameters:
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
-; /Nocturne/Struct/Game/SMixBuffer
-aligned(1) pack(disabled)
-Structure SMixBuffer {
-   0   float *[8]   32   channel_buffers   ""
-   32   int   4   num_output_samples   ""
-   36   int   4   num_channels   ""
-   40   int   4   output_sample_rate   ""
-}
-Length: 44 Alignment: 1
- Stack[0x8]:44   mix_buffer
+; SMixBuffer       Stack[0x8]:44   mix_buffer
 ; Local Variables:
 ; undefined8       Stack[-0xc8]:8  local_c8
 ; undefined8       Stack[-0xc0]:8  local_c0

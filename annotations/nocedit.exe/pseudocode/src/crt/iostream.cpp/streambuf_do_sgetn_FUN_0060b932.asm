@@ -6,7 +6,7 @@
 ; Parameters:
 ; streambuf *      Stack[0x4]:4   buffer
 ; void *           Stack[0x8]:4   output_buffer
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   bytes_to_read
+; SIZE_T           Stack[0xc]:4   bytes_to_read
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

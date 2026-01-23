@@ -109,6 +109,7 @@ const double g_PositiveInfinity = INFINITY;
 
 // float constants
 const float FLOAT_00660484 = 120.0f;
+const float FLOAT_006605d0 = 256.0f;
 const float FLOAT_006608cc = 256.0f;
 const float FLOAT_00661330 = 0.25f;
 const float FLOAT_00661334 = 0.25f;
@@ -138,6 +139,7 @@ const float FLOAT_00663164 = 2.0f;
 const float g_MenuChannel1MaxVolume = 0.25f;
 const float g_MenuChannel0MaxVolume = 0.25f;
 const float g_MenuChannel2MaxVolume = 1.0f;
+const float FLOAT_006634b0 = 256.0f;
 const float FLOAT_00663928 = 1.5f;
 const float DAT_0066392c = 50.0f;
 const float FLOAT_00663930 = 100.0f;

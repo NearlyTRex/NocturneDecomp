@@ -4,7 +4,7 @@
 ; __cdecl void wincore_winrun.cpp_releaseMutex_FUN_005f4050(HANDLE mutex_handle)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   mutex_handle
+; HANDLE           Stack[0x4]:4   mutex_handle
 ;
 ; XREF[10]:
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0 at 0050fb23

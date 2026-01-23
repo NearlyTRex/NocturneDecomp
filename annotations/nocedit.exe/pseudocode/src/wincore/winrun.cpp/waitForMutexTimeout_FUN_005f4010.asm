@@ -4,7 +4,7 @@
 ; __cdecl int wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle, double timeout_seconds)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   mutex_handle
+; HANDLE           Stack[0x4]:4   mutex_handle
 ; double           Stack[0x8]:8   timeout_seconds
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8

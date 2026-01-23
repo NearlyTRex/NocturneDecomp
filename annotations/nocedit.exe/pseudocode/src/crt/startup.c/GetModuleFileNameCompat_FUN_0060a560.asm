@@ -4,9 +4,9 @@
 ; __cdecl DWORD crt_startup.c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule, LPWSTR lpFilename, DWORD nSize)
 ;
 ; Parameters:
-; typedef HMODULE HINSTANCE Stack[0x4]:4   hModule
-; typedef LPWSTR WCHAR * Stack[0x8]:4   lpFilename
-; typedef DWORD ulong Stack[0xc]:4   nSize
+; HMODULE          Stack[0x4]:4   hModule
+; LPWSTR           Stack[0x8]:4   lpFilename
+; DWORD            Stack[0xc]:4   nSize
 ;
 ; XREF[1]:
 ;   crt_startup.c_initialize_runtime_FUN_0060245c at 00602540

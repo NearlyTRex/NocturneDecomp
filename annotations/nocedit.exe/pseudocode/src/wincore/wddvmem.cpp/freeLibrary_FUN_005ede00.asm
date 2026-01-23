@@ -4,7 +4,7 @@
 ; __cdecl BOOL wincore_wddvmem.cpp_freeLibrary_FUN_005ede00(HMODULE hLibModule)
 ;
 ; Parameters:
-; typedef HMODULE HINSTANCE Stack[0x4]:4   hLibModule
+; HMODULE          Stack[0x4]:4   hLibModule
 ;
 ; XREF[1]:
 ;   wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 at 005b5e9b

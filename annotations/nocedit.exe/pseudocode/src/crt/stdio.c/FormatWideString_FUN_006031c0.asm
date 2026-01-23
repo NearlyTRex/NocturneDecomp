@@ -7,7 +7,7 @@
 ; wchar_t *        Stack[0x4]:4   wide_string_offset
 ; ushort           Stack[0x8]:2   segment
 ; FormatSpec *     Stack[0xc]:4   spec_info
-; typedef OUTPUT_CALLBACK OUTPUT_CALLBACK_FUNC * Stack[0x10]:4   output_func
+; OUTPUT_CALLBACK  Stack[0x10]:4   output_func
 ; Local Variables:
 ; undefined1       Stack[-0x18]:1  local_18
 ;

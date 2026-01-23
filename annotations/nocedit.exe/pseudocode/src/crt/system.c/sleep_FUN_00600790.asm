@@ -4,7 +4,7 @@
 ; __cdecl void crt_system.c_sleep_FUN_00600790(DWORD milliseconds)
 ;
 ; Parameters:
-; typedef DWORD ulong Stack[0x4]:4   milliseconds
+; DWORD            Stack[0x4]:4   milliseconds
 ;
 ; XREF[1]:
 ;   shape_design.c_cramTextureList_FUN_0046bb80 at 0046d1e1

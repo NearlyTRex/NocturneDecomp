@@ -4,8 +4,8 @@
 ; __cdecl int crt_io.c_findNextFileWrapper_FUN_00602300(HANDLE find_handle, LPWIN32_FIND_DATAA find_data)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   find_handle
-; typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA * Stack[0x8]:4   find_data
+; HANDLE           Stack[0x4]:4   find_handle
+; LPWIN32_FIND_DATAA Stack[0x8]:4   find_data
 ;
 ; XREF[1]:
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc426

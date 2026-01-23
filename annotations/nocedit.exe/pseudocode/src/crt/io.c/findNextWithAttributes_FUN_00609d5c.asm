@@ -4,9 +4,9 @@
 ; __cdecl int crt_io.c_findNextWithAttributes_FUN_00609d5c(HANDLE hFindFile, DWORD dwAttributeMask, LPWIN32_FIND_DATAA lpFindFileData)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   hFindFile
-; typedef DWORD ulong Stack[0x8]:4   dwAttributeMask
-; typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA * Stack[0xc]:4   lpFindFileData
+; HANDLE           Stack[0x4]:4   hFindFile
+; DWORD            Stack[0x8]:4   dwAttributeMask
+; LPWIN32_FIND_DATAA Stack[0xc]:4   lpFindFileData
 ;
 ; XREF[2]:
 ;   crt_io.c_findFirstFileWrapper_FUN_006021f0 at 0060221d

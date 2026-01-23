@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   fd
 ; void *           Stack[0x8]:4   buffer
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   count
+; SIZE_T           Stack[0xc]:4   count
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

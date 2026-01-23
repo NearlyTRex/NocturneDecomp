@@ -4,7 +4,7 @@
 ; __cdecl int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
 ;
 ; Parameters:
-; typedef DWORD ulong Stack[0x4]:4   windows_error
+; DWORD            Stack[0x4]:4   windows_error
 ;
 ; XREF[7]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060effc

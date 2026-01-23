@@ -43,7 +43,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData at 00456ee2
+;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 at 00456ee2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_reduce_cube_04d_txt_006547c0

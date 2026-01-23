@@ -115,6 +115,10 @@ void CDemonCube::setBounds(CDemonCube * this_ptr, CVector3f * min_bounds, CVecto
 // Address: 00456af0
 void CDemonCube::clipTriangleToFrustum(CDemonCubeFrustum * frustum, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, uchar texture_id);
 
+// Original: core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
+// Address: 00456ed0
+void CDemonCube::buildGeometryFromPolygonData(CDemonCube * this_ptr);
+
 // Original: core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
 // Address: 004570a0
 void CDemonCube::loadGeometryFromTriangleList(CDemonCube * this_ptr, void * triangle_data, int triangle_count, CVector3f * min_bounds, CVector3f * max_bounds, uchar * ground_types, uint * voxel_data);

@@ -2,16 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 37,
-        "message": "invalid conversion from 'uint*' {aka 'unsigned int*'} to 'int*' [-fpermissive]"
+        "category": "other",
+        "column": 32,
+        "line": 28,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 44,
-        "message": "'stack0xffffff38' was not declared in this scope; did you mean 'in_stack_ffffff38'?"
+        "category": "other",
+        "column": 32,
+        "line": 42,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 49,
+        "message": "cast from 'SRenderVertex*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -21,20 +27,37 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 28,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 42,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 49,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 102,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 42,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 79
   },
@@ -128,25 +151,39 @@
     "pcode_op_count": 254
   },
   "stack_frame": {
-    "frame_size": 116,
-    "local_size": 108,
+    "frame_size": 212,
+    "local_size": 204,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 48,
+        "type": "SRenderVertex"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 48,
+        "type": "SRenderVertex"
+      },
+      {
+        "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "SRenderVertex"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "SRenderVertex"
       },
       {
         "is_param": true,
@@ -197,39 +234,25 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffff38",
-      "text": "SRenderVertex *in_stack_ffffff38;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffff3c",
-      "text": "SRenderVertex *in_stack_ffffff3c;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffff38",
-      "text": "piVar4 = (int *)&stack0xffffff38;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_ffffff38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff38,in_stack_ffffff3c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_ffffff3c",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff38,in_stack_ffffff3c);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

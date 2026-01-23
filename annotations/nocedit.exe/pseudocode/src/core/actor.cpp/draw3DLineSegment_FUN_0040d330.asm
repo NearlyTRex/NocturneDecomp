@@ -137,7 +137,7 @@ section .text
     MOV ESI,EAX                         ; 0040d457
     MOVSD.REP ES:EDI,ESI                ; 0040d459
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 0040d45b
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0040d460
     ADD ESP,0x48                        ; 0040d463
     POP EDI                             ; 0040d466

@@ -4,7 +4,7 @@
 ; __cdecl int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
 ;
 ; Parameters:
-; typedef HWND HWND__ * Stack[0x4]:4   window_handle
+; HWND             Stack[0x4]:4   window_handle
 ;
 ; XREF[4]:
 ;   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 at 00511245

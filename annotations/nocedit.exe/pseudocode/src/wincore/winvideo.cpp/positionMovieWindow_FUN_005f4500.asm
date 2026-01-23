@@ -4,7 +4,7 @@
 ; __cdecl void wincore_winvideo.cpp_positionMovieWindow_FUN_005f4500(HWND parent_window)
 ;
 ; Parameters:
-; typedef HWND HWND__ * Stack[0x4]:4   parent_window
+; HWND             Stack[0x4]:4   parent_window
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ;

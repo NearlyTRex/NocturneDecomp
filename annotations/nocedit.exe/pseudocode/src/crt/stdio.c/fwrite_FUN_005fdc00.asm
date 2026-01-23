@@ -5,8 +5,8 @@
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr
-; typedef SIZE_T ULONG_PTR Stack[0x8]:4   size
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   count
+; SIZE_T           Stack[0x8]:4   size
+; SIZE_T           Stack[0xc]:4   count
 ; FILE *           Stack[0x10]:4   file
 ;
 ; XREF[23]:

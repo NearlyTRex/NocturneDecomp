@@ -203,11 +203,21 @@ def export_stack_frame(func):
     }
 
     for var in frame.getStackVariables():
+        # Use getDisplayName() for proper display of pointer types (e.g., "SRenderVertex *")
+        # Falls back to getName() then 'undefined4' if not available
+        data_type = var.getDataType()
+        if data_type:
+            if hasattr(data_type, 'getDisplayName'):
+                type_name = data_type.getDisplayName()
+            else:
+                type_name = data_type.getName()
+        else:
+            type_name = 'undefined4'
         var_info = {
             'name': var.getName(),
             'offset': var.getStackOffset(),
             'size': var.getLength(),
-            'type': str(var.getDataType()),
+            'type': type_name,
             'is_param': var.getStackOffset() >= 0
         }
         frame_info['variables'].append(var_info)

@@ -5,7 +5,7 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filespec
-; typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA * Stack[0x8]:4   find_data
+; LPWIN32_FIND_DATAA Stack[0x8]:4   find_data
 ;
 ; XREF[1]:
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc2d4

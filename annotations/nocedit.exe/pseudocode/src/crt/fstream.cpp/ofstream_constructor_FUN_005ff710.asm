@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   fd
 ; int              Stack[0x10]:4   mode
 ; char *           Stack[0x14]:4   buffer
-; typedef SIZE_T ULONG_PTR Stack[0x18]:4   buffer_size
+; SIZE_T           Stack[0x18]:4   buffer_size
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 at 00452a7e

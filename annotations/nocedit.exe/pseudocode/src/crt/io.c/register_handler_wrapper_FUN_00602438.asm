@@ -4,7 +4,7 @@
 ; __cdecl int crt_io.c_register_handler_wrapper_FUN_00602438(HANDLE file_handle)
 ;
 ; Parameters:
-; typedef HANDLE void * Stack[0x4]:4   file_handle
+; HANDLE           Stack[0x4]:4   file_handle
 ;
 ; XREF[1]:
 ;   crt_stdio.c_CreateFileImpl_FUN_006090a0 at 00609141

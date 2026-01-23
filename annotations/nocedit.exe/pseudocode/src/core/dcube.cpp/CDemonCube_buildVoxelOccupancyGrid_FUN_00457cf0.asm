@@ -31,7 +31,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData at 0045708e
+;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 at 0045708e
 ;
 ; Referenced Globals:
 ;   float g_VoxelSubdivisionCount = 8

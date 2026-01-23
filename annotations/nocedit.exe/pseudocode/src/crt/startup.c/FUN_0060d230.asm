@@ -4,7 +4,7 @@
 ; __cdecl int crt_startup.c_FUN_0060d230(UINT cp)
 ;
 ; Parameters:
-; typedef UINT uint Stack[0x4]:4   cp
+; UINT             Stack[0x4]:4   cp
 ;
 ; XREF[1]:
 ;   crt_startup.c_staticInit_FUN_0060aef4 at 0060aef6

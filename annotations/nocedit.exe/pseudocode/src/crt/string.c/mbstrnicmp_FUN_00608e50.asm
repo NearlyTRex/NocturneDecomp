@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   str1
 ; char *           Stack[0x8]:4   str2
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   count
+; SIZE_T           Stack[0xc]:4   count
 ;
 ; XREF[1]:
 ;   crt_env.c_getenv_FUN_006013f0 at 0060141f

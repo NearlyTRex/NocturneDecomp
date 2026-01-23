@@ -6,7 +6,7 @@
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file
 ; char *           Stack[0x8]:4   format
-; typedef va_list_t char * Stack[0xc]:4   args
+; va_list_t        Stack[0xc]:4   args
 ;
 ; XREF[1]:
 ;   crt_stdio.c_fscanf_FUN_005fe7c0 at 005fe7d8

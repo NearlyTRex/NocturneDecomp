@@ -4,7 +4,7 @@
 ; __cdecl void crt_io.c_ConvertCreationDisposition_FUN_0060c894(DWORD mode_flags, DWORD * creation_disposition)
 ;
 ; Parameters:
-; typedef DWORD ulong Stack[0x4]:4   mode_flags
+; DWORD            Stack[0x4]:4   mode_flags
 ; DWORD *          Stack[0x8]:4   creation_disposition
 ;
 ; XREF[1]:

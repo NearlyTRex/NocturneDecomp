@@ -4,15 +4,15 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    30793 ( 54.8%)
-  pointer_cast                    5797 ( 10.3%)
-  decompiler_intrinsic            4990 (  8.9%)
-  undefined_data                  2969 (  5.3%)
-  unknown_field                   1856 (  3.3%)
+  stack_param                    30996 ( 54.5%)
+  pointer_cast                    5815 ( 10.2%)
+  decompiler_intrinsic            4988 (  8.8%)
+  undefined_data                  2970 (  5.2%)
+  unknown_field                   2273 (  4.0%)
   unnamed_param                   1713 (  3.0%)
-  stack_ref                       1474 (  2.6%)
+  stack_ref                       1513 (  2.7%)
   unaffected_reg                  1230 (  2.2%)
-  suspect_float                    744 (  1.3%)
+  suspect_float                    746 (  1.3%)
   param_count_too_few              633 (  1.1%)
   special_crt_function             626 (  1.1%)
   extra_output                     576 (  1.0%)
@@ -21,7 +21,7 @@ SUSPECT TYPE COUNTS
   format_string_mismatch           361 (  0.6%)
   fpu_register_input               341 (  0.6%)
   nonstandard_int                  273 (  0.5%)
-  warning_overlapping_globals      218 (  0.4%)
+  warning_overlapping_globals      216 (  0.4%)
   register_param                   200 (  0.4%)
   warning_unreachable               99 (  0.2%)
   param_count_too_many              86 (  0.2%)
@@ -47,30 +47,30 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (30793 occurrences)
+TYPE: stack_param (30996 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  17017x  in_stack_00000004
+  17020x  in_stack_00000004
   6982x  in_stack_00000008
-  1816x  in_stack_0000000c
+  1802x  in_stack_0000000c
    742x  in_stack_00000010
-   340x  in_stack_00000014
+   337x  in_stack_00000014
    189x  in_stack_00000018
    146x  in_stack_0000001c
     69x  in_stack_fffeec08
     65x  in_stack_00000020
+    61x  in_stack_fffffd68
     59x  in_stack_fffeec0c
     59x  in_stack_fffeec10
     59x  in_stack_fffeec14
     58x  in_stack_fffeec18
+    48x  in_stack_ffffff54
     38x  in_stack_fffffc58
     36x  in_stack_fffffc54
+    34x  in_stack_fffffec0
+    31x  in_stack_ffffffe0
     31x  in_stack_000000b0
-    29x  in_stack_ffffc8a8
-    28x  in_stack_0000003c
-    28x  in_stack_ffffc8ac
-    28x  in_stack_ffffc8b0
 
 Example functions:
   cockpit_pkbmpset.cpp_FUN_0054c7a0
@@ -99,16 +99,16 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
-TYPE: pointer_cast (5797 occurrences)
+TYPE: pointer_cast (5815 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2218x  (uint *)((int)
   1244x  (int *)((int)
    422x  (float *)((int)
-   277x  (SRenderVertex *)((int)
+   296x  (SRenderVertex *)((int)
    248x  (CMatrix3x4f *)((int)
-   218x  (double *)((int)
+   217x  (double *)((int)
    210x  (void *)((int)
    207x  (byte *)((int)
    144x  (char *)((int)
@@ -137,15 +137,15 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (4990 occurrences)
+TYPE: decompiler_intrinsic (4988 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1860x  ROUND
-   612x  CONCAT44
+   608x  CONCAT44
    419x  SQRT
    293x  ABS
-   192x  SUB84
+   194x  SUB84
    162x  CARRY4
    150x  CONCAT11
    110x  CONCAT22
@@ -189,7 +189,7 @@ Example functions:
     uVar12 = SUB84(b,0);...
 
 ====================================================================================================
-TYPE: undefined_data (2969 occurrences)
+TYPE: undefined_data (2970 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -257,30 +257,30 @@ Example functions:
     *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
 
 ====================================================================================================
-TYPE: unknown_field (1856 occurrences)
+TYPE: unknown_field (2273 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   720x  ._0_4_
-   665x  ._4_4_
-   124x  ._8_4_
-    55x  ._12_4_
-    44x  ._16_4_
+   774x  ._0_4_
+   719x  ._4_4_
+   178x  ._8_4_
+   109x  ._12_4_
+    97x  ._16_4_
+    68x  ._20_4_
+    57x  ._24_4_
+    38x  ._0_24_
+    37x  ._28_4_
     34x  ._0_1_
-    30x  ._20_4_
     24x  ._2_2_
     20x  ._3_1_
-    19x  ._24_4_
     16x  ._0_2_
     16x  ._1_1_
     16x  ._2_1_
-    13x  ._28_4_
+    11x  ._32_4_
      7x  ._4_8_
-     7x  ._32_4_
+     7x  ._36_4_
+     6x  ._8_8_
      6x  ._44_4_
-     5x  ._8_8_
-     5x  ._48_4_
-     5x  ._36_4_
 
 Example functions:
   crt_fpemu.c_staticInit_FUN_0060be80
@@ -330,7 +330,7 @@ Example functions:
     (uint param_1,uint param_2,byte *unaff_EBX,uint param_4,...
 
 ====================================================================================================
-TYPE: stack_ref (1474 occurrences)
+TYPE: stack_ref (1513 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -338,19 +338,19 @@ Unique patterns:
     32x  &stack0xfffffc4c
     31x  &stack0xffffffe8
     27x  &stack0xfffffc54
-    26x  &stack0x00000034
     26x  &stack0xffffff24
     23x  &stack0xfffffff0
+    22x  &stack0xffffff54
     22x  &stack0x00000000
     21x  &stack0xffffffd4
     20x  &stack0xffffffe0
     20x  &stack0xffffffd8
+    19x  &stack0xffffff98
     19x  &stack0xfffffa18
     18x  &stack0xffffedf8
     17x  &stack0xffffffec
     17x  &stack0xfffffed0
     16x  &stack0xfffffff4
-    16x  &stack0xffffff98
     16x  &stack0xfffffbb8
     16x  &stack0xffffe138
     15x  &stack0xfffffaa8
@@ -426,7 +426,7 @@ Example functions:
     int unaff_EBP;...
 
 ====================================================================================================
-TYPE: suspect_float (744 occurrences)
+TYPE: suspect_float (746 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -462,10 +462,10 @@ Example functions:
     fVar3 = 3.67342e-40;...
   engine_3d.c_renderPolygonLitDetailed_FUN_00404220
     fVar3 = 9.18355e-41;...
+  engine_3d.c_drawLineStrip2D_FUN_00404570
+    local_a0.w_recip = 5.902398e-39;...
   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
     fVar3 = 3.67342e-40;...
-  engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-    CStack_18.x = 6.68261e-39;...
 
 ====================================================================================================
 TYPE: param_count_too_few (633 occurrences)
@@ -898,11 +898,11 @@ Example functions:
     uint5 uVar12;...
 
 ====================================================================================================
-TYPE: warning_overlapping_globals (218 occurrences)
+TYPE: warning_overlapping_globals (216 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   218x  WARNING: Globals starting with
+   216x  WARNING: Globals starting with
 
 Example functions:
   crt_math.c_atan2_FUN_0060c440

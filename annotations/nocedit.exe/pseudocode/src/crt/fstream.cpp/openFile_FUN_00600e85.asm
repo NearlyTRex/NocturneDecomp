@@ -7,7 +7,7 @@
 ; ifstream *       Stack[0x4]:4   stream_obj
 ; char *           Stack[0x8]:4   filename
 ; int              Stack[0xc]:4   open_mode
-; typedef SIZE_T ULONG_PTR Stack[0x10]:4   buffer_size
+; SIZE_T           Stack[0x10]:4   buffer_size
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadSaveGame_FUN_004e12b0 at 004e15ba

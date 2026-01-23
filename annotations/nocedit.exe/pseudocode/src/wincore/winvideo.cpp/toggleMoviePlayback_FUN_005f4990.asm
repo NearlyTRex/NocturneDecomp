@@ -4,7 +4,7 @@
 ; __cdecl void wincore_winvideo.cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window, int play_state)
 ;
 ; Parameters:
-; typedef HWND HWND__ * Stack[0x4]:4   notify_window
+; HWND             Stack[0x4]:4   notify_window
 ; int              Stack[0x8]:4   play_state
 ;
 ; Referenced Globals:

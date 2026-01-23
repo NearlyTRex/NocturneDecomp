@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   buffer
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
-; typedef va_list_t char * Stack[-0x8]:4  args
+; va_list_t        Stack[-0x8]:4  args
 ;
 ; XREF[315]:
 ;   cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 at 00435857

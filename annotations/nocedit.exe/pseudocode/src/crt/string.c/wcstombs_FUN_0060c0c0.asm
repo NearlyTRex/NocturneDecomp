@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   dest
 ; wchar_t *        Stack[0x8]:4   src
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   dest_size
+; SIZE_T           Stack[0xc]:4   dest_size
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14
 ;

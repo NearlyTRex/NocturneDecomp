@@ -5,7 +5,7 @@
 ;
 ; Parameters:
 ; CFileFinder *    Stack[0x4]:4   finder
-; typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA * Stack[0x8]:4   find_data
+; LPWIN32_FIND_DATAA Stack[0x8]:4   find_data
 ; Local Variables:
 ; undefined1       Stack[-0x18]:1  local_18
 ;

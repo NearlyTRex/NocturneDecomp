@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   dest
 ; char *           Stack[0x8]:4   format
-; typedef DWORD ulong Stack[0xc]:4   value
+; DWORD            Stack[0xc]:4   value
 ;
 ; XREF[1]:
 ;   crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4 at 0060a8e6

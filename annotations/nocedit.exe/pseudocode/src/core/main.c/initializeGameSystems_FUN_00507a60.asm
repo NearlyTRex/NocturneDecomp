@@ -8,17 +8,7 @@
 ; char[256]        Stack[-0x328]:256  temp_buffer
 ; char[256]        Stack[-0x228]:256  loading_text
 ; char[256]        Stack[-0x128]:256  memory_amount_str
-; /Nocturne/Class/Game/CAlphaBitmap
-aligned(1) pack(disabled)
-Structure CAlphaBitmap {
-   0   char *   4   ptrRaw   ""
-   4   char *   4   ptrOpa   ""
-   8   uint *   4   ptrAct   ""
-   12   int   4   width   ""
-   16   int   4   height   ""
-}
-Length: 20 Alignment: 1
- Stack[-0x28]:20  loading_bitmap
+; CAlphaBitmap     Stack[-0x28]:20  loading_bitmap
 ;
 ; XREF[1]:
 ;   wincore_winrun.cpp_winMain_FUN_005f3680 at 005f38f8

@@ -6,7 +6,7 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   dest
 ; void *           Stack[0x8]:4   src
-; typedef SIZE_T ULONG_PTR Stack[0xc]:4   n
+; SIZE_T           Stack[0xc]:4   n
 ;
 ; XREF[78]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0 at 00488f3a

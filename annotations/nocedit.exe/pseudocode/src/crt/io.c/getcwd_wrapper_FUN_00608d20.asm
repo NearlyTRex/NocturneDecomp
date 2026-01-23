@@ -5,7 +5,7 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
-; typedef SIZE_T ULONG_PTR Stack[0x8]:4   size
+; SIZE_T           Stack[0x8]:4   size
 ;
 ; XREF[2]:
 ;   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 at 004b9fca

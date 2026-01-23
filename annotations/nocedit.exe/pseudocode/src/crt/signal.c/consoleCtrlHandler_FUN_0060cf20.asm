@@ -4,7 +4,7 @@
 ; __stdcall BOOL crt_signal.c_consoleCtrlHandler_FUN_0060cf20(DWORD dwCtrlType)
 ;
 ; Parameters:
-; typedef DWORD ulong Stack[0x4]:4   dwCtrlType
+; DWORD            Stack[0x4]:4   dwCtrlType
 ;
 ; XREF[2]:
 ;   crt_signal.c_registerConsoleHandler_FUN_0060cfb8 at 0060cfc3

@@ -102,7 +102,7 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(CDemonCu
 void __cdecl core_dcube_cpp_CDemonCube_freeMemory_FUN_004569b0(CDemonCube * this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_setBounds_FUN_00456a90(CDemonCube * this_ptr, CVector3f * min_bounds, CVector3f * max_bounds);
 void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum * frustum, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, uchar texture_id);
-void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube * this_ptr);
+void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube * this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube * this_ptr, void * triangle_data, int triangle_count, CVector3f * min_bounds, CVector3f * max_bounds, uchar * ground_types, uint * voxel_data);
 void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube * this_ptr, FILE * file_handle);
 void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube * this_ptr, FILE * file_handle);

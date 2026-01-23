@@ -12,6 +12,7 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
 
 {
   SRenderVertex *pSVar1;
+  SRenderVertex vertex2;
   CSkeleton *pCVar2;
   int iVar3;
   int iVar4;
@@ -22,10 +23,12 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
   int *piVar8;
   uint *puVar9;
   byte bVar10;
-  SRenderVertex *in_stack_ffffff54;
-  SRenderVertex *in_stack_ffffff58;
-  int aiStack_7c [8];
-  uint uStack_5c;
+  SRenderVertex in_stack_ffffff54;
+  byte auVar11 [24];
+  byte in_stack_ffffff84 [32];
+  uint in_stack_ffffffa4;
+  uint in_stack_ffffffa8;
+  SProjectedVertex *output;
   CVector3i local_4c;
   CVector3f local_40;
   CVector3f local_34;
@@ -35,6 +38,7 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
   int local_14;
   
   bVar10 = 0;
+  output = (SProjectedVertex *)0x59b651;
   pCVar2 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
   if ((render_flags & 1U) != 0) {
     iVar5 = 0;
@@ -46,11 +50,13 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
         local_4c.x = (int)ROUND(local_28.x * 256.0f);
         local_4c.y = (int)ROUND(local_28.y * 256.0f);
         local_4c.z = (int)ROUND(local_28.z * 256.0f);
+        output = (SProjectedVertex *)
+                 ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
+                 local_1c);
         iVar5 = iVar5 + 1;
-        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  ((SProjectedVertex *)
-                   ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
-                   + local_1c),&local_4c);
+        in_stack_ffffffa8 = 0x59b6d1;
+        this_ptr = (CDeformableModel *)&local_4c;
+        wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(output,&local_4c);
         matrix_in = matrix_in + 1;
       } while (iVar5 < pCVar2->bone_count);
     }
@@ -64,7 +70,7 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
         if (-1 < iVar4) {
           pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar6 = pSVar1 + iVar4;
-          piVar8 = aiStack_7c;
+          piVar8 = (int *)&stack0xffffff84;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
             *piVar8 = (pSVar6->projected_vertex).transformed_x;
             pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);
@@ -77,7 +83,20 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
             puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
             puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
           }
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff54,in_stack_ffffff58);
+          vertex2.light = (float)in_stack_ffffffa4;
+          auVar11 = in_stack_ffffff84._0_24_;
+          vertex2.projected_vertex.transformed_x = auVar11._0_4_;
+          vertex2.projected_vertex.transformed_y = auVar11._4_4_;
+          vertex2.projected_vertex.transformed_z = auVar11._8_4_;
+          vertex2.projected_vertex.inv_z = auVar11._12_4_;
+          vertex2.projected_vertex.screen_x = auVar11._16_4_;
+          vertex2.projected_vertex.screen_y = auVar11._20_4_;
+          vertex2.u = (float)in_stack_ffffff84._24_4_;
+          vertex2.v = (float)in_stack_ffffff84._28_4_;
+          vertex2.color = in_stack_ffffffa8;
+          vertex2.fog = (float)output;
+          vertex2.w_recip = (float)this_ptr;
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff54,vertex2);
         }
         iVar5 = iVar5 + 0x30;
         local_18 = (CSkeleton *)((local_18->motion_list).state_names[1] + 2);
@@ -89,10 +108,8 @@ core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640
     do {
       core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)bone_matrices,&local_40);
       core_xform_cpp_getTranslation_FUN_005f6110(bone_matrices,&local_34);
-      uStack_5c = 0x59b7ae;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,(CVector3i *)&local_40,(CVector3i *)&local_34);
-      uStack_5c = 0x59b7c6;
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,0.5,0xff);
       iVar5 = iVar5 + 1;
       bone_matrices = bone_matrices + 1;

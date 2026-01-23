@@ -77,7 +77,7 @@ section .text
     INC EBX                             ; 0051e7eb
     MOVSD.REP ES:EDI,ESI                ; 0051e7ec
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 0051e7ee
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0051e7f3
     CMP EBX,0x3                         ; 0051e7f6
     JL 0x0051e7ac                       ; 0051e7f9

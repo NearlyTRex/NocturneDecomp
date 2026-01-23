@@ -10,15 +10,18 @@ void __cdecl
 core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
 
 {
+  SRenderVertex vertex2;
   int iVar1;
   SRenderVertex *pSVar2;
   SRenderVertex *pSVar3;
   int *piVar4;
   byte bVar5;
-  SRenderVertex *in_stack_ffffff4c;
-  SRenderVertex *in_stack_ffffff50;
-  int aiStack_84 [9];
-  uint uStack_60;
+  SRenderVertex in_stack_ffffff4c;
+  byte auVar6 [24];
+  byte in_stack_ffffff7c [36];
+  uint uVar7;
+  SRenderVertex *output;
+  CVector3i *input;
   CVector3i local_54;
   float local_48;
   float local_44;
@@ -50,18 +53,18 @@ core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *
   local_54.x = (int)ROUND(local_24 * 256.0f);
   local_54.y = (int)ROUND(local_20 * 256.0f);
   local_54.z = (int)ROUND(local_1c * 256.0f);
-  uStack_60 = 0x40d3f1;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_54);
   local_30.x = (int)ROUND(local_3c * 256.0f);
   local_30.y = (int)ROUND(local_38 * 256.0f);
   local_30.z = (int)ROUND(local_34 * 256.0f);
-  uStack_60 = 0x40d434;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr1->vertex_buffer_ptr[1].projected_vertex,&local_30);
+  input = &local_30;
+  output = g_CDemonRendererPtr1->vertex_buffer_ptr + 1;
+  uVar7 = 0x40d434;
+  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&output->projected_vertex,input);
   pSVar3 = g_CDemonRendererPtr1->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 1;
-  piVar4 = aiStack_84;
+  piVar4 = (int *)&stack0xffffff7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *piVar4 = (pSVar2->projected_vertex).transformed_x;
     pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);
@@ -73,6 +76,19 @@ core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff4c,in_stack_ffffff50);
+  vertex2.color = uVar7;
+  auVar6 = in_stack_ffffff7c._0_24_;
+  vertex2.projected_vertex.transformed_x = auVar6._0_4_;
+  vertex2.projected_vertex.transformed_y = auVar6._4_4_;
+  vertex2.projected_vertex.transformed_z = auVar6._8_4_;
+  vertex2.projected_vertex.inv_z = auVar6._12_4_;
+  vertex2.projected_vertex.screen_x = auVar6._16_4_;
+  vertex2.projected_vertex.screen_y = auVar6._20_4_;
+  vertex2.u = (float)in_stack_ffffff7c._24_4_;
+  vertex2.v = (float)in_stack_ffffff7c._28_4_;
+  vertex2.light = (float)in_stack_ffffff7c._32_4_;
+  vertex2.fog = (float)output;
+  vertex2.w_recip = (float)input;
+  engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff4c,vertex2);
   return;
 }

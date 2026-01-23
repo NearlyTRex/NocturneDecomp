@@ -4,9 +4,9 @@
 ; __stdcall int wincore_winrun.cpp_winMain_FUN_005f3680(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow1, int nCmdShow2)
 ;
 ; Parameters:
-; typedef HINSTANCE HINSTANCE__ * Stack[0x4]:4   hInstance
-; typedef HINSTANCE HINSTANCE__ * Stack[0x8]:4   hPrevInstance
-; typedef LPSTR CHAR * Stack[0xc]:4   lpCmdLine
+; HINSTANCE        Stack[0x4]:4   hInstance
+; HINSTANCE        Stack[0x8]:4   hPrevInstance
+; LPSTR            Stack[0xc]:4   lpCmdLine
 ; int              Stack[0x10]:4   nCmdShow1
 ; int              Stack[0x14]:4   nCmdShow2
 ; Local Variables:

@@ -4,7 +4,7 @@
 ; __cdecl void crt_startup.c_initialize_runtime_FUN_0060245c(HMODULE hModule, void * pThreadParam, int unused)
 ;
 ; Parameters:
-; typedef HMODULE HINSTANCE Stack[0x14]:4   hModule
+; HMODULE          Stack[0x14]:4   hModule
 ; void *           Stack[0x18]:4   pThreadParam
 ; int              Stack[0x1c]:4   unused
 ;

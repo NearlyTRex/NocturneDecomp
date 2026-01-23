@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube * this_ptr)
+; __cdecl void core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube * this_ptr)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr
@@ -46,7 +46,7 @@
 section .text
 
     PUSH EBX                            ; 00456ed0
-        ;   Label: core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData
+        ;   Label: core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
     PUSH ESI                            ; 00456ed1
     PUSH EBP                            ; 00456ed2
     SUB ESP,0x18                        ; 00456ed3

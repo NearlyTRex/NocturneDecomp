@@ -4,7 +4,7 @@
 ; __cdecl CDirectSoundDevice * sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440(UINT device_id)
 ;
 ; Parameters:
-; typedef UINT uint Stack[0x4]:4   device_id
+; UINT             Stack[0x4]:4   device_id
 ; Local Variables:
 ; undefined1       Stack[-0x138]:1  local_138
 ;

@@ -4,8 +4,8 @@
 ; __cdecl int support_trisock.cpp_cleanupWinsock_FUN_005e1ee0(WORD wVersionRequested, LPWSADATA lpWSAData)
 ;
 ; Parameters:
-; typedef WORD ushort Stack[0x4]:2   wVersionRequested
-; typedef LPWSADATA WSADATA * Stack[0x8]:4   lpWSAData
+; WORD             Stack[0x4]:2   wVersionRequested
+; LPWSADATA        Stack[0x8]:4   lpWSAData
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_FUN_0053f830 at 0053f851

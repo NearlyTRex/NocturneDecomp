@@ -6,8 +6,10 @@
 ; Parameters:
 ; SLineStrip *     Stack[0x4]:4   line_strip
 ; Local Variables:
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x40]:1  local_40
+; SRenderVertex    Stack[-0xd0]:48  local_d0
+; SRenderVertex    Stack[-0xa0]:48  local_a0
+; SRenderVertex    Stack[-0x70]:48  local_70
+; SRenderVertex    Stack[-0x40]:48  local_40
 ;
 ; XREF[1]:
 ;   core_course.cpp_FUN_00443760 at 00443ac5
@@ -77,7 +79,7 @@ section .text
     INC EBP                             ; 004045f3
     MOVSD.REP ES:EDI,ESI                ; 004045f4
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004045f6
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004045fb
     JMP 0x00404585                      ; 004045fe
         ;   XREF to: 00404585 (UNCONDITIONAL_JUMP)  ; LAB_00404585

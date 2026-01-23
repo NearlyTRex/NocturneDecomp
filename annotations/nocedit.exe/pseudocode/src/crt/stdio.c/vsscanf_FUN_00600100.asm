@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   str
 ; char *           Stack[0x8]:4   format
-; typedef va_list_t char * Stack[0xc]:4   args
+; va_list_t        Stack[0xc]:4   args
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

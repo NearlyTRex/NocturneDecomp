@@ -350,7 +350,7 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
                   piVar6 = piVar6 + 7;
                 } while (iVar7 < local_18);
               }
-              core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData(local_1c);
+              core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(local_1c);
               local_20 = local_20 + 1;
             } while (local_20 < (this_ptr->grid_coord).z);
           }

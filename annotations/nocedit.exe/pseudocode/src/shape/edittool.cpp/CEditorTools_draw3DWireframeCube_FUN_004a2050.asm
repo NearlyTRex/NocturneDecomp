@@ -206,7 +206,7 @@ section .text
     MOV EDI,ESP                         ; 004a223c
     MOVSD.REP ES:EDI,ESI                ; 004a223e | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a2240
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004a2245
     MOV ESI,dword ptr [ESP + 0xf0]      ; 004a2248
     XOR SI,0x2                          ; 004a224f
@@ -287,7 +287,7 @@ section .text
     MOV EDI,ESP                         ; 004a237c
     MOVSD.REP ES:EDI,ESI                ; 004a237e | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a2380
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004a2385
     MOV EAX,dword ptr [ESP + 0xf0]      ; 004a2388
     XOR AL,0x4                          ; 004a238f
@@ -368,7 +368,7 @@ section .text
     MOV EDI,ESP                         ; 004a24b3
     MOVSD.REP ES:EDI,ESI                ; 004a24b5 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a24b7
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004a24bc
     MOV ECX,dword ptr [ESP + 0xf0]      ; 004a24bf
     INC ECX                             ; 004a24c6

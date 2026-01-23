@@ -4,7 +4,7 @@
 ; __cdecl CWavOutDevice * sound_sndwav.cpp_getWavOutDevice_FUN_005b1510(UINT device_id)
 ;
 ; Parameters:
-; typedef UINT uint Stack[0x4]:4   device_id
+; UINT             Stack[0x4]:4   device_id
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34
 ;

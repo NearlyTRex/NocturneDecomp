@@ -377,7 +377,7 @@ void drawLine2DFromIndices(int vertex_index1, int vertex_index2);
 
 // Original: engine_3d.c_clipAndDrawLine2D_FUN_00407d70
 // Address: 00407d70
-void clipAndDrawLine2D(SRenderVertex * vertex1, SRenderVertex * vertex2);
+void clipAndDrawLine2D(SRenderVertex vertex1, SRenderVertex vertex2);
 
 // Original: engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
 // Address: 00407ff0

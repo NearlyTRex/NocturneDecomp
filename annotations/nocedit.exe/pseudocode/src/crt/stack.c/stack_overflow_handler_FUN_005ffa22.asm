@@ -4,7 +4,7 @@
 ; __watcallStack void crt_stack.c_stack_overflow_handler_FUN_005ffa22(SIZE_T required_bytes)
 ;
 ; Parameters:
-; typedef SIZE_T ULONG_PTR Stack[0x4]:4   required_bytes
+; SIZE_T           Stack[0x4]:4   required_bytes
 ;
 ; XREF[2]:
 ;   crt_io.c_write_FUN_006084ec at 0060866f

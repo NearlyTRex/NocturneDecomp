@@ -4,7 +4,7 @@
 ; __cdecl ulong crt_string.c_wcslen_FUN_0060cd30(LPWSTR str)
 ;
 ; Parameters:
-; typedef LPWSTR WCHAR * Stack[0x4]:4   str
+; LPWSTR           Stack[0x4]:4   str
 ;
 ; XREF[4]:
 ;   crt_startup.c_GetModuleFileNameCompat_FUN_0060a560 at 0060a5f7

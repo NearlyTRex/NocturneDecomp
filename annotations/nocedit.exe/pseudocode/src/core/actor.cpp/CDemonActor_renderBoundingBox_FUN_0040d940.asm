@@ -5,7 +5,7 @@
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; typedef uint32_t uint Stack[0x8]:4   color
+; uint32_t         Stack[0x8]:4   color
 ;
 ; XREF[9]:
 ;   core_door.cpp_CDoor_renderOpaque_FUN_004807d0 at 004808cc
@@ -197,7 +197,7 @@ section .text
     MOV ESI,EBX                         ; 0040db2c
     MOVSD.REP ES:EDI,ESI                ; 0040db2e
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 0040db30
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     MOV EBX,EBP                         ; 0040db35
     ADD ESP,0x60                        ; 0040db37
     XOR BL,0x2                          ; 0040db3a
@@ -332,7 +332,7 @@ section .text
     MOV ESI,EBX                         ; 0040dceb
     MOVSD.REP ES:EDI,ESI                ; 0040dced
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 0040dcef
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     MOV EBX,EBP                         ; 0040dcf4
     ADD ESP,0x60                        ; 0040dcf6
     XOR BL,0x4                          ; 0040dcf9
@@ -467,7 +467,7 @@ section .text
     INC EBP                             ; 0040de8c
     MOVSD.REP ES:EDI,ESI                ; 0040de8d
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 0040de8f
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0040de94
     CMP EBP,0x8                         ; 0040de97
     JL 0x0040d98d                       ; 0040de9a

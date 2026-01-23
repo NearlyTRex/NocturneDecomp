@@ -5,7 +5,7 @@
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   signal_number
-; typedef SIGNAL_HANDLER_TYPE int Stack[0x8]:4   new_handler_type
+; SIGNAL_HANDLER_TYPE Stack[0x8]:4   new_handler_type
 ;
 ; XREF[4]:
 ;   crt_signal.c_processSignal_FUN_0060d128 at 0060d177
