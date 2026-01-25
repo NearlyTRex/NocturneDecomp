@@ -25,7 +25,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
   if (g_CGamePtr->allow_damage_flag == 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  (this_ptr->base_hero).field1_0xbe24 = 0x3F000000;
+  (this_ptr->base_hero).field1_0xbe24 = (int)0.5f;
   fVar3 = (this_ptr->base_hero).base_character.hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr_00 = &(this_ptr->base_hero).base_character.model;
   (this_ptr->base_hero).base_character.hit_points = fVar3;
@@ -36,7 +36,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
                   (&this_ptr_00->motion_controller,8,1);
       }
       if (g_CGamePtr->hero_number != 2) {
-        pCVar1 = (this_ptr->base_hero).base_character.base_actor.vtable;
+        pCVar1 = (this_ptr->base_hero).base_character.base_actor.vtable._ub;
         fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
         (*pCVar1->playSoundWithVolume)((CDemonActor *)this_ptr,"gb-hit[1,6].wav",fVar3);
       }
@@ -57,7 +57,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
                   (&(this_ptr->base_hero).base_character.model.motion_controller,
                    (fVar3 <= 50.0f) + 9,force_immediate);
         if (g_CGamePtr->hero_number != 2) {
-          pCVar1 = (this_ptr->base_hero).base_character.base_actor.vtable;
+          pCVar1 = (this_ptr->base_hero).base_character.base_actor.vtable._ub;
           fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
           (*pCVar1->playSoundWithVolume)((CDemonActor *)this_ptr,"gb-die[1,6].wav",fVar3);
         }

@@ -15,6 +15,6 @@ void core_larva_cpp_FUN_00502f50(void)
   if (this_ptr == (CLarva *)0x0) {
     return;
   }
-  core_larva_cpp_FUN_00502f90(this_ptr);
+  core_larva_cpp_CLarva_ctor_FUN_00502f90(this_ptr);
   return;
 }

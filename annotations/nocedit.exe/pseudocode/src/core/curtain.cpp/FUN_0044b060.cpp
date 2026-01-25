@@ -27,7 +27,7 @@ int core_curtain_cpp_FUN_0044b060(void)
   int in_stack_ffffffdc;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
+  pCVar2 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                      (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
   this_ptr = g_CDemonRendererPtr2;
@@ -36,7 +36,7 @@ int core_curtain_cpp_FUN_0044b060(void)
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr);
   if (((iVar4 != 0) && (in_stack_00000004[1].location.position.z != 0.0)) &&
      (in_stack_00000004[0x4ba].field25_0x144 == 0)) {
-    pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
+    pCVar2 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
     core_box_cpp_CBoundingBox3D_render_FUN_004210b0
               (pCVar2,(int)in_stack_ffffffd4,(int)in_stack_ffffffd8,in_stack_ffffffdc);

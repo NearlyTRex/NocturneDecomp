@@ -98,7 +98,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
          (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 != 0)) {
         *(int *)this_ptr->data_ptr = local_2c;
         if (this_ptr->auto_update_flag != 0) {
-          (*actor->vtable->setup)(actor);
+          (*((actor->vtable)._ub)->setup)(actor);
         }
         return 1;
       }
@@ -114,7 +114,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
          (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 != 0)) {
         *(float *)this_ptr->data_ptr = local_30;
         if (this_ptr->auto_update_flag != 0) {
-          (*actor->vtable->setup)(actor);
+          (*((actor->vtable)._ub)->setup)(actor);
         }
         return 1;
       }
@@ -144,7 +144,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pCVar4->z = local_48.z;
     }
     if (this_ptr->auto_update_flag != 0) {
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
   case 3:
@@ -179,7 +179,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pcVar13 = pcVar13 + 2;
     } while (cVar2 != '\0');
     if (this_ptr->auto_update_flag != 0) {
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
   case 4:
@@ -193,7 +193,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       if (this_ptr->auto_update_flag == 0) {
         return 1;
       }
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
       return 1;
     }
     break;
@@ -241,7 +241,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
             (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 == 0));
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(this_ptr->data_ptr,local_854);
     if (this_ptr->auto_update_flag != 0) {
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
               ((CPickList *)&stack0xffffc814,0,in_stack_ffffc814,in_stack_ffffc818,
@@ -293,7 +293,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
             (iVar14 = (*this_ptr->validator_or_callback)(), iVar14 == 0));
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr->data_ptr,local_548);
     if (this_ptr->auto_update_flag != 0) {
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
               (&local_2cf4,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
@@ -315,7 +315,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     if (-1 < iVar14) {
       *(int *)this_ptr->data_ptr = iVar14;
       if (this_ptr->auto_update_flag != 0) {
-        (*actor->vtable->setup)(actor);
+        (*((actor->vtable)._ub)->setup)(actor);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)(local_3444 + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,
@@ -381,7 +381,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pbVar11 = pbVar11 + 2;
     } while (bVar22 != 0);
     if (this_ptr->auto_update_flag != 0) {
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
               (&local_309c,0,in_stack_ffffc814,in_stack_ffffc818,(uint)in_stack_ffffc81c,
@@ -421,7 +421,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pcVar13 = pcVar13 + 2;
     } while (cVar2 != '\0');
     if (this_ptr->auto_update_flag != 0) {
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
   case 0xc:
@@ -458,7 +458,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
       pcVar13 = pcVar13 + 2;
     } while (cVar2 != '\0');
     if (this_ptr->auto_update_flag != 0) {
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
   case 0xd:
@@ -489,7 +489,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     if (-1 < iVar14) {
       core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0(this_ptr->data_ptr,iVar14,0.0);
       if (this_ptr->auto_update_flag != 0) {
-        (*actor->vtable->setup)(actor);
+        (*((actor->vtable)._ub)->setup)(actor);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)(local_21fc + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,
@@ -550,7 +550,7 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
     else {
       core_cloth_cpp_CClothList_add_FUN_0043c0f0(pCVar17);
     }
-    (*actor->vtable->setup)(actor);
+    (*((actor->vtable)._ub)->setup)(actor);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
               ((CPickList *)(local_294c + 4),0,in_stack_ffffc818,(uint)in_stack_ffffc81c,
                (uint)in_stack_ffffc820,in_stack_ffffc824,in_stack_ffffc828);
@@ -720,7 +720,7 @@ LAB_0040fdd3:
       if (this_ptr->auto_update_flag == 0) {
         return 1;
       }
-      (*actor->vtable->setup)(actor);
+      (*((actor->vtable)._ub)->setup)(actor);
       return 1;
     }
     break;

@@ -4,13 +4,19 @@
       {
         "category": "missing_member",
         "column": 30,
-        "line": 20,
+        "line": 19,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
         "category": "missing_member",
         "column": 81,
-        "line": 20,
+        "line": 19,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 29,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
@@ -34,7 +40,7 @@
       {
         "category": "missing_member",
         "column": 15,
-        "line": 33,
+        "line": 35,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
@@ -57,13 +63,13 @@
       },
       {
         "category": "missing_member",
-        "column": 15,
-        "line": 39,
+        "column": 21,
+        "line": 40,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
         "category": "missing_member",
-        "column": 21,
+        "column": 23,
         "line": 41,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
@@ -74,10 +80,10 @@
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
-        "category": "missing_member",
-        "column": 23,
+        "category": "other",
+        "column": 4,
         "line": 43,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -91,24 +97,23 @@
       {
         "category": "other",
         "column": 57,
-        "line": 27,
+        "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 137,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 37,
-    "suspect_count": 9,
+    "pseudocode_lines": 35,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 98
+    "total_lines": 96
   },
   "cross_references": [
     {
@@ -223,73 +228,59 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBX",
-      "text": "CVector3f *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_0000000c",
       "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_stack_00000010",
       "text": "uint in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 33,
       "match": "in_stack_00000008",
       "text": "*(int *)this_ptr->field11_0x25a0 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 34,
       "match": "in_stack_0000000c",
       "text": "*(uint *)(this_ptr->field11_0x25a0 + 4) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_stack_00000010",
       "text": "*(uint *)(this_ptr->field11_0x25a0 + 8) = in_stack_00000010;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_EBX",
-      "text": "(&this_ptr->base_actor,(CVector3f *)0xbf800000,unaff_EBX);",
-      "type": "unaffected_reg"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CGabriella",
         "offset": 324,
         "vtable_addr": "0065e804"
       },

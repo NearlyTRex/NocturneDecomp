@@ -2,10 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/funcdefs/CFont_drawText.h"
-#include "types/funcdefs/CFont_getLineSpacing.h"
-#include "types/funcdefs/CFont_getStringHeight.h"
-#include "types/funcdefs/CFont_getStringWidth.h"
 
 // Forward declarations
 struct CFont;

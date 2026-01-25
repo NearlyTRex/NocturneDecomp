@@ -2,28 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 6,
-        "line": 9,
-        "message": "ambiguating new declaration of 'void core_weapon_cpp_FUN_005ee740()'"
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 26,
+        "message": "'stack0xffffffb4' was not declared in this scope"
       },
       {
         "category": "missing_member",
-        "column": 34,
-        "line": 25,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field6_0x68'; did you mean 'field_108'?"
+        "column": 35,
+        "line": 37,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field9_0x305'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 25,
-        "message": "'DAT_0078a123' was not declared in this scope; did you mean 'DAT_00684128'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 27,
-        "message": "'stack0xffffffb4' was not declared in this scope"
+        "category": "missing_member",
+        "column": 37,
+        "line": 39,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field9_0x305'"
       }
     ],
     "success": false,
@@ -33,24 +27,28 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 7,
+        "line": 24,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 174,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 34,
-    "suspect_count": 12,
+    "pseudocode_lines": 33,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
-    "total_lines": 115
+    "total_lines": 114
   },
   "cross_references": [
     {
@@ -68,9 +66,9 @@
         "005ee823"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_weapon.cpp_FUN_005ee740",
-    "signature": "undefined core_weapon.cpp_FUN_005ee740()"
+    "signature": "void core_weapon.cpp_FUN_005ee740(CWeapon * this_ptr)"
   },
   "function_calls": [
     {
@@ -93,8 +91,8 @@
     },
     {
       "addr": "0078a123",
-      "name": "DAT_0078a123",
-      "type": "undefined4",
+      "name": "g_ActorMagicNumber",
+      "type": "int",
       "value": null
     }
   ],
@@ -105,17 +103,15 @@
         "call_addr": "005ee408",
         "call_type": "direct",
         "caller": "core_weapon.cpp_CWeapon_FUN_005ee3f0",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 7,
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_params": 3
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
-    "estimated_params": 4
+    "declared_params": 1,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.6891891891891895,
@@ -146,100 +142,38 @@
     "pcode_op_count": 421
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004[2].location.position.x != 0.0) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "((byte *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0078a123",
-      "text": "((byte *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->getBoundingBox)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffb4);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 19,
       "match": "&stack0xffffffb4",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffb4);",
+      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffb4);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&CStack_2c,&CStack_14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "((CBox *)&in_stack_00000004[2].orient_matrix.m[2].y,&CStack_2c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "(CVector3f *)&in_stack_00000004->orient,&CStack_20,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[4].actor_name + 4));",
-      "type": "stack_param"
-    },
-    {
       "call_site_count": 1,
-      "declared_params": 0,
+      "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "match": "declared:1 vs estimated:3",
+      "param_delta": 2,
+      "text": "Function declares 1 params but call sites push 3 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

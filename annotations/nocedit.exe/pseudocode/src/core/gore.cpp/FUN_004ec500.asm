@@ -42,7 +42,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0062e30a = 8
 ;   double DOUBLE_0062e312 = 4
-;   undefined4 DAT_0065f024
+;   float FLOAT_0065f024 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic DAT_0067b9c8
 ;   SMRGLTextureBasic DAT_0067ba28
@@ -149,13 +149,13 @@ section .text
     LEA EBX,[ESP + 0x24]                ; 004ec5f1
     MOV EDX,dword ptr [0x006703ec]      ; 004ec5f5 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004ec5fb
-    FMUL float ptr [0x0065f024]         ; 004ec5fd | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec5fd | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec603
     FLD float ptr [EAX + 0x4]           ; 004ec605
-    FMUL float ptr [0x0065f024]         ; 004ec608 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec608 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec60e
     FLD float ptr [EAX + 0x8]           ; 004ec611
-    FMUL float ptr [0x0065f024]         ; 004ec614 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec614 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec61a
     LEA EAX,[ESP + 0x24]                ; 004ec61d
     PUSH EAX                            ; 004ec621
@@ -174,13 +174,13 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004ec64b
     MOV dword ptr [ESP + 0x1c],EBP      ; 004ec64f
     FLD float ptr [EAX]                 ; 004ec653
-    FMUL float ptr [0x0065f024]         ; 004ec655 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec655 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec65b
     FLD float ptr [EAX + 0x4]           ; 004ec65d
-    FMUL float ptr [0x0065f024]         ; 004ec660 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec660 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec666
     FLD float ptr [EAX + 0x8]           ; 004ec669
-    FMUL float ptr [0x0065f024]         ; 004ec66c | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec66c | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec672
     LEA EAX,[ESP + 0x3c]                ; 004ec675
     PUSH EAX                            ; 004ec679
@@ -198,13 +198,13 @@ section .text
     LEA EBX,[ESP + 0x54]                ; 004ec69c
     MOV dword ptr [ESP + 0x1c],EDI      ; 004ec6a0
     FLD float ptr [EAX]                 ; 004ec6a4
-    FMUL float ptr [0x0065f024]         ; 004ec6a6 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec6a6 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec6ac
     FLD float ptr [EAX + 0x4]           ; 004ec6ae
-    FMUL float ptr [0x0065f024]         ; 004ec6b1 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec6b1 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec6b7
     FLD float ptr [EAX + 0x8]           ; 004ec6ba
-    FMUL float ptr [0x0065f024]         ; 004ec6bd | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec6bd | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec6c3
     LEA EAX,[ESP + 0x54]                ; 004ec6c6
     PUSH EAX                            ; 004ec6ca
@@ -222,13 +222,13 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004ec6ed
     MOV dword ptr [ESP + 0x1c],EDI      ; 004ec6f1
     FLD float ptr [EAX]                 ; 004ec6f5
-    FMUL float ptr [0x0065f024]         ; 004ec6f7 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec6f7 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec6fd
     FLD float ptr [EAX + 0x4]           ; 004ec6ff
-    FMUL float ptr [0x0065f024]         ; 004ec702 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec702 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec708
     FLD float ptr [EAX + 0x8]           ; 004ec70b
-    FMUL float ptr [0x0065f024]         ; 004ec70e | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec70e | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec714
     LEA EAX,[ESP + 0xc]                 ; 004ec717
     PUSH EAX                            ; 004ec71b
@@ -339,13 +339,13 @@ section .text
     MOV dword ptr [ESP + 0x50],EDX      ; 004ec875
     MOV EDX,dword ptr [0x006703ec]      ; 004ec879 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004ec87f
-    FMUL float ptr [0x0065f024]         ; 004ec881 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec881 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec887
     FLD float ptr [EAX + 0x4]           ; 004ec889
-    FMUL float ptr [0x0065f024]         ; 004ec88c | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec88c | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec892
     FLD float ptr [EAX + 0x8]           ; 004ec895
-    FMUL float ptr [0x0065f024]         ; 004ec898 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec898 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec89e
     LEA EAX,[ESP + 0x6c]                ; 004ec8a1
     PUSH EAX                            ; 004ec8a5
@@ -364,13 +364,13 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 004ec8cf
     MOV dword ptr [ESP + 0x4c],EBP      ; 004ec8d3
     FLD float ptr [EAX]                 ; 004ec8d7
-    FMUL float ptr [0x0065f024]         ; 004ec8d9 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec8d9 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec8df
     FLD float ptr [EAX + 0x4]           ; 004ec8e1
-    FMUL float ptr [0x0065f024]         ; 004ec8e4 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec8e4 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec8ea
     FLD float ptr [EAX + 0x8]           ; 004ec8ed
-    FMUL float ptr [0x0065f024]         ; 004ec8f0 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec8f0 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec8f6
     MOV EAX,ESP                         ; 004ec8f9
     PUSH EAX                            ; 004ec8fb
@@ -388,13 +388,13 @@ section .text
     MOV dword ptr [ESP + 0x4c],ECX      ; 004ec91e
     MOV dword ptr [ESP + 0x50],EDI      ; 004ec922
     FLD float ptr [EAX]                 ; 004ec926
-    FMUL float ptr [0x0065f024]         ; 004ec928 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec928 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec92e
     FLD float ptr [EAX + 0x4]           ; 004ec930
-    FMUL float ptr [0x0065f024]         ; 004ec933 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec933 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec939
     FLD float ptr [EAX + 0x8]           ; 004ec93c
-    FMUL float ptr [0x0065f024]         ; 004ec93f | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec93f | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec945
     LEA EAX,[ESP + 0x30]                ; 004ec948
     PUSH EAX                            ; 004ec94c
@@ -413,13 +413,13 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 004ec977
     MOV dword ptr [ESP + 0x4c],EBP      ; 004ec97b
     FLD float ptr [EAX]                 ; 004ec97f
-    FMUL float ptr [0x0065f024]         ; 004ec981 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec981 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec987
     FLD float ptr [EAX + 0x4]           ; 004ec989
-    FMUL float ptr [0x0065f024]         ; 004ec98c | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec98c | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec992
     FLD float ptr [EAX + 0x8]           ; 004ec995
-    FMUL float ptr [0x0065f024]         ; 004ec998 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec998 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec99e
     LEA EAX,[ESP + 0x60]                ; 004ec9a1
     JMP 0x004ec71b                      ; 004ec9a5

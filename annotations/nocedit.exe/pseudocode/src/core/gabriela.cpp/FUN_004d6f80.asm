@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0062b101 = -0.3000000
 ;   double DOUBLE_0062b105 = 0.5
-;   undefined4 DAT_0065e7c8
+;   float FLOAT_0065e7c8 = 0.05000000
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004d6fe8
     FLD float ptr [EBP + 0x18]          ; 004d6feb
-    FDIV float ptr [0x0065e7c8]         ; 004d6fee | DAT_0065e7c8
+    FDIV float ptr [0x0065e7c8]         ; 004d6fee | FLOAT_0065e7c8
     MOV EAX,dword ptr [EBP + 0x1c]      ; 004d6ff4
     MOV EAX,dword ptr [EAX]             ; 004d6ff7
     MOV dword ptr [ESP + 0x1b30],EAX    ; 004d6ff9

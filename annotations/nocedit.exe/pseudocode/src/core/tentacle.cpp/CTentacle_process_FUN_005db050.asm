@@ -26,7 +26,7 @@
 ;   double DOUBLE_00654e34 = 12
 ;   double DOUBLE_00654e3c = 6
 ;   double DOUBLE_00654e44 = 16
-;   undefined4 DAT_00664468
+;   float FLOAT_00664468 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -145,7 +145,7 @@ section .text
     MOV dword ptr [EBX + 0xbec4],0x0    ; 005db165
     FLD float ptr [EBP + 0x18]          ; 005db16f
         ;   Label: LAB_005db16f
-    FDIV float ptr [0x00664468]         ; 005db172 | DAT_00664468
+    FDIV float ptr [0x00664468]         ; 005db172 | FLOAT_00664468
     FADD float ptr [EBX + 0xbec8]       ; 005db178
     FST float ptr [EBX + 0xbec8]        ; 005db17e
     FLD1                                ; 005db184

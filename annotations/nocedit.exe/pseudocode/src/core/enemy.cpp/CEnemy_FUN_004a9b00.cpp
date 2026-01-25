@@ -34,8 +34,8 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
   float local_14;
   
   fVar1 = this_ptr->victim_height;
-  iVar5 = *(int *)this_ptr[1].base_character.base_actor.actor_name;
-  if (iVar5 == 0) {
+  fVar2 = *(float *)this_ptr[1].base_character.base_actor.actor_name;
+  if (fVar2 == 0.0) {
     if (((g_CGamePtr->field54_0x1d4 != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (g_CEventListPtr,"Capture"), iVar5 != 0)) {
@@ -110,7 +110,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
         }
         if (iVar8 < 0) break;
         local_1c = (&DAT_02cf2bf4)[iVar8];
-        iVar7 = core_enemy_cpp_FUN_004a9a50();
+        iVar7 = core_enemy_cpp_FUN_004a9a50(this_ptr);
         this_ptr_00 = g_CConsolePtr;
         if (iVar7 != 0) {
           *(int *)(this_ptr->field6_0xbe38 + 4) = local_1c;
@@ -151,14 +151,14 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
     }
   }
   else {
-    if (iVar5 == 0xFFFFFFFF) {
+    if (fVar2 == NAN) {
       this_ptr->field6_0xbe38[4] = '\0';
       this_ptr->field6_0xbe38[5] = '\0';
       this_ptr->field6_0xbe38[6] = '\0';
       this_ptr->field6_0xbe38[7] = '\0';
     }
     else {
-      *(int *)(this_ptr->field6_0xbe38 + 4) = iVar5;
+      *(float *)(this_ptr->field6_0xbe38 + 4) = fVar2;
     }
     this_ptr->field4_0xbe30 = 0;
     this_ptr->field6_0xbe38[8] = '\0';

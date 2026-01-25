@@ -52,7 +52,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
   }
   else {
     iVar4 = 0;
-    local_1c = 0x41F00000;
+    local_1c = 30.0f;
     pCVar5 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
@@ -79,7 +79,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (pCVar5->items[0],g_CLightGunClassInfo.name_hash);
       if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-45)) {
-        (*pCVar3->vtable->process)(pCVar3,g_CGamePtr->delta_time_float);
+        (*((pCVar3->vtable)._ub)->process)(pCVar3,g_CGamePtr->delta_time_float);
       }
       iVar4 = iVar4 + 1;
       pCVar5 = (CInventory *)&pCVar5->owner;

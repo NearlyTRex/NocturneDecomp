@@ -1,0 +1,138 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042df90",
+    "address_range": [
+      [
+        "0042df90",
+        "0042dfb0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_spawnFlies_FUN_0042df90",
+    "signature": "void core_charactr.cpp_CCharacter_spawnFlies_FUN_0042df90(CCharacter * this_ptr, int fly_count, float spawn_radius)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409e70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_spawnFlies_FUN_00409e70"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.363636363636363,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 6,
+      "INT_ADD": 7,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 48
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "fly_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "spawn_radius",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 160,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "CBassPlayer",
+        "offset": 160,
+        "vtable_addr": "00663f14"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 160,
+        "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 160,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 160,
+        "vtable_addr": "00661424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 46
+  }
+}

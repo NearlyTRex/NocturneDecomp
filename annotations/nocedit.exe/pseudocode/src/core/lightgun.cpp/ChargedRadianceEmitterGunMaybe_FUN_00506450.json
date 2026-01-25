@@ -4,26 +4,8 @@
       {
         "category": "other",
         "column": 6,
-        "line": 13,
+        "line": 12,
         "message": "ambiguating new declaration of 'void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 41,
-        "message": "'_DAT_00660a4c' was not declared in this scope; did you mean 'DAT_0066ea4c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 44,
-        "message": "'_DAT_00660a50' was not declared in this scope; did you mean 'DAT_00660a40'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 45,
-        "message": "'_DAT_00660a54' was not declared in this scope; did you mean 'DAT_00680a04'?"
       }
     ],
     "success": false,
@@ -37,33 +19,32 @@
       {
         "category": "other",
         "column": 55,
-        "line": 55,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 72,
+        "line": 71,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 453,
+    "complexity_score": 437,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 18,
-    "pseudocode_lines": 78,
-    "suspect_count": 35,
+    "pseudocode_lines": 77,
+    "suspect_count": 34,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "unaffected_reg",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 247
+    "total_lines": 246
   },
   "cross_references": [],
   "function": {
@@ -191,33 +172,33 @@
     },
     {
       "addr": "00660a40",
-      "name": "DAT_00660a40",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00660a40",
+      "type": "float",
+      "value": "30"
     },
     {
       "addr": "00660a48",
-      "name": "DAT_00660a48",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00660a48",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "00660a4c",
-      "name": "DAT_00660a4c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00660a4c",
+      "type": "float",
+      "value": "2.5"
     },
     {
       "addr": "00660a50",
-      "name": "DAT_00660a50",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00660a50",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "00660a54",
-      "name": "DAT_00660a54",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00660a54",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "0066efcc",
@@ -360,246 +341,239 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 3,
       "match": "param_1",
       "text": "param_1, uint param_2) */",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 3,
       "match": "param_2",
       "text": "param_1, uint param_2) */",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 14,
+      "line": 13,
       "match": "unaff_ESI",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "CWeapon *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000008",
-      "text": "fVar1 = (0x41F00000 / fVar1) * in_stack_00000008 +",
+      "text": "fVar1 = (30.0f / fVar1) * in_stack_00000008 +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = 0x41F00000;",
+      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = 30.0f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / 30.0f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
-      "text": "fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / 0x41F00000;",
+      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = fVar1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
       "text": "iVar2 = in_stack_00000004->weapon_state;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->ammo_count = (int)ROUND(dVar4);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 31,
       "match": "ROUND",
       "text": "in_stack_00000004->ammo_count = (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 34,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) + 0x40000000;",
+      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) + 2.0f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "(&(in_stack_00000004->base_actor).location.position);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4) = uVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),fVar1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),base_frequency);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 58,
       "match": "in_stack_00000004",
       "text": "if (*(int *)in_stack_00000004[1].base_actor.actor_name == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 64,
       "match": "unaff_ESI",
       "text": "(g_CFilterCachePtr,\"lgunmask.raw\",(char *)0x0,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 69,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].base_actor.actor_name[0] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].base_actor.actor_name[1] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 71,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base_actor.actor_name[1] = '\\0';",
+      "text": "in_stack_00000004[1].base_actor.actor_name[2] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 72,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].base_actor.actor_name[2] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].base_actor.actor_name[3] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 75,
       "match": "in_stack_00000004",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 76,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].base_actor.actor_name[0] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 77,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].base_actor.actor_name[1] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].base_actor.actor_name[2] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 79,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].base_actor.actor_name[3] = '\\0';",
       "type": "stack_param"

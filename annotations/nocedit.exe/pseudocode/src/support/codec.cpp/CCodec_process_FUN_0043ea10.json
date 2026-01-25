@@ -2,16 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 38,
+        "category": "other",
+        "column": 20,
         "line": 24,
-        "message": "'FILE' {aka 'struct FILE'} has no member named '_handle'; did you mean 'handle'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 69,
-        "line": 24,
-        "message": "'FILE' {aka 'struct FILE'} has no member named '_ptr'; did you mean 'ptr'?"
+        "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -26,6 +20,12 @@
         "category": "other",
         "column": 10,
         "line": 18,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 24,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {

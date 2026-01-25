@@ -1,9 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CCourseFrameList;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CCourseFrame.h"
-#include "types/classes/CCourseFrameList.h"
 
 // Structure: CCourse
 // Ghidra size: 0xc (12 bytes)

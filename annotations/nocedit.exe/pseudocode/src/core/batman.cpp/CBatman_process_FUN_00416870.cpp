@@ -27,7 +27,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   int extraout_EAX;
   CDemonActor *pCVar15;
   int extraout_EAX_00;
-  SCollisionInfo *in_stack_fffffe7c;
+  SDamageInfo local_188;
   CVector3f local_14c;
   float local_140;
   float local_13c;
@@ -104,8 +104,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   if (iVar12 == 0) {
     switch(iVar10) {
     case 0:
-      (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)this_ptr);
+      (*(((this_ptr->base_enemy).base_character.base_actor.vtable._ue)->_ue).field_4)();
       if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
         if (extraout_EAX != 0) {
@@ -140,7 +139,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
               (this_ptr->new_pos).y = *(float *)(iVar10 + 0x24);
               (this_ptr->new_pos).z = *(float *)(iVar10 + 0x28);
             }
-            pCVar7 = (this_ptr->base_enemy).base_character.base_actor.vtable;
+            pCVar7 = (this_ptr->base_enemy).base_character.base_actor.vtable._ub;
             this_ptr->vanish_timer = 0.0;
             local_28 = 0xd;
             (*pCVar7->playSound)((CDemonActor *)this_ptr,"batman-disappear.wav");
@@ -155,7 +154,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         local_c8.z = *(float *)(iVar10 + 0x28) -
                      (this_ptr->base_enemy).base_character.base_actor.location.position.z;
         if (SQRT(local_c8.z * local_c8.z + local_c8.x * local_c8.x + local_c8.y * local_c8.y) <
-            0x40600000) {
+            3.5f) {
           core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_c8);
           local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                (local_80.y -
@@ -170,9 +169,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       break;
     case 1:
     case 2:
-      (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)this_ptr);
-      fVar5 = 0x40600000;
+      (*(((this_ptr->base_enemy).base_character.base_actor.vtable._ue)->_ue).field_4)();
+      fVar5 = 3.5f;
       pCVar3 = &(this_ptr->base_enemy).base_character.model;
       if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
@@ -186,7 +184,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         }
       }
       else {
-        local_2c = 0x40600000;
+        local_2c = 3.5f;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
              (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
@@ -230,7 +228,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
               if ((iVar10 == 0) &&
                  (iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                                      (*(uint *)(this_ptr->field5_0xbf6c + 8)), iVar10 == 0)) {
-                uVar14 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+                uVar14 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
                                    ((CDemonActor *)this_ptr,"batman-attack?.wav");
                 *(uint *)(this_ptr->field5_0xbf6c + 8) = uVar14;
               }
@@ -244,8 +242,11 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_188);
+      local_188.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_188.attacker = (CDemonActor *)this_ptr;
+      local_188.wielder = (CDemonActor *)this_ptr;
+      local_14 = local_188.damage_amount;
       pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_104,&g_ZeroVector,
                            (CMatrix3x4f *)
@@ -267,8 +268,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       }
       break;
     case 9:
-      (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)this_ptr);
+      (*(((this_ptr->base_enemy).base_character.base_actor.vtable._ue)->_ue).field_4)();
       if ((*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) != 0) ||
          (iVar10 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                              (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8), iVar10 != 0)) {
@@ -281,7 +281,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                                 (*(uint *)(this_ptr->field5_0xbf6c + 8)), iVar10 == 0 &&
             (iVar10 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->field5_0xbf6c),
             iVar10 == 0)))) {
-          uVar14 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+          uVar14 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
                              ((CDemonActor *)this_ptr,"batman-alert.wav");
           *(uint *)this_ptr->field5_0xbf6c = uVar14;
         }
@@ -303,9 +303,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       case 1:
         fVar5 = this_ptr->vanish_timer + delta_time;
         this_ptr->vanish_timer = fVar5;
-        if (0x3F800000 < fVar5) {
+        if (1.0f < fVar5) {
           this_ptr->mist_state = 2;
-          this_ptr->vanish_timer = 0x3F800000;
+          this_ptr->vanish_timer = 1.0f;
         }
         pCVar3 = &(this_ptr->base_enemy).base_character.model;
         iVar10 = 0;
@@ -328,12 +328,12 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       case 2:
         local_30 = 1;
         local_1c = 0;
-        for (local_18 = 0; fVar5 = 0x3F800000, local_18 < g_CDemonSetPtr->damage_listener_count;
+        for (local_18 = 0; fVar5 = 1.0f, local_18 < g_CDemonSetPtr->damage_listener_count;
             local_18 = local_18 + 1) {
           this_ptr_00 = *(CBatman **)(g_CDemonSetPtr->field19_0x14f0a0 + local_1c + -4);
           if (((this_ptr_00 != (CBatman *)0x0) && (this_ptr_00 != this_ptr)) &&
-             (iVar10 = (*(this_ptr_00->base_enemy).base_character.base_actor.vtable[1].hasCollision)
-                                 ((CDemonActor *)this_ptr_00,in_stack_fffffe7c), iVar10 < 1)) {
+             (iVar10 = (*(((this_ptr_00->base_enemy).base_character.base_actor.vtable._uc)->_uc).
+                         isDamageable)((CCharacter *)this_ptr_00), iVar10 < 1)) {
             local_50 = (this_ptr_00->base_enemy).base_character.base_actor.location.position.x -
                        (this_ptr->new_pos).x;
             local_4c = (this_ptr_00->base_enemy).base_character.base_actor.location.position.y -
@@ -372,7 +372,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
             (this_ptr->base_enemy).base_character.base_actor.orient.heading = 0.0;
             (this_ptr->base_enemy).base_character.base_actor.orient.pitch = 0.0;
           }
-          (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+          (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"batman-disappear.wav");
         }
         break;

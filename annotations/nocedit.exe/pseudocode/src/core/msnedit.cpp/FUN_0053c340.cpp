@@ -52,7 +52,7 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
          && ((g_DisableMouseHitOnBarrier == 0 ||
              (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBarrier"),
              iVar1 == 0)))) {
-        (*actor_ptr->vtable->getBoundingBox)(actor_ptr,(CBoundingBox3D *)(auStack_68 + 4));
+        (*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,(CBoundingBox3D *)(auStack_68 + 4));
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(actor_ptr,&CStack_38,&local_20);
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                   (actor_ptr,&CStack_2c,&local_44);

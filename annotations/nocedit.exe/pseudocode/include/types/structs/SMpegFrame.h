@@ -1,9 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct SBitAllocationTable;
+struct SMpegFrameHeader;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/structs/SBitAllocationTable.h"
-#include "types/structs/SMpegFrameHeader.h"
 
 // Structure: SMpegFrame
 // Ghidra size: 0x1c (28 bytes)

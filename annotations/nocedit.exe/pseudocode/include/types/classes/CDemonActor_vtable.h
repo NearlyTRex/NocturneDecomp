@@ -1,15 +1,24 @@
 #pragma once
 
+// Forward declarations
+struct CActorPropertyList;
+struct CBoundingBox3D;
+struct CDemonActor;
+struct CDemonActorType;
+struct COrientation;
+struct CPathMap;
+struct CVector3f;
+struct FILE;
+struct SCollisionInfo;
+struct SCollisionReturnInfo;
+struct SDamageInfo;
+struct SInteractionInfo;
+struct SInteractionState;
+struct SIntersectXZCylinder;
+struct SSurfaceInfo;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/stdio.h"
-#include "types/classes/CActorPropertyList.h"
-#include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CDemonActor.h"
-#include "types/classes/CDemonActorType.h"
-#include "types/classes/COrientation.h"
-#include "types/classes/CPathMap.h"
-#include "types/classes/CVector3f.h"
 #include "types/funcdefs/CDemonActor_allowBulletHoles.h"
 #include "types/funcdefs/CDemonActor_calculateChecksum.h"
 #include "types/funcdefs/CDemonActor_canPickup.h"
@@ -69,13 +78,6 @@
 #include "types/funcdefs/CDemonActor_updateCollisionData.h"
 #include "types/funcdefs/CDemonActor_updateInteraction.h"
 #include "types/funcdefs/CDemonActor_writeDependencies.h"
-#include "types/structs/SCollisionInfo.h"
-#include "types/structs/SCollisionReturnInfo.h"
-#include "types/structs/SDamageInfo.h"
-#include "types/structs/SInteractionInfo.h"
-#include "types/structs/SInteractionState.h"
-#include "types/structs/SIntersectXZCylinder.h"
-#include "types/structs/SSurfaceInfo.h"
 
 // Structure: CDemonActor_vtable
 // Ghidra size: 0xec (236 bytes)

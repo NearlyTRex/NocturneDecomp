@@ -39,7 +39,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 74,
+        "column": 82,
         "line": 104,
         "message": "'stack0xffffd450' was not declared in this scope; did you mean 'in_stack_ffffd450'?"
       },
@@ -578,7 +578,7 @@
       "description": "Direct stack address reference",
       "line": 97,
       "match": "&stack0xffffd450",
-      "text": "(*local_18->vtable->getPropertyList)(local_18,(CActorPropertyList *)&stack0xffffd450);",
+      "text": "(*((local_18->vtable)._ub)->getPropertyList)(local_18,(CActorPropertyList *)&stack0xffffd450);",
       "type": "stack_ref"
     },
     {

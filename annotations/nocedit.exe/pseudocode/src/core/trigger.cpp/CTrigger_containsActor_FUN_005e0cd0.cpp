@@ -31,7 +31,7 @@ uint core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
   CVector3f CStack_20;
   
   if (in_stack_00000008 != (CDemonActor *)0x0) {
-    pCVar4 = (*in_stack_00000008->vtable->getBoundingBox)
+    pCVar4 = (*((in_stack_00000008->vtable)._ub)->getBoundingBox)
                        (in_stack_00000008,(CBoundingBox3D *)(auStack_8c + 0x10));
     fStack_2c = (pCVar4->min).x + (pCVar4->max).x;
     fStack_28 = (pCVar4->min).y + (pCVar4->max).y;
@@ -62,7 +62,7 @@ uint core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
         CStack_38.z = pCVar5->z;
       }
       if (*(int *)(in_stack_00000004[1].actor_name + 0x18) == 0) {
-        pCVar4 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_5c);
+        pCVar4 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&CStack_5c);
         if ((((((pCVar4->min).x <= CStack_38.z) && ((pCVar4->min).y <= fStack_2c)) &&
              ((pCVar4->min).z <= fStack_28)) &&
             ((CStack_38.z <= (pCVar4->max).x && (fStack_2c <= (pCVar4->max).y)))) &&
@@ -82,8 +82,8 @@ uint core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(void)
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze...");
           return 0;
         }
-        (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)auStack_8c)
-        ;
+        (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
+                  (in_stack_00000004,(CBoundingBox3D *)auStack_8c);
         if (((float)auStack_8c._12_4_ <= fStack_2c) && (fStack_2c <= fStack_74)) {
           if (CStack_38.z * CStack_38.z + fStack_28 * fStack_28 <=
               *(float *)(in_stack_00000004[1].actor_name + 8) *

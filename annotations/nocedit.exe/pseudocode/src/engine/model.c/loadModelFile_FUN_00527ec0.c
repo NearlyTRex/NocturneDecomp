@@ -67,7 +67,7 @@ LAB_00527ee6:
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\model.c",0x109);
   cVar1 = (char)(pSVar2->base).type;
-  if ((cVar1 != 0x14) && (cVar1 != 0x20)) {
+  if ((cVar1 != '\x14') && (cVar1 != ' ')) {
     crt_stdio_c_sprintf_FUN_005fdbd0(local_5c,"Invalid model: %s",filename);
     g_CurrentFilename = "..\\engine\\model.c";
     g_CurrentLineNumber = 0x10d;

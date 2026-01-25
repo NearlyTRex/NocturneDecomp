@@ -8,8 +8,8 @@
 ;   core_gore.cpp_FUN_004edb70 at 004edb98
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065f024
-;   undefined4 DAT_0065f028
+;   float FLOAT_0065f024 = 256
+;   float FLOAT_0065f028 = 65536
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
@@ -66,24 +66,24 @@ section .text
     MOV EAX,EBP                         ; 004ec3ff
     MOV dword ptr [ESI + 0x24],0x0      ; 004ec401
     FLD float ptr [EAX]                 ; 004ec408
-    FMUL float ptr [0x0065f024]         ; 004ec40a | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec40a | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ec410
     FLD float ptr [EAX + 0x4]           ; 004ec412
-    FMUL float ptr [0x0065f024]         ; 004ec415 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec415 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ec41b
     FLD float ptr [EAX + 0x8]           ; 004ec41e
-    FMUL float ptr [0x0065f024]         ; 004ec421 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ec421 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ec427
     LEA EBX,[ESI + 0x38]                ; 004ec42a
     MOV EAX,EDI                         ; 004ec42d
     FLD float ptr [EAX]                 ; 004ec42f
-    FMUL float ptr [0x0065f028]         ; 004ec431 | DAT_0065f028
+    FMUL float ptr [0x0065f028]         ; 004ec431 | FLOAT_0065f028
     FISTP dword ptr [EBX]               ; 004ec437
     FLD float ptr [EAX + 0x4]           ; 004ec439
-    FMUL float ptr [0x0065f028]         ; 004ec43c | DAT_0065f028
+    FMUL float ptr [0x0065f028]         ; 004ec43c | FLOAT_0065f028
     FISTP dword ptr [EBX + 0x4]         ; 004ec442
     FLD float ptr [EAX + 0x8]           ; 004ec445
-    FMUL float ptr [0x0065f028]         ; 004ec448 | DAT_0065f028
+    FMUL float ptr [0x0065f028]         ; 004ec448 | FLOAT_0065f028
     FISTP dword ptr [EBX + 0x8]         ; 004ec44e
     MOV EAX,dword ptr [ESP + 0x20]      ; 004ec451
     MOV dword ptr [ESI],0x0             ; 004ec455

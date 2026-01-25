@@ -3,15 +3,9 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 46,
-        "line": 18,
+        "column": 9,
+        "line": 19,
         "message": "'PTR_core_weapon_cpp_ActorModelSomething_FUN_00661174' was not declared in this scope"
-      },
-      {
-        "category": "missing_member",
-        "column": 25,
-        "line": 21,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
       },
       {
         "category": "missing_member",
@@ -34,7 +28,7 @@
       {
         "category": "missing_member",
         "column": 25,
-        "line": 27,
+        "line": 25,
         "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
       },
       {
@@ -105,9 +99,9 @@
       },
       {
         "category": "missing_member",
-        "column": 11,
-        "line": 48,
-        "message": "'CMelee' {aka 'struct CMelee'} has no member named 'field6_0x58c'"
+        "column": 25,
+        "line": 39,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
       },
       {
         "category": "missing_member",
@@ -152,39 +146,45 @@
         "message": "'CMelee' {aka 'struct CMelee'} has no member named 'field6_0x58c'"
       },
       {
-        "category": "other",
-        "column": 15,
-        "line": 64,
-        "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
+        "category": "missing_member",
+        "column": 11,
+        "line": 56,
+        "message": "'CMelee' {aka 'struct CMelee'} has no member named 'field6_0x58c'"
       },
       {
         "category": "other",
-        "column": 25,
+        "column": 15,
         "line": 65,
         "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 75,
+        "column": 25,
+        "line": 66,
         "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 25,
+        "column": 15,
         "line": 76,
         "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
+        "column": 25,
+        "line": 77,
+        "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
         "column": 15,
-        "line": 88,
+        "line": 89,
         "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 89,
+        "line": 90,
         "message": "cast from 'char**' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -199,77 +199,77 @@
       {
         "category": "other",
         "column": 43,
-        "line": 20,
+        "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 47,
+        "line": 48,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 64,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
         "line": 65,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 15,
+        "line": 66,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 12,
-        "line": 67,
+        "line": 68,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 75,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 15,
         "line": 76,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 15,
+        "line": 77,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 12,
-        "line": 78,
+        "line": 79,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 6,
-        "line": 88,
+        "line": 89,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 89,
+        "line": 90,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 117,
+    "complexity_score": 118,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 14,
-    "pseudocode_lines": 82,
+    "pseudocode_lines": 83,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 175
+    "total_lines": 176
   },
   "cross_references": [
     {
@@ -449,21 +449,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 58,
       "match": "(char *)((int)",
       "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 69,
       "match": "(char *)((int)",
       "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 82,
       "match": "(char *)((int)",
       "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
       "type": "pointer_cast"

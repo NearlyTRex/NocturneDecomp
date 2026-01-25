@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d3493
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3493
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062b0b5 = 3.14159265350000
@@ -29,9 +29,9 @@
 ;   double DOUBLE_0062b0cd = 0.5
 ;   double DOUBLE_0062b0d5 = 1.5
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_0065e7c0
+;   float FLOAT_0065e7c0 = 0.3000000
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_02d7b860
+;   int INT_02d7b860
 ;   undefined4 g_CDemonSetInstance.actor_list_ptr
 ;   undefined4 g_CDemonSetInstance.actor_list_data[0]
 ;   undefined4 DAT_032613d4
@@ -88,7 +88,7 @@ section .text
     MOV dword ptr [EBX + 0x1fc00],EAX   ; 004d65b0
     MOV EAX,dword ptr [EBX + 0x1fc00]   ; 004d65b6
     MOV dword ptr [EBX + 0x1fbfc],EAX   ; 004d65bc
-    FLD float ptr [0x0065e7c0]          ; 004d65c2 | DAT_0065e7c0
+    FLD float ptr [0x0065e7c0]          ; 004d65c2 | FLOAT_0065e7c0
         ;   Label: LAB_004d65c2
     FMUL double ptr [0x0062b0cd]        ; 004d65c8 | DOUBLE_0062b0cd
     FDIVR float ptr [EBP + 0x18]        ; 004d65ce
@@ -178,7 +178,7 @@ section .text
     MOV dword ptr [EBX + 0x1fbfc],EAX   ; 004d66e8
     FLD float ptr [EBP + 0x18]          ; 004d66ee
         ;   Label: LAB_004d66ee
-    FDIV float ptr [0x0065e7c0]         ; 004d66f1 | DAT_0065e7c0
+    FDIV float ptr [0x0065e7c0]         ; 004d66f1 | FLOAT_0065e7c0
     FADD float ptr [EBX + 0x1fc10]      ; 004d66f7
     MOV dword ptr [EBX + 0x1fc00],0x0   ; 004d66fd
     JMP 0x004d65d7                      ; 004d6707
@@ -294,7 +294,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 004d6871
         ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 004d6876
-    MOV ECX,dword ptr [0x02d7b860]      ; 004d6879 | DAT_02d7b860
+    MOV ECX,dword ptr [0x02d7b860]      ; 004d6879 | INT_02d7b860
     PUSH ECX                            ; 004d687f
     LEA EAX,[ESP + 0xbc]                ; 004d6880
     PUSH EAX                            ; 004d6887
@@ -322,7 +322,7 @@ section .text
         ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004d68e2
     FLD float ptr [EBP + 0x18]          ; 004d68e5
-    FDIV float ptr [0x0065e7c0]         ; 004d68e8 | DAT_0065e7c0
+    FDIV float ptr [0x0065e7c0]         ; 004d68e8 | FLOAT_0065e7c0
     MOV EAX,dword ptr [ESP + 0xdc]      ; 004d68ee
     MOV dword ptr [EBX + 0x1fbfc],EAX   ; 004d68f5
     MOV EAX,dword ptr [ESP + 0xe0]      ; 004d68fb
@@ -383,7 +383,7 @@ section .text
     JC 0x004d65dd                       ; 004d69cd
         ;   XREF to: 004d65dd (CONDITIONAL_JUMP)  ; LAB_004d65dd
     FLD float ptr [EBP + 0x18]          ; 004d69d3
-    FDIV float ptr [0x0065e7c0]         ; 004d69d6 | DAT_0065e7c0
+    FDIV float ptr [0x0065e7c0]         ; 004d69d6 | FLOAT_0065e7c0
     FSUBR float ptr [EBX + 0x1fc10]     ; 004d69dc
     JMP 0x004d65d7                      ; 004d69e2
         ;   XREF to: 004d65d7 (UNCONDITIONAL_JUMP)  ; LAB_004d65d7

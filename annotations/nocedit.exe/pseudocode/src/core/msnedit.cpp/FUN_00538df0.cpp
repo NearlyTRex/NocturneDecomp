@@ -29,7 +29,7 @@ void core_msnedit_cpp_FUN_00538df0(void)
     }
     for (pCVar1 = in_stack_00000004->first_actor; pCVar1 != (CDemonActor *)0x0;
         pCVar1 = pCVar1->next_actor) {
-      (*pCVar1->vtable->onAreaDeleted)(pCVar1,in_stack_00000008);
+      (*((pCVar1->vtable)._ub)->onAreaDeleted)(pCVar1,in_stack_00000008);
     }
     pvVar3 = (void *)((int)in_stack_00000004->set_list + -1);
     in_stack_00000004->set_list = pvVar3;

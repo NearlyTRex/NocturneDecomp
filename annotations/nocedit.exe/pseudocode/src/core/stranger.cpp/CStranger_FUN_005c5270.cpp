@@ -62,7 +62,8 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
                                 (pCVar10,g_CWeaponClassInfo.name_hash),
           local_1c == (CInventory *)0x0)) &&
          (pCVar10 = in_stack_00000004->carry_hands[1].carry_actor,
-         uVar8 = (*pCVar10->vtable->getAllowedMeleeAttackTypes)(pCVar10), (uVar8 & 3) != 0)) {
+         uVar8 = (*((pCVar10->vtable)._ub)->getAllowedMeleeAttackTypes)(pCVar10), (uVar8 & 3) != 0))
+      {
         local_3c = 8;
       }
       if ((local_18 == (CDemonActor *)0x0) && (local_3c < 0)) {
@@ -95,8 +96,8 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
           fVar1 = in_stack_00000008 * (float)25 +
                   *(float *)(in_stack_00000004[2].cloth_data + 0x5504);
           *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = fVar1;
-          if (0x428C0000 < fVar1) {
-            *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = 0x428C0000;
+          if (70.0f < fVar1) {
+            *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = 70.0f;
           }
           if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 0x14) != 0) {
             return;
@@ -203,21 +204,20 @@ switchD_005c56f5_caseD_8:
               local_28[4].location.position.x = pCVar9->y;
               local_28[4].location.position.y = pCVar9->z;
             }
-            (*local_34->vtable[1].renderTransparent)(local_34);
+            (*(((local_34->vtable)._uc)->_uc).cfunc4)();
             in_stack_00000004[2].cloth_data[0x554c] = '\0';
             in_stack_00000004[2].cloth_data[0x554d] = '\0';
             in_stack_00000004[2].cloth_data[0x554e] = '\0';
             in_stack_00000004[2].cloth_data[0x554f] = '\0';
           }
           if (in_stack_00000004->carry_hands[1].carry_actor != (CDemonActor *)0x0) {
-            (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
-                      (&in_stack_00000004->base_actor);
+            (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
           }
           in_stack_00000004[2].cloth_data[0x5558] = '\0';
           in_stack_00000004[2].cloth_data[0x5559] = '\0';
           in_stack_00000004[2].cloth_data[0x555a] = '\0';
           in_stack_00000004[2].cloth_data[0x555b] = '\0';
-          *(uint *)(in_stack_00000004[2].cloth_data + 0x5504) = 0x41200000;
+          *(float *)(in_stack_00000004[2].cloth_data + 0x5504) = 10.0f;
         }
       }
       if (1.0 <= *(float *)(in_stack_00000004->field13_0x2620 + 0x470)) {
@@ -321,7 +321,7 @@ LAB_005c53f2:
           if ((iVar4 == iVar6) &&
              (*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c) = local_18,
              local_18 != (CDemonActor *)0x0)) {
-            (*local_18->vtable[1].process)(local_18,2.8026e-45);
+            (*(((local_18->vtable)._uc)->_uc).cfunc2)();
           }
         }
       }

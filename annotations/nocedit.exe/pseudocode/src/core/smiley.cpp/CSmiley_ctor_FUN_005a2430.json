@@ -4,6 +4,18 @@
       {
         "category": "missing_member",
         "column": 11,
+        "line": 21,
+        "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 22,
+        "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
         "line": 23,
         "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
       },
@@ -40,13 +52,7 @@
       {
         "category": "missing_member",
         "column": 11,
-        "line": 29,
-        "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 30,
+        "line": 39,
         "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
       },
       {
@@ -56,10 +62,10 @@
         "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "missing_member",
         "column": 11,
         "line": 42,
-        "message": "'_DAT_00662f6c' was not declared in this scope; did you mean 'DAT_0066ef6c'?"
+        "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
       },
       {
         "category": "missing_member",
@@ -76,20 +82,14 @@
       {
         "category": "missing_member",
         "column": 11,
-        "line": 45,
+        "line": 46,
         "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
       },
       {
         "category": "missing_member",
         "column": 11,
-        "line": 46,
-        "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
         "line": 47,
-        "message": "'_PTR_FUN_00662f6d_3' was not declared in this scope"
+        "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
       },
       {
         "category": "missing_member",
@@ -144,18 +144,6 @@
         "column": 11,
         "line": 56,
         "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 57,
-        "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 58,
-        "message": "'CSmiley' {aka 'struct CSmiley'} has no member named 'field1_0xbeb4'"
       }
     ],
     "success": false,
@@ -169,23 +157,21 @@
       {
         "category": "other",
         "column": 57,
-        "line": 22,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 66,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 51,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 82
+    "pseudocode_lines": 50,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 81
   },
   "cross_references": [
     {
@@ -228,15 +214,15 @@
     },
     {
       "addr": "00662f6c",
-      "name": "DAT_00662f6c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00662f6c",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "00662f70",
-      "name": "PTR_FUN_00662f6d+3",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00662f70",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "00662f84",
@@ -299,15 +285,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

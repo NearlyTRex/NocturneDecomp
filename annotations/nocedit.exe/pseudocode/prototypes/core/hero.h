@@ -19,9 +19,9 @@ undefined FUN_004f2220();
 // Address: 004f22a0
 undefined FUN_004f22a0();
 
-// Original: core_hero.cpp_FUN_004f2340
+// Original: core_hero.cpp_CHero_ctor_FUN_004f2340
 // Address: 004f2340
-undefined FUN_004f2340();
+CHero * CHero::ctor(CHero * this_ptr);
 
 // Original: core_hero.cpp_CHero_dtor_FUN_004f2470
 // Address: 004f2470
@@ -31,9 +31,9 @@ void CHero::dtor(CHero * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, 
 // Address: 004f2540
 void CHero(CHero * this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2580
+// Original: core_hero.cpp_CHero_testCylinderCollision_FUN_004f2580
 // Address: 004f2580
-int CHero(CHero * this_ptr);
+int CHero::testCylinderCollision(CHero * this_ptr, SCollisionReturnInfo * collision_info, CDemonActor * other_actor);
 
 // Original: core_hero.cpp_CHero_FUN_004f25c0
 // Address: 004f25c0
@@ -119,9 +119,9 @@ undefined FUN_004f35b0();
 // Address: 004f3760
 undefined CallInventorySelectHealth();
 
-// Original: core_hero.cpp_CHero_FUN_004f37d0
+// Original: core_hero.cpp_CHero_isActiveTarget_FUN_004f37d0
 // Address: 004f37d0
-int CHero(CHero * this_ptr);
+int CHero::isActiveTarget(CHero * this_ptr);
 
 // Original: core_hero.cpp_FUN_004f3890
 // Address: 004f3890

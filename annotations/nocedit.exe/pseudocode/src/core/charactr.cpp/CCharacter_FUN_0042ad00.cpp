@@ -50,7 +50,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
       iVar8 = iVar8 + 4;
     } while (iVar6 < pCVar5->bone_count);
   }
-  fVar3 = 0x40400000;
+  fVar3 = 3.0f;
   iVar6 = 0;
   if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
     fVar2 = (float)65535;

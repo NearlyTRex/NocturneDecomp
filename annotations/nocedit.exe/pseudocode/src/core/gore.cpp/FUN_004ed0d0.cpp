@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_gore.cpp_FUN_004ed0d0(uint param_1, uint param_2,
    uint param_3) */
 
@@ -30,12 +29,12 @@ void core_gore_cpp_FUN_004ed0d0(void)
   *(float *)(in_stack_00000004 + 0xc) = in_stack_00000008->z;
   *(uint *)(in_stack_00000004 + 0x18) = 0;
   *(float *)(in_stack_00000004 + 8) = *(float *)(in_stack_00000004 + 8) + 0.1f;
-  *(int *)(in_stack_00000004 + 0x1c) = (int)ROUND(*(float *)(in_stack_00000004 + 4) * _DAT_0065f024)
-  ;
-  *(int *)(in_stack_00000004 + 0x20) = (int)ROUND(*(float *)(in_stack_00000004 + 8) * _DAT_0065f024)
-  ;
+  *(int *)(in_stack_00000004 + 0x1c) =
+       (int)ROUND(*(float *)(in_stack_00000004 + 4) * 256.0f);
+  *(int *)(in_stack_00000004 + 0x20) =
+       (int)ROUND(*(float *)(in_stack_00000004 + 8) * 256.0f);
   *(int *)(in_stack_00000004 + 0x24) =
-       (int)ROUND(*(float *)(in_stack_00000004 + 0xc) * _DAT_0065f024);
+       (int)ROUND(*(float *)(in_stack_00000004 + 0xc) * 256.0f);
   *(uint *)(in_stack_00000004 + 0x10) = in_stack_0000000c;
   return;
 }

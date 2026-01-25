@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_gore.cpp_FUN_004ebac0(uint param_1) */
 
 void core_gore_cpp_FUN_004ebac0(void)
@@ -48,9 +47,9 @@ void core_gore_cpp_FUN_004ebac0(void)
   float fStack_18;
   
   output = g_CDemonRendererPtr2->vertex_buffer_ptr;
-  local_58.x = (int)ROUND(in_stack_00000004->x * _DAT_0065f024);
-  local_58.y = (int)ROUND(in_stack_00000004->y * _DAT_0065f024);
-  local_58.z = (int)ROUND(in_stack_00000004->z * _DAT_0065f024);
+  local_58.x = (int)ROUND(in_stack_00000004->x * 256.0f);
+  local_58.y = (int)ROUND(in_stack_00000004->y * 256.0f);
+  local_58.z = (int)ROUND(in_stack_00000004->z * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25(&output->projected_vertex,&local_58);
   if ((int)((output->projected_vertex).screen_x & -0x80000000) != 0) {
     return;
@@ -62,33 +61,33 @@ void core_gore_cpp_FUN_004ebac0(void)
   local_4c = -0.1;
   local_48 = -0.1;
   local_44 = 0;
-  local_b8.x = (int)ROUND(_DAT_0065f024 * -0.1);
-  local_b8.y = (int)ROUND(_DAT_0065f024 * -0.1);
-  local_b8.z = (int)ROUND(_DAT_0065f024 * 0.0);
+  local_b8.x = (int)ROUND(256.0f * -0.1);
+  local_b8.y = (int)ROUND(256.0f * -0.1);
+  local_b8.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_b8);
   local_4c = 0.1;
   local_48 = -0.1;
   local_44 = 0;
-  local_7c.x = (int)ROUND(_DAT_0065f024 * 0.1);
-  local_7c.y = (int)ROUND(_DAT_0065f024 * -0.1);
-  local_7c.z = (int)ROUND(_DAT_0065f024 * 0.0);
+  local_7c.x = (int)ROUND(256.0f * 0.1);
+  local_7c.y = (int)ROUND(256.0f * -0.1);
+  local_7c.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_7c);
   local_4c = 0.1;
   local_48 = 0.1;
   local_44 = 0;
-  local_d0.x = (int)ROUND(_DAT_0065f024 * 0.1);
-  local_d0.y = (int)ROUND(_DAT_0065f024 * 0.1);
-  local_d0.z = (int)ROUND(_DAT_0065f024 * 0.0);
+  local_d0.x = (int)ROUND(256.0f * 0.1);
+  local_d0.y = (int)ROUND(256.0f * 0.1);
+  local_d0.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_d0);
   local_48 = 0.1;
   local_4c = -0.1;
   local_44 = 0;
-  local_94.x = (int)ROUND(_DAT_0065f024 * -0.1);
-  local_94.y = (int)ROUND(_DAT_0065f024 * 0.1);
-  local_94.z = (int)ROUND(_DAT_0065f024 * 0.0);
+  local_94.x = (int)ROUND(256.0f * -0.1);
+  local_94.y = (int)ROUND(256.0f * 0.1);
+  local_94.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_94);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0067b9b0);
@@ -98,9 +97,9 @@ void core_gore_cpp_FUN_004ebac0(void)
   g_RenderVertexBuffer[1].u = (float)(iVar3 + 0x380000);
   g_RenderVertexBuffer[0].v = (float)(iVar4 + 0x80000);
   g_RenderVertexBuffer[2].v = (float)(iVar4 + 0x380000);
-  local_88.x = (int)ROUND(in_stack_00000004->x * _DAT_0065f024);
-  local_88.y = (int)ROUND(in_stack_00000004->y * _DAT_0065f024);
-  local_88.z = (int)ROUND(in_stack_00000004->z * _DAT_0065f024);
+  local_88.x = (int)ROUND(in_stack_00000004->x * 256.0f);
+  local_88.y = (int)ROUND(in_stack_00000004->y * 256.0f);
+  local_88.z = (int)ROUND(in_stack_00000004->z * 256.0f);
   g_RenderVertexBuffer[1].v = g_RenderVertexBuffer[0].v;
   g_RenderVertexBuffer[2].u = g_RenderVertexBuffer[1].u;
   g_RenderVertexBuffer[3].u = g_RenderVertexBuffer[0].u;
@@ -167,9 +166,9 @@ LAB_004ebdb7:
               (g_CDemonRendererPtr2,(CVector3i *)&DAT_02d83390,(CVector3i *)0x0);
     local_4c = fStack_f0 * (float)-0.10000000000000001;
     local_44 = 0;
-    CStack_dc.x = (int)ROUND(local_4c * _DAT_0065f024);
-    CStack_dc.y = (int)ROUND(local_4c * _DAT_0065f024);
-    CStack_dc.z = (int)ROUND(_DAT_0065f024 * 0.0);
+    CStack_dc.x = (int)ROUND(local_4c * 256.0f);
+    CStack_dc.y = (int)ROUND(local_4c * 256.0f);
+    CStack_dc.z = (int)ROUND(256.0f * 0.0);
     local_48 = local_4c;
     fStack_18 = local_4c;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -177,31 +176,31 @@ LAB_004ebdb7:
     local_4c = fStack_f0 * (float)0.10000000000000001;
     local_44 = 0;
     local_48 = fStack_18;
-    CStack_ac.x = (int)ROUND(local_4c * _DAT_0065f024);
-    CStack_ac.y = (int)ROUND(fStack_18 * _DAT_0065f024);
-    CStack_ac.z = (int)ROUND(_DAT_0065f024 * 0.0);
+    CStack_ac.x = (int)ROUND(local_4c * 256.0f);
+    CStack_ac.y = (int)ROUND(fStack_18 * 256.0f);
+    CStack_ac.z = (int)ROUND(256.0f * 0.0);
     fStack_1c = local_4c;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_ac);
     local_4c = fStack_1c;
     local_48 = fStack_1c;
     local_44 = 0;
-    CStack_64.x = (int)ROUND(fStack_1c * _DAT_0065f024);
-    CStack_64.y = (int)ROUND(fStack_1c * _DAT_0065f024);
-    CStack_64.z = (int)ROUND(_DAT_0065f024 * 0.0);
+    CStack_64.x = (int)ROUND(fStack_1c * 256.0f);
+    CStack_64.y = (int)ROUND(fStack_1c * 256.0f);
+    CStack_64.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_64);
     local_4c = fStack_18;
     local_44 = 0;
     local_48 = fStack_1c;
-    CStack_c4.x = (int)ROUND(fStack_18 * _DAT_0065f024);
-    CStack_c4.y = (int)ROUND(fStack_1c * _DAT_0065f024);
-    CStack_c4.z = (int)ROUND(_DAT_0065f024 * 0.0);
+    CStack_c4.x = (int)ROUND(fStack_18 * 256.0f);
+    CStack_c4.y = (int)ROUND(fStack_1c * 256.0f);
+    CStack_c4.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_c4);
-    local_88.x = (int)ROUND(CStack_e8.x * _DAT_0065f024);
-    local_88.y = (int)ROUND(CStack_e8.y * _DAT_0065f024);
-    local_88.z = (int)ROUND(CStack_e8.z * _DAT_0065f024);
+    local_88.x = (int)ROUND(CStack_e8.x * 256.0f);
+    local_88.y = (int)ROUND(CStack_e8.y * 256.0f);
+    local_88.z = (int)ROUND(CStack_e8.z * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
               (g_CDemonSetPtr,&local_88,(CVector3i *)&DAT_02d8339c,0,4);
     iVar4 = 0;

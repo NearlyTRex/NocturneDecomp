@@ -18,7 +18,7 @@ core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,in
   if (*(int *)this_ptr->field1_0x158 == 0) {
     if ((((layer_flag != 0) && (*(int *)(this_ptr->field1_0x158 + 0xdd0) == 0)) &&
         (*(int *)(this_ptr->field1_0x158 + 0xdc8) == 0)) &&
-       (iVar1 = (*((this_ptr->base_actor).vtable)->getAllowedMeleeAttackTypes)
+       (iVar1 = (*((this_ptr->base_actor).vtable._ub)->getAllowedMeleeAttackTypes)
                           (&this_ptr->base_actor), this_ptr_00 = g_CConsolePtr, iVar1 == 0)) {
       this_ptr->field1_0x158[0] = '\x01';
       this_ptr->field1_0x158[1] = '\0';
@@ -38,7 +38,7 @@ core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,in
     this_ptr->field1_0x158[3] = '\0';
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
     g_CDemonSetPtr->unk_lighting_param2 = *(int *)(this_ptr->field1_0x158 + 0xb58);
-    this_ptr_01 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+    this_ptr_01 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                             (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe4);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if ((iVar1 != 0) &&

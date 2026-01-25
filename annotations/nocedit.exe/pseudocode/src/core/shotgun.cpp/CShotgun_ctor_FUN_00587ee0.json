@@ -3,9 +3,15 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 46,
-        "line": 18,
+        "column": 9,
+        "line": 17,
         "message": "'PTR_core_weapon_cpp_ActorModelSomething_FUN_00662a84' was not declared in this scope"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 20,
+        "message": "'CShotgun' {aka 'struct CShotgun'} has no member named 'field1_0x578'"
       },
       {
         "category": "missing_member",
@@ -27,9 +33,9 @@
       },
       {
         "category": "missing_member",
-        "column": 11,
+        "column": 25,
         "line": 24,
-        "message": "'CShotgun' {aka 'struct CShotgun'} has no member named 'field1_0x578'"
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
       },
       {
         "category": "missing_member",
@@ -123,15 +129,9 @@
       },
       {
         "category": "missing_member",
-        "column": 25,
-        "line": 40,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 11,
-        "line": 42,
-        "message": "'_DAT_00662a7c' was not declared in this scope; did you mean 'DAT_0066ea4c'?"
+        "line": 43,
+        "message": "'CShotgun' {aka 'struct CShotgun'} has no member named 'field1_0x578'"
       },
       {
         "category": "missing_member",
@@ -153,14 +153,8 @@
       },
       {
         "category": "missing_member",
-        "column": 11,
+        "column": 36,
         "line": 47,
-        "message": "'CShotgun' {aka 'struct CShotgun'} has no member named 'field1_0x578'"
-      },
-      {
-        "category": "missing_member",
-        "column": 35,
-        "line": 48,
         "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field9_0x305'"
       }
     ],
@@ -175,22 +169,20 @@
       {
         "category": "other",
         "column": 43,
-        "line": 20,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 54,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 39,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 67
   },
   "cross_references": [
@@ -234,9 +226,9 @@
     },
     {
       "addr": "00662a7c",
-      "name": "DAT_00662a7c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00662a7c",
+      "type": "float",
+      "value": "8"
     },
     {
       "addr": "00662a84",
@@ -299,15 +291,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

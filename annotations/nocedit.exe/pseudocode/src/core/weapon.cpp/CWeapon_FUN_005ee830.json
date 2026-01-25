@@ -2,6 +2,18 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 37,
+        "line": 24,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
+        "category": "missing_member",
+        "column": 12,
+        "line": 39,
+        "message": "'SLaserInfo' {aka 'struct SLaserInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
+      },
+      {
         "category": "missing_member",
         "column": 12,
         "line": 40,
@@ -27,13 +39,19 @@
       },
       {
         "category": "missing_member",
-        "column": 12,
-        "line": 44,
-        "message": "'SLaserInfo' {aka 'struct SLaserInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
         "column": 51,
+        "line": 43,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field7_0x2f4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 12,
+        "line": 44,
+        "message": "'SLaserInfo' {aka 'struct SLaserInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 52,
         "line": 44,
         "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field7_0x2f4'"
       },
@@ -54,12 +72,6 @@
         "column": 12,
         "line": 46,
         "message": "'SLaserInfo' {aka 'struct SLaserInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 52,
-        "line": 46,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field7_0x2f4'"
       },
       {
         "category": "missing_member",
@@ -82,20 +94,20 @@
       {
         "category": "missing_member",
         "column": 12,
-        "line": 50,
+        "line": 52,
         "message": "'SLaserInfo' {aka 'struct SLaserInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 52,
+        "message": "'ZEXT14' was not declared in this scope"
       },
       {
         "category": "missing_member",
         "column": 12,
         "line": 53,
         "message": "'SLaserInfo' {aka 'struct SLaserInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 53,
-        "message": "'ZEXT14' was not declared in this scope"
       },
       {
         "category": "missing_member",
@@ -114,12 +126,6 @@
         "column": 12,
         "line": 56,
         "message": "'SLaserInfo' {aka 'struct SLaserInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 12,
-        "line": 57,
-        "message": "'SLaserInfo' {aka 'struct SLaserInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       }
     ],
     "success": false,
@@ -129,27 +135,21 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 96,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 7,
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 50,
     "suspect_count": 4,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 214
+    "total_lines": 213
   },
   "cross_references": [],
   "function": {
@@ -650,28 +650,28 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 36,
       "match": "._12_4_",
       "text": "local_94.field0_0x0._12_4_ = *(uint *)this_ptr->field7_0x2f4;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 37,
       "match": "._16_4_",
       "text": "local_94.field0_0x0._16_4_ = *(uint *)(this_ptr->field7_0x2f4 + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 39,
+      "line": 38,
       "match": "._20_4_",
       "text": "local_94.field0_0x0._20_4_ = *(uint *)(this_ptr->field7_0x2f4 + 8);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 46,
+      "line": 45,
       "match": "._24_4_",
       "text": "local_94.field0_0x0._24_4_ = ZEXT14(pCVar2 != (CDemonActor *)0x0);",
       "type": "unknown_field"

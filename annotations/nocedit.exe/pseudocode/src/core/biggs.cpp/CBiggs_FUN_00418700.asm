@@ -21,7 +21,7 @@
 ;   TerminatedCString s_s_confused_while_walking_00615ada
 ;   double DOUBLE_00615b09 = 3.14159265350000
 ;   double DOUBLE_00615b11 = 32
-;   undefined4 DAT_0065ac10
+;   float FLOAT_0065ac10 = 4
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CConsole g_ConsolePtr
@@ -234,7 +234,7 @@ section .text
     FLD float ptr [EBX + 0xc03c]        ; 0041892a
     FADD float ptr [EBP + 0x14]         ; 00418930
     FST float ptr [EBX + 0xc03c]        ; 00418933
-    FCOMP float ptr [0x0065ac10]        ; 00418939 | DAT_0065ac10
+    FCOMP float ptr [0x0065ac10]        ; 00418939 | FLOAT_0065ac10
     FNSTSW AX                           ; 0041893f
     SAHF                                ; 00418941
     JA 0x0041899d                       ; 00418942
@@ -285,7 +285,7 @@ section .text
     PUSH 0x0                            ; 00418996
     JMP 0x004187b4                      ; 00418998
         ;   XREF to: 004187b4 (UNCONDITIONAL_JUMP)  ; LAB_004187b4
-    MOV EAX,[0x0065ac10]                ; 0041899d | DAT_0065ac10
+    MOV EAX,[0x0065ac10]                ; 0041899d | FLOAT_0065ac10
         ;   Label: LAB_0041899d
     MOV dword ptr [EBX + 0xc03c],EAX    ; 004189a2
     MOV ESP,EBP                         ; 004189a8

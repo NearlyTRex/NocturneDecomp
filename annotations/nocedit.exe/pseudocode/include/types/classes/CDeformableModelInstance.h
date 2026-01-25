@@ -1,22 +1,15 @@
 #pragma once
 
+// Forward declarations
+struct CDeformableModel;
+struct CVector3i;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CDeformableModel.h"
 #include "types/classes/CMotionController.h"
-#include "types/classes/CMotionList.h"
-#include "types/classes/CQuaternion4f.h"
-#include "types/classes/CSkeleton.h"
 #include "types/classes/CVector3f.h"
-#include "types/classes/CVector3i.h"
-#include "types/structs/SBone.h"
 #include "types/structs/SBoneTransformData.h"
-#include "types/structs/SInputFace.h"
-#include "types/structs/SLod.h"
-#include "types/structs/SPart.h"
-#include "types/structs/STextureSet.h"
-#include "types/structs/SVert.h"
 
 // Structure: CDeformableModelInstance
 // Ghidra size: 0x22b4 (8884 bytes)

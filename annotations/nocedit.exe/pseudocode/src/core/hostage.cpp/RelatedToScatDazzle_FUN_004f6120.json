@@ -2,26 +2,32 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 6,
+        "line": 11,
+        "message": "ambiguating new declaration of 'void core_hostage_cpp_RelatedToScatDazzle_FUN_004f6120()'"
+      },
+      {
         "category": "missing_member",
-        "column": 35,
+        "column": 45,
         "line": 24,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
       },
       {
         "category": "missing_member",
-        "column": 35,
+        "column": 45,
         "line": 25,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
       },
       {
         "category": "missing_member",
-        "column": 35,
+        "column": 45,
         "line": 26,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
       },
       {
         "category": "missing_member",
-        "column": 35,
+        "column": 45,
         "line": 27,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
       }
@@ -36,7 +42,7 @@
       },
       {
         "category": "other",
-        "column": 63,
+        "column": 73,
         "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
@@ -44,15 +50,14 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 213,
+    "complexity_score": 138,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 23,
-    "suspect_count": 18,
+    "suspect_count": 11,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param"
+      "stack_param"
     ],
     "total_lines": 58
   },
@@ -130,130 +135,81 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CNPC *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_4",
-      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_5",
-      "text": "CNPC *param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_6",
-      "text": "CNPC *param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_7",
-      "text": "CNPC *param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_8",
-      "text": "CNPC *param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 11,
-      "match": "param_5",
-      "text": "iVar1 = (*(param_5->base_character).base_actor.vtable[1].hasCollision)",
-      "type": "unnamed_param"
+      "match": "in_stack_00000004",
+      "text": "iVar1 = (*(((in_stack_00000004->base_character).base_actor.vtable._uc)->_uc).isDamageable)",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "unaff_EBX",
-      "text": "((CDemonActor *)param_5,unaff_EBX);",
-      "type": "unaffected_reg"
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->base_character);",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_5",
-      "text": "((CDemonActor *)param_5,unaff_EBX);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "param_5",
-      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)param_5,\"ScatDazzle\");",
-      "type": "unnamed_param"
+      "match": "in_stack_00000004",
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)in_stack_00000004,\"ScatDazzle\");",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 16,
-      "match": "param_8",
-      "text": "if (param_8 != 0) {",
-      "type": "unnamed_param"
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c != 0) {",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "param_5",
-      "text": "(param_5->base_character).field2_0x240c[0] = '\\x01';",
-      "type": "unnamed_param"
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->base_character).field2_0x240c[0] = '\\x01';",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 18,
-      "match": "param_5",
-      "text": "(param_5->base_character).field2_0x240c[1] = '\\0';",
-      "type": "unnamed_param"
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->base_character).field2_0x240c[1] = '\\0';",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 19,
-      "match": "param_5",
-      "text": "(param_5->base_character).field2_0x240c[2] = '\\0';",
-      "type": "unnamed_param"
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->base_character).field2_0x240c[2] = '\\0';",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "param_5",
-      "text": "(param_5->base_character).field2_0x240c[3] = '\\0';",
-      "type": "unnamed_param"
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->base_character).field2_0x240c[3] = '\\0';",
+      "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unresolved stack parameter",
       "line": 22,
-      "match": "param_5",
-      "text": "core_npc_cpp_CNPC_FUN_00544b70(param_5);",
-      "type": "unnamed_param"
+      "match": "in_stack_00000004",
+      "text": "core_npc_cpp_CNPC_FUN_00544b70(in_stack_00000004);",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

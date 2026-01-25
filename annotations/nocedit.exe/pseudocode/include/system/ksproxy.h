@@ -10,10 +10,10 @@
 // KSPROXY - System Header
 // =============================================================================
 
-// Forward declarations
-struct IKsPropertySet;
-struct IKsPropertySet_vtable;
-struct IUnknown;
+// Structure: IKsPropertySet
+typedef struct IKsPropertySet {
+    struct IKsPropertySet_vtable* vtable;
+} IKsPropertySet;
 
 // Function Definition: IKsPropertySet_Get
 typedef HRESULT (*IKsPropertySet_Get)(struct IKsPropertySet* this_ptr, LPGUID rguidPropSet, ulong ulId, LPVOID pInstanceData, ulong ulInstanceLength, LPVOID pPropertyData, ulong ulDataLength, PULONG pulBytesReturned);
@@ -23,11 +23,6 @@ typedef HRESULT (*IKsPropertySet_QuerySupport)(struct IKsPropertySet* this_ptr, 
 
 // Function Definition: IKsPropertySet_Set
 typedef HRESULT (*IKsPropertySet_Set)(struct IKsPropertySet* this_ptr, LPGUID rguidPropSet, ulong ulId, LPVOID pInstanceData, ulong ulInstanceLength, LPVOID pPropertyData, ulong ulDataLength);
-
-// Structure: IKsPropertySet
-typedef struct IKsPropertySet {
-    struct IKsPropertySet_vtable* vtable;
-} IKsPropertySet;
 
 // Structure: IKsPropertySet_vtable
 typedef struct IKsPropertySet_vtable {

@@ -1,12 +1,21 @@
 #pragma once
 
+// Forward declarations
+struct CCharacter;
+struct CVector3f;
+struct SDamageInfo;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/funcdefs/CCharacter_applyDamage.h"
+#include "types/funcdefs/CCharacter_checkCylinderCollisionWorld.h"
+#include "types/funcdefs/CCharacter_isDamageable.h"
+#include "types/funcdefs/CCharacter_processDamage.h"
 
 // Structure: CCharacter_vtable
 // Ghidra size: 0x68 (104 bytes)
 typedef struct CCharacter_vtable {
-    void* cfunc1; // 0x0
+    CCharacter_applyDamage* applyDamage; // 0x0
     void* cfunc2; // 0x4
     void* cfunc3; // 0x8
     void* cfunc4; // 0xc
@@ -16,10 +25,10 @@ typedef struct CCharacter_vtable {
     void* cfunc8; // 0x1c
     void* cfunc9; // 0x20
     void* cfunc10; // 0x24
-    void* cfunc11; // 0x28
+    CCharacter_checkCylinderCollisionWorld* checkCylinderCollisionWorld; // 0x28
     void* cfunc12; // 0x2c
-    void* cfunc13; // 0x30
-    void* cfunc14; // 0x34
+    CCharacter_processDamage* processDamage; // 0x30
+    CCharacter_isDamageable* isDamageable; // 0x34
     void* cfunc15; // 0x38
     void* cfunc16; // 0x3c
     void* cfunc17; // 0x40

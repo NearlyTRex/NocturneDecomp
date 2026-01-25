@@ -1,13 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CParticle_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CParticle_vtable.h"
 #include "types/classes/CVector3f.h"
-#include "types/funcdefs/CParticle_onCollision.h"
-#include "types/funcdefs/CParticle_process.h"
-#include "types/funcdefs/CParticle_render.h"
-#include "types/funcdefs/CParticle_setup.h"
 
 // Structure: CParticle
 // Ghidra size: 0x38 (56 bytes)

@@ -54,7 +54,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr,float delta_t
                          (double)(this_ptr->base_actor).location.position.y,
                          (double)(this_ptr->base_actor).location.position.z,50.0);
       if (iVar2 != 0) {
-        uVar3 = (*((this_ptr->base_actor).vtable)->playAmbientSound)
+        uVar3 = (*((this_ptr->base_actor).vtable._ub)->playAmbientSound)
                           (&this_ptr->base_actor,this_ptr->unused);
         *(uint *)this_ptr->field10_0x380 = uVar3;
       }

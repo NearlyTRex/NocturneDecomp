@@ -77,7 +77,7 @@
 ;   double DOUBLE_0063879b = 30
 ;   double DOUBLE_006387a3 = 3.14159265350000
 ;   double DOUBLE_006387ab = 32
-;   undefined4 DAT_00661408
+;   float FLOAT_00661408 = 2.5
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   ... and 10 more
 ;
@@ -480,7 +480,7 @@ section .text
     FSTP float ptr [EBX + 0x2434]       ; 005200ed
     FMUL float ptr [EBX + 0x2434]       ; 005200f3
     ADD ESP,0x8                         ; 005200f9
-    MOV EAX,[0x00661408]                ; 005200fc | DAT_00661408
+    MOV EAX,[0x00661408]                ; 005200fc | FLOAT_00661408
     PUSH 0x3e32b8c2                     ; 00520101
     FXCH                                ; 00520106
     FSTP float ptr [EBX + 0x2438]       ; 00520108
@@ -567,7 +567,7 @@ section .text
     SAHF                                ; 005201d8
     JA 0x0051fdb4                       ; 005201d9
         ;   XREF to: 0051fdb4 (CONDITIONAL_JUMP)  ; LAB_0051fdb4
-    MOV EAX,[0x00661408]                ; 005201df | DAT_00661408
+    MOV EAX,[0x00661408]                ; 005201df | FLOAT_00661408
     FLD1                                ; 005201e4
     MOV dword ptr [EBP + 0x6e],EAX      ; 005201e6
     FCOMP double ptr [EBP + 0x52]       ; 005201e9

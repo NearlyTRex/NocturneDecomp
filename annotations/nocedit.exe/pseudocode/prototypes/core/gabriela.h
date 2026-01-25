@@ -31,13 +31,13 @@ undefined FUN_004d2b10();
 // Address: 004d2b20
 CGabriella * constructorMaybe(CGabriella * this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d2c40
+// Original: core_gabriela.cpp_CGabriella_setup_FUN_004d2c40
 // Address: 004d2c40
-undefined FUN_004d2c40();
+void CGabriella::setup(CGabriella * this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d2ea0
+// Original: core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
 // Address: 004d2ea0
-undefined FUN_004d2ea0();
+void CGabriella::process(CGabriella * this_ptr, float delta_time);
 
 // Original: core_gabriela.cpp_FUN_004d4190
 // Address: 004d4190
@@ -95,13 +95,13 @@ undefined FUN_004d6050();
 // Address: 004d6090
 undefined CGabriella::load();
 
-// Original: core_gabriela.cpp_FUN_004d6140
+// Original: core_gabriela.cpp_CGabriella_renderOpaque_FUN_004d6140
 // Address: 004d6140
-undefined FUN_004d6140();
+int CGabriella::renderOpaque(CGabriella * this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004d6230
+// Original: core_gabriela.cpp_CGabriella_renderTransparent_FUN_004d6230
 // Address: 004d6230
-undefined FUN_004d6230();
+int CGabriella::renderTransparent(CGabriella * this_ptr);
 
 // Original: core_gabriela.cpp_FUN_004d6260
 // Address: 004d6260

@@ -15,13 +15,13 @@ CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_0047f050(CZombieDog *this_
   CZombieDog *pCVar4;
   
   pCVar4 = (CZombieDog *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.vtable = &PTR_core_dog_cpp_FUN_0065ca44;
+  (pCVar4->base_enemy).base_character.base_actor.vtable._ub = &g_CZombieDogVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base_enemy).base_character.model,"dog.dfm");
   fVar2 = 50.0f;
   pCVar1 = &pCVar4->base_enemy;
   (pCVar1->base_character).cloth_data[0x344] = '\0';
-  fVar3 = PTR_core_bride_cpp_FUN_0065ca2d_3;
+  fVar3 = 100.0f;
   (pCVar1->base_character).cloth_data[0x345] = '\0';
   (pCVar1->base_character).cloth_data[0x346] = '@';
   (pCVar1->base_character).cloth_data[0x347] = '?';

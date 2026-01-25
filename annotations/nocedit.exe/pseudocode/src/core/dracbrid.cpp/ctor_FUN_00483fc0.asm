@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_nbride2_dfm_00621869
-;   undefined4 DAT_0065cd70
-;   undefined4 PTR_core_bride.cpp_FUN_0065cd71+3
-;   CDemonActor_vtable PTR_core_dracbrid.cpp_DraculaBrideModels_FUN_0065cd94
+;   float FLOAT_0065cd70 = 50
+;   float FLOAT_0065cd74 = 100
+;   CDemonActor_vtable g_CDraculaBrideVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
@@ -36,16 +36,16 @@ section .text
     MOV ESI,EAX                         ; 00483fd6
     ADD EAX,0x158                       ; 00483fd8
     PUSH EAX                            ; 00483fdd
-    MOV dword ptr [EAX + -0x4],0x65cd94 ; 00483fde | PTR_core_dracbrid.cpp_DraculaBrideModels_FUN_0065cd94
+    MOV dword ptr [EAX + -0x4],0x65cd94 ; 00483fde | g_CDraculaBrideVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00483fe5
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3f000000 ; 00483fea
     MOV dword ptr [EBX + 0x2de0],0x3f800000 ; 00483ff4
     MOV byte ptr [EBX + 0xbee0],0x0     ; 00483ffe
     MOV dword ptr [EBX + 0x243c],0x43070000 ; 00484005
-    FLD float ptr [0x0065cd70]          ; 0048400f | DAT_0065cd70
+    FLD float ptr [0x0065cd70]          ; 0048400f | FLOAT_0065cd70
     MOV dword ptr [EBX + 0xbf48],0x0    ; 00484015
-    FLD float ptr [0x0065cd74]          ; 0048401f | PTR_core_bride.cpp_FUN_0065cd71+3
+    FLD float ptr [0x0065cd74]          ; 0048401f | FLOAT_0065cd74
     MOV dword ptr [EBX + 0xbf4c],0x0    ; 00484025
     LEA EAX,[EBX + 0xbf58]              ; 0048402f
     FXCH                                ; 00484035

@@ -19,7 +19,7 @@ core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,uint d1,uint d2,uint
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_actor).vtable = &g_CWeaponVTable;
+  (this_ptr->base_actor).vtable._ub = &g_CWeaponVTable;
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)(this_ptr->field9_0x305 + 3));
   ptr = (CWeapon *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30

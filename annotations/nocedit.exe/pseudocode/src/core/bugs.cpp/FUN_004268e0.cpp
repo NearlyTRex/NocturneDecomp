@@ -89,7 +89,7 @@ void core_bugs_cpp_FUN_004268e0(void)
       *(uint *)(in_stack_00000008 + 0x34) = 0;
     }
     else {
-      fVar4 = _DAT_0065b5cc / *(float *)(in_stack_00000008 + 0x38);
+      fVar4 = 1.0f / *(float *)(in_stack_00000008 + 0x38);
       iVar9 = 0;
       while( true ) {
         fVar2 = *(float *)(in_stack_00000008 + 0x34);

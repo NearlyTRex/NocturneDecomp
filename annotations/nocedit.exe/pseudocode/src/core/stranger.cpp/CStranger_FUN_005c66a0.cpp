@@ -18,13 +18,11 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c66a0(CStranger *this_ptr)
     if (iVar1 != 0) {
       if (*(CDemonActor **)(this_ptr->field2_0x1fbd8 + 0x54) !=
           (this_ptr->base_hero).base_character.carry_hands[0].carry_actor) {
-        (*(this_ptr->base_hero).base_character.base_actor.vtable[1].renderTargetPoints)
-                  ((CDemonActor *)this_ptr);
+        (*(((this_ptr->base_hero).base_character.base_actor.vtable._uc)->_uc).cfunc21)();
       }
       if (*(CDemonActor **)(this_ptr->field2_0x1fbd8 + 0x54) !=
           (this_ptr->base_hero).base_character.carry_hands[1].carry_actor) {
-        (*(this_ptr->base_hero).base_character.base_actor.vtable[1].renderTargetPoints)
-                  ((CDemonActor *)this_ptr);
+        (*(((this_ptr->base_hero).base_character.base_actor.vtable._uc)->_uc).cfunc21)();
       }
       this_ptr->field4_0x1fc3c[0x98] = '\0';
       this_ptr->field4_0x1fc3c[0x99] = '\0';

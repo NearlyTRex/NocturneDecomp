@@ -23,7 +23,7 @@
 ;   double DOUBLE_0063d014 = 10
 ;   float FLOAT_0063d01c = 0.1000000
 ;   float FLOAT_0063d020 = -100
-;   undefined4 DAT_00661c30
+;   float FLOAT_00661c30 = 0.00390625
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
@@ -377,13 +377,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053e62e
     MOVSD ES:EDI,ESI                    ; 0053e62f
     FILD dword ptr [EAX]                ; 0053e630
-    FMUL float ptr [0x00661c30]         ; 0053e632 | DAT_00661c30
+    FMUL float ptr [0x00661c30]         ; 0053e632 | FLOAT_00661c30
     FSTP float ptr [EBX]                ; 0053e638
     FILD dword ptr [EAX + 0x4]          ; 0053e63a
-    FMUL float ptr [0x00661c30]         ; 0053e63d | DAT_00661c30
+    FMUL float ptr [0x00661c30]         ; 0053e63d | FLOAT_00661c30
     FSTP float ptr [EBX + 0x4]          ; 0053e643
     FILD dword ptr [EAX + 0x8]          ; 0053e646
-    FMUL float ptr [0x00661c30]         ; 0053e649 | DAT_00661c30
+    FMUL float ptr [0x00661c30]         ; 0053e649 | FLOAT_00661c30
     FSTP float ptr [EBX + 0x8]          ; 0053e64f
     LEA EBX,[ESP + 0x3c]                ; 0053e652
     LEA EAX,[ESP + 0x14]                ; 0053e656

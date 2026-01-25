@@ -20,7 +20,7 @@ int core_boneguy_cpp_FUN_0041d1b0(void)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);
-  this_ptr = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
+  this_ptr = (*((in_stack_00000004->base_actor).vtable._ub)->getBoundingBox)
                        (&in_stack_00000004->base_actor,(CBoundingBox3D *)&stack0xffffffe0);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar2 != 0) {

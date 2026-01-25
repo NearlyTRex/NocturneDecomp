@@ -61,7 +61,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
   pcVar3 = "str";
   pCVar2[1].position.y = 0.0;
   pfVar4 = &pCVar2[-1].orientation.y;
-  pCVar2[-7].position.y = (float)&DAT_0078a123;
+  pCVar2[-7].position.y = (float)&g_ActorMagicNumber;
   do {
     cVar1 = *pcVar3;
     *(char *)pfVar4 = cVar1;

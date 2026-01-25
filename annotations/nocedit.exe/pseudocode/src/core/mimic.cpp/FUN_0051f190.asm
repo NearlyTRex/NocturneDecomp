@@ -11,7 +11,7 @@
 ;   TerminatedCString s_core_mimic_cpp_00638542
 ;
 ; Called Functions:
-;   core_mimic.cpp_FUN_0051f1d0
+;   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     RET                                 ; 0051f1a8
     PUSH EAX                            ; 0051f1a9
         ;   Label: LAB_0051f1a9
-    CALL core_mimic.cpp_FUN_0051f1d0    ; 0051f1aa
-        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; CMimic * core_mimic.cpp_FUN_0051f1d0(CMimic * this_ptr)
+    CALL core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 ; 0051f1aa
+        ;   XREF to: 0051f1d0 (UNCONDITIONAL_CALL)  ; CMimic * core_mimic.cpp_CMimic_ctor_FUN_0051f1d0(CMimic * this_ptr)
     ADD ESP,0x4                         ; 0051f1af
     RET                                 ; 0051f1b2
 

@@ -89,7 +89,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
       local_1c = pCVar3;
     } while (local_18 < local_24->num_parts);
   }
-  (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+  (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
             ((CDemonActor *)this_ptr,"boneguy-fallapart.wav");
   return;
 }

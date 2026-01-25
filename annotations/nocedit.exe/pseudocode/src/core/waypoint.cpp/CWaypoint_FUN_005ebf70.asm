@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00657583 = 0.5
-;   undefined4 DAT_00665460
+;   float FLOAT_00665460 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -124,13 +124,13 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 005ec03e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FSTP float ptr [ESP + 0x50]         ; 005ec044
     FLD float ptr [EAX]                 ; 005ec048
-    FMUL float ptr [0x00665460]         ; 005ec04a | DAT_00665460
+    FMUL float ptr [0x00665460]         ; 005ec04a | FLOAT_00665460
     FISTP dword ptr [EBX]               ; 005ec050
     FLD float ptr [EAX + 0x4]           ; 005ec052
-    FMUL float ptr [0x00665460]         ; 005ec055 | DAT_00665460
+    FMUL float ptr [0x00665460]         ; 005ec055 | FLOAT_00665460
     FISTP dword ptr [EBX + 0x4]         ; 005ec05b
     FLD float ptr [EAX + 0x8]           ; 005ec05e
-    FMUL float ptr [0x00665460]         ; 005ec061 | DAT_00665460
+    FMUL float ptr [0x00665460]         ; 005ec061 | FLOAT_00665460
     FISTP dword ptr [EBX + 0x8]         ; 005ec067
     LEA EAX,[ESP + 0x3c]                ; 005ec06a
     PUSH EAX                            ; 005ec06e
@@ -285,13 +285,13 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 005ec20b
     MOV EDX,dword ptr [0x006703ec]      ; 005ec20f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 005ec215
-    FMUL float ptr [0x00665460]         ; 005ec217 | DAT_00665460
+    FMUL float ptr [0x00665460]         ; 005ec217 | FLOAT_00665460
     FISTP dword ptr [EBX]               ; 005ec21d
     FLD float ptr [EAX + 0x4]           ; 005ec21f
-    FMUL float ptr [0x00665460]         ; 005ec222 | DAT_00665460
+    FMUL float ptr [0x00665460]         ; 005ec222 | FLOAT_00665460
     FISTP dword ptr [EBX + 0x4]         ; 005ec228
     FLD float ptr [EAX + 0x8]           ; 005ec22b
-    FMUL float ptr [0x00665460]         ; 005ec22e | DAT_00665460
+    FMUL float ptr [0x00665460]         ; 005ec22e | FLOAT_00665460
     FISTP dword ptr [EBX + 0x8]         ; 005ec234
     LEA EAX,[ESP + 0x30]                ; 005ec237
     PUSH EAX                            ; 005ec23b

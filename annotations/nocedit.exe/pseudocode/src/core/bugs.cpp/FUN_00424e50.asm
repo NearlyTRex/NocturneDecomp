@@ -20,7 +20,7 @@
 ;   float FLOAT_00616d1b = 12
 ;   float FLOAT_00616d1f = -12
 ;   double DOUBLE_00616d23 = 0.5
-;   undefined4 DAT_0065b5c8
+;   float FLOAT_0065b5c8 = 0.5
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
@@ -116,7 +116,7 @@ section .text
     CMP dword ptr [EAX + 0xbec0],0x0    ; 00424f3c
     JLE 0x00425083                      ; 00424f43
         ;   XREF to: 00425083 (CONDITIONAL_JUMP)  ; LAB_00425083
-    FLD float ptr [0x0065b5c8]          ; 00424f49 | DAT_0065b5c8
+    FLD float ptr [0x0065b5c8]          ; 00424f49 | FLOAT_0065b5c8
     FLD ST0                             ; 00424f4f
     FMUL float ptr [0x00616d1b]         ; 00424f51 | FLOAT_00616d1b
     FXCH                                ; 00424f57

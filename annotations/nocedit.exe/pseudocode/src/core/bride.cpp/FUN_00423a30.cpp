@@ -14,7 +14,7 @@ void core_bride_cpp_FUN_00423a30(void)
 {
   CDeformableModelInstance *pCVar1;
   uint uVar2;
-  CDemonActor_vtable *pCVar3;
+  CEnemy_full_vtable *pCVar3;
   float fVar4;
   int iVar5;
   SMotion *pSVar6;
@@ -24,6 +24,7 @@ void core_bride_cpp_FUN_00423a30(void)
   float fVar8;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
+  SDamageInfo local_1f4;
   SDamageInfo local_1b8;
   SDamageInfo local_17c;
   SDamageInfo local_140;
@@ -77,8 +78,7 @@ void core_bride_cpp_FUN_00423a30(void)
       if (uVar2 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
         if (extraout_EAX_00 == 0) {
-          (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                    ((CDemonActor *)in_stack_00000004);
+          (*(((in_stack_00000004->base_character).base_actor.vtable._ue)->_ue).field_4)();
           if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,1,1);
@@ -88,8 +88,9 @@ void core_bride_cpp_FUN_00423a30(void)
                (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                                   ((uint)in_stack_00000004[1].base_character.base_actor.orient.bank)
                , iVar5 == 0)) {
-              fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
-                                       ((CDemonActor *)in_stack_00000004,"ub-attack?.wav");
+              fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable._ub)->
+                               playSound)((CDemonActor *)in_stack_00000004,"ub-attack?.wav")
+              ;
               in_stack_00000004[1].base_character.base_actor.orient.bank = fVar8;
             }
           }
@@ -111,20 +112,22 @@ void core_bride_cpp_FUN_00423a30(void)
              (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                                 ((uint)in_stack_00000004[1].base_character.base_actor.orient.bank),
              iVar5 == 0)) {
-            fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+            fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable._ub)->playSound)
                                      ((CDemonActor *)in_stack_00000004,"ub-howl?.wav");
             in_stack_00000004[1].base_character.base_actor.orient.bank = fVar8;
           }
         }
         fVar8 = in_stack_00000004->speed;
         fVar4 = (float)1.57079632675;
-        pCVar3 = (in_stack_00000004->base_character).base_actor.vtable;
+        local_1f4.damage_amount = in_stack_00000008;
+        pCVar3 = (in_stack_00000004->base_character).base_actor.vtable._ue;
+        local_1f4.unknown = (int)in_stack_00000004;
         pCVar1 = &(in_stack_00000004->base_character).model;
         *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x28) =
              in_stack_00000004->speed * (float)3 * in_stack_00000008;
         *(float *)((in_stack_00000004->base_character).field2_0x240c + 0x2c) =
              fVar8 * fVar4 * in_stack_00000008;
-        (*pCVar3[1].getAllowedMeleeAttackTypes)((CDemonActor *)in_stack_00000004);
+        (*(pCVar3->_ue).field_4)();
         if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
           core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
           if (extraout_EAX == 0) {
@@ -134,7 +137,7 @@ void core_bride_cpp_FUN_00423a30(void)
         }
         else {
           local_104 = 0;
-          local_fc = 0x40200000;
+          local_fc = 2.5f;
           local_100 = 0;
           (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))();
           iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
@@ -161,8 +164,9 @@ void core_bride_cpp_FUN_00423a30(void)
                (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                                   ((uint)in_stack_00000004[1].base_character.base_actor.orient.bank)
                , iVar5 == 0)) {
-              fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
-                                       ((CDemonActor *)in_stack_00000004,"ub-attack?.wav");
+              fVar8 = (float)(*((in_stack_00000004->base_character).base_actor.vtable._ub)->
+                               playSound)((CDemonActor *)in_stack_00000004,"ub-attack?.wav")
+              ;
               in_stack_00000004[1].base_character.base_actor.orient.bank = fVar8;
             }
           }
@@ -185,7 +189,7 @@ void core_bride_cpp_FUN_00423a30(void)
           local_4c = (double)local_20;
           local_14 = local_20;
           if (local_20 <= (float)3) {
-            local_18 = 0x40200000;
+            local_18 = 2.5f;
             if ((local_4c < 1.0) || (2 < local_4c)) {
               local_44 = (double)local_20;
               if (((float)3 <= local_20) &&
@@ -210,8 +214,11 @@ void core_bride_cpp_FUN_00423a30(void)
             else if ((in_stack_00000004->base_character).model.part_visibility_flags
                      [*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14)] !=
                      0) {
-              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe0c);
-              local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1f4);
+              local_1f4.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              local_1f4.attacker = (CDemonActor *)in_stack_00000004;
+              local_1f4.wielder = (CDemonActor *)in_stack_00000004;
+              local_14 = local_1f4.damage_amount;
               pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                  (&local_e0,(CVector3f *)&DAT_00822c94,
                                   (in_stack_00000004->base_character).model.bone_transform.
@@ -244,7 +251,7 @@ void core_bride_cpp_FUN_00423a30(void)
           local_54 = (double)local_1c;
           local_14 = local_1c;
           if (local_1c <= (float)8) {
-            local_18 = 0x40200000;
+            local_18 = 2.5f;
             if (((1.0 <= local_54) && (local_54 <= 2)) ||
                ((local_2c = (double)local_1c, (float)5 <= local_1c &&
                 (local_2c <= 6)))) {
@@ -301,7 +308,7 @@ void core_bride_cpp_FUN_00423a30(void)
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_d4,pCVar7);
       core_gore_cpp_FUN_004ede30();
-      (*((in_stack_00000004->base_character).base_actor.vtable)->spawnFlies)
+      (*((in_stack_00000004->base_character).base_actor.vtable._ub)->spawnFlies)
                 ((CDemonActor *)in_stack_00000004,0x32,25.0);
       in_stack_00000004->pool_me = 1;
     }

@@ -1,13 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CMotionController_vtable;
+struct CMotionList;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CMotionController_vtable.h"
-#include "types/classes/CMotionList.h"
-#include "types/funcdefs/CMotionController_accumulateScaledRootMotion.h"
-#include "types/funcdefs/CMotionController_dtor.h"
-#include "types/funcdefs/CMotionController_findPatchToFrame.h"
-#include "types/structs/SMotion.h"
 
 // Structure: CMotionController
 // Ghidra size: 0x54 (84 bytes)

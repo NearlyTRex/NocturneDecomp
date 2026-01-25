@@ -157,7 +157,7 @@ CPathMap * CDemonActor::getPathMap(CDemonActor * this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0
 // Address: 004090c0
-int CDemonActor::testPointInCylinder(CDemonActor * this_ptr, SCollisionReturnInfo * collision_result, float tolerance_radius);
+int CDemonActor::testPointInCylinder(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance);
 
 // Original: core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150
 // Address: 00409150

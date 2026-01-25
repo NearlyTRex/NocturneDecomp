@@ -15,8 +15,8 @@
 ;   float FLOAT_0065677c = 15
 ;   float FLOAT_00656780 = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_00664b6c
-;   undefined4 DAT_00664b70
+;   float FLOAT_00664b6c = -0.5235988
+;   float FLOAT_00664b70 = 1.221730
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CConsole g_ConsolePtr
@@ -343,13 +343,13 @@ section .text
         ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005e30ff
     FLD float ptr [ESP + 0x114]         ; 005e3102
-    FCOMP float ptr [0x00664b6c]        ; 005e3109 | DAT_00664b6c
+    FCOMP float ptr [0x00664b6c]        ; 005e3109 | FLOAT_00664b6c
     FNSTSW AX                           ; 005e310f
     SAHF                                ; 005e3111
     JC 0x005e2ed6                       ; 005e3112
         ;   XREF to: 005e2ed6 (CONDITIONAL_JUMP)  ; LAB_005e2ed6
     FLD float ptr [ESP + 0x114]         ; 005e3118
-    FCOMP float ptr [0x00664b70]        ; 005e311f | DAT_00664b70
+    FCOMP float ptr [0x00664b70]        ; 005e311f | FLOAT_00664b70
     FNSTSW AX                           ; 005e3125
     SAHF                                ; 005e3127
     JA 0x005e2ed6                       ; 005e3128

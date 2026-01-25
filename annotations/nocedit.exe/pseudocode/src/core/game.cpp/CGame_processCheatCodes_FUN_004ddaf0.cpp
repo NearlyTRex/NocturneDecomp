@@ -690,7 +690,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         if (pCVar15 == (CDemonActor *)0x0) {
           this_ptr_01 = core_actor_cpp_createActorByName_FUN_0040c430("CKeyActor");
           pcVar11 = "Skeleton_key";
-          (*this_ptr_01->vtable->setup)(this_ptr_01);
+          (*((this_ptr_01->vtable)._ub)->setup)(this_ptr_01);
           this_ptr_01[2].location.position.y = -NAN;
           pCVar15 = this_ptr_01;
           do {
@@ -1856,7 +1856,7 @@ LAB_004df408:
           this_ptr_03 = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_02);
         }
         core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-        (*((this_ptr_03->base_actor).vtable)->setup)(&this_ptr_03->base_actor);
+        (*((this_ptr_03->base_actor).vtable._ub)->setup)(&this_ptr_03->base_actor);
         core_inv_cpp_CInventory_addItem_FUN_004fd600
                   (&g_HeroActors[g_LocalHeroIndex]->inventory,&this_ptr_03->base_actor,1);
         fVar22 = 5.0;

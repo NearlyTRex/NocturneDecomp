@@ -4,67 +4,61 @@
       {
         "category": "missing_member",
         "column": 38,
-        "line": 36,
+        "line": 34,
         "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "missing_member",
         "column": 67,
-        "line": 40,
+        "line": 38,
         "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 52,
+        "line": 50,
         "message": "request for member '_4_4_' in 'auStack_6c', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 52,
-        "message": "'_DAT_00665460' was not declared in this scope; did you mean 'DAT_0066e460'?"
       },
       {
         "category": "missing_member",
         "column": 46,
-        "line": 62,
+        "line": 60,
         "message": "'CWayPoint' {aka 'struct CWayPoint'} has no member named 'field2_0x374'"
       },
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 69,
+        "line": 67,
         "message": "'stack0xffffff5c' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 72,
-        "line": 77,
+        "line": 75,
         "message": "'stack0xffffffe8' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 85,
+        "line": 83,
         "message": "request for member '_0_4_' in 'auStack_6c', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 86,
+        "line": 84,
         "message": "request for member '_4_4_' in 'auStack_6c', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "missing_member",
         "column": 74,
-        "line": 98,
+        "line": 96,
         "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
       },
       {
         "category": "missing_member",
         "column": 68,
-        "line": 99,
+        "line": 97,
         "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
       }
     ],
@@ -79,27 +73,26 @@
       {
         "category": "other",
         "column": 21,
-        "line": 106,
+        "line": 104,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 307,
+    "complexity_score": 291,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 11,
-    "pseudocode_lines": 102,
-    "suspect_count": 18,
+    "pseudocode_lines": 101,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
       "unaffected_reg",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 387
+    "total_lines": 386
   },
   "cross_references": [],
   "function": {
@@ -185,9 +178,9 @@
     },
     {
       "addr": "00665460",
-      "name": "DAT_00665460",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00665460",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "006703ec",
@@ -317,127 +310,120 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 11,
       "match": "unaff_EDI",
       "text": "CWayPoint *unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 45,
+      "line": 43,
       "match": "._4_4_",
-      "text": "auStack_6c._4_4_ = (uint)ROUND(fStack_5c * _DAT_00665460);",
+      "text": "auStack_6c._4_4_ = (uint)ROUND(fStack_5c * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "text": "auStack_6c._4_4_ = (uint)ROUND(fStack_5c * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "ROUND",
+      "text": "iStack_64 = (int)ROUND(fStack_58 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "auStack_6c._4_4_ = (uint)ROUND(fStack_5c * _DAT_00665460);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
-      "match": "ROUND",
-      "text": "iStack_64 = (int)ROUND(fStack_58 * _DAT_00665460);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
-      "match": "ROUND",
-      "text": "iStack_60 = (int)ROUND(CStack_54.x * _DAT_00665460);",
+      "text": "iStack_60 = (int)ROUND(CStack_54.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 58,
+      "line": 56,
       "match": "unaff_EDI",
       "text": "if ((this_ptr == unaff_EDI) || (this_ptr_00 == unaff_EDI)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 58,
+      "line": 56,
       "match": "unaff_EDI",
       "text": "if ((this_ptr == unaff_EDI) || (this_ptr_00 == unaff_EDI)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 60,
       "match": "&stack0xffffff5c",
       "text": "((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff5c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 70,
+      "line": 68,
       "match": "&stack0xffffffe8",
       "text": "((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xffffffe8,&CStack_48);",
       "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 76,
       "match": "._0_4_",
-      "text": "auStack_6c._0_4_ = (uint)ROUND(CStack_54.x * _DAT_00665460);",
+      "text": "auStack_6c._0_4_ = (uint)ROUND(CStack_54.x * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 76,
       "match": "ROUND",
-      "text": "auStack_6c._0_4_ = (uint)ROUND(CStack_54.x * _DAT_00665460);",
+      "text": "auStack_6c._0_4_ = (uint)ROUND(CStack_54.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 77,
       "match": "._4_4_",
-      "text": "auStack_6c._4_4_ = (uint)ROUND(CStack_54.y * _DAT_00665460);",
+      "text": "auStack_6c._4_4_ = (uint)ROUND(CStack_54.y * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 77,
       "match": "ROUND",
-      "text": "auStack_6c._4_4_ = (uint)ROUND(CStack_54.y * _DAT_00665460);",
+      "text": "auStack_6c._4_4_ = (uint)ROUND(CStack_54.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 78,
       "match": "ROUND",
-      "text": "iStack_64 = (int)ROUND(CStack_54.z * _DAT_00665460);",
+      "text": "iStack_64 = (int)ROUND(CStack_54.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 91,
+      "line": 89,
       "match": "unaff_EDI",
       "text": "if ((unaff_EDI != (CWayPoint *)0x0) && (*(int *)(g_CDemonMissionPtr->field2_0xc + 0x34) != 0)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 90,
       "match": "unaff_EDI",
       "text": "if ((this_ptr != unaff_EDI) && (*(int *)(g_CDemonMissionPtr->field2_0xc + 0x34) != 2)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 96,
+      "line": 94,
       "match": "unaff_EDI",
       "text": "if (this_ptr == unaff_EDI) {",
       "type": "unaffected_reg"

@@ -14,7 +14,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b930(CCharacter *this_ptr)
   CVector3f CStack_14;
   float fStack_8;
   
-  pCVar1 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+  pCVar1 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                      (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffc0);
   fStack_8 = (pCVar1->min).x + (pCVar1->max).x;
   CStack_20.x = fStack_8 * 0.5f;

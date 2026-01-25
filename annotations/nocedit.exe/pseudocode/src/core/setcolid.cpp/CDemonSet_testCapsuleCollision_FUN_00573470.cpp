@@ -104,7 +104,8 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
         pvVar8 = (void *)core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,actor);
         if ((pvVar8 == (void *)0x0) &&
            (local_d0 = pvVar8, local_cc = pvVar8,
-           bounding_box_type = (*actor->vtable->hasCollision)(actor,(SCollisionInfo *)local_f0),
+           bounding_box_type =
+                (*((actor->vtable)._ub)->hasCollision)(actor,(SCollisionInfo *)local_f0),
            bounding_box_type != 0)) {
           pCVar9 = core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
                              (actor,&CStack_a8,(SCollisionInfo *)(local_f0 + 8),bounding_box_type);
@@ -113,7 +114,7 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
             if (pCStack_c4 == (CKeyFramedModelInstance *)0x0) {
               if (bounding_box_type < 2) {
                 if (bounding_box_type == 1) {
-                  pCVar9 = (*actor->vtable->getBoundingBox)(actor,&CStack_c0);
+                  pCVar9 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_c0);
                   iVar10 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
                                      (this_ptr,&local_13c,(CMatrix3x3f *)pCVar9,in_stack_fffffd60,
                                       in_stack_fffffd64);
@@ -200,7 +201,7 @@ LAB_00573d6f:
                            (void *)((float)user_data1 - (actor->location).position.y),
                            (void *)((float)user_data2 - (actor->location).position.y));
                 auStack_1a0._0_4_ = local_144;
-                (*actor->vtable->customIntersectCylinderXZ)
+                (*((actor->vtable)._ub)->customIntersectCylinderXZ)
                           (actor,(SIntersectXZCylinder *)auStack_1a0);
                 if ((float)auStack_1a0._8_4_ < local_13c.min.x) {
                   local_13c.min.x = (float)auStack_1a0._8_4_;

@@ -9,7 +9,7 @@
 ; XREF[7]:
 ;   core_biggs.cpp_CBiggs_dtor_FUN_00418d10 at 00418d29
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005078ca
-;   core_mimic.cpp_FUN_0051f2c0 at 0051f31f
+;   core_mimic.cpp_CMimic_dtor_FUN_0051f2c0 at 0051f31f
 ;   core_moloch.cpp_CMoloch_dtor_FUN_00528bf0 at 00528c0f
 ;   core_passngr.cpp_CPassenger_dtor_FUN_00545c10 at 00545c6a
 ;   core_succubus.cpp_CSuccubus_dtor_FUN_005c7820 at 005c7839

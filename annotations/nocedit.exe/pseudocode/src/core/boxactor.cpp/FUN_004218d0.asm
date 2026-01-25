@@ -1,18 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boxactor.cpp_FUN_004218d0()
+; __cdecl void core_boxactor.cpp_FUN_004218d0(CBoxActor * this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
+;   core_boxactor.cpp_CBoxActor_FUN_004224f0 at 00422503
+;   core_boxactor.cpp_CBoxActor_FUN_00422640 at 004226b7
+;   core_boxactor.cpp_CBoxActor_FUN_004228e0 at 004228f2
 ;   core_boxactor.cpp_FUN_00422390 at 0042248f
-;   core_boxactor.cpp_FUN_004224f0 at 00422503
-;   core_boxactor.cpp_FUN_00422640 at 004226b7
-;   core_boxactor.cpp_FUN_004228e0 at 004228f2
 ;
 ; Referenced Globals:
 ;   float FLOAT_0061663f = 0.5
-;   undefined4 DAT_0078a123
+;   int g_ActorMagicNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -34,7 +36,7 @@ section .text
     SAHF                                ; 004218ee
     JNC 0x00421913                      ; 004218ef
         ;   XREF to: 00421913 (CONDITIONAL_JUMP)  ; LAB_00421913
-    CMP dword ptr [EBX + 0x68],0x78a123 ; 004218f1 | DAT_0078a123
+    CMP dword ptr [EBX + 0x68],0x78a123 ; 004218f1 | g_ActorMagicNumber
     JNZ 0x00421913                      ; 004218f8
         ;   XREF to: 00421913 (CONDITIONAL_JUMP)  ; LAB_00421913
     LEA EAX,[EBX + 0x158]               ; 004218fa

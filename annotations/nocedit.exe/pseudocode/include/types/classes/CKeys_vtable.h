@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CKeys;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CKeys.h"
 #include "types/funcdefs/CKeys_clearKeypresses.h"
 #include "types/funcdefs/CKeys_getAndClearKeyState.h"
 #include "types/funcdefs/CKeys_getKeyState.h"

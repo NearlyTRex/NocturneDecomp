@@ -80,7 +80,7 @@ void core_ghoul_cpp_FUN_004e6160(void)
   in_stack_00000004[1].base_character.base_actor.orient_matrix.m[2].x = fVar2;
   core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   in_stack_00000004[1].base_character.base_actor.health = 0;
-  in_stack_00000004[1].base_character.base_actor.field6_0x68 = 0;
+  in_stack_00000004[1].base_character.base_actor.validation_magic = 0;
   in_stack_00000004[1].base_character.base_actor.field7_0x6c = 0;
   in_stack_00000004[1].base_character.base_actor.was_created = 0;
   in_stack_00000004[1].base_character.base_actor.create_prob = 0.0;

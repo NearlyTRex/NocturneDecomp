@@ -11,7 +11,7 @@
 uint core_stranger_cpp_CStranger_FUN_005c5e80(void)
 
 {
-  uint uVar1;
+  float fVar1;
   uint uVar2;
   int in_stack_00000004;
   
@@ -22,8 +22,8 @@ uint core_stranger_cpp_CStranger_FUN_005c5e80(void)
       (*(int *)(*(int *)(in_stack_00000004 + 0x1fc2c) + 0x2e0) != 3)))) {
     return 0;
   }
-  uVar1 = 0x41200000;
+  fVar1 = 10.0f;
   *(uint *)(in_stack_00000004 + 0x1fc38) = 3;
-  *(uint *)(in_stack_00000004 + 0x1fbe4) = uVar1;
+  *(float *)(in_stack_00000004 + 0x1fbe4) = fVar1;
   return 1;
 }

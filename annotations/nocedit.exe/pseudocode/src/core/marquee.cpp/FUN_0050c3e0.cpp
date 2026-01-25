@@ -20,10 +20,10 @@ void core_marquee_cpp_FUN_0050c3e0(void)
   core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e640(in_stack_00000008);
   if (in_stack_00000004[1].orient_matrix.m[1].x != 0.0) {
-    (*in_stack_00000004->vtable->setup)(in_stack_00000004);
+    (*((in_stack_00000004->vtable)._ub)->setup)(in_stack_00000004);
     return;
   }
   core_actor_cpp_CActorPropertyList_FUN_0040e1e0(in_stack_00000008);
-  (*in_stack_00000004->vtable->setup)(in_stack_00000004);
+  (*((in_stack_00000004->vtable)._ub)->setup)(in_stack_00000004);
   return;
 }

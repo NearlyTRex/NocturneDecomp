@@ -1,26 +1,25 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 19,
-        "message": "'PTR_core_gabriela_cpp_FUN_0065e804' was not declared in this scope; did you mean 'core_gabriela_cpp_FUN_004d75e0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 31,
-        "message": "'_DAT_0065e7ec' was not declared in this scope; did you mean 'DAT_0065ed1c'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 17,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
+        "line": 18,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -85,13 +84,13 @@
       {
         "category": "other",
         "column": 4,
-        "line": 29,
+        "line": 30,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 30,
+        "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -114,84 +113,70 @@
       },
       {
         "category": "other",
+        "column": 30,
+        "line": 34,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 4,
         "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 36,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 36,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 4,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 31,
-        "line": 37,
+        "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 39,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 39,
+        "line": 37,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 41,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 41,
+        "line": 39,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 41,
+        "line": 39,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 42,
+        "line": 40,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 47,
+    "complexity_score": 31,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 32,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 87
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -228,7 +213,7 @@
     {
       "addr": "004f2340",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004f2340"
+      "name": "core_hero.cpp_CHero_ctor_FUN_004f2340"
     },
     {
       "addr": "005a0840",
@@ -251,13 +236,13 @@
     },
     {
       "addr": "0065e7ec",
-      "name": "DAT_0065e7ec",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065e7ec",
+      "type": "float",
+      "value": "10"
     },
     {
       "addr": "0065e804",
-      "name": "PTR_core_gabriela.cpp_FUN_0065e804",
+      "name": "g_CGabriellaVTable",
       "type": "CDemonActor_vtable",
       "value": null
     }
@@ -316,15 +301,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -68,6 +68,12 @@
         "message": "'SSurfaceInfo' {aka 'struct SSurfaceInfo'} has no member named 'field4_0x18'; did you mean 'field_8'?"
       },
       {
+        "category": "other",
+        "column": 22,
+        "line": 179,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
         "category": "missing_member",
         "column": 30,
         "line": 218,
@@ -145,7 +151,7 @@
     {
       "addr": "0050a8d0",
       "from_addr": "0050ab13",
-      "name": "core_manpuz.cpp_FUN_0050a8d0",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -308,7 +314,7 @@
       {
         "call_addr": "0050ab13",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_0050a8d0",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0",
         "estimated_params": 4,
         "instructions_analyzed": 30,
         "reg_params": [],
@@ -1786,7 +1792,7 @@
       "description": "Unresolved stack parameter",
       "line": 208,
       "match": "in_stack_00000010",
-      "text": "(*this_ptr_00->vtable->getSurfaceProperties)(this_ptr_00,in_stack_00000010);",
+      "text": "(*((this_ptr_00->vtable)._ub)->getSurfaceProperties)(this_ptr_00,in_stack_00000010);",
       "type": "stack_param"
     },
     {

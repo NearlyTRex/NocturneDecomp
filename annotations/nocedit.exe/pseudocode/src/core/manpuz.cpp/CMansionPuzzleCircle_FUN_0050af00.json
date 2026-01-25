@@ -1,0 +1,196 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 26,
+        "line": 19,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field6_0x5f4'; did you mean 'field_1524'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 60,
+        "line": 19,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 61,
+        "line": 21,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 26,
+        "line": 23,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 26,
+        "line": 25,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 34,
+        "line": 34,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 26,
+        "line": 36,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 26,
+        "line": 38,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 45,
+    "complexity_score": 92,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "005091d0",
+      "from_addr": "0050920d",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050af00",
+    "address_range": [
+      [
+        "0050af00",
+        "0050af7d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af00",
+    "signature": "void core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af00(CMansionPuzzleCircle * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00660d9c",
+      "name": "FLOAT_00660d9c",
+      "type": "float",
+      "value": "2"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.736842105263158,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 3,
+      "CBRANCH": 3,
+      "COPY": 89,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 22,
+      "INT_AND": 48,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 12,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 20,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 12,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "INT_ZEXT": 8,
+      "LOAD": 12,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 332
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "iVar3 = in_stack_00000008 * 0x60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000000c",
+      "text": "fVar2 = in_stack_0000000c / 2.0f + *(float *)(this_ptr->field10_0x648 + iVar3 + 0xd10)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_0000000c",
+      "text": "fVar2 = *(float *)(this_ptr->field10_0x648 + iVar3 + 0xd10) - in_stack_0000000c / 2.0f",
+      "type": "stack_param"
+    }
+  ]
+}

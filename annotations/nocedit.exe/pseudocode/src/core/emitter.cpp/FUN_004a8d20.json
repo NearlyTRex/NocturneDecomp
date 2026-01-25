@@ -9,8 +9,8 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 85,
-        "line": 26,
+        "column": 51,
+        "line": 27,
         "message": "'stack0xffffffd0' was not declared in this scope"
       }
     ],
@@ -143,21 +143,21 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0)",
+      "text": "(*((in_stack_00000004->vtable)._ub)->getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0)",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 19,
+      "line": 20,
       "match": "&stack0xffffffd0",
-      "text": "(*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0)",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);",
       "type": "stack_ref"
     },
     {

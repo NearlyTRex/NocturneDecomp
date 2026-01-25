@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_drone_dfm_0062236d
-;   undefined4 DAT_0065d0ac
-;   undefined4 PTR_core_bride.cpp_FUN_0065d0ad+3
-;   CDemonActor_vtable PTR_core_drone.cpp_FUN_0065d0c4
+;   float FLOAT_0065d0ac = 50
+;   float FLOAT_0065d0b0 = 100
+;   CDemonActor_vtable g_CDroneVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
@@ -34,13 +34,13 @@ section .text
     MOV EBX,EAX                         ; 0048eb63
     ADD EAX,0x158                       ; 0048eb65
     PUSH EAX                            ; 0048eb6a
-    MOV dword ptr [EAX + -0x4],0x65d0c4 ; 0048eb6b | PTR_core_drone.cpp_FUN_0065d0c4
+    MOV dword ptr [EAX + -0x4],0x65d0c4 ; 0048eb6b | g_CDroneVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 0048eb72
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3f400000 ; 0048eb77
-    FLD float ptr [0x0065d0ac]          ; 0048eb81 | DAT_0065d0ac
+    FLD float ptr [0x0065d0ac]          ; 0048eb81 | FLOAT_0065d0ac
     MOV dword ptr [EBX + 0x2de0],0x3fc00000 ; 0048eb87
-    FLD float ptr [0x0065d0b0]          ; 0048eb91 | PTR_core_bride.cpp_FUN_0065d0ad+3
+    FLD float ptr [0x0065d0b0]          ; 0048eb91 | FLOAT_0065d0b0
     MOV dword ptr [EBX + 0x2610],0x1    ; 0048eb97
     ADD ESP,0x8                         ; 0048eba1
     MOV dword ptr [EBX + 0x243c],0x42960000 ; 0048eba4

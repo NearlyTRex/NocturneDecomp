@@ -26,7 +26,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004e9930(CGlass *this_ptr)
       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar2 == 0)))) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-    this_ptr_01 = (*((this_ptr->base).vtable)->getBoundingBox)
+    this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                             (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
     iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80

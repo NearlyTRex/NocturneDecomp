@@ -1,11 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CWinFont;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/wingdi.h"
-#include "system/winuser.h"
-#include "types/classes/CFont.h"
-#include "types/classes/CWinFont.h"
 
 // Structure: CBitFont
 // Ghidra size: 0x3198 (12696 bytes)

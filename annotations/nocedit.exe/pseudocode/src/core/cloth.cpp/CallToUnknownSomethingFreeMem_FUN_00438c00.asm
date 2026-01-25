@@ -10,7 +10,7 @@
 ;   core_cloth.cpp_FUN_0043c070 at 0043c0a4
 ;   core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150 at 004be214
 ;   core_gabriela.cpp_freeMaybe_FUN_004d7660 at 004d7675
-;   core_mimic.cpp_FUN_0051f2c0 at 0051f32f
+;   core_mimic.cpp_CMimic_dtor_FUN_0051f2c0 at 0051f32f
 ;   core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50 at 005d9f65
 ;   core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700 at 005e7729
 ;

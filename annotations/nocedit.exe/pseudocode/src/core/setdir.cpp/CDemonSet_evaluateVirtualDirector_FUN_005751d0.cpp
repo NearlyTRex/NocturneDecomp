@@ -97,7 +97,7 @@ LAB_0057523f:
   g_UseExternalRenderer = 0;
   local_44 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr_01);
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,0);
-  (*actor->vtable->getBoundingBox)(actor,(CBoundingBox3D *)(auStack_d8 + 0xc));
+  (*((actor->vtable)._ub)->getBoundingBox)(actor,(CBoundingBox3D *)(auStack_d8 + 0xc));
   uVar11 = 0;
   piVar2 = (int *)&stack0xfffffe8c;
   do {
@@ -152,7 +152,7 @@ LAB_0057523f:
     g_VDCameraIndex = 0;
     this_ptr->previous_best_camera_timer = 0.0;
   }
-  (*actor->vtable->getBoundingBox)(actor,(CBoundingBox3D *)(auStack_ec + 0xc));
+  (*((actor->vtable)._ub)->getBoundingBox)(actor,(CBoundingBox3D *)(auStack_ec + 0xc));
   fVar6 = core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_00421060((CBoundingBox3D *)auStack_d8);
   fStack_78 = (float)auStack_d8._0_4_ + (float)auStack_d8._12_4_;
   CStack_a8.x = fStack_78 * 0.5f;
@@ -185,14 +185,15 @@ LAB_0057523f:
   iStack_20 = 0;
   for (iVar12 = 0; iVar12 < (int)g_CDemonSetPtr->actor_list_ptr; iVar12 = iVar12 + 1) {
     this_ptr_00 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iStack_20);
-    iVar10 = (*this_ptr_00->vtable->getBlockVirtualDirectorFlag)(this_ptr_00);
+    iVar10 = (*((this_ptr_00->vtable)._ub)->getBlockVirtualDirectorFlag)(this_ptr_00);
     if (((iVar10 != 0) && (this_ptr_00 != actor)) &&
        (fVar6 = (this_ptr_00->location).position.x - (actor->location).position.x,
        fVar9 = (this_ptr_00->location).position.y - (actor->location).position.y,
        fVar14 = (this_ptr_00->location).position.z - (actor->location).position.z,
        fVar14 * fVar14 + fVar9 * fVar9 + fVar6 * fVar6 <= fStack_2c)) {
       g_VDNearbyActorPointers[g_VDNearbyActorCount] = this_ptr_00;
-      pCVar8 = (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,(CBoundingBox3D *)auStack_ec);
+      pCVar8 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)
+                         (this_ptr_00,(CBoundingBox3D *)auStack_ec);
       iVar10 = g_VDNearbyActorCount;
       if (g_VDNearbyActorBoundingBoxes + g_VDNearbyActorCount != pCVar8) {
         g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;

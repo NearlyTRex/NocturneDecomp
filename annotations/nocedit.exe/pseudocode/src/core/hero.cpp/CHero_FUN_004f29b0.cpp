@@ -14,7 +14,7 @@ void __cdecl core_hero_cpp_CHero_FUN_004f29b0(CHero *this_ptr)
   int desired_state_index;
   float fVar1;
   
-  if (((byte *)(this_ptr->base_character).base_actor.field6_0x68 == &DAT_0078a123) &&
+  if (((int *)(this_ptr->base_character).base_actor.validation_magic == &g_ActorMagicNumber) &&
      ((this_ptr->base_character).model.model_ptr != (CDeformableModel *)0x0)) {
     this_ptr_00 = &(this_ptr->base_character).model;
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0

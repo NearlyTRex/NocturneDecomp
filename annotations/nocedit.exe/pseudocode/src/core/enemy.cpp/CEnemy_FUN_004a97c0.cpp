@@ -18,7 +18,7 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004a97c0(CEnemy *this_ptr)
   float fStack_24;
   float afStack_20 [6];
   
-  (*((this_ptr->base_character).base_actor.vtable)->getBoundingBox)
+  (*((this_ptr->base_character).base_actor.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,&CStack_40);
   fVar3 = (float)0.29999999999999999;
   fVar1 = (CStack_40.max.x + fStack_28) * 0.5f;

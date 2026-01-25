@@ -689,7 +689,7 @@ section .text
     JNZ 0x005e6249                      ; 005e609e
         ;   XREF to: 005e6249 (CONDITIONAL_JUMP)  ; LAB_005e6249
     FLD float ptr [EBP + 0x18]          ; 005e60a4
-    FDIV float ptr [0x00664e7c]         ; 005e60a7 | DAT_00664e7c
+    FDIV float ptr [0x00664e7c]         ; 005e60a7 | FLOAT_00664e7c
     FADD float ptr [EBX + 0xce8f0]      ; 005e60ad
     FST float ptr [EBX + 0xce8f0]       ; 005e60b3
     FLD1                                ; 005e60b9
@@ -842,7 +842,7 @@ section .text
     JNZ 0x005e6441                      ; 005e624c
         ;   XREF to: 005e6441 (CONDITIONAL_JUMP)  ; LAB_005e6441
     FLD float ptr [EBP + 0x18]          ; 005e6252
-    FDIV float ptr [0x00664e7c]         ; 005e6255 | DAT_00664e7c
+    FDIV float ptr [0x00664e7c]         ; 005e6255 | FLOAT_00664e7c
     MOV EAX,dword ptr [EBX + 0xce8f0]   ; 005e625b
     MOV dword ptr [ESP + 0x1f0],EAX     ; 005e6261
     FLD float ptr [ESP + 0x1f0]         ; 005e6268
@@ -1087,7 +1087,7 @@ section .text
         ;   XREF to: 005e6569 (CONDITIONAL_JUMP)  ; caseD_8
     JMP dword ptr [EAX*0x4 + 0x5e5944]  ; 005e6512 | caseD_0 | caseD_8 | caseD_2
         ;   Label: switchD
-    FLD float ptr [0x00664e84]          ; 005e6519 | DAT_00664e84
+    FLD float ptr [0x00664e84]          ; 005e6519 | FLOAT_00664e84
         ;   Label: caseD_0
     FMUL float ptr [EBP + 0x18]         ; 005e651f
     MOV EAX,[0x0067b654]                ; 005e6522 | g_CGameInstance | g_CGamePtr
@@ -1375,7 +1375,7 @@ section .text
     FLD float ptr [EBX + 0x2440]        ; 005e68cf
         ;   Label: caseD_3
     FMUL float ptr [EBP + 0x18]         ; 005e68d5
-    FDIV float ptr [0x00664e88]         ; 005e68d8 | DAT_00664e88
+    FDIV float ptr [0x00664e88]         ; 005e68d8 | FLOAT_00664e88
     FADD float ptr [EBX + 0x243c]       ; 005e68de
     FST float ptr [EBX + 0x243c]        ; 005e68e4
     FCOMP double ptr [0x00656bbb]       ; 005e68ea | DOUBLE_00656bbb
@@ -1525,7 +1525,7 @@ section .text
         ;   XREF to: 005e6569 (UNCONDITIONAL_JUMP)  ; caseD_8
     LEA EAX,[EBX + 0xce91c]             ; 005e6ad3
         ;   Label: LAB_005e6ad3
-    FLD float ptr [0x00664e80]          ; 005e6ad9 | DAT_00664e80
+    FLD float ptr [0x00664e80]          ; 005e6ad9 | FLOAT_00664e80
     PUSH EAX                            ; 005e6adf
     FMUL float ptr [EBP + 0x18]         ; 005e6ae0
     PUSH 0x497423f0                     ; 005e6ae3

@@ -15,6 +15,6 @@ void core_icepick_cpp_FUN_004f7db0(void)
   if (this_ptr == (CIcePick *)0x0) {
     return;
   }
-  core_icepick_cpp_FUN_004f7df0(this_ptr);
+  core_icepick_cpp_CIcePick_ctor_FUN_004f7df0(this_ptr);
   return;
 }

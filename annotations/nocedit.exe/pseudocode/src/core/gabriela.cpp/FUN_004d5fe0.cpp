@@ -25,6 +25,6 @@ void core_gabriela_cpp_FUN_004d5fe0(void)
     in_stack_00000004[0x17a].actor_name[0x1f] = '?';
   }
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-  in_stack_00000004[0x179].vtable = (CDemonActor_vtable *)0x0;
+  in_stack_00000004[0x179].vtable._ub = (CDemonActor_vtable *)0x0;
   return;
 }

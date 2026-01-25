@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d4d80(uint param_1) */
 
 void core_gabriela_cpp_FUN_004d4d80(void)
@@ -84,24 +83,24 @@ void core_gabriela_cpp_FUN_004d4d80(void)
   *puVar5 = *puVar3;
   puVar5[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
   if (0.0 < *(float *)(in_stack_00000004 + 0x1fbdc)) {
-    local_28 = *(float *)(in_stack_00000004 + 0x1fbdc) / _DAT_0065e7b0;
+    local_28 = *(float *)(in_stack_00000004 + 0x1fbdc) / 0.2f;
     if (1.0 < local_28) {
       local_28 = 1.0;
     }
-    if (0x3F51EB85 < *(float *)(in_stack_00000004 + 0x1fbdc)) {
+    if (0.82f < *(float *)(in_stack_00000004 + 0x1fbdc)) {
       local_28 = (1.0 - (1.0 - *(float *)(in_stack_00000004 + 0x1fc10)) *
-                        ((*(float *)(in_stack_00000004 + 0x1fbdc) - 0x3F51EB85) /
-                        (1.0 - 0x3F51EB85))) * local_28;
+                        ((*(float *)(in_stack_00000004 + 0x1fbdc) - 0.82f) /
+                        (1.0 - 0.82f))) * local_28;
     }
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0
                       (*(CDemonActor **)(in_stack_00000004 + 0x1fa68),"CGun");
     if (iVar1 == 0) {
       if ((float)0.001 < local_28) {
         local_24 = *(float *)(in_stack_00000004 + 0x1fbdc);
-        if (0x3F51EB85 < local_24) {
-          local_24 = 0x3F51EB85;
+        if (0.82f < local_24) {
+          local_24 = 0.82f;
         }
-        local_24 = (local_24 - _DAT_0065e7b0) / (1.0 - _DAT_0065e7b0);
+        local_24 = (local_24 - 0.2f) / (1.0 - 0.2f);
         if (local_24 < 0.0) {
           local_24 = 0.0;
         }
@@ -110,16 +109,16 @@ void core_gabriela_cpp_FUN_004d4d80(void)
         }
         local_50 = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                             ((CMotionController *)(in_stack_00000004 + 0x158),DAT_02d7b87c,local_24
+                             ((CMotionController *)(in_stack_00000004 + 0x158),INT_02d7b87c,local_24
                              );
         local_14 = local_50;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d7b87c,
-                   (float)local_50,local_28,DAT_02d7b858,
+                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),INT_02d7b87c,
+                   (float)local_50,local_28,INT_02d7b858,
                    core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
-        if (0x3F51EB85 <= *(float *)(in_stack_00000004 + 0x1fbdc)) {
-          local_2c = ((*(float *)(in_stack_00000004 + 0x1fbdc) - 0x3F51EB85) /
-                     (1.0 - 0x3F51EB85)) * *(float *)(in_stack_00000004 + 0x1fc10);
+        if (0.82f <= *(float *)(in_stack_00000004 + 0x1fbdc)) {
+          local_2c = ((*(float *)(in_stack_00000004 + 0x1fbdc) - 0.82f) /
+                     (1.0 - 0.82f)) * *(float *)(in_stack_00000004 + 0x1fc10);
           if (local_2c < *(float *)(in_stack_00000004 + 0x1fc0c)) {
             local_2c = *(float *)(in_stack_00000004 + 0x1fc0c);
           }
@@ -131,12 +130,12 @@ void core_gabriela_cpp_FUN_004d4d80(void)
             }
             local_14 = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
             core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                      (local_14,DAT_02d7b880,local_34,local_2c * (float)0.90000000000000002,DAT_02d7b890
+                      (local_14,INT_02d7b880,local_34,local_2c * (float)0.90000000000000002,INT_02d7b890
                        ,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
-            local_84 = _DAT_02d7b838 * 3.141593f;
+            local_84 = FLOAT_02d7b838 * 3.141593f;
             local_6c.x = local_84 / 180.0f;
-            local_80 = _DAT_02d7b83c * 3.141593f;
-            local_7c = _DAT_02d7b840 * 3.141593f;
+            local_80 = FLOAT_02d7b83c * 3.141593f;
+            local_7c = FLOAT_02d7b840 * 3.141593f;
             local_6c.y = local_80 * 0.005555556f;
             local_6c.z = local_7c * 0.005555556f;
             pCVar8 = &local_1a4;
@@ -156,7 +155,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
             puVar3 = (uint *)((int)&local_f4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
             *(uint *)((int)&local_104 + (uint)bVar7 * -8 + 4) =
                  *(uint *)((int)&local_f4 + (uint)bVar7 * -8 + 4);
-            iVar1 = DAT_02d7b894;
+            iVar1 = INT_02d7b894;
             *puVar5 = *puVar3;
             puVar5[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
@@ -165,17 +164,17 @@ void core_gabriela_cpp_FUN_004d4d80(void)
         }
       }
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                ((CQuaternion4f *)(in_stack_00000004 + 0x808 + DAT_02d7b88c * 0x10),
-                 (CQuaternion4f *)(DAT_02d7b860 * 0x10 + in_stack_00000004 + 0x808),
-                 *(float *)(in_stack_00000004 + 0x1fbdc) / _DAT_0065e7b4,&local_1b4);
-      pfVar4 = (float *)(DAT_02d7b88c * 0x10 + 0x808 + in_stack_00000004);
+                ((CQuaternion4f *)(in_stack_00000004 + 0x808 + INT_02d7b88c * 0x10),
+                 (CQuaternion4f *)(INT_02d7b860 * 0x10 + in_stack_00000004 + 0x808),
+                 *(float *)(in_stack_00000004 + 0x1fbdc) / 0.64f,&local_1b4);
+      pfVar4 = (float *)(INT_02d7b88c * 0x10 + 0x808 + in_stack_00000004);
       pfVar6 = pfVar4 + (uint)bVar7 * -2 + 1;
       *pfVar4 = local_1b4.w;
       pfVar4 = (float *)((int)&local_1b4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
       *pfVar6 = *(float *)((int)&local_1b4 + (uint)bVar7 * -8 + 4);
       pfVar6[(uint)bVar7 * -2 + 1] = *pfVar4;
       (pfVar6 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] = pfVar4[(uint)bVar7 * -2 + 1];
-      iVar1 = DAT_02d7b880;
+      iVar1 = INT_02d7b880;
       if (0.0 < *(float *)(in_stack_00000004 + 0x1fc0c)) {
         *(uint *)(in_stack_00000004 + 0x23a8) = 2;
         local_1c = (CDeformableModelInstance *)
@@ -184,17 +183,17 @@ void core_gabriela_cpp_FUN_004d4d80(void)
                               *(float *)(in_stack_00000004 + 0x1fc0c));
         local_14 = local_1c;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d7b880,
+                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),INT_02d7b880,
                    (float)local_1c,0);
         *(uint *)(in_stack_00000004 + 0x23a8) = 0;
       }
     }
     else {
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                ((CQuaternion4f *)(in_stack_00000004 + 0x808 + DAT_02d7b88c * 0x10),
-                 (CQuaternion4f *)(DAT_02d7b860 * 0x10 + in_stack_00000004 + 0x808),
-                 *(float *)(in_stack_00000004 + 0x1fbdc) / _DAT_0065e7b4,&local_1c4);
-      pfVar4 = (float *)(in_stack_00000004 + 0x808 + DAT_02d7b88c * 0x10);
+                ((CQuaternion4f *)(in_stack_00000004 + 0x808 + INT_02d7b88c * 0x10),
+                 (CQuaternion4f *)(INT_02d7b860 * 0x10 + in_stack_00000004 + 0x808),
+                 *(float *)(in_stack_00000004 + 0x1fbdc) / 0.64f,&local_1c4);
+      pfVar4 = (float *)(in_stack_00000004 + 0x808 + INT_02d7b88c * 0x10);
       pfVar6 = pfVar4 + (uint)bVar7 * -2 + 1;
       *pfVar4 = local_1c4.w;
       pfVar4 = (float *)((int)&local_1c4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
@@ -203,10 +202,10 @@ void core_gabriela_cpp_FUN_004d4d80(void)
       (pfVar6 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] = pfVar4[(uint)bVar7 * -2 + 1];
       if ((float)0.001 < local_28) {
         local_20 = *(float *)(in_stack_00000004 + 0x1fbdc);
-        if (0x3F51EB85 < local_20) {
-          local_20 = 0x3F51EB85;
+        if (0.82f < local_20) {
+          local_20 = 0.82f;
         }
-        local_20 = (local_20 - _DAT_0065e7b0) / (1.0 - _DAT_0065e7b0);
+        local_20 = (local_20 - 0.2f) / (1.0 - 0.2f);
         if (local_20 < 0.0) {
           local_20 = 0.0;
         }
@@ -215,16 +214,16 @@ void core_gabriela_cpp_FUN_004d4d80(void)
         }
         local_44 = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                             ((CMotionController *)(in_stack_00000004 + 0x158),DAT_02d7b87c,local_20
+                             ((CMotionController *)(in_stack_00000004 + 0x158),INT_02d7b87c,local_20
                              );
         local_14 = local_44;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d7b87c,
-                   (float)local_44,local_28,DAT_02d7b858,
+                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),INT_02d7b87c,
+                   (float)local_44,local_28,INT_02d7b858,
                    core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
-        if ((0x3F51EB85 <= *(float *)(in_stack_00000004 + 0x1fbdc)) &&
-           (local_40 = ((*(float *)(in_stack_00000004 + 0x1fbdc) - 0x3F51EB85) /
-                       (1.0 - 0x3F51EB85)) * *(float *)(in_stack_00000004 + 0x1fc10),
+        if ((0.82f <= *(float *)(in_stack_00000004 + 0x1fbdc)) &&
+           (local_40 = ((*(float *)(in_stack_00000004 + 0x1fbdc) - 0.82f) /
+                       (1.0 - 0.82f)) * *(float *)(in_stack_00000004 + 0x1fc10),
            (float)0.001 < local_40)) {
           if ((DAT_02d7b804 & 1) == 0) {
             DAT_02d7b804 = DAT_02d7b804 | 1;
@@ -265,7 +264,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
           puVar3 = (uint *)((int)&local_1d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
           *(uint *)((int)&local_114 + (uint)bVar7 * -8 + 4) =
                *(uint *)((int)&local_1d4 + (uint)bVar7 * -8 + 4);
-          iVar1 = DAT_02d7b858;
+          iVar1 = INT_02d7b858;
           *puVar5 = *puVar3;
           puVar5[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
           core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
@@ -277,12 +276,12 @@ void core_gabriela_cpp_FUN_004d4d80(void)
         *(uint *)(in_stack_00000004 + 0x23a8) = 2;
         local_18 = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                             ((CMotionController *)(in_stack_00000004 + 0x158),DAT_02d7b884,
+                             ((CMotionController *)(in_stack_00000004 + 0x158),INT_02d7b884,
                               1.0 - *(float *)(in_stack_00000004 + 0x1fc0c) * fVar9);
         local_14 = local_18;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),DAT_02d7b884,
-                   (float)local_18,DAT_02d7b860);
+                  ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),INT_02d7b884,
+                   (float)local_18,INT_02d7b860);
         *(uint *)(in_stack_00000004 + 0x23a8) = 0;
       }
     }
@@ -304,7 +303,7 @@ void core_gabriela_cpp_FUN_004d4d80(void)
   }
   pcVar10 = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
   fVar9 = *(float *)(in_stack_00000004 + 0x1fbe0) * *(float *)(in_stack_00000004 + 0x1fc10);
-  iVar1 = DAT_02d7b848;
+  iVar1 = INT_02d7b848;
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_78,&local_c4);
   pCVar8 = &local_194;
   pCVar2 = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
@@ -320,15 +319,15 @@ void core_gabriela_cpp_FUN_004d4d80(void)
   local_4c = (float)core_gabriela_cpp_FUN_004d4c90();
   local_14 = (CDeformableModelInstance *)local_4c;
   local_14 = (CDeformableModelInstance *)core_gabriela_cpp_FUN_004d4ce0();
-  _DAT_02d7b844 =
+  FLOAT_02d7b844 =
        (1.0 - (*(float *)(in_stack_00000004 + 0x1fbe8) - local_4c) / ((float)local_14 - local_4c)) *
        (float)1.3;
-  if (1.0 < _DAT_02d7b844) {
-    _DAT_02d7b844 = 1.0;
+  if (1.0 < FLOAT_02d7b844) {
+    FLOAT_02d7b844 = 1.0;
   }
   pcVar10 = core_gabriela_cpp_FUN_004d2a30;
   fVar9 = *(float *)(in_stack_00000004 + 0x1fbe4);
-  iVar1 = DAT_02d7b84c;
+  iVar1 = INT_02d7b84c;
   core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
             (*(float *)(in_stack_00000004 + 0x1fbe8),&local_d4);
   pCVar8 = &local_154;

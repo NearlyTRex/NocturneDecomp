@@ -10,7 +10,7 @@
 ;   core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120 at 004f6165
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042a390
+;   core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDX                            ; 00544b8f
         ;   Label: LAB_00544b8f
     PUSH EAX                            ; 00544b90
-    CALL core_charactr.cpp_CCharacter_FUN_0042a390 ; 00544b91
-        ;   XREF to: 0042a390 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a390(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390 ; 00544b91
+        ;   XREF to: 0042a390 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 00544b96
     RET                                 ; 00544b99
         ;   Label: LAB_00544b99

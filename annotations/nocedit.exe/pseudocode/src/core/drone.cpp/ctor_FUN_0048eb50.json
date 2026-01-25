@@ -2,22 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 20,
-        "message": "'PTR_core_drone_cpp_FUN_0065d0c4' was not declared in this scope; did you mean 'core_drone_cpp_FUN_0048ebc0'?"
+        "category": "missing_member",
+        "column": 28,
+        "line": 34,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 25,
-        "message": "'_DAT_0065d0ac' was not declared in this scope; did you mean 'DAT_0065d0a8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 31,
-        "message": "'_PTR_core_bride_cpp_FUN_0065d0ad_3' was not declared in this scope; did you mean 'core_bride_cpp_FUN_00424aa0'?"
+        "category": "missing_member",
+        "column": 28,
+        "line": 35,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
         "category": "missing_member",
@@ -29,18 +23,6 @@
         "category": "missing_member",
         "column": 28,
         "line": 37,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 38,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 39,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       }
     ],
@@ -55,23 +37,21 @@
       {
         "category": "other",
         "column": 57,
-        "line": 22,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 48,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 33,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 60
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
   },
   "cross_references": [
     {
@@ -114,19 +94,19 @@
     },
     {
       "addr": "0065d0ac",
-      "name": "DAT_0065d0ac",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065d0ac",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "0065d0b0",
-      "name": "PTR_core_bride.cpp_FUN_0065d0ad+3",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065d0b0",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "0065d0c4",
-      "name": "PTR_core_drone.cpp_FUN_0065d0c4",
+      "name": "g_CDroneVTable",
       "type": "CDemonActor_vtable",
       "value": null
     }
@@ -185,15 +165,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

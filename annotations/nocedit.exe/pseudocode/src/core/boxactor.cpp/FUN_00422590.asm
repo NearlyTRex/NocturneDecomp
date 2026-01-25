@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boxactor.cpp_FUN_00422590()
+; __cdecl void core_boxactor.cpp_FUN_00422590(CBoxActor * this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x40]:1  local_40
 ; undefined1       Stack[-0x1c]:1  local_1c

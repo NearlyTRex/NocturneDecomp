@@ -1,22 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290()
+; __cdecl void core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle * this_ptr)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_005091d0 at 005091f7
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 at 005091f7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_0063571d
 ;   TerminatedCString s_CMansionPuzzleCircle_pro_00635730
-;   undefined4 DAT_00660d90
+;   float FLOAT_00660d90 = 2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_manpuz.cpp_FUN_0050aee0
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0
 ;
 ; *****************************************************************************
 
@@ -49,7 +51,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 0050a2c6
         ;   Label: LAB_0050a2c6
     FMUL float ptr [ESP + 0x18]         ; 0050a2c9
-    FDIV float ptr [0x00660d90]         ; 0050a2cd | DAT_00660d90
+    FDIV float ptr [0x00660d90]         ; 0050a2cd | FLOAT_00660d90
     FADD float ptr [EBX + 0x4]          ; 0050a2d3
     FST float ptr [EBX + 0x4]           ; 0050a2d6
     FLDZ                                ; 0050a2d9
@@ -71,8 +73,8 @@ section .text
     PUSH EDI                            ; 0050a2fc
     PUSH ECX                            ; 0050a2fd
     PUSH ESI                            ; 0050a2fe
-    CALL core_manpuz.cpp_FUN_0050aee0   ; 0050a2ff
-        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_0050aee0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0 ; 0050a2ff
+        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0(CMansionPuzzleCircle * this_ptr)
     MOV EDX,EAX                         ; 0050a304
     SHL EAX,0x2                         ; 0050a306
     SUB EAX,EDX                         ; 0050a309

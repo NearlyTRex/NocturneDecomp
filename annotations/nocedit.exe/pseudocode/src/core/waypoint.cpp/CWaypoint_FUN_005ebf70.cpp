@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
 
 {
@@ -41,7 +39,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
                             g_CWayPointClassInfo.name_hash), local_14 != (CDemonActor *)0x0)) {
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    pCVar2 = (*((this_ptr->base_trigger).base_actor.vtable)->getBoundingBox)
+    pCVar2 = (*((this_ptr->base_trigger).base_actor.vtable._ub)->getBoundingBox)
                        ((CDemonActor *)this_ptr,&local_94);
     CStack_48.y = (pCVar2->min).x + (pCVar2->max).x;
     CStack_48.z = (pCVar2->min).y + (pCVar2->max).y;
@@ -49,9 +47,9 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
     fStack_3c = (pCVar2->min).z + (pCVar2->max).z;
     fStack_58 = CStack_48.z * 0.5f;
     CStack_54.x = fStack_3c * 0.5f;
-    auStack_6c._4_4_ = (uint)ROUND(fStack_5c * _DAT_00665460);
-    iStack_64 = (int)ROUND(fStack_58 * _DAT_00665460);
-    iStack_60 = (int)ROUND(CStack_54.x * _DAT_00665460);
+    auStack_6c._4_4_ = (uint)ROUND(fStack_5c * 256.0f);
+    iStack_64 = (int)ROUND(fStack_58 * 256.0f);
+    iStack_60 = (int)ROUND(CStack_54.x * 256.0f);
     iVar1 = 0;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,
@@ -65,7 +63,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
           if ((this_ptr == unaff_EDI) || (this_ptr_00 == unaff_EDI)) {
             g_ActiveRenderColor = 0xfa;
           }
-          pCVar2 = (*((this_ptr_00->base_trigger).base_actor.vtable)->getBoundingBox)
+          pCVar2 = (*((this_ptr_00->base_trigger).base_actor.vtable._ub)->getBoundingBox)
                              ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff5c);
           fStack_24 = (pCVar2->min).x + (pCVar2->max).x;
           fStack_20 = (pCVar2->min).y + (pCVar2->max).y;
@@ -82,9 +80,9 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
             CStack_54.y = pCVar3->y;
             CStack_54.z = pCVar3->z;
           }
-          auStack_6c._0_4_ = (uint)ROUND(CStack_54.x * _DAT_00665460);
-          auStack_6c._4_4_ = (uint)ROUND(CStack_54.y * _DAT_00665460);
-          iStack_64 = (int)ROUND(CStack_54.z * _DAT_00665460);
+          auStack_6c._0_4_ = (uint)ROUND(CStack_54.x * 256.0f);
+          auStack_6c._4_4_ = (uint)ROUND(CStack_54.y * 256.0f);
+          iStack_64 = (int)ROUND(CStack_54.z * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
                      (CVector3i *)auStack_6c);

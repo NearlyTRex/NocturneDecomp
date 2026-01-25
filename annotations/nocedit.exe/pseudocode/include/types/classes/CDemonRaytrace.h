@@ -1,17 +1,14 @@
 #pragma once
 
+// Forward declarations
+struct CDemonCube;
+struct CDemonTriangle;
+struct SVoxelCubeMetadata;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CDemonCube.h"
-#include "types/classes/CDemonCubeTriangle.h"
-#include "types/classes/CDemonPart.h"
-#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/structs/SClipPlane.h"
-#include "types/structs/SSurfacePlane.h"
-#include "types/structs/SVoxelCubeMetadata.h"
-#include "types/structs/SVoxelGrid.h"
 
 // Structure: CDemonRaytrace
 // Ghidra size: 0x6c (108 bytes)

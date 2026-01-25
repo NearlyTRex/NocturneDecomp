@@ -123,7 +123,7 @@ LAB_00557a94:
     (pCVar2->base_actor).actor_name[0xb] = '\0';
     goto LAB_00557a94;
   }
-  this_ptr = (*((this_ptr_00->base_character).base_actor.vtable)->getPathMap)
+  this_ptr = (*((this_ptr_00->base_character).base_actor.vtable._ub)->getPathMap)
                        ((CDemonActor *)this_ptr_00);
   if (this_ptr == (CPathMap *)0x0) {
     this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();

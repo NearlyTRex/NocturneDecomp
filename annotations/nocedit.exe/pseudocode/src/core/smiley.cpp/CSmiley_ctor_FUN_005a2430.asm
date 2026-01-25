@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_smiley_dfm_0064f165
-;   undefined4 DAT_00662f6c
-;   undefined4 PTR_FUN_00662f6d+3
+;   float FLOAT_00662f6c = 50
+;   float FLOAT_00662f70 = 100
 ;   CDemonActor_vtable g_CSmileyVTable
 ;
 ; Called Functions:
@@ -42,9 +42,9 @@ section .text
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 005a246b
     MOV dword ptr [EBX + 0x2de0],0x3f666666 ; 005a2475
     MOV dword ptr [EBX + 0xbef0],0x0    ; 005a247f
-    FLD float ptr [0x00662f6c]          ; 005a2489 | DAT_00662f6c
+    FLD float ptr [0x00662f6c]          ; 005a2489 | FLOAT_00662f6c
     MOV dword ptr [EBX + 0xbef4],0x0    ; 005a248f
-    FLD float ptr [0x00662f70]          ; 005a2499 | PTR_FUN_00662f6d+3
+    FLD float ptr [0x00662f70]          ; 005a2499 | FLOAT_00662f70
     MOV dword ptr [EBX + 0xbef8],0x0    ; 005a249f
     ADD ESP,0x8                         ; 005a24a9
     MOV dword ptr [EBX + 0xbefc],0x1    ; 005a24ac

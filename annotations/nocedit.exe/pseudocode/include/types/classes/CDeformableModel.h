@@ -1,13 +1,12 @@
 #pragma once
 
+// Forward declarations
+struct CSkeleton;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CMotionList.h"
-#include "types/classes/CQuaternion4f.h"
-#include "types/classes/CSkeleton.h"
 #include "types/classes/CVector3f.h"
-#include "types/structs/SBone.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SLod.h"
 #include "types/structs/SPart.h"

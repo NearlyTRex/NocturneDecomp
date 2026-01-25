@@ -610,7 +610,6 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
             # Walk pointer chain to find ultimate pointed-to type
             # This handles X*, X**, X***, etc.
             pointed_dt = type_obj.getDataType()
-            original_pointed_dt = pointed_dt  # Keep for recursion
             while pointed_dt and isinstance(pointed_dt, Pointer):
                 pointed_dt = pointed_dt.getDataType()
             if pointed_dt:
@@ -619,11 +618,11 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
                     # Only struct/union pointers can be forward declared in C
                     if isinstance(pointed_dt, (Structure, Union)):
                         seen_pointer.add(pointed_name)
+                        # Don't recurse - forward declaration doesn't need transitive deps
                     else:
                         seen_direct.add(pointed_name)
-            # Recurse with the immediate pointed-to type (not the ultimate one)
-            if original_pointed_dt:
-                collect_type_dependencies_with_context(currentProgram, original_pointed_dt, seen_direct, seen_pointer, visited_ids, path[:], True)
+                        # Recurse for non-struct/union (typedefs, func ptrs) to get their deps
+                        collect_type_dependencies_with_context(currentProgram, pointed_dt, seen_direct, seen_pointer, visited_ids, path[:], True)
 
         # Arrays
         elif isinstance(type_obj, Array):
@@ -655,10 +654,11 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
                                 # Typedefs, function types, etc. must be defined first
                                 if isinstance(pointed_dt, (Structure, Union)):
                                     seen_pointer.add(pointed_name)
+                                    # Don't recurse - forward declaration doesn't need transitive deps
                                 else:
                                     seen_direct.add(pointed_name)
-                        # Still need to recurse with the original component type
-                        collect_type_dependencies_with_context(currentProgram, comp_dt.getDataType(), seen_direct, seen_pointer, visited_ids, path[:], True)
+                                    # Recurse for non-struct/union (typedefs, func ptrs) to get their deps
+                                    collect_type_dependencies_with_context(currentProgram, pointed_dt, seen_direct, seen_pointer, visited_ids, path[:], True)
                     else:
                         # Non-pointer field - needs direct include for sizing
                         if comp_name != type_name and should_track_as_dependency(comp_name):
@@ -689,11 +689,13 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
                                 if should_track_as_dependency(pointed_name):
                                     if isinstance(pointed_dt, (Structure, Union)):
                                         seen_pointer.add(pointed_name)
+                                        # Don't recurse - forward declaration doesn't need transitive deps
                                     else:
                                         seen_direct.add(pointed_name)
+                                        collect_type_dependencies_with_context(currentProgram, pointed_dt, seen_direct, seen_pointer, visited_ids, path[:], True)
                         else:
                             seen_direct.add(ret_name)
-                    collect_type_dependencies_with_context(currentProgram, ret_dt, seen_direct, seen_pointer, visited_ids, path[:], isinstance(ret_dt, Pointer))
+                            collect_type_dependencies_with_context(currentProgram, ret_dt, seen_direct, seen_pointer, visited_ids, path[:], False)
 
                 # Get parameter type dependencies
                 if hasattr(type_obj, 'getArguments') and type_obj.getArguments():
@@ -714,11 +716,13 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
                                         if should_track_as_dependency(pointed_name):
                                             if isinstance(pointed_dt, (Structure, Union)):
                                                 seen_pointer.add(pointed_name)
+                                                # Don't recurse - forward declaration doesn't need transitive deps
                                             else:
                                                 seen_direct.add(pointed_name)
+                                                collect_type_dependencies_with_context(currentProgram, pointed_dt, seen_direct, seen_pointer, visited_ids, path[:], True)
                                 else:
                                     seen_direct.add(param_name)
-                            collect_type_dependencies_with_context(currentProgram, param_dt, seen_direct, seen_pointer, visited_ids, path[:], isinstance(param_dt, Pointer))
+                                    collect_type_dependencies_with_context(currentProgram, param_dt, seen_direct, seen_pointer, visited_ids, path[:], False)
 
     finally:
         path.pop()

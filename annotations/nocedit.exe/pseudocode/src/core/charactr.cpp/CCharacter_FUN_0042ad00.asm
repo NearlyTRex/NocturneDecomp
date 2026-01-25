@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00617132 = 65535
-;   undefined4 DAT_0065b830
+;   float FLOAT_0065b830 = 3
 ;   SMRGLTextureBasic DAT_0066e784
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00823c54
@@ -107,7 +107,7 @@ section .text
     TEST EDI,EDI                        ; 0042adab
     JLE 0x0042adf4                      ; 0042adad
         ;   XREF to: 0042adf4 (CONDITIONAL_JUMP)  ; LAB_0042adf4
-    FLD float ptr [0x0065b830]          ; 0042adaf | DAT_0065b830
+    FLD float ptr [0x0065b830]          ; 0042adaf | FLOAT_0065b830
     FLD double ptr [0x00617132]         ; 0042adb5 | DOUBLE_00617132
     MOV EDX,EAX                         ; 0042adbb
     FLD float ptr [EDX + 0x2f30]        ; 0042adbd

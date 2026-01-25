@@ -12,7 +12,7 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_005ebe70(CWayPoint *thi
   CWayPoint *pCVar1;
   
   pCVar1 = (CWayPoint *)core_trigger_cpp_CTrigger_ctor_FUN_005df840(&this_ptr->base_trigger);
-  (pCVar1->base_trigger).base_actor.vtable = &g_CWayPointVTable;
+  (pCVar1->base_trigger).base_actor.vtable._ub = &g_CWayPointVTable;
   (pCVar1->base_trigger).field1_0x158[8] = '\0';
   (pCVar1->base_trigger).field1_0x158[9] = '\0';
   (pCVar1->base_trigger).field1_0x158[10] = '\0';

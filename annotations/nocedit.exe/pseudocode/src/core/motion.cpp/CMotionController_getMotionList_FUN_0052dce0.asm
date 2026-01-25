@@ -16,7 +16,7 @@
 ;   core_charactr.cpp_CCharacter_FUN_0042e670 at 0042e6ba
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0 at 0042d404
 ;   core_event.cpp_CEventList_FUN_004aacc0 at 004acfa6
-;   core_gabriela.cpp_FUN_004d2c40 at 004d2e47
+;   core_gabriela.cpp_CGabriella_setup_FUN_004d2c40 at 004d2e47
 ;   ... and 23 more
 ;
 ; *****************************************************************************

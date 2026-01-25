@@ -37,7 +37,7 @@ uint core_chain_cpp_FUN_004308f0(void)
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_90);
+    this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&local_90);
     iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     *(int *)(in_stack_00000004[4].actor_name + 0x14) = iVar3;
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);

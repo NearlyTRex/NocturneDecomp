@@ -76,7 +76,7 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
                                                 ) + 0x154) + 0x7c))();
           if (iVar6 == 3) {
             pCVar1 = *(CDemonActor **)(in_stack_00000004[1].base_actor.create_event + 0x2c);
-            (*pCVar1->vtable->getBoundingBox)(pCVar1,(CBoundingBox3D *)(auStack_a0 + 4));
+            (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,(CBoundingBox3D *)(auStack_a0 + 4));
             uStack_30 = 0x3f000000;
             core_bodypart_cpp_FUN_0041b540();
             core_bodypart_cpp_FUN_0041b4e0();
@@ -123,11 +123,11 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
       while( true ) {
         if ((int)g_CDemonSetPtr->actor_list_ptr <= (int)local_24) break;
         pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_20);
-        pCVar5 = (*pCVar1->vtable->getCarrier)(pCVar1);
+        pCVar5 = (*((pCVar1->vtable)._ub)->getCarrier)(pCVar1);
         if (pCVar5 == (CDemonActor *)0x0) {
-          iVar6 = (*pCVar1->vtable->canPickup)(pCVar1,&in_stack_00000004->base_actor);
+          iVar6 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,&in_stack_00000004->base_actor);
           if (iVar6 == 3) {
-            pCVar7 = (*pCVar1->vtable->getBoundingBox)(pCVar1,(CBoundingBox3D *)auStack_a0);
+            pCVar7 = (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,(CBoundingBox3D *)auStack_a0);
             CStack_58.z = (pCVar7->max).x - (pCVar7->min).x;
             fStack_4c = (pCVar7->max).y - (pCVar7->min).y;
             fStack_48 = (pCVar7->max).z - (pCVar7->min).z;

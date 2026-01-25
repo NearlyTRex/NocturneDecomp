@@ -19,13 +19,13 @@ undefined FUN_0051f190();
 // Address: 0051f1c0
 undefined FUN_0051f1c0();
 
-// Original: core_mimic.cpp_FUN_0051f1d0
+// Original: core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
 // Address: 0051f1d0
-CMimic * FUN_0051f1d0(CMimic * this_ptr);
+CMimic * CMimic::ctor(CMimic * this_ptr);
 
-// Original: core_mimic.cpp_FUN_0051f2c0
+// Original: core_mimic.cpp_CMimic_dtor_FUN_0051f2c0
 // Address: 0051f2c0
-CMimic * FUN_0051f2c0(CMimic * this_ptr, uint d1);
+CMimic * CMimic::dtor(CMimic * this_ptr, uint d1);
 
 // Original: core_mimic.cpp_CMimic_setup_FUN_0051f3e0
 // Address: 0051f3e0

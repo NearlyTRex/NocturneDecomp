@@ -14,7 +14,7 @@
 ;   CDemonActor_vtable g_CBassPlayerVTable
 ;
 ; Called Functions:
-;   core_npc.cpp_FUN_005447e0
+;   core_npc.cpp_CNPC_ctor_FUN_005447e0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
         ;   Label: core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060
     MOV EDX,dword ptr [ESP + 0x8]       ; 005da061
     PUSH EDX                            ; 005da065
-    CALL core_npc.cpp_FUN_005447e0      ; 005da066
-        ;   XREF to: 005447e0 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_005447e0(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_ctor_FUN_005447e0 ; 005da066
+        ;   XREF to: 005447e0 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_CNPC_ctor_FUN_005447e0(CNPC * this_ptr)
     ADD ESP,0x4                         ; 005da06b
     PUSH 0x654baf                       ; 005da06e | = "bassplayer.dfm"
     MOV EBX,EAX                         ; 005da073

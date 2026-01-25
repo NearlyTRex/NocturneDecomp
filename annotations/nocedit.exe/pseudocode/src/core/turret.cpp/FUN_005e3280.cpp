@@ -28,11 +28,11 @@ uint core_turret_cpp_FUN_005e3280(void)
   local_24.y = in_stack_00000008[1] - (in_stack_00000004->location).position.y;
   local_24.z = in_stack_00000008[2] - (in_stack_00000004->location).position.z;
   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,&local_24);
-  if (local_30.x < 0xBF060A92) {
-    local_30.x = 0xBF060A92;
+  if (local_30.x < -0.5235988f) {
+    local_30.x = -0.5235988f;
   }
-  if (0x3F9C61AA < local_30.x) {
-    local_30.x = 0x3F9C61AA;
+  if (1.22173f < local_30.x) {
+    local_30.x = 1.22173f;
   }
   local_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                        (local_30.y - (in_stack_00000004->orient).bank);

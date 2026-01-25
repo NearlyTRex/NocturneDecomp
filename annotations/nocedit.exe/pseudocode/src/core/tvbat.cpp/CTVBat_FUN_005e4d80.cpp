@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
 
 {
@@ -28,7 +26,7 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->getBoundingBox)
                           ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffff88);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar3 != 0) {
@@ -52,14 +50,14 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
         fVar5 = (float10)fcos(fVar5);
         fVar1 = (float)(fVar6 * (float10)this_ptr->max_distance);
         fVar2 = (float)(fVar5 * (float10)this_ptr->max_distance);
-        CStack_40.x = (int)ROUND(fVar1 * _DAT_00664cb0);
-        CStack_40.y = (int)ROUND(-this_ptr->max_height * _DAT_00664cb0);
-        CStack_40.z = (int)ROUND(fVar2 * _DAT_00664cb0);
+        CStack_40.x = (int)ROUND(fVar1 * 256.0f);
+        CStack_40.y = (int)ROUND(-this_ptr->max_height * 256.0f);
+        CStack_40.z = (int)ROUND(fVar2 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_40);
-        CStack_28.x = (int)ROUND(fVar1 * _DAT_00664cb0);
-        CStack_28.y = (int)ROUND(this_ptr->max_height * _DAT_00664cb0);
-        CStack_28.z = (int)ROUND(fVar2 * _DAT_00664cb0);
+        CStack_28.x = (int)ROUND(fVar1 * 256.0f);
+        CStack_28.y = (int)ROUND(this_ptr->max_height * 256.0f);
+        CStack_28.z = (int)ROUND(fVar2 * 256.0f);
         iVar4 = iVar4 + 0xc;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_28);
@@ -69,14 +67,14 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
         fVar5 = (float10)fcos(fVar5);
         fVar1 = (float)(fVar6 * (float10)this_ptr->max_distance);
         fVar2 = (float)(fVar5 * (float10)this_ptr->max_distance);
-        CStack_4c.x = (int)ROUND(fVar1 * _DAT_00664cb0);
-        CStack_4c.y = (int)ROUND(-this_ptr->max_height * _DAT_00664cb0);
-        CStack_4c.z = (int)ROUND(fVar2 * _DAT_00664cb0);
+        CStack_4c.x = (int)ROUND(fVar1 * 256.0f);
+        CStack_4c.y = (int)ROUND(-this_ptr->max_height * 256.0f);
+        CStack_4c.z = (int)ROUND(fVar2 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_4c);
-        CStack_34.x = (int)ROUND(fVar1 * _DAT_00664cb0);
-        CStack_34.y = (int)ROUND(this_ptr->max_height * _DAT_00664cb0);
-        CStack_34.z = (int)ROUND(fVar2 * _DAT_00664cb0);
+        CStack_34.x = (int)ROUND(fVar1 * 256.0f);
+        CStack_34.y = (int)ROUND(this_ptr->max_height * 256.0f);
+        CStack_34.z = (int)ROUND(fVar2 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_34);
         engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(g_CDemonRendererPtr2,0,1);

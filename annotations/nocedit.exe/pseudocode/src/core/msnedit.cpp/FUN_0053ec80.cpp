@@ -35,7 +35,7 @@ void core_msnedit_cpp_FUN_0053ec80(void)
   for (this_ptr = in_stack_00000004->first_actor; this_ptr != (CDemonActor *)0x0;
       this_ptr = this_ptr->next_actor) {
     core_actor_cpp_FUN_0040e130();
-    (*this_ptr->vtable->getPropertyList)(this_ptr,(CActorPropertyList *)&stack0xffffd550);
+    (*((this_ptr->vtable)._ub)->getPropertyList)(this_ptr,(CActorPropertyList *)&stack0xffffd550);
     iVar2 = 0;
     if (0 < (int)in_stack_ffffd55c) {
       piVar1 = (int *)&stack0xffffd560;

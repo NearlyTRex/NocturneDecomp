@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_enemy.cpp_FUN_004a9a50()
+; __cdecl int core_enemy.cpp_FUN_004a9a50(CEnemy * this_ptr)
 ;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x2c]:1  local_2c
 ;

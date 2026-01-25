@@ -3,56 +3,50 @@
     "errors": [
       {
         "category": "other",
-        "column": 6,
-        "line": 12,
-        "message": "ambiguating new declaration of 'void core_boxactor_cpp_FUN_00422390()'"
-      },
-      {
-        "category": "other",
         "column": 23,
-        "line": 33,
+        "line": 30,
         "message": "request for member '_8_4_' in 'local_24', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 34,
+        "line": 31,
         "message": "request for member '_0_4_' in 'local_24', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 34,
+        "line": 31,
         "message": "request for member '_16_4_' in 'auStack_58', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 34,
+        "line": 31,
         "message": "request for member '_4_4_' in 'local_24', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 43,
+        "line": 41,
         "message": "request for member '_0_4_' in 'local_24', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 44,
+        "line": 42,
         "message": "request for member '_4_4_' in 'local_24', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
         "category": "other",
-        "column": 74,
-        "line": 49,
+        "column": 76,
+        "line": 47,
         "message": "request for member '_0_4_' in 'local_24', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       },
       {
         "category": "other",
-        "column": 74,
-        "line": 50,
+        "column": 76,
+        "line": 48,
         "message": "request for member '_4_4_' in 'local_24', which is of non-class type 'byte [20]' {aka 'unsigned char [20]'}"
       }
     ],
@@ -68,24 +62,23 @@
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 341,
+    "complexity_score": 205,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 46,
-    "suspect_count": 28,
+    "pseudocode_lines": 45,
+    "suspect_count": 15,
     "suspect_types": [
       "stack_param",
-      "unknown_field",
-      "unnamed_param"
+      "unknown_field"
     ],
-    "total_lines": 162
+    "total_lines": 161
   },
   "cross_references": [
     {
       "addr": "004d2ea0",
       "from_addr": "004d35e4",
-      "name": "core_gabriela.cpp_FUN_004d2ea0",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004d2ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -103,10 +96,10 @@
         "004224a5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_boxactor.cpp_FUN_00422390",
-    "signature": "undefined core_boxactor.cpp_FUN_00422390()"
+    "signature": "void core_boxactor.cpp_FUN_00422390(CBoxActor * this_ptr)"
   },
   "function_calls": [
     {
@@ -182,10 +175,10 @@
     "pcode_op_count": 679
   },
   "stack_frame": {
-    "frame_size": 100,
+    "frame_size": 104,
     "local_size": 100,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -236,6 +229,13 @@
         "offset": -28,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
       }
     ]
   },
@@ -258,199 +258,108 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_3",
-      "text": "param_2, uint param_3) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_0000000c",
       "text": "CVector3f *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CVector3f *)(auStack_58 + 0x10),in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000004,(CVector3f *)(auStack_58 + 0x10),in_stack_00000008);",
+      "text": "(&this_ptr->base_actor,(CVector3f *)(auStack_58 + 0x10),in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CVector3f *)local_24,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 22,
       "match": "in_stack_0000000c",
-      "text": "(in_stack_00000004,(CVector3f *)local_24,in_stack_0000000c);",
+      "text": "(&this_ptr->base_actor,(CVector3f *)local_24,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 26,
+      "line": 23,
       "match": "._8_4_",
       "text": "if ((float)local_24._8_4_ * local_40.x +",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 27,
+      "line": 24,
       "match": "._0_4_",
       "text": "(float)local_24._0_4_ * (float)auStack_58._16_4_ + (float)local_24._4_4_ * local_44 < 0.0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 27,
+      "line": 24,
       "match": "._16_4_",
       "text": "(float)local_24._0_4_ * (float)auStack_58._16_4_ + (float)local_24._4_4_ * local_44 < 0.0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 27,
+      "line": 24,
       "match": "._4_4_",
       "text": "(float)local_24._0_4_ * (float)auStack_58._16_4_ + (float)local_24._4_4_ * local_44 < 0.0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&local_60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&local_60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 33,
       "match": "in_stack_0000000c",
       "text": "fStack_28 = in_stack_0000000c->x * fStack_10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_0000000c",
       "text": "local_24._0_4_ = in_stack_0000000c->y * fStack_10;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 34,
       "match": "._0_4_",
       "text": "local_24._0_4_ = in_stack_0000000c->y * fStack_10;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_0000000c",
       "text": "local_24._4_4_ = in_stack_0000000c->z * fStack_10;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 35,
       "match": "._4_4_",
       "text": "local_24._4_4_ = in_stack_0000000c->z * fStack_10;",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "text": "fVar1 = (in_stack_00000004->location).position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.x =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unknown/mangled field access",
       "line": 40,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.x + fStack_28;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "text": "fVar2 = (in_stack_00000004->location).position.z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.y = fVar1 + (float)local_24._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 42,
       "match": "._0_4_",
-      "text": "(in_stack_00000004->location).position.y = fVar1 + (float)local_24._0_4_;",
+      "text": "(this_ptr->base_actor).location.position.y = fVar2 + (float)local_24._0_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004->location).position.z = fVar2 + (float)local_24._4_4_;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 43,
+      "line": 41,
       "match": "._4_4_",
-      "text": "(in_stack_00000004->location).position.z = fVar2 + (float)local_24._4_4_;",
+      "text": "(this_ptr->base_actor).location.position.z = fVar3 + (float)local_24._4_4_;",
       "type": "unknown_field"
     }
   ]

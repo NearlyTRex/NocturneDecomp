@@ -22,8 +22,8 @@
 ;   double DOUBLE_00653cc4 = 30
 ;   double DOUBLE_00653ccc = 10
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   undefined4 DAT_00663770
-;   undefined4 DAT_00663774
+;   float FLOAT_00663770 = -1.047198
+;   float FLOAT_00663774 = 1.221730
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
@@ -124,24 +124,24 @@ section .text
     MOV dword ptr [EAX + 0x4],0x0       ; 005c3a4f
     FSTP ST1                            ; 005c3a56
     FST float ptr [EAX]                 ; 005c3a58
-    FCOMP float ptr [0x00663770]        ; 005c3a5a | DAT_00663770
+    FCOMP float ptr [0x00663770]        ; 005c3a5a | FLOAT_00663770
     FNSTSW AX                           ; 005c3a60
     SAHF                                ; 005c3a62
     JNC 0x005c3a74                      ; 005c3a63
         ;   XREF to: 005c3a74 (CONDITIONAL_JUMP)  ; LAB_005c3a74
     MOV EAX,dword ptr [ESP + 0x194]     ; 005c3a65
-    MOV EDX,dword ptr [0x00663770]      ; 005c3a6c | DAT_00663770
+    MOV EDX,dword ptr [0x00663770]      ; 005c3a6c | FLOAT_00663770
     MOV dword ptr [EAX],EDX             ; 005c3a72
     MOV EAX,dword ptr [ESP + 0x194]     ; 005c3a74
         ;   Label: LAB_005c3a74
     FLD float ptr [EAX]                 ; 005c3a7b
-    FCOMP float ptr [0x00663774]        ; 005c3a7d | DAT_00663774
+    FCOMP float ptr [0x00663774]        ; 005c3a7d | FLOAT_00663774
     FNSTSW AX                           ; 005c3a83
     SAHF                                ; 005c3a85
     JBE 0x005c3a97                      ; 005c3a86
         ;   XREF to: 005c3a97 (CONDITIONAL_JUMP)  ; LAB_005c3a97
     MOV EAX,dword ptr [ESP + 0x194]     ; 005c3a88
-    MOV EDX,dword ptr [0x00663774]      ; 005c3a8f | DAT_00663774
+    MOV EDX,dword ptr [0x00663774]      ; 005c3a8f | FLOAT_00663774
     MOV dword ptr [EAX],EDX             ; 005c3a95
     MOV EAX,dword ptr [ESP + 0x194]     ; 005c3a97
         ;   Label: LAB_005c3a97

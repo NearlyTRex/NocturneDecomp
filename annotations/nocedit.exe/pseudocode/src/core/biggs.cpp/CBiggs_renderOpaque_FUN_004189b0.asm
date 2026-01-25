@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x20]:1  local_20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065ac10
+;   float FLOAT_0065ac10 = 4
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02f43978
@@ -91,7 +91,7 @@ section .text
     CALL core_morph.cpp_FUN_0052b640    ; 00418a43
         ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052b640()
     FLD float ptr [EBX + 0xc03c]        ; 00418a48
-    FDIV float ptr [0x0065ac10]         ; 00418a4e | DAT_0065ac10
+    FDIV float ptr [0x0065ac10]         ; 00418a4e | FLOAT_0065ac10
     ADD ESP,0x14                        ; 00418a54
     SUB ESP,0x4                         ; 00418a57
     FSTP float ptr [ESP]                ; 00418a5a

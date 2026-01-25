@@ -29,7 +29,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042cfe0(CCharacter *this_ptr)
       pCVar1 = &local_10;
     }
     this_ptr_00 = this_ptr->carry_hands[in_stack_00000008].carry_actor;
-    (*this_ptr_00->vtable->onDropped)(this_ptr_00,pCVar1);
+    (*((this_ptr_00->vtable)._ub)->onDropped)(this_ptr_00,pCVar1);
     this_ptr->carry_hands[in_stack_00000008].carry_actor = (CDemonActor *)0x0;
   }
   return;

@@ -308,8 +308,8 @@ LAB_005be795:
         core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                   ((CVector3f *)local_148,&local_ac);
         local_24 = SQRT(local_128.x * local_128.x + local_130 * local_130 + local_12c * local_12c);
-        if (local_24 < _DAT_00663778) {
-          dVar14 = crt_math_c_acos_FUN_00600162((double)(local_24 / _DAT_00663778));
+        if (local_24 < 2.7f) {
+          dVar14 = crt_math_c_acos_FUN_00600162((double)(local_24 / 2.7f));
           local_20 = (float)dVar14;
           core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_20,&CStack_2d4);
           CStack_2a4.w = CStack_2d4.w;
@@ -363,7 +363,7 @@ LAB_005be795:
           local_1ef8 = (CDeformableModel_MotionBlendWeightFunc *)0x3f800000;
         }
         fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event + 0x48) /
-                                 (float10)_DAT_00663778,(float10)1);
+                                 (float10)2.7f,(float10)1);
         local_38 = (float)fVar13;
         core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_38,(CQuaternion4f *)local_3f0);
         local_330.w = (float)local_3f0._0_4_;
@@ -401,7 +401,7 @@ LAB_005be795:
               local_1f0c = (CDeformableModel_MotionBlendWeightFunc *)0x3f800000;
             }
             fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event +
-                                                        0x48) / (float10)_DAT_00663778,(float10)1);
+                                                        0x48) / (float10)2.7f,(float10)1);
             local_34 = (float)fVar13;
             core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_34,(CQuaternion4f *)local_260);
             local_1f0.w = (float)local_260._0_4_;
@@ -441,7 +441,7 @@ LAB_005be795:
             fVar13 = crt_math_c_atan2_FUN_006013b1
                                ((float10)local_16c.y -
                                 (float10)*(float *)(in_stack_00000004[0x17a].create_event + 0x34),
-                                (float10)_DAT_00663778);
+                                (float10)2.7f);
             core_xform_cpp_quaternionFromAngleX_FUN_005f79b0((float)fVar13,&local_344);
             pCVar15 = local_1c;
             local_3f0._12_4_ = local_344.w;
@@ -457,7 +457,7 @@ LAB_005be795:
                       (local_1c,(CQuaternion4f *)(local_3f0 + 0xc),(float)local_1ef4,
                        (int)DAT_03f6bad8,core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
             fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event +
-                                                        0x48) / (float10)_DAT_00663778,(float10)1);
+                                                        0x48) / (float10)2.7f,(float10)1);
             local_30 = (float)fVar13;
             core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_30,&local_204);
             pCVar15 = local_1c;
@@ -499,7 +499,7 @@ LAB_005be795:
         }
         local_20 = local_20 - (float)_DAT_03f6bb64;
         fVar13 = crt_math_c_atan2_FUN_006013b1
-                           ((float10)local_c4.y - (float10)local_20,(float10)_DAT_00663778);
+                           ((float10)local_c4.y - (float10)local_20,(float10)2.7f);
         core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
                   ((float)fVar13,(CQuaternion4f *)(local_390 + 0xc));
         local_294.w = (float)local_390._12_4_;
@@ -516,7 +516,7 @@ LAB_005be795:
                   (local_1c,&local_294,(float)local_1ee0,(int)DAT_03f6bad8,
                    core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
         fVar13 = (float10)fpatan((float10)*(float *)(in_stack_00000004[0x17a].create_event + 0x48) /
-                                 (float10)_DAT_00663778,(float10)1);
+                                 (float10)2.7f,(float10)1);
         local_34 = (float)fVar13;
         core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
                   (local_34,(CQuaternion4f *)(local_300 + 0xc));

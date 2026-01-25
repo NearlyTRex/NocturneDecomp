@@ -13,7 +13,7 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
 {
   char cVar1;
   CEnemy *pCVar2;
-  uint uVar3;
+  float fVar3;
   uint uVar4;
   CArmour *pCVar5;
   char *pcVar6;
@@ -21,11 +21,11 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
   
   pCVar5 = (CArmour *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   pcVar6 = "none";
-  (pCVar5->base_enemy).base_character.base_actor.vtable = &g_CArmourVTable;
+  (pCVar5->base_enemy).base_character.base_actor.vtable._ub = &g_CArmourVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar5->base_enemy).base_character.model,"armour.dfm");
-  uVar4 = _PTR_FUN_00659d29_3;
-  uVar3 = _DAT_00659d28;
+  uVar4 = _DAT_00659d2c;
+  fVar3 = 50.0f;
   pCVar2 = &pCVar5->base_enemy;
   (pCVar2->base_character).cloth_data[0x344] = -0x66;
   (pCVar2->base_character).cloth_data[0x345] = -0x67;
@@ -37,7 +37,7 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
   (pCVar2->base_character).cloth_data[0x34a] = '\0';
   (pCVar2->base_character).cloth_data[0x34b] = '@';
   pcVar7 = pCVar5->field1_0xbeb4 + 8;
-  *(uint *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = uVar3;
+  *(float *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = fVar3;
   *(uint *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = uVar4;
   do {
     cVar1 = *pcVar6;

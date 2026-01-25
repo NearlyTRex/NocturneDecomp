@@ -4,6 +4,18 @@
       {
         "category": "missing_member",
         "column": 11,
+        "line": 20,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 21,
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
         "line": 22,
         "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
       },
@@ -87,32 +99,14 @@
       },
       {
         "category": "missing_member",
-        "column": 11,
-        "line": 36,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 37,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 42,
-        "message": "'_DAT_0066466c' was not declared in this scope; did you mean 'DAT_00664b6c'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 21,
-        "line": 55,
+        "column": 22,
+        "line": 53,
         "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field9_0x305'"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 56,
+        "line": 54,
         "message": "cast from 'CWeapon*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -127,24 +121,23 @@
       {
         "category": "other",
         "column": 29,
-        "line": 21,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 76,
+    "complexity_score": 60,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 46,
-    "suspect_count": 2,
+    "pseudocode_lines": 45,
+    "suspect_count": 1,
     "suspect_types": [
-      "suspect_float",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
-    "total_lines": 75
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -193,9 +186,9 @@
     },
     {
       "addr": "0066466c",
-      "name": "DAT_0066466c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0066466c",
+      "type": "float",
+      "value": "8"
     },
     {
       "addr": "00664674",
@@ -243,15 +236,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 32,
+      "line": 30,
       "match": "1.4013e-45",
       "text": "pCVar3->fire_cooldown = 1.4013e-45;",
       "type": "suspect_float"

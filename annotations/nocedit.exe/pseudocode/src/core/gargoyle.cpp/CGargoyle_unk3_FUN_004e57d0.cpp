@@ -39,7 +39,7 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
       iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                         (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x60));
       if (iVar4 == 0) {
-        uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+        uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                           (&in_stack_00000004->base_actor,"gargoyle-hurt?.wav");
         *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x60) = uVar3;
         local_1c.y = in_stack_00000008;
@@ -57,7 +57,7 @@ void core_gargoyle_cpp_CGargoyle_unk3_FUN_004e57d0(void)
       if (pSVar2->state_index != 8) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr->motion_controller,8,1);
-        (*((in_stack_00000004->base_actor).vtable)->playSound)
+        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                   (&in_stack_00000004->base_actor,"gargoyle-shatter.wav");
         local_1c.y = 1.4013e-45;
         local_1c.x = -1.0;

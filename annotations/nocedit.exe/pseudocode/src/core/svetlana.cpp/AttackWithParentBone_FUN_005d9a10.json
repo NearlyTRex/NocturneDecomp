@@ -9,15 +9,15 @@
       },
       {
         "category": "missing_member",
-        "column": 52,
+        "column": 50,
         "line": 76,
         "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
       },
       {
         "category": "other",
-        "column": 83,
+        "column": 14,
         "line": 87,
-        "message": "invalid cast from type 'CVector3f*' to type 'float'"
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -56,17 +56,17 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 221,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 82,
     "suspect_count": 13,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 233
+    "total_lines": 234
   },
   "cross_references": [
     {
@@ -332,7 +332,7 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == pCVar5->bone_list[0].parent_index) break;",
+      "text": "if (in_stack_00000008 == pCVar6->bone_list[0].parent_index) break;",
       "type": "stack_param"
     },
     {
@@ -353,7 +353,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_24,pCVar2);",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_24,pCVar3);",
       "type": "stack_param"
     },
     {
@@ -367,28 +367,28 @@
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_3c,pCVar2);",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_3c,pCVar3);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 66,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->playSound)(in_stack_00000004,sound_name);",
+      "text": "(*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,sound_name);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 66,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->playSound)(in_stack_00000004,sound_name);",
+      "text": "(*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,sound_name);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_00000004",
-      "text": "if (this_ptr != in_stack_00000004) break;",
+      "text": "if (pCVar1 != in_stack_00000004) break;",
       "type": "stack_param"
     }
   ]

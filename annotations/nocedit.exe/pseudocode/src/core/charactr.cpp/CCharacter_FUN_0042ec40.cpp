@@ -30,7 +30,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)
       iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);
       if (-1 < iVar3) {
         fVar6 = 1.0;
-        pCVar1 = (this_ptr->base_actor).vtable;
+        pCVar1 = (this_ptr->base_actor).vtable._ub;
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr_00,&local_3c,iVar3);
         (*pCVar1->processFootstepAtOffset)(&this_ptr->base_actor,pCVar4,fVar6);
@@ -45,7 +45,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)
       iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);
       if (-1 < iVar3) {
         fVar6 = 1.0;
-        pCVar1 = (this_ptr->base_actor).vtable;
+        pCVar1 = (this_ptr->base_actor).vtable._ub;
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr_00,&local_18,iVar3);
         (*pCVar1->processFootstepAtOffset)(&this_ptr->base_actor,pCVar4,fVar6);
@@ -62,7 +62,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)
         iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);
         if (-1 < iVar3) {
           fVar6 = 1.7;
-          pCVar1 = (this_ptr->base_actor).vtable;
+          pCVar1 = (this_ptr->base_actor).vtable._ub;
           pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                              (this_ptr_00,&local_24,iVar3);
           (*pCVar1->processFootstepAtOffset)(&this_ptr->base_actor,pCVar4,fVar6);
@@ -81,7 +81,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ec40(CCharacter *this_ptr)
         iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar2,pcVar5);
         if (-1 < iVar3) {
           fVar6 = 1.7;
-          pCVar1 = (this_ptr->base_actor).vtable;
+          pCVar1 = (this_ptr->base_actor).vtable._ub;
           pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                              (this_ptr_00,&local_30,iVar3);
           (*pCVar1->processFootstepAtOffset)(&this_ptr->base_actor,pCVar4,fVar6);

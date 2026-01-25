@@ -38,7 +38,7 @@ void core_flamegun_cpp_FUN_004cb9b0(void)
     core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
               (g_CSoundPtr,*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));
     if (extraout_EAX == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+      uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                         (&in_stack_00000004->base_actor,"fl-throw.wav");
       *(uint *)(in_stack_00000004[1].base_actor.actor_name + 4) = uVar3;
     }

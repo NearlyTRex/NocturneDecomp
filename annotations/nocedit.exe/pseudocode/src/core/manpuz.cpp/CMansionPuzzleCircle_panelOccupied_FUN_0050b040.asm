@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040()
+; __cdecl int core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCircle * this_ptr)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_0050a610 at 0050a891
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610 at 0050a891
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_006358ba
@@ -15,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_manpuz.cpp_FUN_0050aef0
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aef0
 ;
 ; *****************************************************************************
 
@@ -60,8 +62,8 @@ section .text
     PUSH EBX                            ; 0050b099
         ;   Label: LAB_0050b099
     PUSH ESI                            ; 0050b09a
-    CALL core_manpuz.cpp_FUN_0050aef0   ; 0050b09b
-        ;   XREF to: 0050aef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_0050aef0()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aef0 ; 0050b09b
+        ;   XREF to: 0050aef0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aef0(CMansionPuzzleCircle * this_ptr)
     MOV EDX,EAX                         ; 0050b0a0
     SHL EAX,0x2                         ; 0050b0a2
     SUB EAX,EDX                         ; 0050b0a5

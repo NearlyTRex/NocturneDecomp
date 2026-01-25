@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,float delta_time)
 
 {
@@ -50,7 +48,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
       iVar9 = 0;
-      (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&local_a0);
+      (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)(&this_ptr->base_actor,&local_a0);
       if (0 < g_HeroCount) {
         iVar10 = 0;
         do {
@@ -93,7 +91,7 @@ LAB_005dfb52:
   case 2:
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
-      pCVar6 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+      pCVar6 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                          (&this_ptr->base_actor,(CBoundingBox3D *)local_b8);
       fStack_80 = (pCVar6->min).x + (pCVar6->max).x;
       fStack_7c = (pCVar6->min).y + (pCVar6->max).y;
@@ -108,9 +106,9 @@ LAB_005dfb52:
         aCStack_50[0].y = pCVar7->y;
         aCStack_50[0].z = pCVar7->z;
       }
-      CStack_74.x = (int)ROUND(aCStack_50[0].x * _DAT_00664a00);
-      CStack_74.y = (int)ROUND(aCStack_50[0].y * _DAT_00664a00);
-      CStack_74.z = (int)ROUND(aCStack_50[0].z * _DAT_00664a00);
+      CStack_74.x = (int)ROUND(aCStack_50[0].x * 256.0f);
+      CStack_74.y = (int)ROUND(aCStack_50[0].y * 256.0f);
+      CStack_74.z = (int)ROUND(aCStack_50[0].z * 256.0f);
       iVar9 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                         (g_CDemonSetPtr,&CStack_74,(CVector3i *)0x0);
       local_b8[0] = (double)iVar9;

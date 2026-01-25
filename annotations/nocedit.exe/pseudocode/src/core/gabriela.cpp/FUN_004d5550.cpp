@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d5550(uint param_1, uint
    param_2) */
 
@@ -53,14 +52,14 @@ void core_gabriela_cpp_FUN_004d5550(void)
             (&local_34c,&(in_stack_00000004->base_actor).location.position,
              (CVector3f *)&(in_stack_00000004->base_actor).orient);
   local_14 = in_stack_00000004[2].cloth_data + 0x5058;
-  if (*(float *)(in_stack_00000004[2].cloth_data + 0x54fc) < _DAT_0065e7b4) {
+  if (*(float *)(in_stack_00000004[2].cloth_data + 0x54fc) < 0.64f) {
     (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              (&local_22c,(CVector3f *)&DAT_02d7b820,(CVector3f *)&DAT_02d7b82c);
+              (&local_22c,(CVector3f *)&FLOAT_02d7b820,(CVector3f *)&FLOAT_02d7b82c);
     pCVar6 = &local_34c;
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_22c,
-               (in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_02d7b870,
+               (in_stack_00000004->model).bone_transform.bone_world_matrices + INT_02d7b870,
                &local_1cc);
     pCVar5 = &local_1cc;
     pCVar4 = &local_1fc;
@@ -75,8 +74,8 @@ void core_gabriela_cpp_FUN_004d5550(void)
   else {
     (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              (&local_13c,(CVector3f *)&DAT_02d7b814,&g_ZeroVector);
-    matrix_b = (in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_02d7b88c;
+              (&local_13c,(CVector3f *)&FLOAT_02d7b814,&g_ZeroVector);
+    matrix_b = (in_stack_00000004->model).bone_transform.bone_world_matrices + INT_02d7b88c;
     pCVar6 = &local_13c;
     core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_16c);
     pCVar5 = &local_28c;

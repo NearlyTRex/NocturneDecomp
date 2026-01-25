@@ -19,93 +19,93 @@ undefined StartOfAnotherClass();
 // Address: 00421700
 CBoxActor * CBoxActor::ctor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00421830
+// Original: core_boxactor.cpp_CBoxActor_setup_FUN_00421830
 // Address: 00421830
-undefined FUN_00421830();
+void CBoxActor::setup(CBoxActor * this_ptr);
 
 // Original: core_boxactor.cpp_FUN_004218d0
 // Address: 004218d0
-undefined FUN_004218d0();
+void FUN_004218d0(CBoxActor * this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_process_FUN_004219e0
 // Address: 004219e0
 void CBoxActor::process(CBoxActor * this_ptr, float delta_time);
 
-// Original: core_boxactor.cpp_FUN_00421e00
+// Original: core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00
 // Address: 00421e00
-undefined FUN_00421e00();
+int CBoxActor::renderOpaque(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00421ef0
+// Original: core_boxactor.cpp_CBoxActor_FUN_00421ef0
 // Address: 00421ef0
-undefined FUN_00421ef0();
+int CBoxActor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00421fe0
+// Original: core_boxactor.cpp_CBoxActor_FUN_00421fe0
 // Address: 00421fe0
-undefined FUN_00421fe0();
+float * CBoxActor(CBoxActor * this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_load_FUN_00422060
 // Address: 00422060
 undefined CBoxActor::load();
 
-// Original: core_boxactor.cpp_FUN_00422330
+// Original: core_boxactor.cpp_CBoxActor_FUN_00422330
 // Address: 00422330
-undefined FUN_00422330();
+int CBoxActor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422340
+// Original: core_boxactor.cpp_CBoxActor_FUN_00422340
 // Address: 00422340
-undefined FUN_00422340();
+int CBoxActor(CBoxActor * this_ptr);
 
 // Original: core_boxactor.cpp_FUN_00422390
 // Address: 00422390
-undefined FUN_00422390();
+void FUN_00422390(CBoxActor * this_ptr);
 
 // Original: core_boxactor.cpp_FUN_004224b0
 // Address: 004224b0
 undefined FUN_004224b0();
 
-// Original: core_boxactor.cpp_FUN_004224e0
+// Original: core_boxactor.cpp_CBoxActor_FUN_004224e0
 // Address: 004224e0
-undefined FUN_004224e0();
+void CBoxActor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_004224f0
+// Original: core_boxactor.cpp_CBoxActor_FUN_004224f0
 // Address: 004224f0
-undefined FUN_004224f0();
+void CBoxActor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422550
+// Original: core_boxactor.cpp_CBoxActor_FUN_00422550
 // Address: 00422550
-undefined FUN_00422550();
+int CBoxActor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422560
+// Original: core_boxactor.cpp_CBoxActor_FUN_00422560
 // Address: 00422560
-undefined FUN_00422560();
+int CBoxActor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422570
+// Original: core_boxactor.cpp_CBoxActor_FUN_00422570
 // Address: 00422570
-undefined FUN_00422570();
+void CBoxActor(CBoxActor * this_ptr);
 
 // Original: core_boxactor.cpp_FUN_00422590
 // Address: 00422590
-undefined FUN_00422590();
+void FUN_00422590(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422640
+// Original: core_boxactor.cpp_CBoxActor_FUN_00422640
 // Address: 00422640
-undefined FUN_00422640();
+void CBoxActor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_004226d0
+// Original: core_boxactor.cpp_CBoxActor_FUN_004226d0
 // Address: 004226d0
-undefined FUN_004226d0();
+int CBoxActor(CBoxActor * this_ptr);
 
 // Original: core_boxactor.cpp_FUN_004226e0
 // Address: 004226e0
 undefined FUN_004226e0();
 
-// Original: core_boxactor.cpp_FUN_004228e0
+// Original: core_boxactor.cpp_CBoxActor_FUN_004228e0
 // Address: 004228e0
-undefined FUN_004228e0();
+void CBoxActor(CBoxActor * this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422900
+// Original: core_boxactor.cpp_CBoxActor_FUN_00422900
 // Address: 00422900
-undefined FUN_00422900();
+void CBoxActor(CBoxActor * this_ptr);
 
 // Original: core_boxactor.cpp_FUN_00422950
 // Address: 00422950

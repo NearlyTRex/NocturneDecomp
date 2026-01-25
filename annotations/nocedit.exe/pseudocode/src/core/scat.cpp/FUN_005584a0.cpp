@@ -117,7 +117,7 @@ void core_scat_cpp_FUN_005584a0(void)
   puVar3[(uint)bVar8 * -2 + 1] = puVar2[(uint)bVar8 * -2 + 1];
   pCVar1 = &local_12c;
   core_xform_cpp_slerpQuaternion_FUN_005f77e0
-            ((CQuaternion4f *)&DAT_00665998,&local_fc,0.95,&local_4c);
+            ((CQuaternion4f *)&1.0f,&local_fc,0.95,&local_4c);
   local_ec.w = local_4c.w;
   puVar3 = (uint *)((int)&local_ec + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
   puVar2 = (uint *)((int)&local_4c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);

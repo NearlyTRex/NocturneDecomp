@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d6540(uint param_1, uint
    param_2, uint param_3) */
 
@@ -57,7 +56,7 @@ void core_gabriela_cpp_FUN_004d6540(void)
       in_stack_00000004[0x17a].actor_name[10] = '\0';
       in_stack_00000004[0x17a].actor_name[0xb] = '\0';
     }
-    else if (in_stack_00000004[0x179].vtable == (CDemonActor_vtable *)0x0) {
+    else if (in_stack_00000004[0x179].vtable._ub == (CDemonActor_vtable *)0x0) {
       iVar5 = 0;
       local_24 = 1e+30;
       local_28 = 0;
@@ -72,7 +71,7 @@ void core_gabriela_cpp_FUN_004d6540(void)
       }
       *(uint *)(in_stack_00000004[0x17a].actor_name + 8) = local_28;
     }
-    if (in_stack_00000004[0x179].vtable == (CDemonActor_vtable *)0x2) {
+    if (in_stack_00000004[0x179].vtable._ub == (CDemonActor_vtable *)0x2) {
       if (*(int *)(in_stack_00000004[0x17a].actor_name + 8) == 0) {
         in_stack_00000004[0x17a].actor_name[0x18] = '\0';
         in_stack_00000004[0x17a].actor_name[0x19] = '\0';
@@ -85,12 +84,12 @@ void core_gabriela_cpp_FUN_004d6540(void)
         *(uint *)(in_stack_00000004[0x17a].actor_name + 0xc) =
              *(uint *)(in_stack_00000004[0x17a].actor_name + 0x10);
       }
-      fVar2 = in_stack_00000008 / (_DAT_0065e7c0 * (float)0.5) +
+      fVar2 = in_stack_00000008 / (0.3f * (float)0.5) +
               in_stack_00000004[0x17a].location.position.x;
     }
     else if (*(int *)(in_stack_00000004[0x17a].actor_name + 8) == 0) {
       if (0.0 < *(float *)(in_stack_00000004[0x17a].actor_name + 0x1c)) goto LAB_004d65dd;
-      fVar2 = in_stack_00000004[0x17a].location.position.x - in_stack_00000008 / _DAT_0065e7c0;
+      fVar2 = in_stack_00000004[0x17a].location.position.x - in_stack_00000008 / 0.3f;
     }
     else {
       crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(local_134,10,&g_CVectorTypeInfo);
@@ -127,12 +126,12 @@ LAB_004d6841:
       ;
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                          ((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_80,
-                          DAT_02d7b860);
+                          INT_02d7b860);
       CStack_98.x = CStack_74.x - pCVar6->x;
       CStack_98.y = CStack_74.y - pCVar6->y;
       CStack_98.z = CStack_74.z - pCVar6->z;
       core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_5c,&CStack_98);
-      fVar2 = in_stack_00000008 / _DAT_0065e7c0;
+      fVar2 = in_stack_00000008 / 0.3f;
       *(float *)(in_stack_00000004[0x17a].actor_name + 0xc) = CStack_5c.x;
       fVar2 = fVar2 + in_stack_00000004[0x17a].location.position.x;
       *(float *)(in_stack_00000004[0x17a].actor_name + 0x10) = CStack_5c.y;
@@ -156,7 +155,7 @@ LAB_004d6841:
       in_stack_00000004[0x17a].actor_name[0xe] = -0x37;
       in_stack_00000004[0x17a].actor_name[0xf] = '?';
     }
-    fVar2 = in_stack_00000008 / _DAT_0065e7c0 + in_stack_00000004[0x17a].location.position.x;
+    fVar2 = in_stack_00000008 / 0.3f + in_stack_00000004[0x17a].location.position.x;
     in_stack_00000004[0x17a].actor_name[0x10] = '\0';
     in_stack_00000004[0x17a].actor_name[0x11] = '\0';
     in_stack_00000004[0x17a].actor_name[0x12] = '\0';

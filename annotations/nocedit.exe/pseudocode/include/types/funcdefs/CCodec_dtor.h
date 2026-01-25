@@ -2,11 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/stdio.h"
-#include "types/funcdefs/CCodec_finalize.h"
-#include "types/funcdefs/CCodec_init.h"
-#include "types/funcdefs/CCodec_process.h"
-#include "types/funcdefs/CCodec_processBuffer.h"
 
 // Forward declarations
 struct CCodec;

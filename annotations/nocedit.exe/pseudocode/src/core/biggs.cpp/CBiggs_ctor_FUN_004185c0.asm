@@ -16,8 +16,8 @@
 ;   undefined4 s_igAlien_00615ad2
 ;   undefined4 s_gAlien_00615ad3
 ;   undefined4 s_Alien_00615ad4
-;   undefined4 DAT_0065ac08
-;   undefined4 PTR_FUN_0065ac09+3
+;   float FLOAT_0065ac08 = 50
+;   float FLOAT_0065ac0c = 100
 ;   CDemonActor_vtable g_CBiggsVTable
 ;
 ; Called Functions:
@@ -65,9 +65,9 @@ section .text
     LEA EDI,[EBX + 0xcc6c]              ; 00418621
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00418627
         ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-    FLD float ptr [0x0065ac08]          ; 0041862c | DAT_0065ac08
+    FLD float ptr [0x0065ac08]          ; 0041862c | FLOAT_0065ac08
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 00418632
-    FLD float ptr [0x0065ac0c]          ; 0041863c | PTR_FUN_0065ac09+3
+    FLD float ptr [0x0065ac0c]          ; 0041863c | FLOAT_0065ac0c
     MOV dword ptr [EBX + 0x2de0],0x3f666666 ; 00418642
     ADD ESP,0x8                         ; 0041864c
     FXCH                                ; 0041864f

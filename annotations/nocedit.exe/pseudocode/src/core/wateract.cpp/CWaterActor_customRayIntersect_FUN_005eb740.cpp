@@ -31,7 +31,7 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWat
   int iStack_14;
   
   ray_origin = (CVector3f *)0x0;
-  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                           (&this_ptr->base_actor,(CBoundingBox3D *)(auStack_80 + 0x30));
   fVar1 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                     (this_ptr_00,ray_origin,in_stack_ffffff60,in_stack_ffffff64);

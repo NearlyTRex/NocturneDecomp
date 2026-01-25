@@ -8,6 +8,12 @@
         "message": "ambiguating new declaration of 'void core_conveyor_cpp_FUN_00441df0()'"
       },
       {
+        "category": "incompatible_types",
+        "column": 61,
+        "line": 31,
+        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int)'"
+      },
+      {
         "category": "missing_member",
         "column": 68,
         "line": 34,
@@ -312,7 +318,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[5].vtable = (CDemonActor_vtable *)0x1;",
+      "text": "in_stack_00000004[5].vtable = (CDemonActor_union_vtable)0x1;",
       "type": "stack_param"
     },
     {
@@ -326,7 +332,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x0) {",
+      "text": "if (in_stack_00000004[5].vtable._ub != (CDemonActor_vtable *)0x0) {",
       "type": "stack_param"
     },
     {
@@ -382,7 +388,7 @@
       "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[5].vtable = (CDemonActor_vtable *)0x0;",
+      "text": "in_stack_00000004[5].vtable._ub = (CDemonActor_vtable *)0x0;",
       "type": "stack_param"
     }
   ],

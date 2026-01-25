@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CLZWDictionaryNode;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CLZWDictionaryNode.h"
 #include "types/structs/SBitBuffer.h"
 
 // Structure: CLZWDictionary

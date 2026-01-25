@@ -2,33 +2,27 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 6,
+        "line": 36,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
         "category": "incompatible_types",
         "column": 63,
-        "line": 54,
+        "line": 50,
         "message": "invalid conversion from 'undefined1*' {aka 'unsigned char*'} to 'char*' [-fpermissive]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 56,
+        "line": 51,
         "message": "cast from 'CHero*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 68,
-        "message": "cast from 'SDamageInfo*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 68,
-        "message": "cast from 'CDemonActor*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "missing_member",
         "column": 19,
-        "line": 77,
+        "line": 69,
         "message": "'CGame' {aka 'struct CGame'} has no member named 'field87_0x258'; did you mean 'field_208'?"
       }
     ],
@@ -43,60 +37,53 @@
       {
         "category": "other",
         "column": 27,
+        "line": 21,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 52,
         "line": 23,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 25,
+        "column": 27,
+        "line": 26,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 27,
+        "column": 52,
         "line": 28,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 30,
-        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
         "column": 81,
-        "line": 42,
+        "line": 39,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 51,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 63,
+        "line": 57,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 272,
+    "complexity_score": 99,
     "cross_reference_count": 4,
     "function_call_count": 20,
     "global_count": 20,
-    "pseudocode_lines": 72,
-    "suspect_count": 19,
+    "pseudocode_lines": 64,
+    "suspect_count": 3,
     "suspect_types": [
-      "unaffected_reg",
       "undefined_data"
     ],
-    "total_lines": 266
+    "total_lines": 258
   },
   "cross_references": [
     {
@@ -407,137 +394,25 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "text": "CDemonActor *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "text": "SDamageInfo *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 24,
       "match": "DAT_02f35f10",
       "text": "DAT_02f35f10 = '\\0';",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EBP",
-      "text": "((CDemonActor *)actor_ptr,unaff_EBP,unaff_EDI,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EDI",
-      "text": "((CDemonActor *)actor_ptr,unaff_EBP,unaff_EDI,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_ESI",
-      "text": "((CDemonActor *)actor_ptr,unaff_EBP,unaff_EDI,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 31,
       "match": "DAT_02f35f10",
       "text": "if ((iVar1 == 0) || (DAT_02f35f10 == '\\0')) break;",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = 0x524571;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 43,
       "match": "DAT_02f35f10",
       "text": "core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,&DAT_02f35f10,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = (SDamageInfo *)0x52457b;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = (CDemonActor *)0x52458c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = (SDamageInfo *)0xf8;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 58,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_ThemeFont,0x58);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = 0x1db - unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = 0x1db - unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_EBP",
-      "text": "(g_ThemeFont,0x27f,unaff_EBP,(int)unaff_EDI,(int)color_value,text_string);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_EDI",
-      "text": "(g_ThemeFont,0x27f,unaff_EBP,(int)unaff_EDI,(int)color_value,text_string);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 65,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = color_value;",
-      "type": "unaffected_reg"
     }
   ]
 }

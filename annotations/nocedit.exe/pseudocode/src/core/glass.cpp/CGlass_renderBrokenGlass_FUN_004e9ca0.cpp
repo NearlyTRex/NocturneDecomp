@@ -20,7 +20,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
   int iStack_8;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-  this_ptr_00 = (*((this_ptr->base).vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                           (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffd8);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar2 == 0) {
@@ -66,7 +66,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
     polygon_info = (SMRGLHeaderPrimitive *)&in_stack_0000000c[4].next_actor;
     pCVar4 = in_stack_0000000c;
     do {
-      pCVar4[4].vtable = (CDemonActor_vtable *)0x0;
+      pCVar4[4].vtable._ub = (CDemonActor_vtable *)0x0;
       pCVar4[5].actor_name[0] = '\0';
       pCVar1 = g_CDemonRendererPtr2;
       pCVar4[5].actor_name[1] = '\0';

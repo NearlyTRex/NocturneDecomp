@@ -70,9 +70,9 @@ uint core_stranger_cpp_CStranger_FUN_005c1680(void)
   for (local_1c = (CVector3f *)0x0; (int)local_1c < (int)g_CDemonSetPtr->actor_list_ptr;
       local_1c = (CVector3f *)((int)&local_1c->x + 1)) {
     this_ptr_00 = *(CDemonActor **)((int)&local_18[0x1bc1c].y + (int)g_CDemonSetPtr->cameras);
-    pCVar2 = (*this_ptr_00->vtable->getCarrier)(this_ptr_00);
+    pCVar2 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
     if (pCVar2 == (CDemonActor *)0x0) {
-      iStack_20 = (*this_ptr_00->vtable->canPickup)(this_ptr_00,in_stack_00000004);
+      iStack_20 = (*((this_ptr_00->vtable)._ub)->canPickup)(this_ptr_00,in_stack_00000004);
       switch(iStack_20) {
       case 1:
         if (in_stack_00000004[0x1b].field7_0x6c == 0) {
@@ -117,7 +117,7 @@ uint core_stranger_cpp_CStranger_FUN_005c1680(void)
 LAB_005c17d2:
           pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                              (in_stack_00000004,(CVector3f *)(auStack_8c + 4),&CStack_130);
-          pCVar3 = (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&CStack_148);
+          pCVar3 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_148);
           fStack_bc = (pCVar3->min).x + (pCVar3->max).x;
           CStack_b8.x = (pCVar3->min).y + (pCVar3->max).y;
           auStack_44._0_4_ = fStack_bc * 0.5f;
@@ -142,7 +142,8 @@ LAB_005c17d2:
       case 3:
       case 4:
         if ((*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0) &&
-           ((iVar5 = (*this_ptr_00->vtable->canPickup)(this_ptr_00,in_stack_00000004), iVar5 != 4 ||
+           ((iVar5 = (*((this_ptr_00->vtable)._ub)->canPickup)(this_ptr_00,in_stack_00000004),
+            iVar5 != 4 ||
             ((core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                         (this_ptr_00,(CVector3f *)auStack_8c,unaff_EBP),
              ABS((float)auStack_8c._0_4_) <= 1.0 &&

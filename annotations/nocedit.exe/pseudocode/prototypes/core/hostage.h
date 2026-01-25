@@ -15,9 +15,9 @@ undefined FUN_004f4800();
 // Address: 004f4830
 undefined FUN_004f4830();
 
-// Original: core_hostage.cpp_FUN_004f4840
+// Original: core_hostage.cpp_CHostage_ctor_FUN_004f4840
 // Address: 004f4840
-CHostage * FUN_004f4840(CHostage * this_ptr);
+CHostage * CHostage::ctor(CHostage * this_ptr);
 
 // Original: core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970
 // Address: 004f4970

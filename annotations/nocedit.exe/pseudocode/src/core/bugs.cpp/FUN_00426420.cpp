@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_bugs.cpp_FUN_00426420(uint param_1, uint param_2,
    uint param_3, uint param_4) */
 
@@ -52,12 +51,12 @@ uint core_bugs_cpp_FUN_00426420(void)
   local_68.z = (float)in_stack_00000008[10] - (float)in_stack_00000008[4];
   local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);
   local_44 = local_90;
-  if (local_90 < _DAT_0065b5c8) {
+  if (local_90 < 0.5f) {
     local_14 = (float)core_bugs_cpp_FUN_00425b70();
     in_stack_00000008[3] = (int)local_14;
     if (in_stack_00000010 == (float *)0x0) {
-      local_40 = _DAT_0065b5c8 * 12.0f * (float)0.5;
-      local_18 = _DAT_0065b5c8 * 1.6018581507970269e-314._0_4_ * (float)0.5;
+      local_40 = 0.5f * 12.0f * (float)0.5;
+      local_18 = 0.5f * 1.6018581507970269e-314._0_4_ * (float)0.5;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_18,local_40);
       in_stack_00000008[8] = (int)local_14;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_18,local_40);
@@ -90,7 +89,7 @@ uint core_bugs_cpp_FUN_00426420(void)
       }
       local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);
       local_3c = local_90;
-      if (local_90 < _DAT_0065b5c8) {
+      if (local_90 < 0.5f) {
         return 1;
       }
     }
@@ -99,7 +98,7 @@ uint core_bugs_cpp_FUN_00426420(void)
   if (local_90 <= 0.0) {
     return 1;
   }
-  local_1c = _DAT_0065b5d0 * in_stack_0000000c;
+  local_1c = 3.0f * in_stack_0000000c;
   if (local_90 < local_1c) {
     local_1c = local_90;
   }

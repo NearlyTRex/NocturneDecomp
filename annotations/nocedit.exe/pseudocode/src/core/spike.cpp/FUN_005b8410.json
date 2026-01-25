@@ -9,27 +9,39 @@
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 88,
-        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+        "column": 82,
+        "line": 87,
+        "message": "no match for 'operator+' (operand types are 'float' and 'CDemonActor_union_vtable')"
       },
       {
         "category": "other",
         "column": 9,
         "line": 90,
-        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 61,
+        "line": 93,
+        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int)'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 63,
+        "line": 106,
+        "message": "no matching function for call to 'CDemonActor_union_vtable::CDemonActor_union_vtable(int)'"
       },
       {
         "category": "other",
-        "column": 19,
+        "column": 50,
         "line": 112,
-        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+        "message": "no match for 'operator-' (operand types are 'CDemonActor_union_vtable' and 'float')"
       },
       {
         "category": "other",
-        "column": 53,
+        "column": 52,
         "line": 114,
-        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
       },
       {
         "category": "other",
@@ -41,7 +53,7 @@
         "category": "other",
         "column": 60,
         "line": 132,
-        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
       }
     ],
     "success": false,
@@ -454,7 +466,7 @@
       "description": "Unresolved stack parameter",
       "line": 75,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x0;",
+      "text": "in_stack_00000004[3].vtable._ub = (CDemonActor_vtable *)0x0;",
       "type": "stack_param"
     },
     {
@@ -482,14 +494,14 @@
       "description": "Unresolved stack parameter",
       "line": 81,
       "match": "in_stack_00000004",
-      "text": "(float)in_stack_00000004[3].vtable);",
+      "text": "in_stack_00000004[3].vtable);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 82,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = pCVar2;",
+      "text": "in_stack_00000004[3].vtable = CVar2;",
       "type": "stack_param"
     },
     {
@@ -517,7 +529,7 @@
       "description": "Unresolved stack parameter",
       "line": 86,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x3f800000;",
+      "text": "in_stack_00000004[3].vtable = (CDemonActor_union_vtable)0x3f800000;",
       "type": "stack_param"
     },
     {
@@ -566,7 +578,7 @@
       "description": "Unresolved stack parameter",
       "line": 99,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x3f800000;",
+      "text": "in_stack_00000004[3].vtable = (CDemonActor_union_vtable)0x3f800000;",
       "type": "stack_param"
     },
     {
@@ -594,7 +606,7 @@
       "description": "Unresolved stack parameter",
       "line": 105,
       "match": "in_stack_00000004",
-      "text": "((float)in_stack_00000004[3].vtable -",
+      "text": "(in_stack_00000004[3].vtable -",
       "type": "stack_param"
     },
     {
@@ -615,7 +627,7 @@
       "description": "Unresolved stack parameter",
       "line": 107,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = pCVar2, 0.0 <= (float)pCVar2)) goto LAB_005b84db;",
+      "text": "in_stack_00000004[3].vtable = CVar2, 0.0 <= (float)CVar2)) goto LAB_005b84db;",
       "type": "stack_param"
     },
     {
@@ -636,7 +648,7 @@
       "description": "Unresolved stack parameter",
       "line": 110,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x0;",
+      "text": "in_stack_00000004[3].vtable._ub = (CDemonActor_vtable *)0x0;",
       "type": "stack_param"
     },
     {

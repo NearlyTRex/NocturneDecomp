@@ -47,7 +47,7 @@ LAB_004093bd:
     }
     if (bounding_box_type != 3) goto LAB_004093bd;
   }
-  (*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);
+  (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);
   pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&CStack_4c,&CStack_34,0);
   pCVar2 = (CBoundingBox3D *)
            core_actor_cpp_CDemonActor_transformVector_FUN_00408e80

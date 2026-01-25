@@ -1,15 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CSfxSample;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/iostream.h"
-#include "system/stdio.h"
-#include "types/classes/CFileBitStream.h"
-#include "types/classes/CMP3Decoder.h"
-#include "types/classes/CMemoryBitStream.h"
-#include "types/classes/CSampleInfo.h"
 #include "types/classes/CSfxOptions.h"
-#include "types/classes/CSfxSample.h"
 
 // Structure: CSfxSlot
 // Ghidra size: 0x128 (296 bytes)

@@ -35,13 +35,13 @@ undefined FUN_0043ff20();
 // Address: 00440430
 undefined FUN_00440430();
 
-// Original: core_colonel.cpp_CColonel_load_FUN_00440490
+// Original: core_colonel.cpp_CColonel_serialize_FUN_00440490
 // Address: 00440490
-undefined CColonel::load();
+void CColonel::serialize(CColonel * this_ptr);
 
 // Original: core_colonel.cpp_FUN_004404a0
 // Address: 004404a0
-undefined FUN_004404a0();
+void FUN_004404a0(CColonel * this_ptr);
 
 // Original: core_colonel.cpp_CColonel_FUN_004404b0
 // Address: 004404b0

@@ -22,7 +22,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
             ((CKeyFramedModelInstance *)&this_ptr->model_name);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->field14_0x3c0 + 0x2ac));
-  (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_28);
+  (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)(&this_ptr->base_actor,&CStack_28);
   iVar3 = *(int *)this_ptr->start_loc;
   this_ptr->field3_0x2d4 = 0;
   if (iVar3 != 0) {

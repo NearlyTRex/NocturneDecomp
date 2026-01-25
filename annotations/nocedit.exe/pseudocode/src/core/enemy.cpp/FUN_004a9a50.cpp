@@ -1,40 +1,36 @@
 // Name: core_enemy.cpp_FUN_004a9a50
 // Address: 004a9a50
 // Address Range: [[004a9a50, 004a9afa]]
-// Convention: unknown
-// Signature: undefined core_enemy.cpp_FUN_004a9a50()
+// Convention: __cdecl
+// Signature: int core_enemy.cpp_FUN_004a9a50(CEnemy * this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_enemy_enemy.cpp_FUN_004a9a50(uint param_1, uint param_2)
-    */
-
-bool core_enemy_cpp_FUN_004a9a50(void)
+int __cdecl core_enemy_cpp_FUN_004a9a50(CEnemy *this_ptr)
 
 {
   CVector3f *pCVar1;
   int iVar2;
-  CDemonActor *in_stack_00000004;
   CDemonActor *in_stack_00000008;
-  CBoundingBox3D CStack_50;
-  byte auStack_38 [12];
-  CVector3f local_2c [2];
-  CVector3f CStack_14;
+  CBoundingBox3D CStack_54;
+  byte auStack_3c [12];
+  CVector3f aCStack_30 [2];
+  CVector3f CStack_18;
   
   if (in_stack_00000008 == (CDemonActor *)0x0) {
-    return false;
+    return 0;
   }
-  pCVar1 = (CVector3f *)(*in_stack_00000004->vtable[1].shouldIgnoreForTargeting)(in_stack_00000004);
+  pCVar1 = (CVector3f *)(*(((this_ptr->base_character).base_actor.vtable._ue)->_ue).field_0)();
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,(CVector3f *)(auStack_38 + 4),pCVar1);
-  (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffa8)
-  ;
+            ((CDemonActor *)this_ptr,(CVector3f *)(auStack_3c + 4),pCVar1);
+  (*((in_stack_00000008->vtable)._ub)->getBoundingBox)
+            (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffa4);
   pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                     (in_stack_00000008,(CVector3f *)&stack0xfffffff8,local_2c);
-  pCVar1 = core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(&CStack_50,&CStack_14,pCVar1);
+                     (in_stack_00000008,(CVector3f *)&stack0xfffffff4,aCStack_30);
+  pCVar1 = core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(&CStack_54,&CStack_18,pCVar1);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000008,(CVector3f *)auStack_38,pCVar1);
+            (in_stack_00000008,(CVector3f *)auStack_3c,pCVar1);
   iVar2 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
-                    (g_CDemonSetPtr,local_2c,(CVector3f *)auStack_38);
-  return iVar2 == 0;
+                    (g_CDemonSetPtr,aCStack_30,(CVector3f *)auStack_3c);
+  return (uint)(iVar2 == 0);
 }

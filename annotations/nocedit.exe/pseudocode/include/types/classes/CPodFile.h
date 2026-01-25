@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CPodDirectoryEntry;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CPodDirectoryEntry.h"
 
 // Structure: CPodFile
 // Ghidra size: 0x42c (1068 bytes)

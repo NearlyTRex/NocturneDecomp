@@ -6,6 +6,12 @@
         "column": 6,
         "line": 12,
         "message": "ambiguating new declaration of 'void core_melee_cpp_FUN_0050ec10()'"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 34,
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -15,23 +21,17 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 34,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 240,
+    "complexity_score": 230,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 30,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
@@ -250,7 +250,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "pCVar1 = (in_stack_00000004->base_actor).vtable;",
+      "text": "pCVar1 = (in_stack_00000004->base_actor).vtable._uc;",
       "type": "stack_param"
     },
     {
@@ -283,16 +283,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "input_local_point = (CVector3f *)(*pCVar1[1].renderOpaque)(&in_stack_00000004->base_actor);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,&CStack_14,input_local_point);",
+      "text": "(&in_stack_00000004->base_actor,&CStack_18,input_local_point);",
       "type": "stack_param"
     }
   ],

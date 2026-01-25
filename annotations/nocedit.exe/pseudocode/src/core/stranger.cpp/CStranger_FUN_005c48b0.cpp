@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005c48b0(uint param_1,
    uint param_2) */
 
@@ -14,7 +13,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
 
 {
   CDeformableModelInstance *this_ptr;
-  CDemonActor_vtable *pCVar1;
+  CCharacter_full_vtable *pCVar1;
   CConsole *this_ptr_00;
   CGame *pCVar2;
   int iVar3;
@@ -24,7 +23,6 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
   CDemonActor *pCVar7;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  float in_stack_ffffffec;
   int desired_state_index;
   
   if (g_CGamePtr->field53_0x1d0 != 0) {
@@ -39,7 +37,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
     *(uint *)(in_stack_00000008 + 4) = 0;
     return;
   }
-  *(uint *)in_stack_00000004[1].base_actor.actor_name = _DAT_00663738;
+  *(float *)in_stack_00000004[1].base_actor.actor_name = 2.0f;
   iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                     (*(CDemonActor **)(in_stack_00000008 + 0x38),"CBugs");
   if (iVar3 != 0) {
@@ -62,9 +60,9 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
   }
   this_ptr = &in_stack_00000004->model;
   if (in_stack_00000004->hit_points <= 0.0) {
-    pCVar1 = (in_stack_00000004->base_actor).vtable;
+    pCVar1 = (in_stack_00000004->base_actor).vtable._uc;
     in_stack_00000004->hit_points = 0.0;
-    (*pCVar1[1].processFootstep)(&in_stack_00000004->base_actor,in_stack_ffffffec);
+    (*(pCVar1->_uc).cfunc7)();
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if (pSVar4->state_index != 0x29) {
@@ -99,7 +97,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
                   (&(in_stack_00000004->model).motion_controller,desired_state_index,iVar3);
         sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[2].cloth_data + 0x5788));
         if (*(int *)(in_stack_00000008 + 0x30) != 1) {
-          uVar5 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+          uVar5 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                             (&in_stack_00000004->base_actor,"stranger_die??.wav");
           *(uint *)(in_stack_00000004[2].cloth_data + 0x5788) = uVar5;
         }
@@ -113,7 +111,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
       in_stack_00000004[2].cloth_data[0x554e] = '\0';
       in_stack_00000004[2].cloth_data[0x554f] = '\0';
     }
-    (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)(&in_stack_00000004->base_actor);
+    (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
     if (in_stack_00000004->carry_hands[1].carry_actor ==
         *(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x554c)) {
       in_stack_00000004[2].cloth_data[0x554c] = '\0';
@@ -121,7 +119,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
       in_stack_00000004[2].cloth_data[0x554e] = '\0';
       in_stack_00000004[2].cloth_data[0x554f] = '\0';
     }
-    (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)(&in_stack_00000004->base_actor);
+    (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
     goto LAB_005c4ae0;
   }
   if (*(float *)(in_stack_00000008 + 4) <= 0.0) goto LAB_005c4ae0;
@@ -142,7 +140,7 @@ LAB_005c4be2:
   iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                     (*(uint *)(in_stack_00000004[2].cloth_data + 0x5788));
   if (iVar3 == 0) {
-    uVar5 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+    uVar5 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                       (&in_stack_00000004->base_actor,"stranger_hit??.wav");
     *(uint *)(in_stack_00000004[2].cloth_data + 0x5788) = uVar5;
   }

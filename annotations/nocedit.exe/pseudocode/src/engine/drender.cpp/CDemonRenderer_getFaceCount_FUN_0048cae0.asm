@@ -16,7 +16,7 @@
 ;   core_boneguy.cpp_FUN_0041d180 at 0041d187
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 at 00420513
 ;   core_box.cpp_CBoundingBox3D_render_FUN_004210b0 at 004211ac
-;   core_boxactor.cpp_FUN_00421e00 at 00421e32
+;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00 at 00421e32
 ;   ... and 62 more
 ;
 ; *****************************************************************************

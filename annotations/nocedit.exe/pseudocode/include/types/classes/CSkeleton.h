@@ -1,9 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CQuaternion4f;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CMotionList.h"
-#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SBone.h"
 

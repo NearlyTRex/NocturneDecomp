@@ -14,7 +14,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_004297e0(CCharacter *this_ptr)
   if ((((this_ptr->base_actor).field11_0xdc == 0) &&
       ((this_ptr->base_actor).location.position.y == *(float *)(this_ptr->field2_0x240c + 8))) &&
      (*(int *)(this_ptr->field2_0x240c + 4) != 0)) {
-    iVar1 = (*((this_ptr->base_actor).vtable)->isActiveTarget)(&this_ptr->base_actor);
+    iVar1 = (*((this_ptr->base_actor).vtable._ub)->isActiveTarget)(&this_ptr->base_actor);
     if (iVar1 == 0) {
       return 0;
     }

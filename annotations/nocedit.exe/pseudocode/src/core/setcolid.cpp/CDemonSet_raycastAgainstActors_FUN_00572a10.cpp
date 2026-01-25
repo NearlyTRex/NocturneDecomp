@@ -87,7 +87,8 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
         if (pvVar2 == (void *)0x0) {
           local_c4.cylinder_top_y = (float)pvVar2;
           local_c4.cylinder_radius = (float)pvVar2;
-          iVar3 = (*pCVar1->vtable->hasCollision)(pCVar1,(SCollisionInfo *)&stack0xffffff34);
+          iVar3 = (*((pCVar1->vtable)._ub)->hasCollision)(pCVar1,(SCollisionInfo *)&stack0xffffff34)
+          ;
           if (iVar3 != 0) {
             fVar4 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
                               (pCVar1,ray_origin,&local_5c,&CStack_9c,&local_c4,iVar3,
@@ -138,7 +139,7 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
     }
     pCVar1 = this_ptr->collision_actor;
     if (pCVar1 != (CDemonActor *)0x0) {
-      iVar3 = (*pCVar1->vtable->getGroundType)(pCVar1);
+      iVar3 = (*((pCVar1->vtable)._ub)->getGroundType)(pCVar1);
       this_ptr->ground_type = iVar3;
     }
   }

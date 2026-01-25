@@ -9,8 +9,8 @@
 ;
 ; XREF[5]:
 ;   core_glass.cpp_CGlass_getSurfaceProperties_FUN_004eb250 at 004eb261
-;   core_manpuz.cpp_FUN_005097e0 at 005097f4
-;   core_manpuz.cpp_FUN_0050b2c0 at 0050b2cb
+;   core_manpuz.cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0 at 005097f4
+;   core_manpuz.cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0 at 0050b2cb
 ;   core_trigger.cpp_CTrigger_FUN_005e0a50 at 005e0a5c
 ;   core_wateract.cpp_CWaterActor_FUN_005eb910 at 005eb91b
 ;

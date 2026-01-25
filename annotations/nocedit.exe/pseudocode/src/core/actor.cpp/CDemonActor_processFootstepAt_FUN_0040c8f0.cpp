@@ -45,6 +45,6 @@ core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0
   if (local_1c < local_18 + (float)-1) {
     iVar1 = g_CDemonSetPtr->ground_type;
   }
-  iVar1 = (*this_ptr->vtable->handleFootstep)(this_ptr,&local_34,iVar1,volume);
+  iVar1 = (*((this_ptr->vtable)._ub)->handleFootstep)(this_ptr,&local_34,iVar1,volume);
   return iVar1;
 }

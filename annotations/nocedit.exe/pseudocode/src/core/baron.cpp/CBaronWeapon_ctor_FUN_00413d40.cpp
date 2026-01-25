@@ -12,7 +12,7 @@ CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00413d40(CBaronWeapo
   CBaronWeapon *pCVar1;
   
   pCVar1 = (CBaronWeapon *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar1->base_weapon).base_actor.vtable = &g_CBaronWeaponVTable;
+  (pCVar1->base_weapon).base_actor.vtable._ub = &g_CBaronWeaponVTable;
   (pCVar1->base_weapon).field3_0x2d8[8] = '\b';
   (pCVar1->base_weapon).field3_0x2d8[9] = '\0';
   (pCVar1->base_weapon).field3_0x2d8[10] = '\0';

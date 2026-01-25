@@ -15,6 +15,6 @@ void core_hiram_cpp_FUN_004f43b0(void)
   if (this_ptr == (CHiram *)0x0) {
     return;
   }
-  core_hiram_cpp_FUN_004f43f0(this_ptr);
+  core_hiram_cpp_CHiram_ctor_FUN_004f43f0(this_ptr);
   return;
 }

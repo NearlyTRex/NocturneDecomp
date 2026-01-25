@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_weapon_lightgun.cpp_ChargedRadianceEmitterGunMaybe(uint
    param_1, uint param_2) */
 
@@ -25,24 +24,24 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004,in_stack_00000008);
   fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
-                    (&g_HeroActors[g_LocalHeroIndex]->inventory,0x41F00000);
-  fVar1 = (0x41F00000 / fVar1) * in_stack_00000008 +
+                    (&g_HeroActors[g_LocalHeroIndex]->inventory,30.0f);
+  fVar1 = (30.0f / fVar1) * in_stack_00000008 +
           *(float *)(in_stack_00000004[1].base_actor.actor_name + 8);
   *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar1;
-  if (0x41F00000 < fVar1) {
-    *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = 0x41F00000;
+  if (30.0f < fVar1) {
+    *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = 30.0f;
   }
-  fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / 0x41F00000;
+  fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / 30.0f;
   *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = fVar1;
   iVar2 = in_stack_00000004->weapon_state;
   dVar4 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)100));
   in_stack_00000004->ammo_count = (int)ROUND(dVar4);
   if (iVar2 == 2) {
-    fVar1 = (_DAT_00660a4c - 0x40000000) *
-            *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) + 0x40000000;
+    fVar1 = (2.5f - 2.0f) *
+            *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) + 2.0f;
     base_frequency =
-         _DAT_00660a50 +
-         (_DAT_00660a54 - _DAT_00660a50) *
+         1.0f +
+         (2.0f - 1.0f) *
          *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc);
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));

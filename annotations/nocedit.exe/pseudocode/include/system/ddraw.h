@@ -12,10 +12,6 @@
 // =============================================================================
 
 // Forward declarations
-struct IDirectDraw;
-struct IDirectDrawSurface;
-struct IDirectDrawSurface_vtable;
-struct IDirectDraw_vtable;
 struct IUnknown;
 struct PALETTEENTRY;
 
@@ -109,6 +105,11 @@ typedef struct DDSURFACEDESC {
     DDSCAPS ddsCaps;
 } DDSURFACEDESC;
 
+// Structure: IDirectDraw
+typedef struct IDirectDraw {
+    struct IDirectDraw_vtable* vtable;
+} IDirectDraw;
+
 // Structure: IDirectDrawClipper
 typedef struct IDirectDrawClipper {
     void** vtable;
@@ -118,6 +119,11 @@ typedef struct IDirectDrawClipper {
 typedef struct IDirectDrawPalette {
     int field_0;
 } IDirectDrawPalette;
+
+// Structure: IDirectDrawSurface
+typedef struct IDirectDrawSurface {
+    struct IDirectDrawSurface_vtable* vtable;
+} IDirectDrawSurface;
 
 // Function Definition: IDirectDrawSurface_AddAttachedSurface
 typedef HRESULT (*IDirectDrawSurface_AddAttachedSurface)(struct IDirectDrawSurface* this_ptr, struct IDirectDrawSurface* attached_surface);
@@ -205,11 +211,6 @@ typedef HRESULT (*IDirectDrawSurface_UpdateOverlayDisplay)(struct IDirectDrawSur
 
 // Function Definition: IDirectDrawSurface_UpdateOverlayZOrder
 typedef HRESULT (*IDirectDrawSurface_UpdateOverlayZOrder)(struct IDirectDrawSurface* this_ptr, DWORD flags, struct IDirectDrawSurface* reference_surface);
-
-// Structure: IDirectDrawSurface
-typedef struct IDirectDrawSurface {
-    struct IDirectDrawSurface_vtable* vtable;
-} IDirectDrawSurface;
 
 // Structure: IDirectDrawSurface_vtable
 typedef struct IDirectDrawSurface_vtable {
@@ -301,11 +302,6 @@ typedef HRESULT (*IDirectDraw_SetDisplayMode)(struct IDirectDraw* this_ptr, DWOR
 
 // Function Definition: IDirectDraw_WaitForVerticalBlank
 typedef HRESULT (*IDirectDraw_WaitForVerticalBlank)(struct IDirectDraw* this_ptr, DWORD flags, HANDLE event);
-
-// Structure: IDirectDraw
-typedef struct IDirectDraw {
-    struct IDirectDraw_vtable* vtable;
-} IDirectDraw;
 
 // Structure: IDirectDraw_vtable
 typedef struct IDirectDraw_vtable {

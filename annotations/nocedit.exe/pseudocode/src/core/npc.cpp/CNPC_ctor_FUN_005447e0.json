@@ -1,0 +1,303 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 41,
+        "line": 17,
+        "message": "cast from 'CDemonActor_vtable*' to 'int' loses precision [-fpermissive]"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 24,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 104,
+    "cross_reference_count": 7,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 8,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [
+    {
+      "addr": "004f43f0",
+      "from_addr": "004f43f8",
+      "name": "core_hiram.cpp_CHiram_ctor_FUN_004f43f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4840",
+      "from_addr": "004f4848",
+      "name": "core_hostage.cpp_CHostage_ctor_FUN_004f4840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7b70",
+      "from_addr": "004f7b78",
+      "name": "core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004f7b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005447a0",
+      "from_addr": "005447ba",
+      "name": "core_npc.cpp_CNPC_FUN_005447a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545b30",
+      "from_addr": "00545b38",
+      "name": "core_passngr.cpp_CPassenger_ctor_FUN_00545b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005da060",
+      "from_addr": "005da066",
+      "name": "core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005da2c0",
+      "from_addr": "005da2c6",
+      "name": "core_tbplayer.cpp_CDrummer_ctor_FUN_005da2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005447e0",
+    "address_range": [
+      [
+        "005447e0",
+        "00544869"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_ctor_FUN_005447e0",
+    "signature": "CNPC * core_npc.cpp_CNPC_ctor_FUN_005447e0(CNPC * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00427e20",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_00427e20"
+    },
+    {
+      "addr": "00546450",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_ctor_FUN_00546450"
+    },
+    {
+      "addr": "005a0840",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063e309",
+      "name": "s_priest_dfm_0063e309",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00661d94",
+      "name": "g_CNPCVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "005da066",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005da2c6",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CDrummer_ctor_FUN_005da2c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f4848",
+        "call_type": "direct",
+        "caller": "core_hostage.cpp_CHostage_ctor_FUN_004f4840",
+        "estimated_params": 4,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004f43f8",
+        "call_type": "direct",
+        "caller": "core_hiram.cpp_CHiram_ctor_FUN_004f43f0",
+        "estimated_params": 4,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004f7b78",
+        "call_type": "direct",
+        "caller": "core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004f7b70",
+        "estimated_params": 4,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00545b38",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_CPassenger_ctor_FUN_00545b30",
+        "estimated_params": 4,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005447ba",
+        "call_type": "direct",
+        "caller": "core_npc.cpp_CNPC_FUN_005447a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8076923076923075,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 19,
+      "INT_ADD": 17,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 99
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 10,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache[0x4f][0x1b] = (int)&g_CNPCVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[7][0x4d] = 0x3f19999a;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[7][0x4e] = 0x3f666666;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[7][0x51] = 0x3fcccccd;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[7][0x52] = -0x3b864000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "pCVar2[-1].",
+      "text": "((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4f] + 0x1c),",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[2][0x53] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar2[-1].",
+      "text": "return (CNPC *)(pCVar2[-1].height_cache[0x4e] + 0x2a);",
+      "type": "negative_offset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CNPC",
+        "offset": 0,
+        "vtable_addr": "0065faf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

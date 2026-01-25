@@ -18,7 +18,7 @@ void __cdecl core_simbox_cpp_CSimBox_FUN_00588e00(CSimBox *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
-  pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+  pCVar2 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                      (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffbc);
   if (&CStack_24 != pCVar2) {
     CStack_24.min.x = (pCVar2->min).x;

@@ -60,7 +60,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d7120(CGabriella *this_ptr)
   local_1c = 0.0;
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CLightActorClassInfo.name_hash);
   if (pCVar1 == (CDemonActor *)0x0) goto LAB_004d719a;
-  (*actor_ptr->vtable->getBoundingBox)(actor_ptr,(CBoundingBox3D *)(auStack_c8 + 0x28));
+  (*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,(CBoundingBox3D *)(auStack_c8 + 0x28));
   fStack_20 = fStack_98 + fStack_8c;
   fStack_80 = fStack_20 * 0.5f;
   local_1c = fStack_94 + fStack_88;

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d6d40(uint param_1, uint
    param_2, uint param_3) */
 
@@ -19,7 +18,7 @@ void core_gabriela_cpp_FUN_004d6d40(void)
   int in_stack_0000000c;
   
   fVar1 = *(float *)(in_stack_00000004[0x17a].actor_name + 4);
-  in_stack_00000008 = in_stack_00000008 / _DAT_0065e7cc;
+  in_stack_00000008 = in_stack_00000008 / 0.5f;
   *(float *)in_stack_00000004[0x17a].actor_name =
        *(float *)in_stack_00000004[0x17a].actor_name - in_stack_00000008;
   *(float *)(in_stack_00000004[0x17a].actor_name + 4) = fVar1 - in_stack_00000008;
@@ -38,11 +37,11 @@ void core_gabriela_cpp_FUN_004d6d40(void)
   if (in_stack_0000000c == 0) {
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               ((CDeformableModelInstance *)(in_stack_00000004 + 1),0,0.0,
-               *(float *)in_stack_00000004[0x17a].actor_name,DAT_02d7b84c,
+               *(float *)in_stack_00000004[0x17a].actor_name,INT_02d7b84c,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               ((CDeformableModelInstance *)(in_stack_00000004 + 1),0,0.0,
-               *(float *)(in_stack_00000004[0x17a].actor_name + 4),DAT_02d7b850,
+               *(float *)(in_stack_00000004[0x17a].actor_name + 4),INT_02d7b850,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     return;
   }

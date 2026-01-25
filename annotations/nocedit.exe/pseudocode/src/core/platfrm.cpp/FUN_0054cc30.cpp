@@ -109,7 +109,7 @@ void core_platfrm_cpp_FUN_0054cc30(void)
       cVar1 = in_stack_00000004[3].create_event[0x14];
       in_stack_00000004[2].location.position.y = 2.8026e-45;
       if (cVar1 != '\0') {
-        (*in_stack_00000004->vtable->playSound)
+        (*((in_stack_00000004->vtable)._ub)->playSound)
                   (in_stack_00000004,in_stack_00000004[3].create_event + 0x14);
       }
       break;
@@ -143,7 +143,7 @@ LAB_0054d0a2:
       cVar1 = in_stack_00000004[3].create_event[0x14];
       in_stack_00000004[2].location.position.y = 2.8026e-45;
       if (cVar1 != '\0') {
-        (*in_stack_00000004->vtable->playSound)
+        (*((in_stack_00000004->vtable)._ub)->playSound)
                   (in_stack_00000004,in_stack_00000004[3].create_event + 0x14);
       }
       break;
@@ -220,7 +220,7 @@ LAB_0054cd70:
     core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
               (g_CSoundPtr,*(uint *)(in_stack_00000004[3].create_event + 0x3c));
     if (extraout_EAX == 0) {
-      uVar3 = (*in_stack_00000004->vtable->playAmbientSound)
+      uVar3 = (*((in_stack_00000004->vtable)._ub)->playAmbientSound)
                         (in_stack_00000004,in_stack_00000004[3].create_event + 0x28);
       *(uint *)(in_stack_00000004[3].create_event + 0x3c) = uVar3;
     }
@@ -234,7 +234,7 @@ LAB_0054cd70:
             ((CMatrix3x4f *)(auStack_124 + 0x28),&(in_stack_00000004->location).position,
              (CVector3f *)&in_stack_00000004->orient);
   iVar2 = 0;
-  (*in_stack_00000004->vtable->getBoundingBox)
+  (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
             (in_stack_00000004,(CBoundingBox3D *)(auStack_c4 + 0x20));
   iVar12 = 0;
   do {

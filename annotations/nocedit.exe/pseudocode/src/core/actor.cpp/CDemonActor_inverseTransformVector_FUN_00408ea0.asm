@@ -17,7 +17,7 @@
 ;   core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0 at 004bf9ca
 ;   core_fire.cpp_CFireEffect_FUN_004c8230 at 004c8487
 ;   core_flies.cpp_FUN_004cbf00 at 004cc014
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d35c1
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d35c1
 ;   core_hero.cpp_FUN_004f2c40 at 004f2d12
 ;   ... and 7 more
 ;

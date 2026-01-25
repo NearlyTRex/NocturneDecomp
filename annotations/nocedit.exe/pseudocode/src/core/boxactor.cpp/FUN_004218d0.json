@@ -2,46 +2,58 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 6,
-        "line": 11,
-        "message": "ambiguating new declaration of 'void core_boxactor_cpp_FUN_004218d0()'"
+        "category": "missing_member",
+        "column": 13,
+        "line": 27,
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field17_0x398'"
       },
       {
         "category": "missing_member",
-        "column": 32,
+        "column": 13,
+        "line": 28,
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field17_0x398'"
+      },
+      {
+        "category": "missing_member",
+        "column": 13,
         "line": 29,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field12_0xe0'"
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field17_0x398'"
       },
       {
         "category": "missing_member",
-        "column": 52,
-        "line": 34,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field6_0x68'; did you mean 'field_108'?"
+        "column": 13,
+        "line": 30,
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field17_0x398'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 68,
+        "column": 59,
         "line": 34,
-        "message": "'DAT_0078a123' was not declared in this scope; did you mean 'DAT_00684128'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 37,
         "message": "'stack0xffffffb4' was not declared in this scope"
       },
       {
         "category": "missing_member",
-        "column": 48,
-        "line": 48,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field12_0xe0'"
+        "column": 15,
+        "line": 49,
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field17_0x398'"
       },
       {
         "category": "missing_member",
-        "column": 39,
+        "column": 15,
         "line": 50,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field12_0xe0'"
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field17_0x398'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 51,
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field17_0x398'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 52,
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field17_0x398'"
       }
     ],
     "success": false,
@@ -51,47 +63,51 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 263,
+    "complexity_score": 60,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 48,
-    "suspect_count": 20,
+    "pseudocode_lines": 45,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
-    "total_lines": 138
+    "total_lines": 135
   },
   "cross_references": [
     {
-      "addr": "00422390",
-      "from_addr": "0042248f",
-      "name": "core_boxactor.cpp_FUN_00422390",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004224f0",
       "from_addr": "00422503",
-      "name": "core_boxactor.cpp_FUN_004224f0",
+      "name": "core_boxactor.cpp_CBoxActor_FUN_004224f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00422640",
       "from_addr": "004226b7",
-      "name": "core_boxactor.cpp_FUN_00422640",
+      "name": "core_boxactor.cpp_CBoxActor_FUN_00422640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004228e0",
       "from_addr": "004228f2",
-      "name": "core_boxactor.cpp_FUN_004228e0",
+      "name": "core_boxactor.cpp_CBoxActor_FUN_004228e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00422390",
+      "from_addr": "0042248f",
+      "name": "core_boxactor.cpp_FUN_00422390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,9 +119,9 @@
         "004219d6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_boxactor.cpp_FUN_004218d0",
-    "signature": "undefined core_boxactor.cpp_FUN_004218d0()"
+    "signature": "void core_boxactor.cpp_FUN_004218d0(CBoxActor * this_ptr)"
   },
   "function_calls": [
     {
@@ -128,8 +144,8 @@
     },
     {
       "addr": "0078a123",
-      "name": "DAT_0078a123",
-      "type": "undefined4",
+      "name": "g_ActorMagicNumber",
+      "type": "int",
       "value": null
     }
   ],
@@ -172,153 +188,28 @@
     "pcode_op_count": 499
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "fVar1 = in_stack_00000004[2].field12_0xe0.x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_event[0x10] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_event[0x11] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_event[0x12] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_event[0x13] = '\\0';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "if ((0.0 < fVar1) && ((byte *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_0078a123",
-      "text": "if ((0.0 < fVar1) && ((byte *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[2].location.position.x != 0.0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->getBoundingBox)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffb4);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 30,
+      "line": 27,
       "match": "&stack0xffffffb4",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffb4);",
+      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffb4);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&CStack_2c,&CStack_20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "text": "((CBox *)&in_stack_00000004[2].field12_0xe0.y,&CStack_2c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "text": "(CVector3f *)&in_stack_00000004->orient,(CVector3f *)&fStack_8,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].field12_0xe0.x);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_event[0x10] = -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_event[0x11] = -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_event[0x12] = -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_event[0x13] = -1;",
-      "type": "stack_param"
     }
   ]
 }

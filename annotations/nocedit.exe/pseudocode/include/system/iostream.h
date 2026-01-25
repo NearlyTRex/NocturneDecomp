@@ -44,13 +44,35 @@ typedef int (*cpp_streambuf_sync)(struct streambuf* param0);
 // Function Definition: cpp_streambuf_underflow
 typedef int (*cpp_streambuf_underflow)(struct streambuf* param0);
 
+// Structure: ios
+typedef struct ios {
+    struct streambuf* _strmbuf;
+    struct ostream* _tied_stream;
+    long _format_flags;
+    int _error_state;
+    int _enabled_exceptions;
+    int _float_precision;
+    int _field_width;
+    void* _xalloc_list;
+    char _fill_character;
+    char padding[3];
+    void* _i_lock;
+    void** cleanup_vtable;
+} ios;
+
 // Structure: istream_core
 typedef struct istream_core {
     struct WatcomInheritanceLayout* layout_info;
-    int last_read_length;
+    int _last_read_length;
     struct WatcomThunkedDestructor* destructor_vtable;
     void* istream_data;
 } istream_core;
+
+// Structure: istream
+typedef struct istream {
+    istream_core _istream_core;
+    ios _ios;
+} istream;
 
 // Structure: ostream_core
 typedef struct ostream_core {
@@ -58,28 +80,6 @@ typedef struct ostream_core {
     struct WatcomThunkedDestructor* destructor_vtable;
     void* ostream_data;
 } ostream_core;
-
-// Structure: ios
-typedef struct ios {
-    struct streambuf* strmbuf;
-    struct ostream* tied_stream;
-    long format_flags;
-    int error_state;
-    int enabled_exceptions;
-    int float_precision;
-    int field_width;
-    void* xalloc_list;
-    char fill_character;
-    char padding[3];
-    void* i_lock;
-    void** cleanup_vtable;
-} ios;
-
-// Structure: istream
-typedef struct istream {
-    istream_core _istream_core;
-    ios _ios;
-} istream;
 
 // Structure: ostream
 typedef struct ostream {
@@ -89,16 +89,16 @@ typedef struct ostream {
 
 // Structure: streambuf
 typedef struct streambuf {
-    void* b_lock;
-    char* reserve_base;
-    char* reserve_end;
-    char* get_base;
-    char* get_end;
-    char* get_ptr;
-    char* put_base;
-    char* put_end;
-    char* put_ptr;
-    uint flags;
+    void* _b_lock;
+    char* _reserve_base;
+    char* _reserve_end;
+    char* _get_base;
+    char* _get_end;
+    char* _get_ptr;
+    char* _put_base;
+    char* _put_end;
+    char* _put_ptr;
+    uint _flags;
 } streambuf;
 
 // Structure: streambuf_vtable

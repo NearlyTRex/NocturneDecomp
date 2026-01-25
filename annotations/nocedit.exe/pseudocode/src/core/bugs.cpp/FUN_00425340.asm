@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00616d2b = 0.25
 ;   undefined4 DAT_0065b5b0
-;   undefined4 DAT_0065b5c8
+;   float FLOAT_0065b5c8 = 0.5
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
@@ -50,7 +50,7 @@ section .text
         ;   Label: LAB_00425359
     MOV dword ptr [ESP + 0x30],EAX      ; 0042535d
     FILD dword ptr [ESP + 0x30]         ; 00425361
-    FMUL float ptr [0x0065b5c8]         ; 00425365 | DAT_0065b5c8
+    FMUL float ptr [0x0065b5c8]         ; 00425365 | FLOAT_0065b5c8
     MOV EAX,dword ptr [EBP + 0x14]      ; 0042536b
     MOV ECX,dword ptr [ESP + 0x20]      ; 0042536e
     FADD float ptr [EAX + 0x199ec]      ; 00425372
@@ -62,7 +62,7 @@ section .text
     MOV dword ptr [ESP + 0x30],ESI      ; 00425388
         ;   Label: LAB_00425388
     FILD dword ptr [ESP + 0x30]         ; 0042538c
-    FMUL float ptr [0x0065b5c8]         ; 00425390 | DAT_0065b5c8
+    FMUL float ptr [0x0065b5c8]         ; 00425390 | FLOAT_0065b5c8
     MOV EAX,dword ptr [EBP + 0x14]      ; 00425396
     LEA EBX,[ESP + 0xc]                 ; 00425399
     FADD float ptr [EAX + 0x199f0]      ; 0042539d

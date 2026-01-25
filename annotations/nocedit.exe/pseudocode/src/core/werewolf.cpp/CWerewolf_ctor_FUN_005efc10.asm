@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wolfbrn_dfm_00657c53
-;   undefined4 DAT_00665760
-;   undefined4 PTR_FUN_00665761+3
-;   undefined4 DAT_00665768
-;   CDemonActor_vtable PTR_core_werewolf.cpp_FUN_00665784
+;   float FLOAT_00665760 = 50
+;   float FLOAT_00665764 = 100
+;   float FLOAT_00665768 = 10
+;   CDemonActor_vtable g_CWerewolfVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
@@ -35,7 +35,7 @@ section .text
     MOV EBX,EAX                         ; 005efc23
     ADD EAX,0x158                       ; 005efc25
     PUSH EAX                            ; 005efc2a
-    MOV dword ptr [EAX + -0x4],0x665784 ; 005efc2b | PTR_core_werewolf.cpp_FUN_00665784
+    MOV dword ptr [EAX + -0x4],0x665784 ; 005efc2b | g_CWerewolfVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 005efc32
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3f800000 ; 005efc37
@@ -43,11 +43,11 @@ section .text
     MOV dword ptr [EBX + 0xbebc],0x0    ; 005efc4b
     MOV dword ptr [EBX + 0xbed4],0x1    ; 005efc55
     MOV dword ptr [EBX + 0xbee8],0x0    ; 005efc5f
-    FLD float ptr [0x00665760]          ; 005efc69 | DAT_00665760
+    FLD float ptr [0x00665760]          ; 005efc69 | FLOAT_00665760
     MOV dword ptr [EBX + 0xbeec],0x40a00000 ; 005efc6f
-    FLD float ptr [0x00665764]          ; 005efc79 | PTR_FUN_00665761+3
+    FLD float ptr [0x00665764]          ; 005efc79 | FLOAT_00665764
     MOV dword ptr [EBX + 0xbef0],0x0    ; 005efc7f
-    FLD float ptr [0x00665768]          ; 005efc89 | DAT_00665768
+    FLD float ptr [0x00665768]          ; 005efc89 | FLOAT_00665768
     MOV dword ptr [EBX + 0xbef4],0x0    ; 005efc8f
     ADD ESP,0x8                         ; 005efc99
     MOV dword ptr [EBX + 0xbef8],0x0    ; 005efc9c

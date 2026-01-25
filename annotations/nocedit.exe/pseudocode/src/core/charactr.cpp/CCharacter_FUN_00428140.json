@@ -2,27 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 25,
-        "message": "'_DAT_0065b834' was not declared in this scope; did you mean 'DAT_0065b830'?"
-      },
-      {
         "category": "missing_member",
-        "column": 23,
-        "line": 30,
+        "column": 24,
+        "line": 28,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
       },
       {
         "category": "missing_member",
         "column": 24,
-        "line": 60,
+        "line": 58,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
         "category": "missing_member",
         "column": 26,
-        "line": 63,
+        "line": 61,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       }
     ],
@@ -37,48 +31,47 @@
       {
         "category": "other",
         "column": 28,
-        "line": 32,
+        "line": 30,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 39,
+        "line": 37,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 45,
+        "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 48,
+        "line": 46,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 56,
+        "line": 54,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 153,
+    "complexity_score": 137,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 113,
-    "suspect_count": 3,
+    "pseudocode_lines": 112,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 123
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -199,22 +192,15 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 23,
       "match": "DAT_00823a98",
       "text": "(&DAT_00823a98,\"stake_b.kfm\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 24,
       "match": "DAT_00823a98",
       "text": "core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&DAT_00823a98);",
       "type": "undefined_data"

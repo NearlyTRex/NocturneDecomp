@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_guul_dfm_0062dafb
-;   CDemonActor_vtable PTR_core_ghoul.cpp_FUN_0065ed44
+;   CDemonActor_vtable g_CGhoulVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
@@ -36,7 +36,7 @@ section .text
     MOV EBX,EAX                         ; 004e6046
     ADD EAX,0x158                       ; 004e6048
     PUSH EAX                            ; 004e604d
-    MOV dword ptr [EAX + -0x4],0x65ed44 ; 004e604e | PTR_core_ghoul.cpp_FUN_0065ed44
+    MOV dword ptr [EAX + -0x4],0x65ed44 ; 004e604e | g_CGhoulVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004e6055
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004e605a

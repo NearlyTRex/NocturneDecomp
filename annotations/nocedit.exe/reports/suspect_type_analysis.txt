@@ -4,41 +4,41 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    30554 ( 54.3%)
-  pointer_cast                    5855 ( 10.4%)
-  decompiler_intrinsic            4985 (  8.9%)
-  undefined_data                  2970 (  5.3%)
-  unknown_field                   2069 (  3.7%)
-  unnamed_param                   1742 (  3.1%)
-  stack_ref                       1459 (  2.6%)
-  unaffected_reg                  1230 (  2.2%)
-  suspect_float                    815 (  1.4%)
-  param_count_too_few              632 (  1.1%)
+  stack_param                    29278 ( 53.7%)
+  pointer_cast                    5865 ( 10.7%)
+  decompiler_intrinsic            4961 (  9.1%)
+  undefined_data                  2912 (  5.3%)
+  unknown_field                   2074 (  3.8%)
+  unnamed_param                   1561 (  2.9%)
+  stack_ref                       1426 (  2.6%)
+  unaffected_reg                  1148 (  2.1%)
+  suspect_float                    819 (  1.5%)
+  param_count_too_few              631 (  1.2%)
   special_crt_function             626 (  1.1%)
-  extra_output                     576 (  1.0%)
-  unresolved_funcptr               511 (  0.9%)
-  negative_offset                  413 (  0.7%)
-  format_string_mismatch           361 (  0.6%)
+  extra_output                     584 (  1.1%)
+  unresolved_funcptr               496 (  0.9%)
+  negative_offset                  413 (  0.8%)
+  format_string_mismatch           361 (  0.7%)
   fpu_register_input               341 (  0.6%)
   nonstandard_int                  273 (  0.5%)
   register_param                   200 (  0.4%)
-  warning_overlapping_globals      194 (  0.3%)
+  warning_overlapping_globals      101 (  0.2%)
   warning_unreachable               99 (  0.2%)
   param_count_too_many              86 (  0.2%)
   unknown_type                      86 (  0.2%)
   undefined_type                    46 (  0.1%)
   mmx_assembly                      34 (  0.1%)
-  warning_type_propagation          29 (  0.1%)
+  warning_type_propagation          31 (  0.1%)
   undefined_ram                     27 (  0.0%)
   special_math_intrinsic            23 (  0.0%)
   warning_jumptable                 10 (  0.0%)
   warning_indirect_jump             10 (  0.0%)
   warning_struct_overlap             8 (  0.0%)
   undefined_ptr_cast                 6 (  0.0%)
+  builtin_function                   6 (  0.0%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
   warning_spacebase                  4 (  0.0%)
-  builtin_function                   4 (  0.0%)
   warning_deadcode_restart           3 (  0.0%)
   segment_register                   2 (  0.0%)
   unnamed_field                      2 (  0.0%)
@@ -47,17 +47,17 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (30554 occurrences)
+TYPE: stack_param (29278 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  16932x  in_stack_00000004
-  6794x  in_stack_00000008
-  1785x  in_stack_0000000c
-   742x  in_stack_00000010
+  16092x  in_stack_00000004
+  6711x  in_stack_00000008
+  1764x  in_stack_0000000c
+   725x  in_stack_00000010
    337x  in_stack_00000014
-   189x  in_stack_00000018
-   146x  in_stack_0000001c
+   187x  in_stack_00000018
+   141x  in_stack_0000001c
     69x  in_stack_fffeec08
     65x  in_stack_00000020
     61x  in_stack_fffffd68
@@ -65,9 +65,9 @@ Unique patterns:
     59x  in_stack_fffeec10
     59x  in_stack_fffeec14
     58x  in_stack_fffeec18
-    48x  in_stack_ffffff54
-    38x  in_stack_fffffc58
-    36x  in_stack_fffffc54
+    44x  in_stack_ffffff54
+    31x  in_stack_fffffc54
+    31x  in_stack_fffffc58
     31x  in_stack_000000b0
     29x  in_stack_ffffc8a8
     28x  in_stack_ffffc8ac
@@ -99,22 +99,22 @@ Example functions:
     undefined3 in_stack_00000019;...
 
 ====================================================================================================
-TYPE: pointer_cast (5855 occurrences)
+TYPE: pointer_cast (5865 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2215x  (uint *)((int)
-  1247x  (int *)((int)
-   422x  (float *)((int)
+  2230x  (uint *)((int)
+  1244x  (int *)((int)
+   417x  (float *)((int)
    336x  (SRenderVertex *)((int)
    248x  (CMatrix3x4f *)((int)
    217x  (double *)((int)
    210x  (void *)((int)
    207x  (byte *)((int)
-   144x  (char *)((int)
+   145x  (char *)((int)
     83x  (ushort *)((int)
     56x  (short *)((int)
-    41x  (CVector3f *)((int)
+    38x  (CVector3f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     23x  (CMatrix3x3f *)((int)
     21x  (SMRGLHeaderExtended *)((int)
@@ -137,15 +137,15 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (4985 occurrences)
+TYPE: decompiler_intrinsic (4961 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1858x  ROUND
-   607x  CONCAT44
+  1859x  ROUND
+   596x  CONCAT44
    419x  SQRT
-   293x  ABS
-   194x  SUB84
+   295x  ABS
+   178x  SUB84
    162x  CARRY4
    150x  CONCAT11
    110x  CONCAT22
@@ -189,7 +189,7 @@ Example functions:
     uVar12 = SUB84(b,0);...
 
 ====================================================================================================
-TYPE: undefined_data (2970 occurrences)
+TYPE: undefined_data (2912 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -257,30 +257,30 @@ Example functions:
     *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
 
 ====================================================================================================
-TYPE: unknown_field (2069 occurrences)
+TYPE: unknown_field (2074 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   749x  ._0_4_
-   694x  ._4_4_
-   153x  ._8_4_
+   740x  ._0_4_
+   692x  ._4_4_
+   156x  ._8_4_
     84x  ._12_4_
-    73x  ._16_4_
-    47x  ._20_4_
-    36x  ._24_4_
+    74x  ._16_4_
+    49x  ._20_4_
+    42x  ._24_4_
     34x  ._0_1_
-    26x  ._28_4_
+    30x  ._28_4_
     24x  ._2_2_
     20x  ._3_1_
     17x  ._0_24_
     16x  ._0_2_
     16x  ._1_1_
     16x  ._2_1_
-     7x  ._4_8_
-     7x  ._32_4_
+    10x  ._32_4_
+     7x  ._48_4_
      6x  ._8_8_
+     6x  ._36_4_
      6x  ._44_4_
-     5x  ._48_4_
 
 Example functions:
   crt_fpemu.c_staticInit_FUN_0060be80
@@ -301,18 +301,18 @@ Example functions:
     if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
 
 ====================================================================================================
-TYPE: unnamed_param (1742 occurrences)
+TYPE: unnamed_param (1561 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   566x  param_5
-   491x  param_2
-   183x  param_3
-   158x  param_1
-   153x  param_4
-   140x  param_6
-    21x  param_7
-    14x  param_8
+   461x  param_5
+   449x  param_2
+   174x  param_3
+   151x  param_1
+   148x  param_4
+   130x  param_6
+    20x  param_7
+    12x  param_8
      7x  param_10
      4x  param_9
      2x  param_11
@@ -330,7 +330,7 @@ Example functions:
     (uint param_1,uint param_2,byte *unaff_EBX,uint param_4,...
 
 ====================================================================================================
-TYPE: stack_ref (1459 occurrences)
+TYPE: stack_ref (1426 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -338,21 +338,21 @@ Unique patterns:
     32x  &stack0xfffffc4c
     30x  &stack0xffffffe8
     27x  &stack0xfffffc54
-    26x  &stack0xffffff24
-    23x  &stack0xfffffff0
+    24x  &stack0xfffffff0
+    24x  &stack0xffffff24
     22x  &stack0xffffff54
     22x  &stack0x00000000
+    21x  &stack0xffffffe0
     21x  &stack0xffffffd4
-    20x  &stack0xffffffe0
     20x  &stack0xffffffd8
     19x  &stack0xfffffa18
     18x  &stack0xffffedf8
     17x  &stack0xffffffec
     17x  &stack0xfffffed0
-    16x  &stack0xfffffff4
     16x  &stack0xffffff98
     16x  &stack0xfffffbb8
     16x  &stack0xffffe138
+    15x  &stack0xfffffff4
     15x  &stack0xfffffaa8
 
 Example functions:
@@ -386,14 +386,14 @@ Example functions:
     puVar6 = &stack0xfffffff0;...
 
 ====================================================================================================
-TYPE: unaffected_reg (1230 occurrences)
+TYPE: unaffected_reg (1148 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   436x  unaff_EBX
-   366x  unaff_ESI
-   224x  unaff_EDI
-   204x  unaff_EBP
+   417x  unaff_EBX
+   323x  unaff_ESI
+   213x  unaff_EDI
+   195x  unaff_EBP
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
@@ -426,15 +426,15 @@ Example functions:
     int unaff_EBP;...
 
 ====================================================================================================
-TYPE: suspect_float (815 occurrences)
+TYPE: suspect_float (819 occurrences)
 ====================================================================================================
 
 Unique patterns:
    132x  9.18341e-41
    108x  7.34684e-40
    104x  2.2775203e-38
-    83x  1.4013e-45
-    37x  2.8026e-45
+    84x  1.4013e-45
+    38x  2.8026e-45
     19x  4.2039e-45
     14x  5.60519e-45
     12x  1.14794e-41
@@ -468,27 +468,27 @@ Example functions:
     fVar3 = 3.67342e-40;...
 
 ====================================================================================================
-TYPE: param_count_too_few (632 occurrences)
+TYPE: param_count_too_few (631 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    93x  declared:1 vs estimated:2
-    87x  declared:0 vs estimated:2
-    79x  declared:0 vs estimated:1
-    58x  declared:0 vs estimated:3
-    55x  declared:0 vs estimated:4
-    25x  declared:1 vs estimated:3
-    23x  declared:1 vs estimated:5
+   102x  declared:1 vs estimated:2
+    81x  declared:0 vs estimated:2
+    78x  declared:0 vs estimated:1
+    55x  declared:0 vs estimated:3
+    54x  declared:0 vs estimated:4
+    26x  declared:1 vs estimated:3
+    24x  declared:1 vs estimated:5
     21x  declared:3 vs estimated:4
     18x  declared:0 vs estimated:5
     15x  declared:2 vs estimated:3
-    15x  declared:0 vs estimated:6
     14x  declared:1 vs estimated:4
+    14x  declared:0 vs estimated:6
      9x  declared:5 vs estimated:6
      9x  declared:2 vs estimated:6
-     8x  declared:0 vs estimated:7
      8x  declared:0 vs estimated:9
      7x  declared:2 vs estimated:5
+     7x  declared:0 vs estimated:7
      6x  declared:4 vs estimated:5
      6x  declared:3 vs estimated:5
      6x  declared:2 vs estimated:4
@@ -625,16 +625,16 @@ Example functions:
     CRT function (runtime support) at 00609afc...
 
 ====================================================================================================
-TYPE: extra_output (576 occurrences)
+TYPE: extra_output (584 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   227x  extraout_EAX
+   231x  extraout_EAX
     87x  extraout_EBX
-    67x  extraout_EAX_00
+    69x  extraout_EAX_00
     34x  extraout_var
     28x  extraout_ST1
-    22x  extraout_EAX_01
+    24x  extraout_EAX_01
     14x  extraout_EAX_02
     13x  extraout_EBX_00
     11x  extraout_EDX
@@ -677,11 +677,11 @@ Example functions:
     int extraout_EDX;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (511 occurrences)
+TYPE: unresolved_funcptr (496 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   478x  code *
+   463x  code *
     33x  code
 
 Example functions:
@@ -730,7 +730,7 @@ Unique patterns:
     18x  pCVar4[-1].
     16x  pCVar3[-5].
     14x  pCVar3[-2].
-    13x  pCVar5[-1].
+    13x  pCVar6[-1].
     12x  this_ptr[-1].
     12x  pCVar2[-2].
      8x  pCVar1[-2].
@@ -829,11 +829,11 @@ Example functions:
     Format string expects 1 args but got 2...
   core_dcamera.cpp_saveCameraFog_FUN_00453f10
     Format string expects 3 args but got 0...
-  core_dracbrid.cpp_FUN_00484410
-    Format string expects 1 args but got 0...
   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
     Format string expects 1 args but got 0...
   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0
+    Format string expects 1 args but got 0...
+  core_cloth.cpp_ParseClothFile_FUN_00439260
     Format string expects 1 args but got 0...
 
 ====================================================================================================
@@ -936,11 +936,11 @@ Example functions:
     uint in_ECX;...
 
 ====================================================================================================
-TYPE: warning_overlapping_globals (194 occurrences)
+TYPE: warning_overlapping_globals (101 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   194x  WARNING: Globals starting with
+   101x  WARNING: Globals starting with
 
 Example functions:
   crt_math.c_atan2_FUN_0060c440
@@ -957,21 +957,13 @@ Example functions:
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_batcreat.cpp_CBatCreature_ctor_FUN_004150f0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_batcreat.cpp_CBatCreature_FUN_00415150
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dracbrid.cpp_FUN_00484410
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_dracbrid.cpp_FUN_004869a0
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_dracbrid.cpp_staticInit_FUN_00483ef0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_dracbrid.cpp_ctor_FUN_00483fc0
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_cloth.cpp_FUN_0043b7e0
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
@@ -987,10 +979,6 @@ Example functions:
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_cloth.cpp_FUN_0043dcc0
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_drone.cpp_ctor_FUN_0048eb50
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_zombie.cpp_CZombie_ctor_FUN_005f8fe0
-    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_icepick.cpp_FUN_004f7e80
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_bugs.cpp_FUN_00425340
@@ -999,9 +987,21 @@ Example functions:
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
   core_bugs.cpp_FUN_00427ad0
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_bugs.cpp_FUN_004257f0
+  core_gore.cpp_FUN_004eb9d0
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-  core_bugs.cpp_FUN_00425fe0
+  core_gore.cpp_FUN_004ec470
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_gore.cpp_FUN_004ed3c0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_gore.cpp_FUN_004ecc40
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_flies.cpp_FUN_004cc300
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_pendulum.cpp_FUN_005495c0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_baron.cpp_CBaron_FUN_00412cb0
+    /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
+  core_marquee.cpp_FUN_0050bec0
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
 
 ====================================================================================================
@@ -1345,11 +1345,11 @@ Example functions:
     Function uses MMX instructions...
 
 ====================================================================================================
-TYPE: warning_type_propagation (29 occurrences)
+TYPE: warning_type_propagation (31 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    29x  WARNING: Type propagation algorithm not settling
+    31x  WARNING: Type propagation algorithm not settling
 
 Example functions:
   crt_stdio.c_FormatEngine_FUN_00602950
@@ -1390,9 +1390,13 @@ Example functions:
     /* WARNING: Type propagation algorithm not settling */...
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
     /* WARNING: Type propagation algorithm not settling */...
+  core_tentacle.cpp_CTentacle_process_FUN_005db050
+    /* WARNING: Type propagation algorithm not settling */...
   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
     /* WARNING: Type propagation algorithm not settling */...
   core_event.cpp_CEventList_FUN_004aacc0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_charactr.cpp_CCharacter_FUN_0042ede0
     /* WARNING: Type propagation algorithm not settling */...
   core_hostage.cpp_CHostage_FUN_004f6550
     /* WARNING: Type propagation algorithm not settling */...
@@ -1407,8 +1411,6 @@ Example functions:
   core_bodypart.cpp_FUN_0041aa40
     /* WARNING: Type propagation algorithm not settling */...
   shape_design.c_createKeyframeModel_FUN_00468320
-    /* WARNING: Type propagation algorithm not settling */...
-  shape_design.c_createRotationalSweepGeometry_FUN_0045e070
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================
@@ -1585,6 +1587,25 @@ Example functions:
     unaff_EDI = (char *)*(undefined6 *)pcVar2;...
 
 ====================================================================================================
+TYPE: builtin_function (6 occurrences)
+====================================================================================================
+
+Unique patterns:
+     6x  builtin_strncpy
+
+Example functions:
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    builtin_strncpy(local_194,"J\x04T",4);...
+  core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0
+    builtin_strncpy(local_114.field0_0x0 + 4,"\nף=\x02",6);...
+  core_podmain.cpp_CDemonPod_load_FUN_005519c0
+    builtin_strncpy(local_170,"/\x1aU",4);...
+  core_ghoul.cpp_CGhoul_FUN_004e6600
+    builtin_strncpy(in_stack_00000004->field6_0xbe38,"333?",4);...
+  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
+    builtin_strncpy(this_ptr->field1_0x1fbd4 + 0x10,"fff?",4);...
+
+====================================================================================================
 TYPE: warning_noreturn (4 occurrences)
 ====================================================================================================
 
@@ -1634,21 +1655,6 @@ Example functions:
     /* WARNING: Unable to track spacebase fully for stack */...
   entry
     /* WARNING: Unable to track spacebase fully for stack */...
-
-====================================================================================================
-TYPE: builtin_function (4 occurrences)
-====================================================================================================
-
-Unique patterns:
-     4x  builtin_strncpy
-
-Example functions:
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    builtin_strncpy(local_194,"J\x04T",4);...
-  core_podmain.cpp_CDemonPod_load_FUN_005519c0
-    builtin_strncpy(local_170,"/\x1aU",4);...
-  core_ghoul.cpp_CGhoul_FUN_004e6600
-    builtin_strncpy(in_stack_00000004->field6_0xbe38,"333?",4);...
 
 ====================================================================================================
 TYPE: warning_deadcode_restart (3 occurrences)

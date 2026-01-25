@@ -38,7 +38,7 @@ core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
         if (pCVar1 == (CDemonActor *)0x0) {
           return 1;
         }
-        (*pCVar1->vtable->playSound)(pCVar1,"key-unlock.wav");
+        (*((pCVar1->vtable)._ub)->playSound)(pCVar1,"key-unlock.wav");
         return 1;
       }
       iVar4 = iVar4 + 1;

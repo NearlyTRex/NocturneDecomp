@@ -39,6 +39,12 @@
       },
       {
         "category": "other",
+        "column": 14,
+        "line": 83,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
+        "category": "other",
         "column": 48,
         "line": 93,
         "message": "request for member '_12_4_' in 'auStack_d8', which is of non-class type 'byte [16]' {aka 'unsigned char [16]'}"
@@ -92,12 +98,12 @@
   },
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 387,
+    "complexity_score": 377,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "pseudocode_lines": 137,
-    "suspect_count": 22,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -218,15 +224,15 @@
     },
     {
       "addr": "00664b6c",
-      "name": "DAT_00664b6c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00664b6c",
+      "type": "float",
+      "value": "-0.5235988"
     },
     {
       "addr": "00664b70",
-      "name": "DAT_00664b70",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00664b70",
+      "type": "float",
+      "value": "1.221730"
     },
     {
       "addr": "0066e8e0",
@@ -421,14 +427,7 @@
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable[1].renderTransparent)(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable[1].renderTransparent)(in_stack_00000004);",
+      "text": "(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc4)();",
       "type": "stack_param"
     },
     {
@@ -456,7 +455,7 @@
       "description": "Direct stack address reference",
       "line": 100,
       "match": "&stack0xfffffea8",
-      "text": "iVar2 = (*actor_ptr->vtable->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffea8);",
+      "text": "iVar2 = (*((actor_ptr->vtable)._ub)->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffea8);",
       "type": "stack_ref"
     },
     {

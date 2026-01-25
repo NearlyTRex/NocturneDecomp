@@ -35,8 +35,8 @@
 ;   TerminatedCString s_actionPending_d_stranger_00653788
 ;   TerminatedCString s_doorToOpen_NULL_stranger_006537b0
 ;   double DOUBLE_006537e4 = 0.400000000000000
-;   undefined4 DAT_00663750
-;   undefined4 DAT_00663758
+;   float FLOAT_00663750 = 10
+;   float FLOAT_00663758 = 8
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CEnemyClassInfo.name_hash
@@ -522,12 +522,12 @@ section .text
     ADD ESP,0x4                         ; 005be300
     JMP 0x005bddf2                      ; 005be303
         ;   XREF to: 005bddf2 (UNCONDITIONAL_JUMP)  ; LAB_005bddf2
-    MOV EAX,[0x00663750]                ; 005be308 | DAT_00663750
+    MOV EAX,[0x00663750]                ; 005be308 | FLOAT_00663750
         ;   Label: LAB_005be308
     MOV dword ptr [EBX + 0x242c],EAX    ; 005be30d
     JMP 0x005bddf2                      ; 005be313
         ;   XREF to: 005bddf2 (UNCONDITIONAL_JUMP)  ; LAB_005bddf2
-    MOV EAX,[0x00663758]                ; 005be318 | DAT_00663758
+    MOV EAX,[0x00663758]                ; 005be318 | FLOAT_00663758
         ;   Label: LAB_005be318
     MOV dword ptr [EBX + 0x242c],EAX    ; 005be31d
     JMP 0x005bddf2                      ; 005be323

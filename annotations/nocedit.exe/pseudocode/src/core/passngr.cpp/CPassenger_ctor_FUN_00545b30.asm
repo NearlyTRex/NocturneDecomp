@@ -23,11 +23,11 @@
 ;   undefined4 s_ameMePlease_0063e7a4
 ;   undefined4 s_meMePlease_0063e7a5
 ;   undefined4 s_eMePlease_0063e7a6
-;   CDemonActor_vtable PTR_core_passngr.cpp_FUN_00545d30_00661f64
+;   CDemonActor_vtable g_CPassengerVTable
 ;
 ; Called Functions:
 ;   core_morph.cpp_FUN_0052b310
-;   core_npc.cpp_FUN_005447e0
+;   core_npc.cpp_CNPC_ctor_FUN_005447e0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH EDI                            ; 00545b32
     MOV EBX,dword ptr [ESP + 0x10]      ; 00545b33
     PUSH EBX                            ; 00545b37
-    CALL core_npc.cpp_FUN_005447e0      ; 00545b38
-        ;   XREF to: 005447e0 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_005447e0(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_ctor_FUN_005447e0 ; 00545b38
+        ;   XREF to: 005447e0 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_CNPC_ctor_FUN_005447e0(CNPC * this_ptr)
     ADD ESP,0x4                         ; 00545b3d
     ADD EAX,0x1f814                     ; 00545b40
     PUSH EAX                            ; 00545b45
@@ -51,7 +51,7 @@ section .text
     LEA EBX,[EAX + 0xfffe07ec]          ; 00545b50
     ADD ESP,0x4                         ; 00545b56
     LEA EDI,[EBX + 0x1f76c]             ; 00545b59
-    MOV dword ptr [EBX + 0x154],0x661f64 ; 00545b5f | PTR_core_passngr.cpp_FUN_00545d30_00661f64
+    MOV dword ptr [EBX + 0x154],0x661f64 ; 00545b5f | g_CPassengerVTable
     PUSH EDI                            ; 00545b69
     MOV AL,byte ptr [ESI]               ; 00545b6a | = "wolfbrn.dfm" | s_lfbrn.dfm_0063e786
         ;   Label: LAB_00545b6a

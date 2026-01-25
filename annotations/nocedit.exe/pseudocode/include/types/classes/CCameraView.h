@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CCameraView_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CCameraView_vtable.h"
 #include "types/classes/CMatrix3x3i.h"
 #include "types/classes/CVector3i.h"
 

@@ -12,7 +12,7 @@
 ;
 ; XREF[3]:
 ;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0 at 0041a023
-;   core_boxactor.cpp_FUN_004224f0 at 00422539
+;   core_boxactor.cpp_CBoxActor_FUN_004224f0 at 00422539
 ;   core_fire.cpp_CToss_create_FUN_004c3ee0 at 004c3fd1
 ;
 ; Called Functions:

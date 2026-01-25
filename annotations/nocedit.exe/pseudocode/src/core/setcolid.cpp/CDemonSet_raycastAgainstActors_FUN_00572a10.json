@@ -118,73 +118,73 @@
       {
         "category": "missing_member",
         "column": 25,
-        "line": 102,
+        "line": 103,
         "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field11_0x14d148'"
       },
       {
         "category": "missing_member",
         "column": 25,
-        "line": 103,
+        "line": 104,
         "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field12_0x14d14c'"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 103,
+        "line": 104,
         "message": "request for member '_4_4_' in 'local_88', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 106,
+        "line": 107,
         "message": "request for member '_0_4_' in 'auStack_50', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 108,
+        "line": 109,
         "message": "request for member '_4_4_' in 'auStack_50', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 111,
-        "message": "request for member '_0_4_' in 'auStack_50', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 48,
         "line": 112,
+        "message": "request for member '_0_4_' in 'auStack_50', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 113,
         "message": "request for member '_4_4_' in 'auStack_50', which is of non-class type 'byte [8]' {aka 'unsigned char [8]'}"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 116,
+        "line": 117,
         "message": "request for member '_8_4_' in 'local_88', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 117,
+        "line": 118,
         "message": "request for member '_0_4_' in 'local_7c', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 118,
+        "line": 119,
         "message": "request for member '_4_4_' in 'local_7c', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 121,
+        "line": 122,
         "message": "request for member '_8_4_' in 'local_7c', which is of non-class type 'byte [12]' {aka 'unsigned char [12]'}"
       },
       {
         "category": "missing_member",
         "column": 51,
-        "line": 137,
+        "line": 138,
         "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
       }
     ],
@@ -206,18 +206,18 @@
   },
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 381,
+    "complexity_score": 382,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 136,
+    "pseudocode_lines": 137,
     "suspect_count": 23,
     "suspect_types": [
       "stack_ref",
       "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 467
+    "total_lines": 468
   },
   "cross_references": [
     {
@@ -639,96 +639,96 @@
       "description": "Direct stack address reference",
       "line": 83,
       "match": "&stack0xffffff34",
-      "text": "iVar3 = (*pCVar1->vtable->hasCollision)(pCVar1,(SCollisionInfo *)&stack0xffffff34);",
+      "text": "iVar3 = (*((pCVar1->vtable)._ub)->hasCollision)(pCVar1,(SCollisionInfo *)&stack0xffffff34)",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 89,
+      "line": 90,
       "match": "unaff_EBP",
       "text": "if (&CStack_9c != unaff_EBP) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 90,
+      "line": 91,
       "match": "unaff_EBP",
       "text": "unaff_EBP->x = CStack_9c.x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 91,
+      "line": 92,
       "match": "unaff_EBP",
       "text": "unaff_EBP->y = CStack_9c.y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 93,
       "match": "unaff_EBP",
       "text": "unaff_EBP->z = CStack_9c.z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 96,
+      "line": 97,
       "match": "._4_4_",
       "text": "this_ptr->field12_0x14d14c = local_88._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 100,
       "match": "._0_4_",
       "text": "auStack_50._0_4_ = fStack_38 * fVar4;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 102,
       "match": "._4_4_",
       "text": "auStack_50._4_4_ = fStack_34 * fVar4;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 104,
+      "line": 105,
       "match": "._0_4_",
       "text": "local_5c.x = (float)auStack_50._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 105,
+      "line": 106,
       "match": "._4_4_",
       "text": "local_5c.y = (float)auStack_50._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 110,
       "match": "._8_4_",
       "text": "local_88._8_4_ = ray_origin->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 111,
       "match": "._0_4_",
       "text": "local_7c._0_4_ = ray_origin->y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 111,
+      "line": 112,
       "match": "._4_4_",
       "text": "local_7c._4_4_ = ray_origin->z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 115,
       "match": "._8_4_",
       "text": "local_7c._8_4_ = ray_origin->x;",
       "type": "unknown_field"

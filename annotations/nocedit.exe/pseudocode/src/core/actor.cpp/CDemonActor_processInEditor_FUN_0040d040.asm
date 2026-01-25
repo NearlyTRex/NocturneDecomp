@@ -9,7 +9,7 @@
 ; XREF[26]:
 ;   core_barrier.cpp_CBarrier_FUN_00414460 at 004145fd
 ;   core_bodypart.cpp_CBodyPart_processInEditor_FUN_0041b260 at 0041b265
-;   core_boxactor.cpp_FUN_004228e0 at 004228e5
+;   core_boxactor.cpp_CBoxActor_FUN_004228e0 at 004228e5
 ;   core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800 at 0042f809
 ;   core_curtain.cpp_FUN_0044b7a0 at 0044b8ab
 ;   core_door.cpp_CDoor_processInEditor_FUN_00481590 at 00481596

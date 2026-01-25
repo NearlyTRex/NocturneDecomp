@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_bugs.cpp_FUN_00424e50(uint param_1) */
 
 void core_bugs_cpp_FUN_00424e50(void)
@@ -72,8 +71,8 @@ void core_bugs_cpp_FUN_00424e50(void)
   }
   local_28 = 0;
   if (0 < *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc)) {
-    fVar1 = _DAT_0065b5c8 * 12.0f;
-    fVar2 = _DAT_0065b5c8 * -12.0f;
+    fVar1 = 0.5f * 12.0f;
+    fVar2 = 0.5f * -12.0f;
     pCVar10 = &in_stack_00000004[1].base_character.base_actor.orient;
     pfVar8 = &in_stack_00000004[1].base_character.base_actor.location.position.y;
     local_2c = (float *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x18);

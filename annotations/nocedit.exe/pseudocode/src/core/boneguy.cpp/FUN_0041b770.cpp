@@ -20,8 +20,8 @@ CVector3f * core_boneguy_cpp_FUN_0041b770(void)
   float fStack_14;
   float fStack_10;
   
-  (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0)
-  ;
+  (*((in_stack_00000008->vtable)._ub)->getBoundingBox)
+            (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0);
   core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&fStack_14);
   fStack_14 = fStack_38 + fStack_2c;
   fStack_10 = fStack_34 + fStack_28;

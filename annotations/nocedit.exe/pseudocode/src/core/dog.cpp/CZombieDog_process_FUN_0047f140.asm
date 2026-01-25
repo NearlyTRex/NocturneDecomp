@@ -51,7 +51,7 @@
 ;   double DOUBLE_00621021 = 2
 ;   double DOUBLE_00621029 = 0.5
 ;   double DOUBLE_00621031 = 32
-;   int INT_0065ca28 = 0x40400000
+;   float FLOAT_0065ca28 = 3
 ;   float FLOAT_0065ca34 = 8
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGore* g_CGorePtr = 02d83364
@@ -553,7 +553,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 0047f666
         ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0047f66b
-    MOV EAX,[0x0065ca28]                ; 0047f66e | INT_0065ca28
+    MOV EAX,[0x0065ca28]                ; 0047f66e | FLOAT_0065ca28
         ;   Label: LAB_0047f66e
     PUSH 0x3e32b8c2                     ; 0047f673
     MOV dword ptr [EBP + 0x6e],EAX      ; 0047f678

@@ -286,7 +286,7 @@ int * __cdecl core_weapon_cpp_CWeapon_FUN_005ee670(CWeapon * this_ptr);
 undefined __unknown core_weapon_cpp_FUN_005ee6e0();
 int __cdecl core_weapon_cpp_CWeapon_FUN_005ee710(CWeapon * this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_FUN_005ee730(CWeapon * this_ptr);
-undefined __unknown core_weapon_cpp_FUN_005ee740();
+void __cdecl core_weapon_cpp_FUN_005ee740(CWeapon * this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon * this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_FUN_005ee860(CWeapon * this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_FUN_005ee9f0(CWeapon * this_ptr);

@@ -49,7 +49,7 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
       iVar2 = core_actor_cpp_randomChance_FUN_0040cd10
                         ((in_stack_00000008 * (float)5 * fVar1) / _DAT_0065d30c);
       if (iVar2 != 0) {
-        pCVar3 = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
+        pCVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->getBoundingBox)
                            (&in_stack_00000004->base_actor,(CBoundingBox3D *)(auStack_58 + 0x10));
         CStack_20.y = (pCVar3->min).x + (pCVar3->max).x;
         CStack_20.z = (pCVar3->min).y + (pCVar3->max).y;
@@ -57,7 +57,7 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
         fStack_14 = (pCVar3->min).z + (pCVar3->max).z;
         fStack_24 = CStack_20.z * 0.5f;
         CStack_20.x = fStack_14 * 0.5f;
-        pCVar3 = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
+        pCVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->getBoundingBox)
                            (&in_stack_00000004->base_actor,(CBoundingBox3D *)auStack_58);
         CStack_20.z = (pCVar3->max).z;
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

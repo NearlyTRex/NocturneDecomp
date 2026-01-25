@@ -116,7 +116,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
       iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                         ((uint)in_stack_00000004[1].base_actor.field13_0xec.y);
       if (iVar9 == 0) {
-        fVar8 = (float)(*((in_stack_00000004->base_actor).vtable)->playSound)
+        fVar8 = (float)(*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                                  (&in_stack_00000004->base_actor,"ghoul-die-!-?.wav @1.6");
         in_stack_00000004[1].base_actor.field13_0xec.y = fVar8;
       }
@@ -127,7 +127,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
       (pCVar5->base_actor).create_event[0x2d] = '\0';
       (pCVar5->base_actor).create_event[0x2e] = '\n';
       (pCVar5->base_actor).create_event[0x2f] = '\0';
-      pCVar4 = (in_stack_00000004->base_actor).vtable;
+      pCVar4 = (in_stack_00000004->base_actor).vtable._ub;
       spawn_radius = 7.00649e-44;
       iVar9 = 0x4e8999;
       dVar10 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * fVar8));
@@ -162,7 +162,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
     iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       ((uint)in_stack_00000004[1].base_actor.field13_0xec.x);
     if (iVar9 == 0) {
-      fVar8 = (float)(*((in_stack_00000004->base_actor).vtable)->playSound)
+      fVar8 = (float)(*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                                (&in_stack_00000004->base_actor,"ghoul-mad-!-?.wav");
       in_stack_00000004[1].base_actor.field13_0xec.x = fVar8;
       iStack_74 = in_stack_00000008;

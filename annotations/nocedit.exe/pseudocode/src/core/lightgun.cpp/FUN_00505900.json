@@ -3,9 +3,15 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 46,
-        "line": 19,
+        "column": 9,
+        "line": 18,
         "message": "'PTR_core_weapon_cpp_ActorModelSomething_FUN_00660a64' was not declared in this scope"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 21,
+        "message": "'CLightGun' {aka 'struct CLightGun'} has no member named 'field1_0x578'"
       },
       {
         "category": "missing_member",
@@ -51,9 +57,9 @@
       },
       {
         "category": "missing_member",
-        "column": 11,
+        "column": 25,
         "line": 29,
-        "message": "'CLightGun' {aka 'struct CLightGun'} has no member named 'field1_0x578'"
+        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
       },
       {
         "category": "missing_member",
@@ -147,15 +153,9 @@
       },
       {
         "category": "missing_member",
-        "column": 25,
-        "line": 45,
-        "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field3_0x2d8'; did you mean 'field_728'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 11,
-        "line": 48,
-        "message": "'_DAT_00660a3c' was not declared in this scope; did you mean 'DAT_0066ea4c'?"
+        "line": 50,
+        "message": "'CLightGun' {aka 'struct CLightGun'} has no member named 'field1_0x578'"
       },
       {
         "category": "missing_member",
@@ -201,20 +201,14 @@
       },
       {
         "category": "missing_member",
-        "column": 11,
+        "column": 36,
         "line": 58,
-        "message": "'CLightGun' {aka 'struct CLightGun'} has no member named 'field1_0x578'"
-      },
-      {
-        "category": "missing_member",
-        "column": 35,
-        "line": 59,
         "message": "'CWeapon' {aka 'struct CWeapon'} has no member named 'field9_0x305'"
       },
       {
         "category": "missing_member",
-        "column": 21,
-        "line": 60,
+        "column": 22,
+        "line": 59,
         "message": "'CLightGun' {aka 'struct CLightGun'} has no member named 'field1_0x578'"
       }
     ],
@@ -229,22 +223,21 @@
       {
         "category": "other",
         "column": 43,
-        "line": 21,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 81,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 51,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "suspect_float",
-      "warning_overlapping_globals"
+      "suspect_float"
     ],
     "total_lines": 85
   },
@@ -289,15 +282,15 @@
     },
     {
       "addr": "00660a3c",
-      "name": "DAT_00660a3c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00660a3c",
+      "type": "float",
+      "value": "8"
     },
     {
       "addr": "00660a40",
-      "name": "DAT_00660a40",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00660a40",
+      "type": "float",
+      "value": "30"
     },
     {
       "addr": "00660a64",
@@ -362,15 +355,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 40,
+      "line": 39,
       "match": "1.4013e-45",
       "text": "(pCVar3->base_weapon).fire_cooldown = 1.4013e-45;",
       "type": "suspect_float"

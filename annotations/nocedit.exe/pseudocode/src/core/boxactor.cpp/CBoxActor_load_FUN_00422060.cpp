@@ -42,7 +42,7 @@ void core_boxactor_cpp_CBoxActor_load_FUN_00422060(void)
     ;
   }
   core_actor_cpp_serializeActor_FUN_0040b870
-            ((CDemonActor *)&in_stack_00000004[2].field6_0x68,"carriedByActor");
+            ((CDemonActor *)&in_stack_00000004[2].validation_magic,"carriedByActor");
   if (1 < g_CBoxActorClassVersion) {
     core_actor_cpp_serializeInteger_FUN_0040b7f0
               (&in_stack_00000004[2].field7_0x6c,"canBePushed");

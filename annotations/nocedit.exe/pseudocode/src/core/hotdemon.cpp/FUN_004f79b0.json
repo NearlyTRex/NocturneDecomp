@@ -20,17 +20,17 @@
   },
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 48,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 8,
-    "suspect_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 17
+    "total_lines": 18
   },
   "cross_references": [],
   "function": {
@@ -49,7 +49,7 @@
     {
       "addr": "0042bc20",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bc20"
+      "name": "core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20"
     }
   ],
   "globals": [],
@@ -105,9 +105,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "SCollisionInfo *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
       "match": "in_stack_00000004",
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bc20(in_stack_00000004);",
+      "text": "core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     }
   ],

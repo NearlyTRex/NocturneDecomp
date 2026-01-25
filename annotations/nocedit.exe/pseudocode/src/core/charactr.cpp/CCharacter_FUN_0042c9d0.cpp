@@ -9,8 +9,7 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042c9d0(CCharacter *this_ptr)
 
 {
-  CDemonActor_vtable *pCVar1;
-  CVector3f *unaff_retaddr;
+  CCharacter_full_vtable *pCVar1;
   uint in_stack_00000008;
   
   this_ptr->field11_0x25a0[0x10] = '\x01';
@@ -22,12 +21,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c9d0(CCharacter *this_ptr)
   this_ptr->field11_0x25a0[6] = -0x80;
   this_ptr->field11_0x25a0[7] = -0x41;
   *(uint *)this_ptr->field11_0x25a0 = in_stack_00000008;
-  pCVar1 = (this_ptr->base_actor).vtable;
+  pCVar1 = (this_ptr->base_actor).vtable._uc;
   this_ptr->field11_0x25a0[8] = -0x36;
   this_ptr->field11_0x25a0[9] = -0xe;
   this_ptr->field11_0x25a0[10] = 'I';
   this_ptr->field11_0x25a0[0xb] = 'q';
-  (*pCVar1[1].setPositionAndOrientation)
-            (&this_ptr->base_actor,(CVector3f *)0xbf800000,unaff_retaddr);
+  (*(pCVar1->_uc).cfunc25)();
   return;
 }

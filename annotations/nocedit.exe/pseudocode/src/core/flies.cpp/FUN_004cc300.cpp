@@ -41,7 +41,7 @@ int core_flies_cpp_FUN_004cc300(void)
   }
   in_stack_00000004[0x1f].create_prob = 0.0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_58);
+  this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&local_58);
   iStack_20 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   iVar3 = INT_02d7a7c0;
   if (iStack_20 != 0) {

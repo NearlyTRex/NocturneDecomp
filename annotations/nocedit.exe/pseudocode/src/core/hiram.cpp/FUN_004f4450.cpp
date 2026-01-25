@@ -24,8 +24,7 @@ core_hiram_cpp_FUN_004f4450
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_actor).base_character.base_actor.vtable =
-       &PTR_core_hiram_cpp_FUN_004f4530_0065f974;
+  (this_ptr->base_actor).base_character.base_actor.vtable._ub = &g_CHiramVTable;
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)&(this_ptr->base_actor).model_name);
   iVar2 = core_backgnd_cpp_freeFlames_FUN_00412720
                     ((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));

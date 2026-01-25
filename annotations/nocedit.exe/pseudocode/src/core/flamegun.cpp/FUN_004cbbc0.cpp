@@ -15,7 +15,7 @@ CFlashlight * __cdecl core_flamegun_cpp_FUN_004cbbc0(CFlashlight *this_ptr)
   CWeapon *pCVar2;
   
   pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar2->base_actor).vtable = &PTR_core_weapon_cpp_ActorModelSomething_FUN_0065e3d4;
+  (pCVar2->base_actor).vtable._ub = &PTR_core_weapon_cpp_ActorModelSomething_FUN_0065e3d4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&pCVar2->model,"flashlit.kfm");
   pCVar2->field3_0x2d8[0] = '\0';

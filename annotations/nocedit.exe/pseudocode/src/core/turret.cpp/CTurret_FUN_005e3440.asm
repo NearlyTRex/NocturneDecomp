@@ -7,8 +7,8 @@
 ; CTurret *        Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00664b6c
-;   undefined4 DAT_00664b70
+;   float FLOAT_00664b6c = -0.5235988
+;   float FLOAT_00664b70 = 1.221730
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030
@@ -40,9 +40,9 @@ section .text
     MOV dword ptr [EBX + 0x10],0x40c90fdb ; 005e346d
     MOV dword ptr [EBX + 0x14],0xc0c90fdb ; 005e3474
     MOV dword ptr [EBX + 0x4],EAX       ; 005e347b
-    FLD float ptr [0x00664b70]          ; 005e347e | DAT_00664b70
+    FLD float ptr [0x00664b70]          ; 005e347e | FLOAT_00664b70
     FSUB float ptr [ESI + 0x30]         ; 005e3484
-    FLD float ptr [0x00664b6c]          ; 005e3487 | DAT_00664b6c
+    FLD float ptr [0x00664b6c]          ; 005e3487 | FLOAT_00664b6c
     FXCH                                ; 005e348d
     FSTP float ptr [EBX + 0x18]         ; 005e348f
     FSUB float ptr [ESI + 0x30]         ; 005e3492

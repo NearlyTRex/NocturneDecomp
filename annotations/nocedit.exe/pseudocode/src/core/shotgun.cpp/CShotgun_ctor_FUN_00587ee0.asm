@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_kfm_00649afc
-;   undefined4 DAT_00662a7c
+;   float FLOAT_00662a7c = 8
 ;   CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_00662a84
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     MOV dword ptr [EBX + 0x2e0],0x1     ; 00587f25
     MOV dword ptr [EBX + 0x2e4],0x1     ; 00587f2f
     MOV dword ptr [EBX + 0x2e8],0x41700000 ; 00587f39
-    FLD float ptr [0x00662a7c]          ; 00587f43 | DAT_00662a7c
+    FLD float ptr [0x00662a7c]          ; 00587f43 | FLOAT_00662a7c
     MOV dword ptr [EBX + 0x2ec],0x0     ; 00587f49
     ADD ESP,0x8                         ; 00587f53
     MOV dword ptr [EBX + 0x57c],0x0     ; 00587f56

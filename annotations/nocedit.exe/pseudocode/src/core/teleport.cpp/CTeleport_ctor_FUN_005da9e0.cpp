@@ -12,7 +12,7 @@ CTeleport * __cdecl core_teleport_cpp_CTeleport_ctor_FUN_005da9e0(CTeleport *thi
   CTeleport *pCVar1;
   
   pCVar1 = (CTeleport *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
-  (pCVar1->base_actor).vtable = &g_CTeleportVTable;
+  (pCVar1->base_actor).vtable._ub = &g_CTeleportVTable;
   pCVar1->field1_0x158[0] = '\0';
   pCVar1->field1_0x158[1] = '\0';
   pCVar1->field1_0x158[2] = -0x60;

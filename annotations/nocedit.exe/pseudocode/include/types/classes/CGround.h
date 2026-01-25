@@ -1,9 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CTextureList;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CTextureList.h"
-#include "types/structs/SMRGLTextureBasic.h"
 
 // Structure: CGround
 // Ghidra size: 0x5c (92 bytes)

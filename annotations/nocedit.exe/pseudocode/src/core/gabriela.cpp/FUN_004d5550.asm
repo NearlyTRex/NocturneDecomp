@@ -31,16 +31,16 @@
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d35f3
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d35f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CCrossbow_0062afa5
-;   undefined4 DAT_0065e7b4
-;   undefined4 DAT_02d7b814
-;   undefined4 DAT_02d7b820
-;   undefined4 DAT_02d7b82c
-;   undefined4 DAT_02d7b870
-;   undefined4 DAT_02d7b88c
+;   float FLOAT_0065e7b4 = 0.6400000
+;   float FLOAT_02d7b814
+;   float FLOAT_02d7b820
+;   float FLOAT_02d7b82c
+;   int INT_02d7b870
+;   int INT_02d7b88c
 ;   CVector3f g_ZeroVector
 ;
 ; Called Functions:
@@ -85,7 +85,7 @@ section .text
     LEA EAX,[EBX + 0x1f738]             ; 004d5594
     ADD ESP,0xc                         ; 004d559a
     MOV dword ptr [EBP + 0x7a],EAX      ; 004d559d
-    FCOMP float ptr [0x0065e7b4]        ; 004d55a0 | DAT_0065e7b4
+    FCOMP float ptr [0x0065e7b4]        ; 004d55a0 | FLOAT_0065e7b4
     FNSTSW AX                           ; 004d55a6
     SAHF                                ; 004d55a8
     JC 0x004d57d2                       ; 004d55a9
@@ -98,12 +98,12 @@ section .text
     CALL dword ptr [EDX + 0xf0]         ; 004d55c1
     ADD ESP,0x8                         ; 004d55c7
     PUSH 0x3f87558                      ; 004d55ca | g_ZeroVector
-    PUSH 0x2d7b814                      ; 004d55cf | DAT_02d7b814
+    PUSH 0x2d7b814                      ; 004d55cf | FLOAT_02d7b814
     LEA EAX,[EBP + 0xffffff52]          ; 004d55d4
     PUSH EAX                            ; 004d55da
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 004d55db
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV EDX,dword ptr [0x02d7b88c]      ; 004d55e0 | DAT_02d7b88c
+    MOV EDX,dword ptr [0x02d7b88c]      ; 004d55e0 | INT_02d7b88c
     LEA EAX,[EDX*0x4 + 0x0]             ; 004d55e6
     SUB EAX,EDX                         ; 004d55ed
     SHL EAX,0x4                         ; 004d55ef
@@ -271,15 +271,15 @@ section .text
     MOV EDX,dword ptr [EAX + 0x154]     ; 004d57de
     CALL dword ptr [EDX + 0xf0]         ; 004d57e4
     ADD ESP,0x8                         ; 004d57ea
-    PUSH 0x2d7b82c                      ; 004d57ed | DAT_02d7b82c
-    PUSH 0x2d7b820                      ; 004d57f2 | DAT_02d7b820
+    PUSH 0x2d7b82c                      ; 004d57ed | FLOAT_02d7b82c
+    PUSH 0x2d7b820                      ; 004d57f2 | FLOAT_02d7b820
     LEA EAX,[EBP + 0xfffffe62]          ; 004d57f7
     PUSH EAX                            ; 004d57fd
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 004d57fe
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004d5803
     LEA EAX,[EBP + 0xfffffd42]          ; 004d5806
-    MOV EDX,dword ptr [0x02d7b870]      ; 004d580c | DAT_02d7b870
+    MOV EDX,dword ptr [0x02d7b870]      ; 004d580c | INT_02d7b870
     PUSH EAX                            ; 004d5812
     LEA EAX,[EDX*0x4 + 0x0]             ; 004d5813
     SUB EAX,EDX                         ; 004d581a

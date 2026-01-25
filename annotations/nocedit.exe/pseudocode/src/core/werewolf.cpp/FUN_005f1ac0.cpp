@@ -64,10 +64,10 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
         }
       }
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10));
-      uVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"werewolf-die?.wav")
-      ;
+      uVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)
+                        (in_stack_00000004,"werewolf-die?.wav");
       *(uint *)(in_stack_00000004[0x8e].actor_name + 0x10) = uVar4;
-      (*in_stack_00000004->vtable->spawnFlies)(in_stack_00000004,0x32,25.0);
+      (*((in_stack_00000004->vtable)._ub)->spawnFlies)(in_stack_00000004,0x32,25.0);
     }
     goto LAB_005f1bc9;
   }
@@ -112,7 +112,8 @@ LAB_005f1cdd:
   iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                     (*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10));
   if (iVar5 == 0) {
-    uVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"werewolf-hurt?.wav");
+    uVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)
+                      (in_stack_00000004,"werewolf-hurt?.wav");
     *(uint *)(in_stack_00000004[0x8e].actor_name + 0x10) = uVar4;
     core_enemy_cpp_FUN_004a9f10();
     return;

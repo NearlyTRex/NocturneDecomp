@@ -28,7 +28,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
     if ((((iVar2 == 0) || (this_ptr->mistState == 0)) && (iVar1 == 0)) &&
        (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c == 0)) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-      this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
+      this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->getBoundingBox)
                               ((CDemonActor *)this_ptr,
                                (CBoundingBox3D *)((int)register0x00000010 + -0x2c));
       iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
@@ -45,10 +45,10 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
         }
         else {
           if (iVar2 == 1) {
-            local_2c.min.y = (1.0 - this_ptr->vanishTimer) / 0x3F800000;
+            local_2c.min.y = (1.0 - this_ptr->vanishTimer) / 1.0f;
           }
           else {
-            local_2c.min.y = ((float)0.5 - this_ptr->vanishTimer) / 0x3F800000;
+            local_2c.min.y = ((float)0.5 - this_ptr->vanishTimer) / 1.0f;
             if (local_2c.min.y < 0.0) {
               local_2c.min.y = 0.0;
             }
@@ -78,7 +78,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
             core_motion_cpp_CMotionController_render_FUN_0052e700
                       (&(this_ptr->base_enemy).base_character.model.motion_controller,
                        (CDemonActor *)this_ptr);
-            (*((this_ptr->base_enemy).base_character.base_actor.vtable)->renderTargetPoints)
+            (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->renderTargetPoints)
                       ((CDemonActor *)this_ptr);
           }
         }

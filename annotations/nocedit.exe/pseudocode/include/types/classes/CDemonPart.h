@@ -1,11 +1,12 @@
 #pragma once
 
+// Forward declarations
+struct SSurfacePlane;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/structs/SClipPlane.h"
-#include "types/structs/SSurfacePlane.h"
 
 // Structure: CDemonPart
 // Ghidra size: 0x388 (904 bytes)

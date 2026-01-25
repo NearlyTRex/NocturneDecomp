@@ -16,7 +16,7 @@
 ;   float FLOAT_00655654 = 256
 ;   double DOUBLE_0065565c = 2
 ;   double DOUBLE_00655664 = 3.14159265350000
-;   undefined4 DAT_00664a00
+;   float FLOAT_00664a00 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   SMRGLTextureBasic DAT_0068434c
@@ -184,13 +184,13 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 005e0263
     MOV EDX,dword ptr [0x006703ec]      ; 005e0267 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 005e026d
-    FMUL float ptr [0x00664a00]         ; 005e026f | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e026f | FLOAT_00664a00
     FISTP dword ptr [EBX]               ; 005e0275
     FLD float ptr [EAX + 0x4]           ; 005e0277
-    FMUL float ptr [0x00664a00]         ; 005e027a | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e027a | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x4]         ; 005e0280
     FLD float ptr [EAX + 0x8]           ; 005e0283
-    FMUL float ptr [0x00664a00]         ; 005e0286 | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e0286 | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x8]         ; 005e028c
     LEA EAX,[ESP + 0x88]                ; 005e028f
     PUSH EAX                            ; 005e0296
@@ -209,13 +209,13 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 005e02be
     MOVSD.REP ES:EDI,ESI                ; 005e02c2
     FLD float ptr [EAX]                 ; 005e02c4
-    FMUL float ptr [0x00664a00]         ; 005e02c6 | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e02c6 | FLOAT_00664a00
     FISTP dword ptr [EBX]               ; 005e02cc
     FLD float ptr [EAX + 0x4]           ; 005e02ce
-    FMUL float ptr [0x00664a00]         ; 005e02d1 | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e02d1 | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x4]         ; 005e02d7
     FLD float ptr [EAX + 0x8]           ; 005e02da
-    FMUL float ptr [0x00664a00]         ; 005e02dd | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e02dd | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x8]         ; 005e02e3
     LEA EAX,[ESP + 0x64]                ; 005e02e6
     PUSH EAX                            ; 005e02ea
@@ -267,13 +267,13 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 005e0391
     MOVSD.REP ES:EDI,ESI                ; 005e0395
     FLD float ptr [EAX]                 ; 005e0397
-    FMUL float ptr [0x00664a00]         ; 005e0399 | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e0399 | FLOAT_00664a00
     FISTP dword ptr [EBX]               ; 005e039f
     FLD float ptr [EAX + 0x4]           ; 005e03a1
-    FMUL float ptr [0x00664a00]         ; 005e03a4 | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e03a4 | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x4]         ; 005e03aa
     FLD float ptr [EAX + 0x8]           ; 005e03ad
-    FMUL float ptr [0x00664a00]         ; 005e03b0 | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e03b0 | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x8]         ; 005e03b6
     LEA EAX,[ESP + 0x7c]                ; 005e03b9
     MOV EBX,dword ptr [ESP + 0xb8]      ; 005e03bd
@@ -295,13 +295,13 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 005e03f7
     MOVSD.REP ES:EDI,ESI                ; 005e03fb
     FLD float ptr [EAX]                 ; 005e03fd
-    FMUL float ptr [0x00664a00]         ; 005e03ff | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e03ff | FLOAT_00664a00
     FISTP dword ptr [EBX]               ; 005e0405
     FLD float ptr [EAX + 0x4]           ; 005e0407
-    FMUL float ptr [0x00664a00]         ; 005e040a | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e040a | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x4]         ; 005e0410
     FLD float ptr [EAX + 0x8]           ; 005e0413
-    FMUL float ptr [0x00664a00]         ; 005e0416 | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005e0416 | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x8]         ; 005e041c
     LEA EAX,[ESP + 0x94]                ; 005e041f
     MOV ESI,dword ptr [ESP + 0xbc]      ; 005e0426

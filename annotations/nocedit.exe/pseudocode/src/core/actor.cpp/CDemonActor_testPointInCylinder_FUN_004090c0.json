@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "other",
-        "column": 42,
+        "column": 40,
         "line": 25,
         "message": "invalid cast from type 'void*' to type 'float'"
       },
@@ -47,7 +47,7 @@
     {
       "addr": "004f2580",
       "from_addr": "004f25ac",
-      "name": "core_hero.cpp_CHero_FUN_004f2580",
+      "name": "core_hero.cpp_CHero_testCylinderCollision_FUN_004f2580",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -61,7 +61,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0",
-    "signature": "int core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor * this_ptr, SCollisionReturnInfo * collision_result, float tolerance_radius)"
+    "signature": "int core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance)"
   },
   "function_calls": [
     {
@@ -77,7 +77,7 @@
       {
         "call_addr": "004f25ac",
         "call_type": "direct",
-        "caller": "core_hero.cpp_CHero_FUN_004f2580",
+        "caller": "core_hero.cpp_CHero_testCylinderCollision_FUN_004f2580",
         "estimated_params": 4,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -137,8 +137,8 @@
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 4,
-        "type": "undefined4"
+        "size": 40,
+        "type": "SCollisionInfo"
       },
       {
         "is_param": true,
@@ -149,14 +149,14 @@
       },
       {
         "is_param": true,
-        "name": "collision_result",
+        "name": "collision_info",
         "offset": 8,
         "size": 4,
         "type": "SCollisionReturnInfo *"
       },
       {
         "is_param": true,
-        "name": "tolerance_radius",
+        "name": "tolerance",
         "offset": 12,
         "size": 4,
         "type": "float"
@@ -175,14 +175,14 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000014",
-      "text": "(local_30.cylinder_radius - in_stack_00000014 <= (collision_result->position).y)) &&",
+      "text": "(local_30.cylinder_radius - in_stack_00000014 <= (collision_info->position).y)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000014",
-      "text": "((collision_result->position).y <= (float)local_30.result_ptr + in_stack_00000014)) &&",
+      "text": "((collision_info->position).y <= (float)local_30.result_ptr + in_stack_00000014)) &&",
       "type": "stack_param"
     },
     {
@@ -218,7 +218,7 @@
         "vtable_addr": "0065db04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 164,
         "vtable_addr": "00663604"
       },

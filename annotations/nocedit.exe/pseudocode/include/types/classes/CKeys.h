@@ -1,11 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CKeys_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CKeys_vtable.h"
-#include "types/funcdefs/CKeys_clearKeypresses.h"
-#include "types/funcdefs/CKeys_getAndClearKeyState.h"
-#include "types/funcdefs/CKeys_getKeyState.h"
 
 // Structure: CKeys
 // Ghidra size: 0x4 (4 bytes)

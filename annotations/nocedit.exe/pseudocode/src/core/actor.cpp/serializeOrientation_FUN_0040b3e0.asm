@@ -14,7 +14,7 @@
 ; XREF[4]:
 ;   core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0 at 0040c1e2
 ;   core_boxactor.cpp_load_FUN_00422c80 at 00422cd6
-;   core_manpuz.cpp_CMansionPuzzleCircle_load_FUN_0050adf0 at 0050aeb2
+;   core_manpuz.cpp_CMansionPuzzleCircle_serialize_FUN_0050adf0 at 0050aeb2
 ;   core_turret.cpp_CTurret_serialize_FUN_005e2c40 at 005e2c5a
 ;
 ; Referenced Globals:

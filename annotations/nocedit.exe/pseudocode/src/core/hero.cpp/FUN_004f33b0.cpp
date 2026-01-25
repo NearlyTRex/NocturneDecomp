@@ -53,7 +53,7 @@ uint core_hero_cpp_FUN_004f33b0(void)
              (pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                                  (&this_ptr->base_actor,(CVector3f *)(auStack_40 + 4),
                                   &input_world_point->position), pCVar4->z <= 0.0)) &&
-            (((*((this_ptr->base_actor).vtable)->getInteractionInfo)
+            (((*((this_ptr->base_actor).vtable._ub)->getInteractionInfo)
                         (&this_ptr->base_actor,(SInteractionInfo *)&stack0xffffff80),
              fStack_78 != 0.0 &&
              ((fStack_74 == 0.0 &&
@@ -62,7 +62,7 @@ uint core_hero_cpp_FUN_004f33b0(void)
               fVar1 = CStack_4c.x - (input_world_point->position).x,
               fVar2 = CStack_4c.z - (in_stack_00000004->base_actor).location.position.z,
               SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5)))))) &&
-           (iVar3 = (*((this_ptr->base_actor).vtable)->startInteraction)
+           (iVar3 = (*((this_ptr->base_actor).vtable._ub)->startInteraction)
                               (&this_ptr->base_actor,&in_stack_00000004->base_actor), iVar3 != 0)) {
           *(CCharacter **)(in_stack_00000004[2].cloth_data + 0x54d0) = this_ptr;
           return 1;

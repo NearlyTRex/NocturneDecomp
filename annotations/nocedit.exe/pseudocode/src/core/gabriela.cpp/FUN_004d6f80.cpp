@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d6f80(uint param_1, uint
    param_2, uint param_3, uint param_4, uint param_5, uint param_6) */
 
@@ -45,7 +44,7 @@ void core_gabriela_cpp_FUN_004d6f80(void)
   local_30.y = local_30.y + -0.3f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_24,&local_30);
   local_18 = *in_stack_0000000c;
-  local_1b48 = in_stack_00000008 / _DAT_0065e7c8 + local_18;
+  local_1b48 = in_stack_00000008 / 0.05f + local_18;
   if (1.0 < local_1b48) {
     local_1b48 = 1.0;
   }

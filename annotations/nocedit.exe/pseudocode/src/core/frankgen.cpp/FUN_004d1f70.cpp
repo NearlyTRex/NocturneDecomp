@@ -27,7 +27,7 @@ int core_frankgen_cpp_FUN_004d1f70(void)
     core_frankgen_cpp_LoadModel_FUN_004d2190();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
+  this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffcc);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar2 != 0) {

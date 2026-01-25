@@ -15,8 +15,14 @@
       },
       {
         "category": "other",
+        "column": 10,
+        "line": 48,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
+        "category": "other",
         "column": 25,
-        "line": 72,
+        "line": 71,
         "message": "void value not ignored as it ought to be"
       }
     ],
@@ -55,36 +61,36 @@
       {
         "category": "other",
         "column": 51,
-        "line": 53,
+        "line": 52,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 59,
+        "line": 58,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 72,
+        "line": 71,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 379,
+    "complexity_score": 368,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
-    "pseudocode_lines": 69,
-    "suspect_count": 30,
+    "pseudocode_lines": 68,
+    "suspect_count": 29,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 236
+    "total_lines": 235
   },
   "cross_references": [],
   "function": {
@@ -146,9 +152,9 @@
     },
     {
       "addr": "00660028",
-      "name": "DAT_00660028",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00660028",
+      "type": "float",
+      "value": "3"
     },
     {
       "addr": "0067b654",
@@ -294,7 +300,7 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
-      "text": "*(uint *)in_stack_00000004[1].base_actor.actor_name = 0x40400000;",
+      "text": "*(float *)in_stack_00000004[1].base_actor.actor_name = 3.0f;",
       "type": "stack_param"
     },
     {
@@ -343,103 +349,96 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000004",
-      "text": "(*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)",
+      "text": "(*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor);",
+      "text": "core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000004",
-      "text": "core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);",
+      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[2].cloth_data + 0x5500));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
-      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[2].cloth_data + 0x5500));",
+      "text": "(*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "text": "(&in_stack_00000004->base_actor,\"icepick_die01.wav\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,\"icepick_die01.wav\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_00000008",
       "text": "else if (0.0 < *(float *)(in_stack_00000008 + 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 61,
       "match": "in_stack_00000004",
       "text": "(*(uint *)(in_stack_00000004[2].cloth_data + 0x5500));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 63,
       "match": "in_stack_00000004",
-      "text": "uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "text": "uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->base_actor,\"icepick_injured??.wav\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 65,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004[2].cloth_data + 0x5500) = uVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 66,
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);",
       "type": "stack_param"

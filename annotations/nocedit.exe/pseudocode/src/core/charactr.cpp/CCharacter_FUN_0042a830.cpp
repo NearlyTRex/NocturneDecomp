@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
 
 {
@@ -55,7 +53,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
           iVar5 = iVar5 + 4;
         } while (iVar9 < local_38->bone_count);
       }
-      fVar1 = 0x40400000;
+      fVar1 = 3.0f;
       iVar9 = 0;
       if (0 < *(int *)(this_ptr->cloth_data + 0x478)) {
         fVar2 = (float)65535;
@@ -108,7 +106,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
       if (iVar9 == 0) {
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(CStack_54.z);
-        uVar7 = (*((this_ptr->base_actor).vtable)->playAmbientSound)
+        uVar7 = (*((this_ptr->base_actor).vtable._ub)->playAmbientSound)
                           (&this_ptr->base_actor,"character-onfire-loop.wav");
         *(uint *)(this_ptr->cloth_data + 0x8d3c) = uVar7;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
@@ -120,7 +118,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
     *(float *)(this_ptr->cloth_data + 0x8d44) = fVar1;
     if (fVar1 < 0.0) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
-      (*((this_ptr->base_actor).vtable)->playSound)
+      (*((this_ptr->base_actor).vtable._ub)->playSound)
                 (&this_ptr->base_actor,"character-onfire-fallapart.wav");
       core_charactr_cpp_CCharacter_FUN_0042b9e0(this_ptr);
     }
@@ -160,15 +158,15 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
   if ((*(int *)(this_ptr->field11_0x25a0 + 0x74) == 0) &&
      (0 < *(int *)(this_ptr->cloth_data + 0x478))) {
     local_18 = (CSkeleton *)(this_ptr->cloth_data + 0x484);
-    local_34 = (CDeformableModel *)(in_stack_00000008 * _DAT_0065b82c);
+    local_34 = (CDeformableModel *)(in_stack_00000008 * 2.0f);
     local_28 = 0;
     do {
       pcStack_14 = (char *)local_18;
       if (((this_ptr->model).part_visibility_flags[*(int *)local_18] != 0) &&
          (fVar1 = (float)local_34 * *(float *)(this_ptr->cloth_data + 0x480) +
                   *(float *)((int)local_18 + 0x14), *(float *)((int)local_18 + 0x14) = fVar1,
-         0x40400000 < fVar1)) {
-        *(float *)((int)local_18 + 0x14) = 0x40400000;
+         3.0f < fVar1)) {
+        *(float *)((int)local_18 + 0x14) = 3.0f;
         iVar5 = 0;
         iVar9 = unaff_EBP;
         if (0 < *(int *)(unaff_EBP + 0x28558)) {

@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CFont;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CFont.h"
 #include "types/funcdefs/CFont_ctor.h"
 #include "types/funcdefs/CFont_drawText.h"
 #include "types/funcdefs/CFont_getLineSpacing.h"

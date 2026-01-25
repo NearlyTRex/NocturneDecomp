@@ -1,9 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct FILE;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/iostream.h"
-#include "system/stdio.h"
 
 // Structure: CFileBitStream
 // Ghidra size: 0x2c (44 bytes)

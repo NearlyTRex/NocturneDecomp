@@ -25,7 +25,7 @@ void __cdecl core_actor_cpp_CDemonActor_FUN_0040dec0(CDemonActor *this_ptr)
   CVector3i CStack_20;
   int iStack_14;
   
-  (*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)local_4c);
+  (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)local_4c);
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_0000000c);
   corner_index = 0;
   iStack_14 = in_stack_0000001c << 8;

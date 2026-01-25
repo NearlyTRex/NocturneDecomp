@@ -14,21 +14,21 @@ uint core_ammobox_cpp_FUN_00411ab0(void)
   
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CAmmoBoxClassInfo.name_hash);
-  switch(pCVar1[2].field6_0x68) {
+  switch(pCVar1[2].validation_magic) {
   case 0:
-    pCVar1[2].field6_0x68 = 1;
+    pCVar1[2].validation_magic = 1;
     break;
   case 1:
-    pCVar1[2].field6_0x68 = 2;
+    pCVar1[2].validation_magic = 2;
     return 1;
   case 2:
-    pCVar1[2].field6_0x68 = 3;
+    pCVar1[2].validation_magic = 3;
     return 1;
   case 3:
-    pCVar1[2].field6_0x68 = 4;
+    pCVar1[2].validation_magic = 4;
     return 1;
   case 4:
-    pCVar1[2].field6_0x68 = 0;
+    pCVar1[2].validation_magic = 0;
     return 1;
   }
   return 1;

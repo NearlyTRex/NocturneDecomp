@@ -61,7 +61,7 @@ void core_batcreat_cpp_FUN_00416030(void)
                 (&this_ptr->motion_controller,7,1);
       sound_sndmain_cpp_killSfx_FUN_005a9c40
                 (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x5c));
-      uVar4 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+      uVar4 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                         (&in_stack_00000004->base_actor,"batman-die.wav");
       *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x5c) = uVar4;
       local_3c.y = in_stack_00000008;
@@ -87,7 +87,7 @@ void core_batcreat_cpp_FUN_00416030(void)
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x5c));
     if (iVar2 == 0) {
-      uVar4 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+      uVar4 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                         (&in_stack_00000004->base_actor,"batman-hurt?.wav");
       *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x5c) = uVar4;
       local_3c.y = in_stack_00000008;

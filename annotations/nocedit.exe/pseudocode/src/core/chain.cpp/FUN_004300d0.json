@@ -11,7 +11,7 @@
         "category": "missing_member",
         "column": 26,
         "line": 102,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field23_0x124'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field23_0x124'; did you mean 'field_224'?"
       },
       {
         "category": "missing_member",
@@ -23,7 +23,7 @@
         "category": "missing_member",
         "column": 31,
         "line": 104,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field23_0x124'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field23_0x124'; did you mean 'field_224'?"
       },
       {
         "category": "missing_member",
@@ -47,7 +47,7 @@
         "category": "missing_member",
         "column": 24,
         "line": 115,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
       },
       {
         "category": "missing_member",
@@ -59,19 +59,19 @@
         "category": "missing_member",
         "column": 84,
         "line": 116,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
       },
       {
         "category": "other",
         "column": 16,
         "line": 127,
-        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
       },
       {
         "category": "other",
         "column": 24,
         "line": 129,
-        "message": "invalid cast from type 'CDemonActor_vtable*' to type 'float'"
+        "message": "invalid cast from type 'CDemonActor_union_vtable' to type 'float'"
       },
       {
         "category": "other",
@@ -119,7 +119,7 @@
         "category": "missing_member",
         "column": 57,
         "line": 246,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field19_0x114'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field19_0x114'"
       },
       {
         "category": "missing_member",
@@ -206,12 +206,6 @@
         "category": "other",
         "column": 22,
         "line": 217,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 218,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
@@ -752,7 +746,7 @@
       "description": "Unresolved stack parameter",
       "line": 63,
       "match": "in_stack_00000004",
-      "text": "fVar5 = (*in_stack_00000004->vtable->cylinderGroundCheck)",
+      "text": "fVar5 = (*((in_stack_00000004->vtable)._ub)->cylinderGroundCheck)",
       "type": "stack_param"
     },
     {

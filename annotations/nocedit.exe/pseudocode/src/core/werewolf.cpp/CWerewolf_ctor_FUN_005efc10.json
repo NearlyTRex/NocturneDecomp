@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 21,
-        "message": "'PTR_core_werewolf_cpp_FUN_00665784' was not declared in this scope; did you mean 'core_werewolf_cpp_FUN_005f21e0'?"
+        "category": "missing_member",
+        "column": 11,
+        "line": 34,
+        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field6_0xbed8'"
       },
       {
         "category": "missing_member",
@@ -14,10 +14,10 @@
         "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field6_0xbed8'"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "missing_member",
         "column": 11,
         "line": 37,
-        "message": "'_DAT_00665760' was not declared in this scope; did you mean 'DAT_0066E760'?"
+        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field6_0xbed8'"
       },
       {
         "category": "missing_member",
@@ -28,25 +28,19 @@
       {
         "category": "missing_member",
         "column": 11,
-        "line": 39,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field6_0xbed8'"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 40,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field6_0xbed8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 42,
-        "message": "'_PTR_FUN_00665761_3' was not declared in this scope"
+        "line": 41,
+        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field8_0xbef0'"
       },
       {
         "category": "missing_member",
         "column": 11,
         "line": 43,
+        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field8_0xbef0'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 44,
         "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field8_0xbef0'"
       },
       {
@@ -78,18 +72,6 @@
         "column": 11,
         "line": 49,
         "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field8_0xbef0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 50,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field8_0xbef0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 51,
-        "message": "'CWerewolf' {aka 'struct CWerewolf'} has no member named 'field8_0xbef0'"
       }
     ],
     "success": false,
@@ -103,23 +85,21 @@
       {
         "category": "other",
         "column": 57,
-        "line": 23,
+        "line": 21,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 61,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 46,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 80
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -162,25 +142,25 @@
     },
     {
       "addr": "00665760",
-      "name": "DAT_00665760",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00665760",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "00665764",
-      "name": "PTR_FUN_00665761+3",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00665764",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "00665768",
-      "name": "DAT_00665768",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00665768",
+      "type": "float",
+      "value": "10"
     },
     {
       "addr": "00665784",
-      "name": "PTR_core_werewolf.cpp_FUN_00665784",
+      "name": "g_CWerewolfVTable",
       "type": "CDemonActor_vtable",
       "value": null
     }
@@ -239,15 +219,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -24,8 +24,6 @@ void core_smiley_cpp_FUN_005a2800(void)
   CCharacter *pCVar10;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  SCollisionInfo *in_stack_fffffe34;
-  float in_stack_fffffe3c;
   float fVar11;
   SDamageInfo local_190;
   SDamageInfo local_154;
@@ -72,11 +70,11 @@ void core_smiley_cpp_FUN_005a2800(void)
   }
   if (((in_stack_00000004->model).part_visibility_flags
        [*(int *)(in_stack_00000004[1].base_actor.create_event + 0x50)] == 0) &&
-     (iVar4 = (*(in_stack_00000004->base_actor).vtable[1].hasCollision)
-                        (&in_stack_00000004->base_actor,in_stack_fffffe34), iVar4 == 0)) {
+     (iVar4 = (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).isDamageable)(in_stack_00000004)
+     , iVar4 == 0)) {
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe34);
-    (*(in_stack_00000004->base_actor).vtable[1].playAmbientSoundWithVolume)
-              (&in_stack_00000004->base_actor,(char *)0x461c3f9a,in_stack_fffffe3c);
+    (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).processDamage)
+              (in_stack_00000004,(SDamageInfo *)&stack0xfffffe34);
   }
   iVar4 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar4 == 0) {
@@ -154,8 +152,7 @@ void core_smiley_cpp_FUN_005a2800(void)
       iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,"Capture");
       if (iVar4 == 0) {
-        (*(in_stack_00000004->base_actor).vtable[1].getAllowedMeleeAttackTypes)
-                  (&in_stack_00000004->base_actor);
+        (*(((in_stack_00000004->base_actor).vtable._ue)->_ue).field_4)();
         iVar4 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18);
         if (iVar4 != 0) {
           local_58.x = *(float *)(iVar4 + 0x20) -
@@ -167,7 +164,7 @@ void core_smiley_cpp_FUN_005a2800(void)
           local_20 = SQRT(local_58.z * local_58.z +
                           local_58.x * local_58.x + local_58.y * local_58.y);
           local_18 = local_20;
-          if (local_20 < 0x40200000 + 1.0) {
+          if (local_20 < 2.5f + 1.0) {
             core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c4,&local_58);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_c4.y - (in_stack_00000004->base_actor).orient.bank);
@@ -192,15 +189,14 @@ void core_smiley_cpp_FUN_005a2800(void)
       iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,"Capture");
       if (iVar4 == 0) {
-        (*(in_stack_00000004->base_actor).vtable[1].getAllowedMeleeAttackTypes)
-                  (&in_stack_00000004->base_actor);
+        (*(((in_stack_00000004->base_actor).vtable._ue)->_ue).field_4)();
         iVar4 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18);
         if (iVar4 != 0) {
           if (in_stack_00000004 == *(CCharacter **)(iVar4 + 0x2598)) {
             (**(code **)(*(int *)(iVar4 + 0x154) + 0x104))(iVar4);
           }
-          local_8c = 0x40200000;
-          local_1c = 0x40200000;
+          local_8c = 2.5f;
+          local_1c = 2.5f;
           (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
           (in_stack_00000004->model).accumulated_root_motion.y =
                (in_stack_00000004->model).accumulated_root_motion.z;

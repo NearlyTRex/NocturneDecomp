@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
 
 {
@@ -48,7 +46,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
     core_game_cpp_CGame_FUN_004e0bf0(g_CGamePtr);
   }
   if (*(int *)this_ptr->field2_0x240c == 0) {
-    if (*(float *)(this_ptr->field2_0x240c + 8) == _DAT_0065b834) {
+    if (*(float *)(this_ptr->field2_0x240c + 8) == 9999.0f) {
       iVar3 = 0;
       pCVar4 = this_ptr;
       do {
@@ -63,8 +61,8 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
     (this_ptr->base_actor).field12_0xe0.y = 0.0;
     fVar1 = *(float *)(this_ptr->field2_0x240c + 8);
     (this_ptr->base_actor).location.position.y = fVar2 + (this_ptr->base_actor).location.position.y;
-    if ((fVar1 == _DAT_0065b834) || ((this_ptr->base_actor).field11_0xdc != 0)) {
-      fVar2 = (*((this_ptr->base_actor).vtable)->cylinderGroundCheck)
+    if ((fVar1 == 9999.0f) || ((this_ptr->base_actor).field11_0xdc != 0)) {
+      fVar2 = (*((this_ptr->base_actor).vtable._ub)->cylinderGroundCheck)
                         (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),
                          (CVector3f *)0x0);
       *(float *)(this_ptr->field2_0x240c + 8) = fVar2;

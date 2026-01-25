@@ -1,9 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CSfxSlot;
+struct CSoundDevice;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CSfxSlot.h"
-#include "types/classes/CSoundDevice.h"
 #include "types/funcdefs/CSoundDevice_allocateSample.h"
 #include "types/funcdefs/CSoundDevice_allocateSfx.h"
 #include "types/funcdefs/CSoundDevice_close.h"

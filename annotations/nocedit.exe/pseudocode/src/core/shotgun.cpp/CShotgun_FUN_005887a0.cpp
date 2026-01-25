@@ -42,6 +42,6 @@ void core_shotgun_cpp_CShotgun_FUN_005887a0(void)
   }
   core_dmodel_cpp_loadModel_FUN_00478c00("shell.kfm");
   core_fire_cpp_CFireEffect_FUN_004c91e0(g_CFireEffectPtr);
-  (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"shotgun-cock.wav");
+  (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,"shotgun-cock.wav");
   return;
 }

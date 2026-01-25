@@ -43,7 +43,7 @@ void core_hostage_cpp_CHostage_load_FUN_004f6170(void)
   }
   if (2 < g_CHostageClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)&in_stack_00000004[1].base_character.base_actor.field6_0x68,
+              ((char **)&in_stack_00000004[1].base_character.base_actor.validation_magic,
                "rescueEvent");
   }
   if (3 < g_CHostageClassVersion) {

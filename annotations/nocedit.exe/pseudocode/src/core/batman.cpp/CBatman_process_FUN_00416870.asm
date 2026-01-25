@@ -84,8 +84,8 @@
 ;   double DOUBLE_006158d5 = 0.523598775583333
 ;   double DOUBLE_006158dd = 32
 ;   double DOUBLE_006158e5 = 5
-;   undefined4 DAT_0065a76c
-;   undefined4 DAT_0065a778
+;   float FLOAT_0065a76c = 3.5
+;   float FLOAT_0065a778 = 1
 ;   ... and 19 more
 ;
 ; Called Functions:
@@ -344,13 +344,13 @@ section .text
         ;   Label: caseD_1
     FADD float ptr [EBP + 0x92]         ; 00416b12
     FST float ptr [EBX + 0xbf5c]        ; 00416b18
-    FCOMP float ptr [0x0065a778]        ; 00416b1e | DAT_0065a778
+    FCOMP float ptr [0x0065a778]        ; 00416b1e | FLOAT_0065a778
     FNSTSW AX                           ; 00416b24
     SAHF                                ; 00416b26
     JBE 0x00416b3e                      ; 00416b27
         ;   XREF to: 00416b3e (CONDITIONAL_JUMP)  ; LAB_00416b3e
     MOV dword ptr [EBX + 0xbf58],0x2    ; 00416b29
-    MOV EAX,[0x0065a778]                ; 00416b33 | DAT_0065a778
+    MOV EAX,[0x0065a778]                ; 00416b33 | FLOAT_0065a778
     MOV dword ptr [EBX + 0xbf5c],EAX    ; 00416b38
     MOV ECX,0x40400000                  ; 00416b3e
         ;   Label: LAB_00416b3e
@@ -469,7 +469,7 @@ section .text
         ;   Label: LAB_00416c66
     JZ 0x00416970                       ; 00416c6a
         ;   XREF to: 00416970 (CONDITIONAL_JUMP)  ; default
-    FLD float ptr [0x0065a778]          ; 00416c70 | DAT_0065a778
+    FLD float ptr [0x0065a778]          ; 00416c70 | FLOAT_0065a778
     MOV dword ptr [EBX + 0xbf58],0x3    ; 00416c76
     LEA EAX,[EBX + 0x20]                ; 00416c80
     FSTP float ptr [EBX + 0xbf5c]       ; 00416c83
@@ -819,7 +819,7 @@ section .text
     FMUL float ptr [EBP + -0x36]        ; 00417050
     FADDP                               ; 00417053
     FSQRT                               ; 00417055
-    FCOMP float ptr [0x0065a76c]        ; 00417057 | DAT_0065a76c
+    FCOMP float ptr [0x0065a76c]        ; 00417057 | FLOAT_0065a76c
     FNSTSW AX                           ; 0041705d
     SAHF                                ; 0041705f
     JNC 0x004170ac                      ; 00417060
@@ -968,7 +968,7 @@ section .text
     ADD ESP,0xc                         ; 004171df
     JMP 0x00416970                      ; 004171e2
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x0065a76c]                ; 004171e7 | DAT_0065a76c
+    MOV EAX,[0x0065a76c]                ; 004171e7 | FLOAT_0065a76c
         ;   Label: LAB_004171e7
     PUSH 0x3e32b8c2                     ; 004171ec
     MOV dword ptr [EBP + 0x5e],EAX      ; 004171f1

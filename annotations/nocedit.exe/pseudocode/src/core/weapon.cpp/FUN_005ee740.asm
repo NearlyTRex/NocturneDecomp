@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_weapon.cpp_FUN_005ee740()
+; __cdecl void core_weapon.cpp_FUN_005ee740(CWeapon * this_ptr)
 ;
+; Parameters:
+; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_weapon.cpp_CWeapon_FUN_005ee3f0 at 005ee408
 ;
 ; Referenced Globals:
 ;   float FLOAT_00657b2d = 0.5
-;   undefined4 DAT_0078a123
+;   int g_ActorMagicNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -27,7 +29,7 @@ section .text
     CMP dword ptr [EAX + 0x178],0x0     ; 005ee74e
     JZ 0x005ee760                       ; 005ee755
         ;   XREF to: 005ee760 (CONDITIONAL_JUMP)  ; LAB_005ee760
-    CMP dword ptr [EBX + 0x68],0x78a123 ; 005ee757 | DAT_0078a123
+    CMP dword ptr [EBX + 0x68],0x78a123 ; 005ee757 | g_ActorMagicNumber
     JZ 0x005ee765                       ; 005ee75e
         ;   XREF to: 005ee765 (CONDITIONAL_JUMP)  ; LAB_005ee765
     ADD ESP,0x48                        ; 005ee760

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d3bb2
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3bb2
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00

@@ -15,7 +15,7 @@ void __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
   if (iVar1 != 0) {
     return;
   }
-  DAT_02c14cd8 = (*((this_ptr->base_actor).vtable)->playSound)
+  DAT_02c14cd8 = (*((this_ptr->base_actor).vtable._ub)->playSound)
                            (&this_ptr->base_actor,this_ptr->field9_0x47c + 0x4b0);
   return;
 }

@@ -77,7 +77,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
     pCVar3 = this_ptr;
     do {
       if (in_stack_0000000c == *(int *)(pCVar3->carry_hands[0].field0_0x0 + 4)) {
-        (*(this_ptr->base_actor).vtable[1].renderTargetPoints)(&this_ptr->base_actor);
+        (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc21)();
       }
       iVar2 = iVar2 + 1;
       pCVar3 = (CCharacter *)&(pCVar3->base_actor).orient_matrix.m[0].z;

@@ -7,7 +7,7 @@
 ; undefined1       Stack[-0x80]:1  local_80
 ;
 ; XREF[2]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d4027
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d4027
 ;   core_stranger.cpp_CStranger_FUN_005c5b90 at 005c5d83
 ;
 ; Referenced Globals:

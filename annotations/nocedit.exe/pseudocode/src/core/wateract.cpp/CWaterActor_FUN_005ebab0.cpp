@@ -48,10 +48,10 @@ void __cdecl core_wateract_cpp_CWaterActor_FUN_005ebab0(CWaterActor *this_ptr)
       (this_ptr->size).z = 100.0;
     }
     (this_ptr->size).y = 0.1;
-    (*((this_ptr->base_actor).vtable)->setup)(&this_ptr->base_actor);
+    (*((this_ptr->base_actor).vtable._ub)->setup)(&this_ptr->base_actor);
     return;
   }
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
-  (*((this_ptr->base_actor).vtable)->setup)(&this_ptr->base_actor);
+  (*((this_ptr->base_actor).vtable._ub)->setup)(&this_ptr->base_actor);
   return;
 }

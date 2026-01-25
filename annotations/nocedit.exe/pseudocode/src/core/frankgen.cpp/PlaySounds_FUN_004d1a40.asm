@@ -302,7 +302,7 @@ section .text
     RET                                 ; 004d1d82
     FLD float ptr [ESP + 0x88]          ; 004d1d83
         ;   Label: LAB_004d1d83
-    FMUL float ptr [0x0065e66c]         ; 004d1d8a | DAT_0065e66c
+    FMUL float ptr [0x0065e66c]         ; 004d1d8a | FLOAT_0065e66c
     FADD float ptr [ESI + 0x15c]        ; 004d1d90
     FST float ptr [ESI + 0x15c]         ; 004d1d96
     FCOMP float ptr [0x0065e670]        ; 004d1d9c | DAT_0065e670

@@ -255,14 +255,14 @@ void core_curtain_cpp_FUN_00449810(void)
           piVar9[0x1c] = (int)*(CDemonActor **)
                                ((int)&in_stack_00000004[2].orient_matrix + iVar11 + -0xcc);
           piVar9[0x1d] = *(int *)(in_stack_00000004[2].create_event + iVar11 + -0x104);
-          piVar9[0x1e] = (int)(iVar7 + -1);
+          ((CDemonActor_union_vtable *)(piVar9 + 0x1e))->_ub = (CDemonActor_vtable *)(iVar7 + -1);
           iVar10 = iVar6 * 0x74 + local_20 * 0x74 + iVar10 * 0x74;
           piVar9[0x1f] = *(uint *)
                           ((int)&in_stack_00000004[1].previous_transform_state + iVar10 + 0x14);
           piVar9[0x20] = *(uint *)
                           ((int)&in_stack_00000004[1].previous_transform_state + iVar10 + 0x18);
           piVar18 = (int *)((int)pCVar15 + (uint)bVar19 * -8 + 100);
-          *(CDemonActor_vtable **)(pCVar15 + 8) = (CDemonActor_vtable *)piVar9[0x1e];
+          *(CDemonActor_union_vtable *)(pCVar15 + 8) = *(CDemonActor_union_vtable *)(piVar9 + 0x1e);
           *piVar18 = piVar9[(uint)bVar19 * -2 + 0x1f];
           piVar18[(uint)bVar19 * -2 + 1] =
                (piVar9 + (uint)bVar19 * -2 + 0x1f)[(uint)bVar19 * -2 + 1];

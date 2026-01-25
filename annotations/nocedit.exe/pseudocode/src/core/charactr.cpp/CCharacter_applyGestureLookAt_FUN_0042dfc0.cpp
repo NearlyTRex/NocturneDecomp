@@ -10,7 +10,6 @@ void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CChara
 
 {
   int iVar1;
-  SCollisionInfo *unaff_EBX;
   
   core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(this_ptr);
   core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(this_ptr);
@@ -18,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CChara
   core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d090(this_ptr);
   if (*(int *)this_ptr->field13_0x2620 == 0) {
-    iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,unaff_EBX);
+    iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr);
     if (iVar1 != 1) {
       return;
     }

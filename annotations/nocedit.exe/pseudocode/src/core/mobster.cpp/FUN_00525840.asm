@@ -76,9 +76,9 @@
 ;   double DOUBLE_00639896 = 0.523598775583333
 ;   double DOUBLE_0063989e = 2
 ;   double DOUBLE_006398a6 = 32
-;   undefined4 DAT_00661778
-;   undefined4 DAT_0066177c
-;   undefined4 DAT_00661788
+;   float FLOAT_00661778 = 3
+;   float FLOAT_0066177c = 30
+;   float FLOAT_00661788 = 20
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CGore* g_CGorePtr = 02d83364
@@ -1000,7 +1000,7 @@ section .text
     FMUL float ptr [EBP + -0x7a]        ; 0052628a
     FADDP                               ; 0052628d
     FSQRT                               ; 0052628f
-    FLD float ptr [0x00661778]          ; 00526291 | DAT_00661778
+    FLD float ptr [0x00661778]          ; 00526291 | FLOAT_00661778
     FLD1                                ; 00526297
     FADDP                               ; 00526299
     FXCH                                ; 0052629b
@@ -1059,7 +1059,7 @@ section .text
         ;   XREF to: 00526345 (CONDITIONAL_JUMP)  ; LAB_00526345
     FLD float ptr [EBP + 0x6a]          ; 00526324
     LEA EDX,[EBX + 0x158]               ; 00526327
-    FCOMP float ptr [0x00661788]        ; 0052632d | DAT_00661788
+    FCOMP float ptr [0x00661788]        ; 0052632d | FLOAT_00661788
     FNSTSW AX                           ; 00526333
     SAHF                                ; 00526335
     JNC 0x0052635d                      ; 00526336
@@ -1123,7 +1123,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005263e1
     MOV EDX,dword ptr [EAX + 0x4]       ; 005263e4
     MOV dword ptr [EAX],EDX             ; 005263e7
-    MOV EAX,[0x00661778]                ; 005263e9 | DAT_00661778
+    MOV EAX,[0x00661778]                ; 005263e9 | FLOAT_00661778
     MOV dword ptr [EBP + 0x2],ECX       ; 005263ee
     MOV dword ptr [EBP + 0xa],EAX       ; 005263f1
     LEA EAX,[EBP + 0x2]                 ; 005263f4
@@ -1200,7 +1200,7 @@ section .text
     TEST EAX,EAX                        ; 005264a2
     JNZ 0x00525b97                      ; 005264a4
         ;   XREF to: 00525b97 (CONDITIONAL_JUMP)  ; caseD_4
-    FLD float ptr [0x00661778]          ; 005264aa | DAT_00661778
+    FLD float ptr [0x00661778]          ; 005264aa | FLOAT_00661778
     FLD1                                ; 005264b0
     FADDP                               ; 005264b2
     MOV ESI,dword ptr [EBX + 0x24f8]    ; 005264b4
@@ -1208,7 +1208,7 @@ section .text
     TEST ESI,ESI                        ; 005264bd
     JZ 0x005264c9                       ; 005264bf
         ;   XREF to: 005264c9 (CONDITIONAL_JUMP)  ; LAB_005264c9
-    MOV EAX,[0x0066177c]                ; 005264c1 | DAT_0066177c
+    MOV EAX,[0x0066177c]                ; 005264c1 | FLOAT_0066177c
     MOV dword ptr [EBP + 0x66],EAX      ; 005264c6
     PUSH 0x3e32b8c2                     ; 005264c9
         ;   Label: LAB_005264c9
@@ -1220,7 +1220,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005264e5
     MOV EDX,dword ptr [EAX + 0x4]       ; 005264e8
     MOV dword ptr [EAX],EDX             ; 005264eb
-    MOV EAX,[0x00661778]                ; 005264ed | DAT_00661778
+    MOV EAX,[0x00661778]                ; 005264ed | FLOAT_00661778
     MOV dword ptr [EBP + -0x16],EDI     ; 005264f2
     MOV dword ptr [EBP + 0x62],EAX      ; 005264f5
     MOV dword ptr [EBP + -0xe],EAX      ; 005264f8

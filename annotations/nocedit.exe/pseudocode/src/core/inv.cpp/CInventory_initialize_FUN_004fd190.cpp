@@ -29,7 +29,7 @@ void __cdecl core_inv_cpp_CInventory_initialize_FUN_004fd190(CInventory *this_pt
   }
   this_ptr_00 = (CAmmo *)core_actor_cpp_createActorByName_FUN_0040c430("CAmmo");
   this_ptr->ammo_ptr = this_ptr_00;
-  (*((this_ptr_00->base_actor).vtable)->setup)((CDemonActor *)this_ptr_00);
+  (*((this_ptr_00->base_actor).vtable._ub)->setup)((CDemonActor *)this_ptr_00);
   this_ptr->cached_ammo_count = 0;
   return;
 }

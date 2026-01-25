@@ -12,7 +12,7 @@ CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00588ba0(CShovel *this_ptr)
   CWeapon *pCVar1;
   
   pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar1->base_actor).vtable = &PTR_core_weapon_cpp_ActorModelSomething_FUN_00662bd4;
+  (pCVar1->base_actor).vtable._ub = &PTR_core_weapon_cpp_ActorModelSomething_FUN_00662bd4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&pCVar1->model,"shoveit.kfm");
   pCVar1->field3_0x2d8[8] = '\a';

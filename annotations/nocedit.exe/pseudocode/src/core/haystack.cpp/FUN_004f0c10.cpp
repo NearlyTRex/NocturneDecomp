@@ -11,8 +11,8 @@ CHaystack * __cdecl core_haystack_cpp_FUN_004f0c10(CHaystack *this_ptr)
 {
   CHaystack *pCVar1;
   
-  pCVar1 = (CHaystack *)core_hero_cpp_FUN_004f2340();
-  (pCVar1->base_hero).base_character.base_actor.vtable = &PTR_core_haystack_cpp_FUN_0065f3f4;
+  pCVar1 = (CHaystack *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base_hero);
+  (pCVar1->base_hero).base_character.base_actor.vtable._ub = &g_CHaystackVTable;
   pCVar1->field1_0x1fbd4[0] = '\0';
   pCVar1->field1_0x1fbd4[1] = '\0';
   pCVar1->field1_0x1fbd4[2] = '\0';

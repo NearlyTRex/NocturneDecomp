@@ -11,6 +11,6 @@ char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonA
 {
   CDemonActorType *pCVar1;
   
-  pCVar1 = (*this_ptr->vtable->getActorType)(this_ptr);
+  pCVar1 = (*((this_ptr->vtable)._ub)->getActorType)(this_ptr);
   return pCVar1->class_name;
 }

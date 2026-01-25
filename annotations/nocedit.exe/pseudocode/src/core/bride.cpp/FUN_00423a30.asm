@@ -63,7 +63,7 @@
 ;   double DOUBLE_00616c2d = 1.57079632675000
 ;   double DOUBLE_00616c35 = 2.5
 ;   double DOUBLE_00616c3d = 32
-;   undefined4 DAT_0065b40c
+;   float FLOAT_0065b40c = 2.5
 ;   CGore* g_CGorePtr = 02d83364
 ;   undefined4 DAT_00822cdc
 ;   undefined4 DAT_00822ce8
@@ -326,7 +326,7 @@ section .text
     PUSH 0x3e32b8c2                     ; 00423d2b
         ;   Label: LAB_00423d2b
     PUSH 0x3f800000                     ; 00423d30
-    MOV EAX,[0x0065b40c]                ; 00423d35 | DAT_0065b40c
+    MOV EAX,[0x0065b40c]                ; 00423d35 | FLOAT_0065b40c
     XOR EDX,EDX                         ; 00423d3a
     MOV dword ptr [EBP + -0x7a],EDX     ; 00423d3c
     MOV dword ptr [EBP + -0x72],EAX     ; 00423d3f

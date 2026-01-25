@@ -62,7 +62,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
       }
     }
   }
-  pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&local_84);
+  pCVar2 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)(&this_ptr->base_actor,&local_84);
   fStack_28 = (pCVar2->min).x + (pCVar2->max).x;
   local_24 = (pCVar2->min).y + (pCVar2->max).y;
   auStack_4c._0_4_ = fStack_28 * 0.5f;

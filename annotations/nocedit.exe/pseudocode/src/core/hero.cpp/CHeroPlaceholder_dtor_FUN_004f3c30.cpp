@@ -18,7 +18,7 @@ core_hero_cpp_CHeroPlaceholder_dtor_FUN_004f3c30(CHeroPlaceholder *this_ptr,uint
     crt_memory_c_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base_actor).vtable = &g_CHeroPlaceholderVTable;
+  (this_ptr->base_actor).vtable._ub = &g_CHeroPlaceholderVTable;
   ptr = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base_actor,1);
   if ((d1 & 2) == 0) {
     return ptr;

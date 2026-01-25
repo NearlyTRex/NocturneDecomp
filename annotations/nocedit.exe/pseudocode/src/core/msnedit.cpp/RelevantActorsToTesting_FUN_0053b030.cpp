@@ -102,7 +102,7 @@ void core_msnedit_cpp_RelevantActorsToTesting_FUN_0053b030(void)
       return;
     }
     core_actor_cpp_FUN_0040e130();
-    (*local_18->vtable->getPropertyList)(local_18,(CActorPropertyList *)&stack0xffffd450);
+    (*((local_18->vtable)._ub)->getPropertyList)(local_18,(CActorPropertyList *)&stack0xffffd450);
     iStack_14 = 0;
     if (0 < CStack_30.item_count) {
       do {

@@ -6,16 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CFlameThrower * __cdecl core_flamegun_cpp_FUN_004cb880(CFlameThrower *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   CFlameThrower *pCVar2;
   
   pCVar2 = (CFlameThrower *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar2->base_weapon).base_actor.vtable = &PTR_core_weapon_cpp_ActorModelSomething_FUN_0065e284;
+  (pCVar2->base_weapon).base_actor.vtable._ub =
+       &PTR_core_weapon_cpp_ActorModelSomething_FUN_0065e284;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base_weapon).model,"flamegun.kfm");
   pCVar2->field1_0x578[4] = '\0';
@@ -44,7 +43,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_FUN_004cb880(CFlameThrower *this_ptr)
   (pCVar2->base_weapon).field3_0x2d8[0xf] = '\0';
   (pCVar2->base_weapon).bolt_velocity = 15.0;
   (pCVar2->base_weapon).fire_cooldown = 1.4013e-45;
-  uVar1 = _DAT_0065e26c;
+  fVar1 = 8.0f;
   pCVar2->field1_0x578[0xc] = '\0';
   pCVar2->field1_0x578[0xd] = '\0';
   pCVar2->field1_0x578[0xe] = '\0';
@@ -53,6 +52,6 @@ CFlameThrower * __cdecl core_flamegun_cpp_FUN_004cb880(CFlameThrower *this_ptr)
   pCVar2->field1_0x578[9] = '\0';
   pCVar2->field1_0x578[10] = '\0';
   pCVar2->field1_0x578[0xb] = '\0';
-  *(uint *)((pCVar2->base_weapon).field9_0x305 + 0x25f) = uVar1;
+  *(float *)((pCVar2->base_weapon).field9_0x305 + 0x25f) = fVar1;
   return pCVar2;
 }

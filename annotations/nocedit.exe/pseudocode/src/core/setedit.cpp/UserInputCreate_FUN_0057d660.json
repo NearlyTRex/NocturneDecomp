@@ -86,22 +86,10 @@
         "message": "cast from 'void*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "missing_member",
-        "column": 48,
-        "line": 337,
-        "message": "'FILE' {aka 'struct FILE'} has no member named '_handle'; did you mean 'handle'?"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 36,
         "line": 345,
         "message": "'stack0xffffee90' was not declared in this scope; did you mean 'in_stack_ffffeeb0'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 43,
-        "line": 368,
-        "message": "'FILE' {aka 'struct FILE'} has no member named '_cnt'; did you mean 'cnt'?"
       }
     ],
     "success": false,
@@ -309,6 +297,12 @@
         "column": 54,
         "line": 330,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 337,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",

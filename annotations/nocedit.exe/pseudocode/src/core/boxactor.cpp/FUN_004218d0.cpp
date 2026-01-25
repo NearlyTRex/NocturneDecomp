@@ -1,18 +1,15 @@
 // Name: core_boxactor.cpp_FUN_004218d0
 // Address: 004218d0
 // Address Range: [[004218d0, 004219d6]]
-// Convention: unknown
-// Signature: undefined core_boxactor.cpp_FUN_004218d0()
+// Convention: __cdecl
+// Signature: void core_boxactor.cpp_FUN_004218d0(CBoxActor * this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_other_boxactor.cpp_FUN_004218d0(uint param_1) */
-
-void core_boxactor_cpp_FUN_004218d0(void)
+void __cdecl core_boxactor_cpp_FUN_004218d0(CBoxActor *this_ptr)
 
 {
   float fVar1;
-  CDemonActor *in_stack_00000004;
   float fStack_44;
   float fStack_40;
   float fStack_3c;
@@ -26,15 +23,15 @@ void core_boxactor_cpp_FUN_004218d0(void)
   float fStack_c;
   float fStack_8;
   
-  fVar1 = in_stack_00000004[2].field12_0xe0.x;
-  in_stack_00000004[4].create_event[0x10] = '\0';
-  in_stack_00000004[4].create_event[0x11] = '\0';
-  in_stack_00000004[4].create_event[0x12] = '\0';
-  in_stack_00000004[4].create_event[0x13] = '\0';
-  if ((0.0 < fVar1) && ((byte *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {
-    if (in_stack_00000004[2].location.position.x != 0.0) {
-      (*in_stack_00000004->vtable->getBoundingBox)
-                (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffb4);
+  fVar1 = this_ptr->weight_in_pounds;
+  this_ptr->field17_0x398[0x250] = '\0';
+  this_ptr->field17_0x398[0x251] = '\0';
+  this_ptr->field17_0x398[0x252] = '\0';
+  this_ptr->field17_0x398[0x253] = '\0';
+  if ((0.0 < fVar1) && ((int *)(this_ptr->base_actor).validation_magic == &g_ActorMagicNumber)) {
+    if (*(int *)(this_ptr->model_name + 0x178) != 0) {
+      (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
+                (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffb4);
       fStack_14 = fStack_44 + fStack_38;
       fStack_10 = fStack_40 + fStack_34;
       CStack_20.x = fStack_14 * 0.5f;
@@ -42,18 +39,17 @@ void core_boxactor_cpp_FUN_004218d0(void)
       fStack_c = fStack_3c + fStack_30;
       CStack_20.z = fStack_c * 0.5f;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                (in_stack_00000004,&CStack_2c,&CStack_20);
+                (&this_ptr->base_actor,&CStack_2c,&CStack_20);
       fStack_8 = fStack_38 - fStack_44;
       core_box_cpp_CBox_setupCorners_FUN_0041dd20
-                ((CBox *)&in_stack_00000004[2].field12_0xe0.y,&CStack_2c,
-                 (CVector3f *)&in_stack_00000004->orient,(CVector3f *)&fStack_8,
-                 in_stack_00000004[2].field12_0xe0.x);
+                ((CBox *)&this_ptr->sim_box,&CStack_2c,(CVector3f *)&(this_ptr->base_actor).orient,
+                 (CVector3f *)&fStack_8,this_ptr->weight_in_pounds);
       return;
     }
-    in_stack_00000004[4].create_event[0x10] = -1;
-    in_stack_00000004[4].create_event[0x11] = -1;
-    in_stack_00000004[4].create_event[0x12] = -1;
-    in_stack_00000004[4].create_event[0x13] = -1;
+    this_ptr->field17_0x398[0x250] = -1;
+    this_ptr->field17_0x398[0x251] = -1;
+    this_ptr->field17_0x398[0x252] = -1;
+    this_ptr->field17_0x398[0x253] = -1;
   }
   return;
 }

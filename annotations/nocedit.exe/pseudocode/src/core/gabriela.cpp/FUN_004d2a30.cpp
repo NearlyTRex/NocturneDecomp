@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d2a30(byte param_1, byte
    param_2, uint param_3, uint param_4) */
 
@@ -17,7 +16,7 @@ float core_gabriela_cpp_FUN_004d2a30(void)
   int in_stack_00000010;
   uint local_c;
   
-  local_c = in_stack_0000000c * _DAT_02d7b844;
+  local_c = in_stack_0000000c * FLOAT_02d7b844;
   if (in_stack_00000010 < 1) {
     local_c = local_c * (float)0.69999999999999996;
   }

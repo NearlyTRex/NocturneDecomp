@@ -36,7 +36,7 @@ void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
   _DAT_02d7b7f0 = *(float *)(in_stack_00000004[1].actor_name + 4);
   pCVar1 = (CDemonActor *)core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330();
   if (pCVar1 == in_stack_00000004) {
-    fVar3 = in_stack_00000008 * _DAT_0065e66c + *(float *)(in_stack_00000004[1].actor_name + 4);
+    fVar3 = in_stack_00000008 * 30.0f + *(float *)(in_stack_00000004[1].actor_name + 4);
     *(float *)(in_stack_00000004[1].actor_name + 4) = fVar3;
     if (_DAT_0065e670 <= fVar3) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
@@ -65,7 +65,7 @@ void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
       }
       iVar2 = core_frankgen_cpp_FUN_004d1ec0();
       iVar5 = 0;
-      (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_68);
+      (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&local_68);
       uStack_3c = 0;
       uStack_38 = 0x40800000;
       uStack_34 = 0;
@@ -93,7 +93,7 @@ void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
     }
     if ((0x44e10000 < *(int *)(in_stack_00000004[1].actor_name + 4)) &&
        (*(int *)(in_stack_00000004[1].actor_name + 4) < 0x44ed8000)) {
-      (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_80);
+      (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&local_80);
       CStack_30.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_80.min.z,local_80.max.z);
       CStack_30.y = local_80.max.x;
       CStack_30.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_80.max.y,local_68.min.y);

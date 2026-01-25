@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065f024
+;   float FLOAT_0065f024 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic DAT_0067b9b0
 ;   CDemonSet* g_CDemonSetPtr = 03114278
@@ -76,13 +76,13 @@ section .text
     MOV EAX,EDI                         ; 004ebadf
     MOV ESI,dword ptr [ESI]             ; 004ebae1 | g_CDemonRendererInstance
     FLD float ptr [EAX]                 ; 004ebae3
-    FMUL float ptr [0x0065f024]         ; 004ebae5 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebae5 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ebaeb
     FLD float ptr [EAX + 0x4]           ; 004ebaed
-    FMUL float ptr [0x0065f024]         ; 004ebaf0 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebaf0 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ebaf6
     FLD float ptr [EAX + 0x8]           ; 004ebaf9
-    FMUL float ptr [0x0065f024]         ; 004ebafc | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebafc | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ebb02
     LEA EAX,[ESP + 0xa0]                ; 004ebb05
     PUSH EAX                            ; 004ebb0c
@@ -125,13 +125,13 @@ section .text
     LEA EAX,[ESP + 0xac]                ; 004ebb6d
     MOV EDX,dword ptr [0x006703ec]      ; 004ebb74 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004ebb7a
-    FMUL float ptr [0x0065f024]         ; 004ebb7c | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebb7c | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ebb82
     FLD float ptr [EAX + 0x4]           ; 004ebb84
-    FMUL float ptr [0x0065f024]         ; 004ebb87 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebb87 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ebb8d
     FLD float ptr [EAX + 0x8]           ; 004ebb90
-    FMUL float ptr [0x0065f024]         ; 004ebb93 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebb93 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ebb99
     LEA EAX,[ESP + 0x40]                ; 004ebb9c
     PUSH EAX                            ; 004ebba0
@@ -150,13 +150,13 @@ section .text
     LEA EBX,[ESP + 0x7c]                ; 004ebbd1
     MOV EDX,dword ptr [0x006703ec]      ; 004ebbd5 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004ebbdb
-    FMUL float ptr [0x0065f024]         ; 004ebbdd | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebbdd | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ebbe3
     FLD float ptr [EAX + 0x4]           ; 004ebbe5
-    FMUL float ptr [0x0065f024]         ; 004ebbe8 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebbe8 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ebbee
     FLD float ptr [EAX + 0x8]           ; 004ebbf1
-    FMUL float ptr [0x0065f024]         ; 004ebbf4 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebbf4 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ebbfa
     LEA EAX,[ESP + 0x7c]                ; 004ebbfd
     PUSH EAX                            ; 004ebc01
@@ -175,13 +175,13 @@ section .text
     MOV dword ptr [ESP + 0xb4],EDX      ; 004ebc30
     MOV EDX,dword ptr [0x006703ec]      ; 004ebc37 | g_CDemonRendererPtr2
     FLD float ptr [EAX]                 ; 004ebc3d
-    FMUL float ptr [0x0065f024]         ; 004ebc3f | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebc3f | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ebc45
     FLD float ptr [EAX + 0x4]           ; 004ebc47
-    FMUL float ptr [0x0065f024]         ; 004ebc4a | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebc4a | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ebc50
     FLD float ptr [EAX + 0x8]           ; 004ebc53
-    FMUL float ptr [0x0065f024]         ; 004ebc56 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebc56 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ebc5c
     LEA EAX,[ESP + 0x28]                ; 004ebc5f
     PUSH EAX                            ; 004ebc63
@@ -200,13 +200,13 @@ section .text
     MOV dword ptr [ESP + 0xac],ECX      ; 004ebc91
     MOV dword ptr [ESP + 0xb4],ESI      ; 004ebc98
     FLD float ptr [EAX]                 ; 004ebc9f
-    FMUL float ptr [0x0065f024]         ; 004ebca1 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebca1 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ebca7
     FLD float ptr [EAX + 0x4]           ; 004ebca9
-    FMUL float ptr [0x0065f024]         ; 004ebcac | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebcac | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ebcb2
     FLD float ptr [EAX + 0x8]           ; 004ebcb5
-    FMUL float ptr [0x0065f024]         ; 004ebcb8 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebcb8 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ebcbe
     LEA EAX,[ESP + 0x64]                ; 004ebcc1
     PUSH EAX                            ; 004ebcc5
@@ -244,13 +244,13 @@ section .text
     MOV EAX,EDI                         ; 004ebd3e
     MOV dword ptr [0x006880bc],EDX      ; 004ebd40 | g_RenderVertexBuffer[3].u
     FLD float ptr [EAX]                 ; 004ebd46
-    FMUL float ptr [0x0065f024]         ; 004ebd48 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebd48 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ebd4e
     FLD float ptr [EAX + 0x4]           ; 004ebd50
-    FMUL float ptr [0x0065f024]         ; 004ebd53 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebd53 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ebd59
     FLD float ptr [EAX + 0x8]           ; 004ebd5c
-    FMUL float ptr [0x0065f024]         ; 004ebd5f | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ebd5f | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ebd65
     PUSH 0x4                            ; 004ebd68
     PUSH ESI                            ; 004ebd6a

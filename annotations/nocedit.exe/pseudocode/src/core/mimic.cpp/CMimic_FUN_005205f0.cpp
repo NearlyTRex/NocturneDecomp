@@ -29,7 +29,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
   bVar4 = 0;
   if (*(int *)(this_ptr->field0_0x0).base_character.field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-    this_ptr_01 = (*((this_ptr->field0_0x0).base_character.base_actor.vtable)->getBoundingBox)
+    this_ptr_01 = (*((this_ptr->field0_0x0).base_character.base_actor.vtable._ub)->getBoundingBox)
                             ((CDemonActor *)this_ptr,&local_64);
     local_1c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if (local_1c != 0) {

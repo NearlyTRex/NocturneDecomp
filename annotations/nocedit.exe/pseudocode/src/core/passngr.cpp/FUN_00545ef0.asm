@@ -8,7 +8,7 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00661f58
+;   float FLOAT_00661f58 = 2
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CEventList g_CEventListInstance
@@ -132,7 +132,7 @@ section .text
     JNZ 0x00545f55                      ; 00545fd8
         ;   XREF to: 00545f55 (CONDITIONAL_JUMP)  ; LAB_00545f55
     FLD float ptr [EBP + 0x18]          ; 00545fde
-    FDIV float ptr [0x00661f58]         ; 00545fe1 | DAT_00661f58
+    FDIV float ptr [0x00661f58]         ; 00545fe1 | FLOAT_00661f58
     FADD float ptr [EBX + 0x20440]      ; 00545fe7
     FST float ptr [EBX + 0x20440]       ; 00545fed
     FLD1                                ; 00545ff3

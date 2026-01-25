@@ -1,0 +1,228 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 28,
+        "line": 32,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
+      },
+      {
+        "category": "missing_member",
+        "column": 28,
+        "line": 34,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
+      },
+      {
+        "category": "missing_member",
+        "column": 28,
+        "line": 35,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
+      },
+      {
+        "category": "missing_member",
+        "column": 28,
+        "line": 36,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 39,
+        "message": "'CLarva' {aka 'struct CLarva'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 40,
+        "message": "'CLarva' {aka 'struct CLarva'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 41,
+        "message": "'CLarva' {aka 'struct CLarva'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 42,
+        "message": "'CLarva' {aka 'struct CLarva'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 43,
+        "message": "'CLarva' {aka 'struct CLarva'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 44,
+        "message": "'CLarva' {aka 'struct CLarva'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 45,
+        "message": "'CLarva' {aka 'struct CLarva'} has no member named 'field1_0xbeb4'"
+      },
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 46,
+        "message": "'CLarva' {aka 'struct CLarva'} has no member named 'field1_0xbeb4'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 20,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 40,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "00502f50",
+      "from_addr": "00502f6a",
+      "name": "core_larva.cpp_FUN_00502f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00502f90",
+    "address_range": [
+      [
+        "00502f90",
+        "00503013"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_larva.cpp_CLarva_ctor_FUN_00502f90",
+    "signature": "CLarva * core_larva.cpp_CLarva_ctor_FUN_00502f90(CLarva * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9500",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00630edc",
+      "name": "s_worm_dfm_00630edc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00660720",
+      "name": "FLOAT_00660720",
+      "type": "float",
+      "value": "20"
+    },
+    {
+      "addr": "00660724",
+      "name": "FLOAT_00660724",
+      "type": "float",
+      "value": "100"
+    },
+    {
+      "addr": "00660734",
+      "name": "g_CLarvaVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00502f6a",
+        "call_type": "direct",
+        "caller": "core_larva.cpp_FUN_00502f50",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.846153846153846,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 56,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 15,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 126
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLarva *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLarva",
+        "offset": 0,
+        "vtable_addr": "006608a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

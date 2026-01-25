@@ -48,7 +48,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field1_0xbeb4 + 8);
     if (iVar3 != 0) {
-      (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+      (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"armour.wav");
       core_charactr_cpp_CCharacter_FUN_0042b9e0((CCharacter *)this_ptr);
       return;

@@ -6722,8 +6722,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042b8a0",
-    "ret":"int*",
+    "name":"core_charactr.cpp_CCharacter_getBoundingBox_FUN_0042b8a0",
+    "ret":"CBoundingBox3D*",
     "vars":{
       "params":[
         {
@@ -6741,6 +6741,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"out_box",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoundingBox3D*"
         }
       ],
       "ret_storage":{
@@ -6766,7 +6782,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_FUN_0042bc20",
+    "name":"core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20",
     "ret":"int",
     "vars":{
       "params":[
@@ -6785,6 +6801,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
         }
       ],
       "ret_storage":{
@@ -10480,14 +10512,29 @@
         "start":"004404a0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_colonel.cpp_FUN_004404a0(undefined4 param_1)",
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_colonel.cpp_FUN_004404a0",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CColonel*"
+        }
+      ]
     }
   },
   {
@@ -37430,10 +37477,10 @@
         "start":"004d2ea0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_hero_gabriella.cpp_FUN_004d2ea0(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_FUN_004d2ea0",
-    "ret":"undefined1",
+    "name":"core_gabriela.cpp_CGabriella_process_FUN_004d2ea0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -38669,9 +38716,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGabriella*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
     }
   },
   {
@@ -42043,7 +42121,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_imp.cpp_FUN_004f98a0",
+    "name":"core_imp.cpp_CImp_ctor_FUN_004f98a0",
     "ret":"CImp*",
     "vars":{
       "params":[
@@ -43936,7 +44014,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_00508920",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920",
     "ret":"CMansionPuzzleCircle*",
     "vars":{
       "params":[
@@ -43978,13 +44056,54 @@
         "start":"00509320"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_manpuz.cpp_FUN_00509320()",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_00509320",
-    "ret":"undefined1",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_hasCollision_FUN_00509320",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle*"
+        },
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -43997,10 +44116,10 @@
         "start":"00509720"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_manpuz.cpp_FUN_00509720(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_00509720",
-    "ret":"undefined1",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -44100,9 +44219,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle*"
+        },
+        {
+          "name":"cylinder",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SIntersectXZCylinder*"
+        }
+      ]
     }
   },
   {
@@ -44114,10 +44264,10 @@
         "start":"00509b20"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_manpuz.cpp_FUN_00509b20(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_00509b20",
-    "ret":"undefined1",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509b20",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -44217,9 +44367,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle*"
+        }
+      ]
     }
   },
   {
@@ -44231,14 +44396,29 @@
         "start":"0050a420"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_manpuz.cpp_FUN_0050a420(undefined4 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined4 param_5)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_0050a420",
-    "ret":"undefined1",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a420",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle*"
+        }
+      ]
     }
   },
   {
@@ -44250,10 +44430,10 @@
         "start":"0050aba0"
       }
     ],
-    "cmt":"Signature: undefined1 actors_other_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft(undefined4 param_1, undefined4 param_2)",
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -44273,9 +44453,24 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle*"
+        }
+      ]
     }
   },
   {
@@ -44289,7 +44484,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_0050b920",
+    "name":"core_manpuz.cpp_SReflector_ctor_FUN_0050b920",
     "ret":"SReflector*",
     "vars":{
       "params":[
@@ -52080,13 +52275,29 @@
         "start":"005447a0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_npc.cpp_FUN_005447a0",
-    "ret":"undefined1",
+    "name":"core_npc.cpp_CNPC_FUN_005447a0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CNPC*"
+        }
+      ]
     }
   },
   {

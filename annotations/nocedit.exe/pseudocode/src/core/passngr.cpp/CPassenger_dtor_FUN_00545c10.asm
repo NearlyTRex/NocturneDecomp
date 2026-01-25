@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_passngr_cpp_0063e7b0
-;   CDemonActor_vtable PTR_core_passngr.cpp_FUN_00545d30_00661f64
+;   CDemonActor_vtable g_CPassengerVTable
 ;   WatcomTypeInfo g_CPassengerTypeInfo
 ;   char* g_CurrentDebugFilename = 0067d200
 ;   int g_CurrentDebugLine
@@ -39,7 +39,7 @@ section .text
     JNZ 0x00545d03                      ; 00545c1b
         ;   XREF to: 00545d03 (CONDITIONAL_JUMP)  ; LAB_00545d03
     MOV EDX,dword ptr [EBX + 0x1f810]   ; 00545c21
-    MOV dword ptr [EBX + 0x154],0x661f64 ; 00545c27 | PTR_core_passngr.cpp_FUN_00545d30_00661f64
+    MOV dword ptr [EBX + 0x154],0x661f64 ; 00545c27 | g_CPassengerVTable
     TEST EDX,EDX                        ; 00545c31
     JZ 0x00545c61                       ; 00545c33
         ;   XREF to: 00545c61 (CONDITIONAL_JUMP)  ; LAB_00545c61

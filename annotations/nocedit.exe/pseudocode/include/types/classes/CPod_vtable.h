@@ -1,14 +1,16 @@
 #pragma once
 
+// Forward declarations
+struct CPod;
+struct SFoundFileInfo;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CPod.h"
 #include "types/funcdefs/CPod_dismount.h"
 #include "types/funcdefs/CPod_findFile.h"
 #include "types/funcdefs/CPod_load.h"
 #include "types/funcdefs/CPod_mount.h"
 #include "types/funcdefs/CPod_remount.h"
-#include "types/structs/SFoundFileInfo.h"
 
 // Structure: CPod_vtable
 // Ghidra size: 0x18 (24 bytes)

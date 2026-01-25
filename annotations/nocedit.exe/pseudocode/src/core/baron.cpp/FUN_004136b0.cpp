@@ -11,12 +11,12 @@
 void core_baron_cpp_FUN_004136b0(void)
 
 {
-  CDemonActor *this_ptr;
+  CCharacter *this_ptr;
   CVector3f *pCVar1;
   int iVar2;
   int iVar3;
   CDemonActor *in_stack_00000004;
-  float in_stack_fffffec0;
+  CVector3f aCStack_140 [10];
   byte auStack_c0 [56];
   CDemonActor *pCStack_88;
   byte auStack_80 [24];
@@ -30,12 +30,13 @@ void core_baron_cpp_FUN_004136b0(void)
   CVector3f CStack_20;
   float local_14;
   
-  this_ptr = (CDemonActor *)core_hero_cpp_FUN_004f3960();
-  if (this_ptr == (CDemonActor *)0x0) {
+  this_ptr = (CCharacter *)core_hero_cpp_FUN_004f3960();
+  if (this_ptr == (CCharacter *)0x0) {
     return;
   }
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (in_stack_00000004,(CVector3f *)(auStack_44 + 4),&(this_ptr->location).position);
+            (in_stack_00000004,(CVector3f *)(auStack_44 + 4),
+             &(this_ptr->base_actor).location.position);
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                      ((CVector3f *)(auStack_80 + 4),(CVector3f *)(auStack_44 + 4));
   if ((CVector3f *)(auStack_44 + 4) != pCVar1) {
@@ -52,11 +53,12 @@ void core_baron_cpp_FUN_004136b0(void)
   else {
     crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
               (&stack0xfffffeb8,10,&g_CVectorTypeInfo);
-    iVar2 = (*this_ptr->vtable->getTargetPoints)(this_ptr,(CVector3f *)&stack0xfffffeb8);
+    iVar2 = (*((this_ptr->base_actor).vtable._ub)->getTargetPoints)
+                      ((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffeb8);
     iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
     pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                       (this_ptr,(CVector3f *)(auStack_c0 + 0x34),
-                        (CVector3f *)(&stack0xfffffec0 + (iVar3 % iVar2) * 0xc));
+                       ((CDemonActor *)this_ptr,(CVector3f *)(auStack_c0 + 0x34),
+                        aCStack_140 + iVar3 % iVar2);
     if (&CStack_20 != pCVar1) {
       CStack_20.x = pCVar1->x;
       CStack_20.y = pCVar1->y;
@@ -64,8 +66,7 @@ void core_baron_cpp_FUN_004136b0(void)
     }
     iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
     pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                       (this_ptr,&CStack_50,(CVector3f *)(&stack0xfffffec0 + (iVar3 % iVar2) * 0xc))
-    ;
+                       ((CDemonActor *)this_ptr,&CStack_50,aCStack_140 + iVar3 % iVar2);
     if ((CVector3f *)auStack_44 != pCVar1) {
       auStack_44._0_4_ = pCVar1->x;
       auStack_44._4_4_ = pCVar1->y;
@@ -81,7 +82,7 @@ void core_baron_cpp_FUN_004136b0(void)
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_2c,pCVar1);
     core_fire_cpp_CFireEffect_FUN_004c8fd0(g_CFireEffectPtr);
     core_fire_cpp_CFireEffect_FUN_004c8fd0(g_CFireEffectPtr);
-    (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"baron-attack.wav");
+    (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,"baron-attack.wav");
   }
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_c0);
   auStack_c0._48_4_ = 6;
@@ -91,7 +92,10 @@ void core_baron_cpp_FUN_004136b0(void)
   if (pCStack_88 == (CDemonActor *)0x0) {
     pCStack_88 = in_stack_00000004;
   }
-  (*this_ptr->vtable[1].playAmbientSoundWithVolume)(this_ptr,auStack_c0,in_stack_fffffec0);
-  this_ptr[0x88].field22_0x120 = 0x40400000;
+  (*(((this_ptr->base_actor).vtable._uc)->_uc).processDamage)(this_ptr,(SDamageInfo *)auStack_c0);
+  this_ptr->cloth_data[0x8d48] = '\0';
+  this_ptr->cloth_data[0x8d49] = '\0';
+  this_ptr->cloth_data[0x8d4a] = '@';
+  this_ptr->cloth_data[0x8d4b] = '@';
   return;
 }

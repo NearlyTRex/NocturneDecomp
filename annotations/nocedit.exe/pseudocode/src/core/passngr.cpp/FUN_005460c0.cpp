@@ -19,7 +19,7 @@ int core_passngr_cpp_FUN_005460c0(void)
   if ((*(float *)(in_stack_00000004[2].cloth_data + 0x5d60) <= 1.0) &&
      (*(int *)in_stack_00000004->field2_0x240c == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);
-    this_ptr = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
+    this_ptr = (*((in_stack_00000004->base_actor).vtable._ub)->getBoundingBox)
                          (&in_stack_00000004->base_actor,&local_1c);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     if (iVar1 != 0) {

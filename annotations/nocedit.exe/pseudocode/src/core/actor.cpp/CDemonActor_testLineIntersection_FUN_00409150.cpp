@@ -27,7 +27,7 @@ core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150
   
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_70 + 4));
   auStack_70._4_4_ = 0;
-  iVar5 = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)(auStack_70 + 4));
+  iVar5 = (*((this_ptr->vtable)._ub)->hasCollision)(this_ptr,(SCollisionInfo *)(auStack_70 + 4));
   if (iVar5 == 2) {
     fStack_18 = line_end->x - line_start->x;
     fStack_14 = line_end->y - line_start->y;

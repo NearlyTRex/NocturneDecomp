@@ -12,7 +12,7 @@
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_serialize_FUN_00413a70 at 00413a76
-;   core_colonel.cpp_CColonel_load_FUN_00440490 at 00440495
+;   core_colonel.cpp_CColonel_serialize_FUN_00440490 at 00440495
 ;   core_gabriela.cpp_CGabriella_load_FUN_004d6090 at 004d6096
 ;   core_haystack.cpp_CHaystack_load_FUN_004f1b50 at 004f1b55
 ;   core_icepick.cpp_CIcePick_load_FUN_004f9590 at 004f9595

@@ -78,13 +78,13 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
       iVar9 = 2;
       local_1c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
       sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_1c,iVar9);
-      fVar5 = (float)(*this_ptr_00->vtable->playSound)
+      fVar5 = (float)(*((this_ptr_00->vtable)._ub)->playSound)
                                (this_ptr_00,(char *)&this_ptr_00[2].location.position.y);
       this_ptr_00[2].orient_matrix.m[1].y = fVar5;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }
-  if ((this_ptr_00[2].field6_0x68 == 0) && (0.0 < this_ptr_00[2].field12_0xe0.x)) {
+  if ((this_ptr_00[2].validation_magic == 0) && (0.0 < this_ptr_00[2].field12_0xe0.x)) {
     CStack_74.y = (this_ptr_00->location).position.x;
     CStack_74.z = (this_ptr_00->location).position.y;
     local_68._0_4_ = (this_ptr_00->location).position.z;
@@ -96,7 +96,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
       (this_ptr_00->orient).heading = (float)this_ptr_00[2].field14_0xf8;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr_00);
-    pCVar6 = (*this_ptr_00->vtable->getBoundingBox)
+    pCVar6 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)
                        (this_ptr_00,(CBoundingBox3D *)(auStack_d4 + 0x34));
     local_68._36_4_ = (pCVar6->min).x + (pCVar6->max).x;
     local_68._40_4_ = (pCVar6->min).y + (pCVar6->max).y;

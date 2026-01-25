@@ -74,9 +74,9 @@ uint core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
   for (local_18 = 0.0; (int)local_18 < (int)g_CDemonSetPtr->actor_list_ptr;
       local_18 = (float)((int)local_18 + 1)) {
     this_ptr = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar5);
-    pCVar4 = (*this_ptr->vtable->getCarrier)(this_ptr);
+    pCVar4 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
     if (pCVar4 == (CDemonActor *)0x0) {
-      uStack_14 = (*this_ptr->vtable->canPickup)(this_ptr,in_stack_00000004);
+      uStack_14 = (*((this_ptr->vtable)._ub)->canPickup)(this_ptr,in_stack_00000004);
       if (uStack_14 < 2) {
         if ((uStack_14 == 1) && (in_stack_00000004[0x1b].field7_0x6c == 0)) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(this_ptr,&local_5c,pCStack_20);

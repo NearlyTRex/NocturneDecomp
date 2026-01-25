@@ -22,7 +22,7 @@ void core_scat_cpp_FUN_00558720(void)
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
   int in_stack_0000000c;
-  CDemonActor_vtable *local_13c;
+  CDemonActor_union_vtable local_13c;
   CVector3f local_138 [12];
   CVector3f CStack_a8;
   CVector3f CStack_9c;
@@ -33,13 +33,14 @@ void core_scat_cpp_FUN_00558720(void)
   CVector3f CStack_78;
   CVector3f CStack_6c;
   CVector3f CStack_60;
-  CVector3f CStack_54;
+  CDemonActor_union_vtable CStack_54;
+  CDemonActor_union_vtable CStack_50;
   float local_40;
   float local_3c;
   float local_38;
   float local_34;
   float local_30;
-  CDemonActor_vtable *local_2c;
+  CDemonActor_union_vtable local_2c;
   int local_28;
   float local_24;
   int local_20;
@@ -57,20 +58,21 @@ void core_scat_cpp_FUN_00558720(void)
     in_stack_0000000c = 1;
   }
   local_13c = in_stack_00000004[0x179].vtable;
-  local_2c = *(CDemonActor_vtable **)in_stack_00000004[0x17a].actor_name;
+  local_2c = *(CDemonActor_union_vtable *)(in_stack_00000004 + 0x17a);
   if ((*(int *)(in_stack_00000004[0x176].create_event + 0x2c) != 0) &&
      (*(int *)(in_stack_00000004[0x8d].create_event + 0x38) != 2)) {
-    local_13c = (CDemonActor_vtable *)
-                ((float)in_stack_00000004[0x8d].field11_0xdc * (float)3.1415926535000001 *
-                 (float)2 * in_stack_00000008 + (float)local_13c);
+    local_13c._ub =
+         (CDemonActor_vtable *)
+         ((float)in_stack_00000004[0x8d].field11_0xdc * (float)3.1415926535000001 *
+          (float)2 * in_stack_00000008 + local_13c._ub);
     local_1c = 0x3fc90fdb;
     if ((float)local_13c < -1.570796f) {
-      local_13c = (CDemonActor_vtable *)0xbfc90fdb;
+      local_13c._ub = (CDemonActor_vtable *)0xbfc90fdb;
     }
     if (1.5707964 < (float)local_13c) {
-      local_13c = (CDemonActor_vtable *)0x3fc90fdb;
+      local_13c._ub = (CDemonActor_vtable *)0x3fc90fdb;
     }
-    local_2c = (CDemonActor_vtable *)0x0;
+    local_2c._ub = (CDemonActor_vtable *)0x0;
     goto LAB_005587bd;
   }
   if ((in_stack_00000004[0x179].previous_transform_state.orientation.z == 0.0) ||
@@ -102,7 +104,7 @@ void core_scat_cpp_FUN_00558720(void)
       in_stack_00000004[0x17a].actor_name[1] = '\0';
       in_stack_00000004[0x17a].actor_name[2] = '\0';
       in_stack_00000004[0x17a].actor_name[3] = '\0';
-      in_stack_00000004[0x179].vtable = *(CDemonActor_vtable **)in_stack_00000004[0x17a].actor_name;
+      in_stack_00000004[0x179].vtable = *(CDemonActor_union_vtable *)(in_stack_00000004 + 0x17a);
       local_13c = in_stack_00000004[0x179].vtable;
       local_2c = local_13c;
     }
@@ -145,9 +147,10 @@ LAB_00558aeb:
   CStack_84.x = CStack_9c.x - pCVar5->x;
   CStack_84.y = CStack_9c.y - pCVar5->y;
   CStack_84.z = CStack_9c.z - pCVar5->z;
-  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_54,&CStack_84);
-  local_13c = (CDemonActor_vtable *)CStack_54.x;
-  local_2c = (CDemonActor_vtable *)CStack_54.y;
+  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+            ((CVector3f *)&CStack_54,&CStack_84);
+  local_13c = CStack_54;
+  local_2c = CStack_50;
 LAB_005587bd:
   local_38 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                        ((float)local_2c - *(float *)in_stack_00000004[0x17a].actor_name);
@@ -173,7 +176,7 @@ LAB_005587bd:
   fVar7 = *(float *)in_stack_00000004[0x17a].actor_name;
   iVar4 = *(int *)(in_stack_00000004[0x17a].actor_name + 8);
   in_stack_00000004[0x179].vtable =
-       (CDemonActor_vtable *)((float)in_stack_00000004[0x179].vtable + local_34);
+       (CDemonActor_vtable *)(in_stack_00000004[0x179].vtable + local_34);
   *(float *)in_stack_00000004[0x17a].actor_name = fVar7 + local_38;
   if ((iVar4 != 0) && (in_stack_0000000c == 0)) {
     local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70

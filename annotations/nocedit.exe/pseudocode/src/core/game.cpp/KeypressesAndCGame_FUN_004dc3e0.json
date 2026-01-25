@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 10,
-        "line": 83,
-        "message": "invalid cast from type 'float' to type 'SCollisionInfo*'"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 86,
-        "message": "invalid cast from type 'SCollisionInfo*' to type 'float'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 92,
-        "message": "invalid cast from type 'SCollisionInfo*' to type 'float'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -30,24 +11,22 @@
       },
       {
         "category": "other",
-        "column": 29,
-        "line": 259,
+        "column": 31,
+        "line": 248,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 761,
-    "complexity_score": 336,
+    "complexity_score": 251,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 24,
-    "pseudocode_lines": 261,
-    "suspect_count": 7,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 1022
+    "pseudocode_lines": 251,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1012
   },
   "cross_references": [
     {
@@ -394,55 +373,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000054",
-      "text": "SCollisionInfo *in_stack_00000054;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_ffffffec",
-      "text": "SCollisionInfo *in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_ffffffec",
-      "text": "in_stack_ffffffec =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_ffffffec",
-      "text": "*pfVar1 = *pfVar1 - (float)in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_ffffffec",
-      "text": "fVar2 = *pfVar1 + (float)in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 142,
-      "match": "in_stack_ffffffec",
-      "text": "((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffffec);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 239,
-      "match": "in_stack_00000054",
-      "text": "((CDemonActor *)this_ptr,in_stack_00000054);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

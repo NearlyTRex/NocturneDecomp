@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_npc_passenger.cpp_FUN_00545ef0(uint param_1, uint
    param_2) */
 
@@ -32,7 +31,7 @@ void core_passngr_cpp_FUN_00545ef0(void)
   iVar2 = pSVar4->state_index;
   if ((iVar2 == 1) || (iVar2 == 2)) {
     if ((iVar2 == 2) &&
-       ((fVar3 = in_stack_00000008 / _DAT_00661f58 +
+       ((fVar3 = in_stack_00000008 / 2.0f +
                  *(float *)(in_stack_00000004[2].cloth_data + 0x5d60),
         *(float *)(in_stack_00000004[2].cloth_data + 0x5d60) = fVar3, 1.0 <= fVar3 &&
         (*(int *)(in_stack_00000004[2].cloth_data + 0x5130) != 0)))) {
@@ -52,7 +51,7 @@ void core_passngr_cpp_FUN_00545ef0(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(in_stack_00000004->model).motion_controller,1,1);
       if (in_stack_00000004[2].cloth_data[0x50cc] != '\0') {
-        (*((in_stack_00000004->base_actor).vtable)->playSound)
+        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                   (&in_stack_00000004->base_actor,in_stack_00000004[2].cloth_data + 0x50cc);
         in_stack_00000004[2].cloth_data[0x50cc] = '\0';
       }

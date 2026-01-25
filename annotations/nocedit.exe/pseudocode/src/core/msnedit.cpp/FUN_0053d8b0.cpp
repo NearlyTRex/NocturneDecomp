@@ -77,13 +77,13 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
     crt_stdio_c_sprintf_FUN_005fdbd0(local_88,"C%s",pcVar5);
     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
     local_20 = pCVar7;
-    (*pCVar7->vtable->setup)(pCVar7);
+    (*((pCVar7->vtable)._ub)->setup)(pCVar7);
     iVar10 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                        (g_CEditorToolsPtr,"Attempt to transfer properties?");
     if (iVar10 != 0) {
       core_actor_cpp_FUN_0040e130();
       core_actor_cpp_FUN_0040e130();
-      (*pCVar7->vtable->getPropertyList)(pCVar7,&CStack_2b24);
+      (*((pCVar7->vtable)._ub)->getPropertyList)(pCVar7,&CStack_2b24);
       in_stack_ffffafdc = &stack0xffffafe0;
       (**(code **)(*(int *)(*(int *)(in_stack_00000010 + 0x28) + 0x154) + 0xd4))();
       iStack_18 = 0;
@@ -178,7 +178,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
       (pCStack_1c->orient).bank = *(float *)(iVar10 + 0x34);
       (pCStack_1c->orient).heading = *(float *)(iVar10 + 0x38);
     }
-    (*pCStack_1c->vtable->setup)(pCStack_1c);
+    (*((pCStack_1c->vtable)._ub)->setup)(pCStack_1c);
     core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
     core_msnedit_cpp_FUN_00538ea0();
     core_mission_cpp_CDemonMission_FUN_00523f20(in_stack_0000000c);

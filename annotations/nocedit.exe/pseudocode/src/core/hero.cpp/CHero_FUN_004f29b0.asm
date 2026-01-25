@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_GETGRABBED_0062ebc8
 ;   TerminatedCString s_STAND_0062ebd3
-;   undefined4 DAT_0078a123
+;   int g_ActorMagicNumber
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_0042bf40
@@ -29,7 +29,7 @@ section .text
     PUSH ESI                            ; 004f29b1
     SUB ESP,0x4                         ; 004f29b2
     MOV ESI,dword ptr [ESP + 0x10]      ; 004f29b5
-    CMP dword ptr [ESI + 0x68],0x78a123 ; 004f29b9 | DAT_0078a123
+    CMP dword ptr [ESI + 0x68],0x78a123 ; 004f29b9 | g_ActorMagicNumber
     JNZ 0x004f2a1f                      ; 004f29c0
         ;   XREF to: 004f2a1f (CONDITIONAL_JUMP)  ; LAB_004f2a1f
     LEA EAX,[ESI + 0x158]               ; 004f29c2

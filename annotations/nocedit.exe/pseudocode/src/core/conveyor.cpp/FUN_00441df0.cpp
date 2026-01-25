@@ -28,12 +28,12 @@ void core_conveyor_cpp_FUN_00441df0(void)
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,in_stack_00000004[5].create_event + 0x14);
   if (iVar1 != 0) {
-    in_stack_00000004[5].vtable = (CDemonActor_vtable *)0x1;
+    in_stack_00000004[5].vtable = (CDemonActor_union_vtable)0x1;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,(char *)&in_stack_00000004[5].field13_0xec.y);
   if (iVar1 == 0) {
-    if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x0) {
+    if (in_stack_00000004[5].vtable._ub != (CDemonActor_vtable *)0x0) {
       local_18 = (CVector3f *)(in_stack_00000004[5].create_event + 8);
       iVar3 = 0;
       local_14 = in_stack_00000004 + 6;
@@ -74,7 +74,7 @@ LAB_00441e9d:
     }
   }
   else {
-    in_stack_00000004[5].vtable = (CDemonActor_vtable *)0x0;
+    in_stack_00000004[5].vtable._ub = (CDemonActor_vtable *)0x0;
   }
   return;
 }

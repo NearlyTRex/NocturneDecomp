@@ -13,7 +13,7 @@ void core_spike_cpp_FUN_005b8410(void)
 
 {
   CLocation *pCVar1;
-  CDemonActor_vtable *pCVar2;
+  CDemonActor_union_vtable CVar2;
   float fVar3;
   float fVar4;
   int iVar5;
@@ -79,18 +79,18 @@ LAB_005b85e2:
   in_stack_00000004[3].create_event[0xb] = '\0';
   if (fVar7 == 0.0) {
     in_stack_00000004[2].location.position.z = 1.4013e-45;
-    in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x0;
+    in_stack_00000004[3].vtable._ub = (CDemonActor_vtable *)0x0;
     goto LAB_005b84db;
   }
   if (fVar7 == 1.4013e-45) {
-    pCVar2 = (CDemonActor_vtable *)
-             (in_stack_00000008 / *(float *)in_stack_00000004[3].create_event +
-             (float)in_stack_00000004[3].vtable);
-    in_stack_00000004[3].vtable = pCVar2;
-    if ((float)pCVar2 <= 1.0) goto LAB_005b84db;
+    CVar2._ub = (CDemonActor_vtable *)
+                (in_stack_00000008 / *(float *)in_stack_00000004[3].create_event +
+                in_stack_00000004[3].vtable);
+    in_stack_00000004[3].vtable = CVar2;
+    if ((float)CVar2 <= 1.0) goto LAB_005b84db;
     in_stack_00000004[2].location.position.z = 2.8026e-45;
     fVar7 = in_stack_00000004[2].location.position.y;
-    in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x3f800000;
+    in_stack_00000004[3].vtable = (CDemonActor_union_vtable)0x3f800000;
     if (fVar7 == 2.8026e-45) {
 LAB_005b8655:
       in_stack_00000004[2].location.area_id = 0;
@@ -103,18 +103,18 @@ LAB_005b8655:
   }
   else {
     if (fVar7 == 2.8026e-45) {
-      in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x3f800000;
+      in_stack_00000004[3].vtable = (CDemonActor_union_vtable)0x3f800000;
       in_stack_00000004[2].location.position.z = 4.2039e-45;
       goto LAB_005b84db;
     }
     if ((fVar7 != 4.2039e-45) ||
-       (pCVar2 = (CDemonActor_vtable *)
-                 ((float)in_stack_00000004[3].vtable -
-                 in_stack_00000008 / *(float *)(in_stack_00000004[3].create_event + 4)),
-       in_stack_00000004[3].vtable = pCVar2, 0.0 <= (float)pCVar2)) goto LAB_005b84db;
+       (CVar2._ub = (CDemonActor_vtable *)
+                    (in_stack_00000004[3].vtable -
+                    in_stack_00000008 / *(float *)(in_stack_00000004[3].create_event + 4)),
+       in_stack_00000004[3].vtable = CVar2, 0.0 <= (float)CVar2)) goto LAB_005b84db;
     in_stack_00000004[2].location.position.z = 0.0;
     fVar7 = in_stack_00000004[2].location.position.y;
-    in_stack_00000004[3].vtable = (CDemonActor_vtable *)0x0;
+    in_stack_00000004[3].vtable._ub = (CDemonActor_vtable *)0x0;
     if (fVar7 == 2.8026e-45) goto LAB_005b8655;
     if (fVar7 != 1.4013e-45) {
       *(CDemonActor **)(in_stack_00000004[3].create_event + 8) = in_stack_00000004[3].next_actor;

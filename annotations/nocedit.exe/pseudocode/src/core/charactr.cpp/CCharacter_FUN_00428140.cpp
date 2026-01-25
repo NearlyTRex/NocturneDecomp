@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
 
 {
   char cVar1;
   CDemonActor *this_ptr_00;
-  uint uVar2;
+  float fVar2;
   CSkeleton *pCVar3;
   int iVar4;
   CCharacter *pCVar5;
@@ -22,12 +20,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
   char *pcVar8;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
-  uVar2 = _DAT_0065b834;
+  fVar2 = 9999.0f;
   this_ptr->cloth_data[0x35c] = '\0';
   this_ptr->cloth_data[0x35d] = '\0';
   this_ptr->cloth_data[0x35e] = '\0';
   this_ptr->cloth_data[0x35f] = '\0';
-  *(uint *)(this_ptr->field2_0x240c + 8) = uVar2;
+  *(float *)(this_ptr->field2_0x240c + 8) = fVar2;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&DAT_00823a98,"stake_b.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&DAT_00823a98);
@@ -37,9 +35,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
     if (this_ptr_00 != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (this_ptr_00,"..\\core\\charactr.cpp",0x106);
-      pCVar6 = (CCharacter *)(*this_ptr_00->vtable->getCarrier)(this_ptr_00);
+      pCVar6 = (CCharacter *)(*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
       if (pCVar6 == (CCharacter *)0x0) {
-        (*this_ptr_00->vtable->pickup)(this_ptr_00,&this_ptr->base_actor);
+        (*((this_ptr_00->vtable)._ub)->pickup)(this_ptr_00,&this_ptr->base_actor);
       }
       else if (pCVar6 != this_ptr) {
         g_CurrentFilename = "..\\core\\charactr.cpp";
@@ -96,7 +94,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
   core_cloth_cpp_CClothList_load_FUN_0043bfa0((CClothList *)&this_ptr->cloth_count);
   core_cloth_cpp_FUN_0043c290();
   core_cloth_cpp_FUN_0043c2d0();
-  core_charactr_cpp_CCharacter_FUN_0042e670();
+  core_charactr_cpp_CCharacter_FUN_0042e670(this_ptr);
   if (this_ptr->descriptive_name[0] != '\0') {
     this_ptr->cloth_data[0x8d3c] = '\0';
     this_ptr->cloth_data[0x8d3d] = '\0';

@@ -124,7 +124,8 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
           if (pCVar4 == (CDemonActor *)0x0) {
             SStack_150.cylinder_top_y = (float)pCVar4;
             SStack_150.cylinder_radius = (float)pCVar4;
-            uVar5 = (*pCVar2->vtable->hasCollision)(pCVar2,(SCollisionInfo *)(auStack_180 + 0x28));
+            uVar5 = (*((pCVar2->vtable)._ub)->hasCollision)
+                              (pCVar2,(SCollisionInfo *)(auStack_180 + 0x28));
             if (uVar5 != 0) {
               other = core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
                                 (pCVar2,&CStack_110,&SStack_150,uVar5);
@@ -167,7 +168,7 @@ core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                               (&stack0xfffffd00,8,&g_CVectorTypeInfo);
                     pCVar18 = (CVector3f *)&stack0xfffffd00;
                     uVar5 = 0;
-                    (*pCVar2->vtable->getBoundingBox)(pCVar2,(CBoundingBox3D *)auStack_128);
+                    (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)auStack_128);
                     do {
                       pCVar6 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                                          ((CBoundingBox3D *)(auStack_128 + 8),&CStack_60,uVar5);
@@ -326,7 +327,7 @@ LAB_005722ec:
                   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                             (pCVar2,&CStack_44,&local_e0);
                   local_18 = (CDemonSet *)(CStack_24.y - (pCVar2->location).position.y);
-                  iVar3 = (*pCVar2->vtable->customGetFloorHeight)
+                  iVar3 = (*((pCVar2->vtable)._ub)->customGetFloorHeight)
                                     (pCVar2,(float)&CStack_44,in_stack_00000014,(float *)&local_18);
                   if (iVar3 != 0) {
                     *(CDemonActor **)((int)in_stack_0000001c + 0x14d144) = pCVar2;
@@ -350,7 +351,7 @@ LAB_005722ec:
     }
     pCVar2 = this_ptr->collision_actor;
     if (pCVar2 != (CDemonActor *)0x0) {
-      fVar19 = (float)(*pCVar2->vtable->getGroundType)(pCVar2);
+      fVar19 = (float)(*((pCVar2->vtable)._ub)->getGroundType)(pCVar2);
       position[0x1bc19].z = fVar19;
       return CStack_24.x;
     }

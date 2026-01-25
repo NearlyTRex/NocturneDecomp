@@ -2,15 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 28,
-        "message": "'PTR_core_hiram_cpp_FUN_004f4530_0065f974' was not declared in this scope; did you mean 'core_hiram_cpp_FUN_004f4530'?"
-      },
-      {
         "category": "other",
         "column": 23,
-        "line": 38,
+        "line": 37,
         "message": "cast from 'CHiram*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
@@ -25,42 +19,42 @@
       {
         "category": "other",
         "column": 51,
-        "line": 32,
+        "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 33,
+        "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 34,
+        "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 37,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 87,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 36,
     "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "unaffected_reg"
     ],
-    "total_lines": 121
+    "total_lines": 120
   },
   "cross_references": [],
   "function": {
@@ -130,7 +124,7 @@
   "globals": [
     {
       "addr": "0065f974",
-      "name": "PTR_core_hiram.cpp_FUN_004f4530_0065f974",
+      "name": "g_CHiramVTable",
       "type": "CDemonActor_vtable",
       "value": null
     },
@@ -261,21 +255,21 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 23,
       "match": "pCVar1[-1].",
       "text": "((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));",
       "type": "negative_offset"
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 29,
       "match": "unaff_EBX",
       "text": "((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_EBX,unaff_retaddr,",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 34,
+      "line": 33,
       "match": "pCVar3[-1].",
       "text": "((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"
@@ -289,7 +283,7 @@
         "vtable_addr": "0065f974"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHiram",
         "offset": 8,
         "vtable_addr": "0065fad4"
       }

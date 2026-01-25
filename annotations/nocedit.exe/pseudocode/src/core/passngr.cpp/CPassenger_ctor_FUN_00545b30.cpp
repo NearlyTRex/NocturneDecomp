@@ -14,11 +14,11 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00545b30(CPassenger *t
   char *pcVar3;
   char *pcVar4;
   
-  core_npc_cpp_FUN_005447e0(&this_ptr->base_npc);
+  core_npc_cpp_CNPC_ctor_FUN_005447e0(&this_ptr->base_npc);
   pcVar3 = "wolfbrn.dfm";
   iVar2 = core_morph_cpp_FUN_0052b310();
   pcVar4 = (char *)(iVar2 + -0xa8);
-  *(CDemonActor_vtable **)(iVar2 + -0x1f6c0) = &PTR_core_passngr_cpp_FUN_00545d30_00661f64;
+  *(CDemonActor_vtable **)(iVar2 + -0x1f6c0) = &g_CPassengerVTable;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

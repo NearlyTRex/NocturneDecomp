@@ -22,7 +22,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   uint auStackY_186c [1497];
   CQuaternion4f *quat_in;
   char *sound_name;
-  float in_stack_ffffff08;
+  uint in_stack_ffffff08;
   char local_f4 [100];
   CQuaternion4f local_90;
   CVector3f local_80;
@@ -133,7 +133,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
     sound_name = "turret-ani?.wav";
 LAB_005e24c7:
-    uVar7 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
+    uVar7 = (*((this_ptr->base_weapon).base_actor.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,sound_name);
     *(uint *)(this_ptr->field12_0x85c + 0x5c) = uVar7;
     break;
@@ -196,8 +196,7 @@ LAB_005e24c7:
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
   if (-1 < *(int *)(this_ptr->base_weapon).field7_0x2f4) {
-    (*(this_ptr->base_weapon).base_actor.vtable[1].processFootstep)
-              ((CDemonActor *)this_ptr,in_stack_ffffff08);
+    (*(((this_ptr->base_weapon).base_actor.vtable._uc)->_uc).cfunc7)();
   }
   fVar4 = *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc);
   iVar5 = *(int *)(this_ptr->field12_0x85c + 0x54);
@@ -212,18 +211,17 @@ LAB_005e24c7:
                       (*(uint *)(this_ptr->field12_0x85c + 0x58),fVar4);
     if (iVar5 == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"turret-loop.wav * %f",(double)fVar4);
-      uVar7 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)
+      uVar7 = (*((this_ptr->base_weapon).base_actor.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,local_f4);
       *(uint *)(this_ptr->field12_0x85c + 0x58) = uVar7;
       return;
     }
   }
   else {
-    local_30._12_8_ =
-         sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_ffffff08);
+    local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);
     if (0.0 <= (double)local_30._12_8_) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field12_0x85c + 0x58));
-      (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
+      (*((this_ptr->base_weapon).base_actor.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");
       return;
     }

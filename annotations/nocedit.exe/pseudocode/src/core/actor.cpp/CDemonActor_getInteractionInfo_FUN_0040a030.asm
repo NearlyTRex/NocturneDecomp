@@ -8,7 +8,7 @@
 ; SInteractionInfo * Stack[0x8]:4   out_info
 ;
 ; XREF[2]:
-;   core_manpuz.cpp_FUN_0050b2f0 at 0050b2fb
+;   core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0 at 0050b2fb
 ;   core_turret.cpp_CTurret_FUN_005e3440 at 005e344c
 ;
 ; Referenced Globals:

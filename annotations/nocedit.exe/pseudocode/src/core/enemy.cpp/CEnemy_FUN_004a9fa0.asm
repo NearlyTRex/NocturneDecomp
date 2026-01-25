@@ -10,7 +10,7 @@
 ;   core_ghoul.cpp_FUN_004e8190 at 004e81ae
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042a390
+;   core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDX                            ; 004a9fbf
         ;   Label: LAB_004a9fbf
     PUSH EAX                            ; 004a9fc0
-    CALL core_charactr.cpp_CCharacter_FUN_0042a390 ; 004a9fc1
-        ;   XREF to: 0042a390 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a390(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390 ; 004a9fc1
+        ;   XREF to: 0042a390 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 004a9fc6
     RET                                 ; 004a9fc9
         ;   Label: LAB_004a9fc9

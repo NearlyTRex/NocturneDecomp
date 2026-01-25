@@ -46,7 +46,7 @@ void core_crate_cpp_FUN_00448660(void)
        (in_stack_00000004[2].orient_matrix.m[0].y != (in_stack_00000004->orient).bank)))) ||
      (in_stack_00000004[2].orient_matrix.m[0].z != (in_stack_00000004->orient).heading)) {
     unaff_retaddr =
-         (*in_stack_00000004->vtable->cylinderGroundCheck)
+         (*((in_stack_00000004->vtable)._ub)->cylinderGroundCheck)
                    (in_stack_00000004,in_stack_00000004[2].location.position.z,(CVector3f *)0x0);
     if ((CLocation *)&in_stack_00000004[2].orient != &in_stack_00000004->location) {
       in_stack_00000004[2].orient.pitch = (in_stack_00000004->location).position.x;

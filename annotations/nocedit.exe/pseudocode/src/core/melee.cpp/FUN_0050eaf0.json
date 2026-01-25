@@ -9,9 +9,9 @@
       },
       {
         "category": "other",
-        "column": 38,
-        "line": 25,
-        "message": "invalid cast from type 'CBoundingBox3D*' to type 'float'"
+        "column": 19,
+        "line": 23,
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -26,17 +26,17 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 218,
+    "complexity_score": 197,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 18,
-    "suspect_count": 19,
+    "pseudocode_lines": 17,
+    "suspect_count": 17,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 48
+    "total_lines": 47
   },
   "cross_references": [],
   "function": {
@@ -179,54 +179,40 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
-      "text": "pCVar1 = (*in_stack_00000004->vtable[1].getBoundingBox)",
+      "text": "fVar1 = (float)(*(((in_stack_00000004->vtable)._uc)->_uc).cfunc6)();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)in_stack_00000004);",
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c->damage_amount = fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->damage_amount = (float)pCVar1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
       "text": "in_stack_0000000c->weapon_damage_modifier = in_stack_00000004[4].location.position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "in_stack_0000000c->weapon_damage_modifier = in_stack_00000004[4].location.position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c->ammo_type = (int)in_stack_00000004[4].orient_matrix.m[0].x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "in_stack_0000000c->ammo_type = (int)in_stack_00000004[4].orient_matrix.m[0].x;",
       "type": "stack_param"

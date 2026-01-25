@@ -24,7 +24,7 @@ uint core_lightgun_cpp_FUN_00505b70(void)
   float fStack_14;
   
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
-  pCVar1 = (*in_stack_00000008->vtable->getBoundingBox)
+  pCVar1 = (*((in_stack_00000008->vtable)._ub)->getBoundingBox)
                      (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffb4);
   fStack_14 = (pCVar1->min).x + (pCVar1->max).x;
   CStack_2c.x = fStack_14 * 0.5f;

@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_haystack_dfm_0062e7fa
-;   CDemonActor_vtable PTR_core_haystack.cpp_FUN_0065f3f4
+;   CDemonActor_vtable g_CHaystackVTable
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004f2340
+;   core_hero.cpp_CHero_ctor_FUN_004f2340
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
 ; *****************************************************************************
@@ -25,12 +25,12 @@ section .text
         ;   Label: core_haystack.cpp_FUN_004f0c10
     MOV EDX,dword ptr [ESP + 0x8]       ; 004f0c11
     PUSH EDX                            ; 004f0c15
-    CALL core_hero.cpp_FUN_004f2340     ; 004f0c16
-        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2340()
+    CALL core_hero.cpp_CHero_ctor_FUN_004f2340 ; 004f0c16
+        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004f2340(CHero * this_ptr)
     MOV EBX,EAX                         ; 004f0c1b
     ADD EAX,0x158                       ; 004f0c1d
     ADD ESP,0x4                         ; 004f0c22
-    MOV dword ptr [EAX + -0x4],0x65f3f4 ; 004f0c25 | PTR_core_haystack.cpp_FUN_0065f3f4
+    MOV dword ptr [EAX + -0x4],0x65f3f4 ; 004f0c25 | g_CHaystackVTable
     PUSH 0x62e7fa                       ; 004f0c2c | = "haystack.dfm"
     MOV dword ptr [EAX + 0x1fa7c],0x0   ; 004f0c31
     PUSH EAX                            ; 004f0c3b

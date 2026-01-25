@@ -12,12 +12,12 @@
 void core_icepick_cpp_FUN_004f9490(void)
 
 {
-  CDemonActor *this_ptr;
+  CCharacter *this_ptr;
   CVector3f *input_local_point;
   int iVar1;
   int iVar2;
   int iVar3;
-  CDemonActor *in_stack_00000004;
+  CCharacter *in_stack_00000004;
   int in_stack_00000008;
   SDamageInfo local_6c;
   CVector3f local_30;
@@ -27,10 +27,10 @@ void core_icepick_cpp_FUN_004f9490(void)
   
   input_local_point =
        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                 ((CDeformableModelInstance *)(in_stack_00000004 + 1),&local_24,in_stack_00000008);
+                 (&in_stack_00000004->model,&local_24,in_stack_00000008);
   iVar3 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,&local_30,input_local_point);
+            (&in_stack_00000004->base_actor,&local_30,input_local_point);
   iVar2 = 0;
   local_18 = 0;
   do {
@@ -39,10 +39,11 @@ void core_icepick_cpp_FUN_004f9490(void)
         if (local_18 == 0) {
           return;
         }
-        (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"icepick-punch?.wav");
+        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
+                  (&in_stack_00000004->base_actor,"icepick-punch?.wav");
         return;
       }
-      this_ptr = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar2 + -4);
+      this_ptr = *(CCharacter **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar2 + -4);
       if (this_ptr != in_stack_00000004) break;
 LAB_004f94e9:
       iVar3 = iVar3 + 1;
@@ -51,11 +52,12 @@ LAB_004f94e9:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_6c);
     local_6c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(90.0,130.0);
     local_6c.weapon_damage_modifier = 0.5;
-    local_6c.field0_0x0 = -1;
-    local_6c.attacker = in_stack_00000004;
-    local_6c.wielder = in_stack_00000004;
+    local_6c.unknown = -1;
+    local_6c.attacker = &in_stack_00000004->base_actor;
+    local_6c.wielder = &in_stack_00000004->base_actor;
     local_14 = local_6c.damage_amount;
-    iVar1 = (*this_ptr->vtable[1].playAmbientSound)(this_ptr,(char *)&local_30);
+    iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).checkCylinderCollisionWorld)
+                      (this_ptr,&local_30,1.0,&local_6c);
     if (iVar1 == 0) goto LAB_004f94e9;
     iVar3 = iVar3 + 1;
     iVar2 = iVar2 + 4;

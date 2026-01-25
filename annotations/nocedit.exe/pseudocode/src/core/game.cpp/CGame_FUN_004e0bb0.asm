@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d33df
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d33df
 ;
 ; Referenced Globals:
 ;   CHero*[4] g_HeroActors

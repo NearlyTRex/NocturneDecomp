@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 6,
-        "line": 13,
+        "line": 12,
         "message": "ambiguating new declaration of 'void core_platfrm_cpp_FUN_0054d9b0()'"
       },
       {
         "category": "undeclared_identifier",
         "column": 62,
-        "line": 63,
+        "line": 62,
         "message": "'stack0xffffffd4' was not declared in this scope"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 75,
+        "line": 74,
         "message": "'void*' is not a pointer-to-object type"
       }
     ],
@@ -32,20 +32,19 @@
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 376,
+    "complexity_score": 360,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 71,
-    "suspect_count": 28,
+    "pseudocode_lines": 70,
+    "suspect_count": 27,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "suspect_float",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 235
+    "total_lines": 234
   },
   "cross_references": [],
   "function": {
@@ -95,9 +94,9 @@
   "globals": [
     {
       "addr": "00662280",
-      "name": "DAT_00662280",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00662280",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "006703ec",
@@ -209,197 +208,190 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 3,
       "match": "param_2",
       "text": "param_2) */",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "if ((*(int *)(in_stack_00000004[3].create_event + 0x40) < 2) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "(*(int *)(in_stack_00000004[3].create_event + 0x48) == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[3].create_event + 0x48) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "fVar1 = in_stack_00000004[2].location.position.y;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 28,
+      "line": 27,
       "match": "4.2039e-45",
       "text": "if ((fVar1 == 4.2039e-45) || (fVar1 == 5.60519e-45)) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 28,
+      "line": 27,
       "match": "5.60519e-45",
       "text": "if ((fVar1 == 4.2039e-45) || (fVar1 == 5.60519e-45)) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "(g_CEventListPtr,(char *)&in_stack_00000004[2].scale);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "(g_CEventListPtr,in_stack_00000004[2].create_event + 0x2c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[3].create_event + 0x48) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[3].create_event[0x40] = '\\x03';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[3].create_event[0x41] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[3].create_event[0x42] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[3].create_event[0x43] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[5].was_created = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000004",
-      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)",
+      "text": "this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd4);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 55,
       "match": "&stack0xffffffd4",
       "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 58,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004[3].scale.y == 0) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),0.0,-1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 63,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 69,
       "match": "in_stack_00000004",
       "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),0.0,-1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 72,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"

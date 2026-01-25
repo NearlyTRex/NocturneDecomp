@@ -20,7 +20,7 @@ void core_filmreel_cpp_FUN_004be720(void)
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
-  (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_24);
+  (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&CStack_24);
   fVar1 = (CStack_24.max.z - CStack_24.min.z) * (float)0.5;
   fVar2 = (fStack_8 - CStack_24.max.y) * (float)0.5;
   if (fVar1 < fVar2) {

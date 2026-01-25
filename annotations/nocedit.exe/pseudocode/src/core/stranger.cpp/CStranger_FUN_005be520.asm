@@ -555,13 +555,13 @@ section .text
     FADDP                               ; 005bea21
     FSQRT                               ; 005bea23
     FST float ptr [ESP + 0x1f2c]        ; 005bea25
-    FCOMP float ptr [0x00663778]        ; 005bea2c | DAT_00663778
+    FCOMP float ptr [0x00663778]        ; 005bea2c | FLOAT_00663778
     FNSTSW AX                           ; 005bea32
     SAHF                                ; 005bea34
     JNC 0x005beb01                      ; 005bea35
         ;   XREF to: 005beb01 (CONDITIONAL_JUMP)  ; LAB_005beb01
     FLD float ptr [ESP + 0x1f2c]        ; 005bea3b
-    FDIV float ptr [0x00663778]         ; 005bea42 | DAT_00663778
+    FDIV float ptr [0x00663778]         ; 005bea42 | FLOAT_00663778
     CALL crt_math.c_acos_FUN_00600162   ; 005bea48
         ;   XREF to: 00600162 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_00600162(double x)
     LEA ESI,[ESP + 0x1c80]              ; 005bea4d
@@ -1031,7 +1031,7 @@ section .text
     MOV dword ptr [ESP + 0x58],0x3f800000 ; 005bf0b3
     FLD float ptr [EBX + 0x1fcb0]       ; 005bf0bb
         ;   Label: LAB_005bf0bb
-    FDIV float ptr [0x00663778]         ; 005bf0c1 | DAT_00663778
+    FDIV float ptr [0x00663778]         ; 005bf0c1 | FLOAT_00663778
     FLD1                                ; 005bf0c7
     FPATAN                              ; 005bf0c9
     LEA ESI,[ESP + 0x1b60]              ; 005bf0cb
@@ -1145,7 +1145,7 @@ section .text
     FXCH                                ; 005bf247
     FSTP float ptr [ESP + 0x1f30]       ; 005bf249
     FSUB float ptr [ESP + 0x1f30]       ; 005bf250
-    FLD float ptr [0x00663778]          ; 005bf257 | DAT_00663778
+    FLD float ptr [0x00663778]          ; 005bf257 | FLOAT_00663778
     FXCH                                ; 005bf25d
     CALL crt_math.c_atan2_FUN_006013b1  ; 005bf25f
         ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
@@ -1184,7 +1184,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 ; 005bf2d8
         ;   XREF to: 0059ff20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20(CDeformableModelInstance * this_ptr, CQuaternion4f * rotation_quat, float blend_weight, int bone_index, ...)
     FLD float ptr [EBX + 0x1fcb0]       ; 005bf2dd
-    FDIV float ptr [0x00663778]         ; 005bf2e3 | DAT_00663778
+    FDIV float ptr [0x00663778]         ; 005bf2e3 | FLOAT_00663778
     FLD1                                ; 005bf2e9
     FPATAN                              ; 005bf2eb
     ADD ESP,0x14                        ; 005bf2ed
@@ -1268,7 +1268,7 @@ section .text
     MOV dword ptr [ESP + 0x44],0x3f800000 ; 005bf3ed
     FLD float ptr [EBX + 0x1fcb0]       ; 005bf3f5
         ;   Label: LAB_005bf3f5
-    FDIV float ptr [0x00663778]         ; 005bf3fb | DAT_00663778
+    FDIV float ptr [0x00663778]         ; 005bf3fb | FLOAT_00663778
     FLD1                                ; 005bf401
     FPATAN                              ; 005bf403
     LEA ESI,[ESP + 0x1cf0]              ; 005bf405
@@ -1370,7 +1370,7 @@ section .text
     ADD ESP,0xc                         ; 005bf546
     FLD float ptr [EBX + 0x1fc9c]       ; 005bf549
     FSUBR float ptr [ESP + 0x1de8]      ; 005bf54f
-    FLD float ptr [0x00663778]          ; 005bf556 | DAT_00663778
+    FLD float ptr [0x00663778]          ; 005bf556 | FLOAT_00663778
     FXCH                                ; 005bf55c
     CALL crt_math.c_atan2_FUN_006013b1  ; 005bf55e
         ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
@@ -1408,7 +1408,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 ; 005bf5d2
         ;   XREF to: 0059ff20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20(CDeformableModelInstance * this_ptr, CQuaternion4f * rotation_quat, float blend_weight, int bone_index, ...)
     FLD float ptr [EBX + 0x1fcb0]       ; 005bf5d7
-    FDIV float ptr [0x00663778]         ; 005bf5dd | DAT_00663778
+    FDIV float ptr [0x00663778]         ; 005bf5dd | FLOAT_00663778
     FLD1                                ; 005bf5e3
     FPATAN                              ; 005bf5e5
     ADD ESP,0x14                        ; 005bf5e7

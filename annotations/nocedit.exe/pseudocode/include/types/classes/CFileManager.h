@@ -1,11 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CFileManager_vtable;
+struct FILE;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/iostream.h"
-#include "system/stdio.h"
-#include "types/classes/CFileManager_vtable.h"
-#include "types/funcdefs/CFileManager_extractPodFile.h"
 
 // Structure: CFileManager
 // Ghidra size: 0x138814 (1280020 bytes)

@@ -20,10 +20,10 @@
         "message": "cast from 'float*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 35,
+        "category": "other",
+        "column": 27,
         "line": 64,
-        "message": "'DAT_0078a123' was not declared in this scope; did you mean 'DAT_00684128'?"
+        "message": "invalid cast from type 'int*' to type 'float'"
       },
       {
         "category": "other",
@@ -86,17 +86,16 @@
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 537,
+    "complexity_score": 522,
     "cross_reference_count": 48,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 67,
-    "suspect_count": 45,
+    "suspect_count": 44,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
-      "suspect_float",
-      "undefined_data"
+      "suspect_float"
     ],
     "total_lines": 166
   },
@@ -290,13 +289,13 @@
     {
       "addr": "00508920",
       "from_addr": "00508928",
-      "name": "core_manpuz.cpp_FUN_00508920",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050b110",
       "from_addr": "0050b116",
-      "name": "core_manpuz.cpp_FUN_0050b110",
+      "name": "core_manpuz.cpp_CMirrorHack_ctor_FUN_0050b110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -471,8 +470,8 @@
     },
     {
       "addr": "0078a123",
-      "name": "DAT_0078a123",
-      "type": "undefined4",
+      "name": "g_ActorMagicNumber",
+      "type": "int",
       "value": null
     }
   ],
@@ -906,15 +905,8 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 57,
       "match": "pCVar2[-7].",
-      "text": "pCVar2[-7].position.y = (float)&DAT_0078a123;",
+      "text": "pCVar2[-7].position.y = (float)&g_ActorMagicNumber;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_0078a123",
-      "text": "pCVar2[-7].position.y = (float)&DAT_0078a123;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

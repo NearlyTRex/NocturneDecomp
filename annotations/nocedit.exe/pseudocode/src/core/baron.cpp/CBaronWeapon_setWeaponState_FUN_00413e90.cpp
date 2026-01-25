@@ -12,7 +12,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
   CDemonActor *pCVar1;
   
   core_weapon_cpp_CWeapon_FUN_005ee640(&this_ptr->base_weapon);
-  pCVar1 = (*((this_ptr->base_weapon).base_actor.vtable)->getCarrier)((CDemonActor *)this_ptr);
+  pCVar1 = (*((this_ptr->base_weapon).base_actor.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
   if ((this_ptr->base_weapon).weapon_state == 2) {
     if (pCVar1 == (CDemonActor *)0x0) {
       g_CurrentFilename = "..\\core\\baron.cpp";

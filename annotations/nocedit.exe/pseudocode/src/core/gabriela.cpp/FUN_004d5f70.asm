@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d3647
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3647
 ;
 ; *****************************************************************************
 

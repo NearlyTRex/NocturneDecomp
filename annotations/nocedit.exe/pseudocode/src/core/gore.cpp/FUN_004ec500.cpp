@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_gore.cpp_FUN_004ec500(uint param_1, uint param_2) */
 
 void core_gore_cpp_FUN_004ec500(void)
@@ -58,33 +57,33 @@ void core_gore_cpp_FUN_004ec500(void)
     local_78 = 0xbf000000;
     local_74 = 0xbf000000;
     local_70 = 0;
-    local_6c.x = (int)ROUND(_DAT_0065f024 * -0.5);
-    local_6c.y = (int)ROUND(_DAT_0065f024 * -0.5);
-    local_6c.z = (int)ROUND(_DAT_0065f024 * 0.0);
+    local_6c.x = (int)ROUND(256.0f * -0.5);
+    local_6c.y = (int)ROUND(256.0f * -0.5);
+    local_6c.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_6c);
     local_78 = 0x3f000000;
     local_70 = 0;
     local_74 = 0xbf000000;
-    local_54.x = (int)ROUND(_DAT_0065f024 * 0.5);
-    local_54.y = (int)ROUND(_DAT_0065f024 * -0.5);
-    local_54.z = (int)ROUND(_DAT_0065f024 * 0.0);
+    local_54.x = (int)ROUND(256.0f * 0.5);
+    local_54.y = (int)ROUND(256.0f * -0.5);
+    local_54.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_54);
     local_78 = 0x3f000000;
     local_70 = 0;
     local_74 = 0x3f000000;
-    local_3c.x = (int)ROUND(_DAT_0065f024 * 0.5);
-    local_3c.y = (int)ROUND(_DAT_0065f024 * 0.5);
-    local_3c.z = (int)ROUND(_DAT_0065f024 * 0.0);
+    local_3c.x = (int)ROUND(256.0f * 0.5);
+    local_3c.y = (int)ROUND(256.0f * 0.5);
+    local_3c.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_3c);
     local_78 = 0xbf000000;
     local_70 = 0;
     local_74 = 0x3f000000;
-    local_84.x = (int)ROUND(_DAT_0065f024 * -0.5);
-    local_84.y = (int)ROUND(_DAT_0065f024 * 0.5);
-    local_84.z = (int)ROUND(_DAT_0065f024 * 0.0);
+    local_84.x = (int)ROUND(256.0f * -0.5);
+    local_84.y = (int)ROUND(256.0f * 0.5);
+    local_84.z = (int)ROUND(256.0f * 0.0);
     input = &local_84;
   }
   else {
@@ -100,33 +99,33 @@ void core_gore_cpp_FUN_004ec500(void)
     local_48 = 0xbf000000;
     local_44 = 0;
     local_40 = 0xbf000000;
-    local_24.x = (int)ROUND(_DAT_0065f024 * -0.5);
-    local_24.y = (int)ROUND(_DAT_0065f024 * 0.0);
-    local_24.z = (int)ROUND(_DAT_0065f024 * -0.5);
+    local_24.x = (int)ROUND(256.0f * -0.5);
+    local_24.y = (int)ROUND(256.0f * 0.0);
+    local_24.z = (int)ROUND(256.0f * -0.5);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_24);
     local_48 = 0x3f000000;
     local_40 = 0xbf000000;
     local_44 = 0;
-    CStack_90.x = (int)ROUND(_DAT_0065f024 * 0.5);
-    CStack_90.y = (int)ROUND(_DAT_0065f024 * 0.0);
-    CStack_90.z = (int)ROUND(_DAT_0065f024 * -0.5);
+    CStack_90.x = (int)ROUND(256.0f * 0.5);
+    CStack_90.y = (int)ROUND(256.0f * 0.0);
+    CStack_90.z = (int)ROUND(256.0f * -0.5);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_90);
     local_48 = 0x3f000000;
     local_44 = 0;
     local_40 = 0x3f000000;
-    local_60.x = (int)ROUND(_DAT_0065f024 * 0.5);
-    local_60.y = (int)ROUND(_DAT_0065f024 * 0.0);
-    local_60.z = (int)ROUND(_DAT_0065f024 * 0.5);
+    local_60.x = (int)ROUND(256.0f * 0.5);
+    local_60.y = (int)ROUND(256.0f * 0.0);
+    local_60.z = (int)ROUND(256.0f * 0.5);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_60);
     local_48 = 0xbf000000;
     local_40 = 0x3f000000;
     local_44 = 0;
-    local_30.x = (int)ROUND(_DAT_0065f024 * -0.5);
-    local_30.y = (int)ROUND(_DAT_0065f024 * 0.0);
-    local_30.z = (int)ROUND(_DAT_0065f024 * 0.5);
+    local_30.x = (int)ROUND(256.0f * -0.5);
+    local_30.y = (int)ROUND(256.0f * 0.0);
+    local_30.z = (int)ROUND(256.0f * 0.5);
     input = &local_30;
   }
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c

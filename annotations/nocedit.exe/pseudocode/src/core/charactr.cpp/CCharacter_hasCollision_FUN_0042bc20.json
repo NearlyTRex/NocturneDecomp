@@ -1,0 +1,185 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 26,
+    "cross_reference_count": 14,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 84
+  },
+  "cross_references": [
+    {
+      "addr": "00412450",
+      "from_addr": "0041245a",
+      "name": "core_armour.cpp_CArmour_FUN_00412450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00416290",
+      "from_addr": "0041629a",
+      "name": "core_batcreat.cpp_CBatCreature_FUN_00416290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00417cb0",
+      "from_addr": "00417cc6",
+      "name": "core_batman.cpp_CBatman_FUN_00417cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00418c60",
+      "from_addr": "00418c6a",
+      "name": "core_biggs.cpp_FUN_00418c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041d970",
+      "from_addr": "0041d986",
+      "name": "core_boneguy.cpp_FUN_0041d970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485bc0",
+      "from_addr": "00485bd6",
+      "name": "core_dracbrid.cpp_FUN_00485bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e5ad0",
+      "from_addr": "004e5ada",
+      "name": "core_gargoyle.cpp_CGargoyle_FUN_004e5ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f79b0",
+      "from_addr": "004f79ba",
+      "name": "core_hotdemon.cpp_FUN_004f79b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fb0f0",
+      "from_addr": "004fb0fa",
+      "name": "core_imp.cpp_FUN_004fb0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005279d0",
+      "from_addr": "005279da",
+      "name": "core_mobster.cpp_FUN_005279d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00568ef0",
+      "from_addr": "00568efa",
+      "name": "core_sentinel.cpp_FUN_00568ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a37f0",
+      "from_addr": "005a37fa",
+      "name": "core_smiley.cpp_FUN_005a37f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c7790",
+      "from_addr": "005c779a",
+      "name": "core_succubus.cpp_CSuccubus_FUN_005c7790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e75f0",
+      "from_addr": "005e7641",
+      "name": "core_vampboss.cpp_CVampireBoss_FUN_005e75f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042bc20",
+    "address_range": [
+      [
+        "0042bc20",
+        "0042bcb0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20",
+    "signature": "int core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter * this_ptr, SCollisionInfo * collision_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.104166666666667,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 112,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 29,
+      "INT_AND": 19,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 15,
+      "INT_LEFT": 4,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 7,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 24,
+      "POPCOUNT": 7,
+      "RETURN": 3,
+      "STORE": 9
+    },
+    "pcode_op_count": 293
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": []
+}

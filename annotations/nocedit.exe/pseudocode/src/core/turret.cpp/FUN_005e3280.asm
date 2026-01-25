@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_00656788 = 0.0174532925194444
 ;   double DOUBLE_00656790 = 0.00100000000000000
-;   undefined4 DAT_00664b6c
-;   undefined4 DAT_00664b70
+;   float FLOAT_00664b6c = -0.5235988
+;   float FLOAT_00664b70 = 1.221730
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
@@ -62,19 +62,19 @@ section .text
         ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005e32be
     FLD float ptr [ESP + 0x8]           ; 005e32c1
-    FCOMP float ptr [0x00664b6c]        ; 005e32c5 | DAT_00664b6c
+    FCOMP float ptr [0x00664b6c]        ; 005e32c5 | FLOAT_00664b6c
     FNSTSW AX                           ; 005e32cb
     SAHF                                ; 005e32cd
     JC 0x005e3422                       ; 005e32ce
         ;   XREF to: 005e3422 (CONDITIONAL_JUMP)  ; LAB_005e3422
     FLD float ptr [ESP + 0x8]           ; 005e32d4
         ;   Label: LAB_005e32d4
-    FCOMP float ptr [0x00664b70]        ; 005e32d8 | DAT_00664b70
+    FCOMP float ptr [0x00664b70]        ; 005e32d8 | FLOAT_00664b70
     FNSTSW AX                           ; 005e32de
     SAHF                                ; 005e32e0
     JBE 0x005e32ec                      ; 005e32e1
         ;   XREF to: 005e32ec (CONDITIONAL_JUMP)  ; LAB_005e32ec
-    MOV EAX,[0x00664b70]                ; 005e32e3 | DAT_00664b70
+    MOV EAX,[0x00664b70]                ; 005e32e3 | FLOAT_00664b70
     MOV dword ptr [ESP + 0x8],EAX       ; 005e32e8
     FLD float ptr [ESP + 0xc]           ; 005e32ec
         ;   Label: LAB_005e32ec
@@ -198,7 +198,7 @@ section .text
     POP EBP                             ; 005e341f
     POP EBX                             ; 005e3420
     RET                                 ; 005e3421
-    MOV EAX,[0x00664b6c]                ; 005e3422 | DAT_00664b6c
+    MOV EAX,[0x00664b6c]                ; 005e3422 | FLOAT_00664b6c
         ;   Label: LAB_005e3422
     MOV dword ptr [ESP + 0x8],EAX       ; 005e3427
     JMP 0x005e32d4                      ; 005e342b

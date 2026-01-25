@@ -2,7 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CVector3i.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLKeyframe.h"
 

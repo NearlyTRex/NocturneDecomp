@@ -13,11 +13,11 @@
 ;   TerminatedCString s_scat_dfm_00641211
 ;   TerminatedCString s_draw_stand2coatPocket_0064121a
 ;   TerminatedCString s_draw_coatPocket2aimPisto_00641230
-;   CDemonActor_vtable PTR_core_scat.cpp_FUN_00662464
+;   CDemonActor_vtable g_CScatVTable
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0
-;   core_hero.cpp_FUN_004f2340
+;   core_hero.cpp_CHero_ctor_FUN_004f2340
 ;   core_scat.cpp_FUN_00557150
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
@@ -29,13 +29,13 @@ section .text
         ;   Label: core_scat.cpp_CScat_ctor_FUN_00556ed0
     MOV EDX,dword ptr [ESP + 0x8]       ; 00556ed1
     PUSH EDX                            ; 00556ed5
-    CALL core_hero.cpp_FUN_004f2340     ; 00556ed6
-        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2340()
+    CALL core_hero.cpp_CHero_ctor_FUN_004f2340 ; 00556ed6
+        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004f2340(CHero * this_ptr)
     ADD ESP,0x4                         ; 00556edb
     MOV EBX,EAX                         ; 00556ede
     ADD EAX,0x158                       ; 00556ee0
     PUSH 0x641211                       ; 00556ee5 | = "scat.dfm"
-    MOV dword ptr [EAX + -0x4],0x662464 ; 00556eea | PTR_core_scat.cpp_FUN_00662464
+    MOV dword ptr [EAX + -0x4],0x662464 ; 00556eea | g_CScatVTable
     PUSH EAX                            ; 00556ef1
     MOV dword ptr [EAX + 0x1fa7c],0x0   ; 00556ef2
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00556efc

@@ -16,7 +16,7 @@ int __cdecl core_actor_cpp_isOfClassHash_FUN_0040c760(CDemonActor *actor_ptr,uin
   if (actor_ptr == (CDemonActor *)0x0) {
     return 0;
   }
-  type_ptr = (*actor_ptr->vtable->getActorType)(actor_ptr);
+  type_ptr = (*((actor_ptr->vtable)._ub)->getActorType)(actor_ptr);
   iVar1 = core_actor_cpp_checkNameHash_FUN_0040c700(type_ptr,unaff_retaddr);
   return iVar1;
 }

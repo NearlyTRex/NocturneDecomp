@@ -1,0 +1,240 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 35,
+        "line": 19,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field10_0x648'; did you mean 'field_1608'?"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 69,
+    "complexity_score": 66,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 7,
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [
+    {
+      "addr": "005090d0",
+      "from_addr": "005091bb",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00509c60",
+    "address_range": [
+      [
+        "00509c60",
+        "00509d12"
+      ],
+      [
+        "00509d3a",
+        "00509d4c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60",
+    "signature": "void core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60(CMansionPuzzleCircle * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048c4f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048c640",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "004a1ca0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0"
+    },
+    {
+      "addr": "004a1330",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00660d8c",
+      "name": "FLOAT_00660d8c",
+      "type": "float",
+      "value": "0.5235988"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02f0cb1c",
+      "name": "DAT_02f0cb1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7586206896551726,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 62,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 19,
+      "INT_AND": 16,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 8,
+      "INT_SUB": 26,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 8,
+      "STORE": 31
+    },
+    "pcode_op_count": 218
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "local_1c.y = (int)((float)in_stack_00000008 * 0.5235988f);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02f0cb1c",
+      "text": "if (DAT_02f0cb1c == 1) {",
+      "type": "undefined_data"
+    }
+  ]
+}

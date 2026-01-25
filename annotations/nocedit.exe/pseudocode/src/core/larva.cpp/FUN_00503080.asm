@@ -73,7 +73,7 @@
 ;   double DOUBLE_00630f6b = -0.200000000000000
 ;   double DOUBLE_00630f73 = 32
 ;   float FLOAT_00630f7b = 2
-;   undefined4 DAT_0066071c
+;   float FLOAT_0066071c = 20
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGore* g_CGorePtr = 02d83364
 ;   CDemonSet* g_CDemonSetPtr = 03114278
@@ -550,7 +550,7 @@ section .text
     ADD ESP,0xc                         ; 005036e3
     JMP 0x00503184                      ; 005036e6
         ;   XREF to: 00503184 (UNCONDITIONAL_JUMP)  ; LAB_00503184
-    MOV EAX,[0x0066071c]                ; 005036eb | DAT_0066071c
+    MOV EAX,[0x0066071c]                ; 005036eb | FLOAT_0066071c
         ;   Label: LAB_005036eb
     MOV dword ptr [EBP + 0x52],EAX      ; 005036f0
     LEA EAX,[EBX + 0x23ac]              ; 005036f3

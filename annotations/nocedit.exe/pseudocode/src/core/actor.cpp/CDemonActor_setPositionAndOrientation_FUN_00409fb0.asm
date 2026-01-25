@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   new_orientation
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_004285d0 at 004285f0
+;   core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0 at 004285f0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_006139ad

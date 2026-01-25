@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d2f40
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d2f40
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d4834 = 004d48c8
@@ -32,9 +32,9 @@
 ;   CGore* g_CGorePtr = 02d83364
 ;   undefined4 g_CLightActorClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   undefined4 DAT_02d7b864
-;   undefined4 DAT_02d7b868
-;   undefined4 DAT_02d7b878
+;   int INT_02d7b864
+;   int INT_02d7b868
+;   int INT_02d7b878
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
@@ -87,7 +87,7 @@ section .text
         ;   Label: caseD_1
     JNZ 0x004d49c5                      ; 004d48cb
         ;   XREF to: 004d49c5 (CONDITIONAL_JUMP)  ; LAB_004d49c5
-    MOV EAX,[0x02d7b868]                ; 004d48d1 | DAT_02d7b868
+    MOV EAX,[0x02d7b868]                ; 004d48d1 | INT_02d7b868
     PUSH EAX                            ; 004d48d6
         ;   Label: LAB_004d48d6
     LEA EAX,[ESP + 0x54]                ; 004d48d7
@@ -188,7 +188,7 @@ section .text
     ADD ESP,0x8                         ; 004d49bd
     JMP 0x004d4927                      ; 004d49c0
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV EAX,[0x02d7b864]                ; 004d49c5 | DAT_02d7b864
+    MOV EAX,[0x02d7b864]                ; 004d49c5 | INT_02d7b864
         ;   Label: LAB_004d49c5
     JMP 0x004d48d6                      ; 004d49ca
         ;   XREF to: 004d48d6 (UNCONDITIONAL_JUMP)  ; LAB_004d48d6
@@ -278,7 +278,7 @@ section .text
         ;   Label: LAB_004d4ac3
     JMP 0x004d4927                      ; 004d4acd
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV EAX,[0x02d7b878]                ; 004d4ad2 | DAT_02d7b878
+    MOV EAX,[0x02d7b878]                ; 004d4ad2 | INT_02d7b878
         ;   Label: LAB_004d4ad2
     PUSH EAX                            ; 004d4ad7
     LEA EAX,[ESP + 0x6c]                ; 004d4ad8

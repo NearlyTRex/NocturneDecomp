@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor * this_ptr, SCollisionReturnInfo * collision_result, float tolerance_radius)
+; __cdecl int core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; SCollisionReturnInfo * Stack[0x8]:4   collision_result
-; float            Stack[0xc]:4   tolerance_radius
+; SCollisionReturnInfo * Stack[0x8]:4   collision_info
+; float            Stack[0xc]:4   tolerance
 ; Local Variables:
-; undefined4       Stack[-0x30]:4  local_30
+; SCollisionInfo   Stack[-0x30]:40  local_30
 ;
 ; XREF[1]:
-;   core_hero.cpp_CHero_FUN_004f2580 at 004f25ac
+;   core_hero.cpp_CHero_testCylinderCollision_FUN_004f2580 at 004f25ac
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0

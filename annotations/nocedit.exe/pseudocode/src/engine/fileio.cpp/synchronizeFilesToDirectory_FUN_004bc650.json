@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 66,
-        "line": 44,
-        "message": "'FILE' {aka 'struct FILE'} has no member named '_ptr'; did you mean 'ptr'?"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 17,
         "line": 57,
@@ -24,18 +18,6 @@
         "column": 36,
         "line": 75,
         "message": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
-      },
-      {
-        "category": "missing_member",
-        "column": 20,
-        "line": 98,
-        "message": "'FILE' {aka 'struct FILE'} has no member named '_flag'; did you mean 'flag'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 24,
-        "line": 103,
-        "message": "'FILE' {aka 'struct FILE'} has no member named '_flag'; did you mean 'flag'?"
       }
     ],
     "success": false,
@@ -45,6 +27,12 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 44,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",

@@ -388,7 +388,7 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
     local_190 = pCVar6->z + pCVar5->z;
     local_104 = local_194 * 0.5f;
     local_100 = local_190 * 0.5f;
-    (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&local_204);
+    (*((in_stack_00000008->vtable)._ub)->getBoundingBox)(in_stack_00000008,&local_204);
     local_100 = local_100 + 0.333f;
     local_104 = local_104 - (local_204.max.y - local_204.min.y);
     fVar2 = (float)core_stranger_cpp_FUN_005bb010();
@@ -424,7 +424,7 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
   pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000008,g_CLightActorClassInfo.name_hash);
   if (pCVar3 != (CDemonActor *)0x0) {
-    (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&local_21c);
+    (*((in_stack_00000008->vtable)._ub)->getBoundingBox)(in_stack_00000008,&local_21c);
     local_138 = local_21c.min.x + local_21c.max.x;
     local_150.x = local_138 * 0.5f;
     local_134 = local_21c.min.y + local_21c.max.y;
@@ -488,7 +488,7 @@ LAB_005c1504:
     local_180.y = local_21c.max.y;
   }
 LAB_005c10ab:
-  iVar7 = (*in_stack_00000008->vtable->getAllowedMeleeAttackTypes)(in_stack_00000008);
+  iVar7 = (*((in_stack_00000008->vtable)._ub)->getAllowedMeleeAttackTypes)(in_stack_00000008);
   if (iVar7 != 0) {
     local_12c.x = -0.0900813;
     local_12c.z = 0.649052;

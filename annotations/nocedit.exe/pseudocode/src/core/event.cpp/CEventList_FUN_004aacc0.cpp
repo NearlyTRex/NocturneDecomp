@@ -14,13 +14,13 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   CEvent CVar1;
   char cVar2;
   float fVar3;
-  CHero *this_ptr_00;
   CScript *pCVar4;
   int iVar5;
   int iVar6;
   CDemonActor *pCVar7;
   char *pcVar8;
   CDemonActor *pCVar9;
+  CCharacter *this_ptr_00;
   CMotionList *pCVar10;
   SMotion *pSVar11;
   uint uVar12;
@@ -33,10 +33,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   uint *puVar19;
   byte bVar20;
   CEvent *in_stack_00000008;
-  float in_stack_ffffe9c4;
-  CVector3f *in_stack_ffffe9cc;
-  int in_stack_ffffe9d0;
-  float in_stack_ffffe9d4;
+  char local_163c [255];
   char local_153d [200];
   char local_1475 [200];
   char local_13ad [200];
@@ -90,14 +87,13 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   float local_bc;
   int local_b8;
   int local_b4;
-  byte local_b0 [8];
+  float local_b0;
+  int local_ac;
   int local_a8;
   int local_a4;
   byte *local_a0;
-  float local_9c;
-  float local_98;
-  int local_94;
-  float local_90;
+  float local_9c [2];
+  int local_94 [2];
   int local_8c;
   float local_88;
   int local_84;
@@ -384,7 +380,7 @@ LAB_004aad41:
             }
             local_d0 = -1;
             crt_stdio_c_sscanf_FUN_0060013c
-                      ((char *)local_ec,"( %[^ ,], %d, %d )%n",&stack0xffffe9c4,&local_d8,&local_d4);
+                      ((char *)local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4);
             if (local_d0 < 0) {
               pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
               return pCVar7;
@@ -393,7 +389,7 @@ LAB_004aad41:
             while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
               local_ec = local_ec + 1;
             }
-            iVar5 = engine_dosio_c_getFileSize_FUN_00481880("art",&stack0xffffe9c4);
+            iVar5 = engine_dosio_c_getFileSize_FUN_00481880("art",local_163c);
             if (iVar5 < 0) {
               pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
               return pCVar7;
@@ -575,7 +571,7 @@ LAB_004aaf38:
                           local_b4 = -1;
                           crt_stdio_c_sscanf_FUN_0060013c
                                     ((char *)local_ec," ( %[^,], %[^,],%f)%n",local_665 + 1,local_2e1 + 1,
-                                     local_b0);
+                                     &local_b0);
                           if (local_b4 < 2) {
                             pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                             return pCVar7;
@@ -633,12 +629,12 @@ LAB_004aaf38:
                                  != 0) {
                             local_ec = local_ec + 1;
                           }
-                          pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa400();
-                          if (pCVar7 == (CDemonActor *)0x0) {
+                          this_ptr_00 = (CCharacter *)core_event_cpp_FUN_004aa400();
+                          if (this_ptr_00 == (CCharacter *)0x0) {
                             return (CDemonActor *)0x0;
                           }
-                          if (pCVar7 == 0x0FFFFFFF) {
-                            local_f0 = (uint)pCVar7 ^ (uint)0x0FFFFFFF;
+                          if (this_ptr_00 == (CCharacter *)0x0FFFFFFF) {
+                            local_f0 = (uint)this_ptr_00 ^ (uint)0x0FFFFFFF;
                           }
                           iVar5 = core_event_cpp_DifferentWaysToDie2_FUN_004aa960();
                           if (iVar5 == 0) {
@@ -646,7 +642,8 @@ LAB_004aaf38:
                             return pCVar7;
                           }
                           if (local_f0 != 0) {
-                            (*pCVar7->vtable[1].setup)(pCVar7);
+                            (*(((this_ptr_00->base_actor).vtable._uc)->_uc).applyDamage)
+                                      (this_ptr_00,local_ac,local_b0);
                           }
                         }
                         else {
@@ -713,13 +710,13 @@ LAB_004aaf38:
                               }
                               local_a0 = local_110;
                               local_a4 = -1;
-                              local_9c = 0.0;
+                              local_9c[0] = 0.0;
                               crt_stdio_c_sscanf_FUN_0060013c
                                         ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",local_153d + 1,
-                                         local_219 + 1,local_110,local_10c,local_108,&local_9c);
-                              local_9c = local_9c * (float)0.017453292519444399;
+                                         local_219 + 1,local_110,local_10c,local_108,local_9c);
+                              local_9c[0] = local_9c[0] * (float)0.017453292519444399;
                               if (local_a4 < 0) {
-                                local_9c = -1.0;
+                                local_9c[0] = -1.0;
                                 crt_stdio_c_sscanf_FUN_0060013c
                                           ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f )%n",local_153d + 1,
                                            local_219 + 1,local_110,local_10c,local_108);
@@ -802,7 +799,7 @@ LAB_004aaf38:
                                 return pCVar7;
                               }
                               if (local_f0 != 0) {
-                                (*pCVar7->vtable[1].process)(pCVar7,local_98);
+                                (*(((pCVar7->vtable)._uc)->_uc).cfunc2)();
                               }
                             }
                             else {
@@ -820,14 +817,14 @@ LAB_004aaf38:
                                   pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                                   return pCVar7;
                                 }
-                                local_94 = -1;
+                                local_94[0] = -1;
                                 crt_stdio_c_sscanf_FUN_0060013c
-                                          ((char *)local_ec," ( %[^)])%n",local_27c,&local_94);
-                                if (local_94 < 2) {
+                                          ((char *)local_ec," ( %[^)])%n",local_27c,local_94);
+                                if (local_94[0] < 2) {
                                   pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                                   return pCVar7;
                                 }
-                                local_ec = local_ec + local_94;
+                                local_ec = local_ec + local_94[0];
                                 while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)]
                                        & 2U) != 0) {
                                   local_ec = local_ec + 1;
@@ -838,10 +835,9 @@ LAB_004aaf38:
                                   return pCVar7;
                                 }
                                 if ((local_f0 != 0) &&
-                                   (this_ptr_00 = g_HeroActors[g_LocalHeroIndex],
-                                   this_ptr_00 != (CHero *)0x0)) {
-                                  (*(this_ptr_00->base_character).base_actor.vtable[1].process)
-                                            ((CDemonActor *)this_ptr_00,local_90);
+                                   (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0)) {
+                                  (*(((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.
+                                      vtable._uc)->_uc).cfunc2)();
                                 }
                               }
                               else {
@@ -2076,13 +2072,11 @@ LAB_004aaf38:
                                                             (pCVar7,g_CCharacterClassInfo.name_hash)
                                                   ;
                                                   if (pCVar9 != (CDemonActor *)0x0) {
-                                                    (*pCVar9->vtable[1].processFootstep)
-                                                              (pCVar9,in_stack_ffffe9c4);
-                                                    (*pCVar9->vtable[1].handleFootstep)
-                                                              (pCVar9,in_stack_ffffe9cc,
-                                                               in_stack_ffffe9d0,in_stack_ffffe9d4);
+                                                    (*(((pCVar9->vtable)._uc)->_uc).cfunc7)();
+                                                    (*(((pCVar9->vtable)._uc)->_uc).cfunc9)();
                                                   }
-                                                  (*pCVar7->vtable->setPositionAndOrientation)
+                                                  (*((pCVar7->vtable)._ub)->
+                                                    setPositionAndOrientation)
                                                             (pCVar7,&local_11c,&local_134);
                                                   if (pCVar7 == (CDemonActor *)
                                                                 g_CScriptPtr->focusActor) {

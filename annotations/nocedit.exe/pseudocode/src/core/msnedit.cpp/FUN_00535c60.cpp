@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_msnedit.cpp_FUN_00535c60(uint param_1, uint param_2,
    uint param_3) */
 
@@ -42,9 +41,9 @@ float * core_msnedit_cpp_FUN_00535c60(void)
   local_2c[(uint)bVar5 * -2 + -2] = *(float *)((int)&local_20 + (uint)bVar5 * -8 + 4);
   local_2c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -1] =
        *(float *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  *in_stack_00000004 = (float)local_38.x * _DAT_00661c30;
-  in_stack_00000004[1] = (float)local_38.y * _DAT_00661c30;
-  in_stack_00000004[2] = (float)local_38.z * _DAT_00661c30;
+  *in_stack_00000004 = (float)local_38.x * 0.00390625f;
+  in_stack_00000004[1] = (float)local_38.y * 0.00390625f;
+  in_stack_00000004[2] = (float)local_38.z * 0.00390625f;
   if (10000.0f <
       SQRT(in_stack_00000004[2] * in_stack_00000004[2] +
            *in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])) {

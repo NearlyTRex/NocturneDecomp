@@ -4,31 +4,37 @@
       {
         "category": "missing_member",
         "column": 52,
-        "line": 21,
+        "line": 19,
         "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field1_0x578'"
       },
       {
         "category": "missing_member",
         "column": 28,
-        "line": 31,
-        "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 31,
-        "message": "'_DAT_00664b58' was not declared in this scope; did you mean 'DAT_00684858'?"
-      },
-      {
-        "category": "missing_member",
-        "column": 28,
-        "line": 32,
+        "line": 29,
         "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
       },
       {
         "category": "missing_member",
         "column": 28,
-        "line": 33,
+        "line": 30,
+        "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
+      },
+      {
+        "category": "missing_member",
+        "column": 28,
+        "line": 31,
+        "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
+      },
+      {
+        "category": "missing_member",
+        "column": 13,
+        "line": 36,
+        "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
+      },
+      {
+        "category": "missing_member",
+        "column": 13,
+        "line": 37,
         "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
       },
       {
@@ -90,18 +96,6 @@
         "column": 13,
         "line": 47,
         "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 13,
-        "line": 48,
-        "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
-      },
-      {
-        "category": "missing_member",
-        "column": 13,
-        "line": 49,
-        "message": "'CTurret' {aka 'struct CTurret'} has no member named 'field12_0x85c'"
       }
     ],
     "success": false,
@@ -116,16 +110,14 @@
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 55,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 40,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 120
+    "pseudocode_lines": 39,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 119
   },
   "cross_references": [],
   "function": {
@@ -171,9 +163,9 @@
     },
     {
       "addr": "00664b58",
-      "name": "DAT_00664b58",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00664b58",
+      "type": "float",
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
@@ -251,15 +243,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

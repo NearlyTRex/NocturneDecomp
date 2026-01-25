@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
 
 {
@@ -24,7 +22,7 @@ int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+    this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                             (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffdc);
     iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar3 != 0) {
@@ -38,9 +36,9 @@ int __cdecl core_wateract_cpp_CWaterActor_FUN_005eb280(CWaterActor *this_ptr)
         piVar4 = &DAT_03f90a88;
         pcVar5 = this_ptr->field21_0x298 + 4;
         do {
-          *piVar4 = (int)ROUND(*(float *)pcVar5 * _DAT_00665310);
-          piVar4[1] = (int)ROUND(*(float *)(pcVar5 + 4) * _DAT_00665310);
-          piVar4[2] = (int)ROUND(*(float *)(pcVar5 + 8) * _DAT_00665310);
+          *piVar4 = (int)ROUND(*(float *)pcVar5 * 256.0f);
+          piVar4[1] = (int)ROUND(*(float *)(pcVar5 + 4) * 256.0f);
+          piVar4[2] = (int)ROUND(*(float *)(pcVar5 + 8) * 256.0f);
           iVar6 = iVar6 + 1;
           pcVar5 = pcVar5 + 0x20;
           piVar4 = piVar4 + 3;

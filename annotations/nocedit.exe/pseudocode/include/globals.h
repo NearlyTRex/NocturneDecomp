@@ -115,6 +115,7 @@
 #include "globals/globals_680000.h"
 #include "globals/globals_690000.h"
 #include "globals/globals_770000.h"
+#include "globals/globals_780000.h"
 #include "globals/globals_810000.h"
 #include "globals/globals_820000.h"
 #include "globals/globals_830000.h"

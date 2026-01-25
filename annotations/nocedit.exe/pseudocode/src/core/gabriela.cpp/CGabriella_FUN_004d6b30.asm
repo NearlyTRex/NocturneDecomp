@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065e7c4
+;   float FLOAT_0065e7c4 = 0.5
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.hero_number
@@ -52,7 +52,7 @@ section .text
     TEST EDI,EDI                        ; 004d6b6f
     JZ 0x004d6ca3                       ; 004d6b71
         ;   XREF to: 004d6ca3 (CONDITIONAL_JUMP)  ; LAB_004d6ca3
-    MOV EAX,[0x0065e7c4]                ; 004d6b77 | DAT_0065e7c4
+    MOV EAX,[0x0065e7c4]                ; 004d6b77 | FLOAT_0065e7c4
         ;   Label: LAB_004d6b77
     MOV dword ptr [EBX + 0xbe24],EAX    ; 004d6b7c
     FLD float ptr [ESI + 0x4]           ; 004d6b82

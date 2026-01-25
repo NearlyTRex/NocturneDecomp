@@ -38,7 +38,7 @@ LAB_004f19bc:
                          (double)(in_stack_00000004->base_actor).location.position.y,
                          (double)(in_stack_00000004->base_actor).location.position.z,40.0);
       if (iVar1 != 0) {
-        (*((in_stack_00000004->base_actor).vtable)->playSound)
+        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                   (&in_stack_00000004->base_actor,"box-swing?.wav");
       }
       break;
@@ -50,7 +50,7 @@ LAB_004f19bc:
                          (double)(in_stack_00000004->base_actor).location.position.y,
                          (double)(in_stack_00000004->base_actor).location.position.z,40.0);
       if ((iVar1 != 0) && (iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.4), iVar1 != 0)) {
-        (*((in_stack_00000004->base_actor).vtable)->playSound)
+        (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                   (&in_stack_00000004->base_actor,"box-punch?.wav");
       }
       break;

@@ -1,0 +1,115 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 30,
+        "line": 18,
+        "message": "'CMirrorHack' {aka 'struct CMirrorHack'} has no member named 'field1_0x158'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 34
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050b2f0",
+    "address_range": [
+      [
+        "0050b2f0",
+        "0050b333"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0",
+    "signature": "void core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0(CMirrorHack * this_ptr, SInteractionInfo * out_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040a030",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3529411764705883,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 15,
+      "INT_ADD": 12,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 6,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 57
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirrorHack *"
+      },
+      {
+        "is_param": true,
+        "name": "out_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SInteractionInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMirrorHack",
+        "offset": 144,
+        "vtable_addr": "00660e94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

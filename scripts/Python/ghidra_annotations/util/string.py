@@ -109,8 +109,8 @@ def sanitize_c_identifier(name):
     sanitized = re.sub(r'[^a-zA-Z0-9_]', '_', name)
     # Collapse multiple underscores
     sanitized = re.sub(r'_+', '_', sanitized)
-    # Strip leading/trailing underscores
-    sanitized = sanitized.strip('_')
+    # Strip only trailing underscores (leading underscores are valid C identifiers)
+    sanitized = sanitized.rstrip('_')
     # If empty after sanitization, use a placeholder
     if not sanitized:
         return "unnamed"

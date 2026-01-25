@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_005091d0 at 005092d3
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 at 005092d3
 ;
 ; *****************************************************************************
 

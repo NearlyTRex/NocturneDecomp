@@ -11,7 +11,7 @@
 ;   TerminatedCString s_core_imp_cpp_0062f823
 ;
 ; Called Functions:
-;   core_imp.cpp_FUN_004f98a0
+;   core_imp.cpp_CImp_ctor_FUN_004f98a0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     RET                                 ; 004f9878
     PUSH EAX                            ; 004f9879
         ;   Label: LAB_004f9879
-    CALL core_imp.cpp_FUN_004f98a0      ; 004f987a
-        ;   XREF to: 004f98a0 (UNCONDITIONAL_CALL)  ; CImp * core_imp.cpp_FUN_004f98a0(CImp * this_ptr)
+    CALL core_imp.cpp_CImp_ctor_FUN_004f98a0 ; 004f987a
+        ;   XREF to: 004f98a0 (UNCONDITIONAL_CALL)  ; CImp * core_imp.cpp_CImp_ctor_FUN_004f98a0(CImp * this_ptr)
     ADD ESP,0x4                         ; 004f987f
     RET                                 ; 004f9882
 

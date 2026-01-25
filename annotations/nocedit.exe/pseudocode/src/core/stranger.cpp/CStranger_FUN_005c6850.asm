@@ -7,7 +7,7 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042bf90
+;   core_charactr.cpp_CCharacter_drop_FUN_0042bf90
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 005c6867
     PUSH ESI                            ; 005c686b
     PUSH EBX                            ; 005c686c
-    CALL core_charactr.cpp_CCharacter_FUN_0042bf90 ; 005c686d
-        ;   XREF to: 0042bf90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042bf90(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_drop_FUN_0042bf90 ; 005c686d
+        ;   XREF to: 0042bf90 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_drop_FUN_0042bf90(CCharacter * this_ptr, CDemonActor * carrier, CVector3f * drop_position)
     ADD ESP,0xc                         ; 005c6872
     POP ESI                             ; 005c6875
     POP EBX                             ; 005c6876

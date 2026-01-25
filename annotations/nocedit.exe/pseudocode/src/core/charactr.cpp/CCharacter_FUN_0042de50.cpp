@@ -12,9 +12,8 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042de50(CCharacter *this_ptr)
   int iVar1;
   CMotionList *this_ptr_00;
   float fVar2;
-  SCollisionInfo *in_stack_fffffff4;
   
-  iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,in_stack_fffffff4);
+  iVar1 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr);
   if (iVar1 < 2) {
     if ((this_ptr->model).model_name[0] != '\0') {
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0

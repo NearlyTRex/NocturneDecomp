@@ -121,11 +121,11 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
   }
   fStack_1c = CStack_54.x;
   fStack_20 = CStack_60.z;
-  if (CStack_60.z < 0xBF860A92) {
-    fStack_20 = 0xBF860A92;
+  if (CStack_60.z < -1.047198f) {
+    fStack_20 = -1.047198f;
   }
-  if (0x3F9C61AA < fStack_20) {
-    fStack_20 = 0x3F9C61AA;
+  if (1.22173f < fStack_20) {
+    fStack_20 = 1.22173f;
   }
   if (CStack_54.x < fStack_28) {
     fStack_1c = fStack_28;

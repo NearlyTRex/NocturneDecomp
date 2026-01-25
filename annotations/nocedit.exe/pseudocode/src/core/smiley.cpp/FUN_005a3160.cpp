@@ -14,26 +14,25 @@ uint core_smiley_cpp_FUN_005a3160(void)
 {
   int iVar1;
   CVector3f *input_local_point;
-  CDemonActor *in_stack_00000004;
+  CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  SCollisionInfo *in_stack_ffffffe0;
-  CVector3f CStack_18;
+  CVector3f CStack_1c;
   
   if (in_stack_00000008 == 0) {
     return 0;
   }
-  iVar1 = (*in_stack_00000004->vtable[1].hasCollision)(in_stack_00000004,in_stack_ffffffe0);
+  iVar1 = (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).isDamageable)(in_stack_00000004);
   if (iVar1 != 0) {
     (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x104))();
     return 1;
   }
   input_local_point =
        core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                 ((CVector3f *)&stack0xfffffff4,&g_ZeroVector,
-                  (CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_03f48fa8 * 4].z);
+                 ((CVector3f *)&stack0xfffffff0,&g_ZeroVector,
+                  (in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_03f48fa8);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,&CStack_18,input_local_point);
-  CStack_18.y = CStack_18.y + -4.0f;
+            (&in_stack_00000004->base_actor,&CStack_1c,input_local_point);
+  CStack_1c.y = CStack_1c.y + -4.0f;
   (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();
   return 1;
 }

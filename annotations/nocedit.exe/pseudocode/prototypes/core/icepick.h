@@ -15,9 +15,9 @@ undefined FUN_004f7db0();
 // Address: 004f7de0
 undefined FUN_004f7de0();
 
-// Original: core_icepick.cpp_FUN_004f7df0
+// Original: core_icepick.cpp_CIcePick_ctor_FUN_004f7df0
 // Address: 004f7df0
-CIcePick * FUN_004f7df0(CIcePick * this_ptr);
+CIcePick * CIcePick::ctor(CIcePick * this_ptr);
 
 // Original: core_icepick.cpp_FUN_004f7e80
 // Address: 004f7e80

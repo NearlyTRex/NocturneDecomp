@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CFileManager;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CFileManager.h"
 #include "types/funcdefs/CFileManager_extractPodFile.h"
 
 // Structure: CFileManager_vtable

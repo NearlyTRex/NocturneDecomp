@@ -18,6 +18,12 @@
         "column": 16,
         "line": 21,
         "message": "expected primary-expression before ')' token"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 31,
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -48,7 +54,7 @@
       },
       {
         "category": "other",
-        "column": 28,
+        "column": 26,
         "line": 23,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
@@ -141,9 +147,9 @@
   "globals": [
     {
       "addr": "00663744",
-      "name": "DAT_00663744",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00663744",
+      "type": "float",
+      "value": "10"
     },
     {
       "addr": "02ceed20",
@@ -271,7 +277,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004 + 0x1fbe4) = uVar1;",
+      "text": "*(float *)(in_stack_00000004 + 0x1fbe4) = fVar1;",
       "type": "stack_param"
     },
     {

@@ -15,6 +15,6 @@ void core_mimic_cpp_FUN_0051f190(void)
   if (this_ptr == (CMimic *)0x0) {
     return;
   }
-  core_mimic_cpp_FUN_0051f1d0(this_ptr);
+  core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(this_ptr);
   return;
 }

@@ -57,7 +57,7 @@ core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr
             return;
           }
           if (this_ptr_00 != (CWeapon *)0x0) {
-            (*((this_ptr_00->base_actor).vtable)->process)(&this_ptr_00->base_actor,0.1);
+            (*((this_ptr_00->base_actor).vtable._ub)->process)(&this_ptr_00->base_actor,0.1);
           }
           this_ptr->selected_weapon = unaff_EDI;
           core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);

@@ -14,10 +14,12 @@ int core_boneguy_cpp_FUN_0041d970(void)
 {
   int iVar1;
   CCharacter *in_stack_00000004;
+  SCollisionInfo *in_stack_00000008;
   
   if (in_stack_00000004[1].model.rest_pose_data[0x13] != 0.0) {
     return 0;
   }
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042bc20(in_stack_00000004);
+  iVar1 = core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20
+                    (in_stack_00000004,in_stack_00000008);
   return iVar1;
 }

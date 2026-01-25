@@ -64,7 +64,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr,floa
       (this_ptr->base_actor).orient.heading =
            (float)iVar3 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
       iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
-      pCVar2 = (this_ptr->base_actor).vtable;
+      pCVar2 = (this_ptr->base_actor).vtable._ub;
       (this_ptr->base_actor).orient.bank =
            (float)iVar3 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
       local_18 = 8.133377e-39;

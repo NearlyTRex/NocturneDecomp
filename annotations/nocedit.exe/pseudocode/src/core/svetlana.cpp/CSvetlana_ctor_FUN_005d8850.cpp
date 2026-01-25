@@ -11,7 +11,7 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005d8850(CSvetlana *thi
 {
   int iVar1;
   
-  core_hero_cpp_FUN_004f2340();
+  core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base_hero);
   core_cloth_cpp_FUN_00438ba0();
   iVar1 = core_cloth_cpp_FUN_00438ba0();
   *(CDemonActor_vtable **)(iVar1 + -0x5f8f8) = &g_CSvetlanaVTable;

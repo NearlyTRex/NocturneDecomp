@@ -1,14 +1,16 @@
 #pragma once
 
+// Forward declarations
+struct CMatrix3x3d;
+struct CObj;
+struct CPoly;
+struct CVec;
+struct CVector2d;
+struct CVector3d;
+struct CVert;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CMatrix3x3d.h"
-#include "types/classes/CObj.h"
-#include "types/classes/CPoly.h"
-#include "types/classes/CVec.h"
-#include "types/classes/CVector2d.h"
-#include "types/classes/CVector3d.h"
-#include "types/classes/CVert.h"
 #include "types/funcdefs/CObj_addPolygons.h"
 #include "types/funcdefs/CObj_addVertices.h"
 #include "types/funcdefs/CObj_allocatePolygons.h"

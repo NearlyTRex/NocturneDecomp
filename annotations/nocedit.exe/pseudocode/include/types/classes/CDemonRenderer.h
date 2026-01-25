@@ -1,9 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct SRenderVertex;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/structs/SProjectedVertex.h"
-#include "types/structs/SRenderVertex.h"
 
 // Structure: CDemonRenderer
 // Ghidra size: 0x24 (36 bytes)

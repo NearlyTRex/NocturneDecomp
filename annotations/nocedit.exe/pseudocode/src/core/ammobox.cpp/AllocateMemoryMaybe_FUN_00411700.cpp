@@ -43,7 +43,7 @@ void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
   core_ammo_cpp_CAmmo_FUN_00410fd0();
   core_ammo_cpp_CAmmo_FUN_004111b0();
   this_ptr->ammo_type = *(int *)(in_stack_00000004 + 0x318);
-  (*((this_ptr->base_actor).vtable)->setup)(&this_ptr->base_actor);
+  (*((this_ptr->base_actor).vtable._ub)->setup)(&this_ptr->base_actor);
   core_ammo_cpp_CAmmo_FUN_00410fd0();
   pcVar3 = "Some_ammo";
   pCVar2 = this_ptr;

@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flamegun_kfm_0062a38e
-;   undefined4 DAT_0065e26c
+;   float DAT_0065e26c = 8
 ;   CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_0065e284
 ;
 ; Called Functions:

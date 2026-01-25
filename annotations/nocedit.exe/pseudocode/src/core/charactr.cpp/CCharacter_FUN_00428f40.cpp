@@ -229,7 +229,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
       afStack_80[2] = (pCVar4->collision_normal).x;
       afStack_80[3] = (pCVar4->collision_normal).y;
       local_70 = (pCVar4->collision_normal).z;
-      fVar9 = (*((this_ptr->base_actor).vtable)->cylinderGroundCheck)
+      fVar9 = (*((this_ptr->base_actor).vtable._ub)->cylinderGroundCheck)
                         (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),&local_9c);
       bVar3 = false;
       pCVar6 = (CVector3f *)((int)local_2c * 0x24 + (int)local_40);
@@ -293,7 +293,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
     local_38 = local_38 + 1;
   } while (local_38 < 3);
   if (bVar3) {
-    fVar7 = (*((this_ptr->base_actor).vtable)->cylinderGroundCheck)
+    fVar7 = (*((this_ptr->base_actor).vtable._ub)->cylinderGroundCheck)
                       (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),
                        (CVector3f *)0x0);
     *(float *)(this_ptr->field2_0x240c + 8) = fVar7;

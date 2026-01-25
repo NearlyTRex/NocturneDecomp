@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006565f8 = 0.200000000000000
-;   undefined4 DAT_00664b58
+;   float FLOAT_00664b58 = 0.00390625
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
@@ -81,13 +81,13 @@ section .text
     MOV EAX,EDX                         ; 005e22c3
         ;   Label: LAB_005e22c3
     FILD dword ptr [EAX]                ; 005e22c5
-    FMUL float ptr [0x00664b58]         ; 005e22c7 | DAT_00664b58
+    FMUL float ptr [0x00664b58]         ; 005e22c7 | FLOAT_00664b58
     FSTP float ptr [EBX]                ; 005e22cd
     FILD dword ptr [EAX + 0x4]          ; 005e22cf
-    FMUL float ptr [0x00664b58]         ; 005e22d2 | DAT_00664b58
+    FMUL float ptr [0x00664b58]         ; 005e22d2 | FLOAT_00664b58
     FSTP float ptr [EBX + 0x4]          ; 005e22d8
     FILD dword ptr [EAX + 0x8]          ; 005e22db
-    FMUL float ptr [0x00664b58]         ; 005e22de | DAT_00664b58
+    FMUL float ptr [0x00664b58]         ; 005e22de | FLOAT_00664b58
     FSTP float ptr [EBX + 0x8]          ; 005e22e4
     MOV EAX,dword ptr [ESP + 0x4]       ; 005e22e7
     MOV dword ptr [ESP],EAX             ; 005e22eb

@@ -25,9 +25,9 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
     (this_ptr->base_npc).base_character.hit_points = 0.0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,6,1);
-    (*((this_ptr->base_npc).base_character.base_actor.vtable)->spawnFlies)
+    (*((this_ptr->base_npc).base_character.base_actor.vtable._ub)->spawnFlies)
               ((CDemonActor *)this_ptr,0x32,25.0);
-    (*((this_ptr->base_npc).base_character.base_actor.vtable)->playSound)
+    (*((this_ptr->base_npc).base_character.base_actor.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,this_ptr->field2_0x1f70c + 0x340);
   }
   else if (0.0 < *(float *)(in_stack_00000008 + 4)) {
@@ -44,7 +44,7 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->field2_0x1f70c + 0x3a4))
     ;
     if (iVar2 == 0) {
-      uVar3 = (*((this_ptr->base_npc).base_character.base_actor.vtable)->playSound)
+      uVar3 = (*((this_ptr->base_npc).base_character.base_actor.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,this_ptr->field2_0x1f70c + 0x2dc);
       *(uint *)(this_ptr->field2_0x1f70c + 0x3a4) = uVar3;
       core_npc_cpp_CNPC_FUN_00544d30(&this_ptr->base_npc);

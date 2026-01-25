@@ -2,6 +2,12 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "other",
+        "column": 6,
+        "line": 22,
+        "message": "'void*' is not a pointer-to-object type"
+      },
+      {
         "category": "missing_member",
         "column": 27,
         "line": 24,
@@ -278,14 +284,14 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_0000000c",
-      "text": "(*in_stack_0000000c->vtable->pickup)(in_stack_0000000c,&this_ptr->base_actor);",
+      "text": "(*((in_stack_0000000c->vtable)._ub)->pickup)(in_stack_0000000c,&this_ptr->base_actor);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_0000000c",
-      "text": "(*in_stack_0000000c->vtable->pickup)(in_stack_0000000c,&this_ptr->base_actor);",
+      "text": "(*((in_stack_0000000c->vtable)._ub)->pickup)(in_stack_0000000c,&this_ptr->base_actor);",
       "type": "stack_param"
     },
     {

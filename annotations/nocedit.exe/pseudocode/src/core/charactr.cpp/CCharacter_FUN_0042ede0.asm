@@ -233,7 +233,6 @@ section .text
     ADD ESP,0xc                         ; 0042eff6
     FSTP float ptr [ESP + 0xb0]         ; 0042eff9
     FLD float ptr [ESI + 0x4]           ; 0042f000
-        ;   Label: LAB_0042f000
     FADD float ptr [EAX + 0x4]          ; 0042f003
     FSTP float ptr [ESP + 0xb4]         ; 0042f006
     FLD float ptr [ESI + 0x8]           ; 0042f00d

@@ -94,10 +94,8 @@ LAB_00527413:
       core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
       core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
       core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);
-      (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
-                (&in_stack_00000004->base_actor);
-      (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
-                (&in_stack_00000004->base_actor);
+      (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
+      (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
     }
     core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);
     core_bodypart_cpp_FUN_0041a050();
@@ -108,17 +106,14 @@ LAB_00527413:
     in_stack_00000008[2] = in_stack_00000008[2] * (float)7;
     if ((*in_stack_00000008 == (float)in_stack_00000004[1].base_actor.field25_0x144) ||
        (*in_stack_00000008 == (float)in_stack_00000004[1].base_actor.field26_0x148)) {
-      (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
-                (&in_stack_00000004->base_actor);
-      (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
-                (&in_stack_00000004->base_actor);
+      (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
+      (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
     }
     if ((*in_stack_00000008 ==
          in_stack_00000004[1].base_actor.previous_transform_state.orientation.z) ||
        (*in_stack_00000008 ==
         (float)in_stack_00000004[1].base_actor.previous_transform_state.dirty_flags)) {
-      (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
-                (&in_stack_00000004->base_actor);
+      (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).cfunc21)();
     }
   }
 LAB_0052761a:

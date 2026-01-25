@@ -13,7 +13,6 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float d
   float fVar2;
   int iVar3;
   int iVar4;
-  float unaff_ESI;
   SDamageInfo local_48;
   
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -51,9 +50,8 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float d
       local_48.damage_type = 8;
       local_48.attacker = &this_ptr->base_actor;
       local_48.wielder = &this_ptr->base_actor;
-      (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
-        playAmbientSoundWithVolume)
-                ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(char *)&local_48,unaff_ESI);
+      (*(((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._uc)->_uc).
+        processDamage)(&g_HeroActors[g_LocalHeroIndex]->base_character,&local_48);
       return;
     }
   }

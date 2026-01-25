@@ -12,11 +12,11 @@
 ;   TerminatedCString s_cre_charge_wav_006314fa
 ;   TerminatedCString s_lgunmask_raw_00631509
 ;   double DOUBLE_00631516 = 100
-;   undefined4 DAT_00660a40
-;   undefined4 DAT_00660a48
-;   undefined4 DAT_00660a4c
-;   undefined4 DAT_00660a50
-;   undefined4 DAT_00660a54
+;   float FLOAT_00660a40 = 30
+;   float FLOAT_00660a48 = 2
+;   float FLOAT_00660a4c = 2.5
+;   float FLOAT_00660a50 = 1
+;   float FLOAT_00660a54 = 2
 ;   CFilterCache* g_CFilterCachePtr = 020a4c08
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CWeather* g_CWeatherPtr = 03f95dc0
@@ -61,25 +61,25 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x2db87c0] ; 00506468 | g_HeroActors
     ADD ESP,0x8                         ; 0050646f
     ADD EAX,0x1f738                     ; 00506472
-    PUSH dword ptr [0x00660a40]         ; 00506477 | DAT_00660a40
+    PUSH dword ptr [0x00660a40]         ; 00506477 | FLOAT_00660a40
     PUSH EAX                            ; 0050647d
     CALL core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0 ; 0050647e
         ;   XREF to: 004ffda0 (UNCONDITIONAL_CALL)  ; float core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0(CInventory * inventory_ptr, float max_charge)
     MOV dword ptr [ESP + 0x10],EAX      ; 00506483
     FLD float ptr [ESP + 0x10]          ; 00506487
-    FDIVR float ptr [0x00660a40]        ; 0050648b | DAT_00660a40
+    FDIVR float ptr [0x00660a40]        ; 0050648b | FLOAT_00660a40
     ADD ESP,0x8                         ; 00506491
     FMUL float ptr [ESP + 0x1c]         ; 00506494
     FADD float ptr [EBX + 0x580]        ; 00506498
     FST float ptr [EBX + 0x580]         ; 0050649e
-    FCOMP float ptr [0x00660a40]        ; 005064a4 | DAT_00660a40
+    FCOMP float ptr [0x00660a40]        ; 005064a4 | FLOAT_00660a40
     FNSTSW AX                           ; 005064aa
     SAHF                                ; 005064ac
     JA 0x005065e4                       ; 005064ad
         ;   XREF to: 005065e4 (CONDITIONAL_JUMP)  ; LAB_005065e4
     FLD float ptr [EBX + 0x580]         ; 005064b3
         ;   Label: LAB_005064b3
-    FDIV float ptr [0x00660a40]         ; 005064b9 | DAT_00660a40
+    FDIV float ptr [0x00660a40]         ; 005064b9 | FLOAT_00660a40
     FST float ptr [EBX + 0x584]         ; 005064bf
     FMUL double ptr [0x00631516]        ; 005064c5 | DOUBLE_00631516
     MOV EDX,dword ptr [EBX + 0x2d4]     ; 005064cb
@@ -91,12 +91,12 @@ section .text
         ;   XREF to: 005065f4 (CONDITIONAL_JUMP)  ; LAB_005065f4
     PUSH EDI                            ; 005064e5
     PUSH ESI                            ; 005064e6
-    FLD float ptr [0x00660a48]          ; 005064e7 | DAT_00660a48
-    FLD float ptr [0x00660a4c]          ; 005064ed | DAT_00660a4c
+    FLD float ptr [0x00660a48]          ; 005064e7 | FLOAT_00660a48
+    FLD float ptr [0x00660a4c]          ; 005064ed | FLOAT_00660a4c
     FSUB ST0,ST1                        ; 005064f3
     FMUL float ptr [EBX + 0x584]        ; 005064f5
-    FLD float ptr [0x00660a50]          ; 005064fb | DAT_00660a50
-    FLD float ptr [0x00660a54]          ; 00506501 | DAT_00660a54
+    FLD float ptr [0x00660a50]          ; 005064fb | FLOAT_00660a50
+    FLD float ptr [0x00660a54]          ; 00506501 | FLOAT_00660a54
     FSUB ST0,ST1                        ; 00506507
     MOV ECX,dword ptr [EBX + 0x57c]     ; 00506509
     FMUL float ptr [EBX + 0x584]        ; 0050650f
@@ -172,7 +172,7 @@ section .text
     POP EBP                             ; 005065e1
     POP EBX                             ; 005065e2
     RET                                 ; 005065e3
-    MOV EAX,[0x00660a40]                ; 005065e4 | DAT_00660a40
+    MOV EAX,[0x00660a40]                ; 005065e4 | FLOAT_00660a40
         ;   Label: LAB_005065e4
     MOV dword ptr [EBX + 0x580],EAX     ; 005065e9
     JMP 0x005064b3                      ; 005065ef

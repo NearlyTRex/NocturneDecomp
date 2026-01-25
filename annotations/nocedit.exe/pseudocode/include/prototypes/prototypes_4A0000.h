@@ -180,7 +180,7 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004a97c0(CEnemy * this_ptr);
 undefined __unknown core_enemy_cpp_FUN_004a9880();
 undefined __unknown core_enemy_cpp_FUN_004a9930();
 float * __cdecl core_enemy_cpp_CEnemy_FUN_004a99d0(CEnemy * this_ptr);
-undefined __unknown core_enemy_cpp_FUN_004a9a50();
+int __cdecl core_enemy_cpp_FUN_004a9a50(CEnemy * this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy * this_ptr);
 undefined __unknown core_enemy_cpp_FUN_004a9ef0();
 undefined __unknown core_enemy_cpp_FUN_004a9f10();

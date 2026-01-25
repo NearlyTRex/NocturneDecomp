@@ -43,7 +43,7 @@
 ;   float FLOAT_00616ddf = 0.5
 ;   float FLOAT_00616de3 = 11
 ;   double DOUBLE_00616deb = 0.5
-;   undefined4 DAT_0065b5c8
+;   float FLOAT_0065b5c8 = 0.5
 ;   undefined4 DAT_00822d08
 ;   undefined1 DAT_00822d0c
 ;   CDemonRaytrace g_CDemonRaytraceInstance
@@ -62,7 +62,7 @@ section .text
     PUSH EBP                            ; 004257f1
     SUB ESP,0x74                        ; 004257f2
     FLD1                                ; 004257f5
-    FDIV float ptr [0x0065b5c8]         ; 004257f7 | DAT_0065b5c8
+    FDIV float ptr [0x0065b5c8]         ; 004257f7 | FLOAT_0065b5c8
     MOV EBX,dword ptr [ESP + 0x80]      ; 004257fd
     FLD float ptr [EBX + 0x199cc]       ; 00425804
     FADD float ptr [EBX + 0x199d8]      ; 0042580a
@@ -129,7 +129,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x48]      ; 004258d8
     MOV dword ptr [ESP + 0x70],EAX      ; 004258dc
     FILD dword ptr [ESP + 0x70]         ; 004258e0
-    FMUL float ptr [0x0065b5c8]         ; 004258e4 | DAT_0065b5c8
+    FMUL float ptr [0x0065b5c8]         ; 004258e4 | FLOAT_0065b5c8
     FXCH                                ; 004258ea
     CALL crt_math.c_round_FUN_005fe6b0  ; 004258ec
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
@@ -137,10 +137,10 @@ section .text
     MOV EAX,dword ptr [ESP + 0x6c]      ; 004258f5
     FSUB float ptr [EBX + 0x20]         ; 004258f9
     MOV dword ptr [ESP + 0x70],EAX      ; 004258fc
-    FLD float ptr [0x0065b5c8]          ; 00425900 | DAT_0065b5c8
+    FLD float ptr [0x0065b5c8]          ; 00425900 | FLOAT_0065b5c8
     FMUL float ptr [0x00616de3]         ; 00425906 | FLOAT_00616de3
     FILD dword ptr [ESP + 0x70]         ; 0042590c
-    FMUL float ptr [0x0065b5c8]         ; 00425910 | DAT_0065b5c8
+    FMUL float ptr [0x0065b5c8]         ; 00425910 | FLOAT_0065b5c8
     FXCH                                ; 00425916
     FMUL double ptr [0x00616deb]        ; 00425918 | DOUBLE_00616deb
     MOV EDX,dword ptr [EBX + 0x199e4]   ; 0042591e
@@ -233,7 +233,7 @@ section .text
         ;   Label: LAB_00425a56
     MOV dword ptr [ESP + 0x78],EAX      ; 00425a5a
     FILD dword ptr [ESP + 0x78]         ; 00425a5e
-    FMUL float ptr [0x0065b5c8]         ; 00425a62 | DAT_0065b5c8
+    FMUL float ptr [0x0065b5c8]         ; 00425a62 | FLOAT_0065b5c8
     MOV EDI,dword ptr [ESP + 0x5c]      ; 00425a68
     MOV EBP,dword ptr [ESP + 0x58]      ; 00425a6c
     XOR EBX,EBX                         ; 00425a70
@@ -246,7 +246,7 @@ section .text
     MOV dword ptr [ESP + 0x78],EBX      ; 00425a84
         ;   Label: LAB_00425a84
     FILD dword ptr [ESP + 0x78]         ; 00425a88
-    FMUL float ptr [0x0065b5c8]         ; 00425a8c | DAT_0065b5c8
+    FMUL float ptr [0x0065b5c8]         ; 00425a8c | FLOAT_0065b5c8
     MOV EAX,dword ptr [ESP + 0x70]      ; 00425a92
     FADD float ptr [ESP + 0x10]         ; 00425a96
     MOV EDX,dword ptr [ESP + 0x6c]      ; 00425a9a

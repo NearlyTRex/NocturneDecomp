@@ -3,9 +3,33 @@
     "errors": [
       {
         "category": "other",
-        "column": 6,
-        "line": 9,
-        "message": "ambiguating new declaration of 'void core_charactr_cpp_CCharacter_FUN_0042e670()'"
+        "column": 19,
+        "line": 31,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "missing_member",
+        "column": 32,
+        "line": 39,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
+      },
+      {
+        "category": "missing_member",
+        "column": 28,
+        "line": 41,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
+      },
+      {
+        "category": "missing_member",
+        "column": 43,
+        "line": 56,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field13_0x2620'"
+      },
+      {
+        "category": "other",
+        "column": 74,
+        "line": 80,
+        "message": "cast from 'char*' to 'int' loses precision [-fpermissive]"
       }
     ],
     "success": false,
@@ -18,96 +42,30 @@
       },
       {
         "category": "other",
-        "column": 8,
-        "line": 23,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 10,
         "line": 31,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 27,
-        "line": 37,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 39,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 41,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 47,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 50,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 53,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 61,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 73,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 73,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 74,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 75,
+        "column": 64,
+        "line": 80,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 232,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 77,
-    "suspect_count": 15,
+    "pseudocode_lines": 84,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 242
+    "total_lines": 249
   },
   "cross_references": [],
   "function": {
@@ -118,9 +76,9 @@
         "0042e831"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_FUN_0042e670",
-    "signature": "undefined core_charactr.cpp_CCharacter_FUN_0042e670()"
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042e670(CCharacter * this_ptr)"
   },
   "function_calls": [
     {
@@ -139,8 +97,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.701492537313433,
@@ -184,10 +142,10 @@
     "pcode_op_count": 764
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 48,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -231,114 +189,30 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pcVar4 + 0xb7e4) = 0x501502f9;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "if (*(char *)(in_stack_00000004 + 0x23b8) != '\\0') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "iVar4 = iVar5 * 0x50 + in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "((CMotionController *)(in_stack_00000004 + 0x158));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x2628)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "piVar6 = (int *)(iVar2 * 0x38 + in_stack_00000004 + 0x262c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + *piVar6 * 0x50 + 0xb7e4 + piVar6[1] * 4) = piVar6[0xd];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + piVar6[1] * 0x50 + 0xb7e4 + *piVar6 * 4) = piVar6[0xd];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0x2628));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "local_20 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000004",
-      "text": "iVar3 = iVar5 * 0x50 + in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_00000004",
-      "text": "} while (local_20 != in_stack_00000004 + 0x640);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(float *)((int)",
+      "text": "fVar1 = *(float *)(local_18->cloth_data + 0x8d4c) + *(float *)((int)pcVar4 + 0xb7e4);",
+      "type": "pointer_cast"
     }
   ]
 }

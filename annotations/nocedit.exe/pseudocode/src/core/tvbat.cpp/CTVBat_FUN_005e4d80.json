@@ -4,44 +4,38 @@
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 32,
+        "line": 30,
         "message": "'stack0xffffff88' was not declared in this scope"
       },
       {
         "category": "missing_member",
         "column": 54,
-        "line": 36,
+        "line": 34,
         "message": "'CTVBat' {aka 'struct CTVBat'} has no member named 'field1_0xbeb4'"
       },
       {
         "category": "missing_member",
         "column": 37,
-        "line": 37,
+        "line": 35,
         "message": "'CTVBat' {aka 'struct CTVBat'} has no member named 'field1_0xbeb4'"
       },
       {
         "category": "missing_member",
         "column": 36,
-        "line": 40,
+        "line": 38,
         "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field0_0x0'; did you mean 'field_0'?"
       },
       {
         "category": "missing_member",
         "column": 71,
-        "line": 42,
+        "line": 40,
         "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
       },
       {
         "category": "missing_member",
         "column": 53,
-        "line": 45,
+        "line": 43,
         "message": "'CDemonMission' {aka 'struct CDemonMission'} has no member named 'field2_0xc'; did you mean 'field_0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 55,
-        "message": "'_DAT_00664cb0' was not declared in this scope; did you mean 'DAT_00664C70'?"
       }
     ],
     "success": false,
@@ -56,18 +50,17 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 273,
+    "complexity_score": 257,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
-    "pseudocode_lines": 78,
-    "suspect_count": 18,
+    "pseudocode_lines": 77,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 317
+    "total_lines": 316
   },
   "cross_references": [],
   "function": {
@@ -151,9 +144,9 @@
     },
     {
       "addr": "00664cb0",
-      "name": "DAT_00664cb0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00664cb0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "006703ec",
@@ -269,129 +262,122 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 23,
       "match": "&stack0xffffff88",
       "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffff88);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 42,
       "match": "fsin",
       "text": "fVar6 = (float10)fsin(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 43,
       "match": "fcos",
       "text": "fVar5 = (float10)fcos(fVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ROUND",
+      "text": "CStack_40.x = (int)ROUND(fVar1 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ROUND",
+      "text": "CStack_40.y = (int)ROUND(-this_ptr->max_height * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "ROUND",
-      "text": "CStack_40.x = (int)ROUND(fVar1 * _DAT_00664cb0);",
+      "text": "CStack_40.z = (int)ROUND(fVar2 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 51,
       "match": "ROUND",
-      "text": "CStack_40.y = (int)ROUND(-this_ptr->max_height * _DAT_00664cb0);",
+      "text": "CStack_28.x = (int)ROUND(fVar1 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 52,
       "match": "ROUND",
-      "text": "CStack_40.z = (int)ROUND(fVar2 * _DAT_00664cb0);",
+      "text": "CStack_28.y = (int)ROUND(this_ptr->max_height * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "ROUND",
-      "text": "CStack_28.x = (int)ROUND(fVar1 * _DAT_00664cb0);",
+      "text": "CStack_28.z = (int)ROUND(fVar2 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "ROUND",
-      "text": "CStack_28.y = (int)ROUND(this_ptr->max_height * _DAT_00664cb0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "ROUND",
-      "text": "CStack_28.z = (int)ROUND(fVar2 * _DAT_00664cb0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "fsin",
       "text": "fVar6 = (float10)fsin(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "fcos",
       "text": "fVar5 = (float10)fcos(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ROUND",
+      "text": "CStack_4c.x = (int)ROUND(fVar1 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ROUND",
+      "text": "CStack_4c.y = (int)ROUND(-this_ptr->max_height * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "ROUND",
-      "text": "CStack_4c.x = (int)ROUND(fVar1 * _DAT_00664cb0);",
+      "text": "CStack_4c.z = (int)ROUND(fVar2 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 68,
       "match": "ROUND",
-      "text": "CStack_4c.y = (int)ROUND(-this_ptr->max_height * _DAT_00664cb0);",
+      "text": "CStack_34.x = (int)ROUND(fVar1 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 69,
       "match": "ROUND",
-      "text": "CStack_4c.z = (int)ROUND(fVar2 * _DAT_00664cb0);",
+      "text": "CStack_34.y = (int)ROUND(this_ptr->max_height * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 70,
       "match": "ROUND",
-      "text": "CStack_34.x = (int)ROUND(fVar1 * _DAT_00664cb0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "ROUND",
-      "text": "CStack_34.y = (int)ROUND(this_ptr->max_height * _DAT_00664cb0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
-      "match": "ROUND",
-      "text": "CStack_34.z = (int)ROUND(fVar2 * _DAT_00664cb0);",
+      "text": "CStack_34.z = (int)ROUND(fVar2 * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ],

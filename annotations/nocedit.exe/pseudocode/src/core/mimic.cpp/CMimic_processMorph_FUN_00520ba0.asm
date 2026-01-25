@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_006388b4
 ;   TerminatedCString s_CMimic_processMorph_can__006388c6
-;   undefined4 DAT_00661414
+;   float FLOAT_00661414 = 1
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -45,7 +45,7 @@ section .text
         ;   XREF to: 00520c00 (CONDITIONAL_JUMP)  ; LAB_00520c00
     FLD float ptr [EBP + 0x18]          ; 00520bb8
         ;   Label: LAB_00520bb8
-    FDIV float ptr [0x00661414]         ; 00520bbb | DAT_00661414
+    FDIV float ptr [0x00661414]         ; 00520bbb | FLOAT_00661414
     FADD float ptr [EBX + 0x4ca50]      ; 00520bc1
     FST float ptr [EBX + 0x4ca50]       ; 00520bc7
     FLD1                                ; 00520bcd

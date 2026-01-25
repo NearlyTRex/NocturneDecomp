@@ -22,7 +22,7 @@
 ;   ... and 17 more
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable PTR_core_enemy.cpp_FUN_004a9650_0065d7d4
+;   CDemonActor_vtable g_CEnemyVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
@@ -45,7 +45,7 @@ section .text
     PUSH 0x3f8ccccd                     ; 004a9513
     MOV EBX,EAX                         ; 004a9518
     PUSH 0x3f666666                     ; 004a951a
-    MOV dword ptr [EAX + 0x154],0x65d7d4 ; 004a951f | PTR_core_enemy.cpp_FUN_004a9650_0065d7d4
+    MOV dword ptr [EAX + 0x154],0x65d7d4 ; 004a951f | g_CEnemyVTable
     CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a9529
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

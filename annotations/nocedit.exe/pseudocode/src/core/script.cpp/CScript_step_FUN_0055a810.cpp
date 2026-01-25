@@ -583,7 +583,7 @@ LAB_0055bb9d:
                                                             iVar14),g_CCharacterClassInfo.name_hash)
                                       ;
                                       if (pCVar12 != (CDemonActor *)0x0) {
-                                        (*pCVar12->vtable[1].evaluateTriggerCondition)(pCVar12);
+                                        (*(((pCVar12->vtable)._uc)->_uc).cfunc23)();
                                       }
                                       iVar14 = iVar14 + 4;
                                     }

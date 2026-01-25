@@ -11,8 +11,8 @@ CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_pt
 {
   CColonel *pCVar1;
   
-  pCVar1 = (CColonel *)core_hero_cpp_FUN_004f2340();
-  (pCVar1->base_hero).base_character.base_actor.vtable = &PTR_core_colonel_cpp_FUN_0065bd54;
+  pCVar1 = (CColonel *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base_hero);
+  (pCVar1->base_hero).base_character.base_actor.vtable._ub = &g_CColonelVTable;
   pCVar1->field1_0x1fbd4[0] = '\0';
   pCVar1->field1_0x1fbd4[1] = '\0';
   pCVar1->field1_0x1fbd4[2] = '\0';

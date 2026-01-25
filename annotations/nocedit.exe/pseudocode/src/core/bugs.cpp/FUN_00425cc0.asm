@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00616df3 = 2
 ;   float FLOAT_00616dfb = 0.5
-;   undefined4 DAT_0065b5d4
+;   float FLOAT_0065b5d4 = 2
 ;
 ; Called Functions:
 ;   core_bugs.cpp_FUN_004257f0
@@ -179,7 +179,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 00425e41
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00425e46
-    FLD float ptr [0x0065b5d4]          ; 00425e49 | DAT_0065b5d4
+    FLD float ptr [0x0065b5d4]          ; 00425e49 | FLOAT_0065b5d4
     FMUL float ptr [EBP + 0x18]         ; 00425e4f
     FSTP float ptr [ESP + 0x94]         ; 00425e52
     MOV EAX,dword ptr [ESP + 0x94]      ; 00425e59

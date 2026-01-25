@@ -41,7 +41,7 @@ float * CEnemy(CEnemy * this_ptr);
 
 // Original: core_enemy.cpp_FUN_004a9a50
 // Address: 004a9a50
-undefined FUN_004a9a50();
+int FUN_004a9a50(CEnemy * this_ptr);
 
 // Original: core_enemy.cpp_CEnemy_FUN_004a9b00
 // Address: 004a9b00

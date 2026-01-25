@@ -1,0 +1,200 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 69,
+        "line": 33,
+        "message": "'stack0xffffffe0' was not declared in this scope"
+      },
+      {
+        "category": "missing_member",
+        "column": 81,
+        "line": 37,
+        "message": "'CBoxActor' {aka 'struct CBoxActor'} has no member named 'field7_0x310'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 46,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 3,
+    "pseudocode_lines": 31,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 124
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00421e00",
+    "address_range": [
+      [
+        "00421e00",
+        "00421ebb"
+      ],
+      [
+        "00421ec8",
+        "00421ee6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00",
+    "signature": "int core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00(CBoxActor * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "00478d20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
+    },
+    {
+      "addr": "0048c4f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048c640",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "0048c450",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703e8",
+      "name": "g_CDemonRendererPtr1",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.541666666666667,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 8,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 53,
+      "INT_ADD": 28,
+      "INT_AND": 43,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 41,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 20,
+      "INT_SUB": 31,
+      "INT_XOR": 2,
+      "LOAD": 13,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 327
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 26,
+      "match": "&stack0xffffffe0",
+      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe0);",
+      "type": "stack_ref"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoxActor",
+        "offset": 8,
+        "vtable_addr": "00663604"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "0065b2a4"
+      },
+      {
+        "class_name": "CBoxActor",
+        "offset": 8,
+        "vtable_addr": "0065b1b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
+}

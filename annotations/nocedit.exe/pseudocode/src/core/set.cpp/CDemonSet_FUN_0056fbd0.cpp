@@ -107,7 +107,7 @@ joined_r0x0056fede:
           }
           (this_ptr_00->base_character).base_actor.field25_0x144 = 1;
         }
-        pCVar9 = (*((this_ptr_00->base_character).base_actor.vtable)->getBoundingBox)
+        pCVar9 = (*((this_ptr_00->base_character).base_actor.vtable._ub)->getBoundingBox)
                            ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);
         fStack_44 = (pCVar9->min).x + (pCVar9->max).x;
         fStack_40 = (pCVar9->min).y + (pCVar9->max).y;

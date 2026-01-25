@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 30,
-        "message": "'stack0xffffffbc' was not declared in this scope"
+        "category": "other",
+        "column": 16,
+        "line": 28,
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -20,16 +20,15 @@
   },
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 185,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 40,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
     "total_lines": 146
   },
@@ -246,7 +245,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 != (CDemonActor *)0x0) &&",
       "type": "stack_param"
@@ -255,22 +254,15 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,(CVector3f *)&stack0xffffffbc,in_stack_0000000c);",
+      "text": "(in_stack_00000008,&local_44,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_0000000c",
-      "text": "(in_stack_00000008,(CVector3f *)&stack0xffffffbc,in_stack_0000000c);",
+      "text": "(in_stack_00000008,&local_44,in_stack_0000000c);",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xffffffbc",
-      "text": "(in_stack_00000008,(CVector3f *)&stack0xffffffbc,in_stack_0000000c);",
-      "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -304,7 +296,7 @@
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000008",
-      "text": "(*in_stack_00000008->vtable->setPositionAndOrientation)",
+      "text": "(*((in_stack_00000008->vtable)._ub)->setPositionAndOrientation)",
       "type": "stack_param"
     },
     {
@@ -325,7 +317,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CGabriella",
         "offset": 292,
         "vtable_addr": "0065e804"
       },

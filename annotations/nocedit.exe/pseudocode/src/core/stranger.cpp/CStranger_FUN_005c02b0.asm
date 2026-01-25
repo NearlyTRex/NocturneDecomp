@@ -45,7 +45,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00653944 = 0.000100000000000000
-;   undefined4 DAT_00665998
+;   float FLOAT_00665998 = 1
 ;   undefined4 DAT_03f6bad8
 ;   undefined4 DAT_03f6badc
 ;   undefined4 DAT_03f6bae0
@@ -209,7 +209,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005c046b
     MOVSD ES:EDI,ESI                    ; 005c046c
     MOVSD ES:EDI,ESI                    ; 005c046d
-    PUSH 0x665998                       ; 005c046e | DAT_00665998
+    PUSH 0x665998                       ; 005c046e | FLOAT_00665998
     LEA ESI,[ESP + 0x150]               ; 005c0473
     LEA EDI,[ESP + 0x90]                ; 005c047a
     CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 005c0481

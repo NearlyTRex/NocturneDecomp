@@ -11,7 +11,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c920(CCharacter *this_ptr)
 {
   CMotionList *this_ptr_00;
   int iVar1;
-  CVector3f *unaff_EBX;
   int in_stack_00000008;
   uint in_stack_0000000c;
   uint in_stack_00000010;
@@ -41,7 +40,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c920(CCharacter *this_ptr)
   *(int *)this_ptr->field11_0x25a0 = in_stack_00000008;
   *(uint *)(this_ptr->field11_0x25a0 + 4) = in_stack_0000000c;
   *(uint *)(this_ptr->field11_0x25a0 + 8) = in_stack_00000010;
-  (*(this_ptr->base_actor).vtable[1].setPositionAndOrientation)
-            (&this_ptr->base_actor,(CVector3f *)0xbf800000,unaff_EBX);
+  (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc25)();
   return;
 }

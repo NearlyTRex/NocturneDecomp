@@ -1,0 +1,154 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 25,
+        "line": 17,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 57,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 3,
+    "suspect_types": [
+      "suspect_float"
+    ],
+    "total_lines": 62
+  },
+  "cross_references": [
+    {
+      "addr": "004a9fa0",
+      "from_addr": "004a9fc1",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544b70",
+      "from_addr": "00544b91",
+      "name": "core_npc.cpp_CNPC_FUN_00544b70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042a390",
+    "address_range": [
+      [
+        "0042a390",
+        "0042a3e2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390",
+    "signature": "void core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter * this_ptr, int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "00429aa0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_00429aa0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.032258064516129,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 18,
+      "INT_ADD": 15,
+      "INT_AND": 21,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 14,
+      "LOAD": 8,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 156
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 16,
+      "match": "6.119892e-39",
+      "text": "fStack_1c = 6.119892e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 19,
+      "match": "6.11991e-39",
+      "text": "fStack_1c = 6.11991e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 22,
+      "match": "6.119923e-39",
+      "text": "fStack_1c = 6.119923e-39;",
+      "type": "suspect_float"
+    }
+  ]
+}

@@ -39,9 +39,9 @@ void core_vampboss_cpp_FUN_005e7030(void)
                               g_CMeleeClassInfo.name_hash), this_ptr != (CDemonActor *)0x0)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(in_stack_00000004->model).motion_controller,10,1);
-      pCVar4 = (*this_ptr->vtable->getCarrier)(this_ptr);
+      pCVar4 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
       if (pCVar4 != (CDemonActor *)0x0) {
-        (*pCVar4->vtable->drop)(pCVar4,this_ptr,(CVector3f *)0x0);
+        (*((pCVar4->vtable)._ub)->drop)(pCVar4,this_ptr,(CVector3f *)0x0);
         pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,g_CHeroClassInfo.name_hash);
         if (pCVar4 != (CDemonActor *)0x0) {
           pCVar5 = core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
@@ -89,7 +89,7 @@ void core_vampboss_cpp_FUN_005e7030(void)
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04));
     if (iVar2 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+      uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                         (&in_stack_00000004->base_actor,"voicuhurt.wav");
       *(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04) = uVar3;
       return;

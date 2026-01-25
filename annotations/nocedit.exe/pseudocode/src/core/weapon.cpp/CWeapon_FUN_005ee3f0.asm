@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 005ee3fd
     MOV dword ptr [EBX + 0x304],0x0     ; 005ee3fe
     CALL core_weapon.cpp_FUN_005ee740   ; 005ee408
-        ;   XREF to: 005ee740 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ee740()
+        ;   XREF to: 005ee740 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_FUN_005ee740(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 005ee40d
     TEST ESI,ESI                        ; 005ee410
     JNZ 0x005ee436                      ; 005ee412

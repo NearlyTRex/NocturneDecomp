@@ -76,8 +76,8 @@
 ;   double DOUBLE_0064586a = 32
 ;   double DOUBLE_00645872 = 0.800000000000000
 ;   double DOUBLE_0064587a = 4
-;   undefined4 DAT_00662678
-;   undefined4 DAT_00662684
+;   float FLOAT_00662678 = 4
+;   float FLOAT_00662684 = 12
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGore* g_CGorePtr = 02d83364
 ;   ... and 5 more
@@ -324,7 +324,7 @@ section .text
     TEST EAX,EAX                        ; 005682a9
     JZ 0x00568250                       ; 005682ab
         ;   XREF to: 00568250 (CONDITIONAL_JUMP)  ; LAB_00568250
-    MOV EAX,[0x00662678]                ; 005682ad | DAT_00662678
+    MOV EAX,[0x00662678]                ; 005682ad | FLOAT_00662678
     MOV dword ptr [EBP + -0x7e],EAX     ; 005682b2
     LEA EAX,[EBP + 0xffffff7a]          ; 005682b5
     PUSH EAX                            ; 005682bb
@@ -534,7 +534,7 @@ section .text
     FMUL float ptr [EBP + 0x36]         ; 005684db
     FADDP                               ; 005684de
     FSQRT                               ; 005684e0
-    FCOMP float ptr [0x00662684]        ; 005684e2 | DAT_00662684
+    FCOMP float ptr [0x00662684]        ; 005684e2 | FLOAT_00662684
     FNSTSW AX                           ; 005684e8
     SAHF                                ; 005684ea
     JBE 0x005686c4                      ; 005684eb
@@ -785,7 +785,7 @@ section .text
     ADD ESP,0xc                         ; 005687aa
     JMP 0x00568128                      ; 005687ad
         ;   XREF to: 00568128 (UNCONDITIONAL_JUMP)  ; caseD_c
-    MOV EAX,[0x00662678]                ; 005687b2 | DAT_00662678
+    MOV EAX,[0x00662678]                ; 005687b2 | FLOAT_00662678
         ;   Label: LAB_005687b2
     PUSH 0x3e32b8c2                     ; 005687b7
     MOV dword ptr [EBP + 0x6a],EAX      ; 005687bc
@@ -844,7 +844,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x72]      ; 0056885e
     FLD float ptr [EBP + 0x72]          ; 00568861
     MOV dword ptr [EBP + 0x66],EAX      ; 00568864
-    FCOMP float ptr [0x00662684]        ; 00568867 | DAT_00662684
+    FCOMP float ptr [0x00662684]        ; 00568867 | FLOAT_00662684
     FNSTSW AX                           ; 0056886d
     SAHF                                ; 0056886f
     JBE 0x0056887f                      ; 00568870
@@ -973,7 +973,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005689bf
     MOV EDX,dword ptr [EAX + 0x4]       ; 005689c2
     MOV dword ptr [EAX],EDX             ; 005689c5
-    MOV EAX,[0x00662678]                ; 005689c7 | DAT_00662678
+    MOV EAX,[0x00662678]                ; 005689c7 | FLOAT_00662678
     MOV dword ptr [EBP + 0xa],ECX       ; 005689cc
     MOV dword ptr [EBP + 0x12],EAX      ; 005689cf
     LEA EAX,[EBP + 0xa]                 ; 005689d2
@@ -1011,7 +1011,7 @@ section .text
     FADDP                               ; 00568a44
     FSQRT                               ; 00568a46
     ADD ESP,0x18                        ; 00568a48
-    FCOMP float ptr [0x00662684]        ; 00568a4b | DAT_00662684
+    FCOMP float ptr [0x00662684]        ; 00568a4b | FLOAT_00662684
     FNSTSW AX                           ; 00568a51
     SAHF                                ; 00568a53
     JNC 0x00568ac3                      ; 00568a54

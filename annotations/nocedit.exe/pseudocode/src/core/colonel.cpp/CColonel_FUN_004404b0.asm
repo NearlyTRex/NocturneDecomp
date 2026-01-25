@@ -7,7 +7,7 @@
 ; CColonel *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065bd48
+;   float FLOAT_0065bd48 = 0.5
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGore* g_CGorePtr = 02d83364
 ;   undefined4 DAT_02d81c6c
@@ -46,7 +46,7 @@ section .text
     TEST EDI,EDI                        ; 004404e8
     JZ 0x0044053d                       ; 004404ea
         ;   XREF to: 0044053d (CONDITIONAL_JUMP)  ; LAB_0044053d
-    MOV EAX,[0x0065bd48]                ; 004404ec | DAT_0065bd48
+    MOV EAX,[0x0065bd48]                ; 004404ec | FLOAT_0065bd48
         ;   Label: LAB_004404ec
     MOV dword ptr [EBX + 0xbe24],EAX    ; 004404f1
     FLD float ptr [ESI + 0x4]           ; 004404f7

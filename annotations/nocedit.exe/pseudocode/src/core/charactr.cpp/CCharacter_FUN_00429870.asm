@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00617092 = 0.0100000000000000
-;   undefined4 DAT_0065b834
+;   float FLOAT_0065b834 = 9999
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CScript* g_CScriptPtr = 0310f858
 ;   CGame g_CGameInstance
@@ -124,7 +124,7 @@ section .text
     JNZ 0x00429a2f                      ; 00429959
         ;   XREF to: 00429a2f (CONDITIONAL_JUMP)  ; LAB_00429a2f
     FLD float ptr [ESI + 0x2414]        ; 0042995f
-    FCOMP float ptr [0x0065b834]        ; 00429965 | DAT_0065b834
+    FCOMP float ptr [0x0065b834]        ; 00429965 | FLOAT_0065b834
     FNSTSW AX                           ; 0042996b
     SAHF                                ; 0042996d
     JZ 0x00429a33                       ; 0042996e
@@ -136,7 +136,7 @@ section .text
     FLD float ptr [ESI + 0x2414]        ; 00429987
     FXCH                                ; 0042998d
     FSTP float ptr [ESI + 0x24]         ; 0042998f
-    FCOMP float ptr [0x0065b834]        ; 00429992 | DAT_0065b834
+    FCOMP float ptr [0x0065b834]        ; 00429992 | FLOAT_0065b834
     FNSTSW AX                           ; 00429998
     SAHF                                ; 0042999a
     JZ 0x004299a6                       ; 0042999b

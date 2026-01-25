@@ -15,7 +15,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_renderOpaque_FUN_00448e00(CCrossbow *thi
   float render_flags;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_00 = (*((this_ptr->base_weapon).base_actor.vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_weapon).base_actor.vtable._ub)->getBoundingBox)
                           ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 == 0) {

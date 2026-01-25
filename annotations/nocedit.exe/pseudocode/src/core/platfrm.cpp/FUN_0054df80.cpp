@@ -42,7 +42,7 @@ uint core_platfrm_cpp_FUN_0054df80(void)
       (in_stack_00000004->orient).heading = CStack_1c.y;
       if ((ABS((in_stack_00000004->orient).pitch) <= (float)0.01) &&
          (ABS((in_stack_00000004->orient).heading) <= (float)0.01)) {
-        (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_60);
+        (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&CStack_60);
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                   (in_stack_00000004,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x20));
         if (((CStack_60.min.z <= CStack_1c.x + (float)local_88.field9_0x24) &&

@@ -27,7 +27,7 @@ uint core_hero_cpp_FUN_004f2af0(void)
   float fStack_18;
   float fStack_14;
   
-  pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)
+  pCVar1 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                      (in_stack_00000004,(CBoundingBox3D *)&stack0xffffff9c);
   fStack_2c = (pCVar1->min).x + (pCVar1->max).x;
   fStack_28 = (pCVar1->min).y + (pCVar1->max).y;

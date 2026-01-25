@@ -29,8 +29,8 @@
 ;   TerminatedCString s_actionPending_d_stranger_00653da3
 ;   double DOUBLE_00653dcc = 25
 ;   double DOUBLE_00653dd4 = 0.990000000000000
-;   undefined4 DAT_00663744
-;   undefined4 DAT_00663748
+;   float FLOAT_00663744 = 10
+;   float FLOAT_00663748 = 70
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   undefined4 g_CDynamiteClassInfo.name_hash
@@ -391,7 +391,7 @@ section .text
     FMUL double ptr [0x00653dcc]        ; 005c55f9 | DOUBLE_00653dcc
     FADD float ptr [EBX + 0x1fbe4]      ; 005c55ff
     FST float ptr [EBX + 0x1fbe4]       ; 005c5605
-    FCOMP float ptr [0x00663748]        ; 005c560b | DAT_00663748
+    FCOMP float ptr [0x00663748]        ; 005c560b | FLOAT_00663748
     FNSTSW AX                           ; 005c5611
     SAHF                                ; 005c5613
     JA 0x005c562a                       ; 005c5614
@@ -404,7 +404,7 @@ section .text
         ;   Label: caseD_8
     JMP 0x005c52ff                      ; 005c5625
         ;   XREF to: 005c52ff (UNCONDITIONAL_JUMP)  ; LAB_005c52ff
-    MOV EAX,[0x00663748]                ; 005c562a | DAT_00663748
+    MOV EAX,[0x00663748]                ; 005c562a | FLOAT_00663748
         ;   Label: LAB_005c562a
     MOV dword ptr [EBX + 0x1fbe4],EAX   ; 005c562f
     JMP 0x005c5616                      ; 005c5635
@@ -692,7 +692,7 @@ section .text
     ADD ESP,0xc                         ; 005c58f5
     MOV dword ptr [EBX + 0x1fc38],0x0   ; 005c58f8
         ;   Label: LAB_005c58f8
-    MOV EAX,[0x00663744]                ; 005c5902 | DAT_00663744
+    MOV EAX,[0x00663744]                ; 005c5902 | FLOAT_00663744
     MOV dword ptr [EBX + 0x1fbe4],EAX   ; 005c5907
     FLD float ptr [EBX + 0x2a90]        ; 005c590d
         ;   Label: LAB_005c590d

@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   core_hero.cpp_FUN_004f2340
+;   core_hero.cpp_CHero_ctor_FUN_004f2340
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH EDI                            ; 00412bc2
     MOV EDX,dword ptr [ESP + 0x10]      ; 00412bc3
     PUSH EDX                            ; 00412bc7
-    CALL core_hero.cpp_FUN_004f2340     ; 00412bc8
-        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2340()
+    CALL core_hero.cpp_CHero_ctor_FUN_004f2340 ; 00412bc8
+        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004f2340(CHero * this_ptr)
     ADD ESP,0x4                         ; 00412bcd
     PUSH 0x614ed7                       ; 00412bd0 | = "baron.dfm"
     MOV EBX,EAX                         ; 00412bd5

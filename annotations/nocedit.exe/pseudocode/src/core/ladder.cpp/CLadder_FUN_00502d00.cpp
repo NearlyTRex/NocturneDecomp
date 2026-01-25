@@ -31,22 +31,22 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502d00(CLadder *this_ptr)
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e);
     if (iVar2 != 0) {
-      (this_ptr->ladder_size).y = (this_ptr->ladder_size).y - 0x3F800000;
+      (this_ptr->ladder_size).y = (this_ptr->ladder_size).y - 1.0f;
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x10);
     if (iVar2 != 0) {
-      (this_ptr->ladder_size).y = 0x3F800000 + (this_ptr->ladder_size).y;
+      (this_ptr->ladder_size).y = 1.0f + (this_ptr->ladder_size).y;
     }
     if ((this_ptr->ladder_size).x < (float)0.5) {
       (this_ptr->ladder_size).x = 0.5;
     }
-    if ((this_ptr->ladder_size).y < 0x3F800000) {
-      (this_ptr->ladder_size).y = 0x3F800000;
+    if ((this_ptr->ladder_size).y < 1.0f) {
+      (this_ptr->ladder_size).y = 1.0f;
     }
   }
   dVar3 = crt_math_c_floor_FUN_005feb90
-                    ((double)((this_ptr->ladder_size).y / 0x3F800000 + (float)0.5));
-  fVar1 = (float)dVar3 * 0x3F800000;
+                    ((double)((this_ptr->ladder_size).y / 1.0f + (float)0.5));
+  fVar1 = (float)dVar3 * 1.0f;
   *(uint *)(extraout_EBX + 0x2dc) = 0;
   *(float *)(extraout_EBX + 0x2d8) = fVar1;
   return;

@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 9,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 24
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 26
   },
   "cross_references": [],
   "function": {
@@ -39,7 +41,7 @@
     {
       "addr": "0042bc20",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bc20"
+      "name": "core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20"
     }
   ],
   "globals": [],
@@ -90,7 +92,22 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "SCollisionInfo *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

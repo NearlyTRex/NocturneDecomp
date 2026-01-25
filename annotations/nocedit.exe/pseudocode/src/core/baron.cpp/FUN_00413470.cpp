@@ -12,13 +12,13 @@
 void core_baron_cpp_FUN_00413470(void)
 
 {
-  CDemonActor *this_ptr;
+  CCharacter *this_ptr;
   CVector3f *pCVar1;
   int iVar2;
   int in_stack_00000004;
   CDemonActor *in_stack_00000008;
-  SCollisionInfo *in_stack_ffffffcc;
-  CVector3f CStack_2c;
+  CVector3f CStack_30;
+  float local_24;
   float local_20;
   float local_1c;
   float local_18;
@@ -27,22 +27,24 @@ void core_baron_cpp_FUN_00413470(void)
   if ((((in_stack_00000008 != (CDemonActor *)0x0) &&
        (in_stack_00000008 != *(CDemonActor **)(in_stack_00000004 + 0x1fcac))) &&
       (*(CDemonActor **)(in_stack_00000004 + 0x1fcac) == (CDemonActor *)0x0)) &&
-     ((this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
+     ((this_ptr = (CCharacter *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
                             (in_stack_00000008,g_CCharacterClassInfo.name_hash),
-      this_ptr == (CDemonActor *)0x0 ||
-      (iVar2 = (*this_ptr->vtable[1].hasCollision)(this_ptr,in_stack_ffffffcc), iVar2 < 1)))) {
+      this_ptr == (CCharacter *)0x0 ||
+      (iVar2 = (*(((this_ptr->base_actor).vtable._uc)->_uc).isDamageable)(this_ptr), iVar2 < 1)))) {
     *(CDemonActor **)(in_stack_00000004 + 0x1fcac) = in_stack_00000008;
+    local_18 = 0.0;
     local_14 = 0.0;
     pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                       (*(CDemonActor **)(in_stack_00000004 + 0x1fcac),&CStack_2c,
-                        (CVector3f *)&local_14);
+                       (*(CDemonActor **)(in_stack_00000004 + 0x1fcac),&CStack_30,
+                        (CVector3f *)&local_18);
     iVar2 = *(int *)(in_stack_00000004 + 0x1fcac);
-    local_20 = *(float *)(iVar2 + 0x20) + pCVar1->x;
-    local_1c = *(float *)(iVar2 + 0x24) + pCVar1->y;
-    local_18 = *(float *)(iVar2 + 0x28) + pCVar1->z;
-    *(float *)(in_stack_00000004 + 0x20) = local_20;
-    *(float *)(in_stack_00000004 + 0x24) = local_1c;
-    *(float *)(in_stack_00000004 + 0x28) = local_18;
+    local_24 = *(float *)(iVar2 + 0x20) + pCVar1->x;
+    local_20 = *(float *)(iVar2 + 0x24) + pCVar1->y;
+    local_1c = *(float *)(iVar2 + 0x28) + pCVar1->z;
+    *(float *)(in_stack_00000004 + 0x20) = local_24;
+    *(float *)(in_stack_00000004 + 0x24) = local_20;
+    *(float *)(in_stack_00000004 + 0x28) = local_1c;
     iVar2 = *(int *)(in_stack_00000004 + 0x1fcac);
     if ((uint *)(in_stack_00000004 + 0x30) != (uint *)(iVar2 + 0x30)) {
       *(uint *)(in_stack_00000004 + 0x30) = *(uint *)(iVar2 + 0x30);

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_gargoyle.cpp_CGargoyle_unk6(CGargoyle* param_1, uint
    param_2) */
 
@@ -26,6 +25,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   int extraout_EAX_00;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
+  SDamageInfo local_104;
   CVector3f local_c8;
   CVector3f local_bc;
   float local_b0;
@@ -95,8 +95,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   if (iVar7 == 0) {
     switch(iVar5) {
     case 0:
-      (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)in_stack_00000004);
+      (*(((in_stack_00000004->base_character).base_actor.vtable._ue)->_ue).field_4)();
       iVar5 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0();
       if (iVar5 == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
@@ -107,7 +106,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
                           ((uint)in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y
                           );
         if (iVar5 == 0) {
-          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable._ub)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-stone.wav");
           in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar9;
         }
@@ -132,7 +131,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
           local_1c = SQRT(local_a4.z * local_a4.z +
                           local_a4.x * local_a4.x + local_a4.y * local_a4.y);
           local_18 = local_1c;
-          if (local_1c < 0x40400000) {
+          if (local_1c < 3.0f) {
             core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_68,&local_a4);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_68.y -
@@ -144,7 +143,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
           }
           if (in_stack_00000004->guard_distance <= local_1c) break;
           pCVar1 = &(in_stack_00000004->base_character).model;
-          if (_DAT_0065ea38 <= local_1c) {
+          if (10.0f <= local_1c) {
             iVar5 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
             if (iVar5 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -163,8 +162,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
       break;
     case 1:
     case 2:
-      (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)in_stack_00000004);
+      (*(((in_stack_00000004->base_character).base_actor.vtable._ue)->_ue).field_4)();
       iVar5 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0();
       pCVar1 = &(in_stack_00000004->base_character).model;
       if (iVar5 == 0) {
@@ -176,7 +174,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
                           ((uint)in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y
                           );
         if (iVar5 == 0) {
-          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable._ub)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-stone.wav");
           in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar9;
         }
@@ -198,7 +196,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
           }
           else {
             (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
-            local_78 = 0x40400000;
+            local_78 = 3.0f;
             (in_stack_00000004->base_character).model.accumulated_root_motion.y =
                  (in_stack_00000004->base_character).model.accumulated_root_motion.z;
             pCVar8->x = (in_stack_00000004->base_character).model.accumulated_root_motion.y;
@@ -217,7 +215,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
               local_30 = SQRT(local_54 * local_54 + local_5c * local_5c);
               local_58 = fVar9;
               local_24 = local_30;
-              if (_DAT_0065ea38 < local_30) {
+              if (10.0f < local_30) {
                 iVar5 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
                 if (iVar5 == 0) {
                   iVar5 = 2;
@@ -272,8 +270,11 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffefc);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_104);
+      local_104.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
+      local_104.attacker = (CDemonActor *)in_stack_00000004;
+      local_104.wielder = (CDemonActor *)in_stack_00000004;
+      local_14 = local_104.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_8c,&g_ZeroVector,
                           (CMatrix3x4f *)
@@ -284,8 +285,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
       core_enemy_cpp_FUN_004a9880();
       break;
     case 5:
-      (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)in_stack_00000004);
+      (*(((in_stack_00000004->base_character).base_actor.vtable._ue)->_ue).field_4)();
       iVar5 = core_gargoyle_cpp_CGargoyle_FUN_004e48a0();
       if ((iVar5 != 0) &&
          (fVar9 = (float)in_stack_00000004[1].base_character.base_actor.runtime_state -
@@ -298,7 +298,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
                           ((uint)in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y
                           );
         if (iVar5 == 0) {
-          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+          fVar9 = (float)(*((in_stack_00000004->base_character).base_actor.vtable._ub)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"gargoyle-alive?.wav");
           in_stack_00000004[1].base_character.base_actor.orient_matrix.m[1].y = fVar9;
         }

@@ -2,10 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 6,
-        "line": 12,
-        "message": "ambiguating new declaration of 'uint core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040()'"
+        "category": "missing_member",
+        "column": 26,
+        "line": 21,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field6_0x5f4'; did you mean 'field_1524'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 29,
+        "line": 23,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field6_0x5f4'; did you mean 'field_1524'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 30,
+        "line": 24,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field6_0x5f4'; did you mean 'field_1524'?"
       }
     ],
     "success": false,
@@ -19,55 +31,37 @@
       {
         "category": "other",
         "column": 25,
-        "line": 20,
+        "line": 17,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 23,
+        "column": 50,
+        "line": 19,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
-      },
-      {
-        "category": "other",
-        "column": 8,
-        "line": 25,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 28,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 29,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 178,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 23,
-    "suspect_count": 14,
+    "pseudocode_lines": 19,
+    "suspect_count": 6,
     "suspect_types": [
+      "format_string_mismatch",
       "param_count_too_few",
-      "stack_param",
-      "unnamed_param"
+      "stack_param"
     ],
-    "total_lines": 85
+    "total_lines": 81
   },
   "cross_references": [
     {
       "addr": "0050a610",
       "from_addr": "0050a891",
-      "name": "core_manpuz.cpp_FUN_0050a610",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -79,9 +73,9 @@
         "0050b0cf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040",
-    "signature": "undefined core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040()"
+    "signature": "int core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCircle * this_ptr)"
   },
   "function_calls": [
     {
@@ -92,7 +86,7 @@
     {
       "addr": "0050aef0",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_FUN_0050aef0"
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aef0"
     }
   ],
   "globals": [
@@ -127,7 +121,7 @@
       {
         "call_addr": "0050a891",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_0050a610",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -136,7 +130,7 @@
       {
         "call_addr": "0050a879",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_0050a610",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -144,7 +138,7 @@
       }
     ],
     "confidence": "medium",
-    "declared_params": 0,
+    "declared_params": 1,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -177,115 +171,71 @@
     "pcode_op_count": 356
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_1",
-      "text": "param_1, uint param_2) */",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 3,
-      "match": "param_2",
-      "text": "param_1, uint param_2) */",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 < 0) || (0xb < in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 < 0) || (0xb < in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000008",
-      "text": "(\"CMansionPuzzleCircle::panelOccupied - invalid index: %d\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100) == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "if (*(int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100) == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = iVar1 * 100 + in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = iVar1 * 100 + in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "if ((*(int *)(in_stack_00000004 + 0x5f0) == 0) ||",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "((*(uint *)(in_stack_00000004 + 0x5f8) & 0x7fffffff) == 0)) {",
+      "text": "if (*(int *)(this_ptr->field6_0x5f4 + in_stack_00000008 * 100 + -4) == 0) {",
       "type": "stack_param"
     },
     {
       "call_site_count": 2,
-      "declared_params": 0,
+      "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"CMansionPuzzleCircle::panelOccupied - invalid inde...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "CMansionPuzzleCircle::panelOccupied - invalid index: %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 12,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CMansionPuzzleCircle::panelOccupied - invalid index: %",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

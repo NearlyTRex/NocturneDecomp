@@ -209,7 +209,7 @@ section .text
     MOV dword ptr [0x02f7c548],EDX      ; 005391ff | g_CEdCheckInstance.checked_state
     MOV EBX,dword ptr [EBP + 0x92]      ; 00539205
         ;   Label: LAB_00539205
-    FLD float ptr [0x00661c44]          ; 0053920b | DAT_00661c44
+    FLD float ptr [0x00661c44]          ; 0053920b | FLOAT_00661c44
     PUSH EBX                            ; 00539211
     FSTP float ptr [0x02f7c540]         ; 00539212 | DAT_02f7c540
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 ; 00539218
@@ -2016,7 +2016,7 @@ section .text
     XOR ECX,ECX                         ; 0053a686
     MOV dword ptr [EBP + 0x2a],EBX      ; 0053a688
     MOV dword ptr [EBP + 0x7a],ECX      ; 0053a68b
-    MOV EAX,[0x00661c44]                ; 0053a68e | DAT_00661c44
+    MOV EAX,[0x00661c44]                ; 0053a68e | FLOAT_00661c44
         ;   Label: LAB_0053a68e
     MOV [0x02f7c540],EAX                ; 0053a693 | DAT_02f7c540
     PUSH 0x17                           ; 0053a698
@@ -2428,7 +2428,7 @@ section .text
     CALL core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060 ; 0053aa89
         ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060()
     ADD ESP,0x8                         ; 0053aa8e
-    MOV EAX,[0x00661c44]                ; 0053aa91 | DAT_00661c44
+    MOV EAX,[0x00661c44]                ; 0053aa91 | FLOAT_00661c44
         ;   Label: caseD_3
     MOV [0x02f7c540],EAX                ; 0053aa96 | DAT_02f7c540
     MOV EDI,dword ptr [EBP + 0x56]      ; 0053aa9b
@@ -2445,7 +2445,7 @@ section .text
     MOV dword ptr [EBX + 0x10],EDI      ; 0053aab7
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 ; 0053aaba
         ;   XREF to: 0056ae50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet * this_ptr, int index)
-    FLD float ptr [0x00661c44]          ; 0053aabf | DAT_00661c44
+    FLD float ptr [0x00661c44]          ; 0053aabf | FLOAT_00661c44
     ADD ESP,0x8                         ; 0053aac5
     FSTP float ptr [0x02f7c540]         ; 0053aac8 | DAT_02f7c540
     TEST byte ptr [0x02cf6a94],0x1      ; 0053aace | g_MouseButtonFlags

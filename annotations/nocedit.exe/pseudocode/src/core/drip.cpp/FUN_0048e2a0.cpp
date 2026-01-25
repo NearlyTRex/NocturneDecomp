@@ -49,7 +49,7 @@ void core_drip_cpp_FUN_0048e2a0(void)
   if ((in_stack_00000004[2].location.area_id & 0x7fffffffU) == 0) {
     fVar3 = in_stack_00000004[2].orient_matrix.m[2].y - in_stack_00000008 * (float)32;
     in_stack_00000004[2].orient_matrix.m[2].y = fVar3;
-    pCVar1 = in_stack_00000004->vtable;
+    pCVar1 = (in_stack_00000004->vtable)._ub;
     (in_stack_00000004->location).position.y =
          fVar3 * in_stack_00000008 + (in_stack_00000004->location).position.y;
     (*pCVar1->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)(auStack_a4 + 0x2c));
@@ -58,7 +58,7 @@ void core_drip_cpp_FUN_0048e2a0(void)
         (fStack_60 - (float)pCStack_6c) * (float)0.84999999999999998) {
       if (*(int *)(in_stack_00000004[2].create_event + 0x10) != 0) {
         core_set_cpp_CDemonSet_FUN_00570fa0(g_CDemonSetPtr);
-        (*in_stack_00000004->vtable->playSound)
+        (*((in_stack_00000004->vtable)._ub)->playSound)
                   (in_stack_00000004,(char *)&in_stack_00000004[2].health);
       }
       iVar5 = *(int *)(in_stack_00000004[2].create_event + 0xc);

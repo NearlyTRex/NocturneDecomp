@@ -15,9 +15,9 @@ undefined FUN_004f9860();
 // Address: 004f9890
 undefined FUN_004f9890();
 
-// Original: core_imp.cpp_FUN_004f98a0
+// Original: core_imp.cpp_CImp_ctor_FUN_004f98a0
 // Address: 004f98a0
-CImp * FUN_004f98a0(CImp * this_ptr);
+CImp * CImp::ctor(CImp * this_ptr);
 
 // Original: core_imp.cpp_FUN_004f9910
 // Address: 004f9910

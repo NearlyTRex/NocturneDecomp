@@ -122,7 +122,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector
     }
     core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
               (this_ptr,&local_cc,&local_9c,&local_8c,0);
-    (*((this_ptr->base).vtable)->playSound)(&this_ptr->base,"glass-1.wav@2.0");
+    (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,"glass-1.wav@2.0");
     if (this_ptr->background_flag != 0) {
       this_ptr->field18_0xb3c = 1;
       return;

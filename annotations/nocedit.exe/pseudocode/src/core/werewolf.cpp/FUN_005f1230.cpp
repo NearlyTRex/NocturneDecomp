@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_werewolf.cpp_FUN_005f1230(uint param_1, uint
    param_2) */
 
@@ -72,13 +71,13 @@ void core_werewolf_cpp_FUN_005f1230(void)
   float local_18;
   float local_14;
   
-  local_28 = 0x3E4CCCCD;
-  local_24 = 0x3E4CCCCD;
-  local_ac = 0x3E4CCCCD;
+  local_28 = 0.2f;
+  local_24 = 0.2f;
+  local_ac = 0.2f;
   local_a4 = 0;
-  local_a8 = 0x3E4CCCCD;
-  local_e8 = *in_stack_00000008 + 0x3E4CCCCD;
-  local_e4 = in_stack_00000008[1] + 0x3E4CCCCD;
+  local_a8 = 0.2f;
+  local_e8 = *in_stack_00000008 + 0.2f;
+  local_e4 = in_stack_00000008[1] + 0.2f;
   local_e0 = in_stack_00000008[2];
   pfVar1 = (float *)(in_stack_00000004 + 0x261c);
   local_d0 = local_e8 * *pfVar1;
@@ -89,17 +88,17 @@ void core_werewolf_cpp_FUN_005f1230(void)
     local_54 = local_cc;
     local_50 = local_c8;
   }
-  local_4c.x = (int)ROUND(local_58 * _DAT_00665740);
-  local_4c.y = (int)ROUND(local_54 * _DAT_00665740);
-  local_4c.z = (int)ROUND(local_50 * _DAT_00665740);
+  local_4c.x = (int)ROUND(local_58 * 256.0f);
+  local_4c.y = (int)ROUND(local_54 * 256.0f);
+  local_4c.z = (int)ROUND(local_50 * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_4c);
-  local_a0 = -0x3E4CCCCD;
-  local_20 = 0x3E4CCCCD;
+  local_a0 = -0.2f;
+  local_20 = 0.2f;
   local_98 = 0;
-  local_9c = 0x3E4CCCCD;
+  local_9c = 0.2f;
   local_64 = *in_stack_00000008 + local_a0;
-  local_60 = in_stack_00000008[1] + 0x3E4CCCCD;
+  local_60 = in_stack_00000008[1] + 0.2f;
   local_5c = in_stack_00000008[2];
   pfVar1 = (float *)(in_stack_00000004 + 0x261c);
   local_70 = local_64 * *pfVar1;
@@ -110,14 +109,14 @@ void core_werewolf_cpp_FUN_005f1230(void)
     local_54 = local_6c;
     local_50 = local_68;
   }
-  local_7c.x = (int)ROUND(local_58 * _DAT_00665740);
-  local_7c.y = (int)ROUND(local_54 * _DAT_00665740);
-  local_7c.z = (int)ROUND(local_50 * _DAT_00665740);
+  local_7c.x = (int)ROUND(local_58 * 256.0f);
+  local_7c.y = (int)ROUND(local_54 * 256.0f);
+  local_7c.z = (int)ROUND(local_50 * 256.0f);
   local_1c = local_a0;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_7c);
-  local_b4 = -0x3E4CCCCD;
-  local_b8 = -0x3E4CCCCD;
+  local_b4 = -0.2f;
+  local_b8 = -0.2f;
   local_b0 = 0;
   local_40 = *in_stack_00000008 + local_b8;
   local_3c = in_stack_00000008[1] + local_b4;
@@ -131,18 +130,18 @@ void core_werewolf_cpp_FUN_005f1230(void)
     local_54 = local_90;
     local_50 = local_8c;
   }
-  local_34.x = (int)ROUND(local_58 * _DAT_00665740);
-  local_34.y = (int)ROUND(local_54 * _DAT_00665740);
-  local_34.z = (int)ROUND(local_50 * _DAT_00665740);
+  local_34.x = (int)ROUND(local_58 * 256.0f);
+  local_34.y = (int)ROUND(local_54 * 256.0f);
+  local_34.z = (int)ROUND(local_50 * 256.0f);
   local_1c = local_b8;
   local_18 = local_b4;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_34);
-  local_d8 = -0x3E4CCCCD;
-  local_14 = 0x3E4CCCCD;
-  local_dc = 0x3E4CCCCD;
+  local_d8 = -0.2f;
+  local_14 = 0.2f;
+  local_dc = 0.2f;
   local_d4 = 0;
-  local_f4 = *in_stack_00000008 + 0x3E4CCCCD;
+  local_f4 = *in_stack_00000008 + 0.2f;
   local_f0 = in_stack_00000008[1] + local_d8;
   local_ec = in_stack_00000008[2];
   pfVar1 = (float *)(in_stack_00000004 + 0x261c);
@@ -154,9 +153,9 @@ void core_werewolf_cpp_FUN_005f1230(void)
     local_54 = local_84;
     local_50 = local_80;
   }
-  local_c4.x = (int)ROUND(local_58 * _DAT_00665740);
-  local_c4.y = (int)ROUND(local_54 * _DAT_00665740);
-  local_c4.z = (int)ROUND(local_50 * _DAT_00665740);
+  local_c4.x = (int)ROUND(local_58 * 256.0f);
+  local_c4.y = (int)ROUND(local_54 * 256.0f);
+  local_c4.z = (int)ROUND(local_50 * 256.0f);
   local_18 = local_d8;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c4);

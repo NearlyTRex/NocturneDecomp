@@ -79,15 +79,15 @@ void core_flies_cpp_FUN_004cbf00(void)
       (in_stack_00000004->location).area_id = *(int *)(iVar9 + 0x2c);
     }
     if ((0 < in_stack_00000004[0x1f].health) &&
-       (fVar1 = (float)in_stack_00000004[0x1f].field6_0x68 - in_stack_00000008,
-       in_stack_00000004[0x1f].field6_0x68 = (int)fVar1, fVar1 <= 0.0)) {
+       (fVar1 = (float)in_stack_00000004[0x1f].validation_magic - in_stack_00000008,
+       in_stack_00000004[0x1f].validation_magic = (int)fVar1, fVar1 <= 0.0)) {
       if (*(int *)(in_stack_00000004[1].actor_name + 0xc) < 200) {
         core_flies_cpp_FUN_004cc760();
         iVar9 = in_stack_00000004[0x1f].field7_0x6c;
         iVar2 = in_stack_00000004[0x1f].health;
         *(int *)(in_stack_00000004[1].actor_name + 0xc) =
              *(int *)(in_stack_00000004[1].actor_name + 0xc) + 1;
-        in_stack_00000004[0x1f].field6_0x68 = iVar9;
+        in_stack_00000004[0x1f].validation_magic = iVar9;
         in_stack_00000004[0x1f].health = iVar2 + -1;
       }
       else {

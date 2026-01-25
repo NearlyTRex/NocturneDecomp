@@ -17,9 +17,9 @@
 ;   undefined4 s_rue_00658495
 ;   undefined4 s_ue_00658496
 ;   undefined4 s_e_00658497
-;   undefined4 DAT_006659cc
-;   undefined4 PTR_FUN_006659cd+3
-;   CDemonActor_vtable PTR_core_zombie.cpp_CZombie_FUN_006659e4
+;   float FLOAT_006659cc = 50
+;   float FLOAT_006659d0 = 100
+;   CDemonActor_vtable g_CZombieVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
@@ -46,15 +46,15 @@ section .text
     ADD EAX,0x158                       ; 005f8ffb
     PUSH EAX                            ; 005f9000
     MOV ESI,0x658494                    ; 005f9001 | = "true"
-    MOV dword ptr [EAX + -0x4],0x6659e4 ; 005f9006 | PTR_core_zombie.cpp_CZombie_FUN_006659e4
+    MOV dword ptr [EAX + -0x4],0x6659e4 ; 005f9006 | g_CZombieVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 005f900d
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3f000000 ; 005f9012
     LEA EDI,[EBX + 0xbedc]              ; 005f901c
     MOV dword ptr [EBX + 0x2de0],0x3f800000 ; 005f9022
-    FLD float ptr [0x006659cc]          ; 005f902c | DAT_006659cc
+    FLD float ptr [0x006659cc]          ; 005f902c | FLOAT_006659cc
     MOV dword ptr [EBX + 0xbecc],0x0    ; 005f9032
-    FLD float ptr [0x006659d0]          ; 005f903c | PTR_FUN_006659cd+3
+    FLD float ptr [0x006659d0]          ; 005f903c | FLOAT_006659d0
     MOV dword ptr [EBX + 0xbec8],0x0    ; 005f9042
     ADD ESP,0x8                         ; 005f904c
     FXCH                                ; 005f904f

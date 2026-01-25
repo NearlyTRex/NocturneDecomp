@@ -99,7 +99,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_48 = local_48 + -1.0f;
       }
       if (0.0 < local_48) {
-        (*this_ptr->vtable->playSound)(this_ptr,(char *)&this_ptr[2].field22_0x120);
+        (*((this_ptr->vtable)._ub)->playSound)(this_ptr,(char *)&this_ptr[2].field22_0x120);
       }
     }
     local_14 = (float)this_ptr[2].field21_0x11c + (float)0.25;
@@ -152,7 +152,7 @@ void core_pendulum_cpp_FUN_00549b90(void)
         local_60 = local_60 + -1.0f;
       }
       if (0.5 < local_60) {
-        (*this_ptr->vtable->playSound)
+        (*((this_ptr->vtable)._ub)->playSound)
                   (this_ptr,(char *)&this_ptr[2].previous_transform_state.dirty_flags);
       }
     }

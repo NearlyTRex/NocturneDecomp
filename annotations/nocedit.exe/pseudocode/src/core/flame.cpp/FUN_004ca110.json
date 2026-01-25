@@ -34,73 +34,73 @@
       {
         "category": "other",
         "column": 17,
-        "line": 91,
-        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
-      },
-      {
-        "category": "other",
-        "column": 22,
         "line": 92,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 22,
         "line": 93,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 22,
+        "column": 17,
         "line": 94,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 17,
-        "line": 106,
+        "column": 22,
+        "line": 95,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 22,
+        "column": 17,
         "line": 107,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 22,
         "line": 108,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "other",
-        "column": 22,
+        "column": 17,
         "line": 109,
+        "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 110,
         "message": "cast from 'CVector3i*' to 'int' loses precision [-fpermissive]"
       },
       {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 121,
+        "line": 122,
         "message": "'_DAT_0065e010' was not declared in this scope; did you mean 'DAT_00681010'?"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 144,
+        "line": 145,
         "message": "'void*' is not a pointer-to-object type"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 226,
+        "line": 227,
         "message": "'_DAT_0065e010' was not declared in this scope; did you mean 'DAT_00681010'?"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 253,
+        "line": 254,
         "message": "cast from 'int*' to 'int' loses precision [-fpermissive]"
       }
     ],
@@ -115,66 +115,66 @@
       {
         "category": "other",
         "column": 8,
-        "line": 91,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 13,
         "line": 92,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 8,
+        "column": 13,
         "line": 93,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 13,
+        "column": 8,
         "line": 94,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 8,
-        "line": 106,
+        "column": 13,
+        "line": 95,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 13,
+        "column": 8,
         "line": 107,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 8,
+        "column": 13,
         "line": 108,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 13,
+        "column": 8,
         "line": 109,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
+        "column": 13,
+        "line": 110,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
         "column": 17,
-        "line": 252,
+        "line": 253,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 451,
-    "complexity_score": 1403,
+    "complexity_score": 1404,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 39,
-    "pseudocode_lines": 288,
+    "pseudocode_lines": 289,
     "suspect_count": 108,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -185,7 +185,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 739
+    "total_lines": 740
   },
   "cross_references": [
     {
@@ -678,705 +678,705 @@
       "description": "Unresolved stack parameter",
       "line": 65,
       "match": "in_stack_00000004",
-      "text": "this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);",
+      "text": "this_ptr_00 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 66,
       "match": "in_stack_00000004",
-      "text": "this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);",
+      "text": "(in_stack_00000004,&local_f4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 68,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.orientation.y = fVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 71,
       "match": "in_stack_00000004",
       "text": "(1.0 < SQRT(*(float *)(in_stack_00000004[1].actor_name + 8) *",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 71,
       "match": "SQRT",
       "text": "(1.0 < SQRT(*(float *)(in_stack_00000004[1].actor_name + 8) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 72,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].actor_name + 8) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 73,
       "match": "in_stack_00000004",
       "text": "*(float *)in_stack_00000004[1].actor_name *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 74,
       "match": "in_stack_00000004",
       "text": "*(float *)in_stack_00000004[1].actor_name +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 75,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].actor_name + 4) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 76,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].actor_name + 4)) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 77,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].orient_matrix.m[2].x)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 80,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 81,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 80,
+      "line": 81,
       "match": "4.2039e-45",
       "text": "(in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 85,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_5c + (uint)bVar5 * -8 + 4);",
+      "text": "*(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_5c + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "text": "*(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 88,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + 4);",
+      "text": "*(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 101,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 102,
       "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_98 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 112,
       "match": "in_stack_00000004",
       "text": "fStack_74 = *(float *)in_stack_00000004[1].actor_name * 0.5f;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 115,
       "match": "ROUND",
       "text": "CStack_d4.x = (int)ROUND(fStack_74 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 116,
       "match": "ROUND",
       "text": "CStack_d4.y = (int)ROUND(_DAT_0065e010 * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 117,
       "match": "ROUND",
       "text": "CStack_d4.z = (int)ROUND(_DAT_0065e010 * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 120,
       "match": "in_stack_00000004",
       "text": "fStack_70 = *(float *)(in_stack_00000004[1].actor_name + 4);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 121,
       "match": "ROUND",
       "text": "CStack_c8.x = (int)ROUND(fStack_74 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 122,
       "match": "ROUND",
       "text": "CStack_c8.y = (int)ROUND(fStack_70 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 122,
+      "line": 123,
       "match": "ROUND",
       "text": "CStack_c8.z = (int)ROUND(fStack_6c * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 127,
       "match": "ROUND",
       "text": "CStack_b0.x = (int)ROUND(fStack_74 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 128,
       "match": "ROUND",
       "text": "CStack_b0.y = (int)ROUND(fStack_70 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
+      "line": 129,
       "match": "ROUND",
       "text": "CStack_b0.z = (int)ROUND(fStack_6c * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 133,
       "match": "ROUND",
       "text": "CStack_2c.x = (int)ROUND(fStack_74 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 134,
       "match": "ROUND",
       "text": "CStack_2c.y = (int)ROUND(_DAT_0065e010 * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 135,
       "match": "ROUND",
       "text": "CStack_2c.z = (int)ROUND(fStack_6c * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 139,
+      "line": 140,
       "match": "unaff_EBP",
       "text": "if (unaff_EBP == 3) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 143,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 5.60519e-45) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 142,
+      "line": 143,
       "match": "5.60519e-45",
       "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 5.60519e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 145,
+      "line": 146,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 145,
+      "line": 146,
       "match": "1.4013e-45",
       "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 148,
+      "line": 149,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 150,
+      "line": 151,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 151,
+      "line": 152,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 153,
+      "line": 154,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 154,
+      "line": 155,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 156,
+      "line": 157,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 157,
+      "line": 158,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 159,
+      "line": 160,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 160,
+      "line": 161,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].previous_transform_state.orientation.z == 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 161,
+      "line": 162,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 162,
+      "line": 163,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[1].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 163,
+      "line": 164,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 164,
+      "line": 165,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[3].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 167,
+      "line": 168,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[0].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 168,
+      "line": 169,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 169,
+      "line": 170,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[2].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 170,
+      "line": 171,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 172,
+      "line": 173,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[3].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 173,
+      "line": 174,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 174,
+      "line": 175,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[1].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 175,
+      "line": 176,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
+      "line": 181,
       "match": "in_stack_00000004",
       "text": "((double)*(float *)(in_stack_00000004[1].actor_name + 0xc));",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 183,
+      "line": 184,
       "match": "DAT_0067b100",
       "text": "&DAT_0067b100 +",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
+      "line": 185,
       "match": "in_stack_00000004",
       "text": "(int)in_stack_00000004[1].orient_matrix.m[1].z * 8 + (int)ROUND(dVar6) % 8);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
+      "line": 185,
       "match": "ROUND",
       "text": "(int)in_stack_00000004[1].orient_matrix.m[1].z * 8 + (int)ROUND(dVar6) % 8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 191,
+      "line": 192,
       "match": "2.8026e-45",
       "text": "local_f4.min.x = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 194,
+      "line": 195,
       "match": "4.2039e-45",
       "text": "local_f4.min.y = 4.2039e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 205,
+      "line": 206,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 206,
+      "line": 207,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 206,
+      "line": 207,
       "match": "1.4013e-45",
       "text": "if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 208,
       "match": "in_stack_00000004",
       "text": "(fStack_14 = *(float *)(in_stack_00000004[1].actor_name + 4) * (float)2,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 208,
+      "line": 209,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.orientation.y != 0.0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 211,
+      "line": 212,
       "match": "in_stack_00000004",
       "text": "CStack_20.y = (int)(*(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.5);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 219,
+      "line": 220,
       "match": "ROUND",
       "text": "CStack_bc.x = (int)ROUND(fStack_44 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 220,
+      "line": 221,
       "match": "ROUND",
       "text": "CStack_bc.y = (int)ROUND(fStack_44 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 221,
+      "line": 222,
       "match": "ROUND",
       "text": "CStack_bc.z = (int)ROUND(_DAT_0065e010 * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 226,
+      "line": 227,
       "match": "ROUND",
       "text": "CStack_68.x = (int)ROUND(fStack_44 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 227,
+      "line": 228,
       "match": "ROUND",
       "text": "CStack_68.y = (int)ROUND(fStack_40 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 228,
+      "line": 229,
       "match": "ROUND",
       "text": "CStack_68.z = (int)ROUND(fStack_3c * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 232,
+      "line": 233,
       "match": "ROUND",
       "text": "CStack_8c.x = (int)ROUND(fStack_44 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 233,
+      "line": 234,
       "match": "ROUND",
       "text": "CStack_8c.y = (int)ROUND(fStack_40 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 234,
+      "line": 235,
       "match": "ROUND",
       "text": "CStack_8c.z = (int)ROUND(fStack_3c * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 238,
+      "line": 239,
       "match": "ROUND",
       "text": "CStack_38.x = (int)ROUND(fStack_44 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 239,
+      "line": 240,
       "match": "ROUND",
       "text": "CStack_38.y = (int)ROUND(fStack_40 * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 240,
+      "line": 241,
       "match": "ROUND",
       "text": "CStack_38.z = (int)ROUND(fStack_3c * _DAT_0065e010);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 261,
+      "line": 262,
       "match": "2.29589e-41",
       "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = 2.29589e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 262,
+      "line": 263,
       "match": "2.29589e-41",
       "text": "this_ptr->vertex_buffer_ptr[1].w_recip = 2.29589e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 263,
+      "line": 264,
       "match": "2.29589e-41",
       "text": "this_ptr->vertex_buffer_ptr[2].w_recip = 2.29589e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 264,
+      "line": 265,
       "match": "2.29589e-41",
       "text": "this_ptr->vertex_buffer_ptr[3].w_recip = 2.29589e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 265,
+      "line": 266,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr->u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 266,
+      "line": 267,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr->v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 267,
+      "line": 268,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[1].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 268,
+      "line": 269,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 269,
+      "line": 270,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 270,
+      "line": 271,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 271,
+      "line": 272,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 272,
+      "line": 273,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",
-      "line": 282,
+      "line": 283,
       "match": "DAT_0067b0c8",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_0067b0c8);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 289,
+      "line": 290,
       "match": "in_stack_00000004",
       "text": "return in_stack_00000004[1].previous_transform_state.orientation.y;",
       "type": "stack_param"

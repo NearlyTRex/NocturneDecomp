@@ -9,21 +9,9 @@
       },
       {
         "category": "missing_member",
-        "column": 52,
-        "line": 45,
+        "column": 51,
+        "line": 46,
         "message": "'CDemonSet' {aka 'struct CDemonSet'} has no member named 'field19_0x14f0a0'"
-      },
-      {
-        "category": "missing_member",
-        "column": 14,
-        "line": 54,
-        "message": "'SDamageInfo' {aka 'struct SDamageInfo'} has no member named 'field0_0x0'; did you mean 'field_0'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 58,
-        "message": "void value not ignored as it ought to be"
       }
     ],
     "success": false,
@@ -36,26 +24,26 @@
       },
       {
         "category": "other",
-        "column": 67,
-        "line": 42,
+        "column": 51,
+        "line": 43,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 187,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 54,
     "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 125
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -283,7 +271,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
+      "text": "CCharacter *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -297,56 +285,56 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000004",
-      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&local_24,in_stack_00000008);",
+      "text": "(&in_stack_00000004->model,&local_24,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000008",
-      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&local_24,in_stack_00000008);",
+      "text": "(&in_stack_00000004->model,&local_24,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&local_30,input_local_point);",
+      "text": "(&in_stack_00000004->base_actor,&local_30,input_local_point);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->playSound)(in_stack_00000004,\"icepick-punch?.wav\");",
+      "text": "(*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 36,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->playSound)(in_stack_00000004,\"icepick-punch?.wav\");",
+      "text": "(&in_stack_00000004->base_actor,\"icepick-punch?.wav\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "if (this_ptr != in_stack_00000004) break;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 49,
       "match": "in_stack_00000004",
-      "text": "local_6c.attacker = in_stack_00000004;",
+      "text": "local_6c.attacker = &in_stack_00000004->base_actor;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 50,
       "match": "in_stack_00000004",
-      "text": "local_6c.wielder = in_stack_00000004;",
+      "text": "local_6c.wielder = &in_stack_00000004->base_actor;",
       "type": "stack_param"
     },
     {

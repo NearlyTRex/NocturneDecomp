@@ -40,7 +40,7 @@ void core_larva_cpp_FUN_00503a20(void)
         pcVar3 = "sml";
       }
       crt_stdio_c_sprintf_FUN_005fdbd0(local_84,"l%s-shot?.wav",pcVar3);
-      iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,local_84);
+      iVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,local_84);
       in_stack_00000004[0x8d].field26_0x148 = iVar4;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -68,7 +68,7 @@ void core_larva_cpp_FUN_00503a20(void)
       pcVar3 = "sml";
     }
     crt_stdio_c_sprintf_FUN_005fdbd0(local_e8,"l%s-die?.wav",pcVar3);
-    iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,local_e8);
+    iVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,local_e8);
     in_stack_00000004[0x8d].field26_0x148 = iVar4;
   }
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

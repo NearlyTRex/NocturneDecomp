@@ -29,7 +29,7 @@
 ;   undefined4 DAT_0061357f
 ;   undefined4 s__00613580
 ;   CDemonActor_vtable g_CDemonActorVTable
-;   undefined4 DAT_0078a123
+;   int g_ActorMagicNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
@@ -116,7 +116,7 @@ section .text
     MOV ESI,0x61357d                    ; 004089e8 | = "str"
     MOV dword ptr [EBX + 0x148],0x0     ; 004089ed
     LEA EDI,[EBX + 0x11c]               ; 004089f7
-    MOV dword ptr [EBX + 0x68],0x78a123 ; 004089fd | DAT_0078a123
+    MOV dword ptr [EBX + 0x68],0x78a123 ; 004089fd | g_ActorMagicNumber
     PUSH EDI                            ; 00408a04
     MOV AL,byte ptr [ESI]               ; 00408a05 | = "str" | DAT_0061357f
         ;   Label: LAB_00408a05

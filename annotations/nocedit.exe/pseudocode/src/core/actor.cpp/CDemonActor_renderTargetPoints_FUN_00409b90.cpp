@@ -25,7 +25,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90(CDemonAc
             (this_ptr,"..\\core\\actor.cpp",0x4ff);
   crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&stack0xffffff64,10,&g_CVectorTypeInfo)
   ;
-  iVar4 = (*this_ptr->vtable->getTargetPoints)(this_ptr,(CVector3f *)&stack0xffffff64);
+  iVar4 = (*((this_ptr->vtable)._ub)->getTargetPoints)(this_ptr,(CVector3f *)&stack0xffffff64);
   pfVar9 = afStack_94;
   iVar7 = 0;
   if (0 < iVar4) {

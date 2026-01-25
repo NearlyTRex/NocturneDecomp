@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gargoyle_dfm_0062d7d6
-;   undefined4 DAT_0065ea30
-;   undefined4 DAT_0065ea34
-;   CDemonActor_vtable PTR_core_gargoyle.cpp_CGargoyle_FUN_0065ea44
+;   float DAT_0065ea30 = 50
+;   float DAT_0065ea34 = 100
+;   CDemonActor_vtable g_CGargoyleVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
@@ -34,7 +34,7 @@ section .text
     MOV EBX,EAX                         ; 004e44f3
     ADD EAX,0x158                       ; 004e44f5
     PUSH EAX                            ; 004e44fa
-    MOV dword ptr [EAX + -0x4],0x65ea44 ; 004e44fb | PTR_core_gargoyle.cpp_CGargoyle_FUN_0065ea44
+    MOV dword ptr [EAX + -0x4],0x65ea44 ; 004e44fb | g_CGargoyleVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004e4502
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 004e4507

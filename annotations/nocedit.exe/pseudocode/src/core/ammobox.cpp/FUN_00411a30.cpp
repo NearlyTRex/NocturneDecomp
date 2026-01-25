@@ -17,7 +17,7 @@ void core_ammobox_cpp_FUN_00411a30(void)
   
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000004,g_CAmmoBoxClassInfo.name_hash);
-  switch(pCVar2[2].field6_0x68) {
+  switch(pCVar2[2].validation_magic) {
   case 0:
     pcVar3 = "Generic";
     break;

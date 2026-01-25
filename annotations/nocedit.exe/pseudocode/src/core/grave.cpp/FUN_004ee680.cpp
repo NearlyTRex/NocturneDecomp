@@ -19,7 +19,7 @@ int core_grave_cpp_FUN_004ee680(void)
      (((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0 ||
        (in_stack_00000004[2].orient.bank == 0.0)) || (in_stack_00000004[2].orient.pitch != 0.0)))) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
+    this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                          (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     if (iVar1 != 0) {

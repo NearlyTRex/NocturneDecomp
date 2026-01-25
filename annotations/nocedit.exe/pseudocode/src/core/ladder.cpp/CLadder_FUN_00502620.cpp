@@ -39,7 +39,7 @@ int __cdecl core_ladder_cpp_CLadder_FUN_00502620(CLadder *this_ptr)
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
   uVar8 = 0x50264d;
   pCVar9 = this_ptr;
-  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                           (&this_ptr->base_actor,(CBoundingBox3D *)&local_74);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if ((iVar1 != 0) && (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0)) {
@@ -163,7 +163,7 @@ int __cdecl core_ladder_cpp_CLadder_FUN_00502620(CLadder *this_ptr)
         vertex2.w_recip = (float)pfVar12;
         engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,vertex2);
         local_74.projected_vertex.transformed_y =
-             (int)((float)local_74.projected_vertex.transformed_y + 0x3F800000);
+             (int)((float)local_74.projected_vertex.transformed_y + 1.0f);
       }
     }
   }

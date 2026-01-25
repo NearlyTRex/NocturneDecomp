@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_bugs.cpp_FUN_00425b70(uint param_1, uint param_2,
    uint param_3) */
 
@@ -21,7 +20,7 @@ uint core_bugs_cpp_FUN_00425b70(void)
   float in_stack_00000008;
   float in_stack_0000000c;
   
-  fVar2 = 1.0 / _DAT_0065b5c8;
+  fVar2 = 1.0 / 0.5f;
   fVar1 = *(float *)(in_stack_00000004 + 0x199f0);
   crt_math_c_round_FUN_005fe6b0
             ((double)((in_stack_00000008 - *(float *)(in_stack_00000004 + 0x199ec)) * fVar2));

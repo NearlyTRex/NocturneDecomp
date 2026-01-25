@@ -8,19 +8,27 @@
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 16,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 5,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 5,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 34
+    "pseudocode_lines": 12,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 41
   },
   "cross_references": [],
   "function": {
@@ -39,7 +47,7 @@
     {
       "addr": "004285d0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_004285d0"
+      "name": "core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0"
     }
   ],
   "globals": [],
@@ -110,7 +118,36 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "CVector3f *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "local_14.y = *(float *)(in_stack_0000000c + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008,&local_14);",
+      "type": "stack_param"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

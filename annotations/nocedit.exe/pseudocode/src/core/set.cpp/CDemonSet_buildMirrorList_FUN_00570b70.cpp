@@ -26,7 +26,7 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00570b70(CDemonSet *this
                         (*(CDemonActor **)pCVar3->actor_list_data,g_CGlassClassInfo.name_hash);
       if ((actor != (CGlass *)0x0) && (actor->mirror_flag != 0)) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)actor);
-        this_ptr_00 = (*((actor->base).vtable)->getBoundingBox)
+        this_ptr_00 = (*((actor->base).vtable._ub)->getBoundingBox)
                                 ((CDemonActor *)actor,(CBoundingBox3D *)&fStack_28);
         fStack_28 = 7.993952e-39;
         iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);

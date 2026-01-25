@@ -71,7 +71,7 @@ core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,
   local_17c.w_recip = (float)&local_14c;
   local_17c.fog = (float)this_ptr;
   local_17c.color = 0x40d975;
-  this_ptr_00 = (*this_ptr->vtable->getBoundingBox)(this_ptr,&local_14c);
+  this_ptr_00 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_14c);
   corner_index = 0.0;
   g_ActiveRenderColor = in_stack_00000010;
   do {

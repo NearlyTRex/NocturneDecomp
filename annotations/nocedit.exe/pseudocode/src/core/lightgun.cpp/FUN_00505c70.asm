@@ -21,7 +21,7 @@
 ;   TerminatedCString s_cre_fire_wav_006314dc
 ;   double DOUBLE_006314ee = 1.5
 ;   float FLOAT_006314f6 = 0.5
-;   undefined4 DAT_00660a40
+;   float FLOAT_00660a40 = 30
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -56,7 +56,7 @@ section .text
     AND ESP,0xfffffff8                  ; 00505c7c
     MOV EAX,dword ptr [EBP + 0x14]      ; 00505c7f
     FLD float ptr [EAX + 0x580]         ; 00505c82
-    FCOMP float ptr [0x00660a40]        ; 00505c88 | DAT_00660a40
+    FCOMP float ptr [0x00660a40]        ; 00505c88 | FLOAT_00660a40
     FNSTSW AX                           ; 00505c8e
     SAHF                                ; 00505c90
     JNC 0x00505c9c                      ; 00505c91
@@ -438,7 +438,7 @@ section .text
         ;   XREF to: 00505ea6 (CONDITIONAL_JUMP)  ; LAB_00505ea6
     MOV EAX,dword ptr [EBP + 0x14]      ; 005061b4
     MOV ESI,dword ptr [0x006810c8]      ; 005061b7 | g_CDemonSetPtr
-    FLD float ptr [0x00660a40]          ; 005061bd | DAT_00660a40
+    FLD float ptr [0x00660a40]          ; 005061bd | FLOAT_00660a40
     PUSH ESI                            ; 005061c3 | g_CDemonSetInstance
     FSTP float ptr [EAX + 0x580]        ; 005061c4
     CALL core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0 ; 005061ca
@@ -661,7 +661,7 @@ section .text
         ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 0050640b
     MOV EDX,dword ptr [EDI + 0x57c]     ; 0050640e
-    PUSH dword ptr [0x00660a48]         ; 00506414 | DAT_00660a48
+    PUSH dword ptr [0x00660a48]         ; 00506414 | FLOAT_00660a48
     PUSH EDX                            ; 0050641a
     CALL sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0 ; 0050641b
         ;   XREF to: 005a9ae0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0(uint sfx_handle, float volume)

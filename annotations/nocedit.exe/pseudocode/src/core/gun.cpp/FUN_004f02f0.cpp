@@ -12,7 +12,7 @@ CGun * __cdecl core_gun_cpp_FUN_004f02f0(CGun *this_ptr)
   CWeapon *pCVar1;
   
   pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar1->base_actor).vtable = &PTR_core_weapon_cpp_ActorModelSomething_FUN_005edff0_0065f2a4;
+  (pCVar1->base_actor).vtable._ub = &PTR_core_weapon_cpp_ActorModelSomething_FUN_005edff0_0065f2a4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&pCVar1->model,"gat.kfm");
   pCVar1->field3_0x2d8[0] = '\0';

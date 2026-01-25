@@ -15,9 +15,9 @@ undefined FUN_00502f50();
 // Address: 00502f80
 undefined FUN_00502f80();
 
-// Original: core_larva.cpp_FUN_00502f90
+// Original: core_larva.cpp_CLarva_ctor_FUN_00502f90
 // Address: 00502f90
-CLarva * FUN_00502f90(CLarva * this_ptr);
+CLarva * CLarva::ctor(CLarva * this_ptr);
 
 // Original: core_larva.cpp_FUN_00503020
 // Address: 00503020

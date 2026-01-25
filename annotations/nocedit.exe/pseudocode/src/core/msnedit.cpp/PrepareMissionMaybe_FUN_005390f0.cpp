@@ -144,7 +144,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
     DAT_02f7c634 = 0;
     g_CEdCheckInstance.checked_state = 1;
   }
-  _DAT_02f7c540 = 0x40A00000;
+  _DAT_02f7c540 = 5.0f;
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
   core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
             (g_CDemonSetPtr,*(int *)(in_stack_00000004->field2_0xc + 4));
@@ -748,7 +748,7 @@ LAB_00539e00:
           local_64 = 1;
           local_14 = 0;
         }
-        _DAT_02f7c540 = 0x40A00000;
+        _DAT_02f7c540 = 5.0f;
       }
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x17);
       if (iVar10 != 0) {
@@ -950,14 +950,14 @@ LAB_0053a88c:
         g_CurrentLineNumber = 0x78b;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid cameraMode!");
       }
-      _DAT_02f7c540 = 0x40A00000;
+      _DAT_02f7c540 = 5.0f;
     }
     pCVar1 = g_CDemonSetPtr;
     if (-1 < local_38) {
       g_CEdCheckInstance.checked_state = 0;
       *(int *)(in_stack_00000004->field2_0xc + 4) = local_38;
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(pCVar1,local_38);
-      _DAT_02f7c540 = 0x40A00000;
+      _DAT_02f7c540 = 5.0f;
     }
     if (((((g_MouseButtonFlags & 1U) == 0) && ((local_30 & 1) != 0)) && (DAT_02f7c538 == 0)) &&
        (g_ActiveButton == (CEdButton *)0x0)) {

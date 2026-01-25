@@ -27,7 +27,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
   else if ((layer_flag != 0) || (this_ptr->field18_0xb3c != 0)) {
     this_ptr->field18_0xb3c = 0;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-    this_ptr_01 = (*((this_ptr->base).vtable)->getBoundingBox)
+    this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                             (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
     core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if (this_ptr->shattered == 0) {

@@ -44,9 +44,9 @@
 ;   double DOUBLE_00653934 = 0.5
 ;   float FLOAT_0065393c = 0.3490658
 ;   float FLOAT_00653940 = 0.6000000
-;   undefined4 DAT_00663770
-;   undefined4 DAT_00663774
-;   undefined4 DAT_00663778
+;   float FLOAT_00663770 = -1.047198
+;   float FLOAT_00663774 = 1.221730
+;   float FLOAT_00663778 = 2.700000
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_03f6bad8
@@ -374,7 +374,7 @@ section .text
     FLD float ptr [0x0065393c]          ; 005bff6b | FLOAT_0065393c
     FLD float ptr [ESP + 0xc]           ; 005bff71
     FADD ST0,ST1                        ; 005bff75
-    FLD float ptr [0x00663770]          ; 005bff77 | DAT_00663770
+    FLD float ptr [0x00663770]          ; 005bff77 | FLOAT_00663770
     FADDP ST2,ST0                       ; 005bff7d
     FDIVRP                              ; 005bff7f
     FMUL float ptr [0x00653940]         ; 005bff81 | FLOAT_00653940
@@ -390,7 +390,7 @@ section .text
     FLD float ptr [ESP + 0xe0]          ; 005bff98
     FLD float ptr [ESP + 0xc]           ; 005bff9f
     FSUB ST0,ST1                        ; 005bffa3
-    FLD float ptr [0x00663774]          ; 005bffa5 | DAT_00663774
+    FLD float ptr [0x00663774]          ; 005bffa5 | FLOAT_00663774
     FSUBRP ST2,ST0                      ; 005bffab
     FDIVRP                              ; 005bffad
     FMUL float ptr [ESP + 0xdc]         ; 005bffaf
@@ -595,7 +595,7 @@ section .text
     RET                                 ; 005c0206
     FLD float ptr [EBX + 0x1fcb0]       ; 005c0207
         ;   Label: LAB_005c0207
-    FDIV float ptr [0x00663778]         ; 005c020d | DAT_00663778
+    FDIV float ptr [0x00663778]         ; 005c020d | FLOAT_00663778
     FLD1                                ; 005c0213
     FPATAN                              ; 005c0215
     LEA ESI,[ESP + 0x38]                ; 005c0217

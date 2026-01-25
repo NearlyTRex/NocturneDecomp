@@ -26,7 +26,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062e38a = 8
-;   undefined4 DAT_0065f024
+;   float FLOAT_0065f024 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic DAT_0067c028
 ;   undefined4 g_RenderVertexBuffer[0].light
@@ -111,13 +111,13 @@ section .text
     LEA EBX,[ESP + 0x30]                ; 004ecd82
     MOV dword ptr [ESP + 0x1c],EDI      ; 004ecd86
     FLD float ptr [EAX]                 ; 004ecd8a
-    FMUL float ptr [0x0065f024]         ; 004ecd8c | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ecd8c | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ecd92
     FLD float ptr [EAX + 0x4]           ; 004ecd94
-    FMUL float ptr [0x0065f024]         ; 004ecd97 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ecd97 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ecd9d
     FLD float ptr [EAX + 0x8]           ; 004ecda0
-    FMUL float ptr [0x0065f024]         ; 004ecda3 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ecda3 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ecda9
     LEA EAX,[ESP + 0x30]                ; 004ecdac
     PUSH EAX                            ; 004ecdb0
@@ -135,13 +135,13 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004ecdd5
     MOV dword ptr [ESP + 0x20],ECX      ; 004ecdd9
     FLD float ptr [EAX]                 ; 004ecddd
-    FMUL float ptr [0x0065f024]         ; 004ecddf | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ecddf | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ecde5
     FLD float ptr [EAX + 0x4]           ; 004ecde7
-    FMUL float ptr [0x0065f024]         ; 004ecdea | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ecdea | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ecdf0
     FLD float ptr [EAX + 0x8]           ; 004ecdf3
-    FMUL float ptr [0x0065f024]         ; 004ecdf6 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ecdf6 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ecdfc
     LEA EAX,[ESP + 0xc]                 ; 004ecdff
     PUSH EAX                            ; 004ece03
@@ -160,13 +160,13 @@ section .text
     LEA EBX,[ESP + 0x24]                ; 004ece2b
     MOV dword ptr [ESP + 0x1c],EDI      ; 004ece2f
     FLD float ptr [EAX]                 ; 004ece33
-    FMUL float ptr [0x0065f024]         ; 004ece35 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ece35 | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ece3b
     FLD float ptr [EAX + 0x4]           ; 004ece3d
-    FMUL float ptr [0x0065f024]         ; 004ece40 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ece40 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ece46
     FLD float ptr [EAX + 0x8]           ; 004ece49
-    FMUL float ptr [0x0065f024]         ; 004ece4c | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ece4c | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ece52
     LEA EAX,[ESP + 0x24]                ; 004ece55
     PUSH EAX                            ; 004ece59
@@ -185,13 +185,13 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004ece81
     MOV dword ptr [ESP + 0x20],ECX      ; 004ece85
     FLD float ptr [EAX]                 ; 004ece89
-    FMUL float ptr [0x0065f024]         ; 004ece8b | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ece8b | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ece91
     FLD float ptr [EAX + 0x4]           ; 004ece93
-    FMUL float ptr [0x0065f024]         ; 004ece96 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ece96 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ece9c
     FLD float ptr [EAX + 0x8]           ; 004ece9f
-    FMUL float ptr [0x0065f024]         ; 004ecea2 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ecea2 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ecea8
     MOV EAX,ESP                         ; 004eceab
     PUSH EAX                            ; 004ecead

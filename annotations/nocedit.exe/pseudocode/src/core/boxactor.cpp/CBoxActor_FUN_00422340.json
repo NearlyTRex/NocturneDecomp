@@ -1,0 +1,138 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 19,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00422340",
+    "address_range": [
+      [
+        "00422340",
+        "00422389"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CBoxActor_FUN_00422340",
+    "signature": "int core_boxactor.cpp_CBoxActor_FUN_00422340(CBoxActor * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 21,
+      "INT_ADD": 14,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 108
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "*(char **)(in_stack_00000008 + 0x24) = this_ptr->model_name;",
+      "type": "stack_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoxActor",
+        "offset": 52,
+        "vtable_addr": "00663604"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 52,
+        "vtable_addr": "0065b2a4"
+      },
+      {
+        "class_name": "CBoxActor",
+        "offset": 52,
+        "vtable_addr": "0065b1b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
+}

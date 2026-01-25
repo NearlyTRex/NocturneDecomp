@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_bugs.cpp_FUN_004257f0(CCharacter* param_1) */
 
 void core_bugs_cpp_FUN_004257f0(void)
@@ -43,7 +42,7 @@ void core_bugs_cpp_FUN_004257f0(void)
   float local_c;
   
   bVar8 = 0;
-  local_c = 1.0 / _DAT_0065b5c8;
+  local_c = 1.0 / 0.5f;
   local_5c.y = *(float *)(in_stack_00000004 + 0x199cc) + *(float *)(in_stack_00000004 + 0x199d8);
   local_5c.z = *(float *)(in_stack_00000004 + 0x199d0) + *(float *)(in_stack_00000004 + 0x199dc);
   local_50 = *(float *)(in_stack_00000004 + 0x199d4) + *(float *)(in_stack_00000004 + 0x199e0);
@@ -57,11 +56,11 @@ void core_bugs_cpp_FUN_004257f0(void)
   iStack_3c = (int)ROUND(dVar9);
   local_4c = crt_math_c_floor_FUN_005feb90((double)((fVar5 + fVar7) * local_10));
   local_18 = local_44._4_4_;
-  fVar5 = (float)local_44._4_4_ * _DAT_0065b5c8;
+  fVar5 = (float)local_44._4_4_ * 0.5f;
   dVar9 = crt_math_c_round_FUN_005fe6b0(local_4c);
   local_20 = (int)ROUND(dVar9);
-  fVar1 = (float)local_20 * _DAT_0065b5c8;
-  fVar7 = _DAT_0065b5c8 * 11.0f * (float)0.5;
+  fVar1 = (float)local_20 * 0.5f;
+  fVar7 = 0.5f * 11.0f * (float)0.5;
   *(float *)(extraout_EBX + 0x199ec) = (fVar5 - *(float *)(extraout_EBX + 0x20)) - fVar7;
   *(float *)(extraout_EBX + 0x199f0) = (fVar1 - *(float *)(extraout_EBX + 0x28)) - fVar7;
   if (((int)local_44 != *(int *)(extraout_EBX + 0x199e4)) ||
@@ -93,12 +92,12 @@ void core_bugs_cpp_FUN_004257f0(void)
     local_24 = 0;
     do {
       iVar2 = 0;
-      local_5c.x = (float)local_24 * _DAT_0065b5c8 + (float)uVar10;
+      local_5c.x = (float)local_24 * 0.5f + (float)uVar10;
       iVar3 = iStack_3c - local_44._4_4_;
       fVar5 = local_38;
       fVar7 = local_38;
       do {
-        local_5c.z = (float)iVar2 * _DAT_0065b5c8 + (float)uVar11;
+        local_5c.z = (float)iVar2 * 0.5f + (float)uVar11;
         if ((((local_24 < local_28) || (local_34 < local_24)) || (iVar2 < local_2c)) ||
            (local_30 < iVar2)) {
           local_1c = iVar2;

@@ -12,7 +12,7 @@
 ;   core_gore.cpp_FUN_004ed830 at 004ed901
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065f024
+;   float FLOAT_0065f024 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic DAT_0067cb28
 ;   SRenderVertex[16] g_RenderVertexBuffer
@@ -92,13 +92,13 @@ section .text
         ;   Label: LAB_004ed487
     MOV EAX,ESI                         ; 004ed489
     FLD float ptr [EAX]                 ; 004ed48b
-    FMUL float ptr [0x0065f024]         ; 004ed48d | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ed48d | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ed493
     FLD float ptr [EAX + 0x4]           ; 004ed495
-    FMUL float ptr [0x0065f024]         ; 004ed498 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ed498 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ed49e
     FLD float ptr [EAX + 0x8]           ; 004ed4a1
-    FMUL float ptr [0x0065f024]         ; 004ed4a4 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ed4a4 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ed4aa
     MOV EBX,ESP                         ; 004ed4ad
     PUSH EBX                            ; 004ed4af

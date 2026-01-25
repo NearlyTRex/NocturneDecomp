@@ -58,8 +58,8 @@
 ;   double DOUBLE_0062d9a7 = 3.14159265350000
 ;   double DOUBLE_0062d9af = 0.523598775583333
 ;   double DOUBLE_0062d9b7 = 32
-;   undefined4 DAT_0065ea2c
-;   undefined4 DAT_0065ea38
+;   float FLOAT_0065ea2c = 3
+;   float FLOAT_0065ea38 = 10
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_ConsolePtr
 ;   int g_GlobalDeltaTimeInt
@@ -519,7 +519,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x72]      ; 004e4ee7
     FLD float ptr [EBP + 0x72]          ; 004e4eea
     MOV dword ptr [EBP + 0x6e],EAX      ; 004e4eed
-    FCOMP float ptr [0x0065ea2c]        ; 004e4ef0 | DAT_0065ea2c
+    FCOMP float ptr [0x0065ea2c]        ; 004e4ef0 | FLOAT_0065ea2c
     FNSTSW AX                           ; 004e4ef6
     SAHF                                ; 004e4ef8
     JC 0x004e4f97                       ; 004e4ef9
@@ -533,7 +533,7 @@ section .text
         ;   XREF to: 004e4b2d (CONDITIONAL_JUMP)  ; caseD_4
     FLD float ptr [EBP + 0x6e]          ; 004e4f11
     LEA ESI,[EBX + 0x158]               ; 004e4f14
-    FCOMP float ptr [0x0065ea38]        ; 004e4f1a | DAT_0065ea38
+    FCOMP float ptr [0x0065ea38]        ; 004e4f1a | FLOAT_0065ea38
     FNSTSW AX                           ; 004e4f20
     SAHF                                ; 004e4f22
     JNC 0x004e4fe4                      ; 004e4f23
@@ -762,7 +762,7 @@ section .text
         ;   Label: LAB_004e517c
     PUSH 0x3f000000                     ; 004e5181
     MOV dword ptr [EAX + 0x8],EDI       ; 004e5186
-    MOV EDX,dword ptr [0x0065ea2c]      ; 004e5189 | DAT_0065ea2c
+    MOV EDX,dword ptr [0x0065ea2c]      ; 004e5189 | FLOAT_0065ea2c
     MOV ECX,dword ptr [EAX + 0x8]       ; 004e518f
     MOV dword ptr [EAX + 0x4],ECX       ; 004e5192
     MOV ECX,dword ptr [EAX + 0x4]       ; 004e5195
@@ -813,7 +813,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x5a]      ; 004e5218
     FLD float ptr [EBP + 0x5a]          ; 004e521b
     MOV dword ptr [EBP + 0x66],EAX      ; 004e521e
-    FCOMP float ptr [0x0065ea38]        ; 004e5221 | DAT_0065ea38
+    FCOMP float ptr [0x0065ea38]        ; 004e5221 | FLOAT_0065ea38
     FNSTSW AX                           ; 004e5227
     SAHF                                ; 004e5229
     JBE 0x004e524e                      ; 004e522a

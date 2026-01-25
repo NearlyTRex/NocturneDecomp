@@ -78,7 +78,7 @@ void core_bride_cpp_FUN_00424830(void)
               (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48));
     sound_name = "ub-die?.wav";
   }
-  uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+  uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                     (&in_stack_00000004->base_actor,sound_name);
   *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48) = uVar3;
 LAB_00424955:

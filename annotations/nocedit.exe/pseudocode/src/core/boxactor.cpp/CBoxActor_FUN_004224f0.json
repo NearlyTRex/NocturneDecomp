@@ -1,0 +1,166 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 51,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 3,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 51
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004224f0",
+    "address_range": [
+      [
+        "004224f0",
+        "00422546"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CBoxActor_FUN_004224f0",
+    "signature": "void core_boxactor.cpp_CBoxActor_FUN_004224f0(CBoxActor * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00420180",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_setupVelocities_FUN_00420180"
+    },
+    {
+      "addr": "004218d0",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_FUN_004218d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.333333333333333,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 25,
+      "INT_ADD": 17,
+      "INT_AND": 15,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 9,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 130
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "CVector3f *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 == (CVector3f *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "((CBox *)&this_ptr->sim_box,in_stack_00000008,&local_10);",
+      "type": "stack_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoxActor",
+        "offset": 132,
+        "vtable_addr": "00663604"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 132,
+        "vtable_addr": "0065b2a4"
+      },
+      {
+        "class_name": "CBoxActor",
+        "offset": 132,
+        "vtable_addr": "0065b1b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
+}

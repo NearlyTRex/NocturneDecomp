@@ -19,7 +19,8 @@ core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0
   SCollisionInfo SStack_2c;
   
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)&stack0xffffffcc);
-  bbox_type = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)&stack0xffffffcc);
+  bbox_type = (*((this_ptr->vtable)._ub)->hasCollision)(this_ptr,(SCollisionInfo *)&stack0xffffffcc)
+  ;
   if (bbox_type == 0) {
     return 0x40000000;
   }

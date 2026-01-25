@@ -11,7 +11,7 @@
         "category": "missing_member",
         "column": 66,
         "line": 23,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
       },
       {
         "category": "other",
@@ -33,8 +33,8 @@
       },
       {
         "category": "other",
-        "column": 54,
-        "line": 54,
+        "column": 25,
+        "line": 55,
         "message": "void value not ignored as it ought to be"
       },
       {
@@ -114,8 +114,8 @@
       },
       {
         "category": "other",
-        "column": 73,
-        "line": 54,
+        "column": 44,
+        "line": 55,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -430,14 +430,14 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000004",
-      "text": "iVar3 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,\"hotdemon-die.wav\")",
+      "text": "iVar3 = (*((in_stack_00000004->vtable)._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 48,
       "match": "in_stack_00000004",
-      "text": "iVar3 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,\"hotdemon-die.wav\")",
+      "text": "(in_stack_00000004,\"hotdemon-die.wav\");",
       "type": "stack_param"
     },
     {
@@ -479,7 +479,7 @@
       "description": "Unresolved stack parameter",
       "line": 69,
       "match": "in_stack_00000004",
-      "text": "iVar3 = (*in_stack_00000004->vtable->playSound)",
+      "text": "iVar3 = (*((in_stack_00000004->vtable)._ub)->playSound)",
       "type": "stack_param"
     },
     {

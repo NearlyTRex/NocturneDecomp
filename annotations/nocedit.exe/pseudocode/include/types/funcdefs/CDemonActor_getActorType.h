@@ -2,7 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/funcdefs/CDemonActor_FactoryFunc.h"
 
 // Forward declarations
 struct CDemonActor;

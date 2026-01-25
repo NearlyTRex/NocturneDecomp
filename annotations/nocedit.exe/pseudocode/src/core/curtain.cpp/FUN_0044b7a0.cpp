@@ -56,10 +56,10 @@ void core_curtain_cpp_FUN_0044b7a0(void)
     in_stack_00000004[1].actor_name[9] = -0x34;
     in_stack_00000004[1].actor_name[10] = -0x34;
     in_stack_00000004[1].actor_name[0xb] = '=';
-    (*in_stack_00000004->vtable->setup)(in_stack_00000004);
+    (*((in_stack_00000004->vtable)._ub)->setup)(in_stack_00000004);
     return;
   }
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
-  (*in_stack_00000004->vtable->setup)(in_stack_00000004);
+  (*((in_stack_00000004->vtable)._ub)->setup)(in_stack_00000004);
   return;
 }

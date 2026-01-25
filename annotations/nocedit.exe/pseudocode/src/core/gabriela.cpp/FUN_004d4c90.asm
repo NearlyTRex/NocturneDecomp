@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d32e7
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d32e7
 ;   core_gabriela.cpp_FUN_004d4d80 at 004d4ea0
 ;
 ; Referenced Globals:

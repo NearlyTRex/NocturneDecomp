@@ -2,22 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 20,
-        "message": "'PTR_core_cow_cpp_FUN_0065c0b4' was not declared in this scope; did you mean 'core_cow_cpp_FUN_00444c00'?"
+        "category": "missing_member",
+        "column": 11,
+        "line": 33,
+        "message": "'CZombieCow' {aka 'struct CZombieCow'} has no member named 'field1_0xbeb4'"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "missing_member",
         "column": 11,
-        "line": 23,
-        "message": "'_DAT_0065c09c' was not declared in this scope; did you mean 'DAT_0065c098'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 26,
-        "message": "'_PTR_FUN_0065c09d_3' was not declared in this scope"
+        "line": 34,
+        "message": "'CZombieCow' {aka 'struct CZombieCow'} has no member named 'field1_0xbeb4'"
       },
       {
         "category": "missing_member",
@@ -29,18 +23,6 @@
         "category": "missing_member",
         "column": 11,
         "line": 36,
-        "message": "'CZombieCow' {aka 'struct CZombieCow'} has no member named 'field1_0xbeb4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 37,
-        "message": "'CZombieCow' {aka 'struct CZombieCow'} has no member named 'field1_0xbeb4'"
-      },
-      {
-        "category": "missing_member",
-        "column": 11,
-        "line": 38,
         "message": "'CZombieCow' {aka 'struct CZombieCow'} has no member named 'field1_0xbeb4'"
       }
     ],
@@ -55,23 +37,21 @@
       {
         "category": "other",
         "column": 57,
-        "line": 22,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 46,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 31,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 57
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 56
   },
   "cross_references": [
     {
@@ -115,18 +95,18 @@
     {
       "addr": "0065c09c",
       "name": "DAT_0065c09c",
-      "type": "undefined4",
-      "value": null
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "0065c0a0",
-      "name": "PTR_FUN_0065c09d+3",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065c0a0",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "0065c0b4",
-      "name": "PTR_core_cow.cpp_FUN_0065c0b4",
+      "name": "g_CZombieCowVTable",
       "type": "CDemonActor_vtable",
       "value": null
     }
@@ -185,15 +165,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

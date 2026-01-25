@@ -22,7 +22,7 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e34d0(CTurret *this_ptr)
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     if (*(int *)(in_stack_0000000c + 0xc) != 0) {
-      (*(this_ptr->base_weapon).base_actor.vtable[1].renderTransparent)((CDemonActor *)this_ptr);
+      (*(((this_ptr->base_weapon).base_actor.vtable._uc)->_uc).cfunc4)();
     }
     return 1;
   }

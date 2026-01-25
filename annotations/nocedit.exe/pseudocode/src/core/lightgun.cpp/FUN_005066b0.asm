@@ -10,7 +10,7 @@
 ;   double DOUBLE_0063151e = 18
 ;   double DOUBLE_00631526 = 0.100000000000000
 ;   double g_CLightConeObj = 0.015625
-;   undefined4 DAT_00660a44
+;   float FLOAT_00660a44 = 112
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -152,7 +152,7 @@ section .text
     FSTP float ptr [ESP + 0x6c]         ; 00506801
     FSTP float ptr [ESP + 0x70]         ; 00506805
     FSTP float ptr [ESP + 0x74]         ; 00506809
-    FLD float ptr [0x00660a44]          ; 0050680d | DAT_00660a44
+    FLD float ptr [0x00660a44]          ; 0050680d | FLOAT_00660a44
         ;   Label: LAB_0050680d
     FDIVR double ptr [0x0063151e]       ; 00506813 | DOUBLE_0063151e
     FLD1                                ; 00506819

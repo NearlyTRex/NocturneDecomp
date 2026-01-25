@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 797
-Signature accuracy rate: 57.1%
+Parameter mismatches detected: 795
+Signature accuracy rate: 57.2%
 
 Mismatches by confidence:
-  High confidence:   76 (multiple call sites agree)
-  Medium confidence: 104 (some agreement)
-  Low confidence:    617 (limited data)
+  High confidence:   77 (multiple call sites agree)
+  Medium confidence: 105 (some agreement)
+  Low confidence:    613 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -46,6 +46,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_hero.cpp_CHeroPlaceholder at 004f3f8d: 0 reg [], 6 stack
       core_flies.cpp_FUN_004ccaa0 at 004ccad0: 0 reg [], 6 stack
       core_bugs.cpp_CBugs_FUN_004277 at 00427811: 0 reg [], 6 stack
+
+  core_manpuz.cpp_FUN_0050a4f0
+    Declared: 1 params, Estimated: 6 params (+5)
+    Call sites: 3, Confidence: high
+    File: core/manpuz.cpp
+    Signature: int core_manpuz.cpp_FUN_0050a4f0(void * ptr)
+    Sample call sites:
+      core_manpuz.cpp_CMansionPuzzle at 0050a6a3: 0 reg [], 6 stack
+      core_manpuz.cpp_CMansionPuzzle at 0050a6c7: 0 reg [], 6 stack
+      core_manpuz.cpp_CMansionPuzzle at 0050a67c: 0 reg [], 6 stack
 
   core_actor.cpp_FUN_004104f0
     Declared: 0 params, Estimated: 4 params (+4)
@@ -563,7 +573,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/hero.cpp
     Signature: undefined core_hero.cpp_FUN_004f2ed0()
     Sample call sites:
-      core_gabriela.cpp_FUN_004d2ea0 at 004d4005: 0 reg [], 1 stack
+      core_gabriela.cpp_CGabriella_p at 004d4005: 0 reg [], 1 stack
       core_colonel.cpp_FUN_0043fa00 at 0043fe0a: 0 reg [], 1 stack
       core_svetlana.cpp_CSvetlana_pr at 005d90d2: 0 reg [], 1 stack
 
@@ -574,8 +584,8 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: undefined core_hero.cpp_FUN_004f3350()
     Sample call sites:
       core_stranger.cpp_CStranger_FU at 005bcf33: 0 reg [], 1 stack
-      core_gabriela.cpp_FUN_004d2ea0 at 004d4075: 0 reg [], 1 stack
-      core_gabriela.cpp_FUN_004d2ea0 at 004d389b: 0 reg [], 1 stack
+      core_gabriela.cpp_CGabriella_p at 004d4075: 0 reg [], 1 stack
+      core_gabriela.cpp_CGabriella_p at 004d389b: 0 reg [], 1 stack
 
   core_level.cpp_CLevelLoader_update_FUN_00504160
     Declared: 3 params, Estimated: 2 params (-1)
@@ -804,6 +814,7 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_0060d480                         declared:0 est:5 (+5) [2 calls]
   core_charactr.cpp_CCharacter_FUN_0042d360          declared:1 est:5 (+4) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0 declared:5 est:1 (-4) [2 calls]
+  core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a420  declared:1 est:5 (+4) [2 calls]
   core_script.cpp_FUN_005671a0                       declared:0 est:4 (+4) [2 calls]
   core_setedit.cpp_CDemonSet_FUN_005800d0            declared:1 est:5 (+4) [2 calls]
   core_skeledit.cpp_FUN_00589c20                     declared:0 est:4 (+4) [2 calls]
@@ -836,19 +847,18 @@ MEDIUM CONFIDENCE MISMATCHES
   core_dmodel.cpp_CKeyFramedModel_writeDependencies_ declared:3 est:1 (-2) [10 calls]
   core_fire.cpp_CFireEffect_FUN_004c8ea0             declared:1 est:3 (+2) [2 calls]
   core_gore.cpp_FUN_004ed830                         declared:1 est:3 (+2) [4 calls]
-  core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied declared:0 est:2 (+2) [2 calls]
   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0    declared:0 est:2 (+2) [2 calls]
   core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN declared:0 est:2 (+2) [2 calls]
   core_script.cpp_FUN_00562860                       declared:0 est:2 (+2) [2 calls]
   core_set.cpp_CDemonSet_FUN_00570ea0                declared:1 est:3 (+2) [2 calls]
 
-  ... and 54 more
+  ... and 55 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  617 functions with low-confidence mismatches
+  613 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -868,7 +878,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 93
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 704
+Functions where declaration has FEWER params than estimated: 702
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -879,13 +889,13 @@ Distribution of differences (estimated - declared):
   -3 params: 11 functions
   -2 params: 18 functions
   -1 params: 57 functions
-  +1 params: 255 functions
-  +2 params: 155 functions
-  +3 params: 102 functions
-  +4 params: 112 functions
-  +5 params: 25 functions
-  +6 params: 24 functions
-  +7 params: 11 functions
+  +1 params: 262 functions
+  +2 params: 151 functions
+  +3 params: 99 functions
+  +4 params: 111 functions
+  +5 params: 26 functions
+  +6 params: 23 functions
+  +7 params: 10 functions
   +8 params: 2 functions
   +9 params: 10 functions
   +10 params: 1 functions

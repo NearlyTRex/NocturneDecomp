@@ -87,8 +87,8 @@
 ;   float FLOAT_0061614d = 0.5
 ;   double DOUBLE_00616155 = 32
 ;   double DOUBLE_0061615d = 6.28318530700000
-;   undefined4 DAT_0065af58
-;   undefined4 DAT_0065af5c
+;   float FLOAT_0065af58 = 2
+;   float FLOAT_0065af5c = 3
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -187,7 +187,7 @@ section .text
     JNZ 0x0041c2d5                      ; 0041c063
         ;   XREF to: 0041c2d5 (CONDITIONAL_JUMP)  ; LAB_0041c2d5
     FLD float ptr [EBP + 0x92]          ; 0041c069
-    FDIV float ptr [0x0065af68]         ; 0041c06f | DAT_0065af68
+    FDIV float ptr [0x0065af68]         ; 0041c06f | FLOAT_0065af68
     FADD float ptr [EBX + 0xc4e0]       ; 0041c075
     FST float ptr [EBX + 0xc4e0]        ; 0041c07b
     FLD1                                ; 0041c081
@@ -957,12 +957,12 @@ section .text
     TEST EAX,EAX                        ; 0041c902
     JNZ 0x0041c3f4                      ; 0041c904
         ;   XREF to: 0041c3f4 (CONDITIONAL_JUMP)  ; caseD_4
-    MOV EAX,[0x0065af58]                ; 0041c90a | DAT_0065af58
+    MOV EAX,[0x0065af58]                ; 0041c90a | FLOAT_0065af58
     MOV dword ptr [EBP + 0x5a],EAX      ; 0041c90f
     CMP dword ptr [EBX + 0x24f8],0x0    ; 0041c912
     JZ 0x0041c923                       ; 0041c919
         ;   XREF to: 0041c923 (CONDITIONAL_JUMP)  ; LAB_0041c923
-    MOV EAX,[0x0065af5c]                ; 0041c91b | DAT_0065af5c
+    MOV EAX,[0x0065af5c]                ; 0041c91b | FLOAT_0065af5c
     MOV dword ptr [EBP + 0x5a],EAX      ; 0041c920
     PUSH 0x3e32b8c2                     ; 0041c923
         ;   Label: LAB_0041c923

@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00630aaa = 100
-;   undefined4 DAT_00660480
+;   float FLOAT_00660480 = 30
 ;   float FLOAT_00660484 = 120
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   undefined4 g_CBatteryClassInfo.name_hash
@@ -76,7 +76,7 @@ section .text
     CMP dword ptr [EAX + 0x244],0x0     ; 004ffb2e | g_CGameInstance.auto_save_blocked
     JZ 0x004ffcc1                       ; 004ffb35
         ;   XREF to: 004ffcc1 (CONDITIONAL_JUMP)  ; LAB_004ffcc1
-    MOV EAX,[0x00660480]                ; 004ffb3b | DAT_00660480
+    MOV EAX,[0x00660480]                ; 004ffb3b | FLOAT_00660480
         ;   Label: LAB_004ffb3b
     MOV EDI,dword ptr [EBX + 0x8]       ; 004ffb40
     XOR ESI,ESI                         ; 004ffb43

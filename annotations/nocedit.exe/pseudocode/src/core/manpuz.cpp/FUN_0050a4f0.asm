@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_manpuz.cpp_FUN_0050a4f0()
+; __cdecl int core_manpuz.cpp_FUN_0050a4f0(void * ptr)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   ptr
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28
@@ -11,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_0050a610 at 0050a6a3
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610 at 0050a6a3
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0063576d = 0.00392156862745098

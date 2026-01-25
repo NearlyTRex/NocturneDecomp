@@ -15,12 +15,6 @@
       },
       {
         "category": "missing_member",
-        "column": 51,
-        "line": 45,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field6_0x68'; did you mean 'field_108'?"
-      },
-      {
-        "category": "missing_member",
         "column": 38,
         "line": 48,
         "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field7_0x6c'; did you mean 'field_236'?"
@@ -35,7 +29,7 @@
         "category": "missing_member",
         "column": 38,
         "line": 105,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field17_0x104'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field17_0x104'; did you mean 'field_108'?"
       }
     ],
     "success": false,
@@ -86,6 +80,12 @@
         "category": "other",
         "column": 79,
         "line": 41,
+        "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 45,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
@@ -544,7 +544,7 @@
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000004",
-      "text": "((CDemonActor *)&in_stack_00000004[2].field6_0x68,\"carriedByActor\");",
+      "text": "((CDemonActor *)&in_stack_00000004[2].validation_magic,\"carriedByActor\");",
       "type": "stack_param"
     },
     {
@@ -726,7 +726,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 232,
         "vtable_addr": "0065b1b4"
       }

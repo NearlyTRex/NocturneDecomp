@@ -12,7 +12,7 @@ uint core_lightgun_cpp_FUN_00505a20(void)
   int iVar1;
   CDemonActor *in_stack_00000004;
   
-  iVar1 = (*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);
+  iVar1 = (*(((in_stack_00000004->vtable)._uc)->_uc).cfunc3)();
   if (iVar1 == 0) {
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000004,"CGhoul");
     if (iVar1 != 0) {

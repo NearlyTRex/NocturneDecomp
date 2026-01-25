@@ -23,8 +23,8 @@
 ;   undefined4 s_oneguydie_00615f8a
 ;   undefined4 s_neguydie_00615f8b
 ;   undefined4 s_eguydie_00615f8c
-;   undefined4 DAT_0065af60
-;   undefined4 PTR_FUN_0065af61+3
+;   float FLOAT_0065af60 = 50
+;   float FLOAT_0065af64 = 100
 ;   CDemonActor_vtable g_CBoneGuyVTable
 ;   WatcomTypeInfo g_SBoneGuyBoxTypeInfo
 ;
@@ -70,9 +70,9 @@ section .text
     MOV dword ptr [EBX + 0xfc],0x1      ; 0041bc22
     LEA EDI,[EBX + 0xbed0]              ; 0041bc2c
     MOV dword ptr [EBX + 0xc4dc],0x0    ; 0041bc32
-    FLD float ptr [0x0065af60]          ; 0041bc3c | DAT_0065af60
+    FLD float ptr [0x0065af60]          ; 0041bc3c | FLOAT_0065af60
     MOV dword ptr [EBX + 0x2610],0x2    ; 0041bc42
-    FLD float ptr [0x0065af64]          ; 0041bc4c | PTR_FUN_0065af61+3
+    FLD float ptr [0x0065af64]          ; 0041bc4c | FLOAT_0065af64
     MOV dword ptr [EBX + 0xbf34],0x41200000 ; 0041bc52
     ADD ESP,0x8                         ; 0041bc5c
     FXCH                                ; 0041bc5f

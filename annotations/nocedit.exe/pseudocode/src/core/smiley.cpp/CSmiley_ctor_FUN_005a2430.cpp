@@ -6,18 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr)
 
 {
   CEnemy *pCVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   CSmiley *pCVar4;
   
   pCVar4 = (CSmiley *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.vtable = &g_CSmileyVTable;
+  (pCVar4->base_enemy).base_character.base_actor.vtable._ub = &g_CSmileyVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base_enemy).base_character.model,"smiley.dfm");
   pCVar4->field1_0xbeb4[8] = '\0';
@@ -39,12 +37,12 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr)
   (pCVar1->base_character).cloth_data[0x34a] = 'f';
   (pCVar1->base_character).cloth_data[0x34b] = '?';
   pCVar4->field1_0xbeb4[0x3c] = '\0';
-  uVar2 = _DAT_00662f6c;
+  fVar2 = 50.0f;
   pCVar4->field1_0xbeb4[0x3d] = '\0';
   pCVar4->field1_0xbeb4[0x3e] = '\0';
   pCVar4->field1_0xbeb4[0x3f] = '\0';
   pCVar4->field1_0xbeb4[0x40] = '\0';
-  uVar3 = _PTR_FUN_00662f6d_3;
+  fVar3 = 100.0f;
   pCVar4->field1_0xbeb4[0x41] = '\0';
   pCVar4->field1_0xbeb4[0x42] = '\0';
   pCVar4->field1_0xbeb4[0x43] = '\0';
@@ -56,7 +54,7 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005a2430(CSmiley *this_ptr)
   pCVar4->field1_0xbeb4[0x49] = '\0';
   pCVar4->field1_0xbeb4[0x4a] = '\0';
   pCVar4->field1_0xbeb4[0x4b] = '\0';
-  *(uint *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = uVar2;
-  *(uint *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = uVar3;
+  *(float *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = fVar2;
+  *(float *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = fVar3;
   return pCVar4;
 }

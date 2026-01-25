@@ -14,7 +14,7 @@ int __cdecl core_trash_cpp_CTrash_FUN_005df550(CTrash *this_ptr)
   CVector3f CStack_1c;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                           (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffc4);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 == 0) {

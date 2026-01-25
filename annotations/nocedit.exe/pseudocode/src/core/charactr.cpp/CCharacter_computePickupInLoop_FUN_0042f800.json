@@ -4,19 +4,13 @@
       {
         "category": "missing_member",
         "column": 28,
-        "line": 19,
+        "line": 17,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 19,
-        "message": "'_DAT_0065b834' was not declared in this scope; did you mean 'DAT_0065b830'?"
       },
       {
         "category": "missing_member",
         "column": 26,
-        "line": 32,
+        "line": 30,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field2_0x240c'"
       }
     ],
@@ -32,16 +26,14 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 42,
+    "complexity_score": 26,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 27,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 93
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 92
   },
   "cross_references": [
     {
@@ -94,9 +86,9 @@
   "globals": [
     {
       "addr": "0065b834",
-      "name": "DAT_0065b834",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065b834",
+      "type": "float",
+      "value": "9999"
     }
   ],
   "param_estimates": {
@@ -177,19 +169,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CGabriella",
         "offset": 208,
         "vtable_addr": "0065e804"
       },

@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CSound;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CSound.h"
 #include "types/funcdefs/CSound_releaseBuffer.h"
 #include "types/funcdefs/CSound_releaseBufferId.h"
 #include "types/funcdefs/CSound_setFormat.h"

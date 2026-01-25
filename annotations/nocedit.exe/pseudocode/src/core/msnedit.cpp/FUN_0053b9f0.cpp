@@ -87,7 +87,7 @@ void core_msnedit_cpp_FUN_0053b9f0(void)
           g_CurrentDebugLine = 0x8ff;
           g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
           if (this_ptr != (CDemonActor *)0x0) {
-            (*this_ptr->vtable->dtor)
+            (*((this_ptr->vtable)._ub)->dtor)
                       (this_ptr,2,in_stack_fffffbb8,in_stack_fffffbbc,(uint)in_stack_fffffbc0,
                        (uint)in_stack_fffffbc4,in_stack_fffffbc8,in_stack_fffffbcc,in_stack_fffffbd0
                       );
@@ -108,18 +108,18 @@ void core_msnedit_cpp_FUN_0053b9f0(void)
         pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
       } while (cVar1 != '\0');
     }
-    iVar4 = (*this_ptr->vtable->initializeInEditor)(this_ptr);
+    iVar4 = (*((this_ptr->vtable)._ub)->initializeInEditor)(this_ptr);
     if (iVar4 == 0) {
       g_CurrentDebugLine = 0x906;
       g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
-      (*this_ptr->vtable->dtor)
+      (*((this_ptr->vtable)._ub)->dtor)
                 (this_ptr,2,in_stack_fffffbbc,(uint)in_stack_fffffbc0,(uint)in_stack_fffffbc4,
                  in_stack_fffffbc8,in_stack_fffffbcc,in_stack_fffffbd0,in_stack_fffffbd4);
     }
     else {
       core_mission_cpp_CDemonMission_FUN_00523b70(in_stack_00000008);
       core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000008);
-      (*this_ptr->vtable->setup)(this_ptr);
+      (*((this_ptr->vtable)._ub)->setup)(this_ptr);
       core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
     }
   }

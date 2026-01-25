@@ -96,8 +96,8 @@ void core_flame_cpp_FUN_004c9c00(void)
     }
     if (*(int *)(in_stack_00000004 + 0x288) != 0) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_94);
-      iVar2 = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->hasCollision)
-                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94);
+      iVar2 = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._ub)->
+                hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94);
       if (iVar2 == 2) {
         this_ptr = g_HeroActors[g_LocalHeroIndex];
         fStack_3c = (this_ptr->base_character).base_actor.location.position.x -
@@ -133,7 +133,7 @@ void core_flame_cpp_FUN_004c9c00(void)
                        (g_CDemonSetPtr->field19_0x14f0a0 +
                        *(int *)(in_stack_00000004 + 0x29c) * 4 + 8000);
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_6c);
-        iVar2 = (*((this_ptr_00->base_actor).vtable)->hasCollision)
+        iVar2 = (*((this_ptr_00->base_actor).vtable._ub)->hasCollision)
                           (&this_ptr_00->base_actor,&SStack_6c);
         if (iVar2 == 2) {
           fStack_30 = (this_ptr_00->base_actor).location.position.x -

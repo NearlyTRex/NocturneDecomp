@@ -15,9 +15,9 @@ undefined FUN_004f43b0();
 // Address: 004f43e0
 undefined FUN_004f43e0();
 
-// Original: core_hiram.cpp_FUN_004f43f0
+// Original: core_hiram.cpp_CHiram_ctor_FUN_004f43f0
 // Address: 004f43f0
-CHiram * FUN_004f43f0(CHiram * this_ptr);
+CHiram * CHiram::ctor(CHiram * this_ptr);
 
 // Original: core_hiram.cpp_FUN_004f4450
 // Address: 004f4450

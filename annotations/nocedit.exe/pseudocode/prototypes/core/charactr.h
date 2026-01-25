@@ -23,9 +23,9 @@ void CCharacter(CCharacter * this_ptr);
 // Address: 004283a0
 void CCharacter::serialize(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_004285d0
+// Original: core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0
 // Address: 004285d0
-void CCharacter(CCharacter * this_ptr);
+void CCharacter::setPositionAndOrientation(CCharacter * this_ptr, CVector3f * new_position, CVector3f * new_orientation);
 
 // Original: core_charactr.cpp_FUN_00428620
 // Address: 00428620
@@ -47,9 +47,9 @@ void CCharacter(CCharacter * this_ptr);
 // Address: 00428e30
 void CCharacter(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_00428ee0
+// Original: core_charactr.cpp_CCharacter_applyDamage_FUN_00428ee0
 // Address: 00428ee0
-void CCharacter(CCharacter * this_ptr);
+void CCharacter::applyDamage(CCharacter * this_ptr, int damage_type, float damage_amount);
 
 // Original: core_charactr.cpp_CCharacter_FUN_00428f40
 // Address: 00428f40
@@ -79,9 +79,9 @@ void CCharacter(CCharacter * this_ptr);
 // Address: 0042a2c0
 int CCharacter::renderOpaque(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042a390
+// Original: core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390
 // Address: 0042a390
-void CCharacter(CCharacter * this_ptr);
+void CCharacter::renderBackground(CCharacter * this_ptr, int layer_flag);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042a3f0
 // Address: 0042a3f0
@@ -135,9 +135,9 @@ void CCharacter(CCharacter * this_ptr);
 // Address: 0042b810
 void CCharacter(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042b8a0
+// Original: core_charactr.cpp_CCharacter_getBoundingBox_FUN_0042b8a0
 // Address: 0042b8a0
-int * CCharacter(CCharacter * this_ptr);
+CBoundingBox3D * CCharacter::getBoundingBox(CCharacter * this_ptr, CBoundingBox3D * out_box);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042b8e0
 // Address: 0042b8e0
@@ -151,9 +151,9 @@ void CCharacter(CCharacter * this_ptr);
 // Address: 0042b9e0
 void CCharacter(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042bc20
+// Original: core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20
 // Address: 0042bc20
-int CCharacter(CCharacter * this_ptr);
+int CCharacter::hasCollision(CCharacter * this_ptr, SCollisionInfo * collision_info);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042bcc0
 // Address: 0042bcc0
@@ -179,17 +179,17 @@ void CCharacter(CCharacter * this_ptr);
 // Address: 0042bf80
 int CCharacter(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042bf90
+// Original: core_charactr.cpp_CCharacter_drop_FUN_0042bf90
 // Address: 0042bf90
-void CCharacter(CCharacter * this_ptr);
+void CCharacter::drop(CCharacter * this_ptr, CDemonActor * carrier, CVector3f * drop_position);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042c010
 // Address: 0042c010
 int CCharacter(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042c110
+// Original: core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110
 // Address: 0042c110
-int CCharacter(CCharacter * this_ptr);
+int CCharacter::checkCylinderCollisionWorld(CCharacter * this_ptr, CVector3f * world_point, float tolerance, SDamageInfo * damage_info);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042c180
 // Address: 0042c180
@@ -311,9 +311,9 @@ int CCharacter(CCharacter * this_ptr);
 // Address: 0042ded0
 void CCharacter(CCharacter * this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_FUN_0042df90
+// Original: core_charactr.cpp_CCharacter_spawnFlies_FUN_0042df90
 // Address: 0042df90
-void CCharacter(CCharacter * this_ptr);
+void CCharacter::spawnFlies(CCharacter * this_ptr, int fly_count, float spawn_radius);
 
 // Original: core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 // Address: 0042dfc0
@@ -329,7 +329,7 @@ int CCharacter::advanceLayerAction(CCharacter * this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042e570
 // Address: 0042e570
-undefined FUN_0042e570();
+void FUN_0042e570(CCharacter * this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0
 // Address: 0042e5d0
@@ -337,7 +337,7 @@ void CCharacter::addLayerAction(CCharacter * this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042e670
 // Address: 0042e670
-undefined CCharacter();
+void CCharacter(CCharacter * this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_FUN_0042e840
 // Address: 0042e840

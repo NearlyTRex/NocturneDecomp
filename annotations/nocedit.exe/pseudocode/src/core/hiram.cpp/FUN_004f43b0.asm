@@ -11,7 +11,7 @@
 ;   TerminatedCString s_core_hiram_cpp_0062edd6
 ;
 ; Called Functions:
-;   core_hiram.cpp_FUN_004f43f0
+;   core_hiram.cpp_CHiram_ctor_FUN_004f43f0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     RET                                 ; 004f43c8
     PUSH EAX                            ; 004f43c9
         ;   Label: LAB_004f43c9
-    CALL core_hiram.cpp_FUN_004f43f0    ; 004f43ca
-        ;   XREF to: 004f43f0 (UNCONDITIONAL_CALL)  ; CHiram * core_hiram.cpp_FUN_004f43f0(CHiram * this_ptr)
+    CALL core_hiram.cpp_CHiram_ctor_FUN_004f43f0 ; 004f43ca
+        ;   XREF to: 004f43f0 (UNCONDITIONAL_CALL)  ; CHiram * core_hiram.cpp_CHiram_ctor_FUN_004f43f0(CHiram * this_ptr)
     ADD ESP,0x4                         ; 004f43cf
     RET                                 ; 004f43d2
 

@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_colonel_dfm_00618b8e
-;   CDemonActor_vtable PTR_core_colonel.cpp_FUN_0065bd54
+;   CDemonActor_vtable g_CColonelVTable
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004f2340
+;   core_hero.cpp_CHero_ctor_FUN_004f2340
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
 ; *****************************************************************************
@@ -25,12 +25,12 @@ section .text
         ;   Label: core_colonel.cpp_CColonel_ctor_FUN_0043f7e0
     MOV EDX,dword ptr [ESP + 0x8]       ; 0043f7e1
     PUSH EDX                            ; 0043f7e5
-    CALL core_hero.cpp_FUN_004f2340     ; 0043f7e6
-        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2340()
+    CALL core_hero.cpp_CHero_ctor_FUN_004f2340 ; 0043f7e6
+        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004f2340(CHero * this_ptr)
     MOV EBX,EAX                         ; 0043f7eb
     ADD EAX,0x158                       ; 0043f7ed
     ADD ESP,0x4                         ; 0043f7f2
-    MOV dword ptr [EAX + -0x4],0x65bd54 ; 0043f7f5 | PTR_core_colonel.cpp_FUN_0065bd54
+    MOV dword ptr [EAX + -0x4],0x65bd54 ; 0043f7f5 | g_CColonelVTable
     PUSH 0x618b8e                       ; 0043f7fc | = "colonel.dfm"
     MOV dword ptr [EAX + 0x1fa7c],0x0   ; 0043f801
     PUSH EAX                            ; 0043f80b

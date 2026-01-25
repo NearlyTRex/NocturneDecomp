@@ -10,31 +10,31 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 27,
+        "line": 26,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 27,
+        "line": 26,
         "message": "expected primary-expression before ')' token"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 32,
-        "message": "'stack0xfffffff4' was not declared in this scope"
+        "line": 31,
+        "message": "'stack0xfffffff0' was not declared in this scope"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 37,
+        "line": 36,
         "message": "'code' was not declared in this scope"
       },
       {
         "category": "syntax_error",
         "column": 14,
-        "line": 37,
+        "line": 36,
         "message": "expected primary-expression before ')' token"
       }
     ],
@@ -49,25 +49,25 @@
       {
         "category": "other",
         "column": 19,
-        "line": 27,
+        "line": 26,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 37,
+        "line": 36,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 213,
+    "complexity_score": 192,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 28,
-    "suspect_count": 16,
+    "pseudocode_lines": 27,
+    "suspect_count": 14,
     "suspect_types": [
       "stack_param",
       "stack_ref",
@@ -75,7 +75,7 @@
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -181,7 +181,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
-      "text": "CDemonActor *in_stack_00000004;",
+      "text": "CCharacter *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -193,91 +193,77 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_ffffffe0",
-      "text": "SCollisionInfo *in_stack_ffffffe0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
-      "text": "iVar1 = (*in_stack_00000004->vtable[1].hasCollision)(in_stack_00000004,in_stack_ffffffe0);",
+      "text": "iVar1 = (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).isDamageable)(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
-      "text": "iVar1 = (*in_stack_00000004->vtable[1].hasCollision)(in_stack_00000004,in_stack_ffffffe0);",
+      "text": "iVar1 = (*(((in_stack_00000004->base_actor).vtable._uc)->_uc).isDamageable)(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffffe0",
-      "text": "iVar1 = (*in_stack_00000004->vtable[1].hasCollision)(in_stack_00000004,in_stack_ffffffe0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x104))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 19,
       "match": "code *",
       "text": "(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x104))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xfffffff4",
-      "text": "((CVector3f *)&stack0xfffffff4,&g_ZeroVector,",
+      "line": 24,
+      "match": "&stack0xfffffff0",
+      "text": "((CVector3f *)&stack0xfffffff0,&g_ZeroVector,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000004",
-      "text": "(CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_03f48fa8 * 4].z);",
+      "text": "(in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_03f48fa8);",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_03f48fa8",
-      "text": "(CMatrix3x4f *)&(&in_stack_00000004[0xb].scale)[DAT_03f48fa8 * 4].z);",
+      "text": "(in_stack_00000004->model).bone_transform.bone_world_matrices + DAT_03f48fa8);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&CStack_18,input_local_point);",
+      "text": "(&in_stack_00000004->base_actor,&CStack_1c,input_local_point);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
+      "line": 29,
       "match": "code *",
       "text": "(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x60))();",
       "type": "unresolved_funcptr"

@@ -1,16 +1,17 @@
 #pragma once
 
+// Forward declarations
+struct CLodEdge;
+struct CLodFace;
+struct CLodVert;
+struct FILE;
+struct SLodSamplePoint;
+struct SLodSubmesh;
+struct SSpatialGrid;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/iostream.h"
-#include "system/stdio.h"
-#include "types/classes/CLodEdge.h"
-#include "types/classes/CLodFace.h"
-#include "types/classes/CLodVert.h"
 #include "types/classes/CVector3f.h"
-#include "types/structs/SLodSamplePoint.h"
-#include "types/structs/SLodSubmesh.h"
-#include "types/structs/SSpatialGrid.h"
 
 // Structure: CLodMesh
 // Ghidra size: 0x74 (116 bytes)

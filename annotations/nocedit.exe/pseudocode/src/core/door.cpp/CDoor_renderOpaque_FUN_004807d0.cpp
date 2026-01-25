@@ -26,14 +26,14 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-  pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+  pCVar2 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                      (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffa4);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
   if (iVar3 != 0) {
     if (this_ptr->plot_as_box_in_shadow != 0) {
       iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar4 != 0) {
-        pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+        pCVar2 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                            (&this_ptr->base_actor,&CStack_3c);
         core_box_cpp_CBoundingBox3D_render_FUN_004210b0
                   (pCVar2,(int)in_stack_ffffffb0,(int)in_stack_ffffffb4,(int)in_stack_ffffffb8);

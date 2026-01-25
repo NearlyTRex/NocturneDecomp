@@ -10,8 +10,8 @@
       {
         "category": "missing_member",
         "column": 39,
-        "line": 18,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field23_0x124'; did you mean 'field_104'?"
+        "line": 19,
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field23_0x124'; did you mean 'field_224'?"
       }
     ],
     "success": false,
@@ -26,17 +26,17 @@
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 62,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "pseudocode_lines": 14,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 28
+    "total_lines": 30
   },
   "cross_references": [],
   "function": {
@@ -55,7 +55,7 @@
     {
       "addr": "0042bc20",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bc20"
+      "name": "core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20"
     }
   ],
   "globals": [],
@@ -115,16 +115,30 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "SCollisionInfo *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].base_actor.field23_0x124 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 16,
       "match": "in_stack_00000004",
-      "text": "iVar1 = core_charactr_cpp_CCharacter_FUN_0042bc20(in_stack_00000004);",
+      "text": "(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     }
   ],

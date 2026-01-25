@@ -15,8 +15,8 @@
 ;   undefined4 s_one_00614dc7
 ;   undefined4 s_ne_00614dc8
 ;   undefined4 s_e_00614dc9
-;   undefined4 DAT_00659d28
-;   undefined4 PTR_FUN_00659d29+3
+;   float FLOAT_00659d28 = 50
+;   undefined4 DAT_00659d2c
 ;   CDemonActor_vtable g_CArmourVTable
 ;
 ; Called Functions:
@@ -44,8 +44,8 @@ section .text
     MOV dword ptr [EAX + 0x154],0x659d34 ; 004121c3 | g_CArmourVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004121cd
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x00659d28]          ; 004121d2 | DAT_00659d28
-    FLD float ptr [0x00659d2c]          ; 004121d8 | PTR_FUN_00659d29+3
+    FLD float ptr [0x00659d28]          ; 004121d2 | FLOAT_00659d28
+    FLD float ptr [0x00659d2c]          ; 004121d8 | DAT_00659d2c
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 004121de
     ADD ESP,0x8                         ; 004121e8
     MOV dword ptr [EBX + 0x2de0],0x40000000 ; 004121eb

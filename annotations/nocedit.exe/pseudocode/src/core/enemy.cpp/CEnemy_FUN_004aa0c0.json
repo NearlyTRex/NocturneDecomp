@@ -3,15 +3,15 @@
     "errors": [
       {
         "category": "missing_member",
-        "column": 49,
-        "line": 15,
+        "column": 47,
+        "line": 14,
         "message": "'CEnemy' {aka 'struct CEnemy'} has no member named 'field6_0xbe38'"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 19,
-        "message": "cast from 'CEnemy*' to 'int' loses precision [-fpermissive]"
+        "column": 4,
+        "line": 17,
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -26,16 +26,16 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 46,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 11,
-    "suspect_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 24
+    "total_lines": 22
   },
   "cross_references": [],
   "function": {
@@ -101,23 +101,16 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 6,
+      "line": 5,
       "match": "in_stack_00000008",
-      "text": "float in_stack_00000008;",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 != *(float *)(this_ptr->field6_0xbe38 + 4)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "text": "((CDemonActor *)this_ptr,unaff_retaddr,(int)this_ptr,in_stack_00000008);",
+      "text": "if (in_stack_00000008 != *(int *)(this_ptr->field6_0xbe38 + 4)) {",
       "type": "stack_param"
     }
   ],

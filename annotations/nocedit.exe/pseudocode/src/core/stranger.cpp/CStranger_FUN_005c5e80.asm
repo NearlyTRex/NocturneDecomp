@@ -8,7 +8,7 @@
 ;   core_stranger.cpp_CStranger_FUN_005c5b90 at 005c5bb4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00663744
+;   float FLOAT_00663744 = 10
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     CMP dword ptr [ECX + 0x2e0],0x3     ; 005c5e9c
     JNZ 0x005c5ed8                      ; 005c5ea3
         ;   XREF to: 005c5ed8 (CONDITIONAL_JUMP)  ; LAB_005c5ed8
-    FLD float ptr [0x00663744]          ; 005c5ea5 | DAT_00663744
+    FLD float ptr [0x00663744]          ; 005c5ea5 | FLOAT_00663744
         ;   Label: LAB_005c5ea5
     MOV dword ptr [EBX + 0x1fc38],0x3   ; 005c5eab
     MOV EAX,0x1                         ; 005c5eb5

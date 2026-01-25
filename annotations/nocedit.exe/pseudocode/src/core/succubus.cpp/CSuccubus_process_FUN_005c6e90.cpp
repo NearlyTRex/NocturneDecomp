@@ -73,8 +73,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   iVar9 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   if (iVar9 == 0) {
     if (uVar3 == 0) {
-      (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)this_ptr);
+      (*(((this_ptr->base_enemy).base_character.base_actor.vtable._ue)->_ue).field_4)();
       iVar9 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
       if (iVar9 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
@@ -98,8 +97,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
       }
     }
     else if ((uVar3 < 2) || (uVar3 == 2)) {
-      (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)this_ptr);
+      (*(((this_ptr->base_enemy).base_character.base_actor.vtable._ue)->_ue).field_4)();
       if (*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
         pCVar15 = &(this_ptr->base_enemy).base_character.model;
@@ -141,7 +139,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
           this_ptr->field1_0xbeb4[0x2486] = '\0';
           this_ptr->field1_0xbeb4[0x2487] = '\0';
           sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar3);
-          pCVar4 = (this_ptr->base_enemy).base_character.base_actor.vtable;
+          pCVar4 = (this_ptr->base_enemy).base_character.base_actor.vtable._ub;
           this_ptr->field1_0xbeb4[0x247c] = -0x66;
           this_ptr->field1_0xbeb4[0x247d] = '?';
           this_ptr->field1_0xbeb4[0x247e] = '\x1c';
@@ -256,7 +254,7 @@ LAB_005c6fd0:
         pcVar16[1] = cVar2;
         pcVar16 = pcVar16 + 2;
       } while (cVar2 != '\0');
-      (*((this_ptr_01->base_enemy).base_character.base_actor.vtable)->setup)
+      (*((this_ptr_01->base_enemy).base_character.base_actor.vtable._ub)->setup)
                 ((CDemonActor *)this_ptr_01);
       pCVar15 = &(this_ptr_01->base_enemy).base_character.model;
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
@@ -288,7 +286,7 @@ LAB_005c6fd0:
        (fVar11 = *(float *)(this_ptr->field1_0xbeb4 + 0x247c) - delta_time,
        *(float *)(this_ptr->field1_0xbeb4 + 0x247c) = fVar11, fVar11 < 0.0)) {
       fVar11 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
-      pCVar4 = (this_ptr->base_enemy).base_character.base_actor.vtable;
+      pCVar4 = (this_ptr->base_enemy).base_character.base_actor.vtable._ub;
       *(float *)(this_ptr->field1_0xbeb4 + 0x247c) = fVar11;
       uVar12 = (*pCVar4->playSound)((CDemonActor *)this_ptr,"succubus-horny-?.wav");
       *(uint *)(this_ptr->field1_0xbeb4 + 0x2478) = uVar12;

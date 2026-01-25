@@ -288,7 +288,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
       this_ptr_00 = *(CDemonActor **)local_18->actor_list_data;
       if ((this_ptr_00->is_transparent != 0) || (this_ptr_00->field14_0xf8 != 0)) {
         corner_index = 0;
-        (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,(CBoundingBox3D *)local_84);
+        (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,(CBoundingBox3D *)local_84);
         piVar14 = (int *)&stack0xfffffe7c;
         do {
           pCVar4 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0

@@ -154,7 +154,7 @@ void core_gabriela_cpp_FUN_004d4190(void)
         }
         if (((float)-0.050000000000000003 < *(float *)(in_stack_00000004[0x8d].create_event + 0x60)) &&
            ((double)*(float *)(in_stack_00000004[0x8d].create_event + 0x60) < 0.050000000000000003)) {
-          pCVar4 = (*in_stack_00000004->vtable->getBoundingBox)
+          pCVar4 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                              (in_stack_00000004,(CBoundingBox3D *)(auStack_10c + 0x10));
           fStack_d0 = (pCVar4->min).x + (pCVar4->max).x;
           fStack_cc = (pCVar4->min).y + (pCVar4->max).y;
@@ -165,8 +165,8 @@ void core_gabriela_cpp_FUN_004d4190(void)
           fStack_70 = (in_stack_00000004->location).position.x + fStack_4c;
           local_6c._0_4_ = (in_stack_00000004->location).position.y + fStack_48;
           local_6c._4_4_ = (in_stack_00000004->location).position.z + fStack_44;
-          pCVar4 = (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,(CBoundingBox3D *)auStack_10c)
-          ;
+          pCVar4 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)
+                             (this_ptr_00,(CBoundingBox3D *)auStack_10c);
           local_20 = (pCVar4->min).x + (pCVar4->max).x;
           local_1c = (pCVar4->min).y + (pCVar4->max).y;
           fStack_50 = local_20 * 0.5f;

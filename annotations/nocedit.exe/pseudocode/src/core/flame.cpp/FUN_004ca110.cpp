@@ -69,7 +69,8 @@ float core_flame_cpp_FUN_004ca110(void)
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
     if (in_stack_00000004[1].previous_transform_state.dirty_flags != 0) {
-      this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);
+      this_ptr_00 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
+                              (in_stack_00000004,&local_f4);
       fVar4 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
       in_stack_00000004[1].previous_transform_state.orientation.y = fVar4;
     }

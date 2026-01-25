@@ -32,8 +32,8 @@
 // =============================================================================
 
 undefined __unknown core_colonel_cpp_FUN_00440430();
-undefined __unknown core_colonel_cpp_CColonel_load_FUN_00440490();
-undefined __unknown core_colonel_cpp_FUN_004404a0();
+void __cdecl core_colonel_cpp_CColonel_serialize_FUN_00440490(CColonel * this_ptr);
+void __cdecl core_colonel_cpp_FUN_004404a0(CColonel * this_ptr);
 void __cdecl core_colonel_cpp_CColonel_FUN_004404b0(CColonel * this_ptr);
 undefined __unknown core_colonel_cpp_FUN_004405d0();
 undefined __unknown core_colonel_cpp_FUN_004405e0();

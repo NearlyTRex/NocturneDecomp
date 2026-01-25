@@ -6,21 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDraculaBride * __cdecl core_dracbrid_cpp_ctor_FUN_00483fc0(CDraculaBride *this_ptr)
 
 {
   CEnemy *pCVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   CDraculaBride *pCVar4;
   CDraculaBride *pCVar5;
   CDraculaBride *pCVar6;
   
   pCVar4 = (CDraculaBride *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.vtable =
-       &PTR_core_dracbrid_cpp_DraculaBrideModels_FUN_0065cd94;
+  (pCVar4->base_enemy).base_character.base_actor.vtable._ub = &g_CDraculaBrideVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base_enemy).base_character.model,"nbride2.dfm");
   pCVar1 = &pCVar4->base_enemy;
@@ -35,12 +32,12 @@ CDraculaBride * __cdecl core_dracbrid_cpp_ctor_FUN_00483fc0(CDraculaBride *this_
   (pCVar1->base_character).cloth_data[0x34b] = '?';
   pCVar4->field1_0xbeb4[0x2c] = '\0';
   (pCVar4->base_enemy).base_character.hit_points = 135.0;
-  uVar2 = _DAT_0065cd70;
+  fVar2 = 50.0f;
   pCVar4->mistState = 0;
-  uVar3 = _PTR_core_bride_cpp_FUN_0065cd71_3;
+  fVar3 = 100.0f;
   pCVar4->vanishTimer = 0.0;
-  *(uint *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = uVar2;
-  *(uint *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = uVar3;
+  *(float *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = fVar2;
+  *(float *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = fVar3;
   (pCVar4->newPos).z = 0.0;
   (pCVar4->newPos).y = (pCVar4->newPos).z;
   (pCVar4->newPos).x = (pCVar4->newPos).y;

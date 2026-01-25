@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CGabriella * __cdecl core_gabriela_cpp_constructorMaybe_FUN_004d2b20(CGabriella *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   int iVar2;
   
-  core_hero_cpp_FUN_004f2340();
+  core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base_hero);
   iVar2 = core_cloth_cpp_FUN_00438ba0();
-  *(CDemonActor_vtable **)(iVar2 + -0x1fac0) = &PTR_core_gabriela_cpp_FUN_0065e804;
+  *(CDemonActor_vtable **)(iVar2 + -0x1fac0) = &g_CGabriellaVTable;
   *(uint *)(iVar2 + -0x40) = 0;
   *(uint *)(iVar2 + -0x3c) = 0;
   *(uint *)(iVar2 + -0x38) = 0;
@@ -28,9 +26,9 @@ CGabriella * __cdecl core_gabriela_cpp_constructorMaybe_FUN_004d2b20(CGabriella 
   *(uint *)(iVar2 + -0x10) = 0;
   *(uint *)(iVar2 + -0x18) = 0;
   *(uint *)(iVar2 + -4) = 0;
-  uVar1 = _DAT_0065e7ec;
+  fVar1 = 10.0f;
   *(uint *)(iVar2 + -0x28) = 0;
-  *(uint *)(iVar2 + 0x3fe70) = uVar1;
+  *(float *)(iVar2 + 0x3fe70) = fVar1;
   *(uint *)(iVar2 + -0x24) = 0;
   *(uint *)(iVar2 + -0x20) = 0;
   *(uint *)(iVar2 + -0xc) = *(uint *)(iVar2 + -0x10);

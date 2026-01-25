@@ -1,9 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CParticle;
+struct CVector3f;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CParticle.h"
-#include "types/classes/CVector3f.h"
 #include "types/funcdefs/CParticle_onCollision.h"
 #include "types/funcdefs/CParticle_process.h"
 #include "types/funcdefs/CParticle_render.h"

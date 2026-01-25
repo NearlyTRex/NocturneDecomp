@@ -140,7 +140,7 @@ void core_stranger_cpp_CStranger_FUN_005c02b0(void)
     *puVar4 = *puVar3;
     puVar4[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              ((CQuaternion4f *)&DAT_00665998,pCVar2,fVar7,&local_9c);
+              ((CQuaternion4f *)&1.0f,pCVar2,fVar7,&local_9c);
     pCVar2 = &local_18c;
     local_15c.w = local_9c.w;
     puVar4 = (uint *)((int)&local_15c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

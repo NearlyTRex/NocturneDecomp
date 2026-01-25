@@ -10,16 +10,17 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ca70(CCharacter *this_ptr)
 
 {
   COrientation *pCVar1;
-  CDemonActor_vtable *pCVar2;
+  CCharacter_full_vtable *pCVar2;
   int iVar3;
   CVector3f *pCVar4;
   float fVar5;
   float fVar6;
   CDemonActor *pCVar7;
   float in_stack_00000008;
-  CVector3f aCStack_30 [2];
+  CVector3f aCStack_48 [2];
+  CVector3f CStack_30;
+  float fStack_1c;
   float fStack_18;
-  float fStack_14;
   
   if ((*(int *)this_ptr->field11_0x25a0 == 0) && (*(int *)(this_ptr->field11_0x25a0 + 0x14) == 0)) {
     return 0;
@@ -48,7 +49,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ca70(CCharacter *this_ptr)
       (this_ptr->base_actor).orient.heading = *(float *)(iVar3 + 0x38);
     }
     if (*(int *)(this_ptr->field11_0x25a0 + 0x14) != 0) {
-      (*(this_ptr->base_actor).vtable[1].updateCollisionData)(&this_ptr->base_actor);
+      (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc19)();
     }
     return 1;
   }
@@ -84,10 +85,9 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ca70(CCharacter *this_ptr)
     return 1;
   }
   pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                     (&this_ptr->base_actor,aCStack_30,
+                     (&this_ptr->base_actor,&CStack_30,
                       (CVector3f *)(*(int *)(this_ptr->field11_0x25a0 + 0x14) + 0x9bc));
-  pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                     ((CVector3f *)&stack0xffffffb8,pCVar4);
+  pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(aCStack_48,pCVar4);
   fVar6 = pCVar4->y;
   *(float *)(this_ptr->field2_0x240c + 0xc) = fVar6;
   if ((float)0.62831853069999999 <= fVar6) {
@@ -97,19 +97,19 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ca70(CCharacter *this_ptr)
     this_ptr->field11_0x25a0[0x13] = '\0';
   }
   else {
-    pCVar2 = (this_ptr->base_actor).vtable;
+    pCVar2 = (this_ptr->base_actor).vtable._uc;
     this_ptr->field11_0x25a0[0x10] = '\0';
     this_ptr->field11_0x25a0[0x11] = '\0';
     this_ptr->field11_0x25a0[0x12] = '\0';
     this_ptr->field11_0x25a0[0x13] = '\0';
-    (*pCVar2[1].updateCollisionData)(&this_ptr->base_actor);
+    (*(pCVar2->_uc).cfunc19)();
   }
-  fStack_14 = *(float *)(this_ptr->field2_0x240c + 0xc);
-  fStack_18 = *(float *)(this_ptr->field2_0x240c + 0x2c);
-  fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fStack_14);
-  fVar6 = -fStack_18;
-  if ((fVar6 <= fVar5) && (fVar6 = fVar5, fStack_18 < fVar5)) {
-    fVar6 = fStack_18;
+  fStack_18 = *(float *)(this_ptr->field2_0x240c + 0xc);
+  fStack_1c = *(float *)(this_ptr->field2_0x240c + 0x2c);
+  fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fStack_18);
+  fVar6 = -fStack_1c;
+  if ((fVar6 <= fVar5) && (fVar6 = fVar5, fStack_1c < fVar5)) {
+    fVar6 = fStack_1c;
   }
   *(float *)(this_ptr->field2_0x240c + 0xc) = fVar6;
   return 1;

@@ -18,7 +18,8 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9fa0(CEnemy *this_ptr)
       (this_ptr->base_character).field2_0x240c[2] = '\0';
       (this_ptr->base_character).field2_0x240c[3] = '\0';
     }
-    core_charactr_cpp_CCharacter_FUN_0042a390(&this_ptr->base_character);
+    core_charactr_cpp_CCharacter_renderBackground_FUN_0042a390
+              (&this_ptr->base_character,in_stack_00000008);
   }
   return;
 }

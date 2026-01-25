@@ -22,7 +22,7 @@ void __cdecl core_actor_cpp_deleteActor_FUN_00408820(CDemonActor *actor_ptr)
     g_CurrentDebugFilename = "..\\core\\actor.cpp";
     g_CurrentDebugLine = 0x149;
     if (actor_ptr != (CDemonActor *)0x0) {
-      (*actor_ptr->vtable->dtor)
+      (*((actor_ptr->vtable)._ub)->dtor)
                 (actor_ptr,2,unaff_EBX,unaff_retaddr,(uint)actor_ptr,in_stack_00000008,
                  in_stack_0000000c,in_stack_00000010,in_stack_00000014);
       return;

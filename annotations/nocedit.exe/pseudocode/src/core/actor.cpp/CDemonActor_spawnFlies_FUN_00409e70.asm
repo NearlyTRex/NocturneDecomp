@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   spawn_radius
 ;
 ; XREF[1]:
-;   core_charactr.cpp_CCharacter_FUN_0042df90 at 0042dfa8
+;   core_charactr.cpp_CCharacter_spawnFlies_FUN_0042df90 at 0042dfa8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_006138f2

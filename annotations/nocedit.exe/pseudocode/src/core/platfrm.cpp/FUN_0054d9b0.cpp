@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_other_platform.cpp_FUN_0054d9b0(uint param_1, uint
    param_2) */
 
@@ -59,7 +58,7 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
+  this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                        (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd4);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar2 != 0) {

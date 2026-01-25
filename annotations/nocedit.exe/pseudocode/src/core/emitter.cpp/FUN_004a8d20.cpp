@@ -23,8 +23,8 @@ CVector3f * core_emitter_cpp_FUN_004a8d20(void)
   float fStack_10;
   float fStack_c;
   
-  (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0)
-  ;
+  (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
+            (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);
   fStack_10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_28,fStack_1c);
   fStack_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_24,fStack_18);
   core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_20,fStack_14);

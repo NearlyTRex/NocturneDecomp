@@ -65,6 +65,18 @@ extern CCharacter_vtable DAT_00665AD0;
 extern CConsole* g_CConsolePtr;
 
 // CDemonActor_vtable
+extern CDemonActor_vtable g_CIcePickVTable;
+extern CDemonActor_vtable g_CImpVTable;
+extern CDemonActor_vtable g_CLarvaVTable;
+extern CDemonActor_vtable g_CMansionPuzzleCircleVTable;
+extern CDemonActor_vtable g_CMirrorHackVTable;
+extern CDemonActor_vtable g_CMimicVTable;
+extern CDemonActor_vtable g_CMobsterVTable;
+extern CDemonActor_vtable g_CMolochVTable;
+extern CDemonActor_vtable g_CNPCVTable;
+extern CDemonActor_vtable g_CPassengerVTable;
+extern CDemonActor_vtable g_CScatVTable;
+extern CDemonActor_vtable g_CSentinelVTable;
 extern CDemonActor_vtable g_CSimBoxVTable;
 extern CDemonActor_vtable g_CSmileyVTable;
 extern CDemonActor_vtable g_CSpikeVTable;
@@ -88,6 +100,8 @@ extern CDemonActor_vtable g_CVampireBossVTable;
 extern CDemonActor_vtable g_CCryptVesselVTable;
 extern CDemonActor_vtable g_CWayPointVTable;
 extern CDemonActor_vtable g_CWeaponVTable;
+extern CDemonActor_vtable g_CWerewolfVTable;
+extern CDemonActor_vtable g_CZombieVTable;
 
 // CDemonFilter*
 extern CDemonFilter* g_GlobalFilters;
@@ -408,6 +422,9 @@ extern char g_LoadedModelName[80];
 // filebuf_vtable
 extern filebuf_vtable g_FilebufVTable;
 
+// float
+extern float FLOAT_0066596c;
+
 // int
 extern int g_Istrstream_IstreamLastReadLength;
 extern int g_DefaultStreamBufferSize;
@@ -480,7 +497,6 @@ extern streambuf_vtable g_StreambufVTable;
 extern strstreambuf_vtable g_StrstreambufVTable;
 
 // undefined4
-extern undefined4 DAT_0066596c;
 extern undefined4 DAT_0066e940;
 extern undefined4 DAT_0066e944;
 extern undefined4 DAT_0066ea48;

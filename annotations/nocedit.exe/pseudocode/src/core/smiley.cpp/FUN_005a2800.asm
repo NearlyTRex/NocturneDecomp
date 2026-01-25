@@ -63,7 +63,7 @@
 ;   double DOUBLE_0064f30a = 3.14159265350000
 ;   double DOUBLE_0064f312 = 0.523598775583333
 ;   double DOUBLE_0064f31a = 32
-;   undefined4 DAT_00662f68
+;   float FLOAT_00662f68 = 2.5
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CGore* g_CGorePtr = 02d83364
@@ -667,7 +667,7 @@ section .text
     FMUL float ptr [EBP + 0x3a]         ; 005a2e50
     FADDP                               ; 005a2e53
     FSQRT                               ; 005a2e55
-    FLD float ptr [0x00662f68]          ; 005a2e57 | DAT_00662f68
+    FLD float ptr [0x00662f68]          ; 005a2e57 | FLOAT_00662f68
     FLD1                                ; 005a2e5d
     FADDP                               ; 005a2e5f
     FXCH                                ; 005a2e61
@@ -766,7 +766,7 @@ section .text
     MOV EDX,dword ptr [EDI + 0x154]     ; 005a2f47
     CALL dword ptr [EDX + 0x104]        ; 005a2f4d
     ADD ESP,0x4                         ; 005a2f53
-    MOV EAX,[0x00662f68]                ; 005a2f56 | DAT_00662f68
+    MOV EAX,[0x00662f68]                ; 005a2f56 | FLOAT_00662f68
         ;   Label: LAB_005a2f56
     PUSH 0x3e32b8c2                     ; 005a2f5b
     MOV dword ptr [EBP + 0x6e],EAX      ; 005a2f60

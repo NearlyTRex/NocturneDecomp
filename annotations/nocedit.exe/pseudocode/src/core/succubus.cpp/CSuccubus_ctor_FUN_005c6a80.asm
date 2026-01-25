@@ -16,7 +16,7 @@
 ;   undefined4 s_dwing.cth_00653ff3
 ;   undefined4 s_wing.cth_00653ff4
 ;   undefined4 s_ing.cth_00653ff5
-;   float DAT_0066392c = 50
+;   float FLOAT_0066392c = 50
 ;   float FLOAT_00663930 = 100
 ;   CDemonActor_vtable g_CSuccubusVTable
 ;
@@ -71,7 +71,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 005c6af5
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 005c6afa
-    FLD float ptr [0x0066392c]          ; 005c6b04 | DAT_0066392c
+    FLD float ptr [0x0066392c]          ; 005c6b04 | FLOAT_0066392c
     MOV dword ptr [EBX + 0x2de0],0x3f666666 ; 005c6b0a
     FLD float ptr [0x00663930]          ; 005c6b14 | FLOAT_00663930
     MOV dword ptr [EBX + 0xe170],0x1    ; 005c6b1a

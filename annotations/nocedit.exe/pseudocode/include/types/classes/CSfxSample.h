@@ -1,12 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CMP3Decoder;
+struct FILE;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/iostream.h"
-#include "system/stdio.h"
-#include "types/classes/CFileBitStream.h"
-#include "types/classes/CMP3Decoder.h"
-#include "types/classes/CMemoryBitStream.h"
 #include "types/classes/CSampleInfo.h"
 
 // Structure: CSfxSample

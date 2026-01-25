@@ -51,8 +51,8 @@ void core_hotdemon_cpp_FUN_004f7720(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 ((CMotionController *)this_ptr,iVar3,1);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[0x8d].field26_0x148);
-      iVar3 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"hotdemon-die.wav")
-      ;
+      iVar3 = (*((in_stack_00000004->vtable)._ub)->playSound)
+                        (in_stack_00000004,"hotdemon-die.wav");
       in_stack_00000004[0x8d].field26_0x148 = iVar3;
       local_24.y = in_stack_00000008;
       local_24.x = (float)in_stack_00000004;
@@ -73,7 +73,7 @@ void core_hotdemon_cpp_FUN_004f7720(void)
               ((CMotionController *)(in_stack_00000004 + 1),iVar3,1);
     iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(in_stack_00000004[0x8d].field26_0x148);
     if (iVar3 == 0) {
-      iVar3 = (*in_stack_00000004->vtable->playSound)
+      iVar3 = (*((in_stack_00000004->vtable)._ub)->playSound)
                         (in_stack_00000004,"hotdemon-hurt?.wav");
       in_stack_00000004[0x8d].field26_0x148 = iVar3;
       local_24.y = in_stack_00000008;

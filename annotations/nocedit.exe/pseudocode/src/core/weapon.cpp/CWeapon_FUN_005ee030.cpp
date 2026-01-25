@@ -15,7 +15,7 @@ int __cdecl core_weapon_cpp_CWeapon_FUN_005ee030(CWeapon *this_ptr)
   int iVar2;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-  this_ptr_01 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+  this_ptr_01 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                           (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe0);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
   if (iVar1 != 0) {

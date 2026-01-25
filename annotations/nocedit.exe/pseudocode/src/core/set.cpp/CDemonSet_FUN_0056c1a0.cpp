@@ -217,7 +217,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
                               (*(CDemonActor **)pCVar4->actor_list_data,g_CGlassClassInfo.name_hash)
       ;
       if (this_ptr_00 != (CDemonActor *)0x0) {
-        (*this_ptr_00->vtable->renderBackground)(this_ptr_00,0);
+        (*((this_ptr_00->vtable)._ub)->renderBackground)(this_ptr_00,0);
       }
       iVar5 = iVar5 + 1;
       pCVar4 = (CDemonSet *)pCVar4->cameras;

@@ -15,7 +15,8 @@ CMelee * __cdecl core_melee_cpp_FUN_0050e7d0(CMelee *this_ptr)
   char **ppcVar4;
   
   pCVar2 = (CMelee *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar2->base_weapon).base_actor.vtable = &PTR_core_weapon_cpp_ActorModelSomething_FUN_00661174;
+  (pCVar2->base_weapon).base_actor.vtable._ub =
+       &PTR_core_weapon_cpp_ActorModelSomething_FUN_00661174;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base_weapon).model,"melee.kfm");
   (pCVar2->base_weapon).field3_0x2d8[8] = '\a';

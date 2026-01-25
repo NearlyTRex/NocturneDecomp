@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_005267d8
     PUSH EBX                            ; 005267d9
     CALL core_enemy.cpp_FUN_004a9a50    ; 005267da
-        ;   XREF to: 004a9a50 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9a50()
+        ;   XREF to: 004a9a50 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a9a50(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 005267df
     TEST EAX,EAX                        ; 005267e2
     JZ 0x00526a8c                       ; 005267e4

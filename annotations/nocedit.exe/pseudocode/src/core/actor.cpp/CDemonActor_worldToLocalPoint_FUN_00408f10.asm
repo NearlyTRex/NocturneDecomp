@@ -21,8 +21,8 @@
 ;   core_chain.cpp_FUN_00430eb0 at 00430fa4
 ;   core_charactr.cpp_CCharacter_FUN_00428d80 at 00428d93
 ;   core_charactr.cpp_CCharacter_FUN_00429b40 at 00429c84
-;   core_charactr.cpp_CCharacter_FUN_0042c110 at 0042c123
 ;   core_charactr.cpp_CCharacter_FUN_0042c180 at 0042c1ae
+;   core_charactr.cpp_CCharacter_FUN_0042ca70 at 0042cbba
 ;   ... and 66 more
 ;
 ; Called Functions:

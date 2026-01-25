@@ -7,8 +7,8 @@
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004f2340 at 004f2354
-;   core_npc.cpp_FUN_005447e0 at 005447f4
+;   core_hero.cpp_CHero_ctor_FUN_004f2340 at 004f2354
+;   core_npc.cpp_CNPC_ctor_FUN_005447e0 at 005447f4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0063e8a2

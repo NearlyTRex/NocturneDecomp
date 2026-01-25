@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_imp.cpp_FUN_004f9c30(uint param_1, uint param_2)
     */
 
@@ -31,8 +30,6 @@ void core_imp_cpp_FUN_004f9c30(void)
   double dVar14;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  SCollisionInfo *in_stack_fffffe60;
-  SCollisionInfo *in_stack_fffffe68;
   SDamageInfo local_164;
   float local_128;
   float local_124;
@@ -79,8 +76,8 @@ void core_imp_cpp_FUN_004f9c30(void)
   }
   if (((in_stack_00000004->base_character).model.part_visibility_flags
        [(int)in_stack_00000004[1].base_character.base_actor.orient.heading] == 0) &&
-     (iVar7 = (*(in_stack_00000004->base_character).base_actor.vtable[1].hasCollision)
-                        ((CDemonActor *)in_stack_00000004,in_stack_fffffe60), iVar7 == 0)) {
+     (iVar7 = (*(((in_stack_00000004->base_character).base_actor.vtable._uc)->_uc).isDamageable)
+                        (&in_stack_00000004->base_character), iVar7 == 0)) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(in_stack_00000004->base_character).model.motion_controller,6,1);
   }
@@ -106,7 +103,7 @@ LAB_004f9c99:
                                0x108))(), iVar7 == 0)) &&
          (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
                               0xfc))(), iVar7 != 0)) {
-        local_50.z = 0x40000000;
+        local_50.z = 2.0f;
         local_50.x = 0.0;
         local_50.y = 0.0;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -152,7 +149,7 @@ LAB_004f9c99:
         iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
                             0x120))();
         if (iVar7 < 1) {
-          (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+          (*((in_stack_00000004->base_character).base_actor.vtable._ub)->playSound)
                     ((CDemonActor *)in_stack_00000004,"ghoul-eat-?.wav");
         }
         else {
@@ -182,11 +179,10 @@ LAB_004f9c99:
   if (iVar11 == 0) {
     switch(iVar7) {
     case 0:
-      iVar7 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffe68);
+      iVar7 = (*(((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._uc)->_uc).
+                isDamageable)(&g_HeroActors[g_LocalHeroIndex]->base_character);
       if (iVar7 == 0) {
-        (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                  ((CDemonActor *)in_stack_00000004);
+        (*(((in_stack_00000004->base_character).base_actor.vtable._ue)->_ue).field_4)();
         iVar7 = *(int *)(in_stack_00000004->field6_0xbe38 + 4);
         if (iVar7 == 0) {
           core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
@@ -205,7 +201,7 @@ LAB_004f9c99:
           local_20 = SQRT(local_80.z * local_80.z +
                           local_80.x * local_80.x + local_80.y * local_80.y);
           local_18 = local_20;
-          if (local_20 < 0x40000000) {
+          if (local_20 < 2.0f) {
             core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_e0,&local_80);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_e0.y -
@@ -217,7 +213,7 @@ LAB_004f9c99:
           }
           if (local_20 < in_stack_00000004->guard_distance) {
             pCVar1 = &(in_stack_00000004->base_character).model;
-            if (_DAT_006601e8 <= local_20) {
+            if (10.0f <= local_20) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar1->motion_controller,2,1);
             }
@@ -242,9 +238,8 @@ LAB_004f9c99:
       break;
     case 1:
     case 2:
-      (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)in_stack_00000004);
-      fVar3 = 0x40000000;
+      (*(((in_stack_00000004->base_character).base_actor.vtable._ue)->_ue).field_4)();
+      fVar3 = 2.0f;
       pCVar1 = &(in_stack_00000004->base_character).model;
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);
@@ -260,7 +255,7 @@ LAB_004f9c99:
       else {
         iVar7 = *(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x2598);
         if (iVar7 == 0) {
-          local_28 = 0x40000000;
+          local_28 = 2.0f;
           (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
           (in_stack_00000004->base_character).model.accumulated_root_motion.y =
                (in_stack_00000004->base_character).model.accumulated_root_motion.z;
@@ -280,11 +275,11 @@ LAB_004f9c99:
             local_a0 = 0;
             local_2c = SQRT(local_9c * local_9c + local_a4 * local_a4);
             local_1c = local_2c;
-            if ((_DAT_006601e8 < local_2c) && (local_24 == 1)) {
+            if ((10.0f < local_2c) && (local_24 == 1)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar1->motion_controller,2,1);
             }
-            if (((local_1c < _DAT_006601ec) &&
+            if (((local_1c < 4.0f) &&
                 (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) +
                                               0x154) + 0x108))(), iVar7 == 0)) &&
                ((in_stack_00000004->base_character).model.part_visibility_flags
@@ -309,7 +304,7 @@ LAB_004f9c99:
                                   (*(uint *)(in_stack_00000004[1].base_character.base_actor.
                                              actor_name + 8));
                 if (iVar7 == 0) {
-                  uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+                  uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable._ub)->playSound)
                                      ((CDemonActor *)in_stack_00000004,"imp-jump?.wav");
                   *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8) =
                        uVar13;
@@ -357,7 +352,7 @@ LAB_004f9c99:
                  (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                                     (*(uint *)(in_stack_00000004[1].base_character.base_actor.
                                                actor_name + 0xc)), iVar7 == 0)) {
-                uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+                uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable._ub)->playSound)
                                    ((CDemonActor *)in_stack_00000004,"imp-laugh?.wav");
                 *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8) =
                      uVar13;
@@ -390,7 +385,7 @@ LAB_004f9c99:
            (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                               (*(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name +
                                         0xc)), iVar7 == 0)) {
-          uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
+          uVar13 = (*((in_stack_00000004->base_character).base_actor.vtable._ub)->playSound)
                              ((CDemonActor *)in_stack_00000004,"imp-laugh?.wav");
           *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8) = uVar13;
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
 
 {
@@ -48,7 +46,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+    this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                             (&this_ptr->base_actor,&local_a4);
     iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     iStack_1c = iVar3;
@@ -106,7 +104,7 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         if (0x28 < (int)fStack_cc) {
           fStack_cc = 5.60519e-44;
         }
-        (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_88);
+        (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)(&this_ptr->base_actor,&CStack_88);
         pCVar2 = g_CDemonRendererPtr2;
         fVar1 = *(float *)(this_ptr->field1_0x158 + 8) * (float)0.5;
         fStack_5c = 0.0;
@@ -122,9 +120,9 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
         pCVar2->vertex_buffer_ptr->u = 1.1754944e-38;
         pCVar2->vertex_buffer_ptr->v = 1.1754944e-38;
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar2,&DAT_0068434c);
-        CStack_48.x = (int)ROUND(fStack_60 * _DAT_00664a00);
-        CStack_48.y = (int)ROUND(fStack_5c * _DAT_00664a00);
-        CStack_48.z = (int)ROUND(fStack_58 * _DAT_00664a00);
+        CStack_48.x = (int)ROUND(fStack_60 * 256.0f);
+        CStack_48.y = (int)ROUND(fStack_5c * 256.0f);
+        CStack_48.z = (int)ROUND(fStack_58 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_48);
         pCVar2 = g_CDemonRendererPtr2;
@@ -136,9 +134,9 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
           pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);
           pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);
         }
-        CStack_6c.x = (int)ROUND(fStack_60 * _DAT_00664a00);
-        CStack_6c.y = (int)ROUND(CStack_88.max.z * _DAT_00664a00);
-        CStack_6c.z = (int)ROUND(fStack_58 * _DAT_00664a00);
+        CStack_6c.x = (int)ROUND(fStack_60 * 256.0f);
+        CStack_6c.y = (int)ROUND(CStack_88.max.z * 256.0f);
+        CStack_6c.z = (int)ROUND(fStack_58 * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&pCVar2->vertex_buffer_ptr[1].projected_vertex,&CStack_6c);
         iStack_d0 = 0;
@@ -162,9 +160,9 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
               pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);
               piVar8 = piVar8 + (uint)bVar9 * -2 + 1;
             }
-            CStack_54.x = (int)ROUND(fStack_60 * _DAT_00664a00);
-            CStack_54.y = (int)ROUND(CStack_88.min.z * _DAT_00664a00);
-            CStack_54.z = (int)ROUND(fStack_58 * _DAT_00664a00);
+            CStack_54.x = (int)ROUND(fStack_60 * 256.0f);
+            CStack_54.y = (int)ROUND(CStack_88.min.z * 256.0f);
+            CStack_54.z = (int)ROUND(fStack_58 * 256.0f);
             wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                       ((SProjectedVertex *)
                        ((int)&(pCVar2->vertex_buffer_ptr->projected_vertex).transformed_x +
@@ -180,9 +178,9 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
               pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);
               piVar8 = piVar8 + (uint)bVar9 * -2 + 1;
             }
-            aCStack_3c[0].x = (int)ROUND(fStack_60 * _DAT_00664a00);
-            aCStack_3c[0].y = (int)ROUND(CStack_88.max.z * _DAT_00664a00);
-            aCStack_3c[0].z = (int)ROUND(fStack_58 * _DAT_00664a00);
+            aCStack_3c[0].x = (int)ROUND(fStack_60 * 256.0f);
+            aCStack_3c[0].y = (int)ROUND(CStack_88.max.z * 256.0f);
+            aCStack_3c[0].z = (int)ROUND(fStack_58 * 256.0f);
             wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                       ((SProjectedVertex *)
                        ((int)&(pCVar2->vertex_buffer_ptr->projected_vertex).transformed_x +

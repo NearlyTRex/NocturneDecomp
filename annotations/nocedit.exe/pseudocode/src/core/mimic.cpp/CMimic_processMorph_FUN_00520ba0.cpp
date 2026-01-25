@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_enemy_mimic.cpp_CMimic_processMorph(CMimic* param_1, uint
    param_2) */
 
@@ -24,7 +23,7 @@ void core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(void)
     g_CurrentLineNumber = 0x4c9;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::processMorph - can't process morph unless we've started morph!");
   }
-  fVar1 = in_stack_00000008 / _DAT_00661414 + *(float *)(in_stack_00000004 + 0x4ca50);
+  fVar1 = in_stack_00000008 / 1.0f + *(float *)(in_stack_00000004 + 0x4ca50);
   *(float *)(in_stack_00000004 + 0x4ca50) = fVar1;
   if (1.0 <= fVar1) {
     core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);

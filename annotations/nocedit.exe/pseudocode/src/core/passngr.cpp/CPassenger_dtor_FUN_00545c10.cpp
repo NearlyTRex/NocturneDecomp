@@ -25,8 +25,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
     return this_ptr;
   }
   iVar2 = *(int *)(this_ptr->field1_0x1f708 + 0x108);
-  (this_ptr->base_npc).base_character.base_actor.vtable =
-       &PTR_core_passngr_cpp_FUN_00545d30_00661f64;
+  (this_ptr->base_npc).base_character.base_actor.vtable._ub = &g_CPassengerVTable;
   if (iVar2 != 0) {
     g_CurrentDebugLine = 0x50;
     g_CurrentDebugFilename = "..\\core\\passngr.cpp";

@@ -1,9 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct COptimize_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CObj.h"
-#include "types/classes/COptimize_vtable.h"
 
 // Structure: COptimize
 // Ghidra size: 0x44 (68 bytes)

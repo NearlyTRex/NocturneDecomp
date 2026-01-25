@@ -37,7 +37,7 @@ core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
     g_CurrentLineNumber = 0x70e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid actor pointer %08X detected at %s, line %d");
   }
-  if ((byte *)this_ptr->field6_0x68 != &DAT_0078a123) {
+  if ((int *)this_ptr->validation_magic != &g_ActorMagicNumber) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x718;
     crt_memory_c_memset_FUN_005fde40(g_ActorDebugBuffer,0,0x32);

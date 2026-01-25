@@ -14,8 +14,8 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_00412bc0(CBaron *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CBaron *)core_hero_cpp_FUN_004f2340();
-  (pCVar2->field0_0x0).base_character.base_actor.vtable = &g_CBaronVTable;
+  pCVar2 = (CBaron *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->field0_0x0);
+  (pCVar2->field0_0x0).base_character.base_actor.vtable._ub = &g_CBaronVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar2->field0_0x0).base_character.model,"baron.dfm");
   pCVar2->field1_0x1fbd4[0xd4] = '\0';

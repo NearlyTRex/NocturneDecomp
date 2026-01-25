@@ -16,8 +16,8 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor *
     crt_memory_c_free_FUN_005fe659(ptr);
     return this_ptr;
   }
-  this_ptr->field6_0x68 = 0x495fd67;
-  this_ptr->vtable = &g_CDemonActorVTable;
+  this_ptr->validation_magic = 0x495fd67;
+  (this_ptr->vtable)._ub = &g_CDemonActorVTable;
   if ((d1 & 2) == 0) {
     return this_ptr;
   }

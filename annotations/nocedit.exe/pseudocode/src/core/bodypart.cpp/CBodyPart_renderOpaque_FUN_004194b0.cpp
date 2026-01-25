@@ -18,7 +18,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
   if (*(int *)this_ptr->field1_0x158 < 2) {
     g_CDemonSetPtr->unk_lighting_param2 = *(int *)(this_ptr->field1_0x158 + 0xb58);
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
-    this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
+    this_ptr_00 = (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
                             (&this_ptr->base_actor,&local_20);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     *(int *)(this_ptr->field1_0x158 + 0xdd4) = iVar1;

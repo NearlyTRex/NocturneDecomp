@@ -1,13 +1,15 @@
 #pragma once
 
+// Forward declarations
+struct CDemonTriangle;
+struct CVector3i;
+struct SMRGLPrimitiveQuad;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CKeyFramedModelPart.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
-#include "types/classes/CVector3i.h"
-#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureExtended.h"
 
 // Structure: CKeyFramedModel

@@ -1,26 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 54,
-        "line": 17,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field6_0x68'; did you mean 'field_108'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 70,
-        "line": 17,
-        "message": "'DAT_0078a123' was not declared in this scope; did you mean 'DAT_00684128'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
         "column": 88,
         "line": 25,
         "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      },
+      {
+        "category": "other",
+        "column": 8,
+        "line": 17,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
@@ -32,15 +25,13 @@
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 39,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
     "pseudocode_lines": 24,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 78
   },
   "cross_references": [],
@@ -98,8 +89,8 @@
     },
     {
       "addr": "0078a123",
-      "name": "DAT_0078a123",
-      "type": "undefined4",
+      "name": "g_ActorMagicNumber",
+      "type": "int",
       "value": null
     }
   ],
@@ -167,19 +158,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_0078a123",
-      "text": "if (((byte *)(this_ptr->base_character).base_actor.field6_0x68 == &DAT_0078a123) &&",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CGabriella",
         "offset": 260,
         "vtable_addr": "0065e804"
       },

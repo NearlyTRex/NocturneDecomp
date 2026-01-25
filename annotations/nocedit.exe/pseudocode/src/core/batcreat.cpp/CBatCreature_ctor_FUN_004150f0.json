@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 23,
-        "message": "'_PTR_FUN_0065a5b1_3' was not declared in this scope"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 24,
-        "message": "'_DAT_0065a5b0' was not declared in this scope; did you mean 'DAT_0065ac10'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": [
       {
         "category": "other",
@@ -25,23 +12,21 @@
       {
         "category": "other",
         "column": 57,
-        "line": 22,
+        "line": 20,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 42,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 27,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 52
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -84,15 +69,15 @@
     },
     {
       "addr": "0065a5b0",
-      "name": "DAT_0065a5b0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065a5b0",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "0065a5b4",
-      "name": "PTR_FUN_0065a5b1+3",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065a5b4",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "0065a5c4",
@@ -155,15 +140,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

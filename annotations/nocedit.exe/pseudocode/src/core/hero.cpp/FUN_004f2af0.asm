@@ -8,7 +8,7 @@
 ;
 ; XREF[6]:
 ;   core_colonel.cpp_FUN_0043fa00 at 0043fdb7
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d3fc8
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3fc8
 ;   core_haystack.cpp_FUN_004f0e40 at 004f1244
 ;   core_icepick.cpp_FUN_004f80b0 at 004f85c3
 ;   core_stranger.cpp_CStranger_FUN_005c5b90 at 005c5d54

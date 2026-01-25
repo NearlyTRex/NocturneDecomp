@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 51,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 26,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 72
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -116,20 +114,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "text": "SCollisionInfo *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_ESI",
-      "text": "(iVar1 = (*this_ptr_00->vtable[1].hasCollision)(this_ptr_00,unaff_ESI), iVar1 != 0))) {",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

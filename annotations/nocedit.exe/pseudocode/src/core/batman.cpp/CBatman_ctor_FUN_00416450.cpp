@@ -6,29 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00416450(CBatman *this_ptr)
 
 {
   char cVar1;
   CEnemy *pCVar2;
-  uint uVar3;
-  uint uVar4;
+  float fVar3;
+  float fVar4;
   CBatman *pCVar5;
   char *pcVar6;
   char *pcVar7;
   
   pCVar5 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   pcVar6 = "none";
-  (pCVar5->base_enemy).base_character.base_actor.vtable = &g_CBatmanVTable;
+  (pCVar5->base_enemy).base_character.base_actor.vtable._ub = &g_CBatmanVTable;
   pcVar7 = pCVar5->field1_0xbeb4 + 8;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar5->base_enemy).base_character.model,"batman.dfm");
-  uVar3 = _DAT_0065a770;
+  fVar3 = 50.0f;
   pCVar2 = &pCVar5->base_enemy;
   (pCVar2->base_character).cloth_data[0x344] = -0x66;
-  uVar4 = _PTR_FUN_0065a771_3;
+  fVar4 = 100.0f;
   (pCVar2->base_character).cloth_data[0x345] = -0x67;
   (pCVar2->base_character).cloth_data[0x346] = '\x19';
   (pCVar2->base_character).cloth_data[0x347] = '?';
@@ -37,8 +35,8 @@ CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00416450(CBatman *this_ptr)
   (pCVar2->base_character).cloth_data[0x349] = '\0';
   (pCVar2->base_character).cloth_data[0x34a] = '\0';
   (pCVar2->base_character).cloth_data[0x34b] = '@';
-  *(uint *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = uVar3;
-  *(uint *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = uVar4;
+  *(float *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = fVar3;
+  *(float *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = fVar4;
   do {
     cVar1 = *pcVar6;
     *pcVar7 = cVar1;

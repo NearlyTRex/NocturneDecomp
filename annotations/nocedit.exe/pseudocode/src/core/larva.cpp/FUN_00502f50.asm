@@ -11,7 +11,7 @@
 ;   TerminatedCString s_core_larva_cpp_00630eca
 ;
 ; Called Functions:
-;   core_larva.cpp_FUN_00502f90
+;   core_larva.cpp_CLarva_ctor_FUN_00502f90
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     RET                                 ; 00502f68
     PUSH EAX                            ; 00502f69
         ;   Label: LAB_00502f69
-    CALL core_larva.cpp_FUN_00502f90    ; 00502f6a
-        ;   XREF to: 00502f90 (UNCONDITIONAL_CALL)  ; CLarva * core_larva.cpp_FUN_00502f90(CLarva * this_ptr)
+    CALL core_larva.cpp_CLarva_ctor_FUN_00502f90 ; 00502f6a
+        ;   XREF to: 00502f90 (UNCONDITIONAL_CALL)  ; CLarva * core_larva.cpp_CLarva_ctor_FUN_00502f90(CLarva * this_ptr)
     ADD ESP,0x4                         ; 00502f6f
     RET                                 ; 00502f72
 

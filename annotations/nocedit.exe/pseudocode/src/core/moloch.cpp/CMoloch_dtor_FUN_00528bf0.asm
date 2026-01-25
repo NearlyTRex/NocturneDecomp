@@ -11,7 +11,7 @@
 ; uint             Stack[0x14]:4   d4
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable PTR_core_moloch.cpp_FUN_00528c70_00661944
+;   CDemonActor_vtable g_CMolochVTable
 ;   WatcomTypeInfo g_CMolochTypeInfo
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     PUSH 0x0                            ; 00528bfc
     ADD EBX,0x21f5c                     ; 00528bfe
     PUSH EBX                            ; 00528c04
-    MOV dword ptr [EBX + 0xfffde1f8],0x661944 ; 00528c05 | PTR_core_moloch.cpp_FUN_00528c70_00661944
+    MOV dword ptr [EBX + 0xfffde1f8],0x661944 ; 00528c05 | g_CMolochVTable
     CALL core_morph.cpp_CMorphModel_FUN_0052b330 ; 00528c0f
         ;   XREF to: 0052b330 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052b330(CMorphModel * this_ptr)
     ADD ESP,0x8                         ; 00528c14

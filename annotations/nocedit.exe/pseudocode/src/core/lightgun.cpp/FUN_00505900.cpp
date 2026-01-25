@@ -6,17 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CLightGun * __cdecl core_lightgun_cpp_FUN_00505900(CLightGun *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   CLightGun *pCVar3;
   
   pCVar3 = (CLightGun *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar3->base_weapon).base_actor.vtable = &PTR_core_weapon_cpp_ActorModelSomething_FUN_00660a64;
+  (pCVar3->base_weapon).base_actor.vtable._ub =
+       &PTR_core_weapon_cpp_ActorModelSomething_FUN_00660a64;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar3->base_weapon).model,"cre.kfm");
   pCVar3->field1_0x578[4] = '\0';
@@ -45,9 +44,9 @@ CLightGun * __cdecl core_lightgun_cpp_FUN_00505900(CLightGun *this_ptr)
   (pCVar3->base_weapon).field3_0x2d8[0xf] = '\0';
   (pCVar3->base_weapon).bolt_velocity = 32.0;
   (pCVar3->base_weapon).fire_cooldown = 1.4013e-45;
-  uVar1 = _DAT_00660a3c;
+  fVar1 = 8.0f;
   (pCVar3->base_weapon).can_attach_light = 0;
-  uVar2 = 0x41F00000;
+  fVar2 = 30.0f;
   pCVar3->field1_0x578[0x10] = '\0';
   pCVar3->field1_0x578[0x11] = '\0';
   pCVar3->field1_0x578[0x12] = '\0';
@@ -56,7 +55,7 @@ CLightGun * __cdecl core_lightgun_cpp_FUN_00505900(CLightGun *this_ptr)
   pCVar3->field1_0x578[0xd] = '\0';
   pCVar3->field1_0x578[0xe] = -0x80;
   pCVar3->field1_0x578[0xf] = '?';
-  *(uint *)((pCVar3->base_weapon).field9_0x305 + 0x25f) = uVar1;
-  *(uint *)(pCVar3->field1_0x578 + 8) = uVar2;
+  *(float *)((pCVar3->base_weapon).field9_0x305 + 0x25f) = fVar1;
+  *(float *)(pCVar3->field1_0x578 + 8) = fVar2;
   return pCVar3;
 }

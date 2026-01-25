@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CCheckOutItem;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CCheckOutItem.h"
 
 // Structure: CCheckOutList
 // Ghidra size: 0x8 (8 bytes)

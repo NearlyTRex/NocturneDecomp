@@ -60,7 +60,7 @@ void core_dracbrid_cpp_FUN_00486070(void)
       if (bVar2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr->motion_controller,7,1);
-        (*((in_stack_00000004->base_actor).vtable)->playAmbientSound)
+        (*((in_stack_00000004->base_actor).vtable._ub)->playAmbientSound)
                   (&in_stack_00000004->base_actor,"bride-launch.wav");
       }
       else {

@@ -55,7 +55,7 @@ void core_imp_cpp_FUN_004fae00(void)
     sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[0x8d].field26_0x148);
     sound_name = "imp-die?.wav";
   }
-  iVar3 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,sound_name);
+  iVar3 = (*((in_stack_00000004->vtable)._ub)->playSound)(in_stack_00000004,sound_name);
   in_stack_00000004[0x8d].field26_0x148 = iVar3;
 LAB_004faefc:
   local_24.y = in_stack_00000008;

@@ -29,7 +29,7 @@ void core_svetlana_cpp_FUN_005d9d30(void)
   if (g_CGamePtr->allow_damage_flag == 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  *(uint *)in_stack_00000004[1].base_actor.actor_name = 0x40400000;
+  *(float *)in_stack_00000004[1].base_actor.actor_name = 3.0f;
   fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);
   this_ptr = &in_stack_00000004->model;
   in_stack_00000004->hit_points = fVar1;
@@ -47,7 +47,7 @@ void core_svetlana_cpp_FUN_005d9d30(void)
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);
         sound_sndmain_cpp_killSfx_FUN_005a9c40
                   (*(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650));
-        uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+        uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                           (&in_stack_00000004->base_actor,"svet-die.wav");
         *(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
         core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);
@@ -67,7 +67,7 @@ void core_svetlana_cpp_FUN_005d9d30(void)
     iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650));
     if (iVar4 == 0) {
-      uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)
+      uVar3 = (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                         (&in_stack_00000004->base_actor,"svet-hurt?.wav");
       *(uint *)(in_stack_00000004[0xd].cloth_data + 0x2650) = uVar3;
       core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);

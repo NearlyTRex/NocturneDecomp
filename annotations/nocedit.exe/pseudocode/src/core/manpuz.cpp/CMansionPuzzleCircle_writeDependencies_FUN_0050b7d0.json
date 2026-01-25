@@ -1,0 +1,126 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 51,
+        "line": 16,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field1_0x158'"
+      },
+      {
+        "category": "missing_member",
+        "column": 52,
+        "line": 18,
+        "message": "'CMansionPuzzleCircle' {aka 'struct CMansionPuzzleCircle'} has no member named 'field1_0x158'"
+      }
+    ],
+    "success": false,
+    "warnings": [
+      {
+        "category": "other",
+        "column": 88,
+        "line": 25,
+        "message": "pointer of type 'void *' used in arithmetic [-Wpointer-arith]"
+      }
+    ]
+  },
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050b7d0",
+    "address_range": [
+      [
+        "0050b7d0",
+        "0050b806"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_writeDependencies_FUN_0050b7d0",
+    "signature": "void core_manpuz.cpp_CMansionPuzzleCircle_writeDependencies_FUN_0050b7d0(CMansionPuzzleCircle * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfd0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0"
+    },
+    {
+      "addr": "0047edd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 11,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMansionPuzzleCircle",
+        "offset": 224,
+        "vtable_addr": "00660da4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

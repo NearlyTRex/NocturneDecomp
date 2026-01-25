@@ -63,12 +63,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
-        "line": 45,
-        "message": "'_DAT_0065f024' was not declared in this scope; did you mean 'DAT_00681024'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 60,
         "line": 135,
         "message": "'DAT_02d833a8' was not declared in this scope; did you mean 'DAT_02d83368'?"
@@ -146,9 +140,9 @@
   "globals": [
     {
       "addr": "0065f024",
-      "name": "DAT_0065f024",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065f024",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "006703ec",
@@ -531,21 +525,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "ROUND",
-      "text": "local_1c.x = (int)ROUND(*pfVar2 * _DAT_0065f024);",
+      "text": "local_1c.x = (int)ROUND(*pfVar2 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ROUND",
-      "text": "local_1c.y = (int)ROUND(pfVar2[1] * _DAT_0065f024);",
+      "text": "local_1c.y = (int)ROUND(pfVar2[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ROUND",
-      "text": "local_1c.z = (int)ROUND(pfVar2[2] * _DAT_0065f024);",
+      "text": "local_1c.z = (int)ROUND(pfVar2[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {

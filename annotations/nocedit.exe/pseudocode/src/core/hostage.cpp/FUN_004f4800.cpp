@@ -15,6 +15,6 @@ void core_hostage_cpp_FUN_004f4800(void)
   if (this_ptr == (CHostage *)0x0) {
     return;
   }
-  core_hostage_cpp_FUN_004f4840(this_ptr);
+  core_hostage_cpp_CHostage_ctor_FUN_004f4840(this_ptr);
   return;
 }

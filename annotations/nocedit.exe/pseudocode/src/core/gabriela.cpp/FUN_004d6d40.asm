@@ -10,15 +10,15 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d34e9
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d34e9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065e7cc
+;   float FLOAT_0065e7cc = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_02d7b84c
-;   undefined4 DAT_02d7b850
-;   undefined4 DAT_02d7b888
-;   undefined4 DAT_02d7b88c
+;   int INT_02d7b84c
+;   int INT_02d7b850
+;   int INT_02d7b888
+;   int INT_02d7b88c
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     FLD float ptr [EBX + 0x1fbf0]       ; 004d6d4f
     FLD float ptr [EBX + 0x1fbf4]       ; 004d6d55
     FXCH ST2                            ; 004d6d5b
-    FDIV float ptr [0x0065e7cc]         ; 004d6d5d | DAT_0065e7cc
+    FDIV float ptr [0x0065e7cc]         ; 004d6d5d | FLOAT_0065e7cc
     FXCH                                ; 004d6d63
     FSUB ST0,ST1                        ; 004d6d65
     FXCH ST2                            ; 004d6d67
@@ -134,9 +134,9 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 004d6e56
         ;   Label: LAB_004d6e56
     PUSH EAX                            ; 004d6e5a
-    MOV EAX,[0x02d7b84c]                ; 004d6e5b | DAT_02d7b84c
+    MOV EAX,[0x02d7b84c]                ; 004d6e5b | INT_02d7b84c
     PUSH EAX                            ; 004d6e60
-    MOV EDX,dword ptr [0x02d7b888]      ; 004d6e61 | DAT_02d7b888
+    MOV EDX,dword ptr [0x02d7b888]      ; 004d6e61 | INT_02d7b888
     PUSH EDX                            ; 004d6e67
     LEA EAX,[EBX + 0x1fbf0]             ; 004d6e68
     PUSH EAX                            ; 004d6e6e
@@ -170,9 +170,9 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 004d6ec4
         ;   Label: LAB_004d6ec4
     PUSH EAX                            ; 004d6ec8
-    MOV EDI,dword ptr [0x02d7b850]      ; 004d6ec9 | DAT_02d7b850
+    MOV EDI,dword ptr [0x02d7b850]      ; 004d6ec9 | INT_02d7b850
     PUSH EDI                            ; 004d6ecf
-    MOV EBP,dword ptr [0x02d7b88c]      ; 004d6ed0 | DAT_02d7b88c
+    MOV EBP,dword ptr [0x02d7b88c]      ; 004d6ed0 | INT_02d7b88c
     PUSH EBP                            ; 004d6ed6
     LEA EAX,[EBX + 0x1fbf4]             ; 004d6ed7
     PUSH EAX                            ; 004d6edd
@@ -206,7 +206,7 @@ section .text
         ;   XREF to: 004d6ec4 (UNCONDITIONAL_JUMP)  ; LAB_004d6ec4
     PUSH 0x59ddb0                       ; 004d6f2a
         ;   Label: LAB_004d6f2a
-    MOV ECX,dword ptr [0x02d7b84c]      ; 004d6f2f | DAT_02d7b84c
+    MOV ECX,dword ptr [0x02d7b84c]      ; 004d6f2f | INT_02d7b84c
     PUSH ECX                            ; 004d6f35
     PUSH dword ptr [EBX + 0x1fbf0]      ; 004d6f36
     PUSH 0x0                            ; 004d6f3c
@@ -217,7 +217,7 @@ section .text
         ;   XREF to: 0059eb50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 004d6f4b
     PUSH 0x59ddb0                       ; 004d6f4e
-    MOV EDI,dword ptr [0x02d7b850]      ; 004d6f53 | DAT_02d7b850
+    MOV EDI,dword ptr [0x02d7b850]      ; 004d6f53 | INT_02d7b850
     PUSH EDI                            ; 004d6f59
     PUSH dword ptr [EBX + 0x1fbf4]      ; 004d6f5a
     PUSH 0x0                            ; 004d6f60

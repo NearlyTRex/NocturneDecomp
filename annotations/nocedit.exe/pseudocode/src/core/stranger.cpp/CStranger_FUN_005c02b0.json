@@ -152,10 +152,10 @@
         "message": "cast from 'CQuaternion4f*' to 'int' loses precision [-fpermissive]"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "other",
         "column": 34,
         "line": 143,
-        "message": "'DAT_00665998' was not declared in this scope; did you mean 'DAT_006659c8'?"
+        "message": "lvalue required as unary '&' operand"
       },
       {
         "category": "other",
@@ -734,12 +734,12 @@
   },
   "complexity": {
     "assembly_lines": 315,
-    "complexity_score": 947,
+    "complexity_score": 937,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
     "pseudocode_lines": 212,
-    "suspect_count": 71,
+    "suspect_count": 70,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -831,9 +831,9 @@
     },
     {
       "addr": "00665998",
-      "name": "DAT_00665998",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00665998",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "03f6bad8",
@@ -1455,13 +1455,6 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_ac + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 136,
-      "match": "DAT_00665998",
-      "text": "((CQuaternion4f *)&DAT_00665998,pCVar2,fVar7,&local_9c);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

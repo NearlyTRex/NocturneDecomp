@@ -75,7 +75,7 @@ uint core_mobster_cpp_FUN_00526d90(void)
           local_20 = pCVar1;
           while ((int)local_1c < (int)g_CDemonSetPtr->actor_list_ptr) {
             pCVar2 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar8);
-            pCVar5 = (*pCVar2->vtable->getCarrier)(pCVar2);
+            pCVar5 = (*((pCVar2->vtable)._ub)->getCarrier)(pCVar2);
             if ((pCVar5 == (CDemonActor *)0x0) &&
                (iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar2,"CTommyGun"),
                iVar6 != 0)) {
@@ -145,7 +145,7 @@ uint core_mobster_cpp_FUN_00526d90(void)
              (iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event +
                                                     0x2c) + 0x154) + 0x7c))(), iVar7 == 3)) {
             pCVar2 = *(CDemonActor **)(in_stack_00000004[1].base_actor.create_event + 0x2c);
-            (*pCVar2->vtable->getBoundingBox)(pCVar2,&CStack_88);
+            (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_88);
             uStack_28 = 0x3f000000;
             core_bodypart_cpp_FUN_0041b540();
             core_bodypart_cpp_FUN_0041b4e0();

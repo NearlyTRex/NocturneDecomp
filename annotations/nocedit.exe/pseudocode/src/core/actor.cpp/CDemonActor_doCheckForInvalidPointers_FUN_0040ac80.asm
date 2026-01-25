@@ -40,7 +40,7 @@
 ;   TerminatedCString s_Dangling_corrupt_actor_p_00613c30
 ;   float g_MaxValidPosition = 99999
 ;   char[256] g_CharacterClassificationTable
-;   undefined4 DAT_0078a123
+;   int g_ActorMagicNumber
 ;   char[50] g_ActorDebugBuffer
 ;   undefined4 CHAR_ARRAY_00821fc4
 ;   ... and 2 more
@@ -84,7 +84,7 @@ section .text
     ADD ESP,0x10                        ; 0040acc8
     MOV EDI,dword ptr [EBX + 0x68]      ; 0040accb
         ;   Label: LAB_0040accb
-    CMP EDI,0x78a123                    ; 0040acce | DAT_0078a123
+    CMP EDI,0x78a123                    ; 0040acce | g_ActorMagicNumber
     JZ 0x0040ad30                       ; 0040acd4
         ;   XREF to: 0040ad30 (CONDITIONAL_JUMP)  ; LAB_0040ad30
     PUSH EDI                            ; 0040acd6

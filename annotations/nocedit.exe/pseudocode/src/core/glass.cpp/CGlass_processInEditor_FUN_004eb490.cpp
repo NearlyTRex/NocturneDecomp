@@ -44,10 +44,10 @@ void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr
       (this_ptr->glass_size).y = 0.5;
     }
     (this_ptr->glass_size).z = 0.1;
-    (*((this_ptr->base).vtable)->setup)(&this_ptr->base);
+    (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);
     return;
   }
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-  (*((this_ptr->base).vtable)->setup)(&this_ptr->base);
+  (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);
   return;
 }

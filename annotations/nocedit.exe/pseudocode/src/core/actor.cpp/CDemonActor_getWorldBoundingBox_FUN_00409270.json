@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 67,
+        "column": 75,
         "line": 50,
         "message": "'stack0xffffffac' was not declared in this scope"
       },
@@ -160,7 +160,7 @@
       "description": "Direct stack address reference",
       "line": 43,
       "match": "&stack0xffffffac",
-      "text": "(*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);",
+      "text": "(*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);",
       "type": "stack_ref"
     },
     {

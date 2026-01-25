@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042bc20
+;   core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: LAB_00485bd0
     PUSH ECX                            ; 00485bd4
     PUSH EAX                            ; 00485bd5
-    CALL core_charactr.cpp_CCharacter_FUN_0042bc20 ; 00485bd6
-        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042bc20(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20 ; 00485bd6
+        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter * this_ptr, SCollisionInfo * collision_info)
     ADD ESP,0x8                         ; 00485bdb
     RET                                 ; 00485bde
 

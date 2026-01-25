@@ -26,7 +26,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0063b2ec = 10000
-;   undefined4 DAT_00661c30
+;   float FLOAT_00661c30 = 0.00390625
 ;   CDemonCamera g_CDemonCameraInstance
 ;   undefined4 DAT_032758e8
 ;   undefined4 g_CDemonCameraInstance.base.position.y
@@ -76,13 +76,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00535cb6
     MOVSD ES:EDI,ESI                    ; 00535cb7
     FILD dword ptr [EAX]                ; 00535cb8
-    FMUL float ptr [0x00661c30]         ; 00535cba | DAT_00661c30
+    FMUL float ptr [0x00661c30]         ; 00535cba | FLOAT_00661c30
     FSTP float ptr [EBX]                ; 00535cc0
     FILD dword ptr [EAX + 0x4]          ; 00535cc2
-    FMUL float ptr [0x00661c30]         ; 00535cc5 | DAT_00661c30
+    FMUL float ptr [0x00661c30]         ; 00535cc5 | FLOAT_00661c30
     FSTP float ptr [EBX + 0x4]          ; 00535ccb
     FILD dword ptr [EAX + 0x8]          ; 00535cce
-    FMUL float ptr [0x00661c30]         ; 00535cd1 | DAT_00661c30
+    FMUL float ptr [0x00661c30]         ; 00535cd1 | FLOAT_00661c30
     FSTP float ptr [EBX + 0x8]          ; 00535cd7
     FLD float ptr [EBP + 0x4]           ; 00535cda
     FMUL ST0                            ; 00535cdd

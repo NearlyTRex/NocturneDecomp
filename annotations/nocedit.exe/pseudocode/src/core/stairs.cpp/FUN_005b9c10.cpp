@@ -71,7 +71,7 @@ core_stairs_cpp_FUN_005b9c10(CDemonActor *param_1,uint param_2,CDemonActor *para
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(param_1);
-    this_ptr = (*param_1->vtable->getBoundingBox)(param_1,&local_bc);
+    this_ptr = (*((param_1->vtable)._ub)->getBoundingBox)(param_1,&local_bc);
     iStack_3c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     if (iStack_3c != 0) {
       local_114.fog = (float)&DAT_00684178;

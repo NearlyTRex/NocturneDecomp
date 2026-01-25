@@ -20,7 +20,7 @@ void core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20(void)
     core_course_cpp_CCourse_load_FUN_00442580
               ((CCourse *)&in_stack_00000004[2].runtime_state,
                (char *)&in_stack_00000004[2].orient_matrix.m[0].y);
-    in_stack_00000004[2].field6_0x68 = 0;
+    in_stack_00000004[2].validation_magic = 0;
   }
   core_platfrm_cpp_FUN_0054cab0();
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60

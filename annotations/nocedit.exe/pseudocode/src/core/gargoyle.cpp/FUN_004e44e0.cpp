@@ -6,19 +6,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CGargoyle * __cdecl core_gargoyle_cpp_FUN_004e44e0(CGargoyle *this_ptr)
 
 {
   CEnemy *pCVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   CGargoyle *pCVar4;
   
   pCVar4 = (CGargoyle *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar4->base_enemy).base_character.base_actor.vtable =
-       &PTR_core_gargoyle_cpp_CGargoyle_FUN_0065ea44;
+  (pCVar4->base_enemy).base_character.base_actor.vtable._ub = &g_CGargoyleVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base_enemy).base_character.model,"gargoyle.dfm");
   pCVar1 = &pCVar4->base_enemy;
@@ -56,12 +53,12 @@ CGargoyle * __cdecl core_gargoyle_cpp_FUN_004e44e0(CGargoyle *this_ptr)
   pCVar4->stone_green = 0x80;
   pCVar4->stone_blue = 0x80;
   pCVar4->field5_0xbef8[0] = '\0';
-  uVar2 = _DAT_0065ea30;
+  fVar2 = 50.0f;
   pCVar4->field5_0xbef8[1] = '\0';
   pCVar4->field5_0xbef8[2] = '\0';
   pCVar4->field5_0xbef8[3] = '\0';
   pCVar4->field5_0xbef8[0x18] = '\0';
-  uVar3 = _DAT_0065ea34;
+  fVar3 = 100.0f;
   pCVar4->field5_0xbef8[0x19] = '\0';
   pCVar4->field5_0xbef8[0x1a] = '\0';
   pCVar4->field5_0xbef8[0x1b] = '\0';
@@ -74,7 +71,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_FUN_004e44e0(CGargoyle *this_ptr)
   (pCVar1->base_character).field13_0x2620[5] = '\0';
   (pCVar1->base_character).field13_0x2620[6] = '\0';
   (pCVar1->base_character).field13_0x2620[7] = '\0';
-  *(uint *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = uVar2;
-  *(uint *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = uVar3;
+  *(float *)((pCVar4->base_enemy).base_character.cloth_data + 0x34c) = fVar2;
+  *(float *)((pCVar4->base_enemy).base_character.cloth_data + 0x350) = fVar3;
   return pCVar4;
 }

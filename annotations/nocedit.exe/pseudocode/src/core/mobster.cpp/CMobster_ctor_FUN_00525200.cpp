@@ -6,29 +6,26 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_ptr)
 
 {
   char cVar1;
   CEnemy *pCVar2;
-  uint uVar3;
-  uint uVar4;
+  float fVar3;
+  float fVar4;
   CMobster *pCVar5;
   int iVar6;
   char *pcVar7;
   char *pcVar8;
   
   pCVar5 = (CMobster *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar5->base_enemy).base_character.base_actor.vtable =
-       &PTR_core_mobster_cpp_FUN_00525340_00661794;
+  (pCVar5->base_enemy).base_character.base_actor.vtable._ub = &g_CMobsterVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar5->base_enemy).base_character.model,"mobster1.dfm");
-  uVar3 = _DAT_00661780;
+  fVar3 = 50.0f;
   pCVar2 = &pCVar5->base_enemy;
   (pCVar2->base_character).cloth_data[0x344] = -0x66;
-  uVar4 = _DAT_00661784;
+  fVar4 = 100.0f;
   (pCVar2->base_character).cloth_data[0x345] = -0x67;
   (pCVar2->base_character).cloth_data[0x346] = '\x19';
   (pCVar2->base_character).cloth_data[0x347] = '?';
@@ -37,8 +34,8 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_pt
   (pCVar2->base_character).cloth_data[0x349] = 'f';
   (pCVar2->base_character).cloth_data[0x34a] = 'f';
   (pCVar2->base_character).cloth_data[0x34b] = '?';
-  *(uint *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = uVar3;
-  *(uint *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = uVar4;
+  *(float *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = fVar3;
+  *(float *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = fVar4;
   iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0xff);
   pCVar5->field1_0xbeb4[0xc] = '\0';
   pCVar5->field1_0xbeb4[0xd] = '\0';

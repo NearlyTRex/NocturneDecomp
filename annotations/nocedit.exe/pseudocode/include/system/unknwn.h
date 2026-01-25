@@ -7,9 +7,10 @@
 // UNKNWN - System Header
 // =============================================================================
 
-// Forward declarations
-struct IUnknown;
-struct IUnknown_vtable;
+// Structure: IUnknown
+typedef struct IUnknown {
+    struct IUnknown_vtable* vtable;
+} IUnknown;
 
 // Function Definition: IUnknown_AddRef
 typedef DWORD (*IUnknown_AddRef)(struct IUnknown* this_ptr);
@@ -19,11 +20,6 @@ typedef HRESULT (*IUnknown_QueryInterface)(struct IUnknown* this_ptr, void* riid
 
 // Function Definition: IUnknown_Release
 typedef DWORD (*IUnknown_Release)(struct IUnknown* this_ptr);
-
-// Structure: IUnknown
-typedef struct IUnknown {
-    struct IUnknown_vtable* vtable;
-} IUnknown;
 
 // Structure: IUnknown_vtable
 typedef struct IUnknown_vtable {

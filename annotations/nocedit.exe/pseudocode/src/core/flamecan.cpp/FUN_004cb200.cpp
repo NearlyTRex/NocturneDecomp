@@ -23,7 +23,7 @@ void core_flamecan_cpp_FUN_004cb200(void)
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
-  pCVar3 = in_stack_00000004->vtable;
+  pCVar3 = (in_stack_00000004->vtable)._ub;
   in_stack_00000004[3].field13_0xec.x = 0.0;
   (*pCVar3->getBoundingBox)(in_stack_00000004,&local_38);
   *(float *)(in_stack_00000004[2].create_event + 0x38) = (in_stack_00000004->location).position.x;

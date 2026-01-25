@@ -35,7 +35,8 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c76a0(CFireEffect *this_ptr)
     pCVar4 = g_BulletHolePool;
     local_14 = 1.4013e-45;
     if ((in_stack_00000014 == (CDemonActor *)0x0) ||
-       (iVar2 = (*in_stack_00000014->vtable->allowBulletHoles)(in_stack_00000014), iVar2 != 0)) {
+       (iVar2 = (*((in_stack_00000014->vtable)._ub)->allowBulletHoles)(in_stack_00000014),
+       iVar2 != 0)) {
       if ((unaff_EBP != 0) && (iVar2 = 0, 0 < g_BulletHoleActiveCount)) {
         do {
           local_1c = in_stack_00000008->x - (pCVar4->position).x;

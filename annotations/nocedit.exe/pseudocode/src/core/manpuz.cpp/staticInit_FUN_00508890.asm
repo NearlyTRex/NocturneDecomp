@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * core_manpuz.cpp_staticInit_FUN_00508890(void)
+; __cdecl void core_manpuz.cpp_staticInit_FUN_00508890(void)
 ;
 ;
 ; Referenced Globals:

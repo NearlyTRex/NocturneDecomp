@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte actors_other_stone.cpp_FUN_005bad40(uint param_1) */
-
 void core_stone_cpp_FUN_005bad40(void)
 
 {

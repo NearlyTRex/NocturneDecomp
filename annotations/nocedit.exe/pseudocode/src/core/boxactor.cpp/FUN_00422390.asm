@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_boxactor.cpp_FUN_00422390()
+; __cdecl void core_boxactor.cpp_FUN_00422390(CBoxActor * this_ptr)
 ;
+; Parameters:
+; CBoxActor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60
 ; undefined4       Stack[-0x48]:4  local_48
@@ -13,7 +15,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[2]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d35e4
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d35e4
 ;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bc4cc
 ;
 ; Referenced Globals:
@@ -135,11 +137,11 @@ section .text
     PUSH EBX                            ; 0042248b
     FSTP float ptr [EAX + 0x8]          ; 0042248c
     CALL core_boxactor.cpp_FUN_004218d0 ; 0042248f
-        ;   XREF to: 004218d0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_004218d0()
+        ;   XREF to: 004218d0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_FUN_004218d0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 00422494
     PUSH EBX                            ; 00422497
     CALL core_boxactor.cpp_FUN_00422590 ; 00422498
-        ;   XREF to: 00422590 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_00422590()
+        ;   XREF to: 00422590 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_FUN_00422590(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0042249d
     MOV ESP,EBP                         ; 004224a0
     POP EBP                             ; 004224a2

@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d3525
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3525
 ;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e7c72
 ;   core_mimic.cpp_FUN_0051fcc0 at 005201b9
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00597644

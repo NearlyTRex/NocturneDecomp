@@ -66,7 +66,7 @@ void core_dracbrid_cpp_FUN_004858f0(void)
       }
     }
   }
-  pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_84);
+  pCVar2 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)(in_stack_00000004,&local_84);
   fStack_28 = (pCVar2->min).x + (pCVar2->max).x;
   local_24 = (pCVar2->min).y + (pCVar2->max).y;
   auStack_4c._0_4_ = fStack_28 * 0.5f;

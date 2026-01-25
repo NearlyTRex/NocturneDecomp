@@ -15,7 +15,8 @@ CElephantGun * __cdecl core_elephant_cpp_ctor_FUN_004a6fe0(CElephantGun *this_pt
   CElephantGun *pCVar2;
   
   pCVar2 = (CElephantGun *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
-  (pCVar2->base_weapon).base_actor.vtable = &PTR_core_weapon_cpp_ActorModelSomething_FUN_0065d534;
+  (pCVar2->base_weapon).base_actor.vtable._ub =
+       &PTR_core_weapon_cpp_ActorModelSomething_FUN_0065d534;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base_weapon).model,"elephantgun.kfm");
   pCVar2->field1_0x578[0] = '\0';

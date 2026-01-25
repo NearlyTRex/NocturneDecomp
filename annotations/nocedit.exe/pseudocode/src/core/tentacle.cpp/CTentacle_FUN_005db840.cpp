@@ -11,7 +11,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db840(CTentacle *this_ptr)
 {
   int iVar1;
   
-  iVar1 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->shouldIgnoreForTargeting)
+  iVar1 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->shouldIgnoreForTargeting)
                     ((CDemonActor *)this_ptr);
   if (iVar1 != 0) {
     if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {

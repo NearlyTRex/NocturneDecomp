@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CPackedBitmap;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CPackedBitmap.h"
 
 // Structure: CPackedBitmapSet
 // Ghidra size: 0x28 (40 bytes)

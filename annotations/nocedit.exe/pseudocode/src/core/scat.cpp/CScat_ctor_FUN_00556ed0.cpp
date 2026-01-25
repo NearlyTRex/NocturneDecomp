@@ -11,8 +11,8 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
 {
   CScat *this_ptr_00;
   
-  this_ptr_00 = (CScat *)core_hero_cpp_FUN_004f2340();
-  (this_ptr_00->base_hero).base_character.base_actor.vtable = &PTR_core_scat_cpp_FUN_00662464;
+  this_ptr_00 = (CScat *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base_hero);
+  (this_ptr_00->base_hero).base_character.base_actor.vtable._ub = &g_CScatVTable;
   this_ptr_00->field1_0x1fbd4[0] = '\0';
   this_ptr_00->field1_0x1fbd4[1] = '\0';
   this_ptr_00->field1_0x1fbd4[2] = '\0';

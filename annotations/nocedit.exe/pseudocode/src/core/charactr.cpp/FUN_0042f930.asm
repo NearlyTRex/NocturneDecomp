@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065b810
+;   float FLOAT_0065b810 = 256
 ;
 ; Called Functions:
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -24,13 +24,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0042f934
     MOV EBX,ESP                         ; 0042f938
     FLD float ptr [EAX]                 ; 0042f93a
-    FMUL float ptr [0x0065b810]         ; 0042f93c | DAT_0065b810
+    FMUL float ptr [0x0065b810]         ; 0042f93c | FLOAT_0065b810
     FISTP dword ptr [EBX]               ; 0042f942
     FLD float ptr [EAX + 0x4]           ; 0042f944
-    FMUL float ptr [0x0065b810]         ; 0042f947 | DAT_0065b810
+    FMUL float ptr [0x0065b810]         ; 0042f947 | FLOAT_0065b810
     FISTP dword ptr [EBX + 0x4]         ; 0042f94d
     FLD float ptr [EAX + 0x8]           ; 0042f950
-    FMUL float ptr [0x0065b810]         ; 0042f953 | DAT_0065b810
+    FMUL float ptr [0x0065b810]         ; 0042f953 | FLOAT_0065b810
     FISTP dword ptr [EBX + 0x8]         ; 0042f959
     MOV EAX,ESP                         ; 0042f95c
     MOV EDX,dword ptr [ESP + 0x18]      ; 0042f95e

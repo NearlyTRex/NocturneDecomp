@@ -15,8 +15,8 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419d51
 ;   core_bodypart.cpp_CreateBodyPart_FUN_00418e10 at 00418e98
 ;   core_bodypart.cpp_FUN_0041a630 at 0041a8e1
+;   core_boxactor.cpp_CBoxActor_FUN_00422640 at 0042267a
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421c95
-;   core_boxactor.cpp_FUN_00422640 at 0042267a
 ;   core_bride.cpp_FUN_00423a30 at 004243b1
 ;   core_bugs.cpp_FUN_004278d0 at 00427916
 ;   ... and 35 more

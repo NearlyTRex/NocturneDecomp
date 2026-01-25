@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_gore.cpp_FUN_004ecce0(uint param_1, uint param_2) */
 
 void core_gore_cpp_FUN_004ecce0(void)
@@ -41,33 +40,33 @@ void core_gore_cpp_FUN_004ecce0(void)
   local_3c = 0xbfaa9fbe;
   local_34 = 0xbfaa9fbe;
   local_38 = 0;
-  local_24.x = (int)ROUND(_DAT_0065f024 * -1.333);
-  local_24.y = (int)ROUND(_DAT_0065f024 * 0.0);
-  local_24.z = (int)ROUND(_DAT_0065f024 * -1.333);
+  local_24.x = (int)ROUND(256.0f * -1.333);
+  local_24.y = (int)ROUND(256.0f * 0.0);
+  local_24.z = (int)ROUND(256.0f * -1.333);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_24);
   local_3c = 0x3faa9fbe;
   local_38 = 0;
   local_34 = 0xbfaa9fbe;
-  local_48.x = (int)ROUND(_DAT_0065f024 * 1.333);
-  local_48.y = (int)ROUND(_DAT_0065f024 * 0.0);
-  local_48.z = (int)ROUND(_DAT_0065f024 * -1.333);
+  local_48.x = (int)ROUND(256.0f * 1.333);
+  local_48.y = (int)ROUND(256.0f * 0.0);
+  local_48.z = (int)ROUND(256.0f * -1.333);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_48);
   local_3c = 0x3faa9fbe;
   local_34 = 0x3faa9fbe;
   local_38 = 0;
-  local_30.x = (int)ROUND(_DAT_0065f024 * 1.333);
-  local_30.y = (int)ROUND(_DAT_0065f024 * 0.0);
-  local_30.z = (int)ROUND(_DAT_0065f024 * 1.333);
+  local_30.x = (int)ROUND(256.0f * 1.333);
+  local_30.y = (int)ROUND(256.0f * 0.0);
+  local_30.z = (int)ROUND(256.0f * 1.333);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_30);
   local_3c = 0xbfaa9fbe;
   local_38 = 0;
   local_34 = 0x3faa9fbe;
-  CStack_54.x = (int)ROUND(_DAT_0065f024 * -1.333);
-  CStack_54.y = (int)ROUND(_DAT_0065f024 * 0.0);
-  CStack_54.z = (int)ROUND(_DAT_0065f024 * 1.333);
+  CStack_54.x = (int)ROUND(256.0f * -1.333);
+  CStack_54.y = (int)ROUND(256.0f * 0.0);
+  CStack_54.z = (int)ROUND(256.0f * 1.333);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_54);
   uVar1 = in_stack_00000004[4];

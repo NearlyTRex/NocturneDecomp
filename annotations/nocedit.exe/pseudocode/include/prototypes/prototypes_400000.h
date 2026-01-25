@@ -256,7 +256,7 @@ void __cdecl core_actor_cpp_CDemonActor_onDropped_FUN_00409040(CDemonActor * thi
 CDemonActor * __cdecl core_actor_cpp_CDemonActor_getCarrier_FUN_00409060(CDemonActor * this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_drop_FUN_00409080(CDemonActor * this_ptr, CDemonActor * carrier, CVector3f * drop_position);
 CPathMap * __cdecl core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0(CDemonActor * this_ptr);
-int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor * this_ptr, SCollisionReturnInfo * collision_result, float tolerance_radius);
+int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor * this_ptr, SCollisionReturnInfo * collision_info, float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor * this_ptr, CVector3f * line_start, CVector3f * line_end, CVector3f * out_intersection_point);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor * this_ptr, CBoundingBox3D * output_bbox, SCollisionInfo * collision_info, int bounding_box_type);
 int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_hit_normal, void * unused);

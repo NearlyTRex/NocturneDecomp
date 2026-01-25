@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_beast_dfm_00615a6e
-;   undefined4 DAT_0065aa58
-;   undefined4 DAT_0065aa5c
+;   float FLOAT_0065aa58 = 100
+;   float FLOAT_0065aa5c = 100
 ;   CDemonActor_vtable g_CBeastVTable
 ;
 ; Called Functions:
@@ -37,8 +37,8 @@ section .text
     MOV dword ptr [EAX + -0x4],0x65aa64 ; 0041823b | g_CBeastVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00418242
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x0065aa58]          ; 00418247 | DAT_0065aa58
-    FLD float ptr [0x0065aa5c]          ; 0041824d | DAT_0065aa5c
+    FLD float ptr [0x0065aa58]          ; 00418247 | FLOAT_0065aa58
+    FLD float ptr [0x0065aa5c]          ; 0041824d | FLOAT_0065aa5c
     MOV dword ptr [EBX + 0x2ddc],0x41200000 ; 00418253
     ADD ESP,0x8                         ; 0041825d
     MOV dword ptr [EBX + 0x2de0],0x41200000 ; 00418260

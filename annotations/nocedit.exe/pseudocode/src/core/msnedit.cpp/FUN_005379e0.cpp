@@ -20,7 +20,7 @@ void core_msnedit_cpp_FUN_005379e0(void)
   ulonglong in_stack_fffff2fc;
   char *string_data;
   ulonglong uVar5;
-  CDemonActor *in_stack_fffff304;
+  uint in_stack_fffff304;
   char **in_stack_fffff308;
   CStrList_vtable *in_stack_fffff30c;
   CStrList_vtable *in_stack_fffff310;
@@ -45,7 +45,7 @@ LAB_005379f3:
                      (&local_5b0,"Enemy randomizer",config_param1,0);
       if (config_param1 < 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_5b0,0,(uint)string_data,(uint)in_stack_fffff304,(uint)in_stack_fffff308,
+                  (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
                    (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
         return;
       }
@@ -54,10 +54,8 @@ LAB_005379f3:
             pCVar1 = pCVar1->next_actor) {
           pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,g_CEnemyClassInfo.name_hash);
           if ((pCVar3 != (CDemonActor *)0x0) && (*(int *)(pCVar3[0x8d].create_event + 0x3c) != 0)) {
-            (*pCVar3->vtable[1].processMeleeHit)(pCVar3,(int)string_data);
-            string_data = (char *)0x537a93;
-            (*pCVar3->vtable->setup)(pCVar3);
-            in_stack_fffff304 = pCVar3;
+            (*(((pCVar3->vtable)._ue)->_ue).field_8)();
+            (*((pCVar3->vtable)._ub)->setup)(pCVar3);
           }
         }
       }
@@ -65,7 +63,7 @@ LAB_005379f3:
 LAB_00537aa5:
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_5b0,0,(uint)string_data,(uint)in_stack_fffff304,(uint)in_stack_fffff308,
+                (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
                  (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
     }
     iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -74,7 +72,7 @@ LAB_00537aa5:
     if (iVar4 == 0) {
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_5b0,0,(uint)string_data,(uint)in_stack_fffff304,(uint)in_stack_fffff308,
+                (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
                  (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
       goto LAB_005379f3;
     }
@@ -83,7 +81,7 @@ LAB_00537aa5:
     if (iVar4 == 0) {
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_5b0,0,(uint)string_data,(uint)in_stack_fffff304,(uint)in_stack_fffff308,
+                (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
                  (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
     }
     else {
@@ -93,7 +91,7 @@ LAB_00537aa5:
       if (iVar4 == 0) {
         in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_5b0,0,(uint)string_data,(uint)in_stack_fffff304,(uint)in_stack_fffff308,
+                  (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
                    (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
       }
       else {
@@ -103,7 +101,7 @@ LAB_00537aa5:
         if (iVar4 == 0) {
           in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_5b0,0,(uint)string_data,(uint)in_stack_fffff304,(uint)in_stack_fffff308,
+                    (&local_5b0,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
                      (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
         }
         else {
@@ -128,7 +126,7 @@ LAB_00537aa5:
                  (iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                                     (&DAT_00680580,pCVar3->actor_name,0), iVar4 != 0)) {
                 fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0x3F666666,0x3F8CCCCD);
-                pCVar2 = pCVar3->vtable;
+                pCVar2 = (pCVar3->vtable)._ub;
                 *(float *)(pCVar3[0x8d].create_event + 0x34) = fStack_14;
                 (*pCVar2->setup)(pCVar3);
                 crt_stdio_c_sprintf_FUN_005fdbd0
@@ -150,21 +148,21 @@ LAB_00537aa5:
                         ((CPickList *)&stack0xfffff300,acStack_dc,-1,0);
             }
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      ((CPickList *)&stack0xfffff300,0,(uint)string_data,(uint)in_stack_fffff304,
+                      ((CPickList *)&stack0xfffff300,0,(uint)string_data,in_stack_fffff304,
                        (uint)in_stack_fffff308,(uint)in_stack_fffff30c,(uint)in_stack_fffff310);
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      (&CStack_958,0,(uint)string_data,(uint)in_stack_fffff304,
-                       (uint)in_stack_fffff308,(uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+                      (&CStack_958,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
+                       (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
             goto LAB_00537aa5;
           }
           uVar5 = ZEXT48(string_data) << 0x20;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&CStack_958,0,(uint)string_data,(uint)in_stack_fffff304,(uint)in_stack_fffff308
-                     ,(uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+                    (&CStack_958,0,(uint)string_data,in_stack_fffff304,(uint)in_stack_fffff308,
+                     (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
           in_stack_fffff2fc = uVar5 & 0xffffffff00000000;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_5b0,0,(uint)(uVar5 >> 0x20),(uint)in_stack_fffff304,
-                     (uint)in_stack_fffff308,(uint)in_stack_fffff30c,(uint)in_stack_fffff310);
+                    (&local_5b0,0,(uint)(uVar5 >> 0x20),in_stack_fffff304,(uint)in_stack_fffff308,
+                     (uint)in_stack_fffff30c,(uint)in_stack_fffff310);
         }
       }
     }

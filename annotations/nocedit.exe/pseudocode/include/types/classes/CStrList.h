@@ -1,15 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CStrList_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CStrList_vtable.h"
-#include "types/funcdefs/CStrList_clear.h"
-#include "types/funcdefs/CStrList_dtor.h"
-#include "types/funcdefs/CStrList_handleInput.h"
-#include "types/funcdefs/CStrList_insert.h"
-#include "types/funcdefs/CStrList_remove.h"
-#include "types/funcdefs/CStrList_sort.h"
-#include "types/funcdefs/CStrList_swap.h"
 
 // Structure: CStrList
 // Ghidra size: 0x10 (16 bytes)

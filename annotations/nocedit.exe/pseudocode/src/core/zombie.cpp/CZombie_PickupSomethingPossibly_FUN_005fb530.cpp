@@ -94,12 +94,12 @@ uint core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
     local_1c = pCVar1;
     for (local_18 = 0; local_18 < (int)g_CDemonSetPtr->actor_list_ptr; local_18 = local_18 + 1) {
       pCVar2 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_20);
-      pCVar7 = (*pCVar2->vtable->getCarrier)(pCVar2);
+      pCVar7 = (*((pCVar2->vtable)._ub)->getCarrier)(pCVar2);
       iVar11 = iVar8;
       if ((pCVar7 == (CDemonActor *)0x0) &&
-         (iVar9 = (*pCVar2->vtable->canPickup)(pCVar2,&in_stack_00000004->base_actor), iVar9 == 3))
-      {
-        pCVar10 = (*pCVar2->vtable->getBoundingBox)(pCVar2,(CBoundingBox3D *)auStack_104);
+         (iVar9 = (*((pCVar2->vtable)._ub)->canPickup)(pCVar2,&in_stack_00000004->base_actor),
+         iVar9 == 3)) {
+        pCVar10 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)auStack_104);
         CStack_50.z = (pCVar10->max).x - (pCVar10->min).x;
         CStack_44.x = (pCVar10->max).y - (pCVar10->min).y;
         CStack_44.y = (pCVar10->max).z - (pCVar10->min).z;
@@ -184,7 +184,7 @@ uint core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
       if (uVar3 == 1) {
 LAB_005fb750:
         pCVar2 = *(CDemonActor **)(in_stack_00000004[1].base_actor.create_event + 0x30);
-        (*pCVar2->vtable->getBoundingBox)(pCVar2,&CStack_e8);
+        (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_e8);
         uStack_2c = 0x3f000000;
         core_bodypart_cpp_FUN_0041b540();
         core_bodypart_cpp_FUN_0041b4e0();
@@ -212,7 +212,7 @@ LAB_005fba18:
         goto LAB_005fb750;
       }
       pCVar2 = *(CDemonActor **)(in_stack_00000004[1].base_actor.create_event + 0x30);
-      (*pCVar2->vtable->getBoundingBox)(pCVar2,(CBoundingBox3D *)(auStack_104 + 4));
+      (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)(auStack_104 + 4));
       uStack_30 = 0x3f000000;
       core_bodypart_cpp_FUN_0041b540();
       core_bodypart_cpp_FUN_0041b4e0();

@@ -33,7 +33,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523cf0(CDemonMission *this_ptr
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (pCVar3,"..\\core\\mission.cpp",0x33f);
       iVar5 = iVar5 + 1;
-      (*pCVar3->vtable->setup)(pCVar3);
+      (*((pCVar3->vtable)._ub)->setup)(pCVar3);
       if (iVar5 == (int)((iVar4 + (iVar4 >> 0x1f) * -4) - (uint)((iVar4 >> 0x1f) << 1 < 0)) >> 2) {
         iVar6 = 0;
         pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Setting up actors");

@@ -90,7 +90,7 @@ void core_haystack_cpp_FUN_004f13f0(void)
     if ((float)6 <= local_18) {
       this_ptr = (CPathMap *)0x0;
       if (!bVar1) {
-        this_ptr = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
+        this_ptr = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._ub)->
                      getPathMap)((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr == (CPathMap *)0x0) {

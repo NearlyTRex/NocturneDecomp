@@ -23,7 +23,7 @@
 ;   TerminatedCString s_core_trigger_cpp_00655616
 ;   float FLOAT_0065562c = 0.5
 ;   double DOUBLE_00655634 = 65536
-;   undefined4 DAT_00664a00
+;   float FLOAT_00664a00 = 256
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
@@ -274,13 +274,13 @@ section .text
         ;   Label: LAB_005dfd2a
     LEA EAX,[ESP + 0x68]                ; 005dfd2e
     FLD float ptr [EAX]                 ; 005dfd32
-    FMUL float ptr [0x00664a00]         ; 005dfd34 | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005dfd34 | FLOAT_00664a00
     FISTP dword ptr [EBX]               ; 005dfd3a
     FLD float ptr [EAX + 0x4]           ; 005dfd3c
-    FMUL float ptr [0x00664a00]         ; 005dfd3f | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005dfd3f | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x4]         ; 005dfd45
     FLD float ptr [EAX + 0x8]           ; 005dfd48
-    FMUL float ptr [0x00664a00]         ; 005dfd4b | DAT_00664a00
+    FMUL float ptr [0x00664a00]         ; 005dfd4b | FLOAT_00664a00
     FISTP dword ptr [EBX + 0x8]         ; 005dfd51
     PUSH 0x0                            ; 005dfd54
     LEA EAX,[ESP + 0x48]                ; 005dfd56

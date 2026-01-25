@@ -4,14 +4,8 @@
       {
         "category": "other",
         "column": 6,
-        "line": 13,
+        "line": 12,
         "message": "ambiguating new declaration of 'void core_gore_cpp_FUN_004ed0d0()'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 87,
-        "line": 33,
-        "message": "'_DAT_0065f024' was not declared in this scope; did you mean 'DAT_00681024'?"
       }
     ],
     "success": false,
@@ -25,13 +19,19 @@
       {
         "category": "other",
         "column": 4,
+        "line": 24,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
         "line": 25,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 26,
+        "line": 28,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
@@ -54,112 +54,105 @@
       },
       {
         "category": "other",
-        "column": 4,
-        "line": 32,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
         "column": 40,
+        "line": 31,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 4,
         "line": 32,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 4,
+        "column": 20,
         "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 20,
         "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 33,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 52,
+        "column": 20,
         "line": 33,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
+        "line": 34,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
         "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 52,
+        "column": 20,
         "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 35,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 52,
+        "column": 20,
         "line": 35,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
+        "line": 36,
+        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
+      },
+      {
+        "category": "other",
+        "column": 20,
         "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 38,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 38,
-        "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 38,
+        "line": 37,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       },
       {
         "category": "other",
         "column": 4,
-        "line": 39,
+        "line": 38,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 325,
+    "complexity_score": 309,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 30,
-    "suspect_count": 27,
+    "pseudocode_lines": 29,
+    "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 77
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -202,9 +195,9 @@
     },
     {
       "addr": "0065f024",
-      "name": "DAT_0065f024",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0065f024",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "006810c8",
@@ -283,99 +276,99 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 3,
       "match": "param_3",
       "text": "uint param_3) */",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_0000000c",
       "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004 + 0x14) = iVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 4) = in_stack_00000008->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "*(float *)(in_stack_00000004 + 4) = in_stack_00000008->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "(this_ptr,in_stack_00000008,0.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 8) = fVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0xc) = in_stack_00000008->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000008",
       "text": "*(float *)(in_stack_00000004 + 0xc) = in_stack_00000008->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x18) = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004 + 8) = *(float *)(in_stack_00000004 + 8) + 0.1f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 8) = *(float *)(in_stack_00000004 + 8) + 0.1f;",
       "type": "stack_param"
@@ -384,82 +377,75 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004 + 8) = *(float *)(in_stack_00000004 + 8) + 0.1f;",
+      "text": "*(int *)(in_stack_00000004 + 0x1c) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x1c) = (int)ROUND(*(float *)(in_stack_00000004 + 4) * _DAT_0065f024)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x1c) = (int)ROUND(*(float *)(in_stack_00000004 + 4) * _DAT_0065f024)",
+      "text": "(int)ROUND(*(float *)(in_stack_00000004 + 4) * 256.0f);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
-      "text": "*(int *)(in_stack_00000004 + 0x1c) = (int)ROUND(*(float *)(in_stack_00000004 + 4) * _DAT_0065f024)",
+      "text": "(int)ROUND(*(float *)(in_stack_00000004 + 4) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x20) = (int)ROUND(*(float *)(in_stack_00000004 + 8) * _DAT_0065f024)",
+      "text": "*(int *)(in_stack_00000004 + 0x20) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x20) = (int)ROUND(*(float *)(in_stack_00000004 + 8) * _DAT_0065f024)",
+      "text": "(int)ROUND(*(float *)(in_stack_00000004 + 8) * 256.0f);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "ROUND",
-      "text": "*(int *)(in_stack_00000004 + 0x20) = (int)ROUND(*(float *)(in_stack_00000004 + 8) * _DAT_0065f024)",
+      "text": "(int)ROUND(*(float *)(in_stack_00000004 + 8) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004 + 0x24) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000004",
-      "text": "(int)ROUND(*(float *)(in_stack_00000004 + 0xc) * _DAT_0065f024);",
+      "text": "(int)ROUND(*(float *)(in_stack_00000004 + 0xc) * 256.0f);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 30,
       "match": "ROUND",
-      "text": "(int)ROUND(*(float *)(in_stack_00000004 + 0xc) * _DAT_0065f024);",
+      "text": "(int)ROUND(*(float *)(in_stack_00000004 + 0xc) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x10) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_0000000c",
       "text": "*(uint *)(in_stack_00000004 + 0x10) = in_stack_0000000c;",
       "type": "stack_param"

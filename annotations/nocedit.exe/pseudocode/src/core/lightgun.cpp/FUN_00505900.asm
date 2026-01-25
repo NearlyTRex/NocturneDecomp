@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cre_kfm_00631455
-;   undefined4 DAT_00660a3c
-;   undefined4 DAT_00660a40
+;   float FLOAT_00660a3c = 8
+;   float FLOAT_00660a40 = 30
 ;   CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_00660a64
 ;
 ; Called Functions:
@@ -45,9 +45,9 @@ section .text
     MOV dword ptr [EBX + 0x2e4],0x0     ; 00505959
     MOV dword ptr [EBX + 0x2e8],0x42000000 ; 00505963
     MOV dword ptr [EBX + 0x2ec],0x1     ; 0050596d
-    FLD float ptr [0x00660a3c]          ; 00505977 | DAT_00660a3c
+    FLD float ptr [0x00660a3c]          ; 00505977 | FLOAT_00660a3c
     MOV dword ptr [EBX + 0x2f0],0x0     ; 0050597d
-    FLD float ptr [0x00660a40]          ; 00505987 | DAT_00660a40
+    FLD float ptr [0x00660a40]          ; 00505987 | FLOAT_00660a40
     MOV dword ptr [EBX + 0x588],0x0     ; 0050598d
     ADD ESP,0x8                         ; 00505997
     MOV dword ptr [EBX + 0x584],0x3f800000 ; 0050599a

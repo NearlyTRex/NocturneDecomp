@@ -19,10 +19,10 @@
 ;   undefined4 s_olochToHuman_00639d64
 ;   undefined4 s_lochToHuman_00639d65
 ;   undefined4 s_ochToHuman_00639d66
-;   CDemonActor_vtable PTR_core_moloch.cpp_FUN_00528c70_00661944
+;   CDemonActor_vtable g_CMolochVTable
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004f2340
+;   core_hero.cpp_CHero_ctor_FUN_004f2340
 ;   core_morph.cpp_FUN_0052b310
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
@@ -37,8 +37,8 @@ section .text
     PUSH EDI                            ; 00528b32
     MOV EBX,dword ptr [ESP + 0x10]      ; 00528b33
     PUSH EBX                            ; 00528b37
-    CALL core_hero.cpp_FUN_004f2340     ; 00528b38
-        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2340()
+    CALL core_hero.cpp_CHero_ctor_FUN_004f2340 ; 00528b38
+        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004f2340(CHero * this_ptr)
     ADD ESP,0x4                         ; 00528b3d
     ADD EAX,0x1fbd4                     ; 00528b40
     PUSH EAX                            ; 00528b45
@@ -54,7 +54,7 @@ section .text
     PUSH 0x639d48                       ; 00528b62 | = "moloch_h.dfm"
     LEA EAX,[EBX + 0x158]               ; 00528b67
     PUSH EAX                            ; 00528b6d
-    MOV dword ptr [EBX + 0x154],0x661944 ; 00528b6e | PTR_core_moloch.cpp_FUN_00528c70_00661944
+    MOV dword ptr [EBX + 0x154],0x661944 ; 00528b6e | g_CMolochVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00528b78
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00528b7d

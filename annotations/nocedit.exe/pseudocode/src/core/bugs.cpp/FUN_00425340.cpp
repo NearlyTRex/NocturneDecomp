@@ -29,7 +29,7 @@ void core_bugs_cpp_FUN_00425340(void)
   local_28 = 0;
   local_2c = in_stack_00000004;
   do {
-    fVar2 = (float)local_28 * _DAT_0065b5c8;
+    fVar2 = (float)local_28 * 0.5f;
     fVar1 = *(float *)(in_stack_00000004 + 0x199ec);
     local_1c = local_28 * 0x30;
     iVar3 = 0;
@@ -38,7 +38,7 @@ void core_bugs_cpp_FUN_00425340(void)
       local_3c.x = (int)ROUND((fVar2 + fVar1) * _DAT_0065b5b0);
       local_3c.y = (int)ROUND((*(float *)(iVar5 + 0x128b8) + (float)0.25) * _DAT_0065b5b0
                              );
-      local_3c.z = (int)ROUND(((float)iVar3 * _DAT_0065b5c8 +
+      local_3c.z = (int)ROUND(((float)iVar3 * 0.5f +
                               *(float *)(in_stack_00000004 + 0x199f0)) * _DAT_0065b5b0);
       local_18 = iVar3;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c

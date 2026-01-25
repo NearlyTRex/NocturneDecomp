@@ -10,13 +10,12 @@ void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_pt
 
 {
   CVector3f *pCVar1;
-  CVector3f CStack_18;
+  CVector3f aCStack_1c [2];
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon,delta_time);
-  pCVar1 = (CVector3f *)
-           (*(this_ptr->base_weapon).base_actor.vtable[1].renderOpaque)((CDemonActor *)this_ptr);
+  pCVar1 = (CVector3f *)(*(((this_ptr->base_weapon).base_actor.vtable._uc)->_uc).cfunc3)();
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     ((CDemonActor *)this_ptr,&CStack_18,pCVar1);
+                     ((CDemonActor *)this_ptr,aCStack_1c,pCVar1);
   *(float *)(this_ptr->field1_0x578 + 0x24) = pCVar1->x;
   *(float *)(this_ptr->field1_0x578 + 0x28) = pCVar1->y;
   *(float *)(this_ptr->field1_0x578 + 0x2c) = pCVar1->z;

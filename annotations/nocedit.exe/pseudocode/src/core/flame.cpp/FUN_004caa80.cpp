@@ -29,7 +29,7 @@ void core_flame_cpp_FUN_004caa80(void)
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr);
   if ((iVar3 == 0) && (in_stack_00000008 != 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-    this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)
+    this_ptr_00 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                             (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc8);
     fVar4 = (float)core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     in_stack_00000004[1].previous_transform_state.orientation.y = fVar4;

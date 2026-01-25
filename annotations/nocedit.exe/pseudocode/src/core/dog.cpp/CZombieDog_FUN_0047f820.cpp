@@ -39,7 +39,7 @@ LAB_0047f855:
     core_enemy_cpp_FUN_004a9f10();
     return;
   }
-  uVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+  uVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"dog2.wav");
   *(uint *)(this_ptr->field1_0xbeb4 + 0x10) = uVar3;
   core_enemy_cpp_FUN_004a9f10();

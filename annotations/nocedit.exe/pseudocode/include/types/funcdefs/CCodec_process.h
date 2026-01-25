@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct FILE;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/stdio.h"
 
 // Forward declarations
 struct CCodec;

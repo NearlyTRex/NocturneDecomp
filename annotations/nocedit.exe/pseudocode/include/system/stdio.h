@@ -39,13 +39,13 @@ typedef enum ExtendedLengthFlags {
 
 // Structure: FILE
 typedef struct FILE {
-    char* ptr;
-    int cnt;
-    struct streambuf* link;
-    uint flag;
-    int handle;
-    uint bufsize;
-    ushort ungotten;
+    char* _ptr;
+    int _cnt;
+    struct streambuf* _link;
+    uint _flag;
+    int _handle;
+    uint _bufsize;
+    ushort _ungotten;
 } FILE;
 
 // Structure: FORMAT_OUTPUT_CONTEXT

@@ -16,7 +16,7 @@ int __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7280(CVampireBoss *this_ptr)
   CBoundingBox3D CStack_34;
   float fStack_8;
   
-  pCVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
+  pCVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->getBoundingBox)
                      ((CDemonActor *)this_ptr,&CStack_34);
   fVar1 = ((pCVar3->min).y + (pCVar3->max).y) * 0.5f;
   fVar2 = ((pCVar3->min).z + (pCVar3->max).z) * 0.5f;

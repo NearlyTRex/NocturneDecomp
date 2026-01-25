@@ -16,7 +16,7 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e2320(CTurret *this_ptr)
   float fVar4;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_00 = (*((this_ptr->base_weapon).base_actor.vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->base_weapon).base_actor.vtable._ub)->getBoundingBox)
                           ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd8);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {

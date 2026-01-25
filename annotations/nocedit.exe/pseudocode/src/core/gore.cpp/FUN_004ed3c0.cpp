@@ -42,9 +42,9 @@ void core_gore_cpp_FUN_004ed3c0(void)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&DAT_0067cb28);
   pfVar2 = (float *)(in_stack_00000004 + 2);
   do {
-    local_1c.x = (int)ROUND(*pfVar2 * _DAT_0065f024);
-    local_1c.y = (int)ROUND(pfVar2[1] * _DAT_0065f024);
-    local_1c.z = (int)ROUND(pfVar2[2] * _DAT_0065f024);
+    local_1c.x = (int)ROUND(*pfVar2 * 256.0f);
+    local_1c.y = (int)ROUND(pfVar2[1] * 256.0f);
+    local_1c.z = (int)ROUND(pfVar2[2] * 256.0f);
     pfVar2 = pfVar2 + 3;
     wincore_windll_cpp_transformPoint_FUN_005b5a25(&output->projected_vertex,&local_1c);
     output = output + 1;

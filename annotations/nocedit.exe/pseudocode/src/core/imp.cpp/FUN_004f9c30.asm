@@ -235,7 +235,7 @@ section .text
         ;   Label: LAB_004f9d70
     JZ 0x004f9dd9                       ; 004f9d72
         ;   XREF to: 004f9dd9 (CONDITIONAL_JUMP)  ; LAB_004f9dd9
-    MOV EAX,[0x006601dc]                ; 004f9d74 | DAT_006601dc
+    MOV EAX,[0x006601dc]                ; 004f9d74 | FLOAT_006601dc
     MOV dword ptr [EBP + 0x42],EAX      ; 004f9d79
     LEA EAX,[EBP + 0x3a]                ; 004f9d7c
     PUSH EAX                            ; 004f9d7f
@@ -812,7 +812,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x72]      ; 004fa3d8
     FLD float ptr [EBP + 0x72]          ; 004fa3db
     MOV dword ptr [EBP + 0x6a],EAX      ; 004fa3de
-    FCOMP float ptr [0x006601dc]        ; 004fa3e1 | DAT_006601dc
+    FCOMP float ptr [0x006601dc]        ; 004fa3e1 | FLOAT_006601dc
     FNSTSW AX                           ; 004fa3e7
     SAHF                                ; 004fa3e9
     JC 0x004fa436                       ; 004fa3ea
@@ -826,7 +826,7 @@ section .text
         ;   XREF to: 004f9fef (CONDITIONAL_JUMP)  ; caseD_6
     FLD float ptr [EBP + 0x6a]          ; 004fa3fe
     LEA EDX,[EBX + 0x158]               ; 004fa401
-    FCOMP float ptr [0x006601e8]        ; 004fa407 | DAT_006601e8
+    FCOMP float ptr [0x006601e8]        ; 004fa407 | FLOAT_006601e8
     FNSTSW AX                           ; 004fa40d
     SAHF                                ; 004fa40f
     JNC 0x004fa483                      ; 004fa410
@@ -954,7 +954,7 @@ section .text
     ADD ESP,0xc                         ; 004fa52e
     JMP 0x004f9fef                      ; 004fa531
         ;   XREF to: 004f9fef (UNCONDITIONAL_JUMP)  ; caseD_6
-    MOV EAX,[0x006601dc]                ; 004fa536 | DAT_006601dc
+    MOV EAX,[0x006601dc]                ; 004fa536 | FLOAT_006601dc
         ;   Label: LAB_004fa536
     MOV dword ptr [EBP + 0x62],EAX      ; 004fa53b
     LEA EAX,[EBX + 0x23ac]              ; 004fa53e
@@ -1012,7 +1012,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x5e]      ; 004fa5dc
     FLD float ptr [EBP + 0x5e]          ; 004fa5df
     MOV dword ptr [EBP + 0x6e],EAX      ; 004fa5e2
-    FCOMP float ptr [0x006601e8]        ; 004fa5e5 | DAT_006601e8
+    FCOMP float ptr [0x006601e8]        ; 004fa5e5 | FLOAT_006601e8
     FNSTSW AX                           ; 004fa5eb
     SAHF                                ; 004fa5ed
     JBE 0x004fa604                      ; 004fa5ee
@@ -1029,7 +1029,7 @@ section .text
     ADD ESP,0xc                         ; 004fa601
     FLD float ptr [EBP + 0x6e]          ; 004fa604
         ;   Label: LAB_004fa604
-    FCOMP float ptr [0x006601ec]        ; 004fa607 | DAT_006601ec
+    FCOMP float ptr [0x006601ec]        ; 004fa607 | FLOAT_006601ec
     FNSTSW AX                           ; 004fa60d
     SAHF                                ; 004fa60f
     JNC 0x004fa6dd                      ; 004fa610

@@ -1,14 +1,16 @@
 #pragma once
 
+// Forward declarations
+struct CMatrix3x3d;
+struct CObj;
+struct CPoly;
+struct CPolyIntersectResult;
+struct CVec;
+struct CVector2d;
+struct CVector3d;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CMatrix3x3d.h"
-#include "types/classes/CObj.h"
-#include "types/classes/CPoly.h"
-#include "types/classes/CPolyIntersectResult.h"
-#include "types/classes/CVec.h"
-#include "types/classes/CVector2d.h"
-#include "types/classes/CVector3d.h"
 #include "types/funcdefs/CPoly_allVerticesHaveAttribFlags.h"
 #include "types/funcdefs/CPoly_clearVertexStateFlags.h"
 #include "types/funcdefs/CPoly_computeNormal.h"

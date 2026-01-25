@@ -47,14 +47,14 @@ int core_platfrm_cpp_FUN_0054d720(void)
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-  pCVar5 = (*in_stack_00000004->vtable->getBoundingBox)
+  pCVar5 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                      (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffac);
   iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar5);
   if (iVar4 != 0) {
     if (in_stack_00000004[3].field17_0x104 != 0) {
       iVar6 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar6 != 0) {
-        pCVar5 = (*in_stack_00000004->vtable->getBoundingBox)
+        pCVar5 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                            (in_stack_00000004,(CBoundingBox3D *)&fStack_64);
         fStack_64 = 7.791666e-39;
         core_box_cpp_CBoundingBox3D_render_FUN_004210b0

@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CSoundDevice;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CSoundDevice.h"
 #include "types/funcdefs/CSoundDevice_close.h"
 #include "types/funcdefs/CSoundDevice_poll.h"
 #include "types/funcdefs/CSoundDevice_reset.h"

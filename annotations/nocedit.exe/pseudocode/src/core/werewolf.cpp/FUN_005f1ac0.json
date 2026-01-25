@@ -23,24 +23,24 @@
         "category": "missing_member",
         "column": 36,
         "line": 54,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
       },
       {
         "category": "other",
-        "column": 54,
-        "line": 67,
+        "column": 25,
+        "line": 68,
         "message": "void value not ignored as it ought to be"
       },
       {
         "category": "missing_member",
         "column": 31,
         "line": 74,
-        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'; did you mean 'field_104'?"
+        "message": "'CDemonActor' {aka 'struct CDemonActor'} has no member named 'field25_0x144'"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 115,
+        "column": 23,
+        "line": 116,
         "message": "void value not ignored as it ought to be"
       }
     ],
@@ -90,31 +90,31 @@
       },
       {
         "category": "other",
-        "column": 73,
-        "line": 67,
+        "column": 44,
+        "line": 68,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       },
       {
         "category": "other",
-        "column": 71,
-        "line": 115,
+        "column": 42,
+        "line": 116,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 482,
+    "complexity_score": 483,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
-    "pseudocode_lines": 112,
+    "pseudocode_lines": 113,
     "suspect_count": 36,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 417
+    "total_lines": 418
   },
   "cross_references": [],
   "function": {
@@ -477,14 +477,14 @@
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000004",
-      "text": "uVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,\"werewolf-die?.wav\")",
+      "text": "uVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 61,
       "match": "in_stack_00000004",
-      "text": "uVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,\"werewolf-die?.wav\")",
+      "text": "(in_stack_00000004,\"werewolf-die?.wav\");",
       "type": "stack_param"
     },
     {
@@ -498,14 +498,14 @@
       "description": "Unresolved stack parameter",
       "line": 63,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->spawnFlies)(in_stack_00000004,0x32,25.0);",
+      "text": "(*((in_stack_00000004->vtable)._ub)->spawnFlies)(in_stack_00000004,0x32,25.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 63,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004->vtable->spawnFlies)(in_stack_00000004,0x32,25.0);",
+      "text": "(*((in_stack_00000004->vtable)._ub)->spawnFlies)(in_stack_00000004,0x32,25.0);",
       "type": "stack_param"
     },
     {
@@ -561,19 +561,19 @@
       "description": "Unresolved stack parameter",
       "line": 108,
       "match": "in_stack_00000004",
-      "text": "uVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,\"werewolf-hurt?.wav\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_00000004",
-      "text": "uVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,\"werewolf-hurt?.wav\");",
+      "text": "uVar4 = (*((in_stack_00000004->vtable)._ub)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 109,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,\"werewolf-hurt?.wav\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004[0x8e].actor_name + 0x10) = uVar4;",
       "type": "stack_param"

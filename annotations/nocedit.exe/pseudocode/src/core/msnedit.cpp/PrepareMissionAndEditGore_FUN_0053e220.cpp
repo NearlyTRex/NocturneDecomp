@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_msnedit.cpp_PrepareMissionAndEditGore(uint param_1) */
 
 void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
@@ -103,7 +102,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   (pCStack_18->base_actor).orient.heading = 0.0;
   (pCStack_18->base_actor).orient.bank = (pCStack_18->base_actor).orient.heading;
   (pCStack_18->base_actor).orient.pitch = (pCStack_18->base_actor).orient.bank;
-  (*((pCStack_18->base_actor).vtable)->setup)(&pCStack_18->base_actor);
+  (*((pCStack_18->base_actor).vtable._ub)->setup)(&pCStack_18->base_actor);
   core_mission_cpp_CDemonMission_FUN_00523b70(in_stack_00000004);
   pCStack_18 = (CBoxActor *)&(pCVar3->base_actor).orient;
   CStack_24.z = (int)&(pCVar4->base_actor).location;
@@ -166,9 +165,9 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
              *(uint *)((int)aCStack_3c + (uint)bVar6 * -8 + -8);
         *(uint *)((int)&CStack_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
              *(uint *)((int)aCStack_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + -4);
-        fStack_84 = (float)CStack_24.x * _DAT_00661c30;
-        fStack_80 = (float)CStack_24.y * _DAT_00661c30;
-        fStack_7c = (float)CStack_24.z * _DAT_00661c30;
+        fStack_84 = (float)CStack_24.x * 0.00390625f;
+        fStack_80 = (float)CStack_24.y * 0.00390625f;
+        fStack_7c = (float)CStack_24.z * 0.00390625f;
         if ((float *)&stack0xffffff54 != &stack0xffffff7c) {
           in_stack_ffffff58 = (double)CONCAT44(fStack_7c,fStack_80);
         }

@@ -4,6 +4,12 @@
       {
         "category": "missing_member",
         "column": 13,
+        "line": 15,
+        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
+      },
+      {
+        "category": "missing_member",
+        "column": 13,
         "line": 16,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
@@ -45,14 +51,14 @@
       },
       {
         "category": "missing_member",
-        "column": 13,
+        "column": 22,
         "line": 23,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
         "category": "missing_member",
-        "column": 22,
-        "line": 24,
+        "column": 13,
+        "line": 25,
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
@@ -74,10 +80,10 @@
         "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
       },
       {
-        "category": "missing_member",
-        "column": 13,
+        "category": "other",
+        "column": 4,
         "line": 29,
-        "message": "'CCharacter' {aka 'struct CCharacter'} has no member named 'field11_0x25a0'"
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -92,16 +98,16 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 48,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 21,
     "suspect_count": 2,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 36
+    "total_lines": 34
   },
   "cross_references": [],
   "function": {
@@ -164,14 +170,14 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 6,
       "match": "in_stack_00000008",
       "text": "uint in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "*(uint *)this_ptr->field11_0x25a0 = in_stack_00000008;",
       "type": "stack_param"
@@ -180,7 +186,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CGabriella",
         "offset": 328,
         "vtable_addr": "0065e804"
       },

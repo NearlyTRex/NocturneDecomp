@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_boxactor.cpp_FUN_00421830
+;   core_boxactor.cpp_CBoxActor_setup_FUN_00421830
 ;   core_boxactor.cpp_FUN_00422d60
 ;   core_dlight.cpp_CDemonLight_init_FUN_004727c0
 ;
@@ -21,8 +21,8 @@ section .text
         ;   XREF to: 00422d60 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_00422d60()
     ADD ESP,0x4                         ; 00422a2b
     PUSH EBX                            ; 00422a2e
-    CALL core_boxactor.cpp_FUN_00421830 ; 00422a2f
-        ;   XREF to: 00421830 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_00421830()
+    CALL core_boxactor.cpp_CBoxActor_setup_FUN_00421830 ; 00422a2f
+        ;   XREF to: 00421830 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setup_FUN_00421830(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 00422a34
     LEA EAX,[EBX + 0x670]               ; 00422a37
     PUSH EAX                            ; 00422a3d

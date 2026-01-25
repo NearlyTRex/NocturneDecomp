@@ -77,9 +77,23 @@ extern CDemonActor_vtable g_CBoxActorVTable;
 extern CDemonActor_vtable g_CBrideVTable;
 extern CDemonActor_vtable g_CBugsVTable;
 extern CDemonActor_vtable g_CCharacterVTable;
+extern CDemonActor_vtable g_CColonelVTable;
+extern CDemonActor_vtable g_CZombieCowVTable;
+extern CDemonActor_vtable g_CZombieDogVTable;
+extern CDemonActor_vtable g_CDraculaBrideVTable;
+extern CDemonActor_vtable g_CDroneVTable;
+extern CDemonActor_vtable g_CEnemyVTable;
+extern CDemonActor_vtable g_CGabriellaVTable;
+extern CDemonActor_vtable g_CGargoyleVTable;
+extern CDemonActor_vtable g_CGhoulVTable;
 extern CDemonActor_vtable g_CGlassVTable;
+extern CDemonActor_vtable g_CHaystackVTable;
 extern CDemonActor_vtable g_CHeroVTable;
 extern CDemonActor_vtable g_CHeroPlaceholderVTable;
+extern CDemonActor_vtable g_CHiramVTable;
+extern CDemonActor_vtable g_CHostageVTable;
+extern CDemonActor_vtable g_CHotDemonVTable;
+extern CDemonActor_vtable g_CHighPriestOfGardathVTable;
 
 // CEnemy_vtable
 extern CEnemy_vtable DAT_00659E88;
@@ -308,7 +322,6 @@ extern char g_AsteriskChar;
 
 // int
 extern int g_CramInvalidMarker;
-extern int INT_0065ca28;
 
 // undefined1
 extern undefined1 DAT_006597a1;

@@ -7,7 +7,7 @@
 ; CSuccubus *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042bc20
+;   core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
     PUSH EDX                            ; 005c7794
     MOV ECX,dword ptr [ESP + 0x8]       ; 005c7795
     PUSH ECX                            ; 005c7799
-    CALL core_charactr.cpp_CCharacter_FUN_0042bc20 ; 005c779a
-        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042bc20(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20 ; 005c779a
+        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter * this_ptr, SCollisionInfo * collision_info)
     ADD ESP,0x8                         ; 005c779f
     RET                                 ; 005c77a2
 

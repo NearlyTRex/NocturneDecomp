@@ -501,7 +501,7 @@ LAB_00592a67:
             local_144 = 0.0;
             local_140 = 0.0;
             local_b8._16_4_ = &local_ec->fps;
-            pfVar15 = (float *)&0x3F800000;
+            pfVar15 = &1.0f;
             pCVar20 = &local_434;
             for (iVar13 = 0xc; iVar13 != 0; iVar13 = iVar13 + -1) {
               pCVar20->m[0].w = *pfVar15;

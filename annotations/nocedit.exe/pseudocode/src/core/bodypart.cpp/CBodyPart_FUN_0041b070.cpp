@@ -25,7 +25,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041b070(CBodyPart *this_ptr)
   
   if ((2 < *(int *)(this_ptr->field1_0x158 + 0x1c)) && (0 < *(int *)(this_ptr->field1_0x158 + 0x28))
      ) {
-    (*((this_ptr->base_actor).vtable)->getBoundingBox)
+    (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
               (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffb4);
     fStack_20 = fStack_44 + fStack_38;
     fStack_1c = fStack_40 + fStack_34;

@@ -7,7 +7,7 @@
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_0042bc20
+;   core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     PUSH EBX                            ; 005e763f
         ;   Label: LAB_005e763f
     PUSH ESI                            ; 005e7640
-    CALL core_charactr.cpp_CCharacter_FUN_0042bc20 ; 005e7641
-        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042bc20(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20 ; 005e7641
+        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter * this_ptr, SCollisionInfo * collision_info)
     ADD ESP,0x8                         ; 005e7646
     POP ESI                             ; 005e7649
     POP EBX                             ; 005e764a

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_hero_stranger.cpp_CStranger_FUN_005bfb60(CStranger* param_1) */
 
 void core_stranger_cpp_CStranger_FUN_005bfb60(void)
@@ -169,10 +168,10 @@ LAB_005bfd3a:
     local_28 = 0x3e860a92;
     local_2c = 0x3f19999a;
     if (fVar1 < 0.0) {
-      local_100 = ((fVar1 + 0.3490658f) / (0xBF860A92 + 0.3490658f)) * 0.6f;
+      local_100 = ((fVar1 + 0.3490658f) / (-1.047198f + 0.3490658f)) * 0.6f;
     }
     if (0.0 < fVar1) {
-      local_100 = ((fVar1 - 0.2617994) / (0x3F9C61AA - 0.2617994)) * 0.6;
+      local_100 = ((fVar1 - 0.2617994) / (1.22173f - 0.2617994)) * 0.6;
     }
     local_18 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
     local_100 = (1.0 - local_18) * local_f8 * local_100;
@@ -253,8 +252,8 @@ LAB_005bfd3a:
   else if (*(int *)(in_stack_00000004 + 0x2a8c) != 0xe) {
     return;
   }
-  fVar12 = (float10)fpatan((float10)*(float *)(in_stack_00000004 + 0x1fcb0) / (float10)_DAT_00663778
-                           ,(float10)1);
+  fVar12 = (float10)fpatan((float10)*(float *)(in_stack_00000004 + 0x1fcb0) /
+                           (float10)2.7f,(float10)1);
   local_34 = (float)fVar12;
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_34,&local_d0);
   pcVar15 = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;

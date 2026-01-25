@@ -22,7 +22,7 @@ void core_pendulum_cpp_FUN_005494a0(void)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
-  pCVar3 = (*in_stack_00000004->vtable->getBoundingBox)
+  pCVar3 = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                      (in_stack_00000004,(CBoundingBox3D *)(auStack_44 + 0x10));
   if ((CBoundingBox3D *)auStack_44 != pCVar3) {
     auStack_44._0_4_ = (pCVar3->min).x;

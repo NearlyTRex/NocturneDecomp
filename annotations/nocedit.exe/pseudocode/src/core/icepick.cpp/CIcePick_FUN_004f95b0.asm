@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_icepick_die01_wav_0062f7f6
 ;   TerminatedCString s_icepick_injured_wav_0062f808
-;   undefined4 DAT_00660028
+;   float FLOAT_00660028 = 3
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGore* g_CGorePtr = 02d83364
 ;   undefined4 DAT_02d81c6c
@@ -54,7 +54,7 @@ section .text
     TEST EBP,EBP                        ; 004f95fd
     JZ 0x004f9686                       ; 004f95ff
         ;   XREF to: 004f9686 (CONDITIONAL_JUMP)  ; LAB_004f9686
-    MOV EAX,[0x00660028]                ; 004f9605 | DAT_00660028
+    MOV EAX,[0x00660028]                ; 004f9605 | FLOAT_00660028
         ;   Label: LAB_004f9605
     MOV dword ptr [EBX + 0xbe24],EAX    ; 004f960a
     FLD float ptr [EDI + 0x4]           ; 004f9610

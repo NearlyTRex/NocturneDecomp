@@ -15,6 +15,6 @@ void core_hpriest_cpp_FUN_004f7b30(void)
   if (this_ptr == (CHighPriestOfGardath *)0x0) {
     return;
   }
-  core_hpriest_cpp_FUN_004f7b70(this_ptr);
+  core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004f7b70(this_ptr);
   return;
 }

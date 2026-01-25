@@ -5,19 +5,19 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6504
-Successful: 2610 (40.1%)
-Failed: 3894
+Successful: 2653 (40.8%)
+Failed: 3851
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          12580
-  missing_member                  8560
-  undeclared_identifier           2151
-  incompatible_types              1684
-  syntax_error                     554
+  other                          12639
+  missing_member                  8892
+  undeclared_identifier           1863
+  incompatible_types              1675
+  syntax_error                     540
 
 ====================================================================================================
-CATEGORY: other (12580 errors)
+CATEGORY: other (12639 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_FUN_0054c7a0
@@ -45,35 +45,51 @@ CATEGORY: other (12580 errors)
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
     Line 19: cast from 'void*' to 'int' loses precision [-fpermissive]...
 
-  ... and 12550 more errors
+  ... and 12609 more errors
 
 ====================================================================================================
-CATEGORY: missing_member (8560 errors)
+CATEGORY: missing_member (8892 errors)
 ====================================================================================================
 
-  cockpit_pkbitmap.cpp_FUN_0054b930
-    Line 33: 'FILE' {aka 'struct FILE'} has no member named '_flag'; did you mean 'flag'?...
-  cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
-    Line 42: 'FILE' {aka 'struct FILE'} has no member named '_flag'; did you mean 'flag'?...
   support_codec.cpp_CLZWCompress_init_FUN_0043f320
     Line 16: 'CLZWCompress' {aka 'struct CLZWCompress'} has no member named 'field2_0x20'; di...
-  support_codec.cpp_readBitsFromStream_FUN_0043e530
-    Line 46: 'FILE' {aka 'struct FILE'} has no member named '_handle'; did you mean 'handle'?...
-  support_codec.cpp_CLZWCompress_process_FUN_0043f360
-    Line 28: 'FILE' {aka 'struct FILE'} has no member named '_handle'; did you mean 'handle'?...
-  support_codec.cpp_CCodec_processFiles_FUN_0043ec30
-    Line 30: 'FILE' {aka 'struct FILE'} has no member named '_link'; did you mean 'link'?...
-  support_codec.cpp_CCodec_finalizeBuffer_FUN_0043ed50
-    Line 21: 'FILE' {aka 'struct FILE'} has no member named '_link'; did you mean 'link'?...
-  support_codec.cpp_CCodec_process_FUN_0043ea10
-    Line 24: 'FILE' {aka 'struct FILE'} has no member named '_handle'; did you mean 'handle'?...
-  engine_pcx.c_writePCXScanline_FUN_00548c50
-    Line 22: 'FILE' {aka 'struct FILE'} has no member named '_flag'; did you mean 'flag'?...
+  engine_dosio.c_reopenFileStream_FUN_00481b50
+    Line 21: 'filebuf' {aka 'struct filebuf'} has no member named '__unbuffered_get_area'; di...
+  engine_palette.cpp_CPaletteManager_FUN_00544fb0
+    Line 12: 'CPaletteManager' {aka 'struct CPaletteManager'} has no member named 'field0_0x0...
+  engine_palette.cpp_CPaletteManager_dtor_FUN_00544f80
+    Line 15: 'CPaletteManager' {aka 'struct CPaletteManager'} has no member named 'field1_0x4...
+  engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10
+    Line 17: 'CPaletteManager' {aka 'struct CPaletteManager'} has no member named 'field3_0xc...
+  engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fbe
+    Line 20: 'CPaletteManager' {aka 'struct CPaletteManager'} has no member named 'field0_0x0...
+  engine_font.cpp_CBitFont_reset_FUN_004cced0
+    Line 46: 'CBitFont' {aka 'struct CBitFont'} has no member named 'field21_0x318c'...
+  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0
+    Line 87: 'CBitFont' {aka 'struct CBitFont'} has no member named 'field21_0x318c'...
+  engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320
+    Line 29: 'SSurfaceNormal' {aka 'struct SSurfaceNormal'} has no member named 'field7_0x1c'...
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
+    Line 180: 'SSurfaceNormal' {aka 'struct SSurfaceNormal'} has no member named 'field7_0x1c'...
+  engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
+    Line 47: 'CDemonRenderer' {aka 'struct CDemonRenderer'} has no member named 'field8_0x20'...
+  engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550
+    Line 27: 'CDemonRenderer' {aka 'struct CDemonRenderer'} has no member named 'field8_0x20'...
+  engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+    Line 33: 'CDemonRenderer' {aka 'struct CDemonRenderer'} has no member named 'field8_0x20'...
+  engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
+    Line 46: 'CDemonRenderer' {aka 'struct CDemonRenderer'} has no member named 'field8_0x20'...
+  engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
+    Line 37: 'CDemonRenderer' {aka 'struct CDemonRenderer'} has no member named 'field8_0x20'...
+  engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320
+    Line 18: 'CDemonRenderer' {aka 'struct CDemonRenderer'} has no member named 'field8_0x20'...
+  engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170
+    Line 40: 'CDemonRenderer' {aka 'struct CDemonRenderer'} has no member named 'field8_0x20'...
 
-  ... and 8530 more errors
+  ... and 8862 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (2151 errors)
+CATEGORY: undeclared_identifier (1863 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -121,10 +137,10 @@ CATEGORY: undeclared_identifier (2151 errors)
   support_trisock.cpp_connectSocket_FUN_005e1bd0
     Line 34: 'crt_wsock32_c_connect' was not declared in this scope...
 
-  ... and 2121 more errors
+  ... and 1833 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (1684 errors)
+CATEGORY: incompatible_types (1675 errors)
 ====================================================================================================
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
@@ -172,10 +188,10 @@ CATEGORY: incompatible_types (1684 errors)
   support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80
     Line 23: invalid conversion from 'void*' to 'FILE*' [-fpermissive]...
 
-  ... and 1654 more errors
+  ... and 1645 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (554 errors)
+CATEGORY: syntax_error (540 errors)
 ====================================================================================================
 
   engine_dosio.c_findFile_FUN_00481760
@@ -193,34 +209,34 @@ CATEGORY: syntax_error (554 errors)
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 124: expected primary-expression before ')' token...
   core_trap.cpp_CTrap_process_FUN_005de770
-    Line 29: expected primary-expression before ')' token...
+    Line 27: expected primary-expression before ')' token...
   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
     Line 79: expected primary-expression before ')' token...
   core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
     Line 50: expected primary-expression before ')' token...
   core_dog.cpp_CZombieDog_process_FUN_0047f140
-    Line 158: expected primary-expression before ')' token...
+    Line 156: expected primary-expression before ')' token...
   core_drip.cpp_FUN_0048e2a0
     Line 117: expected primary-expression before ')' token...
   core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    Line 211: expected primary-expression before ')' token...
+    Line 208: expected primary-expression before ')' token...
   core_dracbrid.cpp_FUN_00484410
-    Line 408: expected primary-expression before ')' token...
+    Line 403: expected primary-expression before ')' token...
   core_cloth.cpp_BoneAndClothEditor_FUN_0043c880
     Line 21: expected ';' before 'extraout_var_00'...
   core_drone.cpp_FUN_0048f360
     Line 30: expected primary-expression before ')' token...
   core_drone.cpp_FUN_0048ec70
-    Line 123: expected primary-expression before ')' token...
+    Line 122: expected primary-expression before ')' token...
 
-  ... and 524 more errors
+  ... and 510 more errors
 
 ====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 1.14
-Average suspects in failed compilations: 12.80
+Average suspects in failed compilations: 12.48
 
-Functions that compile but have suspect patterns: 680
+Functions that compile but have suspect patterns: 694
 (These may have runtime issues even though syntax is valid)

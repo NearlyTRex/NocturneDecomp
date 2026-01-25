@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0062e39a = 0.1000000
-;   undefined4 DAT_0065f024
+;   float FLOAT_0065f024 = 256
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -56,13 +56,13 @@ section .text
     LEA EBX,[ESI + 0x1c]                ; 004ed127
     FSTP float ptr [ESI + 0x8]          ; 004ed12a
     FLD float ptr [EAX]                 ; 004ed12d
-    FMUL float ptr [0x0065f024]         ; 004ed12f | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ed12f | FLOAT_0065f024
     FISTP dword ptr [EBX]               ; 004ed135
     FLD float ptr [EAX + 0x4]           ; 004ed137
-    FMUL float ptr [0x0065f024]         ; 004ed13a | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ed13a | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x4]         ; 004ed140
     FLD float ptr [EAX + 0x8]           ; 004ed143
-    FMUL float ptr [0x0065f024]         ; 004ed146 | DAT_0065f024
+    FMUL float ptr [0x0065f024]         ; 004ed146 | FLOAT_0065f024
     FISTP dword ptr [EBX + 0x8]         ; 004ed14c
     MOV EAX,dword ptr [ESP + 0x18]      ; 004ed14f
     MOV dword ptr [ESI + 0x10],EAX      ; 004ed153

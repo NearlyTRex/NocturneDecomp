@@ -3,10 +3,13 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "types/classes/CActorPropertyList.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFileManager.h"
 #include "types/classes/CDemonRenderer.h"
+#include "types/classes/CDemonTriangle.h"
 #include "types/classes/CInventory.h"
 #include "types/classes/CKeyActor.h"
 #include "types/classes/CKeys.h"
@@ -21,14 +24,21 @@
 #include "types/classes/CMarquee.h"
 #include "types/classes/CMelee.h"
 #include "types/classes/CMirrorHack.h"
+#include "types/classes/COrientation.h"
+#include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SGem.h"
+#include "types/structs/SInteractionInfo.h"
+#include "types/structs/SInteractionState.h"
+#include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLKeyframeModel.h"
 #include "types/structs/SMemHead.h"
 #include "types/structs/SPanel.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SReflector.h"
+#include "types/structs/SSurfaceInfo.h"
 #include "types/structs/SSurfaceNormal.h"
 #include "types/structs/SSurfacePackedNormal.h"
 
@@ -96,7 +106,7 @@ CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_00502ed0(CLadder * this_ptr, 
 CDemonActorType * __cdecl core_larva_cpp_staticInit_FUN_00502f20(void);
 undefined __unknown core_larva_cpp_FUN_00502f50();
 undefined __unknown core_larva_cpp_FUN_00502f80();
-CLarva * __cdecl core_larva_cpp_FUN_00502f90(CLarva * this_ptr);
+CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_00502f90(CLarva * this_ptr);
 undefined __unknown core_larva_cpp_FUN_00503020();
 undefined __unknown core_larva_cpp_FUN_00503080();
 undefined __unknown core_larva_cpp_CLarva_load_FUN_00503960();
@@ -182,69 +192,69 @@ void __cdecl core_main_c_showPromoScreen_FUN_00508340(void);
 undefined __unknown core_main_c_finalizeGameSystems_FUN_00508570();
 CDemonFileManager * __cdecl core_fileman_cpp_CDemonFileManager_ctor_FUN_00508860(CDemonFileManager * this_ptr);
 CDemonFileManager * __cdecl core_fileman_cpp_CDemonFileManager_dtor_FUN_00508880(CDemonFileManager * this_ptr);
-CDemonActorType * __cdecl core_manpuz_cpp_staticInit_FUN_00508890(void);
-undefined __unknown core_manpuz_cpp_FUN_005088e0();
-undefined __unknown core_manpuz_cpp_FUN_00508910();
-CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_00508920(CMansionPuzzleCircle * this_ptr);
-undefined __unknown core_manpuz_cpp_FUN_00508a70();
-undefined __unknown core_manpuz_cpp_FUN_005090d0();
-undefined __unknown core_manpuz_cpp_FUN_005091d0();
-undefined __unknown core_manpuz_cpp_FUN_005092e0();
-undefined __unknown core_manpuz_cpp_FUN_00509320();
-undefined __unknown core_manpuz_cpp_FUN_00509330();
-undefined __unknown core_manpuz_cpp_FUN_00509720();
-undefined __unknown core_manpuz_cpp_FUN_005097d0();
-undefined __unknown core_manpuz_cpp_FUN_005097e0();
-undefined __unknown core_manpuz_cpp_FUN_005098f0();
-undefined __unknown core_manpuz_cpp_FUN_00509b20();
-undefined __unknown core_manpuz_cpp_FUN_00509bf0();
-undefined __unknown core_manpuz_cpp_FUN_00509c60();
-undefined __unknown core_manpuz_cpp_FUN_00509d50();
-undefined __unknown core_manpuz_cpp_FUN_0050a1f0();
-undefined __unknown core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290();
-undefined __unknown core_manpuz_cpp_FUN_0050a420();
+void __cdecl core_manpuz_cpp_staticInit_FUN_00508890(void);
+CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_factoryFunc_FUN_005088e0(void);
+CDemonActorType * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getActorType_FUN_00508910(CMansionPuzzleCircle * this_ptr);
+CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_00508920(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuzzleCircle * this_ptr);
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_005091d0(CMansionPuzzleCircle * this_ptr, float delta_time);
+CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_005092e0(CMansionPuzzleCircle * this_ptr, CBoundingBox3D * out_box);
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_hasCollision_FUN_00509320(CMansionPuzzleCircle * this_ptr, SCollisionInfo * collision_info);
+float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330(CMansionPuzzleCircle * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720(CMansionPuzzleCircle * this_ptr, SIntersectXZCylinder * cylinder);
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_005097d0(CMansionPuzzleCircle * this_ptr, float x_pos, float z_pos, float * out_floor_height);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0(CMansionPuzzleCircle * this_ptr, SSurfaceInfo * surface_info);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_005098f0(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509b20(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509bf0(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509c60(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a1f0(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a420(CMansionPuzzleCircle * this_ptr);
 undefined __unknown core_manpuz_cpp_FUN_0050a490();
-undefined __unknown core_manpuz_cpp_FUN_0050a4f0();
-undefined __unknown core_manpuz_cpp_FUN_0050a610();
-undefined __unknown core_manpuz_cpp_FUN_0050a8d0();
-undefined __unknown core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0();
-undefined __unknown core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40();
-undefined __unknown core_manpuz_cpp_CMansionPuzzleCircle_load_FUN_0050adf0();
-undefined __unknown core_manpuz_cpp_FUN_0050aee0();
-undefined __unknown core_manpuz_cpp_FUN_0050aef0();
-undefined __unknown core_manpuz_cpp_FUN_0050af00();
-undefined __unknown core_manpuz_cpp_FUN_0050af80();
-undefined __unknown core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040();
-undefined __unknown core_manpuz_cpp_FUN_0050b0d0();
-undefined __unknown core_manpuz_cpp_FUN_0050b100();
-CMirrorHack * __cdecl core_manpuz_cpp_FUN_0050b110(CMirrorHack * this_ptr);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_0050b160(CMansionPuzzleCircle * this_ptr);
-undefined __unknown core_manpuz_cpp_FUN_0050b180();
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_0050b1d0(CMansionPuzzleCircle * this_ptr, float delta_time);
-undefined __unknown core_manpuz_cpp_FUN_0050b260();
-undefined __unknown core_manpuz_cpp_FUN_0050b2b0();
-undefined __unknown core_manpuz_cpp_FUN_0050b2c0();
-undefined __unknown core_manpuz_cpp_FUN_0050b2f0();
-undefined __unknown core_manpuz_cpp_FUN_0050b340();
-undefined __unknown core_manpuz_cpp_FUN_0050b360();
-undefined __unknown core_manpuz_cpp_FUN_0050b3c0();
-undefined __unknown core_manpuz_cpp_FUN_0050b3e0();
-undefined __unknown core_manpuz_cpp_FUN_0050b440();
-undefined __unknown core_manpuz_cpp_FUN_0050b7d0();
-undefined __unknown core_manpuz_cpp_FUN_0050b810();
-CMirrorHack * __cdecl core_manpuz_cpp_FUN_0050b840(CMirrorHack * this_ptr, uint d1, uint d2);
-CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_0050b890(CMansionPuzzleCircle * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5);
-SReflector * __cdecl core_manpuz_cpp_FUN_0050b920(SReflector * this_ptr);
-SReflector * __cdecl core_manpuz_cpp_FUN_0050b930(SReflector * this_ptr);
-SGem * __cdecl core_manpuz_cpp_FUN_0050b940(SGem * this_ptr);
-SGem * __cdecl core_manpuz_cpp_FUN_0050b960(SGem * this_ptr);
-SPanel * __cdecl core_manpuz_cpp_FUN_0050b980(SPanel * this_ptr);
-SPanel * __cdecl core_manpuz_cpp_FUN_0050b990(SPanel * this_ptr);
+int __cdecl core_manpuz_cpp_FUN_0050a4f0(void * ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a610(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a8d0(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_serialize_FUN_0050adf0(CMansionPuzzleCircle * this_ptr);
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aee0(CMansionPuzzleCircle * this_ptr);
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aef0(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af00(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af80(CMansionPuzzleCircle * this_ptr);
+int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCircle * this_ptr);
+CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_factoryFunc_FUN_0050b0d0(void);
+CDemonActorType * __cdecl core_manpuz_cpp_CMirrorHack_getActorType_FUN_0050b100(CMirrorHack * this_ptr);
+CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_ctor_FUN_0050b110(CMirrorHack * this_ptr);
+void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_0050b160(CMirrorHack * this_ptr);
+int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_0050b180(CMirrorHack * this_ptr);
+void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_0050b1d0(CMirrorHack * this_ptr, float delta_time);
+CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260(CMirrorHack * this_ptr, CBoundingBox3D * out_box);
+int __cdecl core_manpuz_cpp_CMirrorHack_hasCollision_FUN_0050b2b0(CMirrorHack * this_ptr, SCollisionInfo * collision_info);
+void __cdecl core_manpuz_cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0(CMirrorHack * this_ptr, SSurfaceInfo * surface_info);
+void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0(CMirrorHack * this_ptr, SInteractionInfo * out_info);
+int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack * this_ptr, CDemonActor * user);
+int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack * this_ptr, COrientation * user_orientation, SInteractionState * interaction_state);
+void __cdecl core_manpuz_cpp_CMirrorHack_stopUsing_FUN_0050b3c0(CMirrorHack * this_ptr, CDemonActor * user);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPropertyList_FUN_0050b3e0(CMansionPuzzleCircle * this_ptr, CActorPropertyList * property_list);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzleCircle * this_ptr);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_writeDependencies_FUN_0050b7d0(CMansionPuzzleCircle * this_ptr, FILE * file_handle);
+void __cdecl core_manpuz_cpp_CMirrorHack_writeDependencies_FUN_0050b810(CMirrorHack * this_ptr, FILE * file_handle);
+CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_dtor_FUN_0050b840(CMirrorHack * this_ptr, uint d1, uint d2);
+CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_0050b890(CMansionPuzzleCircle * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5);
+SReflector * __cdecl core_manpuz_cpp_SReflector_ctor_FUN_0050b920(SReflector * this_ptr);
+SReflector * __cdecl core_manpuz_cpp_SReflector_dtor_FUN_0050b930(SReflector * this_ptr);
+SGem * __cdecl core_manpuz_cpp_SGem_ctor_FUN_0050b940(SGem * this_ptr);
+SGem * __cdecl core_manpuz_cpp_SGem_dtor_FUN_0050b960(SGem * this_ptr);
+SPanel * __cdecl core_manpuz_cpp_SPanel_ctor_FUN_0050b980(SPanel * this_ptr);
+SPanel * __cdecl core_manpuz_cpp_SPanel_dtor_FUN_0050b990(SPanel * this_ptr);
 undefined __unknown core_manpuz_cpp_FUN_0050b9a0();
-undefined __unknown core_manpuz_cpp_FUN_0050ba70();
-undefined __unknown core_manpuz_cpp_FUN_0050ba90();
-undefined __unknown core_manpuz_cpp_FUN_0050bab0();
-undefined __unknown core_manpuz_cpp_FUN_0050bad0();
+void __cdecl core_manpuz_cpp_freeTriangles_FUN_0050ba70(CDemonTriangle * * objs);
+void __cdecl core_manpuz_cpp_freePanels_FUN_0050ba90(SPanel * * objs);
+void __cdecl core_manpuz_cpp_freeGems_FUN_0050bab0(SGem * * objs);
+void __cdecl core_manpuz_cpp_freeReflectors_FUN_0050bad0(SReflector * * objs);
 CDemonActorType * __cdecl core_marquee_cpp_staticInit_FUN_0050baf0(void);
 undefined __unknown core_marquee_cpp_FUN_0050bb20();
 undefined __unknown core_marquee_cpp_FUN_0050bb50();

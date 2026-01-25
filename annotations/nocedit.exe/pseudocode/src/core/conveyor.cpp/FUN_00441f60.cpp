@@ -20,7 +20,7 @@ uint core_conveyor_cpp_FUN_00441f60(void)
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-      this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
+      this_ptr = (*((in_stack_00000004->vtable)._ub)->getBoundingBox)
                            (in_stack_00000004,(CBoundingBox3D *)&fStack_20);
       fStack_20 = 6.256178e-39;
       iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);

@@ -27,10 +27,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int iVar13;
   char *pcVar14;
   byte bVar15;
-  uint auStackY_107c [651];
+  uint auStackY_107c [652];
   CVector3i *input_ptr;
-  SCollisionInfo *collision_info;
-  ulonglong uVar16;
   char local_4dc [256];
   char local_3dc [256];
   char local_2dc [256];
@@ -104,7 +102,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         local_9c = (pCVar4->base_character).base_actor.orient.heading;
       }
       core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_b0);
-      (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
+      (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._ub)->
         setPositionAndOrientation)
                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(CVector3f *)local_b0,
                  (CVector3f *)(local_b0 + 0xc));
@@ -128,7 +126,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         local_7c.y = (float)local_70.y * 0.00390625f;
         local_7c.z = (float)local_70.z * 0.00390625f;
         pCVar4 = g_HeroActors[g_LocalHeroIndex];
-        (*((pCVar4->base_character).base_actor.vtable)->setPositionAndOrientation)
+        (*((pCVar4->base_character).base_actor.vtable._ub)->setPositionAndOrientation)
                   ((CDemonActor *)pCVar4,&local_7c,
                    (CVector3f *)&(pCVar4->base_character).base_actor.orient);
         g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
@@ -163,25 +161,18 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (this_ptr->screen_clear_enabled != 0) {
         core_set_cpp_CDemonSet_FUN_0056d190(g_CDemonSetPtr);
       }
-      uVar16._4_4_ = this_ptr;
-      uVar16._0_4_ = (CKeys *)0x4da4e8;
       core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(this_ptr);
       if (g_CheatFlags != 0) {
-        uVar16._4_4_ = (CGame *)0x1d;
-        uVar16._0_4_ = g_CKeysPtr;
         iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-        if (iVar5 != 0) {
-          uVar16._4_4_ = (CGame *)0x4da515;
-          iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
-          if (iVar5 != 0) {
-            iVar5 = g_DebugRecording;
-            if (g_DebugRecording == 0) {
-              g_DebugRecording = 1;
-              _DAT_02d831bc = iVar5;
-            }
-            else {
-              g_DebugRecording = 0;
-            }
+        if ((iVar5 != 0) &&
+           (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f), iVar5 != 0)) {
+          iVar5 = g_DebugRecording;
+          if (g_DebugRecording == 0) {
+            g_DebugRecording = 1;
+            _DAT_02d831bc = iVar5;
+          }
+          else {
+            g_DebugRecording = 0;
           }
         }
         if ((_g_DebugRecordingParams < 1) || (_DAT_02d831bc < _g_DebugRecordingParams)) {
@@ -269,17 +260,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
                    (double)(pCVar4->base_character).base_actor.location.position.x,SUB84(dVar2,0),
-                   (int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
-                   SUB84(180 *
-                         (double)(pCVar4->base_character).base_actor.orient.pitch * 0.31830988619288902,
-                         0));
+                   (int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
         crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"Slew : %s, Virtual Director : %s");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0xb);
-        if ((float *)this_ptr->field102_0x9bc != (float *)0x0) {
-          crt_stdio_c_sprintf_FUN_005fdbd0
-                    (local_3dc,"Fudge: %g,%g,%g",
-                     SUB84((double)*(float *)this_ptr->field102_0x9bc,0));
+        if (this_ptr->field102_0x9bc != 0) {
+          crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"Fudge: %g,%g,%g");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
@@ -299,17 +285,15 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x100);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x80);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x40);
-          iVar5 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",iVar5);
+          wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
+          crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0x2c);
         }
       }
-      collision_info = (SCollisionInfo *)uVar16;
       if (_DAT_02d831c0 != 0) {
         uVar6 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005a9ef0();
         iVar5 = 0x37;
-        for (; collision_info = (SCollisionInfo *)uVar16, uVar6 != 0;
-            uVar6 = sound_sndmain_cpp_getNextActiveSfx_FUN_005a9f30(uVar6)) {
+        for (; uVar6 != 0; uVar6 = sound_sndmain_cpp_getNextActiveSfx_FUN_005a9f30(uVar6)) {
           sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffff9d4);
           iVar7 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
                             (uVar6,(CSfxSample *)&stack0xfffff9d4);
@@ -330,8 +314,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                   (g_CEditorToolsPtr,local_2dc);
         engine_2d_c_drawText_FUN_00401fd0(local_2dc,0,g_WindowHeight + -0x42);
       }
-      iVar5 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],collision_info);
+      iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._uc)->_uc).
+                isDamageable)(&g_HeroActors[g_LocalHeroIndex]->base_character);
       if (iVar5 == 2) {
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("You're dead.  Game over.");

@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct CStrList;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CStrList.h"
 #include "types/funcdefs/CStrList_clear.h"
 #include "types/funcdefs/CStrList_dtor.h"
 #include "types/funcdefs/CStrList_handleInput.h"

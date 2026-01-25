@@ -173,7 +173,7 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70(void)
                 (&stack0xfffffef0,"Actor-specific help for selected actor %s (type %s):",this_ptr,pcVar2);
       engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef0,g_ClipLeft,local_14);
       local_14 = local_14 + 0x16;
-      (*this_ptr->vtable->showEditorHelp)(this_ptr,(int *)&local_14);
+      (*((this_ptr->vtable)._ub)->showEditorHelp)(this_ptr,(int *)&local_14);
       uVar1 = local_14;
     }
     local_14 = uVar1;

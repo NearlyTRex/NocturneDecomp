@@ -20,7 +20,7 @@
 ;   core_bat.cpp_CBat_FUN_00414bf0 at 00414c41
 ;   core_battery.cpp_FUN_00417f80 at 00417ff2
 ;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 at 00419583
-;   core_boxactor.cpp_FUN_00421e00 at 00421ea8
+;   core_boxactor.cpp_CBoxActor_FUN_00421ef0 at 00421fa2
 ;   ... and 42 more
 ;
 ; Called Functions:

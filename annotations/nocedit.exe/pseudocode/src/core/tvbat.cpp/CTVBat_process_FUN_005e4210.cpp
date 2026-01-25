@@ -351,7 +351,7 @@ LAB_005e4342:
                                     position.y,
                             (double)(this_ptr->base_enemy).base_character.base_actor.location.
                                     position.z,50.0), iVar14 != 0)) {
-      uVar12 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playAmbientSound)
+      uVar12 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,this_ptr->field13_0xc07c);
       *(uint *)this_ptr->field16_0xc0e8 = uVar12;
     }

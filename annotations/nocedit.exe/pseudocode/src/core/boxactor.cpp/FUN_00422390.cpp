@@ -1,20 +1,17 @@
 // Name: core_boxactor.cpp_FUN_00422390
 // Address: 00422390
 // Address Range: [[00422390, 004224a5]]
-// Convention: unknown
-// Signature: undefined core_boxactor.cpp_FUN_00422390()
+// Convention: __cdecl
+// Signature: void core_boxactor.cpp_FUN_00422390(CBoxActor * this_ptr)
 
 #include "nocturne.h"
 
-/* Signature: byte actors_other_boxactor.cpp_FUN_00422390(uint param_1, uint
-   param_2, uint param_3) */
-
-void core_boxactor_cpp_FUN_00422390(void)
+void __cdecl core_boxactor_cpp_FUN_00422390(CBoxActor *this_ptr)
 
 {
-  float fVar1;
+  CLocation *pCVar1;
   float fVar2;
-  CDemonActor *in_stack_00000004;
+  float fVar3;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   double local_60;
@@ -27,12 +24,13 @@ void core_boxactor_cpp_FUN_00422390(void)
   float fStack_10;
   
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (in_stack_00000004,(CVector3f *)(auStack_58 + 0x10),in_stack_00000008);
+            (&this_ptr->base_actor,(CVector3f *)(auStack_58 + 0x10),in_stack_00000008);
   core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-            (in_stack_00000004,(CVector3f *)local_24,in_stack_0000000c);
+            (&this_ptr->base_actor,(CVector3f *)local_24,in_stack_0000000c);
   if ((float)local_24._8_4_ * local_40.x +
       (float)local_24._0_4_ * (float)auStack_58._16_4_ + (float)local_24._4_4_ * local_44 < 0.0) {
-    (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&local_60);
+    (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
+              (&this_ptr->base_actor,(CBoundingBox3D *)&local_60);
     fStack_10 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                           ((CBoundingBox3D *)auStack_58,&local_40,(CVector3f *)(local_24 + 8),
                            &CStack_34);
@@ -42,14 +40,14 @@ void core_boxactor_cpp_FUN_00422390(void)
       fStack_28 = in_stack_0000000c->x * fStack_10;
       local_24._0_4_ = in_stack_0000000c->y * fStack_10;
       local_24._4_4_ = in_stack_0000000c->z * fStack_10;
-      fVar1 = (in_stack_00000004->location).position.y;
-      (in_stack_00000004->location).position.x =
-           (in_stack_00000004->location).position.x + fStack_28;
-      fVar2 = (in_stack_00000004->location).position.z;
-      (in_stack_00000004->location).position.y = fVar1 + (float)local_24._0_4_;
-      (in_stack_00000004->location).position.z = fVar2 + (float)local_24._4_4_;
-      core_boxactor_cpp_FUN_004218d0();
-      core_boxactor_cpp_FUN_00422590();
+      pCVar1 = &(this_ptr->base_actor).location;
+      fVar2 = (this_ptr->base_actor).location.position.y;
+      (pCVar1->position).x = (pCVar1->position).x + fStack_28;
+      fVar3 = (this_ptr->base_actor).location.position.z;
+      (this_ptr->base_actor).location.position.y = fVar2 + (float)local_24._0_4_;
+      (this_ptr->base_actor).location.position.z = fVar3 + (float)local_24._4_4_;
+      core_boxactor_cpp_FUN_004218d0(this_ptr);
+      core_boxactor_cpp_FUN_00422590(this_ptr);
       return;
     }
   }

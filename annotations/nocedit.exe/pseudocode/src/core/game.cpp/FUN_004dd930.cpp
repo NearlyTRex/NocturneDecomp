@@ -21,7 +21,7 @@ void __cdecl core_game_cpp_FUN_004dd930(char *p1,int p2)
   pCVar1 = core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(pCVar1);
   if (pCVar1 != (CAmmo *)0x0) {
     core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-    (*((pCVar1->base_actor).vtable)->setup)(&pCVar1->base_actor);
+    (*((pCVar1->base_actor).vtable._ub)->setup)(&pCVar1->base_actor);
     pCVar1->ammo_type = in_stack_0000000c;
     core_ammo_cpp_CAmmo_FUN_00410fd0();
     pCVar1->ammo_count = 500;

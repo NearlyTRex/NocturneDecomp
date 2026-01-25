@@ -19,7 +19,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
   int *piVar8;
   
   pCVar4 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base_character);
-  (pCVar4->base_character).base_actor.vtable = &PTR_core_enemy_cpp_FUN_004a9650_0065d7d4;
+  (pCVar4->base_character).base_actor.vtable._ub = &g_CEnemyVTable;
   fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
   pCVar4->pool_me = 0;
   pCVar4->field8_0xbeac = 0;

@@ -123,7 +123,7 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
           g_CurrentDebugLine = 0x994;
           return;
         }
-        (*this_ptr->vtable->dtor)
+        (*((this_ptr->vtable)._ub)->dtor)
                   (this_ptr,2,in_stack_ffffff5c,in_stack_ffffff60,in_stack_ffffff64,
                    in_stack_ffffff68,in_stack_ffffff6c,in_stack_ffffff70,in_stack_ffffff74);
         return;
@@ -153,8 +153,8 @@ void core_msnedit_cpp_DuplicateActorCheckMaybe_FUN_0053bd80(void)
       pCVar6 = (CDemonActor *)pfVar7;
     } while (pfVar7 != (float *)(pCVar5->create_event + 0x10));
   }
-  (*this_ptr->vtable->setup)(this_ptr);
-  (*this_ptr->vtable->onDropped)(this_ptr,(CVector3f *)0x0);
+  (*((this_ptr->vtable)._ub)->setup)(this_ptr);
+  (*((this_ptr->vtable)._ub)->onDropped)(this_ptr,(CVector3f *)0x0);
   core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
   return;
 }

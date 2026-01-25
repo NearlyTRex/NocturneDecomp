@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Capture_006243ba
-;   undefined4 DAT_0065d7c8
+;   float FLOAT_0065d7c8 = NaN
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CEventList g_CEventListInstance
@@ -51,7 +51,7 @@ section .text
     TEST EDX,EDX                        ; 004a9b1e
     JZ 0x004a9b57                       ; 004a9b20
         ;   XREF to: 004a9b57 (CONDITIONAL_JUMP)  ; LAB_004a9b57
-    CMP EDX,dword ptr [0x0065d7c8]      ; 004a9b22 | DAT_0065d7c8
+    CMP EDX,dword ptr [0x0065d7c8]      ; 004a9b22 | FLOAT_0065d7c8
     JNZ 0x004a9b4f                      ; 004a9b28
         ;   XREF to: 004a9b4f (CONDITIONAL_JUMP)  ; LAB_004a9b4f
     MOV dword ptr [EDI + 0xbe3c],0x0    ; 004a9b2a

@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006158ed = 0.5
-;   undefined4 DAT_0065a778
+;   float FLOAT_0065a778 = 1
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 DAT_02f43978
@@ -155,7 +155,7 @@ section .text
     FLD float ptr [EBX + 0xbf5c]        ; 004174b2
     FLD1                                ; 004174b8
     FSUBRP                              ; 004174ba
-    FDIV float ptr [0x0065a778]         ; 004174bc | DAT_0065a778
+    FDIV float ptr [0x0065a778]         ; 004174bc | FLOAT_0065a778
     FSTP float ptr [ESP + 0x8]          ; 004174c2
     FLD float ptr [ESP + 0x8]           ; 004174c6
         ;   Label: LAB_004174c6
@@ -210,7 +210,7 @@ section .text
     FLD float ptr [EBX + 0xbf5c]        ; 00417546
         ;   Label: LAB_00417546
     FSUBR double ptr [0x006158ed]       ; 0041754c | DOUBLE_006158ed
-    FDIV float ptr [0x0065a778]         ; 00417552 | DAT_0065a778
+    FDIV float ptr [0x0065a778]         ; 00417552 | FLOAT_0065a778
     FST float ptr [ESP + 0x8]           ; 00417558
     FLDZ                                ; 0041755c
     FCOMPP                              ; 0041755e

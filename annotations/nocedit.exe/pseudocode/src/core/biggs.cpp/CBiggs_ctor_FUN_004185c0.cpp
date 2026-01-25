@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_004185c0(CBiggs *this_ptr)
 
 {
   char cVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   CEnemy *pCVar4;
   int iVar5;
   char *pcVar6;
@@ -30,12 +28,12 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_004185c0(CBiggs *this_ptr)
   pcVar7 = (char *)(iVar5 + 0xc2c);
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             ((CKeyFramedModelInstance *)(iVar5 + -0x184),"question.kfm");
-  uVar2 = _DAT_0065ac08;
+  fVar2 = 50.0f;
   *(uint *)(iVar5 + -0x9264) = 0x3f19999a;
-  uVar3 = _PTR_FUN_0065ac09_3;
+  fVar3 = 100.0f;
   *(uint *)(iVar5 + -0x9260) = 0x3f666666;
-  *(uint *)(iVar5 + -0x925c) = uVar2;
-  *(uint *)(iVar5 + -0x9258) = uVar3;
+  *(float *)(iVar5 + -0x925c) = fVar2;
+  *(float *)(iVar5 + -0x9258) = fVar3;
   do {
     cVar1 = *pcVar6;
     *pcVar7 = cVar1;

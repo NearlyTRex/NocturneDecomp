@@ -13,8 +13,8 @@
 ;   TerminatedCString s_core_stranger_cpp_00653cd4
 ;   TerminatedCString s_CStranger_aimLeftPistol__00653ce9
 ;   double DOUBLE_00653d14 = 0.0100000000000000
-;   undefined4 DAT_00663770
-;   undefined4 DAT_00663774
+;   float FLOAT_00663770 = -1.047198
+;   float FLOAT_00663774 = 1.221730
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -264,21 +264,21 @@ section .text
     MOV EAX,dword ptr [ESP + 0x94]      ; 005c465e
     FLD float ptr [ESP + 0x94]          ; 005c4665
     MOV dword ptr [ESP + 0xcc],EAX      ; 005c466c
-    FCOMP float ptr [0x00663770]        ; 005c4673 | DAT_00663770
+    FCOMP float ptr [0x00663770]        ; 005c4673 | FLOAT_00663770
     FNSTSW AX                           ; 005c4679
     SAHF                                ; 005c467b
     JNC 0x005c468a                      ; 005c467c
         ;   XREF to: 005c468a (CONDITIONAL_JUMP)  ; LAB_005c468a
-    MOV EAX,[0x00663770]                ; 005c467e | DAT_00663770
+    MOV EAX,[0x00663770]                ; 005c467e | FLOAT_00663770
     MOV dword ptr [ESP + 0xcc],EAX      ; 005c4683
     FLD float ptr [ESP + 0xcc]          ; 005c468a
         ;   Label: LAB_005c468a
-    FCOMP float ptr [0x00663774]        ; 005c4691 | DAT_00663774
+    FCOMP float ptr [0x00663774]        ; 005c4691 | FLOAT_00663774
     FNSTSW AX                           ; 005c4697
     SAHF                                ; 005c4699
     JBE 0x005c46a8                      ; 005c469a
         ;   XREF to: 005c46a8 (CONDITIONAL_JUMP)  ; LAB_005c46a8
-    MOV EAX,[0x00663774]                ; 005c469c | DAT_00663774
+    MOV EAX,[0x00663774]                ; 005c469c | FLOAT_00663774
     MOV dword ptr [ESP + 0xcc],EAX      ; 005c46a1
     FLD float ptr [ESP + 0xd0]          ; 005c46a8
         ;   Label: LAB_005c46a8

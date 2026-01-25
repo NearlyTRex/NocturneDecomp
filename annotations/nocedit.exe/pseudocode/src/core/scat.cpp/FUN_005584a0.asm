@@ -32,7 +32,7 @@
 ;   core_scat.cpp_FUN_005582c0 at 00558486
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00665998
+;   float FLOAT_00665998 = 1
 ;   undefined4 DAT_03106168
 ;   undefined4 DAT_0310616c
 ;   undefined4 DAT_03106170
@@ -170,7 +170,7 @@ section .text
     LEA ESI,[ESP + 0x68]                ; 005585fc
     PUSH 0x3f733333                     ; 00558600
     PUSH ESI                            ; 00558605
-    PUSH 0x665998                       ; 00558606 | DAT_00665998
+    PUSH 0x665998                       ; 00558606 | FLOAT_00665998
     LEA ESI,[ESP + 0x124]               ; 0055860b
     LEA EDI,[ESP + 0x84]                ; 00558612
     CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 00558619

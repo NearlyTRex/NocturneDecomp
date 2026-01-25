@@ -7,7 +7,7 @@
 ; CWaterActor *    Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00665310
+;   float FLOAT_00665310 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   SMRGLTextureBasic DAT_006846f0
@@ -113,13 +113,13 @@ section .text
         ;   Label: LAB_005eb339
     MOV EAX,EDX                         ; 005eb33b
     FLD float ptr [EAX]                 ; 005eb33d
-    FMUL float ptr [0x00665310]         ; 005eb33f | DAT_00665310
+    FMUL float ptr [0x00665310]         ; 005eb33f | FLOAT_00665310
     FISTP dword ptr [EBX]               ; 005eb345 | DAT_03f90a88 | DAT_03f90a94
     FLD float ptr [EAX + 0x4]           ; 005eb347
-    FMUL float ptr [0x00665310]         ; 005eb34a | DAT_00665310
+    FMUL float ptr [0x00665310]         ; 005eb34a | FLOAT_00665310
     FISTP dword ptr [EBX + 0x4]         ; 005eb350 | DAT_03f90a8c | DAT_03f90a98
     FLD float ptr [EAX + 0x8]           ; 005eb353
-    FMUL float ptr [0x00665310]         ; 005eb356 | DAT_00665310
+    FMUL float ptr [0x00665310]         ; 005eb356 | FLOAT_00665310
     FISTP dword ptr [EBX + 0x8]         ; 005eb35c | DAT_03f90a90 | DAT_03f90a9c
     INC EDI                             ; 005eb35f
     ADD EDX,0x20                        ; 005eb360

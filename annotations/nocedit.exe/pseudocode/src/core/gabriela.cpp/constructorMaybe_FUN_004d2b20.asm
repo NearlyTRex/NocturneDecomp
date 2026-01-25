@@ -12,13 +12,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_gabriela_dfm_0062acca
 ;   TerminatedCString s_gabgun_kfm_0062acd7
-;   undefined4 DAT_0065e7ec
-;   CDemonActor_vtable PTR_core_gabriela.cpp_FUN_0065e804
+;   float FLOAT_0065e7ec = 10
+;   CDemonActor_vtable g_CGabriellaVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_FUN_00438ba0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   core_hero.cpp_FUN_004f2340
+;   core_hero.cpp_CHero_ctor_FUN_004f2340
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
 ; *****************************************************************************
@@ -31,15 +31,15 @@ section .text
     MOV EBP,ESP                         ; 004d2b22
     MOV EBX,dword ptr [EBP + 0xc]       ; 004d2b24
     PUSH EBX                            ; 004d2b27
-    CALL core_hero.cpp_FUN_004f2340     ; 004d2b28
-        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2340()
+    CALL core_hero.cpp_CHero_ctor_FUN_004f2340 ; 004d2b28
+        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004f2340(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d2b2d
     ADD EAX,0x1fc14                     ; 004d2b30
     PUSH EAX                            ; 004d2b35
     CALL core_cloth.cpp_FUN_00438ba0    ; 004d2b36
         ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
     LEA EBX,[EAX + 0xfffe03ec]          ; 004d2b3b
-    MOV dword ptr [EBX + 0x154],0x65e804 ; 004d2b41 | PTR_core_gabriela.cpp_FUN_0065e804
+    MOV dword ptr [EBX + 0x154],0x65e804 ; 004d2b41 | g_CGabriellaVTable
     MOV dword ptr [EBX + 0x1fbd4],0x0   ; 004d2b4b
     MOV dword ptr [EBX + 0x1fbd8],0x0   ; 004d2b55
     MOV dword ptr [EBX + 0x1fbdc],0x0   ; 004d2b5f
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [EBX + 0x1fc04],0x0   ; 004d2b9b
     MOV dword ptr [EBX + 0x1fbfc],0x0   ; 004d2ba5
     MOV dword ptr [EBX + 0x1fc10],0x0   ; 004d2baf
-    FLD float ptr [0x0065e7ec]          ; 004d2bb9 | DAT_0065e7ec
+    FLD float ptr [0x0065e7ec]          ; 004d2bb9 | FLOAT_0065e7ec
     MOV dword ptr [EBX + 0x1fbec],0x0   ; 004d2bbf
     ADD ESP,0x4                         ; 004d2bc9
     FSTP float ptr [EBX + 0x5fa84]      ; 004d2bcc

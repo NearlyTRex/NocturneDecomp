@@ -61,7 +61,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
       cVar1 = this_ptr->field9_0x47c[1000];
       this_ptr->door_state = 1;
       if (cVar1 != '\0') {
-        (*((this_ptr->base_actor).vtable)->playSound)
+        (*((this_ptr->base_actor).vtable._ub)->playSound)
                   (&this_ptr->base_actor,this_ptr->field9_0x47c + 1000);
       }
       core_setcolid_cpp_CDemonSet_FUN_005744d0(g_CDemonSetPtr);
@@ -92,7 +92,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
                       (g_CEventListPtr,this_ptr->field7_0x2e8 + 100);
     if ((iVar7 != 0) &&
        (cVar1 = this_ptr->field9_0x47c[0x44c], this_ptr->door_state = 3, cVar1 != '\0')) {
-      (*((this_ptr->base_actor).vtable)->playSound)
+      (*((this_ptr->base_actor).vtable._ub)->playSound)
                 (&this_ptr->base_actor,this_ptr->field9_0x47c + 0x44c);
     }
     this_ptr->param = this_ptr->max_param;
@@ -132,7 +132,7 @@ LAB_004801a8:
   core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
   if ((this_ptr->param != local_50) && (this_ptr->door_type != 3)) {
     iVar6 = 0;
-    (*((this_ptr->base_actor).vtable)->getBoundingBox)
+    (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
               (&this_ptr->base_actor,(CBoundingBox3D *)(auStack_c8 + 0x20));
     iStack_4c = 0;
     pCStack_44 = &(this_ptr->base_actor).orient_matrix;

@@ -67,7 +67,7 @@ LAB_00413b59:
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
-  this_ptr_00 = (*((this_ptr->field0_0x0).base_character.base_actor.vtable)->getBoundingBox)
+  this_ptr_00 = (*((this_ptr->field0_0x0).base_character.base_actor.vtable._ub)->getBoundingBox)
                           ((CDemonActor *)this_ptr,&local_44);
   iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar5 != 0) {

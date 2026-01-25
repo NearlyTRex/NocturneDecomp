@@ -2,27 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 26,
-        "message": "'PTR_core_moloch_cpp_FUN_00528c70_00661944' was not declared in this scope"
-      },
-      {
         "category": "missing_member",
         "column": 69,
-        "line": 27,
+        "line": 26,
         "message": "'CMoloch' {aka 'struct CMoloch'} has no member named 'field5_0x21e94'"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 30,
+        "line": 29,
         "message": "cast from 'CMoloch*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 33,
+        "line": 32,
         "message": "cast from 'CMoloch*' to 'uint' {aka 'unsigned int'} loses precision [-fpermissive]"
       }
     ],
@@ -37,24 +31,24 @@
       {
         "category": "other",
         "column": 23,
-        "line": 29,
+        "line": 28,
         "message": "cast to pointer from integer of different size [-Wint-to-pointer-cast]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 89,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 5,
     "suspect_types": [
       "extra_output",
       "unaffected_reg"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [],
   "function": {
@@ -104,7 +98,7 @@
   "globals": [
     {
       "addr": "00661944",
-      "name": "PTR_core_moloch.cpp_FUN_00528c70_00661944",
+      "name": "g_CMolochVTable",
       "type": "CDemonActor_vtable",
       "value": null
     },
@@ -207,21 +201,21 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
+      "line": 21,
       "match": "extraout_EAX",
       "text": "((CDeformableModelInstance *)(extraout_EAX + -0x2388),0,unaff_EBX,unaff_retaddr",
       "type": "extra_output"
     },
     {
       "description": "Unaffected register variable",
-      "line": 22,
+      "line": 21,
       "match": "unaff_EBX",
       "text": "((CDeformableModelInstance *)(extraout_EAX + -0x2388),0,unaff_EBX,unaff_retaddr",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 25,
+      "line": 24,
       "match": "unaff_EBX",
       "text": "((CHero *)&pCVar1[-0xf].bone_transform.bone_rotations[0x60].y,1,unaff_EBX,unaff_retaddr,",
       "type": "unaffected_reg"

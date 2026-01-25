@@ -50,7 +50,7 @@ uint core_hero_cpp_FUN_004f3120(void)
                             g_CBoxActorClassInfo.name_hash);
         if (((pCVar2 != (CDemonActor *)0x0) && (pCVar2[2].field7_0x6c != 0)) &&
            (pCVar2[2].was_created == 0)) {
-          (*pCVar2->vtable->getBoundingBox)(pCVar2,(CBoundingBox3D *)&local_80);
+          (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,(CBoundingBox3D *)&local_80);
           fStack_60 = fStack_78 + fStack_6c;
           fStack_5c = fStack_74 + fStack_68;
           CStack_48.x = fStack_60 * 0.5f;
@@ -87,7 +87,7 @@ uint core_hero_cpp_FUN_004f3120(void)
                           g_CBoxActorClassInfo.name_hash);
       if (pCVar2 != (CDemonActor *)0x0) {
         pCVar2[2].was_created = (int)in_stack_00000004;
-        uVar3 = (*pCVar2->vtable->playAmbientSound)(pCVar2,pCVar2[2].create_event + 4);
+        uVar3 = (*((pCVar2->vtable)._ub)->playAmbientSound)(pCVar2,pCVar2[2].create_event + 4);
         *(uint *)pCVar2[2].create_event = uVar3;
       }
     }

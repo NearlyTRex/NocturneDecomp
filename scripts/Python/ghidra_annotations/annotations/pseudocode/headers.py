@@ -471,26 +471,27 @@ def make_unique_param_name(param_name, used_names):
 
 
 def generate_dependency_includes(type_name, direct_deps, pointer_deps, type_to_path_map, needs_basetypes=False):
-    """Generate #include lines for a type header.
+    """Generate #include lines and forward declarations for a type header.
 
     Args:
         type_name: Name of the type being generated
         direct_deps: Types needing full include
-        pointer_deps: Types needing only forward declaration (will include if path available)
+        pointer_deps: Types needing only forward declaration
         type_to_path_map: Map of type names to their header paths
         needs_basetypes: If True, always include system/basetypes.h
 
     Returns:
-        List of lines with #includes
+        List of lines with forward declarations and #includes
     """
     lines = []
     includes = set()
+    forward_decls = []
 
     # Add basetypes.h if needed (for Ghidra primitives like uint, uchar, etc.)
     if needs_basetypes:
         includes.add("system/basetypes.h")
 
-    # Process pointer-only deps - include them if we have a path
+    # Process pointer-only deps - generate forward declarations instead of includes
     for dep in sorted(pointer_deps):
         # Strip struct/union prefix for matching (added by resolve_data_type_name_for_headers)
         dep_name = strip_type_prefix(dep)
@@ -500,11 +501,18 @@ def generate_dependency_includes(type_name, direct_deps, pointer_deps, type_to_p
             continue
         if dep_name in type_to_path_map:
             dep_path = type_to_path_map[dep_name]
-            # Skip function definitions - they don't need includes for pointer use
+            # Skip function definitions - they don't need forward decls for pointer use
             if '/funcdefs/' in dep_path:
                 continue
-            includes.add(dep_path)
-        # No path - skip. Pointers to unknown types will compile as incomplete types
+            # Determine if it's a struct or union based on path
+            if '/unions/' in dep_path:
+                forward_decls.append('union %s;' % dep_name)
+            else:
+                # classes/ and structs/ are both struct types in C
+                forward_decls.append('struct %s;' % dep_name)
+        # No path - generate struct forward decl as fallback
+        else:
+            forward_decls.append('struct %s;' % dep_name)
 
     # Process direct deps
     for dep in sorted(direct_deps):
@@ -514,6 +522,13 @@ def generate_dependency_includes(type_name, direct_deps, pointer_deps, type_to_p
             continue
         if dep_name in type_to_path_map:
             includes.add(type_to_path_map[dep_name])
+
+    # Generate forward declarations section first (before includes)
+    if forward_decls:
+        lines.append("")
+        lines.append("// Forward declarations")
+        for fwd in sorted(set(forward_decls)):
+            lines.append(fwd)
 
     # Generate includes section
     if includes:

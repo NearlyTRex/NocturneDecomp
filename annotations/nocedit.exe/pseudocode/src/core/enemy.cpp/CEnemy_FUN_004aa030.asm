@@ -7,7 +7,7 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0078a123
+;   int g_ActorMagicNumber
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_FUN_00428f40
@@ -43,7 +43,7 @@ section .text
     CALL dword ptr [EDX + 0x104]        ; 004aa06a
     MOV ECX,dword ptr [EBX + 0x68]      ; 004aa070
     ADD ESP,0x4                         ; 004aa073
-    CMP ECX,0x78a123                    ; 004aa076 | DAT_0078a123
+    CMP ECX,0x78a123                    ; 004aa076 | g_ActorMagicNumber
     JNZ 0x004aa0af                      ; 004aa07c
         ;   XREF to: 004aa0af (CONDITIONAL_JUMP)  ; LAB_004aa0af
     LEA EAX,[EBX + 0x158]               ; 004aa07e

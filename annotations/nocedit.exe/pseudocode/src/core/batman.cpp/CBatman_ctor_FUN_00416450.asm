@@ -15,8 +15,8 @@
 ;   undefined4 s_one_006156ec
 ;   undefined4 s_ne_006156ed
 ;   undefined4 s_e_006156ee
-;   undefined4 DAT_0065a770
-;   undefined4 PTR_FUN_0065a771+3
+;   float FLOAT_0065a770 = 50
+;   float FLOAT_0065a774 = 100
 ;   CDemonActor_vtable g_CBatmanVTable
 ;
 ; Called Functions:
@@ -45,9 +45,9 @@ section .text
     LEA EDI,[EBX + 0xbebc]              ; 00416479
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 0041647f
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x0065a770]          ; 00416484 | DAT_0065a770
+    FLD float ptr [0x0065a770]          ; 00416484 | FLOAT_0065a770
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 0041648a
-    FLD float ptr [0x0065a774]          ; 00416494 | PTR_FUN_0065a771+3
+    FLD float ptr [0x0065a774]          ; 00416494 | FLOAT_0065a774
     MOV dword ptr [EBX + 0x2de0],0x40000000 ; 0041649a
     ADD ESP,0x8                         ; 004164a4
     FXCH                                ; 004164a7

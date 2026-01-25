@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CCharacter *this_ptr)
 
 {
@@ -16,7 +14,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CChar
   CCharacter *pCVar3;
   
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
-  if (*(float *)(this_ptr->field2_0x240c + 8) == _DAT_0065b834) {
+  if (*(float *)(this_ptr->field2_0x240c + 8) == 9999.0f) {
     iVar2 = 0;
     pCVar3 = this_ptr;
     do {
@@ -26,7 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CChar
       iVar2 = iVar2 + 1;
       pCVar3 = (CCharacter *)&(pCVar3->base_actor).orient_matrix.m[0].z;
     } while (iVar2 < 2);
-    fVar1 = (*((this_ptr->base_actor).vtable)->cylinderGroundCheck)
+    fVar1 = (*((this_ptr->base_actor).vtable._ub)->cylinderGroundCheck)
                       (&this_ptr->base_actor,*(float *)(this_ptr->cloth_data + 0x344),
                        (CVector3f *)0x0);
     *(float *)(this_ptr->field2_0x240c + 8) = fVar1;

@@ -38,7 +38,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
   float fStack_18;
   float fStack_14;
   
-  (*((this_ptr->base_actor).vtable)->getBoundingBox)
+  (*((this_ptr->base_actor).vtable._ub)->getBoundingBox)
             (&this_ptr->base_actor,(CBoundingBox3D *)&local_c8);
   switch(this_ptr->door_type) {
   case 0:

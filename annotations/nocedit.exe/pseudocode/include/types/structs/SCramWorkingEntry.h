@@ -1,8 +1,10 @@
 #pragma once
 
+// Forward declarations
+struct STextureAtlasEntry;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/structs/STextureAtlasEntry.h"
 
 // Structure: SCramWorkingEntry
 // Ghidra size: 0x4c (76 bytes)

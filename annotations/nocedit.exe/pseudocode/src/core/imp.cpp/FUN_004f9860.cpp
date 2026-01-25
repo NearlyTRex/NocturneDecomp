@@ -15,6 +15,6 @@ void core_imp_cpp_FUN_004f9860(void)
   if (this_ptr == (CImp *)0x0) {
     return;
   }
-  core_imp_cpp_FUN_004f98a0(this_ptr);
+  core_imp_cpp_CImp_ctor_FUN_004f98a0(this_ptr);
   return;
 }

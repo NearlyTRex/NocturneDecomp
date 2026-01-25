@@ -12,7 +12,7 @@
 ;   double DOUBLE_00630e18 = 0.5
 ;   double DOUBLE_00630e20 = 0.00100000000000000
 ;   float FLOAT_006605d0 = 256
-;   undefined4 DAT_006605e8
+;   float FLOAT_006605e8 = 1
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -167,7 +167,7 @@ section .text
         ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 005027b6
     FLD float ptr [ESP + 0x8]           ; 005027b9
-    FADD float ptr [0x006605e8]         ; 005027bd | DAT_006605e8
+    FADD float ptr [0x006605e8]         ; 005027bd | FLOAT_006605e8
     FSTP float ptr [ESP + 0x8]          ; 005027c3
     JMP 0x0050269a                      ; 005027c7
         ;   XREF to: 0050269a (UNCONDITIONAL_JUMP)  ; LAB_0050269a

@@ -69,7 +69,7 @@ core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
   if ((uint)bbox_type < 2) {
     if (bbox_type == 1) {
       pCVar3 = &local_30;
-      this_ptr_00 = (*this_ptr->vtable->getBoundingBox)(this_ptr,&local_84);
+      this_ptr_00 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_84);
       local_a0 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                            (this_ptr_00,pCVar3,(CVector3f *)in_stack_ffffff48,
                             (CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));
@@ -85,7 +85,8 @@ core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
       goto LAB_004095c9;
     }
     if (bbox_type == 3) {
-      local_a0 = (*this_ptr->vtable->customRayIntersect)(this_ptr,&local_3c,&local_54,&local_30);
+      local_a0 = (*((this_ptr->vtable)._ub)->customRayIntersect)
+                           (this_ptr,&local_3c,&local_54,&local_30);
       local_14 = local_a0;
       goto LAB_004095c9;
     }

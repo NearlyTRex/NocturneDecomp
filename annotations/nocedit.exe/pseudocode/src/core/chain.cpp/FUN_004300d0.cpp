@@ -67,7 +67,7 @@ void core_chain_cpp_FUN_004300d0(void)
   CVector3f *pCStack_14;
   
   if (*(float *)(in_stack_00000004[4].actor_name + 0xc) < -9900.0f) {
-    fVar5 = (*in_stack_00000004->vtable->cylinderGroundCheck)
+    fVar5 = (*((in_stack_00000004->vtable)._ub)->cylinderGroundCheck)
                       (in_stack_00000004,0.1,(CVector3f *)0x0);
     *(float *)(in_stack_00000004[4].actor_name + 0xc) = fVar5;
   }
@@ -215,7 +215,7 @@ void core_chain_cpp_FUN_004300d0(void)
       if (ppCVar7 != (CDemonActor **)puVar4) {
         *ppCVar7 = (CDemonActor *)*puVar4;
         ppCVar7[1] = (CDemonActor *)puVar4[1];
-        ppCVar7[2] = (CDemonActor *)puVar4[2];
+        *(uint *)(ppCVar7 + 2) = puVar4[2];
       }
       iVar9 = iVar9 + 1;
       ppCVar7 = ppCVar7 + 9;

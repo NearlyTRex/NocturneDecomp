@@ -2,8 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/signal.h"
-#include "system/time.h"
 #include "system/watcom.h"
 #include "system/winnt.h"
 
@@ -12,7 +10,6 @@
 // =============================================================================
 
 // Forward declarations
-struct EXCEPTION_REGISTRATION_RECORD;
 struct ThreadData;
 
 // Function Definition: ENTER_CRITICAL_SECTION_BY_INDEX_FUNC

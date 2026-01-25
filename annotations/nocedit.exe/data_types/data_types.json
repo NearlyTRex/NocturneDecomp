@@ -225,6 +225,22 @@
       "type":"struct"
     },
     {
+      "name":"CCharacter_applyDamage",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_checkCylinderCollisionWorld",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_isDamageable",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_processDamage",
+      "type":"function_definition"
+    },
+    {
       "name":"CCharacter_vtable",
       "type":"struct"
     },
@@ -549,6 +565,10 @@
       "type":"struct"
     },
     {
+      "name":"CCharacter_full_vtable",
+      "type":"struct"
+    },
+    {
       "name":"CDemonFilter",
       "type":"struct"
     },
@@ -578,6 +598,10 @@
     },
     {
       "name":"CEnemy_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CEnemy_full_vtable",
       "type":"struct"
     },
     {
@@ -683,6 +707,14 @@
     {
       "name":"CHero_vtable",
       "type":"struct"
+    },
+    {
+      "name":"CHero_full_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CDemonActor_union_vtable",
+      "type":"union"
     },
     {
       "name":"CIni",
@@ -7026,6 +7058,86 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CCharacter_applyDamage",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"damage_type",
+          "type":"int"
+        },
+        {
+          "name":"damage_amount",
+          "type":"float"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_checkCylinderCollisionWorld",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"world_point",
+          "type":"CVector3f*"
+        },
+        {
+          "name":"tolerance",
+          "type":"float"
+        },
+        {
+          "name":"damage_info",
+          "type":"SDamageInfo*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_isDamageable",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCharacter_processDamage",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        },
+        {
+          "name":"damage_info",
+          "type":"SDamageInfo*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CCodec_dtor",
       "parameters":[
         {
@@ -8234,8 +8346,8 @@
           "type":"SCollisionReturnInfo*"
         },
         {
-          "name":"other_actor",
-          "type":"CDemonActor*"
+          "name":"tolerance",
+          "type":"float"
         }
       ],
       "return_type":"int",
@@ -21860,15 +21972,39 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":236,
+          "name":"_ub",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":236,
+          "type":"CCharacter_vtable"
+        }
+      ],
+      "importable":true,
+      "len":340,
+      "name":"CCharacter_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
         {
           "len":4,
-          "name":"cfunc1",
+          "name":"applyDamage",
           "offset":0,
-          "type":"void*"
+          "type":"CCharacter_applyDamage*"
         },
         {
           "len":4,
@@ -21926,9 +22062,9 @@
         },
         {
           "len":4,
-          "name":"cfunc11",
+          "name":"checkCylinderCollisionWorld",
           "offset":40,
-          "type":"void*"
+          "type":"CCharacter_checkCylinderCollisionWorld*"
         },
         {
           "len":4,
@@ -21938,15 +22074,15 @@
         },
         {
           "len":4,
-          "name":"cfunc13",
+          "name":"processDamage",
           "offset":48,
-          "type":"void*"
+          "type":"CCharacter_processDamage*"
         },
         {
           "len":4,
-          "name":"cfunc14",
+          "name":"isDamageable",
           "offset":52,
-          "type":"void*"
+          "type":"CCharacter_isDamageable*"
         },
         {
           "len":4,
@@ -23257,7 +23393,7 @@
         },
         {
           "len":4,
-          "name":"field_104",
+          "name":"validation_magic",
           "offset":104,
           "type":"int"
         },
@@ -23397,7 +23533,7 @@
           "len":4,
           "name":"vtable",
           "offset":340,
-          "type":"CDemonActor_vtable*"
+          "type":"CDemonActor_union_vtable"
         }
       ],
       "importable":true,
@@ -26577,6 +26713,36 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":236,
+          "name":"_ub",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":236,
+          "type":"CCharacter_vtable"
+        },
+        {
+          "len":12,
+          "name":"_ue",
+          "offset":340,
+          "type":"CEnemy_vtable"
+        }
+      ],
+      "importable":true,
+      "len":352,
+      "name":"CEnemy_full_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
@@ -29536,6 +29702,36 @@
       "importable":true,
       "len":130004,
       "name":"CHero",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":236,
+          "name":"_ub",
+          "offset":0,
+          "type":"CDemonActor_vtable"
+        },
+        {
+          "len":104,
+          "name":"_uc",
+          "offset":236,
+          "type":"CCharacter_vtable"
+        },
+        {
+          "len":16,
+          "name":"_uh",
+          "offset":340,
+          "type":"CHero_vtable"
+        }
+      ],
+      "importable":true,
+      "len":356,
+      "name":"CHero_full_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -44505,7 +44701,7 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"unknown",
           "offset":0,
           "type":"int"
         },
@@ -53890,6 +54086,42 @@
       "len":16,
       "name":"_union_961",
       "pack":true,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_ub",
+          "offset":0,
+          "type":"CDemonActor_vtable*"
+        },
+        {
+          "len":4,
+          "name":"_uc",
+          "offset":0,
+          "type":"CCharacter_full_vtable*"
+        },
+        {
+          "len":4,
+          "name":"_ue",
+          "offset":0,
+          "type":"CEnemy_full_vtable*"
+        },
+        {
+          "len":4,
+          "name":"_uh",
+          "offset":0,
+          "type":"CHero_full_vtable*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CDemonActor_union_vtable",
+      "pack":false,
       "type":"union"
     },
     {

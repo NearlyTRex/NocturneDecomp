@@ -15,17 +15,6 @@
 
 // Forward declarations
 struct D3DVECTOR;
-struct IDirectSound3DBuffer;
-struct IDirectSound3DBuffer_vtable;
-struct IDirectSound3DListener;
-struct IDirectSound3DListener_vtable;
-struct IDirectSoundBuffer_vtable;
-struct IDirectSoundCapture;
-struct IDirectSoundCaptureBuffer;
-struct IDirectSoundCaptureBuffer_vtable;
-struct IDirectSoundCapture_vtable;
-struct IDirectSound_vtable;
-struct IUnknown;
 
 // Structure: DS3DBUFFER
 typedef struct DS3DBUFFER {
@@ -126,43 +115,15 @@ typedef struct DSCCAPS {
     DWORD dwChannels;
 } DSCCAPS;
 
-// Structure: IDirectSoundBufferMetadata
-typedef struct IDirectSoundBufferMetadata {
-    int field_0;
-    int field_4;
-    int field_8;
-    int field_12;
-    int ref_count;
-} IDirectSoundBufferMetadata;
+// Structure: IDirectSound
+typedef struct IDirectSound {
+    struct IDirectSound_vtable* vtable;
+} IDirectSound;
 
-// Function Definition: IDirectSoundBuffer_GetCaps
-typedef int (*IDirectSoundBuffer_GetCaps)(void* this_ptr, void* pDSBufferCaps);
-
-// Typedef: LPDIRECTSOUND
-// pointer to IDirectSound
-typedef struct IDirectSound* LPDIRECTSOUND;
-
-// Function Definition: DirectSoundCreate
-typedef HRESULT (*DirectSoundCreate)(LPGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
-
-// Typedef: LPDIRECTSOUNDBUFFER
-// pointer to IDirectSoundBuffer
-typedef struct IDirectSoundBuffer* LPDIRECTSOUNDBUFFER;
-
-// Typedef: LPDIRECTSOUNDCAPTURE
-// pointer to IDirectSoundCapture
-typedef struct IDirectSoundCapture* LPDIRECTSOUNDCAPTURE;
-
-// Typedef: LPDIRECTSOUNDCAPTUREBUFFER
-// pointer to IDirectSoundCaptureBuffer
-typedef struct IDirectSoundCaptureBuffer* LPDIRECTSOUNDCAPTUREBUFFER;
-
-// Typedef: LPDS3DBUFFER
-// pointer to DS3DBUFFER
-typedef struct DS3DBUFFER* LPDS3DBUFFER;
-
-// Function Definition: IDirectSound3DBuffer_GetAllParameters
-typedef HRESULT (*IDirectSound3DBuffer_GetAllParameters)(struct IDirectSound3DBuffer* this_ptr, LPDS3DBUFFER pDs3dBuffer);
+// Structure: IDirectSound3DBuffer
+typedef struct IDirectSound3DBuffer {
+    struct IDirectSound3DBuffer_vtable* vtable;
+} IDirectSound3DBuffer;
 
 // Function Definition: IDirectSound3DBuffer_GetConeAngles
 typedef HRESULT (*IDirectSound3DBuffer_GetConeAngles)(struct IDirectSound3DBuffer* this_ptr, LPDWORD pdwInsideConeAngle, LPDWORD pdwOutsideConeAngle);
@@ -188,9 +149,6 @@ typedef HRESULT (*IDirectSound3DBuffer_GetPosition)(struct IDirectSound3DBuffer*
 // Function Definition: IDirectSound3DBuffer_GetVelocity
 typedef HRESULT (*IDirectSound3DBuffer_GetVelocity)(struct IDirectSound3DBuffer* this_ptr, struct D3DVECTOR* pvVelocity);
 
-// Function Definition: IDirectSound3DBuffer_SetAllParameters
-typedef HRESULT (*IDirectSound3DBuffer_SetAllParameters)(struct IDirectSound3DBuffer* this_ptr, LPDS3DBUFFER pcDs3dBuffer, DWORD dwApply);
-
 // Function Definition: IDirectSound3DBuffer_SetConeAngles
 typedef HRESULT (*IDirectSound3DBuffer_SetConeAngles)(struct IDirectSound3DBuffer* this_ptr, DWORD dwInsideConeAngle, DWORD dwOutsideConeAngle, DWORD dwApply);
 
@@ -215,45 +173,13 @@ typedef HRESULT (*IDirectSound3DBuffer_SetPosition)(struct IDirectSound3DBuffer*
 // Function Definition: IDirectSound3DBuffer_SetVelocity
 typedef HRESULT (*IDirectSound3DBuffer_SetVelocity)(struct IDirectSound3DBuffer* this_ptr, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
 
-// Structure: IDirectSound3DBuffer
-typedef struct IDirectSound3DBuffer {
-    struct IDirectSound3DBuffer_vtable* vtable;
-} IDirectSound3DBuffer;
-
-// Structure: IDirectSound3DBuffer_vtable
-typedef struct IDirectSound3DBuffer_vtable {
-    IUnknown_QueryInterface* QueryInterface;
-    IUnknown_AddRef* AddRef;
-    IUnknown_Release* Release;
-    IDirectSound3DBuffer_GetAllParameters* GetAllParameters;
-    IDirectSound3DBuffer_GetConeAngles* GetConeAngles;
-    IDirectSound3DBuffer_GetConeOrientation* GetConeOrientation;
-    IDirectSound3DBuffer_GetConeOutsideVolume* GetConeOutsideVolume;
-    IDirectSound3DBuffer_GetMaxDistance* GetMaxDistance;
-    IDirectSound3DBuffer_GetMinDistance* GetMinDistance;
-    IDirectSound3DBuffer_GetMode* GetMode;
-    IDirectSound3DBuffer_GetPosition* GetPosition;
-    IDirectSound3DBuffer_GetVelocity* GetVelocity;
-    IDirectSound3DBuffer_SetAllParameters* SetAllParameters;
-    IDirectSound3DBuffer_SetConeAngles* SetConeAngles;
-    IDirectSound3DBuffer_SetConeOrientation* SetConeOrientation;
-    IDirectSound3DBuffer_SetConeOutsideVolume* SetConeOutsideVolume;
-    IDirectSound3DBuffer_SetMaxDistance* SetMaxDistance;
-    IDirectSound3DBuffer_SetMinDistance* SetMinDistance;
-    IDirectSound3DBuffer_SetMode* SetMode;
-    IDirectSound3DBuffer_SetPosition* SetPosition;
-    IDirectSound3DBuffer_SetVelocity* SetVelocity;
-} IDirectSound3DBuffer_vtable;
-
-// Typedef: LPDS3DLISTENER
-// pointer to DS3DLISTENER
-typedef struct DS3DLISTENER* LPDS3DLISTENER;
+// Structure: IDirectSound3DListener
+typedef struct IDirectSound3DListener {
+    struct IDirectSound3DListener_vtable* vtable;
+} IDirectSound3DListener;
 
 // Function Definition: IDirectSound3DListener_CommitDeferredSettings
 typedef HRESULT (*IDirectSound3DListener_CommitDeferredSettings)(struct IDirectSound3DListener* this_ptr);
-
-// Function Definition: IDirectSound3DListener_GetAllParameters
-typedef HRESULT (*IDirectSound3DListener_GetAllParameters)(struct IDirectSound3DListener* this_ptr, LPDS3DLISTENER pListener);
 
 // Function Definition: IDirectSound3DListener_GetDistanceFactor
 typedef HRESULT (*IDirectSound3DListener_GetDistanceFactor)(struct IDirectSound3DListener* this_ptr, D3DVALUE* pflDistanceFactor);
@@ -273,9 +199,6 @@ typedef HRESULT (*IDirectSound3DListener_GetRolloffFactor)(struct IDirectSound3D
 // Function Definition: IDirectSound3DListener_GetVelocity
 typedef HRESULT (*IDirectSound3DListener_GetVelocity)(struct IDirectSound3DListener* this_ptr, struct D3DVECTOR* pvVelocity);
 
-// Function Definition: IDirectSound3DListener_SetAllParameters
-typedef HRESULT (*IDirectSound3DListener_SetAllParameters)(struct IDirectSound3DListener* this_ptr, LPDS3DLISTENER pcListener, DWORD dwApply);
-
 // Function Definition: IDirectSound3DListener_SetDistanceFactor
 typedef HRESULT (*IDirectSound3DListener_SetDistanceFactor)(struct IDirectSound3DListener* this_ptr, D3DVALUE flDistanceFactor, DWORD dwApply);
 
@@ -294,69 +217,32 @@ typedef HRESULT (*IDirectSound3DListener_SetRolloffFactor)(struct IDirectSound3D
 // Function Definition: IDirectSound3DListener_SetVelocity
 typedef HRESULT (*IDirectSound3DListener_SetVelocity)(struct IDirectSound3DListener* this_ptr, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
 
-// Structure: IDirectSound3DListener
-typedef struct IDirectSound3DListener {
-    struct IDirectSound3DListener_vtable* vtable;
-} IDirectSound3DListener;
+// Structure: IDirectSoundBuffer
+typedef struct IDirectSoundBuffer {
+    struct IDirectSoundBuffer_vtable* vtable;
+} IDirectSoundBuffer;
 
-// Structure: IDirectSound3DListener_vtable
-typedef struct IDirectSound3DListener_vtable {
-    IUnknown_QueryInterface* QueryInterface;
-    IUnknown_AddRef* AddRef;
-    IUnknown_Release* Release;
-    IDirectSound3DListener_GetAllParameters* GetAllParameters;
-    IDirectSound3DListener_GetDistanceFactor* GetDistanceFactor;
-    IDirectSound3DListener_GetDopplerFactor* GetDopplerFactor;
-    IDirectSound3DListener_GetOrientation* GetOrientation;
-    IDirectSound3DListener_GetPosition* GetPosition;
-    IDirectSound3DListener_GetRolloffFactor* GetRolloffFactor;
-    IDirectSound3DListener_GetVelocity* GetVelocity;
-    IDirectSound3DListener_SetAllParameters* SetAllParameters;
-    IDirectSound3DListener_SetDistanceFactor* SetDistanceFactor;
-    IDirectSound3DListener_SetDopplerFactor* SetDopplerFactor;
-    IDirectSound3DListener_SetOrientation* SetOrientation;
-    IDirectSound3DListener_SetPosition* SetPosition;
-    IDirectSound3DListener_SetRolloffFactor* SetRolloffFactor;
-    IDirectSound3DListener_SetVelocity* SetVelocity;
-    IDirectSound3DListener_CommitDeferredSettings* CommitDeferredSettings;
-} IDirectSound3DListener_vtable;
+// Structure: IDirectSoundBufferMetadata
+typedef struct IDirectSoundBufferMetadata {
+    int field_0;
+    int field_4;
+    int field_8;
+    int field_12;
+    int ref_count;
+} IDirectSoundBufferMetadata;
 
-// Typedef: LPDSBCAPS
-// pointer to DSBCAPS
-typedef struct DSBCAPS* LPDSBCAPS;
-
-// Typedef: LPDSBUFFERDESC
-// pointer to DSBUFFERDESC
-typedef struct DSBUFFERDESC* LPDSBUFFERDESC;
-
-// Typedef: LPDSCAPS
-// pointer to DSCAPS
-typedef struct DSCAPS* LPDSCAPS;
-
-// Typedef: LPDSCBUFFERDESC
-// pointer to DSCBUFFERDESC
-typedef struct DSCBUFFERDESC* LPDSCBUFFERDESC;
-
-// Typedef: LPDSCCAPS
-// pointer to DSCCAPS
-typedef struct DSCCAPS* LPDSCCAPS;
-
-// Function Definition: IDirectSoundCapture_CreateCaptureBuffer
-typedef HRESULT (*IDirectSoundCapture_CreateCaptureBuffer)(struct IDirectSoundCapture* this_ptr, void* pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, LPUNKNOWN pUnkOuter);
-
-// Function Definition: IDirectSoundCapture_GetCaps
-typedef HRESULT (*IDirectSoundCapture_GetCaps)(struct IDirectSoundCapture* this_ptr, LPDSCCAPS pDSCCaps);
-
-// Function Definition: IDirectSoundCapture_Initialize
-typedef HRESULT (*IDirectSoundCapture_Initialize)(struct IDirectSoundCapture* this_ptr, LPGUID pcGuidDevice);
+// Function Definition: IDirectSoundBuffer_GetCaps
+typedef int (*IDirectSoundBuffer_GetCaps)(void* this_ptr, void* pDSBufferCaps);
 
 // Structure: IDirectSoundCapture
 typedef struct IDirectSoundCapture {
     struct IDirectSoundCapture_vtable* vtable;
 } IDirectSoundCapture;
 
-// Function Definition: IDirectSoundCaptureBuffer_GetCaps
-typedef HRESULT (*IDirectSoundCaptureBuffer_GetCaps)(struct IDirectSoundCaptureBuffer* this_ptr, LPDSCCAPS pDSCBCaps);
+// Structure: IDirectSoundCaptureBuffer
+typedef struct IDirectSoundCaptureBuffer {
+    struct IDirectSoundCaptureBuffer_vtable* vtable;
+} IDirectSoundCaptureBuffer;
 
 // Function Definition: IDirectSoundCaptureBuffer_GetCurrentPosition
 typedef HRESULT (*IDirectSoundCaptureBuffer_GetCurrentPosition)(struct IDirectSoundCaptureBuffer* this_ptr, LPDWORD pdwCapturePosition, LPDWORD pdwReadPosition);
@@ -366,9 +252,6 @@ typedef HRESULT (*IDirectSoundCaptureBuffer_GetFormat)(struct IDirectSoundCaptur
 
 // Function Definition: IDirectSoundCaptureBuffer_GetStatus
 typedef HRESULT (*IDirectSoundCaptureBuffer_GetStatus)(struct IDirectSoundCaptureBuffer* this_ptr, LPDWORD pdwStatus);
-
-// Function Definition: IDirectSoundCaptureBuffer_Initialize
-typedef HRESULT (*IDirectSoundCaptureBuffer_Initialize)(struct IDirectSoundCaptureBuffer* this_ptr, LPDIRECTSOUNDCAPTURE pDirectSoundCapture, void* pcDSCBufferDesc);
 
 // Function Definition: IDirectSoundCaptureBuffer_Lock
 typedef HRESULT (*IDirectSoundCaptureBuffer_Lock)(struct IDirectSoundCaptureBuffer* this_ptr, DWORD dwOffset, DWORD dwBytes, LPVOID* ppvAudioPtr1, LPDWORD pdwAudioBytes1, LPVOID* ppvAudioPtr2, LPDWORD pdwAudioBytes2, DWORD dwFlags);
@@ -382,75 +265,18 @@ typedef HRESULT (*IDirectSoundCaptureBuffer_Stop)(struct IDirectSoundCaptureBuff
 // Function Definition: IDirectSoundCaptureBuffer_Unlock
 typedef HRESULT (*IDirectSoundCaptureBuffer_Unlock)(struct IDirectSoundCaptureBuffer* this_ptr, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
 
-// Structure: IDirectSoundCaptureBuffer
-typedef struct IDirectSoundCaptureBuffer {
-    struct IDirectSoundCaptureBuffer_vtable* vtable;
-} IDirectSoundCaptureBuffer;
+// Function Definition: IDirectSoundCapture_Initialize
+typedef HRESULT (*IDirectSoundCapture_Initialize)(struct IDirectSoundCapture* this_ptr, LPGUID pcGuidDevice);
 
-// Structure: IDirectSoundCaptureBuffer_vtable
-typedef struct IDirectSoundCaptureBuffer_vtable {
-    IUnknown_QueryInterface* QueryInterface;
-    IUnknown_AddRef* AddRef;
-    IUnknown_Release* Release;
-    IDirectSoundCaptureBuffer_GetCaps* GetCaps;
-    IDirectSoundCaptureBuffer_GetCurrentPosition* GetCurrentPosition;
-    IDirectSoundCaptureBuffer_GetFormat* GetFormat;
-    IDirectSoundCaptureBuffer_GetStatus* GetStatus;
-    IDirectSoundCaptureBuffer_Initialize* Initialize;
-    IDirectSoundCaptureBuffer_Lock* Lock;
-    IDirectSoundCaptureBuffer_Start* Start;
-    IDirectSoundCaptureBuffer_Stop* Stop;
-    IDirectSoundCaptureBuffer_Unlock* Unlock;
-} IDirectSoundCaptureBuffer_vtable;
+// Typedef: LPDIRECTSOUND
+// pointer to IDirectSound
+typedef struct IDirectSound* LPDIRECTSOUND;
 
-// Structure: IDirectSoundCapture_vtable
-typedef struct IDirectSoundCapture_vtable {
-    IUnknown_QueryInterface* QueryInterface;
-    IUnknown_AddRef* AddRef;
-    IUnknown_Release* Release;
-    IDirectSoundCapture_CreateCaptureBuffer* CreateCaptureBuffer;
-    IDirectSoundCapture_GetCaps* GetCaps;
-    IDirectSoundCapture_Initialize* Initialize;
-} IDirectSoundCapture_vtable;
-
-// Function Definition: LPDSENUMCALLBACKA_FUNC
-typedef BOOL (*LPDSENUMCALLBACKA_FUNC)(LPGUID lpGuid, LPCSTR lpcstrDescription, LPCSTR lpcstrModule, LPVOID lpContext);
-
-// Typedef: LPDSENUMCALLBACKA
-// pointer to LPDSENUMCALLBACKA_FUNC
-typedef LPDSENUMCALLBACKA_FUNC* LPDSENUMCALLBACKA;
-
-// Function Definition: DirectSoundEnumerateA
-typedef HRESULT (*DirectSoundEnumerateA)(LPDSENUMCALLBACKA lpDSEnumCallback, LPVOID lpContext);
-
-// Typedef: LPLPDIRECTSOUNDBUFFER
-// pointer to pointer to IDirectSoundBuffer
-typedef struct IDirectSoundBuffer** LPLPDIRECTSOUNDBUFFER;
-
-// Typedef: LPWAVEFORMAT
-// pointer to tWAVEFORMAT
-typedef struct tWAVEFORMAT* LPWAVEFORMAT;
-
-// Structure: tWAVEFORMAT
-typedef struct tWAVEFORMAT {
-    WORD wFormatTag;
-    WORD nChannels;
-    DWORD nSamplesPerSec;
-    DWORD nAvgBytesPerSec;
-    WORD nBlockAlign;
-} tWAVEFORMAT;
+// Function Definition: DirectSoundCreate
+typedef HRESULT (*DirectSoundCreate)(LPGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOuter);
 
 // Function Definition: IDirectSound_Compact
 typedef HRESULT (*IDirectSound_Compact)(LPDIRECTSOUND this_ptr);
-
-// Function Definition: IDirectSound_CreateSoundBuffer
-typedef HRESULT (*IDirectSound_CreateSoundBuffer)(LPDIRECTSOUND this_ptr, LPDSBUFFERDESC pcDSBufferDesc, LPLPDIRECTSOUNDBUFFER ppDSBuffer, LPUNKNOWN pUnkOuter);
-
-// Function Definition: IDirectSound_DuplicateSoundBuffer
-typedef HRESULT (*IDirectSound_DuplicateSoundBuffer)(LPDIRECTSOUND this_ptr, LPDIRECTSOUNDBUFFER pDSBufferOriginal, LPLPDIRECTSOUNDBUFFER ppDSBufferDuplicate);
-
-// Function Definition: IDirectSound_GetCaps
-typedef HRESULT (*IDirectSound_GetCaps)(LPDIRECTSOUND this_ptr, LPDSCAPS pDSCaps);
 
 // Function Definition: IDirectSound_GetSpeakerConfig
 typedef HRESULT (*IDirectSound_GetSpeakerConfig)(LPDIRECTSOUND this_ptr, LPDWORD pdwSpeakerConfig);
@@ -463,6 +289,10 @@ typedef HRESULT (*IDirectSound_SetCooperativeLevel)(LPDIRECTSOUND this_ptr, HWND
 
 // Function Definition: IDirectSound_SetSpeakerConfig
 typedef HRESULT (*IDirectSound_SetSpeakerConfig)(LPDIRECTSOUND this_ptr, DWORD dwSpeakerConfig);
+
+// Typedef: LPDIRECTSOUNDBUFFER
+// pointer to IDirectSoundBuffer
+typedef struct IDirectSoundBuffer* LPDIRECTSOUNDBUFFER;
 
 // Function Definition: IDirectSoundBuffer_GetCurrentPosition
 typedef HRESULT (*IDirectSoundBuffer_GetCurrentPosition)(LPDIRECTSOUNDBUFFER this_ptr, LPDWORD pdwCurrentPlayCursor, LPDWORD pdwCurrentWriteCursor);
@@ -481,9 +311,6 @@ typedef HRESULT (*IDirectSoundBuffer_GetStatus)(LPDIRECTSOUNDBUFFER this_ptr, LP
 
 // Function Definition: IDirectSoundBuffer_GetVolume
 typedef HRESULT (*IDirectSoundBuffer_GetVolume)(LPDIRECTSOUNDBUFFER this_ptr, LPLONG plVolume);
-
-// Function Definition: IDirectSoundBuffer_Initialize
-typedef HRESULT (*IDirectSoundBuffer_Initialize)(LPDIRECTSOUNDBUFFER this_ptr, LPDIRECTSOUND pDirectSound, LPDSBUFFERDESC pcDSBufferDesc);
 
 // Function Definition: IDirectSoundBuffer_Lock
 typedef HRESULT (*IDirectSoundBuffer_Lock)(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwOffset, DWORD dwBytes, LPVOID* ppvAudioPtr1, LPDWORD pdwAudioBytes1, LPVOID* ppvAudioPtr2, LPDWORD pdwAudioBytes2, DWORD dwFlags);
@@ -515,30 +342,97 @@ typedef HRESULT (*IDirectSoundBuffer_Stop)(LPDIRECTSOUNDBUFFER this_ptr);
 // Function Definition: IDirectSoundBuffer_Unlock
 typedef HRESULT (*IDirectSoundBuffer_Unlock)(LPDIRECTSOUNDBUFFER this_ptr, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
 
-// Structure: IDirectSound
-typedef struct IDirectSound {
-    struct IDirectSound_vtable* vtable;
-} IDirectSound;
+// Typedef: LPDIRECTSOUNDCAPTURE
+// pointer to IDirectSoundCapture
+typedef struct IDirectSoundCapture* LPDIRECTSOUNDCAPTURE;
 
-// Structure: IDirectSound_vtable
-typedef struct IDirectSound_vtable {
+// Function Definition: IDirectSoundCaptureBuffer_Initialize
+typedef HRESULT (*IDirectSoundCaptureBuffer_Initialize)(struct IDirectSoundCaptureBuffer* this_ptr, LPDIRECTSOUNDCAPTURE pDirectSoundCapture, void* pcDSCBufferDesc);
+
+// Typedef: LPDIRECTSOUNDCAPTUREBUFFER
+// pointer to IDirectSoundCaptureBuffer
+typedef struct IDirectSoundCaptureBuffer* LPDIRECTSOUNDCAPTUREBUFFER;
+
+// Function Definition: IDirectSoundCapture_CreateCaptureBuffer
+typedef HRESULT (*IDirectSoundCapture_CreateCaptureBuffer)(struct IDirectSoundCapture* this_ptr, void* pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER* ppDSCBuffer, LPUNKNOWN pUnkOuter);
+
+// Typedef: LPDS3DBUFFER
+// pointer to DS3DBUFFER
+typedef struct DS3DBUFFER* LPDS3DBUFFER;
+
+// Function Definition: IDirectSound3DBuffer_GetAllParameters
+typedef HRESULT (*IDirectSound3DBuffer_GetAllParameters)(struct IDirectSound3DBuffer* this_ptr, LPDS3DBUFFER pDs3dBuffer);
+
+// Function Definition: IDirectSound3DBuffer_SetAllParameters
+typedef HRESULT (*IDirectSound3DBuffer_SetAllParameters)(struct IDirectSound3DBuffer* this_ptr, LPDS3DBUFFER pcDs3dBuffer, DWORD dwApply);
+
+// Structure: IDirectSound3DBuffer_vtable
+typedef struct IDirectSound3DBuffer_vtable {
     IUnknown_QueryInterface* QueryInterface;
     IUnknown_AddRef* AddRef;
     IUnknown_Release* Release;
-    IDirectSound_CreateSoundBuffer* CreateSoundBuffer;
-    IDirectSound_GetCaps* GetCaps;
-    IDirectSound_DuplicateSoundBuffer* DuplicateSoundBuffer;
-    IDirectSound_SetCooperativeLevel* SetCooperativeLevel;
-    IDirectSound_Compact* Compact;
-    IDirectSound_GetSpeakerConfig* GetSpeakerConfig;
-    IDirectSound_SetSpeakerConfig* SetSpeakerConfig;
-    IDirectSound_Initialize* Initialize;
-} IDirectSound_vtable;
+    IDirectSound3DBuffer_GetAllParameters* GetAllParameters;
+    IDirectSound3DBuffer_GetConeAngles* GetConeAngles;
+    IDirectSound3DBuffer_GetConeOrientation* GetConeOrientation;
+    IDirectSound3DBuffer_GetConeOutsideVolume* GetConeOutsideVolume;
+    IDirectSound3DBuffer_GetMaxDistance* GetMaxDistance;
+    IDirectSound3DBuffer_GetMinDistance* GetMinDistance;
+    IDirectSound3DBuffer_GetMode* GetMode;
+    IDirectSound3DBuffer_GetPosition* GetPosition;
+    IDirectSound3DBuffer_GetVelocity* GetVelocity;
+    IDirectSound3DBuffer_SetAllParameters* SetAllParameters;
+    IDirectSound3DBuffer_SetConeAngles* SetConeAngles;
+    IDirectSound3DBuffer_SetConeOrientation* SetConeOrientation;
+    IDirectSound3DBuffer_SetConeOutsideVolume* SetConeOutsideVolume;
+    IDirectSound3DBuffer_SetMaxDistance* SetMaxDistance;
+    IDirectSound3DBuffer_SetMinDistance* SetMinDistance;
+    IDirectSound3DBuffer_SetMode* SetMode;
+    IDirectSound3DBuffer_SetPosition* SetPosition;
+    IDirectSound3DBuffer_SetVelocity* SetVelocity;
+} IDirectSound3DBuffer_vtable;
 
-// Structure: IDirectSoundBuffer
-typedef struct IDirectSoundBuffer {
-    struct IDirectSoundBuffer_vtable* vtable;
-} IDirectSoundBuffer;
+// Typedef: LPDS3DLISTENER
+// pointer to DS3DLISTENER
+typedef struct DS3DLISTENER* LPDS3DLISTENER;
+
+// Function Definition: IDirectSound3DListener_GetAllParameters
+typedef HRESULT (*IDirectSound3DListener_GetAllParameters)(struct IDirectSound3DListener* this_ptr, LPDS3DLISTENER pListener);
+
+// Function Definition: IDirectSound3DListener_SetAllParameters
+typedef HRESULT (*IDirectSound3DListener_SetAllParameters)(struct IDirectSound3DListener* this_ptr, LPDS3DLISTENER pcListener, DWORD dwApply);
+
+// Structure: IDirectSound3DListener_vtable
+typedef struct IDirectSound3DListener_vtable {
+    IUnknown_QueryInterface* QueryInterface;
+    IUnknown_AddRef* AddRef;
+    IUnknown_Release* Release;
+    IDirectSound3DListener_GetAllParameters* GetAllParameters;
+    IDirectSound3DListener_GetDistanceFactor* GetDistanceFactor;
+    IDirectSound3DListener_GetDopplerFactor* GetDopplerFactor;
+    IDirectSound3DListener_GetOrientation* GetOrientation;
+    IDirectSound3DListener_GetPosition* GetPosition;
+    IDirectSound3DListener_GetRolloffFactor* GetRolloffFactor;
+    IDirectSound3DListener_GetVelocity* GetVelocity;
+    IDirectSound3DListener_SetAllParameters* SetAllParameters;
+    IDirectSound3DListener_SetDistanceFactor* SetDistanceFactor;
+    IDirectSound3DListener_SetDopplerFactor* SetDopplerFactor;
+    IDirectSound3DListener_SetOrientation* SetOrientation;
+    IDirectSound3DListener_SetPosition* SetPosition;
+    IDirectSound3DListener_SetRolloffFactor* SetRolloffFactor;
+    IDirectSound3DListener_SetVelocity* SetVelocity;
+    IDirectSound3DListener_CommitDeferredSettings* CommitDeferredSettings;
+} IDirectSound3DListener_vtable;
+
+// Typedef: LPDSBCAPS
+// pointer to DSBCAPS
+typedef struct DSBCAPS* LPDSBCAPS;
+
+// Typedef: LPDSBUFFERDESC
+// pointer to DSBUFFERDESC
+typedef struct DSBUFFERDESC* LPDSBUFFERDESC;
+
+// Function Definition: IDirectSoundBuffer_Initialize
+typedef HRESULT (*IDirectSoundBuffer_Initialize)(LPDIRECTSOUNDBUFFER this_ptr, LPDIRECTSOUND pDirectSound, LPDSBUFFERDESC pcDSBufferDesc);
 
 // Structure: IDirectSoundBuffer_vtable
 typedef struct IDirectSoundBuffer_vtable {
@@ -564,4 +458,99 @@ typedef struct IDirectSoundBuffer_vtable {
     IDirectSoundBuffer_Unlock* Unlock;
     IDirectSoundBuffer_Restore* Restore;
 } IDirectSoundBuffer_vtable;
+
+// Typedef: LPDSCAPS
+// pointer to DSCAPS
+typedef struct DSCAPS* LPDSCAPS;
+
+// Function Definition: IDirectSound_GetCaps
+typedef HRESULT (*IDirectSound_GetCaps)(LPDIRECTSOUND this_ptr, LPDSCAPS pDSCaps);
+
+// Typedef: LPDSCBUFFERDESC
+// pointer to DSCBUFFERDESC
+typedef struct DSCBUFFERDESC* LPDSCBUFFERDESC;
+
+// Typedef: LPDSCCAPS
+// pointer to DSCCAPS
+typedef struct DSCCAPS* LPDSCCAPS;
+
+// Function Definition: IDirectSoundCaptureBuffer_GetCaps
+typedef HRESULT (*IDirectSoundCaptureBuffer_GetCaps)(struct IDirectSoundCaptureBuffer* this_ptr, LPDSCCAPS pDSCBCaps);
+
+// Structure: IDirectSoundCaptureBuffer_vtable
+typedef struct IDirectSoundCaptureBuffer_vtable {
+    IUnknown_QueryInterface* QueryInterface;
+    IUnknown_AddRef* AddRef;
+    IUnknown_Release* Release;
+    IDirectSoundCaptureBuffer_GetCaps* GetCaps;
+    IDirectSoundCaptureBuffer_GetCurrentPosition* GetCurrentPosition;
+    IDirectSoundCaptureBuffer_GetFormat* GetFormat;
+    IDirectSoundCaptureBuffer_GetStatus* GetStatus;
+    IDirectSoundCaptureBuffer_Initialize* Initialize;
+    IDirectSoundCaptureBuffer_Lock* Lock;
+    IDirectSoundCaptureBuffer_Start* Start;
+    IDirectSoundCaptureBuffer_Stop* Stop;
+    IDirectSoundCaptureBuffer_Unlock* Unlock;
+} IDirectSoundCaptureBuffer_vtable;
+
+// Function Definition: IDirectSoundCapture_GetCaps
+typedef HRESULT (*IDirectSoundCapture_GetCaps)(struct IDirectSoundCapture* this_ptr, LPDSCCAPS pDSCCaps);
+
+// Structure: IDirectSoundCapture_vtable
+typedef struct IDirectSoundCapture_vtable {
+    IUnknown_QueryInterface* QueryInterface;
+    IUnknown_AddRef* AddRef;
+    IUnknown_Release* Release;
+    IDirectSoundCapture_CreateCaptureBuffer* CreateCaptureBuffer;
+    IDirectSoundCapture_GetCaps* GetCaps;
+    IDirectSoundCapture_Initialize* Initialize;
+} IDirectSoundCapture_vtable;
+
+// Function Definition: LPDSENUMCALLBACKA_FUNC
+typedef BOOL (*LPDSENUMCALLBACKA_FUNC)(LPGUID lpGuid, LPCSTR lpcstrDescription, LPCSTR lpcstrModule, LPVOID lpContext);
+
+// Typedef: LPDSENUMCALLBACKA
+// pointer to LPDSENUMCALLBACKA_FUNC
+typedef LPDSENUMCALLBACKA_FUNC* LPDSENUMCALLBACKA;
+
+// Function Definition: DirectSoundEnumerateA
+typedef HRESULT (*DirectSoundEnumerateA)(LPDSENUMCALLBACKA lpDSEnumCallback, LPVOID lpContext);
+
+// Typedef: LPLPDIRECTSOUNDBUFFER
+// pointer to pointer to IDirectSoundBuffer
+typedef struct IDirectSoundBuffer** LPLPDIRECTSOUNDBUFFER;
+
+// Function Definition: IDirectSound_CreateSoundBuffer
+typedef HRESULT (*IDirectSound_CreateSoundBuffer)(LPDIRECTSOUND this_ptr, LPDSBUFFERDESC pcDSBufferDesc, LPLPDIRECTSOUNDBUFFER ppDSBuffer, LPUNKNOWN pUnkOuter);
+
+// Function Definition: IDirectSound_DuplicateSoundBuffer
+typedef HRESULT (*IDirectSound_DuplicateSoundBuffer)(LPDIRECTSOUND this_ptr, LPDIRECTSOUNDBUFFER pDSBufferOriginal, LPLPDIRECTSOUNDBUFFER ppDSBufferDuplicate);
+
+// Structure: IDirectSound_vtable
+typedef struct IDirectSound_vtable {
+    IUnknown_QueryInterface* QueryInterface;
+    IUnknown_AddRef* AddRef;
+    IUnknown_Release* Release;
+    IDirectSound_CreateSoundBuffer* CreateSoundBuffer;
+    IDirectSound_GetCaps* GetCaps;
+    IDirectSound_DuplicateSoundBuffer* DuplicateSoundBuffer;
+    IDirectSound_SetCooperativeLevel* SetCooperativeLevel;
+    IDirectSound_Compact* Compact;
+    IDirectSound_GetSpeakerConfig* GetSpeakerConfig;
+    IDirectSound_SetSpeakerConfig* SetSpeakerConfig;
+    IDirectSound_Initialize* Initialize;
+} IDirectSound_vtable;
+
+// Typedef: LPWAVEFORMAT
+// pointer to tWAVEFORMAT
+typedef struct tWAVEFORMAT* LPWAVEFORMAT;
+
+// Structure: tWAVEFORMAT
+typedef struct tWAVEFORMAT {
+    WORD wFormatTag;
+    WORD nChannels;
+    DWORD nSamplesPerSec;
+    DWORD nAvgBytesPerSec;
+    WORD nBlockAlign;
+} tWAVEFORMAT;
 

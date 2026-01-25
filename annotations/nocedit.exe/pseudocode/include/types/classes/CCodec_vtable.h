@@ -1,9 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CCodec;
+struct FILE;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "system/stdio.h"
-#include "types/classes/CCodec.h"
 #include "types/funcdefs/CCodec_dtor.h"
 #include "types/funcdefs/CCodec_finalize.h"
 #include "types/funcdefs/CCodec_init.h"

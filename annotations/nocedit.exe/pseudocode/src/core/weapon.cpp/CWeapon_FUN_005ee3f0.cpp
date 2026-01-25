@@ -17,7 +17,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee3f0(CWeapon *this_ptr)
   this_ptr->field9_0x305[0] = '\0';
   this_ptr->field9_0x305[1] = '\0';
   this_ptr->field9_0x305[2] = '\0';
-  core_weapon_cpp_FUN_005ee740();
+  core_weapon_cpp_FUN_005ee740(this_ptr);
   if (in_stack_00000008 != (CVector3f *)0x0) {
     pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                        ((CMatrix3x3f *)(this_ptr->field9_0x305 + 0x1b),&local_14,in_stack_00000008);
@@ -32,7 +32,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee3f0(CWeapon *this_ptr)
       *(float *)(this_ptr->field9_0x305 + 0x4b) = in_stack_00000008->z;
     }
   }
-  (*(this_ptr->base_actor).vtable[1].process)(&this_ptr->base_actor,0.0);
+  (*(((this_ptr->base_actor).vtable._uc)->_uc).cfunc2)();
   this_ptr->sim_timer = 5.0;
   return;
 }

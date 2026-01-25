@@ -11,7 +11,7 @@
 ;   core_tvbat.cpp_CTVBat_FUN_005e5260 at 005e53ea
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0065b834
+;   float FLOAT_0065b834 = 9999
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
     FLD float ptr [EDI + 0x2414]        ; 0042f80e
     ADD ESP,0x4                         ; 0042f814
-    FCOMP float ptr [0x0065b834]        ; 0042f817 | DAT_0065b834
+    FCOMP float ptr [0x0065b834]        ; 0042f817 | FLOAT_0065b834
     FNSTSW AX                           ; 0042f81d
     SAHF                                ; 0042f81f
     JZ 0x0042f847                       ; 0042f820

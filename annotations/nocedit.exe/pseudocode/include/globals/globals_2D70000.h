@@ -67,6 +67,24 @@ extern char* g_WrappedTextBuffer;
 // char[256]
 extern char g_TempTextBuffer[256];
 
+// float
+extern float FLOAT_02d7b808;
+extern float FLOAT_02d7b80c;
+extern float FLOAT_02d7b810;
+extern float FLOAT_02d7b814;
+extern float FLOAT_02d7b818;
+extern float FLOAT_02d7b81c;
+extern float FLOAT_02d7b820;
+extern float FLOAT_02d7b824;
+extern float FLOAT_02d7b828;
+extern float FLOAT_02d7b82c;
+extern float FLOAT_02d7b830;
+extern float FLOAT_02d7b834;
+extern float FLOAT_02d7b838;
+extern float FLOAT_02d7b83c;
+extern float FLOAT_02d7b840;
+extern float FLOAT_02d7b844;
+
 // int
 extern int g_LightAttenuationMax;
 extern int INT_02d7a7c0;
@@ -78,6 +96,26 @@ extern int g_DefaultTextColor;
 extern int g_EdgeCount;
 extern int g_EdgeListMinY;
 extern int g_EdgeListMaxY;
+extern int INT_02d7b848;
+extern int INT_02d7b84c;
+extern int INT_02d7b850;
+extern int INT_02d7b854;
+extern int INT_02d7b858;
+extern int INT_02d7b85c;
+extern int INT_02d7b860;
+extern int INT_02d7b864;
+extern int INT_02d7b868;
+extern int INT_02d7b86c;
+extern int INT_02d7b870;
+extern int INT_02d7b874;
+extern int INT_02d7b878;
+extern int INT_02d7b87c;
+extern int INT_02d7b880;
+extern int INT_02d7b884;
+extern int INT_02d7b888;
+extern int INT_02d7b88c;
+extern int INT_02d7b890;
+extern int INT_02d7b894;
 
 // undefined1
 extern undefined1 DAT_02d7b410;
@@ -91,22 +129,6 @@ extern undefined4 DAT_02d7b7f4;
 extern undefined4 DAT_02d7b7f8;
 extern undefined4 DAT_02d7b7fc;
 extern undefined4 DAT_02d7b800;
-extern undefined4 DAT_02d7b848;
-extern undefined4 DAT_02d7b84c;
-extern undefined4 DAT_02d7b850;
-extern undefined4 DAT_02d7b858;
-extern undefined4 DAT_02d7b860;
-extern undefined4 DAT_02d7b864;
-extern undefined4 DAT_02d7b868;
-extern undefined4 DAT_02d7b870;
-extern undefined4 DAT_02d7b878;
-extern undefined4 DAT_02d7b87c;
-extern undefined4 DAT_02d7b880;
-extern undefined4 DAT_02d7b884;
-extern undefined4 DAT_02d7b888;
-extern undefined4 DAT_02d7b88c;
-extern undefined4 DAT_02d7b890;
-extern undefined4 DAT_02d7b894;
 extern undefined4 DAT_02d7c2e8;
 
 // ushort

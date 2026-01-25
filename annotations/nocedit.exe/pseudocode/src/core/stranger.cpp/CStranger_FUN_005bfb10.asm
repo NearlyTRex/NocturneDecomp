@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
-;   core_charactr.cpp_CCharacter_FUN_004285d0
+;   core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH ESI                            ; 005bfb3e
     MOV dword ptr [ESP + 0xc],EDX       ; 005bfb3f
     MOV dword ptr [ESP + 0x14],EDX      ; 005bfb43
-    CALL core_charactr.cpp_CCharacter_FUN_004285d0 ; 005bfb47
-        ;   XREF to: 004285d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_004285d0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0 ; 005bfb47
+        ;   XREF to: 004285d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0(CCharacter * this_ptr, CVector3f * new_position, CVector3f * new_orientation)
     ADD ESP,0xc                         ; 005bfb4c
     ADD ESP,0xc                         ; 005bfb4f
     POP ESI                             ; 005bfb52

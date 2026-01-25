@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_batcreat_dfm_0061546b
-;   undefined4 DAT_0065a5b0
-;   undefined4 PTR_FUN_0065a5b1+3
+;   float FLOAT_0065a5b0 = 50
+;   float FLOAT_0065a5b4 = 100
 ;   CDemonActor_vtable g_CBatCreatureVTable
 ;
 ; Called Functions:
@@ -37,8 +37,8 @@ section .text
     MOV dword ptr [EAX + -0x4],0x65a5c4 ; 0041510b | g_CBatCreatureVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00415112
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x0065a5b0]          ; 00415117 | DAT_0065a5b0
-    FLD float ptr [0x0065a5b4]          ; 0041511d | PTR_FUN_0065a5b1+3
+    FLD float ptr [0x0065a5b0]          ; 00415117 | FLOAT_0065a5b0
+    FLD float ptr [0x0065a5b4]          ; 0041511d | FLOAT_0065a5b4
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 00415123
     ADD ESP,0x8                         ; 0041512d
     MOV dword ptr [EBX + 0x2de0],0x3fc00000 ; 00415130

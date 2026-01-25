@@ -30,7 +30,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
         if (this_ptr_00 != (CDemonActor *)0x0) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                     (this_ptr_00,&local_1c,in_stack_00000008);
-          (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&CStack_34);
+          (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_34);
           CStack_34.max.x = CStack_34.max.x + -10.0f;
           if ((((CStack_34.min.z <= local_1c.z) && (CStack_34.max.x <= unaff_EBP)) &&
               (CStack_34.max.y <= unaff_EDI)) &&

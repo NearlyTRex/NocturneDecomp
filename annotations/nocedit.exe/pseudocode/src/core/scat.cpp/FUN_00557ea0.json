@@ -134,9 +134,9 @@
     },
     {
       "addr": "00662458",
-      "name": "DAT_00662458",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_00662458",
+      "type": "float",
+      "value": "0.5"
     },
     {
       "addr": "0067b654",
@@ -268,7 +268,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000004",
-      "text": "*(uint *)in_stack_00000004[1].base_actor.actor_name = 0x3F000000;",
+      "text": "*(float *)in_stack_00000004[1].base_actor.actor_name = 0.5f;",
       "type": "stack_param"
     },
     {
@@ -317,7 +317,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "text": "(*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {
@@ -359,7 +359,7 @@
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "text": "(*((in_stack_00000004->base_actor).vtable._ub)->playSound)",
       "type": "stack_param"
     },
     {

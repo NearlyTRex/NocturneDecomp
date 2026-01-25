@@ -11,8 +11,8 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_005da060(CBassPlaye
 {
   CBassPlayer *pCVar1;
   
-  pCVar1 = (CBassPlayer *)core_npc_cpp_FUN_005447e0(&this_ptr->base_npc);
-  (pCVar1->base_npc).base_character.base_actor.vtable = &g_CBassPlayerVTable;
+  pCVar1 = (CBassPlayer *)core_npc_cpp_CNPC_ctor_FUN_005447e0(&this_ptr->base_npc);
+  (pCVar1->base_npc).base_character.base_actor.vtable._ub = &g_CBassPlayerVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar1->base_npc).base_character.model,"bassplayer.dfm");
   return pCVar1;

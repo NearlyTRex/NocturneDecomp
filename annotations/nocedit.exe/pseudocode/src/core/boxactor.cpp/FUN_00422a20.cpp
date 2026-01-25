@@ -9,10 +9,11 @@
 void core_boxactor_cpp_FUN_00422a20(void)
 
 {
-  int in_stack_00000004;
+  CBoxActor *in_stack_00000004;
   
   core_boxactor_cpp_FUN_00422d60();
-  core_boxactor_cpp_FUN_00421830();
-  core_dlight_cpp_CDemonLight_init_FUN_004727c0((CDemonLight *)(in_stack_00000004 + 0x670));
+  core_boxactor_cpp_CBoxActor_setup_FUN_00421830(in_stack_00000004);
+  core_dlight_cpp_CDemonLight_init_FUN_004727c0
+            ((CDemonLight *)(in_stack_00000004[1].base_actor.actor_name + 4));
   return;
 }

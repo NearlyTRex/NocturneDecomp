@@ -52,8 +52,8 @@
 ;   double DOUBLE_00653d7c = 1.5
 ;   double DOUBLE_00653d84 = 4
 ;   double DOUBLE_00653d8c = -1.5
-;   undefined4 DAT_0066373c
-;   undefined4 DAT_00663740
+;   float FLOAT_0066373c = 0.05000000
+;   float FLOAT_00663740 = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.damage_listener_count
@@ -474,7 +474,7 @@ section .text
     JBE 0x005c513b                      ; 005c50dc
         ;   XREF to: 005c513b (CONDITIONAL_JUMP)  ; LAB_005c513b
     FLD1                                ; 005c50de
-    FDIV float ptr [0x00663740]         ; 005c50e0 | DAT_00663740
+    FDIV float ptr [0x00663740]         ; 005c50e0 | FLOAT_00663740
     FLD float ptr [EBP + 0x18]          ; 005c50e6
     FCHS                                ; 005c50e9
     FXCH                                ; 005c50eb
@@ -508,7 +508,7 @@ section .text
         ;   XREF to: 005c5114 (CONDITIONAL_JUMP)  ; LAB_005c5114
         ;   Label: LAB_005c513b
     FLD float ptr [EBP + 0x18]          ; 005c513d
-    FDIV float ptr [0x0066373c]         ; 005c5140 | DAT_0066373c
+    FDIV float ptr [0x0066373c]         ; 005c5140 | FLOAT_0066373c
     FLD float ptr [ESP + 0x1c]          ; 005c5146
     FXCH                                ; 005c514a
     FSTP float ptr [ESP + 0xe8]         ; 005c514c

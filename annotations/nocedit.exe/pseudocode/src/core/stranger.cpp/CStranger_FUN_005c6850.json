@@ -3,14 +3,8 @@
     "errors": [
       {
         "category": "missing_member",
-        "column": 47,
-        "line": 15,
-        "message": "'CStranger' {aka 'struct CStranger'} has no member named 'field2_0x1fbd8'"
-      },
-      {
-        "category": "missing_member",
-        "column": 15,
-        "line": 17,
+        "column": 56,
+        "line": 16,
         "message": "'CStranger' {aka 'struct CStranger'} has no member named 'field2_0x1fbd8'"
       },
       {
@@ -30,6 +24,18 @@
         "column": 15,
         "line": 20,
         "message": "'CStranger' {aka 'struct CStranger'} has no member named 'field2_0x1fbd8'"
+      },
+      {
+        "category": "missing_member",
+        "column": 15,
+        "line": 21,
+        "message": "'CStranger' {aka 'struct CStranger'} has no member named 'field2_0x1fbd8'"
+      },
+      {
+        "category": "other",
+        "column": 6,
+        "line": 22,
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -44,16 +50,16 @@
   },
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 40,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 15,
-    "suspect_count": 2,
+    "pseudocode_lines": 17,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 44
+    "total_lines": 46
   },
   "cross_references": [],
   "function": {
@@ -72,7 +78,7 @@
     {
       "addr": "0042bf90",
       "is_variadic": false,
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bf90"
+      "name": "core_charactr.cpp_CCharacter_drop_FUN_0042bf90"
     }
   ],
   "globals": [],
@@ -129,14 +135,35 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
+      "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "CVector3f *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == *(int *)(this_ptr->field2_0x1fbd8 + 0x54)) {",
+      "text": "if (in_stack_00000008 == *(CDemonActor **)(this_ptr->field2_0x1fbd8 + 0x54)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "((CCharacter *)this_ptr,in_stack_00000008,in_stack_0000000c);",
       "type": "stack_param"
     }
   ],

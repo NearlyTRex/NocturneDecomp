@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined core_colonel.cpp_FUN_004404a0()
+; __cdecl void core_colonel.cpp_FUN_004404a0(CColonel * this_ptr)
 ;
+; Parameters:
+; CColonel *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0

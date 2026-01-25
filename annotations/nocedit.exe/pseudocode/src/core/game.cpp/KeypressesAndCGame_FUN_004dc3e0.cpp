@@ -16,9 +16,6 @@ void __cdecl core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(CGame *game,SPlayerCo
   int iVar4;
   uint uVar5;
   byte bVar6;
-  uint uStack0000004c;
-  SCollisionInfo *in_stack_00000054;
-  SCollisionInfo *in_stack_ffffffec;
   
   if (game->screen_clear_condition != 0) {
     (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x200);
@@ -39,31 +36,34 @@ void __cdecl core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(CGame *game,SPlayerCo
     *pfVar1 = -1.0;
   }
   if (g_KeyboardState[game->key_strafe] == '\0') {
-    if ((g_KeyboardState[game->key_left] == '\0') && (g_KeyboardState[game->key_right] == '\0')) {
-      fVar2 = (g_CGamePtr->delta_time_float * 0.25f) / 0.05f;
+    if ((g_KeyboardState[game->key_left] != '\0') || (g_KeyboardState[game->key_right] != '\0')) {
+      fVar2 = (float)game->x_mouse_sensitivity * (float)0.29999999999999999 * (float)1.52587890625e-05;
       pfVar1 = &ctrl->turn_speed;
-      if (0.0 <= *pfVar1) {
-        *pfVar1 = *pfVar1 - fVar2;
-        fVar2 = *pfVar1;
-        goto joined_r0x004dcb77;
+      if (g_KeyboardState[game->key_left] == '\0') {
+        if (((g_KeyboardState[game->key_right] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
+           (*pfVar1 = (g_CGamePtr->delta_time_float * 0.25f) / fVar2 + *pfVar1,
+           0x3e800000 < (int)*pfVar1)) {
+          *pfVar1 = 0.25;
+        }
       }
-      fVar2 = *pfVar1 + fVar2;
-      goto LAB_004dc4d6;
+      else if ((-0.25f < *pfVar1) &&
+              (fVar2 = *pfVar1 - (g_CGamePtr->delta_time_float * 0.25f) / fVar2,
+              *pfVar1 = fVar2, fVar2 < -0.25f)) {
+        *pfVar1 = -0.25;
+      }
+      goto LAB_004dc4e9;
     }
-    fVar2 = (float)game->x_mouse_sensitivity * (float)0.29999999999999999 * (float)1.52587890625e-05;
+    fVar2 = (g_CGamePtr->delta_time_float * 0.25f) / 0.05f;
     pfVar1 = &ctrl->turn_speed;
-    if (g_KeyboardState[game->key_left] == '\0') {
-      if (((g_KeyboardState[game->key_right] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
-         (*pfVar1 = (g_CGamePtr->delta_time_float * 0.25f) / fVar2 + *pfVar1,
-         0x3e800000 < (int)*pfVar1)) {
-        *pfVar1 = 0.25;
-      }
+    if (0.0 <= *pfVar1) {
+      *pfVar1 = *pfVar1 - fVar2;
+      fVar2 = *pfVar1;
+      goto joined_r0x004dcb77;
     }
-    else if ((-0.25f < *pfVar1) &&
-            (fVar2 = *pfVar1 - (g_CGamePtr->delta_time_float * 0.25f) / fVar2,
-            *pfVar1 = fVar2, fVar2 < -0.25f)) {
-      *pfVar1 = -0.25;
-    }
+    fVar2 = *pfVar1 + fVar2;
+LAB_004dc4d6:
+    ctrl->turn_speed = fVar2;
+    if (ctrl->turn_speed <= 0.0) goto LAB_004dc4e9;
   }
   else {
     pfVar1 = &ctrl->strafe_speed;
@@ -79,23 +79,18 @@ void __cdecl core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(CGame *game,SPlayerCo
             fVar2 < -1.0f)) {
       *pfVar1 = -1.0;
     }
-    in_stack_ffffffec =
-         (SCollisionInfo *)((g_CGamePtr->delta_time_float * 0.25f) / 0.05f);
+    fVar2 = (g_CGamePtr->delta_time_float * 0.25f) / 0.05f;
     pfVar1 = &ctrl->turn_speed;
-    if (0.0 <= *pfVar1) {
-      *pfVar1 = *pfVar1 - (float)in_stack_ffffffec;
-      fVar2 = *pfVar1;
+    if (*pfVar1 < 0.0) {
+      fVar2 = *pfVar1 + fVar2;
+      goto LAB_004dc4d6;
+    }
+    *pfVar1 = *pfVar1 - fVar2;
+    fVar2 = *pfVar1;
 joined_r0x004dcb77:
-      if (0.0 <= fVar2) goto LAB_004dc4e9;
-    }
-    else {
-      fVar2 = *pfVar1 + (float)in_stack_ffffffec;
-LAB_004dc4d6:
-      ctrl->turn_speed = fVar2;
-      if (ctrl->turn_speed <= 0.0) goto LAB_004dc4e9;
-    }
-    ctrl->turn_speed = 0.0;
+    if (0.0 <= fVar2) goto LAB_004dc4e9;
   }
+  ctrl->turn_speed = 0.0;
 LAB_004dc4e9:
   if ((g_KeyboardState[game->key_point_up] == '\0') &&
      (g_KeyboardState[game->key_point_down] == '\0')) {
@@ -145,8 +140,8 @@ LAB_004dc4e9:
   if (g_PrevKeyboardState[iVar4] != g_KeyboardState[iVar4]) {
     ctrl->action_states[1] = (uint)(byte)g_KeyboardState[iVar4];
   }
-  iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                    ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffffec);
+  iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable._uc)->_uc).
+            isDamageable)(&g_HeroActors[g_LocalHeroIndex]->base_character);
   if (iVar4 == 0) {
     iVar4 = game->key_fire;
     if (g_PrevKeyboardState[iVar4] != g_KeyboardState[iVar4]) {
@@ -235,37 +230,32 @@ LAB_004dc4e9:
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,3,1);
   }
   iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,game->key_infrared);
-  if (iVar4 == 0) {
-    return;
-  }
-  uVar5 = (uint)(game->block_auto_save == 0);
-  game->block_auto_save = uVar5;
-  if ((uVar5 != 0) && (this_ptr = g_HeroActors[g_LocalHeroIndex], this_ptr != (CHero *)0x0)) {
-    uStack0000004c = 0x4dc935;
-    iVar4 = (*(this_ptr->base_character).base_actor.vtable[1].hasCollision)
-                      ((CDemonActor *)this_ptr,in_stack_00000054);
-    if (iVar4 != 0) {
+  if (iVar4 != 0) {
+    uVar5 = (uint)(game->block_auto_save == 0);
+    game->block_auto_save = uVar5;
+    if (((uVar5 == 0) || (this_ptr = g_HeroActors[g_LocalHeroIndex], this_ptr == (CHero *)0x0)) ||
+       (iVar4 = (*(((this_ptr->base_character).base_actor.vtable._uc)->_uc).isDamageable)
+                          (&this_ptr->base_character), iVar4 == 0)) {
+      if (game->block_auto_save != 0) {
+        return;
+      }
+    }
+    else {
       game->block_auto_save = 0;
-      goto LAB_004dc94a;
+    }
+    iVar4 = g_CDemonSetPtr->selected_camera_index;
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
+              (g_CDemonSetPtr,(CDemonActor *)g_CScriptPtr->focusActor,1);
+    pCVar3 = g_CScriptPtr;
+    pCVar3->padding_0x10[0] = '\0';
+    pCVar3->padding_0x10[1] = '\0';
+    pCVar3->padding_0x10[2] = '\0';
+    pCVar3->padding_0x10[3] = '\0';
+    if (iVar4 == g_CDemonSetPtr->selected_camera_index) {
+      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
+                (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
+      return;
     }
   }
-  if (game->block_auto_save != 0) {
-    return;
-  }
-LAB_004dc94a:
-  iVar4 = g_CDemonSetPtr->selected_camera_index;
-  uStack0000004c = 0x4dc967;
-  core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-            (g_CDemonSetPtr,(CDemonActor *)g_CScriptPtr->focusActor,1);
-  pCVar3 = g_CScriptPtr;
-  pCVar3->padding_0x10[0] = '\0';
-  pCVar3->padding_0x10[1] = '\0';
-  pCVar3->padding_0x10[2] = '\0';
-  pCVar3->padding_0x10[3] = '\0';
-  if (iVar4 != g_CDemonSetPtr->selected_camera_index) {
-    return;
-  }
-  core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
-            (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
   return;
 }

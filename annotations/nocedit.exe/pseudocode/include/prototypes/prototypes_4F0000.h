@@ -23,6 +23,7 @@
 #include "types/classes/CLightGun.h"
 #include "types/classes/CNPC.h"
 #include "types/classes/CWeapon.h"
+#include "types/structs/SCollisionReturnInfo.h"
 #include "types/structs/SInventoryItemInfo.h"
 
 // =============================================================================
@@ -74,10 +75,10 @@ CDemonActorType * __cdecl core_hero_cpp_staticInit_FUN_004f2120(void);
 undefined __unknown core_hero_cpp_closestHeroToPoint_FUN_004f2170();
 undefined __unknown core_hero_cpp_FUN_004f2220();
 undefined __unknown core_hero_cpp_FUN_004f22a0();
-undefined __unknown core_hero_cpp_FUN_004f2340();
+CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero * this_ptr);
 void __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
 void __cdecl core_hero_cpp_CHero_FUN_004f2540(CHero * this_ptr);
-int __cdecl core_hero_cpp_CHero_FUN_004f2580(CHero * this_ptr);
+int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580(CHero * this_ptr, SCollisionReturnInfo * collision_info, CDemonActor * other_actor);
 int __cdecl core_hero_cpp_CHero_FUN_004f25c0(CHero * this_ptr);
 void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero * this_ptr);
 int __cdecl core_hero_cpp_CHero_FUN_004f2870(CHero * this_ptr);
@@ -99,7 +100,7 @@ undefined __unknown core_hero_cpp_FUN_004f33b0();
 undefined __unknown core_hero_cpp_FUN_004f3580();
 undefined __unknown core_hero_cpp_FUN_004f35b0();
 undefined __unknown core_hero_cpp_CallInventorySelectHealth_FUN_004f3760();
-int __cdecl core_hero_cpp_CHero_FUN_004f37d0(CHero * this_ptr);
+int __cdecl core_hero_cpp_CHero_isActiveTarget_FUN_004f37d0(CHero * this_ptr);
 undefined __unknown core_hero_cpp_FUN_004f3890();
 undefined __unknown core_hero_cpp_FUN_004f38d0();
 undefined __unknown core_hero_cpp_FUN_004f3910();
@@ -124,7 +125,7 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void);
 CDemonActorType * __cdecl core_hiram_cpp_staticInit_FUN_004f4380(void);
 undefined __unknown core_hiram_cpp_FUN_004f43b0();
 undefined __unknown core_hiram_cpp_FUN_004f43e0();
-CHiram * __cdecl core_hiram_cpp_FUN_004f43f0(CHiram * this_ptr);
+CHiram * __cdecl core_hiram_cpp_CHiram_ctor_FUN_004f43f0(CHiram * this_ptr);
 CHiram * __cdecl core_hiram_cpp_FUN_004f4450(CHiram * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9);
 undefined __unknown core_hiram_cpp_FUN_004f4530();
 undefined __unknown core_hiram_cpp_FUN_004f4550();
@@ -135,7 +136,7 @@ CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_004f4700(CNPC * this_ptr, uint d1, uin
 CDemonActorType * __cdecl core_hostage_cpp_staticInit_FUN_004f47d0(void);
 undefined __unknown core_hostage_cpp_FUN_004f4800();
 undefined __unknown core_hostage_cpp_FUN_004f4830();
-CHostage * __cdecl core_hostage_cpp_FUN_004f4840(CHostage * this_ptr);
+CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage * this_ptr);
 undefined __unknown core_hostage_cpp_NPCSFromZombieTown_FUN_004f4970();
 undefined __unknown core_hostage_cpp_FUN_004f4b40();
 undefined __unknown core_hostage_cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0();
@@ -167,7 +168,7 @@ CDemonActor * __cdecl core_hotdemon_cpp_FUN_004f7a40(CHotDemon * this_ptr, uint 
 CDemonActorType * __cdecl core_hpriest_cpp_staticInit_FUN_004f7b00(void);
 undefined __unknown core_hpriest_cpp_FUN_004f7b30();
 undefined __unknown core_hpriest_cpp_FUN_004f7b60();
-CHighPriestOfGardath * __cdecl core_hpriest_cpp_FUN_004f7b70(CHighPriestOfGardath * this_ptr);
+CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004f7b70(CHighPriestOfGardath * this_ptr);
 undefined __unknown core_hpriest_cpp_CHighPriestOfGardath_load_FUN_004f7bd0();
 undefined __unknown core_hpriest_cpp_FUN_004f7c00();
 undefined __unknown core_hpriest_cpp_FUN_004f7c50();
@@ -176,7 +177,7 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_FUN_004f7cb0(CHighPriestOfGardat
 CDemonActorType * __cdecl core_icepick_cpp_staticInit_FUN_004f7d80(void);
 undefined __unknown core_icepick_cpp_FUN_004f7db0();
 undefined __unknown core_icepick_cpp_FUN_004f7de0();
-CIcePick * __cdecl core_icepick_cpp_FUN_004f7df0(CIcePick * this_ptr);
+CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f7df0(CIcePick * this_ptr);
 undefined __unknown core_icepick_cpp_FUN_004f7e80();
 undefined __unknown core_icepick_cpp_FUN_004f80b0();
 undefined __unknown core_icepick_cpp_FUN_004f8810();
@@ -199,7 +200,7 @@ CIcePick * __cdecl core_icepick_cpp_FUN_004f97e0(CIcePick * this_ptr, uint d1, u
 CDemonActorType * __cdecl core_imp_cpp_staticInit_FUN_004f9830(void);
 undefined __unknown core_imp_cpp_FUN_004f9860();
 undefined __unknown core_imp_cpp_FUN_004f9890();
-CImp * __cdecl core_imp_cpp_FUN_004f98a0(CImp * this_ptr);
+CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004f98a0(CImp * this_ptr);
 undefined __unknown core_imp_cpp_FUN_004f9910();
 undefined __unknown core_imp_cpp_FUN_004f9c30();
 undefined __unknown core_imp_cpp_FUN_004fa900();

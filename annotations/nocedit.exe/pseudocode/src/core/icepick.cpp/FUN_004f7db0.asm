@@ -11,7 +11,7 @@
 ;   TerminatedCString s_core_icepick_cpp_0062f594
 ;
 ; Called Functions:
-;   core_icepick.cpp_FUN_004f7df0
+;   core_icepick.cpp_CIcePick_ctor_FUN_004f7df0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     RET                                 ; 004f7dc8
     PUSH EAX                            ; 004f7dc9
         ;   Label: LAB_004f7dc9
-    CALL core_icepick.cpp_FUN_004f7df0  ; 004f7dca
-        ;   XREF to: 004f7df0 (UNCONDITIONAL_CALL)  ; CIcePick * core_icepick.cpp_FUN_004f7df0(CIcePick * this_ptr)
+    CALL core_icepick.cpp_CIcePick_ctor_FUN_004f7df0 ; 004f7dca
+        ;   XREF to: 004f7df0 (UNCONDITIONAL_CALL)  ; CIcePick * core_icepick.cpp_CIcePick_ctor_FUN_004f7df0(CIcePick * this_ptr)
     ADD ESP,0x4                         ; 004f7dcf
     RET                                 ; 004f7dd2
 

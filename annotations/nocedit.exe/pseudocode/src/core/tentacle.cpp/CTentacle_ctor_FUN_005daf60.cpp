@@ -13,7 +13,7 @@ CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_005daf60(CTentacle *thi
   CTentacle *pCVar2;
   
   pCVar2 = (CTentacle *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
-  (pCVar2->base_enemy).base_character.base_actor.vtable = &g_CTentacleVTable;
+  (pCVar2->base_enemy).base_character.base_actor.vtable._ub = &g_CTentacleVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar2->base_enemy).base_character.model,"tentacle.dfm");
   pCVar1 = &pCVar2->base_enemy;

@@ -325,7 +325,7 @@ section .text
     ADD ESP,0x4                         ; 005f95b9
     JMP 0x005f9504                      ; 005f95bc
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
-    MOV EAX,[0x006659c8]                ; 005f95c1 | DAT_006659c8
+    MOV EAX,[0x006659c8]                ; 005f95c1 | FLOAT_006659c8
         ;   Label: LAB_005f95c1
     MOV dword ptr [EBP + 0x16],EAX      ; 005f95c6
     XOR EAX,EAX                         ; 005f95c9
@@ -1872,7 +1872,7 @@ section .text
     JNZ 0x005fa18b                      ; 005fa8f3
         ;   XREF to: 005fa18b (CONDITIONAL_JUMP)  ; LAB_005fa18b
     PUSH 0x1                            ; 005fa8f9
-    MOV EAX,[0x006659c8]                ; 005fa8fb | DAT_006659c8
+    MOV EAX,[0x006659c8]                ; 005fa8fb | FLOAT_006659c8
     PUSH EBX                            ; 005fa900
     MOV dword ptr [EBP + 0x3a],EAX      ; 005fa901
     CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fa904
@@ -2185,7 +2185,7 @@ section .text
     JNZ 0x005fac8e                      ; 005fac77
         ;   XREF to: 005fac8e (CONDITIONAL_JUMP)  ; LAB_005fac8e
     MOV ESI,0x40400000                  ; 005fac79
-    MOV EAX,[0x006659c8]                ; 005fac7e | DAT_006659c8
+    MOV EAX,[0x006659c8]                ; 005fac7e | FLOAT_006659c8
     MOV dword ptr [EBP + 0x3e],ESI      ; 005fac83
     MOV dword ptr [EBP + 0x56],EAX      ; 005fac86
     JMP 0x005fa18b                      ; 005fac89

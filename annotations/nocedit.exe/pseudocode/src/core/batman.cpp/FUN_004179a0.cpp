@@ -59,7 +59,7 @@ void core_batman_cpp_FUN_004179a0(void)
                 (&this_ptr->motion_controller,7,1);
       sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[1].base_actor.next_actor);
       pCVar4 = (CDemonActor *)
-               (*((in_stack_00000004->base_actor).vtable)->playSound)
+               (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                          (&in_stack_00000004->base_actor,"batman-die.wav");
       in_stack_00000004[1].base_actor.next_actor = pCVar4;
       local_3c.y = in_stack_00000008;
@@ -86,7 +86,7 @@ void core_batman_cpp_FUN_004179a0(void)
                       ((uint)in_stack_00000004[1].base_actor.next_actor);
     if (iVar2 == 0) {
       pCVar4 = (CDemonActor *)
-               (*((in_stack_00000004->base_actor).vtable)->playSound)
+               (*((in_stack_00000004->base_actor).vtable._ub)->playSound)
                          (&in_stack_00000004->base_actor,"batman-hurt?.wav");
       in_stack_00000004[1].base_actor.next_actor = pCVar4;
       local_3c.y = in_stack_00000008;

@@ -24,7 +24,7 @@ void __cdecl core_inv_cpp_CInventory_setupItems_FUN_004ff780(CInventory *this_pt
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (pCVar1->items[0],"..\\core\\inv.cpp",0x573);
       iVar2 = iVar2 + 1;
-      (*pCVar1->items[0]->vtable->setup)(pCVar1->items[0]);
+      (*((pCVar1->items[0]->vtable)._ub)->setup)(pCVar1->items[0]);
       pCVar1 = (CInventory *)&pCVar1->owner;
     } while (iVar2 < this_ptr->item_count);
   }

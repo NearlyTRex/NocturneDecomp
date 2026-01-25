@@ -26,7 +26,6 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   uint uVar13;
   int iVar14;
   double dVar15;
-  SCollisionInfo *in_stack_fffffce0;
   SDamageInfo local_2e4;
   SDamageInfo local_2a8;
   SDamageInfo local_26c;
@@ -152,8 +151,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   local_18 = uVar8;
   iVar7 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   if (iVar7 == 0) {
-    iVar7 = (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].hasCollision)
-                      ((CDemonActor *)this_ptr,in_stack_fffffce0);
+    iVar7 = (*(((this_ptr->base_enemy).base_character.base_actor.vtable._uc)->_uc).isDamageable)
+                      ((CCharacter *)this_ptr);
     if ((iVar7 == 0) &&
        (*(CHero **)((this_ptr->base_enemy).field6_0xbe38 + 4) == g_HeroActors[g_LocalHeroIndex])) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2a8);
@@ -222,8 +221,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
         goto LAB_005f04ff;
       }
 LAB_005f094d:
-      (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                ((CDemonActor *)this_ptr);
+      (*(((this_ptr->base_enemy).base_character.base_actor.vtable._ue)->_ue).field_4)();
       iVar7 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
       if (iVar7 == 0) {
         core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
@@ -264,7 +262,9 @@ LAB_005f094d:
             g_CurrentLineNumber = 0x1ad;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Alpha werewolf requires 2 waypoints");
           }
-          engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Phase: %d, Timer: %f\n");
+          engine_console_cpp_CConsole_printf_FUN_00441890
+                    (g_CConsolePtr,"Phase: %d, Timer: %f\n",this_ptr->phase,
+                     (double)this_ptr->phase_timer);
           if ((this_ptr->phase == 1) || (this_ptr->phase == 3)) {
             pCVar9 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                                (*(CDemonActor **)((this_ptr->base_enemy).field6_0xbe38 + 4),
@@ -314,7 +314,7 @@ LAB_005f0ae7:
               if (3 < iVar14) {
                 this_ptr->phase = 0;
               }
-              this_ptr->phase_timer = 0x41200000;
+              this_ptr->phase_timer = 10.0f;
             }
           }
           else if ((this_ptr->phase_timer <= 0.0) && (this_ptr->phase = iVar14 + 1, 3 < iVar14 + 1))
@@ -322,8 +322,8 @@ LAB_005f0ae7:
             this_ptr->phase = 0;
           }
         }
-        local_1e0 = 0x40400000;
-        local_30 = 0x40400000;
+        local_1e0 = 3.0f;
+        local_30 = 3.0f;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =
              (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z;
@@ -407,7 +407,7 @@ LAB_005f0ae7:
                 }
               }
             }
-            else if ((local_28 < 0x40400000 * 2.0f) && (local_18 == 0xf)) {
+            else if ((local_28 < 3.0f * 2.0f) && (local_18 == 0xf)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar1->motion_controller,0,1);
             }
@@ -562,8 +562,7 @@ LAB_005f04ff:
 LAB_005f0481:
       core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base_enemy);
       if (extraout_EAX == 0) {
-        (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                  ((CDemonActor *)this_ptr);
+        (*(((this_ptr->base_enemy).base_character.base_actor.vtable._ue)->_ue).field_4)();
         iVar7 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
         if (iVar7 == 0) goto LAB_005f0010;
         if (*(int *)(this_ptr->field6_0xbed8 + 0x10) != 0) {
@@ -654,7 +653,7 @@ LAB_005f0010:
   if ((local_18 == 0x13) && (*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0)) {
     iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->field6_0xbed8 + 0xc));
     if (iVar7 == 0) {
-      uVar13 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+      uVar13 = (*((this_ptr->base_enemy).base_character.base_actor.vtable._ub)->playSound)
                          ((CDemonActor *)this_ptr,"werewolf-eat.wav");
       *(uint *)(this_ptr->field6_0xbed8 + 0xc) = uVar13;
     }

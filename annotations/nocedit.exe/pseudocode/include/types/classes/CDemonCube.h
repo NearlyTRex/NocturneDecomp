@@ -1,10 +1,12 @@
 #pragma once
 
+// Forward declarations
+struct CDemonCubeTriangle;
+struct SVoxelGrid;
+
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CDemonCubeTriangle.h"
 #include "types/classes/CVector3f.h"
-#include "types/structs/SVoxelGrid.h"
 
 // Structure: CDemonCube
 // Ghidra size: 0x34 (52 bytes)

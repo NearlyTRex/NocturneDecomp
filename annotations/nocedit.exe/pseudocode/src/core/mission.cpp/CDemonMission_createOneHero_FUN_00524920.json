@@ -4,8 +4,14 @@
       {
         "category": "missing_member",
         "column": 88,
-        "line": 43,
+        "line": 44,
         "message": "'CHeroPlaceholder' {aka 'struct CHeroPlaceholder'} has no member named 'field1_0x158'"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 57,
+        "message": "'void*' is not a pointer-to-object type"
       }
     ],
     "success": false,
@@ -43,24 +49,23 @@
       {
         "category": "other",
         "column": 38,
-        "line": 34,
+        "line": 35,
         "message": "ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 222,
+    "complexity_score": 179,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
-    "pseudocode_lines": 52,
-    "suspect_count": 16,
+    "pseudocode_lines": 54,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 190
+    "total_lines": 192
   },
   "cross_references": [
     {
@@ -253,22 +258,15 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBX",
-      "text": "CHero *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_00000010",
       "text": "CDemonActor *in_stack_00000010;",
       "type": "stack_param"
@@ -288,80 +286,59 @@
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EBX",
-      "text": "if (unaff_EBX == (CHero *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 31,
       "match": "in_stack_00000008",
-      "text": "g_HeroActors[in_stack_00000008] = unaff_EBX;",
+      "text": "g_HeroActors[in_stack_00000008] = pCVar1;",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EBX",
-      "text": "g_HeroActors[in_stack_00000008] = unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 37,
       "match": "in_stack_00000008",
       "text": "if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->field1_0x158)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 39,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 == (CDemonActor *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 43,
       "match": "in_stack_00000010",
-      "text": "(*in_stack_00000010->vtable->setPositionAndOrientation)",
+      "text": "(*((in_stack_00000010->vtable)._ub)->setPositionAndOrientation)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 44,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010,&(this_ptr_00->base_actor).location.position,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 46,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010->location).area_id = (this_ptr_00->base_actor).location.area_id;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 48,
       "match": "in_stack_00000010",
       "text": "((CMotionController *)(in_stack_00000010 + 1),0,0.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 50,
       "match": "in_stack_00000010",
-      "text": "(*in_stack_00000010->vtable[1].evaluateTriggerCondition)(in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000010",
-      "text": "(*in_stack_00000010->vtable[1].evaluateTriggerCondition)(in_stack_00000010);",
+      "text": "(*(((in_stack_00000010->vtable)._uc)->_uc).cfunc23)();",
       "type": "stack_param"
     }
   ]

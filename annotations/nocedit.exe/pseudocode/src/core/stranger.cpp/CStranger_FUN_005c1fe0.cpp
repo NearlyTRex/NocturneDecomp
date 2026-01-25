@@ -70,7 +70,7 @@ uint core_stranger_cpp_CStranger_FUN_005c1fe0(void)
                   (this_ptr_00,(CVector3f *)local_a4,local_20);
         if ((ABS((float)local_a4._8_4_) <= (float)4) && (0.0 <= (float)local_a4._8_4_)
            ) {
-          (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&local_e0);
+          (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&local_e0);
           if (local_e0.max.z < (float)local_a4._8_4_) {
             if (local_e0.max.z + 1.0 < (float)local_a4._8_4_) goto LAB_005c2068;
             local_a4._8_4_ = local_e0.max.z;

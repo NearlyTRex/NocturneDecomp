@@ -37,7 +37,7 @@ uint core_icepick_cpp_FUN_004f8970(void)
   while( true ) {
     if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar3) break;
     this_ptr = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar4);
-    pCVar2 = (*this_ptr->vtable->getCarrier)(this_ptr);
+    pCVar2 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
     if (pCVar2 == (CDemonActor *)0x0) {
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(this_ptr,g_CTommyGunClassInfo.name_hash);
       if (pCVar2 != (CDemonActor *)0x0) {

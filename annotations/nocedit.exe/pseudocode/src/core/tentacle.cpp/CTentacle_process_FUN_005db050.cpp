@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* WARNING: Type propagation algorithm not settling */
 
 void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_ptr,float delta_time)
 
@@ -37,24 +37,25 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   CMatrix3x4f CStack_d0;
   CVector3f CStack_a0;
   CVector3f CStack_94;
-  CVector3f CStack_84;
+  CVector3f CStack_88;
+  float fStack_7c;
   float fStack_78;
   float fStack_74;
-  byte auStack_6c [12];
-  float fStack_60;
-  float fStack_5c;
+  CVector3f CStack_70;
+  CVector3f CStack_64;
   CVector3f CStack_58;
   float fStack_4c;
   float fStack_48;
   float fStack_44;
+  float fStack_38;
   float fStack_34;
   float fStack_30;
+  float fStack_2c;
   char *local_28;
   CVector3f *local_24;
   CVector3f *local_20;
   CDeformableModelInstance *local_1c;
   float fStack_18;
-  float fStack_14;
   
   bVar14 = 0;
   iVar3 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
@@ -135,8 +136,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
               core_xform_cpp_clearTranslation_FUN_005f5370((CMatrix3x4f *)local_28);
               iVar3 = 0;
               do {
-                CStack_84.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
-                fStack_18 = CStack_84.z;
+                fStack_7c = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
+                fStack_18 = fStack_7c;
                 fStack_74 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
                 fStack_18 = fStack_74;
                 fStack_78 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,15.0);
@@ -205,32 +206,26 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       fVar1 = *(float *)(this_ptr->field1_0xbeb4 + 0xc) + delta_time;
       *(float *)(this_ptr->field1_0xbeb4 + 0xc) = fVar1;
       if (fVar1 < (float)25) {
-        (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].getAllowedMeleeAttackTypes)
-                  ((CDemonActor *)this_ptr);
+        (*(((this_ptr->base_enemy).base_character.base_actor.vtable._ue)->_ue).field_4)();
         iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
         if (iVar3 != 0) {
-          CStack_84.x = *(float *)(iVar3 + 0x20) -
-                        (float)(local_1c->motion_controller).motion_list_ptr;
-          CStack_84.y = *(float *)(iVar3 + 0x24) -
-                        (float)(local_1c->motion_controller).current_motion_index;
-          CStack_84.z = *(float *)(iVar3 + 0x28) -
-                        (local_1c->motion_controller).current_frame_number;
+          CStack_88.x = *(float *)(iVar3 + 0x20) - ((CVector3f *)&local_20->x)->x;
+          CStack_88.y = *(float *)(iVar3 + 0x24) - local_20->y;
+          CStack_88.z = *(float *)(iVar3 + 0x28) - local_20->z;
           pCVar7 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                             ((CVector3f *)auStack_6c,&CStack_84);
-          CStack_250.m[0].w =
-               core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                         (pCVar7->y - (this_ptr->base_enemy).base_character.base_actor.orient.bank);
-          local_28 = (char *)(delta_time * (float)0.78539816337500001);
-          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = CStack_250.m[0].w;
-          fStack_34 = -(float)local_28;
-          if (*(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) < fStack_34) {
-            *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_34;
+                             (&CStack_70,&CStack_88);
+          fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                                (pCVar7->y -
+                                 (this_ptr->base_enemy).base_character.base_actor.orient.bank);
+          fStack_2c = delta_time * (float)0.78539816337500001;
+          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_18;
+          fStack_38 = -fStack_2c;
+          if (*(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) < fStack_38) {
+            *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_38;
           }
-          if ((float)local_28 <
-              *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc)) {
-            *(char **)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = local_28;
+          if (fStack_2c < *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc)) {
+            *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_2c;
           }
-          fStack_14 = CStack_250.m[0].w;
           if ((float)5 < *(float *)(this_ptr->field1_0xbeb4 + 0xc)) {
             iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
             fVar1 = (this_ptr->base_enemy).base_character.base_actor.location.position.x -
@@ -238,7 +233,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             fVar2 = (this_ptr->base_enemy).base_character.base_actor.location.position.z -
                     *(float *)(iVar3 + 0x28);
             fVar1 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);
-            if (((CStack_250.m[0].w < (float)0.17453292519444399) &&
+            if (((fStack_18 < (float)0.17453292519444399) &&
                 (ABS((this_ptr->base_enemy).base_character.base_actor.location.position.y -
                      *(float *)(iVar3 + 0x24)) < (float)4)) &&
                ((float)7 < fVar1 && fVar1 < (float)12)) {
@@ -267,11 +262,11 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             (iVar3 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) +
                                           0x154) + 0x108))(), iVar3 == 0)) {
       iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
-      auStack_6c._8_4_ = *(float *)(iVar3 + 0x20) - ((CVector3f *)&local_20->x)->x;
-      fStack_60 = *(float *)(iVar3 + 0x24) - local_20->y;
-      fStack_5c = *(float *)(iVar3 + 0x28) - local_20->z;
+      CStack_64.x = *(float *)(iVar3 + 0x20) - ((CVector3f *)&local_20->x)->x;
+      CStack_64.y = *(float *)(iVar3 + 0x24) - local_20->y;
+      CStack_64.z = *(float *)(iVar3 + 0x28) - local_20->z;
       pCVar7 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                         (&CStack_58,(CVector3f *)(auStack_6c + 8));
+                         (&CStack_58,&CStack_64);
       fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                             (pCVar7->y -
                              (this_ptr->base_enemy).base_character.base_actor.orient.bank);
@@ -285,7 +280,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
         *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_30;
       }
     }
-    fVar1 = delta_time / _DAT_00664468 + *(float *)(this_ptr->field1_0xbeb4 + 0x14);
+    fVar1 = delta_time / 0.5f + *(float *)(this_ptr->field1_0xbeb4 + 0x14);
     *(float *)(this_ptr->field1_0xbeb4 + 0x14) = fVar1;
     if (1.0 < fVar1) {
       this_ptr->field1_0xbeb4[0x14] = '\0';

@@ -12,7 +12,7 @@
 ;
 ; XREF[19]:
 ;   core_charactr.cpp_CCharacter_FUN_0042de50 at 0042deac
-;   core_gabriela.cpp_FUN_004d2ea0 at 004d3509
+;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3509
 ;   core_gabriela.cpp_FUN_004d4890 at 004d49df
 ;   core_ghoul.cpp_CGhoul_FUN_004e6600 at 004e6672
 ;   core_ghoul.cpp_FUN_004e82d0 at 004e82f0

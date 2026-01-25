@@ -15,9 +15,9 @@ undefined FUN_004f7b30();
 // Address: 004f7b60
 undefined FUN_004f7b60();
 
-// Original: core_hpriest.cpp_FUN_004f7b70
+// Original: core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004f7b70
 // Address: 004f7b70
-CHighPriestOfGardath * FUN_004f7b70(CHighPriestOfGardath * this_ptr);
+CHighPriestOfGardath * CHighPriestOfGardath::ctor(CHighPriestOfGardath * this_ptr);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_load_FUN_004f7bd0
 // Address: 004f7bd0
