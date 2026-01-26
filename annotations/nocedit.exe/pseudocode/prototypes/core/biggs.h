@@ -5,11 +5,11 @@
 
 // Original: core_biggs.cpp_staticInit_FUN_00418550
 // Address: 00418550
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_biggs.cpp_constructor_FUN_00418580
+// Original: core_biggs.cpp_factoryFunc_FUN_00418580
 // Address: 00418580
-undefined constructor();
+CBiggs * factoryFunc(void);
 
 // Original: core_biggs.cpp_FUN_004185b0
 // Address: 004185b0

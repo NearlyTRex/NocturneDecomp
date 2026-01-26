@@ -145,6 +145,14 @@ extern double g_TimerCalibration;
 // dword
 extern dword DWORD_03f9d000;
 
+// float
+extern float FLOAT_03f96b44;
+extern float FLOAT_03f96b48;
+extern float FLOAT_03f96b4c;
+extern float FLOAT_03f96b50;
+extern float FLOAT_03f96b54;
+extern float FLOAT_03f96b58;
+
 // int
 extern int g_RenderingInProgress;
 extern int g_GraphicsResetFlag;
@@ -178,6 +186,7 @@ extern int g_MultibyteLocaleActive;
 extern int g_BufferedCharacter;
 extern int g_BufferedVirtualKey;
 extern int g_BufferedRepeatCount;
+extern int INT_03f9c150;
 
 // int[20]
 extern int g_InputBuffer[20];
@@ -211,7 +220,6 @@ extern undefined4 DAT_03f9675c;
 extern undefined4 DAT_03f96b40;
 extern undefined4 g_FreeListHeadPointer;
 extern undefined4 DAT_03f9b210;
-extern undefined4 DAT_03f9c150;
 
 // void*
 extern void* g_SoftwareFrameBuffer;

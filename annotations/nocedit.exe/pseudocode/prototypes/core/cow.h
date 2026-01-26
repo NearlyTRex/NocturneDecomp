@@ -5,19 +5,19 @@
 
 // Original: core_cow.cpp_staticInit_FUN_004440d0
 // Address: 004440d0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_cow.cpp_FUN_00444100
+// Original: core_cow.cpp_factoryFunc_FUN_00444100
 // Address: 00444100
-undefined FUN_00444100();
+CZombieCow * factoryFunc(void);
 
 // Original: core_cow.cpp_FUN_00444130
 // Address: 00444130
 undefined FUN_00444130();
 
-// Original: core_cow.cpp_FUN_00444140
+// Original: core_cow.cpp_CZombieCow_ctor_FUN_00444140
 // Address: 00444140
-CZombieCow * FUN_00444140(CZombieCow * this_ptr);
+CZombieCow * CZombieCow::ctor(CZombieCow * this_ptr);
 
 // Original: core_cow.cpp_FUN_004441b0
 // Address: 004441b0

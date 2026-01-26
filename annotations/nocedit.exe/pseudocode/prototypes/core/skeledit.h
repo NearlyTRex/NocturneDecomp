@@ -279,9 +279,9 @@ undefined viewModel();
 // Address: 00599480
 undefined FUN_00599480();
 
-// Original: core_skeledit.cpp_LodVert_copy_FUN_00599550
+// Original: core_skeledit.cpp_CLodVert_copy_FUN_00599550
 // Address: 00599550
-CLodVert * LodVert::copy(void * n1, void * n2, CLodVert * other2, CLodVert * other3);
+CLodVert * CLodVert::copy(CLodVert * this_ptr, CLodVert * other);
 
 // Original: core_skeledit.cpp_LodVert_dtor_FUN_005995c0
 // Address: 005995c0

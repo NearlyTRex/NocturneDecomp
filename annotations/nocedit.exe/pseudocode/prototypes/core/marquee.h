@@ -5,19 +5,19 @@
 
 // Original: core_marquee.cpp_staticInit_FUN_0050baf0
 // Address: 0050baf0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_marquee.cpp_FUN_0050bb20
+// Original: core_marquee.cpp_factoryFunc_FUN_0050bb20
 // Address: 0050bb20
-undefined FUN_0050bb20();
+CMarquee * factoryFunc(void);
 
-// Original: core_marquee.cpp_FUN_0050bb50
+// Original: core_marquee.cpp_CMarquee_getActorType_FUN_0050bb50
 // Address: 0050bb50
-undefined FUN_0050bb50();
+CDemonActorType * CMarquee::getActorType(CMarquee * this_ptr);
 
-// Original: core_marquee.cpp_FUN_0050bb60
+// Original: core_marquee.cpp_CMarquee_ctor_FUN_0050bb60
 // Address: 0050bb60
-CMarquee * FUN_0050bb60(CMarquee * this_ptr);
+CMarquee * CMarquee::ctor(CMarquee * this_ptr);
 
 // Original: core_marquee.cpp_FUN_0050bc30
 // Address: 0050bc30
@@ -63,6 +63,6 @@ undefined FUN_0050c3e0();
 // Address: 0050c480
 undefined FUN_0050c480();
 
-// Original: core_marquee.cpp_FUN_0050c4c0
+// Original: core_marquee.cpp_CMarquee_dtor_FUN_0050c4c0
 // Address: 0050c4c0
-CMarquee * FUN_0050c4c0(CMarquee * this_ptr, uint d1, uint d2, uint d3);
+CMarquee * CMarquee::dtor(CMarquee * this_ptr, uint d1, uint d2, uint d3);

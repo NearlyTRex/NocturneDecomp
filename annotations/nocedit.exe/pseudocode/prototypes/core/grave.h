@@ -5,19 +5,19 @@
 
 // Original: core_grave.cpp_staticInit_FUN_004ee4a0
 // Address: 004ee4a0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_grave.cpp_FUN_004ee4d0
+// Original: core_grave.cpp_factoryFunc_FUN_004ee4d0
 // Address: 004ee4d0
-undefined FUN_004ee4d0();
+CGrave * factoryFunc(void);
 
-// Original: core_grave.cpp_FUN_004ee500
+// Original: core_grave.cpp_CGrave_getActorType_FUN_004ee500
 // Address: 004ee500
-undefined FUN_004ee500();
+CDemonActorType * CGrave::getActorType(CGrave * this_ptr);
 
-// Original: core_grave.cpp_FUN_004ee510
+// Original: core_grave.cpp_CGrave_ctor_FUN_004ee510
 // Address: 004ee510
-CGrave * FUN_004ee510(CGrave * this_ptr);
+CGrave * CGrave::ctor(CGrave * this_ptr);
 
 // Original: core_grave.cpp_FUN_004ee5a0
 // Address: 004ee5a0
@@ -67,6 +67,6 @@ undefined FUN_004eead0();
 // Address: 004eeb10
 undefined FUN_004eeb10();
 
-// Original: core_grave.cpp_FUN_004eeb40
+// Original: core_grave.cpp_CGrave_dtor_FUN_004eeb40
 // Address: 004eeb40
-CGrave * FUN_004eeb40(CGrave * this_ptr, uint d1, uint d2);
+CGrave * CGrave::dtor(CGrave * this_ptr, uint d1, uint d2);

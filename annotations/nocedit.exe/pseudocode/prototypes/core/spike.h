@@ -7,9 +7,9 @@
 // Address: 005b81b0
 void staticInit(void);
 
-// Original: core_spike.cpp_FUN_005b81e0
+// Original: core_spike.cpp_factoryFunc_FUN_005b81e0
 // Address: 005b81e0
-undefined FUN_005b81e0();
+CSpike * factoryFunc(void);
 
 // Original: core_spike.cpp_CSpike_getActorType_FUN_005b8210
 // Address: 005b8210

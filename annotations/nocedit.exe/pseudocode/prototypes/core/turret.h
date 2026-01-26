@@ -5,11 +5,11 @@
 
 // Original: core_turret.cpp_staticInit_FUN_005e2080
 // Address: 005e2080
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_turret.cpp_FUN_005e20b0
+// Original: core_turret.cpp_factoryFunc_FUN_005e20b0
 // Address: 005e20b0
-undefined FUN_005e20b0();
+CTurret * factoryFunc(void);
 
 // Original: core_turret.cpp_CTurret_getActorType_FUN_005e20e0
 // Address: 005e20e0

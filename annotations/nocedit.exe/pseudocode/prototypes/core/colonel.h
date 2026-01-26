@@ -5,11 +5,11 @@
 
 // Original: core_colonel.cpp_staticInit_FUN_0043f770
 // Address: 0043f770
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_colonel.cpp_FUN_0043f7a0
+// Original: core_colonel.cpp_factoryFunc_FUN_0043f7a0
 // Address: 0043f7a0
-undefined FUN_0043f7a0();
+CColonel * factoryFunc(void);
 
 // Original: core_colonel.cpp_FUN_0043f7d0
 // Address: 0043f7d0

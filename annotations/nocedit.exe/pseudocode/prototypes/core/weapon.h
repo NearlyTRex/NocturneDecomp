@@ -5,7 +5,7 @@
 
 // Original: core_weapon.cpp_staticInit_FUN_005ede40
 // Address: 005ede40
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_weapon.cpp_CWeapon_ctor_FUN_005ede70
 // Address: 005ede70

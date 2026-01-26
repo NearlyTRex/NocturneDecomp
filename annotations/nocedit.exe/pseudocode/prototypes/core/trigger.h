@@ -5,11 +5,11 @@
 
 // Original: core_trigger.cpp_staticInit_FUN_005df7d0
 // Address: 005df7d0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_trigger.cpp_FUN_005df800
+// Original: core_trigger.cpp_factoryFunc_FUN_005df800
 // Address: 005df800
-undefined FUN_005df800();
+CTrigger * factoryFunc(void);
 
 // Original: core_trigger.cpp_CTrigger_getActorType_FUN_005df830
 // Address: 005df830

@@ -5,11 +5,11 @@
 
 // Original: core_ammobox.cpp_staticInit_FUN_00411530
 // Address: 00411530
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_ammobox.cpp_constructor_FUN_00411560
+// Original: core_ammobox.cpp_factoryFunc_FUN_00411560
 // Address: 00411560
-undefined constructor();
+CAmmoBox * factoryFunc(void);
 
 // Original: core_ammobox.cpp_CAmmoBox_getActorType_FUN_00411590
 // Address: 00411590

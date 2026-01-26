@@ -5,15 +5,15 @@
 
 // Original: core_bat.cpp_staticInit_FUN_004146c0
 // Address: 004146c0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_bat.cpp_FUN_004146f0
 // Address: 004146f0
 undefined FUN_004146f0();
 
-// Original: core_bat.cpp_FUN_00414790
+// Original: core_bat.cpp_factoryFunc_FUN_00414790
 // Address: 00414790
-undefined FUN_00414790();
+CBat * factoryFunc(void);
 
 // Original: core_bat.cpp_CBat_getActorType_FUN_004147c0
 // Address: 004147c0

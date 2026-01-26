@@ -53,7 +53,7 @@ void CDoor::serialize(CDoor * this_ptr);
 
 // Original: core_door.cpp_CDoor_hasCollision_FUN_00480d90
 // Address: 00480d90
-int CDoor::hasCollision(CDoor * this_ptr);
+int CDoor::hasCollision(CDoor * this_ptr, SCollisionInfo * collision_info);
 
 // Original: core_door.cpp_CDoor_getGroundType_FUN_00480dd0
 // Address: 00480dd0
@@ -63,9 +63,9 @@ int CDoor::getGroundType(CDoor * this_ptr);
 // Address: 00480de0
 void CDoor(CDoor * this_ptr);
 
-// Original: core_door.cpp_CDoor_FUN_00480df0
+// Original: core_door.cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00480df0
 // Address: 00480df0
-int CDoor(CDoor * this_ptr);
+int CDoor::getBlockVirtualDirectorFlag(CDoor * this_ptr);
 
 // Original: core_door.cpp_CDoor_allowBulletHoles_FUN_00480e00
 // Address: 00480e00

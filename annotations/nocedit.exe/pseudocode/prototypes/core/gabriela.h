@@ -5,7 +5,7 @@
 
 // Original: core_gabriela.cpp_staticInit_FUN_004d2910
 // Address: 004d2910
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_gabriela.cpp_FUN_004d29f0
 // Address: 004d29f0
@@ -19,17 +19,17 @@ undefined FUN_004d2a30();
 // Address: 004d2a80
 float FUN_004d2a80(int current_bone_index, int target_bone_index, float blend_weight, int hierarchy_distance, CDeformableModelInstance * instance);
 
-// Original: core_gabriela.cpp_FUN_004d2ae0
+// Original: core_gabriela.cpp_factoryFunc_FUN_004d2ae0
 // Address: 004d2ae0
-undefined FUN_004d2ae0();
+CGabriella * factoryFunc(void);
 
 // Original: core_gabriela.cpp_FUN_004d2b10
 // Address: 004d2b10
 undefined FUN_004d2b10();
 
-// Original: core_gabriela.cpp_constructorMaybe_FUN_004d2b20
+// Original: core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20
 // Address: 004d2b20
-CGabriella * constructorMaybe(CGabriella * this_ptr);
+CGabriella * CGabriella::ctor(CGabriella * this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_setup_FUN_004d2c40
 // Address: 004d2c40

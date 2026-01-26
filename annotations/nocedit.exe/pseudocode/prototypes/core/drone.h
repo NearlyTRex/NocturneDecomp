@@ -5,19 +5,19 @@
 
 // Original: core_drone.cpp_staticInit_FUN_0048eae0
 // Address: 0048eae0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_drone.cpp_FUN_0048eb10
+// Original: core_drone.cpp_factoryFunc_FUN_0048eb10
 // Address: 0048eb10
-undefined FUN_0048eb10();
+CDrone * factoryFunc(void);
 
 // Original: core_drone.cpp_FUN_0048eb40
 // Address: 0048eb40
 undefined FUN_0048eb40();
 
-// Original: core_drone.cpp_ctor_FUN_0048eb50
+// Original: core_drone.cpp_CDrone_ctor_FUN_0048eb50
 // Address: 0048eb50
-CDrone * ctor(CDrone * this_ptr);
+CDrone * CDrone::ctor(CDrone * this_ptr);
 
 // Original: core_drone.cpp_FUN_0048ebc0
 // Address: 0048ebc0

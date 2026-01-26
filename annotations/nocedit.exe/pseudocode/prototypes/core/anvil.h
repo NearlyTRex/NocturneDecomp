@@ -5,11 +5,11 @@
 
 // Original: core_anvil.cpp_staticInit_FUN_00411c70
 // Address: 00411c70
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_anvil.cpp_constructor_FUN_00411ca0
+// Original: core_anvil.cpp_factoryFunc_FUN_00411ca0
 // Address: 00411ca0
-undefined constructor();
+CAnvil * factoryFunc(void);
 
 // Original: core_anvil.cpp_CAnvil_getActorType_FUN_00411cd0
 // Address: 00411cd0

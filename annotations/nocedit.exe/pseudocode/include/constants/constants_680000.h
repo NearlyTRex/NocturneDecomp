@@ -287,6 +287,8 @@ const double g_ExpUnderflowLimit = 709.78271289338397;
 const double DOUBLE_0068506c = -709.78271289338397;
 
 // float constants
+const float FLOAT_006804b0 = 0.9f;
+const float FLOAT_006804b4 = 1.1f;
 const float FLOAT_00684170 = 12.0f;
 const float FLOAT_00684174 = 1.0f;
 const float g_IEEE754NormalScaleFactor = 0.9375f;
@@ -306,8 +308,6 @@ const undefined2 DAT_00684f38 = 0x4002;
 const undefined2 DAT_0068546c = 0x127F;
 
 // undefined4 constants
-const undefined4 DAT_006804b0 = 0x3F666666;
-const undefined4 DAT_006804b4 = 0x3F8CCCCD;
 const undefined4 DAT_00680970 = 0x0000002A;
 const undefined4 DAT_006810dc = 0x00000180;
 const undefined4 DAT_006810e0 = 0x00000200;
@@ -316,7 +316,6 @@ const undefined4 DAT_00681264 = 0x00000080;
 const undefined4 DAT_006819fc = 0xFFFFF100;
 const undefined4 DAT_00681a04 = 0xFFFFF100;
 const undefined4 DAT_006844f4 = 0x00002000;
-const undefined4 DAT_00684cd0 = 0x00000001;
 const undefined4 DAT_00684cea = 0x00000002;
 const undefined4 DAT_00684ed0 = 0x00000100;
 const undefined4 DAT_006850a4 = 0x00000005;

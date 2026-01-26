@@ -5,19 +5,19 @@
 
 // Original: core_litecone.cpp_staticInit_FUN_00506aa0
 // Address: 00506aa0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_litecone.cpp_FUN_00506ad0
+// Original: core_litecone.cpp_factoryFunc_FUN_00506ad0
 // Address: 00506ad0
-undefined FUN_00506ad0();
+CLightCone * factoryFunc(void);
 
-// Original: core_litecone.cpp_FUN_00506b00
+// Original: core_litecone.cpp_CLightCone_getActorType_FUN_00506b00
 // Address: 00506b00
-undefined FUN_00506b00();
+CDemonActorType * CLightCone::getActorType(CLightCone * this_ptr);
 
-// Original: core_litecone.cpp_FUN_00506b10
+// Original: core_litecone.cpp_CLightCone_ctor_FUN_00506b10
 // Address: 00506b10
-CLightCone * FUN_00506b10(CLightCone * this_ptr);
+CLightCone * CLightCone::ctor(CLightCone * this_ptr);
 
 // Original: core_litecone.cpp_FUN_00506bb0
 // Address: 00506bb0
@@ -47,6 +47,6 @@ undefined FUN_00506d90();
 // Address: 00506da0
 undefined FUN_00506da0();
 
-// Original: core_litecone.cpp_FUN_00506e30
+// Original: core_litecone.cpp_CLightCone_dtor_FUN_00506e30
 // Address: 00506e30
-CLightCone * FUN_00506e30(CLightCone * this_ptr, uint d1, uint d2);
+CLightCone * CLightCone::dtor(CLightCone * this_ptr, uint d1, uint d2);

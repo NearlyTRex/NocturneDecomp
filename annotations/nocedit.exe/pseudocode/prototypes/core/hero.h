@@ -5,7 +5,7 @@
 
 // Original: core_hero.cpp_staticInit_FUN_004f2120
 // Address: 004f2120
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_hero.cpp_closestHeroToPoint_FUN_004f2170
 // Address: 004f2170
@@ -151,17 +151,17 @@ void CHero(CHero * this_ptr);
 // Address: 004f3b20
 void CHero(CHero * this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3bc0
+// Original: core_hero.cpp_factoryFunc_FUN_004f3bc0
 // Address: 004f3bc0
-undefined FUN_004f3bc0();
+CHeroPlaceholder * factoryFunc(void);
 
 // Original: core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004f3bf0
 // Address: 004f3bf0
 CDemonActorType * CHeroPlaceholder::getActorType(CHeroPlaceholder * this_ptr);
 
-// Original: core_hero.cpp_FUN_004f3c00
+// Original: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004f3c00
 // Address: 004f3c00
-CHeroPlaceholder * FUN_004f3c00(CHeroPlaceholder * this_ptr);
+CHeroPlaceholder * CHeroPlaceholder::ctor(CHeroPlaceholder * this_ptr);
 
 // Original: core_hero.cpp_CHeroPlaceholder_dtor_FUN_004f3c30
 // Address: 004f3c30

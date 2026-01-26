@@ -5,7 +5,7 @@
 
 // Original: core_script.cpp_staticInit_FUN_005591b0
 // Address: 005591b0
-undefined staticInit();
+void staticInit(void);
 
 // Original: core_script.cpp_CheckingActorVariableName_FUN_00559220
 // Address: 00559220

@@ -11,6 +11,11 @@
 // CKeyFramedModel[256]
 extern CKeyFramedModel g_CKeyFramedModelPool[256];
 
+// float
+extern float FLOAT_026a72d8;
+extern float FLOAT_026a72dc;
+extern float FLOAT_026a72e0;
+
 // int
 extern int g_BackgroundSceneNestingCount;
 extern int g_DirtySpanCount;
@@ -26,11 +31,6 @@ extern int g_DirtySpanEnds[256];
 
 // uint
 extern uint g_ShadowRestoreAllocator;
-
-// undefined4
-extern undefined4 DAT_026a72d8;
-extern undefined4 DAT_026a72dc;
-extern undefined4 DAT_026a72e0;
 
 // void*[1200]
 extern void* g_SavedScreenBufferArray[1200];

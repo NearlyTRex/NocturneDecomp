@@ -5,19 +5,19 @@
 
 // Original: core_flies.cpp_staticInit_FUN_004cbcf0
 // Address: 004cbcf0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_flies.cpp_FUN_004cbd20
+// Original: core_flies.cpp_factoryFunc_FUN_004cbd20
 // Address: 004cbd20
-undefined FUN_004cbd20();
+CFlies * factoryFunc(void);
 
-// Original: core_flies.cpp_FUN_004cbd50
+// Original: core_flies.cpp_CFlies_getActorType_FUN_004cbd50
 // Address: 004cbd50
-undefined FUN_004cbd50();
+CDemonActorType * CFlies::getActorType(CFlies * this_ptr);
 
-// Original: core_flies.cpp_FUN_004cbd60
+// Original: core_flies.cpp_CFlies_ctor_FUN_004cbd60
 // Address: 004cbd60
-CFlies * FUN_004cbd60(CFlies * this_ptr);
+CFlies * CFlies::ctor(CFlies * this_ptr);
 
 // Original: core_flies.cpp_FUN_004cbe20
 // Address: 004cbe20

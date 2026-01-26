@@ -5,11 +5,11 @@
 
 // Original: core_trash.cpp_staticInit_FUN_005deb00
 // Address: 005deb00
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_trash.cpp_FUN_005deb30
+// Original: core_trash.cpp_factoryFunc_FUN_005deb30
 // Address: 005deb30
-undefined FUN_005deb30();
+CTrash * factoryFunc(void);
 
 // Original: core_trash.cpp_CTrash_getActorType_FUN_005deb60
 // Address: 005deb60

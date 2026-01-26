@@ -5,11 +5,11 @@
 
 // Original: core_vampboss.cpp_staticInit_FUN_005e5520
 // Address: 005e5520
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_vampboss.cpp_FUN_005e5550
+// Original: core_vampboss.cpp_factoryFunc_FUN_005e5550
 // Address: 005e5550
-undefined FUN_005e5550();
+CVampireBoss * factoryFunc(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_getActorType_FUN_005e5580
 // Address: 005e5580

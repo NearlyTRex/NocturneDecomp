@@ -5,7 +5,7 @@
 
 // Original: core_boneguy.cpp_staticInit_FUN_0041b6d0
 // Address: 0041b6d0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_boneguy.cpp_FUN_0041b700
 // Address: 0041b700
@@ -15,9 +15,9 @@ undefined FUN_0041b700();
 // Address: 0041b770
 undefined FUN_0041b770();
 
-// Original: core_boneguy.cpp_constructor_FUN_0041b820
+// Original: core_boneguy.cpp_factoryFunc_FUN_0041b820
 // Address: 0041b820
-undefined constructor();
+CBoneGuy * factoryFunc(void);
 
 // Original: core_boneguy.cpp_FUN_0041b850
 // Address: 0041b850

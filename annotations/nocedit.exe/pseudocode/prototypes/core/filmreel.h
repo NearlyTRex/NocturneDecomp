@@ -5,19 +5,19 @@
 
 // Original: core_filmreel.cpp_staticInit_FUN_004be620
 // Address: 004be620
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_filmreel.cpp_FUN_004be670
+// Original: core_filmreel.cpp_factoryFunc_FUN_004be670
 // Address: 004be670
-undefined FUN_004be670();
+CFilmReel * factoryFunc(void);
 
-// Original: core_filmreel.cpp_FUN_004be6a0
+// Original: core_filmreel.cpp_CFilmReel_getActorType_FUN_004be6a0
 // Address: 004be6a0
-undefined FUN_004be6a0();
+CDemonActorType * CFilmReel::getActorType(CFilmReel * this_ptr);
 
-// Original: core_filmreel.cpp_ctor_FUN_004be6b0
+// Original: core_filmreel.cpp_CFilmReel_ctor_FUN_004be6b0
 // Address: 004be6b0
-CFilmReel * ctor(CFilmReel * this_ptr);
+CFilmReel * CFilmReel::ctor(CFilmReel * this_ptr);
 
 // Original: core_filmreel.cpp_FUN_004be720
 // Address: 004be720
@@ -71,17 +71,17 @@ undefined FUN_004be960();
 // Address: 004be9b0
 undefined FUN_004be9b0();
 
-// Original: core_filmreel.cpp_FUN_004bea00
+// Original: core_filmreel.cpp_factoryFunc_FUN_004bea00
 // Address: 004bea00
-undefined FUN_004bea00();
+CFilmProjector * factoryFunc(void);
 
-// Original: core_filmreel.cpp_NewClass_FUN_004bea30
+// Original: core_filmreel.cpp_CFilmProjector_getActorType_FUN_004bea30
 // Address: 004bea30
-undefined NewClass();
+CDemonActorType * CFilmProjector::getActorType(CFilmProjector * this_ptr);
 
-// Original: core_filmreel.cpp_ctor_FUN_004bea40
+// Original: core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40
 // Address: 004bea40
-CFilmProjector * ctor(CFilmProjector * this_ptr);
+CFilmProjector * CFilmProjector::ctor(CFilmProjector * this_ptr);
 
 // Original: core_filmreel.cpp_FUN_004beb00
 // Address: 004beb00
@@ -107,10 +107,10 @@ undefined serialize();
 // Address: 004bee30
 undefined CFilmReel();
 
-// Original: core_filmreel.cpp_dtor_FUN_004bee80
+// Original: core_filmreel.cpp_CFilmReel_dtor_FUN_004bee80
 // Address: 004bee80
-CFilmReel * dtor(CFilmReel * this_ptr, uint d1, uint d2);
+CFilmReel * CFilmReel::dtor(CFilmReel * this_ptr, uint d1, uint d2);
 
-// Original: core_filmreel.cpp_dtor_FUN_004beed0
+// Original: core_filmreel.cpp_CFilmProjector_dtor_FUN_004beed0
 // Address: 004beed0
-CFilmProjector * dtor(CFilmProjector * this_ptr, uint d1, uint d2);
+CFilmProjector * CFilmProjector::dtor(CFilmProjector * this_ptr, uint d1, uint d2);

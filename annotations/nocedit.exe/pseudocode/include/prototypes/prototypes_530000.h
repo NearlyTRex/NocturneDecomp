@@ -123,7 +123,7 @@ CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_getModelCount_FUN_0053ee40(CM
 CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount_FUN_0053ee50(CMultiCram * this_ptr, int * model_count);
 int * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount_FUN_0053ee60(CMultiCram * this_ptr, int * model_count);
 void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram * this_ptr);
-undefined __unknown core_netgame_cpp_staticInit_FUN_0053f310();
+void __cdecl core_netgame_cpp_staticInit_FUN_0053f310(void);
 undefined __unknown core_netgame_cpp_FUN_0053f360();
 undefined __unknown core_netgame_cpp_FUN_0053f390();
 undefined __unknown core_netgame_cpp_FUN_0053f3e0();

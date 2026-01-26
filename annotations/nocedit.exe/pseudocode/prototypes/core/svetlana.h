@@ -5,11 +5,11 @@
 
 // Original: core_svetlana.cpp_staticInit_FUN_005d87e0
 // Address: 005d87e0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_svetlana.cpp_FUN_005d8810
+// Original: core_svetlana.cpp_factoryFunc_FUN_005d8810
 // Address: 005d8810
-undefined FUN_005d8810();
+CSvetlana * factoryFunc(void);
 
 // Original: core_svetlana.cpp_CSvetlana_getActorType_FUN_005d8840
 // Address: 005d8840

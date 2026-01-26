@@ -5,11 +5,11 @@
 
 // Original: core_trap.cpp_staticInit_FUN_005de620
 // Address: 005de620
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_trap.cpp_FUN_005de650
+// Original: core_trap.cpp_factoryFunc_FUN_005de650
 // Address: 005de650
-undefined FUN_005de650();
+CTrap * factoryFunc(void);
 
 // Original: core_trap.cpp_CTrap_getActorType_FUN_005de680
 // Address: 005de680

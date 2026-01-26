@@ -5,11 +5,11 @@
 
 // Original: core_vessel.cpp_staticInit_FUN_005e8df0
 // Address: 005e8df0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_vessel.cpp_FUN_005e8e20
+// Original: core_vessel.cpp_factoryFunc_FUN_005e8e20
 // Address: 005e8e20
-undefined FUN_005e8e20();
+CCryptVessel * factoryFunc(void);
 
 // Original: core_vessel.cpp_CCryptVessel_getActorType_FUN_005e8e50
 // Address: 005e8e50

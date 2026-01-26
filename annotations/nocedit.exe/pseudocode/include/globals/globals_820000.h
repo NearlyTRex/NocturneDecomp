@@ -82,11 +82,37 @@ extern SRenderVertex g_ClipperIntermediateBuffer[16];
 // char[50]
 extern char g_ActorDebugBuffer[50];
 
+// float
+extern float FLOAT_008224dc;
+extern float FLOAT_00822c88;
+extern float FLOAT_00822c8c;
+extern float FLOAT_00822c90;
+extern float FLOAT_00822c94;
+extern float FLOAT_00822c98;
+extern float FLOAT_00822c9c;
+
 // int
 extern int g_RenderFaceCount;
 extern int g_ActorReadingMode;
 extern int g_IncludeCommentsWhenWriting;
 extern int g_NumActorClassTypes;
+extern int INT_00822498;
+extern int INT_0082249c;
+extern int INT_008224a0;
+extern int INT_008224a4;
+extern int INT_008224a8;
+extern int INT_008224ac;
+extern int INT_008224b0;
+extern int INT_008224b4;
+extern int INT_008224b8;
+extern int INT_008224bc;
+extern int INT_008224c0;
+extern int INT_008224c4;
+extern int INT_008224c8;
+extern int INT_008224cc;
+extern int INT_008224d0;
+extern int INT_008224d4;
+extern int INT_008224d8;
 extern int INT_00823a90;
 extern int INT_00823a94;
 extern int g_LineBlendingDisabled;
@@ -109,10 +135,6 @@ extern undefined1 DAT_00823a83;
 
 // undefined4
 extern undefined4 DAT_00821ff4;
-extern undefined4 DAT_00822498;
-extern undefined4 DAT_008224cc;
-extern undefined4 DAT_008224d0;
-extern undefined4 DAT_008224dc;
 extern undefined4 DAT_0082274c;
 extern undefined4 DAT_00822754;
 extern undefined4 DAT_008227b8;

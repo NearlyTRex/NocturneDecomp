@@ -251,7 +251,11 @@ extern WatcomStaticDestructorNode g_CWaterDestructorNode;
 extern WatcomStaticDestructorNode* g_AtexitListHead;
 
 // byte
+extern byte BYTE_00684acc;
+extern byte BYTE_00684acd;
+extern byte BYTE_00684d05;
 extern byte g_WindowsMajorVersion;
+extern byte g_UseSoftwareMath;
 extern byte g_TimezoneInitFlags;
 extern byte g_DebuggerIsAttached;
 extern byte g_ConsoleHandlerRegistered;
@@ -390,10 +394,11 @@ extern int g_ForceMessagePump;
 extern int g_PreviousActiveState;
 extern int g_CZombieClassVersion;
 extern int g_MaxErrnoValue;
+extern int INT_00684ccc;
+extern int INT_00684cd0;
 extern int g_SpecialExitHandler;
 extern int DAT_00684f30;
 extern int g_ConsoleInitializationFlag;
-extern int g_UseSoftwareMath;
 extern int g_DstTransitionSecond;
 extern int g_DstTransitionMinute;
 extern int g_DstTransitionHour;
@@ -441,9 +446,6 @@ extern ulonglong g_GreenBlueBits;
 extern ulonglong g_BlueBitShift;
 
 // undefined1
-extern undefined1 DAT_00684acc;
-extern undefined1 DAT_00684acd;
-extern undefined1 DAT_00684d05;
 extern undefined1 DAT_0068500c;
 extern undefined1 DAT_006852db;
 
@@ -464,7 +466,6 @@ extern undefined4 DAT_0068105c;
 extern undefined4 DAT_0068125c;
 extern undefined4 DAT_00681260;
 extern undefined4 DAT_00681a00;
-extern undefined4 DAT_00684ccc;
 extern undefined4 DAT_00684edc;
 extern undefined4 DAT_00684fd0;
 extern undefined4 DAT_00685094;

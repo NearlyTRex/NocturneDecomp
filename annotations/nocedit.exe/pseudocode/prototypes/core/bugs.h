@@ -5,11 +5,11 @@
 
 // Original: core_bugs.cpp_staticInit_FUN_00424c40
 // Address: 00424c40
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_bugs.cpp_FUN_00424c70
+// Original: core_bugs.cpp_factoryFunc_FUN_00424c70
 // Address: 00424c70
-undefined FUN_00424c70();
+CBugs * factoryFunc(void);
 
 // Original: core_bugs.cpp_FUN_00424ca0
 // Address: 00424ca0

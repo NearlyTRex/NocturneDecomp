@@ -5,15 +5,15 @@
 
 // Original: core_stone.cpp_staticInit_FUN_005baca0
 // Address: 005baca0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_stone.cpp_FUN_005bacd0
+// Original: core_stone.cpp_factoryFunc_FUN_005bacd0
 // Address: 005bacd0
-undefined FUN_005bacd0();
+CTempleStone * factoryFunc(void);
 
-// Original: core_stone.cpp_FUN_005bad00
+// Original: core_stone.cpp_CTempleStone_getActorType_FUN_005bad00
 // Address: 005bad00
-undefined FUN_005bad00();
+CDemonActorType * CTempleStone::getActorType(CTempleStone * this_ptr);
 
 // Original: core_stone.cpp_CTempleStone_ctor_FUN_005bad10
 // Address: 005bad10

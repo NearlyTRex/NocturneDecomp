@@ -5,19 +5,19 @@
 
 // Original: core_conveyor.cpp_staticInit_FUN_00441c30
 // Address: 00441c30
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_conveyor.cpp_FUN_00441c60
+// Original: core_conveyor.cpp_factoryFunc_FUN_00441c60
 // Address: 00441c60
-undefined FUN_00441c60();
+CConveyor * factoryFunc(void);
 
 // Original: core_conveyor.cpp_FUN_00441c90
 // Address: 00441c90
 undefined FUN_00441c90();
 
-// Original: core_conveyor.cpp_ctor_FUN_00441ca0
+// Original: core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0
 // Address: 00441ca0
-CConveyor * ctor(CConveyor * this_ptr);
+CConveyor * CConveyor::ctor(CConveyor * this_ptr);
 
 // Original: core_conveyor.cpp_FUN_00441d60
 // Address: 00441d60
@@ -67,9 +67,9 @@ undefined FUN_004422f0();
 // Address: 00442310
 CConveyor * dtor(CConveyor * this_ptr, uint d1, uint d2, uint d3);
 
-// Original: core_conveyor.cpp_FUN_00442380
+// Original: core_conveyor.cpp_CPlatform_dtor_FUN_00442380
 // Address: 00442380
-CPlatform * FUN_00442380(CPlatform * this_ptr, uint d1, uint d2, uint d3);
+CPlatform * CPlatform::dtor(CPlatform * this_ptr, uint d1, uint d2, uint d3);
 
 // Original: core_conveyor.cpp_FUN_004423f0
 // Address: 004423f0

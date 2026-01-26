@@ -60,6 +60,12 @@ extern int g_CheatSystemEnabled;
 extern int g_CheatFlags;
 extern int g_DebugRecording;
 extern int g_ProfileStartTime;
+extern int INT_02d832a8;
+extern int INT_02d832ac;
+extern int INT_02d832b0;
+extern int INT_02d832b4;
+extern int INT_02d832b8;
+extern int INT_02d832bc;
 
 // undefined1
 extern undefined1 DAT_02d82c81;

@@ -7,17 +7,17 @@
 // Address: 00501620
 void staticInit(void);
 
-// Original: core_keyactor.cpp_FUN_00501650
+// Original: core_keyactor.cpp_factoryFunc_FUN_00501650
 // Address: 00501650
-undefined FUN_00501650();
+CKeyActor factoryFunc(void);
 
-// Original: core_keyactor.cpp_FUN_00501680
+// Original: core_keyactor.cpp_CKeyActor_getActorType_FUN_00501680
 // Address: 00501680
-undefined FUN_00501680();
+CDemonActorType * CKeyActor::getActorType(CKeyActor * this_ptr);
 
-// Original: core_keyactor.cpp_FUN_00501690
+// Original: core_keyactor.cpp_CKeyActor_ctor_FUN_00501690
 // Address: 00501690
-undefined FUN_00501690();
+CKeyActor * CKeyActor::ctor(CKeyActor * this_ptr);
 
 // Original: core_keyactor.cpp_FUN_005016f0
 // Address: 005016f0
@@ -59,6 +59,6 @@ undefined FUN_00501940();
 // Address: 00501990
 undefined FUN_00501990();
 
-// Original: core_keyactor.cpp_FUN_005019b0
+// Original: core_keyactor.cpp_CKeyActor_dtor_FUN_005019b0
 // Address: 005019b0
-undefined FUN_005019b0();
+CKeyActor * CKeyActor::dtor(CKeyActor * this_ptr, uint d1);

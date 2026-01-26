@@ -5,7 +5,7 @@
 
 // Original: core_zombie.cpp_staticInit_FUN_005f8c90
 // Address: 005f8c90
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_zombie.cpp_FUN_005f8cc0
 // Address: 005f8cc0
@@ -23,9 +23,9 @@ undefined FUN_005f8da0();
 // Address: 005f8e50
 undefined CZombie();
 
-// Original: core_zombie.cpp_FUN_005f8fa0
+// Original: core_zombie.cpp_factoryFunc_FUN_005f8fa0
 // Address: 005f8fa0
-undefined FUN_005f8fa0();
+CZombie * factoryFunc(void);
 
 // Original: core_zombie.cpp_CZombie_getActorType_FUN_005f8fd0
 // Address: 005f8fd0

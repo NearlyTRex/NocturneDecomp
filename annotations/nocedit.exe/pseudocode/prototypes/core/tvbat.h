@@ -5,11 +5,11 @@
 
 // Original: core_tvbat.cpp_staticInit_FUN_005e3e50
 // Address: 005e3e50
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_tvbat.cpp_FUN_005e3e80
+// Original: core_tvbat.cpp_factoryFunc_FUN_005e3e80
 // Address: 005e3e80
-undefined FUN_005e3e80();
+CTVBat * factoryFunc(void);
 
 // Original: core_tvbat.cpp_CTVBat_getActorType_FUN_005e3eb0
 // Address: 005e3eb0
@@ -17,7 +17,7 @@ CDemonActorType * CTVBat::getActorType(CTVBat * this_ptr);
 
 // Original: core_tvbat.cpp_FUN_005e3ec0
 // Address: 005e3ec0
-undefined FUN_005e3ec0();
+float FUN_005e3ec0(float param_1);
 
 // Original: core_tvbat.cpp_CTVBat_ctor_FUN_005e3ef0
 // Address: 005e3ef0

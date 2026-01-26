@@ -5,11 +5,11 @@
 
 // Original: core_batcreat.cpp_staticInit_FUN_00415080
 // Address: 00415080
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_batcreat.cpp_constructor_FUN_004150b0
+// Original: core_batcreat.cpp_factoryFunc_FUN_004150b0
 // Address: 004150b0
-undefined constructor();
+CBatCreature * factoryFunc(void);
 
 // Original: core_batcreat.cpp_CBatCreature_getActorType_FUN_004150e0
 // Address: 004150e0

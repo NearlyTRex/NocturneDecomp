@@ -5,11 +5,11 @@
 
 // Original: core_tommygun.cpp_staticInit_FUN_005dda20
 // Address: 005dda20
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_tommygun.cpp_FUN_005dda50
+// Original: core_tommygun.cpp_factoryFunc_FUN_005dda50
 // Address: 005dda50
-undefined FUN_005dda50();
+CTommyGun * factoryFunc(void);
 
 // Original: core_tommygun.cpp_CTommyGun_getActorType_FUN_005dda80
 // Address: 005dda80

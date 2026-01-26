@@ -5,15 +5,15 @@
 
 // Original: core_passngr.cpp_staticInit_FUN_00545ac0
 // Address: 00545ac0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_passngr.cpp_FUN_00545af0
+// Original: core_passngr.cpp_factoryFunc_FUN_00545af0
 // Address: 00545af0
-undefined FUN_00545af0();
+CPassenger * factoryFunc(void);
 
-// Original: core_passngr.cpp_FUN_00545b20
+// Original: core_passngr.cpp_CPassenger_getActorType_FUN_00545b20
 // Address: 00545b20
-undefined FUN_00545b20();
+CDemonActorType * CPassenger::getActorType(CPassenger * this_ptr);
 
 // Original: core_passngr.cpp_CPassenger_ctor_FUN_00545b30
 // Address: 00545b30

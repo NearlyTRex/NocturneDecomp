@@ -5,15 +5,15 @@
 
 // Original: core_moloch.cpp_staticInit_FUN_00528ac0
 // Address: 00528ac0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_moloch.cpp_FUN_00528af0
+// Original: core_moloch.cpp_factoryFunc_FUN_00528af0
 // Address: 00528af0
-undefined FUN_00528af0();
+CMoloch * factoryFunc(void);
 
-// Original: core_moloch.cpp_FUN_00528b20
+// Original: core_moloch.cpp_CMoloch_getActorType_FUN_00528b20
 // Address: 00528b20
-undefined FUN_00528b20();
+CDemonActorType * CMoloch::getActorType(CMoloch * this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_ctor_FUN_00528b30
 // Address: 00528b30

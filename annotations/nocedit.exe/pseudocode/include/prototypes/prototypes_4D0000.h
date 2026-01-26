@@ -4,7 +4,6 @@
 #include "system/basetypes.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDeformableModelInstance.h"
-#include "types/classes/CDemonActorType.h"
 #include "types/classes/CFrankenstienMachine.h"
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"
@@ -31,10 +30,10 @@ uint __cdecl engine_font_cpp_packPixelNative_FUN_004d1170(int red, int green, in
 void __cdecl engine_3d_c_addPolygonEdge_FUN_004d11c0(SRenderVertex * vertex1, SRenderVertex * vertex2);
 SHardwareEdge * __cdecl engine_3d_c_findHardwareEdgeByYMin_FUN_004d1300(int y_min, SHardwareEdge * exclude_edge);
 void __cdecl engine_3d_c_rasterizePolygon_FUN_004d1340(SRenderVertex * * vertices, int vertex_count);
-CDemonActorType * __cdecl core_frankgen_cpp_staticInit_FUN_004d16b0(void);
-undefined __unknown core_frankgen_cpp_FUN_004d16e0();
+void __cdecl core_frankgen_cpp_staticInit_FUN_004d16b0(void);
+CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFunc_FUN_004d16e0(void);
 undefined __unknown core_frankgen_cpp_FUN_004d1710();
-CFrankenstienMachine * __cdecl core_frankgen_cpp_FUN_004d1720(CFrankenstienMachine * this_ptr);
+CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004d1720(CFrankenstienMachine * this_ptr);
 undefined __unknown core_frankgen_cpp_FUN_004d17b0();
 undefined __unknown core_frankgen_cpp_CFrankenstienMachine_load_FUN_004d19e0();
 undefined __unknown core_frankgen_cpp_PlaySounds_FUN_004d1a40();
@@ -54,14 +53,14 @@ undefined __unknown core_frankgen_cpp_FUN_004d2740();
 undefined __unknown core_frankgen_cpp_FUN_004d2770();
 undefined __unknown core_frankgen_cpp_FUN_004d2880();
 undefined __unknown core_frankgen_cpp_FUN_004d2890();
-CFrankenstienMachine * __cdecl core_frankgen_cpp_FUN_004d28a0(CFrankenstienMachine * this_ptr, uint d1, uint d2, uint d3);
-CDemonActorType * __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void);
+CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine * this_ptr, uint d1, uint d2, uint d3);
+void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void);
 undefined __unknown core_gabriela_cpp_FUN_004d29f0();
 undefined __unknown core_gabriela_cpp_FUN_004d2a30();
 float __cdecl core_gabriela_cpp_FUN_004d2a80(int current_bone_index, int target_bone_index, float blend_weight, int hierarchy_distance, CDeformableModelInstance * instance);
-undefined __unknown core_gabriela_cpp_FUN_004d2ae0();
+CGabriella * __cdecl core_gabriela_cpp_factoryFunc_FUN_004d2ae0(void);
 undefined __unknown core_gabriela_cpp_FUN_004d2b10();
-CGabriella * __cdecl core_gabriela_cpp_constructorMaybe_FUN_004d2b20(CGabriella * this_ptr);
+CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004d2b20(CGabriella * this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella * this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella * this_ptr, float delta_time);
 undefined __unknown core_gabriela_cpp_FUN_004d4190();

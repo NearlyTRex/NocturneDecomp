@@ -5,11 +5,11 @@
 
 // Original: core_werewolf.cpp_staticInit_FUN_005efb70
 // Address: 005efb70
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_werewolf.cpp_FUN_005efbd0
+// Original: core_werewolf.cpp_factoryFunc_FUN_005efbd0
 // Address: 005efbd0
-undefined FUN_005efbd0();
+CWerewolf * factoryFunc(void);
 
 // Original: core_werewolf.cpp_CWerewolf_getActorType_FUN_005efc00
 // Address: 005efc00

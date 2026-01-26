@@ -8,7 +8,6 @@
 #include "types/classes/CClothList.h"
 #include "types/classes/CCodec.h"
 #include "types/classes/CColonel.h"
-#include "types/classes/CDemonActorType.h"
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
@@ -219,8 +218,8 @@ int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDeco
 int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_0043f690(CLZWDecompress * this_ptr);
 CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress * this_ptr, uint d1, uint d2, uint d3);
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress * this_ptr, uint d1, uint d2, uint d3, uint d4);
-CDemonActorType * __cdecl core_colonel_cpp_staticInit_FUN_0043f770(void);
-undefined __unknown core_colonel_cpp_FUN_0043f7a0();
+void __cdecl core_colonel_cpp_staticInit_FUN_0043f770(void);
+CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_0043f7a0(void);
 undefined __unknown core_colonel_cpp_FUN_0043f7d0();
 CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel * this_ptr);
 undefined __unknown core_colonel_cpp_FUN_0043f850();

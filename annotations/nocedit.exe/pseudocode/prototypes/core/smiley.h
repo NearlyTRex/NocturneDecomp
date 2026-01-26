@@ -5,15 +5,15 @@
 
 // Original: core_smiley.cpp_staticInit_FUN_005a23c0
 // Address: 005a23c0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_smiley.cpp_FUN_005a23f0
+// Original: core_smiley.cpp_factorFunc_FUN_005a23f0
 // Address: 005a23f0
-undefined FUN_005a23f0();
+CSmiley * factorFunc(void);
 
-// Original: core_smiley.cpp_FUN_005a2420
+// Original: core_smiley.cpp_CSmiley_getActorType_FUN_005a2420
 // Address: 005a2420
-undefined FUN_005a2420();
+CDemonActorType * CSmiley::getActorType(CSmiley * this_ptr);
 
 // Original: core_smiley.cpp_CSmiley_ctor_FUN_005a2430
 // Address: 005a2430

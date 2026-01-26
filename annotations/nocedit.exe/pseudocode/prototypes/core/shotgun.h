@@ -5,15 +5,15 @@
 
 // Original: core_shotgun.cpp_staticInit_FUN_00587e70
 // Address: 00587e70
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_shotgun.cpp_FUN_00587ea0
+// Original: core_shotgun.cpp_factoryFunc_FUN_00587ea0
 // Address: 00587ea0
-undefined FUN_00587ea0();
+CShotgun * factoryFunc(void);
 
-// Original: core_shotgun.cpp_FUN_00587ed0
+// Original: core_shotgun.cpp_CShotgun_getActorType_FUN_00587ed0
 // Address: 00587ed0
-undefined FUN_00587ed0();
+CDemonActorType * CShotgun::getActorType(CShotgun * this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_ctor_FUN_00587ee0
 // Address: 00587ee0

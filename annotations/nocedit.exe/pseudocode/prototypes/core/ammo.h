@@ -7,9 +7,9 @@
 // Address: 00410d50
 void staticInit(void);
 
-// Original: core_ammo.cpp_CAmmo_factoryFunc_FUN_00410d80
+// Original: core_ammo.cpp_factoryFunc_FUN_00410d80
 // Address: 00410d80
-CAmmo * CAmmo::factoryFunc(void);
+CAmmo * factoryFunc(void);
 
 // Original: core_ammo.cpp_CAmmo_getActorType_FUN_00410db0
 // Address: 00410db0
@@ -41,7 +41,7 @@ void CAmmo::serialize(CAmmo * this_ptr);
 
 // Original: core_ammo.cpp_CAmmo_hasCollision_FUN_00410fa0
 // Address: 00410fa0
-int CAmmo::hasCollision(CAmmo * this_ptr);
+int CAmmo::hasCollision(CAmmo * this_ptr, SCollisionInfo * collision_info);
 
 // Original: core_ammo.cpp_CAmmo_FUN_00410fd0
 // Address: 00410fd0

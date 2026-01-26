@@ -5,19 +5,19 @@
 
 // Original: core_drip.cpp_staticInit_FUN_0048df80
 // Address: 0048df80
-CKeyFramedModelInstance * staticInit(void);
+void staticInit(void);
 
-// Original: core_drip.cpp_FUN_0048dfc0
+// Original: core_drip.cpp_factoryFunc_FUN_0048dfc0
 // Address: 0048dfc0
-undefined FUN_0048dfc0();
+CDrip * factoryFunc(void);
 
 // Original: core_drip.cpp_FUN_0048dff0
 // Address: 0048dff0
 undefined FUN_0048dff0();
 
-// Original: core_drip.cpp_ctor_FUN_0048e000
+// Original: core_drip.cpp_CDrip_ctor_FUN_0048e000
 // Address: 0048e000
-CDrip * ctor(CDrip * this_ptr);
+CDrip * CDrip::ctor(CDrip * this_ptr);
 
 // Original: core_drip.cpp_FUN_0048e0e0
 // Address: 0048e0e0

@@ -5,11 +5,11 @@
 
 // Original: core_tbplayer.cpp_staticInit_FUN_005d9fd0
 // Address: 005d9fd0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_tbplayer.cpp_FUN_005da020
+// Original: core_tbplayer.cpp_factoryFunc_FUN_005da020
 // Address: 005da020
-undefined FUN_005da020();
+CBassPlayer * factoryFunc(void);
 
 // Original: core_tbplayer.cpp_CBassPlayer_getActorType_FUN_005da050
 // Address: 005da050
@@ -35,9 +35,9 @@ undefined FUN_005da120();
 // Address: 005da240
 undefined FUN_005da240();
 
-// Original: core_tbplayer.cpp_FUN_005da280
+// Original: core_tbplayer.cpp_factoryFunc_FUN_005da280
 // Address: 005da280
-undefined FUN_005da280();
+CDrummer * factoryFunc(void);
 
 // Original: core_tbplayer.cpp_CDrummer_getActorType_FUN_005da2b0
 // Address: 005da2b0

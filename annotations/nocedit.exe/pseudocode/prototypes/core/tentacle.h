@@ -5,11 +5,11 @@
 
 // Original: core_tentacle.cpp_staticInit_FUN_005daef0
 // Address: 005daef0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_tentacle.cpp_FUN_005daf20
+// Original: core_tentacle.cpp_factoryFunc_FUN_005daf20
 // Address: 005daf20
-undefined FUN_005daf20();
+CTentacle * factoryFunc(void);
 
 // Original: core_tentacle.cpp_CTentacle_getActorType_FUN_005daf50
 // Address: 005daf50

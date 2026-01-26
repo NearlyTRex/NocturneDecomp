@@ -5,19 +5,19 @@
 
 // Original: core_lightgun.cpp_staticInit_FUN_00505890
 // Address: 00505890
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_lightgun.cpp_FUN_005058c0
+// Original: core_lightgun.cpp_factoryFunc_FUN_005058c0
 // Address: 005058c0
-undefined FUN_005058c0();
+CLightGun * factoryFunc(void);
 
-// Original: core_lightgun.cpp_FUN_005058f0
+// Original: core_lightgun.cpp_CLightGun_getActorType_FUN_005058f0
 // Address: 005058f0
-undefined FUN_005058f0();
+CDemonActorType * CLightGun::getActorType(CLightGun * this_ptr);
 
-// Original: core_lightgun.cpp_FUN_00505900
+// Original: core_lightgun.cpp_CLightGun_ctor_FUN_00505900
 // Address: 00505900
-CLightGun * FUN_00505900(CLightGun * this_ptr);
+CLightGun * CLightGun::ctor(CLightGun * this_ptr);
 
 // Original: core_lightgun.cpp_FUN_005059c0
 // Address: 005059c0
@@ -55,6 +55,6 @@ undefined FUN_005066b0();
 // Address: 005066f0
 undefined FUN_005066f0();
 
-// Original: core_lightgun.cpp_FUN_00506a50
+// Original: core_lightgun.cpp_CLightGun_dtor_FUN_00506a50
 // Address: 00506a50
-CLightGun * FUN_00506a50(CLightGun * this_ptr, uint d1, uint d2);
+CLightGun * CLightGun::dtor(CLightGun * this_ptr, uint d1, uint d2);

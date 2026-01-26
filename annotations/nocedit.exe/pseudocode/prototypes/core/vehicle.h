@@ -5,7 +5,7 @@
 
 // Original: core_vehicle.cpp_staticInit_FUN_005e7810
 // Address: 005e7810
-undefined staticInit();
+void staticInit(void);
 
 // Original: core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 // Address: 005e7830
@@ -13,11 +13,11 @@ CVector3f * convertDirectionVectorToEulerAngles(CVector3f * out_euler_angles, CV
 
 // Original: core_vehicle.cpp_staticInit_FUN_005e78d0
 // Address: 005e78d0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_vehicle.cpp_FUN_005e7900
+// Original: core_vehicle.cpp_factoryFunc_FUN_005e7900
 // Address: 005e7900
-undefined FUN_005e7900();
+CVehicle * factoryFunc(void);
 
 // Original: core_vehicle.cpp_CVehicle_getActorType_FUN_005e7930
 // Address: 005e7930

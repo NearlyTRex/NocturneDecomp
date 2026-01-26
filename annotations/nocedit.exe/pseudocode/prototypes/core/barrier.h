@@ -5,11 +5,11 @@
 
 // Original: core_barrier.cpp_staticInit_FUN_00414150
 // Address: 00414150
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_barrier.cpp_constructor_FUN_00414180
+// Original: core_barrier.cpp_factoryFunc_FUN_00414180
 // Address: 00414180
-undefined constructor();
+CBarrier * factoryFunc(void);
 
 // Original: core_barrier.cpp_CBarrier_getActorType_FUN_004141b0
 // Address: 004141b0

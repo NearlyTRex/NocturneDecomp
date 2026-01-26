@@ -5,19 +5,19 @@
 
 // Original: core_mimic.cpp_staticInit_FUN_0051f100
 // Address: 0051f100
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_mimic.cpp_FUN_0051f130
 // Address: 0051f130
 undefined FUN_0051f130();
 
-// Original: core_mimic.cpp_FUN_0051f190
+// Original: core_mimic.cpp_factoryFunc_FUN_0051f190
 // Address: 0051f190
-undefined FUN_0051f190();
+CMimic * factoryFunc(void);
 
-// Original: core_mimic.cpp_FUN_0051f1c0
+// Original: core_mimic.cpp_CMimic_getActorType_FUN_0051f1c0
 // Address: 0051f1c0
-undefined FUN_0051f1c0();
+CDemonActorType * CMimic::getActorType(CMimic * this_ptr);
 
 // Original: core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
 // Address: 0051f1d0

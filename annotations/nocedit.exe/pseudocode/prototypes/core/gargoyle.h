@@ -5,19 +5,19 @@
 
 // Original: core_gargoyle.cpp_staticInit_FUN_004e4470
 // Address: 004e4470
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_gargoyle.cpp_FUN_004e44a0
+// Original: core_gargoyle.cpp_factoryFunc_FUN_004e44a0
 // Address: 004e44a0
-undefined FUN_004e44a0();
+CGargoyle * factoryFunc(void);
 
 // Original: core_gargoyle.cpp_FUN_004e44d0
 // Address: 004e44d0
 undefined FUN_004e44d0();
 
-// Original: core_gargoyle.cpp_FUN_004e44e0
+// Original: core_gargoyle.cpp_CGargoyle_ctor_FUN_004e44e0
 // Address: 004e44e0
-CGargoyle * FUN_004e44e0(CGargoyle * this_ptr);
+CGargoyle * CGargoyle::ctor(CGargoyle * this_ptr);
 
 // Original: core_gargoyle.cpp_CGargoyle_FUN_004e45e0
 // Address: 004e45e0
@@ -63,6 +63,6 @@ undefined CGargoyle::getPropertyList();
 // Address: 004e5ba0
 undefined FUN_004e5ba0();
 
-// Original: core_gargoyle.cpp_FUN_004e5bd0
+// Original: core_gargoyle.cpp_CGargoyle_dtor_FUN_004e5bd0
 // Address: 004e5bd0
-CGargoyle * FUN_004e5bd0(CGargoyle * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
+CGargoyle * CGargoyle::dtor(CGargoyle * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);

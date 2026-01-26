@@ -5,11 +5,11 @@
 
 // Original: core_succubus.cpp_staticInit_FUN_005c6a10
 // Address: 005c6a10
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_succubus.cpp_FUN_005c6a40
+// Original: core_succubus.cpp_factoryFunc_FUN_005c6a40
 // Address: 005c6a40
-undefined FUN_005c6a40();
+CSuccubus * factoryFunc(void);
 
 // Original: core_succubus.cpp_CSuccubus_getActorType_FUN_005c6a70
 // Address: 005c6a70

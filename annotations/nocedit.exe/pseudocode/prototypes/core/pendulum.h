@@ -5,15 +5,15 @@
 
 // Original: core_pendulum.cpp_staticInit_FUN_00549320
 // Address: 00549320
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_pendulum.cpp_FUN_00549350
+// Original: core_pendulum.cpp_factoryFunc_FUN_00549350
 // Address: 00549350
-undefined FUN_00549350();
+CPendulum * factoryFunc(void);
 
-// Original: core_pendulum.cpp_FUN_00549380
+// Original: core_pendulum.cpp_CPendulum_getActorType_FUN_00549380
 // Address: 00549380
-undefined FUN_00549380();
+CDemonActorType * CPendulum::getActorType(CPendulum * this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_ctor_FUN_00549390
 // Address: 00549390

@@ -5,7 +5,7 @@
 
 // Original: core_stranger.cpp_staticInit_FUN_005bae80
 // Address: 005bae80
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_stranger.cpp_FUN_005baee0
 // Address: 005baee0
@@ -51,9 +51,9 @@ undefined FUN_005bafe0();
 // Address: 005bb010
 undefined FUN_005bb010();
 
-// Original: core_stranger.cpp_FUN_005bb0e0
+// Original: core_stranger.cpp_factoryFunc_FUN_005bb0e0
 // Address: 005bb0e0
-undefined FUN_005bb0e0();
+CStranger * factoryFunc(void);
 
 // Original: core_stranger.cpp_CStranger_getActorType_FUN_005bb110
 // Address: 005bb110

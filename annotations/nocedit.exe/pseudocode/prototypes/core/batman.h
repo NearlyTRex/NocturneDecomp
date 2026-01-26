@@ -5,11 +5,11 @@
 
 // Original: core_batman.cpp_staticInit_FUN_004163e0
 // Address: 004163e0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_batman.cpp_FUN_00416410
+// Original: core_batman.cpp_factoryFunc_FUN_00416410
 // Address: 00416410
-undefined FUN_00416410();
+CBatman * factoryFunc(void);
 
 // Original: core_batman.cpp_CBatman_getActorType_FUN_00416440
 // Address: 00416440

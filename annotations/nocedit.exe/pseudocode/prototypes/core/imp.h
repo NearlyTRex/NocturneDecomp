@@ -5,11 +5,11 @@
 
 // Original: core_imp.cpp_staticInit_FUN_004f9830
 // Address: 004f9830
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_imp.cpp_FUN_004f9860
+// Original: core_imp.cpp_factoryFunc_FUN_004f9860
 // Address: 004f9860
-undefined FUN_004f9860();
+CImp * factoryFunc(void);
 
 // Original: core_imp.cpp_FUN_004f9890
 // Address: 004f9890
@@ -67,6 +67,6 @@ undefined FUN_004fb110();
 // Address: 004fb150
 undefined FUN_004fb150();
 
-// Original: core_imp.cpp_FUN_004fb180
+// Original: core_imp.cpp_CImp_dtor_FUN_004fb180
 // Address: 004fb180
-CImp * FUN_004fb180(CImp * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
+CImp * CImp::dtor(CImp * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);

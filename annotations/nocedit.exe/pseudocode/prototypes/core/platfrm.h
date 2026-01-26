@@ -5,19 +5,19 @@
 
 // Original: core_platfrm.cpp_staticInit_FUN_0054c7e0
 // Address: 0054c7e0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_platfrm.cpp_FUN_0054c810
+// Original: core_platfrm.cpp_factoryFunc_FUN_0054c810
 // Address: 0054c810
-undefined FUN_0054c810();
+CPlatform * factoryFunc(void);
 
-// Original: core_platfrm.cpp_FUN_0054c840
+// Original: core_platfrm.cpp_CPlatform_getActorType_FUN_0054c840
 // Address: 0054c840
-undefined FUN_0054c840();
+CDemonActorType * CPlatform::getActorType(CPlatform * this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0054c850
+// Original: core_platfrm.cpp_CPlatform_ctor_FUN_0054c850
 // Address: 0054c850
-CPlatform * FUN_0054c850(CPlatform * this_ptr);
+CPlatform * CPlatform::ctor(CPlatform * this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20
 // Address: 0054ca20

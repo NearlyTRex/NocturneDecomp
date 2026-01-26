@@ -5,19 +5,19 @@
 
 // Original: core_crossbow.cpp_staticInit_FUN_00448c00
 // Address: 00448c00
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_crossbow.cpp_FUN_00448c30
+// Original: core_crossbow.cpp_factoryFunc_FUN_00448c30
 // Address: 00448c30
-undefined FUN_00448c30();
+CCrossbow * factoryFunc(void);
 
 // Original: core_crossbow.cpp_CCrossbow_getActorType_FUN_00448c60
 // Address: 00448c60
 CDemonActorType * CCrossbow::getActorType(CCrossbow * this_ptr);
 
-// Original: core_crossbow.cpp_FUN_00448c70
+// Original: core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70
 // Address: 00448c70
-CCrossbow * FUN_00448c70(CCrossbow * this_ptr);
+CCrossbow * CCrossbow::ctor(CCrossbow * this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_process_FUN_00448d30
 // Address: 00448d30

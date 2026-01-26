@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CEdCheck.h"
+#include "types/classes/CNetGame.h"
 #include "types/structs/SChatHistory.h"
 
 // =============================================================================
@@ -11,6 +12,9 @@
 
 // CEdCheck
 extern CEdCheck g_CEdCheckInstance;
+
+// CNetGame
+extern CNetGame g_CNetGameInstance;
 
 // SChatHistory[400]
 extern SChatHistory g_ChatHistory[400];
@@ -37,15 +41,6 @@ extern undefined4 DAT_02f7c530;
 extern undefined4 DAT_02f7c538;
 extern undefined4 DAT_02f7c53c;
 extern undefined4 DAT_02f7c634;
-extern undefined4 DAT_02f7c740;
-extern undefined4 DAT_02f7c744;
-extern undefined4 DAT_02f7c75c;
-extern undefined4 DAT_02f7c774;
-extern undefined4 DAT_02f7c778;
-extern undefined4 DAT_02f7c7ec;
-extern undefined4 DAT_02f7c854;
-extern undefined4 DAT_02f7c8a8;
-extern undefined4 DAT_02f7c8ac;
 extern undefined4 DAT_02f7c8bc;
 extern undefined4 DAT_02f7c8c4;
 extern undefined4 DAT_02f7c8c8;

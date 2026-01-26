@@ -5,11 +5,11 @@
 
 // Original: core_armour.cpp_staticInit_FUN_00412130
 // Address: 00412130
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_armour.cpp_constructor_FUN_00412160
+// Original: core_armour.cpp_factoryFunc_FUN_00412160
 // Address: 00412160
-undefined constructor();
+CArmour * factoryFunc(void);
 
 // Original: core_armour.cpp_CArmour_getActorType_FUN_00412190
 // Address: 00412190

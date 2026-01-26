@@ -5,7 +5,7 @@
 
 // Original: core_mobster.cpp_staticInit_FUN_00525070
 // Address: 00525070
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_mobster.cpp_FUN_005250a0
 // Address: 005250a0
@@ -15,13 +15,13 @@ undefined FUN_005250a0();
 // Address: 00525110
 undefined FUN_00525110();
 
-// Original: core_mobster.cpp_FUN_005251c0
+// Original: core_mobster.cpp_factoryFunc_FUN_005251c0
 // Address: 005251c0
-undefined FUN_005251c0();
+CMobster * factoryFunc(void);
 
-// Original: core_mobster.cpp_FUN_005251f0
+// Original: core_mobster.cpp_CMobster_getActorType_FUN_005251f0
 // Address: 005251f0
-undefined FUN_005251f0();
+CDemonActorType * CMobster::getActorType(CMobster * this_ptr);
 
 // Original: core_mobster.cpp_CMobster_ctor_FUN_00525200
 // Address: 00525200

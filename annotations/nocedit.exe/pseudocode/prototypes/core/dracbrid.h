@@ -7,17 +7,17 @@
 // Address: 00483ef0
 void staticInit(void);
 
-// Original: core_dracbrid.cpp_FUN_00483f80
+// Original: core_dracbrid.cpp_factoryFunc_FUN_00483f80
 // Address: 00483f80
-undefined FUN_00483f80();
+CDraculaBride * factoryFunc(void);
 
 // Original: core_dracbrid.cpp_FUN_00483fb0
 // Address: 00483fb0
 undefined FUN_00483fb0();
 
-// Original: core_dracbrid.cpp_ctor_FUN_00483fc0
+// Original: core_dracbrid.cpp_CDraculaBride_ctor_FUN_00483fc0
 // Address: 00483fc0
-CDraculaBride * ctor(CDraculaBride * this_ptr);
+CDraculaBride * CDraculaBride::ctor(CDraculaBride * this_ptr);
 
 // Original: core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0
 // Address: 004840b0

@@ -5,11 +5,11 @@
 
 // Original: core_icepick.cpp_staticInit_FUN_004f7d80
 // Address: 004f7d80
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_icepick.cpp_FUN_004f7db0
+// Original: core_icepick.cpp_factoryFunc_FUN_004f7db0
 // Address: 004f7db0
-undefined FUN_004f7db0();
+CIcePick * factoryFunc(void);
 
 // Original: core_icepick.cpp_FUN_004f7de0
 // Address: 004f7de0
@@ -91,6 +91,6 @@ undefined FUN_004f97a0();
 // Address: 004f97c0
 undefined FUN_004f97c0();
 
-// Original: core_icepick.cpp_FUN_004f97e0
+// Original: core_icepick.cpp_CIcePick_dtor_FUN_004f97e0
 // Address: 004f97e0
-CIcePick * FUN_004f97e0(CIcePick * this_ptr, uint d1, uint d2);
+CIcePick * CIcePick::dtor(CIcePick * this_ptr, uint d1, uint d2);

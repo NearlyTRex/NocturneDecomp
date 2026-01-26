@@ -3,13 +3,14 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
 
 // Structure: CBoxActor
 // Ghidra size: 0x66c (1644 bytes)
 typedef struct CBoxActor {
     CDemonActor base_actor; // 0x0
-    char model_name[380]; // 0x158
+    CKeyFramedModelInstance model; // 0x158
     char loop_wav_name[20]; // 0x2d4
     char collision_wav_name[20]; // 0x2e8
     int field_764; // 0x2fc
@@ -17,7 +18,7 @@ typedef struct CBoxActor {
     float fps; // 0x30c
     int field_784; // 0x310
     int pickup_type; // 0x314
-    int carried_by_actor; // 0x318
+    struct CDemonActor* carrier_actor; // 0x318
     int can_be_pushed; // 0x31c
     int pushed_by_actor; // 0x320
     int constrain_extents_actor; // 0x324

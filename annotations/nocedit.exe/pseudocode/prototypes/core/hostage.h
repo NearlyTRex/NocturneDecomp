@@ -5,11 +5,11 @@
 
 // Original: core_hostage.cpp_staticInit_FUN_004f47d0
 // Address: 004f47d0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_hostage.cpp_FUN_004f4800
+// Original: core_hostage.cpp_factoryFunc_FUN_004f4800
 // Address: 004f4800
-undefined FUN_004f4800();
+CHostage * factoryFunc(void);
 
 // Original: core_hostage.cpp_FUN_004f4830
 // Address: 004f4830
@@ -71,6 +71,6 @@ undefined FUN_004f69c0();
 // Address: 004f6b30
 undefined FUN_004f6b30();
 
-// Original: core_hostage.cpp_FUN_004f6b60
+// Original: core_hostage.cpp_CHostage_dtor_FUN_004f6b60
 // Address: 004f6b60
-CHostage * FUN_004f6b60(CHostage * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9);
+CHostage * CHostage::dtor(CHostage * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9);

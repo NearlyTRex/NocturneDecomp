@@ -5,11 +5,11 @@
 
 // Original: core_beast.cpp_staticInit_FUN_004181b0
 // Address: 004181b0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_beast.cpp_constructor_FUN_004181e0
+// Original: core_beast.cpp_factoryFunc_FUN_004181e0
 // Address: 004181e0
-undefined constructor();
+CBeast * factoryFunc(void);
 
 // Original: core_beast.cpp_FUN_00418210
 // Address: 00418210

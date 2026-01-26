@@ -6,13 +6,13 @@
 // Structure: CWeapon_vtable
 // Ghidra size: 0x20 (32 bytes)
 typedef struct CWeapon_vtable {
-    void* field_0; // 0x0
-    void* field_4; // 0x4
-    void* field_8; // 0x8
-    void* field_12; // 0xc
-    void* field_16; // 0x10
-    void* field_20; // 0x14
-    void* field_24; // 0x18
-    void* field_28; // 0x1c
+    void* bfunc1; // 0x0
+    void* bfunc2; // 0x4
+    void* bfunc3; // 0x8
+    void* bfunc4; // 0xc
+    void* bfunc5; // 0x10
+    void* bfunc6; // 0x14
+    void* bfunc7; // 0x18
+    void* bfunc8; // 0x1c
 } CWeapon_vtable;
 

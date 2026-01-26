@@ -32,7 +32,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_005
 void __cdecl core_skeledit_cpp_FUN_00598f10(void);
 undefined __unknown core_skeledit_cpp_viewModel_FUN_00598fc0();
 undefined __unknown core_skeledit_cpp_FUN_00599480();
-CLodVert * __cdecl core_skeledit_cpp_LodVert_copy_FUN_00599550(void * n1, void * n2, CLodVert * other2, CLodVert * other3);
+CLodVert * __cdecl core_skeledit_cpp_CLodVert_copy_FUN_00599550(CLodVert * this_ptr, CLodVert * other);
 CLodVert * __cdecl core_skeledit_cpp_LodVert_dtor_FUN_005995c0(CLodVert * this_ptr, CLodVert * other, CLodVert * other2);
 undefined __unknown core_skeledit_cpp_FUN_005995d0();
 undefined __unknown core_skeledit_cpp_FUN_00599630();

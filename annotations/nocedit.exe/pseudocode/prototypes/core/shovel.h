@@ -5,15 +5,15 @@
 
 // Original: core_shovel.cpp_staticInit_FUN_00588b30
 // Address: 00588b30
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_shovel.cpp_FUN_00588b60
+// Original: core_shovel.cpp_factoryFunc_FUN_00588b60
 // Address: 00588b60
-undefined FUN_00588b60();
+CShovel * factoryFunc(void);
 
-// Original: core_shovel.cpp_FUN_00588b90
+// Original: core_shovel.cpp_CShovel_getActorType_FUN_00588b90
 // Address: 00588b90
-undefined FUN_00588b90();
+CDemonActorType * CShovel::getActorType(CShovel * this_ptr);
 
 // Original: core_shovel.cpp_CShovel_ctor_FUN_00588ba0
 // Address: 00588ba0

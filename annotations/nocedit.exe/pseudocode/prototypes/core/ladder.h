@@ -5,19 +5,19 @@
 
 // Original: core_ladder.cpp_staticInit_FUN_005024d0
 // Address: 005024d0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_ladder.cpp_FUN_00502500
+// Original: core_ladder.cpp_factoryFunc_FUN_00502500
 // Address: 00502500
-undefined FUN_00502500();
+CLadder * factoryFunc(void);
 
 // Original: core_ladder.cpp_CLadder_FUN_00502530
 // Address: 00502530
 CDemonActorType * CLadder(CLadder * this_ptr);
 
-// Original: core_ladder.cpp_FUN_00502540
+// Original: core_ladder.cpp_CLadder_ctor_FUN_00502540
 // Address: 00502540
-CLadder * FUN_00502540(CLadder * this_ptr);
+CLadder * CLadder::ctor(CLadder * this_ptr);
 
 // Original: core_ladder.cpp_CLadder_FUN_005025f0
 // Address: 005025f0

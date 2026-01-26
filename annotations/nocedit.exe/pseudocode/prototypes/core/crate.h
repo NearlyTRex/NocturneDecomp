@@ -5,19 +5,19 @@
 
 // Original: core_crate.cpp_staticInit_FUN_00448460
 // Address: 00448460
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_crate.cpp_FUN_00448490
+// Original: core_crate.cpp_factoryFunc_FUN_00448490
 // Address: 00448490
-undefined FUN_00448490();
+CCrate * factoryFunc(void);
 
 // Original: core_crate.cpp_FUN_004484c0
 // Address: 004484c0
 undefined FUN_004484c0();
 
-// Original: core_crate.cpp_FUN_004484d0
+// Original: core_crate.cpp_CCrate_ctor_FUN_004484d0
 // Address: 004484d0
-CCrate * FUN_004484d0(CCrate * this_ptr);
+CCrate * CCrate::ctor(CCrate * this_ptr);
 
 // Original: core_crate.cpp_FUN_00448530
 // Address: 00448530
@@ -79,6 +79,6 @@ undefined FUN_00448b20();
 // Address: 00448b60
 undefined FUN_00448b60();
 
-// Original: core_crate.cpp_FUN_00448bb0
+// Original: core_crate.cpp_CCrate_dtor_FUN_00448bb0
 // Address: 00448bb0
-CCrate * FUN_00448bb0(CCrate * this_ptr, uint d1, uint d2);
+CCrate * CCrate::dtor(CCrate * this_ptr, uint d1, uint d2);

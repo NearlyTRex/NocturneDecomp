@@ -162,10 +162,10 @@ float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f0a0(float * dest_ptr, float
 float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f0b0(float * dest_ptr, float * src_ptr);
 void __cdecl shape_meshlod_cpp_freeLodFaces_FUN_0051f0c0(CLodFace * * array);
 void __cdecl shape_meshlod_cpp_freeVectors_FUN_0051f0e0(CVector3f * * array);
-CDemonActorType * __cdecl core_mimic_cpp_staticInit_FUN_0051f100(void);
+void __cdecl core_mimic_cpp_staticInit_FUN_0051f100(void);
 undefined __unknown core_mimic_cpp_FUN_0051f130();
-undefined __unknown core_mimic_cpp_FUN_0051f190();
-undefined __unknown core_mimic_cpp_FUN_0051f1c0();
+CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_0051f190(void);
+CDemonActorType * __cdecl core_mimic_cpp_CMimic_getActorType_FUN_0051f1c0(CMimic * this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic * this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic * this_ptr, uint d1);
 undefined __unknown core_mimic_cpp_CMimic_setup_FUN_0051f3e0();

@@ -5,19 +5,19 @@
 
 // Original: core_haystack.cpp_staticInit_FUN_004f0ba0
 // Address: 004f0ba0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_haystack.cpp_FUN_004f0bd0
+// Original: core_haystack.cpp_factoryFunc_FUN_004f0bd0
 // Address: 004f0bd0
-undefined FUN_004f0bd0();
+CHaystack * factoryFunc(void);
 
 // Original: core_haystack.cpp_FUN_004f0c00
 // Address: 004f0c00
 undefined FUN_004f0c00();
 
-// Original: core_haystack.cpp_FUN_004f0c10
+// Original: core_haystack.cpp_CHaystack_ctor_FUN_004f0c10
 // Address: 004f0c10
-CHaystack * FUN_004f0c10(CHaystack * this_ptr);
+CHaystack * CHaystack::ctor(CHaystack * this_ptr);
 
 // Original: core_haystack.cpp_FUN_004f0c80
 // Address: 004f0c80

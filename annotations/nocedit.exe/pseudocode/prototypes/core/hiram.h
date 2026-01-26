@@ -5,11 +5,11 @@
 
 // Original: core_hiram.cpp_staticInit_FUN_004f4380
 // Address: 004f4380
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_hiram.cpp_FUN_004f43b0
+// Original: core_hiram.cpp_getFactoryFunc_FUN_004f43b0
 // Address: 004f43b0
-undefined FUN_004f43b0();
+CHiram * getFactoryFunc(void);
 
 // Original: core_hiram.cpp_FUN_004f43e0
 // Address: 004f43e0
@@ -19,9 +19,9 @@ undefined FUN_004f43e0();
 // Address: 004f43f0
 CHiram * CHiram::ctor(CHiram * this_ptr);
 
-// Original: core_hiram.cpp_FUN_004f4450
+// Original: core_hiram.cpp_CHiram_dtor_FUN_004f4450
 // Address: 004f4450
-CHiram * FUN_004f4450(CHiram * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9);
+CHiram * CHiram::dtor(CHiram * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8, uint d9);
 
 // Original: core_hiram.cpp_FUN_004f4530
 // Address: 004f4530

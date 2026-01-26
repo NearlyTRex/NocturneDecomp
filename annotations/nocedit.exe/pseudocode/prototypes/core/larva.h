@@ -5,11 +5,11 @@
 
 // Original: core_larva.cpp_staticInit_FUN_00502f20
 // Address: 00502f20
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_larva.cpp_FUN_00502f50
+// Original: core_larva.cpp_factoryFunc_FUN_00502f50
 // Address: 00502f50
-undefined FUN_00502f50();
+CLarva * factoryFunc(void);
 
 // Original: core_larva.cpp_FUN_00502f80
 // Address: 00502f80
@@ -51,6 +51,6 @@ undefined FUN_00503c50();
 // Address: 00503c90
 undefined FUN_00503c90();
 
-// Original: core_larva.cpp_FUN_00503cc0
+// Original: core_larva.cpp_CLarva_dtor_FUN_00503cc0
 // Address: 00503cc0
-CDemonActor * FUN_00503cc0(CLarva * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
+CDemonActor * CLarva::dtor(CLarva * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);

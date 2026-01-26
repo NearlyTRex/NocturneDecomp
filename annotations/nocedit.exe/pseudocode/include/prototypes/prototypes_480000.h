@@ -9,7 +9,6 @@
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDSEModel.h"
-#include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPart.h"
 #include "types/classes/CDemonRenderer.h"
 #include "types/classes/CDemonTriangle.h"
@@ -19,7 +18,6 @@
 #include "types/classes/CDrip.h"
 #include "types/classes/CDrone.h"
 #include "types/classes/CFileFinder.h"
-#include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CPackedBitmap.h"
 #include "types/classes/CVector2i.h"
@@ -28,6 +26,7 @@
 #include "types/funcdefs/FileSearchHandler.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
 #include "types/structs/SCameraViewportState.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SEdgeData.h"
 #include "types/structs/SFace.h"
 #include "types/structs/SFoundFileInfo.h"
@@ -49,10 +48,10 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor * this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_004809e0(CDoor * this_ptr, int layer_flag);
 CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00480a50(CDoor * this_ptr, CBoundingBox3D * out_box);
 void __cdecl core_door_cpp_CDoor_serialize_FUN_00480aa0(CDoor * this_ptr);
-int __cdecl core_door_cpp_CDoor_hasCollision_FUN_00480d90(CDoor * this_ptr);
+int __cdecl core_door_cpp_CDoor_hasCollision_FUN_00480d90(CDoor * this_ptr, SCollisionInfo * collision_info);
 int __cdecl core_door_cpp_CDoor_getGroundType_FUN_00480dd0(CDoor * this_ptr);
 void __cdecl core_door_cpp_CDoor_FUN_00480de0(CDoor * this_ptr);
-int __cdecl core_door_cpp_CDoor_FUN_00480df0(CDoor * this_ptr);
+int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00480df0(CDoor * this_ptr);
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00480e00(CDoor * this_ptr);
 float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor * this_ptr);
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00481020(CDoor * this_ptr);
@@ -108,9 +107,9 @@ SEdgeData * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,
 void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int * vertex_indices, int vertex_count);
 void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i * vertex_indices, int vertex_count);
 void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void);
-undefined __unknown core_dracbrid_cpp_FUN_00483f80();
+CDraculaBride * __cdecl core_dracbrid_cpp_factoryFunc_FUN_00483f80(void);
 undefined __unknown core_dracbrid_cpp_FUN_00483fb0();
-CDraculaBride * __cdecl core_dracbrid_cpp_ctor_FUN_00483fc0(CDraculaBride * this_ptr);
+CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDraculaBride * this_ptr);
 undefined __unknown core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0();
 undefined __unknown core_dracbrid_cpp_FUN_00484410();
 undefined __unknown core_dracbrid_cpp_FUN_004858f0();
@@ -311,10 +310,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30(CDemon
 int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRenderer * this_ptr, SRenderVertex * vertex_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0(CDemonRenderer * this_ptr, SCameraViewportState * camera_state);
 void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20(CDemonRenderer * this_ptr, SCameraViewportState * output_state);
-CKeyFramedModelInstance * __cdecl core_drip_cpp_staticInit_FUN_0048df80(void);
-undefined __unknown core_drip_cpp_FUN_0048dfc0();
+void __cdecl core_drip_cpp_staticInit_FUN_0048df80(void);
+CDrip * __cdecl core_drip_cpp_factoryFunc_FUN_0048dfc0(void);
 undefined __unknown core_drip_cpp_FUN_0048dff0();
-CDrip * __cdecl core_drip_cpp_ctor_FUN_0048e000(CDrip * this_ptr);
+CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0048e000(CDrip * this_ptr);
 undefined __unknown core_drip_cpp_FUN_0048e0e0();
 undefined __unknown core_drip_cpp_CDrip_load_FUN_0048e170();
 undefined __unknown core_drip_cpp_FUN_0048e2a0();
@@ -328,10 +327,10 @@ undefined __unknown core_drip_cpp_FUN_0048e930();
 undefined __unknown core_drip_cpp_FUN_0048ea30();
 undefined __unknown core_drip_cpp_FUN_0048ea60();
 CDrip * __cdecl core_drip_cpp_dtor_FUN_0048ea90(CDrip * this_ptr, uint d1, uint d2);
-CDemonActorType * __cdecl core_drone_cpp_staticInit_FUN_0048eae0(void);
-undefined __unknown core_drone_cpp_FUN_0048eb10();
+void __cdecl core_drone_cpp_staticInit_FUN_0048eae0(void);
+CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_0048eb10(void);
 undefined __unknown core_drone_cpp_FUN_0048eb40();
-CDrone * __cdecl core_drone_cpp_ctor_FUN_0048eb50(CDrone * this_ptr);
+CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0048eb50(CDrone * this_ptr);
 undefined __unknown core_drone_cpp_FUN_0048ebc0();
 undefined __unknown core_drone_cpp_FUN_0048ec70();
 undefined __unknown core_drone_cpp_CDrone_load_FUN_0048f2f0();

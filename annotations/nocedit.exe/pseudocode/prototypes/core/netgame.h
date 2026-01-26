@@ -5,7 +5,7 @@
 
 // Original: core_netgame.cpp_staticInit_FUN_0053f310
 // Address: 0053f310
-undefined staticInit();
+void staticInit(void);
 
 // Original: core_netgame.cpp_FUN_0053f360
 // Address: 0053f360

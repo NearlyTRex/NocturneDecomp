@@ -25,11 +25,11 @@ int freeFlames(CFlame * * array);
 
 // Original: core_backgnd.cpp_staticInit_FUN_00412740
 // Address: 00412740
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_backgnd.cpp_FUN_00412770
+// Original: core_backgnd.cpp_factoryFunc_FUN_00412770
 // Address: 00412770
-undefined FUN_00412770();
+CBackgroundActor * factoryFunc(void);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getActorType_FUN_004127a0
 // Address: 004127a0

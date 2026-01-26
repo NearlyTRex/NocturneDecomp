@@ -5,19 +5,19 @@
 
 // Original: core_lever.cpp_staticInit_FUN_00504760
 // Address: 00504760
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_lever.cpp_FUN_00504790
+// Original: core_lever.cpp_factoryFunc_FUN_00504790
 // Address: 00504790
-undefined FUN_00504790();
+CLever * factoryFunc(void);
 
-// Original: core_lever.cpp_FUN_005047c0
+// Original: core_lever.cpp_CLever_getActorType_FUN_005047c0
 // Address: 005047c0
-undefined FUN_005047c0();
+CDemonActorType * CLever::getActorType(CLever * this_ptr);
 
-// Original: core_lever.cpp_FUN_005047d0
+// Original: core_lever.cpp_CLever_ctor_FUN_005047d0
 // Address: 005047d0
-CLever * FUN_005047d0(CLever * this_ptr);
+CLever * CLever::ctor(CLever * this_ptr);
 
 // Original: core_lever.cpp_FUN_005048a0
 // Address: 005048a0
@@ -87,6 +87,6 @@ undefined FUN_00505370();
 // Address: 00505390
 undefined FUN_00505390();
 
-// Original: core_lever.cpp_FUN_00505430
+// Original: core_lever.cpp_CLever_dtor_FUN_00505430
 // Address: 00505430
-CLever * FUN_00505430(CLever * this_ptr, uint d1, uint d2);
+CLever * CLever::dtor(CLever * this_ptr, uint d1, uint d2);

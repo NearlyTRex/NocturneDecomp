@@ -11,9 +11,9 @@ void staticInit(void);
 // Address: 00418e10
 undefined CreateBodyPart();
 
-// Original: core_bodypart.cpp_createBodyPart_FUN_00418fd0
+// Original: core_bodypart.cpp_factoryFunc_FUN_00418fd0
 // Address: 00418fd0
-CBodyPart * createBodyPart(void);
+CBodyPart * factoryFunc(void);
 
 // Original: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000
 // Address: 00419000
@@ -65,7 +65,7 @@ undefined FUN_00419e10();
 
 // Original: core_bodypart.cpp_CBodyPart_hasCollision_FUN_00419f50
 // Address: 00419f50
-int CBodyPart::hasCollision(CBodyPart * this_ptr);
+int CBodyPart::hasCollision(CBodyPart * this_ptr, SCollisionInfo * collision_info);
 
 // Original: core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00419f60
 // Address: 00419f60

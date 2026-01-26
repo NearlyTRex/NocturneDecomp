@@ -5,15 +5,15 @@
 
 // Original: core_sentinel.cpp_staticInit_FUN_00567d40
 // Address: 00567d40
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_sentinel.cpp_FUN_00567d70
+// Original: core_sentinel.cpp_factoryFunc_FUN_00567d70
 // Address: 00567d70
-undefined FUN_00567d70();
+CSentinel * factoryFunc(void);
 
-// Original: core_sentinel.cpp_FUN_00567da0
+// Original: core_sentinel.cpp_CSentinel_getActorType_FUN_00567da0
 // Address: 00567da0
-undefined FUN_00567da0();
+CDemonActorType * CSentinel::getActorType(CSentinel * this_ptr);
 
 // Original: core_sentinel.cpp_CSentinel_ctor_FUN_00567db0
 // Address: 00567db0

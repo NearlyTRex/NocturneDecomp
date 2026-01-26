@@ -1701,10 +1701,6 @@
       "type":"struct"
     },
     {
-      "name":"CBoxActor",
-      "type":"struct"
-    },
-    {
       "name":"CBulletHole",
       "type":"struct"
     },
@@ -1782,10 +1778,6 @@
     },
     {
       "name":"CLever",
-      "type":"struct"
-    },
-    {
-      "name":"CLightActor",
       "type":"struct"
     },
     {
@@ -3713,11 +3705,19 @@
       "type":"struct"
     },
     {
+      "name":"CBoxActor",
+      "type":"struct"
+    },
+    {
       "name":"CDoor",
       "type":"struct"
     },
     {
       "name":"CKeyActor",
+      "type":"struct"
+    },
+    {
+      "name":"CLightActor",
       "type":"struct"
     },
     {
@@ -21348,9 +21348,9 @@
         },
         {
           "len":380,
-          "name":"model_name",
+          "name":"model",
           "offset":344,
-          "type":"char[380]"
+          "type":"CKeyFramedModelInstance"
         },
         {
           "len":20,
@@ -21396,9 +21396,9 @@
         },
         {
           "len":4,
-          "name":"carried_by_actor",
+          "name":"carrier_actor",
           "offset":792,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -38182,49 +38182,49 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"bfunc1",
           "offset":0,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"bfunc2",
           "offset":4,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"bfunc3",
           "offset":8,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"bfunc4",
           "offset":12,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"bfunc5",
           "offset":16,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_20",
+          "name":"bfunc6",
           "offset":20,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"bfunc7",
           "offset":24,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"bfunc8",
           "offset":28,
           "type":"void*"
         }

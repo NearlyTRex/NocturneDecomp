@@ -5,15 +5,15 @@
 
 // Original: core_scat.cpp_staticInit_FUN_00556e00
 // Address: 00556e00
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_scat.cpp_FUN_00556e90
+// Original: core_scat.cpp_factoryFunc_FUN_00556e90
 // Address: 00556e90
-undefined FUN_00556e90();
+CScat * factoryFunc(void);
 
-// Original: core_scat.cpp_FUN_00556ec0
+// Original: core_scat.cpp_CScat_getActorType_FUN_00556ec0
 // Address: 00556ec0
-undefined FUN_00556ec0();
+CDemonActorType * CScat::getActorType(CScat * this_ptr);
 
 // Original: core_scat.cpp_CScat_ctor_FUN_00556ed0
 // Address: 00556ed0

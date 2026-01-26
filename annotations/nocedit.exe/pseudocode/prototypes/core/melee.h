@@ -5,19 +5,19 @@
 
 // Original: core_melee.cpp_staticInit_FUN_0050e760
 // Address: 0050e760
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_melee.cpp_FUN_0050e790
+// Original: core_melee.cpp_factoryFunc_FUN_0050e790
 // Address: 0050e790
-undefined FUN_0050e790();
+CMelee * factoryFunc(void);
 
-// Original: core_melee.cpp_FUN_0050e7c0
+// Original: core_melee.cpp_CMelee_getActorType_FUN_0050e7c0
 // Address: 0050e7c0
-undefined FUN_0050e7c0();
+CDemonActorType * CMelee::getActorType(CMelee * this_ptr);
 
-// Original: core_melee.cpp_FUN_0050e7d0
+// Original: core_melee.cpp_CMelee_ctor_FUN_0050e7d0
 // Address: 0050e7d0
-CMelee * FUN_0050e7d0(CMelee * this_ptr);
+CMelee * CMelee::ctor(CMelee * this_ptr);
 
 // Original: core_melee.cpp_CMelee_load_FUN_0050e920
 // Address: 0050e920
@@ -67,6 +67,6 @@ undefined FUN_0050ecd0();
 // Address: 0050ecf0
 undefined FUN_0050ecf0();
 
-// Original: core_melee.cpp_FUN_0050edf0
+// Original: core_melee.cpp_CMelee_dtor_FUN_0050edf0
 // Address: 0050edf0
-CMelee * FUN_0050edf0(CMelee * this_ptr, uint d1, uint d2);
+CMelee * CMelee::dtor(CMelee * this_ptr, uint d1, uint d2);

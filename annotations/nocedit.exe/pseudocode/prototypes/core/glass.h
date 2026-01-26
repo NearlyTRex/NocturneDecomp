@@ -7,9 +7,9 @@
 // Address: 004e8fd0
 void staticInit(void);
 
-// Original: core_glass.cpp_CGlass_factoryFunc_FUN_004e9000
+// Original: core_glass.cpp_factoryFunc_FUN_004e9000
 // Address: 004e9000
-CGlass * CGlass::factoryFunc(void);
+CGlass * factoryFunc(void);
 
 // Original: core_glass.cpp_CGlass_getActorType_FUN_004e9030
 // Address: 004e9030
@@ -25,7 +25,7 @@ void CGlass::setup(CGlass * this_ptr);
 
 // Original: core_glass.cpp_CGlass_process_FUN_004e98e0
 // Address: 004e98e0
-void CGlass::process(CGlass * this_ptr);
+void CGlass::process(CGlass * this_ptr, float delta_time);
 
 // Original: core_glass.cpp_CGlass_renderOpaque_FUN_004e9930
 // Address: 004e9930

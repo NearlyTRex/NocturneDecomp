@@ -5,7 +5,7 @@
 
 // Original: core_weather.cpp_staticInit_FUN_005eeaa0
 // Address: 005eeaa0
-undefined staticInit();
+void staticInit(void);
 
 // Original: core_weather.cpp_CWeather_ctor_FUN_005eead0
 // Address: 005eead0

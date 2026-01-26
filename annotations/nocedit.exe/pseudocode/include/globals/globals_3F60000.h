@@ -363,6 +363,12 @@ extern float g_VolumeFadeTimeRemaining;
 extern float g_TrainNoiseCooldown;
 extern float FLOAT_03f6ba1c;
 extern float FLOAT_03f6ba20;
+extern float FLOAT_03f6bab0;
+extern float FLOAT_03f6bab4;
+extern float FLOAT_03f6bab8;
+extern float FLOAT_03f6babc;
+extern float FLOAT_03f6bac0;
+extern float FLOAT_03f6bac4;
 
 // float*
 extern float* g_TertiaryMixBuffer;

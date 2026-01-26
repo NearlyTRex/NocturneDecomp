@@ -3,6 +3,8 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEdScrollBar.h"
+#include "types/classes/CPickList.h"
 #include "types/classes/CScript.h"
 
 // =============================================================================
@@ -11,6 +13,13 @@
 
 // CDemonActorType
 extern CDemonActorType g_CScatClassInfo;
+
+// CEdScrollBar
+extern CEdScrollBar CEdScrollBar_0310fcd8;
+extern CEdScrollBar CEdScrollBar_0310fd0c;
+
+// CPickList
+extern CPickList DAT_0310f4b0;
 
 // CScript
 extern CScript g_CScriptInstance;
@@ -50,12 +59,6 @@ extern undefined4 DAT_0310ec9c;
 extern undefined4 DAT_0310f4a4;
 extern undefined4 DAT_0310f4a8;
 extern undefined4 DAT_0310f4ac;
-extern undefined4 DAT_0310fcd8;
-extern undefined4 DAT_0310fcdc;
-extern undefined4 DAT_0310fce0;
-extern undefined4 DAT_0310fd0c;
-extern undefined4 DAT_0310fd10;
-extern undefined4 DAT_0310fd14;
 extern undefined4 DAT_0310fd40;
 extern undefined4 DAT_0310fd44;
 extern undefined4 DAT_0310fd48;

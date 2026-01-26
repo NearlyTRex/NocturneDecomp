@@ -5,19 +5,19 @@
 
 // Original: core_dest.cpp_staticInit_FUN_0046f890
 // Address: 0046f890
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_dest.cpp_FUN_0046f8c0
+// Original: core_dest.cpp_factoryFunc_FUN_0046f8c0
 // Address: 0046f8c0
-undefined FUN_0046f8c0();
+CActorDestination * factoryFunc(void);
 
 // Original: core_dest.cpp_FUN_0046f8f0
 // Address: 0046f8f0
 undefined FUN_0046f8f0();
 
-// Original: core_dest.cpp_FUN_0046f900
+// Original: core_dest.cpp_CActorDestination_ctor_FUN_0046f900
 // Address: 0046f900
-CActorDestination * FUN_0046f900(CActorDestination * this_ptr);
+CActorDestination * CActorDestination::ctor(CActorDestination * this_ptr);
 
 // Original: core_dest.cpp_FUN_0046f970
 // Address: 0046f970

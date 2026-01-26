@@ -5,11 +5,11 @@
 
 // Original: core_bride.cpp_staticInit_FUN_00423700
 // Address: 00423700
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_bride.cpp_FUN_00423760
+// Original: core_bride.cpp_factoryFunc_FUN_00423760
 // Address: 00423760
-undefined FUN_00423760();
+CBride * factoryFunc(void);
 
 // Original: core_bride.cpp_FUN_00423790
 // Address: 00423790

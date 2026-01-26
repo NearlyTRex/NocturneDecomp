@@ -5,15 +5,15 @@
 
 // Original: core_gasmask.cpp_staticInit_FUN_004e5c90
 // Address: 004e5c90
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_gasmask.cpp_FUN_004e5cc0
+// Original: core_gasmask.cpp_factoryFunc_FUN_004e5cc0
 // Address: 004e5cc0
-undefined FUN_004e5cc0();
+CGasMask * factoryFunc(void);
 
-// Original: core_gasmask.cpp_FUN_004e5cf0
+// Original: core_gasmask.cpp_CGasMask_getActorType_FUN_004e5cf0
 // Address: 004e5cf0
-undefined FUN_004e5cf0();
+CDemonActorType * CGasMask::getActorType(CGasMask * this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_ctor_FUN_004e5d00
 // Address: 004e5d00
@@ -55,6 +55,6 @@ undefined CGasMask();
 // Address: 004e5ef0
 undefined FUN_004e5ef0();
 
-// Original: core_gasmask.cpp_FUN_004e5f40
+// Original: core_gasmask.cpp_CGasMask_dtor_FUN_004e5f40
 // Address: 004e5f40
-CGasMask * FUN_004e5f40(CGasMask * this_ptr, uint d1, uint d2);
+CGasMask * CGasMask::dtor(CGasMask * this_ptr, uint d1, uint d2);

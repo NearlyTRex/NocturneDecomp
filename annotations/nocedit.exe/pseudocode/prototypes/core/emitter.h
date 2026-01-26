@@ -5,19 +5,19 @@
 
 // Original: core_emitter.cpp_staticInit_FUN_004a7c30
 // Address: 004a7c30
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_emitter.cpp_FUN_004a7c60
+// Original: core_emitter.cpp_factoryFunc_FUN_004a7c60
 // Address: 004a7c60
-undefined FUN_004a7c60();
+CEmitter * factoryFunc(void);
 
 // Original: core_emitter.cpp_OtherClass_FUN_004a7c90
 // Address: 004a7c90
 undefined OtherClass();
 
-// Original: core_emitter.cpp_ctor_FUN_004a7ca0
+// Original: core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0
 // Address: 004a7ca0
-CEmitter * ctor(CEmitter * this_ptr);
+CEmitter * CEmitter::ctor(CEmitter * this_ptr);
 
 // Original: core_emitter.cpp_FUN_004a7e00
 // Address: 004a7e00
@@ -71,9 +71,9 @@ undefined FUN_004a9350();
 // Address: 004a9390
 undefined FUN_004a9390();
 
-// Original: core_emitter.cpp_dtor_FUN_004a93c0
+// Original: core_emitter.cpp_CEmitter_dtor_FUN_004a93c0
 // Address: 004a93c0
-CEmitter * dtor(CEmitter * this_ptr, uint d1, uint d2);
+CEmitter * CEmitter::dtor(CEmitter * this_ptr, uint d1, uint d2);
 
 // Original: core_emitter.cpp_SLaserInfo_copy_FUN_004a9410
 // Address: 004a9410

@@ -5,15 +5,15 @@
 
 // Original: core_stairs.cpp_staticInit_FUN_005b9b00
 // Address: 005b9b00
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_stairs.cpp_FUN_005b9b30
+// Original: core_stairs.cpp_factoryFunc_FUN_005b9b30
 // Address: 005b9b30
-undefined FUN_005b9b30();
+CStairs * factoryFunc(void);
 
-// Original: core_stairs.cpp_ClassStart_FUN_005b9b60
+// Original: core_stairs.cpp_CStairs_getActorType_FUN_005b9b60
 // Address: 005b9b60
-undefined ClassStart();
+CDemonActorType * CStairs::getActorType(CStairs * this_ptr);
 
 // Original: core_stairs.cpp_CStairs_ctor_FUN_005b9b70
 // Address: 005b9b70

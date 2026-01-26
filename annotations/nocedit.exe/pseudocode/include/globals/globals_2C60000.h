@@ -36,6 +36,15 @@ extern SFace g_CapturedFaces[5000];
 extern SFreaky SFreaky_ARRAY_02c6d0c0[6];
 
 // float
+extern float FLOAT_02c6d040;
+extern float FLOAT_02c6d044;
+extern float FLOAT_02c6d048;
+extern float FLOAT_02c6d04c;
+extern float FLOAT_02c6d050;
+extern float FLOAT_02c6d054;
+extern float FLOAT_02c6d058;
+extern float FLOAT_02c6d05c;
+extern float FLOAT_02c6d060;
 extern float g_DashAnimationAccumulator;
 extern float g_DashAnimationOffset;
 extern float g_DashAnimationAccumulatorOther;

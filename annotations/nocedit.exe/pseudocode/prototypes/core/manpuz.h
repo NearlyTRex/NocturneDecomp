@@ -7,9 +7,9 @@
 // Address: 00508890
 void staticInit(void);
 
-// Original: core_manpuz.cpp_CMansionPuzzleCircle_factoryFunc_FUN_005088e0
+// Original: core_manpuz.cpp_factoryFunc_FUN_005088e0
 // Address: 005088e0
-CMansionPuzzleCircle * CMansionPuzzleCircle::factoryFunc(void);
+CMansionPuzzleCircle * factoryFunc(void);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getActorType_FUN_00508910
 // Address: 00508910
@@ -135,9 +135,9 @@ void CMansionPuzzleCircle(CMansionPuzzleCircle * this_ptr);
 // Address: 0050b040
 int CMansionPuzzleCircle::panelOccupied(CMansionPuzzleCircle * this_ptr);
 
-// Original: core_manpuz.cpp_CMirrorHack_factoryFunc_FUN_0050b0d0
+// Original: core_manpuz.cpp_factoryFunc_FUN_0050b0d0
 // Address: 0050b0d0
-CMirrorHack * CMirrorHack::factoryFunc(void);
+CMirrorHack * factoryFunc(void);
 
 // Original: core_manpuz.cpp_CMirrorHack_getActorType_FUN_0050b100
 // Address: 0050b100

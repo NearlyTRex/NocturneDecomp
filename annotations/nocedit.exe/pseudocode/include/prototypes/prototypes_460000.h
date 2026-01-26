@@ -4,7 +4,6 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CActorDestination.h"
-#include "types/classes/CDemonActorType.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
@@ -130,10 +129,10 @@ void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void);
 void __cdecl shape_design_c_smoothMesh_FUN_0046ed00(void);
 void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void);
 void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void);
-CDemonActorType * __cdecl core_dest_cpp_staticInit_FUN_0046f890(void);
-undefined __unknown core_dest_cpp_FUN_0046f8c0();
+void __cdecl core_dest_cpp_staticInit_FUN_0046f890(void);
+CActorDestination * __cdecl core_dest_cpp_factoryFunc_FUN_0046f8c0(void);
 undefined __unknown core_dest_cpp_FUN_0046f8f0();
-CActorDestination * __cdecl core_dest_cpp_FUN_0046f900(CActorDestination * this_ptr);
+CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0046f900(CActorDestination * this_ptr);
 undefined __unknown core_dest_cpp_FUN_0046f970();
 undefined __unknown core_dest_cpp_FUN_0046f9b0();
 undefined __unknown core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70();

@@ -86,6 +86,8 @@ extern float FLOAT_02d7b840;
 extern float FLOAT_02d7b844;
 
 // int
+extern int INT_02d7a7b4;
+extern int INT_02d7a7b8;
 extern int g_LightAttenuationMax;
 extern int INT_02d7a7c0;
 extern int g_ShadowColor32;
@@ -122,7 +124,6 @@ extern undefined1 DAT_02d7b410;
 extern undefined1 DAT_02d7b804;
 
 // undefined4
-extern undefined4 DAT_02d7a7b8;
 extern undefined4 DAT_02d7a800;
 extern undefined4 DAT_02d7a804;
 extern undefined4 DAT_02d7b7f4;

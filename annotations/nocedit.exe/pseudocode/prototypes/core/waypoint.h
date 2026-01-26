@@ -5,15 +5,15 @@
 
 // Original: core_waypoint.cpp_staticInit_FUN_005ebd10
 // Address: 005ebd10
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_waypoint.cpp_FUN_005ebd40
 // Address: 005ebd40
 undefined FUN_005ebd40();
 
-// Original: core_waypoint.cpp_FUN_005ebe30
+// Original: core_waypoint.cpp_factoryFunc_FUN_005ebe30
 // Address: 005ebe30
-undefined FUN_005ebe30();
+CWayPoint * factoryFunc(void);
 
 // Original: core_waypoint.cpp_CWayPoint_getActorType_FUN_005ebe60
 // Address: 005ebe60

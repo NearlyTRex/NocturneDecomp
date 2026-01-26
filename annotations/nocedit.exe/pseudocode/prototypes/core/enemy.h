@@ -9,7 +9,7 @@ CEnemy * CEnemy::dtor(CEnemy * this_ptr, uint d1, uint d2, uint d3, uint d4, uin
 
 // Original: core_enemy.cpp_staticInit_FUN_004a94d0
 // Address: 004a94d0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
 // Original: core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 // Address: 004a9500

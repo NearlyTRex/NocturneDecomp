@@ -5,11 +5,11 @@
 
 // Original: core_chain.cpp_staticInit_FUN_0042fb10
 // Address: 0042fb10
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_chain.cpp_FUN_0042fb40
+// Original: core_chain.cpp_factoryFunc_FUN_0042fb40
 // Address: 0042fb40
-undefined FUN_0042fb40();
+CChain * factoryFunc(void);
 
 // Original: core_chain.cpp_StartOfClass_FUN_0042fb70
 // Address: 0042fb70

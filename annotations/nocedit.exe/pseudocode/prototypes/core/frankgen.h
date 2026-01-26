@@ -5,19 +5,19 @@
 
 // Original: core_frankgen.cpp_staticInit_FUN_004d16b0
 // Address: 004d16b0
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_frankgen.cpp_FUN_004d16e0
+// Original: core_frankgen.cpp_factoryFunc_FUN_004d16e0
 // Address: 004d16e0
-undefined FUN_004d16e0();
+CFrankenstienMachine * factoryFunc(void);
 
 // Original: core_frankgen.cpp_FUN_004d1710
 // Address: 004d1710
 undefined FUN_004d1710();
 
-// Original: core_frankgen.cpp_FUN_004d1720
+// Original: core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_004d1720
 // Address: 004d1720
-CFrankenstienMachine * FUN_004d1720(CFrankenstienMachine * this_ptr);
+CFrankenstienMachine * CFrankenstienMachine::ctor(CFrankenstienMachine * this_ptr);
 
 // Original: core_frankgen.cpp_FUN_004d17b0
 // Address: 004d17b0
@@ -95,6 +95,6 @@ undefined FUN_004d2880();
 // Address: 004d2890
 undefined FUN_004d2890();
 
-// Original: core_frankgen.cpp_FUN_004d28a0
+// Original: core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004d28a0
 // Address: 004d28a0
-CFrankenstienMachine * FUN_004d28a0(CFrankenstienMachine * this_ptr, uint d1, uint d2, uint d3);
+CFrankenstienMachine * CFrankenstienMachine::dtor(CFrankenstienMachine * this_ptr, uint d1, uint d2, uint d3);

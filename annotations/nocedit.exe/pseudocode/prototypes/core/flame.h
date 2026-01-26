@@ -5,15 +5,15 @@
 
 // Original: core_flame.cpp_staticInit_FUN_004c9a30
 // Address: 004c9a30
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_flame.cpp_FUN_004c9a60
+// Original: core_flame.cpp_factoryFunc_FUN_004c9a60
 // Address: 004c9a60
-undefined FUN_004c9a60();
+CFlame * factoryFunc(void);
 
-// Original: core_flame.cpp_ClassStart_FUN_004c9a90
+// Original: core_flame.cpp_CFlame_getActorType_FUN_004c9a90
 // Address: 004c9a90
-undefined ClassStart();
+CDemonActorType * CFlame::getActorType(CFlame * this_ptr);
 
 // Original: core_flame.cpp_CFlame_ctor_FUN_004c9aa0
 // Address: 004c9aa0

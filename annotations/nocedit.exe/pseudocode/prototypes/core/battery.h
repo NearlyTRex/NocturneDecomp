@@ -5,11 +5,11 @@
 
 // Original: core_battery.cpp_staticInit_FUN_00417e20
 // Address: 00417e20
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_battery.cpp_FUN_00417e50
+// Original: core_battery.cpp_factoryFunc_FUN_00417e50
 // Address: 00417e50
-undefined FUN_00417e50();
+CBattery * factoryFunc(void);
 
 // Original: core_battery.cpp_FUN_00417e80
 // Address: 00417e80

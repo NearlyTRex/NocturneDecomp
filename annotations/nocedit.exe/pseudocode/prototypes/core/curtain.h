@@ -5,19 +5,19 @@
 
 // Original: core_curtain.cpp_staticInit_FUN_00449610
 // Address: 00449610
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_curtain.cpp_FUN_00449660
+// Original: core_curtain.cpp_factoryFunc_FUN_00449660
 // Address: 00449660
-undefined FUN_00449660();
+CCurtain * factoryFunc(void);
 
 // Original: core_curtain.cpp_FUN_00449690
 // Address: 00449690
 undefined FUN_00449690();
 
-// Original: core_curtain.cpp_FUN_004496a0
+// Original: core_curtain.cpp_CCurtain_ctor_FUN_004496a0
 // Address: 004496a0
-CCurtain * FUN_004496a0(CCurtain * this_ptr);
+CCurtain * CCurtain::ctor(CCurtain * this_ptr);
 
 // Original: core_curtain.cpp_FUN_00449810
 // Address: 00449810

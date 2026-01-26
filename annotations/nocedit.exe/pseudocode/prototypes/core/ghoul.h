@@ -5,19 +5,19 @@
 
 // Original: core_ghoul.cpp_staticInit_FUN_004e5f90
 // Address: 004e5f90
-CDemonActorType * staticInit(void);
+void staticInit(void);
 
-// Original: core_ghoul.cpp_FUN_004e5ff0
+// Original: core_ghoul.cpp_factoryFunc_FUN_004e5ff0
 // Address: 004e5ff0
-undefined FUN_004e5ff0();
+CGhoul * factoryFunc(void);
 
 // Original: core_ghoul.cpp_FUN_004e6020
 // Address: 004e6020
 undefined FUN_004e6020();
 
-// Original: core_ghoul.cpp_FUN_004e6030
+// Original: core_ghoul.cpp_CGhoul_ctor_FUN_004e6030
 // Address: 004e6030
-CGhoul * FUN_004e6030(CGhoul * this_ptr);
+CGhoul * CGhoul::ctor(CGhoul * this_ptr);
 
 // Original: core_ghoul.cpp_FUN_004e6160
 // Address: 004e6160
@@ -71,6 +71,6 @@ undefined FUN_004e8e40();
 // Address: 004e8ee0
 undefined FUN_004e8ee0();
 
-// Original: core_ghoul.cpp_FUN_004e8f10
+// Original: core_ghoul.cpp_CGhoul_dtor_FUN_004e8f10
 // Address: 004e8f10
-CGhoul * FUN_004e8f10(CGhoul * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
+CGhoul * CGhoul::dtor(CGhoul * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8);
